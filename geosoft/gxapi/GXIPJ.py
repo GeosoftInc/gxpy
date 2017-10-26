@@ -105,47 +105,47 @@ class GXIPJ:
 
 
 
-    def set_units(self, p2, p3):
+    def set_units(self, scale, str_val):
         """
         Set unit parameters
         """
-        self._wrapper.set_units(p2, p3.encode())
+        self._wrapper.set_units(scale, str_val.encode())
         
 
 
 
 
-    def add_exagg_warp(self, p2, p3, p4, p5, p6, p7):
+    def add_exagg_warp(self, x_exag, y_exag, z_exag, x_orig, y_orig, z_orig):
         """
         Add a warp to `GXIPJ` to exaggerate X, Y and Z.
         """
-        self._wrapper.add_exagg_warp(p2, p3, p4, p5, p6, p7)
+        self._wrapper.add_exagg_warp(x_exag, y_exag, z_exag, x_orig, y_orig, z_orig)
         
 
 
 
 
-    def add_log_warp(self, p2, p3):
+    def add_log_warp(self, x, y):
         """
         Add a warp to `GXIPJ` to log one or both coordinantes
         """
-        self._wrapper.add_log_warp(p2, p3)
+        self._wrapper.add_log_warp(x, y)
         
 
 
 
 
-    def add_matrix_warp(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17):
+    def add_matrix_warp(self, v00, v01, v02, v03, v10, v11, v12, v13, v20, v21, v22, v23, v30, v31, v32, v33):
         """
         Add a warp to `GXIPJ` using a matrix
         """
-        self._wrapper.add_matrix_warp(p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17)
+        self._wrapper.add_matrix_warp(v00, v01, v02, v03, v10, v11, v12, v13, v20, v21, v22, v23, v30, v31, v32, v33)
         
 
 
 
 
-    def add_warp(self, p2, p3, p4, p5, p6):
+    def add_warp(self, type, v_vx_old, v_vy_old, v_vx_new, v_vy_new):
         """
         Add a warp to `GXIPJ`.
 
@@ -161,7 +161,7 @@ class GXIPJ:
         
         Cannot be used with WARP_MATRIX or WARP_LOG
         """
-        self._wrapper.add_warp(p2, p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper)
+        self._wrapper.add_warp(type, v_vx_old._wrapper, v_vy_old._wrapper, v_vx_new._wrapper, v_vy_new._wrapper)
         
 
 
@@ -192,27 +192,27 @@ class GXIPJ:
 
 
 
-    def convert_orientation_warp_vv(self, p2, p3, p4, p5):
+    def convert_orientation_warp_vv(self, v_vx, v_vy, v_vz, f_forward):
         """
         Convert X,Y and Z VVs using the orientation warp from an `GXIPJ`.
         """
-        self._wrapper.convert_orientation_warp_vv(p2._wrapper, p3._wrapper, p4._wrapper, p5)
+        self._wrapper.convert_orientation_warp_vv(v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, f_forward)
         
 
 
 
 
-    def copy(self, p2):
+    def copy(self, ip_jd):
         """
         Copy IPJs
         """
-        self._wrapper.copy(p2._wrapper)
+        self._wrapper.copy(ip_jd._wrapper)
         
 
 
 
 
-    def copy_projection(self, p2):
+    def copy_projection(self, ip_jd):
         """
         Copy the projection from one `GXIPJ` to another
 
@@ -221,7 +221,7 @@ class GXIPJ:
         Copies the projection parameters, while leaving the rest
         (e.g. Datum, Local Datum Transform) unchanged.
         """
-        self._wrapper.copy_projection(p2._wrapper)
+        self._wrapper.copy_projection(ip_jd._wrapper)
         
 
 
@@ -237,21 +237,21 @@ class GXIPJ:
 
 
     @classmethod
-    def create_s(cls, p1):
+    def create_s(cls, bf):
         """
         Create `GXIPJ` from serialized source.
         """
-        ret_val = gxapi_cy.WrapIPJ.create_s(GXContext._get_tls_geo(), p1._wrapper)
+        ret_val = gxapi_cy.WrapIPJ.create_s(GXContext._get_tls_geo(), bf._wrapper)
         return GXIPJ(ret_val)
 
 
 
     @classmethod
-    def create_xml(cls, p1):
+    def create_xml(cls, file):
         """
         Create an `GXIPJ` from serialized Geosoft MetaData XML file
         """
-        ret_val = gxapi_cy.WrapIPJ.create_xml(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapIPJ.create_xml(GXContext._get_tls_geo(), file.encode())
         return GXIPJ(ret_val)
 
 
@@ -259,7 +259,7 @@ class GXIPJ:
 
 
 
-    def get_3d_view(self, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+    def get_3d_view(self, x, y, z, rx, ry, rz, sx, sy, str_val):
         """
         Get 3D orientation parameters
 
@@ -267,13 +267,13 @@ class GXIPJ:
 
         The view must have a 3D orientation
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value, p10.value = self._wrapper.get_3d_view(p2.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value, p10.value)
+        x.value, y.value, z.value, rx.value, ry.value, rz.value, sx.value, sy.value, str_val.value = self._wrapper.get_3d_view(x.value, y.value, z.value, rx.value, ry.value, rz.value, sx.value, sy.value, str_val.value)
         
 
 
 
 
-    def get_3d_view_ex(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+    def get_3d_view_ex(self, x, y, z, rx, ry, rz, sx, sy, str_val, rotate, flags):
         """
         Get 3D orientation parameters with new flags
 
@@ -281,13 +281,13 @@ class GXIPJ:
 
         The view must have a 3D orientation
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value, p10.value, p11.value, p12.value = self._wrapper.get_3d_view_ex(p2.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value, p10.value, p11.value, p12.value)
+        x.value, y.value, z.value, rx.value, ry.value, rz.value, sx.value, sy.value, str_val.value, rotate.value, flags.value = self._wrapper.get_3d_view_ex(x.value, y.value, z.value, rx.value, ry.value, rz.value, sx.value, sy.value, str_val.value, rotate.value, flags.value)
         
 
 
 
 
-    def get_crooked_section_view_v_vs(self, p2, p3, p4, p5):
+    def get_crooked_section_view_v_vs(self, dist_vv, xvv, yvv, log_z):
         """
         Get the crooked section path.
 
@@ -295,13 +295,13 @@ class GXIPJ:
 
         Returns the orignal VVs used to set up the crooked section path.
         """
-        p5.value = self._wrapper.get_crooked_section_view_v_vs(p2._wrapper, p3._wrapper, p4._wrapper, p5.value)
+        log_z.value = self._wrapper.get_crooked_section_view_v_vs(dist_vv._wrapper, xvv._wrapper, yvv._wrapper, log_z.value)
         
 
 
 
     @classmethod
-    def get_list(cls, p1, p2, p3):
+    def get_list(cls, parm, datum, lst):
         """
         Get a list of parameters.
 
@@ -310,13 +310,13 @@ class GXIPJ:
         The datum filter string, if specified, will limit the requested
         list to those valid for the spacified datum.
         """
-        gxapi_cy.WrapIPJ.get_list(GXContext._get_tls_geo(), p1, p2.encode(), p3._wrapper)
+        gxapi_cy.WrapIPJ.get_list(GXContext._get_tls_geo(), parm, datum.encode(), lst._wrapper)
         
 
 
 
 
-    def get_orientation_info(self, p2, p3, p4, p5, p6):
+    def get_orientation_info(self, x, y, z, az, p6):
         """
         Get `GXIPJ` orientation parameters.
 
@@ -340,13 +340,13 @@ class GXIPJ:
         HORIZONTALLY onto the viewing plan in order to
         preserve elevations, even if the section has a swing.
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value = self._wrapper.get_orientation_info(p2.value, p3.value, p4.value, p5.value, p6.value)
+        x.value, y.value, z.value, az.value, p6.value = self._wrapper.get_orientation_info(x.value, y.value, z.value, az.value, p6.value)
         
 
 
 
 
-    def get_plane_equation(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+    def get_plane_equation(self, min_x, min_y, max_x, max_y, pitch, p7, p8, p9, p10, p11, p12, p13, p14):
         """
         Get the equation of a plane
 
@@ -358,13 +358,13 @@ class GXIPJ:
         In practice, use the current view extents, or the corners
         of a grid.
         """
-        p6.value, p7.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value = self._wrapper.get_plane_equation(p2, p3, p4, p5, p6.value, p7.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value)
+        pitch.value, p7.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value = self._wrapper.get_plane_equation(min_x, min_y, max_x, max_y, pitch.value, p7.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value)
         
 
 
 
 
-    def get_plane_equation2(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15):
+    def get_plane_equation2(self, ip_jo, min_x, min_y, max_x, max_y, pitch, p8, p9, p10, p11, p12, p13, p14, p15):
         """
         Get the equation of a plane with reprojection.
 
@@ -381,13 +381,13 @@ class GXIPJ:
         If the two input IPJs share the same PCS then the `get_plane_equation`
         function is called directly, using the input `GXIPJ`.
         """
-        p7.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value, p15.value = self._wrapper.get_plane_equation2(p2._wrapper, p3, p4, p5, p6, p7.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value, p15.value)
+        pitch.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value, p15.value = self._wrapper.get_plane_equation2(ip_jo._wrapper, min_x, min_y, max_x, max_y, pitch.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value, p15.value)
         
 
 
 
 
-    def compare_datums(self, p2):
+    def compare_datums(self, ipj2):
         """
         Compare the datums of two coordinate systems?
 
@@ -401,33 +401,33 @@ class GXIPJ:
         local datum transform is still possible, but only the effect of
         ellipsoid shape will be modelled in the transform.
         """
-        ret_val = self._wrapper.compare_datums(p2._wrapper)
+        ret_val = self._wrapper.compare_datums(ipj2._wrapper)
         return ret_val
 
 
 
 
-    def convert_warp(self, p2, p3, p4, p5):
+    def convert_warp(self, x, y, z, f_forward):
         """
         Converts a point X, Y, Z to the new `GXIPJ` plane.
         """
-        ret_val, p2.value, p3.value, p4.value = self._wrapper.convert_warp(p2.value, p3.value, p4.value, p5)
+        ret_val, x.value, y.value, z.value = self._wrapper.convert_warp(x.value, y.value, z.value, f_forward)
         return ret_val
 
 
 
 
-    def convert_warp_vv(self, p2, p3, p4):
+    def convert_warp_vv(self, v_vx, v_vy, f_forward):
         """
         Converts a set of X & Y VVs to the new `GXIPJ` plane. The Z is assumed to be 0
         """
-        ret_val = self._wrapper.convert_warp_vv(p2._wrapper, p3._wrapper, p4)
+        ret_val = self._wrapper.convert_warp_vv(v_vx._wrapper, v_vy._wrapper, f_forward)
         return ret_val
 
 
 
 
-    def coordinate_systems_are_the_same(self, p2):
+    def coordinate_systems_are_the_same(self, ipj2):
         """
         Are these two coordinate systems the same?
 
@@ -435,33 +435,33 @@ class GXIPJ:
 
         This does not compare LDT information (use `compare_datums` for that).
         """
-        ret_val = self._wrapper.coordinate_systems_are_the_same(p2._wrapper)
+        ret_val = self._wrapper.coordinate_systems_are_the_same(ipj2._wrapper)
         return ret_val
 
 
 
 
-    def coordinate_systems_are_the_same_within_a_small_tolerance(self, p2):
+    def coordinate_systems_are_the_same_within_a_small_tolerance(self, ipj2):
         """
         Same as `coordinate_systems_are_the_same`, but allows for small numerical differences
         """
-        ret_val = self._wrapper.coordinate_systems_are_the_same_within_a_small_tolerance(p2._wrapper)
+        ret_val = self._wrapper.coordinate_systems_are_the_same_within_a_small_tolerance(ipj2._wrapper)
         return ret_val
 
 
 
 
-    def get_display_name(self, p2):
+    def get_display_name(self, str_val):
         """
         Get a name for display purposes from `GXIPJ`
         """
-        p2.value = self._wrapper.get_display_name(p2.value.encode())
+        str_val.value = self._wrapper.get_display_name(str_val.value.encode())
         
 
 
 
 
-    def get_esri(self, p2):
+    def get_esri(self, esri):
         """
         Store coordinate system in an ESRI prj coordinate string
 
@@ -470,13 +470,13 @@ class GXIPJ:
         If the projection is not supported in ESRI, the projection
         string will be empty.
         """
-        p2.value = self._wrapper.get_esri(p2.value.encode())
+        esri.value = self._wrapper.get_esri(esri.value.encode())
         
 
 
 
 
-    def get_gxf(self, p2, p3, p4, p5, p6):
+    def get_gxf(self, str1, str2, str3, str4, str5):
         """
         Store coordinate system in GXF style strings.
 
@@ -486,27 +486,27 @@ class GXIPJ:
         All strings must be the same length, 160 (`STR_GXF`) recommended.
         Strings too short will be truncated.
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value = self._wrapper.get_gxf(p2.value.encode(), p3.value.encode(), p4.value.encode(), p5.value.encode(), p6.value.encode())
+        str1.value, str2.value, str3.value, str4.value, str5.value = self._wrapper.get_gxf(str1.value.encode(), str2.value.encode(), str3.value.encode(), str4.value.encode(), str5.value.encode())
         
 
 
 
 
-    def get_mi_coord_sys(self, p2, p4):
+    def get_mi_coord_sys(self, coord, units):
         """
         Store coordinate system in MapInfo coordsys pair
         """
-        p2.value, p4.value = self._wrapper.get_mi_coord_sys(p2.value.encode(), p4.value.encode())
+        coord.value, units.value = self._wrapper.get_mi_coord_sys(coord.value.encode(), units.value.encode())
         
 
 
 
 
-    def get_name(self, p2, p3):
+    def get_name(self, type, str_val):
         """
         Get an `GXIPJ` name
         """
-        p3.value = self._wrapper.get_name(p2, p3.value.encode())
+        str_val.value = self._wrapper.get_name(type, str_val.value.encode())
         
 
 
@@ -555,31 +555,31 @@ class GXIPJ:
 
 
 
-    def get_orientation_name(self, p2):
+    def get_orientation_name(self, str_val):
         """
         Get a name for display purposes from `GXIPJ`
         """
-        p2.value = self._wrapper.get_orientation_name(p2.value.encode())
+        str_val.value = self._wrapper.get_orientation_name(str_val.value.encode())
         
 
 
 
 
-    def get_units(self, p2, p3):
+    def get_units(self, scale, str_val):
         """
         Get unit parameters
         """
-        p2.value, p3.value = self._wrapper.get_units(p2.value, p3.value.encode())
+        scale.value, str_val.value = self._wrapper.get_units(scale.value, str_val.value.encode())
         
 
 
 
 
-    def get_xml(self, p2):
+    def get_xml(self, str_val):
         """
         Get an Geosoft Metadata XML string from an `GXIPJ`
         """
-        p2.value = self._wrapper.get_xml(p2.value.encode())
+        str_val.value = self._wrapper.get_xml(str_val.value.encode())
         
 
 
@@ -625,21 +625,21 @@ class GXIPJ:
 
 
 
-    def orientations_are_the_same(self, p2):
+    def orientations_are_the_same(self, ipj2):
         """
         Are these two orientations the same?
         """
-        ret_val = self._wrapper.orientations_are_the_same(p2._wrapper)
+        ret_val = self._wrapper.orientations_are_the_same(ipj2._wrapper)
         return ret_val
 
 
 
 
-    def orientations_are_the_same_within_a_small_tolerance(self, p2):
+    def orientations_are_the_same_within_a_small_tolerance(self, ipj2):
         """
         Same as `orientations_are_the_same`, but allows for small numerical differences
         """
-        ret_val = self._wrapper.orientations_are_the_same_within_a_small_tolerance(p2._wrapper)
+        ret_val = self._wrapper.orientations_are_the_same_within_a_small_tolerance(ipj2._wrapper)
         return ret_val
 
 
@@ -689,7 +689,7 @@ class GXIPJ:
 
 
 
-    def set_gxf_safe(self, p2, p3, p4, p5, p6):
+    def set_gxf_safe(self, str1, str2, str3, str4, str5):
         """
         Same as `set_gxf`, but fails gracefully.
 
@@ -699,7 +699,7 @@ class GXIPJ:
         parameter). If this function fails, it simply returns 0 and leaves the
         `GXIPJ` unchanged.
         """
-        ret_val = self._wrapper.set_gxf_safe(p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6.encode())
+        ret_val = self._wrapper.set_gxf_safe(str1.encode(), str2.encode(), str3.encode(), str4.encode(), str5.encode())
         return ret_val
 
 
@@ -715,7 +715,7 @@ class GXIPJ:
 
 
 
-    def support_datum_transform(self, p2):
+    def support_datum_transform(self, ipj2):
         """
         Can we transform between these two datums?
 
@@ -729,17 +729,17 @@ class GXIPJ:
         local datum transform is still possible, but only the effect of
         ellipsoid shape will be modelled in the transform.
         """
-        ret_val = self._wrapper.support_datum_transform(p2._wrapper)
+        ret_val = self._wrapper.support_datum_transform(ipj2._wrapper)
         return ret_val
 
 
 
     @classmethod
-    def unit_name(cls, p1, p2, p3):
+    def unit_name(cls, val, type, name):
         """
         Get a unit name given a scale factor
         """
-        p3.value = gxapi_cy.WrapIPJ.unit_name(GXContext._get_tls_geo(), p1, p2, p3.value.encode())
+        name.value = gxapi_cy.WrapIPJ.unit_name(GXContext._get_tls_geo(), val, type, name.value.encode())
         
 
 
@@ -755,21 +755,21 @@ class GXIPJ:
 
 
 
-    def warps_are_the_same(self, p2):
+    def warps_are_the_same(self, ipj2):
         """
         Are these two warps the same?
         """
-        ret_val = self._wrapper.warps_are_the_same(p2._wrapper)
+        ret_val = self._wrapper.warps_are_the_same(ipj2._wrapper)
         return ret_val
 
 
 
 
-    def warps_are_the_same_within_a_small_tolerance(self, p2):
+    def warps_are_the_same_within_a_small_tolerance(self, ipj2):
         """
         Same as `warps_are_the_same`, but allows for small numerical differences
         """
-        ret_val = self._wrapper.warps_are_the_same_within_a_small_tolerance(p2._wrapper)
+        ret_val = self._wrapper.warps_are_the_same_within_a_small_tolerance(ipj2._wrapper)
         return ret_val
 
 
@@ -785,7 +785,7 @@ class GXIPJ:
 
 
 
-    def make_projected(self, p2, p3, p4, p5):
+    def make_projected(self, min_lon, min_lat, max_lon, max_lat):
         """
         Create a default projected coordinate system from lat-long ranges.
 
@@ -798,13 +798,13 @@ class GXIPJ:
         for the map. Global maps outside of +/- 70 degrees latitude are not
         supported.
         """
-        self._wrapper.make_projected(p2, p3, p4, p5)
+        self._wrapper.make_projected(min_lon, min_lat, max_lon, max_lat)
         
 
 
 
 
-    def new_box_resolution(self, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+    def new_box_resolution(self, ip_jo, res, min_x, min_y, max_x, max_y, min_res, max_res, diag_res):
         """
         Determine a data resolution in a new coordinate system
 
@@ -814,33 +814,33 @@ class GXIPJ:
         dummy.  The conversion to new resolution is based on measurements
         along the four edges and two diagonals.
         """
-        p8.value, p9.value, p10.value = self._wrapper.new_box_resolution(p2._wrapper, p3, p4, p5, p6, p7, p8.value, p9.value, p10.value)
+        min_res.value, max_res.value, diag_res.value = self._wrapper.new_box_resolution(ip_jo._wrapper, res, min_x, min_y, max_x, max_y, min_res.value, max_res.value, diag_res.value)
         
 
 
 
 
-    def read(self, p2, p3, p4, p5):
+    def read(self, type, str1, str2, str3):
         """
         Read and define an `GXIPJ` from a standard file.
         """
-        self._wrapper.read(p2, p3.encode(), p4.encode(), p5.encode())
+        self._wrapper.read(type, str1.encode(), str2.encode(), str3.encode())
         
 
 
 
 
-    def get_method_parm(self, p2):
+    def get_method_parm(self, parm):
         """
         Get projection method parameter
         """
-        ret_val = self._wrapper.get_method_parm(p2)
+        ret_val = self._wrapper.get_method_parm(parm)
         return ret_val
 
 
 
 
-    def get_north_azimuth(self, p2, p3):
+    def get_north_azimuth(self, x, y):
         """
         Return the azimuth of geographic North at a point.
 
@@ -849,13 +849,13 @@ class GXIPJ:
         If the `GXIPJ` is not a projected coordinate system
         then the returned azimuth is `GS_R8DM`;
         """
-        ret_val = self._wrapper.get_north_azimuth(p2, p3)
+        ret_val = self._wrapper.get_north_azimuth(x, y)
         return ret_val
 
 
 
     @classmethod
-    def unit_scale(cls, p1, p2):
+    def unit_scale(cls, name, default):
         """
         Get a unit scale (m/unit) given a name
 
@@ -863,73 +863,73 @@ class GXIPJ:
 
         If name cannot be found, returns default.
         """
-        ret_val = gxapi_cy.WrapIPJ.unit_scale(GXContext._get_tls_geo(), p1.encode(), p2)
+        ret_val = gxapi_cy.WrapIPJ.unit_scale(GXContext._get_tls_geo(), name.encode(), default)
         return ret_val
 
 
 
 
-    def serial(self, p2):
+    def serial(self, bf):
         """
         Serialize `GXIPJ` to a `GXBF`.
         """
-        self._wrapper.serial(p2._wrapper)
+        self._wrapper.serial(bf._wrapper)
         
 
 
 
 
-    def serial_fgdcxml(self, p2):
+    def serial_fgdcxml(self, file):
         """
         Write the `GXIPJ` as a FDGC MetaData XML object
         """
-        self._wrapper.serial_fgdcxml(p2.encode())
+        self._wrapper.serial_fgdcxml(file.encode())
         
 
 
 
 
-    def serial_isoxml(self, p2):
+    def serial_isoxml(self, file):
         """
         Write the `GXIPJ` as a ISO MetaData XML object
         """
-        self._wrapper.serial_isoxml(p2.encode())
+        self._wrapper.serial_isoxml(file.encode())
         
 
 
 
 
-    def serial_xml(self, p2):
+    def serial_xml(self, file):
         """
         Write the `GXIPJ` as a Geosoft MetaData XML object
         """
-        self._wrapper.serial_xml(p2.encode())
+        self._wrapper.serial_xml(file.encode())
         
 
 
 
 
-    def set_3d_inverted(self, p2):
+    def set_3d_inverted(self, inverted):
         """
         Set whether a view is inverted (must be 3D already)
         """
-        self._wrapper.set_3d_inverted(p2)
+        self._wrapper.set_3d_inverted(inverted)
         
 
 
 
 
-    def set_3d_inverted_angles(self, p2):
+    def set_3d_inverted_angles(self, inverted):
         """
         Set whether the angles in this view are inverted (must be 3D already)
         """
-        self._wrapper.set_3d_inverted_angles(p2)
+        self._wrapper.set_3d_inverted_angles(inverted)
         
 
 
 
 
-    def set_3d_view(self, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+    def set_3d_view(self, x, y, z, rx, ry, rz, sx, sy, str_val):
         """
         Set 3D orientation parameters
 
@@ -938,13 +938,13 @@ class GXIPJ:
         Sets up translation, scaling and rotation in all three directions
         for 3D objects.
         """
-        self._wrapper.set_3d_view(p2, p3, p4, p5, p6, p7, p8, p9, p10)
+        self._wrapper.set_3d_view(x, y, z, rx, ry, rz, sx, sy, str_val)
         
 
 
 
 
-    def set_3d_view_ex(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+    def set_3d_view_ex(self, x, y, z, rx, ry, rz, sx, sy, str_val, rotate, flags):
         """
         Set 3D orientation parameters with new flags
 
@@ -953,13 +953,13 @@ class GXIPJ:
         Sets up translation, scaling and rotation in all three directions
         for 3D objects.
         """
-        self._wrapper.set_3d_view_ex(p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12)
+        self._wrapper.set_3d_view_ex(x, y, z, rx, ry, rz, sx, sy, str_val, rotate, flags)
         
 
 
 
 
-    def set_3d_view_from_axes(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13):
+    def set_3d_view_from_axes(self, x, y, z, x1, x2, x3, y1, y2, y3, sx, sy, str_val):
         """
         Set 3D orientation parameters
 
@@ -968,13 +968,13 @@ class GXIPJ:
         Sets up translation, scaling and rotation in all three directions
         for 3D objects, based on input origin and X and Y axis vectors.
         """
-        self._wrapper.set_3d_view_from_axes(p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13)
+        self._wrapper.set_3d_view_from_axes(x, y, z, x1, x2, x3, y1, y2, y3, sx, sy, str_val)
         
 
 
 
 
-    def set_crooked_section_view(self, p2, p3, p4, p5):
+    def set_crooked_section_view(self, dist_vv, xvv, yvv, log_z):
         """
         Set up the crooked section view.
 
@@ -983,23 +983,23 @@ class GXIPJ:
         A non-plane section. It is a vertical section which curves along a path in
         (X, Y).
         """
-        self._wrapper.set_crooked_section_view(p2._wrapper, p3._wrapper, p4._wrapper, p5)
+        self._wrapper.set_crooked_section_view(dist_vv._wrapper, xvv._wrapper, yvv._wrapper, log_z)
         
 
 
 
 
-    def set_depth_section_view(self, p2):
+    def set_depth_section_view(self, depth):
         """
         Set depth section orientation parameters
         """
-        self._wrapper.set_depth_section_view(p2)
+        self._wrapper.set_depth_section_view(depth)
         
 
 
 
 
-    def set_esri(self, p2):
+    def set_esri(self, esri):
         """
         Set coordinate system from an ESRI prj coordinate string
 
@@ -1008,7 +1008,7 @@ class GXIPJ:
         If the projection is not supported in Geosoft, the
         `GXIPJ` will be unknown.
         """
-        self._wrapper.set_esri(p2.encode())
+        self._wrapper.set_esri(esri.encode())
         
 
 
@@ -1161,7 +1161,7 @@ class GXIPJ:
 
 
 
-    def set_method_parm(self, p2, p3):
+    def set_method_parm(self, parm, parm_value):
         """
         Set projection method parameter
 
@@ -1169,23 +1169,23 @@ class GXIPJ:
 
         If parameter is not valid, nothing happens.
         """
-        self._wrapper.set_method_parm(p2, p3)
+        self._wrapper.set_method_parm(parm, parm_value)
         
 
 
 
 
-    def set_mi_coord_sys(self, p2, p3):
+    def set_mi_coord_sys(self, coord, units):
         """
         Set coordinate system from a MapInfo coordsys command
         """
-        self._wrapper.set_mi_coord_sys(p2.encode(), p3.encode())
+        self._wrapper.set_mi_coord_sys(coord.encode(), units.encode())
         
 
 
 
 
-    def set_normal_section_view(self, p2, p3, p4, p5, p6):
+    def set_normal_section_view(self, x, y, z, azimuth, swing):
         """
         Set normal section orientation parameters
 
@@ -1195,13 +1195,13 @@ class GXIPJ:
         normal to the section, and the "Y" values in a grid
         do not necessarily correspond to the elvations for a swung section.
         """
-        self._wrapper.set_normal_section_view(p2, p3, p4, p5, p6)
+        self._wrapper.set_normal_section_view(x, y, z, azimuth, swing)
         
 
 
 
 
-    def set_plan_view(self, p2, p3, p4, p5):
+    def set_plan_view(self, x, y, z, rot):
         """
         Set plan orientation parameters.
 
@@ -1215,13 +1215,13 @@ class GXIPJ:
         of the actual location in space, as opposed to just the X, Y of
         the view plane itself.
         """
-        self._wrapper.set_plan_view(p2, p3, p4, p5)
+        self._wrapper.set_plan_view(x, y, z, rot)
         
 
 
 
 
-    def set_section_view(self, p2, p3, p4, p5, p6):
+    def set_section_view(self, x, y, z, azimuth, swing):
         """
         Set section orientation parameters
 
@@ -1240,13 +1240,13 @@ class GXIPJ:
         This function is NOT suitable for simply creating
         an orientation for a dipping grid or view.
         """
-        self._wrapper.set_section_view(p2, p3, p4, p5, p6)
+        self._wrapper.set_section_view(x, y, z, azimuth, swing)
         
 
 
 
 
-    def set_wms_coord_sys(self, p2, p3, p4, p5, p6):
+    def set_wms_coord_sys(self, coord, min_x, min_y, max_x, max_y):
         """
         Set coordinate system from a WMS coordsys string.
 
@@ -1275,43 +1275,43 @@ class GXIPJ:
         units of the projection.  Normally, this is from
         long/lat (9102) to metres (9001).
         """
-        self._wrapper.set_wms_coord_sys(p2.encode(), p3, p4, p5, p6)
+        self._wrapper.set_wms_coord_sys(coord.encode(), min_x, min_y, max_x, max_y)
         
 
 
 
 
-    def set_xml(self, p2):
+    def set_xml(self, str_val):
         """
         Set an `GXIPJ` from a Geosoft Metadata XML string
         """
-        self._wrapper.set_xml(p2.encode())
+        self._wrapper.set_xml(str_val.encode())
         
 
 
 
 
-    def get_3d_matrix_orientation(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17):
+    def get_3d_matrix_orientation(self, v00, v01, v02, v03, v10, v11, v12, v13, v20, v21, v22, v23, v30, v31, v32, v33):
         """
         Gets the coefficients of a 3D matrix orientation.
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value, p15.value, p16.value, p17.value = self._wrapper.get_3d_matrix_orientation(p2.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value, p15.value, p16.value, p17.value)
+        v00.value, v01.value, v02.value, v03.value, v10.value, v11.value, v12.value, v13.value, v20.value, v21.value, v22.value, v23.value, v30.value, v31.value, v32.value, v33.value = self._wrapper.get_3d_matrix_orientation(v00.value, v01.value, v02.value, v03.value, v10.value, v11.value, v12.value, v13.value, v20.value, v21.value, v22.value, v23.value, v30.value, v31.value, v32.value, v33.value)
         
 
 
 
 
-    def set_3d_matrix_orientation(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17):
+    def set_3d_matrix_orientation(self, v00, v01, v02, v03, v10, v11, v12, v13, v20, v21, v22, v23, v30, v31, v32, v33):
         """
         Apply a 3D orientation directly using matrix coefficients.
         """
-        self._wrapper.set_3d_matrix_orientation(p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17)
+        self._wrapper.set_3d_matrix_orientation(v00, v01, v02, v03, v10, v11, v12, v13, v20, v21, v22, v23, v30, v31, v32, v33)
         
 
 
 
 
-    def reproject_section_grid(self, p2, p3, p4, p5, p6, p7):
+    def reproject_section_grid(self, output_ipj, x0, y0, dx, dy, rot):
         """
         Reproject a section grid
 
@@ -1320,7 +1320,7 @@ class GXIPJ:
         Reproject a section grid to a new `GXIPJ`, adjusting its orientation and registration so that
         it remains in the same location.
         """
-        p3.value, p4.value, p5.value, p6.value, p7.value = self._wrapper.reproject_section_grid(p2._wrapper, p3.value, p4.value, p5.value, p6.value, p7.value)
+        x0.value, y0.value, dx.value, dy.value, rot.value = self._wrapper.reproject_section_grid(output_ipj._wrapper, x0.value, y0.value, dx.value, dy.value, rot.value)
         
 
 

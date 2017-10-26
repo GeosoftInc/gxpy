@@ -58,7 +58,7 @@ class GXDATALINKD:
 
 
     @classmethod
-    def create_arc_lyr(cls, p1):
+    def create_arc_lyr(cls, arc_lyr_file):
         """
         Create an `GXDATALINKD` object from a ArcGIS LYR file
 
@@ -66,13 +66,13 @@ class GXDATALINKD:
 
         Needs ArcEngine licence.
         """
-        ret_val = gxapi_cy.WrapDATALINKD.create_arc_lyr(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapDATALINKD.create_arc_lyr(GXContext._get_tls_geo(), arc_lyr_file.encode())
         return GXDATALINKD(ret_val)
 
 
 
     @classmethod
-    def create_arc_lyr_ex(cls, p1, p2):
+    def create_arc_lyr_ex(cls, arc_lyr_file, o3d_group):
         """
         Create an `GXDATALINKD` object from a ArcGIS LYR file
 
@@ -80,13 +80,13 @@ class GXDATALINKD:
 
         Needs ArcEngine licence.
         """
-        ret_val = gxapi_cy.WrapDATALINKD.create_arc_lyr_ex(GXContext._get_tls_geo(), p1.encode(), p2)
+        ret_val = gxapi_cy.WrapDATALINKD.create_arc_lyr_ex(GXContext._get_tls_geo(), arc_lyr_file.encode(), o3d_group)
         return GXDATALINKD(ret_val)
 
 
 
     @classmethod
-    def create_arc_lyr_from_tmp(cls, p1):
+    def create_arc_lyr_from_tmp(cls, arc_lyr_file):
         """
         Create an `GXDATALINKD` object from a temporary ArcGIS LYR file
 
@@ -94,13 +94,13 @@ class GXDATALINKD:
 
         Needs ArcEngine licence.
         """
-        ret_val = gxapi_cy.WrapDATALINKD.create_arc_lyr_from_tmp(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapDATALINKD.create_arc_lyr_from_tmp(GXContext._get_tls_geo(), arc_lyr_file.encode())
         return GXDATALINKD(ret_val)
 
 
 
     @classmethod
-    def create_arc_lyr_from_tmp_ex(cls, p1, p2):
+    def create_arc_lyr_from_tmp_ex(cls, arc_lyr_file, o3d_group):
         """
         Create an `GXDATALINKD` object from a temporary ArcGIS LYR file
 
@@ -108,17 +108,17 @@ class GXDATALINKD:
 
         Needs ArcEngine licence.
         """
-        ret_val = gxapi_cy.WrapDATALINKD.create_arc_lyr_from_tmp_ex(GXContext._get_tls_geo(), p1.encode(), p2)
+        ret_val = gxapi_cy.WrapDATALINKD.create_arc_lyr_from_tmp_ex(GXContext._get_tls_geo(), arc_lyr_file.encode(), o3d_group)
         return GXDATALINKD(ret_val)
 
 
 
     @classmethod
-    def create_bing(cls, p1):
+    def create_bing(cls, layer):
         """
         Create an `GXDATALINKD` object for a BING dataset
         """
-        ret_val = gxapi_cy.WrapDATALINKD.create_bing(GXContext._get_tls_geo(), p1)
+        ret_val = gxapi_cy.WrapDATALINKD.create_bing(GXContext._get_tls_geo(), layer)
         return GXDATALINKD(ret_val)
 
 
@@ -126,21 +126,21 @@ class GXDATALINKD:
 
 
 
-    def get_extents(self, p2, p3, p4, p5):
+    def get_extents(self, min_x, max_x, min_y, max_y):
         """
         Get the data extents of the DATALINK Display object.
         """
-        p2.value, p3.value, p4.value, p5.value = self._wrapper.get_extents(p2.value, p3.value, p4.value, p5.value)
+        min_x.value, max_x.value, min_y.value, max_y.value = self._wrapper.get_extents(min_x.value, max_x.value, min_y.value, max_y.value)
         
 
 
 
 
-    def get_ipj(self, p2):
+    def get_ipj(self, ipj):
         """
         Get the projection of the DATALINK Display object.
         """
-        self._wrapper.get_ipj(p2._wrapper)
+        self._wrapper.get_ipj(ipj._wrapper)
         
 
 

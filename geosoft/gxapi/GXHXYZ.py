@@ -61,11 +61,11 @@ class GXHXYZ:
 
 
     @classmethod
-    def create(cls, p1):
+    def create(cls, name):
         """
         Create a handle to an `GXHXYZ` object
         """
-        ret_val = gxapi_cy.WrapHXYZ.create(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapHXYZ.create(GXContext._get_tls_geo(), name.encode())
         return GXHXYZ(ret_val)
 
 
@@ -73,41 +73,41 @@ class GXHXYZ:
 
 
 
-    def get_meta(self, p2):
+    def get_meta(self, meta):
         """
         Get the metadata of a grid.
         """
-        self._wrapper.get_meta(p2._wrapper)
+        self._wrapper.get_meta(meta._wrapper)
         
 
 
 
     @classmethod
-    def h_create_db(cls, p1, p2, p3):
+    def h_create_db(cls, db, gvv, name):
         """
         Make an `GXHXYZ` from GDB
         """
-        ret_val = gxapi_cy.WrapHXYZ.h_create_db(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3.encode())
+        ret_val = gxapi_cy.WrapHXYZ.h_create_db(GXContext._get_tls_geo(), db._wrapper, gvv._wrapper, name.encode())
         return GXHXYZ(ret_val)
 
 
 
     @classmethod
-    def h_create_sql(cls, p1, p2, p3, p4, p5, p6):
+    def h_create_sql(cls, template, x, y, z, ipj, name):
         """
         Make an `GXHXYZ` from SQL Query
         """
-        ret_val = gxapi_cy.WrapHXYZ.h_create_sql(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4.encode(), p5._wrapper, p6.encode())
+        ret_val = gxapi_cy.WrapHXYZ.h_create_sql(GXContext._get_tls_geo(), template.encode(), x.encode(), y.encode(), z.encode(), ipj._wrapper, name.encode())
         return GXHXYZ(ret_val)
 
 
 
 
-    def set_meta(self, p2):
+    def set_meta(self, meta):
         """
         Set the metadata of a grid.
         """
-        self._wrapper.set_meta(p2._wrapper)
+        self._wrapper.set_meta(meta._wrapper)
         
 
 

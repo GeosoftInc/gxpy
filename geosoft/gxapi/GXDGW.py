@@ -95,12 +95,12 @@ class GXDGW:
 
 
     @classmethod
-    def create(cls, p1):
+    def create(cls, name):
         """
         This method creates a Dialog window from a specified
         resource. The Resource is loaded into memory but not displayed.
         """
-        ret_val = gxapi_cy.WrapDGW.create(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapDGW.create(GXContext._get_tls_geo(), name.encode())
         return GXDGW(ret_val)
 
 
@@ -118,34 +118,34 @@ class GXDGW:
 
 
 
-    def get_info_sys(self, p2, p3, p4, p5):
+    def get_info_sys(self, id, info, group, field):
         """
         This method uses the information in a Dialog box to
         set a `GXSYS` variable.
         """
-        self._wrapper.get_info_sys(p2, p3, p4.encode(), p5.encode())
+        self._wrapper.get_info_sys(id, info, group.encode(), field.encode())
         
 
 
 
 
-    def get_list(self, p2):
+    def get_list(self, id):
         """
         This method retrieves the list (`GXLST`) object associated
         with a Dialog object.
         """
-        ret_val = self._wrapper.get_list(p2)
+        ret_val = self._wrapper.get_list(id)
         return GXLST(ret_val)
 
 
 
 
-    def gt_info(self, p2, p3, p4):
+    def gt_info(self, id, info, buff):
         """
         This method fills the specified string with the text from
         the text object specified.
         """
-        p4.value = self._wrapper.gt_info(p2, p3, p4.value.encode())
+        buff.value = self._wrapper.gt_info(id, info, buff.value.encode())
         
 
 
@@ -161,12 +161,12 @@ class GXDGW:
 
 
 
-    def set_info(self, p2, p3, p4):
+    def set_info(self, id, info, buff):
         """
         This method sets the string of a text object. If the string
         is too long it will be truncated.
         """
-        self._wrapper.set_info(p2, p3, p4.encode())
+        self._wrapper.set_info(id, info, buff.encode())
         
 
 
@@ -182,19 +182,19 @@ class GXDGW:
 
 
 
-    def set_info_sys(self, p2, p3, p4, p5):
+    def set_info_sys(self, id, info, group, field):
         """
         This sets a text object to the text found in a system
         parameter variable. If the variable has not been set,
         the text is not set.
         """
-        self._wrapper.set_info_sys(p2, p3, p4.encode(), p5.encode())
+        self._wrapper.set_info_sys(id, info, group.encode(), field.encode())
         
 
 
 
 
-    def set_title(self, p2):
+    def set_title(self, title):
         """
         Changes the title of the dialog.
 
@@ -215,7 +215,7 @@ class GXDGW:
         special font specified using the MONTAJ.GX_TITLE_FONT parameter noted
         above in "Setting Fonts in GX dialogs."
         """
-        self._wrapper.set_title(p2.encode())
+        self._wrapper.set_title(title.encode())
         
 
 

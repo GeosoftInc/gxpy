@@ -58,11 +58,11 @@ class GXGMSYS:
 
 
     @classmethod
-    def launch(cls, p1):
+    def launch(cls, model):
         """
         Launch `GXGMSYS` with extension
         """
-        gxapi_cy.WrapGMSYS.launch(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapGMSYS.launch(GXContext._get_tls_geo(), model.encode())
         
 
 

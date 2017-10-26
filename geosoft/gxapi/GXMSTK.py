@@ -77,7 +77,7 @@ class GXMSTK:
 
 
 
-    def chan_list_vv(self, p2, p3, p4, p5, p6, p7):
+    def chan_list_vv(self, db, num_ch_vv, str_ch_vv, x_ch_vv, prof_ch_vv, prof_ch__un_used_vv):
         """
         Save channel names in VVs based on channel types
 
@@ -86,7 +86,7 @@ class GXMSTK:
         Terms 'used' and 'unused' indicate that the a channel name
         in database also 'in' and 'not in' the `GXMSTK` object respectively
         """
-        self._wrapper.chan_list_vv(p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper, p7._wrapper)
+        self._wrapper.chan_list_vv(db._wrapper, num_ch_vv._wrapper, str_ch_vv._wrapper, x_ch_vv._wrapper, prof_ch_vv._wrapper, prof_ch__un_used_vv._wrapper)
         
 
 
@@ -104,27 +104,27 @@ class GXMSTK:
 
 
 
-    def draw_profile(self, p2, p3, p4):
+    def draw_profile(self, db, line, map):
         """
         Draw multiple profiles in map
         """
-        self._wrapper.draw_profile(p2._wrapper, p3, p4._wrapper)
+        self._wrapper.draw_profile(db._wrapper, line, map._wrapper)
         
 
 
 
 
-    def set_y_axis_direction(self, p2):
+    def set_y_axis_direction(self, direction):
         """
         Set the Y-axis direction - normal or inverted
         """
-        self._wrapper.set_y_axis_direction(p2)
+        self._wrapper.set_y_axis_direction(direction)
         
 
 
 
 
-    def find_stk2(self, p2, p3, p4):
+    def find_stk2(self, str_val, index, v_vrtd):
         """
         Find index of `GXSTK` from a string of group names and X/Y channels
 
@@ -137,24 +137,24 @@ class GXMSTK:
         for example, string "DATA ( DIST , MAG )"  indicates a map group name of DATA,
         X channel name of DIST and Y channel name of MAG.
         """
-        p3.value = self._wrapper.find_stk2(p2.encode(), p3.value, p4._wrapper)
+        index.value = self._wrapper.find_stk2(str_val.encode(), index.value, v_vrtd._wrapper)
         
 
 
 
 
-    def get_stk(self, p2):
+    def get_stk(self, num):
         """
         Get a specific `GXSTK` object from a `GXMSTK` object
         (Index of 0 gets the first `GXSTK` in the `GXMSTK`)
         """
-        ret_val = self._wrapper.get_stk(p2)
+        ret_val = self._wrapper.get_stk(num)
         return GXSTK(ret_val)
 
 
 
 
-    def delete_stk(self, p2):
+    def delete_stk(self, num):
         """
         Delete a `GXSTK` object
 
@@ -162,13 +162,13 @@ class GXMSTK:
 
         0 is the first one
         """
-        self._wrapper.delete_stk(p2)
+        self._wrapper.delete_stk(num)
         
 
 
 
 
-    def find_stk(self, p2, p3, p4, p6, p8):
+    def find_stk(self, str_val, index, group, x_ch, y_ch):
         """
         Find index of `GXSTK` from a string of group names and X/Y channels
 
@@ -181,7 +181,7 @@ class GXMSTK:
         for example, string "DATA ( DIST , MAG )"  indicates a map group name of DATA,
         X channel name of DIST and Y channel name of MAG.
         """
-        p3.value, p4.value, p6.value, p8.value = self._wrapper.find_stk(p2.encode(), p3.value, p4.value.encode(), p6.value.encode(), p8.value.encode())
+        index.value, group.value, x_ch.value, y_ch.value = self._wrapper.find_stk(str_val.encode(), index.value, group.value.encode(), x_ch.value.encode(), y_ch.value.encode())
         
 
 
@@ -197,21 +197,21 @@ class GXMSTK:
 
 
 
-    def read_ini(self, p2):
+    def read_ini(self, ra):
         """
         Read multiple profiles parameters from an INI file
         """
-        self._wrapper.read_ini(p2._wrapper)
+        self._wrapper.read_ini(ra._wrapper)
         
 
 
 
 
-    def save_profile(self, p2):
+    def save_profile(self, wa):
         """
         Save multiple profile INI parameters in a `GXWA` file of INI format
         """
-        self._wrapper.save_profile(p2._wrapper)
+        self._wrapper.save_profile(wa._wrapper)
         
 
 

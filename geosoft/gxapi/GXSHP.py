@@ -80,7 +80,7 @@ class GXSHP:
 
 
     @classmethod
-    def create(cls, p1, p2):
+    def create(cls, name, type):
         """
         Create a new `GXSHP` object
 
@@ -104,7 +104,7 @@ class GXSHP:
         `SHP_GEOM_TYPE_ARCZ`      `set_arc_z`
         `SHP_GEOM_TYPE_POLYGONZ`  `set_polygon_z`
         """
-        ret_val = gxapi_cy.WrapSHP.create(GXContext._get_tls_geo(), p1.encode(), p2)
+        ret_val = gxapi_cy.WrapSHP.create(GXContext._get_tls_geo(), name.encode(), type)
         return GXSHP(ret_val)
 
 
@@ -112,7 +112,7 @@ class GXSHP:
 
 
 
-    def add_int_field(self, p2):
+    def add_int_field(self, field):
         """
         Add an INT type data field to a shape file
 
@@ -121,13 +121,13 @@ class GXSHP:
         The returned field index should be used with the SetXXX_SHP
         functions to set individual data values.
         """
-        ret_val = self._wrapper.add_int_field(p2.encode())
+        ret_val = self._wrapper.add_int_field(field.encode())
         return ret_val
 
 
 
 
-    def add_double_field(self, p2, p3):
+    def add_double_field(self, field, dec):
         """
         Add a REAL type data field to a shape file
 
@@ -136,13 +136,13 @@ class GXSHP:
         The returned field index should be used with the SetXXX_SHP
         functions to set individual data values.
         """
-        ret_val = self._wrapper.add_double_field(p2.encode(), p3)
+        ret_val = self._wrapper.add_double_field(field.encode(), dec)
         return ret_val
 
 
 
 
-    def add_string_field(self, p2, p3):
+    def add_string_field(self, field, width):
         """
         Add a string type data field to a shape file
 
@@ -151,17 +151,17 @@ class GXSHP:
         The returned field index should be used with the SetXXX_SHP
         functions to set individual data values.
         """
-        ret_val = self._wrapper.add_string_field(p2.encode(), p3)
+        ret_val = self._wrapper.add_string_field(field.encode(), width)
         return ret_val
 
 
 
 
-    def find_field(self, p2):
+    def find_field(self, field):
         """
         Find the index for a data field.
         """
-        ret_val = self._wrapper.find_field(p2.encode())
+        ret_val = self._wrapper.find_field(field.encode())
         return ret_val
 
 
@@ -207,17 +207,17 @@ class GXSHP:
 
 
     @classmethod
-    def open(cls, p1):
+    def open(cls, name):
         """
         Open an old `GXSHP` object
         """
-        ret_val = gxapi_cy.WrapSHP.open(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapSHP.open(GXContext._get_tls_geo(), name.encode())
         return GXSHP(ret_val)
 
 
 
 
-    def set_arc(self, p2, p3):
+    def set_arc(self, v_vx, v_vy):
         """
         Write an XY arc (polyline) item.
 
@@ -225,13 +225,13 @@ class GXSHP:
 
         Can ONLY be used for `SHP_GEOM_TYPE_ARC` files.
         """
-        self._wrapper.set_arc(p2._wrapper, p3._wrapper)
+        self._wrapper.set_arc(v_vx._wrapper, v_vy._wrapper)
         
 
 
 
 
-    def set_arc_z(self, p2, p3, p4):
+    def set_arc_z(self, v_vx, v_vy, v_vz):
         """
         Write an XYZ arc (polyline) item.
 
@@ -239,13 +239,13 @@ class GXSHP:
 
         Can ONLY be used for `SHP_GEOM_TYPE_ARCZ` files.
         """
-        self._wrapper.set_arc_z(p2._wrapper, p3._wrapper, p4._wrapper)
+        self._wrapper.set_arc_z(v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
         
 
 
 
 
-    def set_int(self, p2, p3):
+    def set_int(self, index, val):
         """
         Set a data value to a int.
 
@@ -253,13 +253,13 @@ class GXSHP:
 
         The input value is converted to the field's data type.
         """
-        self._wrapper.set_int(p2, p3)
+        self._wrapper.set_int(index, val)
         
 
 
 
 
-    def set_ipj(self, p2):
+    def set_ipj(self, ipj):
         """
         Set a `GXSHP` object's projection.
 
@@ -272,13 +272,13 @@ class GXSHP:
         This function should be called BEFORE the first
         object is written.
         """
-        self._wrapper.set_ipj(p2._wrapper)
+        self._wrapper.set_ipj(ipj._wrapper)
         
 
 
 
 
-    def set_point(self, p2, p3):
+    def set_point(self, x, y):
         """
         Write an XY point item.
 
@@ -286,13 +286,13 @@ class GXSHP:
 
         Can ONLY be used for `SHP_GEOM_TYPE_POINT` files.
         """
-        self._wrapper.set_point(p2, p3)
+        self._wrapper.set_point(x, y)
         
 
 
 
 
-    def set_point_z(self, p2, p3, p4):
+    def set_point_z(self, x, y, z):
         """
         Write an XYZ point item.
 
@@ -300,13 +300,13 @@ class GXSHP:
 
         Can ONLY be used for `SHP_GEOM_TYPE_POINTZ` files.
         """
-        self._wrapper.set_point_z(p2, p3, p4)
+        self._wrapper.set_point_z(x, y, z)
         
 
 
 
 
-    def set_polygon(self, p2, p3, p4):
+    def set_polygon(self, v_vx, v_vy, inclusive):
         """
         Write an XY polygon item.
 
@@ -314,13 +314,13 @@ class GXSHP:
 
         Can ONLY be used for `SHP_GEOM_TYPE_POLYGON` files.
         """
-        self._wrapper.set_polygon(p2._wrapper, p3._wrapper, p4)
+        self._wrapper.set_polygon(v_vx._wrapper, v_vy._wrapper, inclusive)
         
 
 
 
 
-    def set_polygon_z(self, p2, p3, p4, p5):
+    def set_polygon_z(self, v_vx, v_vy, v_vz, inclusive):
         """
         Write an XYZ polygon item.
 
@@ -328,13 +328,13 @@ class GXSHP:
 
         Can ONLY be used for `SHP_GEOM_TYPE_POLYGONZ` files.
         """
-        self._wrapper.set_polygon_z(p2._wrapper, p3._wrapper, p4._wrapper, p5)
+        self._wrapper.set_polygon_z(v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, inclusive)
         
 
 
 
 
-    def set_double(self, p2, p3):
+    def set_double(self, index, val):
         """
         Set a data value to a real.
 
@@ -342,13 +342,13 @@ class GXSHP:
 
         The input value is converted to the field's data type.
         """
-        self._wrapper.set_double(p2, p3)
+        self._wrapper.set_double(index, val)
         
 
 
 
 
-    def set_string(self, p2, p3):
+    def set_string(self, index, str_val):
         """
         Set a data value to a string.
 
@@ -356,7 +356,7 @@ class GXSHP:
 
         The input string is converted to the field's data type.
         """
-        self._wrapper.set_string(p2, p3.encode())
+        self._wrapper.set_string(index, str_val.encode())
         
 
 

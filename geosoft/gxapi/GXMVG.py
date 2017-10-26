@@ -59,7 +59,7 @@ class GXMVG:
 
 
 
-    def axis_x(self, p2, p3, p4, p5, p6, p7):
+    def axis_x(self, d_y, p3, p4, p5, p6, p7):
         """
         Draw an X axis
 
@@ -70,13 +70,13 @@ class GXMVG:
         
         Obsolete
         """
-        self._wrapper.axis_x(p2, p3, p4, p5, p6, p7)
+        self._wrapper.axis_x(d_y, p3, p4, p5, p6, p7)
         
 
 
 
 
-    def axis_y(self, p2, p3, p4, p5, p6, p7):
+    def axis_y(self, d_x, p3, p4, p5, p6, p7):
         """
         Draw a  Y axis
 
@@ -87,13 +87,13 @@ class GXMVG:
         
         Obsolete
         """
-        self._wrapper.axis_y(p2, p3, p4, p5, p6, p7)
+        self._wrapper.axis_y(d_x, p3, p4, p5, p6, p7)
         
 
 
 
     @classmethod
-    def create(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+    def create(cls, map, name, xmin_m, p4, p5, p6, p7, p8, p9, p10):
         """
         Create a `GXMVG` object
 
@@ -101,7 +101,7 @@ class GXMVG:
 
         Obsolete
         """
-        ret_val = gxapi_cy.WrapMVG.create(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3, p4, p5, p6, p7, p8, p9, p10)
+        ret_val = gxapi_cy.WrapMVG.create(GXContext._get_tls_geo(), map._wrapper, name.encode(), xmin_m, p4, p5, p6, p7, p8, p9, p10)
         return GXMVG(ret_val)
 
 
@@ -123,7 +123,7 @@ class GXMVG:
 
 
 
-    def grid(self, p2, p3, p4, p5, p6, p7, p8):
+    def grid(self, d1st_x, d1st_y, d_x, p5, p6, p7, p8):
         """
         Draw a grid in the current `GXMVG`
 
@@ -137,13 +137,13 @@ class GXMVG:
         
         Obsolete
         """
-        self._wrapper.grid(p2, p3, p4, p5, p6, p7, p8)
+        self._wrapper.grid(d1st_x, d1st_y, d_x, p5, p6, p7, p8)
         
 
 
 
 
-    def label_x(self, p2, p3, p4, p5, p6, p7, p8):
+    def label_x(self, y, p3, p4, p5, p6, p7, p8):
         """
         Label annotations on the X axis
 
@@ -160,13 +160,13 @@ class GXMVG:
 
             sAxisX_MVG
         """
-        self._wrapper.label_x(p2, p3, p4, p5, p6, p7, p8)
+        self._wrapper.label_x(y, p3, p4, p5, p6, p7, p8)
         
 
 
 
 
-    def label_y(self, p2, p3, p4, p5, p6, p7, p8):
+    def label_y(self, x, by, p4, p5, p6, p7, p8):
         """
         Label annotations on the Y axis
 
@@ -183,13 +183,13 @@ class GXMVG:
 
             sAxisY_MVG
         """
-        self._wrapper.label_y(p2, p3, p4, p5, p6, p7, p8)
+        self._wrapper.label_y(x, by, p4, p5, p6, p7, p8)
         
 
 
 
 
-    def poly_line_va(self, p2, p3, p4, p5, p6):
+    def poly_line_va(self, draw, wrap, v_vx, va, v_varray):
         """
         Creates PolyLines/polygons from `GXVV` and `GXVA`.
 
@@ -204,13 +204,13 @@ class GXMVG:
         
         Obsolete
         """
-        self._wrapper.poly_line_va(p2, p3, p4._wrapper, p5._wrapper, p6._wrapper)
+        self._wrapper.poly_line_va(draw, wrap, v_vx._wrapper, va._wrapper, v_varray._wrapper)
         
 
 
 
 
-    def poly_line_vv(self, p2, p3, p4, p5):
+    def poly_line_vv(self, draw, wrap, v_vx, v_vy):
         """
         Creates PolyLines/polygons from `GXVV` and `GXVV`.
 
@@ -225,13 +225,13 @@ class GXMVG:
         
         Obsolete
         """
-        self._wrapper.poly_line_vv(p2, p3, p4._wrapper, p5._wrapper)
+        self._wrapper.poly_line_vv(draw, wrap, v_vx._wrapper, v_vy._wrapper)
         
 
 
 
 
-    def rescale_x_range(self, p2, p3, p4, p5):
+    def rescale_x_range(self, scale, min, max, log_min):
         """
         Re-scale horizontal axis
 
@@ -242,13 +242,13 @@ class GXMVG:
         
         Obsolete
         """
-        self._wrapper.rescale_x_range(p2, p3, p4, p5)
+        self._wrapper.rescale_x_range(scale, min, max, log_min)
         
 
 
 
 
-    def rescale_y_range(self, p2, p3, p4, p5):
+    def rescale_y_range(self, scale, min, max, log_min):
         """
         Re-scale vertical axis
 
@@ -259,7 +259,7 @@ class GXMVG:
         
         Obsolete
         """
-        self._wrapper.rescale_y_range(p2, p3, p4, p5)
+        self._wrapper.rescale_y_range(scale, min, max, log_min)
         
 
 

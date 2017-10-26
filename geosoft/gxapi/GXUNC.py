@@ -65,27 +65,27 @@ class GXUNC:
 
 
     @classmethod
-    def is_valid_utf16_char(cls, p1):
+    def is_valid_utf16_char(cls, ch):
         """
         Check if the UTF-16 value is a valid Unicode character code point.
         """
-        ret_val = gxapi_cy.WrapUNC.is_valid_utf16_char(GXContext._get_tls_geo(), p1)
+        ret_val = gxapi_cy.WrapUNC.is_valid_utf16_char(GXContext._get_tls_geo(), ch)
         return ret_val
 
 
 
     @classmethod
-    def valid_symbol(cls, p1, p2, p3):
+    def valid_symbol(cls, face, geofont, number):
         """
         See if a Symbol number is valid in a particular font.
         """
-        ret_val = gxapi_cy.WrapUNC.valid_symbol(GXContext._get_tls_geo(), p1.encode(), p2, p3)
+        ret_val = gxapi_cy.WrapUNC.valid_symbol(GXContext._get_tls_geo(), face.encode(), geofont, number)
         return ret_val
 
 
 
     @classmethod
-    def utf16_val_to_str(cls, p1, p2):
+    def utf16_val_to_str(cls, ch, p2):
         """
         Convert a UTF-16 value to a UTF-8 encoded string.
 
@@ -93,13 +93,13 @@ class GXUNC:
 
         An empty string will be returned for invalid symbols
         """
-        p2.value = gxapi_cy.WrapUNC.utf16_val_to_str(GXContext._get_tls_geo(), p1, p2.value.encode())
+        p2.value = gxapi_cy.WrapUNC.utf16_val_to_str(GXContext._get_tls_geo(), ch, p2.value.encode())
         
 
 
 
     @classmethod
-    def validate_symbols(cls, p1, p2, p3):
+    def validate_symbols(cls, vv, face, geofont):
         """
         High performance method to see if a set of symbols
         are valid in a particular font.
@@ -108,7 +108,7 @@ class GXUNC:
 
         Invalid symbols in the `GXVV` will be set to -1 by this call. `GXVV` has to be of type `GS_LONG`.
         """
-        gxapi_cy.WrapUNC.validate_symbols(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3)
+        gxapi_cy.WrapUNC.validate_symbols(GXContext._get_tls_geo(), vv._wrapper, face.encode(), geofont)
         
 
 

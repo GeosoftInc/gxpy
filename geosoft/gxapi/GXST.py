@@ -105,21 +105,21 @@ class GXST:
 
 
 
-    def data(self, p2):
+    def data(self, val):
         """
         Add this value to the statistics object.
         """
-        self._wrapper.data(p2)
+        self._wrapper.data(val)
         
 
 
 
 
-    def data_vv(self, p2):
+    def data_vv(self, vv):
         """
         Add all the values in this `GXVV` to the statistics object.
         """
-        self._wrapper.data_vv(p2._wrapper)
+        self._wrapper.data_vv(vv._wrapper)
         
 
 
@@ -127,7 +127,7 @@ class GXST:
 
 
 
-    def get_histogram_bins(self, p2):
+    def get_histogram_bins(self, vv):
         """
         Retrieve number of items in each hostogram bin
 
@@ -137,13 +137,13 @@ class GXST:
         number of bins. If a histogram is not defined in
         the `GXST`, then the returned length is zero.
         """
-        self._wrapper.get_histogram_bins(p2._wrapper)
+        self._wrapper.get_histogram_bins(vv._wrapper)
         
 
 
 
 
-    def get_histogram_info(self, p2, p3, p4):
+    def get_histogram_info(self, div, p3, p4):
         """
         Retrieve number of bins, min and max value in histogram
 
@@ -154,13 +154,13 @@ class GXST:
         the `GXST`, then the returned number of bins is zero, and
         the min and max values will be dummies.
         """
-        p2.value, p3.value, p4.value = self._wrapper.get_histogram_info(p2.value, p3.value, p4.value)
+        div.value, p3.value, p4.value = self._wrapper.get_histogram_info(div.value, p3.value, p4.value)
         
 
 
 
 
-    def histogram(self, p2):
+    def histogram(self, div):
         """
         This method prepares `GXST` for recording histogram.
 
@@ -180,13 +180,13 @@ class GXST:
         
         See the note above "Histogram ranges and color zone ranges"
         """
-        self._wrapper.histogram(p2)
+        self._wrapper.histogram(div)
         
 
 
 
 
-    def histogram2(self, p2, p3, p4):
+    def histogram2(self, div, p3, p4):
         """
         This method prepares `GXST` for recording histogram.
 
@@ -198,13 +198,13 @@ class GXST:
         
         See the note above "Histogram ranges and color zone ranges"
         """
-        self._wrapper.histogram2(p2, p3, p4)
+        self._wrapper.histogram2(div, p3, p4)
         
 
 
 
 
-    def equivalent_percentile(self, p2):
+    def equivalent_percentile(self, value):
         """
         Return corresponding Percentile for a Value.
 
@@ -213,13 +213,13 @@ class GXST:
         Statistics and histogram must have been calculated prior to
         calling this method
         """
-        ret_val = self._wrapper.equivalent_percentile(p2)
+        ret_val = self._wrapper.equivalent_percentile(value)
         return ret_val
 
 
 
 
-    def equivalent_value(self, p2):
+    def equivalent_value(self, percent):
         """
         Return corresponding Value for a Percentile
 
@@ -228,7 +228,7 @@ class GXST:
         Statistics and histogram must have been calculated prior to
         calling this method
         """
-        ret_val = self._wrapper.equivalent_value(p2)
+        ret_val = self._wrapper.equivalent_value(percent)
         return ret_val
 
 
@@ -244,7 +244,7 @@ class GXST:
 
 
 
-    def get_info(self, p2):
+    def get_info(self, id):
         """
         This method allows you to retrieve (and compute) the
         information from the `GXST` object.
@@ -257,27 +257,27 @@ class GXST:
         `ST_MINPOS` can be used to retrieve the smallest value greater
         than zero, but not from `GXST` objects recovered from serialized object.
         """
-        ret_val = self._wrapper.get_info(p2)
+        ret_val = self._wrapper.get_info(id)
         return ret_val
 
 
 
     @classmethod
-    def get_norm_prob(cls, p1):
+    def get_norm_prob(cls, x):
         """
         Return percent value
         """
-        ret_val = gxapi_cy.WrapST.get_norm_prob(GXContext._get_tls_geo(), p1)
+        ret_val = gxapi_cy.WrapST.get_norm_prob(GXContext._get_tls_geo(), x)
         return ret_val
 
 
 
     @classmethod
-    def get_norm_prob_x(cls, p1):
+    def get_norm_prob_x(cls, percent):
         """
         Return number of sigmas from 50% a given percent is
         """
-        ret_val = gxapi_cy.WrapST.get_norm_prob_x(GXContext._get_tls_geo(), p1)
+        ret_val = gxapi_cy.WrapST.get_norm_prob_x(GXContext._get_tls_geo(), percent)
         return ret_val
 
 

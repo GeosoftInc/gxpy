@@ -61,27 +61,27 @@ class GXCSYMB:
 
 
 
-    def set_angle(self, p2):
+    def set_angle(self, angle):
         """
         Set the symbol angle.
         """
-        self._wrapper.set_angle(p2)
+        self._wrapper.set_angle(angle)
         
 
 
 
 
-    def set_base(self, p2):
+    def set_base(self, base):
         """
         Set base value to subtract from Z values.
         """
-        self._wrapper.set_base(p2)
+        self._wrapper.set_base(base)
         
 
 
 
 
-    def set_dynamic_col(self, p2):
+    def set_dynamic_col(self, att):
         """
         Associate symbol edge or fill colors with Z data
         and color transform.
@@ -92,23 +92,23 @@ class GXCSYMB:
         reestablishes the symbol color association with their Z data
         values and color transform.
         """
-        self._wrapper.set_dynamic_col(p2)
+        self._wrapper.set_dynamic_col(att)
         
 
 
 
 
-    def set_fixed(self, p2):
+    def set_fixed(self, fixed):
         """
         Set symbol sizing to fixed (or proportionate)
         """
-        self._wrapper.set_fixed(p2)
+        self._wrapper.set_fixed(fixed)
         
 
 
 
 
-    def set_number(self, p2):
+    def set_number(self, number):
         """
         Set the symbol number.
 
@@ -121,37 +121,37 @@ class GXCSYMB:
         It is possible to check if a character is valid using `GXUNC.is_valid_utf16_char`. The high 16-bits are reserved
         for future use. Also see: `GXUNC.valid_symbol` and `GXUNC.validate_symbols`
         """
-        self._wrapper.set_number(p2)
+        self._wrapper.set_number(number)
         
 
 
 
 
-    def set_scale(self, p2):
+    def set_scale(self, scale):
         """
         Set the symbol scale.
         """
-        self._wrapper.set_scale(p2)
+        self._wrapper.set_scale(scale)
         
 
 
 
 
-    def add_data(self, p2, p3, p4):
+    def add_data(self, v_vx, v_vy, v_vz):
         """
         Add x,y,z data to a color symbol object.
         """
-        self._wrapper.add_data(p2._wrapper, p3._wrapper, p4._wrapper)
+        self._wrapper.add_data(v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
         
 
 
 
     @classmethod
-    def create(cls, p1):
+    def create(cls, itr):
         """
         Create a `GXCSYMB`.
         """
-        ret_val = gxapi_cy.WrapCSYMB.create(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapCSYMB.create(GXContext._get_tls_geo(), itr.encode())
         return GXCSYMB(ret_val)
 
 
@@ -159,27 +159,27 @@ class GXCSYMB:
 
 
 
-    def get_itr(self, p2):
+    def get_itr(self, itr):
         """
         Get the `GXITR` of the `GXCSYMB`
         """
-        self._wrapper.get_itr(p2._wrapper)
+        self._wrapper.get_itr(itr._wrapper)
         
 
 
 
 
-    def set_font(self, p2, p3, p4, p5):
+    def set_font(self, font, geo_font, p4, p5):
         """
         Set the symbol font name.
         """
-        self._wrapper.set_font(p2.encode(), p3, p4, p5)
+        self._wrapper.set_font(font.encode(), geo_font, p4, p5)
         
 
 
 
 
-    def set_static_col(self, p2, p3):
+    def set_static_col(self, col, att):
         """
         Set a static color for the symbol edge or fill.
 
@@ -189,7 +189,7 @@ class GXCSYMB:
         By default, both edge and fill colors vary according to their
         Z data values and a color transform.
         """
-        self._wrapper.set_static_col(p2, p3)
+        self._wrapper.set_static_col(col, att)
         
 
 

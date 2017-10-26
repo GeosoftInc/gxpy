@@ -58,11 +58,11 @@ class GXEXT:
 
 
     @classmethod
-    def get_info(cls, p1, p2, p3, p4, p5, p6):
+    def get_info(cls, img, xmin, ymin, xmax, ymax, ipj):
         """
         Retrieves information about an external image format.
         """
-        p2.value, p3.value, p4.value, p5.value = gxapi_cy.WrapEXT.get_info(GXContext._get_tls_geo(), p1.encode(), p2.value, p3.value, p4.value, p5.value, p6._wrapper)
+        xmin.value, ymin.value, xmax.value, ymax.value = gxapi_cy.WrapEXT.get_info(GXContext._get_tls_geo(), img.encode(), xmin.value, ymin.value, xmax.value, ymax.value, ipj._wrapper)
         
 
 

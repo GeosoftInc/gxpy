@@ -61,11 +61,11 @@ class GX3DN:
 
 
 
-    def copy(self, p2):
+    def copy(self, source):
         """
         Copy one `GX3DN` object to another.
         """
-        self._wrapper.copy(p2._wrapper)
+        self._wrapper.copy(source._wrapper)
         
 
 
@@ -83,21 +83,21 @@ class GX3DN:
 
 
 
-    def get_point_of_view(self, p2, p3, p4):
+    def get_point_of_view(self, distance, declination, inclination):
         """
         Get location of the point we are looking from
         """
-        p2.value, p3.value, p4.value = self._wrapper.get_point_of_view(p2.value, p3.value, p4.value)
+        distance.value, declination.value, inclination.value = self._wrapper.get_point_of_view(distance.value, declination.value, inclination.value)
         
 
 
 
 
-    def get_scale(self, p2, p3, p4):
+    def get_scale(self, x, y, z):
         """
         Get the axis relative scales.
         """
-        p2.value, p3.value, p4.value = self._wrapper.get_scale(p2.value, p3.value, p4.value)
+        x.value, y.value, z.value = self._wrapper.get_scale(x.value, y.value, z.value)
         
 
 
@@ -113,11 +113,11 @@ class GX3DN:
 
 
 
-    def get_axis_font(self, p2):
+    def get_axis_font(self, font):
         """
         Get the Axis font
         """
-        p2.value = self._wrapper.get_axis_font(p2.value.encode())
+        font.value = self._wrapper.get_axis_font(font.value.encode())
         
 
 
@@ -133,11 +133,11 @@ class GX3DN:
 
 
 
-    def get_render_controls(self, p2, p3, p4, p6, p8):
+    def get_render_controls(self, box, axis, label_x, label_y, label_z):
         """
         Get the rendering controls
         """
-        p2.value, p3.value, p4.value, p6.value, p8.value = self._wrapper.get_render_controls(p2.value, p3.value, p4.value.encode(), p6.value.encode(), p8.value.encode())
+        box.value, axis.value, label_x.value, label_y.value, label_z.value = self._wrapper.get_render_controls(box.value, axis.value, label_x.value.encode(), label_y.value.encode(), label_z.value.encode())
         
 
 
@@ -153,57 +153,57 @@ class GX3DN:
 
 
 
-    def set_axis_color(self, p2):
+    def set_axis_color(self, color):
         """
         Set the Axis draw color
         """
-        self._wrapper.set_axis_color(p2)
+        self._wrapper.set_axis_color(color)
         
 
 
 
 
-    def set_axis_font(self, p2):
+    def set_axis_font(self, font):
         """
         Set the Axis font
         """
-        self._wrapper.set_axis_font(p2.encode())
+        self._wrapper.set_axis_font(font.encode())
         
 
 
 
 
-    def set_background_color(self, p2):
+    def set_background_color(self, color):
         """
         Set the window background color
         """
-        self._wrapper.set_background_color(p2)
+        self._wrapper.set_background_color(color)
         
 
 
 
 
-    def set_point_of_view(self, p2, p3, p4):
+    def set_point_of_view(self, distance, declination, inclination):
         """
         Set location of the point we are looking from
         """
-        self._wrapper.set_point_of_view(p2, p3, p4)
+        self._wrapper.set_point_of_view(distance, declination, inclination)
         
 
 
 
 
-    def set_render_controls(self, p2, p3, p4, p5, p6):
+    def set_render_controls(self, box, axis, label_x, label_y, label_z):
         """
         Set the rendering controls
         """
-        self._wrapper.set_render_controls(p2, p3, p4.encode(), p5.encode(), p6.encode())
+        self._wrapper.set_render_controls(box, axis, label_x.encode(), label_y.encode(), label_z.encode())
         
 
 
 
 
-    def set_scale(self, p2, p3, p4):
+    def set_scale(self, x, y, z):
         """
         Set the axis relative scales.
 
@@ -216,17 +216,17 @@ class GX3DN:
         to 5,5,5 is the same as 1,1,1. This is typically used
         to exaggerate one scale such as Z (1,1,5).
         """
-        self._wrapper.set_scale(p2, p3, p4)
+        self._wrapper.set_scale(x, y, z)
         
 
 
 
 
-    def set_shading(self, p2):
+    def set_shading(self, shading):
         """
         Set the shading control on or off
         """
-        self._wrapper.set_shading(p2)
+        self._wrapper.set_shading(shading)
         
 
 

@@ -113,11 +113,11 @@ class GXEMAP:
 
 
 
-    def drop_map_clip_data(self, p2):
+    def drop_map_clip_data(self, hglobal):
         """
         Drop Map clipboard data on this `GXEMAP`
         """
-        self._wrapper.drop_map_clip_data(p2)
+        self._wrapper.drop_map_clip_data(hglobal)
         
 
 
@@ -133,11 +133,11 @@ class GXEMAP:
 
 
 
-    def set_drag_drop_enabled(self, p2):
+    def set_drag_drop_enabled(self, enable):
         """
         Set whether drag-and-drop is enabled for the map.
         """
-        self._wrapper.set_drag_drop_enabled(p2)
+        self._wrapper.set_drag_drop_enabled(enable)
         
 
 
@@ -167,7 +167,7 @@ class GXEMAP:
 
 
 
-    def draw_line(self, p2, p3, p4, p5):
+    def draw_line(self, min_x, min_y, max_x, max_y):
         """
         Draws a line on the current map.
 
@@ -179,13 +179,13 @@ class GXEMAP:
         screen refresh.  This function is for you to provide
         interactive screen feedback to your user.
         """
-        self._wrapper.draw_line(p2, p3, p4, p5)
+        self._wrapper.draw_line(min_x, min_y, max_x, max_y)
         
 
 
 
 
-    def draw_rect(self, p2, p3, p4, p5):
+    def draw_rect(self, min_x, min_y, max_x, max_y):
         """
         Draws a rect on the current map.
 
@@ -197,13 +197,13 @@ class GXEMAP:
         screen refresh.  This function is for you to provide
         interactive screen feedback to your user.
         """
-        self._wrapper.draw_rect(p2, p3, p4, p5)
+        self._wrapper.draw_rect(min_x, min_y, max_x, max_y)
         
 
 
 
 
-    def draw_rect_3d(self, p2, p3, p4, p5):
+    def draw_rect_3d(self, x, y, z, pix):
         """
         Plot a square symbol on a section view.
 
@@ -215,13 +215,13 @@ class GXEMAP:
         screen refresh.  This function is for you to provide
         interactive screen feedback to your user.
         """
-        self._wrapper.draw_rect_3d(p2, p3, p4, p5)
+        self._wrapper.draw_rect_3d(x, y, z, pix)
         
 
 
 
 
-    def get_display_area(self, p2, p3, p4, p5):
+    def get_display_area(self, min_x, min_y, max_x, max_y):
         """
         Get the area you are currently looking at.
 
@@ -230,13 +230,13 @@ class GXEMAP:
         Coordinates are based on the current view units.
         For 3D views this will return the full map extents.
         """
-        p2.value, p3.value, p4.value, p5.value = self._wrapper.get_display_area(p2.value, p3.value, p4.value, p5.value)
+        min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.get_display_area(min_x.value, min_y.value, max_x.value, max_y.value)
         
 
 
 
 
-    def get_display_area_raw(self, p2, p3, p4, p5):
+    def get_display_area_raw(self, min_x, min_y, max_x, max_y):
         """
         Get the area you are currently looking at in raw map units
 
@@ -245,13 +245,13 @@ class GXEMAP:
         Coordinates are in millimeters.
         For 3D views this will return the full map extents.
         """
-        p2.value, p3.value, p4.value, p5.value = self._wrapper.get_display_area_raw(p2.value, p3.value, p4.value, p5.value)
+        min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.get_display_area_raw(min_x.value, min_y.value, max_x.value, max_y.value)
         
 
 
 
 
-    def get_map_layout_props(self, p2, p3, p4, p5, p6, p7, p8, p9):
+    def get_map_layout_props(self, snap_to_grid, snap_dist, view_grid, view_rulers, view_units, grid_red, grid_green, grid_blue):
         """
         Get the base layout view properties.
 
@@ -260,17 +260,17 @@ class GXEMAP:
         This affects the display units and other related properties for the base
         view of a map.
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value = self._wrapper.get_map_layout_props(p2.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value)
+        snap_to_grid.value, snap_dist.value, view_grid.value, view_rulers.value, view_units.value, grid_red.value, grid_green.value, grid_blue.value = self._wrapper.get_map_layout_props(snap_to_grid.value, snap_dist.value, view_grid.value, view_rulers.value, view_units.value, grid_red.value, grid_green.value, grid_blue.value)
         
 
 
 
 
-    def get_map_snap(self, p2):
+    def get_map_snap(self, snap):
         """
         Get current snapping distance in MM
         """
-        p2.value = self._wrapper.get_map_snap(p2.value)
+        snap.value = self._wrapper.get_map_snap(snap.value)
         
 
 
@@ -286,7 +286,7 @@ class GXEMAP:
 
 
 
-    def set_display_area(self, p2, p3, p4, p5):
+    def set_display_area(self, min_x, min_y, max_x, max_y):
         """
         Set the area you wish to see.
 
@@ -295,13 +295,13 @@ class GXEMAP:
         Coordinates are based on the current view user units.
         The map is immediatly redrawn.
         """
-        self._wrapper.set_display_area(p2, p3, p4, p5)
+        self._wrapper.set_display_area(min_x, min_y, max_x, max_y)
         
 
 
 
 
-    def set_map_layout_props(self, p2, p3, p4, p5, p6, p7, p8, p9):
+    def set_map_layout_props(self, snap_to_grid, snap_dist, view_grid, view_rulers, view_units, grid_red, grid_green, grid_blue):
         """
         Set the base layout view properties.
 
@@ -310,27 +310,27 @@ class GXEMAP:
         This affects the display units and other related properties for the base
         view of a map.
         """
-        self._wrapper.set_map_layout_props(p2, p3, p4, p5, p6, p7, p8, p9)
+        self._wrapper.set_map_layout_props(snap_to_grid, snap_dist, view_grid, view_rulers, view_units, grid_red, grid_green, grid_blue)
         
 
 
 
 
-    def set_map_snap(self, p2):
+    def set_map_snap(self, snap):
         """
         Set current snapping distance in MM
         """
-        self._wrapper.set_map_snap(p2)
+        self._wrapper.set_map_snap(snap)
         
 
 
 
 
-    def set_window_state(self, p2):
+    def set_window_state(self, state):
         """
         Changes the state of the map window
         """
-        self._wrapper.set_window_state(p2)
+        self._wrapper.set_window_state(state)
         
 
 
@@ -350,7 +350,7 @@ class GXEMAP:
 
 
 
-    def activate_group(self, p2):
+    def activate_group(self, view_group):
         """
         Activates a group and associated tools.
 
@@ -362,17 +362,17 @@ class GXEMAP:
         image color tool. Be sure to pass a combined name containing
         both the view name and the group separated by a "/" or "\\".
         """
-        self._wrapper.activate_group(p2.encode())
+        self._wrapper.activate_group(view_group.encode())
         
 
 
 
 
-    def activate_view(self, p2):
+    def activate_view(self, view):
         """
         Activates a view and associated tools.
         """
-        self._wrapper.activate_view(p2.encode())
+        self._wrapper.activate_view(view.encode())
         
 
 
@@ -415,7 +415,7 @@ class GXEMAP:
 
 
 
-    def destroy_view(self, p2):
+    def destroy_view(self, unload_flag):
         """
         Removes the view from the workspace.
 
@@ -427,13 +427,13 @@ class GXEMAP:
         unloaded and optionally saved depending on the `EMAP_REMOVE`
         parameter.
         """
-        self._wrapper.destroy_view(p2)
+        self._wrapper.destroy_view(unload_flag)
         
 
 
 
 
-    def font_lst(self, p2, p3):
+    def font_lst(self, lst, which):
         """
         List all Windows and geosoft fonts.
 
@@ -443,13 +443,13 @@ class GXEMAP:
         and `EMAP_FONT_TT`, then `EMAP_FONT_GFN`, or vice-versa to
         change order of listing.
         """
-        self._wrapper.font_lst(p2._wrapper, p3)
+        self._wrapper.font_lst(lst._wrapper, which)
         
 
 
 
 
-    def change_current_view(self, p2):
+    def change_current_view(self, view):
         """
         Change the current working view.
 
@@ -459,35 +459,35 @@ class GXEMAP:
         Unlike `set_current_view` this function's action
         survive the GX finishing.
         """
-        ret_val = self._wrapper.change_current_view(p2.encode())
+        ret_val = self._wrapper.change_current_view(view.encode())
         return ret_val
 
 
 
 
-    def create_group_snapshot(self, p2):
+    def create_group_snapshot(self, lst):
         """
         Loads an `GXLST` with the current view/group names
         existing in a map. Typically used to track group
         changes that are about to occur.
         """
-        ret_val = self._wrapper.create_group_snapshot(p2._wrapper)
+        ret_val = self._wrapper.create_group_snapshot(lst._wrapper)
         return ret_val
 
 
 
 
-    def get_3d_view_name(self, p2):
+    def get_3d_view_name(self, name):
         """
         Get the name of a 3D view if the current view is 3D.
         """
-        p2.value = self._wrapper.get_3d_view_name(p2.value.encode())
+        name.value = self._wrapper.get_3d_view_name(name.value.encode())
         
 
 
 
 
-    def get_current_group(self, p2):
+    def get_current_group(self, group):
         """
         Get the current group name.
 
@@ -495,13 +495,13 @@ class GXEMAP:
 
         This function operates on the current map.
         """
-        p2.value = self._wrapper.get_current_group(p2.value.encode())
+        group.value = self._wrapper.get_current_group(group.value.encode())
         
 
 
 
 
-    def get_current_view(self, p2):
+    def get_current_view(self, view):
         """
         Get the current view name.
 
@@ -509,27 +509,27 @@ class GXEMAP:
 
         This function operates on the current map.
         """
-        p2.value = self._wrapper.get_current_view(p2.value.encode())
+        view.value = self._wrapper.get_current_view(view.value.encode())
         
 
 
 
     @classmethod
-    def get_maps_lst(cls, p1, p2):
+    def get_maps_lst(cls, lst, path):
         """
         Load the file names of open maps into a `GXLST`.
         """
-        ret_val = gxapi_cy.WrapEMAP.get_maps_lst(GXContext._get_tls_geo(), p1._wrapper, p2)
+        ret_val = gxapi_cy.WrapEMAP.get_maps_lst(GXContext._get_tls_geo(), lst._wrapper, path)
         return ret_val
 
 
 
 
-    def get_name(self, p2):
+    def get_name(self, name):
         """
         Get the name of the map object of this `GXEMAP`.
         """
-        p2.value = self._wrapper.get_name(p2.value.encode())
+        name.value = self._wrapper.get_name(name.value.encode())
         
 
 
@@ -545,11 +545,11 @@ class GXEMAP:
 
 
     @classmethod
-    def i_get_specified_map_name(cls, p1, p2, p3):
+    def i_get_specified_map_name(cls, field, value, name):
         """
         Find a loaded map that has a setting in its reg.
         """
-        ret_val, p3.value = gxapi_cy.WrapEMAP.i_get_specified_map_name(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.value.encode())
+        ret_val, name.value = gxapi_cy.WrapEMAP.i_get_specified_map_name(GXContext._get_tls_geo(), field.encode(), value.encode(), name.value.encode())
         return ret_val
 
 
@@ -565,7 +565,7 @@ class GXEMAP:
 
 
     @classmethod
-    def reload_grid(cls, p1):
+    def reload_grid(cls, name):
         """
         Reloads a grid document.
 
@@ -573,7 +573,7 @@ class GXEMAP:
 
         Use this method to reload (if loaded) a grid document if the file on disk changed.
         """
-        gxapi_cy.WrapEMAP.reload_grid(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapEMAP.reload_grid(GXContext._get_tls_geo(), name.encode())
         
 
 
@@ -609,11 +609,11 @@ class GXEMAP:
 
 
     @classmethod
-    def loaded(cls, p1):
+    def loaded(cls, name):
         """
         Returns 1 if a map is loaded .
         """
-        ret_val = gxapi_cy.WrapEMAP.loaded(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapEMAP.loaded(GXContext._get_tls_geo(), name.encode())
         return ret_val
 
 
@@ -629,27 +629,27 @@ class GXEMAP:
 
 
 
-    def get_window_position(self, p2, p3, p4, p5, p6, p7):
+    def get_window_position(self, left, top, right, bottom, state, is_floating):
         """
         Get the map window's position and dock state
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value, p7.value = self._wrapper.get_window_position(p2.value, p3.value, p4.value, p5.value, p6.value, p7.value)
+        left.value, top.value, right.value, bottom.value, state.value, is_floating.value = self._wrapper.get_window_position(left.value, top.value, right.value, bottom.value, state.value, is_floating.value)
         
 
 
 
 
-    def set_window_position(self, p2, p3, p4, p5, p6, p7):
+    def set_window_position(self, left, top, right, bottom, state, is_floating):
         """
         Get the map window's position and dock state
         """
-        self._wrapper.set_window_position(p2, p3, p4, p5, p6, p7)
+        self._wrapper.set_window_position(left, top, right, bottom, state, is_floating)
         
 
 
 
 
-    def doubleize_group_snapshot(self, p2):
+    def doubleize_group_snapshot(self, state):
         """
         The `GXLST` passed in must contain View\\Group strings in
         the Name field only. The function will compare with
@@ -660,13 +660,13 @@ class GXEMAP:
         Typically this function is used in conjunction with
         CreateSnapshot_EMAP.
         """
-        ret_val = self._wrapper.doubleize_group_snapshot(p2._wrapper)
+        ret_val = self._wrapper.doubleize_group_snapshot(state._wrapper)
         return ret_val
 
 
 
 
-    def set_current_view(self, p2):
+    def set_current_view(self, view):
         """
         Set the current working view.
 
@@ -677,13 +677,13 @@ class GXEMAP:
         GX. As soon as the GX terminates the view will revert
         to the original one.
         """
-        ret_val = self._wrapper.set_current_view(p2.encode())
+        ret_val = self._wrapper.set_current_view(view.encode())
         return ret_val
 
 
 
 
-    def get_view_ipj(self, p2, p3):
+    def get_view_ipj(self, view, ipj):
         """
         Get a view's `GXIPJ`.
 
@@ -693,13 +693,13 @@ class GXEMAP:
         without having to call `lock`. This could be an expensive operation
         that cause undesirable UX.
         """
-        self._wrapper.get_view_ipj(p2.encode(), p3._wrapper)
+        self._wrapper.get_view_ipj(view.encode(), ipj._wrapper)
         
 
 
 
     @classmethod
-    def load(cls, p1):
+    def load(cls, name):
         """
         Loads maps into the editor.
 
@@ -713,13 +713,13 @@ class GXEMAP:
         All other files in the list are assumed to be in the same
         directory as the first file.
         """
-        ret_val = gxapi_cy.WrapEMAP.load(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapEMAP.load(GXContext._get_tls_geo(), name.encode())
         return GXEMAP(ret_val)
 
 
 
     @classmethod
-    def load_no_activate(cls, p1):
+    def load_no_activate(cls, name):
         """
         Loads documents into the workspace
 
@@ -728,13 +728,13 @@ class GXEMAP:
         This function acts just like `load` except that the document(s) is not activated (brought to foreground) and no
         guarantee is given about which document is currently active.
         """
-        ret_val = gxapi_cy.WrapEMAP.load_no_activate(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapEMAP.load_no_activate(GXContext._get_tls_geo(), name.encode())
         return GXEMAP(ret_val)
 
 
 
     @classmethod
-    def load_with_view(cls, p1, p2):
+    def load_with_view(cls, name, p2):
         """
         Load an `GXEMAP` with the view from a current `GXEMAP`.
 
@@ -744,7 +744,7 @@ class GXEMAP:
         dbsubset to create a new database with the same
         view as previously.
         """
-        ret_val = gxapi_cy.WrapEMAP.load_with_view(GXContext._get_tls_geo(), p1.encode(), p2._wrapper)
+        ret_val = gxapi_cy.WrapEMAP.load_with_view(GXContext._get_tls_geo(), name.encode(), p2._wrapper)
         return GXEMAP(ret_val)
 
 
@@ -774,11 +774,11 @@ class GXEMAP:
 
 
 
-    def print_(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+    def print_(self, entire_map, scale_to_fit, print_to_file, all_pages, centre, copies, first_page, last_page, scale_factor, overlap_size, offset_x, offset_y, file):
         """
         Print the current map to current printer.
         """
-        self._wrapper.print_(p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14.encode())
+        self._wrapper.print_(entire_map, scale_to_fit, print_to_file, all_pages, centre, copies, first_page, last_page, scale_factor, overlap_size, offset_x, offset_y, file.encode())
         
 
 
@@ -798,17 +798,17 @@ class GXEMAP:
 
 
 
-    def select_group(self, p2):
+    def select_group(self, view_group):
         """
         Select a group.
         """
-        self._wrapper.select_group(p2.encode())
+        self._wrapper.select_group(view_group.encode())
         
 
 
 
 
-    def set_redraw_flag(self, p2):
+    def set_redraw_flag(self, redraw):
         """
         Set the redraw flag.
 
@@ -828,13 +828,13 @@ class GXEMAP:
         
         `un_lock`(Map);
         """
-        self._wrapper.set_redraw_flag(p2)
+        self._wrapper.set_redraw_flag(redraw)
         
 
 
 
     @classmethod
-    def un_load(cls, p1):
+    def un_load(cls, name):
         """
         Unloads a `GXMAP`.
 
@@ -843,7 +843,7 @@ class GXEMAP:
         If the `GXMAP` is not loaded, nothing happens.
         Same as `un_load_verify` with FALSE to prompt save.
         """
-        gxapi_cy.WrapEMAP.un_load(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapEMAP.un_load(GXContext._get_tls_geo(), name.encode())
         
 
 
@@ -859,7 +859,7 @@ class GXEMAP:
 
 
     @classmethod
-    def un_load_verify(cls, p1, p2):
+    def un_load_verify(cls, name, prompt):
         """
         Unloads an edited map, optional prompt to save.
 
@@ -868,7 +868,7 @@ class GXEMAP:
         If the map is not loaded, nothing happens.
         If "FALSE", map is saved without a prompt.
         """
-        gxapi_cy.WrapEMAP.un_load_verify(GXContext._get_tls_geo(), p1.encode(), p2)
+        gxapi_cy.WrapEMAP.un_load_verify(GXContext._get_tls_geo(), name.encode(), prompt)
         
 
 
@@ -888,47 +888,47 @@ class GXEMAP:
 
 
 
-    def get_cur_point(self, p2, p3):
+    def get_cur_point(self, x, y):
         """
         Returns the coordinates of the currently selected point in view coordinates
         """
-        p2.value, p3.value = self._wrapper.get_cur_point(p2.value, p3.value)
+        x.value, y.value = self._wrapper.get_cur_point(x.value, y.value)
         
 
 
 
 
-    def get_cur_point_mm(self, p2, p3):
+    def get_cur_point_mm(self, x, y):
         """
         Returns the coordinates of the currently selected point in mm on map
         """
-        p2.value, p3.value = self._wrapper.get_cur_point_mm(p2.value, p3.value)
+        x.value, y.value = self._wrapper.get_cur_point_mm(x.value, y.value)
         
 
 
 
 
-    def get_cursor(self, p2, p3):
+    def get_cursor(self, x, y):
         """
         Returns the coordinates of the last known cursor location
         """
-        p2.value, p3.value = self._wrapper.get_cursor(p2.value, p3.value)
+        x.value, y.value = self._wrapper.get_cursor(x.value, y.value)
         
 
 
 
 
-    def get_cursor_mm(self, p2, p3):
+    def get_cursor_mm(self, x, y):
         """
         Returns the coordinates of the last known cursor location in mm on map.
         """
-        p2.value, p3.value = self._wrapper.get_cursor_mm(p2.value, p3.value)
+        x.value, y.value = self._wrapper.get_cursor_mm(x.value, y.value)
         
 
 
 
 
-    def digitize(self, p2, p3, p4, p5, p6, p7, p8):
+    def digitize(self, wa, img, digits, prompt, prefix, delim, newline):
         """
         Digitise points from the current map and place in a `GXWA`.
 
@@ -945,13 +945,13 @@ class GXEMAP:
         
         Locations are in the current view user units
         """
-        ret_val = self._wrapper.digitize(p2._wrapper, p3._wrapper, p4, p5.encode(), p6.encode(), p7.encode(), p8)
+        ret_val = self._wrapper.digitize(wa._wrapper, img._wrapper, digits, prompt.encode(), prefix.encode(), delim.encode(), newline)
         return ret_val
 
 
 
 
-    def digitize2(self, p2, p3, p4, p5, p6, p7):
+    def digitize2(self, vvx, vvy, vvz, img, prompt, newline):
         """
         Digitise points from the current map and place in VVs.
 
@@ -968,13 +968,13 @@ class GXEMAP:
         
         Locations are in the current view user units
         """
-        ret_val = self._wrapper.digitize2(p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6.encode(), p7)
+        ret_val = self._wrapper.digitize2(vvx._wrapper, vvy._wrapper, vvz._wrapper, img._wrapper, prompt.encode(), newline)
         return ret_val
 
 
 
 
-    def digitize_peaks(self, p2, p3, p4, p5, p6, p7):
+    def digitize_peaks(self, vvx, vvy, vvz, img, prompt, newline):
         """
         Digitise points from the current map and place in VVs.
 
@@ -987,13 +987,13 @@ class GXEMAP:
         a higher value, it will just take the first one and continue, and this method will
         stall on flat areas as well (since no surrounding point is larger).
         """
-        ret_val = self._wrapper.digitize_peaks(p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6.encode(), p7)
+        ret_val = self._wrapper.digitize_peaks(vvx._wrapper, vvy._wrapper, vvz._wrapper, img._wrapper, prompt.encode(), newline)
         return ret_val
 
 
 
 
-    def digitize_polygon(self, p2, p3, p4, p5, p6, p7, p8):
+    def digitize_polygon(self, vvx, vvy, vvz, img, prompt, newline, pixel_radius):
         """
         Same as iDigitze2_EMAP, but automatically close polygons.
 
@@ -1005,23 +1005,23 @@ class GXEMAP:
         the polygon is assumed to be closed, and the operation is the same as
         the RMB "done" command, and the process returns 0.
         """
-        ret_val = self._wrapper.digitize_polygon(p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6.encode(), p7, p8)
+        ret_val = self._wrapper.digitize_polygon(vvx._wrapper, vvy._wrapper, vvz._wrapper, img._wrapper, prompt.encode(), newline, pixel_radius)
         return ret_val
 
 
 
 
-    def get_box(self, p2, p3, p4, p5, p6):
+    def get_box(self, str_val, min_x, min_y, max_x, max_y):
         """
         Returns the coordinates of a user selected box.
         """
-        ret_val, p3.value, p4.value, p5.value, p6.value = self._wrapper.get_box(p2.encode(), p3.value, p4.value, p5.value, p6.value)
+        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.get_box(str_val.encode(), min_x.value, min_y.value, max_x.value, max_y.value)
         return ret_val
 
 
 
 
-    def get_box2(self, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+    def get_box2(self, str_val, x1, y1, x2, y2, x3, y3, x4, y4):
         """
         Returns the coordinates of a user selected box in a warped view.
 
@@ -1033,13 +1033,13 @@ class GXEMAP:
         function returns the exact coordinates of all four corners, calculated
         from the pixel locations.
         """
-        ret_val, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value, p10.value = self._wrapper.get_box2(p2.encode(), p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value, p10.value)
+        ret_val, x1.value, y1.value, x2.value, y2.value, x3.value, y3.value, x4.value, y4.value = self._wrapper.get_box2(str_val.encode(), x1.value, y1.value, x2.value, y2.value, x3.value, y3.value, x4.value, y4.value)
         return ret_val
 
 
 
 
-    def get_grid(self, p2, p3, p4, p5, p6, p7, p8, p9):
+    def get_grid(self, str_val, nx, ny, angle, x1, y1, x_len, y_len):
         """
         Position and size a grid on a map.
 
@@ -1056,13 +1056,13 @@ class GXEMAP:
         The coordinates are returned in the current User projection
         (See `GXMVIEW.get_user_ipj` and `GXMVIEW.set_user_ipj`.)
         """
-        ret_val, p5.value, p6.value, p7.value, p8.value, p9.value = self._wrapper.get_grid(p2.encode(), p3, p4, p5.value, p6.value, p7.value, p8.value, p9.value)
+        ret_val, angle.value, x1.value, y1.value, x_len.value, y_len.value = self._wrapper.get_grid(str_val.encode(), nx, ny, angle.value, x1.value, y1.value, x_len.value, y_len.value)
         return ret_val
 
 
 
 
-    def get_line(self, p2, p3, p4, p5, p6):
+    def get_line(self, str_val, min_x, min_y, max_x, max_y):
         """
         Returns the end points of a line.
 
@@ -1071,13 +1071,13 @@ class GXEMAP:
         The coordinates are returned in the current User projection
         (See `GXMVIEW.get_user_ipj` and `GXMVIEW.set_user_ipj`.)
         """
-        ret_val, p3.value, p4.value, p5.value, p6.value = self._wrapper.get_line(p2.encode(), p3.value, p4.value, p5.value, p6.value)
+        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.get_line(str_val.encode(), min_x.value, min_y.value, max_x.value, max_y.value)
         return ret_val
 
 
 
 
-    def get_line_ex(self, p2, p3, p4, p5, p6):
+    def get_line_ex(self, str_val, min_x, min_y, max_x, max_y):
         """
         Returns the end points of a line.
 
@@ -1086,13 +1086,13 @@ class GXEMAP:
         The coordinates are returned in the current User projection
         (See `GXMVIEW.get_user_ipj` and `GXMVIEW.set_user_ipj`.)
         """
-        ret_val, p3.value, p4.value, p5.value, p6.value = self._wrapper.get_line_ex(p2.encode(), p3.value, p4.value, p5.value, p6.value)
+        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.get_line_ex(str_val.encode(), min_x.value, min_y.value, max_x.value, max_y.value)
         return ret_val
 
 
 
 
-    def get_line_xyz(self, p2, p3, p4, p5, p6, p7, p8):
+    def get_line_xyz(self, str_val, min_x, min_y, min_z, max_x, max_y, max_z):
         """
         Returns the end points of a line in X,Y and Z
 
@@ -1103,13 +1103,13 @@ class GXEMAP:
         This is useful for digitizing a line in an oriented view and getting
         the true coordinates in (X, Y, Z) at the selected point on the view plane.
         """
-        ret_val, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value = self._wrapper.get_line_xyz(p2.encode(), p3.value, p4.value, p5.value, p6.value, p7.value, p8.value)
+        ret_val, min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._wrapper.get_line_xyz(str_val.encode(), min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         return ret_val
 
 
 
 
-    def get_point(self, p2, p3, p4):
+    def get_point(self, str_val, x, y):
         """
         Returns the coordinates of a user selected point.
 
@@ -1121,13 +1121,13 @@ class GXEMAP:
 
             iTrackPoint, GetCurPoint, GetCursor
         """
-        ret_val, p3.value, p4.value = self._wrapper.get_point(p2.encode(), p3.value, p4.value)
+        ret_val, x.value, y.value = self._wrapper.get_point(str_val.encode(), x.value, y.value)
         return ret_val
 
 
 
 
-    def get_point_ex(self, p2, p3, p4):
+    def get_point_ex(self, str_val, x, y):
         """
         Returns the coordinates of a user selected point.
 
@@ -1139,13 +1139,13 @@ class GXEMAP:
 
             iTrackPoint, GetCurPoint, GetCursor
         """
-        ret_val, p3.value, p4.value = self._wrapper.get_point_ex(p2.encode(), p3.value, p4.value)
+        ret_val, x.value, y.value = self._wrapper.get_point_ex(str_val.encode(), x.value, y.value)
         return ret_val
 
 
 
 
-    def get_point_3d(self, p2, p3, p4, p5):
+    def get_point_3d(self, str_val, x, y, z):
         """
         Returns the coordinates of a user selected point.
 
@@ -1157,13 +1157,13 @@ class GXEMAP:
 
             iTrackPoint, GetCurPoint, GetCursor
         """
-        ret_val, p3.value, p4.value, p5.value = self._wrapper.get_point_3d(p2.encode(), p3.value, p4.value, p5.value)
+        ret_val, x.value, y.value, z.value = self._wrapper.get_point_3d(str_val.encode(), x.value, y.value, z.value)
         return ret_val
 
 
 
 
-    def get_poly_line(self, p2, p3, p4):
+    def get_poly_line(self, str_val, v_vx, v_vy):
         """
         Returns a polyline.
 
@@ -1172,13 +1172,13 @@ class GXEMAP:
         The coordinates are returned in the current User projection
         (See `GXMVIEW.get_user_ipj` and `GXMVIEW.set_user_ipj`.)
         """
-        ret_val = self._wrapper.get_poly_line(p2.encode(), p3._wrapper, p4._wrapper)
+        ret_val = self._wrapper.get_poly_line(str_val.encode(), v_vx._wrapper, v_vy._wrapper)
         return ret_val
 
 
 
 
-    def get_poly_line_xyz(self, p2, p3, p4, p5):
+    def get_poly_line_xyz(self, str_val, v_vx, v_vy, v_vz):
         """
         Returns a polyline.
 
@@ -1189,13 +1189,13 @@ class GXEMAP:
         of the method X, Y and Z (depth) are returned. Initially created
         to deal with crooked sections.
         """
-        ret_val = self._wrapper.get_poly_line_xyz(p2.encode(), p3._wrapper, p4._wrapper, p5._wrapper)
+        ret_val = self._wrapper.get_poly_line_xyz(str_val.encode(), v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
         return ret_val
 
 
 
 
-    def get_rect(self, p2, p3, p4, p5, p6):
+    def get_rect(self, str_val, min_x, min_y, max_x, max_y):
         """
         Returns the coordinates of a user selected box starting at a corner.
 
@@ -1218,17 +1218,17 @@ class GXEMAP:
         max values. What appears to be a rectangle as seen on the map is not
         necessarily a rectangle in the User coordinates.
         """
-        ret_val, p3.value, p4.value, p5.value, p6.value = self._wrapper.get_rect(p2.encode(), p3.value, p4.value, p5.value, p6.value)
+        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.get_rect(str_val.encode(), min_x.value, min_y.value, max_x.value, max_y.value)
         return ret_val
 
 
 
 
-    def track_point(self, p2, p3, p4):
+    def track_point(self, flags, x, y):
         """
         Get point without prompt or cursor change with tracking
         """
-        ret_val, p3.value, p4.value = self._wrapper.track_point(p2, p3.value, p4.value)
+        ret_val, x.value, y.value = self._wrapper.track_point(flags, x.value, y.value)
         return ret_val
 
 
@@ -1238,7 +1238,7 @@ class GXEMAP:
 
 
 
-    def get_aoi_area(self, p2, p3, p4, p5):
+    def get_aoi_area(self, min_x, min_y, max_x, max_y):
         """
         Get the area of interest.
 
@@ -1246,13 +1246,13 @@ class GXEMAP:
 
         Coordinates are based on the current view units.
         """
-        p2.value, p3.value, p4.value, p5.value = self._wrapper.get_aoi_area(p2.value, p3.value, p4.value, p5.value)
+        min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.get_aoi_area(min_x.value, min_y.value, max_x.value, max_y.value)
         
 
 
 
 
-    def set_aoi_area(self, p2, p3, p4, p5):
+    def set_aoi_area(self, min_x, min_y, max_x, max_y):
         """
         Set the area of interest.
 
@@ -1261,13 +1261,13 @@ class GXEMAP:
         Coordinates are based on the current view user units.
         The map is immediatly redrawn.
         """
-        self._wrapper.set_aoi_area(p2, p3, p4, p5)
+        self._wrapper.set_aoi_area(min_x, min_y, max_x, max_y)
         
 
 
 
 
-    def set_viewport_mode(self, p2):
+    def set_viewport_mode(self, mode):
         """
         Set the viewport mode.
 
@@ -1277,7 +1277,7 @@ class GXEMAP:
         with Get/Set AOIArea. If this is used inside montaj it is important to set or provide
         for a method to set the map mode back to normal as this is not exposed in the interface.
         """
-        self._wrapper.set_viewport_mode(p2)
+        self._wrapper.set_viewport_mode(mode)
         
 
 
@@ -1287,7 +1287,7 @@ class GXEMAP:
 
 
 
-    def get_selected_vertices(self, p2, p3):
+    def get_selected_vertices(self, v_vx, v_vy):
         """
         Get the verticies of selected object
 
@@ -1295,7 +1295,7 @@ class GXEMAP:
 
         Works only in Vertex Edit Mode
         """
-        self._wrapper.get_selected_vertices(p2._wrapper, p3._wrapper)
+        self._wrapper.get_selected_vertices(v_vx._wrapper, v_vy._wrapper)
         
 
 
@@ -1305,11 +1305,11 @@ class GXEMAP:
 
 
     @classmethod
-    def create_virtual(cls, p1):
+    def create_virtual(cls, name):
         """
         Makes this `GXEMAP` object the current active object to the user.
         """
-        ret_val = gxapi_cy.WrapEMAP.create_virtual(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapEMAP.create_virtual(GXContext._get_tls_geo(), name.encode())
         return GXEMAP(ret_val)
 
 
@@ -1319,21 +1319,21 @@ class GXEMAP:
 
 
     @classmethod
-    def load_control(cls, p1, p2):
+    def load_control(cls, map_file, window):
         """
         Version of `load` that can be used to load a database via subclassing into a Windows control.
         """
-        gxapi_cy.WrapEMAP.load_control(GXContext._get_tls_geo(), p1.encode(), p2)
+        gxapi_cy.WrapEMAP.load_control(GXContext._get_tls_geo(), map_file.encode(), window)
         
 
 
 
     @classmethod
-    def load_with_view_control(cls, p1, p2, p3):
+    def load_with_view_control(cls, map_file, emap, window):
         """
         Version of `GXEDB.load_with_view` that can be used to load a database via subclassing into a Windows control.
         """
-        gxapi_cy.WrapEMAP.load_with_view_control(GXContext._get_tls_geo(), p1.encode(), p2._wrapper, p3)
+        gxapi_cy.WrapEMAP.load_with_view_control(GXContext._get_tls_geo(), map_file.encode(), emap._wrapper, window)
         
 
 

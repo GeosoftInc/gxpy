@@ -60,11 +60,11 @@ class GXGD:
 
 
     @classmethod
-    def create(cls, p1, p2):
+    def create(cls, name, type):
         """
         This method creates a `GXGD` object.
         """
-        ret_val = gxapi_cy.WrapGD.create(GXContext._get_tls_geo(), p1.encode(), p2)
+        ret_val = gxapi_cy.WrapGD.create(GXContext._get_tls_geo(), name.encode(), type)
         return GXGD(ret_val)
 
 

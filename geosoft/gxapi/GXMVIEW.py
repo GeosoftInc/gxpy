@@ -85,7 +85,7 @@ class GXMVIEW:
 
 
 
-    def box_3d(self, p2, p3, p4, p5, p6, p7):
+    def box_3d(self, min_x, min_y, min_z, max_x, max_y, max_z):
         """
         Draw a 3D box
 
@@ -93,33 +93,33 @@ class GXMVIEW:
 
         The Fill color is used to color the box.
         """
-        self._wrapper.box_3d(p2, p3, p4, p5, p6, p7)
+        self._wrapper.box_3d(min_x, min_y, min_z, max_x, max_y, max_z)
         
 
 
 
 
-    def crc_view(self, p2, p3):
+    def crc_view(self, crc, file):
         """
         Generate an XML CRC of a View
         """
-        p2.value = self._wrapper.crc_view(p2.value, p3.encode())
+        crc.value = self._wrapper.crc_view(crc.value, file.encode())
         
 
 
 
 
-    def crc_view_group(self, p2, p3, p4):
+    def crc_view_group(self, group, crc, file):
         """
         Generate an XML CRC of a Group
         """
-        p3.value = self._wrapper.crc_view_group(p2.encode(), p3.value, p4.encode())
+        crc.value = self._wrapper.crc_view_group(group.encode(), crc.value, file.encode())
         
 
 
 
 
-    def cylinder_3d(self, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+    def cylinder_3d(self, start_x, start_y, start_z, end_x, end_y, end_z, start_radius, end_radius, flags):
         """
         Draw a 3D cylinder
 
@@ -130,23 +130,23 @@ class GXMVIEW:
         end are closed. Note that you can create cones by
         specifying a 0 radius for one of the ends.
         """
-        self._wrapper.cylinder_3d(p2, p3, p4, p5, p6, p7, p8, p9, p10)
+        self._wrapper.cylinder_3d(start_x, start_y, start_z, end_x, end_y, end_z, start_radius, end_radius, flags)
         
 
 
 
 
-    def draw_object_3d(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+    def draw_object_3d(self, type, mode, objects, default_count, vert_v_vx, vert_v_vy, vert_v_vz, norm_v_vx, norm_v_vy, norm_v_vz, color_vv, index_vv, count_vv):
         """
         Draw a 3D object optimized for rendering
         """
-        self._wrapper.draw_object_3d(p2, p3, p4, p5, p6._wrapper, p7._wrapper, p8._wrapper, p9._wrapper, p10._wrapper, p11._wrapper, p12._wrapper, p13._wrapper, p14._wrapper)
+        self._wrapper.draw_object_3d(type, mode, objects, default_count, vert_v_vx._wrapper, vert_v_vy._wrapper, vert_v_vz._wrapper, norm_v_vx._wrapper, norm_v_vy._wrapper, norm_v_vz._wrapper, color_vv._wrapper, index_vv._wrapper, count_vv._wrapper)
         
 
 
 
 
-    def draw_surface_3d_ex(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+    def draw_surface_3d_ex(self, group_name, vert_v_vx, vert_v_vy, vert_v_vz, norm_v_vx, norm_v_vy, norm_v_vz, color_vv, color, tri_vv_pt1, tri_vv_pt2, tri_vv_pt3, ipj):
         """
         Draw a 3D object built from triangles
 
@@ -155,33 +155,33 @@ class GXMVIEW:
         Provide one normal per vertex.
         Triangles are defined by indices into the set of vertices.
         """
-        self._wrapper.draw_surface_3d_ex(p2.encode(), p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper, p7._wrapper, p8._wrapper, p9._wrapper, p10, p11._wrapper, p12._wrapper, p13._wrapper, p14._wrapper)
+        self._wrapper.draw_surface_3d_ex(group_name.encode(), vert_v_vx._wrapper, vert_v_vy._wrapper, vert_v_vz._wrapper, norm_v_vx._wrapper, norm_v_vy._wrapper, norm_v_vz._wrapper, color_vv._wrapper, color, tri_vv_pt1._wrapper, tri_vv_pt2._wrapper, tri_vv_pt3._wrapper, ipj._wrapper)
         
 
 
 
 
-    def draw_surface_3d_from_file(self, p2, p3):
+    def draw_surface_3d_from_file(self, group_name, surface_file):
         """
         Draw a 3D object from a surface file
         """
-        self._wrapper.draw_surface_3d_from_file(p2.encode(), p3.encode())
+        self._wrapper.draw_surface_3d_from_file(group_name.encode(), surface_file.encode())
         
 
 
 
     @classmethod
-    def font_weight_lst(cls, p1):
+    def font_weight_lst(cls, lst):
         """
         Fill a `GXLST` with the different font weights.
         """
-        gxapi_cy.WrapMVIEW.font_weight_lst(GXContext._get_tls_geo(), p1._wrapper)
+        gxapi_cy.WrapMVIEW.font_weight_lst(GXContext._get_tls_geo(), lst._wrapper)
         
 
 
 
 
-    def get_agg_file_names(self, p2, p3):
+    def get_agg_file_names(self, group, vv):
         """
         Get the names of grid files stored in an `GXAGG`.
 
@@ -190,23 +190,23 @@ class GXMVIEW:
         The group must be an `GXAGG` group. Check this using
         `is_group`(View, sGroup, `MVIEW_IS_AGG`).
         """
-        self._wrapper.get_agg_file_names(p2.encode(), p3._wrapper)
+        self._wrapper.get_agg_file_names(group.encode(), vv._wrapper)
         
 
 
 
 
-    def get_meta(self, p2, p3):
+    def get_meta(self, group, meta):
         """
         Retrieves Metadata from a group
         """
-        ret_val, p3.value = self._wrapper.get_meta(p2.encode(), p3.value.encode())
+        ret_val, meta.value = self._wrapper.get_meta(group.encode(), meta.value.encode())
         return GXMETA(ret_val)
 
 
 
 
-    def measure_text(self, p2, p3, p4, p5, p6):
+    def measure_text(self, text, x_min, y_min, x_max, y_max):
         """
         Compute the bounding rectangle in view units of the text using the current attributes.
 
@@ -216,13 +216,13 @@ class GXMVIEW:
         This will return the bounding rectangle as if the text was placed at 0,0 and adjusted according to
         the current text alignment and angle set for the view. Also see notes for `text_size`.
         """
-        p3.value, p4.value, p5.value, p6.value = self._wrapper.measure_text(p2.encode(), p3.value, p4.value, p5.value, p6.value)
+        x_min.value, y_min.value, x_max.value, y_max.value = self._wrapper.measure_text(text.encode(), x_min.value, y_min.value, x_max.value, y_max.value)
         
 
 
 
 
-    def point_3d(self, p2, p3, p4):
+    def point_3d(self, x, y, z):
         """
         Draw a 3D point.
 
@@ -230,13 +230,13 @@ class GXMVIEW:
 
         The Line color and line thickness will affect rendering.
         """
-        self._wrapper.point_3d(p2, p3, p4)
+        self._wrapper.point_3d(x, y, z)
         
 
 
 
 
-    def poly_line_3d(self, p2, p3, p4):
+    def poly_line_3d(self, v_vx, v_vy, v_vz):
         """
         Draw a 3D polyline.
 
@@ -245,33 +245,33 @@ class GXMVIEW:
         Dummies are not allowed in the line.
         Line Color, Thickness is supported on rendering
         """
-        self._wrapper.poly_line_3d(p2._wrapper, p3._wrapper, p4._wrapper)
+        self._wrapper.poly_line_3d(v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
         
 
 
 
 
-    def relocate_group(self, p2, p3, p4, p5, p6, p7):
+    def relocate_group(self, group, min_x, min_y, max_x, max_y, asp):
         """
         Re-locate a group in a view.
         """
-        self._wrapper.relocate_group(p2.encode(), p3, p4, p5, p6, p7)
+        self._wrapper.relocate_group(group.encode(), min_x, min_y, max_x, max_y, asp)
         
 
 
 
 
-    def set_meta(self, p2, p3, p4):
+    def set_meta(self, group, meta, name):
         """
         Update the `GXMETA` in this group with the new meta object.
         """
-        self._wrapper.set_meta(p2.encode(), p3._wrapper, p4.encode())
+        self._wrapper.set_meta(group.encode(), meta._wrapper, name.encode())
         
 
 
 
 
-    def sphere_3d(self, p2, p3, p4, p5):
+    def sphere_3d(self, x, y, z, radius):
         """
         Draw a 3D sphere
 
@@ -279,17 +279,17 @@ class GXMVIEW:
 
         The Fill color is used to color the sphere.
         """
-        self._wrapper.sphere_3d(p2, p3, p4, p5)
+        self._wrapper.sphere_3d(x, y, z, radius)
         
 
 
 
 
-    def update_met_afrom_group(self, p2, p3):
+    def update_met_afrom_group(self, group, meta):
         """
         Fill the `GXMETA` with group dataset information
         """
-        self._wrapper.update_met_afrom_group(p2.encode(), p3._wrapper)
+        self._wrapper.update_met_afrom_group(group.encode(), meta._wrapper)
         
 
 
@@ -299,7 +299,7 @@ class GXMVIEW:
 
 
 
-    def delete_plane(self, p2, p3):
+    def delete_plane(self, plane, del_grp):
         """
         Delete a plane in a view
 
@@ -310,13 +310,13 @@ class GXMVIEW:
         SetAllNewGroupsToPlane  function can be used to assign these groups
         to a different plane.
         """
-        self._wrapper.delete_plane(p2, p3)
+        self._wrapper.delete_plane(plane, del_grp)
         
 
 
 
 
-    def get_plane_clip_ply(self, p2, p3):
+    def get_plane_clip_ply(self, plane, pply):
         """
         Get the Plane Clip Region
 
@@ -324,53 +324,53 @@ class GXMVIEW:
 
         By default it is the View's Clip Region
         """
-        self._wrapper.get_plane_clip_ply(p2, p3._wrapper)
+        self._wrapper.get_plane_clip_ply(plane, pply._wrapper)
         
 
 
 
 
-    def get_plane_equation(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+    def get_plane_equation(self, plane, pitch, p4, p5, p6, p7, p8, p9, p10, p11):
         """
         Get the equation of a plane
         """
-        p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value, p10.value, p11.value = self._wrapper.get_plane_equation(p2, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value, p10.value, p11.value)
+        pitch.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value, p10.value, p11.value = self._wrapper.get_plane_equation(plane, pitch.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value, p10.value, p11.value)
         
 
 
 
 
-    def get_view_plane_equation(self, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+    def get_view_plane_equation(self, pitch, p3, p4, p5, p6, p7, p8, p9, p10):
         """
         Get the View's Plane Equation
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value, p10.value = self._wrapper.get_view_plane_equation(p2.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value, p10.value)
+        pitch.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value, p10.value = self._wrapper.get_view_plane_equation(pitch.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value, p10.value)
         
 
 
 
 
-    def create_plane(self, p2):
+    def create_plane(self, plane):
         """
         Create a 3D Plane for 2D Groups
         """
-        ret_val = self._wrapper.create_plane(p2.encode())
+        ret_val = self._wrapper.create_plane(plane.encode())
         return ret_val
 
 
 
 
-    def find_plane(self, p2):
+    def find_plane(self, plane):
         """
         Find a plane in a view
         """
-        ret_val = self._wrapper.find_plane(p2.encode())
+        ret_val = self._wrapper.find_plane(plane.encode())
         return ret_val
 
 
 
 
-    def get_def_plane(self, p2):
+    def get_def_plane(self, name):
         """
         Get the default drawing plane.
 
@@ -381,7 +381,7 @@ class GXMVIEW:
         has been set, the first valid plane in the view is
         used as the default drawing plane.
         """
-        p2.value = self._wrapper.get_def_plane(p2.value.encode())
+        name.value = self._wrapper.get_def_plane(name.value.encode())
         
 
 
@@ -418,7 +418,7 @@ class GXMVIEW:
 
 
 
-    def list_plane_groups(self, p2, p3):
+    def list_plane_groups(self, plane, lst):
         """
         List all groups in a specific plane of a 3D view
 
@@ -429,13 +429,13 @@ class GXMVIEW:
         
         Groups are added to the end of the `GXLST`.
         """
-        self._wrapper.list_plane_groups(p2, p3._wrapper)
+        self._wrapper.list_plane_groups(plane, lst._wrapper)
         
 
 
 
 
-    def list_planes(self, p2):
+    def list_planes(self, lst):
         """
         List all planes in a 3D view
 
@@ -446,33 +446,33 @@ class GXMVIEW:
         
         Planes are added to the end of the `GXLST`.
         """
-        self._wrapper.list_planes(p2._wrapper)
+        self._wrapper.list_planes(lst._wrapper)
         
 
 
 
 
-    def set_all_groups_to_plane(self, p2):
+    def set_all_groups_to_plane(self, plane):
         """
         Set all groups to be within one plane
         """
-        self._wrapper.set_all_groups_to_plane(p2)
+        self._wrapper.set_all_groups_to_plane(plane)
         
 
 
 
 
-    def set_all_new_groups_to_plane(self, p2):
+    def set_all_new_groups_to_plane(self, plane):
         """
         Set all groups that are not in any plane to this plane
         """
-        self._wrapper.set_all_new_groups_to_plane(p2)
+        self._wrapper.set_all_new_groups_to_plane(plane)
         
 
 
 
 
-    def set_def_plane(self, p2):
+    def set_def_plane(self, name):
         """
         Set the default drawing plane.
 
@@ -483,23 +483,23 @@ class GXMVIEW:
         has been set, the first valid plane in the view is
         used as the default drawing plane.
         """
-        self._wrapper.set_def_plane(p2.encode())
+        self._wrapper.set_def_plane(name.encode())
         
 
 
 
 
-    def set_group_to_plane(self, p2, p3):
+    def set_group_to_plane(self, plane, group):
         """
         Set a group to a plane
         """
-        self._wrapper.set_group_to_plane(p2, p3.encode())
+        self._wrapper.set_group_to_plane(plane, group.encode())
         
 
 
 
 
-    def set_h_3dn(self, p2):
+    def set_h_3dn(self, o3dn):
         """
         Set the `GX3DN` object for this view
 
@@ -507,33 +507,33 @@ class GXMVIEW:
 
         To make the view a 2D view, set a `GX3DN` of NULL.
         """
-        self._wrapper.set_h_3dn(p2._wrapper)
+        self._wrapper.set_h_3dn(o3dn._wrapper)
         
 
 
 
 
-    def get_3d_point_of_view(self, p2, p3, p4, p5, p6, p7):
+    def get_3d_point_of_view(self, x, y, z, distance, declination, inclination):
         """
         Get 3D point of view (values are will be `rDUMMY` if view for 2D views)
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value, p7.value = self._wrapper.get_3d_point_of_view(p2.value, p3.value, p4.value, p5.value, p6.value, p7.value)
+        x.value, y.value, z.value, distance.value, declination.value, inclination.value = self._wrapper.get_3d_point_of_view(x.value, y.value, z.value, distance.value, declination.value, inclination.value)
         
 
 
 
 
-    def set_3d_point_of_view(self, p2, p3, p4, p5, p6, p7):
+    def set_3d_point_of_view(self, x, y, z, distance, declination, inclination):
         """
         Set 3D point of view (no effect on 2D views)
         """
-        self._wrapper.set_3d_point_of_view(p2, p3, p4, p5, p6, p7)
+        self._wrapper.set_3d_point_of_view(x, y, z, distance, declination, inclination)
         
 
 
 
 
-    def set_plane_clip_ply(self, p2, p3):
+    def set_plane_clip_ply(self, plane, pply):
         """
         Set the Plane Clip Region
 
@@ -541,13 +541,13 @@ class GXMVIEW:
 
         By default it is the View's Clip Region
         """
-        self._wrapper.set_plane_clip_ply(p2, p3._wrapper)
+        self._wrapper.set_plane_clip_ply(plane, pply._wrapper)
         
 
 
 
 
-    def set_plane_equation(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+    def set_plane_equation(self, plane, pitch, p4, p5, p6, p7, p8, p9, p10, p11):
         """
         Set the equation of a plane
 
@@ -557,27 +557,27 @@ class GXMVIEW:
         use rotations = (-90, 0, 0) for a section with azimuth 90 (E-W)
         use rotations = (-90, 0, -90) for a section with azimuth 0 (N-S)
         """
-        self._wrapper.set_plane_equation(p2, p3, p4, p5, p6, p7, p8, p9, p10, p11)
+        self._wrapper.set_plane_equation(plane, pitch, p4, p5, p6, p7, p8, p9, p10, p11)
         
 
 
 
 
-    def set_plane_surface(self, p2, p3):
+    def set_plane_surface(self, plane, surface):
         """
         Set the surface image of a plane
         """
-        self._wrapper.set_plane_surface(p2, p3.encode())
+        self._wrapper.set_plane_surface(plane, surface.encode())
         
 
 
 
 
-    def set_plane_surf_info(self, p2, p3, p4, p5, p6, p7):
+    def set_plane_surf_info(self, plane, sample, base, scale, min, max):
         """
         Set the surface information
         """
-        self._wrapper.set_plane_surf_info(p2, p3, p4, p5, p6, p7)
+        self._wrapper.set_plane_surf_info(plane, sample, base, scale, min, max)
         
 
 
@@ -587,7 +587,7 @@ class GXMVIEW:
 
 
 
-    def define_plane_3d(self, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+    def define_plane_3d(self, center_x, center_y, center_z, x_vector_x, x_vector_y, x_vector_z, y_vector_x, y_vector_y, y_vector_z):
         """
         Define a 2D drawing plane based on point and normal
 
@@ -596,24 +596,24 @@ class GXMVIEW:
         2D rendering commands are translated to 3D commands
         based on the plane.
         """
-        self._wrapper.define_plane_3d(p2, p3, p4, p5, p6, p7, p8, p9, p10)
+        self._wrapper.define_plane_3d(center_x, center_y, center_z, x_vector_x, x_vector_y, x_vector_z, y_vector_x, y_vector_y, y_vector_z)
         
 
 
 
 
-    def define_viewer_axis_3d(self, p2, p3, p4, p5, p6, p7):
+    def define_viewer_axis_3d(self, center_x, center_y, center_z, dir_point_x, dir_point_y, dir_point_z):
         """
         Define a 2D drawing plane based on the user's view that
         oriented around the vector.
         """
-        self._wrapper.define_viewer_axis_3d(p2, p3, p4, p5, p6, p7)
+        self._wrapper.define_viewer_axis_3d(center_x, center_y, center_z, dir_point_x, dir_point_y, dir_point_z)
         
 
 
 
 
-    def define_viewer_plane_3d(self, p2, p3, p4):
+    def define_viewer_plane_3d(self, center_x, center_y, center_z):
         """
         Define a 2D drawing plane based on the user's view.
 
@@ -622,7 +622,7 @@ class GXMVIEW:
         The plane is always facing the viewer. Otherwise the
         this is identical to the previous
         """
-        self._wrapper.define_viewer_plane_3d(p2, p3, p4)
+        self._wrapper.define_viewer_plane_3d(center_x, center_y, center_z)
         
 
 
@@ -632,7 +632,7 @@ class GXMVIEW:
 
 
 
-    def clip_poly_ex(self, p2, p3, p4, p5):
+    def clip_poly_ex(self, v_vx, v_vy, unit, exclude):
         """
         Add a polygon to the clip region.
 
@@ -641,13 +641,13 @@ class GXMVIEW:
         The polygon will be added to the current clip region.
         The `GXVV`'s cannot have any dummy elements.
         """
-        self._wrapper.clip_poly_ex(p2._wrapper, p3._wrapper, p4, p5)
+        self._wrapper.clip_poly_ex(v_vx._wrapper, v_vy._wrapper, unit, exclude)
         
 
 
 
 
-    def clip_rect_ex(self, p2, p3, p4, p5, p6, p7):
+    def clip_rect_ex(self, min_x, min_y, max_x, max_y, unit, exclude):
         """
         Add a rectangle to the clip region.
 
@@ -655,7 +655,7 @@ class GXMVIEW:
 
         The rectangle will be added to the current clip region.
         """
-        self._wrapper.clip_rect_ex(p2, p3, p4, p5, p6, p7)
+        self._wrapper.clip_rect_ex(min_x, min_y, max_x, max_y, unit, exclude)
         
 
 
@@ -671,27 +671,27 @@ class GXMVIEW:
 
 
 
-    def clip_groups(self, p2):
+    def clip_groups(self, mode):
         """
         Set the Clipping mode on/off for all groups.
         """
-        self._wrapper.clip_groups(p2)
+        self._wrapper.clip_groups(mode)
         
 
 
 
 
-    def clip_marked_groups(self, p2):
+    def clip_marked_groups(self, mode):
         """
         Set the Clipping mode on/off for marked groups.
         """
-        self._wrapper.clip_marked_groups(p2)
+        self._wrapper.clip_marked_groups(mode)
         
 
 
 
 
-    def clip_poly(self, p2, p3, p4):
+    def clip_poly(self, v_vx, v_vy, unit):
         """
         Add a polygon to the clip region.
 
@@ -700,13 +700,13 @@ class GXMVIEW:
         The polygon will be added to the current clip region.
         The `GXVV`'s cannot have any dummy elements.
         """
-        self._wrapper.clip_poly(p2._wrapper, p3._wrapper, p4)
+        self._wrapper.clip_poly(v_vx._wrapper, v_vy._wrapper, unit)
         
 
 
 
 
-    def clip_rect(self, p2, p3, p4, p5, p6):
+    def clip_rect(self, min_x, min_y, max_x, max_y, unit):
         """
         Add a rectangle to the clip region.
 
@@ -714,33 +714,33 @@ class GXMVIEW:
 
         The rectangle will be added to the current clip region.
         """
-        self._wrapper.clip_rect(p2, p3, p4, p5, p6)
+        self._wrapper.clip_rect(min_x, min_y, max_x, max_y, unit)
         
 
 
 
 
-    def delete_ext_clip_ply(self, p2):
+    def delete_ext_clip_ply(self, ext_ply):
         """
         Deletes an extended clip `GXPLY` object used by this view.
         """
-        self._wrapper.delete_ext_clip_ply(p2)
+        self._wrapper.delete_ext_clip_ply(ext_ply)
         
 
 
 
 
-    def ext_clip_ply_list(self, p2):
+    def ext_clip_ply_list(self, lst):
         """
         Get the names of existing extended clip `GXPLY` objects in this view as list.
         """
-        self._wrapper.ext_clip_ply_list(p2._wrapper)
+        self._wrapper.ext_clip_ply_list(lst._wrapper)
         
 
 
 
 
-    def get_clip_ply(self, p2):
+    def get_clip_ply(self, poly):
         """
         Get clipping polygons, in the user projection
 
@@ -751,33 +751,33 @@ class GXMVIEW:
         `get_ply`, which returns the Clip `GXPLY` in the view's native
         projection (e.g. the one set using `set_ipj`).
         """
-        self._wrapper.get_clip_ply(p2._wrapper)
+        self._wrapper.get_clip_ply(poly._wrapper)
         
 
 
 
 
-    def get_ext_clip_ply(self, p2, p3):
+    def get_ext_clip_ply(self, ext_ply, ply):
         """
         Get an extended clip `GXPLY` object used by this view.
         """
-        self._wrapper.get_ext_clip_ply(p2, p3._wrapper)
+        self._wrapper.get_ext_clip_ply(ext_ply, ply._wrapper)
         
 
 
 
 
-    def get_group_ext_clip_ply(self, p2, p3):
+    def get_group_ext_clip_ply(self, group, ext_ply):
         """
         Gets extended clip information for group in view.
         """
-        p3.value = self._wrapper.get_group_ext_clip_ply(p2.encode(), p3.value)
+        ext_ply.value = self._wrapper.get_group_ext_clip_ply(group.encode(), ext_ply.value)
         
 
 
 
 
-    def get_ply(self, p2):
+    def get_ply(self, poly):
         """
         Get clipping polygons, in the base projection
 
@@ -786,13 +786,13 @@ class GXMVIEW:
         This should be used to get the clipping polygon for
         oriented views (especially sections).
         """
-        self._wrapper.get_ply(p2._wrapper)
+        self._wrapper.get_ply(poly._wrapper)
         
 
 
 
 
-    def group_clip_mode(self, p2):
+    def group_clip_mode(self, mode):
         """
         Set the Clipping mode on or off for new groups.
 
@@ -800,17 +800,17 @@ class GXMVIEW:
 
         All new groups will be clipped.
         """
-        self._wrapper.group_clip_mode(p2)
+        self._wrapper.group_clip_mode(mode)
         
 
 
 
 
-    def get_name_ext_clip_ply(self, p2, p3):
+    def get_name_ext_clip_ply(self, ext_ply, name):
         """
         Get the name of the extended clip `GXPLY` object in this view.
         """
-        p3.value = self._wrapper.get_name_ext_clip_ply(p2, p3.value.encode())
+        name.value = self._wrapper.get_name_ext_clip_ply(ext_ply, name.value.encode())
         
 
 
@@ -826,31 +826,31 @@ class GXMVIEW:
 
 
 
-    def set_ext_clip_ply(self, p2, p3, p4):
+    def set_ext_clip_ply(self, ext_ply, name, ply):
         """
         Set an extended clip `GXPLY` object used by this view.
         """
-        ret_val = self._wrapper.set_ext_clip_ply(p2, p3.encode(), p4._wrapper)
+        ret_val = self._wrapper.set_ext_clip_ply(ext_ply, name.encode(), ply._wrapper)
         return ret_val
 
 
 
 
-    def set_clip_ply(self, p2):
+    def set_clip_ply(self, poly):
         """
         Set clipping region to a `GXPLY`
         """
-        self._wrapper.set_clip_ply(p2._wrapper)
+        self._wrapper.set_clip_ply(poly._wrapper)
         
 
 
 
 
-    def set_group_ext_clip_ply(self, p2, p3):
+    def set_group_ext_clip_ply(self, group, ext_ply):
         """
         Sets extended clip information for group in view.
         """
-        self._wrapper.set_group_ext_clip_ply(p2.encode(), p3)
+        self._wrapper.set_group_ext_clip_ply(group.encode(), ext_ply)
         
 
 
@@ -860,7 +860,7 @@ class GXMVIEW:
 
 
     @classmethod
-    def color2_rgb(cls, p1, p2, p3, p4):
+    def color2_rgb(cls, color, r, g, b):
         """
         Convert to RGB values.
 
@@ -872,13 +872,13 @@ class GXMVIEW:
 
             `color`
         """
-        p2.value, p3.value, p4.value = gxapi_cy.WrapMVIEW.color2_rgb(GXContext._get_tls_geo(), p1, p2.value, p3.value, p4.value)
+        r.value, g.value, b.value = gxapi_cy.WrapMVIEW.color2_rgb(GXContext._get_tls_geo(), color, r.value, g.value, b.value)
         
 
 
 
     @classmethod
-    def color_descr(cls, p1, p2):
+    def color_descr(cls, color, color_descr):
         """
         Convert a color to a color string label
 
@@ -886,13 +886,13 @@ class GXMVIEW:
 
         See `color`.
         """
-        p2.value = gxapi_cy.WrapMVIEW.color_descr(GXContext._get_tls_geo(), p1, p2.value.encode())
+        color_descr.value = gxapi_cy.WrapMVIEW.color_descr(GXContext._get_tls_geo(), color, color_descr.value.encode())
         
 
 
 
     @classmethod
-    def color(cls, p1):
+    def color(cls, color):
         """
         Get a color from a color string label
 
@@ -915,13 +915,13 @@ class GXMVIEW:
 
             iColorXXX_MVIEW macros
         """
-        ret_val = gxapi_cy.WrapMVIEW.color(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapMVIEW.color(GXContext._get_tls_geo(), color.encode())
         return ret_val
 
 
 
     @classmethod
-    def color_cmy(cls, p1, p2, p3):
+    def color_cmy(cls, c, m, y):
         """
         Return CMY color.
 
@@ -933,13 +933,13 @@ class GXMVIEW:
 
             `color`
         """
-        ret_val = gxapi_cy.WrapMVIEW.color_cmy(GXContext._get_tls_geo(), p1, p2, p3)
+        ret_val = gxapi_cy.WrapMVIEW.color_cmy(GXContext._get_tls_geo(), c, m, y)
         return ret_val
 
 
 
     @classmethod
-    def color_hsv(cls, p1, p2, p3):
+    def color_hsv(cls, h, s, v):
         """
         Return HSV color.
 
@@ -951,13 +951,13 @@ class GXMVIEW:
 
             `color`
         """
-        ret_val = gxapi_cy.WrapMVIEW.color_hsv(GXContext._get_tls_geo(), p1, p2, p3)
+        ret_val = gxapi_cy.WrapMVIEW.color_hsv(GXContext._get_tls_geo(), h, s, v)
         return ret_val
 
 
 
     @classmethod
-    def color_rgb(cls, p1, p2, p3):
+    def color_rgb(cls, r, g, b):
         """
         Return RGB color.
 
@@ -969,7 +969,7 @@ class GXMVIEW:
 
             `color`
         """
-        ret_val = gxapi_cy.WrapMVIEW.color_rgb(GXContext._get_tls_geo(), p1, p2, p3)
+        ret_val = gxapi_cy.WrapMVIEW.color_rgb(GXContext._get_tls_geo(), r, g, b)
         return ret_val
 
 
@@ -979,7 +979,7 @@ class GXMVIEW:
 
 
 
-    def clip_mode(self, p2):
+    def clip_mode(self, mode):
         """
         Set the view clipping mode on or off.
 
@@ -999,43 +999,43 @@ class GXMVIEW:
         to determine the  true visible extents of a group. In such cases, the
         "zoom to full map extents" command may give incorrect results.
         """
-        self._wrapper.clip_mode(p2)
+        self._wrapper.clip_mode(mode)
         
 
 
 
 
-    def fill_color(self, p2):
+    def fill_color(self, color):
         """
         Set the fill color.
         """
-        self._wrapper.fill_color(p2)
+        self._wrapper.fill_color(color)
         
 
 
 
 
-    def line_color(self, p2):
+    def line_color(self, color):
         """
         Set the line color.
         """
-        self._wrapper.line_color(p2)
+        self._wrapper.line_color(color)
         
 
 
 
 
-    def line_smooth(self, p2):
+    def line_smooth(self, smooth):
         """
         Set the line edge smoothing.
         """
-        self._wrapper.line_smooth(p2)
+        self._wrapper.line_smooth(smooth)
         
 
 
 
 
-    def line_style(self, p2, p3):
+    def line_style(self, style, pitch):
         """
         Set the style of a line.
 
@@ -1051,23 +1051,23 @@ class GXMVIEW:
         read into the map at the time the map is created, not
         at display time.
         """
-        self._wrapper.line_style(p2, p3)
+        self._wrapper.line_style(style, pitch)
         
 
 
 
 
-    def line_thick(self, p2):
+    def line_thick(self, thick):
         """
         Set the line thickness.
         """
-        self._wrapper.line_thick(p2)
+        self._wrapper.line_thick(thick)
         
 
 
 
 
-    def pat_angle(self, p2):
+    def pat_angle(self, angle):
         """
         Sets the pattern angle
 
@@ -1090,13 +1090,13 @@ class GXMVIEW:
         
         See the IMPORTANT note for sPatNumber_MVIEW().
         """
-        self._wrapper.pat_angle(p2)
+        self._wrapper.pat_angle(angle)
         
 
 
 
 
-    def pat_density(self, p2):
+    def pat_density(self, density):
         """
         Sets the tiling density.
 
@@ -1111,13 +1111,13 @@ class GXMVIEW:
         
         See the IMPORTANT note for sPatNumber_MVIEW().
         """
-        self._wrapper.pat_density(p2)
+        self._wrapper.pat_density(density)
         
 
 
 
 
-    def pat_number(self, p2):
+    def pat_number(self, number):
         """
         Sets the pattern number
 
@@ -1141,13 +1141,13 @@ class GXMVIEW:
         If you want to modify any attributes, call that function (e.g.
         sPatSize_MVIEW(), AFTER you call sPatNumber_MVIEW().
         """
-        self._wrapper.pat_number(p2)
+        self._wrapper.pat_number(number)
         
 
 
 
 
-    def pat_size(self, p2):
+    def pat_size(self, size):
         """
         Sets the pattern unit cell size (X)
 
@@ -1155,13 +1155,13 @@ class GXMVIEW:
 
         See the IMPORTANT note for sPatNumber_MVIEW().
         """
-        self._wrapper.pat_size(p2)
+        self._wrapper.pat_size(size)
         
 
 
 
 
-    def pat_style(self, p2):
+    def pat_style(self, style):
         """
         Sets the tiling method (i.e. rectangle, triangle)
 
@@ -1183,13 +1183,13 @@ class GXMVIEW:
         
         See the IMPORTANT note for sPatNumber_MVIEW().
         """
-        self._wrapper.pat_style(p2)
+        self._wrapper.pat_style(style)
         
 
 
 
 
-    def pat_thick(self, p2):
+    def pat_thick(self, thick):
         """
         Sets the pattern line thickness
 
@@ -1197,37 +1197,37 @@ class GXMVIEW:
 
         See the IMPORTANT note for sPatNumber_MVIEW().
         """
-        self._wrapper.pat_thick(p2)
+        self._wrapper.pat_thick(thick)
         
 
 
 
 
-    def symb_angle(self, p2):
+    def symb_angle(self, angle):
         """
         Set the Symb angle.
         """
-        self._wrapper.symb_angle(p2)
+        self._wrapper.symb_angle(angle)
         
 
 
 
 
-    def symb_color(self, p2):
+    def symb_color(self, color):
         """
         Set the Symbol color.
         """
-        self._wrapper.symb_color(p2)
+        self._wrapper.symb_color(color)
         
 
 
 
 
-    def symb_fill_color(self, p2):
+    def symb_fill_color(self, color):
         """
         Set the Symbol color fill.
         """
-        self._wrapper.symb_fill_color(p2)
+        self._wrapper.symb_fill_color(color)
         
 
 
@@ -1251,7 +1251,7 @@ class GXMVIEW:
 
 
 
-    def symb_number(self, p2):
+    def symb_number(self, number):
         """
         Set the Symbol number.
 
@@ -1264,37 +1264,37 @@ class GXMVIEW:
         It is possible to check if a character is valid using `GXUNC.is_valid_utf16_char`. The high 16-bits are reserved
         for future use. Also see: `GXUNC.valid_symbol` and `GXUNC.validate_symbols`.
         """
-        self._wrapper.symb_number(p2)
+        self._wrapper.symb_number(number)
         
 
 
 
 
-    def symb_size(self, p2):
+    def symb_size(self, size):
         """
         Set the Symb size.
         """
-        self._wrapper.symb_size(p2)
+        self._wrapper.symb_size(size)
         
 
 
 
 
-    def text_angle(self, p2):
+    def text_angle(self, angle):
         """
         Set the text angle.
         """
-        self._wrapper.text_angle(p2)
+        self._wrapper.text_angle(angle)
         
 
 
 
 
-    def text_color(self, p2):
+    def text_color(self, color):
         """
         Set the Text color.
         """
-        self._wrapper.text_color(p2)
+        self._wrapper.text_color(color)
         
 
 
@@ -1345,17 +1345,17 @@ class GXMVIEW:
 
 
 
-    def text_ref(self, p2):
+    def text_ref(self, ref):
         """
         Set the text plot reference point.
         """
-        self._wrapper.text_ref(p2)
+        self._wrapper.text_ref(ref)
         
 
 
 
 
-    def text_size(self, p2):
+    def text_size(self, size):
         """
         Set the text size.
 
@@ -1376,13 +1376,13 @@ class GXMVIEW:
         below 0 in the Y (this is known as the "descent" height of the font at this size). The letters B and l
         should be very close to the size set here (this may differ slightly for different fonts).
         """
-        self._wrapper.text_size(p2)
+        self._wrapper.text_size(size)
         
 
 
 
 
-    def transparency(self, p2):
+    def transparency(self, trans):
         """
         Sets the transparency for new objects.
 
@@ -1392,13 +1392,13 @@ class GXMVIEW:
         Objects written after this will have a combined transparency value with the
         group transparency if it is set (e.g. 0.5 for group and 0.8 stream will result in 0.4).
         """
-        self._wrapper.transparency(p2)
+        self._wrapper.transparency(trans)
         
 
 
 
 
-    def z_value(self, p2):
+    def z_value(self, val):
         """
         Sets Z-value info.
 
@@ -1407,7 +1407,7 @@ class GXMVIEW:
         This number is stored in map mainly for exports to other vector formats (e.g ShapeFiles)
         A contour map that's exported to a shape file will use this value as a Z-value attributes for its shapes.
         """
-        self._wrapper.z_value(p2)
+        self._wrapper.z_value(val)
         
 
 
@@ -1417,27 +1417,27 @@ class GXMVIEW:
 
 
 
-    def arc(self, p2, p3, p4, p5, p6, p7, p8):
+    def arc(self, x, y, radius, ratio, angle, start, end):
         """
         Draw an arc.
         """
-        self._wrapper.arc(p2, p3, p4, p5, p6, p7, p8)
+        self._wrapper.arc(x, y, radius, ratio, angle, start, end)
         
 
 
 
 
-    def chord(self, p2, p3, p4, p5, p6, p7, p8):
+    def chord(self, x, y, radius, ratio, angle, start, end):
         """
         Draw a filled arc.
         """
-        self._wrapper.chord(p2, p3, p4, p5, p6, p7, p8)
+        self._wrapper.chord(x, y, radius, ratio, angle, start, end)
         
 
 
 
 
-    def classified_symbols(self, p2, p3, p4, p5, p6, p7, p8, p9):
+    def classified_symbols(self, v_vx, v_vy, v_vz, scal_mm, zmin, zval, size, fcol):
         """
         Plot classified symbols
 
@@ -1450,13 +1450,13 @@ class GXMVIEW:
         "2.0,2.5,3.0"     sizes in mm
         "y,g,r"           fill colors
         """
-        self._wrapper.classified_symbols(p2._wrapper, p3._wrapper, p4._wrapper, p5, p6, p7.encode(), p8.encode(), p9.encode())
+        self._wrapper.classified_symbols(v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, scal_mm, zmin, zval.encode(), size.encode(), fcol.encode())
         
 
 
 
 
-    def complex_polygon(self, p2, p3, p4):
+    def complex_polygon(self, v_vi, v_vx, v_vy):
         """
         Draw a polygon with holes in it.
 
@@ -1464,63 +1464,63 @@ class GXMVIEW:
 
         You pass a `GXVV` with polygon sizes and 2 point vvs.
         """
-        self._wrapper.complex_polygon(p2._wrapper, p3._wrapper, p4._wrapper)
+        self._wrapper.complex_polygon(v_vi._wrapper, v_vx._wrapper, v_vy._wrapper)
         
 
 
 
 
-    def ellipse(self, p2, p3, p4, p5, p6):
+    def ellipse(self, x, y, radius, ratio, angle):
         """
         Draw an ellipse
         """
-        self._wrapper.ellipse(p2, p3, p4, p5, p6)
+        self._wrapper.ellipse(x, y, radius, ratio, angle)
         
 
 
 
 
-    def line(self, p2, p3, p4, p5):
+    def line(self, x0, y0, x1, y1):
         """
         Draw a line.
         """
-        self._wrapper.line(p2, p3, p4, p5)
+        self._wrapper.line(x0, y0, x1, y1)
         
 
 
 
 
-    def line_vv(self, p2):
+    def line_vv(self, gvv):
         """
         Draw line segments stored in a GS_D2LINE `GXVV`.
         """
-        self._wrapper.line_vv(p2._wrapper)
+        self._wrapper.line_vv(gvv._wrapper)
         
 
 
 
 
-    def polygon_dm(self, p2, p3):
+    def polygon_dm(self, v_vx, v_vy):
         """
         Like PolyLineDm, but draw polygons.
         """
-        self._wrapper.polygon_dm(p2._wrapper, p3._wrapper)
+        self._wrapper.polygon_dm(v_vx._wrapper, v_vy._wrapper)
         
 
 
 
 
-    def polygon_ply(self, p2):
+    def polygon_ply(self, ply):
         """
         Draw a complex polygon from `GXPLY`.
         """
-        self._wrapper.polygon_ply(p2._wrapper)
+        self._wrapper.polygon_ply(ply._wrapper)
         
 
 
 
 
-    def poly_line(self, p2, p3, p4):
+    def poly_line(self, type, v_vx, v_vy):
         """
         Draw a polyline or polygon (dummies deleted).
 
@@ -1530,23 +1530,23 @@ class GXMVIEW:
         in 'solid' line. Using `poly_line_dm` (below) function
         if gaps from dummies are to be kept.
         """
-        self._wrapper.poly_line(p2, p3._wrapper, p4._wrapper)
+        self._wrapper.poly_line(type, v_vx._wrapper, v_vy._wrapper)
         
 
 
 
 
-    def poly_line_dm(self, p2, p3):
+    def poly_line_dm(self, v_vx, v_vy):
         """
         Draw a polyline with gaps defined by dummies in X/Y VVs
         """
-        self._wrapper.poly_line_dm(p2._wrapper, p3._wrapper)
+        self._wrapper.poly_line_dm(v_vx._wrapper, v_vy._wrapper)
         
 
 
 
 
-    def poly_wrap(self, p2, p3):
+    def poly_wrap(self, v_vx, v_vy):
         """
         Draw wrapped polylines from X and Y `GXVV`'s.
 
@@ -1560,77 +1560,77 @@ class GXMVIEW:
 
             `poly_line`
         """
-        self._wrapper.poly_wrap(p2._wrapper, p3._wrapper)
+        self._wrapper.poly_wrap(v_vx._wrapper, v_vy._wrapper)
         
 
 
 
 
-    def rectangle(self, p2, p3, p4, p5):
+    def rectangle(self, x0, y0, x1, y1):
         """
         Draw a rectangle.
         """
-        self._wrapper.rectangle(p2, p3, p4, p5)
+        self._wrapper.rectangle(x0, y0, x1, y1)
         
 
 
 
 
-    def segment(self, p2, p3, p4, p5, p6, p7, p8):
+    def segment(self, x, y, radius, ratio, angle, start, end):
         """
         Draw a filled segment of an ellipse.
         """
-        self._wrapper.segment(p2, p3, p4, p5, p6, p7, p8)
+        self._wrapper.segment(x, y, radius, ratio, angle, start, end)
         
 
 
 
 
-    def size_symbols(self, p2, p3, p4):
+    def size_symbols(self, v_vx, v_vy, v_vz):
         """
         Plot sized symbols
         """
-        self._wrapper.size_symbols(p2._wrapper, p3._wrapper, p4._wrapper)
+        self._wrapper.size_symbols(v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
         
 
 
 
 
-    def symbol(self, p2, p3):
+    def symbol(self, x, y):
         """
         Plot a symbol
         """
-        self._wrapper.symbol(p2, p3)
+        self._wrapper.symbol(x, y)
         
 
 
 
 
-    def symbols(self, p2, p3):
+    def symbols(self, v_vx, v_vy):
         """
         Plot symbols
         """
-        self._wrapper.symbols(p2._wrapper, p3._wrapper)
+        self._wrapper.symbols(v_vx._wrapper, v_vy._wrapper)
         
 
 
 
 
-    def symbols_itr(self, p2, p3, p4, p5):
+    def symbols_itr(self, itr, v_vx, v_vy, v_vz):
         """
         Plot symbols using an `GXITR`
         """
-        self._wrapper.symbols_itr(p2.encode(), p3._wrapper, p4._wrapper, p5._wrapper)
+        self._wrapper.symbols_itr(itr.encode(), v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
         
 
 
 
 
-    def text(self, p2, p3, p4):
+    def text(self, text, x, y):
         """
         Draw text.
         """
-        self._wrapper.text(p2.encode(), p3, p4)
+        self._wrapper.text(text.encode(), x, y)
         
 
 
@@ -1640,17 +1640,17 @@ class GXMVIEW:
 
 
 
-    def aggregate(self, p2, p3):
+    def aggregate(self, agg, name):
         """
         Add an aggregate to a view.
         """
-        self._wrapper.aggregate(p2._wrapper, p3.encode())
+        self._wrapper.aggregate(agg._wrapper, name.encode())
         
 
 
 
 
-    def get_aggregate(self, p2):
+    def get_aggregate(self, group):
         """
         Get an existing Aggregate object from the view.
 
@@ -1658,13 +1658,13 @@ class GXMVIEW:
 
         This method returns a cached object owned by the `GXMVIEW` and will be destroyed automatically when the `GXMVIEW` is disposed
         """
-        ret_val = self._wrapper.get_aggregate(p2)
+        ret_val = self._wrapper.get_aggregate(group)
         return GXAGG(ret_val)
 
 
 
 
-    def change_line_message(self, p2):
+    def change_line_message(self, line):
         """
         Change the specified line in a view.
 
@@ -1674,23 +1674,23 @@ class GXMVIEW:
         `DB_LINE_LABEL_FORMAT_LINK`. This insures that the label is
         created is the same way as used in the database.
         """
-        self._wrapper.change_line_message(p2.encode())
+        self._wrapper.change_line_message(line.encode())
         
 
 
 
 
-    def col_symbol(self, p2, p3):
+    def col_symbol(self, name, csymb):
         """
         Add a colored symbol object to a view.
         """
-        self._wrapper.col_symbol(p2.encode(), p3._wrapper)
+        self._wrapper.col_symbol(name.encode(), csymb._wrapper)
         
 
 
 
 
-    def get_col_symbol(self, p2):
+    def get_col_symbol(self, group):
         """
         Get an existing colored symbol object from the view.
 
@@ -1698,23 +1698,23 @@ class GXMVIEW:
 
         This method returns a cached object owned by the `GXMVIEW` and will be destroyed automatically when the `GXMVIEW` is disposed
         """
-        ret_val = self._wrapper.get_col_symbol(p2)
+        ret_val = self._wrapper.get_col_symbol(group)
         return GXCSYMB(ret_val)
 
 
 
 
-    def datalinkd(self, p2, p3):
+    def datalinkd(self, datalinkd, name):
         """
         Add a Data Link Display (`GXDATALINKD`) object to the view.
         """
-        self._wrapper.datalinkd(p2._wrapper, p3.encode())
+        self._wrapper.datalinkd(datalinkd._wrapper, name.encode())
         
 
 
 
 
-    def get_datalinkd(self, p2):
+    def get_datalinkd(self, group):
         """
         Get an existing Data Link Display (`GXDATALINKD`) object from the view.
 
@@ -1722,83 +1722,83 @@ class GXMVIEW:
 
         This method returns a cached object owned by the `GXMVIEW` and will be destroyed automatically when the `GXMVIEW` is disposed
         """
-        ret_val = self._wrapper.get_datalinkd(p2)
+        ret_val = self._wrapper.get_datalinkd(group)
         return GXDATALINKD(ret_val)
 
 
 
 
-    def easy_maker(self, p2, p3):
+    def easy_maker(self, name, groups):
         """
         Used for GX makers which use both maps and databases.
         """
-        self._wrapper.easy_maker(p2.encode(), p3.encode())
+        self._wrapper.easy_maker(name.encode(), groups.encode())
         
 
 
 
 
-    def emf_object(self, p2, p3, p4, p5, p6):
+    def emf_object(self, min_x, min_y, max_x, max_y, file):
         """
         Add an EMF file data object to the view.
         """
-        self._wrapper.emf_object(p2, p3, p4, p5, p6.encode())
+        self._wrapper.emf_object(min_x, min_y, max_x, max_y, file.encode())
         
 
 
 
 
-    def external_string_object(self, p2, p3, p4, p5, p6, p7, p8):
+    def external_string_object(self, min_x, min_y, max_x, max_y, name, cl, data):
         """
         Add an external string data object to the view.
         """
-        self._wrapper.external_string_object(p2, p3, p4, p5, p6.encode(), p7.encode(), p8.encode())
+        self._wrapper.external_string_object(min_x, min_y, max_x, max_y, name.encode(), cl.encode(), data.encode())
         
 
 
 
 
-    def link(self, p2, p3):
+    def link(self, db, name):
         """
         Make a link to a database.
         """
-        self._wrapper.link(p2._wrapper, p3.encode())
+        self._wrapper.link(db._wrapper, name.encode())
         
 
 
 
 
-    def maker(self, p2, p3, p4, p5, p6, p7):
+    def maker(self, db, p3, p4, p5, p6, p7):
         """
         Generates a Maker for the database and/or map.
         """
-        self._wrapper.maker(p2, p3, p4.encode(), p5, p6.encode(), p7.encode())
+        self._wrapper.maker(db, p3, p4.encode(), p5, p6.encode(), p7.encode())
         
 
 
 
 
-    def meta(self, p2, p3):
+    def meta(self, meta, name):
         """
         Store Metadata in a group
         """
-        self._wrapper.meta(p2._wrapper, p3.encode())
+        self._wrapper.meta(meta._wrapper, name.encode())
         
 
 
 
 
-    def voxd(self, p2, p3):
+    def voxd(self, voxd, name):
         """
         Add a Voxel Display (`GXVOXD`) object to the view.
         """
-        self._wrapper.voxd(p2._wrapper, p3.encode())
+        self._wrapper.voxd(voxd._wrapper, name.encode())
         
 
 
 
 
-    def get_voxd(self, p2):
+    def get_voxd(self, group):
         """
         Get an existing `GXVOXD` object from the view.
 
@@ -1806,13 +1806,13 @@ class GXMVIEW:
 
         This method returns a cached object owned by the `GXMVIEW` and will be destroyed automatically when the `GXMVIEW` is disposed
         """
-        ret_val = self._wrapper.get_voxd(p2)
+        ret_val = self._wrapper.get_voxd(group)
         return GXVOXD(ret_val)
 
 
 
 
-    def draw_vector_voxel_vectors(self, p2, p3, p4, p5, p6, p7, p8, p9):
+    def draw_vector_voxel_vectors(self, vox, group, itr, scale_factor, height_base_ratio, max_base_size_ratio, cutoff_value, max_vectors):
         """
         Display vectors from a vector voxel in the view.
 
@@ -1820,13 +1820,13 @@ class GXMVIEW:
 
         This will result in a `GXVECTOR3D` group object within the view
         """
-        self._wrapper.draw_vector_voxel_vectors(p2._wrapper, p3.encode(), p4._wrapper, p5, p6, p7, p8, p9)
+        self._wrapper.draw_vector_voxel_vectors(vox._wrapper, group.encode(), itr._wrapper, scale_factor, height_base_ratio, max_base_size_ratio, cutoff_value, max_vectors)
         
 
 
 
 
-    def get_vector_3d(self, p2):
+    def get_vector_3d(self, group):
         """
         Get an existing `GXVECTOR3D` object from the view.
 
@@ -1834,17 +1834,17 @@ class GXMVIEW:
 
         This method returns a cached object owned by the `GXMVIEW` and will be destroyed automatically when the `GXMVIEW` is disposed
         """
-        ret_val = self._wrapper.get_vector_3d(p2)
+        ret_val = self._wrapper.get_vector_3d(group)
         return GXVECTOR3D(ret_val)
 
 
 
 
-    def draw_vectors_3d(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+    def draw_vectors_3d(self, group, v_vx, v_vy, v_vz, v_vvx, v_vvy, v_vvz, itr, scale_for_max_vector, height_base_ratio, max_base_size_ratio):
         """
         Display vectors in the view.
         """
-        self._wrapper.draw_vectors_3d(p2.encode(), p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper, p7._wrapper, p8._wrapper, p9._wrapper, p10, p11, p12)
+        self._wrapper.draw_vectors_3d(group.encode(), v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, v_vvx._wrapper, v_vvy._wrapper, v_vvz._wrapper, itr._wrapper, scale_for_max_vector, height_base_ratio, max_base_size_ratio)
         
 
 
@@ -1854,7 +1854,7 @@ class GXMVIEW:
 
 
 
-    def set_group_itr(self, p2, p3):
+    def set_group_itr(self, group, itr):
         """
         Set group `GXITR`
 
@@ -1864,13 +1864,13 @@ class GXMVIEW:
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
         to refresh the objects.
         """
-        self._wrapper.set_group_itr(p2, p3._wrapper)
+        self._wrapper.set_group_itr(group, itr._wrapper)
         
 
 
 
 
-    def get_group_itr(self, p2):
+    def get_group_itr(self, group):
         """
         Get group `GXITR`
 
@@ -1880,13 +1880,13 @@ class GXMVIEW:
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
         to refresh the objects.
         """
-        ret_val = self._wrapper.get_group_itr(p2)
+        ret_val = self._wrapper.get_group_itr(group)
         return GXITR(ret_val)
 
 
 
 
-    def group_itr_exists(self, p2):
+    def group_itr_exists(self, group):
         """
         Determine if group `GXITR` exists.
 
@@ -1896,13 +1896,13 @@ class GXMVIEW:
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
         to refresh the objects.
         """
-        ret_val = self._wrapper.group_itr_exists(p2)
+        ret_val = self._wrapper.group_itr_exists(group)
         return ret_val
 
 
 
 
-    def delete_group_itr(self, p2):
+    def delete_group_itr(self, group):
         """
         Deletes existing `GXITR` associated with a group.
 
@@ -1912,13 +1912,13 @@ class GXMVIEW:
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
         to refresh the objects.
         """
-        self._wrapper.delete_group_itr(p2)
+        self._wrapper.delete_group_itr(group)
         
 
 
 
 
-    def set_group_tpat(self, p2, p3):
+    def set_group_tpat(self, group, tpat):
         """
         Set group `GXTPAT`
 
@@ -1928,13 +1928,13 @@ class GXMVIEW:
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
         to refresh the objects.
         """
-        self._wrapper.set_group_tpat(p2, p3._wrapper)
+        self._wrapper.set_group_tpat(group, tpat._wrapper)
         
 
 
 
 
-    def get_group_tpat(self, p2):
+    def get_group_tpat(self, group):
         """
         Get group `GXTPAT`
 
@@ -1944,13 +1944,13 @@ class GXMVIEW:
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
         to refresh the objects.
         """
-        ret_val = self._wrapper.get_group_tpat(p2)
+        ret_val = self._wrapper.get_group_tpat(group)
         return GXTPAT(ret_val)
 
 
 
 
-    def group_tpat_exists(self, p2):
+    def group_tpat_exists(self, group):
         """
         Determine if group `GXTPAT` exists.
 
@@ -1960,13 +1960,13 @@ class GXMVIEW:
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
         to refresh the objects.
         """
-        ret_val = self._wrapper.group_tpat_exists(p2)
+        ret_val = self._wrapper.group_tpat_exists(group)
         return ret_val
 
 
 
 
-    def delete_group_tpat(self, p2):
+    def delete_group_tpat(self, group):
         """
         Deletes existing `GXTPAT` associated with a group.
 
@@ -1976,13 +1976,13 @@ class GXMVIEW:
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
         to refresh the objects.
         """
-        self._wrapper.delete_group_tpat(p2)
+        self._wrapper.delete_group_tpat(group)
         
 
 
 
 
-    def group_storage_exists(self, p2, p3):
+    def group_storage_exists(self, group, storage_name):
         """
         Determine if generic storage associated with a group exists.
 
@@ -1990,13 +1990,13 @@ class GXMVIEW:
 
         External API users should not use storage names starting with "Geosoft"
         """
-        ret_val = self._wrapper.group_storage_exists(p2, p3.encode())
+        ret_val = self._wrapper.group_storage_exists(group, storage_name.encode())
         return ret_val
 
 
 
 
-    def read_group_storage(self, p2, p3):
+    def read_group_storage(self, group, storage_name):
         """
         Reads existing generic storage associated with a group into an in-memory `GXBF`.
 
@@ -2004,13 +2004,13 @@ class GXMVIEW:
 
         External API users should not use storage names starting with "Geosoft"
         """
-        ret_val = self._wrapper.read_group_storage(p2, p3.encode())
+        ret_val = self._wrapper.read_group_storage(group, storage_name.encode())
         return GXBF(ret_val)
 
 
 
 
-    def delete_group_storage(self, p2, p3):
+    def delete_group_storage(self, group, storage_name):
         """
         Deletes existing generic storage associated with a group.
 
@@ -2018,13 +2018,13 @@ class GXMVIEW:
 
         External API users should not use storage names starting with "Geosoft"
         """
-        self._wrapper.delete_group_storage(p2, p3.encode())
+        self._wrapper.delete_group_storage(group, storage_name.encode())
         
 
 
 
 
-    def write_group_storage(self, p2, p3, p4):
+    def write_group_storage(self, group, storage_name, bf):
         """
         Open generic existing storage associated with a group for reading.
 
@@ -2032,13 +2032,13 @@ class GXMVIEW:
 
         External API users should not use storage names starting with "Geosoft"
         """
-        self._wrapper.write_group_storage(p2, p3.encode(), p4._wrapper)
+        self._wrapper.write_group_storage(group, storage_name.encode(), bf._wrapper)
         
 
 
 
 
-    def copy_marked_groups(self, p2):
+    def copy_marked_groups(self, mvie_wd):
         """
         Copies all marked groups from one view into another view
 
@@ -2048,13 +2048,13 @@ class GXMVIEW:
         entities. Entities are clipped by the destination view's clipping
         region.
         """
-        self._wrapper.copy_marked_groups(p2._wrapper)
+        self._wrapper.copy_marked_groups(mvie_wd._wrapper)
         
 
 
 
 
-    def copy_raw_marked_groups(self, p2):
+    def copy_raw_marked_groups(self, mvie_wd):
         """
         Copies all marked groups raw from one view into another
 
@@ -2062,23 +2062,23 @@ class GXMVIEW:
 
         The projections, and clipping is completly ignored.
         """
-        self._wrapper.copy_raw_marked_groups(p2._wrapper)
+        self._wrapper.copy_raw_marked_groups(mvie_wd._wrapper)
         
 
 
 
 
-    def crc_group(self, p2, p3):
+    def crc_group(self, name, crc):
         """
         Compute CRC for a group.
         """
-        ret_val = self._wrapper.crc_group(p2.encode(), p3)
+        ret_val = self._wrapper.crc_group(name.encode(), crc)
         return ret_val
 
 
 
 
-    def delete_group(self, p2):
+    def delete_group(self, group):
         """
         Delete a group.
 
@@ -2086,7 +2086,7 @@ class GXMVIEW:
 
         Does nothing if the group does not already exist.
         """
-        self._wrapper.delete_group(p2.encode())
+        self._wrapper.delete_group(group.encode())
         
 
 
@@ -2102,27 +2102,27 @@ class GXMVIEW:
 
 
 
-    def get_group_extent(self, p2, p3, p4, p5, p6, p7):
+    def get_group_extent(self, group_name, xmin, ymin, xmax, ymax, unit):
         """
         Get extent of a group in a view
         """
-        p3.value, p4.value, p5.value, p6.value = self._wrapper.get_group_extent(p2.encode(), p3.value, p4.value, p5.value, p6.value, p7)
+        xmin.value, ymin.value, xmax.value, ymax.value = self._wrapper.get_group_extent(group_name.encode(), xmin.value, ymin.value, xmax.value, ymax.value, unit)
         
 
 
 
 
-    def get_group_transparency(self, p2, p3):
+    def get_group_transparency(self, group_name, trans):
         """
         Gets the transparency value of group
         """
-        p3.value = self._wrapper.get_group_transparency(p2.encode(), p3.value)
+        trans.value = self._wrapper.get_group_transparency(group_name.encode(), trans.value)
         
 
 
 
 
-    def group_to_ply(self, p2, p3):
+    def group_to_ply(self, name, pply):
         """
         Save all polygons in group into `GXPLY` obj.
 
@@ -2133,69 +2133,69 @@ class GXMVIEW:
         to change the working coordinate system. This function will
         return an empty `GXPLY` if the group is hidden.
         """
-        self._wrapper.group_to_ply(p2.encode(), p3._wrapper)
+        self._wrapper.group_to_ply(name.encode(), pply._wrapper)
         
 
 
 
 
-    def hide_marked_groups(self, p2):
+    def hide_marked_groups(self, mode):
         """
         Hide/Show marked groups.
         """
-        self._wrapper.hide_marked_groups(p2)
+        self._wrapper.hide_marked_groups(mode)
         
 
 
 
 
-    def hide_shadow2_d_interpretations(self, p2):
+    def hide_shadow2_d_interpretations(self, mode):
         """
         Hide/Show 2d shadow interpretations.
         """
-        self._wrapper.hide_shadow2_d_interpretations(p2)
+        self._wrapper.hide_shadow2_d_interpretations(mode)
         
 
 
 
 
-    def exist_group(self, p2):
+    def exist_group(self, name):
         """
         Checks to see if a group exists.
         """
-        ret_val = self._wrapper.exist_group(p2.encode())
+        ret_val = self._wrapper.exist_group(name.encode())
         return ret_val
 
 
 
 
-    def gen_new_group_name(self, p2, p3):
+    def gen_new_group_name(self, group, new_name):
         """
         Generate the name of a group from a base name that
         is new. (always unique and won't overwrite existing
         objects).
         """
-        p3.value = self._wrapper.gen_new_group_name(p2.encode(), p3.value.encode())
+        new_name.value = self._wrapper.gen_new_group_name(group.encode(), new_name.value.encode())
         
 
 
 
 
-    def is_group(self, p2, p3):
+    def is_group(self, group, what):
         """
         Query a status or characteristic of a group
         """
-        ret_val = self._wrapper.is_group(p2.encode(), p3)
+        ret_val = self._wrapper.is_group(group.encode(), what)
         return ret_val
 
 
 
 
-    def is_group_empty(self, p2):
+    def is_group_empty(self, group):
         """
         Is the group empty?
         """
-        ret_val = self._wrapper.is_group_empty(p2.encode())
+        ret_val = self._wrapper.is_group_empty(group.encode())
         return ret_val
 
 
@@ -2227,11 +2227,11 @@ class GXMVIEW:
 
 
 
-    def list_groups(self, p2, p3):
+    def list_groups(self, lst, flag):
         """
         Get a list of the groups in a view.
         """
-        ret_val = self._wrapper.list_groups(p2._wrapper, p3)
+        ret_val = self._wrapper.list_groups(lst._wrapper, flag)
         return ret_val
 
 
@@ -2251,77 +2251,77 @@ class GXMVIEW:
 
 
 
-    def mark_all_groups(self, p2):
+    def mark_all_groups(self, mark):
         """
         Mark or unmark all groups.
         """
-        self._wrapper.mark_all_groups(p2)
+        self._wrapper.mark_all_groups(mark)
         
 
 
 
 
-    def mark_empty_groups(self, p2):
+    def mark_empty_groups(self, mark):
         """
         Mark/unmark all empty groups.
         """
-        self._wrapper.mark_empty_groups(p2)
+        self._wrapper.mark_empty_groups(mark)
         
 
 
 
 
-    def mark_group(self, p2, p3):
+    def mark_group(self, name, mark):
         """
         Mark or unmark a specific group
         """
-        self._wrapper.mark_group(p2.encode(), p3)
+        self._wrapper.mark_group(name.encode(), mark)
         
 
 
 
 
-    def move_group_backward(self, p2):
+    def move_group_backward(self, group):
         """
         Move the group backward one position (render sooner).
         """
-        self._wrapper.move_group_backward(p2.encode())
+        self._wrapper.move_group_backward(group.encode())
         
 
 
 
 
-    def move_group_forward(self, p2):
+    def move_group_forward(self, group):
         """
         Move the group forward one position (render later).
         """
-        self._wrapper.move_group_forward(p2.encode())
+        self._wrapper.move_group_forward(group.encode())
         
 
 
 
 
-    def move_group_to_back(self, p2):
+    def move_group_to_back(self, group):
         """
         Move the group to the back (render first).
         """
-        self._wrapper.move_group_to_back(p2.encode())
+        self._wrapper.move_group_to_back(group.encode())
         
 
 
 
 
-    def move_group_to_front(self, p2):
+    def move_group_to_front(self, group):
         """
         Move the group to the front (render last).
         """
-        self._wrapper.move_group_to_front(p2.encode())
+        self._wrapper.move_group_to_front(group.encode())
         
 
 
 
 
-    def rename_group(self, p2, p3):
+    def rename_group(self, old, new):
         """
         Rename a group.
 
@@ -2329,43 +2329,43 @@ class GXMVIEW:
 
         Does nothing if the group does not already exist.
         """
-        self._wrapper.rename_group(p2.encode(), p3.encode())
+        self._wrapper.rename_group(old.encode(), new.encode())
         
 
 
 
 
-    def set_group_moveable(self, p2, p3):
+    def set_group_moveable(self, group, move):
         """
         Set the movable attribute of a group.
         """
-        self._wrapper.set_group_moveable(p2.encode(), p3)
+        self._wrapper.set_group_moveable(group.encode(), move)
         
 
 
 
 
-    def set_group_transparency(self, p2, p3):
+    def set_group_transparency(self, group_name, trans):
         """
         Sets the transparency value of group
         """
-        self._wrapper.set_group_transparency(p2.encode(), p3)
+        self._wrapper.set_group_transparency(group_name.encode(), trans)
         
 
 
 
 
-    def set_mark_moveable(self, p2):
+    def set_mark_moveable(self, move):
         """
         Set the movable attribute of marked groups.
         """
-        self._wrapper.set_mark_moveable(p2)
+        self._wrapper.set_mark_moveable(move)
         
 
 
 
 
-    def set_movability(self, p2):
+    def set_movability(self, flag):
         """
         Set the view movability
 
@@ -2375,13 +2375,13 @@ class GXMVIEW:
         flag is for preventing accidental moving in the `GXGUI`.
         By default views are not movable.
         """
-        self._wrapper.set_movability(p2)
+        self._wrapper.set_movability(flag)
         
 
 
 
 
-    def set_render_order(self, p2):
+    def set_render_order(self, order):
         """
         Set the view render order
 
@@ -2389,23 +2389,23 @@ class GXMVIEW:
 
         Views with lower numbers should render first, `iDUMMY` is undefined
         """
-        self._wrapper.set_render_order(p2)
+        self._wrapper.set_render_order(order)
         
 
 
 
 
-    def set_visibility(self, p2):
+    def set_visibility(self, flag):
         """
         Set the view visibility
         """
-        self._wrapper.set_visibility(p2)
+        self._wrapper.set_visibility(flag)
         
 
 
 
 
-    def start_group(self, p2, p3):
+    def start_group(self, name, mode):
         """
         Start a group.
 
@@ -2420,13 +2420,13 @@ class GXMVIEW:
         
         Group names must be different from view names.
         """
-        self._wrapper.start_group(p2.encode(), p3)
+        self._wrapper.start_group(name.encode(), mode)
         
 
 
 
 
-    def get_group_guid(self, p2, p3):
+    def get_group_guid(self, group, guid):
         """
         Gets a GUID of a group in the `GXMVIEW`.
 
@@ -2434,17 +2434,17 @@ class GXMVIEW:
 
         If a GUID was never queried a new one will be assigned and the map will be modified. Only if the map is saved will this value then persist.
         """
-        p3.value = self._wrapper.get_group_guid(p2, p3.value.encode())
+        guid.value = self._wrapper.get_group_guid(group, guid.value.encode())
         
 
 
 
 
-    def find_group_by_guid(self, p2):
+    def find_group_by_guid(self, guid):
         """
         Find a Group by name.
         """
-        ret_val = self._wrapper.find_group_by_guid(p2.encode())
+        ret_val = self._wrapper.find_group_by_guid(guid.encode())
         return ret_val
 
 
@@ -2454,7 +2454,7 @@ class GXMVIEW:
 
 
 
-    def set_working_ipj(self, p2):
+    def set_working_ipj(self, ipj):
         """
         Set the working projection of the view.
 
@@ -2469,7 +2469,7 @@ class GXMVIEW:
 
             `mode_pj` to control use of the working projection.
         """
-        self._wrapper.set_working_ipj(p2._wrapper)
+        self._wrapper.set_working_ipj(ipj._wrapper)
         
 
 
@@ -2501,27 +2501,27 @@ class GXMVIEW:
 
 
 
-    def get_ipj(self, p2):
+    def get_ipj(self, ipj):
         """
         Get the projection of the view.
         """
-        self._wrapper.get_ipj(p2._wrapper)
+        self._wrapper.get_ipj(ipj._wrapper)
         
 
 
 
 
-    def get_user_ipj(self, p2):
+    def get_user_ipj(self, ipj):
         """
         Get the user projection of the view.
         """
-        self._wrapper.get_user_ipj(p2._wrapper)
+        self._wrapper.get_user_ipj(ipj._wrapper)
         
 
 
 
 
-    def mode_pj(self, p2):
+    def mode_pj(self, mode):
         """
         Set the working projection mode
 
@@ -2535,7 +2535,7 @@ class GXMVIEW:
 
             SetWorkingIPJ
         """
-        self._wrapper.mode_pj(p2)
+        self._wrapper.mode_pj(mode)
         
 
 
@@ -2556,7 +2556,7 @@ class GXMVIEW:
 
 
 
-    def set_ipj(self, p2):
+    def set_ipj(self, ipj):
         """
         Set the projection of the view.
 
@@ -2574,17 +2574,17 @@ class GXMVIEW:
         
         `set_ipj`(View,hIPJ);
         """
-        self._wrapper.set_ipj(p2._wrapper)
+        self._wrapper.set_ipj(ipj._wrapper)
         
 
 
 
 
-    def set_user_ipj(self, p2):
+    def set_user_ipj(self, ipj):
         """
         Set the user projection of the view.
         """
-        self._wrapper.set_user_ipj(p2._wrapper)
+        self._wrapper.set_user_ipj(ipj._wrapper)
         
 
 
@@ -2594,37 +2594,37 @@ class GXMVIEW:
 
 
 
-    def get_3d_group_flags(self, p2):
+    def get_3d_group_flags(self, group_num):
         """
         Get a 3D geometry group's 3D rendering flags.
         """
-        ret_val = self._wrapper.get_3d_group_flags(p2)
+        ret_val = self._wrapper.get_3d_group_flags(group_num)
         return ret_val
 
 
 
 
-    def set_3d_group_flags(self, p2, p3):
+    def set_3d_group_flags(self, group_num, flags):
         """
         Set a 3D geometry group's 3D rendering flags.
         """
-        self._wrapper.set_3d_group_flags(p2, p3)
+        self._wrapper.set_3d_group_flags(group_num, flags)
         
 
 
 
 
-    def get_group_freeze_scale(self, p2, p3):
+    def get_group_freeze_scale(self, group_num, scale):
         """
         Get a scale freezing value for the group (`rDUMMY` for disabled).
         """
-        p3.value = self._wrapper.get_group_freeze_scale(p2, p3.value)
+        scale.value = self._wrapper.get_group_freeze_scale(group_num, scale.value)
         
 
 
 
 
-    def set_freeze_scale(self, p2):
+    def set_freeze_scale(self, scale):
         """
         Set a scale freezing value into stream (`rDUMMY` for disabled).
 
@@ -2632,47 +2632,47 @@ class GXMVIEW:
 
         Objects written after this will override any scale freezing set for the group
         """
-        self._wrapper.set_freeze_scale(p2)
+        self._wrapper.set_freeze_scale(scale)
         
 
 
 
 
-    def set_group_freeze_scale(self, p2, p3):
+    def set_group_freeze_scale(self, group_num, scale):
         """
         Set a scale freezing value for the group (`rDUMMY` for disabled).
         """
-        self._wrapper.set_group_freeze_scale(p2, p3)
+        self._wrapper.set_group_freeze_scale(group_num, scale)
         
 
 
 
 
-    def find_group(self, p2):
+    def find_group(self, group_name):
         """
         Find a Group by name.
         """
-        ret_val = self._wrapper.find_group(p2.encode())
+        ret_val = self._wrapper.find_group(group_name.encode())
         return ret_val
 
 
 
 
-    def group_name(self, p2, p3):
+    def group_name(self, group_num, group_name):
         """
         Get a group name
         """
-        p3.value = self._wrapper.group_name(p2, p3.value.encode())
+        group_name.value = self._wrapper.group_name(group_num, group_name.value.encode())
         
 
 
 
 
-    def render(self, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+    def render(self, hdc, h_dc, left, bottom, right, top, min_x, min_y, max_x):
         """
         Render a specified area of view onto a Windows DC handle
         """
-        self._wrapper.render(p2, p3, p4, p5, p6, p7, p8, p9, p10)
+        self._wrapper.render(hdc, h_dc, left, bottom, right, top, min_x, min_y, max_x)
         
 
 
@@ -2682,17 +2682,17 @@ class GXMVIEW:
 
 
 
-    def set_u_fac(self, p2):
+    def set_u_fac(self, hdc):
         """
         Set the unit conversion of a view.
         """
-        self._wrapper.set_u_fac(p2)
+        self._wrapper.set_u_fac(hdc)
         
 
 
 
 
-    def axis_x(self, p2, p3, p4, p5, p6, p7):
+    def axis_x(self, hdc, h_dc, left, bottom, right, top):
         """
         Draw an X axis
 
@@ -2704,13 +2704,13 @@ class GXMVIEW:
 
             rOptimumTick_MVIEW
         """
-        self._wrapper.axis_x(p2, p3, p4, p5, p6, p7)
+        self._wrapper.axis_x(hdc, h_dc, left, bottom, right, top)
         
 
 
 
 
-    def axis_y(self, p2, p3, p4, p5, p6, p7):
+    def axis_y(self, hdc, h_dc, left, bottom, right, top):
         """
         Draw a  Y axis
 
@@ -2722,13 +2722,13 @@ class GXMVIEW:
 
             rOptimumTick_MVIEW
         """
-        self._wrapper.axis_y(p2, p3, p4, p5, p6, p7)
+        self._wrapper.axis_y(hdc, h_dc, left, bottom, right, top)
         
 
 
 
 
-    def grid(self, p2, p3, p4, p5, p6):
+    def grid(self, hdc, h_dc, left, bottom, right):
         """
         Draw a grid in the current window
 
@@ -2741,13 +2741,13 @@ class GXMVIEW:
 
             `axis_x`, `axis_y`, `optimum_tick`
         """
-        self._wrapper.grid(p2, p3, p4, p5, p6)
+        self._wrapper.grid(hdc, h_dc, left, bottom, right)
         
 
 
 
 
-    def label_fid(self, p2, p3, p4, p5, p6, p7):
+    def label_fid(self, hdc, h_dc, left, bottom, right, top):
         """
         Label fiducials on a profile
 
@@ -2760,13 +2760,13 @@ class GXMVIEW:
         The incoming X `GXVV` is used to define the place for
         label.
         """
-        self._wrapper.label_fid(p2._wrapper, p3, p4, p5, p6, p7)
+        self._wrapper.label_fid(hdc._wrapper, h_dc, left, bottom, right, top)
         
 
 
 
 
-    def label_x(self, p2, p3, p4, p5, p6, p7, p8):
+    def label_x(self, hdc, h_dc, left, bottom, right, top, min_x):
         """
         Label annotations on the X axis
 
@@ -2780,13 +2780,13 @@ class GXMVIEW:
 
             `axis_x`, `axis_y`, `optimum_tick`
         """
-        self._wrapper.label_x(p2, p3, p4, p5, p6, p7, p8)
+        self._wrapper.label_x(hdc, h_dc, left, bottom, right, top, min_x)
         
 
 
 
 
-    def label_y(self, p2, p3, p4, p5, p6, p7, p8):
+    def label_y(self, hdc, h_dc, left, bottom, right, top, min_x):
         """
         Label annotations on the Y axis
 
@@ -2800,17 +2800,17 @@ class GXMVIEW:
 
             `axis_x`, `axis_y`, `optimum_tick`
         """
-        self._wrapper.label_y(p2, p3, p4, p5, p6, p7, p8)
+        self._wrapper.label_y(hdc, h_dc, left, bottom, right, top, min_x)
         
 
 
 
     @classmethod
-    def optimum_tick(cls, p1, p2, p3):
+    def optimum_tick(cls, mview, hdc, h_dc):
         """
         Return a default optimum tick interval
         """
-        p3.value = gxapi_cy.WrapMVIEW.optimum_tick(GXContext._get_tls_geo(), p1, p2, p3.value)
+        h_dc.value = gxapi_cy.WrapMVIEW.optimum_tick(GXContext._get_tls_geo(), mview, hdc, h_dc.value)
         
 
 
@@ -2820,7 +2820,7 @@ class GXMVIEW:
 
 
     @classmethod
-    def create(cls, p1, p2, p3):
+    def create(cls, map, name, mode):
         """
         Create `GXMVIEW`.
 
@@ -2829,13 +2829,13 @@ class GXMVIEW:
         View scaling is set to mm on the map and the view
         origin is set to the map origin.
         """
-        ret_val = gxapi_cy.WrapMVIEW.create(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3)
+        ret_val = gxapi_cy.WrapMVIEW.create(GXContext._get_tls_geo(), map._wrapper, name.encode(), mode)
         return GXMVIEW(ret_val)
 
 
 
     @classmethod
-    def create_crooked_section(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+    def create_crooked_section(cls, map, ipj, h_dc, left, bottom, right, top, min_x, min_y, max_x, max_y, p12, p13, p14):
         """
         Creates a new crooked section view.
 
@@ -2852,13 +2852,13 @@ class GXMVIEW:
         If the scale is set to `rDUMMY`, then it will be calculated so that
         the points will all fit horizontally.
         """
-        ret_val = gxapi_cy.WrapMVIEW.create_crooked_section(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3.encode(), p4, p5, p6, p7, p8, p9, p10, p11, p12._wrapper, p13._wrapper, p14._wrapper)
+        ret_val = gxapi_cy.WrapMVIEW.create_crooked_section(GXContext._get_tls_geo(), map._wrapper, ipj._wrapper, h_dc.encode(), left, bottom, right, top, min_x, min_y, max_x, max_y, p12._wrapper, p13._wrapper, p14._wrapper)
         return GXMVIEW(ret_val)
 
 
 
     @classmethod
-    def create_crooked_section_data_profile(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15):
+    def create_crooked_section_data_profile(cls, map, ipj, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15):
         """
         Creates a new crooked section data profile view.
 
@@ -2870,7 +2870,7 @@ class GXMVIEW:
         
         See Also: `create_crooked_section`.
         """
-        ret_val = gxapi_cy.WrapMVIEW.create_crooked_section_data_profile(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3.encode(), p4, p5, p6, p7, p8, p9, p10, p11, p12, p13._wrapper, p14._wrapper, p15._wrapper)
+        ret_val = gxapi_cy.WrapMVIEW.create_crooked_section_data_profile(GXContext._get_tls_geo(), map._wrapper, ipj._wrapper, p3.encode(), p4, p5, p6, p7, p8, p9, p10, p11, p12, p13._wrapper, p14._wrapper, p15._wrapper)
         return GXMVIEW(ret_val)
 
 
@@ -2878,7 +2878,7 @@ class GXMVIEW:
 
 
 
-    def extent(self, p2, p3, p4, p5, p6, p7):
+    def extent(self, what, unit, min_x, min_y, max_x, max_y):
         """
         Get the view extents
 
@@ -2896,7 +2896,7 @@ class GXMVIEW:
         The `MVIEW_EXTENT_VISIBLE` flag will return the union of the `MVIEW_EXTENT_CLIP` area and the
         extents of all non-masked visible groups in the view.
         """
-        p4.value, p5.value, p6.value, p7.value = self._wrapper.extent(p2, p3, p4.value, p5.value, p6.value, p7.value)
+        min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.extent(what, unit, min_x.value, min_y.value, max_x.value, max_y.value)
         
 
 
@@ -2922,17 +2922,17 @@ class GXMVIEW:
 
 
 
-    def get_name(self, p2):
+    def get_name(self, name):
         """
         Gets the name of a view.
         """
-        p2.value = self._wrapper.get_name(p2.value.encode())
+        name.value = self._wrapper.get_name(name.value.encode())
         
 
 
 
 
-    def get_guid(self, p2):
+    def get_guid(self, guid):
         """
         Gets the GUID of the `GXMVIEW`.
 
@@ -2940,7 +2940,7 @@ class GXMVIEW:
 
         If a GUID was never queried a new one will be assigned and the map will be modified. Only if the map is saved will this value then persist.
         """
-        p2.value = self._wrapper.get_guid(p2.value.encode())
+        guid.value = self._wrapper.get_guid(guid.value.encode())
         
 
 
@@ -2950,17 +2950,17 @@ class GXMVIEW:
 
 
 
-    def plot_to_view(self, p2, p3):
+    def plot_to_view(self, x, y):
         """
         Convert a plot coordinate in mm to a VIEW coordinate.
         """
-        p2.value, p3.value = self._wrapper.plot_to_view(p2.value, p3.value)
+        x.value, y.value = self._wrapper.plot_to_view(x.value, y.value)
         
 
 
 
 
-    def set_thin_res(self, p2):
+    def set_thin_res(self, thin):
         """
         Set polyline/polygon thinning resolution
 
@@ -2981,23 +2981,23 @@ class GXMVIEW:
         To turn off thinning after turning it on, call
         SetThinRes_MVIEW with a resolution of -1.
         """
-        self._wrapper.set_thin_res(p2)
+        self._wrapper.set_thin_res(thin)
         
 
 
 
 
-    def view_to_plot(self, p2, p3):
+    def view_to_plot(self, x, y):
         """
         Convert a VIEW coordinate to a plot coordinate in mm.
         """
-        p2.value, p3.value = self._wrapper.view_to_plot(p2.value, p3.value)
+        x.value, y.value = self._wrapper.view_to_plot(x.value, y.value)
         
 
 
 
 
-    def best_fit_window(self, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+    def best_fit_window(self, m_min_x, m_min_y, m_max_x, m_max_y, v_min_x, v_min_y, v_max_x, v_max_y, fit_view):
         """
         Fit an area in ground coordinates centered to an area in mm on map or vise versa
         keeping X and Y scales the same.
@@ -3011,13 +3011,13 @@ class GXMVIEW:
 
             `fit_window`
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value = self._wrapper.best_fit_window(p2.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value, p10)
+        m_min_x.value, m_min_y.value, m_max_x.value, m_max_y.value, v_min_x.value, v_min_y.value, v_max_x.value, v_max_y.value = self._wrapper.best_fit_window(m_min_x.value, m_min_y.value, m_max_x.value, m_max_y.value, v_min_x.value, v_min_y.value, v_max_x.value, v_max_y.value, fit_view)
         
 
 
 
 
-    def fit_map_window_3d(self, p2, p3, p4, p5, p6, p7, p8, p9):
+    def fit_map_window_3d(self, m_min_x, m_min_y, m_max_x, m_max_y, v_min_x, v_min_y, v_max_x, v_max_y):
         """
         Set the 2D view window for a 3D view.
 
@@ -3035,13 +3035,13 @@ class GXMVIEW:
         established to fit the specified area within that
         map area.
         """
-        self._wrapper.fit_map_window_3d(p2, p3, p4, p5, p6, p7, p8, p9)
+        self._wrapper.fit_map_window_3d(m_min_x, m_min_y, m_max_x, m_max_y, v_min_x, v_min_y, v_max_x, v_max_y)
         
 
 
 
 
-    def fit_window(self, p2, p3, p4, p5, p6, p7, p8, p9):
+    def fit_window(self, m_min_x, m_min_y, m_max_x, m_max_y, v_min_x, v_min_y, v_max_x, v_max_y):
         """
         Fit an area in ground coordinates to an area in mm on map.
 
@@ -3054,13 +3054,13 @@ class GXMVIEW:
 
             `set_window`
         """
-        self._wrapper.fit_window(p2, p3, p4, p5, p6, p7, p8, p9)
+        self._wrapper.fit_window(m_min_x, m_min_y, m_max_x, m_max_y, v_min_x, v_min_y, v_max_x, v_max_y)
         
 
 
 
 
-    def get_class_name(self, p2, p3):
+    def get_class_name(self, cl, name):
         """
         Get a class name.
 
@@ -3070,23 +3070,23 @@ class GXMVIEW:
         names of certain classes in the view, such as "Plane"
         for the default drawing plane.
         """
-        p3.value = self._wrapper.get_class_name(p2.encode(), p3.value.encode())
+        name.value = self._wrapper.get_class_name(cl.encode(), name.value.encode())
         
 
 
 
 
-    def map_origin(self, p2, p3):
+    def map_origin(self, x_origin, p3):
         """
         Get the map origin from a view
         """
-        p2.value, p3.value = self._wrapper.map_origin(p2.value, p3.value)
+        x_origin.value, p3.value = self._wrapper.map_origin(x_origin.value, p3.value)
         
 
 
 
 
-    def re_scale(self, p2):
+    def re_scale(self, scale):
         """
         Change the scale of a view.
 
@@ -3096,7 +3096,7 @@ class GXMVIEW:
         The view location will move relative to the map origin
         by the scale factor.
         """
-        self._wrapper.re_scale(p2)
+        self._wrapper.re_scale(scale)
         
 
 
@@ -3164,7 +3164,7 @@ class GXMVIEW:
 
 
 
-    def scale_all_group(self, p2, p3):
+    def scale_all_group(self, xs, ys):
         """
         Scale all groups (except for GRID) in a view
 
@@ -3177,13 +3177,13 @@ class GXMVIEW:
         The view is then scaled back so that the view occupies the same
         area size as before.  The view's clip area is updated as well.
         """
-        self._wrapper.scale_all_group(p2, p3)
+        self._wrapper.scale_all_group(xs, ys)
         
 
 
 
 
-    def scale_window(self, p2, p3, p4, p5, p6, p7, p8, p9):
+    def scale_window(self, min_x, min_y, max_x, max_y, bot_x, bot_y, x_scal, p9):
         """
         Assign view coordinates to define a window.
 
@@ -3197,13 +3197,13 @@ class GXMVIEW:
 
             `set_window`, `scale_window`, `tran_scale`
         """
-        self._wrapper.scale_window(p2, p3, p4, p5, p6, p7, p8, p9)
+        self._wrapper.scale_window(min_x, min_y, max_x, max_y, bot_x, bot_y, x_scal, p9)
         
 
 
 
 
-    def set_class_name(self, p2, p3):
+    def set_class_name(self, cl, name):
         """
         Set a class name.
 
@@ -3213,13 +3213,13 @@ class GXMVIEW:
         names of certain classes in the view, such as "Plane"
         for the default drawing plane.
         """
-        self._wrapper.set_class_name(p2.encode(), p3.encode())
+        self._wrapper.set_class_name(cl.encode(), name.encode())
         
 
 
 
 
-    def set_window(self, p2, p3, p4, p5, p6):
+    def set_window(self, min_x, min_y, max_x, max_y, unit):
         """
         Set the view window
 
@@ -3232,13 +3232,13 @@ class GXMVIEW:
 
             `fit_window`, `scale_window`, `extent`.
         """
-        self._wrapper.set_window(p2, p3, p4, p5, p6)
+        self._wrapper.set_window(min_x, min_y, max_x, max_y, unit)
         
 
 
 
 
-    def tran_scale(self, p2, p3, p4, p5):
+    def tran_scale(self, x, p3, p4, p5):
         """
         Set the view translation and scaling
 
@@ -3250,13 +3250,13 @@ class GXMVIEW:
         function in order to restore them. This will be addressed
         in v6.4.
         """
-        self._wrapper.tran_scale(p2, p3, p4, p5)
+        self._wrapper.tran_scale(x, p3, p4, p5)
         
 
 
 
 
-    def user_to_view(self, p2, p3):
+    def user_to_view(self, x, y):
         """
         Convert a USERplot in mm to a VIEW coordinate
 
@@ -3265,13 +3265,13 @@ class GXMVIEW:
             `set_user_ipj`
             `get_user_ipj`
         """
-        p2.value, p3.value = self._wrapper.user_to_view(p2.value, p3.value)
+        x.value, y.value = self._wrapper.user_to_view(x.value, y.value)
         
 
 
 
 
-    def view_to_user(self, p2, p3):
+    def view_to_user(self, x, y):
         """
         Convert a VIEW coordinate to a USER coordinate.
 
@@ -3280,7 +3280,7 @@ class GXMVIEW:
             `set_user_ipj`
             `get_user_ipj`
         """
-        p2.value, p3.value = self._wrapper.view_to_user(p2.value, p3.value)
+        x.value, y.value = self._wrapper.view_to_user(x.value, y.value)
         
 
 

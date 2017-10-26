@@ -60,7 +60,7 @@ class GXLL2:
 
 
     @classmethod
-    def create(cls, p1, p2, p3, p4, p5, p6, p7, p8):
+    def create(cls, lon0, lat0, lon, lat, nlon, nlat, in_ipj, out_ipj):
         """
         Create an empty `GXLL2` table to be filled
 
@@ -68,7 +68,7 @@ class GXLL2:
 
             `destroy`, `set_row`, `save`
         """
-        ret_val = gxapi_cy.WrapLL2.create(GXContext._get_tls_geo(), p1, p2, p3, p4, p5, p6, p7._wrapper, p8._wrapper)
+        ret_val = gxapi_cy.WrapLL2.create(GXContext._get_tls_geo(), lon0, lat0, lon, lat, nlon, nlat, in_ipj._wrapper, out_ipj._wrapper)
         return GXLL2(ret_val)
 
 
@@ -76,7 +76,7 @@ class GXLL2:
 
 
 
-    def save(self, p2):
+    def save(self, name):
         """
         Save an `GXLL2` to a named resource
 
@@ -86,13 +86,13 @@ class GXLL2:
         inside square brackets in the datum transform name in the
         datumtrf table.
         """
-        self._wrapper.save(p2.encode())
+        self._wrapper.save(name.encode())
         
 
 
 
 
-    def set_row(self, p2, p3, p4):
+    def set_row(self, row, lon_vv, lat_vv):
         """
         Define a row of the `GXLL2`
 
@@ -104,7 +104,7 @@ class GXLL2:
         The `GXVV` lengths must be equal to #longitudes defined
         by `create`.
         """
-        self._wrapper.set_row(p2, p3._wrapper, p4._wrapper)
+        self._wrapper.set_row(row, lon_vv._wrapper, lat_vv._wrapper)
         
 
 

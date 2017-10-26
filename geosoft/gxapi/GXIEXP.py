@@ -59,12 +59,12 @@ class GXIEXP:
 
 
 
-    def add_grid(self, p2, p3):
+    def add_grid(self, img, var):
         """
         This method adds an image to the `GXIEXP` object with a
         variable name.
         """
-        self._wrapper.add_grid(p2._wrapper, p3.encode())
+        self._wrapper.add_grid(img._wrapper, var.encode())
         
 
 
@@ -82,11 +82,11 @@ class GXIEXP:
 
 
 
-    def do_formula(self, p2, p3):
+    def do_formula(self, formula, max_len):
         """
         This method runs a formula on the grids.
         """
-        self._wrapper.do_formula(p2.encode(), p3)
+        self._wrapper.do_formula(formula.encode(), max_len)
         
 
 

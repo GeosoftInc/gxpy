@@ -59,7 +59,7 @@ class GXARCSYS:
 
 
     @classmethod
-    def get_browse_loc(cls, p1):
+    def get_browse_loc(cls, path):
         """
         Get the current catalog browser location in ArcGIS
 
@@ -69,13 +69,13 @@ class GXARCSYS:
         otherwise MxD path). We cannot mess with the CWD in ArcGIS because there MxD settings for
         relative/absolute paths depends on it.
         """
-        p1.value = gxapi_cy.WrapARCSYS.get_browse_loc(GXContext._get_tls_geo(), p1.value.encode())
+        path.value = gxapi_cy.WrapARCSYS.get_browse_loc(GXContext._get_tls_geo(), path.value.encode())
         
 
 
 
     @classmethod
-    def get_current_doc(cls, p1):
+    def get_current_doc(cls, path):
         """
         Get the current Mx Document file name
 
@@ -83,13 +83,13 @@ class GXARCSYS:
 
         If the current document is not yet saved, this will return an empty string.
         """
-        p1.value = gxapi_cy.WrapARCSYS.get_current_doc(GXContext._get_tls_geo(), p1.value.encode())
+        path.value = gxapi_cy.WrapARCSYS.get_current_doc(GXContext._get_tls_geo(), path.value.encode())
         
 
 
 
     @classmethod
-    def set_browse_loc(cls, p1):
+    def set_browse_loc(cls, path):
         """
         Set the current catalog browser location in ArcGIS
 
@@ -98,7 +98,7 @@ class GXARCSYS:
         Will also set the current working directory (CWD) if the MxD has not been saved.
         We cannot mess with the CWD in ArcGIS because their MxD settings for relative/absolute paths depends on it.
         """
-        gxapi_cy.WrapARCSYS.set_browse_loc(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapARCSYS.set_browse_loc(GXContext._get_tls_geo(), path.encode())
         
 
 

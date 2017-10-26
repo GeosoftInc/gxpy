@@ -134,7 +134,7 @@ class GXDH:
 
 
 
-    def get_geology_contacts(self, p2, p3, p4, p5, p6, p7, p8, p9):
+    def get_geology_contacts(self, lst, chan_code, geology, surface, gap, v_vx, v_vy, v_vz):
         """
         Return XYZ locations of top or bottom geological surfaces
 
@@ -144,13 +144,13 @@ class GXDH:
         contact with the input geology. Those selected holes which do NOT
         have contacts, return `rDUMMY` for the corresponding locations.
         """
-        self._wrapper.get_geology_contacts(p2._wrapper, p3.encode(), p4.encode(), p5, p6, p7._wrapper, p8._wrapper, p9._wrapper)
+        self._wrapper.get_geology_contacts(lst._wrapper, chan_code.encode(), geology.encode(), surface, gap, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
         
 
 
 
 
-    def get_oriented_core_dip_dir(self, p2, p3, p4, p5, p6, p7):
+    def get_oriented_core_dip_dir(self, lst, alpha, beta, top_ref, dip, dip_dir):
         """
         Converted alpha/beta values in oriented cores to dip/dip direction.
 
@@ -163,13 +163,13 @@ class GXDH:
         The alpha and beta data must be from the same database, and the output
         dip and dip/dir channels are written to the same database.
         """
-        self._wrapper.get_oriented_core_dip_dir(p2._wrapper, p3.encode(), p4.encode(), p5, p6.encode(), p7.encode())
+        self._wrapper.get_oriented_core_dip_dir(lst._wrapper, alpha.encode(), beta.encode(), top_ref, dip.encode(), dip_dir.encode())
         
 
 
 
 
-    def get_unique_channel_items(self, p2, p3, p4):
+    def get_unique_channel_items(self, chan_code, selected_holes, vv):
         """
         Return a `GXVV` with unique items in a channel.
 
@@ -177,13 +177,13 @@ class GXDH:
 
         Finds and sorts all the unique non-dummy items for the selected channel.
         """
-        self._wrapper.get_unique_channel_items(p2.encode(), p3, p4._wrapper)
+        self._wrapper.get_unique_channel_items(chan_code.encode(), selected_holes, vv._wrapper)
         
 
 
 
 
-    def get_unique_channel_items_from_collar(self, p2, p3, p4):
+    def get_unique_channel_items_from_collar(self, chan_name, selected_holes, vv):
         """
         Return a `GXVV` with unique items in a channel.
 
@@ -191,13 +191,13 @@ class GXDH:
 
         Finds and sorts all the unique non-dummy items for the selected channel.
         """
-        self._wrapper.get_unique_channel_items_from_collar(p2.encode(), p3, p4._wrapper)
+        self._wrapper.get_unique_channel_items_from_collar(chan_name.encode(), selected_holes, vv._wrapper)
         
 
 
 
 
-    def chan_type(self, p2):
+    def chan_type(self, chan_code):
         """
         Return the data type for a channel code.
 
@@ -205,13 +205,13 @@ class GXDH:
 
         Finds and sorts all the unique non-dummy items for the selected channel.
         """
-        ret_val = self._wrapper.chan_type(p2.encode())
+        ret_val = self._wrapper.chan_type(chan_code.encode())
         return ret_val
 
 
 
 
-    def find_hole_intersection(self, p2, p3, p4, p5, p6):
+    def find_hole_intersection(self, hole, img, x, y, z):
         """
         Return XYZ locations of the intersection of a hole with a DEM grid.
 
@@ -222,7 +222,7 @@ class GXDH:
         uses the native `GXIMG` interp method. If no intersection is found the
         returned XYZ locations are `rDUMMY`.
         """
-        ret_val, p4.value, p5.value, p6.value = self._wrapper.find_hole_intersection(p2, p3._wrapper, p4.value, p5.value, p6.value)
+        ret_val, x.value, y.value, z.value = self._wrapper.find_hole_intersection(hole, img._wrapper, x.value, y.value, z.value)
         return ret_val
 
 
@@ -242,7 +242,7 @@ class GXDH:
 
 
 
-    def grid_intersection(self, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+    def grid_intersection(self, xi, yi, zi, dip, az, grid, xo, yo, zo):
         """
         Algorithm to determine the intersection of a straight hole with a surface (DEM) grid.
 
@@ -251,13 +251,13 @@ class GXDH:
         Given a point on the hole and the straight hole dip and azimuth,
         ocate (an) intersection point with the input DEM grid.
         """
-        ret_val, p8.value, p9.value, p10.value = self._wrapper.grid_intersection(p2, p3, p4, p5, p6, p7.encode(), p8.value, p9.value, p10.value)
+        ret_val, xo.value, yo.value, zo.value = self._wrapper.grid_intersection(xi, yi, zi, dip, az, grid.encode(), xo.value, yo.value, zo.value)
         return ret_val
 
 
 
 
-    def litho_grid_3d(self, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+    def litho_grid_3d(self, chan_code, tpat, vox, cell_size, gap, non_contact_radius, gridding_type, reg, retain_grid_files):
         """
         Create a lithology voxel grid with lith codes mapped to single values.
 
@@ -272,7 +272,7 @@ class GXDH:
         where the gridded lithology is not found. If not specified (dummy) then
         half the distance to the nearest contacting hole is used.
         """
-        self._wrapper.litho_grid_3d(p2.encode(), p3._wrapper, p4.encode(), p5, p6, p7, p8, p9._wrapper, p10)
+        self._wrapper.litho_grid_3d(chan_code.encode(), tpat._wrapper, vox.encode(), cell_size, gap, non_contact_radius, gridding_type, reg._wrapper, retain_grid_files)
         
 
 
@@ -312,7 +312,7 @@ class GXDH:
 
 
 
-    def punch_grid_holes(self, p2, p3, p4, p5, p6):
+    def punch_grid_holes(self, img, v_vx, v_vy, v_vz, blank_dist):
         """
         Dummy out locations in a grid around non-contact holes.
 
@@ -325,7 +325,7 @@ class GXDH:
         If the blanking distance is zero or dummy, the distance is
         automatically set to half the distance to the closest hole intersection.
         """
-        self._wrapper.punch_grid_holes(p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6)
+        self._wrapper.punch_grid_holes(img._wrapper, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, blank_dist)
         
 
 
@@ -369,7 +369,7 @@ class GXDH:
 
 
 
-    def h_assay_db(self, p2):
+    def h_assay_db(self, assay):
         """
         Database for an assay data set.
 
@@ -377,13 +377,13 @@ class GXDH:
 
         Works for both single and multiple `GXDB` Wholeplots.
         """
-        ret_val = self._wrapper.h_assay_db(p2)
+        ret_val = self._wrapper.h_assay_db(assay)
         return GXDB(ret_val)
 
 
 
 
-    def h_assay_symb(self, p2, p3):
+    def h_assay_symb(self, assay, hole):
         """
         Line/Group symbol for a specific assay data set hole.
 
@@ -391,7 +391,7 @@ class GXDH:
 
         Works for both single and multiple `GXDB` Wholeplots.
         """
-        ret_val = self._wrapper.h_assay_symb(p2, p3)
+        ret_val = self._wrapper.h_assay_symb(assay, hole)
         return ret_val
 
 
@@ -439,7 +439,7 @@ class GXDH:
 
 
 
-    def h_dip_az_survey_symb(self, p2):
+    def h_dip_az_survey_symb(self, hole):
         """
         Line/Group symbol for a specific hole Dip-Azimuth survey.
 
@@ -447,7 +447,7 @@ class GXDH:
 
         Works for both single and multiple `GXDB` Wholeplots.
         """
-        ret_val = self._wrapper.h_dip_az_survey_symb(p2)
+        ret_val = self._wrapper.h_dip_az_survey_symb(hole)
         return ret_val
 
 
@@ -467,7 +467,7 @@ class GXDH:
 
 
 
-    def h_en_survey_symb(self, p2):
+    def h_en_survey_symb(self, hole):
         """
         Line/Group symbol for a specific hole East-North survey.
 
@@ -475,13 +475,13 @@ class GXDH:
 
         Works for both single and multiple `GXDB` Wholeplots.
         """
-        ret_val = self._wrapper.h_en_survey_symb(p2)
+        ret_val = self._wrapper.h_en_survey_symb(hole)
         return ret_val
 
 
 
 
-    def add_survey_table(self, p2):
+    def add_survey_table(self, hole):
         """
         Add a survey table for a new hole.
 
@@ -490,23 +490,23 @@ class GXDH:
         The information is created from the collar table info.
         If the survey info already exists, does nothing.
         """
-        self._wrapper.add_survey_table(p2)
+        self._wrapper.add_survey_table(hole)
         
 
 
 
 
-    def assay_hole_lst(self, p2, p3):
+    def assay_hole_lst(self, assay_db, lst):
         """
         Populate an `GXLST` with holes in an assay database
         """
-        self._wrapper.assay_hole_lst(p2, p3._wrapper)
+        self._wrapper.assay_hole_lst(assay_db, lst._wrapper)
         
 
 
 
 
-    def assay_lst(self, p2):
+    def assay_lst(self, lst):
         """
         Return the `GXLST` of from-to and point assay datasets
 
@@ -516,17 +516,17 @@ class GXDH:
         Assay dataset number is given as `LST_ITEM_VALUE`
         Returns an empty `GXLST` if no datasets.
         """
-        self._wrapper.assay_lst(p2._wrapper)
+        self._wrapper.assay_lst(lst._wrapper)
         
 
 
 
     @classmethod
-    def auto_select_holes(cls, p1):
+    def auto_select_holes(cls, flag):
         """
         Use automatic hole selection based on slice.
         """
-        gxapi_cy.WrapDH.auto_select_holes(GXContext._get_tls_geo(), p1)
+        gxapi_cy.WrapDH.auto_select_holes(GXContext._get_tls_geo(), flag)
         
 
 
@@ -549,31 +549,31 @@ class GXDH:
 
 
 
-    def composite_db(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+    def composite_db(self, mast_db, comp_db, hol_sel, int_sel, fix_int, lith_ch, int_file, wt_ch, rej1_val, rej2_val, rej3_val, rej3_op, rej3_ch):
         """
         Make a composite database
         """
-        self._wrapper.composite_db(p2._wrapper, p3._wrapper, p4, p5, p6, p7.encode(), p8.encode(), p9.encode(), p10, p11, p12, p13, p14.encode())
+        self._wrapper.composite_db(mast_db._wrapper, comp_db._wrapper, hol_sel, int_sel, fix_int, lith_ch.encode(), int_file.encode(), wt_ch.encode(), rej1_val, rej2_val, rej3_val, rej3_op, rej3_ch.encode())
         
 
 
 
 
-    def compute_hole_xyz(self, p2):
+    def compute_hole_xyz(self, hole):
         """
         Computes XYZ for survey and assay data for a single hole.
         """
-        self._wrapper.compute_hole_xyz(p2)
+        self._wrapper.compute_hole_xyz(hole)
         
 
 
 
 
-    def compute_sel_extent(self, p2, p3, p4, p5, p6, p7):
+    def compute_sel_extent(self, e_min, e_max, n_min, n_max, z_min, z_max):
         """
         Computes the extents for selected holes.
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value, p7.value = self._wrapper.compute_sel_extent(p2.value, p3.value, p4.value, p5.value, p6.value, p7.value)
+        e_min.value, e_max.value, n_min.value, n_max.value, z_min.value, z_max.value = self._wrapper.compute_sel_extent(e_min.value, e_max.value, n_min.value, n_max.value, z_min.value, z_max.value)
         
 
 
@@ -589,7 +589,7 @@ class GXDH:
 
 
     @classmethod
-    def convert_old_line_names(cls, p1, p2):
+    def convert_old_line_names(cls, db, lst):
         """
         Convert old "DD001.Assay" type lines to "DD001"
 
@@ -606,33 +606,33 @@ class GXDH:
         
         DO NOT use on old-style single-database Wholeplot projects.
         """
-        gxapi_cy.WrapDH.convert_old_line_names(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
+        gxapi_cy.WrapDH.convert_old_line_names(GXContext._get_tls_geo(), db._wrapper, lst._wrapper)
         
 
 
 
     @classmethod
-    def create(cls, p1):
+    def create(cls, db):
         """
         Create `GXDH`.
         """
-        ret_val = gxapi_cy.WrapDH.create(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapDH.create(GXContext._get_tls_geo(), db.encode())
         return GXDH(ret_val)
 
 
 
 
-    def create_default_job(self, p2, p3):
+    def create_default_job(self, ini, type):
         """
         Create a default job from scratch.
         """
-        self._wrapper.create_default_job(p2.encode(), p3)
+        self._wrapper.create_default_job(ini.encode(), type)
         
 
 
 
     @classmethod
-    def create_external(cls, p1):
+    def create_external(cls, db):
         """
         Create a `GXDH` from an external process (no montaj running).
 
@@ -643,7 +643,7 @@ class GXDH:
         This function instead creates the project from all projects
         in the input databases's directory.
         """
-        ret_val = gxapi_cy.WrapDH.create_external(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapDH.create_external(GXContext._get_tls_geo(), db.encode())
         return GXDH(ret_val)
 
 
@@ -664,7 +664,7 @@ class GXDH:
 
 
     @classmethod
-    def datamine_to_csv(cls, p1, p2):
+    def datamine_to_csv(cls, file, proj):
         """
         Convert a Datamine drillhole file to CSV files ready for import.
 
@@ -677,13 +677,13 @@ class GXDH:
              Project_Survey.csv, .i3
              Project_Assay.csv,  .i3
         """
-        gxapi_cy.WrapDH.datamine_to_csv(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        gxapi_cy.WrapDH.datamine_to_csv(GXContext._get_tls_geo(), file.encode(), proj.encode())
         
 
 
 
 
-    def delete_holes(self, p2):
+    def delete_holes(self, lst):
         """
         Delete a list of holes from the project.
 
@@ -693,7 +693,7 @@ class GXDH:
         If all the database lines would be removed, the database is
         simply deleted.
         """
-        self._wrapper.delete_holes(p2._wrapper)
+        self._wrapper.delete_holes(lst._wrapper)
         
 
 
@@ -701,17 +701,17 @@ class GXDH:
 
 
 
-    def export_file(self, p2, p3):
+    def export_file(self, file, type):
         """
         Exports a Drill Hole database to an external file.
         """
-        self._wrapper.export_file(p2.encode(), p3)
+        self._wrapper.export_file(file.encode(), type)
         
 
 
 
 
-    def export_geodatabase_lst(self, p2, p3, p4, p5, p7):
+    def export_geodatabase_lst(self, lst, file, pre, feat_class, overwrite):
         """
         Exports whole or part of a Drill Hole database to an ArcGIS Geodatabase as feature class(es).
 
@@ -720,23 +720,23 @@ class GXDH:
         A table with metadata about the created feature classes will be written to the Geodatabase. This table will have the same
         name with the postfix "_Metadata" attached
         """
-        p5.value = self._wrapper.export_geodatabase_lst(p2._wrapper, p3.encode(), p4.encode(), p5.value.encode(), p7)
+        feat_class.value = self._wrapper.export_geodatabase_lst(lst._wrapper, file.encode(), pre.encode(), feat_class.value.encode(), overwrite)
         
 
 
 
 
-    def export_las(self, p2, p3, p4, p5):
+    def export_las(self, assay_db, hole, interval, file):
         """
         Exports a Drill Hole database to a LAS v2 file.
         """
-        self._wrapper.export_las(p2, p3, p4, p5.encode())
+        self._wrapper.export_las(assay_db, hole, interval, file.encode())
         
 
 
 
 
-    def export_lst(self, p2, p3, p4):
+    def export_lst(self, lst, file, type):
         """
         Exports a `GXLST` of holes in a Drill Hole database to an external file.
 
@@ -744,7 +744,7 @@ class GXDH:
 
         Use functions like `GXDB.selected_line_lst` to construct the `GXLST`
         """
-        self._wrapper.export_lst(p2._wrapper, p3.encode(), p4)
+        self._wrapper.export_lst(lst._wrapper, file.encode(), type)
         
 
 
@@ -760,27 +760,27 @@ class GXDH:
 
 
 
-    def get_databases_vv(self, p2):
+    def get_databases_vv(self, gvv):
         """
         Get the names of the project databases in a `GXVV`.
         """
-        self._wrapper.get_databases_vv(p2._wrapper)
+        self._wrapper.get_databases_vv(gvv._wrapper)
         
 
 
 
 
-    def get_databases_sorted_vv(self, p2):
+    def get_databases_sorted_vv(self, gvv):
         """
         Get the names of the project databases in a `GXVV`, same as `get_databases_vv` but the list is sorted alphabetically.
         """
-        self._wrapper.get_databases_sorted_vv(p2._wrapper)
+        self._wrapper.get_databases_sorted_vv(gvv._wrapper)
         
 
 
 
 
-    def get_data_type(self, p2, p3):
+    def get_data_type(self, db, type):
         """
         Get the type of data in a Wholeplot database.
 
@@ -788,43 +788,43 @@ class GXDH:
 
         Returns `DH_DATA_UNKNOWN` if it can't determine the type.
         """
-        p3.value = self._wrapper.get_data_type(p2._wrapper, p3.value)
+        type.value = self._wrapper.get_data_type(db._wrapper, type.value)
         
 
 
 
 
-    def get_default_section(self, p2, p3, p4, p5, p6):
+    def get_default_section(self, az, p3, p4, p5, p6):
         """
         Computes default section azimuths, extents for selected holes.
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value = self._wrapper.get_default_section(p2.value, p3.value, p4.value, p5.value, p6.value)
+        az.value, p3.value, p4.value, p5.value, p6.value = self._wrapper.get_default_section(az.value, p3.value, p4.value, p5.value, p6.value)
         
 
 
 
 
-    def get_hole_group(self, p2, p3):
+    def get_hole_group(self, hole, assay):
         """
         Get the Group symbol for this hole/table combination.
         """
-        ret_val = self._wrapper.get_hole_group(p2, p3.encode())
+        ret_val = self._wrapper.get_hole_group(hole, assay.encode())
         return ret_val
 
 
 
 
-    def get_hole_survey(self, p2, p3, p4, p5, p6):
+    def get_hole_survey(self, hole, v_vx, v_vy, v_vz, v_vd):
         """
         Get the Survey information of a Hole.
         """
-        self._wrapper.get_hole_survey(p2, p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper)
+        self._wrapper.get_hole_survey(hole, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, v_vd._wrapper)
         
 
 
 
 
-    def get_ipj(self, p2):
+    def get_ipj(self, ipj):
         """
         Get the project `GXIPJ`.
 
@@ -833,13 +833,13 @@ class GXDH:
         The projection for the project is the projection stored
         in the DH_EAST channel in the collar table.
         """
-        self._wrapper.get_ipj(p2._wrapper)
+        self._wrapper.get_ipj(ipj._wrapper)
         
 
 
 
 
-    def get_map_names_vv(self, p2):
+    def get_map_names_vv(self, vv):
         """
         Get plotted map names.
 
@@ -850,17 +850,17 @@ class GXDH:
         to `wholeplot`. The `GXVV` size is set to the number
         of maps created.
         """
-        self._wrapper.get_map_names_vv(p2._wrapper)
+        self._wrapper.get_map_names_vv(vv._wrapper)
         
 
 
 
 
-    def get_map(self, p2):
+    def get_map(self, index):
         """
         Get a plotting map
         """
-        ret_val = self._wrapper.get_map(p2)
+        ret_val = self._wrapper.get_map(index)
         return GXMAP(ret_val)
 
 
@@ -886,17 +886,17 @@ class GXDH:
 
 
 
-    def get_selected_holes_vv(self, p2):
+    def get_selected_holes_vv(self, vv):
         """
         Populate a `GXVV` with the indices of all selected holes
         """
-        self._wrapper.get_selected_holes_vv(p2._wrapper)
+        self._wrapper.get_selected_holes_vv(vv._wrapper)
         
 
 
 
     @classmethod
-    def get_table_default_chan_lst(cls, p1, p2):
+    def get_table_default_chan_lst(cls, lst, type):
         """
         Return list of default channels by collar/assay/survey table type.
 
@@ -905,37 +905,37 @@ class GXDH:
         Fills a `GXLST` with the default channel names created according to
         type (Collar, Survey, Assay). Value is in the `LST_ITEM_NAME` part.
         """
-        gxapi_cy.WrapDH.get_table_default_chan_lst(GXContext._get_tls_geo(), p1._wrapper, p2)
+        gxapi_cy.WrapDH.get_table_default_chan_lst(GXContext._get_tls_geo(), lst._wrapper, type)
         
 
 
 
 
-    def hole_lst(self, p2):
+    def hole_lst(self, lst):
         """
         Populate an `GXLST` with the list of the selected holes
         """
-        self._wrapper.hole_lst(p2._wrapper)
+        self._wrapper.hole_lst(lst._wrapper)
         
 
 
 
 
-    def hole_lst2(self, p2):
+    def hole_lst2(self, lst):
         """
         Populate an `GXLST` with the list of all the holes
         """
-        self._wrapper.hole_lst2(p2._wrapper)
+        self._wrapper.hole_lst2(lst._wrapper)
         
 
 
 
 
-    def add_hole(self, p2):
+    def add_hole(self, hole):
         """
         Add a hole and return it's index.
         """
-        ret_val = self._wrapper.add_hole(p2.encode())
+        ret_val = self._wrapper.add_hole(hole.encode())
         return ret_val
 
 
@@ -951,7 +951,7 @@ class GXDH:
 
 
 
-    def compositing_tool_gui(self, p2, p3, p4, p5):
+    def compositing_tool_gui(self, map, x, y1, y2):
         """
         Annotate a strip log map using the compositing tool.
 
@@ -959,13 +959,13 @@ class GXDH:
 
         If any of the input X or Y values are dummies the tool uses default values.
         """
-        ret_val = self._wrapper.compositing_tool_gui(p2._wrapper, p3, p4, p5)
+        ret_val = self._wrapper.compositing_tool_gui(map._wrapper, x, y1, y2)
         return ret_val
 
 
 
     @classmethod
-    def create_collar_table(cls, p1, p2, p3):
+    def create_collar_table(cls, project, chan, db):
         """
         Create a collar table `GXDB` with channels set up.
 
@@ -975,13 +975,13 @@ class GXDH:
         
         "d:\\directory\\Project_Collar.gdb"
         """
-        p3.value = gxapi_cy.WrapDH.create_collar_table(GXContext._get_tls_geo(), p1.encode(), p2, p3.value.encode())
+        db.value = gxapi_cy.WrapDH.create_collar_table(GXContext._get_tls_geo(), project.encode(), chan, db.value.encode())
         
 
 
 
     @classmethod
-    def create_collar_table_dir(cls, p1, p2, p3, p4):
+    def create_collar_table_dir(cls, project, dir, chan, db):
         """
         Create a collar table in the specified directory.
 
@@ -991,43 +991,43 @@ class GXDH:
         
         "d:\\directory\\Project_Collar.gdb"
         """
-        p4.value = gxapi_cy.WrapDH.create_collar_table_dir(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3, p4.value.encode())
+        db.value = gxapi_cy.WrapDH.create_collar_table_dir(GXContext._get_tls_geo(), project.encode(), dir.encode(), chan, db.value.encode())
         
 
 
 
 
-    def delete_will_delete_db(self, p2):
+    def delete_will_delete_db(self, lst):
         """
         See if deleting holes will delete project databases.
         """
-        ret_val = self._wrapper.delete_will_delete_db(p2._wrapper)
+        ret_val = self._wrapper.delete_will_delete_db(lst._wrapper)
         return ret_val
 
 
 
 
-    def find_hole(self, p2):
+    def find_hole(self, hole):
         """
         Find a hole and return it's index.
         """
-        ret_val = self._wrapper.find_hole(p2.encode())
+        ret_val = self._wrapper.find_hole(hole.encode())
         return ret_val
 
 
 
 
-    def get_collar_table_db(self, p2):
+    def get_collar_table_db(self, db):
         """
         Get the name of the database containing the collar table.
         """
-        p2.value = self._wrapper.get_collar_table_db(p2.value.encode())
+        db.value = self._wrapper.get_collar_table_db(db.value.encode())
         
 
 
 
 
-    def get_info(self, p2, p3, p4):
+    def get_info(self, hole, name, data):
         """
         Get Collar Information.
 
@@ -1037,33 +1037,33 @@ class GXDH:
         search for the DH_RL channel, which is the new
         name for the collar elevation.
         """
-        p4.value = self._wrapper.get_info(p2, p3.encode(), p4.value.encode())
+        data.value = self._wrapper.get_info(hole, name.encode(), data.value.encode())
         
 
 
 
 
-    def get_project_name(self, p2):
+    def get_project_name(self, project):
         """
         Get the Wholeplot project name.
         """
-        p2.value = self._wrapper.get_project_name(p2.value.encode())
+        project.value = self._wrapper.get_project_name(project.value.encode())
         
 
 
 
     @classmethod
-    def get_section_id(cls, p1, p2, p3, p4):
+    def get_section_id(cls, azimuth, east, north, id):
         """
         Create a section ID based on its location
         """
-        p4.value = gxapi_cy.WrapDH.get_section_id(GXContext._get_tls_geo(), p1, p2, p3, p4.value.encode())
+        id.value = gxapi_cy.WrapDH.get_section_id(GXContext._get_tls_geo(), azimuth, east, north, id.value.encode())
         
 
 
 
     @classmethod
-    def get_template_blob(cls, p1, p2, p3):
+    def get_template_blob(cls, db, template, imp_type):
         """
         Retrieve the import template from the database.
 
@@ -1077,13 +1077,13 @@ class GXDH:
         
         If no template blob exists, templ
         """
-        ret_val, p3.value = gxapi_cy.WrapDH.get_template_blob(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.value)
+        ret_val, imp_type.value = gxapi_cy.WrapDH.get_template_blob(GXContext._get_tls_geo(), db._wrapper, template.encode(), imp_type.value)
         return ret_val
 
 
 
     @classmethod
-    def get_template_info(cls, p1, p2, p3, p5):
+    def get_template_info(cls, template, data_type, file, table):
         """
         Retrieve the file, `GXDH` Table name and type from an import template.
 
@@ -1108,13 +1108,13 @@ class GXDH:
         `DH_DATA_UNKNOWN` is returned for the data type; likely an indication that this
         is not a new-style template produced by Wholeplot.
         """
-        p2.value, p3.value, p5.value = gxapi_cy.WrapDH.get_template_info(GXContext._get_tls_geo(), p1.encode(), p2.value, p3.value.encode(), p5.value.encode())
+        data_type.value, file.value, table.value = gxapi_cy.WrapDH.get_template_info(GXContext._get_tls_geo(), template.encode(), data_type.value, file.value.encode(), table.value.encode())
         
 
 
 
     @classmethod
-    def get_template_info_ex(cls, p1, p2, p3, p5, p7):
+    def get_template_info_ex(cls, template, data_type, file, table, lst):
         """
         Retrieve the file, `GXDH` Table name, type and channel list from an import template.
 
@@ -1141,17 +1141,17 @@ class GXDH:
         This version also returns a list of the channels in the template checks can be made to
         see if the import will exceed the database channel limit.
         """
-        p2.value, p3.value, p5.value = gxapi_cy.WrapDH.get_template_info_ex(GXContext._get_tls_geo(), p1.encode(), p2.value, p3.value.encode(), p5.value.encode(), p7._wrapper)
+        data_type.value, file.value, table.value = gxapi_cy.WrapDH.get_template_info_ex(GXContext._get_tls_geo(), template.encode(), data_type.value, file.value.encode(), table.value.encode(), lst._wrapper)
         
 
 
 
 
-    def get_units(self, p2, p4):
+    def get_units(self, units, p4):
         """
         Get the positional units and conversion factor to m.
         """
-        p2.value, p4.value = self._wrapper.get_units(p2.value.encode(), p4.value)
+        units.value, p4.value = self._wrapper.get_units(units.value.encode(), p4.value)
         
 
 
@@ -1167,11 +1167,11 @@ class GXDH:
 
 
     @classmethod
-    def have_current2(cls, p1):
+    def have_current2(cls, db):
         """
         Returns true if a drill project is loaded, and the collar database if it is loaded.
         """
-        ret_val, p1.value = gxapi_cy.WrapDH.have_current2(GXContext._get_tls_geo(), p1.value.encode())
+        ret_val, db.value = gxapi_cy.WrapDH.have_current2(GXContext._get_tls_geo(), db.value.encode())
         return ret_val
 
 
@@ -1187,11 +1187,11 @@ class GXDH:
 
 
     @classmethod
-    def hole_select_from_list_gui(cls, p1, p2):
+    def hole_select_from_list_gui(cls, lst, sel_lst):
         """
         Select/Deselect holes using the two-panel selection tool.
         """
-        ret_val = gxapi_cy.WrapDH.hole_select_from_list_gui(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
+        ret_val = gxapi_cy.WrapDH.hole_select_from_list_gui(GXContext._get_tls_geo(), lst._wrapper, sel_lst._wrapper)
         return ret_val
 
 
@@ -1207,27 +1207,27 @@ class GXDH:
 
 
 
-    def modify3d_gui(self, p2, p3):
+    def modify3d_gui(self, ini, page):
         """
         Modify parameters for a 3D plot.
         """
-        ret_val, p3.value = self._wrapper.modify3d_gui(p2.encode(), p3.value)
+        ret_val, page.value = self._wrapper.modify3d_gui(ini.encode(), page.value)
         return ret_val
 
 
 
 
-    def edit_classification_table_file_gui(self, p2, p3, p5, p6):
+    def edit_classification_table_file_gui(self, chan, class_file, fill_patterns, colors_only):
         """
         Edit a symbol color/pattern CSV file
         """
-        ret_val, p3.value = self._wrapper.edit_classification_table_file_gui(p2.encode(), p3.value.encode(), p5, p6)
+        ret_val, class_file.value = self._wrapper.edit_classification_table_file_gui(chan.encode(), class_file.value.encode(), fill_patterns, colors_only)
         return ret_val
 
 
 
 
-    def modify_crooked_section_holes_gui(self, p2, p3):
+    def modify_crooked_section_holes_gui(self, ini, page):
         """
         Modify parameters to replot holes and hole data to an existing crooked section map.
 
@@ -1235,13 +1235,13 @@ class GXDH:
 
         Will plot to an empty crooked section.
         """
-        ret_val, p3.value = self._wrapper.modify_crooked_section_holes_gui(p2.encode(), p3.value)
+        ret_val, page.value = self._wrapper.modify_crooked_section_holes_gui(ini.encode(), page.value)
         return ret_val
 
 
 
 
-    def modify_fence_gui(self, p2, p3):
+    def modify_fence_gui(self, ini, page):
         """
         Modify parameters for a section plot.
 
@@ -1249,33 +1249,33 @@ class GXDH:
 
         The fence section function.
         """
-        ret_val, p3.value = self._wrapper.modify_fence_gui(p2.encode(), p3.value)
+        ret_val, page.value = self._wrapper.modify_fence_gui(ini.encode(), page.value)
         return ret_val
 
 
 
 
-    def modify_hole_traces_3dgui(self, p2, p3):
+    def modify_hole_traces_3dgui(self, ini, page):
         """
         Modify parameters for a hole traces plot to an existing 3D view.
         """
-        ret_val, p3.value = self._wrapper.modify_hole_traces_3dgui(p2.encode(), p3.value)
+        ret_val, page.value = self._wrapper.modify_hole_traces_3dgui(ini.encode(), page.value)
         return ret_val
 
 
 
 
-    def modify_hole_traces_gui(self, p2, p3):
+    def modify_hole_traces_gui(self, ini, page):
         """
         Modify parameters for a hole traces plot to a current map.
         """
-        ret_val, p3.value = self._wrapper.modify_hole_traces_gui(p2.encode(), p3.value)
+        ret_val, page.value = self._wrapper.modify_hole_traces_gui(ini.encode(), page.value)
         return ret_val
 
 
 
 
-    def modify_hole_traces_gui2(self, p2, p3, p4):
+    def modify_hole_traces_gui2(self, ini, plot_type, page):
         """
         Modify parameters for a hole traces plot to a current plan or section view.
 
@@ -1283,23 +1283,23 @@ class GXDH:
 
         Currently supports `DH_PLOT_PLAN` and `DH_PLOT_SECTION`
         """
-        ret_val, p4.value = self._wrapper.modify_hole_traces_gui2(p2.encode(), p3, p4.value)
+        ret_val, page.value = self._wrapper.modify_hole_traces_gui2(ini.encode(), plot_type, page.value)
         return ret_val
 
 
 
 
-    def modify_plan_gui(self, p2, p3):
+    def modify_plan_gui(self, ini, page):
         """
         Modify parameters for a plan plot.
         """
-        ret_val, p3.value = self._wrapper.modify_plan_gui(p2.encode(), p3.value)
+        ret_val, page.value = self._wrapper.modify_plan_gui(ini.encode(), page.value)
         return ret_val
 
 
 
 
-    def modify_plan_holes_gui(self, p2, p3):
+    def modify_plan_holes_gui(self, ini, page):
         """
         Modify parameters to replot holes and hole data to an existing plan map.
 
@@ -1307,23 +1307,23 @@ class GXDH:
 
         Modifies only hole trace, hole data, topo, voxel slice data.
         """
-        ret_val, p3.value = self._wrapper.modify_plan_holes_gui(p2.encode(), p3.value)
+        ret_val, page.value = self._wrapper.modify_plan_holes_gui(ini.encode(), page.value)
         return ret_val
 
 
 
     @classmethod
-    def modify_rock_codes_gui(cls, p1):
+    def modify_rock_codes_gui(cls, file):
         """
         Modify/create a rock codes file.
         """
-        ret_val = gxapi_cy.WrapDH.modify_rock_codes_gui(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapDH.modify_rock_codes_gui(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
 
     @classmethod
-    def modify_rock_codes_gui2(cls, p1, p2):
+    def modify_rock_codes_gui2(cls, db, file):
         """
         Modify/create a rock codes file, channel population option.
 
@@ -1334,13 +1334,13 @@ class GXDH:
         automatically populate the rock code list. The database
         should be a Wholeplot database.
         """
-        ret_val = gxapi_cy.WrapDH.modify_rock_codes_gui2(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
+        ret_val = gxapi_cy.WrapDH.modify_rock_codes_gui2(GXContext._get_tls_geo(), db._wrapper, file.encode())
         return ret_val
 
 
 
 
-    def modify_section_gui(self, p2, p3):
+    def modify_section_gui(self, ini, page):
         """
         Modify parameters for a section plot.
 
@@ -1352,13 +1352,13 @@ class GXDH:
         are plotted in a stack on the left side of the same map,
         not to individual maps.
         """
-        ret_val, p3.value = self._wrapper.modify_section_gui(p2.encode(), p3.value)
+        ret_val, page.value = self._wrapper.modify_section_gui(ini.encode(), page.value)
         return ret_val
 
 
 
 
-    def modify_section_holes_gui(self, p2, p3):
+    def modify_section_holes_gui(self, ini, page):
         """
         Modify parameters to replot holes and hole data to an existing section map.
 
@@ -1367,13 +1367,13 @@ class GXDH:
         Works for both regular and stacked sections.
         Modifies only hole trace, hole data, topo, voxel slice data.
         """
-        ret_val, p3.value = self._wrapper.modify_section_holes_gui(p2.encode(), p3.value)
+        ret_val, page.value = self._wrapper.modify_section_holes_gui(ini.encode(), page.value)
         return ret_val
 
 
 
 
-    def modify_stacked_section_gui(self, p2, p3):
+    def modify_stacked_section_gui(self, ini, page):
         """
         Modify parameters for a section plot.
 
@@ -1385,33 +1385,33 @@ class GXDH:
         are plotted in a stack on the left side of the same map,
         not to individual maps.
         """
-        ret_val, p3.value = self._wrapper.modify_stacked_section_gui(p2.encode(), p3.value)
+        ret_val, page.value = self._wrapper.modify_stacked_section_gui(ini.encode(), page.value)
         return ret_val
 
 
 
 
-    def modify_strip_log_gui(self, p2, p3):
+    def modify_strip_log_gui(self, ini, page):
         """
         Modify parameters for a strip log plot.
         """
-        ret_val, p3.value = self._wrapper.modify_strip_log_gui(p2.encode(), p3.value)
+        ret_val, page.value = self._wrapper.modify_strip_log_gui(ini.encode(), page.value)
         return ret_val
 
 
 
     @classmethod
-    def modify_structure_codes_gui(cls, p1):
+    def modify_structure_codes_gui(cls, file):
         """
         Modify/create a structure codes file.
         """
-        ret_val = gxapi_cy.WrapDH.modify_structure_codes_gui(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapDH.modify_structure_codes_gui(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
 
     @classmethod
-    def modify_structure_codes_gui2(cls, p1, p2):
+    def modify_structure_codes_gui2(cls, db, file):
         """
         Modify/create a structure codes file, channel population option.
 
@@ -1422,23 +1422,23 @@ class GXDH:
         automatically populate the structure code list. The database
         should be a Wholeplot database.
         """
-        ret_val = gxapi_cy.WrapDH.modify_structure_codes_gui2(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
+        ret_val = gxapi_cy.WrapDH.modify_structure_codes_gui2(GXContext._get_tls_geo(), db._wrapper, file.encode())
         return ret_val
 
 
 
     @classmethod
-    def import2(cls, p1, p2, p3, p4, p5, p6, p7):
+    def import2(cls, project, db, line, hole, table, type, log):
         """
         Imports data into a Drill Hole Database (obsolete).
         """
-        gxapi_cy.WrapDH.import2(GXContext._get_tls_geo(), p1.encode(), p2._wrapper, p3, p4, p5.encode(), p6, p7.encode())
+        gxapi_cy.WrapDH.import2(GXContext._get_tls_geo(), project.encode(), db._wrapper, line, hole, table.encode(), type, log.encode())
         
 
 
 
 
-    def import_las(self, p2, p3, p4, p5, p6):
+    def import_las(self, assay, file, interval, p5, p6):
         """
         Imports LAS Data into a `GXDH` database
 
@@ -1448,7 +1448,7 @@ class GXDH:
         without the project name and underscore, e.g. for
         "Project_Assay.gdb" use "Assay"
         """
-        self._wrapper.import_las(p2.encode(), p3.encode(), p4, p5, p6._wrapper)
+        self._wrapper.import_las(assay.encode(), file.encode(), interval, p5, p6._wrapper)
         
 
 
@@ -1478,7 +1478,7 @@ class GXDH:
 
 
 
-    def qa_dip_az_curvature_lst(self, p2, p3, p4):
+    def qa_dip_az_curvature_lst(self, lst, tolerance, wa):
         """
         Do QA/QC Curvature checking on Dip Azimuth data for holes in a `GXLST`.
 
@@ -1486,13 +1486,13 @@ class GXDH:
 
         Checks all holes with Dip-Azimuth survey data
         """
-        ret_val = self._wrapper.qa_dip_az_curvature_lst(p2._wrapper, p3, p4._wrapper)
+        ret_val = self._wrapper.qa_dip_az_curvature_lst(lst._wrapper, tolerance, wa._wrapper)
         return ret_val
 
 
 
 
-    def qa_dip_az_survey_lst(self, p2, p3):
+    def qa_dip_az_survey_lst(self, lst, wa):
         """
         Do QA/QC on Dip/Az Survey data for holes in a `GXLST`.
 
@@ -1501,13 +1501,13 @@ class GXDH:
         Error if no Dip-Azimuth survey database, or if
         a requested hole does not exist in the drill project.
         """
-        ret_val = self._wrapper.qa_dip_az_survey_lst(p2._wrapper, p3._wrapper)
+        ret_val = self._wrapper.qa_dip_az_survey_lst(lst._wrapper, wa._wrapper)
         return ret_val
 
 
 
 
-    def qa_east_north_curvature_lst(self, p2, p3, p4):
+    def qa_east_north_curvature_lst(self, lst, tolerance, wa):
         """
         Do QA/QC Curvature checking on Dip Azimuth data for holes in a `GXLST`.
 
@@ -1515,13 +1515,13 @@ class GXDH:
 
         Checks all holes with East-North survey data
         """
-        ret_val = self._wrapper.qa_east_north_curvature_lst(p2._wrapper, p3, p4._wrapper)
+        ret_val = self._wrapper.qa_east_north_curvature_lst(lst._wrapper, tolerance, wa._wrapper)
         return ret_val
 
 
 
 
-    def qa_east_north_survey_lst(self, p2, p3):
+    def qa_east_north_survey_lst(self, lst, wa):
         """
         Do QA/QC on East/North Survey data for holes in a `GXLST`.
 
@@ -1530,23 +1530,23 @@ class GXDH:
         Error if no East-North survey database, or if
         a requested hole does not exist in the drill project.
         """
-        ret_val = self._wrapper.qa_east_north_survey_lst(p2._wrapper, p3._wrapper)
+        ret_val = self._wrapper.qa_east_north_survey_lst(lst._wrapper, wa._wrapper)
         return ret_val
 
 
 
 
-    def slice_selection_tool_gui(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13):
+    def slice_selection_tool_gui(self, aoix1, aoiy1, aoix2, aoiy2, aoix3, aoiy3, aoix4, aoiy4, x1, y1, x2, y2):
         """
         Select a slice with the holes in context. An optional 4 point area of interest (AOI) can be added to be represented in the UI too.
         """
-        ret_val, p10.value, p11.value, p12.value, p13.value = self._wrapper.slice_selection_tool_gui(p2, p3, p4, p5, p6, p7, p8, p9, p10.value, p11.value, p12.value, p13.value)
+        ret_val, x1.value, y1.value, x2.value, y2.value = self._wrapper.slice_selection_tool_gui(aoix1, aoiy1, aoix2, aoiy2, aoix3, aoiy3, aoix4, aoiy4, x1.value, y1.value, x2.value, y2.value)
         return ret_val
 
 
 
 
-    def update_survey_from_collar(self, p2):
+    def update_survey_from_collar(self, hole):
         """
         Update the Survey table from the collar info.
 
@@ -1556,13 +1556,13 @@ class GXDH:
         values. If the survey contains more than one row, then no changes
         are applied, and no warning or error is registered.
         """
-        ret_val = self._wrapper.update_survey_from_collar(p2)
+        ret_val = self._wrapper.update_survey_from_collar(hole)
         return ret_val
 
 
 
 
-    def load_data_parameters_ini(self, p2, p3):
+    def load_data_parameters_ini(self, db, dir):
         """
         Load data parameters from INI files..
 
@@ -1572,33 +1572,33 @@ class GXDH:
         in the channel `GXREG`. This function lets a user transfer pre-defined
         settings to individual INI files (eg. cu.ini).
         """
-        self._wrapper.load_data_parameters_ini(p2._wrapper, p3.encode())
+        self._wrapper.load_data_parameters_ini(db._wrapper, dir.encode())
         
 
 
 
 
-    def load_plot_parameters(self, p2, p3):
+    def load_plot_parameters(self, ini, type):
         """
         Load parameters from a Job into the Drill object.
         """
-        self._wrapper.load_plot_parameters(p2.encode(), p3)
+        self._wrapper.load_plot_parameters(ini.encode(), type)
         
 
 
 
 
-    def load_select(self, p2):
+    def load_select(self, file):
         """
         Load selections to from a file.
         """
-        self._wrapper.load_select(p2.encode())
+        self._wrapper.load_select(file.encode())
         
 
 
 
 
-    def mask_ply(self, p2, p3, p4, p5, p6, p7):
+    def mask_ply(self, pply, ipj, tol, mask, select, append):
         """
         Set mask channel based on view selection polygon.
 
@@ -1610,33 +1610,33 @@ class GXDH:
         `DH_MASK_NEW` --- Mask is created new for each selected hole
         `DH_MASK_APPEND` --- Current selection is added to previous.
         """
-        self._wrapper.mask_ply(p2._wrapper, p3._wrapper, p4, p5.encode(), p6, p7)
+        self._wrapper.mask_ply(pply._wrapper, ipj._wrapper, tol, mask.encode(), select, append)
         
 
 
 
     @classmethod
-    def open(cls, p1):
+    def open(cls, db):
         """
         Open `GXDH` from collar database and load all associated databases.
         """
-        ret_val = gxapi_cy.WrapDH.open(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapDH.open(GXContext._get_tls_geo(), db.encode())
         return GXDH(ret_val)
 
 
 
 
-    def open_job(self, p2, p3):
+    def open_job(self, job, type):
         """
         Open a `GXDH` plotting job
         """
-        self._wrapper.open_job(p2.encode(), p3)
+        self._wrapper.open_job(job.encode(), type)
         
 
 
 
 
-    def plot_hole_traces(self, p2, p3):
+    def plot_hole_traces(self, map, job):
         """
         Plot hole traces to a regular (plan) map.
 
@@ -1646,13 +1646,13 @@ class GXDH:
         The DHPLANHOLES GX uses the default plan map parameter file
         "_plan.inp".
         """
-        self._wrapper.plot_hole_traces(p2._wrapper, p3.encode())
+        self._wrapper.plot_hole_traces(map._wrapper, job.encode())
         
 
 
 
 
-    def plot_hole_traces_3d(self, p2, p3):
+    def plot_hole_traces_3d(self, mview, job):
         """
         Plot hole traces to an existing 3D map view.
 
@@ -1662,43 +1662,43 @@ class GXDH:
         The DH3DHOLES GX uses the default 3D map parameter file
         "_3D.in3".
         """
-        self._wrapper.plot_hole_traces_3d(p2._wrapper, p3.encode())
+        self._wrapper.plot_hole_traces_3d(mview._wrapper, job.encode())
         
 
 
 
 
-    def plot_symbols_3d(self, p2, p3):
+    def plot_symbols_3d(self, mview, job):
         """
         Plot 3D symbols to an existing 3D map view.
         """
-        self._wrapper.plot_symbols_3d(p2._wrapper, p3.encode())
+        self._wrapper.plot_symbols_3d(mview._wrapper, job.encode())
         
 
 
 
 
-    def qa_collar(self, p2):
+    def qa_collar(self, wa):
         """
         Do QA/QC on Hole Collar data.
         """
-        self._wrapper.qa_collar(p2._wrapper)
+        self._wrapper.qa_collar(wa._wrapper)
         
 
 
 
 
-    def qa_collar_lst(self, p2, p3):
+    def qa_collar_lst(self, lst, wa):
         """
         Do QA/QC on Hole Collar data - `GXLST` of holes.
         """
-        self._wrapper.qa_collar_lst(p2._wrapper, p3._wrapper)
+        self._wrapper.qa_collar_lst(lst._wrapper, wa._wrapper)
         
 
 
 
 
-    def qa_dip_az_curvature(self, p2, p3):
+    def qa_dip_az_curvature(self, wa, tolerance):
         """
         Do QA/QC Curvature checking on Dip Azimuth data.
 
@@ -1706,13 +1706,13 @@ class GXDH:
 
         Checks all holes with Dip-Azimuth survey data
         """
-        self._wrapper.qa_dip_az_curvature(p2._wrapper, p3)
+        self._wrapper.qa_dip_az_curvature(wa._wrapper, tolerance)
         
 
 
 
 
-    def qa_dip_az_curvature2(self, p2, p3, p4):
+    def qa_dip_az_curvature2(self, wa, tolerance, hole):
         """
         Do QA/QC Curvature checking on Dip Azimuth data for a single hole.
 
@@ -1720,13 +1720,13 @@ class GXDH:
 
         Checks single hole with Dip-Azimuth survey data
         """
-        self._wrapper.qa_dip_az_curvature2(p2._wrapper, p3, p4.encode())
+        self._wrapper.qa_dip_az_curvature2(wa._wrapper, tolerance, hole.encode())
         
 
 
 
 
-    def qa_dip_az_survey(self, p2, p3, p4, p5):
+    def qa_dip_az_survey(self, db, wa, line, hole):
         """
         Do QA/QC on Dip/Az Survey data.
 
@@ -1735,13 +1735,13 @@ class GXDH:
         Error if no Dip-Azimuth survey database, or if
         the requested line does not exist in the database.
         """
-        self._wrapper.qa_dip_az_survey(p2._wrapper, p3._wrapper, p4, p5.encode())
+        self._wrapper.qa_dip_az_survey(db._wrapper, wa._wrapper, line, hole.encode())
         
 
 
 
 
-    def qa_east_north_curvature(self, p2, p3):
+    def qa_east_north_curvature(self, wa, tolerance):
         """
         Do QA/QC Curvature checking on Dip Azimuth data.
 
@@ -1749,13 +1749,13 @@ class GXDH:
 
         Checks all holes with East-North survey data
         """
-        self._wrapper.qa_east_north_curvature(p2._wrapper, p3)
+        self._wrapper.qa_east_north_curvature(wa._wrapper, tolerance)
         
 
 
 
 
-    def qa_east_north_curvature2(self, p2, p3, p4):
+    def qa_east_north_curvature2(self, wa, tolerance, hole):
         """
         Do QA/QC Curvature checking on Dip Azimuth data for a single hole.
 
@@ -1763,13 +1763,13 @@ class GXDH:
 
         Checks single holes with East-North survey data
         """
-        self._wrapper.qa_east_north_curvature2(p2._wrapper, p3, p4.encode())
+        self._wrapper.qa_east_north_curvature2(wa._wrapper, tolerance, hole.encode())
         
 
 
 
 
-    def qa_east_north_survey(self, p2, p3, p4, p5):
+    def qa_east_north_survey(self, db, wa, line, hole):
         """
         Do QA/QC on East/North Survey data.
 
@@ -1778,33 +1778,33 @@ class GXDH:
         Error if no East-North survey database, or if
         the requested line does not exist in the database.
         """
-        self._wrapper.qa_east_north_survey(p2._wrapper, p3._wrapper, p4, p5.encode())
+        self._wrapper.qa_east_north_survey(db._wrapper, wa._wrapper, line, hole.encode())
         
 
 
 
 
-    def qa_from_to_data(self, p2, p3, p4, p5):
+    def qa_from_to_data(self, db, wa, line, hole):
         """
         Do QA/QC on From/To data.
         """
-        self._wrapper.qa_from_to_data(p2._wrapper, p3._wrapper, p4, p5.encode())
+        self._wrapper.qa_from_to_data(db._wrapper, wa._wrapper, line, hole.encode())
         
 
 
 
 
-    def qa_point_data(self, p2, p3, p4, p5):
+    def qa_point_data(self, db, wa, line, hole):
         """
         Do QA/QC on Point data.
         """
-        self._wrapper.qa_point_data(p2._wrapper, p3._wrapper, p4, p5.encode())
+        self._wrapper.qa_point_data(db._wrapper, wa._wrapper, line, hole.encode())
         
 
 
 
 
-    def qa_write_unregistered_holes(self, p2, p3):
+    def qa_write_unregistered_holes(self, db, wa):
         """
         Write out unregistered holes in a database.
 
@@ -1813,13 +1813,13 @@ class GXDH:
         Looks at each line in a database and sees if it is listed in
         the collar tables' hole list.
         """
-        self._wrapper.qa_write_unregistered_holes(p2._wrapper, p3._wrapper)
+        self._wrapper.qa_write_unregistered_holes(db._wrapper, wa._wrapper)
         
 
 
 
 
-    def replot_holes(self, p2, p3):
+    def replot_holes(self, job, plot_type):
         """
         Replot holes on an existing drill map.
 
@@ -1833,13 +1833,13 @@ class GXDH:
         INI file used to create the existing map, or things may not
         work out (e.g. bad locations etc).
         """
-        self._wrapper.replot_holes(p2.encode(), p3)
+        self._wrapper.replot_holes(job.encode(), plot_type)
         
 
 
 
 
-    def plot_holes_on_section(self, p2, p3, p4):
+    def plot_holes_on_section(self, job, plot_type, view):
         """
         Plot the currently selected holes on an existing section view.
 
@@ -1847,13 +1847,13 @@ class GXDH:
 
         Plot the currently selected holes to a section view.
         """
-        self._wrapper.plot_holes_on_section(p2.encode(), p3, p4.encode())
+        self._wrapper.plot_holes_on_section(job.encode(), plot_type, view.encode())
         
 
 
 
 
-    def re_survey_east_north(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+    def re_survey_east_north(self, hole, v_vx, v_vy, v_vz, v_vd, east, north, elev, top, bot):
         """
         Resurvey an East-North-RL survey.
 
@@ -1862,13 +1862,13 @@ class GXDH:
         Re-interpolates in X, Y and Z to proper depth interval
         and returns depths for each point
         """
-        p11.value = self._wrapper.re_survey_east_north(p2.encode(), p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper, p7, p8, p9, p10, p11.value)
+        bot.value = self._wrapper.re_survey_east_north(hole.encode(), v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, v_vd._wrapper, east, north, elev, top, bot.value)
         
 
 
 
 
-    def re_survey_pol_fit(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17):
+    def re_survey_pol_fit(self, hole, v_vdip, v_vaz, v_vdepth, east, north, elev, top, bot, inc, dip_conv, order, v_vx, v_vy, v_vz, v_vd):
         """
         Use the polynomial fit resurveying method.
 
@@ -1883,13 +1883,13 @@ class GXDH:
         for most smoothly curving holes. The order is reduced to no more than
         the number of input points.
         """
-        self._wrapper.re_survey_pol_fit(p2.encode(), p3._wrapper, p4._wrapper, p5._wrapper, p6, p7, p8, p9, p10, p11, p12, p13, p14._wrapper, p15._wrapper, p16._wrapper, p17._wrapper)
+        self._wrapper.re_survey_pol_fit(hole.encode(), v_vdip._wrapper, v_vaz._wrapper, v_vdepth._wrapper, east, north, elev, top, bot, inc, dip_conv, order, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, v_vd._wrapper)
         
 
 
 
 
-    def re_survey_rad_curve(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16):
+    def re_survey_rad_curve(self, hole, v_vdip, v_vaz, v_vdepth, east, north, elev, top, bot, inc, dip_conv, v_vx, v_vy, v_vz, v_vd):
         """
         Use radius of curvature resurveying method.
 
@@ -1901,13 +1901,13 @@ class GXDH:
         measure distance down the hole (even if it's horizontal).
         A negative dip convention means vertical down is -90 degrees.
         """
-        self._wrapper.re_survey_rad_curve(p2.encode(), p3._wrapper, p4._wrapper, p5._wrapper, p6, p7, p8, p9, p10, p11, p12, p13._wrapper, p14._wrapper, p15._wrapper, p16._wrapper)
+        self._wrapper.re_survey_rad_curve(hole.encode(), v_vdip._wrapper, v_vaz._wrapper, v_vdepth._wrapper, east, north, elev, top, bot, inc, dip_conv, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, v_vd._wrapper)
         
 
 
 
 
-    def re_survey_straight(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15):
+    def re_survey_straight(self, hole, dip, az, east, north, elev, top, bot, inc, dip_conv, v_vx, v_vy, v_vz, v_vd):
         """
         Resurvey a straight hole.
 
@@ -1919,13 +1919,13 @@ class GXDH:
         measure distance down the hole (even if it's horizontal).
         A negative dip convention means vertical down is -90 degrees.
         """
-        self._wrapper.re_survey_straight(p2.encode(), p3, p4, p5, p6, p7, p8, p9, p10, p11, p12._wrapper, p13._wrapper, p14._wrapper, p15._wrapper)
+        self._wrapper.re_survey_straight(hole.encode(), dip, az, east, north, elev, top, bot, inc, dip_conv, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, v_vd._wrapper)
         
 
 
 
 
-    def re_survey_straight_seg(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16):
+    def re_survey_straight_seg(self, hole, v_vdip, v_vaz, v_vdepth, east, north, elev, top, bot, inc, dip_conv, v_vx, v_vy, v_vz, v_vd):
         """
         Resurvey a hole with straight segments between locations.
 
@@ -1938,7 +1938,7 @@ class GXDH:
         measure distance down the hole (even if it's horizontal).
         A negative dip convention means vertical down is -90 degrees.
         """
-        self._wrapper.re_survey_straight_seg(p2.encode(), p3._wrapper, p4._wrapper, p5._wrapper, p6, p7, p8, p9, p10, p11, p12, p13._wrapper, p14._wrapper, p15._wrapper, p16._wrapper)
+        self._wrapper.re_survey_straight_seg(hole.encode(), v_vdip._wrapper, v_vaz._wrapper, v_vdepth._wrapper, east, north, elev, top, bot, inc, dip_conv, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, v_vd._wrapper)
         
 
 
@@ -1962,27 +1962,27 @@ class GXDH:
 
 
 
-    def save_job(self, p2, p3):
+    def save_job(self, job, type):
         """
         Save a `GXDH` plotting job
         """
-        self._wrapper.save_job(p2.encode(), p3)
+        self._wrapper.save_job(job.encode(), type)
         
 
 
 
 
-    def save_select(self, p2):
+    def save_select(self, file):
         """
         Saves current selections to a file.
         """
-        self._wrapper.save_select(p2.encode())
+        self._wrapper.save_select(file.encode())
         
 
 
 
 
-    def section_window_size_mm(self, p2, p3):
+    def section_window_size_mm(self, xmm, ymm):
         """
         Deterine the size, in mm, of the section window
 
@@ -1992,7 +1992,7 @@ class GXDH:
         paper size and orientation, return the size in mm of the
         window used for plotting the section.
         """
-        p2.value, p3.value = self._wrapper.section_window_size_mm(p2.value, p3.value)
+        xmm.value, ymm.value = self._wrapper.section_window_size_mm(xmm.value, ymm.value)
         
 
 
@@ -2008,7 +2008,7 @@ class GXDH:
 
 
 
-    def select_holes(self, p2, p3):
+    def select_holes(self, gvv, sel):
         """
         Select holes by hole indices.
 
@@ -2017,13 +2017,13 @@ class GXDH:
         Indices less than 0 are skipped. This lets you use this function
         after a call to `GXLST.find_items`, which returns -1 for indices not located.
         """
-        self._wrapper.select_holes(p2._wrapper, p3)
+        self._wrapper.select_holes(gvv._wrapper, sel)
         
 
 
 
 
-    def select_name(self, p2, p3, p4):
+    def select_name(self, mask, sel, mode):
         """
         Select holes using a name mask.
 
@@ -2032,13 +2032,13 @@ class GXDH:
         Overwrite mode - all selections tested and selected or not selected
         Append mode    - only holes matching the mask are selected or not selected.
         """
-        self._wrapper.select_name(p2.encode(), p3, p4)
+        self._wrapper.select_name(mask.encode(), sel, mode)
         
 
 
 
 
-    def select_ply(self, p2):
+    def select_ply(self, pply):
         """
         Select all holes in `GXPLY` (Polygon) object.
 
@@ -2048,13 +2048,13 @@ class GXDH:
         
         `select_ply2`(Drill, 1, 0, 0);
         """
-        self._wrapper.select_ply(p2._wrapper)
+        self._wrapper.select_ply(pply._wrapper)
         
 
 
 
 
-    def select_ply2(self, p2, p3, p4, p5):
+    def select_ply2(self, pply, select, inside, new):
         """
         Select holes in `GXPLY` (Polygon) object with options.
 
@@ -2080,13 +2080,13 @@ class GXDH:
         Append/Deselect/outside: Deselect all holes outside the polygon.
                               Leave selections inside as is.
         """
-        self._wrapper.select_ply2(p2._wrapper, p3, p4, p5)
+        self._wrapper.select_ply2(pply._wrapper, select, inside, new)
         
 
 
 
 
-    def set_crooked_section_ipj(self, p2):
+    def set_crooked_section_ipj(self, ipj):
         """
         Pass the Crooked projection required for plotting to a crooked section.
 
@@ -2094,13 +2094,13 @@ class GXDH:
 
         This might be extracted from an existing crooked section view, or created from a database line.
         """
-        self._wrapper.set_crooked_section_ipj(p2._wrapper)
+        self._wrapper.set_crooked_section_ipj(ipj._wrapper)
         
 
 
 
 
-    def set_current_view_name(self, p2):
+    def set_current_view_name(self, cur_view):
         """
         Set the current map view name.
 
@@ -2108,13 +2108,13 @@ class GXDH:
 
         Can be used to specify the name of the view to plot into.
         """
-        self._wrapper.set_current_view_name(p2.encode())
+        self._wrapper.set_current_view_name(cur_view.encode())
         
 
 
 
 
-    def set_info(self, p2, p3, p4):
+    def set_info(self, hole, name, data):
         """
         Set Collar Information.
 
@@ -2124,13 +2124,13 @@ class GXDH:
         search for the DH_RL channel, which is the new
         name for the collar elevation.
         """
-        self._wrapper.set_info(p2, p3.encode(), p4.encode())
+        self._wrapper.set_info(hole, name.encode(), data.encode())
         
 
 
 
 
-    def set_ipj(self, p2):
+    def set_ipj(self, ipj):
         """
         Set the project `GXIPJ`.
 
@@ -2144,13 +2144,13 @@ class GXDH:
         The input `GXIPJ` cannot be a geographic coordinate system
         or this call will fail with an error message.
         """
-        self._wrapper.set_ipj(p2._wrapper)
+        self._wrapper.set_ipj(ipj._wrapper)
         
 
 
 
 
-    def set_map(self, p2):
+    def set_map(self, map):
         """
         Store the current `GXMAP` to the `GXDH` object.
 
@@ -2160,13 +2160,13 @@ class GXDH:
         so that, instead of creating a new map, the plotting
         functions use the existing one.
         """
-        self._wrapper.set_map(p2._wrapper)
+        self._wrapper.set_map(map._wrapper)
         
 
 
 
 
-    def set_new_ipj(self, p2):
+    def set_new_ipj(self, db):
         """
         Set a new project database projection to collar table projection.
 
@@ -2175,23 +2175,23 @@ class GXDH:
         Gets the `GXIPJ` of the collar table current x channel and copies it
         into the named database (as long as it is in the project!)
         """
-        self._wrapper.set_new_ipj(p2.encode())
+        self._wrapper.set_new_ipj(db.encode())
         
 
 
 
 
-    def set_selected_holes_vv(self, p2, p3):
+    def set_selected_holes_vv(self, vv, append):
         """
         Set hole selection using hole indices.
         """
-        self._wrapper.set_selected_holes_vv(p2._wrapper, p3)
+        self._wrapper.set_selected_holes_vv(vv._wrapper, append)
         
 
 
 
     @classmethod
-    def set_template_blob(cls, p1, p2, p3):
+    def set_template_blob(cls, db, template, imp_type):
         """
         Store the import template to the database.
 
@@ -2203,23 +2203,23 @@ class GXDH:
         The import types correspond to the DHIMPORT.IMPTYPE variable:
         0: ASCII, 1: Database/XLS, 2: ODBC
         """
-        gxapi_cy.WrapDH.set_template_blob(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3)
+        gxapi_cy.WrapDH.set_template_blob(GXContext._get_tls_geo(), db._wrapper, template.encode(), imp_type)
         
 
 
 
 
-    def significant_intersections_db(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+    def significant_intersections_db(self, mast_db, comp_db, hol_sel, assay_ch, cut_off_grade, clip_grade, min_composite_thickness, min_composite_grade, max_internal_dilution_length, min_internal_dilution_grade, grade_for_missing_assays):
         """
         Make a report of Significant Intersections
         """
-        self._wrapper.significant_intersections_db(p2._wrapper, p3._wrapper, p4, p5.encode(), p6, p7, p8, p9, p10, p11, p12)
+        self._wrapper.significant_intersections_db(mast_db._wrapper, comp_db._wrapper, hol_sel, assay_ch.encode(), cut_off_grade, clip_grade, min_composite_thickness, min_composite_grade, max_internal_dilution_length, min_internal_dilution_grade, grade_for_missing_assays)
         
 
 
 
 
-    def test_import_las(self, p2, p3, p4, p5, p6):
+    def test_import_las(self, assay, file, interval, p5, p6):
         """
         Tests import of LAS Data for problems.
 
@@ -2232,7 +2232,7 @@ class GXDH:
         where data is merely extended at the start or the end with dummies
         to match a different interval down the hole.
         """
-        p6.value = self._wrapper.test_import_las(p2.encode(), p3.encode(), p4, p5._wrapper, p6.value)
+        p6.value = self._wrapper.test_import_las(assay.encode(), file.encode(), interval, p5._wrapper, p6.value)
         
 
 
@@ -2248,11 +2248,11 @@ class GXDH:
 
 
 
-    def un_selected_hole_lst(self, p2):
+    def un_selected_hole_lst(self, lst):
         """
         Populate an `GXLST` with the list of the unselected holes
         """
-        self._wrapper.un_selected_hole_lst(p2._wrapper)
+        self._wrapper.un_selected_hole_lst(lst._wrapper)
         
 
 
@@ -2268,17 +2268,17 @@ class GXDH:
 
 
 
-    def update_hole_extent(self, p2):
+    def update_hole_extent(self, hole):
         """
         Update extents for one hole.
         """
-        self._wrapper.update_hole_extent(p2)
+        self._wrapper.update_hole_extent(hole)
         
 
 
 
 
-    def wholeplot(self, p2, p3):
+    def wholeplot(self, job, plot_type):
         """
         Run a Wholeplot plot job.
 
@@ -2289,17 +2289,17 @@ class GXDH:
         parameters (e.g. Map template, scale, boundaries,
         section definitions, hole trace parameters etc...)
         """
-        self._wrapper.wholeplot(p2.encode(), p3)
+        self._wrapper.wholeplot(job.encode(), plot_type)
         
 
 
 
 
-    def surface_intersections(self, p2, p3, p4):
+    def surface_intersections(self, output_db, input_geosurface_or_grid, hole_selection):
         """
         Determine intersections of drillholes with a surface.
         """
-        self._wrapper.surface_intersections(p2._wrapper, p3.encode(), p4)
+        self._wrapper.surface_intersections(output_db._wrapper, input_geosurface_or_grid.encode(), hole_selection)
         
 
 

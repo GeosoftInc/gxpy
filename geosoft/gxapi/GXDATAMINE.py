@@ -63,7 +63,7 @@ class GXDATAMINE:
 
 
     @classmethod
-    def create_voxel(cls, p1, p2, p3, p4, p5):
+    def create_voxel(cls, file, field, ipj, meta, voxel):
         """
         Create a Geosoft Voxel file from a Datamine block model file.
 
@@ -71,13 +71,13 @@ class GXDATAMINE:
 
         Create a Geosoft Voxel file from a Datamine block model file.
         """
-        gxapi_cy.WrapDATAMINE.create_voxel(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3._wrapper, p4._wrapper, p5.encode())
+        gxapi_cy.WrapDATAMINE.create_voxel(GXContext._get_tls_geo(), file.encode(), field.encode(), ipj._wrapper, meta._wrapper, voxel.encode())
         
 
 
 
     @classmethod
-    def numeric_field_lst(cls, p1, p2):
+    def numeric_field_lst(cls, file, lst):
         """
         Return a `GXLST` containing the non-standard numeric fields in a Datamine file.
 
@@ -87,7 +87,7 @@ class GXDATAMINE:
         The field names go in the name part, and field indices (1 to N)
         in the value part.
         """
-        gxapi_cy.WrapDATAMINE.numeric_field_lst(GXContext._get_tls_geo(), p1.encode(), p2._wrapper)
+        gxapi_cy.WrapDATAMINE.numeric_field_lst(GXContext._get_tls_geo(), file.encode(), lst._wrapper)
         
 
 

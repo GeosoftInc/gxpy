@@ -58,11 +58,11 @@ class GXSTRINGS:
 
 
     @classmethod
-    def launch_digitization_ui(cls, p1, p2):
+    def launch_digitization_ui(cls, stringfile, feature_guid):
         """
         Launch Digitization modeless window
         """
-        gxapi_cy.WrapSTRINGS.launch_digitization_ui(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        gxapi_cy.WrapSTRINGS.launch_digitization_ui(GXContext._get_tls_geo(), stringfile.encode(), feature_guid.encode())
         
 
 

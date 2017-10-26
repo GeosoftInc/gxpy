@@ -63,34 +63,34 @@ class GXDBREAD:
 
 
     @classmethod
-    def create(cls, p1, p2):
+    def create(cls, db, line_lst):
         """
         Create a `GXDBREAD` object
         Add channels using the `add_channel`() method.channel.
         """
-        ret_val = gxapi_cy.WrapDBREAD.create(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
+        ret_val = gxapi_cy.WrapDBREAD.create(GXContext._get_tls_geo(), db._wrapper, line_lst._wrapper)
         return GXDBREAD(ret_val)
 
 
 
     @classmethod
-    def create_xy(cls, p1, p2):
+    def create_xy(cls, db, line_lst):
         """
         Create a `GXDBREAD` object for a XY-located data. Add channels using the
         		               `add_channel`() method.
         """
-        ret_val = gxapi_cy.WrapDBREAD.create_xy(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
+        ret_val = gxapi_cy.WrapDBREAD.create_xy(GXContext._get_tls_geo(), db._wrapper, line_lst._wrapper)
         return GXDBREAD(ret_val)
 
 
 
     @classmethod
-    def create_xyz(cls, p1, p2):
+    def create_xyz(cls, db, line_lst):
         """
         Create a `GXDBREAD` object for a XYZ-located data.
         Add channels using the `add_channel`() method.channel
         """
-        ret_val = gxapi_cy.WrapDBREAD.create_xyz(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
+        ret_val = gxapi_cy.WrapDBREAD.create_xyz(GXContext._get_tls_geo(), db._wrapper, line_lst._wrapper)
         return GXDBREAD(ret_val)
 
 
@@ -98,11 +98,11 @@ class GXDBREAD:
 
 
 
-    def add_channel(self, p2):
+    def add_channel(self, chan):
         """
         Add a data channel to the `GXDBREAD` object.
         """
-        ret_val = self._wrapper.add_channel(p2)
+        ret_val = self._wrapper.add_channel(chan)
         return ret_val
 
 
@@ -112,7 +112,7 @@ class GXDBREAD:
 
 
 
-    def get_vv(self, p2):
+    def get_vv(self, chan):
         """
         Get the `GXVV` handle for a channel.
 
@@ -122,13 +122,13 @@ class GXDBREAD:
         function to find the number fo columns in a given channel. The `GXVV` is filled anew for 
         each block served up.
         """
-        ret_val = self._wrapper.get_vv(p2)
+        ret_val = self._wrapper.get_vv(chan)
         return GXVV(ret_val)
 
 
 
 
-    def get_va(self, p2):
+    def get_va(self, chan):
         """
         Get the `GXVA` handle for an array channel.
 
@@ -138,7 +138,7 @@ class GXDBREAD:
         function to find the number fo columns in a given channel, or you can call `GXVA.col` on the returned `GXVA` handle.
         The `GXVA` is filled anew for each block served up.
         """
-        ret_val = self._wrapper.get_va(p2)
+        ret_val = self._wrapper.get_va(chan)
         return GXVA(ret_val)
 
 
@@ -190,7 +190,7 @@ class GXDBREAD:
 
 
 
-    def get_chan_array_size(self, p2):
+    def get_chan_array_size(self, chan):
         """
         Get the number of columns of data in a channel.
 
@@ -200,7 +200,7 @@ class GXDBREAD:
         This function should be called to determine whether to use `get_vv` or `get_va` to access data
         for a channel.
         """
-        ret_val = self._wrapper.get_chan_array_size(p2)
+        ret_val = self._wrapper.get_chan_array_size(chan)
         return ret_val
 
 
@@ -226,7 +226,7 @@ class GXDBREAD:
 
 
 
-    def get_next_block(self, p2, p3, p4):
+    def get_next_block(self, line, block, n_blocks):
         """
         Get the next block of data.
 
@@ -235,7 +235,7 @@ class GXDBREAD:
         The next block of data is read and copied into the channel `GXVV` and/or `GXVA` objects, accessed using
         the `get_vv` and `get_va` functions.
         """
-        ret_val, p2.value, p3.value, p4.value = self._wrapper.get_next_block(p2.value, p3.value, p4.value)
+        ret_val, line.value, block.value, n_blocks.value = self._wrapper.get_next_block(line.value, block.value, n_blocks.value)
         return ret_val
 
 

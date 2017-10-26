@@ -60,7 +60,7 @@ class GXINTERNET:
 
 
     @classmethod
-    def download_http(cls, p1, p2, p3):
+    def download_http(cls, url, file, size):
         """
         Download `GXHTTP` file from the internet to file.
 
@@ -73,13 +73,13 @@ class GXINTERNET:
 
             iserver.gxh internet class.
         """
-        ret_val = gxapi_cy.WrapINTERNET.download_http(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3)
+        ret_val = gxapi_cy.WrapINTERNET.download_http(GXContext._get_tls_geo(), url.encode(), file.encode(), size)
         return ret_val
 
 
 
     @classmethod
-    def send_mail(cls, p1, p2, p3, p4, p5, p6, p7, p8):
+    def send_mail(cls, recipient, p2, p3, p4, p5, p6, p7, p8):
         """
         Prepaire an email for the user.
 
@@ -88,7 +88,7 @@ class GXINTERNET:
         Requires a MAPI complient mail system to be installed
         on the client machine.
         """
-        gxapi_cy.WrapINTERNET.send_mail(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6.encode(), p7.encode(), p8.encode())
+        gxapi_cy.WrapINTERNET.send_mail(GXContext._get_tls_geo(), recipient.encode(), p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6.encode(), p7.encode(), p8.encode())
         
 
 

@@ -61,7 +61,7 @@ class GXIMU:
 
 
     @classmethod
-    def agg_to_geo_color(cls, p1, p2, p3, p4):
+    def agg_to_geo_color(cls, agg, grid, ipj, res):
         """
         Create a geosoft color grid from an aggregate.
 
@@ -69,33 +69,33 @@ class GXIMU:
 
         This consumes a very small amount of memory
         """
-        gxapi_cy.WrapIMU.agg_to_geo_color(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3._wrapper, p4)
+        gxapi_cy.WrapIMU.agg_to_geo_color(GXContext._get_tls_geo(), agg._wrapper, grid.encode(), ipj._wrapper, res)
         
 
 
 
     @classmethod
-    def crc(cls, p1, p2):
+    def crc(cls, img, pul_crc):
         """
         Computes a CRC Checksum on an image.
         """
-        ret_val = gxapi_cy.WrapIMU.crc(GXContext._get_tls_geo(), p1._wrapper, p2)
+        ret_val = gxapi_cy.WrapIMU.crc(GXContext._get_tls_geo(), img._wrapper, pul_crc)
         return ret_val
 
 
 
     @classmethod
-    def crc_grid(cls, p1, p2):
+    def crc_grid(cls, grid, pul_crc):
         """
         Computes a CRC Checksum on a grid.
         """
-        ret_val = gxapi_cy.WrapIMU.crc_grid(GXContext._get_tls_geo(), p1.encode(), p2)
+        ret_val = gxapi_cy.WrapIMU.crc_grid(GXContext._get_tls_geo(), grid.encode(), pul_crc)
         return ret_val
 
 
 
     @classmethod
-    def crc_grid_inexact(cls, p1, p2, p3, p4):
+    def crc_grid_inexact(cls, grid, pul_crc, float_bits, double_bits):
         """
         Computes a CRC Checksum on a grid and allows you to specify
         number of bits of floats/doubles to drop so that the CRC
@@ -106,13 +106,13 @@ class GXIMU:
         Very usefull for testing where the last bits of accuracy
         are not as important.
         """
-        ret_val = gxapi_cy.WrapIMU.crc_grid_inexact(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4)
+        ret_val = gxapi_cy.WrapIMU.crc_grid_inexact(GXContext._get_tls_geo(), grid.encode(), pul_crc, float_bits, double_bits)
         return ret_val
 
 
 
     @classmethod
-    def crc_inexact(cls, p1, p2, p3, p4):
+    def crc_inexact(cls, img, pul_crc, float_bits, double_bits):
         """
         Computes a CRC Checksum on an image and allows you to specify
         number of bits of floats/doubles to drop so that the CRC
@@ -123,63 +123,63 @@ class GXIMU:
         Very usefull for testing where the last bits of accuracy
         are not as important.
         """
-        ret_val = gxapi_cy.WrapIMU.crc_inexact(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4)
+        ret_val = gxapi_cy.WrapIMU.crc_inexact(GXContext._get_tls_geo(), img._wrapper, pul_crc, float_bits, double_bits)
         return ret_val
 
 
 
     @classmethod
-    def export_grid_without_data_section_xml(cls, p1, p2, p3):
+    def export_grid_without_data_section_xml(cls, grid, crc, file):
         """
         Export a Grid minus the data section as an XML file.
         """
-        p2.value = gxapi_cy.WrapIMU.export_grid_without_data_section_xml(GXContext._get_tls_geo(), p1.encode(), p2.value, p3.encode())
+        crc.value = gxapi_cy.WrapIMU.export_grid_without_data_section_xml(GXContext._get_tls_geo(), grid.encode(), crc.value, file.encode())
         
 
 
 
     @classmethod
-    def export_grid_xml(cls, p1, p2, p3):
+    def export_grid_xml(cls, grid, crc, file):
         """
         Export a Grid as an XML file.
         """
-        p2.value = gxapi_cy.WrapIMU.export_grid_xml(GXContext._get_tls_geo(), p1.encode(), p2.value, p3.encode())
+        crc.value = gxapi_cy.WrapIMU.export_grid_xml(GXContext._get_tls_geo(), grid.encode(), crc.value, file.encode())
         
 
 
 
     @classmethod
-    def export_raw_xml(cls, p1, p2, p3):
+    def export_raw_xml(cls, img, crc, file):
         """
         Export a Grid as an XML file using a fast raw output.
         """
-        p2.value = gxapi_cy.WrapIMU.export_raw_xml(GXContext._get_tls_geo(), p1._wrapper, p2.value, p3.encode())
+        crc.value = gxapi_cy.WrapIMU.export_raw_xml(GXContext._get_tls_geo(), img._wrapper, crc.value, file.encode())
         
 
 
 
     @classmethod
-    def export_xml(cls, p1, p2, p3):
+    def export_xml(cls, img, crc, file):
         """
         Export a Grid as an XML file.
         """
-        p2.value = gxapi_cy.WrapIMU.export_xml(GXContext._get_tls_geo(), p1._wrapper, p2.value, p3.encode())
+        crc.value = gxapi_cy.WrapIMU.export_xml(GXContext._get_tls_geo(), img._wrapper, crc.value, file.encode())
         
 
 
 
     @classmethod
-    def get_zvv(cls, p1, p2, p3, p4):
+    def get_zvv(cls, img, v_vx, v_vy, v_vz):
         """
         Extract an interpolated image value for given XY `GXVV` locations
         """
-        gxapi_cy.WrapIMU.get_zvv(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper)
+        gxapi_cy.WrapIMU.get_zvv(GXContext._get_tls_geo(), img._wrapper, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
         
 
 
 
     @classmethod
-    def get_z_peaks_vv(cls, p1, p2, p3, p4):
+    def get_z_peaks_vv(cls, img, v_vx, v_vy, v_vz):
         """
         Same as `get_zvv`, but find the closest peak value to the input locations, and return
         				             the peak value and peak value location.
@@ -189,13 +189,13 @@ class GXIMU:
         The returned locations will always be a grid point location; no interpolation is performed when locating the peaks. A simple search is
         				done of all neighbouring points from the starting point, and once no neighbours can be located with a higher value, the search stops.
         """
-        gxapi_cy.WrapIMU.get_z_peaks_vv(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper)
+        gxapi_cy.WrapIMU.get_z_peaks_vv(GXContext._get_tls_geo(), img._wrapper, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
         
 
 
 
     @classmethod
-    def grid_add(cls, p1, p2, p3, p4, p5):
+    def grid_add(cls, img1, m1, img2, m2, imgo):
         """
         Adds two Grid images together point-by-point.
 
@@ -204,13 +204,13 @@ class GXIMU:
         The `GXIMG` parameters MUST be of type `GS_DOUBLE`!
         If not, the method will terminate.
         """
-        gxapi_cy.WrapIMU.grid_add(GXContext._get_tls_geo(), p1._wrapper, p2, p3._wrapper, p4, p5._wrapper)
+        gxapi_cy.WrapIMU.grid_add(GXContext._get_tls_geo(), img1._wrapper, m1, img2._wrapper, m2, imgo._wrapper)
         
 
 
 
     @classmethod
-    def grid_agc(cls, p1, p2, p3, p4, p5):
+    def grid_agc(cls, i_img, o_img, width, max_gain, remove_background):
         """
         Automatic Gain Compensation of a grid.
 
@@ -219,13 +219,13 @@ class GXIMU:
         The `GXIMG` parameters MUST be of type `GS_FLOAT`!
         If not, the method will terminate.
         """
-        gxapi_cy.WrapIMU.grid_agc(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3, p4, p5)
+        gxapi_cy.WrapIMU.grid_agc(GXContext._get_tls_geo(), i_img._wrapper, o_img._wrapper, width, max_gain, remove_background)
         
 
 
 
     @classmethod
-    def grid_bool(cls, p1, p2, p3, p4, p5, p6):
+    def grid_bool(cls, img1, img2, out, bool, sizing, olap):
         """
         Mask one grid against another using boolean logic
         operations.
@@ -235,23 +235,23 @@ class GXIMU:
         The `GXIMG` parameters must be of type `GS_DOUBLE`!
         If not, the method will terminate.
         """
-        gxapi_cy.WrapIMU.grid_bool(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3.encode(), p4, p5, p6)
+        gxapi_cy.WrapIMU.grid_bool(GXContext._get_tls_geo(), img1._wrapper, img2._wrapper, out.encode(), bool, sizing, olap)
         
 
 
 
     @classmethod
-    def grid_edge(cls, p1, p2, p3):
+    def grid_edge(cls, grid, v_vx, v_vy):
         """
         Get grid edge points
         """
-        gxapi_cy.WrapIMU.grid_edge(GXContext._get_tls_geo(), p1.encode(), p2._wrapper, p3._wrapper)
+        gxapi_cy.WrapIMU.grid_edge(GXContext._get_tls_geo(), grid.encode(), v_vx._wrapper, v_vy._wrapper)
         
 
 
 
     @classmethod
-    def grid_edge_ply(cls, p1, p2, p3):
+    def grid_edge_ply(cls, img, ply, min_points):
         """
         Get grid edge points
 
@@ -260,13 +260,13 @@ class GXIMU:
         Unlike `grid_ply` and GridPlyEx_IMU, the image is not
         altered. It just gives the `GXPLY`.
         """
-        gxapi_cy.WrapIMU.grid_edge_ply(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3)
+        gxapi_cy.WrapIMU.grid_edge_ply(GXContext._get_tls_geo(), img._wrapper, ply._wrapper, min_points)
         
 
 
 
     @classmethod
-    def grid_expand(cls, p1, p2, p3, p4, p5, p6):
+    def grid_expand(cls, im_gi, out, per, shape, p5, p6):
         """
         Expand a grid and place dummies in the area
         beyond the original edges.
@@ -276,23 +276,23 @@ class GXIMU:
         The `GXIMG` parameter MUST be of type `GS_FLOAT`!
         If not, the method will terminate.
         """
-        gxapi_cy.WrapIMU.grid_expand(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3, p4, p5, p6)
+        gxapi_cy.WrapIMU.grid_expand(GXContext._get_tls_geo(), im_gi._wrapper, out.encode(), per, shape, p5, p6)
         
 
 
 
     @classmethod
-    def grid_exp_fill(cls, p1, p2, p3, p4):
+    def grid_exp_fill(cls, in_grd, out_grd, p_ex, t_ex):
         """
         Extends and fills a grid for `GXFFT2`.
         """
-        gxapi_cy.WrapIMU.grid_exp_fill(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3, p4)
+        gxapi_cy.WrapIMU.grid_exp_fill(GXContext._get_tls_geo(), in_grd.encode(), out_grd.encode(), p_ex, t_ex)
         
 
 
 
     @classmethod
-    def grid_fill(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+    def grid_fill(cls, im_gi, im_go, rollopt, rolldist, mxf, mxp, rollbase, alimit, elimit, width, npass):
         """
         Interpolates to fill dummies, generates an output grid.
 
@@ -301,13 +301,13 @@ class GXIMU:
         The `GXIMG` parameters MUST be of type `GS_FLOAT`!
         If not, the method will terminate.
         """
-        gxapi_cy.WrapIMU.grid_fill(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3, p4, p5, p6, p7, p8, p9, p10, p11)
+        gxapi_cy.WrapIMU.grid_fill(GXContext._get_tls_geo(), im_gi._wrapper, im_go._wrapper, rollopt, rolldist, mxf, mxp, rollbase, alimit, elimit, width, npass)
         
 
 
 
     @classmethod
-    def grid_filt(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9):
+    def grid_filt(cls, img, imgo, passes, mult, dum, hz, usefile, file, vv):
         """
         Applies a filter to a grid any number
         of passes.
@@ -317,33 +317,33 @@ class GXIMU:
         The `GXIMG` parameters MUST be of type `GS_FLOAT`!
         If not, the method will terminate.
         """
-        gxapi_cy.WrapIMU.grid_filt(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3, p4, p5, p6, p7, p8.encode(), p9._wrapper)
+        gxapi_cy.WrapIMU.grid_filt(GXContext._get_tls_geo(), img._wrapper, imgo._wrapper, passes, mult, dum, hz, usefile, file.encode(), vv._wrapper)
         
 
 
 
     @classmethod
-    def grid_head(cls, p1, p2, p3, p4, p5, p6):
+    def grid_head(cls, grid, esep, vsep, x_orig, y_orig, rot):
         """
         Modifies Statistics contained in a grid header.
         """
-        gxapi_cy.WrapIMU.grid_head(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4, p5, p6)
+        gxapi_cy.WrapIMU.grid_head(GXContext._get_tls_geo(), grid.encode(), esep, vsep, x_orig, y_orig, rot)
         
 
 
 
     @classmethod
-    def grid_in_fill(cls, p1, p2, p3, p4):
+    def grid_in_fill(cls, im_gi, out_grd, extend, iter):
         """
         Fill in a ribbon along the edge and inside hollow areas of the grid
         """
-        gxapi_cy.WrapIMU.grid_in_fill(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3, p4)
+        gxapi_cy.WrapIMU.grid_in_fill(GXContext._get_tls_geo(), im_gi._wrapper, out_grd.encode(), extend, iter)
         
 
 
 
     @classmethod
-    def grid_mask(cls, p1, p2, p3, p4):
+    def grid_mask(cls, in_grid, m_grid, pply, mode):
         """
         Create a mask grid using a set of polygon
         coordinates defined in a separate file, then
@@ -358,13 +358,13 @@ class GXIMU:
         if it was loaded from a file containing
         coordinates of more than one polygon.
         """
-        gxapi_cy.WrapIMU.grid_mask(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3._wrapper, p4)
+        gxapi_cy.WrapIMU.grid_mask(GXContext._get_tls_geo(), in_grid.encode(), m_grid.encode(), pply._wrapper, mode)
         
 
 
 
     @classmethod
-    def grid_peak(cls, p1, p2, p3, p4, p5):
+    def grid_peak(cls, grid, nlmt, p3, p4, p5):
         """
         Pick grid peaks.
 
@@ -375,13 +375,13 @@ class GXIMU:
         value is greater than it's two neighbors in at least one
         direction.  Up to 4 directions can be tested.
         """
-        gxapi_cy.WrapIMU.grid_peak(GXContext._get_tls_geo(), p1.encode(), p2, p3._wrapper, p4._wrapper, p5._wrapper)
+        gxapi_cy.WrapIMU.grid_peak(GXContext._get_tls_geo(), grid.encode(), nlmt, p3._wrapper, p4._wrapper, p5._wrapper)
         
 
 
 
     @classmethod
-    def grid_ply(cls, p1, p2, p3):
+    def grid_ply(cls, img, ply, refresh):
         """
         Get the grid edge in a `GXPLY`
 
@@ -395,13 +395,13 @@ class GXIMU:
         
         The grid `GXPLY` will be added to existing ploygons in the passed `GXPLY`.
         """
-        gxapi_cy.WrapIMU.grid_ply(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3)
+        gxapi_cy.WrapIMU.grid_ply(GXContext._get_tls_geo(), img._wrapper, ply._wrapper, refresh)
         
 
 
 
     @classmethod
-    def grid_ply_ex(cls, p1, p2, p3, p4):
+    def grid_ply_ex(cls, img, ply, refresh, min_points):
         """
         Get the grid edge in a `GXPLY` (with min points)
 
@@ -415,23 +415,23 @@ class GXIMU:
         
         The grid `GXPLY` will be added to existing ploygons in the passed `GXPLY`.
         """
-        gxapi_cy.WrapIMU.grid_ply_ex(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3, p4)
+        gxapi_cy.WrapIMU.grid_ply_ex(GXContext._get_tls_geo(), img._wrapper, ply._wrapper, refresh, min_points)
         
 
 
 
     @classmethod
-    def grid_reproject_and_window(cls, p1, p2, p3, p4, p5, p6, p7):
+    def grid_reproject_and_window(cls, input_grid_filename, output_grid_filename, new_projection, min_x, max_x, min_y, max_y):
         """
         Create a new grid by reprojecting an existing grid and windowing its contents
         """
-        gxapi_cy.WrapIMU.grid_reproject_and_window(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3._wrapper, p4, p5, p6, p7)
+        gxapi_cy.WrapIMU.grid_reproject_and_window(GXContext._get_tls_geo(), input_grid_filename.encode(), output_grid_filename.encode(), new_projection._wrapper, min_x, max_x, min_y, max_y)
         
 
 
 
     @classmethod
-    def grid_resample(cls, p1, p2, p3, p4, p5, p6, p7, p8):
+    def grid_resample(cls, input_grid_filename, output_grid_filename, o_x, o_y, d_x, d_y, n_x, n_y):
         """
         Create a new grid by resampling an existing grid
 
@@ -439,23 +439,23 @@ class GXIMU:
 
         Works only for un rotated grids.
         """
-        gxapi_cy.WrapIMU.grid_resample(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3, p4, p5, p6, p7, p8)
+        gxapi_cy.WrapIMU.grid_resample(GXContext._get_tls_geo(), input_grid_filename.encode(), output_grid_filename.encode(), o_x, o_y, d_x, d_y, n_x, n_y)
         
 
 
 
     @classmethod
-    def grid_resize(cls, p1, p2):
+    def grid_resize(cls, in_grd, out_grd):
         """
         Resize a grid to reduce the size not cover the outside dummies.
         """
-        gxapi_cy.WrapIMU.grid_resize(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        gxapi_cy.WrapIMU.grid_resize(GXContext._get_tls_geo(), in_grd.encode(), out_grd.encode())
         
 
 
 
     @classmethod
-    def grid_shad(cls, p1, p2, p3, p4, p5):
+    def grid_shad(cls, in_grid, sh_grid, inc, dec, scl):
         """
         Create a shadded relief image.
 
@@ -464,13 +464,13 @@ class GXIMU:
         Pass `GS_R8DM` as parameters to obtain default values.
         The default values are returned.
         """
-        p3.value, p4.value, p5.value = gxapi_cy.WrapIMU.grid_shad(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.value, p4.value, p5.value)
+        inc.value, dec.value, scl.value = gxapi_cy.WrapIMU.grid_shad(GXContext._get_tls_geo(), in_grid.encode(), sh_grid.encode(), inc.value, dec.value, scl.value)
         
 
 
 
     @classmethod
-    def grid_st(cls, p1, p2):
+    def grid_st(cls, grid, st):
         """
         Update an `GXST` object using a grid.
 
@@ -481,13 +481,13 @@ class GXIMU:
         info on more than a single grid.
         See `GXST`.
         """
-        gxapi_cy.WrapIMU.grid_st(GXContext._get_tls_geo(), p1.encode(), p2._wrapper)
+        gxapi_cy.WrapIMU.grid_st(GXContext._get_tls_geo(), grid.encode(), st._wrapper)
         
 
 
 
     @classmethod
-    def grid_stat(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+    def grid_stat(cls, grid, type, xelem, yelem, xsep, ysep, kx, p8, p9, p10, p11, p12):
         """
         Reports statistics contained in a grid header.
 
@@ -495,13 +495,13 @@ class GXIMU:
 
         Statistics are returned in the parameter set
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value, p10.value, p11.value, p12.value = gxapi_cy.WrapIMU.grid_stat(GXContext._get_tls_geo(), p1.encode(), p2.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value, p10.value, p11.value, p12.value)
+        type.value, xelem.value, yelem.value, xsep.value, ysep.value, kx.value, p8.value, p9.value, p10.value, p11.value, p12.value = gxapi_cy.WrapIMU.grid_stat(GXContext._get_tls_geo(), grid.encode(), type.value, xelem.value, yelem.value, xsep.value, ysep.value, kx.value, p8.value, p9.value, p10.value, p11.value, p12.value)
         
 
 
 
     @classmethod
-    def grid_stat_comp(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13):
+    def grid_stat_comp(cls, grid, type, xelem, yelem, xsep, ysep, kx, p8, p9, p10, p11, p12, p13):
         """
         Reports statistics contained in a grid header.
 
@@ -509,13 +509,13 @@ class GXIMU:
 
         Statistics are returned in the parameter set
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value = gxapi_cy.WrapIMU.grid_stat_comp(GXContext._get_tls_geo(), p1.encode(), p2.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value)
+        type.value, xelem.value, yelem.value, xsep.value, ysep.value, kx.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value = gxapi_cy.WrapIMU.grid_stat_comp(GXContext._get_tls_geo(), grid.encode(), type.value, xelem.value, yelem.value, xsep.value, ysep.value, kx.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value)
         
 
 
 
     @classmethod
-    def grid_stat_ext(cls, p1, p2, p3, p4, p5, p6, p7, p8):
+    def grid_stat_ext(cls, grid, force, items, dums, min, max, mean, stddev):
         """
         Reports statistics of a grid's elements.
 
@@ -525,13 +525,13 @@ class GXIMU:
         statistics will be recalculated.
         Statistics are returned in the parameter set.
         """
-        p3.value, p4.value, p5.value, p6.value, p7.value, p8.value = gxapi_cy.WrapIMU.grid_stat_ext(GXContext._get_tls_geo(), p1.encode(), p2, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value)
+        items.value, dums.value, min.value, max.value, mean.value, stddev.value = gxapi_cy.WrapIMU.grid_stat_ext(GXContext._get_tls_geo(), grid.encode(), force, items.value, dums.value, min.value, max.value, mean.value, stddev.value)
         
 
 
 
     @classmethod
-    def grid_stat_trend(cls, p1, p2, p3, p4, p5):
+    def grid_stat_trend(cls, grid, trend_valid, co, cx, cy):
         """
         Reports Trend Info of a grid (for first order coef only).
 
@@ -539,13 +539,13 @@ class GXIMU:
 
         Trend Info are returned in the parameter set
         """
-        p2.value, p3.value, p4.value, p5.value = gxapi_cy.WrapIMU.grid_stat_trend(GXContext._get_tls_geo(), p1.encode(), p2.value, p3.value, p4.value, p5.value)
+        trend_valid.value, co.value, cx.value, cy.value = gxapi_cy.WrapIMU.grid_stat_trend(GXContext._get_tls_geo(), grid.encode(), trend_valid.value, co.value, cx.value, cy.value)
         
 
 
 
     @classmethod
-    def grid_stat_trend_ext(cls, p1, p2, p3, p4, p5, p6):
+    def grid_stat_trend_ext(cls, grid, order, num_coef, xo, yo, vm):
         """
         Reports Extended Trend Info of a grid (for upto third order coef).
 
@@ -553,13 +553,13 @@ class GXIMU:
 
         Trend Info are returned in the parameter set
         """
-        p2.value, p3.value, p4.value, p5.value = gxapi_cy.WrapIMU.grid_stat_trend_ext(GXContext._get_tls_geo(), p1.encode(), p2.value, p3.value, p4.value, p5.value, p6._wrapper)
+        order.value, num_coef.value, xo.value, yo.value = gxapi_cy.WrapIMU.grid_stat_trend_ext(GXContext._get_tls_geo(), grid.encode(), order.value, num_coef.value, xo.value, yo.value, vm._wrapper)
         
 
 
 
     @classmethod
-    def slope_standard_deviation(cls, p1):
+    def slope_standard_deviation(cls, img):
         """
         Return the standard deviation of the slopes.
 
@@ -574,23 +574,23 @@ class GXIMU:
         
         The cell sizes are used to determine the slopes.
         """
-        ret_val = gxapi_cy.WrapIMU.slope_standard_deviation(GXContext._get_tls_geo(), p1._wrapper)
+        ret_val = gxapi_cy.WrapIMU.slope_standard_deviation(GXContext._get_tls_geo(), img._wrapper)
         return ret_val
 
 
 
     @classmethod
-    def grid_stitch(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13):
+    def grid_stitch(cls, grid1, grid2, grid3, method, tr_order1, tr_order2, tr_calc, gap, spline, path, pply, weighting, width):
         """
         Stitches together too grids
         """
-        gxapi_cy.WrapIMU.grid_stitch(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4, p5, p6, p7, p8, p9, p10, p11._wrapper, p12, p13)
+        gxapi_cy.WrapIMU.grid_stitch(GXContext._get_tls_geo(), grid1.encode(), grid2.encode(), grid3.encode(), method, tr_order1, tr_order2, tr_calc, gap, spline, path, pply._wrapper, weighting, width)
         
 
 
 
     @classmethod
-    def grid_stitch_ctl(cls, p1):
+    def grid_stitch_ctl(cls, ctl):
         """
         Stitches together two grids - control file for options.
 
@@ -600,13 +600,13 @@ class GXIMU:
         This is simply a way of avoiding writing a new GX wrapper
         every time an option is added.
         """
-        gxapi_cy.WrapIMU.grid_stitch_ctl(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapIMU.grid_stitch_ctl(GXContext._get_tls_geo(), ctl.encode())
         
 
 
 
     @classmethod
-    def grid_tiff(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9):
+    def grid_tiff(cls, grds, tiff, bcol, red, green, blue, csize, reg, scale):
         """
         Generate a Tiff (Tagged-Image file format) file with up to 16 grids.
 
@@ -616,13 +616,13 @@ class GXIMU:
         from one of 8 settings, or can be specified
         as a combination of Reg,Green, and Blue values.
         """
-        gxapi_cy.WrapIMU.grid_tiff(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4, p5, p6, p7, p8, p9)
+        gxapi_cy.WrapIMU.grid_tiff(GXContext._get_tls_geo(), grds.encode(), tiff.encode(), bcol.encode(), red, green, blue, csize, reg, scale)
         
 
 
 
     @classmethod
-    def grid_trnd(cls, p1, p2, p3, p4, p5, p6, p7):
+    def grid_trnd(cls, imgi, imgo, tr_option, edge, p5, p6, p7):
         """
         Remove a trend surface from a grid.
 
@@ -645,13 +645,13 @@ class GXIMU:
         2                 6
         3                 10
         """
-        gxapi_cy.WrapIMU.grid_trnd(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3, p4, p5, p6._wrapper, p7)
+        gxapi_cy.WrapIMU.grid_trnd(GXContext._get_tls_geo(), imgi._wrapper, imgo._wrapper, tr_option, edge, p5, p6._wrapper, p7)
         
 
 
 
     @classmethod
-    def grid_trns(cls, p1, p2):
+    def grid_trns(cls, grid, tcon):
         """
         Transpose a grid by swapping the grid rows with
         the grid columns.
@@ -662,23 +662,23 @@ class GXIMU:
         match the `IMU_TRANS` value, this method will
         not succeed.
         """
-        gxapi_cy.WrapIMU.grid_trns(GXContext._get_tls_geo(), p1.encode(), p2)
+        gxapi_cy.WrapIMU.grid_trns(GXContext._get_tls_geo(), grid.encode(), tcon)
         
 
 
 
     @classmethod
-    def grid_vd(cls, p1, p2):
+    def grid_vd(cls, im_gi, im_go):
         """
         Apply vertical derivative convolution filter to a grid.
         """
-        gxapi_cy.WrapIMU.grid_vd(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
+        gxapi_cy.WrapIMU.grid_vd(GXContext._get_tls_geo(), im_gi._wrapper, im_go._wrapper)
         
 
 
 
     @classmethod
-    def grid_vol(cls, p1, p2, p3, p4, p5, p6):
+    def grid_vol(cls, img, rbase, mult, vol_a, vol_b, diff):
         """
         Calculates the grid volumes above and below a
         reference base.
@@ -693,24 +693,24 @@ class GXIMU:
         The `GXIMG` parameters MUST be of type `GS_FLOAT`!
         If not, the method will terminate.
         """
-        p4.value, p5.value, p6.value = gxapi_cy.WrapIMU.grid_vol(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4.value, p5.value, p6.value)
+        vol_a.value, vol_b.value, diff.value = gxapi_cy.WrapIMU.grid_vol(GXContext._get_tls_geo(), img._wrapper, rbase, mult, vol_a.value, vol_b.value, diff.value)
         
 
 
 
     @classmethod
-    def grid_wind(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13):
+    def grid_wind(cls, img, out, coord, xmin, xmax, ymin, ymax, zmin, zmax, csize, clip, dec, mdf):
         """
         Create a grid using a defined area window
         within a larger grid.
         """
-        gxapi_cy.WrapIMU.grid_wind(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13.encode())
+        gxapi_cy.WrapIMU.grid_wind(GXContext._get_tls_geo(), img._wrapper, out.encode(), coord, xmin, xmax, ymin, ymax, zmin, zmax, csize, clip, dec, mdf.encode())
         
 
 
 
     @classmethod
-    def grid_wind2(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9):
+    def grid_wind2(cls, img, out, xmin, xmax, ymin, ymax, zmin, zmax, clip):
         """
         Window a grid.
 
@@ -722,13 +722,13 @@ class GXIMU:
         The windowed grid will be adjusted/expanded to include the
         defined area and line up on an even grid cell.
         """
-        gxapi_cy.WrapIMU.grid_wind2(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3, p4, p5, p6, p7, p8, p9)
+        gxapi_cy.WrapIMU.grid_wind2(GXContext._get_tls_geo(), img._wrapper, out.encode(), xmin, xmax, ymin, ymax, zmin, zmax, clip)
         
 
 
 
     @classmethod
-    def grid_xyz(cls, p1, p2, p3, p4, p5, p6):
+    def grid_xyz(cls, img, xyz, index, dec_x, dec_y, lab):
         """
         Export a Grid image to an XYZ file.
 
@@ -738,53 +738,53 @@ class GXIMU:
         be of type `GS_FLOAT`. If not, this method will
         terminate with an error.
         """
-        gxapi_cy.WrapIMU.grid_xyz(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3, p4, p5, p6)
+        gxapi_cy.WrapIMU.grid_xyz(GXContext._get_tls_geo(), img._wrapper, xyz.encode(), index, dec_x, dec_y, lab)
         
 
 
 
     @classmethod
-    def grid_type(cls, p1):
+    def grid_type(cls, grid):
         """
         Reports the true data the of a grid (geosoft types)
         """
-        ret_val = gxapi_cy.WrapIMU.grid_type(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapIMU.grid_type(GXContext._get_tls_geo(), grid.encode())
         return ret_val
 
 
 
     @classmethod
-    def make_mi_tab_file(cls, p1):
+    def make_mi_tab_file(cls, file):
         """
         Make a MapInfo tab file for this grid
         """
-        gxapi_cy.WrapIMU.make_mi_tab_file(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapIMU.make_mi_tab_file(GXContext._get_tls_geo(), file.encode())
         
 
 
 
     @classmethod
-    def make_mi_tabfrom_grid(cls, p1):
+    def make_mi_tabfrom_grid(cls, file):
         """
         Make a MapInfo tab file for this grid as rendered in a map
         """
-        gxapi_cy.WrapIMU.make_mi_tabfrom_grid(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapIMU.make_mi_tabfrom_grid(GXContext._get_tls_geo(), file.encode())
         
 
 
 
     @classmethod
-    def make_mi_tabfrom_map(cls, p1):
+    def make_mi_tabfrom_map(cls, map):
         """
         Make a MapInfo tab file from this map
         """
-        gxapi_cy.WrapIMU.make_mi_tabfrom_map(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapIMU.make_mi_tabfrom_map(GXContext._get_tls_geo(), map.encode())
         
 
 
 
     @classmethod
-    def mosaic(cls, p1, p2, p3, p4):
+    def mosaic(cls, grids, p2, p3, p4):
         """
         Create a mosaic image of an image list.
 
@@ -794,13 +794,13 @@ class GXIMU:
         the first image. Note that this function may require very large
         amounts of virtual memory.
         """
-        ret_val = gxapi_cy.WrapIMU.mosaic(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3._wrapper, p4)
+        ret_val = gxapi_cy.WrapIMU.mosaic(GXContext._get_tls_geo(), grids.encode(), p2.encode(), p3._wrapper, p4)
         return GXIMG(ret_val)
 
 
 
     @classmethod
-    def peak_size(cls, p1, p2, p3, p4, p5, p6):
+    def peak_size(cls, grid, v_vx, v_vy, max, p5, p6):
         """
         Define the sizes of all the peaks in an image.
 
@@ -818,13 +818,13 @@ class GXIMU:
         
         Note: `peak_size2` is probably a better routine...
         """
-        gxapi_cy.WrapIMU.peak_size(GXContext._get_tls_geo(), p1.encode(), p2._wrapper, p3._wrapper, p4, p5, p6._wrapper)
+        gxapi_cy.WrapIMU.peak_size(GXContext._get_tls_geo(), grid.encode(), v_vx._wrapper, v_vy._wrapper, max, p5, p6._wrapper)
         
 
 
 
     @classmethod
-    def peak_size2(cls, p1, p2, p3, p4, p5):
+    def peak_size2(cls, grid, v_vx, v_vy, max, p5):
         """
         Define the sizes of all the peaks in an image - new algorithm
 
@@ -843,13 +843,13 @@ class GXIMU:
         This algorithm tends to give much smaller (and more reasonable)
         results than `peak_size`.
         """
-        gxapi_cy.WrapIMU.peak_size2(GXContext._get_tls_geo(), p1.encode(), p2._wrapper, p3._wrapper, p4, p5._wrapper)
+        gxapi_cy.WrapIMU.peak_size2(GXContext._get_tls_geo(), grid.encode(), v_vx._wrapper, v_vy._wrapper, max, p5._wrapper)
         
 
 
 
     @classmethod
-    def pigeon_hole(cls, p1, p2, p3, p4):
+    def pigeon_hole(cls, img, v_vx, v_vy, put):
         """
         Pigeon-hole and count points by location into a grid.
 
@@ -867,13 +867,13 @@ class GXIMU:
         This function is useful, for instance, in determining the density of
         sample locations in a survey area.
         """
-        p4.value = gxapi_cy.WrapIMU.pigeon_hole(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4.value)
+        put.value = gxapi_cy.WrapIMU.pigeon_hole(GXContext._get_tls_geo(), img._wrapper, v_vx._wrapper, v_vy._wrapper, put.value)
         
 
 
 
     @classmethod
-    def profile(cls, p1, p2, p3, p4, p5, p6, p7):
+    def profile(cls, img, x1, y1, x2, y2, samsep, v_vz):
         """
         Extract a profile from a grid.
 
@@ -882,13 +882,13 @@ class GXIMU:
         Returned `GXVV` will start at X1,Y1 and will sample
         up to X2,Y2 at the specified separation.
         """
-        gxapi_cy.WrapIMU.profile(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7._wrapper)
+        gxapi_cy.WrapIMU.profile(GXContext._get_tls_geo(), img._wrapper, x1, y1, x2, y2, samsep, v_vz._wrapper)
         
 
 
 
     @classmethod
-    def profile_vv(cls, p1, p2, p3, p4):
+    def profile_vv(cls, img, v_vx, v_vy, v_vz):
         """
         Extract a `GXVV` profile from a grid.
 
@@ -896,13 +896,13 @@ class GXIMU:
 
             iGetPolyLine_DBE
         """
-        gxapi_cy.WrapIMU.profile_vv(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper)
+        gxapi_cy.WrapIMU.profile_vv(GXContext._get_tls_geo(), img._wrapper, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
         
 
 
 
     @classmethod
-    def range_grids(cls, p1, p2, p3, p4, p5, p6):
+    def range_grids(cls, grids, ipj, min_x, min_y, max_x, max_y):
         """
         Determine bounding rectangle for a set of grids
 
@@ -914,13 +914,13 @@ class GXIMU:
         Otherwise, the range in the requested `GXIPJ` will be
         determined.
         """
-        p3.value, p4.value, p5.value, p6.value = gxapi_cy.WrapIMU.range_grids(GXContext._get_tls_geo(), p1.encode(), p2._wrapper, p3.value, p4.value, p5.value, p6.value)
+        min_x.value, min_y.value, max_x.value, max_y.value = gxapi_cy.WrapIMU.range_grids(GXContext._get_tls_geo(), grids.encode(), ipj._wrapper, min_x.value, min_y.value, max_x.value, max_y.value)
         
 
 
 
     @classmethod
-    def range_ll(cls, p1, p2, p3, p4, p5):
+    def range_ll(cls, img, min_lat, min_lon, max_lat, max_lon):
         """
         Determine the range in lat. and long. of a projected grid
 
@@ -935,13 +935,13 @@ class GXIMU:
         the `GXIPJ` is not `IPJ_TYPE_PCS` (projected coordinate system), then the
         returned values are dummies (`GS_R8DM`).
         """
-        p2.value, p3.value, p4.value, p5.value = gxapi_cy.WrapIMU.range_ll(GXContext._get_tls_geo(), p1._wrapper, p2.value, p3.value, p4.value, p5.value)
+        min_lat.value, min_lon.value, max_lat.value, max_lon.value = gxapi_cy.WrapIMU.range_ll(GXContext._get_tls_geo(), img._wrapper, min_lat.value, min_lon.value, max_lat.value, max_lon.value)
         
 
 
 
     @classmethod
-    def stat_window(cls, p1, p2, p3, p4, p5, p6, p7):
+    def stat_window(cls, img, min_x, min_y, max_x, max_y, max, st):
         """
         Calculate grid statistics in a window
 
@@ -953,13 +953,13 @@ class GXIMU:
         number when absolute precision is not
         required.
         """
-        gxapi_cy.WrapIMU.stat_window(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7._wrapper)
+        gxapi_cy.WrapIMU.stat_window(GXContext._get_tls_geo(), img._wrapper, min_x, min_y, max_x, max_y, max, st._wrapper)
         
 
 
 
     @classmethod
-    def update_ply(cls, p1, p2):
+    def update_ply(cls, img, ply):
         """
         Update the grid boundary in the grid metadata
 
@@ -972,7 +972,7 @@ class GXIMU:
         GridPLYEx function except that you get to alter the
         `GXPLY` before it is placed back in the `GXIMG`.
         """
-        gxapi_cy.WrapIMU.update_ply(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
+        gxapi_cy.WrapIMU.update_ply(GXContext._get_tls_geo(), img._wrapper, ply._wrapper)
         
 
 

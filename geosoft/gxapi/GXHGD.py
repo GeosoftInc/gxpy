@@ -62,11 +62,11 @@ class GXHGD:
 
 
     @classmethod
-    def create(cls, p1):
+    def create(cls, name):
         """
         Create a handle to an `GXHGD` object
         """
-        ret_val = gxapi_cy.WrapHGD.create(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapHGD.create(GXContext._get_tls_geo(), name.encode())
         return GXHGD(ret_val)
 
 
@@ -74,41 +74,41 @@ class GXHGD:
 
 
 
-    def export_img(self, p2):
+    def export_img(self, name):
         """
         Export all layers of this `GXHGD` into grid files.
         """
-        self._wrapper.export_img(p2.encode())
+        self._wrapper.export_img(name.encode())
         
 
 
 
 
-    def get_meta(self, p2):
+    def get_meta(self, meta):
         """
         Get the metadata of a grid.
         """
-        self._wrapper.get_meta(p2._wrapper)
+        self._wrapper.get_meta(meta._wrapper)
         
 
 
 
     @classmethod
-    def h_create_img(cls, p1, p2):
+    def h_create_img(cls, img, name):
         """
         Make an `GXHGD` from an `GXIMG`
         """
-        ret_val = gxapi_cy.WrapHGD.h_create_img(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
+        ret_val = gxapi_cy.WrapHGD.h_create_img(GXContext._get_tls_geo(), img._wrapper, name.encode())
         return GXHGD(ret_val)
 
 
 
 
-    def set_meta(self, p2):
+    def set_meta(self, meta):
         """
         Set the metadata of a grid.
         """
-        self._wrapper.set_meta(p2._wrapper)
+        self._wrapper.set_meta(meta._wrapper)
         
 
 

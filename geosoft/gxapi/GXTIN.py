@@ -63,17 +63,17 @@ class GXTIN:
 
 
 
-    def copy(self, p2):
+    def copy(self, source):
         """
         Copy `GXTIN`
         """
-        self._wrapper.copy(p2._wrapper)
+        self._wrapper.copy(source._wrapper)
         
 
 
 
     @classmethod
-    def create(cls, p1, p2, p3):
+    def create(cls, v_vx, v_vy, v_vz):
         """
         This method creates a `GXTIN` object.
 
@@ -83,17 +83,17 @@ class GXTIN:
         The Z values are not required, and a 0-length `GXVV` can be used to indicate
         the values are not to be used.
         """
-        ret_val = gxapi_cy.WrapTIN.create(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper)
+        ret_val = gxapi_cy.WrapTIN.create(GXContext._get_tls_geo(), v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
         return GXTIN(ret_val)
 
 
 
     @classmethod
-    def create_s(cls, p1):
+    def create_s(cls, bf):
         """
         Create `GXTIN` from a serialized source
         """
-        ret_val = gxapi_cy.WrapTIN.create_s(GXContext._get_tls_geo(), p1._wrapper)
+        ret_val = gxapi_cy.WrapTIN.create_s(GXContext._get_tls_geo(), bf._wrapper)
         return GXTIN(ret_val)
 
 
@@ -101,17 +101,17 @@ class GXTIN:
 
 
     @classmethod
-    def export_xml(cls, p1, p2, p3):
+    def export_xml(cls, tin, crc, file):
         """
         Export a `GXTIN` object as XML
         """
-        p2.value = gxapi_cy.WrapTIN.export_xml(GXContext._get_tls_geo(), p1.encode(), p2.value, p3.encode())
+        crc.value = gxapi_cy.WrapTIN.export_xml(GXContext._get_tls_geo(), tin.encode(), crc.value, file.encode())
         
 
 
 
 
-    def get_convex_hull(self, p2):
+    def get_convex_hull(self, ply):
         """
         Get the convex hull of the `GXTIN`.
 
@@ -120,23 +120,23 @@ class GXTIN:
         The convex hull is the outside boundary of the
         triangulated region.
         """
-        self._wrapper.get_convex_hull(p2._wrapper)
+        self._wrapper.get_convex_hull(ply._wrapper)
         
 
 
 
 
-    def get_ipj(self, p2):
+    def get_ipj(self, ipj):
         """
         Get the projection.
         """
-        self._wrapper.get_ipj(p2._wrapper)
+        self._wrapper.get_ipj(ipj._wrapper)
         
 
 
 
 
-    def get_joins(self, p2, p3, p4):
+    def get_joins(self, vv_joins, vv_index, vv_num):
         """
         Get joins from a `GXTIN` mesh.
 
@@ -153,23 +153,23 @@ class GXTIN:
         
         All VVs must be type `GS_LONG`.
         """
-        self._wrapper.get_joins(p2._wrapper, p3._wrapper, p4._wrapper)
+        self._wrapper.get_joins(vv_joins._wrapper, vv_index._wrapper, vv_num._wrapper)
         
 
 
 
 
-    def get_mesh(self, p2):
+    def get_mesh(self, vv):
         """
         Get lines from a `GXTIN` mesh.
         """
-        self._wrapper.get_mesh(p2._wrapper)
+        self._wrapper.get_mesh(vv._wrapper)
         
 
 
 
 
-    def get_nodes(self, p2, p3, p4):
+    def get_nodes(self, vvx, vvy, vvz):
         """
         Get the X,Y locations and Z values of the `GXTIN` nodes.
 
@@ -178,37 +178,37 @@ class GXTIN:
         If this is not a Z-valued `GXTIN`, the Z values will
         be dummies.
         """
-        self._wrapper.get_nodes(p2._wrapper, p3._wrapper, p4._wrapper)
+        self._wrapper.get_nodes(vvx._wrapper, vvy._wrapper, vvz._wrapper)
         
 
 
 
 
-    def get_triangles(self, p2, p3, p4):
+    def get_triangles(self, tri_vv_pt1, tri_vv_pt2, tri_vv_pt3):
         """
         Get the triangle nodes.
         """
-        self._wrapper.get_triangles(p2._wrapper, p3._wrapper, p4._wrapper)
+        self._wrapper.get_triangles(tri_vv_pt1._wrapper, tri_vv_pt2._wrapper, tri_vv_pt3._wrapper)
         
 
 
 
 
-    def get_triangle(self, p2, p3, p4, p5, p6, p7, p8):
+    def get_triangle(self, index, x0, y0, x1, y1, x2, y2):
         """
         Get the locations of the vertices of a specific triangle
         """
-        p3.value, p4.value, p5.value, p6.value, p7.value, p8.value = self._wrapper.get_triangle(p2, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value)
+        x0.value, y0.value, x1.value, y1.value, x2.value, y2.value = self._wrapper.get_triangle(index, x0.value, y0.value, x1.value, y1.value, x2.value, y2.value)
         
 
 
 
 
-    def get_voronoi_edges(self, p2):
+    def get_voronoi_edges(self, vv):
         """
         Get line segments defining Voronoi cells.
         """
-        self._wrapper.get_voronoi_edges(p2._wrapper)
+        self._wrapper.get_voronoi_edges(vv._wrapper)
         
 
 
@@ -224,7 +224,7 @@ class GXTIN:
 
 
 
-    def locate_triangle(self, p2, p3, p4):
+    def locate_triangle(self, t, x, y):
         """
         Get the index of the triangle containing X, Y.
 
@@ -247,7 +247,7 @@ class GXTIN:
                 inside a triangle, so do not rely on this result to determine
                 if a node position is input.
         """
-        ret_val = self._wrapper.locate_triangle(p2, p3, p4)
+        ret_val = self._wrapper.locate_triangle(t, x, y)
         return ret_val
 
 
@@ -263,7 +263,7 @@ class GXTIN:
 
 
 
-    def interp_vv(self, p2, p3, p4):
+    def interp_vv(self, vvx, vvy, vvz):
         """
         Interp TINned values using the natural neighbour method.
 
@@ -281,7 +281,7 @@ class GXTIN:
         data using natural neighbours:
         Geophysical Journal International, 122 p. 837-857.
         """
-        self._wrapper.interp_vv(p2._wrapper, p3._wrapper, p4._wrapper)
+        self._wrapper.interp_vv(vvx._wrapper, vvy._wrapper, vvz._wrapper)
         
 
 
@@ -297,7 +297,7 @@ class GXTIN:
 
 
 
-    def linear_interp_vv(self, p2, p3, p4):
+    def linear_interp_vv(self, vvx, vvy, vvz):
         """
         Interp TINned values using the linear interpolation
 
@@ -312,13 +312,13 @@ class GXTIN:
         The values are set assuming that each `GXTIN` triangle defines a
         plane.
         """
-        self._wrapper.linear_interp_vv(p2._wrapper, p3._wrapper, p4._wrapper)
+        self._wrapper.linear_interp_vv(vvx._wrapper, vvy._wrapper, vvz._wrapper)
         
 
 
 
 
-    def nearest_vv(self, p2, p3, p4):
+    def nearest_vv(self, vvx, vvy, vvz):
         """
         Interp TINned values using the nearest neighbour.
 
@@ -333,13 +333,13 @@ class GXTIN:
         Within each voronoi triangle, the Z value of node closest to the input
         X,Y location is returned.
         """
-        self._wrapper.nearest_vv(p2._wrapper, p3._wrapper, p4._wrapper)
+        self._wrapper.nearest_vv(vvx._wrapper, vvy._wrapper, vvz._wrapper)
         
 
 
 
 
-    def range_xy(self, p2, p3, p4, p5):
+    def range_xy(self, x_min, y_min, x_max, y_max):
         """
         Find the range in X and Y of the TINned region.
 
@@ -350,27 +350,27 @@ class GXTIN:
         X and Y range of the nodes themselves, if a full
         convex hull is not calculated.
         """
-        p2.value, p3.value, p4.value, p5.value = self._wrapper.range_xy(p2.value, p3.value, p4.value, p5.value)
+        x_min.value, y_min.value, x_max.value, y_max.value = self._wrapper.range_xy(x_min.value, y_min.value, x_max.value, y_max.value)
         
 
 
 
 
-    def serial(self, p2):
+    def serial(self, bf):
         """
         Serialize `GXTIN`
         """
-        self._wrapper.serial(p2._wrapper)
+        self._wrapper.serial(bf._wrapper)
         
 
 
 
 
-    def set_ipj(self, p2):
+    def set_ipj(self, ipj):
         """
         Set the projection.
         """
-        self._wrapper.set_ipj(p2._wrapper)
+        self._wrapper.set_ipj(ipj._wrapper)
         
 
 

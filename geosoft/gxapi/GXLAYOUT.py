@@ -69,7 +69,7 @@ class GXLAYOUT:
 
 
 
-    def calculate_rects(self, p2, p3, p4, p5):
+    def calculate_rects(self, min_x, min_y, max_x, max_y):
         """
         Calculate new positions based on initial conditions and constraints
 
@@ -79,7 +79,7 @@ class GXLAYOUT:
         on the constraints set the parent rectangle may also change
         after the calculation (returned here for convenience).
         """
-        p2.value, p3.value, p4.value, p5.value = self._wrapper.calculate_rects(p2.value, p3.value, p4.value, p5.value)
+        min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.calculate_rects(min_x.value, min_y.value, max_x.value, max_y.value)
         
 
 
@@ -105,11 +105,11 @@ class GXLAYOUT:
 
 
     @classmethod
-    def create(cls, p1, p2):
+    def create(cls, num, p2):
         """
         Creates a layout calculation object
         """
-        ret_val = gxapi_cy.WrapLAYOUT.create(GXContext._get_tls_geo(), p1, p2.encode())
+        ret_val = gxapi_cy.WrapLAYOUT.create(GXContext._get_tls_geo(), num, p2.encode())
         return GXLAYOUT(ret_val)
 
 
@@ -117,27 +117,27 @@ class GXLAYOUT:
 
 
 
-    def get_rectangle(self, p2, p3, p4, p5, p6):
+    def get_rectangle(self, rect, p3, p4, p5, p6):
         """
         Gets the current bounds for a rectangle or the parent layout
         """
-        p3.value, p4.value, p5.value, p6.value = self._wrapper.get_rectangle(p2, p3.value, p4.value, p5.value, p6.value)
+        p3.value, p4.value, p5.value, p6.value = self._wrapper.get_rectangle(rect, p3.value, p4.value, p5.value, p6.value)
         
 
 
 
 
-    def get_rect_name(self, p2, p3):
+    def get_rect_name(self, rect, p3):
         """
         Gets an optional name the current info for a rectangle or the parent layout
         """
-        p3.value = self._wrapper.get_rect_name(p2, p3.value.encode())
+        p3.value = self._wrapper.get_rect_name(rect, p3.value.encode())
         
 
 
 
 
-    def add_constraint(self, p2, p3, p4, p5, p6, p7):
+    def add_constraint(self, rect_from, p3, p4, p5, p6, p7):
         """
         Add a constraint between any two rectangles or to one with absolute positioning
 
@@ -175,17 +175,17 @@ class GXLAYOUT:
         A, `LAYOUT_CONSTR_MOVER`, B, `LAYOUT_CONSTR_RIGHT`, 10, 1.1	                  Move node A, align right to 1.1*right of B, plus 10
         A, `LAYOUT_CONSTR_MOVEL`, NULL, 10, 0, 1.0	                                 Move node A, align left at position 10
         """
-        ret_val = self._wrapper.add_constraint(p2, p3, p4, p5, p6, p7)
+        ret_val = self._wrapper.add_constraint(rect_from, p3, p4, p5, p6, p7)
         return ret_val
 
 
 
 
-    def add_rectangle(self, p2, p3, p4, p5):
+    def add_rectangle(self, min_x, min_y, max_x, max_y):
         """
         Adds a rectangle as one of the layout's children (Higer.
         """
-        ret_val = self._wrapper.add_rectangle(p2, p3, p4, p5)
+        ret_val = self._wrapper.add_rectangle(min_x, min_y, max_x, max_y)
         return ret_val
 
 
@@ -201,21 +201,21 @@ class GXLAYOUT:
 
 
 
-    def set_rectangle(self, p2, p3, p4, p5, p6):
+    def set_rectangle(self, rect, p3, p4, p5, p6):
         """
         Sets the current bounds for a rectangle previously added to the layout
         """
-        self._wrapper.set_rectangle(p2, p3, p4, p5, p6)
+        self._wrapper.set_rectangle(rect, p3, p4, p5, p6)
         
 
 
 
 
-    def set_rectangle_name(self, p2, p3):
+    def set_rectangle_name(self, rect, p3):
         """
         Sets an optional name the current info for a rectangle or the parent layout
         """
-        self._wrapper.set_rectangle_name(p2, p3.encode())
+        self._wrapper.set_rectangle_name(rect, p3.encode())
         
 
 

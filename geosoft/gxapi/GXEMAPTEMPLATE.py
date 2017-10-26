@@ -108,11 +108,11 @@ class GXEMAPTEMPLATE:
 
 
 
-    def set_drag_drop_enabled(self, p2):
+    def set_drag_drop_enabled(self, enable):
         """
         Set whether drag-and-drop is enabled for the map.
         """
-        self._wrapper.set_drag_drop_enabled(p2)
+        self._wrapper.set_drag_drop_enabled(enable)
         
 
 
@@ -159,21 +159,21 @@ class GXEMAPTEMPLATE:
 
 
     @classmethod
-    def get_map_templates_lst(cls, p1, p2):
+    def get_map_templates_lst(cls, lst, path):
         """
         Load the file names of open maps into a `GXLST`.
         """
-        ret_val = gxapi_cy.WrapEMAPTEMPLATE.get_map_templates_lst(GXContext._get_tls_geo(), p1._wrapper, p2)
+        ret_val = gxapi_cy.WrapEMAPTEMPLATE.get_map_templates_lst(GXContext._get_tls_geo(), lst._wrapper, path)
         return ret_val
 
 
 
 
-    def get_name(self, p2):
+    def get_name(self, name):
         """
         Get the name of the map object of this `GXEMAPTEMPLATE`.
         """
-        p2.value = self._wrapper.get_name(p2.value.encode())
+        name.value = self._wrapper.get_name(name.value.encode())
         
 
 
@@ -189,11 +189,11 @@ class GXEMAPTEMPLATE:
 
 
     @classmethod
-    def i_get_specified_map_name(cls, p1, p2, p3):
+    def i_get_specified_map_name(cls, field, value, name):
         """
         Find a loaded map that has a setting in its reg.
         """
-        ret_val, p3.value = gxapi_cy.WrapEMAPTEMPLATE.i_get_specified_map_name(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.value.encode())
+        ret_val, name.value = gxapi_cy.WrapEMAPTEMPLATE.i_get_specified_map_name(GXContext._get_tls_geo(), field.encode(), value.encode(), name.value.encode())
         return ret_val
 
 
@@ -209,31 +209,31 @@ class GXEMAPTEMPLATE:
 
 
     @classmethod
-    def loaded(cls, p1):
+    def loaded(cls, name):
         """
         Returns 1 if a map is loaded .
         """
-        ret_val = gxapi_cy.WrapEMAPTEMPLATE.loaded(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapEMAPTEMPLATE.loaded(GXContext._get_tls_geo(), name.encode())
         return ret_val
 
 
 
 
-    def get_window_position(self, p2, p3, p4, p5, p6, p7):
+    def get_window_position(self, left, top, right, bottom, state, is_floating):
         """
         Get the map window's position and dock state
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value, p7.value = self._wrapper.get_window_position(p2.value, p3.value, p4.value, p5.value, p6.value, p7.value)
+        left.value, top.value, right.value, bottom.value, state.value, is_floating.value = self._wrapper.get_window_position(left.value, top.value, right.value, bottom.value, state.value, is_floating.value)
         
 
 
 
 
-    def set_window_position(self, p2, p3, p4, p5, p6, p7):
+    def set_window_position(self, left, top, right, bottom, state, is_floating):
         """
         Get the map window's position and dock state
         """
-        self._wrapper.set_window_position(p2, p3, p4, p5, p6, p7)
+        self._wrapper.set_window_position(left, top, right, bottom, state, is_floating)
         
 
 
@@ -249,7 +249,7 @@ class GXEMAPTEMPLATE:
 
 
     @classmethod
-    def load(cls, p1):
+    def load(cls, name):
         """
         Loads maps into the editor.
 
@@ -263,13 +263,13 @@ class GXEMAPTEMPLATE:
         All other files in the list are assumed to be in the same
         directory as the first file.
         """
-        ret_val = gxapi_cy.WrapEMAPTEMPLATE.load(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapEMAPTEMPLATE.load(GXContext._get_tls_geo(), name.encode())
         return GXEMAPTEMPLATE(ret_val)
 
 
 
     @classmethod
-    def load_no_activate(cls, p1):
+    def load_no_activate(cls, name):
         """
         Loads documents into the workspace
 
@@ -278,7 +278,7 @@ class GXEMAPTEMPLATE:
         This function acts just like `load` except that the document(s) is not activated (brought to foreground) and no
         guarantee is given about which document is currently active.
         """
-        ret_val = gxapi_cy.WrapEMAPTEMPLATE.load_no_activate(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapEMAPTEMPLATE.load_no_activate(GXContext._get_tls_geo(), name.encode())
         return GXEMAPTEMPLATE(ret_val)
 
 
@@ -304,7 +304,7 @@ class GXEMAPTEMPLATE:
 
 
     @classmethod
-    def un_load(cls, p1):
+    def un_load(cls, name):
         """
         Unloads a map template.
 
@@ -313,7 +313,7 @@ class GXEMAPTEMPLATE:
         If the map template is not loaded, nothing happens.
         Same as `un_load_verify` with FALSE to prompt save.
         """
-        gxapi_cy.WrapEMAPTEMPLATE.un_load(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapEMAPTEMPLATE.un_load(GXContext._get_tls_geo(), name.encode())
         
 
 
@@ -329,7 +329,7 @@ class GXEMAPTEMPLATE:
 
 
     @classmethod
-    def un_load_verify(cls, p1, p2):
+    def un_load_verify(cls, name, prompt):
         """
         Unloads an edited map, optional prompt to save.
 
@@ -338,7 +338,7 @@ class GXEMAPTEMPLATE:
         If the map is not loaded, nothing happens.
         If "FALSE", map is saved without a prompt.
         """
-        gxapi_cy.WrapEMAPTEMPLATE.un_load_verify(GXContext._get_tls_geo(), p1.encode(), p2)
+        gxapi_cy.WrapEMAPTEMPLATE.un_load_verify(GXContext._get_tls_geo(), name.encode(), prompt)
         
 
 
@@ -358,7 +358,7 @@ class GXEMAPTEMPLATE:
 
 
 
-    def get_box(self, p2, p3, p4, p5, p6):
+    def get_box(self, state, p3, p4, p5, p6):
         """
         Returns the coordinates of a user selected box.
 
@@ -367,13 +367,13 @@ class GXEMAPTEMPLATE:
         The coordinates are returned in the current template units
         (See GetUnits and SetUnits in `GXMAPTEMPLATE`)
         """
-        ret_val, p3.value, p4.value, p5.value, p6.value = self._wrapper.get_box(p2.encode(), p3.value, p4.value, p5.value, p6.value)
+        ret_val, p3.value, p4.value, p5.value, p6.value = self._wrapper.get_box(state.encode(), p3.value, p4.value, p5.value, p6.value)
         return ret_val
 
 
 
 
-    def get_line(self, p2, p3, p4, p5, p6):
+    def get_line(self, str_val, min_x, min_y, max_x, max_y):
         """
         Returns the end points of a line.
 
@@ -382,13 +382,13 @@ class GXEMAPTEMPLATE:
         The coordinates are returned in the current template units
         (See GetUnits and SetUnits in `GXMAPTEMPLATE`)
         """
-        ret_val, p3.value, p4.value, p5.value, p6.value = self._wrapper.get_line(p2.encode(), p3.value, p4.value, p5.value, p6.value)
+        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.get_line(str_val.encode(), min_x.value, min_y.value, max_x.value, max_y.value)
         return ret_val
 
 
 
 
-    def get_point(self, p2, p3, p4):
+    def get_point(self, str_val, x, y):
         """
         Returns the coordinates of a user selected point.
 
@@ -397,13 +397,13 @@ class GXEMAPTEMPLATE:
         The coordinates are returned in the current template units
         (See GetUnits and SetUnits in `GXMAPTEMPLATE`)
         """
-        ret_val, p3.value, p4.value = self._wrapper.get_point(p2.encode(), p3.value, p4.value)
+        ret_val, x.value, y.value = self._wrapper.get_point(str_val.encode(), x.value, y.value)
         return ret_val
 
 
 
 
-    def get_rect(self, p2, p3, p4, p5, p6):
+    def get_rect(self, str_val, min_x, min_y, max_x, max_y):
         """
         Returns the coordinates of a user selected box starting at a corner.
 
@@ -412,17 +412,17 @@ class GXEMAPTEMPLATE:
         The coordinates are returned in the current template units
         (See GetUnits and SetUnits in `GXMAPTEMPLATE`)
         """
-        ret_val, p3.value, p4.value, p5.value, p6.value = self._wrapper.get_rect(p2.encode(), p3.value, p4.value, p5.value, p6.value)
+        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.get_rect(str_val.encode(), min_x.value, min_y.value, max_x.value, max_y.value)
         return ret_val
 
 
 
 
-    def track_point(self, p2, p3, p4):
+    def track_point(self, flags, x, y):
         """
         Get point without prompt or cursor change with tracking
         """
-        ret_val, p3.value, p4.value = self._wrapper.track_point(p2, p3.value, p4.value)
+        ret_val, x.value, y.value = self._wrapper.track_point(flags, x.value, y.value)
         return ret_val
 
 
@@ -432,7 +432,7 @@ class GXEMAPTEMPLATE:
 
 
 
-    def get_item_selection(self, p2):
+    def get_item_selection(self, item):
         """
         Gets info about the current selected item
 
@@ -440,13 +440,13 @@ class GXEMAPTEMPLATE:
 
         If nothing is selected the string will be empty and the function will return `GS_FALSE`;
         """
-        ret_val, p2.value = self._wrapper.get_item_selection(p2.value.encode())
+        ret_val, item.value = self._wrapper.get_item_selection(item.value.encode())
         return ret_val
 
 
 
 
-    def set_item_selection(self, p2):
+    def set_item_selection(self, item):
         """
         Sets the current selected item
 
@@ -454,7 +454,7 @@ class GXEMAPTEMPLATE:
 
         An empty string will unselect everything.
         """
-        self._wrapper.set_item_selection(p2.encode())
+        self._wrapper.set_item_selection(item.encode())
         
 
 
@@ -464,7 +464,7 @@ class GXEMAPTEMPLATE:
 
 
 
-    def get_display_area(self, p2, p3, p4, p5):
+    def get_display_area(self, min_x, min_y, max_x, max_y):
         """
         Get the area you are currently looking at.
 
@@ -473,13 +473,13 @@ class GXEMAPTEMPLATE:
         The coordinates are based on the current template units
         (See GetUnits and SetUnits in `GXMAPTEMPLATE`)
         """
-        p2.value, p3.value, p4.value, p5.value = self._wrapper.get_display_area(p2.value, p3.value, p4.value, p5.value)
+        min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.get_display_area(min_x.value, min_y.value, max_x.value, max_y.value)
         
 
 
 
 
-    def get_template_layout_props(self, p2, p3, p4, p5, p6, p7, p8, p9):
+    def get_template_layout_props(self, snap_to_grid, snap_dist, view_grid, view_rulers, view_units, grid_red, grid_green, grid_blue):
         """
         Get the base layout view properties.
 
@@ -488,7 +488,7 @@ class GXEMAPTEMPLATE:
         This affects the display units and other related properties for the base
         view of a map.
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value = self._wrapper.get_template_layout_props(p2.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value)
+        snap_to_grid.value, snap_dist.value, view_grid.value, view_rulers.value, view_units.value, grid_red.value, grid_green.value, grid_blue.value = self._wrapper.get_template_layout_props(snap_to_grid.value, snap_dist.value, view_grid.value, view_rulers.value, view_units.value, grid_red.value, grid_green.value, grid_blue.value)
         
 
 
@@ -504,7 +504,7 @@ class GXEMAPTEMPLATE:
 
 
 
-    def set_display_area(self, p2, p3, p4, p5):
+    def set_display_area(self, min_x, min_y, max_x, max_y):
         """
         Set the area you wish to see.
 
@@ -513,13 +513,13 @@ class GXEMAPTEMPLATE:
         The coordinates are based on the current template units
         (See GetUnits and SetUnits in `GXMAPTEMPLATE`)
         """
-        self._wrapper.set_display_area(p2, p3, p4, p5)
+        self._wrapper.set_display_area(min_x, min_y, max_x, max_y)
         
 
 
 
 
-    def set_template_layout_props(self, p2, p3, p4, p5, p6, p7, p8, p9):
+    def set_template_layout_props(self, snap_to_grid, snap_dist, view_grid, view_rulers, view_units, grid_red, grid_green, grid_blue):
         """
         Set the base layout view properties.
 
@@ -528,17 +528,17 @@ class GXEMAPTEMPLATE:
         This affects the display units and other related properties for the base
         view of a map.
         """
-        self._wrapper.set_template_layout_props(p2, p3, p4, p5, p6, p7, p8, p9)
+        self._wrapper.set_template_layout_props(snap_to_grid, snap_dist, view_grid, view_rulers, view_units, grid_red, grid_green, grid_blue)
         
 
 
 
 
-    def set_window_state(self, p2):
+    def set_window_state(self, state):
         """
         Changes the state of the map window
         """
-        self._wrapper.set_window_state(p2)
+        self._wrapper.set_window_state(state)
         
 
 
@@ -548,11 +548,11 @@ class GXEMAPTEMPLATE:
 
 
     @classmethod
-    def create_virtual(cls, p1):
+    def create_virtual(cls, name):
         """
         Makes this `GXEMAPTEMPLATE` object the current active object to the user.
         """
-        ret_val = gxapi_cy.WrapEMAPTEMPLATE.create_virtual(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapEMAPTEMPLATE.create_virtual(GXContext._get_tls_geo(), name.encode())
         return GXEMAPTEMPLATE(ret_val)
 
 

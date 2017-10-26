@@ -72,31 +72,31 @@ class GXREG:
 
 
 
-    def copy(self, p2):
+    def copy(self, srce):
         """
         Copy
         """
-        self._wrapper.copy(p2._wrapper)
+        self._wrapper.copy(srce._wrapper)
         
 
 
 
     @classmethod
-    def create(cls, p1):
+    def create(cls, l_parm_length):
         """
         Create a handle to a `GXREG` object
         """
-        ret_val = gxapi_cy.WrapREG.create(GXContext._get_tls_geo(), p1)
+        ret_val = gxapi_cy.WrapREG.create(GXContext._get_tls_geo(), l_parm_length)
         return GXREG(ret_val)
 
 
 
     @classmethod
-    def create_s(cls, p1):
+    def create_s(cls, bf):
         """
         Create a handle to a `GXREG` object from a `GXBF`
         """
-        ret_val = gxapi_cy.WrapREG.create_s(GXContext._get_tls_geo(), p1._wrapper)
+        ret_val = gxapi_cy.WrapREG.create_s(GXContext._get_tls_geo(), bf._wrapper)
         return GXREG(ret_val)
 
 
@@ -104,17 +104,17 @@ class GXREG:
 
 
 
-    def get(self, p2, p3):
+    def get(self, parm, p3):
         """
         Gets a string for a specified parameter in the `GXREG` object
         """
-        p3.value = self._wrapper.get(p2.encode(), p3.value.encode())
+        p3.value = self._wrapper.get(parm.encode(), p3.value.encode())
         
 
 
 
 
-    def get_int(self, p2, p3):
+    def get_int(self, parm, p3):
         """
         Gets an int for a specified parameter in the `GXREG` object
 
@@ -122,23 +122,23 @@ class GXREG:
 
         If parameter is not present in `GXREG`, `iDUMMY` is returned.
         """
-        p3.value = self._wrapper.get_int(p2.encode(), p3.value)
+        p3.value = self._wrapper.get_int(parm.encode(), p3.value)
         
 
 
 
 
-    def get_one(self, p2, p3, p5):
+    def get_one(self, loc, parm, data):
         """
         Gets n-th entry of the `GXREG` object
         """
-        p3.value, p5.value = self._wrapper.get_one(p2, p3.value.encode(), p5.value.encode())
+        parm.value, data.value = self._wrapper.get_one(loc, parm.value.encode(), data.value.encode())
         
 
 
 
 
-    def get_double(self, p2, p3):
+    def get_double(self, parm, p3):
         """
         Gets an real for a specified parameter in the `GXREG` object
 
@@ -146,7 +146,7 @@ class GXREG:
 
         If parameter is not present in `GXREG`, `rDUMMY` is returned.
         """
-        p3.value = self._wrapper.get_double(p2.encode(), p3.value)
+        p3.value = self._wrapper.get_double(parm.encode(), p3.value)
         
 
 
@@ -162,7 +162,7 @@ class GXREG:
 
 
 
-    def load_ini(self, p2):
+    def load_ini(self, ini):
         """
         Load a registry from an INI file.
 
@@ -170,27 +170,27 @@ class GXREG:
 
         Items are loaded into the `GXREG` in the format "GROUP.ITEM".
         """
-        self._wrapper.load_ini(p2.encode())
+        self._wrapper.load_ini(ini.encode())
         
 
 
 
 
-    def match_string(self, p2, p3):
+    def match_string(self, parm, data):
         """
         Replace a string with reg settings.
         """
-        p3.value = self._wrapper.match_string(p2.encode(), p3.value.encode())
+        data.value = self._wrapper.match_string(parm.encode(), data.value.encode())
         
 
 
 
 
-    def merge(self, p2, p3):
+    def merge(self, srce, type):
         """
         Merge
         """
-        self._wrapper.merge(p2._wrapper, p3)
+        self._wrapper.merge(srce._wrapper, type)
         
 
 
@@ -213,17 +213,17 @@ class GXREG:
 
 
 
-    def serial(self, p2):
+    def serial(self, bf):
         """
         Serialize a `GXREG` object into a file.
         """
-        self._wrapper.serial(p2._wrapper)
+        self._wrapper.serial(bf._wrapper)
         
 
 
 
 
-    def set(self, p2, p3):
+    def set(self, parm, p3):
         """
         Sets a string parameter in the `GXREG` object
 
@@ -236,27 +236,27 @@ class GXREG:
         or
         `set_double`(Reg, sParam, `rDUMMY`);
         """
-        self._wrapper.set(p2.encode(), p3.encode())
+        self._wrapper.set(parm.encode(), p3.encode())
         
 
 
 
 
-    def set_int(self, p2, p3):
+    def set_int(self, parm, p3):
         """
         Sets an int for a specified parameter in the `GXREG` object
         """
-        self._wrapper.set_int(p2.encode(), p3)
+        self._wrapper.set_int(parm.encode(), p3)
         
 
 
 
 
-    def set_double(self, p2, p3):
+    def set_double(self, parm, p3):
         """
         Sets an real for a specified parameter in the `GXREG` object
         """
-        self._wrapper.set_double(p2.encode(), p3)
+        self._wrapper.set_double(parm.encode(), p3)
         
 
 

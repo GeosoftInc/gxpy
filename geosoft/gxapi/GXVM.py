@@ -76,7 +76,7 @@ class GXVM:
 
 
     @classmethod
-    def create(cls, p1, p2):
+    def create(cls, type, elements):
         """
         Create a `GXVM`.
 
@@ -84,13 +84,13 @@ class GXVM:
 
         The `GXVM` elements are initialized to dummies.
         """
-        ret_val = gxapi_cy.WrapVM.create(GXContext._get_tls_geo(), p1, p2)
+        ret_val = gxapi_cy.WrapVM.create(GXContext._get_tls_geo(), type, elements)
         return GXVM(ret_val)
 
 
 
     @classmethod
-    def create_ext(cls, p1, p2):
+    def create_ext(cls, type, elements):
         """
         Create a `GXVM`, using one of the `GS_TYPES` special data types.
 
@@ -98,7 +98,7 @@ class GXVM:
 
         The `GXVM` elements are initialized to dummies.
         """
-        ret_val = gxapi_cy.WrapVM.create_ext(GXContext._get_tls_geo(), p1, p2)
+        ret_val = gxapi_cy.WrapVM.create_ext(GXContext._get_tls_geo(), type, elements)
         return GXVM(ret_val)
 
 
@@ -106,17 +106,17 @@ class GXVM:
 
 
 
-    def get_int(self, p2):
+    def get_int(self, element):
         """
         Get an integer element from a `GXVM`.
         """
-        ret_val = self._wrapper.get_int(p2)
+        ret_val = self._wrapper.get_int(element)
         return ret_val
 
 
 
 
-    def get_string(self, p2, p3):
+    def get_string(self, element, str_val):
         """
         Get a string element from a `GXVM`.
 
@@ -128,7 +128,7 @@ class GXVM:
         Type conversions are performed if necessary.  Dummy values
         are converted to "*" string.
         """
-        p3.value = self._wrapper.get_string(p2, p3.value.encode())
+        str_val.value = self._wrapper.get_string(element, str_val.value.encode())
         
 
 
@@ -144,7 +144,7 @@ class GXVM:
 
 
 
-    def re_size(self, p2):
+    def re_size(self, newsize):
         """
         Re-set the size of a `GXVM`.
 
@@ -152,23 +152,23 @@ class GXVM:
 
         If increasing the `GXVM` size, new elements are set to dummies.
         """
-        self._wrapper.re_size(p2)
+        self._wrapper.re_size(newsize)
         
 
 
 
 
-    def get_double(self, p2):
+    def get_double(self, element):
         """
         Get a real element from a `GXVM`.
         """
-        ret_val = self._wrapper.get_double(p2)
+        ret_val = self._wrapper.get_double(element)
         return ret_val
 
 
 
 
-    def set_int(self, p2, p3):
+    def set_int(self, element, value):
         """
         Set an integer element in a `GXVM`.
 
@@ -180,13 +180,13 @@ class GXVM:
         increased.  Reallocating `GXVM` lengths can lead to fragmented
         memory and should be avoided if possible.
         """
-        self._wrapper.set_int(p2, p3)
+        self._wrapper.set_int(element, value)
         
 
 
 
 
-    def set_double(self, p2, p3):
+    def set_double(self, element, value):
         """
         Set a real element in a `GXVM`.
 
@@ -198,13 +198,13 @@ class GXVM:
         increased.  Reallocating `GXVM` lengths can lead to fragmented
         memory and should be avoided if possible.
         """
-        self._wrapper.set_double(p2, p3)
+        self._wrapper.set_double(element, value)
         
 
 
 
 
-    def set_string(self, p2, p3):
+    def set_string(self, element, value):
         """
         Set a string element in a `GXVM`.
 
@@ -216,7 +216,7 @@ class GXVM:
         increased.  Reallocating `GXVM` lengths can lead to fragmented
         memory and should be avoided if possible.
         """
-        self._wrapper.set_string(p2, p3.encode())
+        self._wrapper.set_string(element, value.encode())
         
 
 

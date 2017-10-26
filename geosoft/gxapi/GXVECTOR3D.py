@@ -60,21 +60,21 @@ class GXVECTOR3D:
 
 
 
-    def get_itr(self, p2):
+    def get_itr(self, itr):
         """
         Get the `GXITR` of the `GXVECTOR3D`
         """
-        self._wrapper.get_itr(p2._wrapper)
+        self._wrapper.get_itr(itr._wrapper)
         
 
 
 
 
-    def set_itr(self, p2):
+    def set_itr(self, itr):
         """
         Set the `GXITR` of the `GXVECTOR3D`
         """
-        self._wrapper.set_itr(p2._wrapper)
+        self._wrapper.set_itr(itr._wrapper)
         
 
 

@@ -62,7 +62,7 @@ class GXEXP:
 
 
     @classmethod
-    def create(cls, p1, p2, p3):
+    def create(cls, db, formula, max_len):
         """
         This method creates an `GXEXP` object.
 
@@ -95,17 +95,17 @@ class GXEXP:
         
         All other tokens are assumed to be channel names.
         """
-        ret_val = gxapi_cy.WrapEXP.create(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3)
+        ret_val = gxapi_cy.WrapEXP.create(GXContext._get_tls_geo(), db._wrapper, formula.encode(), max_len)
         return GXEXP(ret_val)
 
 
 
     @classmethod
-    def create_file(cls, p1, p2):
+    def create_file(cls, db, file):
         """
         This method creates an `GXEXP` object from a file
         """
-        ret_val = gxapi_cy.WrapEXP.create_file(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
+        ret_val = gxapi_cy.WrapEXP.create_file(GXContext._get_tls_geo(), db._wrapper, file.encode())
         return GXEXP(ret_val)
 
 

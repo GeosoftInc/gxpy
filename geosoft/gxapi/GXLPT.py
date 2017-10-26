@@ -72,17 +72,17 @@ class GXLPT:
 
 
 
-    def get_lst(self, p2):
+    def get_lst(self, lst):
         """
         Copies all pattern names into a `GXLST` object.
         """
-        self._wrapper.get_lst(p2._wrapper)
+        self._wrapper.get_lst(lst._wrapper)
         
 
 
 
 
-    def get_standard_lst(self, p2):
+    def get_standard_lst(self, lst):
         """
         Copies the six standard line types into a `GXLST` object.
 
@@ -90,7 +90,7 @@ class GXLPT:
 
         The six standard line types are "solid", "long dash", "dotted", "short dash", "long, short dash" and "dash dot".
         """
-        self._wrapper.get_standard_lst(p2._wrapper)
+        self._wrapper.get_standard_lst(lst._wrapper)
         
 
 

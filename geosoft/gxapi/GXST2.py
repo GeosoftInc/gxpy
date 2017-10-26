@@ -71,11 +71,11 @@ class GXST2:
 
 
 
-    def data_vv(self, p2, p3):
+    def data_vv(self, v_vx, v_vy):
         """
         Add all the values in VVx and VVy to `GXST2` object.
         """
-        self._wrapper.data_vv(p2._wrapper, p3._wrapper)
+        self._wrapper.data_vv(v_vx._wrapper, v_vy._wrapper)
         
 
 
@@ -103,11 +103,11 @@ class GXST2:
 
 
 
-    def get(self, p2):
+    def get(self, id):
         """
         Gets correlation coeff. from the `GXST2` object.
         """
-        ret_val = self._wrapper.get(p2)
+        ret_val = self._wrapper.get(id)
         return ret_val
 
 

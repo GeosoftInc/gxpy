@@ -60,101 +60,101 @@ class GXFFT2:
 
 
     @classmethod
-    def fft2_in(cls, p1, p2, p3):
+    def fft2_in(cls, im_gi, trn_fil, spc_fil):
         """
         `GXFFT2` transform
         """
-        gxapi_cy.WrapFFT2.fft2_in(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode())
+        gxapi_cy.WrapFFT2.fft2_in(GXContext._get_tls_geo(), im_gi._wrapper, trn_fil.encode(), spc_fil.encode())
         
 
 
 
     @classmethod
-    def filter_pg(cls, p1, p2, p3, p4, p5, p6):
+    def filter_pg(cls, pg, con_fil, tr, dx, dy, rot):
         """
         Apply 2D `GXFFT` filters to data in pager
         """
-        gxapi_cy.WrapFFT2.filter_pg(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3._wrapper, p4, p5, p6)
+        gxapi_cy.WrapFFT2.filter_pg(GXContext._get_tls_geo(), pg._wrapper, con_fil.encode(), tr._wrapper, dx, dy, rot)
         
 
 
 
     @classmethod
-    def flt(cls, p1, p2, p3):
+    def flt(cls, im_gi, out_fil, con_fil):
         """
         `GXFFT2` filter
         """
-        gxapi_cy.WrapFFT2.flt(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode())
+        gxapi_cy.WrapFFT2.flt(GXContext._get_tls_geo(), im_gi._wrapper, out_fil.encode(), con_fil.encode())
         
 
 
 
     @classmethod
-    def flt_inv(cls, p1, p2, p3):
+    def flt_inv(cls, im_gi, out_fil, con_fil):
         """
         `GXFFT2` filter and inverse
         """
-        gxapi_cy.WrapFFT2.flt_inv(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode())
+        gxapi_cy.WrapFFT2.flt_inv(GXContext._get_tls_geo(), im_gi._wrapper, out_fil.encode(), con_fil.encode())
         
 
 
 
     @classmethod
-    def pow_spc(cls, p1, p2):
+    def pow_spc(cls, im_gi, p2):
         """
         `GXFFT2` transform power spectrum
         """
-        gxapi_cy.WrapFFT2.pow_spc(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
+        gxapi_cy.WrapFFT2.pow_spc(GXContext._get_tls_geo(), im_gi._wrapper, p2.encode())
         
 
 
 
     @classmethod
-    def rad_spc(cls, p1, p2):
+    def rad_spc(cls, im_gi, p2):
         """
         `GXFFT2` transform Radially averaged power spectrum
         """
-        gxapi_cy.WrapFFT2.rad_spc(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
+        gxapi_cy.WrapFFT2.rad_spc(GXContext._get_tls_geo(), im_gi._wrapper, p2.encode())
         
 
 
 
     @classmethod
-    def rad_spc1(cls, p1, p2):
+    def rad_spc1(cls, img, p2):
         """
         `GXFFT2` transform Radially averaged power spectrum for one `GXIMG`
         """
-        gxapi_cy.WrapFFT2.rad_spc1(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
+        gxapi_cy.WrapFFT2.rad_spc1(GXContext._get_tls_geo(), img._wrapper, p2._wrapper)
         
 
 
 
     @classmethod
-    def rad_spc2(cls, p1, p2, p3, p4, p5):
+    def rad_spc2(cls, img1, p2, p3, p4, p5):
         """
         `GXFFT2` transform Radially averaged power spectrum for two IMGs
         """
-        gxapi_cy.WrapFFT2.rad_spc2(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper, p5)
+        gxapi_cy.WrapFFT2.rad_spc2(GXContext._get_tls_geo(), img1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper, p5)
         
 
 
 
     @classmethod
-    def td_xd_y(cls, p1, p2, p3, p4):
+    def td_xd_y(cls, img_tx, img_ty, out_fil, inv_flg):
         """
         `GXFFT2` filter (calculate T from the derivatives Tx and Ty)
         """
-        gxapi_cy.WrapFFT2.td_xd_y(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3.encode(), p4)
+        gxapi_cy.WrapFFT2.td_xd_y(GXContext._get_tls_geo(), img_tx._wrapper, img_ty._wrapper, out_fil.encode(), inv_flg)
         
 
 
 
     @classmethod
-    def trans_pg(cls, p1, p2):
+    def trans_pg(cls, pg, opt):
         """
         Apply 2D `GXFFT` transform to data in pager
         """
-        gxapi_cy.WrapFFT2.trans_pg(GXContext._get_tls_geo(), p1._wrapper, p2)
+        gxapi_cy.WrapFFT2.trans_pg(GXContext._get_tls_geo(), pg._wrapper, opt)
         
 
 

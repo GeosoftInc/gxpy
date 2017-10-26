@@ -69,11 +69,11 @@ class GXACQUIRE:
 
 
 
-    def delete_empty_chan(self, p2):
+    def delete_empty_chan(self, db):
         """
         Delete empty channels
         """
-        self._wrapper.delete_empty_chan(p2._wrapper)
+        self._wrapper.delete_empty_chan(db._wrapper)
         
 
 
@@ -81,7 +81,7 @@ class GXACQUIRE:
 
 
 
-    def import_hole(self, p2, p3, p4, p5, p6, p7):
+    def import_hole(self, proj, dir, para, geo_vv, delete, convert):
         """
         Import Drillhole data acQuire database into a GDB
 
@@ -90,13 +90,13 @@ class GXACQUIRE:
         Point data and polygon data are saved into Dnnn lines in GDB,
         nnn representing incremental number starting from 0
         """
-        ret_val = self._wrapper.import_hole(p2.encode(), p3.encode(), p4.encode(), p5._wrapper, p6, p7)
+        ret_val = self._wrapper.import_hole(proj.encode(), dir.encode(), para.encode(), geo_vv._wrapper, delete, convert)
         return ret_val
 
 
 
 
-    def import_point(self, p2, p3, p4):
+    def import_point(self, db, para, convert):
         """
         Import Point Sample data acQuire database into a GDB
 
@@ -106,13 +106,13 @@ class GXACQUIRE:
         Point data and polygon data are saved into Dnnn lines in GDB,
         nnn representing incremental number starting from 0
         """
-        ret_val = self._wrapper.import_point(p2._wrapper, p3.encode(), p4)
+        ret_val = self._wrapper.import_point(db._wrapper, para.encode(), convert)
         return ret_val
 
 
 
 
-    def selection_tool(self, p2, p3):
+    def selection_tool(self, selection_file, mode):
         """
         Run the acQuire Selection Tool.
 
@@ -122,7 +122,7 @@ class GXACQUIRE:
         the user can make selections then the selections are saved
         back in the selection file.
         """
-        ret_val = self._wrapper.selection_tool(p2.encode(), p3)
+        ret_val = self._wrapper.selection_tool(selection_file.encode(), mode)
         return ret_val
 
 

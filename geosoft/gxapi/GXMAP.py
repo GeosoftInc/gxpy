@@ -65,51 +65,51 @@ class GXMAP:
 
 
 
-    def export_all_in_view(self, p2, p3, p4, p5, p6, p7, p8, p9):
+    def export_all_in_view(self, name, view, pix_size, dpi, bits, dither, format, options):
         """
         Export the entire map in view units to an external format. View and Group names are removed and plane spatial coordinates will be in the units of the map.
         """
-        self._wrapper.export_all_in_view(p2.encode(), p3.encode(), p4, p5, p6, p7, p8.encode(), p9.encode())
+        self._wrapper.export_all_in_view(name.encode(), view.encode(), pix_size, dpi, bits, dither, format.encode(), options.encode())
         
 
 
 
 
-    def export_all_raster(self, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+    def export_all_raster(self, name, view, size_x, size_y, dpi, bits, dither, format, options):
         """
         Export the entire map to map to a non-geo raster format.
         """
-        self._wrapper.export_all_raster(p2.encode(), p3.encode(), p4, p5, p6, p7, p8, p9.encode(), p10.encode())
+        self._wrapper.export_all_raster(name.encode(), view.encode(), size_x, size_y, dpi, bits, dither, format.encode(), options.encode())
         
 
 
 
 
-    def export_area_in_view(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13):
+    def export_area_in_view(self, name, view, pix_size, dpi, bits, dither, min_x, min_y, max_x, max_y, format, options):
         """
         Export an area of a map in view units to an external format
         """
-        self._wrapper.export_area_in_view(p2.encode(), p3.encode(), p4, p5, p6, p7, p8, p9, p10, p11, p12.encode(), p13.encode())
+        self._wrapper.export_area_in_view(name.encode(), view.encode(), pix_size, dpi, bits, dither, min_x, min_y, max_x, max_y, format.encode(), options.encode())
         
 
 
 
 
-    def export_area_raster(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+    def export_area_raster(self, name, view, min_x, min_y, max_x, max_y, size_x, size_y, dpi, bits, dither, format, options):
         """
         Export an area of a map to a non-geo raster format.
         """
-        self._wrapper.export_area_raster(p2.encode(), p3.encode(), p4, p5, p6, p7, p8, p9, p10, p11, p12, p13.encode(), p14.encode())
+        self._wrapper.export_area_raster(name.encode(), view.encode(), min_x, min_y, max_x, max_y, size_x, size_y, dpi, bits, dither, format.encode(), options.encode())
         
 
 
 
 
-    def render_bitmap(self, p2, p3, p4, p5, p6, p7, p8):
+    def render_bitmap(self, view, min_x, min_y, max_x, max_y, file, p8):
         """
         Render a map to a bitmap.
         """
-        self._wrapper.render_bitmap(p2.encode(), p3, p4, p5, p6, p7.encode(), p8)
+        self._wrapper.render_bitmap(view.encode(), min_x, min_y, max_x, max_y, file.encode(), p8)
         
 
 
@@ -119,11 +119,11 @@ class GXMAP:
 
 
 
-    def create_linked_3d_view(self, p2, p3, p4, p5, p6, p7):
+    def create_linked_3d_view(self, mview, view_name, min_x, min_y, max_x, max_y):
         """
         Create a 3D View in this map that is linked to a `GXMVIEW` in a 3D View file.
         """
-        self._wrapper.create_linked_3d_view(p2._wrapper, p3.encode(), p4, p5, p6, p7)
+        self._wrapper.create_linked_3d_view(mview._wrapper, view_name.encode(), min_x, min_y, max_x, max_y)
         
 
 
@@ -133,7 +133,7 @@ class GXMAP:
 
 
 
-    def agg_list(self, p2, p3):
+    def agg_list(self, lst, optn):
         """
         Get a list of all aggregates in this map.
 
@@ -146,13 +146,13 @@ class GXMAP:
 
             `GXLST` class.
         """
-        self._wrapper.agg_list(p2._wrapper, p3)
+        self._wrapper.agg_list(lst._wrapper, optn)
         
 
 
 
 
-    def agg_list_ex(self, p2, p3, p4):
+    def agg_list_ex(self, lst, optn, mode):
         """
         Get a list of aggregates in this map based on a mode
 
@@ -165,7 +165,7 @@ class GXMAP:
 
             `GXLST` class.
         """
-        self._wrapper.agg_list_ex(p2._wrapper, p3, p4)
+        self._wrapper.agg_list_ex(lst._wrapper, optn, mode)
         
 
 
@@ -191,31 +191,31 @@ class GXMAP:
 
 
 
-    def copy_map_to_view(self, p2, p3):
+    def copy_map_to_view(self, dest_map, dest_view):
         """
         Copy entire map into one view in output map.
         """
-        self._wrapper.copy_map_to_view(p2.encode(), p3.encode())
+        self._wrapper.copy_map_to_view(dest_map.encode(), dest_view.encode())
         
 
 
 
 
-    def crc_map(self, p2, p3):
+    def crc_map(self, crc, file):
         """
         Generate an XML CRC of a `GXMAP`
         """
-        p2.value = self._wrapper.crc_map(p2.value, p3.encode())
+        crc.value = self._wrapper.crc_map(crc.value, file.encode())
         
 
 
 
     @classmethod
-    def create(cls, p1, p2):
+    def create(cls, name, mode):
         """
         Create a `GXMAP`.
         """
-        ret_val = gxapi_cy.WrapMAP.create(GXContext._get_tls_geo(), p1.encode(), p2)
+        ret_val = gxapi_cy.WrapMAP.create(GXContext._get_tls_geo(), name.encode(), mode)
         return GXMAP(ret_val)
 
 
@@ -236,7 +236,7 @@ class GXMAP:
 
 
 
-    def delete_view(self, p2):
+    def delete_view(self, name):
         """
         Deletes a view in this map.
 
@@ -244,7 +244,7 @@ class GXMAP:
 
         If the view does not exist, nothing happens.
         """
-        self._wrapper.delete_view(p2.encode())
+        self._wrapper.delete_view(name.encode())
         
 
 
@@ -262,7 +262,7 @@ class GXMAP:
 
 
 
-    def dup_map(self, p2, p3):
+    def dup_map(self, ma_pd, content):
         """
         Duplicate copy of current map.
 
@@ -277,7 +277,7 @@ class GXMAP:
         The constant `DUPMAP_COPY_PRE62` provides a way to create maps that can be
         distributed to versions prior to 6.2.
         """
-        self._wrapper.dup_map(p2._wrapper, p3)
+        self._wrapper.dup_map(ma_pd._wrapper, content)
         
 
 
@@ -293,11 +293,11 @@ class GXMAP:
 
 
 
-    def get_map_size(self, p2, p3, p4, p5):
+    def get_map_size(self, xmin, ymin, xmax, ymax):
         """
         Get the size of the Map.
         """
-        p2.value, p3.value, p4.value, p5.value = self._wrapper.get_map_size(p2.value, p3.value, p4.value, p5.value)
+        xmin.value, ymin.value, xmax.value, ymax.value = self._wrapper.get_map_size(xmin.value, ymin.value, xmax.value, ymax.value)
         
 
 
@@ -331,7 +331,7 @@ class GXMAP:
 
 
 
-    def group_list(self, p2):
+    def group_list(self, lst):
         """
         Get a list of all views/groups in this map.
 
@@ -346,13 +346,13 @@ class GXMAP:
             `GXLST` class.
             `GXMVIEW.list_groups`
         """
-        self._wrapper.group_list(p2._wrapper)
+        self._wrapper.group_list(lst._wrapper)
         
 
 
 
 
-    def group_list_ex(self, p2, p3):
+    def group_list_ex(self, lst, mode):
         """
         Get a list of views/groups in this map for this mode
 
@@ -360,33 +360,33 @@ class GXMAP:
 
             `GXLST` class.
         """
-        self._wrapper.group_list_ex(p2._wrapper, p3)
+        self._wrapper.group_list_ex(lst._wrapper, mode)
         
 
 
 
 
-    def duplicate_view(self, p2, p3, p5):
+    def duplicate_view(self, view, n_view, copy):
         """
         Duplicate an entire view
         """
-        p3.value = self._wrapper.duplicate_view(p2.encode(), p3.value.encode(), p5)
+        n_view.value = self._wrapper.duplicate_view(view.encode(), n_view.value.encode(), copy)
         
 
 
 
 
-    def exist_view(self, p2):
+    def exist_view(self, name):
         """
         Checks to see if a view exists.
         """
-        ret_val = self._wrapper.exist_view(p2.encode())
+        ret_val = self._wrapper.exist_view(name.encode())
         return ret_val
 
 
 
 
-    def get_class_name(self, p2, p3):
+    def get_class_name(self, cl, name):
         """
         Get a class name.
 
@@ -404,27 +404,27 @@ class GXMAP:
         If a name is not set, the class name is set and
         returned.
         """
-        p3.value = self._wrapper.get_class_name(p2.encode(), p3.value.encode())
+        name.value = self._wrapper.get_class_name(cl.encode(), name.value.encode())
         
 
 
 
 
-    def get_file_name(self, p2):
+    def get_file_name(self, name):
         """
         Get the name of the map.
         """
-        p2.value = self._wrapper.get_file_name(p2.value.encode())
+        name.value = self._wrapper.get_file_name(name.value.encode())
         
 
 
 
 
-    def get_map_name(self, p2):
+    def get_map_name(self, name):
         """
         Get the Map Name of the Map.
         """
-        p2.value = self._wrapper.get_map_name(p2.value.encode())
+        name.value = self._wrapper.get_map_name(name.value.encode())
         
 
 
@@ -440,7 +440,7 @@ class GXMAP:
 
 
 
-    def un_pack_files_ex(self, p2, p3):
+    def un_pack_files_ex(self, force, errors):
         """
         UnPack all files from map to workspace.
 
@@ -451,17 +451,17 @@ class GXMAP:
         stop if any files are going to be overwritting. These
         file names will end up in the Errors string.
         """
-        p3.value = self._wrapper.un_pack_files_ex(p2, p3.value.encode())
+        errors.value = self._wrapper.un_pack_files_ex(force, errors.value.encode())
         
 
 
 
 
-    def un_pack_files_to_folder(self, p2, p3, p4):
+    def un_pack_files_to_folder(self, force, dir, errors):
         """
         UnPack all files from map to workspace.
         """
-        p4.value = self._wrapper.un_pack_files_to_folder(p2, p3.encode(), p4.value.encode())
+        errors.value = self._wrapper.un_pack_files_to_folder(force, dir.encode(), errors.value.encode())
         
 
 
@@ -477,11 +477,11 @@ class GXMAP:
 
 
 
-    def render(self, p2):
+    def render(self, name):
         """
         Render a map to file/device.
         """
-        self._wrapper.render(p2.encode())
+        self._wrapper.render(name.encode())
         
 
 
@@ -502,7 +502,7 @@ class GXMAP:
 
 
 
-    def resize_all_ex(self, p2):
+    def resize_all_ex(self, ext):
         """
         `resize_all` with selection of view extent type selection.
 
@@ -511,7 +511,7 @@ class GXMAP:
         `MVIEW_EXTENT_VISIBLE` gives a more "reasonable" map size, and won't
         clip off labels outside a graph window.
         """
-        self._wrapper.resize_all_ex(p2)
+        self._wrapper.resize_all_ex(ext)
         
 
 
@@ -538,17 +538,17 @@ class GXMAP:
 
 
 
-    def save_as_mxd(self, p2):
+    def save_as_mxd(self, mxd):
         """
         Save as ArcGIS `GXMXD`
         """
-        self._wrapper.save_as_mxd(p2.encode())
+        self._wrapper.save_as_mxd(mxd.encode())
         
 
 
 
 
-    def set_class_name(self, p2, p3):
+    def set_class_name(self, cl, name):
         """
         Set a class name.
 
@@ -566,7 +566,7 @@ class GXMAP:
         If a name is not set, the class name is set and
         returned.
         """
-        self._wrapper.set_class_name(p2.encode(), p3.encode())
+        self._wrapper.set_class_name(cl.encode(), name.encode())
         
 
 
@@ -582,17 +582,17 @@ class GXMAP:
 
 
 
-    def set_map_name(self, p2):
+    def set_map_name(self, name):
         """
         Set the Map Name of the Map.
         """
-        self._wrapper.set_map_name(p2.encode())
+        self._wrapper.set_map_name(name.encode())
         
 
 
 
 
-    def set_map_scale(self, p2):
+    def set_map_scale(self, scale):
         """
         Set the current map scale
 
@@ -601,13 +601,13 @@ class GXMAP:
         All views in the map will be resized for the new
         map scale.
         """
-        self._wrapper.set_map_scale(p2)
+        self._wrapper.set_map_scale(scale)
         
 
 
 
 
-    def set_map_size(self, p2, p3, p4, p5):
+    def set_map_size(self, xmin, ymin, xmax, ymax):
         """
         Set the size of the Map.
 
@@ -622,37 +622,37 @@ class GXMAP:
 
             SetSizeViews_MAP
         """
-        self._wrapper.set_map_size(p2, p3, p4, p5)
+        self._wrapper.set_map_size(xmin, ymin, xmax, ymax)
         
 
 
 
 
-    def set_meta(self, p2):
+    def set_meta(self, meta):
         """
         Write a `GXMETA` to a map.
         """
-        self._wrapper.set_meta(p2._wrapper)
+        self._wrapper.set_meta(meta._wrapper)
         
 
 
 
 
-    def set_reg(self, p2):
+    def set_reg(self, reg):
         """
         Write a `GXREG` to a map.
         """
-        self._wrapper.set_reg(p2._wrapper)
+        self._wrapper.set_reg(reg._wrapper)
         
 
 
 
     @classmethod
-    def sync(cls, p1):
+    def sync(cls, map):
         """
         Syncronize the Metadata
         """
-        gxapi_cy.WrapMAP.sync(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapMAP.sync(GXContext._get_tls_geo(), map.encode())
         
 
 
@@ -668,7 +668,7 @@ class GXMAP:
 
 
 
-    def view_list(self, p2):
+    def view_list(self, lst):
         """
         Get a list of all views in this map.
 
@@ -676,17 +676,17 @@ class GXMAP:
 
             `GXLST` class.
         """
-        self._wrapper.view_list(p2._wrapper)
+        self._wrapper.view_list(lst._wrapper)
         
 
 
 
 
-    def view_list_ex(self, p2, p3):
+    def view_list_ex(self, lst, mode):
         """
         Get a list of views of certain types in this map
         """
-        self._wrapper.view_list_ex(p2._wrapper, p3)
+        self._wrapper.view_list_ex(lst._wrapper, mode)
         
 
 

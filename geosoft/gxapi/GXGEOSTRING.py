@@ -62,11 +62,11 @@ class GXGEOSTRING:
 
 
     @classmethod
-    def open(cls, p1, p2):
+    def open(cls, geostring_file, mode):
         """
         Open a Geostring file
         """
-        ret_val = gxapi_cy.WrapGEOSTRING.open(GXContext._get_tls_geo(), p1.encode(), p2)
+        ret_val = gxapi_cy.WrapGEOSTRING.open(GXContext._get_tls_geo(), geostring_file.encode(), mode)
         return GXGEOSTRING(ret_val)
 
 
@@ -74,17 +74,17 @@ class GXGEOSTRING:
 
 
 
-    def get_ipj(self, p2):
+    def get_ipj(self, ipj):
         """
         Get the coordinate system of the Geostring.
         """
-        self._wrapper.get_ipj(p2._wrapper)
+        self._wrapper.get_ipj(ipj._wrapper)
         
 
 
 
 
-    def get_features(self, p2):
+    def get_features(self, lst):
         """
         Get the features
 
@@ -92,13 +92,13 @@ class GXGEOSTRING:
 
         List items are returned with feature GUID in name and feature name in value.
         """
-        self._wrapper.get_features(p2._wrapper)
+        self._wrapper.get_features(lst._wrapper)
         
 
 
 
 
-    def get_sections(self, p2):
+    def get_sections(self, lst):
         """
         Get the sections
 
@@ -106,77 +106,77 @@ class GXGEOSTRING:
 
         List items are returned with section GUID in name and section name in value.
         """
-        self._wrapper.get_sections(p2._wrapper)
+        self._wrapper.get_sections(lst._wrapper)
         
 
 
 
 
-    def get_all_shapes(self, p2):
+    def get_all_shapes(self, lst):
         """
         Get the all shapes
         """
-        self._wrapper.get_all_shapes(p2._wrapper)
+        self._wrapper.get_all_shapes(lst._wrapper)
         
 
 
 
 
-    def get_shapes_for_feature(self, p2, p3):
+    def get_shapes_for_feature(self, guid, lst):
         """
         Get all shapes linked to a specific feature
         """
-        self._wrapper.get_shapes_for_feature(p2.encode(), p3._wrapper)
+        self._wrapper.get_shapes_for_feature(guid.encode(), lst._wrapper)
         
 
 
 
 
-    def get_shapes_for_section(self, p2, p3):
+    def get_shapes_for_section(self, guid, lst):
         """
         Get all shapes linked to a specific section
         """
-        self._wrapper.get_shapes_for_section(p2.encode(), p3._wrapper)
+        self._wrapper.get_shapes_for_section(guid.encode(), lst._wrapper)
         
 
 
 
 
-    def get_shapes_for_feature_and_section(self, p2, p3, p4):
+    def get_shapes_for_feature_and_section(self, feature_guid, section_guid, lst):
         """
         Get all shapes linked to a specific feature and section
         """
-        self._wrapper.get_shapes_for_feature_and_section(p2.encode(), p3.encode(), p4._wrapper)
+        self._wrapper.get_shapes_for_feature_and_section(feature_guid.encode(), section_guid.encode(), lst._wrapper)
         
 
 
 
 
-    def get_feature_properties(self, p2, p3, p5, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17):
+    def get_feature_properties(self, guid, name, description, polygon, pat_number, pat_size, pat_thick, pat_density, pat_color, pat_bg_color, line_style, line_thickness, line_pitch, line_color):
         """
         Get a feature's properties
         """
-        p3.value, p5.value, p7.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value, p15.value, p16.value, p17.value = self._wrapper.get_feature_properties(p2.encode(), p3.value.encode(), p5.value.encode(), p7.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value, p15.value, p16.value, p17.value)
+        name.value, description.value, polygon.value, pat_number.value, pat_size.value, pat_thick.value, pat_density.value, pat_color.value, pat_bg_color.value, line_style.value, line_thickness.value, line_pitch.value, line_color.value = self._wrapper.get_feature_properties(guid.encode(), name.value.encode(), description.value.encode(), polygon.value, pat_number.value, pat_size.value, pat_thick.value, pat_density.value, pat_color.value, pat_bg_color.value, line_style.value, line_thickness.value, line_pitch.value, line_color.value)
         
 
 
 
 
-    def get_section_properties(self, p2, p3, p5, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16):
+    def get_section_properties(self, guid, name, container_name, orientation, easting, northing, elevation, azimuth, swing, a, b, c, d):
         """
         Get a section's properties
         """
-        p3.value, p5.value, p7.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value, p15.value, p16.value = self._wrapper.get_section_properties(p2.encode(), p3.value.encode(), p5.value.encode(), p7.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value, p15.value, p16.value)
+        name.value, container_name.value, orientation.value, easting.value, northing.value, elevation.value, azimuth.value, swing.value, a.value, b.value, c.value, d.value = self._wrapper.get_section_properties(guid.encode(), name.value.encode(), container_name.value.encode(), orientation.value, easting.value, northing.value, elevation.value, azimuth.value, swing.value, a.value, b.value, c.value, d.value)
         
 
 
 
 
-    def get_shape_properties(self, p2, p3, p5, p7, p8, p9):
+    def get_shape_properties(self, guid, feature_guid, section_guid, vert_v_vx, vert_v_vy, vert_v_vz):
         """
         Get a shape's properties
         """
-        p3.value, p5.value = self._wrapper.get_shape_properties(p2.encode(), p3.value.encode(), p5.value.encode(), p7._wrapper, p8._wrapper, p9._wrapper)
+        feature_guid.value, section_guid.value = self._wrapper.get_shape_properties(guid.encode(), feature_guid.value.encode(), section_guid.value.encode(), vert_v_vx._wrapper, vert_v_vy._wrapper, vert_v_vz._wrapper)
         
 
 

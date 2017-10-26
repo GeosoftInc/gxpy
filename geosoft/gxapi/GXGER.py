@@ -83,7 +83,7 @@ class GXGER:
 
 
     @classmethod
-    def create(cls, p1):
+    def create(cls, file):
         """
         Opens an ASCII error file to read from.
 
@@ -92,7 +92,7 @@ class GXGER:
         The `GXGER` file may be in the local directory or the GEOSOFT
         directory.
         """
-        ret_val = gxapi_cy.WrapGER.create(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapGER.create(GXContext._get_tls_geo(), file.encode())
         return GXGER(ret_val)
 
 
@@ -100,41 +100,41 @@ class GXGER:
 
 
 
-    def get(self, p2, p3):
+    def get(self, num, message):
         """
         Get a message string.
         """
-        ret_val, p3.value = self._wrapper.get(p2, p3.value.encode())
+        ret_val, message.value = self._wrapper.get(num, message.value.encode())
         return ret_val
 
 
 
 
-    def set_int(self, p2, p3):
+    def set_int(self, parm, set):
         """
         Set a replacement string value to an int.
         """
-        self._wrapper.set_int(p2.encode(), p3)
+        self._wrapper.set_int(parm.encode(), set)
         
 
 
 
 
-    def set_double(self, p2, p3):
+    def set_double(self, parm, set):
         """
         Set a replacement string value to a real.
         """
-        self._wrapper.set_double(p2.encode(), p3)
+        self._wrapper.set_double(parm.encode(), set)
         
 
 
 
 
-    def set_string(self, p2, p3):
+    def set_string(self, parm, set):
         """
         Set a replacement string value.
         """
-        self._wrapper.set_string(p2.encode(), p3.encode())
+        self._wrapper.set_string(parm.encode(), set.encode())
         
 
 

@@ -62,7 +62,7 @@ class GXMAPL:
 
 
     @classmethod
-    def create(cls, p1, p2, p3):
+    def create(cls, name, ref_name, line):
         """
         Create a `GXMAPL`.
 
@@ -72,13 +72,13 @@ class GXMAPL:
         "_Data" and "_Base" added.  If no reference name is specified,
         the name "`GXMAPL`" is used
         """
-        ret_val = gxapi_cy.WrapMAPL.create(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3)
+        ret_val = gxapi_cy.WrapMAPL.create(GXContext._get_tls_geo(), name.encode(), ref_name.encode(), line)
         return GXMAPL(ret_val)
 
 
 
     @classmethod
-    def create_reg(cls, p1, p2, p3, p4):
+    def create_reg(cls, name, ref_name, line, reg):
         """
         Create a `GXMAPL` with `GXREG`.
 
@@ -88,7 +88,7 @@ class GXMAPL:
         "_Data" and "_Base" added.  If no reference name is specified,
         the name "`GXMAPL`" is used
         """
-        ret_val = gxapi_cy.WrapMAPL.create_reg(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3, p4._wrapper)
+        ret_val = gxapi_cy.WrapMAPL.create_reg(GXContext._get_tls_geo(), name.encode(), ref_name.encode(), line, reg._wrapper)
         return GXMAPL(ret_val)
 
 
@@ -96,21 +96,21 @@ class GXMAPL:
 
 
 
-    def process(self, p2):
+    def process(self, map):
         """
         Process a `GXMAPL`
         """
-        self._wrapper.process(p2._wrapper)
+        self._wrapper.process(map._wrapper)
         
 
 
 
 
-    def replace_string(self, p2, p3):
+    def replace_string(self, var, repl):
         """
         Adds a replacement string to a mapplot control file.
         """
-        self._wrapper.replace_string(p2.encode(), p3.encode())
+        self._wrapper.replace_string(var.encode(), repl.encode())
         
 
 

@@ -69,7 +69,7 @@ class GXIP:
 
 
     @classmethod
-    def convert_ubcip2_d_to_grid(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9):
+    def convert_ubcip2_d_to_grid(cls, file, pg, v_vx, v_vz, x, z, cx, cz, reciprocal):
         """
         Convert a UBC 2D model to a regular grid.
 
@@ -79,23 +79,23 @@ class GXIP:
         By setting the final value, a resistivity grid can be
         created from conductivity data.
         """
-        gxapi_cy.WrapIP.convert_ubcip2_d_to_grid(GXContext._get_tls_geo(), p1.encode(), p2._wrapper, p3._wrapper, p4._wrapper, p5, p6, p7, p8, p9)
+        gxapi_cy.WrapIP.convert_ubcip2_d_to_grid(GXContext._get_tls_geo(), file.encode(), pg._wrapper, v_vx._wrapper, v_vz._wrapper, x, z, cx, cz, reciprocal)
         
 
 
 
 
-    def create_default_job(self, p2, p3):
+    def create_default_job(self, ini, type):
         """
         Create a default job from scratch.
         """
-        self._wrapper.create_default_job(p2.encode(), p3)
+        self._wrapper.create_default_job(ini.encode(), type)
         
 
 
 
 
-    def export_ubcip3(self, p2, p3, p4, p5, p6, p7, p8):
+    def export_ubcip3(self, db, line, chan, error_chan, obs, topo, version):
         """
         Export of `GXIP` data to UBC format.
 
@@ -105,13 +105,13 @@ class GXIP:
         UBC 2D inversion program IPINV2D.
         Include error channel output and version-specific formatting.
         """
-        self._wrapper.export_ubcip3(p2._wrapper, p3.encode(), p4.encode(), p5.encode(), p6.encode(), p7.encode(), p8)
+        self._wrapper.export_ubcip3(db._wrapper, line.encode(), chan.encode(), error_chan.encode(), obs.encode(), topo.encode(), version)
         
 
 
 
     @classmethod
-    def export_ubcip_control(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+    def export_ubcip_control(cls, control, n_iter, i_rest, chi_factor, obs, cond, mesh, topo, initial, ref_mod, alphas, wts):
         """
         Export a control file for using in the UBC IPINV2D program.
 
@@ -121,13 +121,13 @@ class GXIP:
         Outputs a control file for use in the
         UBC 2D `GXIP` inversion program IPINV2D.
         """
-        gxapi_cy.WrapIP.export_ubcip_control(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4, p5.encode(), p6.encode(), p7.encode(), p8.encode(), p9.encode(), p10.encode(), p11.encode(), p12.encode())
+        gxapi_cy.WrapIP.export_ubcip_control(GXContext._get_tls_geo(), control.encode(), n_iter, i_rest, chi_factor, obs.encode(), cond.encode(), mesh.encode(), topo.encode(), initial.encode(), ref_mod.encode(), alphas.encode(), wts.encode())
         
 
 
 
     @classmethod
-    def export_ubcip_control_v5(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16):
+    def export_ubcip_control_v5(cls, control, n_iter, chi_factor, obs, topo, cond_selection, cond, mesh_selection, mesh, initial_selection, initial, reference_selection, ref_cond, alphas_selection, alphas, wts):
         """
         Export a control file for using in the UBC IPINV2D program.
 
@@ -135,13 +135,13 @@ class GXIP:
 
         UBC Version 5 Control file.
         """
-        gxapi_cy.WrapIP.export_ubcip_control_v5(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4.encode(), p5.encode(), p6, p7.encode(), p8, p9.encode(), p10, p11.encode(), p12, p13.encode(), p14, p15.encode(), p16.encode())
+        gxapi_cy.WrapIP.export_ubcip_control_v5(GXContext._get_tls_geo(), control.encode(), n_iter, chi_factor, obs.encode(), topo.encode(), cond_selection, cond.encode(), mesh_selection, mesh.encode(), initial_selection, initial.encode(), reference_selection, ref_cond.encode(), alphas_selection, alphas.encode(), wts.encode())
         
 
 
 
 
-    def export_ubc_res3(self, p2, p3, p4, p5, p6, p7, p8, p9):
+    def export_ubc_res3(self, db, line, voltage_chan, current_chan, error_chan, obs, topo, version):
         """
         Export of `GXIP` Resistivity data to UBC format.
 
@@ -152,13 +152,13 @@ class GXIP:
         Voltage and current channels should be in units such that
         V/I gives volts/amp (or mV/mA).
         """
-        self._wrapper.export_ubc_res3(p2._wrapper, p3.encode(), p4.encode(), p5.encode(), p6.encode(), p7.encode(), p8.encode(), p9)
+        self._wrapper.export_ubc_res3(db._wrapper, line.encode(), voltage_chan.encode(), current_chan.encode(), error_chan.encode(), obs.encode(), topo.encode(), version)
         
 
 
 
     @classmethod
-    def export_ubc_res_control(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+    def export_ubc_res_control(cls, control, n_iter, i_rest, chi_factor, obs, mesh, topo, initial, ref_cond, alphas, wts):
         """
         Export a control file for using in the UBC DCINV2D program.
 
@@ -168,13 +168,13 @@ class GXIP:
         Outputs a control file for use in the
         UBC 2D resistivity inversion program DCINV2D.
         """
-        gxapi_cy.WrapIP.export_ubc_res_control(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4, p5.encode(), p6.encode(), p7.encode(), p8.encode(), p9, p10.encode(), p11.encode())
+        gxapi_cy.WrapIP.export_ubc_res_control(GXContext._get_tls_geo(), control.encode(), n_iter, i_rest, chi_factor, obs.encode(), mesh.encode(), topo.encode(), initial.encode(), ref_cond, alphas.encode(), wts.encode())
         
 
 
 
     @classmethod
-    def export_ubc_res_control_v5(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+    def export_ubc_res_control_v5(cls, control, n_iter, chi_factor, obs, topo, mesh_selection, mesh, initial_selection, initial, reference_selection, ref_cond, alphas_selection, alphas, wts):
         """
         Export a control file for using in the UBC DCINV2D program.
 
@@ -184,13 +184,13 @@ class GXIP:
         Outputs a control file for use in the
         UBC 2D resistivity inversion program DCINV2D.
         """
-        gxapi_cy.WrapIP.export_ubc_res_control_v5(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4.encode(), p5.encode(), p6, p7.encode(), p8, p9.encode(), p10, p11.encode(), p12, p13.encode(), p14.encode())
+        gxapi_cy.WrapIP.export_ubc_res_control_v5(GXContext._get_tls_geo(), control.encode(), n_iter, chi_factor, obs.encode(), topo.encode(), mesh_selection, mesh.encode(), initial_selection, initial.encode(), reference_selection, ref_cond.encode(), alphas_selection, alphas.encode(), wts.encode())
         
 
 
 
 
-    def export_data_to_ubc_3d(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+    def export_data_to_ubc_3d(self, db, line_lst, locations_only, include_z, chan, error_chan, mask_chan, ip_type, comments, obs):
         """
         Export of `GXIP` data to UBC 3D `GXIP` format.
 
@@ -199,13 +199,13 @@ class GXIP:
         Outputs a ``*.DAT`` file of the survey data for use in the
         UBC `GXIP` 3D inversion programs.
         """
-        self._wrapper.export_data_to_ubc_3d(p2._wrapper, p3._wrapper, p4, p5, p6.encode(), p7.encode(), p8.encode(), p9, p10.encode(), p11.encode())
+        self._wrapper.export_data_to_ubc_3d(db._wrapper, line_lst._wrapper, locations_only, include_z, chan.encode(), error_chan.encode(), mask_chan.encode(), ip_type, comments.encode(), obs.encode())
         
 
 
 
     @classmethod
-    def import_ubc2_dmod(cls, p1, p2):
+    def import_ubc2_dmod(cls, file, type):
         """
         Import a MOD file from the UBC IPINV2D program.
 
@@ -215,13 +215,13 @@ class GXIP:
         The CON/CHG selection is necessary because the import sets
         padding values to dummies based on the type of file.
         """
-        ret_val = gxapi_cy.WrapIP.import_ubc2_dmod(GXContext._get_tls_geo(), p1.encode(), p2)
+        ret_val = gxapi_cy.WrapIP.import_ubc2_dmod(GXContext._get_tls_geo(), file.encode(), type)
         return GXPG(ret_val)
 
 
 
     @classmethod
-    def import_ubc2_dmsh(cls, p1, p2, p3, p4, p5):
+    def import_ubc2_dmsh(cls, file, x, z, v_vx, v_vz):
         """
         Import a MSH file from the UBC IPINV2D program.
 
@@ -229,13 +229,13 @@ class GXIP:
 
         Imports the MSH file geometry.
         """
-        p2.value, p3.value = gxapi_cy.WrapIP.import_ubc2_dmsh(GXContext._get_tls_geo(), p1.encode(), p2.value, p3.value, p4._wrapper, p5._wrapper)
+        x.value, z.value = gxapi_cy.WrapIP.import_ubc2_dmsh(GXContext._get_tls_geo(), file.encode(), x.value, z.value, v_vx._wrapper, v_vz._wrapper)
         
 
 
 
     @classmethod
-    def import_ubc2_d_topo(cls, p1, p2, p3, p4):
+    def import_ubc2_d_topo(cls, file, elev0, v_vx, v_vz):
         """
         Import a Topography file from the UBC IPINV2D program.
 
@@ -244,33 +244,33 @@ class GXIP:
         Imports the maximum elevation (top of mesh)
         as well as the topo (X, Z) values.
         """
-        p2.value = gxapi_cy.WrapIP.import_ubc2_d_topo(GXContext._get_tls_geo(), p1.encode(), p2.value, p3._wrapper, p4._wrapper)
+        elev0.value = gxapi_cy.WrapIP.import_ubc2_d_topo(GXContext._get_tls_geo(), file.encode(), elev0.value, v_vx._wrapper, v_vz._wrapper)
         
 
 
 
 
-    def open_job(self, p2, p3):
+    def open_job(self, job, type):
         """
         Open a `GXIP` plotting job
         """
-        self._wrapper.open_job(p2.encode(), p3)
+        self._wrapper.open_job(job.encode(), type)
         
 
 
 
 
-    def save_job(self, p2, p3):
+    def save_job(self, job, type):
         """
         Save a `GXIP` plotting job
         """
-        self._wrapper.save_job(p2.encode(), p3)
+        self._wrapper.save_job(job.encode(), type)
         
 
 
 
     @classmethod
-    def trim_ubc2_d_model(cls, p1, p2, p3, p4, p5, p6, p7):
+    def trim_ubc2_d_model(cls, pg, trim_xl, trim_xr, trim_z, v_vx, v_vz, x):
         """
         Trim the padding cells from the UBC IPINV2D Model.
 
@@ -281,13 +281,13 @@ class GXIP:
         The input cell size VVs are also trimmed to match,
         and the origin is updated (still upper left corner).
         """
-        ret_val, p7.value = gxapi_cy.WrapIP.trim_ubc2_d_model(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5._wrapper, p6._wrapper, p7.value)
+        ret_val, x.value = gxapi_cy.WrapIP.trim_ubc2_d_model(GXContext._get_tls_geo(), pg._wrapper, trim_xl, trim_xr, trim_z, v_vx._wrapper, v_vz._wrapper, x.value)
         return GXPG(ret_val)
 
 
 
 
-    def write_distant_electrodes(self, p2):
+    def write_distant_electrodes(self, db):
         """
         Write distant electrode locations to channels
 
@@ -295,13 +295,13 @@ class GXIP:
 
         Writes values for ALL lines.
         """
-        self._wrapper.write_distant_electrodes(p2._wrapper)
+        self._wrapper.write_distant_electrodes(db._wrapper)
         
 
 
 
 
-    def write_distant_electrodes_lst(self, p2, p3):
+    def write_distant_electrodes_lst(self, db, lst):
         """
         Write distant electrode locations to channels for a `GXLST` of lines
 
@@ -309,7 +309,7 @@ class GXIP:
 
         Writes values for lines in the input `GXLST`.
         """
-        self._wrapper.write_distant_electrodes_lst(p2._wrapper, p3._wrapper)
+        self._wrapper.write_distant_electrodes_lst(db._wrapper, lst._wrapper)
         
 
 
@@ -319,7 +319,7 @@ class GXIP:
 
 
 
-    def average_duplicates_qc(self, p2, p3, p4, p5):
+    def average_duplicates_qc(self, db, chan, qc_chan, out):
         """
         Average duplicate samples in a database.
 
@@ -332,7 +332,7 @@ class GXIP:
         If the QC channel is selected, only those rows of data where the QC channel
         value is "1" will be included in the average.
         """
-        self._wrapper.average_duplicates_qc(p2._wrapper, p3.encode(), p4.encode(), p5)
+        self._wrapper.average_duplicates_qc(db._wrapper, chan.encode(), qc_chan.encode(), out)
         
 
 
@@ -350,7 +350,7 @@ class GXIP:
 
 
 
-    def export_i2_x(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+    def export_i2_x(self, db, file, line, res_data, p6, p7, p8, p9, p10, p11, p12):
         """
         Export line(s) to an Interpex RESIX I2X format file.
 
@@ -358,33 +358,33 @@ class GXIP:
 
         Exports a line to an ".I2X" file.
         """
-        self._wrapper.export_i2_x(p2._wrapper, p3.encode(), p4.encode(), p5.encode(), p6.encode(), p7.encode(), p8.encode(), p9.encode(), p10.encode(), p11.encode(), p12.encode())
+        self._wrapper.export_i2_x(db._wrapper, file.encode(), line.encode(), res_data.encode(), p6.encode(), p7.encode(), p8.encode(), p9.encode(), p10.encode(), p11.encode(), p12.encode())
         
 
 
 
 
-    def export_ipdata(self, p2, p3, p4):
+    def export_ipdata(self, db, chan, title):
         """
         Exports data in the Geosoft IPDATA format.
         """
-        self._wrapper.export_ipdata(p2._wrapper, p3.encode(), p4.encode())
+        self._wrapper.export_ipdata(db._wrapper, chan.encode(), title.encode())
         
 
 
 
 
-    def export_ipdata_dir(self, p2, p3, p4, p5):
+    def export_ipdata_dir(self, db, chan, title, dir):
         """
         Exports data in the Geosoft IPDATA format in the specified directory
         """
-        self._wrapper.export_ipdata_dir(p2._wrapper, p3.encode(), p4.encode(), p5.encode())
+        self._wrapper.export_ipdata_dir(db._wrapper, chan.encode(), title.encode(), dir.encode())
         
 
 
 
 
-    def export_ipred(self, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+    def export_ipred(self, db, title, chan, suffix, filter, wts, stn1, stn2, max_n):
         """
         Exports pseudo-section in the Geosoft IPRED format.
 
@@ -394,13 +394,13 @@ class GXIP:
         and are listed as w1,w2,w3,...   Unspecified values beyond
         the list's end are set to 1.0.
         """
-        self._wrapper.export_ipred(p2._wrapper, p3.encode(), p4.encode(), p5.encode(), p6, p7.encode(), p8, p9, p10)
+        self._wrapper.export_ipred(db._wrapper, title.encode(), chan.encode(), suffix.encode(), filter, wts.encode(), stn1, stn2, max_n)
         
 
 
 
 
-    def export_ipred_dir(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+    def export_ipred_dir(self, db, title, chan, suffix, filter, wts, stn1, stn2, max_n, dir):
         """
         Exports pseudo-section in the Geosoft IPRED format in the specified directory
 
@@ -410,43 +410,43 @@ class GXIP:
         and are listed as w1,w2,w3,...   Unspecified values beyond
         the list's end are set to 1.0.
         """
-        self._wrapper.export_ipred_dir(p2._wrapper, p3.encode(), p4.encode(), p5.encode(), p6, p7.encode(), p8, p9, p10, p11.encode())
+        self._wrapper.export_ipred_dir(db._wrapper, title.encode(), chan.encode(), suffix.encode(), filter, wts.encode(), stn1, stn2, max_n, dir.encode())
         
 
 
 
 
-    def export_line_ipdata(self, p2, p3, p4, p5):
+    def export_line_ipdata(self, db, line, chan, title):
         """
         Exports one line of data in the Geosoft IPDATA format.
         """
-        self._wrapper.export_line_ipdata(p2._wrapper, p3.encode(), p4.encode(), p5.encode())
+        self._wrapper.export_line_ipdata(db._wrapper, line.encode(), chan.encode(), title.encode())
         
 
 
 
 
-    def export_sgdf(self, p2, p3, p4, p5):
+    def export_sgdf(self, db, file, chan, chan2):
         """
         Exports data to a Scintrex Geophysical Data Format file.
         """
-        self._wrapper.export_sgdf(p2._wrapper, p3.encode(), p4.encode(), p5.encode())
+        self._wrapper.export_sgdf(db._wrapper, file.encode(), chan.encode(), chan2.encode())
         
 
 
 
 
-    def get_n_value_lst(self, p2, p3):
+    def get_n_value_lst(self, db, lst):
         """
         Fill a list with unique N values in selected lines.
         """
-        self._wrapper.get_n_value_lst(p2._wrapper, p3._wrapper)
+        self._wrapper.get_n_value_lst(db._wrapper, lst._wrapper)
         
 
 
 
 
-    def get_topo_line(self, p2, p3, p4, p5, p6, p7):
+    def get_topo_line(self, db, line, x_min, x_max, x_inc, vv):
         """
         Get topography values for a line.
 
@@ -457,63 +457,63 @@ class GXIP:
         will be dummies. Values between actual data are interpolated using
         the Akima spline. Ends are extrapolated using the end data points.
         """
-        self._wrapper.get_topo_line(p2._wrapper, p3.encode(), p4, p5, p6, p7._wrapper)
+        self._wrapper.get_topo_line(db._wrapper, line.encode(), x_min, x_max, x_inc, vv._wrapper)
         
 
 
 
 
-    def get_chan_domain(self, p2, p3):
+    def get_chan_domain(self, db, chan):
         """
         Is this channel registered as a Time or Frequency domain channel?
         """
-        ret_val = self._wrapper.get_chan_domain(p2._wrapper, p3.encode())
+        ret_val = self._wrapper.get_chan_domain(db._wrapper, chan.encode())
         return ret_val
 
 
 
     @classmethod
-    def get_chan_label(cls, p1, p2, p4):
+    def get_chan_label(cls, chan, label, units):
         """
         Get the default label and units for a given channel.
         """
-        p2.value, p4.value = gxapi_cy.WrapIP.get_chan_label(GXContext._get_tls_geo(), p1.encode(), p2.value.encode(), p4.value.encode())
+        label.value, units.value = gxapi_cy.WrapIP.get_chan_label(GXContext._get_tls_geo(), chan.encode(), label.value.encode(), units.value.encode())
         
 
 
 
 
-    def get_channel_info(self, p2, p3, p4, p5, p6, p7):
+    def get_channel_info(self, db, chan, domain, delay, n_windows, vv):
         """
         Time Windows or Frequency info from a channel.
         """
-        p4.value, p5.value, p6.value = self._wrapper.get_channel_info(p2._wrapper, p3.encode(), p4.value, p5.value, p6.value, p7._wrapper)
+        domain.value, delay.value, n_windows.value = self._wrapper.get_channel_info(db._wrapper, chan.encode(), domain.value, delay.value, n_windows.value, vv._wrapper)
         
 
 
 
 
-    def set_channel_info(self, p2, p3, p4, p5, p6, p7):
+    def set_channel_info(self, db, chan, domain, delay, n_windows, vv):
         """
         Set Time Windows or Frequency info for a channel.
         """
-        self._wrapper.set_channel_info(p2._wrapper, p3.encode(), p4, p5, p6, p7._wrapper)
+        self._wrapper.set_channel_info(db._wrapper, chan.encode(), domain, delay, n_windows, vv._wrapper)
         
 
 
 
 
-    def import_dump(self, p2, p3, p4):
+    def import_dump(self, sys, db, dump_file):
         """
         Imports data from an `GXIP` instrument dump file.
         """
-        self._wrapper.import_dump(p2, p3._wrapper, p4.encode())
+        self._wrapper.import_dump(sys, db._wrapper, dump_file.encode())
         
 
 
 
 
-    def import_grid(self, p2, p3, p4):
+    def import_grid(self, db, grid, chan):
         """
         Imports data from a grid
 
@@ -523,13 +523,13 @@ class GXIP:
         The values are interpolated at each row's X and Y
         positions.
         """
-        self._wrapper.import_grid(p2._wrapper, p3.encode(), p4.encode())
+        self._wrapper.import_grid(db._wrapper, grid.encode(), chan.encode())
         
 
 
 
 
-    def import_i2_x(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13):
+    def import_i2_x(self, db, file, line, res_data, p6, p7, p8, p9, p10, p11, p12, p13):
         """
         Imports an Interpex RESIX I2X format file to a line.
 
@@ -538,13 +538,13 @@ class GXIP:
         Imports a single ".I2X" file to a specified line.
         If the line does not exist, it will be created.
         """
-        self._wrapper.import_i2_x(p2._wrapper, p3.encode(), p4.encode(), p5.encode(), p6.encode(), p7.encode(), p8.encode(), p9.encode(), p10.encode(), p11.encode(), p12.encode(), p13)
+        self._wrapper.import_i2_x(db._wrapper, file.encode(), line.encode(), res_data.encode(), p6.encode(), p7.encode(), p8.encode(), p9.encode(), p10.encode(), p11.encode(), p12.encode(), p13)
         
 
 
 
 
-    def import_i2_x_ex(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15):
+    def import_i2_x_ex(self, db, file, line, res_data, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15):
         """
         Same as `import_i2_x`, with Zonge data imported as well.
 
@@ -553,33 +553,33 @@ class GXIP:
         Imports a single ".I2X" file to a specified line.
         If the line does not exist, it will be created.
         """
-        self._wrapper.import_i2_x_ex(p2._wrapper, p3.encode(), p4.encode(), p5.encode(), p6.encode(), p7.encode(), p8.encode(), p9.encode(), p10.encode(), p11.encode(), p12.encode(), p13.encode(), p14.encode(), p15)
+        self._wrapper.import_i2_x_ex(db._wrapper, file.encode(), line.encode(), res_data.encode(), p6.encode(), p7.encode(), p8.encode(), p9.encode(), p10.encode(), p11.encode(), p12.encode(), p13.encode(), p14.encode(), p15)
         
 
 
 
 
-    def import_instrumentation_gdd(self, p2, p3):
+    def import_instrumentation_gdd(self, db, file):
         """
         Imports an Instrumentation GDD format file.
         """
-        self._wrapper.import_instrumentation_gdd(p2._wrapper, p3.encode())
+        self._wrapper.import_instrumentation_gdd(db._wrapper, file.encode())
         
 
 
 
 
-    def import_ipdata(self, p2, p3, p4):
+    def import_ipdata(self, db, file, chan):
         """
         Imports data in the Geosoft IPDATA format.
         """
-        self._wrapper.import_ipdata(p2._wrapper, p3.encode(), p4.encode())
+        self._wrapper.import_ipdata(db._wrapper, file.encode(), chan.encode())
         
 
 
 
 
-    def import_ipdata2(self, p2, p3, p4, p5):
+    def import_ipdata2(self, db, file, chan, chan2):
         """
         Imports data in the Geosoft IPDATA format - up to two arrays.
 
@@ -592,13 +592,13 @@ class GXIP:
         the T= or F= fields) then the import is assumed to be frequency
         domain.
         """
-        self._wrapper.import_ipdata2(p2._wrapper, p3.encode(), p4.encode(), p5.encode())
+        self._wrapper.import_ipdata2(db._wrapper, file.encode(), chan.encode(), chan2.encode())
         
 
 
 
 
-    def import_ipred(self, p2, p3, p4):
+    def import_ipred(self, db, file, chan):
         """
         Imports data from the Geosoft IPRED format.
 
@@ -607,13 +607,13 @@ class GXIP:
         This import produces a limited `GXIP` data set with no Current "I",
         Voltage "Vp" or Apparent Resistivity "ResApp" values.
         """
-        self._wrapper.import_ipred(p2._wrapper, p3.encode(), p4.encode())
+        self._wrapper.import_ipred(db._wrapper, file.encode(), chan.encode())
         
 
 
 
 
-    def import_merge_ipred(self, p2, p3, p4):
+    def import_merge_ipred(self, db, file, chan):
         """
         Imports IPRED data to an existing line.
 
@@ -622,23 +622,23 @@ class GXIP:
         Exits with error if the line does not exist.
         Data is merged on basis of Stn and N value.
         """
-        self._wrapper.import_merge_ipred(p2._wrapper, p3.encode(), p4.encode())
+        self._wrapper.import_merge_ipred(db._wrapper, file.encode(), chan.encode())
         
 
 
 
 
-    def import_sgdf(self, p2, p3):
+    def import_sgdf(self, db, file):
         """
         Imports data from a Scintrex Geophysical Data Format file.
         """
-        self._wrapper.import_sgdf(p2._wrapper, p3.encode())
+        self._wrapper.import_sgdf(db._wrapper, file.encode())
         
 
 
 
 
-    def import_topo_csv(self, p2, p3):
+    def import_topo_csv(self, db, csv):
         """
         Imports topography data from a CSV line-station file
 
@@ -647,13 +647,13 @@ class GXIP:
         The elevation of each point in the current database
         is interpolated from the input topography values.
         """
-        self._wrapper.import_topo_csv(p2._wrapper, p3.encode())
+        self._wrapper.import_topo_csv(db._wrapper, csv.encode())
         
 
 
 
 
-    def import_topo_grid(self, p2, p3):
+    def import_topo_grid(self, db, grid):
         """
         Imports topography data from a grid
 
@@ -662,13 +662,13 @@ class GXIP:
         The elevation of each point in the current database
         is interpolated from the input topography grid.
         """
-        self._wrapper.import_topo_grid(p2._wrapper, p3.encode())
+        self._wrapper.import_topo_grid(db._wrapper, grid.encode())
         
 
 
 
 
-    def import_zonge_avg(self, p2, p3, p4, p5, p6):
+    def import_zonge_avg(self, db, file, line, scale, mult):
         """
         Imports a Zonge AVG format file.
 
@@ -676,13 +676,13 @@ class GXIP:
 
         See `import_zonge_fld`
         """
-        self._wrapper.import_zonge_avg(p2._wrapper, p3.encode(), p4, p5, p6)
+        self._wrapper.import_zonge_avg(db._wrapper, file.encode(), line, scale, mult)
         
 
 
 
 
-    def import_zonge_fld(self, p2, p3, p4, p5):
+    def import_zonge_fld(self, db, file, scale, mult):
         """
         Imports a Zonge FLD format file.
 
@@ -692,13 +692,13 @@ class GXIP:
         values, and a conversion is required.
         The line direction is taken from the `GXIP` setup values.
         """
-        self._wrapper.import_zonge_fld(p2._wrapper, p3.encode(), p4, p5)
+        self._wrapper.import_zonge_fld(db._wrapper, file.encode(), scale, mult)
         
 
 
 
 
-    def new_xy_database(self, p2, p3, p4, p5, p6):
+    def new_xy_database(self, db, new_db, chan_vv, mask, pr_n_val):
         """
         Create a subset database using a mask channel, "N" value
 
@@ -707,13 +707,13 @@ class GXIP:
         A mask channel can be used to select a subset of the data.
         A single N value can also be selected (Dummy for all).
         """
-        self._wrapper.new_xy_database(p2._wrapper, p3._wrapper, p4._wrapper, p5.encode(), p6)
+        self._wrapper.new_xy_database(db._wrapper, new_db._wrapper, chan_vv._wrapper, mask.encode(), pr_n_val)
         
 
 
 
 
-    def pseudo_plot(self, p2, p3, p4, p5):
+    def pseudo_plot(self, db, ini_file, cur_line, map):
         """
         Create pseudo-sections of a single line using a control file.
 
@@ -722,13 +722,13 @@ class GXIP:
         The control file is created using the IPPLTCON GX. It may then
         be modified by hand as required.
         """
-        self._wrapper.pseudo_plot(p2._wrapper, p3.encode(), p4.encode(), p5.encode())
+        self._wrapper.pseudo_plot(db._wrapper, ini_file.encode(), cur_line.encode(), map.encode())
         
 
 
 
 
-    def pseudo_plot2(self, p2, p3, p4, p5, p6):
+    def pseudo_plot2(self, db, ini_file, cur_line, tag, map):
         """
         Same as `pseudo_plot`, but specify a tag for grids created.
 
@@ -737,13 +737,13 @@ class GXIP:
         The control file is created using the IPPLTCON GX. It may then
         be modified by hand as required.
         """
-        self._wrapper.pseudo_plot2(p2._wrapper, p3.encode(), p4.encode(), p5.encode(), p6.encode())
+        self._wrapper.pseudo_plot2(db._wrapper, ini_file.encode(), cur_line.encode(), tag.encode(), map.encode())
         
 
 
 
 
-    def pseudo_plot2_dir(self, p2, p3, p4, p5, p6, p7):
+    def pseudo_plot2_dir(self, db, ini_file, cur_line, tag, map, dir):
         """
         Same as `pseudo_plot2`, but with directory specified.
 
@@ -752,13 +752,13 @@ class GXIP:
         The control file is created using the IPPLTCON GX. It may then
         be modified by hand as required.
         """
-        self._wrapper.pseudo_plot2_dir(p2._wrapper, p3.encode(), p4.encode(), p5.encode(), p6.encode(), p7.encode())
+        self._wrapper.pseudo_plot2_dir(db._wrapper, ini_file.encode(), cur_line.encode(), tag.encode(), map.encode(), dir.encode())
         
 
 
 
 
-    def ps_stack(self, p2, p3, p4, p5):
+    def ps_stack(self, db, chan, con_file, map):
         """
         Create a stacked pseudo-section plot using a control file.
 
@@ -767,33 +767,33 @@ class GXIP:
         The control file is created using the IPSTAKCON GX. It may then
         be modified by hand as required.
         """
-        self._wrapper.ps_stack(p2._wrapper, p3.encode(), p4.encode(), p5.encode())
+        self._wrapper.ps_stack(db._wrapper, chan.encode(), con_file.encode(), map.encode())
         
 
 
 
 
-    def ps_stack2(self, p2, p3, p4, p5, p6):
+    def ps_stack2(self, db, chan, con_file, type, map):
         """
         As `ps_stack`, but select section spacing option.
         """
-        self._wrapper.ps_stack2(p2._wrapper, p3.encode(), p4.encode(), p5, p6.encode())
+        self._wrapper.ps_stack2(db._wrapper, chan.encode(), con_file.encode(), type, map.encode())
         
 
 
 
 
-    def ps_stack2_dir(self, p2, p3, p4, p5, p6, p7):
+    def ps_stack2_dir(self, db, chan, con_file, type, map, dir):
         """
         Same as `pseudo_plot2`, but with directory specified.
         """
-        self._wrapper.ps_stack2_dir(p2._wrapper, p3.encode(), p4.encode(), p5, p6.encode(), p7.encode())
+        self._wrapper.ps_stack2_dir(db._wrapper, chan.encode(), con_file.encode(), type, map.encode(), dir.encode())
         
 
 
 
 
-    def qc_chan_lst(self, p2, p3):
+    def qc_chan_lst(self, db, lst):
         """
         Fill a list with QC channels.
 
@@ -802,13 +802,13 @@ class GXIP:
         Searches for the following QC channels existing in a database:
         QC, QC_RES.
         """
-        self._wrapper.qc_chan_lst(p2._wrapper, p3._wrapper)
+        self._wrapper.qc_chan_lst(db._wrapper, lst._wrapper)
         
 
 
 
 
-    def recalculate(self, p2):
+    def recalculate(self, db):
         """
         Recalculate derived channel values.
 
@@ -832,13 +832,13 @@ class GXIP:
         (since the X and Y values would have changed), then call
         `recalculate_z`, since "Z" values are based on "Topo" values.
         """
-        self._wrapper.recalculate(p2._wrapper)
+        self._wrapper.recalculate(db._wrapper)
         
 
 
 
 
-    def recalculate_ex(self, p2, p3):
+    def recalculate_ex(self, db, recalculate_xyz):
         """
         Recalculate derived channel values, with option for including/excluding location calculations.
 
@@ -847,13 +847,13 @@ class GXIP:
         See `recalculate`. This version allows you to suppress the recalculation of the
         current X, Y and Z channel values from the station locations.
         """
-        self._wrapper.recalculate_ex(p2._wrapper, p3)
+        self._wrapper.recalculate_ex(db._wrapper, recalculate_xyz)
         
 
 
 
 
-    def recalculate_z(self, p2):
+    def recalculate_z(self, db):
         """
         Recalculate Z channel values.
 
@@ -869,13 +869,13 @@ class GXIP:
 
             `recalculate`
         """
-        self._wrapper.recalculate_z(p2._wrapper)
+        self._wrapper.recalculate_z(db._wrapper)
         
 
 
 
 
-    def set_import_line(self, p2):
+    def set_import_line(self, line):
         """
         Set the line name for some imports.
 
@@ -883,13 +883,13 @@ class GXIP:
 
         For some imports, no line name is derivable from the import itself.
         """
-        self._wrapper.set_import_line(p2.encode())
+        self._wrapper.set_import_line(line.encode())
         
 
 
 
 
-    def set_import_mode(self, p2):
+    def set_import_mode(self, append):
         """
         When importing data to a line, set append/overwrite mode.
 
@@ -901,13 +901,13 @@ class GXIP:
         "Short" data channels will be dummied to the existing
         data length before the new data is appended.
         """
-        self._wrapper.set_import_mode(p2)
+        self._wrapper.set_import_mode(append)
         
 
 
 
 
-    def window(self, p2, p3, p4, p5):
+    def window(self, db, va_chan, chan, windows):
         """
         Window an `GXIP` array channel to produce a normal channel.
 
@@ -920,57 +920,57 @@ class GXIP:
         In frequency domain a simple sum is performed.
         Window List Syntax:
         """
-        self._wrapper.window(p2._wrapper, p3.encode(), p4.encode(), p5.encode())
+        self._wrapper.window(db._wrapper, va_chan.encode(), chan.encode(), windows.encode())
         
 
 
 
     @classmethod
-    def winnow_chan_list(cls, p1):
+    def winnow_chan_list(cls, lst):
         """
         Removes obviously non-pseudo-section type channels from list.
         """
-        gxapi_cy.WrapIP.winnow_chan_list(GXContext._get_tls_geo(), p1._wrapper)
+        gxapi_cy.WrapIP.winnow_chan_list(GXContext._get_tls_geo(), lst._wrapper)
         
 
 
 
     @classmethod
-    def winnow_chan_list2(cls, p1, p2):
+    def winnow_chan_list2(cls, lst, db):
         """
         Same as `winnow_chan_list`, but removes current X,Y,Z.
         """
-        gxapi_cy.WrapIP.winnow_chan_list2(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
+        gxapi_cy.WrapIP.winnow_chan_list2(GXContext._get_tls_geo(), lst._wrapper, db._wrapper)
         
 
 
 
 
-    def is_valid_line(self, p2, p3):
+    def is_valid_line(self, db, line):
         """
         See if a given database line is registered for the `GXIP` system
         """
-        ret_val = self._wrapper.is_valid_line(p2._wrapper, p3.encode())
+        ret_val = self._wrapper.is_valid_line(db._wrapper, line.encode())
         return ret_val
 
 
 
 
-    def line_array_type(self, p2, p3):
+    def line_array_type(self, db, line):
         """
         Return the type of `GXIP` array for the input line. If necessary, first imports the specified line into the `GXIP` object
         """
-        ret_val = self._wrapper.line_array_type(p2._wrapper, p3.encode())
+        ret_val = self._wrapper.line_array_type(db._wrapper, line.encode())
         return ret_val
 
 
 
 
-    def a_spacing(self, p2, p3):
+    def a_spacing(self, db, line):
         """
         Return the A-Spacing for the input line. If necessary, first imports the specified line into the `GXIP` object.
         """
-        ret_val = self._wrapper.a_spacing(p2._wrapper, p3.encode())
+        ret_val = self._wrapper.a_spacing(db._wrapper, line.encode())
         return ret_val
 
 
@@ -986,7 +986,7 @@ class GXIP:
 
 
 
-    def get_electrode_locations_and_mask_values(self, p2, p3, p4, p5, p6, p7, p8):
+    def get_electrode_locations_and_mask_values(self, db, line, p4, p5, p6, p7, p8):
         """
         Get unique electrodes, along with current mask info.
 
@@ -995,13 +995,13 @@ class GXIP:
         The mask values are determined from the first row where a given electrode is found.
         Values returned for all currently selected lines.
         """
-        self._wrapper.get_electrode_locations_and_mask_values(p2._wrapper, p3.encode(), p4, p5._wrapper, p6._wrapper, p7._wrapper, p8._wrapper)
+        self._wrapper.get_electrode_locations_and_mask_values(db._wrapper, line.encode(), p4, p5._wrapper, p6._wrapper, p7._wrapper, p8._wrapper)
         
 
 
 
 
-    def get_electrode_locations_and_mask_values2(self, p2, p3, p4, p5, p6, p7, p8, p9):
+    def get_electrode_locations_and_mask_values2(self, db, line, p4, p5, p6, p7, p8, p9):
         """
         Get unique electrodes, along with current mask info.
 
@@ -1010,13 +1010,13 @@ class GXIP:
         The mask values are determined from the first row where a given electrode is found.
         Values returned for all currently selected lines.
         """
-        self._wrapper.get_electrode_locations_and_mask_values2(p2._wrapper, p3.encode(), p4, p5._wrapper, p6._wrapper, p7._wrapper, p8._wrapper, p9._wrapper)
+        self._wrapper.get_electrode_locations_and_mask_values2(db._wrapper, line.encode(), p4, p5._wrapper, p6._wrapper, p7._wrapper, p8._wrapper, p9._wrapper)
         
 
 
 
 
-    def set_electrode_mask_values(self, p2, p3, p4, p5, p6, p7, p8):
+    def set_electrode_mask_values(self, db, line, p4, p5, p6, p7, p8):
         """
         Set unique electrodes, along with current mask info.
 
@@ -1024,13 +1024,13 @@ class GXIP:
 
         Mask values are set for all included electrode locations, currently selected lines.
         """
-        self._wrapper.set_electrode_mask_values(p2._wrapper, p3.encode(), p4, p5._wrapper, p6._wrapper, p7._wrapper, p8._wrapper)
+        self._wrapper.set_electrode_mask_values(db._wrapper, line.encode(), p4, p5._wrapper, p6._wrapper, p7._wrapper, p8._wrapper)
         
 
 
 
 
-    def set_electrode_mask_values_single_qc_channel(self, p2, p3, p4, p5, p6, p7, p8):
+    def set_electrode_mask_values_single_qc_channel(self, db, line, p4, p5, p6, p7, p8):
         """
         Set unique electrodes, along with current mask info.
 
@@ -1038,13 +1038,13 @@ class GXIP:
 
         Mask values are set for all included electrode locations, currently selected lines.
         """
-        self._wrapper.set_electrode_mask_values_single_qc_channel(p2._wrapper, p3.encode(), p4, p5, p6._wrapper, p7._wrapper, p8._wrapper)
+        self._wrapper.set_electrode_mask_values_single_qc_channel(db._wrapper, line.encode(), p4, p5, p6._wrapper, p7._wrapper, p8._wrapper)
         
 
 
 
     @classmethod
-    def get_qc_channel(cls, p1, p2, p3):
+    def get_qc_channel(cls, db, qc_type, p3):
         """
         Get the QC channel handle, if it exists.
 
@@ -1053,7 +1053,7 @@ class GXIP:
         For `GXIP`, looks for "QC_IP", then "QC_OffTime", then "QC".
         For Resistivity, looks for "QC_Res", then "QC_OnTime" (case insensitive).
         """
-        ret_val, p3.value = gxapi_cy.WrapIP.get_qc_channel(GXContext._get_tls_geo(), p1._wrapper, p2, p3.value.encode())
+        ret_val, p3.value = gxapi_cy.WrapIP.get_qc_channel(GXContext._get_tls_geo(), db._wrapper, qc_type, p3.value.encode())
         return ret_val
 
 

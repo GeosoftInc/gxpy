@@ -58,7 +58,7 @@ class GXSEMPLOT:
 
 
     @classmethod
-    def apply_filter_to_mask(cls, p1, p2, p3, p4, p5, p6):
+    def apply_filter_to_mask(cls, db, filter, mask_ch, mineral_ch, mineral, mode):
         """
         Apply the filter to the mask channel
 
@@ -68,13 +68,13 @@ class GXSEMPLOT:
         the actions of the filter. Those values passing get 1, those
         failing get 0.
         """
-        gxapi_cy.WrapSEMPLOT.apply_filter_to_mask(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6)
+        gxapi_cy.WrapSEMPLOT.apply_filter_to_mask(GXContext._get_tls_geo(), db._wrapper, filter.encode(), mask_ch.encode(), mineral_ch.encode(), mineral.encode(), mode)
         
 
 
 
     @classmethod
-    def convert_dummies(cls, p1, p2):
+    def convert_dummies(cls, db, line):
         """
         Convert dummies to zero values for assay channels.
 
@@ -86,33 +86,33 @@ class GXSEMPLOT:
         "no", then all ASSAY class channels will have dummy values
         converted to 0.0.
         """
-        gxapi_cy.WrapSEMPLOT.convert_dummies(GXContext._get_tls_geo(), p1._wrapper, p2)
+        gxapi_cy.WrapSEMPLOT.convert_dummies(GXContext._get_tls_geo(), db._wrapper, line)
         
 
 
 
     @classmethod
-    def create_groups(cls, p1, p2):
+    def create_groups(cls, db, mask_ch):
         """
         Group data by anomaly or string channel - Interactive.
         """
-        gxapi_cy.WrapSEMPLOT.create_groups(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
+        gxapi_cy.WrapSEMPLOT.create_groups(GXContext._get_tls_geo(), db._wrapper, mask_ch.encode())
         
 
 
 
     @classmethod
-    def default_groups(cls, p1):
+    def default_groups(cls, db):
         """
         Group data by selected anomalies.
         """
-        gxapi_cy.WrapSEMPLOT.default_groups(GXContext._get_tls_geo(), p1._wrapper)
+        gxapi_cy.WrapSEMPLOT.default_groups(GXContext._get_tls_geo(), db._wrapper)
         
 
 
 
     @classmethod
-    def edit_map_plot_parameters(cls, p1, p2, p3, p4, p5):
+    def edit_map_plot_parameters(cls, db, mask_ch, mineral_ch, map, view):
         """
         Alter parameters in an XYplot Triplot map.
 
@@ -123,13 +123,13 @@ class GXSEMPLOT:
         based on the new settings. Note that the selection of data
         in the current `GXDB` is used to replot the map.
         """
-        gxapi_cy.WrapSEMPLOT.edit_map_plot_parameters(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4._wrapper, p5.encode())
+        gxapi_cy.WrapSEMPLOT.edit_map_plot_parameters(GXContext._get_tls_geo(), db._wrapper, mask_ch.encode(), mineral_ch.encode(), map._wrapper, view.encode())
         
 
 
 
     @classmethod
-    def edit_plot_components(cls, p1, p2):
+    def edit_plot_components(cls, db, template):
         """
         Set group names and channels to plot in a template.
 
@@ -142,13 +142,13 @@ class GXSEMPLOT:
         The altered template will be output to the user\\etc directory with
         the file extension "semtemplate".
         """
-        gxapi_cy.WrapSEMPLOT.edit_plot_components(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
+        gxapi_cy.WrapSEMPLOT.edit_plot_components(GXContext._get_tls_geo(), db._wrapper, template.encode())
         
 
 
 
     @classmethod
-    def edit_plot_parameters(cls, p1, p2):
+    def edit_plot_parameters(cls, db, template):
         """
         Set TriPlot parameters in a template.
 
@@ -161,13 +161,13 @@ class GXSEMPLOT:
         The altered template will be output to the user\\etc directory with
         the file extension "semtemplate".
         """
-        gxapi_cy.WrapSEMPLOT.edit_plot_parameters(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
+        gxapi_cy.WrapSEMPLOT.edit_plot_parameters(GXContext._get_tls_geo(), db._wrapper, template.encode())
         
 
 
 
     @classmethod
-    def export_overlay(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+    def export_overlay(cls, overlay, map, mview, group, plot_type, x_stage, x_oxide, y_stage, y_oxide, z_stage, z_oxide, extension):
         """
         Create overlay map and file from a group.
 
@@ -176,33 +176,33 @@ class GXSEMPLOT:
         The group is written to a new map, and an overlay file
         is created which points to this map.
         """
-        gxapi_cy.WrapSEMPLOT.export_overlay(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3._wrapper, p4.encode(), p5, p6.encode(), p7.encode(), p8.encode(), p9.encode(), p10.encode(), p11.encode(), p12)
+        gxapi_cy.WrapSEMPLOT.export_overlay(GXContext._get_tls_geo(), overlay.encode(), map.encode(), mview._wrapper, group.encode(), plot_type, x_stage.encode(), x_oxide.encode(), y_stage.encode(), y_oxide.encode(), z_stage.encode(), z_oxide.encode(), extension)
         
 
 
 
     @classmethod
-    def export_view(cls, p1, p2, p3, p4, p5, p6, p7):
+    def export_view(cls, db, lst, p3, p4, p5, p6, p7):
         """
         Create a "View" database
         """
-        gxapi_cy.WrapSEMPLOT.export_view(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4, p5.encode(), p6.encode(), p7.encode())
+        gxapi_cy.WrapSEMPLOT.export_view(GXContext._get_tls_geo(), db._wrapper, lst._wrapper, p3._wrapper, p4, p5.encode(), p6.encode(), p7.encode())
         
 
 
 
     @classmethod
-    def export_view2(cls, p1, p2, p3, p4, p5, p6, p7, p8):
+    def export_view2(cls, db, lst, p3, p4, p5, p6, p7, p8):
         """
         Create a "View" database, with channel selection
         """
-        gxapi_cy.WrapSEMPLOT.export_view2(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4, p5.encode(), p6.encode(), p7.encode(), p8)
+        gxapi_cy.WrapSEMPLOT.export_view2(GXContext._get_tls_geo(), db._wrapper, lst._wrapper, p3._wrapper, p4, p5.encode(), p6.encode(), p7.encode(), p8)
         
 
 
 
     @classmethod
-    def filter_lst(cls, p1):
+    def filter_lst(cls, lst):
         """
         Fill a `GXLST` with existing `GXSEMPLOT` filters
 
@@ -215,13 +215,13 @@ class GXSEMPLOT:
         as the value.
         The `GXLST` is cleared first.
         """
-        gxapi_cy.WrapSEMPLOT.filter_lst(GXContext._get_tls_geo(), p1._wrapper)
+        gxapi_cy.WrapSEMPLOT.filter_lst(GXContext._get_tls_geo(), lst._wrapper)
         
 
 
 
     @classmethod
-    def filter_mineral_pos_data(cls, p1, p2, p3, p4, p5):
+    def filter_mineral_pos_data(cls, db, mask_ch, mineral_ch, mineral, pos):
         """
         Filter raw data by position and mineral values
 
@@ -232,23 +232,23 @@ class GXSEMPLOT:
         NO DATA IS REMOVED.
         Works on all selected lines of data.
         """
-        gxapi_cy.WrapSEMPLOT.filter_mineral_pos_data(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4.encode(), p5)
+        gxapi_cy.WrapSEMPLOT.filter_mineral_pos_data(GXContext._get_tls_geo(), db._wrapper, mask_ch.encode(), mineral_ch.encode(), mineral.encode(), pos)
         
 
 
 
     @classmethod
-    def get_associated_lst(cls, p1, p2, p3):
+    def get_associated_lst(cls, db, group, lst):
         """
         Get the associated channels for this group in a `GXLST`
         """
-        gxapi_cy.WrapSEMPLOT.get_associated_lst(GXContext._get_tls_geo(), p1._wrapper, p2, p3._wrapper)
+        gxapi_cy.WrapSEMPLOT.get_associated_lst(GXContext._get_tls_geo(), db._wrapper, group, lst._wrapper)
         
 
 
 
     @classmethod
-    def get_current_mineral_lst(cls, p1, p2, p3):
+    def get_current_mineral_lst(cls, db, mineral_ch, lst):
         """
         Retrieve `GXLST` of minerals in selected lines.
 
@@ -257,43 +257,43 @@ class GXSEMPLOT:
         If the mineral channel name is not specified, it returns
         just the "X" (Unknown) item.
         """
-        gxapi_cy.WrapSEMPLOT.get_current_mineral_lst(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3._wrapper)
+        gxapi_cy.WrapSEMPLOT.get_current_mineral_lst(GXContext._get_tls_geo(), db._wrapper, mineral_ch.encode(), lst._wrapper)
         
 
 
 
     @classmethod
-    def get_current_position_lst(cls, p1, p2):
+    def get_current_position_lst(cls, db, lst):
         """
         Retrieve `GXLST` of positions in selected lines.
         """
-        gxapi_cy.WrapSEMPLOT.get_current_position_lst(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
+        gxapi_cy.WrapSEMPLOT.get_current_position_lst(GXContext._get_tls_geo(), db._wrapper, lst._wrapper)
         
 
 
 
     @classmethod
-    def get_full_mineral_lst(cls, p1):
+    def get_full_mineral_lst(cls, lst):
         """
         Retrieve `GXLST` of all minerals in Semplot_Minerals.csv
         """
-        gxapi_cy.WrapSEMPLOT.get_full_mineral_lst(GXContext._get_tls_geo(), p1._wrapper)
+        gxapi_cy.WrapSEMPLOT.get_full_mineral_lst(GXContext._get_tls_geo(), lst._wrapper)
         
 
 
 
     @classmethod
-    def get_full_position_lst(cls, p1):
+    def get_full_position_lst(cls, lst):
         """
         Retrieve `GXLST` of all possible mineral positions.
         """
-        gxapi_cy.WrapSEMPLOT.get_full_position_lst(GXContext._get_tls_geo(), p1._wrapper)
+        gxapi_cy.WrapSEMPLOT.get_full_position_lst(GXContext._get_tls_geo(), lst._wrapper)
         
 
 
 
     @classmethod
-    def get_grouping_lst(cls, p1, p2):
+    def get_grouping_lst(cls, db, lst):
         """
         Get list of items to group symbols by.
 
@@ -305,43 +305,43 @@ class GXSEMPLOT:
         elements. (The list can include the mineral).
         Channel symbol is the `GXLST` value (except for the first item - "Anomaly")
         """
-        gxapi_cy.WrapSEMPLOT.get_grouping_lst(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
+        gxapi_cy.WrapSEMPLOT.get_grouping_lst(GXContext._get_tls_geo(), db._wrapper, lst._wrapper)
         
 
 
 
     @classmethod
-    def create_ascii_template(cls, p1, p2):
+    def create_ascii_template(cls, name, temp):
         """
         : Generate ASCII import template automatically
         """
-        ret_val = gxapi_cy.WrapSEMPLOT.create_ascii_template(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        ret_val = gxapi_cy.WrapSEMPLOT.create_ascii_template(GXContext._get_tls_geo(), name.encode(), temp.encode())
         return ret_val
 
 
 
     @classmethod
-    def create_database_template(cls, p1, p2):
+    def create_database_template(cls, name, temp):
         """
         Generate database import template automatically
         """
-        ret_val = gxapi_cy.WrapSEMPLOT.create_database_template(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        ret_val = gxapi_cy.WrapSEMPLOT.create_database_template(GXContext._get_tls_geo(), name.encode(), temp.encode())
         return ret_val
 
 
 
     @classmethod
-    def edit_filter(cls, p1, p2, p3, p4, p5):
+    def edit_filter(cls, db, filter, mask_ch, mineral_ch, mineral):
         """
         Edit and create filter on channel values
         """
-        ret_val = gxapi_cy.WrapSEMPLOT.edit_filter(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4.encode(), p5.encode())
+        ret_val = gxapi_cy.WrapSEMPLOT.edit_filter(GXContext._get_tls_geo(), db._wrapper, filter.encode(), mask_ch.encode(), mineral_ch.encode(), mineral.encode())
         return ret_val
 
 
 
     @classmethod
-    def get_mineral_channel_name(cls, p1, p2):
+    def get_mineral_channel_name(cls, db, mineral_ch):
         """
         Retrieve the mineral channel name.
 
@@ -352,13 +352,13 @@ class GXSEMPLOT:
         channel found. If still not found, returns a
         blank string.
         """
-        p2.value = gxapi_cy.WrapSEMPLOT.get_mineral_channel_name(GXContext._get_tls_geo(), p1._wrapper, p2.value.encode())
+        mineral_ch.value = gxapi_cy.WrapSEMPLOT.get_mineral_channel_name(GXContext._get_tls_geo(), db._wrapper, mineral_ch.value.encode())
         
 
 
 
     @classmethod
-    def import_ascii_wizard(cls, p1, p2, p3):
+    def import_ascii_wizard(cls, name, temp, anomaly):
         """
         Generate a `GXSEMPLOT` ASCII import template.
 
@@ -367,23 +367,23 @@ class GXSEMPLOT:
         If the anomaly name is not included, then
         the input data must have an "Anom_Name" field.
         """
-        p3.value = gxapi_cy.WrapSEMPLOT.import_ascii_wizard(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.value.encode())
+        anomaly.value = gxapi_cy.WrapSEMPLOT.import_ascii_wizard(GXContext._get_tls_geo(), name.encode(), temp.encode(), anomaly.value.encode())
         
 
 
 
     @classmethod
-    def import_database_odbc(cls, p1, p3):
+    def import_database_odbc(cls, connection, temp):
         """
         Generate a template file for importing ODBC databases.
         """
-        p1.value, p3.value = gxapi_cy.WrapSEMPLOT.import_database_odbc(GXContext._get_tls_geo(), p1.value.encode(), p3.value.encode())
+        connection.value, temp.value = gxapi_cy.WrapSEMPLOT.import_database_odbc(GXContext._get_tls_geo(), connection.value.encode(), temp.value.encode())
         
 
 
 
     @classmethod
-    def import_bin(cls, p1, p2, p3, p4, p5, p6):
+    def import_bin(cls, db, data, template, line, flight, date):
         """
         Import blocked binary or archive ASCII data
 
@@ -407,23 +407,23 @@ class GXSEMPLOT:
 
             `GXDU.lab_template` in du.gxh
         """
-        gxapi_cy.WrapSEMPLOT.import_bin(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4.encode(), p5, p6)
+        gxapi_cy.WrapSEMPLOT.import_bin(GXContext._get_tls_geo(), db._wrapper, data.encode(), template.encode(), line.encode(), flight, date)
         
 
 
 
     @classmethod
-    def import_database_ado(cls, p1, p2):
+    def import_database_ado(cls, name, temp):
         """
         Generate a template file for importing semplot databases.
         """
-        gxapi_cy.WrapSEMPLOT.import_database_ado(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        gxapi_cy.WrapSEMPLOT.import_database_ado(GXContext._get_tls_geo(), name.encode(), temp.encode())
         
 
 
 
     @classmethod
-    def init_group_symbols_used(cls, p1):
+    def init_group_symbols_used(cls, db):
         """
         Initializes memory of symbols used in plotting.
 
@@ -433,23 +433,23 @@ class GXSEMPLOT:
         Plotting one or more legends - symbols are accumulated.
         `plot_symbol_legend` uses this information to create a legend.
         """
-        gxapi_cy.WrapSEMPLOT.init_group_symbols_used(GXContext._get_tls_geo(), p1._wrapper)
+        gxapi_cy.WrapSEMPLOT.init_group_symbols_used(GXContext._get_tls_geo(), db._wrapper)
         
 
 
 
     @classmethod
-    def template_type(cls, p1):
+    def template_type(cls, template):
         """
         Create a new XYPlot or TriPlot template.
         """
-        ret_val = gxapi_cy.WrapSEMPLOT.template_type(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapSEMPLOT.template_type(GXContext._get_tls_geo(), template.encode())
         return ret_val
 
 
 
     @classmethod
-    def view_type(cls, p1, p2):
+    def view_type(cls, map, view):
         """
         Test to see if a view is an XYPlot or Triplot view.
 
@@ -462,13 +462,13 @@ class GXSEMPLOT:
         If the view does not appear to be an XYPlot or a TriPlot view,
         the function returns `SEMPLOT_PLOT_UNKNOWN`.
         """
-        ret_val = gxapi_cy.WrapSEMPLOT.view_type(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
+        ret_val = gxapi_cy.WrapSEMPLOT.view_type(GXContext._get_tls_geo(), map._wrapper, view.encode())
         return ret_val
 
 
 
     @classmethod
-    def mineral_id(cls, p1, p2, p3, p4):
+    def mineral_id(cls, db, resid, min_ch, res_ch):
         """
         Identify minerals from the oxide channels.
 
@@ -482,13 +482,13 @@ class GXSEMPLOT:
         as a percent of the total) is less than or equal to the
         input value.
         """
-        gxapi_cy.WrapSEMPLOT.mineral_id(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4)
+        gxapi_cy.WrapSEMPLOT.mineral_id(GXContext._get_tls_geo(), db._wrapper, resid, min_ch, res_ch)
         
 
 
 
     @classmethod
-    def new_filter(cls, p1, p2):
+    def new_filter(cls, filter, model):
         """
         Create a new selection filter.
 
@@ -496,13 +496,13 @@ class GXSEMPLOT:
 
         Creates a new, empty filter file in the user\\etc directory
         """
-        gxapi_cy.WrapSEMPLOT.new_filter(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        gxapi_cy.WrapSEMPLOT.new_filter(GXContext._get_tls_geo(), filter.encode(), model.encode())
         
 
 
 
     @classmethod
-    def new_template(cls, p1, p2, p3):
+    def new_template(cls, template, type, model):
         """
         Create a new XYPlot or TriPlot template.
 
@@ -519,13 +519,13 @@ class GXSEMPLOT:
         an XYPlot template as a model for a TriPlot, and vica-verca, with
         few complications.  (e.g. needing to define a "Z" component)
         """
-        gxapi_cy.WrapSEMPLOT.new_template(GXContext._get_tls_geo(), p1.encode(), p2, p3.encode())
+        gxapi_cy.WrapSEMPLOT.new_template(GXContext._get_tls_geo(), template.encode(), type, model.encode())
         
 
 
 
     @classmethod
-    def overlay_lst(cls, p1, p2, p3):
+    def overlay_lst(cls, lst, extension, type):
         """
         Fill a list with the available plot overlay names
 
@@ -534,13 +534,13 @@ class GXSEMPLOT:
         Looks first in user\\etc, then in \\etc.
         See `SEMPLOT_EXT` definitions above for which files to look for.
         """
-        gxapi_cy.WrapSEMPLOT.overlay_lst(GXContext._get_tls_geo(), p1._wrapper, p2, p3)
+        gxapi_cy.WrapSEMPLOT.overlay_lst(GXContext._get_tls_geo(), lst._wrapper, extension, type)
         
 
 
 
     @classmethod
-    def plot(cls, p1, p2, p3, p4, p5, p6, p7):
+    def plot(cls, db, template, mask_ch, mineral_ch, map, map_mode, plot_symb):
         """
         Plot an XYPlot or TriPlot based on the template.
 
@@ -557,13 +557,13 @@ class GXSEMPLOT:
         Call `init_group_symbols_used` prior to this function
         to reset recording of the symbols used in plotting (for legends etc).
         """
-        gxapi_cy.WrapSEMPLOT.plot(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6, p7)
+        gxapi_cy.WrapSEMPLOT.plot(GXContext._get_tls_geo(), db._wrapper, template.encode(), mask_ch.encode(), mineral_ch.encode(), map.encode(), map_mode, plot_symb)
         
 
 
 
     @classmethod
-    def plot_symbol_legend(cls, p1, p2, p3, p4, p5, p6):
+    def plot_symbol_legend(cls, db, mview, x_min, y_min, y_max, symb_size):
         """
         Plot a symbol legend in a view.
 
@@ -576,13 +576,13 @@ class GXSEMPLOT:
         recovered by this function to make the legend at the
         specified location.
         """
-        gxapi_cy.WrapSEMPLOT.plot_symbol_legend(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3, p4, p5, p6)
+        gxapi_cy.WrapSEMPLOT.plot_symbol_legend(GXContext._get_tls_geo(), db._wrapper, mview._wrapper, x_min, y_min, y_max, symb_size)
         
 
 
 
     @classmethod
-    def prop_symb(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15):
+    def prop_symb(cls, db, map, view, chan, mask_ch, mineral_ch, log, area, base, scale, symb, wt, line_col, fill_col, legend):
         """
         Plot a proportional symbol plot.
 
@@ -590,13 +590,13 @@ class GXSEMPLOT:
 
         Replots map using proportional symbols
         """
-        gxapi_cy.WrapSEMPLOT.prop_symb(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3.encode(), p4.encode(), p5.encode(), p6.encode(), p7, p8, p9, p10, p11, p12, p13, p14, p15)
+        gxapi_cy.WrapSEMPLOT.prop_symb(GXContext._get_tls_geo(), db._wrapper, map._wrapper, view.encode(), chan.encode(), mask_ch.encode(), mineral_ch.encode(), log, area, base, scale, symb, wt, line_col, fill_col, legend)
         
 
 
 
     @classmethod
-    def replot(cls, p1, p2, p3, p4, p5):
+    def replot(cls, db, mask_ch, mineral_ch, map, view):
         """
         Replot an existing `GXSEMPLOT` plot based on current data.
 
@@ -611,13 +611,13 @@ class GXSEMPLOT:
         Call `init_group_symbols_used` prior to this function
         to reset recording of the symbols used in plotting (for legends etc).
         """
-        gxapi_cy.WrapSEMPLOT.replot(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4._wrapper, p5.encode())
+        gxapi_cy.WrapSEMPLOT.replot(GXContext._get_tls_geo(), db._wrapper, mask_ch.encode(), mineral_ch.encode(), map._wrapper, view.encode())
         
 
 
 
     @classmethod
-    def re_plot_symbol_legend(cls, p1, p2):
+    def re_plot_symbol_legend(cls, db, mview):
         """
         Replot a symbol legend in a view.
 
@@ -627,23 +627,23 @@ class GXSEMPLOT:
         created legend, and if it finds that info, replots the Legend,
         using the current data, group key etc.
         """
-        gxapi_cy.WrapSEMPLOT.re_plot_symbol_legend(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
+        gxapi_cy.WrapSEMPLOT.re_plot_symbol_legend(GXContext._get_tls_geo(), db._wrapper, mview._wrapper)
         
 
 
 
     @classmethod
-    def reset_groups(cls, p1, p2):
+    def reset_groups(cls, db, mask_ch):
         """
         Re-group data using current settings.
         """
-        gxapi_cy.WrapSEMPLOT.reset_groups(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
+        gxapi_cy.WrapSEMPLOT.reset_groups(GXContext._get_tls_geo(), db._wrapper, mask_ch.encode())
         
 
 
 
     @classmethod
-    def reset_used_channel(cls, p1):
+    def reset_used_channel(cls, db):
         """
         Set the "Plotted" channel to dummies
 
@@ -657,23 +657,23 @@ class GXSEMPLOT:
         If the "Plotted" channel does not exist, it is created, associated,
         loaded, and filled with dummies.
         """
-        gxapi_cy.WrapSEMPLOT.reset_used_channel(GXContext._get_tls_geo(), p1._wrapper)
+        gxapi_cy.WrapSEMPLOT.reset_used_channel(GXContext._get_tls_geo(), db._wrapper)
         
 
 
 
     @classmethod
-    def select_poly(cls, p1, p2, p3, p4, p5, p6):
+    def select_poly(cls, db, mview, mask_ch, mineral_ch, pply, mode):
         """
         Select data from a polygonal area on a map.
         """
-        gxapi_cy.WrapSEMPLOT.select_poly(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3.encode(), p4.encode(), p5._wrapper, p6)
+        gxapi_cy.WrapSEMPLOT.select_poly(GXContext._get_tls_geo(), db._wrapper, mview._wrapper, mask_ch.encode(), mineral_ch.encode(), pply._wrapper, mode)
         
 
 
 
     @classmethod
-    def set_channel_order(cls, p1, p2):
+    def set_channel_order(cls, db, lst):
         """
         Sets preset channel order.
 
@@ -696,13 +696,13 @@ class GXSEMPLOT:
         
         Channel order is set for all "RawData" groups.
         """
-        gxapi_cy.WrapSEMPLOT.set_channel_order(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
+        gxapi_cy.WrapSEMPLOT.set_channel_order(GXContext._get_tls_geo(), db._wrapper, lst._wrapper)
         
 
 
 
     @classmethod
-    def set_channel_units(cls, p1):
+    def set_channel_units(cls, db):
         """
         Set units for oxides (%) and elements (ppm)
 
@@ -713,43 +713,43 @@ class GXSEMPLOT:
         Trace elements are identified from the periodic table of the
         elements, except for "Y", if it is the current Y channel.
         """
-        gxapi_cy.WrapSEMPLOT.set_channel_units(GXContext._get_tls_geo(), p1._wrapper)
+        gxapi_cy.WrapSEMPLOT.set_channel_units(GXContext._get_tls_geo(), db._wrapper)
         
 
 
 
     @classmethod
-    def set_itr(cls, p1, p2, p3):
+    def set_itr(cls, db, ch, itr):
         """
         Put `GXITR` into a channel.
         """
-        gxapi_cy.WrapSEMPLOT.set_itr(GXContext._get_tls_geo(), p1._wrapper, p2, p3._wrapper)
+        gxapi_cy.WrapSEMPLOT.set_itr(GXContext._get_tls_geo(), db._wrapper, ch, itr._wrapper)
         
 
 
 
     @classmethod
-    def set_mask(cls, p1, p2, p3, p4, p5, p6):
+    def set_mask(cls, db, mask_ch, mineral_ch, p4, p5, p6):
         """
         Set the mask channel ON or OFF.
         """
-        gxapi_cy.WrapSEMPLOT.set_mask(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4.encode(), p5, p6)
+        gxapi_cy.WrapSEMPLOT.set_mask(GXContext._get_tls_geo(), db._wrapper, mask_ch.encode(), mineral_ch.encode(), p4.encode(), p5, p6)
         
 
 
 
     @classmethod
-    def sort_data(cls, p1, p2, p3):
+    def sort_data(cls, db, group, anomaly):
         """
         Sort data by Sample No, Grain and Position
         """
-        gxapi_cy.WrapSEMPLOT.sort_data(GXContext._get_tls_geo(), p1._wrapper, p2, p3)
+        gxapi_cy.WrapSEMPLOT.sort_data(GXContext._get_tls_geo(), db._wrapper, group, anomaly)
         
 
 
 
     @classmethod
-    def template_lst(cls, p1, p2):
+    def template_lst(cls, lst, type):
         """
         Fill a list with the available plot template names
 
@@ -760,7 +760,7 @@ class GXSEMPLOT:
         (New-style templates with the "semtemplate" extentsion have the
         plot type "triplot" or "xyplot" inside them.)
         """
-        gxapi_cy.WrapSEMPLOT.template_lst(GXContext._get_tls_geo(), p1._wrapper, p2)
+        gxapi_cy.WrapSEMPLOT.template_lst(GXContext._get_tls_geo(), lst._wrapper, type)
         
 
 
@@ -776,7 +776,7 @@ class GXSEMPLOT:
 
 
     @classmethod
-    def total_oxides(cls, p1, p2):
+    def total_oxides(cls, db, mineral_ch):
         """
         Calculate the total oxides channel.
 
@@ -787,7 +787,7 @@ class GXSEMPLOT:
         require a mineral for their identification. If none is provided,
         mineral "X" (unknown) is assumed.
         """
-        gxapi_cy.WrapSEMPLOT.total_oxides(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
+        gxapi_cy.WrapSEMPLOT.total_oxides(GXContext._get_tls_geo(), db._wrapper, mineral_ch.encode())
         
 
 

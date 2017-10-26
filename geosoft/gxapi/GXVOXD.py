@@ -58,7 +58,7 @@ class GXVOXD:
 
 
     @classmethod
-    def create(cls, p1, p2, p3, p4):
+    def create(cls, vox, table, zone, contour):
         """
         Create a new `GXVOXD`
 
@@ -67,13 +67,13 @@ class GXVOXD:
         Fails if the `GXVOX` object is NOT thematic.
         (See the `create_thematic` function.)
         """
-        ret_val = gxapi_cy.WrapVOXD.create(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3, p4)
+        ret_val = gxapi_cy.WrapVOXD.create(GXContext._get_tls_geo(), vox._wrapper, table.encode(), zone, contour)
         return GXVOXD(ret_val)
 
 
 
     @classmethod
-    def create_itr(cls, p1, p2):
+    def create_itr(cls, vox, itr):
         """
         Create a new `GXVOXD` with our own `GXITR`
 
@@ -82,13 +82,13 @@ class GXVOXD:
         Fails if the `GXVOX` object is thematic.
         (See the `create_thematic` function.)
         """
-        ret_val = gxapi_cy.WrapVOXD.create_itr(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
+        ret_val = gxapi_cy.WrapVOXD.create_itr(GXContext._get_tls_geo(), vox._wrapper, itr._wrapper)
         return GXVOXD(ret_val)
 
 
 
     @classmethod
-    def create_thematic(cls, p1):
+    def create_thematic(cls, vox):
         """
         Create a new `GXVOXD` for a thematic `GXVOX` object.
 
@@ -105,7 +105,7 @@ class GXVOXD:
         
         Fails if the `GXVOX` object is NOT thematic.
         """
-        ret_val = gxapi_cy.WrapVOXD.create_thematic(GXContext._get_tls_geo(), p1._wrapper)
+        ret_val = gxapi_cy.WrapVOXD.create_thematic(GXContext._get_tls_geo(), vox._wrapper)
         return GXVOXD(ret_val)
 
 
@@ -129,21 +129,21 @@ class GXVOXD:
 
 
 
-    def get_thematic_info(self, p2, p3):
+    def get_thematic_info(self, tpat, vv):
         """
         Get a copy of a thematic voxel's `GXTPAT` object and a `GXVV` containing the current display selections.
         """
-        self._wrapper.get_thematic_info(p2._wrapper, p3._wrapper)
+        self._wrapper.get_thematic_info(tpat._wrapper, vv._wrapper)
         
 
 
 
 
-    def set_thematic_selection(self, p2):
+    def set_thematic_selection(self, vv):
         """
         Get a copy of a thematic voxel's `GXTPAT` object and a `GXVV` containing the current display selections.
         """
-        self._wrapper.set_thematic_selection(p2._wrapper)
+        self._wrapper.set_thematic_selection(vv._wrapper)
         
 
 
@@ -151,71 +151,71 @@ class GXVOXD:
 
 
 
-    def get_draw_controls(self, p2, p3, p4, p5, p6, p7, p8, p9):
+    def get_draw_controls(self, box, trans, min_x, min_y, min_z, max_x, max_y, max_z):
         """
         Get the draw controls
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value = self._wrapper.get_draw_controls(p2.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value)
+        box.value, trans.value, min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._wrapper.get_draw_controls(box.value, trans.value, min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         
 
 
 
 
-    def get_name(self, p2):
+    def get_name(self, name):
         """
         Gets the file name of the voxel.
         """
-        p2.value = self._wrapper.get_name(p2.value.encode())
+        name.value = self._wrapper.get_name(name.value.encode())
         
 
 
 
 
-    def get_itr(self, p2):
+    def get_itr(self, itr):
         """
         Get the `GXITR` of the `GXVOXD`
         """
-        self._wrapper.get_itr(p2._wrapper)
+        self._wrapper.get_itr(itr._wrapper)
         
 
 
 
 
-    def get_shell_controls(self, p2, p3):
+    def get_shell_controls(self, min, max):
         """
         Get the shell controls
         """
-        p2.value, p3.value = self._wrapper.get_shell_controls(p2.value, p3.value)
+        min.value, max.value = self._wrapper.get_shell_controls(min.value, max.value)
         
 
 
 
 
-    def set_draw_controls(self, p2, p3, p4, p5, p6, p7, p8, p9):
+    def set_draw_controls(self, box, trans, min_x, min_y, min_z, max_x, max_y, max_z):
         """
         Set the draw controls
         """
-        self._wrapper.set_draw_controls(p2, p3, p4, p5, p6, p7, p8, p9)
+        self._wrapper.set_draw_controls(box, trans, min_x, min_y, min_z, max_x, max_y, max_z)
         
 
 
 
 
-    def set_itr(self, p2):
+    def set_itr(self, itr):
         """
         Set the `GXITR` of the `GXVOXD`
         """
-        self._wrapper.set_itr(p2._wrapper)
+        self._wrapper.set_itr(itr._wrapper)
         
 
 
 
 
-    def set_shell_controls(self, p2, p3):
+    def set_shell_controls(self, min, max):
         """
         Set the shell controls
         """
-        self._wrapper.set_shell_controls(p2, p3)
+        self._wrapper.set_shell_controls(min, max)
         
 
 

@@ -90,7 +90,7 @@ class GXTPAT:
 
 
 
-    def add_color(self, p2, p3, p4, p5):
+    def add_color(self, code, label, descr, color):
         """
         Add a new color to the list
 
@@ -98,7 +98,7 @@ class GXTPAT:
 
         The new code must be unique; not in the existing list.
         """
-        self._wrapper.add_color(p2.encode(), p3.encode(), p4.encode(), p5)
+        self._wrapper.add_color(code.encode(), label.encode(), descr.encode(), color)
         
 
 
@@ -116,17 +116,17 @@ class GXTPAT:
 
 
 
-    def code(self, p2):
+    def code(self, code):
         """
         Find the index of a given thematic pattern
         """
-        ret_val = self._wrapper.code(p2.encode())
+        ret_val = self._wrapper.code(code.encode())
         return ret_val
 
 
 
 
-    def get_solid_pattern(self, p2, p3, p5, p7, p9):
+    def get_solid_pattern(self, index, code, label, descr, color):
         """
         Get solid pattern info from the `GXTPAT`.
 
@@ -135,7 +135,7 @@ class GXTPAT:
         Returns the solid color, pattern foreground color, or symbol
         color, along with the code, label and description.
         """
-        p3.value, p5.value, p7.value, p9.value = self._wrapper.get_solid_pattern(p2, p3.value.encode(), p5.value.encode(), p7.value.encode(), p9.value)
+        code.value, label.value, descr.value, color.value = self._wrapper.get_solid_pattern(index, code.value.encode(), label.value.encode(), descr.value.encode(), color.value)
         
 
 
@@ -151,7 +151,7 @@ class GXTPAT:
 
 
 
-    def load_csv(self, p2):
+    def load_csv(self, file):
         """
         Load thematic patterns from a CSV file
 
@@ -183,7 +183,7 @@ class GXTPAT:
         SYMBROT         Symbol rotation
         SYMBSCL         Additional scaling factor applied to the current size
         """
-        self._wrapper.load_csv(p2.encode())
+        self._wrapper.load_csv(file.encode())
         
 
 

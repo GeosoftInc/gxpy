@@ -59,7 +59,7 @@ class GXEDOC:
 
 
     @classmethod
-    def create_new_gms_3d(cls, p1, p2, p3, p4):
+    def create_new_gms_3d(cls, name, nx, ny, type):
         """
         Creates a new `GXGMSYS` 3D Model into the workspace, flags as new.
 
@@ -70,7 +70,7 @@ class GXEDOC:
         not to save changes, the document is deleted thus keeping the
         project folders clean.
         """
-        ret_val = gxapi_cy.WrapEDOC.create_new_gms_3d(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4)
+        ret_val = gxapi_cy.WrapEDOC.create_new_gms_3d(GXContext._get_tls_geo(), name.encode(), nx, ny, type)
         return GXEDOC(ret_val)
 
 
@@ -80,17 +80,17 @@ class GXEDOC:
 
 
     @classmethod
-    def current(cls, p1):
+    def current(cls, type):
         """
         This method returns the Current Edited Document.
         """
-        ret_val = gxapi_cy.WrapEDOC.current(GXContext._get_tls_geo(), p1)
+        ret_val = gxapi_cy.WrapEDOC.current(GXContext._get_tls_geo(), type)
         return GXEDOC(ret_val)
 
 
 
     @classmethod
-    def current_no_activate(cls, p1):
+    def current_no_activate(cls, type):
         """
         This method returns the Current Edited Document.
 
@@ -99,17 +99,17 @@ class GXEDOC:
         This function acts just like `current` except that the document is not activated (brought to foreground) and no
         				guarantee is given about which document is currently active.
         """
-        ret_val = gxapi_cy.WrapEDOC.current_no_activate(GXContext._get_tls_geo(), p1)
+        ret_val = gxapi_cy.WrapEDOC.current_no_activate(GXContext._get_tls_geo(), type)
         return GXEDOC(ret_val)
 
 
 
     @classmethod
-    def current_if_exists(cls, p1):
+    def current_if_exists(cls, type):
         """
         This method returns the Current Edited Document.
         """
-        ret_val = gxapi_cy.WrapEDOC.current_if_exists(GXContext._get_tls_geo(), p1)
+        ret_val = gxapi_cy.WrapEDOC.current_if_exists(GXContext._get_tls_geo(), type)
         return GXEDOC(ret_val)
 
 
@@ -117,21 +117,21 @@ class GXEDOC:
 
 
     @classmethod
-    def get_documents_lst(cls, p1, p2, p3):
+    def get_documents_lst(cls, lst, path, type):
         """
         Load the file names of open documents into a `GXLST`.
         """
-        ret_val = gxapi_cy.WrapEDOC.get_documents_lst(GXContext._get_tls_geo(), p1._wrapper, p2, p3)
+        ret_val = gxapi_cy.WrapEDOC.get_documents_lst(GXContext._get_tls_geo(), lst._wrapper, path, type)
         return ret_val
 
 
 
 
-    def get_name(self, p2):
+    def get_name(self, name):
         """
         Get the name of the document object of this `GXEDOC`.
         """
-        p2.value = self._wrapper.get_name(p2.value.encode())
+        name.value = self._wrapper.get_name(name.value.encode())
         
 
 
@@ -147,41 +147,41 @@ class GXEDOC:
 
 
     @classmethod
-    def have_current(cls, p1):
+    def have_current(cls, type):
         """
         Returns true if a document is loaded
         """
-        ret_val = gxapi_cy.WrapEDOC.have_current(GXContext._get_tls_geo(), p1)
+        ret_val = gxapi_cy.WrapEDOC.have_current(GXContext._get_tls_geo(), type)
         return ret_val
 
 
 
     @classmethod
-    def loaded(cls, p1, p2):
+    def loaded(cls, name, type):
         """
         Returns 1 if a document is loaded .
         """
-        ret_val = gxapi_cy.WrapEDOC.loaded(GXContext._get_tls_geo(), p1.encode(), p2)
+        ret_val = gxapi_cy.WrapEDOC.loaded(GXContext._get_tls_geo(), name.encode(), type)
         return ret_val
 
 
 
 
-    def get_window_position(self, p2, p3, p4, p5, p6, p7):
+    def get_window_position(self, left, top, right, bottom, state, is_floating):
         """
         Get the map window's position and dock state
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value, p7.value = self._wrapper.get_window_position(p2.value, p3.value, p4.value, p5.value, p6.value, p7.value)
+        left.value, top.value, right.value, bottom.value, state.value, is_floating.value = self._wrapper.get_window_position(left.value, top.value, right.value, bottom.value, state.value, is_floating.value)
         
 
 
 
 
-    def set_window_position(self, p2, p3, p4, p5, p6, p7):
+    def set_window_position(self, left, top, right, bottom, state, is_floating):
         """
         Get the map window's position and dock state
         """
-        self._wrapper.set_window_position(p2, p3, p4, p5, p6, p7)
+        self._wrapper.set_window_position(left, top, right, bottom, state, is_floating)
         
 
 
@@ -197,7 +197,7 @@ class GXEDOC:
 
 
     @classmethod
-    def load(cls, p1, p2):
+    def load(cls, name, type):
         """
         Loads a list of documents into the workspace
 
@@ -209,13 +209,13 @@ class GXEDOC:
         All other files in the list are assumed to be in the same
         directory as the first file.
         """
-        ret_val = gxapi_cy.WrapEDOC.load(GXContext._get_tls_geo(), p1.encode(), p2)
+        ret_val = gxapi_cy.WrapEDOC.load(GXContext._get_tls_geo(), name.encode(), type)
         return GXEDOC(ret_val)
 
 
 
     @classmethod
-    def load_no_activate(cls, p1, p2):
+    def load_no_activate(cls, name, type):
         """
         Loads a list of documents into the workspace
 
@@ -224,7 +224,7 @@ class GXEDOC:
         This function acts just like `load` except that the document(s) is not activated (brought to foreground) and no
         					guarantee is given about which document is currently active.
         """
-        ret_val = gxapi_cy.WrapEDOC.load_no_activate(GXContext._get_tls_geo(), p1.encode(), p2)
+        ret_val = gxapi_cy.WrapEDOC.load_no_activate(GXContext._get_tls_geo(), name.encode(), type)
         return GXEDOC(ret_val)
 
 
@@ -240,21 +240,21 @@ class GXEDOC:
 
 
 
-    def set_window_state(self, p2):
+    def set_window_state(self, state):
         """
         Changes the state of the document window
         """
-        self._wrapper.set_window_state(p2)
+        self._wrapper.set_window_state(state)
         
 
 
 
     @classmethod
-    def sync(cls, p1, p2):
+    def sync(cls, file, type):
         """
         Syncronize the Metadata of a document that is not currently open
         """
-        gxapi_cy.WrapEDOC.sync(GXContext._get_tls_geo(), p1.encode(), p2)
+        gxapi_cy.WrapEDOC.sync(GXContext._get_tls_geo(), file.encode(), type)
         
 
 
@@ -270,7 +270,7 @@ class GXEDOC:
 
 
     @classmethod
-    def un_load(cls, p1, p2):
+    def un_load(cls, name, type):
         """
         Unloads an edited document.
 
@@ -279,23 +279,23 @@ class GXEDOC:
         If the document is not loaded, nothing happens.
         Same as `un_load_verify` with FALSE to prompt save.
         """
-        gxapi_cy.WrapEDOC.un_load(GXContext._get_tls_geo(), p1.encode(), p2)
+        gxapi_cy.WrapEDOC.un_load(GXContext._get_tls_geo(), name.encode(), type)
         
 
 
 
     @classmethod
-    def un_load_all(cls, p1):
+    def un_load_all(cls, type):
         """
         Unloads all opened documents
         """
-        gxapi_cy.WrapEDOC.un_load_all(GXContext._get_tls_geo(), p1)
+        gxapi_cy.WrapEDOC.un_load_all(GXContext._get_tls_geo(), type)
         
 
 
 
     @classmethod
-    def un_load_discard(cls, p1, p2):
+    def un_load_discard(cls, name, type):
         """
         Unloads a document in the workspace, discards changes.
 
@@ -303,13 +303,13 @@ class GXEDOC:
 
         If the document is not loaded, nothing happens.
         """
-        gxapi_cy.WrapEDOC.un_load_discard(GXContext._get_tls_geo(), p1.encode(), p2)
+        gxapi_cy.WrapEDOC.un_load_discard(GXContext._get_tls_geo(), name.encode(), type)
         
 
 
 
     @classmethod
-    def un_load_verify(cls, p1, p2, p3):
+    def un_load_verify(cls, name, verify, type):
         """
         Unloads an edited document, optional prompt to save.
 
@@ -319,7 +319,7 @@ class GXEDOC:
         The user can be prompted to save before unloading.
         If `EDOC_UNLOAD_NO_PROMPT`, data is always saved.
         """
-        gxapi_cy.WrapEDOC.un_load_verify(GXContext._get_tls_geo(), p1.encode(), p2, p3)
+        gxapi_cy.WrapEDOC.un_load_verify(GXContext._get_tls_geo(), name.encode(), verify, type)
         
 
 

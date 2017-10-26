@@ -60,7 +60,7 @@ class GXSURFACEITEM:
 
 
     @classmethod
-    def create(cls, p1, p2):
+    def create(cls, type, name):
         """
         Create a `GXSURFACEITEM`
 
@@ -68,7 +68,7 @@ class GXSURFACEITEM:
 
             `set_properties` and `set_default_render_properties`
         """
-        ret_val = gxapi_cy.WrapSURFACEITEM.create(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        ret_val = gxapi_cy.WrapSURFACEITEM.create(GXContext._get_tls_geo(), type.encode(), name.encode())
         return GXSURFACEITEM(ret_val)
 
 
@@ -76,7 +76,7 @@ class GXSURFACEITEM:
 
 
 
-    def get_guid(self, p2):
+    def get_guid(self, guid):
         """
         Gets the GUID of the surface item.
 
@@ -84,13 +84,13 @@ class GXSURFACEITEM:
 
         The value returned by this call will not be valid for newly created items until after a call to `GXSURFACE.add_surface_item`.
         """
-        p2.value = self._wrapper.get_guid(p2.value.encode())
+        guid.value = self._wrapper.get_guid(guid.value.encode())
         
 
 
 
 
-    def set_properties(self, p2, p3, p4, p5, p6, p7, p8, p9):
+    def set_properties(self, type, name, source_guid, source_name, source_measure, secondary_source_guid, secondary_source_name, secondary_source_measure):
         """
         Sets the properties of the surface item.
 
@@ -98,13 +98,13 @@ class GXSURFACEITEM:
 
             `GXSYS.generate_guid`
         """
-        self._wrapper.set_properties(p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6, p7.encode(), p8.encode(), p9)
+        self._wrapper.set_properties(type.encode(), name.encode(), source_guid.encode(), source_name.encode(), source_measure, secondary_source_guid.encode(), secondary_source_name.encode(), secondary_source_measure)
         
 
 
 
 
-    def set_properties_ex(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+    def set_properties_ex(self, type, name, source_guid, source_name, source_measure, secondary_source_guid, secondary_source_name, secondary_source_option, secondary_source_measure, secondary_source_measure2):
         """
         Sets the properties of the surface item (includes new properties introduced in 8.5).
 
@@ -112,33 +112,33 @@ class GXSURFACEITEM:
 
             `GXSYS.generate_guid`
         """
-        self._wrapper.set_properties_ex(p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6, p7.encode(), p8.encode(), p9, p10, p11)
+        self._wrapper.set_properties_ex(type.encode(), name.encode(), source_guid.encode(), source_name.encode(), source_measure, secondary_source_guid.encode(), secondary_source_name.encode(), secondary_source_option, secondary_source_measure, secondary_source_measure2)
         
 
 
 
 
-    def get_properties(self, p2, p4, p6, p8, p10, p11, p13, p15):
+    def get_properties(self, type, name, source_guid, source_name, source_measure, secondary_source_guid, secondary_source_name, secondary_source_measure):
         """
         Gets the properties of the surface item.
         """
-        p2.value, p4.value, p6.value, p8.value, p10.value, p11.value, p13.value, p15.value = self._wrapper.get_properties(p2.value.encode(), p4.value.encode(), p6.value.encode(), p8.value.encode(), p10.value, p11.value.encode(), p13.value.encode(), p15.value)
+        type.value, name.value, source_guid.value, source_name.value, source_measure.value, secondary_source_guid.value, secondary_source_name.value, secondary_source_measure.value = self._wrapper.get_properties(type.value.encode(), name.value.encode(), source_guid.value.encode(), source_name.value.encode(), source_measure.value, secondary_source_guid.value.encode(), secondary_source_name.value.encode(), secondary_source_measure.value)
         
 
 
 
 
-    def get_properties_ex(self, p2, p4, p6, p8, p10, p11, p13, p15, p16, p17):
+    def get_properties_ex(self, type, name, source_guid, source_name, source_measure, secondary_source_guid, secondary_source_name, secondary_source_option, secondary_source_measure, secondary_source_measure2):
         """
         Gets the properties of the surface item  (includes new properties introduced in 8.5).
         """
-        p2.value, p4.value, p6.value, p8.value, p10.value, p11.value, p13.value, p15.value, p16.value, p17.value = self._wrapper.get_properties_ex(p2.value.encode(), p4.value.encode(), p6.value.encode(), p8.value.encode(), p10.value, p11.value.encode(), p13.value.encode(), p15.value, p16.value, p17.value)
+        type.value, name.value, source_guid.value, source_name.value, source_measure.value, secondary_source_guid.value, secondary_source_name.value, secondary_source_option.value, secondary_source_measure.value, secondary_source_measure2.value = self._wrapper.get_properties_ex(type.value.encode(), name.value.encode(), source_guid.value.encode(), source_name.value.encode(), source_measure.value, secondary_source_guid.value.encode(), secondary_source_name.value.encode(), secondary_source_option.value, secondary_source_measure.value, secondary_source_measure2.value)
         
 
 
 
 
-    def set_default_render_properties(self, p2, p3, p4):
+    def set_default_render_properties(self, color, transparency, render_mode):
         """
         Sets default render properties of the surface item.
 
@@ -146,13 +146,13 @@ class GXSURFACEITEM:
 
             `GXMVIEW.color`
         """
-        self._wrapper.set_default_render_properties(p2, p3, p4)
+        self._wrapper.set_default_render_properties(color, transparency, render_mode)
         
 
 
 
 
-    def get_default_render_properties(self, p2, p3, p4):
+    def get_default_render_properties(self, color, transparency, render_mode):
         """
         Gets default render properties of the surface item.
 
@@ -160,7 +160,7 @@ class GXSURFACEITEM:
 
             `GXMVIEW.color`
         """
-        p2.value, p3.value, p4.value = self._wrapper.get_default_render_properties(p2.value, p3.value, p4.value)
+        color.value, transparency.value, render_mode.value = self._wrapper.get_default_render_properties(color.value, transparency.value, render_mode.value)
         
 
 
@@ -176,71 +176,71 @@ class GXSURFACEITEM:
 
 
 
-    def add_mesh(self, p2, p3, p4, p5, p6, p7):
+    def add_mesh(self, vert_v_vx, vert_v_vy, vert_v_vz, tri_vv_pt1, tri_vv_pt2, tri_vv_pt3):
         """
         Adds a triangular polyhedral mesh component to the surface item.
         """
-        ret_val = self._wrapper.add_mesh(p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper, p7._wrapper)
+        ret_val = self._wrapper.add_mesh(vert_v_vx._wrapper, vert_v_vy._wrapper, vert_v_vz._wrapper, tri_vv_pt1._wrapper, tri_vv_pt2._wrapper, tri_vv_pt3._wrapper)
         return ret_val
 
 
 
 
-    def get_mesh(self, p2, p3, p4, p5, p6, p7, p8):
+    def get_mesh(self, index, vert_v_vx, vert_v_vy, vert_v_vz, tri_vv_pt1, tri_vv_pt2, tri_vv_pt3):
         """
         Gets a triangular polyhedral mesh of a component in the surface item.
         """
-        self._wrapper.get_mesh(p2, p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper, p7._wrapper, p8._wrapper)
+        self._wrapper.get_mesh(index, vert_v_vx._wrapper, vert_v_vy._wrapper, vert_v_vz._wrapper, tri_vv_pt1._wrapper, tri_vv_pt2._wrapper, tri_vv_pt3._wrapper)
         
 
 
 
 
-    def get_extents(self, p2, p3, p4, p5, p6, p7):
+    def get_extents(self, min_x, min_y, min_z, max_x, max_y, max_z):
         """
         Get the spatial range of the the surface item.
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value, p7.value = self._wrapper.get_extents(p2.value, p3.value, p4.value, p5.value, p6.value, p7.value)
+        min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._wrapper.get_extents(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         
 
 
 
 
-    def get_mesh_info(self, p2, p3, p4, p5, p6, p7):
+    def get_mesh_info(self, index, closed, n_inner_comps, area, volume, volume_confidence_interval):
         """
         Gets information about a triangular polyhedral mesh component in the surface item.
         """
-        p3.value, p4.value, p5.value, p6.value, p7.value = self._wrapper.get_mesh_info(p2, p3.value, p4.value, p5.value, p6.value, p7.value)
+        closed.value, n_inner_comps.value, area.value, volume.value, volume_confidence_interval.value = self._wrapper.get_mesh_info(index, closed.value, n_inner_comps.value, area.value, volume.value, volume_confidence_interval.value)
         
 
 
 
 
-    def get_info(self, p2, p3, p4, p5):
+    def get_info(self, closed, area, volume, volume_confidence_interval):
         """
         Gets information about the surface item.
         """
-        p2.value, p3.value, p4.value, p5.value = self._wrapper.get_info(p2.value, p3.value, p4.value, p5.value)
+        closed.value, area.value, volume.value, volume_confidence_interval.value = self._wrapper.get_info(closed.value, area.value, volume.value, volume_confidence_interval.value)
         
 
 
 
 
-    def get_geometry_info(self, p2, p3):
+    def get_geometry_info(self, vertices, triangles):
         """
         Get the total number of vertices and triangles of all mesh components in item.
         """
-        p2.value, p3.value = self._wrapper.get_geometry_info(p2.value, p3.value)
+        vertices.value, triangles.value = self._wrapper.get_geometry_info(vertices.value, triangles.value)
         
 
 
 
 
-    def compute_extended_info(self, p2, p3, p4, p5, p6, p7, p8):
+    def compute_extended_info(self, components, vertices, edges, triangles, inconsistent, invalid, intersectiona):
         """
         Compute more information (including validation) about of all mesh components in the surface item.
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value = self._wrapper.compute_extended_info(p2.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value)
+        components.value, vertices.value, edges.value, triangles.value, inconsistent.value, invalid.value, intersectiona.value = self._wrapper.compute_extended_info(components.value, vertices.value, edges.value, triangles.value, inconsistent.value, invalid.value, intersectiona.value)
         
 
 

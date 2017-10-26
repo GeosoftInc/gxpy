@@ -60,21 +60,21 @@ class GXARCDB:
 
 
 
-    def create_dat(self, p2, p3, p4):
+    def create_dat(self, x_field, y_field, d_field):
         """
         Create a handle to a ARCGIS table `GXDAT` 2D object
         """
-        ret_val = self._wrapper.create_dat(p2.encode(), p3.encode(), p4.encode())
+        ret_val = self._wrapper.create_dat(x_field.encode(), y_field.encode(), d_field.encode())
         return GXDAT(ret_val)
 
 
 
 
-    def create_dat_3d(self, p2, p3, p4, p5):
+    def create_dat_3d(self, x_field, y_field, z_field, d_field):
         """
         Create a handle to a ARCGIS table `GXDAT` 3D object
         """
-        ret_val = self._wrapper.create_dat_3d(p2.encode(), p3.encode(), p4.encode(), p5.encode())
+        ret_val = self._wrapper.create_dat_3d(x_field.encode(), y_field.encode(), z_field.encode(), d_field.encode())
         return GXDAT(ret_val)
 
 
@@ -90,7 +90,7 @@ class GXARCDB:
 
 
 
-    def export_to_db(self, p2, p3, p4):
+    def export_to_db(self, db, temp, line):
         """
         Export data from an `GXARCDB` table into a group in a Geosoft GDB using a template.
 
@@ -101,13 +101,13 @@ class GXARCDB:
         
         3. If the line already exists, the data will overwrite the existing data.
         """
-        self._wrapper.export_to_db(p2._wrapper, p3.encode(), p4.encode())
+        self._wrapper.export_to_db(db._wrapper, temp.encode(), line.encode())
         
 
 
 
 
-    def field_lst(self, p2):
+    def field_lst(self, lst):
         """
         Place the list of field names in a `GXLST`.
 
@@ -116,25 +116,25 @@ class GXARCDB:
         If Z or M values are supported by the table geometry the strings
         "<Z Values>" and "<M Values>" will be added accordingly.
         """
-        self._wrapper.field_lst(p2._wrapper)
+        self._wrapper.field_lst(lst._wrapper)
         
 
 
 
     @classmethod
-    def from_i_unknown(cls, p1):
+    def from_i_unknown(cls, unknown):
         """
         This method attempts to make a table handle from an IUnknown pointer
         
         Returns				 `GXARCDB` Handle, `ARCDB_NULL` if not successful
         """
-        ret_val = gxapi_cy.WrapARCDB.from_i_unknown(GXContext._get_tls_geo(), p1)
+        ret_val = gxapi_cy.WrapARCDB.from_i_unknown(GXContext._get_tls_geo(), unknown)
         return GXARCDB(ret_val)
 
 
 
 
-    def get_ipj(self, p2):
+    def get_ipj(self, ipj):
         """
         Get georeference information from a table.
 
@@ -143,18 +143,18 @@ class GXARCDB:
         If the table does not have an `GXIPJ`, the `GXIPJ` that is
         returned will have an unknown projection.
         """
-        self._wrapper.get_ipj(p2._wrapper)
+        self._wrapper.get_ipj(ipj._wrapper)
         
 
 
 
 
-    def exist_field(self, p2):
+    def exist_field(self, field):
         """
         This method checks to see if the specified field exists
         in the table.
         """
-        ret_val = self._wrapper.exist_field(p2.encode())
+        ret_val = self._wrapper.exist_field(field.encode())
         return ret_val
 
 
@@ -170,21 +170,21 @@ class GXARCDB:
 
 
 
-    def import_chem_database_wizard(self, p2, p3):
+    def import_chem_database_wizard(self, temp, type):
         """
         Template creation for importing geochem data.
         """
-        ret_val = self._wrapper.import_chem_database_wizard(p2.encode(), p3)
+        ret_val = self._wrapper.import_chem_database_wizard(temp.encode(), type)
         return ret_val
 
 
 
     @classmethod
-    def sel_tbl_ex_gui(cls, p1):
+    def sel_tbl_ex_gui(cls, table_type):
         """
         Select table `GXGUI` with table type.
         """
-        ret_val, p1.value = gxapi_cy.WrapARCDB.sel_tbl_ex_gui(GXContext._get_tls_geo(), p1.value)
+        ret_val, table_type.value = gxapi_cy.WrapARCDB.sel_tbl_ex_gui(GXContext._get_tls_geo(), table_type.value)
         return GXARCDB(ret_val)
 
 

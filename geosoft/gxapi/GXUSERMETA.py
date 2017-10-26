@@ -59,21 +59,21 @@ class GXUSERMETA:
 
 
     @classmethod
-    def create(cls, p1):
+    def create(cls, format):
         """
         Creates an empty `GXUSERMETA` object
         """
-        ret_val = gxapi_cy.WrapUSERMETA.create(GXContext._get_tls_geo(), p1)
+        ret_val = gxapi_cy.WrapUSERMETA.create(GXContext._get_tls_geo(), format)
         return GXUSERMETA(ret_val)
 
 
 
     @classmethod
-    def create_s(cls, p1):
+    def create_s(cls, file):
         """
         Create a `GXUSERMETA` from a file
         """
-        ret_val = gxapi_cy.WrapUSERMETA.create_s(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapUSERMETA.create_s(GXContext._get_tls_geo(), file.encode())
         return GXUSERMETA(ret_val)
 
 
@@ -81,263 +81,263 @@ class GXUSERMETA:
 
 
 
-    def get_data_creation_date(self, p2):
+    def get_data_creation_date(self, date):
         """
         Get the Data Creation Date
         """
-        p2.value = self._wrapper.get_data_creation_date(p2.value)
+        date.value = self._wrapper.get_data_creation_date(date.value)
         
 
 
 
 
-    def get_extents2d(self, p2, p3, p4, p5):
+    def get_extents2d(self, min_x, min_y, max_x, max_y):
         """
         Get the 2d Extents
         """
-        p2.value, p3.value, p4.value, p5.value = self._wrapper.get_extents2d(p2.value, p3.value, p4.value, p5.value)
+        min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.get_extents2d(min_x.value, min_y.value, max_x.value, max_y.value)
         
 
 
 
 
-    def get_extents3d(self, p2, p3, p4, p5, p6, p7):
+    def get_extents3d(self, min_x, min_y, min_z, max_x, max_y, max_z):
         """
         Get the 3d Extents
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value, p7.value = self._wrapper.get_extents3d(p2.value, p3.value, p4.value, p5.value, p6.value, p7.value)
+        min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._wrapper.get_extents3d(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         
 
 
 
 
-    def get_ipj(self, p2):
+    def get_ipj(self, ipj):
         """
         Get the `GXIPJ`
         """
-        self._wrapper.get_ipj(p2._wrapper)
+        self._wrapper.get_ipj(ipj._wrapper)
         
 
 
 
 
-    def get_meta_creation_date(self, p2):
+    def get_meta_creation_date(self, date):
         """
         Get the Meta Creation Date
         """
-        p2.value = self._wrapper.get_meta_creation_date(p2.value)
+        date.value = self._wrapper.get_meta_creation_date(date.value)
         
 
 
 
 
-    def get_xml_format(self, p2):
+    def get_xml_format(self, format):
         """
         Get the XML Format
         """
-        p2.value = self._wrapper.get_xml_format(p2.value)
+        format.value = self._wrapper.get_xml_format(format.value)
         
 
 
 
 
-    def compare(self, p2):
+    def compare(self, usermeta2):
         """
         Compare 2 `GXUSERMETA`'s
         """
-        ret_val = self._wrapper.compare(p2._wrapper)
+        ret_val = self._wrapper.compare(usermeta2._wrapper)
         return ret_val
 
 
 
 
-    def get_data_creator(self, p2):
+    def get_data_creator(self, data_creator):
         """
         Get the Data Creator
         """
-        p2.value = self._wrapper.get_data_creator(p2.value.encode())
+        data_creator.value = self._wrapper.get_data_creator(data_creator.value.encode())
         
 
 
 
 
-    def get_format(self, p2):
+    def get_format(self, format):
         """
         Get the File Format
         """
-        p2.value = self._wrapper.get_format(p2.value.encode())
+        format.value = self._wrapper.get_format(format.value.encode())
         
 
 
 
 
-    def get_meta_creator(self, p2):
+    def get_meta_creator(self, meta_creator):
         """
         Get the Meta Creator
         """
-        p2.value = self._wrapper.get_meta_creator(p2.value.encode())
+        meta_creator.value = self._wrapper.get_meta_creator(meta_creator.value.encode())
         
 
 
 
 
-    def get_project(self, p2):
+    def get_project(self, project):
         """
         Get the File Project
         """
-        p2.value = self._wrapper.get_project(p2.value.encode())
+        project.value = self._wrapper.get_project(project.value.encode())
         
 
 
 
 
-    def get_title(self, p2):
+    def get_title(self, title):
         """
         Get the Title
         """
-        p2.value = self._wrapper.get_title(p2.value.encode())
+        title.value = self._wrapper.get_title(title.value.encode())
         
 
 
 
 
-    def serial(self, p2, p3):
+    def serial(self, save_geo, file):
         """
         Serialize `GXUSERMETA` to a `GXBF`.
         """
-        self._wrapper.serial(p2, p3.encode())
+        self._wrapper.serial(save_geo, file.encode())
         
 
 
 
 
-    def set_data_creation_date(self, p2):
+    def set_data_creation_date(self, date):
         """
         Set the Data Creation Date
         """
-        self._wrapper.set_data_creation_date(p2)
+        self._wrapper.set_data_creation_date(date)
         
 
 
 
 
-    def set_data_creator(self, p2):
+    def set_data_creator(self, data_creator):
         """
         Set the Data Creator
         """
-        self._wrapper.set_data_creator(p2.encode())
+        self._wrapper.set_data_creator(data_creator.encode())
         
 
 
 
 
-    def set_extents2d(self, p2, p3, p4, p5):
+    def set_extents2d(self, min_x, min_y, max_x, max_y):
         """
         Set the 2d Extents
         """
-        self._wrapper.set_extents2d(p2, p3, p4, p5)
+        self._wrapper.set_extents2d(min_x, min_y, max_x, max_y)
         
 
 
 
 
-    def set_extents3d(self, p2, p3, p4, p5, p6, p7):
+    def set_extents3d(self, min_x, min_y, min_z, max_x, max_y, max_z):
         """
         Set the 3d Extents
         """
-        self._wrapper.set_extents3d(p2, p3, p4, p5, p6, p7)
+        self._wrapper.set_extents3d(min_x, min_y, min_z, max_x, max_y, max_z)
         
 
 
 
 
-    def set_format(self, p2):
+    def set_format(self, format):
         """
         Set the File Format
         """
-        self._wrapper.set_format(p2.encode())
+        self._wrapper.set_format(format.encode())
         
 
 
 
 
-    def set_ipj(self, p2):
+    def set_ipj(self, ipj):
         """
         Set the `GXIPJ`
         """
-        self._wrapper.set_ipj(p2._wrapper)
+        self._wrapper.set_ipj(ipj._wrapper)
         
 
 
 
 
-    def set_meta_creation_date(self, p2):
+    def set_meta_creation_date(self, date):
         """
         Set the Meta Creation Date
         """
-        self._wrapper.set_meta_creation_date(p2)
+        self._wrapper.set_meta_creation_date(date)
         
 
 
 
 
-    def set_meta_creator(self, p2):
+    def set_meta_creator(self, meta_creator):
         """
         Set the Meta Creator
         """
-        self._wrapper.set_meta_creator(p2.encode())
+        self._wrapper.set_meta_creator(meta_creator.encode())
         
 
 
 
 
-    def set_project(self, p2):
+    def set_project(self, project):
         """
         Set the File Project
         """
-        self._wrapper.set_project(p2.encode())
+        self._wrapper.set_project(project.encode())
         
 
 
 
 
-    def set_title(self, p2):
+    def set_title(self, title):
         """
         Set the Title
         """
-        self._wrapper.set_title(p2.encode())
+        self._wrapper.set_title(title.encode())
         
 
 
 
     @classmethod
-    def update_extents2_d(cls, p1, p2, p3, p4, p5, p6):
+    def update_extents2_d(cls, filename, ipj, min_x, min_y, max_x, max_y):
         """
         Edit an existing XML metadata file by
         changing the extents and projection data
         """
-        gxapi_cy.WrapUSERMETA.update_extents2_d(GXContext._get_tls_geo(), p1.encode(), p2._wrapper, p3, p4, p5, p6)
+        gxapi_cy.WrapUSERMETA.update_extents2_d(GXContext._get_tls_geo(), filename.encode(), ipj._wrapper, min_x, min_y, max_x, max_y)
         
 
 
 
     @classmethod
-    def update_file_type(cls, p1, p2):
+    def update_file_type(cls, file_name, new_file_type):
         """
         Edit an existing XML metadata file by
         changing the file type
         """
-        gxapi_cy.WrapUSERMETA.update_file_type(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        gxapi_cy.WrapUSERMETA.update_file_type(GXContext._get_tls_geo(), file_name.encode(), new_file_type.encode())
         
 
 
 
     @classmethod
-    def save_file_lineage(cls, p1, p2):
+    def save_file_lineage(cls, file_name, save_geo):
         """
         Add lineage to XML
         """
-        gxapi_cy.WrapUSERMETA.save_file_lineage(GXContext._get_tls_geo(), p1.encode(), p2)
+        gxapi_cy.WrapUSERMETA.save_file_lineage(GXContext._get_tls_geo(), file_name.encode(), save_geo)
         
 
 

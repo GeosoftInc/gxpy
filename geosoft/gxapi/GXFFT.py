@@ -61,17 +61,17 @@ class GXFFT:
 
 
 
-    def app_dens(self, p2, p3):
+    def app_dens(self, thick, dens):
         """
         Appparent density filter
         """
-        self._wrapper.app_dens(p2, p3)
+        self._wrapper.app_dens(thick, dens)
         
 
 
 
 
-    def app_susc(self, p2):
+    def app_susc(self, strength):
         """
         Apparent susceptiblity filter
 
@@ -80,63 +80,63 @@ class GXFFT:
         Reduction to magnetic pole (`red_pol`) and downward continuation
         (`contin`) should be called BEFORE using `app_susc`.
         """
-        self._wrapper.app_susc(p2)
+        self._wrapper.app_susc(strength)
         
 
 
 
 
-    def band_pass(self, p2, p3, p4):
+    def band_pass(self, llen, hlen, define):
         """
         Bandpass filter (using low and high wavelength cutoffs)
         """
-        self._wrapper.band_pass(p2, p3, p4)
+        self._wrapper.band_pass(llen, hlen, define)
         
 
 
 
 
-    def b_worth(self, p2, p3, p4):
+    def b_worth(self, clen, degree, p4):
         """
         Butterworth filter
         """
-        self._wrapper.b_worth(p2, p3, p4)
+        self._wrapper.b_worth(clen, degree, p4)
         
 
 
 
 
-    def rc_filter(self, p2, p3):
+    def rc_filter(self, clen, filter_type):
         """
         RC filter
         """
-        self._wrapper.rc_filter(p2, p3)
+        self._wrapper.rc_filter(clen, filter_type)
         
 
 
 
 
-    def contin(self, p2):
+    def contin(self, dist):
         """
         Upward/Downward continuation filter
         """
-        self._wrapper.contin(p2)
+        self._wrapper.contin(dist)
         
 
 
 
 
-    def cos_roll(self, p2, p3, p4, p5):
+    def cos_roll(self, llen, hlen, degree, p5):
         """
         Cosine roll-off filter
         """
-        self._wrapper.cos_roll(p2, p3, p4, p5)
+        self._wrapper.cos_roll(llen, hlen, degree, p5)
         
 
 
 
     @classmethod
-    def create(cls, p1, p2, p3):
+    def create(cls, gvv, p2, p3):
         """
         Create a New `GXFFT` with detrend options.
 
@@ -145,13 +145,13 @@ class GXFFT:
         The detrending options control the removal of a trend from the data
         before the `GXFFT` is applied. The default data expansion is 10% before `GXFFT`.
         """
-        ret_val = gxapi_cy.WrapFFT.create(GXContext._get_tls_geo(), p1._wrapper, p2, p3)
+        ret_val = gxapi_cy.WrapFFT.create(GXContext._get_tls_geo(), gvv._wrapper, p2, p3)
         return GXFFT(ret_val)
 
 
 
     @classmethod
-    def create_ex(cls, p1, p2, p3, p4):
+    def create_ex(cls, gvv, p2, p3, p4):
         """
         Create a New `GXFFT` with detrend and expansion options.
 
@@ -161,13 +161,13 @@ class GXFFT:
         before the `GXFFT` is applied. The expansion options control the minimum
         data expansion before the `GXFFT` is applied.
         """
-        ret_val = gxapi_cy.WrapFFT.create_ex(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4)
+        ret_val = gxapi_cy.WrapFFT.create_ex(GXContext._get_tls_geo(), gvv._wrapper, p2, p3, p4)
         return GXFFT(ret_val)
 
 
 
     @classmethod
-    def create_ref(cls, p1, p2, p3):
+    def create_ref(cls, gvv, p2, p3):
         """
         Create `GXFFT` object with detrend options from reference (original) channel,
         but no `GXFFT` process.
@@ -177,13 +177,13 @@ class GXFFT:
         This just creates an object.  It is intended to be called
         immediately after with `set_vv`.
         """
-        ret_val = gxapi_cy.WrapFFT.create_ref(GXContext._get_tls_geo(), p1._wrapper, p2, p3)
+        ret_val = gxapi_cy.WrapFFT.create_ref(GXContext._get_tls_geo(), gvv._wrapper, p2, p3)
         return GXFFT(ret_val)
 
 
 
     @classmethod
-    def create_ref_ex(cls, p1, p2, p3, p4, p5):
+    def create_ref_ex(cls, gvv, p2, p3, p4, p5):
         """
         Create `GXFFT` object with detrend and expansion options from reference (original) channel,
         but no `GXFFT` process.
@@ -193,7 +193,7 @@ class GXFFT:
         This just creates an object.  It is intended to be called
         immediately after with `set_vv`.
         """
-        ret_val = gxapi_cy.WrapFFT.create_ref_ex(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5)
+        ret_val = gxapi_cy.WrapFFT.create_ref_ex(GXContext._get_tls_geo(), gvv._wrapper, p2, p3, p4, p5)
         return GXFFT(ret_val)
 
 
@@ -201,41 +201,41 @@ class GXFFT:
 
 
 
-    def gaus(self, p2, p3):
+    def gaus(self, dev, type):
         """
         Gaussian filter
         """
-        self._wrapper.gaus(p2, p3)
+        self._wrapper.gaus(dev, type)
         
 
 
 
 
-    def get_vv(self, p2, p3):
+    def get_vv(self, gv_vr, gv_vi):
         """
         Copies real and imaginary `GXVV`'s to user `GXVV`'s.
         """
-        self._wrapper.get_vv(p2._wrapper, p3._wrapper)
+        self._wrapper.get_vv(gv_vr._wrapper, gv_vi._wrapper)
         
 
 
 
 
-    def h_drv(self, p2):
+    def h_drv(self, order):
         """
         Horizontal derivative
         """
-        self._wrapper.h_drv(p2)
+        self._wrapper.h_drv(order)
         
 
 
 
 
-    def high_pass(self, p2, p3):
+    def high_pass(self, wlen, fid_int):
         """
         High bandpass filter
         """
-        self._wrapper.high_pass(p2, p3)
+        self._wrapper.high_pass(wlen, fid_int)
         
 
 
@@ -251,31 +251,31 @@ class GXFFT:
 
 
 
-    def inverse(self, p2, p3):
+    def inverse(self, gvv, gv_vm):
         """
         Inverse the `GXFFT` from wave number domain to space domain
         """
-        self._wrapper.inverse(p2._wrapper, p3._wrapper)
+        self._wrapper.inverse(gvv._wrapper, gv_vm._wrapper)
         
 
 
 
 
-    def low_pass(self, p2):
+    def low_pass(self, wlen):
         """
         Low bandpass filter
         """
-        self._wrapper.low_pass(p2)
+        self._wrapper.low_pass(wlen)
         
 
 
 
 
-    def red_pol(self, p2, p3, p4, p5):
+    def red_pol(self, inc, p3, p4, p5):
         """
         Reduction to magnetic pole
         """
-        self._wrapper.red_pol(p2, p3, p4, p5)
+        self._wrapper.red_pol(inc, p3, p4, p5)
         
 
 
@@ -311,7 +311,7 @@ class GXFFT:
 
 
 
-    def set_vv(self, p2, p3):
+    def set_vv(self, gv_vr, gv_vi):
         """
         Sets real and imaginary VVs in `GXFFT`.
 
@@ -320,27 +320,27 @@ class GXFFT:
         The `GXVV` must have been obtained from the same `GXFFT`
         using the `set_vv` method.
         """
-        self._wrapper.set_vv(p2._wrapper, p3._wrapper)
+        self._wrapper.set_vv(gv_vr._wrapper, gv_vi._wrapper)
         
 
 
 
 
-    def spectrum(self, p2):
+    def spectrum(self, gvv):
         """
         Calculates a power spectrum
         """
-        self._wrapper.spectrum(p2._wrapper)
+        self._wrapper.spectrum(gvv._wrapper)
         
 
 
 
 
-    def v_drv(self, p2):
+    def v_drv(self, order):
         """
         Vertical derivative
         """
-        self._wrapper.v_drv(p2)
+        self._wrapper.v_drv(order)
         
 
 
@@ -356,11 +356,11 @@ class GXFFT:
 
 
 
-    def write_spectrum(self, p2, p3):
+    def write_spectrum(self, gvv, out_file):
         """
         Writes a power spectrum to a file
         """
-        self._wrapper.write_spectrum(p2._wrapper, p3.encode())
+        self._wrapper.write_spectrum(gvv._wrapper, out_file.encode())
         
 
 

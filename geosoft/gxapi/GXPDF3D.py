@@ -58,31 +58,31 @@ class GXPDF3D:
 
 
     @classmethod
-    def render(cls, p1, p2, p3, p4):
+    def render(cls, mview, file_name, resolution, no_clipping):
         """
         Render a voxel, voxsurf and/or gensurf to pdf
         """
-        gxapi_cy.WrapPDF3D.render(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3, p4)
+        gxapi_cy.WrapPDF3D.render(GXContext._get_tls_geo(), mview._wrapper, file_name.encode(), resolution, no_clipping)
         
 
 
 
     @classmethod
-    def render_to_page(cls, p1, p2, p3, p4, p5):
+    def render_to_page(cls, mview, file_name, page_number, resolution, no_clip):
         """
         Render a voxel, voxsurf and/or gensurf to a specified page on a pdf
         """
-        gxapi_cy.WrapPDF3D.render_to_page(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3, p4, p5)
+        gxapi_cy.WrapPDF3D.render_to_page(GXContext._get_tls_geo(), mview._wrapper, file_name.encode(), page_number, resolution, no_clip)
         
 
 
 
     @classmethod
-    def export2_d(cls, p1, p2, p3, p4, p5):
+    def export2_d(cls, input_map, output_file, create_layersin_pdf, geospatial_pdf, open_pdf):
         """
         Export a 2D map to a PDF file.
         """
-        gxapi_cy.WrapPDF3D.export2_d(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3, p4, p5)
+        gxapi_cy.WrapPDF3D.export2_d(GXContext._get_tls_geo(), input_map.encode(), output_file.encode(), create_layersin_pdf, geospatial_pdf, open_pdf)
         
 
 

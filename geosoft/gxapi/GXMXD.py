@@ -59,31 +59,31 @@ class GXMXD:
 
 
     @classmethod
-    def create_metadata(cls, p1):
+    def create_metadata(cls, mxd):
         """
         Create metadata for this brand new `GXMXD` (we are the creator)
         """
-        gxapi_cy.WrapMXD.create_metadata(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapMXD.create_metadata(GXContext._get_tls_geo(), mxd.encode())
         
 
 
 
     @classmethod
-    def convert_to_map(cls, p1, p2):
+    def convert_to_map(cls, mxd, map):
         """
         Create Geosoft map from ArcGIS `GXMXD`
         """
-        gxapi_cy.WrapMXD.convert_to_map(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        gxapi_cy.WrapMXD.convert_to_map(GXContext._get_tls_geo(), mxd.encode(), map.encode())
         
 
 
 
     @classmethod
-    def sync(cls, p1):
+    def sync(cls, mxd):
         """
         Syncronize any Metadata for this `GXMXD`
         """
-        gxapi_cy.WrapMXD.sync(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapMXD.sync(GXContext._get_tls_geo(), mxd.encode())
         
 
 

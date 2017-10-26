@@ -61,17 +61,17 @@ class GXGIS:
 
 
     @classmethod
-    def create(cls, p1, p2, p3):
+    def create(cls, file, p2, p3):
         """
         Creates a `GXGIS` Object
         """
-        ret_val = gxapi_cy.WrapGIS.create(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3)
+        ret_val = gxapi_cy.WrapGIS.create(GXContext._get_tls_geo(), file.encode(), p2.encode(), p3)
         return GXGIS(ret_val)
 
 
 
 
-    def create_map2_d(self, p2, p3, p4, p5):
+    def create_map2_d(self, map, map_scale, ipj, map2_d):
         """
         `create_map2_d`   Create a new 2D map for `GXGIS` imports.
 
@@ -80,7 +80,7 @@ class GXGIS:
         This function was created to minimize duplication in
         creation of new maps with 2D views.
         """
-        self._wrapper.create_map2_d(p2.encode(), p3, p4._wrapper, p5)
+        self._wrapper.create_map2_d(map.encode(), map_scale, ipj._wrapper, map2_d)
         
 
 
@@ -128,27 +128,27 @@ class GXGIS:
 
 
 
-    def get_meta(self, p2):
+    def get_meta(self, meta):
         """
         Get the `GXGIS` `GXMETA`
         """
-        self._wrapper.get_meta(p2._wrapper)
+        self._wrapper.get_meta(meta._wrapper)
         
 
 
 
 
-    def get_range(self, p2, p3, p4, p5, p6, p7):
+    def get_range(self, x_min, x_max, y_min, y_max, z_min, z_max):
         """
         Get the range of data in the `GXGIS`
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value, p7.value = self._wrapper.get_range(p2.value, p3.value, p4.value, p5.value, p6.value, p7.value)
+        x_min.value, x_max.value, y_min.value, y_max.value, z_min.value, z_max.value = self._wrapper.get_range(x_min.value, x_max.value, y_min.value, y_max.value, z_min.value, z_max.value)
         
 
 
 
     @classmethod
-    def datamine_type(cls, p1):
+    def datamine_type(cls, file):
         """
         Returns the type of a Datamine file.
 
@@ -159,23 +159,23 @@ class GXGIS:
         of types, so use `GXMATH.and_` or `GXMATH.or_` to determine if
         the file contains the required data.
         """
-        ret_val = gxapi_cy.WrapGIS.datamine_type(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapGIS.datamine_type(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
 
 
-    def get_file_name(self, p2):
+    def get_file_name(self, name):
         """
         Get the file name
         """
-        p2.value = self._wrapper.get_file_name(p2.value.encode())
+        name.value = self._wrapper.get_file_name(name.value.encode())
         
 
 
 
     @classmethod
-    def is_mi_map_file(cls, p1):
+    def is_mi_map_file(cls, map):
         """
         Returns TRUE if file is a MapInfo MAP file.
 
@@ -185,23 +185,23 @@ class GXGIS:
         with a Geosoft one. Use this function to test the MAP
         file (looks at the first few bytes).
         """
-        ret_val = gxapi_cy.WrapGIS.is_mi_map_file(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapGIS.is_mi_map_file(GXContext._get_tls_geo(), map.encode())
         return ret_val
 
 
 
     @classmethod
-    def is_mi_raster_tab_file(cls, p1):
+    def is_mi_raster_tab_file(cls, tab):
         """
         Returns TRUE if file is a MapInfo Raster TAB file.
         """
-        ret_val = gxapi_cy.WrapGIS.is_mi_raster_tab_file(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapGIS.is_mi_raster_tab_file(GXContext._get_tls_geo(), tab.encode())
         return ret_val
 
 
 
     @classmethod
-    def is_mi_rotated_raster_tab_file(cls, p1):
+    def is_mi_rotated_raster_tab_file(cls, tab):
         """
         Returns TRUE if file is a rotated MapInfo Raster TAB file.
 
@@ -218,7 +218,7 @@ class GXGIS:
         This function will register an error (and return 0)
         if problems are encountered opening or reading the TAB file.
         """
-        ret_val = gxapi_cy.WrapGIS.is_mi_rotated_raster_tab_file(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapGIS.is_mi_rotated_raster_tab_file(GXContext._get_tls_geo(), tab.encode())
         return ret_val
 
 
@@ -273,7 +273,7 @@ class GXGIS:
 
 
     @classmethod
-    def scan_mi_raster_tab_file(cls, p1, p2, p4):
+    def scan_mi_raster_tab_file(cls, tab, file, ipj):
         """
         Scan and set up a MapInf RASTER.
 
@@ -281,13 +281,13 @@ class GXGIS:
 
         This will create a GI file for the raster image.
         """
-        p2.value = gxapi_cy.WrapGIS.scan_mi_raster_tab_file(GXContext._get_tls_geo(), p1.encode(), p2.value.encode(), p4._wrapper)
+        file.value = gxapi_cy.WrapGIS.scan_mi_raster_tab_file(GXContext._get_tls_geo(), tab.encode(), file.value.encode(), ipj._wrapper)
         
 
 
 
 
-    def load_ascii(self, p2):
+    def load_ascii(self, wa):
         """
         Save `GXGIS` attribute table information (string fields) into a `GXWA`.
 
@@ -298,13 +298,13 @@ class GXGIS:
         e field names are saved in the first line, followed by a blank line.
         e field columns are separated by a tab (delimited character).
         """
-        self._wrapper.load_ascii(p2._wrapper)
+        self._wrapper.load_ascii(wa._wrapper)
         
 
 
 
 
-    def load_gdb(self, p2):
+    def load_gdb(self, db):
         """
         Load `GXGIS` table information into a GDB.
 
@@ -320,13 +320,13 @@ class GXGIS:
         
         If a channel exists, it will be used as-is.
         """
-        self._wrapper.load_gdb(p2._wrapper)
+        self._wrapper.load_gdb(db._wrapper)
         
 
 
 
 
-    def load_map(self, p2):
+    def load_map(self, mview):
         """
         Load `GXGIS` table drawing into a `GXMVIEW`.
 
@@ -334,13 +334,13 @@ class GXGIS:
 
         The `GXGIS` drawing will be drawin in the current group.
         """
-        self._wrapper.load_map(p2._wrapper)
+        self._wrapper.load_map(mview._wrapper)
         
 
 
 
 
-    def load_map_ex(self, p2, p3):
+    def load_map_ex(self, map, view_name):
         """
         Load `GXGIS` table drawing into a `GXMAP`.
 
@@ -348,13 +348,13 @@ class GXGIS:
 
         The `GXGIS` drawing will be drawin in the current group.
         """
-        self._wrapper.load_map_ex(p2._wrapper, p3.encode())
+        self._wrapper.load_map_ex(map._wrapper, view_name.encode())
         
 
 
 
 
-    def load_meta_groups_map(self, p2, p3, p4, p5, p6):
+    def load_meta_groups_map(self, mview, meta, ph_object, prefix, name_field):
         """
         Load `GXGIS` table drawing into a `GXMVIEW`.
 
@@ -366,23 +366,23 @@ class GXGIS:
         information of every group into the class specified.
         Note that the map may grow very large for big datasets.
         """
-        self._wrapper.load_meta_groups_map(p2._wrapper, p3._wrapper, p4, p5.encode(), p6.encode())
+        self._wrapper.load_meta_groups_map(mview._wrapper, meta._wrapper, ph_object, prefix.encode(), name_field.encode())
         
 
 
 
 
-    def load_ply(self, p2):
+    def load_ply(self, ply):
         """
         Load `GXGIS` table drawing into a Multi-Polygon object.
         """
-        self._wrapper.load_ply(p2._wrapper)
+        self._wrapper.load_ply(ply._wrapper)
         
 
 
 
 
-    def load_shapes_gdb(self, p2):
+    def load_shapes_gdb(self, db):
         """
         Load `GXGIS` shapes table information into separate lines in a GDB.
 
@@ -400,13 +400,13 @@ class GXGIS:
         
         The shape ID will be used as the line numbers.
         """
-        self._wrapper.load_shapes_gdb(p2._wrapper)
+        self._wrapper.load_shapes_gdb(db._wrapper)
         
 
 
 
 
-    def set_dm_wireframe_pt_file(self, p2):
+    def set_dm_wireframe_pt_file(self, file):
         """
         Specify the wireframe point file corresponding to the input file.
 
@@ -418,23 +418,23 @@ class GXGIS:
         function allows you to specify the latter when reading the
         first, so that the full model can be decoded.
         """
-        self._wrapper.set_dm_wireframe_pt_file(p2.encode())
+        self._wrapper.set_dm_wireframe_pt_file(file.encode())
         
 
 
 
 
-    def set_ipj(self, p2):
+    def set_ipj(self, ipj):
         """
         Save the `GXIPJ` back to `GXGIS` file
         """
-        self._wrapper.set_ipj(p2._wrapper)
+        self._wrapper.set_ipj(ipj._wrapper)
         
 
 
 
 
-    def set_lst(self, p2):
+    def set_lst(self, lst):
         """
         Save a `GXLST` of items inside the `GXGIS` object for special use.
 
@@ -444,27 +444,27 @@ class GXGIS:
         recreated to match the size of the input `GXLST`, before the
         input `GXLST` is copied to it.
         """
-        self._wrapper.set_lst(p2._wrapper)
+        self._wrapper.set_lst(lst._wrapper)
         
 
 
 
 
-    def set_meta(self, p2):
+    def set_meta(self, meta):
         """
         Save the `GXMETA` back to `GXGIS`
         """
-        self._wrapper.set_meta(p2._wrapper)
+        self._wrapper.set_meta(meta._wrapper)
         
 
 
 
 
-    def set_triangulation_object_index(self, p2):
+    def set_triangulation_object_index(self, i_toi):
         """
         Set the triangulation object index (Micromine)
         """
-        self._wrapper.set_triangulation_object_index(p2)
+        self._wrapper.set_triangulation_object_index(i_toi)
         
 
 

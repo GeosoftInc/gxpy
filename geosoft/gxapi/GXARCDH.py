@@ -69,21 +69,21 @@ class GXARCDH:
 
 
     @classmethod
-    def set_project(cls, p1, p2):
+    def set_project(cls, path, project):
         """
         Sets the current `GXDH` project in the Target extension
         """
-        gxapi_cy.WrapARCDH.set_project(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        gxapi_cy.WrapARCDH.set_project(GXContext._get_tls_geo(), path.encode(), project.encode())
         
 
 
 
     @classmethod
-    def set_string_file_gdb(cls, p1):
+    def set_string_file_gdb(cls, string_file_gdb):
         """
         Sets the current Geostring File Geodatabase in the Target extension
         """
-        gxapi_cy.WrapARCDH.set_string_file_gdb(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapARCDH.set_string_file_gdb(GXContext._get_tls_geo(), string_file_gdb.encode())
         
 
 
@@ -119,41 +119,41 @@ class GXARCDH:
 
 
     @classmethod
-    def get_current_string_file_gdb(cls, p1):
+    def get_current_string_file_gdb(cls, name):
         """
         Gets the current Geostring File Geodatabase.
         """
-        p1.value = gxapi_cy.WrapARCDH.get_current_string_file_gdb(GXContext._get_tls_geo(), p1.value.encode())
+        name.value = gxapi_cy.WrapARCDH.get_current_string_file_gdb(GXContext._get_tls_geo(), name.value.encode())
         
 
 
 
     @classmethod
-    def is_valid_fgdb_file_name(cls, p1):
+    def is_valid_fgdb_file_name(cls, fgdb):
         """
         Is this a valid FGDB filename?
         """
-        ret_val = gxapi_cy.WrapARCDH.is_valid_fgdb_file_name(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapARCDH.is_valid_fgdb_file_name(GXContext._get_tls_geo(), fgdb.encode())
         return ret_val
 
 
 
     @classmethod
-    def is_valid_feature_class_name(cls, p1):
+    def is_valid_feature_class_name(cls, feature_class_name):
         """
         Is this a valid featureclass name?
         """
-        ret_val = gxapi_cy.WrapARCDH.is_valid_feature_class_name(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapARCDH.is_valid_feature_class_name(GXContext._get_tls_geo(), feature_class_name.encode())
         return ret_val
 
 
 
     @classmethod
-    def s_prompt_for_esri_symbol(cls, p1, p2, p3, p4, p6, p7):
+    def s_prompt_for_esri_symbol(cls, hwnd, h_wnd, input_xml_string, p4, p6, p7):
         """
         Prompt the user to select an ESRI symbol and return it as an XML string. The output string will be empty if the user cancels the dialog.
         """
-        p4.value, p6.value, p7.value = gxapi_cy.WrapARCDH.s_prompt_for_esri_symbol(GXContext._get_tls_geo(), p1, p2.encode(), p3, p4.value.encode(), p6.value, p7.value)
+        p4.value, p6.value, p7.value = gxapi_cy.WrapARCDH.s_prompt_for_esri_symbol(GXContext._get_tls_geo(), hwnd, h_wnd.encode(), input_xml_string, p4.value.encode(), p6.value, p7.value)
         
 
 

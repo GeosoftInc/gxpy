@@ -61,17 +61,17 @@ class GXLST:
 
 
 
-    def add_item(self, p2, p3):
+    def add_item(self, name, val):
         """
         Adds an item to the end of the list.
         """
-        self._wrapper.add_item(p2.encode(), p3.encode())
+        self._wrapper.add_item(name.encode(), val.encode())
         
 
 
 
 
-    def add_symb_item(self, p2, p3):
+    def add_symb_item(self, name, symb):
         """
         Adds a channel/line/blob name and symbol to a list.
 
@@ -83,13 +83,13 @@ class GXLST:
         you quickly add a new item without the need of coverting
         the handle into a string value.
         """
-        self._wrapper.add_symb_item(p2.encode(), p3)
+        self._wrapper.add_symb_item(name.encode(), symb)
         
 
 
 
 
-    def add_unique_item(self, p2, p3):
+    def add_unique_item(self, name, val):
         """
         Adds a unique item to the end of the list.
 
@@ -97,13 +97,13 @@ class GXLST:
 
         Existing items that match the name are first removed.
         """
-        self._wrapper.add_unique_item(p2.encode(), p3.encode())
+        self._wrapper.add_unique_item(name.encode(), val.encode())
         
 
 
 
 
-    def append(self, p2):
+    def append(self, lst2):
         """
         Add the items in one list to another list.
 
@@ -114,7 +114,7 @@ class GXLST:
         items are duplicated in the appended `GXLST`, the last one will be
         the one to remain after the process is complete.
         """
-        self._wrapper.append(p2._wrapper)
+        self._wrapper.append(lst2._wrapper)
         
 
 
@@ -166,7 +166,7 @@ class GXLST:
 
 
 
-    def convert_from_csv_string(self, p2):
+    def convert_from_csv_string(self, buff):
         """
         Load a `GXLST` with items from a string.
 
@@ -177,49 +177,49 @@ class GXLST:
         Both the Name and Value in the list are set to the
         item.
         """
-        self._wrapper.convert_from_csv_string(p2.encode())
+        self._wrapper.convert_from_csv_string(buff.encode())
         
 
 
 
 
-    def copy(self, p2):
+    def copy(self, source):
         """
         Copy one `GXLST` object to another.
         """
-        self._wrapper.copy(p2._wrapper)
+        self._wrapper.copy(source._wrapper)
         
 
 
 
     @classmethod
-    def create(cls, p1):
+    def create(cls, width):
         """
         creates a user controllable list. The list
         is empty when created.
         """
-        ret_val = gxapi_cy.WrapLST.create(GXContext._get_tls_geo(), p1)
+        ret_val = gxapi_cy.WrapLST.create(GXContext._get_tls_geo(), width)
         return GXLST(ret_val)
 
 
 
     @classmethod
-    def create_s(cls, p1):
+    def create_s(cls, bf):
         """
         Create `GXLST` from serialized source.
         """
-        ret_val = gxapi_cy.WrapLST.create_s(GXContext._get_tls_geo(), p1._wrapper)
+        ret_val = gxapi_cy.WrapLST.create_s(GXContext._get_tls_geo(), bf._wrapper)
         return GXLST(ret_val)
 
 
 
 
-    def del_item(self, p2):
+    def del_item(self, item):
         """
         Removes an item from the list. All items below
         it are shifted up one.
         """
-        self._wrapper.del_item(p2)
+        self._wrapper.del_item(item)
         
 
 
@@ -227,7 +227,7 @@ class GXLST:
 
 
 
-    def find_items(self, p2, p3, p4):
+    def find_items(self, type, lst2, vv):
         """
         Searches a `GXLST` for items in a second `GXLST`, returns indices of those found.
 
@@ -241,13 +241,13 @@ class GXLST:
         value is not found, and the index of items that are found.
         Comparisons are case-tolerant.
         """
-        self._wrapper.find_items(p2, p3._wrapper, p4._wrapper)
+        self._wrapper.find_items(type, lst2._wrapper, vv._wrapper)
         
 
 
 
 
-    def gt_item(self, p2, p3, p4):
+    def gt_item(self, type, p3, p4):
         """
         This places the specified item into the buffer provided.
 
@@ -255,13 +255,13 @@ class GXLST:
 
         If item number is not in the list, the buffer will be "".
         """
-        p4.value = self._wrapper.gt_item(p2, p3, p4.value.encode())
+        p4.value = self._wrapper.gt_item(type, p3, p4.value.encode())
         
 
 
 
 
-    def gt_symb_item(self, p2, p3, p5):
+    def gt_symb_item(self, item, name, symb):
         """
         Returns a channel/line/blob name and symbol from a list.
 
@@ -273,13 +273,13 @@ class GXLST:
         you quickly retrieve both the name and symbol handle
         for a given item, which needing to convert between types.
         """
-        p3.value, p5.value = self._wrapper.gt_symb_item(p2, p3.value.encode(), p5.value)
+        name.value, symb.value = self._wrapper.gt_symb_item(item, name.value.encode(), symb.value)
         
 
 
 
 
-    def convert_to_csv_string(self, p2):
+    def convert_to_csv_string(self, buff):
         """
         Load a string with names from a `GXLST`.
 
@@ -288,13 +288,13 @@ class GXLST:
         The list name values are put into a string,
         items separated by commas.
         """
-        p2.value = self._wrapper.convert_to_csv_string(p2.value.encode())
+        buff.value = self._wrapper.convert_to_csv_string(buff.value.encode())
         
 
 
 
 
-    def find_item(self, p2, p3):
+    def find_item(self, type, name):
         """
         Searches the list for a specified item.
 
@@ -302,13 +302,13 @@ class GXLST:
 
         Comparisons are case-tolerant.
         """
-        ret_val = self._wrapper.find_item(p2, p3.encode())
+        ret_val = self._wrapper.find_item(type, name.encode())
         return ret_val
 
 
 
 
-    def find_item_mask(self, p2, p3):
+    def find_item_mask(self, type, name):
         """
         Searches the list for a specified item, list contains masks.
 
@@ -331,23 +331,23 @@ class GXLST:
 
             `assay_channel`
         """
-        ret_val = self._wrapper.find_item_mask(p2, p3.encode())
+        ret_val = self._wrapper.find_item_mask(type, name.encode())
         return ret_val
 
 
 
 
-    def get_int(self, p2, p3):
+    def get_int(self, type, p3):
         """
         Get an integer item.
         """
-        ret_val = self._wrapper.get_int(p2, p3)
+        ret_val = self._wrapper.get_int(type, p3)
         return ret_val
 
 
 
 
-    def insert_item(self, p2, p3, p4):
+    def insert_item(self, item, name, val):
         """
         Adds an item at a given location in the list.
 
@@ -356,7 +356,7 @@ class GXLST:
         Index must be 0 >= index >= list size.
         Items above the list index are shifted up one index value.
         """
-        self._wrapper.insert_item(p2, p3.encode(), p4.encode())
+        self._wrapper.insert_item(item, name.encode(), val.encode())
         
 
 
@@ -372,7 +372,7 @@ class GXLST:
 
 
 
-    def load_csv(self, p2, p3, p4):
+    def load_csv(self, csv, name_field, value_field):
         """
         Load a list with data from a CSV file
 
@@ -383,13 +383,13 @@ class GXLST:
         a header line with the field names.
         Leading and trailing spaces are removed in the names and values.
         """
-        self._wrapper.load_csv(p2.encode(), p3.encode(), p4.encode())
+        self._wrapper.load_csv(csv.encode(), name_field.encode(), value_field.encode())
         
 
 
 
 
-    def load_file(self, p2):
+    def load_file(self, file):
         """
         Set up a list from a list file.
 
@@ -410,35 +410,35 @@ class GXLST:
         If it cannot be found, the list will be
         empty.  Not finding a file is not an error.
         """
-        self._wrapper.load_file(p2.encode())
+        self._wrapper.load_file(file.encode())
         
 
 
 
 
-    def resource(self, p2):
+    def resource(self, res):
         """
         Load a GX List Resource into this list object.  The
         entries are placed at the end of the list and are not
         sorted.
         """
-        self._wrapper.resource(p2.encode())
+        self._wrapper.resource(res.encode())
         
 
 
 
 
-    def get_double(self, p2, p3):
+    def get_double(self, type, p3):
         """
         Get a real item.
         """
-        ret_val = self._wrapper.get_double(p2, p3)
+        ret_val = self._wrapper.get_double(type, p3)
         return ret_val
 
 
 
 
-    def save_file(self, p2):
+    def save_file(self, file):
         """
         Save a list to a file.
 
@@ -458,13 +458,13 @@ class GXLST:
         file in the local then the GEOSOFT\\etc directory.  If the file
         does not exist it will be created in the GEOSOFT\\etc directory.
         """
-        self._wrapper.save_file(p2.encode())
+        self._wrapper.save_file(file.encode())
         
 
 
 
 
-    def select_csv_string_items(self, p2, p3):
+    def select_csv_string_items(self, buff, ls_to):
         """
         Load a `GXLST` with items from a second `GXLST` found in a CSV string.
 
@@ -480,23 +480,23 @@ class GXLST:
         are ignored, and no error is registered.
         Item matches are case-tolerant.
         """
-        self._wrapper.select_csv_string_items(p2.encode(), p3._wrapper)
+        self._wrapper.select_csv_string_items(buff.encode(), ls_to._wrapper)
         
 
 
 
 
-    def serial(self, p2):
+    def serial(self, bf):
         """
         Serialize `GXLST` to a `GXBF`.
         """
-        self._wrapper.serial(p2._wrapper)
+        self._wrapper.serial(bf._wrapper)
         
 
 
 
 
-    def set_item(self, p2, p3, p4):
+    def set_item(self, type, p3, p4):
         """
         Place an item at a specified point in the `GXLST`.
 
@@ -504,17 +504,17 @@ class GXLST:
 
         The existing item at the given index will be replaced.
         """
-        self._wrapper.set_item(p2, p3, p4.encode())
+        self._wrapper.set_item(type, p3, p4.encode())
         
 
 
 
 
-    def sort(self, p2, p3):
+    def sort(self, type, p3):
         """
         Sorts a list.
         """
-        self._wrapper.sort(p2, p3)
+        self._wrapper.sort(type, p3)
         
 
 

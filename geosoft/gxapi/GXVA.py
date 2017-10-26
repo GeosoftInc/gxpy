@@ -92,7 +92,7 @@ class GXVA:
 
 
 
-    def add_elevations_vv_to_depths(self, p2, p3):
+    def add_elevations_vv_to_depths(self, vv, negative_depths):
         """
         Add one `GXVV` value to each row of the `GXVA`, output true elevation.
 
@@ -102,13 +102,13 @@ class GXVA:
         the same fid in a depths `GXVA`. Includes an option for negative depths down
         (e.g. a relative level).
         """
-        self._wrapper.add_elevations_vv_to_depths(p2._wrapper, p3)
+        self._wrapper.add_elevations_vv_to_depths(vv._wrapper, negative_depths)
         
 
 
 
 
-    def append(self, p2):
+    def append(self, v_aa):
         """
         Appends VAs
 
@@ -117,13 +117,13 @@ class GXVA:
         If the VAs have different numbers of columns, the smaller number
         is used in the copy operation.
         """
-        self._wrapper.append(p2._wrapper)
+        self._wrapper.append(v_aa._wrapper)
         
 
 
 
 
-    def average(self, p2, p3):
+    def average(self, vv, rc):
         """
         Average elements in a `GXVA` by row or column
 
@@ -135,23 +135,23 @@ class GXVA:
         
         Dummies are not included in the average.
         """
-        self._wrapper.average(p2._wrapper, p3)
+        self._wrapper.average(vv._wrapper, rc)
         
 
 
 
 
-    def copy(self, p2):
+    def copy(self, v_as):
         """
         Copy one `GXVA` to another.
         """
-        self._wrapper.copy(p2._wrapper)
+        self._wrapper.copy(v_as._wrapper)
         
 
 
 
 
-    def copy2(self, p2, p3, p4, p5, p6, p7, p8):
+    def copy2(self, d_row, d_col, v_as, s_row, s_col, rows, cols):
         """
         Copy part of a vector into part of another vector.
 
@@ -163,23 +163,23 @@ class GXVA:
         2. All `GXVA` types are supported and will be converted using
         Convert_GS if necessary.
         """
-        self._wrapper.copy2(p2, p3, p4._wrapper, p5, p6, p7, p8)
+        self._wrapper.copy2(d_row, d_col, v_as._wrapper, s_row, s_col, rows, cols)
         
 
 
 
     @classmethod
-    def create(cls, p1, p2, p3):
+    def create(cls, type, rows, cols):
         """
         Create a `GXVA`.
         """
-        ret_val = gxapi_cy.WrapVA.create(GXContext._get_tls_geo(), p1, p2, p3)
+        ret_val = gxapi_cy.WrapVA.create(GXContext._get_tls_geo(), type, rows, cols)
         return GXVA(ret_val)
 
 
 
     @classmethod
-    def create_ext(cls, p1, p2, p3):
+    def create_ext(cls, type, rows, cols):
         """
         Create a `GXVA`, using one of the `GS_TYPES` special data types.
 
@@ -187,13 +187,13 @@ class GXVA:
 
         See `GXVV.create`
         """
-        ret_val = gxapi_cy.WrapVA.create_ext(GXContext._get_tls_geo(), p1, p2, p3)
+        ret_val = gxapi_cy.WrapVA.create_ext(GXContext._get_tls_geo(), type, rows, cols)
         return GXVA(ret_val)
 
 
 
     @classmethod
-    def create_vv(cls, p1, p2, p3):
+    def create_vv(cls, vv, rows, columns):
         """
         Create a `GXVA` using the data in a `GXVV`.
 
@@ -201,7 +201,7 @@ class GXVA:
 
         See `GXVV.create`
         """
-        ret_val = gxapi_cy.WrapVA.create_vv(GXContext._get_tls_geo(), p1._wrapper, p2, p3)
+        ret_val = gxapi_cy.WrapVA.create_vv(GXContext._get_tls_geo(), vv._wrapper, rows, columns)
         return GXVA(ret_val)
 
 
@@ -226,11 +226,11 @@ class GXVA:
 
 
 
-    def get_vv(self, p2, p3, p4):
+    def get_vv(self, no, p3, p4):
         """
         Get a row or column of data as a `GXVV` from an array.
         """
-        self._wrapper.get_vv(p2, p3, p4._wrapper)
+        self._wrapper.get_vv(no, p3, p4._wrapper)
         
 
 
@@ -250,7 +250,7 @@ class GXVA:
 
 
 
-    def get_int(self, p2, p3):
+    def get_int(self, row, col):
         """
         Get an integer element from a `GXVA`.
 
@@ -259,13 +259,13 @@ class GXVA:
         Type conversions are performed if necessary.  Dummy values
         are converted to "*" string.
         """
-        ret_val = self._wrapper.get_int(p2, p3)
+        ret_val = self._wrapper.get_int(row, col)
         return ret_val
 
 
 
 
-    def get_string(self, p2, p3, p4):
+    def get_string(self, row, col, str_val):
         """
         Get a string element from a `GXVA`.
 
@@ -277,7 +277,7 @@ class GXVA:
         Type conversions are performed if necessary.  Dummy values
         are converted to "*" string.
         """
-        p4.value = self._wrapper.get_string(p2, p3, p4.value.encode())
+        str_val.value = self._wrapper.get_string(row, col, str_val.value.encode())
         
 
 
@@ -297,7 +297,7 @@ class GXVA:
 
 
     @classmethod
-    def index_order(cls, p1, p2):
+    def index_order(cls, vv, va):
         """
         Reorder a `GXVA` based on an index `GXVV`
 
@@ -306,13 +306,13 @@ class GXVA:
         Given a row index `GXVV` (of type INT), this method reorders a
         `GXVA`. Please make sure that the index holds valid information.
         """
-        gxapi_cy.WrapVA.index_order(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
+        gxapi_cy.WrapVA.index_order(GXContext._get_tls_geo(), vv._wrapper, va._wrapper)
         
 
 
 
 
-    def lookup_index(self, p2, p3):
+    def lookup_index(self, vvi, var):
         """
         Lookup a `GXVA` from another `GXVA` using an index `GXVV`.
 
@@ -322,28 +322,28 @@ class GXVA:
         at the whole integer value and the next whole integer, dummy
         if outside the `GXVA`.
         """
-        self._wrapper.lookup_index(p2._wrapper, p3._wrapper)
+        self._wrapper.lookup_index(vvi._wrapper, var._wrapper)
         
 
 
 
 
-    def range_double(self, p2, p3):
+    def range_double(self, min, max):
         """
         Computes the minimum and maximum range of the data, in doubles,
         in a vector while ignoring dummies.
         """
-        p2.value, p3.value = self._wrapper.range_double(p2.value, p3.value)
+        min.value, max.value = self._wrapper.range_double(min.value, max.value)
         
 
 
 
 
-    def re_fid(self, p2, p3, p4):
+    def re_fid(self, start, incr, length):
         """
         Re-sample a `GXVA` to a new fid start/icrement
         """
-        self._wrapper.re_fid(p2, p3, p4)
+        self._wrapper.re_fid(start, incr, length)
         
 
 
@@ -379,7 +379,7 @@ class GXVA:
 
 
 
-    def get_double(self, p2, p3):
+    def get_double(self, row, col):
         """
         Get a real element from a `GXVA`.
 
@@ -388,33 +388,33 @@ class GXVA:
         Type conversions are performed if necessary.  Dummy values
         are converted to "*" string.
         """
-        ret_val = self._wrapper.get_double(p2, p3)
+        ret_val = self._wrapper.get_double(row, col)
         return ret_val
 
 
 
 
-    def set_fid_incr(self, p2):
+    def set_fid_incr(self, incr):
         """
         Sets the Fiducial increment of a `GXVA`
         """
-        self._wrapper.set_fid_incr(p2)
+        self._wrapper.set_fid_incr(incr)
         
 
 
 
 
-    def set_fid_start(self, p2):
+    def set_fid_start(self, start):
         """
         Sets the Fiducial start of a `GXVA`
         """
-        self._wrapper.set_fid_start(p2)
+        self._wrapper.set_fid_start(start)
         
 
 
 
 
-    def set_int(self, p2, p3, p4):
+    def set_int(self, row, col, value):
         """
         Set an integer element in a `GXVA`.
 
@@ -424,13 +424,13 @@ class GXVA:
         If the element is > current `GXVA` length, the `GXVA` length is
         increased.
         """
-        self._wrapper.set_int(p2, p3, p4)
+        self._wrapper.set_int(row, col, value)
         
 
 
 
 
-    def set_ln(self, p2):
+    def set_ln(self, rows):
         """
         Set the length (number of rows) of the `GXVA`
 
@@ -439,13 +439,13 @@ class GXVA:
         The number of columns in a `GXVA` is fixed, and cannot be
         altered once the `GXVA` is created.
         """
-        self._wrapper.set_ln(p2)
+        self._wrapper.set_ln(rows)
         
 
 
 
 
-    def set_double(self, p2, p3, p4):
+    def set_double(self, row, col, value):
         """
         Set a real element in a `GXVA`.
 
@@ -455,13 +455,13 @@ class GXVA:
         If the element is > current `GXVA` length, the `GXVA` length is
         increased.
         """
-        self._wrapper.set_double(p2, p3, p4)
+        self._wrapper.set_double(row, col, value)
         
 
 
 
 
-    def set_string(self, p2, p3, p4):
+    def set_string(self, row, col, value):
         """
         Set a string element in a `GXVA`.
 
@@ -471,23 +471,23 @@ class GXVA:
         If the element is > current `GXVA` length, the `GXVA` length is
         increased.
         """
-        self._wrapper.set_string(p2, p3, p4.encode())
+        self._wrapper.set_string(row, col, value.encode())
         
 
 
 
 
-    def set_vv(self, p2, p3, p4):
+    def set_vv(self, no, p3, p4):
         """
         Set a row or column of data in an array from a `GXVV`.
         """
-        self._wrapper.set_vv(p2, p3, p4._wrapper)
+        self._wrapper.set_vv(no, p3, p4._wrapper)
         
 
 
 
 
-    def trans(self, p2, p3):
+    def trans(self, base, mult):
         """
         Translate (`GXVA` + base ) * mult
 
@@ -495,13 +495,13 @@ class GXVA:
 
         Supports all `GXVA` types using an internal double `GXVV`.
         """
-        self._wrapper.trans(p2, p3)
+        self._wrapper.trans(base, mult)
         
 
 
 
 
-    def window(self, p2, p3, p4):
+    def window(self, start, count, vv):
         """
         Window a `GXVA` to a `GXVV` based in intergral frame
 
@@ -512,13 +512,13 @@ class GXVA:
         values in the window.
         If any values are dummy, the result will be dummy.
         """
-        self._wrapper.window(p2, p3, p4._wrapper)
+        self._wrapper.window(start, count, vv._wrapper)
         
 
 
 
 
-    def window2(self, p2, p3, p4):
+    def window2(self, start, p3, p4):
         """
         Window a `GXVA` to a `GXVV` based on fractional frame
 
@@ -529,13 +529,13 @@ class GXVA:
         values in the window.
         If any values are dummy, the result will be dummy.
         """
-        self._wrapper.window2(p2, p3, p4._wrapper)
+        self._wrapper.window2(start, p3, p4._wrapper)
         
 
 
 
 
-    def check_for_repeating(self, p2, p3, p4, p5):
+    def check_for_repeating(self, v_vt, subtract_vv, v_vsub, tol):
         """
         Window a `GXVA` to a `GXVV` based on fractional frame
 
@@ -547,13 +547,13 @@ class GXVA:
         have been offset with topography on each row.
         An absolute tolerance can be specified to ignore numerical noise.
         """
-        ret_val = self._wrapper.check_for_repeating(p2._wrapper, p3, p4._wrapper, p5)
+        ret_val = self._wrapper.check_for_repeating(v_vt._wrapper, subtract_vv, v_vsub._wrapper, tol)
         return ret_val
 
 
 
 
-    def check_for_repeating2(self, p2, p3, p4, p5, p6, p7):
+    def check_for_repeating2(self, v_vt, subtract_vv, v_vsub, tol, bad_row, bad_col):
         """
         Window a `GXVA` to a `GXVV` based on fractional frame
 
@@ -566,7 +566,7 @@ class GXVA:
         An absolute tolerance can be specified to ignore numerical noise.
         This version returns the row and column index of first mismatch.
         """
-        ret_val, p6.value, p7.value = self._wrapper.check_for_repeating2(p2._wrapper, p3, p4._wrapper, p5, p6.value, p7.value)
+        ret_val, bad_row.value, bad_col.value = self._wrapper.check_for_repeating2(v_vt._wrapper, subtract_vv, v_vsub._wrapper, tol, bad_row.value, bad_col.value)
         return ret_val
 
 

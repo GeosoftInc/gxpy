@@ -80,7 +80,7 @@ class GXLTB:
 
 
 
-    def add_record(self, p2, p3):
+    def add_record(self, key, rec):
         """
         Add a new record.
 
@@ -89,13 +89,13 @@ class GXLTB:
         If the record exists, the existing record is cleared
         and the record number is returned.
         """
-        p3.value = self._wrapper.add_record(p2.encode(), p3.value)
+        rec.value = self._wrapper.add_record(key.encode(), rec.value)
         
 
 
 
 
-    def contract(self, p2):
+    def contract(self, lt_bc):
         """
         Contract the contents of two same-key and same-fields tables.
 
@@ -110,13 +110,13 @@ class GXLTB:
         2. All records in the contract LIB are deleted from the New `GXLTB` (if there are any)
         3. The New `GXLTB` is returned.
         """
-        ret_val = self._wrapper.contract(p2._wrapper)
+        ret_val = self._wrapper.contract(lt_bc._wrapper)
         return GXLTB(ret_val)
 
 
 
     @classmethod
-    def create(cls, p1, p2, p3, p4):
+    def create(cls, file, type, delim, key):
         """
         Creates a `GXLTB` object from a file.
 
@@ -124,13 +124,13 @@ class GXLTB:
 
         If the file has no header, field names are assumed to be "0", "1", etc.
         """
-        ret_val = gxapi_cy.WrapLTB.create(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4.encode())
+        ret_val = gxapi_cy.WrapLTB.create(GXContext._get_tls_geo(), file.encode(), type, delim, key.encode())
         return GXLTB(ret_val)
 
 
 
     @classmethod
-    def create_crypt(cls, p1, p2, p3, p4, p5, p6):
+    def create_crypt(cls, file, type, delim, case, key, crypt):
         """
         Creates a `GXLTB` object from an encrypted file.
 
@@ -138,13 +138,13 @@ class GXLTB:
 
         If the file has no header, field names are assumed to be "0", "1", etc.
         """
-        ret_val = gxapi_cy.WrapLTB.create_crypt(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4, p5.encode(), p6.encode())
+        ret_val = gxapi_cy.WrapLTB.create_crypt(GXContext._get_tls_geo(), file.encode(), type, delim, case, key.encode(), crypt.encode())
         return GXLTB(ret_val)
 
 
 
     @classmethod
-    def create_ex(cls, p1, p2, p3, p4, p5):
+    def create_ex(cls, file, type, delim, case, key):
         """
         Creates a `GXLTB` object from a file.
 
@@ -152,13 +152,13 @@ class GXLTB:
 
         If the file has no header, field names are assumed to be "0", "1", etc.
         """
-        ret_val = gxapi_cy.WrapLTB.create_ex(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4, p5.encode())
+        ret_val = gxapi_cy.WrapLTB.create_ex(GXContext._get_tls_geo(), file.encode(), type, delim, case, key.encode())
         return GXLTB(ret_val)
 
 
 
 
-    def delete_record(self, p2):
+    def delete_record(self, rec):
         """
         Delete a record.
 
@@ -167,7 +167,7 @@ class GXLTB:
         Record numbers after the deleted record will be reduced
         by 1.
         """
-        self._wrapper.delete_record(p2)
+        self._wrapper.delete_record(rec)
         
 
 
@@ -175,7 +175,7 @@ class GXLTB:
 
 
 
-    def get_con_lst(self, p2, p3, p4, p5):
+    def get_con_lst(self, fld, match, match_type, lst):
         """
         Populate a `GXLST` with `GXLTB` names from matching fields.
 
@@ -185,13 +185,13 @@ class GXLTB:
         The `GXLST` names will be the `GXLTB` key fields and the
         `GXLST` values will be the `GXLTB` record numbers.
         """
-        self._wrapper.get_con_lst(p2, p3.encode(), p4, p5._wrapper)
+        self._wrapper.get_con_lst(fld, match.encode(), match_type, lst._wrapper)
         
 
 
 
 
-    def get_lst(self, p2, p3):
+    def get_lst(self, fld, lst):
         """
         Populate an `GXLST` with `GXLTB` names
 
@@ -201,13 +201,13 @@ class GXLTB:
         The `GXLST` names will be the `GXLTB` fields and the
         `GXLST` values will be the `GXLTB` record numbers.
         """
-        self._wrapper.get_lst(p2, p3._wrapper)
+        self._wrapper.get_lst(fld, lst._wrapper)
         
 
 
 
 
-    def get_lst2(self, p2, p3, p4):
+    def get_lst2(self, fld_n, fld_v, lst):
         """
         Populate an `GXLST` with `GXLTB` names and values
 
@@ -217,7 +217,7 @@ class GXLTB:
         The `GXLST` names will come from the `GXLTB` name field and the
         `GXLST` values will come from value field specified.
         """
-        self._wrapper.get_lst2(p2, p3, p4._wrapper)
+        self._wrapper.get_lst2(fld_n, fld_v, lst._wrapper)
         
 
 
@@ -233,27 +233,27 @@ class GXLTB:
 
 
 
-    def find_field(self, p2):
+    def find_field(self, field):
         """
         Return the field number for the specified field.
         """
-        ret_val = self._wrapper.find_field(p2.encode())
+        ret_val = self._wrapper.find_field(field.encode())
         return ret_val
 
 
 
 
-    def find_key(self, p2):
+    def find_key(self, key):
         """
         Return the key index of a record.
         """
-        ret_val = self._wrapper.find_key(p2.encode())
+        ret_val = self._wrapper.find_key(key.encode())
         return ret_val
 
 
 
 
-    def get_field(self, p2, p3):
+    def get_field(self, field_num, field):
         """
         Get a field name by index.
 
@@ -261,23 +261,23 @@ class GXLTB:
 
         If the record or field are out of range, an empty string is returned.
         """
-        p3.value = self._wrapper.get_field(p2, p3.value.encode())
+        field.value = self._wrapper.get_field(field_num, field.value.encode())
         
 
 
 
 
-    def get_int(self, p2, p3):
+    def get_int(self, record, field):
         """
         Get a int entry from the `GXLTB`
         """
-        ret_val = self._wrapper.get_int(p2, p3)
+        ret_val = self._wrapper.get_int(record, field)
         return ret_val
 
 
 
 
-    def get_string(self, p2, p3, p4):
+    def get_string(self, record, field, token):
         """
         Get an entry from the `GXLTB`
 
@@ -286,13 +286,13 @@ class GXLTB:
         If the record or field are out of range,
         an empty string or dummy value is returned.
         """
-        p4.value = self._wrapper.get_string(p2, p3, p4.value.encode())
+        token.value = self._wrapper.get_string(record, field, token.value.encode())
         
 
 
 
 
-    def get_english_string(self, p2, p3, p4):
+    def get_english_string(self, record, field, token):
         """
         Get the English entry from the `GXLTB`
 
@@ -301,7 +301,7 @@ class GXLTB:
         If the record or field are out of range,
         an empty string or dummy value is returned.
         """
-        p4.value = self._wrapper.get_english_string(p2, p3, p4.value.encode())
+        token.value = self._wrapper.get_english_string(record, field, token.value.encode())
         
 
 
@@ -317,17 +317,17 @@ class GXLTB:
 
 
 
-    def search(self, p2, p3, p4):
+    def search(self, rec, fld, field):
         """
         Search for a record containing field value
         """
-        ret_val = self._wrapper.search(p2, p3, p4.encode())
+        ret_val = self._wrapper.search(rec, fld, field.encode())
         return ret_val
 
 
 
 
-    def merge(self, p2):
+    def merge(self, lt_bc):
         """
         Merge the contents of two same-key tables.
 
@@ -349,67 +349,67 @@ class GXLTB:
         4. The Master `GXLTB` is copied to the New `GXLTB`.
         5. Any New records found in the child are added to the New `GXLTB`
         """
-        ret_val = self._wrapper.merge(p2._wrapper)
+        ret_val = self._wrapper.merge(lt_bc._wrapper)
         return GXLTB(ret_val)
 
 
 
 
-    def get_double(self, p2, p3):
+    def get_double(self, record, field):
         """
         Get a real entry from the `GXLTB`
         """
-        ret_val = self._wrapper.get_double(p2, p3)
+        ret_val = self._wrapper.get_double(record, field)
         return ret_val
 
 
 
 
-    def save(self, p2):
+    def save(self, file):
         """
         Save `GXLTB` changes to existing or new file
         """
-        self._wrapper.save(p2.encode())
+        self._wrapper.save(file.encode())
         
 
 
 
 
-    def save_crypt(self, p2, p3):
+    def save_crypt(self, file, crypt):
         """
         Save `GXLTB` to a new file using encryption
         """
-        self._wrapper.save_crypt(p2.encode(), p3.encode())
+        self._wrapper.save_crypt(file.encode(), crypt.encode())
         
 
 
 
 
-    def set_int(self, p2, p3, p4):
+    def set_int(self, record, field, data):
         """
         Set a long entry
         """
-        self._wrapper.set_int(p2, p3, p4)
+        self._wrapper.set_int(record, field, data)
         
 
 
 
 
-    def set_double(self, p2, p3, p4):
+    def set_double(self, record, field, data):
         """
         Set a double entry
         """
-        self._wrapper.set_double(p2, p3, p4)
+        self._wrapper.set_double(record, field, data)
         
 
 
 
 
-    def set_string(self, p2, p3, p4):
+    def set_string(self, record, field, token):
         """
         Set an entry
         """
-        self._wrapper.set_string(p2, p3, p4.encode())
+        self._wrapper.set_string(record, field, token.encode())
         
 
 

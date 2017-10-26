@@ -88,7 +88,7 @@ class GXIMG:
 
 
     @classmethod
-    def average2(cls, p1, p2):
+    def average2(cls, grid_in, grid_out):
         """
         Reduce the dimensions in a 2D pager by a factor of 2
 
@@ -102,23 +102,23 @@ class GXIMG:
         The output values at the output data locations are created by performing an average of the original data point and
         its valid surrounding data points; what is essentially a 3x3 smoothing filter.
         """
-        gxapi_cy.WrapIMG.average2(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        gxapi_cy.WrapIMG.average2(GXContext._get_tls_geo(), grid_in.encode(), grid_out.encode())
         
 
 
 
 
-    def copy(self, p2):
+    def copy(self, im_go):
         """
         Copy IMGs.
         """
-        self._wrapper.copy(p2._wrapper)
+        self._wrapper.copy(im_go._wrapper)
         
 
 
 
     @classmethod
-    def create(cls, p1, p2, p3, p4):
+    def create(cls, type, p2, p3, p4):
         """
         Creates an `GXIMG` not tied to a file at all
 
@@ -126,13 +126,13 @@ class GXIMG:
 
         Once destroyed all the data in this `GXIMG` is lost.
         """
-        ret_val = gxapi_cy.WrapIMG.create(GXContext._get_tls_geo(), p1, p2, p3, p4)
+        ret_val = gxapi_cy.WrapIMG.create(GXContext._get_tls_geo(), type, p2, p3, p4)
         return GXIMG(ret_val)
 
 
 
     @classmethod
-    def create_file(cls, p1, p2, p3):
+    def create_file(cls, type, p2, p3):
         """
         Creates an Image object tied to a grid file.
 
@@ -143,13 +143,13 @@ class GXIMG:
         if the on-disk values represent color data as opposed
         to real numbers.
         """
-        ret_val = gxapi_cy.WrapIMG.create_file(GXContext._get_tls_geo(), p1, p2.encode(), p3)
+        ret_val = gxapi_cy.WrapIMG.create_file(GXContext._get_tls_geo(), type, p2.encode(), p3)
         return GXIMG(ret_val)
 
 
 
     @classmethod
-    def create_mem(cls, p1, p2, p3, p4):
+    def create_mem(cls, type, p2, p3, p4):
         """
         Creates an `GXIMG` object that is backed only by memory.
 
@@ -157,13 +157,13 @@ class GXIMG:
 
         Once destroyed all the data is lost. This is temporary.
         """
-        ret_val = gxapi_cy.WrapIMG.create_mem(GXContext._get_tls_geo(), p1, p2, p3, p4)
+        ret_val = gxapi_cy.WrapIMG.create_mem(GXContext._get_tls_geo(), type, p2, p3, p4)
         return GXIMG(ret_val)
 
 
 
     @classmethod
-    def create_new_file(cls, p1, p2, p3, p4, p5):
+    def create_new_file(cls, type, p2, p3, p4, p5):
         """
         Creates an output image file using User defined info.
 
@@ -182,13 +182,13 @@ class GXIMG:
         It is recommended that this registry key is set during the installation
         of your application.
         """
-        ret_val = gxapi_cy.WrapIMG.create_new_file(GXContext._get_tls_geo(), p1, p2, p3, p4, p5.encode())
+        ret_val = gxapi_cy.WrapIMG.create_new_file(GXContext._get_tls_geo(), type, p2, p3, p4, p5.encode())
         return GXIMG(ret_val)
 
 
 
     @classmethod
-    def create_out_file(cls, p1, p2, p3):
+    def create_out_file(cls, type, p2, p3):
         """
         Creates an output image file using input image info.
 
@@ -199,13 +199,13 @@ class GXIMG:
         if the on-disk values represent color data as opposed
         to real numbers.
         """
-        ret_val = gxapi_cy.WrapIMG.create_out_file(GXContext._get_tls_geo(), p1, p2.encode(), p3._wrapper)
+        ret_val = gxapi_cy.WrapIMG.create_out_file(GXContext._get_tls_geo(), type, p2.encode(), p3._wrapper)
         return GXIMG(ret_val)
 
 
 
 
-    def create_projected(self, p2):
+    def create_projected(self, ipj):
         """
         Applies a projection to an image.
 
@@ -214,13 +214,13 @@ class GXIMG:
         The `GXIMG` now appears to be in the projected coordinate
         system space.
         """
-        self._wrapper.create_projected(p2._wrapper)
+        self._wrapper.create_projected(ipj._wrapper)
         
 
 
 
 
-    def create_projected2(self, p2, p3):
+    def create_projected2(self, ipj, cell_size):
         """
         Applies a projection to an image, specify cell size.
 
@@ -231,13 +231,13 @@ class GXIMG:
         size is `rDUMMY` (`GS_R8DM`), one is automatically calculated,
         as with `create_projected`.
         """
-        self._wrapper.create_projected2(p2._wrapper, p3)
+        self._wrapper.create_projected2(ipj._wrapper, cell_size)
         
 
 
 
 
-    def create_projected3(self, p2, p3, p4):
+    def create_projected3(self, ipj, cell_size, exp_pct):
         """
         Same as `create_projected2`, but set expansion of bounds.
 
@@ -257,7 +257,7 @@ class GXIMG:
         If the value is set to `rDUMMY`, then expansion is left at 1.0,
         the legacy behaviour.
         """
-        self._wrapper.create_projected3(p2._wrapper, p3, p4)
+        self._wrapper.create_projected3(ipj._wrapper, cell_size, exp_pct)
         
 
 
@@ -279,37 +279,37 @@ class GXIMG:
 
 
 
-    def get_info(self, p2, p3, p4, p5, p6):
+    def get_info(self, dx, dy, xo, yo, rot):
         """
         Retrieves location information about this image.
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value = self._wrapper.get_info(p2.value, p3.value, p4.value, p5.value, p6.value)
+        dx.value, dy.value, xo.value, yo.value, rot.value = self._wrapper.get_info(dx.value, dy.value, xo.value, yo.value, rot.value)
         
 
 
 
 
-    def get_ipj(self, p2):
+    def get_ipj(self, ipj):
         """
         Get the projection of a grid.
         """
-        self._wrapper.get_ipj(p2._wrapper)
+        self._wrapper.get_ipj(ipj._wrapper)
         
 
 
 
 
-    def get_meta(self, p2):
+    def get_meta(self, meta):
         """
         Get the metadata of a grid.
         """
-        self._wrapper.get_meta(p2._wrapper)
+        self._wrapper.get_meta(meta._wrapper)
         
 
 
 
 
-    def get_pg(self, p2):
+    def get_pg(self, pg):
         """
         Get a copy of the pager of a grid.
 
@@ -317,13 +317,13 @@ class GXIMG:
 
             `geth_pg` to get the actual pager of the grid.
         """
-        self._wrapper.get_pg(p2._wrapper)
+        self._wrapper.get_pg(pg._wrapper)
         
 
 
 
 
-    def get_projected_cell_size(self, p2, p3):
+    def get_projected_cell_size(self, ipj, cell):
         """
         Returns default cell size from projected image.
 
@@ -334,27 +334,27 @@ class GXIMG:
         `GS_R8DM` is entered as the optional cell size. No inheritance
         is actually performed to the input `GXIMG`.
         """
-        p3.value = self._wrapper.get_projected_cell_size(p2._wrapper, p3.value)
+        cell.value = self._wrapper.get_projected_cell_size(ipj._wrapper, cell.value)
         
 
 
 
 
-    def get_tr(self, p2):
+    def get_tr(self, tr):
         """
         Get the trend information from a grid.
         """
-        self._wrapper.get_tr(p2._wrapper)
+        self._wrapper.get_tr(tr._wrapper)
         
 
 
 
 
-    def element_type(self, p2):
+    def element_type(self, xg_dor_img):
         """
         Returns the element type.
         """
-        ret_val = self._wrapper.element_type(p2)
+        ret_val = self._wrapper.element_type(xg_dor_img)
         return ret_val
 
 
@@ -374,11 +374,11 @@ class GXIMG:
 
 
 
-    def get_def_itr(self, p2):
+    def get_def_itr(self, itr):
         """
         Get default transform, if it exists
         """
-        ret_val = self._wrapper.get_def_itr(p2._wrapper)
+        ret_val = self._wrapper.get_def_itr(itr._wrapper)
         return ret_val
 
 
@@ -394,21 +394,21 @@ class GXIMG:
 
 
     @classmethod
-    def is_valid_img_file(cls, p1):
+    def is_valid_img_file(cls, file):
         """
         Is this a valid `GXIMG` file?
         """
-        ret_val = gxapi_cy.WrapIMG.is_valid_img_file(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapIMG.is_valid_img_file(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
 
     @classmethod
-    def is_valid_img_file_ex(cls, p1, p2):
+    def is_valid_img_file_ex(cls, file, err_msg):
         """
         Is this a valid `GXIMG` file? Returns error message if it cannot be opened for any reason.
         """
-        ret_val, p2.value = gxapi_cy.WrapIMG.is_valid_img_file_ex(GXContext._get_tls_geo(), p1.encode(), p2.value.encode())
+        ret_val, err_msg.value = gxapi_cy.WrapIMG.is_valid_img_file_ex(GXContext._get_tls_geo(), file.encode(), err_msg.value.encode())
         return ret_val
 
 
@@ -424,7 +424,7 @@ class GXIMG:
 
 
 
-    def inherit(self, p2, p3):
+    def inherit(self, ipj, cell):
         """
         Inherit a projection/new cell size on the `GXIMG`.
 
@@ -438,17 +438,17 @@ class GXIMG:
         `GXIPJ`, and the cell boundaries will be forced to be aligned
         with the new cell size.
         """
-        self._wrapper.inherit(p2._wrapper, p3)
+        self._wrapper.inherit(ipj._wrapper, cell)
         
 
 
 
 
-    def inherit_img(self, p2):
+    def inherit_img(self, im_gs):
         """
         Make a grids match in size and coordinate system
         """
-        self._wrapper.inherit_img(p2._wrapper)
+        self._wrapper.inherit_img(im_gs._wrapper)
         
 
 
@@ -484,7 +484,7 @@ class GXIMG:
 
 
 
-    def query_int(self, p2):
+    def query_int(self, query):
         """
         Query information about the `GXIMG`
 
@@ -493,7 +493,7 @@ class GXIMG:
         You can call either funtion to retrieve any data,
         int or real.
         """
-        ret_val = self._wrapper.query_int(p2)
+        ret_val = self._wrapper.query_int(query)
         return ret_val
 
 
@@ -509,11 +509,11 @@ class GXIMG:
 
 
 
-    def set_def_itr(self, p2):
+    def set_def_itr(self, itr):
         """
         Set default transform
         """
-        ret_val = self._wrapper.set_def_itr(p2._wrapper)
+        ret_val = self._wrapper.set_def_itr(itr._wrapper)
         return ret_val
 
 
@@ -529,7 +529,7 @@ class GXIMG:
 
 
 
-    def load_img(self, p2):
+    def load_img(self, im_gi):
         """
         Loads an `GXIMG` into a master `GXIMG`.
 
@@ -537,7 +537,7 @@ class GXIMG:
 
         The cell sizes and projections must be the same.
         """
-        self._wrapper.load_img(p2._wrapper)
+        self._wrapper.load_img(im_gi._wrapper)
         
 
 
@@ -554,7 +554,7 @@ class GXIMG:
 
 
 
-    def opt_kx(self, p2):
+    def opt_kx(self, kx):
         """
         Force optimal KX as desired.
 
@@ -566,73 +566,73 @@ class GXIMG:
         Subsequent calls to methods that use the optimal KX will use the
         KX set here.
         """
-        self._wrapper.opt_kx(p2)
+        self._wrapper.opt_kx(kx)
         
 
 
 
 
-    def read_v(self, p2, p3, p4, p5):
+    def read_v(self, v, be, p4, p5):
         """
         Read a vector in the optimal KX direction.
         """
-        self._wrapper.read_v(p2, p3, p4, p5._wrapper)
+        self._wrapper.read_v(v, be, p4, p5._wrapper)
         
 
 
 
 
-    def read_x(self, p2, p3, p4, p5):
+    def read_x(self, bx, p3, p4, p5):
         """
         Read a column (constant X)
         """
-        self._wrapper.read_x(p2, p3, p4, p5._wrapper)
+        self._wrapper.read_x(bx, p3, p4, p5._wrapper)
         
 
 
 
 
-    def read_y(self, p2, p3, p4, p5):
+    def read_y(self, by, p3, p4, p5):
         """
         Read a row (constant Y)
         """
-        self._wrapper.read_y(p2, p3, p4, p5._wrapper)
+        self._wrapper.read_y(by, p3, p4, p5._wrapper)
         
 
 
 
     @classmethod
-    def refresh_gi(cls, p1):
+    def refresh_gi(cls, grid):
         """
         Refresh the GI of a grid after it has moved or changed.
         """
-        gxapi_cy.WrapIMG.refresh_gi(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapIMG.refresh_gi(GXContext._get_tls_geo(), grid.encode())
         
 
 
 
 
-    def relocate(self, p2, p3, p4, p5, p6):
+    def relocate(self, min_x, min_y, max_x, max_y, asp):
         """
         Re-locate a grid image.
         """
-        self._wrapper.relocate(p2, p3, p4, p5, p6)
+        self._wrapper.relocate(min_x, min_y, max_x, max_y, asp)
         
 
 
 
     @classmethod
-    def report(cls, p1, p2, p3, p4, p5):
+    def report(cls, grid, wa, force, decimals, title):
         """
         Writes grid info report to a file
         """
-        gxapi_cy.WrapIMG.report(GXContext._get_tls_geo(), p1.encode(), p2._wrapper, p3, p4, p5.encode())
+        gxapi_cy.WrapIMG.report(GXContext._get_tls_geo(), grid.encode(), wa._wrapper, force, decimals, title.encode())
         
 
 
 
     @classmethod
-    def report_csv(cls, p1, p2, p3, p4, p5):
+    def report_csv(cls, grid, wa, force, decimals, header):
         """
         Writes grid info as a line to a CSV file
 
@@ -641,23 +641,23 @@ class GXIMG:
         Appends the stats as a CSV line to the input text file.
         The header line should only be written to a new text file.
         """
-        gxapi_cy.WrapIMG.report_csv(GXContext._get_tls_geo(), p1.encode(), p2._wrapper, p3, p4, p5)
+        gxapi_cy.WrapIMG.report_csv(GXContext._get_tls_geo(), grid.encode(), wa._wrapper, force, decimals, header)
         
 
 
 
 
-    def get_z(self, p2, p3):
+    def get_z(self, x, y):
         """
         Gets the grid value at a point
         """
-        ret_val = self._wrapper.get_z(p2, p3)
+        ret_val = self._wrapper.get_z(x, y)
         return ret_val
 
 
 
 
-    def query_double(self, p2):
+    def query_double(self, query):
         """
         Query information about the `GXIMG`
 
@@ -666,7 +666,7 @@ class GXIMG:
         You can call either funtion to retrieve any data,
         int or real.
         """
-        ret_val = self._wrapper.query_double(p2)
+        ret_val = self._wrapper.query_double(query)
         return ret_val
 
 
@@ -682,7 +682,7 @@ class GXIMG:
 
 
 
-    def set_info(self, p2, p3, p4, p5, p6):
+    def set_info(self, dx, dy, xo, yo, rot):
         """
         Sets location information about this image.
 
@@ -691,13 +691,13 @@ class GXIMG:
         Calls to this function should be made BEFORE calls to `set_ipj`,
         as the latter function sets up the bounding rectangle in the metadata.
         """
-        self._wrapper.set_info(p2, p3, p4, p5, p6)
+        self._wrapper.set_info(dx, dy, xo, yo, rot)
         
 
 
 
 
-    def set_ipj(self, p2):
+    def set_ipj(self, ipj):
         """
         Set the projection of a grid.
 
@@ -706,97 +706,97 @@ class GXIMG:
         Calls to this function should be made AFTER calls to `set_info`,
         as `set_ipj` sets up the bounding rectangle in the metadata.
         """
-        self._wrapper.set_ipj(p2._wrapper)
+        self._wrapper.set_ipj(ipj._wrapper)
         
 
 
 
 
-    def set_meta(self, p2):
+    def set_meta(self, meta):
         """
         Set the metadata of a grid.
         """
-        self._wrapper.set_meta(p2._wrapper)
+        self._wrapper.set_meta(meta._wrapper)
         
 
 
 
 
-    def set_pg(self, p2):
+    def set_pg(self, pg):
         """
         Copy a pager into the pager of a grid.
         """
-        self._wrapper.set_pg(p2._wrapper)
+        self._wrapper.set_pg(pg._wrapper)
         
 
 
 
 
-    def set_tr(self, p2):
+    def set_tr(self, tr):
         """
         Set the trend information to a grid.
         """
-        self._wrapper.set_tr(p2._wrapper)
+        self._wrapper.set_tr(tr._wrapper)
         
 
 
 
     @classmethod
-    def sync(cls, p1):
+    def sync(cls, grid):
         """
         Syncronize the Metadata for this Grid
         """
-        gxapi_cy.WrapIMG.sync(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapIMG.sync(GXContext._get_tls_geo(), grid.encode())
         
 
 
 
 
-    def write_v(self, p2, p3, p4, p5):
+    def write_v(self, v, be, p4, p5):
         """
         Write a vector in the optimal KX direction.
         """
-        self._wrapper.write_v(p2, p3, p4, p5._wrapper)
+        self._wrapper.write_v(v, be, p4, p5._wrapper)
         
 
 
 
 
-    def write_x(self, p2, p3, p4, p5):
+    def write_x(self, bx, p3, p4, p5):
         """
         Write a column (constant X)
         """
-        self._wrapper.write_x(p2, p3, p4, p5._wrapper)
+        self._wrapper.write_x(bx, p3, p4, p5._wrapper)
         
 
 
 
 
-    def write_y(self, p2, p3, p4, p5):
+    def write_y(self, by, p3, p4, p5):
         """
         Write a row (constant Y)
         """
-        self._wrapper.write_y(p2, p3, p4, p5._wrapper)
+        self._wrapper.write_y(by, p3, p4, p5._wrapper)
         
 
 
 
 
-    def set_double_parameter(self, p2, p3):
+    def set_double_parameter(self, name, value):
         """
         Store a real parameter in an `GXIMG` object
         """
-        self._wrapper.set_double_parameter(p2.encode(), p3)
+        self._wrapper.set_double_parameter(name.encode(), value)
         
 
 
 
 
-    def get_double_parameter(self, p2):
+    def get_double_parameter(self, name):
         """
         Store a real parameter in an `GXIMG` object
         """
-        ret_val = self._wrapper.get_double_parameter(p2.encode())
+        ret_val = self._wrapper.get_double_parameter(name.encode())
         return ret_val
 
 

@@ -59,17 +59,17 @@ class GX3DV:
 
 
 
-    def open_mview(self, p2):
+    def open_mview(self, mode):
         """
         Open `GX3DV`'s 3D `GXMVIEW`
         """
-        ret_val = self._wrapper.open_mview(p2)
+        ret_val = self._wrapper.open_mview(mode)
         return GXMVIEW(ret_val)
 
 
 
 
-    def copy_to_map(self, p2, p3, p4, p5, p6, p7, p8, p9, p11):
+    def copy_to_map(self, map, mview, min_x, min_y, max_x, max_y, force_overwrite, new_view, problem_files):
         """
         Copy the `GX3DV`'s 3D `GXMVIEW` into a map.
 
@@ -78,47 +78,47 @@ class GX3DV:
         A `GX3DV` packs all source files. This functions creates an unpacked map and
         unpacks the packed files in the same way that UnPackFilesEx in the `GXMAP` class does.
         """
-        p9.value, p11.value = self._wrapper.copy_to_map(p2._wrapper, p3.encode(), p4, p5, p6, p7, p8, p9.value.encode(), p11.value.encode())
+        new_view.value, problem_files.value = self._wrapper.copy_to_map(map._wrapper, mview.encode(), min_x, min_y, max_x, max_y, force_overwrite, new_view.value.encode(), problem_files.value.encode())
         
 
 
 
     @classmethod
-    def create_new(cls, p1, p2):
+    def create_new(cls, file_name, mview):
         """
         Create a new `GX3DV`.
         """
-        ret_val = gxapi_cy.Wrap3DV.create_new(GXContext._get_tls_geo(), p1.encode(), p2._wrapper)
+        ret_val = gxapi_cy.Wrap3DV.create_new(GXContext._get_tls_geo(), file_name.encode(), mview._wrapper)
         return GX3DV(ret_val)
 
 
 
     @classmethod
-    def open(cls, p1):
+    def open(cls, file_name):
         """
         Open an existing `GX3DV`.
         """
-        ret_val = gxapi_cy.Wrap3DV.open(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.Wrap3DV.open(GXContext._get_tls_geo(), file_name.encode())
         return GX3DV(ret_val)
 
 
 
     @classmethod
-    def from_map(cls, p1):
+    def from_map(cls, map):
         """
         Get an `GX3DV` from `GXMAP` handle (e.g. from `GXEMAP.lock` on open geosoft_3dv document in project)
         """
-        ret_val = gxapi_cy.Wrap3DV.from_map(GXContext._get_tls_geo(), p1._wrapper)
+        ret_val = gxapi_cy.Wrap3DV.from_map(GXContext._get_tls_geo(), map._wrapper)
         return GX3DV(ret_val)
 
 
 
 
-    def crc_3dv(self, p2, p3):
+    def crc_3dv(self, crc, file):
         """
         Generate an XML CRC of a `GX3DV`
         """
-        p2.value = self._wrapper.crc_3dv(p2.value, p3.encode())
+        crc.value = self._wrapper.crc_3dv(crc.value, file.encode())
         
 
 

@@ -95,33 +95,33 @@ class GXSYS:
 
 
     @classmethod
-    def break_date(cls, p1, p2, p3, p4):
+    def break_date(cls, date, year, month, day):
         """
         Breaks a decimal date value into year, month and day.
         """
-        p2.value, p3.value, p4.value = gxapi_cy.WrapSYS.break_date(GXContext._get_tls_geo(), p1, p2.value, p3.value, p4.value)
+        year.value, month.value, day.value = gxapi_cy.WrapSYS.break_date(GXContext._get_tls_geo(), date, year.value, month.value, day.value)
         
 
 
 
     @classmethod
-    def dateto_long(cls, p1):
+    def dateto_long(cls, date):
         """
         Converts a double date to a value representing total
         days elapsed since day 0 of year 0. This uses the
         Numerical Receipies Julian function.
         """
-        ret_val = gxapi_cy.WrapSYS.dateto_long(GXContext._get_tls_geo(), p1)
+        ret_val = gxapi_cy.WrapSYS.dateto_long(GXContext._get_tls_geo(), date)
         return ret_val
 
 
 
     @classmethod
-    def timeto_long(cls, p1):
+    def timeto_long(cls, time):
         """
         Converts decimal hours to seconds in a day.
         """
-        ret_val = gxapi_cy.WrapSYS.timeto_long(GXContext._get_tls_geo(), p1)
+        ret_val = gxapi_cy.WrapSYS.timeto_long(GXContext._get_tls_geo(), time)
         return ret_val
 
 
@@ -142,43 +142,43 @@ class GXSYS:
 
 
     @classmethod
-    def longto_date(cls, p1):
+    def longto_date(cls, days):
         """
         Converts a value representing total days elapsed since
         day 0 of year 0 to a geosoft date. This uses the
         Numerical Receipies Julian function.
         """
-        ret_val = gxapi_cy.WrapSYS.longto_date(GXContext._get_tls_geo(), p1)
+        ret_val = gxapi_cy.WrapSYS.longto_date(GXContext._get_tls_geo(), days)
         return ret_val
 
 
 
     @classmethod
-    def longto_time(cls, p1):
+    def longto_time(cls, sec):
         """
         Converts seconds to decimal hours.
         """
-        ret_val = gxapi_cy.WrapSYS.longto_time(GXContext._get_tls_geo(), p1)
+        ret_val = gxapi_cy.WrapSYS.longto_time(GXContext._get_tls_geo(), sec)
         return ret_val
 
 
 
     @classmethod
-    def make_date(cls, p1, p2, p3):
+    def make_date(cls, year, month, day):
         """
         Returns the decimal date given the year, month and day.
         """
-        ret_val = gxapi_cy.WrapSYS.make_date(GXContext._get_tls_geo(), p1, p2, p3)
+        ret_val = gxapi_cy.WrapSYS.make_date(GXContext._get_tls_geo(), year, month, day)
         return ret_val
 
 
 
     @classmethod
-    def secondsto_time(cls, p1):
+    def secondsto_time(cls, sec):
         """
         Converts fractional seconds to decimal hours.
         """
-        ret_val = gxapi_cy.WrapSYS.secondsto_time(GXContext._get_tls_geo(), p1)
+        ret_val = gxapi_cy.WrapSYS.secondsto_time(GXContext._get_tls_geo(), sec)
         return ret_val
 
 
@@ -199,11 +199,11 @@ class GXSYS:
 
 
     @classmethod
-    def timeto_seconds(cls, p1):
+    def timeto_seconds(cls, time):
         """
         Converts decimal hours to seconds in a day fractional
         """
-        ret_val = gxapi_cy.WrapSYS.timeto_seconds(GXContext._get_tls_geo(), p1)
+        ret_val = gxapi_cy.WrapSYS.timeto_seconds(GXContext._get_tls_geo(), time)
         return ret_val
 
 
@@ -243,31 +243,31 @@ class GXSYS:
 
 
     @classmethod
-    def exist_env(cls, p1):
+    def exist_env(cls, parm):
         """
         Check if setting exists in environment.
         """
-        ret_val = gxapi_cy.WrapSYS.exist_env(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapSYS.exist_env(GXContext._get_tls_geo(), parm.encode())
         return ret_val
 
 
 
     @classmethod
-    def get_env(cls, p1, p2):
+    def get_env(cls, parm, set):
         """
         Get an environment setting.
         """
-        p2.value = gxapi_cy.WrapSYS.get_env(GXContext._get_tls_geo(), p1.encode(), p2.value.encode())
+        set.value = gxapi_cy.WrapSYS.get_env(GXContext._get_tls_geo(), parm.encode(), set.value.encode())
         
 
 
 
     @classmethod
-    def set_env(cls, p1, p2):
+    def set_env(cls, parm, set):
         """
         Set an environment setting.
         """
-        gxapi_cy.WrapSYS.set_env(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        gxapi_cy.WrapSYS.set_env(GXContext._get_tls_geo(), parm.encode(), set.encode())
         
 
 
@@ -297,7 +297,7 @@ class GXSYS:
 
 
     @classmethod
-    def get_error_message_ap(cls, p1, p2):
+    def get_error_message_ap(cls, err, err_str):
         """
         Return the error message text as a string.
 
@@ -308,7 +308,7 @@ class GXSYS:
         the GX would terminate before it could be called.
         Use `num_errors_ap` to get the number of registered errors.
         """
-        p2.value = gxapi_cy.WrapSYS.get_error_message_ap(GXContext._get_tls_geo(), p1, p2.value.encode())
+        err_str.value = gxapi_cy.WrapSYS.get_error_message_ap(GXContext._get_tls_geo(), err, err_str.value.encode())
         
 
 
@@ -334,7 +334,7 @@ class GXSYS:
 
 
     @classmethod
-    def set_server_messages_ap(cls, p1):
+    def set_server_messages_ap(cls, flag):
         """
         Control the server message handling.
 
@@ -343,7 +343,7 @@ class GXSYS:
         Should be set to false when dialogs should not
         appear. This setting is thread specific.
         """
-        gxapi_cy.WrapSYS.set_server_messages_ap(GXContext._get_tls_geo(), p1)
+        gxapi_cy.WrapSYS.set_server_messages_ap(GXContext._get_tls_geo(), flag)
         
 
 
@@ -353,7 +353,7 @@ class GXSYS:
 
 
     @classmethod
-    def run(cls, p1, p2, p3):
+    def run(cls, command, args, process):
         """
         Run a command line process.
 
@@ -368,13 +368,13 @@ class GXSYS:
         2. the <geosoft>\\bin directory
         3. the system path
         """
-        ret_val = gxapi_cy.WrapSYS.run(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3)
+        ret_val = gxapi_cy.WrapSYS.run(GXContext._get_tls_geo(), command.encode(), args.encode(), process)
         return ret_val
 
 
 
     @classmethod
-    def run_gs(cls, p1):
+    def run_gs(cls, gs):
         """
         Run a GS.
 
@@ -382,13 +382,13 @@ class GXSYS:
 
             `set_interactive`, `run_gx`
         """
-        ret_val = gxapi_cy.WrapSYS.run_gs(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapSYS.run_gs(GXContext._get_tls_geo(), gs.encode())
         return ret_val
 
 
 
     @classmethod
-    def run_gx(cls, p1):
+    def run_gx(cls, gx):
         """
         Run a GX.
 
@@ -402,13 +402,13 @@ class GXSYS:
 
             `run_gx_ex`, `set_interactive` and `run_gs`
         """
-        ret_val = gxapi_cy.WrapSYS.run_gx(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapSYS.run_gx(GXContext._get_tls_geo(), gx.encode())
         return ret_val
 
 
 
     @classmethod
-    def run_gx_ex(cls, p1, p2):
+    def run_gx_ex(cls, gx, ret):
         """
         Run a GX.
 
@@ -416,13 +416,13 @@ class GXSYS:
 
             `run_gx`, `set_return`
         """
-        ret_val, p2.value = gxapi_cy.WrapSYS.run_gx_ex(GXContext._get_tls_geo(), p1.encode(), p2.value)
+        ret_val, ret.value = gxapi_cy.WrapSYS.run_gx_ex(GXContext._get_tls_geo(), gx.encode(), ret.value)
         return ret_val
 
 
 
     @classmethod
-    def run_pdf(cls, p1, p2):
+    def run_pdf(cls, mnu, pdf):
         """
         Run a PDF.
 
@@ -432,13 +432,13 @@ class GXSYS:
         where "group" is the name given in the first argument,
         and "pdf" is the root PDF file name.
         """
-        ret_val = gxapi_cy.WrapSYS.run_pdf(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        ret_val = gxapi_cy.WrapSYS.run_pdf(GXContext._get_tls_geo(), mnu.encode(), pdf.encode())
         return ret_val
 
 
 
     @classmethod
-    def shell_execute(cls, p1, p2, p3, p4, p5):
+    def shell_execute(cls, verb, file, parameters, directory, show):
         """
         MS ShellExecute function
 
@@ -454,13 +454,13 @@ class GXSYS:
 
             `do_command`
         """
-        ret_val = gxapi_cy.WrapSYS.shell_execute(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4.encode(), p5)
+        ret_val = gxapi_cy.WrapSYS.shell_execute(GXContext._get_tls_geo(), verb.encode(), file.encode(), parameters.encode(), directory.encode(), show)
         return ret_val
 
 
 
     @classmethod
-    def set_return(cls, p1):
+    def set_return(cls, ret):
         """
         Set the return value of a GX.
 
@@ -468,7 +468,7 @@ class GXSYS:
 
         This value is returned in the `run_gx_ex` call only.
         """
-        gxapi_cy.WrapSYS.set_return(GXContext._get_tls_geo(), p1)
+        gxapi_cy.WrapSYS.set_return(GXContext._get_tls_geo(), ret)
         
 
 
@@ -512,7 +512,7 @@ class GXSYS:
 
 
     @classmethod
-    def error(cls, p1, p2, p3):
+    def error(cls, error_file, module, error):
         """
         Register an error message
 
@@ -527,13 +527,13 @@ class GXSYS:
         OE32.`GXGER` file, then the GEOSOFT.`GXGER` file will be
         searched.
         """
-        gxapi_cy.WrapSYS.error(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3)
+        gxapi_cy.WrapSYS.error(GXContext._get_tls_geo(), error_file.encode(), module.encode(), error)
         
 
 
 
     @classmethod
-    def error_tag(cls, p1, p2):
+    def error_tag(cls, tag, set):
         """
         Set an error message tag string
 
@@ -545,13 +545,13 @@ class GXSYS:
         "%2", etc. as place holders to be replaced by a string
         which is only known at run-time.
         """
-        gxapi_cy.WrapSYS.error_tag(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        gxapi_cy.WrapSYS.error_tag(GXContext._get_tls_geo(), tag.encode(), set.encode())
         
 
 
 
     @classmethod
-    def assert_gx(cls, p1, p2, p3):
+    def assert_gx(cls, exp, mod, parm):
         """
         DLL function argument error assertion
 
@@ -572,27 +572,27 @@ class GXSYS:
         functions if you would like to provide a more specific
         error message.
         """
-        ret_val = gxapi_cy.WrapSYS.assert_gx(GXContext._get_tls_geo(), p1, p2.encode(), p3.encode())
+        ret_val = gxapi_cy.WrapSYS.assert_gx(GXContext._get_tls_geo(), exp, mod.encode(), parm.encode())
         return ret_val
 
 
 
     @classmethod
-    def ole_automation(cls, p1, p2, p3):
+    def ole_automation(cls, object, info_str, info_val):
         """
         Call OLE Automation designed to be called from Montaj.
         """
-        ret_val = gxapi_cy.WrapSYS.ole_automation(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3)
+        ret_val = gxapi_cy.WrapSYS.ole_automation(GXContext._get_tls_geo(), object.encode(), info_str.encode(), info_val)
         return ret_val
 
 
 
     @classmethod
-    def save_log(cls, p1):
+    def save_log(cls, file):
         """
         Saves the main log file to another file.
         """
-        gxapi_cy.WrapSYS.save_log(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapSYS.save_log(GXContext._get_tls_geo(), file.encode())
         
 
 
@@ -628,7 +628,7 @@ class GXSYS:
 
 
     @classmethod
-    def terminate(cls, p1):
+    def terminate(cls, name):
         """
         DLL error termination
 
@@ -645,7 +645,7 @@ class GXSYS:
         already registered their own errors and called
         `terminate`.
         """
-        gxapi_cy.WrapSYS.terminate(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapSYS.terminate(GXContext._get_tls_geo(), name.encode())
         
 
 
@@ -655,37 +655,37 @@ class GXSYS:
 
 
     @classmethod
-    def crc_file(cls, p1):
+    def crc_file(cls, file):
         """
         Compute the CRC of a file
         """
-        ret_val = gxapi_cy.WrapSYS.crc_file(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapSYS.crc_file(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
 
     @classmethod
-    def crc_file_offset(cls, p1, p2):
+    def crc_file_offset(cls, file, offset):
         """
         Compute the CRC of a file with an Offset
         """
-        ret_val = gxapi_cy.WrapSYS.crc_file_offset(GXContext._get_tls_geo(), p1.encode(), p2)
+        ret_val = gxapi_cy.WrapSYS.crc_file_offset(GXContext._get_tls_geo(), file.encode(), offset)
         return ret_val
 
 
 
     @classmethod
-    def file_ren(cls, p1, p2):
+    def file_ren(cls, old_file, new_file):
         """
         Rename a file
         """
-        gxapi_cy.WrapSYS.file_ren(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        gxapi_cy.WrapSYS.file_ren(GXContext._get_tls_geo(), old_file.encode(), new_file.encode())
         
 
 
 
     @classmethod
-    def find_files_vv(cls, p1, p2):
+    def find_files_vv(cls, vv, mask):
         """
         Fill a `GXVV` with files matching an input file mask.
 
@@ -694,13 +694,13 @@ class GXSYS:
         Fill a `GXVV` with files matching the input file mask.
         The `GXVV` should be of string type.
         """
-        gxapi_cy.WrapSYS.find_files_vv(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
+        gxapi_cy.WrapSYS.find_files_vv(GXContext._get_tls_geo(), vv._wrapper, mask.encode())
         
 
 
 
     @classmethod
-    def absolute_file_name(cls, p1, p2):
+    def absolute_file_name(cls, abbr, name):
         """
         Convert an abbreviated path name to a full path name.
 
@@ -709,43 +709,43 @@ class GXSYS:
         This is mainly intended to convert ".\\name" to a full
         name at run-time.
         """
-        p2.value = gxapi_cy.WrapSYS.absolute_file_name(GXContext._get_tls_geo(), p1.encode(), p2.value.encode())
+        name.value = gxapi_cy.WrapSYS.absolute_file_name(GXContext._get_tls_geo(), abbr.encode(), name.value.encode())
         
 
 
 
     @classmethod
-    def copy_file(cls, p1, p2):
+    def copy_file(cls, src_file, dest_file):
         """
         Copy a file.
         """
-        ret_val = gxapi_cy.WrapSYS.copy_file(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        ret_val = gxapi_cy.WrapSYS.copy_file(GXContext._get_tls_geo(), src_file.encode(), dest_file.encode())
         return ret_val
 
 
 
     @classmethod
-    def delete_file(cls, p1):
+    def delete_file(cls, file):
         """
         Delete a file.
         """
-        ret_val = gxapi_cy.WrapSYS.delete_file(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapSYS.delete_file(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
 
     @classmethod
-    def delete_gi_file(cls, p1):
+    def delete_gi_file(cls, file):
         """
         Delete the GI file associated with a grid.
         """
-        ret_val = gxapi_cy.WrapSYS.delete_gi_file(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapSYS.delete_gi_file(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
 
     @classmethod
-    def delete_grid_file(cls, p1):
+    def delete_grid_file(cls, file):
         """
         Delete a grid file and its associated GI and XML files.
 
@@ -755,23 +755,23 @@ class GXSYS:
         and XML files.
         No error is registered if a file is not found or cannot be deleted.
         """
-        ret_val = gxapi_cy.WrapSYS.delete_grid_file(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapSYS.delete_grid_file(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
 
     @classmethod
-    def dir_exist(cls, p1):
+    def dir_exist(cls, dir):
         """
         Check to see if a directory exists
         """
-        ret_val = gxapi_cy.WrapSYS.dir_exist(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapSYS.dir_exist(GXContext._get_tls_geo(), dir.encode())
         return ret_val
 
 
 
     @classmethod
-    def file_exist(cls, p1):
+    def file_exist(cls, file):
         """
         Check to see if a file exists
 
@@ -781,34 +781,34 @@ class GXSYS:
         path is not specified, then the current working
         directory is used for the path.
         """
-        ret_val = gxapi_cy.WrapSYS.file_exist(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapSYS.file_exist(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
 
     @classmethod
-    def file_size(cls, p1):
+    def file_size(cls, file):
         """
         Returns size of a file.
         """
-        ret_val = gxapi_cy.WrapSYS.file_size(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapSYS.file_size(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
 
     @classmethod
-    def file_writable(cls, p1):
+    def file_writable(cls, file):
         """
         Check if a file can be created or opened in read-write mode
         at a specific location
         """
-        ret_val = gxapi_cy.WrapSYS.file_writable(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapSYS.file_writable(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
 
     @classmethod
-    def find_path(cls, p1, p2, p3):
+    def find_path(cls, file, mode, p3):
         """
         Get full path for a file with Geosoft subdirectory parameter.
 
@@ -826,13 +826,13 @@ class GXSYS:
         <system>       the operating system system directory
         <other>        other environment variables
         """
-        ret_val, p3.value = gxapi_cy.WrapSYS.find_path(GXContext._get_tls_geo(), p1.encode(), p2, p3.value.encode())
+        ret_val, p3.value = gxapi_cy.WrapSYS.find_path(GXContext._get_tls_geo(), file.encode(), mode, p3.value.encode())
         return ret_val
 
 
 
     @classmethod
-    def find_path_ex(cls, p1, p2, p3, p4):
+    def find_path_ex(cls, file, mode, p3, p4):
         """
         Get full path for a file.
 
@@ -850,13 +850,13 @@ class GXSYS:
         <system>       the operating system system directory
         <other>        other environment variable
         """
-        ret_val, p4.value = gxapi_cy.WrapSYS.find_path_ex(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4.value.encode())
+        ret_val, p4.value = gxapi_cy.WrapSYS.find_path_ex(GXContext._get_tls_geo(), file.encode(), mode, p3, p4.value.encode())
         return ret_val
 
 
 
     @classmethod
-    def get_directory(cls, p1, p2):
+    def get_directory(cls, sys_dir, dir):
         """
         Get a directory path
 
@@ -864,13 +864,13 @@ class GXSYS:
 
         The path will always end with the file separator character
         """
-        p2.value = gxapi_cy.WrapSYS.get_directory(GXContext._get_tls_geo(), p1, p2.value.encode())
+        dir.value = gxapi_cy.WrapSYS.get_directory(GXContext._get_tls_geo(), sys_dir, dir.value.encode())
         
 
 
 
     @classmethod
-    def get_path(cls, p1, p2):
+    def get_path(cls, type, p2):
         """
         Get a Geosoft path
 
@@ -878,53 +878,53 @@ class GXSYS:
 
         The path name will have a directory separator at the end.
         """
-        p2.value = gxapi_cy.WrapSYS.get_path(GXContext._get_tls_geo(), p1, p2.value.encode())
+        p2.value = gxapi_cy.WrapSYS.get_path(GXContext._get_tls_geo(), type, p2.value.encode())
         
 
 
 
     @classmethod
-    def get_windows_dir(cls, p1):
+    def get_windows_dir(cls, dir):
         """
         Get the Windows directory path
         """
-        p1.value = gxapi_cy.WrapSYS.get_windows_dir(GXContext._get_tls_geo(), p1.value.encode())
+        dir.value = gxapi_cy.WrapSYS.get_windows_dir(GXContext._get_tls_geo(), dir.value.encode())
         
 
 
 
     @classmethod
-    def make_dir(cls, p1):
+    def make_dir(cls, dir):
         """
         Create a directory.
         """
-        ret_val = gxapi_cy.WrapSYS.make_dir(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapSYS.make_dir(GXContext._get_tls_geo(), dir.encode())
         return ret_val
 
 
 
     @classmethod
-    def make_file_readonly(cls, p1):
+    def make_file_readonly(cls, file):
         """
         Set a file's read-only attribute.
         """
-        ret_val = gxapi_cy.WrapSYS.make_file_readonly(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapSYS.make_file_readonly(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
 
     @classmethod
-    def make_file_writable(cls, p1):
+    def make_file_writable(cls, file):
         """
         Removes a file's read-only attribute.
         """
-        ret_val = gxapi_cy.WrapSYS.make_file_writable(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapSYS.make_file_writable(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
 
     @classmethod
-    def relative_file_name(cls, p1, p2):
+    def relative_file_name(cls, abbr, name):
         """
         Convert a file name to a relative abbreviated path name
 
@@ -933,23 +933,23 @@ class GXSYS:
         This will produce relative paths based on the workspace
         directory into ".\\name".
         """
-        p2.value = gxapi_cy.WrapSYS.relative_file_name(GXContext._get_tls_geo(), p1.encode(), p2.value.encode())
+        name.value = gxapi_cy.WrapSYS.relative_file_name(GXContext._get_tls_geo(), abbr.encode(), name.value.encode())
         
 
 
 
     @classmethod
-    def short_path_file_name(cls, p1, p2):
+    def short_path_file_name(cls, in_name, name):
         """
         Obtains the short path form of a specified input path.
         """
-        p2.value = gxapi_cy.WrapSYS.short_path_file_name(GXContext._get_tls_geo(), p1.encode(), p2.value.encode())
+        name.value = gxapi_cy.WrapSYS.short_path_file_name(GXContext._get_tls_geo(), in_name.encode(), name.value.encode())
         
 
 
 
     @classmethod
-    def temp_file_ext(cls, p1, p2):
+    def temp_file_ext(cls, ext, out):
         """
         Generate a unique file name for this extension in the temp directory.
 
@@ -957,13 +957,13 @@ class GXSYS:
 
         This is useful for created a unique tempory name for a file in the Geosoft temporary directory.
         """
-        p2.value = gxapi_cy.WrapSYS.temp_file_ext(GXContext._get_tls_geo(), p1.encode(), p2.value.encode())
+        out.value = gxapi_cy.WrapSYS.temp_file_ext(GXContext._get_tls_geo(), ext.encode(), out.value.encode())
         
 
 
 
     @classmethod
-    def temp_file_name(cls, p1, p2):
+    def temp_file_name(cls, path_file, out_filename):
         """
         Generate a file name for this file in the temp directory.
 
@@ -975,13 +975,13 @@ class GXSYS:
         filename itself will be a process and thread unique value to ensure that
         clashes does not happen.
         """
-        p2.value = gxapi_cy.WrapSYS.temp_file_name(GXContext._get_tls_geo(), p1.encode(), p2.value.encode())
+        out_filename.value = gxapi_cy.WrapSYS.temp_file_name(GXContext._get_tls_geo(), path_file.encode(), out_filename.value.encode())
         
 
 
 
     @classmethod
-    def transfer_path(cls, p1, p2):
+    def transfer_path(cls, path_file, file):
         """
         Transfers file path to new file name.
 
@@ -990,13 +990,13 @@ class GXSYS:
         The path and volume of from the input string is added to
         file name from the output string.
         """
-        p2.value = gxapi_cy.WrapSYS.transfer_path(GXContext._get_tls_geo(), p1.encode(), p2.value.encode())
+        file.value = gxapi_cy.WrapSYS.transfer_path(GXContext._get_tls_geo(), path_file.encode(), file.value.encode())
         
 
 
 
     @classmethod
-    def valid_file_name(cls, p1):
+    def valid_file_name(cls, file):
         """
         Check to see if a file name valid
 
@@ -1006,23 +1006,23 @@ class GXSYS:
         path is not specified, then the current working
         directory is used for the path.
         """
-        ret_val = gxapi_cy.WrapSYS.valid_file_name(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapSYS.valid_file_name(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
 
     @classmethod
-    def write_in_dir(cls, p1):
+    def write_in_dir(cls, dir):
         """
         Can I create files in this directory ?
         """
-        ret_val = gxapi_cy.WrapSYS.write_in_dir(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapSYS.write_in_dir(GXContext._get_tls_geo(), dir.encode())
         return ret_val
 
 
 
     @classmethod
-    def file_date(cls, p1):
+    def file_date(cls, file):
         """
         File creation date in decimal years.
 
@@ -1031,13 +1031,13 @@ class GXSYS:
         The FormatDate_STR function can be used to convert a date
         to a string.
         """
-        ret_val = gxapi_cy.WrapSYS.file_date(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapSYS.file_date(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
 
     @classmethod
-    def file_time(cls, p1):
+    def file_time(cls, file):
         """
         File creation time in decimal hours.
 
@@ -1046,13 +1046,13 @@ class GXSYS:
         The FormatTime_STR function can be used to convert a time
         to a string.
         """
-        ret_val = gxapi_cy.WrapSYS.file_time(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapSYS.file_time(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
 
     @classmethod
-    def utc_file_date(cls, p1):
+    def utc_file_date(cls, file):
         """
         File creation UTC date in decimal years.
 
@@ -1061,13 +1061,13 @@ class GXSYS:
         The FormatDate_STR function can be used to convert a date
         to a string.
         """
-        ret_val = gxapi_cy.WrapSYS.utc_file_date(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapSYS.utc_file_date(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
 
     @classmethod
-    def utc_file_time(cls, p1):
+    def utc_file_time(cls, file):
         """
         File creation UTC time in decimal hours.
 
@@ -1076,7 +1076,7 @@ class GXSYS:
         The FormatTime_STR function can be used to convert a time
         to a string.
         """
-        ret_val = gxapi_cy.WrapSYS.utc_file_time(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapSYS.utc_file_time(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
@@ -1086,37 +1086,37 @@ class GXSYS:
 
 
     @classmethod
-    def get_settings_meta(cls, p1):
+    def get_settings_meta(cls, meta):
         """
         Get the settings metadata object.
         """
-        gxapi_cy.WrapSYS.get_settings_meta(GXContext._get_tls_geo(), p1._wrapper)
+        gxapi_cy.WrapSYS.get_settings_meta(GXContext._get_tls_geo(), meta._wrapper)
         
 
 
 
     @classmethod
-    def global_reset(cls, p1):
+    def global_reset(cls, ini):
         """
         Reset the global parameters.
         """
-        gxapi_cy.WrapSYS.global_reset(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapSYS.global_reset(GXContext._get_tls_geo(), ini.encode())
         
 
 
 
     @classmethod
-    def global_set(cls, p1, p2):
+    def global_set(cls, parm, set):
         """
         Set a global parameter setting.
         """
-        gxapi_cy.WrapSYS.global_set(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        gxapi_cy.WrapSYS.global_set(GXContext._get_tls_geo(), parm.encode(), set.encode())
         
 
 
 
     @classmethod
-    def global_write(cls, p1):
+    def global_write(cls, ini):
         """
         Modify the global parameters.
 
@@ -1125,7 +1125,7 @@ class GXSYS:
         If the global parameters have been changed, use
         this function to make the changes permanent,
         """
-        gxapi_cy.WrapSYS.global_write(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapSYS.global_write(GXContext._get_tls_geo(), ini.encode())
         
 
 
@@ -1172,11 +1172,11 @@ class GXSYS:
 
 
     @classmethod
-    def set_settings_meta(cls, p1):
+    def set_settings_meta(cls, meta):
         """
         Set the settings metadata object.
         """
-        gxapi_cy.WrapSYS.set_settings_meta(GXContext._get_tls_geo(), p1._wrapper)
+        gxapi_cy.WrapSYS.set_settings_meta(GXContext._get_tls_geo(), meta._wrapper)
         
 
 
@@ -1196,21 +1196,21 @@ class GXSYS:
 
 
     @classmethod
-    def check_arc_license_ex(cls, p1):
+    def check_arc_license_ex(cls, version):
         """
         Check to see if a ESRI ArcEngine or ArcView license is available, returns type and version of available engine.
         """
-        ret_val, p1.value = gxapi_cy.WrapSYS.check_arc_license_ex(GXContext._get_tls_geo(), p1.value.encode())
+        ret_val, version.value = gxapi_cy.WrapSYS.check_arc_license_ex(GXContext._get_tls_geo(), version.value.encode())
         return ret_val
 
 
 
     @classmethod
-    def check_intrinsic(cls, p1, p2):
+    def check_intrinsic(cls, cl, name):
         """
         Check to see if an intrinsic object is licensed
         """
-        ret_val = gxapi_cy.WrapSYS.check_intrinsic(GXContext._get_tls_geo(), p1, p2.encode())
+        ret_val = gxapi_cy.WrapSYS.check_intrinsic(GXContext._get_tls_geo(), cl, name.encode())
         return ret_val
 
 
@@ -1227,7 +1227,7 @@ class GXSYS:
 
 
     @classmethod
-    def get_license_class(cls, p1):
+    def get_license_class(cls, cl):
         """
         Get the current application license class.
 
@@ -1237,17 +1237,17 @@ class GXSYS:
         "OasisMontaj"
         "DapServer"
         """
-        p1.value = gxapi_cy.WrapSYS.get_license_class(GXContext._get_tls_geo(), p1.value.encode())
+        cl.value = gxapi_cy.WrapSYS.get_license_class(GXContext._get_tls_geo(), cl.value.encode())
         
 
 
 
     @classmethod
-    def get_licensed_user(cls, p1, p3):
+    def get_licensed_user(cls, user, company):
         """
         Get the licensed user name and Company
         """
-        p1.value, p3.value = gxapi_cy.WrapSYS.get_licensed_user(GXContext._get_tls_geo(), p1.value.encode(), p3.value.encode())
+        user.value, company.value = gxapi_cy.WrapSYS.get_licensed_user(GXContext._get_tls_geo(), user.value.encode(), company.value.encode())
         
 
 
@@ -1257,21 +1257,21 @@ class GXSYS:
 
 
     @classmethod
-    def add_lineage_parameter(cls, p1, p2):
+    def add_lineage_parameter(cls, name, value):
         """
         Add a parameter to the current lineage object
         """
-        gxapi_cy.WrapSYS.add_lineage_parameter(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        gxapi_cy.WrapSYS.add_lineage_parameter(GXContext._get_tls_geo(), name.encode(), value.encode())
         
 
 
 
     @classmethod
-    def add_lineage_source(cls, p1, p2):
+    def add_lineage_source(cls, source_type, source_name):
         """
         Add a source to the current lineage object
         """
-        gxapi_cy.WrapSYS.add_lineage_source(GXContext._get_tls_geo(), p1, p2.encode())
+        gxapi_cy.WrapSYS.add_lineage_source(GXContext._get_tls_geo(), source_type, source_name.encode())
         
 
 
@@ -1297,7 +1297,7 @@ class GXSYS:
 
 
     @classmethod
-    def copy_geo_file(cls, p1, p2):
+    def copy_geo_file(cls, data, dir):
         """
         Copy a Geosoft data file and all associated files to a new folder
 
@@ -1307,13 +1307,13 @@ class GXSYS:
         for non-geosoft grids is limited since this method does not
         guarantee all grid files besides the main one are copied.
         """
-        gxapi_cy.WrapSYS.copy_geo_file(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        gxapi_cy.WrapSYS.copy_geo_file(GXContext._get_tls_geo(), data.encode(), dir.encode())
         
 
 
 
     @classmethod
-    def backup_geo_file(cls, p1, p2):
+    def backup_geo_file(cls, data, target):
         """
         Backup a Geosoft data file and all associated files to a temporary folder.
 
@@ -1323,43 +1323,43 @@ class GXSYS:
         for non-geosoft grids is limited since this method does not
         guarantee all grid files besides the main one are copied.
         """
-        p2.value = gxapi_cy.WrapSYS.backup_geo_file(GXContext._get_tls_geo(), p1.encode(), p2.value.encode())
+        target.value = gxapi_cy.WrapSYS.backup_geo_file(GXContext._get_tls_geo(), data.encode(), target.value.encode())
         
 
 
 
     @classmethod
-    def remove_lineage_output(cls, p1):
+    def remove_lineage_output(cls, output_name):
         """
         Remove an output from the current lineage object
         """
-        gxapi_cy.WrapSYS.remove_lineage_output(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapSYS.remove_lineage_output(GXContext._get_tls_geo(), output_name.encode())
         
 
 
 
     @classmethod
-    def remove_lineage_parameter(cls, p1):
+    def remove_lineage_parameter(cls, name):
         """
         Remove a parameter in the current lineage object
         """
-        gxapi_cy.WrapSYS.remove_lineage_parameter(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapSYS.remove_lineage_parameter(GXContext._get_tls_geo(), name.encode())
         
 
 
 
     @classmethod
-    def remove_lineage_source(cls, p1):
+    def remove_lineage_source(cls, source_name):
         """
         Remove a source from the current lineage object
         """
-        gxapi_cy.WrapSYS.remove_lineage_source(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapSYS.remove_lineage_source(GXContext._get_tls_geo(), source_name.encode())
         
 
 
 
     @classmethod
-    def restore_geo_file(cls, p1, p2):
+    def restore_geo_file(cls, target, original):
         """
         Backup a Geosoft data file and all associated files to original location
 
@@ -1369,37 +1369,37 @@ class GXSYS:
         for non-geosoft grids is limited since this method does not
         guarantee all grid files besides the main one are copied.
         """
-        gxapi_cy.WrapSYS.restore_geo_file(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        gxapi_cy.WrapSYS.restore_geo_file(GXContext._get_tls_geo(), target.encode(), original.encode())
         
 
 
 
     @classmethod
-    def set_lineage_description(cls, p1):
+    def set_lineage_description(cls, description):
         """
         Set the description for the current lineage object
         """
-        gxapi_cy.WrapSYS.set_lineage_description(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapSYS.set_lineage_description(GXContext._get_tls_geo(), description.encode())
         
 
 
 
     @classmethod
-    def set_lineage_display_name(cls, p1):
+    def set_lineage_display_name(cls, display_name):
         """
         Set the display name for the current lineage object
         """
-        gxapi_cy.WrapSYS.set_lineage_display_name(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapSYS.set_lineage_display_name(GXContext._get_tls_geo(), display_name.encode())
         
 
 
 
     @classmethod
-    def set_lineage_name(cls, p1):
+    def set_lineage_name(cls, name):
         """
         Set the name for the current lineage object
         """
-        gxapi_cy.WrapSYS.set_lineage_name(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapSYS.set_lineage_name(GXContext._get_tls_geo(), name.encode())
         
 
 
@@ -1409,17 +1409,17 @@ class GXSYS:
 
 
     @classmethod
-    def clear_menus(cls, p1):
+    def clear_menus(cls, flag):
         """
         Clear all menus
         """
-        gxapi_cy.WrapSYS.clear_menus(GXContext._get_tls_geo(), p1)
+        gxapi_cy.WrapSYS.clear_menus(GXContext._get_tls_geo(), flag)
         
 
 
 
     @classmethod
-    def get_loaded_menus(cls, p1, p2, p3):
+    def get_loaded_menus(cls, lst_default, lst_loaded, lst_user):
         """
         Get the loaded menus.
 
@@ -1428,13 +1428,13 @@ class GXSYS:
         The names of the LSTs contain the menus and the values contain any exclusions. Exlusions 
         are semicolon separated top level menu names and/or toolbar.geobar file names.
         """
-        gxapi_cy.WrapSYS.get_loaded_menus(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper)
+        gxapi_cy.WrapSYS.get_loaded_menus(GXContext._get_tls_geo(), lst_default._wrapper, lst_loaded._wrapper, lst_user._wrapper)
         
 
 
 
     @classmethod
-    def set_loaded_menus(cls, p1, p2, p3):
+    def set_loaded_menus(cls, lst_default, lst_loaded, lst_user):
         """
         Load a list of menus
 
@@ -1443,17 +1443,17 @@ class GXSYS:
         The names of the LSTs contain the menus and the values contain any exclusions. Exlusions 
         are semicolon separated top level menu names and/or toolbar.geobar file names.
         """
-        gxapi_cy.WrapSYS.set_loaded_menus(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper)
+        gxapi_cy.WrapSYS.set_loaded_menus(GXContext._get_tls_geo(), lst_default._wrapper, lst_loaded._wrapper, lst_user._wrapper)
         
 
 
 
     @classmethod
-    def get_entitlement_rights(cls, p1):
+    def get_entitlement_rights(cls, lst_rights):
         """
         Get the Entitlement Rights
         """
-        gxapi_cy.WrapSYS.get_entitlement_rights(GXContext._get_tls_geo(), p1._wrapper)
+        gxapi_cy.WrapSYS.get_entitlement_rights(GXContext._get_tls_geo(), lst_rights._wrapper)
         
 
 
@@ -1463,21 +1463,21 @@ class GXSYS:
 
 
     @classmethod
-    def generate_guid(cls, p1):
+    def generate_guid(cls, guid):
         """
         Genrates a GUID string (e.g. {4FEDE8BF-CDAB-430A-8026-1CCC0EC0A2EB})
         """
-        p1.value = gxapi_cy.WrapSYS.generate_guid(GXContext._get_tls_geo(), p1.value.encode())
+        guid.value = gxapi_cy.WrapSYS.generate_guid(GXContext._get_tls_geo(), guid.value.encode())
         
 
 
 
     @classmethod
-    def clipboard_to_file(cls, p1):
+    def clipboard_to_file(cls, file):
         """
         Copy text from the clipboard to a file.
         """
-        gxapi_cy.WrapSYS.clipboard_to_file(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapSYS.clipboard_to_file(GXContext._get_tls_geo(), file.encode())
         
 
 
@@ -1515,27 +1515,27 @@ class GXSYS:
 
 
     @classmethod
-    def emf_object_size(cls, p1, p2, p3):
+    def emf_object_size(cls, file, size_x, size_y):
         """
         Get the size of an EMF object
         """
-        p2.value, p3.value = gxapi_cy.WrapSYS.emf_object_size(GXContext._get_tls_geo(), p1.encode(), p2.value, p3.value)
+        size_x.value, size_y.value = gxapi_cy.WrapSYS.emf_object_size(GXContext._get_tls_geo(), file.encode(), size_x.value, size_y.value)
         
 
 
 
     @classmethod
-    def file_to_clipboard(cls, p1):
+    def file_to_clipboard(cls, file):
         """
         Copy a text file onto the clipboard as text.
         """
-        gxapi_cy.WrapSYS.file_to_clipboard(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapSYS.file_to_clipboard(GXContext._get_tls_geo(), file.encode())
         
 
 
 
     @classmethod
-    def font_lst(cls, p1, p2):
+    def font_lst(cls, lst, which):
         """
         List all Windows and geosoft fonts.
 
@@ -1545,13 +1545,13 @@ class GXSYS:
         and `SYS_FONT_TT`, then `SYS_FONT_GFN`, or vice-versa to
         change order of listing.
         """
-        gxapi_cy.WrapSYS.font_lst(GXContext._get_tls_geo(), p1._wrapper, p2)
+        gxapi_cy.WrapSYS.font_lst(GXContext._get_tls_geo(), lst._wrapper, which)
         
 
 
 
     @classmethod
-    def get_dot_net_gx_entries(cls, p1, p2):
+    def get_dot_net_gx_entries(cls, gx, entry_buffer):
         """
         Get the list of entry points that this assembly has
         exposed to Oasis montaj.
@@ -1562,38 +1562,38 @@ class GXSYS:
         string with each entry point separated by a semi-colon.
         For example: NewGDB|Run;NewGDB|RunEx
         """
-        ret_val, p2.value = gxapi_cy.WrapSYS.get_dot_net_gx_entries(GXContext._get_tls_geo(), p1.encode(), p2.value.encode())
+        ret_val, entry_buffer.value = gxapi_cy.WrapSYS.get_dot_net_gx_entries(GXContext._get_tls_geo(), gx.encode(), entry_buffer.value.encode())
         return ret_val
 
 
 
     @classmethod
-    def send_general_message(cls, p1, p2):
+    def send_general_message(cls, cl, info):
         """
         Send a general information message to all listners
         """
-        gxapi_cy.WrapSYS.send_general_message(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        gxapi_cy.WrapSYS.send_general_message(GXContext._get_tls_geo(), cl.encode(), info.encode())
         
 
 
 
     @classmethod
-    def write_debug_log(cls, p1):
+    def write_debug_log(cls, log):
         """
         This method writes out information to the output
         debugging log file (in temp folder) or output window.
         """
-        gxapi_cy.WrapSYS.write_debug_log(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapSYS.write_debug_log(GXContext._get_tls_geo(), log.encode())
         
 
 
 
     @classmethod
-    def log_script_run(cls, p1):
+    def log_script_run(cls, location):
         """
         This method logs that a script was run
         """
-        gxapi_cy.WrapSYS.log_script_run(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapSYS.log_script_run(GXContext._get_tls_geo(), location.encode())
         
 
 
@@ -1617,7 +1617,7 @@ class GXSYS:
 
 
     @classmethod
-    def run_multi_user_script(cls, p1, p2, p3, p4, p5, p6):
+    def run_multi_user_script(cls, script, users, iterations, wait_min_time, wait_max_time, ramp_up_time):
         """
         Execute a script using multithreaded users
 
@@ -1627,7 +1627,7 @@ class GXSYS:
         or EDBS. Users must ensure that the resources
         that are shared are protected.
         """
-        gxapi_cy.WrapSYS.run_multi_user_script(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4, p5, p6)
+        gxapi_cy.WrapSYS.run_multi_user_script(GXContext._get_tls_geo(), script.encode(), users, iterations, wait_min_time, wait_max_time, ramp_up_time)
         
 
 
@@ -1637,21 +1637,21 @@ class GXSYS:
 
 
     @classmethod
-    def clear_group(cls, p1):
+    def clear_group(cls, group):
         """
         Clear current contents of a group
         """
-        gxapi_cy.WrapSYS.clear_group(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapSYS.clear_group(GXContext._get_tls_geo(), group.encode())
         
 
 
 
     @classmethod
-    def clear_group_parm(cls, p1):
+    def clear_group_parm(cls, group):
         """
         Clears all paramters in a specified group.
         """
-        gxapi_cy.WrapSYS.clear_group_parm(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapSYS.clear_group_parm(GXContext._get_tls_geo(), group.encode())
         
 
 
@@ -1667,7 +1667,7 @@ class GXSYS:
 
 
     @classmethod
-    def default_int(cls, p1, p2, p3):
+    def default_int(cls, group, field, val):
         """
         Allows a default int to be set.
 
@@ -1676,13 +1676,13 @@ class GXSYS:
         The value will only be set if there is no existing
         setting.
         """
-        gxapi_cy.WrapSYS.default_int(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3)
+        gxapi_cy.WrapSYS.default_int(GXContext._get_tls_geo(), group.encode(), field.encode(), val)
         
 
 
 
     @classmethod
-    def default_double(cls, p1, p2, p3):
+    def default_double(cls, group, field, val):
         """
         Allows a default real to be set.
 
@@ -1691,13 +1691,13 @@ class GXSYS:
         The value will only be set if there is no existing
         setting.
         """
-        gxapi_cy.WrapSYS.default_double(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3)
+        gxapi_cy.WrapSYS.default_double(GXContext._get_tls_geo(), group.encode(), field.encode(), val)
         
 
 
 
     @classmethod
-    def default_string(cls, p1, p2, p3):
+    def default_string(cls, group, field, val):
         """
         Allows a default string to be set.
 
@@ -1706,13 +1706,13 @@ class GXSYS:
         The value will only be set if there is no existing
         setting.
         """
-        gxapi_cy.WrapSYS.default_string(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode())
+        gxapi_cy.WrapSYS.default_string(GXContext._get_tls_geo(), group.encode(), field.encode(), val.encode())
         
 
 
 
     @classmethod
-    def get_pattern(cls, p1, p2, p3, p4, p5, p6, p7):
+    def get_pattern(cls, group, pat, size, thick, p5, p6, p7):
         """
         Gets pattern parameters from the parameter block.
 
@@ -1732,23 +1732,23 @@ class GXSYS:
         Returned values may be DUMMY, but will be acceptable for use with
         the `GXGUI.color_form` function, to set defaults.
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value, p7.value = gxapi_cy.WrapSYS.get_pattern(GXContext._get_tls_geo(), p1.encode(), p2.value, p3.value, p4.value, p5.value, p6.value, p7.value)
+        pat.value, size.value, thick.value, p5.value, p6.value, p7.value = gxapi_cy.WrapSYS.get_pattern(GXContext._get_tls_geo(), group.encode(), pat.value, size.value, thick.value, p5.value, p6.value, p7.value)
         
 
 
 
     @classmethod
-    def get_reg(cls, p1, p2):
+    def get_reg(cls, reg, group):
         """
         Get `GXREG` parameters.
         """
-        gxapi_cy.WrapSYS.get_reg(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
+        gxapi_cy.WrapSYS.get_reg(GXContext._get_tls_geo(), reg._wrapper, group.encode())
         
 
 
 
     @classmethod
-    def gt_string(cls, p1, p2, p3):
+    def gt_string(cls, group, field, buff):
         """
         This method returns a string in the parameter block.
 
@@ -1757,63 +1757,63 @@ class GXSYS:
         If the setting exits it is placed in the buffer, otherwise
         the buffer will have zero length
         """
-        p3.value = gxapi_cy.WrapSYS.gt_string(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.value.encode())
+        buff.value = gxapi_cy.WrapSYS.gt_string(GXContext._get_tls_geo(), group.encode(), field.encode(), buff.value.encode())
         
 
 
 
     @classmethod
-    def exist_int(cls, p1, p2):
+    def exist_int(cls, group, field):
         """
         This method checks to see if a int parameter exists.
         """
-        ret_val = gxapi_cy.WrapSYS.exist_int(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        ret_val = gxapi_cy.WrapSYS.exist_int(GXContext._get_tls_geo(), group.encode(), field.encode())
         return ret_val
 
 
 
     @classmethod
-    def exist_double(cls, p1, p2):
+    def exist_double(cls, group, field):
         """
         This method checks to see if a real parameter exists.
         """
-        ret_val = gxapi_cy.WrapSYS.exist_double(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        ret_val = gxapi_cy.WrapSYS.exist_double(GXContext._get_tls_geo(), group.encode(), field.encode())
         return ret_val
 
 
 
     @classmethod
-    def exist_string(cls, p1, p2):
+    def exist_string(cls, group, field):
         """
         This method checks to see if a string parameter exists.
         """
-        ret_val = gxapi_cy.WrapSYS.exist_string(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        ret_val = gxapi_cy.WrapSYS.exist_string(GXContext._get_tls_geo(), group.encode(), field.encode())
         return ret_val
 
 
 
     @classmethod
-    def get_int(cls, p1, p2):
+    def get_int(cls, group, field):
         """
         This method returns an int from the parameter block.
         """
-        ret_val = gxapi_cy.WrapSYS.get_int(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        ret_val = gxapi_cy.WrapSYS.get_int(GXContext._get_tls_geo(), group.encode(), field.encode())
         return ret_val
 
 
 
     @classmethod
-    def get_yes_no(cls, p1, p2):
+    def get_yes_no(cls, group, field):
         """
         Check a YES/NO Setting
         """
-        ret_val = gxapi_cy.WrapSYS.get_yes_no(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        ret_val = gxapi_cy.WrapSYS.get_yes_no(GXContext._get_tls_geo(), group.encode(), field.encode())
         return ret_val
 
 
 
     @classmethod
-    def replace_string(cls, p1, p2, p4):
+    def replace_string(cls, str_val, output, group):
         """
         Replace "% %" tokens in a string with parameter values
 
@@ -1823,43 +1823,43 @@ class GXSYS:
         such as "%group.name%", are used as-is.  Partial parameter names, such as
         "%name%" will have the default group attached.
         """
-        p2.value = gxapi_cy.WrapSYS.replace_string(GXContext._get_tls_geo(), p1.encode(), p2.value.encode(), p4.encode())
+        output.value = gxapi_cy.WrapSYS.replace_string(GXContext._get_tls_geo(), str_val.encode(), output.value.encode(), group.encode())
         
 
 
 
     @classmethod
-    def load_parm(cls, p1, p2):
+    def load_parm(cls, file, groups):
         """
         Reads parameters from a file.
         """
-        gxapi_cy.WrapSYS.load_parm(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        gxapi_cy.WrapSYS.load_parm(GXContext._get_tls_geo(), file.encode(), groups.encode())
         
 
 
 
     @classmethod
-    def get_double(cls, p1, p2):
+    def get_double(cls, group, field):
         """
         This method returns a real from the parameter block.
         """
-        ret_val = gxapi_cy.WrapSYS.get_double(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        ret_val = gxapi_cy.WrapSYS.get_double(GXContext._get_tls_geo(), group.encode(), field.encode())
         return ret_val
 
 
 
     @classmethod
-    def save_parm(cls, p1, p2, p3):
+    def save_parm(cls, file, mode, groups):
         """
         Writes out one group (or all groups) to a file.
         """
-        gxapi_cy.WrapSYS.save_parm(GXContext._get_tls_geo(), p1.encode(), p2, p3.encode())
+        gxapi_cy.WrapSYS.save_parm(GXContext._get_tls_geo(), file.encode(), mode, groups.encode())
         
 
 
 
     @classmethod
-    def filter_parm_group(cls, p1, p2):
+    def filter_parm_group(cls, group, add):
         """
         Controls filtering of specific group during logging.
 
@@ -1867,23 +1867,23 @@ class GXSYS:
 
         This is useful to prevent certain utility GX parameters from being recorded during GS script runs where the parameters does not influence the actual script execution.
         """
-        gxapi_cy.WrapSYS.filter_parm_group(GXContext._get_tls_geo(), p1.encode(), p2)
+        gxapi_cy.WrapSYS.filter_parm_group(GXContext._get_tls_geo(), group.encode(), add)
         
 
 
 
     @classmethod
-    def set_int(cls, p1, p2, p3):
+    def set_int(cls, group, field, val):
         """
         This method sets an int in the parameter block.
         """
-        gxapi_cy.WrapSYS.set_int(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3)
+        gxapi_cy.WrapSYS.set_int(GXContext._get_tls_geo(), group.encode(), field.encode(), val)
         
 
 
 
     @classmethod
-    def set_pattern(cls, p1, p2, p3, p4, p5, p6, p7):
+    def set_pattern(cls, group, pat, size, thick, p5, p6, p7):
         """
         Sets pattern parameters in the parameter block.
 
@@ -1904,37 +1904,37 @@ class GXSYS:
         
         Designed for use along with the sPatternForm_GUI function.
         """
-        gxapi_cy.WrapSYS.set_pattern(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4, p5, p6, p7)
+        gxapi_cy.WrapSYS.set_pattern(GXContext._get_tls_geo(), group.encode(), pat, size, thick, p5, p6, p7)
         
 
 
 
     @classmethod
-    def set_double(cls, p1, p2, p3):
+    def set_double(cls, group, field, val):
         """
         This method Sets a real in the parameter block.
         """
-        gxapi_cy.WrapSYS.set_double(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3)
+        gxapi_cy.WrapSYS.set_double(GXContext._get_tls_geo(), group.encode(), field.encode(), val)
         
 
 
 
     @classmethod
-    def set_reg(cls, p1):
+    def set_reg(cls, reg):
         """
         Copy contents of a `GXREG` to current parameters.
         """
-        gxapi_cy.WrapSYS.set_reg(GXContext._get_tls_geo(), p1._wrapper)
+        gxapi_cy.WrapSYS.set_reg(GXContext._get_tls_geo(), reg._wrapper)
         
 
 
 
     @classmethod
-    def set_string(cls, p1, p2, p3):
+    def set_string(cls, group, field, val):
         """
         This method sets a string in the parameter block.
         """
-        gxapi_cy.WrapSYS.set_string(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode())
+        gxapi_cy.WrapSYS.set_string(GXContext._get_tls_geo(), group.encode(), field.encode(), val.encode())
         
 
 
@@ -1979,47 +1979,47 @@ class GXSYS:
 
 
     @classmethod
-    def prog_name(cls, p1, p2):
+    def prog_name(cls, name, reset):
         """
         This method allows you to name the current process being
         displayed by the progress bar. This method has no affect
         if no progress bar exists.
         """
-        gxapi_cy.WrapSYS.prog_name(GXContext._get_tls_geo(), p1.encode(), p2)
+        gxapi_cy.WrapSYS.prog_name(GXContext._get_tls_geo(), name.encode(), reset)
         
 
 
 
     @classmethod
-    def progress(cls, p1):
+    def progress(cls, on):
         """
         This method allows you to turn on the Progress BAR ON/OFF.
         Once the progress bar is on, use the UpdateProg method
         to drive it.
         """
-        gxapi_cy.WrapSYS.progress(GXContext._get_tls_geo(), p1)
+        gxapi_cy.WrapSYS.progress(GXContext._get_tls_geo(), on)
         
 
 
 
     @classmethod
-    def prog_update(cls, p1):
+    def prog_update(cls, perc):
         """
         This method drives the Progress Bar. It is passed
         a percentage and will update the bar to reflect that
         percentage.
         """
-        gxapi_cy.WrapSYS.prog_update(GXContext._get_tls_geo(), p1)
+        gxapi_cy.WrapSYS.prog_update(GXContext._get_tls_geo(), perc)
         
 
 
 
     @classmethod
-    def prog_update_l(cls, p1, p2):
+    def prog_update_l(cls, v1, v2):
         """
         Updates progress bar based on count and maxcount.
         """
-        gxapi_cy.WrapSYS.prog_update_l(GXContext._get_tls_geo(), p1, p2)
+        gxapi_cy.WrapSYS.prog_update_l(GXContext._get_tls_geo(), v1, v2)
         
 
 
@@ -2029,27 +2029,27 @@ class GXSYS:
 
 
     @classmethod
-    def get_sys_info(cls, p1, p2):
+    def get_sys_info(cls, sys_info, info):
         """
         Get system information
         """
-        p2.value = gxapi_cy.WrapSYS.get_sys_info(GXContext._get_tls_geo(), p1, p2.value.encode())
+        info.value = gxapi_cy.WrapSYS.get_sys_info(GXContext._get_tls_geo(), sys_info, info.value.encode())
         
 
 
 
     @classmethod
-    def registry_get_val(cls, p1, p2, p3, p4):
+    def registry_get_val(cls, domain, key, sub_key, value):
         """
         Get a registry value
         """
-        ret_val, p4.value = gxapi_cy.WrapSYS.registry_get_val(GXContext._get_tls_geo(), p1, p2.encode(), p3.encode(), p4.value.encode())
+        ret_val, value.value = gxapi_cy.WrapSYS.registry_get_val(GXContext._get_tls_geo(), domain, key.encode(), sub_key.encode(), value.value.encode())
         return ret_val
 
 
 
     @classmethod
-    def registry_delete_key(cls, p1, p2):
+    def registry_delete_key(cls, domain, key):
         """
         Delete a registry value
 
@@ -2057,23 +2057,23 @@ class GXSYS:
 
         All sub-keys and values will be deleted if they exist.
         """
-        ret_val = gxapi_cy.WrapSYS.registry_delete_key(GXContext._get_tls_geo(), p1, p2.encode())
+        ret_val = gxapi_cy.WrapSYS.registry_delete_key(GXContext._get_tls_geo(), domain, key.encode())
         return ret_val
 
 
 
     @classmethod
-    def registry_delete_val(cls, p1, p2, p3):
+    def registry_delete_val(cls, domain, key, value_name):
         """
         Delete a registry value
         """
-        ret_val = gxapi_cy.WrapSYS.registry_delete_val(GXContext._get_tls_geo(), p1, p2.encode(), p3.encode())
+        ret_val = gxapi_cy.WrapSYS.registry_delete_val(GXContext._get_tls_geo(), domain, key.encode(), value_name.encode())
         return ret_val
 
 
 
     @classmethod
-    def registry_set_val(cls, p1, p2, p3, p4):
+    def registry_set_val(cls, domain, key, sub_key, value):
         """
         Set/create a registry value
 
@@ -2082,7 +2082,7 @@ class GXSYS:
         This function will create the subkey and key if either do not
         already exist.
         """
-        gxapi_cy.WrapSYS.registry_set_val(GXContext._get_tls_geo(), p1, p2.encode(), p3.encode(), p4.encode())
+        gxapi_cy.WrapSYS.registry_set_val(GXContext._get_tls_geo(), domain, key.encode(), sub_key.encode(), value.encode())
         
 
 
@@ -2092,17 +2092,17 @@ class GXSYS:
 
 
     @classmethod
-    def destroy_ptmp(cls, p1):
+    def destroy_ptmp(cls, ptmp):
         """
         Destroy PTMP.
         """
-        gxapi_cy.WrapSYS.destroy_ptmp(GXContext._get_tls_geo(), p1)
+        gxapi_cy.WrapSYS.destroy_ptmp(GXContext._get_tls_geo(), ptmp)
         
 
 
 
     @classmethod
-    def get_ptmp(cls, p1):
+    def get_ptmp(cls, ptmp):
         """
         Get temporary saves copy of parameter block.
 
@@ -2110,13 +2110,13 @@ class GXSYS:
 
             `save_ptmp`, `destroy_ptmp`
         """
-        gxapi_cy.WrapSYS.get_ptmp(GXContext._get_tls_geo(), p1)
+        gxapi_cy.WrapSYS.get_ptmp(GXContext._get_tls_geo(), ptmp)
         
 
 
 
     @classmethod
-    def save_ptmp(cls, p1):
+    def save_ptmp(cls, groups):
         """
         Save a temporary copy of the parameter block.
 
@@ -2128,7 +2128,7 @@ class GXSYS:
 
             `get_ptmp`, `destroy_ptmp`
         """
-        ret_val = gxapi_cy.WrapSYS.save_ptmp(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapSYS.save_ptmp(GXContext._get_tls_geo(), groups.encode())
         return ret_val
 
 
@@ -2138,23 +2138,23 @@ class GXSYS:
 
 
     @classmethod
-    def abort(cls, p1):
+    def abort(cls, message):
         """
         This method terminates the execution of a script. A message
         giving the reason for the abort will be displayed along with
         the line number where we stopped in the script.
         """
-        gxapi_cy.WrapSYS.abort(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapSYS.abort(GXContext._get_tls_geo(), message.encode())
         
 
 
 
     @classmethod
-    def assert_(cls, p1):
+    def assert_(cls, exp):
         """
         Abort with GX line number if not true.
         """
-        gxapi_cy.WrapSYS.assert_(GXContext._get_tls_geo(), p1)
+        gxapi_cy.WrapSYS.assert_(GXContext._get_tls_geo(), exp)
         
 
 
@@ -2187,17 +2187,17 @@ class GXSYS:
 
 
     @classmethod
-    def delay(cls, p1):
+    def delay(cls, secs):
         """
         Idle delay method.
         """
-        ret_val = gxapi_cy.WrapSYS.delay(GXContext._get_tls_geo(), p1)
+        ret_val = gxapi_cy.WrapSYS.delay(GXContext._get_tls_geo(), secs)
         return ret_val
 
 
 
     @classmethod
-    def get_timer(cls, p1, p2, p3):
+    def get_timer(cls, flag, start_time, elapsed_time):
         """
         Return the elapsed time since the established time.
 
@@ -2207,7 +2207,7 @@ class GXSYS:
         the count start time, subsequent times the time will be the time
         elapsed since the queried start time.  Do so by settign the flag to 0.
         """
-        ret_val, p2.value, p3.value = gxapi_cy.WrapSYS.get_timer(GXContext._get_tls_geo(), p1, p2.value, p3.value)
+        ret_val, start_time.value, elapsed_time.value = gxapi_cy.WrapSYS.get_timer(GXContext._get_tls_geo(), flag, start_time.value, elapsed_time.value)
         return ret_val
 
 
@@ -2217,83 +2217,83 @@ class GXSYS:
 
 
     @classmethod
-    def display_help(cls, p1, p2):
+    def display_help(cls, group, topic):
         """
         Display the help dialog with the specified topic highlighted
         """
-        gxapi_cy.WrapSYS.display_help(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        gxapi_cy.WrapSYS.display_help(GXContext._get_tls_geo(), group.encode(), topic.encode())
         
 
 
 
     @classmethod
-    def display_help_topic(cls, p1, p2):
+    def display_help_topic(cls, file, p2):
         """
         Display the help dialog without topic lookup in INI files
         """
-        gxapi_cy.WrapSYS.display_help_topic(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        gxapi_cy.WrapSYS.display_help_topic(GXContext._get_tls_geo(), file.encode(), p2.encode())
         
 
 
 
     @classmethod
-    def display_int(cls, p1, p2):
+    def display_int(cls, title, int):
         """
         Display an integer.
         """
-        gxapi_cy.WrapSYS.display_int(GXContext._get_tls_geo(), p1.encode(), p2)
+        gxapi_cy.WrapSYS.display_int(GXContext._get_tls_geo(), title.encode(), int)
         
 
 
 
     @classmethod
-    def display_message(cls, p1, p2):
+    def display_message(cls, title, message):
         """
         Display a user message.
         """
-        gxapi_cy.WrapSYS.display_message(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        gxapi_cy.WrapSYS.display_message(GXContext._get_tls_geo(), title.encode(), message.encode())
         
 
 
 
     @classmethod
-    def display_double(cls, p1, p2):
+    def display_double(cls, title, real):
         """
         Display a real number.
         """
-        gxapi_cy.WrapSYS.display_double(GXContext._get_tls_geo(), p1.encode(), p2)
+        gxapi_cy.WrapSYS.display_double(GXContext._get_tls_geo(), title.encode(), real)
         
 
 
 
     @classmethod
-    def display_question(cls, p1, p2):
+    def display_question(cls, title, message):
         """
         Display a YES/NO type question. This method waits
         for the user to hit YES or NO.
         """
-        ret_val = gxapi_cy.WrapSYS.display_question(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        ret_val = gxapi_cy.WrapSYS.display_question(GXContext._get_tls_geo(), title.encode(), message.encode())
         return ret_val
 
 
 
     @classmethod
-    def display_question_with_cancel(cls, p1, p2):
+    def display_question_with_cancel(cls, title, message):
         """
         Display a YES/NO/CANCEL type question. This method waits
         for the user to hit YES or NO or CANCEL.
         """
-        ret_val = gxapi_cy.WrapSYS.display_question_with_cancel(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        ret_val = gxapi_cy.WrapSYS.display_question_with_cancel(GXContext._get_tls_geo(), title.encode(), message.encode())
         return ret_val
 
 
 
     @classmethod
-    def display_task_dialog_ui(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13):
+    def display_task_dialog_ui(cls, title, main_instruction, content, common_buttons, custom_button_lst, icon, footer, footer_icon, verification_check_text, verification_checked, expanded_information, collapsed_control_text, expanded_control_text):
         """
         Show a Windows TaskDialog UI (see https://msdn.microsoft.com/en-us/library/windows/desktop/bb760441(v=vs.85).aspx).
         """
-        ret_val, p10.value = gxapi_cy.WrapSYS.display_task_dialog_ui(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4, p5._wrapper, p6, p7.encode(), p8, p9.encode(), p10.value, p11.encode(), p12.encode(), p13.encode())
+        ret_val, verification_checked.value = gxapi_cy.WrapSYS.display_task_dialog_ui(GXContext._get_tls_geo(), title.encode(), main_instruction.encode(), content.encode(), common_buttons, custom_button_lst._wrapper, icon, footer.encode(), footer_icon, verification_check_text.encode(), verification_checked.value, expanded_information.encode(), collapsed_control_text.encode(), expanded_control_text.encode())
         return ret_val
 
 
@@ -2309,7 +2309,7 @@ class GXSYS:
 
 
     @classmethod
-    def prompt(cls, p1, p2):
+    def prompt(cls, title, result):
         """
         Asks the User to enter a string.
 
@@ -2318,7 +2318,7 @@ class GXSYS:
         The User string is displayed as the default value in the prompt.
         Empty the user string if no default is needed.
         """
-        ret_val, p2.value = gxapi_cy.WrapSYS.prompt(GXContext._get_tls_geo(), p1.encode(), p2.value.encode())
+        ret_val, result.value = gxapi_cy.WrapSYS.prompt(GXContext._get_tls_geo(), title.encode(), result.value.encode())
         return ret_val
 
 
@@ -2344,7 +2344,7 @@ class GXSYS:
 
 
     @classmethod
-    def set_cursor(cls, p1):
+    def set_cursor(cls, cursor):
         """
         Set the cursor on the display.
 
@@ -2358,24 +2358,24 @@ class GXSYS:
         SnapPoint, SnapLine, SnapOnPoint, SnapOnLine, NPolygon,
         ExcludeRect, ExcludePoly, ExcludeNPoly, AddVertex, DelVertex, GeneralAdd and GeneralDelete
         """
-        gxapi_cy.WrapSYS.set_cursor(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapSYS.set_cursor(GXContext._get_tls_geo(), cursor.encode())
         
 
 
 
     @classmethod
-    def set_info_line(cls, p1):
+    def set_info_line(cls, message):
         """
         Display a message on the information line at the left
         bottom corner of the OAISIS montaj application.
         """
-        gxapi_cy.WrapSYS.set_info_line(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapSYS.set_info_line(GXContext._get_tls_geo(), message.encode())
         
 
 
 
     @classmethod
-    def set_interactive(cls, p1):
+    def set_interactive(cls, mode):
         """
         Sets the interactive mode.
 
@@ -2388,7 +2388,7 @@ class GXSYS:
 
             `interactive`, `run_gx` and `run_gs`
         """
-        gxapi_cy.WrapSYS.set_interactive(GXContext._get_tls_geo(), p1)
+        gxapi_cy.WrapSYS.set_interactive(GXContext._get_tls_geo(), mode)
         
 
 
@@ -2398,7 +2398,7 @@ class GXSYS:
 
 
     @classmethod
-    def get_workspace_reg(cls, p1):
+    def get_workspace_reg(cls, reg):
         """
         Get a copy of the workspace `GXREG`;
 
@@ -2413,13 +2413,13 @@ class GXSYS:
         to your own `GXREG` object and you wish them to take
         effect in the workspace `GXREG`.
         """
-        gxapi_cy.WrapSYS.get_workspace_reg(GXContext._get_tls_geo(), p1._wrapper)
+        gxapi_cy.WrapSYS.get_workspace_reg(GXContext._get_tls_geo(), reg._wrapper)
         
 
 
 
     @classmethod
-    def set_workspace_reg(cls, p1):
+    def set_workspace_reg(cls, reg):
         """
         Set the workspace `GXREG`;
 
@@ -2434,7 +2434,7 @@ class GXSYS:
         to your own `GXREG` object and you wish them to take
         effect in the workspace `GXREG`
         """
-        gxapi_cy.WrapSYS.set_workspace_reg(GXContext._get_tls_geo(), p1._wrapper)
+        gxapi_cy.WrapSYS.set_workspace_reg(GXContext._get_tls_geo(), reg._wrapper)
         
 
 
@@ -2444,32 +2444,32 @@ class GXSYS:
 
 
     @classmethod
-    def encrypt_string(cls, p1, p2, p4):
+    def encrypt_string(cls, input, output, key):
         """
         Encrypts a string for secure storage in configuration files
         or in the workspace parameters.
         """
-        p2.value = gxapi_cy.WrapSYS.encrypt_string(GXContext._get_tls_geo(), p1.encode(), p2.value.encode(), p4)
+        output.value = gxapi_cy.WrapSYS.encrypt_string(GXContext._get_tls_geo(), input.encode(), output.value.encode(), key)
         
 
 
 
     @classmethod
-    def decrypt_string(cls, p1, p2, p4):
+    def decrypt_string(cls, input, output, key):
         """
         Decrypts a string that has been previously encrypted by `encrypt_string`().
         """
-        p2.value = gxapi_cy.WrapSYS.decrypt_string(GXContext._get_tls_geo(), p1.encode(), p2.value.encode(), p4)
+        output.value = gxapi_cy.WrapSYS.decrypt_string(GXContext._get_tls_geo(), input.encode(), output.value.encode(), key)
         
 
 
 
     @classmethod
-    def is_encrypted_string(cls, p1):
+    def is_encrypted_string(cls, input):
         """
         Checks whether the specified string was encrypted by `encrypt_string`().
         """
-        ret_val = gxapi_cy.WrapSYS.is_encrypted_string(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapSYS.is_encrypted_string(GXContext._get_tls_geo(), input.encode())
         return ret_val
 
 
@@ -2493,7 +2493,7 @@ class GXSYS:
 
 
     @classmethod
-    def enable_gx_debugger(cls, p1, p2):
+    def enable_gx_debugger(cls, src_dir, first_gx):
         """
         Enable GX Debugger `GXGUI`
 
@@ -2508,7 +2508,7 @@ class GXSYS:
         soon as the GX is run the `GXGUI` will become visible and it will be possible to set more
         breakpoints in any of the GXC files found in the path.
         """
-        gxapi_cy.WrapSYS.enable_gx_debugger(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        gxapi_cy.WrapSYS.enable_gx_debugger(GXContext._get_tls_geo(), src_dir.encode(), first_gx.encode())
         
 
 

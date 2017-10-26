@@ -58,11 +58,11 @@ class GXDXFI:
 
 
     @classmethod
-    def create(cls, p1):
+    def create(cls, name):
         """
         Create `GXDXFI`.
         """
-        ret_val = gxapi_cy.WrapDXFI.create(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapDXFI.create(GXContext._get_tls_geo(), name.encode())
         return GXDXFI(ret_val)
 
 
@@ -70,31 +70,31 @@ class GXDXFI:
 
 
     @classmethod
-    def dxf2_ply(cls, p1, p2):
+    def dxf2_ply(cls, ply, dxfi):
         """
         Convert a DXF file to a `GXPLY` object
         """
-        gxapi_cy.WrapDXFI.dxf2_ply(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
+        gxapi_cy.WrapDXFI.dxf2_ply(GXContext._get_tls_geo(), ply._wrapper, dxfi._wrapper)
         
 
 
 
 
-    def dxf2_view_ex(self, p2, p3, p4, p5, p6, p7):
+    def dxf2_view_ex(self, view, max_pen, pb_group, group, pb_one_color, color):
         """
         Draw entities in a DXF file to a view in a map
         """
-        self._wrapper.dxf2_view_ex(p2._wrapper, p3, p4, p5.encode(), p6, p7)
+        self._wrapper.dxf2_view_ex(view._wrapper, max_pen, pb_group, group.encode(), pb_one_color, color)
         
 
 
 
 
-    def get_range(self, p2, p3, p4, p5, p6, p7):
+    def get_range(self, min_x, max_x, min_y, max_y, min_z, max_z):
         """
         Get DXF data range
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value, p7.value = self._wrapper.get_range(p2.value, p3.value, p4.value, p5.value, p6.value, p7.value)
+        min_x.value, max_x.value, min_y.value, max_y.value, min_z.value, max_z.value = self._wrapper.get_range(min_x.value, max_x.value, min_y.value, max_y.value, min_z.value, max_z.value)
         
 
 

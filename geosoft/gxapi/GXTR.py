@@ -60,11 +60,11 @@ class GXTR:
 
 
     @classmethod
-    def create(cls, p1):
+    def create(cls, order):
         """
         Creates a Trend object
         """
-        ret_val = gxapi_cy.WrapTR.create(GXContext._get_tls_geo(), p1)
+        ret_val = gxapi_cy.WrapTR.create(GXContext._get_tls_geo(), order)
         return GXTR(ret_val)
 
 
@@ -72,11 +72,11 @@ class GXTR:
 
 
 
-    def copy(self, p2):
+    def copy(self, t_rs):
         """
         This method copies a table resource to another trend table resource.
         """
-        self._wrapper.copy(p2._wrapper)
+        self._wrapper.copy(t_rs._wrapper)
         
 
 

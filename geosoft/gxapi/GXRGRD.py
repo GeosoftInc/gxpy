@@ -92,7 +92,7 @@ class GXRGRD:
 
 
     @classmethod
-    def create_img(cls, p1, p2, p3, p4, p5, p6):
+    def create_img(cls, v_vx, v_vy, v_vz, ipj, ctl, grid):
         """
         Run Rangrid directly on XYZ `GXVV` data, output to an `GXIMG`.
 
@@ -102,7 +102,7 @@ class GXRGRD:
         If the grid file name is not defined, the `GXIMG` is memory-based; not
         tied to a file.
         """
-        ret_val = gxapi_cy.WrapRGRD.create_img(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper, p5.encode(), p6.encode())
+        ret_val = gxapi_cy.WrapRGRD.create_img(GXContext._get_tls_geo(), v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, ipj._wrapper, ctl.encode(), grid.encode())
         return GXIMG(ret_val)
 
 
@@ -110,17 +110,17 @@ class GXRGRD:
 
 
 
-    def default(self, p2, p3):
+    def default(self, zchan, in_dat):
         """
         Set the defaults.
         """
-        ret_val = self._wrapper.default(p2.encode(), p3._wrapper)
+        ret_val = self._wrapper.default(zchan.encode(), in_dat._wrapper)
         return ret_val
 
 
 
 
-    def load_parms(self, p2):
+    def load_parms(self, file):
         """
         Retrieves a Rangrid object's control parameters from a file,
         or sets the parameters to default if the file doesn't exist.
@@ -133,34 +133,34 @@ class GXRGRD:
         Otherwise, the control file's settings are retrieved from
         the file and loaded into the `GXRGRD` object.
         """
-        ret_val = self._wrapper.load_parms(p2.encode())
+        ret_val = self._wrapper.load_parms(file.encode())
         return ret_val
 
 
 
 
-    def run(self, p2, p3):
+    def run(self, in_dat, out_dat):
         """
         Executes the Rangrid program, using the input channel and
         output file parameters.
         """
-        ret_val = self._wrapper.run(p2._wrapper, p3._wrapper)
+        ret_val = self._wrapper.run(in_dat._wrapper, out_dat._wrapper)
         return ret_val
 
 
 
     @classmethod
-    def run2(cls, p1, p2, p3, p4, p5, p6):
+    def run2(cls, db, x, y, z, ctl, grd):
         """
         Executes the Rangrid program directly on a database.
         """
-        ret_val = gxapi_cy.WrapRGRD.run2(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6.encode())
+        ret_val = gxapi_cy.WrapRGRD.run2(GXContext._get_tls_geo(), db._wrapper, x.encode(), y.encode(), z.encode(), ctl.encode(), grd.encode())
         return ret_val
 
 
 
 
-    def save_parms(self, p2):
+    def save_parms(self, name):
         """
         Puts the Rangrid object's control parameters back into
         its control file.
@@ -170,17 +170,17 @@ class GXRGRD:
         If the control file did not previously exist, it will be
         created. Otherwise, the old file will be overwritten.
         """
-        ret_val = self._wrapper.save_parms(p2.encode())
+        ret_val = self._wrapper.save_parms(name.encode())
         return ret_val
 
 
 
     @classmethod
-    def run_vv(cls, p1, p2, p3, p4, p5, p6):
+    def run_vv(cls, v_vx, v_vy, v_vz, ipj, ctl, grd):
         """
         Executes the Rangrid program directly on input data VVs.
         """
-        gxapi_cy.WrapRGRD.run_vv(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper, p5.encode(), p6.encode())
+        gxapi_cy.WrapRGRD.run_vv(GXContext._get_tls_geo(), v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, ipj._wrapper, ctl.encode(), grd.encode())
         
 
 

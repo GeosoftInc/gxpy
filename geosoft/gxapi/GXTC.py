@@ -63,21 +63,21 @@ class GXTC:
 
 
     @classmethod
-    def create(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+    def create(cls, img, p2, p3, p4, p5, p6, p7, p8, p9, p10):
         """
         Creates a Terrain Correction object
         """
-        ret_val = gxapi_cy.WrapTC.create(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7, p8, p9, p10)
+        ret_val = gxapi_cy.WrapTC.create(GXContext._get_tls_geo(), img._wrapper, p2, p3, p4, p5, p6, p7, p8, p9, p10)
         return GXTC(ret_val)
 
 
 
     @classmethod
-    def create_ex(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+    def create_ex(cls, img, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
         """
         Creates a Terrain Correction object	with surveytype
         """
-        ret_val = gxapi_cy.WrapTC.create_ex(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11)
+        ret_val = gxapi_cy.WrapTC.create_ex(GXContext._get_tls_geo(), img._wrapper, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11)
         return GXTC(ret_val)
 
 
@@ -85,41 +85,41 @@ class GXTC:
 
 
 
-    def grregter(self, p2, p3):
+    def grregter(self, im_gi, p3):
         """
         Create a terrain correction grid for a topo grid.
         """
-        self._wrapper.grregter(p2._wrapper, p3._wrapper)
+        self._wrapper.grregter(im_gi._wrapper, p3._wrapper)
         
 
 
 
 
-    def grterain(self, p2, p3, p4, p5, p6, p7, p8):
+    def grterain(self, gv_vx, p3, p4, p5, p6, p7, p8):
         """
         Calculate terrain corrections.
         """
-        self._wrapper.grterain(p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper, p7._wrapper, p8)
+        self._wrapper.grterain(gv_vx._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper, p7._wrapper, p8)
         
 
 
 
 
-    def grterain2(self, p2, p3, p4, p5, p6, p7, p8, p9):
+    def grterain2(self, gv_vx, p3, p4, p5, p6, p7, p8, p9):
         """
         Calculate terrain corrections (work for marine gravity too).
         """
-        self._wrapper.grterain2(p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper, p7._wrapper, p8._wrapper, p9)
+        self._wrapper.grterain2(gv_vx._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper, p7._wrapper, p8._wrapper, p9)
         
 
 
 
 
-    def g_gterain(self, p2, p3, p4, p5, p6, p7, p8):
+    def g_gterain(self, gv_vx, p3, p4, p5, p6, p7, p8):
         """
         Calculate GG terrain corrections
         """
-        self._wrapper.g_gterain(p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6, p7, p8)
+        self._wrapper.g_gterain(gv_vx._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6, p7, p8)
         
 
 

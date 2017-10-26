@@ -66,53 +66,53 @@ class GXDB:
 
 
 
-    def create_dup(self, p2):
+    def create_dup(self, file):
         """
         This method makes a brand new database identical to the input
         Database in-size.
         The database is opened in ReadWrite Mode.
         """
-        self._wrapper.create_dup(p2.encode())
+        self._wrapper.create_dup(file.encode())
         
 
 
 
 
-    def create_dup_comp(self, p2, p3):
+    def create_dup_comp(self, file, level):
         """
         This method makes a brand new database identical to the input
         Database in-size except it changes the compression.
         The database is opened in ReadWrite Mode.
         """
-        self._wrapper.create_dup_comp(p2.encode(), p3)
+        self._wrapper.create_dup_comp(file.encode(), level)
         
 
 
 
 
-    def dup_symb_across(self, p2, p3):
+    def dup_symb_across(self, dbo, symb):
         """
         Create a new Symbol by duplicating an existing symbol.
         exactly the same type but in output database. The symbol must
         not already exist in the output database.
         """
-        ret_val = self._wrapper.dup_symb_across(p2._wrapper, p3)
+        ret_val = self._wrapper.dup_symb_across(dbo._wrapper, symb)
         return ret_val
 
 
 
 
-    def easy_maker_symb(self, p2, p3, p4):
+    def easy_maker_symb(self, symb, name, groups):
         """
         Adds a Maker to the database symbol based on current GX
         """
-        self._wrapper.easy_maker_symb(p2, p3.encode(), p4.encode())
+        self._wrapper.easy_maker_symb(symb, name.encode(), groups.encode())
         
 
 
 
 
-    def get_chan_str(self, p2, p3, p4, p5):
+    def get_chan_str(self, line, chan, ind, str_val):
         """
         Get individual elements in a channel.
 
@@ -121,7 +121,7 @@ class GXDB:
         These methods are slow and should only be used when
         performance is not an issue.
         """
-        p5.value = self._wrapper.get_chan_str(p2, p3, p4, p5.value.encode())
+        str_val.value = self._wrapper.get_chan_str(line, chan, ind, str_val.value.encode())
         
 
 
@@ -146,7 +146,7 @@ class GXDB:
 
 
 
-    def get_chan_vv_expanded(self, p2, p3, p4):
+    def get_chan_vv_expanded(self, line, chan, vv):
         """
         Read a channel into a `GXVV`. If the channel is a `GXVA` channel it is
         treaded as a `GXVV` channel with multiple values per fid and the FID expation
@@ -161,13 +161,13 @@ class GXDB:
 
             `GXVV` class.
         """
-        self._wrapper.get_chan_vv_expanded(p2, p3, p4._wrapper)
+        self._wrapper.get_chan_vv_expanded(line, chan, vv._wrapper)
         
 
 
 
 
-    def get_ipj(self, p2, p3):
+    def get_ipj(self, ch, ipj):
         """
         Get georeference information in an `GXIPJ`.
 
@@ -176,13 +176,13 @@ class GXDB:
         If the channel does not have an `GXIPJ`, the `GXIPJ` that is
         returned will have an unknown projection.
         """
-        self._wrapper.get_ipj(p2, p3._wrapper)
+        self._wrapper.get_ipj(ch, ipj._wrapper)
         
 
 
 
 
-    def get_itr(self, p2, p3):
+    def get_itr(self, ch, itr):
         """
         Get `GXITR` for a channel.
 
@@ -192,23 +192,23 @@ class GXDB:
         the passed `GXITR`.
         Channel must be locked for READONLY or READWRITE.
         """
-        self._wrapper.get_itr(p2, p3._wrapper)
+        self._wrapper.get_itr(ch, itr._wrapper)
         
 
 
 
 
-    def get_reg_symb(self, p2, p3):
+    def get_reg_symb(self, symb, reg):
         """
         Get a `GXREG` object from a symbol
         """
-        self._wrapper.get_reg_symb(p2, p3._wrapper)
+        self._wrapper.get_reg_symb(symb, reg._wrapper)
         
 
 
 
 
-    def get_reg_symb_setting(self, p2, p3, p4):
+    def get_reg_symb_setting(self, symb, name, setting):
         """
         Get a `GXREG` string setting from a symbol reg
 
@@ -232,7 +232,7 @@ class GXDB:
         settings.  If performance is an issue, and more than one
         setting is to be Get and or Set, use the `GXREG` directly.
         """
-        p4.value = self._wrapper.get_reg_symb_setting(p2, p3.encode(), p4.value.encode())
+        setting.value = self._wrapper.get_reg_symb_setting(symb, name.encode(), setting.value.encode())
         
 
 
@@ -277,7 +277,7 @@ class GXDB:
 
 
 
-    def format_chan(self, p2, p3, p4):
+    def format_chan(self, chan, val, str_val):
         """
         Format a real value based on a channel format.
 
@@ -286,24 +286,24 @@ class GXDB:
         If the passed string is too short, the result will be
         "**".
         """
-        p4.value = self._wrapper.format_chan(p2, p3, p4.value.encode())
+        str_val.value = self._wrapper.format_chan(chan, val, str_val.value.encode())
         
 
 
 
 
-    def get_chan_array_size(self, p2):
+    def get_chan_array_size(self, chan):
         """
         This method Gets a channel's array size for a
         given channel handle.
         """
-        ret_val = self._wrapper.get_chan_array_size(p2)
+        ret_val = self._wrapper.get_chan_array_size(chan)
         return ret_val
 
 
 
 
-    def get_chan_class(self, p2, p3):
+    def get_chan_class(self, chan, cl):
         """
         This method gets a channel's label
 
@@ -314,13 +314,13 @@ class GXDB:
         empty string is returned.
         The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
-        p3.value = self._wrapper.get_chan_class(p2, p3.value.encode())
+        cl.value = self._wrapper.get_chan_class(chan, cl.value.encode())
         
 
 
 
 
-    def get_chan_decimal(self, p2):
+    def get_chan_decimal(self, chan):
         """
         This method gets a channel's number of digits displayed
         to the right of the decimal point.
@@ -329,13 +329,13 @@ class GXDB:
 
         The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
-        ret_val = self._wrapper.get_chan_decimal(p2)
+        ret_val = self._wrapper.get_chan_decimal(chan)
         return ret_val
 
 
 
 
-    def get_chan_format(self, p2):
+    def get_chan_format(self, chan):
         """
         This method Gets a channel's display format for a
         given channel handle.
@@ -345,13 +345,13 @@ class GXDB:
         The returned format is one of the `DB_CHAN_FORMAT`.
         The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
-        ret_val = self._wrapper.get_chan_format(p2)
+        ret_val = self._wrapper.get_chan_format(chan)
         return ret_val
 
 
 
 
-    def get_chan_int(self, p2, p3, p4):
+    def get_chan_int(self, line, chan, ind):
         """
         Get individual elements in a channel.
 
@@ -360,13 +360,13 @@ class GXDB:
         These methods are slow and should only be used when
         performance is not an issue.
         """
-        ret_val = self._wrapper.get_chan_int(p2, p3, p4)
+        ret_val = self._wrapper.get_chan_int(line, chan, ind)
         return ret_val
 
 
 
 
-    def get_chan_label(self, p2, p3):
+    def get_chan_label(self, chan, label):
         """
         This method gets a channel's label
 
@@ -377,13 +377,13 @@ class GXDB:
         channel name is returned.
         The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
-        p3.value = self._wrapper.get_chan_label(p2, p3.value.encode())
+        label.value = self._wrapper.get_chan_label(chan, label.value.encode())
         
 
 
 
 
-    def get_chan_name(self, p2, p3):
+    def get_chan_name(self, chan, name):
         """
         This method Gets a channel's name for a
         given channel handle.
@@ -392,13 +392,13 @@ class GXDB:
 
         The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
-        p3.value = self._wrapper.get_chan_name(p2, p3.value.encode())
+        name.value = self._wrapper.get_chan_name(chan, name.value.encode())
         
 
 
 
 
-    def get_chan_protect(self, p2):
+    def get_chan_protect(self, chan):
         """
         This method gets a channel's read-only protection status.
 
@@ -406,13 +406,13 @@ class GXDB:
 
         The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
-        ret_val = self._wrapper.get_chan_protect(p2)
+        ret_val = self._wrapper.get_chan_protect(chan)
         return ret_val
 
 
 
 
-    def get_chan_type(self, p2):
+    def get_chan_type(self, chan):
         """
         This method Gets a channel's type for a
         given channel handle.
@@ -424,13 +424,13 @@ class GXDB:
         or string types.
         The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
-        ret_val = self._wrapper.get_chan_type(p2)
+        ret_val = self._wrapper.get_chan_type(chan)
         return ret_val
 
 
 
 
-    def get_chan_unit(self, p2, p3):
+    def get_chan_unit(self, chan, unit):
         """
         This method Gets a channel's unit
 
@@ -440,13 +440,13 @@ class GXDB:
         of the channel reg.
         The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
-        p3.value = self._wrapper.get_chan_unit(p2, p3.value.encode())
+        unit.value = self._wrapper.get_chan_unit(chan, unit.value.encode())
         
 
 
 
 
-    def get_chan_width(self, p2):
+    def get_chan_width(self, chan):
         """
         This method gets a channel's display width for a
         given channel handle.
@@ -455,23 +455,23 @@ class GXDB:
 
         The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
-        ret_val = self._wrapper.get_chan_width(p2)
+        ret_val = self._wrapper.get_chan_width(chan)
         return ret_val
 
 
 
 
-    def get_name(self, p2, p3):
+    def get_name(self, name, psz_name):
         """
         Gets a name from the database.
         """
-        p3.value = self._wrapper.get_name(p2, p3.value.encode())
+        psz_name.value = self._wrapper.get_name(name, psz_name.value.encode())
         
 
 
 
 
-    def get_reg_symb_setting_int(self, p2, p3):
+    def get_reg_symb_setting_int(self, symb, name):
         """
         Get an integer-valued `GXREG` setting from a symbol reg
 
@@ -484,13 +484,13 @@ class GXDB:
         settings.  If performance is an issue, and more than one
         setting is to be Get and or Set, use the `GXREG` directly.
         """
-        ret_val = self._wrapper.get_reg_symb_setting_int(p2, p3.encode())
+        ret_val = self._wrapper.get_reg_symb_setting_int(symb, name.encode())
         return ret_val
 
 
 
 
-    def get_symb_name(self, p2, p3):
+    def get_symb_name(self, symb, name):
         """
         This method gets a symbol's name
 
@@ -499,13 +499,13 @@ class GXDB:
         See GetChanName_DB for more information
         The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
-        p3.value = self._wrapper.get_symb_name(p2, p3.value.encode())
+        name.value = self._wrapper.get_symb_name(symb, name.value.encode())
         
 
 
 
 
-    def have_itr(self, p2):
+    def have_itr(self, ch):
         """
         Returns TRUE if channel has an `GXITR`.
 
@@ -517,13 +517,13 @@ class GXDB:
         If a channel does not have an `GXITR`, `get_itr` will not change
         the passed `GXITR`.
         """
-        ret_val = self._wrapper.have_itr(p2)
+        ret_val = self._wrapper.have_itr(ch)
         return ret_val
 
 
 
 
-    def coord_pair(self, p2, p3):
+    def coord_pair(self, chan, pair):
         """
         Get the matching coordinate pair of a channel.
 
@@ -533,7 +533,7 @@ class GXDB:
         pair, or of the channel does not exist, the returned
         string will be empty.
         """
-        ret_val, p3.value = self._wrapper.coord_pair(p2.encode(), p3.value.encode())
+        ret_val, pair.value = self._wrapper.coord_pair(chan.encode(), pair.value.encode())
         return ret_val
 
 
@@ -559,11 +559,11 @@ class GXDB:
 
 
 
-    def maker_symb(self, p2, p3, p4, p5):
+    def maker_symb(self, symb, prog, name, groups):
         """
         Adds a Maker to the database symbol
         """
-        self._wrapper.maker_symb(p2, p3.encode(), p4.encode(), p5.encode())
+        self._wrapper.maker_symb(symb, prog.encode(), name.encode(), groups.encode())
         
 
 
@@ -609,17 +609,17 @@ class GXDB:
 
 
 
-    def read_blob_bf(self, p2, p3):
+    def read_blob_bf(self, symb, bf):
         """
         Read a blob from a database into a file.
         """
-        self._wrapper.read_blob_bf(p2, p3._wrapper)
+        self._wrapper.read_blob_bf(symb, bf._wrapper)
         
 
 
 
 
-    def get_chan_double(self, p2, p3, p4):
+    def get_chan_double(self, line, chan, ind):
         """
         Get individual elements in a channel.
 
@@ -628,13 +628,13 @@ class GXDB:
         These methods are slow and should only be used when
         performance is not an issue.
         """
-        ret_val = self._wrapper.get_chan_double(p2, p3, p4)
+        ret_val = self._wrapper.get_chan_double(line, chan, ind)
         return ret_val
 
 
 
 
-    def get_reg_symb_setting_double(self, p2, p3):
+    def get_reg_symb_setting_double(self, symb, name):
         """
         Get a real-valued `GXREG` setting from a symbol reg
 
@@ -647,13 +647,13 @@ class GXDB:
         settings.  If performance is an issue, and more than one
         setting is to be Get and or Set, use the `GXREG` directly.
         """
-        ret_val = self._wrapper.get_reg_symb_setting_double(p2, p3.encode())
+        ret_val = self._wrapper.get_reg_symb_setting_double(symb, name.encode())
         return ret_val
 
 
 
 
-    def set_all_chan_protect(self, p2):
+    def set_all_chan_protect(self, prot):
         """
         This method sets all the channels' read-only protection status.
 
@@ -664,13 +664,13 @@ class GXDB:
         This method does its own channel locking/unlocking.
         Channels already lock `DB_LOCK_READONLY` are ignored.
         """
-        self._wrapper.set_all_chan_protect(p2)
+        self._wrapper.set_all_chan_protect(prot)
         
 
 
 
 
-    def set_chan_class(self, p2, p3):
+    def set_chan_class(self, chan, cl):
         """
         Set a channel class
 
@@ -680,13 +680,13 @@ class GXDB:
         of the channel reg.
         The channel must be locked `DB_LOCK_READWRITE`
         """
-        self._wrapper.set_chan_class(p2, p3.encode())
+        self._wrapper.set_chan_class(chan, cl.encode())
         
 
 
 
 
-    def set_chan_decimal(self, p2, p3):
+    def set_chan_decimal(self, chan, dec):
         """
         This method sets a channel's number of digits displayed
         to the right of the decimal point.
@@ -696,13 +696,13 @@ class GXDB:
         The number of display digits must be from 0 to 50.
         The channel must be locked `DB_LOCK_READWRITE`
         """
-        self._wrapper.set_chan_decimal(p2, p3)
+        self._wrapper.set_chan_decimal(chan, dec)
         
 
 
 
 
-    def set_chan_format(self, p2, p3):
+    def set_chan_format(self, chan, format):
         """
         This method sets a channel's display format.
 
@@ -710,13 +710,13 @@ class GXDB:
 
         The channel must be locked `DB_LOCK_READWRITE`
         """
-        self._wrapper.set_chan_format(p2, p3)
+        self._wrapper.set_chan_format(chan, format)
         
 
 
 
 
-    def set_chan_int(self, p2, p3, p4, p5):
+    def set_chan_int(self, line, chan, ind, val):
         """
         Set individual elements in a channel.
 
@@ -725,13 +725,13 @@ class GXDB:
         These methods are slow and should only be used when
         performance is not an issue.
         """
-        self._wrapper.set_chan_int(p2, p3, p4, p5)
+        self._wrapper.set_chan_int(line, chan, ind, val)
         
 
 
 
 
-    def set_chan_label(self, p2, p3):
+    def set_chan_label(self, chan, label):
         """
         Set a channel label
 
@@ -741,13 +741,13 @@ class GXDB:
         of the channel reg.
         The channel must be locked `DB_LOCK_READWRITE`
         """
-        self._wrapper.set_chan_label(p2, p3.encode())
+        self._wrapper.set_chan_label(chan, label.encode())
         
 
 
 
 
-    def set_chan_name(self, p2, p3):
+    def set_chan_name(self, chan, name):
         """
         This method sets a channel's name.
 
@@ -755,13 +755,13 @@ class GXDB:
 
         The channel must be locked `DB_LOCK_READWRITE`
         """
-        self._wrapper.set_chan_name(p2, p3.encode())
+        self._wrapper.set_chan_name(chan, name.encode())
         
 
 
 
 
-    def set_chan_protect(self, p2, p3):
+    def set_chan_protect(self, chan, prot):
         """
         This method sets a channel's read-only protection
         status.
@@ -772,13 +772,13 @@ class GXDB:
         `DB_CHAN_UNPROTECTED`
         The channel must be locked `DB_LOCK_READWRITE`
         """
-        self._wrapper.set_chan_protect(p2, p3)
+        self._wrapper.set_chan_protect(chan, prot)
         
 
 
 
 
-    def set_chan_double(self, p2, p3, p4, p5):
+    def set_chan_double(self, line, chan, ind, val):
         """
         Set individual elements in a channel.
 
@@ -787,13 +787,13 @@ class GXDB:
         These methods are slow and should only be used when
         performance is not an issue.
         """
-        self._wrapper.set_chan_double(p2, p3, p4, p5)
+        self._wrapper.set_chan_double(line, chan, ind, val)
         
 
 
 
 
-    def set_chan_str(self, p2, p3, p4, p5):
+    def set_chan_str(self, line, chan, ind, str_val):
         """
         Set individual elements in a channel.
 
@@ -802,13 +802,13 @@ class GXDB:
         These methods are slow and should only be used when
         performance is not an issue.
         """
-        self._wrapper.set_chan_str(p2, p3, p4, p5.encode())
+        self._wrapper.set_chan_str(line, chan, ind, str_val.encode())
         
 
 
 
 
-    def set_chan_unit(self, p2, p3):
+    def set_chan_unit(self, chan, unit):
         """
         This method sets a channel's unit for a
         given channel handle.
@@ -817,13 +817,13 @@ class GXDB:
 
         The channel must be locked `DB_LOCK_READWRITE`
         """
-        self._wrapper.set_chan_unit(p2, p3.encode())
+        self._wrapper.set_chan_unit(chan, unit.encode())
         
 
 
 
 
-    def set_chan_width(self, p2, p3):
+    def set_chan_width(self, chan, width):
         """
         This method sets a channel's display width
 
@@ -832,23 +832,23 @@ class GXDB:
         The number of display digits must be from 0 to 50.
         The channel must be locked `DB_LOCK_READWRITE`
         """
-        self._wrapper.set_chan_width(p2, p3)
+        self._wrapper.set_chan_width(chan, width)
         
 
 
 
 
-    def set_ipj(self, p2, p3, p4):
+    def set_ipj(self, ch1, ch2, ipj):
         """
         Set a `GXREG` object into a symbol
         """
-        self._wrapper.set_ipj(p2, p3, p4._wrapper)
+        self._wrapper.set_ipj(ch1, ch2, ipj._wrapper)
         
 
 
 
 
-    def set_itr(self, p2, p3):
+    def set_itr(self, ch, itr):
         """
         Set `GXITR` for a channel.
 
@@ -857,23 +857,23 @@ class GXDB:
         Use `ITR_NULL` to clear the channel `GXITR`.
         Channel must be locked for READONLY or READWRITE.
         """
-        self._wrapper.set_itr(p2, p3._wrapper)
+        self._wrapper.set_itr(ch, itr._wrapper)
         
 
 
 
 
-    def set_reg_symb(self, p2, p3):
+    def set_reg_symb(self, symb, reg):
         """
         Set a `GXREG` object into a symbol
         """
-        self._wrapper.set_reg_symb(p2, p3._wrapper)
+        self._wrapper.set_reg_symb(symb, reg._wrapper)
         
 
 
 
 
-    def set_reg_symb_setting(self, p2, p3, p4):
+    def set_reg_symb_setting(self, symb, name, setting):
         """
         Set a `GXREG` string setting in a symbol reg
 
@@ -897,17 +897,17 @@ class GXDB:
         settings.  If performance is an issue, and more than one
         setting is to be Get and or Set, use the `GXREG` directly.
         """
-        self._wrapper.set_reg_symb_setting(p2, p3.encode(), p4.encode())
+        self._wrapper.set_reg_symb_setting(symb, name.encode(), setting.encode())
         
 
 
 
 
-    def write_blob_bf(self, p2, p3):
+    def write_blob_bf(self, symb, bf):
         """
         Write a blob from a file into a database.
         """
-        self._wrapper.write_blob_bf(p2, p3._wrapper)
+        self._wrapper.write_blob_bf(symb, bf._wrapper)
         
 
 
@@ -938,36 +938,36 @@ class GXDB:
 
 
     @classmethod
-    def create(cls, p1, p2, p3, p4, p5, p6, p7, p8):
+    def create(cls, file, lines, chans, blobs, users, cache, super, password):
         """
         This method makes a brand new database of the specified size.
         The database is opened in ReadWrite Mode.
         """
-        gxapi_cy.WrapDB.create(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4, p5, p6, p7.encode(), p8.encode())
+        gxapi_cy.WrapDB.create(GXContext._get_tls_geo(), file.encode(), lines, chans, blobs, users, cache, super.encode(), password.encode())
         
 
 
 
     @classmethod
-    def create_comp(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+    def create_comp(cls, file, lines, chans, blobs, users, cache, super, password, page, level):
         """
         This method makes a brand new database of the specified size.
         The database is opened in ReadWrite Mode. Also allows you to
         set paging size and the Compression Level.
         """
-        gxapi_cy.WrapDB.create_comp(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4, p5, p6, p7.encode(), p8.encode(), p9, p10)
+        gxapi_cy.WrapDB.create_comp(GXContext._get_tls_geo(), file.encode(), lines, chans, blobs, users, cache, super.encode(), password.encode(), page, level)
         
 
 
 
     @classmethod
-    def create_ex(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9):
+    def create_ex(cls, file, lines, chans, blobs, users, cache, super, password, page):
         """
         This method makes a brand new database of the specified size.
         The database is opened in ReadWrite Mode. Also allows you to
         set paging size.
         """
-        gxapi_cy.WrapDB.create_ex(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4, p5, p6, p7.encode(), p8.encode(), p9)
+        gxapi_cy.WrapDB.create_ex(GXContext._get_tls_geo(), file.encode(), lines, chans, blobs, users, cache, super.encode(), password.encode(), page)
         
 
 
@@ -1008,17 +1008,17 @@ class GXDB:
 
 
     @classmethod
-    def grow(cls, p1, p2, p3, p4, p5, p6):
+    def grow(cls, file, lines, chans, blobs, users, cache):
         """
         Enlarges the database.
         """
-        gxapi_cy.WrapDB.grow(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4, p5, p6)
+        gxapi_cy.WrapDB.grow(GXContext._get_tls_geo(), file.encode(), lines, chans, blobs, users, cache)
         
 
 
 
     @classmethod
-    def can_open(cls, p1, p2, p3):
+    def can_open(cls, file, user, password):
         """
         This method checks whether it is possible to open a database.
 
@@ -1031,13 +1031,13 @@ class GXDB:
 
             `open`, `open_read_only`, `can_open_read_only`
         """
-        ret_val = gxapi_cy.WrapDB.can_open(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode())
+        ret_val = gxapi_cy.WrapDB.can_open(GXContext._get_tls_geo(), file.encode(), user.encode(), password.encode())
         return ret_val
 
 
 
     @classmethod
-    def can_open_read_only(cls, p1, p2, p3):
+    def can_open_read_only(cls, file, user, password):
         """
         This method checks whether it is possible to open a database in read-only mode.
 
@@ -1050,7 +1050,7 @@ class GXDB:
 
             `open`, `open_read_only`, `can_open`
         """
-        ret_val = gxapi_cy.WrapDB.can_open_read_only(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode())
+        ret_val = gxapi_cy.WrapDB.can_open_read_only(GXContext._get_tls_geo(), file.encode(), user.encode(), password.encode())
         return ret_val
 
 
@@ -1083,17 +1083,17 @@ class GXDB:
 
 
 
-    def is_line_empty(self, p2):
+    def is_line_empty(self, symb):
         """
         See if a specific line in the database is empty.
         """
-        ret_val = self._wrapper.is_line_empty(p2)
+        ret_val = self._wrapper.is_line_empty(symb)
         return ret_val
 
 
 
     @classmethod
-    def open(cls, p1, p2, p3):
+    def open(cls, file, user, password):
         """
         This method opens a database.
 
@@ -1101,13 +1101,13 @@ class GXDB:
 
             `open_read_only`, `can_open`, `can_open_read_only`
         """
-        ret_val = gxapi_cy.WrapDB.open(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode())
+        ret_val = gxapi_cy.WrapDB.open(GXContext._get_tls_geo(), file.encode(), user.encode(), password.encode())
         return GXDB(ret_val)
 
 
 
     @classmethod
-    def open_read_only(cls, p1, p2, p3):
+    def open_read_only(cls, file, user, password):
         """
         This method opens a database.
 
@@ -1120,17 +1120,17 @@ class GXDB:
 
             `open`, `can_open`, `can_open_read_only`
         """
-        ret_val = gxapi_cy.WrapDB.open_read_only(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode())
+        ret_val = gxapi_cy.WrapDB.open_read_only(GXContext._get_tls_geo(), file.encode(), user.encode(), password.encode())
         return GXDB(ret_val)
 
 
 
     @classmethod
-    def repair(cls, p1):
+    def repair(cls, file):
         """
         Cleans the database by removing invalid blocks
         """
-        gxapi_cy.WrapDB.repair(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapDB.repair(GXContext._get_tls_geo(), file.encode())
         
 
 
@@ -1150,7 +1150,7 @@ class GXDB:
 
 
 
-    def copy_data(self, p2, p3, p4):
+    def copy_data(self, line, i_chan, o_chan):
         """
         This method copies the data from one channel to another on
         on the specified line. The data is converted if such
@@ -1161,13 +1161,13 @@ class GXDB:
         All the data in the destination channel is destroyed along
         with the fiducial start and increment.
         """
-        self._wrapper.copy_data(p2, p3, p4)
+        self._wrapper.copy_data(line, i_chan, o_chan)
         
 
 
 
 
-    def get_col_va(self, p2):
+    def get_col_va(self, chan):
         """
         Returns the # of columns in a `GXVA` channel.
 
@@ -1175,13 +1175,13 @@ class GXDB:
 
         If the channel is `GXVV`, this function returns 1.
         """
-        ret_val = self._wrapper.get_col_va(p2)
+        ret_val = self._wrapper.get_col_va(chan)
         return ret_val
 
 
 
 
-    def get_channel_length(self, p2, p3):
+    def get_channel_length(self, line, chan):
         """
         Returns the # of elements in a channel.
 
@@ -1190,46 +1190,46 @@ class GXDB:
         Returns the actual number of data items (rows) in a channel. For `GXVA` channels no correction is
         necessary for the number of columns.
         """
-        ret_val = self._wrapper.get_channel_length(p2, p3)
+        ret_val = self._wrapper.get_channel_length(line, chan)
         return ret_val
 
 
 
 
-    def get_fid_incr(self, p2, p3):
+    def get_fid_incr(self, line, chan):
         """
         This method returns the fiducial increment value of a
         specified Channel.
         """
-        ret_val = self._wrapper.get_fid_incr(p2, p3)
+        ret_val = self._wrapper.get_fid_incr(line, chan)
         return ret_val
 
 
 
 
-    def get_fid_start(self, p2, p3):
+    def get_fid_start(self, line, chan):
         """
         This method returns the fiducial start value of a
         specified Channel.
         """
-        ret_val = self._wrapper.get_fid_start(p2, p3)
+        ret_val = self._wrapper.get_fid_start(line, chan)
         return ret_val
 
 
 
 
-    def set_fid(self, p2, p3, p4, p5):
+    def set_fid(self, line, chan, start, incr):
         """
         This method allows the user to set the fiducial start and
         increment of a channel. The Increment should never be 0.
         """
-        self._wrapper.set_fid(p2, p3, p4, p5)
+        self._wrapper.set_fid(line, chan, start, incr)
         
 
 
 
 
-    def window_va_ch(self, p2, p3, p4, p5, p6):
+    def window_va_ch(self, line, i_ch, o_ch, col_s, col_e):
         """
         Copy a window of data in a channel into a new channel
 
@@ -1240,13 +1240,13 @@ class GXDB:
         numbers to copy are dummies.
         All the columns including start and end columns will be copied
         """
-        self._wrapper.window_va_ch(p2, p3, p4, p5, p6)
+        self._wrapper.window_va_ch(line, i_ch, o_ch, col_s, col_e)
         
 
 
 
 
-    def window_va_ch2(self, p2, p3, p4, p5):
+    def window_va_ch2(self, line, i_ch, o_ch, gvv):
         """
         Copy a windowed version of data in a channel into a new channel
 
@@ -1258,7 +1258,7 @@ class GXDB:
         dummied, and non-zero values indicate the column is to be copied.
         The `GXVV` length must be the same as the number of columns.
         """
-        self._wrapper.window_va_ch2(p2, p3, p4, p5._wrapper)
+        self._wrapper.window_va_ch2(line, i_ch, o_ch, gvv._wrapper)
         
 
 
@@ -1268,21 +1268,21 @@ class GXDB:
 
 
 
-    def set_line_selection(self, p2, p3):
+    def set_line_selection(self, line, mode):
         """
         Set the selection status for a line.
         """
-        self._wrapper.set_line_selection(p2, p3)
+        self._wrapper.set_line_selection(line, mode)
         
 
 
 
 
-    def get_line_selection(self, p2):
+    def get_line_selection(self, line):
         """
         Get the selection status for a line.
         """
-        ret_val = self._wrapper.get_line_selection(p2)
+        ret_val = self._wrapper.get_line_selection(line)
         return ret_val
 
 
@@ -1299,7 +1299,7 @@ class GXDB:
 
 
 
-    def get_line_map_fid(self, p2, p3, p4):
+    def get_line_map_fid(self, line, start, end):
         """
         This method gets a line map clip fiducial.
 
@@ -1307,7 +1307,7 @@ class GXDB:
 
         The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
-        p3.value, p4.value = self._wrapper.get_line_map_fid(p2, p3.value, p4.value)
+        start.value, end.value = self._wrapper.get_line_map_fid(line, start.value, end.value)
         
 
 
@@ -1334,7 +1334,7 @@ class GXDB:
 
 
     @classmethod
-    def is_chan_name(cls, p1):
+    def is_chan_name(cls, chan):
         """
         Is this a valid channel name?
 
@@ -1344,45 +1344,45 @@ class GXDB:
         underscore character "_", and the first letter must be a letter
         or an underscore.
         """
-        ret_val = gxapi_cy.WrapDB.is_chan_name(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapDB.is_chan_name(GXContext._get_tls_geo(), chan.encode())
         return ret_val
 
 
 
 
-    def is_chan_valid(self, p2):
+    def is_chan_valid(self, chan):
         """
         This method checks to see if the channel handle is a
         valid channel.
         """
-        ret_val = self._wrapper.is_chan_valid(p2)
+        ret_val = self._wrapper.is_chan_valid(chan)
         return ret_val
 
 
 
     @classmethod
-    def is_line_name(cls, p1):
+    def is_line_name(cls, line):
         """
         Is this a valid line name.
         """
-        ret_val = gxapi_cy.WrapDB.is_line_name(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapDB.is_line_name(GXContext._get_tls_geo(), line.encode())
         return ret_val
 
 
 
 
-    def is_line_valid(self, p2):
+    def is_line_valid(self, line):
         """
         This method checks to see if the line handle returned by
         the Line methods is a valid line.
         """
-        ret_val = self._wrapper.is_line_valid(p2)
+        ret_val = self._wrapper.is_line_valid(line)
         return ret_val
 
 
 
 
-    def line_category(self, p2):
+    def line_category(self, line):
         """
         This method returns the category (group, line) of a line.
 
@@ -1390,13 +1390,13 @@ class GXDB:
 
         The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
-        ret_val = self._wrapper.line_category(p2)
+        ret_val = self._wrapper.line_category(line)
         return ret_val
 
 
 
 
-    def line_flight(self, p2):
+    def line_flight(self, line):
         """
         This method returns the flight number of a line.
 
@@ -1404,13 +1404,13 @@ class GXDB:
 
         The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
-        ret_val = self._wrapper.line_flight(p2)
+        ret_val = self._wrapper.line_flight(line)
         return ret_val
 
 
 
 
-    def line_label(self, p2, p3, p5):
+    def line_label(self, line, label, format):
         """
         Create a line label
 
@@ -1428,13 +1428,13 @@ class GXDB:
         
         Use LINK format to create a database link label.
         """
-        p3.value = self._wrapper.line_label(p2, p3.value.encode(), p5)
+        label.value = self._wrapper.line_label(line, label.value.encode(), format)
         
 
 
 
 
-    def line_number(self, p2):
+    def line_number(self, line):
         """
         This method returns the number of a line.
 
@@ -1442,13 +1442,13 @@ class GXDB:
 
         The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
-        ret_val = self._wrapper.line_number(p2)
+        ret_val = self._wrapper.line_number(line)
         return ret_val
 
 
 
 
-    def line_number2(self, p2, p3):
+    def line_number2(self, line, line_number):
         """
         Returns the string form of the line number (can be alphanumeric)
 
@@ -1456,13 +1456,13 @@ class GXDB:
 
         The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
-        p3.value = self._wrapper.line_number2(p2, p3.value.encode())
+        line_number.value = self._wrapper.line_number2(line, line_number.value.encode())
         
 
 
 
 
-    def line_type(self, p2):
+    def line_type(self, line):
         """
         This method returns the type of a line.
 
@@ -1470,13 +1470,13 @@ class GXDB:
 
         The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
-        ret_val = self._wrapper.line_type(p2)
+        ret_val = self._wrapper.line_type(line)
         return ret_val
 
 
 
 
-    def line_version(self, p2):
+    def line_version(self, line):
         """
         This method returns the version number of a line.
 
@@ -1484,13 +1484,13 @@ class GXDB:
 
         The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
-        ret_val = self._wrapper.line_version(p2)
+        ret_val = self._wrapper.line_version(line)
         return ret_val
 
 
 
     @classmethod
-    def set_line_name(cls, p1, p2, p3, p4):
+    def set_line_name(cls, num, type, ver, name):
         """
         This method sets up a line name given the line's number,
         type, and version.
@@ -1502,13 +1502,13 @@ class GXDB:
         for an operation on a line.
         See also SetLineName2_DB.
         """
-        p4.value = gxapi_cy.WrapDB.set_line_name(GXContext._get_tls_geo(), p1, p2, p3, p4.value.encode())
+        name.value = gxapi_cy.WrapDB.set_line_name(GXContext._get_tls_geo(), num, type, ver, name.value.encode())
         
 
 
 
     @classmethod
-    def set_line_name2(cls, p1, p2, p3, p4):
+    def set_line_name2(cls, al_num, type, ver, name):
         """
         Like SetLineName_DB, but can use alphanumeric for line number
 
@@ -1520,34 +1520,34 @@ class GXDB:
         The line number can be any combination of letters and numbers,
         i.e. XU324, 98765, A, 23NGV etc.
         """
-        p4.value = gxapi_cy.WrapDB.set_line_name2(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4.value.encode())
+        name.value = gxapi_cy.WrapDB.set_line_name2(GXContext._get_tls_geo(), al_num.encode(), type, ver, name.value.encode())
         
 
 
 
 
-    def load_select(self, p2):
+    def load_select(self, file):
         """
         Load selections to from a file.
         """
-        self._wrapper.load_select(p2.encode())
+        self._wrapper.load_select(file.encode())
         
 
 
 
 
-    def next_sel_line(self, p2):
+    def next_sel_line(self, prev):
         """
         This method will advance to the next selected line based
         on the currently selected line handle.
         """
-        ret_val = self._wrapper.next_sel_line(p2)
+        ret_val = self._wrapper.next_sel_line(prev)
         return ret_val
 
 
 
 
-    def line_bearing(self, p2):
+    def line_bearing(self, line):
         """
         This method returns the bearing of a line.
 
@@ -1566,13 +1566,13 @@ class GXDB:
 
             `set_line_bearing`, `GXDU.direction`
         """
-        ret_val = self._wrapper.line_bearing(p2)
+        ret_val = self._wrapper.line_bearing(line)
         return ret_val
 
 
 
 
-    def line_date(self, p2):
+    def line_date(self, line):
         """
         This method returns the date of a line.
 
@@ -1580,23 +1580,23 @@ class GXDB:
 
         The channel must be locked `DB_LOCK_READONLY` or `DB_LOCK_READWRITE`
         """
-        ret_val = self._wrapper.line_date(p2)
+        ret_val = self._wrapper.line_date(line)
         return ret_val
 
 
 
 
-    def save_select(self, p2):
+    def save_select(self, file):
         """
         Saves current selections to a file.
         """
-        self._wrapper.save_select(p2.encode())
+        self._wrapper.save_select(file.encode())
         
 
 
 
 
-    def select(self, p2, p3):
+    def select(self, select, mode):
         """
         Select/deselect lines based on selection string
 
@@ -1615,13 +1615,13 @@ class GXDB:
         E.g. "F10" would select all lines of flight 10.
         Use an empty string ("") to select/deselect ALL lines.
         """
-        self._wrapper.select(p2.encode(), p3)
+        self._wrapper.select(select.encode(), mode)
         
 
 
 
 
-    def set_line_bearing(self, p2, p3):
+    def set_line_bearing(self, line, bearing):
         """
         Sets a line's bearing.
 
@@ -1638,13 +1638,13 @@ class GXDB:
 
             `line_bearing`, `GXDU.direction`
         """
-        self._wrapper.set_line_bearing(p2, p3)
+        self._wrapper.set_line_bearing(line, bearing)
         
 
 
 
 
-    def set_line_date(self, p2, p3):
+    def set_line_date(self, line, date):
         """
         This method sets a line's date.
 
@@ -1652,13 +1652,13 @@ class GXDB:
 
         The channel must be locked `DB_LOCK_READWRITE`
         """
-        self._wrapper.set_line_date(p2, p3)
+        self._wrapper.set_line_date(line, date)
         
 
 
 
 
-    def set_line_flight(self, p2, p3):
+    def set_line_flight(self, line, fl):
         """
         This method sets a line's flight.
 
@@ -1666,13 +1666,13 @@ class GXDB:
 
         The channel must be locked `DB_LOCK_READWRITE`
         """
-        self._wrapper.set_line_flight(p2, p3)
+        self._wrapper.set_line_flight(line, fl)
         
 
 
 
 
-    def set_line_map_fid(self, p2, p3, p4):
+    def set_line_map_fid(self, line, start, end):
         """
         This method changes a line map clip fiducial.
 
@@ -1681,13 +1681,13 @@ class GXDB:
         for full range, set Start Fid to `rMIN` and End Fid to `rMAX`.
         for no data, set Start and End Fids to `rDUMMY`.
         """
-        self._wrapper.set_line_map_fid(p2, p3, p4)
+        self._wrapper.set_line_map_fid(line, start, end)
         
 
 
 
 
-    def set_line_num(self, p2, p3):
+    def set_line_num(self, line, num):
         """
         This method sets a line's number.
 
@@ -1695,13 +1695,13 @@ class GXDB:
 
         The channel must be locked `DB_LOCK_READWRITE`
         """
-        self._wrapper.set_line_num(p2, p3)
+        self._wrapper.set_line_num(line, num)
         
 
 
 
 
-    def set_line_type(self, p2, p3):
+    def set_line_type(self, line, type):
         """
         This method sets a line's type.
 
@@ -1709,13 +1709,13 @@ class GXDB:
 
         The channel must be locked `DB_LOCK_READWRITE`
         """
-        self._wrapper.set_line_type(p2, p3)
+        self._wrapper.set_line_type(line, type)
         
 
 
 
 
-    def set_line_ver(self, p2, p3):
+    def set_line_ver(self, line, ver):
         """
         This method sets a line's version.
 
@@ -1723,13 +1723,13 @@ class GXDB:
 
         The channel must be locked `DB_LOCK_READWRITE`
         """
-        self._wrapper.set_line_ver(p2, p3)
+        self._wrapper.set_line_ver(line, ver)
         
 
 
 
 
-    def set_select(self, p2):
+    def set_select(self, sel):
         """
         Sets the Line Selections.
 
@@ -1737,7 +1737,7 @@ class GXDB:
 
         This method also destroys the DB_SELECT object.
         """
-        self._wrapper.set_select(p2)
+        self._wrapper.set_select(sel)
         
 
 
@@ -1747,21 +1747,21 @@ class GXDB:
 
 
 
-    def get_meta(self, p2):
+    def get_meta(self, meta):
         """
         Get the metadata of a database.
         """
-        self._wrapper.get_meta(p2._wrapper)
+        self._wrapper.get_meta(meta._wrapper)
         
 
 
 
 
-    def set_meta(self, p2):
+    def set_meta(self, meta):
         """
         Set the metadata of a database.
         """
-        self._wrapper.set_meta(p2._wrapper)
+        self._wrapper.set_meta(meta._wrapper)
         
 
 
@@ -1771,21 +1771,21 @@ class GXDB:
 
 
 
-    def array_lst(self, p2):
+    def array_lst(self, lst):
         """
         Load a `GXLST` object with array (`GXVA`) channel symbols.
         """
-        self._wrapper.array_lst(p2._wrapper)
+        self._wrapper.array_lst(lst._wrapper)
         
 
 
 
 
-    def array_size_lst(self, p2, p3):
+    def array_size_lst(self, columns, lst):
         """
         Load a `GXLST` object with array (`GXVA`) channel symbols with a particular number of columns.
         """
-        self._wrapper.array_size_lst(p2, p3._wrapper)
+        self._wrapper.array_size_lst(columns, lst._wrapper)
         
 
 
@@ -1811,7 +1811,7 @@ class GXDB:
 
 
 
-    def normal_chan_lst(self, p2):
+    def normal_chan_lst(self, lst):
         """
         Load a `GXLST` with non-array database channels.
 
@@ -1819,13 +1819,13 @@ class GXDB:
 
         Like `chan_lst`, but does not include array channels or virtual channels.
         """
-        self._wrapper.normal_chan_lst(p2._wrapper)
+        self._wrapper.normal_chan_lst(lst._wrapper)
         
 
 
 
 
-    def class_chan_lst(self, p2, p3):
+    def class_chan_lst(self, lst, cl):
         """
         Load a `GXLST` with channels in a particular class.
 
@@ -1838,13 +1838,13 @@ class GXDB:
         
         The `GXLST` is cleared first, and the items are sorted by name.
         """
-        self._wrapper.class_chan_lst(p2._wrapper, p3.encode())
+        self._wrapper.class_chan_lst(lst._wrapper, cl.encode())
         
 
 
 
 
-    def class_group_lst(self, p2, p3):
+    def class_group_lst(self, lst, cl):
         """
         Load a `GXLST` with group lines in a particular class.
 
@@ -1857,13 +1857,13 @@ class GXDB:
         
         The `GXLST` is cleared first, and the items are sorted by name.
         """
-        self._wrapper.class_group_lst(p2._wrapper, p3.encode())
+        self._wrapper.class_group_lst(lst._wrapper, cl.encode())
         
 
 
 
 
-    def create_symb(self, p2, p3, p4, p5):
+    def create_symb(self, name, symb, owner, category):
         """
         Create a new Symbol.
 
@@ -1898,7 +1898,7 @@ class GXDB:
         Programmers should avoid using the above prefixes as the starting
         letters of their blob names to avoid any possible conflicts.
         """
-        ret_val = self._wrapper.create_symb(p2.encode(), p3, p4, p5)
+        ret_val = self._wrapper.create_symb(name.encode(), symb, owner, category)
         return ret_val
 
 
@@ -1944,7 +1944,7 @@ class GXDB:
 
 
 
-    def csv_chan_lst(self, p2, p3):
+    def csv_chan_lst(self, lst, channels):
         """
         Load a `GXLST` with channels in a comma-separated list.
 
@@ -1957,36 +1957,36 @@ class GXDB:
         
         The `GXLST` is cleared first.
         """
-        self._wrapper.csv_chan_lst(p2._wrapper, p3.encode())
+        self._wrapper.csv_chan_lst(lst._wrapper, channels.encode())
         
 
 
 
 
-    def delete_symb(self, p2):
+    def delete_symb(self, symb):
         """
         This method destroys a symbol in the database and all
         the data associated with it. The symbol's lock is
         automatically removed.
         """
-        self._wrapper.delete_symb(p2)
+        self._wrapper.delete_symb(symb)
         
 
 
 
 
-    def dup_line_symb(self, p2, p3):
+    def dup_line_symb(self, symb, new):
         """
         Duplicate a line symbol from a group or line symbol.
         The new name must not already exist in the database.
         """
-        ret_val = self._wrapper.dup_line_symb(p2, p3.encode())
+        ret_val = self._wrapper.dup_line_symb(symb, new.encode())
         return ret_val
 
 
 
 
-    def dup_symb(self, p2, p3):
+    def dup_symb(self, symb, new):
         """
         New Symbol by duplicating an existing symbol, LOCKED
 
@@ -1999,13 +1999,13 @@ class GXDB:
 
             `dup_symb_no_lock`
         """
-        ret_val = self._wrapper.dup_symb(p2, p3.encode())
+        ret_val = self._wrapper.dup_symb(symb, new.encode())
         return ret_val
 
 
 
 
-    def dup_symb_no_lock(self, p2, p3):
+    def dup_symb_no_lock(self, symb, new):
         """
         New Symbol by duplicating an existing symbol, NO LOCK.
 
@@ -2018,7 +2018,7 @@ class GXDB:
 
             `dup_symb`
         """
-        ret_val = self._wrapper.dup_symb_no_lock(p2, p3.encode())
+        ret_val = self._wrapper.dup_symb_no_lock(symb, new.encode())
         return ret_val
 
 
@@ -2078,30 +2078,30 @@ class GXDB:
 
 
 
-    def get_chan_order_lst(self, p2):
+    def get_chan_order_lst(self, lst):
         """
         This method gets the channel display order for a
         database. The list will be stored in an `GXLST` object.
         In order to modify this displayed channels list,
         call `set_chan_order_lst` after.
         """
-        self._wrapper.get_chan_order_lst(p2._wrapper)
+        self._wrapper.get_chan_order_lst(lst._wrapper)
         
 
 
 
 
-    def get_xyz_chan_symb(self, p2):
+    def get_xyz_chan_symb(self, chan):
         """
         Searches for current X, Y or Z channel symbol
         """
-        ret_val = self._wrapper.get_xyz_chan_symb(p2)
+        ret_val = self._wrapper.get_xyz_chan_symb(chan)
         return ret_val
 
 
 
 
-    def class_chan_list(self, p2, p3):
+    def class_chan_list(self, vv, cl):
         """
         Place a list of channels for a given class in a `GXVV`.
 
@@ -2113,13 +2113,13 @@ class GXDB:
         Only channels with the given class name are included,
         e.g. use "ASSAY" for assay channels used in `GXCHIMERA`.
         """
-        ret_val = self._wrapper.class_chan_list(p2._wrapper, p3.encode())
+        ret_val = self._wrapper.class_chan_list(vv._wrapper, cl.encode())
         return ret_val
 
 
 
 
-    def exist_chan(self, p2):
+    def exist_chan(self, chan):
         """
         See if the specified channel exists in the database.
 
@@ -2129,13 +2129,13 @@ class GXDB:
         Introduced in v5.1.3.
         `exist_chan` searches using the exact channel name.
         """
-        ret_val = self._wrapper.exist_chan(p2.encode())
+        ret_val = self._wrapper.exist_chan(chan.encode())
         return ret_val
 
 
 
 
-    def exist_symb(self, p2, p3):
+    def exist_symb(self, symb, type):
         """
         This method checks to see if the specified symbol exists
         in the database.
@@ -2159,33 +2159,33 @@ class GXDB:
         
         The new `exist_chan` searches using the exact channel name.
         """
-        ret_val = self._wrapper.exist_symb(p2.encode(), p3)
+        ret_val = self._wrapper.exist_symb(symb.encode(), type)
         return ret_val
 
 
 
 
-    def valid_symb(self, p2, p3):
+    def valid_symb(self, symb, type):
         """
         This method checks to see if the specified symbol is a valid symbol in the database.
         """
-        ret_val = self._wrapper.valid_symb(p2, p3)
+        ret_val = self._wrapper.valid_symb(symb, type)
         return ret_val
 
 
 
 
-    def get_symb_lock(self, p2):
+    def get_symb_lock(self, symb):
         """
         Determines if a symbol is locked
         """
-        ret_val = self._wrapper.get_symb_lock(p2)
+        ret_val = self._wrapper.get_symb_lock(symb)
         return ret_val
 
 
 
 
-    def get_xyz_chan(self, p2, p3):
+    def get_xyz_chan(self, chan_symb, chan):
         """
         Gets current X, Y or Z channel name
 
@@ -2194,23 +2194,23 @@ class GXDB:
         searches for the "current" X, Y or Z channel.
         If none is defined, then returns "X", "Y" or "Z".
         """
-        p3.value = self._wrapper.get_xyz_chan(p2, p3.value.encode())
+        chan.value = self._wrapper.get_xyz_chan(chan_symb, chan.value.encode())
         
 
 
 
 
-    def symb_list(self, p2, p3):
+    def symb_list(self, vv, symb):
         """
         Place a list of symbols in a `GXVV`.
         """
-        ret_val = self._wrapper.symb_list(p2._wrapper, p3)
+        ret_val = self._wrapper.symb_list(vv._wrapper, symb)
         return ret_val
 
 
 
 
-    def line_lst(self, p2):
+    def line_lst(self, lst):
         """
         Load a `GXLST` with database lines.
 
@@ -2222,23 +2222,23 @@ class GXDB:
         placed in the value part of the `GXLST` (1).
         The `GXLST` is cleared first, and the items are sorted in logical line order.
         """
-        self._wrapper.line_lst(p2._wrapper)
+        self._wrapper.line_lst(lst._wrapper)
         
 
 
 
 
-    def lock_symb(self, p2, p3, p4):
+    def lock_symb(self, symb, lock, wait):
         """
         Locks a symbol for READONLY or READWRITE.
         """
-        self._wrapper.lock_symb(p2, p3, p4)
+        self._wrapper.lock_symb(symb, lock, wait)
         
 
 
 
 
-    def mask_chan_lst(self, p2):
+    def mask_chan_lst(self, lst):
         """
         Load a `GXLST` with mask channels.
 
@@ -2255,13 +2255,13 @@ class GXDB:
         The `GXLST` is cleared first, and the items are sorted by name.
         "None" is added at the end, with a handle value of "-1".
         """
-        self._wrapper.mask_chan_lst(p2._wrapper)
+        self._wrapper.mask_chan_lst(lst._wrapper)
         
 
 
 
 
-    def selected_line_lst(self, p2):
+    def selected_line_lst(self, lst):
         """
         Load a `GXLST` with the selected lines.
 
@@ -2275,25 +2275,25 @@ class GXDB:
         
         Symbols are automatically sorted in logical line order.
         """
-        self._wrapper.selected_line_lst(p2._wrapper)
+        self._wrapper.selected_line_lst(lst._wrapper)
         
 
 
 
 
-    def set_chan_order_lst(self, p2):
+    def set_chan_order_lst(self, lst):
         """
         This method sets the channel display order for a
         database. The list to modify will be stored in an `GXLST`
         object. Call `get_chan_order_lst` to populate the `GXLST`.
         """
-        self._wrapper.set_chan_order_lst(p2._wrapper)
+        self._wrapper.set_chan_order_lst(lst._wrapper)
         
 
 
 
 
-    def set_xyz_chan(self, p2, p3):
+    def set_xyz_chan(self, chan_symb, chan):
         """
         Sets current X, Y or Z channel name
 
@@ -2306,13 +2306,13 @@ class GXDB:
         the current X and Y channels, and have GXs using the
         `get_xyz_chan_symb` function to load "X" and "Y" work as desired.
         """
-        self._wrapper.set_xyz_chan(p2, p3.encode())
+        self._wrapper.set_xyz_chan(chan_symb, chan.encode())
         
 
 
 
 
-    def string_chan_lst(self, p2):
+    def string_chan_lst(self, lst):
         """
         Load a `GXLST` with string-type channels.
 
@@ -2325,13 +2325,13 @@ class GXDB:
         
         The `GXLST` is cleared first, and the items are sorted by name.
         """
-        self._wrapper.string_chan_lst(p2._wrapper)
+        self._wrapper.string_chan_lst(lst._wrapper)
         
 
 
 
 
-    def symb_lst(self, p2, p3):
+    def symb_lst(self, lst, type):
         """
         Populate a `GXLST` with database symbols.
 
@@ -2352,7 +2352,7 @@ class GXDB:
 
             `chan_lst`, `line_lst`, `selected_line_lst`
         """
-        self._wrapper.symb_lst(p2._wrapper, p3)
+        self._wrapper.symb_lst(lst._wrapper, type)
         
 
 
@@ -2368,11 +2368,11 @@ class GXDB:
 
 
 
-    def un_lock_symb(self, p2):
+    def un_lock_symb(self, symb):
         """
         UnLocks a symbol.
         """
-        self._wrapper.un_lock_symb(p2)
+        self._wrapper.un_lock_symb(symb)
         
 
 
@@ -2382,7 +2382,7 @@ class GXDB:
 
 
 
-    def add_associated_load(self, p2, p3):
+    def add_associated_load(self, group, chan):
         """
         Add this channel to the auto-load feature of the group.
 
@@ -2396,13 +2396,13 @@ class GXDB:
         in the database, but in the project, so this function is
         equivalent to calling `associate`.
         """
-        self._wrapper.add_associated_load(p2, p3)
+        self._wrapper.add_associated_load(group, chan)
         
 
 
 
 
-    def add_comment(self, p2, p3, p4):
+    def add_comment(self, comment, str_val, indent):
         """
         Add a comment with a string to the activity log of the database.
 
@@ -2415,13 +2415,13 @@ class GXDB:
         and is followed by a carriage return.
         The activity log is created automatically if it does not exist.
         """
-        self._wrapper.add_comment(p2.encode(), p3.encode(), p4)
+        self._wrapper.add_comment(comment.encode(), str_val.encode(), indent)
         
 
 
 
 
-    def add_int_comment(self, p2, p3, p4):
+    def add_int_comment(self, comment, val, indent):
         """
         Add a comment with an integer to the activity log of the database.
 
@@ -2436,13 +2436,13 @@ class GXDB:
         
         See Notes in `add_comment`.
         """
-        self._wrapper.add_int_comment(p2.encode(), p3, p4)
+        self._wrapper.add_int_comment(comment.encode(), val, indent)
         
 
 
 
 
-    def add_double_comment(self, p2, p3, p4):
+    def add_double_comment(self, comment, val, indent):
         """
         Add a comment with a float value to the activity log of the database.
 
@@ -2457,13 +2457,13 @@ class GXDB:
         
         See Notes in `add_comment`.
         """
-        self._wrapper.add_double_comment(p2.encode(), p3, p4)
+        self._wrapper.add_double_comment(comment.encode(), val, indent)
         
 
 
 
 
-    def add_time_comment(self, p2, p3):
+    def add_time_comment(self, comment, indent):
         """
         Add a comment with the date and time to the activity log of the database.
 
@@ -2478,13 +2478,13 @@ class GXDB:
         
         See Notes in `add_comment`.
         """
-        self._wrapper.add_time_comment(p2.encode(), p3)
+        self._wrapper.add_time_comment(comment.encode(), indent)
         
 
 
 
 
-    def associate(self, p2, p3):
+    def associate(self, group, chan):
         """
         Associate a channel with a group.
 
@@ -2503,13 +2503,13 @@ class GXDB:
         channel will be recognized as being associated with all
         groups of that class.
         """
-        self._wrapper.associate(p2, p3)
+        self._wrapper.associate(group, chan)
         
 
 
 
 
-    def associate_all(self, p2):
+    def associate_all(self, group):
         """
         Associate all channels with a group.
 
@@ -2519,13 +2519,13 @@ class GXDB:
         channels are already assumed to be associated with it, and this
         function does nothing.
         """
-        self._wrapper.associate_all(p2)
+        self._wrapper.associate_all(group)
         
 
 
 
 
-    def associate_class(self, p2, p3):
+    def associate_class(self, chan, cl):
         """
         Associate a channel with all groups of a specific class.
 
@@ -2534,23 +2534,23 @@ class GXDB:
         As of v6.3, if a group line has no class defined, then ALL
         channels are automatically assumed to be associated with it.
         """
-        self._wrapper.associate_class(p2, p3.encode())
+        self._wrapper.associate_class(chan, cl.encode())
         
 
 
 
     @classmethod
-    def gen_valid_chan_symb(cls, p1, p2):
+    def gen_valid_chan_symb(cls, str_in, str_out):
         """
         Generate a valid channel name from a name candidate
         """
-        p2.value = gxapi_cy.WrapDB.gen_valid_chan_symb(GXContext._get_tls_geo(), p1.encode(), p2.value.encode())
+        str_out.value = gxapi_cy.WrapDB.gen_valid_chan_symb(GXContext._get_tls_geo(), str_in.encode(), str_out.value.encode())
         
 
 
 
     @classmethod
-    def gen_valid_line_symb(cls, p1, p2):
+    def gen_valid_line_symb(cls, str_in, str_out):
         """
         Generate a valid line symb name string from given string.
 
@@ -2560,13 +2560,13 @@ class GXDB:
         or shorter. Escapes, leading and trailing spaces are removed, then
         all illegal characters are replaced with an underscore.
         """
-        p2.value = gxapi_cy.WrapDB.gen_valid_line_symb(GXContext._get_tls_geo(), p1.encode(), p2.value.encode())
+        str_out.value = gxapi_cy.WrapDB.gen_valid_line_symb(GXContext._get_tls_geo(), str_in.encode(), str_out.value.encode())
         
 
 
 
 
-    def get_chan_va(self, p2, p3, p4):
+    def get_chan_va(self, line, chan, va):
         """
         Place the contents of a channel in a `GXVA`.
 
@@ -2574,13 +2574,13 @@ class GXDB:
 
             `GXVA` class.
         """
-        self._wrapper.get_chan_va(p2, p3, p4._wrapper)
+        self._wrapper.get_chan_va(line, chan, va._wrapper)
         
 
 
 
 
-    def get_va_scaling(self, p2, p3, p4):
+    def get_va_scaling(self, ch, base, range):
         """
         Get base and range for `GXVA` channel cell display.
 
@@ -2588,13 +2588,13 @@ class GXDB:
 
         See `set_va_scaling`.
         """
-        p3.value, p4.value = self._wrapper.get_va_scaling(p2, p3.value, p4.value)
+        base.value, range.value = self._wrapper.get_va_scaling(ch, base.value, range.value)
         
 
 
 
 
-    def get_va_windows(self, p2, p3, p4):
+    def get_va_windows(self, ch, min_w, max_w):
         """
         Get the range of windows displayed for a `GXVA` channel.
 
@@ -2602,13 +2602,13 @@ class GXDB:
 
         See `set_va_windows`.
         """
-        p3.value, p4.value = self._wrapper.get_va_windows(p2, p3.value, p4.value)
+        min_w.value, max_w.value = self._wrapper.get_va_windows(ch, min_w.value, max_w.value)
         
 
 
 
 
-    def set_va_base_coordinate_info(self, p2, p3, p4, p5, p6, p7):
+    def set_va_base_coordinate_info(self, ch, domain, base, vv, units, allow_changes):
         """
         Set the array channel base coordinate type, offset and values.
 
@@ -2616,13 +2616,13 @@ class GXDB:
 
         See `get_va_base_coordinate_info`.
         """
-        self._wrapper.set_va_base_coordinate_info(p2, p3, p4, p5._wrapper, p6.encode(), p7)
+        self._wrapper.set_va_base_coordinate_info(ch, domain, base, vv._wrapper, units.encode(), allow_changes)
         
 
 
 
 
-    def get_va_base_coordinate_info(self, p2, p3, p4, p5, p6):
+    def get_va_base_coordinate_info(self, ch, domain, base, vv, units):
         """
         Set the array channel base coordinate type, offset and values.
 
@@ -2630,13 +2630,13 @@ class GXDB:
 
         See `set_va_base_coordinate_info`.
         """
-        p3.value, p4.value, p6.value = self._wrapper.get_va_base_coordinate_info(p2, p3.value, p4.value, p5._wrapper, p6.value.encode())
+        domain.value, base.value, units.value = self._wrapper.get_va_base_coordinate_info(ch, domain.value, base.value, vv._wrapper, units.value.encode())
         
 
 
 
 
-    def get_group_class(self, p2, p3):
+    def get_group_class(self, symb, cl):
         """
         Set the Class name for a group line.
 
@@ -2651,23 +2651,23 @@ class GXDB:
 
             `line_category` - to see if a line is a group line.
         """
-        p3.value = self._wrapper.get_group_class(p2, p3.value.encode())
+        cl.value = self._wrapper.get_group_class(symb, cl.value.encode())
         
 
 
 
 
-    def get_info(self, p2):
+    def get_info(self, item):
         """
         Get information about the database.
         """
-        ret_val = self._wrapper.get_info(p2)
+        ret_val = self._wrapper.get_info(item)
         return ret_val
 
 
 
 
-    def get_va_prof_color_file(self, p2, p3):
+    def get_va_prof_color_file(self, ch, file):
         """
         Get colors for a `GXVA` channel when displayed in the profile window.
 
@@ -2675,23 +2675,23 @@ class GXDB:
 
         See `set_va_prof_color_file`.
         """
-        p3.value = self._wrapper.get_va_prof_color_file(p2, p3.value.encode())
+        file.value = self._wrapper.get_va_prof_color_file(ch, file.value.encode())
         
 
 
 
 
-    def get_va_prof_sect_option(self, p2, p3):
+    def get_va_prof_sect_option(self, ch, option):
         """
         Get the display options of `GXVA` channels
         """
-        p3.value = self._wrapper.get_va_prof_sect_option(p2, p3.value.encode())
+        option.value = self._wrapper.get_va_prof_sect_option(ch, option.value.encode())
         
 
 
 
 
-    def get_va_sect_color_file(self, p2, p3):
+    def get_va_sect_color_file(self, ch, file):
         """
         Get colors for a `GXVA` channel when displayed section in the profile window.
 
@@ -2699,17 +2699,17 @@ class GXDB:
 
         Fails in the channel is not an array channel
         """
-        p3.value = self._wrapper.get_va_sect_color_file(p2, p3.value.encode())
+        file.value = self._wrapper.get_va_sect_color_file(ch, file.value.encode())
         
 
 
 
 
-    def is_associated(self, p2, p3):
+    def is_associated(self, group, chan):
         """
         Check to see if a channel is associated with group.
         """
-        ret_val = self._wrapper.is_associated(p2, p3)
+        ret_val = self._wrapper.is_associated(group, chan)
         return ret_val
 
 
@@ -2729,7 +2729,7 @@ class GXDB:
 
 
 
-    def put_chan_va(self, p2, p3, p4):
+    def put_chan_va(self, line, chan, va):
         """
         Place the contents of a `GXVA` in a channel.
 
@@ -2737,13 +2737,13 @@ class GXDB:
 
             `GXVA` class.
         """
-        self._wrapper.put_chan_va(p2, p3, p4._wrapper)
+        self._wrapper.put_chan_va(line, chan, va._wrapper)
         
 
 
 
 
-    def set_group_class(self, p2, p3):
+    def set_group_class(self, symb, cl):
         """
         Set the Class name for a group line.
 
@@ -2764,13 +2764,13 @@ class GXDB:
             `line_category` - to see if a line is a group line.
             `associate` - Associate a channel with a group.
         """
-        self._wrapper.set_group_class(p2, p3.encode())
+        self._wrapper.set_group_class(symb, cl.encode())
         
 
 
 
 
-    def set_va_prof_color_file(self, p2, p3):
+    def set_va_prof_color_file(self, ch, file):
         """
         Set colors for a `GXVA` channel when displayed in the profile window.
 
@@ -2814,23 +2814,23 @@ class GXDB:
         
         The color file search path is: Local directory, then oasismontaj\\tbl.
         """
-        self._wrapper.set_va_prof_color_file(p2, p3.encode())
+        self._wrapper.set_va_prof_color_file(ch, file.encode())
         
 
 
 
 
-    def set_va_prof_sect_option(self, p2, p3):
+    def set_va_prof_sect_option(self, ch, option):
         """
         Set the display options of `GXVA` channels
         """
-        self._wrapper.set_va_prof_sect_option(p2, p3.encode())
+        self._wrapper.set_va_prof_sect_option(ch, option.encode())
         
 
 
 
 
-    def set_va_scaling(self, p2, p3, p4):
+    def set_va_scaling(self, ch, base, range):
         """
         Set base and range for `GXVA` channel cell display.
 
@@ -2841,13 +2841,13 @@ class GXDB:
         If either input is a dummy, both are set as dummies, and autoscaling
         is used.
         """
-        self._wrapper.set_va_scaling(p2, p3, p4)
+        self._wrapper.set_va_scaling(ch, base, range)
         
 
 
 
 
-    def set_va_sect_color_file(self, p2, p3):
+    def set_va_sect_color_file(self, ch, file):
         """
         Set colors for a `GXVA` channel when displayed section in the profile window.
 
@@ -2856,13 +2856,13 @@ class GXDB:
         Fails in the channel is not an array channel, if the
         file does not exist, or if it is not a valid color zone file.
         """
-        self._wrapper.set_va_sect_color_file(p2, p3.encode())
+        self._wrapper.set_va_sect_color_file(ch, file.encode())
         
 
 
 
 
-    def set_va_windows(self, p2, p3, p4):
+    def set_va_windows(self, ch, min_w, max_w):
         """
         Set the range of windows to display for a `GXVA` channel.
 
@@ -2871,7 +2871,7 @@ class GXDB:
         Use to display a subset of the `GXVA` channel windows in the GDB.
         Windows index from 0.
         """
-        self._wrapper.set_va_windows(p2, p3, p4)
+        self._wrapper.set_va_windows(ch, min_w, max_w)
         
 
 

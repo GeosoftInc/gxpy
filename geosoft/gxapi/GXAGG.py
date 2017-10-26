@@ -61,17 +61,17 @@ class GXAGG:
 
 
 
-    def set_model(self, p2):
+    def set_model(self, model):
         """
         Sets the Color Model
         """
-        self._wrapper.set_model(p2)
+        self._wrapper.set_model(model)
         
 
 
 
 
-    def change_brightness(self, p2):
+    def change_brightness(self, brt):
         """
         Change the brightness.
 
@@ -81,7 +81,7 @@ class GXAGG:
         -1.0 to 0.0 makes colors darker, -1.0 is black
         0.0 to 1.0 makes colors lighter, 1.0 is white
         """
-        self._wrapper.change_brightness(p2)
+        self._wrapper.change_brightness(brt)
         
 
 
@@ -97,7 +97,7 @@ class GXAGG:
 
 
     @classmethod
-    def create_map(cls, p1, p2):
+    def create_map(cls, map, name):
         """
         Create `GXAGG` from Map with Group name.
 
@@ -108,7 +108,7 @@ class GXAGG:
         "Data\\AGG_test" (when used as a string, the double slash
         represents as single \\).
         """
-        ret_val = gxapi_cy.WrapAGG.create_map(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
+        ret_val = gxapi_cy.WrapAGG.create_map(GXContext._get_tls_geo(), map._wrapper, name.encode())
         return GXAGG(ret_val)
 
 
@@ -116,7 +116,7 @@ class GXAGG:
 
 
 
-    def get_layer_itr(self, p2, p3):
+    def get_layer_itr(self, layer, itr):
         """
         Get the `GXITR` of a layer
 
@@ -129,13 +129,13 @@ class GXAGG:
         
         Caller must create/destroy `GXITR`.
         """
-        self._wrapper.get_layer_itr(p2, p3._wrapper)
+        self._wrapper.get_layer_itr(layer, itr._wrapper)
         
 
 
 
 
-    def list_img(self, p2):
+    def list_img(self, gvv):
         """
         Lists file names of all the IMGs inside of the `GXAGG`.
 
@@ -143,7 +143,7 @@ class GXAGG:
 
         The returned `GXVV` contains the file names.
         """
-        ret_val = self._wrapper.list_img(p2._wrapper)
+        ret_val = self._wrapper.list_img(gvv._wrapper)
         return ret_val
 
 
@@ -159,7 +159,7 @@ class GXAGG:
 
 
 
-    def layer_img(self, p2, p3, p4, p5):
+    def layer_img(self, name, zone, color, cont):
         """
         Add an image as a layer in an aggregate.
 
@@ -167,13 +167,13 @@ class GXAGG:
 
             `layer_shade_img`
         """
-        self._wrapper.layer_img(p2.encode(), p3, p4.encode(), p5)
+        self._wrapper.layer_img(name.encode(), zone, color.encode(), cont)
         
 
 
 
 
-    def layer_img_ex(self, p2, p3, p4, p5, p6, p7):
+    def layer_img_ex(self, name, zone, color, min, max, cont):
         """
         Add an image as a layer in an aggregate.
 
@@ -181,13 +181,13 @@ class GXAGG:
 
             `layer_shade_img`
         """
-        self._wrapper.layer_img_ex(p2.encode(), p3, p4.encode(), p5, p6, p7)
+        self._wrapper.layer_img_ex(name.encode(), zone, color.encode(), min, max, cont)
         
 
 
 
 
-    def layer_shade_img(self, p2, p3, p4, p5, p6):
+    def layer_shade_img(self, name, color, inc, dec, scl):
         """
         Add a shaded image as a layer in an aggregate.
 
@@ -200,7 +200,7 @@ class GXAGG:
         regardless of the location of the original source image.
         If the file already exists, it will replaced.
         """
-        p6.value = self._wrapper.layer_shade_img(p2.encode(), p3.encode(), p4, p5, p6.value)
+        scl.value = self._wrapper.layer_shade_img(name.encode(), color.encode(), inc, dec, scl.value)
         
 
 
@@ -233,7 +233,7 @@ class GXAGG:
 
 
 
-    def set_layer_itr(self, p2, p3):
+    def set_layer_itr(self, layer, itr):
         """
         Set the `GXITR` of a layer
 
@@ -246,17 +246,17 @@ class GXAGG:
         
         Caller must create/destroy `GXITR`.
         """
-        self._wrapper.set_layer_itr(p2, p3._wrapper)
+        self._wrapper.set_layer_itr(layer, itr._wrapper)
         
 
 
 
 
-    def set_render_method(self, p2):
+    def set_render_method(self, method):
         """
         Sets the Rendering Method
         """
-        self._wrapper.set_render_method(p2)
+        self._wrapper.set_render_method(method)
         
 
 

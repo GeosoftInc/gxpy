@@ -59,17 +59,17 @@ class GXPGU:
 
 
     @classmethod
-    def bool_mask(cls, p1, p2):
+    def bool_mask(cls, pg, ref_fil):
         """
         Apply reference file boolean mask to pager
         """
-        gxapi_cy.WrapPGU.bool_mask(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
+        gxapi_cy.WrapPGU.bool_mask(GXContext._get_tls_geo(), pg._wrapper, ref_fil.encode())
         
 
 
 
     @classmethod
-    def direct_gridding_dat(cls, p1, p2, p3, p4, p5, p6, p7, p8):
+    def direct_gridding_dat(cls, pg, xo, yo, dx, dy, rot, p7, p8):
         """
         Direct-gridding method, `GXDAT` version.
 
@@ -78,13 +78,13 @@ class GXPGU:
         Grid cells take on the specified statistic of the values inside the
         cell area. Grid cells containing no data values are set to dummy.
         """
-        gxapi_cy.WrapPGU.direct_gridding_dat(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7._wrapper, p8)
+        gxapi_cy.WrapPGU.direct_gridding_dat(GXContext._get_tls_geo(), pg._wrapper, xo, yo, dx, dy, rot, p7._wrapper, p8)
         
 
 
 
     @classmethod
-    def direct_gridding_dat_3d(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+    def direct_gridding_dat_3d(cls, pg, xo, yo, zo, dx, dy, dz, rot, p9, p10):
         """
         Direct-gridding method, `GXDAT` version, 3D.
 
@@ -93,13 +93,13 @@ class GXPGU:
         3D grid cells take on the specified statistic of the values inside the
         cell area. Grid cells containing no data values are set to dummy.
         """
-        gxapi_cy.WrapPGU.direct_gridding_dat_3d(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7, p8, p9._wrapper, p10)
+        gxapi_cy.WrapPGU.direct_gridding_dat_3d(GXContext._get_tls_geo(), pg._wrapper, xo, yo, zo, dx, dy, dz, rot, p9._wrapper, p10)
         
 
 
 
     @classmethod
-    def direct_gridding_db(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+    def direct_gridding_db(cls, pg, xo, yo, dx, dy, rot, p7, p8, p9, p10, p11):
         """
         Direct-gridding method, `GXDB` version.
 
@@ -108,13 +108,13 @@ class GXPGU:
         Grid cells take on the specified statistic of the values inside the
         cell area. Grid cells containing no data values are set to dummy.
         """
-        gxapi_cy.WrapPGU.direct_gridding_db(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7._wrapper, p8, p9, p10, p11)
+        gxapi_cy.WrapPGU.direct_gridding_db(GXContext._get_tls_geo(), pg._wrapper, xo, yo, dx, dy, rot, p7._wrapper, p8, p9, p10, p11)
         
 
 
 
     @classmethod
-    def direct_gridding_db_3d(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+    def direct_gridding_db_3d(cls, pg, xo, yo, zo, dx, dy, dz, rot, p9, p10, p11, p12, p13, p14):
         """
         Direct-gridding method, `GXDB` version, 3D.
 
@@ -123,13 +123,13 @@ class GXPGU:
         3D grid cells take on the specified statistic of the values inside the
         cell area. Grid cells containing no data values are set to dummy.
         """
-        gxapi_cy.WrapPGU.direct_gridding_db_3d(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7, p8, p9._wrapper, p10, p11, p12, p13, p14)
+        gxapi_cy.WrapPGU.direct_gridding_db_3d(GXContext._get_tls_geo(), pg._wrapper, xo, yo, zo, dx, dy, dz, rot, p9._wrapper, p10, p11, p12, p13, p14)
         
 
 
 
     @classmethod
-    def direct_gridding_vv(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+    def direct_gridding_vv(cls, pg, xo, yo, dx, dy, rot, p7, p8, p9, p10):
         """
         Direct-gridding method, `GXVV` version.
 
@@ -138,13 +138,13 @@ class GXPGU:
         Grid cells take on the specified statistic of the values inside the
         cell area. Grid cells containing no data values are set to dummy.
         """
-        gxapi_cy.WrapPGU.direct_gridding_vv(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7._wrapper, p8._wrapper, p9._wrapper, p10)
+        gxapi_cy.WrapPGU.direct_gridding_vv(GXContext._get_tls_geo(), pg._wrapper, xo, yo, dx, dy, rot, p7._wrapper, p8._wrapper, p9._wrapper, p10)
         
 
 
 
     @classmethod
-    def expand(cls, p1, p2, p3, p4, p5, p6):
+    def expand(cls, p_gi, p_go, ex_pcnt, ex_shp, ex_x, p6):
         """
         Expand a pager by filling the dummies for expanded edges
 
@@ -152,53 +152,53 @@ class GXPGU:
 
         3D pagers are expanded in X,Y direction the number of slices(Z) is unchanged .
         """
-        gxapi_cy.WrapPGU.expand(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3, p4, p5, p6)
+        gxapi_cy.WrapPGU.expand(GXContext._get_tls_geo(), p_gi._wrapper, p_go._wrapper, ex_pcnt, ex_shp, ex_x, p6)
         
 
 
 
     @classmethod
-    def fill(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+    def fill(cls, pg, fl_roll_wt, fl_roll_base, fl_roll_dist, p5, p6, p7, p8, p9, p10, p11):
         """
         Replace all dummies in a pager by predict values.
         """
-        gxapi_cy.WrapPGU.fill(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11.encode())
+        gxapi_cy.WrapPGU.fill(GXContext._get_tls_geo(), pg._wrapper, fl_roll_wt, fl_roll_base, fl_roll_dist, p5, p6, p7, p8, p9, p10, p11.encode())
         
 
 
 
     @classmethod
-    def fill_value(cls, p1, p2):
+    def fill_value(cls, pg, value):
         """
         Set all values in a pager to a single value.
         """
-        gxapi_cy.WrapPGU.fill_value(GXContext._get_tls_geo(), p1._wrapper, p2)
+        gxapi_cy.WrapPGU.fill_value(GXContext._get_tls_geo(), pg._wrapper, value)
         
 
 
 
     @classmethod
-    def filt_sym(cls, p1, p2, p3, p4, p5, p6):
+    def filt_sym(cls, pg, npass, usefile, file, size, vv):
         """
         Apply 5x5, 7x7 or 9X9 symmetric convolution filter to a `GXPG`.
         """
-        gxapi_cy.WrapPGU.filt_sym(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4.encode(), p5, p6._wrapper)
+        gxapi_cy.WrapPGU.filt_sym(GXContext._get_tls_geo(), pg._wrapper, npass, usefile, file.encode(), size, vv._wrapper)
         
 
 
 
     @classmethod
-    def filt_sym5(cls, p1, p2, p3, p4, p5):
+    def filt_sym5(cls, pg, npass, usefile, file, vv):
         """
         Apply 5x5 symmetric convolution filter to a `GXPG`.
         """
-        gxapi_cy.WrapPGU.filt_sym5(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4.encode(), p5._wrapper)
+        gxapi_cy.WrapPGU.filt_sym5(GXContext._get_tls_geo(), pg._wrapper, npass, usefile, file.encode(), vv._wrapper)
         
 
 
 
     @classmethod
-    def grid_peak(cls, p1, p2, p3, p4, p5):
+    def grid_peak(cls, grid, nlmt, p3, p4, p5):
         """
         Pick grid peaks.
 
@@ -209,13 +209,13 @@ class GXPGU:
         point will be picked if its grid value is greater than
         the value of one or more of its four neighouring points.
         """
-        gxapi_cy.WrapPGU.grid_peak(GXContext._get_tls_geo(), p1.encode(), p2, p3._wrapper, p4._wrapper, p5._wrapper)
+        gxapi_cy.WrapPGU.grid_peak(GXContext._get_tls_geo(), grid.encode(), nlmt, p3._wrapper, p4._wrapper, p5._wrapper)
         
 
 
 
     @classmethod
-    def dw_gridding_dat(cls, p1, p2, p3):
+    def dw_gridding_dat(cls, pg, dat, reg):
         """
         `dw_gridding_dat`     Inverse-distance weighting gridding method, `GXDAT` version.
 
@@ -223,13 +223,13 @@ class GXPGU:
 
         See the notes for `dw_gridding_db`.
         """
-        gxapi_cy.WrapPGU.dw_gridding_dat(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper)
+        gxapi_cy.WrapPGU.dw_gridding_dat(GXContext._get_tls_geo(), pg._wrapper, dat._wrapper, reg._wrapper)
         
 
 
 
     @classmethod
-    def dw_gridding_dat_3d(cls, p1, p2, p3):
+    def dw_gridding_dat_3d(cls, pg, dat, reg):
         """
         `dw_gridding_dat_3d`     Inverse-distance weighting gridding method, `GXDAT` version, 3D.
 
@@ -237,13 +237,13 @@ class GXPGU:
 
         See the notes for `dw_gridding_db_3d`.
         """
-        gxapi_cy.WrapPGU.dw_gridding_dat_3d(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper)
+        gxapi_cy.WrapPGU.dw_gridding_dat_3d(GXContext._get_tls_geo(), pg._wrapper, dat._wrapper, reg._wrapper)
         
 
 
 
     @classmethod
-    def dw_gridding_db(cls, p1, p2, p3, p4, p5, p6):
+    def dw_gridding_db(cls, pg, db, x, y, z, reg):
         """
         `dw_gridding_db`     Inverse-distance weighting gridding method, `GXDB` version.
 
@@ -269,13 +269,13 @@ class GXPGU:
         LOG_BASE: One of `VV_LOG_BASE_10` (default) or `VV_LOG_BASE_E`
         LOG_NEGATIVE: One of `VV_LOG_NEGATIVE_NO` (default) or `VV_LOG_NEGATIVE_YES`
         """
-        gxapi_cy.WrapPGU.dw_gridding_db(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3, p4, p5, p6._wrapper)
+        gxapi_cy.WrapPGU.dw_gridding_db(GXContext._get_tls_geo(), pg._wrapper, db._wrapper, x, y, z, reg._wrapper)
         
 
 
 
     @classmethod
-    def dw_gridding_db_3d(cls, p1, p2, p3, p4, p5, p6, p7):
+    def dw_gridding_db_3d(cls, pg, db, x, y, z, data, reg):
         """
         `dw_gridding_db_3d`     Inverse-distance weighting gridding method, `GXDB` version, 3D.
 
@@ -301,13 +301,13 @@ class GXPGU:
         LOG_BASE: One of `VV_LOG_BASE_10` (default) or `VV_LOG_BASE_E`
         LOG_NEGATIVE: One of `VV_LOG_NEGATIVE_NO` (default) or `VV_LOG_NEGATIVE_YES`
         """
-        gxapi_cy.WrapPGU.dw_gridding_db_3d(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3, p4, p5, p6, p7._wrapper)
+        gxapi_cy.WrapPGU.dw_gridding_db_3d(GXContext._get_tls_geo(), pg._wrapper, db._wrapper, x, y, z, data, reg._wrapper)
         
 
 
 
     @classmethod
-    def dw_gridding_vv(cls, p1, p2, p3, p4, p5):
+    def dw_gridding_vv(cls, pg, v_vx, v_vy, v_vz, reg):
         """
         `dw_gridding_vv`     Inverse-distance weighting gridding method, `GXVV` version.
 
@@ -315,13 +315,13 @@ class GXPGU:
 
         See the notes for `dw_gridding_db`.
         """
-        gxapi_cy.WrapPGU.dw_gridding_vv(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper)
+        gxapi_cy.WrapPGU.dw_gridding_vv(GXContext._get_tls_geo(), pg._wrapper, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, reg._wrapper)
         
 
 
 
     @classmethod
-    def numeric_to_thematic(cls, p1, p2, p3):
+    def numeric_to_thematic(cls, p_gi, vv, p_go):
         """
         `numeric_to_thematic`    Set index values in a pager based on a numeric pager with translation `GXVV`.
         
@@ -342,23 +342,23 @@ class GXPGU:
         The INDEX of the closest range is then inserted into the output `GXPG`, so
         it can be used in a thematic voxel (for instance).
         """
-        gxapi_cy.WrapPGU.numeric_to_thematic(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper)
+        gxapi_cy.WrapPGU.numeric_to_thematic(GXContext._get_tls_geo(), p_gi._wrapper, vv._wrapper, p_go._wrapper)
         
 
 
 
     @classmethod
-    def peakedness(cls, p1, p2, p3, p4, p5):
+    def peakedness(cls, grid, pkness, p3, p4, p5):
         """
         Find all peaks in peakedneess grid pager
         """
-        gxapi_cy.WrapPGU.peakedness(GXContext._get_tls_geo(), p1.encode(), p2, p3._wrapper, p4._wrapper, p5._wrapper)
+        gxapi_cy.WrapPGU.peakedness(GXContext._get_tls_geo(), grid.encode(), pkness, p3._wrapper, p4._wrapper, p5._wrapper)
         
 
 
 
     @classmethod
-    def peakedness_grid(cls, p1, p2, p3, p4):
+    def peakedness_grid(cls, grdi, grdo, p3, p4):
         """
         Create peakedneess grid from input grid.
 
@@ -380,13 +380,13 @@ class GXPGU:
         value range for anomalies. For example the 1 mV anomaly could quite possibly have
         the same representation as the 100 mV anomaly using this function.
         """
-        gxapi_cy.WrapPGU.peakedness_grid(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3, p4)
+        gxapi_cy.WrapPGU.peakedness_grid(GXContext._get_tls_geo(), grdi.encode(), grdo.encode(), p3, p4)
         
 
 
 
     @classmethod
-    def ref_file(cls, p1, p2):
+    def ref_file(cls, pg, ref_fil):
         """
         Create a reference file (boolean mask flag) from pager.
 
@@ -401,13 +401,13 @@ class GXPGU:
         The reference file is used in various operations where it is
         necessary to mask some output to the original defined cells.
         """
-        gxapi_cy.WrapPGU.ref_file(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
+        gxapi_cy.WrapPGU.ref_file(GXContext._get_tls_geo(), pg._wrapper, ref_fil.encode())
         
 
 
 
     @classmethod
-    def save_file(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9):
+    def save_file(cls, pg, xo, yo, dx, dy, rot, tr, ipj, file):
         """
         Writes a `GXPG` to an image file.
 
@@ -415,13 +415,13 @@ class GXPGU:
 
         The trend object and projection are optional.
         """
-        gxapi_cy.WrapPGU.save_file(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7._wrapper, p8._wrapper, p9.encode())
+        gxapi_cy.WrapPGU.save_file(GXContext._get_tls_geo(), pg._wrapper, xo, yo, dx, dy, rot, tr._wrapper, ipj._wrapper, file.encode())
         
 
 
 
     @classmethod
-    def thematic_to_numeric(cls, p1, p2, p3):
+    def thematic_to_numeric(cls, p_gi, vv, p_go):
         """
         Set numeric values in a pager based on an index pager with translation `GXVV`.
         
@@ -437,17 +437,17 @@ class GXPGU:
         object, and you provide a numeric mapping `GXVV`, calculated using
         SetupTranslateToNumericVV_TPAT.
         """
-        gxapi_cy.WrapPGU.thematic_to_numeric(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper)
+        gxapi_cy.WrapPGU.thematic_to_numeric(GXContext._get_tls_geo(), p_gi._wrapper, vv._wrapper, p_go._wrapper)
         
 
 
 
     @classmethod
-    def trend(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9):
+    def trend(cls, p_gi, p_go, tr, tr_opt, tr_pt_bs, xo, yo, dx, dy):
         """
         Trend remove or replace back in pager
         """
-        gxapi_cy.WrapPGU.trend(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4, p5, p6, p7, p8, p9)
+        gxapi_cy.WrapPGU.trend(GXContext._get_tls_geo(), p_gi._wrapper, p_go._wrapper, tr._wrapper, tr_opt, tr_pt_bs, xo, yo, dx, dy)
         
 
 
@@ -457,7 +457,7 @@ class GXPGU:
 
 
     @classmethod
-    def add_scalar(cls, p1, p2):
+    def add_scalar(cls, pg, scalar):
         """
         Add a scalar value to a pager
 
@@ -465,13 +465,13 @@ class GXPGU:
 
         Only available for FLOAT or DOUBLE pagers
         """
-        gxapi_cy.WrapPGU.add_scalar(GXContext._get_tls_geo(), p1._wrapper, p2)
+        gxapi_cy.WrapPGU.add_scalar(GXContext._get_tls_geo(), pg._wrapper, scalar)
         
 
 
 
     @classmethod
-    def multiply_scalar(cls, p1, p2):
+    def multiply_scalar(cls, pg, scalar):
         """
         Multiply a scalar value and a pager
 
@@ -479,7 +479,7 @@ class GXPGU:
 
         Only available for FLOAT or DOUBLE pagers
         """
-        gxapi_cy.WrapPGU.multiply_scalar(GXContext._get_tls_geo(), p1._wrapper, p2)
+        gxapi_cy.WrapPGU.multiply_scalar(GXContext._get_tls_geo(), pg._wrapper, scalar)
         
 
 
@@ -489,7 +489,7 @@ class GXPGU:
 
 
     @classmethod
-    def correlation_matrix(cls, p1, p2):
+    def correlation_matrix(cls, p_gu, p_go):
         """
         Find the correlations between columns in a matrix
 
@@ -500,23 +500,23 @@ class GXPGU:
         dot products of the columns of the input matrix with themselves.
         The elements take on values from 0 (orthogonal) to 1 (parallel).
         """
-        gxapi_cy.WrapPGU.correlation_matrix(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
+        gxapi_cy.WrapPGU.correlation_matrix(GXContext._get_tls_geo(), p_gu._wrapper, p_go._wrapper)
         
 
 
 
     @classmethod
-    def correlation_matrix2(cls, p1, p2, p3):
+    def correlation_matrix2(cls, p_gu, corr, p_go):
         """
         Same as `correlation_matrix`, but select correlation type.
         """
-        gxapi_cy.WrapPGU.correlation_matrix2(GXContext._get_tls_geo(), p1._wrapper, p2, p3._wrapper)
+        gxapi_cy.WrapPGU.correlation_matrix2(GXContext._get_tls_geo(), p_gu._wrapper, corr, p_go._wrapper)
         
 
 
 
     @classmethod
-    def invert_matrix(cls, p1, p2):
+    def invert_matrix(cls, p_gi, p_go):
         """
         Inverts a square matrix using LU decomp. and back-substitution
 
@@ -527,13 +527,13 @@ class GXPGU:
         input pager remains unchanged).
         Pagers and VVs must be type `GS_DOUBLE`.
         """
-        gxapi_cy.WrapPGU.invert_matrix(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
+        gxapi_cy.WrapPGU.invert_matrix(GXContext._get_tls_geo(), p_gi._wrapper, p_go._wrapper)
         
 
 
 
     @classmethod
-    def jacobi(cls, p1, p2, p3):
+    def jacobi(cls, p_gi, v_vd, p3):
         """
         Find eigenvalues, eigenvectors of a real symmetric matrix.
 
@@ -542,13 +542,13 @@ class GXPGU:
         The number of rows must equal the number of columns.
         Eienvalues, vectors are sorted in descending order.
         """
-        gxapi_cy.WrapPGU.jacobi(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper)
+        gxapi_cy.WrapPGU.jacobi(GXContext._get_tls_geo(), p_gi._wrapper, v_vd._wrapper, p3._wrapper)
         
 
 
 
     @classmethod
-    def lu_back_sub(cls, p1, p2, p3, p4):
+    def lu_back_sub(cls, p_ga, v_vi, p3, p4):
         """
         Solve a linear system using LU decomposition and back-substitution.
 
@@ -561,13 +561,13 @@ class GXPGU:
         Pagers and VVs must be type `GS_DOUBLE` except for the permutation vector,
         which should be INT
         """
-        gxapi_cy.WrapPGU.lu_back_sub(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper)
+        gxapi_cy.WrapPGU.lu_back_sub(GXContext._get_tls_geo(), p_ga._wrapper, v_vi._wrapper, p3._wrapper, p4._wrapper)
         
 
 
 
     @classmethod
-    def lu_decomp(cls, p1, p2, p3):
+    def lu_decomp(cls, p_gi, p_go, p3):
         """
         Perform an LU decomposition on a square pager.
 
@@ -584,13 +584,13 @@ class GXPGU:
         `lu_back_sub`.
         Pagers must be type `GS_DOUBLE` and the permutation vector type INT
         """
-        gxapi_cy.WrapPGU.lu_decomp(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper)
+        gxapi_cy.WrapPGU.lu_decomp(GXContext._get_tls_geo(), p_gi._wrapper, p_go._wrapper, p3._wrapper)
         
 
 
 
     @classmethod
-    def matrix_mult(cls, p1, p2, p3, p4, p5):
+    def matrix_mult(cls, p_gu, transpose_u, p_gv, p4, p5):
         """
         Multiply two pagers as if they were matrices.
 
@@ -603,13 +603,13 @@ class GXPGU:
         Assertions if: Matrices are not expected sizes
         Dummies are treated as 0 values.
         """
-        gxapi_cy.WrapPGU.matrix_mult(GXContext._get_tls_geo(), p1._wrapper, p2, p3._wrapper, p4, p5._wrapper)
+        gxapi_cy.WrapPGU.matrix_mult(GXContext._get_tls_geo(), p_gu._wrapper, transpose_u, p_gv._wrapper, p4, p5._wrapper)
         
 
 
 
     @classmethod
-    def matrix_vector_mult(cls, p1, p2, p3):
+    def matrix_vector_mult(cls, p_gu, v_vx, v_vo):
         """
         Multiply a `GXVV` by a pager like a matrix*vector multiply.
 
@@ -626,7 +626,7 @@ class GXPGU:
         
         Dummies are treated as 0 values.
         """
-        gxapi_cy.WrapPGU.matrix_vector_mult(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper)
+        gxapi_cy.WrapPGU.matrix_vector_mult(GXContext._get_tls_geo(), p_gu._wrapper, v_vx._wrapper, v_vo._wrapper)
         
 
 
@@ -691,7 +691,7 @@ class GXPGU:
 
 
     @classmethod
-    def pc_communality(cls, p1, p2):
+    def pc_communality(cls, p_gi, v_vc):
         """
         Determines principal component communalities.
 
@@ -701,13 +701,13 @@ class GXPGU:
         values in each row)
         Pagers and VVs must be type `GS_DOUBLE`.
         """
-        gxapi_cy.WrapPGU.pc_communality(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
+        gxapi_cy.WrapPGU.pc_communality(GXContext._get_tls_geo(), p_gi._wrapper, v_vc._wrapper)
         
 
 
 
     @classmethod
-    def pc_loadings(cls, p1, p2):
+    def pc_loadings(cls, p_gx, p2):
         """
         Compute the principal component loadings from the standardized data.
 
@@ -724,13 +724,13 @@ class GXPGU:
         Pearson correlations, or wish to use a modified correlation matrix,
         use `pc_loadings2` and input the correlation matrix directly.
         """
-        gxapi_cy.WrapPGU.pc_loadings(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
+        gxapi_cy.WrapPGU.pc_loadings(GXContext._get_tls_geo(), p_gx._wrapper, p2._wrapper)
         
 
 
 
     @classmethod
-    def pc_loadings2(cls, p1, p2):
+    def pc_loadings2(cls, p_gc, p2):
         """
         Same as PCLoading_PGU, but input correlation matrix.
 
@@ -738,13 +738,13 @@ class GXPGU:
 
         See `pc_loadings`.
         """
-        gxapi_cy.WrapPGU.pc_loadings2(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
+        gxapi_cy.WrapPGU.pc_loadings2(GXContext._get_tls_geo(), p_gc._wrapper, p2._wrapper)
         
 
 
 
     @classmethod
-    def pc_scores(cls, p1, p2, p3):
+    def pc_scores(cls, p_gx, p2, p3):
         """
         Compute the principal component scores from the standardized data.
 
@@ -758,13 +758,13 @@ class GXPGU:
         `pc_loadings`.
         Pagers and VVs must be type `GS_DOUBLE`.
         """
-        gxapi_cy.WrapPGU.pc_scores(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper)
+        gxapi_cy.WrapPGU.pc_scores(GXContext._get_tls_geo(), p_gx._wrapper, p2._wrapper, p3._wrapper)
         
 
 
 
     @classmethod
-    def pc_standardize(cls, p1, p2, p3, p4):
+    def pc_standardize(cls, pg, v_vm, v_vs, dir):
         """
         Remove/Replace mean and standard deviation
 
@@ -772,13 +772,13 @@ class GXPGU:
 
         Works on columns of the `GXPG`.
         """
-        gxapi_cy.WrapPGU.pc_standardize(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4)
+        gxapi_cy.WrapPGU.pc_standardize(GXContext._get_tls_geo(), pg._wrapper, v_vm._wrapper, v_vs._wrapper, dir)
         
 
 
 
     @classmethod
-    def pc_standardize2(cls, p1, p2, p3, p4, p5):
+    def pc_standardize2(cls, pg, v_vmask, v_vm, v_vs, dir):
         """
         Remove/Replace mean and standard deviation, subset values.
 
@@ -790,13 +790,13 @@ class GXPGU:
         The rows where the mask is dummy are not included
         in the calculation, but ALL the values are standardized.
         """
-        gxapi_cy.WrapPGU.pc_standardize2(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper, p5)
+        gxapi_cy.WrapPGU.pc_standardize2(GXContext._get_tls_geo(), pg._wrapper, v_vmask._wrapper, v_vm._wrapper, v_vs._wrapper, dir)
         
 
 
 
     @classmethod
-    def pc_transform(cls, p1, p2, p3, p4, p5):
+    def pc_transform(cls, pg, v_vd, v_vf, v_vt, dir):
         """
         Transform/De-transform data.
 
@@ -812,13 +812,13 @@ class GXPGU:
         transform, data values greater than the maximum values are set
         to the maximum.
         """
-        gxapi_cy.WrapPGU.pc_transform(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper, p5)
+        gxapi_cy.WrapPGU.pc_transform(GXContext._get_tls_geo(), pg._wrapper, v_vd._wrapper, v_vf._wrapper, v_vt._wrapper, dir)
         
 
 
 
     @classmethod
-    def pc_varimax(cls, p1, p2):
+    def pc_varimax(cls, p_gi, p_go):
         """
         Perform the Kaiser Varimax transformation on pr. comp. loadings
 
@@ -830,7 +830,7 @@ class GXPGU:
         near the extremities or near the origin.
         Pagers must be type `GS_DOUBLE`.
         """
-        gxapi_cy.WrapPGU.pc_varimax(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
+        gxapi_cy.WrapPGU.pc_varimax(GXContext._get_tls_geo(), p_gi._wrapper, p_go._wrapper)
         
 
 
@@ -840,7 +840,7 @@ class GXPGU:
 
 
     @classmethod
-    def maximum_terrain_steepness(cls, p1, p2):
+    def maximum_terrain_steepness(cls, pg, annular_size):
         """
         Compute the Maximum Steepness of a topography Pager
 
@@ -853,7 +853,7 @@ class GXPGU:
         processed.
         The wrapper was created for testing and development purposes.
         """
-        ret_val = gxapi_cy.WrapPGU.maximum_terrain_steepness(GXContext._get_tls_geo(), p1._wrapper, p2)
+        ret_val = gxapi_cy.WrapPGU.maximum_terrain_steepness(GXContext._get_tls_geo(), pg._wrapper, annular_size)
         return ret_val
 
 

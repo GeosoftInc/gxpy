@@ -61,7 +61,7 @@ class GXTRND:
 
 
     @classmethod
-    def get_max_min(cls, p1, p2, p3, p4, p5, p6, p7, p8):
+    def get_max_min(cls, v_vx, v_vy, v_vz, v_vxm, p5, p6, p7, p8):
         """
         Find the max/min nodes in a line.
 
@@ -69,27 +69,27 @@ class GXTRND:
 
         Trend lines positions consist of X and Y VVs
         """
-        gxapi_cy.WrapTRND.get_max_min(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper, p7, p8)
+        gxapi_cy.WrapTRND.get_max_min(GXContext._get_tls_geo(), v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, v_vxm._wrapper, p5._wrapper, p6._wrapper, p7, p8)
         
 
 
 
     @classmethod
-    def get_mesh(cls, p1, p2, p3, p4, p5, p6):
+    def get_mesh(cls, db, chan, window, max_length, mesh_vv, trnd):
         """
         Get the lines in a trend mesh.
         """
-        gxapi_cy.WrapTRND.get_mesh(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3, p4, p5._wrapper, p6)
+        gxapi_cy.WrapTRND.get_mesh(GXContext._get_tls_geo(), db._wrapper, chan.encode(), window, max_length, mesh_vv._wrapper, trnd)
         
 
 
 
     @classmethod
-    def trnd_db(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+    def trnd_db(cls, db, chan, window, angle, deviation, max_length, deflection, min_length, resample, br_angle):
         """
         Uses a selected channel to find data trends in a database.
         """
-        gxapi_cy.WrapTRND.trnd_db(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3, p4, p5, p6, p7, p8, p9, p10)
+        gxapi_cy.WrapTRND.trnd_db(GXContext._get_tls_geo(), db._wrapper, chan.encode(), window, angle, deviation, max_length, deflection, min_length, resample, br_angle)
         
 
 

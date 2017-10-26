@@ -58,21 +58,21 @@ class GXLMSG:
 
 
     @classmethod
-    def goto_point(cls, p1, p2, p3, p4):
+    def goto_point(cls, x, y, z, ipj):
         """
         Sends a move cursor message
         """
-        gxapi_cy.WrapLMSG.goto_point(GXContext._get_tls_geo(), p1, p2, p3, p4._wrapper)
+        gxapi_cy.WrapLMSG.goto_point(GXContext._get_tls_geo(), x, y, z, ipj._wrapper)
         
 
 
 
     @classmethod
-    def view_area(cls, p1, p2, p3, p4, p5):
+    def view_area(cls, x0, y0, x1, y1, ipj):
         """
         Sends a view area message
         """
-        gxapi_cy.WrapLMSG.view_area(GXContext._get_tls_geo(), p1, p2, p3, p4, p5._wrapper)
+        gxapi_cy.WrapLMSG.view_area(GXContext._get_tls_geo(), x0, y0, x1, y1, ipj._wrapper)
         
 
 

@@ -62,7 +62,7 @@ class GXTB:
 
 
 
-    def set_search_mode(self, p2):
+    def set_search_mode(self, mode):
         """
         Set the search mode of a table.
 
@@ -71,13 +71,13 @@ class GXTB:
         If performance is an issue, you may want to test which search
         mode provides the best performance with typical data.
         """
-        self._wrapper.set_search_mode(p2)
+        self._wrapper.set_search_mode(mode)
         
 
 
 
     @classmethod
-    def create(cls, p1):
+    def create(cls, name):
         """
         Loads a table into memory and return a table handle.
 
@@ -87,13 +87,13 @@ class GXTB:
         the table header, the `GXTB` object will read in the table and dummy
         the elements of the missing data columns.
         """
-        ret_val = gxapi_cy.WrapTB.create(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapTB.create(GXContext._get_tls_geo(), name.encode())
         return GXTB(ret_val)
 
 
 
     @classmethod
-    def create_db(cls, p1):
+    def create_db(cls, db):
         """
         Create a table from a database.
 
@@ -105,17 +105,17 @@ class GXTB:
         The database is not loaded with data.  Use the `load_db`
         function to load data into the table.
         """
-        ret_val = gxapi_cy.WrapTB.create_db(GXContext._get_tls_geo(), p1._wrapper)
+        ret_val = gxapi_cy.WrapTB.create_db(GXContext._get_tls_geo(), db._wrapper)
         return GXTB(ret_val)
 
 
 
     @classmethod
-    def create_ltb(cls, p1):
+    def create_ltb(cls, ltb):
         """
         Create a table from an `GXLTB` database.
         """
-        ret_val = gxapi_cy.WrapTB.create_ltb(GXContext._get_tls_geo(), p1._wrapper)
+        ret_val = gxapi_cy.WrapTB.create_ltb(GXContext._get_tls_geo(), ltb._wrapper)
         return GXTB(ret_val)
 
 
@@ -123,71 +123,71 @@ class GXTB:
 
 
 
-    def field(self, p2):
+    def field(self, name):
         """
         Get a field handle.
         """
-        ret_val = self._wrapper.field(p2.encode())
+        ret_val = self._wrapper.field(name.encode())
         return ret_val
 
 
 
 
-    def get_string(self, p2, p3, p4):
+    def get_string(self, row, col, val):
         """
         Gets a string value from a table element.
         """
-        p4.value = self._wrapper.get_string(p2, p3, p4.value.encode())
+        val.value = self._wrapper.get_string(row, col, val.value.encode())
         
 
 
 
 
-    def data_type(self, p2):
+    def data_type(self, col):
         """
         Returns the data type for the specified column.
         """
-        ret_val = self._wrapper.data_type(p2)
+        ret_val = self._wrapper.data_type(col)
         return ret_val
 
 
 
 
-    def find_col_by_index(self, p2, p3):
+    def find_col_by_index(self, idx, name):
         """
         Finds a column's name by its index.
         """
-        p3.value = self._wrapper.find_col_by_index(p2, p3.value.encode())
+        name.value = self._wrapper.find_col_by_index(idx, name.value.encode())
         
 
 
 
 
-    def find_col_by_name(self, p2):
+    def find_col_by_name(self, name):
         """
         Finds a column's index by its name.
         """
-        ret_val = self._wrapper.find_col_by_name(p2.encode())
+        ret_val = self._wrapper.find_col_by_name(name.encode())
         return ret_val
 
 
 
 
-    def format(self, p2):
+    def format(self, col):
         """
         Returns the channel format for the specified column.
         """
-        ret_val = self._wrapper.format(p2)
+        ret_val = self._wrapper.format(col)
         return ret_val
 
 
 
 
-    def get_int(self, p2, p3):
+    def get_int(self, row, col):
         """
         Gets an integer value from a table element.
         """
-        ret_val = self._wrapper.get_int(p2, p3)
+        ret_val = self._wrapper.get_int(row, col)
         return ret_val
 
 
@@ -213,7 +213,7 @@ class GXTB:
 
 
 
-    def load_db(self, p2, p3):
+    def load_db(self, db, line):
         """
         Load a database into a `GXTB`
 
@@ -221,34 +221,34 @@ class GXTB:
 
         The line is appended to the data already in the table.
         """
-        self._wrapper.load_db(p2._wrapper, p3)
+        self._wrapper.load_db(db._wrapper, line)
         
 
 
 
 
-    def get_double(self, p2, p3):
+    def get_double(self, row, col):
         """
         Gets an real value from a table element.
         """
-        ret_val = self._wrapper.get_double(p2, p3)
+        ret_val = self._wrapper.get_double(row, col)
         return ret_val
 
 
 
 
-    def save(self, p2):
+    def save(self, name):
         """
         Saves the data in a table to a file. The table header will be
         in ASCII and the data will be in BINARY format.
         """
-        self._wrapper.save(p2.encode())
+        self._wrapper.save(name.encode())
         
 
 
 
 
-    def save_db(self, p2, p3):
+    def save_db(self, db, line):
         """
         Save a `GXTB` in a database line
 
@@ -257,24 +257,24 @@ class GXTB:
         Missing channels are created.
         Data in existing channels on the line will be replaced.
         """
-        self._wrapper.save_db(p2._wrapper, p3)
+        self._wrapper.save_db(db._wrapper, line)
         
 
 
 
 
-    def save_to_ascii(self, p2):
+    def save_to_ascii(self, name):
         """
         Saves the data in a table to a file. The table header will be
         in ASCII and the data will be in ASCII format.
         """
-        self._wrapper.save_to_ascii(p2.encode())
+        self._wrapper.save_to_ascii(name.encode())
         
 
 
 
 
-    def set_int(self, p2, p3, p4):
+    def set_int(self, row, col, val):
         """
         Sets an integer value into a table element.
 
@@ -294,13 +294,13 @@ class GXTB:
         the new rows up to the new element's row will also contain
         invalid data.
         """
-        self._wrapper.set_int(p2, p3, p4)
+        self._wrapper.set_int(row, col, val)
         
 
 
 
 
-    def set_double(self, p2, p3, p4):
+    def set_double(self, row, col, val):
         """
         Sets an real value into a table element.
 
@@ -320,13 +320,13 @@ class GXTB:
         the new rows up to the new element's row will also contain
         invalid data.
         """
-        self._wrapper.set_double(p2, p3, p4)
+        self._wrapper.set_double(row, col, val)
         
 
 
 
 
-    def set_string(self, p2, p3, p4):
+    def set_string(self, row, col, val):
         """
         Sets a string value into a table element.
 
@@ -343,13 +343,13 @@ class GXTB:
         the new rows up to the new element's row will also contain
         invalid data.
         """
-        self._wrapper.set_string(p2, p3, p4.encode())
+        self._wrapper.set_string(row, col, val.encode())
         
 
 
 
 
-    def sort(self, p2):
+    def sort(self, col):
         """
         Sorts a table by a specified column.
 
@@ -364,7 +364,7 @@ class GXTB:
         may or may not come after the first row in the sorted
         table.
         """
-        self._wrapper.sort(p2)
+        self._wrapper.sort(col)
         
 
 

@@ -58,11 +58,11 @@ class GXDOCU:
 
 
 
-    def copy(self, p2):
+    def copy(self, doc_us):
         """
         Copy `GXDOCU`
         """
-        self._wrapper.copy(p2._wrapper)
+        self._wrapper.copy(doc_us._wrapper)
         
 
 
@@ -78,11 +78,11 @@ class GXDOCU:
 
 
     @classmethod
-    def create_s(cls, p1):
+    def create_s(cls, bf):
         """
         Create from a serialized source
         """
-        ret_val = gxapi_cy.WrapDOCU.create_s(GXContext._get_tls_geo(), p1._wrapper)
+        ret_val = gxapi_cy.WrapDOCU.create_s(GXContext._get_tls_geo(), bf._wrapper)
         return GXDOCU(ret_val)
 
 
@@ -90,17 +90,17 @@ class GXDOCU:
 
 
 
-    def get_file(self, p2):
+    def get_file(self, file):
         """
         Get the document and place in a file.
         """
-        self._wrapper.get_file(p2.encode())
+        self._wrapper.get_file(file.encode())
         
 
 
 
 
-    def get_file_meta(self, p2):
+    def get_file_meta(self, file):
         """
         Get the document and place in a file with metadata.
 
@@ -114,37 +114,37 @@ class GXDOCU:
         support metadata, the metadata will be placed in an associated
         file "filename.extension.GeosoftMeta"
         """
-        self._wrapper.get_file_meta(p2.encode())
+        self._wrapper.get_file_meta(file.encode())
         
 
 
 
 
-    def get_meta(self, p2):
+    def get_meta(self, meta):
         """
         Get the document's meta
         """
-        self._wrapper.get_meta(p2._wrapper)
+        self._wrapper.get_meta(meta._wrapper)
         
 
 
 
 
-    def doc_name(self, p2):
+    def doc_name(self, name):
         """
         The document name.
         """
-        p2.value = self._wrapper.doc_name(p2.value.encode())
+        name.value = self._wrapper.doc_name(name.value.encode())
         
 
 
 
 
-    def file_name(self, p2):
+    def file_name(self, name):
         """
         The original document file name.
         """
-        p2.value = self._wrapper.file_name(p2.value.encode())
+        name.value = self._wrapper.file_name(name.value.encode())
         
 
 
@@ -170,7 +170,7 @@ class GXDOCU:
 
 
 
-    def open(self, p2):
+    def open(self, mode):
         """
         Open a document in the document viewer
 
@@ -179,23 +179,23 @@ class GXDOCU:
         On Windows, the default application for the file extension is
         used to open the file.
         """
-        self._wrapper.open(p2)
+        self._wrapper.open(mode)
         
 
 
 
 
-    def serial(self, p2):
+    def serial(self, bf):
         """
         Serialize `GXDOCU`
         """
-        self._wrapper.serial(p2._wrapper)
+        self._wrapper.serial(bf._wrapper)
         
 
 
 
 
-    def set_file(self, p2, p3, p4):
+    def set_file(self, type, name, file):
         """
         Set the document from a file source.
 
@@ -234,13 +234,13 @@ class GXDOCU:
         the `GXDOCU` class and the document can be retrieved using the sGetFile_DOCU
         method.
         """
-        self._wrapper.set_file(p2.encode(), p3.encode(), p4.encode())
+        self._wrapper.set_file(type.encode(), name.encode(), file.encode())
         
 
 
 
 
-    def set_file_meta(self, p2, p3, p4):
+    def set_file_meta(self, type, name, file):
         """
         Set the document from a file source with metadata.
 
@@ -262,17 +262,17 @@ class GXDOCU:
            "gdb"       Geosoft database
            "grd"       Geosoft grid file
         """
-        self._wrapper.set_file_meta(p2.encode(), p3.encode(), p4.encode())
+        self._wrapper.set_file_meta(type.encode(), name.encode(), file.encode())
         
 
 
 
 
-    def set_meta(self, p2):
+    def set_meta(self, meta):
         """
         Set the document's meta
         """
-        self._wrapper.set_meta(p2._wrapper)
+        self._wrapper.set_meta(meta._wrapper)
         
 
 

@@ -59,17 +59,17 @@ class GXIPGUI:
 
 
     @classmethod
-    def modify_job(cls, p1, p2, p3, p4, p5):
+    def modify_job(cls, ip, db, ini, plot_type, page):
         """
         Modify parameters for an `GXIP` plot.
         """
-        ret_val, p5.value = gxapi_cy.WrapIPGUI.modify_job(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3.encode(), p4, p5.value)
+        ret_val, page.value = gxapi_cy.WrapIPGUI.modify_job(GXContext._get_tls_geo(), ip._wrapper, db._wrapper, ini.encode(), plot_type, page.value)
         return ret_val
 
 
 
     @classmethod
-    def launch_ipqc_tool(cls, p1, p2, p3):
+    def launch_ipqc_tool(cls, db, line, chan):
         """
         Launch the In-Line `GXIP` QC tool on a database.
 
@@ -77,13 +77,13 @@ class GXIPGUI:
 
         The database should be a currently open database.
         """
-        gxapi_cy.WrapIPGUI.launch_ipqc_tool(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode())
+        gxapi_cy.WrapIPGUI.launch_ipqc_tool(GXContext._get_tls_geo(), db.encode(), line.encode(), chan.encode())
         
 
 
 
     @classmethod
-    def launch_offset_ipqc_tool(cls, p1, p2, p3):
+    def launch_offset_ipqc_tool(cls, db, line, chan):
         """
         Launch the Offset `GXIP` QC tool on a database.
 
@@ -91,7 +91,7 @@ class GXIPGUI:
 
         The database should be a currently open database.
         """
-        gxapi_cy.WrapIPGUI.launch_offset_ipqc_tool(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode())
+        gxapi_cy.WrapIPGUI.launch_offset_ipqc_tool(GXContext._get_tls_geo(), db.encode(), line.encode(), chan.encode())
         
 
 

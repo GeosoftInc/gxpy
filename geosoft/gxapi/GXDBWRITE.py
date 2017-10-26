@@ -64,34 +64,34 @@ class GXDBWRITE:
 
 
     @classmethod
-    def create(cls, p1):
+    def create(cls, db):
         """
         Create a `GXDBWRITE` object
         Add channels using the `add_channel`() method.channel.
         """
-        ret_val = gxapi_cy.WrapDBWRITE.create(GXContext._get_tls_geo(), p1._wrapper)
+        ret_val = gxapi_cy.WrapDBWRITE.create(GXContext._get_tls_geo(), db._wrapper)
         return GXDBWRITE(ret_val)
 
 
 
     @classmethod
-    def create_xy(cls, p1):
+    def create_xy(cls, db):
         """
         Create a `GXDBWRITE` object for a XY-located data. Add channels using the
         `add_channel`() method.
         """
-        ret_val = gxapi_cy.WrapDBWRITE.create_xy(GXContext._get_tls_geo(), p1._wrapper)
+        ret_val = gxapi_cy.WrapDBWRITE.create_xy(GXContext._get_tls_geo(), db._wrapper)
         return GXDBWRITE(ret_val)
 
 
 
     @classmethod
-    def create_xyz(cls, p1):
+    def create_xyz(cls, db):
         """
         Create a `GXDBWRITE` object for a XYZ-located data.
         Add channels using the `add_channel`() method.channel
         """
-        ret_val = gxapi_cy.WrapDBWRITE.create_xyz(GXContext._get_tls_geo(), p1._wrapper)
+        ret_val = gxapi_cy.WrapDBWRITE.create_xyz(GXContext._get_tls_geo(), db._wrapper)
         return GXDBWRITE(ret_val)
 
 
@@ -99,11 +99,11 @@ class GXDBWRITE:
 
 
 
-    def add_channel(self, p2):
+    def add_channel(self, chan):
         """
         Add a data channel to the `GXDBWRITE` object.
         """
-        ret_val = self._wrapper.add_channel(p2)
+        ret_val = self._wrapper.add_channel(chan)
         return ret_val
 
 
@@ -123,7 +123,7 @@ class GXDBWRITE:
 
 
 
-    def get_vv(self, p2):
+    def get_vv(self, chan):
         """
         Get the `GXVV` handle for a channel.
 
@@ -132,13 +132,13 @@ class GXDBWRITE:
         Call only for single-column (regular) channels. You can call the `get_chan_array_size`
         function to find the number fo columns in a given channel. The `GXVV` is filled anew for each block served up.
         """
-        ret_val = self._wrapper.get_vv(p2)
+        ret_val = self._wrapper.get_vv(chan)
         return GXVV(ret_val)
 
 
 
 
-    def get_va(self, p2):
+    def get_va(self, chan):
         """
         Get the `GXVA` handle for an array channel.
 
@@ -148,7 +148,7 @@ class GXDBWRITE:
         function to find the number fo columns in a given channel, or you can call `GXVA.col` on the returned `GXVA` handle.
         The `GXVA` is filled anew for each block served up.
         """
-        ret_val = self._wrapper.get_va(p2)
+        ret_val = self._wrapper.get_va(chan)
         return GXVA(ret_val)
 
 
@@ -200,7 +200,7 @@ class GXDBWRITE:
 
 
 
-    def get_chan_array_size(self, p2):
+    def get_chan_array_size(self, chan):
         """
         Get the number of columns of data in a channel.
 
@@ -210,7 +210,7 @@ class GXDBWRITE:
         This function should be called to determine whether to use `get_vv` or `get_va` to access data
         for a channel.
         """
-        ret_val = self._wrapper.get_chan_array_size(p2)
+        ret_val = self._wrapper.get_chan_array_size(chan)
         return ret_val
 
 
@@ -220,7 +220,7 @@ class GXDBWRITE:
 
 
 
-    def add_block(self, p2):
+    def add_block(self, line):
         """
         Add the current block of data.
 
@@ -228,7 +228,7 @@ class GXDBWRITE:
 
         First, set up the data for each channel by copying values into the individual channel VVs and VAs.
         """
-        self._wrapper.add_block(p2)
+        self._wrapper.add_block(line)
         
 
 
@@ -244,7 +244,7 @@ class GXDBWRITE:
 
 
 
-    def test_func(self, p2):
+    def test_func(self, ra):
         """
         Temporary test function.
 
@@ -252,7 +252,7 @@ class GXDBWRITE:
 
         Designed to import the "Massive.xyz" file, which has data in the format "X Y Z Data".
         """
-        self._wrapper.test_func(p2._wrapper)
+        self._wrapper.test_func(ra._wrapper)
         
 
 

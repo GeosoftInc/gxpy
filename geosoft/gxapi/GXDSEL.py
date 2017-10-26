@@ -68,7 +68,7 @@ class GXDSEL:
 
 
 
-    def data_significant_figures(self, p2):
+    def data_significant_figures(self, sf):
         """
         Specify the data significant figures required
 
@@ -80,7 +80,7 @@ class GXDSEL:
         
         See sSpatialResolution_DSEL to set the desired spatial resolution.
         """
-        self._wrapper.data_significant_figures(p2)
+        self._wrapper.data_significant_figures(sf)
         
 
 
@@ -88,17 +88,17 @@ class GXDSEL:
 
 
 
-    def meta_query(self, p2):
+    def meta_query(self, query):
         """
         Specify a metadata query string.
         """
-        self._wrapper.meta_query(p2.encode())
+        self._wrapper.meta_query(query.encode())
         
 
 
 
 
-    def picture_quality(self, p2):
+    def picture_quality(self, quality):
         """
         Specify the quality of pictures being returned.
 
@@ -106,23 +106,23 @@ class GXDSEL:
 
         Affected Data Types: PICTURE
         """
-        self._wrapper.picture_quality(p2)
+        self._wrapper.picture_quality(quality)
         
 
 
 
 
-    def request_all_info(self, p2):
+    def request_all_info(self, request):
         """
         Request that all meta-data info be sent
         """
-        self._wrapper.request_all_info(p2)
+        self._wrapper.request_all_info(request)
         
 
 
 
 
-    def select_area(self, p2):
+    def select_area(self, pply):
         """
         Select a complex clipping area
 
@@ -131,23 +131,23 @@ class GXDSEL:
         The DAP server may not handle clipping and may return
         more data than requested.
         """
-        self._wrapper.select_area(p2._wrapper)
+        self._wrapper.select_area(pply._wrapper)
         
 
 
 
 
-    def select_rect(self, p2, p3, p4, p5):
+    def select_rect(self, min_x, min_y, max_x, max_y):
         """
         Select a rectangular area.
         """
-        self._wrapper.select_rect(p2, p3, p4, p5)
+        self._wrapper.select_rect(min_x, min_y, max_x, max_y)
         
 
 
 
 
-    def select_resolution(self, p2, p3):
+    def select_resolution(self, res, force):
         """
         Specify the resolution desired
 
@@ -163,33 +163,33 @@ class GXDSEL:
         Call sRequireResolution_DSEL with TRUE to force the client to re-sample
         the data to the resolution requested.
         """
-        self._wrapper.select_resolution(p2, p3)
+        self._wrapper.select_resolution(res, force)
         
 
 
 
 
-    def select_size(self, p2, p3):
+    def select_size(self, width, height):
         """
         Specify the image size desired
         """
-        self._wrapper.select_size(p2, p3)
+        self._wrapper.select_size(width, height)
         
 
 
 
 
-    def set_extract_as_document(self, p2):
+    def set_extract_as_document(self, value):
         """
         Specify that we want to extract this file as a document
         """
-        self._wrapper.set_extract_as_document(p2)
+        self._wrapper.set_extract_as_document(value)
         
 
 
 
 
-    def set_ipj(self, p2, p3):
+    def set_ipj(self, ipj, force):
         """
         Set the desired projection
 
@@ -203,13 +203,13 @@ class GXDSEL:
         The spatial resolution and accuracy are accumed to be in the
         coordinate system defined by this `GXIPJ`.
         """
-        self._wrapper.set_ipj(p2._wrapper, p3)
+        self._wrapper.set_ipj(ipj._wrapper, force)
         
 
 
 
 
-    def spatial_accuracy(self, p2):
+    def spatial_accuracy(self, acc):
         """
         Specify the spatial accuracy required.
 
@@ -222,7 +222,7 @@ class GXDSEL:
         You can reduce this number to achieve better compression ratios.
         This should only be used when there is one data type in the data.
         """
-        self._wrapper.spatial_accuracy(p2)
+        self._wrapper.spatial_accuracy(acc)
         
 
 

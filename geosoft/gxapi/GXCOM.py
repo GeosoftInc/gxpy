@@ -58,21 +58,21 @@ class GXCOM:
 
 
     @classmethod
-    def create(cls, p1, p2, p3, p4, p5, p6, p7):
+    def create(cls, port, baud, data_size, parity, stop_bits, flow_control, time_out):
         """
         Create `GXCOM` object.
         """
-        ret_val = gxapi_cy.WrapCOM.create(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4, p5, p6, p7)
+        ret_val = gxapi_cy.WrapCOM.create(GXContext._get_tls_geo(), port.encode(), baud, data_size, parity, stop_bits, flow_control, time_out)
         return GXCOM(ret_val)
 
 
 
     @classmethod
-    def create_no_terminate(cls, p1, p2, p3, p4, p5, p6, p7):
+    def create_no_terminate(cls, port, baud, data_size, parity, stop_bits, flow_control, time_out):
         """
         Create `GXCOM` object.
         """
-        ret_val = gxapi_cy.WrapCOM.create_no_terminate(GXContext._get_tls_geo(), p1.encode(), p2, p3, p4, p5, p6, p7)
+        ret_val = gxapi_cy.WrapCOM.create_no_terminate(GXContext._get_tls_geo(), port.encode(), baud, data_size, parity, stop_bits, flow_control, time_out)
         return GXCOM(ret_val)
 
 
@@ -80,41 +80,41 @@ class GXCOM:
 
 
 
-    def read_line_no_terminate(self, p2):
+    def read_line_no_terminate(self, line):
         """
         Reads a Line from the `GXCOM`
         """
-        ret_val, p2.value = self._wrapper.read_line_no_terminate(p2.value.encode())
+        ret_val, line.value = self._wrapper.read_line_no_terminate(line.value.encode())
         return ret_val
 
 
 
 
-    def read_chars_no_terminate(self, p2):
+    def read_chars_no_terminate(self, line):
         """
         Reads characters from the `GXCOM`, times out and does not terminate
         """
-        ret_val, p2.value = self._wrapper.read_chars_no_terminate(p2.value.encode())
+        ret_val, line.value = self._wrapper.read_chars_no_terminate(line.value.encode())
         return ret_val
 
 
 
 
-    def read_line(self, p2):
+    def read_line(self, line):
         """
         Reads a Line from the `GXCOM`
         """
-        p2.value = self._wrapper.read_line(p2.value.encode())
+        line.value = self._wrapper.read_line(line.value.encode())
         
 
 
 
 
-    def write_chars_no_terminate(self, p2):
+    def write_chars_no_terminate(self, line):
         """
         Writes characters to the `GXCOM`.  Does not terminate upon error
         """
-        ret_val = self._wrapper.write_chars_no_terminate(p2.encode())
+        ret_val = self._wrapper.write_chars_no_terminate(line.encode())
         return ret_val
 
 
@@ -130,71 +130,71 @@ class GXCOM:
 
 
 
-    def read_chars(self, p2):
+    def read_chars(self, line):
         """
         Reads characters from the `GXCOM`
         """
-        p2.value = self._wrapper.read_chars(p2.value.encode())
+        line.value = self._wrapper.read_chars(line.value.encode())
         
 
 
 
 
-    def read_em61_lines_wa(self, p2, p3):
+    def read_em61_lines_wa(self, lines, wa):
         """
         Reads Lines from the `GXCOM` to a `GXWA`: Geonics EM61 only
         """
-        self._wrapper.read_em61_lines_wa(p2, p3._wrapper)
+        self._wrapper.read_em61_lines_wa(lines, wa._wrapper)
         
 
 
 
 
-    def read_file2_wa(self, p2):
+    def read_file2_wa(self, wa):
         """
         Reads entire dataset from the `GXCOM` to a `GXWA`
         """
-        self._wrapper.read_file2_wa(p2._wrapper)
+        self._wrapper.read_file2_wa(wa._wrapper)
         
 
 
 
 
-    def read_lines_wa(self, p2, p3):
+    def read_lines_wa(self, lines, wa):
         """
         Reads Lines from the `GXCOM` to a `GXWA`
         """
-        self._wrapper.read_lines_wa(p2, p3._wrapper)
+        self._wrapper.read_lines_wa(lines, wa._wrapper)
         
 
 
 
 
-    def set_time_out(self, p2):
+    def set_time_out(self, time_out):
         """
         Set the timeout value.
         """
-        self._wrapper.set_time_out(p2)
+        self._wrapper.set_time_out(time_out)
         
 
 
 
 
-    def write_chars(self, p2):
+    def write_chars(self, line):
         """
         Writes characters to the `GXCOM`
         """
-        self._wrapper.write_chars(p2.encode())
+        self._wrapper.write_chars(line.encode())
         
 
 
 
 
-    def write_line(self, p2):
+    def write_line(self, line):
         """
         Writes a Line to the `GXCOM`
         """
-        self._wrapper.write_line(p2.encode())
+        self._wrapper.write_line(line.encode())
         
 
 

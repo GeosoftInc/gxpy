@@ -59,61 +59,61 @@ class GXARCMAP:
 
 
     @classmethod
-    def change_size(cls, p1, p2):
+    def change_size(cls, x, p2):
         """
         Changes the custom page size of the ArcGIS Map document.
         """
-        gxapi_cy.WrapARCMAP.change_size(GXContext._get_tls_geo(), p1, p2)
+        gxapi_cy.WrapARCMAP.change_size(GXContext._get_tls_geo(), x, p2)
         
 
 
 
     @classmethod
-    def display_in_3d_view(cls, p1):
+    def display_in_3d_view(cls, file):
         """
         Display a file in 3D view
         """
-        gxapi_cy.WrapARCMAP.display_in_3d_view(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapARCMAP.display_in_3d_view(GXContext._get_tls_geo(), file.encode())
         
 
 
 
     @classmethod
-    def export_feature_layer_by_name_to_3d_file(cls, p1, p2, p3, p4):
+    def export_feature_layer_by_name_to_3d_file(cls, mxd_file, dataframe_name, layer_name, output_file):
         """
         Exports the shapes from a feature layer of the ArcMap document to a 3D File.
         """
-        gxapi_cy.WrapARCMAP.export_feature_layer_by_name_to_3d_file(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4.encode())
+        gxapi_cy.WrapARCMAP.export_feature_layer_by_name_to_3d_file(GXContext._get_tls_geo(), mxd_file.encode(), dataframe_name.encode(), layer_name.encode(), output_file.encode())
         
 
 
 
     @classmethod
-    def export_selected_feature_layer_to_3d_file(cls, p1):
+    def export_selected_feature_layer_to_3d_file(cls, output_file):
         """
         Exports the shapes from the currently selected feature layer (if any) in ArcMap to a 3D file (only on oriented frames i.e. sections).
         """
-        gxapi_cy.WrapARCMAP.export_selected_feature_layer_to_3d_file(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapARCMAP.export_selected_feature_layer_to_3d_file(GXContext._get_tls_geo(), output_file.encode())
         
 
 
 
     @classmethod
-    def get_current_document_info(cls, p1, p2, p3):
+    def get_current_document_info(cls, mxd, layer, map):
         """
         Get some info on the current `GXMXD` in ArcMap and selected layer (if any)
         """
-        p1.value, p2.value, p3.value = gxapi_cy.WrapARCMAP.get_current_document_info(GXContext._get_tls_geo(), p1.value.encode(), p2.value.encode(), p3.value.encode())
+        mxd.value, layer.value, map.value = gxapi_cy.WrapARCMAP.get_current_document_info(GXContext._get_tls_geo(), mxd.value.encode(), layer.value.encode(), map.value.encode())
         
 
 
 
     @classmethod
-    def get_selected_layer_info(cls, p1, p2, p3):
+    def get_selected_layer_info(cls, layer_number, layer, map):
         """
         Get the name info on the specified selected layer
         """
-        p2.value, p3.value = gxapi_cy.WrapARCMAP.get_selected_layer_info(GXContext._get_tls_geo(), p1, p2.value.encode(), p3.value.encode())
+        layer.value, map.value = gxapi_cy.WrapARCMAP.get_selected_layer_info(GXContext._get_tls_geo(), layer_number, layer.value.encode(), map.value.encode())
         
 
 
@@ -131,7 +131,7 @@ class GXARCMAP:
 
 
     @classmethod
-    def load_map(cls, p1, p2, p3, p4):
+    def load_map(cls, map, extra_csv, layer_tag, flags):
         """
         Loads a Geosoft map into the ArcMap document.
 
@@ -146,13 +146,13 @@ class GXARCMAP:
          VIEWMATCH   -  View to match with in associated map (used for grouping logic)
          ZONEFILE    -  Used for type RASTER
         """
-        ret_val = gxapi_cy.WrapARCMAP.load_map(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4)
+        ret_val = gxapi_cy.WrapARCMAP.load_map(GXContext._get_tls_geo(), map.encode(), extra_csv.encode(), layer_tag.encode(), flags)
         return ret_val
 
 
 
     @classmethod
-    def load_map_ex(cls, p1, p2, p3, p4, p5):
+    def load_map_ex(cls, map, view, extra_csv, layer_tag, flags):
         """
         Loads a Geosoft map into the ArcMap document, specifying which View to use as Data view.
 
@@ -167,43 +167,43 @@ class GXARCMAP:
          VIEWMATCH   -  View to match with in associated map (used for grouping logic)
          ZONEFILE    -  Used for type RASTER
         """
-        ret_val = gxapi_cy.WrapARCMAP.load_map_ex(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4.encode(), p5)
+        ret_val = gxapi_cy.WrapARCMAP.load_map_ex(GXContext._get_tls_geo(), map.encode(), view.encode(), extra_csv.encode(), layer_tag.encode(), flags)
         return ret_val
 
 
 
     @classmethod
-    def load_shape(cls, p1, p2):
+    def load_shape(cls, shp, delete_existing):
         """
         Load a shape file into ArcMap.
         """
-        ret_val = gxapi_cy.WrapARCMAP.load_shape(GXContext._get_tls_geo(), p1.encode(), p2)
+        ret_val = gxapi_cy.WrapARCMAP.load_shape(GXContext._get_tls_geo(), shp.encode(), delete_existing)
         return ret_val
 
 
 
     @classmethod
-    def load_spf(cls, p1, p2):
+    def load_spf(cls, shp, num_shp):
         """
         Load all the shape files generated by importing a SPF into ArcMap.
         """
-        ret_val = gxapi_cy.WrapARCMAP.load_spf(GXContext._get_tls_geo(), p1.encode(), p2)
+        ret_val = gxapi_cy.WrapARCMAP.load_spf(GXContext._get_tls_geo(), shp.encode(), num_shp)
         return ret_val
 
 
 
     @classmethod
-    def load_lyr(cls, p1):
+    def load_lyr(cls, file):
         """
         Load a LYR file to the current data frame
         """
-        gxapi_cy.WrapARCMAP.load_lyr(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapARCMAP.load_lyr(GXContext._get_tls_geo(), file.encode())
         
 
 
 
     @classmethod
-    def load_map(cls, p1, p2, p3, p4, p5, p6, p7):
+    def load_map(cls, map, view, extra_csv, layer_tag, fit, activate, p7):
         """
         Loads a Geosoft map into the current ArcMap document
 
@@ -218,23 +218,23 @@ class GXARCMAP:
             VIEWMATCH   -  View to match with in associated map (used for grouping logic)
             ZONEFILE    -  Used for type RASTER
         """
-        gxapi_cy.WrapARCMAP.load_map(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4.encode(), p5, p6, p7)
+        gxapi_cy.WrapARCMAP.load_map(GXContext._get_tls_geo(), map.encode(), view.encode(), extra_csv.encode(), layer_tag.encode(), fit, activate, p7)
         
 
 
 
     @classmethod
-    def load_map_view(cls, p1, p2, p3, p4):
+    def load_map_view(cls, map, view, layer, all):
         """
         Load a Geosoft Map as a layer into the current data frame
         """
-        gxapi_cy.WrapARCMAP.load_map_view(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4)
+        gxapi_cy.WrapARCMAP.load_map_view(GXContext._get_tls_geo(), map.encode(), view.encode(), layer.encode(), all)
         
 
 
 
     @classmethod
-    def load_raster(cls, p1):
+    def load_raster(cls, file):
         """
         Load a raster file to the current data frame
 
@@ -243,13 +243,13 @@ class GXARCMAP:
         Loads any file type recognized as "raster" formats by ARC `GXGIS`.
         This includes geosoft GRD files.
         """
-        gxapi_cy.WrapARCMAP.load_raster(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapARCMAP.load_raster(GXContext._get_tls_geo(), file.encode())
         
 
 
 
     @classmethod
-    def load_shape(cls, p1, p2, p3):
+    def load_shape(cls, file, layer_prefix, layer_suffix):
         """
         Load a `GXSHP` file to the current data frame
 
@@ -259,13 +259,13 @@ class GXARCMAP:
         
         Prefix_NAME_Suffix
         """
-        gxapi_cy.WrapARCMAP.load_shape(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode())
+        gxapi_cy.WrapARCMAP.load_shape(GXContext._get_tls_geo(), file.encode(), layer_prefix.encode(), layer_suffix.encode())
         
 
 
 
     @classmethod
-    def map_view_to_shape(cls, p1, p2, p3, p4):
+    def map_view_to_shape(cls, map, view, shp, lst):
         """
         Create `GXSHP` file(s) from a Geosoft Map view.
 
@@ -278,27 +278,27 @@ class GXARCMAP:
               NAME_ln.shp    (line or arc objects)
               NAME_pg.shp    (polygon objects)
         """
-        gxapi_cy.WrapARCMAP.map_view_to_shape(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4._wrapper)
+        gxapi_cy.WrapARCMAP.map_view_to_shape(GXContext._get_tls_geo(), map.encode(), view.encode(), shp.encode(), lst._wrapper)
         
 
 
 
     @classmethod
-    def query_size(cls, p1, p2):
+    def query_size(cls, x, p2):
         """
         Query the page size in mm of the entire map page.
         """
-        p1.value, p2.value = gxapi_cy.WrapARCMAP.query_size(GXContext._get_tls_geo(), p1.value, p2.value)
+        x.value, p2.value = gxapi_cy.WrapARCMAP.query_size(GXContext._get_tls_geo(), x.value, p2.value)
         
 
 
 
     @classmethod
-    def show_layer_by_name_in_3d(cls, p1, p2, p3):
+    def show_layer_by_name_in_3d(cls, mxd_file, dataframe_name, layer_name):
         """
         Shows a layer in ArcMap in a 3D view in an `GXMXD`
         """
-        gxapi_cy.WrapARCMAP.show_layer_by_name_in_3d(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode())
+        gxapi_cy.WrapARCMAP.show_layer_by_name_in_3d(GXContext._get_tls_geo(), mxd_file.encode(), dataframe_name.encode(), layer_name.encode())
         
 
 
@@ -314,21 +314,21 @@ class GXARCMAP:
 
 
     @classmethod
-    def get_ipj_for_predefined_esri_gcs(cls, p1, p2):
+    def get_ipj_for_predefined_esri_gcs(cls, ipj, esri_gcs_code):
         """
         Fills an `GXIPJ` with a predefined ESRI GCS
         """
-        gxapi_cy.WrapARCMAP.get_ipj_for_predefined_esri_gcs(GXContext._get_tls_geo(), p1._wrapper, p2)
+        gxapi_cy.WrapARCMAP.get_ipj_for_predefined_esri_gcs(GXContext._get_tls_geo(), ipj._wrapper, esri_gcs_code)
         
 
 
 
     @classmethod
-    def get_ipj_for_predefined_esri_pcs(cls, p1, p2):
+    def get_ipj_for_predefined_esri_pcs(cls, ipj, esri_pcs_code):
         """
         Fills an `GXIPJ` with a predefined ESRI PCS
         """
-        gxapi_cy.WrapARCMAP.get_ipj_for_predefined_esri_pcs(GXContext._get_tls_geo(), p1._wrapper, p2)
+        gxapi_cy.WrapARCMAP.get_ipj_for_predefined_esri_pcs(GXContext._get_tls_geo(), ipj._wrapper, esri_pcs_code)
         
 
 

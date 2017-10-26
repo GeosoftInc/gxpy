@@ -58,7 +58,7 @@ class GXFLT:
 
 
     @classmethod
-    def create(cls, p1):
+    def create(cls, input):
         """
         Create a filter from a comma/space delimited string.
 
@@ -69,7 +69,7 @@ class GXFLT:
         
               "-1,-1,1,1"
         """
-        ret_val = gxapi_cy.WrapFLT.create(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapFLT.create(GXContext._get_tls_geo(), input.encode())
         return ret_val
 
 
@@ -77,7 +77,7 @@ class GXFLT:
 
 
     @classmethod
-    def load(cls, p1):
+    def load(cls, file):
         """
         Load and return handle to a convolution filter.
 
@@ -99,7 +99,7 @@ class GXFLT:
            1
            1
         """
-        ret_val = gxapi_cy.WrapFLT.load(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapFLT.load(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 

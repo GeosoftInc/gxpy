@@ -65,7 +65,7 @@ class GXSTK:
 
 
 
-    def get_trans_parms(self, p2, p3, p4, p5, p6, p7, p8, p9):
+    def get_trans_parms(self, x_trans_t, x_log_min, xvv_lev, xvv_cmp, y_trans_t, y_log_min, yvv_lev, yvv_cmp):
         """
         Get transformation parameters in `GXSTK` object
 
@@ -77,13 +77,13 @@ class GXSTK:
         
         See `GXMSTK` for detailed description of all function parameters
         """
-        p2.value, p3.value, p6.value, p7.value = self._wrapper.get_trans_parms(p2.value, p3.value, p4._wrapper, p5._wrapper, p6.value, p7.value, p8._wrapper, p9._wrapper)
+        x_trans_t.value, x_log_min.value, y_trans_t.value, y_log_min.value = self._wrapper.get_trans_parms(x_trans_t.value, x_log_min.value, xvv_lev._wrapper, xvv_cmp._wrapper, y_trans_t.value, y_log_min.value, yvv_lev._wrapper, yvv_cmp._wrapper)
         
 
 
 
 
-    def get_axis_format(self, p2):
+    def get_axis_format(self, xy):
         """
         Get axis number display format.
 
@@ -91,13 +91,13 @@ class GXSTK:
 
         By default, `DB_CHAN_FORMAT_NORMAL`
         """
-        ret_val = self._wrapper.get_axis_format(p2)
+        ret_val = self._wrapper.get_axis_format(xy)
         return ret_val
 
 
 
 
-    def get_axis_parms(self, p2, p3, p4, p5, p6, p8, p9, p10, p11, p12):
+    def get_axis_parms(self, bar_draw, min_loc, max_loc, thick, color, tick_interval, tick_size1, tick_size2, min_tick, xy):
         """
         Get parameters in `GXSTK` object relating drawing X/Y axis
 
@@ -106,13 +106,13 @@ class GXSTK:
         See `GXMSTK` for detailed description of all function parameters
         ? mark in the note represent either X and Y
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value, p8.value, p9.value, p10.value, p11.value = self._wrapper.get_axis_parms(p2.value, p3.value, p4.value, p5.value, p6.value.encode(), p8.value, p9.value, p10.value, p11.value, p12)
+        bar_draw.value, min_loc.value, max_loc.value, thick.value, color.value, tick_interval.value, tick_size1.value, tick_size2.value, min_tick.value = self._wrapper.get_axis_parms(bar_draw.value, min_loc.value, max_loc.value, thick.value, color.value.encode(), tick_interval.value, tick_size1.value, tick_size2.value, min_tick.value, xy)
         
 
 
 
 
-    def get_fid_parms(self, p2, p3, p4, p5, p7, p8):
+    def get_fid_parms(self, fid_y_loc, fid_tick_size, fid_interval, fid_text_font, fid_text_size, fid_text_color):
         """
         Get parameters in `GXSTK` object relating drawing fid ticks
 
@@ -120,23 +120,23 @@ class GXSTK:
 
         See `GXMSTK` for detailed description of all function parameters
         """
-        p2.value, p3.value, p4.value, p5.value, p7.value, p8.value = self._wrapper.get_fid_parms(p2.value, p3.value, p4.value, p5.value.encode(), p7.value, p8.value.encode())
+        fid_y_loc.value, fid_tick_size.value, fid_interval.value, fid_text_font.value, fid_text_size.value, fid_text_color.value = self._wrapper.get_fid_parms(fid_y_loc.value, fid_tick_size.value, fid_interval.value, fid_text_font.value.encode(), fid_text_size.value, fid_text_color.value.encode())
         
 
 
 
 
-    def get_flag(self, p2):
+    def get_flag(self, part):
         """
         Get flag indicating part of `GXSTK` object is to be drawn or not
         """
-        ret_val = self._wrapper.get_flag(p2)
+        ret_val = self._wrapper.get_flag(part)
         return ret_val
 
 
 
 
-    def get_gen_parms(self, p2, p4, p6, p8, p9, p10, p11, p12, p13, p14, p15):
+    def get_gen_parms(self, x_ch, y_ch, grp_name, x_scale, p9, p10, p11, p12, p13, p14, p15):
         """
         Get general parameters in `GXSTK` object
 
@@ -144,13 +144,13 @@ class GXSTK:
 
         See `GXMSTK` for detailed description of all function parameters
         """
-        p2.value, p4.value, p6.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value, p15.value = self._wrapper.get_gen_parms(p2.value.encode(), p4.value.encode(), p6.value.encode(), p8.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value, p15.value)
+        x_ch.value, y_ch.value, grp_name.value, x_scale.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value, p15.value = self._wrapper.get_gen_parms(x_ch.value.encode(), y_ch.value.encode(), grp_name.value.encode(), x_scale.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value, p15.value)
         
 
 
 
 
-    def get_grid_parms(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p13):
+    def get_grid_parms(self, grid, min_x, max_x, min_y, max_y, thick, cross, x_sep, y_sep, color, grid12):
         """
         Get background grid parameters in `GXSTK` object
 
@@ -159,13 +159,13 @@ class GXSTK:
         See `GXMSTK` for detailed description of all function parameters
         ? mark in the note represent either X and Y
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value, p10.value, p11.value = self._wrapper.get_grid_parms(p2.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value, p10.value, p11.value.encode(), p13)
+        grid.value, min_x.value, max_x.value, min_y.value, max_y.value, thick.value, cross.value, x_sep.value, y_sep.value, color.value = self._wrapper.get_grid_parms(grid.value, min_x.value, max_x.value, min_y.value, max_y.value, thick.value, cross.value, x_sep.value, y_sep.value, color.value.encode(), grid12)
         
 
 
 
 
-    def get_label_parms(self, p2, p3, p4, p5, p6, p7, p8, p10, p11, p13, p14):
+    def get_label_parms(self, axis, min_loc, min_orient, max_loc, max_orient, interval, font, text_size, color, bound, xy):
         """
         Get parameters in `GXSTK` object relating X/Y axis labels
 
@@ -176,13 +176,13 @@ class GXSTK:
         Sets the label format to GSF_NORMAL. To override this,
         use the `set_axis_format` function AFTER calling this.
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p10.value, p11.value, p13.value = self._wrapper.get_label_parms(p2.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value.encode(), p10.value, p11.value.encode(), p13.value, p14)
+        axis.value, min_loc.value, min_orient.value, max_loc.value, max_orient.value, interval.value, font.value, text_size.value, color.value, bound.value = self._wrapper.get_label_parms(axis.value, min_loc.value, min_orient.value, max_loc.value, max_orient.value, interval.value, font.value.encode(), text_size.value, color.value.encode(), bound.value, xy)
         
 
 
 
 
-    def get_profile(self, p2, p3, p4, p5, p7, p8, p9, p10, p11, p13, p14, p16, p17, p19):
+    def get_profile(self, prof_type, p3, p4, p5, p7, p8, p9, p10, p11, p13, p14, p16, p17, p19):
         """
         Get profile parameters in `GXSTK` object
 
@@ -190,13 +190,13 @@ class GXSTK:
 
         See `GXMSTK` for detailed description of all function parameters
         """
-        p2.value, p3.value, p4.value, p5.value, p7.value, p8.value, p9.value, p11.value, p13.value, p14.value, p16.value, p17.value, p19.value = self._wrapper.get_profile(p2.value, p3.value, p4.value, p5.value.encode(), p7.value, p8.value, p9.value, p10._wrapper, p11.value.encode(), p13.value, p14.value.encode(), p16.value, p17.value.encode(), p19.value)
+        prof_type.value, p3.value, p4.value, p5.value, p7.value, p8.value, p9.value, p11.value, p13.value, p14.value, p16.value, p17.value, p19.value = self._wrapper.get_profile(prof_type.value, p3.value, p4.value, p5.value.encode(), p7.value, p8.value, p9.value, p10._wrapper, p11.value.encode(), p13.value, p14.value.encode(), p16.value, p17.value.encode(), p19.value)
         
 
 
 
 
-    def get_profile_ex(self, p2, p3, p4, p5, p7, p8, p9, p10, p11, p12, p14, p15, p17, p18, p20):
+    def get_profile_ex(self, prof_type, p3, p4, p5, p7, p8, p9, p10, p11, p12, p14, p15, p17, p18, p20):
         """
         Get profile parameters in `GXSTK` object (added Break on dummy option)
 
@@ -204,13 +204,13 @@ class GXSTK:
 
         See `GXMSTK` for detailed description of all function parameters
         """
-        p2.value, p3.value, p4.value, p5.value, p7.value, p8.value, p9.value, p10.value, p12.value, p14.value, p15.value, p17.value, p18.value, p20.value = self._wrapper.get_profile_ex(p2.value, p3.value, p4.value, p5.value.encode(), p7.value, p8.value, p9.value, p10.value, p11._wrapper, p12.value.encode(), p14.value, p15.value.encode(), p17.value, p18.value.encode(), p20.value)
+        prof_type.value, p3.value, p4.value, p5.value, p7.value, p8.value, p9.value, p10.value, p12.value, p14.value, p15.value, p17.value, p18.value, p20.value = self._wrapper.get_profile_ex(prof_type.value, p3.value, p4.value, p5.value.encode(), p7.value, p8.value, p9.value, p10.value, p11._wrapper, p12.value.encode(), p14.value, p15.value.encode(), p17.value, p18.value.encode(), p20.value)
         
 
 
 
 
-    def get_symb_parms(self, p2, p4, p5, p7, p9, p10, p11, p12, p13, p14, p15, p16, p18, p19):
+    def get_symb_parms(self, symb_font, symb_size, line_clr, fill_clr, wrap, clip, symb_y_loc, no_levels, vv_level, vv_type, p15, p16, p18, p19):
         """
         Get parameters in `GXSTK` object relating drawing symbols
 
@@ -218,13 +218,13 @@ class GXSTK:
 
         See `GXMSTK` for detailed description of all function parameters
         """
-        p2.value, p4.value, p5.value, p7.value, p9.value, p10.value, p11.value, p12.value, p15.value, p16.value, p18.value, p19.value = self._wrapper.get_symb_parms(p2.value.encode(), p4.value, p5.value.encode(), p7.value.encode(), p9.value, p10.value, p11.value, p12.value, p13._wrapper, p14._wrapper, p15.value, p16.value.encode(), p18.value, p19.value.encode())
+        symb_font.value, symb_size.value, line_clr.value, fill_clr.value, wrap.value, clip.value, symb_y_loc.value, no_levels.value, p15.value, p16.value, p18.value, p19.value = self._wrapper.get_symb_parms(symb_font.value.encode(), symb_size.value, line_clr.value.encode(), fill_clr.value.encode(), wrap.value, clip.value, symb_y_loc.value, no_levels.value, vv_level._wrapper, vv_type._wrapper, p15.value, p16.value.encode(), p18.value, p19.value.encode())
         
 
 
 
 
-    def get_title_parms(self, p2, p4, p6, p7, p8, p9, p10, p11, p12, p14, p15, p17):
+    def get_title_parms(self, title1, title2, title1_orient, title1_x, title1_y, title2_orient, title2_x, title2_y, font, text_size, color, xy):
         """
         Get parameters in `GXSTK` object relating X/Y axis titles
 
@@ -233,23 +233,23 @@ class GXSTK:
         See `GXMSTK` for detailed description of all function parameters
         ? mark in the note represent either X and Y
         """
-        p2.value, p4.value, p6.value, p7.value, p8.value, p9.value, p10.value, p11.value, p12.value, p14.value, p15.value = self._wrapper.get_title_parms(p2.value.encode(), p4.value.encode(), p6.value, p7.value, p8.value, p9.value, p10.value, p11.value, p12.value.encode(), p14.value, p15.value.encode(), p17)
+        title1.value, title2.value, title1_orient.value, title1_x.value, title1_y.value, title2_orient.value, title2_x.value, title2_y.value, font.value, text_size.value, color.value = self._wrapper.get_title_parms(title1.value.encode(), title2.value.encode(), title1_orient.value, title1_x.value, title1_y.value, title2_orient.value, title2_x.value, title2_y.value, font.value.encode(), text_size.value, color.value.encode(), xy)
         
 
 
 
 
-    def set_flag(self, p2, p3):
+    def set_flag(self, flag, part):
         """
         Set flag indicating part of `GXSTK` object is to be drawn or not
         """
-        self._wrapper.set_flag(p2, p3)
+        self._wrapper.set_flag(flag, part)
         
 
 
 
 
-    def set_array_colors(self, p2):
+    def set_array_colors(self, itr):
         """
         Set colors for individual channels in a `GXVA`, via an `GXITR`
 
@@ -259,13 +259,13 @@ class GXSTK:
         by the number of channels; hence the `GXITR` maximum values should
         be in the range: 0 > values >= 1.0.
         """
-        self._wrapper.set_array_colors(p2._wrapper)
+        self._wrapper.set_array_colors(itr._wrapper)
         
 
 
 
 
-    def set_axis_format(self, p2, p3):
+    def set_axis_format(self, format, xy):
         """
         Set axis number display format.
 
@@ -274,13 +274,13 @@ class GXSTK:
         By default, `DB_CHAN_FORMAT_NORMAL` is used to display the values,
         or for values > 1.e7, `DB_CHAN_FORMAT_EXP`.
         """
-        self._wrapper.set_axis_format(p2, p3)
+        self._wrapper.set_axis_format(format, xy)
         
 
 
 
 
-    def set_axis_parms(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+    def set_axis_parms(self, bar_draw, min_loc, max_loc, thick, color, tick_interval, tick_size1, tick_size2, min_tick, xy):
         """
         Set parameters in `GXSTK` object relating drawing X/Y axis
 
@@ -289,13 +289,13 @@ class GXSTK:
         See `GXMSTK` for detailed description of all function parameters
         ? mark in the note represent either X and Y
         """
-        self._wrapper.set_axis_parms(p2, p3, p4, p5, p6.encode(), p7, p8, p9, p10, p11)
+        self._wrapper.set_axis_parms(bar_draw, min_loc, max_loc, thick, color.encode(), tick_interval, tick_size1, tick_size2, min_tick, xy)
         
 
 
 
 
-    def set_fid_parms(self, p2, p3, p4, p5, p6, p7):
+    def set_fid_parms(self, fid_y_loc, fid_tick_size, fid_interval, fid_text_font, fid_text_size, fid_text_color):
         """
         Set parameters in `GXSTK` object relating drawing fid ticks
 
@@ -303,13 +303,13 @@ class GXSTK:
 
         See `GXMSTK` for detailed description of all function parameters
         """
-        self._wrapper.set_fid_parms(p2, p3, p4, p5.encode(), p6, p7.encode())
+        self._wrapper.set_fid_parms(fid_y_loc, fid_tick_size, fid_interval, fid_text_font.encode(), fid_text_size, fid_text_color.encode())
         
 
 
 
 
-    def set_gen_parms(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+    def set_gen_parms(self, x_ch, y_ch, grp_name, x_scale, p6, p7, p8, p9, p10, p11, p12):
         """
         Set general parameters in `GXSTK` object
 
@@ -317,13 +317,13 @@ class GXSTK:
 
         See `GXMSTK` for detailed description of all function parameters
         """
-        self._wrapper.set_gen_parms(p2.encode(), p3.encode(), p4.encode(), p5, p6, p7, p8, p9, p10, p11, p12)
+        self._wrapper.set_gen_parms(x_ch.encode(), y_ch.encode(), grp_name.encode(), x_scale, p6, p7, p8, p9, p10, p11, p12)
         
 
 
 
 
-    def set_grid_parms(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+    def set_grid_parms(self, grid, min_x, max_x, min_y, max_y, thick, cross, x_sep, y_sep, color, grid12):
         """
         Set background grid parameters in `GXSTK` object
 
@@ -332,13 +332,13 @@ class GXSTK:
         See `GXMSTK` for detailed description of all function parameters
         ? mark in the note represent either X and Y
         """
-        self._wrapper.set_grid_parms(p2, p3, p4, p5, p6, p7, p8, p9, p10, p11.encode(), p12)
+        self._wrapper.set_grid_parms(grid, min_x, max_x, min_y, max_y, thick, cross, x_sep, y_sep, color.encode(), grid12)
         
 
 
 
 
-    def set_label_parms(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+    def set_label_parms(self, axis, min_loc, min_orient, max_loc, max_orient, interval, font, text_size, color, bound, xy):
         """
         Set parameters in `GXSTK` object relating X/Y axis labels
 
@@ -349,13 +349,13 @@ class GXSTK:
         Sets the label format to GSF_NORMAL. To override this,
         use the `set_axis_format` function AFTER calling this.
         """
-        self._wrapper.set_label_parms(p2, p3, p4, p5, p6, p7, p8.encode(), p9, p10.encode(), p11, p12)
+        self._wrapper.set_label_parms(axis, min_loc, min_orient, max_loc, max_orient, interval, font.encode(), text_size, color.encode(), bound, xy)
         
 
 
 
 
-    def set_line_parm(self, p2):
+    def set_line_parm(self, line):
         """
         Set line parameter (of Y Chan) in `GXSTK` object
 
@@ -363,13 +363,13 @@ class GXSTK:
 
         See `GXMSTK` for detailed description of all function parameters
         """
-        self._wrapper.set_line_parm(p2)
+        self._wrapper.set_line_parm(line)
         
 
 
 
 
-    def set_profile(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15):
+    def set_profile(self, prof_type, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15):
         """
         Set profile parameters in `GXSTK` object
 
@@ -377,13 +377,13 @@ class GXSTK:
 
         See `GXMSTK` for detailed description of all function parameters
         """
-        self._wrapper.set_profile(p2, p3, p4, p5.encode(), p6, p7, p8, p9._wrapper, p10.encode(), p11, p12.encode(), p13, p14.encode(), p15)
+        self._wrapper.set_profile(prof_type, p3, p4, p5.encode(), p6, p7, p8, p9._wrapper, p10.encode(), p11, p12.encode(), p13, p14.encode(), p15)
         
 
 
 
 
-    def set_profile_ex(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16):
+    def set_profile_ex(self, prof_type, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16):
         """
         Set profile parameters in `GXSTK` object (added Break on dummy option)
 
@@ -391,13 +391,13 @@ class GXSTK:
 
         See `GXMSTK` for detailed description of all function parameters
         """
-        self._wrapper.set_profile_ex(p2, p3, p4, p5.encode(), p6, p7, p8, p9, p10._wrapper, p11.encode(), p12, p13.encode(), p14, p15.encode(), p16)
+        self._wrapper.set_profile_ex(prof_type, p3, p4, p5.encode(), p6, p7, p8, p9, p10._wrapper, p11.encode(), p12, p13.encode(), p14, p15.encode(), p16)
         
 
 
 
 
-    def set_symb_parms(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15):
+    def set_symb_parms(self, symb_font, symb_size, line_clr, fill_clr, wrap, clip, symb_y_loc, no_levels, vv_level, vv_type, p12, p13, p14, p15):
         """
         Set parameters in `GXSTK` object relating drawing symbols
 
@@ -405,13 +405,13 @@ class GXSTK:
 
         See `GXMSTK` for detailed description of all function parameters
         """
-        self._wrapper.set_symb_parms(p2.encode(), p3, p4.encode(), p5.encode(), p6, p7, p8, p9, p10._wrapper, p11._wrapper, p12, p13.encode(), p14, p15.encode())
+        self._wrapper.set_symb_parms(symb_font.encode(), symb_size, line_clr.encode(), fill_clr.encode(), wrap, clip, symb_y_loc, no_levels, vv_level._wrapper, vv_type._wrapper, p12, p13.encode(), p14, p15.encode())
         
 
 
 
 
-    def set_title_parms(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13):
+    def set_title_parms(self, title1, title2, title1_orient, title1_x, title1_y, title2_orient, title2_x, title2_y, font, text_size, color, xy):
         """
         Set parameters in `GXSTK` object relating X/Y axis titles
 
@@ -420,13 +420,13 @@ class GXSTK:
         See `GXMSTK` for detailed description of all function parameters
         ? mark in the note represent either X and Y
         """
-        self._wrapper.set_title_parms(p2.encode(), p3.encode(), p4, p5, p6, p7, p8, p9, p10.encode(), p11, p12.encode(), p13)
+        self._wrapper.set_title_parms(title1.encode(), title2.encode(), title1_orient, title1_x, title1_y, title2_orient, title2_x, title2_y, font.encode(), text_size, color.encode(), xy)
         
 
 
 
 
-    def set_trans_parms(self, p2, p3, p4, p5, p6, p7, p8, p9):
+    def set_trans_parms(self, x_trans_t, x_log_min, xvv_lev, xvv_cmp, y_trans_t, y_log_min, yvv_lev, yvv_cmp):
         """
         Set transformation parameters in `GXSTK` object
 
@@ -437,13 +437,13 @@ class GXSTK:
         transformation is log or loglinear. The same for Y channel.
         See `GXMSTK` for detailed description of all function parameters
         """
-        self._wrapper.set_trans_parms(p2, p3, p4, p5, p6, p7, p8, p9)
+        self._wrapper.set_trans_parms(x_trans_t, x_log_min, xvv_lev, xvv_cmp, y_trans_t, y_log_min, yvv_lev, yvv_cmp)
         
 
 
 
 
-    def set_va_index_start(self, p2):
+    def set_va_index_start(self, index0):
         """
         Start array profile index labels at 0 or 1.
 
@@ -453,7 +453,7 @@ class GXSTK:
         begin at 0. Use this function to start them at either 0
         or 1.
         """
-        self._wrapper.set_va_index_start(p2)
+        self._wrapper.set_va_index_start(index0)
         
 
 

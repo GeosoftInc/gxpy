@@ -68,7 +68,7 @@ class GXDU:
 
 
     @classmethod
-    def table_look1(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9):
+    def table_look1(cls, db, line, i_ch, o_ch, ref_field, l_field, mode, close, tb):
         """
         Create a new channel using a single reference table
 
@@ -81,13 +81,13 @@ class GXDU:
         - secondary index channel for Lookup2C_DU, LookupIValC_DU
         and LookupRValC_DU
         """
-        gxapi_cy.WrapDU.table_look1(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5.encode(), p6.encode(), p7, p8, p9._wrapper)
+        gxapi_cy.WrapDU.table_look1(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch, ref_field.encode(), l_field.encode(), mode, close, tb._wrapper)
         
 
 
 
     @classmethod
-    def table_look2(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+    def table_look2(cls, db, line, r1_ch, r2_ch, o_ch, r1_field, r2_field, l_field, mode, close, tb):
         """
         Create a new channel using a double reference  table.
 
@@ -100,13 +100,13 @@ class GXDU:
         - secondary index channel for Lookup2C_DU, LookupIValC_DU
         and LookupRValC_DU
         """
-        gxapi_cy.WrapDU.table_look2(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6.encode(), p7.encode(), p8.encode(), p9, p10, p11._wrapper)
+        gxapi_cy.WrapDU.table_look2(GXContext._get_tls_geo(), db._wrapper, line, r1_ch, r2_ch, o_ch, r1_field.encode(), r2_field.encode(), l_field.encode(), mode, close, tb._wrapper)
         
 
 
 
     @classmethod
-    def table_look_i2(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+    def table_look_i2(cls, db, line, val, i_ch, o_ch, r1, r2, field, mode, dist, tb):
         """
         Create a new channel using constant integer primary
         reference and a secondary reference table.
@@ -120,13 +120,13 @@ class GXDU:
         - secondary index channel for Lookup2C_DU, LookupIValC_DU
         and LookupRValC_DU
         """
-        gxapi_cy.WrapDU.table_look_i2(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6.encode(), p7.encode(), p8.encode(), p9, p10, p11._wrapper)
+        gxapi_cy.WrapDU.table_look_i2(GXContext._get_tls_geo(), db._wrapper, line, val, i_ch, o_ch, r1.encode(), r2.encode(), field.encode(), mode, dist, tb._wrapper)
         
 
 
 
     @classmethod
-    def table_look_r2(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+    def table_look_r2(cls, db, line, val, i_ch, o_ch, r1, r2, field, mode, dist, tb):
         """
         Create a new channel using a constant real primary
         reference and a secondary reference table.
@@ -140,13 +140,13 @@ class GXDU:
         - secondary index channel for Lookup2C_DU, LookupIValC_DU
         and LookupRValC_DU
         """
-        gxapi_cy.WrapDU.table_look_r2(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6.encode(), p7.encode(), p8.encode(), p9, p10, p11._wrapper)
+        gxapi_cy.WrapDU.table_look_r2(GXContext._get_tls_geo(), db._wrapper, line, val, i_ch, o_ch, r1.encode(), r2.encode(), field.encode(), mode, dist, tb._wrapper)
         
 
 
 
     @classmethod
-    def ado_table_names(cls, p1, p2):
+    def ado_table_names(cls, connect, vv):
         """
         Scans a ADO-compliant database and returns the table names in a `GXVV`
 
@@ -156,23 +156,23 @@ class GXDU:
         `STR_DB_SYMBOL`; i.e. use
         Creat_VV(-`STR_DB_SYMBOL`, 0), or it will assert.
         """
-        gxapi_cy.WrapDU.ado_table_names(GXContext._get_tls_geo(), p1.encode(), p2._wrapper)
+        gxapi_cy.WrapDU.ado_table_names(GXContext._get_tls_geo(), connect.encode(), vv._wrapper)
         
 
 
 
     @classmethod
-    def an_sig(cls, p1, p2, p3, p4):
+    def an_sig(cls, db, line, i_ch, o_ch):
         """
         Calculate the Analytic Signal of a channel.
         """
-        gxapi_cy.WrapDU.an_sig(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4)
+        gxapi_cy.WrapDU.an_sig(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch)
         
 
 
 
     @classmethod
-    def append(cls, p1, p2, p3):
+    def append(cls, d_bi, d_bo, ignore):
         """
         Append a source database onto a destination database.
 
@@ -185,13 +185,13 @@ class GXDU:
         If a channel in the destination database is not also in the source
         database, it is ignored.
         """
-        gxapi_cy.WrapDU.append(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3)
+        gxapi_cy.WrapDU.append(GXContext._get_tls_geo(), d_bi._wrapper, d_bo._wrapper, ignore)
         
 
 
 
     @classmethod
-    def avg_azimuth(cls, p1, p2, p3):
+    def avg_azimuth(cls, db, precision, azimuth):
         """
         Returns average azimuth of selected lines.
 
@@ -208,49 +208,49 @@ class GXDU:
         The maximum value occurs at the angle which most closely
         approximates the trend direction of the lines.
         """
-        p3.value = gxapi_cy.WrapDU.avg_azimuth(GXContext._get_tls_geo(), p1._wrapper, p2, p3.value)
+        azimuth.value = gxapi_cy.WrapDU.avg_azimuth(GXContext._get_tls_geo(), db._wrapper, precision, azimuth.value)
         
 
 
 
     @classmethod
-    def base_data(cls, p1, p2, p3, p4, p5, p6):
+    def base_data(cls, db, line, in_ch, time_ch, out_ch, tb):
         """
         This method corrects an entire database line using a
         time-based correction table. It is given 2 input channel
         tokens and 1 output channel token as well as the table
         object to use.
         """
-        gxapi_cy.WrapDU.base_data(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6._wrapper)
+        gxapi_cy.WrapDU.base_data(GXContext._get_tls_geo(), db._wrapper, line, in_ch, time_ch, out_ch, tb._wrapper)
         
 
 
 
     @classmethod
-    def base_data_ex(cls, p1, p2, p3, p4, p5, p6, p7):
+    def base_data_ex(cls, db, line, in_ch, time_ch, out_ch, tb, flag):
         """
         This method corrects an entire database line using a
         time-based correction table. It is given 2 input channel
         tokens and 1 output channel token as well as the table
         object to use (table sort flag=1 for sort, =0 for no sort).
         """
-        gxapi_cy.WrapDU.base_data_ex(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6._wrapper, p7)
+        gxapi_cy.WrapDU.base_data_ex(GXContext._get_tls_geo(), db._wrapper, line, in_ch, time_ch, out_ch, tb._wrapper, flag)
         
 
 
 
     @classmethod
-    def bound_line(cls, p1, p2, p3, p4, p5):
+    def bound_line(cls, db, line, x_chan, y_chan, pply):
         """
         Set map boundary clip limits.
         """
-        gxapi_cy.WrapDU.bound_line(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5._wrapper)
+        gxapi_cy.WrapDU.bound_line(GXContext._get_tls_geo(), db._wrapper, line, x_chan, y_chan, pply._wrapper)
         
 
 
 
     @classmethod
-    def bp_filt(cls, p1, p2, p3, p4, p5, p6, p7):
+    def bp_filt(cls, db, line, i_ch, o_ch, sw, lw, filt_len):
         """
         This method applies a band-pass filter to the specified
         line/channel and places the output in the output channel.
@@ -260,23 +260,23 @@ class GXDU:
         If the short and long wavelengths are <= 0, the input channel
         is simply copied to the output channel without filtering.
         """
-        gxapi_cy.WrapDU.bp_filt(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7)
+        gxapi_cy.WrapDU.bp_filt(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch, sw, lw, filt_len)
         
 
 
 
     @classmethod
-    def break_line(cls, p1, p2, p3):
+    def break_line(cls, db, line, chan):
         """
         Break up a line based on line numbers in a channel.
         """
-        gxapi_cy.WrapDU.break_line(GXContext._get_tls_geo(), p1._wrapper, p2, p3)
+        gxapi_cy.WrapDU.break_line(GXContext._get_tls_geo(), db._wrapper, line, chan)
         
 
 
 
     @classmethod
-    def break_line2(cls, p1, p2, p3, p4):
+    def break_line2(cls, db, line, chan, reset_fi_ds):
         """
         Break up a line based on line numbers in a channel.
 
@@ -284,13 +284,13 @@ class GXDU:
 
         The same as BreakLine, but with an option to reset each line's starting fiducial to zero.
         """
-        gxapi_cy.WrapDU.break_line2(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4)
+        gxapi_cy.WrapDU.break_line2(GXContext._get_tls_geo(), db._wrapper, line, chan, reset_fi_ds)
         
 
 
 
     @classmethod
-    def break_line_to_groups(cls, p1, p2, p3, p4):
+    def break_line_to_groups(cls, db, line, chan, cl):
         """
         Break up a line into group-lines based on a channel.
 
@@ -309,13 +309,13 @@ class GXDU:
         this will NOT be true. (Groups without class names are treated
         as isolated entities for the purposes of channel loading).
         """
-        gxapi_cy.WrapDU.break_line_to_groups(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4.encode())
+        gxapi_cy.WrapDU.break_line_to_groups(GXContext._get_tls_geo(), db._wrapper, line, chan, cl.encode())
         
 
 
 
     @classmethod
-    def break_line_to_groups2(cls, p1, p2, p3, p4, p5):
+    def break_line_to_groups2(cls, db, line, chan, cl, reset_fi_ds):
         """
         Break up a line into group-lines based on a channel.
 
@@ -323,13 +323,13 @@ class GXDU:
 
         The same as BreakLineToGroups, but with an option to reset each line's starting fiducial to zero.
         """
-        gxapi_cy.WrapDU.break_line_to_groups2(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4.encode(), p5)
+        gxapi_cy.WrapDU.break_line_to_groups2(GXContext._get_tls_geo(), db._wrapper, line, chan, cl.encode(), reset_fi_ds)
         
 
 
 
     @classmethod
-    def b_spline(cls, p1, p2, p3, p4, p5, p6, p7):
+    def b_spline(cls, db, line, i_ch, o_ch, sd, rou, p7):
         """
         B-spline Interpolate a Channel.
 
@@ -337,13 +337,13 @@ class GXDU:
 
             `trend`
         """
-        gxapi_cy.WrapDU.b_spline(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7)
+        gxapi_cy.WrapDU.b_spline(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch, sd, rou, p7)
         
 
 
 
     @classmethod
-    def closest_point(cls, p1, p2, p3, p4, p5, p6, p7):
+    def closest_point(cls, db, x, y, xp, yp, line, fid):
         """
         Return closest data point to input location.
 
@@ -356,13 +356,13 @@ class GXDU:
         Will register an error if no valid (X, Y) locations
         are found.
         """
-        p4.value, p5.value, p6.value, p7.value = gxapi_cy.WrapDU.closest_point(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4.value, p5.value, p6.value, p7.value)
+        xp.value, yp.value, line.value, fid.value = gxapi_cy.WrapDU.closest_point(GXContext._get_tls_geo(), db._wrapper, x, y, xp.value, yp.value, line.value, fid.value)
         
 
 
 
     @classmethod
-    def copy_line(cls, p1, p2, p3):
+    def copy_line(cls, db, i_line, o_line):
         """
         Copy a line.
 
@@ -371,13 +371,13 @@ class GXDU:
         Existing channels in the output line will be replaced
         by copied channels.
         """
-        gxapi_cy.WrapDU.copy_line(GXContext._get_tls_geo(), p1._wrapper, p2, p3)
+        gxapi_cy.WrapDU.copy_line(GXContext._get_tls_geo(), db._wrapper, i_line, o_line)
         
 
 
 
     @classmethod
-    def copy_line_across(cls, p1, p2, p3, p4):
+    def copy_line_across(cls, idb, i_line, odb, o_line):
         """
         Copy a line from one database to another.
 
@@ -390,13 +390,13 @@ class GXDU:
 
             `copy_line_chan_across` function
         """
-        gxapi_cy.WrapDU.copy_line_across(GXContext._get_tls_geo(), p1._wrapper, p2, p3._wrapper, p4)
+        gxapi_cy.WrapDU.copy_line_across(GXContext._get_tls_geo(), idb._wrapper, i_line, odb._wrapper, o_line)
         
 
 
 
     @classmethod
-    def copy_line_chan_across(cls, p1, p2, p3, p4, p5):
+    def copy_line_chan_across(cls, idb, i_line, vv_chan, odb, o_line):
         """
         Copy a list of channels in a line from one database to another.
 
@@ -409,13 +409,13 @@ class GXDU:
 
             `copy_line_across` function
         """
-        gxapi_cy.WrapDU.copy_line_chan_across(GXContext._get_tls_geo(), p1._wrapper, p2, p3._wrapper, p4._wrapper, p5)
+        gxapi_cy.WrapDU.copy_line_chan_across(GXContext._get_tls_geo(), idb._wrapper, i_line, vv_chan._wrapper, odb._wrapper, o_line)
         
 
 
 
     @classmethod
-    def copy_line_masked(cls, p1, p2, p3, p4, p5):
+    def copy_line_masked(cls, db, i_line, mask, prune, o_line):
         """
         Copy a line, prune items based on a mask channel
 
@@ -428,13 +428,13 @@ class GXDU:
         value is not a dummy are retained, while the complement
         is retained for VV_PRUNE_VALID.
         """
-        gxapi_cy.WrapDU.copy_line_masked(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5)
+        gxapi_cy.WrapDU.copy_line_masked(GXContext._get_tls_geo(), db._wrapper, i_line, mask, prune, o_line)
         
 
 
 
     @classmethod
-    def dao_table_names(cls, p1, p2, p3):
+    def dao_table_names(cls, file, type, vv):
         """
         Scans a DAO-compliant database and returns the table names in a `GXVV`
 
@@ -444,23 +444,23 @@ class GXDU:
         `STR_DB_SYMBOL`; i.e. use
         Creat_VV(-`STR_DB_SYMBOL`, 0), or it will assert.
         """
-        gxapi_cy.WrapDU.dao_table_names(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3._wrapper)
+        gxapi_cy.WrapDU.dao_table_names(GXContext._get_tls_geo(), file.encode(), type.encode(), vv._wrapper)
         
 
 
 
     @classmethod
-    def decimate(cls, p1, p2, p3, p4, p5):
+    def decimate(cls, db, line, i_ch, o_ch, n):
         """
         Copy and decimate a channel
         """
-        gxapi_cy.WrapDU.decimate(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5)
+        gxapi_cy.WrapDU.decimate(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch, n)
         
 
 
 
     @classmethod
-    def diff(cls, p1, p2, p3, p4, p5):
+    def diff(cls, db, line, i_ch, o_ch, n):
         """
         Calculate differences within a channel.
 
@@ -471,63 +471,63 @@ class GXDU:
         An odd number of differences locates result 1/2 element lower
         in the `GXVV`.
         """
-        gxapi_cy.WrapDU.diff(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5)
+        gxapi_cy.WrapDU.diff(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch, n)
         
 
 
 
     @classmethod
-    def distance(cls, p1, p2, p3, p4, p5):
+    def distance(cls, db, line, x_ch, y_ch, o_ch):
         """
         Create a distance channel from X and Y.
         """
-        gxapi_cy.WrapDU.distance(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5)
+        gxapi_cy.WrapDU.distance(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, o_ch)
         
 
 
 
     @classmethod
-    def distance_3d(cls, p1, p2, p3, p4, p5, p6, p7):
+    def distance_3d(cls, db, line, x_ch, y_ch, z_ch, p6, p7):
         """
         Create a distance channel from XY or XYZ with direction options.
         """
-        gxapi_cy.WrapDU.distance_3d(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7)
+        gxapi_cy.WrapDU.distance_3d(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, z_ch, p6, p7)
         
 
 
 
     @classmethod
-    def distline(cls, p1, p2, p3, p4, p5):
+    def distline(cls, db, line, x_ch, y_ch, dist):
         """
         Calculate cummulative distance for a line.
         """
-        p5.value = gxapi_cy.WrapDU.distline(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5.value)
+        dist.value = gxapi_cy.WrapDU.distline(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, dist.value)
         
 
 
 
     @classmethod
-    def dup_chan_locks(cls, p1, p2):
+    def dup_chan_locks(cls, d_bi, d_bo):
         """
         Duplicate all channels protect-info from input `GXDB`.
         """
-        gxapi_cy.WrapDU.dup_chan_locks(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
+        gxapi_cy.WrapDU.dup_chan_locks(GXContext._get_tls_geo(), d_bi._wrapper, d_bo._wrapper)
         
 
 
 
     @classmethod
-    def dup_chans(cls, p1, p2):
+    def dup_chans(cls, d_bi, d_bo):
         """
         Duplicate all channels from input `GXDB`.
         """
-        gxapi_cy.WrapDU.dup_chans(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
+        gxapi_cy.WrapDU.dup_chans(GXContext._get_tls_geo(), d_bi._wrapper, d_bo._wrapper)
         
 
 
 
     @classmethod
-    def edit_duplicates(cls, p1, p2, p3, p4, p5, p6, p7):
+    def edit_duplicates(cls, db, line, x_ch, y_ch, option, single, fid_num):
         """
         Edit duplicate readings at individual location
 
@@ -536,13 +536,13 @@ class GXDU:
         All the channels must be of the same fid incr/start and length.
         Protected channels are modified automatically.
         """
-        gxapi_cy.WrapDU.edit_duplicates(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7)
+        gxapi_cy.WrapDU.edit_duplicates(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, option, single, fid_num)
         
 
 
 
     @classmethod
-    def export1(cls, p1, p2, p3, p4, p5, p6, p7, p8):
+    def export1(cls, db, format, cur_line, chan_vv, chan, data, dummies, header):
         """
         Export to a specific format.
 
@@ -560,13 +560,13 @@ class GXDU:
         channels, listed by the symbols (DB_SYMB) values, cast to int values and
         stored in a `GXVV`.
         """
-        gxapi_cy.WrapDU.export1(GXContext._get_tls_geo(), p1._wrapper, p2, p3.encode(), p4._wrapper, p5, p6.encode(), p7, p8)
+        gxapi_cy.WrapDU.export1(GXContext._get_tls_geo(), db._wrapper, format, cur_line.encode(), chan_vv._wrapper, chan, data.encode(), dummies, header)
         
 
 
 
     @classmethod
-    def export2(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9):
+    def export2(cls, db, format, cur_line, chan_vv, chan, data, dummies, header, line_names):
         """
         Like `export1`, but include line names as data.
 
@@ -575,13 +575,13 @@ class GXDU:
         See `export1`.
         The line names are printed as the first column of data exported.
         """
-        gxapi_cy.WrapDU.export2(GXContext._get_tls_geo(), p1._wrapper, p2, p3.encode(), p4._wrapper, p5, p6.encode(), p7, p8, p9)
+        gxapi_cy.WrapDU.export2(GXContext._get_tls_geo(), db._wrapper, format, cur_line.encode(), chan_vv._wrapper, chan, data.encode(), dummies, header, line_names)
         
 
 
 
     @classmethod
-    def export_amira(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+    def export_amira(cls, db, wa, one_cols_ch, p4, p5, p6, p7, p8, p9, p10, p11):
         """
         Export to database an AMIRA data file.
 
@@ -590,13 +590,13 @@ class GXDU:
         Other defined FIELDS stored in the database (see `import_amira` function)
         will be automatically included in the export
         """
-        gxapi_cy.WrapDU.export_amira(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3.encode(), p4.encode(), p5.encode(), p6.encode(), p7.encode(), p8.encode(), p9.encode(), p10.encode(), p11.encode())
+        gxapi_cy.WrapDU.export_amira(GXContext._get_tls_geo(), db._wrapper, wa._wrapper, one_cols_ch.encode(), p4.encode(), p5.encode(), p6.encode(), p7.encode(), p8.encode(), p9.encode(), p10.encode(), p11.encode())
         
 
 
 
     @classmethod
-    def export_aseg(cls, p1, p2, p3, p4, p5, p6):
+    def export_aseg(cls, db, cur_line, chan_vv, chan, defn, data):
         """
         Export to ASEG-GDF format file(s).
 
@@ -612,13 +612,13 @@ class GXDU:
         if it is (1) a group and (2) selected, else save the first selected
         group. ---
         """
-        gxapi_cy.WrapDU.export_aseg(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3._wrapper, p4, p5.encode(), p6.encode())
+        gxapi_cy.WrapDU.export_aseg(GXContext._get_tls_geo(), db._wrapper, cur_line.encode(), chan_vv._wrapper, chan, defn.encode(), data.encode())
         
 
 
 
     @classmethod
-    def export_aseg_proj(cls, p1, p2, p3, p4, p5, p6, p7, p8):
+    def export_aseg_proj(cls, db, cur_line, chan_vv, chan, defn, data, proj, ipj):
         """
         Export to ASEG-GDF format file(s) (supports projections).
 
@@ -636,13 +636,13 @@ class GXDU:
         
         This version supports projections
         """
-        gxapi_cy.WrapDU.export_aseg_proj(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3._wrapper, p4, p5.encode(), p6.encode(), p7.encode(), p8._wrapper)
+        gxapi_cy.WrapDU.export_aseg_proj(GXContext._get_tls_geo(), db._wrapper, cur_line.encode(), chan_vv._wrapper, chan, defn.encode(), data.encode(), proj.encode(), ipj._wrapper)
         
 
 
 
     @classmethod
-    def export_chan_crc(cls, p1, p2, p3, p4):
+    def export_chan_crc(cls, db, symb, crc, file):
         """
         Export a channel as XML and compute a CRC value.
 
@@ -653,13 +653,13 @@ class GXDU:
         full channel (include metadata) do a CRC of the generated
         file.
         """
-        p3.value = gxapi_cy.WrapDU.export_chan_crc(GXContext._get_tls_geo(), p1._wrapper, p2, p3.value, p4.encode())
+        crc.value = gxapi_cy.WrapDU.export_chan_crc(GXContext._get_tls_geo(), db._wrapper, symb, crc.value, file.encode())
         
 
 
 
     @classmethod
-    def export_csv(cls, p1, p2, p3, p4, p5, p6, p7):
+    def export_csv(cls, db, cur_line, chan_vv, chan, data, dummies, header):
         """
         Export to a CSV file.
 
@@ -673,13 +673,13 @@ class GXDU:
         Option to filter out data where one of the channels has a dummy in it.
         Option to allow a header with the channel names.
         """
-        gxapi_cy.WrapDU.export_csv(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3._wrapper, p4, p5.encode(), p6, p7)
+        gxapi_cy.WrapDU.export_csv(GXContext._get_tls_geo(), db._wrapper, cur_line.encode(), chan_vv._wrapper, chan, data.encode(), dummies, header)
         
 
 
 
     @classmethod
-    def export_database_crc(cls, p1, p2, p3):
+    def export_database_crc(cls, db, crc, file):
         """
         Export a channel as XML and compute a CRC value.
 
@@ -690,13 +690,13 @@ class GXDU:
         full channel (include metadata) do a CRC of the generated
         file.
         """
-        p2.value = gxapi_cy.WrapDU.export_database_crc(GXContext._get_tls_geo(), p1._wrapper, p2.value, p3.encode())
+        crc.value = gxapi_cy.WrapDU.export_database_crc(GXContext._get_tls_geo(), db._wrapper, crc.value, file.encode())
         
 
 
 
     @classmethod
-    def export_gbn(cls, p1, p2, p3):
+    def export_gbn(cls, db, vv, data):
         """
         Export to a GBN data file.
 
@@ -705,13 +705,13 @@ class GXDU:
         The iDispChanList_DBE or `GXDB.symb_list` methods can be
         used to obtain a list of channels.
         """
-        gxapi_cy.WrapDU.export_gbn(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3.encode())
+        gxapi_cy.WrapDU.export_gbn(GXContext._get_tls_geo(), db._wrapper, vv._wrapper, data.encode())
         
 
 
 
     @classmethod
-    def export_mdb(cls, p1, p2, p3, p4, p5, p6):
+    def export_mdb(cls, db, cur_line, chan_vv, chan, single, data):
         """
         Export to a Microsoft Access Database (MDB) file.
 
@@ -722,13 +722,13 @@ class GXDU:
         a single table, or individual tables, based on the
         value of `DU_LINEOUT`
         """
-        gxapi_cy.WrapDU.export_mdb(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3._wrapper, p4, p5, p6.encode())
+        gxapi_cy.WrapDU.export_mdb(GXContext._get_tls_geo(), db._wrapper, cur_line.encode(), chan_vv._wrapper, chan, single, data.encode())
         
 
 
 
     @classmethod
-    def export_geodatabase(cls, p1, p2, p3, p4, p5, p6, p7, p8):
+    def export_geodatabase(cls, db, feature_class_name, cur_line, chan_vv, chan, output, single, data):
         """
         Export to a ESRI Geodatabase file.
 
@@ -739,13 +739,13 @@ class GXDU:
         a single table, or individual tables, based on the
         value of `DU_LINEOUT`
         """
-        gxapi_cy.WrapDU.export_geodatabase(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4._wrapper, p5, p6, p7, p8.encode())
+        gxapi_cy.WrapDU.export_geodatabase(GXContext._get_tls_geo(), db._wrapper, feature_class_name.encode(), cur_line.encode(), chan_vv._wrapper, chan, output, single, data.encode())
         
 
 
 
     @classmethod
-    def get_existing_feature_classes_in_geodatabase(cls, p1, p2, p3, p4):
+    def get_existing_feature_classes_in_geodatabase(cls, db, geodatabase, lst, vv):
         """
         Searches the geodatabases for an existing Feature class.
 
@@ -753,13 +753,13 @@ class GXDU:
 
         Searches the geodatabases for an existing Feature class
         """
-        ret_val = gxapi_cy.WrapDU.get_existing_feature_classes_in_geodatabase(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3._wrapper, p4._wrapper)
+        ret_val = gxapi_cy.WrapDU.get_existing_feature_classes_in_geodatabase(GXContext._get_tls_geo(), db._wrapper, geodatabase.encode(), lst._wrapper, vv._wrapper)
         return ret_val
 
 
 
     @classmethod
-    def export_shp(cls, p1, p2, p3, p4, p5, p6, p7):
+    def export_shp(cls, db, cur_line, chan_vv, chan, single, data, lst):
         """
         Export to a shape file or files.
 
@@ -769,7 +769,7 @@ class GXDU:
         with group name suffixes, and lines go to a single file, or multiple files
         with line name suffixes, based on the value of `DU_LINEOUT`.
         """
-        gxapi_cy.WrapDU.export_shp(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3._wrapper, p4, p5, p6.encode(), p7._wrapper)
+        gxapi_cy.WrapDU.export_shp(GXContext._get_tls_geo(), db._wrapper, cur_line.encode(), chan_vv._wrapper, chan, single, data.encode(), lst._wrapper)
         
 
 
@@ -805,7 +805,7 @@ class GXDU:
 
 
     @classmethod
-    def export_xyz2(cls, p1, p2, p3):
+    def export_xyz2(cls, db, wa, ra):
         """
         Export XYZdata from a database to an XYZ file, using file handles.
 
@@ -813,43 +813,43 @@ class GXDU:
 
             `export_xyz`
         """
-        gxapi_cy.WrapDU.export_xyz2(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper)
+        gxapi_cy.WrapDU.export_xyz2(GXContext._get_tls_geo(), db._wrapper, wa._wrapper, ra._wrapper)
         
 
 
 
     @classmethod
-    def fft(cls, p1, p2, p3, p4, p5):
+    def fft(cls, db, line, s_ch, r_ch, i_ch):
         """
         Apply an `GXFFT` to space data.
         """
-        gxapi_cy.WrapDU.fft(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5)
+        gxapi_cy.WrapDU.fft(GXContext._get_tls_geo(), db._wrapper, line, s_ch, r_ch, i_ch)
         
 
 
 
     @classmethod
-    def filter(cls, p1, p2, p3, p4, p5):
+    def filter(cls, db, line, i_ch, o_ch, flt):
         """
         Apply a convolution filter to a channel.
         """
-        gxapi_cy.WrapDU.filter(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5)
+        gxapi_cy.WrapDU.filter(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch, flt)
         
 
 
 
     @classmethod
-    def gen_lev(cls, p1, p2, p3, p4, p5):
+    def gen_lev(cls, db, in_file, out_file, max_dz, m0):
         """
         Generate a Level table from an Intersection Table.
         """
-        gxapi_cy.WrapDU.gen_lev(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4, p5)
+        gxapi_cy.WrapDU.gen_lev(GXContext._get_tls_geo(), db._wrapper, in_file.encode(), out_file.encode(), max_dz, m0)
         
 
 
 
     @classmethod
-    def gen_lev_db(cls, p1, p2, p3, p4):
+    def gen_lev_db(cls, db, out_file, max_dz, m0):
         """
         Generate a Level table from an Intersection Database
 
@@ -861,33 +861,33 @@ class GXDU:
         Line, LFid, LZ, LDZ
         Mask
         """
-        gxapi_cy.WrapDU.gen_lev_db(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3, p4)
+        gxapi_cy.WrapDU.gen_lev_db(GXContext._get_tls_geo(), db._wrapper, out_file.encode(), max_dz, m0)
         
 
 
 
     @classmethod
-    def gen_xyz_temp(cls, p1, p2):
+    def gen_xyz_temp(cls, xyz, temp):
         """
         Generate default XYZ template for a XYZ file.
         """
-        gxapi_cy.WrapDU.gen_xyz_temp(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        gxapi_cy.WrapDU.gen_xyz_temp(GXContext._get_tls_geo(), xyz.encode(), temp.encode())
         
 
 
 
     @classmethod
-    def get_xyz_num_fields(cls, p1, p2):
+    def get_xyz_num_fields(cls, xyz, num_fields):
         """
         Get the number of fields in the XYZ file.
         """
-        p2.value = gxapi_cy.WrapDU.get_xyz_num_fields(GXContext._get_tls_geo(), p1.encode(), p2.value)
+        num_fields.value = gxapi_cy.WrapDU.get_xyz_num_fields(GXContext._get_tls_geo(), xyz.encode(), num_fields.value)
         
 
 
 
     @classmethod
-    def get_chan_data_lst(cls, p1, p2, p3, p4):
+    def get_chan_data_lst(cls, db, chan, mask, lst):
         """
         Populate a `GXLST` with unique items in a channel.
 
@@ -904,13 +904,13 @@ class GXDU:
         If a mask channel is selected, then only those items
         where the mask channel is not a dummy are collected.
         """
-        gxapi_cy.WrapDU.get_chan_data_lst(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4._wrapper)
+        gxapi_cy.WrapDU.get_chan_data_lst(GXContext._get_tls_geo(), db._wrapper, chan, mask, lst._wrapper)
         
 
 
 
     @classmethod
-    def get_chan_data_vv(cls, p1, p2, p3, p4):
+    def get_chan_data_vv(cls, db, chan, mask, vv):
         """
         Populate a `GXVV` with unique items in a channel.
 
@@ -926,65 +926,65 @@ class GXDU:
         If a mask channel is selected, then only those items
         where the mask channel is not a dummy are collected.
         """
-        gxapi_cy.WrapDU.get_chan_data_vv(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4._wrapper)
+        gxapi_cy.WrapDU.get_chan_data_vv(GXContext._get_tls_geo(), db._wrapper, chan, mask, vv._wrapper)
         
 
 
 
     @classmethod
-    def gradient(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+    def gradient(cls, dbi, dbo, ix_ch, iy_ch, iz_ch, ig_ch, ox_ch, oy_ch, oz_ch, angle, width):
         """
         This method takes 4 channels from input database and
         duplicats each line twice to output database)
         (input and Output can be the same channel).
         """
-        gxapi_cy.WrapDU.gradient(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3, p4, p5, p6, p7, p8, p9, p10, p11)
+        gxapi_cy.WrapDU.gradient(GXContext._get_tls_geo(), dbi._wrapper, dbo._wrapper, ix_ch, iy_ch, iz_ch, ig_ch, ox_ch, oy_ch, oz_ch, angle, width)
         
 
 
 
     @classmethod
-    def grav_drift(cls, p1, p2, p3, p4, p5, p6, p7):
+    def grav_drift(cls, db, line, date, time, read, base, clos):
         """
         Calculate base loop closure and correct for drift.
         """
-        gxapi_cy.WrapDU.grav_drift(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7)
+        gxapi_cy.WrapDU.grav_drift(GXContext._get_tls_geo(), db._wrapper, line, date, time, read, base, clos)
         
 
 
 
     @classmethod
-    def grav_tide(cls, p1, p2, p3, p4, p5, p6, p7, p8):
+    def grav_tide(cls, db, line, lat, lon, date, time, gmt, tide):
         """
         Calculate earth tide gravity correction.
         """
-        gxapi_cy.WrapDU.grav_tide(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7, p8)
+        gxapi_cy.WrapDU.grav_tide(GXContext._get_tls_geo(), db._wrapper, line, lat, lon, date, time, gmt, tide)
         
 
 
 
     @classmethod
-    def grid_load(cls, p1, p2, p3, p4, p5, p6):
+    def grid_load(cls, db, img, xdec, ydec, trim_dum, p6):
         """
         Load grid data to a database.
         """
-        gxapi_cy.WrapDU.grid_load(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3, p4, p5, p6)
+        gxapi_cy.WrapDU.grid_load(GXContext._get_tls_geo(), db._wrapper, img._wrapper, xdec, ydec, trim_dum, p6)
         
 
 
 
     @classmethod
-    def grid_load_xyz(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+    def grid_load_xyz(cls, db, img, ch_x, ch_y, ch_z, ch_data, xdec, ydec, trim_dum, p10):
         """
         Load grid data to a database using specified channels
         """
-        gxapi_cy.WrapDU.grid_load_xyz(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3, p4, p5, p6, p7, p8, p9, p10)
+        gxapi_cy.WrapDU.grid_load_xyz(GXContext._get_tls_geo(), db._wrapper, img._wrapper, ch_x, ch_y, ch_z, ch_data, xdec, ydec, trim_dum, p10)
         
 
 
 
     @classmethod
-    def head(cls, p1, p2, p3, p4, p5, p6):
+    def head(cls, db, line, i_ch, o_ch, tb, dir):
         """
         Applies a heading correction.
 
@@ -995,13 +995,13 @@ class GXDU:
         `GS_R8DM` if the line has no data, or if there is a
         problem.
         """
-        gxapi_cy.WrapDU.head(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5._wrapper, p6)
+        gxapi_cy.WrapDU.head(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch, tb._wrapper, dir)
         
 
 
 
     @classmethod
-    def import_bin3(cls, p1, p2, p3, p4, p6, p7, p8):
+    def import_bin3(cls, db, data, template, line, p6, p7, p8):
         """
         Same as `import_bin2`, but returns the name of the imported line.
 
@@ -1016,13 +1016,13 @@ class GXDU:
 
             `import_bin2`
         """
-        p4.value = gxapi_cy.WrapDU.import_bin3(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4.value.encode(), p6, p7, p8._wrapper)
+        line.value = gxapi_cy.WrapDU.import_bin3(GXContext._get_tls_geo(), db._wrapper, data.encode(), template.encode(), line.value.encode(), p6, p7, p8._wrapper)
         
 
 
 
     @classmethod
-    def imp_cb_ply(cls, p1, p2, p3, p4, p5):
+    def imp_cb_ply(cls, db, pj, file, x_chan, y_chan):
         """
         Import concession boundary polygon file into a database
 
@@ -1030,13 +1030,13 @@ class GXDU:
 
         The polygon file is provided by Ana Christina in Brasil.
         """
-        gxapi_cy.WrapDU.imp_cb_ply(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3.encode(), p4, p5)
+        gxapi_cy.WrapDU.imp_cb_ply(GXContext._get_tls_geo(), db._wrapper, pj._wrapper, file.encode(), x_chan, y_chan)
         
 
 
 
     @classmethod
-    def import_ado(cls, p1, p2, p3, p4, p5):
+    def import_ado(cls, db, connect, table, template, line):
         """
         Import an external database table into a group using ADO.
 
@@ -1051,13 +1051,13 @@ class GXDU:
         
         3. If the line already exists, the data will overwrite the existing data.
         """
-        gxapi_cy.WrapDU.import_ado(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4.encode(), p5.encode())
+        gxapi_cy.WrapDU.import_ado(GXContext._get_tls_geo(), db._wrapper, connect.encode(), table.encode(), template.encode(), line.encode())
         
 
 
 
     @classmethod
-    def import_all_ado(cls, p1, p2, p3):
+    def import_all_ado(cls, db, connect, storage):
         """
         Import an entire external database using ADO.
 
@@ -1075,13 +1075,13 @@ class GXDU:
         4. If connection string is of type "FILENAME=..." the connection will attempt to resolve
         it as a file database. (see also ODBCFileConnect_GUI)
         """
-        gxapi_cy.WrapDU.import_all_ado(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3)
+        gxapi_cy.WrapDU.import_all_ado(GXContext._get_tls_geo(), db._wrapper, connect.encode(), storage)
         
 
 
 
     @classmethod
-    def import_all_dao(cls, p1, p2, p3, p4):
+    def import_all_dao(cls, db, data, type, storage):
         """
         Import an entire external database using DAO.
 
@@ -1115,13 +1115,13 @@ class GXDU:
         Paradox 4.x
         Paradox 5.x
         """
-        gxapi_cy.WrapDU.import_all_dao(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4)
+        gxapi_cy.WrapDU.import_all_dao(GXContext._get_tls_geo(), db._wrapper, data.encode(), type.encode(), storage)
         
 
 
 
     @classmethod
-    def import_amira(cls, p1, p2, p3):
+    def import_amira(cls, db, ra, wa):
         """
         Import an AMIRA data file.
 
@@ -1133,23 +1133,23 @@ class GXDU:
             1. Lines stored in the file beginning with "/" are comments
             2. Each constant occupies a line in the file. It uses the format: CONSTANT=VALUE
         """
-        gxapi_cy.WrapDU.import_amira(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper)
+        gxapi_cy.WrapDU.import_amira(GXContext._get_tls_geo(), db._wrapper, ra._wrapper, wa._wrapper)
         
 
 
 
     @classmethod
-    def import_aseg(cls, p1, p2, p3, p4, p5, p6):
+    def import_aseg(cls, db, template, file, data, flc, chans):
         """
         Import an ASEG-GDF data file.
         """
-        gxapi_cy.WrapDU.import_aseg(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6)
+        gxapi_cy.WrapDU.import_aseg(GXContext._get_tls_geo(), db._wrapper, template.encode(), file.encode(), data.encode(), flc.encode(), chans)
         
 
 
 
     @classmethod
-    def import_aseg_proj(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9):
+    def import_aseg_proj(cls, db, template, file, data, flc, chans, proj, x_ch, y_ch):
         """
         Import an ASEG-GDF data file (supports projections).
 
@@ -1157,13 +1157,13 @@ class GXDU:
 
         This version supports projections
         """
-        gxapi_cy.WrapDU.import_aseg_proj(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6, p7.encode(), p8.encode(), p9.encode())
+        gxapi_cy.WrapDU.import_aseg_proj(GXContext._get_tls_geo(), db._wrapper, template.encode(), file.encode(), data.encode(), flc.encode(), chans, proj.encode(), x_ch.encode(), y_ch.encode())
         
 
 
 
     @classmethod
-    def import_bin(cls, p1, p2, p3, p4, p5, p6):
+    def import_bin(cls, db, data, template, line, flight, date):
         """
         Import blocked binary or archive ASCII data
 
@@ -1185,13 +1185,13 @@ class GXDU:
 
             `lab_template`
         """
-        gxapi_cy.WrapDU.import_bin(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4.encode(), p5, p6)
+        gxapi_cy.WrapDU.import_bin(GXContext._get_tls_geo(), db._wrapper, data.encode(), template.encode(), line.encode(), flight, date)
         
 
 
 
     @classmethod
-    def import_bin2(cls, p1, p2, p3, p4, p5, p6, p7):
+    def import_bin2(cls, db, data, template, line, flight, date, wa):
         """
         Import blocked binary or archive ASCII data with data error display
 
@@ -1213,13 +1213,13 @@ class GXDU:
 
             `lab_template`
         """
-        gxapi_cy.WrapDU.import_bin2(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4.encode(), p5, p6, p7._wrapper)
+        gxapi_cy.WrapDU.import_bin2(GXContext._get_tls_geo(), db._wrapper, data.encode(), template.encode(), line.encode(), flight, date, wa._wrapper)
         
 
 
 
     @classmethod
-    def import_bin4(cls, p1, p2, p3, p4, p5, p6, p7, p8):
+    def import_bin4(cls, db, mode, data, template, line, flight, date, wa):
         """
         Same as `import_bin2` but with an import mode
 
@@ -1231,13 +1231,13 @@ class GXDU:
 
             `import_bin2`
         """
-        gxapi_cy.WrapDU.import_bin4(GXContext._get_tls_geo(), p1._wrapper, p2, p3.encode(), p4.encode(), p5.encode(), p6, p7, p8._wrapper)
+        gxapi_cy.WrapDU.import_bin4(GXContext._get_tls_geo(), db._wrapper, mode, data.encode(), template.encode(), line.encode(), flight, date, wa._wrapper)
         
 
 
 
     @classmethod
-    def import_daarc500_serial(cls, p1, p2, p3, p4, p5):
+    def import_daarc500_serial(cls, db, line, p3, p4, p5):
         """
         Import Serial data from the RMS Instruments DAARC500.
 
@@ -1247,13 +1247,13 @@ class GXDU:
         by the RMS Instruments DAARC500 instrument, and outputs the data to
         a line in the database. The channels created depend on the input data type
         """
-        gxapi_cy.WrapDU.import_daarc500_serial(GXContext._get_tls_geo(), p1._wrapper, p2, p3.encode(), p4, p5)
+        gxapi_cy.WrapDU.import_daarc500_serial(GXContext._get_tls_geo(), db._wrapper, line, p3.encode(), p4, p5)
         
 
 
 
     @classmethod
-    def import_daarc500_serial_gps(cls, p1, p2, p3, p4):
+    def import_daarc500_serial_gps(cls, db, line, p3, p4):
         """
         Import Serial GPS data from the RMS Instruments DAARC500.
 
@@ -1267,13 +1267,13 @@ class GXDU:
         NumSat (Number of satellites), GPS_HDOP (Horizontal Dilution of Position),
         Undulation, GPS_DiffAge (Age of differential channel).
         """
-        gxapi_cy.WrapDU.import_daarc500_serial_gps(GXContext._get_tls_geo(), p1._wrapper, p2, p3.encode(), p4)
+        gxapi_cy.WrapDU.import_daarc500_serial_gps(GXContext._get_tls_geo(), db._wrapper, line, p3.encode(), p4)
         
 
 
 
     @classmethod
-    def import_dao(cls, p1, p2, p3, p4, p5, p6):
+    def import_dao(cls, db, data, type, table, template, line):
         """
         Import an external database table into a group using DAO.
 
@@ -1290,13 +1290,13 @@ class GXDU:
         
         3. If the line already exists, the data will overwrite the existing data.
         """
-        gxapi_cy.WrapDU.import_dao(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6.encode())
+        gxapi_cy.WrapDU.import_dao(GXContext._get_tls_geo(), db._wrapper, data.encode(), type.encode(), table.encode(), template.encode(), line.encode())
         
 
 
 
     @classmethod
-    def import_esri(cls, p1, p2, p3, p4):
+    def import_esri(cls, db, connect, template, line):
         """
         Import an ArcGIS Geodatabase table or feature class into a GDB group
 
@@ -1311,43 +1311,43 @@ class GXDU:
         
         3. If the line already exists, the data will overwrite the existing data.
         """
-        gxapi_cy.WrapDU.import_esri(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4.encode())
+        gxapi_cy.WrapDU.import_esri(GXContext._get_tls_geo(), db._wrapper, connect.encode(), template.encode(), line.encode())
         
 
 
 
     @classmethod
-    def import_gbn(cls, p1, p2):
+    def import_gbn(cls, db, file):
         """
         Import GBN data file.
         """
-        gxapi_cy.WrapDU.import_gbn(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
+        gxapi_cy.WrapDU.import_gbn(GXContext._get_tls_geo(), db._wrapper, file.encode())
         
 
 
 
     @classmethod
-    def import_oddf(cls, p1, p2):
+    def import_oddf(cls, db, file):
         """
         Import ODDF data file.
         """
-        gxapi_cy.WrapDU.import_oddf(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
+        gxapi_cy.WrapDU.import_oddf(GXContext._get_tls_geo(), db._wrapper, file.encode())
         
 
 
 
     @classmethod
-    def import_pico(cls, p1, p2, p3, p4):
+    def import_pico(cls, db, template, data, chans):
         """
         Import a Picodas data file.
         """
-        gxapi_cy.WrapDU.import_pico(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4)
+        gxapi_cy.WrapDU.import_pico(GXContext._get_tls_geo(), db._wrapper, template.encode(), data.encode(), chans)
         
 
 
 
     @classmethod
-    def import_ubc_mod_msh(cls, p1, p2, p3, p4, p5):
+    def import_ubc_mod_msh(cls, db, mesh, mods, p4, p5):
         """
         Import UBC Mod and Msh files.
 
@@ -1356,23 +1356,23 @@ class GXDU:
         Each slice in X,Y or Z is imported to its own line in the database
         beginning with L0.
         """
-        gxapi_cy.WrapDU.import_ubc_mod_msh(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4, p5)
+        gxapi_cy.WrapDU.import_ubc_mod_msh(GXContext._get_tls_geo(), db._wrapper, mesh.encode(), mods.encode(), p4, p5)
         
 
 
 
     @classmethod
-    def import_usgs_post(cls, p1, p2):
+    def import_usgs_post(cls, db, file):
         """
         Import USGS Post data file.
         """
-        gxapi_cy.WrapDU.import_usgs_post(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
+        gxapi_cy.WrapDU.import_usgs_post(GXContext._get_tls_geo(), db._wrapper, file.encode())
         
 
 
 
     @classmethod
-    def import_xyz(cls, p1, p2, p3, p4):
+    def import_xyz(cls, db, mode, data, template):
         """
         Import XYZ data into the database.
 
@@ -1384,13 +1384,13 @@ class GXDU:
         
         2. Both the import template and data file must exist.
         """
-        gxapi_cy.WrapDU.import_xyz(GXContext._get_tls_geo(), p1._wrapper, p2, p3.encode(), p4.encode())
+        gxapi_cy.WrapDU.import_xyz(GXContext._get_tls_geo(), db._wrapper, mode, data.encode(), template.encode())
         
 
 
 
     @classmethod
-    def import_xyz2(cls, p1, p2, p3, p4, p5):
+    def import_xyz2(cls, db, mode, data, template, wa):
         """
         Import XYZ data into the database.
 
@@ -1402,13 +1402,13 @@ class GXDU:
         
         2. Both the import template and data file must exist.
         """
-        gxapi_cy.WrapDU.import_xyz2(GXContext._get_tls_geo(), p1._wrapper, p2, p3.encode(), p4.encode(), p5._wrapper)
+        gxapi_cy.WrapDU.import_xyz2(GXContext._get_tls_geo(), db._wrapper, mode, data.encode(), template.encode(), wa._wrapper)
         
 
 
 
     @classmethod
-    def import_io_gas(cls, p1, p2, p3):
+    def import_io_gas(cls, db, data_csv, template):
         """
         Import data columns from an ioGAS data file.
 
@@ -1417,63 +1417,63 @@ class GXDU:
         1. All columns in the speficied ioGAS data file will be imported.
         2. If a line already exists, the data will overwrite the existing data.
         """
-        gxapi_cy.WrapDU.import_io_gas(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode())
+        gxapi_cy.WrapDU.import_io_gas(GXContext._get_tls_geo(), db._wrapper, data_csv.encode(), template.encode())
         
 
 
 
     @classmethod
-    def index_order(cls, p1, p2, p3, p4):
+    def index_order(cls, db, line, in_ch, ch):
         """
         Change the order of a channel using an index channel.
         """
-        gxapi_cy.WrapDU.index_order(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4)
+        gxapi_cy.WrapDU.index_order(GXContext._get_tls_geo(), db._wrapper, line, in_ch, ch)
         
 
 
 
     @classmethod
-    def interp(cls, p1, p2, p3, p4, p5, p6):
+    def interp(cls, db, line, i_ch, o_ch, inside, outside):
         """
         Replace all dummies by interpolating from valid data.
         """
-        gxapi_cy.WrapDU.interp(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6)
+        gxapi_cy.WrapDU.interp(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch, inside, outside)
         
 
 
 
     @classmethod
-    def interp_gap(cls, p1, p2, p3, p4, p5, p6, p7, p8):
+    def interp_gap(cls, db, line, i_ch, o_ch, inside, outside, gap, extend):
         """
         Replace all dummies by interpolating from valid data.
         """
-        gxapi_cy.WrapDU.interp_gap(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7, p8)
+        gxapi_cy.WrapDU.interp_gap(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch, inside, outside, gap, extend)
         
 
 
 
     @classmethod
-    def intersect(cls, p1, p2, p3, p4, p5, p6):
+    def intersect(cls, db, x_chan, y_chan, z_chan, tol, file):
         """
         Create Tie Line & Normal Line intersect table.
         """
-        gxapi_cy.WrapDU.intersect(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6.encode())
+        gxapi_cy.WrapDU.intersect(GXContext._get_tls_geo(), db._wrapper, x_chan, y_chan, z_chan, tol, file.encode())
         
 
 
 
     @classmethod
-    def intersect_all(cls, p1, p2, p3, p4, p5, p6):
+    def intersect_all(cls, db, x_chan, y_chan, z_chan, tol, file):
         """
         Create line intersect table from all lines.
         """
-        gxapi_cy.WrapDU.intersect_all(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6.encode())
+        gxapi_cy.WrapDU.intersect_all(GXContext._get_tls_geo(), db._wrapper, x_chan, y_chan, z_chan, tol, file.encode())
         
 
 
 
     @classmethod
-    def intersect_gd_bto_tbl(cls, p1, p2):
+    def intersect_gd_bto_tbl(cls, db, tbl):
         """
         Create a new intersection table from an intersection database.
 
@@ -1481,13 +1481,13 @@ class GXDU:
 
         If the TBL exists, it is overwritten.
         """
-        gxapi_cy.WrapDU.intersect_gd_bto_tbl(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        gxapi_cy.WrapDU.intersect_gd_bto_tbl(GXContext._get_tls_geo(), db.encode(), tbl.encode())
         
 
 
 
     @classmethod
-    def intersect_old(cls, p1, p2, p3, p4, p5, p6):
+    def intersect_old(cls, db, x_chan, y_chan, z_chan, in_file, out_file):
         """
         Use existing intersection table and re-calculate miss-ties.
 
@@ -1501,13 +1501,13 @@ class GXDU:
         after processing levelling corrections. Existing intersections
         whose locations do not exist in the database are ignored.
         """
-        gxapi_cy.WrapDU.intersect_old(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5.encode(), p6.encode())
+        gxapi_cy.WrapDU.intersect_old(GXContext._get_tls_geo(), db._wrapper, x_chan, y_chan, z_chan, in_file.encode(), out_file.encode())
         
 
 
 
     @classmethod
-    def intersect_tb_lto_gdb(cls, p1, p2):
+    def intersect_tb_lto_gdb(cls, tbl, db):
         """
         Create a new intersection database from an intersection table.
 
@@ -1518,13 +1518,13 @@ class GXDU:
         The database is split by Tie lines (or whatever lines are found in column 3
         of the TBL file.
         """
-        gxapi_cy.WrapDU.intersect_tb_lto_gdb(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        gxapi_cy.WrapDU.intersect_tb_lto_gdb(GXContext._get_tls_geo(), tbl.encode(), db.encode())
         
 
 
 
     @classmethod
-    def lab_template(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9):
+    def lab_template(cls, data, template, type, delimit, name_off, unit_off, data_off, sample_type, data_type):
         """
         Makes a default template from a lab assay file.
 
@@ -1551,13 +1551,13 @@ class GXDU:
 
             `import_bin`
         """
-        gxapi_cy.WrapDU.lab_template(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3, p4.encode(), p5, p6, p7, p8, p9)
+        gxapi_cy.WrapDU.lab_template(GXContext._get_tls_geo(), data.encode(), template.encode(), type, delimit.encode(), name_off, unit_off, data_off, sample_type, data_type)
         
 
 
 
     @classmethod
-    def load_gravity(cls, p1, p2, p3, p4):
+    def load_gravity(cls, db, reg, line, data):
         """
         Load a gravity survey file
 
@@ -1588,13 +1588,13 @@ class GXDU:
         If the constant is not defined and it is not already in
         the `GXREG`, the indicated default will be set.
         """
-        gxapi_cy.WrapDU.load_gravity(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3, p4.encode())
+        gxapi_cy.WrapDU.load_gravity(GXContext._get_tls_geo(), db._wrapper, reg._wrapper, line, data.encode())
         
 
 
 
     @classmethod
-    def load_ltb(cls, p1, p2, p3, p4):
+    def load_ltb(cls, db, line, ltb, mode):
         """
         Load `GXLTB` into a database line.
 
@@ -1612,33 +1612,33 @@ class GXDU:
         match a specifc channel and there-by case all channels to be
         the same length before appending data.
         """
-        gxapi_cy.WrapDU.load_ltb(GXContext._get_tls_geo(), p1._wrapper, p2, p3._wrapper, p4)
+        gxapi_cy.WrapDU.load_ltb(GXContext._get_tls_geo(), db._wrapper, line, ltb._wrapper, mode)
         
 
 
 
     @classmethod
-    def make_fid(cls, p1, p2, p3, p4):
+    def make_fid(cls, db, line, i_ch, o_ch):
         """
         Make a fiducial channel based on an existing channel.
         """
-        gxapi_cy.WrapDU.make_fid(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4)
+        gxapi_cy.WrapDU.make_fid(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch)
         
 
 
 
     @classmethod
-    def mask(cls, p1, p2, p3, p4):
+    def mask(cls, db, line, i_ch, m_ch):
         """
         Mask dummies in one channel against another.
         """
-        gxapi_cy.WrapDU.mask(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4)
+        gxapi_cy.WrapDU.mask(GXContext._get_tls_geo(), db._wrapper, line, i_ch, m_ch)
         
 
 
 
     @classmethod
-    def math(cls, p1, p2, p3):
+    def math(cls, db, line, exp):
         """
         Apply an expression to the database
 
@@ -1660,24 +1660,24 @@ class GXDU:
 
             `GXEXP`
         """
-        gxapi_cy.WrapDU.math(GXContext._get_tls_geo(), p1._wrapper, p2, p3._wrapper)
+        gxapi_cy.WrapDU.math(GXContext._get_tls_geo(), db._wrapper, line, exp._wrapper)
         
 
 
 
     @classmethod
-    def merge_line(cls, p1, p2, p3, p4, p5):
+    def merge_line(cls, db, i_line, m_line, o_line, mode):
         """
         Merge a line a the fiducial and copies any data past
         that fiducial into the new line.
         """
-        gxapi_cy.WrapDU.merge_line(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5)
+        gxapi_cy.WrapDU.merge_line(GXContext._get_tls_geo(), db._wrapper, i_line, m_line, o_line, mode)
         
 
 
 
     @classmethod
-    def mod_fid_range(cls, p1, p2, p3, p4, p5, p6, p7):
+    def mod_fid_range(cls, db, ln, fid_start, incr, start_index, num, opt):
         """
         Insert/Append/Delete a range of fids.
 
@@ -1688,13 +1688,13 @@ class GXDU:
         
         Protected channels are modified automatically.
         """
-        gxapi_cy.WrapDU.mod_fid_range(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7)
+        gxapi_cy.WrapDU.mod_fid_range(GXContext._get_tls_geo(), db._wrapper, ln, fid_start, incr, start_index, num, opt)
         
 
 
 
     @classmethod
-    def move(cls, p1, p2, p3, p4, p5, p6):
+    def move(cls, db, line, i_ch, c_ch, o_ch, mode):
         """
         Move/correct a channel to a control channel.
 
@@ -1703,24 +1703,24 @@ class GXDU:
         The input channel is moved to the absolute location
         of the control channel.
         """
-        gxapi_cy.WrapDU.move(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6)
+        gxapi_cy.WrapDU.move(GXContext._get_tls_geo(), db._wrapper, line, i_ch, c_ch, o_ch, mode)
         
 
 
 
     @classmethod
-    def nl_filt(cls, p1, p2, p3, p4, p5, p6):
+    def nl_filt(cls, db, line, i_ch, o_ch, width, tol):
         """
         This method applies a non-linear filter to the specified
         line/channel and places the output in the output channel.
         """
-        gxapi_cy.WrapDU.nl_filt(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6)
+        gxapi_cy.WrapDU.nl_filt(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch, width, tol)
         
 
 
 
     @classmethod
-    def normal(cls, p1, p2, p3):
+    def normal(cls, db, ch, ignore):
         """
         Set fid of all channels to match a specified channel.
 
@@ -1728,33 +1728,33 @@ class GXDU:
 
             `re_fid_all_ch`
         """
-        gxapi_cy.WrapDU.normal(GXContext._get_tls_geo(), p1._wrapper, p2, p3)
+        gxapi_cy.WrapDU.normal(GXContext._get_tls_geo(), db._wrapper, ch, ignore)
         
 
 
 
     @classmethod
-    def poly_fill(cls, p1, p2, p3, p4, p5, p6, p7):
+    def poly_fill(cls, db, line, x_chan, y_chan, r_chan, pply, dummy):
         """
         Fill using a polygon with a value of 1.
         """
-        gxapi_cy.WrapDU.poly_fill(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6._wrapper, p7)
+        gxapi_cy.WrapDU.poly_fill(GXContext._get_tls_geo(), db._wrapper, line, x_chan, y_chan, r_chan, pply._wrapper, dummy)
         
 
 
 
     @classmethod
-    def poly_mask(cls, p1, p2, p3, p4, p5, p6, p7):
+    def poly_mask(cls, db, line, x_chan, y_chan, r_chan, pply, dummy):
         """
         Mask against a polygon.
         """
-        gxapi_cy.WrapDU.poly_mask(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6._wrapper, p7)
+        gxapi_cy.WrapDU.poly_mask(GXContext._get_tls_geo(), db._wrapper, line, x_chan, y_chan, r_chan, pply._wrapper, dummy)
         
 
 
 
     @classmethod
-    def project_data(cls, p1, p2, p3, p4, p5, p6, p7):
+    def project_data(cls, db, line, ix_ch, iy_ch, ox_ch, oy_ch, pj):
         """
         Project X,Y channels
 
@@ -1762,13 +1762,13 @@ class GXDU:
 
         Output channels can be the same as input channels
         """
-        gxapi_cy.WrapDU.project_data(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7._wrapper)
+        gxapi_cy.WrapDU.project_data(GXContext._get_tls_geo(), db._wrapper, line, ix_ch, iy_ch, ox_ch, oy_ch, pj._wrapper)
         
 
 
 
     @classmethod
-    def project_xyz(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9):
+    def project_xyz(cls, db, line, ix_ch, iy_ch, iz_ch, ox_ch, oy_ch, oz_ch, pj):
         """
         Project X,Y,Z channels from one system to another.
 
@@ -1776,13 +1776,13 @@ class GXDU:
 
         Output channels can be the same as input channels
         """
-        gxapi_cy.WrapDU.project_xyz(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7, p8, p9._wrapper)
+        gxapi_cy.WrapDU.project_xyz(GXContext._get_tls_geo(), db._wrapper, line, ix_ch, iy_ch, iz_ch, ox_ch, oy_ch, oz_ch, pj._wrapper)
         
 
 
 
     @classmethod
-    def proj_points(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20):
+    def proj_points(cls, db, line, ix_ch, iy_ch, iz_ch, ox_ch, oy_ch, oz_ch, i_name_chan, i_datum_chan, i_method_chan, i_unit_chan, il_datum_chan, o_name_chan, o_datum_chan, o_method_chan, o_unit_chan, ol_datum_chan, error_chan, force_local_datum):
         """
         Project X,Y(Z) channels with different projections
 
@@ -1790,13 +1790,13 @@ class GXDU:
 
         Output channels can be the same as input channels
         """
-        gxapi_cy.WrapDU.proj_points(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20)
+        gxapi_cy.WrapDU.proj_points(GXContext._get_tls_geo(), db._wrapper, line, ix_ch, iy_ch, iz_ch, ox_ch, oy_ch, oz_ch, i_name_chan, i_datum_chan, i_method_chan, i_unit_chan, il_datum_chan, o_name_chan, o_datum_chan, o_method_chan, o_unit_chan, ol_datum_chan, error_chan, force_local_datum)
         
 
 
 
     @classmethod
-    def qc_init_separation(cls, p1, p2, p3):
+    def qc_init_separation(cls, db, sep, dir):
         """
         Creates the nearest line channels for line separation QC.
 
@@ -1809,13 +1809,13 @@ class GXDU:
         direction of the line.) These distances are stored to two new
         channels in the database, "Closest_Left" and "Closest_Right"
         """
-        gxapi_cy.WrapDU.qc_init_separation(GXContext._get_tls_geo(), p1._wrapper, p2, p3)
+        gxapi_cy.WrapDU.qc_init_separation(GXContext._get_tls_geo(), db._wrapper, sep, dir)
         
 
 
 
     @classmethod
-    def qc_survey_plan(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18):
+    def qc_survey_plan(cls, db, wa, pply, sl_spa, sl_azi, slx, sly, sl_sta, sl_inc, tl_spa, tl_azi, tlx, tly, tl_sta, tl_inc, type, sample_spacing, extend_outside):
         """
         Create a database containing proposed survey plan in a `GXPLY`
 
@@ -1827,13 +1827,13 @@ class GXDU:
         on the left hand side have the decreasing line numbers from the starting
         number. Returns an error code or 0 (if successful)
         """
-        ret_val = gxapi_cy.WrapDU.qc_survey_plan(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18)
+        ret_val = gxapi_cy.WrapDU.qc_survey_plan(GXContext._get_tls_geo(), db._wrapper, wa._wrapper, pply._wrapper, sl_spa, sl_azi, slx, sly, sl_sta, sl_inc, tl_spa, tl_azi, tlx, tly, tl_sta, tl_inc, type, sample_spacing, extend_outside)
         return ret_val
 
 
 
     @classmethod
-    def direction(cls, p1, p2, p3, p4):
+    def direction(cls, db, line, x_ch, y_ch):
         """
         Returns the direction of a line.
 
@@ -1842,13 +1842,13 @@ class GXDU:
         The direction is calculated from the first and last
         non-dummy locations in the X and Y reference channels.
         """
-        ret_val = gxapi_cy.WrapDU.direction(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4)
+        ret_val = gxapi_cy.WrapDU.direction(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch)
         return ret_val
 
 
 
     @classmethod
-    def re_fid(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9):
+    def re_fid(cls, db, line, in_ch, ref_ch, out_ch, mode, start, incr, gap):
         """
         Re-fid a channel based on a reference channel
 
@@ -1866,13 +1866,13 @@ class GXDU:
         Channel values are calculated at the new "X" locations specified by
         the Start Fid and the Fid Increment.
         """
-        gxapi_cy.WrapDU.re_fid(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7, p8, p9)
+        gxapi_cy.WrapDU.re_fid(GXContext._get_tls_geo(), db._wrapper, line, in_ch, ref_ch, out_ch, mode, start, incr, gap)
         
 
 
 
     @classmethod
-    def re_fid_all_ch(cls, p1, p2, p3):
+    def re_fid_all_ch(cls, db, line, ref_ch):
         """
         Simple re-fid of all channels based on a reference channel
 
@@ -1885,13 +1885,13 @@ class GXDU:
 
             `normal`
         """
-        gxapi_cy.WrapDU.re_fid_all_ch(GXContext._get_tls_geo(), p1._wrapper, p2, p3)
+        gxapi_cy.WrapDU.re_fid_all_ch(GXContext._get_tls_geo(), db._wrapper, line, ref_ch)
         
 
 
 
     @classmethod
-    def re_fid_ch(cls, p1, p2, p3, p4):
+    def re_fid_ch(cls, db, line, ref_ch, ch):
         """
         Simple re-fid of a channel based on a reference channel
 
@@ -1903,23 +1903,23 @@ class GXDU:
         `re_fid_ch` resamples the "Channel to refid" to the "Reference Channel" Fid
         range and increment.
         """
-        gxapi_cy.WrapDU.re_fid_ch(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4)
+        gxapi_cy.WrapDU.re_fid_ch(GXContext._get_tls_geo(), db._wrapper, line, ref_ch, ch)
         
 
 
 
     @classmethod
-    def rotate(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9):
+    def rotate(cls, db, line, in_x_ch, in_y_ch, out_x_ch, out_y_ch, x0, y0, deg):
         """
         Rotate coordinates.
         """
-        gxapi_cy.WrapDU.rotate(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7, p8, p9)
+        gxapi_cy.WrapDU.rotate(GXContext._get_tls_geo(), db._wrapper, line, in_x_ch, in_y_ch, out_x_ch, out_y_ch, x0, y0, deg)
         
 
 
 
     @classmethod
-    def sample_gd(cls, p1, p2, p3, p4, p5, p6):
+    def sample_gd(cls, db, line, ix_ch, iy_ch, o_ch, img):
         """
         Sample a `GXGD` at a specified X and Y.
 
@@ -1927,13 +1927,13 @@ class GXDU:
 
         Values in result channel
         """
-        gxapi_cy.WrapDU.sample_gd(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6._wrapper)
+        gxapi_cy.WrapDU.sample_gd(GXContext._get_tls_geo(), db._wrapper, line, ix_ch, iy_ch, o_ch, img._wrapper)
         
 
 
 
     @classmethod
-    def sample_img(cls, p1, p2, p3, p4, p5, p6):
+    def sample_img(cls, db, line, ix_ch, iy_ch, o_ch, img):
         """
         Sample a `GXIMG` at a specified X and Y.
 
@@ -1941,13 +1941,13 @@ class GXDU:
 
         Values in result channel
         """
-        gxapi_cy.WrapDU.sample_img(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6._wrapper)
+        gxapi_cy.WrapDU.sample_img(GXContext._get_tls_geo(), db._wrapper, line, ix_ch, iy_ch, o_ch, img._wrapper)
         
 
 
 
     @classmethod
-    def sample_img_line_lst(cls, p1, p2, p3, p4, p5, p6):
+    def sample_img_line_lst(cls, db, lst, ix_ch, iy_ch, o_ch, img):
         """
         Sample an `GXIMG` at a specified X and Y, for a `GXLST` of lines.
 
@@ -1955,13 +1955,13 @@ class GXDU:
 
         Values in result channel
         """
-        gxapi_cy.WrapDU.sample_img_line_lst(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3, p4, p5, p6._wrapper)
+        gxapi_cy.WrapDU.sample_img_line_lst(GXContext._get_tls_geo(), db._wrapper, lst._wrapper, ix_ch, iy_ch, o_ch, img._wrapper)
         
 
 
 
     @classmethod
-    def scan_ado(cls, p1, p2, p3):
+    def scan_ado(cls, connect, table, template):
         """
         Scans an external ADO database and generates a default template.
 
@@ -1969,24 +1969,24 @@ class GXDU:
 
         All the channels are listed
         """
-        gxapi_cy.WrapDU.scan_ado(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode())
+        gxapi_cy.WrapDU.scan_ado(GXContext._get_tls_geo(), connect.encode(), table.encode(), template.encode())
         
 
 
 
     @classmethod
-    def scan_aseg(cls, p1, p2, p3, p4):
+    def scan_aseg(cls, file, data, flc, template):
         """
         This method scans an ASEG-GDF file and generates a default
         template listing all the channels and all the ALIAS lines.
         """
-        gxapi_cy.WrapDU.scan_aseg(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4.encode())
+        gxapi_cy.WrapDU.scan_aseg(GXContext._get_tls_geo(), file.encode(), data.encode(), flc.encode(), template.encode())
         
 
 
 
     @classmethod
-    def scan_dao(cls, p1, p2, p3, p4):
+    def scan_dao(cls, file, type, table, template):
         """
         Scans an external DAO database and generates a default template.
 
@@ -1994,65 +1994,65 @@ class GXDU:
 
         All the channels are listed
         """
-        gxapi_cy.WrapDU.scan_dao(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4.encode())
+        gxapi_cy.WrapDU.scan_dao(GXContext._get_tls_geo(), file.encode(), type.encode(), table.encode(), template.encode())
         
 
 
 
     @classmethod
-    def scan_pico(cls, p1, p2):
+    def scan_pico(cls, data, template):
         """
         This method scans a picodas file and generates a default
         template listing all the channels and all the ALIAS lines.
         """
-        gxapi_cy.WrapDU.scan_pico(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        gxapi_cy.WrapDU.scan_pico(GXContext._get_tls_geo(), data.encode(), template.encode())
         
 
 
 
     @classmethod
-    def sort(cls, p1, p2, p3, p4):
+    def sort(cls, db, line, ch, sort):
         """
         Sort the contents of a channel.
         """
-        gxapi_cy.WrapDU.sort(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4)
+        gxapi_cy.WrapDU.sort(GXContext._get_tls_geo(), db._wrapper, line, ch, sort)
         
 
 
 
     @classmethod
-    def sort_index(cls, p1, p2, p3, p4, p5):
+    def sort_index(cls, db, line, ch, in_ch, sort):
         """
         Create an ordered index of the contents of a channel.
         """
-        gxapi_cy.WrapDU.sort_index(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5)
+        gxapi_cy.WrapDU.sort_index(GXContext._get_tls_geo(), db._wrapper, line, ch, in_ch, sort)
         
 
 
 
     @classmethod
-    def sort_index2(cls, p1, p2, p3, p4, p5, p6, p7):
+    def sort_index2(cls, db, line, ch1, sort1, ch2, sort2, in_ch):
         """
         Create an ordered index from two channels
         """
-        gxapi_cy.WrapDU.sort_index2(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7)
+        gxapi_cy.WrapDU.sort_index2(GXContext._get_tls_geo(), db._wrapper, line, ch1, sort1, ch2, sort2, in_ch)
         
 
 
 
     @classmethod
-    def split_line(cls, p1, p2, p3, p4):
+    def split_line(cls, db, i_line, o_line, fid):
         """
         Splits a line a the fiducial and copies any data past
         that fiducial into the new line.
         """
-        gxapi_cy.WrapDU.split_line(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4)
+        gxapi_cy.WrapDU.split_line(GXContext._get_tls_geo(), db._wrapper, i_line, o_line, fid)
         
 
 
 
     @classmethod
-    def split_line2(cls, p1, p2, p3, p4, p5):
+    def split_line2(cls, db, i_line, o_line, fid, reset_fi_ds):
         """
         Splits a line a the fiducial and copies any data past
         that fiducial into the new line.
@@ -2061,13 +2061,13 @@ class GXDU:
 
         The same as SplitLine, but with an option to reset each line's starting fiducial to zero.
         """
-        gxapi_cy.WrapDU.split_line2(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5)
+        gxapi_cy.WrapDU.split_line2(GXContext._get_tls_geo(), db._wrapper, i_line, o_line, fid, reset_fi_ds)
         
 
 
 
     @classmethod
-    def split_line_xy(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+    def split_line_xy(cls, db, line, x_ch, y_ch, dirctn, tolrnc, down_tol, method, first_line, line_inc):
         """
         Break up a line based on tolerance of lateral and horizontal distance, with
         options for the output line names.
@@ -2076,13 +2076,13 @@ class GXDU:
 
         The original line will be deleted.
         """
-        p9.value = gxapi_cy.WrapDU.split_line_xy(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7, p8, p9.value, p10)
+        first_line.value = gxapi_cy.WrapDU.split_line_xy(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, dirctn, tolrnc, down_tol, method, first_line.value, line_inc)
         
 
 
 
     @classmethod
-    def split_line_xy2(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+    def split_line_xy2(cls, db, line, x_ch, y_ch, dirctn, tolrnc, down_tol, method, first_line, line_inc, reset_fi_ds):
         """
         Break up a line based on tolerance of lateral and horizontal distance, with
         options for the output line names.
@@ -2091,13 +2091,13 @@ class GXDU:
 
         The same as SplitLineXY, but with an option to reset each line's starting fiducial to zero.
         """
-        p9.value = gxapi_cy.WrapDU.split_line_xy2(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7, p8, p9.value, p10, p11)
+        first_line.value = gxapi_cy.WrapDU.split_line_xy2(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, dirctn, tolrnc, down_tol, method, first_line.value, line_inc, reset_fi_ds)
         
 
 
 
     @classmethod
-    def split_line_xy3(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+    def split_line_xy3(cls, db, line, x_ch, y_ch, dirctn, tolrnc, down_tol, method, first_line, line_inc, retain_line_type, reset_fi_ds):
         """
         Break up a line based on tolerance of lateral and horizontal distance, with
         options for the output line names.
@@ -2106,13 +2106,13 @@ class GXDU:
 
         The same as SplitLineXY2, but with the option to maintain line types when outputting sequentially numbered lines.
         """
-        p9.value = gxapi_cy.WrapDU.split_line_xy3(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7, p8, p9.value, p10, p11, p12)
+        first_line.value = gxapi_cy.WrapDU.split_line_xy3(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, dirctn, tolrnc, down_tol, method, first_line.value, line_inc, retain_line_type, reset_fi_ds)
         
 
 
 
     @classmethod
-    def split_line_by_direction(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13):
+    def split_line_by_direction(cls, db, line, x_ch, y_ch, angular_change, over_a_distance_of, minimum_line_length, break_on_separation_distance, save_discards, method, first_line, line_inc, reset_fi_ds):
         """
         The line is split when the heading (calculated from the current X and Y channels) changes by more than a specified amount over
         a specified distance. Additional options to discard too-short lines
@@ -2121,13 +2121,13 @@ class GXDU:
 
         Split a line based on changes in heading.
         """
-        p11.value = gxapi_cy.WrapDU.split_line_by_direction(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11.value, p12, p13)
+        first_line.value = gxapi_cy.WrapDU.split_line_by_direction(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, angular_change, over_a_distance_of, minimum_line_length, break_on_separation_distance, save_discards, method, first_line.value, line_inc, reset_fi_ds)
         
 
 
 
     @classmethod
-    def split_line_by_direction2(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+    def split_line_by_direction2(cls, db, line, x_ch, y_ch, angular_change, over_a_distance_of, minimum_line_length, break_on_separation_distance, save_discards, method, first_line, line_inc, retain_line_type, reset_fi_ds):
         """
         The same as SplitLineByDirection, but with the option to maintain line types when outputting sequentially numbered lines.
 
@@ -2135,13 +2135,13 @@ class GXDU:
 
         Split a line based on changes in heading.
         """
-        p11.value = gxapi_cy.WrapDU.split_line_by_direction2(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11.value, p12, p13, p14)
+        first_line.value = gxapi_cy.WrapDU.split_line_by_direction2(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, angular_change, over_a_distance_of, minimum_line_length, break_on_separation_distance, save_discards, method, first_line.value, line_inc, retain_line_type, reset_fi_ds)
         
 
 
 
     @classmethod
-    def stat(cls, p1, p2, p3, p4):
+    def stat(cls, db, line, i_ch, st):
         """
         Add a data channel to a statistics object.
 
@@ -2154,33 +2154,33 @@ class GXDU:
 
             `GXST`
         """
-        gxapi_cy.WrapDU.stat(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4._wrapper)
+        gxapi_cy.WrapDU.stat(GXContext._get_tls_geo(), db._wrapper, line, i_ch, st._wrapper)
         
 
 
 
     @classmethod
-    def table_line_fid(cls, p1, p2, p3, p4, p5):
+    def table_line_fid(cls, db, chan, ref, tb, field):
         """
         Place a Line/Fid information into a Channel.
         """
-        gxapi_cy.WrapDU.table_line_fid(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4._wrapper, p5)
+        gxapi_cy.WrapDU.table_line_fid(GXContext._get_tls_geo(), db._wrapper, chan, ref, tb._wrapper, field)
         
 
 
 
     @classmethod
-    def table_selected_lines_fid(cls, p1, p2, p3, p4, p5):
+    def table_selected_lines_fid(cls, db, chan, ref, tb, field):
         """
         Place a Line/Fid information into a Channel for the selected lines in the database.
         """
-        gxapi_cy.WrapDU.table_selected_lines_fid(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4._wrapper, p5)
+        gxapi_cy.WrapDU.table_selected_lines_fid(GXContext._get_tls_geo(), db._wrapper, chan, ref, tb._wrapper, field)
         
 
 
 
     @classmethod
-    def time_constant(cls, p1, p2, p3, p4, p5, p6, p7, p8):
+    def time_constant(cls, db, line, resp_chan, time_chan, tau_chan, intercept_chan, fit_chan, log_opt):
         """
         Calculate TEM time constant (Tau)
 
@@ -2190,13 +2190,13 @@ class GXDU:
         with logarithmic before calculating time constant.
         Logarthmic conversion is always applied to the response channel.
         """
-        gxapi_cy.WrapDU.time_constant(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7, p8)
+        gxapi_cy.WrapDU.time_constant(GXContext._get_tls_geo(), db._wrapper, line, resp_chan, time_chan, tau_chan, intercept_chan, fit_chan, log_opt)
         
 
 
 
     @classmethod
-    def trend(cls, p1, p2, p3, p4, p5):
+    def trend(cls, db, line, i_ch, o_ch, order):
         """
         Calculates an n'th order trend of a data channel.
 
@@ -2204,13 +2204,13 @@ class GXDU:
 
             `b_spline`
         """
-        gxapi_cy.WrapDU.trend(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5)
+        gxapi_cy.WrapDU.trend(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch, order)
         
 
 
 
     @classmethod
-    def update_intersect_db(cls, p1, p2, p3, p4):
+    def update_intersect_db(cls, db, x_chan, z_chan, int_db):
         """
         Update the Z and DZ values in an intersection database, using the current database.
 
@@ -2219,13 +2219,13 @@ class GXDU:
         Updates the TZ, TDZ, LZ and LDZ channels at the intersections,
         using the current flight database.
         """
-        gxapi_cy.WrapDU.update_intersect_db(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4._wrapper)
+        gxapi_cy.WrapDU.update_intersect_db(GXContext._get_tls_geo(), db._wrapper, x_chan, z_chan, int_db._wrapper)
         
 
 
 
     @classmethod
-    def voxel_section(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9):
+    def voxel_section(cls, db, line, x_ch, y_ch, vox, grid, cell_x, cell_y, interp):
         """
         Slice a voxel to a grid under a database line.
 
@@ -2244,13 +2244,13 @@ class GXDU:
         (This is to simplify creating multiple grids from
         at once, where not all may intersect).
         """
-        gxapi_cy.WrapDU.voxel_section(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5._wrapper, p6.encode(), p7, p8, p9)
+        gxapi_cy.WrapDU.voxel_section(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, vox._wrapper, grid.encode(), cell_x, cell_y, interp)
         
 
 
 
     @classmethod
-    def write_wa(cls, p1, p2, p3, p4):
+    def write_wa(cls, db, line, lst, wa):
         """
         Write data to an ASCII file.
 
@@ -2264,13 +2264,13 @@ class GXDU:
         Data is formated as in the channel definition and
         channels are separated by a single space character.
         """
-        gxapi_cy.WrapDU.write_wa(GXContext._get_tls_geo(), p1._wrapper, p2, p3._wrapper, p4._wrapper)
+        gxapi_cy.WrapDU.write_wa(GXContext._get_tls_geo(), db._wrapper, line, lst._wrapper, wa._wrapper)
         
 
 
 
     @classmethod
-    def xyz_line(cls, p1, p2, p3, p4, p5, p6):
+    def xyz_line(cls, db, line, x_ch, y_ch, dirctn, tolrnc):
         """
         Break up a line based on tolerance of lateral distance.
 
@@ -2278,13 +2278,13 @@ class GXDU:
 
         The original line will be deleted.
         """
-        gxapi_cy.WrapDU.xyz_line(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6)
+        gxapi_cy.WrapDU.xyz_line(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, dirctn, tolrnc)
         
 
 
 
     @classmethod
-    def xyz_line2(cls, p1, p2, p3, p4, p5, p6, p7):
+    def xyz_line2(cls, db, line, x_ch, y_ch, dirctn, tolrnc, down_tol):
         """
         Break up a line based on tolerance of lateral and horizontal distance.
 
@@ -2292,13 +2292,13 @@ class GXDU:
 
         The original line will be deleted.
         """
-        gxapi_cy.WrapDU.xyz_line2(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7)
+        gxapi_cy.WrapDU.xyz_line2(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, dirctn, tolrnc, down_tol)
         
 
 
 
     @classmethod
-    def xyz_line3(cls, p1, p2, p3, p4, p5, p6, p7, p8):
+    def xyz_line3(cls, db, line, x_ch, y_ch, dirctn, tolrnc, down_tol, reset_fi_ds):
         """
         Break up a line based on tolerance of lateral and horizontal distance.
 
@@ -2306,23 +2306,23 @@ class GXDU:
 
         The same as XyzLine2, but with an option to reset each line's starting fiducial to zero.
         """
-        gxapi_cy.WrapDU.xyz_line3(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6, p7, p8)
+        gxapi_cy.WrapDU.xyz_line3(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, dirctn, tolrnc, down_tol, reset_fi_ds)
         
 
 
 
     @classmethod
-    def z_mask(cls, p1, p2, p3, p4, p5, p6):
+    def z_mask(cls, db, line, chan, z_chan, zmin, zmax):
         """
         Mask dummies in one channel against another(Z) with the range Zmin/Zmax.
         """
-        gxapi_cy.WrapDU.z_mask(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6)
+        gxapi_cy.WrapDU.z_mask(GXContext._get_tls_geo(), db._wrapper, line, chan, z_chan, zmin, zmax)
         
 
 
 
     @classmethod
-    def range_xy(cls, p1, p2, p3, p4, p5):
+    def range_xy(cls, db, x_min, y_min, x_max, y_max):
         """
         Find the range of X, and Y in the selected lines.
 
@@ -2331,13 +2331,13 @@ class GXDU:
         Returns the range in X and Y of the current X and Y channels.
         Returned values are dummy if no valid items are found.
         """
-        p2.value, p3.value, p4.value, p5.value = gxapi_cy.WrapDU.range_xy(GXContext._get_tls_geo(), p1._wrapper, p2.value, p3.value, p4.value, p5.value)
+        x_min.value, y_min.value, x_max.value, y_max.value = gxapi_cy.WrapDU.range_xy(GXContext._get_tls_geo(), db._wrapper, x_min.value, y_min.value, x_max.value, y_max.value)
         
 
 
 
     @classmethod
-    def range_xyz(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+    def range_xyz(cls, db, x_ch, y_ch, z_ch, x_min, y_min, z_min, x_max, y_max, z_max, n_tot):
         """
         Find the range of X, Y and Z in selected lines.
 
@@ -2347,13 +2347,13 @@ class GXDU:
         Only locations where all values are non-dummy are included in the calculation.
         If no non-dummy values are found, Dummy values are returned.
         """
-        p5.value, p6.value, p7.value, p8.value, p9.value, p10.value, p11.value = gxapi_cy.WrapDU.range_xyz(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5.value, p6.value, p7.value, p8.value, p9.value, p10.value, p11.value)
+        x_min.value, y_min.value, z_min.value, x_max.value, y_max.value, z_max.value, n_tot.value = gxapi_cy.WrapDU.range_xyz(GXContext._get_tls_geo(), db._wrapper, x_ch, y_ch, z_ch, x_min.value, y_min.value, z_min.value, x_max.value, y_max.value, z_max.value, n_tot.value)
         
 
 
 
     @classmethod
-    def range_xyz_data(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+    def range_xyz_data(cls, db, x_ch, y_ch, z_ch, d_ch, x_min, y_min, z_min, d_min, x_max, y_max, z_max, d_max, n_tot):
         """
         Find the range of X, Y, Z and Data values in selected lines.
 
@@ -2367,13 +2367,13 @@ class GXDU:
         This function is optimized for cases where Z and Data are array channels
         with many columns (e.g. 32 or more columns).
         """
-        p6.value, p7.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value = gxapi_cy.WrapDU.range_xyz_data(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6.value, p7.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value)
+        x_min.value, y_min.value, z_min.value, d_min.value, x_max.value, y_max.value, z_max.value, d_max.value, n_tot.value = gxapi_cy.WrapDU.range_xyz_data(GXContext._get_tls_geo(), db._wrapper, x_ch, y_ch, z_ch, d_ch, x_min.value, y_min.value, z_min.value, d_min.value, x_max.value, y_max.value, z_max.value, d_max.value, n_tot.value)
         
 
 
 
     @classmethod
-    def create_drillhole_parameter_weight_constraint_database(cls, p1, p2, p3, p4):
+    def create_drillhole_parameter_weight_constraint_database(cls, db, ch, reg, database):
         """
         Used for weighting inversion models.
 
@@ -2390,13 +2390,13 @@ class GXDU:
         MINIMUM - the minimum weighting value to apply, at the radius (Default = 0.0001).
         POWER - Exponential power to use in the weighting function (negative of this is used) (Default = 2).
         """
-        gxapi_cy.WrapDU.create_drillhole_parameter_weight_constraint_database(GXContext._get_tls_geo(), p1._wrapper, p2, p3._wrapper, p4.encode())
+        gxapi_cy.WrapDU.create_drillhole_parameter_weight_constraint_database(GXContext._get_tls_geo(), db._wrapper, ch, reg._wrapper, database.encode())
         
 
 
 
     @classmethod
-    def calculate_draped_survey_altitude(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+    def calculate_draped_survey_altitude(cls, db, line, x_ch, y_ch, img, z_ch, ascent, descent, drape_height, n_hanning, hanning_width, min_curvature):
         """
         Calculate a draped flight path, enforcing maximum descent and ascent rates.
 
@@ -2405,13 +2405,13 @@ class GXDU:
         Calculate a draped flight path, enforcing maximum descent and ascent rates. Additional Inputs are the sample distance along the line
         and a topography grid.
         """
-        gxapi_cy.WrapDU.calculate_draped_survey_altitude(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5._wrapper, p6, p7, p8, p9, p10, p11, p12)
+        gxapi_cy.WrapDU.calculate_draped_survey_altitude(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, img._wrapper, z_ch, ascent, descent, drape_height, n_hanning, hanning_width, min_curvature)
         
 
 
 
     @classmethod
-    def calculate_draped_survey_altitude2(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+    def calculate_draped_survey_altitude2(cls, db, line, x_ch, y_ch, img, dem_ch, z_ch, ascent, descent, drape_height, min_drape_height, n_hanning, hanning_width, min_curvature):
         """
         Calculate a draped flight path, enforcing maximum descent and ascent rates.
 
@@ -2422,13 +2422,13 @@ class GXDU:
         Additional Inputs are the sample distance along the line
         and a topography grid.
         """
-        gxapi_cy.WrapDU.calculate_draped_survey_altitude2(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5._wrapper, p6, p7, p8, p9, p10, p11, p12, p13, p14)
+        gxapi_cy.WrapDU.calculate_draped_survey_altitude2(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, img._wrapper, dem_ch, z_ch, ascent, descent, drape_height, min_drape_height, n_hanning, hanning_width, min_curvature)
         
 
 
 
     @classmethod
-    def direct_grid_data_to_voxel(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16):
+    def direct_grid_data_to_voxel(cls, db, x_channel, y_channel, z_channel, data_channel, output_voxel_filename, origin_x, origin_y, origin_z, cell_count_x, cell_count_y, cell_count_z, cell_size_x, cell_size_y, cell_size_z, method):
         """
         Create a voxel using direct gridding.
 
@@ -2436,13 +2436,13 @@ class GXDU:
 
         The Z and Data channels may be array channels. If they are, the array sizes must match.
         """
-        gxapi_cy.WrapDU.direct_grid_data_to_voxel(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6.encode(), p7, p8, p9, p10, p11, p12, p13, p14, p15, p16)
+        gxapi_cy.WrapDU.direct_grid_data_to_voxel(GXContext._get_tls_geo(), db._wrapper, x_channel, y_channel, z_channel, data_channel, output_voxel_filename.encode(), origin_x, origin_y, origin_z, cell_count_x, cell_count_y, cell_count_z, cell_size_x, cell_size_y, cell_size_z, method)
         
 
 
 
     @classmethod
-    def direct_grid_item_counts_to_voxel(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16):
+    def direct_grid_item_counts_to_voxel(cls, db, x_channel, y_channel, z_channel, data_channel, output_voxel_filename, origin_x, origin_y, origin_z, cell_count_x, cell_count_y, cell_count_z, cell_size_x, cell_size_y, cell_size_z, pb_replace_zeroes_with_dummy):
         """
         Create a voxel using direct gridding containing the number of data points in each cell.
 
@@ -2450,7 +2450,7 @@ class GXDU:
 
         The Z and Data channels may be array channels. If they are, the array sizes must match.
         """
-        gxapi_cy.WrapDU.direct_grid_item_counts_to_voxel(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4, p5, p6.encode(), p7, p8, p9, p10, p11, p12, p13, p14, p15, p16)
+        gxapi_cy.WrapDU.direct_grid_item_counts_to_voxel(GXContext._get_tls_geo(), db._wrapper, x_channel, y_channel, z_channel, data_channel, output_voxel_filename.encode(), origin_x, origin_y, origin_z, cell_count_x, cell_count_y, cell_count_z, cell_size_x, cell_size_y, cell_size_z, pb_replace_zeroes_with_dummy)
         
 
 

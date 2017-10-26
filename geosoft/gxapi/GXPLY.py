@@ -59,27 +59,27 @@ class GXPLY:
 
 
 
-    def add_polygon(self, p2, p3):
+    def add_polygon(self, v_vx, v_vy):
         """
         Add a polygon to the polygon file.
         """
-        self._wrapper.add_polygon(p2._wrapper, p3._wrapper)
+        self._wrapper.add_polygon(v_vx._wrapper, v_vy._wrapper)
         
 
 
 
 
-    def add_polygon_ex(self, p2, p3, p4):
+    def add_polygon_ex(self, v_vx, v_vy, exclude):
         """
         Add a polygon to the polygon file.
         """
-        self._wrapper.add_polygon_ex(p2._wrapper, p3._wrapper, p4)
+        self._wrapper.add_polygon_ex(v_vx._wrapper, v_vy._wrapper, exclude)
         
 
 
 
 
-    def change_ipj(self, p2):
+    def change_ipj(self, ipj):
         """
         Set the projection.
 
@@ -87,7 +87,7 @@ class GXPLY:
 
         The `GXPLY` is re-projected to the new projection.
         """
-        self._wrapper.change_ipj(p2._wrapper)
+        self._wrapper.change_ipj(ipj._wrapper)
         
 
 
@@ -103,11 +103,11 @@ class GXPLY:
 
 
 
-    def copy(self, p2):
+    def copy(self, srce):
         """
         Destroys a `GXPLY` Object
         """
-        self._wrapper.copy(p2._wrapper)
+        self._wrapper.copy(srce._wrapper)
         
 
 
@@ -123,11 +123,11 @@ class GXPLY:
 
 
     @classmethod
-    def create_s(cls, p1):
+    def create_s(cls, bf):
         """
         Create an `GXPLY` Object from a `GXBF`
         """
-        ret_val = gxapi_cy.WrapPLY.create_s(GXContext._get_tls_geo(), p1._wrapper)
+        ret_val = gxapi_cy.WrapPLY.create_s(GXContext._get_tls_geo(), bf._wrapper)
         return GXPLY(ret_val)
 
 
@@ -135,7 +135,7 @@ class GXPLY:
 
 
 
-    def extent(self, p2, p3, p4, p5):
+    def extent(self, min_x, min_y, max_x, max_y):
         """
         Get the extent of the current polygon.
 
@@ -143,53 +143,53 @@ class GXPLY:
 
         If there are no polygons in the `GXPLY` object, returns dummies.
         """
-        p2.value, p3.value, p4.value, p5.value = self._wrapper.extent(p2.value, p3.value, p4.value, p5.value)
+        min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.extent(min_x.value, min_y.value, max_x.value, max_y.value)
         
 
 
 
 
-    def get_ipj(self, p2):
+    def get_ipj(self, ipj):
         """
         Get the projection.
         """
-        self._wrapper.get_ipj(p2._wrapper)
+        self._wrapper.get_ipj(ipj._wrapper)
         
 
 
 
 
-    def get_polygon(self, p2, p3, p4):
+    def get_polygon(self, v_vx, v_vy, poly):
         """
         Get a polygon from the `GXPLY`
         """
-        self._wrapper.get_polygon(p2._wrapper, p3._wrapper, p4)
+        self._wrapper.get_polygon(v_vx._wrapper, v_vy._wrapper, poly)
         
 
 
 
 
-    def get_polygon_ex(self, p2, p3, p4, p5):
+    def get_polygon_ex(self, v_vx, v_vy, poly, exclude):
         """
         Get a polygon from the `GXPLY`
         """
-        p5.value = self._wrapper.get_polygon_ex(p2._wrapper, p3._wrapper, p4, p5.value)
+        exclude.value = self._wrapper.get_polygon_ex(v_vx._wrapper, v_vy._wrapper, poly, exclude.value)
         
 
 
 
 
-    def clip_area(self, p2, p3, p4, p5):
+    def clip_area(self, min_x, min_y, max_x, max_y):
         """
         Clip a polygon to an area
         """
-        ret_val = self._wrapper.clip_area(p2, p3, p4, p5)
+        ret_val = self._wrapper.clip_area(min_x, min_y, max_x, max_y)
         return ret_val
 
 
 
 
-    def clip_line_int(self, p2, p3, p4, p5, p6, p7, p8):
+    def clip_line_int(self, min_x, min_y, max_x, max_y, vv, inc, p8):
         """
         Clips a line in or out of the polygons for intersections (`GS_DOUBLE`).
         Intersections are returned as fiducials down the line stored in `GXVV`
@@ -201,13 +201,13 @@ class GXPLY:
         Starts inside, ends inside : `PLY_LINE_CLIP_INSIDE`, 1 intersection (gives end-of-line)
         Starts inside, ends outside : `PLY_LINE_CLIP_INSIDE`, 1 intersection
         """
-        ret_val, p8.value = self._wrapper.clip_line_int(p2, p3, p4, p5, p6._wrapper, p7, p8.value)
+        ret_val, p8.value = self._wrapper.clip_line_int(min_x, min_y, max_x, max_y, vv._wrapper, inc, p8.value)
         return ret_val
 
 
 
 
-    def clip_ply(self, p2, p3):
+    def clip_ply(self, ppl_yb, ppl_yc):
         """
         Clip one polygon against another
 
@@ -217,17 +217,17 @@ class GXPLY:
         regions of the clipped area.  Exclusion polygons
         are treated as included areas.
         """
-        ret_val = self._wrapper.clip_ply(p2._wrapper, p3._wrapper)
+        ret_val = self._wrapper.clip_ply(ppl_yb._wrapper, ppl_yc._wrapper)
         return ret_val
 
 
 
 
-    def get_description(self, p2):
+    def get_description(self, desc):
         """
         Get the `GXPLY` description string
         """
-        p2.value = self._wrapper.get_description(p2.value.encode())
+        desc.value = self._wrapper.get_description(desc.value.encode())
         
 
 
@@ -243,11 +243,11 @@ class GXPLY:
 
 
 
-    def load_table(self, p2):
+    def load_table(self, table):
         """
         Loads Polygons from a Polygon file.
         """
-        self._wrapper.load_table(p2.encode())
+        self._wrapper.load_table(table.encode())
         
 
 
@@ -267,57 +267,57 @@ class GXPLY:
 
 
 
-    def rectangle(self, p2, p3, p4, p5):
+    def rectangle(self, min_x, min_y, max_x, max_y):
         """
         Creates a polygon from a rectangular area.
         """
-        self._wrapper.rectangle(p2, p3, p4, p5)
+        self._wrapper.rectangle(min_x, min_y, max_x, max_y)
         
 
 
 
 
-    def rotate(self, p2, p3, p4):
+    def rotate(self, x, y, rot):
         """
         Rotate a polygon about a point.
         """
-        self._wrapper.rotate(p2, p3, p4)
+        self._wrapper.rotate(x, y, rot)
         
 
 
 
 
-    def save_table(self, p2):
+    def save_table(self, table):
         """
         Save Polygons to a Polygon file.
         """
-        self._wrapper.save_table(p2.encode())
+        self._wrapper.save_table(table.encode())
         
 
 
 
 
-    def serial(self, p2):
+    def serial(self, bf):
         """
         Serialize an `GXPLY` to a `GXBF`
         """
-        self._wrapper.serial(p2._wrapper)
+        self._wrapper.serial(bf._wrapper)
         
 
 
 
 
-    def set_description(self, p2):
+    def set_description(self, desc):
         """
         Set the `GXPLY` description string
         """
-        self._wrapper.set_description(p2.encode())
+        self._wrapper.set_description(desc.encode())
         
 
 
 
 
-    def set_ipj(self, p2):
+    def set_ipj(self, ipj):
         """
         Set the projection.
 
@@ -325,13 +325,13 @@ class GXPLY:
 
         This changes the projection information only.
         """
-        self._wrapper.set_ipj(p2._wrapper)
+        self._wrapper.set_ipj(ipj._wrapper)
         
 
 
 
 
-    def thin(self, p2):
+    def thin(self, thin):
         """
         Thin polygons to a desired resolution
 
@@ -341,7 +341,7 @@ class GXPLY:
         neighboring points by more than the thining resolution will
         be removed.
         """
-        self._wrapper.thin(p2)
+        self._wrapper.thin(thin)
         
 
 

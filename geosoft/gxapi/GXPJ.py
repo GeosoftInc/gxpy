@@ -61,7 +61,7 @@ class GXPJ:
 
 
 
-    def clip_ply(self, p2, p3, p4, p5, p6, p7):
+    def clip_ply(self, min_x, min_y, max_x, max_y, max_dev, pply):
         """
         Create a clip polygon from a projected area.
 
@@ -75,13 +75,13 @@ class GXPJ:
         (180 degrees - maximum deviation).  (i.e. if max. dev = 0,
         only co-linear points would be removed).
         """
-        self._wrapper.clip_ply(p2, p3, p4, p5, p6, p7._wrapper)
+        self._wrapper.clip_ply(min_x, min_y, max_x, max_y, max_dev, pply._wrapper)
         
 
 
 
 
-    def convert_vv(self, p2, p3):
+    def convert_vv(self, v_vx, v_vy):
         """
         Convert VVx/VVy from input projection to output projection.
 
@@ -89,13 +89,13 @@ class GXPJ:
 
         This function is equivalent to `GXVV.project`.
         """
-        self._wrapper.convert_vv(p2._wrapper, p3._wrapper)
+        self._wrapper.convert_vv(v_vx._wrapper, v_vy._wrapper)
         
 
 
 
 
-    def convert_vv3(self, p2, p3, p4):
+    def convert_vv3(self, v_vx, v_vy, v_vz):
         """
         Convert VVx/VVy/VVz projections
 
@@ -103,23 +103,23 @@ class GXPJ:
 
         This function is equivalent to `GXVV.project_3d`.
         """
-        self._wrapper.convert_vv3(p2._wrapper, p3._wrapper, p4._wrapper)
+        self._wrapper.convert_vv3(v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
         
 
 
 
 
-    def convert_xy(self, p2, p3):
+    def convert_xy(self, x, y):
         """
         Convert X, Y from input projection to output projection.
         """
-        p2.value, p3.value = self._wrapper.convert_xy(p2.value, p3.value)
+        x.value, y.value = self._wrapper.convert_xy(x.value, y.value)
         
 
 
 
 
-    def convert_xy_from_xyz(self, p2, p3, p4):
+    def convert_xy_from_xyz(self, x, y, z):
         """
         Convert X, Y from input projection to output projection, taking Z into account
 
@@ -133,33 +133,33 @@ class GXPJ:
         the normal `convert_xy` assumes a value of Z=0 internally and calls
         `convert_xyz`.
         """
-        p2.value, p3.value = self._wrapper.convert_xy_from_xyz(p2.value, p3.value, p4)
+        x.value, y.value = self._wrapper.convert_xy_from_xyz(x.value, y.value, z)
         
 
 
 
 
-    def convert_xyz(self, p2, p3, p4):
+    def convert_xyz(self, x, y, z):
         """
         Convert X,Y,Z from input projection to output projection.
         """
-        p2.value, p3.value, p4.value = self._wrapper.convert_xyz(p2.value, p3.value, p4.value)
+        x.value, y.value, z.value = self._wrapper.convert_xyz(x.value, y.value, z.value)
         
 
 
 
     @classmethod
-    def create(cls, p1, p2):
+    def create(cls, input, output):
         """
         This method creates a projection object.
         """
-        ret_val = gxapi_cy.WrapPJ.create(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        ret_val = gxapi_cy.WrapPJ.create(GXContext._get_tls_geo(), input.encode(), output.encode())
         return GXPJ(ret_val)
 
 
 
     @classmethod
-    def create_ipj(cls, p1, p2):
+    def create_ipj(cls, ip_jin, ip_jout):
         """
         This method creates a projection object from IPJs.
 
@@ -169,13 +169,13 @@ class GXPJ:
         system of the source/target, only the long/lat system
         can be passed as (`GXIPJ`)0.
         """
-        ret_val = gxapi_cy.WrapPJ.create_ipj(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
+        ret_val = gxapi_cy.WrapPJ.create_ipj(GXContext._get_tls_geo(), ip_jin._wrapper, ip_jout._wrapper)
         return GXPJ(ret_val)
 
 
 
     @classmethod
-    def create_rectified(cls, p1, p2, p3, p4, p5, p6, p7):
+    def create_rectified(cls, lon, lat, x, y, rot, scl, dir):
         """
         Create a rectified `GXPJ` from lon,lat,rotation
 
@@ -188,7 +188,7 @@ class GXPJ:
         projection with central meridian through the center
         of the coordinates on a WGS 84 datum.
         """
-        ret_val = gxapi_cy.WrapPJ.create_rectified(GXContext._get_tls_geo(), p1, p2, p3, p4, p5, p6, p7)
+        ret_val = gxapi_cy.WrapPJ.create_rectified(GXContext._get_tls_geo(), lon, lat, x, y, rot, scl, dir)
         return GXPJ(ret_val)
 
 
@@ -240,7 +240,7 @@ class GXPJ:
 
 
 
-    def project_bounding_rectangle(self, p2, p3, p4, p5):
+    def project_bounding_rectangle(self, min_x, min_y, max_x, max_y):
         """
         Project a bounding rectangle.
 
@@ -253,13 +253,13 @@ class GXPJ:
         projection the resulting bounding region may be slightly
         smaller than the true region.
         """
-        p2.value, p3.value, p4.value, p5.value = self._wrapper.project_bounding_rectangle(p2.value, p3.value, p4.value, p5.value)
+        min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.project_bounding_rectangle(min_x.value, min_y.value, max_x.value, max_y.value)
         
 
 
 
 
-    def project_bounding_rectangle2(self, p2, p3, p4, p5, p6):
+    def project_bounding_rectangle2(self, min_x, min_y, max_x, max_y, err):
         """
         Project a bounding rectangle with error tolerance.
 
@@ -269,13 +269,13 @@ class GXPJ:
         rectangle will be limited to an area within which the projection can be
         performed to an accuracy better than the specified error tolerance.
         """
-        p2.value, p3.value, p4.value, p5.value = self._wrapper.project_bounding_rectangle2(p2.value, p3.value, p4.value, p5.value, p6)
+        min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.project_bounding_rectangle2(min_x.value, min_y.value, max_x.value, max_y.value, err)
         
 
 
 
 
-    def project_bounding_rectangle_res(self, p2, p3, p4, p5, p6):
+    def project_bounding_rectangle_res(self, min_x, min_y, max_x, max_y, res):
         """
         Project a bounding rectangle with resolution.
 
@@ -286,13 +286,13 @@ class GXPJ:
         at the reprojected coordinate system from a given original
         resolution.
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value = self._wrapper.project_bounding_rectangle_res(p2.value, p3.value, p4.value, p5.value, p6.value)
+        min_x.value, min_y.value, max_x.value, max_y.value, res.value = self._wrapper.project_bounding_rectangle_res(min_x.value, min_y.value, max_x.value, max_y.value, res.value)
         
 
 
 
 
-    def project_bounding_rectangle_res2(self, p2, p3, p4, p5, p6, p7):
+    def project_bounding_rectangle_res2(self, min_x, min_y, max_x, max_y, res, err):
         """
         Project a bounding rectangle with resolution and error tolerance.
 
@@ -302,13 +302,13 @@ class GXPJ:
         rectangle will be limited to an area within which the projection can be
         performed to an accuracy better than the specified error tolerance.
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value = self._wrapper.project_bounding_rectangle_res2(p2.value, p3.value, p4.value, p5.value, p6.value, p7)
+        min_x.value, min_y.value, max_x.value, max_y.value, res.value = self._wrapper.project_bounding_rectangle_res2(min_x.value, min_y.value, max_x.value, max_y.value, res.value, err)
         
 
 
 
 
-    def project_limited_bounding_rectangle(self, p2, p3, p4, p5, p6, p7, p8, p9):
+    def project_limited_bounding_rectangle(self, min_xl, min_yl, max_xl, max_yl, min_x, min_y, max_x, max_y):
         """
         Project a bounding rectangle with limits.
 
@@ -323,7 +323,7 @@ class GXPJ:
 
             `project_bounding_rectangle`.
         """
-        p6.value, p7.value, p8.value, p9.value = self._wrapper.project_limited_bounding_rectangle(p2, p3, p4, p5, p6.value, p7.value, p8.value, p9.value)
+        min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.project_limited_bounding_rectangle(min_xl, min_yl, max_xl, max_yl, min_x.value, min_y.value, max_x.value, max_y.value)
         
 
 

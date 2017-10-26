@@ -58,11 +58,11 @@ class GXPROJ:
 
 
     @classmethod
-    def drop_map_clip_data(cls, p1):
+    def drop_map_clip_data(cls, hglobal):
         """
         Drop Map clipboard data in the current project (workspace background)
         """
-        gxapi_cy.WrapPROJ.drop_map_clip_data(GXContext._get_tls_geo(), p1)
+        gxapi_cy.WrapPROJ.drop_map_clip_data(GXContext._get_tls_geo(), hglobal)
         
 
 
@@ -72,7 +72,7 @@ class GXPROJ:
 
 
     @classmethod
-    def add_document(cls, p1, p2, p3):
+    def add_document(cls, name, type, display):
         """
         Adds (and opens) a document file in the current project.
 
@@ -93,13 +93,13 @@ class GXPROJ:
             GMS3D         
             GMS2D
         """
-        ret_val = gxapi_cy.WrapPROJ.add_document(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3)
+        ret_val = gxapi_cy.WrapPROJ.add_document(GXContext._get_tls_geo(), name.encode(), type.encode(), display)
         return ret_val
 
 
 
     @classmethod
-    def add_document_without_opening(cls, p1, p2):
+    def add_document_without_opening(cls, name, type):
         """
         Adds (and opens) a document file in the current project.
 
@@ -120,7 +120,7 @@ class GXPROJ:
             GMS3D         
             GMS2D
         """
-        ret_val = gxapi_cy.WrapPROJ.add_document_without_opening(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        ret_val = gxapi_cy.WrapPROJ.add_document_without_opening(GXContext._get_tls_geo(), name.encode(), type.encode())
         return ret_val
 
 
@@ -136,7 +136,7 @@ class GXPROJ:
 
 
     @classmethod
-    def list_documents(cls, p1, p2):
+    def list_documents(cls, gvv, type):
         """
         Fills a `GXVV` with documents of a certain type.
 
@@ -154,13 +154,13 @@ class GXPROJ:
         GMS2D            List GM-`GXSYS` 2D Models.
         All              Lists all files.
         """
-        ret_val = gxapi_cy.WrapPROJ.list_documents(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
+        ret_val = gxapi_cy.WrapPROJ.list_documents(GXContext._get_tls_geo(), gvv._wrapper, type.encode())
         return ret_val
 
 
 
     @classmethod
-    def list_loaded_documents(cls, p1, p2):
+    def list_loaded_documents(cls, gvv, type):
         """
         Fills a `GXVV` with loaded documents of a certain type.
 
@@ -178,33 +178,33 @@ class GXPROJ:
         GMS2D            List GM-`GXSYS` 2D Models.
         All              Lists all files.
         """
-        ret_val = gxapi_cy.WrapPROJ.list_loaded_documents(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
+        ret_val = gxapi_cy.WrapPROJ.list_loaded_documents(GXContext._get_tls_geo(), gvv._wrapper, type.encode())
         return ret_val
 
 
 
     @classmethod
-    def current_document(cls, p1, p3):
+    def current_document(cls, name, type):
         """
         Get the name and type of the loaded document with focus.
         """
-        p1.value, p3.value = gxapi_cy.WrapPROJ.current_document(GXContext._get_tls_geo(), p1.value.encode(), p3.value.encode())
+        name.value, type.value = gxapi_cy.WrapPROJ.current_document(GXContext._get_tls_geo(), name.value.encode(), type.value.encode())
         
 
 
 
     @classmethod
-    def current_document_of_type(cls, p1, p3):
+    def current_document_of_type(cls, name, type):
         """
         Get the name of a loaded document of a specific type.
         """
-        p1.value = gxapi_cy.WrapPROJ.current_document_of_type(GXContext._get_tls_geo(), p1.value.encode(), p3.encode())
+        name.value = gxapi_cy.WrapPROJ.current_document_of_type(GXContext._get_tls_geo(), name.value.encode(), type.encode())
         
 
 
 
     @classmethod
-    def list_tools(cls, p1, p2):
+    def list_tools(cls, lst, type):
         """
         Fills an `GXLST` object with tools of a certain type and
         notes the current visibility setting.
@@ -217,13 +217,13 @@ class GXPROJ:
         include whether the tool is currently visible in the value
         column (1=visible, 0-hidden).
         """
-        ret_val = gxapi_cy.WrapPROJ.list_tools(GXContext._get_tls_geo(), p1._wrapper, p2)
+        ret_val = gxapi_cy.WrapPROJ.list_tools(GXContext._get_tls_geo(), lst._wrapper, type)
         return ret_val
 
 
 
     @classmethod
-    def remove_document(cls, p1):
+    def remove_document(cls, name):
         """
         Removes (and closes if visible) a document from the current project.
 
@@ -233,13 +233,13 @@ class GXPROJ:
         file name complete with an extension and
         qualifiers (if applicable).
         """
-        ret_val = gxapi_cy.WrapPROJ.remove_document(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapPROJ.remove_document(GXContext._get_tls_geo(), name.encode())
         return ret_val
 
 
 
     @classmethod
-    def remove_tool(cls, p1):
+    def remove_tool(cls, name):
         """
         Removes (and closes if visible) a auxiliary tool from the current project.
 
@@ -247,13 +247,13 @@ class GXPROJ:
 
         Nothing
         """
-        ret_val = gxapi_cy.WrapPROJ.remove_tool(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapPROJ.remove_tool(GXContext._get_tls_geo(), name.encode())
         return ret_val
 
 
 
     @classmethod
-    def save_close_documents(cls, p1):
+    def save_close_documents(cls, type):
         """
         Saves and closes (if visible) documents contained in the current project.
 
@@ -275,13 +275,13 @@ class GXPROJ:
             GMS2D
             All
         """
-        ret_val = gxapi_cy.WrapPROJ.save_close_documents(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapPROJ.save_close_documents(GXContext._get_tls_geo(), type.encode())
         return ret_val
 
 
 
     @classmethod
-    def get_name(cls, p1):
+    def get_name(cls, name):
         """
         Return the name of the project file.
 
@@ -289,7 +289,7 @@ class GXPROJ:
 
         Return the name of the project file.
         """
-        p1.value = gxapi_cy.WrapPROJ.get_name(GXContext._get_tls_geo(), p1.value.encode())
+        name.value = gxapi_cy.WrapPROJ.get_name(GXContext._get_tls_geo(), name.value.encode())
         
 
 

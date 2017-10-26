@@ -60,17 +60,17 @@ class GXRA:
 
 
     @classmethod
-    def create(cls, p1):
+    def create(cls, file):
         """
         Creates `GXRA`
         """
-        ret_val = gxapi_cy.WrapRA.create(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapRA.create(GXContext._get_tls_geo(), file.encode())
         return GXRA(ret_val)
 
 
 
     @classmethod
-    def create_sbf(cls, p1, p2):
+    def create_sbf(cls, sbf, file):
         """
         Creates `GXRA` on an `GXSBF`
 
@@ -86,7 +86,7 @@ class GXRA:
 
             sbf.gxh
         """
-        ret_val = gxapi_cy.WrapRA.create_sbf(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
+        ret_val = gxapi_cy.WrapRA.create_sbf(GXContext._get_tls_geo(), sbf._wrapper, file.encode())
         return GXRA(ret_val)
 
 
@@ -94,11 +94,11 @@ class GXRA:
 
 
 
-    def gets(self, p2):
+    def gets(self, strbuff):
         """
         Get next full line from `GXRA`
         """
-        ret_val, p2.value = self._wrapper.gets(p2.value.encode())
+        ret_val, strbuff.value = self._wrapper.gets(strbuff.value.encode())
         return ret_val
 
 
@@ -128,11 +128,11 @@ class GXRA:
 
 
 
-    def seek(self, p2):
+    def seek(self, line):
         """
         Position next read to specified line #
         """
-        ret_val = self._wrapper.seek(p2)
+        ret_val = self._wrapper.seek(line)
         return ret_val
 
 

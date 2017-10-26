@@ -62,17 +62,17 @@ class GXSTR:
 
 
     @classmethod
-    def scan_i(cls, p1):
+    def scan_i(cls, str_val):
         """
         Convert a string to a GX int.
         """
-        ret_val = gxapi_cy.WrapSTR.scan_i(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapSTR.scan_i(GXContext._get_tls_geo(), str_val.encode())
         return ret_val
 
 
 
     @classmethod
-    def scan_date(cls, p1, p2):
+    def scan_date(cls, str_val, type):
         """
         Convert a date string to a GX real.
 
@@ -80,33 +80,33 @@ class GXSTR:
 
         OLD usage, use ScanForm_STR instead.
         """
-        ret_val = gxapi_cy.WrapSTR.scan_date(GXContext._get_tls_geo(), p1.encode(), p2)
+        ret_val = gxapi_cy.WrapSTR.scan_date(GXContext._get_tls_geo(), str_val.encode(), type)
         return ret_val
 
 
 
     @classmethod
-    def scan_form(cls, p1, p2):
+    def scan_form(cls, str_val, type):
         """
         Convert a formated string to a real.
         """
-        ret_val = gxapi_cy.WrapSTR.scan_form(GXContext._get_tls_geo(), p1.encode(), p2)
+        ret_val = gxapi_cy.WrapSTR.scan_form(GXContext._get_tls_geo(), str_val.encode(), type)
         return ret_val
 
 
 
     @classmethod
-    def scan_r(cls, p1):
+    def scan_r(cls, str_val):
         """
         Convert a string to a GX real.
         """
-        ret_val = gxapi_cy.WrapSTR.scan_r(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapSTR.scan_r(GXContext._get_tls_geo(), str_val.encode())
         return ret_val
 
 
 
     @classmethod
-    def scan_time(cls, p1, p2):
+    def scan_time(cls, str_val, type):
         """
         Convert a time string to a GX real.
 
@@ -114,7 +114,7 @@ class GXSTR:
 
         OLD usage, use ScanForm_STR instead.
         """
-        ret_val = gxapi_cy.WrapSTR.scan_time(GXContext._get_tls_geo(), p1.encode(), p2)
+        ret_val = gxapi_cy.WrapSTR.scan_time(GXContext._get_tls_geo(), str_val.encode(), type)
         return ret_val
 
 
@@ -124,37 +124,37 @@ class GXSTR:
 
 
     @classmethod
-    def file_combine_parts(cls, p1, p2, p3, p4, p5, p6):
+    def file_combine_parts(cls, drive, dir, file, ext, qual, file_name):
         """
         Combine file parts to build a file name.
         """
-        p6.value = gxapi_cy.WrapSTR.file_combine_parts(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6.value.encode())
+        file_name.value = gxapi_cy.WrapSTR.file_combine_parts(GXContext._get_tls_geo(), drive.encode(), dir.encode(), file.encode(), ext.encode(), qual.encode(), file_name.value.encode())
         
 
 
 
     @classmethod
-    def file_ext(cls, p1, p2, p3, p4):
+    def file_ext(cls, ifile, ext, ofile, opt):
         """
         Add a file extension onto a file name string.
         """
-        p3.value = gxapi_cy.WrapSTR.file_ext(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.value.encode(), p4)
+        ofile.value = gxapi_cy.WrapSTR.file_ext(GXContext._get_tls_geo(), ifile.encode(), ext.encode(), ofile.value.encode(), opt)
         
 
 
 
     @classmethod
-    def file_name_part(cls, p1, p2, p4):
+    def file_name_part(cls, file, file_part, part):
         """
         Get part of a file name.
         """
-        p2.value = gxapi_cy.WrapSTR.file_name_part(GXContext._get_tls_geo(), p1.encode(), p2.value.encode(), p4)
+        file_part.value = gxapi_cy.WrapSTR.file_name_part(GXContext._get_tls_geo(), file.encode(), file_part.value.encode(), part)
         
 
 
 
     @classmethod
-    def get_m_file(cls, p1, p2, p4):
+    def get_m_file(cls, in_str, out_str, index):
         """
         Get the indexed filepath from a multiple filepath string
 
@@ -163,17 +163,17 @@ class GXSTR:
         The multifile string must use '|' as a delimiter.
         Do not pass a string after calling `tokenize`.
         """
-        p2.value = gxapi_cy.WrapSTR.get_m_file(GXContext._get_tls_geo(), p1.encode(), p2.value.encode(), p4)
+        out_str.value = gxapi_cy.WrapSTR.get_m_file(GXContext._get_tls_geo(), in_str.encode(), out_str.value.encode(), index)
         
 
 
 
     @classmethod
-    def remove_qualifiers(cls, p1, p2):
+    def remove_qualifiers(cls, ifile, ofile):
         """
         Remove file qualifiers from a file name
         """
-        p2.value = gxapi_cy.WrapSTR.remove_qualifiers(GXContext._get_tls_geo(), p1.encode(), p2.value.encode())
+        ofile.value = gxapi_cy.WrapSTR.remove_qualifiers(GXContext._get_tls_geo(), ifile.encode(), ofile.value.encode())
         
 
 
@@ -183,71 +183,71 @@ class GXSTR:
 
 
     @classmethod
-    def format_crc(cls, p1, p2, p4):
+    def format_crc(cls, pul_crc, buff, width):
         """
         Convert a GX CRC value to a string.
         """
-        p2.value = gxapi_cy.WrapSTR.format_crc(GXContext._get_tls_geo(), p1, p2.value.encode(), p4)
+        buff.value = gxapi_cy.WrapSTR.format_crc(GXContext._get_tls_geo(), pul_crc, buff.value.encode(), width)
         
 
 
 
     @classmethod
-    def format_date(cls, p1, p2, p4, p5):
+    def format_date(cls, real, buff, width, type):
         """
         Convert a GX real to a date string.
         """
-        p2.value = gxapi_cy.WrapSTR.format_date(GXContext._get_tls_geo(), p1, p2.value.encode(), p4, p5)
+        buff.value = gxapi_cy.WrapSTR.format_date(GXContext._get_tls_geo(), real, buff.value.encode(), width, type)
         
 
 
 
     @classmethod
-    def format_i(cls, p1, p2, p4):
+    def format_i(cls, int, buff, width):
         """
         Convert a GX int to a string.
         """
-        p2.value = gxapi_cy.WrapSTR.format_i(GXContext._get_tls_geo(), p1, p2.value.encode(), p4)
+        buff.value = gxapi_cy.WrapSTR.format_i(GXContext._get_tls_geo(), int, buff.value.encode(), width)
         
 
 
 
     @classmethod
-    def format_r(cls, p1, p2, p4, p5):
+    def format_r(cls, real, buff, width, sig):
         """
         Convert a GX real to a string with significant digits.
         """
-        p2.value = gxapi_cy.WrapSTR.format_r(GXContext._get_tls_geo(), p1, p2.value.encode(), p4, p5)
+        buff.value = gxapi_cy.WrapSTR.format_r(GXContext._get_tls_geo(), real, buff.value.encode(), width, sig)
         
 
 
 
     @classmethod
-    def format_r2(cls, p1, p2, p4, p5):
+    def format_r2(cls, real, buff, width, sig):
         """
         Convert a GX real to a string with given decimals.
         """
-        p2.value = gxapi_cy.WrapSTR.format_r2(GXContext._get_tls_geo(), p1, p2.value.encode(), p4, p5)
+        buff.value = gxapi_cy.WrapSTR.format_r2(GXContext._get_tls_geo(), real, buff.value.encode(), width, sig)
         
 
 
 
     @classmethod
-    def format_double(cls, p1, p2, p4, p5, p6):
+    def format_double(cls, real, buff, type, width, dec):
         """
         Convert a GX real to a string.
         """
-        p2.value = gxapi_cy.WrapSTR.format_double(GXContext._get_tls_geo(), p1, p2.value.encode(), p4, p5, p6)
+        buff.value = gxapi_cy.WrapSTR.format_double(GXContext._get_tls_geo(), real, buff.value.encode(), type, width, dec)
         
 
 
 
     @classmethod
-    def format_time(cls, p1, p2, p4, p5, p6):
+    def format_time(cls, real, buff, width, deci, type):
         """
         Convert a GX real to a time string.
         """
-        p2.value = gxapi_cy.WrapSTR.format_time(GXContext._get_tls_geo(), p1, p2.value.encode(), p4, p5, p6)
+        buff.value = gxapi_cy.WrapSTR.format_time(GXContext._get_tls_geo(), real, buff.value.encode(), width, deci, type)
         
 
 
@@ -257,7 +257,7 @@ class GXSTR:
 
 
     @classmethod
-    def escape(cls, p1, p3):
+    def escape(cls, str_val, opt):
         """
         Convert/replace escape sequences in strings.
 
@@ -282,33 +282,33 @@ class GXSTR:
         a user unput string to \\" so the string can be placed in a tokenized
         string.
         """
-        p1.value = gxapi_cy.WrapSTR.escape(GXContext._get_tls_geo(), p1.value.encode(), p3)
+        str_val.value = gxapi_cy.WrapSTR.escape(GXContext._get_tls_geo(), str_val.value.encode(), opt)
         
 
 
 
     @classmethod
-    def char_(cls, p1):
+    def char_(cls, str_val):
         """
         Returns the ASCII value of a character.
         """
-        ret_val = gxapi_cy.WrapSTR.char_(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapSTR.char_(GXContext._get_tls_geo(), str_val.encode())
         return ret_val
 
 
 
     @classmethod
-    def char_n(cls, p1, p2, p3):
+    def char_n(cls, str_val, c, max):
         """
         Returns the ASCII value of the n'th character.
         """
-        ret_val = gxapi_cy.WrapSTR.char_n(GXContext._get_tls_geo(), p1.encode(), p2, p3)
+        ret_val = gxapi_cy.WrapSTR.char_n(GXContext._get_tls_geo(), str_val.encode(), c, max)
         return ret_val
 
 
 
     @classmethod
-    def justify(cls, p1, p2, p3, p4):
+    def justify(cls, in_str, out_str, width, just):
         """
         Justify a string
 
@@ -317,13 +317,13 @@ class GXSTR:
         If the string is too big to fit in the number of display characters,
         the output string will be "**" justified as specified.
         """
-        p2.value = gxapi_cy.WrapSTR.justify(GXContext._get_tls_geo(), p1.encode(), p2.value.encode(), p3, p4)
+        out_str.value = gxapi_cy.WrapSTR.justify(GXContext._get_tls_geo(), in_str.encode(), out_str.value.encode(), width, just)
         
 
 
 
     @classmethod
-    def replacei_match_string(cls, p1, p2, p3):
+    def replacei_match_string(cls, istr, old, p3):
         """
         Replaces all occurances of match string by replacement string with case insensitive.
 
@@ -333,13 +333,13 @@ class GXSTR:
         then the string to replace is removed from the
         input string, and the string is shortened.
         """
-        p1.value = gxapi_cy.WrapSTR.replacei_match_string(GXContext._get_tls_geo(), p1.value.encode(), p2.encode(), p3.encode())
+        istr.value = gxapi_cy.WrapSTR.replacei_match_string(GXContext._get_tls_geo(), istr.value.encode(), old.encode(), p3.encode())
         
 
 
 
     @classmethod
-    def replace_match_string(cls, p1, p2, p3):
+    def replace_match_string(cls, istr, old, p3):
         """
         Replaces all occurances of match string by replacement string with case sensitive.
 
@@ -349,23 +349,23 @@ class GXSTR:
         then the string to replace is removed from the
         input string, and the string is shortened.
         """
-        p1.value = gxapi_cy.WrapSTR.replace_match_string(GXContext._get_tls_geo(), p1.value.encode(), p2.encode(), p3.encode())
+        istr.value = gxapi_cy.WrapSTR.replace_match_string(GXContext._get_tls_geo(), istr.value.encode(), old.encode(), p3.encode())
         
 
 
 
     @classmethod
-    def set_char_n(cls, p1, p2, p4):
+    def set_char_n(cls, str_val, c, ascii):
         """
         Set the n'th character of a string using an ASCII value
         """
-        p1.value = gxapi_cy.WrapSTR.set_char_n(GXContext._get_tls_geo(), p1.value.encode(), p2, p4)
+        str_val.value = gxapi_cy.WrapSTR.set_char_n(GXContext._get_tls_geo(), str_val.value.encode(), c, ascii)
         
 
 
 
     @classmethod
-    def split_string(cls, p1, p2, p3):
+    def split_string(cls, origstr, ch, split):
         """
         Splits a string in two on a character.
 
@@ -382,43 +382,43 @@ class GXSTR:
         This function is mainly intended to separate comments
         from control file strings.
         """
-        p1.value, p3.value = gxapi_cy.WrapSTR.split_string(GXContext._get_tls_geo(), p1.value.encode(), p2.encode(), p3.value.encode())
+        origstr.value, split.value = gxapi_cy.WrapSTR.split_string(GXContext._get_tls_geo(), origstr.value.encode(), ch.encode(), split.value.encode())
         
 
 
 
     @classmethod
-    def strcat(cls, p1, p2):
+    def strcat(cls, dest, orig):
         """
         This method contatinates a string.
         """
-        p1.value = gxapi_cy.WrapSTR.strcat(GXContext._get_tls_geo(), p1.value.encode(), p2.encode())
+        dest.value = gxapi_cy.WrapSTR.strcat(GXContext._get_tls_geo(), dest.value.encode(), orig.encode())
         
 
 
 
     @classmethod
-    def strcmp(cls, p1, p2, p3):
+    def strcmp(cls, first, second, mode):
         """
         This method compares two strings and returns these values
         """
-        ret_val = gxapi_cy.WrapSTR.strcmp(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3)
+        ret_val = gxapi_cy.WrapSTR.strcmp(GXContext._get_tls_geo(), first.encode(), second.encode(), mode)
         return ret_val
 
 
 
     @classmethod
-    def strcpy(cls, p1, p2):
+    def strcpy(cls, dest, orig):
         """
         This method copies a string into another string.
         """
-        p1.value = gxapi_cy.WrapSTR.strcpy(GXContext._get_tls_geo(), p1.value.encode(), p2.encode())
+        dest.value = gxapi_cy.WrapSTR.strcpy(GXContext._get_tls_geo(), dest.value.encode(), orig.encode())
         
 
 
 
     @classmethod
-    def stri_mask(cls, p1, p2):
+    def stri_mask(cls, mask, test):
         """
         Case insensitive comparison of two strings.
 
@@ -430,13 +430,13 @@ class GXSTR:
         
         Test is case insensitive
         """
-        ret_val = gxapi_cy.WrapSTR.stri_mask(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        ret_val = gxapi_cy.WrapSTR.stri_mask(GXContext._get_tls_geo(), mask.encode(), test.encode())
         return ret_val
 
 
 
     @classmethod
-    def strins(cls, p1, p2, p3):
+    def strins(cls, dest, ins, orig):
         """
         This method inserts a string at a specified position.
 
@@ -445,23 +445,23 @@ class GXSTR:
         If the specified position does not fall within the current string
         the source string will simply be Concatenated.
         """
-        p1.value = gxapi_cy.WrapSTR.strins(GXContext._get_tls_geo(), p1.value.encode(), p2, p3.encode())
+        dest.value = gxapi_cy.WrapSTR.strins(GXContext._get_tls_geo(), dest.value.encode(), ins, orig.encode())
         
 
 
 
     @classmethod
-    def strlen(cls, p1):
+    def strlen(cls, str_val):
         """
         Returns the length of a string.
         """
-        ret_val = gxapi_cy.WrapSTR.strlen(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapSTR.strlen(GXContext._get_tls_geo(), str_val.encode())
         return ret_val
 
 
 
     @classmethod
-    def str_mask(cls, p1, p2):
+    def str_mask(cls, mask, test):
         """
         Case sensitive comparison of two strings.
 
@@ -473,13 +473,13 @@ class GXSTR:
         
         Test is case sensitive
         """
-        ret_val = gxapi_cy.WrapSTR.str_mask(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        ret_val = gxapi_cy.WrapSTR.str_mask(GXContext._get_tls_geo(), mask.encode(), test.encode())
         return ret_val
 
 
 
     @classmethod
-    def str_min(cls, p1):
+    def str_min(cls, str_val):
         """
         Remove spaces and tabs and return length
 
@@ -491,43 +491,43 @@ class GXSTR:
         name will be altered. Instead, use `str_min2`, or use
         `GXSYS.file_exist` to see if the file actually exists.
         """
-        ret_val, p1.value = gxapi_cy.WrapSTR.str_min(GXContext._get_tls_geo(), p1.value.encode())
+        ret_val, str_val.value = gxapi_cy.WrapSTR.str_min(GXContext._get_tls_geo(), str_val.value.encode())
         return ret_val
 
 
 
     @classmethod
-    def str_min2(cls, p1):
+    def str_min2(cls, str_val):
         """
         Length less spaces and tabs, string unchanged.
         """
-        ret_val = gxapi_cy.WrapSTR.str_min2(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapSTR.str_min2(GXContext._get_tls_geo(), str_val.encode())
         return ret_val
 
 
 
     @classmethod
-    def strncmp(cls, p1, p2, p3, p4):
+    def strncmp(cls, first, second, n_char, mode):
         """
         Compares two strings to a given number of characters.
         """
-        ret_val = gxapi_cy.WrapSTR.strncmp(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3, p4)
+        ret_val = gxapi_cy.WrapSTR.strncmp(GXContext._get_tls_geo(), first.encode(), second.encode(), n_char, mode)
         return ret_val
 
 
 
     @classmethod
-    def str_str(cls, p1, p2, p3):
+    def str_str(cls, str_val, sub, mode):
         """
         Scan a string for the occurrence of a given substring.
         """
-        ret_val = gxapi_cy.WrapSTR.str_str(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3)
+        ret_val = gxapi_cy.WrapSTR.str_str(GXContext._get_tls_geo(), str_val.encode(), sub.encode(), mode)
         return ret_val
 
 
 
     @classmethod
-    def substr(cls, p1, p3, p4, p5):
+    def substr(cls, dest, orig, start, length):
         """
         Extract part of a string.
 
@@ -537,43 +537,43 @@ class GXSTR:
         requested length if the substring is not fully enclosed
         in the origin string.
         """
-        p1.value = gxapi_cy.WrapSTR.substr(GXContext._get_tls_geo(), p1.value.encode(), p3.encode(), p4, p5)
+        dest.value = gxapi_cy.WrapSTR.substr(GXContext._get_tls_geo(), dest.value.encode(), orig.encode(), start, length)
         
 
 
 
     @classmethod
-    def to_lower(cls, p1):
+    def to_lower(cls, str_val):
         """
         Convert a string to lower case.
         """
-        p1.value = gxapi_cy.WrapSTR.to_lower(GXContext._get_tls_geo(), p1.value.encode())
+        str_val.value = gxapi_cy.WrapSTR.to_lower(GXContext._get_tls_geo(), str_val.value.encode())
         
 
 
 
     @classmethod
-    def to_upper(cls, p1):
+    def to_upper(cls, str_val):
         """
         Convert a string to upper case.
         """
-        p1.value = gxapi_cy.WrapSTR.to_upper(GXContext._get_tls_geo(), p1.value.encode())
+        str_val.value = gxapi_cy.WrapSTR.to_upper(GXContext._get_tls_geo(), str_val.value.encode())
         
 
 
 
     @classmethod
-    def xyz_line(cls, p1, p2):
+    def xyz_line(cls, line, xyz):
         """
         Make a valid XYZ line name from a valid `GXDB` line name.
         """
-        p2.value = gxapi_cy.WrapSTR.xyz_line(GXContext._get_tls_geo(), p1.encode(), p2.value.encode())
+        xyz.value = gxapi_cy.WrapSTR.xyz_line(GXContext._get_tls_geo(), line.encode(), xyz.value.encode())
         
 
 
 
     @classmethod
-    def make_alpha(cls, p1):
+    def make_alpha(cls, str_val):
         """
         Turns all non alpha-numeric characters into an _.
 
@@ -581,23 +581,23 @@ class GXSTR:
 
         THE STRING IS MODIFIED.
         """
-        p1.value = gxapi_cy.WrapSTR.make_alpha(GXContext._get_tls_geo(), p1.value.encode())
+        str_val.value = gxapi_cy.WrapSTR.make_alpha(GXContext._get_tls_geo(), str_val.value.encode())
         
 
 
 
     @classmethod
-    def printf(cls, p1, p3):
+    def printf(cls, dest, mask):
         """
         Variable Argument PrintF function
         """
-        p1.value = gxapi_cy.WrapSTR.printf(GXContext._get_tls_geo(), p1.value.encode(), p3.encode())
+        dest.value = gxapi_cy.WrapSTR.printf(GXContext._get_tls_geo(), dest.value.encode(), mask.encode())
         
 
 
 
     @classmethod
-    def replace_char(cls, p1, p2, p3):
+    def replace_char(cls, istr, old, new):
         """
         Replaces characters in a string.
 
@@ -606,13 +606,13 @@ class GXSTR:
         If the input replacement character is "", then the
         string will be truncated at the first character to replace.
         """
-        p1.value = gxapi_cy.WrapSTR.replace_char(GXContext._get_tls_geo(), p1.value.encode(), p2.encode(), p3.encode())
+        istr.value = gxapi_cy.WrapSTR.replace_char(GXContext._get_tls_geo(), istr.value.encode(), old.encode(), new.encode())
         
 
 
 
     @classmethod
-    def replace_char2(cls, p1, p2, p3):
+    def replace_char2(cls, istr, old, new):
         """
         Replaces characters in a string, supports simple removal.
 
@@ -622,13 +622,13 @@ class GXSTR:
         then the character to replace is removed from the
         input string, and the string is shortened.
         """
-        p1.value = gxapi_cy.WrapSTR.replace_char2(GXContext._get_tls_geo(), p1.value.encode(), p2.encode(), p3.encode())
+        istr.value = gxapi_cy.WrapSTR.replace_char2(GXContext._get_tls_geo(), istr.value.encode(), old.encode(), new.encode())
         
 
 
 
     @classmethod
-    def replace_multi_char(cls, p1, p2, p3):
+    def replace_multi_char(cls, istr, old, new):
         """
         Replaces multiple characters in a string.
 
@@ -637,13 +637,13 @@ class GXSTR:
         The number of characters to replace must equal
         the number of replacement characters.
         """
-        p1.value = gxapi_cy.WrapSTR.replace_multi_char(GXContext._get_tls_geo(), p1.value.encode(), p2.encode(), p3.encode())
+        istr.value = gxapi_cy.WrapSTR.replace_multi_char(GXContext._get_tls_geo(), istr.value.encode(), old.encode(), new.encode())
         
 
 
 
     @classmethod
-    def replace_non_ascii(cls, p1, p2):
+    def replace_non_ascii(cls, str_val, rpl):
         """
         Replace non-ASCII characters in a string.
 
@@ -652,23 +652,23 @@ class GXSTR:
         All characthers > 127 will be replaced by the first character
         of the replacement string.
         """
-        p1.value = gxapi_cy.WrapSTR.replace_non_ascii(GXContext._get_tls_geo(), p1.value.encode(), p2.encode())
+        str_val.value = gxapi_cy.WrapSTR.replace_non_ascii(GXContext._get_tls_geo(), str_val.value.encode(), rpl.encode())
         
 
 
 
     @classmethod
-    def set_char(cls, p1, p2):
+    def set_char(cls, str_val, ascii):
         """
         Set a string's first character using an ASCII value of a character.
         """
-        p1.value = gxapi_cy.WrapSTR.set_char(GXContext._get_tls_geo(), p1.value.encode(), p2)
+        str_val.value = gxapi_cy.WrapSTR.set_char(GXContext._get_tls_geo(), str_val.value.encode(), ascii)
         
 
 
 
     @classmethod
-    def trim_quotes(cls, p1):
+    def trim_quotes(cls, str_val):
         """
         Remove double quotes.
 
@@ -683,13 +683,13 @@ class GXSTR:
         the backslash is deleted. These quotes are NOT treated as
         delimiters.
         """
-        p1.value = gxapi_cy.WrapSTR.trim_quotes(GXContext._get_tls_geo(), p1.value.encode())
+        str_val.value = gxapi_cy.WrapSTR.trim_quotes(GXContext._get_tls_geo(), str_val.value.encode())
         
 
 
 
     @classmethod
-    def trim_space(cls, p1, p2):
+    def trim_space(cls, str_val, trim):
         """
         Remove leading and/or trailing whitespace.
 
@@ -699,13 +699,13 @@ class GXSTR:
         Whitespace characters are defined as space, tab, carriage return,
         new line, vertical tab or formfeed (0x09 to 0x0D, 0x20)
         """
-        p1.value = gxapi_cy.WrapSTR.trim_space(GXContext._get_tls_geo(), p1.value.encode(), p2)
+        str_val.value = gxapi_cy.WrapSTR.trim_space(GXContext._get_tls_geo(), str_val.value.encode(), trim)
         
 
 
 
     @classmethod
-    def un_quote(cls, p1):
+    def un_quote(cls, str_val):
         """
         Remove double quotes from string
 
@@ -717,7 +717,7 @@ class GXSTR:
         Both first and last characters must be quotes for the
         triming to take place.
         """
-        p1.value = gxapi_cy.WrapSTR.un_quote(GXContext._get_tls_geo(), p1.value.encode())
+        str_val.value = gxapi_cy.WrapSTR.un_quote(GXContext._get_tls_geo(), str_val.value.encode())
         
 
 
@@ -727,7 +727,7 @@ class GXSTR:
 
 
     @classmethod
-    def gen_group_name(cls, p1, p2, p3, p4):
+    def gen_group_name(cls, istr1, p2, p3, p4):
         """
         Generate a group name string
         from type string, database and channel(optional) strings..
@@ -745,7 +745,7 @@ class GXSTR:
 
             GenNewGroupName_MVIEW
         """
-        p4.value = gxapi_cy.WrapSTR.gen_group_name(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4.value.encode())
+        p4.value = gxapi_cy.WrapSTR.gen_group_name(GXContext._get_tls_geo(), istr1.encode(), p2.encode(), p3.encode(), p4.value.encode())
         
 
 
@@ -755,7 +755,7 @@ class GXSTR:
 
 
     @classmethod
-    def count_tokens(cls, p1, p2):
+    def count_tokens(cls, str_val, delims):
         """
         Counts number of tokens.
 
@@ -768,13 +768,13 @@ class GXSTR:
         DO NOT use this function except in GXC code. The corresponding
         `get_token` function will not operate correctly in GX.Net code.
         """
-        ret_val = gxapi_cy.WrapSTR.count_tokens(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        ret_val = gxapi_cy.WrapSTR.count_tokens(GXContext._get_tls_geo(), str_val.encode(), delims.encode())
         return ret_val
 
 
 
     @classmethod
-    def get_token(cls, p1, p3, p4):
+    def get_token(cls, dest, orig, tok):
         """
         Get a token from a tokenized string.
 
@@ -793,7 +793,7 @@ class GXSTR:
 
             `tokens`, GetToken_STR
         """
-        p1.value = gxapi_cy.WrapSTR.get_token(GXContext._get_tls_geo(), p1.value.encode(), p3.encode(), p4)
+        dest.value = gxapi_cy.WrapSTR.get_token(GXContext._get_tls_geo(), dest.value.encode(), orig.encode(), tok)
         
 
 
@@ -845,7 +845,7 @@ class GXSTR:
 
 
     @classmethod
-    def tokens(cls, p1, p2):
+    def tokens(cls, str_val, delims):
         """
         Tokenize a string
 
@@ -862,13 +862,13 @@ class GXSTR:
 
             `tokens2`, GetToken_STR
         """
-        ret_val, p1.value = gxapi_cy.WrapSTR.tokens(GXContext._get_tls_geo(), p1.value.encode(), p2.encode())
+        ret_val, str_val.value = gxapi_cy.WrapSTR.tokens(GXContext._get_tls_geo(), str_val.value.encode(), delims.encode())
         return ret_val
 
 
 
     @classmethod
-    def tokens2(cls, p1, p2, p3, p4, p5):
+    def tokens2(cls, str_val, soft, hard, esc, quote):
         """
         General tokenize a string
 
@@ -880,13 +880,13 @@ class GXSTR:
         DO NOT use this function except in GXC code. The corresponding
         `get_token` function will not operate correctly in GX.Net code.
         """
-        ret_val, p1.value = gxapi_cy.WrapSTR.tokens2(GXContext._get_tls_geo(), p1.value.encode(), p2.encode(), p3.encode(), p4.encode(), p5.encode())
+        ret_val, str_val.value = gxapi_cy.WrapSTR.tokens2(GXContext._get_tls_geo(), str_val.value.encode(), soft.encode(), hard.encode(), esc.encode(), quote.encode())
         return ret_val
 
 
 
     @classmethod
-    def parse_list(cls, p1, p2):
+    def parse_list(cls, str_val, gvv):
         """
         Parse a tokenized list to get a selection list.
 
@@ -900,7 +900,7 @@ class GXSTR:
         Only values from 0 to one less than the buffer length
         are used.  Out-of-range values are ignored.
         """
-        gxapi_cy.WrapSTR.parse_list(GXContext._get_tls_geo(), p1.encode(), p2._wrapper)
+        gxapi_cy.WrapSTR.parse_list(GXContext._get_tls_geo(), str_val.encode(), gvv._wrapper)
         
 
 

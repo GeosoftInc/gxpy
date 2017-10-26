@@ -58,17 +58,17 @@ class GXWA:
 
 
 
-    def puts(self, p2):
+    def puts(self, str_val):
         """
         Writes a string to the file.
         """
-        self._wrapper.puts(p2.encode())
+        self._wrapper.puts(str_val.encode())
         
 
 
 
     @classmethod
-    def create(cls, p1, p2):
+    def create(cls, file, append):
         """
         Creates an ASCII file to write to.
 
@@ -76,13 +76,13 @@ class GXWA:
 
         ANSI Encoding is assumed, See `create_ex` to override this.
         """
-        ret_val = gxapi_cy.WrapWA.create(GXContext._get_tls_geo(), p1.encode(), p2)
+        ret_val = gxapi_cy.WrapWA.create(GXContext._get_tls_geo(), file.encode(), append)
         return GXWA(ret_val)
 
 
 
     @classmethod
-    def create_ex(cls, p1, p2, p3):
+    def create_ex(cls, file, append, encode):
         """
         Creates an ASCII file to write to.
 
@@ -93,13 +93,13 @@ class GXWA:
         montaj engine that greatly increased the number of symbols that can be used. The `WA_ENCODE` constants
         were introduce that controls how text are written to files on disk with the `GXWA` class.
         """
-        ret_val = gxapi_cy.WrapWA.create_ex(GXContext._get_tls_geo(), p1.encode(), p2, p3)
+        ret_val = gxapi_cy.WrapWA.create_ex(GXContext._get_tls_geo(), file.encode(), append, encode)
         return GXWA(ret_val)
 
 
 
     @classmethod
-    def create_sbf(cls, p1, p2, p3):
+    def create_sbf(cls, sbf, file, append):
         """
         Creates an ASCII file to write to in an `GXSBF`.
 
@@ -107,13 +107,13 @@ class GXWA:
 
         See sbf.gxh. ANSI Encoding is assumed, See `create_sbf_ex` to override this.
         """
-        ret_val = gxapi_cy.WrapWA.create_sbf(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3)
+        ret_val = gxapi_cy.WrapWA.create_sbf(GXContext._get_tls_geo(), sbf._wrapper, file.encode(), append)
         return GXWA(ret_val)
 
 
 
     @classmethod
-    def create_sbf_ex(cls, p1, p2, p3, p4):
+    def create_sbf_ex(cls, sbf, file, append, encode):
         """
         Creates an ASCII file to write to in an `GXSBF`.
 
@@ -125,7 +125,7 @@ class GXWA:
         montaj engine that greatly increased the number of symbols that can be used. The `WA_ENCODE` constants
         were introduce that controls how text are written to files on disk with the `GXWA` class.
         """
-        ret_val = gxapi_cy.WrapWA.create_sbf_ex(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3, p4)
+        ret_val = gxapi_cy.WrapWA.create_sbf_ex(GXContext._get_tls_geo(), sbf._wrapper, file.encode(), append, encode)
         return GXWA(ret_val)
 
 

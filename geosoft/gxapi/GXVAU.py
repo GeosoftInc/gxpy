@@ -59,7 +59,7 @@ class GXVAU:
 
 
     @classmethod
-    def prune(cls, p1, p2, p3):
+    def prune(cls, v_ap, v_vr, o):
         """
         Prune values from a `GXVA` based on reference `GXVA`
 
@@ -69,17 +69,17 @@ class GXVAU:
         that are either dummy or non-dummy in the reference
         `GXVA`
         """
-        gxapi_cy.WrapVAU.prune(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3)
+        gxapi_cy.WrapVAU.prune(GXContext._get_tls_geo(), v_ap._wrapper, v_vr._wrapper, o)
         
 
 
 
     @classmethod
-    def total_vector(cls, p1, p2, p3, p4):
+    def total_vector(cls, xva, yva, zva, tva):
         """
         Calculate total vector for X,Y and Z components
         """
-        gxapi_cy.WrapVAU.total_vector(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper)
+        gxapi_cy.WrapVAU.total_vector(GXContext._get_tls_geo(), xva._wrapper, yva._wrapper, zva._wrapper, tva._wrapper)
         
 
 

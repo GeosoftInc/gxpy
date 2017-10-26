@@ -68,11 +68,11 @@ class GXDMPPLY:
 
 
 
-    def copy(self, p2):
+    def copy(self, source):
         """
         Copy
         """
-        self._wrapper.copy(p2._wrapper)
+        self._wrapper.copy(source._wrapper)
         
 
 
@@ -90,7 +90,7 @@ class GXDMPPLY:
 
 
 
-    def get_azimuth(self, p2, p3):
+    def get_azimuth(self, p, az):
         """
         Get the azimuth of a given polygon.
 
@@ -100,23 +100,23 @@ class GXDMPPLY:
         equal to the azimuth of the normal vector plus
         90 degrees.
         """
-        p3.value = self._wrapper.get_azimuth(p2, p3.value)
+        az.value = self._wrapper.get_azimuth(p, az.value)
         
 
 
 
 
-    def get_extents(self, p2, p3, p4, p5, p6, p7):
+    def get_extents(self, p, x, y, z, w, h):
         """
         Get the center, width and height of a given polygon.
         """
-        p3.value, p4.value, p5.value, p6.value, p7.value = self._wrapper.get_extents(p2, p3.value, p4.value, p5.value, p6.value, p7.value)
+        x.value, y.value, z.value, w.value, h.value = self._wrapper.get_extents(p, x.value, y.value, z.value, w.value, h.value)
         
 
 
 
 
-    def get_joins(self, p2, p3):
+    def get_joins(self, p, vv):
         """
         Get join lines for each vertex in a specific polygon.
 
@@ -126,13 +126,13 @@ class GXDMPPLY:
         If the vertex is joined, then the index of the join line (1 to NJoins)
         is returned.
         """
-        self._wrapper.get_joins(p2, p3._wrapper)
+        self._wrapper.get_joins(p, vv._wrapper)
         
 
 
 
 
-    def get_normal_vectors(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+    def get_normal_vectors(self, p, x1, y1, z1, x2, y2, z2, x3, y3, z3):
         """
         Get the normal vectors of a given polygon.
 
@@ -144,13 +144,13 @@ class GXDMPPLY:
         "down-dip" direction.
         The third is the normal vector to the polygon plane.
         """
-        p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value, p10.value, p11.value = self._wrapper.get_normal_vectors(p2, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value, p10.value, p11.value)
+        x1.value, y1.value, z1.value, x2.value, y2.value, z2.value, x3.value, y3.value, z3.value = self._wrapper.get_normal_vectors(p, x1.value, y1.value, z1.value, x2.value, y2.value, z2.value, x3.value, y3.value, z3.value)
         
 
 
 
 
-    def get_poly(self, p2, p3, p4, p5):
+    def get_poly(self, p, v_vx, v_vy, v_vz):
         """
         Get a specific polygon from a `GXDMPPLY` object.
 
@@ -158,13 +158,13 @@ class GXDMPPLY:
 
         Get the number of points from the `GXVV` length.
         """
-        self._wrapper.get_poly(p2, p3._wrapper, p4._wrapper, p5._wrapper)
+        self._wrapper.get_poly(p, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
         
 
 
 
 
-    def get_swing(self, p2, p3):
+    def get_swing(self, p, az):
         """
         Get the swing of a given polygon.
 
@@ -174,17 +174,17 @@ class GXDMPPLY:
         equal to zero for vertical plates, and increasing
         as the normal vector goes from horizontal upward.
         """
-        p3.value = self._wrapper.get_swing(p2, p3.value)
+        az.value = self._wrapper.get_swing(p, az.value)
         
 
 
 
 
-    def get_vertex(self, p2, p3, p4, p5, p6):
+    def get_vertex(self, p, v, x, y, z):
         """
         Get a vertex location from a `GXDMPPLY` object.
         """
-        p4.value, p5.value, p6.value = self._wrapper.get_vertex(p2, p3, p4.value, p5.value, p6.value)
+        x.value, y.value, z.value = self._wrapper.get_vertex(p, v, x.value, y.value, z.value)
         
 
 
@@ -215,7 +215,7 @@ class GXDMPPLY:
 
 
 
-    def num_vertices(self, p2):
+    def num_vertices(self, p):
         """
         Get the number of vertices in a polygon.
 
@@ -224,33 +224,33 @@ class GXDMPPLY:
         The value returned is the "NV" used in function descriptions
         below.
         """
-        ret_val = self._wrapper.num_vertices(p2)
+        ret_val = self._wrapper.num_vertices(p)
         return ret_val
 
 
 
 
-    def load(self, p2):
+    def load(self, file):
         """
         Loads a Datamine polygon file.
         """
-        self._wrapper.load(p2.encode())
+        self._wrapper.load(file.encode())
         
 
 
 
 
-    def move_vertex(self, p2, p3, p4, p5, p6):
+    def move_vertex(self, p, v, x, y, z):
         """
         Moves a vertex and any associated lines.
         """
-        self._wrapper.move_vertex(p2, p3, p4, p5, p6)
+        self._wrapper.move_vertex(p, v, x, y, z)
         
 
 
 
 
-    def project_poly(self, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+    def project_poly(self, p, xp, yp, zp, az, swing, v_vx, v_vy, v_vz):
         """
         Project a polygon onto a vertical plane.
 
@@ -263,13 +263,13 @@ class GXDMPPLY:
                           Y - "vertical" in plane (can be a swing)
                           Z - horizontal, "perpendicular" to plane (RH)
         """
-        self._wrapper.project_poly(p2, p3, p4, p5, p6, p7, p8._wrapper, p9._wrapper, p10._wrapper)
+        self._wrapper.project_poly(p, xp, yp, zp, az, swing, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
         
 
 
 
 
-    def re_project_poly(self, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+    def re_project_poly(self, p, xp, yp, zp, az, v_vx, v_vy, v_vx3, v_vy3, v_vz3):
         """
         Recover polygon locations from 2D locations on vertical plane.
 
@@ -280,23 +280,23 @@ class GXDMPPLY:
         Input the 2D locations on the projected vertical plane. These locations
         are projected back onto the original polygon plane.
         """
-        self._wrapper.re_project_poly(p2, p3, p4, p5, p6, p7._wrapper, p8._wrapper, p9._wrapper, p10._wrapper, p11._wrapper)
+        self._wrapper.re_project_poly(p, xp, yp, zp, az, v_vx._wrapper, v_vy._wrapper, v_vx3._wrapper, v_vy3._wrapper, v_vz3._wrapper)
         
 
 
 
 
-    def save(self, p2):
+    def save(self, file):
         """
         Save to a Datamine polygon file
         """
-        self._wrapper.save(p2.encode())
+        self._wrapper.save(file.encode())
         
 
 
 
 
-    def set_poly(self, p2, p3, p4, p5):
+    def set_poly(self, p, v_vx, v_vy, v_vz):
         """
         Set a specific polygon into a `GXDMPPLY` object.
 
@@ -304,7 +304,7 @@ class GXDMPPLY:
 
         Get the number of points from the `GXVV` length.
         """
-        self._wrapper.set_poly(p2, p3._wrapper, p4._wrapper, p5._wrapper)
+        self._wrapper.set_poly(p, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
         
 
 

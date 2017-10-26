@@ -61,7 +61,7 @@ class GXIGRF:
 
 
 
-    def calc(self, p2, p3, p4, p5, p6, p7):
+    def calc(self, el, lon, lat, str_val, inc, dec):
         """
         Calculate `GXIGRF` data for a given `GXIGRF` model.
 
@@ -71,13 +71,13 @@ class GXIGRF:
         for a given `GXIGRF` model. The model used will be the same as that
         obtained with `create`.
         """
-        p5.value, p6.value, p7.value = self._wrapper.calc(p2, p3, p4, p5.value, p6.value, p7.value)
+        str_val.value, inc.value, dec.value = self._wrapper.calc(el, lon, lat, str_val.value, inc.value, dec.value)
         
 
 
 
 
-    def calc_vv(self, p2, p3, p4, p5, p6, p7):
+    def calc_vv(self, gv_vel, gv_vlon, gv_vlat, gv_vfs, gv_vinc, gv_vdec):
         """
         Calculate `GXIGRF` data `GXVV`'s for a given `GXIGRF` model.
 
@@ -95,13 +95,13 @@ class GXIGRF:
         These values will be converted to the types contained in the
         output `GXVV`'s.
         """
-        self._wrapper.calc_vv(p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6._wrapper, p7._wrapper)
+        self._wrapper.calc_vv(gv_vel._wrapper, gv_vlon._wrapper, gv_vlat._wrapper, gv_vfs._wrapper, gv_vinc._wrapper, gv_vdec._wrapper)
         
 
 
 
     @classmethod
-    def create(cls, p1, p2, p3):
+    def create(cls, date, year, filename):
         """
         Create an `GXIGRF`.
 
@@ -111,13 +111,13 @@ class GXIGRF:
         the `GXIGRF` year nearest to the line's date will
         be used. Otherwise, the specified year is used.
         """
-        ret_val = gxapi_cy.WrapIGRF.create(GXContext._get_tls_geo(), p1, p2, p3.encode())
+        ret_val = gxapi_cy.WrapIGRF.create(GXContext._get_tls_geo(), date, year, filename.encode())
         return GXIGRF(ret_val)
 
 
 
     @classmethod
-    def date_range(cls, p1, p2, p3):
+    def date_range(cls, file_name, min, max):
         """
         Determine the range of years covered by an `GXIGRF` or DGRF file
 
@@ -127,7 +127,7 @@ class GXIGRF:
         up only to calculate for years within the date range, and will
         return an error otherwise.
         """
-        p2.value, p3.value = gxapi_cy.WrapIGRF.date_range(GXContext._get_tls_geo(), p1.encode(), p2.value, p3.value)
+        min.value, max.value = gxapi_cy.WrapIGRF.date_range(GXContext._get_tls_geo(), file_name.encode(), min.value, max.value)
         
 
 

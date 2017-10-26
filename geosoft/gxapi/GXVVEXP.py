@@ -59,12 +59,12 @@ class GXVVEXP:
 
 
 
-    def add_vv(self, p2, p3):
+    def add_vv(self, vv, var):
         """
         This method adds a `GXVV` to the `GXVVEXP` object with a
         variable name.
         """
-        self._wrapper.add_vv(p2._wrapper, p3.encode())
+        self._wrapper.add_vv(vv._wrapper, var.encode())
         
 
 
@@ -82,11 +82,11 @@ class GXVVEXP:
 
 
 
-    def do_formula(self, p2, p3):
+    def do_formula(self, formula, max_len):
         """
         This method runs a formula on the grids.
         """
-        self._wrapper.do_formula(p2.encode(), p3)
+        self._wrapper.do_formula(formula.encode(), max_len)
         
 
 

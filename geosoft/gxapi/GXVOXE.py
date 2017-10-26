@@ -59,11 +59,11 @@ class GXVOXE:
 
 
     @classmethod
-    def create(cls, p1):
+    def create(cls, vox):
         """
         Create a handle to an `GXVOXE` object
         """
-        ret_val = gxapi_cy.WrapVOXE.create(GXContext._get_tls_geo(), p1._wrapper)
+        ret_val = gxapi_cy.WrapVOXE.create(GXContext._get_tls_geo(), vox._wrapper)
         return GXVOXE(ret_val)
 
 
@@ -71,31 +71,31 @@ class GXVOXE:
 
 
 
-    def profile(self, p2, p3, p4, p5, p6):
+    def profile(self, v_vx, v_vy, v_vz, v_vd, interp):
         """
         Extract a profile of data along points provided.
         """
-        self._wrapper.profile(p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6)
+        self._wrapper.profile(v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, v_vd._wrapper, interp)
         
 
 
 
 
-    def value(self, p2, p3, p4, p5):
+    def value(self, x, y, z, interp):
         """
         Get a value at a specific point
         """
-        ret_val = self._wrapper.value(p2, p3, p4, p5)
+        ret_val = self._wrapper.value(x, y, z, interp)
         return ret_val
 
 
 
 
-    def vector(self, p2, p3, p4, p5, p6, p7, p8, p9):
+    def vector(self, ox, oy, oz, vx, vy, vz, vv, interp):
         """
         Extract a profile of data along a vector
         """
-        self._wrapper.vector(p2, p3, p4, p5, p6, p7, p8._wrapper, p9)
+        self._wrapper.vector(ox, oy, oz, vx, vy, vz, vv._wrapper, interp)
         
 
 

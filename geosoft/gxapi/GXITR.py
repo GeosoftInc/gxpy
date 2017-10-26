@@ -82,7 +82,7 @@ class GXITR:
 
 
 
-    def change_brightness(self, p2):
+    def change_brightness(self, brt):
         """
         Change the brightness.
 
@@ -92,13 +92,13 @@ class GXITR:
         -1.0 to 0.0 makes colors darker, -1.0 is black
         0.0 to 1.0 makes colors lighter, 1.0 is white
         """
-        self._wrapper.change_brightness(p2)
+        self._wrapper.change_brightness(brt)
         
 
 
 
 
-    def color_vv(self, p2, p3):
+    def color_vv(self, v_vd, v_vc):
         """
         Get color transform of a `GXVV`.
 
@@ -107,17 +107,17 @@ class GXITR:
         If the input value is a dummy, then the output color
         is 0 (no color).
         """
-        self._wrapper.color_vv(p2._wrapper, p3._wrapper)
+        self._wrapper.color_vv(v_vd._wrapper, v_vc._wrapper)
         
 
 
 
 
-    def copy(self, p2):
+    def copy(self, it_rs):
         """
         Copies ITRs
         """
-        self._wrapper.copy(p2._wrapper)
+        self._wrapper.copy(it_rs._wrapper)
         
 
 
@@ -133,17 +133,17 @@ class GXITR:
 
 
     @classmethod
-    def create_file(cls, p1):
+    def create_file(cls, file):
         """
         Create an `GXITR` object from an itr, tbl, zon, lut file.
         """
-        ret_val = gxapi_cy.WrapITR.create_file(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapITR.create_file(GXContext._get_tls_geo(), file.encode())
         return GXITR(ret_val)
 
 
 
     @classmethod
-    def create_img(cls, p1, p2, p3, p4):
+    def create_img(cls, img, tbl, zone, contour):
         """
         Create an `GXITR` for an image.
 
@@ -157,27 +157,27 @@ class GXITR:
         the same name as the original grid but with the suffux "_s"
         added to the name part of the grid.
         """
-        ret_val = gxapi_cy.WrapITR.create_img(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3, p4)
+        ret_val = gxapi_cy.WrapITR.create_img(GXContext._get_tls_geo(), img._wrapper, tbl.encode(), zone, contour)
         return GXITR(ret_val)
 
 
 
     @classmethod
-    def create_map(cls, p1, p2):
+    def create_map(cls, map, name):
         """
         Create `GXITR` from Map with `GXAGG` Group name.
         """
-        ret_val = gxapi_cy.WrapITR.create_map(GXContext._get_tls_geo(), p1._wrapper, p2.encode())
+        ret_val = gxapi_cy.WrapITR.create_map(GXContext._get_tls_geo(), map._wrapper, name.encode())
         return GXITR(ret_val)
 
 
 
     @classmethod
-    def create_s(cls, p1):
+    def create_s(cls, bf):
         """
         Create an `GXITR` object from a `GXBF`
         """
-        ret_val = gxapi_cy.WrapITR.create_s(GXContext._get_tls_geo(), p1._wrapper)
+        ret_val = gxapi_cy.WrapITR.create_s(GXContext._get_tls_geo(), bf._wrapper)
         return GXITR(ret_val)
 
 
@@ -185,17 +185,17 @@ class GXITR:
 
 
 
-    def equal_area(self, p2, p3):
+    def equal_area(self, st, contour):
         """
         Calculate an equal area transform.
         """
-        self._wrapper.equal_area(p2._wrapper, p3)
+        self._wrapper.equal_area(st._wrapper, contour)
         
 
 
 
 
-    def get_data_limits(self, p2, p3):
+    def get_data_limits(self, min, max):
         """
         Get `GXITR` max/min data limits.
 
@@ -208,7 +208,7 @@ class GXITR:
         This is NOT true of all `GXITR` objects, and in
         those cases dummy values will be returned.
         """
-        p2.value, p3.value = self._wrapper.get_data_limits(p2.value, p3.value)
+        min.value, max.value = self._wrapper.get_data_limits(min.value, max.value)
         
 
 
@@ -224,7 +224,7 @@ class GXITR:
 
 
 
-    def get_zone_color(self, p2, p3):
+    def get_zone_color(self, zone, color):
         """
         Get the color in a zone of the `GXITR`
 
@@ -232,17 +232,17 @@ class GXITR:
 
         Valid indices are 0 to N-1, where N is the size of the `GXITR`.
         """
-        p3.value = self._wrapper.get_zone_color(p2, p3.value)
+        color.value = self._wrapper.get_zone_color(zone, color.value)
         
 
 
 
 
-    def color_value(self, p2):
+    def color_value(self, val):
         """
         Transform single data value to color
         """
-        ret_val = self._wrapper.color_value(p2)
+        ret_val = self._wrapper.color_value(val)
         return ret_val
 
 
@@ -273,27 +273,27 @@ class GXITR:
 
 
 
-    def linear(self, p2, p3, p4):
+    def linear(self, min, max, contour):
         """
         Calculate a linear transform.
         """
-        self._wrapper.linear(p2, p3, p4)
+        self._wrapper.linear(min, max, contour)
         
 
 
 
 
-    def load_a(self, p2):
+    def load_a(self, file):
         """
         Load to an ASCII file, ZON, TBL or ER-Mapper LUT
         """
-        self._wrapper.load_a(p2.encode())
+        self._wrapper.load_a(file.encode())
         
 
 
 
 
-    def log_linear(self, p2, p3, p4):
+    def log_linear(self, min, max, contour):
         """
         Calculate a log transform.
 
@@ -301,27 +301,27 @@ class GXITR:
 
         The function name is a misnomer. This is a pure log transform.
         """
-        self._wrapper.log_linear(p2, p3, p4)
+        self._wrapper.log_linear(min, max, contour)
         
 
 
 
 
-    def normal(self, p2, p3, p4, p5):
+    def normal(self, std_dev, mean, exp, contour):
         """
         Calculate a normal distribution transform.
         """
-        self._wrapper.normal(p2, p3, p4, p5)
+        self._wrapper.normal(std_dev, mean, exp, contour)
         
 
 
 
 
-    def power_zone(self, p2):
+    def power_zone(self, pow):
         """
         Modified `GXITR` zone values to 10 (or e) raized to the power of the values
         """
-        self._wrapper.power_zone(p2)
+        self._wrapper.power_zone(pow)
         
 
 
@@ -347,7 +347,7 @@ class GXITR:
 
 
 
-    def get_zone_value(self, p2):
+    def get_zone_value(self, zone):
         """
         Get the value in a zone of the `GXITR`
 
@@ -355,43 +355,43 @@ class GXITR:
 
         Valid indices are 0 to N-2, where N is the size of the `GXITR`.
         """
-        ret_val = self._wrapper.get_zone_value(p2)
+        ret_val = self._wrapper.get_zone_value(zone)
         return ret_val
 
 
 
 
-    def save_a(self, p2):
+    def save_a(self, file):
         """
         Save to an ASCII file, ZON, TBL or ER-Mapper LUT
         """
-        self._wrapper.save_a(p2.encode())
+        self._wrapper.save_a(file.encode())
         
 
 
 
 
-    def save_file(self, p2):
+    def save_file(self, file):
         """
         Save to any type (based on the extension of the input file name).
         """
-        self._wrapper.save_file(p2.encode())
+        self._wrapper.save_file(file.encode())
         
 
 
 
 
-    def serial(self, p2):
+    def serial(self, bf):
         """
         Serialize an `GXITR` to a `GXBF`
         """
-        self._wrapper.serial(p2._wrapper)
+        self._wrapper.serial(bf._wrapper)
         
 
 
 
     @classmethod
-    def set_agg_map(cls, p1, p2, p3):
+    def set_agg_map(cls, map, name, itr):
         """
         Set `GXITR` to an `GXAGG` in map
 
@@ -399,13 +399,13 @@ class GXITR:
 
         See the `create_map` function
         """
-        gxapi_cy.WrapITR.set_agg_map(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3._wrapper)
+        gxapi_cy.WrapITR.set_agg_map(GXContext._get_tls_geo(), map._wrapper, name.encode(), itr._wrapper)
         
 
 
 
 
-    def set_bright_contrast(self, p2, p3):
+    def set_bright_contrast(self, brt, con):
         """
         Set the brightness of the `GXITR` colors
 
@@ -420,43 +420,43 @@ class GXITR:
         0.0   - flat
         1.0   - full contrast (normal)
         """
-        self._wrapper.set_bright_contrast(p2, p3)
+        self._wrapper.set_bright_contrast(brt, con)
         
 
 
 
 
-    def set_color_model(self, p2):
+    def set_color_model(self, model):
         """
         Set the color model of an `GXITR`.
         """
-        self._wrapper.set_color_model(p2)
+        self._wrapper.set_color_model(model)
         
 
 
 
 
-    def set_data_limits(self, p2, p3):
+    def set_data_limits(self, min, max):
         """
         Set `GXITR` max/min data limits.
         """
-        self._wrapper.set_data_limits(p2, p3)
+        self._wrapper.set_data_limits(min, max)
         
 
 
 
 
-    def set_size(self, p2):
+    def set_size(self, zones):
         """
         Set the number of zones in an `GXITR`
         """
-        self._wrapper.set_size(p2)
+        self._wrapper.set_size(zones)
         
 
 
 
 
-    def set_zone_color(self, p2, p3):
+    def set_zone_color(self, zone, color):
         """
         Set the color in a zone of the `GXITR`
 
@@ -464,13 +464,13 @@ class GXITR:
 
         Valid indices are 0 to N-1, where N is the size of the `GXITR`.
         """
-        self._wrapper.set_zone_color(p2, p3)
+        self._wrapper.set_zone_color(zone, color)
         
 
 
 
 
-    def set_zone_value(self, p2, p3):
+    def set_zone_value(self, zone, value):
         """
         Set the value in a zone of the `GXITR`
 
@@ -478,7 +478,7 @@ class GXITR:
 
         Valid indices are 0 to N-2, where N is the size of the `GXITR`.
         """
-        self._wrapper.set_zone_value(p2, p3)
+        self._wrapper.set_zone_value(zone, value)
         
 
 

@@ -90,7 +90,7 @@ class GXKGRD:
 
 
 
-    def load_parms(self, p2):
+    def load_parms(self, file):
         """
         Retrieves a Krigrid object's control parameters from a file.
 
@@ -102,44 +102,44 @@ class GXKGRD:
         Otherwise, the control file's settings are retrieved from
         the file and loaded into the `GXKGRD` object.
         """
-        ret_val = self._wrapper.load_parms(p2.encode())
+        ret_val = self._wrapper.load_parms(file.encode())
         return ret_val
 
 
 
 
-    def run(self, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+    def run(self, zchan, in_dat, out_grd_dat, out_err_dat, in_var_name, out_var_name, vao, vi, vo):
         """
         Executes the Krigrid program, using the input channel and
         output file parameters.
         """
-        ret_val = self._wrapper.run(p2.encode(), p3._wrapper, p4._wrapper, p5._wrapper, p6.encode(), p7.encode(), p8, p9, p10)
+        ret_val = self._wrapper.run(zchan.encode(), in_dat._wrapper, out_grd_dat._wrapper, out_err_dat._wrapper, in_var_name.encode(), out_var_name.encode(), vao, vi, vo)
         return ret_val
 
 
 
     @classmethod
-    def run2(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+    def run2(cls, db, x, y, z, ctl, grd, err_grd, in_var, out_var, vao):
         """
         Executes the Krigrid program directly on a database.
         """
-        ret_val = gxapi_cy.WrapKGRD.run2(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6.encode(), p7.encode(), p8.encode(), p9.encode(), p10)
+        ret_val = gxapi_cy.WrapKGRD.run2(GXContext._get_tls_geo(), db._wrapper, x.encode(), y.encode(), z.encode(), ctl.encode(), grd.encode(), err_grd.encode(), in_var.encode(), out_var.encode(), vao)
         return ret_val
 
 
 
     @classmethod
-    def run3(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+    def run3(cls, db, x, y, z, ctl, grd, err_grd, in_var, out_var, log_file, vao):
         """
         Executes the Krigrid program directly on a database and specifies the log file
         """
-        ret_val = gxapi_cy.WrapKGRD.run3(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6.encode(), p7.encode(), p8.encode(), p9.encode(), p10.encode(), p11)
+        ret_val = gxapi_cy.WrapKGRD.run3(GXContext._get_tls_geo(), db._wrapper, x.encode(), y.encode(), z.encode(), ctl.encode(), grd.encode(), err_grd.encode(), in_var.encode(), out_var.encode(), log_file.encode(), vao)
         return ret_val
 
 
 
 
-    def save_parms(self, p2):
+    def save_parms(self, name):
         """
         Puts the Krigrid object's control parameters back into
         its control file.
@@ -149,7 +149,7 @@ class GXKGRD:
         If the control file did not previously exist, it will be
         created. Otherwise, the old file will be overwritten.
         """
-        ret_val = self._wrapper.save_parms(p2.encode())
+        ret_val = self._wrapper.save_parms(name.encode())
         return ret_val
 
 

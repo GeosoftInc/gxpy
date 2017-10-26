@@ -75,11 +75,11 @@ class GXGUI:
 
 
     @classmethod
-    def fft2_spec_filter(cls, p1, p2):
+    def fft2_spec_filter(cls, spec_file_name, con_file_name):
         """
         Interactive `GXFFT2` radially averaged power spectrum filter
         """
-        gxapi_cy.WrapGUI.fft2_spec_filter(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        gxapi_cy.WrapGUI.fft2_spec_filter(GXContext._get_tls_geo(), spec_file_name.encode(), con_file_name.encode())
         
 
 
@@ -95,11 +95,11 @@ class GXGUI:
 
 
     @classmethod
-    def get_printer_lst(cls, p1):
+    def get_printer_lst(cls, lst):
         """
         Gets a list of all printers.
         """
-        gxapi_cy.WrapGUI.get_printer_lst(GXContext._get_tls_geo(), p1._wrapper)
+        gxapi_cy.WrapGUI.get_printer_lst(GXContext._get_tls_geo(), lst._wrapper)
         
 
 
@@ -115,37 +115,37 @@ class GXGUI:
 
 
     @classmethod
-    def set_window_state(cls, p1):
+    def set_window_state(cls, state):
         """
         Changes the state of the Oasis montaj window
         """
-        gxapi_cy.WrapGUI.set_window_state(GXContext._get_tls_geo(), p1)
+        gxapi_cy.WrapGUI.set_window_state(GXContext._get_tls_geo(), state)
         
 
 
 
     @classmethod
-    def get_window_position(cls, p1, p2, p3, p4, p5):
+    def get_window_position(cls, left, top, right, bottom, state):
         """
         Get the Oasis montaj window's position state
         """
-        p1.value, p2.value, p3.value, p4.value, p5.value = gxapi_cy.WrapGUI.get_window_position(GXContext._get_tls_geo(), p1.value, p2.value, p3.value, p4.value, p5.value)
+        left.value, top.value, right.value, bottom.value, state.value = gxapi_cy.WrapGUI.get_window_position(GXContext._get_tls_geo(), left.value, top.value, right.value, bottom.value, state.value)
         
 
 
 
     @classmethod
-    def set_window_position(cls, p1, p2, p3, p4, p5):
+    def set_window_position(cls, left, top, right, bottom, state):
         """
         Get the Oasis montaj window's position and state
         """
-        gxapi_cy.WrapGUI.set_window_position(GXContext._get_tls_geo(), p1, p2, p3, p4, p5)
+        gxapi_cy.WrapGUI.set_window_position(GXContext._get_tls_geo(), left, top, right, bottom, state)
         
 
 
 
     @classmethod
-    def get_client_window_area(cls, p1, p2, p3, p4):
+    def get_client_window_area(cls, min_x, min_y, max_x, max_y):
         """
         Get the location of the Oasis montaj client window.
 
@@ -155,33 +155,33 @@ class GXGUI:
         The returned coordinates are 0,0 for the minimum X and Y and the window width
         width and height for the maximum X and Y.
         """
-        p1.value, p2.value, p3.value, p4.value = gxapi_cy.WrapGUI.get_client_window_area(GXContext._get_tls_geo(), p1.value, p2.value, p3.value, p4.value)
+        min_x.value, min_y.value, max_x.value, max_y.value = gxapi_cy.WrapGUI.get_client_window_area(GXContext._get_tls_geo(), min_x.value, min_y.value, max_x.value, max_y.value)
         
 
 
 
     @classmethod
-    def grid_stat_hist(cls, p1):
+    def grid_stat_hist(cls, grid_name):
         """
         Display Histogram of grid
         """
-        gxapi_cy.WrapGUI.grid_stat_hist(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapGUI.grid_stat_hist(GXContext._get_tls_geo(), grid_name.encode())
         
 
 
 
     @classmethod
-    def voxel_stat_hist(cls, p1):
+    def voxel_stat_hist(cls, vox_name):
         """
         Display Histogram of Voxel
         """
-        gxapi_cy.WrapGUI.voxel_stat_hist(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapGUI.voxel_stat_hist(GXContext._get_tls_geo(), vox_name.encode())
         
 
 
 
     @classmethod
-    def color_form(cls, p1, p2):
+    def color_form(cls, col, no_col):
         """
         Select a color.
 
@@ -198,13 +198,13 @@ class GXGUI:
         If this is not the case, the `C_TRANSPARENT` is converted
         to white (if "Ok" is selected) and no choice is offered.
         """
-        ret_val, p1.value = gxapi_cy.WrapGUI.color_form(GXContext._get_tls_geo(), p1.value, p2)
+        ret_val, col.value = gxapi_cy.WrapGUI.color_form(GXContext._get_tls_geo(), col.value, no_col)
         return ret_val
 
 
 
     @classmethod
-    def color_transform(cls, p1, p2):
+    def color_transform(cls, itr, st):
         """
         Define an `GXITR` of up to 8 zones.
 
@@ -214,13 +214,13 @@ class GXGUI:
         data ranges, percentiles, etc. Create it using
         `GXST.create_exact`, or be sure to enable histogram statistics.
         """
-        ret_val = gxapi_cy.WrapGUI.color_transform(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
+        ret_val = gxapi_cy.WrapGUI.color_transform(GXContext._get_tls_geo(), itr._wrapper, st._wrapper)
         return ret_val
 
 
 
     @classmethod
-    def coord_sys_wizard(cls, p1, p2, p3, p4, p5):
+    def coord_sys_wizard(cls, ipj, editable, mode, source_label, source):
         """
         Launch the coordinate system definition/display `GXGUI`.
 
@@ -232,13 +232,13 @@ class GXGUI:
         The "Data source label" and "Data source" is information displayed
         in the dialog for the user to know where the `GXIPJ` came from (e.g. "Grid: X.grd")
         """
-        ret_val = gxapi_cy.WrapGUI.coord_sys_wizard(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4.encode(), p5.encode())
+        ret_val = gxapi_cy.WrapGUI.coord_sys_wizard(GXContext._get_tls_geo(), ipj._wrapper, editable, mode, source_label.encode(), source.encode())
         return ret_val
 
 
 
     @classmethod
-    def coord_sys_wizard_licensed(cls, p1, p2, p3, p4, p5):
+    def coord_sys_wizard_licensed(cls, ipj, editable, mode, source_label, source):
         """
         Launch the coordinate system definition/display `GXGUI`.
 
@@ -247,13 +247,13 @@ class GXGUI:
         Same as `coord_sys_wizard_licensed` but will always be editable. The other
         method is not editable in the viewer while this one is.
         """
-        ret_val = gxapi_cy.WrapGUI.coord_sys_wizard_licensed(GXContext._get_tls_geo(), p1._wrapper, p2, p3, p4.encode(), p5.encode())
+        ret_val = gxapi_cy.WrapGUI.coord_sys_wizard_licensed(GXContext._get_tls_geo(), ipj._wrapper, editable, mode, source_label.encode(), source.encode())
         return ret_val
 
 
 
     @classmethod
-    def coord_sys_wizard_grid(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13):
+    def coord_sys_wizard_grid(cls, ipj, target_ipj, editable, mode, source_label, source, nx, ny, x0, y0, dx, dy, rot):
         """
         Launch the coordinate system definition/display `GXGUI`.
 
@@ -264,13 +264,13 @@ class GXGUI:
         In the tool, it is the "modified" orientation required to keep the edited projection's grid
         in the same location as it was in the target projection.
         """
-        ret_val, p9.value, p10.value, p11.value, p12.value, p13.value = gxapi_cy.WrapGUI.coord_sys_wizard_grid(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3, p4, p5.encode(), p6.encode(), p7, p8, p9.value, p10.value, p11.value, p12.value, p13.value)
+        ret_val, x0.value, y0.value, dx.value, dy.value, rot.value = gxapi_cy.WrapGUI.coord_sys_wizard_grid(GXContext._get_tls_geo(), ipj._wrapper, target_ipj._wrapper, editable, mode, source_label.encode(), source.encode(), nx, ny, x0.value, y0.value, dx.value, dy.value, rot.value)
         return ret_val
 
 
 
     @classmethod
-    def database_type(cls, p1, p2):
+    def database_type(cls, name, type):
         """
         Returns the type string of an external DAO database.
 
@@ -281,13 +281,13 @@ class GXGUI:
         returned as the type. Otherwise, a dialog appears listing the
         other valid DAO database types.
         """
-        ret_val, p2.value = gxapi_cy.WrapGUI.database_type(GXContext._get_tls_geo(), p1.encode(), p2.value.encode())
+        ret_val, type.value = gxapi_cy.WrapGUI.database_type(GXContext._get_tls_geo(), name.encode(), type.value.encode())
         return ret_val
 
 
 
     @classmethod
-    def datamine_type(cls, p1, p2):
+    def datamine_type(cls, file, type):
         """
         Returns the type of a Datamine file.
 
@@ -307,13 +307,13 @@ class GXGUI:
         dmString
         dmWireframePoint
         """
-        ret_val, p2.value = gxapi_cy.WrapGUI.datamine_type(GXContext._get_tls_geo(), p1.encode(), p2.value)
+        ret_val, type.value = gxapi_cy.WrapGUI.datamine_type(GXContext._get_tls_geo(), file.encode(), type.value)
         return ret_val
 
 
 
     @classmethod
-    def export_xyz_template_editor(cls, p1, p2, p3):
+    def export_xyz_template_editor(cls, db, template, size):
         """
         Allows the user to edit XYZ export template
         using a complex dialog. The Template name
@@ -327,25 +327,25 @@ class GXGUI:
         the current `GXDB`. Please see ExportXYXTemplateEditorEx_GUI
         for an updated function.
         """
-        ret_val = gxapi_cy.WrapGUI.export_xyz_template_editor(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3)
+        ret_val = gxapi_cy.WrapGUI.export_xyz_template_editor(GXContext._get_tls_geo(), db._wrapper, template.encode(), size)
         return ret_val
 
 
 
     @classmethod
-    def export_xyz_template_editor_ex(cls, p1, p2):
+    def export_xyz_template_editor_ex(cls, edb, template):
         """
         Allows the user to edit an XYZ export template
         using a complex dialog. The template name
         may change during editing.
         """
-        ret_val, p2.value = gxapi_cy.WrapGUI.export_xyz_template_editor_ex(GXContext._get_tls_geo(), p1._wrapper, p2.value.encode())
+        ret_val, template.value = gxapi_cy.WrapGUI.export_xyz_template_editor_ex(GXContext._get_tls_geo(), edb._wrapper, template.value.encode())
         return ret_val
 
 
 
     @classmethod
-    def file_filter_index(cls, p1):
+    def file_filter_index(cls, filter):
         """
         Return the FILE_FILTER_XXX value for a file filter string.
 
@@ -354,13 +354,13 @@ class GXGUI:
         For example, if "Database (``*.gdb``)" is input,
         then the `FILE_FILTER_GDB` value is returned.
         """
-        ret_val = gxapi_cy.WrapGUI.file_filter_index(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapGUI.file_filter_index(GXContext._get_tls_geo(), filter.encode())
         return ret_val
 
 
 
     @classmethod
-    def gcs_datum_warning_shp(cls, p1, p2):
+    def gcs_datum_warning_shp(cls, data_source, ipj):
         """
         Launch the GCS Datum Warning dialog for `GXSHP` files.
 
@@ -368,13 +368,13 @@ class GXGUI:
 
         Runs the GCS Warning dialog with one data source
         """
-        ret_val = gxapi_cy.WrapGUI.gcs_datum_warning_shp(GXContext._get_tls_geo(), p1.encode(), p2._wrapper)
+        ret_val = gxapi_cy.WrapGUI.gcs_datum_warning_shp(GXContext._get_tls_geo(), data_source.encode(), ipj._wrapper)
         return ret_val
 
 
 
     @classmethod
-    def gcs_datum_warning_shpdb_ex(cls, p1, p2, p3, p4):
+    def gcs_datum_warning_shpdb_ex(cls, source_lst, datum_from_lst, ldtlst, db):
         """
         Launch the GCS Datum Warning dialog for `GXSHP` files (Database).
 
@@ -382,13 +382,13 @@ class GXGUI:
 
         Runs the GCS Warning dialog with multiple data sources (Database)
         """
-        ret_val = gxapi_cy.WrapGUI.gcs_datum_warning_shpdb_ex(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper)
+        ret_val = gxapi_cy.WrapGUI.gcs_datum_warning_shpdb_ex(GXContext._get_tls_geo(), source_lst._wrapper, datum_from_lst._wrapper, ldtlst._wrapper, db._wrapper)
         return ret_val
 
 
 
     @classmethod
-    def gcs_datum_warning_shp_ex(cls, p1, p2, p3, p4):
+    def gcs_datum_warning_shp_ex(cls, source_lst, datum_from_lst, ldtlst, mview):
         """
         Launch the GCS Datum Warning dialog for `GXSHP` files.
 
@@ -396,13 +396,13 @@ class GXGUI:
 
         Runs the GCS Warning dialog with multiple data sources
         """
-        ret_val = gxapi_cy.WrapGUI.gcs_datum_warning_shp_ex(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper)
+        ret_val = gxapi_cy.WrapGUI.gcs_datum_warning_shp_ex(GXContext._get_tls_geo(), source_lst._wrapper, datum_from_lst._wrapper, ldtlst._wrapper, mview._wrapper)
         return ret_val
 
 
 
     @classmethod
-    def get_area_of_interest(cls, p1, p2, p3, p4, p5, p6):
+    def get_area_of_interest(cls, min_x, min_y, max_x, max_y, ply, ipj):
         """
         Get the current area of interest from the application.
 
@@ -412,13 +412,13 @@ class GXGUI:
         the defined coordinate system the user may be prompted
         by a warning and optionaly cancel the process.
         """
-        ret_val, p1.value, p2.value, p3.value, p4.value = gxapi_cy.WrapGUI.get_area_of_interest(GXContext._get_tls_geo(), p1.value, p2.value, p3.value, p4.value, p5._wrapper, p6._wrapper)
+        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = gxapi_cy.WrapGUI.get_area_of_interest(GXContext._get_tls_geo(), min_x.value, min_y.value, max_x.value, max_y.value, ply._wrapper, ipj._wrapper)
         return ret_val
 
 
 
     @classmethod
-    def get_area_of_interest_3d(cls, p1, p2, p3, p4, p5, p6, p7, p8):
+    def get_area_of_interest_3d(cls, min_x, min_y, min_z, max_x, max_y, max_z, ply, ipj):
         """
         Get the current area of interest from the application in 3D.
 
@@ -428,13 +428,13 @@ class GXGUI:
         the defined coordinate system the user may be prompted
         by a warning and optionaly cancel the process.
         """
-        ret_val, p1.value, p2.value, p3.value, p4.value, p5.value, p6.value = gxapi_cy.WrapGUI.get_area_of_interest_3d(GXContext._get_tls_geo(), p1.value, p2.value, p3.value, p4.value, p5.value, p6.value, p7._wrapper, p8._wrapper)
+        ret_val, min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = gxapi_cy.WrapGUI.get_area_of_interest_3d(GXContext._get_tls_geo(), min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value, ply._wrapper, ipj._wrapper)
         return ret_val
 
 
 
     @classmethod
-    def get_dat_defaults(cls, p1, p2, p3, p5):
+    def get_dat_defaults(cls, flags, open, ext, p5):
         """
         Return the user default extension and qualifier for grids/images.
 
@@ -447,13 +447,13 @@ class GXGUI:
         then "grd" and "GRD" are returned as the default extension
         and qualifier.
         """
-        p3.value, p5.value = gxapi_cy.WrapGUI.get_dat_defaults(GXContext._get_tls_geo(), p1, p2, p3.value.encode(), p5.value.encode())
+        ext.value, p5.value = gxapi_cy.WrapGUI.get_dat_defaults(GXContext._get_tls_geo(), flags, open, ext.value.encode(), p5.value.encode())
         
 
 
 
     @classmethod
-    def get_file_filter(cls, p1, p2, p4, p6, p8):
+    def get_file_filter(cls, file_filter, filter, mask, ext, path):
         """
         Return the defined filter, mask, extension and directory for an input filter.
 
@@ -470,13 +470,13 @@ class GXGUI:
         This function is useful for constuction open/save dialog
         file filters, especially in GX.Net functions.
         """
-        p2.value, p4.value, p6.value, p8.value = gxapi_cy.WrapGUI.get_file_filter(GXContext._get_tls_geo(), p1, p2.value.encode(), p4.value.encode(), p6.value.encode(), p8.value)
+        filter.value, mask.value, ext.value, path.value = gxapi_cy.WrapGUI.get_file_filter(GXContext._get_tls_geo(), file_filter, filter.value.encode(), mask.value.encode(), ext.value.encode(), path.value)
         
 
 
 
     @classmethod
-    def get_gs_directory(cls, p1, p2):
+    def get_gs_directory(cls, path, dir):
         """
         Return the directory path for value of `GS_DIRECTORY`.
 
@@ -489,23 +489,23 @@ class GXGUI:
         This function is useful for constuction open/save dialog
         file filters, especially in GX.Net functions.
         """
-        p2.value = gxapi_cy.WrapGUI.get_gs_directory(GXContext._get_tls_geo(), p1, p2.value.encode())
+        dir.value = gxapi_cy.WrapGUI.get_gs_directory(GXContext._get_tls_geo(), path, dir.value.encode())
         
 
 
 
     @classmethod
-    def browse_dir(cls, p1, p2, p3):
+    def browse_dir(cls, title, default, dir_path):
         """
         Browses for a specific directory.
         """
-        ret_val, p3.value = gxapi_cy.WrapGUI.browse_dir(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.value.encode())
+        ret_val, dir_path.value = gxapi_cy.WrapGUI.browse_dir(GXContext._get_tls_geo(), title.encode(), default.encode(), dir_path.value.encode())
         return ret_val
 
 
 
     @classmethod
-    def color_transform_ex(cls, p1, p2, p3, p4, p5):
+    def color_transform_ex(cls, itr, st, zones, load_save, file):
         """
         Define an `GXITR` of up to 12 zones, with file load/save buttons.
 
@@ -518,13 +518,13 @@ class GXGUI:
         button is pushed, and is updated both after the load and save buttons
         are pushed by the value input or selected by the user.
         """
-        ret_val, p5.value = gxapi_cy.WrapGUI.color_transform_ex(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3, p4, p5.value.encode())
+        ret_val, file.value = gxapi_cy.WrapGUI.color_transform_ex(GXContext._get_tls_geo(), itr._wrapper, st._wrapper, zones, load_save, file.value.encode())
         return ret_val
 
 
 
     @classmethod
-    def cumulative_percent(cls, p1, p3):
+    def cumulative_percent(cls, file, itr):
         """
         Define a percent-based `GXITR` of up to 12 zones.
 
@@ -545,13 +545,13 @@ class GXGUI:
         button is pushed, and is updated both after the load and save buttons
         are pushed by the value input or selected by the user.
         """
-        ret_val, p1.value = gxapi_cy.WrapGUI.cumulative_percent(GXContext._get_tls_geo(), p1.value.encode(), p3._wrapper)
+        ret_val, file.value = gxapi_cy.WrapGUI.cumulative_percent(GXContext._get_tls_geo(), file.value.encode(), itr._wrapper)
         return ret_val
 
 
 
     @classmethod
-    def dat_file_form(cls, p1, p2, p3, p5, p6, p7):
+    def dat_file_form(cls, title, default, psz_file_path, type, validation_type, multi):
         """
         Grid and Image file Open/Save Form for Multiple/Single file selections
 
@@ -566,13 +566,13 @@ class GXGUI:
         drive:\\path1\\path2\\name.grid|name2.grid|name3.grid(QUALIFIERS)
         All grids are required to be of the same type.
         """
-        ret_val, p3.value = gxapi_cy.WrapGUI.dat_file_form(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.value.encode(), p5, p6, p7)
+        ret_val, psz_file_path.value = gxapi_cy.WrapGUI.dat_file_form(GXContext._get_tls_geo(), title.encode(), default.encode(), psz_file_path.value.encode(), type, validation_type, multi)
         return ret_val
 
 
 
     @classmethod
-    def gen_file_form(cls, p1, p2, p3, p4, p5, p7, p8):
+    def gen_file_form(cls, title, filt_vv, p3, p4, p5, p7, p8):
         """
         General file Open/Save Form for Multiple/Single file selections and multiple filter capability
 
@@ -590,13 +590,13 @@ class GXGUI:
         iMultiFileOpen_GUI
         iMultiFileSave_GUI
         """
-        ret_val, p5.value = gxapi_cy.WrapGUI.gen_file_form(GXContext._get_tls_geo(), p1.encode(), p2._wrapper, p3, p4.encode(), p5.value.encode(), p7, p8)
+        ret_val, p5.value = gxapi_cy.WrapGUI.gen_file_form(GXContext._get_tls_geo(), title.encode(), filt_vv._wrapper, p3, p4.encode(), p5.value.encode(), p7, p8)
         return ret_val
 
 
 
     @classmethod
-    def custom_file_form(cls, p1, p2, p3, p4, p6, p7):
+    def custom_file_form(cls, title, filter, p3, p4, p6, p7):
         """
         General file Open/Save Form for Multiple/Single file selections and custom filter capability
 
@@ -606,13 +606,13 @@ class GXGUI:
         selections. In the case of multiple selections the names will be separated
         by a semicolon and only the first file will contain the full path.
         """
-        ret_val, p4.value = gxapi_cy.WrapGUI.custom_file_form(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4.value.encode(), p6, p7)
+        ret_val, p4.value = gxapi_cy.WrapGUI.custom_file_form(GXContext._get_tls_geo(), title.encode(), filter.encode(), p3.encode(), p4.value.encode(), p6, p7)
         return ret_val
 
 
 
     @classmethod
-    def import_drill_database_ado2(cls, p1, p2, p4, p6, p7):
+    def import_drill_database_ado2(cls, connect, temp, table, type, reg):
         """
         Same as `import_drill_database_ado`, but template name is returned.
 
@@ -622,13 +622,13 @@ class GXGUI:
         to be the Wholeplot table name; e.g.
         "HOLESURVEY.i4" for "Project_HOLESURVEY"
         """
-        ret_val, p2.value, p4.value, p6.value = gxapi_cy.WrapGUI.import_drill_database_ado2(GXContext._get_tls_geo(), p1.encode(), p2.value.encode(), p4.value.encode(), p6.value, p7._wrapper)
+        ret_val, temp.value, table.value, type.value = gxapi_cy.WrapGUI.import_drill_database_ado2(GXContext._get_tls_geo(), connect.encode(), temp.value.encode(), table.value.encode(), type.value, reg._wrapper)
         return ret_val
 
 
 
     @classmethod
-    def import_drill_database_esri(cls, p1, p2, p4, p6, p7, p8):
+    def import_drill_database_esri(cls, connect, temp, table, type, geochem, reg):
         """
         Same as iImportDrillDatabaseADO2_GUI, but from an ArcGIS Geodatabase
 
@@ -638,13 +638,13 @@ class GXGUI:
         to be the Wholeplot table name; e.g.
         "HOLESURVEY.i4" for "Project_HOLESURVEY"
         """
-        ret_val, p2.value, p4.value, p6.value = gxapi_cy.WrapGUI.import_drill_database_esri(GXContext._get_tls_geo(), p1.encode(), p2.value.encode(), p4.value.encode(), p6.value, p7, p8._wrapper)
+        ret_val, temp.value, table.value, type.value = gxapi_cy.WrapGUI.import_drill_database_esri(GXContext._get_tls_geo(), connect.encode(), temp.value.encode(), table.value.encode(), type.value, geochem, reg._wrapper)
         return ret_val
 
 
 
     @classmethod
-    def import_drill_database_odbc(cls, p1, p3, p5, p7, p8):
+    def import_drill_database_odbc(cls, connect, temp, table, type, reg):
         """
         Generate a template file for importing drill holes
         from ODBC database data.
@@ -659,13 +659,13 @@ class GXGUI:
         Because the name of the database is not necessarily known, the template name is created
         from the name of the table opened - e.g. "HOLELOCATION.i4".
         """
-        ret_val, p1.value, p3.value, p5.value, p7.value = gxapi_cy.WrapGUI.import_drill_database_odbc(GXContext._get_tls_geo(), p1.value.encode(), p3.value.encode(), p5.value.encode(), p7.value, p8._wrapper)
+        ret_val, connect.value, temp.value, table.value, type.value = gxapi_cy.WrapGUI.import_drill_database_odbc(GXContext._get_tls_geo(), connect.value.encode(), temp.value.encode(), table.value.encode(), type.value, reg._wrapper)
         return ret_val
 
 
 
     @classmethod
-    def import_drill_database_odbc_maxwell(cls, p1, p3, p5, p7, p8):
+    def import_drill_database_odbc_maxwell(cls, connect, temp, table, type, reg):
         """
         Same as `import_drill_database_odbc` but customized for Maxwell.
 
@@ -673,33 +673,33 @@ class GXGUI:
 
         Same as `import_drill_database_odbc` but customized for Maxwell.
         """
-        ret_val, p1.value, p3.value, p5.value, p7.value = gxapi_cy.WrapGUI.import_drill_database_odbc_maxwell(GXContext._get_tls_geo(), p1.value.encode(), p3.value.encode(), p5.value.encode(), p7.value, p8._wrapper)
+        ret_val, connect.value, temp.value, table.value, type.value = gxapi_cy.WrapGUI.import_drill_database_odbc_maxwell(GXContext._get_tls_geo(), connect.value.encode(), temp.value.encode(), table.value.encode(), type.value, reg._wrapper)
         return ret_val
 
 
 
     @classmethod
-    def import_ascii_wizard(cls, p1, p2):
+    def import_ascii_wizard(cls, name, temp):
         """
         Generate a template file from a gui.
         """
-        ret_val = gxapi_cy.WrapGUI.import_ascii_wizard(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        ret_val = gxapi_cy.WrapGUI.import_ascii_wizard(GXContext._get_tls_geo(), name.encode(), temp.encode())
         return ret_val
 
 
 
     @classmethod
-    def import_chem_database(cls, p1, p2, p3, p5):
+    def import_chem_database(cls, name, temp, table, type):
         """
         Generate a template file for importing Geochems Database.
         """
-        ret_val, p3.value = gxapi_cy.WrapGUI.import_chem_database(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.value.encode(), p5)
+        ret_val, table.value = gxapi_cy.WrapGUI.import_chem_database(GXContext._get_tls_geo(), name.encode(), temp.encode(), table.value.encode(), type)
         return ret_val
 
 
 
     @classmethod
-    def import_chem_database_ado(cls, p1, p2, p3, p5):
+    def import_chem_database_ado(cls, connect, temp, table, type):
         """
         Improved template creation for importing geochem database (ADO).
 
@@ -709,13 +709,13 @@ class GXGUI:
         new ADO technology, as opposed to DAO. Use in conjuction with
         `GXDU.import_ado`. See also ImportDatabaseADO_GUI.
         """
-        ret_val, p3.value = gxapi_cy.WrapGUI.import_chem_database_ado(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.value.encode(), p5)
+        ret_val, table.value = gxapi_cy.WrapGUI.import_chem_database_ado(GXContext._get_tls_geo(), connect.encode(), temp.encode(), table.value.encode(), type)
         return ret_val
 
 
 
     @classmethod
-    def import_database(cls, p1, p2, p3):
+    def import_database(cls, name, temp, table):
         """
         Create template to import an external database table.
 
@@ -729,13 +729,13 @@ class GXGUI:
         creates an import template which may be used to import
         the table (see `GXDU.import_dao`()).
         """
-        ret_val, p3.value = gxapi_cy.WrapGUI.import_database(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.value.encode())
+        ret_val, table.value = gxapi_cy.WrapGUI.import_database(GXContext._get_tls_geo(), name.encode(), temp.encode(), table.value.encode())
         return ret_val
 
 
 
     @classmethod
-    def import_database_ado(cls, p1, p2, p3):
+    def import_database_ado(cls, connect, temp, table):
         """
         Create template to import an external database table (ADO Version).
 
@@ -751,13 +751,13 @@ class GXGUI:
         3. If connection string is of type "FILENAME=..." the connection will attempt to resolve
            it as a file database. (see also ODBCFileConnect_GUI)
         """
-        ret_val, p3.value = gxapi_cy.WrapGUI.import_database_ado(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.value.encode())
+        ret_val, table.value = gxapi_cy.WrapGUI.import_database_ado(GXContext._get_tls_geo(), connect.encode(), temp.encode(), table.value.encode())
         return ret_val
 
 
 
     @classmethod
-    def import_database_sql(cls, p1, p2, p3, p4):
+    def import_database_sql(cls, name, sql, temp, line):
         """
         Create template to import an external database table,
         created using SQL.
@@ -794,13 +794,13 @@ class GXGUI:
         5. If connection string is of type "FILENAME=..." the connection will attempt to resolve
            it as a file database. (see also ODBCFileConnect_GUI)
         """
-        ret_val, p4.value = gxapi_cy.WrapGUI.import_database_sql(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4.value.encode())
+        ret_val, line.value = gxapi_cy.WrapGUI.import_database_sql(GXContext._get_tls_geo(), name.encode(), sql.encode(), temp.encode(), line.value.encode())
         return ret_val
 
 
 
     @classmethod
-    def import_database_sqlado(cls, p1, p2, p3, p4):
+    def import_database_sqlado(cls, connect, sql, temp, line):
         """
         Create template to import an external database table,
         created using SQL (New ADO Version).
@@ -834,13 +834,13 @@ class GXGUI:
         creates an import template which may be used to import
         the data (see `GXDU.import_dao`()).
         """
-        ret_val, p4.value = gxapi_cy.WrapGUI.import_database_sqlado(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4.value.encode())
+        ret_val, line.value = gxapi_cy.WrapGUI.import_database_sqlado(GXContext._get_tls_geo(), connect.encode(), sql.encode(), temp.encode(), line.value.encode())
         return ret_val
 
 
 
     @classmethod
-    def import_drill_database_ado(cls, p1, p2, p3, p5, p6):
+    def import_drill_database_ado(cls, connect, temp, table, type, reg):
         """
         Generate a template file for importing drill holes.
 
@@ -850,13 +850,13 @@ class GXGUI:
         new ADO technology, as opposed to DAO. Use in conjuction with
         `GXDU.import_ado`. See also ImportDatabaseADO_GUI.
         """
-        ret_val, p3.value, p5.value = gxapi_cy.WrapGUI.import_drill_database_ado(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.value.encode(), p5.value, p6._wrapper)
+        ret_val, table.value, type.value = gxapi_cy.WrapGUI.import_drill_database_ado(GXContext._get_tls_geo(), connect.encode(), temp.encode(), table.value.encode(), type.value, reg._wrapper)
         return ret_val
 
 
 
     @classmethod
-    def import_template_sql(cls, p1, p2, p3, p4):
+    def import_template_sql(cls, name, temp, sql, line):
         """
         Create template to import an external database table; provide query.
 
@@ -870,13 +870,13 @@ class GXGUI:
         creates an import template which may be used to import
         the data (see `GXDU.import_dao`()).
         """
-        ret_val = gxapi_cy.WrapGUI.import_template_sql(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4.encode())
+        ret_val = gxapi_cy.WrapGUI.import_template_sql(GXContext._get_tls_geo(), name.encode(), temp.encode(), sql.encode(), line.encode())
         return ret_val
 
 
 
     @classmethod
-    def import_template_sqlado(cls, p1, p2, p3, p4):
+    def import_template_sqlado(cls, name, temp, sql, line):
         """
         Create template to import an external database table; provide query.
 
@@ -890,25 +890,25 @@ class GXGUI:
         creates an import template which may be used to import
         the data (see `GXDU.import_ado`()).
         """
-        ret_val = gxapi_cy.WrapGUI.import_template_sqlado(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4.encode())
+        ret_val = gxapi_cy.WrapGUI.import_template_sqlado(GXContext._get_tls_geo(), name.encode(), temp.encode(), sql.encode(), line.encode())
         return ret_val
 
 
 
     @classmethod
-    def import_xyz_template_editor(cls, p1, p2, p3, p4):
+    def import_xyz_template_editor(cls, db, template, size, file):
         """
         Allows the user to edit XYZ import templates
         using a complex dialog. The Template name
         may change during editing.
         """
-        ret_val = gxapi_cy.WrapGUI.import_xyz_template_editor(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3, p4.encode())
+        ret_val = gxapi_cy.WrapGUI.import_xyz_template_editor(GXContext._get_tls_geo(), db._wrapper, template.encode(), size, file.encode())
         return ret_val
 
 
 
     @classmethod
-    def odbc_file_connect(cls, p1, p2, p4, p5):
+    def odbc_file_connect(cls, file, connect, usage, p5):
         """
         Get the connection string for a file database as well as optional table name and FileUsage attribute
 
@@ -921,13 +921,13 @@ class GXGUI:
         returned. This is needed because the table name may or may not include
         the file extension.
         """
-        ret_val, p2.value, p5.value = gxapi_cy.WrapGUI.odbc_file_connect(GXContext._get_tls_geo(), p1.encode(), p2.value.encode(), p4, p5.value.encode())
+        ret_val, connect.value, p5.value = gxapi_cy.WrapGUI.odbc_file_connect(GXContext._get_tls_geo(), file.encode(), connect.value.encode(), usage, p5.value.encode())
         return ret_val
 
 
 
     @classmethod
-    def symbol_form(cls, p1, p3, p4, p5, p6, p7, p8, p9):
+    def symbol_form(cls, symb_font, geo_font, weight, symb_num, symb_size, symb_ang, edge_col, fill_col):
         """
         - Select a symbol.
 
@@ -935,37 +935,37 @@ class GXGUI:
 
         Symbols are set on input, and new values returned.
         """
-        ret_val, p1.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value = gxapi_cy.WrapGUI.symbol_form(GXContext._get_tls_geo(), p1.value.encode(), p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value)
+        ret_val, symb_font.value, geo_font.value, weight.value, symb_num.value, symb_size.value, symb_ang.value, edge_col.value, fill_col.value = gxapi_cy.WrapGUI.symbol_form(GXContext._get_tls_geo(), symb_font.value.encode(), geo_font.value, weight.value, symb_num.value, symb_size.value, symb_ang.value, edge_col.value, fill_col.value)
         return ret_val
 
 
 
     @classmethod
-    def meta_data_tool(cls, p1, p2, p3):
+    def meta_data_tool(cls, meta, root_token, schema):
         """
         Edit a `GXMETA` object
         """
-        ret_val = gxapi_cy.WrapGUI.meta_data_tool(GXContext._get_tls_geo(), p1._wrapper, p2, p3)
+        ret_val = gxapi_cy.WrapGUI.meta_data_tool(GXContext._get_tls_geo(), meta._wrapper, root_token, schema)
         return ret_val
 
 
 
     @classmethod
-    def import_chem_wizard(cls, p1, p2, p3):
+    def import_chem_wizard(cls, name, temp, type):
         """
         Generate a template file for importing geochems.
         """
-        gxapi_cy.WrapGUI.import_chem_wizard(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3)
+        gxapi_cy.WrapGUI.import_chem_wizard(GXContext._get_tls_geo(), name.encode(), temp.encode(), type)
         
 
 
 
     @classmethod
-    def import_drill_wizard(cls, p1, p2, p3, p4, p5, p6):
+    def import_drill_wizard(cls, name, temp, table, type, reg):
         """
         Generate a template file for importing drill holes.
         """
-        p5.value = gxapi_cy.WrapGUI.import_drill_wizard(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4, p5.value, p6._wrapper)
+        table.value, type.value = gxapi_cy.WrapGUI.import_drill_wizard(GXContext._get_tls_geo(), name.encode(), temp.encode(), table.value.encode(), type.value, reg._wrapper)
         
 
 
@@ -981,7 +981,7 @@ class GXGUI:
 
 
     @classmethod
-    def pattern_form(cls, p1, p2, p3, p4, p5, p6):
+    def pattern_form(cls, pat, size, thick, p4, p5, p6):
         """
         - Select a pattern.
 
@@ -1005,13 +1005,13 @@ class GXGUI:
         
         The pattern Angle and Style parameters are not user-definable.
         """
-        ret_val, p1.value, p2.value, p3.value, p4.value, p5.value, p6.value = gxapi_cy.WrapGUI.pattern_form(GXContext._get_tls_geo(), p1.value, p2.value, p3.value, p4.value, p5.value, p6.value)
+        ret_val, pat.value, size.value, thick.value, p4.value, p5.value, p6.value = gxapi_cy.WrapGUI.pattern_form(GXContext._get_tls_geo(), pat.value, size.value, thick.value, p4.value, p5.value, p6.value)
         return ret_val
 
 
 
     @classmethod
-    def line_pattern_form(cls, p1, p2, p3, p4):
+    def line_pattern_form(cls, pattern, thickness, pitch, colour):
         """
         Select a line pattern.
 
@@ -1019,13 +1019,13 @@ class GXGUI:
 
         Same as `pattern_form` but for line patterns.
         """
-        ret_val, p1.value, p2.value, p3.value, p4.value = gxapi_cy.WrapGUI.line_pattern_form(GXContext._get_tls_geo(), p1.value, p2.value, p3.value, p4.value)
+        ret_val, pattern.value, thickness.value, pitch.value, colour.value = gxapi_cy.WrapGUI.line_pattern_form(GXContext._get_tls_geo(), pattern.value, thickness.value, pitch.value, colour.value)
         return ret_val
 
 
 
     @classmethod
-    def two_panel_selection(cls, p1, p2, p3):
+    def two_panel_selection(cls, ls_tf, ls_ts, title):
         """
         General purpose two-panel selection.
 
@@ -1049,13 +1049,13 @@ class GXGUI:
         can be used to convert the selection LSTs to forms that can be
         stored and retrieved from GX parameters (or `GXREG` or INI, etc.).
         """
-        ret_val = gxapi_cy.WrapGUI.two_panel_selection(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3.encode())
+        ret_val = gxapi_cy.WrapGUI.two_panel_selection(GXContext._get_tls_geo(), ls_tf._wrapper, ls_ts._wrapper, title.encode())
         return ret_val
 
 
 
     @classmethod
-    def two_panel_selection2(cls, p1, p2, p3):
+    def two_panel_selection2(cls, ls_tf, ls_ts, title):
         """
         Two-panel selection, items not sorted alphabetically.
 
@@ -1066,13 +1066,13 @@ class GXGUI:
         exactly as input, and when an item is selected it is
         added at the end of the lists.
         """
-        ret_val = gxapi_cy.WrapGUI.two_panel_selection2(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3.encode())
+        ret_val = gxapi_cy.WrapGUI.two_panel_selection2(GXContext._get_tls_geo(), ls_tf._wrapper, ls_ts._wrapper, title.encode())
         return ret_val
 
 
 
     @classmethod
-    def two_panel_selection_ex(cls, p1, p2, p3, p4, p5):
+    def two_panel_selection_ex(cls, ls_tf, ls_ts, sorted, allow_no_select, title):
         """
         Two-panel selection; options for sort and ability to select no items.
 
@@ -1083,13 +1083,13 @@ class GXGUI:
         exactly as input, and when an item is selected it is
         added at the end of the lists.
         """
-        ret_val = gxapi_cy.WrapGUI.two_panel_selection_ex(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3, p4, p5.encode())
+        ret_val = gxapi_cy.WrapGUI.two_panel_selection_ex(GXContext._get_tls_geo(), ls_tf._wrapper, ls_ts._wrapper, sorted, allow_no_select, title.encode())
         return ret_val
 
 
 
     @classmethod
-    def two_panel_selection_ex2(cls, p1, p2, p3, p4, p5, p6):
+    def two_panel_selection_ex2(cls, ls_tf, ls_ts, sorted, allow_no_select, title, help):
         """
         Two-panel selection; extended options including a help link.
 
@@ -1098,93 +1098,93 @@ class GXGUI:
         Same as `two_panel_selection_ex`, but user can specify a help
         link.
         """
-        ret_val = gxapi_cy.WrapGUI.two_panel_selection_ex2(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3, p4, p5.encode(), p6.encode())
+        ret_val = gxapi_cy.WrapGUI.two_panel_selection_ex2(GXContext._get_tls_geo(), ls_tf._wrapper, ls_ts._wrapper, sorted, allow_no_select, title.encode(), help.encode())
         return ret_val
 
 
 
     @classmethod
-    def launch_single_geo_dotnetx_tool(cls, p1, p2, p3):
+    def launch_single_geo_dotnetx_tool(cls, dll, func, meta):
         """
         Launch a user created .Net GEOXTOOL ensuring a single instance.
         """
-        gxapi_cy.WrapGUI.launch_single_geo_dotnetx_tool(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3._wrapper)
+        gxapi_cy.WrapGUI.launch_single_geo_dotnetx_tool(GXContext._get_tls_geo(), dll.encode(), func.encode(), meta._wrapper)
         
 
 
 
     @classmethod
-    def launch_geo_dotnetx_tool(cls, p1, p2, p3):
+    def launch_geo_dotnetx_tool(cls, dll, func, meta):
         """
         Launch a user created .Net GEOXTOOL.
         """
-        gxapi_cy.WrapGUI.launch_geo_dotnetx_tool(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3._wrapper)
+        gxapi_cy.WrapGUI.launch_geo_dotnetx_tool(GXContext._get_tls_geo(), dll.encode(), func.encode(), meta._wrapper)
         
 
 
 
     @classmethod
-    def launch_geo_x_tool(cls, p1, p2, p3):
+    def launch_geo_x_tool(cls, dll, func, meta):
         """
         Launch a user created GEOXTOOL.
         """
-        gxapi_cy.WrapGUI.launch_geo_x_tool(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3._wrapper)
+        gxapi_cy.WrapGUI.launch_geo_x_tool(GXContext._get_tls_geo(), dll.encode(), func.encode(), meta._wrapper)
         
 
 
 
     @classmethod
-    def launch_single_geo_dotnetx_tool_ex(cls, p1, p2, p3, p4, p5, p6, p7):
+    def launch_single_geo_dotnetx_tool_ex(cls, dll, func, meta, align, dock, width, height):
         """
         Launch a user created .Net GEOXTOOL ensuring a single instance.
         """
-        gxapi_cy.WrapGUI.launch_single_geo_dotnetx_tool_ex(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3._wrapper, p4, p5, p6, p7)
+        gxapi_cy.WrapGUI.launch_single_geo_dotnetx_tool_ex(GXContext._get_tls_geo(), dll.encode(), func.encode(), meta._wrapper, align, dock, width, height)
         
 
 
 
     @classmethod
-    def launch_geo_dotnetx_tool_ex(cls, p1, p2, p3, p4, p5, p6, p7):
+    def launch_geo_dotnetx_tool_ex(cls, dll, func, meta, align, dock, width, height):
         """
         Launch a user created .Net GEOXTOOL.
         """
-        gxapi_cy.WrapGUI.launch_geo_dotnetx_tool_ex(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3._wrapper, p4, p5, p6, p7)
+        gxapi_cy.WrapGUI.launch_geo_dotnetx_tool_ex(GXContext._get_tls_geo(), dll.encode(), func.encode(), meta._wrapper, align, dock, width, height)
         
 
 
 
     @classmethod
-    def launch_geo_x_tool_ex(cls, p1, p2, p3, p4, p5, p6, p7):
+    def launch_geo_x_tool_ex(cls, dll, func, meta, align, dock, width, height):
         """
         Launch a user created GEOXTOOL.
         """
-        gxapi_cy.WrapGUI.launch_geo_x_tool_ex(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3._wrapper, p4, p5, p6, p7)
+        gxapi_cy.WrapGUI.launch_geo_x_tool_ex(GXContext._get_tls_geo(), dll.encode(), func.encode(), meta._wrapper, align, dock, width, height)
         
 
 
 
     @classmethod
-    def meta_data_viewer(cls, p1, p2, p3):
+    def meta_data_viewer(cls, meta, root_token, schema):
         """
         View a `GXMETA` object
         """
-        gxapi_cy.WrapGUI.meta_data_viewer(GXContext._get_tls_geo(), p1._wrapper, p2, p3)
+        gxapi_cy.WrapGUI.meta_data_viewer(GXContext._get_tls_geo(), meta._wrapper, root_token, schema)
         
 
 
 
     @classmethod
-    def print_file(cls, p1):
+    def print_file(cls, file):
         """
         Prints a file to current printer
         """
-        gxapi_cy.WrapGUI.print_file(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapGUI.print_file(GXContext._get_tls_geo(), file.encode())
         
 
 
 
     @classmethod
-    def render_pattern(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+    def render_pattern(cls, hdc, h_dc, left, bottom, right, top, pat, size, thick, p10, p11, p12, p13, p14):
         """
         - Render a pattern.
 
@@ -1192,13 +1192,13 @@ class GXGUI:
 
         Renders a Geosoft pattern to a Windows DC.
         """
-        gxapi_cy.WrapGUI.render_pattern(GXContext._get_tls_geo(), p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14)
+        gxapi_cy.WrapGUI.render_pattern(GXContext._get_tls_geo(), hdc, h_dc, left, bottom, right, top, pat, size, thick, p10, p11, p12, p13, p14)
         
 
 
 
     @classmethod
-    def render_line_pattern(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+    def render_line_pattern(cls, hdc, h_dc, left, bottom, right, top, pattern, thickness, pitch, col, p11, p12):
         """
         Render a line pattern.
 
@@ -1206,13 +1206,13 @@ class GXGUI:
 
         Same as `render_pattern` but for line patterns.
         """
-        gxapi_cy.WrapGUI.render_line_pattern(GXContext._get_tls_geo(), p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12)
+        gxapi_cy.WrapGUI.render_line_pattern(GXContext._get_tls_geo(), hdc, h_dc, left, bottom, right, top, pattern, thickness, pitch, col, p11, p12)
         
 
 
 
     @classmethod
-    def set_parent_wnd(cls, p1):
+    def set_parent_wnd(cls, wnd):
         """
         Set the current parent WND
 
@@ -1221,23 +1221,23 @@ class GXGUI:
         The parent WND is used by all modal dialogs as a
         parent to ensure the dialog is correctly modal.
         """
-        gxapi_cy.WrapGUI.set_parent_wnd(GXContext._get_tls_geo(), p1)
+        gxapi_cy.WrapGUI.set_parent_wnd(GXContext._get_tls_geo(), wnd)
         
 
 
 
     @classmethod
-    def set_printer(cls, p1):
+    def set_printer(cls, printer):
         """
         Sets the Printer.
         """
-        gxapi_cy.WrapGUI.set_printer(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapGUI.set_printer(GXContext._get_tls_geo(), printer.encode())
         
 
 
 
     @classmethod
-    def set_prog_always_on(cls, p1):
+    def set_prog_always_on(cls, on):
         """
         Ability to set the progress bar to stay visible even
         if main application is processing messages
@@ -1248,33 +1248,33 @@ class GXGUI:
         start processing messages. This is not always desirable
         in some 3rd party apps, hence this function.
         """
-        gxapi_cy.WrapGUI.set_prog_always_on(GXContext._get_tls_geo(), p1)
+        gxapi_cy.WrapGUI.set_prog_always_on(GXContext._get_tls_geo(), on)
         
 
 
 
     @classmethod
-    def show_direct_hist(cls, p1, p2, p3, p4, p5, p6, p7):
+    def show_direct_hist(cls, min, max, mean, std_dev, median, items, vv):
         """
         Display histogram of data directly
         """
-        gxapi_cy.WrapGUI.show_direct_hist(GXContext._get_tls_geo(), p1, p2, p3, p4, p5, p6, p7._wrapper)
+        gxapi_cy.WrapGUI.show_direct_hist(GXContext._get_tls_geo(), min, max, mean, std_dev, median, items, vv._wrapper)
         
 
 
 
     @classmethod
-    def show_hist(cls, p1):
+    def show_hist(cls, st):
         """
         Display Histogram of data from `GXST`
         """
-        gxapi_cy.WrapGUI.show_hist(GXContext._get_tls_geo(), p1._wrapper)
+        gxapi_cy.WrapGUI.show_hist(GXContext._get_tls_geo(), st._wrapper)
         
 
 
 
     @classmethod
-    def simple_map_dialog(cls, p1, p2, p3):
+    def simple_map_dialog(cls, map, title, help_id):
         """
         General purpose map display `GXGUI` with no interaction.
 
@@ -1283,13 +1283,13 @@ class GXGUI:
         This function displays a map in a simple resizable dialog that fits the map into it.
         It is generally useful to display temporary maps as graphs (e.g. variograms).
         """
-        gxapi_cy.WrapGUI.simple_map_dialog(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode())
+        gxapi_cy.WrapGUI.simple_map_dialog(GXContext._get_tls_geo(), map._wrapper, title.encode(), help_id.encode())
         
 
 
 
     @classmethod
-    def thematic_voxel_info(cls, p1):
+    def thematic_voxel_info(cls, vox):
         """
         Display GX.Net thematic voxel info `GXGUI`.
 
@@ -1300,13 +1300,13 @@ class GXGUI:
         This is a replacement for the numeric stats done on normal
         numerical voxel grids.
         """
-        gxapi_cy.WrapGUI.thematic_voxel_info(GXContext._get_tls_geo(), p1._wrapper)
+        gxapi_cy.WrapGUI.thematic_voxel_info(GXContext._get_tls_geo(), vox._wrapper)
         
 
 
 
     @classmethod
-    def show_3d_viewer_dialog(cls, p1, p2):
+    def show_3d_viewer_dialog(cls, title, o3dv):
         """
         Display a standalone 3D viewer
 
@@ -1314,7 +1314,7 @@ class GXGUI:
 
         Any changes made to the 3D View will be persisted.
         """
-        gxapi_cy.WrapGUI.show_3d_viewer_dialog(GXContext._get_tls_geo(), p1.encode(), p2.encode())
+        gxapi_cy.WrapGUI.show_3d_viewer_dialog(GXContext._get_tls_geo(), title.encode(), o3dv.encode())
         
 
 

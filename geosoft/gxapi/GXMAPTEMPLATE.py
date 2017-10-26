@@ -60,7 +60,7 @@ class GXMAPTEMPLATE:
 
 
 
-    def get_tmp_copy(self, p2):
+    def get_tmp_copy(self, tmp):
         """
         Get a temporary XML file for manipulation of the map template.
 
@@ -69,13 +69,13 @@ class GXMAPTEMPLATE:
         After manipulating contents the object may be updated by a call to
         the UpdateFromTmpCopy method.
         """
-        p2.value = self._wrapper.get_tmp_copy(p2.value.encode())
+        tmp.value = self._wrapper.get_tmp_copy(tmp.value.encode())
         
 
 
 
 
-    def update_from_tmp_copy(self, p2):
+    def update_from_tmp_copy(self, tmp):
         """
         Update the object contents from a temporary XML file that may have bee manipulated externally.
 
@@ -86,7 +86,7 @@ class GXMAPTEMPLATE:
         will restore the contents to that of the original file. The temporary file is not deleted
         and should be to not leak file resources.
         """
-        self._wrapper.update_from_tmp_copy(p2.encode())
+        self._wrapper.update_from_tmp_copy(tmp.encode())
         
 
 
@@ -106,7 +106,7 @@ class GXMAPTEMPLATE:
 
 
     @classmethod
-    def create(cls, p1, p2, p3):
+    def create(cls, name, base, mode):
         """
         Create a `GXMAPTEMPLATE` from an existing file.
 
@@ -116,7 +116,7 @@ class GXMAPTEMPLATE:
         file in the <geosoft>\\maptemplate or <geosoftuser>\\maptemplate folders. A base file
         in the user folder will override any in the Geosoft install dir.
         """
-        ret_val = gxapi_cy.WrapMAPTEMPLATE.create(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3)
+        ret_val = gxapi_cy.WrapMAPTEMPLATE.create(GXContext._get_tls_geo(), name.encode(), base.encode(), mode)
         return GXMAPTEMPLATE(ret_val)
 
 
@@ -134,11 +134,11 @@ class GXMAPTEMPLATE:
 
 
 
-    def get_file_name(self, p2):
+    def get_file_name(self, name):
         """
         Get the file name of the map template.
         """
-        p2.value = self._wrapper.get_file_name(p2.value.encode())
+        name.value = self._wrapper.get_file_name(name.value.encode())
         
 
 
@@ -148,11 +148,11 @@ class GXMAPTEMPLATE:
 
 
 
-    def create_map(self, p2, p3):
+    def create_map(self, map, group):
         """
         Create a map from the map template
         """
-        self._wrapper.create_map(p2.encode(), p3.encode())
+        self._wrapper.create_map(map.encode(), group.encode())
         
 
 

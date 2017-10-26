@@ -59,27 +59,27 @@ class GXMISC:
 
 
     @classmethod
-    def convert_cg3to_raw(cls, p1, p2, p3):
+    def convert_cg3to_raw(cls, cg3, raw, tide_corr_opt):
         """
         Convert a CG3 dump to RAW format.
         """
-        gxapi_cy.WrapMISC.convert_cg3to_raw(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3)
+        gxapi_cy.WrapMISC.convert_cg3to_raw(GXContext._get_tls_geo(), cg3.encode(), raw.encode(), tide_corr_opt)
         
 
 
 
     @classmethod
-    def convert_cg5to_raw(cls, p1, p2, p3):
+    def convert_cg5to_raw(cls, cg5, raw, tide_corr_opt):
         """
         Convert a CG5 dump to RAW format.
         """
-        gxapi_cy.WrapMISC.convert_cg5to_raw(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3)
+        gxapi_cy.WrapMISC.convert_cg5to_raw(GXContext._get_tls_geo(), cg5.encode(), raw.encode(), tide_corr_opt)
         
 
 
 
     @classmethod
-    def ukoa2_tbl(cls, p1, p2, p3):
+    def ukoa2_tbl(cls, ukoa, alias, tbl):
         """
         Convert a UKOA file to a location TBL file.
 
@@ -95,7 +95,7 @@ class GXMISC:
         = Y:double
         = Elevation:double
         """
-        gxapi_cy.WrapMISC.ukoa2_tbl(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode())
+        gxapi_cy.WrapMISC.ukoa2_tbl(GXContext._get_tls_geo(), ukoa.encode(), alias.encode(), tbl.encode())
         
 
 

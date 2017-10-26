@@ -93,17 +93,17 @@ class GXVV:
 
 
 
-    def copy(self, p2):
+    def copy(self, v_vs):
         """
         Copy one `GXVV` to another.
         """
-        self._wrapper.copy(p2._wrapper)
+        self._wrapper.copy(v_vs._wrapper)
         
 
 
 
 
-    def copy2(self, p2, p3, p4, p5):
+    def copy2(self, dest, v_vs, source, n):
         """
         Copy part of a vector into part of another vector.
 
@@ -115,13 +115,13 @@ class GXVV:
         2. All `GXVV` types are supported and will be converted using
         Convert_GS if necessary.
         """
-        self._wrapper.copy2(p2, p3._wrapper, p4, p5)
+        self._wrapper.copy2(dest, v_vs._wrapper, source, n)
         
 
 
 
 
-    def log(self, p2, p3, p4):
+    def log(self, log_base, log_neg, log_min):
         """
         Apply log to the vv.
 
@@ -130,13 +130,13 @@ class GXVV:
         Minimum value will be defaulted to 1.0 if it is 0.0 or
         less than 0.0
         """
-        self._wrapper.log(p2, p3, p4)
+        self._wrapper.log(log_base, log_neg, log_min)
         
 
 
 
 
-    def log_linear(self, p2):
+    def log_linear(self, log_min):
         """
         Take the log10 or original value of a `GXVV`.
 
@@ -154,13 +154,13 @@ class GXVV:
         Minimum value will be defaulted to 1.0 if it is negative
         or 0.
         """
-        self._wrapper.log_linear(p2)
+        self._wrapper.log_linear(log_min)
         
 
 
 
 
-    def mask(self, p2):
+    def mask(self, v_vm):
         """
         Mask one `GXVV` against another.
 
@@ -173,7 +173,7 @@ class GXVV:
         `GXVV` after this call.  If the mask is longer than the target,
         the target will be lengthenned with dummies.
         """
-        self._wrapper.mask(p2._wrapper)
+        self._wrapper.mask(v_vm._wrapper)
         
 
 
@@ -189,17 +189,17 @@ class GXVV:
 
 
 
-    def serial(self, p2):
+    def serial(self, bf):
         """
         Serialize
         """
-        self._wrapper.serial(p2._wrapper)
+        self._wrapper.serial(bf._wrapper)
         
 
 
 
 
-    def trans(self, p2, p3):
+    def trans(self, base, mult):
         """
         Translate (`GXVV` + base ) * mult
 
@@ -207,7 +207,7 @@ class GXVV:
 
         All `GXVV` types now supported.
         """
-        self._wrapper.trans(p2, p3)
+        self._wrapper.trans(base, mult)
         
 
 
@@ -223,17 +223,17 @@ class GXVV:
 
 
 
-    def add(self, p2, p3):
+    def add(self, v_vy, v_vz):
         """
         Add two VVs: VV_A + VV_B = VV_C
         """
-        self._wrapper.add(p2._wrapper, p3._wrapper)
+        self._wrapper.add(v_vy._wrapper, v_vz._wrapper)
         
 
 
 
 
-    def add2(self, p2, p3, p4, p5):
+    def add2(self, f1, v_vy, f2, v_vz):
         """
         Add two VVs with linear factors: VV_A*f1 + VV_B*f2 = VV_C
 
@@ -241,33 +241,33 @@ class GXVV:
 
         The multipliers must be defined and within the `GS_R8MN` `GS_R8MX` range.
         """
-        self._wrapper.add2(p2, p3._wrapper, p4, p5._wrapper)
+        self._wrapper.add2(f1, v_vy._wrapper, f2, v_vz._wrapper)
         
 
 
 
 
-    def append(self, p2):
+    def append(self, v_va):
         """
         Appends `GXVV`'s
         """
-        self._wrapper.append(p2._wrapper)
+        self._wrapper.append(v_va._wrapper)
         
 
 
 
 
-    def crc(self, p2):
+    def crc(self, pul_crc):
         """
         Compute the CRC value of a `GXVV`.
         """
-        ret_val = self._wrapper.crc(p2)
+        ret_val = self._wrapper.crc(pul_crc)
         return ret_val
 
 
 
 
-    def crc_inexact(self, p2, p3, p4):
+    def crc_inexact(self, pul_crc, float_bits, double_bits):
         """
         Compute the CRC value of a `GXVV` and allows you to specify
         number of bits of floats/doubles to drop so that the CRC
@@ -278,13 +278,13 @@ class GXVV:
         Very usefull for testing where the last bits of accuracy
         are not as important.
         """
-        ret_val = self._wrapper.crc_inexact(p2, p3, p4)
+        ret_val = self._wrapper.crc_inexact(pul_crc, float_bits, double_bits)
         return ret_val
 
 
 
     @classmethod
-    def create(cls, p1, p2):
+    def create(cls, type, elements):
         """
         Create a `GXVV`.
 
@@ -303,13 +303,13 @@ class GXVV:
         a bit less efficient than setting the length when you
         know it.
         """
-        ret_val = gxapi_cy.WrapVV.create(GXContext._get_tls_geo(), p1, p2)
+        ret_val = gxapi_cy.WrapVV.create(GXContext._get_tls_geo(), type, elements)
         return GXVV(ret_val)
 
 
 
     @classmethod
-    def create_ext(cls, p1, p2):
+    def create_ext(cls, type, elements):
         """
         Create a `GXVV`, using one of the `GS_TYPES` special data types.
 
@@ -321,17 +321,17 @@ class GXVV:
         this will result in a respective data type of unsigned byte or
         short for the `GXVV`.
         """
-        ret_val = gxapi_cy.WrapVV.create_ext(GXContext._get_tls_geo(), p1, p2)
+        ret_val = gxapi_cy.WrapVV.create_ext(GXContext._get_tls_geo(), type, elements)
         return GXVV(ret_val)
 
 
 
     @classmethod
-    def create_s(cls, p1):
+    def create_s(cls, bf):
         """
         Create a `GXVV`  from serialized source.
         """
-        ret_val = gxapi_cy.WrapVV.create_s(GXContext._get_tls_geo(), p1._wrapper)
+        ret_val = gxapi_cy.WrapVV.create_s(GXContext._get_tls_geo(), bf._wrapper)
         return GXVV(ret_val)
 
 
@@ -339,7 +339,7 @@ class GXVV:
 
 
 
-    def diff(self, p2):
+    def diff(self, n):
         """
         Calculate differences.
 
@@ -350,23 +350,23 @@ class GXVV:
         An odd number of differences locates result 1/2 element lower
         in the `GXVV`.
         """
-        self._wrapper.diff(p2)
+        self._wrapper.diff(n)
         
 
 
 
 
-    def divide(self, p2, p3):
+    def divide(self, v_vy, v_vz):
         """
         Divide one `GXVV` by another: VV_A / VV_B = VV_C
         """
-        self._wrapper.divide(p2._wrapper, p3._wrapper)
+        self._wrapper.divide(v_vy._wrapper, v_vz._wrapper)
         
 
 
 
 
-    def fid_norm(self, p2):
+    def fid_norm(self, vv2):
         """
         Re-sample a pair of `GXVV`'s to match each other.
 
@@ -376,53 +376,53 @@ class GXVV:
         fid and fid increment.  The smaller start fid
         and fid increment will be used.
         """
-        self._wrapper.fid_norm(p2._wrapper)
+        self._wrapper.fid_norm(vv2._wrapper)
         
 
 
 
 
-    def fill_int(self, p2):
+    def fill_int(self, int):
         """
         Fill a `GXVV` with an int value.
         """
-        self._wrapper.fill_int(p2)
+        self._wrapper.fill_int(int)
         
 
 
 
 
-    def fill_double(self, p2):
+    def fill_double(self, val):
         """
         Fill a `GXVV` with a real value.
         """
-        self._wrapper.fill_double(p2)
+        self._wrapper.fill_double(val)
         
 
 
 
 
-    def fill_string(self, p2):
+    def fill_string(self, str_val):
         """
         Fill a `GXVV` with a string value.
         """
-        self._wrapper.fill_string(p2.encode())
+        self._wrapper.fill_string(str_val.encode())
         
 
 
 
 
-    def count_dummies(self, p2, p3):
+    def count_dummies(self, start, elem):
         """
         Count the number of dummies in a `GXVV`
         """
-        ret_val = self._wrapper.count_dummies(p2, p3)
+        ret_val = self._wrapper.count_dummies(start, elem)
         return ret_val
 
 
 
 
-    def find_dum(self, p2, p3, p4, p5):
+    def find_dum(self, start, end, yn, order):
         """
         Finds the first dummy or non-dummy value in a `GXVV`
 
@@ -432,7 +432,7 @@ class GXVV:
         at the highest element specified. (Conversely, an increasing
         order starts at the lowest element specified.)
         """
-        ret_val = self._wrapper.find_dum(p2, p3, p4, p5)
+        ret_val = self._wrapper.find_dum(start, end, yn, order)
         return ret_val
 
 
@@ -448,17 +448,17 @@ class GXVV:
 
 
 
-    def get_int(self, p2):
+    def get_int(self, element):
         """
         Get an integer element from a `GXVV`.
         """
-        ret_val = self._wrapper.get_int(p2)
+        ret_val = self._wrapper.get_int(element)
         return ret_val
 
 
 
 
-    def get_string(self, p2, p3):
+    def get_string(self, element, str_val):
         """
         Get a string element from a `GXVV`.
 
@@ -470,13 +470,13 @@ class GXVV:
         Type conversions are performed if necessary.  Dummy values
         are converted to "*" string.
         """
-        p3.value = self._wrapper.get_string(p2, p3.value.encode())
+        str_val.value = self._wrapper.get_string(element, str_val.value.encode())
         
 
 
 
 
-    def index_max(self, p2):
+    def index_max(self, max):
         """
         Get the index where the maximum value occurs.
 
@@ -485,7 +485,7 @@ class GXVV:
         If more than one value has the same maximum value, the index of the
         first is returned.
         """
-        ret_val, p2.value = self._wrapper.index_max(p2.value)
+        ret_val, max.value = self._wrapper.index_max(max.value)
         return ret_val
 
 
@@ -501,7 +501,7 @@ class GXVV:
 
 
 
-    def index_insert(self, p2, p3):
+    def index_insert(self, v_vd, v_vi):
         """
         Insert items into a `GXVV` using an index `GXVV`.
 
@@ -524,13 +524,13 @@ class GXVV:
         put the processed values at the correct locations in the data `GXVV`
         before you write it back to the channel.
         """
-        self._wrapper.index_insert(p2._wrapper, p3._wrapper)
+        self._wrapper.index_insert(v_vd._wrapper, v_vi._wrapper)
         
 
 
 
 
-    def index_order(self, p2):
+    def index_order(self, v_vd):
         """
         Reorder a `GXVV`.
 
@@ -539,13 +539,13 @@ class GXVV:
         Given an index `GXVV` (of type INT), this method reorders a
         `GXVV`. Please make sure that the index holds valid information.
         """
-        self._wrapper.index_order(p2._wrapper)
+        self._wrapper.index_order(v_vd._wrapper)
         
 
 
 
 
-    def init_index(self, p2):
+    def init_index(self, n):
         """
         Initialize an index `GXVV` to values 0, 1, 2, etc...
 
@@ -555,13 +555,13 @@ class GXVV:
         used for various indexing functions, such as `index_insert` or
         `index_order`.
         """
-        self._wrapper.init_index(p2)
+        self._wrapper.init_index(n)
         
 
 
 
 
-    def inv_log(self, p2, p3, p4):
+    def inv_log(self, log_base, log_neg, log_min):
         """
         Inverse of the `log` function.
 
@@ -578,23 +578,23 @@ class GXVV:
         Minimum value will be defaulted to 1.0 if it is 0.0 or
         less than 0.0
         """
-        self._wrapper.inv_log(p2, p3, p4)
+        self._wrapper.inv_log(log_base, log_neg, log_min)
         
 
 
 
 
-    def order(self, p2):
+    def order(self, rep):
         """
         Identifies the data size order of the elements.
         """
-        ret_val, p2.value = self._wrapper.order(p2.value)
+        ret_val, rep.value = self._wrapper.order(rep.value)
         return ret_val
 
 
 
 
-    def lines_to_xy(self, p2, p3):
+    def lines_to_xy(self, v_vx, v_vy):
         """
         Convert a 2D Line segment `GXVV` into X and Y VVs.
 
@@ -607,13 +607,13 @@ class GXVV:
         X and Y VVs of type `GS_DOUBLE` (REAL). N lines produces 2*N
         X and Y values.
         """
-        self._wrapper.lines_to_xy(p2._wrapper, p3._wrapper)
+        self._wrapper.lines_to_xy(v_vx._wrapper, v_vy._wrapper)
         
 
 
 
 
-    def lookup_index(self, p2, p3):
+    def lookup_index(self, vvi, vvr):
         """
         Lookup a `GXVV` from another `GXVV` using an index `GXVV`.
 
@@ -628,7 +628,7 @@ class GXVV:
         
         See also `setup_index` for an example of how this can be implemented.
         """
-        self._wrapper.lookup_index(p2._wrapper, p3._wrapper)
+        self._wrapper.lookup_index(vvi._wrapper, vvr._wrapper)
         
 
 
@@ -666,7 +666,7 @@ class GXVV:
 
 
 
-    def mask_and(self, p2, p3):
+    def mask_and(self, v_vy, v_vz):
         """
         Create mask from logical AND of two VVs.
 
@@ -674,13 +674,13 @@ class GXVV:
 
         If both values are non-dummies, then result is 1, else dummy.
         """
-        self._wrapper.mask_and(p2._wrapper, p3._wrapper)
+        self._wrapper.mask_and(v_vy._wrapper, v_vz._wrapper)
         
 
 
 
 
-    def mask_or(self, p2, p3):
+    def mask_or(self, v_vy, v_vz):
         """
         Create mask from logical OR of two VVs.
 
@@ -688,13 +688,13 @@ class GXVV:
 
         If either values is non-dummy, then result is 1, else dummy.
         """
-        self._wrapper.mask_or(p2._wrapper, p3._wrapper)
+        self._wrapper.mask_or(v_vy._wrapper, v_vz._wrapper)
         
 
 
 
 
-    def mask_str(self, p2, p3):
+    def mask_str(self, v_vm, str_val):
         """
         Mask one `GXVV` against another using a string.
 
@@ -707,17 +707,17 @@ class GXVV:
         not shortened after this call.  If the mask is longer than the target,
         the target will be lengthenned with dummies before applying the mask.
         """
-        self._wrapper.mask_str(p2._wrapper, p3.encode())
+        self._wrapper.mask_str(v_vm._wrapper, str_val.encode())
         
 
 
 
 
-    def multiply(self, p2, p3):
+    def multiply(self, v_vy, v_vz):
         """
         Multiply two VVs: VV_A * VV_B = VV_C
         """
-        self._wrapper.multiply(p2._wrapper, p3._wrapper)
+        self._wrapper.multiply(v_vy._wrapper, v_vz._wrapper)
         
 
 
@@ -733,7 +733,7 @@ class GXVV:
 
 
 
-    def polygon_mask(self, p2, p3, p4, p5):
+    def polygon_mask(self, yvv, rvv, pply, dummy):
         """
         Mask a `GXVV` using XY data and a polygon
 
@@ -741,13 +741,13 @@ class GXVV:
 
         The VVs has to be the same length
         """
-        self._wrapper.polygon_mask(p2._wrapper, p3._wrapper, p4._wrapper, p5)
+        self._wrapper.polygon_mask(yvv._wrapper, rvv._wrapper, pply._wrapper, dummy)
         
 
 
 
     @classmethod
-    def project(cls, p1, p2, p3):
+    def project(cls, pj, v_vx, v_vy):
         """
         This method projects an X and Y `GXVV`.
 
@@ -755,13 +755,13 @@ class GXVV:
 
         This function is equivalent to `GXPJ.convert_vv`.
         """
-        gxapi_cy.WrapVV.project(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper)
+        gxapi_cy.WrapVV.project(GXContext._get_tls_geo(), pj._wrapper, v_vx._wrapper, v_vy._wrapper)
         
 
 
 
     @classmethod
-    def project_3d(cls, p1, p2, p3, p4):
+    def project_3d(cls, pj, v_vx, v_vy, v_vz):
         """
         This method projects an X,Y,Z `GXVV`.
 
@@ -769,13 +769,13 @@ class GXVV:
 
         This function is equivalent to `GXPJ.convert_vv3`.
         """
-        gxapi_cy.WrapVV.project_3d(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper)
+        gxapi_cy.WrapVV.project_3d(GXContext._get_tls_geo(), pj._wrapper, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
         
 
 
 
 
-    def range_double(self, p2, p3):
+    def range_double(self, min, max):
         """
         Get the min. and max. values of a `GXVV` while ignoring dummies.
 
@@ -783,23 +783,23 @@ class GXVV:
 
         Minimum and maximum become `GS_R8DM` if entire `GXVV` is dummy.
         """
-        p2.value, p3.value = self._wrapper.range_double(p2.value, p3.value)
+        min.value, max.value = self._wrapper.range_double(min.value, max.value)
         
 
 
 
 
-    def re_fid(self, p2, p3, p4):
+    def re_fid(self, start, incr, length):
         """
         Re-sample a `GXVV` to a new fid start/icrement
         """
-        self._wrapper.re_fid(p2, p3, p4)
+        self._wrapper.re_fid(start, incr, length)
         
 
 
 
 
-    def re_fid_vv(self, p2):
+    def re_fid_vv(self, v_vm):
         """
         Re-sample a `GXVV` to match another `GXVV`.
 
@@ -808,17 +808,17 @@ class GXVV:
         This method will honor the `GXVV` FID Expansion and will expand/contract
         `GXVV`'s based on this flag if it is used.
         """
-        self._wrapper.re_fid_vv(p2._wrapper)
+        self._wrapper.re_fid_vv(v_vm._wrapper)
         
 
 
 
 
-    def re_sample(self, p2, p3, p4, p5, p6, p7):
+    def re_sample(self, c_start, c_incr, n_start, n_incr, length, extr):
         """
         Resamples a `GXVV` from one fid/incr to another fid/incr.
         """
-        self._wrapper.re_sample(p2, p3, p4, p5, p6, p7)
+        self._wrapper.re_sample(c_start, c_incr, n_start, n_incr, length, extr)
         
 
 
@@ -844,7 +844,7 @@ class GXVV:
 
 
 
-    def get_double(self, p2):
+    def get_double(self, element):
         """
         Get a real element from a `GXVV`.
 
@@ -853,7 +853,7 @@ class GXVV:
         Type conversions are performed if necessary.  Dummy values
         are converted to "*" string.
         """
-        ret_val = self._wrapper.get_double(p2)
+        ret_val = self._wrapper.get_double(element)
         return ret_val
 
 
@@ -873,7 +873,7 @@ class GXVV:
 
 
 
-    def weighted_mean(self, p2):
+    def weighted_mean(self, vv_weights):
         """
         Calculate the weighted average of the values.
 
@@ -881,43 +881,43 @@ class GXVV:
 
         Dummy values are ignored.
         """
-        ret_val = self._wrapper.weighted_mean(p2._wrapper)
+        ret_val = self._wrapper.weighted_mean(vv_weights._wrapper)
         return ret_val
 
 
 
 
-    def set_fid_expansion(self, p2):
+    def set_fid_expansion(self, expand):
         """
         Sets the Fiducial expansion from a `GXVV`
         """
-        self._wrapper.set_fid_expansion(p2)
+        self._wrapper.set_fid_expansion(expand)
         
 
 
 
 
-    def set_fid_incr(self, p2):
+    def set_fid_incr(self, incr):
         """
         Sets the Fiducial increment of a `GXVV`
         """
-        self._wrapper.set_fid_incr(p2)
+        self._wrapper.set_fid_incr(incr)
         
 
 
 
 
-    def set_fid_start(self, p2):
+    def set_fid_start(self, start):
         """
         Sets the Fiducial start of a `GXVV`
         """
-        self._wrapper.set_fid_start(p2)
+        self._wrapper.set_fid_start(start)
         
 
 
 
 
-    def set_int(self, p2, p3):
+    def set_int(self, element, value):
         """
         Set an integer element in a `GXVV`.
 
@@ -933,13 +933,13 @@ class GXVV:
         not what you expect it to be because of dynamic allocation at
         an earlier time.
         """
-        self._wrapper.set_int(p2, p3)
+        self._wrapper.set_int(element, value)
         
 
 
 
 
-    def set_int_n(self, p2, p3, p4):
+    def set_int_n(self, start, n, value):
         """
         Set N integer elements in a `GXVV`.
 
@@ -949,13 +949,13 @@ class GXVV:
         If the element is > current `GXVV` length, the `GXVV` length is
         increased.
         """
-        self._wrapper.set_int_n(p2, p3, p4)
+        self._wrapper.set_int_n(start, n, value)
         
 
 
 
 
-    def set_len(self, p2):
+    def set_len(self, size):
         """
         Set the length of a `GXVV`.
 
@@ -970,13 +970,13 @@ class GXVV:
         not what you expect it to be because of dynamic allocation at
         an earlier time.
         """
-        self._wrapper.set_len(p2)
+        self._wrapper.set_len(size)
         
 
 
 
 
-    def set_double(self, p2, p3):
+    def set_double(self, element, value):
         """
         Set a real element in a `GXVV`.
 
@@ -992,13 +992,13 @@ class GXVV:
         not what you expect it to be because of dynamic allocation at
         an earlier time.
         """
-        self._wrapper.set_double(p2, p3)
+        self._wrapper.set_double(element, value)
         
 
 
 
 
-    def set_double_n(self, p2, p3, p4):
+    def set_double_n(self, start, n, value):
         """
         Set N real elements in a `GXVV`.
 
@@ -1008,13 +1008,13 @@ class GXVV:
         If the element is > current `GXVV` length, the `GXVV` length is
         increased.
         """
-        self._wrapper.set_double_n(p2, p3, p4)
+        self._wrapper.set_double_n(start, n, value)
         
 
 
 
 
-    def set_string(self, p2, p3):
+    def set_string(self, element, value):
         """
         Set a string element in a `GXVV`.
 
@@ -1030,13 +1030,13 @@ class GXVV:
         not what you expect it to be because of dynamic allocation at
         an earlier time.
         """
-        self._wrapper.set_string(p2, p3.encode())
+        self._wrapper.set_string(element, value.encode())
         
 
 
 
 
-    def set_string_n(self, p2, p3, p4):
+    def set_string_n(self, start, n, value):
         """
         Set N string elements in a `GXVV`.
 
@@ -1046,13 +1046,13 @@ class GXVV:
         If the element is > current `GXVV` length, the `GXVV` length is
         increased.
         """
-        self._wrapper.set_string_n(p2, p3, p4.encode())
+        self._wrapper.set_string_n(start, n, value.encode())
         
 
 
 
 
-    def setup_index(self, p2, p3, p4, p5):
+    def setup_index(self, vvq, vvi, mode, space):
         """
         Setup an index `GXVV` from VV1 to VV2.
 
@@ -1085,23 +1085,23 @@ class GXVV:
         values in hVVy, and uses linear interpolation to calculate the values of
         hVVy2 at the input indices contained in hVVi.
         """
-        self._wrapper.setup_index(p2._wrapper, p3._wrapper, p4, p5)
+        self._wrapper.setup_index(vvq._wrapper, vvi._wrapper, mode, space)
         
 
 
 
 
-    def sort(self, p2):
+    def sort(self, order):
         """
         Sort a `GXVV`.
         """
-        self._wrapper.sort(p2)
+        self._wrapper.sort(order)
         
 
 
 
 
-    def sort_index(self, p2):
+    def sort_index(self, ivv):
         """
         Sort index `GXVV` based on a data `GXVV`.
 
@@ -1111,13 +1111,13 @@ class GXVV:
         This index vv can then be used by the IndexOrder method
         to order a group of `GXVV`'s.
         """
-        self._wrapper.sort_index(p2._wrapper)
+        self._wrapper.sort_index(ivv._wrapper)
         
 
 
 
 
-    def sort_index1(self, p2, p3):
+    def sort_index1(self, ivv, ord1):
         """
         Sort index `GXVV` based on 1 data `GXVV` - set orders.
 
@@ -1131,13 +1131,13 @@ class GXVV:
         the secondary `GXVV` values are compared. If the secondary values
         are the same, the ternary values are compared, etc.
         """
-        self._wrapper.sort_index1(p2._wrapper, p3)
+        self._wrapper.sort_index1(ivv._wrapper, ord1)
         
 
 
 
 
-    def sort_index2(self, p2, p3, p4, p5):
+    def sort_index2(self, d2_vv, ivv, ord1, ord2):
         """
         Sort index `GXVV` based on 2 data VVs - set orders.
 
@@ -1151,13 +1151,13 @@ class GXVV:
         the secondary `GXVV` values are compared. If the secondary values
         are the same, the ternary values are compared, etc
         """
-        self._wrapper.sort_index2(p2._wrapper, p3._wrapper, p4, p5)
+        self._wrapper.sort_index2(d2_vv._wrapper, ivv._wrapper, ord1, ord2)
         
 
 
 
 
-    def sort_index3(self, p2, p3, p4, p5, p6, p7):
+    def sort_index3(self, d2_vv, d3_vv, ivv, ord1, ord2, ord3):
         """
         Sort index `GXVV` based on 3 data VVs - set orders.
 
@@ -1171,13 +1171,13 @@ class GXVV:
         the secondary `GXVV` values are compared. If the secondary values
         are the same, the third values are compared, etc
         """
-        self._wrapper.sort_index3(p2._wrapper, p3._wrapper, p4._wrapper, p5, p6, p7)
+        self._wrapper.sort_index3(d2_vv._wrapper, d3_vv._wrapper, ivv._wrapper, ord1, ord2, ord3)
         
 
 
 
 
-    def sort_index4(self, p2, p3, p4, p5, p6, p7, p8, p9):
+    def sort_index4(self, d2_vv, d3_vv, d4_vv, ivv, ord1, ord2, ord3, ord4):
         """
         Sort index `GXVV` based on 4 data VVs - set orders.
 
@@ -1191,27 +1191,27 @@ class GXVV:
         the secondary `GXVV` values are compared. If the secondary values
         are the same, the third values are compared, etc
         """
-        self._wrapper.sort_index4(p2._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6, p7, p8, p9)
+        self._wrapper.sort_index4(d2_vv._wrapper, d3_vv._wrapper, d4_vv._wrapper, ivv._wrapper, ord1, ord2, ord3, ord4)
         
 
 
 
     @classmethod
-    def statistics(cls, p1, p2):
+    def statistics(cls, st, vv):
         """
         Add a `GXVV` to a `GXST`.
         """
-        gxapi_cy.WrapVV.statistics(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper)
+        gxapi_cy.WrapVV.statistics(GXContext._get_tls_geo(), st._wrapper, vv._wrapper)
         
 
 
 
 
-    def subtract(self, p2, p3):
+    def subtract(self, v_vy, v_vz):
         """
         Subtract one `GXVV` from another: VV_A - VV_B = VV_C
         """
-        self._wrapper.subtract(p2._wrapper, p3._wrapper)
+        self._wrapper.subtract(v_vy._wrapper, v_vz._wrapper)
         
 
 
@@ -1230,21 +1230,21 @@ class GXVV:
 
 
 
-    def window(self, p2, p3, p4):
+    def window(self, min, max, mode):
         """
         Limit the elements of a vv to a range.
         """
-        self._wrapper.window(p2, p3, p4)
+        self._wrapper.window(min, max, mode)
         
 
 
 
 
-    def write_xml(self, p2, p3, p4):
+    def write_xml(self, file, format, decimal):
         """
         Write the `GXVV` data as an XML object with bytes and formating.
         """
-        self._wrapper.write_xml(p2.encode(), p3, p4)
+        self._wrapper.write_xml(file.encode(), format, decimal)
         
 
 

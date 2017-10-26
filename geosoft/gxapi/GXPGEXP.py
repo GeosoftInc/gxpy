@@ -61,12 +61,12 @@ class GXPGEXP:
 
 
 
-    def add_pager(self, p2, p3):
+    def add_pager(self, pg, var):
         """
         This method adds an pager to the `GXPGEXP` object with a
         variable name.
         """
-        self._wrapper.add_pager(p2._wrapper, p3.encode())
+        self._wrapper.add_pager(pg._wrapper, var.encode())
         
 
 
@@ -84,11 +84,11 @@ class GXPGEXP:
 
 
 
-    def do_formula(self, p2, p3):
+    def do_formula(self, formula, max_len):
         """
         This method runs a formula on the pagers.
         """
-        self._wrapper.do_formula(p2.encode(), p3)
+        self._wrapper.do_formula(formula.encode(), max_len)
         
 
 

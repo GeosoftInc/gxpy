@@ -88,7 +88,7 @@ class GXBIGRID:
 
 
 
-    def load_parms(self, p2):
+    def load_parms(self, file):
         """
         Retrieves a Bigrid object's control parameters from a file,
         or sets the parameters to default if the file doesn't exist.
@@ -101,45 +101,45 @@ class GXBIGRID:
         Otherwise, the control file's settings are retrieved from
         the file and loaded into the `GXBIGRID` object.
         """
-        ret_val = self._wrapper.load_parms(p2.encode())
+        ret_val = self._wrapper.load_parms(file.encode())
         return ret_val
 
 
 
 
-    def load_warp(self, p2, p3, p4):
+    def load_warp(self, title, cell, warp):
         """
         Load a warp projection.
         """
-        ret_val = self._wrapper.load_warp(p2.encode(), p3.encode(), p4.encode())
+        ret_val = self._wrapper.load_warp(title.encode(), cell.encode(), warp.encode())
         return ret_val
 
 
 
 
-    def run(self, p2, p3, p4):
+    def run(self, zchan, in_dat, out_dat):
         """
         Executes the Bigrid program, using the input channel and
         output file parameters.
         """
-        self._wrapper.run(p2.encode(), p3._wrapper, p4._wrapper)
+        self._wrapper.run(zchan.encode(), in_dat._wrapper, out_dat._wrapper)
         
 
 
 
 
-    def run2(self, p2, p3, p4, p5):
+    def run2(self, zchan, in_dat, out_dat, ipj):
         """
         Executes the Bigrid program, using the input channel and
         output file parameters with a projection handle.
         """
-        self._wrapper.run2(p2.encode(), p3._wrapper, p4._wrapper, p5._wrapper)
+        self._wrapper.run2(zchan.encode(), in_dat._wrapper, out_dat._wrapper, ipj._wrapper)
         
 
 
 
 
-    def save_parms(self, p2):
+    def save_parms(self, name):
         """
         Puts the Bigrid object's control parameters back into
         its control file.
@@ -149,7 +149,7 @@ class GXBIGRID:
         If the control file did not previously exist, it will be
         created. Otherwise, the old file will be overwritten.
         """
-        self._wrapper.save_parms(p2.encode())
+        self._wrapper.save_parms(name.encode())
         
 
 

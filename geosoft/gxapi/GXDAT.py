@@ -67,21 +67,21 @@ class GXDAT:
 
 
     @classmethod
-    def create_db(cls, p1, p2, p3, p4):
+    def create_db(cls, db, x_ch, y_ch, z_ch):
         """
         Create a handle to a database `GXDAT` object
         """
-        ret_val = gxapi_cy.WrapDAT.create_db(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode(), p4.encode())
+        ret_val = gxapi_cy.WrapDAT.create_db(GXContext._get_tls_geo(), db._wrapper, x_ch.encode(), y_ch.encode(), z_ch.encode())
         return GXDAT(ret_val)
 
 
 
     @classmethod
-    def create_xgd(cls, p1, p2):
+    def create_xgd(cls, name, mode):
         """
         Create a handle to a grid file `GXDAT` object
         """
-        ret_val = gxapi_cy.WrapDAT.create_xgd(GXContext._get_tls_geo(), p1.encode(), p2)
+        ret_val = gxapi_cy.WrapDAT.create_xgd(GXContext._get_tls_geo(), name.encode(), mode)
         return GXDAT(ret_val)
 
 
@@ -89,7 +89,7 @@ class GXDAT:
 
 
     @classmethod
-    def get_lst(cls, p1, p2, p3, p4):
+    def get_lst(cls, lst, interface, flags, mode):
         """
         Put available `GXDAT` filters and qualifiers in a `GXLST`
 
@@ -99,13 +99,13 @@ class GXDAT:
         in the "Name" of the `GXLST`, while the file qualifiers are stored in
         the "Value".
         """
-        gxapi_cy.WrapDAT.get_lst(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3, p4)
+        gxapi_cy.WrapDAT.get_lst(GXContext._get_tls_geo(), lst._wrapper, interface.encode(), flags, mode)
         
 
 
 
 
-    def range_xyz(self, p2, p3, p4, p5, p6, p7, p8):
+    def range_xyz(self, min_x, p3, p4, p5, p6, p7, p8):
         """
         Determine the range in X, Y and Z in the `GXDAT` source
 
@@ -113,7 +113,7 @@ class GXDAT:
 
         Terminates if unable to open an RPT `GXDAT` interface.
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value = self._wrapper.range_xyz(p2.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value)
+        min_x.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value = self._wrapper.range_xyz(min_x.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value)
         
 
 

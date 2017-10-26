@@ -64,17 +64,17 @@ class GXSBF:
 
 
 
-    def create(self, p2, p3):
+    def create(self, file, status):
         """
         Create a child `GXSBF` object inside an `GXSBF`.
         """
-        ret_val = self._wrapper.create(p2.encode(), p3)
+        ret_val = self._wrapper.create(file.encode(), status)
         return GXSBF(ret_val)
 
 
 
 
-    def create_obj_list(self, p2, p3):
+    def create_obj_list(self, lst, type):
         """
         Fills an `GXLST` with embedded storage names of an `GXSBF`.
 
@@ -85,27 +85,27 @@ class GXSBF:
         Along with the Name of the file or directory, a constant "dir" or "file" string is written
         to the `GXLST` also.
         """
-        self._wrapper.create_obj_list(p2._wrapper, p3)
+        self._wrapper.create_obj_list(lst._wrapper, type)
         
 
 
 
 
-    def del_dir(self, p2):
+    def del_dir(self, dir):
         """
         Delete a directory (storage) from this storage.
         """
-        self._wrapper.del_dir(p2.encode())
+        self._wrapper.del_dir(dir.encode())
         
 
 
 
 
-    def del_file(self, p2):
+    def del_file(self, file):
         """
         Delete a file from this storage.
         """
-        self._wrapper.del_file(p2.encode())
+        self._wrapper.del_file(file.encode())
         
 
 
@@ -113,21 +113,21 @@ class GXSBF:
 
 
     @classmethod
-    def h_get_db(cls, p1):
+    def h_get_db(cls, db):
         """
         Get the embedded file storage from a database.
         """
-        ret_val = gxapi_cy.WrapSBF.h_get_db(GXContext._get_tls_geo(), p1._wrapper)
+        ret_val = gxapi_cy.WrapSBF.h_get_db(GXContext._get_tls_geo(), db._wrapper)
         return GXSBF(ret_val)
 
 
 
     @classmethod
-    def h_get_map(cls, p1):
+    def h_get_map(cls, map):
         """
         Get the embedded file storage from a map.
         """
-        ret_val = gxapi_cy.WrapSBF.h_get_map(GXContext._get_tls_geo(), p1._wrapper)
+        ret_val = gxapi_cy.WrapSBF.h_get_map(GXContext._get_tls_geo(), map._wrapper)
         return GXSBF(ret_val)
 
 
@@ -143,31 +143,31 @@ class GXSBF:
 
 
 
-    def exist_dir(self, p2):
+    def exist_dir(self, dir):
         """
         Check to see if a directory (storage) exists inside this storage.
         """
-        ret_val = self._wrapper.exist_dir(p2.encode())
+        ret_val = self._wrapper.exist_dir(dir.encode())
         return ret_val
 
 
 
 
-    def exist_file(self, p2):
+    def exist_file(self, file):
         """
         Check to see if a file exists inside this storage.
         """
-        ret_val = self._wrapper.exist_file(p2.encode())
+        ret_val = self._wrapper.exist_file(file.encode())
         return ret_val
 
 
 
 
-    def save_log(self, p2, p3, p4, p5):
+    def save_log(self, dir, file, file_save, p5):
         """
         Save an embedded file to an ASCII file.
         """
-        self._wrapper.save_log(p2.encode(), p3.encode(), p4.encode(), p5)
+        self._wrapper.save_log(dir.encode(), file.encode(), file_save.encode(), p5)
         
 
 

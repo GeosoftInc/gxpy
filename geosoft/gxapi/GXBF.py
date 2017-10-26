@@ -61,17 +61,17 @@ class GXBF:
 
 
 
-    def ch_size(self, p2):
+    def ch_size(self, size):
         """
         Changes the size of a file
         """
-        self._wrapper.ch_size(p2)
+        self._wrapper.ch_size(size)
         
 
 
 
 
-    def seek(self, p2, p3):
+    def seek(self, offset, ref):
         """
         Moves file position
 
@@ -80,33 +80,33 @@ class GXBF:
         Terminates if attempt to move past the end of
         a read-only file.
         """
-        self._wrapper.seek(p2, p3)
+        self._wrapper.seek(offset, ref)
         
 
 
 
 
-    def copy(self, p2):
+    def copy(self, b_fw):
         """
         Copy entire contents of a source `GXBF` to a destination `GXBF`
         """
-        self._wrapper.copy(p2._wrapper)
+        self._wrapper.copy(b_fw._wrapper)
         
 
 
 
 
-    def crc(self, p2, p3):
+    def crc(self, size, crc):
         """
         Compute CRC of a file.
         """
-        ret_val = self._wrapper.crc(p2, p3)
+        ret_val = self._wrapper.crc(size, crc)
         return ret_val
 
 
 
     @classmethod
-    def create(cls, p1, p2):
+    def create(cls, file, status):
         """
         Create `GXBF` object.
 
@@ -124,13 +124,13 @@ class GXBF:
         
         For example "<geosoft>/user/csv/datum.csv"
         """
-        ret_val = gxapi_cy.WrapBF.create(GXContext._get_tls_geo(), p1.encode(), p2)
+        ret_val = gxapi_cy.WrapBF.create(GXContext._get_tls_geo(), file.encode(), status)
         return GXBF(ret_val)
 
 
 
     @classmethod
-    def create_sbf(cls, p1, p2, p3):
+    def create_sbf(cls, sbf, file, status):
         """
         Create `GXBF` object inside an `GXSBF`.
 
@@ -138,7 +138,7 @@ class GXBF:
 
         see sbf.gxh
         """
-        ret_val = gxapi_cy.WrapBF.create_sbf(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3)
+        ret_val = gxapi_cy.WrapBF.create_sbf(GXContext._get_tls_geo(), sbf._wrapper, file.encode(), status)
         return GXBF(ret_val)
 
 
@@ -168,11 +168,11 @@ class GXBF:
 
 
 
-    def read_binary_string(self, p2, p3, p4):
+    def read_binary_string(self, bytes, encoding, data):
         """
         Reads string data from current position in `GXBF`
         """
-        p4.value = self._wrapper.read_binary_string(p2, p3, p4.value.encode())
+        data.value = self._wrapper.read_binary_string(bytes, encoding, data.value.encode())
         
 
 
@@ -198,7 +198,7 @@ class GXBF:
 
 
 
-    def read_int(self, p2, p3):
+    def read_int(self, type, p3):
         """
         Reads int data from current position in `GXBF`
 
@@ -215,13 +215,13 @@ class GXBF:
         If a byte order is not specified, the source is assumed to be
         in the native byte order of the reading/writing computer.
         """
-        p3.value = self._wrapper.read_int(p2, p3.value)
+        p3.value = self._wrapper.read_int(type, p3.value)
         
 
 
 
 
-    def read_double(self, p2, p3):
+    def read_double(self, type, p3):
         """
         Reads real data from current position in `GXBF`
 
@@ -238,13 +238,13 @@ class GXBF:
         If a byte order is not specified, the source is assumed to be
         in the native byte order of the reading/writing computer.
         """
-        p3.value = self._wrapper.read_double(p2, p3.value)
+        p3.value = self._wrapper.read_double(type, p3.value)
         
 
 
 
 
-    def read_vv(self, p2, p3):
+    def read_vv(self, type, p3):
         """
         Read data to a `GXVV` from current position in `GXBF`
 
@@ -261,27 +261,27 @@ class GXBF:
         If a byte order is not specified, the source is assumed to be
         in the native byte order of the reading/writing computer.
         """
-        self._wrapper.read_vv(p2, p3._wrapper)
+        self._wrapper.read_vv(type, p3._wrapper)
         
 
 
 
 
-    def set_destroy_status(self, p2):
+    def set_destroy_status(self, status):
         """
         Set the flag to delete the file on close
         """
-        self._wrapper.set_destroy_status(p2)
+        self._wrapper.set_destroy_status(status)
         
 
 
 
 
-    def write_binary_string(self, p2, p3):
+    def write_binary_string(self, encoding, data):
         """
         Write a binary string to a `GXBF`
         """
-        self._wrapper.write_binary_string(p2, p3.encode())
+        self._wrapper.write_binary_string(encoding, data.encode())
         
 
 
@@ -297,7 +297,7 @@ class GXBF:
 
 
 
-    def write_int(self, p2, p3):
+    def write_int(self, type, p3):
         """
         Writes int to the `GXBF`
 
@@ -309,13 +309,13 @@ class GXBF:
         If a byte order is not specified, the data is written
         in the native byte order of the writing computer.
         """
-        self._wrapper.write_int(p2, p3)
+        self._wrapper.write_int(type, p3)
         
 
 
 
 
-    def write_double(self, p2, p3):
+    def write_double(self, type, p3):
         """
         Writes real to the `GXBF`
 
@@ -327,13 +327,13 @@ class GXBF:
         If a byte order is not specified, the data is written
         in the native byte order of the writing computer.
         """
-        self._wrapper.write_double(p2, p3)
+        self._wrapper.write_double(type, p3)
         
 
 
 
 
-    def write_vv(self, p2, p3):
+    def write_vv(self, type, p3):
         """
         Writes `GXVV` to the `GXBF`
 
@@ -345,7 +345,7 @@ class GXBF:
         If a byte order is not specified, the data is written
         in the native byte order of the writing computer.
         """
-        self._wrapper.write_vv(p2, p3._wrapper)
+        self._wrapper.write_vv(type, p3._wrapper)
         
 
 

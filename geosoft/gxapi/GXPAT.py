@@ -75,7 +75,7 @@ class GXPAT:
 
 
 
-    def get_lst(self, p2, p3):
+    def get_lst(self, cl, lst):
         """
         Copies all pattern names into a `GXLST` object.
 
@@ -85,7 +85,7 @@ class GXPAT:
         There will always be at least two items,
         "None" and "Solid Fill"
         """
-        self._wrapper.get_lst(p2.encode(), p3._wrapper)
+        self._wrapper.get_lst(cl.encode(), lst._wrapper)
         
 
 

@@ -68,7 +68,7 @@ class GXEDB:
 
 
 
-    def apply_formula_internal(self, p2):
+    def apply_formula_internal(self, formula):
         """
         Apply a formula to selected cells of the
         current line. (Do not use this wrapper if you
@@ -89,7 +89,7 @@ class GXEDB:
         "<NameOfCurrentChannel>=<SomeExpression>;"
         e.g. "x=y+1;"
         """
-        self._wrapper.apply_formula_internal(p2.encode())
+        self._wrapper.apply_formula_internal(formula.encode())
         
 
 
@@ -146,7 +146,7 @@ class GXEDB:
 
 
 
-    def destroy_view(self, p2):
+    def destroy_view(self, unload_flag):
         """
         Removes the view from the workspace.
 
@@ -158,7 +158,7 @@ class GXEDB:
         unloaded and optionally saved depending on the `EDB_REMOVE`
         parameter.
         """
-        self._wrapper.destroy_view(p2)
+        self._wrapper.destroy_view(unload_flag)
         
 
 
@@ -184,31 +184,31 @@ class GXEDB:
 
 
 
-    def get_displ_fid_range(self, p2, p3):
+    def get_displ_fid_range(self, start, num):
         """
         Return the displayed fiducial start index & number of cells
         """
-        p2.value, p3.value = self._wrapper.get_displ_fid_range(p2.value, p3.value)
+        start.value, num.value = self._wrapper.get_displ_fid_range(start.value, num.value)
         
 
 
 
 
-    def get_cur_point(self, p2, p3, p4):
+    def get_cur_point(self, x, y, z):
         """
         Returns the coordinates of the currently selected point in the database (first value if range selected)
         """
-        p2.value, p3.value, p4.value = self._wrapper.get_cur_point(p2.value, p3.value, p4.value)
+        x.value, y.value, z.value = self._wrapper.get_cur_point(x.value, y.value, z.value)
         
 
 
 
 
-    def get_fid_range(self, p2, p3, p4):
+    def get_fid_range(self, start, incr, num):
         """
         Returns currently displayed fid range
         """
-        p2.value, p3.value, p4.value = self._wrapper.get_fid_range(p2.value, p3.value, p4.value)
+        start.value, incr.value, num.value = self._wrapper.get_fid_range(start.value, incr.value, num.value)
         
 
 
@@ -234,47 +234,47 @@ class GXEDB:
 
 
 
-    def get_profile_range_x(self, p2, p3, p4):
+    def get_profile_range_x(self, min_x, max_x, ph_chan_x):
         """
         Get profile X range and X channel
         """
-        p2.value, p3.value, p4.value = self._wrapper.get_profile_range_x(p2.value, p3.value, p4.value)
+        min_x.value, max_x.value, ph_chan_x.value = self._wrapper.get_profile_range_x(min_x.value, max_x.value, ph_chan_x.value)
         
 
 
 
 
-    def get_profile_range_y(self, p2, p3, p4, p5, p6):
+    def get_profile_range_y(self, window, prof, min_y, max_y, scl):
         """
         Get profile Y range and display option
         """
-        p4.value, p5.value, p6.value = self._wrapper.get_profile_range_y(p2, p3, p4.value, p5.value, p6.value)
+        min_y.value, max_y.value, scl.value = self._wrapper.get_profile_range_y(window, prof, min_y.value, max_y.value, scl.value)
         
 
 
 
 
-    def get_profile_split(self, p2, p3):
+    def get_profile_split(self, d1, d2):
         """
         Get profile split for 3 windows.
         """
-        p2.value, p3.value = self._wrapper.get_profile_split(p2.value, p3.value)
+        d1.value, d2.value = self._wrapper.get_profile_split(d1.value, d2.value)
         
 
 
 
 
-    def get_profile_split5(self, p2, p3, p4, p5):
+    def get_profile_split5(self, d1, d2, d3, d4):
         """
         Get profile split for 5 windows.
         """
-        p2.value, p3.value, p4.value, p5.value = self._wrapper.get_profile_split5(p2.value, p3.value, p4.value, p5.value)
+        d1.value, d2.value, d3.value, d4.value = self._wrapper.get_profile_split5(d1.value, d2.value, d3.value, d4.value)
         
 
 
 
 
-    def get_profile_split_vv(self, p2):
+    def get_profile_split_vv(self, vv):
         """
         Get profile window splits.
 
@@ -289,73 +289,73 @@ class GXEDB:
         profile windows. To get/set the fraction of the total database window
         devoted to the profiles, use the `set_split` and `get_split` functions.
         """
-        self._wrapper.get_profile_split_vv(p2._wrapper)
+        self._wrapper.get_profile_split_vv(vv._wrapper)
         
 
 
 
 
-    def get_profile_vertical_grid_lines(self, p2, p3):
+    def get_profile_vertical_grid_lines(self, grid, interval):
         """
         Get profile grid vertical line info.
         """
-        p2.value, p3.value = self._wrapper.get_profile_vertical_grid_lines(p2.value, p3.value)
+        grid.value, interval.value = self._wrapper.get_profile_vertical_grid_lines(grid.value, interval.value)
         
 
 
 
 
-    def get_profile_window(self, p2, p3, p4):
+    def get_profile_window(self, window, x, y):
         """
         Get profile window size
         """
-        p3.value, p4.value = self._wrapper.get_profile_window(p2, p3.value, p4.value)
+        x.value, y.value = self._wrapper.get_profile_window(window, x.value, y.value)
         
 
 
 
 
-    def goto_column(self, p2):
+    def goto_column(self, col):
         """
         Move the channel marker to a specific column.
         """
-        self._wrapper.goto_column(p2)
+        self._wrapper.goto_column(col)
         
 
 
 
 
-    def goto_elem(self, p2):
+    def goto_elem(self, elem):
         """
         Goto an element in the current line.
         """
-        self._wrapper.goto_elem(p2)
+        self._wrapper.goto_elem(elem)
         
 
 
 
 
-    def goto_line(self, p2):
+    def goto_line(self, line_symb):
         """
         Goto to a line symbol in the editor.
         """
-        self._wrapper.goto_line(p2)
+        self._wrapper.goto_line(line_symb)
         
 
 
 
 
-    def histogram(self, p2, p3, p4, p5):
+    def histogram(self, st, min, incr, count):
         """
         Create histogram stats.
         """
-        self._wrapper.histogram(p2._wrapper, p3, p4, p5)
+        self._wrapper.histogram(st._wrapper, min, incr, count)
         
 
 
 
 
-    def all_chan_list(self, p2):
+    def all_chan_list(self, vv):
         """
         Get a list of the all channels but in the way they are displayed.
 
@@ -370,7 +370,7 @@ class GXEDB:
 
             `disp_chan_list`
         """
-        ret_val = self._wrapper.all_chan_list(p2._wrapper)
+        ret_val = self._wrapper.all_chan_list(vv._wrapper)
         return ret_val
 
 
@@ -386,7 +386,7 @@ class GXEDB:
 
 
 
-    def disp_chan_list(self, p2):
+    def disp_chan_list(self, vv):
         """
         Get a list of the displayed channel symbols.
 
@@ -401,13 +401,13 @@ class GXEDB:
 
             `disp_chan_lst`
         """
-        ret_val = self._wrapper.disp_chan_list(p2._wrapper)
+        ret_val = self._wrapper.disp_chan_list(vv._wrapper)
         return ret_val
 
 
 
 
-    def disp_chan_lst(self, p2):
+    def disp_chan_lst(self, lst):
         """
         Get a list of the displayed channel names.
 
@@ -423,13 +423,13 @@ class GXEDB:
 
             `disp_chan_list`
         """
-        ret_val = self._wrapper.disp_chan_lst(p2._wrapper)
+        ret_val = self._wrapper.disp_chan_lst(lst._wrapper)
         return ret_val
 
 
 
 
-    def disp_class_chan_lst(self, p2, p3):
+    def disp_class_chan_lst(self, lst, class_name):
         """
         Get a list of the displayed channels in a given channel class.
 
@@ -448,34 +448,34 @@ class GXEDB:
 
             `disp_chan_list`
         """
-        ret_val = self._wrapper.disp_class_chan_lst(p2._wrapper, p3.encode())
+        ret_val = self._wrapper.disp_class_chan_lst(lst._wrapper, class_name.encode())
         return ret_val
 
 
 
 
-    def find_channel_column(self, p2):
+    def find_channel_column(self, chan):
         """
         Find the column that contains a channel
         """
-        ret_val = self._wrapper.find_channel_column(p2.encode())
+        ret_val = self._wrapper.find_channel_column(chan.encode())
         return ret_val
 
 
 
 
-    def find_nearest(self, p2, p3, p4, p5):
+    def find_nearest(self, x, y, z, ipj):
         """
         Find the nearest point on the current line based
         on X,Y and Z and their projection.
         """
-        ret_val, p2.value, p3.value, p4.value = self._wrapper.find_nearest(p2.value, p3.value, p4.value, p5._wrapper)
+        ret_val, x.value, y.value, z.value = self._wrapper.find_nearest(x.value, y.value, z.value, ipj._wrapper)
         return ret_val
 
 
 
 
-    def get_cur_chan(self, p2):
+    def get_cur_chan(self, str_val):
         """
         Get current channel name.
 
@@ -483,38 +483,38 @@ class GXEDB:
 
         Returns "" if mark not currently in a channel.
         """
-        p2.value = self._wrapper.get_cur_chan(p2.value.encode())
+        str_val.value = self._wrapper.get_cur_chan(str_val.value.encode())
         
 
 
 
 
-    def get_cur_fid_string(self, p2):
+    def get_cur_fid_string(self, val):
         """
         This method returns the currently selected value
         at the current fid (if available).
         """
-        p2.value = self._wrapper.get_cur_fid_string(p2.value.encode())
+        val.value = self._wrapper.get_cur_fid_string(val.value.encode())
         
 
 
 
 
-    def get_cur_line(self, p2):
+    def get_cur_line(self, str_val):
         """
         Get current line name.
         """
-        p2.value = self._wrapper.get_cur_line(p2.value.encode())
+        str_val.value = self._wrapper.get_cur_line(str_val.value.encode())
         
 
 
 
 
-    def get_cur_mark(self, p2, p3, p4):
+    def get_cur_mark(self, start, end, inc):
         """
         Returns the current data mark info.
         """
-        ret_val, p2.value, p3.value, p4.value = self._wrapper.get_cur_mark(p2.value, p3.value, p4.value)
+        ret_val, start.value, end.value, inc.value = self._wrapper.get_cur_mark(start.value, end.value, inc.value)
         return ret_val
 
 
@@ -538,17 +538,17 @@ class GXEDB:
 
 
     @classmethod
-    def get_databases_lst(cls, p1, p2):
+    def get_databases_lst(cls, lst, path):
         """
         Load the file names of open databases into a `GXLST`.
         """
-        ret_val = gxapi_cy.WrapEDB.get_databases_lst(GXContext._get_tls_geo(), p1._wrapper, p2)
+        ret_val = gxapi_cy.WrapEDB.get_databases_lst(GXContext._get_tls_geo(), lst._wrapper, path)
         return ret_val
 
 
 
 
-    def get_mark_chan_vv(self, p2, p3):
+    def get_mark_chan_vv(self, vv, chan):
         """
         Get channel data for the current mark.
 
@@ -561,13 +561,13 @@ class GXEDB:
         
         The `GXVV` will be resized to the length of the data
         """
-        ret_val = self._wrapper.get_mark_chan_vv(p2._wrapper, p3)
+        ret_val = self._wrapper.get_mark_chan_vv(vv._wrapper, chan)
         return ret_val
 
 
 
 
-    def get_mark_chan_va(self, p2, p3):
+    def get_mark_chan_va(self, vv, chan):
         """
         Get channel data for the current mark.
 
@@ -580,27 +580,27 @@ class GXEDB:
         
         The `GXVA` will be resized to the length of the data
         """
-        ret_val = self._wrapper.get_mark_chan_va(p2._wrapper, p3)
+        ret_val = self._wrapper.get_mark_chan_va(vv._wrapper, chan)
         return ret_val
 
 
 
 
-    def get_name(self, p2):
+    def get_name(self, name):
         """
         Get the name of the database object of this `GXEDB`.
         """
-        p2.value = self._wrapper.get_name(p2.value.encode())
+        name.value = self._wrapper.get_name(name.value.encode())
         
 
 
 
 
-    def get_profile_parm_int(self, p2, p3, p4):
+    def get_profile_parm_int(self, window, prof, parm):
         """
         Get integer profile parameter
         """
-        ret_val = self._wrapper.get_profile_parm_int(p2, p3, p4)
+        ret_val = self._wrapper.get_profile_parm_int(window, prof, parm)
         return ret_val
 
 
@@ -636,17 +636,17 @@ class GXEDB:
 
 
     @classmethod
-    def loaded(cls, p1):
+    def loaded(cls, name):
         """
         Returns 1 if a database is loaded .
         """
-        ret_val = gxapi_cy.WrapEDB.loaded(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapEDB.loaded(GXContext._get_tls_geo(), name.encode())
         return ret_val
 
 
 
 
-    def profile_open(self, p2):
+    def profile_open(self, window):
         """
         Return TRUE or FALSE if profile window is open
 
@@ -655,7 +655,7 @@ class GXEDB:
         This functions will return FALSE if requested window
         is not supported in current version of Oasis montaj.
         """
-        ret_val = self._wrapper.profile_open(p2)
+        ret_val = self._wrapper.profile_open(window)
         return ret_val
 
 
@@ -671,27 +671,27 @@ class GXEDB:
 
 
 
-    def get_window_position(self, p2, p3, p4, p5, p6, p7):
+    def get_window_position(self, left, top, right, bottom, state, is_floating):
         """
         Get the map window's position and dock state
         """
-        p2.value, p3.value, p4.value, p5.value, p6.value, p7.value = self._wrapper.get_window_position(p2.value, p3.value, p4.value, p5.value, p6.value, p7.value)
+        left.value, top.value, right.value, bottom.value, state.value, is_floating.value = self._wrapper.get_window_position(left.value, top.value, right.value, bottom.value, state.value, is_floating.value)
         
 
 
 
 
-    def set_window_position(self, p2, p3, p4, p5, p6, p7):
+    def set_window_position(self, left, top, right, bottom, state, is_floating):
         """
         Get the map window's position and dock state
         """
-        self._wrapper.set_window_position(p2, p3, p4, p5, p6, p7)
+        self._wrapper.set_window_position(left, top, right, bottom, state, is_floating)
         
 
 
 
 
-    def show_profile_name(self, p2, p3):
+    def show_profile_name(self, state, p3):
         """
         Show a profile in the profile window
 
@@ -699,33 +699,33 @@ class GXEDB:
 
         If the symbol is not loaded, it will be loaded.
         """
-        ret_val = self._wrapper.show_profile_name(p2, p3.encode())
+        ret_val = self._wrapper.show_profile_name(state, p3.encode())
         return ret_val
 
 
 
 
-    def get_window_y_axis_direction(self, p2):
+    def get_window_y_axis_direction(self, window):
         """
         Get the y-axis direction for a window
         """
-        ret_val = self._wrapper.get_window_y_axis_direction(p2)
+        ret_val = self._wrapper.get_window_y_axis_direction(window)
         return ret_val
 
 
 
 
-    def window_profiles(self, p2):
+    def window_profiles(self, window):
         """
         Get number of profiles in a window
         """
-        ret_val = self._wrapper.window_profiles(p2)
+        ret_val = self._wrapper.window_profiles(window)
         return ret_val
 
 
 
 
-    def launch_histogram(self, p2):
+    def launch_histogram(self, chan):
         """
         Launch histogram tool on a database.
 
@@ -733,7 +733,7 @@ class GXEDB:
 
             `GXCHIMERA.launch_histogram` in chimera.gxh
         """
-        self._wrapper.launch_histogram(p2.encode())
+        self._wrapper.launch_histogram(chan.encode())
         
 
 
@@ -763,7 +763,7 @@ class GXEDB:
 
 
     @classmethod
-    def load(cls, p1):
+    def load(cls, name):
         """
         Loads a list of databases into the workspace
 
@@ -777,13 +777,13 @@ class GXEDB:
         All other files in the list are assumed to be in the same
         directory as the first file.
         """
-        ret_val = gxapi_cy.WrapEDB.load(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapEDB.load(GXContext._get_tls_geo(), name.encode())
         return GXEDB(ret_val)
 
 
 
     @classmethod
-    def load_no_activate(cls, p1):
+    def load_no_activate(cls, name):
         """
         Loads documents into the workspace
 
@@ -792,7 +792,7 @@ class GXEDB:
         This function acts just like `load` except that the document(s) is not activated (brought to foreground) and no
         guarantee is given about which document is currently active.
         """
-        ret_val = gxapi_cy.WrapEDB.load_no_activate(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapEDB.load_no_activate(GXContext._get_tls_geo(), name.encode())
         return GXEDB(ret_val)
 
 
@@ -808,7 +808,7 @@ class GXEDB:
 
 
 
-    def load_chan(self, p2):
+    def load_chan(self, chan):
         """
         Load a channel into current database
 
@@ -817,13 +817,13 @@ class GXEDB:
         If the channel does not exist, or if channel is already
         loaded nothing happens.
         """
-        self._wrapper.load_chan(p2.encode())
+        self._wrapper.load_chan(chan.encode())
         
 
 
 
     @classmethod
-    def load_new(cls, p1):
+    def load_new(cls, name):
         """
         Loads a database into the workspace, flags as new.
 
@@ -833,13 +833,13 @@ class GXEDB:
         an internal flag such that if on closing the user chooses
         not to save changes, the database is deleted.
         """
-        ret_val = gxapi_cy.WrapEDB.load_new(GXContext._get_tls_geo(), p1.encode())
+        ret_val = gxapi_cy.WrapEDB.load_new(GXContext._get_tls_geo(), name.encode())
         return GXEDB(ret_val)
 
 
 
     @classmethod
-    def load_pass(cls, p1, p2, p3):
+    def load_pass(cls, name, login, password):
         """
         Loads a database into the editor with login and password.
 
@@ -850,13 +850,13 @@ class GXEDB:
         If the database is already loaded, it simply becomes
         the current database.
         """
-        ret_val = gxapi_cy.WrapEDB.load_pass(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode())
+        ret_val = gxapi_cy.WrapEDB.load_pass(GXContext._get_tls_geo(), name.encode(), login.encode(), password.encode())
         return GXEDB(ret_val)
 
 
 
     @classmethod
-    def load_with_view(cls, p1, p2):
+    def load_with_view(cls, name, p2):
         """
         Load an `GXEDB` with the view from a current `GXEDB`.
 
@@ -866,7 +866,7 @@ class GXEDB:
         dbsubset to create a new database with the same
         view as previously.
         """
-        ret_val = gxapi_cy.WrapEDB.load_with_view(GXContext._get_tls_geo(), p1.encode(), p2._wrapper)
+        ret_val = gxapi_cy.WrapEDB.load_with_view(GXContext._get_tls_geo(), name.encode(), p2._wrapper)
         return GXEDB(ret_val)
 
 
@@ -892,11 +892,11 @@ class GXEDB:
 
 
 
-    def remove_profile(self, p2, p3):
+    def remove_profile(self, window, prof):
         """
         Remove a profile from the profile window
         """
-        self._wrapper.remove_profile(p2, p3)
+        self._wrapper.remove_profile(window, prof)
         
 
 
@@ -914,11 +914,11 @@ class GXEDB:
 
 
 
-    def get_profile_parm_double(self, p2, p3, p4):
+    def get_profile_parm_double(self, window, prof, parm):
         """
         Get real profile parameter
         """
-        ret_val = self._wrapper.get_profile_parm_double(p2, p3, p4)
+        ret_val = self._wrapper.get_profile_parm_double(window, prof, parm)
         return ret_val
 
 
@@ -934,7 +934,7 @@ class GXEDB:
 
 
 
-    def run_channel_maker(self, p2):
+    def run_channel_maker(self, chan):
         """
         Run the maker for a single channel.
 
@@ -943,7 +943,7 @@ class GXEDB:
         Skips channels without makers; will not return an
         error if the channel does not exist.
         """
-        self._wrapper.run_channel_maker(p2.encode())
+        self._wrapper.run_channel_maker(chan.encode())
         
 
 
@@ -963,67 +963,67 @@ class GXEDB:
 
 
 
-    def set_cur_line(self, p2):
+    def set_cur_line(self, line):
         """
         Set the current line name.
         """
-        self._wrapper.set_cur_line(p2.encode())
+        self._wrapper.set_cur_line(line.encode())
         
 
 
 
 
-    def set_cur_line_no_message(self, p2):
+    def set_cur_line_no_message(self, str_val):
         """
         Set Line but do not send a message.
         """
-        self._wrapper.set_cur_line_no_message(p2.encode())
+        self._wrapper.set_cur_line_no_message(str_val.encode())
         
 
 
 
 
-    def set_cur_mark(self, p2, p3):
+    def set_cur_mark(self, start, end):
         """
         Set the current mark.
         """
-        self._wrapper.set_cur_mark(p2, p3)
+        self._wrapper.set_cur_mark(start, end)
         
 
 
 
 
-    def set_profile_parm_i(self, p2, p3, p4, p5):
+    def set_profile_parm_i(self, window, prof, parm, value):
         """
         Set integer profile parameter
         """
-        self._wrapper.set_profile_parm_i(p2, p3, p4, p5)
+        self._wrapper.set_profile_parm_i(window, prof, parm, value)
         
 
 
 
 
-    def set_profile_parm_r(self, p2, p3, p4, p5):
+    def set_profile_parm_r(self, window, prof, parm, value):
         """
         Set real profile parameter
         """
-        self._wrapper.set_profile_parm_r(p2, p3, p4, p5)
+        self._wrapper.set_profile_parm_r(window, prof, parm, value)
         
 
 
 
 
-    def set_profile_range_x(self, p2, p3, p4):
+    def set_profile_range_x(self, min_x, max_x, x_ch):
         """
         Set profile X range and X channel
         """
-        self._wrapper.set_profile_range_x(p2, p3, p4)
+        self._wrapper.set_profile_range_x(min_x, max_x, x_ch)
         
 
 
 
 
-    def set_profile_range_y(self, p2, p3, p4, p5, p6):
+    def set_profile_range_y(self, min_x, max_x, min_y, max_y, scl):
         """
         Set profile Y range and display option
 
@@ -1032,33 +1032,33 @@ class GXEDB:
         If channel is not loaded or displayed, it will
         loaded and/or displayed.
         """
-        self._wrapper.set_profile_range_y(p2, p3, p4, p5, p6)
+        self._wrapper.set_profile_range_y(min_x, max_x, min_y, max_y, scl)
         
 
 
 
 
-    def set_profile_split(self, p2, p3):
+    def set_profile_split(self, d1, d2):
         """
         Set profile split for 3 windows.
         """
-        self._wrapper.set_profile_split(p2, p3)
+        self._wrapper.set_profile_split(d1, d2)
         
 
 
 
 
-    def set_profile_split5(self, p2, p3, p4, p5):
+    def set_profile_split5(self, d1, d2, d3, d4):
         """
         Set profile split for 5 windows.
         """
-        self._wrapper.set_profile_split5(p2, p3, p4, p5)
+        self._wrapper.set_profile_split5(d1, d2, d3, d4)
         
 
 
 
 
-    def set_profile_split_vv(self, p2):
+    def set_profile_split_vv(self, vv):
         """
         Set profile splits
 
@@ -1071,13 +1071,13 @@ class GXEDB:
         `GXVV` values beyond the maximum number of displayable
         profiles (`MAX_PROF_WND`) are ignored.
         """
-        self._wrapper.set_profile_split_vv(p2._wrapper)
+        self._wrapper.set_profile_split_vv(vv._wrapper)
         
 
 
 
 
-    def set_split(self, p2):
+    def set_split(self, d):
         """
         Set split ratio between spreadsheet and profile sections.
 
@@ -1086,23 +1086,23 @@ class GXEDB:
         d = (spreadsheet window height/
         (spreadsheet window height + entire profile window height))
         """
-        self._wrapper.set_split(p2)
+        self._wrapper.set_split(d)
         
 
 
 
 
-    def set_window_state(self, p2):
+    def set_window_state(self, state):
         """
         Changes the state of the database window
         """
-        self._wrapper.set_window_state(p2)
+        self._wrapper.set_window_state(state)
         
 
 
 
 
-    def show_profile(self, p2, p3):
+    def show_profile(self, window, symb):
         """
         Show a profile in the profile window
 
@@ -1110,13 +1110,13 @@ class GXEDB:
 
         If the symbol is not loaded, it will be loaded.
         """
-        self._wrapper.show_profile(p2, p3)
+        self._wrapper.show_profile(window, symb)
         
 
 
 
 
-    def statistics(self, p2):
+    def statistics(self, st):
         """
         Add all currently selected data to the `GXST`.
 
@@ -1124,13 +1124,13 @@ class GXEDB:
 
         Use `histogram` to get median or histogram.
         """
-        self._wrapper.statistics(p2._wrapper)
+        self._wrapper.statistics(st._wrapper)
         
 
 
 
     @classmethod
-    def un_load(cls, p1):
+    def un_load(cls, name):
         """
         Unloads an edited database.
 
@@ -1139,7 +1139,7 @@ class GXEDB:
         If the database is not loaded, nothing happens.
         Same as `un_load_verify` with FALSE to prompt save.
         """
-        gxapi_cy.WrapEDB.un_load(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapEDB.un_load(GXContext._get_tls_geo(), name.encode())
         
 
 
@@ -1165,7 +1165,7 @@ class GXEDB:
 
 
 
-    def un_load_chan(self, p2):
+    def un_load_chan(self, chan):
         """
         Unload a channel into current database
 
@@ -1174,13 +1174,13 @@ class GXEDB:
         If the channel does not exist, or if channel is already
         loaded nothing happens.
         """
-        self._wrapper.un_load_chan(p2.encode())
+        self._wrapper.un_load_chan(chan.encode())
         
 
 
 
     @classmethod
-    def un_load_discard(cls, p1):
+    def un_load_discard(cls, name):
         """
         Unloads a database in the workspace, discards changes.
 
@@ -1188,13 +1188,13 @@ class GXEDB:
 
         If the database is not loaded, nothing happens.
         """
-        gxapi_cy.WrapEDB.un_load_discard(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapEDB.un_load_discard(GXContext._get_tls_geo(), name.encode())
         
 
 
 
     @classmethod
-    def un_load_verify(cls, p1, p2):
+    def un_load_verify(cls, name, prompt):
         """
         Unloads an edited database, optional prompt to save.
 
@@ -1206,7 +1206,7 @@ class GXEDB:
         EDB_UNLOAD_MULTIPROMPT is now obsolete and
         is equivalent to `EDB_UNLOAD_SINGLE_PROMPT`.
         """
-        gxapi_cy.WrapEDB.un_load_verify(GXContext._get_tls_geo(), p1.encode(), p2)
+        gxapi_cy.WrapEDB.un_load_verify(GXContext._get_tls_geo(), name.encode(), prompt)
         
 
 
@@ -1226,41 +1226,41 @@ class GXEDB:
 
 
     @classmethod
-    def load_control(cls, p1, p2):
+    def load_control(cls, db_file, window):
         """
         Version of `load` that can be used to load a database via subclassing into a Windows control.
         """
-        gxapi_cy.WrapEDB.load_control(GXContext._get_tls_geo(), p1.encode(), p2)
+        gxapi_cy.WrapEDB.load_control(GXContext._get_tls_geo(), db_file.encode(), window)
         
 
 
 
     @classmethod
-    def load_new_control(cls, p1, p2):
+    def load_new_control(cls, db_file, window):
         """
         Version of `load_new` that can be used to load a database via subclassing into a Windows control.
         """
-        gxapi_cy.WrapEDB.load_new_control(GXContext._get_tls_geo(), p1.encode(), p2)
+        gxapi_cy.WrapEDB.load_new_control(GXContext._get_tls_geo(), db_file.encode(), window)
         
 
 
 
     @classmethod
-    def load_pass_control(cls, p1, p2, p3, p4):
+    def load_pass_control(cls, db_file, user, password, window):
         """
         Version of `load_pass` that can be used to load a database via subclassing into a Windows control.
         """
-        gxapi_cy.WrapEDB.load_pass_control(GXContext._get_tls_geo(), p1.encode(), p2.encode(), p3.encode(), p4)
+        gxapi_cy.WrapEDB.load_pass_control(GXContext._get_tls_geo(), db_file.encode(), user.encode(), password.encode(), window)
         
 
 
 
     @classmethod
-    def load_with_view_control(cls, p1, p2, p3):
+    def load_with_view_control(cls, db_file, edb, window):
         """
         Version of `load_with_view` that can be used to load a database via subclassing into a Windows control.
         """
-        gxapi_cy.WrapEDB.load_with_view_control(GXContext._get_tls_geo(), p1.encode(), p2._wrapper, p3)
+        gxapi_cy.WrapEDB.load_with_view_control(GXContext._get_tls_geo(), db_file.encode(), edb._wrapper, window)
         
 
 
