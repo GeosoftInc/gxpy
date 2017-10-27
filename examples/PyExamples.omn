@@ -1,0 +1,12 @@
+/
+/ Python examples
+/
+/ Place this file in C:\Program Files\Geosoft\Desktop Applications 9\user\omn
+/ Place .py files in C:\Program Files\Geosoft\Desktop Applications 9\user\python
+/-------------------------------------------------------------------------------
+
+MENU "PyExamples"
+ITEM "Hello", hello_world_extension.py
+ITEM "Add channels", chanadd.py
+ITEM "SOM Analysis", som_om.py
+ITEM "Project test", test_project
