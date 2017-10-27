@@ -4,14 +4,16 @@ Created on Sun Jan  5 10:15:34 2014
 
 INSTALLATION
 
-This program requires pyqt5 to be part of Python. To install, open a command
-window as administrator:
+This script depends on PyGt5, which **cannot** be run from ESRI ArcGIS Pro Python.
 
-   pip install pyqt5
+To install PyQt5, open a command window as administrator and navigate to your Python
+folder (the folder that contains python.exe):
 
-see https://www.riverbankcomputing.com/software/pyqt/intro for copyright.
+   scripts\pip install pyqt5
 
-@author: Ian MacLeod, Geosoft, 2015
+see https://www.riverbankcomputing.com/software/pyqt/intro for PyQt copyright.
+
+@author: Ian MacLeod, Geosoft, 2014-17
 """
 #TODO: save classification map
 #TODO: add some Help
