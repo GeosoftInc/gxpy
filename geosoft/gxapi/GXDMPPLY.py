@@ -150,7 +150,7 @@ class GXDMPPLY:
 
 
 
-    def get_poly(self, p, v_vx, v_vy, v_vz):
+    def get_poly(self, p, vv_x, vv_y, vv_z):
         """
         Get a specific polygon from a `GXDMPPLY` object.
 
@@ -158,7 +158,7 @@ class GXDMPPLY:
 
         Get the number of points from the `GXVV` length.
         """
-        self._wrapper.get_poly(p, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
+        self._wrapper.get_poly(p, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
         
 
 
@@ -250,7 +250,7 @@ class GXDMPPLY:
 
 
 
-    def project_poly(self, p, xp, yp, zp, az, swing, v_vx, v_vy, v_vz):
+    def project_poly(self, p, xp, yp, zp, az, swing, vv_x, vv_y, vv_z):
         """
         Project a polygon onto a vertical plane.
 
@@ -263,13 +263,13 @@ class GXDMPPLY:
                           Y - "vertical" in plane (can be a swing)
                           Z - horizontal, "perpendicular" to plane (RH)
         """
-        self._wrapper.project_poly(p, xp, yp, zp, az, swing, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
+        self._wrapper.project_poly(p, xp, yp, zp, az, swing, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
         
 
 
 
 
-    def re_project_poly(self, p, xp, yp, zp, az, v_vx, v_vy, v_vx3, v_vy3, v_vz3):
+    def re_project_poly(self, p, xp, yp, zp, az, vv_x, vv_y, vv_x3, vv_y3, vv_z3):
         """
         Recover polygon locations from 2D locations on vertical plane.
 
@@ -280,7 +280,7 @@ class GXDMPPLY:
         Input the 2D locations on the projected vertical plane. These locations
         are projected back onto the original polygon plane.
         """
-        self._wrapper.re_project_poly(p, xp, yp, zp, az, v_vx._wrapper, v_vy._wrapper, v_vx3._wrapper, v_vy3._wrapper, v_vz3._wrapper)
+        self._wrapper.re_project_poly(p, xp, yp, zp, az, vv_x._wrapper, vv_y._wrapper, vv_x3._wrapper, vv_y3._wrapper, vv_z3._wrapper)
         
 
 
@@ -296,7 +296,7 @@ class GXDMPPLY:
 
 
 
-    def set_poly(self, p, v_vx, v_vy, v_vz):
+    def set_poly(self, p, vv_x, vv_y, vv_z):
         """
         Set a specific polygon into a `GXDMPPLY` object.
 
@@ -304,7 +304,7 @@ class GXDMPPLY:
 
         Get the number of points from the `GXVV` length.
         """
-        self._wrapper.set_poly(p, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
+        self._wrapper.set_poly(p, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
         
 
 

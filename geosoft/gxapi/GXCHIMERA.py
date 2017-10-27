@@ -74,7 +74,7 @@ class GXCHIMERA:
 
 
     @classmethod
-    def categorize_by_value(cls, v_vr, v_vi, v_vo):
+    def categorize_by_value(cls, vv_r, vv_i, vv_o):
         """
         Transform values to the index of input data ranges.
 
@@ -90,13 +90,13 @@ class GXCHIMERA:
         else if(V) >= M1) N = 1
         else N = 0
         """
-        gxapi_cy.WrapCHIMERA.categorize_by_value(GXContext._get_tls_geo(), v_vr._wrapper, v_vi._wrapper, v_vo._wrapper)
+        gxapi_cy.WrapCHIMERA.categorize_by_value(GXContext._get_tls_geo(), vv_r._wrapper, vv_i._wrapper, vv_o._wrapper)
         
 
 
 
     @classmethod
-    def categorize_by_value_det_limit(cls, v_vr, v_vi, det_limit, v_vo):
+    def categorize_by_value_det_limit(cls, vv_r, vv_i, det_limit, vv_o):
         """
         Transform values to the index of input data ranges, with detection limit.
 
@@ -106,7 +106,7 @@ class GXCHIMERA:
         input value is less than the detection limit,
         the output value is set to zero.
         """
-        gxapi_cy.WrapCHIMERA.categorize_by_value_det_limit(GXContext._get_tls_geo(), v_vr._wrapper, v_vi._wrapper, det_limit, v_vo._wrapper)
+        gxapi_cy.WrapCHIMERA.categorize_by_value_det_limit(GXContext._get_tls_geo(), vv_r._wrapper, vv_i._wrapper, det_limit, vv_o._wrapper)
         
 
 
@@ -133,7 +133,7 @@ class GXCHIMERA:
 
 
     @classmethod
-    def draw_circle_offset_markers(cls, mview, v_vxi, v_vyi, v_vxo, v_vyo, off_size):
+    def draw_circle_offset_markers(cls, mview, vv_xi, vv_yi, vv_xo, vv_yo, off_size):
         """
         Plots location marker and joining line for circle offset symbols
 
@@ -141,13 +141,13 @@ class GXCHIMERA:
 
         Draws black filled circle (symbols.gfn #7) and a joining line.
         """
-        gxapi_cy.WrapCHIMERA.draw_circle_offset_markers(GXContext._get_tls_geo(), mview._wrapper, v_vxi._wrapper, v_vyi._wrapper, v_vxo._wrapper, v_vyo._wrapper, off_size)
+        gxapi_cy.WrapCHIMERA.draw_circle_offset_markers(GXContext._get_tls_geo(), mview._wrapper, vv_xi._wrapper, vv_yi._wrapper, vv_xo._wrapper, vv_yo._wrapper, off_size)
         
 
 
 
     @classmethod
-    def draw_rectangle_offset_markers(cls, mview, v_vxi, v_vyi, v_vxo, v_vyo, off_size, x_size, y_size):
+    def draw_rectangle_offset_markers(cls, mview, vv_xi, vv_yi, vv_xo, vv_yo, off_size, x_size, y_size):
         """
         Plots location marker and joining line for rectangle offset symbols
 
@@ -155,27 +155,27 @@ class GXCHIMERA:
 
         Draws black filled circle (symbols.gfn #7) and a joining line.
         """
-        gxapi_cy.WrapCHIMERA.draw_rectangle_offset_markers(GXContext._get_tls_geo(), mview._wrapper, v_vxi._wrapper, v_vyi._wrapper, v_vxo._wrapper, v_vyo._wrapper, off_size, x_size, y_size)
+        gxapi_cy.WrapCHIMERA.draw_rectangle_offset_markers(GXContext._get_tls_geo(), mview._wrapper, vv_xi._wrapper, vv_yi._wrapper, vv_xo._wrapper, vv_yo._wrapper, off_size, x_size, y_size)
         
 
 
 
     @classmethod
-    def duplicate_chem(cls, mview, vv, log, det_lim, old, vv_tol, p7, p8, p9, p10, p11, p12):
+    def duplicate_chem(cls, mview, vv, log, det_lim, old, vv_tol, title, unit, x0, y0, xs, ys):
         """
         Plot an ASSAY Duplicate result in a graph window.
         """
-        gxapi_cy.WrapCHIMERA.duplicate_chem(GXContext._get_tls_geo(), mview._wrapper, vv._wrapper, log, det_lim, old, vv_tol._wrapper, p7.encode(), p8.encode(), p9, p10, p11, p12)
+        gxapi_cy.WrapCHIMERA.duplicate_chem(GXContext._get_tls_geo(), mview._wrapper, vv._wrapper, log, det_lim, old, vv_tol._wrapper, title.encode(), unit.encode(), x0, y0, xs, ys)
         
 
 
 
     @classmethod
-    def duplicate_chem_view(cls, map, view, group, ipj, vv, log, det_lim, old, vv_tol, p10, p11, p12, p13, p14, p15, p16, p17):
+    def duplicate_chem_view(cls, map, view, group, ipj, vv, log, det_lim, old, vv_tol, title, unit, vvx, vv_line, vv_fid, db, min_y, max_y):
         """
         Plot an ASSAY Duplicate result in a new view.
         """
-        p16.value, p17.value = gxapi_cy.WrapCHIMERA.duplicate_chem_view(GXContext._get_tls_geo(), map._wrapper, view.encode(), group.encode(), ipj._wrapper, vv._wrapper, log, det_lim, old, vv_tol._wrapper, p10.encode(), p11.encode(), p12._wrapper, p13._wrapper, p14._wrapper, p15._wrapper, p16.value, p17.value)
+        min_y.value, max_y.value = gxapi_cy.WrapCHIMERA.duplicate_chem_view(GXContext._get_tls_geo(), map._wrapper, view.encode(), group.encode(), ipj._wrapper, vv._wrapper, log, det_lim, old, vv_tol._wrapper, title.encode(), unit.encode(), vvx._wrapper, vv_line._wrapper, vv_fid._wrapper, db._wrapper, min_y.value, max_y.value)
         
 
 
@@ -197,7 +197,7 @@ class GXCHIMERA:
 
 
     @classmethod
-    def get_lithogeochem_data(cls, db, lst, m_ch, v_vtrans, remove_dummy_rows, v_vdummy, warn, v_vd, v_vline, v_vn, v_vused, v_vindex, v_vfids, v_vfidi):
+    def get_lithogeochem_data(cls, db, lst, m_ch, vv_trans, remove_dummy_rows, vv_dummy, warn, vv_d, vv_line, vv_n, vv_used, vv_index, vv_fids, vv_fidi):
         """
         Get all rows of non-dummy data in a database.
 
@@ -219,7 +219,7 @@ class GXCHIMERA:
         1 - Log transform: base e with log min = CHIMERA_LOG_MIN
         2 - Lambda transform
         """
-        gxapi_cy.WrapCHIMERA.get_lithogeochem_data(GXContext._get_tls_geo(), db._wrapper, lst._wrapper, m_ch, v_vtrans._wrapper, remove_dummy_rows, v_vdummy._wrapper, warn, v_vd._wrapper, v_vline._wrapper, v_vn._wrapper, v_vused._wrapper, v_vindex._wrapper, v_vfids._wrapper, v_vfidi._wrapper)
+        gxapi_cy.WrapCHIMERA.get_lithogeochem_data(GXContext._get_tls_geo(), db._wrapper, lst._wrapper, m_ch, vv_trans._wrapper, remove_dummy_rows, vv_dummy._wrapper, warn, vv_d._wrapper, vv_line._wrapper, vv_n._wrapper, vv_used._wrapper, vv_index._wrapper, vv_fids._wrapper, vv_fidi._wrapper)
         
 
 
@@ -502,7 +502,7 @@ class GXCHIMERA:
 
 
     @classmethod
-    def scatter2(cls, mview, title, x1, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31):
+    def scatter2(cls, mview, title, x1, y1, width, height, horz_vv, vert_vv, sym_font, sym_num_vv, sym_siz_vv, sym_col_vv, annot_style, h_chan, v_chan, h_units, v_units, h_min, h_max, v_min, v_max, hr_min, hr_max, vr_min, vr_max, use_hr_min, use_hr_max, use_vr_min, use_vr_max, h_scaling, v_scaling):
         """
         Plot the scatter plot on a map using symbol number, size and color VVs.
 
@@ -511,7 +511,7 @@ class GXCHIMERA:
         The view scaling is not altered with any projection. The base view
         is best as the input.
         """
-        gxapi_cy.WrapCHIMERA.scatter2(GXContext._get_tls_geo(), mview._wrapper, title.encode(), x1, p4, p5, p6, p7._wrapper, p8._wrapper, p9.encode(), p10._wrapper, p11._wrapper, p12._wrapper, p13, p14.encode(), p15.encode(), p16.encode(), p17.encode(), p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31)
+        gxapi_cy.WrapCHIMERA.scatter2(GXContext._get_tls_geo(), mview._wrapper, title.encode(), x1, y1, width, height, horz_vv._wrapper, vert_vv._wrapper, sym_font.encode(), sym_num_vv._wrapper, sym_siz_vv._wrapper, sym_col_vv._wrapper, annot_style, h_chan.encode(), v_chan.encode(), h_units.encode(), v_units.encode(), h_min, h_max, v_min, v_max, hr_min, hr_max, vr_min, vr_max, use_hr_min, use_hr_max, use_vr_min, use_vr_max, h_scaling, v_scaling)
         
 
 
@@ -565,7 +565,7 @@ class GXCHIMERA:
 
 
     @classmethod
-    def set_lithogeochem_data(cls, db, lst, v_vd, v_vline, v_vn, v_vused, v_vindex, v_vfids, v_vfidi, v_vdummy):
+    def set_lithogeochem_data(cls, db, lst, vv_d, vv_line, vv_n, vv_used, vv_index, vv_fids, vv_fidi, vv_dummy):
         """
         Set data back into a database.
 
@@ -585,7 +585,7 @@ class GXCHIMERA:
         New channel types will be set using the data `GXVV` type.
         Any metadata (CLASS, display formats) should be set separately.
         """
-        gxapi_cy.WrapCHIMERA.set_lithogeochem_data(GXContext._get_tls_geo(), db._wrapper, lst._wrapper, v_vd._wrapper, v_vline._wrapper, v_vn._wrapper, v_vused._wrapper, v_vindex._wrapper, v_vfids._wrapper, v_vfidi._wrapper, v_vdummy._wrapper)
+        gxapi_cy.WrapCHIMERA.set_lithogeochem_data(GXContext._get_tls_geo(), db._wrapper, lst._wrapper, vv_d._wrapper, vv_line._wrapper, vv_n._wrapper, vv_used._wrapper, vv_index._wrapper, vv_fids._wrapper, vv_fidi._wrapper, vv_dummy._wrapper)
         
 
 
@@ -636,7 +636,7 @@ class GXCHIMERA:
 
 
     @classmethod
-    def tri_plot2(cls, mview, title, x1, y1, width, height, x_vv, y_vv, z_vv, m_vv, sym_font, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32):
+    def tri_plot2(cls, mview, title, x1, y1, width, height, x_vv, y_vv, z_vv, m_vv, sym_font, sym_num_vv, sym_siz_vv, sym_col_vv, x_chan, y_chan, z_chan, xr_min, xr_max, yr_min, yr_max, zr_min, zr_max, use_xr_min, use_xr_max, use_yr_min, use_yr_max, use_zr_min, use_zr_max, grid, tic, grid_inc):
         """
         Plot the TriPlot on a map using symbol number, size and color VVs.
 
@@ -648,7 +648,7 @@ class GXCHIMERA:
         The view scaling is not altered with any projection. The base view
         is best as the input.
         """
-        gxapi_cy.WrapCHIMERA.tri_plot2(GXContext._get_tls_geo(), mview._wrapper, title.encode(), x1, y1, width, height, x_vv._wrapper, y_vv._wrapper, z_vv._wrapper, m_vv._wrapper, sym_font.encode(), p12._wrapper, p13._wrapper, p14._wrapper, p15.encode(), p16.encode(), p17.encode(), p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32)
+        gxapi_cy.WrapCHIMERA.tri_plot2(GXContext._get_tls_geo(), mview._wrapper, title.encode(), x1, y1, width, height, x_vv._wrapper, y_vv._wrapper, z_vv._wrapper, m_vv._wrapper, sym_font.encode(), sym_num_vv._wrapper, sym_siz_vv._wrapper, sym_col_vv._wrapper, x_chan.encode(), y_chan.encode(), z_chan.encode(), xr_min, xr_max, yr_min, yr_max, zr_min, zr_max, use_xr_min, use_xr_max, use_yr_min, use_yr_max, use_zr_min, use_zr_max, grid, tic, grid_inc)
         
 
 

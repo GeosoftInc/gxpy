@@ -105,11 +105,11 @@ class GXMAP:
 
 
 
-    def render_bitmap(self, view, min_x, min_y, max_x, max_y, file, p8):
+    def render_bitmap(self, view, min_x, min_y, max_x, max_y, file, max_res):
         """
         Render a map to a bitmap.
         """
-        self._wrapper.render_bitmap(view.encode(), min_x, min_y, max_x, max_y, file.encode(), p8)
+        self._wrapper.render_bitmap(view.encode(), min_x, min_y, max_x, max_y, file.encode(), max_res)
         
 
 

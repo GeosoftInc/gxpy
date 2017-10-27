@@ -61,11 +61,11 @@ class GXGIS:
 
 
     @classmethod
-    def create(cls, file, p2, p3):
+    def create(cls, file, info, type):
         """
         Creates a `GXGIS` Object
         """
-        ret_val = gxapi_cy.WrapGIS.create(GXContext._get_tls_geo(), file.encode(), p2.encode(), p3)
+        ret_val = gxapi_cy.WrapGIS.create(GXContext._get_tls_geo(), file.encode(), info.encode(), type)
         return GXGIS(ret_val)
 
 
@@ -88,7 +88,7 @@ class GXGIS:
 
 
 
-    def get_bpr_models_lst(self, p2, p3):
+    def get_bpr_models_lst(self, file, lst):
         """
         Get a `GXLST` of block models contained in a Gemcom BPR or BRP2 file
 
@@ -106,7 +106,7 @@ class GXGIS:
         or more sub-directories, identified in the ``*.CAT`` file located
         beside the input BPR or BPR2.
         """
-        self._wrapper.get_bpr_models_lst(p2.encode(), p3._wrapper)
+        self._wrapper.get_bpr_models_lst(file.encode(), lst._wrapper)
         
 
 

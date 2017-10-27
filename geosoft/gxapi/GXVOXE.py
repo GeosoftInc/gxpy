@@ -71,11 +71,11 @@ class GXVOXE:
 
 
 
-    def profile(self, v_vx, v_vy, v_vz, v_vd, interp):
+    def profile(self, vv_x, vv_y, vv_z, vv_d, interp):
         """
         Extract a profile of data along points provided.
         """
-        self._wrapper.profile(v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, v_vd._wrapper, interp)
+        self._wrapper.profile(vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_d._wrapper, interp)
         
 
 

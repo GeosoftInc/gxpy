@@ -83,7 +83,7 @@ class GXDH:
 
 
 
-    def creat_chan_lst(self, p2):
+    def creat_chan_lst(self, lst):
         """
         Fills a `GXLST` with available string and numeric channel code values.
 
@@ -94,13 +94,13 @@ class GXDH:
         containing the given channel name. The above code might refer to
         the "Au" channel in the "Tutorial_Assay.gdb" database.
         """
-        self._wrapper.creat_chan_lst(p2._wrapper)
+        self._wrapper.creat_chan_lst(lst._wrapper)
         
 
 
 
 
-    def depth_data_lst(self, p2):
+    def depth_data_lst(self, lst):
         """
         Fills a `GXLST` with available channel code values from Depth databases.
 
@@ -111,13 +111,13 @@ class GXDH:
         containing the given channel name. The above code might refer to
         the "Au" channel in the "Tutorial_Assay.gdb" database.
         """
-        self._wrapper.depth_data_lst(p2._wrapper)
+        self._wrapper.depth_data_lst(lst._wrapper)
         
 
 
 
 
-    def from_to_data_lst(self, p2, p3):
+    def from_to_data_lst(self, assay, lst):
         """
         Fills a `GXLST` with available string and numeric channel code values from From-To databases.
 
@@ -128,13 +128,13 @@ class GXDH:
         containing the given channel name. The above code might refer to
         the "Au" channel in the "Tutorial_Assay.gdb" database.
         """
-        self._wrapper.from_to_data_lst(p2.encode(), p3._wrapper)
+        self._wrapper.from_to_data_lst(assay.encode(), lst._wrapper)
         
 
 
 
 
-    def get_geology_contacts(self, lst, chan_code, geology, surface, gap, v_vx, v_vy, v_vz):
+    def get_geology_contacts(self, lst, chan_code, geology, surface, gap, vv_x, vv_y, vv_z):
         """
         Return XYZ locations of top or bottom geological surfaces
 
@@ -144,7 +144,7 @@ class GXDH:
         contact with the input geology. Those selected holes which do NOT
         have contacts, return `rDUMMY` for the corresponding locations.
         """
-        self._wrapper.get_geology_contacts(lst._wrapper, chan_code.encode(), geology.encode(), surface, gap, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
+        self._wrapper.get_geology_contacts(lst._wrapper, chan_code.encode(), geology.encode(), surface, gap, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
         
 
 
@@ -228,7 +228,7 @@ class GXDH:
 
 
 
-    def get_chan_code_info(self, p2, p3, p4):
+    def get_chan_code_info(self, chan_code, assay_db_index, chan):
         """
         Return the assay database index and channel name from a channel code string.
 
@@ -236,7 +236,7 @@ class GXDH:
 
         The input channel code is in the form "[Assay] channel"
         """
-        p3.value, p4.value = self._wrapper.get_chan_code_info(p2.encode(), p3.value, p4.value.encode())
+        assay_db_index.value, chan.value = self._wrapper.get_chan_code_info(chan_code.encode(), assay_db_index.value, chan.value.encode())
         
 
 
@@ -278,7 +278,7 @@ class GXDH:
 
 
 
-    def numeric_chan_lst(self, p2):
+    def numeric_chan_lst(self, lst):
         """
         Fills a `GXLST` with available numeric channel code values.
 
@@ -289,13 +289,13 @@ class GXDH:
         containing the given channel name. The above code might refer to
         the "Au" channel in the "Tutorial_Assay.gdb" database.
         """
-        self._wrapper.numeric_chan_lst(p2._wrapper)
+        self._wrapper.numeric_chan_lst(lst._wrapper)
         
 
 
 
 
-    def numeric_from_to_data_lst(self, p2, p3):
+    def numeric_from_to_data_lst(self, assay, lst):
         """
         Fills a `GXLST` with available numeric channel code values from From-To databases..
 
@@ -306,13 +306,13 @@ class GXDH:
         containing the given channel name. The above code might refer to
         the "Au" channel in the "Tutorial_Assay.gdb" database.
         """
-        self._wrapper.numeric_from_to_data_lst(p2.encode(), p3._wrapper)
+        self._wrapper.numeric_from_to_data_lst(assay.encode(), lst._wrapper)
         
 
 
 
 
-    def punch_grid_holes(self, img, v_vx, v_vy, v_vz, blank_dist):
+    def punch_grid_holes(self, img, vv_x, vv_y, vv_z, blank_dist):
         """
         Dummy out locations in a grid around non-contact holes.
 
@@ -325,13 +325,13 @@ class GXDH:
         If the blanking distance is zero or dummy, the distance is
         automatically set to half the distance to the closest hole intersection.
         """
-        self._wrapper.punch_grid_holes(img._wrapper, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, blank_dist)
+        self._wrapper.punch_grid_holes(img._wrapper, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, blank_dist)
         
 
 
 
 
-    def string_chan_lst(self, p2):
+    def string_chan_lst(self, lst):
         """
         Fills a `GXLST` with available string channel code values.
 
@@ -342,13 +342,13 @@ class GXDH:
         containing the given channel name. The above code might refer to
         the "Au" channel in the "Tutorial_Assay.gdb" database.
         """
-        self._wrapper.string_chan_lst(p2._wrapper)
+        self._wrapper.string_chan_lst(lst._wrapper)
         
 
 
 
 
-    def string_from_to_data_lst(self, p2, p3):
+    def string_from_to_data_lst(self, assay, lst):
         """
         Fills a `GXLST` with available string-type channel code values from From-To databases.
 
@@ -359,7 +359,7 @@ class GXDH:
         containing the given channel name. The above code might refer to
         the "Lithology" channel in the "Tutorial_Geology.gdb" database.
         """
-        self._wrapper.string_from_to_data_lst(p2.encode(), p3._wrapper)
+        self._wrapper.string_from_to_data_lst(assay.encode(), lst._wrapper)
         
 
 
@@ -794,11 +794,11 @@ class GXDH:
 
 
 
-    def get_default_section(self, az, p3, p4, p5, p6):
+    def get_default_section(self, az, x1, x2, l, w):
         """
         Computes default section azimuths, extents for selected holes.
         """
-        az.value, p3.value, p4.value, p5.value, p6.value = self._wrapper.get_default_section(az.value, p3.value, p4.value, p5.value, p6.value)
+        az.value, x1.value, x2.value, l.value, w.value = self._wrapper.get_default_section(az.value, x1.value, x2.value, l.value, w.value)
         
 
 
@@ -814,11 +814,11 @@ class GXDH:
 
 
 
-    def get_hole_survey(self, hole, v_vx, v_vy, v_vz, v_vd):
+    def get_hole_survey(self, hole, vv_x, vv_y, vv_z, vv_d):
         """
         Get the Survey information of a Hole.
         """
-        self._wrapper.get_hole_survey(hole, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, v_vd._wrapper)
+        self._wrapper.get_hole_survey(hole, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_d._wrapper)
         
 
 
@@ -1147,11 +1147,11 @@ class GXDH:
 
 
 
-    def get_units(self, units, p4):
+    def get_units(self, units, conv_factor):
         """
         Get the positional units and conversion factor to m.
         """
-        units.value, p4.value = self._wrapper.get_units(units.value.encode(), p4.value)
+        units.value, conv_factor.value = self._wrapper.get_units(units.value.encode(), conv_factor.value)
         
 
 
@@ -1438,7 +1438,7 @@ class GXDH:
 
 
 
-    def import_las(self, assay, file, interval, p5, p6):
+    def import_las(self, assay, file, interval, interp, wa):
         """
         Imports LAS Data into a `GXDH` database
 
@@ -1448,7 +1448,7 @@ class GXDH:
         without the project name and underscore, e.g. for
         "Project_Assay.gdb" use "Assay"
         """
-        self._wrapper.import_las(assay.encode(), file.encode(), interval, p5, p6._wrapper)
+        self._wrapper.import_las(assay.encode(), file.encode(), interval, interp, wa._wrapper)
         
 
 
@@ -1853,7 +1853,7 @@ class GXDH:
 
 
 
-    def re_survey_east_north(self, hole, v_vx, v_vy, v_vz, v_vd, east, north, elev, top, bot):
+    def re_survey_east_north(self, hole, vv_x, vv_y, vv_z, vv_d, east, north, elev, top, bot):
         """
         Resurvey an East-North-RL survey.
 
@@ -1862,13 +1862,13 @@ class GXDH:
         Re-interpolates in X, Y and Z to proper depth interval
         and returns depths for each point
         """
-        bot.value = self._wrapper.re_survey_east_north(hole.encode(), v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, v_vd._wrapper, east, north, elev, top, bot.value)
+        bot.value = self._wrapper.re_survey_east_north(hole.encode(), vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_d._wrapper, east, north, elev, top, bot.value)
         
 
 
 
 
-    def re_survey_pol_fit(self, hole, v_vdip, v_vaz, v_vdepth, east, north, elev, top, bot, inc, dip_conv, order, v_vx, v_vy, v_vz, v_vd):
+    def re_survey_pol_fit(self, hole, vv_dip, vv_az, vv_depth, east, north, elev, top, bot, inc, dip_conv, order, vv_x, vv_y, vv_z, vv_d):
         """
         Use the polynomial fit resurveying method.
 
@@ -1883,13 +1883,13 @@ class GXDH:
         for most smoothly curving holes. The order is reduced to no more than
         the number of input points.
         """
-        self._wrapper.re_survey_pol_fit(hole.encode(), v_vdip._wrapper, v_vaz._wrapper, v_vdepth._wrapper, east, north, elev, top, bot, inc, dip_conv, order, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, v_vd._wrapper)
+        self._wrapper.re_survey_pol_fit(hole.encode(), vv_dip._wrapper, vv_az._wrapper, vv_depth._wrapper, east, north, elev, top, bot, inc, dip_conv, order, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_d._wrapper)
         
 
 
 
 
-    def re_survey_rad_curve(self, hole, v_vdip, v_vaz, v_vdepth, east, north, elev, top, bot, inc, dip_conv, v_vx, v_vy, v_vz, v_vd):
+    def re_survey_rad_curve(self, hole, vv_dip, vv_az, vv_depth, east, north, elev, top, bot, inc, dip_conv, vv_x, vv_y, vv_z, vv_d):
         """
         Use radius of curvature resurveying method.
 
@@ -1901,13 +1901,13 @@ class GXDH:
         measure distance down the hole (even if it's horizontal).
         A negative dip convention means vertical down is -90 degrees.
         """
-        self._wrapper.re_survey_rad_curve(hole.encode(), v_vdip._wrapper, v_vaz._wrapper, v_vdepth._wrapper, east, north, elev, top, bot, inc, dip_conv, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, v_vd._wrapper)
+        self._wrapper.re_survey_rad_curve(hole.encode(), vv_dip._wrapper, vv_az._wrapper, vv_depth._wrapper, east, north, elev, top, bot, inc, dip_conv, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_d._wrapper)
         
 
 
 
 
-    def re_survey_straight(self, hole, dip, az, east, north, elev, top, bot, inc, dip_conv, v_vx, v_vy, v_vz, v_vd):
+    def re_survey_straight(self, hole, dip, az, east, north, elev, top, bot, inc, dip_conv, vv_x, vv_y, vv_z, vv_d):
         """
         Resurvey a straight hole.
 
@@ -1919,13 +1919,13 @@ class GXDH:
         measure distance down the hole (even if it's horizontal).
         A negative dip convention means vertical down is -90 degrees.
         """
-        self._wrapper.re_survey_straight(hole.encode(), dip, az, east, north, elev, top, bot, inc, dip_conv, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, v_vd._wrapper)
+        self._wrapper.re_survey_straight(hole.encode(), dip, az, east, north, elev, top, bot, inc, dip_conv, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_d._wrapper)
         
 
 
 
 
-    def re_survey_straight_seg(self, hole, v_vdip, v_vaz, v_vdepth, east, north, elev, top, bot, inc, dip_conv, v_vx, v_vy, v_vz, v_vd):
+    def re_survey_straight_seg(self, hole, vv_dip, vv_az, vv_depth, east, north, elev, top, bot, inc, dip_conv, vv_x, vv_y, vv_z, vv_d):
         """
         Resurvey a hole with straight segments between locations.
 
@@ -1938,13 +1938,13 @@ class GXDH:
         measure distance down the hole (even if it's horizontal).
         A negative dip convention means vertical down is -90 degrees.
         """
-        self._wrapper.re_survey_straight_seg(hole.encode(), v_vdip._wrapper, v_vaz._wrapper, v_vdepth._wrapper, east, north, elev, top, bot, inc, dip_conv, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, v_vd._wrapper)
+        self._wrapper.re_survey_straight_seg(hole.encode(), vv_dip._wrapper, vv_az._wrapper, vv_depth._wrapper, east, north, elev, top, bot, inc, dip_conv, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_d._wrapper)
         
 
 
 
 
-    def save_data_parameters_ini(self, p2, p3):
+    def save_data_parameters_ini(self, db, dir):
         """
         Save data parameters to INI files..
 
@@ -1956,7 +1956,7 @@ class GXDH:
         As of v6.3, the `GXDH` object is NOT required for this function, and
         is, in fact, ignored.
         """
-        self._wrapper.save_data_parameters_ini(p2._wrapper, p3.encode())
+        self._wrapper.save_data_parameters_ini(db._wrapper, dir.encode())
         
 
 
@@ -2219,7 +2219,7 @@ class GXDH:
 
 
 
-    def test_import_las(self, assay, file, interval, p5, p6):
+    def test_import_las(self, assay, file, interval, wa, warn):
         """
         Tests import of LAS Data for problems.
 
@@ -2232,7 +2232,7 @@ class GXDH:
         where data is merely extended at the start or the end with dummies
         to match a different interval down the hole.
         """
-        p6.value = self._wrapper.test_import_las(assay.encode(), file.encode(), interval, p5._wrapper, p6.value)
+        warn.value = self._wrapper.test_import_las(assay.encode(), file.encode(), interval, wa._wrapper, warn.value)
         
 
 

@@ -182,21 +182,21 @@ class GXSEMPLOT:
 
 
     @classmethod
-    def export_view(cls, db, lst, p3, p4, p5, p6, p7):
+    def export_view(cls, db, lst, new_db, view, mask_ch, mineral_ch, mineral):
         """
         Create a "View" database
         """
-        gxapi_cy.WrapSEMPLOT.export_view(GXContext._get_tls_geo(), db._wrapper, lst._wrapper, p3._wrapper, p4, p5.encode(), p6.encode(), p7.encode())
+        gxapi_cy.WrapSEMPLOT.export_view(GXContext._get_tls_geo(), db._wrapper, lst._wrapper, new_db._wrapper, view, mask_ch.encode(), mineral_ch.encode(), mineral.encode())
         
 
 
 
     @classmethod
-    def export_view2(cls, db, lst, p3, p4, p5, p6, p7, p8):
+    def export_view2(cls, db, lst, new_db, view, mask_ch, mineral_ch, mineral, export):
         """
         Create a "View" database, with channel selection
         """
-        gxapi_cy.WrapSEMPLOT.export_view2(GXContext._get_tls_geo(), db._wrapper, lst._wrapper, p3._wrapper, p4, p5.encode(), p6.encode(), p7.encode(), p8)
+        gxapi_cy.WrapSEMPLOT.export_view2(GXContext._get_tls_geo(), db._wrapper, lst._wrapper, new_db._wrapper, view, mask_ch.encode(), mineral_ch.encode(), mineral.encode(), export)
         
 
 
@@ -729,11 +729,11 @@ class GXSEMPLOT:
 
 
     @classmethod
-    def set_mask(cls, db, mask_ch, mineral_ch, p4, p5, p6):
+    def set_mask(cls, db, mask_ch, mineral_ch, mineral, selected, val):
         """
         Set the mask channel ON or OFF.
         """
-        gxapi_cy.WrapSEMPLOT.set_mask(GXContext._get_tls_geo(), db._wrapper, mask_ch.encode(), mineral_ch.encode(), p4.encode(), p5, p6)
+        gxapi_cy.WrapSEMPLOT.set_mask(GXContext._get_tls_geo(), db._wrapper, mask_ch.encode(), mineral_ch.encode(), mineral.encode(), selected, val)
         
 
 

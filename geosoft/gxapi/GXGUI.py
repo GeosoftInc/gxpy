@@ -434,7 +434,7 @@ class GXGUI:
 
 
     @classmethod
-    def get_dat_defaults(cls, flags, open, ext, p5):
+    def get_dat_defaults(cls, flags, open, ext, qual):
         """
         Return the user default extension and qualifier for grids/images.
 
@@ -447,7 +447,7 @@ class GXGUI:
         then "grd" and "GRD" are returned as the default extension
         and qualifier.
         """
-        ext.value, p5.value = gxapi_cy.WrapGUI.get_dat_defaults(GXContext._get_tls_geo(), flags, open, ext.value.encode(), p5.value.encode())
+        ext.value, qual.value = gxapi_cy.WrapGUI.get_dat_defaults(GXContext._get_tls_geo(), flags, open, ext.value.encode(), qual.value.encode())
         
 
 
@@ -572,7 +572,7 @@ class GXGUI:
 
 
     @classmethod
-    def gen_file_form(cls, title, filt_vv, p3, p4, p5, p7, p8):
+    def gen_file_form(cls, title, filt_vv, filter, default, file_path, type, multi):
         """
         General file Open/Save Form for Multiple/Single file selections and multiple filter capability
 
@@ -590,13 +590,13 @@ class GXGUI:
         iMultiFileOpen_GUI
         iMultiFileSave_GUI
         """
-        ret_val, p5.value = gxapi_cy.WrapGUI.gen_file_form(GXContext._get_tls_geo(), title.encode(), filt_vv._wrapper, p3, p4.encode(), p5.value.encode(), p7, p8)
+        ret_val, file_path.value = gxapi_cy.WrapGUI.gen_file_form(GXContext._get_tls_geo(), title.encode(), filt_vv._wrapper, filter, default.encode(), file_path.value.encode(), type, multi)
         return ret_val
 
 
 
     @classmethod
-    def custom_file_form(cls, title, filter, p3, p4, p6, p7):
+    def custom_file_form(cls, title, filter, default, file_path, type, multi):
         """
         General file Open/Save Form for Multiple/Single file selections and custom filter capability
 
@@ -606,7 +606,7 @@ class GXGUI:
         selections. In the case of multiple selections the names will be separated
         by a semicolon and only the first file will contain the full path.
         """
-        ret_val, p4.value = gxapi_cy.WrapGUI.custom_file_form(GXContext._get_tls_geo(), title.encode(), filter.encode(), p3.encode(), p4.value.encode(), p6, p7)
+        ret_val, file_path.value = gxapi_cy.WrapGUI.custom_file_form(GXContext._get_tls_geo(), title.encode(), filter.encode(), default.encode(), file_path.value.encode(), type, multi)
         return ret_val
 
 
@@ -908,7 +908,7 @@ class GXGUI:
 
 
     @classmethod
-    def odbc_file_connect(cls, file, connect, usage, p5):
+    def odbc_file_connect(cls, file, connect, usage, table):
         """
         Get the connection string for a file database as well as optional table name and FileUsage attribute
 
@@ -921,7 +921,7 @@ class GXGUI:
         returned. This is needed because the table name may or may not include
         the file extension.
         """
-        ret_val, connect.value, p5.value = gxapi_cy.WrapGUI.odbc_file_connect(GXContext._get_tls_geo(), file.encode(), connect.value.encode(), usage, p5.value.encode())
+        ret_val, connect.value, table.value = gxapi_cy.WrapGUI.odbc_file_connect(GXContext._get_tls_geo(), file.encode(), connect.value.encode(), usage, table.value.encode())
         return ret_val
 
 
@@ -981,7 +981,7 @@ class GXGUI:
 
 
     @classmethod
-    def pattern_form(cls, pat, size, thick, p4, p5, p6):
+    def pattern_form(cls, pat, size, thick, dense, col, back_col):
         """
         - Select a pattern.
 
@@ -1005,7 +1005,7 @@ class GXGUI:
         
         The pattern Angle and Style parameters are not user-definable.
         """
-        ret_val, pat.value, size.value, thick.value, p4.value, p5.value, p6.value = gxapi_cy.WrapGUI.pattern_form(GXContext._get_tls_geo(), pat.value, size.value, thick.value, p4.value, p5.value, p6.value)
+        ret_val, pat.value, size.value, thick.value, dense.value, col.value, back_col.value = gxapi_cy.WrapGUI.pattern_form(GXContext._get_tls_geo(), pat.value, size.value, thick.value, dense.value, col.value, back_col.value)
         return ret_val
 
 
@@ -1184,7 +1184,7 @@ class GXGUI:
 
 
     @classmethod
-    def render_pattern(cls, hdc, h_dc, left, bottom, right, top, pat, size, thick, p10, p11, p12, p13, p14):
+    def render_pattern(cls, hdc, h_dc, left, bottom, right, top, pat, size, thick, col, back_col, p12, p13, p14):
         """
         - Render a pattern.
 
@@ -1192,7 +1192,7 @@ class GXGUI:
 
         Renders a Geosoft pattern to a Windows DC.
         """
-        gxapi_cy.WrapGUI.render_pattern(GXContext._get_tls_geo(), hdc, h_dc, left, bottom, right, top, pat, size, thick, p10, p11, p12, p13, p14)
+        gxapi_cy.WrapGUI.render_pattern(GXContext._get_tls_geo(), hdc, h_dc, left, bottom, right, top, pat, size, thick, col, back_col, p12, p13, p14)
         
 
 

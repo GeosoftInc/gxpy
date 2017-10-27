@@ -143,7 +143,7 @@ class GXST:
 
 
 
-    def get_histogram_info(self, div, p3, p4):
+    def get_histogram_info(self, div, min, max):
         """
         Retrieve number of bins, min and max value in histogram
 
@@ -154,7 +154,7 @@ class GXST:
         the `GXST`, then the returned number of bins is zero, and
         the min and max values will be dummies.
         """
-        div.value, p3.value, p4.value = self._wrapper.get_histogram_info(div.value, p3.value, p4.value)
+        div.value, min.value, max.value = self._wrapper.get_histogram_info(div.value, min.value, max.value)
         
 
 
@@ -186,7 +186,7 @@ class GXST:
 
 
 
-    def histogram2(self, div, p3, p4):
+    def histogram2(self, div, min, max):
         """
         This method prepares `GXST` for recording histogram.
 
@@ -198,7 +198,7 @@ class GXST:
         
         See the note above "Histogram ranges and color zone ranges"
         """
-        self._wrapper.histogram2(div, p3, p4)
+        self._wrapper.histogram2(div, min, max)
         
 
 

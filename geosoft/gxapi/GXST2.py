@@ -71,11 +71,11 @@ class GXST2:
 
 
 
-    def data_vv(self, v_vx, v_vy):
+    def data_vv(self, vv_x, vv_y):
         """
         Add all the values in VVx and VVy to `GXST2` object.
         """
-        self._wrapper.data_vv(v_vx._wrapper, v_vy._wrapper)
+        self._wrapper.data_vv(vv_x._wrapper, vv_y._wrapper)
         
 
 

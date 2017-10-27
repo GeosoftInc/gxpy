@@ -73,7 +73,7 @@ class GXTIN:
 
 
     @classmethod
-    def create(cls, v_vx, v_vy, v_vz):
+    def create(cls, vv_x, vv_y, vv_z):
         """
         This method creates a `GXTIN` object.
 
@@ -83,7 +83,7 @@ class GXTIN:
         The Z values are not required, and a 0-length `GXVV` can be used to indicate
         the values are not to be used.
         """
-        ret_val = gxapi_cy.WrapTIN.create(GXContext._get_tls_geo(), v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
+        ret_val = gxapi_cy.WrapTIN.create(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
         return GXTIN(ret_val)
 
 

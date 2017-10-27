@@ -520,7 +520,7 @@ class GXEDB:
 
 
 
-    def get_current_selection(self, p2, p4, p6, p8):
+    def get_current_selection(self, db, chan, line, fid):
         """
         Get current selection information.
 
@@ -532,7 +532,7 @@ class GXEDB:
         "[None]"  if no values are selected
         "10 to 20"  giving the range of values.
         """
-        p2.value, p4.value, p6.value, p8.value = self._wrapper.get_current_selection(p2.value.encode(), p4.value.encode(), p6.value.encode(), p8.value.encode())
+        db.value, chan.value, line.value, fid.value = self._wrapper.get_current_selection(db.value.encode(), chan.value.encode(), line.value.encode(), fid.value.encode())
         
 
 
@@ -691,7 +691,7 @@ class GXEDB:
 
 
 
-    def show_profile_name(self, state, p3):
+    def show_profile_name(self, state, chan):
         """
         Show a profile in the profile window
 
@@ -699,7 +699,7 @@ class GXEDB:
 
         If the symbol is not loaded, it will be loaded.
         """
-        ret_val = self._wrapper.show_profile_name(state, p3.encode())
+        ret_val = self._wrapper.show_profile_name(state, chan.encode())
         return ret_val
 
 

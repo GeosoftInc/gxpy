@@ -58,7 +58,7 @@ class GXSQLSRV:
 
 
     @classmethod
-    def attach_mdf(cls, server, user, pwd, db, mdf_file_name, ldf_file_name):
+    def attach_mdf(cls, server, user, password, db, mdf_file_name, ldf_file_name):
         """
         Attaches an MDF SQL server file to a server.
 
@@ -67,47 +67,47 @@ class GXSQLSRV:
         The file's path need to be visible as local files on the server.
         Network drives and substitutes may not work.
         """
-        ret_val = gxapi_cy.WrapSQLSRV.attach_mdf(GXContext._get_tls_geo(), server.encode(), user.encode(), pwd.encode(), db.encode(), mdf_file_name.encode(), ldf_file_name.encode())
+        ret_val = gxapi_cy.WrapSQLSRV.attach_mdf(GXContext._get_tls_geo(), server.encode(), user.encode(), password.encode(), db.encode(), mdf_file_name.encode(), ldf_file_name.encode())
         return ret_val
 
 
 
     @classmethod
-    def detach_db(cls, server, user, pwd, db):
+    def detach_db(cls, server, user, password, db):
         """
         Detaches a SQL Server database from a server.
         """
-        ret_val = gxapi_cy.WrapSQLSRV.detach_db(GXContext._get_tls_geo(), server.encode(), user.encode(), pwd.encode(), db.encode())
+        ret_val = gxapi_cy.WrapSQLSRV.detach_db(GXContext._get_tls_geo(), server.encode(), user.encode(), password.encode(), db.encode())
         return ret_val
 
 
 
     @classmethod
-    def get_database_languages_lst(cls, lst, server, user, pwd, win_auth):
+    def get_database_languages_lst(cls, lst, server, user, password, win_auth):
         """
         Get a list of the languages into `GXLST`
         """
-        ret_val = gxapi_cy.WrapSQLSRV.get_database_languages_lst(GXContext._get_tls_geo(), lst._wrapper, server.encode(), user.encode(), pwd.encode(), win_auth)
+        ret_val = gxapi_cy.WrapSQLSRV.get_database_languages_lst(GXContext._get_tls_geo(), lst._wrapper, server.encode(), user.encode(), password.encode(), win_auth)
         return ret_val
 
 
 
     @classmethod
-    def get_databases_lst(cls, lst, server, user, pwd, win_auth):
+    def get_databases_lst(cls, lst, server, user, password, win_auth):
         """
         Get a list of the database into `GXLST`
         """
-        ret_val = gxapi_cy.WrapSQLSRV.get_databases_lst(GXContext._get_tls_geo(), lst._wrapper, server.encode(), user.encode(), pwd.encode(), win_auth)
+        ret_val = gxapi_cy.WrapSQLSRV.get_databases_lst(GXContext._get_tls_geo(), lst._wrapper, server.encode(), user.encode(), password.encode(), win_auth)
         return ret_val
 
 
 
     @classmethod
-    def get_login_gui(cls, server, user, p4, p6, p7):
+    def get_login_gui(cls, server, user, password, mode, win_auth):
         """
         Get/Test login information to SQL Server
         """
-        user.value, p4.value, p7.value = gxapi_cy.WrapSQLSRV.get_login_gui(GXContext._get_tls_geo(), server.encode(), user.value.encode(), p4.value.encode(), p6, p7.value)
+        user.value, password.value, win_auth.value = gxapi_cy.WrapSQLSRV.get_login_gui(GXContext._get_tls_geo(), server.encode(), user.value.encode(), password.value.encode(), mode, win_auth.value)
         
 
 

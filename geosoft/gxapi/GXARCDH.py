@@ -149,11 +149,11 @@ class GXARCDH:
 
 
     @classmethod
-    def s_prompt_for_esri_symbol(cls, hwnd, h_wnd, input_xml_string, p4, p6, p7):
+    def s_prompt_for_esri_symbol(cls, hwnd, h_wnd, input_xml_string, xml, fill_color, edge_color):
         """
         Prompt the user to select an ESRI symbol and return it as an XML string. The output string will be empty if the user cancels the dialog.
         """
-        p4.value, p6.value, p7.value = gxapi_cy.WrapARCDH.s_prompt_for_esri_symbol(GXContext._get_tls_geo(), hwnd, h_wnd.encode(), input_xml_string, p4.value.encode(), p6.value, p7.value)
+        xml.value, fill_color.value, edge_color.value = gxapi_cy.WrapARCDH.s_prompt_for_esri_symbol(GXContext._get_tls_geo(), hwnd, h_wnd.encode(), input_xml_string, xml.value.encode(), fill_color.value, edge_color.value)
         
 
 

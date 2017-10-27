@@ -407,21 +407,21 @@ class GXVOX:
 
 
 
-    def get_location(self, origin_x, origin_y, origin_z, v_vx, v_vy, v_vz):
+    def get_location(self, origin_x, origin_y, origin_z, vv_x, vv_y, vv_z):
         """
         Get Location information
         """
-        origin_x.value, origin_y.value, origin_z.value = self._wrapper.get_location(origin_x.value, origin_y.value, origin_z.value, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
+        origin_x.value, origin_y.value, origin_z.value = self._wrapper.get_location(origin_x.value, origin_y.value, origin_z.value, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
         
 
 
 
 
-    def get_location_points(self, v_vx, v_vy, v_vz):
+    def get_location_points(self, vv_x, vv_y, vv_z):
         """
         Get the computed location points.
         """
-        self._wrapper.get_location_points(v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
+        self._wrapper.get_location_points(vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
         
 
 
@@ -486,31 +486,31 @@ class GXVOX:
 
 
     @classmethod
-    def grid_points(cls, name, error, cell_size, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, v_vx, v_vy, v_vz, v_vd, ipj):
+    def grid_points(cls, name, error, cell_size, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, vv_x, vv_y, vv_z, vv_d, ipj):
         """
         Grid a `GXVOX` from point `GXVV`'s.
         """
-        ret_val = gxapi_cy.WrapVOX.grid_points(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, v_vd._wrapper, ipj._wrapper)
+        ret_val = gxapi_cy.WrapVOX.grid_points(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_d._wrapper, ipj._wrapper)
         return GXVOX(ret_val)
 
 
 
     @classmethod
-    def grid_points_z(cls, name, error, cell_size, cell_size_z, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, v_vx, v_vy, v_vz, v_vd, ipj):
+    def grid_points_z(cls, name, error, cell_size, cell_size_z, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, vv_x, vv_y, vv_z, vv_d, ipj):
         """
         Grid a `GXVOX` from point `GXVV`'s (using variable Z's)
         """
-        ret_val = gxapi_cy.WrapVOX.grid_points_z(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, cell_size_z.encode(), var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, v_vd._wrapper, ipj._wrapper)
+        ret_val = gxapi_cy.WrapVOX.grid_points_z(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, cell_size_z.encode(), var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_d._wrapper, ipj._wrapper)
         return GXVOX(ret_val)
 
 
 
     @classmethod
-    def grid_points_z_ex(cls, name, error, cell_size, cell_size_z, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, strike, dip, plunge, along_strike_weight, down_dip_weight, type, v_vx, v_vy, v_vz, v_vd, ipj):
+    def grid_points_z_ex(cls, name, error, cell_size, cell_size_z, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, strike, dip, plunge, along_strike_weight, down_dip_weight, type, vv_x, vv_y, vv_z, vv_d, ipj):
         """
         Grid a `GXVOX` from point `GXVV`'s (using variable Z's)
         """
-        ret_val, slope.value, range.value, sill.value = gxapi_cy.WrapVOX.grid_points_z_ex(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, cell_size_z.encode(), var_only, min_radius, max_radius, min_points, max_points, model, power, slope.value, range.value, nugget, sill.value, strike, dip, plunge, along_strike_weight, down_dip_weight, type, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, v_vd._wrapper, ipj._wrapper)
+        ret_val, slope.value, range.value, sill.value = gxapi_cy.WrapVOX.grid_points_z_ex(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, cell_size_z.encode(), var_only, min_radius, max_radius, min_points, max_points, model, power, slope.value, range.value, nugget, sill.value, strike, dip, plunge, along_strike_weight, down_dip_weight, type, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_d._wrapper, ipj._wrapper)
         return GXVOX(ret_val)
 
 
@@ -579,17 +579,17 @@ class GXVOX:
 
 
     @classmethod
-    def log_grid_points_z_ex(cls, name, error, cell_size, cell_size_z, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, strike, dip, plunge, along_strike_weight, down_dip_weight, log_opt, min_log, type, v_vx, v_vy, v_vz, v_vd, ipj):
+    def log_grid_points_z_ex(cls, name, error, cell_size, cell_size_z, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, strike, dip, plunge, along_strike_weight, down_dip_weight, log_opt, min_log, type, vv_x, vv_y, vv_z, vv_d, ipj):
         """
         Log grid a `GXVOX` from point `GXVV`'s (using variable Z's)
         """
-        ret_val, slope.value, range.value, sill.value = gxapi_cy.WrapVOX.log_grid_points_z_ex(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, cell_size_z.encode(), var_only, min_radius, max_radius, min_points, max_points, model, power, slope.value, range.value, nugget, sill.value, strike, dip, plunge, along_strike_weight, down_dip_weight, log_opt, min_log, type, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, v_vd._wrapper, ipj._wrapper)
+        ret_val, slope.value, range.value, sill.value = gxapi_cy.WrapVOX.log_grid_points_z_ex(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, cell_size_z.encode(), var_only, min_radius, max_radius, min_points, max_points, model, power, slope.value, range.value, nugget, sill.value, strike, dip, plunge, along_strike_weight, down_dip_weight, log_opt, min_log, type, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_d._wrapper, ipj._wrapper)
         return GXVOX(ret_val)
 
 
 
     @classmethod
-    def krig(cls, name, cell_size, type, v_vx, v_vy, v_vz, v_vd, ipj, reg):
+    def krig(cls, name, cell_size, type, vv_x, vv_y, vv_z, vv_d, ipj, reg):
         """
         A more compact and extensible form of `log_grid_points_z_ex`.
 
@@ -626,7 +626,7 @@ class GXVOX:
         MAX_Z:				Maximum Z (REAL) (default = DUMMY to determine from the data. If input, nearest gt. or eq. multiple of cell size chosen)A more compact and extensible form of `log_grid_points_z_ex`. Only the most
         basic parameters are entered directly. Optional parameters are passed via a `GXREG` object.
         """
-        ret_val = gxapi_cy.WrapVOX.krig(GXContext._get_tls_geo(), name.encode(), cell_size, type, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, v_vd._wrapper, ipj._wrapper, reg._wrapper)
+        ret_val = gxapi_cy.WrapVOX.krig(GXContext._get_tls_geo(), name.encode(), cell_size, type, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_d._wrapper, ipj._wrapper, reg._wrapper)
         return GXVOX(ret_val)
 
 
@@ -656,11 +656,11 @@ class GXVOX:
 
 
     @classmethod
-    def nearest_neighbour_grid(cls, name, cell_size, max_radius, type, v_vx, v_vy, v_vz, v_vd, ipj):
+    def nearest_neighbour_grid(cls, name, cell_size, max_radius, type, vv_x, vv_y, vv_z, vv_d, ipj):
         """
         Grid a `GXVOX` from point `GXVV`'s using the Nearest Neighbours method.
         """
-        ret_val = gxapi_cy.WrapVOX.nearest_neighbour_grid(GXContext._get_tls_geo(), name.encode(), cell_size, max_radius, type, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, v_vd._wrapper, ipj._wrapper)
+        ret_val = gxapi_cy.WrapVOX.nearest_neighbour_grid(GXContext._get_tls_geo(), name.encode(), cell_size, max_radius, type, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_d._wrapper, ipj._wrapper)
         return GXVOX(ret_val)
 
 
@@ -719,7 +719,7 @@ class GXVOX:
 
 
 
-    def sample_cdi(self, db, line, x_ch, y_ch, elev_ch, negative_depths_down, topo_ch, mode, p10):
+    def sample_cdi(self, db, line, x_ch, y_ch, elev_ch, negative_depths_down, topo_ch, mode, out_ch):
         """
         Sample a voxel at locations/elevations in a CDI database.
 
@@ -734,18 +734,18 @@ class GXVOX:
         default; use the "Negative depths down" parameter if the depths
         become more negative as you go deeper.
         """
-        self._wrapper.sample_cdi(db._wrapper, line, x_ch, y_ch, elev_ch, negative_depths_down, topo_ch, mode, p10.encode())
+        self._wrapper.sample_cdi(db._wrapper, line, x_ch, y_ch, elev_ch, negative_depths_down, topo_ch, mode, out_ch.encode())
         
 
 
 
 
-    def sample_cdi_to_topography(self, db, line, x_ch, y_ch, zvv, mode, p8, p9):
+    def sample_cdi_to_topography(self, db, line, x_ch, y_ch, zvv, mode, out_ch, topo_ch):
         """
         Sample a voxel at fixed elevations along a path in a CDI database, and output them to an array channel, deleting leading dummy values, and
         writing the elevation of the first non-dummy item to a topography channel.
         """
-        self._wrapper.sample_cdi_to_topography(db._wrapper, line, x_ch, y_ch, zvv._wrapper, mode, p8.encode(), p9.encode())
+        self._wrapper.sample_cdi_to_topography(db._wrapper, line, x_ch, y_ch, zvv._wrapper, mode, out_ch.encode(), topo_ch.encode())
         
 
 
@@ -775,11 +775,11 @@ class GXVOX:
 
 
 
-    def set_location(self, origin_x, origin_y, origin_z, v_vx, v_vy, v_vz):
+    def set_location(self, origin_x, origin_y, origin_z, vv_x, vv_y, vv_z):
         """
         Set Location information
         """
-        self._wrapper.set_location(origin_x, origin_y, origin_z, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
+        self._wrapper.set_location(origin_x, origin_y, origin_z, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
         
 
 
@@ -915,21 +915,21 @@ class GXVOX:
 
 
 
-    def convert_numeric_to_thematic(self, v_vtranslate, output_vox):
+    def convert_numeric_to_thematic(self, vv_translate, output_vox):
         """
         Convert numeric voxel to thematic (lithology) voxel
         """
-        self._wrapper.convert_numeric_to_thematic(v_vtranslate._wrapper, output_vox.encode())
+        self._wrapper.convert_numeric_to_thematic(vv_translate._wrapper, output_vox.encode())
         
 
 
 
 
-    def convert_thematic_to_numeric(self, v_vtranslate, output_vox):
+    def convert_thematic_to_numeric(self, vv_translate, output_vox):
         """
         Convert thematic (lithology) voxel to numeric voxel
         """
-        self._wrapper.convert_thematic_to_numeric(v_vtranslate._wrapper, output_vox.encode())
+        self._wrapper.convert_thematic_to_numeric(vv_translate._wrapper, output_vox.encode())
         
 
 

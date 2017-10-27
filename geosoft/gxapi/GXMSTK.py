@@ -124,7 +124,7 @@ class GXMSTK:
 
 
 
-    def find_stk2(self, str_val, index, v_vrtd):
+    def find_stk2(self, str_val, index, vv_rtd):
         """
         Find index of `GXSTK` from a string of group names and X/Y channels
 
@@ -137,7 +137,7 @@ class GXMSTK:
         for example, string "DATA ( DIST , MAG )"  indicates a map group name of DATA,
         X channel name of DIST and Y channel name of MAG.
         """
-        index.value = self._wrapper.find_stk2(str_val.encode(), index.value, v_vrtd._wrapper)
+        index.value = self._wrapper.find_stk2(str_val.encode(), index.value, vv_rtd._wrapper)
         
 
 

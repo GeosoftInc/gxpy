@@ -322,11 +322,11 @@ class GXMETA:
 
 
 
-    def h_creat_item(self, name, p3):
+    def h_creat_item(self, name, ph_class):
         """
         Creates item in Class.
         """
-        ret_val = self._wrapper.h_creat_item(name.encode(), p3)
+        ret_val = self._wrapper.h_creat_item(name.encode(), ph_class)
         return ret_val
 
 

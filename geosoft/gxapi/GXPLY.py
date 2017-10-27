@@ -59,21 +59,21 @@ class GXPLY:
 
 
 
-    def add_polygon(self, v_vx, v_vy):
+    def add_polygon(self, vv_x, vv_y):
         """
         Add a polygon to the polygon file.
         """
-        self._wrapper.add_polygon(v_vx._wrapper, v_vy._wrapper)
+        self._wrapper.add_polygon(vv_x._wrapper, vv_y._wrapper)
         
 
 
 
 
-    def add_polygon_ex(self, v_vx, v_vy, exclude):
+    def add_polygon_ex(self, vv_x, vv_y, exclude):
         """
         Add a polygon to the polygon file.
         """
-        self._wrapper.add_polygon_ex(v_vx._wrapper, v_vy._wrapper, exclude)
+        self._wrapper.add_polygon_ex(vv_x._wrapper, vv_y._wrapper, exclude)
         
 
 
@@ -159,21 +159,21 @@ class GXPLY:
 
 
 
-    def get_polygon(self, v_vx, v_vy, poly):
+    def get_polygon(self, vv_x, vv_y, poly):
         """
         Get a polygon from the `GXPLY`
         """
-        self._wrapper.get_polygon(v_vx._wrapper, v_vy._wrapper, poly)
+        self._wrapper.get_polygon(vv_x._wrapper, vv_y._wrapper, poly)
         
 
 
 
 
-    def get_polygon_ex(self, v_vx, v_vy, poly, exclude):
+    def get_polygon_ex(self, vv_x, vv_y, poly, exclude):
         """
         Get a polygon from the `GXPLY`
         """
-        exclude.value = self._wrapper.get_polygon_ex(v_vx._wrapper, v_vy._wrapper, poly, exclude.value)
+        exclude.value = self._wrapper.get_polygon_ex(vv_x._wrapper, vv_y._wrapper, poly, exclude.value)
         
 
 
@@ -189,7 +189,7 @@ class GXPLY:
 
 
 
-    def clip_line_int(self, min_x, min_y, max_x, max_y, vv, inc, p8):
+    def clip_line_int(self, min_x, min_y, max_x, max_y, vv, inc, first):
         """
         Clips a line in or out of the polygons for intersections (`GS_DOUBLE`).
         Intersections are returned as fiducials down the line stored in `GXVV`
@@ -201,7 +201,7 @@ class GXPLY:
         Starts inside, ends inside : `PLY_LINE_CLIP_INSIDE`, 1 intersection (gives end-of-line)
         Starts inside, ends outside : `PLY_LINE_CLIP_INSIDE`, 1 intersection
         """
-        ret_val, p8.value = self._wrapper.clip_line_int(min_x, min_y, max_x, max_y, vv._wrapper, inc, p8.value)
+        ret_val, first.value = self._wrapper.clip_line_int(min_x, min_y, max_x, max_y, vv._wrapper, inc, first.value)
         return ret_val
 
 

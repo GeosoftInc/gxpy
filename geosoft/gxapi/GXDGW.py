@@ -108,11 +108,11 @@ class GXDGW:
 
 
 
-    def get_info_meta(self, p2, p3, p4, p5, p6):
+    def get_info_meta(self, obj, dlg_obj_type, meta, meta_obj, meta_attrib):
         """
         Copies the Dialog information to a `GXMETA` attribute.
         """
-        self._wrapper.get_info_meta(p2, p3, p4._wrapper, p5, p6)
+        self._wrapper.get_info_meta(obj, dlg_obj_type, meta._wrapper, meta_obj, meta_attrib)
         
 
 
@@ -172,11 +172,11 @@ class GXDGW:
 
 
 
-    def set_info_meta(self, p2, p3, p4, p5, p6):
+    def set_info_meta(self, obj, dlg_obj_type, meta, meta_obj, meta_attrib):
         """
         This sets a text object to the text found in a `GXMETA` attribute.
         """
-        self._wrapper.set_info_meta(p2, p3, p4._wrapper, p5, p6)
+        self._wrapper.set_info_meta(obj, dlg_obj_type, meta._wrapper, meta_obj, meta_attrib)
         
 
 

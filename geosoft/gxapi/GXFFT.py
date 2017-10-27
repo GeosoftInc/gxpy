@@ -86,21 +86,21 @@ class GXFFT:
 
 
 
-    def band_pass(self, llen, hlen, define):
+    def band_pass(self, llen, hlen, pass_defined):
         """
         Bandpass filter (using low and high wavelength cutoffs)
         """
-        self._wrapper.band_pass(llen, hlen, define)
+        self._wrapper.band_pass(llen, hlen, pass_defined)
         
 
 
 
 
-    def b_worth(self, clen, degree, p4):
+    def b_worth(self, clen, degree, filter_type):
         """
         Butterworth filter
         """
-        self._wrapper.b_worth(clen, degree, p4)
+        self._wrapper.b_worth(clen, degree, filter_type)
         
 
 
@@ -126,17 +126,17 @@ class GXFFT:
 
 
 
-    def cos_roll(self, llen, hlen, degree, p5):
+    def cos_roll(self, llen, hlen, degree, type):
         """
         Cosine roll-off filter
         """
-        self._wrapper.cos_roll(llen, hlen, degree, p5)
+        self._wrapper.cos_roll(llen, hlen, degree, type)
         
 
 
 
     @classmethod
-    def create(cls, gvv, p2, p3):
+    def create(cls, gvv, interv, trend):
         """
         Create a New `GXFFT` with detrend options.
 
@@ -145,13 +145,13 @@ class GXFFT:
         The detrending options control the removal of a trend from the data
         before the `GXFFT` is applied. The default data expansion is 10% before `GXFFT`.
         """
-        ret_val = gxapi_cy.WrapFFT.create(GXContext._get_tls_geo(), gvv._wrapper, p2, p3)
+        ret_val = gxapi_cy.WrapFFT.create(GXContext._get_tls_geo(), gvv._wrapper, interv, trend)
         return GXFFT(ret_val)
 
 
 
     @classmethod
-    def create_ex(cls, gvv, p2, p3, p4):
+    def create_ex(cls, gvv, interv, trend, expansion):
         """
         Create a New `GXFFT` with detrend and expansion options.
 
@@ -161,13 +161,13 @@ class GXFFT:
         before the `GXFFT` is applied. The expansion options control the minimum
         data expansion before the `GXFFT` is applied.
         """
-        ret_val = gxapi_cy.WrapFFT.create_ex(GXContext._get_tls_geo(), gvv._wrapper, p2, p3, p4)
+        ret_val = gxapi_cy.WrapFFT.create_ex(GXContext._get_tls_geo(), gvv._wrapper, interv, trend, expansion)
         return GXFFT(ret_val)
 
 
 
     @classmethod
-    def create_ref(cls, gvv, p2, p3):
+    def create_ref(cls, gvv, interv, trend):
         """
         Create `GXFFT` object with detrend options from reference (original) channel,
         but no `GXFFT` process.
@@ -177,13 +177,13 @@ class GXFFT:
         This just creates an object.  It is intended to be called
         immediately after with `set_vv`.
         """
-        ret_val = gxapi_cy.WrapFFT.create_ref(GXContext._get_tls_geo(), gvv._wrapper, p2, p3)
+        ret_val = gxapi_cy.WrapFFT.create_ref(GXContext._get_tls_geo(), gvv._wrapper, interv, trend)
         return GXFFT(ret_val)
 
 
 
     @classmethod
-    def create_ref_ex(cls, gvv, p2, p3, p4, p5):
+    def create_ref_ex(cls, gvv, interv, trend, expansion, d_cmult):
         """
         Create `GXFFT` object with detrend and expansion options from reference (original) channel,
         but no `GXFFT` process.
@@ -193,7 +193,7 @@ class GXFFT:
         This just creates an object.  It is intended to be called
         immediately after with `set_vv`.
         """
-        ret_val = gxapi_cy.WrapFFT.create_ref_ex(GXContext._get_tls_geo(), gvv._wrapper, p2, p3, p4, p5)
+        ret_val = gxapi_cy.WrapFFT.create_ref_ex(GXContext._get_tls_geo(), gvv._wrapper, interv, trend, expansion, d_cmult)
         return GXFFT(ret_val)
 
 
@@ -271,11 +271,11 @@ class GXFFT:
 
 
 
-    def red_pol(self, inc, p3, p4, p5):
+    def red_pol(self, inc, dec, incp, dir):
         """
         Reduction to magnetic pole
         """
-        self._wrapper.red_pol(inc, p3, p4, p5)
+        self._wrapper.red_pol(inc, dec, incp, dir)
         
 
 

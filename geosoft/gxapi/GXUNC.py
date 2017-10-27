@@ -85,7 +85,7 @@ class GXUNC:
 
 
     @classmethod
-    def utf16_val_to_str(cls, ch, p2):
+    def utf16_val_to_str(cls, ch, str_val):
         """
         Convert a UTF-16 value to a UTF-8 encoded string.
 
@@ -93,7 +93,7 @@ class GXUNC:
 
         An empty string will be returned for invalid symbols
         """
-        p2.value = gxapi_cy.WrapUNC.utf16_val_to_str(GXContext._get_tls_geo(), ch, p2.value.encode())
+        str_val.value = gxapi_cy.WrapUNC.utf16_val_to_str(GXContext._get_tls_geo(), ch, str_val.value.encode())
         
 
 

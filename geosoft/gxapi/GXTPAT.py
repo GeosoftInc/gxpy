@@ -189,7 +189,7 @@ class GXTPAT:
 
 
 
-    def setup_translation_vv(self, p2, p3, p4):
+    def setup_translation_vv(self, ltb, field, vv_values):
         """
         Initializes a `GXVV` used to map `GXTPAT` indices to output values
 
@@ -200,7 +200,7 @@ class GXTPAT:
         `GXLTB` oject was created (see ltb.h).
         The `GXLTB` field values are converted to the output `GXVV` type.
         """
-        self._wrapper.setup_translation_vv(p2._wrapper, p3, p4._wrapper)
+        self._wrapper.setup_translation_vv(ltb._wrapper, field, vv_values._wrapper)
         
 
 

@@ -226,11 +226,11 @@ class GXVA:
 
 
 
-    def get_vv(self, no, p3, p4):
+    def get_vv(self, no, row_col, vv):
         """
         Get a row or column of data as a `GXVV` from an array.
         """
-        self._wrapper.get_vv(no, p3, p4._wrapper)
+        self._wrapper.get_vv(no, row_col, vv._wrapper)
         
 
 
@@ -477,11 +477,11 @@ class GXVA:
 
 
 
-    def set_vv(self, no, p3, p4):
+    def set_vv(self, no, row_col, vv):
         """
         Set a row or column of data in an array from a `GXVV`.
         """
-        self._wrapper.set_vv(no, p3, p4._wrapper)
+        self._wrapper.set_vv(no, row_col, vv._wrapper)
         
 
 
@@ -518,7 +518,7 @@ class GXVA:
 
 
 
-    def window2(self, start, p3, p4):
+    def window2(self, start, end, vv):
         """
         Window a `GXVA` to a `GXVV` based on fractional frame
 
@@ -529,13 +529,13 @@ class GXVA:
         values in the window.
         If any values are dummy, the result will be dummy.
         """
-        self._wrapper.window2(start, p3, p4._wrapper)
+        self._wrapper.window2(start, end, vv._wrapper)
         
 
 
 
 
-    def check_for_repeating(self, v_vt, subtract_vv, v_vsub, tol):
+    def check_for_repeating(self, vv_t, subtract_vv, vv_sub, tol):
         """
         Window a `GXVA` to a `GXVV` based on fractional frame
 
@@ -547,13 +547,13 @@ class GXVA:
         have been offset with topography on each row.
         An absolute tolerance can be specified to ignore numerical noise.
         """
-        ret_val = self._wrapper.check_for_repeating(v_vt._wrapper, subtract_vv, v_vsub._wrapper, tol)
+        ret_val = self._wrapper.check_for_repeating(vv_t._wrapper, subtract_vv, vv_sub._wrapper, tol)
         return ret_val
 
 
 
 
-    def check_for_repeating2(self, v_vt, subtract_vv, v_vsub, tol, bad_row, bad_col):
+    def check_for_repeating2(self, vv_t, subtract_vv, vv_sub, tol, bad_row, bad_col):
         """
         Window a `GXVA` to a `GXVV` based on fractional frame
 
@@ -566,7 +566,7 @@ class GXVA:
         An absolute tolerance can be specified to ignore numerical noise.
         This version returns the row and column index of first mismatch.
         """
-        ret_val, bad_row.value, bad_col.value = self._wrapper.check_for_repeating2(v_vt._wrapper, subtract_vv, v_vsub._wrapper, tol, bad_row.value, bad_col.value)
+        ret_val, bad_row.value, bad_col.value = self._wrapper.check_for_repeating2(vv_t._wrapper, subtract_vv, vv_sub._wrapper, tol, bad_row.value, bad_col.value)
         return ret_val
 
 

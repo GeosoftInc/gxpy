@@ -217,7 +217,7 @@ class GXSHP:
 
 
 
-    def set_arc(self, v_vx, v_vy):
+    def set_arc(self, vv_x, vv_y):
         """
         Write an XY arc (polyline) item.
 
@@ -225,13 +225,13 @@ class GXSHP:
 
         Can ONLY be used for `SHP_GEOM_TYPE_ARC` files.
         """
-        self._wrapper.set_arc(v_vx._wrapper, v_vy._wrapper)
+        self._wrapper.set_arc(vv_x._wrapper, vv_y._wrapper)
         
 
 
 
 
-    def set_arc_z(self, v_vx, v_vy, v_vz):
+    def set_arc_z(self, vv_x, vv_y, vv_z):
         """
         Write an XYZ arc (polyline) item.
 
@@ -239,7 +239,7 @@ class GXSHP:
 
         Can ONLY be used for `SHP_GEOM_TYPE_ARCZ` files.
         """
-        self._wrapper.set_arc_z(v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
+        self._wrapper.set_arc_z(vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
         
 
 
@@ -306,7 +306,7 @@ class GXSHP:
 
 
 
-    def set_polygon(self, v_vx, v_vy, inclusive):
+    def set_polygon(self, vv_x, vv_y, inclusive):
         """
         Write an XY polygon item.
 
@@ -314,13 +314,13 @@ class GXSHP:
 
         Can ONLY be used for `SHP_GEOM_TYPE_POLYGON` files.
         """
-        self._wrapper.set_polygon(v_vx._wrapper, v_vy._wrapper, inclusive)
+        self._wrapper.set_polygon(vv_x._wrapper, vv_y._wrapper, inclusive)
         
 
 
 
 
-    def set_polygon_z(self, v_vx, v_vy, v_vz, inclusive):
+    def set_polygon_z(self, vv_x, vv_y, vv_z, inclusive):
         """
         Write an XYZ polygon item.
 
@@ -328,7 +328,7 @@ class GXSHP:
 
         Can ONLY be used for `SHP_GEOM_TYPE_POLYGONZ` files.
         """
-        self._wrapper.set_polygon_z(v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, inclusive)
+        self._wrapper.set_polygon_z(vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, inclusive)
         
 
 

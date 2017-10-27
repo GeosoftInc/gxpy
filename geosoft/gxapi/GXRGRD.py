@@ -92,7 +92,7 @@ class GXRGRD:
 
 
     @classmethod
-    def create_img(cls, v_vx, v_vy, v_vz, ipj, ctl, grid):
+    def create_img(cls, vv_x, vv_y, vv_z, ipj, ctl, grid):
         """
         Run Rangrid directly on XYZ `GXVV` data, output to an `GXIMG`.
 
@@ -102,7 +102,7 @@ class GXRGRD:
         If the grid file name is not defined, the `GXIMG` is memory-based; not
         tied to a file.
         """
-        ret_val = gxapi_cy.WrapRGRD.create_img(GXContext._get_tls_geo(), v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, ipj._wrapper, ctl.encode(), grid.encode())
+        ret_val = gxapi_cy.WrapRGRD.create_img(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, ipj._wrapper, ctl.encode(), grid.encode())
         return GXIMG(ret_val)
 
 
@@ -176,11 +176,11 @@ class GXRGRD:
 
 
     @classmethod
-    def run_vv(cls, v_vx, v_vy, v_vz, ipj, ctl, grd):
+    def run_vv(cls, vv_x, vv_y, vv_z, ipj, ctl, grd):
         """
         Executes the Rangrid program directly on input data VVs.
         """
-        gxapi_cy.WrapRGRD.run_vv(GXContext._get_tls_geo(), v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, ipj._wrapper, ctl.encode(), grd.encode())
+        gxapi_cy.WrapRGRD.run_vv(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, ipj._wrapper, ctl.encode(), grd.encode())
         
 
 

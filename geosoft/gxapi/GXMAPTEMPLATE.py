@@ -172,18 +172,18 @@ class GXMAPTEMPLATE:
 
 
 
-    def render_preview(self, p2, p3, p4, p5, p6):
+    def render_preview(self, hdc, left, bottom, right, top):
         """
         Create a preview of the map template onto a
         Windows DC handle
         """
-        self._wrapper.render_preview(p2, p3, p4, p5, p6)
+        self._wrapper.render_preview(hdc, left, bottom, right, top)
         
 
 
 
 
-    def render_preview_map_production(self, p2, p3, p4, p5, p6):
+    def render_preview_map_production(self, hdc, left, bottom, right, top):
         """
         Render a preview for map sheet production purposes
 
@@ -193,7 +193,7 @@ class GXMAPTEMPLATE:
         by passing a null DC handle. This help to plot the view contents
         preview from another location.
         """
-        p3.value, p4.value, p5.value, p6.value = self._wrapper.render_preview_map_production(p2, p3.value, p4.value, p5.value, p6.value)
+        left.value, bottom.value, right.value, top.value = self._wrapper.render_preview_map_production(hdc, left.value, bottom.value, right.value, top.value)
         
 
 

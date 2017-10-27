@@ -93,17 +93,17 @@ class GXVV:
 
 
 
-    def copy(self, v_vs):
+    def copy(self, vv_s):
         """
         Copy one `GXVV` to another.
         """
-        self._wrapper.copy(v_vs._wrapper)
+        self._wrapper.copy(vv_s._wrapper)
         
 
 
 
 
-    def copy2(self, dest, v_vs, source, n):
+    def copy2(self, dest, vv_s, source, n):
         """
         Copy part of a vector into part of another vector.
 
@@ -115,7 +115,7 @@ class GXVV:
         2. All `GXVV` types are supported and will be converted using
         Convert_GS if necessary.
         """
-        self._wrapper.copy2(dest, v_vs._wrapper, source, n)
+        self._wrapper.copy2(dest, vv_s._wrapper, source, n)
         
 
 
@@ -160,7 +160,7 @@ class GXVV:
 
 
 
-    def mask(self, v_vm):
+    def mask(self, vv_m):
         """
         Mask one `GXVV` against another.
 
@@ -173,7 +173,7 @@ class GXVV:
         `GXVV` after this call.  If the mask is longer than the target,
         the target will be lengthenned with dummies.
         """
-        self._wrapper.mask(v_vm._wrapper)
+        self._wrapper.mask(vv_m._wrapper)
         
 
 
@@ -223,17 +223,17 @@ class GXVV:
 
 
 
-    def add(self, v_vy, v_vz):
+    def add(self, vv_y, vv_z):
         """
         Add two VVs: VV_A + VV_B = VV_C
         """
-        self._wrapper.add(v_vy._wrapper, v_vz._wrapper)
+        self._wrapper.add(vv_y._wrapper, vv_z._wrapper)
         
 
 
 
 
-    def add2(self, f1, v_vy, f2, v_vz):
+    def add2(self, f1, vv_y, f2, vv_z):
         """
         Add two VVs with linear factors: VV_A*f1 + VV_B*f2 = VV_C
 
@@ -241,17 +241,17 @@ class GXVV:
 
         The multipliers must be defined and within the `GS_R8MN` `GS_R8MX` range.
         """
-        self._wrapper.add2(f1, v_vy._wrapper, f2, v_vz._wrapper)
+        self._wrapper.add2(f1, vv_y._wrapper, f2, vv_z._wrapper)
         
 
 
 
 
-    def append(self, v_va):
+    def append(self, vv_a):
         """
         Appends `GXVV`'s
         """
-        self._wrapper.append(v_va._wrapper)
+        self._wrapper.append(vv_a._wrapper)
         
 
 
@@ -356,11 +356,11 @@ class GXVV:
 
 
 
-    def divide(self, v_vy, v_vz):
+    def divide(self, vv_y, vv_z):
         """
         Divide one `GXVV` by another: VV_A / VV_B = VV_C
         """
-        self._wrapper.divide(v_vy._wrapper, v_vz._wrapper)
+        self._wrapper.divide(vv_y._wrapper, vv_z._wrapper)
         
 
 
@@ -501,7 +501,7 @@ class GXVV:
 
 
 
-    def index_insert(self, v_vd, v_vi):
+    def index_insert(self, vv_d, vv_i):
         """
         Insert items into a `GXVV` using an index `GXVV`.
 
@@ -524,13 +524,13 @@ class GXVV:
         put the processed values at the correct locations in the data `GXVV`
         before you write it back to the channel.
         """
-        self._wrapper.index_insert(v_vd._wrapper, v_vi._wrapper)
+        self._wrapper.index_insert(vv_d._wrapper, vv_i._wrapper)
         
 
 
 
 
-    def index_order(self, v_vd):
+    def index_order(self, vv_d):
         """
         Reorder a `GXVV`.
 
@@ -539,7 +539,7 @@ class GXVV:
         Given an index `GXVV` (of type INT), this method reorders a
         `GXVV`. Please make sure that the index holds valid information.
         """
-        self._wrapper.index_order(v_vd._wrapper)
+        self._wrapper.index_order(vv_d._wrapper)
         
 
 
@@ -594,7 +594,7 @@ class GXVV:
 
 
 
-    def lines_to_xy(self, v_vx, v_vy):
+    def lines_to_xy(self, vv_x, vv_y):
         """
         Convert a 2D Line segment `GXVV` into X and Y VVs.
 
@@ -607,7 +607,7 @@ class GXVV:
         X and Y VVs of type `GS_DOUBLE` (REAL). N lines produces 2*N
         X and Y values.
         """
-        self._wrapper.lines_to_xy(v_vx._wrapper, v_vy._wrapper)
+        self._wrapper.lines_to_xy(vv_x._wrapper, vv_y._wrapper)
         
 
 
@@ -666,7 +666,7 @@ class GXVV:
 
 
 
-    def mask_and(self, v_vy, v_vz):
+    def mask_and(self, vv_y, vv_z):
         """
         Create mask from logical AND of two VVs.
 
@@ -674,13 +674,13 @@ class GXVV:
 
         If both values are non-dummies, then result is 1, else dummy.
         """
-        self._wrapper.mask_and(v_vy._wrapper, v_vz._wrapper)
+        self._wrapper.mask_and(vv_y._wrapper, vv_z._wrapper)
         
 
 
 
 
-    def mask_or(self, v_vy, v_vz):
+    def mask_or(self, vv_y, vv_z):
         """
         Create mask from logical OR of two VVs.
 
@@ -688,13 +688,13 @@ class GXVV:
 
         If either values is non-dummy, then result is 1, else dummy.
         """
-        self._wrapper.mask_or(v_vy._wrapper, v_vz._wrapper)
+        self._wrapper.mask_or(vv_y._wrapper, vv_z._wrapper)
         
 
 
 
 
-    def mask_str(self, v_vm, str_val):
+    def mask_str(self, vv_m, str_val):
         """
         Mask one `GXVV` against another using a string.
 
@@ -707,27 +707,27 @@ class GXVV:
         not shortened after this call.  If the mask is longer than the target,
         the target will be lengthenned with dummies before applying the mask.
         """
-        self._wrapper.mask_str(v_vm._wrapper, str_val.encode())
+        self._wrapper.mask_str(vv_m._wrapper, str_val.encode())
         
 
 
 
 
-    def multiply(self, v_vy, v_vz):
+    def multiply(self, vv_y, vv_z):
         """
         Multiply two VVs: VV_A * VV_B = VV_C
         """
-        self._wrapper.multiply(v_vy._wrapper, v_vz._wrapper)
+        self._wrapper.multiply(vv_y._wrapper, vv_z._wrapper)
         
 
 
 
 
-    def amplitude_3d(self, p2, p3, p4):
+    def amplitude_3d(self, v_vx, v_vy, v_vz):
         """
         Calculate the 3D length for XYZ component VVs
         """
-        self._wrapper.amplitude_3d(p2._wrapper, p3._wrapper, p4._wrapper)
+        self._wrapper.amplitude_3d(v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
         
 
 
@@ -747,7 +747,7 @@ class GXVV:
 
 
     @classmethod
-    def project(cls, pj, v_vx, v_vy):
+    def project(cls, pj, vv_x, vv_y):
         """
         This method projects an X and Y `GXVV`.
 
@@ -755,13 +755,13 @@ class GXVV:
 
         This function is equivalent to `GXPJ.convert_vv`.
         """
-        gxapi_cy.WrapVV.project(GXContext._get_tls_geo(), pj._wrapper, v_vx._wrapper, v_vy._wrapper)
+        gxapi_cy.WrapVV.project(GXContext._get_tls_geo(), pj._wrapper, vv_x._wrapper, vv_y._wrapper)
         
 
 
 
     @classmethod
-    def project_3d(cls, pj, v_vx, v_vy, v_vz):
+    def project_3d(cls, pj, vv_x, vv_y, vv_z):
         """
         This method projects an X,Y,Z `GXVV`.
 
@@ -769,7 +769,7 @@ class GXVV:
 
         This function is equivalent to `GXPJ.convert_vv3`.
         """
-        gxapi_cy.WrapVV.project_3d(GXContext._get_tls_geo(), pj._wrapper, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
+        gxapi_cy.WrapVV.project_3d(GXContext._get_tls_geo(), pj._wrapper, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
         
 
 
@@ -799,7 +799,7 @@ class GXVV:
 
 
 
-    def re_fid_vv(self, v_vm):
+    def re_fid_vv(self, vv_m):
         """
         Re-sample a `GXVV` to match another `GXVV`.
 
@@ -808,7 +808,7 @@ class GXVV:
         This method will honor the `GXVV` FID Expansion and will expand/contract
         `GXVV`'s based on this flag if it is used.
         """
-        self._wrapper.re_fid_vv(v_vm._wrapper)
+        self._wrapper.re_fid_vv(vv_m._wrapper)
         
 
 
@@ -1207,11 +1207,11 @@ class GXVV:
 
 
 
-    def subtract(self, v_vy, v_vz):
+    def subtract(self, vv_y, vv_z):
         """
         Subtract one `GXVV` from another: VV_A - VV_B = VV_C
         """
-        self._wrapper.subtract(v_vy._wrapper, v_vz._wrapper)
+        self._wrapper.subtract(vv_y._wrapper, vv_z._wrapper)
         
 
 

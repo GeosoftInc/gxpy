@@ -100,41 +100,41 @@ class GXFFT2:
 
 
     @classmethod
-    def pow_spc(cls, im_gi, p2):
+    def pow_spc(cls, im_gi, spc_fil):
         """
         `GXFFT2` transform power spectrum
         """
-        gxapi_cy.WrapFFT2.pow_spc(GXContext._get_tls_geo(), im_gi._wrapper, p2.encode())
+        gxapi_cy.WrapFFT2.pow_spc(GXContext._get_tls_geo(), im_gi._wrapper, spc_fil.encode())
         
 
 
 
     @classmethod
-    def rad_spc(cls, im_gi, p2):
+    def rad_spc(cls, im_gi, spc_fil):
         """
         `GXFFT2` transform Radially averaged power spectrum
         """
-        gxapi_cy.WrapFFT2.rad_spc(GXContext._get_tls_geo(), im_gi._wrapper, p2.encode())
+        gxapi_cy.WrapFFT2.rad_spc(GXContext._get_tls_geo(), im_gi._wrapper, spc_fil.encode())
         
 
 
 
     @classmethod
-    def rad_spc1(cls, img, p2):
+    def rad_spc1(cls, img, vv):
         """
         `GXFFT2` transform Radially averaged power spectrum for one `GXIMG`
         """
-        gxapi_cy.WrapFFT2.rad_spc1(GXContext._get_tls_geo(), img._wrapper, p2._wrapper)
+        gxapi_cy.WrapFFT2.rad_spc1(GXContext._get_tls_geo(), img._wrapper, vv._wrapper)
         
 
 
 
     @classmethod
-    def rad_spc2(cls, img1, p2, p3, p4, p5):
+    def rad_spc2(cls, img1, img2, vv, v_vst, opt):
         """
         `GXFFT2` transform Radially averaged power spectrum for two IMGs
         """
-        gxapi_cy.WrapFFT2.rad_spc2(GXContext._get_tls_geo(), img1._wrapper, p2._wrapper, p3._wrapper, p4._wrapper, p5)
+        gxapi_cy.WrapFFT2.rad_spc2(GXContext._get_tls_geo(), img1._wrapper, img2._wrapper, vv._wrapper, v_vst._wrapper, opt)
         
 
 

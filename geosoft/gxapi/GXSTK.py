@@ -136,7 +136,7 @@ class GXSTK:
 
 
 
-    def get_gen_parms(self, x_ch, y_ch, grp_name, x_scale, p9, p10, p11, p12, p13, p14, p15):
+    def get_gen_parms(self, x_ch, y_ch, grp_name, x_scale, y_scale, x_start, x_end, y_start, left, bottom, height):
         """
         Get general parameters in `GXSTK` object
 
@@ -144,7 +144,7 @@ class GXSTK:
 
         See `GXMSTK` for detailed description of all function parameters
         """
-        x_ch.value, y_ch.value, grp_name.value, x_scale.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value, p15.value = self._wrapper.get_gen_parms(x_ch.value.encode(), y_ch.value.encode(), grp_name.value.encode(), x_scale.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value, p15.value)
+        x_ch.value, y_ch.value, grp_name.value, x_scale.value, y_scale.value, x_start.value, x_end.value, y_start.value, left.value, bottom.value, height.value = self._wrapper.get_gen_parms(x_ch.value.encode(), y_ch.value.encode(), grp_name.value.encode(), x_scale.value, y_scale.value, x_start.value, x_end.value, y_start.value, left.value, bottom.value, height.value)
         
 
 
@@ -182,7 +182,7 @@ class GXSTK:
 
 
 
-    def get_profile(self, prof_type, p3, p4, p5, p7, p8, p9, p10, p11, p13, p14, p16, p17, p19):
+    def get_profile(self, prof_type, pitch, thick, ln_clr, wrap, clip, smooth, vv_ind, label, ref, font, text_size, text_clr, prof_va_num):
         """
         Get profile parameters in `GXSTK` object
 
@@ -190,13 +190,13 @@ class GXSTK:
 
         See `GXMSTK` for detailed description of all function parameters
         """
-        prof_type.value, p3.value, p4.value, p5.value, p7.value, p8.value, p9.value, p11.value, p13.value, p14.value, p16.value, p17.value, p19.value = self._wrapper.get_profile(prof_type.value, p3.value, p4.value, p5.value.encode(), p7.value, p8.value, p9.value, p10._wrapper, p11.value.encode(), p13.value, p14.value.encode(), p16.value, p17.value.encode(), p19.value)
+        prof_type.value, pitch.value, thick.value, ln_clr.value, wrap.value, clip.value, smooth.value, label.value, ref.value, font.value, text_size.value, text_clr.value, prof_va_num.value = self._wrapper.get_profile(prof_type.value, pitch.value, thick.value, ln_clr.value.encode(), wrap.value, clip.value, smooth.value, vv_ind._wrapper, label.value.encode(), ref.value, font.value.encode(), text_size.value, text_clr.value.encode(), prof_va_num.value)
         
 
 
 
 
-    def get_profile_ex(self, prof_type, p3, p4, p5, p7, p8, p9, p10, p11, p12, p14, p15, p17, p18, p20):
+    def get_profile_ex(self, prof_type, pitch, thick, ln_clr, break_dum, wrap, clip, smooth, vv_ind, label, ref, font, text_size, text_clr, prof_va_num):
         """
         Get profile parameters in `GXSTK` object (added Break on dummy option)
 
@@ -204,13 +204,13 @@ class GXSTK:
 
         See `GXMSTK` for detailed description of all function parameters
         """
-        prof_type.value, p3.value, p4.value, p5.value, p7.value, p8.value, p9.value, p10.value, p12.value, p14.value, p15.value, p17.value, p18.value, p20.value = self._wrapper.get_profile_ex(prof_type.value, p3.value, p4.value, p5.value.encode(), p7.value, p8.value, p9.value, p10.value, p11._wrapper, p12.value.encode(), p14.value, p15.value.encode(), p17.value, p18.value.encode(), p20.value)
+        prof_type.value, pitch.value, thick.value, ln_clr.value, break_dum.value, wrap.value, clip.value, smooth.value, label.value, ref.value, font.value, text_size.value, text_clr.value, prof_va_num.value = self._wrapper.get_profile_ex(prof_type.value, pitch.value, thick.value, ln_clr.value.encode(), break_dum.value, wrap.value, clip.value, smooth.value, vv_ind._wrapper, label.value.encode(), ref.value, font.value.encode(), text_size.value, text_clr.value.encode(), prof_va_num.value)
         
 
 
 
 
-    def get_symb_parms(self, symb_font, symb_size, line_clr, fill_clr, wrap, clip, symb_y_loc, no_levels, vv_level, vv_type, p15, p16, p18, p19):
+    def get_symb_parms(self, symb_font, symb_size, line_clr, fill_clr, wrap, clip, symb_y_loc, no_levels, vv_level, vv_type, label, text_font, text_size, text_clr):
         """
         Get parameters in `GXSTK` object relating drawing symbols
 
@@ -218,7 +218,7 @@ class GXSTK:
 
         See `GXMSTK` for detailed description of all function parameters
         """
-        symb_font.value, symb_size.value, line_clr.value, fill_clr.value, wrap.value, clip.value, symb_y_loc.value, no_levels.value, p15.value, p16.value, p18.value, p19.value = self._wrapper.get_symb_parms(symb_font.value.encode(), symb_size.value, line_clr.value.encode(), fill_clr.value.encode(), wrap.value, clip.value, symb_y_loc.value, no_levels.value, vv_level._wrapper, vv_type._wrapper, p15.value, p16.value.encode(), p18.value, p19.value.encode())
+        symb_font.value, symb_size.value, line_clr.value, fill_clr.value, wrap.value, clip.value, symb_y_loc.value, no_levels.value, label.value, text_font.value, text_size.value, text_clr.value = self._wrapper.get_symb_parms(symb_font.value.encode(), symb_size.value, line_clr.value.encode(), fill_clr.value.encode(), wrap.value, clip.value, symb_y_loc.value, no_levels.value, vv_level._wrapper, vv_type._wrapper, label.value, text_font.value.encode(), text_size.value, text_clr.value.encode())
         
 
 
@@ -309,7 +309,7 @@ class GXSTK:
 
 
 
-    def set_gen_parms(self, x_ch, y_ch, grp_name, x_scale, p6, p7, p8, p9, p10, p11, p12):
+    def set_gen_parms(self, x_ch, y_ch, grp_name, x_scale, y_scale, x_start, x_end, y_start, left, bottom, height):
         """
         Set general parameters in `GXSTK` object
 
@@ -317,7 +317,7 @@ class GXSTK:
 
         See `GXMSTK` for detailed description of all function parameters
         """
-        self._wrapper.set_gen_parms(x_ch.encode(), y_ch.encode(), grp_name.encode(), x_scale, p6, p7, p8, p9, p10, p11, p12)
+        self._wrapper.set_gen_parms(x_ch.encode(), y_ch.encode(), grp_name.encode(), x_scale, y_scale, x_start, x_end, y_start, left, bottom, height)
         
 
 
@@ -369,7 +369,7 @@ class GXSTK:
 
 
 
-    def set_profile(self, prof_type, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15):
+    def set_profile(self, prof_type, pitch, thick, ln_clr, wrap, clip, smooth, vv_ind, label, ref, font, text_size, text_clr, prof_va_num):
         """
         Set profile parameters in `GXSTK` object
 
@@ -377,13 +377,13 @@ class GXSTK:
 
         See `GXMSTK` for detailed description of all function parameters
         """
-        self._wrapper.set_profile(prof_type, p3, p4, p5.encode(), p6, p7, p8, p9._wrapper, p10.encode(), p11, p12.encode(), p13, p14.encode(), p15)
+        self._wrapper.set_profile(prof_type, pitch, thick, ln_clr.encode(), wrap, clip, smooth, vv_ind._wrapper, label.encode(), ref, font.encode(), text_size, text_clr.encode(), prof_va_num)
         
 
 
 
 
-    def set_profile_ex(self, prof_type, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16):
+    def set_profile_ex(self, prof_type, pitch, thick, ln_clr, break_dum, wrap, clip, smooth, vv_ind, label, ref, font, text_size, text_clr, prof_va_num):
         """
         Set profile parameters in `GXSTK` object (added Break on dummy option)
 
@@ -391,13 +391,13 @@ class GXSTK:
 
         See `GXMSTK` for detailed description of all function parameters
         """
-        self._wrapper.set_profile_ex(prof_type, p3, p4, p5.encode(), p6, p7, p8, p9, p10._wrapper, p11.encode(), p12, p13.encode(), p14, p15.encode(), p16)
+        self._wrapper.set_profile_ex(prof_type, pitch, thick, ln_clr.encode(), break_dum, wrap, clip, smooth, vv_ind._wrapper, label.encode(), ref, font.encode(), text_size, text_clr.encode(), prof_va_num)
         
 
 
 
 
-    def set_symb_parms(self, symb_font, symb_size, line_clr, fill_clr, wrap, clip, symb_y_loc, no_levels, vv_level, vv_type, p12, p13, p14, p15):
+    def set_symb_parms(self, symb_font, symb_size, line_clr, fill_clr, wrap, clip, symb_y_loc, no_levels, vv_level, vv_type, label, text_font, text_size, text_clr):
         """
         Set parameters in `GXSTK` object relating drawing symbols
 
@@ -405,7 +405,7 @@ class GXSTK:
 
         See `GXMSTK` for detailed description of all function parameters
         """
-        self._wrapper.set_symb_parms(symb_font.encode(), symb_size, line_clr.encode(), fill_clr.encode(), wrap, clip, symb_y_loc, no_levels, vv_level._wrapper, vv_type._wrapper, p12, p13.encode(), p14, p15.encode())
+        self._wrapper.set_symb_parms(symb_font.encode(), symb_size, line_clr.encode(), fill_clr.encode(), wrap, clip, symb_y_loc, no_levels, vv_level._wrapper, vv_type._wrapper, label, text_font.encode(), text_size, text_clr.encode())
         
 
 

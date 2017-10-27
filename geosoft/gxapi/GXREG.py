@@ -104,17 +104,17 @@ class GXREG:
 
 
 
-    def get(self, parm, p3):
+    def get(self, parm, data):
         """
         Gets a string for a specified parameter in the `GXREG` object
         """
-        p3.value = self._wrapper.get(parm.encode(), p3.value.encode())
+        data.value = self._wrapper.get(parm.encode(), data.value.encode())
         
 
 
 
 
-    def get_int(self, parm, p3):
+    def get_int(self, parm, data):
         """
         Gets an int for a specified parameter in the `GXREG` object
 
@@ -122,7 +122,7 @@ class GXREG:
 
         If parameter is not present in `GXREG`, `iDUMMY` is returned.
         """
-        p3.value = self._wrapper.get_int(parm.encode(), p3.value)
+        data.value = self._wrapper.get_int(parm.encode(), data.value)
         
 
 
@@ -138,7 +138,7 @@ class GXREG:
 
 
 
-    def get_double(self, parm, p3):
+    def get_double(self, parm, data):
         """
         Gets an real for a specified parameter in the `GXREG` object
 
@@ -146,7 +146,7 @@ class GXREG:
 
         If parameter is not present in `GXREG`, `rDUMMY` is returned.
         """
-        p3.value = self._wrapper.get_double(parm.encode(), p3.value)
+        data.value = self._wrapper.get_double(parm.encode(), data.value)
         
 
 
@@ -196,7 +196,7 @@ class GXREG:
 
 
 
-    def save_ini(self, p2):
+    def save_ini(self, ini):
         """
         Save a `GXREG` to an INI file.
 
@@ -207,7 +207,7 @@ class GXREG:
         which groups items under [GROUP] headings.
         Single-word items (without a separating period) are skipped.
         """
-        self._wrapper.save_ini(p2.encode())
+        self._wrapper.save_ini(ini.encode())
         
 
 
@@ -223,7 +223,7 @@ class GXREG:
 
 
 
-    def set(self, parm, p3):
+    def set(self, parm, data):
         """
         Sets a string parameter in the `GXREG` object
 
@@ -236,17 +236,17 @@ class GXREG:
         or
         `set_double`(Reg, sParam, `rDUMMY`);
         """
-        self._wrapper.set(parm.encode(), p3.encode())
+        self._wrapper.set(parm.encode(), data.encode())
         
 
 
 
 
-    def set_int(self, parm, p3):
+    def set_int(self, parm, data):
         """
         Sets an int for a specified parameter in the `GXREG` object
         """
-        self._wrapper.set_int(parm.encode(), p3)
+        self._wrapper.set_int(parm.encode(), data)
         
 
 

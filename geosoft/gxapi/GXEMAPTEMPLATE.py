@@ -358,7 +358,7 @@ class GXEMAPTEMPLATE:
 
 
 
-    def get_box(self, state, p3, p4, p5, p6):
+    def get_box(self, state, min_x, min_y, max_x, max_y):
         """
         Returns the coordinates of a user selected box.
 
@@ -367,7 +367,7 @@ class GXEMAPTEMPLATE:
         The coordinates are returned in the current template units
         (See GetUnits and SetUnits in `GXMAPTEMPLATE`)
         """
-        ret_val, p3.value, p4.value, p5.value, p6.value = self._wrapper.get_box(state.encode(), p3.value, p4.value, p5.value, p6.value)
+        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.get_box(state.encode(), min_x.value, min_y.value, max_x.value, max_y.value)
         return ret_val
 
 

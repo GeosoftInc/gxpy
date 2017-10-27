@@ -59,11 +59,11 @@ class GXARCMAP:
 
 
     @classmethod
-    def change_size(cls, x, p2):
+    def change_size(cls, x, y):
         """
         Changes the custom page size of the ArcGIS Map document.
         """
-        gxapi_cy.WrapARCMAP.change_size(GXContext._get_tls_geo(), x, p2)
+        gxapi_cy.WrapARCMAP.change_size(GXContext._get_tls_geo(), x, y)
         
 
 
@@ -203,7 +203,7 @@ class GXARCMAP:
 
 
     @classmethod
-    def load_map(cls, map, view, extra_csv, layer_tag, fit, activate, p7):
+    def load_map(cls, map, view, extra_csv, layer_tag, fit, activate, prefix):
         """
         Loads a Geosoft map into the current ArcMap document
 
@@ -218,7 +218,7 @@ class GXARCMAP:
             VIEWMATCH   -  View to match with in associated map (used for grouping logic)
             ZONEFILE    -  Used for type RASTER
         """
-        gxapi_cy.WrapARCMAP.load_map(GXContext._get_tls_geo(), map.encode(), view.encode(), extra_csv.encode(), layer_tag.encode(), fit, activate, p7)
+        gxapi_cy.WrapARCMAP.load_map(GXContext._get_tls_geo(), map.encode(), view.encode(), extra_csv.encode(), layer_tag.encode(), fit, activate, prefix)
         
 
 
@@ -284,11 +284,11 @@ class GXARCMAP:
 
 
     @classmethod
-    def query_size(cls, x, p2):
+    def query_size(cls, x, y):
         """
         Query the page size in mm of the entire map page.
         """
-        x.value, p2.value = gxapi_cy.WrapARCMAP.query_size(GXContext._get_tls_geo(), x.value, p2.value)
+        x.value, y.value = gxapi_cy.WrapARCMAP.query_size(GXContext._get_tls_geo(), x.value, y.value)
         
 
 

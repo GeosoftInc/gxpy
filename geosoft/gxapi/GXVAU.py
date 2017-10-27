@@ -59,7 +59,7 @@ class GXVAU:
 
 
     @classmethod
-    def prune(cls, v_ap, v_vr, o):
+    def prune(cls, v_ap, vv_r, o):
         """
         Prune values from a `GXVA` based on reference `GXVA`
 
@@ -69,7 +69,7 @@ class GXVAU:
         that are either dummy or non-dummy in the reference
         `GXVA`
         """
-        gxapi_cy.WrapVAU.prune(GXContext._get_tls_geo(), v_ap._wrapper, v_vr._wrapper, o)
+        gxapi_cy.WrapVAU.prune(GXContext._get_tls_geo(), v_ap._wrapper, vv_r._wrapper, o)
         
 
 

@@ -70,7 +70,7 @@ class GXMVU:
 
 
     @classmethod
-    def arrow_vector_vv(cls, mview, v_vx, v_vy, v_vdx, v_vdy, scale, pos, size, style, point, thickness):
+    def arrow_vector_vv(cls, mview, vv_x, vv_y, vv_dx, vv_dy, scale, pos, size, style, point, thickness):
         """
         Draw arrow vectors based on input VVs.
 
@@ -83,23 +83,23 @@ class GXMVU:
         If the line thickness is set to `rDUMMY`, the line thickness scales
         with the arrow size, and is 1/20 of the vector length.
         """
-        gxapi_cy.WrapMVU.arrow_vector_vv(GXContext._get_tls_geo(), mview._wrapper, v_vx._wrapper, v_vy._wrapper, v_vdx._wrapper, v_vdy._wrapper, scale, pos, size, style, point, thickness)
+        gxapi_cy.WrapMVU.arrow_vector_vv(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, vv_dx._wrapper, vv_dy._wrapper, scale, pos, size, style, point, thickness)
         
 
 
 
     @classmethod
-    def bar_chart(cls, mview, group_name, data, line, x_chan, list, x_title, x_txt_size, y_title, y_txt_size, bar_title, bar_txt_size, bar_width, dist_fid, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28):
+    def bar_chart(cls, mview, group_name, data, line, x_chan, list, x_title, x_txt_size, y_title, y_txt_size, bar_title, bar_txt_size, bar_width, dist_fid, label, tick, right_axis, top_axis, bottom_axis, surround, left, bottom, right, top, xm, ym, widthm, heightm):
         """
         Plot bar chart on a map.
         """
-        gxapi_cy.WrapMVU.bar_chart(GXContext._get_tls_geo(), mview._wrapper, group_name.encode(), data._wrapper, line, x_chan.encode(), list.encode(), x_title.encode(), x_txt_size, y_title.encode(), y_txt_size, bar_title.encode(), bar_txt_size, bar_width, dist_fid, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28)
+        gxapi_cy.WrapMVU.bar_chart(GXContext._get_tls_geo(), mview._wrapper, group_name.encode(), data._wrapper, line, x_chan.encode(), list.encode(), x_title.encode(), x_txt_size, y_title.encode(), y_txt_size, bar_title.encode(), bar_txt_size, bar_width, dist_fid, label, tick, right_axis, top_axis, bottom_axis, surround, left, bottom, right, top, xm, ym, widthm, heightm)
         
 
 
 
     @classmethod
-    def cdi_pixel_plot(cls, mview, group, data_va, elev_va, p5, p6):
+    def cdi_pixel_plot(cls, mview, group, data_va, elev_va, xvv, itr):
         """
         Create a color pixel-style plot of CDI data.
 
@@ -113,13 +113,13 @@ class GXMVU:
         are sized so that the boundaries are half-way between adjacent
         data, both vertically and horizontally.
         """
-        gxapi_cy.WrapMVU.cdi_pixel_plot(GXContext._get_tls_geo(), mview._wrapper, group.encode(), data_va._wrapper, elev_va._wrapper, p5._wrapper, p6._wrapper)
+        gxapi_cy.WrapMVU.cdi_pixel_plot(GXContext._get_tls_geo(), mview._wrapper, group.encode(), data_va._wrapper, elev_va._wrapper, xvv._wrapper, itr._wrapper)
         
 
 
 
     @classmethod
-    def cdi_pixel_plot_3d(cls, mview, group, data_va, elev_va, p5, p6, p7):
+    def cdi_pixel_plot_3d(cls, mview, group, data_va, elev_va, xvv, yvv, itr):
         """
         Create a color pixel-style plot of CDI data in a 3D view.
 
@@ -131,7 +131,7 @@ class GXMVU:
         data point is plotted in two halves, with each half on adjacent plotting planes,
         with the bend at the data point.
         """
-        gxapi_cy.WrapMVU.cdi_pixel_plot_3d(GXContext._get_tls_geo(), mview._wrapper, group.encode(), data_va._wrapper, elev_va._wrapper, p5._wrapper, p6._wrapper, p7._wrapper)
+        gxapi_cy.WrapMVU.cdi_pixel_plot_3d(GXContext._get_tls_geo(), mview._wrapper, group.encode(), data_va._wrapper, elev_va._wrapper, xvv._wrapper, yvv._wrapper, itr._wrapper)
         
 
 
@@ -303,7 +303,7 @@ class GXMVU:
 
 
     @classmethod
-    def c_symb_legend(cls, mview, x1, y1, font_size, p5, p6, p7, p8):
+    def c_symb_legend(cls, mview, x1, y1, font_size, symb_scale, file, title, sub_title):
         """
         Plot a legend for the classified color symbols.
 
@@ -321,13 +321,13 @@ class GXMVU:
         the correct font and symbol before CSymbLegend is
         called. The same is true of the edge color.
         """
-        gxapi_cy.WrapMVU.c_symb_legend(GXContext._get_tls_geo(), mview._wrapper, x1, y1, font_size, p5, p6.encode(), p7.encode(), p8.encode())
+        gxapi_cy.WrapMVU.c_symb_legend(GXContext._get_tls_geo(), mview._wrapper, x1, y1, font_size, symb_scale, file.encode(), title.encode(), sub_title.encode())
         
 
 
 
     @classmethod
-    def decay_curve(cls, mview, v_vx, v_vy, v_ay, v_ax, log, log_min, angle, x_bar, y_bar, x_off_set, y_off_set, width, height, x_min, p16, p17, p18, p19, p20, p21):
+    def decay_curve(cls, mview, vv_x, vv_y, v_ay, v_ax, log, log_min, angle, x_bar, y_bar, x_off_set, y_off_set, width, height, x_min, y_min, x_scale, y_scale, line_pitch, line_style, line_color):
         """
         Plot decay curves at survey locations
 
@@ -336,13 +336,13 @@ class GXMVU:
         Box width and height are used to draw horizontal and vertical
         bars. Curves outside the box are not clipped.
         """
-        gxapi_cy.WrapMVU.decay_curve(GXContext._get_tls_geo(), mview._wrapper, v_vx._wrapper, v_vy._wrapper, v_ay._wrapper, v_ax._wrapper, log, log_min, angle, x_bar, y_bar, x_off_set, y_off_set, width, height, x_min, p16, p17, p18, p19, p20, p21.encode())
+        gxapi_cy.WrapMVU.decay_curve(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, v_ay._wrapper, v_ax._wrapper, log, log_min, angle, x_bar, y_bar, x_off_set, y_off_set, width, height, x_min, y_min, x_scale, y_scale, line_pitch, line_style, line_color.encode())
         
 
 
 
     @classmethod
-    def direction_plot(cls, mview, v_vx, v_vy, size, loc, align):
+    def direction_plot(cls, mview, vv_x, vv_y, size, loc, align):
         """
         Plot an arrow to indicate the direction of a flight line
 
@@ -351,7 +351,7 @@ class GXMVU:
         An arrow will be drawn in the direction from the first valid
         to the last points in the X and Y VVs.
         """
-        gxapi_cy.WrapMVU.direction_plot(GXContext._get_tls_geo(), mview._wrapper, v_vx._wrapper, v_vy._wrapper, size, loc, align)
+        gxapi_cy.WrapMVU.direction_plot(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, size, loc, align)
         
 
 
@@ -442,7 +442,7 @@ class GXMVU:
 
 
     @classmethod
-    def flight_plot(cls, mview, v_vx, v_vy, line, locate, vangle, up, loff, voff):
+    def flight_plot(cls, mview, vv_x, vv_y, line, locate, vangle, up, loff, voff):
         """
         Draw a flight line
 
@@ -474,7 +474,7 @@ class GXMVU:
 
             `path_plot`
         """
-        gxapi_cy.WrapMVU.flight_plot(GXContext._get_tls_geo(), mview._wrapper, v_vx._wrapper, v_vy._wrapper, line.encode(), locate, vangle, up, loff, voff)
+        gxapi_cy.WrapMVU.flight_plot(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, line.encode(), locate, vangle, up, loff, voff)
         
 
 
@@ -517,7 +517,7 @@ class GXMVU:
 
 
     @classmethod
-    def histogram(cls, mview, st_data, st_hist, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18):
+    def histogram(cls, mview, st_data, st_hist, title, unit, xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, fill_color, st_box):
         """
         Plot the histogram on a map.
 
@@ -530,13 +530,13 @@ class GXMVU:
 
             `histogram2`, `histogram3`
         """
-        gxapi_cy.WrapMVU.histogram(GXContext._get_tls_geo(), mview._wrapper, st_data._wrapper, st_hist._wrapper, p4.encode(), p5.encode(), p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18._wrapper)
+        gxapi_cy.WrapMVU.histogram(GXContext._get_tls_geo(), mview._wrapper, st_data._wrapper, st_hist._wrapper, title.encode(), unit.encode(), xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, fill_color, st_box._wrapper)
         
 
 
 
     @classmethod
-    def histogram2(cls, mview, st_data, st_hist, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23):
+    def histogram2(cls, mview, st_data, st_hist, x_title, y_title, xy_txt_size, title, plot_txt_size, unit, xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, fill_color, st_box, x_marker):
         """
         Plot the histogram on a map.
 
@@ -547,33 +547,33 @@ class GXMVU:
         None of them will be plotted if threshold value is dummy or outside
         the X data range.
         """
-        gxapi_cy.WrapMVU.histogram2(GXContext._get_tls_geo(), mview._wrapper, st_data._wrapper, st_hist._wrapper, p4.encode(), p5.encode(), p6, p7.encode(), p8, p9.encode(), p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22._wrapper, p23)
+        gxapi_cy.WrapMVU.histogram2(GXContext._get_tls_geo(), mview._wrapper, st_data._wrapper, st_hist._wrapper, x_title.encode(), y_title.encode(), xy_txt_size, title.encode(), plot_txt_size, unit.encode(), xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, fill_color, st_box._wrapper, x_marker)
         
 
 
 
     @classmethod
-    def histogram3(cls, mview, st_data, st_hist, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20):
+    def histogram3(cls, mview, st_data, st_hist, title, unit, xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, fill_color, data_decimal, stat_decimal, st_box):
         """
         Plot the histogram on a map, specify decimals.
         """
-        gxapi_cy.WrapMVU.histogram3(GXContext._get_tls_geo(), mview._wrapper, st_data._wrapper, st_hist._wrapper, p4.encode(), p5.encode(), p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20._wrapper)
+        gxapi_cy.WrapMVU.histogram3(GXContext._get_tls_geo(), mview._wrapper, st_data._wrapper, st_hist._wrapper, title.encode(), unit.encode(), xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, fill_color, data_decimal, stat_decimal, st_box._wrapper)
         
 
 
 
     @classmethod
-    def histogram4(cls, mview, st_data, st_hist, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21):
+    def histogram4(cls, mview, st_data, st_hist, title, unit, xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, prob, fill_color, data_decimal, stat_decimal, st_box):
         """
         As `histogram3`, but allow probability scaling of percents.
         """
-        gxapi_cy.WrapMVU.histogram4(GXContext._get_tls_geo(), mview._wrapper, st_data._wrapper, st_hist._wrapper, p4.encode(), p5.encode(), p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21._wrapper)
+        gxapi_cy.WrapMVU.histogram4(GXContext._get_tls_geo(), mview._wrapper, st_data._wrapper, st_hist._wrapper, title.encode(), unit.encode(), xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, prob, fill_color, data_decimal, stat_decimal, st_box._wrapper)
         
 
 
 
     @classmethod
-    def histogram5(cls, mview, st_data, st_hist, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23):
+    def histogram5(cls, mview, st_data, st_hist, title, unit, lmd, xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, prob, fill_color, data_decimal, stat_decimal, st_box, itr):
         """
         As `histogram4`, but allow `GXITR` to color bars.
 
@@ -581,7 +581,7 @@ class GXMVU:
 
         The `GXITR` can be empty (but must still be a valid `GXITR` object).
         """
-        gxapi_cy.WrapMVU.histogram5(GXContext._get_tls_geo(), mview._wrapper, st_data._wrapper, st_hist._wrapper, p4.encode(), p5.encode(), p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22._wrapper, p23._wrapper)
+        gxapi_cy.WrapMVU.histogram5(GXContext._get_tls_geo(), mview._wrapper, st_data._wrapper, st_hist._wrapper, title.encode(), unit.encode(), lmd, xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, prob, fill_color, data_decimal, stat_decimal, st_box._wrapper, itr._wrapper)
         
 
 
@@ -605,7 +605,7 @@ class GXMVU:
 
 
     @classmethod
-    def mapset_test(cls, min_x, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+    def mapset_test(cls, min_x, max_x, min_y, max_y, size, port, exact, scale, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside):
         """
         Test function to ensure parameters to `mapset` is sane
 
@@ -614,13 +614,13 @@ class GXMVU:
         Use `GXSYS.show_error` to display errors that may have been encountered. This function can also be used
         to calculate the default scale without creating a map.
         """
-        ret_val, p8.value = gxapi_cy.WrapMVU.mapset_test(GXContext._get_tls_geo(), min_x, p2, p3, p4, p5.encode(), p6, p7, p8.value, p9, p10, p11, p12, p13, p14)
+        ret_val, scale.value = gxapi_cy.WrapMVU.mapset_test(GXContext._get_tls_geo(), min_x, max_x, min_y, max_y, size.encode(), port, exact, scale.value, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside)
         return ret_val
 
 
 
     @classmethod
-    def mapset2_test(cls, min_x, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15):
+    def mapset2_test(cls, min_x, max_x, min_y, max_y, size, port, exact, scale, vert_exag, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside):
         """
         Test function to ensure parameters to `mapset` is sane
 
@@ -628,7 +628,7 @@ class GXMVU:
 
         Same as `mapset_test`, with vertical exaggeration.
         """
-        ret_val, p8.value = gxapi_cy.WrapMVU.mapset2_test(GXContext._get_tls_geo(), min_x, p2, p3, p4, p5.encode(), p6, p7, p8.value, p9, p10, p11, p12, p13, p14, p15)
+        ret_val, scale.value = gxapi_cy.WrapMVU.mapset2_test(GXContext._get_tls_geo(), min_x, max_x, min_y, max_y, size.encode(), port, exact, scale.value, vert_exag, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside)
         return ret_val
 
 
@@ -661,7 +661,7 @@ class GXMVU:
 
 
     @classmethod
-    def map_from_plt(cls, map, base, data, plt, mpx, p6):
+    def map_from_plt(cls, map, base, data, plt, mpx, mpy):
         """
         Creates a new map from a PLT file.
 
@@ -675,7 +675,7 @@ class GXMVU:
 
             `load_plot`
         """
-        gxapi_cy.WrapMVU.map_from_plt(GXContext._get_tls_geo(), map._wrapper, base.encode(), data.encode(), plt.encode(), mpx, p6)
+        gxapi_cy.WrapMVU.map_from_plt(GXContext._get_tls_geo(), map._wrapper, base.encode(), data.encode(), plt.encode(), mpx, mpy)
         
 
 
@@ -691,21 +691,21 @@ class GXMVU:
 
 
     @classmethod
-    def mapset(cls, map, base, data, min_x, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17):
+    def mapset(cls, map, base, data, min_x, max_x, min_y, max_y, size, port, exact, scale, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside):
         """
         Creates a new map directly from parameters.
         """
-        gxapi_cy.WrapMVU.mapset(GXContext._get_tls_geo(), map._wrapper, base.encode(), data.encode(), min_x, p5, p6, p7, p8.encode(), p9, p10, p11, p12, p13, p14, p15, p16, p17)
+        gxapi_cy.WrapMVU.mapset(GXContext._get_tls_geo(), map._wrapper, base.encode(), data.encode(), min_x, max_x, min_y, max_y, size.encode(), port, exact, scale, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside)
         
 
 
 
     @classmethod
-    def mapset2(cls, map, base, data, min_x, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18):
+    def mapset2(cls, map, base, data, min_x, max_x, min_y, max_y, size, port, exact, scale, vert_exag, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside):
         """
         Same as `mapset`, with vertical exaggeration.
         """
-        gxapi_cy.WrapMVU.mapset2(GXContext._get_tls_geo(), map._wrapper, base.encode(), data.encode(), min_x, p5, p6, p7, p8.encode(), p9, p10, p11, p12, p13, p14, p15, p16, p17, p18)
+        gxapi_cy.WrapMVU.mapset2(GXContext._get_tls_geo(), map._wrapper, base.encode(), data.encode(), min_x, max_x, min_y, max_y, size.encode(), port, exact, scale, vert_exag, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside)
         
 
 
@@ -721,7 +721,7 @@ class GXMVU:
 
 
     @classmethod
-    def path_plot(cls, mview, v_vx, v_vy, line, locate, vangle, up, loff, voff, gap):
+    def path_plot(cls, mview, vv_x, vv_y, line, locate, vangle, up, loff, voff, gap):
         """
         Draw a flight line
 
@@ -734,13 +734,13 @@ class GXMVU:
 
             FlighPlot_MVU
         """
-        gxapi_cy.WrapMVU.path_plot(GXContext._get_tls_geo(), mview._wrapper, v_vx._wrapper, v_vy._wrapper, line.encode(), locate, vangle, up, loff, voff, gap)
+        gxapi_cy.WrapMVU.path_plot(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, line.encode(), locate, vangle, up, loff, voff, gap)
         
 
 
 
     @classmethod
-    def path_plot_ex(cls, mview, v_vx, v_vy, line, locate, compass, vangle, up, loff, voff, gap):
+    def path_plot_ex(cls, mview, vv_x, vv_y, line, locate, compass, vangle, up, loff, voff, gap):
         """
         Draw a flight line
 
@@ -752,13 +752,13 @@ class GXMVU:
 
             `path_plot`
         """
-        gxapi_cy.WrapMVU.path_plot_ex(GXContext._get_tls_geo(), mview._wrapper, v_vx._wrapper, v_vy._wrapper, line.encode(), locate, compass, vangle, up, loff, voff, gap)
+        gxapi_cy.WrapMVU.path_plot_ex(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, line.encode(), locate, compass, vangle, up, loff, voff, gap)
         
 
 
 
     @classmethod
-    def path_plot_ex2(cls, mview, v_vx, v_vy, line, locate, compass, vangle, up, loff, voff, gap, dummies):
+    def path_plot_ex2(cls, mview, vv_x, vv_y, line, locate, compass, vangle, up, loff, voff, gap, dummies):
         """
         Draw a flight line
 
@@ -770,7 +770,7 @@ class GXMVU:
 
             `path_plot_ex`
         """
-        gxapi_cy.WrapMVU.path_plot_ex2(GXContext._get_tls_geo(), mview._wrapper, v_vx._wrapper, v_vy._wrapper, line.encode(), locate, compass, vangle, up, loff, voff, gap, dummies)
+        gxapi_cy.WrapMVU.path_plot_ex2(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, line.encode(), locate, compass, vangle, up, loff, voff, gap, dummies)
         
 
 
@@ -826,27 +826,27 @@ class GXMVU:
 
 
     @classmethod
-    def post(cls, mview, v_vx, v_vy, v_vz, dummy, size, format, decimals, ref, angle):
+    def post(cls, mview, vv_x, vv_y, vv_z, dummy, size, format, decimals, ref, angle):
         """
         Post values on a map.
         """
-        gxapi_cy.WrapMVU.post(GXContext._get_tls_geo(), mview._wrapper, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, dummy, size, format, decimals, ref, angle)
+        gxapi_cy.WrapMVU.post(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, dummy, size, format, decimals, ref, angle)
         
 
 
 
     @classmethod
-    def post_ex(cls, mview, v_vx, v_vy, v_vz, v_vs, dummy, base, min_detect, size, format, decimals, offset_l, p13, p14, p15, p16, p17, p18, p19, p20):
+    def post_ex(cls, mview, vv_x, vv_y, vv_z, vv_s, dummy, base, min_detect, size, format, decimals, offset_l, offset_p, alternate, mod, ref, angle, fixed, ref_ang, up):
         """
         Post values on a map with more paramters.
         """
-        gxapi_cy.WrapMVU.post_ex(GXContext._get_tls_geo(), mview._wrapper, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, v_vs._wrapper, dummy, base, min_detect, size, format, decimals, offset_l, p13, p14, p15, p16, p17, p18, p19, p20)
+        gxapi_cy.WrapMVU.post_ex(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_s._wrapper, dummy, base, min_detect, size, format, decimals, offset_l, offset_p, alternate, mod, ref, angle, fixed, ref_ang, up)
         
 
 
 
     @classmethod
-    def probability(cls, mview, st_data, st_hist, title, unit, transform, lmd, xm, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18):
+    def probability(cls, mview, st_data, st_hist, title, unit, transform, lmd, xm, ym, widthm, heightm, symb_size, sigma, sum_width, summ, data_decimal, stat_decimal, itr):
         """
         Plot a probability plot on a map.
 
@@ -854,13 +854,13 @@ class GXMVU:
 
         The `GXITR` can be empty (but must still be a valid `GXITR` object).
         """
-        gxapi_cy.WrapMVU.probability(GXContext._get_tls_geo(), mview._wrapper, st_data._wrapper, st_hist._wrapper, title.encode(), unit.encode(), transform, lmd, xm, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18._wrapper)
+        gxapi_cy.WrapMVU.probability(GXContext._get_tls_geo(), mview._wrapper, st_data._wrapper, st_hist._wrapper, title.encode(), unit.encode(), transform, lmd, xm, ym, widthm, heightm, symb_size, sigma, sum_width, summ, data_decimal, stat_decimal, itr._wrapper)
         
 
 
 
     @classmethod
-    def profile_plot(cls, mview, v_vx, v_vy, v_vz, vangle, up, gap, base, scale, join):
+    def profile_plot(cls, mview, vv_x, vv_y, vv_z, vangle, up, gap, base, scale, join):
         """
         Draw a profile along line trace
 
@@ -868,13 +868,13 @@ class GXMVU:
 
         Profiles will be drawn in the current line style.
         """
-        gxapi_cy.WrapMVU.profile_plot(GXContext._get_tls_geo(), mview._wrapper, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, vangle, up, gap, base, scale, join)
+        gxapi_cy.WrapMVU.profile_plot(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vangle, up, gap, base, scale, join)
         
 
 
 
     @classmethod
-    def profile_plot_ex(cls, mview, v_vx, v_vy, v_vz, vangle, up, gap, base, scale, join, log, log_base, smooth, pos_f_color, neg_f_color):
+    def profile_plot_ex(cls, mview, vv_x, vv_y, vv_z, vangle, up, gap, base, scale, join, log, log_base, smooth, pos_f_color, neg_f_color):
         """
         Draw a profile along line trace with more parameters
 
@@ -882,13 +882,13 @@ class GXMVU:
 
         Profiles will be drawn in the current line style.
         """
-        gxapi_cy.WrapMVU.profile_plot_ex(GXContext._get_tls_geo(), mview._wrapper, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, vangle, up, gap, base, scale, join, log, log_base, smooth, pos_f_color.encode(), neg_f_color.encode())
+        gxapi_cy.WrapMVU.profile_plot_ex(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vangle, up, gap, base, scale, join, log, log_base, smooth, pos_f_color.encode(), neg_f_color.encode())
         
 
 
 
     @classmethod
-    def prop_symb_legend(cls, mview, x1, y1, font_size, p5, p6, p7, p8, p9, p10, p11):
+    def prop_symb_legend(cls, mview, x1, y1, font_size, symb_scale, base, n_symb, start, increment, title, sub_title):
         """
         Draw a legend for proportional symbols.
 
@@ -899,7 +899,7 @@ class GXMVU:
         Spacing is based on the maximum of the largest plotted symbol
         and the font size.
         """
-        gxapi_cy.WrapMVU.prop_symb_legend(GXContext._get_tls_geo(), mview._wrapper, x1, y1, font_size, p5, p6, p7, p8, p9, p10.encode(), p11.encode())
+        gxapi_cy.WrapMVU.prop_symb_legend(GXContext._get_tls_geo(), mview._wrapper, x1, y1, font_size, symb_scale, base, n_symb, start, increment, title.encode(), sub_title.encode())
         
 
 
@@ -930,7 +930,7 @@ class GXMVU:
 
 
     @classmethod
-    def symb_off(cls, mview, v_vx, v_vy, v_vf, x_off, y_off):
+    def symb_off(cls, mview, vv_x, vv_y, vv_f, x_off, y_off):
         """
         Draws symbols with an offset and against a flag channel
 
@@ -939,7 +939,7 @@ class GXMVU:
         Symbols are not plotted for positions where the flag `GXVV`
         value is 0 or `iDUMMY`.
         """
-        gxapi_cy.WrapMVU.symb_off(GXContext._get_tls_geo(), mview._wrapper, v_vx._wrapper, v_vy._wrapper, v_vf._wrapper, x_off, y_off)
+        gxapi_cy.WrapMVU.symb_off(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, vv_f._wrapper, x_off, y_off)
         
 
 
@@ -955,27 +955,27 @@ class GXMVU:
 
 
     @classmethod
-    def tick(cls, mview, v_vx, v_vy, v_vs, size, mod, mt_size, mt_mod):
+    def tick(cls, mview, vv_x, vv_y, vv_s, size, mod, mt_size, mt_mod):
         """
         Draw line ticks on a map.
         """
-        gxapi_cy.WrapMVU.tick(GXContext._get_tls_geo(), mview._wrapper, v_vx._wrapper, v_vy._wrapper, v_vs._wrapper, size, mod, mt_size, mt_mod)
+        gxapi_cy.WrapMVU.tick(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, vv_s._wrapper, size, mod, mt_size, mt_mod)
         
 
 
 
     @classmethod
-    def tick_ex(cls, mview, v_vx, v_vy, v_vs, size, mod, mt_size, mt_mod, gap):
+    def tick_ex(cls, mview, vv_x, vv_y, vv_s, size, mod, mt_size, mt_mod, gap):
         """
         Same as `tick`, with gap allowance.
         """
-        gxapi_cy.WrapMVU.tick_ex(GXContext._get_tls_geo(), mview._wrapper, v_vx._wrapper, v_vy._wrapper, v_vs._wrapper, size, mod, mt_size, mt_mod, gap)
+        gxapi_cy.WrapMVU.tick_ex(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, vv_s._wrapper, size, mod, mt_size, mt_mod, gap)
         
 
 
 
     @classmethod
-    def trnd_path(cls, mview, v_vx, v_vy, min_sect, min_dist):
+    def trnd_path(cls, mview, vv_x, vv_y, min_sect, min_dist):
         """
         Plot min and max trend lines.
 
@@ -991,7 +991,7 @@ class GXMVU:
         Set the minimum distance to > 0 to
         plot only the longer trend lines.
         """
-        gxapi_cy.WrapMVU.trnd_path(GXContext._get_tls_geo(), mview._wrapper, v_vx._wrapper, v_vy._wrapper, min_sect, min_dist)
+        gxapi_cy.WrapMVU.trnd_path(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, min_sect, min_dist)
         
 
 

@@ -81,7 +81,7 @@ class GXPJ:
 
 
 
-    def convert_vv(self, v_vx, v_vy):
+    def convert_vv(self, vv_x, vv_y):
         """
         Convert VVx/VVy from input projection to output projection.
 
@@ -89,13 +89,13 @@ class GXPJ:
 
         This function is equivalent to `GXVV.project`.
         """
-        self._wrapper.convert_vv(v_vx._wrapper, v_vy._wrapper)
+        self._wrapper.convert_vv(vv_x._wrapper, vv_y._wrapper)
         
 
 
 
 
-    def convert_vv3(self, v_vx, v_vy, v_vz):
+    def convert_vv3(self, vv_x, vv_y, vv_z):
         """
         Convert VVx/VVy/VVz projections
 
@@ -103,7 +103,7 @@ class GXPJ:
 
         This function is equivalent to `GXVV.project_3d`.
         """
-        self._wrapper.convert_vv3(v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
+        self._wrapper.convert_vv3(vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
         
 
 

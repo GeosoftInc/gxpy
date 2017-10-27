@@ -98,7 +98,7 @@ class GXITR:
 
 
 
-    def color_vv(self, v_vd, v_vc):
+    def color_vv(self, vv_d, vv_c):
         """
         Get color transform of a `GXVV`.
 
@@ -107,7 +107,7 @@ class GXITR:
         If the input value is a dummy, then the output color
         is 0 (no color).
         """
-        self._wrapper.color_vv(v_vd._wrapper, v_vc._wrapper)
+        self._wrapper.color_vv(vv_d._wrapper, vv_c._wrapper)
         
 
 

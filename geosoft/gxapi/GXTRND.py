@@ -61,7 +61,7 @@ class GXTRND:
 
 
     @classmethod
-    def get_max_min(cls, v_vx, v_vy, v_vz, v_vxm, p5, p6, p7, p8):
+    def get_max_min(cls, vv_x, vv_y, vv_z, vv_xm, v_vym, v_vzm, window, trnd):
         """
         Find the max/min nodes in a line.
 
@@ -69,7 +69,7 @@ class GXTRND:
 
         Trend lines positions consist of X and Y VVs
         """
-        gxapi_cy.WrapTRND.get_max_min(GXContext._get_tls_geo(), v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, v_vxm._wrapper, p5._wrapper, p6._wrapper, p7, p8)
+        gxapi_cy.WrapTRND.get_max_min(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_xm._wrapper, v_vym._wrapper, v_vzm._wrapper, window, trnd)
         
 
 

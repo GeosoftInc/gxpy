@@ -127,7 +127,7 @@ class GXDB:
 
 
 
-    def get_chan_vv(self, p2, p3, p4):
+    def get_chan_vv(self, line, chan, vv):
         """
         Place the contents of a channel in a `GXVV`.
 
@@ -140,7 +140,7 @@ class GXDB:
 
             `GXVV` class.
         """
-        self._wrapper.get_chan_vv(p2, p3, p4._wrapper)
+        self._wrapper.get_chan_vv(line, chan, vv._wrapper)
         
 
 
@@ -238,7 +238,7 @@ class GXDB:
 
 
 
-    def get_va_chan_vv(self, p2, p3, p4, p5, p6):
+    def get_va_chan_vv(self, line, chan, vv, offset, items):
         """
         Place the contents of a specific part of a channel in a `GXVV`.
 
@@ -251,7 +251,7 @@ class GXDB:
 
             `GXVV` class.
         """
-        self._wrapper.get_va_chan_vv(p2, p3, p4._wrapper, p5, p6)
+        self._wrapper.get_va_chan_vv(line, chan, vv._wrapper, offset, items)
         
 
 
@@ -569,7 +569,7 @@ class GXDB:
 
 
 
-    def put_chan_vv(self, p2, p3, p4):
+    def put_chan_vv(self, line, chan, vv):
         """
         Place the contents of a `GXVV` in a channel.
 
@@ -584,13 +584,13 @@ class GXDB:
 
             `GXVV` class.
         """
-        self._wrapper.put_chan_vv(p2, p3, p4._wrapper)
+        self._wrapper.put_chan_vv(line, chan, vv._wrapper)
         
 
 
 
 
-    def put_va_chan_vv(self, p2, p3, p4, p5, p6):
+    def put_va_chan_vv(self, line, chan, vv, offset, items):
         """
         Place the contents of a `GXVV` at a specific part of a channel.
 
@@ -603,7 +603,7 @@ class GXDB:
 
             `GXVV` class.
         """
-        self._wrapper.put_va_chan_vv(p2, p3, p4._wrapper, p5, p6)
+        self._wrapper.put_va_chan_vv(line, chan, vv._wrapper, offset, items)
         
 
 
@@ -1791,7 +1791,7 @@ class GXDB:
 
 
 
-    def chan_lst(self, p2):
+    def chan_lst(self, lst):
         """
         Load a `GXLST` with database channels.
 
@@ -1805,7 +1805,7 @@ class GXDB:
         
         The `GXLST` is cleared first, and the items are sorted by name.
         """
-        self._wrapper.chan_lst(p2._wrapper)
+        self._wrapper.chan_lst(lst._wrapper)
         
 
 
@@ -1904,7 +1904,7 @@ class GXDB:
 
 
 
-    def create_symb_ex(self, p2, p3, p4, p5, p6):
+    def create_symb_ex(self, name, symb, owner, category, extra):
         """
         Create a new Symbol.
 
@@ -1938,7 +1938,7 @@ class GXDB:
         The ability to create a `GXVA` channel is not available in the
         free interface and requires a Montaj license.
         """
-        ret_val = self._wrapper.create_symb_ex(p2.encode(), p3, p4, p5, p6)
+        ret_val = self._wrapper.create_symb_ex(name.encode(), symb, owner, category, extra)
         return ret_val
 
 
@@ -2024,7 +2024,7 @@ class GXDB:
 
 
 
-    def find_chan(self, p2):
+    def find_chan(self, chan):
         """
         Get handle to the specified channel.
 
@@ -2039,13 +2039,13 @@ class GXDB:
         Introduced in v5.1.3.
         The new `find_chan` searches using the exact channel name.
         """
-        ret_val = self._wrapper.find_chan(p2.encode())
+        ret_val = self._wrapper.find_chan(chan.encode())
         return ret_val
 
 
 
 
-    def find_symb(self, p2, p3):
+    def find_symb(self, symb, type):
         """
         Get handle to the specified symbol.
 
@@ -2072,7 +2072,7 @@ class GXDB:
         
         The new `find_chan` searches using the exact channel name.
         """
-        ret_val = self._wrapper.find_symb(p2.encode(), p3)
+        ret_val = self._wrapper.find_symb(symb.encode(), type)
         return ret_val
 
 

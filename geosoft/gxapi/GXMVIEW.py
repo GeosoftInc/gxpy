@@ -236,7 +236,7 @@ class GXMVIEW:
 
 
 
-    def poly_line_3d(self, v_vx, v_vy, v_vz):
+    def poly_line_3d(self, vv_x, vv_y, vv_z):
         """
         Draw a 3D polyline.
 
@@ -245,7 +245,7 @@ class GXMVIEW:
         Dummies are not allowed in the line.
         Line Color, Thickness is supported on rendering
         """
-        self._wrapper.poly_line_3d(v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
+        self._wrapper.poly_line_3d(vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
         
 
 
@@ -330,21 +330,21 @@ class GXMVIEW:
 
 
 
-    def get_plane_equation(self, plane, pitch, p4, p5, p6, p7, p8, p9, p10, p11):
+    def get_plane_equation(self, plane, pitch, yaw, roll, x, y, z, sx, sy, str_val):
         """
         Get the equation of a plane
         """
-        pitch.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value, p10.value, p11.value = self._wrapper.get_plane_equation(plane, pitch.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value, p10.value, p11.value)
+        pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value = self._wrapper.get_plane_equation(plane, pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value)
         
 
 
 
 
-    def get_view_plane_equation(self, pitch, p3, p4, p5, p6, p7, p8, p9, p10):
+    def get_view_plane_equation(self, pitch, yaw, roll, x, y, z, sx, sy, str_val):
         """
         Get the View's Plane Equation
         """
-        pitch.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value, p10.value = self._wrapper.get_view_plane_equation(pitch.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value, p10.value)
+        pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value = self._wrapper.get_view_plane_equation(pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value)
         
 
 
@@ -547,7 +547,7 @@ class GXMVIEW:
 
 
 
-    def set_plane_equation(self, plane, pitch, p4, p5, p6, p7, p8, p9, p10, p11):
+    def set_plane_equation(self, plane, pitch, yaw, roll, x, y, z, sx, sy, str_val):
         """
         Set the equation of a plane
 
@@ -557,7 +557,7 @@ class GXMVIEW:
         use rotations = (-90, 0, 0) for a section with azimuth 90 (E-W)
         use rotations = (-90, 0, -90) for a section with azimuth 0 (N-S)
         """
-        self._wrapper.set_plane_equation(plane, pitch, p4, p5, p6, p7, p8, p9, p10, p11)
+        self._wrapper.set_plane_equation(plane, pitch, yaw, roll, x, y, z, sx, sy, str_val)
         
 
 
@@ -632,7 +632,7 @@ class GXMVIEW:
 
 
 
-    def clip_poly_ex(self, v_vx, v_vy, unit, exclude):
+    def clip_poly_ex(self, vv_x, vv_y, unit, exclude):
         """
         Add a polygon to the clip region.
 
@@ -641,7 +641,7 @@ class GXMVIEW:
         The polygon will be added to the current clip region.
         The `GXVV`'s cannot have any dummy elements.
         """
-        self._wrapper.clip_poly_ex(v_vx._wrapper, v_vy._wrapper, unit, exclude)
+        self._wrapper.clip_poly_ex(vv_x._wrapper, vv_y._wrapper, unit, exclude)
         
 
 
@@ -691,7 +691,7 @@ class GXMVIEW:
 
 
 
-    def clip_poly(self, v_vx, v_vy, unit):
+    def clip_poly(self, vv_x, vv_y, unit):
         """
         Add a polygon to the clip region.
 
@@ -700,7 +700,7 @@ class GXMVIEW:
         The polygon will be added to the current clip region.
         The `GXVV`'s cannot have any dummy elements.
         """
-        self._wrapper.clip_poly(v_vx._wrapper, v_vy._wrapper, unit)
+        self._wrapper.clip_poly(vv_x._wrapper, vv_y._wrapper, unit)
         
 
 
@@ -1233,7 +1233,7 @@ class GXMVIEW:
 
 
 
-    def symb_font(self, p2, p3, p4, p5):
+    def symb_font(self, face, geofont, weight, italic):
         """
         Set the symbol font and style.
 
@@ -1245,7 +1245,7 @@ class GXMVIEW:
         
         See `text_font` for the font name syntax.
         """
-        self._wrapper.symb_font(p2.encode(), p3, p4, p5)
+        self._wrapper.symb_font(face.encode(), geofont, weight, italic)
         
 
 
@@ -1300,7 +1300,7 @@ class GXMVIEW:
 
 
 
-    def text_font(self, p2, p3, p4, p5):
+    def text_font(self, face, geo_font, weight, italic):
         """
         Set the text font.
 
@@ -1339,7 +1339,7 @@ class GXMVIEW:
         specified in the [MONTAJ] section of GEOSOFT.INI
         will be used.
         """
-        self._wrapper.text_font(p2.encode(), p3, p4, p5)
+        self._wrapper.text_font(face.encode(), geo_font, weight, italic)
         
 
 
@@ -1437,7 +1437,7 @@ class GXMVIEW:
 
 
 
-    def classified_symbols(self, v_vx, v_vy, v_vz, scal_mm, zmin, zval, size, fcol):
+    def classified_symbols(self, vv_x, vv_y, vv_z, scal_mm, zmin, zval, size, fcol):
         """
         Plot classified symbols
 
@@ -1450,13 +1450,13 @@ class GXMVIEW:
         "2.0,2.5,3.0"     sizes in mm
         "y,g,r"           fill colors
         """
-        self._wrapper.classified_symbols(v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, scal_mm, zmin, zval.encode(), size.encode(), fcol.encode())
+        self._wrapper.classified_symbols(vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, scal_mm, zmin, zval.encode(), size.encode(), fcol.encode())
         
 
 
 
 
-    def complex_polygon(self, v_vi, v_vx, v_vy):
+    def complex_polygon(self, vv_i, vv_x, vv_y):
         """
         Draw a polygon with holes in it.
 
@@ -1464,7 +1464,7 @@ class GXMVIEW:
 
         You pass a `GXVV` with polygon sizes and 2 point vvs.
         """
-        self._wrapper.complex_polygon(v_vi._wrapper, v_vx._wrapper, v_vy._wrapper)
+        self._wrapper.complex_polygon(vv_i._wrapper, vv_x._wrapper, vv_y._wrapper)
         
 
 
@@ -1500,11 +1500,11 @@ class GXMVIEW:
 
 
 
-    def polygon_dm(self, v_vx, v_vy):
+    def polygon_dm(self, vv_x, vv_y):
         """
         Like PolyLineDm, but draw polygons.
         """
-        self._wrapper.polygon_dm(v_vx._wrapper, v_vy._wrapper)
+        self._wrapper.polygon_dm(vv_x._wrapper, vv_y._wrapper)
         
 
 
@@ -1520,7 +1520,7 @@ class GXMVIEW:
 
 
 
-    def poly_line(self, type, v_vx, v_vy):
+    def poly_line(self, type, vv_x, vv_y):
         """
         Draw a polyline or polygon (dummies deleted).
 
@@ -1530,23 +1530,23 @@ class GXMVIEW:
         in 'solid' line. Using `poly_line_dm` (below) function
         if gaps from dummies are to be kept.
         """
-        self._wrapper.poly_line(type, v_vx._wrapper, v_vy._wrapper)
+        self._wrapper.poly_line(type, vv_x._wrapper, vv_y._wrapper)
         
 
 
 
 
-    def poly_line_dm(self, v_vx, v_vy):
+    def poly_line_dm(self, vv_x, vv_y):
         """
         Draw a polyline with gaps defined by dummies in X/Y VVs
         """
-        self._wrapper.poly_line_dm(v_vx._wrapper, v_vy._wrapper)
+        self._wrapper.poly_line_dm(vv_x._wrapper, vv_y._wrapper)
         
 
 
 
 
-    def poly_wrap(self, v_vx, v_vy):
+    def poly_wrap(self, vv_x, vv_y):
         """
         Draw wrapped polylines from X and Y `GXVV`'s.
 
@@ -1560,7 +1560,7 @@ class GXMVIEW:
 
             `poly_line`
         """
-        self._wrapper.poly_wrap(v_vx._wrapper, v_vy._wrapper)
+        self._wrapper.poly_wrap(vv_x._wrapper, vv_y._wrapper)
         
 
 
@@ -1586,11 +1586,11 @@ class GXMVIEW:
 
 
 
-    def size_symbols(self, v_vx, v_vy, v_vz):
+    def size_symbols(self, vv_x, vv_y, vv_z):
         """
         Plot sized symbols
         """
-        self._wrapper.size_symbols(v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
+        self._wrapper.size_symbols(vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
         
 
 
@@ -1606,21 +1606,21 @@ class GXMVIEW:
 
 
 
-    def symbols(self, v_vx, v_vy):
+    def symbols(self, vv_x, vv_y):
         """
         Plot symbols
         """
-        self._wrapper.symbols(v_vx._wrapper, v_vy._wrapper)
+        self._wrapper.symbols(vv_x._wrapper, vv_y._wrapper)
         
 
 
 
 
-    def symbols_itr(self, itr, v_vx, v_vy, v_vz):
+    def symbols_itr(self, itr, vv_x, vv_y, vv_z):
         """
         Plot symbols using an `GXITR`
         """
-        self._wrapper.symbols_itr(itr.encode(), v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
+        self._wrapper.symbols_itr(itr.encode(), vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
         
 
 
@@ -1768,11 +1768,11 @@ class GXMVIEW:
 
 
 
-    def maker(self, db, p3, p4, p5, p6, p7):
+    def maker(self, db, map, prog, type, name, groups):
         """
         Generates a Maker for the database and/or map.
         """
-        self._wrapper.maker(db, p3, p4.encode(), p5, p6.encode(), p7.encode())
+        self._wrapper.maker(db, map, prog.encode(), type, name.encode(), groups.encode())
         
 
 
@@ -1840,11 +1840,11 @@ class GXMVIEW:
 
 
 
-    def draw_vectors_3d(self, group, v_vx, v_vy, v_vz, v_vvx, v_vvy, v_vvz, itr, scale_for_max_vector, height_base_ratio, max_base_size_ratio):
+    def draw_vectors_3d(self, group, vv_x, vv_y, vv_z, vv_vx, vv_vy, vv_vz, itr, scale_for_max_vector, height_base_ratio, max_base_size_ratio):
         """
         Display vectors in the view.
         """
-        self._wrapper.draw_vectors_3d(group.encode(), v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, v_vvx._wrapper, v_vvy._wrapper, v_vvz._wrapper, itr._wrapper, scale_for_max_vector, height_base_ratio, max_base_size_ratio)
+        self._wrapper.draw_vectors_3d(group.encode(), vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_vx._wrapper, vv_vy._wrapper, vv_vz._wrapper, itr._wrapper, scale_for_max_vector, height_base_ratio, max_base_size_ratio)
         
 
 
@@ -2835,7 +2835,7 @@ class GXMVIEW:
 
 
     @classmethod
-    def create_crooked_section(cls, map, ipj, h_dc, left, bottom, right, top, min_x, min_y, max_x, max_y, p12, p13, p14):
+    def create_crooked_section(cls, map, ipj, h_dc, left, bottom, right, top, min_x, min_y, max_x, max_y, v_vxs, v_vx, v_vy):
         """
         Creates a new crooked section view.
 
@@ -2852,13 +2852,13 @@ class GXMVIEW:
         If the scale is set to `rDUMMY`, then it will be calculated so that
         the points will all fit horizontally.
         """
-        ret_val = gxapi_cy.WrapMVIEW.create_crooked_section(GXContext._get_tls_geo(), map._wrapper, ipj._wrapper, h_dc.encode(), left, bottom, right, top, min_x, min_y, max_x, max_y, p12._wrapper, p13._wrapper, p14._wrapper)
+        ret_val = gxapi_cy.WrapMVIEW.create_crooked_section(GXContext._get_tls_geo(), map._wrapper, ipj._wrapper, h_dc.encode(), left, bottom, right, top, min_x, min_y, max_x, max_y, v_vxs._wrapper, v_vx._wrapper, v_vy._wrapper)
         return GXMVIEW(ret_val)
 
 
 
     @classmethod
-    def create_crooked_section_data_profile(cls, map, ipj, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15):
+    def create_crooked_section_data_profile(cls, map, ipj, name, x0, y0, xs, ys, scale, dist0, min_z, max_z, log_z, v_vxs, v_vx, v_vy):
         """
         Creates a new crooked section data profile view.
 
@@ -2870,7 +2870,7 @@ class GXMVIEW:
         
         See Also: `create_crooked_section`.
         """
-        ret_val = gxapi_cy.WrapMVIEW.create_crooked_section_data_profile(GXContext._get_tls_geo(), map._wrapper, ipj._wrapper, p3.encode(), p4, p5, p6, p7, p8, p9, p10, p11, p12, p13._wrapper, p14._wrapper, p15._wrapper)
+        ret_val = gxapi_cy.WrapMVIEW.create_crooked_section_data_profile(GXContext._get_tls_geo(), map._wrapper, ipj._wrapper, name.encode(), x0, y0, xs, ys, scale, dist0, min_z, max_z, log_z, v_vxs._wrapper, v_vx._wrapper, v_vy._wrapper)
         return GXMVIEW(ret_val)
 
 
@@ -3076,11 +3076,11 @@ class GXMVIEW:
 
 
 
-    def map_origin(self, x_origin, p3):
+    def map_origin(self, x_origin, y_origin):
         """
         Get the map origin from a view
         """
-        x_origin.value, p3.value = self._wrapper.map_origin(x_origin.value, p3.value)
+        x_origin.value, y_origin.value = self._wrapper.map_origin(x_origin.value, y_origin.value)
         
 
 
@@ -3183,7 +3183,7 @@ class GXMVIEW:
 
 
 
-    def scale_window(self, min_x, min_y, max_x, max_y, bot_x, bot_y, x_scal, p9):
+    def scale_window(self, min_x, min_y, max_x, max_y, bot_x, bot_y, x_scal, y_scal):
         """
         Assign view coordinates to define a window.
 
@@ -3197,7 +3197,7 @@ class GXMVIEW:
 
             `set_window`, `scale_window`, `tran_scale`
         """
-        self._wrapper.scale_window(min_x, min_y, max_x, max_y, bot_x, bot_y, x_scal, p9)
+        self._wrapper.scale_window(min_x, min_y, max_x, max_y, bot_x, bot_y, x_scal, y_scal)
         
 
 
@@ -3238,7 +3238,7 @@ class GXMVIEW:
 
 
 
-    def tran_scale(self, x, p3, p4, p5):
+    def tran_scale(self, x, y, xs, ys):
         """
         Set the view translation and scaling
 
@@ -3250,7 +3250,7 @@ class GXMVIEW:
         function in order to restore them. This will be addressed
         in v6.4.
         """
-        self._wrapper.tran_scale(x, p3, p4, p5)
+        self._wrapper.tran_scale(x, y, xs, ys)
         
 
 

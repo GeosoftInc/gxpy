@@ -198,7 +198,7 @@ class GXBF:
 
 
 
-    def read_int(self, type, p3):
+    def read_int(self, type, data):
         """
         Reads int data from current position in `GXBF`
 
@@ -215,13 +215,13 @@ class GXBF:
         If a byte order is not specified, the source is assumed to be
         in the native byte order of the reading/writing computer.
         """
-        p3.value = self._wrapper.read_int(type, p3.value)
+        data.value = self._wrapper.read_int(type, data.value)
         
 
 
 
 
-    def read_double(self, type, p3):
+    def read_double(self, type, data):
         """
         Reads real data from current position in `GXBF`
 
@@ -238,13 +238,13 @@ class GXBF:
         If a byte order is not specified, the source is assumed to be
         in the native byte order of the reading/writing computer.
         """
-        p3.value = self._wrapper.read_double(type, p3.value)
+        data.value = self._wrapper.read_double(type, data.value)
         
 
 
 
 
-    def read_vv(self, type, p3):
+    def read_vv(self, type, vv):
         """
         Read data to a `GXVV` from current position in `GXBF`
 
@@ -261,7 +261,7 @@ class GXBF:
         If a byte order is not specified, the source is assumed to be
         in the native byte order of the reading/writing computer.
         """
-        self._wrapper.read_vv(type, p3._wrapper)
+        self._wrapper.read_vv(type, vv._wrapper)
         
 
 
@@ -297,7 +297,7 @@ class GXBF:
 
 
 
-    def write_int(self, type, p3):
+    def write_int(self, type, data):
         """
         Writes int to the `GXBF`
 
@@ -309,13 +309,13 @@ class GXBF:
         If a byte order is not specified, the data is written
         in the native byte order of the writing computer.
         """
-        self._wrapper.write_int(type, p3)
+        self._wrapper.write_int(type, data)
         
 
 
 
 
-    def write_double(self, type, p3):
+    def write_double(self, type, data):
         """
         Writes real to the `GXBF`
 
@@ -327,13 +327,13 @@ class GXBF:
         If a byte order is not specified, the data is written
         in the native byte order of the writing computer.
         """
-        self._wrapper.write_double(type, p3)
+        self._wrapper.write_double(type, data)
         
 
 
 
 
-    def write_vv(self, type, p3):
+    def write_vv(self, type, vv):
         """
         Writes `GXVV` to the `GXBF`
 
@@ -345,7 +345,7 @@ class GXBF:
         If a byte order is not specified, the data is written
         in the native byte order of the writing computer.
         """
-        self._wrapper.write_vv(type, p3._wrapper)
+        self._wrapper.write_vv(type, vv._wrapper)
         
 
 

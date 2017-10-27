@@ -169,17 +169,17 @@ class GXIMU:
 
 
     @classmethod
-    def get_zvv(cls, img, v_vx, v_vy, v_vz):
+    def get_zvv(cls, img, vv_x, vv_y, vv_z):
         """
         Extract an interpolated image value for given XY `GXVV` locations
         """
-        gxapi_cy.WrapIMU.get_zvv(GXContext._get_tls_geo(), img._wrapper, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
+        gxapi_cy.WrapIMU.get_zvv(GXContext._get_tls_geo(), img._wrapper, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
         
 
 
 
     @classmethod
-    def get_z_peaks_vv(cls, img, v_vx, v_vy, v_vz):
+    def get_z_peaks_vv(cls, img, vv_x, vv_y, vv_z):
         """
         Same as `get_zvv`, but find the closest peak value to the input locations, and return
         				             the peak value and peak value location.
@@ -189,7 +189,7 @@ class GXIMU:
         The returned locations will always be a grid point location; no interpolation is performed when locating the peaks. A simple search is
         				done of all neighbouring points from the starting point, and once no neighbours can be located with a higher value, the search stops.
         """
-        gxapi_cy.WrapIMU.get_z_peaks_vv(GXContext._get_tls_geo(), img._wrapper, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
+        gxapi_cy.WrapIMU.get_z_peaks_vv(GXContext._get_tls_geo(), img._wrapper, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
         
 
 
@@ -241,11 +241,11 @@ class GXIMU:
 
 
     @classmethod
-    def grid_edge(cls, grid, v_vx, v_vy):
+    def grid_edge(cls, grid, vv_x, vv_y):
         """
         Get grid edge points
         """
-        gxapi_cy.WrapIMU.grid_edge(GXContext._get_tls_geo(), grid.encode(), v_vx._wrapper, v_vy._wrapper)
+        gxapi_cy.WrapIMU.grid_edge(GXContext._get_tls_geo(), grid.encode(), vv_x._wrapper, vv_y._wrapper)
         
 
 
@@ -266,7 +266,7 @@ class GXIMU:
 
 
     @classmethod
-    def grid_expand(cls, im_gi, out, per, shape, p5, p6):
+    def grid_expand(cls, im_gi, out, per, shape, x, y):
         """
         Expand a grid and place dummies in the area
         beyond the original edges.
@@ -276,7 +276,7 @@ class GXIMU:
         The `GXIMG` parameter MUST be of type `GS_FLOAT`!
         If not, the method will terminate.
         """
-        gxapi_cy.WrapIMU.grid_expand(GXContext._get_tls_geo(), im_gi._wrapper, out.encode(), per, shape, p5, p6)
+        gxapi_cy.WrapIMU.grid_expand(GXContext._get_tls_geo(), im_gi._wrapper, out.encode(), per, shape, x, y)
         
 
 
@@ -364,7 +364,7 @@ class GXIMU:
 
 
     @classmethod
-    def grid_peak(cls, grid, nlmt, p3, p4, p5):
+    def grid_peak(cls, grid, nlmt, v_vx, v_vy, v_vz):
         """
         Pick grid peaks.
 
@@ -375,7 +375,7 @@ class GXIMU:
         value is greater than it's two neighbors in at least one
         direction.  Up to 4 directions can be tested.
         """
-        gxapi_cy.WrapIMU.grid_peak(GXContext._get_tls_geo(), grid.encode(), nlmt, p3._wrapper, p4._wrapper, p5._wrapper)
+        gxapi_cy.WrapIMU.grid_peak(GXContext._get_tls_geo(), grid.encode(), nlmt, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
         
 
 
@@ -487,7 +487,7 @@ class GXIMU:
 
 
     @classmethod
-    def grid_stat(cls, grid, type, xelem, yelem, xsep, ysep, kx, p8, p9, p10, p11, p12):
+    def grid_stat(cls, grid, type, xelem, yelem, xsep, ysep, kx, x_orig, y_orig, rot, base, mult):
         """
         Reports statistics contained in a grid header.
 
@@ -495,13 +495,13 @@ class GXIMU:
 
         Statistics are returned in the parameter set
         """
-        type.value, xelem.value, yelem.value, xsep.value, ysep.value, kx.value, p8.value, p9.value, p10.value, p11.value, p12.value = gxapi_cy.WrapIMU.grid_stat(GXContext._get_tls_geo(), grid.encode(), type.value, xelem.value, yelem.value, xsep.value, ysep.value, kx.value, p8.value, p9.value, p10.value, p11.value, p12.value)
+        type.value, xelem.value, yelem.value, xsep.value, ysep.value, kx.value, x_orig.value, y_orig.value, rot.value, base.value, mult.value = gxapi_cy.WrapIMU.grid_stat(GXContext._get_tls_geo(), grid.encode(), type.value, xelem.value, yelem.value, xsep.value, ysep.value, kx.value, x_orig.value, y_orig.value, rot.value, base.value, mult.value)
         
 
 
 
     @classmethod
-    def grid_stat_comp(cls, grid, type, xelem, yelem, xsep, ysep, kx, p8, p9, p10, p11, p12, p13):
+    def grid_stat_comp(cls, grid, type, xelem, yelem, xsep, ysep, kx, x_orig, y_orig, rot, base, mult, comp):
         """
         Reports statistics contained in a grid header.
 
@@ -509,7 +509,7 @@ class GXIMU:
 
         Statistics are returned in the parameter set
         """
-        type.value, xelem.value, yelem.value, xsep.value, ysep.value, kx.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value = gxapi_cy.WrapIMU.grid_stat_comp(GXContext._get_tls_geo(), grid.encode(), type.value, xelem.value, yelem.value, xsep.value, ysep.value, kx.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value)
+        type.value, xelem.value, yelem.value, xsep.value, ysep.value, kx.value, x_orig.value, y_orig.value, rot.value, base.value, mult.value, comp.value = gxapi_cy.WrapIMU.grid_stat_comp(GXContext._get_tls_geo(), grid.encode(), type.value, xelem.value, yelem.value, xsep.value, ysep.value, kx.value, x_orig.value, y_orig.value, rot.value, base.value, mult.value, comp.value)
         
 
 
@@ -533,7 +533,7 @@ class GXIMU:
     @classmethod
     def grid_stat_trend(cls, grid, trend_valid, co, cx, cy):
         """
-        Reports Trend Info of a grid (for first order coef only).
+        Reports Trend Info of a grid (for first order coefficients only).
 
         **Note:**
 
@@ -547,7 +547,7 @@ class GXIMU:
     @classmethod
     def grid_stat_trend_ext(cls, grid, order, num_coef, xo, yo, vm):
         """
-        Reports Extended Trend Info of a grid (for upto third order coef).
+        Reports Extended Trend Info of a grid (for up to third order coefficients).
 
         **Note:**
 
@@ -565,7 +565,7 @@ class GXIMU:
 
         **Note:**
 
-        This method calculates the standard dev. of the horizontal
+        This method calculates the standard deviation of the horizontal
         differences in the X and Y directions for the supplied
         image.  This is useful for shading routines.  A good
         default scaling factor is 2.5 / standard deviation.
@@ -622,7 +622,7 @@ class GXIMU:
 
 
     @classmethod
-    def grid_trnd(cls, imgi, imgo, tr_option, edge, p5, p6, p7):
+    def grid_trnd(cls, imgi, imgo, tr_option, edge, order, vm, num_coefs):
         """
         Remove a trend surface from a grid.
 
@@ -645,7 +645,7 @@ class GXIMU:
         2                 6
         3                 10
         """
-        gxapi_cy.WrapIMU.grid_trnd(GXContext._get_tls_geo(), imgi._wrapper, imgo._wrapper, tr_option, edge, p5, p6._wrapper, p7)
+        gxapi_cy.WrapIMU.grid_trnd(GXContext._get_tls_geo(), imgi._wrapper, imgo._wrapper, tr_option, edge, order, vm._wrapper, num_coefs)
         
 
 
@@ -784,7 +784,7 @@ class GXIMU:
 
 
     @classmethod
-    def mosaic(cls, grids, p2, p3, p4):
+    def mosaic(cls, grids, name, ipj, cell):
         """
         Create a mosaic image of an image list.
 
@@ -794,13 +794,13 @@ class GXIMU:
         the first image. Note that this function may require very large
         amounts of virtual memory.
         """
-        ret_val = gxapi_cy.WrapIMU.mosaic(GXContext._get_tls_geo(), grids.encode(), p2.encode(), p3._wrapper, p4)
+        ret_val = gxapi_cy.WrapIMU.mosaic(GXContext._get_tls_geo(), grids.encode(), name.encode(), ipj._wrapper, cell)
         return GXIMG(ret_val)
 
 
 
     @classmethod
-    def peak_size(cls, grid, v_vx, v_vy, max, p5, p6):
+    def peak_size(cls, grid, vv_x, vv_y, max, prec, v_vz):
         """
         Define the sizes of all the peaks in an image.
 
@@ -818,13 +818,13 @@ class GXIMU:
         
         Note: `peak_size2` is probably a better routine...
         """
-        gxapi_cy.WrapIMU.peak_size(GXContext._get_tls_geo(), grid.encode(), v_vx._wrapper, v_vy._wrapper, max, p5, p6._wrapper)
+        gxapi_cy.WrapIMU.peak_size(GXContext._get_tls_geo(), grid.encode(), vv_x._wrapper, vv_y._wrapper, max, prec, v_vz._wrapper)
         
 
 
 
     @classmethod
-    def peak_size2(cls, grid, v_vx, v_vy, max, p5):
+    def peak_size2(cls, grid, vv_x, vv_y, max, v_vz):
         """
         Define the sizes of all the peaks in an image - new algorithm
 
@@ -843,13 +843,13 @@ class GXIMU:
         This algorithm tends to give much smaller (and more reasonable)
         results than `peak_size`.
         """
-        gxapi_cy.WrapIMU.peak_size2(GXContext._get_tls_geo(), grid.encode(), v_vx._wrapper, v_vy._wrapper, max, p5._wrapper)
+        gxapi_cy.WrapIMU.peak_size2(GXContext._get_tls_geo(), grid.encode(), vv_x._wrapper, vv_y._wrapper, max, v_vz._wrapper)
         
 
 
 
     @classmethod
-    def pigeon_hole(cls, img, v_vx, v_vy, put):
+    def pigeon_hole(cls, img, vv_x, vv_y, put):
         """
         Pigeon-hole and count points by location into a grid.
 
@@ -867,13 +867,13 @@ class GXIMU:
         This function is useful, for instance, in determining the density of
         sample locations in a survey area.
         """
-        put.value = gxapi_cy.WrapIMU.pigeon_hole(GXContext._get_tls_geo(), img._wrapper, v_vx._wrapper, v_vy._wrapper, put.value)
+        put.value = gxapi_cy.WrapIMU.pigeon_hole(GXContext._get_tls_geo(), img._wrapper, vv_x._wrapper, vv_y._wrapper, put.value)
         
 
 
 
     @classmethod
-    def profile(cls, img, x1, y1, x2, y2, samsep, v_vz):
+    def profile(cls, img, x1, y1, x2, y2, samsep, vv_z):
         """
         Extract a profile from a grid.
 
@@ -882,13 +882,13 @@ class GXIMU:
         Returned `GXVV` will start at X1,Y1 and will sample
         up to X2,Y2 at the specified separation.
         """
-        gxapi_cy.WrapIMU.profile(GXContext._get_tls_geo(), img._wrapper, x1, y1, x2, y2, samsep, v_vz._wrapper)
+        gxapi_cy.WrapIMU.profile(GXContext._get_tls_geo(), img._wrapper, x1, y1, x2, y2, samsep, vv_z._wrapper)
         
 
 
 
     @classmethod
-    def profile_vv(cls, img, v_vx, v_vy, v_vz):
+    def profile_vv(cls, img, vv_x, vv_y, vv_z):
         """
         Extract a `GXVV` profile from a grid.
 
@@ -896,7 +896,7 @@ class GXIMU:
 
             iGetPolyLine_DBE
         """
-        gxapi_cy.WrapIMU.profile_vv(GXContext._get_tls_geo(), img._wrapper, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
+        gxapi_cy.WrapIMU.profile_vv(GXContext._get_tls_geo(), img._wrapper, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
         
 
 

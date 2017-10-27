@@ -247,7 +247,7 @@ class GXLST:
 
 
 
-    def gt_item(self, type, p3, p4):
+    def gt_item(self, type, item, buff):
         """
         This places the specified item into the buffer provided.
 
@@ -255,7 +255,7 @@ class GXLST:
 
         If item number is not in the list, the buffer will be "".
         """
-        p4.value = self._wrapper.gt_item(type, p3, p4.value.encode())
+        buff.value = self._wrapper.gt_item(type, item, buff.value.encode())
         
 
 
@@ -337,11 +337,11 @@ class GXLST:
 
 
 
-    def get_int(self, type, p3):
+    def get_int(self, type, item):
         """
         Get an integer item.
         """
-        ret_val = self._wrapper.get_int(type, p3)
+        ret_val = self._wrapper.get_int(type, item)
         return ret_val
 
 
@@ -428,11 +428,11 @@ class GXLST:
 
 
 
-    def get_double(self, type, p3):
+    def get_double(self, type, item):
         """
         Get a real item.
         """
-        ret_val = self._wrapper.get_double(type, p3)
+        ret_val = self._wrapper.get_double(type, item)
         return ret_val
 
 
@@ -496,7 +496,7 @@ class GXLST:
 
 
 
-    def set_item(self, type, p3, p4):
+    def set_item(self, type, item, buff):
         """
         Place an item at a specified point in the `GXLST`.
 
@@ -504,17 +504,17 @@ class GXLST:
 
         The existing item at the given index will be replaced.
         """
-        self._wrapper.set_item(type, p3, p4.encode())
+        self._wrapper.set_item(type, item, buff.encode())
         
 
 
 
 
-    def sort(self, type, p3):
+    def sort(self, type, ord):
         """
         Sorts a list.
         """
-        self._wrapper.sort(type, p3)
+        self._wrapper.sort(type, ord)
         
 
 

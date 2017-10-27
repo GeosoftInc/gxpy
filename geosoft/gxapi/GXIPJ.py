@@ -145,7 +145,7 @@ class GXIPJ:
 
 
 
-    def add_warp(self, type, v_vx_old, v_vy_old, v_vx_new, v_vy_new):
+    def add_warp(self, type, vv_x_old, vv_y_old, vv_x_new, vv_y_new):
         """
         Add a warp to `GXIPJ`.
 
@@ -161,7 +161,7 @@ class GXIPJ:
         
         Cannot be used with WARP_MATRIX or WARP_LOG
         """
-        self._wrapper.add_warp(type, v_vx_old._wrapper, v_vy_old._wrapper, v_vx_new._wrapper, v_vy_new._wrapper)
+        self._wrapper.add_warp(type, vv_x_old._wrapper, vv_y_old._wrapper, vv_x_new._wrapper, vv_y_new._wrapper)
         
 
 
@@ -192,11 +192,11 @@ class GXIPJ:
 
 
 
-    def convert_orientation_warp_vv(self, v_vx, v_vy, v_vz, f_forward):
+    def convert_orientation_warp_vv(self, vv_x, vv_y, vv_z, f_forward):
         """
         Convert X,Y and Z VVs using the orientation warp from an `GXIPJ`.
         """
-        self._wrapper.convert_orientation_warp_vv(v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, f_forward)
+        self._wrapper.convert_orientation_warp_vv(vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, f_forward)
         
 
 
@@ -316,7 +316,7 @@ class GXIPJ:
 
 
 
-    def get_orientation_info(self, x, y, z, az, p6):
+    def get_orientation_info(self, x, y, z, az, swing):
         """
         Get `GXIPJ` orientation parameters.
 
@@ -340,13 +340,13 @@ class GXIPJ:
         HORIZONTALLY onto the viewing plan in order to
         preserve elevations, even if the section has a swing.
         """
-        x.value, y.value, z.value, az.value, p6.value = self._wrapper.get_orientation_info(x.value, y.value, z.value, az.value, p6.value)
+        x.value, y.value, z.value, az.value, swing.value = self._wrapper.get_orientation_info(x.value, y.value, z.value, az.value, swing.value)
         
 
 
 
 
-    def get_plane_equation(self, min_x, min_y, max_x, max_y, pitch, p7, p8, p9, p10, p11, p12, p13, p14):
+    def get_plane_equation(self, min_x, min_y, max_x, max_y, pitch, yaw, roll, x, y, z, sx, sy, str_val):
         """
         Get the equation of a plane
 
@@ -358,13 +358,13 @@ class GXIPJ:
         In practice, use the current view extents, or the corners
         of a grid.
         """
-        pitch.value, p7.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value = self._wrapper.get_plane_equation(min_x, min_y, max_x, max_y, pitch.value, p7.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value)
+        pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value = self._wrapper.get_plane_equation(min_x, min_y, max_x, max_y, pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value)
         
 
 
 
 
-    def get_plane_equation2(self, ip_jo, min_x, min_y, max_x, max_y, pitch, p8, p9, p10, p11, p12, p13, p14, p15):
+    def get_plane_equation2(self, ip_jo, min_x, min_y, max_x, max_y, pitch, yaw, roll, x, y, z, sx, sy, str_val):
         """
         Get the equation of a plane with reprojection.
 
@@ -381,7 +381,7 @@ class GXIPJ:
         If the two input IPJs share the same PCS then the `get_plane_equation`
         function is called directly, using the input `GXIPJ`.
         """
-        pitch.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value, p15.value = self._wrapper.get_plane_equation2(ip_jo._wrapper, min_x, min_y, max_x, max_y, pitch.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value, p15.value)
+        pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value = self._wrapper.get_plane_equation2(ip_jo._wrapper, min_x, min_y, max_x, max_y, pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value)
         
 
 
@@ -417,11 +417,11 @@ class GXIPJ:
 
 
 
-    def convert_warp_vv(self, v_vx, v_vy, f_forward):
+    def convert_warp_vv(self, vv_x, vv_y, f_forward):
         """
         Converts a set of X & Y VVs to the new `GXIPJ` plane. The Z is assumed to be 0
         """
-        ret_val = self._wrapper.convert_warp_vv(v_vx._wrapper, v_vy._wrapper, f_forward)
+        ret_val = self._wrapper.convert_warp_vv(vv_x._wrapper, vv_y._wrapper, f_forward)
         return ret_val
 
 
@@ -512,7 +512,7 @@ class GXIPJ:
 
 
 
-    def set_vcs(self, p2):
+    def set_vcs(self, str_val):
         """
         Set the Vertical Coordinate System in the `GXIPJ` name string
 
@@ -534,7 +534,7 @@ class GXIPJ:
              "NAVD88"          - Clears existing vcs, if any, and sets the VCS name to "NAVD88".
              ""                - Clears the vcs
         """
-        self._wrapper.set_vcs(p2.encode())
+        self._wrapper.set_vcs(str_val.encode())
         
 
 
@@ -1014,7 +1014,7 @@ class GXIPJ:
 
 
 
-    def set_gxf(self, p2, p3, p4, p5, p6):
+    def set_gxf(self, str1, str2, str3, str4, str5):
         """
         Set coordinate system from GXF style strings.
 
@@ -1155,7 +1155,7 @@ class GXIPJ:
             "<525000,2500000,0,0,0,15>","4210","16137","",""
             ""Arc 1960 / UTM zone 37S"<525000,2500000,0,0,0,15>","","","",""
         """
-        self._wrapper.set_gxf(p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6.encode())
+        self._wrapper.set_gxf(str1.encode(), str2.encode(), str3.encode(), str4.encode(), str5.encode())
         
 
 

@@ -323,7 +323,7 @@ class GXSTR:
 
 
     @classmethod
-    def replacei_match_string(cls, istr, old, p3):
+    def replacei_match_string(cls, istr, old, new):
         """
         Replaces all occurances of match string by replacement string with case insensitive.
 
@@ -333,13 +333,13 @@ class GXSTR:
         then the string to replace is removed from the
         input string, and the string is shortened.
         """
-        istr.value = gxapi_cy.WrapSTR.replacei_match_string(GXContext._get_tls_geo(), istr.value.encode(), old.encode(), p3.encode())
+        istr.value = gxapi_cy.WrapSTR.replacei_match_string(GXContext._get_tls_geo(), istr.value.encode(), old.encode(), new.encode())
         
 
 
 
     @classmethod
-    def replace_match_string(cls, istr, old, p3):
+    def replace_match_string(cls, istr, old, new):
         """
         Replaces all occurances of match string by replacement string with case sensitive.
 
@@ -349,7 +349,7 @@ class GXSTR:
         then the string to replace is removed from the
         input string, and the string is shortened.
         """
-        istr.value = gxapi_cy.WrapSTR.replace_match_string(GXContext._get_tls_geo(), istr.value.encode(), old.encode(), p3.encode())
+        istr.value = gxapi_cy.WrapSTR.replace_match_string(GXContext._get_tls_geo(), istr.value.encode(), old.encode(), new.encode())
         
 
 
@@ -727,7 +727,7 @@ class GXSTR:
 
 
     @classmethod
-    def gen_group_name(cls, istr1, p2, p3, p4):
+    def gen_group_name(cls, istr1, istr2, istr3, ostr):
         """
         Generate a group name string
         from type string, database and channel(optional) strings..
@@ -745,7 +745,7 @@ class GXSTR:
 
             GenNewGroupName_MVIEW
         """
-        p4.value = gxapi_cy.WrapSTR.gen_group_name(GXContext._get_tls_geo(), istr1.encode(), p2.encode(), p3.encode(), p4.value.encode())
+        ostr.value = gxapi_cy.WrapSTR.gen_group_name(GXContext._get_tls_geo(), istr1.encode(), istr2.encode(), istr3.encode(), ostr.value.encode())
         
 
 
@@ -799,7 +799,7 @@ class GXSTR:
 
 
     @classmethod
-    def tokenize(cls, p1, p2, p3, p4, p5):
+    def tokenize(cls, str_val, soft, hard, esc, quote):
         """
         Tokenize a string based on any characters.
 
@@ -839,7 +839,7 @@ class GXSTR:
 
             GetToken_STR
         """
-        ret_val, p1.value = gxapi_cy.WrapSTR.tokenize(GXContext._get_tls_geo(), p1.value.encode(), p2.encode(), p3.encode(), p4.encode(), p5.encode())
+        ret_val, str_val.value = gxapi_cy.WrapSTR.tokenize(GXContext._get_tls_geo(), str_val.value.encode(), soft.encode(), hard.encode(), esc.encode(), quote.encode())
         return ret_val
 
 

@@ -118,7 +118,7 @@ class GXIMG:
 
 
     @classmethod
-    def create(cls, type, p2, p3, p4):
+    def create(cls, type, kx, width, height):
         """
         Creates an `GXIMG` not tied to a file at all
 
@@ -126,13 +126,13 @@ class GXIMG:
 
         Once destroyed all the data in this `GXIMG` is lost.
         """
-        ret_val = gxapi_cy.WrapIMG.create(GXContext._get_tls_geo(), type, p2, p3, p4)
+        ret_val = gxapi_cy.WrapIMG.create(GXContext._get_tls_geo(), type, kx, width, height)
         return GXIMG(ret_val)
 
 
 
     @classmethod
-    def create_file(cls, type, p2, p3):
+    def create_file(cls, type, grid, mode):
         """
         Creates an Image object tied to a grid file.
 
@@ -143,13 +143,13 @@ class GXIMG:
         if the on-disk values represent color data as opposed
         to real numbers.
         """
-        ret_val = gxapi_cy.WrapIMG.create_file(GXContext._get_tls_geo(), type, p2.encode(), p3)
+        ret_val = gxapi_cy.WrapIMG.create_file(GXContext._get_tls_geo(), type, grid.encode(), mode)
         return GXIMG(ret_val)
 
 
 
     @classmethod
-    def create_mem(cls, type, p2, p3, p4):
+    def create_mem(cls, type, kx, width, height):
         """
         Creates an `GXIMG` object that is backed only by memory.
 
@@ -157,13 +157,13 @@ class GXIMG:
 
         Once destroyed all the data is lost. This is temporary.
         """
-        ret_val = gxapi_cy.WrapIMG.create_mem(GXContext._get_tls_geo(), type, p2, p3, p4)
+        ret_val = gxapi_cy.WrapIMG.create_mem(GXContext._get_tls_geo(), type, kx, width, height)
         return GXIMG(ret_val)
 
 
 
     @classmethod
-    def create_new_file(cls, type, p2, p3, p4, p5):
+    def create_new_file(cls, type, kx, width, height, grid):
         """
         Creates an output image file using User defined info.
 
@@ -182,13 +182,13 @@ class GXIMG:
         It is recommended that this registry key is set during the installation
         of your application.
         """
-        ret_val = gxapi_cy.WrapIMG.create_new_file(GXContext._get_tls_geo(), type, p2, p3, p4, p5.encode())
+        ret_val = gxapi_cy.WrapIMG.create_new_file(GXContext._get_tls_geo(), type, kx, width, height, grid.encode())
         return GXIMG(ret_val)
 
 
 
     @classmethod
-    def create_out_file(cls, type, p2, p3):
+    def create_out_file(cls, type, grid, img):
         """
         Creates an output image file using input image info.
 
@@ -199,7 +199,7 @@ class GXIMG:
         if the on-disk values represent color data as opposed
         to real numbers.
         """
-        ret_val = gxapi_cy.WrapIMG.create_out_file(GXContext._get_tls_geo(), type, p2.encode(), p3._wrapper)
+        ret_val = gxapi_cy.WrapIMG.create_out_file(GXContext._get_tls_geo(), type, grid.encode(), img._wrapper)
         return GXIMG(ret_val)
 
 
@@ -572,31 +572,31 @@ class GXIMG:
 
 
 
-    def read_v(self, v, be, p4, p5):
+    def read_v(self, v, be, ne, vv):
         """
         Read a vector in the optimal KX direction.
         """
-        self._wrapper.read_v(v, be, p4, p5._wrapper)
+        self._wrapper.read_v(v, be, ne, vv._wrapper)
         
 
 
 
 
-    def read_x(self, bx, p3, p4, p5):
+    def read_x(self, bx, by, ny, vv):
         """
         Read a column (constant X)
         """
-        self._wrapper.read_x(bx, p3, p4, p5._wrapper)
+        self._wrapper.read_x(bx, by, ny, vv._wrapper)
         
 
 
 
 
-    def read_y(self, by, p3, p4, p5):
+    def read_y(self, by, bx, nx, vv):
         """
         Read a row (constant Y)
         """
-        self._wrapper.read_y(by, p3, p4, p5._wrapper)
+        self._wrapper.read_y(by, bx, nx, vv._wrapper)
         
 
 
@@ -752,31 +752,31 @@ class GXIMG:
 
 
 
-    def write_v(self, v, be, p4, p5):
+    def write_v(self, v, be, ne, vv):
         """
         Write a vector in the optimal KX direction.
         """
-        self._wrapper.write_v(v, be, p4, p5._wrapper)
+        self._wrapper.write_v(v, be, ne, vv._wrapper)
         
 
 
 
 
-    def write_x(self, bx, p3, p4, p5):
+    def write_x(self, bx, by, ny, vv):
         """
         Write a column (constant X)
         """
-        self._wrapper.write_x(bx, p3, p4, p5._wrapper)
+        self._wrapper.write_x(bx, by, ny, vv._wrapper)
         
 
 
 
 
-    def write_y(self, by, p3, p4, p5):
+    def write_y(self, by, bx, nx, vv):
         """
         Write a row (constant Y)
         """
-        self._wrapper.write_y(by, p3, p4, p5._wrapper)
+        self._wrapper.write_y(by, bx, nx, vv._wrapper)
         
 
 

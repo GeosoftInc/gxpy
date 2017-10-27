@@ -1163,7 +1163,7 @@ class GXEMAP:
 
 
 
-    def get_poly_line(self, str_val, v_vx, v_vy):
+    def get_poly_line(self, str_val, vv_x, vv_y):
         """
         Returns a polyline.
 
@@ -1172,13 +1172,13 @@ class GXEMAP:
         The coordinates are returned in the current User projection
         (See `GXMVIEW.get_user_ipj` and `GXMVIEW.set_user_ipj`.)
         """
-        ret_val = self._wrapper.get_poly_line(str_val.encode(), v_vx._wrapper, v_vy._wrapper)
+        ret_val = self._wrapper.get_poly_line(str_val.encode(), vv_x._wrapper, vv_y._wrapper)
         return ret_val
 
 
 
 
-    def get_poly_line_xyz(self, str_val, v_vx, v_vy, v_vz):
+    def get_poly_line_xyz(self, str_val, vv_x, vv_y, vv_z):
         """
         Returns a polyline.
 
@@ -1189,7 +1189,7 @@ class GXEMAP:
         of the method X, Y and Z (depth) are returned. Initially created
         to deal with crooked sections.
         """
-        ret_val = self._wrapper.get_poly_line_xyz(str_val.encode(), v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
+        ret_val = self._wrapper.get_poly_line_xyz(str_val.encode(), vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
         return ret_val
 
 
@@ -1287,7 +1287,7 @@ class GXEMAP:
 
 
 
-    def get_selected_vertices(self, v_vx, v_vy):
+    def get_selected_vertices(self, vv_x, vv_y):
         """
         Get the verticies of selected object
 
@@ -1295,7 +1295,7 @@ class GXEMAP:
 
         Works only in Vertex Edit Mode
         """
-        self._wrapper.get_selected_vertices(v_vx._wrapper, v_vy._wrapper)
+        self._wrapper.get_selected_vertices(vv_x._wrapper, vv_y._wrapper)
         
 
 

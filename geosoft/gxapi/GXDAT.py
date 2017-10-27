@@ -105,7 +105,7 @@ class GXDAT:
 
 
 
-    def range_xyz(self, min_x, p3, p4, p5, p6, p7, p8):
+    def range_xyz(self, min_x, min_y, min_z, max_x, max_y, max_z, num_non_dummy):
         """
         Determine the range in X, Y and Z in the `GXDAT` source
 
@@ -113,7 +113,7 @@ class GXDAT:
 
         Terminates if unable to open an RPT `GXDAT` interface.
         """
-        min_x.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value = self._wrapper.range_xyz(min_x.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value)
+        min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value, num_non_dummy.value = self._wrapper.range_xyz(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value, num_non_dummy.value)
         
 
 

@@ -69,7 +69,7 @@ class GXIP:
 
 
     @classmethod
-    def convert_ubcip2_d_to_grid(cls, file, pg, v_vx, v_vz, x, z, cx, cz, reciprocal):
+    def convert_ubcip2_d_to_grid(cls, file, pg, vv_x, vv_z, x, z, cx, cz, reciprocal):
         """
         Convert a UBC 2D model to a regular grid.
 
@@ -79,7 +79,7 @@ class GXIP:
         By setting the final value, a resistivity grid can be
         created from conductivity data.
         """
-        gxapi_cy.WrapIP.convert_ubcip2_d_to_grid(GXContext._get_tls_geo(), file.encode(), pg._wrapper, v_vx._wrapper, v_vz._wrapper, x, z, cx, cz, reciprocal)
+        gxapi_cy.WrapIP.convert_ubcip2_d_to_grid(GXContext._get_tls_geo(), file.encode(), pg._wrapper, vv_x._wrapper, vv_z._wrapper, x, z, cx, cz, reciprocal)
         
 
 
@@ -221,7 +221,7 @@ class GXIP:
 
 
     @classmethod
-    def import_ubc2_dmsh(cls, file, x, z, v_vx, v_vz):
+    def import_ubc2_dmsh(cls, file, x, z, vv_x, vv_z):
         """
         Import a MSH file from the UBC IPINV2D program.
 
@@ -229,13 +229,13 @@ class GXIP:
 
         Imports the MSH file geometry.
         """
-        x.value, z.value = gxapi_cy.WrapIP.import_ubc2_dmsh(GXContext._get_tls_geo(), file.encode(), x.value, z.value, v_vx._wrapper, v_vz._wrapper)
+        x.value, z.value = gxapi_cy.WrapIP.import_ubc2_dmsh(GXContext._get_tls_geo(), file.encode(), x.value, z.value, vv_x._wrapper, vv_z._wrapper)
         
 
 
 
     @classmethod
-    def import_ubc2_d_topo(cls, file, elev0, v_vx, v_vz):
+    def import_ubc2_d_topo(cls, file, elev0, vv_x, vv_z):
         """
         Import a Topography file from the UBC IPINV2D program.
 
@@ -244,7 +244,7 @@ class GXIP:
         Imports the maximum elevation (top of mesh)
         as well as the topo (X, Z) values.
         """
-        elev0.value = gxapi_cy.WrapIP.import_ubc2_d_topo(GXContext._get_tls_geo(), file.encode(), elev0.value, v_vx._wrapper, v_vz._wrapper)
+        elev0.value = gxapi_cy.WrapIP.import_ubc2_d_topo(GXContext._get_tls_geo(), file.encode(), elev0.value, vv_x._wrapper, vv_z._wrapper)
         
 
 
@@ -270,7 +270,7 @@ class GXIP:
 
 
     @classmethod
-    def trim_ubc2_d_model(cls, pg, trim_xl, trim_xr, trim_z, v_vx, v_vz, x):
+    def trim_ubc2_d_model(cls, pg, trim_xl, trim_xr, trim_z, vv_x, vv_z, x):
         """
         Trim the padding cells from the UBC IPINV2D Model.
 
@@ -281,7 +281,7 @@ class GXIP:
         The input cell size VVs are also trimmed to match,
         and the origin is updated (still upper left corner).
         """
-        ret_val, x.value = gxapi_cy.WrapIP.trim_ubc2_d_model(GXContext._get_tls_geo(), pg._wrapper, trim_xl, trim_xr, trim_z, v_vx._wrapper, v_vz._wrapper, x.value)
+        ret_val, x.value = gxapi_cy.WrapIP.trim_ubc2_d_model(GXContext._get_tls_geo(), pg._wrapper, trim_xl, trim_xr, trim_z, vv_x._wrapper, vv_z._wrapper, x.value)
         return GXPG(ret_val)
 
 
@@ -350,7 +350,7 @@ class GXIP:
 
 
 
-    def export_i2_x(self, db, file, line, res_data, p6, p7, p8, p9, p10, p11, p12):
+    def export_i2_x(self, db, file, line, res_data, ip_data, res_model, ip_model, res_synth, ip_synth, res_poly, ip_poly):
         """
         Export line(s) to an Interpex RESIX I2X format file.
 
@@ -358,7 +358,7 @@ class GXIP:
 
         Exports a line to an ".I2X" file.
         """
-        self._wrapper.export_i2_x(db._wrapper, file.encode(), line.encode(), res_data.encode(), p6.encode(), p7.encode(), p8.encode(), p9.encode(), p10.encode(), p11.encode(), p12.encode())
+        self._wrapper.export_i2_x(db._wrapper, file.encode(), line.encode(), res_data.encode(), ip_data.encode(), res_model.encode(), ip_model.encode(), res_synth.encode(), ip_synth.encode(), res_poly.encode(), ip_poly.encode())
         
 
 
@@ -529,7 +529,7 @@ class GXIP:
 
 
 
-    def import_i2_x(self, db, file, line, res_data, p6, p7, p8, p9, p10, p11, p12, p13):
+    def import_i2_x(self, db, file, line, res_data, ip_data, res_model, ip_model, res_synth, ip_synth, res_poly, ip_poly, mode):
         """
         Imports an Interpex RESIX I2X format file to a line.
 
@@ -538,13 +538,13 @@ class GXIP:
         Imports a single ".I2X" file to a specified line.
         If the line does not exist, it will be created.
         """
-        self._wrapper.import_i2_x(db._wrapper, file.encode(), line.encode(), res_data.encode(), p6.encode(), p7.encode(), p8.encode(), p9.encode(), p10.encode(), p11.encode(), p12.encode(), p13)
+        self._wrapper.import_i2_x(db._wrapper, file.encode(), line.encode(), res_data.encode(), ip_data.encode(), res_model.encode(), ip_model.encode(), res_synth.encode(), ip_synth.encode(), res_poly.encode(), ip_poly.encode(), mode)
         
 
 
 
 
-    def import_i2_x_ex(self, db, file, line, res_data, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15):
+    def import_i2_x_ex(self, db, file, line, res_data, ip_data, res_model, ip_model, res_synth, ip_synth, res_poly, ip_poly, res_zonge, ip_zonge, mode):
         """
         Same as `import_i2_x`, with Zonge data imported as well.
 
@@ -553,7 +553,7 @@ class GXIP:
         Imports a single ".I2X" file to a specified line.
         If the line does not exist, it will be created.
         """
-        self._wrapper.import_i2_x_ex(db._wrapper, file.encode(), line.encode(), res_data.encode(), p6.encode(), p7.encode(), p8.encode(), p9.encode(), p10.encode(), p11.encode(), p12.encode(), p13.encode(), p14.encode(), p15)
+        self._wrapper.import_i2_x_ex(db._wrapper, file.encode(), line.encode(), res_data.encode(), ip_data.encode(), res_model.encode(), ip_model.encode(), res_synth.encode(), ip_synth.encode(), res_poly.encode(), ip_poly.encode(), res_zonge.encode(), ip_zonge.encode(), mode)
         
 
 
@@ -986,7 +986,7 @@ class GXIP:
 
 
 
-    def get_electrode_locations_and_mask_values(self, db, line, p4, p5, p6, p7, p8):
+    def get_electrode_locations_and_mask_values(self, db, line, tx_rx, v_vx, v_vy, v_vm1, v_vm2):
         """
         Get unique electrodes, along with current mask info.
 
@@ -995,13 +995,13 @@ class GXIP:
         The mask values are determined from the first row where a given electrode is found.
         Values returned for all currently selected lines.
         """
-        self._wrapper.get_electrode_locations_and_mask_values(db._wrapper, line.encode(), p4, p5._wrapper, p6._wrapper, p7._wrapper, p8._wrapper)
+        self._wrapper.get_electrode_locations_and_mask_values(db._wrapper, line.encode(), tx_rx, v_vx._wrapper, v_vy._wrapper, v_vm1._wrapper, v_vm2._wrapper)
         
 
 
 
 
-    def get_electrode_locations_and_mask_values2(self, db, line, p4, p5, p6, p7, p8, p9):
+    def get_electrode_locations_and_mask_values2(self, db, line, tx_rx, v_vx, v_vy, v_vm1, v_vm2, v_vlines):
         """
         Get unique electrodes, along with current mask info.
 
@@ -1010,13 +1010,13 @@ class GXIP:
         The mask values are determined from the first row where a given electrode is found.
         Values returned for all currently selected lines.
         """
-        self._wrapper.get_electrode_locations_and_mask_values2(db._wrapper, line.encode(), p4, p5._wrapper, p6._wrapper, p7._wrapper, p8._wrapper, p9._wrapper)
+        self._wrapper.get_electrode_locations_and_mask_values2(db._wrapper, line.encode(), tx_rx, v_vx._wrapper, v_vy._wrapper, v_vm1._wrapper, v_vm2._wrapper, v_vlines._wrapper)
         
 
 
 
 
-    def set_electrode_mask_values(self, db, line, p4, p5, p6, p7, p8):
+    def set_electrode_mask_values(self, db, line, tx_rx, v_vx, v_vy, v_vm1, v_vm2):
         """
         Set unique electrodes, along with current mask info.
 
@@ -1024,13 +1024,13 @@ class GXIP:
 
         Mask values are set for all included electrode locations, currently selected lines.
         """
-        self._wrapper.set_electrode_mask_values(db._wrapper, line.encode(), p4, p5._wrapper, p6._wrapper, p7._wrapper, p8._wrapper)
+        self._wrapper.set_electrode_mask_values(db._wrapper, line.encode(), tx_rx, v_vx._wrapper, v_vy._wrapper, v_vm1._wrapper, v_vm2._wrapper)
         
 
 
 
 
-    def set_electrode_mask_values_single_qc_channel(self, db, line, p4, p5, p6, p7, p8):
+    def set_electrode_mask_values_single_qc_channel(self, db, line, tx_rx, qc_type, v_vx, v_vy, v_vm):
         """
         Set unique electrodes, along with current mask info.
 
@@ -1038,13 +1038,13 @@ class GXIP:
 
         Mask values are set for all included electrode locations, currently selected lines.
         """
-        self._wrapper.set_electrode_mask_values_single_qc_channel(db._wrapper, line.encode(), p4, p5, p6._wrapper, p7._wrapper, p8._wrapper)
+        self._wrapper.set_electrode_mask_values_single_qc_channel(db._wrapper, line.encode(), tx_rx, qc_type, v_vx._wrapper, v_vy._wrapper, v_vm._wrapper)
         
 
 
 
     @classmethod
-    def get_qc_channel(cls, db, qc_type, p3):
+    def get_qc_channel(cls, db, qc_type, chan):
         """
         Get the QC channel handle, if it exists.
 
@@ -1053,7 +1053,7 @@ class GXIP:
         For `GXIP`, looks for "QC_IP", then "QC_OffTime", then "QC".
         For Resistivity, looks for "QC_Res", then "QC_OnTime" (case insensitive).
         """
-        ret_val, p3.value = gxapi_cy.WrapIP.get_qc_channel(GXContext._get_tls_geo(), db._wrapper, qc_type, p3.value.encode())
+        ret_val, chan.value = gxapi_cy.WrapIP.get_qc_channel(GXContext._get_tls_geo(), db._wrapper, qc_type, chan.value.encode())
         return ret_val
 
 

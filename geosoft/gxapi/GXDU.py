@@ -329,7 +329,7 @@ class GXDU:
 
 
     @classmethod
-    def b_spline(cls, db, line, i_ch, o_ch, sd, rou, p7):
+    def b_spline(cls, db, line, i_ch, o_ch, sd, rou, tau):
         """
         B-spline Interpolate a Channel.
 
@@ -337,7 +337,7 @@ class GXDU:
 
             `trend`
         """
-        gxapi_cy.WrapDU.b_spline(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch, sd, rou, p7)
+        gxapi_cy.WrapDU.b_spline(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch, sd, rou, tau)
         
 
 
@@ -487,11 +487,11 @@ class GXDU:
 
 
     @classmethod
-    def distance_3d(cls, db, line, x_ch, y_ch, z_ch, p6, p7):
+    def distance_3d(cls, db, line, x_ch, y_ch, z_ch, type, o_ch):
         """
         Create a distance channel from XY or XYZ with direction options.
         """
-        gxapi_cy.WrapDU.distance_3d(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, z_ch, p6, p7)
+        gxapi_cy.WrapDU.distance_3d(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, z_ch, type, o_ch)
         
 
 
@@ -581,7 +581,7 @@ class GXDU:
 
 
     @classmethod
-    def export_amira(cls, db, wa, one_cols_ch, p4, p5, p6, p7, p8, p9, p10, p11):
+    def export_amira(cls, db, wa, one_cols_ch, array_ch, time_ch, errors_ch, datatype, units, config, instrument, frequency):
         """
         Export to database an AMIRA data file.
 
@@ -590,7 +590,7 @@ class GXDU:
         Other defined FIELDS stored in the database (see `import_amira` function)
         will be automatically included in the export
         """
-        gxapi_cy.WrapDU.export_amira(GXContext._get_tls_geo(), db._wrapper, wa._wrapper, one_cols_ch.encode(), p4.encode(), p5.encode(), p6.encode(), p7.encode(), p8.encode(), p9.encode(), p10.encode(), p11.encode())
+        gxapi_cy.WrapDU.export_amira(GXContext._get_tls_geo(), db._wrapper, wa._wrapper, one_cols_ch.encode(), array_ch.encode(), time_ch.encode(), errors_ch.encode(), datatype.encode(), units.encode(), config.encode(), instrument.encode(), frequency.encode())
         
 
 
@@ -775,7 +775,7 @@ class GXDU:
 
 
     @classmethod
-    def export_xyz(cls, p1, p2, p3):
+    def export_xyz(cls, db, data, template):
         """
         Export XYZdata from a database to an XYZ file.
 
@@ -799,7 +799,7 @@ class GXDU:
         4. This can be used to export a group, but the group must be the
         currently displayed line, and only that group will be exported.
         """
-        gxapi_cy.WrapDU.export_xyz(GXContext._get_tls_geo(), p1._wrapper, p2.encode(), p3.encode())
+        gxapi_cy.WrapDU.export_xyz(GXContext._get_tls_geo(), db._wrapper, data.encode(), template.encode())
         
 
 
@@ -964,21 +964,21 @@ class GXDU:
 
 
     @classmethod
-    def grid_load(cls, db, img, xdec, ydec, trim_dum, p6):
+    def grid_load(cls, db, img, xdec, ydec, trim_dum, create_index):
         """
         Load grid data to a database.
         """
-        gxapi_cy.WrapDU.grid_load(GXContext._get_tls_geo(), db._wrapper, img._wrapper, xdec, ydec, trim_dum, p6)
+        gxapi_cy.WrapDU.grid_load(GXContext._get_tls_geo(), db._wrapper, img._wrapper, xdec, ydec, trim_dum, create_index)
         
 
 
 
     @classmethod
-    def grid_load_xyz(cls, db, img, ch_x, ch_y, ch_z, ch_data, xdec, ydec, trim_dum, p10):
+    def grid_load_xyz(cls, db, img, ch_x, ch_y, ch_z, ch_data, xdec, ydec, trim_dum, index_ch):
         """
         Load grid data to a database using specified channels
         """
-        gxapi_cy.WrapDU.grid_load_xyz(GXContext._get_tls_geo(), db._wrapper, img._wrapper, ch_x, ch_y, ch_z, ch_data, xdec, ydec, trim_dum, p10)
+        gxapi_cy.WrapDU.grid_load_xyz(GXContext._get_tls_geo(), db._wrapper, img._wrapper, ch_x, ch_y, ch_z, ch_data, xdec, ydec, trim_dum, index_ch)
         
 
 
@@ -1001,7 +1001,7 @@ class GXDU:
 
 
     @classmethod
-    def import_bin3(cls, db, data, template, line, p6, p7, p8):
+    def import_bin3(cls, db, data, template, line, flight, date, wa):
         """
         Same as `import_bin2`, but returns the name of the imported line.
 
@@ -1016,7 +1016,7 @@ class GXDU:
 
             `import_bin2`
         """
-        line.value = gxapi_cy.WrapDU.import_bin3(GXContext._get_tls_geo(), db._wrapper, data.encode(), template.encode(), line.value.encode(), p6, p7, p8._wrapper)
+        line.value = gxapi_cy.WrapDU.import_bin3(GXContext._get_tls_geo(), db._wrapper, data.encode(), template.encode(), line.value.encode(), flight, date, wa._wrapper)
         
 
 
@@ -1028,7 +1028,7 @@ class GXDU:
 
         **Note:**
 
-        The polygon file is provided by Ana Christina in Brasil.
+        The polygon file is provided by Ana Christina in Brazil.
         """
         gxapi_cy.WrapDU.imp_cb_ply(GXContext._get_tls_geo(), db._wrapper, pj._wrapper, file.encode(), x_chan, y_chan)
         
@@ -1237,7 +1237,7 @@ class GXDU:
 
 
     @classmethod
-    def import_daarc500_serial(cls, db, line, p3, p4, p5):
+    def import_daarc500_serial(cls, db, line, file, channel, type):
         """
         Import Serial data from the RMS Instruments DAARC500.
 
@@ -1247,13 +1247,13 @@ class GXDU:
         by the RMS Instruments DAARC500 instrument, and outputs the data to
         a line in the database. The channels created depend on the input data type
         """
-        gxapi_cy.WrapDU.import_daarc500_serial(GXContext._get_tls_geo(), db._wrapper, line, p3.encode(), p4, p5)
+        gxapi_cy.WrapDU.import_daarc500_serial(GXContext._get_tls_geo(), db._wrapper, line, file.encode(), channel, type)
         
 
 
 
     @classmethod
-    def import_daarc500_serial_gps(cls, db, line, p3, p4):
+    def import_daarc500_serial_gps(cls, db, line, file, channel):
         """
         Import Serial GPS data from the RMS Instruments DAARC500.
 
@@ -1267,7 +1267,7 @@ class GXDU:
         NumSat (Number of satellites), GPS_HDOP (Horizontal Dilution of Position),
         Undulation, GPS_DiffAge (Age of differential channel).
         """
-        gxapi_cy.WrapDU.import_daarc500_serial_gps(GXContext._get_tls_geo(), db._wrapper, line, p3.encode(), p4)
+        gxapi_cy.WrapDU.import_daarc500_serial_gps(GXContext._get_tls_geo(), db._wrapper, line, file.encode(), channel)
         
 
 
@@ -1347,7 +1347,7 @@ class GXDU:
 
 
     @classmethod
-    def import_ubc_mod_msh(cls, db, mesh, mods, p4, p5):
+    def import_ubc_mod_msh(cls, db, mesh, mods, dir, dummy):
         """
         Import UBC Mod and Msh files.
 
@@ -1356,7 +1356,7 @@ class GXDU:
         Each slice in X,Y or Z is imported to its own line in the database
         beginning with L0.
         """
-        gxapi_cy.WrapDU.import_ubc_mod_msh(GXContext._get_tls_geo(), db._wrapper, mesh.encode(), mods.encode(), p4, p5)
+        gxapi_cy.WrapDU.import_ubc_mod_msh(GXContext._get_tls_geo(), db._wrapper, mesh.encode(), mods.encode(), dir, dummy)
         
 
 

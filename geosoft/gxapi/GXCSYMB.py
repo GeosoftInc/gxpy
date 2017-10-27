@@ -137,11 +137,11 @@ class GXCSYMB:
 
 
 
-    def add_data(self, v_vx, v_vy, v_vz):
+    def add_data(self, vv_x, vv_y, vv_z):
         """
         Add x,y,z data to a color symbol object.
         """
-        self._wrapper.add_data(v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
+        self._wrapper.add_data(vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
         
 
 
@@ -169,11 +169,11 @@ class GXCSYMB:
 
 
 
-    def set_font(self, font, geo_font, p4, p5):
+    def set_font(self, font, geo_font, weight, italic):
         """
         Set the symbol font name.
         """
-        self._wrapper.set_font(font.encode(), geo_font, p4, p5)
+        self._wrapper.set_font(font.encode(), geo_font, weight, italic)
         
 
 

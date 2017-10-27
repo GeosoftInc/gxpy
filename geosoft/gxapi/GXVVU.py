@@ -179,7 +179,7 @@ class GXVVU:
 
 
     @classmethod
-    def bp_filt(cls, v_vi, v_vo, pr_sw, pr_lw, flen):
+    def bp_filt(cls, vv_i, vv_o, pr_sw, pr_lw, flen):
         """
         Band-pass filter to the specified.
 
@@ -190,7 +190,7 @@ class GXVVU:
         
         The wavelengths are in fiducials.
         """
-        gxapi_cy.WrapVVU.bp_filt(GXContext._get_tls_geo(), v_vi._wrapper, v_vo._wrapper, pr_sw, pr_lw, flen)
+        gxapi_cy.WrapVVU.bp_filt(GXContext._get_tls_geo(), vv_i._wrapper, vv_o._wrapper, pr_sw, pr_lw, flen)
         
 
 
@@ -244,27 +244,27 @@ class GXVVU:
 
 
     @classmethod
-    def deviation(cls, v_vx, v_vy, v_vd, x1, y1, x2, y2, line):
+    def deviation(cls, vv_x, vv_y, vv_d, x1, y1, x2, y2, line):
         """
         Calculate distance of point locations to a straight line
         """
-        gxapi_cy.WrapVVU.deviation(GXContext._get_tls_geo(), v_vx._wrapper, v_vy._wrapper, v_vd._wrapper, x1, y1, x2, y2, line)
+        gxapi_cy.WrapVVU.deviation(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_d._wrapper, x1, y1, x2, y2, line)
         
 
 
 
     @classmethod
-    def distance(cls, v_vx, v_vy, v_vd, x_fid_start, x_fid_incr, y_fid_start, y_fid_incr):
+    def distance(cls, vv_x, vv_y, vv_d, x_fid_start, x_fid_incr, y_fid_start, y_fid_incr):
         """
         Create a cumulative distance `GXVV`
         """
-        gxapi_cy.WrapVVU.distance(GXContext._get_tls_geo(), v_vx._wrapper, v_vy._wrapper, v_vd._wrapper, x_fid_start, x_fid_incr, y_fid_start, y_fid_incr)
+        gxapi_cy.WrapVVU.distance(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_d._wrapper, x_fid_start, x_fid_incr, y_fid_start, y_fid_incr)
         
 
 
 
     @classmethod
-    def distance_non_cumulative(cls, v_vx, v_vy, v_vd, x_fid_start, x_fid_incr, y_fid_start, y_fid_incr):
+    def distance_non_cumulative(cls, vv_x, vv_y, vv_d, x_fid_start, x_fid_incr, y_fid_start, y_fid_incr):
         """
         Create a non cumulative distance `GXVV` i.e each
         distance element is the distance of the corresponding
@@ -274,13 +274,13 @@ class GXVVU:
 
         The fist distace element is `rDUMMY`.
         """
-        gxapi_cy.WrapVVU.distance_non_cumulative(GXContext._get_tls_geo(), v_vx._wrapper, v_vy._wrapper, v_vd._wrapper, x_fid_start, x_fid_incr, y_fid_start, y_fid_incr)
+        gxapi_cy.WrapVVU.distance_non_cumulative(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_d._wrapper, x_fid_start, x_fid_incr, y_fid_start, y_fid_incr)
         
 
 
 
     @classmethod
-    def distance_3d(cls, v_vx, v_vy, v_vz, start_distance, v_vd):
+    def distance_3d(cls, vv_x, vv_y, vv_z, start_distance, vv_d):
         """
         Create a cumulative distance `GXVV` from X, Y and Z VVs
 
@@ -293,13 +293,13 @@ class GXVVU:
         between the points. No re-sampling is performed.
         VVs of any type are supported.
         """
-        gxapi_cy.WrapVVU.distance_3d(GXContext._get_tls_geo(), v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, start_distance, v_vd._wrapper)
+        gxapi_cy.WrapVVU.distance_3d(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, start_distance, vv_d._wrapper)
         
 
 
 
     @classmethod
-    def find_gaps_3d(cls, v_vx, v_vy, v_vz, gap, v_vg):
+    def find_gaps_3d(cls, vv_x, vv_y, vv_z, gap, vv_g):
         """
         Return indices of locations separated from previous locations by more than the input gap distance.
 
@@ -310,7 +310,7 @@ class GXVVU:
         The number of returned indices is one less than the number of line segments.
         (So if there are no gaps the returned `GXVV` has zero length).
         """
-        gxapi_cy.WrapVVU.find_gaps_3d(GXContext._get_tls_geo(), v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, gap, v_vg._wrapper)
+        gxapi_cy.WrapVVU.find_gaps_3d(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, gap, vv_g._wrapper)
         
 
 
@@ -406,17 +406,17 @@ class GXVVU:
 
 
     @classmethod
-    def filter(cls, v_vi, v_vo, flt):
+    def filter(cls, vv_i, vv_o, flt):
         """
         Apply a convolution filter to a `GXVV`.
         """
-        gxapi_cy.WrapVVU.filter(GXContext._get_tls_geo(), v_vi._wrapper, v_vo._wrapper, flt)
+        gxapi_cy.WrapVVU.filter(GXContext._get_tls_geo(), vv_i._wrapper, vv_o._wrapper, flt)
         
 
 
 
     @classmethod
-    def find_string_items(cls, vv_source, vv_search, pis_source_sorted, pis_search_sorted, pis_case_tolerant, v_vi):
+    def find_string_items(cls, vv_source, vv_search, pis_source_sorted, pis_search_sorted, pis_case_tolerant, vv_i):
         """
         Searches a `GXVV` for items in a second `GXVV`, returns indices of those found.
 
@@ -435,23 +435,23 @@ class GXVVU:
         will do so internally. Since the input VVs may already be sorted,
         the method will run faster if this stage can be skipped.
         """
-        gxapi_cy.WrapVVU.find_string_items(GXContext._get_tls_geo(), vv_source._wrapper, vv_search._wrapper, pis_source_sorted, pis_search_sorted, pis_case_tolerant, v_vi._wrapper)
+        gxapi_cy.WrapVVU.find_string_items(GXContext._get_tls_geo(), vv_source._wrapper, vv_search._wrapper, pis_source_sorted, pis_search_sorted, pis_case_tolerant, vv_i._wrapper)
         
 
 
 
     @classmethod
-    def fractal_filter(cls, v_vi, order, number, v_vo):
+    def fractal_filter(cls, vv_i, order, number, vv_o):
         """
         Fractal filter a `GXVV`.
         """
-        gxapi_cy.WrapVVU.fractal_filter(GXContext._get_tls_geo(), v_vi._wrapper, order, number, v_vo._wrapper)
+        gxapi_cy.WrapVVU.fractal_filter(GXContext._get_tls_geo(), vv_i._wrapper, order, number, vv_o._wrapper)
         
 
 
 
     @classmethod
-    def close_xy(cls, v_vx, v_vy, x, y):
+    def close_xy(cls, vv_x, vv_y, x, y):
         """
         Find the closest point to an input point (XY).
 
@@ -461,13 +461,13 @@ class GXVVU:
         Returns the index of the point in the `GXVV` closest to the
         input point.
         """
-        ret_val = gxapi_cy.WrapVVU.close_xy(GXContext._get_tls_geo(), v_vx._wrapper, v_vy._wrapper, x, y)
+        ret_val = gxapi_cy.WrapVVU.close_xy(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, x, y)
         return ret_val
 
 
 
     @classmethod
-    def close_xym(cls, v_vx, v_vy, v_vm, x, y):
+    def close_xym(cls, vv_x, vv_y, vv_m, x, y):
         """
         Find the closest point to an input point, with mask (XY).
 
@@ -480,13 +480,13 @@ class GXVVU:
         If no valid points are in the VVs, or all the mask `GXVV` values
         are dummy, the returned index is -1.
         """
-        ret_val = gxapi_cy.WrapVVU.close_xym(GXContext._get_tls_geo(), v_vx._wrapper, v_vy._wrapper, v_vm._wrapper, x, y)
+        ret_val = gxapi_cy.WrapVVU.close_xym(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_m._wrapper, x, y)
         return ret_val
 
 
 
     @classmethod
-    def close_xyz(cls, v_vx, v_vy, v_vz, x, y, z):
+    def close_xyz(cls, vv_x, vv_y, vv_z, x, y, z):
         """
         Find the closest point to an input point (XYZ).
 
@@ -496,13 +496,13 @@ class GXVVU:
         Returns the index of the point in the `GXVV` closest to the
         input point.
         """
-        ret_val = gxapi_cy.WrapVVU.close_xyz(GXContext._get_tls_geo(), v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, x, y, z)
+        ret_val = gxapi_cy.WrapVVU.close_xyz(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, x, y, z)
         return ret_val
 
 
 
     @classmethod
-    def close_xyzm(cls, v_vx, v_vy, v_vz, v_vm, x, y, z):
+    def close_xyzm(cls, vv_x, vv_y, vv_z, vv_m, x, y, z):
         """
         Find the closest point to an input point, with mask (XYZ).
 
@@ -515,7 +515,7 @@ class GXVVU:
         If no valid points are in the VVs, or all the mask `GXVV` values
         are dummy, the returned index is -1.
         """
-        ret_val = gxapi_cy.WrapVVU.close_xyzm(GXContext._get_tls_geo(), v_vx._wrapper, v_vy._wrapper, v_vz._wrapper, v_vm._wrapper, x, y, z)
+        ret_val = gxapi_cy.WrapVVU.close_xyzm(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_m._wrapper, x, y, z)
         return ret_val
 
 
@@ -600,7 +600,7 @@ class GXVVU:
 
 
     @classmethod
-    def search_text(cls, vv, text, case, match, start, p6):
+    def search_text(cls, vv, text, case, match, start, dir):
         """
         Search for a text value in a `GXVV`
 
@@ -619,13 +619,13 @@ class GXVVU:
 
             sSearchReplace_VV
         """
-        ret_val = gxapi_cy.WrapVVU.search_text(GXContext._get_tls_geo(), vv._wrapper, text.encode(), case, match, start, p6)
+        ret_val = gxapi_cy.WrapVVU.search_text(GXContext._get_tls_geo(), vv._wrapper, text.encode(), case, match, start, dir)
         return ret_val
 
 
 
     @classmethod
-    def mask(cls, v_vd, v_vm):
+    def mask(cls, vv_d, vv_m):
         """
         Mask dummies in one `GXVV` onto another.
 
@@ -635,13 +635,13 @@ class GXVVU:
         The returned length of the `GXVV` to mask will be the shorter
         of the reference `GXVV` or the mask `GXVV`.
         """
-        gxapi_cy.WrapVVU.mask(GXContext._get_tls_geo(), v_vd._wrapper, v_vm._wrapper)
+        gxapi_cy.WrapVVU.mask(GXContext._get_tls_geo(), vv_d._wrapper, vv_m._wrapper)
         
 
 
 
     @classmethod
-    def mask_and(cls, v_va, v_vb, v_vc):
+    def mask_and(cls, vv_a, vv_b, vv_c):
         """
         Create mask from logical AND of two VVs.
 
@@ -649,13 +649,13 @@ class GXVVU:
 
         If both values are non-dummies, then result is 1, else dummy.
         """
-        gxapi_cy.WrapVVU.mask_and(GXContext._get_tls_geo(), v_va._wrapper, v_vb._wrapper, v_vc._wrapper)
+        gxapi_cy.WrapVVU.mask_and(GXContext._get_tls_geo(), vv_a._wrapper, vv_b._wrapper, vv_c._wrapper)
         
 
 
 
     @classmethod
-    def mask_or(cls, v_va, v_vb, v_vc):
+    def mask_or(cls, vv_a, vv_b, vv_c):
         """
         Create mask from logical OR of two VVs.
 
@@ -663,23 +663,23 @@ class GXVVU:
 
         If either values is non-dummy, then result is 1, else dummy.
         """
-        gxapi_cy.WrapVVU.mask_or(GXContext._get_tls_geo(), v_va._wrapper, v_vb._wrapper, v_vc._wrapper)
+        gxapi_cy.WrapVVU.mask_or(GXContext._get_tls_geo(), vv_a._wrapper, vv_b._wrapper, vv_c._wrapper)
         
 
 
 
     @classmethod
-    def nl_filt(cls, v_vi, v_vo, fwid, pr_ftol):
+    def nl_filt(cls, vv_i, vv_o, fwid, pr_ftol):
         """
         Applies a non-linear filter.
         """
-        gxapi_cy.WrapVVU.nl_filt(GXContext._get_tls_geo(), v_vi._wrapper, v_vo._wrapper, fwid, pr_ftol)
+        gxapi_cy.WrapVVU.nl_filt(GXContext._get_tls_geo(), vv_i._wrapper, vv_o._wrapper, fwid, pr_ftol)
         
 
 
 
     @classmethod
-    def noise_check(cls, v_vi, v_vf, all_tol, p4):
+    def noise_check(cls, vv_i, vv_f, all_tol, num):
         """
         Check on deviation of data from variable background in a `GXVV`
 
@@ -692,13 +692,13 @@ class GXVVU:
         otherwise, it will be 1.
         Output `GXVV` will be 0 if the straight line is vertical.
         """
-        gxapi_cy.WrapVVU.noise_check(GXContext._get_tls_geo(), v_vi._wrapper, v_vf._wrapper, all_tol, p4)
+        gxapi_cy.WrapVVU.noise_check(GXContext._get_tls_geo(), vv_i._wrapper, vv_f._wrapper, all_tol, num)
         
 
 
 
     @classmethod
-    def noise_check2(cls, v_vi, v_vf, v_vd, all_tol, p5):
+    def noise_check2(cls, vv_i, vv_f, vv_d, all_tol, num):
         """
         Like `noise_check`, but returns maximum deviation at all points.
 
@@ -717,7 +717,7 @@ class GXVVU:
         The output maximum deviation `GXVV` contains the maximum deviation at each point
         for all the moving line segments that it is a part of.
         """
-        gxapi_cy.WrapVVU.noise_check2(GXContext._get_tls_geo(), v_vi._wrapper, v_vf._wrapper, v_vd._wrapper, all_tol, p5)
+        gxapi_cy.WrapVVU.noise_check2(GXContext._get_tls_geo(), vv_i._wrapper, vv_f._wrapper, vv_d._wrapper, all_tol, num)
         
 
 
@@ -739,7 +739,7 @@ class GXVVU:
 
 
     @classmethod
-    def offset_circles(cls, v_vxi, v_vyi, offset, radius, v_vxo, v_vyo):
+    def offset_circles(cls, vv_xi, vv_yi, offset, radius, vv_xo, vv_yo):
         """
         Get non-overlapping offset location for circular symbols.
 
@@ -760,13 +760,13 @@ class GXVVU:
         pushed to the outside edge and your plot will look like a
         hedgehog (it also takes a lot longer!).
         """
-        gxapi_cy.WrapVVU.offset_circles(GXContext._get_tls_geo(), v_vxi._wrapper, v_vyi._wrapper, offset, radius, v_vxo._wrapper, v_vyo._wrapper)
+        gxapi_cy.WrapVVU.offset_circles(GXContext._get_tls_geo(), vv_xi._wrapper, vv_yi._wrapper, offset, radius, vv_xo._wrapper, vv_yo._wrapper)
         
 
 
 
     @classmethod
-    def offset_correct(cls, v_vxi, v_vyi, dist, heading, p5, p6):
+    def offset_correct(cls, vv_xi, vv_yi, dist, heading, v_vxo, v_vyo):
         """
         Correct locations based on heading and fixed offset.
 
@@ -798,23 +798,23 @@ class GXVVU:
             5. For each input point, calculate the bearing using the nearest points
                on the smoothed curve
         """
-        gxapi_cy.WrapVVU.offset_correct(GXContext._get_tls_geo(), v_vxi._wrapper, v_vyi._wrapper, dist, heading, p5._wrapper, p6._wrapper)
+        gxapi_cy.WrapVVU.offset_correct(GXContext._get_tls_geo(), vv_xi._wrapper, vv_yi._wrapper, dist, heading, v_vxo._wrapper, v_vyo._wrapper)
         
 
 
 
     @classmethod
-    def offset_correct2(cls, v_vxi, v_vyi, dist, azimuth, v_vxo, v_vyo):
+    def offset_correct2(cls, vv_xi, vv_yi, dist, azimuth, vv_xo, vv_yo):
         """
         Same as `offset_correct`, but for an arbitrary offset angle.
         """
-        gxapi_cy.WrapVVU.offset_correct2(GXContext._get_tls_geo(), v_vxi._wrapper, v_vyi._wrapper, dist, azimuth, v_vxo._wrapper, v_vyo._wrapper)
+        gxapi_cy.WrapVVU.offset_correct2(GXContext._get_tls_geo(), vv_xi._wrapper, vv_yi._wrapper, dist, azimuth, vv_xo._wrapper, vv_yo._wrapper)
         
 
 
 
     @classmethod
-    def offset_correct3(cls, v_vxi, v_vyi, dist, azimuth, interval, v_vxo, v_vyo):
+    def offset_correct3(cls, vv_xi, vv_yi, dist, azimuth, interval, vv_xo, vv_yo):
         """
         Same as `offset_correct2`, but specify smoothing interval.
 
@@ -822,13 +822,13 @@ class GXVVU:
 
         See the algorithm note #2 above for the default smoothing interval.
         """
-        gxapi_cy.WrapVVU.offset_correct3(GXContext._get_tls_geo(), v_vxi._wrapper, v_vyi._wrapper, dist, azimuth, interval, v_vxo._wrapper, v_vyo._wrapper)
+        gxapi_cy.WrapVVU.offset_correct3(GXContext._get_tls_geo(), vv_xi._wrapper, vv_yi._wrapper, dist, azimuth, interval, vv_xo._wrapper, vv_yo._wrapper)
         
 
 
 
     @classmethod
-    def offset_correct_xyz(cls, v_vxi, v_vyi, v_vzi, x_off, p5, p6, p7, p8, p9, p10):
+    def offset_correct_xyz(cls, vv_xi, vv_yi, vv_zi, x_off, y_off, z_off, interval, v_vxo, v_vyo, v_vzo):
         """
         Correct locations based on heading and fixed offset.
 
@@ -860,13 +860,13 @@ class GXVVU:
             5. For each input point, calculate the bearing using the nearest points
                on the smoothed curve
         """
-        gxapi_cy.WrapVVU.offset_correct_xyz(GXContext._get_tls_geo(), v_vxi._wrapper, v_vyi._wrapper, v_vzi._wrapper, x_off, p5, p6, p7, p8._wrapper, p9._wrapper, p10._wrapper)
+        gxapi_cy.WrapVVU.offset_correct_xyz(GXContext._get_tls_geo(), vv_xi._wrapper, vv_yi._wrapper, vv_zi._wrapper, x_off, y_off, z_off, interval, v_vxo._wrapper, v_vyo._wrapper, v_vzo._wrapper)
         
 
 
 
     @classmethod
-    def offset_rectangles(cls, v_vxi, v_vyi, offset, size_x, size_y, v_vxo, v_vyo):
+    def offset_rectangles(cls, vv_xi, vv_yi, offset, size_x, size_y, vv_xo, vv_yo):
         """
         Get non-overlapping offset location for rectangular symbols.
 
@@ -889,13 +889,13 @@ class GXVVU:
         pushed to the outside edge and your plot will look like a
         hedgehog (it also takes a lot longer!).
         """
-        gxapi_cy.WrapVVU.offset_rectangles(GXContext._get_tls_geo(), v_vxi._wrapper, v_vyi._wrapper, offset, size_x, size_y, v_vxo._wrapper, v_vyo._wrapper)
+        gxapi_cy.WrapVVU.offset_rectangles(GXContext._get_tls_geo(), vv_xi._wrapper, vv_yi._wrapper, offset, size_x, size_y, vv_xo._wrapper, vv_yo._wrapper)
         
 
 
 
     @classmethod
-    def pick_peak(cls, v_vi, v_vo, pr_tol, p4):
+    def pick_peak(cls, vv_i, vv_o, pr_tol, width):
         """
         Find peaks in a `GXVV` - method one.
 
@@ -912,13 +912,13 @@ class GXVVU:
         Use `filter` to apply a Laplace filter
         "-0.5,1.0,-0.5" to make curvature data.
         """
-        gxapi_cy.WrapVVU.pick_peak(GXContext._get_tls_geo(), v_vi._wrapper, v_vo._wrapper, pr_tol, p4)
+        gxapi_cy.WrapVVU.pick_peak(GXContext._get_tls_geo(), vv_i._wrapper, vv_o._wrapper, pr_tol, width)
         
 
 
 
     @classmethod
-    def pick_peak2(cls, v_vi, v_vo, pr_base_lvl, p4):
+    def pick_peak2(cls, vv_i, vv_o, pr_base_lvl, pr_ampl):
         """
         Find peaks in a `GXVV` - method two.
 
@@ -932,13 +932,13 @@ class GXVVU:
         A `GXVV` may have to be pre-filtered before finding
         the peak values.
         """
-        gxapi_cy.WrapVVU.pick_peak2(GXContext._get_tls_geo(), v_vi._wrapper, v_vo._wrapper, pr_base_lvl, p4)
+        gxapi_cy.WrapVVU.pick_peak2(GXContext._get_tls_geo(), vv_i._wrapper, vv_o._wrapper, pr_base_lvl, pr_ampl)
         
 
 
 
     @classmethod
-    def pick_peak3(cls, v_vi, v_vx, v_vy, pr_base_lvl, p5, p6, p7, p8, p9):
+    def pick_peak3(cls, vv_i, vv_x, vv_y, pr_base_lvl, pr_ampl, v_vind, v_vamp, v_vwid, v_vhawid):
         """
         Find peaks in a `GXVV` - method two, returning width and half-amplitude widths.
 
@@ -954,13 +954,13 @@ class GXVVU:
         The returned VVs are packed; no dummies. Instead the
         indicies of the peak locations are returned.
         """
-        gxapi_cy.WrapVVU.pick_peak3(GXContext._get_tls_geo(), v_vi._wrapper, v_vx._wrapper, v_vy._wrapper, pr_base_lvl, p5, p6._wrapper, p7._wrapper, p8._wrapper, p9._wrapper)
+        gxapi_cy.WrapVVU.pick_peak3(GXContext._get_tls_geo(), vv_i._wrapper, vv_x._wrapper, vv_y._wrapper, pr_base_lvl, pr_ampl, v_vind._wrapper, v_vamp._wrapper, v_vwid._wrapper, v_vhawid._wrapper)
         
 
 
 
     @classmethod
-    def poly_fill(cls, v_vd, order, v_vc):
+    def poly_fill(cls, vv_d, order, vv_c):
         """
         Fill a `GXVV` with values from an n'th order polynomial, integral x.
 
@@ -974,13 +974,13 @@ class GXVVU:
 
             `trend`, `trend2`, `poly_fill2`
         """
-        gxapi_cy.WrapVVU.poly_fill(GXContext._get_tls_geo(), v_vd._wrapper, order, v_vc._wrapper)
+        gxapi_cy.WrapVVU.poly_fill(GXContext._get_tls_geo(), vv_d._wrapper, order, vv_c._wrapper)
         
 
 
 
     @classmethod
-    def poly_fill2(cls, v_vx, v_vd, order, v_vc):
+    def poly_fill2(cls, vv_x, vv_d, order, vv_c):
         """
         Fill a `GXVV` with values from an n'th order polynomial, specified X
 
@@ -993,13 +993,13 @@ class GXVVU:
 
             `trend`, `trend2`, `poly_fill`
         """
-        gxapi_cy.WrapVVU.poly_fill2(GXContext._get_tls_geo(), v_vx._wrapper, v_vd._wrapper, order, v_vc._wrapper)
+        gxapi_cy.WrapVVU.poly_fill2(GXContext._get_tls_geo(), vv_x._wrapper, vv_d._wrapper, order, vv_c._wrapper)
         
 
 
 
     @classmethod
-    def polygon_mask(cls, v_vx, v_vy, v_vm, p4, p5):
+    def polygon_mask(cls, vv_x, vv_y, vv_m, pply, mask):
         """
         Mask a `GXVV` using XY data and a polygon.
 
@@ -1007,13 +1007,13 @@ class GXVVU:
 
         The VVs have to be the same length
         """
-        gxapi_cy.WrapVVU.polygon_mask(GXContext._get_tls_geo(), v_vx._wrapper, v_vy._wrapper, v_vm._wrapper, p4._wrapper, p5)
+        gxapi_cy.WrapVVU.polygon_mask(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_m._wrapper, pply._wrapper, mask)
         
 
 
 
     @classmethod
-    def prune(cls, v_vp, v_vr, o):
+    def prune(cls, vv_p, vv_r, o):
         """
         Prune values from a `GXVV` based on reference `GXVV`
 
@@ -1023,13 +1023,13 @@ class GXVVU:
         that are either dummy or non-dummy in the reference
         `GXVV`
         """
-        gxapi_cy.WrapVVU.prune(GXContext._get_tls_geo(), v_vp._wrapper, v_vr._wrapper, o)
+        gxapi_cy.WrapVVU.prune(GXContext._get_tls_geo(), vv_p._wrapper, vv_r._wrapper, o)
         
 
 
 
     @classmethod
-    def qc(cls, v_vi, v_vd, p3, p4, p5, p6, p7, p8):
+    def qc(cls, vv_i, vv_d, v_vf, nominal, max_tol, all_tol, dist, qc):
         """
         Quality control on deviation of data from norm in a `GXVV`
 
@@ -1061,7 +1061,7 @@ class GXVVU:
          -3        The input data failed on above two tests
         =========  ==============================================================
         """
-        gxapi_cy.WrapVVU.qc(GXContext._get_tls_geo(), v_vi._wrapper, v_vd._wrapper, p3._wrapper, p4, p5, p6, p7, p8)
+        gxapi_cy.WrapVVU.qc(GXContext._get_tls_geo(), vv_i._wrapper, vv_d._wrapper, v_vf._wrapper, nominal, max_tol, all_tol, dist, qc)
         
 
 
@@ -1082,11 +1082,11 @@ class GXVVU:
 
 
     @classmethod
-    def regress(cls, v_vx, v_vy, slp, int):
+    def regress(cls, vv_x, vv_y, slp, int):
         """
         Calculate linear regression through data
         """
-        slp.value, int.value = gxapi_cy.WrapVVU.regress(GXContext._get_tls_geo(), v_vx._wrapper, v_vy._wrapper, slp.value, int.value)
+        slp.value, int.value = gxapi_cy.WrapVVU.regress(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, slp.value, int.value)
         
 
 
@@ -1209,7 +1209,7 @@ class GXVVU:
 
 
     @classmethod
-    def remove_xy_dup_index(cls, p1, p2, p3):
+    def remove_xy_dup_index(cls, xvv, yvv, index_vv):
         """
         Remove duplicate samples with the same (X, Y) and update index.
 
@@ -1220,13 +1220,13 @@ class GXVVU:
         updated accordingly .i.e if  (X,Y) location of Index[0] == Index[1]
         Index[1] is removed.
         """
-        gxapi_cy.WrapVVU.remove_xy_dup_index(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3._wrapper)
+        gxapi_cy.WrapVVU.remove_xy_dup_index(GXContext._get_tls_geo(), xvv._wrapper, yvv._wrapper, index_vv._wrapper)
         
 
 
 
     @classmethod
-    def rolling_stats(cls, v_vi, v_vo, stat, window, shrink):
+    def rolling_stats(cls, vv_i, vv_o, stat, window, shrink):
         """
         Calculate a statistic in a rolling window.
 
@@ -1269,7 +1269,7 @@ class GXVVU:
         number of occurrences, then the smallest of these values is
         returned.
         """
-        gxapi_cy.WrapVVU.rolling_stats(GXContext._get_tls_geo(), v_vi._wrapper, v_vo._wrapper, stat, window, shrink)
+        gxapi_cy.WrapVVU.rolling_stats(GXContext._get_tls_geo(), vv_i._wrapper, vv_o._wrapper, stat, window, shrink)
         
 
 
@@ -1332,21 +1332,21 @@ class GXVVU:
 
 
     @classmethod
-    def spline(cls, v_vx, v_vy, v_vo, length, start, incr, gap, ext, type):
+    def spline(cls, vv_x, vv_y, vv_o, length, start, incr, gap, ext, type):
         """
         Spline a Y `GXVV` onto an X `GXVV`.
         """
-        gxapi_cy.WrapVVU.spline(GXContext._get_tls_geo(), v_vx._wrapper, v_vy._wrapper, v_vo._wrapper, length, start, incr, gap, ext, type)
+        gxapi_cy.WrapVVU.spline(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_o._wrapper, length, start, incr, gap, ext, type)
         
 
 
 
     @classmethod
-    def spline2(cls, v_vx, v_vy, v_vx2, v_vo, type):
+    def spline2(cls, vv_x, vv_y, vv_x2, vv_o, type):
         """
         Spline a Y `GXVV` onto an X `GXVV`. Uses specified values of X in X2
         """
-        gxapi_cy.WrapVVU.spline2(GXContext._get_tls_geo(), v_vx._wrapper, v_vy._wrapper, v_vx2._wrapper, v_vo._wrapper, type)
+        gxapi_cy.WrapVVU.spline2(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_x2._wrapper, vv_o._wrapper, type)
         
 
 
@@ -1380,7 +1380,7 @@ class GXVVU:
 
 
     @classmethod
-    def trend(cls, p1, p2, p3):
+    def trend(cls, vv_d, order, vv_c):
         """
         Calculate an n'th order best-fit polynomial, integral x.
 
@@ -1399,13 +1399,13 @@ class GXVVU:
 
             `poly_fill`, `trend2`, `poly_fill2`
         """
-        gxapi_cy.WrapVVU.trend(GXContext._get_tls_geo(), p1._wrapper, p2, p3._wrapper)
+        gxapi_cy.WrapVVU.trend(GXContext._get_tls_geo(), vv_d._wrapper, order, vv_c._wrapper)
         
 
 
 
     @classmethod
-    def trend2(cls, p1, p2, p3, p4):
+    def trend2(cls, vv_x, vv_d, order, vv_c):
         """
         Calculate an n'th order best-fit polynomial, specified X
 
@@ -1424,7 +1424,7 @@ class GXVVU:
 
             `poly_fill`, `trend2`, `poly_fill2`
         """
-        gxapi_cy.WrapVVU.trend2(GXContext._get_tls_geo(), p1._wrapper, p2._wrapper, p3, p4._wrapper)
+        gxapi_cy.WrapVVU.trend2(GXContext._get_tls_geo(), vv_x._wrapper, vv_d._wrapper, order, vv_c._wrapper)
         
 
 

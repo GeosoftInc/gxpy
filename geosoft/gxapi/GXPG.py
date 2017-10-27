@@ -91,11 +91,11 @@ class GXPG:
 
 
     @classmethod
-    def create(cls, row, p2, p3):
+    def create(cls, row, col, type):
         """
         Creates a Pager object
         """
-        ret_val = gxapi_cy.WrapPG.create(GXContext._get_tls_geo(), row, p2, p3)
+        ret_val = gxapi_cy.WrapPG.create(GXContext._get_tls_geo(), row, col, type)
         return GXPG(ret_val)
 
 
@@ -177,7 +177,7 @@ class GXPG:
 
 
 
-    def get(self, col, p3):
+    def get(self, col, row):
         """
         Read a single value from a 2D `GXPG`
 
@@ -185,7 +185,7 @@ class GXPG:
 
         This is a low-performance method.
         """
-        ret_val = self._wrapper.get(col, p3)
+        ret_val = self._wrapper.get(col, row)
         return ret_val
 
 
@@ -211,11 +211,11 @@ class GXPG:
 
 
 
-    def re_allocate(self, n_row, p3):
+    def re_allocate(self, n_row, n_col):
         """
         Changes the size of Pager
         """
-        self._wrapper.re_allocate(n_row, p3)
+        self._wrapper.re_allocate(n_row, n_col)
         
 
 
@@ -269,7 +269,7 @@ class GXPG:
 
 
 
-    def copy_subset_3d(self, pgs, sliced, p4, p5, p6, p7, p8, p9, p10, p11):
+    def copy_subset_3d(self, pgs, sliced, n, vv, slices, rows, cols, n_slice, n_row, n_col):
         """
         Copy a subset of data from one pager to another.
 
@@ -277,17 +277,17 @@ class GXPG:
 
         2D Only
         """
-        self._wrapper.copy_subset_3d(pgs._wrapper, sliced, p4, p5, p6, p7, p8, p9, p10, p11)
+        self._wrapper.copy_subset_3d(pgs._wrapper, sliced, n, vv, slices, rows, cols, n_slice, n_row, n_col)
         
 
 
 
     @classmethod
-    def create_3d(cls, slice, p2, p3, p4):
+    def create_3d(cls, slice, row, col, type):
         """
         Creates a Pager object
         """
-        ret_val = gxapi_cy.WrapPG.create_3d(GXContext._get_tls_geo(), slice, p2, p3, p4)
+        ret_val = gxapi_cy.WrapPG.create_3d(GXContext._get_tls_geo(), slice, row, col, type)
         return GXPG(ret_val)
 
 
@@ -323,11 +323,11 @@ class GXPG:
 
 
 
-    def re_allocate_3d(self, n_slice, p3, p4):
+    def re_allocate_3d(self, n_slice, n_row, n_col):
         """
         Changes the size of 3D Pager
         """
-        self._wrapper.re_allocate_3d(n_slice, p3, p4)
+        self._wrapper.re_allocate_3d(n_slice, n_row, n_col)
         
 
 

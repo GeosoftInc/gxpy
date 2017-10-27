@@ -478,7 +478,7 @@ class GXSYS:
 
 
     @classmethod
-    def do_command(cls, p1):
+    def do_command(cls, command):
         """
         Execute an Oasis montaj command.
 
@@ -506,7 +506,7 @@ class GXSYS:
 
             ShellExecute_SYS
         """
-        gxapi_cy.WrapSYS.do_command(GXContext._get_tls_geo(), p1.encode())
+        gxapi_cy.WrapSYS.do_command(GXContext._get_tls_geo(), command.encode())
         
 
 
@@ -808,7 +808,7 @@ class GXSYS:
 
 
     @classmethod
-    def find_path(cls, file, mode, p3):
+    def find_path(cls, file, mode, fullname):
         """
         Get full path for a file with Geosoft subdirectory parameter.
 
@@ -826,13 +826,13 @@ class GXSYS:
         <system>       the operating system system directory
         <other>        other environment variables
         """
-        ret_val, p3.value = gxapi_cy.WrapSYS.find_path(GXContext._get_tls_geo(), file.encode(), mode, p3.value.encode())
+        ret_val, fullname.value = gxapi_cy.WrapSYS.find_path(GXContext._get_tls_geo(), file.encode(), mode, fullname.value.encode())
         return ret_val
 
 
 
     @classmethod
-    def find_path_ex(cls, file, mode, p3, p4):
+    def find_path_ex(cls, file, mode, dir_mode, fullname):
         """
         Get full path for a file.
 
@@ -850,7 +850,7 @@ class GXSYS:
         <system>       the operating system system directory
         <other>        other environment variable
         """
-        ret_val, p4.value = gxapi_cy.WrapSYS.find_path_ex(GXContext._get_tls_geo(), file.encode(), mode, p3, p4.value.encode())
+        ret_val, fullname.value = gxapi_cy.WrapSYS.find_path_ex(GXContext._get_tls_geo(), file.encode(), mode, dir_mode, fullname.value.encode())
         return ret_val
 
 
@@ -870,7 +870,7 @@ class GXSYS:
 
 
     @classmethod
-    def get_path(cls, type, p2):
+    def get_path(cls, type, path):
         """
         Get a Geosoft path
 
@@ -878,7 +878,7 @@ class GXSYS:
 
         The path name will have a directory separator at the end.
         """
-        p2.value = gxapi_cy.WrapSYS.get_path(GXContext._get_tls_geo(), type, p2.value.encode())
+        path.value = gxapi_cy.WrapSYS.get_path(GXContext._get_tls_geo(), type, path.value.encode())
         
 
 
@@ -1131,7 +1131,7 @@ class GXSYS:
 
 
     @classmethod
-    def global_(cls, p1, p2):
+    def global_(cls, parm, setting):
         """
         Get a global parameter setting.
 
@@ -1155,7 +1155,7 @@ class GXSYS:
         retrieve the string "setting is text".  The double
         quotes will not appear in the setting.
         """
-        ret_val, p2.value = gxapi_cy.WrapSYS.global_(GXContext._get_tls_geo(), p1.encode(), p2.value.encode())
+        ret_val, setting.value = gxapi_cy.WrapSYS.global_(GXContext._get_tls_geo(), parm.encode(), setting.value.encode())
         return ret_val
 
 
@@ -1712,7 +1712,7 @@ class GXSYS:
 
 
     @classmethod
-    def get_pattern(cls, group, pat, size, thick, p5, p6, p7):
+    def get_pattern(cls, group, pat, size, thick, dense, col, back_col):
         """
         Gets pattern parameters from the parameter block.
 
@@ -1732,7 +1732,7 @@ class GXSYS:
         Returned values may be DUMMY, but will be acceptable for use with
         the `GXGUI.color_form` function, to set defaults.
         """
-        pat.value, size.value, thick.value, p5.value, p6.value, p7.value = gxapi_cy.WrapSYS.get_pattern(GXContext._get_tls_geo(), group.encode(), pat.value, size.value, thick.value, p5.value, p6.value, p7.value)
+        pat.value, size.value, thick.value, dense.value, col.value, back_col.value = gxapi_cy.WrapSYS.get_pattern(GXContext._get_tls_geo(), group.encode(), pat.value, size.value, thick.value, dense.value, col.value, back_col.value)
         
 
 
@@ -1883,7 +1883,7 @@ class GXSYS:
 
 
     @classmethod
-    def set_pattern(cls, group, pat, size, thick, p5, p6, p7):
+    def set_pattern(cls, group, pat, size, thick, dense, col, back_col):
         """
         Sets pattern parameters in the parameter block.
 
@@ -1904,7 +1904,7 @@ class GXSYS:
         
         Designed for use along with the sPatternForm_GUI function.
         """
-        gxapi_cy.WrapSYS.set_pattern(GXContext._get_tls_geo(), group.encode(), pat, size, thick, p5, p6, p7)
+        gxapi_cy.WrapSYS.set_pattern(GXContext._get_tls_geo(), group.encode(), pat, size, thick, dense, col, back_col)
         
 
 
@@ -2227,11 +2227,11 @@ class GXSYS:
 
 
     @classmethod
-    def display_help_topic(cls, file, p2):
+    def display_help_topic(cls, file, topic):
         """
         Display the help dialog without topic lookup in INI files
         """
-        gxapi_cy.WrapSYS.display_help_topic(GXContext._get_tls_geo(), file.encode(), p2.encode())
+        gxapi_cy.WrapSYS.display_help_topic(GXContext._get_tls_geo(), file.encode(), topic.encode())
         
 
 

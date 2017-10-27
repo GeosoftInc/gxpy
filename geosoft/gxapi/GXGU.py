@@ -71,11 +71,11 @@ class GXGU:
 
 
     @classmethod
-    def em_half_space_inv(cls, coil_spacing, coil_frequency, coil_configuration, tol, threshold, vv_height, vv_in_phase, p8, p9, p10, p11, p12):
+    def em_half_space_inv(cls, coil_spacing, coil_frequency, coil_configuration, tol, threshold, vv_height, vv_in_phase, vv_quadrature, vv_res, inv, err, start_val):
         """
         Inverts EM responses to the best halfspace model.
         """
-        gxapi_cy.WrapGU.em_half_space_inv(GXContext._get_tls_geo(), coil_spacing, coil_frequency, coil_configuration, tol, threshold, vv_height._wrapper, vv_in_phase._wrapper, p8._wrapper, p9._wrapper, p10, p11, p12)
+        gxapi_cy.WrapGU.em_half_space_inv(GXContext._get_tls_geo(), coil_spacing, coil_frequency, coil_configuration, tol, threshold, vv_height._wrapper, vv_in_phase._wrapper, vv_quadrature._wrapper, vv_res._wrapper, inv, err, start_val)
         
 
 
@@ -91,7 +91,7 @@ class GXGU:
 
 
     @classmethod
-    def geometrics2_db(cls, db, ra, log_wa, survey_mode, p5, p6, p7, p8, p9, p10, p11):
+    def geometrics2_db(cls, db, ra, log_wa, survey_mode, line_dir, corner, bi_uni, corner_x, corner_y, mark_space, line_space):
         """
         Convert a Geometrics STN file to a database.
 
@@ -101,7 +101,7 @@ class GXGU:
         with names X, Y, Mag1, Mag2, Time, Date, and Mark will deleted and then created.  
         Existing lines will be erased and then created if they are the same as the new ones.
         """
-        gxapi_cy.WrapGU.geometrics2_db(GXContext._get_tls_geo(), db._wrapper, ra._wrapper, log_wa._wrapper, survey_mode, p5, p6, p7, p8, p9, p10, p11)
+        gxapi_cy.WrapGU.geometrics2_db(GXContext._get_tls_geo(), db._wrapper, ra._wrapper, log_wa._wrapper, survey_mode, line_dir, corner, bi_uni, corner_x, corner_y, mark_space, line_space)
         
 
 
@@ -117,7 +117,7 @@ class GXGU:
 
 
     @classmethod
-    def geometrics_qc(cls, wa, line, in_vv, tol, min_coord, p6, p7, p8):
+    def geometrics_qc(cls, wa, line, in_vv, tol, min_coord, max_coord, out_vv, flag_vv):
         """
         Correct reading positions in a database.
 
@@ -185,7 +185,7 @@ class GXGU:
              Segments will pass the tolerance test if the number of readings
              falls within the Lower and Upper Bounds.
         """
-        gxapi_cy.WrapGU.geometrics_qc(GXContext._get_tls_geo(), wa._wrapper, line.encode(), in_vv._wrapper, tol, min_coord, p6, p7._wrapper, p8._wrapper)
+        gxapi_cy.WrapGU.geometrics_qc(GXContext._get_tls_geo(), wa._wrapper, line.encode(), in_vv._wrapper, tol, min_coord, max_coord, out_vv._wrapper, flag_vv._wrapper)
         
 
 
@@ -242,41 +242,41 @@ class GXGU:
 
 
     @classmethod
-    def gr_curv_cor(cls, v_velev, v_vlat, v_vboug):
+    def gr_curv_cor(cls, vv_elev, vv_lat, vv_boug):
         """
         Gravity Curvature (Bullard B) Correction to Bouguer anomaly
         """
-        gxapi_cy.WrapGU.gr_curv_cor(GXContext._get_tls_geo(), v_velev._wrapper, v_vlat._wrapper, v_vboug._wrapper)
+        gxapi_cy.WrapGU.gr_curv_cor(GXContext._get_tls_geo(), vv_elev._wrapper, vv_lat._wrapper, vv_boug._wrapper)
         
 
 
 
     @classmethod
-    def gr_curv_cor_ex(cls, v_velev, v_vlat, v_vboug, rho):
+    def gr_curv_cor_ex(cls, vv_elev, vv_lat, vv_boug, rho):
         """
         Gravity Curvature (Bullard B) Correction to Bouguer anomaly, with user input cap density.
         """
-        gxapi_cy.WrapGU.gr_curv_cor_ex(GXContext._get_tls_geo(), v_velev._wrapper, v_vlat._wrapper, v_vboug._wrapper, rho)
+        gxapi_cy.WrapGU.gr_curv_cor_ex(GXContext._get_tls_geo(), vv_elev._wrapper, vv_lat._wrapper, vv_boug._wrapper, rho)
         
 
 
 
     @classmethod
-    def gr_demvv(cls, im_gdem, v_vx, v_vy, v_vz):
+    def gr_demvv(cls, im_gdem, vv_x, vv_y, vv_z):
         """
         Get gravity DEM grid `GXVV` for Bouguer anomaly
         """
-        gxapi_cy.WrapGU.gr_demvv(GXContext._get_tls_geo(), im_gdem._wrapper, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
+        gxapi_cy.WrapGU.gr_demvv(GXContext._get_tls_geo(), im_gdem._wrapper, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
         
 
 
 
     @classmethod
-    def gr_test(cls, xm, ym, zm, v_vx, v_vy, v_vg3, v_vg4, v_vg1, v_vg2):
+    def gr_test(cls, xm, ym, zm, vv_x, vv_y, vv_g3, vv_g4, vv_g1, vv_g2):
         """
         Test triangular prism gravity calculation
         """
-        gxapi_cy.WrapGU.gr_test(GXContext._get_tls_geo(), xm, ym, zm, v_vx._wrapper, v_vy._wrapper, v_vg3._wrapper, v_vg4._wrapper, v_vg1._wrapper, v_vg2._wrapper)
+        gxapi_cy.WrapGU.gr_test(GXContext._get_tls_geo(), xm, ym, zm, vv_x._wrapper, vv_y._wrapper, vv_g3._wrapper, vv_g4._wrapper, vv_g1._wrapper, vv_g2._wrapper)
         
 
 
@@ -292,27 +292,27 @@ class GXGU:
 
 
     @classmethod
-    def em_layer(cls, coil_spacing, coil_frequency, coil_height, coil_configuration, n_layers, p6, p7, p8, p9):
+    def em_layer(cls, coil_spacing, coil_frequency, coil_height, coil_configuration, n_layers, vv_thickness, vv_sigma, in_phase, quadrature):
         """
         Calculate the EM response of a layered earth model.
         """
-        ret_val, p8.value, p9.value = gxapi_cy.WrapGU.em_layer(GXContext._get_tls_geo(), coil_spacing, coil_frequency, coil_height, coil_configuration, n_layers, p6._wrapper, p7._wrapper, p8.value, p9.value)
+        ret_val, in_phase.value, quadrature.value = gxapi_cy.WrapGU.em_layer(GXContext._get_tls_geo(), coil_spacing, coil_frequency, coil_height, coil_configuration, n_layers, vv_thickness._wrapper, vv_sigma._wrapper, in_phase.value, quadrature.value)
         return ret_val
 
 
 
     @classmethod
-    def em_plate(cls, strike_length, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21):
+    def em_plate(cls, strike_length, dip_length, strike, dip, plunge, x_off, y_off, z_off, plate_depth, n_spons, sig_tvv, tx_orient, tx_freq, tx_dt, params, xivv, yivv, zivv, xqvv, yqvv, zqvv):
         """
         Calculate the conductance of a thin plate model.
         """
-        ret_val = gxapi_cy.WrapGU.em_plate(GXContext._get_tls_geo(), strike_length, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11._wrapper, p12, p13, p14, p15, p16._wrapper, p17._wrapper, p18._wrapper, p19._wrapper, p20._wrapper, p21._wrapper)
+        ret_val = gxapi_cy.WrapGU.em_plate(GXContext._get_tls_geo(), strike_length, dip_length, strike, dip, plunge, x_off, y_off, z_off, plate_depth, n_spons, sig_tvv._wrapper, tx_orient, tx_freq, tx_dt, params, xivv._wrapper, yivv._wrapper, zivv._wrapper, xqvv._wrapper, yqvv._wrapper, zqvv._wrapper)
         return ret_val
 
 
 
     @classmethod
-    def gen_ux_detect_symbols_group_name(cls, target_gdb, targets, p3):
+    def gen_ux_detect_symbols_group_name(cls, target_gdb, targets, ostr):
         """
         Generate a group name string for UX-Detect symbols
 
@@ -328,7 +328,7 @@ class GXGU:
 
             `GXSTR.gen_group_name`
         """
-        p3.value = gxapi_cy.WrapGU.gen_ux_detect_symbols_group_name(GXContext._get_tls_geo(), target_gdb.encode(), targets.encode(), p3.value.encode())
+        ostr.value = gxapi_cy.WrapGU.gen_ux_detect_symbols_group_name(GXContext._get_tls_geo(), target_gdb.encode(), targets.encode(), ostr.value.encode())
         
 
 
@@ -405,7 +405,7 @@ class GXGU:
 
 
     @classmethod
-    def maxwell_plate_corners(cls, x, y, z, dip, dip_dir, plunge, length, width, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20):
+    def maxwell_plate_corners(cls, x, y, z, dip, dip_dir, plunge, length, width, x1, y1, z1, x2, y2, z2, x3, y3, z3, x4, y4, z4):
         """
         Calculate the corner point locations for a Maxwell Plate.
 
@@ -414,7 +414,7 @@ class GXGU:
         This routine calculates the corner locations of plates defined in the Maxwell Plate
         program, given the top-center location and plate geometry parameters.
         """
-        p9.value, p10.value, p11.value, p12.value, p13.value, p14.value, p15.value, p16.value, p17.value, p18.value, p19.value, p20.value = gxapi_cy.WrapGU.maxwell_plate_corners(GXContext._get_tls_geo(), x, y, z, dip, dip_dir, plunge, length, width, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value, p15.value, p16.value, p17.value, p18.value, p19.value, p20.value)
+        x1.value, y1.value, z1.value, x2.value, y2.value, z2.value, x3.value, y3.value, z3.value, x4.value, y4.value, z4.value = gxapi_cy.WrapGU.maxwell_plate_corners(GXContext._get_tls_geo(), x, y, z, dip, dip_dir, plunge, length, width, x1.value, y1.value, z1.value, x2.value, y2.value, z2.value, x3.value, y3.value, z3.value, x4.value, y4.value, z4.value)
         
 
 
@@ -435,7 +435,7 @@ class GXGU:
 
 
     @classmethod
-    def scan_daarc500_serial(cls, file, v_vtype, v_vitems):
+    def scan_daarc500_serial(cls, file, vv_type, vv_items):
         """
         Scan Serial data from the RMS Instruments DAARC500.
 
@@ -443,7 +443,7 @@ class GXGU:
 
         Scans the file to see which of the 8 serial channels were used to store data.
         """
-        gxapi_cy.WrapGU.scan_daarc500_serial(GXContext._get_tls_geo(), file.encode(), v_vtype._wrapper, v_vitems._wrapper)
+        gxapi_cy.WrapGU.scan_daarc500_serial(GXContext._get_tls_geo(), file.encode(), vv_type._wrapper, vv_items._wrapper)
         
 
 
