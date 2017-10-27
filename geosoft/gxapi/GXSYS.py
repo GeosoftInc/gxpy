@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXRA import GXRA
@@ -107,6 +106,17 @@ class GXSYS:
     def break_date(cls, date, year, month, day):
         """
         Breaks a decimal date value into year, month and day.
+        
+        :param date:   Date value to break
+        :param year:   Year
+        :param month:  Month (0-11)
+        :param day:    Day   (0-30)
+        :type  date:   float
+        :type  year:   int_ref
+        :type  month:  int_ref
+        :type  day:    int_ref
+
+        .. versionadded:: 5.1.1
         """
         year.value, month.value, day.value = gxapi_cy.WrapSYS.break_date(GXContext._get_tls_geo(), date, year.value, month.value, day.value)
         
@@ -119,6 +129,14 @@ class GXSYS:
         Converts a double date to a value representing total
         days elapsed since day 0 of year 0. This uses the
         Numerical Receipies Julian function.
+        
+        :param date:  Date
+        :type  date:  float
+
+        :returns:     x - Days
+        :rtype:       int
+
+        .. versionadded:: 6.3
         """
         ret_val = gxapi_cy.WrapSYS.dateto_long(GXContext._get_tls_geo(), date)
         return ret_val
@@ -129,6 +147,14 @@ class GXSYS:
     def timeto_long(cls, time):
         """
         Converts decimal hours to seconds in a day.
+        
+        :param time:  Time
+        :type  time:  float
+
+        :returns:     x - Seconds (integer)
+        :rtype:       int
+
+        .. versionadded:: 6.3
         """
         ret_val = gxapi_cy.WrapSYS.timeto_long(GXContext._get_tls_geo(), time)
         return ret_val
@@ -139,6 +165,12 @@ class GXSYS:
     def date(cls):
         """
         Returns the current date in decimal years.
+        
+
+        :returns:    Date in decimal years.
+        :rtype:      float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -156,6 +188,14 @@ class GXSYS:
         Converts a value representing total days elapsed since
         day 0 of year 0 to a geosoft date. This uses the
         Numerical Receipies Julian function.
+        
+        :param days:  Day
+        :type  days:  int
+
+        :returns:     x - Date
+        :rtype:       float
+
+        .. versionadded:: 6.3
         """
         ret_val = gxapi_cy.WrapSYS.longto_date(GXContext._get_tls_geo(), days)
         return ret_val
@@ -166,6 +206,14 @@ class GXSYS:
     def longto_time(cls, sec):
         """
         Converts seconds to decimal hours.
+        
+        :param sec:  Seconds
+        :type  sec:  int
+
+        :returns:    x - Time
+        :rtype:      float
+
+        .. versionadded:: 6.3
         """
         ret_val = gxapi_cy.WrapSYS.longto_time(GXContext._get_tls_geo(), sec)
         return ret_val
@@ -176,6 +224,18 @@ class GXSYS:
     def make_date(cls, year, month, day):
         """
         Returns the decimal date given the year, month and day.
+        
+        :param year:   Year
+        :param month:  Month (0-11)
+        :param day:    Day   (0-30)
+        :type  year:   int
+        :type  month:  int
+        :type  day:    int
+
+        :returns:      Date in decimal years.
+        :rtype:        float
+
+        .. versionadded:: 5.1.1
         """
         ret_val = gxapi_cy.WrapSYS.make_date(GXContext._get_tls_geo(), year, month, day)
         return ret_val
@@ -186,6 +246,14 @@ class GXSYS:
     def secondsto_time(cls, sec):
         """
         Converts fractional seconds to decimal hours.
+        
+        :param sec:  Seconds
+        :type  sec:  float
+
+        :returns:    x - Time
+        :rtype:      float
+
+        .. versionadded:: 6.3
         """
         ret_val = gxapi_cy.WrapSYS.secondsto_time(GXContext._get_tls_geo(), sec)
         return ret_val
@@ -196,6 +264,12 @@ class GXSYS:
     def time(cls):
         """
         Returns the current time in decimal hours.
+        
+
+        :returns:    Time in decimal hours.
+        :rtype:      float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -211,6 +285,14 @@ class GXSYS:
     def timeto_seconds(cls, time):
         """
         Converts decimal hours to seconds in a day fractional
+        
+        :param time:  Time
+        :type  time:  float
+
+        :returns:     x - Number of seconds with fractions
+        :rtype:       float
+
+        .. versionadded:: 6.3
         """
         ret_val = gxapi_cy.WrapSYS.timeto_seconds(GXContext._get_tls_geo(), time)
         return ret_val
@@ -221,6 +303,12 @@ class GXSYS:
     def utc_date(cls):
         """
         Returns the current UTC date in decimal years.
+        
+
+        :returns:    Date in decimal years.
+        :rtype:      float
+
+        .. versionadded:: 7.0
 
         **Note:**
 
@@ -236,6 +324,12 @@ class GXSYS:
     def utc_time(cls):
         """
         Returns the current UTC time in decimal hours.
+        
+
+        :returns:    Time in decimal hours.
+        :rtype:      float
+
+        .. versionadded:: 7.0
 
         **Note:**
 
@@ -255,6 +349,15 @@ class GXSYS:
     def exist_env(cls, parm):
         """
         Check if setting exists in environment.
+        
+        :param parm:  Setting
+        :type  parm:  str
+
+        :returns:     1 - Yes
+                      0 - No
+        :rtype:       int
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapSYS.exist_env(GXContext._get_tls_geo(), parm.encode())
         return ret_val
@@ -265,6 +368,13 @@ class GXSYS:
     def get_env(cls, parm, set):
         """
         Get an environment setting.
+        
+        :param parm:  Setting
+        :param set:   Value string
+        :type  parm:  str
+        :type  set:   str_ref
+
+        .. versionadded:: 5.0
         """
         set.value = gxapi_cy.WrapSYS.get_env(GXContext._get_tls_geo(), parm.encode(), set.value.encode())
         
@@ -275,6 +385,13 @@ class GXSYS:
     def set_env(cls, parm, set):
         """
         Set an environment setting.
+        
+        :param parm:  Setting
+        :param set:   Value
+        :type  parm:  str
+        :type  set:   str
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.set_env(GXContext._get_tls_geo(), parm.encode(), set.encode())
         
@@ -289,6 +406,12 @@ class GXSYS:
     def clear_err_ap(cls):
         """
         This method is called at to clear all registered errors.
+        
+
+        :returns:    0 - Successful
+        :rtype:      int
+
+        .. versionadded:: 5.1.1
         """
         ret_val = gxapi_cy.WrapSYS.clear_err_ap(GXContext._get_tls_geo())
         return ret_val
@@ -299,6 +422,12 @@ class GXSYS:
     def get_top_error_ap(cls):
         """
         Get the error number of the last registered error.
+        
+
+        :returns:    The top error number registered, 0 if none registered.
+        :rtype:      int
+
+        .. versionadded:: 8.0
         """
         ret_val = gxapi_cy.WrapSYS.get_top_error_ap(GXContext._get_tls_geo())
         return ret_val
@@ -309,6 +438,13 @@ class GXSYS:
     def get_error_message_ap(cls, err, err_str):
         """
         Return the error message text as a string.
+        
+        :param err:      The error index (0 to N-1, where N=number of registered errors)
+        :param err_str:  Buffer to return message in
+        :type  err:      int
+        :type  err_str:  str_ref
+
+        .. versionadded:: 6.0
 
         **Note:**
 
@@ -326,6 +462,12 @@ class GXSYS:
     def num_errors_ap(cls):
         """
         Returns the number of registered errors.
+        
+
+        :returns:    The number of registered errors.
+        :rtype:      int
+
+        .. versionadded:: 6.0
 
         **Note:**
 
@@ -346,6 +488,11 @@ class GXSYS:
     def set_server_messages_ap(cls, flag):
         """
         Control the server message handling.
+        
+        :param flag:  1 - Display messages, 0 - messages reported as errors
+        :type  flag:  int
+
+        .. versionadded:: 6.2
 
         **Note:**
 
@@ -365,6 +512,19 @@ class GXSYS:
     def run(cls, command, args, process):
         """
         Run a command line process.
+        
+        :param command:  Command name
+        :param args:     Command line arguments
+        :param process:  Flags `SYS_RUN_TYPE` `SYS_RUN_DISPLAY` `SYS_RUN_HOLD` `SYS_RUN_WIN`
+        :type  command:  str
+        :type  args:     str
+        :type  process:  int
+
+        :returns:        -1 if failed to execute task
+                         Exit status of the task
+        :rtype:          int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -386,6 +546,17 @@ class GXSYS:
     def run_gs(cls, gs):
         """
         Run a GS.
+        
+        :param gs:  Name of GS to run.
+        :type  gs:  str
+
+        :returns:    Exit status of the GS
+                    -1 cancelled
+                    0 success
+                    1 ended with an error.
+        :rtype:      int
+
+        .. versionadded:: 5.0
 
         .. seealso::
 
@@ -400,6 +571,17 @@ class GXSYS:
     def run_gx(cls, gx):
         """
         Run a GX.
+        
+        :param gx:  Name of GX to run.
+        :type  gx:  str
+
+        :returns:    Exit status of the GX:
+                    -1 cancelled
+                    0 success
+                    1 ended with an error.
+        :rtype:      int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -420,6 +602,19 @@ class GXSYS:
     def run_gx_ex(cls, gx, ret):
         """
         Run a GX.
+        
+        :param gx:   Name of GX to run.
+        :param ret:  Return value set in the child GX (0 by default)
+        :type  gx:   str
+        :type  ret:  int_ref
+
+        :returns:    Exit status of the GX:
+                     -1 cancelled
+                     0 success
+                     1 ended with an error.
+        :rtype:      int
+
+        .. versionadded:: 5.0
 
         .. seealso::
 
@@ -434,6 +629,16 @@ class GXSYS:
     def run_pdf(cls, mnu, pdf):
         """
         Run a PDF.
+        
+        :param mnu:  Group name, can be "".
+        :param pdf:  PDF name    (.pdf assumed)
+        :type  mnu:  str
+        :type  pdf:  str
+
+        :returns:    Exit status of the task, 0 usually means success.
+        :rtype:      int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -450,6 +655,22 @@ class GXSYS:
     def shell_execute(cls, verb, file, parameters, directory, show):
         """
         Call Microsoft ShellExecute function (See `MSDN <https://msdn.microsoft.com/en-us/library/windows/desktop/bb762153(v=vs.85).aspx>`_)
+        
+        :param verb:        Verb
+        :param file:        File
+        :param parameters:  Parameters
+        :param directory:   Directory
+        :param show:        `SHELL_EXECUTE`
+        :type  verb:        str
+        :type  file:        str
+        :type  parameters:  str
+        :type  directory:   str
+        :type  show:        int
+
+        :returns:           return value of ShellExecute as documented on MSDN
+        :rtype:             int
+
+        .. versionadded:: 5.0
 
         .. seealso::
 
@@ -464,6 +685,11 @@ class GXSYS:
     def set_return(cls, ret):
         """
         Set the return value of a GX.
+        
+        :param ret:  Return Value
+        :type  ret:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -482,6 +708,11 @@ class GXSYS:
     def do_command(cls, command):
         """
         Execute an Oasis montaj command.
+        
+        :param command:  Command
+        :type  command:  str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -524,6 +755,15 @@ class GXSYS:
     def error(cls, error_file, module, error):
         """
         Register an error message
+        
+        :param error_file:  Your error file name, "" if none.
+        :param module:      Module name in which error occurred.
+        :param error:       Error number
+        :type  error_file:  str
+        :type  module:      str
+        :type  error:       int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -545,6 +785,13 @@ class GXSYS:
     def error_tag(cls, tag, set):
         """
         Set an error message tag string
+        
+        :param tag:  Tag string, ie "%1".
+        :param set:  String to replace the tag.
+        :type  tag:  str
+        :type  set:  str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -563,6 +810,19 @@ class GXSYS:
     def assert_gx(cls, exp, mod, parm):
         """
         DLL function argument error assertion
+        
+        :param exp:   Boolean expression (ie. (dB != 0.0) )
+        :param mod:   Module name
+        :param parm:  Argument name
+        :type  exp:   int
+        :type  mod:   str
+        :type  parm:  str
+
+        :returns:     0 assertion passed
+                      1 assertion failed
+        :rtype:       int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -590,6 +850,18 @@ class GXSYS:
     def ole_automation(cls, object, info_str, info_val):
         """
         Call OLE Automation designed to be called from Montaj.
+        
+        :param object:    Object Name
+        :param info_str:  Info String
+        :param info_val:  Info Int
+        :type  object:    str
+        :type  info_str:  str
+        :type  info_val:  int
+
+        :returns:         Return from automation engine.
+        :rtype:           int
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapSYS.ole_automation(GXContext._get_tls_geo(), object.encode(), info_str.encode(), info_val)
         return ret_val
@@ -600,6 +872,11 @@ class GXSYS:
     def save_log(cls, file):
         """
         Saves the main log file to another file.
+        
+        :param file:  Output file name
+        :type  file:  str
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.save_log(GXContext._get_tls_geo(), file.encode())
         
@@ -610,6 +887,11 @@ class GXSYS:
     def terminate(cls, name):
         """
         DLL error termination
+        
+        :param name:  Module name
+        :type  name:  str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -637,6 +919,14 @@ class GXSYS:
     def crc_file(cls, file):
         """
         Compute the CRC of a file
+        
+        :param file:  File Name
+        :type  file:  str
+
+        :returns:     CRC Value
+        :rtype:       int
+
+        .. versionadded:: 6.0.1
         """
         ret_val = gxapi_cy.WrapSYS.crc_file(GXContext._get_tls_geo(), file.encode())
         return ret_val
@@ -647,6 +937,16 @@ class GXSYS:
     def crc_file_offset(cls, file, offset):
         """
         Compute the CRC of a file with an Offset
+        
+        :param file:    File Name
+        :param offset:  Offset in the file (0 for start)
+        :type  file:    str
+        :type  offset:  int
+
+        :returns:       CRC Value
+        :rtype:         int
+
+        .. versionadded:: 6.4
         """
         ret_val = gxapi_cy.WrapSYS.crc_file_offset(GXContext._get_tls_geo(), file.encode(), offset)
         return ret_val
@@ -657,6 +957,13 @@ class GXSYS:
     def file_ren(cls, old_file, new_file):
         """
         Rename a file
+        
+        :param old_file:  Old file name
+        :param new_file:  New file name
+        :type  old_file:  str
+        :type  new_file:  str
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.file_ren(GXContext._get_tls_geo(), old_file.encode(), new_file.encode())
         
@@ -667,6 +974,13 @@ class GXSYS:
     def find_files_vv(cls, vv, mask):
         """
         Fill a `GXVV <geosoft.gxapi.GXVV>` with files matching an input file mask.
+        
+        :param vv:    `GXVV <geosoft.gxapi.GXVV>` object
+        :param mask:  File mask to match
+        :type  vv:    GXVV
+        :type  mask:  str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -682,6 +996,13 @@ class GXSYS:
     def absolute_file_name(cls, abbr, name):
         """
         Convert an abbreviated path name to a full path name.
+        
+        :param abbr:  Input file name to resolve
+        :param name:  Output name, can be the same as input
+        :type  abbr:  str
+        :type  name:  str_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -697,6 +1018,17 @@ class GXSYS:
     def copy_file(cls, src_file, dest_file):
         """
         Copy a file.
+        
+        :param src_file:   Source file
+        :param dest_file:  Destination file
+        :type  src_file:   str
+        :type  dest_file:  str
+
+        :returns:          0 if file copied ok.
+                           1 if unable to copy file or source file not found.
+        :rtype:            int
+
+        .. versionadded:: 5.1.8
         """
         ret_val = gxapi_cy.WrapSYS.copy_file(GXContext._get_tls_geo(), src_file.encode(), dest_file.encode())
         return ret_val
@@ -707,6 +1039,15 @@ class GXSYS:
     def delete_file(cls, file):
         """
         Delete a file.
+        
+        :param file:  Name of file to delete
+        :type  file:  str
+
+        :returns:     0 if file deleted.
+                      1 if unable to find file or delete file.
+        :rtype:       int
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapSYS.delete_file(GXContext._get_tls_geo(), file.encode())
         return ret_val
@@ -717,6 +1058,18 @@ class GXSYS:
     def delete_gi_file(cls, file):
         """
         Delete the GI file associated with a grid.
+        
+        :param file:  Name of grid file to delete
+        :type  file:  str
+
+        :returns:     0 if file deleted.
+                      1 if file is not found, or found but could not be deleted.
+                      
+                      This is a "one-line" function to take a grid file name,
+                      remove the qualifiers, add the ".gi" and delete the file.
+        :rtype:       int
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapSYS.delete_gi_file(GXContext._get_tls_geo(), file.encode())
         return ret_val
@@ -727,6 +1080,15 @@ class GXSYS:
     def delete_grid_file(cls, file):
         """
         Delete a grid file and its associated GI and XML files.
+        
+        :param file:  Name of grid file to delete
+        :type  file:  str
+
+        :returns:     0 if grid file deleted.
+                      1 if grid file not found or if one or more files is found but could not be deleted.
+        :rtype:       int
+
+        .. versionadded:: 7.0
 
         **Note:**
 
@@ -743,6 +1105,15 @@ class GXSYS:
     def dir_exist(cls, dir):
         """
         Check to see if a directory exists
+        
+        :param dir:  Name of directory to check
+        :type  dir:  str
+
+        :returns:    0 - Directory doesn't exist
+                     1 - Directory exists
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapSYS.dir_exist(GXContext._get_tls_geo(), dir.encode())
         return ret_val
@@ -753,6 +1124,15 @@ class GXSYS:
     def file_exist(cls, file):
         """
         Check to see if a file exists
+        
+        :param file:  Name of file to check
+        :type  file:  str
+
+        :returns:     0 - File doesn't exist
+                      1 - File exists
+        :rtype:       int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -769,6 +1149,15 @@ class GXSYS:
     def file_size(cls, file):
         """
         Returns size of a file.
+        
+        :param file:  Name of file
+        :type  file:  str
+
+        :returns:     0 none/error
+                      x Size
+        :rtype:       int
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapSYS.file_size(GXContext._get_tls_geo(), file.encode())
         return ret_val
@@ -780,6 +1169,14 @@ class GXSYS:
         """
         Check if a file can be created or opened in read-write mode
         at a specific location
+        
+        :param file:  File path name to check
+        :type  file:  str
+
+        :returns:     `GEO_BOOL`
+        :rtype:       int
+
+        .. versionadded:: 6.2
         """
         ret_val = gxapi_cy.WrapSYS.file_writable(GXContext._get_tls_geo(), file.encode())
         return ret_val
@@ -790,6 +1187,19 @@ class GXSYS:
     def find_path(cls, file, mode, fullname):
         """
         Get full path for a file with Geosoft subdirectory parameter.
+        
+        :param file:      File to get path name for
+        :param mode:      `SYS_SEARCH_PATH`
+        :param fullname:  Buffer to place path name into
+        :type  file:      str
+        :type  mode:      int
+        :type  fullname:  str_ref
+
+        :returns:         0 if file found.
+                          1 if file not found.
+        :rtype:           int
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -814,6 +1224,21 @@ class GXSYS:
     def find_path_ex(cls, file, mode, dir_mode, fullname):
         """
         Get full path for a file.
+        
+        :param file:      File to get path name for
+        :param mode:      `SYS_SEARCH_PATH`
+        :param dir_mode:  `GEO_DIRECTORY`
+        :param fullname:  Buffer to place path name into
+        :type  file:      str
+        :type  mode:      int
+        :type  dir_mode:  int
+        :type  fullname:  str_ref
+
+        :returns:         0 if file found.
+                          1 if file not found.
+        :rtype:           int
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -838,6 +1263,13 @@ class GXSYS:
     def get_directory(cls, sys_dir, dir):
         """
         Get a directory path
+        
+        :param sys_dir:  `SYS_DIR`
+        :param dir:      Returned directory path string
+        :type  sys_dir:  int
+        :type  dir:      str_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -852,6 +1284,13 @@ class GXSYS:
     def get_path(cls, type, path):
         """
         Get a Geosoft path
+        
+        :param type:  `SYS_PATH`
+        :param path:  String in which to place path
+        :type  type:  int
+        :type  path:  str_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -866,6 +1305,11 @@ class GXSYS:
     def get_windows_dir(cls, dir):
         """
         Get the Windows directory path
+        
+        :param dir:  Buff for directory path string
+        :type  dir:  str_ref
+
+        .. versionadded:: 5.0
         """
         dir.value = gxapi_cy.WrapSYS.get_windows_dir(GXContext._get_tls_geo(), dir.value.encode())
         
@@ -876,6 +1320,15 @@ class GXSYS:
     def make_dir(cls, dir):
         """
         Create a directory.
+        
+        :param dir:  Name of directory
+        :type  dir:  str
+
+        :returns:    0 - Directory made
+                     1 - Directory cannot be made
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapSYS.make_dir(GXContext._get_tls_geo(), dir.encode())
         return ret_val
@@ -886,6 +1339,15 @@ class GXSYS:
     def make_file_readonly(cls, file):
         """
         Set a file's read-only attribute.
+        
+        :param file:  Name of file
+        :type  file:  str
+
+        :returns:     0 if read-only attribute successfully set,
+                      1 if attribute change fails.
+        :rtype:       int
+
+        .. versionadded:: 6.3
         """
         ret_val = gxapi_cy.WrapSYS.make_file_readonly(GXContext._get_tls_geo(), file.encode())
         return ret_val
@@ -896,6 +1358,15 @@ class GXSYS:
     def make_file_writable(cls, file):
         """
         Removes a file's read-only attribute.
+        
+        :param file:  Name of file
+        :type  file:  str
+
+        :returns:     0 if read-only attribute successfully removed,
+                      1 if attribute change fails.
+        :rtype:       int
+
+        .. versionadded:: 6.3
         """
         ret_val = gxapi_cy.WrapSYS.make_file_writable(GXContext._get_tls_geo(), file.encode())
         return ret_val
@@ -906,6 +1377,13 @@ class GXSYS:
     def relative_file_name(cls, abbr, name):
         """
         Convert a file name to a relative abbreviated path name
+        
+        :param abbr:  Input file name to resolve
+        :param name:  Output name, can be the same as input
+        :type  abbr:  str
+        :type  name:  str_ref
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -921,6 +1399,13 @@ class GXSYS:
     def short_path_file_name(cls, in_name, name):
         """
         Obtains the short path form of a specified input path.
+        
+        :param in_name:  Input file name to resolve
+        :param name:     Output name, can be the same as input
+        :type  in_name:  str
+        :type  name:     str_ref
+
+        .. versionadded:: 5.0
         """
         name.value = gxapi_cy.WrapSYS.short_path_file_name(GXContext._get_tls_geo(), in_name.encode(), name.value.encode())
         
@@ -931,6 +1416,13 @@ class GXSYS:
     def temp_file_ext(cls, ext, out):
         """
         Generate a unique file name for this extension in the temp directory.
+        
+        :param ext:  Input extension (without .)
+        :param out:  Output name
+        :type  ext:  str
+        :type  out:  str_ref
+
+        .. versionadded:: 5.1.8
 
         **Note:**
 
@@ -945,6 +1437,13 @@ class GXSYS:
     def temp_file_name(cls, path_file, out_filename):
         """
         Generate a file name for this file in the temp directory.
+        
+        :param path_file:     Input file name to resolve (path is removed)
+        :param out_filename:  Output name, can be the same as input
+        :type  path_file:     str
+        :type  out_filename:  str_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -963,6 +1462,13 @@ class GXSYS:
     def transfer_path(cls, path_file, file):
         """
         Transfers file path to new file name.
+        
+        :param path_file:  Input file path/name
+        :param file:       Output file name with path transfered
+        :type  path_file:  str
+        :type  file:       str_ref
+
+        .. versionadded:: 5.1.8
 
         **Note:**
 
@@ -978,6 +1484,15 @@ class GXSYS:
     def valid_file_name(cls, file):
         """
         Check to see if a file name valid
+        
+        :param file:  Name of file to check
+        :type  file:  str
+
+        :returns:     0 - File name is not valid
+                      1 - File name is valid
+        :rtype:       int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -994,6 +1509,15 @@ class GXSYS:
     def write_in_dir(cls, dir):
         """
         Can I create files in this directory ?
+        
+        :param dir:  Name of directory to check
+        :type  dir:  str
+
+        :returns:    0 - Directory doesn't allow write of does not exist
+                     1 - Directory allows writes
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapSYS.write_in_dir(GXContext._get_tls_geo(), dir.encode())
         return ret_val
@@ -1004,6 +1528,14 @@ class GXSYS:
     def file_date(cls, file):
         """
         File creation date in decimal years.
+        
+        :param file:  File name
+        :type  file:  str
+
+        :returns:     Date in decimal years, `rDUMMY <geosoft.gxapi.rDUMMY>` if the file does not exist.
+        :rtype:       float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1019,6 +1551,14 @@ class GXSYS:
     def file_time(cls, file):
         """
         File creation time in decimal hours.
+        
+        :param file:  File name
+        :type  file:  str
+
+        :returns:     Date in decimal hours, `rDUMMY <geosoft.gxapi.rDUMMY>` if the file does not exist.
+        :rtype:       float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1034,6 +1574,14 @@ class GXSYS:
     def utc_file_date(cls, file):
         """
         File creation UTC date in decimal years.
+        
+        :param file:  File name
+        :type  file:  str
+
+        :returns:     Date in decimal years, `rDUMMY <geosoft.gxapi.rDUMMY>` if the file does not exist.
+        :rtype:       float
+
+        .. versionadded:: 7.0
 
         **Note:**
 
@@ -1049,6 +1597,14 @@ class GXSYS:
     def utc_file_time(cls, file):
         """
         File creation UTC time in decimal hours.
+        
+        :param file:  File name
+        :type  file:  str
+
+        :returns:     Date in decimal hours, `rDUMMY <geosoft.gxapi.rDUMMY>` if the file does not exist.
+        :rtype:       float
+
+        .. versionadded:: 7.0
 
         **Note:**
 
@@ -1068,6 +1624,11 @@ class GXSYS:
     def get_settings_meta(cls, meta):
         """
         Get the settings metadata object.
+        
+        :param meta:  `GXMETA <geosoft.gxapi.GXMETA>` object to store the settings metadata in
+        :type  meta:  GXMETA
+
+        .. versionadded:: 6.0
         """
         gxapi_cy.WrapSYS.get_settings_meta(GXContext._get_tls_geo(), meta._wrapper)
         
@@ -1078,6 +1639,11 @@ class GXSYS:
     def global_reset(cls, ini):
         """
         Reset the global parameters.
+        
+        :param ini:  New INI file name, if "", use default.
+        :type  ini:  str
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.global_reset(GXContext._get_tls_geo(), ini.encode())
         
@@ -1088,6 +1654,13 @@ class GXSYS:
     def global_set(cls, parm, set):
         """
         Set a global parameter setting.
+        
+        :param parm:  Name of the Parameter
+        :param set:   Setting
+        :type  parm:  str
+        :type  set:   str
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.global_set(GXContext._get_tls_geo(), parm.encode(), set.encode())
         
@@ -1098,6 +1671,11 @@ class GXSYS:
     def global_write(cls, ini):
         """
         Modify the global parameters.
+        
+        :param ini:  Global INI file, if "" use default.
+        :type  ini:  str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1113,6 +1691,17 @@ class GXSYS:
     def global_(cls, parm, setting):
         """
         Get a global parameter setting.
+        
+        :param parm:     Name of the Parameter
+        :param setting:  Setting returned
+        :type  parm:     str
+        :type  setting:  str_ref
+
+        :returns:        0 if parameter found.
+                         1 if parameter not found or not set.
+        :rtype:          int
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -1144,6 +1733,9 @@ class GXSYS:
         """
         Resets the GX_HELP settings in the geosoft.ini file
         after changes have been made.
+        
+
+        .. versionadded:: 5.1.8
         """
         gxapi_cy.WrapSYS.reset_settings(GXContext._get_tls_geo())
         
@@ -1154,6 +1746,11 @@ class GXSYS:
     def set_settings_meta(cls, meta):
         """
         Set the settings metadata object.
+        
+        :param meta:  `GXMETA <geosoft.gxapi.GXMETA>` object
+        :type  meta:  GXMETA
+
+        .. versionadded:: 6.0
         """
         gxapi_cy.WrapSYS.set_settings_meta(GXContext._get_tls_geo(), meta._wrapper)
         
@@ -1168,6 +1765,13 @@ class GXSYS:
     def check_arc_license(cls):
         """
         Check to see if a ESRI ArcEngine or ArcView license is available
+        
+
+        :returns:    1 - Licenced
+                  0 - Not licenced
+        :rtype:      int
+
+        .. versionadded:: 7.1
         """
         ret_val = gxapi_cy.WrapSYS.check_arc_license(GXContext._get_tls_geo())
         return ret_val
@@ -1178,6 +1782,14 @@ class GXSYS:
     def check_arc_license_ex(cls, version):
         """
         Check to see if a ESRI ArcEngine or ArcView license is available, returns type and version of available engine.
+        
+        :param version:  Version String
+        :type  version:  str_ref
+
+        :returns:        `ARC_LICENSE`
+        :rtype:          int
+
+        .. versionadded:: 9.0
         """
         ret_val, version.value = gxapi_cy.WrapSYS.check_arc_license_ex(GXContext._get_tls_geo(), version.value.encode())
         return ret_val
@@ -1188,6 +1800,17 @@ class GXSYS:
     def check_intrinsic(cls, cl, name):
         """
         Check to see if an intrinsic object is licensed
+        
+        :param cl:    Intrinsic Class Number
+        :param name:  Intrinsic Name (must be exact)
+        :type  cl:    int
+        :type  name:  str
+
+        :returns:     1 - Licenced
+                      0 - Not licenced
+        :rtype:       int
+
+        .. versionadded:: 6.0
         """
         ret_val = gxapi_cy.WrapSYS.check_intrinsic(GXContext._get_tls_geo(), cl, name.encode())
         return ret_val
@@ -1199,6 +1822,12 @@ class GXSYS:
         """
         Gets a global flag that indicates whether we are
         running within the geodist library
+        
+
+        :returns:    0 - Geodist not loaded, 1 - Geodist loaded
+        :rtype:      int
+
+        .. versionadded:: 6.3
         """
         ret_val = gxapi_cy.WrapSYS.get_geodist(GXContext._get_tls_geo())
         return ret_val
@@ -1209,6 +1838,11 @@ class GXSYS:
     def get_license_class(cls, cl):
         """
         Get the current application license class.
+        
+        :param cl:  Class String
+        :type  cl:  str_ref
+
+        .. versionadded:: 6.1
 
         **Note:**
 
@@ -1225,6 +1859,13 @@ class GXSYS:
     def get_licensed_user(cls, user, company):
         """
         Get the licensed user name and Company
+        
+        :param user:     User Name
+        :param company:  Company Name
+        :type  user:     str_ref
+        :type  company:  str_ref
+
+        .. versionadded:: 6.0
         """
         user.value, company.value = gxapi_cy.WrapSYS.get_licensed_user(GXContext._get_tls_geo(), user.value.encode(), company.value.encode())
         
@@ -1239,6 +1880,13 @@ class GXSYS:
     def add_lineage_parameter(cls, name, value):
         """
         Add a parameter to the current lineage object
+        
+        :param name:   Paramter Name
+        :param value:  Parameter Value
+        :type  name:   str
+        :type  value:  str
+
+        .. versionadded:: 7.0
         """
         gxapi_cy.WrapSYS.add_lineage_parameter(GXContext._get_tls_geo(), name.encode(), value.encode())
         
@@ -1249,6 +1897,13 @@ class GXSYS:
     def add_lineage_source(cls, source_type, source_name):
         """
         Add a source to the current lineage object
+        
+        :param source_type:  `SYS_LINEAGE_SOURCE`
+        :param source_name:  Source Name
+        :type  source_type:  int
+        :type  source_name:  str
+
+        .. versionadded:: 7.0
         """
         gxapi_cy.WrapSYS.add_lineage_source(GXContext._get_tls_geo(), source_type, source_name.encode())
         
@@ -1259,6 +1914,9 @@ class GXSYS:
     def clear_lineage_parameters(cls):
         """
         Clear all the lineage parameters
+        
+
+        .. versionadded:: 7.0
         """
         gxapi_cy.WrapSYS.clear_lineage_parameters(GXContext._get_tls_geo())
         
@@ -1269,6 +1927,9 @@ class GXSYS:
     def clear_lineage_sources(cls):
         """
         Clear all the lineage sources
+        
+
+        .. versionadded:: 7.0
         """
         gxapi_cy.WrapSYS.clear_lineage_sources(GXContext._get_tls_geo())
         
@@ -1279,6 +1940,13 @@ class GXSYS:
     def copy_geo_file(cls, data, dir):
         """
         Copy a Geosoft data file and all associated files to a new folder
+        
+        :param data:  File Name
+        :param dir:   Target directory
+        :type  data:  str
+        :type  dir:   str
+
+        .. versionadded:: 7.0
 
         **Note:**
 
@@ -1295,6 +1963,13 @@ class GXSYS:
     def backup_geo_file(cls, data, target):
         """
         Backup a Geosoft data file and all associated files to a temporary folder.
+        
+        :param data:    File Name
+        :param target:  Buffer to place the target name into
+        :type  data:    str
+        :type  target:  str_ref
+
+        .. versionadded:: 7.0
 
         **Note:**
 
@@ -1311,6 +1986,11 @@ class GXSYS:
     def remove_lineage_output(cls, output_name):
         """
         Remove an output from the current lineage object
+        
+        :param output_name:  Source Name
+        :type  output_name:  str
+
+        .. versionadded:: 7.0.1
         """
         gxapi_cy.WrapSYS.remove_lineage_output(GXContext._get_tls_geo(), output_name.encode())
         
@@ -1321,6 +2001,11 @@ class GXSYS:
     def remove_lineage_parameter(cls, name):
         """
         Remove a parameter in the current lineage object
+        
+        :param name:  Paramter Name
+        :type  name:  str
+
+        .. versionadded:: 7.0
         """
         gxapi_cy.WrapSYS.remove_lineage_parameter(GXContext._get_tls_geo(), name.encode())
         
@@ -1331,6 +2016,11 @@ class GXSYS:
     def remove_lineage_source(cls, source_name):
         """
         Remove a source from the current lineage object
+        
+        :param source_name:  Source Name
+        :type  source_name:  str
+
+        .. versionadded:: 7.0
         """
         gxapi_cy.WrapSYS.remove_lineage_source(GXContext._get_tls_geo(), source_name.encode())
         
@@ -1341,6 +2031,13 @@ class GXSYS:
     def restore_geo_file(cls, target, original):
         """
         Backup a Geosoft data file and all associated files to original location
+        
+        :param target:    Backup File Name
+        :param original:  Original file name
+        :type  target:    str
+        :type  original:  str
+
+        .. versionadded:: 7.0
 
         **Note:**
 
@@ -1357,6 +2054,11 @@ class GXSYS:
     def set_lineage_description(cls, description):
         """
         Set the description for the current lineage object
+        
+        :param description:  Description
+        :type  description:  str
+
+        .. versionadded:: 7.0
         """
         gxapi_cy.WrapSYS.set_lineage_description(GXContext._get_tls_geo(), description.encode())
         
@@ -1367,6 +2069,11 @@ class GXSYS:
     def set_lineage_display_name(cls, display_name):
         """
         Set the display name for the current lineage object
+        
+        :param display_name:  DisplayName
+        :type  display_name:  str
+
+        .. versionadded:: 7.0
         """
         gxapi_cy.WrapSYS.set_lineage_display_name(GXContext._get_tls_geo(), display_name.encode())
         
@@ -1377,6 +2084,11 @@ class GXSYS:
     def set_lineage_name(cls, name):
         """
         Set the name for the current lineage object
+        
+        :param name:  Name
+        :type  name:  str
+
+        .. versionadded:: 7.0
         """
         gxapi_cy.WrapSYS.set_lineage_name(GXContext._get_tls_geo(), name.encode())
         
@@ -1391,6 +2103,11 @@ class GXSYS:
     def clear_menus(cls, flag):
         """
         Clear all menus
+        
+        :param flag:  `SYS_MENU_CLEAR`
+        :type  flag:  int
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.clear_menus(GXContext._get_tls_geo(), flag)
         
@@ -1401,10 +2118,19 @@ class GXSYS:
     def get_loaded_menus(cls, lst_default, lst_loaded, lst_user):
         """
         Get the loaded menus.
+        
+        :param lst_default:  Default menus (typically a single entry based on product)
+        :param lst_loaded:   Loaded menus
+        :param lst_user:     Loaded user menus
+        :type  lst_default:  GXLST
+        :type  lst_loaded:   GXLST
+        :type  lst_user:     GXLST
+
+        .. versionadded:: 9.0
 
         **Note:**
 
-        The names of the LSTs contain the menus and the values contain any exclusions. Exlusions 
+        The names of the LSTs contain the menus and the values contain any exclusions. Exclusions 
         are semicolon separated top level menu names and/or toolbar.geobar file names.
         """
         gxapi_cy.WrapSYS.get_loaded_menus(GXContext._get_tls_geo(), lst_default._wrapper, lst_loaded._wrapper, lst_user._wrapper)
@@ -1416,10 +2142,19 @@ class GXSYS:
     def set_loaded_menus(cls, lst_default, lst_loaded, lst_user):
         """
         Load a list of menus
+        
+        :param lst_default:  Default menus (typically a single entry based on product, do not change the name returned by `get_loaded_menus <geosoft.gxapi.GXSYS.get_loaded_menus>`)
+        :param lst_loaded:   Loaded menus
+        :param lst_user:     Loaded user menus
+        :type  lst_default:  GXLST
+        :type  lst_loaded:   GXLST
+        :type  lst_user:     GXLST
+
+        .. versionadded:: 9.0
 
         **Note:**
 
-        The names of the LSTs contain the menus and the values contain any exclusions. Exlusions 
+        The names of the LSTs contain the menus and the values contain any exclusions. Exclusions 
         are semicolon separated top level menu names and/or toolbar.geobar file names.
         """
         gxapi_cy.WrapSYS.set_loaded_menus(GXContext._get_tls_geo(), lst_default._wrapper, lst_loaded._wrapper, lst_user._wrapper)
@@ -1431,6 +2166,11 @@ class GXSYS:
     def get_entitlement_rights(cls, lst_rights):
         """
         Get the Entitlement Rights
+        
+        :param lst_rights:  Rights
+        :type  lst_rights:  GXLST
+
+        .. versionadded:: 9.0
         """
         gxapi_cy.WrapSYS.get_entitlement_rights(GXContext._get_tls_geo(), lst_rights._wrapper)
         
@@ -1445,6 +2185,11 @@ class GXSYS:
     def generate_guid(cls, guid):
         """
         Genrates a GUID string (e.g. {4FEDE8BF-CDAB-430A-8026-1CCC0EC0A2EB})
+        
+        :param guid:  GUID
+        :type  guid:  str_ref
+
+        .. versionadded:: 8.4
         """
         guid.value = gxapi_cy.WrapSYS.generate_guid(GXContext._get_tls_geo(), guid.value.encode())
         
@@ -1455,6 +2200,11 @@ class GXSYS:
     def clipboard_to_file(cls, file):
         """
         Copy text from the clipboard to a file.
+        
+        :param file:  File name to place it into
+        :type  file:  str
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.clipboard_to_file(GXContext._get_tls_geo(), file.encode())
         
@@ -1465,6 +2215,12 @@ class GXSYS:
     def create_clipboard_ra(cls):
         """
         Create a `GXRA <geosoft.gxapi.GXRA>` to read text from the clipboard.
+        
+
+        :returns:    `GXRA <geosoft.gxapi.GXRA>` to use for reading.
+        :rtype:      GXRA
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1481,6 +2237,12 @@ class GXSYS:
     def create_clipboard_wa(cls):
         """
         Create a `GXWA <geosoft.gxapi.GXWA>` to write text on the clipboard.
+        
+
+        :returns:    `GXWA <geosoft.gxapi.GXWA>` to use for reading.
+        :rtype:      GXWA
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1497,6 +2259,15 @@ class GXSYS:
     def emf_object_size(cls, file, size_x, size_y):
         """
         Get the size of an EMF object
+        
+        :param file:    EMF File holding data
+        :param size_x:  Size X
+        :param size_y:  Size Y
+        :type  file:    str
+        :type  size_x:  float_ref
+        :type  size_y:  float_ref
+
+        .. versionadded:: 6.4
         """
         size_x.value, size_y.value = gxapi_cy.WrapSYS.emf_object_size(GXContext._get_tls_geo(), file.encode(), size_x.value, size_y.value)
         
@@ -1507,6 +2278,11 @@ class GXSYS:
     def file_to_clipboard(cls, file):
         """
         Copy a text file onto the clipboard as text.
+        
+        :param file:  File place into clipboard
+        :type  file:  str
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.file_to_clipboard(GXContext._get_tls_geo(), file.encode())
         
@@ -1517,6 +2293,13 @@ class GXSYS:
     def font_lst(cls, lst, which):
         """
         List all Windows and geosoft fonts.
+        
+        :param lst:    List Object
+        :param which:  `SYS_FONT`
+        :type  lst:    GXLST
+        :type  which:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1534,6 +2317,17 @@ class GXSYS:
         """
         Get the list of entry points that this assembly has
         exposed to Oasis montaj.
+        
+        :param gx:            Name of .NET GX assembly
+        :param entry_buffer:  Buffer to place list of entries in
+        :type  gx:            str
+        :type  entry_buffer:  str_ref
+
+        :returns:             0  success
+                              1  error.
+        :rtype:               int
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -1550,6 +2344,13 @@ class GXSYS:
     def send_general_message(cls, cl, info):
         """
         Send a general information message to all listners
+        
+        :param cl:    Message Class
+        :param info:  Message Info
+        :type  cl:    str
+        :type  info:  str
+
+        .. versionadded:: 6.3
         """
         gxapi_cy.WrapSYS.send_general_message(GXContext._get_tls_geo(), cl.encode(), info.encode())
         
@@ -1561,6 +2362,11 @@ class GXSYS:
         """
         This method writes out information to the output
         debugging log file (in temp folder) or output window.
+        
+        :param log:  String to Write out
+        :type  log:  str
+
+        .. versionadded:: 6.3
         """
         gxapi_cy.WrapSYS.write_debug_log(GXContext._get_tls_geo(), log.encode())
         
@@ -1571,6 +2377,11 @@ class GXSYS:
     def log_script_run(cls, location):
         """
         This method logs that a script was run
+        
+        :param location:  Location that launched the script
+        :type  location:  str
+
+        .. versionadded:: 9.2
         """
         gxapi_cy.WrapSYS.log_script_run(GXContext._get_tls_geo(), location.encode())
         
@@ -1585,6 +2396,12 @@ class GXSYS:
     def get_thread_id(cls):
         """
         Get the ID the current thread.
+        
+
+        :returns:    x - ID
+        :rtype:      int
+
+        .. versionadded:: 5.1.6
 
         **Note:**
 
@@ -1599,6 +2416,21 @@ class GXSYS:
     def run_multi_user_script(cls, script, users, iterations, wait_min_time, wait_max_time, ramp_up_time):
         """
         Execute a script using multithreaded users
+        
+        :param script:         Script to run
+        :param users:          Number of users to run
+        :param iterations:     Number of iterations to run (for each user)
+        :param wait_min_time:  Minimum wait time between iterations (0 for none)
+        :param wait_max_time:  Maximum wait time between iterations (0 for none)
+        :param ramp_up_time:   Ramp up time for users (0 for all users start immediatly)
+        :type  script:         str
+        :type  users:          int
+        :type  iterations:     int
+        :type  wait_min_time:  int
+        :type  wait_max_time:  int
+        :type  ramp_up_time:   int
+
+        .. versionadded:: 5.1.6
 
         **Note:**
 
@@ -1619,6 +2451,11 @@ class GXSYS:
     def clear_group(cls, group):
         """
         Clear current contents of a group
+        
+        :param group:  Group to clear
+        :type  group:  str
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.clear_group(GXContext._get_tls_geo(), group.encode())
         
@@ -1629,6 +2466,11 @@ class GXSYS:
     def clear_group_parm(cls, group):
         """
         Clears all paramters in a specified group.
+        
+        :param group:  String
+        :type  group:  str
+
+        .. versionadded:: 5.1.1
         """
         gxapi_cy.WrapSYS.clear_group_parm(GXContext._get_tls_geo(), group.encode())
         
@@ -1639,6 +2481,9 @@ class GXSYS:
     def clear_parm(cls):
         """
         Clears all paramters.
+        
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.clear_parm(GXContext._get_tls_geo())
         
@@ -1649,6 +2494,15 @@ class GXSYS:
     def default_int(cls, group, field, val):
         """
         Allows a default int to be set.
+        
+        :param group:  Group Name
+        :param field:  Parameter Name
+        :param val:    Int Value to Set
+        :type  group:  str
+        :type  field:  str
+        :type  val:    int
+
+        .. versionadded:: 6.0
 
         **Note:**
 
@@ -1664,6 +2518,15 @@ class GXSYS:
     def default_double(cls, group, field, val):
         """
         Allows a default real to be set.
+        
+        :param group:  Group Name
+        :param field:  Parameter Name
+        :param val:    Real Value to Set
+        :type  group:  str
+        :type  field:  str
+        :type  val:    float
+
+        .. versionadded:: 6.0
 
         **Note:**
 
@@ -1679,6 +2542,15 @@ class GXSYS:
     def default_string(cls, group, field, val):
         """
         Allows a default string to be set.
+        
+        :param group:  Group Name
+        :param field:  Parameter Name
+        :param val:    String to Set it To
+        :type  group:  str
+        :type  field:  str
+        :type  val:    str
+
+        .. versionadded:: 6.0
 
         **Note:**
 
@@ -1694,6 +2566,23 @@ class GXSYS:
     def get_pattern(cls, group, pat, size, thick, dense, col, back_col):
         """
         Gets pattern parameters from the parameter block.
+        
+        :param group:     Input group name
+        :param pat:       Pattern
+        :param size:      Size,
+        :param thick:     Thick (0-100)
+        :param dense:     Density,
+        :param col:       Pattern Color
+        :param back_col:  Background Color
+        :type  group:     str
+        :type  pat:       int_ref
+        :type  size:      float_ref
+        :type  thick:     int_ref
+        :type  dense:     float_ref
+        :type  col:       int_ref
+        :type  back_col:  int_ref
+
+        .. versionadded:: 6.4
 
         **Note:**
 
@@ -1720,6 +2609,13 @@ class GXSYS:
     def get_reg(cls, reg, group):
         """
         Get `GXREG <geosoft.gxapi.GXREG>` parameters.
+        
+        :param reg:    `GXREG <geosoft.gxapi.GXREG>` to add parameters to
+        :param group:  Group name wanted
+        :type  reg:    GXREG
+        :type  group:  str
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.get_reg(GXContext._get_tls_geo(), reg._wrapper, group.encode())
         
@@ -1730,6 +2626,15 @@ class GXSYS:
     def gt_string(cls, group, field, buff):
         """
         This method returns a string in the parameter block.
+        
+        :param group:  Group Name
+        :param field:  Parameter Name
+        :param buff:   Buffer to place the string into
+        :type  group:  str
+        :type  field:  str
+        :type  buff:   str_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1745,6 +2650,17 @@ class GXSYS:
     def exist_int(cls, group, field):
         """
         This method checks to see if a int parameter exists.
+        
+        :param group:  Group Name
+        :param field:  Parameter Name
+        :type  group:  str
+        :type  field:  str
+
+        :returns:      1 - Yes
+                       0 - No
+        :rtype:        int
+
+        .. versionadded:: 7.2
         """
         ret_val = gxapi_cy.WrapSYS.exist_int(GXContext._get_tls_geo(), group.encode(), field.encode())
         return ret_val
@@ -1755,6 +2671,17 @@ class GXSYS:
     def exist_double(cls, group, field):
         """
         This method checks to see if a real parameter exists.
+        
+        :param group:  Group Name
+        :param field:  Parameter Name
+        :type  group:  str
+        :type  field:  str
+
+        :returns:      1 - Yes
+                       0 - No
+        :rtype:        int
+
+        .. versionadded:: 7.2
         """
         ret_val = gxapi_cy.WrapSYS.exist_double(GXContext._get_tls_geo(), group.encode(), field.encode())
         return ret_val
@@ -1765,6 +2692,17 @@ class GXSYS:
     def exist_string(cls, group, field):
         """
         This method checks to see if a string parameter exists.
+        
+        :param group:  Group Name
+        :param field:  Parameter Name
+        :type  group:  str
+        :type  field:  str
+
+        :returns:      1 - Yes
+                       0 - No
+        :rtype:        int
+
+        .. versionadded:: 7.2
         """
         ret_val = gxapi_cy.WrapSYS.exist_string(GXContext._get_tls_geo(), group.encode(), field.encode())
         return ret_val
@@ -1775,6 +2713,16 @@ class GXSYS:
     def get_int(cls, group, field):
         """
         This method returns an int from the parameter block.
+        
+        :param group:  Group Name
+        :param field:  Parameter Name
+        :type  group:  str
+        :type  field:  str
+
+        :returns:      Int Value, `iDUMMY <geosoft.gxapi.iDUMMY>` if the parameter is not set.
+        :rtype:        int
+
+        .. versionadded:: 6.0.1
         """
         ret_val = gxapi_cy.WrapSYS.get_int(GXContext._get_tls_geo(), group.encode(), field.encode())
         return ret_val
@@ -1785,6 +2733,17 @@ class GXSYS:
     def get_yes_no(cls, group, field):
         """
         Check a YES/NO Setting
+        
+        :param group:  Group Name
+        :param field:  Parameter Name
+        :type  group:  str
+        :type  field:  str
+
+        :returns:      1 - if first char in setting is a "Y" or"y"
+                       0 - Otherwise
+        :rtype:        int
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapSYS.get_yes_no(GXContext._get_tls_geo(), group.encode(), field.encode())
         return ret_val
@@ -1795,6 +2754,15 @@ class GXSYS:
     def replace_string(cls, str_val, output, group):
         """
         Replace "% %" tokens in a string with parameter values
+        
+        :param str_val:  String to filter replace
+        :param output:   Output string
+        :param group:    Default group name
+        :type  str_val:  str
+        :type  output:   str_ref
+        :type  group:    str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1811,6 +2779,13 @@ class GXSYS:
     def load_parm(cls, file, groups):
         """
         Reads parameters from a file.
+        
+        :param file:    Name of the File to read from
+        :param groups:  Group Name to write read ("" for all groups)
+        :type  file:    str
+        :type  groups:  str
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.load_parm(GXContext._get_tls_geo(), file.encode(), groups.encode())
         
@@ -1821,6 +2796,16 @@ class GXSYS:
     def get_double(cls, group, field):
         """
         This method returns a real from the parameter block.
+        
+        :param group:  Group Name
+        :param field:  Parameter Name
+        :type  group:  str
+        :type  field:  str
+
+        :returns:      Real Value, `rDUMMY <geosoft.gxapi.rDUMMY>` if parameter not set.
+        :rtype:        float
+
+        .. versionadded:: 6.0.1
         """
         ret_val = gxapi_cy.WrapSYS.get_double(GXContext._get_tls_geo(), group.encode(), field.encode())
         return ret_val
@@ -1831,6 +2816,15 @@ class GXSYS:
     def save_parm(cls, file, mode, groups):
         """
         Writes out one group (or all groups) to a file.
+        
+        :param file:    Name of the File
+        :param mode:    0 - New file, 1 - Append
+        :param groups:  Group Name to write out ("" for all groups)
+        :type  file:    str
+        :type  mode:    int
+        :type  groups:  str
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.save_parm(GXContext._get_tls_geo(), file.encode(), mode, groups.encode())
         
@@ -1841,6 +2835,13 @@ class GXSYS:
     def filter_parm_group(cls, group, add):
         """
         Controls filtering of specific group during logging.
+        
+        :param group:  Group Name
+        :param add:    0 - Clear filter, 1 - Add filter
+        :type  group:  str
+        :type  add:    int
+
+        .. versionadded:: 9.1
 
         **Note:**
 
@@ -1855,6 +2856,15 @@ class GXSYS:
     def set_int(cls, group, field, val):
         """
         This method sets an int in the parameter block.
+        
+        :param group:  Group Name
+        :param field:  Parameter Name
+        :param val:    Int Value to Set
+        :type  group:  str
+        :type  field:  str
+        :type  val:    int
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.set_int(GXContext._get_tls_geo(), group.encode(), field.encode(), val)
         
@@ -1865,6 +2875,23 @@ class GXSYS:
     def set_pattern(cls, group, pat, size, thick, dense, col, back_col):
         """
         Sets pattern parameters in the parameter block.
+        
+        :param group:     Group Name
+        :param pat:       Pattern
+        :param size:      Size. Input `GS_R8DM <geosoft.gxapi.GS_R8DM>` to use default
+        :param thick:     Thickness (0-100).  Input `GS_S4DM <geosoft.gxapi.GS_S4DM>` to use default
+        :param dense:     Density. Input `GS_R8DM <geosoft.gxapi.GS_R8DM>` to use default
+        :param col:       Pattern Color
+        :param back_col:  Background Color. Can be `C_TRANSPARENT <geosoft.gxapi.C_TRANSPARENT>`
+        :type  group:     str
+        :type  pat:       int
+        :type  size:      float
+        :type  thick:     int
+        :type  dense:     float
+        :type  col:       int
+        :type  back_col:  int
+
+        .. versionadded:: 6.4
 
         **Note:**
 
@@ -1892,6 +2919,15 @@ class GXSYS:
     def set_double(cls, group, field, val):
         """
         This method Sets a real in the parameter block.
+        
+        :param group:  Group Name
+        :param field:  Parameter Name
+        :param val:    Real
+        :type  group:  str
+        :type  field:  str
+        :type  val:    float
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.set_double(GXContext._get_tls_geo(), group.encode(), field.encode(), val)
         
@@ -1902,6 +2938,11 @@ class GXSYS:
     def set_reg(cls, reg):
         """
         Copy contents of a `GXREG <geosoft.gxapi.GXREG>` to current parameters.
+        
+        :param reg:  `GXREG <geosoft.gxapi.GXREG>` object
+        :type  reg:  GXREG
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.set_reg(GXContext._get_tls_geo(), reg._wrapper)
         
@@ -1912,6 +2953,15 @@ class GXSYS:
     def set_string(cls, group, field, val):
         """
         This method sets a string in the parameter block.
+        
+        :param group:  Group Name
+        :param field:  Parameter Name
+        :param val:    String to Set it To
+        :type  group:  str
+        :type  field:  str
+        :type  val:    str
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.set_string(GXContext._get_tls_geo(), group.encode(), field.encode(), val.encode())
         
@@ -1929,6 +2979,13 @@ class GXSYS:
         GX code to check if the user has asked the script
         to stop running. This method should be called by
         any GX program that may take a while to complete.
+        
+
+        :returns:    0 - No
+                  1 - Yes, Terminate processing.
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapSYS.check_stop(GXContext._get_tls_geo())
         return ret_val
@@ -1939,6 +2996,10 @@ class GXSYS:
     def prog_state(cls):
         """
         Return current progress state (On/Off)
+        
+        :rtype:      int
+
+        .. versionadded:: 7.2
 
         **Note:**
 
@@ -1963,6 +3024,13 @@ class GXSYS:
         This method allows you to name the current process being
         displayed by the progress bar. This method has no affect
         if no progress bar exists.
+        
+        :param name:   New Process Name
+        :param reset:  0 - Change the Name but do not change the percentage 1 - Change the Name and Reset Percent to 0 2 - Change the Name but no Percent Bar
+        :type  name:   str
+        :type  reset:  int
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.prog_name(GXContext._get_tls_geo(), name.encode(), reset)
         
@@ -1975,6 +3043,11 @@ class GXSYS:
         This method allows you to turn on the Progress BAR ON/OFF.
         Once the progress bar is on, use the UpdateProg method
         to drive it.
+        
+        :param on:  0 - Turn Progress Bar OFF 1 - Turn Progress Bar ON
+        :type  on:  int
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.progress(GXContext._get_tls_geo(), on)
         
@@ -1987,6 +3060,11 @@ class GXSYS:
         This method drives the Progress Bar. It is passed
         a percentage and will update the bar to reflect that
         percentage.
+        
+        :param perc:  Percentage Completed (0-100).
+        :type  perc:  int
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.prog_update(GXContext._get_tls_geo(), perc)
         
@@ -1997,6 +3075,13 @@ class GXSYS:
     def prog_update_l(cls, v1, v2):
         """
         Updates progress bar based on count and maxcount.
+        
+        :param v1:  Count
+        :param v2:  Max count >= count
+        :type  v1:  int
+        :type  v2:  int
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.prog_update_l(GXContext._get_tls_geo(), v1, v2)
         
@@ -2011,6 +3096,13 @@ class GXSYS:
     def get_sys_info(cls, sys_info, info):
         """
         Get system information
+        
+        :param sys_info:  `SYS_INFO`
+        :param info:      Returned setting
+        :type  sys_info:  int
+        :type  info:      str_ref
+
+        .. versionadded:: 5.0
         """
         info.value = gxapi_cy.WrapSYS.get_sys_info(GXContext._get_tls_geo(), sys_info, info.value.encode())
         
@@ -2021,6 +3113,21 @@ class GXSYS:
     def registry_get_val(cls, domain, key, sub_key, value):
         """
         Get a registry value
+        
+        :param domain:   `REG_DOMAIN`
+        :param key:      Key to set
+        :param sub_key:  Value name within key
+        :param value:    String for value data
+        :type  domain:   int
+        :type  key:      str
+        :type  sub_key:  str
+        :type  value:    str_ref
+
+        :returns:        0 if value exists
+                         1 if value does not exist
+        :rtype:          int
+
+        .. versionadded:: 6.0.1
         """
         ret_val, value.value = gxapi_cy.WrapSYS.registry_get_val(GXContext._get_tls_geo(), domain, key.encode(), sub_key.encode(), value.value.encode())
         return ret_val
@@ -2031,6 +3138,17 @@ class GXSYS:
     def registry_delete_key(cls, domain, key):
         """
         Delete a registry value
+        
+        :param domain:  `REG_DOMAIN`
+        :param key:     Key to delete
+        :type  domain:  int
+        :type  key:     str
+
+        :returns:       0 - Ok
+                        1 - Error
+        :rtype:         int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2045,6 +3163,19 @@ class GXSYS:
     def registry_delete_val(cls, domain, key, value_name):
         """
         Delete a registry value
+        
+        :param domain:      `REG_DOMAIN`
+        :param key:         Key
+        :param value_name:  Name of value to delete
+        :type  domain:      int
+        :type  key:         str
+        :type  value_name:  str
+
+        :returns:           0 - Ok
+                            1 - Error
+        :rtype:             int
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapSYS.registry_delete_val(GXContext._get_tls_geo(), domain, key.encode(), value_name.encode())
         return ret_val
@@ -2055,6 +3186,17 @@ class GXSYS:
     def registry_set_val(cls, domain, key, sub_key, value):
         """
         Set/create a registry value
+        
+        :param domain:   `REG_DOMAIN`
+        :param key:      Key to set
+        :param sub_key:  Name of Subkey within key
+        :param value:    Value for Subkey
+        :type  domain:   int
+        :type  key:      str
+        :type  sub_key:  str
+        :type  value:    str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2074,6 +3216,11 @@ class GXSYS:
     def destroy_ptmp(cls, ptmp):
         """
         Destroy PTMP.
+        
+        :param ptmp:  PTMP object to destroy
+        :type  ptmp:  int
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.destroy_ptmp(GXContext._get_tls_geo(), ptmp)
         
@@ -2084,6 +3231,11 @@ class GXSYS:
     def get_ptmp(cls, ptmp):
         """
         Get temporary saves copy of parameter block.
+        
+        :param ptmp:  Saved with Save_PTMP_SYS
+        :type  ptmp:  int
+
+        .. versionadded:: 5.0
 
         .. seealso::
 
@@ -2098,6 +3250,14 @@ class GXSYS:
     def save_ptmp(cls, groups):
         """
         Save a temporary copy of the parameter block.
+        
+        :param groups:  Group Name to save, "" for everything.
+        :type  groups:  str
+
+        :returns:       PTMP handle.
+        :rtype:         int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2122,6 +3282,11 @@ class GXSYS:
         This method terminates the execution of a script. A message
         giving the reason for the abort will be displayed along with
         the line number where we stopped in the script.
+        
+        :param message:  Message to display
+        :type  message:  str
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.abort(GXContext._get_tls_geo(), message.encode())
         
@@ -2132,6 +3297,11 @@ class GXSYS:
     def assert_(cls, exp):
         """
         Abort with GX line number if not true.
+        
+        :param exp:  Expression to evaluate (0 aborts)
+        :type  exp:  int
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.assert_(GXContext._get_tls_geo(), exp)
         
@@ -2143,6 +3313,9 @@ class GXSYS:
         """
         This method terminates the execution of a script in  a regular
         fashion with no error messages displayed.
+        
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.exit_(GXContext._get_tls_geo())
         
@@ -2155,6 +3328,9 @@ class GXSYS:
         This method indicates that the GX program terminated without
         doing anything of interest and should be ignored.  In
         particular, the GX will not be logged in a recorded GS.
+        
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.cancel_(GXContext._get_tls_geo())
         
@@ -2169,6 +3345,14 @@ class GXSYS:
     def delay(cls, secs):
         """
         Idle delay method.
+        
+        :param secs:  Decimal Seconds to delay
+        :type  secs:  float
+
+        :returns:     Success if the delay has elapsed.
+        :rtype:       int
+
+        .. versionadded:: 6.0
         """
         ret_val = gxapi_cy.WrapSYS.delay(GXContext._get_tls_geo(), secs)
         return ret_val
@@ -2179,6 +3363,18 @@ class GXSYS:
     def get_timer(cls, flag, start_time, elapsed_time):
         """
         Return the elapsed time since the established time.
+        
+        :param flag:          1 - set start time, 0 - return elapsed time
+        :param start_time:    Start time in seconds
+        :param elapsed_time:  Elapsed time in seconds
+        :type  flag:          int
+        :type  start_time:    float_ref
+        :type  elapsed_time:  float_ref
+
+        :returns:             Success if the delay has elapsed.
+        :rtype:               int
+
+        .. versionadded:: 6.0
 
         **Note:**
 
@@ -2199,6 +3395,13 @@ class GXSYS:
     def display_help(cls, group, topic):
         """
         Display the help dialog with the specified topic highlighted
+        
+        :param group:  Group string to lookup in gxhelp.ini
+        :param topic:  Index string to lookup in gxhelp.ini
+        :type  group:  str
+        :type  topic:  str
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.display_help(GXContext._get_tls_geo(), group.encode(), topic.encode())
         
@@ -2209,6 +3412,13 @@ class GXSYS:
     def display_help_topic(cls, file, topic):
         """
         Display the help dialog without topic lookup in INI files
+        
+        :param file:   Help File (blank for default)
+        :param topic:  Help Topic
+        :type  file:   str
+        :type  topic:  str
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.display_help_topic(GXContext._get_tls_geo(), file.encode(), topic.encode())
         
@@ -2219,6 +3429,13 @@ class GXSYS:
     def display_int(cls, title, int):
         """
         Display an integer.
+        
+        :param title:  Title of the Window
+        :param int:    Number
+        :type  title:  str
+        :type  int:    int
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.display_int(GXContext._get_tls_geo(), title.encode(), int)
         
@@ -2229,6 +3446,13 @@ class GXSYS:
     def display_message(cls, title, message):
         """
         Display a user message.
+        
+        :param title:    Title of the Window
+        :param message:  Message String
+        :type  title:    str
+        :type  message:  str
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.display_message(GXContext._get_tls_geo(), title.encode(), message.encode())
         
@@ -2239,6 +3463,13 @@ class GXSYS:
     def display_double(cls, title, real):
         """
         Display a real number.
+        
+        :param title:  Title of the Window
+        :param real:   Number
+        :type  title:  str
+        :type  real:   float
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.display_double(GXContext._get_tls_geo(), title.encode(), real)
         
@@ -2250,6 +3481,17 @@ class GXSYS:
         """
         Display a YES/NO type question. This method waits
         for the user to hit YES or NO.
+        
+        :param title:    Title of the window
+        :param message:  Message String
+        :type  title:    str
+        :type  message:  str
+
+        :returns:        0 - user selected No
+                         1 - user selected YES
+        :rtype:          int
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapSYS.display_question(GXContext._get_tls_geo(), title.encode(), message.encode())
         return ret_val
@@ -2261,6 +3503,18 @@ class GXSYS:
         """
         Display a YES/NO/CANCEL type question. This method waits
         for the user to hit YES or NO or CANCEL.
+        
+        :param title:    Title of the window
+        :param message:  Message String
+        :type  title:    str
+        :type  message:  str
+
+        :returns:        0 - user selected No
+                         1 - user selected YES
+                         2 - user selected CANCEL
+        :rtype:          int
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapSYS.display_question_with_cancel(GXContext._get_tls_geo(), title.encode(), message.encode())
         return ret_val
@@ -2271,6 +3525,38 @@ class GXSYS:
     def display_task_dialog_ui(cls, title, main_instruction, content, common_buttons, custom_button_lst, icon, footer, footer_icon, verification_check_text, verification_checked, expanded_information, collapsed_control_text, expanded_control_text):
         """
         Show a Windows TaskDialog UI (see https://msdn.microsoft.com/en-us/library/windows/desktop/bb760441(v=vs.85).aspx).
+        
+        :param title:                    Title
+        :param main_instruction:         Main instruction (empty string for none)
+        :param content:                  Content (empty string for none)
+        :param common_buttons:           Common Buttons, one of `TD_BUTTON`
+        :param custom_button_lst:        Optional `GXLST <geosoft.gxapi.GXLST>` of custom buttons. Name in `GXLST <geosoft.gxapi.GXLST>` will be used for button text, while value should be an int to return. Pass (`GXLST <geosoft.gxapi.GXLST>`)0 to only use standard button flags.
+        :param icon:                     Icon `TD_ICON`
+        :param footer:                   Footer (empty string for none)
+        :param footer_icon:              Footer Icon `TD_ICON`
+        :param verification_check_text:  Verification checkbox text (empty string for none)
+        :param verification_checked:     Verification checkbox checked (in/out)
+        :param expanded_information:     Expanded information (empty string for none)
+        :param collapsed_control_text:   Collapsed control text for expanded information (empty string for default; 'More')
+        :param expanded_control_text:    Expanded control text for expanded information (empty string for default; 'Less')
+        :type  title:                    str
+        :type  main_instruction:         str
+        :type  content:                  str
+        :type  common_buttons:           int
+        :type  custom_button_lst:        GXLST
+        :type  icon:                     int
+        :type  footer:                   str
+        :type  footer_icon:              int
+        :type  verification_check_text:  str
+        :type  verification_checked:     int_ref
+        :type  expanded_information:     str
+        :type  collapsed_control_text:   str
+        :type  expanded_control_text:    str
+
+        :returns:                        Button ID. One of `TD_ID` or the int value from `GXLST <geosoft.gxapi.GXLST>` of custom buttons.
+        :rtype:                          int
+
+        .. versionadded:: 9.3
         """
         ret_val, verification_checked.value = gxapi_cy.WrapSYS.display_task_dialog_ui(GXContext._get_tls_geo(), title.encode(), main_instruction.encode(), content.encode(), common_buttons, custom_button_lst._wrapper, icon, footer.encode(), footer_icon, verification_check_text.encode(), verification_checked.value, expanded_information.encode(), collapsed_control_text.encode(), expanded_control_text.encode())
         return ret_val
@@ -2281,6 +3567,13 @@ class GXSYS:
     def interactive(cls):
         """
         Checks to see if you should run interactively.
+        
+
+        :returns:    0 - Run in batch mode only
+                  1 - Run Interactively only
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapSYS.interactive(GXContext._get_tls_geo())
         return ret_val
@@ -2291,6 +3584,17 @@ class GXSYS:
     def prompt(cls, title, result):
         """
         Asks the User to enter a string.
+        
+        :param title:   Title of the window
+        :param result:  Buffer to place the user's string
+        :type  title:   str
+        :type  result:  str_ref
+
+        :returns:       0 - User hit OK
+                        1 - user hit CANCEL
+        :rtype:         int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2306,6 +3610,18 @@ class GXSYS:
     def script(cls):
         """
         Checks to see if we are running inside OMS (script mode)
+        
+
+        :returns:    0 - Normal mode
+                  1 - Scripting mode
+                  
+                  A number of functions can only be run from inside Oasis montaj
+                  (such as `GXEMAP.get_display_area_raw <geosoft.gxapi.GXEMAP.get_display_area_raw>`), because they require an actual
+                  window object, such as an editable database or map. Use this
+                  function to prevent calls
+        :rtype:      int
+
+        .. versionadded:: 6.0.1
         """
         ret_val = gxapi_cy.WrapSYS.script(GXContext._get_tls_geo())
         return ret_val
@@ -2316,6 +3632,13 @@ class GXSYS:
     def script_record(cls):
         """
         Checks to see if we are in scripting recording mode
+        
+
+        :returns:    0 - Normal mode
+                  1 - Recording mode
+        :rtype:      int
+
+        .. versionadded:: 6.3
         """
         ret_val = gxapi_cy.WrapSYS.script_record(GXContext._get_tls_geo())
         return ret_val
@@ -2326,6 +3649,11 @@ class GXSYS:
     def set_cursor(cls, cursor):
         """
         Set the cursor on the display.
+        
+        :param cursor:  Cursor Names
+        :type  cursor:  str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2347,6 +3675,11 @@ class GXSYS:
         """
         Display a message on the information line at the left
         bottom corner of the OAISIS montaj application.
+        
+        :param message:  Message String
+        :type  message:  str
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapSYS.set_info_line(GXContext._get_tls_geo(), message.encode())
         
@@ -2357,6 +3690,11 @@ class GXSYS:
     def set_interactive(cls, mode):
         """
         Sets the interactive mode.
+        
+        :param mode:  0 - interactive off 1 - interative on
+        :type  mode:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2380,6 +3718,11 @@ class GXSYS:
     def get_workspace_reg(cls, reg):
         """
         Get a copy of the workspace `GXREG <geosoft.gxapi.GXREG>`;
+        
+        :param reg:  `GXREG <geosoft.gxapi.GXREG>` object
+        :type  reg:  GXREG
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2401,6 +3744,11 @@ class GXSYS:
     def set_workspace_reg(cls, reg):
         """
         Set the workspace `GXREG <geosoft.gxapi.GXREG>`;
+        
+        :param reg:  `GXREG <geosoft.gxapi.GXREG>` object
+        :type  reg:  GXREG
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2427,6 +3775,15 @@ class GXSYS:
         """
         Encrypts a string for secure storage in configuration files
         or in the workspace parameters.
+        
+        :param input:   Input string for encryption.
+        :param output:  Output buffer for encrypted result.
+        :param key:     `SYS_ENCRYPTION_KEY`
+        :type  input:   str
+        :type  output:  str_ref
+        :type  key:     int
+
+        .. versionadded:: 9.0
         """
         output.value = gxapi_cy.WrapSYS.encrypt_string(GXContext._get_tls_geo(), input.encode(), output.value.encode(), key)
         
@@ -2437,6 +3794,15 @@ class GXSYS:
     def decrypt_string(cls, input, output, key):
         """
         Decrypts a string that has been previously encrypted by `encrypt_string <geosoft.gxapi.GXSYS.encrypt_string>`.
+        
+        :param input:   Input string for decryption.
+        :param output:  Output buffer for decrypted result.
+        :param key:     `SYS_ENCRYPTION_KEY`
+        :type  input:   str
+        :type  output:  str_ref
+        :type  key:     int
+
+        .. versionadded:: 9.0
         """
         output.value = gxapi_cy.WrapSYS.decrypt_string(GXContext._get_tls_geo(), input.encode(), output.value.encode(), key)
         
@@ -2447,6 +3813,14 @@ class GXSYS:
     def is_encrypted_string(cls, input):
         """
         Checks whether the specified string was encrypted by `encrypt_string <geosoft.gxapi.GXSYS.encrypt_string>`.
+        
+        :param input:  Input string to inspect.
+        :type  input:  str
+
+        :returns:      0 (false) or non-zero (true)
+        :rtype:        int
+
+        .. versionadded:: 9.0
         """
         ret_val = gxapi_cy.WrapSYS.is_encrypted_string(GXContext._get_tls_geo(), input.encode())
         return ret_val
@@ -2461,6 +3835,9 @@ class GXSYS:
     def disable_gx_debugger(cls):
         """
         Disable GX Debugger `GXGUI <geosoft.gxapi.GXGUI>` if active
+        
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2475,6 +3852,13 @@ class GXSYS:
     def enable_gx_debugger(cls, src_dir, first_gx):
         """
         Enable GX Debugger `GXGUI <geosoft.gxapi.GXGUI>`
+        
+        :param src_dir:   Path that will be scanned recursively for GXC source files
+        :param first_gx:  Name of gx where first breakpoint should be set
+        :type  src_dir:   str
+        :type  first_gx:  str
+
+        .. versionadded:: 5.0
 
         **Note:**
 

@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -68,6 +67,14 @@ class GXUNC:
     def is_valid_utf16_char(cls, ch):
         """
         Check if the UTF-16 value is a valid Unicode character code point.
+        
+        :param ch:  UTF-16 value (32-bit int, lower 16 bits used, upper bits reserved for future use)
+        :type  ch:  int
+
+        :returns:    `GEO_BOOL`
+        :rtype:      int
+
+        .. versionadded:: 6.2
         """
         ret_val = gxapi_cy.WrapUNC.is_valid_utf16_char(GXContext._get_tls_geo(), ch)
         return ret_val
@@ -78,6 +85,18 @@ class GXUNC:
     def valid_symbol(cls, face, geofont, number):
         """
         See if a Symbol number is valid in a particular font.
+        
+        :param face:     Face name (undecorated)
+        :param geofont:  Geosoft font? `GEO_BOOL`
+        :param number:   Symbol number
+        :type  face:     str
+        :type  geofont:  int
+        :type  number:   int
+
+        :returns:        `GEO_BOOL`
+        :rtype:          int
+
+        .. versionadded:: 6.2
         """
         ret_val = gxapi_cy.WrapUNC.valid_symbol(GXContext._get_tls_geo(), face.encode(), geofont, number)
         return ret_val
@@ -88,6 +107,13 @@ class GXUNC:
     def utf16_val_to_str(cls, ch, str_val):
         """
         Convert a UTF-16 value to a UTF-8 encoded string.
+        
+        :param ch:       UTF-16 value (32-bit int, lower 16 bits used, upper bits reserved for future use)
+        :param str_val:  Converted string
+        :type  ch:       int
+        :type  str_val:  str_ref
+
+        .. versionadded:: 6.2
 
         **Note:**
 
@@ -103,6 +129,15 @@ class GXUNC:
         """
         High performance method to see if a set of symbols
         are valid in a particular font.
+        
+        :param vv:       `GXVV <geosoft.gxapi.GXVV>` of symbols
+        :param face:     Face name (undecorated)
+        :param geofont:  Geosoft font? `GEO_BOOL`
+        :type  vv:       GXVV
+        :type  face:     str
+        :type  geofont:  int
+
+        .. versionadded:: 6.2
 
         **Note:**
 

@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -63,6 +62,25 @@ class GXMVU:
     def arrow(cls, mview, hx, hy, tx, ty, ratio, angle, type):
         """
         Draw an arrow.
+        
+        :param mview:  View
+        :param hx:     Head X location
+        :param hy:     Head Y location
+        :param tx:     Tail X location
+        :param ty:     Tail Y location
+        :param ratio:  See `MVU_ARROW` definitions for explanation
+        :param angle:  Angle of barbs with respect to the tail in degrees.
+        :param type:   `MVU_ARROW`
+        :type  mview:  GXMVIEW
+        :type  hx:     float
+        :type  hy:     float
+        :type  tx:     float
+        :type  ty:     float
+        :type  ratio:  float
+        :type  angle:  float
+        :type  type:   int
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapMVU.arrow(GXContext._get_tls_geo(), mview._wrapper, hx, hy, tx, ty, ratio, angle, type)
         
@@ -73,6 +91,31 @@ class GXMVU:
     def arrow_vector_vv(cls, mview, vv_x, vv_y, vv_dx, vv_dy, scale, pos, size, style, point, thickness):
         """
         Draw arrow vectors based on input VVs.
+        
+        :param mview:      View
+        :param vv_x:       X locations
+        :param vv_y:       Y locations
+        :param vv_dx:      X Vector value (can be negative)
+        :param vv_dy:      Y Vector value (can be negative)
+        :param scale:      Scaling (units/mm)
+        :param pos:        `MVU_VPOS`
+        :param size:       `MVU_VSIZE`
+        :param style:      `MVU_VSTYLE`
+        :param point:      `MVU_VPOINT`
+        :param thickness:  Line thickness (can be Dummy)
+        :type  mview:      GXMVIEW
+        :type  vv_x:       GXVV
+        :type  vv_y:       GXVV
+        :type  vv_dx:      GXVV
+        :type  vv_dy:      GXVV
+        :type  scale:      float
+        :type  pos:        int
+        :type  size:       int
+        :type  style:      int
+        :type  point:      int
+        :type  thickness:  float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -92,6 +135,65 @@ class GXMVU:
     def bar_chart(cls, mview, group_name, data, line, x_chan, list, x_title, x_txt_size, y_title, y_txt_size, bar_title, bar_txt_size, bar_width, dist_fid, label, tick, right_axis, top_axis, bottom_axis, surround, left, bottom, right, top, xm, ym, widthm, heightm):
         """
         Plot bar chart on a map.
+        
+        :param mview:         View
+        :param group_name:    Group name
+        :param data:          Database handle
+        :param line:          Line handle
+        :param x_chan:        Horizontal (X) axis' channel name
+        :param list:          List of channel names (comma separated)
+        :param x_title:       X axis title
+        :param x_txt_size:    Text size for X axis
+        :param y_title:       Y axis title
+        :param y_txt_size:    Text size for Y axis
+        :param bar_title:     Overall chart title
+        :param bar_txt_size:  Text size for overall title
+        :param bar_width:     Bar width in mm
+        :param dist_fid:      Distance based (1) or fiducial based (0)
+        :param label:         `BARCHART_LABEL`
+        :param tick:          Draw ticks along X axis (1) or not (0)
+        :param right_axis:    Draw right vertical axis (1) or not
+        :param top_axis:      Draw top horizontal axis (1)
+        :param bottom_axis:   Draw bottom horizontal axis (1) or not
+        :param surround:      Draw surronding box (1) or not (0) The following 4 parameters are required if drawing the surronding box
+        :param left:          Width in mm between left Y axis of bar chart with left surronding line
+        :param bottom:        Width in mm between bottom X axis of bar chart with bottom surronding line
+        :param right:         Width in mm between right Y axis of bar chart with right surronding line
+        :param top:           Width in mm between top X axis of bar chart with top surronding line
+        :param xm:            X in mm (bottom left corner of bar chart)
+        :param ym:            Y in mm (bottom left corner of bar chart)
+        :param widthm:        Width of the bar chart in mm
+        :param heightm:       Height of the bar chart in mm
+        :type  mview:         GXMVIEW
+        :type  group_name:    str
+        :type  data:          GXDB
+        :type  line:          int
+        :type  x_chan:        str
+        :type  list:          str
+        :type  x_title:       str
+        :type  x_txt_size:    float
+        :type  y_title:       str
+        :type  y_txt_size:    float
+        :type  bar_title:     str
+        :type  bar_txt_size:  float
+        :type  bar_width:     float
+        :type  dist_fid:      int
+        :type  label:         int
+        :type  tick:          int
+        :type  right_axis:    int
+        :type  top_axis:      int
+        :type  bottom_axis:   int
+        :type  surround:      int
+        :type  left:          float
+        :type  bottom:        float
+        :type  right:         float
+        :type  top:           float
+        :type  xm:            float
+        :type  ym:            float
+        :type  widthm:        float
+        :type  heightm:       float
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapMVU.bar_chart(GXContext._get_tls_geo(), mview._wrapper, group_name.encode(), data._wrapper, line, x_chan.encode(), list.encode(), x_title.encode(), x_txt_size, y_title.encode(), y_txt_size, bar_title.encode(), bar_txt_size, bar_width, dist_fid, label, tick, right_axis, top_axis, bottom_axis, surround, left, bottom, right, top, xm, ym, widthm, heightm)
         
@@ -102,6 +204,21 @@ class GXMVU:
     def cdi_pixel_plot(cls, mview, group, data_va, elev_va, xvv, itr):
         """
         Create a color pixel-style plot of CDI data.
+        
+        :param mview:    View
+        :param group:    Name of the group to create
+        :param data_va:  Data [lNR x lNC]
+        :param elev_va:  Elevations (Y) [lNR x lNC]
+        :param xvv:      Position (X) [lNC]
+        :param itr:      Data color transform
+        :type  mview:    GXMVIEW
+        :type  group:    str
+        :type  data_va:  GXVA
+        :type  elev_va:  GXVA
+        :type  xvv:      GXVV
+        :type  itr:      GXITR
+
+        .. versionadded:: 7.2
 
         **Note:**
 
@@ -122,6 +239,23 @@ class GXMVU:
     def cdi_pixel_plot_3d(cls, mview, group, data_va, elev_va, xvv, yvv, itr):
         """
         Create a color pixel-style plot of CDI data in a 3D view.
+        
+        :param mview:    View
+        :param group:    Name of the group to create
+        :param data_va:  Data [lNR x lNC]
+        :param elev_va:  Elevations (Z) [lNR x lNC]
+        :param xvv:      Position (X) [lNC]
+        :param yvv:      Position (Y) [lNC]
+        :param itr:      Data color transform
+        :type  mview:    GXMVIEW
+        :type  group:    str
+        :type  data_va:  GXVA
+        :type  elev_va:  GXVA
+        :type  xvv:      GXVV
+        :type  yvv:      GXVV
+        :type  itr:      GXITR
+
+        .. versionadded:: 7.2
 
         **Note:**
 
@@ -140,6 +274,25 @@ class GXMVU:
     def color_bar(cls, mview, itr, decimal, ann, height, width, x, y):
         """
         Create a Color Bar in view
+        
+        :param mview:    View
+        :param itr:      Itr
+        :param decimal:  Decimals
+        :param ann:      Annotation offset from box in mm.
+        :param height:   Box height
+        :param width:    Box width
+        :param x:        X location (bottom left corner of color boxes)
+        :param y:        Y location
+        :type  mview:    GXMVIEW
+        :type  itr:      GXITR
+        :type  decimal:  int
+        :type  ann:      float
+        :type  height:   float
+        :type  width:    float
+        :type  x:        float
+        :type  y:        float
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapMVU.color_bar(GXContext._get_tls_geo(), mview._wrapper, itr._wrapper, decimal, ann, height, width, x, y)
         
@@ -150,6 +303,26 @@ class GXMVU:
     def color_bar2(cls, mview, itr, itr2, decimal, ann, height, width, x, y):
         """
         Create a Color Bar from two `GXITR <geosoft.gxapi.GXITR>`
+        
+        :param mview:    View
+        :param itr2:     Secondary `GXITR <geosoft.gxapi.GXITR>`
+        :param decimal:  Decimals
+        :param ann:      Annotation size
+        :param height:   Box height
+        :param width:    Box width
+        :param x:        X location (bottom left corner of color boxes)
+        :param y:        Y location
+        :type  mview:    GXMVIEW
+        :type  itr:      GXITR
+        :type  itr2:     GXITR
+        :type  decimal:  int
+        :type  ann:      float
+        :type  height:   float
+        :type  width:    float
+        :type  x:        float
+        :type  y:        float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -165,6 +338,28 @@ class GXMVU:
     def color_bar2_style(cls, mview, itr, itr2, decimal, ann, height, width, x, y, style):
         """
         Create a Color Bar from two ITRs with style options
+        
+        :param mview:    View
+        :param itr2:     Secondary `GXITR <geosoft.gxapi.GXITR>`
+        :param decimal:  Decimals
+        :param ann:      Annotation size
+        :param height:   Box height
+        :param width:    Box width
+        :param x:        X location (bottom left corner of color boxes)
+        :param y:        Y location
+        :param style:    `COLORBAR_STYLE`
+        :type  mview:    GXMVIEW
+        :type  itr:      GXITR
+        :type  itr2:     GXITR
+        :type  decimal:  int
+        :type  ann:      float
+        :type  height:   float
+        :type  width:    float
+        :type  x:        float
+        :type  y:        float
+        :type  style:    int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -180,6 +375,27 @@ class GXMVU:
     def color_bar_hor(cls, mview, itr, decimal, ann, width, height, x, y, label_orient):
         """
         Create a horizontal color bar in view
+        
+        :param mview:         View
+        :param itr:           Itr
+        :param decimal:       Decimals
+        :param ann:           Annotation offset from box in mm (negative for labels below).
+        :param width:         Box width in mm
+        :param height:        Box height in mm
+        :param x:             X location (bottom left corner of color boxes) in mm
+        :param y:             Y location in mm
+        :param label_orient:  `COLORBAR_LABEL`
+        :type  mview:         GXMVIEW
+        :type  itr:           GXITR
+        :type  decimal:       int
+        :type  ann:           float
+        :type  width:         float
+        :type  height:        float
+        :type  x:             float
+        :type  y:             float
+        :type  label_orient:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -201,6 +417,28 @@ class GXMVU:
     def color_bar_hor2(cls, mview, itr, itr2, decimal, ann, height, width, x, y, label_orient):
         """
         Create a Horizontal Color Bar from two ITRs
+        
+        :param mview:         View
+        :param itr2:          Secondary `GXITR <geosoft.gxapi.GXITR>`
+        :param decimal:       Decimals
+        :param ann:           Annotation size
+        :param height:        Box height
+        :param width:         Box width
+        :param x:             X location (bottom left corner of color boxes)
+        :param y:             Y location
+        :param label_orient:  `COLORBAR_LABEL`
+        :type  mview:         GXMVIEW
+        :type  itr:           GXITR
+        :type  itr2:          GXITR
+        :type  decimal:       int
+        :type  ann:           float
+        :type  height:        float
+        :type  width:         float
+        :type  x:             float
+        :type  y:             float
+        :type  label_orient:  int
+
+        .. versionadded:: 5.1
 
         **Note:**
 
@@ -216,6 +454,30 @@ class GXMVU:
     def color_bar_hor2_style(cls, mview, itr, itr2, decimal, ann, height, width, x, y, style, label_orient):
         """
         Create a Horizontal Color Bar from two ITRs with style options
+        
+        :param mview:         View
+        :param itr2:          Secondary `GXITR <geosoft.gxapi.GXITR>`
+        :param decimal:       Decimals
+        :param ann:           Annotation size
+        :param height:        Box height
+        :param width:         Box width
+        :param x:             X location (bottom left corner of color boxes)
+        :param y:             Y location
+        :param style:         `COLORBAR_STYLE`
+        :param label_orient:  `COLORBAR_LABEL`
+        :type  mview:         GXMVIEW
+        :type  itr:           GXITR
+        :type  itr2:          GXITR
+        :type  decimal:       int
+        :type  ann:           float
+        :type  height:        float
+        :type  width:         float
+        :type  x:             float
+        :type  y:             float
+        :type  style:         int
+        :type  label_orient:  int
+
+        .. versionadded:: 5.1
 
         **Note:**
 
@@ -231,6 +493,29 @@ class GXMVU:
     def color_bar_hor_style(cls, mview, itr, decimal, ann, height, width, x, y, style, label_orient):
         """
         Create a Horizontal Color Bar in view with style options
+        
+        :param mview:         View
+        :param itr:           Itr
+        :param decimal:       Decimals
+        :param ann:           Annotation size
+        :param height:        Box height
+        :param width:         Box width
+        :param x:             X location (bottom left corner of color boxes)
+        :param y:             Y location
+        :param style:         `COLORBAR_STYLE`
+        :param label_orient:  `COLORBAR_LABEL`
+        :type  mview:         GXMVIEW
+        :type  itr:           GXITR
+        :type  decimal:       int
+        :type  ann:           float
+        :type  height:        float
+        :type  width:         float
+        :type  x:             float
+        :type  y:             float
+        :type  style:         int
+        :type  label_orient:  int
+
+        .. versionadded:: 5.1
         """
         gxapi_cy.WrapMVU.color_bar_hor_style(GXContext._get_tls_geo(), mview._wrapper, itr._wrapper, decimal, ann, height, width, x, y, style, label_orient)
         
@@ -241,6 +526,27 @@ class GXMVU:
     def color_bar_style(cls, mview, itr, decimal, ann, height, width, x, y, style):
         """
         Create a Color Bar in view with style options
+        
+        :param mview:    View
+        :param itr:      Itr
+        :param decimal:  Decimals
+        :param ann:      Annotation size
+        :param height:   Box height
+        :param width:    Box width
+        :param x:        X location (bottom left corner of color boxes)
+        :param y:        Y location
+        :param style:    `COLORBAR_STYLE`
+        :type  mview:    GXMVIEW
+        :type  itr:      GXITR
+        :type  decimal:  int
+        :type  ann:      float
+        :type  height:   float
+        :type  width:    float
+        :type  x:        float
+        :type  y:        float
+        :type  style:    int
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapMVU.color_bar_style(GXContext._get_tls_geo(), mview._wrapper, itr._wrapper, decimal, ann, height, width, x, y, style)
         
@@ -251,6 +557,17 @@ class GXMVU:
     def color_bar_reg(cls, mview, itr, itr2, reg):
         """
         Create a Color Bar in view
+        
+        :param mview:  View
+        :param itr:    Itr
+        :param itr2:   Optional 2nd Itr (can be null)
+        :param reg:    Parameters
+        :type  mview:  GXMVIEW
+        :type  itr:    GXITR
+        :type  itr2:   GXITR
+        :type  reg:    GXREG
+
+        .. versionadded:: 8.2
 
         **Note:**
 
@@ -279,6 +596,15 @@ class GXMVU:
     def contour(cls, mview, con, grid):
         """
         Creates a contour map.
+        
+        :param mview:  View
+        :param con:    Control file name
+        :param grid:   Grid file name
+        :type  mview:  GXMVIEW
+        :type  con:    str
+        :type  grid:   str
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapMVU.contour(GXContext._get_tls_geo(), mview._wrapper, con.encode(), grid.encode())
         
@@ -289,6 +615,17 @@ class GXMVU:
     def contour_ply(cls, mview, ply, con, grid):
         """
         Creates a contour map with clipped areas.
+        
+        :param mview:  View
+        :param ply:    Clipping `GXPLY <geosoft.gxapi.GXPLY>`
+        :param con:    Control file name
+        :param grid:   Grid file name
+        :type  mview:  GXMVIEW
+        :type  ply:    GXPLY
+        :type  con:    str
+        :type  grid:   str
+
+        .. versionadded:: 5.1.6
 
         **Note:**
 
@@ -306,6 +643,25 @@ class GXMVU:
     def c_symb_legend(cls, mview, x1, y1, font_size, symb_scale, file, title, sub_title):
         """
         Plot a legend for the classified color symbols.
+        
+        :param mview:       `GXMVIEW <geosoft.gxapi.GXMVIEW>` object
+        :param x1:          Plot origin X
+        :param y1:          Plot origin Y
+        :param font_size:   Label Font size (mm)
+        :param symb_scale:  Symbol scale factor
+        :param file:        `GXAGG <geosoft.gxapi.GXAGG>`, `GXITR <geosoft.gxapi.GXITR>` or ZON file name
+        :param title:       Plot title
+        :param sub_title:   Plot subtitle
+        :type  mview:       GXMVIEW
+        :type  x1:          float
+        :type  y1:          float
+        :type  font_size:   float
+        :type  symb_scale:  float
+        :type  file:        str
+        :type  title:       str
+        :type  sub_title:   str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -330,6 +686,51 @@ class GXMVU:
     def decay_curve(cls, mview, vv_x, vv_y, v_ay, v_ax, log, log_min, angle, x_bar, y_bar, x_off_set, y_off_set, width, height, x_min, y_min, x_scale, y_scale, line_pitch, line_style, line_color):
         """
         Plot decay curves at survey locations
+        
+        :param mview:       View
+        :param vv_x:        X coordinate `GXVV <geosoft.gxapi.GXVV>`
+        :param vv_y:        Y coordinate `GXVV <geosoft.gxapi.GXVV>`
+        :param v_ay:        `GXVA <geosoft.gxapi.GXVA>` channel to plot
+        :param v_ax:        `GXVA <geosoft.gxapi.GXVA>` channel as horizontal axis (normally time channel)
+        :param log:         Log option: 0 linear (default), 1 logarithm, 2 log/linear
+        :param log_min:     Min value to apply log (must be > 0.0)
+        :param angle:       Angle in degrees measured CCW from East of the map
+        :param x_bar:       Draw horizontal bar: 0 none, 1 bottom, 2 top, 3 both
+        :param y_bar:       Draw vertical bar:   0 none, 1 bottom, 2 top, 3 both
+        :param x_off_set:   X offset in mm: Horizontal distance between survey location and origin of the box inside which decay curvey is drawn
+        :param y_off_set:   Y offset in mm
+        :param width:       Box width in mm:Decay curve at each survey location is drawn within this box
+        :param height:      Box height in mm
+        :param x_min:       Minimum value for X (horizontal axis)
+        :param y_min:       Minimum value for Y (vertical axis)
+        :param x_scale:     X scale
+        :param y_scale:     Y scale
+        :param line_pitch:  Line pitch, default is 5.0mm
+        :param line_style:  Line style
+        :param line_color:  Line color
+        :type  mview:       GXMVIEW
+        :type  vv_x:        GXVV
+        :type  vv_y:        GXVV
+        :type  v_ay:        GXVA
+        :type  v_ax:        GXVA
+        :type  log:         int
+        :type  log_min:     float
+        :type  angle:       float
+        :type  x_bar:       int
+        :type  y_bar:       int
+        :type  x_off_set:   float
+        :type  y_off_set:   float
+        :type  width:       float
+        :type  height:      float
+        :type  x_min:       float
+        :type  y_min:       float
+        :type  x_scale:     float
+        :type  y_scale:     float
+        :type  line_pitch:  float
+        :type  line_style:  int
+        :type  line_color:  str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -345,6 +746,21 @@ class GXMVU:
     def direction_plot(cls, mview, vv_x, vv_y, size, loc, align):
         """
         Plot an arrow to indicate the direction of a flight line
+        
+        :param mview:  View
+        :param vv_x:   X `GXVV <geosoft.gxapi.GXVV>`
+        :param vv_y:   Y `GXVV <geosoft.gxapi.GXVV>`
+        :param size:   Arrow size in mm
+        :param loc:    Location to draw in mm - can be X or Y depending on next parameter
+        :param align:  `ARROW_ALIGNMENT`
+        :type  mview:  GXMVIEW
+        :type  vv_x:   GXVV
+        :type  vv_y:   GXVV
+        :type  size:   float
+        :type  loc:    float
+        :type  align:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -360,6 +776,45 @@ class GXMVU:
     def em_forward(cls, mview, xo, yo, size_x, size_y, coil_sep, coil_frequency, coil_configuration, r, h, i, q, rvv, hvv, ivv, qvv, lin_log, var):
         """
         Plot an EM forward model against inverted data.
+        
+        :param mview:               View
+        :param xo:                  Plot X origin
+        :param yo:                  Plot Y origin
+        :param size_x:              Plot X size
+        :param size_y:              Plot Y size
+        :param coil_sep:            Coil Separation (m)
+        :param coil_frequency:      Coil Frequency (Hz)
+        :param coil_configuration:  `EMLAY_GEOMETRY`
+        :param r:                   Inverted or current resistivity
+        :param h:                   Inverted or current height
+        :param i:                   In-phase datum
+        :param q:                   Quadrature datum
+        :param rvv:                 Forward model resistivities
+        :param hvv:                 Forward model heights
+        :param ivv:                 Forward model In-phase (ppm)
+        :param qvv:                 Forward model Quadrature (ppm)
+        :param lin_log:             Plot resistivity as linear (0) or log (1)
+        :param var:                 Plot as function of resistivity (0) or height (1)
+        :type  mview:               GXMVIEW
+        :type  xo:                  float
+        :type  yo:                  float
+        :type  size_x:              float
+        :type  size_y:              float
+        :type  coil_sep:            float
+        :type  coil_frequency:      float
+        :type  coil_configuration:  int
+        :type  r:                   float
+        :type  h:                   float
+        :type  i:                   float
+        :type  q:                   float
+        :type  rvv:                 GXVV
+        :type  hvv:                 GXVV
+        :type  ivv:                 GXVV
+        :type  qvv:                 GXVV
+        :type  lin_log:             int
+        :type  var:                 int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -382,6 +837,15 @@ class GXMVU:
     def export_datamine_string(cls, mview, lst, file):
         """
         Export selected map groups in a map view to a Datamine coordinate string file.
+        
+        :param mview:  View
+        :param lst:    `GXLST <geosoft.gxapi.GXLST>` with group names in the name part of the `GXLST <geosoft.gxapi.GXLST>`.
+        :param file:   Datamine string file (``*.dm``) to export to
+        :type  mview:  GXMVIEW
+        :type  lst:    GXLST
+        :type  file:   str
+
+        .. versionadded:: 6.3
 
         **Note:**
 
@@ -404,6 +868,15 @@ class GXMVU:
     def export_dxf_3d(cls, mview, lst, wa):
         """
         Export selected map groups in a map view to an AutoCAD 3D DXF file.
+        
+        :param mview:  View
+        :param lst:    `GXLST <geosoft.gxapi.GXLST>` with group names in the name part of the `GXLST <geosoft.gxapi.GXLST>`.
+        :param wa:     DXF file to export
+        :type  mview:  GXMVIEW
+        :type  lst:    GXLST
+        :type  wa:     GXWA
+
+        .. versionadded:: 6.2
 
         **Note:**
 
@@ -422,6 +895,17 @@ class GXMVU:
     def export_surpac_str(cls, mview, lst, str_wa, styles_wa):
         """
         Export selected map groups in a map view to a Surpac `GXSTR <geosoft.gxapi.GXSTR>` file.
+        
+        :param mview:      View
+        :param lst:        `GXLST <geosoft.gxapi.GXLST>` with group names in the name part of the `GXLST <geosoft.gxapi.GXLST>`.
+        :param str_wa:     `GXSTR <geosoft.gxapi.GXSTR>` file to export to
+        :param styles_wa:  Styles file to export to
+        :type  mview:      GXMVIEW
+        :type  lst:        GXLST
+        :type  str_wa:     GXWA
+        :type  styles_wa:  GXWA
+
+        .. versionadded:: 6.2
 
         **Note:**
 
@@ -445,6 +929,27 @@ class GXMVU:
     def flight_plot(cls, mview, vv_x, vv_y, line, locate, vangle, up, loff, voff):
         """
         Draw a flight line
+        
+        :param mview:   View
+        :param vv_x:    X
+        :param vv_y:    Y
+        :param line:    Line label
+        :param locate:  `MVU_FLIGHT_LOCATE`
+        :param vangle:  Lines steeper than this angle are considered vertical and the up label direction is used.
+        :param up:      Up label direction:   1 up is right, -1 up is left
+        :param loff:    Along line label offset in mm.
+        :param voff:    Perpendicular label offset mm.
+        :type  mview:   GXMVIEW
+        :type  vv_x:    GXVV
+        :type  vv_y:    GXVV
+        :type  line:    str
+        :type  locate:  int
+        :type  vangle:  float
+        :type  up:      int
+        :type  loff:    float
+        :type  voff:    float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -483,6 +988,19 @@ class GXMVU:
     def gen_areas(cls, mview, lines, col_vv, pat_vv, pitch):
         """
         Generate areas from an line group.
+        
+        :param mview:   View
+        :param lines:   Group with lines
+        :param col_vv:  Colors  (color int)
+        :param pat_vv:  Patterns (int), must be same length at colors
+        :param pitch:   Pattern size
+        :type  mview:   GXMVIEW
+        :type  lines:   str
+        :type  col_vv:  GXVV
+        :type  pat_vv:  GXVV
+        :type  pitch:   float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -505,6 +1023,23 @@ class GXMVU:
     def get_range_gocad_surface(cls, file, min_x, min_y, min_z, max_x, max_y, max_z):
         """
         Get the XYZ range of a GOCAD surface.
+        
+        :param file:   GOCAD file name
+        :param min_x:  Min X value
+        :param min_y:  Min Y value
+        :param min_z:  Min Z value
+        :param max_x:  Max X value
+        :param max_y:  Max Y value
+        :param max_z:  Max Z value
+        :type  file:   str
+        :type  min_x:  float_ref
+        :type  min_y:  float_ref
+        :type  min_z:  float_ref
+        :type  max_x:  float_ref
+        :type  max_y:  float_ref
+        :type  max_z:  float_ref
+
+        .. versionadded:: 6.4
 
         **Note:**
 
@@ -520,6 +1055,45 @@ class GXMVU:
     def histogram(cls, mview, st_data, st_hist, title, unit, xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, fill_color, st_box):
         """
         Plot the histogram on a map.
+        
+        :param mview:       View
+        :param st_data:     `GXST <geosoft.gxapi.GXST>` with summary stats of original data
+        :param st_hist:     `GXST <geosoft.gxapi.GXST>` with histogram info of original or log10 data
+        :param title:       Title
+        :param unit:        Unit
+        :param xm:          X in mm (bottom left corner of histogram box)
+        :param ym:          Y in mm (bottom left corner of histogram box)
+        :param widthm:      Box width in mm
+        :param heightm:     Box height in mm
+        :param xd:          Minimum X in data unit (bottom left corner of histogram boxes)
+        :param yd:          Minimum Y in data unit
+        :param widthd:      Box width in data unit
+        :param heightd:     Box height in data unit
+        :param sum_width:   Width (mm) of the additional box for summary stats
+        :param log:         Log horizontal axis: 0 - Normal, 1 - Log
+        :param summ:        Summary stats: 0 - do not draw, 1 - draw
+        :param fill_color:  Fill color
+        :param st_box:      `GXST <geosoft.gxapi.GXST>` with histogram for box-whisker plot (-1 for no plot)
+        :type  mview:       GXMVIEW
+        :type  st_data:     GXST
+        :type  st_hist:     GXST
+        :type  title:       str
+        :type  unit:        str
+        :type  xm:          float
+        :type  ym:          float
+        :type  widthm:      float
+        :type  heightm:     float
+        :type  xd:          float
+        :type  yd:          float
+        :type  widthd:      float
+        :type  heightd:     float
+        :type  sum_width:   float
+        :type  log:         int
+        :type  summ:        int
+        :type  fill_color:  int
+        :type  st_box:      GXST
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -539,6 +1113,55 @@ class GXMVU:
     def histogram2(cls, mview, st_data, st_hist, x_title, y_title, xy_txt_size, title, plot_txt_size, unit, xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, fill_color, st_box, x_marker):
         """
         Plot the histogram on a map.
+        
+        :param mview:          View
+        :param st_data:        `GXST <geosoft.gxapi.GXST>` with summary stats of original data
+        :param st_hist:        `GXST <geosoft.gxapi.GXST>` with histogram info of original or log10 data
+        :param x_title:        X axis title
+        :param y_title:        Y axis title
+        :param xy_txt_size:    Text size in mm for X/Y axis' titles. Accept dummy
+        :param title:          Overall title. Plotted below X axis if X axis title is not given
+        :param plot_txt_size:  Text size in mm for plot overall title. Accept dummy
+        :param unit:           Unit
+        :param xm:             X in mm (bottom left corner of histogram box)
+        :param ym:             Y in mm (bottom left corner of histogram box)
+        :param widthm:         Box width in mm
+        :param heightm:        Box height in mm
+        :param xd:             Minimum X in data unit (bottom left corner of histogram boxes)
+        :param yd:             Minimum Y in data unit
+        :param widthd:         Box width in data unit
+        :param heightd:        Box height in data unit
+        :param sum_width:      Width (mm) of the additional box for summary stats
+        :param log:            Log horizontal axis: 0 - Normal, 1 - Log
+        :param summ:           Summary stats: 0 - do not draw, 1 - draw
+        :param fill_color:     Fill color
+        :param st_box:         `GXST <geosoft.gxapi.GXST>` with histogram for box-wisker plot (-1 for no plot)
+        :param x_marker:       X value (threshold value) to draw a vertical line (see notes)
+        :type  mview:          GXMVIEW
+        :type  st_data:        GXST
+        :type  st_hist:        GXST
+        :type  x_title:        str
+        :type  y_title:        str
+        :type  xy_txt_size:    float
+        :type  title:          str
+        :type  plot_txt_size:  float
+        :type  unit:           str
+        :type  xm:             float
+        :type  ym:             float
+        :type  widthm:         float
+        :type  heightm:        float
+        :type  xd:             float
+        :type  yd:             float
+        :type  widthd:         float
+        :type  heightd:        float
+        :type  sum_width:      float
+        :type  log:            int
+        :type  summ:           int
+        :type  fill_color:     int
+        :type  st_box:         GXST
+        :type  x_marker:       float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -556,6 +1179,49 @@ class GXMVU:
     def histogram3(cls, mview, st_data, st_hist, title, unit, xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, fill_color, data_decimal, stat_decimal, st_box):
         """
         Plot the histogram on a map, specify decimals.
+        
+        :param mview:         View
+        :param st_data:       `GXST <geosoft.gxapi.GXST>` with summary stats of original data
+        :param st_hist:       `GXST <geosoft.gxapi.GXST>` with histogram info of original or log10 data
+        :param title:         Title
+        :param unit:          Unit
+        :param xm:            X in mm (bottom left corner of histogram box)
+        :param ym:            Y in mm (bottom left corner of histogram box)
+        :param widthm:        Box width in mm
+        :param heightm:       Box height in mm
+        :param xd:            Minimum X in data unit (bottom left corner of histogram boxes)
+        :param yd:            Minimum Y in data unit
+        :param widthd:        Box width in data unit
+        :param heightd:       Box height in data unit
+        :param sum_width:     Width (mm) of the additional box for summary stats
+        :param log:           Log horizontal axis: 0 - Normal, 1 - Log
+        :param summ:          Summary stats: 0 - do not draw, 1 - draw
+        :param fill_color:    Fill color
+        :param data_decimal:  Decimals for data, negative for sig. fig.
+        :param stat_decimal:  Decimals for stats, negative for sig. fig.
+        :param st_box:        `GXST <geosoft.gxapi.GXST>` with histogram for box-whisker plot (-1 for no plot)
+        :type  mview:         GXMVIEW
+        :type  st_data:       GXST
+        :type  st_hist:       GXST
+        :type  title:         str
+        :type  unit:          str
+        :type  xm:            float
+        :type  ym:            float
+        :type  widthm:        float
+        :type  heightm:       float
+        :type  xd:            float
+        :type  yd:            float
+        :type  widthd:        float
+        :type  heightd:       float
+        :type  sum_width:     float
+        :type  log:           int
+        :type  summ:          int
+        :type  fill_color:    int
+        :type  data_decimal:  int
+        :type  stat_decimal:  int
+        :type  st_box:        GXST
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapMVU.histogram3(GXContext._get_tls_geo(), mview._wrapper, st_data._wrapper, st_hist._wrapper, title.encode(), unit.encode(), xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, fill_color, data_decimal, stat_decimal, st_box._wrapper)
         
@@ -566,6 +1232,51 @@ class GXMVU:
     def histogram4(cls, mview, st_data, st_hist, title, unit, xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, prob, fill_color, data_decimal, stat_decimal, st_box):
         """
         As `histogram3 <geosoft.gxapi.GXMVU.histogram3>`, but allow probability scaling of percents.
+        
+        :param mview:         View
+        :param st_data:       `GXST <geosoft.gxapi.GXST>` with summary stats of original data
+        :param st_hist:       `GXST <geosoft.gxapi.GXST>` with histogram info of original or log10 data
+        :param title:         Title
+        :param unit:          Unit
+        :param xm:            X in mm (bottom left corner of histogram box)
+        :param ym:            Y in mm (bottom left corner of histogram box)
+        :param widthm:        Box width in mm
+        :param heightm:       Box height in mm
+        :param xd:            Minimum X in data unit (bottom left corner of histogram boxes)
+        :param yd:            Minimum Y in data unit
+        :param widthd:        Box width in data unit
+        :param heightd:       Box height in data unit
+        :param sum_width:     Width (mm) of the additional box for summary stats
+        :param log:           Log horizontal axis: 0 - Normal, 1 - Log
+        :param summ:          Summary stats: 0 - do not draw, 1 - draw
+        :param prob:          Probability scaling: 0 - linear scale, 1 - scale as normal distribution
+        :param fill_color:    Fill color
+        :param data_decimal:  Decimals for data, negative for sig. fig.
+        :param stat_decimal:  Decimals for stats, negative for sig. fig.
+        :param st_box:        `GXST <geosoft.gxapi.GXST>` with histogram for box-whisker plot (-1 for no plot)
+        :type  mview:         GXMVIEW
+        :type  st_data:       GXST
+        :type  st_hist:       GXST
+        :type  title:         str
+        :type  unit:          str
+        :type  xm:            float
+        :type  ym:            float
+        :type  widthm:        float
+        :type  heightm:       float
+        :type  xd:            float
+        :type  yd:            float
+        :type  widthd:        float
+        :type  heightd:       float
+        :type  sum_width:     float
+        :type  log:           int
+        :type  summ:          int
+        :type  prob:          int
+        :type  fill_color:    int
+        :type  data_decimal:  int
+        :type  stat_decimal:  int
+        :type  st_box:        GXST
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapMVU.histogram4(GXContext._get_tls_geo(), mview._wrapper, st_data._wrapper, st_hist._wrapper, title.encode(), unit.encode(), xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, prob, fill_color, data_decimal, stat_decimal, st_box._wrapper)
         
@@ -576,6 +1287,55 @@ class GXMVU:
     def histogram5(cls, mview, st_data, st_hist, title, unit, lmd, xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, prob, fill_color, data_decimal, stat_decimal, st_box, itr):
         """
         As `histogram4 <geosoft.gxapi.GXMVU.histogram4>`, but allow `GXITR <geosoft.gxapi.GXITR>` to color bars.
+        
+        :param mview:         View
+        :param st_data:       `GXST <geosoft.gxapi.GXST>` with summary stats of original data
+        :param st_hist:       `GXST <geosoft.gxapi.GXST>` with histogram info of original or log10 data
+        :param title:         Title
+        :param unit:          Unit
+        :param lmd:           [i] Lambda Value
+        :param xm:            X in mm (bottom left corner of histogram box)
+        :param ym:            Y in mm (bottom left corner of histogram box)
+        :param widthm:        Box width in mm
+        :param heightm:       Box height in mm
+        :param xd:            Minimum X in data unit (bottom left corner of histogram boxes)
+        :param yd:            Minimum Y in data unit
+        :param widthd:        Box width in data unit
+        :param heightd:       Box height in data unit
+        :param sum_width:     Width (mm) of the additional box for summary stats
+        :param log:           Log horizontal axis: 0 - Normal, 1 - Log, 2 - Lambda
+        :param summ:          Summary stats: 0 - do not draw, 1 - draw
+        :param prob:          Probability scaling: 0 - linear scale, 1 - scale as normal distribution
+        :param fill_color:    Fill color
+        :param data_decimal:  Decimals for data, negative for sig. fig.
+        :param stat_decimal:  Decimals for stats, negative for sig. fig.
+        :param st_box:        `GXST <geosoft.gxapi.GXST>` with histogram for box-whisker plot (-1 for no plot)
+        :param itr:           `GXITR <geosoft.gxapi.GXITR>` to color bars.
+        :type  mview:         GXMVIEW
+        :type  st_data:       GXST
+        :type  st_hist:       GXST
+        :type  title:         str
+        :type  unit:          str
+        :type  lmd:           float
+        :type  xm:            float
+        :type  ym:            float
+        :type  widthm:        float
+        :type  heightm:       float
+        :type  xd:            float
+        :type  yd:            float
+        :type  widthd:        float
+        :type  heightd:       float
+        :type  sum_width:     float
+        :type  log:           int
+        :type  summ:          int
+        :type  prob:          int
+        :type  fill_color:    int
+        :type  data_decimal:  int
+        :type  stat_decimal:  int
+        :type  st_box:        GXST
+        :type  itr:           GXITR
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -590,6 +1350,16 @@ class GXMVU:
     def exportable_dxf_3d_groups_lst(cls, mview, lst):
         """
         Return a `GXLST <geosoft.gxapi.GXLST>` of groups you can export using sExportDXF3D_MVU.
+        
+        :param mview:  View
+        :param lst:    `GXLST <geosoft.gxapi.GXLST>` with group names in the name part of the `GXLST <geosoft.gxapi.GXLST>`.
+        :type  mview:  GXMVIEW
+        :type  lst:    GXLST
+
+        :returns:      The number of groups in the `GXLST <geosoft.gxapi.GXLST>`.
+        :rtype:        int
+
+        .. versionadded:: 7.1
 
         **Note:**
 
@@ -608,6 +1378,40 @@ class GXMVU:
     def mapset_test(cls, min_x, max_x, min_y, max_y, size, port, exact, scale, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside):
         """
         Test function to ensure parameters to `mapset <geosoft.gxapi.GXMVU.mapset>` is sane
+        
+        :param min_x:      Minimum X of data area (data units)
+        :param max_x:      Maximum X of data area (data units)
+        :param min_y:      Minimum Y of data area (data units)
+        :param max_y:      Maximum Y of data area (data units)
+        :param size:       Media size as a string 'x_cm,y_cm', or a standard paper size (e.g. 'A4', 'E')
+        :param port:       0 - landscape; 1 - portrait
+        :param exact:      1 - map size fixed to media; 0 - map size adjusted to data and margins.
+        :param scale:      Map scale (rDummy for default)
+        :param conv:       Conversion factor (to units/meter) (rDummy for default)
+        :param marg_xmin:  Left margin (cm)
+        :param marg_xmax:  Right margin (cm)
+        :param marg_ymin:  Bottom margin (cm)
+        :param marg_ymax:  Top margin (cm)
+        :param inside:     Inside data margin (cm)
+        :type  min_x:      float
+        :type  max_x:      float
+        :type  min_y:      float
+        :type  max_y:      float
+        :type  size:       str
+        :type  port:       int
+        :type  exact:      int
+        :type  scale:      float_ref
+        :type  conv:       float
+        :type  marg_xmin:  float
+        :type  marg_xmax:  float
+        :type  marg_ymin:  float
+        :type  marg_ymax:  float
+        :type  inside:     float
+
+        :returns:          `GEO_BOOL` TRUE if the parameters are good.
+        :rtype:            int
+
+        .. versionadded:: 6.3
 
         **Note:**
 
@@ -623,6 +1427,42 @@ class GXMVU:
     def mapset2_test(cls, min_x, max_x, min_y, max_y, size, port, exact, scale, vert_exag, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside):
         """
         Test function to ensure parameters to `mapset <geosoft.gxapi.GXMVU.mapset>` is sane
+        
+        :param min_x:      Minimum X of data area (data units)
+        :param max_x:      Maximum X of data area (data units)
+        :param min_y:      Minimum Y of data area (data units)
+        :param max_y:      Maximum Y of data area (data units)
+        :param size:       Media size as a string 'x_cm,y_cm', or a standard paper size (e.g. 'A4', 'E')
+        :param port:       0 - landscape; 1 - portrait
+        :param exact:      1 - map size fixed to media; 0 - map size adjusted to data and margins.
+        :param scale:      Map scale (rDummy for default)
+        :param vert_exag:  Vertical exaggeration (Normally 1.0)
+        :param conv:       Conversion factor (to units/meter) (rDummy for default)
+        :param marg_xmin:  Left margin (cm)
+        :param marg_xmax:  Right margin (cm)
+        :param marg_ymin:  Bottom margin (cm)
+        :param marg_ymax:  Top margin (cm)
+        :param inside:     Inside data margin (cm)
+        :type  min_x:      float
+        :type  max_x:      float
+        :type  min_y:      float
+        :type  max_y:      float
+        :type  size:       str
+        :type  port:       int
+        :type  exact:      int
+        :type  scale:      float_ref
+        :type  vert_exag:  float
+        :type  conv:       float
+        :type  marg_xmin:  float
+        :type  marg_xmax:  float
+        :type  marg_ymin:  float
+        :type  marg_ymax:  float
+        :type  inside:     float
+
+        :returns:          `GEO_BOOL` TRUE if the parameters are good.
+        :rtype:            int
+
+        .. versionadded:: 8.3
 
         **Note:**
 
@@ -637,6 +1477,15 @@ class GXMVU:
     def import_gocad_surface(cls, mview, file, col):
         """
         Import and plot a GOCAD surface model.
+        
+        :param mview:  View
+        :param file:   GOCAD file name
+        :param col:    Color to plot (`C_TRANSPARENT <geosoft.gxapi.C_TRANSPARENT>` to use file-defined color).
+        :type  mview:  GXMVIEW
+        :type  file:   str
+        :type  col:    int
+
+        .. versionadded:: 6.4
 
         **Note:**
 
@@ -654,6 +1503,13 @@ class GXMVU:
     def load_plot(cls, map, name):
         """
         Load a Geosoft PLT file into a `GXMAP <geosoft.gxapi.GXMAP>`.
+        
+        :param map:   Map handle
+        :param name:  Plot file name
+        :type  map:   GXMAP
+        :type  name:  str
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapMVU.load_plot(GXContext._get_tls_geo(), map._wrapper, name.encode())
         
@@ -664,6 +1520,21 @@ class GXMVU:
     def map_from_plt(cls, map, base, data, plt, mpx, mpy):
         """
         Creates a new map from a PLT file.
+        
+        :param map:   `GXMAP <geosoft.gxapi.GXMAP>` Handle
+        :param base:  Name to use for the base map view
+        :param data:  Name to use for the data view
+        :param plt:   Plot file name
+        :param mpx:   Map paper size in X direction (cm)
+        :param mpy:   Map paper size in Y direction (cm)
+        :type  map:   GXMAP
+        :type  base:  str
+        :type  data:  str
+        :type  plt:   str
+        :type  mpx:   float
+        :type  mpy:   float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -684,6 +1555,15 @@ class GXMVU:
     def map_mdf(cls, map, mdf, data):
         """
         Creates an MDF from a Map.
+        
+        :param map:   `GXMAP <geosoft.gxapi.GXMAP>` Handle
+        :param mdf:   MDF file name
+        :param data:  Data view name
+        :type  map:   GXMAP
+        :type  mdf:   str
+        :type  data:  str
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapMVU.map_mdf(GXContext._get_tls_geo(), map._wrapper, mdf.encode(), data.encode())
         
@@ -694,6 +1574,43 @@ class GXMVU:
     def mapset(cls, map, base, data, min_x, max_x, min_y, max_y, size, port, exact, scale, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside):
         """
         Creates a new map directly from parameters.
+        
+        :param map:        `GXMAP <geosoft.gxapi.GXMAP>` Handle
+        :param base:       Name to use for the base map view
+        :param data:       Name to use for the data view
+        :param min_x:      Minimum X of data area (data units)
+        :param max_x:      Maximum X of data area (data units)
+        :param min_y:      Minimum Y of data area (data units)
+        :param max_y:      Maximum Y of data area (data units)
+        :param size:       Media size as a string 'x_cm,y_cm', or a standard paper size (e.g. 'A4', 'E')
+        :param port:       0 - landscape; 1 - portrait
+        :param exact:      1 - map size fixed to media; 0 - map size adjusted to data and margins.
+        :param scale:      Map scale (rDummy for default)
+        :param conv:       Conversion factor (to units/meter) (rDummy for default)
+        :param marg_xmin:  Left margin (cm)
+        :param marg_xmax:  Right margin (cm)
+        :param marg_ymin:  Bottom margin (cm)
+        :param marg_ymax:  Top margin (cm)
+        :param inside:     Inside data margin (cm)
+        :type  map:        GXMAP
+        :type  base:       str
+        :type  data:       str
+        :type  min_x:      float
+        :type  max_x:      float
+        :type  min_y:      float
+        :type  max_y:      float
+        :type  size:       str
+        :type  port:       int
+        :type  exact:      int
+        :type  scale:      float
+        :type  conv:       float
+        :type  marg_xmin:  float
+        :type  marg_xmax:  float
+        :type  marg_ymin:  float
+        :type  marg_ymax:  float
+        :type  inside:     float
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapMVU.mapset(GXContext._get_tls_geo(), map._wrapper, base.encode(), data.encode(), min_x, max_x, min_y, max_y, size.encode(), port, exact, scale, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside)
         
@@ -704,6 +1621,45 @@ class GXMVU:
     def mapset2(cls, map, base, data, min_x, max_x, min_y, max_y, size, port, exact, scale, vert_exag, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside):
         """
         Same as `mapset <geosoft.gxapi.GXMVU.mapset>`, with vertical exaggeration.
+        
+        :param map:        `GXMAP <geosoft.gxapi.GXMAP>` Handle
+        :param base:       Name to use for the base map view
+        :param data:       Name to use for the data view
+        :param min_x:      Minimum X of data area (data units)
+        :param max_x:      Maximum X of data area (data units)
+        :param min_y:      Minimum Y of data area (data units)
+        :param max_y:      Maximum Y of data area (data units)
+        :param size:       Media size as a string 'x_cm,y_cm', or a standard paper size (e.g. 'A4', 'E')
+        :param port:       0 - landscape; 1 - portrait
+        :param exact:      1 - map size fixed to media; 0 - map size adjusted to data and margins.
+        :param scale:      Map scale (rDummy for default)
+        :param vert_exag:  Vertical Exaggeration (1.0 for none)
+        :param conv:       Conversion factor (to units/meter) (rDummy for default)
+        :param marg_xmin:  Left margin (cm)
+        :param marg_xmax:  Right margin (cm)
+        :param marg_ymin:  Bottom margin (cm)
+        :param marg_ymax:  Top margin (cm)
+        :param inside:     Inside data margin (cm)
+        :type  map:        GXMAP
+        :type  base:       str
+        :type  data:       str
+        :type  min_x:      float
+        :type  max_x:      float
+        :type  min_y:      float
+        :type  max_y:      float
+        :type  size:       str
+        :type  port:       int
+        :type  exact:      int
+        :type  scale:      float
+        :type  vert_exag:  float
+        :type  conv:       float
+        :type  marg_xmin:  float
+        :type  marg_xmax:  float
+        :type  marg_ymin:  float
+        :type  marg_ymax:  float
+        :type  inside:     float
+
+        .. versionadded:: 8.3
         """
         gxapi_cy.WrapMVU.mapset2(GXContext._get_tls_geo(), map._wrapper, base.encode(), data.encode(), min_x, max_x, min_y, max_y, size.encode(), port, exact, scale, vert_exag, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside)
         
@@ -714,6 +1670,17 @@ class GXMVU:
     def mdf(cls, map, mdf, base, data):
         """
         Creates a new map from an MDF file.
+        
+        :param map:   `GXMAP <geosoft.gxapi.GXMAP>` Handle
+        :param mdf:   MDF file name
+        :param base:  Name to use for the base map view
+        :param data:  Name to use for the data view
+        :type  map:   GXMAP
+        :type  mdf:   str
+        :type  base:  str
+        :type  data:  str
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapMVU.mdf(GXContext._get_tls_geo(), map._wrapper, mdf.encode(), base.encode(), data.encode())
         
@@ -724,6 +1691,29 @@ class GXMVU:
     def path_plot(cls, mview, vv_x, vv_y, line, locate, vangle, up, loff, voff, gap):
         """
         Draw a flight line
+        
+        :param mview:   View
+        :param vv_x:    X
+        :param vv_y:    Y
+        :param line:    Line label
+        :param locate:  `MVU_FLIGHT_LOCATE`
+        :param vangle:  Lines steeper than this angle are considered vertical and the up label direction is used.
+        :param up:      Up label direction:   1 up is right -1 up is left
+        :param loff:    Along line label offset in mm.
+        :param voff:    Perpendicular label offset mm.
+        :param gap:     Maximum gap before breaking line, 0.0 for no breaks.
+        :type  mview:   GXMVIEW
+        :type  vv_x:    GXVV
+        :type  vv_y:    GXVV
+        :type  line:    str
+        :type  locate:  int
+        :type  vangle:  float
+        :type  up:      int
+        :type  loff:    float
+        :type  voff:    float
+        :type  gap:     float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -743,6 +1733,31 @@ class GXMVU:
     def path_plot_ex(cls, mview, vv_x, vv_y, line, locate, compass, vangle, up, loff, voff, gap):
         """
         Draw a flight line
+        
+        :param mview:    View
+        :param vv_x:     X
+        :param vv_y:     Y
+        :param line:     Line label
+        :param locate:   `MVU_FLIGHT_LOCATE`
+        :param compass:  `MVU_FLIGHT_COMPASS`
+        :param vangle:   Lines steeper than this angle are considered vertical and the up label direction is used.
+        :param up:       Up label direction:   1 up is right -1 up is left
+        :param loff:     Along line label offset in mm.
+        :param voff:     Perpendicular label offset mm.
+        :param gap:      Maximum gap before breaking line, 0.0 for no breaks.
+        :type  mview:    GXMVIEW
+        :type  vv_x:     GXVV
+        :type  vv_y:     GXVV
+        :type  line:     str
+        :type  locate:   int
+        :type  compass:  int
+        :type  vangle:   float
+        :type  up:       int
+        :type  loff:     float
+        :type  voff:     float
+        :type  gap:      float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -761,6 +1776,33 @@ class GXMVU:
     def path_plot_ex2(cls, mview, vv_x, vv_y, line, locate, compass, vangle, up, loff, voff, gap, dummies):
         """
         Draw a flight line
+        
+        :param mview:    View
+        :param vv_x:     X
+        :param vv_y:     Y
+        :param line:     Line label
+        :param locate:   `MVU_FLIGHT_LOCATE`
+        :param compass:  `MVU_FLIGHT_COMPASS`
+        :param vangle:   Lines steeper than this angle are considered vertical and the up label direction is used.
+        :param up:       Up label direction:   1 up is right -1 up is left
+        :param loff:     Along line label offset in mm.
+        :param voff:     Perpendicular label offset mm.
+        :param gap:      Maximum gap before breaking line, 0.0 for no breaks.
+        :param dummies:  `MVU_FLIGHT_DUMMIES`
+        :type  mview:    GXMVIEW
+        :type  vv_x:     GXVV
+        :type  vv_y:     GXVV
+        :type  line:     str
+        :type  locate:   int
+        :type  compass:  int
+        :type  vangle:   float
+        :type  up:       int
+        :type  loff:     float
+        :type  voff:     float
+        :type  gap:      float
+        :type  dummies:  int
+
+        .. versionadded:: 5.0.8
 
         **Note:**
 
@@ -779,6 +1821,19 @@ class GXMVU:
     def plot_voxel_surface(cls, mview, vox, value, col, line_thick):
         """
         Extract an iso-surface from a voxel and plot it to a 2D or 3D view.
+        
+        :param mview:       View
+        :param vox:         Voxel model
+        :param value:       Iso-surface value
+        :param col:         Drawing color
+        :param line_thick:  Line thickness for line drawing, and 2D views.
+        :type  mview:       GXMVIEW
+        :type  vox:         GXVOX
+        :type  value:       float
+        :type  col:         int
+        :type  line_thick:  float
+
+        .. versionadded:: 6.4
 
         **Note:**
 
@@ -797,6 +1852,23 @@ class GXMVU:
     def plot_voxel_surface2(cls, mview, vox, value, col, line_thick, transparency, surface_name):
         """
         Extract an iso-surface from a voxel and plot it to a 2D or 3D view.
+        
+        :param mview:         View
+        :param vox:           Voxel model
+        :param value:         Iso-surface value
+        :param col:           Drawing color
+        :param line_thick:    Line thickness for line drawing, and 2D views.
+        :param transparency:  Transparency (0 - transparent, 1 - opaque).
+        :param surface_name:  Iso-surface name
+        :type  mview:         GXMVIEW
+        :type  vox:           GXVOX
+        :type  value:         float
+        :type  col:           int
+        :type  line_thick:    float
+        :type  transparency:  float
+        :type  surface_name:  str
+
+        .. versionadded:: 7.3
 
         **Note:**
 
@@ -815,6 +1887,29 @@ class GXMVU:
     def generate_surface_from_voxel(cls, mview, vox, method, option, min_value, max_value, col, line_thick, transparency, surface_name):
         """
         TODO...
+        
+        :param mview:         View
+        :param vox:           Voxel model
+        :param method:        `MVU_VOX_SURFACE_METHOD`
+        :param option:        `MVU_VOX_SURFACE_OPTION`
+        :param min_value:     TODO
+        :param max_value:     TODO
+        :param col:           Drawing color
+        :param line_thick:    Line thickness for line drawing, and 2D views.
+        :param transparency:  Transparency (0 - transparent, 1 - opaque).
+        :param surface_name:  Geosurface file
+        :type  mview:         GXMVIEW
+        :type  vox:           GXVOX
+        :type  method:        int
+        :type  option:        int
+        :type  min_value:     float
+        :type  max_value:     float
+        :type  col:           int
+        :type  line_thick:    float
+        :type  transparency:  float
+        :type  surface_name:  str
+
+        .. versionadded:: 8.5
 
         **Note:**
 
@@ -829,6 +1924,29 @@ class GXMVU:
     def post(cls, mview, vv_x, vv_y, vv_z, dummy, size, format, decimals, ref, angle):
         """
         Post values on a map.
+        
+        :param mview:     View
+        :param vv_x:      X locations
+        :param vv_y:      Y locations
+        :param vv_z:      Values to post
+        :param dummy:     Do not plot dummy values? `GEO_BOOL`
+        :param size:      Numb Size
+        :param format:    Format
+        :param decimals:  Decimals
+        :param ref:       Reference point number
+        :param angle:     Text angle
+        :type  mview:     GXMVIEW
+        :type  vv_x:      GXVV
+        :type  vv_y:      GXVV
+        :type  vv_z:      GXVV
+        :type  dummy:     int
+        :type  size:      int
+        :type  format:    int
+        :type  decimals:  int
+        :type  ref:       int
+        :type  angle:     float
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapMVU.post(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, dummy, size, format, decimals, ref, angle)
         
@@ -839,6 +1957,49 @@ class GXMVU:
     def post_ex(cls, mview, vv_x, vv_y, vv_z, vv_s, dummy, base, min_detect, size, format, decimals, offset_l, offset_p, alternate, mod, ref, angle, fixed, ref_ang, up):
         """
         Post values on a map with more paramters.
+        
+        :param mview:       View
+        :param vv_x:        X locations
+        :param vv_y:        Y locations
+        :param vv_z:        Values to post
+        :param vv_s:        Station
+        :param dummy:       Do not plot dummy values? `GEO_BOOL`
+        :param base:        Base to remove, default is 0.0
+        :param min_detect:  Detection limit, can be `GS_R8DM <geosoft.gxapi.GS_R8DM>`
+        :param size:        Numb Size
+        :param format:      Format
+        :param decimals:    Decimals
+        :param offset_l:    Offset along line (right and above are positive)
+        :param offset_p:    Offset perpendicular to line
+        :param alternate:   TRUE - Positive above, Negative below FALSE - All above.
+        :param mod:         Modulas on station vv
+        :param ref:         Reference point number
+        :param angle:       Text angle (degree, CCW from down-line)
+        :param fixed:       Fixed angle ?
+        :param ref_ang:     Vertical reference angle
+        :param up:          1 up is right, -1 up is left
+        :type  mview:       GXMVIEW
+        :type  vv_x:        GXVV
+        :type  vv_y:        GXVV
+        :type  vv_z:        GXVV
+        :type  vv_s:        GXVV
+        :type  dummy:       int
+        :type  base:        float
+        :type  min_detect:  float
+        :type  size:        int
+        :type  format:      int
+        :type  decimals:    int
+        :type  offset_l:    float
+        :type  offset_p:    float
+        :type  alternate:   int
+        :type  mod:         float
+        :type  ref:         int
+        :type  angle:       float
+        :type  fixed:       int
+        :type  ref_ang:     float
+        :type  up:          int
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapMVU.post_ex(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_s._wrapper, dummy, base, min_detect, size, format, decimals, offset_l, offset_p, alternate, mod, ref, angle, fixed, ref_ang, up)
         
@@ -849,6 +2010,45 @@ class GXMVU:
     def probability(cls, mview, st_data, st_hist, title, unit, transform, lmd, xm, ym, widthm, heightm, symb_size, sigma, sum_width, summ, data_decimal, stat_decimal, itr):
         """
         Plot a probability plot on a map.
+        
+        :param mview:         View
+        :param st_data:       `GXST <geosoft.gxapi.GXST>` with summary stats of original data
+        :param st_hist:       `GXST <geosoft.gxapi.GXST>` with histogram info of original or log10 data
+        :param title:         Title
+        :param unit:          Unit
+        :param transform:     Transform type (0: Raw, 1: Log, 2: Lambda)
+        :param lmd:           Lambda Value for lambda transform
+        :param xm:            X in mm (bottom left corner of histogram box)
+        :param ym:            Y in mm (bottom left corner of histogram box)
+        :param widthm:        Box width in mm
+        :param heightm:       Box height in mm
+        :param symb_size:     Symbol size in mm
+        :param sigma:         Sigma (X range is -sigma to sigma)
+        :param sum_width:     Width (mm) of the additional box for summary stats
+        :param summ:          Summary stats: 0 - do not draw, 1 - draw
+        :param data_decimal:  Decimals for data, negative for sig. fig.
+        :param stat_decimal:  Decimals for stats, negative for sig. fig.
+        :param itr:           `GXITR <geosoft.gxapi.GXITR>` to color symbols.
+        :type  mview:         GXMVIEW
+        :type  st_data:       GXST
+        :type  st_hist:       GXST
+        :type  title:         str
+        :type  unit:          str
+        :type  transform:     int
+        :type  lmd:           float
+        :type  xm:            float
+        :type  ym:            float
+        :type  widthm:        float
+        :type  heightm:       float
+        :type  symb_size:     float
+        :type  sigma:         float
+        :type  sum_width:     float
+        :type  summ:          int
+        :type  data_decimal:  int
+        :type  stat_decimal:  int
+        :type  itr:           GXITR
+
+        .. versionadded:: 5.1.8
 
         **Note:**
 
@@ -863,6 +2063,29 @@ class GXMVU:
     def profile_plot(cls, mview, vv_x, vv_y, vv_z, vangle, up, gap, base, scale, join):
         """
         Draw a profile along line trace
+        
+        :param mview:   View
+        :param vv_x:    X
+        :param vv_y:    Y
+        :param vv_z:    Z
+        :param vangle:  Lines steeper than this angle are considered vertical and the up label direction is used.
+        :param up:      Up label direction:   1 up is right -1 up is left
+        :param gap:     Maximum gap in data to span (view units)
+        :param base:    Z profile base, `rDUMMY <geosoft.gxapi.rDUMMY>` to use data minimum
+        :param scale:   Z scale in view units/Z unit
+        :param join:    1 to join profile to line ends.
+        :type  mview:   GXMVIEW
+        :type  vv_x:    GXVV
+        :type  vv_y:    GXVV
+        :type  vv_z:    GXVV
+        :type  vangle:  float
+        :type  up:      int
+        :type  gap:     float
+        :type  base:    float
+        :type  scale:   float
+        :type  join:    int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -877,6 +2100,39 @@ class GXMVU:
     def profile_plot_ex(cls, mview, vv_x, vv_y, vv_z, vangle, up, gap, base, scale, join, log, log_base, smooth, pos_f_color, neg_f_color):
         """
         Draw a profile along line trace with more parameters
+        
+        :param mview:        View
+        :param vv_x:         X
+        :param vv_y:         Y
+        :param vv_z:         Z
+        :param vangle:       Lines steeper than this angle are considered vertical and the up label direction is used.
+        :param up:           Up label direction:   1 up is right -1 up is left
+        :param gap:          Maximum gap in data to span (view units)
+        :param base:         Z profile base, `rDUMMY <geosoft.gxapi.rDUMMY>` to use data minimum
+        :param scale:        Z scale in view units/Z unit
+        :param join:         1 to join profile to line ends.
+        :param log:          Log option: 0 linear (default), 1 logarithm, 2 log/linear
+        :param log_base:     Log base
+        :param smooth:       Smooth curve option: 0 no (default), 1 yes
+        :param pos_f_color:  Positive fill color
+        :param neg_f_color:  Negative fill color
+        :type  mview:        GXMVIEW
+        :type  vv_x:         GXVV
+        :type  vv_y:         GXVV
+        :type  vv_z:         GXVV
+        :type  vangle:       float
+        :type  up:           int
+        :type  gap:          float
+        :type  base:         float
+        :type  scale:        float
+        :type  join:         int
+        :type  log:          int
+        :type  log_base:     float
+        :type  smooth:       int
+        :type  pos_f_color:  str
+        :type  neg_f_color:  str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -891,6 +2147,31 @@ class GXMVU:
     def prop_symb_legend(cls, mview, x1, y1, font_size, symb_scale, base, n_symb, start, increment, title, sub_title):
         """
         Draw a legend for proportional symbols.
+        
+        :param mview:       `GXMVIEW <geosoft.gxapi.GXMVIEW>` object
+        :param x1:          Plot origin X
+        :param y1:          Plot origin Y
+        :param font_size:   Label Font size (mm)
+        :param symb_scale:  Symbol scale factor (data value/mm)
+        :param base:        Base value to remove before scaling
+        :param n_symb:      Number of symbols
+        :param start:       Starting symbol data value (>= Base value)
+        :param increment:   Data value increment (>0.0)
+        :param title:       Plot title
+        :param sub_title:   Plot subtitle
+        :type  mview:       GXMVIEW
+        :type  x1:          float
+        :type  y1:          float
+        :type  font_size:   float
+        :type  symb_scale:  float
+        :type  base:        float
+        :type  n_symb:      int
+        :type  start:       float
+        :type  increment:   float
+        :type  title:       str
+        :type  sub_title:   str
+
+        .. versionadded:: 5.0.8
 
         **Note:**
 
@@ -908,6 +2189,13 @@ class GXMVU:
     def re_gen_areas(cls, mview, lines):
         """
         Re-Generate from a line group and existing area group
+        
+        :param mview:  View
+        :param lines:  Group with lines
+        :type  mview:  GXMVIEW
+        :type  lines:  str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -933,6 +2221,21 @@ class GXMVU:
     def symb_off(cls, mview, vv_x, vv_y, vv_f, x_off, y_off):
         """
         Draws symbols with an offset and against a flag channel
+        
+        :param mview:  View
+        :param vv_x:   X, must be type of REAL
+        :param vv_y:   Y, must be type of REAL
+        :param vv_f:   Flag `GXVV <geosoft.gxapi.GXVV>`, must be type of INT
+        :param x_off:  X Offset
+        :param y_off:  Y Offset
+        :type  mview:  GXMVIEW
+        :type  vv_x:   GXVV
+        :type  vv_y:   GXVV
+        :type  vv_f:   GXVV
+        :type  x_off:  float
+        :type  y_off:  float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -948,6 +2251,25 @@ class GXMVU:
     def text_box(cls, mview, xmin, ymin, xmax, ymax, text, space, type):
         """
         Draw a wrapped text box
+        
+        :param mview:  View
+        :param xmin:   Min X
+        :param ymin:   Min Y
+        :param xmax:   Max X
+        :param ymax:   Max Y
+        :param text:   Text
+        :param space:  Line spacing (1.2 good)
+        :param type:   `MVU_TEXTBOX`
+        :type  mview:  GXMVIEW
+        :type  xmin:   float
+        :type  ymin:   float
+        :type  xmax:   float
+        :type  ymax:   float
+        :type  text:   str
+        :type  space:  float
+        :type  type:   int
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapMVU.text_box(GXContext._get_tls_geo(), mview._wrapper, xmin, ymin, xmax, ymax, text.encode(), space, type)
         
@@ -958,6 +2280,25 @@ class GXMVU:
     def tick(cls, mview, vv_x, vv_y, vv_s, size, mod, mt_size, mt_mod):
         """
         Draw line ticks on a map.
+        
+        :param mview:    View
+        :param vv_x:     X locations
+        :param vv_y:     Y locations
+        :param vv_s:     Station
+        :param size:     Tick size
+        :param mod:      Tick modulus on station vv
+        :param mt_size:  Major tick size
+        :param mt_mod:   Major tick modulus on station vv
+        :type  mview:    GXMVIEW
+        :type  vv_x:     GXVV
+        :type  vv_y:     GXVV
+        :type  vv_s:     GXVV
+        :type  size:     float
+        :type  mod:      float
+        :type  mt_size:  float
+        :type  mt_mod:   float
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapMVU.tick(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, vv_s._wrapper, size, mod, mt_size, mt_mod)
         
@@ -968,6 +2309,27 @@ class GXMVU:
     def tick_ex(cls, mview, vv_x, vv_y, vv_s, size, mod, mt_size, mt_mod, gap):
         """
         Same as `tick <geosoft.gxapi.GXMVU.tick>`, with gap allowance.
+        
+        :param mview:    View
+        :param vv_x:     X locations
+        :param vv_y:     Y locations
+        :param vv_s:     Station
+        :param size:     Tick size
+        :param mod:      Tick modulus on station vv
+        :param mt_size:  Major tick size
+        :param mt_mod:   Major tick modulus on station vv
+        :param gap:      Maximum gap to span; set to 0 or `rDUMMY <geosoft.gxapi.rDUMMY>` to ignore all gaps.
+        :type  mview:    GXMVIEW
+        :type  vv_x:     GXVV
+        :type  vv_y:     GXVV
+        :type  vv_s:     GXVV
+        :type  size:     float
+        :type  mod:      float
+        :type  mt_size:  float
+        :type  mt_mod:   float
+        :type  gap:      float
+
+        .. versionadded:: 6.3
         """
         gxapi_cy.WrapMVU.tick_ex(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, vv_s._wrapper, size, mod, mt_size, mt_mod, gap)
         
@@ -978,6 +2340,19 @@ class GXMVU:
     def trnd_path(cls, mview, vv_x, vv_y, min_sect, min_dist):
         """
         Plot min and max trend lines.
+        
+        :param mview:     View
+        :param vv_x:      X
+        :param vv_y:      Y
+        :param min_sect:  Minimum number of sections
+        :param min_dist:  Minimum length of sections
+        :type  mview:     GXMVIEW
+        :type  vv_x:      GXVV
+        :type  vv_y:      GXVV
+        :type  min_sect:  int
+        :type  min_dist:  float
+
+        .. versionadded:: 5.0
 
         **Note:**
 

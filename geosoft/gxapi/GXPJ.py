@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -64,6 +63,21 @@ class GXPJ:
     def clip_ply(self, min_x, min_y, max_x, max_y, max_dev, pply):
         """
         Create a clip polygon from a projected area.
+        
+        :param min_x:    Min X (or Longitude...)
+        :param min_y:    Min Y (or Latitude...)
+        :param max_x:    Max X
+        :param max_y:    Max Y
+        :param max_dev:  Max deviation in degrees
+        :param pply:     `GXPLY <geosoft.gxapi.GXPLY>` to be filled
+        :type  min_x:    float
+        :type  min_y:    float
+        :type  max_x:    float
+        :type  max_y:    float
+        :type  max_dev:  float
+        :type  pply:     GXPLY
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -84,6 +98,13 @@ class GXPJ:
     def convert_vv(self, vv_x, vv_y):
         """
         Convert VVx/VVy from input projection to output projection.
+        
+        :param vv_x:  VVx
+        :param vv_y:  VVy
+        :type  vv_x:  GXVV
+        :type  vv_y:  GXVV
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -98,6 +119,15 @@ class GXPJ:
     def convert_vv3(self, vv_x, vv_y, vv_z):
         """
         Convert VVx/VVy/VVz projections
+        
+        :param vv_x:  VVx
+        :param vv_y:  VVy
+        :param vv_z:  VVz
+        :type  vv_x:  GXVV
+        :type  vv_y:  GXVV
+        :type  vv_z:  GXVV
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -112,6 +142,13 @@ class GXPJ:
     def convert_xy(self, x, y):
         """
         Convert X, Y from input projection to output projection.
+        
+        :param x:   X  (or Longitude)
+        :param y:   Y  (or Latitude)
+        :type  x:   float_ref
+        :type  y:   float_ref
+
+        .. versionadded:: 5.0
         """
         x.value, y.value = self._wrapper.convert_xy(x.value, y.value)
         
@@ -122,6 +159,15 @@ class GXPJ:
     def convert_xy_from_xyz(self, x, y, z):
         """
         Convert X, Y from input projection to output projection, taking Z into account
+        
+        :param x:   X  (or Longitude)
+        :param y:   Y  (or Latitude)
+        :param z:   Z  (or Depth - unchanged)
+        :type  x:   float_ref
+        :type  y:   float_ref
+        :type  z:   float
+
+        .. versionadded:: 7.3
 
         **Note:**
 
@@ -142,6 +188,15 @@ class GXPJ:
     def convert_xyz(self, x, y, z):
         """
         Convert X,Y,Z from input projection to output projection.
+        
+        :param x:   X  (or Longitude)
+        :param y:   Y  (or Latitude)
+        :param z:   Z  (or Depth)
+        :type  x:   float_ref
+        :type  y:   float_ref
+        :type  z:   float_ref
+
+        .. versionadded:: 6.3
         """
         x.value, y.value, z.value = self._wrapper.convert_xyz(x.value, y.value, z.value)
         
@@ -152,6 +207,16 @@ class GXPJ:
     def create(cls, input, output):
         """
         This method creates a projection object.
+        
+        :param input:   Input PRJ file name, "" for geodetic
+        :param output:  Ouput PRJ file name, "" for geodetic
+        :type  input:   str
+        :type  output:  str
+
+        :returns:       `GXPJ <geosoft.gxapi.GXPJ>` Object
+        :rtype:         GXPJ
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapPJ.create(GXContext._get_tls_geo(), input.encode(), output.encode())
         return GXPJ(ret_val)
@@ -162,6 +227,16 @@ class GXPJ:
     def create_ipj(cls, ip_jin, ip_jout):
         """
         This method creates a projection object from IPJs.
+        
+        :param ip_jin:   Input Projection, (`GXIPJ <geosoft.gxapi.GXIPJ>`)0 for long/lat
+        :param ip_jout:  Output Projection, (`GXIPJ <geosoft.gxapi.GXIPJ>`)0 for long/lat
+        :type  ip_jin:   GXIPJ
+        :type  ip_jout:  GXIPJ
+
+        :returns:        `GXPJ <geosoft.gxapi.GXPJ>` Object
+        :rtype:          GXPJ
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -178,6 +253,25 @@ class GXPJ:
     def create_rectified(cls, lon, lat, x, y, rot, scl, dir):
         """
         Create a rectified `GXPJ <geosoft.gxapi.GXPJ>` from lon,lat,rotation
+        
+        :param lon:  Longitude  at (X,Y) origin
+        :param lat:  Latitude   at (X,Y) origin
+        :param x:    (X,Y) origin
+        :param rot:  Coordinate Y relative to geographic N (deg azm)
+        :param scl:  Scale to convert X,Y to m.
+        :param dir:  `PJ_RECT`
+        :type  lon:  float
+        :type  lat:  float
+        :type  x:    float
+        :type  y:    float
+        :type  rot:  float
+        :type  scl:  float
+        :type  dir:  int
+
+        :returns:    `GXPJ <geosoft.gxapi.GXPJ>` Object
+        :rtype:      GXPJ
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -199,6 +293,12 @@ class GXPJ:
     def elevation(self):
         """
         Get elevation correction method
+        
+
+        :returns:    `PJ_ELEVATION`
+        :rtype:      int
+
+        .. versionadded:: 5.1
 
         **Note:**
 
@@ -223,6 +323,13 @@ class GXPJ:
     def is_input_ll(self):
         """
         Is the input projection a lat/long.
+        
+
+        :returns:    1 - Yes
+                    0 - No
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.is_input_ll()
         return ret_val
@@ -233,6 +340,13 @@ class GXPJ:
     def is_output_ll(self):
         """
         Is the output projection a lat/long.
+        
+
+        :returns:    1 - Yes
+                    0 - No
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.is_output_ll()
         return ret_val
@@ -243,6 +357,17 @@ class GXPJ:
     def project_bounding_rectangle(self, min_x, min_y, max_x, max_y):
         """
         Project a bounding rectangle.
+        
+        :param min_x:  Bounding Region Min X
+        :param min_y:  Bounding Region Min Y
+        :param max_x:  Bounding Region Max X
+        :param max_y:  Bounding Region Max Y
+        :type  min_x:  float_ref
+        :type  min_y:  float_ref
+        :type  max_x:  float_ref
+        :type  max_y:  float_ref
+
+        .. versionadded:: 5.1.4
 
         **Note:**
 
@@ -262,6 +387,19 @@ class GXPJ:
     def project_bounding_rectangle2(self, min_x, min_y, max_x, max_y, err):
         """
         Project a bounding rectangle with error tolerance.
+        
+        :param min_x:  Bounding Region Min X
+        :param min_y:  Bounding Region Min Y
+        :param max_x:  Bounding Region Max X
+        :param max_y:  Bounding Region Max Y
+        :param err:    Maximum allowable projection error if <= 0.0, will use 0.005% of smallest dimension
+        :type  min_x:  float_ref
+        :type  min_y:  float_ref
+        :type  max_x:  float_ref
+        :type  max_y:  float_ref
+        :type  err:    float
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -278,6 +416,19 @@ class GXPJ:
     def project_bounding_rectangle_res(self, min_x, min_y, max_x, max_y, res):
         """
         Project a bounding rectangle with resolution.
+        
+        :param min_x:  Bounding Region Min X
+        :param min_y:  Bounding Region Min Y
+        :param max_x:  Bounding Region Max X
+        :param max_y:  Bounding Region Max Y
+        :param res:    Resolution
+        :type  min_x:  float_ref
+        :type  min_y:  float_ref
+        :type  max_x:  float_ref
+        :type  max_y:  float_ref
+        :type  res:    float_ref
+
+        .. versionadded:: 5.1.8
 
         **Note:**
 
@@ -295,6 +446,21 @@ class GXPJ:
     def project_bounding_rectangle_res2(self, min_x, min_y, max_x, max_y, res, err):
         """
         Project a bounding rectangle with resolution and error tolerance.
+        
+        :param min_x:  Bounding Region Min X
+        :param min_y:  Bounding Region Min Y
+        :param max_x:  Bounding Region Max X
+        :param max_y:  Bounding Region Max Y
+        :param res:    Resolution
+        :param err:    Maximum allowable projection error if <= 0.0, will use 0.005% of smallest dimension
+        :type  min_x:  float_ref
+        :type  min_y:  float_ref
+        :type  max_x:  float_ref
+        :type  max_y:  float_ref
+        :type  res:    float_ref
+        :type  err:    float
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -311,6 +477,25 @@ class GXPJ:
     def project_limited_bounding_rectangle(self, min_xl, min_yl, max_xl, max_yl, min_x, min_y, max_x, max_y):
         """
         Project a bounding rectangle with limits.
+        
+        :param min_xl:  Output limited bounding region Min X
+        :param min_yl:  Min Y
+        :param max_xl:  Max X
+        :param max_yl:  Max Y
+        :param min_x:   Bounding Region Min X
+        :param min_y:   Min Y
+        :param max_x:   Max X
+        :param max_y:   Max Y
+        :type  min_xl:  float
+        :type  min_yl:  float
+        :type  max_xl:  float
+        :type  max_yl:  float
+        :type  min_x:   float_ref
+        :type  min_y:   float_ref
+        :type  max_x:   float_ref
+        :type  max_y:   float_ref
+
+        .. versionadded:: 6.0
 
         **Note:**
 
@@ -332,6 +517,9 @@ class GXPJ:
     def setup_ldt(self):
         """
         Setup the `GXPJ <geosoft.gxapi.GXPJ>` with LDT check.
+        
+
+        .. versionadded:: 6.2
 
         **Note:**
 

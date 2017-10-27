@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXAGG import GXAGG
@@ -88,6 +87,21 @@ class GXMVIEW:
     def box_3d(self, min_x, min_y, min_z, max_x, max_y, max_z):
         """
         Draw a 3D box
+        
+        :param min_x:  Min X
+        :param min_y:  Min Y
+        :param min_z:  Min Z
+        :param max_x:  Max X
+        :param max_y:  Max Y
+        :param max_z:  Max Z
+        :type  min_x:  float
+        :type  min_y:  float
+        :type  min_z:  float
+        :type  max_x:  float
+        :type  max_y:  float
+        :type  max_z:  float
+
+        .. versionadded:: 5.1.6
 
         **Note:**
 
@@ -102,6 +116,13 @@ class GXMVIEW:
     def crc_view(self, crc, file):
         """
         Generate an XML CRC of a View
+        
+        :param crc:    CRC returned
+        :param file:   Name of xml to generate (.zip added)
+        :type  crc:    int_ref
+        :type  file:   str
+
+        .. versionadded:: 6.0
         """
         crc.value = self._wrapper.crc_view(crc.value, file.encode())
         
@@ -112,6 +133,15 @@ class GXMVIEW:
     def crc_view_group(self, group, crc, file):
         """
         Generate an XML CRC of a Group
+        
+        :param group:  Name of Group
+        :param crc:    CRC returned
+        :param file:   Name of xml to generate (.zip added)
+        :type  group:  str
+        :type  crc:    int_ref
+        :type  file:   str
+
+        .. versionadded:: 6.0
         """
         crc.value = self._wrapper.crc_view_group(group.encode(), crc.value, file.encode())
         
@@ -122,6 +152,27 @@ class GXMVIEW:
     def cylinder_3d(self, start_x, start_y, start_z, end_x, end_y, end_z, start_radius, end_radius, flags):
         """
         Draw a 3D cylinder
+        
+        :param start_x:       Start X
+        :param start_y:       Start Y
+        :param start_z:       Start Z
+        :param end_x:         End X
+        :param end_y:         End Y
+        :param end_z:         End Z
+        :param start_radius:  Start Radius (can be zero)
+        :param end_radius:    End Radius (can be zero)
+        :param flags:         `MVIEW_CYLINDER3D`
+        :type  start_x:       float
+        :type  start_y:       float
+        :type  start_z:       float
+        :type  end_x:         float
+        :type  end_y:         float
+        :type  end_z:         float
+        :type  start_radius:  float
+        :type  end_radius:    float
+        :type  flags:         int
+
+        .. versionadded:: 5.1.6
 
         **Note:**
 
@@ -139,6 +190,35 @@ class GXMVIEW:
     def draw_object_3d(self, type, mode, objects, default_count, vert_v_vx, vert_v_vy, vert_v_vz, norm_v_vx, norm_v_vy, norm_v_vz, color_vv, index_vv, count_vv):
         """
         Draw a 3D object optimized for rendering
+        
+        :param type:           `MVIEW_DRAWOBJ3D_ENTITY`
+        :param mode:           `MVIEW_DRAWOBJ3D_MODE`
+        :param objects:        Number of Objects
+        :param default_count:  Default Count (if variable and not specified)
+        :param vert_v_vx:      Verticies X
+        :param vert_v_vy:      Verticies Y
+        :param vert_v_vz:      Verticies Z
+        :param norm_v_vx:      Normals X (can be NULL)
+        :param norm_v_vy:      Normals Y (can be NULL)
+        :param norm_v_vz:      Normals Z (can be NULL)
+        :param color_vv:       Colors `GXVV <geosoft.gxapi.GXVV>` (can be NULL)
+        :param index_vv:       Index  `GXVV <geosoft.gxapi.GXVV>` (can be NULL)
+        :param count_vv:       Count  `GXVV <geosoft.gxapi.GXVV>` (can be NULL)
+        :type  type:           int
+        :type  mode:           int
+        :type  objects:        int
+        :type  default_count:  int
+        :type  vert_v_vx:      GXVV
+        :type  vert_v_vy:      GXVV
+        :type  vert_v_vz:      GXVV
+        :type  norm_v_vx:      GXVV
+        :type  norm_v_vy:      GXVV
+        :type  norm_v_vz:      GXVV
+        :type  color_vv:       GXVV
+        :type  index_vv:       GXVV
+        :type  count_vv:       GXVV
+
+        .. versionadded:: 6.2
         """
         self._wrapper.draw_object_3d(type, mode, objects, default_count, vert_v_vx._wrapper, vert_v_vy._wrapper, vert_v_vz._wrapper, norm_v_vx._wrapper, norm_v_vy._wrapper, norm_v_vz._wrapper, color_vv._wrapper, index_vv._wrapper, count_vv._wrapper)
         
@@ -149,6 +229,35 @@ class GXMVIEW:
     def draw_surface_3d_ex(self, group_name, vert_v_vx, vert_v_vy, vert_v_vz, norm_v_vx, norm_v_vy, norm_v_vz, color_vv, color, tri_vv_pt1, tri_vv_pt2, tri_vv_pt3, ipj):
         """
         Draw a 3D object built from triangles
+        
+        :param group_name:  Group name
+        :param vert_v_vx:   Vertices X (`GS_REAL <geosoft.gxapi.GS_REAL>`)
+        :param vert_v_vy:   Vertices Y (`GS_REAL <geosoft.gxapi.GS_REAL>`)
+        :param vert_v_vz:   Vertices Z (`GS_REAL <geosoft.gxapi.GS_REAL>`)
+        :param norm_v_vx:   Normals X (`GS_REAL <geosoft.gxapi.GS_REAL>`)
+        :param norm_v_vy:   Normals Y (`GS_REAL <geosoft.gxapi.GS_REAL>`)
+        :param norm_v_vz:   Normals Z (`GS_REAL <geosoft.gxapi.GS_REAL>`)
+        :param color_vv:    Colors `GXVV <geosoft.gxapi.GXVV>` (`GS_INT <geosoft.gxapi.GS_INT>`) [can be NULL]
+        :param color:       Color used if above `GXVV <geosoft.gxapi.GXVV>` is NULL [0 for `GXMVIEW <geosoft.gxapi.GXMVIEW>`'s fill color]
+        :param tri_vv_pt1:  Triangles Point 1 (`GS_INT <geosoft.gxapi.GS_INT>`)
+        :param tri_vv_pt2:  Triangles Point 2 (`GS_INT <geosoft.gxapi.GS_INT>`)
+        :param tri_vv_pt3:  Triangles Point 3 (`GS_INT <geosoft.gxapi.GS_INT>`)
+        :param ipj:         Native `GXIPJ <geosoft.gxapi.GXIPJ>` of 3D object
+        :type  group_name:  str
+        :type  vert_v_vx:   GXVV
+        :type  vert_v_vy:   GXVV
+        :type  vert_v_vz:   GXVV
+        :type  norm_v_vx:   GXVV
+        :type  norm_v_vy:   GXVV
+        :type  norm_v_vz:   GXVV
+        :type  color_vv:    GXVV
+        :type  color:       int
+        :type  tri_vv_pt1:  GXVV
+        :type  tri_vv_pt2:  GXVV
+        :type  tri_vv_pt3:  GXVV
+        :type  ipj:         GXIPJ
+
+        .. versionadded:: 7.0
 
         **Note:**
 
@@ -164,6 +273,13 @@ class GXMVIEW:
     def draw_surface_3d_from_file(self, group_name, surface_file):
         """
         Draw a 3D object from a surface file
+        
+        :param group_name:    Group name
+        :param surface_file:  Surface file
+        :type  group_name:    str
+        :type  surface_file:  str
+
+        .. versionadded:: 7.0
         """
         self._wrapper.draw_surface_3d_from_file(group_name.encode(), surface_file.encode())
         
@@ -174,6 +290,11 @@ class GXMVIEW:
     def font_weight_lst(cls, lst):
         """
         Fill a `GXLST <geosoft.gxapi.GXLST>` with the different font weights.
+        
+        :param lst:  `GXLST <geosoft.gxapi.GXLST>` object
+        :type  lst:  GXLST
+
+        .. versionadded:: 5.1
         """
         gxapi_cy.WrapMVIEW.font_weight_lst(GXContext._get_tls_geo(), lst._wrapper)
         
@@ -184,6 +305,13 @@ class GXMVIEW:
     def get_agg_file_names(self, group, vv):
         """
         Get the names of grid files stored in an `GXAGG <geosoft.gxapi.GXAGG>`.
+        
+        :param group:  Group name
+        :param vv:     Returned string `GXVV <geosoft.gxapi.GXVV>` of type -`STR_FILE <geosoft.gxapi.STR_FILE>`
+        :type  group:  str
+        :type  vv:     GXVV
+
+        .. versionadded:: 5.1.5
 
         **Note:**
 
@@ -199,6 +327,16 @@ class GXMVIEW:
     def get_meta(self, group, meta):
         """
         Retrieves Metadata from a group
+        
+        :param group:  Group Name
+        :param meta:   Meta name
+        :type  group:  str
+        :type  meta:   str_ref
+
+        :returns:      `GXMETA <geosoft.gxapi.GXMETA>` Object
+        :rtype:        GXMETA
+
+        .. versionadded:: 5.1.6
         """
         ret_val, meta.value = self._wrapper.get_meta(group.encode(), meta.value.encode())
         return GXMETA(ret_val)
@@ -209,6 +347,19 @@ class GXMVIEW:
     def measure_text(self, text, x_min, y_min, x_max, y_max):
         """
         Compute the bounding rectangle in view units of the text using the current attributes.
+        
+        :param text:   Text string
+        :param x_min:  X minimum
+        :param y_min:  Y minimum
+        :param x_max:  X maximum
+        :param y_max:  Y maximum
+        :type  text:   str
+        :type  x_min:  float_ref
+        :type  y_min:  float_ref
+        :type  x_max:  float_ref
+        :type  y_max:  float_ref
+
+        .. versionadded:: 6.0
 
         **Note:**
 
@@ -225,6 +376,15 @@ class GXMVIEW:
     def point_3d(self, x, y, z):
         """
         Draw a 3D point.
+        
+        :param x:      X
+        :param y:      Y
+        :param z:      Z
+        :type  x:      float
+        :type  y:      float
+        :type  z:      float
+
+        .. versionadded:: 5.1.6
 
         **Note:**
 
@@ -239,6 +399,15 @@ class GXMVIEW:
     def poly_line_3d(self, vv_x, vv_y, vv_z):
         """
         Draw a 3D polyline.
+        
+        :param vv_x:   X coordinates.
+        :param vv_y:   Y coordinates.
+        :param vv_z:   Z coordinates.
+        :type  vv_x:   GXVV
+        :type  vv_y:   GXVV
+        :type  vv_z:   GXVV
+
+        .. versionadded:: 5.1.6
 
         **Note:**
 
@@ -254,6 +423,21 @@ class GXMVIEW:
     def relocate_group(self, group, min_x, min_y, max_x, max_y, asp):
         """
         Re-locate a group in a view.
+        
+        :param group:  Group name
+        :param min_x:  Area X minimum
+        :param min_y:  Area Y minimum
+        :param max_x:  Area X maximum
+        :param max_y:  Area Y maximum
+        :param asp:    `MVIEW_RELOCATE`
+        :type  group:  str
+        :type  min_x:  float
+        :type  min_y:  float
+        :type  max_x:  float
+        :type  max_y:  float
+        :type  asp:    int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.relocate_group(group.encode(), min_x, min_y, max_x, max_y, asp)
         
@@ -264,6 +448,15 @@ class GXMVIEW:
     def set_meta(self, group, meta, name):
         """
         Update the `GXMETA <geosoft.gxapi.GXMETA>` in this group with the new meta object.
+        
+        :param group:  Group Name
+        :param meta:   `GXMETA <geosoft.gxapi.GXMETA>` object
+        :param name:   Meta name of Object
+        :type  group:  str
+        :type  meta:   GXMETA
+        :type  name:   str
+
+        .. versionadded:: 5.1.6
         """
         self._wrapper.set_meta(group.encode(), meta._wrapper, name.encode())
         
@@ -274,6 +467,17 @@ class GXMVIEW:
     def sphere_3d(self, x, y, z, radius):
         """
         Draw a 3D sphere
+        
+        :param x:       Center X
+        :param y:       Center Y
+        :param z:       Center Z
+        :param radius:  Radius
+        :type  x:       float
+        :type  y:       float
+        :type  z:       float
+        :type  radius:  float
+
+        .. versionadded:: 5.1.6
 
         **Note:**
 
@@ -288,6 +492,13 @@ class GXMVIEW:
     def update_met_afrom_group(self, group, meta):
         """
         Fill the `GXMETA <geosoft.gxapi.GXMETA>` with group dataset information
+        
+        :param group:  Group Name
+        :param meta:   `GXMETA <geosoft.gxapi.GXMETA>` object to fill
+        :type  group:  str
+        :type  meta:   GXMETA
+
+        .. versionadded:: 5.1.6
         """
         self._wrapper.update_met_afrom_group(group.encode(), meta._wrapper)
         
@@ -302,6 +513,13 @@ class GXMVIEW:
     def delete_plane(self, plane, del_grp):
         """
         Delete a plane in a view
+        
+        :param plane:    Plane number to delete
+        :param del_grp:  TRUE to delete all groups on the plane
+        :type  plane:    int
+        :type  del_grp:  int
+
+        .. versionadded:: 5.1.2
 
         **Note:**
 
@@ -319,6 +537,13 @@ class GXMVIEW:
     def get_plane_clip_ply(self, plane, pply):
         """
         Get the Plane Clip Region
+        
+        :param plane:  Plane index
+        :param pply:   Clip Region
+        :type  plane:  int
+        :type  pply:   GXPLY
+
+        .. versionadded:: 6.0
 
         **Note:**
 
@@ -333,6 +558,29 @@ class GXMVIEW:
     def get_plane_equation(self, plane, pitch, yaw, roll, x, y, z, sx, sy, str_val):
         """
         Get the equation of a plane
+        
+        :param plane:    Plane index
+        :param pitch:    Rotation about X (Y toward Z +ve, between -360 and 360)
+        :param yaw:      Rotation about Y (Z toward X +ve, between -360 and 360)
+        :param roll:     Rotation about Z (Y toward X +ve, between -360 and 360)
+        :param x:        X offset of plane
+        :param y:        Y offset of plane
+        :param z:        Z offset of plane
+        :param sx:       X scale
+        :param sy:       Y scale
+        :param str_val:  Z scale
+        :type  plane:    int
+        :type  pitch:    float_ref
+        :type  yaw:      float_ref
+        :type  roll:     float_ref
+        :type  x:        float_ref
+        :type  y:        float_ref
+        :type  z:        float_ref
+        :type  sx:       float_ref
+        :type  sy:       float_ref
+        :type  str_val:  float_ref
+
+        .. versionadded:: 5.1.2
         """
         pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value = self._wrapper.get_plane_equation(plane, pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value)
         
@@ -343,6 +591,27 @@ class GXMVIEW:
     def get_view_plane_equation(self, pitch, yaw, roll, x, y, z, sx, sy, str_val):
         """
         Get the View's Plane Equation
+        
+        :param pitch:    Angle in X
+        :param yaw:      Angle in Y
+        :param roll:     Angle in Z
+        :param x:        Offset in X
+        :param y:        Offset in Y
+        :param z:        Offset in Z
+        :param sx:       Scale in X
+        :param sy:       Scale in Y
+        :param str_val:  Scale in Z
+        :type  pitch:    float_ref
+        :type  yaw:      float_ref
+        :type  roll:     float_ref
+        :type  x:        float_ref
+        :type  y:        float_ref
+        :type  z:        float_ref
+        :type  sx:       float_ref
+        :type  sy:       float_ref
+        :type  str_val:  float_ref
+
+        .. versionadded:: 5.1.2
         """
         pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value = self._wrapper.get_view_plane_equation(pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value)
         
@@ -353,6 +622,14 @@ class GXMVIEW:
     def create_plane(self, plane):
         """
         Create a 3D Plane for 2D Groups
+        
+        :param plane:  Name of Plane
+        :type  plane:  str
+
+        :returns:      x - Index of plane
+        :rtype:        int
+
+        .. versionadded:: 5.1.2
         """
         ret_val = self._wrapper.create_plane(plane.encode())
         return ret_val
@@ -363,6 +640,14 @@ class GXMVIEW:
     def find_plane(self, plane):
         """
         Find a plane in a view
+        
+        :param plane:  Name of the plane
+        :type  plane:  str
+
+        :returns:      Plane number, -1 if not found
+        :rtype:        int
+
+        .. versionadded:: 5.1.2
         """
         ret_val = self._wrapper.find_plane(plane.encode())
         return ret_val
@@ -373,6 +658,11 @@ class GXMVIEW:
     def get_def_plane(self, name):
         """
         Get the default drawing plane.
+        
+        :param name:   Name
+        :type  name:   str_ref
+
+        .. versionadded:: 5.1.2
 
         **Note:**
 
@@ -390,6 +680,12 @@ class GXMVIEW:
     def is_view_3d(self):
         """
         Is the view 3D?
+        
+
+        :returns:      TRUE if view is 3D
+        :rtype:        int
+
+        .. versionadded:: 5.1.2
         """
         ret_val = self._wrapper.is_view_3d()
         return ret_val
@@ -400,6 +696,12 @@ class GXMVIEW:
     def is_section(self):
         """
         Is the view a section view?
+        
+
+        :returns:      TRUE if view is a section view.
+        :rtype:        int
+
+        .. versionadded:: 8.2
 
         **Note:**
 
@@ -421,6 +723,13 @@ class GXMVIEW:
     def list_plane_groups(self, plane, lst):
         """
         List all groups in a specific plane of a 3D view
+        
+        :param plane:  Plane number
+        :param lst:    List of plane names and numbers
+        :type  plane:  int
+        :type  lst:    GXLST
+
+        .. versionadded:: 5.1.2
 
         **Note:**
 
@@ -438,6 +747,11 @@ class GXMVIEW:
     def list_planes(self, lst):
         """
         List all planes in a 3D view
+        
+        :param lst:    List of plane names and numbers
+        :type  lst:    GXLST
+
+        .. versionadded:: 5.1.2
 
         **Note:**
 
@@ -455,6 +769,11 @@ class GXMVIEW:
     def set_all_groups_to_plane(self, plane):
         """
         Set all groups to be within one plane
+        
+        :param plane:  Plane Index to set all groups to
+        :type  plane:  int
+
+        .. versionadded:: 5.1.2
         """
         self._wrapper.set_all_groups_to_plane(plane)
         
@@ -465,6 +784,11 @@ class GXMVIEW:
     def set_all_new_groups_to_plane(self, plane):
         """
         Set all groups that are not in any plane to this plane
+        
+        :param plane:  Plane Index to set all groups to
+        :type  plane:  int
+
+        .. versionadded:: 5.1.2
         """
         self._wrapper.set_all_new_groups_to_plane(plane)
         
@@ -475,6 +799,11 @@ class GXMVIEW:
     def set_def_plane(self, name):
         """
         Set the default drawing plane.
+        
+        :param name:   Name
+        :type  name:   str
+
+        .. versionadded:: 5.1.2
 
         **Note:**
 
@@ -492,6 +821,13 @@ class GXMVIEW:
     def set_group_to_plane(self, plane, group):
         """
         Set a group to a plane
+        
+        :param plane:  Plane Index to set all groups to
+        :param group:  Name of group to set
+        :type  plane:  int
+        :type  group:  str
+
+        .. versionadded:: 5.1.2
         """
         self._wrapper.set_group_to_plane(plane, group.encode())
         
@@ -502,6 +838,11 @@ class GXMVIEW:
     def set_h_3dn(self, o3dn):
         """
         Set the `GX3DN <geosoft.gxapi.GX3DN>` object for this view
+        
+        :param o3dn:   `GX3DN <geosoft.gxapi.GX3DN>` to set (NULL for 2D view)
+        :type  o3dn:   GX3DN
+
+        .. versionadded:: 5.1.2
 
         **Note:**
 
@@ -516,6 +857,21 @@ class GXMVIEW:
     def get_3d_point_of_view(self, x, y, z, distance, declination, inclination):
         """
         Get 3D point of view (values are will be `rDUMMY <geosoft.gxapi.rDUMMY>` if view for 2D views)
+        
+        :param x:            X center
+        :param y:            Y center
+        :param z:            Z center
+        :param distance:     Distance from center
+        :param declination:  Declination, 0 to 360 CW from Y
+        :param inclination:  Inclination, -90 to +90
+        :type  x:            float_ref
+        :type  y:            float_ref
+        :type  z:            float_ref
+        :type  distance:     float_ref
+        :type  declination:  float_ref
+        :type  inclination:  float_ref
+
+        .. versionadded:: 9.2
         """
         x.value, y.value, z.value, distance.value, declination.value, inclination.value = self._wrapper.get_3d_point_of_view(x.value, y.value, z.value, distance.value, declination.value, inclination.value)
         
@@ -526,6 +882,21 @@ class GXMVIEW:
     def set_3d_point_of_view(self, x, y, z, distance, declination, inclination):
         """
         Set 3D point of view (no effect on 2D views)
+        
+        :param x:            X center
+        :param y:            Y center
+        :param z:            Z center
+        :param distance:     Distance from center
+        :param declination:  Declination, 0 to 360 CW from Y
+        :param inclination:  Inclination, -90 to +90
+        :type  x:            float
+        :type  y:            float
+        :type  z:            float
+        :type  distance:     float
+        :type  declination:  float
+        :type  inclination:  float
+
+        .. versionadded:: 9.2
         """
         self._wrapper.set_3d_point_of_view(x, y, z, distance, declination, inclination)
         
@@ -536,6 +907,13 @@ class GXMVIEW:
     def set_plane_clip_ply(self, plane, pply):
         """
         Set the Plane Clip Region
+        
+        :param plane:  Plane index
+        :param pply:   Clip Region
+        :type  plane:  int
+        :type  pply:   GXPLY
+
+        .. versionadded:: 5.1.4
 
         **Note:**
 
@@ -550,6 +928,29 @@ class GXMVIEW:
     def set_plane_equation(self, plane, pitch, yaw, roll, x, y, z, sx, sy, str_val):
         """
         Set the equation of a plane
+        
+        :param plane:    Plane index
+        :param pitch:    Rotation about X (Z toward Y +ve, between -360 and 360)
+        :param yaw:      Rotation about Y (Z toward X +ve, between -360 and 360)
+        :param roll:     Rotation about Z (Y toward X +ve, between -360 and 360)
+        :param x:        X offset of plane
+        :param y:        Y offset of plane
+        :param z:        Z offset of plane
+        :param sx:       X scale
+        :param sy:       Y scale
+        :param str_val:  Z scale
+        :type  plane:    int
+        :type  pitch:    float
+        :type  yaw:      float
+        :type  roll:     float
+        :type  x:        float
+        :type  y:        float
+        :type  z:        float
+        :type  sx:       float
+        :type  sy:       float
+        :type  str_val:  float
+
+        .. versionadded:: 5.1.2
 
         **Note:**
 
@@ -566,6 +967,13 @@ class GXMVIEW:
     def set_plane_surface(self, plane, surface):
         """
         Set the surface image of a plane
+        
+        :param plane:    Plane index
+        :param surface:  Optional surface image/grid name, can be NULL
+        :type  plane:    int
+        :type  surface:  str
+
+        .. versionadded:: 5.1.2
         """
         self._wrapper.set_plane_surface(plane, surface.encode())
         
@@ -576,6 +984,21 @@ class GXMVIEW:
     def set_plane_surf_info(self, plane, sample, base, scale, min, max):
         """
         Set the surface information
+        
+        :param plane:   Plane index
+        :param sample:  Sample rate (>=1)
+        :param base:    Base
+        :param scale:   Scale
+        :param min:     Min
+        :param max:     Max
+        :type  plane:   int
+        :type  sample:  int
+        :type  base:    float
+        :type  scale:   float
+        :type  min:     float
+        :type  max:     float
+
+        .. versionadded:: 5.1.2
         """
         self._wrapper.set_plane_surf_info(plane, sample, base, scale, min, max)
         
@@ -590,6 +1013,27 @@ class GXMVIEW:
     def define_plane_3d(self, center_x, center_y, center_z, x_vector_x, x_vector_y, x_vector_z, y_vector_x, y_vector_y, y_vector_z):
         """
         Define a 2D drawing plane based on point and normal
+        
+        :param center_x:    Center point X
+        :param center_y:    Center point Y
+        :param center_z:    Center point Z
+        :param x_vector_x:  X Vector X
+        :param x_vector_y:  X Vector Y
+        :param x_vector_z:  X Vector Z
+        :param y_vector_x:  Y Vector X
+        :param y_vector_y:  Y Vector Y
+        :param y_vector_z:  Y Vector Z
+        :type  center_x:    float
+        :type  center_y:    float
+        :type  center_z:    float
+        :type  x_vector_x:  float
+        :type  x_vector_y:  float
+        :type  x_vector_z:  float
+        :type  y_vector_x:  float
+        :type  y_vector_y:  float
+        :type  y_vector_z:  float
+
+        .. versionadded:: 5.1.6
 
         **Note:**
 
@@ -606,6 +1050,21 @@ class GXMVIEW:
         """
         Define a 2D drawing plane based on the user's view that
         oriented around the vector.
+        
+        :param center_x:     Center point X
+        :param center_y:     Center point Y
+        :param center_z:     Center point Z
+        :param dir_point_x:  Directional Point X
+        :param dir_point_y:  Directional Point Y
+        :param dir_point_z:  Directional Point Z
+        :type  center_x:     float
+        :type  center_y:     float
+        :type  center_z:     float
+        :type  dir_point_x:  float
+        :type  dir_point_y:  float
+        :type  dir_point_z:  float
+
+        .. versionadded:: 5.1.6
         """
         self._wrapper.define_viewer_axis_3d(center_x, center_y, center_z, dir_point_x, dir_point_y, dir_point_z)
         
@@ -616,6 +1075,15 @@ class GXMVIEW:
     def define_viewer_plane_3d(self, center_x, center_y, center_z):
         """
         Define a 2D drawing plane based on the user's view.
+        
+        :param center_x:  Center point X
+        :param center_y:  Center point Y
+        :param center_z:  Center point Z
+        :type  center_x:  float
+        :type  center_y:  float
+        :type  center_z:  float
+
+        .. versionadded:: 5.1.6
 
         **Note:**
 
@@ -635,6 +1103,17 @@ class GXMVIEW:
     def clip_poly_ex(self, vv_x, vv_y, unit, exclude):
         """
         Add a polygon to the clip region.
+        
+        :param vv_x:     X `GXVV <geosoft.gxapi.GXVV>`
+        :param vv_y:     Y `GXVV <geosoft.gxapi.GXVV>`
+        :param unit:     `MVIEW_UNIT`
+        :param exclude:  Exclude
+        :type  vv_x:     GXVV
+        :type  vv_y:     GXVV
+        :type  unit:     int
+        :type  exclude:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -650,6 +1129,21 @@ class GXMVIEW:
     def clip_rect_ex(self, min_x, min_y, max_x, max_y, unit, exclude):
         """
         Add a rectangle to the clip region.
+        
+        :param min_x:    X minimum
+        :param min_y:    Y minimum
+        :param max_x:    X maximum
+        :param max_y:    Y maximum
+        :param unit:     `MVIEW_UNIT`
+        :param exclude:  Exclude
+        :type  min_x:    float
+        :type  min_y:    float
+        :type  max_x:    float
+        :type  max_y:    float
+        :type  unit:     int
+        :type  exclude:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -664,6 +1158,9 @@ class GXMVIEW:
     def clip_clear(self):
         """
         Remove/clear the view clip region.
+        
+
+        .. versionadded:: 5.0
         """
         self._wrapper.clip_clear()
         
@@ -674,6 +1171,11 @@ class GXMVIEW:
     def clip_groups(self, mode):
         """
         Set the Clipping mode on/off for all groups.
+        
+        :param mode:   `MVIEW_CLIP`
+        :type  mode:   int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.clip_groups(mode)
         
@@ -684,6 +1186,11 @@ class GXMVIEW:
     def clip_marked_groups(self, mode):
         """
         Set the Clipping mode on/off for marked groups.
+        
+        :param mode:   `MVIEW_CLIP`
+        :type  mode:   int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.clip_marked_groups(mode)
         
@@ -694,6 +1201,15 @@ class GXMVIEW:
     def clip_poly(self, vv_x, vv_y, unit):
         """
         Add a polygon to the clip region.
+        
+        :param vv_x:   X `GXVV <geosoft.gxapi.GXVV>`
+        :param vv_y:   Y `GXVV <geosoft.gxapi.GXVV>`
+        :param unit:   `MVIEW_UNIT`
+        :type  vv_x:   GXVV
+        :type  vv_y:   GXVV
+        :type  unit:   int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -709,6 +1225,19 @@ class GXMVIEW:
     def clip_rect(self, min_x, min_y, max_x, max_y, unit):
         """
         Add a rectangle to the clip region.
+        
+        :param min_x:  X minimum
+        :param min_y:  Y minimum
+        :param max_x:  X maximum
+        :param max_y:  Y maximum
+        :param unit:   `MVIEW_UNIT`
+        :type  min_x:  float
+        :type  min_y:  float
+        :type  max_x:  float
+        :type  max_y:  float
+        :type  unit:   int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -723,6 +1252,11 @@ class GXMVIEW:
     def delete_ext_clip_ply(self, ext_ply):
         """
         Deletes an extended clip `GXPLY <geosoft.gxapi.GXPLY>` object used by this view.
+        
+        :param ext_ply:  Extended ClipPLY number
+        :type  ext_ply:  int
+
+        .. versionadded:: 6.0
         """
         self._wrapper.delete_ext_clip_ply(ext_ply)
         
@@ -733,6 +1267,10 @@ class GXMVIEW:
     def ext_clip_ply_list(self, lst):
         """
         Get the names of existing extended clip `GXPLY <geosoft.gxapi.GXPLY>` objects in this view as list.
+        
+        :type  lst:    GXLST
+
+        .. versionadded:: 6.0
         """
         self._wrapper.ext_clip_ply_list(lst._wrapper)
         
@@ -743,6 +1281,11 @@ class GXMVIEW:
     def get_clip_ply(self, poly):
         """
         Get clipping polygons, in the user projection
+        
+        :param poly:   Poly
+        :type  poly:   GXPLY
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -760,6 +1303,13 @@ class GXMVIEW:
     def get_ext_clip_ply(self, ext_ply, ply):
         """
         Get an extended clip `GXPLY <geosoft.gxapi.GXPLY>` object used by this view.
+        
+        :param ext_ply:  Extended ClipPLY number
+        :param ply:      `GXPLY <geosoft.gxapi.GXPLY>` object to get
+        :type  ext_ply:  int
+        :type  ply:      GXPLY
+
+        .. versionadded:: 6.0
         """
         self._wrapper.get_ext_clip_ply(ext_ply, ply._wrapper)
         
@@ -770,6 +1320,13 @@ class GXMVIEW:
     def get_group_ext_clip_ply(self, group, ext_ply):
         """
         Gets extended clip information for group in view.
+        
+        :param group:    Group Name
+        :param ext_ply:  Extended `GXPLY <geosoft.gxapi.GXPLY>` number (returned, -1 if not set)
+        :type  group:    str
+        :type  ext_ply:  int_ref
+
+        .. versionadded:: 6.0
         """
         ext_ply.value = self._wrapper.get_group_ext_clip_ply(group.encode(), ext_ply.value)
         
@@ -780,6 +1337,11 @@ class GXMVIEW:
     def get_ply(self, poly):
         """
         Get clipping polygons, in the base projection
+        
+        :param poly:   Poly
+        :type  poly:   GXPLY
+
+        .. versionadded:: 6.0
 
         **Note:**
 
@@ -795,6 +1357,11 @@ class GXMVIEW:
     def group_clip_mode(self, mode):
         """
         Set the Clipping mode on or off for new groups.
+        
+        :param mode:   `MVIEW_CLIP`
+        :type  mode:   int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -809,6 +1376,13 @@ class GXMVIEW:
     def get_name_ext_clip_ply(self, ext_ply, name):
         """
         Get the name of the extended clip `GXPLY <geosoft.gxapi.GXPLY>` object in this view.
+        
+        :param ext_ply:  Extended ClipPLY number
+        :param name:     Name
+        :type  ext_ply:  int
+        :type  name:     str_ref
+
+        .. versionadded:: 6.0
         """
         name.value = self._wrapper.get_name_ext_clip_ply(ext_ply, name.value.encode())
         
@@ -819,6 +1393,12 @@ class GXMVIEW:
     def num_ext_clip_ply(self):
         """
         Get the number of extended clip `GXPLY <geosoft.gxapi.GXPLY>` objects in this view.
+        
+
+        :returns:      Number of PLYs
+        :rtype:        int
+
+        .. versionadded:: 6.0
         """
         ret_val = self._wrapper.num_ext_clip_ply()
         return ret_val
@@ -829,6 +1409,18 @@ class GXMVIEW:
     def set_ext_clip_ply(self, ext_ply, name, ply):
         """
         Set an extended clip `GXPLY <geosoft.gxapi.GXPLY>` object used by this view.
+        
+        :param ext_ply:  Extended ClipPLY number, If greater or equal to the return value of `num_ext_clip_ply <geosoft.gxapi.GXMVIEW.num_ext_clip_ply>` it will be added to the end of the current list
+        :param name:     Name (Has to be unique, otherwise error will be returned)
+        :param ply:      `GXPLY <geosoft.gxapi.GXPLY>` object to set, use a null `GXPLY <geosoft.gxapi.GXPLY>` to rename an existing object
+        :type  ext_ply:  int
+        :type  name:     str
+        :type  ply:      GXPLY
+
+        :returns:        Index of new or changed `GXPLY <geosoft.gxapi.GXPLY>`, -1 on error
+        :rtype:          int
+
+        .. versionadded:: 6.0
         """
         ret_val = self._wrapper.set_ext_clip_ply(ext_ply, name.encode(), ply._wrapper)
         return ret_val
@@ -839,6 +1431,11 @@ class GXMVIEW:
     def set_clip_ply(self, poly):
         """
         Set clipping region to a `GXPLY <geosoft.gxapi.GXPLY>`
+        
+        :param poly:   Poly
+        :type  poly:   GXPLY
+
+        .. versionadded:: 5.0
         """
         self._wrapper.set_clip_ply(poly._wrapper)
         
@@ -849,6 +1446,13 @@ class GXMVIEW:
     def set_group_ext_clip_ply(self, group, ext_ply):
         """
         Sets extended clip information for group in view.
+        
+        :param group:    Group Name
+        :param ext_ply:  Extended `GXPLY <geosoft.gxapi.GXPLY>` number (-1 to clear)
+        :type  group:    str
+        :type  ext_ply:  int
+
+        .. versionadded:: 6.0
         """
         self._wrapper.set_group_ext_clip_ply(group.encode(), ext_ply)
         
@@ -863,6 +1467,17 @@ class GXMVIEW:
     def color2_rgb(cls, color, r, g, b):
         """
         Convert to RGB values.
+        
+        :param color:  Color value
+        :param r:      Red
+        :param g:      Green
+        :param b:      Blue
+        :type  color:  int
+        :type  r:      int_ref
+        :type  g:      int_ref
+        :type  b:      int_ref
+
+        .. versionadded:: 6.3
 
         **Note:**
 
@@ -881,6 +1496,13 @@ class GXMVIEW:
     def color_descr(cls, color, color_descr):
         """
         Convert a color to a color string label
+        
+        :param color:        COL_ANY variable
+        :param color_descr:  Color descriptor returned
+        :type  color:        int
+        :type  color_descr:  str_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -895,6 +1517,14 @@ class GXMVIEW:
     def color(cls, color):
         """
         Get a color from a color string label
+        
+        :param color:  Color name string
+        :type  color:  str
+
+        :returns:      Color int
+        :rtype:        int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -924,6 +1554,18 @@ class GXMVIEW:
     def color_cmy(cls, c, m, y):
         """
         Return CMY color.
+        
+        :param c:  Cyan
+        :param m:  Magenta
+        :param y:  Yellow
+        :type  c:  int
+        :type  m:  int
+        :type  y:  int
+
+        :returns:    Color int based on color model.
+        :rtype:      int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -942,6 +1584,18 @@ class GXMVIEW:
     def color_hsv(cls, h, s, v):
         """
         Return HSV color.
+        
+        :param h:  Hue
+        :param s:  Saturation
+        :param v:  Color
+        :type  h:  int
+        :type  s:  int
+        :type  v:  int
+
+        :returns:    Color int based on color model.
+        :rtype:      int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -960,6 +1614,18 @@ class GXMVIEW:
     def color_rgb(cls, r, g, b):
         """
         Return RGB color.
+        
+        :param r:  Red
+        :param g:  Green
+        :param b:  Blue
+        :type  r:  int
+        :type  g:  int
+        :type  b:  int
+
+        :returns:    Color int based on color model.
+        :rtype:      int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -982,6 +1648,11 @@ class GXMVIEW:
     def clip_mode(self, mode):
         """
         Set the view clipping mode on or off.
+        
+        :param mode:   `MVIEW_CLIP`
+        :type  mode:   int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1008,6 +1679,11 @@ class GXMVIEW:
     def fill_color(self, color):
         """
         Set the fill color.
+        
+        :param color:  Color
+        :type  color:  int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.fill_color(color)
         
@@ -1018,6 +1694,11 @@ class GXMVIEW:
     def line_color(self, color):
         """
         Set the line color.
+        
+        :param color:  Color
+        :type  color:  int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.line_color(color)
         
@@ -1028,6 +1709,11 @@ class GXMVIEW:
     def line_smooth(self, smooth):
         """
         Set the line edge smoothing.
+        
+        :param smooth:  `MVIEW_SMOOTH`
+        :type  smooth:  int
+
+        .. versionadded:: 6.3
         """
         self._wrapper.line_smooth(smooth)
         
@@ -1038,6 +1724,13 @@ class GXMVIEW:
     def line_style(self, style, pitch):
         """
         Set the style of a line.
+        
+        :param style:  Line Style #, see default.lpt
+        :param pitch:  Pitch in view units
+        :type  style:  int
+        :type  pitch:  float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1060,6 +1753,11 @@ class GXMVIEW:
     def line_thick(self, thick):
         """
         Set the line thickness.
+        
+        :param thick:  Line thickness in view space units
+        :type  thick:  float
+
+        .. versionadded:: 5.0
         """
         self._wrapper.line_thick(thick)
         
@@ -1070,6 +1768,11 @@ class GXMVIEW:
     def pat_angle(self, angle):
         """
         Sets the pattern angle
+        
+        :param angle:  Angle
+        :type  angle:  float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1099,6 +1802,11 @@ class GXMVIEW:
     def pat_density(self, density):
         """
         Sets the tiling density.
+        
+        :param density:  Relative density (default = 1).
+        :type  density:  float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1120,6 +1828,11 @@ class GXMVIEW:
     def pat_number(self, number):
         """
         Sets the pattern number
+        
+        :param number:  Pattern number
+        :type  number:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1150,6 +1863,11 @@ class GXMVIEW:
     def pat_size(self, size):
         """
         Sets the pattern unit cell size (X)
+        
+        :param size:   Pattern size in view units
+        :type  size:   float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1164,6 +1882,11 @@ class GXMVIEW:
     def pat_style(self, style):
         """
         Sets the tiling method (i.e. rectangle, triangle)
+        
+        :param style:  `MVIEW_TILE`
+        :type  style:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1192,6 +1915,11 @@ class GXMVIEW:
     def pat_thick(self, thick):
         """
         Sets the pattern line thickness
+        
+        :param thick:  Line thickness as fraction of pattern size (ie. 0.05)
+        :type  thick:  float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1206,6 +1934,11 @@ class GXMVIEW:
     def symb_angle(self, angle):
         """
         Set the Symb angle.
+        
+        :param angle:  Angle in degrees CCW from +X
+        :type  angle:  float
+
+        .. versionadded:: 5.0
         """
         self._wrapper.symb_angle(angle)
         
@@ -1216,6 +1949,11 @@ class GXMVIEW:
     def symb_color(self, color):
         """
         Set the Symbol color.
+        
+        :param color:  Color
+        :type  color:  int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.symb_color(color)
         
@@ -1226,6 +1964,11 @@ class GXMVIEW:
     def symb_fill_color(self, color):
         """
         Set the Symbol color fill.
+        
+        :param color:  Color
+        :type  color:  int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.symb_fill_color(color)
         
@@ -1236,6 +1979,17 @@ class GXMVIEW:
     def symb_font(self, face, geofont, weight, italic):
         """
         Set the symbol font and style.
+        
+        :param face:     Face name
+        :param geofont:  Geosoft font? `GEO_BOOL`
+        :param weight:   `MVIEW_FONT_WEIGHT`
+        :param italic:   Italic font? `GEO_BOOL`
+        :type  face:     str
+        :type  geofont:  int
+        :type  weight:   int
+        :type  italic:   int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1254,6 +2008,11 @@ class GXMVIEW:
     def symb_number(self, number):
         """
         Set the Symbol number.
+        
+        :param number:  Symbol number
+        :type  number:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1273,6 +2032,11 @@ class GXMVIEW:
     def symb_size(self, size):
         """
         Set the Symb size.
+        
+        :param size:   Size in view units
+        :type  size:   float
+
+        .. versionadded:: 5.0
         """
         self._wrapper.symb_size(size)
         
@@ -1283,6 +2047,11 @@ class GXMVIEW:
     def text_angle(self, angle):
         """
         Set the text angle.
+        
+        :param angle:  Angle in degrees CCW from +X
+        :type  angle:  float
+
+        .. versionadded:: 5.0
         """
         self._wrapper.text_angle(angle)
         
@@ -1293,6 +2062,11 @@ class GXMVIEW:
     def text_color(self, color):
         """
         Set the Text color.
+        
+        :param color:  Color
+        :type  color:  int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.text_color(color)
         
@@ -1303,6 +2077,17 @@ class GXMVIEW:
     def text_font(self, face, geo_font, weight, italic):
         """
         Set the text font.
+        
+        :param face:      Font face name
+        :param geo_font:  Geosoft font? (TRUE or FALSE)
+        :param weight:    `MVIEW_FONT_WEIGHT`
+        :param italic:    Italic font? (TRUE or FALSE)
+        :type  face:      str
+        :type  geo_font:  int
+        :type  weight:    int
+        :type  italic:    int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1319,7 +2104,7 @@ class GXMVIEW:
         charset  - Before version 6.2. this decoration was honoured and it affected the display
         of characters above ASCII 127. 6.2. introduced Unicode in the core
         montaj engine that eliminated the need for such a setting. All strings
-        on the GX API level are encoded in `UTF8_` during runtime which makes it possible
+        on the GX API level are encoded in `UTF8` during runtime which makes it possible
         to represent all possible characters without using character sets. This decoration
         will now be ignored.
         
@@ -1348,6 +2133,11 @@ class GXMVIEW:
     def text_ref(self, ref):
         """
         Set the text plot reference point.
+        
+        :param ref:    `TEXT_REF`
+        :type  ref:    int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.text_ref(ref)
         
@@ -1358,6 +2148,11 @@ class GXMVIEW:
     def text_size(self, size):
         """
         Set the text size.
+        
+        :param size:   Size in view units
+        :type  size:   float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1385,6 +2180,11 @@ class GXMVIEW:
     def transparency(self, trans):
         """
         Sets the transparency for new objects.
+        
+        :param trans:  Transparency (1.0 - Opaque, 0.0 - Transparent)
+        :type  trans:  float
+
+        .. versionadded:: 6.0
 
         **Note:**
 
@@ -1401,6 +2201,11 @@ class GXMVIEW:
     def z_value(self, val):
         """
         Sets Z-value info.
+        
+        :param val:    Z-Value
+        :type  val:    float
+
+        .. versionadded:: 6.0
 
         **Note:**
 
@@ -1420,6 +2225,23 @@ class GXMVIEW:
     def arc(self, x, y, radius, ratio, angle, start, end):
         """
         Draw an arc.
+        
+        :param x:       Center x
+        :param y:       Center y
+        :param radius:  Radius
+        :param ratio:   Ratio x/y
+        :param angle:   Angle
+        :param start:   Start angle
+        :param end:     End angle
+        :type  x:       float
+        :type  y:       float
+        :type  radius:  float
+        :type  ratio:   float
+        :type  angle:   float
+        :type  start:   float
+        :type  end:     float
+
+        .. versionadded:: 5.0
         """
         self._wrapper.arc(x, y, radius, ratio, angle, start, end)
         
@@ -1430,6 +2252,23 @@ class GXMVIEW:
     def chord(self, x, y, radius, ratio, angle, start, end):
         """
         Draw a filled arc.
+        
+        :param x:       Center x
+        :param y:       Center y
+        :param radius:  Radius
+        :param ratio:   Ratio x/y
+        :param angle:   Angle
+        :param start:   Start angle
+        :param end:     End angle
+        :type  x:       float
+        :type  y:       float
+        :type  radius:  float
+        :type  ratio:   float
+        :type  angle:   float
+        :type  start:   float
+        :type  end:     float
+
+        .. versionadded:: 5.0
         """
         self._wrapper.chord(x, y, radius, ratio, angle, start, end)
         
@@ -1440,6 +2279,25 @@ class GXMVIEW:
     def classified_symbols(self, vv_x, vv_y, vv_z, scal_mm, zmin, zval, size, fcol):
         """
         Plot classified symbols
+        
+        :param vv_x:     X `GXVV <geosoft.gxapi.GXVV>`
+        :param vv_y:     Y `GXVV <geosoft.gxapi.GXVV>`
+        :param vv_z:     Data `GXVV <geosoft.gxapi.GXVV>`
+        :param scal_mm:  Scale factor to convert mm to view units
+        :param zmin:     Classified minimum Z to plot
+        :param zval:     Comma delimited list of Z maximums
+        :param size:     Comma delimited list of sizes in mm
+        :param fcol:     Comma delimited list of color strings
+        :type  vv_x:     GXVV
+        :type  vv_y:     GXVV
+        :type  vv_z:     GXVV
+        :type  scal_mm:  float
+        :type  zmin:     float
+        :type  zval:     str
+        :type  size:     str
+        :type  fcol:     str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1459,6 +2317,15 @@ class GXMVIEW:
     def complex_polygon(self, vv_i, vv_x, vv_y):
         """
         Draw a polygon with holes in it.
+        
+        :param vv_i:   `GXVV <geosoft.gxapi.GXVV>` of type int holding the number of points for each polygon
+        :param vv_x:   X coordinates.
+        :param vv_y:   Y coordinates.
+        :type  vv_i:   GXVV
+        :type  vv_x:   GXVV
+        :type  vv_y:   GXVV
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1473,6 +2340,19 @@ class GXMVIEW:
     def ellipse(self, x, y, radius, ratio, angle):
         """
         Draw an ellipse
+        
+        :param x:       Center x
+        :param y:       Center y
+        :param radius:  Radius
+        :param ratio:   Ratio x/y
+        :param angle:   Angle
+        :type  x:       float
+        :type  y:       float
+        :type  radius:  float
+        :type  ratio:   float
+        :type  angle:   float
+
+        .. versionadded:: 5.0
         """
         self._wrapper.ellipse(x, y, radius, ratio, angle)
         
@@ -1483,6 +2363,17 @@ class GXMVIEW:
     def line(self, x0, y0, x1, y1):
         """
         Draw a line.
+        
+        :param x0:     X0
+        :param y0:     Y0
+        :param x1:     X1
+        :param y1:     Y1
+        :type  x0:     float
+        :type  y0:     float
+        :type  x1:     float
+        :type  y1:     float
+
+        .. versionadded:: 5.0
         """
         self._wrapper.line(x0, y0, x1, y1)
         
@@ -1493,6 +2384,11 @@ class GXMVIEW:
     def line_vv(self, gvv):
         """
         Draw line segments stored in a GS_D2LINE `GXVV <geosoft.gxapi.GXVV>`.
+        
+        :param gvv:    `GXVV <geosoft.gxapi.GXVV>` for GS_D2LINE
+        :type  gvv:    GXVV
+
+        .. versionadded:: 5.0
         """
         self._wrapper.line_vv(gvv._wrapper)
         
@@ -1503,6 +2399,13 @@ class GXMVIEW:
     def polygon_dm(self, vv_x, vv_y):
         """
         Like PolyLineDm, but draw polygons.
+        
+        :param vv_x:   X coordinates.
+        :param vv_y:   Y coordinates.
+        :type  vv_x:   GXVV
+        :type  vv_y:   GXVV
+
+        .. versionadded:: 5.0.6
         """
         self._wrapper.polygon_dm(vv_x._wrapper, vv_y._wrapper)
         
@@ -1513,6 +2416,10 @@ class GXMVIEW:
     def polygon_ply(self, ply):
         """
         Draw a complex polygon from `GXPLY <geosoft.gxapi.GXPLY>`.
+        
+        :type  ply:    GXPLY
+
+        .. versionadded:: 5.1
         """
         self._wrapper.polygon_ply(ply._wrapper)
         
@@ -1523,6 +2430,15 @@ class GXMVIEW:
     def poly_line(self, type, vv_x, vv_y):
         """
         Draw a polyline or polygon (dummies deleted).
+        
+        :param type:   `MVIEW_DRAW`
+        :param vv_x:   X coordinates.
+        :param vv_y:   Y coordinates.
+        :type  type:   int
+        :type  vv_x:   GXVV
+        :type  vv_y:   GXVV
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1539,6 +2455,13 @@ class GXMVIEW:
     def poly_line_dm(self, vv_x, vv_y):
         """
         Draw a polyline with gaps defined by dummies in X/Y VVs
+        
+        :param vv_x:   X coordinates.
+        :param vv_y:   Y coordinates.
+        :type  vv_x:   GXVV
+        :type  vv_y:   GXVV
+
+        .. versionadded:: 5.0
         """
         self._wrapper.poly_line_dm(vv_x._wrapper, vv_y._wrapper)
         
@@ -1549,6 +2472,13 @@ class GXMVIEW:
     def poly_wrap(self, vv_x, vv_y):
         """
         Draw wrapped polylines from X and Y `GXVV <geosoft.gxapi.GXVV>`'s.
+        
+        :param vv_x:   X coordinates.
+        :param vv_y:   Y coordinates.
+        :type  vv_x:   GXVV
+        :type  vv_y:   GXVV
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1569,6 +2499,17 @@ class GXMVIEW:
     def rectangle(self, x0, y0, x1, y1):
         """
         Draw a rectangle.
+        
+        :param x0:     X0
+        :param y0:     Y0
+        :param x1:     X1
+        :param y1:     Y1
+        :type  x0:     float
+        :type  y0:     float
+        :type  x1:     float
+        :type  y1:     float
+
+        .. versionadded:: 5.0
         """
         self._wrapper.rectangle(x0, y0, x1, y1)
         
@@ -1579,6 +2520,23 @@ class GXMVIEW:
     def segment(self, x, y, radius, ratio, angle, start, end):
         """
         Draw a filled segment of an ellipse.
+        
+        :param x:       Center x
+        :param y:       Center y
+        :param radius:  Radius
+        :param ratio:   Ratio x/y
+        :param angle:   Angle
+        :param start:   Start angle
+        :param end:     End angle
+        :type  x:       float
+        :type  y:       float
+        :type  radius:  float
+        :type  ratio:   float
+        :type  angle:   float
+        :type  start:   float
+        :type  end:     float
+
+        .. versionadded:: 5.0.7
         """
         self._wrapper.segment(x, y, radius, ratio, angle, start, end)
         
@@ -1589,6 +2547,15 @@ class GXMVIEW:
     def size_symbols(self, vv_x, vv_y, vv_z):
         """
         Plot sized symbols
+        
+        :param vv_x:   X
+        :param vv_y:   Y
+        :param vv_z:   Symbol sizes (in view units)
+        :type  vv_x:   GXVV
+        :type  vv_y:   GXVV
+        :type  vv_z:   GXVV
+
+        .. versionadded:: 5.0
         """
         self._wrapper.size_symbols(vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
         
@@ -1599,6 +2566,13 @@ class GXMVIEW:
     def symbol(self, x, y):
         """
         Plot a symbol
+        
+        :param x:      X
+        :param y:      Y
+        :type  x:      float
+        :type  y:      float
+
+        .. versionadded:: 5.0
         """
         self._wrapper.symbol(x, y)
         
@@ -1609,6 +2583,13 @@ class GXMVIEW:
     def symbols(self, vv_x, vv_y):
         """
         Plot symbols
+        
+        :param vv_x:   X
+        :param vv_y:   Y
+        :type  vv_x:   GXVV
+        :type  vv_y:   GXVV
+
+        .. versionadded:: 5.0
         """
         self._wrapper.symbols(vv_x._wrapper, vv_y._wrapper)
         
@@ -1619,6 +2600,17 @@ class GXMVIEW:
     def symbols_itr(self, itr, vv_x, vv_y, vv_z):
         """
         Plot symbols using an `GXITR <geosoft.gxapi.GXITR>`
+        
+        :param itr:    `GXITR <geosoft.gxapi.GXITR>` file name (ZON or `GXITR <geosoft.gxapi.GXITR>`)
+        :param vv_x:   X
+        :param vv_y:   Y
+        :param vv_z:   Z
+        :type  itr:    str
+        :type  vv_x:   GXVV
+        :type  vv_y:   GXVV
+        :type  vv_z:   GXVV
+
+        .. versionadded:: 5.0
         """
         self._wrapper.symbols_itr(itr.encode(), vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
         
@@ -1629,6 +2621,15 @@ class GXMVIEW:
     def text(self, text, x, y):
         """
         Draw text.
+        
+        :param text:   Text to plot
+        :param x:      X location of text
+        :param y:      Y location of text
+        :type  text:   str
+        :type  x:      float
+        :type  y:      float
+
+        .. versionadded:: 5.0
         """
         self._wrapper.text(text.encode(), x, y)
         
@@ -1643,6 +2644,13 @@ class GXMVIEW:
     def aggregate(self, agg, name):
         """
         Add an aggregate to a view.
+        
+        :param agg:    Aggregate
+        :param name:   Aggregate name Maximum length is `MVIEW_NAME_LENGTH <geosoft.gxapi.MVIEW_NAME_LENGTH>`
+        :type  agg:    GXAGG
+        :type  name:   str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.aggregate(agg._wrapper, name.encode())
         
@@ -1653,6 +2661,14 @@ class GXMVIEW:
     def get_aggregate(self, group):
         """
         Get an existing Aggregate object from the view.
+        
+        :param group:  Group number
+        :type  group:  int
+
+        :returns:      `GXAGG <geosoft.gxapi.GXAGG>` object
+        :rtype:        GXAGG
+
+        .. versionadded:: 9.2
 
         **Note:**
 
@@ -1667,6 +2683,11 @@ class GXMVIEW:
     def change_line_message(self, line):
         """
         Change the specified line in a view.
+        
+        :param line:   Change to this line
+        :type  line:   str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1683,6 +2704,13 @@ class GXMVIEW:
     def col_symbol(self, name, csymb):
         """
         Add a colored symbol object to a view.
+        
+        :param name:   Name of the color symbol group
+        :param csymb:  `GXCSYMB <geosoft.gxapi.GXCSYMB>` object
+        :type  name:   str
+        :type  csymb:  GXCSYMB
+
+        .. versionadded:: 5.0
         """
         self._wrapper.col_symbol(name.encode(), csymb._wrapper)
         
@@ -1693,6 +2721,14 @@ class GXMVIEW:
     def get_col_symbol(self, group):
         """
         Get an existing colored symbol object from the view.
+        
+        :param group:  Group number
+        :type  group:  int
+
+        :returns:      `GXCSYMB <geosoft.gxapi.GXCSYMB>` object
+        :rtype:        GXCSYMB
+
+        .. versionadded:: 9.2
 
         **Note:**
 
@@ -1707,6 +2743,12 @@ class GXMVIEW:
     def datalinkd(self, datalinkd, name):
         """
         Add a Data Link Display (`GXDATALINKD <geosoft.gxapi.GXDATALINKD>`) object to the view.
+        
+        :param name:       Name Maximum length is `MVIEW_NAME_LENGTH <geosoft.gxapi.MVIEW_NAME_LENGTH>`
+        :type  datalinkd:  GXDATALINKD
+        :type  name:       str
+
+        .. versionadded:: 6.4
         """
         self._wrapper.datalinkd(datalinkd._wrapper, name.encode())
         
@@ -1717,6 +2759,14 @@ class GXMVIEW:
     def get_datalinkd(self, group):
         """
         Get an existing Data Link Display (`GXDATALINKD <geosoft.gxapi.GXDATALINKD>`) object from the view.
+        
+        :param group:  Group number
+        :type  group:  int
+
+        :returns:      `GXDATALINKD <geosoft.gxapi.GXDATALINKD>` object
+        :rtype:        GXDATALINKD
+
+        .. versionadded:: 9.2
 
         **Note:**
 
@@ -1731,6 +2781,13 @@ class GXMVIEW:
     def easy_maker(self, name, groups):
         """
         Used for GX makers which use both maps and databases.
+        
+        :param name:    Maker name, used in menu prompt
+        :param groups:  INI groups (terminate each with a ";")
+        :type  name:    str
+        :type  groups:  str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.easy_maker(name.encode(), groups.encode())
         
@@ -1741,6 +2798,19 @@ class GXMVIEW:
     def emf_object(self, min_x, min_y, max_x, max_y, file):
         """
         Add an EMF file data object to the view.
+        
+        :param min_x:  Min X
+        :param min_y:  Min Y
+        :param max_x:  Max X
+        :param max_y:  Max Y
+        :param file:   EMF File holding data
+        :type  min_x:  float
+        :type  min_y:  float
+        :type  max_x:  float
+        :type  max_y:  float
+        :type  file:   str
+
+        .. versionadded:: 6.4
         """
         self._wrapper.emf_object(min_x, min_y, max_x, max_y, file.encode())
         
@@ -1751,6 +2821,23 @@ class GXMVIEW:
     def external_string_object(self, min_x, min_y, max_x, max_y, name, cl, data):
         """
         Add an external string data object to the view.
+        
+        :param min_x:  Min X
+        :param min_y:  Min Y
+        :param max_x:  Max X
+        :param max_y:  Max Y
+        :param name:   Name of external object
+        :param cl:     Class of external object
+        :param data:   String data of external object
+        :type  min_x:  float
+        :type  min_y:  float
+        :type  max_x:  float
+        :type  max_y:  float
+        :type  name:   str
+        :type  cl:     str
+        :type  data:   str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.external_string_object(min_x, min_y, max_x, max_y, name.encode(), cl.encode(), data.encode())
         
@@ -1761,6 +2848,13 @@ class GXMVIEW:
     def link(self, db, name):
         """
         Make a link to a database.
+        
+        :param db:     Database handle
+        :param name:   Link name
+        :type  db:     GXDB
+        :type  name:   str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.link(db._wrapper, name.encode())
         
@@ -1771,6 +2865,21 @@ class GXMVIEW:
     def maker(self, db, map, prog, type, name, groups):
         """
         Generates a Maker for the database and/or map.
+        
+        :param db:      Database required? (0 = No, 1 = Yes)
+        :param map:     Map required?      (0 = No, 1 = Yes)
+        :param prog:    Program name
+        :param type:    `MAKER`
+        :param name:    Maker name, used in menu prompt
+        :param groups:  INI groups (terminate each with a ";")
+        :type  db:      int
+        :type  map:     int
+        :type  prog:    str
+        :type  type:    int
+        :type  name:    str
+        :type  groups:  str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.maker(db, map, prog.encode(), type, name.encode(), groups.encode())
         
@@ -1781,6 +2890,13 @@ class GXMVIEW:
     def meta(self, meta, name):
         """
         Store Metadata in a group
+        
+        :param meta:   `GXMETA <geosoft.gxapi.GXMETA>` object
+        :param name:   Menu name of Object
+        :type  meta:   GXMETA
+        :type  name:   str
+
+        .. versionadded:: 5.1.3
         """
         self._wrapper.meta(meta._wrapper, name.encode())
         
@@ -1791,6 +2907,12 @@ class GXMVIEW:
     def voxd(self, voxd, name):
         """
         Add a Voxel Display (`GXVOXD <geosoft.gxapi.GXVOXD>`) object to the view.
+        
+        :param name:   Name Maximum length is `MVIEW_NAME_LENGTH <geosoft.gxapi.MVIEW_NAME_LENGTH>`
+        :type  voxd:   GXVOXD
+        :type  name:   str
+
+        .. versionadded:: 6.2
         """
         self._wrapper.voxd(voxd._wrapper, name.encode())
         
@@ -1801,6 +2923,14 @@ class GXMVIEW:
     def get_voxd(self, group):
         """
         Get an existing `GXVOXD <geosoft.gxapi.GXVOXD>` object from the view.
+        
+        :param group:  Group number
+        :type  group:  int
+
+        :returns:      `GXVOXD <geosoft.gxapi.GXVOXD>` object
+        :rtype:        GXVOXD
+
+        .. versionadded:: 8.2
 
         **Note:**
 
@@ -1815,6 +2945,24 @@ class GXMVIEW:
     def draw_vector_voxel_vectors(self, vox, group, itr, scale_factor, height_base_ratio, max_base_size_ratio, cutoff_value, max_vectors):
         """
         Display vectors from a vector voxel in the view.
+        
+        :param group:                View group name Maximum length is `MVIEW_NAME_LENGTH <geosoft.gxapi.MVIEW_NAME_LENGTH>`
+        :param itr:                  Image transform - must contain zones
+        :param scale_factor:         Vector length scale factor - w.r.t. the voxel minimum horizontal cell size (default 1)
+        :param height_base_ratio:    Ratio of the vector cone height to its base (default 4)
+        :param max_base_size_ratio:  Ratio of maximum base size to minimum horizontal cell size (default 0.25)
+        :param cutoff_value:         Cutoff value - do not plot vectors with amplitudes less than this value (`rDUMMY <geosoft.gxapi.rDUMMY>` or 0 to plot all)
+        :param max_vectors:          Maximum number of vectors - decimate as required to reduce (`iDUMMY <geosoft.gxapi.iDUMMY>` to plot all)
+        :type  vox:                  GXVOX
+        :type  group:                str
+        :type  itr:                  GXITR
+        :type  scale_factor:         float
+        :type  height_base_ratio:    float
+        :type  max_base_size_ratio:  float
+        :type  cutoff_value:         float
+        :type  max_vectors:          int
+
+        .. versionadded:: 7.6
 
         **Note:**
 
@@ -1829,6 +2977,14 @@ class GXMVIEW:
     def get_vector_3d(self, group):
         """
         Get an existing `GXVECTOR3D <geosoft.gxapi.GXVECTOR3D>` object from the view.
+        
+        :param group:  Group number
+        :type  group:  int
+
+        :returns:      `GXVECTOR3D <geosoft.gxapi.GXVECTOR3D>` object
+        :rtype:        GXVECTOR3D
+
+        .. versionadded:: 9.3
 
         **Note:**
 
@@ -1843,6 +2999,32 @@ class GXMVIEW:
     def draw_vectors_3d(self, group, vv_x, vv_y, vv_z, vv_vx, vv_vy, vv_vz, itr, scale_for_max_vector, height_base_ratio, max_base_size_ratio):
         """
         Display vectors in the view.
+        
+        :param group:                 View group name Maximum length is `MVIEW_NAME_LENGTH <geosoft.gxapi.MVIEW_NAME_LENGTH>`
+        :param vv_x:                  X locations
+        :param vv_y:                  Y locations
+        :param vv_z:                  Z locations
+        :param vv_vx:                 Vector X component
+        :param vv_vy:                 Vector Y component
+        :param vv_vz:                 Vector Z component
+        :param itr:                   Image transform - must contain zones
+        :param scale_for_max_vector:  Scale factor for the longest vector in map units / vector units. Vector lengths for the rest of the vectors scale by the square root of the vector amplitudes.
+                                      This results in the apparent (viewed) area of the vector being proportional to the amplitude.
+        :param height_base_ratio:     Ratio of the vector cone height to its base (default 4)
+        :param max_base_size_ratio:   Maximum base size in view units. Leave blank (dummy) for no limit. If applied this can make larger vectors skinnier, but does not reduce the length, so they don't obscure other vectors as much.
+        :type  group:                 str
+        :type  vv_x:                  GXVV
+        :type  vv_y:                  GXVV
+        :type  vv_z:                  GXVV
+        :type  vv_vx:                 GXVV
+        :type  vv_vy:                 GXVV
+        :type  vv_vz:                 GXVV
+        :type  itr:                   GXITR
+        :type  scale_for_max_vector:  float
+        :type  height_base_ratio:     float
+        :type  max_base_size_ratio:   float
+
+        .. versionadded:: 8.0.1
         """
         self._wrapper.draw_vectors_3d(group.encode(), vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_vx._wrapper, vv_vy._wrapper, vv_vz._wrapper, itr._wrapper, scale_for_max_vector, height_base_ratio, max_base_size_ratio)
         
@@ -1857,6 +3039,12 @@ class GXMVIEW:
     def set_group_itr(self, group, itr):
         """
         Set group `GXITR <geosoft.gxapi.GXITR>`
+        
+        :param group:  Group number
+        :type  group:  int
+        :type  itr:    GXITR
+
+        .. versionadded:: 9.3
 
         **Note:**
 
@@ -1873,6 +3061,12 @@ class GXMVIEW:
     def get_group_itr(self, group):
         """
         Get group `GXITR <geosoft.gxapi.GXITR>`
+        
+        :param group:  Group number
+        :type  group:  int
+        :rtype:        GXITR
+
+        .. versionadded:: 9.3
 
         **Note:**
 
@@ -1889,6 +3083,14 @@ class GXMVIEW:
     def group_itr_exists(self, group):
         """
         Determine if group `GXITR <geosoft.gxapi.GXITR>` exists.
+        
+        :param group:  Group number
+        :type  group:  int
+
+        :returns:      1 - `GXITR <geosoft.gxapi.GXITR>` exists, 0 - `GXITR <geosoft.gxapi.GXITR>` does not exist
+        :rtype:        int
+
+        .. versionadded:: 9.3
 
         **Note:**
 
@@ -1905,6 +3107,11 @@ class GXMVIEW:
     def delete_group_itr(self, group):
         """
         Deletes existing `GXITR <geosoft.gxapi.GXITR>` associated with a group.
+        
+        :param group:  Group number
+        :type  group:  int
+
+        .. versionadded:: 9.3
 
         **Note:**
 
@@ -1921,6 +3128,12 @@ class GXMVIEW:
     def set_group_tpat(self, group, tpat):
         """
         Set group `GXTPAT <geosoft.gxapi.GXTPAT>`
+        
+        :param group:  Group number
+        :type  group:  int
+        :type  tpat:   GXTPAT
+
+        .. versionadded:: 9.3
 
         **Note:**
 
@@ -1937,6 +3150,12 @@ class GXMVIEW:
     def get_group_tpat(self, group):
         """
         Get group `GXTPAT <geosoft.gxapi.GXTPAT>`
+        
+        :param group:  Group number
+        :type  group:  int
+        :rtype:        GXTPAT
+
+        .. versionadded:: 9.3
 
         **Note:**
 
@@ -1953,6 +3172,14 @@ class GXMVIEW:
     def group_tpat_exists(self, group):
         """
         Determine if group `GXTPAT <geosoft.gxapi.GXTPAT>` exists.
+        
+        :param group:  Group number
+        :type  group:  int
+
+        :returns:      1 - `GXTPAT <geosoft.gxapi.GXTPAT>` exists, 0 - `GXTPAT <geosoft.gxapi.GXTPAT>` does not exist
+        :rtype:        int
+
+        .. versionadded:: 9.3
 
         **Note:**
 
@@ -1969,6 +3196,11 @@ class GXMVIEW:
     def delete_group_tpat(self, group):
         """
         Deletes existing `GXTPAT <geosoft.gxapi.GXTPAT>` associated with a group.
+        
+        :param group:  Group number
+        :type  group:  int
+
+        .. versionadded:: 9.3
 
         **Note:**
 
@@ -1985,6 +3217,16 @@ class GXMVIEW:
     def group_storage_exists(self, group, storage_name):
         """
         Determine if generic storage associated with a group exists.
+        
+        :param group:         Group number
+        :param storage_name:  Storage name
+        :type  group:         int
+        :type  storage_name:  str
+
+        :returns:             1 - storage exists, 0 - storage does not exist
+        :rtype:               int
+
+        .. versionadded:: 9.3
 
         **Note:**
 
@@ -1999,6 +3241,16 @@ class GXMVIEW:
     def read_group_storage(self, group, storage_name):
         """
         Reads existing generic storage associated with a group into an in-memory `GXBF <geosoft.gxapi.GXBF>`.
+        
+        :param group:         Group number
+        :param storage_name:  Storage name
+        :type  group:         int
+        :type  storage_name:  str
+
+        :returns:             `GXBF <geosoft.gxapi.GXBF>` Object
+        :rtype:               GXBF
+
+        .. versionadded:: 9.3
 
         **Note:**
 
@@ -2013,6 +3265,13 @@ class GXMVIEW:
     def delete_group_storage(self, group, storage_name):
         """
         Deletes existing generic storage associated with a group.
+        
+        :param group:         Group number
+        :param storage_name:  Storage name
+        :type  group:         int
+        :type  storage_name:  str
+
+        .. versionadded:: 9.3
 
         **Note:**
 
@@ -2027,6 +3286,15 @@ class GXMVIEW:
     def write_group_storage(self, group, storage_name, bf):
         """
         Open generic existing storage associated with a group for reading.
+        
+        :param group:         Group number
+        :param storage_name:  Storage name
+        :param bf:            `GXBF <geosoft.gxapi.GXBF>` to read from
+        :type  group:         int
+        :type  storage_name:  str
+        :type  bf:            GXBF
+
+        .. versionadded:: 9.3
 
         **Note:**
 
@@ -2041,6 +3309,11 @@ class GXMVIEW:
     def copy_marked_groups(self, mvie_wd):
         """
         Copies all marked groups from one view into another view
+        
+        :param mvie_wd:  Destination `GXMVIEW <geosoft.gxapi.GXMVIEW>`
+        :type  mvie_wd:  GXMVIEW
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2057,6 +3330,11 @@ class GXMVIEW:
     def copy_raw_marked_groups(self, mvie_wd):
         """
         Copies all marked groups raw from one view into another
+        
+        :param mvie_wd:  Destination `GXMVIEW <geosoft.gxapi.GXMVIEW>`
+        :type  mvie_wd:  GXMVIEW
+
+        .. versionadded:: 5.1.2
 
         **Note:**
 
@@ -2071,6 +3349,14 @@ class GXMVIEW:
     def crc_group(self, name, crc):
         """
         Compute CRC for a group.
+        
+        :param name:   Group name
+        :param crc:    CRC to start (use `CRC_INIT_VALUE <geosoft.gxapi.CRC_INIT_VALUE>`)
+        :type  name:   str
+        :type  crc:    int
+        :rtype:        int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.crc_group(name.encode(), crc)
         return ret_val
@@ -2081,6 +3367,11 @@ class GXMVIEW:
     def delete_group(self, group):
         """
         Delete a group.
+        
+        :param group:  Group name
+        :type  group:  str
+
+        .. versionadded:: 5.1.8
 
         **Note:**
 
@@ -2095,6 +3386,9 @@ class GXMVIEW:
     def del_marked_groups(self):
         """
         Delete marked groups.
+        
+
+        .. versionadded:: 5.0
         """
         self._wrapper.del_marked_groups()
         
@@ -2105,6 +3399,21 @@ class GXMVIEW:
     def get_group_extent(self, group_name, xmin, ymin, xmax, ymax, unit):
         """
         Get extent of a group in a view
+        
+        :param group_name:  Group name
+        :param xmin:        Minimum X, returned
+        :param ymin:        Minimum Y, returned
+        :param xmax:        Maximum X, returned
+        :param ymax:        Maximum Y, returned
+        :param unit:        `MVIEW_UNIT`
+        :type  group_name:  str
+        :type  xmin:        float_ref
+        :type  ymin:        float_ref
+        :type  xmax:        float_ref
+        :type  ymax:        float_ref
+        :type  unit:        int
+
+        .. versionadded:: 5.0
         """
         xmin.value, ymin.value, xmax.value, ymax.value = self._wrapper.get_group_extent(group_name.encode(), xmin.value, ymin.value, xmax.value, ymax.value, unit)
         
@@ -2115,6 +3424,13 @@ class GXMVIEW:
     def get_group_transparency(self, group_name, trans):
         """
         Gets the transparency value of group
+        
+        :param group_name:  Group name
+        :param trans:       Transparency (1.0 - Opaque, 0.0 - Transparent)
+        :type  group_name:  str
+        :type  trans:       float_ref
+
+        .. versionadded:: 6.0
         """
         trans.value = self._wrapper.get_group_transparency(group_name.encode(), trans.value)
         
@@ -2125,6 +3441,13 @@ class GXMVIEW:
     def group_to_ply(self, name, pply):
         """
         Save all polygons in group into `GXPLY <geosoft.gxapi.GXPLY>` obj.
+        
+        :param name:   Group name
+        :param pply:   `GXPLY <geosoft.gxapi.GXPLY>` to add to
+        :type  name:   str
+        :type  pply:   GXPLY
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2142,6 +3465,11 @@ class GXMVIEW:
     def hide_marked_groups(self, mode):
         """
         Hide/Show marked groups.
+        
+        :param mode:   `MVIEW_HIDE`
+        :type  mode:   int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.hide_marked_groups(mode)
         
@@ -2152,6 +3480,11 @@ class GXMVIEW:
     def hide_shadow2_d_interpretations(self, mode):
         """
         Hide/Show 2d shadow interpretations.
+        
+        :param mode:   `MVIEW_HIDE`
+        :type  mode:   int
+
+        .. versionadded:: 8.5
         """
         self._wrapper.hide_shadow2_d_interpretations(mode)
         
@@ -2162,6 +3495,15 @@ class GXMVIEW:
     def exist_group(self, name):
         """
         Checks to see if a group exists.
+        
+        :param name:   Group name
+        :type  name:   str
+
+        :returns:      0  - group does not exist.
+                       1  - group exists.
+        :rtype:        int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.exist_group(name.encode())
         return ret_val
@@ -2174,6 +3516,13 @@ class GXMVIEW:
         Generate the name of a group from a base name that
         is new. (always unique and won't overwrite existing
         objects).
+        
+        :param group:     Base Name of group
+        :param new_name:  New Name of group
+        :type  group:     str
+        :type  new_name:  str_ref
+
+        .. versionadded:: 5.0.8
         """
         new_name.value = self._wrapper.gen_new_group_name(group.encode(), new_name.value.encode())
         
@@ -2184,6 +3533,16 @@ class GXMVIEW:
     def is_group(self, group, what):
         """
         Query a status or characteristic of a group
+        
+        :param group:  Group name
+        :param what:   `MVIEW_IS`
+        :type  group:  str
+        :type  what:   int
+
+        :returns:      TRUE or FALSE (1 or 0)
+        :rtype:        int
+
+        .. versionadded:: 5.0.5
         """
         ret_val = self._wrapper.is_group(group.encode(), what)
         return ret_val
@@ -2194,6 +3553,14 @@ class GXMVIEW:
     def is_group_empty(self, group):
         """
         Is the group empty?
+        
+        :param group:  Group name
+        :type  group:  str
+
+        :returns:      TRUE or FALSE (1 or 0)
+        :rtype:        int
+
+        .. versionadded:: 6.3
         """
         ret_val = self._wrapper.is_group_empty(group.encode())
         return ret_val
@@ -2204,6 +3571,12 @@ class GXMVIEW:
     def is_movable(self):
         """
         Is this view movable?
+        
+
+        :returns:      `GEO_BOOL`
+        :rtype:        int
+
+        .. versionadded:: 6.4
 
         **Note:**
 
@@ -2220,6 +3593,12 @@ class GXMVIEW:
     def is_visible(self):
         """
         Is this view visible?
+        
+
+        :returns:      `GEO_BOOL`
+        :rtype:        int
+
+        .. versionadded:: 6.3
         """
         ret_val = self._wrapper.is_visible()
         return ret_val
@@ -2230,6 +3609,16 @@ class GXMVIEW:
     def list_groups(self, lst, flag):
         """
         Get a list of the groups in a view.
+        
+        :param lst:    List
+        :param flag:   `MVIEW_GROUP_LIST`
+        :type  lst:    GXLST
+        :type  flag:   int
+
+        :returns:      Number of groups in the list
+        :rtype:        int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.list_groups(lst._wrapper, flag)
         return ret_val
@@ -2240,6 +3629,12 @@ class GXMVIEW:
     def render_order(self):
         """
         Query the view render order
+        
+
+        :returns:      Render order
+        :rtype:        int
+
+        .. versionadded:: 6.3
 
         **Note:**
 
@@ -2254,6 +3649,11 @@ class GXMVIEW:
     def mark_all_groups(self, mark):
         """
         Mark or unmark all groups.
+        
+        :param mark:   0 - unmark, 1 - mark
+        :type  mark:   int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.mark_all_groups(mark)
         
@@ -2264,6 +3664,11 @@ class GXMVIEW:
     def mark_empty_groups(self, mark):
         """
         Mark/unmark all empty groups.
+        
+        :param mark:   0 - unmark, 1 - mark
+        :type  mark:   int
+
+        .. versionadded:: 6.3
         """
         self._wrapper.mark_empty_groups(mark)
         
@@ -2274,6 +3679,13 @@ class GXMVIEW:
     def mark_group(self, name, mark):
         """
         Mark or unmark a specific group
+        
+        :param name:   Group name
+        :param mark:   0 - unmark, 1 - mark
+        :type  name:   str
+        :type  mark:   int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.mark_group(name.encode(), mark)
         
@@ -2284,6 +3696,11 @@ class GXMVIEW:
     def move_group_backward(self, group):
         """
         Move the group backward one position (render sooner).
+        
+        :param group:  Group name
+        :type  group:  str
+
+        .. versionadded:: 5.1.1
         """
         self._wrapper.move_group_backward(group.encode())
         
@@ -2294,6 +3711,11 @@ class GXMVIEW:
     def move_group_forward(self, group):
         """
         Move the group forward one position (render later).
+        
+        :param group:  Group name
+        :type  group:  str
+
+        .. versionadded:: 5.1.1
         """
         self._wrapper.move_group_forward(group.encode())
         
@@ -2304,6 +3726,11 @@ class GXMVIEW:
     def move_group_to_back(self, group):
         """
         Move the group to the back (render first).
+        
+        :param group:  Group name
+        :type  group:  str
+
+        .. versionadded:: 5.1.1
         """
         self._wrapper.move_group_to_back(group.encode())
         
@@ -2314,6 +3741,11 @@ class GXMVIEW:
     def move_group_to_front(self, group):
         """
         Move the group to the front (render last).
+        
+        :param group:  Group name
+        :type  group:  str
+
+        .. versionadded:: 5.1.1
         """
         self._wrapper.move_group_to_front(group.encode())
         
@@ -2324,6 +3756,13 @@ class GXMVIEW:
     def rename_group(self, old, new):
         """
         Rename a group.
+        
+        :param old:    Old group name
+        :param new:    New group name
+        :type  old:    str
+        :type  new:    str
+
+        .. versionadded:: 5.1.1
 
         **Note:**
 
@@ -2338,6 +3777,13 @@ class GXMVIEW:
     def set_group_moveable(self, group, move):
         """
         Set the movable attribute of a group.
+        
+        :param group:  Group name
+        :param move:   0 - not movable, 1 - movable
+        :type  group:  str
+        :type  move:   int
+
+        .. versionadded:: 5.0.5
         """
         self._wrapper.set_group_moveable(group.encode(), move)
         
@@ -2348,6 +3794,13 @@ class GXMVIEW:
     def set_group_transparency(self, group_name, trans):
         """
         Sets the transparency value of group
+        
+        :param group_name:  Group name
+        :param trans:       Transparency  (1.0 - Opaque, 0.0 - Transparent)
+        :type  group_name:  str
+        :type  trans:       float
+
+        .. versionadded:: 6.0
         """
         self._wrapper.set_group_transparency(group_name.encode(), trans)
         
@@ -2358,6 +3811,11 @@ class GXMVIEW:
     def set_mark_moveable(self, move):
         """
         Set the movable attribute of marked groups.
+        
+        :param move:   0 - not movable, 1 - movable
+        :type  move:   int
+
+        .. versionadded:: 5.0.5
         """
         self._wrapper.set_mark_moveable(move)
         
@@ -2368,6 +3826,11 @@ class GXMVIEW:
     def set_movability(self, flag):
         """
         Set the view movability
+        
+        :param flag:   `GEO_BOOL`
+        :type  flag:   int
+
+        .. versionadded:: 6.4
 
         **Note:**
 
@@ -2384,6 +3847,11 @@ class GXMVIEW:
     def set_render_order(self, order):
         """
         Set the view render order
+        
+        :param order:  Render order
+        :type  order:  int
+
+        .. versionadded:: 6.3
 
         **Note:**
 
@@ -2398,6 +3866,11 @@ class GXMVIEW:
     def set_visibility(self, flag):
         """
         Set the view visibility
+        
+        :param flag:   `GEO_BOOL`
+        :type  flag:   int
+
+        .. versionadded:: 6.3
         """
         self._wrapper.set_visibility(flag)
         
@@ -2408,6 +3881,13 @@ class GXMVIEW:
     def start_group(self, name, mode):
         """
         Start a group.
+        
+        :param name:   Group name, can be NULL, Maximum length is `MVIEW_NAME_LENGTH <geosoft.gxapi.MVIEW_NAME_LENGTH>`
+        :param mode:   `MVIEW_GROUP`
+        :type  name:   str
+        :type  mode:   int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2415,7 +3895,7 @@ class GXMVIEW:
         before drawing to a group.
         
         If the group name is NULL, output will be sent to
-        the primary group stream and the `MVIEW_GROUP_` is
+        the primary group stream and the `MVIEW_GROUP` is
         ignored.
         
         Group names must be different from view names.
@@ -2429,6 +3909,13 @@ class GXMVIEW:
     def get_group_guid(self, group, guid):
         """
         Gets a GUID of a group in the `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
+        
+        :param group:  Group number
+        :param guid:   GUID
+        :type  group:  int
+        :type  guid:   str_ref
+
+        .. versionadded:: 9.3
 
         **Note:**
 
@@ -2443,6 +3930,14 @@ class GXMVIEW:
     def find_group_by_guid(self, guid):
         """
         Find a Group by name.
+        
+        :param guid:   GUID
+        :type  guid:   str
+
+        :returns:      Group Number.
+        :rtype:        int
+
+        .. versionadded:: 9.3
         """
         ret_val = self._wrapper.find_group_by_guid(guid.encode())
         return ret_val
@@ -2457,6 +3952,11 @@ class GXMVIEW:
     def set_working_ipj(self, ipj):
         """
         Set the working projection of the view.
+        
+        :param ipj:    The input projection
+        :type  ipj:    GXIPJ
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2478,6 +3978,9 @@ class GXMVIEW:
     def clear_esrild_ts(self):
         """
         Clear ESRI local datum transformations currently in use.
+        
+
+        .. versionadded:: 7.1
         """
         self._wrapper.clear_esrild_ts()
         
@@ -2488,6 +3991,12 @@ class GXMVIEW:
     def is_projection_empty(self):
         """
         Returns 1 if the view projection and view user projection are both empty (undefined).
+        
+
+        :returns:      1 if the view projection and view user projection are both empty.
+        :rtype:        int
+
+        .. versionadded:: 9.0
 
         **Note:**
 
@@ -2504,6 +4013,11 @@ class GXMVIEW:
     def get_ipj(self, ipj):
         """
         Get the projection of the view.
+        
+        :param ipj:    `GXIPJ <geosoft.gxapi.GXIPJ>` in which to place the view `GXIPJ <geosoft.gxapi.GXIPJ>`
+        :type  ipj:    GXIPJ
+
+        .. versionadded:: 5.0
         """
         self._wrapper.get_ipj(ipj._wrapper)
         
@@ -2514,6 +4028,11 @@ class GXMVIEW:
     def get_user_ipj(self, ipj):
         """
         Get the user projection of the view.
+        
+        :param ipj:    `GXIPJ <geosoft.gxapi.GXIPJ>` in which to place the view `GXIPJ <geosoft.gxapi.GXIPJ>`
+        :type  ipj:    GXIPJ
+
+        .. versionadded:: 5.0
         """
         self._wrapper.get_user_ipj(ipj._wrapper)
         
@@ -2524,6 +4043,11 @@ class GXMVIEW:
     def mode_pj(self, mode):
         """
         Set the working projection mode
+        
+        :param mode:   `MVIEW_PJ`
+        :type  mode:   int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2544,6 +4068,12 @@ class GXMVIEW:
     def north(self):
         """
         Returns North direction at center of view.
+        
+
+        :returns:      North direction id deg. azimuth relative to view Y.
+        :rtype:        float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2559,6 +4089,11 @@ class GXMVIEW:
     def set_ipj(self, ipj):
         """
         Set the projection of the view.
+        
+        :param ipj:    `GXIPJ <geosoft.gxapi.GXIPJ>` to place in the view
+        :type  ipj:    GXIPJ
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2576,6 +4111,11 @@ class GXMVIEW:
     def set_user_ipj(self, ipj):
         """
         Set the user projection of the view.
+        
+        :param ipj:    `GXIPJ <geosoft.gxapi.GXIPJ>` to place in the view
+        :type  ipj:    GXIPJ
+
+        .. versionadded:: 5.0
         """
         self._wrapper.set_user_ipj(ipj._wrapper)
         
@@ -2590,6 +4130,14 @@ class GXMVIEW:
     def get_3d_group_flags(self, group_num):
         """
         Get a 3D geometry group's 3D rendering flags.
+        
+        :param group_num:  Group number
+        :type  group_num:  int
+
+        :returns:          Combination of `MVIEW_3D_RENDER` flags or 0
+        :rtype:            int
+
+        .. versionadded:: 9.1
         """
         ret_val = self._wrapper.get_3d_group_flags(group_num)
         return ret_val
@@ -2600,6 +4148,13 @@ class GXMVIEW:
     def set_3d_group_flags(self, group_num, flags):
         """
         Set a 3D geometry group's 3D rendering flags.
+        
+        :param group_num:  Group number
+        :param flags:      Combination of `MVIEW_3D_RENDER` flags or 0
+        :type  group_num:  int
+        :type  flags:      int
+
+        .. versionadded:: 9.1
         """
         self._wrapper.set_3d_group_flags(group_num, flags)
         
@@ -2610,6 +4165,13 @@ class GXMVIEW:
     def get_group_freeze_scale(self, group_num, scale):
         """
         Get a scale freezing value for the group (`rDUMMY <geosoft.gxapi.rDUMMY>` for disabled).
+        
+        :param group_num:  Group number
+        :param scale:      Variable to fill with freeze scale
+        :type  group_num:  int
+        :type  scale:      float_ref
+
+        .. versionadded:: 7.2
         """
         scale.value = self._wrapper.get_group_freeze_scale(group_num, scale.value)
         
@@ -2620,6 +4182,11 @@ class GXMVIEW:
     def set_freeze_scale(self, scale):
         """
         Set a scale freezing value into stream (`rDUMMY <geosoft.gxapi.rDUMMY>` for disabled).
+        
+        :param scale:  Freeze Scale value
+        :type  scale:  float
+
+        .. versionadded:: 7.2
 
         **Note:**
 
@@ -2634,6 +4201,13 @@ class GXMVIEW:
     def set_group_freeze_scale(self, group_num, scale):
         """
         Set a scale freezing value for the group (`rDUMMY <geosoft.gxapi.rDUMMY>` for disabled).
+        
+        :param group_num:  Group number
+        :param scale:      Variable to fill with freeze scale
+        :type  group_num:  int
+        :type  scale:      float
+
+        .. versionadded:: 7.2
         """
         self._wrapper.set_group_freeze_scale(group_num, scale)
         
@@ -2644,6 +4218,14 @@ class GXMVIEW:
     def find_group(self, group_name):
         """
         Find a Group by name.
+        
+        :param group_name:  Group name
+        :type  group_name:  str
+
+        :returns:           Group Number.
+        :rtype:             int
+
+        .. versionadded:: 7.2
         """
         ret_val = self._wrapper.find_group(group_name.encode())
         return ret_val
@@ -2654,6 +4236,13 @@ class GXMVIEW:
     def group_name(self, group_num, group_name):
         """
         Get a group name
+        
+        :param group_num:   Group number, error if not valid
+        :param group_name:  Group Name
+        :type  group_num:   int
+        :type  group_name:  str_ref
+
+        .. versionadded:: 7.2
         """
         group_name.value = self._wrapper.group_name(group_num, group_name.value.encode())
         
@@ -2664,6 +4253,27 @@ class GXMVIEW:
     def render(self, hdc, h_dc, left, bottom, right, top, min_x, min_y, max_x):
         """
         Render a specified area of view onto a Windows DC handle
+        
+        :param hdc:     DC Handle
+        :param h_dc:    Left value of the render rect in Windows coordinates (bottom>top)
+        :param left:    Bottom value
+        :param bottom:  Right value
+        :param right:   Top value
+        :param top:     Area X minimum
+        :param min_x:   Area Y minimum
+        :param min_y:   Area X maximum
+        :param max_x:   Area Y maximum
+        :type  hdc:     int
+        :type  h_dc:    int
+        :type  left:    int
+        :type  bottom:  int
+        :type  right:   int
+        :type  top:     float
+        :type  min_x:   float
+        :type  min_y:   float
+        :type  max_x:   float
+
+        .. versionadded:: 6.4
         """
         self._wrapper.render(hdc, h_dc, left, bottom, right, top, min_x, min_y, max_x)
         
@@ -2678,6 +4288,11 @@ class GXMVIEW:
     def set_u_fac(self, hdc):
         """
         Set the unit conversion of a view.
+        
+        :param hdc:    New UFac value
+        :type  hdc:    float
+
+        .. versionadded:: 5.0
         """
         self._wrapper.set_u_fac(hdc)
         
@@ -2688,6 +4303,21 @@ class GXMVIEW:
     def axis_x(self, hdc, h_dc, left, bottom, right, top):
         """
         Draw an X axis
+        
+        :param hdc:     Y location in view units
+        :param h_dc:    Left  X
+        :param left:    Right X
+        :param bottom:  Major tick interval
+        :param right:   Minor tick interval (half size of major)
+        :param top:     Tick size in view units (negative for down ticks)
+        :type  hdc:     float
+        :type  h_dc:    float
+        :type  left:    float
+        :type  bottom:  float
+        :type  right:   float
+        :type  top:     float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2706,6 +4336,21 @@ class GXMVIEW:
     def axis_y(self, hdc, h_dc, left, bottom, right, top):
         """
         Draw a  Y axis
+        
+        :param hdc:     X location in view units
+        :param h_dc:    Bottom Y
+        :param left:    Top    Y
+        :param bottom:  Major tick interval
+        :param right:   Minor tick interval (half size of major)
+        :param top:     Tick size in view units (negative for left ticks)
+        :type  hdc:     float
+        :type  h_dc:    float
+        :type  left:    float
+        :type  bottom:  float
+        :type  right:   float
+        :type  top:     float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2724,6 +4369,19 @@ class GXMVIEW:
     def grid(self, hdc, h_dc, left, bottom, right):
         """
         Draw a grid in the current window
+        
+        :param hdc:     X grid increment
+        :param h_dc:    Y grid increment
+        :param left:    dX dot increment/cross X size
+        :param bottom:  dY dot increment/cross Y size
+        :param right:   `MVIEW_GRID`
+        :type  hdc:     float
+        :type  h_dc:    float
+        :type  left:    float
+        :type  bottom:  float
+        :type  right:   int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2743,6 +4401,21 @@ class GXMVIEW:
     def label_fid(self, hdc, h_dc, left, bottom, right, top):
         """
         Label fiducials on a profile
+        
+        :param hdc:     X `GXVV <geosoft.gxapi.GXVV>`
+        :param h_dc:    Fiducial start
+        :param left:    Fiducial increment
+        :param bottom:  Fiducial label interval, default 100.0
+        :param right:   Y location in view unit
+        :param top:     Y scale
+        :type  hdc:     GXVV
+        :type  h_dc:    float
+        :type  left:    float
+        :type  bottom:  float
+        :type  right:   float
+        :type  top:     float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2762,6 +4435,23 @@ class GXMVIEW:
     def label_x(self, hdc, h_dc, left, bottom, right, top, min_x):
         """
         Label annotations on the X axis
+        
+        :param hdc:     Y location in view units
+        :param h_dc:    Left  X
+        :param left:    Right X
+        :param bottom:  Label interval
+        :param right:   `MVIEW_LABEL_JUST`
+        :param top:     `MVIEW_LABEL_BOUND`
+        :param min_x:   `MVIEW_LABEL_ORIENT`
+        :type  hdc:     float
+        :type  h_dc:    float
+        :type  left:    float
+        :type  bottom:  float
+        :type  right:   int
+        :type  top:     int
+        :type  min_x:   int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2782,6 +4472,23 @@ class GXMVIEW:
     def label_y(self, hdc, h_dc, left, bottom, right, top, min_x):
         """
         Label annotations on the Y axis
+        
+        :param hdc:     X location in view units
+        :param h_dc:    Bottom Y
+        :param left:    Top    Y
+        :param bottom:  Label interval
+        :param right:   `MVIEW_LABEL_JUST`
+        :param top:     `MVIEW_LABEL_BOUND`
+        :param min_x:   `MVIEW_LABEL_ORIENT`
+        :type  hdc:     float
+        :type  h_dc:    float
+        :type  left:    float
+        :type  bottom:  float
+        :type  right:   int
+        :type  top:     int
+        :type  min_x:   int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2802,6 +4509,15 @@ class GXMVIEW:
     def optimum_tick(cls, mview, hdc, h_dc):
         """
         Return a default optimum tick interval
+        
+        :param mview:  Minimum of range
+        :param hdc:    Maximum
+        :param h_dc:   Optimum interval
+        :type  mview:  float
+        :type  hdc:    float
+        :type  h_dc:   float_ref
+
+        .. versionadded:: 5.0
         """
         h_dc.value = gxapi_cy.WrapMVIEW.optimum_tick(GXContext._get_tls_geo(), mview, hdc, h_dc.value)
         
@@ -2816,6 +4532,18 @@ class GXMVIEW:
     def create(cls, map, name, mode):
         """
         Create `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
+        
+        :param map:   `GXMAP <geosoft.gxapi.GXMAP>` on which to place the view
+        :param name:  View name (maximum `MVIEW_NAME_LENGTH <geosoft.gxapi.MVIEW_NAME_LENGTH>`)
+        :param mode:  `MVIEW_OPEN`
+        :type  map:   GXMAP
+        :type  name:  str
+        :type  mode:  int
+
+        :returns:     `GXMVIEW <geosoft.gxapi.GXMVIEW>`, aborts if creation fails
+        :rtype:       GXMVIEW
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2831,6 +4559,40 @@ class GXMVIEW:
     def create_crooked_section(cls, map, ipj, h_dc, left, bottom, right, top, min_x, min_y, max_x, max_y, v_vxs, v_vx, v_vy):
         """
         Creates a new crooked section view.
+        
+        :param map:     `GXMAP <geosoft.gxapi.GXMAP>` Object
+        :param ipj:     Geographic projection of input X, Y locations below (without orientation)
+        :param h_dc:    View Name
+        :param left:    Base view bottom left corner X (mm)
+        :param bottom:  Base view bottom left corner Y (mm)
+        :param right:   Base view size in X (mm)
+        :param top:     Base view size in Y (mm)
+        :param min_x:   Map horizontal scale (X-axis)
+        :param min_y:   Vertical exaggeration (1.0 is normal, must be >0.0)
+        :param max_x:   Starting distance at the left side of the view.
+        :param max_y:   Elevation at TOP of the view
+        :param v_vxs:   Cumulative distances along the secton
+        :param v_vx:    True X locations along the section
+        :param v_vy:    True Y locations along the section
+        :type  map:     GXMAP
+        :type  ipj:     GXIPJ
+        :type  h_dc:    str
+        :type  left:    float
+        :type  bottom:  float
+        :type  right:   float
+        :type  top:     float
+        :type  min_x:   float
+        :type  min_y:   float
+        :type  max_x:   float
+        :type  max_y:   float
+        :type  v_vxs:   GXVV
+        :type  v_vx:    GXVV
+        :type  v_vy:    GXVV
+
+        :returns:       `GXMVIEW <geosoft.gxapi.GXMVIEW>`, aborts if creation fails
+        :rtype:         GXMVIEW
+
+        .. versionadded:: 7.2
 
         **Note:**
 
@@ -2854,6 +4616,42 @@ class GXMVIEW:
     def create_crooked_section_data_profile(cls, map, ipj, name, x0, y0, xs, ys, scale, dist0, min_z, max_z, log_z, v_vxs, v_vx, v_vy):
         """
         Creates a new crooked section data profile view.
+        
+        :param map:    `GXMAP <geosoft.gxapi.GXMAP>` Object
+        :param ipj:    Geographic projection of input X, Y locations below (without orientation)
+        :param name:   View Name
+        :param x0:     Base view bottom left corner X (mm)
+        :param y0:     Base view bottom left corner Y (mm)
+        :param xs:     Base view size in X (mm)
+        :param ys:     Base view size in Y (mm)
+        :param scale:  Map horizontal scale (X-axis)
+        :param dist0:  Starting distance at the left side of the view.
+        :param min_z:  Data value at bottom of the view
+        :param max_z:  Data value at top of the view
+        :param log_z:  Make logarithmic Y-axis (0:No, 1:Yes)?
+        :param v_vxs:  Cumulative distances along the secton
+        :param v_vx:   True X locations along the section
+        :param v_vy:   True Y locations along the section
+        :type  map:    GXMAP
+        :type  ipj:    GXIPJ
+        :type  name:   str
+        :type  x0:     float
+        :type  y0:     float
+        :type  xs:     float
+        :type  ys:     float
+        :type  scale:  float
+        :type  dist0:  float
+        :type  min_z:  float
+        :type  max_z:  float
+        :type  log_z:  int
+        :type  v_vxs:  GXVV
+        :type  v_vx:   GXVV
+        :type  v_vy:   GXVV
+
+        :returns:      `GXMVIEW <geosoft.gxapi.GXMVIEW>`, aborts if creation fails
+        :rtype:        GXMVIEW
+
+        .. versionadded:: 7.2
 
         **Note:**
 
@@ -2874,6 +4672,21 @@ class GXMVIEW:
     def extent(self, what, unit, min_x, min_y, max_x, max_y):
         """
         Get the view extents
+        
+        :param what:   `MVIEW_EXTENT`
+        :param unit:   `MVIEW_EXTENT_UNIT`
+        :param min_x:  X minimum
+        :param min_y:  Y minimum
+        :param max_x:  X maximum
+        :param max_y:  Y maximum
+        :type  what:   int
+        :type  unit:   int
+        :type  min_x:  float_ref
+        :type  min_y:  float_ref
+        :type  max_x:  float_ref
+        :type  max_y:  float_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2898,6 +4711,12 @@ class GXMVIEW:
     def get_map(self):
         """
         Get the `GXMAP <geosoft.gxapi.GXMAP>` of the view.
+        
+
+        :returns:      The `GXMAP <geosoft.gxapi.GXMAP>` of the View.
+        :rtype:        GXMAP
+
+        .. versionadded:: 7.2
         """
         ret_val = self._wrapper.get_map()
         return GXMAP(ret_val)
@@ -2908,6 +4727,12 @@ class GXMVIEW:
     def get_reg(self):
         """
         Get the `GXREG <geosoft.gxapi.GXREG>` of the view.
+        
+
+        :returns:      The `GXREG <geosoft.gxapi.GXREG>` of the View.
+        :rtype:        GXREG
+
+        .. versionadded:: 5.0.5
         """
         ret_val = self._wrapper.get_reg()
         return GXREG(ret_val)
@@ -2918,6 +4743,11 @@ class GXMVIEW:
     def get_name(self, name):
         """
         Gets the name of a view.
+        
+        :param name:   View name returned
+        :type  name:   str_ref
+
+        .. versionadded:: 5.0
         """
         name.value = self._wrapper.get_name(name.value.encode())
         
@@ -2928,6 +4758,11 @@ class GXMVIEW:
     def get_guid(self, guid):
         """
         Gets the GUID of the `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
+        
+        :param guid:   GUID
+        :type  guid:   str_ref
+
+        .. versionadded:: 9.3
 
         **Note:**
 
@@ -2946,6 +4781,13 @@ class GXMVIEW:
     def plot_to_view(self, x, y):
         """
         Convert a plot coordinate in mm to a VIEW coordinate.
+        
+        :param x:      X in plot mm, returned in View coordinates
+        :param y:      Y in plot mm, returned in View coordinates
+        :type  x:      float_ref
+        :type  y:      float_ref
+
+        .. versionadded:: 5.0
         """
         x.value, y.value = self._wrapper.plot_to_view(x.value, y.value)
         
@@ -2956,6 +4798,11 @@ class GXMVIEW:
     def set_thin_res(self, thin):
         """
         Set polyline/polygon thinning resolution
+        
+        :param thin:   Thinning resolution in mm, -1.0 to turn off.
+        :type  thin:   float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2983,6 +4830,13 @@ class GXMVIEW:
     def view_to_plot(self, x, y):
         """
         Convert a VIEW coordinate to a plot coordinate in mm.
+        
+        :param x:      X in View, returned in mm from plot origin
+        :param y:      Y in View, returned in mm from plot origin
+        :type  x:      float_ref
+        :type  y:      float_ref
+
+        .. versionadded:: 5.0
         """
         x.value, y.value = self._wrapper.view_to_plot(x.value, y.value)
         
@@ -2994,6 +4848,27 @@ class GXMVIEW:
         """
         Fit an area in ground coordinates centered to an area in mm on map or vise versa
         keeping X and Y scales the same.
+        
+        :param m_min_x:   X minimum (mm) of the area in map relative to map origin
+        :param m_min_y:   Y minimum  ..
+        :param m_max_x:   X maximum  ..
+        :param m_max_y:   Y maximum  ..
+        :param v_min_x:   Min X in ground coordinate to fit to the area defined above
+        :param v_min_y:   Min Y in ground coordinate ..
+        :param v_max_x:   Max X in ground coordinate ..
+        :param v_max_y:   Max Y in ground coordinate ..
+        :param fit_view:  `MVIEW_FIT`
+        :type  m_min_x:   float_ref
+        :type  m_min_y:   float_ref
+        :type  m_max_x:   float_ref
+        :type  m_max_y:   float_ref
+        :type  v_min_x:   float_ref
+        :type  v_min_y:   float_ref
+        :type  v_max_x:   float_ref
+        :type  v_max_y:   float_ref
+        :type  fit_view:  int
+
+        .. versionadded:: 5.1.8
 
         **Note:**
 
@@ -3013,6 +4888,25 @@ class GXMVIEW:
     def fit_map_window_3d(self, m_min_x, m_min_y, m_max_x, m_max_y, v_min_x, v_min_y, v_max_x, v_max_y):
         """
         Set the 2D view window for a 3D view.
+        
+        :param m_min_x:  X minimum (mm) of the area in map relative to map origin
+        :param m_min_y:  Y minimum  ..
+        :param m_max_x:  X maximum  ..
+        :param m_max_y:  Y maximum  ..
+        :param v_min_x:  Min X in ground coordinate to fit to the area defined above
+        :param v_min_y:  Min Y in ground coordinate ..
+        :param v_max_x:  Max X in ground coordinate ..
+        :param v_max_y:  Max Y in ground coordinate ..
+        :type  m_min_x:  float
+        :type  m_min_y:  float
+        :type  m_max_x:  float
+        :type  m_max_y:  float
+        :type  v_min_x:  float
+        :type  v_min_y:  float
+        :type  v_max_x:  float
+        :type  v_max_y:  float
+
+        .. versionadded:: 5.1.2
 
         **Note:**
 
@@ -3037,6 +4931,25 @@ class GXMVIEW:
     def fit_window(self, m_min_x, m_min_y, m_max_x, m_max_y, v_min_x, v_min_y, v_max_x, v_max_y):
         """
         Fit an area in ground coordinates to an area in mm on map.
+        
+        :param m_min_x:  X minimum (mm) of the area in map relative to map origin
+        :param m_min_y:  Y minimum  ..
+        :param m_max_x:  X maximum  ..
+        :param m_max_y:  Y maximum  ..
+        :param v_min_x:  Min X in ground coordinate to fit to the area defined above
+        :param v_min_y:  Min Y in ground coordinate ..
+        :param v_max_x:  Max X in ground coordinate ..
+        :param v_max_y:  Max Y in ground coordinate ..
+        :type  m_min_x:  float
+        :type  m_min_y:  float
+        :type  m_max_x:  float
+        :type  m_max_y:  float
+        :type  v_min_x:  float
+        :type  v_min_y:  float
+        :type  v_max_x:  float
+        :type  v_max_y:  float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -3056,6 +4969,13 @@ class GXMVIEW:
     def get_class_name(self, cl, name):
         """
         Get a class name.
+        
+        :param cl:     Class
+        :param name:   Name
+        :type  cl:     str
+        :type  name:   str_ref
+
+        .. versionadded:: 5.1.2
 
         **Note:**
 
@@ -3072,6 +4992,13 @@ class GXMVIEW:
     def map_origin(self, x_origin, y_origin):
         """
         Get the map origin from a view
+        
+        :param x_origin:  Returned map origin - X
+        :param y_origin:  Returned map origin - Y
+        :type  x_origin:  float_ref
+        :type  y_origin:  float_ref
+
+        .. versionadded:: 5.0
         """
         x_origin.value, y_origin.value = self._wrapper.map_origin(x_origin.value, y_origin.value)
         
@@ -3082,6 +5009,11 @@ class GXMVIEW:
     def re_scale(self, scale):
         """
         Change the scale of a view.
+        
+        :param scale:  Scale factor (> 0.0)
+        :type  scale:  float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -3098,6 +5030,12 @@ class GXMVIEW:
     def get_map_scale(self):
         """
         Get the current map scale of the view
+        
+
+        :returns:      The current map scale to 6 significant digits
+        :rtype:        float
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.get_map_scale()
         return ret_val
@@ -3108,6 +5046,12 @@ class GXMVIEW:
     def scale_mm(self):
         """
         Get the horizontal scale in view X units/mm
+        
+
+        :returns:      Returns horizontal scale in view X units/mm
+        :rtype:        float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -3125,6 +5069,12 @@ class GXMVIEW:
     def scale_pj_mm(self):
         """
         Get horizontal scale in projected user units/mm
+        
+
+        :returns:      Returns horizontal scale in projected user units/mm
+        :rtype:        float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -3143,6 +5093,12 @@ class GXMVIEW:
     def scale_ymm(self):
         """
         Get the vertical scale in Y units/mm
+        
+
+        :returns:      Returns vertical scale in view Y units/mm
+        :rtype:        float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -3160,6 +5116,13 @@ class GXMVIEW:
     def scale_all_group(self, xs, ys):
         """
         Scale all groups (except for GRID) in a view
+        
+        :param xs:     X scale
+        :param ys:     Y scale
+        :type  xs:     float
+        :type  ys:     float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -3179,6 +5142,25 @@ class GXMVIEW:
     def scale_window(self, min_x, min_y, max_x, max_y, bot_x, bot_y, x_scal, y_scal):
         """
         Assign view coordinates to define a window.
+        
+        :param min_x:   X minimum in view coordinates
+        :param min_y:   Y minimum
+        :param max_x:   X maximum
+        :param max_y:   Y maximum
+        :param bot_x:   X minimum in plot coordinates
+        :param bot_y:   Y minimum
+        :param x_scal:  Horizontal scale (view unit/plot unit in mm)
+        :param y_scal:  Vertical scale
+        :type  min_x:   float
+        :type  min_y:   float
+        :type  max_x:   float
+        :type  max_y:   float
+        :type  bot_x:   float
+        :type  bot_y:   float
+        :type  x_scal:  float
+        :type  y_scal:  float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -3199,6 +5181,13 @@ class GXMVIEW:
     def set_class_name(self, cl, name):
         """
         Set a class name.
+        
+        :param cl:     Class
+        :param name:   Name
+        :type  cl:     str
+        :type  name:   str
+
+        .. versionadded:: 5.1.2
 
         **Note:**
 
@@ -3215,6 +5204,19 @@ class GXMVIEW:
     def set_window(self, min_x, min_y, max_x, max_y, unit):
         """
         Set the view window
+        
+        :param min_x:  X minimum
+        :param min_y:  Y minimum
+        :param max_x:  X maximum
+        :param max_y:  Y maximum
+        :param unit:   `MVIEW_UNIT`
+        :type  min_x:  float
+        :type  min_y:  float
+        :type  max_x:  float
+        :type  max_y:  float
+        :type  unit:   int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -3234,6 +5236,17 @@ class GXMVIEW:
     def tran_scale(self, x, y, xs, ys):
         """
         Set the view translation and scaling
+        
+        :param x:      X origin (user X to be placed at map 0)
+        :param y:      Y origin (user Y to be placed at map 0)
+        :param xs:     X mm/user unit
+        :param ys:     Y mm/user unit
+        :type  x:      float
+        :type  y:      float
+        :type  xs:     float
+        :type  ys:     float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -3252,6 +5265,13 @@ class GXMVIEW:
     def user_to_view(self, x, y):
         """
         Convert a USERplot in mm to a VIEW coordinate
+        
+        :param x:      X in USER, returned in View coordinates
+        :param y:      Y in USER, returned in View coordinates
+        :type  x:      float_ref
+        :type  y:      float_ref
+
+        .. versionadded:: 5.0
 
         .. seealso::
 
@@ -3267,6 +5287,13 @@ class GXMVIEW:
     def view_to_user(self, x, y):
         """
         Convert a VIEW coordinate to a USER coordinate.
+        
+        :param x:      X in View, returned in user coordinates
+        :param y:      Y in View, returned in user coordinates
+        :type  x:      float_ref
+        :type  y:      float_ref
+
+        .. versionadded:: 5.0
 
         .. seealso::
 

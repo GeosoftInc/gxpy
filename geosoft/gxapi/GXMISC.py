@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -62,6 +61,15 @@ class GXMISC:
     def convert_cg3to_raw(cls, cg3, raw, tide_corr_opt):
         """
         Convert a CG3 dump to RAW format.
+        
+        :param cg3:            Name of the CG3 file
+        :param raw:            Name of the RAW file
+        :param tide_corr_opt:  TideCorr Option: 1 - use geosoft, 0 - use CG3/CG5
+        :type  cg3:            str
+        :type  raw:            str
+        :type  tide_corr_opt:  int
+
+        .. versionadded:: 7.3
         """
         gxapi_cy.WrapMISC.convert_cg3to_raw(GXContext._get_tls_geo(), cg3.encode(), raw.encode(), tide_corr_opt)
         
@@ -72,6 +80,15 @@ class GXMISC:
     def convert_cg5to_raw(cls, cg5, raw, tide_corr_opt):
         """
         Convert a CG5 dump to RAW format.
+        
+        :param cg5:            Name of the CG5 file
+        :param raw:            Name of the RAW file
+        :param tide_corr_opt:  TideCorr Option: 1 - use geosoft, 0 - use CG3/CG5
+        :type  cg5:            str
+        :type  raw:            str
+        :type  tide_corr_opt:  int
+
+        .. versionadded:: 7.3
         """
         gxapi_cy.WrapMISC.convert_cg5to_raw(GXContext._get_tls_geo(), cg5.encode(), raw.encode(), tide_corr_opt)
         
@@ -82,6 +99,15 @@ class GXMISC:
     def ukoa2_tbl(cls, ukoa, alias, tbl):
         """
         Convert a UKOA file to a location TBL file.
+        
+        :param ukoa:   Name of the UKOA file
+        :param alias:  Line name alias table
+        :param tbl:    Name of the output table
+        :type  ukoa:   str
+        :type  alias:  str
+        :type  tbl:    str
+
+        .. versionadded:: 5.0
 
         **Note:**
 

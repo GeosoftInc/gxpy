@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -70,6 +69,20 @@ class GXDAT:
     def create_db(cls, db, x_ch, y_ch, z_ch):
         """
         Create a handle to a database `GXDAT <geosoft.gxapi.GXDAT>` object
+        
+        :param db:    Handle to database which `GXDAT <geosoft.gxapi.GXDAT>` is connected with
+        :param x_ch:  Name of X channel in database
+        :param y_ch:  Name of Y channel in database
+        :param z_ch:  Name of Z channel in database
+        :type  db:    GXDB
+        :type  x_ch:  str
+        :type  y_ch:  str
+        :type  z_ch:  str
+
+        :returns:     `GXDAT <geosoft.gxapi.GXDAT>` Object
+        :rtype:       GXDAT
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapDAT.create_db(GXContext._get_tls_geo(), db._wrapper, x_ch.encode(), y_ch.encode(), z_ch.encode())
         return GXDAT(ret_val)
@@ -80,6 +93,16 @@ class GXDAT:
     def create_xgd(cls, name, mode):
         """
         Create a handle to a grid file `GXDAT <geosoft.gxapi.GXDAT>` object
+        
+        :param name:  Name of grid file to associate `GXDAT <geosoft.gxapi.GXDAT>` with
+        :param mode:  `DAT_XGD`
+        :type  name:  str
+        :type  mode:  int
+
+        :returns:     `GXDAT <geosoft.gxapi.GXDAT>` Object
+        :rtype:       GXDAT
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapDAT.create_xgd(GXContext._get_tls_geo(), name.encode(), mode)
         return GXDAT(ret_val)
@@ -92,6 +115,17 @@ class GXDAT:
     def get_lst(cls, lst, interface, flags, mode):
         """
         Put available `GXDAT <geosoft.gxapi.GXDAT>` filters and qualifiers in a `GXLST <geosoft.gxapi.GXLST>`
+        
+        :param lst:        `GXLST <geosoft.gxapi.GXLST>` object to populate
+        :param interface:  `GXDAT <geosoft.gxapi.GXDAT>` interface name ("XGD" only support option currently)
+        :param flags:      `DAT_FILE`
+        :param mode:       `DAT_FILE_FORM`
+        :type  lst:        GXLST
+        :type  interface:  str
+        :type  flags:      int
+        :type  mode:       int
+
+        .. versionadded:: 5.1.8
 
         **Note:**
 
@@ -108,6 +142,23 @@ class GXDAT:
     def range_xyz(self, min_x, min_y, min_z, max_x, max_y, max_z, num_non_dummy):
         """
         Determine the range in X, Y and Z in the `GXDAT <geosoft.gxapi.GXDAT>` source
+        
+        :param min_x:          Minimum X (`rMAX <geosoft.gxapi.rMAX>` if none)
+        :param min_y:          Minimum Y (`rMAX <geosoft.gxapi.rMAX>` if none)
+        :param min_z:          Minimum Z (`rMAX <geosoft.gxapi.rMAX>` if none)
+        :param max_x:          Maximum X (`rMIN <geosoft.gxapi.rMIN>` if none)
+        :param max_y:          Maximum Y (`rMIN <geosoft.gxapi.rMIN>` if none)
+        :param max_z:          Maximum Z (`rMIN <geosoft.gxapi.rMIN>` if none)
+        :param num_non_dummy:  Number of non-dummy XYZ.
+        :type  min_x:          float_ref
+        :type  min_y:          float_ref
+        :type  min_z:          float_ref
+        :type  max_x:          float_ref
+        :type  max_y:          float_ref
+        :type  max_z:          float_ref
+        :type  num_non_dummy:  int_ref
+
+        .. versionadded:: 7.3
 
         **Note:**
 

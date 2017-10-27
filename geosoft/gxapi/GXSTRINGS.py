@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -61,6 +60,13 @@ class GXSTRINGS:
     def launch_digitization_ui(cls, stringfile, feature_guid):
         """
         Launch Digitization modeless window
+        
+        :param stringfile:    String file
+        :param feature_guid:  Definition guid
+        :type  stringfile:    str
+        :type  feature_guid:  str
+
+        .. versionadded:: 7.5
         """
         gxapi_cy.WrapSTRINGS.launch_digitization_ui(GXContext._get_tls_geo(), stringfile.encode(), feature_guid.encode())
         

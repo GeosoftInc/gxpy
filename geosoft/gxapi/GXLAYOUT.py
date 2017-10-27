@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -72,6 +71,17 @@ class GXLAYOUT:
     def calculate_rects(self, min_x, min_y, max_x, max_y):
         """
         Calculate new positions based on initial conditions and constraints
+        
+        :param min_x:   Parent Rectangle Min X after calculation
+        :param min_y:   Parent Rectangle Min Y after calculation
+        :param max_x:   Parent Rectangle Max X after calculation
+        :param max_y:   Parent Rectangle Max Y after calculation
+        :type  min_x:   float_ref
+        :type  min_y:   float_ref
+        :type  max_x:   float_ref
+        :type  max_y:   float_ref
+
+        .. versionadded:: 6.3
 
         **Note:**
 
@@ -88,6 +98,9 @@ class GXLAYOUT:
     def clear_all(self):
         """
         Remove all children and constraints from layout
+        
+
+        .. versionadded:: 6.3
         """
         self._wrapper.clear_all()
         
@@ -98,6 +111,9 @@ class GXLAYOUT:
     def clear_constraints(self):
         """
         Remove all constraints from layout
+        
+
+        .. versionadded:: 6.3
         """
         self._wrapper.clear_constraints()
         
@@ -108,6 +124,16 @@ class GXLAYOUT:
     def create(cls, num, name):
         """
         Creates a layout calculation object
+        
+        :param num:   Initial number of objects (may be 0)
+        :param name:  Optional name of parent layout (may be empty)
+        :type  num:   int
+        :type  name:  str
+
+        :returns:     `GXLAYOUT <geosoft.gxapi.GXLAYOUT>` object.
+        :rtype:       GXLAYOUT
+
+        .. versionadded:: 6.3
         """
         ret_val = gxapi_cy.WrapLAYOUT.create(GXContext._get_tls_geo(), num, name.encode())
         return GXLAYOUT(ret_val)
@@ -120,6 +146,19 @@ class GXLAYOUT:
     def get_rectangle(self, rect, min_x, min_y, max_x, max_y):
         """
         Gets the current bounds for a rectangle or the parent layout
+        
+        :param rect:    Rectangle to get info for (-1 for parent)
+        :param min_x:   Rectangle Min X
+        :param min_y:   Rectangle Min Y
+        :param max_x:   Rectangle Max X
+        :param max_y:   Rectangle Max Y
+        :type  rect:    int
+        :type  min_x:   float_ref
+        :type  min_y:   float_ref
+        :type  max_x:   float_ref
+        :type  max_y:   float_ref
+
+        .. versionadded:: 6.3
         """
         min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.get_rectangle(rect, min_x.value, min_y.value, max_x.value, max_y.value)
         
@@ -130,6 +169,13 @@ class GXLAYOUT:
     def get_rect_name(self, rect, name):
         """
         Gets an optional name the current info for a rectangle or the parent layout
+        
+        :param rect:    Rectangle to get info for (-1 for parent)
+        :param name:    Buffer for name of the rectangle
+        :type  rect:    int
+        :type  name:    str_ref
+
+        .. versionadded:: 6.3
         """
         name.value = self._wrapper.get_rect_name(rect, name.value.encode())
         
@@ -140,6 +186,25 @@ class GXLAYOUT:
     def add_constraint(self, rect_from, constr_from, rect_to, constr_to, o_mod, m_mod):
         """
         Add a constraint between any two rectangles or to one with absolute positioning
+        
+        :param rect_from:    From rectangle (Or -1 for parent)
+        :param constr_from:  `LAYOUT_CONSTR` From constraint flag
+        :param rect_to:      To rectangle (Or -1 for parent Or -2 for absolute positioning)
+        :param constr_to:    `LAYOUT_CONSTR` To constraint flag
+        :param o_mod:        Offset modifier
+        :param m_mod:        Multiplicative modifier
+        :type  rect_from:    int
+        :type  constr_from:  int
+        :type  rect_to:      int
+        :type  constr_to:    int
+        :type  o_mod:        float
+        :type  m_mod:        float
+
+        :returns:            0 - OK
+                             1 - Error
+        :rtype:              int
+
+        .. versionadded:: 6.3
 
         **Note:**
 
@@ -184,6 +249,20 @@ class GXLAYOUT:
     def add_rectangle(self, min_x, min_y, max_x, max_y):
         """
         Adds a rectangle as one of the layout's children (Higer.
+        
+        :param min_x:   Rectangle Min X   (All 0's for undefined allowed)
+        :param min_y:   Rectangle Min Y
+        :param max_x:   Rectangle Max X
+        :param max_y:   Rectangle Max Y
+        :type  min_x:   float
+        :type  min_y:   float
+        :type  max_x:   float
+        :type  max_y:   float
+
+        :returns:       Rectangle number, -1 on error
+        :rtype:         int
+
+        .. versionadded:: 6.3
         """
         ret_val = self._wrapper.add_rectangle(min_x, min_y, max_x, max_y)
         return ret_val
@@ -194,6 +273,12 @@ class GXLAYOUT:
     def num_rectangles(self):
         """
         Returns the number of children in the list.
+        
+
+        :returns:       Number of rectangles not counting the parent
+        :rtype:         int
+
+        .. versionadded:: 6.3
         """
         ret_val = self._wrapper.num_rectangles()
         return ret_val
@@ -204,6 +289,19 @@ class GXLAYOUT:
     def set_rectangle(self, rect, min_x, min_y, max_x, max_y):
         """
         Sets the current bounds for a rectangle previously added to the layout
+        
+        :param rect:    Rectangle to set info for (-1 for parent)
+        :param min_x:   Rectangle Min X
+        :param min_y:   Rectangle Min Y
+        :param max_x:   Rectangle Max X
+        :param max_y:   Rectangle Max Y
+        :type  rect:    int
+        :type  min_x:   float
+        :type  min_y:   float
+        :type  max_x:   float
+        :type  max_y:   float
+
+        .. versionadded:: 6.3
         """
         self._wrapper.set_rectangle(rect, min_x, min_y, max_x, max_y)
         
@@ -214,6 +312,13 @@ class GXLAYOUT:
     def set_rectangle_name(self, rect, p3):
         """
         Sets an optional name the current info for a rectangle or the parent layout
+        
+        :param rect:    Rectangle to set info for (-1 for parent)
+        :param p3:      Name
+        :type  rect:    int
+        :type  p3:      str
+
+        .. versionadded:: 6.3
         """
         self._wrapper.set_rectangle_name(rect, p3.encode())
         

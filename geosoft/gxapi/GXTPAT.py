@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -93,6 +92,17 @@ class GXTPAT:
     def add_color(self, code, label, descr, color):
         """
         Add a new color to the list
+        
+        :param code:   Code (required - CASE SENSITIVE)
+        :param label:  Label (optional, can be "")
+        :param descr:  Description (optional, can be "")
+        :param color:  Color (use `GXMVIEW.color <geosoft.gxapi.GXMVIEW.color>` to convert to int).
+        :type  code:   str
+        :type  label:  str
+        :type  descr:  str
+        :type  color:  int
+
+        .. versionadded:: 7.0
 
         **Note:**
 
@@ -107,6 +117,12 @@ class GXTPAT:
     def create(cls):
         """
         Creates an empty thematic pattern object.
+        
+
+        :returns:    `GXTPAT <geosoft.gxapi.GXTPAT>` object
+        :rtype:      GXTPAT
+
+        .. versionadded:: 7.0
         """
         ret_val = gxapi_cy.WrapTPAT.create(GXContext._get_tls_geo())
         return GXTPAT(ret_val)
@@ -119,6 +135,14 @@ class GXTPAT:
     def code(self, code):
         """
         Find the index of a given thematic pattern
+        
+        :param code:  Pattern code (case sensitive)
+        :type  code:  str
+
+        :returns:     The code index, -1 if not found
+        :rtype:       int
+
+        .. versionadded:: 7.0
         """
         ret_val = self._wrapper.code(code.encode())
         return ret_val
@@ -129,6 +153,19 @@ class GXTPAT:
     def get_solid_pattern(self, index, code, label, descr, color):
         """
         Get solid pattern info from the `GXTPAT <geosoft.gxapi.GXTPAT>`.
+        
+        :param index:  Index
+        :param code:   Returned Code
+        :param label:  Returned Label
+        :param descr:  Returned Description
+        :param color:  Color.
+        :type  index:  int
+        :type  code:   str_ref
+        :type  label:  str_ref
+        :type  descr:  str_ref
+        :type  color:  int_ref
+
+        .. versionadded:: 7.0
 
         **Note:**
 
@@ -144,6 +181,12 @@ class GXTPAT:
     def size(self):
         """
         Returns the number of rows (items) in the `GXTPAT <geosoft.gxapi.GXTPAT>` object.
+        
+
+        :returns:     Number of `GXTPAT <geosoft.gxapi.GXTPAT>` items.
+        :rtype:       int
+
+        .. versionadded:: 7.0
         """
         ret_val = self._wrapper.size()
         return ret_val
@@ -154,6 +197,11 @@ class GXTPAT:
     def load_csv(self, file):
         """
         Load thematic patterns from a CSV file
+        
+        :param file:  Thematic Pattern file name
+        :type  file:  str
+
+        .. versionadded:: 7.0
 
         **Note:**
 
@@ -192,6 +240,15 @@ class GXTPAT:
     def setup_translation_vv(self, ltb, field, vv_values):
         """
         Initializes a `GXVV <geosoft.gxapi.GXVV>` used to map `GXTPAT <geosoft.gxapi.GXTPAT>` indices to output values
+        
+        :param ltb:        Table containing `GXTPAT <geosoft.gxapi.GXTPAT>` codes as the key
+        :param field:      Field in `GXLTB <geosoft.gxapi.GXLTB>` with the output values (numeric or string)
+        :param vv_values:  Returned values for each `GXTPAT <geosoft.gxapi.GXTPAT>` index
+        :type  ltb:        GXLTB
+        :type  field:      int
+        :type  vv_values:  GXVV
+
+        .. versionadded:: 7.3
 
         **Note:**
 

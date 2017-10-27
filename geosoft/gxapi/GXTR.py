@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -63,6 +62,14 @@ class GXTR:
     def create(cls, order):
         """
         Creates a Trend object
+        
+        :param order:  Trend order (must >=0 and <=3)
+        :type  order:  int
+
+        :returns:      `GXTR <geosoft.gxapi.GXTR>` Object
+        :rtype:        GXTR
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapTR.create(GXContext._get_tls_geo(), order)
         return GXTR(ret_val)
@@ -75,6 +82,11 @@ class GXTR:
     def copy(self, t_rs):
         """
         This method copies a table resource to another trend table resource.
+        
+        :param t_rs:  Source Trend Object to Copy
+        :type  t_rs:  GXTR
+
+        .. versionadded:: 8.1
         """
         self._wrapper.copy(t_rs._wrapper)
         

@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -65,6 +64,13 @@ class GXPGEXP:
         """
         This method adds an pager to the `GXPGEXP <geosoft.gxapi.GXPGEXP>` object with a
         variable name.
+        
+        :param pg:     Pager to add
+        :param var:    Variable name
+        :type  pg:     GXPG
+        :type  var:    str
+
+        .. versionadded:: 7.1
         """
         self._wrapper.add_pager(pg._wrapper, var.encode())
         
@@ -75,6 +81,12 @@ class GXPGEXP:
     def create(cls):
         """
         This method creates an `GXPGEXP <geosoft.gxapi.GXPGEXP>` object.
+        
+
+        :returns:    `GXPGEXP <geosoft.gxapi.GXPGEXP>` Object
+        :rtype:      GXPGEXP
+
+        .. versionadded:: 7.1
         """
         ret_val = gxapi_cy.WrapPGEXP.create(GXContext._get_tls_geo())
         return GXPGEXP(ret_val)
@@ -87,6 +99,13 @@ class GXPGEXP:
     def do_formula(self, formula, max_len):
         """
         This method runs a formula on the pagers.
+        
+        :param formula:  Formula
+        :param max_len:  Max. Buff size
+        :type  formula:  str
+        :type  max_len:  int
+
+        .. versionadded:: 7.1
         """
         self._wrapper.do_formula(formula.encode(), max_len)
         

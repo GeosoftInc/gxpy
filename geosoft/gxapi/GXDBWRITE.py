@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXDB import GXDB
@@ -68,6 +67,14 @@ class GXDBWRITE:
         """
         Create a `GXDBWRITE <geosoft.gxapi.GXDBWRITE>` object
         Add channels using the `add_channel <geosoft.gxapi.GXDBWRITE.add_channel>` method.channel.
+        
+        :param db:  Database input
+        :type  db:  GXDB
+
+        :returns:    `GXDBWRITE <geosoft.gxapi.GXDBWRITE>` object
+        :rtype:      GXDBWRITE
+
+        .. versionadded:: 9.0
         """
         ret_val = gxapi_cy.WrapDBWRITE.create(GXContext._get_tls_geo(), db._wrapper)
         return GXDBWRITE(ret_val)
@@ -79,6 +86,14 @@ class GXDBWRITE:
         """
         Create a `GXDBWRITE <geosoft.gxapi.GXDBWRITE>` object for a XY-located data. Add channels using the
         `add_channel <geosoft.gxapi.GXDBWRITE.add_channel>` method.
+        
+        :param db:  Database input
+        :type  db:  GXDB
+
+        :returns:    `GXDBWRITE <geosoft.gxapi.GXDBWRITE>` object
+        :rtype:      GXDBWRITE
+
+        .. versionadded:: 9.0
         """
         ret_val = gxapi_cy.WrapDBWRITE.create_xy(GXContext._get_tls_geo(), db._wrapper)
         return GXDBWRITE(ret_val)
@@ -90,6 +105,14 @@ class GXDBWRITE:
         """
         Create a `GXDBWRITE <geosoft.gxapi.GXDBWRITE>` object for a XYZ-located data.
         Add channels using the `add_channel <geosoft.gxapi.GXDBWRITE.add_channel>` method.channel
+        
+        :param db:  Database input
+        :type  db:  GXDB
+
+        :returns:    `GXDBWRITE <geosoft.gxapi.GXDBWRITE>` object
+        :rtype:      GXDBWRITE
+
+        .. versionadded:: 9.0
         """
         ret_val = gxapi_cy.WrapDBWRITE.create_xyz(GXContext._get_tls_geo(), db._wrapper)
         return GXDBWRITE(ret_val)
@@ -102,6 +125,14 @@ class GXDBWRITE:
     def add_channel(self, chan):
         """
         Add a data channel to the `GXDBWRITE <geosoft.gxapi.GXDBWRITE>` object.
+        
+        :param chan:     Channel handle (does not need to be locked, but can be.)
+        :type  chan:     int
+
+        :returns:        Channel index. Use for getting the correct `GXVV <geosoft.gxapi.GXVV>` or `GXVA <geosoft.gxapi.GXVA>` object.
+        :rtype:          int
+
+        .. versionadded:: 9.0
         """
         ret_val = self._wrapper.add_channel(chan)
         return ret_val
@@ -116,6 +147,12 @@ class GXDBWRITE:
     def get_db(self):
         """
         Get the output `GXDB <geosoft.gxapi.GXDB>` handle from the `GXDBWRITE <geosoft.gxapi.GXDBWRITE>` object.
+        
+
+        :returns:        `GXDB <geosoft.gxapi.GXDB>` handle
+        :rtype:          GXDB
+
+        .. versionadded:: 9.0
         """
         ret_val = self._wrapper.get_db()
         return GXDB(ret_val)
@@ -126,6 +163,14 @@ class GXDBWRITE:
     def get_vv(self, chan):
         """
         Get the `GXVV <geosoft.gxapi.GXVV>` handle for a channel.
+        
+        :param chan:     Index of channel to access.
+        :type  chan:     int
+
+        :returns:        `GXVV <geosoft.gxapi.GXVV>` handle
+        :rtype:          GXVV
+
+        .. versionadded:: 9.0
 
         **Note:**
 
@@ -141,6 +186,14 @@ class GXDBWRITE:
     def get_va(self, chan):
         """
         Get the `GXVA <geosoft.gxapi.GXVA>` handle for an array channel.
+        
+        :param chan:     Index of channel to access.
+        :type  chan:     int
+
+        :returns:        `GXVA <geosoft.gxapi.GXVA>` handle
+        :rtype:          GXVA
+
+        .. versionadded:: 9.0
 
         **Note:**
 
@@ -157,6 +210,12 @@ class GXDBWRITE:
     def get_v_vx(self):
         """
         Get the X channel `GXVV <geosoft.gxapi.GXVV>` handle.
+        
+
+        :returns:        `GXVV <geosoft.gxapi.GXVV>` handle
+        :rtype:          GXVV
+
+        .. versionadded:: 9.0
 
         **Note:**
 
@@ -172,6 +231,12 @@ class GXDBWRITE:
     def get_v_vy(self):
         """
         Get the Y channel `GXVV <geosoft.gxapi.GXVV>` handle.
+        
+
+        :returns:        `GXVV <geosoft.gxapi.GXVV>` handle
+        :rtype:          GXVV
+
+        .. versionadded:: 9.0
 
         **Note:**
 
@@ -187,6 +252,12 @@ class GXDBWRITE:
     def get_v_vz(self):
         """
         Get the Z channel `GXVV <geosoft.gxapi.GXVV>` handle.
+        
+
+        :returns:        `GXVV <geosoft.gxapi.GXVV>` handle
+        :rtype:          GXVV
+
+        .. versionadded:: 9.0
 
         **Note:**
 
@@ -203,6 +274,14 @@ class GXDBWRITE:
     def get_chan_array_size(self, chan):
         """
         Get the number of columns of data in a channel.
+        
+        :param chan:     Index of channel to access.
+        :type  chan:     int
+
+        :returns:        The number of columns (array size) for a channel
+        :rtype:          int
+
+        .. versionadded:: 9.0
 
         **Note:**
 
@@ -223,6 +302,11 @@ class GXDBWRITE:
     def add_block(self, line):
         """
         Add the current block of data.
+        
+        :param line:     Line
+        :type  line:     int
+
+        .. versionadded:: 9.0
 
         **Note:**
 
@@ -237,6 +321,9 @@ class GXDBWRITE:
     def commit(self):
         """
         Commit remaining data to the database.
+        
+
+        .. versionadded:: 9.0
         """
         self._wrapper.commit()
         
@@ -247,6 +334,11 @@ class GXDBWRITE:
     def test_func(self, ra):
         """
         Temporary test function.
+        
+        :param ra:       `GXRA <geosoft.gxapi.GXRA>` handle to text file to import.
+        :type  ra:       GXRA
+
+        .. versionadded:: 9.0
 
         **Note:**
 

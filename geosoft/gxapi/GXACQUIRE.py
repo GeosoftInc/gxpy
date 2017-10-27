@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -62,6 +61,12 @@ class GXACQUIRE:
     def create(cls):
         """
         Create an acQuire object
+        
+
+        :returns:    acQuire Object
+        :rtype:      GXACQUIRE
+
+        .. versionadded:: 6.0
         """
         ret_val = gxapi_cy.WrapACQUIRE.create(GXContext._get_tls_geo())
         return GXACQUIRE(ret_val)
@@ -72,6 +77,11 @@ class GXACQUIRE:
     def delete_empty_chan(self, db):
         """
         Delete empty channels
+        
+        :param db:     Database
+        :type  db:     GXDB
+
+        .. versionadded:: 6.0
         """
         self._wrapper.delete_empty_chan(db._wrapper)
         
@@ -84,6 +94,25 @@ class GXACQUIRE:
     def import_hole(self, proj, dir, para, geo_vv, delete, convert):
         """
         Import Drillhole data acQuire database into a GDB
+        
+        :param proj:     Project name
+        :param dir:      Project directory
+        :param para:     Parameter File
+        :param geo_vv:   List of geology name database
+        :param delete:   0: Write to existing databases (overwrite holes), 1: Delete existing databases.
+        :param convert:  Convert Negatives (0,1)
+        :type  proj:     str
+        :type  dir:      str
+        :type  para:     str
+        :type  geo_vv:   GXVV
+        :type  delete:   int
+        :type  convert:  int
+
+        :returns:        0 - Ok
+                         1 - Error (Will not stop GX)
+        :rtype:          int
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -99,6 +128,19 @@ class GXACQUIRE:
     def import_point(self, db, para, convert):
         """
         Import Point Sample data acQuire database into a GDB
+        
+        :param db:       Geosoft GDB
+        :param para:     Parameter File
+        :param convert:  Convert Negatives (0,1)
+        :type  db:       GXDB
+        :type  para:     str
+        :type  convert:  int
+
+        :returns:        0 - Ok
+                         1 - Error (Will not stop GX)
+        :rtype:          int
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -115,6 +157,17 @@ class GXACQUIRE:
     def selection_tool(self, selection_file, mode):
         """
         Run the acQuire Selection Tool.
+        
+        :param selection_file:  Selection File Name
+        :param mode:            `ACQUIRE_SEL`
+        :type  selection_file:  str
+        :type  mode:            int
+
+        :returns:               0 - Ok
+                                1 - if user cancels
+        :rtype:                 int
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 

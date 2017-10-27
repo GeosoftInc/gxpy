@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -65,6 +64,11 @@ class GXTB:
     def set_search_mode(self, mode):
         """
         Set the search mode of a table.
+        
+        :param mode:  `TB_SEARCH`
+        :type  mode:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -80,6 +84,14 @@ class GXTB:
     def create(cls, name):
         """
         Loads a table into memory and return a table handle.
+        
+        :param name:  Name of the table file to load
+        :type  name:  str
+
+        :returns:     `GXTB <geosoft.gxapi.GXTB>` Object
+        :rtype:       GXTB
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -96,6 +108,14 @@ class GXTB:
     def create_db(cls, db):
         """
         Create a table from a database.
+        
+        :param db:  Database
+        :type  db:  GXDB
+
+        :returns:    `GXTB <geosoft.gxapi.GXTB>` Object
+        :rtype:      GXTB
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -114,6 +134,14 @@ class GXTB:
     def create_ltb(cls, ltb):
         """
         Create a table from an `GXLTB <geosoft.gxapi.GXLTB>` database.
+        
+        :param ltb:  `GXLTB <geosoft.gxapi.GXLTB>` object
+        :type  ltb:  GXLTB
+
+        :returns:    `GXTB <geosoft.gxapi.GXTB>` Object
+        :rtype:      GXTB
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapTB.create_ltb(GXContext._get_tls_geo(), ltb._wrapper)
         return GXTB(ret_val)
@@ -126,6 +154,14 @@ class GXTB:
     def field(self, name):
         """
         Get a field handle.
+        
+        :param name:  Field name
+        :type  name:  str
+
+        :returns:     The handle to the field (must be present)
+        :rtype:       int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.field(name.encode())
         return ret_val
@@ -136,6 +172,15 @@ class GXTB:
     def get_string(self, row, col, val):
         """
         Gets a string value from a table element.
+        
+        :param row:  Row of element to Get
+        :param col:  Column of element to Get
+        :param val:  Returned string
+        :type  row:  int
+        :type  col:  int
+        :type  val:  str_ref
+
+        .. versionadded:: 5.0
         """
         val.value = self._wrapper.get_string(row, col, val.value.encode())
         
@@ -146,6 +191,14 @@ class GXTB:
     def data_type(self, col):
         """
         Returns the data type for the specified column.
+        
+        :param col:  Column of element to Get
+        :type  col:  int
+
+        :returns:    `DB_CATEGORY_CHAN`
+        :rtype:      int
+
+        .. versionadded:: 5.0.1
         """
         ret_val = self._wrapper.data_type(col)
         return ret_val
@@ -156,6 +209,13 @@ class GXTB:
     def find_col_by_index(self, idx, name):
         """
         Finds a column's name by its index.
+        
+        :param idx:   Index of column to find
+        :param name:  Buffer for column name
+        :type  idx:   int
+        :type  name:  str_ref
+
+        .. versionadded:: 5.1.6
         """
         name.value = self._wrapper.find_col_by_index(idx, name.value.encode())
         
@@ -166,6 +226,15 @@ class GXTB:
     def find_col_by_name(self, name):
         """
         Finds a column's index by its name.
+        
+        :param name:  Name of column to find
+        :type  name:  str
+
+        :returns:     Index of column.
+                      -1 if not found.
+        :rtype:       int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.find_col_by_name(name.encode())
         return ret_val
@@ -176,6 +245,14 @@ class GXTB:
     def format(self, col):
         """
         Returns the channel format for the specified column.
+        
+        :param col:  Column of element to Get
+        :type  col:  int
+
+        :returns:    `DB_CHAN_FORMAT`
+        :rtype:      int
+
+        .. versionadded:: 5.0.1
         """
         ret_val = self._wrapper.format(col)
         return ret_val
@@ -186,6 +263,16 @@ class GXTB:
     def get_int(self, row, col):
         """
         Gets an integer value from a table element.
+        
+        :param row:  Row of element to Get
+        :param col:  Column of element to Get
+        :type  row:  int
+        :type  col:  int
+
+        :returns:    Value
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.get_int(row, col)
         return ret_val
@@ -196,6 +283,12 @@ class GXTB:
     def num_columns(self):
         """
         Gets the number of data fields (columns) in a table.
+        
+
+        :returns:    Number of columns
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.num_columns()
         return ret_val
@@ -206,6 +299,12 @@ class GXTB:
     def num_rows(self):
         """
         Gets the number of data rows in a table.
+        
+
+        :returns:    Number of rows
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.num_rows()
         return ret_val
@@ -216,6 +315,13 @@ class GXTB:
     def load_db(self, db, line):
         """
         Load a database into a `GXTB <geosoft.gxapi.GXTB>`
+        
+        :param db:    Database
+        :param line:  Line
+        :type  db:    GXDB
+        :type  line:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -230,6 +336,16 @@ class GXTB:
     def get_double(self, row, col):
         """
         Gets an real value from a table element.
+        
+        :param row:  Row of element to Get
+        :param col:  Column of element to Get
+        :type  row:  int
+        :type  col:  int
+
+        :returns:    Value
+        :rtype:      float
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.get_double(row, col)
         return ret_val
@@ -241,6 +357,11 @@ class GXTB:
         """
         Saves the data in a table to a file. The table header will be
         in ASCII and the data will be in BINARY format.
+        
+        :param name:  Name of File to save table into
+        :type  name:  str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.save(name.encode())
         
@@ -251,6 +372,13 @@ class GXTB:
     def save_db(self, db, line):
         """
         Save a `GXTB <geosoft.gxapi.GXTB>` in a database line
+        
+        :param db:    Database
+        :param line:  Line
+        :type  db:    GXDB
+        :type  line:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -267,6 +395,11 @@ class GXTB:
         """
         Saves the data in a table to a file. The table header will be
         in ASCII and the data will be in ASCII format.
+        
+        :param name:  Name of File to save table into
+        :type  name:  str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.save_to_ascii(name.encode())
         
@@ -277,6 +410,15 @@ class GXTB:
     def set_int(self, row, col, val):
         """
         Sets an integer value into a table element.
+        
+        :param row:  Row of element to set
+        :param col:  Column of element to set
+        :param val:  Value to set
+        :type  row:  int
+        :type  col:  int
+        :type  val:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -303,6 +445,15 @@ class GXTB:
     def set_double(self, row, col, val):
         """
         Sets an real value into a table element.
+        
+        :param row:  Row of element to set
+        :param col:  Column of element to set
+        :param val:  Value to set
+        :type  row:  int
+        :type  col:  int
+        :type  val:  float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -329,6 +480,15 @@ class GXTB:
     def set_string(self, row, col, val):
         """
         Sets a string value into a table element.
+        
+        :param row:  Row of element to set
+        :param col:  Column of element to set
+        :param val:  Value to set
+        :type  row:  int
+        :type  col:  int
+        :type  val:  str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -352,6 +512,11 @@ class GXTB:
     def sort(self, col):
         """
         Sorts a table by a specified column.
+        
+        :param col:  Index of data Column to sort table by
+        :type  col:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 

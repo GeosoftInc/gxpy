@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -61,6 +60,31 @@ class GXCHIMERA:
     def bar_plot(cls, mview, data_group, offset_group, xvv, yvv, dvv, cvv, col, offset, offset_size, width):
         """
         Plot a Bar plot of up to 8 channels.
+        
+        :param mview:         View object to plot to
+        :param data_group:    Data group name
+        :param offset_group:  Offset group name
+        :param xvv:           X locations
+        :param yvv:           Y locations
+        :param dvv:           Data handles, stored as INT values
+        :param cvv:           Colors
+        :param col:           Color for edges
+        :param offset:        Offset symbols (0: No, 1: Yes)
+        :param offset_size:   Offset symbol size
+        :param width:         Single bar width in data units.
+        :type  mview:         GXMVIEW
+        :type  data_group:    str
+        :type  offset_group:  str
+        :type  xvv:           GXVV
+        :type  yvv:           GXVV
+        :type  dvv:           GXVV
+        :type  cvv:           GXVV
+        :type  col:           int
+        :type  offset:        int
+        :type  offset_size:   float
+        :type  width:         float
+
+        .. versionadded:: 5.0.7
 
         **Note:**
 
@@ -77,6 +101,15 @@ class GXCHIMERA:
     def categorize_by_value(cls, vv_r, vv_i, vv_o):
         """
         Transform values to the index of input data ranges.
+        
+        :param vv_r:  Input range minima
+        :param vv_i:  Input data `GXVV <geosoft.gxapi.GXVV>`.      (REAL)
+        :param vv_o:  Output (altered) `GXVV <geosoft.gxapi.GXVV>`.(REAL)
+        :type  vv_r:  GXVV
+        :type  vv_i:  GXVV
+        :type  vv_o:  GXVV
+
+        .. versionadded:: 6.1
 
         **Note:**
 
@@ -99,6 +132,17 @@ class GXCHIMERA:
     def categorize_by_value_det_limit(cls, vv_r, vv_i, det_limit, vv_o):
         """
         Transform values to the index of input data ranges, with detection limit.
+        
+        :param vv_r:       Input range minima
+        :param vv_i:       Input data `GXVV <geosoft.gxapi.GXVV>`.      (REAL)
+        :param det_limit:  Detection limit (can be `rDUMMY <geosoft.gxapi.rDUMMY>`)
+        :param vv_o:       Output (altered) `GXVV <geosoft.gxapi.GXVV>`.(REAL)
+        :type  vv_r:       GXVV
+        :type  vv_i:       GXVV
+        :type  det_limit:  float
+        :type  vv_o:       GXVV
+
+        .. versionadded:: 6.2
 
         **Note:**
 
@@ -115,6 +159,15 @@ class GXCHIMERA:
     def clip_to_detect_limit(cls, vv, det_limit, conv):
         """
         Apply detection limit clipping of data.
+        
+        :param vv:         Input data vv (altered).
+        :param det_limit:  Detection limit
+        :param conv:       Auto-convert negatives?
+        :type  vv:         GXVV
+        :type  det_limit:  float
+        :type  conv:       int
+
+        .. versionadded:: 5.0.8
 
         **Note:**
 
@@ -136,6 +189,21 @@ class GXCHIMERA:
     def draw_circle_offset_markers(cls, mview, vv_xi, vv_yi, vv_xo, vv_yo, off_size):
         """
         Plots location marker and joining line for circle offset symbols
+        
+        :param mview:     View
+        :param vv_xi:     Original (marker) X location
+        :param vv_yi:     Original (marker) Y location
+        :param vv_xo:     Offset (new) X location
+        :param vv_yo:     Offset (new) Y location
+        :param off_size:  Marker symbol radius
+        :type  mview:     GXMVIEW
+        :type  vv_xi:     GXVV
+        :type  vv_yi:     GXVV
+        :type  vv_xo:     GXVV
+        :type  vv_yo:     GXVV
+        :type  off_size:  float
+
+        .. versionadded:: 5.0.7
 
         **Note:**
 
@@ -150,6 +218,25 @@ class GXCHIMERA:
     def draw_rectangle_offset_markers(cls, mview, vv_xi, vv_yi, vv_xo, vv_yo, off_size, x_size, y_size):
         """
         Plots location marker and joining line for rectangle offset symbols
+        
+        :param mview:     View
+        :param vv_xi:     Original (marker) X location
+        :param vv_yi:     Original (marker) Y location
+        :param vv_xo:     Offset (new) X location
+        :param vv_yo:     Offset (new) Y location
+        :param off_size:  Offset symbol width
+        :param x_size:    Offset symbol height
+        :param y_size:    Marker symbol radius
+        :type  mview:     GXMVIEW
+        :type  vv_xi:     GXVV
+        :type  vv_yi:     GXVV
+        :type  vv_xo:     GXVV
+        :type  vv_yo:     GXVV
+        :type  off_size:  float
+        :type  x_size:    float
+        :type  y_size:    float
+
+        .. versionadded:: 5.0.7
 
         **Note:**
 
@@ -164,6 +251,33 @@ class GXCHIMERA:
     def duplicate_chem(cls, mview, vv, log, det_lim, old, vv_tol, title, unit, x0, y0, xs, ys):
         """
         Plot an ASSAY Duplicate result in a graph window.
+        
+        :param mview:    View
+        :param vv:       Duplicate data
+        :param log:      Log-transform: 0 - linear, 1 - log
+        :param det_lim:  Detect Limit
+        :param old:      Number of old samples in the `GXVV <geosoft.gxapi.GXVV>`
+        :param vv_tol:   Tolerances (1-5 values)
+        :param title:    Title
+        :param unit:     Unit
+        :param x0:       X location (bottom left corner of graph)
+        :param y0:       Y location
+        :param xs:       Graph width
+        :param ys:       Graph height
+        :type  mview:    GXMVIEW
+        :type  vv:       GXVV
+        :type  log:      int
+        :type  det_lim:  float
+        :type  old:      int
+        :type  vv_tol:   GXVV
+        :type  title:    str
+        :type  unit:     str
+        :type  x0:       float
+        :type  y0:       float
+        :type  xs:       float
+        :type  ys:       float
+
+        .. versionadded:: 5.0.7
         """
         gxapi_cy.WrapCHIMERA.duplicate_chem(GXContext._get_tls_geo(), mview._wrapper, vv._wrapper, log, det_lim, old, vv_tol._wrapper, title.encode(), unit.encode(), x0, y0, xs, ys)
         
@@ -174,6 +288,42 @@ class GXCHIMERA:
     def duplicate_chem_view(cls, map, view, group, ipj, vv, log, det_lim, old, vv_tol, title, unit, vvx, vv_line, vv_fid, db, min_y, max_y):
         """
         Plot an ASSAY Duplicate result in a new view.
+        
+        :param map:      Map
+        :param view:     New view name
+        :param group:    New group name
+        :param vv:       Duplicate data
+        :param log:      Log-transform: 0 - linear, 1 - log
+        :param det_lim:  Detect Limit
+        :param old:      Number of old samples in the `GXVV <geosoft.gxapi.GXVV>`
+        :param vv_tol:   Tolerances (1-5 values)
+        :param title:    Title
+        :param unit:     Unit
+        :param vvx:      `GXVV <geosoft.gxapi.GXVV>` X
+        :param vv_line:  `GXVV <geosoft.gxapi.GXVV>` Line
+        :param vv_fid:   `GXVV <geosoft.gxapi.GXVV>` Fid
+        :param db:       Database
+        :param min_y:    Returned MinY
+        :param max_y:    Returned MaxY
+        :type  map:      GXMAP
+        :type  view:     str
+        :type  group:    str
+        :type  ipj:      GXIPJ
+        :type  vv:       GXVV
+        :type  log:      int
+        :type  det_lim:  float
+        :type  old:      int
+        :type  vv_tol:   GXVV
+        :type  title:    str
+        :type  unit:     str
+        :type  vvx:      GXVV
+        :type  vv_line:  GXVV
+        :type  vv_fid:   GXVV
+        :type  db:       GXDB
+        :type  min_y:    float_ref
+        :type  max_y:    float_ref
+
+        .. versionadded:: 8.3
         """
         min_y.value, max_y.value = gxapi_cy.WrapCHIMERA.duplicate_chem_view(GXContext._get_tls_geo(), map._wrapper, view.encode(), group.encode(), ipj._wrapper, vv._wrapper, log, det_lim, old, vv_tol._wrapper, title.encode(), unit.encode(), vvx._wrapper, vv_line._wrapper, vv_fid._wrapper, db._wrapper, min_y.value, max_y.value)
         
@@ -184,6 +334,21 @@ class GXCHIMERA:
     def get_expression_data_vv(cls, db, line, stage, exp, ini, gvv):
         """
         Get data from a line using a channel expression.
+        
+        :param db:     Database
+        :param line:   Line to read
+        :param stage:  Geochem stage (just "raw data stage" for now).
+        :param exp:    Channel expression
+        :param ini:    INI file name with required units (e.g. PARAMETER.CU="ppm") (optional)
+        :param gvv:    Returned data
+        :type  db:     GXDB
+        :type  line:   int
+        :type  stage:  str
+        :type  exp:    str
+        :type  ini:    str
+        :type  gvv:    GXVV
+
+        .. versionadded:: 6.4
 
         **Note:**
 
@@ -200,6 +365,37 @@ class GXCHIMERA:
     def get_lithogeochem_data(cls, db, lst, m_ch, vv_trans, remove_dummy_rows, vv_dummy, warn, vv_d, vv_line, vv_n, vv_used, vv_index, vv_fids, vv_fidi):
         """
         Get all rows of non-dummy data in a database.
+        
+        :param db:                 [i] database handle
+        :param lst:                [i] channels of data to get
+        :param m_ch:               [i] mask channel (can be `NULLSYMB <geosoft.gxapi.NULLSYMB>`)
+        :param vv_trans:           [i] transforms to apply
+        :param remove_dummy_rows:  [i] remove dummy rows?
+        :param vv_dummy:           [i] dummy row if this channel value is dummy (0:No, 1:Yes)? Effective only if "remove dummy rows" value is TRUE
+        :param warn:               [i] warn if rows removed because of dummy data items?
+        :param vv_d:               [o] (INT) returned data - one `GXVV <geosoft.gxapi.GXVV>` handle per channel
+        :param vv_line:            [o] line symbols selected
+        :param vv_n:               [o] number of original data items in each line
+        :param vv_used:            [o] number of non-dummy rows
+        :param vv_index:           [o] indices into original data
+        :param vv_fids:            [o] Fid Starts (REAL)
+        :param vv_fidi:            [o] Fid Increments (REAL)
+        :type  db:                 GXDB
+        :type  lst:                GXLST
+        :type  m_ch:               int
+        :type  vv_trans:           GXVV
+        :type  remove_dummy_rows:  int
+        :type  vv_dummy:           GXVV
+        :type  warn:               int
+        :type  vv_d:               GXVV
+        :type  vv_line:            GXVV
+        :type  vv_n:               GXVV
+        :type  vv_used:            GXVV
+        :type  vv_index:           GXVV
+        :type  vv_fids:            GXVV
+        :type  vv_fidi:            GXVV
+
+        .. versionadded:: 6.2
 
         **Note:**
 
@@ -228,6 +424,19 @@ class GXCHIMERA:
     def get_transform(cls, db, chan, trans_opt, trans, lda):
         """
         Get channel transform options and lambda values.
+        
+        :param db:         `GXDB <geosoft.gxapi.GXDB>` handle
+        :param chan:       Channel name
+        :param trans_opt:  Transform option: -1, 0, 1 or 2
+        :param trans:      Returned transform used
+        :param lda:        Returned lambda value for option==2
+        :type  db:         GXDB
+        :type  chan:       str
+        :type  trans_opt:  int
+        :type  trans:      int_ref
+        :type  lda:        float_ref
+
+        .. versionadded:: 6.2
 
         **Note:**
 
@@ -250,6 +459,22 @@ class GXCHIMERA:
     def is_acquire_chan(cls, input_chan, chan, units, factor, oxide):
         """
         Is this channel in acQuire format (e.g. "Ag_ppm_4AWR")
+        
+        :param input_chan:  String to test
+        :param chan:        Returned channel name
+        :param units:       Returned units
+        :param factor:      Buffer factor (e.g. ppm = 1.e-6)
+        :param oxide:       `GEO_BOOL` is this an oxide?
+        :type  input_chan:  str
+        :type  chan:        str_ref
+        :type  units:       str_ref
+        :type  factor:      float_ref
+        :type  oxide:       int_ref
+
+        :returns:           `GEO_BOOL`
+        :rtype:             int
+
+        .. versionadded:: 7.2
 
         **Note:**
 
@@ -267,6 +492,16 @@ class GXCHIMERA:
     def is_element(cls, chan, case):
         """
         Tests a string to see if it is an element symbol
+        
+        :param chan:  String to test
+        :param case:  `STR_CASE`
+        :type  chan:  str
+        :type  case:  int
+
+        :returns:     `GEO_BOOL`
+        :rtype:       int
+
+        .. versionadded:: 5.0.7
 
         **Note:**
 
@@ -282,6 +517,13 @@ class GXCHIMERA:
     def launch_histogram(cls, db, chan):
         """
         Launch histogram tool on a database.
+        
+        :param db:    Database name
+        :param chan:  First chan name
+        :type  db:    str
+        :type  chan:  str
+
+        .. versionadded:: 5.0.6
 
         **Note:**
 
@@ -298,6 +540,13 @@ class GXCHIMERA:
     def launch_probability(cls, db, chan):
         """
         Launch probability tool on a database.
+        
+        :param db:    Database name
+        :param chan:  First chan name
+        :type  db:    str
+        :type  chan:  str
+
+        .. versionadded:: 5.1.8
 
         **Note:**
 
@@ -312,16 +561,27 @@ class GXCHIMERA:
     def launch_scatter(cls, db):
         """
         Launch scatter tool on a database.
+        
+        :param db:  Database name
+        :type  db:  str
+
+        .. versionadded:: 5.0.6
 
         **Note:**
 
         The scatter tool uses the following INI parameters
         
+        ================  ===============================================
         SCATTER.STM       name of the scatter template, "none" for none
+        ----------------  -----------------------------------------------
         SCATTER.STM_NAME  name of last template section, "" for none.
+        ----------------  -----------------------------------------------
         SCATTER.X         name of channel to display in X
+        ----------------  -----------------------------------------------
         SCATTER.Y         name of channel to display in Y
+        ----------------  -----------------------------------------------
         SCATTER.MASK      name of channel to use for mask
+        ================  ===============================================
         
         The database should be a currently open database.
         This function supercedes `GXEDB.launch_scatter <geosoft.gxapi.GXEDB.launch_scatter>`, (which now
@@ -336,17 +596,29 @@ class GXCHIMERA:
     def launch_triplot(cls, db):
         """
         Launch Triplot tool on a database.
+        
+        :param db:  Database name
+        :type  db:  str
+
+        .. versionadded:: 5.0.7
 
         **Note:**
 
         The Triplot tool uses the following INI parameters
         
-                 TRIPLOT.TTM       name of the triplot template, "none" for none
-                 TRIPLOT.TTM_NAME  name of last template section, "" for none.
-                 TRIPLOT.X         name of channel to display in X
-                 TRIPLOT.Y         name of channel to display in Y
-                 TRIPLOT.Z         name of channel to display in Z
-                 TRIPLOT.MASK      name of channel to use for mask
+        ================  ===============================================
+        TRIPLOT.TTM       name of the triplot template, "none" for none
+        ----------------  -----------------------------------------------
+        TRIPLOT.TTM_NAME  name of last template section, "" for none.
+        ----------------  -----------------------------------------------
+        TRIPLOT.X         name of channel to display in X
+        ----------------  -----------------------------------------------
+        TRIPLOT.Y         name of channel to display in Y
+        ----------------  -----------------------------------------------
+        TRIPLOT.Z         name of channel to display in Z
+        ----------------  -----------------------------------------------
+        TRIPLOT.MASK      name of channel to use for mask
+        ================  ===============================================
         
         The database should be a currently open database.
         """
@@ -359,6 +631,13 @@ class GXCHIMERA:
     def mask_chan_lst(cls, db, lst):
         """
         Load a `GXLST <geosoft.gxapi.GXLST>` with mask channels.
+        
+        :param db:   hDB - Database Object
+        :param lst:  `GXLST <geosoft.gxapi.GXLST>` object to populate
+        :type  db:   GXDB
+        :type  lst:  GXLST
+
+        .. versionadded:: 5.0.7
 
         **Note:**
 
@@ -379,6 +658,13 @@ class GXCHIMERA:
     def ordered_channel_lst(cls, db, lst):
         """
         Fill a list with the channels in the preferred order.
+        
+        :param db:   hDB - Database Object
+        :param lst:  `GXLST <geosoft.gxapi.GXLST>` object to populate [recommended 2*`STR_DB_SYMBOL <geosoft.gxapi.STR_DB_SYMBOL>`]
+        :type  db:   GXDB
+        :type  lst:  GXLST
+
+        .. versionadded:: 5.1.8
 
         **Note:**
 
@@ -401,6 +687,31 @@ class GXCHIMERA:
     def pie_plot(cls, mview, data_group, offset_group, xvv, yvv, dvv, cvv, col, offset, offset_size, radius):
         """
         Plot a Pie plot of up to 8 channels.
+        
+        :param mview:         View object to plot to
+        :param data_group:    Data group name
+        :param offset_group:  Offset group name
+        :param xvv:           X locations
+        :param yvv:           Y locations
+        :param dvv:           Data handles, stored as INT values
+        :param cvv:           Colors
+        :param col:           Color for edges
+        :param offset:        Offset symbols (0: No, 1: Yes)
+        :param offset_size:   Offset symbol size
+        :param radius:        Pie plot radius in data units.
+        :type  mview:         GXMVIEW
+        :type  data_group:    str
+        :type  offset_group:  str
+        :type  xvv:           GXVV
+        :type  yvv:           GXVV
+        :type  dvv:           GXVV
+        :type  cvv:           GXVV
+        :type  col:           int
+        :type  offset:        int
+        :type  offset_size:   float
+        :type  radius:        float
+
+        .. versionadded:: 5.0.7
 
         **Note:**
 
@@ -418,6 +729,33 @@ class GXCHIMERA:
     def pie_plot2(cls, mview, data_group, offset_group, xvv, yvv, dvv, cvv, col, offset, offset_size, radius, start_angle):
         """
         Same as `pie_plot <geosoft.gxapi.GXCHIMERA.pie_plot>`, with a starting angle.
+        
+        :param mview:         View object to plot to
+        :param data_group:    Data group name
+        :param offset_group:  Offset group name
+        :param xvv:           X locations
+        :param yvv:           Y locations
+        :param dvv:           Data handles, stored as INT values
+        :param cvv:           Colors
+        :param col:           Color for edges
+        :param offset:        Offset symbols (0: No, 1: Yes)
+        :param offset_size:   Offset symbol size
+        :param radius:        Pie plot radius in data units.
+        :param start_angle:   Starting angle in degrees CCW from horizontal (`rDUMMY <geosoft.gxapi.rDUMMY>` gives 0.0)
+        :type  mview:         GXMVIEW
+        :type  data_group:    str
+        :type  offset_group:  str
+        :type  xvv:           GXVV
+        :type  yvv:           GXVV
+        :type  dvv:           GXVV
+        :type  cvv:           GXVV
+        :type  col:           int
+        :type  offset:        int
+        :type  offset_size:   float
+        :type  radius:        float
+        :type  start_angle:   float
+
+        .. versionadded:: 5.1.5
 
         **Note:**
 
@@ -434,6 +772,23 @@ class GXCHIMERA:
     def plot_string_classified_symbols_legend_from_class_file(cls, mview, title, x, y_min, y_max, class_file, index_vv):
         """
         Plot legend for the string classified symbols
+        
+        :param mview:       Map view object
+        :param title:       Title
+        :param x:           Left side X location
+        :param y_min:       Bottom Y bound
+        :param y_max:       Top Y bound
+        :param class_file:  Class file name (`GXTPAT <geosoft.gxapi.GXTPAT>`)
+        :param index_vv:    Class indices (INT `GXVV <geosoft.gxapi.GXVV>`)
+        :type  mview:       GXMVIEW
+        :type  title:       str
+        :type  x:           float
+        :type  y_min:       float
+        :type  y_max:       float
+        :type  class_file:  str
+        :type  index_vv:    GXVV
+
+        .. versionadded:: 8.0.1
 
         **Note:**
 
@@ -448,6 +803,14 @@ class GXCHIMERA:
     def atomic_weight(cls, element):
         """
         Return the atomic weight of a particular element.
+        
+        :param element:  Element name (case insensitive)
+        :type  element:  str
+
+        :returns:        The atomic weight of the given element.
+        :rtype:          float
+
+        .. versionadded:: 6.4.2
 
         **Note:**
 
@@ -463,6 +826,29 @@ class GXCHIMERA:
     def rose_plot(cls, mview, data_group, offset_group, xvv, yvv, dvv, cvv, col, offset, offset_size):
         """
         Plot a Rose plot of up to 8 channels.
+        
+        :param mview:         View object to plot to
+        :param data_group:    Data group name
+        :param offset_group:  Offset group name
+        :param xvv:           X locations
+        :param yvv:           Y locations
+        :param dvv:           Data handles, stored as INT values
+        :param cvv:           Colors
+        :param col:           Color for edges
+        :param offset:        Offset symbols (0: No, 1: Yes)
+        :param offset_size:   Offset symbol size
+        :type  mview:         GXMVIEW
+        :type  data_group:    str
+        :type  offset_group:  str
+        :type  xvv:           GXVV
+        :type  yvv:           GXVV
+        :type  dvv:           GXVV
+        :type  cvv:           GXVV
+        :type  col:           int
+        :type  offset:        int
+        :type  offset_size:   float
+
+        .. versionadded:: 5.0.7
 
         **Note:**
 
@@ -489,6 +875,31 @@ class GXCHIMERA:
     def rose_plot2(cls, mview, data_group, offset_group, xvv, yvv, dvv, cvv, col, offset, offset_size, start_angle):
         """
         Same as `rose_plot <geosoft.gxapi.GXCHIMERA.rose_plot>`, with a starting angle.
+        
+        :param mview:         View object to plot to
+        :param data_group:    Data group name
+        :param offset_group:  Offset group name
+        :param xvv:           X locations
+        :param yvv:           Y locations
+        :param dvv:           Data handles, stored as INT values
+        :param cvv:           Colors
+        :param col:           Color for edges
+        :param offset:        Offset symbols (0: No, 1: Yes)
+        :param offset_size:   Offset symbol size
+        :param start_angle:   Starting angle in degrees CCW from horizontal (`rDUMMY <geosoft.gxapi.rDUMMY>` gives 0.0)
+        :type  mview:         GXMVIEW
+        :type  data_group:    str
+        :type  offset_group:  str
+        :type  xvv:           GXVV
+        :type  yvv:           GXVV
+        :type  dvv:           GXVV
+        :type  cvv:           GXVV
+        :type  col:           int
+        :type  offset:        int
+        :type  offset_size:   float
+        :type  start_angle:   float
+
+        .. versionadded:: 5.1.5
 
         **Note:**
 
@@ -505,6 +916,71 @@ class GXCHIMERA:
     def scatter2(cls, mview, title, x1, y1, width, height, horz_vv, vert_vv, sym_font, sym_num_vv, sym_siz_vv, sym_col_vv, annot_style, h_chan, v_chan, h_units, v_units, h_min, h_max, v_min, v_max, hr_min, hr_max, vr_min, vr_max, use_hr_min, use_hr_max, use_vr_min, use_vr_max, h_scaling, v_scaling):
         """
         Plot the scatter plot on a map using symbol number, size and color VVs.
+        
+        :param mview:        View
+        :param title:        Title
+        :param x1:           X location (bottom left corner of box)
+        :param y1:           Y location
+        :param width:        Box width
+        :param height:       Box height
+        :param horz_vv:      Horizontal channel
+        :param vert_vv:      Vertical channel
+        :param sym_font:     Decorated font name, "" for default symbol font (normally symbols.gfn)
+        :param sym_num_vv:   Symbol numbers
+        :param sym_siz_vv:   Symbol sizes
+        :param sym_col_vv:   Colors  if symbol number or Color == 0, do not plot
+        :param annot_style:  Annotation style 0 - outside, 1 - inside
+        :param h_chan:       Horizontal channel name
+        :param v_chan:       Vertical channel name
+        :param h_units:      Horizontal channel units
+        :param v_units:      Vertical channel units
+        :param h_min:        Min. Horizontal value, `rDUMMY <geosoft.gxapi.rDUMMY>` for default
+        :param h_max:        Max. Horizontal value
+        :param v_min:        Min. Vertical value
+        :param v_max:        Max. Vertical value
+        :param hr_min:       Min. Horizontal range value
+        :param hr_max:       Max. Horizontal range value
+        :param vr_min:       Min. Vertical range value
+        :param vr_max:       Max. Vertical range value
+        :param use_hr_min:   Use Min Horz. Range selection?
+        :param use_hr_max:   Use Max Horz. Range selection?
+        :param use_vr_min:   Use Min Vert. Range selection?
+        :param use_vr_max:   Use Max Vert. Range selection?
+        :param h_scaling:    Horizontal axis scaling: 0 - linear, 1 - log
+        :param v_scaling:    Vertical axis scaling: 0 - linear, 1 - log
+        :type  mview:        GXMVIEW
+        :type  title:        str
+        :type  x1:           float
+        :type  y1:           float
+        :type  width:        float
+        :type  height:       float
+        :type  horz_vv:      GXVV
+        :type  vert_vv:      GXVV
+        :type  sym_font:     str
+        :type  sym_num_vv:   GXVV
+        :type  sym_siz_vv:   GXVV
+        :type  sym_col_vv:   GXVV
+        :type  annot_style:  int
+        :type  h_chan:       str
+        :type  v_chan:       str
+        :type  h_units:      str
+        :type  v_units:      str
+        :type  h_min:        float
+        :type  h_max:        float
+        :type  v_min:        float
+        :type  v_max:        float
+        :type  hr_min:       float
+        :type  hr_max:       float
+        :type  vr_min:       float
+        :type  vr_max:       float
+        :type  use_hr_min:   int
+        :type  use_hr_max:   int
+        :type  use_vr_min:   int
+        :type  use_vr_max:   int
+        :type  h_scaling:    int
+        :type  v_scaling:    int
+
+        .. versionadded:: 5.0.7
 
         **Note:**
 
@@ -522,6 +998,71 @@ class GXCHIMERA:
         Plot a scatter plot using a single fixed symbol.
         Optional data masking with masking Color.
         Optional database linking.
+        
+        :param mview:          View
+        :param title:          Title
+        :param x1:             X location (bottom left corner of box)
+        :param y1:             Y location
+        :param width:          Box width
+        :param height:         Box height
+        :param x_vv:           Horizontal channel data
+        :param y_vv:           Vertical channel data
+        :param m_vv:           Mask channel data (can be NULL)
+        :param mask_col:       Mask Color; overrides symbol Color where mask data is not dummy. Pass an empty string to `GXMVIEW.color <geosoft.gxapi.GXMVIEW.color>` for no plot.
+        :param symbol_font:    Decorated font name, "" for default symbol font (normally symbols.gfn)
+        :param symbol_number:  Symbol number (>=0)
+        :param symbol_size:    Symbol size ( >=0)
+        :param symbol_angle:   Symbol angle (-360 to 360)
+        :param symbol_color:   Symbol Color
+        :param symbol_fill:    Symbol fill Color
+        :param db:             Database (source of data)
+        :param line_vv:        Line handles for data
+        :param fid_vv:         Fid values for data
+        :param annotn:         Annotation style 0 - outside, 1 - inside
+        :param x_chan:         Horizontal channel name
+        :param y_chan:         Vertical channel name
+        :param x_units:        Horizontal channel units
+        :param y_units:        Vertical channel units
+        :param x_min:          Min. Horizontal value, `rDUMMY <geosoft.gxapi.rDUMMY>` for default
+        :param x_max:          Max. Horizontal value
+        :param y_min:          Min. Vertical value
+        :param y_max:          Max. Vertical value
+        :param x_lin:          Horizontal axis scaling: 0 - linear, 1 - log
+        :param y_lin:          Vertical axis scaling
+        :param overlay:        Plot overlay ("" for none)
+        :type  mview:          GXMVIEW
+        :type  title:          str
+        :type  x1:             float
+        :type  y1:             float
+        :type  width:          float
+        :type  height:         float
+        :type  x_vv:           GXVV
+        :type  y_vv:           GXVV
+        :type  m_vv:           GXVV
+        :type  mask_col:       int
+        :type  symbol_font:    str
+        :type  symbol_number:  int
+        :type  symbol_size:    float
+        :type  symbol_angle:   float
+        :type  symbol_color:   int
+        :type  symbol_fill:    int
+        :type  db:             GXDB
+        :type  line_vv:        GXVV
+        :type  fid_vv:         GXVV
+        :type  annotn:         int
+        :type  x_chan:         str
+        :type  y_chan:         str
+        :type  x_units:        str
+        :type  y_units:        str
+        :type  x_min:          float
+        :type  x_max:          float
+        :type  y_min:          float
+        :type  y_max:          float
+        :type  x_lin:          int
+        :type  y_lin:          int
+        :type  overlay:        str
+
+        .. versionadded:: 8.0.1
 
         **Note:**
 
@@ -538,6 +1079,77 @@ class GXCHIMERA:
         Plot a scatter plot using colors based on a zone file.
         Optional data masking with masking color.
         Optional database linking.
+        
+        :param mview:           View
+        :param title:           Title
+        :param x1:              X location (bottom left corner of box)
+        :param y1:              Y location
+        :param width:           Box width
+        :param height:          Box height
+        :param x_vv:            Horizontal channel data
+        :param y_vv:            Vertical channel data
+        :param m_vv:            Mask channel data (can be NULL)
+        :param mask_col:        Mask color; overrides symbol color where mask data is not dummy. Pass an empty string to `GXMVIEW.color <geosoft.gxapi.GXMVIEW.color>` for no plot.
+        :param zone_data_vv:    Zone channel data
+        :param zone_file:       Zone file name
+        :param symbol_font:     Decorated font name, "" for default symbol font (normally symbols.gfn)
+        :param symbol_number:   Symbol number (>=0)
+        :param symbol_size:     Symbol size ( >=0)
+        :param symbol_angle:    Symbol angle (-360 to 360)
+        :param symbol_color:    Symbol color
+        :param symbol_fill:     Symbol fill color
+        :param fix_edge_color:  Fix symbol edge color?
+        :param db:              Database (source of data)
+        :param line_vv:         Line handles for data
+        :param fid_vv:          Fid values for data
+        :param annotn:          Annotation style 0 - outside, 1 - inside
+        :param x_chan:          Horizontal channel name
+        :param y_chan:          Vertical channel name
+        :param x_units:         Horizontal channel units
+        :param y_units:         Vertical channel units
+        :param x_min:           Min. Horizontal value, `rDUMMY <geosoft.gxapi.rDUMMY>` for default
+        :param x_max:           Max. Horizontal value
+        :param y_min:           Min. Vertical value
+        :param y_max:           Max. Vertical value
+        :param x_lin:           Horizontal axis scaling: 0 - linear, 1 - log
+        :param y_lin:           Vertical axis scaling
+        :param overlay:         Plot overlay ("" for none)
+        :type  mview:           GXMVIEW
+        :type  title:           str
+        :type  x1:              float
+        :type  y1:              float
+        :type  width:           float
+        :type  height:          float
+        :type  x_vv:            GXVV
+        :type  y_vv:            GXVV
+        :type  m_vv:            GXVV
+        :type  mask_col:        int
+        :type  zone_data_vv:    GXVV
+        :type  zone_file:       str
+        :type  symbol_font:     str
+        :type  symbol_number:   int
+        :type  symbol_size:     float
+        :type  symbol_angle:    float
+        :type  symbol_color:    int
+        :type  symbol_fill:     int
+        :type  fix_edge_color:  int
+        :type  db:              GXDB
+        :type  line_vv:         GXVV
+        :type  fid_vv:          GXVV
+        :type  annotn:          int
+        :type  x_chan:          str
+        :type  y_chan:          str
+        :type  x_units:         str
+        :type  y_units:         str
+        :type  x_min:           float
+        :type  x_max:           float
+        :type  y_min:           float
+        :type  y_max:           float
+        :type  x_lin:           int
+        :type  y_lin:           int
+        :type  overlay:         str
+
+        .. versionadded:: 8.0.1
 
         **Note:**
 
@@ -554,6 +1166,65 @@ class GXCHIMERA:
         Plot a scatter plot using symbols based on a symbol class file.
         Optional data masking with masking color.
         Optional database linking.
+        
+        :param mview:                 View
+        :param title:                 Title
+        :param x1:                    X location (bottom left corner of box)
+        :param y1:                    Y location
+        :param width:                 Box width
+        :param height:                Box height
+        :param x_vv:                  Horizontal channel data
+        :param y_vv:                  Vertical channel data
+        :param m_vv:                  Mask channel data
+        :param mask_col:              Mask color; overrides symbol color. Pass an empty string to `GXMVIEW.color <geosoft.gxapi.GXMVIEW.color>` for no plot.
+        :param class_vv:              Class channel data
+        :param class_file:            Class file (`GXTPAT <geosoft.gxapi.GXTPAT>`) name.
+        :param symbol_size_override:  Symbol size override. Set to 0.0 to use class file symbol sizes.
+        :param db:                    Database (source of data)
+        :param line_vv:               Line handles for data
+        :param fid_vv:                Fid values for data
+        :param annotn:                Annotation style 0 - outside, 1 - inside
+        :param x_chan:                Horizontal channel name
+        :param y_chan:                Vertical channel name
+        :param x_units:               Horizontal channel units
+        :param y_units:               Vertical channel units
+        :param x_min:                 Min. Horizontal value, `rDUMMY <geosoft.gxapi.rDUMMY>` for default
+        :param x_max:                 Max. Horizontal value
+        :param y_min:                 Min. Vertical value
+        :param y_max:                 Max. Vertical value
+        :param x_lin:                 Horizontal axis scaling: 0 - linear, 1 - log
+        :param y_lin:                 Vertical axis scaling
+        :param overlay:               Plot overlay ("" for none)
+        :type  mview:                 GXMVIEW
+        :type  title:                 str
+        :type  x1:                    float
+        :type  y1:                    float
+        :type  width:                 float
+        :type  height:                float
+        :type  x_vv:                  GXVV
+        :type  y_vv:                  GXVV
+        :type  m_vv:                  GXVV
+        :type  mask_col:              int
+        :type  class_vv:              GXVV
+        :type  class_file:            str
+        :type  symbol_size_override:  float
+        :type  db:                    GXDB
+        :type  line_vv:               GXVV
+        :type  fid_vv:                GXVV
+        :type  annotn:                int
+        :type  x_chan:                str
+        :type  y_chan:                str
+        :type  x_units:               str
+        :type  y_units:               str
+        :type  x_min:                 float
+        :type  x_max:                 float
+        :type  y_min:                 float
+        :type  y_max:                 float
+        :type  x_lin:                 int
+        :type  y_lin:                 int
+        :type  overlay:               str
+
+        .. versionadded:: 8.0.1
 
         **Note:**
 
@@ -568,6 +1239,29 @@ class GXCHIMERA:
     def set_lithogeochem_data(cls, db, lst, vv_d, vv_line, vv_n, vv_used, vv_index, vv_fids, vv_fidi, vv_dummy):
         """
         Set data back into a database.
+        
+        :param db:        [i] database handle
+        :param lst:       [i] channels of data to set
+        :param vv_d:      [i] (INT) input data - one `GXVV <geosoft.gxapi.GXVV>` handle per channel
+        :param vv_line:   [i] line symbols selected
+        :param vv_n:      [i] number of original data items in each line
+        :param vv_used:   [i] number of non-dummy rows
+        :param vv_index:  [i] indices into original data
+        :param vv_fids:   [i] Fid Starts (REAL)
+        :param vv_fidi:   [i] Fid Increments (REAL)
+        :param vv_dummy:  [i] init channel values to dummies first (0:No, 1:Yes)?
+        :type  db:        GXDB
+        :type  lst:       GXLST
+        :type  vv_d:      GXVV
+        :type  vv_line:   GXVV
+        :type  vv_n:      GXVV
+        :type  vv_used:   GXVV
+        :type  vv_index:  GXVV
+        :type  vv_fids:   GXVV
+        :type  vv_fidi:   GXVV
+        :type  vv_dummy:  GXVV
+
+        .. versionadded:: 6.2
 
         **Note:**
 
@@ -594,6 +1288,31 @@ class GXCHIMERA:
     def stacked_bar_plot(cls, mview, data_group, offset_group, xvv, yvv, dvv, cvv, col, offset, offset_size, width):
         """
         Plot a Bar plot of up to 8 channels, bars stacked on each other.
+        
+        :param mview:         View object to plot to
+        :param data_group:    Data group name
+        :param offset_group:  Offset group name
+        :param xvv:           X locations
+        :param yvv:           Y locations
+        :param dvv:           Data handles, stored as INT values
+        :param cvv:           Colors
+        :param col:           Color for edges
+        :param offset:        Offset symbols (0: No, 1: Yes)
+        :param offset_size:   Offset symbol size
+        :param width:         Single bar width in data units.
+        :type  mview:         GXMVIEW
+        :type  data_group:    str
+        :type  offset_group:  str
+        :type  xvv:           GXVV
+        :type  yvv:           GXVV
+        :type  dvv:           GXVV
+        :type  cvv:           GXVV
+        :type  col:           int
+        :type  offset:        int
+        :type  offset_size:   float
+        :type  width:         float
+
+        .. versionadded:: 5.1.8
 
         **Note:**
 
@@ -610,6 +1329,33 @@ class GXCHIMERA:
     def standard(cls, mview, vv, old, tol, min, max, title, unit, x0, y0, xs, ys):
         """
         Plot ASSAY Standard result in a graph window.
+        
+        :param mview:  View
+        :param vv:     Standard data
+        :param old:    Number of old samples in the `GXVV <geosoft.gxapi.GXVV>`
+        :param tol:    Tolerance as a function of std dev
+        :param min:    Minimum acceptable value
+        :param max:    Maximum acceptable value
+        :param title:  Title
+        :param unit:   Unit
+        :param x0:     X location (bottom left corner of graph)
+        :param y0:     Y location
+        :param xs:     Graph width
+        :param ys:     Graph height
+        :type  mview:  GXMVIEW
+        :type  vv:     GXVV
+        :type  old:    int
+        :type  tol:    float
+        :type  min:    float
+        :type  max:    float
+        :type  title:  str
+        :type  unit:   str
+        :type  x0:     float
+        :type  y0:     float
+        :type  xs:     float
+        :type  ys:     float
+
+        .. versionadded:: 5.0.7
 
         **Note:**
 
@@ -625,6 +1371,44 @@ class GXCHIMERA:
     def standard_view(cls, map, view, group, ipj, vvy, old, tol, min, max, title, unit, xs, vvx, vv_line, vv_fid, db, min_y, max_y):
         """
         Plot ASSAY Standard result in a graph window.
+        
+        :param map:      Map
+        :param view:     New view name
+        :param group:    New group name
+        :param vvy:      Standard data (`GXVV <geosoft.gxapi.GXVV>` Y)
+        :param old:      Number of old samples in the `GXVV <geosoft.gxapi.GXVV>`
+        :param tol:      Tolerance as a function of std dev
+        :param min:      Minimum acceptable value
+        :param max:      Maximum acceptable value
+        :param title:    Title
+        :param unit:     Unit
+        :param xs:       Size X
+        :param vvx:      `GXVV <geosoft.gxapi.GXVV>` X
+        :param vv_line:  `GXVV <geosoft.gxapi.GXVV>` Line
+        :param vv_fid:   `GXVV <geosoft.gxapi.GXVV>` Fid
+        :param db:       Database
+        :param min_y:    Returned MinY
+        :param max_y:    Returned MaxY
+        :type  map:      GXMAP
+        :type  view:     str
+        :type  group:    str
+        :type  ipj:      GXIPJ
+        :type  vvy:      GXVV
+        :type  old:      int
+        :type  tol:      float
+        :type  min:      float
+        :type  max:      float
+        :type  title:    str
+        :type  unit:     str
+        :type  xs:       float
+        :type  vvx:      GXVV
+        :type  vv_line:  GXVV
+        :type  vv_fid:   GXVV
+        :type  db:       GXDB
+        :type  min_y:    float_ref
+        :type  max_y:    float_ref
+
+        .. versionadded:: 8.3
 
         **Note:**
 
@@ -639,6 +1423,73 @@ class GXCHIMERA:
     def tri_plot2(cls, mview, title, x1, y1, width, height, x_vv, y_vv, z_vv, m_vv, sym_font, sym_num_vv, sym_siz_vv, sym_col_vv, x_chan, y_chan, z_chan, xr_min, xr_max, yr_min, yr_max, zr_min, zr_max, use_xr_min, use_xr_max, use_yr_min, use_yr_max, use_zr_min, use_zr_max, grid, tic, grid_inc):
         """
         Plot the TriPlot on a map using symbol number, size and color VVs.
+        
+        :param mview:       View
+        :param title:       Title
+        :param x1:          X location (bottom left corner of box)
+        :param y1:          Y location
+        :param width:       Box width
+        :param height:      Box height
+        :param x_vv:        X channel
+        :param y_vv:        Y channel
+        :param z_vv:        Z channel
+        :param m_vv:        Mask channel
+        :param sym_font:    Decorated font name, "" for default symbol font (normally symbols.gfn)
+        :param sym_num_vv:  Symbol numbers
+        :param sym_siz_vv:  Symbol sizes
+        :param sym_col_vv:  Colors  if symbol number or color == 0, do not plot
+        :param x_chan:      X channel name
+        :param y_chan:      Y channel name
+        :param z_chan:      Z channel name
+        :param xr_min:      Min. X range value
+        :param xr_max:      Max. X range value
+        :param yr_min:      Min. Y range value
+        :param yr_max:      Max. Y range value
+        :param zr_min:      Min. Z range value
+        :param zr_max:      Max. Z range value
+        :param use_xr_min:  Use Min X Range selection?
+        :param use_xr_max:  Use Max X Range selection?
+        :param use_yr_min:  Use Min Y Range selection?
+        :param use_yr_max:  Use Max Y Range selection?
+        :param use_zr_min:  Use Min Z Range selection?
+        :param use_zr_max:  Use Max Z Range selection?
+        :param grid:        Plot Grid lines? (0: Just outside edge tics, 1: Grid lines).
+        :param tic:         Tic Increment (in percent)
+        :param grid_inc:    Grid increment (in percent)
+        :type  mview:       GXMVIEW
+        :type  title:       str
+        :type  x1:          float
+        :type  y1:          float
+        :type  width:       float
+        :type  height:      float
+        :type  x_vv:        GXVV
+        :type  y_vv:        GXVV
+        :type  z_vv:        GXVV
+        :type  m_vv:        GXVV
+        :type  sym_font:    str
+        :type  sym_num_vv:  GXVV
+        :type  sym_siz_vv:  GXVV
+        :type  sym_col_vv:  GXVV
+        :type  x_chan:      str
+        :type  y_chan:      str
+        :type  z_chan:      str
+        :type  xr_min:      float
+        :type  xr_max:      float
+        :type  yr_min:      float
+        :type  yr_max:      float
+        :type  zr_min:      float
+        :type  zr_max:      float
+        :type  use_xr_min:  int
+        :type  use_xr_max:  int
+        :type  use_yr_min:  int
+        :type  use_yr_max:  int
+        :type  use_zr_min:  int
+        :type  use_zr_max:  int
+        :type  grid:        int
+        :type  tic:         float
+        :type  grid_inc:    float
+
+        .. versionadded:: 5.1.6
 
         **Note:**
 
@@ -659,6 +1510,61 @@ class GXCHIMERA:
         Plot a tri-plot using a single fixed symbol.
         Optional data masking with masking color.
         Optional database linking.
+        
+        :param mview:          View
+        :param title:          Title
+        :param x1:             X location (bottom left corner of box)
+        :param y1:             Y location
+        :param side:           Triangle side length
+        :param x_vv:           X channel data
+        :param y_vv:           Y channel data
+        :param z_vv:           Z channel data
+        :param m_vv:           Mask channel data
+        :param mask_col:       Mask color; overrides symbol color where mask data is not dummy. Pass an empty string to `GXMVIEW.color <geosoft.gxapi.GXMVIEW.color>` for no plot.
+        :param symbol_font:    Decorated font name, "" for default symbol font (normally symbols.gfn)
+        :param symbol_number:  Symbol number (>=0)
+        :param symbol_size:    Symbol size ( >=0)
+        :param symbol_angle:   Symbol angle (-360 to 360)
+        :param symbol_color:   Symbol color
+        :param symbol_fill:    Symbol fill color
+        :param db:             Database (source of data)
+        :param line_vv:        Line handles for data
+        :param fid_vv:         Fid values for data
+        :param x_chan:         X channel name
+        :param y_chan:         Y channel name
+        :param z_chan:         Z channel name
+        :param grid:           Plot Grid lines? (0: Just outside edge tics, 1: Grid lines).
+        :param tic:            Tic Increment (in percent)
+        :param grid_inc:       Grid increment (in percent)
+        :param overlay:        Plot overlay ("" for none)
+        :type  mview:          GXMVIEW
+        :type  title:          str
+        :type  x1:             float
+        :type  y1:             float
+        :type  side:           float
+        :type  x_vv:           GXVV
+        :type  y_vv:           GXVV
+        :type  z_vv:           GXVV
+        :type  m_vv:           GXVV
+        :type  mask_col:       int
+        :type  symbol_font:    str
+        :type  symbol_number:  int
+        :type  symbol_size:    float
+        :type  symbol_angle:   float
+        :type  symbol_color:   int
+        :type  symbol_fill:    int
+        :type  db:             GXDB
+        :type  line_vv:        GXVV
+        :type  fid_vv:         GXVV
+        :type  x_chan:         str
+        :type  y_chan:         str
+        :type  z_chan:         str
+        :type  grid:           int
+        :type  tic:            float
+        :type  grid_inc:       float
+        :type  overlay:        str
+
+        .. versionadded:: 8.0.1
 
         **Note:**
 
@@ -675,6 +1581,67 @@ class GXCHIMERA:
         Plot a tri-plot using colors based on a zone file.
         Optional data masking with masking color.
         Optional database linking.
+        
+        :param mview:           View
+        :param title:           Title
+        :param x1:              X location (bottom left corner of box)
+        :param y1:              Y location
+        :param side:            Triangle side length
+        :param x_vv:            X channel data
+        :param y_vv:            Y channel data
+        :param z_vv:            Z channel data
+        :param m_vv:            Mask channel data
+        :param mask_col:        Mask color; overrides symbol color where mask data is not dummy. Pass an empty string to `GXMVIEW.color <geosoft.gxapi.GXMVIEW.color>` for no plot.
+        :param zone_data_vv:    Zone channel data
+        :param zone_file:       Zone file name
+        :param symbol_font:     Decorated font name, "" for default symbol font (normally symbols.gfn)
+        :param symbol_number:   Symbol number (>=0)
+        :param symbol_size:     Symbol size ( >=0)
+        :param symbol_angle:    Symbol angle (-360 to 360)
+        :param symbol_color:    Symbol color
+        :param symbol_fill:     Symbol fill color
+        :param fix_edge_color:  Fix symbol edge color?
+        :param db:              Database (source of data)
+        :param line_vv:         Line handles for data
+        :param fid_vv:          Fid values for data
+        :param x_chan:          X channel name
+        :param y_chan:          Y channel name
+        :param z_chan:          Z channel name
+        :param grid:            Plot Grid lines? (0: Just outside edge tics, 1: Grid lines).
+        :param tic:             Tic Increment (in percent)
+        :param grid_inc:        Grid increment (in percent)
+        :param overlay:         Plot overlay ("" for none)
+        :type  mview:           GXMVIEW
+        :type  title:           str
+        :type  x1:              float
+        :type  y1:              float
+        :type  side:            float
+        :type  x_vv:            GXVV
+        :type  y_vv:            GXVV
+        :type  z_vv:            GXVV
+        :type  m_vv:            GXVV
+        :type  mask_col:        int
+        :type  zone_data_vv:    GXVV
+        :type  zone_file:       str
+        :type  symbol_font:     str
+        :type  symbol_number:   int
+        :type  symbol_size:     float
+        :type  symbol_angle:    float
+        :type  symbol_color:    int
+        :type  symbol_fill:     int
+        :type  fix_edge_color:  int
+        :type  db:              GXDB
+        :type  line_vv:         GXVV
+        :type  fid_vv:          GXVV
+        :type  x_chan:          str
+        :type  y_chan:          str
+        :type  z_chan:          str
+        :type  grid:            int
+        :type  tic:             float
+        :type  grid_inc:        float
+        :type  overlay:         str
+
+        .. versionadded:: 8.0.1
 
         **Note:**
 
@@ -691,6 +1658,55 @@ class GXCHIMERA:
         Plot a tri-plot using symbols based on a symbol class file.
         Optional data masking with masking color.
         Optional database linking.
+        
+        :param mview:                 View
+        :param title:                 Title
+        :param x1:                    X location (bottom left corner of box)
+        :param y1:                    Y location
+        :param side:                  Triangle side length
+        :param x_vv:                  X channel data
+        :param y_vv:                  Y channel data
+        :param z_vv:                  Z channel data
+        :param m_vv:                  Mask channel data
+        :param mask_col:              Mask color; overrides symbol color. Pass an empty string to `GXMVIEW.color <geosoft.gxapi.GXMVIEW.color>` for no plot.
+        :param class_vv:              Class channel data
+        :param class_file:            Class file (`GXTPAT <geosoft.gxapi.GXTPAT>`) name.
+        :param symbol_size_override:  Symbol size override. Set to 0.0 to use class file symbol sizes.
+        :param db:                    Database (source of data)
+        :param line_vv:               Line handles for data
+        :param fid_vv:                Fid values for data
+        :param x_chan:                X channel name
+        :param y_chan:                Y channel name
+        :param z_chan:                Z channel name
+        :param grid:                  Plot Grid lines? (0: Just outside edge tics, 1: Grid lines).
+        :param tic:                   Tic Increment (in percent)
+        :param grid_inc:              Grid increment (in percent)
+        :param overlay:               Plot overlay ("" for none)
+        :type  mview:                 GXMVIEW
+        :type  title:                 str
+        :type  x1:                    float
+        :type  y1:                    float
+        :type  side:                  float
+        :type  x_vv:                  GXVV
+        :type  y_vv:                  GXVV
+        :type  z_vv:                  GXVV
+        :type  m_vv:                  GXVV
+        :type  mask_col:              int
+        :type  class_vv:              GXVV
+        :type  class_file:            str
+        :type  symbol_size_override:  float
+        :type  db:                    GXDB
+        :type  line_vv:               GXVV
+        :type  fid_vv:                GXVV
+        :type  x_chan:                str
+        :type  y_chan:                str
+        :type  z_chan:                str
+        :type  grid:                  int
+        :type  tic:                   float
+        :type  grid_inc:              float
+        :type  overlay:               str
+
+        .. versionadded:: 8.0.1
 
         **Note:**
 

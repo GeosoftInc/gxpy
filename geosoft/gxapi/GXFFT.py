@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -64,6 +63,13 @@ class GXFFT:
     def app_dens(self, thick, dens):
         """
         Appparent density filter
+        
+        :param thick:  Thickness (meters) of the earth model
+        :param dens:   Background density (g/cm3) (default = 0)
+        :type  thick:  float
+        :type  dens:   float
+
+        .. versionadded:: 5.0
         """
         self._wrapper.app_dens(thick, dens)
         
@@ -74,6 +80,11 @@ class GXFFT:
     def app_susc(self, strength):
         """
         Apparent susceptiblity filter
+        
+        :param strength:  Total magnetic field strength
+        :type  strength:  float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -89,6 +100,15 @@ class GXFFT:
     def band_pass(self, llen, hlen, pass_defined):
         """
         Bandpass filter (using low and high wavelength cutoffs)
+        
+        :param llen:          Low Cutoff wavelength (meters)
+        :param hlen:          High Cutoff wavelength (meter)
+        :param pass_defined:  1= Pass the defined band (default); 0= Reject the band
+        :type  llen:          float
+        :type  hlen:          float
+        :type  pass_defined:  int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.band_pass(llen, hlen, pass_defined)
         
@@ -99,6 +119,15 @@ class GXFFT:
     def b_worth(self, clen, degree, filter_type):
         """
         Butterworth filter
+        
+        :param clen:         Central cutoff wavelength (meter)
+        :param degree:       Degree of the filter function (default = 8.0)
+        :param filter_type:  Filter type: 1= Low-pass (regional) filter (default) 0= High-pass (residual) filter
+        :type  clen:         float
+        :type  degree:       float
+        :type  filter_type:  int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.b_worth(clen, degree, filter_type)
         
@@ -109,6 +138,13 @@ class GXFFT:
     def rc_filter(self, clen, filter_type):
         """
         RC filter
+        
+        :param clen:         Central cutoff wavelength (meter)
+        :param filter_type:  Filter type: 1= Low-pass (regional) filter (default) 0= High-pass (residual) filter
+        :type  clen:         float
+        :type  filter_type:  int
+
+        .. versionadded:: 8.5
         """
         self._wrapper.rc_filter(clen, filter_type)
         
@@ -119,6 +155,11 @@ class GXFFT:
     def contin(self, dist):
         """
         Upward/Downward continuation filter
+        
+        :param dist:  Distance to continue; positive = downwards negative = upwards
+        :type  dist:  float
+
+        .. versionadded:: 5.0
         """
         self._wrapper.contin(dist)
         
@@ -129,6 +170,17 @@ class GXFFT:
     def cos_roll(self, llen, hlen, degree, type):
         """
         Cosine roll-off filter
+        
+        :param llen:    Low wavelength start point (meters)
+        :param hlen:    High wavelength end point (meters)
+        :param degree:  Degree of the filter function (default = 2.0)
+        :param type:    Filter type: 1= Low-pass (regional) filter (default) 0= High-pass (residual) filter
+        :type  llen:    float
+        :type  hlen:    float
+        :type  degree:  float
+        :type  type:    int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.cos_roll(llen, hlen, degree, type)
         
@@ -139,6 +191,18 @@ class GXFFT:
     def create(cls, gvv, interv, trend):
         """
         Create a New `GXFFT <geosoft.gxapi.GXFFT>` with detrend options.
+        
+        :param gvv:     `GXVV <geosoft.gxapi.GXVV>` to transform.
+        :param interv:  Element space interval
+        :param trend:   `FFT_DETREND`
+        :type  gvv:     GXVV
+        :type  interv:  float
+        :type  trend:   int
+
+        :returns:       `GXFFT <geosoft.gxapi.GXFFT>` Object
+        :rtype:         GXFFT
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -154,6 +218,20 @@ class GXFFT:
     def create_ex(cls, gvv, interv, trend, expansion):
         """
         Create a New `GXFFT <geosoft.gxapi.GXFFT>` with detrend and expansion options.
+        
+        :param gvv:        `GXVV <geosoft.gxapi.GXVV>` to transform.
+        :param interv:     Element space interval
+        :param trend:      `FFT_DETREND`
+        :param expansion:  Minimum expansion %
+        :type  gvv:        GXVV
+        :type  interv:     float
+        :type  trend:      int
+        :type  expansion:  float
+
+        :returns:          `GXFFT <geosoft.gxapi.GXFFT>` Object
+        :rtype:            GXFFT
+
+        .. versionadded:: 5.1.8
 
         **Note:**
 
@@ -171,6 +249,18 @@ class GXFFT:
         """
         Create `GXFFT <geosoft.gxapi.GXFFT>` object with detrend options from reference (original) channel,
         but no `GXFFT <geosoft.gxapi.GXFFT>` process.
+        
+        :param gvv:     `GXVV <geosoft.gxapi.GXVV>` contains channel data to perform `GXFFT <geosoft.gxapi.GXFFT>` operations upon.
+        :param interv:  Element space interval, should be the same as in `create_ex <geosoft.gxapi.GXFFT.create_ex>` call
+        :param trend:   `FFT_DETREND`
+        :type  gvv:     GXVV
+        :type  interv:  float
+        :type  trend:   int
+
+        :returns:       `GXFFT <geosoft.gxapi.GXFFT>` Object
+        :rtype:         GXFFT
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -187,6 +277,22 @@ class GXFFT:
         """
         Create `GXFFT <geosoft.gxapi.GXFFT>` object with detrend and expansion options from reference (original) channel,
         but no `GXFFT <geosoft.gxapi.GXFFT>` process.
+        
+        :param gvv:        `GXVV <geosoft.gxapi.GXVV>` contains channel data to perform `GXFFT <geosoft.gxapi.GXFFT>` operations upon.
+        :param interv:     Element space interval, should be the same as in `create_ex <geosoft.gxapi.GXFFT.create_ex>` call
+        :param trend:      `FFT_DETREND`
+        :param expansion:  Minimum expansion %, should be the same as in `create_ex <geosoft.gxapi.GXFFT.create_ex>` call
+        :param d_cmult:    DC level multiple
+        :type  gvv:        GXVV
+        :type  interv:     float
+        :type  trend:      int
+        :type  expansion:  float
+        :type  d_cmult:    float
+
+        :returns:          `GXFFT <geosoft.gxapi.GXFFT>` Object
+        :rtype:            GXFFT
+
+        .. versionadded:: 5.1.8
 
         **Note:**
 
@@ -204,6 +310,13 @@ class GXFFT:
     def gaus(self, dev, type):
         """
         Gaussian filter
+        
+        :param dev:   Standard deviation cutoff of function (meters)
+        :param type:  Filter type: 1= Low-pass (residual) filter (default) 0= High-pass (regional) filter
+        :type  dev:   float
+        :type  type:  int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.gaus(dev, type)
         
@@ -214,6 +327,13 @@ class GXFFT:
     def get_vv(self, gv_vr, gv_vi):
         """
         Copies real and imaginary `GXVV <geosoft.gxapi.GXVV>`'s to user `GXVV <geosoft.gxapi.GXVV>`'s.
+        
+        :param gv_vr:  Real component
+        :param gv_vi:  Imaginary component
+        :type  gv_vr:  GXVV
+        :type  gv_vi:  GXVV
+
+        .. versionadded:: 5.0
         """
         self._wrapper.get_vv(gv_vr._wrapper, gv_vi._wrapper)
         
@@ -224,6 +344,11 @@ class GXFFT:
     def h_drv(self, order):
         """
         Horizontal derivative
+        
+        :param order:  Order of differentiation (default = 1)
+        :type  order:  float
+
+        .. versionadded:: 5.0
         """
         self._wrapper.h_drv(order)
         
@@ -234,6 +359,13 @@ class GXFFT:
     def high_pass(self, wlen, fid_int):
         """
         High bandpass filter
+        
+        :param wlen:     Cutoff wavelength (meter)
+        :param fid_int:  Fiducial increment of the `GXFFT <geosoft.gxapi.GXFFT>`'s channel data
+        :type  wlen:     float
+        :type  fid_int:  float
+
+        .. versionadded:: 5.0
         """
         self._wrapper.high_pass(wlen, fid_int)
         
@@ -244,6 +376,9 @@ class GXFFT:
     def h_int(self):
         """
         Horizontal integration
+        
+
+        .. versionadded:: 5.1.4
         """
         self._wrapper.h_int()
         
@@ -254,6 +389,13 @@ class GXFFT:
     def inverse(self, gvv, gv_vm):
         """
         Inverse the `GXFFT <geosoft.gxapi.GXFFT>` from wave number domain to space domain
+        
+        :param gvv:    Output `GXVV <geosoft.gxapi.GXVV>`
+        :param gv_vm:  Original `GXVV <geosoft.gxapi.GXVV>` which was used to create `GXFFT <geosoft.gxapi.GXFFT>` (will be used as mask for output `GXVV <geosoft.gxapi.GXVV>`; no masking if this parameter is NULL)
+        :type  gvv:    GXVV
+        :type  gv_vm:  GXVV
+
+        .. versionadded:: 5.0
         """
         self._wrapper.inverse(gvv._wrapper, gv_vm._wrapper)
         
@@ -264,6 +406,11 @@ class GXFFT:
     def low_pass(self, wlen):
         """
         Low bandpass filter
+        
+        :param wlen:  Cutoff wavelength (meters)
+        :type  wlen:  float
+
+        .. versionadded:: 5.0
         """
         self._wrapper.low_pass(wlen)
         
@@ -274,6 +421,17 @@ class GXFFT:
     def red_pol(self, inc, dec, incp, dir):
         """
         Reduction to magnetic pole
+        
+        :param inc:   Geomagnetic inclination (degrees)
+        :param dec:   Geomagnetic declination (degrees)
+        :param incp:  Inclination (degrees) for amplitude correction (default = 20.0)
+        :param dir:   Direction (degrees) of Line from North
+        :type  inc:   float
+        :type  dec:   float
+        :type  incp:  float
+        :type  dir:   float
+
+        .. versionadded:: 5.0
         """
         self._wrapper.red_pol(inc, dec, incp, dir)
         
@@ -284,6 +442,12 @@ class GXFFT:
     def nyquist(self):
         """
         Gets the Nyquist frequency (wavenumbers/sample unit).
+        
+
+        :returns:    Nyquist frequency (wavenumbers/sample unit).
+        :rtype:      float
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.nyquist()
         return ret_val
@@ -294,6 +458,12 @@ class GXFFT:
     def samp_incr(self):
         """
         Gets the original sample increment.
+        
+
+        :returns:    Original sample increment.
+        :rtype:      float
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.samp_incr()
         return ret_val
@@ -304,6 +474,12 @@ class GXFFT:
     def wave_incr(self):
         """
         Get the wave number increment.
+        
+
+        :returns:    Wave number increment
+        :rtype:      float
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.wave_incr()
         return ret_val
@@ -314,6 +490,13 @@ class GXFFT:
     def set_vv(self, gv_vr, gv_vi):
         """
         Sets real and imaginary VVs in `GXFFT <geosoft.gxapi.GXFFT>`.
+        
+        :param gv_vr:  Real component
+        :param gv_vi:  Imaginary component
+        :type  gv_vr:  GXVV
+        :type  gv_vi:  GXVV
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -329,6 +512,11 @@ class GXFFT:
     def spectrum(self, gvv):
         """
         Calculates a power spectrum
+        
+        :param gvv:  Output power spectrum `GXVV <geosoft.gxapi.GXVV>`
+        :type  gvv:  GXVV
+
+        .. versionadded:: 5.0
         """
         self._wrapper.spectrum(gvv._wrapper)
         
@@ -339,6 +527,11 @@ class GXFFT:
     def v_drv(self, order):
         """
         Vertical derivative
+        
+        :param order:  Order of differentiation (default = 1)
+        :type  order:  float
+
+        .. versionadded:: 5.0
         """
         self._wrapper.v_drv(order)
         
@@ -349,6 +542,9 @@ class GXFFT:
     def v_int(self):
         """
         Vertical integration
+        
+
+        .. versionadded:: 5.0
         """
         self._wrapper.v_int()
         
@@ -359,6 +555,13 @@ class GXFFT:
     def write_spectrum(self, gvv, out_file):
         """
         Writes a power spectrum to a file
+        
+        :param gvv:       Output power spectrum `GXVV <geosoft.gxapi.GXVV>`
+        :param out_file:  File name for output spectrum
+        :type  gvv:       GXVV
+        :type  out_file:  str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.write_spectrum(gvv._wrapper, out_file.encode())
         

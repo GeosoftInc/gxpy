@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXLPT import GXLPT
@@ -68,6 +67,25 @@ class GXMAP:
     def export_all_in_view(self, name, view, pix_size, dpi, bits, dither, format, options):
         """
         Export the entire map in view units to an external format. View and Group names are removed and plane spatial coordinates will be in the units of the map.
+        
+        :param name:      File Name To Export
+        :param view:      View to export coordinates in
+        :param pix_size:  Resolution in view units of one pixel (or dummy, will be used if DPI is dummy)
+        :param dpi:       Resolution in DPI (will override view resolution if not dummy, map page size will be used to determine pixel size of output)
+        :param bits:      `MAP_EXPORT_BITS`
+        :param dither:    `MAP_EXPORT_METHOD`
+        :param format:    `MAP_EXPORT_FORMAT`
+        :param options:   Extended Options String (format specific)
+        :type  name:      str
+        :type  view:      str
+        :type  pix_size:  float
+        :type  dpi:       float
+        :type  bits:      int
+        :type  dither:    int
+        :type  format:    str
+        :type  options:   str
+
+        .. versionadded:: 7.1
         """
         self._wrapper.export_all_in_view(name.encode(), view.encode(), pix_size, dpi, bits, dither, format.encode(), options.encode())
         
@@ -78,6 +96,27 @@ class GXMAP:
     def export_all_raster(self, name, view, size_x, size_y, dpi, bits, dither, format, options):
         """
         Export the entire map to map to a non-geo raster format.
+        
+        :param name:     File Name To Export
+        :param view:     View to export coordinates in
+        :param size_x:   Number of Pixels in X (X or Y should be specified the other should be 0 and computed by export, or both can be 0 and DPI defined)
+        :param size_y:   Number of Pixels in Y (X or Y should be specified the other should be 0 and computed by export, or both can be 0 and DPI defined)
+        :param dpi:      Resolution in DPI (will override X and Y if not dummy, map page size will be used to determine pixel size of output)
+        :param bits:     `MAP_EXPORT_BITS`
+        :param dither:   `MAP_EXPORT_METHOD`
+        :param format:   `MAP_EXPORT_RASTER_FORMAT`
+        :param options:  Extended Options String (format specific)
+        :type  name:     str
+        :type  view:     str
+        :type  size_x:   int
+        :type  size_y:   int
+        :type  dpi:      float
+        :type  bits:     int
+        :type  dither:   int
+        :type  format:   str
+        :type  options:  str
+
+        .. versionadded:: 7.1
         """
         self._wrapper.export_all_raster(name.encode(), view.encode(), size_x, size_y, dpi, bits, dither, format.encode(), options.encode())
         
@@ -88,6 +127,33 @@ class GXMAP:
     def export_area_in_view(self, name, view, pix_size, dpi, bits, dither, min_x, min_y, max_x, max_y, format, options):
         """
         Export an area of a map in view units to an external format
+        
+        :param name:      File Name To Export
+        :param view:      View to export coordinates in
+        :param pix_size:  Resolution in view units of one pixel (or dummy, will be used if DPI is dummy)
+        :param dpi:       Resolution in DPI (will override view resolution if not dummy, map page size will be used to determine pixel size of output)
+        :param bits:      `MAP_EXPORT_BITS`
+        :param dither:    `MAP_EXPORT_METHOD`
+        :param min_x:     Area To Export Min X location in view units
+        :param min_y:     Area To Export Min Y location in view units
+        :param max_x:     Area To Export Max X location in view units
+        :param max_y:     Area To Export Max Y location in view units
+        :param format:    `MAP_EXPORT_FORMAT`
+        :param options:   Extended Options String (format specific)
+        :type  name:      str
+        :type  view:      str
+        :type  pix_size:  float
+        :type  dpi:       float
+        :type  bits:      int
+        :type  dither:    int
+        :type  min_x:     float
+        :type  min_y:     float
+        :type  max_x:     float
+        :type  max_y:     float
+        :type  format:    str
+        :type  options:   str
+
+        .. versionadded:: 7.1
         """
         self._wrapper.export_area_in_view(name.encode(), view.encode(), pix_size, dpi, bits, dither, min_x, min_y, max_x, max_y, format.encode(), options.encode())
         
@@ -98,6 +164,35 @@ class GXMAP:
     def export_area_raster(self, name, view, min_x, min_y, max_x, max_y, size_x, size_y, dpi, bits, dither, format, options):
         """
         Export an area of a map to a non-geo raster format.
+        
+        :param name:     File Name To Export
+        :param view:     View to export coordinates in
+        :param min_x:    Area To Export Min X location in view units
+        :param min_y:    Area To Export Min Y location in view units
+        :param max_x:    Area To Export Max X location in view units
+        :param max_y:    Area To Export Max Y location in view units
+        :param size_x:   Number of Pixels in X (X or Y should be specified the other should be 0 and computed by export, or both can be 0 and DPI defined)
+        :param size_y:   Number of Pixels in Y (X or Y should be specified the other should be 0 and computed by export, or both can be 0 and DPI defined)
+        :param dpi:      Resolution in DPI (will override X and Y if not dummy, map page size will be used to determine pixel size of output)
+        :param bits:     `MAP_EXPORT_BITS`
+        :param dither:   `MAP_EXPORT_METHOD`
+        :param format:   `MAP_EXPORT_RASTER_FORMAT`
+        :param options:  Extended Options String (format specific)
+        :type  name:     str
+        :type  view:     str
+        :type  min_x:    float
+        :type  min_y:    float
+        :type  max_x:    float
+        :type  max_y:    float
+        :type  size_x:   int
+        :type  size_y:   int
+        :type  dpi:      float
+        :type  bits:     int
+        :type  dither:   int
+        :type  format:   str
+        :type  options:  str
+
+        .. versionadded:: 7.1
         """
         self._wrapper.export_area_raster(name.encode(), view.encode(), min_x, min_y, max_x, max_y, size_x, size_y, dpi, bits, dither, format.encode(), options.encode())
         
@@ -108,6 +203,23 @@ class GXMAP:
     def render_bitmap(self, view, min_x, min_y, max_x, max_y, file, max_res):
         """
         Render a map to a bitmap.
+        
+        :param view:     View we exporting units in
+        :param min_x:    MinX
+        :param min_y:    MinY
+        :param max_x:    MaxX
+        :param max_y:    MaxY
+        :param file:     File to generate (BMP or PNG, otherwise extension forced to BMP)
+        :param max_res:  Maximum resolution in either direction, -1 for none (will change the pixel density of image if exceeded)
+        :type  view:     str
+        :type  min_x:    float
+        :type  min_y:    float
+        :type  max_x:    float
+        :type  max_y:    float
+        :type  file:     str
+        :type  max_res:  int
+
+        .. versionadded:: 6.0
         """
         self._wrapper.render_bitmap(view.encode(), min_x, min_y, max_x, max_y, file.encode(), max_res)
         
@@ -122,6 +234,21 @@ class GXMAP:
     def create_linked_3d_view(self, mview, view_name, min_x, min_y, max_x, max_y):
         """
         Create a 3D View in this map that is linked to a `GXMVIEW <geosoft.gxapi.GXMVIEW>` in a 3D View file.
+        
+        :param mview:      `GX3DV <geosoft.gxapi.GX3DV>`'s 3D `GXMVIEW <geosoft.gxapi.GXMVIEW>`
+        :param view_name:  New view name
+        :param min_x:      X minimum in mm
+        :param min_y:      Y minimun in mm
+        :param max_x:      X maximum in mm
+        :param max_y:      Y maximum in mm
+        :type  mview:      GXMVIEW
+        :type  view_name:  str
+        :type  min_x:      float
+        :type  min_y:      float
+        :type  max_x:      float
+        :type  max_y:      float
+
+        .. versionadded:: 9.2
         """
         self._wrapper.create_linked_3d_view(mview._wrapper, view_name.encode(), min_x, min_y, max_x, max_y)
         
@@ -136,6 +263,13 @@ class GXMAP:
     def agg_list(self, lst, optn):
         """
         Get a list of all aggregates in this map.
+        
+        :param lst:   List to hold the views (allow up to 96 characters)
+        :param optn:  0 - view/agg only 1 - view/agg/layer
+        :type  lst:   GXLST
+        :type  optn:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -155,6 +289,15 @@ class GXMAP:
     def agg_list_ex(self, lst, optn, mode):
         """
         Get a list of aggregates in this map based on a mode
+        
+        :param lst:   List to hold the views (allow up to 96 characters)
+        :param optn:  0 - view/agg only 1 - view/agg/layer
+        :param mode:  `MAP_LIST_MODE`
+        :type  lst:   GXLST
+        :type  optn:  int
+        :type  mode:  int
+
+        .. versionadded:: 5.1.2
 
         **Note:**
 
@@ -174,6 +317,9 @@ class GXMAP:
     def clean(self):
         """
         Clean up empty groups in all views in map.
+        
+
+        .. versionadded:: 5.0
         """
         self._wrapper.clean()
         
@@ -184,6 +330,9 @@ class GXMAP:
     def commit(self):
         """
         Commit any changes to a map.
+        
+
+        .. versionadded:: 5.0
         """
         self._wrapper.commit()
         
@@ -194,6 +343,13 @@ class GXMAP:
     def copy_map_to_view(self, dest_map, dest_view):
         """
         Copy entire map into one view in output map.
+        
+        :param dest_map:   Destination `GXMAP <geosoft.gxapi.GXMAP>` name
+        :param dest_view:  Name of View
+        :type  dest_map:   str
+        :type  dest_view:  str
+
+        .. versionadded:: 5.1.8
         """
         self._wrapper.copy_map_to_view(dest_map.encode(), dest_view.encode())
         
@@ -204,6 +360,13 @@ class GXMAP:
     def crc_map(self, crc, file):
         """
         Generate an XML CRC of a `GXMAP <geosoft.gxapi.GXMAP>`
+        
+        :param crc:   CRC returned
+        :param file:  Name of xml to generate (.zip added)
+        :type  crc:   int_ref
+        :type  file:  str
+
+        .. versionadded:: 6.0
         """
         crc.value = self._wrapper.crc_map(crc.value, file.encode())
         
@@ -214,6 +377,16 @@ class GXMAP:
     def create(cls, name, mode):
         """
         Create a `GXMAP <geosoft.gxapi.GXMAP>`.
+        
+        :param name:  `GXMAP <geosoft.gxapi.GXMAP>` file name
+        :param mode:  `MAP_OPEN`
+        :type  name:  str
+        :type  mode:  int
+
+        :returns:     `GXMAP <geosoft.gxapi.GXMAP>` Object
+        :rtype:       GXMAP
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapMAP.create(GXContext._get_tls_geo(), name.encode(), mode)
         return GXMAP(ret_val)
@@ -224,6 +397,12 @@ class GXMAP:
     def current(cls):
         """
         This method returns the Current map opened.
+        
+
+        :returns:    `GXMAP <geosoft.gxapi.GXMAP>` Object
+        :rtype:      GXMAP
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -239,6 +418,11 @@ class GXMAP:
     def delete_view(self, name):
         """
         Deletes a view in this map.
+        
+        :param name:  View Name to delete
+        :type  name:  str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -255,6 +439,9 @@ class GXMAP:
     def discard(self):
         """
         Discard all changes made to the map.
+        
+
+        .. versionadded:: 5.0
         """
         self._wrapper.discard()
         
@@ -265,6 +452,13 @@ class GXMAP:
     def dup_map(self, ma_pd, content):
         """
         Duplicate copy of current map.
+        
+        :param ma_pd:    Destination `GXMAP <geosoft.gxapi.GXMAP>` object
+        :param content:  `DUPMAP`
+        :type  ma_pd:    GXMAP
+        :type  content:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -286,6 +480,12 @@ class GXMAP:
     def get_lpt(self):
         """
         Get the `GXLPT <geosoft.gxapi.GXLPT>` Object of a `GXMAP <geosoft.gxapi.GXMAP>`.
+        
+
+        :returns:    `GXLPT <geosoft.gxapi.GXLPT>` Object
+        :rtype:      GXLPT
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.get_lpt()
         return GXLPT(ret_val)
@@ -296,6 +496,17 @@ class GXMAP:
     def get_map_size(self, xmin, ymin, xmax, ymax):
         """
         Get the size of the Map.
+        
+        :param xmin:  X minimum in mm
+        :param ymin:  Y minimun in mm
+        :param xmax:  X maximum in mm
+        :param ymax:  Y maximum in mm
+        :type  xmin:  float_ref
+        :type  ymin:  float_ref
+        :type  xmax:  float_ref
+        :type  ymax:  float_ref
+
+        .. versionadded:: 5.0
         """
         xmin.value, ymin.value, xmax.value, ymax.value = self._wrapper.get_map_size(xmin.value, ymin.value, xmax.value, ymax.value)
         
@@ -306,6 +517,12 @@ class GXMAP:
     def get_meta(self):
         """
         Get the map's `GXMETA <geosoft.gxapi.GXMETA>`
+        
+
+        :returns:    `GXMETA <geosoft.gxapi.GXMETA>` Object
+        :rtype:      GXMETA
+
+        .. versionadded:: 5.1.8
 
         **Note:**
 
@@ -320,6 +537,12 @@ class GXMAP:
     def get_reg(self):
         """
         Get the map's `GXREG <geosoft.gxapi.GXREG>`
+        
+
+        :returns:    `GXREG <geosoft.gxapi.GXREG>` Object
+        :rtype:      GXREG
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -334,6 +557,11 @@ class GXMAP:
     def group_list(self, lst):
         """
         Get a list of all views/groups in this map.
+        
+        :param lst:  List to hold the view/groups.  Names may be up to 2080 characters in length.
+        :type  lst:  GXLST
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -355,6 +583,13 @@ class GXMAP:
     def group_list_ex(self, lst, mode):
         """
         Get a list of views/groups in this map for this mode
+        
+        :param lst:   List to hold the views.  View names may be up to 2080 characters in length.
+        :param mode:  `MAP_LIST_MODE`
+        :type  lst:   GXLST
+        :type  mode:  int
+
+        .. versionadded:: 5.1.2
 
         .. seealso::
 
@@ -369,6 +604,15 @@ class GXMAP:
     def duplicate_view(self, view, n_view, copy):
         """
         Duplicate an entire view
+        
+        :param view:    Name of view to duplicate
+        :param n_view:  Name of new view created (pass in "" and the new name is returned)
+        :param copy:    Copy all groups `GEO_BOOL`
+        :type  view:    str
+        :type  n_view:  str_ref
+        :type  copy:    int
+
+        .. versionadded:: 5.1.2
         """
         n_view.value = self._wrapper.duplicate_view(view.encode(), n_view.value.encode(), copy)
         
@@ -379,6 +623,15 @@ class GXMAP:
     def exist_view(self, name):
         """
         Checks to see if a view exists.
+        
+        :param name:  View name
+        :type  name:  str
+
+        :returns:     0 view does not exist.
+                      1 view exists.
+        :rtype:       int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.exist_view(name.encode())
         return ret_val
@@ -389,6 +642,13 @@ class GXMAP:
     def get_class_name(self, cl, name):
         """
         Get a class name.
+        
+        :param cl:    Class
+        :param name:  Name
+        :type  cl:    str
+        :type  name:  str_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -413,6 +673,11 @@ class GXMAP:
     def get_file_name(self, name):
         """
         Get the name of the map.
+        
+        :param name:  Returned map file name
+        :type  name:  str_ref
+
+        .. versionadded:: 5.0
         """
         name.value = self._wrapper.get_file_name(name.value.encode())
         
@@ -423,6 +688,11 @@ class GXMAP:
     def get_map_name(self, name):
         """
         Get the Map Name of the Map.
+        
+        :param name:  Returned map name
+        :type  name:  str_ref
+
+        .. versionadded:: 5.0
         """
         name.value = self._wrapper.get_map_name(name.value.encode())
         
@@ -433,6 +703,12 @@ class GXMAP:
     def packed_files(self):
         """
         The number of packed files in the current map.
+        
+
+        :returns:    The number of packed files in map.
+        :rtype:      int
+
+        .. versionadded:: 6.4
         """
         ret_val = self._wrapper.packed_files()
         return ret_val
@@ -443,6 +719,13 @@ class GXMAP:
     def un_pack_files_ex(self, force, errors):
         """
         UnPack all files from map to workspace.
+        
+        :param force:   (0 - Produce errors, 1 - Force overwrites)
+        :param errors:  List of files that are problematic returned
+        :type  force:   int
+        :type  errors:  str_ref
+
+        .. versionadded:: 6.4
 
         **Note:**
 
@@ -460,6 +743,15 @@ class GXMAP:
     def un_pack_files_to_folder(self, force, dir, errors):
         """
         UnPack all files from map to workspace.
+        
+        :param force:   (0 - Produce errors, 1 - Force overwrites)
+        :param dir:     Directory to place unpacked files in.
+        :param errors:  List of files that are problematic returned
+        :type  force:   int
+        :type  dir:     str
+        :type  errors:  str_ref
+
+        .. versionadded:: 7.3
         """
         errors.value = self._wrapper.un_pack_files_to_folder(force, dir.encode(), errors.value.encode())
         
@@ -470,6 +762,9 @@ class GXMAP:
     def pack_files(self):
         """
         Pack all files in the map so that it can be mailed.
+        
+
+        .. versionadded:: 5.0
         """
         self._wrapper.pack_files()
         
@@ -480,6 +775,11 @@ class GXMAP:
     def render(self, name):
         """
         Render a map to file/device.
+        
+        :param name:  Plot file/device
+        :type  name:  str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.render(name.encode())
         
@@ -490,6 +790,9 @@ class GXMAP:
     def resize_all(self):
         """
         Resize a map to the extents of all views.
+        
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -505,6 +808,11 @@ class GXMAP:
     def resize_all_ex(self, ext):
         """
         `resize_all <geosoft.gxapi.GXMAP.resize_all>` with selection of view extent type selection.
+        
+        :param ext:  `MVIEW_EXTENT`
+        :type  ext:  int
+
+        .. versionadded:: 6.3
 
         **Note:**
 
@@ -520,6 +828,12 @@ class GXMAP:
     def get_map_scale(self):
         """
         Get the current map scale
+        
+
+        :returns:    The current map scale
+        :rtype:      float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -541,6 +855,11 @@ class GXMAP:
     def save_as_mxd(self, mxd):
         """
         Save as ArcGIS `GXMXD <geosoft.gxapi.GXMXD>`
+        
+        :param mxd:  Geosoft map file name
+        :type  mxd:  str
+
+        .. versionadded:: 7.0
         """
         self._wrapper.save_as_mxd(mxd.encode())
         
@@ -551,6 +870,13 @@ class GXMAP:
     def set_class_name(self, cl, name):
         """
         Set a class name.
+        
+        :param cl:    Class
+        :param name:  Name
+        :type  cl:    str
+        :type  name:  str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -575,6 +901,9 @@ class GXMAP:
     def set_current(self):
         """
         Sets the current map to this map.
+        
+
+        .. versionadded:: 5.0
         """
         self._wrapper.set_current()
         
@@ -585,6 +914,11 @@ class GXMAP:
     def set_map_name(self, name):
         """
         Set the Map Name of the Map.
+        
+        :param name:  Map Name
+        :type  name:  str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.set_map_name(name.encode())
         
@@ -595,6 +929,11 @@ class GXMAP:
     def set_map_scale(self, scale):
         """
         Set the current map scale
+        
+        :param scale:  New map scale (must be > 0).
+        :type  scale:  float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -610,6 +949,17 @@ class GXMAP:
     def set_map_size(self, xmin, ymin, xmax, ymax):
         """
         Set the size of the Map.
+        
+        :param xmin:  X minimum in mm
+        :param ymin:  Y minimun in mm
+        :param xmax:  X maximum in mm
+        :param ymax:  Y maximum in mm
+        :type  xmin:  float
+        :type  ymin:  float
+        :type  xmax:  float
+        :type  ymax:  float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -631,6 +981,11 @@ class GXMAP:
     def set_meta(self, meta):
         """
         Write a `GXMETA <geosoft.gxapi.GXMETA>` to a map.
+        
+        :param meta:  `GXMETA <geosoft.gxapi.GXMETA>` to write to map
+        :type  meta:  GXMETA
+
+        .. versionadded:: 5.1.8
         """
         self._wrapper.set_meta(meta._wrapper)
         
@@ -641,6 +996,11 @@ class GXMAP:
     def set_reg(self, reg):
         """
         Write a `GXREG <geosoft.gxapi.GXREG>` to a map.
+        
+        :param reg:  `GXREG <geosoft.gxapi.GXREG>` to write to map
+        :type  reg:  GXREG
+
+        .. versionadded:: 5.0
         """
         self._wrapper.set_reg(reg._wrapper)
         
@@ -651,6 +1011,11 @@ class GXMAP:
     def sync(cls, map):
         """
         Syncronize the Metadata
+        
+        :param map:  Geosoft map file name
+        :type  map:  str
+
+        .. versionadded:: 7.0
         """
         gxapi_cy.WrapMAP.sync(GXContext._get_tls_geo(), map.encode())
         
@@ -661,6 +1026,9 @@ class GXMAP:
     def un_pack_files(self):
         """
         UnPack all files from map to workspace.
+        
+
+        .. versionadded:: 5.0
         """
         self._wrapper.un_pack_files()
         
@@ -671,6 +1039,11 @@ class GXMAP:
     def view_list(self, lst):
         """
         Get a list of all views in this map.
+        
+        :param lst:  List to hold the views.  View names may be up to 2080 characters in length.
+        :type  lst:  GXLST
+
+        .. versionadded:: 5.0
 
         .. seealso::
 
@@ -685,6 +1058,13 @@ class GXMAP:
     def view_list_ex(self, lst, mode):
         """
         Get a list of views of certain types in this map
+        
+        :param lst:   List to hold the views.  View names may be up to 2080 characters in length.
+        :param mode:  `MAP_LIST_MODE`
+        :type  lst:   GXLST
+        :type  mode:  int
+
+        .. versionadded:: 5.1.2
         """
         self._wrapper.view_list_ex(lst._wrapper, mode)
         
@@ -695,6 +1075,12 @@ class GXMAP:
     def get_data_proj(self):
         """
         Get the projection type of the Data view of a map.
+        
+
+        :returns:    Project type as an integer
+        :rtype:      int
+
+        .. versionadded:: 8.3
         """
         ret_val = self._wrapper.get_data_proj()
         return ret_val

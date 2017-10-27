@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -62,6 +61,14 @@ class GXVOXE:
     def create(cls, vox):
         """
         Create a handle to an `GXVOXE <geosoft.gxapi.GXVOXE>` object
+        
+        :param vox:  `GXVOX <geosoft.gxapi.GXVOX>` Object
+        :type  vox:  GXVOX
+
+        :returns:    `GXVOXE <geosoft.gxapi.GXVOXE>` handle, terminates if creation fails
+        :rtype:      GXVOXE
+
+        .. versionadded:: 6.3
         """
         ret_val = gxapi_cy.WrapVOXE.create(GXContext._get_tls_geo(), vox._wrapper)
         return GXVOXE(ret_val)
@@ -74,6 +81,19 @@ class GXVOXE:
     def profile(self, vv_x, vv_y, vv_z, vv_d, interp):
         """
         Extract a profile of data along points provided.
+        
+        :param vv_x:    X `GXVV <geosoft.gxapi.GXVV>` (must be double)
+        :param vv_y:    Y `GXVV <geosoft.gxapi.GXVV>` (must be double)
+        :param vv_z:    Z `GXVV <geosoft.gxapi.GXVV>` (must be double)
+        :param vv_d:    D `GXVV <geosoft.gxapi.GXVV>` (must be double)
+        :param interp:  `VOXE_EVAL`
+        :type  vv_x:    GXVV
+        :type  vv_y:    GXVV
+        :type  vv_z:    GXVV
+        :type  vv_d:    GXVV
+        :type  interp:  int
+
+        .. versionadded:: 6.3
         """
         self._wrapper.profile(vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_d._wrapper, interp)
         
@@ -84,6 +104,20 @@ class GXVOXE:
     def value(self, x, y, z, interp):
         """
         Get a value at a specific point
+        
+        :param x:       X Location
+        :param y:       Y Location
+        :param z:       Z Location
+        :param interp:  `VOXE_EVAL`
+        :type  x:       float
+        :type  y:       float
+        :type  z:       float
+        :type  interp:  int
+
+        :returns:       Value at the point or DUMMY if not valid
+        :rtype:         float
+
+        .. versionadded:: 6.3
         """
         ret_val = self._wrapper.value(x, y, z, interp)
         return ret_val
@@ -94,6 +128,25 @@ class GXVOXE:
     def vector(self, ox, oy, oz, vx, vy, vz, vv, interp):
         """
         Extract a profile of data along a vector
+        
+        :param ox:      X Origin
+        :param oy:      Y Origin
+        :param oz:      Z Origin
+        :param vx:      X Delta
+        :param vy:      Y Delta
+        :param vz:      Z Delta
+        :param vv:      Data `GXVV <geosoft.gxapi.GXVV>` (must be double)
+        :param interp:  `VOXE_EVAL`
+        :type  ox:      float
+        :type  oy:      float
+        :type  oz:      float
+        :type  vx:      float
+        :type  vy:      float
+        :type  vz:      float
+        :type  vv:      GXVV
+        :type  interp:  int
+
+        .. versionadded:: 6.3
         """
         self._wrapper.vector(ox, oy, oz, vx, vy, vz, vv._wrapper, interp)
         

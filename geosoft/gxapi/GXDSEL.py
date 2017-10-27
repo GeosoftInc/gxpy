@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -61,6 +60,12 @@ class GXDSEL:
     def create(cls):
         """
         Create a Selection object
+        
+
+        :returns:    `GXDSEL <geosoft.gxapi.GXDSEL>` handle, terminates if creation fails
+        :rtype:      GXDSEL
+
+        .. versionadded:: 5.0.3
         """
         ret_val = gxapi_cy.WrapDSEL.create(GXContext._get_tls_geo())
         return GXDSEL(ret_val)
@@ -71,6 +76,11 @@ class GXDSEL:
     def data_significant_figures(self, sf):
         """
         Specify the data significant figures required
+        
+        :param sf:    Significant figures (positive, can be fractional)
+        :type  sf:    float
+
+        .. versionadded:: 5.0.8
 
         **Note:**
 
@@ -91,6 +101,11 @@ class GXDSEL:
     def meta_query(self, query):
         """
         Specify a metadata query string.
+        
+        :param query:  Meta query string
+        :type  query:  str
+
+        .. versionadded:: 5.1.3
         """
         self._wrapper.meta_query(query.encode())
         
@@ -101,6 +116,11 @@ class GXDSEL:
     def picture_quality(self, quality):
         """
         Specify the quality of pictures being returned.
+        
+        :param quality:  Quality
+        :type  quality:  int
+
+        .. versionadded:: 5.1.4
 
         **Note:**
 
@@ -115,6 +135,11 @@ class GXDSEL:
     def request_all_info(self, request):
         """
         Request that all meta-data info be sent
+        
+        :param request:  TRUE to for all data, FALSE - for normal data
+        :type  request:  int
+
+        .. versionadded:: 5.1.3
         """
         self._wrapper.request_all_info(request)
         
@@ -125,6 +150,11 @@ class GXDSEL:
     def select_area(self, pply):
         """
         Select a complex clipping area
+        
+        :param pply:  `GXPLY <geosoft.gxapi.GXPLY>` containing complex area (must contain a projection)
+        :type  pply:  GXPLY
+
+        .. versionadded:: 5.1.3
 
         **Note:**
 
@@ -140,6 +170,17 @@ class GXDSEL:
     def select_rect(self, min_x, min_y, max_x, max_y):
         """
         Select a rectangular area.
+        
+        :param min_x:  Min X
+        :param min_y:  Min Y
+        :param max_x:  Max X
+        :param max_y:  Max Y
+        :type  min_x:  float
+        :type  min_y:  float
+        :type  max_x:  float
+        :type  max_y:  float
+
+        .. versionadded:: 5.0.3
         """
         self._wrapper.select_rect(min_x, min_y, max_x, max_y)
         
@@ -150,6 +191,13 @@ class GXDSEL:
     def select_resolution(self, res, force):
         """
         Specify the resolution desired
+        
+        :param res:    Minimum Resolution
+        :param force:  TRUE to force this resolution, if possible
+        :type  res:    float
+        :type  force:  int
+
+        .. versionadded:: 5.0.3
 
         **Note:**
 
@@ -172,6 +220,13 @@ class GXDSEL:
     def select_size(self, width, height):
         """
         Specify the image size desired
+        
+        :param width:   Image width in pixels
+        :param height:  Image height in pixels
+        :type  width:   int
+        :type  height:  int
+
+        .. versionadded:: 7.0
         """
         self._wrapper.select_size(width, height)
         
@@ -182,6 +237,11 @@ class GXDSEL:
     def set_extract_as_document(self, value):
         """
         Specify that we want to extract this file as a document
+        
+        :param value:  TRUE (1) if we want as a document
+        :type  value:  int
+
+        .. versionadded:: 8.0
         """
         self._wrapper.set_extract_as_document(value)
         
@@ -192,6 +252,13 @@ class GXDSEL:
     def set_ipj(self, ipj, force):
         """
         Set the desired projection
+        
+        :param ipj:    `GXIPJ <geosoft.gxapi.GXIPJ>` to set
+        :param force:  TRUE to force reprojection, if possible
+        :type  ipj:    GXIPJ
+        :type  force:  int
+
+        .. versionadded:: 5.0.8
 
         **Note:**
 
@@ -212,6 +279,11 @@ class GXDSEL:
     def spatial_accuracy(self, acc):
         """
         Specify the spatial accuracy required.
+        
+        :param acc:   Spatial accuracy desired
+        :type  acc:   float
+
+        .. versionadded:: 5.0.8
 
         **Note:**
 

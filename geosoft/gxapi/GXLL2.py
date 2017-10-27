@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -63,6 +62,28 @@ class GXLL2:
     def create(cls, lon0, lat0, lon, lat, nlon, nlat, in_ipj, out_ipj):
         """
         Create an empty `GXLL2 <geosoft.gxapi.GXLL2>` table to be filled
+        
+        :param lon0:     Longitude origin
+        :param lat0:     Latitude origin
+        :param lon:      Longitude increment
+        :param lat:      Latitude increment
+        :param nlon:     # longitudes
+        :param nlat:     # latitudes
+        :param in_ipj:   Input projection
+        :param out_ipj:  Output projection
+        :type  lon0:     float
+        :type  lat0:     float
+        :type  lon:      float
+        :type  lat:      float
+        :type  nlon:     int
+        :type  nlat:     int
+        :type  in_ipj:   GXIPJ
+        :type  out_ipj:  GXIPJ
+
+        :returns:        `GXLL2 <geosoft.gxapi.GXLL2>` Object
+        :rtype:          GXLL2
+
+        .. versionadded:: 5.0
 
         .. seealso::
 
@@ -79,6 +100,11 @@ class GXLL2:
     def save(self, name):
         """
         Save an `GXLL2 <geosoft.gxapi.GXLL2>` to a named resource
+        
+        :param name:    Named resource
+        :type  name:    str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -95,6 +121,15 @@ class GXLL2:
     def set_row(self, row, lon_vv, lat_vv):
         """
         Define a row of the `GXLL2 <geosoft.gxapi.GXLL2>`
+        
+        :param row:     The row to set
+        :param lon_vv:  Longitude corrections
+        :param lat_vv:  Latitude corrections
+        :type  row:     int
+        :type  lon_vv:  GXVV
+        :type  lat_vv:  GXVV
+
+        .. versionadded:: 5.0
 
         **Note:**
 

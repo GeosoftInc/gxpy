@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -72,6 +71,18 @@ class GXMETA:
     def create_attrib(self, name, ph_class, ph_type):
         """
         Create an attribute
+        
+        :param name:      Attribute Name
+        :param ph_class:  Parent class or `META_CORE_CLASS`
+        :param ph_type:   Type of Attribute or `META_CORE_TYPE`
+        :type  name:      str
+        :type  ph_class:  int
+        :type  ph_type:   int
+
+        :returns:         x - Attribute Token
+        :rtype:           int
+
+        .. versionadded:: 6.1
         """
         ret_val = self._wrapper.create_attrib(name.encode(), ph_class, ph_type)
         return ret_val
@@ -82,6 +93,11 @@ class GXMETA:
     def delete_attrib(self, ph_attribute):
         """
         Delete Attrib from `GXMETA <geosoft.gxapi.GXMETA>`.
+        
+        :param ph_attribute:  Attrib to delete
+        :type  ph_attribute:  int
+
+        .. versionadded:: 5.1.6
         """
         self._wrapper.delete_attrib(ph_attribute)
         
@@ -96,6 +112,13 @@ class GXMETA:
     def set_attribute_editable(self, ph_attribute, editable):
         """
         Allow/disallow an attribute to be editable in the browser
+        
+        :param ph_attribute:  Attribute or `META_CORE_ATTRIB`
+        :param editable:      Editable Flag
+        :type  ph_attribute:  int
+        :type  editable:      int
+
+        .. versionadded:: 5.1.6
         """
         self._wrapper.set_attribute_editable(ph_attribute, editable)
         
@@ -106,6 +129,13 @@ class GXMETA:
     def set_attribute_visible(self, ph_attribute, visible):
         """
         Allow/disallow an attribute to be visible in the browser
+        
+        :param ph_attribute:  Attribute or `META_CORE_ATTRIB`
+        :param visible:       Editable Flag
+        :type  ph_attribute:  int
+        :type  visible:       int
+
+        .. versionadded:: 5.1.6
         """
         self._wrapper.set_attribute_visible(ph_attribute, visible)
         
@@ -120,6 +150,16 @@ class GXMETA:
     def create_class(self, name, ph_class):
         """
         Create a class
+        
+        :param name:      Class Name
+        :param ph_class:  Parent class or `META_CORE_CLASS_Base <geosoft.gxapi.META_CORE_CLASS_Base>`
+        :type  name:      str
+        :type  ph_class:  int
+
+        :returns:         x - Class Token
+        :rtype:           int
+
+        .. versionadded:: 6.1
         """
         ret_val = self._wrapper.create_class(name.encode(), ph_class)
         return ret_val
@@ -130,6 +170,11 @@ class GXMETA:
     def delete_class(self, ph_class):
         """
         Delete Class from `GXMETA <geosoft.gxapi.GXMETA>`.
+        
+        :param ph_class:  Class to delete
+        :type  ph_class:  int
+
+        .. versionadded:: 5.1.6
         """
         self._wrapper.delete_class(ph_class)
         
@@ -144,6 +189,11 @@ class GXMETA:
     def copy(self, source_meta):
         """
         Copy a `GXMETA <geosoft.gxapi.GXMETA>` to another
+        
+        :param source_meta:  Source `GXMETA <geosoft.gxapi.GXMETA>` object.
+        :type  source_meta:  GXMETA
+
+        .. versionadded:: 5.1.8
         """
         self._wrapper.copy(source_meta._wrapper)
         
@@ -154,6 +204,12 @@ class GXMETA:
     def create(cls):
         """
         Create
+        
+
+        :returns:    `GXMETA <geosoft.gxapi.GXMETA>` Object
+        :rtype:      GXMETA
+
+        .. versionadded:: 5.0.8
         """
         ret_val = gxapi_cy.WrapMETA.create(GXContext._get_tls_geo())
         return GXMETA(ret_val)
@@ -164,6 +220,14 @@ class GXMETA:
     def create_s(cls, bf):
         """
         Create a `GXMETA <geosoft.gxapi.GXMETA>` Object from a `GXBF <geosoft.gxapi.GXBF>`
+        
+        :param bf:  `GXBF <geosoft.gxapi.GXBF>` to serialize from
+        :type  bf:  GXBF
+
+        :returns:    `GXMETA <geosoft.gxapi.GXMETA>` Object
+        :rtype:      GXMETA
+
+        .. versionadded:: 5.1.8
         """
         ret_val = gxapi_cy.WrapMETA.create_s(GXContext._get_tls_geo(), bf._wrapper)
         return GXMETA(ret_val)
@@ -176,6 +240,11 @@ class GXMETA:
     def serial(self, bf):
         """
         Serialize an `GXMETA <geosoft.gxapi.GXMETA>` to a `GXBF <geosoft.gxapi.GXBF>`
+        
+        :param bf:    `GXBF <geosoft.gxapi.GXBF>` to serialize to
+        :type  bf:    GXBF
+
+        .. versionadded:: 5.1.8
         """
         self._wrapper.serial(bf._wrapper)
         
@@ -190,6 +259,17 @@ class GXMETA:
     def find_data(self, ph_object, ph_attrib):
         """
         Does this meta/attribute have a value ?
+        
+        :param ph_object:  Object
+        :param ph_attrib:  Attribute
+        :type  ph_object:  int
+        :type  ph_attrib:  int
+
+        :returns:          x  - Data Value
+                           `H_META_INVALID_TOKEN <geosoft.gxapi.H_META_INVALID_TOKEN>` - No
+        :rtype:            int
+
+        .. versionadded:: 5.1.6
         """
         ret_val = self._wrapper.find_data(ph_object, ph_attrib)
         return ret_val
@@ -200,6 +280,15 @@ class GXMETA:
     def get_attrib_bool(self, ph_object, ph_attrib, value):
         """
         Get a boolean value to an attribute
+        
+        :param ph_object:  Object
+        :param ph_attrib:  Attribute
+        :param value:      Value to set
+        :type  ph_object:  int
+        :type  ph_attrib:  int
+        :type  value:      int_ref
+
+        .. versionadded:: 5.1.6
         """
         value.value = self._wrapper.get_attrib_bool(ph_object, ph_attrib, value.value)
         
@@ -210,6 +299,15 @@ class GXMETA:
     def get_attrib_enum(self, ph_object, ph_attrib, value):
         """
         Get an enum value to an attribute (as an integer)
+        
+        :param ph_object:  Object
+        :param ph_attrib:  Attribute
+        :param value:      Value to set
+        :type  ph_object:  int
+        :type  ph_attrib:  int
+        :type  value:      int_ref
+
+        .. versionadded:: 5.1.6
         """
         value.value = self._wrapper.get_attrib_enum(ph_object, ph_attrib, value.value)
         
@@ -220,6 +318,15 @@ class GXMETA:
     def get_attrib_int(self, ph_object, ph_attrib, value):
         """
         Get an integer value to an attribute
+        
+        :param ph_object:  Object
+        :param ph_attrib:  Attribute
+        :param value:      Value to set
+        :type  ph_object:  int
+        :type  ph_attrib:  int
+        :type  value:      int_ref
+
+        .. versionadded:: 5.1
         """
         value.value = self._wrapper.get_attrib_int(ph_object, ph_attrib, value.value)
         
@@ -230,6 +337,15 @@ class GXMETA:
     def get_attrib_double(self, ph_object, ph_attrib, value):
         """
         Get an integer value to an attribute
+        
+        :param ph_object:  Object
+        :param ph_attrib:  Attribute
+        :param value:      Value to set
+        :type  ph_object:  int
+        :type  ph_attrib:  int
+        :type  value:      float_ref
+
+        .. versionadded:: 5.1
         """
         value.value = self._wrapper.get_attrib_double(ph_object, ph_attrib, value.value)
         
@@ -240,6 +356,15 @@ class GXMETA:
     def get_attrib_string(self, ph_object, ph_attrib, value):
         """
         Get a string value to an attribute
+        
+        :param ph_object:  Object
+        :param ph_attrib:  Attribute
+        :param value:      String value to get
+        :type  ph_object:  int
+        :type  ph_attrib:  int
+        :type  value:      str_ref
+
+        .. versionadded:: 5.1
         """
         value.value = self._wrapper.get_attrib_string(ph_object, ph_attrib, value.value.encode())
         
@@ -250,6 +375,16 @@ class GXMETA:
     def has_value(self, ph_object, ph_attrib):
         """
         Does this meta/attribute have a value set?
+        
+        :param ph_object:  Object
+        :param ph_attrib:  Attribute
+        :type  ph_object:  int
+        :type  ph_attrib:  int
+
+        :returns:          `GEO_BOOL`
+        :rtype:            int
+
+        .. versionadded:: 6.0.1
         """
         ret_val = self._wrapper.has_value(ph_object, ph_attrib)
         return ret_val
@@ -264,6 +399,13 @@ class GXMETA:
     def export_table_csv(self, ph_class, file):
         """
         Export all items in a class as a CSV
+        
+        :param ph_class:  Class of items to export
+        :param file:      Name of CSV file to produce
+        :type  ph_class:  int
+        :type  file:      str
+
+        .. versionadded:: 5.1.5
         """
         self._wrapper.export_table_csv(ph_class, file.encode())
         
@@ -274,6 +416,13 @@ class GXMETA:
     def import_table_csv(self, ph_class, file):
         """
         Import a CSV into a class as items.
+        
+        :param ph_class:  Class to import into
+        :param file:      Name of CSV file to load
+        :type  ph_class:  int
+        :type  file:      str
+
+        .. versionadded:: 5.1.5
 
         **Note:**
 
@@ -291,6 +440,11 @@ class GXMETA:
     def write_text(self, wa):
         """
         Write the entire meta as a text file
+        
+        :param wa:    `GXWA <geosoft.gxapi.GXWA>` to write to
+        :type  wa:    GXWA
+
+        .. versionadded:: 5.1.6
         """
         self._wrapper.write_text(wa._wrapper)
         
@@ -305,6 +459,11 @@ class GXMETA:
     def delete_all_items(self, ph_class):
         """
         Delete all items in this class.
+        
+        :param ph_class:  Class of items to delete
+        :type  ph_class:  int
+
+        .. versionadded:: 5.1.5
         """
         self._wrapper.delete_all_items(ph_class)
         
@@ -315,6 +474,11 @@ class GXMETA:
     def delete_item(self, ph_item):
         """
         Delete item from `GXMETA <geosoft.gxapi.GXMETA>`.
+        
+        :param ph_item:  Item to delete
+        :type  ph_item:  int
+
+        .. versionadded:: 5.1.6
         """
         self._wrapper.delete_item(ph_item)
         
@@ -325,6 +489,17 @@ class GXMETA:
     def h_creat_item(self, name, ph_class):
         """
         Creates item in Class.
+        
+        :param name:      Unique item Name
+        :param ph_class:  Class (can be root)
+        :type  name:      str
+        :type  ph_class:  int
+
+        :returns:         x                    - Next Item
+                          `H_META_INVALID_TOKEN <geosoft.gxapi.H_META_INVALID_TOKEN>` - Error
+        :rtype:           int
+
+        .. versionadded:: 5.1.6
         """
         ret_val = self._wrapper.h_creat_item(name.encode(), ph_class)
         return ret_val
@@ -335,6 +510,17 @@ class GXMETA:
     def h_get_next_item(self, ph_class, ph_token):
         """
         Count the number of items in a class
+        
+        :param ph_class:  Class
+        :param ph_token:  Starting Item (must `H_META_INVALID_TOKEN <geosoft.gxapi.H_META_INVALID_TOKEN>` for first item)
+        :type  ph_class:  int
+        :type  ph_token:  int
+
+        :returns:         x                    - Next Item
+                          `H_META_INVALID_TOKEN <geosoft.gxapi.H_META_INVALID_TOKEN>` - No more items
+        :rtype:           int
+
+        .. versionadded:: 5.1.3
         """
         ret_val = self._wrapper.h_get_next_item(ph_class, ph_token)
         return ret_val
@@ -349,6 +535,15 @@ class GXMETA:
     def get_attrib_obj(self, ph_object, ph_attrib, obj):
         """
         Get an object from an attribute
+        
+        :param ph_object:  Object
+        :param ph_attrib:  Attribute
+        :param obj:        Object to get info into
+        :type  ph_object:  int
+        :type  ph_attrib:  int
+        :type  obj:        int
+
+        .. versionadded:: 5.1
         """
         self._wrapper.get_attrib_obj(ph_object, ph_attrib, obj)
         
@@ -359,6 +554,15 @@ class GXMETA:
     def set_attrib_obj(self, ph_object, ph_attrib, obj):
         """
         Set an object to an attribute
+        
+        :param ph_object:  Object
+        :param ph_attrib:  Attribute
+        :param obj:        Object to set
+        :type  ph_object:  int
+        :type  ph_attrib:  int
+        :type  obj:        int
+
+        .. versionadded:: 5.1
         """
         self._wrapper.set_attrib_obj(ph_object, ph_attrib, obj)
         
@@ -373,6 +577,15 @@ class GXMETA:
     def set_attrib_bool(self, ph_object, ph_attrib, value):
         """
         Set a boolean value to an attribute
+        
+        :param ph_object:  Object
+        :param ph_attrib:  Attribute
+        :param value:      Value to set
+        :type  ph_object:  int
+        :type  ph_attrib:  int
+        :type  value:      int
+
+        .. versionadded:: 5.1.6
         """
         self._wrapper.set_attrib_bool(ph_object, ph_attrib, value)
         
@@ -383,6 +596,15 @@ class GXMETA:
     def set_attrib_enum(self, ph_object, ph_attrib, value):
         """
         Set an enum value to an attribute (as an integer)
+        
+        :param ph_object:  Object
+        :param ph_attrib:  Attribute
+        :param value:      Value to set
+        :type  ph_object:  int
+        :type  ph_attrib:  int
+        :type  value:      int
+
+        .. versionadded:: 5.1.6
         """
         self._wrapper.set_attrib_enum(ph_object, ph_attrib, value)
         
@@ -393,6 +615,15 @@ class GXMETA:
     def set_attrib_int(self, ph_object, ph_attrib, value):
         """
         Set an integer value to an attribute
+        
+        :param ph_object:  Object
+        :param ph_attrib:  Attribute
+        :param value:      Value to set
+        :type  ph_object:  int
+        :type  ph_attrib:  int
+        :type  value:      int
+
+        .. versionadded:: 5.1
         """
         self._wrapper.set_attrib_int(ph_object, ph_attrib, value)
         
@@ -403,6 +634,15 @@ class GXMETA:
     def set_attrib_double(self, ph_object, ph_attrib, value):
         """
         Set an integer value to an attribute
+        
+        :param ph_object:  Object
+        :param ph_attrib:  Attribute
+        :param value:      Value to set
+        :type  ph_object:  int
+        :type  ph_attrib:  int
+        :type  value:      float
+
+        .. versionadded:: 5.1
         """
         self._wrapper.set_attrib_double(ph_object, ph_attrib, value)
         
@@ -413,6 +653,15 @@ class GXMETA:
     def set_attrib_string(self, ph_object, ph_attrib, value):
         """
         Set a string value to an attribute
+        
+        :param ph_object:  Object
+        :param ph_attrib:  Attribute
+        :param value:      String value to set
+        :type  ph_object:  int
+        :type  ph_attrib:  int
+        :type  value:      str
+
+        .. versionadded:: 5.1
         """
         self._wrapper.set_attrib_string(ph_object, ph_attrib, value.encode())
         
@@ -423,6 +672,13 @@ class GXMETA:
     def set_empty_attrib(self, ph_object, ph_attrib):
         """
         Set an empty attribute data holder
+        
+        :param ph_object:  MetaObject to set
+        :param ph_attrib:  Attribute MetaObject to set
+        :type  ph_object:  int
+        :type  ph_attrib:  int
+
+        .. versionadded:: 6.3
         """
         self._wrapper.set_empty_attrib(ph_object, ph_attrib)
         
@@ -437,6 +693,17 @@ class GXMETA:
     def h_copy_across_attribute(self, source_meta, ph_attribute):
         """
         Copy an Attribute from one `GXMETA <geosoft.gxapi.GXMETA>` to another
+        
+        :param source_meta:   Source `GXMETA <geosoft.gxapi.GXMETA>` object.
+        :param ph_attribute:  Attribute to copy
+        :type  source_meta:   GXMETA
+        :type  ph_attribute:  int
+
+        :returns:             x                  - Handle of Attribute
+                              META_INVALID_TOKEN - No visible data
+        :rtype:               int
+
+        .. versionadded:: 5.1.6
         """
         ret_val = self._wrapper.h_copy_across_attribute(source_meta._wrapper, ph_attribute)
         return ret_val
@@ -447,6 +714,17 @@ class GXMETA:
     def h_copy_across_class(self, source_meta, ph_class):
         """
         Copy a Class from one `GXMETA <geosoft.gxapi.GXMETA>` to another
+        
+        :param source_meta:  Source `GXMETA <geosoft.gxapi.GXMETA>` object.
+        :param ph_class:     Class to copy
+        :type  source_meta:  GXMETA
+        :type  ph_class:     int
+
+        :returns:            x                  - Handle of Class
+                             META_INVALID_TOKEN - No visible data anywhere
+        :rtype:              int
+
+        .. versionadded:: 5.1.6
 
         **Note:**
 
@@ -461,6 +739,17 @@ class GXMETA:
     def h_copy_across_data(self, source_meta, ph_data):
         """
         Copy a Data value from one `GXMETA <geosoft.gxapi.GXMETA>` to another
+        
+        :param source_meta:  Source `GXMETA <geosoft.gxapi.GXMETA>` object.
+        :param ph_data:      Data value to copy
+        :type  source_meta:  GXMETA
+        :type  ph_data:      int
+
+        :returns:            x                  - Handle of Data value
+                             META_INVALID_TOKEN - No visible data
+        :rtype:              int
+
+        .. versionadded:: 5.1.6
         """
         ret_val = self._wrapper.h_copy_across_data(source_meta._wrapper, ph_data)
         return ret_val
@@ -471,6 +760,17 @@ class GXMETA:
     def h_copy_across_item(self, source_meta, ph_item):
         """
         Copy an Item from one `GXMETA <geosoft.gxapi.GXMETA>` to another
+        
+        :param source_meta:  Source `GXMETA <geosoft.gxapi.GXMETA>` object.
+        :param ph_item:      Item to copy
+        :type  source_meta:  GXMETA
+        :type  ph_item:      int
+
+        :returns:            x                  - Handle of Item
+                             META_INVALID_TOKEN - No visible data
+        :rtype:              int
+
+        .. versionadded:: 5.1.6
         """
         ret_val = self._wrapper.h_copy_across_item(source_meta._wrapper, ph_item)
         return ret_val
@@ -481,6 +781,17 @@ class GXMETA:
     def h_copy_across_type(self, source_meta, ph_type):
         """
         Copy a Type from one `GXMETA <geosoft.gxapi.GXMETA>` to another
+        
+        :param source_meta:  Source `GXMETA <geosoft.gxapi.GXMETA>` object.
+        :param ph_type:      Type to copy
+        :type  source_meta:  GXMETA
+        :type  ph_type:      int
+
+        :returns:            x                  - Handle of type
+                             META_INVALID_TOKEN - No visible data anywhere
+        :rtype:              int
+
+        .. versionadded:: 5.1.6
 
         **Note:**
 
@@ -495,6 +806,15 @@ class GXMETA:
     def move_datas_across(self, source_meta, ph_i_obj, ph_o_obj):
         """
         Moves data items from one `GXMETA <geosoft.gxapi.GXMETA>` to another
+        
+        :param source_meta:  Source `GXMETA <geosoft.gxapi.GXMETA>` Object
+        :param ph_i_obj:     Object to copy data from
+        :param ph_o_obj:     Object to copy data to
+        :type  source_meta:  GXMETA
+        :type  ph_i_obj:     int
+        :type  ph_o_obj:     int
+
+        .. versionadded:: 5.1.8
         """
         self._wrapper.move_datas_across(source_meta._wrapper, ph_i_obj, ph_o_obj)
         
@@ -509,6 +829,18 @@ class GXMETA:
     def create_type(self, name, ph_class, ph_type):
         """
         Create an attribute
+        
+        :param name:      Attribute Name
+        :param ph_class:  Parent Class or `META_CORE_CLASS`
+        :param ph_type:   Parent Type or `META_CORE_TYPE`
+        :type  name:      str
+        :type  ph_class:  int
+        :type  ph_type:   int
+
+        :returns:         x - Type Token
+        :rtype:           int
+
+        .. versionadded:: 6.1
         """
         ret_val = self._wrapper.create_type(name.encode(), ph_class, ph_type)
         return ret_val
@@ -519,6 +851,11 @@ class GXMETA:
     def delete_data(self, ph_data):
         """
         Delete Data from `GXMETA <geosoft.gxapi.GXMETA>`.
+        
+        :param ph_data:  Data to delete
+        :type  ph_data:  int
+
+        .. versionadded:: 5.1.6
         """
         self._wrapper.delete_data(ph_data)
         
@@ -529,6 +866,11 @@ class GXMETA:
     def delete_type(self, ph_type):
         """
         Delete Type from `GXMETA <geosoft.gxapi.GXMETA>`.
+        
+        :param ph_type:  Type to delete
+        :type  ph_type:  int
+
+        .. versionadded:: 5.1.6
         """
         self._wrapper.delete_type(ph_type)
         
@@ -543,6 +885,13 @@ class GXMETA:
     def get_obj_name(self, ph_object, name):
         """
         Get the name of this item.
+        
+        :param ph_object:  Object
+        :param name:       Name of object
+        :type  ph_object:  int
+        :type  name:       str_ref
+
+        .. versionadded:: 5.1.3
         """
         name.value = self._wrapper.get_obj_name(ph_object, name.value.encode())
         
@@ -553,6 +902,15 @@ class GXMETA:
     def resolve_umn(self, umn):
         """
         Resolve a Unique Meta Name (UMN) and find the token
+        
+        :param umn:   Unique Meta Name (UMN)
+        :type  umn:   str
+
+        :returns:     x                    - Token
+                      `H_META_INVALID_TOKEN <geosoft.gxapi.H_META_INVALID_TOKEN>` - Not found
+        :rtype:       int
+
+        .. versionadded:: 5.1
         """
         ret_val = self._wrapper.resolve_umn(umn.encode())
         return ret_val

@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -64,6 +63,13 @@ class GXLST:
     def add_item(self, name, val):
         """
         Adds an item to the end of the list.
+        
+        :param name:  Name of the Item
+        :param val:   Value of the Item
+        :type  name:  str
+        :type  val:   str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.add_item(name.encode(), val.encode())
         
@@ -74,6 +80,13 @@ class GXLST:
     def add_symb_item(self, name, symb):
         """
         Adds a channel/line/blob name and symbol to a list.
+        
+        :param name:  Name of the channel, line or blob symbol
+        :param symb:  Symbol handle
+        :type  name:  str
+        :type  symb:  int
+
+        .. versionadded:: 6.2
 
         **Note:**
 
@@ -92,6 +105,13 @@ class GXLST:
     def add_unique_item(self, name, val):
         """
         Adds a unique item to the end of the list.
+        
+        :param name:  Name of the Item
+        :param val:   Value of the Item
+        :type  name:  str
+        :type  val:   str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -106,6 +126,11 @@ class GXLST:
     def append(self, lst2):
         """
         Add the items in one list to another list.
+        
+        :param lst2:  List to append to the above `GXLST <geosoft.gxapi.GXLST>`.
+        :type  lst2:  GXLST
+
+        .. versionadded:: 6.2
 
         **Note:**
 
@@ -123,6 +148,12 @@ class GXLST:
     def assay_channel(cls):
         """
         Create a `GXLST <geosoft.gxapi.GXLST>` of assay channel mask strings from file.
+        
+
+        :returns:    `GXLST <geosoft.gxapi.GXLST>` Object
+        :rtype:      GXLST
+
+        .. versionadded:: 5.1.6
 
         **Note:**
 
@@ -159,6 +190,9 @@ class GXLST:
     def clear(self):
         """
         Clear a list object.
+        
+
+        .. versionadded:: 5.0
         """
         self._wrapper.clear()
         
@@ -169,6 +203,11 @@ class GXLST:
     def convert_from_csv_string(self, buff):
         """
         Load a `GXLST <geosoft.gxapi.GXLST>` with items from a string.
+        
+        :param buff:  Comma separated items
+        :type  buff:  str
+
+        .. versionadded:: 5.1.8
 
         **Note:**
 
@@ -186,6 +225,11 @@ class GXLST:
     def copy(self, source):
         """
         Copy one `GXLST <geosoft.gxapi.GXLST>` object to another.
+        
+        :param source:  Source List to Copy from
+        :type  source:  GXLST
+
+        .. versionadded:: 5.0
         """
         self._wrapper.copy(source._wrapper)
         
@@ -197,6 +241,14 @@ class GXLST:
         """
         creates a user controllable list. The list
         is empty when created.
+        
+        :param width:  Width of the list to make. This number should be large enough for both the item name and the item value.  Must be > 2 and <= 4096.
+        :type  width:  int
+
+        :returns:      Handle to the List Object.
+        :rtype:        GXLST
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapLST.create(GXContext._get_tls_geo(), width)
         return GXLST(ret_val)
@@ -207,6 +259,13 @@ class GXLST:
     def create_s(cls, bf):
         """
         Create `GXLST <geosoft.gxapi.GXLST>` from serialized source.
+        
+        :type  bf:  GXBF
+
+        :returns:    `GXLST <geosoft.gxapi.GXLST>` object
+        :rtype:      GXLST
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapLST.create_s(GXContext._get_tls_geo(), bf._wrapper)
         return GXLST(ret_val)
@@ -218,6 +277,11 @@ class GXLST:
         """
         Removes an item from the list. All items below
         it are shifted up one.
+        
+        :param item:  Item Number to Delete
+        :type  item:  int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.del_item(item)
         
@@ -230,6 +294,15 @@ class GXLST:
     def find_items(self, type, lst2, vv):
         """
         Searches a `GXLST <geosoft.gxapi.GXLST>` for items in a second `GXLST <geosoft.gxapi.GXLST>`, returns indices of those found.
+        
+        :param type:  `LST_ITEM` data to do the search on
+        :param lst2:  Items to search for
+        :param vv:    `GS_LONG <geosoft.gxapi.GS_LONG>` `GXVV <geosoft.gxapi.GXVV>` of returned indices into the first `GXLST <geosoft.gxapi.GXLST>`.
+        :type  type:  int
+        :type  lst2:  GXLST
+        :type  vv:    GXVV
+
+        .. versionadded:: 6.3
 
         **Note:**
 
@@ -250,6 +323,15 @@ class GXLST:
     def gt_item(self, type, item, buff):
         """
         This places the specified item into the buffer provided.
+        
+        :param type:  `LST_ITEM` data to retrieve
+        :param item:  Item Number to Get
+        :param buff:  Buffer to Place Item Into
+        :type  type:  int
+        :type  item:  int
+        :type  buff:  str_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -264,6 +346,15 @@ class GXLST:
     def gt_symb_item(self, item, name, symb):
         """
         Returns a channel/line/blob name and symbol from a list.
+        
+        :param item:  Item number to get
+        :param name:  Buffer to Place Symbol name into
+        :param symb:  Symbol handle
+        :type  item:  int
+        :type  name:  str_ref
+        :type  symb:  int_ref
+
+        .. versionadded:: 6.3
 
         **Note:**
 
@@ -282,6 +373,11 @@ class GXLST:
     def convert_to_csv_string(self, buff):
         """
         Load a string with names from a `GXLST <geosoft.gxapi.GXLST>`.
+        
+        :param buff:  Buffer to add items to
+        :type  buff:  str_ref
+
+        .. versionadded:: 5.1.8
 
         **Note:**
 
@@ -297,6 +393,17 @@ class GXLST:
     def find_item(self, type, name):
         """
         Searches the list for a specified item.
+        
+        :param type:  `LST_ITEM` data to do the search on
+        :param name:  String to Search For
+        :type  type:  int
+        :type  name:  str
+
+        :returns:     x  - Item Number
+                      -1 - Not Found
+        :rtype:       int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -311,6 +418,17 @@ class GXLST:
     def find_item_mask(self, type, name):
         """
         Searches the list for a specified item, list contains masks.
+        
+        :param type:  `LST_ITEM` data to search
+        :param name:  String to try `GXLST <geosoft.gxapi.GXLST>` mask items on Search For
+        :type  type:  int
+        :type  name:  str
+
+        :returns:     x  - Item Number
+                      -1 - Not Found
+        :rtype:       int
+
+        .. versionadded:: 5.1.6
 
         **Note:**
 
@@ -340,6 +458,16 @@ class GXLST:
     def get_int(self, type, item):
         """
         Get an integer item.
+        
+        :param type:  `LST_ITEM` data to retrieve
+        :param item:  Item Number to Get
+        :type  type:  int
+        :type  item:  int
+
+        :returns:     Integer, `iDUMMY <geosoft.gxapi.iDUMMY>` if conversion fails or string is empty.
+        :rtype:       int
+
+        .. versionadded:: 5.1.2
         """
         ret_val = self._wrapper.get_int(type, item)
         return ret_val
@@ -350,6 +478,15 @@ class GXLST:
     def insert_item(self, item, name, val):
         """
         Adds an item at a given location in the list.
+        
+        :param item:  Item index
+        :param name:  Name of the Item
+        :param val:   Value of the Item
+        :type  item:  int
+        :type  name:  str
+        :type  val:   str
+
+        .. versionadded:: 5.1.6
 
         **Note:**
 
@@ -365,6 +502,12 @@ class GXLST:
     def size(self):
         """
         Get the number of items in the list.
+        
+
+        :returns:    x - Number of items in the list.
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.size()
         return ret_val
@@ -375,6 +518,15 @@ class GXLST:
     def load_csv(self, csv, name_field, value_field):
         """
         Load a list with data from a CSV file
+        
+        :param csv:          The CSV file
+        :param name_field:   Column label for the item name
+        :param value_field:  Column label for the item value
+        :type  csv:          str
+        :type  name_field:   str
+        :type  value_field:  str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -392,6 +544,11 @@ class GXLST:
     def load_file(self, file):
         """
         Set up a list from a list file.
+        
+        :param file:  Name of the file
+        :type  file:  str
+
+        .. versionadded:: 6.2
 
         **Note:**
 
@@ -421,6 +578,11 @@ class GXLST:
         Load a GX List Resource into this list object.  The
         entries are placed at the end of the list and are not
         sorted.
+        
+        :param res:  Name of the Resource
+        :type  res:  str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.resource(res.encode())
         
@@ -431,6 +593,16 @@ class GXLST:
     def get_double(self, type, item):
         """
         Get a real item.
+        
+        :param type:  `LST_ITEM` data to retrieve
+        :param item:  Item Number to Get
+        :type  type:  int
+        :type  item:  int
+
+        :returns:     Real, `rDUMMY <geosoft.gxapi.rDUMMY>` if conversion fails or string is empty.
+        :rtype:       float
+
+        .. versionadded:: 5.1.2
         """
         ret_val = self._wrapper.get_double(type, item)
         return ret_val
@@ -441,6 +613,11 @@ class GXLST:
     def save_file(self, file):
         """
         Save a list to a file.
+        
+        :param file:  Name of the file
+        :type  file:  str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -467,6 +644,13 @@ class GXLST:
     def select_csv_string_items(self, buff, ls_to):
         """
         Load a `GXLST <geosoft.gxapi.GXLST>` with items from a second `GXLST <geosoft.gxapi.GXLST>` found in a CSV string.
+        
+        :param buff:   Comma separated item names
+        :param ls_to:  `GXLST <geosoft.gxapi.GXLST>` to add selected items to
+        :type  buff:   str
+        :type  ls_to:  GXLST
+
+        .. versionadded:: 5.1.8
 
         **Note:**
 
@@ -489,6 +673,10 @@ class GXLST:
     def serial(self, bf):
         """
         Serialize `GXLST <geosoft.gxapi.GXLST>` to a `GXBF <geosoft.gxapi.GXBF>`.
+        
+        :type  bf:   GXBF
+
+        .. versionadded:: 5.0
         """
         self._wrapper.serial(bf._wrapper)
         
@@ -499,6 +687,15 @@ class GXLST:
     def set_item(self, type, item, buff):
         """
         Place an item at a specified point in the `GXLST <geosoft.gxapi.GXLST>`.
+        
+        :param type:  `LST_ITEM` data to insert
+        :param item:  Item Number to Set
+        :param buff:  Item to Set
+        :type  type:  int
+        :type  item:  int
+        :type  buff:  str
+
+        .. versionadded:: 5.1.5
 
         **Note:**
 
@@ -513,6 +710,13 @@ class GXLST:
     def sort(self, type, ord):
         """
         Sorts a list.
+        
+        :param type:  `LST_ITEM` data to sort on
+        :param ord:   0 - Ascending, 1 - Decending
+        :type  type:  int
+        :type  ord:   int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.sort(type, ord)
         

@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -61,6 +60,11 @@ class GXGMSYS:
     def launch(cls, model):
         """
         Launch `GXGMSYS <geosoft.gxapi.GXGMSYS>` with extension
+        
+        :param model:  Model name
+        :type  model:  str
+
+        .. versionadded:: 5.0.1
         """
         gxapi_cy.WrapGMSYS.launch(GXContext._get_tls_geo(), model.encode())
         

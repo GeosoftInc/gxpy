@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -62,6 +61,11 @@ class GXARCSYS:
     def get_browse_loc(cls, path):
         """
         Get the current catalog browser location in ArcGIS
+        
+        :param path:  Path String
+        :type  path:  str_ref
+
+        .. versionadded:: 8.0
 
         **Note:**
 
@@ -78,6 +82,11 @@ class GXARCSYS:
     def get_current_doc(cls, path):
         """
         Get the current Mx Document file name
+        
+        :param path:  Path String
+        :type  path:  str_ref
+
+        .. versionadded:: 8.0
 
         **Note:**
 
@@ -92,6 +101,11 @@ class GXARCSYS:
     def set_browse_loc(cls, path):
         """
         Set the current catalog browser location in ArcGIS
+        
+        :param path:  Path String
+        :type  path:  str
+
+        .. versionadded:: 8.0
 
         **Note:**
 

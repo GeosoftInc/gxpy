@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -68,6 +67,25 @@ class GXSTK:
     def get_trans_parms(self, x_trans_t, x_log_min, xvv_lev, xvv_cmp, y_trans_t, y_log_min, yvv_lev, yvv_cmp):
         """
         Get transformation parameters in `GXSTK <geosoft.gxapi.GXSTK>` object
+        
+        :param x_trans_t:  Type of transformation for horizontal axis
+        :param x_log_min:  Minimum value to apply logarithmic
+        :param xvv_lev:    Comma separated parameters defining linear compress data range
+        :param xvv_cmp:    Comma separated parameters defining scaling factors for
+        :param y_trans_t:  Type of scaling for vertical axis
+        :param y_log_min:  Minimum value to apply logarithmic
+        :param yvv_lev:    Comma separated parameters defining linear compress data range
+        :param yvv_cmp:    Comma separated parameters defining scaling factors for
+        :type  x_trans_t:  int_ref
+        :type  x_log_min:  float_ref
+        :type  xvv_lev:    GXVV
+        :type  xvv_cmp:    GXVV
+        :type  y_trans_t:  int_ref
+        :type  y_log_min:  float_ref
+        :type  yvv_lev:    GXVV
+        :type  yvv_cmp:    GXVV
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -86,6 +104,14 @@ class GXSTK:
     def get_axis_format(self, xy):
         """
         Get axis number display format.
+        
+        :param xy:   `STK_AXIS`
+        :type  xy:   int
+
+        :returns:    The current format - `DB_CHAN_FORMAT`
+        :rtype:      int
+
+        .. versionadded:: 5.1.5
 
         **Note:**
 
@@ -100,6 +126,29 @@ class GXSTK:
     def get_axis_parms(self, bar_draw, min_loc, max_loc, thick, color, tick_interval, tick_size1, tick_size2, min_tick, xy):
         """
         Get parameters in `GXSTK <geosoft.gxapi.GXSTK>` object relating drawing X/Y axis
+        
+        :param bar_draw:       ?BARDRAW: Bottom and/or Top, or Left and/or Right
+        :param min_loc:        Bottom Y/Left X location
+        :param max_loc:        Top Y/Right X location
+        :param thick:          ?BARLINETHICK  - Line thickness in mm. Default is 0.05
+        :param color:          ?BARCOLOR      - Line color string in RGB model. Default is black
+        :param tick_interval:  ?BARTICKINTEERVAL
+        :param tick_size1:     Major tick size in mm for bottom/left axis bar.
+        :param tick_size2:     Major tick size in mm for top/right axis bar.
+        :param min_tick:       ?BARMINORTICK  - Number of minor ticks. (0) none, (-1) automatic
+        :param xy:             `STK_AXIS`
+        :type  bar_draw:       int_ref
+        :type  min_loc:        float_ref
+        :type  max_loc:        float_ref
+        :type  thick:          float_ref
+        :type  color:          str_ref
+        :type  tick_interval:  float_ref
+        :type  tick_size1:     float_ref
+        :type  tick_size2:     float_ref
+        :type  min_tick:       int_ref
+        :type  xy:             int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -115,6 +164,21 @@ class GXSTK:
     def get_fid_parms(self, fid_y_loc, fid_tick_size, fid_interval, fid_text_font, fid_text_size, fid_text_color):
         """
         Get parameters in `GXSTK <geosoft.gxapi.GXSTK>` object relating drawing fid ticks
+        
+        :param fid_y_loc:       Y location in data unit to draw Fid ticks. Default is the bottom of the stack
+        :param fid_tick_size:   Fid tick size in mm. Default is 2.0mm
+        :param fid_interval:    Fid interval to draw ticks. Nice number is calculated by default
+        :param fid_text_font:   Font to use to label fids. Default is use 'default' font set in Montaj
+        :param fid_text_size:   Text size in mm to label fids. Default is 5mm
+        :param fid_text_color:  Text color string in RGB model. Default is black
+        :type  fid_y_loc:       float_ref
+        :type  fid_tick_size:   float_ref
+        :type  fid_interval:    float_ref
+        :type  fid_text_font:   str_ref
+        :type  fid_text_size:   float_ref
+        :type  fid_text_color:  str_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -129,6 +193,15 @@ class GXSTK:
     def get_flag(self, part):
         """
         Get flag indicating part of `GXSTK <geosoft.gxapi.GXSTK>` object is to be drawn or not
+        
+        :param part:  `STK_FLAG`
+        :type  part:  int
+
+        :returns:     FALSE (0) if part of the object is not to be drawn
+                      TRUE  (1) if part of the object is drawn
+        :rtype:       int
+
+        .. versionadded:: 6.0.1
         """
         ret_val = self._wrapper.get_flag(part)
         return ret_val
@@ -139,6 +212,31 @@ class GXSTK:
     def get_gen_parms(self, x_ch, y_ch, grp_name, x_scale, y_scale, x_start, x_end, y_start, left, bottom, height):
         """
         Get general parameters in `GXSTK <geosoft.gxapi.GXSTK>` object
+        
+        :param x_ch:      X channel name, REQUIRED
+        :param y_ch:      Y channel name, REQUIRED
+        :param grp_name:  Group name
+        :param x_scale:   X scale (map scale, units/metre), REQUIRED
+        :param y_scale:   Y scale (plot scale, units/mm), REQUIRED
+        :param x_start:   Minimum X value (data unit) to draw
+        :param x_end:     Maximum X value (data unit) to draw
+        :param y_start:   Minimum Y value (data unit) to draw
+        :param left:      Minimum horizontal location in mm of the stack on the map
+        :param bottom:    Minimum vertical location in mm on the map
+        :param height:    Profile height in mm on the map, must be > 0.0
+        :type  x_ch:      str_ref
+        :type  y_ch:      str_ref
+        :type  grp_name:  str_ref
+        :type  x_scale:   float_ref
+        :type  y_scale:   float_ref
+        :type  x_start:   float_ref
+        :type  x_end:     float_ref
+        :type  y_start:   float_ref
+        :type  left:      float_ref
+        :type  bottom:    float_ref
+        :type  height:    float_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -153,6 +251,31 @@ class GXSTK:
     def get_grid_parms(self, grid, min_x, max_x, min_y, max_y, thick, cross, x_sep, y_sep, color, grid12):
         """
         Get background grid parameters in `GXSTK <geosoft.gxapi.GXSTK>` object
+        
+        :param grid:    Type of grid to draw:
+        :param min_x:   Minimum X in ground unit to draw grid
+        :param max_x:   Maximum X in ground unit to draw grid
+        :param min_y:   Minimum Y in ground unit to draw grid
+        :param max_y:   Maximum Y in ground unit to draw grid
+        :param thick:   Line thickness in mm. Default is 0.01mm
+        :param cross:   Cross size or separation between dots in mm.
+        :param x_sep:   Separation between vertical grid lines.
+        :param y_sep:   Separation between horizontal grid lines.
+        :param color:   Grid line color string in RGB model. Default is black
+        :param grid12:  `STK_GRID`
+        :type  grid:    int_ref
+        :type  min_x:   float_ref
+        :type  max_x:   float_ref
+        :type  min_y:   float_ref
+        :type  max_y:   float_ref
+        :type  thick:   float_ref
+        :type  cross:   float_ref
+        :type  x_sep:   float_ref
+        :type  y_sep:   float_ref
+        :type  color:   str_ref
+        :type  grid12:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -168,6 +291,31 @@ class GXSTK:
     def get_label_parms(self, axis, min_loc, min_orient, max_loc, max_orient, interval, font, text_size, color, bound, xy):
         """
         Get parameters in `GXSTK <geosoft.gxapi.GXSTK>` object relating X/Y axis labels
+        
+        :param axis:        Which axes to draw: Bottom/Top or Left/Right axes
+        :param min_loc:     Bottom or Left axis label location
+        :param min_orient:  Bottom or Left labels orientation.
+        :param max_loc:     Top or Right axis label location
+        :param max_orient:  Top or Right axis label orientation
+        :param interval:    Label interval. Default is to use related axis tick interval
+        :param font:        Font to use to label. Default is use 'default' font set in Montaj
+        :param text_size:   Text size in mm to draw profile labels. Default is 5mm
+        :param color:       Text color string in RGB model. Default is black
+        :param bound:       ?LABELBOUND    - Edge bound.  0 - No
+        :param xy:          `STK_AXIS`
+        :type  axis:        int_ref
+        :type  min_loc:     float_ref
+        :type  min_orient:  int_ref
+        :type  max_loc:     float_ref
+        :type  max_orient:  int_ref
+        :type  interval:    float_ref
+        :type  font:        str_ref
+        :type  text_size:   float_ref
+        :type  color:       str_ref
+        :type  bound:       int_ref
+        :type  xy:          int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -185,6 +333,37 @@ class GXSTK:
     def get_profile(self, prof_type, pitch, thick, ln_clr, wrap, clip, smooth, vv_ind, label, ref, font, text_size, text_clr, prof_va_num):
         """
         Get profile parameters in `GXSTK <geosoft.gxapi.GXSTK>` object
+        
+        :param prof_type:    Profile line type.    1 - solid (default)
+        :param pitch:        Patterned line pitch in mm. Default is 10 mm
+        :param thick:        Line thickness in mm. Default is 0.05mm
+        :param ln_clr:       Color string in RGB model. Default is black
+        :param wrap:         Wrap option
+        :param clip:         Clip option
+        :param smooth:       Plot smoothed polyline.
+        :param vv_ind:       Only use for `GXVA <geosoft.gxapi.GXVA>` channels. NULL is acceptable which means all profiles in the `GXVA <geosoft.gxapi.GXVA>` are plotted. `GXVV <geosoft.gxapi.GXVV>` type of INT (integer)
+        :param label:        Characters string to label profiles
+        :param ref:          Reference location to draw label.
+        :param font:         Font to use to draw profile labels. Default is use 'default' font set in Montaj
+        :param text_size:    Text size in mm to draw profile labels. Default is 5mm
+        :param text_clr:     Text color string in RGB model. Default is black
+        :param prof_va_num:  Include `GXVA <geosoft.gxapi.GXVA>` column numbers as part of the profile label 0 - no, 1 - yes
+        :type  prof_type:    int_ref
+        :type  pitch:        float_ref
+        :type  thick:        float_ref
+        :type  ln_clr:       str_ref
+        :type  wrap:         int_ref
+        :type  clip:         int_ref
+        :type  smooth:       int_ref
+        :type  vv_ind:       GXVV
+        :type  label:        str_ref
+        :type  ref:          int_ref
+        :type  font:         str_ref
+        :type  text_size:    float_ref
+        :type  text_clr:     str_ref
+        :type  prof_va_num:  int_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -199,6 +378,39 @@ class GXSTK:
     def get_profile_ex(self, prof_type, pitch, thick, ln_clr, break_dum, wrap, clip, smooth, vv_ind, label, ref, font, text_size, text_clr, prof_va_num):
         """
         Get profile parameters in `GXSTK <geosoft.gxapi.GXSTK>` object (added Break on dummy option)
+        
+        :param prof_type:    Profile line type.    1 - solid (default)
+        :param pitch:        Patterned line pitch in mm. Default is 10 mm
+        :param thick:        Line thickness in mm. Default is 0.05mm
+        :param ln_clr:       Color string in RGB model. Default is black
+        :param break_dum:    Break on dummy option
+        :param wrap:         Wrap option
+        :param clip:         Clip option
+        :param smooth:       Plot smoothed polyline.
+        :param vv_ind:       Only use for `GXVA <geosoft.gxapi.GXVA>` channels. NULL is acceptable which means all profiles in the `GXVA <geosoft.gxapi.GXVA>` are plotted. `GXVV <geosoft.gxapi.GXVV>` type of INT (integer)
+        :param label:        Characters string to label profiles
+        :param ref:          Reference location to draw label.
+        :param font:         Font to use to draw profile labels. Default is use 'default' font set in Montaj
+        :param text_size:    Text size in mm to draw profile labels. Default is 5mm
+        :param text_clr:     Text color string in RGB model. Default is black
+        :param prof_va_num:  Include `GXVA <geosoft.gxapi.GXVA>` column numbers as part of the profile label 0 - no, 1 - yes
+        :type  prof_type:    int_ref
+        :type  pitch:        float_ref
+        :type  thick:        float_ref
+        :type  ln_clr:       str_ref
+        :type  break_dum:    int_ref
+        :type  wrap:         int_ref
+        :type  clip:         int_ref
+        :type  smooth:       int_ref
+        :type  vv_ind:       GXVV
+        :type  label:        str_ref
+        :type  ref:          int_ref
+        :type  font:         str_ref
+        :type  text_size:    float_ref
+        :type  text_clr:     str_ref
+        :type  prof_va_num:  int_ref
+
+        .. versionadded:: 5.0.3
 
         **Note:**
 
@@ -213,6 +425,37 @@ class GXSTK:
     def get_symb_parms(self, symb_font, symb_size, line_clr, fill_clr, wrap, clip, symb_y_loc, no_levels, vv_level, vv_type, label, text_font, text_size, text_clr):
         """
         Get parameters in `GXSTK <geosoft.gxapi.GXSTK>` object relating drawing symbols
+        
+        :param symb_font:   Font to use to draw symbols. Default is use 'symbols.gfn' font
+        :param symb_size:   Symbol size in mm. Default is 5mm
+        :param line_clr:    Edge color string in RGB model. Default is black
+        :param fill_clr:    Fill color string in RGB model. Default is black
+        :param wrap:        Wrap option
+        :param clip:        Clip option
+        :param symb_y_loc:  Y location to draw symbols. Default is to use the data from Y channel
+        :param no_levels:   Number of levels to draw symbols
+        :param vv_level:    Y values to define data ranges for each symbol types Type of REAL
+        :param vv_type:     Symbol numbers (given in the symbol font) to draw, default is 20 TYPE of INT
+        :param label:       Draw symbols ID (1) or not (0)
+        :param text_font:   Font to use to draw symbol ID (A,B,C...). Default is use 'default'
+        :param text_size:   Text size in mm to draw profile labels. Default is 5mm
+        :param text_clr:    Text color string in RGB model. Default is black
+        :type  symb_font:   str_ref
+        :type  symb_size:   float_ref
+        :type  line_clr:    str_ref
+        :type  fill_clr:    str_ref
+        :type  wrap:        int_ref
+        :type  clip:        int_ref
+        :type  symb_y_loc:  float_ref
+        :type  no_levels:   int_ref
+        :type  vv_level:    GXVV
+        :type  vv_type:     GXVV
+        :type  label:       int_ref
+        :type  text_font:   str_ref
+        :type  text_size:   float_ref
+        :type  text_clr:    str_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -227,6 +470,33 @@ class GXSTK:
     def get_title_parms(self, title1, title2, title1_orient, title1_x, title1_y, title2_orient, title2_x, title2_y, font, text_size, color, xy):
         """
         Get parameters in `GXSTK <geosoft.gxapi.GXSTK>` object relating X/Y axis titles
+        
+        :param title1:         Title for bottom X axis/left Y axis. Default is no title.
+        :param title2:         Title for top X axis/right Y axis. Default is no title.
+        :param title1_orient:  Bottom/Left axis title orientation.
+        :param title1_x:       X location to draw bottom/left axis title
+        :param title1_y:       Y location to draw bottom/left axis title
+        :param title2_orient:  Top/Right axis title orientation.
+        :param title2_x:       X location to draw top/right axis title
+        :param title2_y:       Y location to draw top/right axis title
+        :param font:           Font to draw titles. Default is use 'default' font set in Montaj
+        :param text_size:      Text size in mm to draw titles. Default is 5mm
+        :param color:          Text color string in RGB model. Default is black
+        :param xy:             `STK_AXIS`
+        :type  title1:         str_ref
+        :type  title2:         str_ref
+        :type  title1_orient:  int_ref
+        :type  title1_x:       float_ref
+        :type  title1_y:       float_ref
+        :type  title2_orient:  int_ref
+        :type  title2_x:       float_ref
+        :type  title2_y:       float_ref
+        :type  font:           str_ref
+        :type  text_size:      float_ref
+        :type  color:          str_ref
+        :type  xy:             int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -242,6 +512,13 @@ class GXSTK:
     def set_flag(self, flag, part):
         """
         Set flag indicating part of `GXSTK <geosoft.gxapi.GXSTK>` object is to be drawn or not
+        
+        :param flag:  Flag to set (0 or 1)
+        :param part:  `STK_FLAG`
+        :type  flag:  int
+        :type  part:  int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.set_flag(flag, part)
         
@@ -252,6 +529,11 @@ class GXSTK:
     def set_array_colors(self, itr):
         """
         Set colors for individual channels in a `GXVA <geosoft.gxapi.GXVA>`, via an `GXITR <geosoft.gxapi.GXITR>`
+        
+        :param itr:  `GXITR <geosoft.gxapi.GXITR>` object for colors
+        :type  itr:  GXITR
+
+        .. versionadded:: 5.0.1
 
         **Note:**
 
@@ -268,6 +550,13 @@ class GXSTK:
     def set_axis_format(self, format, xy):
         """
         Set axis number display format.
+        
+        :param format:  `DB_CHAN_FORMAT`
+        :param xy:      `STK_AXIS`
+        :type  format:  int
+        :type  xy:      int
+
+        .. versionadded:: 5.1.5
 
         **Note:**
 
@@ -283,6 +572,29 @@ class GXSTK:
     def set_axis_parms(self, bar_draw, min_loc, max_loc, thick, color, tick_interval, tick_size1, tick_size2, min_tick, xy):
         """
         Set parameters in `GXSTK <geosoft.gxapi.GXSTK>` object relating drawing X/Y axis
+        
+        :param bar_draw:       ?BARDRAW
+        :param min_loc:        Bottom Y/Left X location
+        :param max_loc:        Top Y/Right X location
+        :param thick:          ?BARLINETHICK  - Line thickness in mm. Default is 0.05
+        :param color:          ?BARCOLOR      - Line color string in RGB model. Default is black
+        :param tick_interval:  ?BARTICKINTEERVAL
+        :param tick_size1:     Major tick size in mm for bottom/left axis bar.
+        :param tick_size2:     Major tick size in mm for top/right axis bar.
+        :param min_tick:       ?BARMINORTICK  - Number of minor ticks. (0) none, (-1) automatic
+        :param xy:             `STK_AXIS`
+        :type  bar_draw:       int
+        :type  min_loc:        float
+        :type  max_loc:        float
+        :type  thick:          float
+        :type  color:          str
+        :type  tick_interval:  float
+        :type  tick_size1:     float
+        :type  tick_size2:     float
+        :type  min_tick:       int
+        :type  xy:             int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -298,6 +610,21 @@ class GXSTK:
     def set_fid_parms(self, fid_y_loc, fid_tick_size, fid_interval, fid_text_font, fid_text_size, fid_text_color):
         """
         Set parameters in `GXSTK <geosoft.gxapi.GXSTK>` object relating drawing fid ticks
+        
+        :param fid_y_loc:       Y location in data unit to draw Fid ticks. Default is the bottom of the stack
+        :param fid_tick_size:   Fid tick size in mm. Default is 2.0mm
+        :param fid_interval:    Fid interval to draw ticks. Nice number is calculated by default
+        :param fid_text_font:   Font to use to label fids. Default is use 'default' font set in Montaj
+        :param fid_text_size:   Text size in mm to label fids. Default is 5mm
+        :param fid_text_color:  Text color string in RGB model. Default is black
+        :type  fid_y_loc:       float
+        :type  fid_tick_size:   float
+        :type  fid_interval:    float
+        :type  fid_text_font:   str
+        :type  fid_text_size:   float
+        :type  fid_text_color:  str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -312,6 +639,31 @@ class GXSTK:
     def set_gen_parms(self, x_ch, y_ch, grp_name, x_scale, y_scale, x_start, x_end, y_start, left, bottom, height):
         """
         Set general parameters in `GXSTK <geosoft.gxapi.GXSTK>` object
+        
+        :param x_ch:      X channel name, REQUIRED
+        :param y_ch:      Y channel name, REQUIRED
+        :param grp_name:  Group name
+        :param x_scale:   X scale (map scale, units/metre), REQUIRED
+        :param y_scale:   Y scale (plot scale, units/mm), REQUIRED
+        :param x_start:   Minimum X value (data unit) to draw
+        :param x_end:     Maximum X value (data unit) to draw
+        :param y_start:   Minimum Y value (data unit) to draw
+        :param left:      Minimum horizontal location in mm of the stack on the map
+        :param bottom:    Minimum vertical location in mm on the map
+        :param height:    Profile height in mm on the map, must be > 0.0
+        :type  x_ch:      str
+        :type  y_ch:      str
+        :type  grp_name:  str
+        :type  x_scale:   float
+        :type  y_scale:   float
+        :type  x_start:   float
+        :type  x_end:     float
+        :type  y_start:   float
+        :type  left:      float
+        :type  bottom:    float
+        :type  height:    float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -326,6 +678,31 @@ class GXSTK:
     def set_grid_parms(self, grid, min_x, max_x, min_y, max_y, thick, cross, x_sep, y_sep, color, grid12):
         """
         Set background grid parameters in `GXSTK <geosoft.gxapi.GXSTK>` object
+        
+        :param grid:    Type of grid to draw:
+        :param min_x:   Minimum X in ground unit to draw grid
+        :param max_x:   Maximum X in ground unit to draw grid
+        :param min_y:   Minimum Y in ground unit to draw grid
+        :param max_y:   Maximum Y in ground unit to draw grid
+        :param thick:   Line thickness in mm. Default is 0.01mm
+        :param cross:   Cross size or separation between dots in mm.
+        :param x_sep:   Separation between vertical grid lines.
+        :param y_sep:   Separation between horizontal grid lines.
+        :param color:   Grid line color string in RGB model. Default is black
+        :param grid12:  `STK_GRID`
+        :type  grid:    int
+        :type  min_x:   float
+        :type  max_x:   float
+        :type  min_y:   float
+        :type  max_y:   float
+        :type  thick:   float
+        :type  cross:   float
+        :type  x_sep:   float
+        :type  y_sep:   float
+        :type  color:   str
+        :type  grid12:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -341,6 +718,31 @@ class GXSTK:
     def set_label_parms(self, axis, min_loc, min_orient, max_loc, max_orient, interval, font, text_size, color, bound, xy):
         """
         Set parameters in `GXSTK <geosoft.gxapi.GXSTK>` object relating X/Y axis labels
+        
+        :param axis:        Bottom/Top or Left/Right axes
+        :param min_loc:     Bottom or Left axis label location
+        :param min_orient:  Bottom or Left labels orientation.
+        :param max_loc:     Top or Right axis label location
+        :param max_orient:  Top or Right axis label orientation
+        :param interval:    Label interval. Default is to use related axis tick interval
+        :param font:        Font to use to label. Default is use 'default' font set in Montaj
+        :param text_size:   Text size in mm to draw profile labels. Default is 5mm
+        :param color:       Text color string in RGB model. Default is black
+        :param bound:       ?LABELBOUND    - Edge bound.  0 - No
+        :param xy:          `STK_AXIS`
+        :type  axis:        int
+        :type  min_loc:     float
+        :type  min_orient:  int
+        :type  max_loc:     float
+        :type  max_orient:  int
+        :type  interval:    float
+        :type  font:        str
+        :type  text_size:   float
+        :type  color:       str
+        :type  bound:       int
+        :type  xy:          int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -358,6 +760,11 @@ class GXSTK:
     def set_line_parm(self, line):
         """
         Set line parameter (of Y Chan) in `GXSTK <geosoft.gxapi.GXSTK>` object
+        
+        :param line:  Line symb
+        :type  line:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -372,6 +779,37 @@ class GXSTK:
     def set_profile(self, prof_type, pitch, thick, ln_clr, wrap, clip, smooth, vv_ind, label, ref, font, text_size, text_clr, prof_va_num):
         """
         Set profile parameters in `GXSTK <geosoft.gxapi.GXSTK>` object
+        
+        :param prof_type:    Profile line type.    1 - solid (default)
+        :param pitch:        Patterned line pitch in mm. Default is 10 mm
+        :param thick:        Line thickness in mm. Default is 0.05mm
+        :param ln_clr:       Color string in RGB model. Default is black
+        :param wrap:         Wrap option
+        :param clip:         Clip option
+        :param smooth:       Plot smoothed polyline.
+        :param vv_ind:       Integers starting from 0 indicating windows in `GXVA <geosoft.gxapi.GXVA>` channel to draw `GXVV <geosoft.gxapi.GXVV>` type of INT (integer)
+        :param label:        Characters string to label profiles
+        :param ref:          Reference location to draw label.
+        :param font:         Font to use to draw profile labels. Default is use 'default' font set in Montaj
+        :param text_size:    Text size in mm to draw profile labels. Default is 5mm
+        :param text_clr:     Text color string in RGB model. Default is black
+        :param prof_va_num:  Include `GXVA <geosoft.gxapi.GXVA>` column numbers as part of the profile label 0 - no, 1 - yes
+        :type  prof_type:    int
+        :type  pitch:        float
+        :type  thick:        float
+        :type  ln_clr:       str
+        :type  wrap:         int
+        :type  clip:         int
+        :type  smooth:       int
+        :type  vv_ind:       GXVV
+        :type  label:        str
+        :type  ref:          int
+        :type  font:         str
+        :type  text_size:    float
+        :type  text_clr:     str
+        :type  prof_va_num:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -386,6 +824,39 @@ class GXSTK:
     def set_profile_ex(self, prof_type, pitch, thick, ln_clr, break_dum, wrap, clip, smooth, vv_ind, label, ref, font, text_size, text_clr, prof_va_num):
         """
         Set profile parameters in `GXSTK <geosoft.gxapi.GXSTK>` object (added Break on dummy option)
+        
+        :param prof_type:    Profile line type.    1 - solid (default)
+        :param pitch:        Patterned line pitch in mm. Default is 10 mm
+        :param thick:        Line thickness in mm. Default is 0.05mm
+        :param ln_clr:       Color string in RGB model. Default is black
+        :param break_dum:    Break on dummy option
+        :param wrap:         Wrap option
+        :param clip:         Clip option
+        :param smooth:       Plot smoothed polyline.
+        :param vv_ind:       Integers starting from 0 indicating windows in `GXVA <geosoft.gxapi.GXVA>` channel to draw `GXVV <geosoft.gxapi.GXVV>` type of INT (integer)
+        :param label:        Characters string to label profiles
+        :param ref:          Reference location to draw label.
+        :param font:         Font to use to draw profile labels. Default is use 'default' font set in Montaj
+        :param text_size:    Text size in mm to draw profile labels. Default is 5mm
+        :param text_clr:     Text color string in RGB model. Default is black
+        :param prof_va_num:  Include `GXVA <geosoft.gxapi.GXVA>` column numbers as part of the profile label 0 - no, 1 - yes
+        :type  prof_type:    int
+        :type  pitch:        float
+        :type  thick:        float
+        :type  ln_clr:       str
+        :type  break_dum:    int
+        :type  wrap:         int
+        :type  clip:         int
+        :type  smooth:       int
+        :type  vv_ind:       GXVV
+        :type  label:        str
+        :type  ref:          int
+        :type  font:         str
+        :type  text_size:    float
+        :type  text_clr:     str
+        :type  prof_va_num:  int
+
+        .. versionadded:: 5.0.3
 
         **Note:**
 
@@ -400,6 +871,37 @@ class GXSTK:
     def set_symb_parms(self, symb_font, symb_size, line_clr, fill_clr, wrap, clip, symb_y_loc, no_levels, vv_level, vv_type, label, text_font, text_size, text_clr):
         """
         Set parameters in `GXSTK <geosoft.gxapi.GXSTK>` object relating drawing symbols
+        
+        :param symb_font:   Font to use to draw symbols. Default is use 'symbols.gfn' font
+        :param symb_size:   Symbol size in mm. Default is 5mm
+        :param line_clr:    Edge color string in RGB model. Default is black
+        :param fill_clr:    Fill color string in RGB model. Default is black
+        :param wrap:        Wrap option
+        :param clip:        Clip option
+        :param symb_y_loc:  Y location to draw symbols. Default is to use the data from Y channel
+        :param no_levels:   Number of symbols levels
+        :param vv_level:    Y values to define data ranges for each symbol types Type of REAL
+        :param vv_type:     Symbol numbers (given in the symbol font) to draw Type of INT
+        :param label:       Draw symbols ID (1) or not (0)
+        :param text_font:   Font to use to draw symbol ID (A,B,C...). Default is use 'default'
+        :param text_size:   Text size in mm to draw profile labels. Default is 5mm
+        :param text_clr:    Text color string in RGB model. Default is black
+        :type  symb_font:   str
+        :type  symb_size:   float
+        :type  line_clr:    str
+        :type  fill_clr:    str
+        :type  wrap:        int
+        :type  clip:        int
+        :type  symb_y_loc:  float
+        :type  no_levels:   int
+        :type  vv_level:    GXVV
+        :type  vv_type:     GXVV
+        :type  label:       int
+        :type  text_font:   str
+        :type  text_size:   float
+        :type  text_clr:    str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -414,6 +916,33 @@ class GXSTK:
     def set_title_parms(self, title1, title2, title1_orient, title1_x, title1_y, title2_orient, title2_x, title2_y, font, text_size, color, xy):
         """
         Set parameters in `GXSTK <geosoft.gxapi.GXSTK>` object relating X/Y axis titles
+        
+        :param title1:         Title for bottom X axis/left Y axis. Default is no title.
+        :param title2:         Title for top X axis/right Y axis. Default is no title.
+        :param title1_orient:  Bottom/Left axis title orientation.
+        :param title1_x:       X location to draw bottom/left axis title
+        :param title1_y:       Y location to draw bottom/left axis title
+        :param title2_orient:  Top/Right axis title orientation.
+        :param title2_x:       X location to draw top/right axis title
+        :param title2_y:       Y location to draw top/right axis title
+        :param font:           Font to draw titles. Default is use 'default' font set in Montaj
+        :param text_size:      Text size in mm to draw titles. Default is 5mm
+        :param color:          Text color string in RGB model. Default is black
+        :param xy:             `STK_AXIS`
+        :type  title1:         str
+        :type  title2:         str
+        :type  title1_orient:  int
+        :type  title1_x:       float
+        :type  title1_y:       float
+        :type  title2_orient:  int
+        :type  title2_x:       float
+        :type  title2_y:       float
+        :type  font:           str
+        :type  text_size:      float
+        :type  color:          str
+        :type  xy:             int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -429,6 +958,25 @@ class GXSTK:
     def set_trans_parms(self, x_trans_t, x_log_min, xvv_lev, xvv_cmp, y_trans_t, y_log_min, yvv_lev, yvv_cmp):
         """
         Set transformation parameters in `GXSTK <geosoft.gxapi.GXSTK>` object
+        
+        :param x_trans_t:  Type of transformation for horizontal axis
+        :param x_log_min:  Minimum value to apply logarithmic
+        :param xvv_lev:    Future use
+        :param xvv_cmp:    Future use
+        :param y_trans_t:  Type of scaling for vertical axis
+        :param y_log_min:  Minimum value to apply logarithmic
+        :param yvv_lev:    Future use
+        :param yvv_cmp:    Future use
+        :type  x_trans_t:  int
+        :type  x_log_min:  float
+        :type  xvv_lev:    int
+        :type  xvv_cmp:    int
+        :type  y_trans_t:  int
+        :type  y_log_min:  float
+        :type  yvv_lev:    int
+        :type  yvv_cmp:    int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -446,6 +994,11 @@ class GXSTK:
     def set_va_index_start(self, index0):
         """
         Start array profile index labels at 0 or 1.
+        
+        :param index0:  Starting index (0 or 1)
+        :type  index0:  int
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 

@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -65,6 +64,14 @@ class GXSTR:
     def scan_i(cls, str_val):
         """
         Convert a string to a GX int.
+        
+        :param str_val:  String to convert to an integer
+        :type  str_val:  str
+
+        :returns:        Resulting Integer, `iDUMMY <geosoft.gxapi.iDUMMY>` is bad integer
+        :rtype:          int
+
+        .. versionadded:: 6.0.1
         """
         ret_val = gxapi_cy.WrapSTR.scan_i(GXContext._get_tls_geo(), str_val.encode())
         return ret_val
@@ -75,6 +82,16 @@ class GXSTR:
     def scan_date(cls, str_val, type):
         """
         Convert a date string to a GX real.
+        
+        :param str_val:  Date string
+        :param type:     `DATE_FORMAT`
+        :type  str_val:  str
+        :type  type:     int
+
+        :returns:        Resulting Real, `rDUMMY <geosoft.gxapi.rDUMMY>` if conversion fails.
+        :rtype:          float
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -89,6 +106,16 @@ class GXSTR:
     def scan_form(cls, str_val, type):
         """
         Convert a formated string to a real.
+        
+        :param str_val:  Date string
+        :param type:     `GS_FORMATS`
+        :type  str_val:  str
+        :type  type:     int
+
+        :returns:        Resulting Real, `rDUMMY <geosoft.gxapi.rDUMMY>` if conversion fails.
+        :rtype:          float
+
+        .. versionadded:: 6.0.1
         """
         ret_val = gxapi_cy.WrapSTR.scan_form(GXContext._get_tls_geo(), str_val.encode(), type)
         return ret_val
@@ -99,6 +126,14 @@ class GXSTR:
     def scan_r(cls, str_val):
         """
         Convert a string to a GX real.
+        
+        :param str_val:  String to convert to a real
+        :type  str_val:  str
+
+        :returns:        Resulting Real, `rDUMMY <geosoft.gxapi.rDUMMY>` if bad string.
+        :rtype:          float
+
+        .. versionadded:: 6.0.1
         """
         ret_val = gxapi_cy.WrapSTR.scan_r(GXContext._get_tls_geo(), str_val.encode())
         return ret_val
@@ -109,6 +144,16 @@ class GXSTR:
     def scan_time(cls, str_val, type):
         """
         Convert a time string to a GX real.
+        
+        :param str_val:  Date string
+        :param type:     `TIME_FORMAT`
+        :type  str_val:  str
+        :type  type:     int
+
+        :returns:        Resulting Real, `rDUMMY <geosoft.gxapi.rDUMMY>` if conversion fails.
+        :rtype:          float
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -127,6 +172,21 @@ class GXSTR:
     def file_combine_parts(cls, drive, dir, file, ext, qual, file_name):
         """
         Combine file parts to build a file name.
+        
+        :param drive:      Drive
+        :param dir:        Directory
+        :param file:       Name
+        :param ext:        Extension
+        :param qual:       Qualifiers
+        :param file_name:  Destination string, can be same as input
+        :type  drive:      str
+        :type  dir:        str
+        :type  file:       str
+        :type  ext:        str
+        :type  qual:       str
+        :type  file_name:  str_ref
+
+        .. versionadded:: 5.0
         """
         file_name.value = gxapi_cy.WrapSTR.file_combine_parts(GXContext._get_tls_geo(), drive.encode(), dir.encode(), file.encode(), ext.encode(), qual.encode(), file_name.value.encode())
         
@@ -137,6 +197,17 @@ class GXSTR:
     def file_ext(cls, ifile, ext, ofile, opt):
         """
         Add a file extension onto a file name string.
+        
+        :param ifile:  File name to extend
+        :param ext:    Extension if "", extenstion and '.' are stripped.
+        :param ofile:  Extended file name (can be same as input)
+        :param opt:    `FILE_EXT`
+        :type  ifile:  str
+        :type  ext:    str
+        :type  ofile:  str_ref
+        :type  opt:    int
+
+        .. versionadded:: 5.0
         """
         ofile.value = gxapi_cy.WrapSTR.file_ext(GXContext._get_tls_geo(), ifile.encode(), ext.encode(), ofile.value.encode(), opt)
         
@@ -147,6 +218,15 @@ class GXSTR:
     def file_name_part(cls, file, file_part, part):
         """
         Get part of a file name.
+        
+        :param file:       File name
+        :param file_part:  Destination string, can be same as input
+        :param part:       `STR_FILE_PART`
+        :type  file:       str
+        :type  file_part:  str_ref
+        :type  part:       int
+
+        .. versionadded:: 5.0
         """
         file_part.value = gxapi_cy.WrapSTR.file_name_part(GXContext._get_tls_geo(), file.encode(), file_part.value.encode(), part)
         
@@ -157,6 +237,15 @@ class GXSTR:
     def get_m_file(cls, in_str, out_str, index):
         """
         Get the indexed filepath from a multiple filepath string
+        
+        :param in_str:   Input multifile string
+        :param out_str:  Output filepath string
+        :param index:    Index of file
+        :type  in_str:   str
+        :type  out_str:  str_ref
+        :type  index:    int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -172,6 +261,13 @@ class GXSTR:
     def remove_qualifiers(cls, ifile, ofile):
         """
         Remove file qualifiers from a file name
+        
+        :param ifile:  Input file name
+        :param ofile:  Output file name (can be same as input)
+        :type  ifile:  str
+        :type  ofile:  str_ref
+
+        .. versionadded:: 7.0.1
         """
         ofile.value = gxapi_cy.WrapSTR.remove_qualifiers(GXContext._get_tls_geo(), ifile.encode(), ofile.value.encode())
         
@@ -186,6 +282,15 @@ class GXSTR:
     def format_crc(cls, pul_crc, buff, width):
         """
         Convert a GX CRC value to a string.
+        
+        :param pul_crc:  CRC value to format
+        :param buff:     Resulting string
+        :param width:    Width of the field
+        :type  pul_crc:  int
+        :type  buff:     str_ref
+        :type  width:    int
+
+        .. versionadded:: 5.0
         """
         buff.value = gxapi_cy.WrapSTR.format_crc(GXContext._get_tls_geo(), pul_crc, buff.value.encode(), width)
         
@@ -196,6 +301,17 @@ class GXSTR:
     def format_date(cls, real, buff, width, type):
         """
         Convert a GX real to a date string.
+        
+        :param real:   Date value in decimal years to format
+        :param buff:   Resulting string
+        :param width:  Width of the field
+        :param type:   `DATE_FORMAT`
+        :type  real:   float
+        :type  buff:   str_ref
+        :type  width:  int
+        :type  type:   int
+
+        .. versionadded:: 5.0
         """
         buff.value = gxapi_cy.WrapSTR.format_date(GXContext._get_tls_geo(), real, buff.value.encode(), width, type)
         
@@ -206,6 +322,15 @@ class GXSTR:
     def format_i(cls, int, buff, width):
         """
         Convert a GX int to a string.
+        
+        :param int:    Value to format
+        :param buff:   Resulting string
+        :param width:  Width of the field
+        :type  int:    int
+        :type  buff:   str_ref
+        :type  width:  int
+
+        .. versionadded:: 5.0
         """
         buff.value = gxapi_cy.WrapSTR.format_i(GXContext._get_tls_geo(), int, buff.value.encode(), width)
         
@@ -216,6 +341,17 @@ class GXSTR:
     def format_r(cls, real, buff, width, sig):
         """
         Convert a GX real to a string with significant digits.
+        
+        :param real:   Value to format
+        :param buff:   Resulting string
+        :param width:  Width of the field
+        :param sig:    Significant digits
+        :type  real:   float
+        :type  buff:   str_ref
+        :type  width:  int
+        :type  sig:    int
+
+        .. versionadded:: 5.0
         """
         buff.value = gxapi_cy.WrapSTR.format_r(GXContext._get_tls_geo(), real, buff.value.encode(), width, sig)
         
@@ -226,6 +362,17 @@ class GXSTR:
     def format_r2(cls, real, buff, width, sig):
         """
         Convert a GX real to a string with given decimals.
+        
+        :param real:   Value to format
+        :param buff:   Resulting string
+        :param width:  Width of the field
+        :param sig:    Decimals
+        :type  real:   float
+        :type  buff:   str_ref
+        :type  width:  int
+        :type  sig:    int
+
+        .. versionadded:: 5.0
         """
         buff.value = gxapi_cy.WrapSTR.format_r2(GXContext._get_tls_geo(), real, buff.value.encode(), width, sig)
         
@@ -236,6 +383,19 @@ class GXSTR:
     def format_double(cls, real, buff, type, width, dec):
         """
         Convert a GX real to a string.
+        
+        :param real:   Value to format
+        :param buff:   Resulting string
+        :param type:   `GS_FORMATS`
+        :param width:  Width of the field
+        :param dec:    Significant digits/decimals
+        :type  real:   float
+        :type  buff:   str_ref
+        :type  type:   int
+        :type  width:  int
+        :type  dec:    int
+
+        .. versionadded:: 5.0
         """
         buff.value = gxapi_cy.WrapSTR.format_double(GXContext._get_tls_geo(), real, buff.value.encode(), type, width, dec)
         
@@ -246,6 +406,19 @@ class GXSTR:
     def format_time(cls, real, buff, width, deci, type):
         """
         Convert a GX real to a time string.
+        
+        :param real:   Time value in decimal hours to format
+        :param buff:   Resulting string
+        :param width:  Width of the field
+        :param deci:   Decimals to format with
+        :param type:   `TIME_FORMAT`
+        :type  real:   float
+        :type  buff:   str_ref
+        :type  width:  int
+        :type  deci:   int
+        :type  type:   int
+
+        .. versionadded:: 5.0
         """
         buff.value = gxapi_cy.WrapSTR.format_time(GXContext._get_tls_geo(), real, buff.value.encode(), width, deci, type)
         
@@ -260,6 +433,13 @@ class GXSTR:
     def escape(cls, str_val, opt):
         """
         Convert/replace escape sequences in strings.
+        
+        :param str_val:  String to modify
+        :param opt:      `STR_ESCAPE`
+        :type  str_val:  str_ref
+        :type  opt:      int
+
+        .. versionadded:: 5.0.6
 
         **Note:**
 
@@ -291,6 +471,14 @@ class GXSTR:
     def char_(cls, str_val):
         """
         Returns the ASCII value of a character.
+        
+        :param str_val:  String to return ascii value of first character
+        :type  str_val:  str
+
+        :returns:        ASCII value of first character in string.
+        :rtype:          int
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapSTR.char_(GXContext._get_tls_geo(), str_val.encode())
         return ret_val
@@ -301,6 +489,19 @@ class GXSTR:
     def char_n(cls, str_val, c, max):
         """
         Returns the ASCII value of the n'th character.
+        
+        :param str_val:  String
+        :param c:        Character to get
+        :param max:      Maximum string length (unused)
+        :type  str_val:  str
+        :type  c:        int
+        :type  max:      int
+
+        :returns:        ASCII value of n'th character in string.
+                         The first character is 0.
+        :rtype:          int
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapSTR.char_n(GXContext._get_tls_geo(), str_val.encode(), c, max)
         return ret_val
@@ -311,6 +512,17 @@ class GXSTR:
     def justify(cls, in_str, out_str, width, just):
         """
         Justify a string
+        
+        :param in_str:   String to justify
+        :param out_str:  Result string, can be same as input
+        :param width:    Justification width
+        :param just:     `STR_JUSTIFY`
+        :type  in_str:   str
+        :type  out_str:  str_ref
+        :type  width:    int
+        :type  just:     int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -326,6 +538,15 @@ class GXSTR:
     def replacei_match_string(cls, istr, old, new):
         """
         Replaces all occurances of match string by replacement string with case insensitive.
+        
+        :param istr:  Destination String
+        :param old:   Match string to replace
+        :param new:   Replacement string
+        :type  istr:  str_ref
+        :type  old:   str
+        :type  new:   str
+
+        .. versionadded:: 7.0.1
 
         **Note:**
 
@@ -342,6 +563,15 @@ class GXSTR:
     def replace_match_string(cls, istr, old, new):
         """
         Replaces all occurances of match string by replacement string with case sensitive.
+        
+        :param istr:  Destination String
+        :param old:   Match string to replace
+        :param new:   Replacement string
+        :type  istr:  str_ref
+        :type  old:   str
+        :type  new:   str
+
+        .. versionadded:: 7.0.1
 
         **Note:**
 
@@ -358,6 +588,15 @@ class GXSTR:
     def set_char_n(cls, str_val, c, ascii):
         """
         Set the n'th character of a string using an ASCII value
+        
+        :param str_val:  String
+        :param c:        Character to set
+        :param ascii:    ASCII value
+        :type  str_val:  str_ref
+        :type  c:        int
+        :type  ascii:    int
+
+        .. versionadded:: 5.1.4
         """
         str_val.value = gxapi_cy.WrapSTR.set_char_n(GXContext._get_tls_geo(), str_val.value.encode(), c, ascii)
         
@@ -368,6 +607,15 @@ class GXSTR:
     def split_string(cls, origstr, ch, split):
         """
         Splits a string in two on a character.
+        
+        :param origstr:  Original string
+        :param ch:       Split character (first character of string)
+        :param split:    Split string past split character.
+        :type  origstr:  str_ref
+        :type  ch:       str
+        :type  split:    str_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -391,6 +639,13 @@ class GXSTR:
     def strcat(cls, dest, orig):
         """
         This method contatinates a string.
+        
+        :param dest:  Destination String
+        :param orig:  String to add
+        :type  dest:  str_ref
+        :type  orig:  str
+
+        .. versionadded:: 5.0
         """
         dest.value = gxapi_cy.WrapSTR.strcat(GXContext._get_tls_geo(), dest.value.encode(), orig.encode())
         
@@ -401,6 +656,20 @@ class GXSTR:
     def strcmp(cls, first, second, mode):
         """
         This method compares two strings and returns these values
+        
+        :param first:   String A
+        :param second:  String B
+        :param mode:    `STR_CASE`
+        :type  first:   str
+        :type  second:  str
+        :type  mode:    int
+
+        :returns:       A  <  B           -1
+                        A ==  B            0
+                        A  >  B            1
+        :rtype:         int
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapSTR.strcmp(GXContext._get_tls_geo(), first.encode(), second.encode(), mode)
         return ret_val
@@ -411,6 +680,13 @@ class GXSTR:
     def strcpy(cls, dest, orig):
         """
         This method copies a string into another string.
+        
+        :param dest:  Destination string
+        :param orig:  Origin string
+        :type  dest:  str_ref
+        :type  orig:  str
+
+        .. versionadded:: 5.0
         """
         dest.value = gxapi_cy.WrapSTR.strcpy(GXContext._get_tls_geo(), dest.value.encode(), orig.encode())
         
@@ -421,6 +697,17 @@ class GXSTR:
     def stri_mask(cls, mask, test):
         """
         Case insensitive comparison of two strings.
+        
+        :param mask:  Mask
+        :param test:  String to test
+        :type  mask:  str
+        :type  test:  str
+
+        :returns:     0 if string does not match mask.
+                      1 if string matches mask.
+        :rtype:       int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -439,6 +726,15 @@ class GXSTR:
     def strins(cls, dest, ins, orig):
         """
         This method inserts a string at a specified position.
+        
+        :param dest:  Destination String
+        :param ins:   Insert Position
+        :param orig:  String to add
+        :type  dest:  str_ref
+        :type  ins:   int
+        :type  orig:  str
+
+        .. versionadded:: 5.1.8
 
         **Note:**
 
@@ -454,6 +750,14 @@ class GXSTR:
     def strlen(cls, str_val):
         """
         Returns the length of a string.
+        
+        :param str_val:  String to find the length of
+        :type  str_val:  str
+
+        :returns:        String length.
+        :rtype:          int
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapSTR.strlen(GXContext._get_tls_geo(), str_val.encode())
         return ret_val
@@ -464,6 +768,17 @@ class GXSTR:
     def str_mask(cls, mask, test):
         """
         Case sensitive comparison of two strings.
+        
+        :param mask:  Mask
+        :param test:  String to test
+        :type  mask:  str
+        :type  test:  str
+
+        :returns:     0 if string does not match mask.
+                      1 if string matches mask.
+        :rtype:       int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -482,6 +797,14 @@ class GXSTR:
     def str_min(cls, str_val):
         """
         Remove spaces and tabs and return length
+        
+        :param str_val:  String to find the min length of
+        :type  str_val:  str_ref
+
+        :returns:        String length.
+        :rtype:          int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -500,6 +823,14 @@ class GXSTR:
     def str_min2(cls, str_val):
         """
         Length less spaces and tabs, string unchanged.
+        
+        :param str_val:  String to find the min length of
+        :type  str_val:  str
+
+        :returns:        String length.
+        :rtype:          int
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapSTR.str_min2(GXContext._get_tls_geo(), str_val.encode())
         return ret_val
@@ -510,6 +841,22 @@ class GXSTR:
     def strncmp(cls, first, second, n_char, mode):
         """
         Compares two strings to a given number of characters.
+        
+        :param first:   String A
+        :param second:  String B
+        :param n_char:  Number of characters to compare
+        :param mode:    `STR_CASE`
+        :type  first:   str
+        :type  second:  str
+        :type  n_char:  int
+        :type  mode:    int
+
+        :returns:       A  <  B           -1
+                        A ==  B            0
+                        A  >  B            1
+        :rtype:         int
+
+        .. versionadded:: 5.0.5
         """
         ret_val = gxapi_cy.WrapSTR.strncmp(GXContext._get_tls_geo(), first.encode(), second.encode(), n_char, mode)
         return ret_val
@@ -520,6 +867,19 @@ class GXSTR:
     def str_str(cls, str_val, sub, mode):
         """
         Scan a string for the occurrence of a given substring.
+        
+        :param str_val:  String to scan
+        :param sub:      String to look for
+        :param mode:     `STR_CASE`
+        :type  str_val:  str
+        :type  sub:      str
+        :type  mode:     int
+
+        :returns:        -1 if the substring does not occur in the string
+                         Index of first matching location if found
+        :rtype:          int
+
+        .. versionadded:: 5.1.6
         """
         ret_val = gxapi_cy.WrapSTR.str_str(GXContext._get_tls_geo(), str_val.encode(), sub.encode(), mode)
         return ret_val
@@ -530,6 +890,17 @@ class GXSTR:
     def substr(cls, dest, orig, start, length):
         """
         Extract part of a string.
+        
+        :param dest:    Destination string
+        :param orig:    Origin string
+        :param start:   Start location
+        :param length:  Number of characters
+        :type  dest:    str_ref
+        :type  orig:    str
+        :type  start:   int
+        :type  length:  int
+
+        .. versionadded:: 6.2
 
         **Note:**
 
@@ -546,6 +917,11 @@ class GXSTR:
     def to_lower(cls, str_val):
         """
         Convert a string to lower case.
+        
+        :param str_val:  String
+        :type  str_val:  str_ref
+
+        .. versionadded:: 5.0
         """
         str_val.value = gxapi_cy.WrapSTR.to_lower(GXContext._get_tls_geo(), str_val.value.encode())
         
@@ -556,6 +932,11 @@ class GXSTR:
     def to_upper(cls, str_val):
         """
         Convert a string to upper case.
+        
+        :param str_val:  String
+        :type  str_val:  str_ref
+
+        .. versionadded:: 5.0
         """
         str_val.value = gxapi_cy.WrapSTR.to_upper(GXContext._get_tls_geo(), str_val.value.encode())
         
@@ -566,6 +947,13 @@ class GXSTR:
     def xyz_line(cls, line, xyz):
         """
         Make a valid XYZ line name from a valid `GXDB <geosoft.gxapi.GXDB>` line name.
+        
+        :param line:  Line name to convert
+        :param xyz:   Buffer to hold new line name
+        :type  line:  str
+        :type  xyz:   str_ref
+
+        .. versionadded:: 5.0
         """
         xyz.value = gxapi_cy.WrapSTR.xyz_line(GXContext._get_tls_geo(), line.encode(), xyz.value.encode())
         
@@ -576,6 +964,11 @@ class GXSTR:
     def make_alpha(cls, str_val):
         """
         Turns all non alpha-numeric characters into an _.
+        
+        :param str_val:  String to trim
+        :type  str_val:  str_ref
+
+        .. versionadded:: 5.1.8
 
         **Note:**
 
@@ -590,6 +983,13 @@ class GXSTR:
     def printf(cls, dest, mask):
         """
         Variable Argument PrintF function
+        
+        :param dest:  Destination string
+        :param mask:  Pattern string
+        :type  dest:  str_ref
+        :type  mask:  str
+
+        .. versionadded:: 7.3
         """
         dest.value = gxapi_cy.WrapSTR.printf(GXContext._get_tls_geo(), dest.value.encode(), mask.encode())
         
@@ -600,6 +1000,15 @@ class GXSTR:
     def replace_char(cls, istr, old, new):
         """
         Replaces characters in a string.
+        
+        :param istr:  String to modify
+        :param old:   Character to replace (first character only)
+        :param new:   Replacement character (first character only)
+        :type  istr:  str_ref
+        :type  old:   str
+        :type  new:   str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -615,6 +1024,15 @@ class GXSTR:
     def replace_char2(cls, istr, old, new):
         """
         Replaces characters in a string, supports simple removal.
+        
+        :param istr:  String to modify
+        :param old:   Character to replace (first character only)
+        :param new:   Replacement character (first character only)
+        :type  istr:  str_ref
+        :type  old:   str
+        :type  new:   str
+
+        .. versionadded:: 6.3
 
         **Note:**
 
@@ -631,6 +1049,15 @@ class GXSTR:
     def replace_multi_char(cls, istr, old, new):
         """
         Replaces multiple characters in a string.
+        
+        :param istr:  String to modify
+        :param old:   Characters to replace
+        :param new:   Replacement characters
+        :type  istr:  str_ref
+        :type  old:   str
+        :type  new:   str
+
+        .. versionadded:: 5.1.5
 
         **Note:**
 
@@ -646,6 +1073,13 @@ class GXSTR:
     def replace_non_ascii(cls, str_val, rpl):
         """
         Replace non-ASCII characters in a string.
+        
+        :param str_val:  String to modify
+        :param rpl:      Replacement character
+        :type  str_val:  str_ref
+        :type  rpl:      str
+
+        .. versionadded:: 6.0
 
         **Note:**
 
@@ -661,6 +1095,13 @@ class GXSTR:
     def set_char(cls, str_val, ascii):
         """
         Set a string's first character using an ASCII value of a character.
+        
+        :param str_val:  String
+        :param ascii:    ASCII value
+        :type  str_val:  str_ref
+        :type  ascii:    int
+
+        .. versionadded:: 5.1.4
         """
         str_val.value = gxapi_cy.WrapSTR.set_char(GXContext._get_tls_geo(), str_val.value.encode(), ascii)
         
@@ -671,6 +1112,11 @@ class GXSTR:
     def trim_quotes(cls, str_val):
         """
         Remove double quotes.
+        
+        :param str_val:  String to trim
+        :type  str_val:  str_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -692,6 +1138,13 @@ class GXSTR:
     def trim_space(cls, str_val, trim):
         """
         Remove leading and/or trailing whitespace.
+        
+        :param str_val:  String to trim
+        :param trim:     `STR_TRIM`
+        :type  str_val:  str_ref
+        :type  trim:     int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -708,6 +1161,11 @@ class GXSTR:
     def un_quote(cls, str_val):
         """
         Remove double quotes from string
+        
+        :param str_val:  String to unquote
+        :type  str_val:  str_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -731,6 +1189,17 @@ class GXSTR:
         """
         Generate a group name string
         from type string, database and channel(optional) strings..
+        
+        :param istr1:  Input type string (static part)
+        :param istr2:  Input db string
+        :param istr3:  Input ch string (could be 0 length)
+        :param ostr:   Output group name string
+        :type  istr1:  str
+        :type  istr2:  str
+        :type  istr3:  str
+        :type  ostr:   str_ref
+
+        .. versionadded:: 5.1.4
 
         **Note:**
 
@@ -758,6 +1227,16 @@ class GXSTR:
     def count_tokens(cls, str_val, delims):
         """
         Counts number of tokens.
+        
+        :param str_val:  String to tokenize
+        :param delims:   Delimiter characters
+        :type  str_val:  str
+        :type  delims:   str
+
+        :returns:        Number of tokens in the string.
+        :rtype:          int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -777,6 +1256,15 @@ class GXSTR:
     def get_token(cls, dest, orig, tok):
         """
         Get a token from a tokenized string.
+        
+        :param dest:  Destination string
+        :param orig:  Tokenized string
+        :param tok:   Token number wanted  (0 is the first!)
+        :type  dest:  str_ref
+        :type  orig:  str
+        :type  tok:   int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -802,6 +1290,22 @@ class GXSTR:
     def tokenize(cls, str_val, soft, hard, esc, quote):
         """
         Tokenize a string based on any characters.
+        
+        :param str_val:  `GXSTR <geosoft.gxapi.GXSTR>` - String containing token(s)
+        :param soft:     szSoft - Soft delimiters (spaces/tabs)
+        :param hard:     szHard - Hard delimiters (commas)
+        :param esc:      szEsc  - Escape delimiters (back-slash)
+        :param quote:    szQuote- Quote delimiters  (quote characters)
+        :type  str_val:  str_ref
+        :type  soft:     str
+        :type  hard:     str
+        :type  esc:      str
+        :type  quote:    str
+
+        :returns:        Number of tokens
+        :rtype:          int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -848,6 +1352,16 @@ class GXSTR:
     def tokens(cls, str_val, delims):
         """
         Tokenize a string
+        
+        :param str_val:  String to tokenize
+        :param delims:   Delimiter characters
+        :type  str_val:  str_ref
+        :type  delims:   str
+
+        :returns:        Number of tokens, maximum is 2048
+        :rtype:          int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -871,6 +1385,22 @@ class GXSTR:
     def tokens2(cls, str_val, soft, hard, esc, quote):
         """
         General tokenize a string
+        
+        :param str_val:  String to tokenize
+        :param soft:     szSoft - Soft delimiters (spaces/tabs)
+        :param hard:     szHard - Hard delimiters (commas)
+        :param esc:      szEsc  - Escape delimiters (back-slash)
+        :param quote:    szQuote- Quote delimiters  (quote characters)
+        :type  str_val:  str_ref
+        :type  soft:     str
+        :type  hard:     str
+        :type  esc:      str
+        :type  quote:    str
+
+        :returns:        Number of Tokens
+        :rtype:          int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -889,6 +1419,13 @@ class GXSTR:
     def parse_list(cls, str_val, gvv):
         """
         Parse a tokenized list to get a selection list.
+        
+        :param str_val:  String to be parsed
+        :param gvv:      Selection Buffer to fill
+        :type  str_val:  str
+        :type  gvv:      GXVV
+
+        .. versionadded:: 5.0.1
 
         **Note:**
 

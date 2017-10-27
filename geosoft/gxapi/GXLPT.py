@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -63,6 +62,12 @@ class GXLPT:
     def create(cls):
         """
         Creates a line pattern object with current default patterns.
+        
+
+        :returns:    `GXLPT <geosoft.gxapi.GXLPT>` Object
+        :rtype:      GXLPT
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapLPT.create(GXContext._get_tls_geo())
         return GXLPT(ret_val)
@@ -75,6 +80,11 @@ class GXLPT:
     def get_lst(self, lst):
         """
         Copies all pattern names into a `GXLST <geosoft.gxapi.GXLST>` object.
+        
+        :param lst:  `GXLST <geosoft.gxapi.GXLST>` Handle
+        :type  lst:  GXLST
+
+        .. versionadded:: 5.0
         """
         self._wrapper.get_lst(lst._wrapper)
         
@@ -85,6 +95,11 @@ class GXLPT:
     def get_standard_lst(self, lst):
         """
         Copies the six standard line types into a `GXLST <geosoft.gxapi.GXLST>` object.
+        
+        :param lst:  `GXLST <geosoft.gxapi.GXLST>` Handle
+        :type  lst:  GXLST
+
+        .. versionadded:: 9.0
 
         **Note:**
 

@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -61,6 +60,14 @@ class GXFLT:
     def create(cls, input):
         """
         Create a filter from a comma/space delimited string.
+        
+        :param input:  Filter string
+        :type  input:  str
+
+        :returns:      `GXFLT <geosoft.gxapi.GXFLT>` Object
+        :rtype:        int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -80,6 +87,14 @@ class GXFLT:
     def load(cls, file):
         """
         Load and return handle to a convolution filter.
+        
+        :param file:  Name of the filter File
+        :type  file:  str
+
+        :returns:     `GXFLT <geosoft.gxapi.GXFLT>` Object
+        :rtype:       int
+
+        .. versionadded:: 5.0
 
         **Note:**
 

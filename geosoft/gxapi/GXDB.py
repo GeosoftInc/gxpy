@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -71,6 +70,11 @@ class GXDB:
         This method makes a brand new database identical to the input
         Database in-size.
         The database is opened in ReadWrite Mode.
+        
+        :param file:  Name of the Database File to Create
+        :type  file:  str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.create_dup(file.encode())
         
@@ -83,6 +87,13 @@ class GXDB:
         This method makes a brand new database identical to the input
         Database in-size except it changes the compression.
         The database is opened in ReadWrite Mode.
+        
+        :param file:   Name of the Database File to Create
+        :param level:  `DB_COMP`
+        :type  file:   str
+        :type  level:  int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.create_dup_comp(file.encode(), level)
         
@@ -95,6 +106,16 @@ class GXDB:
         Create a new Symbol by duplicating an existing symbol.
         exactly the same type but in output database. The symbol must
         not already exist in the output database.
+        
+        :param dbo:   Database output
+        :param symb:  Symbol Handle to duplicate
+        :type  dbo:   GXDB
+        :type  symb:  int
+
+        :returns:     New Symbol Handle
+        :rtype:       int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.dup_symb_across(dbo._wrapper, symb)
         return ret_val
@@ -105,6 +126,15 @@ class GXDB:
     def easy_maker_symb(self, symb, name, groups):
         """
         Adds a Maker to the database symbol based on current GX
+        
+        :param symb:    Symbol to create maker for
+        :param name:    Maker name, used in menu prompt
+        :param groups:  INI groups (terminate each with a ";")
+        :type  symb:    int
+        :type  name:    str
+        :type  groups:  str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.easy_maker_symb(symb, name.encode(), groups.encode())
         
@@ -115,6 +145,17 @@ class GXDB:
     def get_chan_str(self, line, chan, ind, str_val):
         """
         Get individual elements in a channel.
+        
+        :param line:     Line
+        :param chan:     Channel
+        :param ind:      Index
+        :param str_val:  String
+        :type  line:     int
+        :type  chan:     int
+        :type  ind:      int
+        :type  str_val:  str_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -130,6 +171,15 @@ class GXDB:
     def get_chan_vv(self, line, chan, vv):
         """
         Place the contents of a channel in a `GXVV <geosoft.gxapi.GXVV>`.
+        
+        :param line:  Line
+        :param chan:  Channel
+        :param vv:    `GXVV <geosoft.gxapi.GXVV>` in which to place the data
+        :type  line:  int
+        :type  chan:  int
+        :type  vv:    GXVV
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -151,6 +201,15 @@ class GXDB:
         Read a channel into a `GXVV <geosoft.gxapi.GXVV>`. If the channel is a `GXVA <geosoft.gxapi.GXVA>` channel it is
         treaded as a `GXVV <geosoft.gxapi.GXVV>` channel with multiple values per fid and the FID expation
         is set to the array size.
+        
+        :param line:  Line
+        :param chan:  Channel
+        :param vv:    `GXVV <geosoft.gxapi.GXVV>` in which to place the data
+        :type  line:  int
+        :type  chan:  int
+        :type  vv:    GXVV
+
+        .. versionadded:: 6.4
 
         **Note:**
 
@@ -170,6 +229,13 @@ class GXDB:
     def get_ipj(self, ch, ipj):
         """
         Get georeference information in an `GXIPJ <geosoft.gxapi.GXIPJ>`.
+        
+        :param ch:   Symbol
+        :param ipj:  `GXIPJ <geosoft.gxapi.GXIPJ>` to fill in
+        :type  ch:   int
+        :type  ipj:  GXIPJ
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -185,6 +251,13 @@ class GXDB:
     def get_itr(self, ch, itr):
         """
         Get `GXITR <geosoft.gxapi.GXITR>` for a channel.
+        
+        :param ch:   Channel
+        :param itr:  `GXITR <geosoft.gxapi.GXITR>` to fill in
+        :type  ch:   int
+        :type  itr:  GXITR
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -201,6 +274,13 @@ class GXDB:
     def get_reg_symb(self, symb, reg):
         """
         Get a `GXREG <geosoft.gxapi.GXREG>` object from a symbol
+        
+        :param symb:  Symbol, `NULLSYMB <geosoft.gxapi.NULLSYMB>` for the database `GXREG <geosoft.gxapi.GXREG>`
+        :param reg:   `GXREG <geosoft.gxapi.GXREG>` to copy data into
+        :type  symb:  int
+        :type  reg:   GXREG
+
+        .. versionadded:: 5.0
         """
         self._wrapper.get_reg_symb(symb, reg._wrapper)
         
@@ -211,6 +291,15 @@ class GXDB:
     def get_reg_symb_setting(self, symb, name, setting):
         """
         Get a `GXREG <geosoft.gxapi.GXREG>` string setting from a symbol reg
+        
+        :param symb:     Symbol, `NULLSYMB <geosoft.gxapi.NULLSYMB>` for the database `GXREG <geosoft.gxapi.GXREG>`
+        :param name:     `GXREG <geosoft.gxapi.GXREG>` entry name
+        :param setting:  Returned setting
+        :type  symb:     int
+        :type  name:     str
+        :type  setting:  str_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -241,6 +330,19 @@ class GXDB:
     def get_va_chan_vv(self, line, chan, vv, offset, items):
         """
         Place the contents of a specific part of a channel in a `GXVV <geosoft.gxapi.GXVV>`.
+        
+        :param line:    Line
+        :param chan:    Channel
+        :param vv:      `GXVV <geosoft.gxapi.GXVV>` in which to place the data
+        :param offset:  Offset
+        :param items:   Number to Write
+        :type  line:    int
+        :type  chan:    int
+        :type  vv:      GXVV
+        :type  offset:  int
+        :type  items:   int
+
+        .. versionadded:: 5.1.1
 
         **Note:**
 
@@ -260,6 +362,12 @@ class GXDB:
     def blobs_max(self):
         """
         Gets Maximum Number of Blobs in the Database
+        
+
+        :returns:    Maximum Number of Blobs in the Database
+        :rtype:      int
+
+        .. versionadded:: 5.1.1
         """
         ret_val = self._wrapper.blobs_max()
         return ret_val
@@ -270,6 +378,12 @@ class GXDB:
     def chans_max(self):
         """
         Gets Maximum Number of Channels in the Database
+        
+
+        :returns:    Maximum Number of Channels in the Database
+        :rtype:      int
+
+        .. versionadded:: 5.1.1
         """
         ret_val = self._wrapper.chans_max()
         return ret_val
@@ -280,6 +394,15 @@ class GXDB:
     def format_chan(self, chan, val, str_val):
         """
         Format a real value based on a channel format.
+        
+        :param chan:     Channel handle
+        :param val:      Value to format
+        :param str_val:  String
+        :type  chan:     int
+        :type  val:      float
+        :type  str_val:  str_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -296,6 +419,14 @@ class GXDB:
         """
         This method Gets a channel's array size for a
         given channel handle.
+        
+        :param chan:  Channel handle
+        :type  chan:  int
+
+        :returns:     Channel type
+        :rtype:       int
+
+        .. versionadded:: 6.0.1
         """
         ret_val = self._wrapper.get_chan_array_size(chan)
         return ret_val
@@ -306,6 +437,13 @@ class GXDB:
     def get_chan_class(self, chan, cl):
         """
         This method gets a channel's label
+        
+        :param chan:  Channel handle
+        :param cl:    Returned class into
+        :type  chan:  int
+        :type  cl:    str_ref
+
+        .. versionadded:: 5.1.8
 
         **Note:**
 
@@ -324,6 +462,14 @@ class GXDB:
         """
         This method gets a channel's number of digits displayed
         to the right of the decimal point.
+        
+        :param chan:  Channel handle
+        :type  chan:  int
+
+        :returns:     Number of digits displayed to right of decimal
+        :rtype:       int
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -339,10 +485,18 @@ class GXDB:
         """
         This method Gets a channel's display format for a
         given channel handle.
+        
+        :param chan:  Channel handle
+        :type  chan:  int
+
+        :returns:     Channel display format
+        :rtype:       int
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
-        The returned format is one of the `DB_CHAN_FORMAT_`.
+        The returned format is one of the `DB_CHAN_FORMAT`.
         The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
         ret_val = self._wrapper.get_chan_format(chan)
@@ -354,6 +508,19 @@ class GXDB:
     def get_chan_int(self, line, chan, ind):
         """
         Get individual elements in a channel.
+        
+        :param line:  Line
+        :param chan:  Channel
+        :param ind:   Index
+        :type  line:  int
+        :type  chan:  int
+        :type  ind:   int
+
+        :returns:     Value, or dummy if out of range.
+                      For settings, terminates if error.
+        :rtype:       int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -369,6 +536,13 @@ class GXDB:
     def get_chan_label(self, chan, label):
         """
         This method gets a channel's label
+        
+        :param chan:   Channel handle
+        :param label:  Returned label into
+        :type  chan:   int
+        :type  label:  str_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -387,6 +561,13 @@ class GXDB:
         """
         This method Gets a channel's name for a
         given channel handle.
+        
+        :param chan:  Channel handle
+        :param name:  String to place name into
+        :type  chan:  int
+        :type  name:  str_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -401,6 +582,14 @@ class GXDB:
     def get_chan_protect(self, chan):
         """
         This method gets a channel's read-only protection status.
+        
+        :param chan:  Channel handle
+        :type  chan:  int
+
+        :returns:     `DB_CHAN_PROTECTION`
+        :rtype:       int
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -416,10 +605,18 @@ class GXDB:
         """
         This method Gets a channel's type for a
         given channel handle.
+        
+        :param chan:  Channel handle
+        :type  chan:  int
+
+        :returns:     Channel type
+        :rtype:       int
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
-        The type returned is one of the `DB_CATEGORY_CHAN_`.
+        The type returned is one of the `DB_CATEGORY_CHAN`.
         Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL
         or string types.
         The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
@@ -433,6 +630,13 @@ class GXDB:
     def get_chan_unit(self, chan, unit):
         """
         This method Gets a channel's unit
+        
+        :param chan:  Channel handle
+        :param unit:  String to place unit into
+        :type  chan:  int
+        :type  unit:  str_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -450,6 +654,14 @@ class GXDB:
         """
         This method gets a channel's display width for a
         given channel handle.
+        
+        :param chan:  Channel handle
+        :type  chan:  int
+
+        :returns:     Channel display width
+        :rtype:       int
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -464,6 +676,13 @@ class GXDB:
     def get_name(self, name, psz_name):
         """
         Gets a name from the database.
+        
+        :param name:      `DB_NAME`
+        :param psz_name:  Name returned
+        :type  name:      int
+        :type  psz_name:  str_ref
+
+        .. versionadded:: 5.0
         """
         psz_name.value = self._wrapper.get_name(name, psz_name.value.encode())
         
@@ -474,6 +693,16 @@ class GXDB:
     def get_reg_symb_setting_int(self, symb, name):
         """
         Get an integer-valued `GXREG <geosoft.gxapi.GXREG>` setting from a symbol reg
+        
+        :param symb:  Symbol, `NULLSYMB <geosoft.gxapi.NULLSYMB>` for the database `GXREG <geosoft.gxapi.GXREG>`
+        :param name:  `GXREG <geosoft.gxapi.GXREG>` entry name
+        :type  symb:  int
+        :type  name:  str
+
+        :returns:     The setting, or `iDUMMY <geosoft.gxapi.iDUMMY>` if not found or not convertable.
+        :rtype:       int
+
+        .. versionadded:: 6.2
 
         **Note:**
 
@@ -493,6 +722,13 @@ class GXDB:
     def get_symb_name(self, symb, name):
         """
         This method gets a symbol's name
+        
+        :param symb:  Symbol handle
+        :param name:  String to place name into
+        :type  symb:  int
+        :type  name:  str_ref
+
+        .. versionadded:: 6.1
 
         **Note:**
 
@@ -508,6 +744,12 @@ class GXDB:
     def have_itr(self, ch):
         """
         Returns TRUE if channel has an `GXITR <geosoft.gxapi.GXITR>`.
+        
+        :param ch:  Channel
+        :type  ch:  int
+        :rtype:      int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -526,6 +768,16 @@ class GXDB:
     def coord_pair(self, chan, pair):
         """
         Get the matching coordinate pair of a channel.
+        
+        :param chan:  Channel name
+        :param pair:  String in which to place paired channel name
+        :type  chan:  str
+        :type  pair:  str_ref
+
+        :returns:     `DB_COORDPAIR`
+        :rtype:       int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -542,6 +794,12 @@ class GXDB:
     def lines_max(self):
         """
         Gets Maximum number of lines in the database
+        
+
+        :returns:    Maximum number of lines in the database
+        :rtype:      int
+
+        .. versionadded:: 5.1.1
         """
         ret_val = self._wrapper.lines_max()
         return ret_val
@@ -552,6 +810,12 @@ class GXDB:
     def users_max(self):
         """
         Gets Maximum number of Users
+        
+
+        :returns:    Maximum number of Users
+        :rtype:      int
+
+        .. versionadded:: 5.1.1
         """
         ret_val = self._wrapper.users_max()
         return ret_val
@@ -562,6 +826,17 @@ class GXDB:
     def maker_symb(self, symb, prog, name, groups):
         """
         Adds a Maker to the database symbol
+        
+        :param symb:    Symbol to create maker for
+        :param prog:    Name of program
+        :param name:    Maker name, used in menu prompt
+        :param groups:  INI groups (terminate each with a ";")
+        :type  symb:    int
+        :type  prog:    str
+        :type  name:    str
+        :type  groups:  str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.maker_symb(symb, prog.encode(), name.encode(), groups.encode())
         
@@ -572,6 +847,15 @@ class GXDB:
     def put_chan_vv(self, line, chan, vv):
         """
         Place the contents of a `GXVV <geosoft.gxapi.GXVV>` in a channel.
+        
+        :param line:  Line
+        :param chan:  Channel
+        :param vv:    `GXVV <geosoft.gxapi.GXVV>` from which to get the data
+        :type  line:  int
+        :type  chan:  int
+        :type  vv:    GXVV
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -593,6 +877,19 @@ class GXDB:
     def put_va_chan_vv(self, line, chan, vv, offset, items):
         """
         Place the contents of a `GXVV <geosoft.gxapi.GXVV>` at a specific part of a channel.
+        
+        :param line:    Line
+        :param chan:    Channel
+        :param vv:      `GXVV <geosoft.gxapi.GXVV>` from which to get the data
+        :param offset:  Offset
+        :param items:   Number to Write
+        :type  line:    int
+        :type  chan:    int
+        :type  vv:      GXVV
+        :type  offset:  int
+        :type  items:   int
+
+        .. versionadded:: 5.1.1
 
         **Note:**
 
@@ -612,6 +909,13 @@ class GXDB:
     def read_blob_bf(self, symb, bf):
         """
         Read a blob from a database into a file.
+        
+        :param symb:  Blob (`DB_SYMB_BLOB <geosoft.gxapi.DB_SYMB_BLOB>`) to read into `GXBF <geosoft.gxapi.GXBF>` from database
+        :param bf:    File to read blob from
+        :type  symb:  int
+        :type  bf:    GXBF
+
+        .. versionadded:: 5.0
         """
         self._wrapper.read_blob_bf(symb, bf._wrapper)
         
@@ -622,6 +926,19 @@ class GXDB:
     def get_chan_double(self, line, chan, ind):
         """
         Get individual elements in a channel.
+        
+        :param line:  Line
+        :param chan:  Channel
+        :param ind:   Index
+        :type  line:  int
+        :type  chan:  int
+        :type  ind:   int
+
+        :returns:     Value, or dummy if out of range.
+                      For settings, terminates if error.
+        :rtype:       float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -637,6 +954,16 @@ class GXDB:
     def get_reg_symb_setting_double(self, symb, name):
         """
         Get a real-valued `GXREG <geosoft.gxapi.GXREG>` setting from a symbol reg
+        
+        :param symb:  Symbol, `NULLSYMB <geosoft.gxapi.NULLSYMB>` for the database `GXREG <geosoft.gxapi.GXREG>`
+        :param name:  `GXREG <geosoft.gxapi.GXREG>` entry name
+        :type  symb:  int
+        :type  name:  str
+
+        :returns:     The setting, or `rDUMMY <geosoft.gxapi.rDUMMY>` if not found or not convertable.
+        :rtype:       float
+
+        .. versionadded:: 6.2
 
         **Note:**
 
@@ -656,6 +983,11 @@ class GXDB:
     def set_all_chan_protect(self, prot):
         """
         This method sets all the channels' read-only protection status.
+        
+        :param prot:  `DB_CHAN_PROTECTION`
+        :type  prot:  int
+
+        .. versionadded:: 7.0
 
         **Note:**
 
@@ -673,6 +1005,13 @@ class GXDB:
     def set_chan_class(self, chan, cl):
         """
         Set a channel class
+        
+        :param chan:  Channel handle
+        :param cl:    Class
+        :type  chan:  int
+        :type  cl:    str
+
+        .. versionadded:: 5.1.8
 
         **Note:**
 
@@ -690,6 +1029,13 @@ class GXDB:
         """
         This method sets a channel's number of digits displayed
         to the right of the decimal point.
+        
+        :param chan:  Channel handle
+        :param dec:   Number of digits to display right of the decimal
+        :type  chan:  int
+        :type  dec:   int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -705,6 +1051,13 @@ class GXDB:
     def set_chan_format(self, chan, format):
         """
         This method sets a channel's display format.
+        
+        :param chan:    Channel handle
+        :param format:  `DB_CHAN_FORMAT`
+        :type  chan:    int
+        :type  format:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -719,6 +1072,17 @@ class GXDB:
     def set_chan_int(self, line, chan, ind, val):
         """
         Set individual elements in a channel.
+        
+        :param line:  Line
+        :param chan:  Channel
+        :param ind:   Index
+        :param val:   Value
+        :type  line:  int
+        :type  chan:  int
+        :type  ind:   int
+        :type  val:   int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -734,6 +1098,13 @@ class GXDB:
     def set_chan_label(self, chan, label):
         """
         Set a channel label
+        
+        :param chan:   Channel handle
+        :param label:  Label
+        :type  chan:   int
+        :type  label:  str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -750,6 +1121,13 @@ class GXDB:
     def set_chan_name(self, chan, name):
         """
         This method sets a channel's name.
+        
+        :param chan:  Channel handle
+        :param name:  String to set channel name to
+        :type  chan:  int
+        :type  name:  str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -765,6 +1143,13 @@ class GXDB:
         """
         This method sets a channel's read-only protection
         status.
+        
+        :param chan:  Channel handle
+        :param prot:  `DB_CHAN_PROTECTION`
+        :type  chan:  int
+        :type  prot:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -781,6 +1166,17 @@ class GXDB:
     def set_chan_double(self, line, chan, ind, val):
         """
         Set individual elements in a channel.
+        
+        :param line:  Line
+        :param chan:  Channel
+        :param ind:   Index
+        :param val:   Value
+        :type  line:  int
+        :type  chan:  int
+        :type  ind:   int
+        :type  val:   float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -796,6 +1192,17 @@ class GXDB:
     def set_chan_str(self, line, chan, ind, str_val):
         """
         Set individual elements in a channel.
+        
+        :param line:     Line
+        :param chan:     Channel
+        :param ind:      Index
+        :param str_val:  String
+        :type  line:     int
+        :type  chan:     int
+        :type  ind:      int
+        :type  str_val:  str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -812,6 +1219,13 @@ class GXDB:
         """
         This method sets a channel's unit for a
         given channel handle.
+        
+        :param chan:  Channel handle
+        :param unit:  String to put channel unit
+        :type  chan:  int
+        :type  unit:  str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -826,6 +1240,13 @@ class GXDB:
     def set_chan_width(self, chan, width):
         """
         This method sets a channel's display width
+        
+        :param chan:   Channel handle
+        :param width:  Display width
+        :type  chan:   int
+        :type  width:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -841,6 +1262,14 @@ class GXDB:
     def set_ipj(self, ch1, ch2, ipj):
         """
         Set a `GXREG <geosoft.gxapi.GXREG>` object into a symbol
+        
+        :param ch1:  X channel
+        :param ch2:  Y channel
+        :type  ch1:  int
+        :type  ch2:  int
+        :type  ipj:  GXIPJ
+
+        .. versionadded:: 5.0
         """
         self._wrapper.set_ipj(ch1, ch2, ipj._wrapper)
         
@@ -851,6 +1280,13 @@ class GXDB:
     def set_itr(self, ch, itr):
         """
         Set `GXITR <geosoft.gxapi.GXITR>` for a channel.
+        
+        :param ch:   Channel
+        :param itr:  `GXITR <geosoft.gxapi.GXITR>` to fill in
+        :type  ch:   int
+        :type  itr:  GXITR
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -866,6 +1302,13 @@ class GXDB:
     def set_reg_symb(self, symb, reg):
         """
         Set a `GXREG <geosoft.gxapi.GXREG>` object into a symbol
+        
+        :param symb:  Symbol, `NULLSYMB <geosoft.gxapi.NULLSYMB>` for the database `GXREG <geosoft.gxapi.GXREG>`
+        :param reg:   `GXREG <geosoft.gxapi.GXREG>` to set into Blob
+        :type  symb:  int
+        :type  reg:   GXREG
+
+        .. versionadded:: 5.0
         """
         self._wrapper.set_reg_symb(symb, reg._wrapper)
         
@@ -876,6 +1319,15 @@ class GXDB:
     def set_reg_symb_setting(self, symb, name, setting):
         """
         Set a `GXREG <geosoft.gxapi.GXREG>` string setting in a symbol reg
+        
+        :param symb:     Symbol, `NULLSYMB <geosoft.gxapi.NULLSYMB>` for the database `GXREG <geosoft.gxapi.GXREG>`
+        :param name:     `GXREG <geosoft.gxapi.GXREG>` entry name
+        :param setting:  Setting
+        :type  symb:     int
+        :type  name:     str
+        :type  setting:  str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -906,6 +1358,13 @@ class GXDB:
     def write_blob_bf(self, symb, bf):
         """
         Write a blob from a file into a database.
+        
+        :param symb:  Blob (`DB_SYMB_BLOB <geosoft.gxapi.DB_SYMB_BLOB>`) to write into database from file
+        :param bf:    File to write blob into
+        :type  symb:  int
+        :type  bf:    GXBF
+
+        .. versionadded:: 5.0
         """
         self._wrapper.write_blob_bf(symb, bf._wrapper)
         
@@ -920,6 +1379,9 @@ class GXDB:
     def commit(self):
         """
         This method forces all changes to the database to be saved.
+        
+
+        .. versionadded:: 5.0
         """
         self._wrapper.commit()
         
@@ -931,6 +1393,9 @@ class GXDB:
         """
         Removes any extra space from the database. This will
         reduce the database to its smallest size.
+        
+
+        .. versionadded:: 5.1.1
         """
         self._wrapper.compact()
         
@@ -942,6 +1407,25 @@ class GXDB:
         """
         This method makes a brand new database of the specified size.
         The database is opened in ReadWrite Mode.
+        
+        :param file:      Name of the Database File to Create
+        :param lines:     Max Lines in the Database    (200)
+        :param chans:     Max Channels in the Database (50)
+        :param blobs:     Max Blobs in the Database    (Channels+Lines+20)
+        :param users:     Max Users in the Database    (10)
+        :param cache:     Number of Erase Caches       (100)
+        :param super:     Name of the Super User       "SUPER"
+        :param password:  Password of the Super User   ""
+        :type  file:      str
+        :type  lines:     int
+        :type  chans:     int
+        :type  blobs:     int
+        :type  users:     int
+        :type  cache:     int
+        :type  super:     str
+        :type  password:  str
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapDB.create(GXContext._get_tls_geo(), file.encode(), lines, chans, blobs, users, cache, super.encode(), password.encode())
         
@@ -954,6 +1438,29 @@ class GXDB:
         This method makes a brand new database of the specified size.
         The database is opened in ReadWrite Mode. Also allows you to
         set paging size and the Compression Level.
+        
+        :param file:      Name of the Database File to Create
+        :param lines:     Max Lines in the Database    (200)
+        :param chans:     Max Channels in the Database (50)
+        :param blobs:     Max Blobs in the Database    (Channels+Lines+20)
+        :param users:     Max Users in the Database    (10)
+        :param cache:     Number of Erase Caches       (100)
+        :param super:     Name of the Super User       "SUPER"
+        :param password:  Password of the Super User   ""
+        :param page:      Page Size Must be (64,128,256,512,1024,2048,4096) normally 1024
+        :param level:     `DB_COMP`
+        :type  file:      str
+        :type  lines:     int
+        :type  chans:     int
+        :type  blobs:     int
+        :type  users:     int
+        :type  cache:     int
+        :type  super:     str
+        :type  password:  str
+        :type  page:      int
+        :type  level:     int
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapDB.create_comp(GXContext._get_tls_geo(), file.encode(), lines, chans, blobs, users, cache, super.encode(), password.encode(), page, level)
         
@@ -966,6 +1473,27 @@ class GXDB:
         This method makes a brand new database of the specified size.
         The database is opened in ReadWrite Mode. Also allows you to
         set paging size.
+        
+        :param file:      Name of the Database File to Create
+        :param lines:     Max Lines in the Database    (200)
+        :param chans:     Max Channels in the Database (50)
+        :param blobs:     Max Blobs in the Database    (Channels+Lines+20)
+        :param users:     Max Users in the Database    (10)
+        :param cache:     Number of Erase Caches       (100)
+        :param super:     Name of the Super User       "SUPER"
+        :param password:  Password of the Super User   ""
+        :param page:      Page Size Must be (64,128,256,512,1024,2048,4096) normally 1024
+        :type  file:      str
+        :type  lines:     int
+        :type  chans:     int
+        :type  blobs:     int
+        :type  users:     int
+        :type  cache:     int
+        :type  super:     str
+        :type  password:  str
+        :type  page:      int
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapDB.create_ex(GXContext._get_tls_geo(), file.encode(), lines, chans, blobs, users, cache, super.encode(), password.encode(), page)
         
@@ -976,6 +1504,9 @@ class GXDB:
     def del_line0(self):
         """
         Delete Empty Line 0.
+        
+
+        .. versionadded:: 7.0
 
         **Note:**
 
@@ -1001,6 +1532,9 @@ class GXDB:
         """
         This method discards all changes made to the database since
         the last commit or opening.
+        
+
+        .. versionadded:: 5.0
         """
         self._wrapper.discard()
         
@@ -1011,6 +1545,21 @@ class GXDB:
     def grow(cls, file, lines, chans, blobs, users, cache):
         """
         Enlarges the database.
+        
+        :param file:   Name of the Database File to Create
+        :param lines:  Max Lines in the Database    (200)
+        :param chans:  Max Channels in the Database (50)
+        :param blobs:  Max Blobs in the Database    (Channels+Lines+20)
+        :param users:  Max Users in the Database    (10)
+        :param cache:  Number of Erase Caches       (100)
+        :type  file:   str
+        :type  lines:  int
+        :type  chans:  int
+        :type  blobs:  int
+        :type  users:  int
+        :type  cache:  int
+
+        .. versionadded:: 5.1.1
         """
         gxapi_cy.WrapDB.grow(GXContext._get_tls_geo(), file.encode(), lines, chans, blobs, users, cache)
         
@@ -1021,6 +1570,18 @@ class GXDB:
     def can_open(cls, file, user, password):
         """
         This method checks whether it is possible to open a database.
+        
+        :param file:      Name of the Database File to Open
+        :param user:      Name of the user ("SUPER" normally)
+        :param password:  Password of the user ("" normally)
+        :type  file:      str
+        :type  user:      str
+        :type  password:  str
+
+        :returns:         `GEO_BOOL`
+        :rtype:           int
+
+        .. versionadded:: 6.1
 
         **Note:**
 
@@ -1040,6 +1601,18 @@ class GXDB:
     def can_open_read_only(cls, file, user, password):
         """
         This method checks whether it is possible to open a database in read-only mode.
+        
+        :param file:      Name of the Database File to Open
+        :param user:      Name of the user ("SUPER" normally)
+        :param password:  Password of the user ("" normally)
+        :type  file:      str
+        :type  user:      str
+        :type  password:  str
+
+        :returns:         `GEO_BOOL`
+        :rtype:           int
+
+        .. versionadded:: 6.4.2
 
         **Note:**
 
@@ -1060,6 +1633,13 @@ class GXDB:
         """
         Does an integrity check of the data in the database to
         ensure it is valid.
+        
+
+        :returns:    0 - Ok
+                    1 - Invalid Blocks in the Database
+        :rtype:      int
+
+        .. versionadded:: 6.0.1
         """
         ret_val = self._wrapper.check()
         return ret_val
@@ -1070,6 +1650,12 @@ class GXDB:
     def is_empty(self):
         """
         See if a database contains only empty lines.
+        
+
+        :returns:    1 if the database contains only empty lines.
+        :rtype:      int
+
+        .. versionadded:: 6.1
 
         **Note:**
 
@@ -1086,6 +1672,14 @@ class GXDB:
     def is_line_empty(self, symb):
         """
         See if a specific line in the database is empty.
+        
+        :param symb:  Line symbol
+        :type  symb:  int
+
+        :returns:     1 if the database contains only empty lines.
+        :rtype:       int
+
+        .. versionadded:: 6.1
         """
         ret_val = self._wrapper.is_line_empty(symb)
         return ret_val
@@ -1096,6 +1690,18 @@ class GXDB:
     def open(cls, file, user, password):
         """
         This method opens a database.
+        
+        :param file:      Name of the Database File to Open
+        :param user:      Name of the user ("SUPER" normally)
+        :param password:  Password of the user ("" normally)
+        :type  file:      str
+        :type  user:      str
+        :type  password:  str
+
+        :returns:         `GXDB <geosoft.gxapi.GXDB>` Object
+        :rtype:           GXDB
+
+        .. versionadded:: 5.0
 
         .. seealso::
 
@@ -1110,6 +1716,18 @@ class GXDB:
     def open_read_only(cls, file, user, password):
         """
         This method opens a database.
+        
+        :param file:      Name of the Database File to Open
+        :param user:      Name of the user ("SUPER" normally)
+        :param password:  Password of the user ("" normally)
+        :type  file:      str
+        :type  user:      str
+        :type  password:  str
+
+        :returns:         `GXDB <geosoft.gxapi.GXDB>` Object
+        :rtype:           GXDB
+
+        .. versionadded:: 6.4.2
 
         **Note:**
 
@@ -1129,6 +1747,11 @@ class GXDB:
     def repair(cls, file):
         """
         Cleans the database by removing invalid blocks
+        
+        :param file:  Name of the Database File to Create
+        :type  file:  str
+
+        .. versionadded:: 5.1.1
         """
         gxapi_cy.WrapDB.repair(GXContext._get_tls_geo(), file.encode())
         
@@ -1139,6 +1762,9 @@ class GXDB:
     def sync(self):
         """
         Syncronize the Metadata from this database to the XML
+        
+
+        .. versionadded:: 7.0
         """
         self._wrapper.sync()
         
@@ -1155,6 +1781,15 @@ class GXDB:
         This method copies the data from one channel to another on
         on the specified line. The data is converted if such
         conversion in neccessary.
+        
+        :param line:    Line
+        :param i_chan:  Channel to Copy Data From
+        :param o_chan:  Channel to Copy Data To
+        :type  line:    int
+        :type  i_chan:  int
+        :type  o_chan:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1170,6 +1805,15 @@ class GXDB:
     def get_col_va(self, chan):
         """
         Returns the # of columns in a `GXVA <geosoft.gxapi.GXVA>` channel.
+        
+        :param chan:  Channel (read locked)
+        :type  chan:  int
+
+        :returns:     # of columns
+                      0 if error
+        :rtype:       int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1184,6 +1828,16 @@ class GXDB:
     def get_channel_length(self, line, chan):
         """
         Returns the # of elements in a channel.
+        
+        :param line:  Line    (read or write locked)
+        :param chan:  Channel (read or write locked)
+        :type  line:  int
+        :type  chan:  int
+
+        :returns:     # of elements
+        :rtype:       int
+
+        .. versionadded:: 8.1
 
         **Note:**
 
@@ -1200,6 +1854,16 @@ class GXDB:
         """
         This method returns the fiducial increment value of a
         specified Channel.
+        
+        :param line:  Line (read or write locked)
+        :param chan:  Channel (read locked)
+        :type  line:  int
+        :type  chan:  int
+
+        :returns:     Fiducial Start.
+        :rtype:       float
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.get_fid_incr(line, chan)
         return ret_val
@@ -1211,6 +1875,16 @@ class GXDB:
         """
         This method returns the fiducial start value of a
         specified Channel.
+        
+        :param line:  Line (read or write locked)
+        :param chan:  Channel (read locked)
+        :type  line:  int
+        :type  chan:  int
+
+        :returns:     Fiducial Start.
+        :rtype:       float
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.get_fid_start(line, chan)
         return ret_val
@@ -1222,6 +1896,17 @@ class GXDB:
         """
         This method allows the user to set the fiducial start and
         increment of a channel. The Increment should never be 0.
+        
+        :param line:   Line (read or write locked)
+        :param chan:   Channel to set fiducial (write locked)
+        :param start:  Start Fiducial Value
+        :param incr:   Increment Fiducial Value
+        :type  line:   int
+        :type  chan:   int
+        :type  start:  float
+        :type  incr:   float
+
+        .. versionadded:: 5.0
         """
         self._wrapper.set_fid(line, chan, start, incr)
         
@@ -1232,6 +1917,19 @@ class GXDB:
     def window_va_ch(self, line, i_ch, o_ch, col_s, col_e):
         """
         Copy a window of data in a channel into a new channel
+        
+        :param line:   Line symbol
+        :param i_ch:   Original channel
+        :param o_ch:   Output channel
+        :param col_s:  Start column number to copy, 0 is first column
+        :param col_e:  End column number to copy
+        :type  line:   int
+        :type  i_ch:   int
+        :type  o_ch:   int
+        :type  col_s:  int
+        :type  col_e:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1249,6 +1947,17 @@ class GXDB:
     def window_va_ch2(self, line, i_ch, o_ch, gvv):
         """
         Copy a windowed version of data in a channel into a new channel
+        
+        :param line:  Line symbol
+        :param i_ch:  Original channel
+        :param o_ch:  Output channel
+        :param gvv:   `GXVV <geosoft.gxapi.GXVV>` containing 0/1 values for each channel.
+        :type  line:  int
+        :type  i_ch:  int
+        :type  o_ch:  int
+        :type  gvv:   GXVV
+
+        .. versionadded:: 5.0.1
 
         **Note:**
 
@@ -1271,6 +1980,13 @@ class GXDB:
     def set_line_selection(self, line, mode):
         """
         Set the selection status for a line.
+        
+        :param line:  Handle of line to select/deselect
+        :param mode:  `DB_LINE_SELECT`
+        :type  line:  int
+        :type  mode:  int
+
+        .. versionadded:: 9.0
         """
         self._wrapper.set_line_selection(line, mode)
         
@@ -1281,6 +1997,14 @@ class GXDB:
     def get_line_selection(self, line):
         """
         Get the selection status for a line.
+        
+        :param line:  Line handle
+        :type  line:  int
+
+        :returns:     One of `DB_LINE_SELECT`
+        :rtype:       int
+
+        .. versionadded:: 9.0
         """
         ret_val = self._wrapper.get_line_selection(line)
         return ret_val
@@ -1292,6 +2016,12 @@ class GXDB:
         """
         This method will return a handle to the first selected
         line in the database.
+        
+
+        :returns:    Line Handle (use iIsLineValid method to see if valid)
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.first_sel_line()
         return ret_val
@@ -1302,6 +2032,15 @@ class GXDB:
     def get_line_map_fid(self, line, start, end):
         """
         This method gets a line map clip fiducial.
+        
+        :param line:   Line handle to look at
+        :param start:  Start Fid
+        :param end:    End Fid
+        :type  line:   int
+        :type  start:  float_ref
+        :type  end:    float_ref
+
+        .. versionadded:: 5.1.1
 
         **Note:**
 
@@ -1316,6 +2055,12 @@ class GXDB:
     def get_select(self):
         """
         Gets the Line Selections.
+        
+
+        :returns:    Selections Object.
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.get_select()
         return ret_val
@@ -1327,6 +2072,12 @@ class GXDB:
         """
         This method counts the number of selected lines in
         the database.
+        
+
+        :returns:    x - Number of selected lines in the database
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.count_sel_lines()
         return ret_val
@@ -1337,6 +2088,15 @@ class GXDB:
     def is_chan_name(cls, chan):
         """
         Is this a valid channel name?
+        
+        :param chan:  Name to test
+        :type  chan:  str
+
+        :returns:     1 if it is a valid channel name
+                      0 if it is not a valid channel name
+        :rtype:       int
+
+        .. versionadded:: 7.2
 
         **Note:**
 
@@ -1354,6 +2114,15 @@ class GXDB:
         """
         This method checks to see if the channel handle is a
         valid channel.
+        
+        :param chan:  Channel handle to check
+        :type  chan:  int
+
+        :returns:     0 - Not a valid channel
+                      1 - Valid
+        :rtype:       int
+
+        .. versionadded:: 5.1.1
         """
         ret_val = self._wrapper.is_chan_valid(chan)
         return ret_val
@@ -1364,6 +2133,15 @@ class GXDB:
     def is_line_name(cls, line):
         """
         Is this a valid line name.
+        
+        :param line:  Name to test
+        :type  line:  str
+
+        :returns:     1 if it is a valid line name
+                      0 if it is not a valid line name
+        :rtype:       int
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapDB.is_line_name(GXContext._get_tls_geo(), line.encode())
         return ret_val
@@ -1375,6 +2153,15 @@ class GXDB:
         """
         This method checks to see if the line handle returned by
         the Line methods is a valid line.
+        
+        :param line:  Line handle to check
+        :type  line:  int
+
+        :returns:     0 - Not a valid line
+                      1 - Valid
+        :rtype:       int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.is_line_valid(line)
         return ret_val
@@ -1385,6 +2172,14 @@ class GXDB:
     def line_category(self, line):
         """
         This method returns the category (group, line) of a line.
+        
+        :param line:  Line handle to look at
+        :type  line:  int
+
+        :returns:     `DB_CATEGORY_LINE` or `iDUMMY <geosoft.gxapi.iDUMMY>`.
+        :rtype:       int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1399,6 +2194,14 @@ class GXDB:
     def line_flight(self, line):
         """
         This method returns the flight number of a line.
+        
+        :param line:  Line handle to look at
+        :type  line:  int
+
+        :returns:     Line Flight Number.
+        :rtype:       int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1413,6 +2216,15 @@ class GXDB:
     def line_label(self, line, label, format):
         """
         Create a line label
+        
+        :param line:    Line symbol
+        :param label:   String in which to place label
+        :param format:  `DB_LINE_LABEL_FORMAT`
+        :type  line:    int
+        :type  label:   str_ref
+        :type  format:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1437,6 +2249,14 @@ class GXDB:
     def line_number(self, line):
         """
         This method returns the number of a line.
+        
+        :param line:  Line handle to look at
+        :type  line:  int
+
+        :returns:     Line Number.
+        :rtype:       int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1451,6 +2271,13 @@ class GXDB:
     def line_number2(self, line, line_number):
         """
         Returns the string form of the line number (can be alphanumeric)
+        
+        :param line:         Line handle to look at
+        :param line_number:  Line number
+        :type  line:         int
+        :type  line_number:  str_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1465,6 +2292,14 @@ class GXDB:
     def line_type(self, line):
         """
         This method returns the type of a line.
+        
+        :param line:  Line handle to look at
+        :type  line:  int
+
+        :returns:     `DB_LINE_TYPE`
+        :rtype:       int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1479,6 +2314,14 @@ class GXDB:
     def line_version(self, line):
         """
         This method returns the version number of a line.
+        
+        :param line:  Line handle to look at
+        :type  line:  int
+
+        :returns:     Line Number.
+        :rtype:       int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1494,6 +2337,17 @@ class GXDB:
         """
         This method sets up a line name given the line's number,
         type, and version.
+        
+        :param num:   Line number
+        :param type:  Line type
+        :param ver:   Line version
+        :param name:  String to set line name to
+        :type  num:   int
+        :type  type:  int
+        :type  ver:   int
+        :type  name:  str_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1511,6 +2365,17 @@ class GXDB:
     def set_line_name2(cls, al_num, type, ver, name):
         """
         Like SetLineName_DB, but can use alphanumeric for line number
+        
+        :param al_num:  Line number (alphanumeric)
+        :param type:    Line type
+        :param ver:     Line version
+        :param name:    String to set line name to
+        :type  al_num:  str
+        :type  type:    int
+        :type  ver:     int
+        :type  name:    str_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1529,6 +2394,11 @@ class GXDB:
     def load_select(self, file):
         """
         Load selections to from a file.
+        
+        :param file:  File Name
+        :type  file:  str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.load_select(file.encode())
         
@@ -1540,6 +2410,14 @@ class GXDB:
         """
         This method will advance to the next selected line based
         on the currently selected line handle.
+        
+        :param prev:  Previous Line
+        :type  prev:  int
+
+        :returns:     Line Handle (use iIsLineValid method to see if valid).
+        :rtype:       int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.next_sel_line(prev)
         return ret_val
@@ -1550,6 +2428,14 @@ class GXDB:
     def line_bearing(self, line):
         """
         This method returns the bearing of a line.
+        
+        :param line:  Line handle to look at
+        :type  line:  int
+
+        :returns:     Bearing value, `rDUMMY <geosoft.gxapi.rDUMMY>` if not set.
+        :rtype:       float
+
+        .. versionadded:: 5.1.1
 
         **Note:**
 
@@ -1575,6 +2461,14 @@ class GXDB:
     def line_date(self, line):
         """
         This method returns the date of a line.
+        
+        :param line:  Line handle to look at
+        :type  line:  int
+
+        :returns:     Date value.
+        :rtype:       float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1589,6 +2483,11 @@ class GXDB:
     def save_select(self, file):
         """
         Saves current selections to a file.
+        
+        :param file:  File Name
+        :type  file:  str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.save_select(file.encode())
         
@@ -1599,6 +2498,13 @@ class GXDB:
     def select(self, select, mode):
         """
         Select/deselect lines based on selection string
+        
+        :param select:  Selection
+        :param mode:    `DB_LINE_SELECT`
+        :type  select:  str
+        :type  mode:    int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1624,6 +2530,13 @@ class GXDB:
     def set_line_bearing(self, line, bearing):
         """
         Sets a line's bearing.
+        
+        :param line:     Line handle
+        :param bearing:  Value to set bearing to
+        :type  line:     int
+        :type  bearing:  float
+
+        .. versionadded:: 5.1.1
 
         **Note:**
 
@@ -1647,6 +2560,13 @@ class GXDB:
     def set_line_date(self, line, date):
         """
         This method sets a line's date.
+        
+        :param line:  Line handle
+        :param date:  Value to set date to
+        :type  line:  int
+        :type  date:  float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1661,6 +2581,13 @@ class GXDB:
     def set_line_flight(self, line, fl):
         """
         This method sets a line's flight.
+        
+        :param line:  Line handle
+        :param fl:    Value to set line flight to
+        :type  line:  int
+        :type  fl:    int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1675,6 +2602,15 @@ class GXDB:
     def set_line_map_fid(self, line, start, end):
         """
         This method changes a line map clip fiducial.
+        
+        :param line:   Line handle to look at
+        :param start:  Start Fid
+        :param end:    End Fid
+        :type  line:   int
+        :type  start:  float
+        :type  end:    float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1690,6 +2626,13 @@ class GXDB:
     def set_line_num(self, line, num):
         """
         This method sets a line's number.
+        
+        :param line:  Line handle
+        :param num:   Value to set line number to
+        :type  line:  int
+        :type  num:   int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1704,6 +2647,13 @@ class GXDB:
     def set_line_type(self, line, type):
         """
         This method sets a line's type.
+        
+        :param line:  Line handle
+        :param type:  `DB_LINE_TYPE`
+        :type  line:  int
+        :type  type:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1718,6 +2668,13 @@ class GXDB:
     def set_line_ver(self, line, ver):
         """
         This method sets a line's version.
+        
+        :param line:  Line handle
+        :param ver:   Value to set line version to
+        :type  line:  int
+        :type  ver:   int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1732,6 +2689,11 @@ class GXDB:
     def set_select(self, sel):
         """
         Sets the Line Selections.
+        
+        :param sel:  Selections
+        :type  sel:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1750,6 +2712,11 @@ class GXDB:
     def get_meta(self, meta):
         """
         Get the metadata of a database.
+        
+        :param meta:  Meta object to fill with database's meta
+        :type  meta:  GXMETA
+
+        .. versionadded:: 5.1.5
         """
         self._wrapper.get_meta(meta._wrapper)
         
@@ -1760,6 +2727,11 @@ class GXDB:
     def set_meta(self, meta):
         """
         Set the metadata of a database.
+        
+        :param meta:  Meta object to add to database's meta
+        :type  meta:  GXMETA
+
+        .. versionadded:: 5.1.5
         """
         self._wrapper.set_meta(meta._wrapper)
         
@@ -1774,6 +2746,11 @@ class GXDB:
     def array_lst(self, lst):
         """
         Load a `GXLST <geosoft.gxapi.GXLST>` object with array (`GXVA <geosoft.gxapi.GXVA>`) channel symbols.
+        
+        :param lst:  List to Populate
+        :type  lst:  GXLST
+
+        .. versionadded:: 5.0
         """
         self._wrapper.array_lst(lst._wrapper)
         
@@ -1784,6 +2761,13 @@ class GXDB:
     def array_size_lst(self, columns, lst):
         """
         Load a `GXLST <geosoft.gxapi.GXLST>` object with array (`GXVA <geosoft.gxapi.GXVA>`) channel symbols with a particular number of columns.
+        
+        :param columns:  Number of columns in array ( > 1 )
+        :param lst:      List to Populate
+        :type  columns:  int
+        :type  lst:      GXLST
+
+        .. versionadded:: 8.2
         """
         self._wrapper.array_size_lst(columns, lst._wrapper)
         
@@ -1794,6 +2778,11 @@ class GXDB:
     def chan_lst(self, lst):
         """
         Load a `GXLST <geosoft.gxapi.GXLST>` with database channels.
+        
+        :param lst:  List to Populate
+        :type  lst:  GXLST
+
+        .. versionadded:: 6.3
 
         **Note:**
 
@@ -1814,6 +2803,11 @@ class GXDB:
     def normal_chan_lst(self, lst):
         """
         Load a `GXLST <geosoft.gxapi.GXLST>` with non-array database channels.
+        
+        :param lst:  List to Populate
+        :type  lst:  GXLST
+
+        .. versionadded:: 8.2
 
         **Note:**
 
@@ -1828,6 +2822,13 @@ class GXDB:
     def class_chan_lst(self, lst, cl):
         """
         Load a `GXLST <geosoft.gxapi.GXLST>` with channels in a particular class.
+        
+        :param lst:  `GXLST <geosoft.gxapi.GXLST>` object to populate
+        :param cl:   CLASS name for the channel ("" for all)
+        :type  lst:  GXLST
+        :type  cl:   str
+
+        .. versionadded:: 5.0.3
 
         **Note:**
 
@@ -1847,6 +2848,13 @@ class GXDB:
     def class_group_lst(self, lst, cl):
         """
         Load a `GXLST <geosoft.gxapi.GXLST>` with group lines in a particular class.
+        
+        :param lst:  `GXLST <geosoft.gxapi.GXLST>` object to populate
+        :param cl:   CLASS name for the group ("" for all)
+        :type  lst:  GXLST
+        :type  cl:   str
+
+        .. versionadded:: 5.0.8
 
         **Note:**
 
@@ -1866,6 +2874,20 @@ class GXDB:
     def create_symb(self, name, symb, owner, category):
         """
         Create a new Symbol.
+        
+        :param name:      Symbol Name
+        :param symb:      `DB_SYMB_TYPE`
+        :param owner:     `DB_OWN`
+        :param category:  `DB_CATEGORY_USER`, `DB_CATEGORY_LINE`, `DB_CATEGORY_CHAN`, `DB_CATEGORY_BLOB`
+        :type  name:      str
+        :type  symb:      int
+        :type  owner:     int
+        :type  category:  int
+
+        :returns:         DB_SYMB Object
+        :rtype:           int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1907,6 +2929,22 @@ class GXDB:
     def create_symb_ex(self, name, symb, owner, category, extra):
         """
         Create a new Symbol.
+        
+        :param name:      Symbol Name
+        :param symb:      `DB_SYMB_TYPE`
+        :param owner:     `DB_OWN`
+        :param category:  `DB_CATEGORY_USER`, `DB_CATEGORY_LINE`, `DB_CATEGORY_CHAN`, `DB_CATEGORY_BLOB`
+        :param extra:     Extra info, which depends on `DB_SYMB_TYPE` `DB_SYMB_CHAN <geosoft.gxapi.DB_SYMB_CHAN>` - element width for a `GXVA <geosoft.gxapi.GXVA>` channel ignores for all other `DB_SYMB_TYPE` types
+        :type  name:      str
+        :type  symb:      int
+        :type  owner:     int
+        :type  category:  int
+        :type  extra:     int
+
+        :returns:         DB_SYMB handle.
+        :rtype:           int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -1947,6 +2985,13 @@ class GXDB:
     def csv_chan_lst(self, lst, channels):
         """
         Load a `GXLST <geosoft.gxapi.GXLST>` with channels in a comma-separated list.
+        
+        :param lst:       `GXLST <geosoft.gxapi.GXLST>` object to populate
+        :param channels:  Comma-separated list of channels
+        :type  lst:       GXLST
+        :type  channels:  str
+
+        .. versionadded:: 6.2
 
         **Note:**
 
@@ -1968,6 +3013,11 @@ class GXDB:
         This method destroys a symbol in the database and all
         the data associated with it. The symbol's lock is
         automatically removed.
+        
+        :param symb:  Symbol to Delete (must be READWRITE locked)
+        :type  symb:  int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.delete_symb(symb)
         
@@ -1979,6 +3029,16 @@ class GXDB:
         """
         Duplicate a line symbol from a group or line symbol.
         The new name must not already exist in the database.
+        
+        :param symb:  Symbol Handle to duplicate
+        :param new:   Name of the New Symbol
+        :type  symb:  int
+        :type  new:   str
+
+        :returns:     New Symbol Handle
+        :rtype:       int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.dup_line_symb(symb, new.encode())
         return ret_val
@@ -1989,6 +3049,16 @@ class GXDB:
     def dup_symb(self, symb, new):
         """
         New Symbol by duplicating an existing symbol, LOCKED
+        
+        :param symb:  Symbol Handle to duplicate
+        :param new:   Name of the New Symbol
+        :type  symb:  int
+        :type  new:   str
+
+        :returns:     New Symbol Handle
+        :rtype:       int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2008,6 +3078,16 @@ class GXDB:
     def dup_symb_no_lock(self, symb, new):
         """
         New Symbol by duplicating an existing symbol, NO LOCK.
+        
+        :param symb:  Symbol Handle to duplicate
+        :param new:   Name of the New Symbol
+        :type  symb:  int
+        :type  new:   str
+
+        :returns:     New Symbol Handle
+        :rtype:       int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2027,6 +3107,14 @@ class GXDB:
     def find_chan(self, chan):
         """
         Get handle to the specified channel.
+        
+        :param chan:  Name of channel
+        :type  chan:  str
+
+        :returns:     Channel Handle, `NULLSYMB <geosoft.gxapi.NULLSYMB>` if not defined
+        :rtype:       int
+
+        .. versionadded:: 5.1.3
 
         **Note:**
 
@@ -2048,6 +3136,16 @@ class GXDB:
     def find_symb(self, symb, type):
         """
         Get handle to the specified symbol.
+        
+        :param symb:  Name of symbol
+        :param type:  `DB_SYMB_TYPE`
+        :type  symb:  str
+        :type  type:  int
+
+        :returns:     Symbol Handle, `NULLSYMB <geosoft.gxapi.NULLSYMB>` if not defined
+        :rtype:       int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2084,6 +3182,11 @@ class GXDB:
         database. The list will be stored in an `GXLST <geosoft.gxapi.GXLST>` object.
         In order to modify this displayed channels list,
         call `set_chan_order_lst <geosoft.gxapi.GXDB.set_chan_order_lst>` after.
+        
+        :param lst:  `GXLST <geosoft.gxapi.GXLST>` object to populate
+        :type  lst:  GXLST
+
+        .. versionadded:: 5.0.8
         """
         self._wrapper.get_chan_order_lst(lst._wrapper)
         
@@ -2094,6 +3197,19 @@ class GXDB:
     def get_xyz_chan_symb(self, chan):
         """
         Searches for current X, Y or Z channel symbol
+        
+        :param chan:  `DB_CHAN_SYMBOL`
+        :type  chan:  int
+
+        :returns:     x - Symbol Handle
+                      `NULLSYMB <geosoft.gxapi.NULLSYMB>` - Symbol not found
+                      
+                      searches for the "current" X, Y or Z channel.
+                      If none is defined, then looks for "X", "Y" or "Z" channel
+                      If the channel is defined, but not present, returns `NULLSYMB <geosoft.gxapi.NULLSYMB>`.
+        :rtype:       int
+
+        .. versionadded:: 5.1.3
         """
         ret_val = self._wrapper.get_xyz_chan_symb(chan)
         return ret_val
@@ -2104,6 +3220,16 @@ class GXDB:
     def class_chan_list(self, vv, cl):
         """
         Place a list of channels for a given class in a `GXVV <geosoft.gxapi.GXVV>`.
+        
+        :param vv:  `GXVV <geosoft.gxapi.GXVV>` to populate, must be type INT.
+        :param cl:  Class name to match ("" for all)
+        :type  vv:  GXVV
+        :type  cl:  str
+
+        :returns:    Number of symbols.
+        :rtype:      int
+
+        .. versionadded:: 5.0.5
 
         **Note:**
 
@@ -2122,6 +3248,15 @@ class GXDB:
     def exist_chan(self, chan):
         """
         See if the specified channel exists in the database.
+        
+        :param chan:  Name of Channel
+        :type  chan:  str
+
+        :returns:     0 - Symbol does not exist in the database
+                      1 - Symbol Exists
+        :rtype:       int
+
+        .. versionadded:: 5.1.3
 
         **Note:**
 
@@ -2139,6 +3274,17 @@ class GXDB:
         """
         This method checks to see if the specified symbol exists
         in the database.
+        
+        :param symb:  Name of Symbol
+        :param type:  `DB_SYMB_TYPE`
+        :type  symb:  str
+        :type  type:  int
+
+        :returns:     0 - Symbol does not exist in the database
+                      1 - Symbol Exists
+        :rtype:       int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2168,6 +3314,17 @@ class GXDB:
     def valid_symb(self, symb, type):
         """
         This method checks to see if the specified symbol is a valid symbol in the database.
+        
+        :param symb:  Symbol to check
+        :param type:  `DB_SYMB_TYPE`
+        :type  symb:  int
+        :type  type:  int
+
+        :returns:     0 - Invalid symbol 
+                      1 - Symbol is valid
+        :rtype:       int
+
+        .. versionadded:: 9.1
         """
         ret_val = self._wrapper.valid_symb(symb, type)
         return ret_val
@@ -2178,6 +3335,14 @@ class GXDB:
     def get_symb_lock(self, symb):
         """
         Determines if a symbol is locked
+        
+        :param symb:  Symbol to Lock
+        :type  symb:  int
+
+        :returns:     `DB_LOCK`
+        :rtype:       int
+
+        .. versionadded:: 6.3
         """
         ret_val = self._wrapper.get_symb_lock(symb)
         return ret_val
@@ -2188,6 +3353,13 @@ class GXDB:
     def get_xyz_chan(self, chan_symb, chan):
         """
         Gets current X, Y or Z channel name
+        
+        :param chan_symb:  `DB_CHAN_SYMBOL`
+        :param chan:       Returned name
+        :type  chan_symb:  int
+        :type  chan:       str_ref
+
+        .. versionadded:: 5.1.3
 
         **Note:**
 
@@ -2203,6 +3375,16 @@ class GXDB:
     def symb_list(self, vv, symb):
         """
         Place a list of symbols in a `GXVV <geosoft.gxapi.GXVV>`.
+        
+        :param vv:    `GXVV <geosoft.gxapi.GXVV>` to populate, must be type INT.
+        :param symb:  `DB_SYMB_TYPE`
+        :type  vv:    GXVV
+        :type  symb:  int
+
+        :returns:     Number of symbols.
+        :rtype:       int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.symb_list(vv._wrapper, symb)
         return ret_val
@@ -2213,6 +3395,11 @@ class GXDB:
     def line_lst(self, lst):
         """
         Load a `GXLST <geosoft.gxapi.GXLST>` with database lines.
+        
+        :param lst:  List to Populate
+        :type  lst:  GXLST
+
+        .. versionadded:: 6.3
 
         **Note:**
 
@@ -2231,6 +3418,15 @@ class GXDB:
     def lock_symb(self, symb, lock, wait):
         """
         Locks a symbol for READONLY or READWRITE.
+        
+        :param symb:  Symbol to Lock
+        :param lock:  `DB_LOCK`
+        :param wait:  `DB_WAIT`
+        :type  symb:  int
+        :type  lock:  int
+        :type  wait:  int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.lock_symb(symb, lock, wait)
         
@@ -2241,6 +3437,11 @@ class GXDB:
     def mask_chan_lst(self, lst):
         """
         Load a `GXLST <geosoft.gxapi.GXLST>` with mask channels.
+        
+        :param lst:  `GXLST <geosoft.gxapi.GXLST>` object to populate
+        :type  lst:  GXLST
+
+        .. versionadded:: 5.1.5
 
         **Note:**
 
@@ -2264,6 +3465,11 @@ class GXDB:
     def selected_line_lst(self, lst):
         """
         Load a `GXLST <geosoft.gxapi.GXLST>` with the selected lines.
+        
+        :param lst:  List to Populate
+        :type  lst:  GXLST
+
+        .. versionadded:: 5.1.2
 
         **Note:**
 
@@ -2286,6 +3492,11 @@ class GXDB:
         This method sets the channel display order for a
         database. The list to modify will be stored in an `GXLST <geosoft.gxapi.GXLST>`
         object. Call `get_chan_order_lst <geosoft.gxapi.GXDB.get_chan_order_lst>` to populate the `GXLST <geosoft.gxapi.GXLST>`.
+        
+        :param lst:  `GXLST <geosoft.gxapi.GXLST>` object to modify
+        :type  lst:  GXLST
+
+        .. versionadded:: 5.0.8
         """
         self._wrapper.set_chan_order_lst(lst._wrapper)
         
@@ -2296,6 +3507,13 @@ class GXDB:
     def set_xyz_chan(self, chan_symb, chan):
         """
         Sets current X, Y or Z channel name
+        
+        :param chan_symb:  `DB_CHAN_SYMBOL`
+        :param chan:       Channel name
+        :type  chan_symb:  int
+        :type  chan:       str
+
+        .. versionadded:: 5.1.3
 
         **Note:**
 
@@ -2315,6 +3533,11 @@ class GXDB:
     def string_chan_lst(self, lst):
         """
         Load a `GXLST <geosoft.gxapi.GXLST>` with string-type channels.
+        
+        :param lst:  `GXLST <geosoft.gxapi.GXLST>` object to populate
+        :type  lst:  GXLST
+
+        .. versionadded:: 6.2
 
         **Note:**
 
@@ -2334,6 +3557,13 @@ class GXDB:
     def symb_lst(self, lst, type):
         """
         Populate a `GXLST <geosoft.gxapi.GXLST>` with database symbols.
+        
+        :param lst:   List to Populate
+        :param type:  `DB_SYMB_TYPE`
+        :type  lst:   GXLST
+        :type  type:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2361,6 +3591,9 @@ class GXDB:
     def un_lock_all_symb(self):
         """
         UnLocks all symbols.
+        
+
+        .. versionadded:: 5.1.1
         """
         self._wrapper.un_lock_all_symb()
         
@@ -2371,6 +3604,11 @@ class GXDB:
     def un_lock_symb(self, symb):
         """
         UnLocks a symbol.
+        
+        :param symb:  Symbol to Lock
+        :type  symb:  int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.un_lock_symb(symb)
         
@@ -2385,6 +3623,13 @@ class GXDB:
     def add_associated_load(self, group, chan):
         """
         Add this channel to the auto-load feature of the group.
+        
+        :param group:  Line
+        :param chan:   Channel
+        :type  group:  int
+        :type  chan:   int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2405,6 +3650,15 @@ class GXDB:
     def add_comment(self, comment, str_val, indent):
         """
         Add a comment with a string to the activity log of the database.
+        
+        :param comment:  Comment
+        :param str_val:  String
+        :param indent:   Indent comment one tab? (TRUE or FALSE)
+        :type  comment:  str
+        :type  str_val:  str
+        :type  indent:   int
+
+        .. versionadded:: 5.0.8
 
         **Note:**
 
@@ -2424,6 +3678,15 @@ class GXDB:
     def add_int_comment(self, comment, val, indent):
         """
         Add a comment with an integer to the activity log of the database.
+        
+        :param comment:  Comment
+        :param val:      Value
+        :param indent:   Indent comment one tab? `GEO_BOOL`
+        :type  comment:  str
+        :type  val:      int
+        :type  indent:   int
+
+        .. versionadded:: 5.0.8
 
         **Note:**
 
@@ -2445,6 +3708,15 @@ class GXDB:
     def add_double_comment(self, comment, val, indent):
         """
         Add a comment with a float value to the activity log of the database.
+        
+        :param comment:  Comment
+        :param val:      Value
+        :param indent:   Indent comment one tab? `GEO_BOOL`
+        :type  comment:  str
+        :type  val:      float
+        :type  indent:   int
+
+        .. versionadded:: 5.0.8
 
         **Note:**
 
@@ -2466,6 +3738,13 @@ class GXDB:
     def add_time_comment(self, comment, indent):
         """
         Add a comment with the date and time to the activity log of the database.
+        
+        :param comment:  Comment
+        :param indent:   Indent comment one tab? `GEO_BOOL`
+        :type  comment:  str
+        :type  indent:   int
+
+        .. versionadded:: 5.0.8
 
         **Note:**
 
@@ -2487,6 +3766,13 @@ class GXDB:
     def associate(self, group, chan):
         """
         Associate a channel with a group.
+        
+        :param group:  Group line
+        :param chan:   Channel
+        :type  group:  int
+        :type  chan:   int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2512,6 +3798,11 @@ class GXDB:
     def associate_all(self, group):
         """
         Associate all channels with a group.
+        
+        :param group:  Group line
+        :type  group:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2528,6 +3819,13 @@ class GXDB:
     def associate_class(self, chan, cl):
         """
         Associate a channel with all groups of a specific class.
+        
+        :param chan:  Channel
+        :param cl:    Class name of groups to associate the channel with. (Must be defined).
+        :type  chan:  int
+        :type  cl:    str
+
+        .. versionadded:: 5.1.1
 
         **Note:**
 
@@ -2543,6 +3841,13 @@ class GXDB:
     def gen_valid_chan_symb(cls, str_in, str_out):
         """
         Generate a valid channel name from a name candidate
+        
+        :param str_in:   Input string
+        :param str_out:  Outout string
+        :type  str_in:   str
+        :type  str_out:  str_ref
+
+        .. versionadded:: 5.0
         """
         str_out.value = gxapi_cy.WrapDB.gen_valid_chan_symb(GXContext._get_tls_geo(), str_in.encode(), str_out.value.encode())
         
@@ -2553,6 +3858,13 @@ class GXDB:
     def gen_valid_line_symb(cls, str_in, str_out):
         """
         Generate a valid line symb name string from given string.
+        
+        :param str_in:   Input string
+        :param str_out:  Outout string
+        :type  str_in:   str
+        :type  str_out:  str_ref
+
+        .. versionadded:: 6.4
 
         **Note:**
 
@@ -2569,6 +3881,15 @@ class GXDB:
     def get_chan_va(self, line, chan, va):
         """
         Place the contents of a channel in a `GXVA <geosoft.gxapi.GXVA>`.
+        
+        :param line:  Line
+        :param chan:  Channel
+        :param va:    `GXVA <geosoft.gxapi.GXVA>` in which to place the data
+        :type  line:  int
+        :type  chan:  int
+        :type  va:    GXVA
+
+        .. versionadded:: 5.0
 
         .. seealso::
 
@@ -2583,6 +3904,15 @@ class GXDB:
     def get_va_scaling(self, ch, base, range):
         """
         Get base and range for `GXVA <geosoft.gxapi.GXVA>` channel cell display.
+        
+        :param ch:     Channel (Locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`)
+        :param base:   Base value (rDummy for none)
+        :param range:  Range value (rDummy for none)
+        :type  ch:     int
+        :type  base:   float_ref
+        :type  range:  float_ref
+
+        .. versionadded:: 5.1.5
 
         **Note:**
 
@@ -2597,6 +3927,15 @@ class GXDB:
     def get_va_windows(self, ch, min_w, max_w):
         """
         Get the range of windows displayed for a `GXVA <geosoft.gxapi.GXVA>` channel.
+        
+        :param ch:     Channel (Locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`)
+        :param min_w:  First window (0 to N-2, iDummy for default)
+        :param max_w:  Last window (1 to N-1, iDummy for default)
+        :type  ch:     int
+        :type  min_w:  int_ref
+        :type  max_w:  int_ref
+
+        .. versionadded:: 5.1.5
 
         **Note:**
 
@@ -2611,6 +3950,21 @@ class GXDB:
     def set_va_base_coordinate_info(self, ch, domain, base, vv, units, allow_changes):
         """
         Set the array channel base coordinate type, offset and values.
+        
+        :param ch:             Channel (Locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`)
+        :param domain:         `DB_ARRAY_BASETYPE`
+        :param base:           Optional offset or base frequency
+        :param vv:             Values (one per array channel column) (REAL)
+        :param units:          Units
+        :param allow_changes:  Allow changes to existing values?`GEO_BOOL`
+        :type  ch:             int
+        :type  domain:         int
+        :type  base:           float
+        :type  vv:             GXVV
+        :type  units:          str
+        :type  allow_changes:  int
+
+        .. versionadded:: 8.2
 
         **Note:**
 
@@ -2625,6 +3979,19 @@ class GXDB:
     def get_va_base_coordinate_info(self, ch, domain, base, vv, units):
         """
         Set the array channel base coordinate type, offset and values.
+        
+        :param ch:      Channel (Locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`)
+        :param domain:  `DB_ARRAY_BASETYPE`
+        :param base:    Optional offset or base frequency
+        :param vv:      Values (one per array channel column) (REAL)
+        :param units:   Units
+        :type  ch:      int
+        :type  domain:  int_ref
+        :type  base:    float_ref
+        :type  vv:      GXVV
+        :type  units:   str_ref
+
+        .. versionadded:: 8.2
 
         **Note:**
 
@@ -2639,6 +4006,13 @@ class GXDB:
     def get_group_class(self, symb, cl):
         """
         Set the Class name for a group line.
+        
+        :param symb:  Group line - `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>` or `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`
+        :param cl:    Returned class name - max size = `DB_GROUP_CLASS_SIZE <geosoft.gxapi.DB_GROUP_CLASS_SIZE>` - 1
+        :type  symb:  int
+        :type  cl:    str_ref
+
+        .. versionadded:: 5.0.8
 
         **Note:**
 
@@ -2660,6 +4034,14 @@ class GXDB:
     def get_info(self, item):
         """
         Get information about the database.
+        
+        :param item:  `DB_INFO`
+        :type  item:  int
+
+        :returns:     x - Return Value
+        :rtype:       int
+
+        .. versionadded:: 7.0
         """
         ret_val = self._wrapper.get_info(item)
         return ret_val
@@ -2670,6 +4052,13 @@ class GXDB:
     def get_va_prof_color_file(self, ch, file):
         """
         Get colors for a `GXVA <geosoft.gxapi.GXVA>` channel when displayed in the profile window.
+        
+        :param ch:    Channel (Locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`)
+        :param file:  Zone file name, "" to clear.
+        :type  ch:    int
+        :type  file:  str_ref
+
+        .. versionadded:: 5.1.5
 
         **Note:**
 
@@ -2684,6 +4073,13 @@ class GXDB:
     def get_va_prof_sect_option(self, ch, option):
         """
         Get the display options of `GXVA <geosoft.gxapi.GXVA>` channels
+        
+        :param ch:      Channel (Locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`)
+        :param option:  Option  "Profile", "Section" or "Section and Profile"
+        :type  ch:      int
+        :type  option:  str_ref
+
+        .. versionadded:: 5.1.6
         """
         option.value = self._wrapper.get_va_prof_sect_option(ch, option.value.encode())
         
@@ -2694,6 +4090,13 @@ class GXDB:
     def get_va_sect_color_file(self, ch, file):
         """
         Get colors for a `GXVA <geosoft.gxapi.GXVA>` channel when displayed section in the profile window.
+        
+        :param ch:    Channel (Locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`)
+        :param file:  Zone file name
+        :type  ch:    int
+        :type  file:  str_ref
+
+        .. versionadded:: 5.1.6
 
         **Note:**
 
@@ -2708,6 +4111,19 @@ class GXDB:
     def is_associated(self, group, chan):
         """
         Check to see if a channel is associated with group.
+        
+        :param group:  Line
+        :param chan:   Channel
+        :type  group:  int
+        :type  chan:   int
+
+        :returns:      0 if not a group line, or if the channel is not associated.
+                       
+                       As of v6.3, if a group line has no class defined, then ALL
+                       channels are automatically assumed to be associated with it.
+        :rtype:        int
+
+        .. versionadded:: 5.1.3
         """
         ret_val = self._wrapper.is_associated(group, chan)
         return ret_val
@@ -2718,6 +4134,13 @@ class GXDB:
     def is_wholeplot(self):
         """
         Is this a Wholeplot database?
+        
+
+        :returns:    1 if it is a Wholeplot database
+                    0 if it is not.
+        :rtype:      int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -2732,6 +4155,15 @@ class GXDB:
     def put_chan_va(self, line, chan, va):
         """
         Place the contents of a `GXVA <geosoft.gxapi.GXVA>` in a channel.
+        
+        :param line:  Line
+        :param chan:  Channel
+        :param va:    `GXVA <geosoft.gxapi.GXVA>` from which to get the data
+        :type  line:  int
+        :type  chan:  int
+        :type  va:    GXVA
+
+        .. versionadded:: 5.0
 
         .. seealso::
 
@@ -2746,6 +4178,13 @@ class GXDB:
     def set_group_class(self, symb, cl):
         """
         Set the Class name for a group line.
+        
+        :param symb:  Group line - `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
+        :param cl:    `DB_GROUP_CLASS_SIZE <geosoft.gxapi.DB_GROUP_CLASS_SIZE>`
+        :type  symb:  int
+        :type  cl:    str
+
+        .. versionadded:: 5.0.8
 
         **Note:**
 
@@ -2773,6 +4212,13 @@ class GXDB:
     def set_va_prof_color_file(self, ch, file):
         """
         Set colors for a `GXVA <geosoft.gxapi.GXVA>` channel when displayed in the profile window.
+        
+        :param ch:    Channel (Locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`)
+        :param file:  Zone file name, "" to clear.
+        :type  ch:    int
+        :type  file:  str
+
+        .. versionadded:: 5.1.5
 
         **Note:**
 
@@ -2823,6 +4269,13 @@ class GXDB:
     def set_va_prof_sect_option(self, ch, option):
         """
         Set the display options of `GXVA <geosoft.gxapi.GXVA>` channels
+        
+        :param ch:      Channel (Locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`)
+        :param option:  Option  "Profile", "Section" or "Section and Profile"
+        :type  ch:      int
+        :type  option:  str
+
+        .. versionadded:: 5.1.6
         """
         self._wrapper.set_va_prof_sect_option(ch, option.encode())
         
@@ -2833,6 +4286,15 @@ class GXDB:
     def set_va_scaling(self, ch, base, range):
         """
         Set base and range for `GXVA <geosoft.gxapi.GXVA>` channel cell display.
+        
+        :param ch:     Channel (Locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`)
+        :param base:   Base value (rDummy for none)
+        :param range:  Range value (rDummy for none)
+        :type  ch:     int
+        :type  base:   float
+        :type  range:  float
+
+        .. versionadded:: 5.1.5
 
         **Note:**
 
@@ -2850,6 +4312,13 @@ class GXDB:
     def set_va_sect_color_file(self, ch, file):
         """
         Set colors for a `GXVA <geosoft.gxapi.GXVA>` channel when displayed section in the profile window.
+        
+        :param ch:    Channel (Locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`)
+        :param file:  Zone file name
+        :type  ch:    int
+        :type  file:  str
+
+        .. versionadded:: 5.1.6
 
         **Note:**
 
@@ -2865,6 +4334,15 @@ class GXDB:
     def set_va_windows(self, ch, min_w, max_w):
         """
         Set the range of windows to display for a `GXVA <geosoft.gxapi.GXVA>` channel.
+        
+        :param ch:     Channel (Locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`)
+        :param min_w:  First window (0 to N-1, iDummy for default)
+        :param max_w:  Last window (0 to N-1, iDummy for default)
+        :type  ch:     int
+        :type  min_w:  int
+        :type  max_w:  int
+
+        .. versionadded:: 5.1.5
 
         **Note:**
 

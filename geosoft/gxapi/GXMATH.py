@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -63,6 +62,27 @@ class GXMATH:
     def cross_product_(cls, x1, y1, z1, x2, y2, z2, x3, y3, z3):
         """
         Cross product of two vectors.
+        
+        :param x1:  X1 component
+        :param y1:  Y1 component
+        :param z1:  Z1 component
+        :param x2:  X2 component
+        :param y2:  Y2 component
+        :param z2:  Z2 component
+        :param x3:  X3 component (output)
+        :param y3:  Y3 component (output)
+        :param z3:  Z3 component (output)
+        :type  x1:  float
+        :type  y1:  float
+        :type  z1:  float
+        :type  x2:  float
+        :type  y2:  float
+        :type  z2:  float
+        :type  x3:  float_ref
+        :type  y3:  float_ref
+        :type  z3:  float_ref
+
+        .. versionadded:: 6.0
         """
         x3.value, y3.value, z3.value = gxapi_cy.WrapMATH.cross_product_(GXContext._get_tls_geo(), x1, y1, z1, x2, y2, z2, x3.value, y3.value, z3.value)
         
@@ -73,6 +93,14 @@ class GXMATH:
     def abs_int_(cls, n):
         """
         Calculate absolute value
+        
+        :param n:  Integer
+        :type  n:  int
+
+        :returns:    Integer
+        :rtype:      int
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -91,6 +119,14 @@ class GXMATH:
         Returns			an integer number
         
         If A or B is a dummy, returns dummy.
+        
+        :param pi_val1:  A
+        :param pi_val2:  B
+        :type  pi_val1:  int
+        :type  pi_val2:  int
+        :rtype:          int
+
+        .. versionadded:: 6.3
         """
         ret_val = gxapi_cy.WrapMATH.and_(GXContext._get_tls_geo(), pi_val1, pi_val2)
         return ret_val
@@ -101,6 +137,16 @@ class GXMATH:
     def mod_int_(cls, a, b):
         """
         Calculates the modulus of two integers
+        
+        :param a:  A
+        :param b:  B (must not be zero)
+        :type  a:  int
+        :type  b:  int
+
+        :returns:    Int
+        :rtype:      int
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -119,6 +165,14 @@ class GXMATH:
         Returns			an integer number
         
         If A or B is a dummy, returns dummy.
+        
+        :param pi_val1:  A
+        :param pi_val2:  B
+        :type  pi_val1:  int
+        :type  pi_val2:  int
+        :rtype:          int
+
+        .. versionadded:: 6.3
         """
         ret_val = gxapi_cy.WrapMATH.or_(GXContext._get_tls_geo(), pi_val1, pi_val2)
         return ret_val
@@ -129,6 +183,14 @@ class GXMATH:
     def round_int_(cls, z):
         """
         Round to the nearest whole number
+        
+        :param z:  Round
+        :type  z:  float
+
+        :returns:    Integer
+        :rtype:      int
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -149,6 +211,14 @@ class GXMATH:
         Returns			an integer number
         
         If A or B is a dummy, returns dummy.
+        
+        :param pi_val1:  A
+        :param pi_val2:  B
+        :type  pi_val1:  int
+        :type  pi_val2:  int
+        :rtype:          int
+
+        .. versionadded:: 6.3
         """
         ret_val = gxapi_cy.WrapMATH.xor_(GXContext._get_tls_geo(), pi_val1, pi_val2)
         return ret_val
@@ -159,6 +229,15 @@ class GXMATH:
     def nicer_log_scale_(cls, min, max, fine):
         """
         Finds nicer min, max values for logarithmic plot scales.
+        
+        :param min:   Min value (changed)
+        :param max:   Max value (changed)
+        :param fine:  Fine flag
+        :type  min:   float_ref
+        :type  max:   float_ref
+        :type  fine:  int
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -184,6 +263,17 @@ class GXMATH:
     def nicer_scale_(cls, min, max, inc, pow):
         """
         Compute a nicer scale for a given min and max.
+        
+        :param min:  Min value (changed)
+        :param max:  Max value (changed)
+        :param inc:  Inc value (returned)
+        :param pow:  Power value (returned)
+        :type  min:  float_ref
+        :type  max:  float_ref
+        :type  inc:  float_ref
+        :type  pow:  int_ref
+
+        .. versionadded:: 6.0.1
         """
         min.value, max.value, inc.value, pow.value = gxapi_cy.WrapMATH.nicer_scale_(GXContext._get_tls_geo(), min.value, max.value, inc.value, pow.value)
         
@@ -194,6 +284,15 @@ class GXMATH:
     def normalise_3d_(cls, x, y, z):
         """
         Scale a vector to unit length.
+        
+        :param x:  X component (altered)
+        :param y:  Y component (altered)
+        :param z:  Z component (altered)
+        :type  x:  float_ref
+        :type  y:  float_ref
+        :type  z:  float_ref
+
+        .. versionadded:: 6.0
 
         **Note:**
 
@@ -209,6 +308,14 @@ class GXMATH:
     def abs_double_(cls, z):
         """
         Calculate absolute value
+        
+        :param z:  Real
+        :type  z:  float
+
+        :returns:    Real
+        :rtype:      float
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -223,6 +330,14 @@ class GXMATH:
     def arc_cos_(cls, val):
         """
         Calculate the arccosine
+        
+        :param val:  Real
+        :type  val:  float
+
+        :returns:    Real
+        :rtype:      float
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -237,6 +352,14 @@ class GXMATH:
     def arc_sin_(cls, val):
         """
         Calculate the arcsin
+        
+        :param val:  Real
+        :type  val:  float
+
+        :returns:    Real
+        :rtype:      float
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -251,6 +374,14 @@ class GXMATH:
     def arc_tan_(cls, val):
         """
         Calculate the arctan
+        
+        :param val:  Real
+        :type  val:  float
+
+        :returns:    Real
+        :rtype:      float
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -265,6 +396,16 @@ class GXMATH:
     def arc_tan2_(cls, y, x):
         """
         Calculate ArcTan(Y/X)
+        
+        :param y:  Y
+        :param x:  X
+        :type  y:  float
+        :type  x:  float
+
+        :returns:    Real
+        :rtype:      float
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -279,6 +420,14 @@ class GXMATH:
     def ceil_(cls, z):
         """
         Calculates the ceiling of the value
+        
+        :param z:  Real
+        :type  z:  float
+
+        :returns:    Real
+        :rtype:      float
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -293,6 +442,14 @@ class GXMATH:
     def cos_(cls, val):
         """
         Calculate the cosine
+        
+        :param val:  Angle in radians
+        :type  val:  float
+
+        :returns:    Real
+        :rtype:      float
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -307,6 +464,24 @@ class GXMATH:
     def dot_product_3d_(cls, x1, y1, z1, x2, y2, z2):
         """
         Compute Dot product of two vectors.
+        
+        :param x1:  X1 component
+        :param y1:  Y1 component
+        :param z1:  Z1 component
+        :param x2:  X2 component
+        :param y2:  Y2 component
+        :param z2:  Z2 component
+        :type  x1:  float
+        :type  y1:  float
+        :type  z1:  float
+        :type  x2:  float
+        :type  y2:  float
+        :type  z2:  float
+
+        :returns:    Dot product
+        :rtype:      float
+
+        .. versionadded:: 6.0
         """
         ret_val = gxapi_cy.WrapMATH.dot_product_3d_(GXContext._get_tls_geo(), x1, y1, z1, x2, y2, z2)
         return ret_val
@@ -317,6 +492,14 @@ class GXMATH:
     def exp_(cls, val):
         """
         Calculate e raised to the power of X
+        
+        :param val:  X
+        :type  val:  float
+
+        :returns:    Real
+        :rtype:      float
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -331,6 +514,14 @@ class GXMATH:
     def floor_(cls, z):
         """
         Calculates the floor of the value
+        
+        :param z:  Real
+        :type  z:  float
+
+        :returns:    Real
+        :rtype:      float
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -345,6 +536,16 @@ class GXMATH:
     def hypot_(cls, x, y):
         """
         sqrt(X*X + Y*Y)
+        
+        :param x:  X
+        :param y:  Y
+        :type  x:  float
+        :type  y:  float
+
+        :returns:    Real
+        :rtype:      float
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -359,6 +560,16 @@ class GXMATH:
     def lambda_trans_(cls, z, lda):
         """
         Performs lambda transform on a value.
+        
+        :param z:    Z Value
+        :param lda:  Lambda value
+        :type  z:    float
+        :type  lda:  float
+
+        :returns:    The lambda transformed value
+        :rtype:      float
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -380,6 +591,16 @@ class GXMATH:
     def lambda_trans_rev_(cls, z, lda):
         """
         Performs a reverse lambda transform on a value.
+        
+        :param z:    Lambda transformed Z Value
+        :param lda:  Lambda value
+        :type  z:    float
+        :type  lda:  float
+
+        :returns:    The original non-lambda transformed value
+        :rtype:      float
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -398,6 +619,14 @@ class GXMATH:
     def log_(cls, val):
         """
         Calculate the natural log
+        
+        :param val:  Real
+        :type  val:  float
+
+        :returns:    Real
+        :rtype:      float
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -412,6 +641,14 @@ class GXMATH:
     def log10_(cls, val):
         """
         Calculate the base 10 log
+        
+        :param val:  Real
+        :type  val:  float
+
+        :returns:    Real
+        :rtype:      float
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -427,6 +664,18 @@ class GXMATH:
         """
         Given a Z value and the Log style and Log Minimum this
         function will return the log value.
+        
+        :param z:     Z Value
+        :param mode:  Log Mode (0 - Log, 1 - LogLinearLog)
+        :param min:   Log Minimum (must be greater than 0)
+        :type  z:     float
+        :type  mode:  int
+        :type  min:   float
+
+        :returns:     The Log Value.
+        :rtype:       float
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -459,6 +708,16 @@ class GXMATH:
     def mod_double_(cls, a, b):
         """
         Calculates the modulus of two reals (A mod B)
+        
+        :param a:  A
+        :param b:  B (must not be zero)
+        :type  a:  float
+        :type  b:  float
+
+        :returns:    Real
+        :rtype:      float
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -481,6 +740,29 @@ class GXMATH:
     def rotate_vector_(cls, x1, y1, z1, angle, x2, y2, z2, x3, y3, z3):
         """
         Rotate a vector about an axis.
+        
+        :param x1:     X1 component (vector to rotate)
+        :param y1:     Y1 component
+        :param z1:     Z1 component
+        :param angle:  Angle to rotate, CW in radians
+        :param x2:     X2 component (axis of rotation)
+        :param y2:     Y2 component
+        :param z2:     Z2 component
+        :param x3:     X3 component  (rotated vector, can
+        :param y3:     Y3 component   be the same as input)
+        :param z3:     Z3 component
+        :type  x1:     float
+        :type  y1:     float
+        :type  z1:     float
+        :type  angle:  float
+        :type  x2:     float
+        :type  y2:     float
+        :type  z2:     float
+        :type  x3:     float_ref
+        :type  y3:     float_ref
+        :type  z3:     float_ref
+
+        .. versionadded:: 6.0
 
         **Note:**
 
@@ -497,6 +779,16 @@ class GXMATH:
     def pow_(cls, x, y):
         """
         Calculate X raised to the power of Y
+        
+        :param x:  X
+        :param y:  Y
+        :type  x:  float
+        :type  y:  float
+
+        :returns:    Real
+        :rtype:      float
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -511,6 +803,12 @@ class GXMATH:
     def rand_(cls):
         """
         Get a  random number between 0 and 1
+        
+
+        :returns:    A real number
+        :rtype:      float
+
+        .. versionadded:: 6.3
 
         **Note:**
 
@@ -527,6 +825,16 @@ class GXMATH:
     def round_double_(cls, z, n):
         """
         Round to n significant digits
+        
+        :param z:  Real
+        :param n:  Number of significant digits to round to
+        :type  z:  float
+        :type  n:  int
+
+        :returns:    Real
+        :rtype:      float
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -543,6 +851,16 @@ class GXMATH:
     def sign_(cls, z_sign, z_val):
         """
         Determine return value based on value of Z1
+        
+        :param z_sign:  Z1
+        :param z_val:   Z2
+        :type  z_sign:  float
+        :type  z_val:   float
+
+        :returns:       ``|Z2| if Z1 > 0, -|Z2| if Z1 < 0, 0 if Z1 = 0, and Z2 if Z1 = Dummy``
+        :rtype:         float
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -557,6 +875,14 @@ class GXMATH:
     def sin_(cls, val):
         """
         Calculate the sin
+        
+        :param val:  Angle in radians
+        :type  val:  float
+
+        :returns:    Real
+        :rtype:      float
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -571,6 +897,14 @@ class GXMATH:
     def sqrt_(cls, val):
         """
         Calculate the square root
+        
+        :param val:  Real
+        :type  val:  float
+
+        :returns:    Real
+        :rtype:      float
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -585,6 +919,14 @@ class GXMATH:
     def tan_(cls, val):
         """
         Calculate the tangent
+        
+        :param val:  Angle in radians
+        :type  val:  float
+
+        :returns:    Real
+        :rtype:      float
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -599,6 +941,18 @@ class GXMATH:
     def un_log_z_(cls, z, mode, min):
         """
         Inverse of rLogZ
+        
+        :param z:     Log value
+        :param mode:  Log Mode (0 - Log, 1 - LogLinearLog)
+        :param min:   Log Minimum (must be greater than 0)
+        :type  z:     float
+        :type  mode:  int
+        :type  min:   float
+
+        :returns:     The original value
+        :rtype:       float
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -617,6 +971,9 @@ class GXMATH:
     def s_rand_(cls):
         """
         Seed the random-number generator with current time
+        
+
+        .. versionadded:: 6.3
 
         **Note:**
 

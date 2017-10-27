@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -63,6 +62,16 @@ class GXGD:
     def create(cls, name, type):
         """
         This method creates a `GXGD <geosoft.gxapi.GXGD>` object.
+        
+        :param name:  Name of the Grid File
+        :param type:  `GD_STATUS`
+        :type  name:  str
+        :type  type:  int
+
+        :returns:     Handle to the `GXGD <geosoft.gxapi.GXGD>` object
+        :rtype:       GXGD
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapGD.create(GXContext._get_tls_geo(), name.encode(), type)
         return GXGD(ret_val)

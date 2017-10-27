@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXMAPTEMPLATE import GXMAPTEMPLATE
@@ -101,6 +100,12 @@ class GXEMAPTEMPLATE:
     def drag_drop_enabled(self):
         """
         Is drag-and-drop enabled for the map?
+        
+
+        :returns:             `GEO_BOOL`
+        :rtype:               int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.drag_drop_enabled()
         return ret_val
@@ -111,6 +116,11 @@ class GXEMAPTEMPLATE:
     def set_drag_drop_enabled(self, enable):
         """
         Set whether drag-and-drop is enabled for the map.
+        
+        :param enable:        Enables/disables drag-and-drop `GEO_BOOL`
+        :type  enable:        int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.set_drag_drop_enabled(enable)
         
@@ -125,6 +135,12 @@ class GXEMAPTEMPLATE:
     def current(cls):
         """
         This method returns the Current Edited map template.
+        
+
+        :returns:    `GXEMAPTEMPLATE <geosoft.gxapi.GXEMAPTEMPLATE>` Object
+        :rtype:      GXEMAPTEMPLATE
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapEMAPTEMPLATE.current(GXContext._get_tls_geo())
         return GXEMAPTEMPLATE(ret_val)
@@ -135,6 +151,12 @@ class GXEMAPTEMPLATE:
     def current_no_activate(cls):
         """
         This method returns the Current Edited map template.
+        
+
+        :returns:    `GXEMAPTEMPLATE <geosoft.gxapi.GXEMAPTEMPLATE>` Object
+        :rtype:      GXEMAPTEMPLATE
+
+        .. versionadded:: 9.0
 
         **Note:**
 
@@ -150,6 +172,13 @@ class GXEMAPTEMPLATE:
     def current_if_exists(cls):
         """
         This method returns the Current Edited map.
+        
+
+        :returns:    `GXEMAPTEMPLATE <geosoft.gxapi.GXEMAPTEMPLATE>` Object to current edited map. If there is no current map,
+                  the user is not prompted for a map, and 0 is returned.
+        :rtype:      GXEMAPTEMPLATE
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapEMAPTEMPLATE.current_if_exists(GXContext._get_tls_geo())
         return GXEMAPTEMPLATE(ret_val)
@@ -162,6 +191,17 @@ class GXEMAPTEMPLATE:
     def get_map_templates_lst(cls, lst, path):
         """
         Load the file names of open maps into a `GXLST <geosoft.gxapi.GXLST>`.
+        
+        :param lst:   `GXLST <geosoft.gxapi.GXLST>` to load
+        :param path:  `EMAPTEMPLATE_PATH`
+        :type  lst:   GXLST
+        :type  path:  int
+
+        :returns:     The number of documents loaded into the `GXLST <geosoft.gxapi.GXLST>`.
+                      The `GXLST <geosoft.gxapi.GXLST>` is cleared first.
+        :rtype:       int
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapEMAPTEMPLATE.get_map_templates_lst(GXContext._get_tls_geo(), lst._wrapper, path)
         return ret_val
@@ -172,6 +212,11 @@ class GXEMAPTEMPLATE:
     def get_name(self, name):
         """
         Get the name of the map object of this `GXEMAPTEMPLATE <geosoft.gxapi.GXEMAPTEMPLATE>`.
+        
+        :param name:          Name returned
+        :type  name:          str_ref
+
+        .. versionadded:: 5.0
         """
         name.value = self._wrapper.get_name(name.value.encode())
         
@@ -182,6 +227,13 @@ class GXEMAPTEMPLATE:
     def have_current(cls):
         """
         This method returns whether a current map is loaded
+        
+
+        :returns:    0 - no current map.
+                  1 - current map
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapEMAPTEMPLATE.have_current(GXContext._get_tls_geo())
         return ret_val
@@ -192,6 +244,19 @@ class GXEMAPTEMPLATE:
     def i_get_specified_map_name(cls, field, value, name):
         """
         Find a loaded map that has a setting in its reg.
+        
+        :param field:  `GXREG <geosoft.gxapi.GXREG>` field name
+        :param value:  `GXREG <geosoft.gxapi.GXREG>` field value to find
+        :param name:   buffer for map name
+        :type  field:  str
+        :type  value:  str
+        :type  name:   str_ref
+
+        :returns:      0 - Ok
+                       1 - No Map Found
+        :rtype:        int
+
+        .. versionadded:: 5.0
         """
         ret_val, name.value = gxapi_cy.WrapEMAPTEMPLATE.i_get_specified_map_name(GXContext._get_tls_geo(), field.encode(), value.encode(), name.value.encode())
         return ret_val
@@ -202,6 +267,12 @@ class GXEMAPTEMPLATE:
     def is_locked(self):
         """
         Is this MapTemplate locked
+        
+
+        :returns:             `GEO_BOOL`
+        :rtype:               int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.is_locked()
         return ret_val
@@ -212,6 +283,14 @@ class GXEMAPTEMPLATE:
     def loaded(cls, name):
         """
         Returns 1 if a map is loaded .
+        
+        :param name:  map name
+        :type  name:  str
+
+        :returns:     1 if map is loaded, 0 otherwise.
+        :rtype:       int
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapEMAPTEMPLATE.loaded(GXContext._get_tls_geo(), name.encode())
         return ret_val
@@ -222,6 +301,21 @@ class GXEMAPTEMPLATE:
     def get_window_position(self, left, top, right, bottom, state, is_floating):
         """
         Get the map window's position and dock state
+        
+        :param left:          Window left position
+        :param top:           Window top position
+        :param right:         Window right position
+        :param bottom:        Window bottom position
+        :param state:         Window state `EMAPTEMPLATE_WINDOW_STATE`
+        :param is_floating:   Docked or floating `EMAPTEMPLATE_WINDOW_POSITION`
+        :type  left:          int_ref
+        :type  top:           int_ref
+        :type  right:         int_ref
+        :type  bottom:        int_ref
+        :type  state:         int_ref
+        :type  is_floating:   int_ref
+
+        .. versionadded:: 9.0
         """
         left.value, top.value, right.value, bottom.value, state.value, is_floating.value = self._wrapper.get_window_position(left.value, top.value, right.value, bottom.value, state.value, is_floating.value)
         
@@ -232,6 +326,21 @@ class GXEMAPTEMPLATE:
     def set_window_position(self, left, top, right, bottom, state, is_floating):
         """
         Get the map window's position and dock state
+        
+        :param left:          Window left position
+        :param top:           Window top position
+        :param right:         Window right position
+        :param bottom:        Window bottom position
+        :param state:         Window state `EMAPTEMPLATE_WINDOW_STATE`
+        :param is_floating:   Docked or floating `EMAPTEMPLATE_WINDOW_POSITION`
+        :type  left:          int
+        :type  top:           int
+        :type  right:         int
+        :type  bottom:        int
+        :type  state:         int
+        :type  is_floating:   int
+
+        .. versionadded:: 9.0
         """
         self._wrapper.set_window_position(left, top, right, bottom, state, is_floating)
         
@@ -242,6 +351,12 @@ class GXEMAPTEMPLATE:
     def read_only(self):
         """
         Checks if a map is currently opened in a read-only mode.
+        
+
+        :returns:             `GEO_BOOL`
+        :rtype:               int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.read_only()
         return ret_val
@@ -252,6 +367,14 @@ class GXEMAPTEMPLATE:
     def load(cls, name):
         """
         Loads maps into the editor.
+        
+        :param name:  list of maps (';' or '|' delimited) to load.
+        :type  name:  str
+
+        :returns:     `GXEMAPTEMPLATE <geosoft.gxapi.GXEMAPTEMPLATE>` Object to edited map.
+        :rtype:       GXEMAPTEMPLATE
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -272,6 +395,15 @@ class GXEMAPTEMPLATE:
     def load_no_activate(cls, name):
         """
         Loads documents into the workspace
+        
+        :param name:  List of documents (';' or '|' delimited) to load.
+        :type  name:  str
+
+        :returns:     Handle to current edited document, which will be the last
+                      database in the list if multiple files were provided.
+        :rtype:       GXEMAPTEMPLATE
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -287,6 +419,12 @@ class GXEMAPTEMPLATE:
     def lock(self):
         """
         This method locks the Edited map.
+        
+
+        :returns:             `GXMAPTEMPLATE <geosoft.gxapi.GXMAPTEMPLATE>` Object to map associated with edited map.
+        :rtype:               GXMAPTEMPLATE
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.lock()
         return GXMAPTEMPLATE(ret_val)
@@ -297,6 +435,9 @@ class GXEMAPTEMPLATE:
     def make_current(self):
         """
         Makes this `GXEMAPTEMPLATE <geosoft.gxapi.GXEMAPTEMPLATE>` object the current active object to the user.
+        
+
+        .. versionadded:: 5.0
         """
         self._wrapper.make_current()
         
@@ -307,6 +448,11 @@ class GXEMAPTEMPLATE:
     def un_load(cls, name):
         """
         Unloads a map template.
+        
+        :param name:  Name of the map to unload
+        :type  name:  str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -322,6 +468,9 @@ class GXEMAPTEMPLATE:
     def un_load_all(cls):
         """
         Unloads all opened maps
+        
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapEMAPTEMPLATE.un_load_all(GXContext._get_tls_geo())
         
@@ -332,6 +481,13 @@ class GXEMAPTEMPLATE:
     def un_load_verify(cls, name, prompt):
         """
         Unloads an edited map, optional prompt to save.
+        
+        :param name:    Name of map to unload
+        :param prompt:  prompt `GEO_BOOL`
+        :type  name:    str
+        :type  prompt:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -347,6 +503,9 @@ class GXEMAPTEMPLATE:
     def un_lock(self):
         """
         This method unlocks the Edited map.
+        
+
+        .. versionadded:: 5.0
         """
         self._wrapper.un_lock()
         
@@ -361,6 +520,23 @@ class GXEMAPTEMPLATE:
     def get_box(self, state, min_x, min_y, max_x, max_y):
         """
         Returns the coordinates of a user selected box.
+        
+        :param state:         user prompt string
+        :param min_x:         X minimum in current view user units.
+        :param min_y:         Y minimum in current view user units.
+        :param max_x:         X maximum in current view user units.
+        :param max_y:         Y maximum in current view user units.
+        :type  state:         str
+        :type  min_x:         float_ref
+        :type  min_y:         float_ref
+        :type  max_x:         float_ref
+        :type  max_y:         float_ref
+
+        :returns:             0 if point returned.
+                              1 if user cancelled.
+        :rtype:               int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -376,6 +552,23 @@ class GXEMAPTEMPLATE:
     def get_line(self, str_val, min_x, min_y, max_x, max_y):
         """
         Returns the end points of a line.
+        
+        :param str_val:       user prompt string
+        :param min_x:         X1 in view user units
+        :param min_y:         Y1
+        :param max_x:         X2
+        :param max_y:         Y2
+        :type  str_val:       str
+        :type  min_x:         float_ref
+        :type  min_y:         float_ref
+        :type  max_x:         float_ref
+        :type  max_y:         float_ref
+
+        :returns:             0 if line returned.
+                              1 if user cancelled.
+        :rtype:               int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -391,6 +584,19 @@ class GXEMAPTEMPLATE:
     def get_point(self, str_val, x, y):
         """
         Returns the coordinates of a user selected point.
+        
+        :param str_val:       user prompt string
+        :param x:             X coordinate in current view user units.
+        :param y:             Y
+        :type  str_val:       str
+        :type  x:             float_ref
+        :type  y:             float_ref
+
+        :returns:             0 if point returned.
+                              1 if user cancelled.
+        :rtype:               int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -406,6 +612,23 @@ class GXEMAPTEMPLATE:
     def get_rect(self, str_val, min_x, min_y, max_x, max_y):
         """
         Returns the coordinates of a user selected box starting at a corner.
+        
+        :param str_val:       user prompt string
+        :param min_x:         X minimum in current view user units.   (defines corner)
+        :param min_y:         Y
+        :param max_x:         X maximum
+        :param max_y:         Y
+        :type  str_val:       str
+        :type  min_x:         float_ref
+        :type  min_y:         float_ref
+        :type  max_x:         float_ref
+        :type  max_y:         float_ref
+
+        :returns:             0 if point returned.
+                              1 if user cancelled.
+        :rtype:               int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -421,6 +644,19 @@ class GXEMAPTEMPLATE:
     def track_point(self, flags, x, y):
         """
         Get point without prompt or cursor change with tracking
+        
+        :param flags:         `EMAPTEMPLATE_TRACK`
+        :param x:             X coordinate in current view user units.
+        :param y:             Y
+        :type  flags:         int
+        :type  x:             float_ref
+        :type  y:             float_ref
+
+        :returns:             0 if point returned.
+                              1 if user cancelled.
+        :rtype:               int
+
+        .. versionadded:: 5.0
         """
         ret_val, x.value, y.value = self._wrapper.track_point(flags, x.value, y.value)
         return ret_val
@@ -435,6 +671,14 @@ class GXEMAPTEMPLATE:
     def get_item_selection(self, item):
         """
         Gets info about the current selected item
+        
+        :param item:          returned item name
+        :type  item:          str_ref
+
+        :returns:             `GEO_BOOL` Is item a view?
+        :rtype:               int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -449,6 +693,11 @@ class GXEMAPTEMPLATE:
     def set_item_selection(self, item):
         """
         Sets the current selected item
+        
+        :param item:          item name
+        :type  item:          str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -467,6 +716,17 @@ class GXEMAPTEMPLATE:
     def get_display_area(self, min_x, min_y, max_x, max_y):
         """
         Get the area you are currently looking at.
+        
+        :param min_x:         X Min returned
+        :param min_y:         Y Min returned
+        :param max_x:         X Max returned
+        :param max_y:         Y Max returned
+        :type  min_x:         float_ref
+        :type  min_y:         float_ref
+        :type  max_x:         float_ref
+        :type  max_y:         float_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -482,6 +742,25 @@ class GXEMAPTEMPLATE:
     def get_template_layout_props(self, snap_to_grid, snap_dist, view_grid, view_rulers, view_units, grid_red, grid_green, grid_blue):
         """
         Get the base layout view properties.
+        
+        :param snap_to_grid:  `GEO_BOOL` Snap to grid
+        :param snap_dist:     Snapping distance (always in mm)
+        :param view_grid:     View Grid
+        :param view_rulers:   View Rulers
+        :param view_units:    `LAYOUT_VIEW_UNITS` View Units
+        :param grid_red:      Grid Red Component (0-255)
+        :param grid_green:    Grid Green Component (0-255)
+        :param grid_blue:     Grid Blue Component (0-255)
+        :type  snap_to_grid:  int_ref
+        :type  snap_dist:     float_ref
+        :type  view_grid:     int_ref
+        :type  view_rulers:   int_ref
+        :type  view_units:    int_ref
+        :type  grid_red:      int_ref
+        :type  grid_green:    int_ref
+        :type  grid_blue:     int_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -497,6 +776,12 @@ class GXEMAPTEMPLATE:
     def get_window_state(self):
         """
         Retrieve the current state of the map window
+        
+
+        :returns:             `EMAPTEMPLATE_WINDOW_STATE`
+        :rtype:               int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.get_window_state()
         return ret_val
@@ -507,6 +792,17 @@ class GXEMAPTEMPLATE:
     def set_display_area(self, min_x, min_y, max_x, max_y):
         """
         Set the area you wish to see.
+        
+        :param min_x:         X Min
+        :param min_y:         Y Min
+        :param max_x:         X Max
+        :param max_y:         Y Max
+        :type  min_x:         float
+        :type  min_y:         float
+        :type  max_x:         float
+        :type  max_y:         float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -522,6 +818,25 @@ class GXEMAPTEMPLATE:
     def set_template_layout_props(self, snap_to_grid, snap_dist, view_grid, view_rulers, view_units, grid_red, grid_green, grid_blue):
         """
         Set the base layout view properties.
+        
+        :param snap_to_grid:  `GEO_BOOL` Snap to grid
+        :param snap_dist:     Snapping distance (always in mm)
+        :param view_grid:     View Grid
+        :param view_rulers:   View Rulers
+        :param view_units:    `LAYOUT_VIEW_UNITS` View Units
+        :param grid_red:      Grid Red Component (0-255)
+        :param grid_green:    Grid Green Component (0-255)
+        :param grid_blue:     Grid Blue Component (0-255)
+        :type  snap_to_grid:  int
+        :type  snap_dist:     float
+        :type  view_grid:     int
+        :type  view_rulers:   int
+        :type  view_units:    int
+        :type  grid_red:      int
+        :type  grid_green:    int
+        :type  grid_blue:     int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -537,6 +852,11 @@ class GXEMAPTEMPLATE:
     def set_window_state(self, state):
         """
         Changes the state of the map window
+        
+        :param state:         `EMAPTEMPLATE_WINDOW_STATE`
+        :type  state:         int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.set_window_state(state)
         
@@ -551,6 +871,14 @@ class GXEMAPTEMPLATE:
     def create_virtual(cls, name):
         """
         Makes this `GXEMAPTEMPLATE <geosoft.gxapi.GXEMAPTEMPLATE>` object the current active object to the user.
+        
+        :param name:  Name of map to create a virtual EMAMTEMPLATE from
+        :type  name:  str
+
+        :returns:     `GXEMAPTEMPLATE <geosoft.gxapi.GXEMAPTEMPLATE>` Object
+        :rtype:       GXEMAPTEMPLATE
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapEMAPTEMPLATE.create_virtual(GXContext._get_tls_geo(), name.encode())
         return GXEMAPTEMPLATE(ret_val)

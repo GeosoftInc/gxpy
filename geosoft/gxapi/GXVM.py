@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -79,6 +78,16 @@ class GXVM:
     def create(cls, type, elements):
         """
         Create a `GXVM <geosoft.gxapi.GXVM>`.
+        
+        :param type:      `GEO_VAR`
+        :param elements:  `GXVM <geosoft.gxapi.GXVM>` length (less than 16777215)
+        :type  type:      int
+        :type  elements:  int
+
+        :returns:         `GXVM <geosoft.gxapi.GXVM>` Object
+        :rtype:           GXVM
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -92,7 +101,17 @@ class GXVM:
     @classmethod
     def create_ext(cls, type, elements):
         """
-        Create a `GXVM <geosoft.gxapi.GXVM>`, using one of the `GS_TYPES_` special data types.
+        Create a `GXVM <geosoft.gxapi.GXVM>`, using one of the `GS_TYPES` special data types.
+        
+        :param type:      `GS_TYPES`
+        :param elements:  `GXVM <geosoft.gxapi.GXVM>` length (less than 16777215)
+        :type  type:      int
+        :type  elements:  int
+
+        :returns:         `GXVM <geosoft.gxapi.GXVM>` Object
+        :rtype:           GXVM
+
+        .. versionadded:: 6.4.2
 
         **Note:**
 
@@ -109,6 +128,15 @@ class GXVM:
     def get_int(self, element):
         """
         Get an integer element from a `GXVM <geosoft.gxapi.GXVM>`.
+        
+        :param element:  Element wanted
+        :type  element:  int
+
+        :returns:        Element wanted, or `iDUMMY <geosoft.gxapi.iDUMMY>`
+                         if the value is dummy or outside of the range of data.
+        :rtype:          int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.get_int(element)
         return ret_val
@@ -119,6 +147,13 @@ class GXVM:
     def get_string(self, element, str_val):
         """
         Get a string element from a `GXVM <geosoft.gxapi.GXVM>`.
+        
+        :param element:  Element wanted
+        :param str_val:  String in which to place element
+        :type  element:  int
+        :type  str_val:  str_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -137,6 +172,12 @@ class GXVM:
     def length(self):
         """
         Returns current `GXVM <geosoft.gxapi.GXVM>` length.
+        
+
+        :returns:    # of elements in the `GXVM <geosoft.gxapi.GXVM>`.
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.length()
         return ret_val
@@ -147,6 +188,11 @@ class GXVM:
     def re_size(self, newsize):
         """
         Re-set the size of a `GXVM <geosoft.gxapi.GXVM>`.
+        
+        :param newsize:  New size (number of elements)
+        :type  newsize:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -161,6 +207,15 @@ class GXVM:
     def get_double(self, element):
         """
         Get a real element from a `GXVM <geosoft.gxapi.GXVM>`.
+        
+        :param element:  Element wanted
+        :type  element:  int
+
+        :returns:        Element wanted, or `rDUMMY <geosoft.gxapi.rDUMMY>`
+                         if the value is dummy or outside of the range of data.
+        :rtype:          float
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.get_double(element)
         return ret_val
@@ -171,6 +226,13 @@ class GXVM:
     def set_int(self, element, value):
         """
         Set an integer element in a `GXVM <geosoft.gxapi.GXVM>`.
+        
+        :param element:  Element to set
+        :param value:    Value to set
+        :type  element:  int
+        :type  value:    int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -189,6 +251,13 @@ class GXVM:
     def set_double(self, element, value):
         """
         Set a real element in a `GXVM <geosoft.gxapi.GXVM>`.
+        
+        :param element:  Element to set
+        :param value:    Value to set
+        :type  element:  int
+        :type  value:    float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -207,6 +276,13 @@ class GXVM:
     def set_string(self, element, value):
         """
         Set a string element in a `GXVM <geosoft.gxapi.GXVM>`.
+        
+        :param element:  Element to set
+        :param value:    String to set
+        :type  element:  int
+        :type  value:    str
+
+        .. versionadded:: 5.0
 
         **Note:**
 

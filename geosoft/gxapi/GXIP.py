@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXPG import GXPG
@@ -27,9 +26,9 @@ class GXIP:
     The following defines are used in GX code but are not
     part of any functions:
     
-    `IP_ARRAY_`
-    `IP_CHANNELS_`
-    `IP_LINES_`
+    `IP_ARRAY`
+    `IP_CHANNELS`
+    `IP_LINES`
     """
 
     def __enter__(self):
@@ -72,6 +71,27 @@ class GXIP:
     def convert_ubcip2_d_to_grid(cls, file, pg, vv_x, vv_z, x, z, cx, cz, reciprocal):
         """
         Convert a UBC 2D model to a regular grid.
+        
+        :param file:        Output grid file name
+        :param pg:          Model data
+        :param vv_x:        Model cells sizes (input)
+        :param vv_z:        Model cells sizes (input)
+        :param x:           Top-left corner X
+        :param z:           Top-left corner Z
+        :param cx:          Output grid cell size in X
+        :param cz:          Output grid cell size in Z
+        :param reciprocal:  Output reciprocal of values (0:No, 1:Yes) for resistivity?
+        :type  file:        str
+        :type  pg:          GXPG
+        :type  vv_x:        GXVV
+        :type  vv_z:        GXVV
+        :type  x:           float
+        :type  z:           float
+        :type  cx:          float
+        :type  cz:          float
+        :type  reciprocal:  int
+
+        .. versionadded:: 7.1
 
         **Note:**
 
@@ -88,6 +108,13 @@ class GXIP:
     def create_default_job(self, ini, type):
         """
         Create a default job from scratch.
+        
+        :param ini:   File name of the INI file to create (forces correct suffix)
+        :param type:  `IP_PLOT`
+        :type  ini:   str
+        :type  type:  int
+
+        .. versionadded:: 6.1
         """
         self._wrapper.create_default_job(ini.encode(), type)
         
@@ -98,6 +125,23 @@ class GXIP:
     def export_ubcip3(self, db, line, chan, error_chan, obs, topo, version):
         """
         Export of `GXIP <geosoft.gxapi.GXIP>` data to UBC format.
+        
+        :param db:          `GXDB <geosoft.gxapi.GXDB>` object
+        :param line:        Output line name
+        :param chan:        Output `GXIP <geosoft.gxapi.GXIP>` channel name
+        :param error_chan:  Output error channel name ("" for none)
+        :param obs:         Output OBS file name
+        :param topo:        Output TOPO file name
+        :param version:     Version number (3 or 5)
+        :type  db:          GXDB
+        :type  line:        str
+        :type  chan:        str
+        :type  error_chan:  str
+        :type  obs:         str
+        :type  topo:        str
+        :type  version:     float
+
+        .. versionadded:: 8.1
 
         **Note:**
 
@@ -114,6 +158,33 @@ class GXIP:
     def export_ubcip_control(cls, control, n_iter, i_rest, chi_factor, obs, cond, mesh, topo, initial, ref_mod, alphas, wts):
         """
         Export a control file for using in the UBC IPINV2D program.
+        
+        :param control:     Output control file name
+        :param n_iter:      niter
+        :param i_rest:      irest
+        :param chi_factor:  chifact
+        :param obs:         `GXIP <geosoft.gxapi.GXIP>` obs file
+        :param cond:        Conductivity file
+        :param mesh:        Mesh file
+        :param topo:        Topography file
+        :param initial:     Initial model file
+        :param ref_mod:     Reference model
+        :param alphas:      Alphas
+        :param wts:         Weights file
+        :type  control:     str
+        :type  n_iter:      int
+        :type  i_rest:      int
+        :type  chi_factor:  float
+        :type  obs:         str
+        :type  cond:        str
+        :type  mesh:        str
+        :type  topo:        str
+        :type  initial:     str
+        :type  ref_mod:     str
+        :type  alphas:      str
+        :type  wts:         str
+
+        .. versionadded:: 6.4
 
         **Note:**
 
@@ -130,6 +201,41 @@ class GXIP:
     def export_ubcip_control_v5(cls, control, n_iter, chi_factor, obs, topo, cond_selection, cond, mesh_selection, mesh, initial_selection, initial, reference_selection, ref_cond, alphas_selection, alphas, wts):
         """
         Export a control file for using in the UBC IPINV2D program.
+        
+        :param control:              Output control file name
+        :param n_iter:               niter
+        :param chi_factor:           chifact
+        :param obs:                  RES obs file
+        :param topo:                 Topography file (required)
+        :param cond_selection:       Conductivity type `IP_UBC_CONTROL` FILE or VALUE
+        :param cond:                 Conductivity file (can be "") or value
+        :param mesh_selection:       Mesh type `IP_UBC_CONTROL` FILE, VALUE or DEFAULT
+        :param mesh:                 Mesh file (can be "") or value
+        :param initial_selection:    Initial model type `IP_UBC_CONTROL` FILE, VALUE or DEFAULT
+        :param initial:              Initial model file (can be "") or value
+        :param reference_selection:  Reference model type `IP_UBC_CONTROL` FILE, VALUE or DEFAULT
+        :param ref_cond:             Reference model file (can be "") or value(
+        :param alphas_selection:     Alphas type `IP_UBC_CONTROL` FILE, VALUE, LENGTH or DEFAULT
+        :param alphas:               Alphas  file (can be ""), value or length
+        :param wts:                  Weights file
+        :type  control:              str
+        :type  n_iter:               int
+        :type  chi_factor:           float
+        :type  obs:                  str
+        :type  topo:                 str
+        :type  cond_selection:       int
+        :type  cond:                 str
+        :type  mesh_selection:       int
+        :type  mesh:                 str
+        :type  initial_selection:    int
+        :type  initial:              str
+        :type  reference_selection:  int
+        :type  ref_cond:             str
+        :type  alphas_selection:     int
+        :type  alphas:               str
+        :type  wts:                  str
+
+        .. versionadded:: 8.1
 
         **Note:**
 
@@ -144,6 +250,25 @@ class GXIP:
     def export_ubc_res3(self, db, line, voltage_chan, current_chan, error_chan, obs, topo, version):
         """
         Export of `GXIP <geosoft.gxapi.GXIP>` Resistivity data to UBC format.
+        
+        :param db:            `GXDB <geosoft.gxapi.GXDB>` object
+        :param line:          Output line name
+        :param voltage_chan:  Output voltage channel name
+        :param current_chan:  Output current channel name
+        :param error_chan:    Output error channel name ("" for none)
+        :param obs:           Output OBS file name
+        :param topo:          Output TOPO file name
+        :param version:       Version number (3 or 5)
+        :type  db:            GXDB
+        :type  line:          str
+        :type  voltage_chan:  str
+        :type  current_chan:  str
+        :type  error_chan:    str
+        :type  obs:           str
+        :type  topo:          str
+        :type  version:       float
+
+        .. versionadded:: 8.1
 
         **Note:**
 
@@ -161,6 +286,31 @@ class GXIP:
     def export_ubc_res_control(cls, control, n_iter, i_rest, chi_factor, obs, mesh, topo, initial, ref_cond, alphas, wts):
         """
         Export a control file for using in the UBC DCINV2D program.
+        
+        :param control:     Output control file name
+        :param n_iter:      niter
+        :param i_rest:      irest
+        :param chi_factor:  chifact
+        :param obs:         RES obs file
+        :param mesh:        Mesh file
+        :param topo:        Topography file (required)
+        :param initial:     Initial model file (can be "" or "NULL")
+        :param ref_cond:    Reference model conductivity
+        :param alphas:      Alphas
+        :param wts:         Weights file
+        :type  control:     str
+        :type  n_iter:      int
+        :type  i_rest:      int
+        :type  chi_factor:  float
+        :type  obs:         str
+        :type  mesh:        str
+        :type  topo:        str
+        :type  initial:     str
+        :type  ref_cond:    float
+        :type  alphas:      str
+        :type  wts:         str
+
+        .. versionadded:: 6.4
 
         **Note:**
 
@@ -177,6 +327,37 @@ class GXIP:
     def export_ubc_res_control_v5(cls, control, n_iter, chi_factor, obs, topo, mesh_selection, mesh, initial_selection, initial, reference_selection, ref_cond, alphas_selection, alphas, wts):
         """
         Export a control file for using in the UBC DCINV2D program.
+        
+        :param control:              Output control file name
+        :param n_iter:               niter
+        :param chi_factor:           chifact
+        :param obs:                  RES obs file
+        :param topo:                 Topography file (required)
+        :param mesh_selection:       Mesh type `IP_UBC_CONTROL` FILE, VALUE or DEFAULT
+        :param mesh:                 Mesh file (can be "") or value
+        :param initial_selection:    Initial model type `IP_UBC_CONTROL` FILE, VALUE or DEFAULT
+        :param initial:              Initial model file (can be "") or value
+        :param reference_selection:  Reference model type `IP_UBC_CONTROL` FILE, VALUE or DEFAULT
+        :param ref_cond:             Reference model file (can be "") or value(
+        :param alphas_selection:     Alphas type `IP_UBC_CONTROL` FILE, VALUE, LENGTH or DEFAULT
+        :param alphas:               Alphas  file (can be ""), value or length
+        :param wts:                  Weights file
+        :type  control:              str
+        :type  n_iter:               int
+        :type  chi_factor:           float
+        :type  obs:                  str
+        :type  topo:                 str
+        :type  mesh_selection:       int
+        :type  mesh:                 str
+        :type  initial_selection:    int
+        :type  initial:              str
+        :type  reference_selection:  int
+        :type  ref_cond:             str
+        :type  alphas_selection:     int
+        :type  alphas:               str
+        :type  wts:                  str
+
+        .. versionadded:: 8.1
 
         **Note:**
 
@@ -193,6 +374,29 @@ class GXIP:
     def export_data_to_ubc_3d(self, db, line_lst, locations_only, include_z, chan, error_chan, mask_chan, ip_type, comments, obs):
         """
         Export of `GXIP <geosoft.gxapi.GXIP>` data to UBC 3D `GXIP <geosoft.gxapi.GXIP>` format.
+        
+        :param db:              `GXDB <geosoft.gxapi.GXDB>` object
+        :param line_lst:        Lines to export (Name, Symbol)
+        :param locations_only:  Locations only (0: No, 1: Yes)?
+        :param include_z:       Include Z values (0: No, 1: Yes)?
+        :param chan:            `GXIP <geosoft.gxapi.GXIP>` channel name (can be "" if exporting locations only)
+        :param error_chan:      Error channel name (can be "" if exporting locations only)
+        :param mask_chan:       Mask channel name (can be "")
+        :param ip_type:         IPTYPE (1: Vp, 2: Chargeability)
+        :param comments:        Comments (can be "")
+        :param obs:             Output OBS file name
+        :type  db:              GXDB
+        :type  line_lst:        GXLST
+        :type  locations_only:  int
+        :type  include_z:       int
+        :type  chan:            str
+        :type  error_chan:      str
+        :type  mask_chan:       str
+        :type  ip_type:         int
+        :type  comments:        str
+        :type  obs:             str
+
+        .. versionadded:: 9.2
 
         **Note:**
 
@@ -208,6 +412,16 @@ class GXIP:
     def import_ubc2_dmod(cls, file, type):
         """
         Import a MOD file from the UBC IPINV2D program.
+        
+        :param file:  UBC MOD file name to import
+        :param type:  0 - CON, 1 - CHG
+        :type  file:  str
+        :type  type:  int
+
+        :returns:     `GXPG <geosoft.gxapi.GXPG>` Object
+        :rtype:       GXPG
+
+        .. versionadded:: 7.1
 
         **Note:**
 
@@ -224,6 +438,19 @@ class GXIP:
     def import_ubc2_dmsh(cls, file, x, z, vv_x, vv_z):
         """
         Import a MSH file from the UBC IPINV2D program.
+        
+        :param file:  UBC MSH file to import
+        :param x:     Returned origin X (top left corner)
+        :param z:     Returned origin Z (top left corner)
+        :param vv_x:  Cell widths  (left to right) (real)
+        :param vv_z:  Cell heights (top down) (real)
+        :type  file:  str
+        :type  x:     float_ref
+        :type  z:     float_ref
+        :type  vv_x:  GXVV
+        :type  vv_z:  GXVV
+
+        .. versionadded:: 7.1
 
         **Note:**
 
@@ -238,6 +465,17 @@ class GXIP:
     def import_ubc2_d_topo(cls, file, elev0, vv_x, vv_z):
         """
         Import a Topography file from the UBC IPINV2D program.
+        
+        :param file:   UBC Topo file to import
+        :param elev0:  Returned top of mesh elevation
+        :param vv_x:   Topography X values
+        :param vv_z:   Topography Z values (elevations)
+        :type  file:   str
+        :type  elev0:  float_ref
+        :type  vv_x:   GXVV
+        :type  vv_z:   GXVV
+
+        .. versionadded:: 7.1
 
         **Note:**
 
@@ -253,6 +491,13 @@ class GXIP:
     def open_job(self, job, type):
         """
         Open a `GXIP <geosoft.gxapi.GXIP>` plotting job
+        
+        :param job:   Job file name
+        :param type:  Job type `IP_PLOT`
+        :type  job:   str
+        :type  type:  int
+
+        .. versionadded:: 6.1
         """
         self._wrapper.open_job(job.encode(), type)
         
@@ -263,6 +508,13 @@ class GXIP:
     def save_job(self, job, type):
         """
         Save a `GXIP <geosoft.gxapi.GXIP>` plotting job
+        
+        :param job:   Job file name
+        :param type:  Job type  `IP_PLOT`
+        :type  job:   str
+        :type  type:  int
+
+        .. versionadded:: 6.1
         """
         self._wrapper.save_job(job.encode(), type)
         
@@ -273,6 +525,26 @@ class GXIP:
     def trim_ubc2_d_model(cls, pg, trim_xl, trim_xr, trim_z, vv_x, vv_z, x):
         """
         Trim the padding cells from the UBC IPINV2D Model.
+        
+        :param pg:       Input model (unchanged)
+        :param trim_xl:  Cells to remove on left
+        :param trim_xr:  Cells to remove on right
+        :param trim_z:   Cells to remove on the bottom
+        :param vv_x:     Column widths (modified)
+        :param vv_z:     Row heights (modified)
+        :param x:        Top left corner X (modified)
+        :type  pg:       GXPG
+        :type  trim_xl:  int
+        :type  trim_xr:  int
+        :type  trim_z:   int
+        :type  vv_x:     GXVV
+        :type  vv_z:     GXVV
+        :type  x:        float_ref
+
+        :returns:        `GXPG <geosoft.gxapi.GXPG>` Object
+        :rtype:          GXPG
+
+        .. versionadded:: 7.1
 
         **Note:**
 
@@ -290,6 +562,11 @@ class GXIP:
     def write_distant_electrodes(self, db):
         """
         Write distant electrode locations to channels
+        
+        :param db:  `GXDB <geosoft.gxapi.GXDB>` object
+        :type  db:  GXDB
+
+        .. versionadded:: 6.3
 
         **Note:**
 
@@ -304,6 +581,13 @@ class GXIP:
     def write_distant_electrodes_lst(self, db, lst):
         """
         Write distant electrode locations to channels for a `GXLST <geosoft.gxapi.GXLST>` of lines
+        
+        :param db:   `GXDB <geosoft.gxapi.GXDB>` object
+        :param lst:  Lines to write out
+        :type  db:   GXDB
+        :type  lst:  GXLST
+
+        .. versionadded:: 6.4.2
 
         **Note:**
 
@@ -322,6 +606,17 @@ class GXIP:
     def average_duplicates_qc(self, db, chan, qc_chan, out):
         """
         Average duplicate samples in a database.
+        
+        :param db:       Database to export from
+        :param chan:     Mask or reference channel (required)
+        :param qc_chan:  QC channel (can be left blank)
+        :param out:      `IP_DUPLICATE`
+        :type  db:       GXDB
+        :type  chan:     str
+        :type  qc_chan:  str
+        :type  out:      int
+
+        .. versionadded:: 7.3
 
         **Note:**
 
@@ -341,6 +636,12 @@ class GXIP:
     def create(cls):
         """
         Create `GXIP <geosoft.gxapi.GXIP>`.
+        
+
+        :returns:    `GXIP <geosoft.gxapi.GXIP>` Object
+        :rtype:      GXIP
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapIP.create(GXContext._get_tls_geo())
         return GXIP(ret_val)
@@ -353,6 +654,31 @@ class GXIP:
     def export_i2_x(self, db, file, line, res_data, ip_data, res_model, ip_model, res_synth, ip_synth, res_poly, ip_poly):
         """
         Export line(s) to an Interpex RESIX I2X format file.
+        
+        :param db:         Database to export from
+        :param file:       Name of the file
+        :param line:       Name of the line
+        :param res_data:   Resistivity (data) channel
+        :param ip_data:    `GXIP <geosoft.gxapi.GXIP>` (data) channel (can be "")
+        :param res_model:  Image model resistivity channel (can be "")
+        :param ip_model:   Image model `GXIP <geosoft.gxapi.GXIP>` channel (can be "")
+        :param res_synth:  Image model synthetic resistivity channel (can be "")
+        :param ip_synth:   Image model synthetic `GXIP <geosoft.gxapi.GXIP>` channel (can be "")
+        :param res_poly:   Resistivity (polygon) channel (can be "")
+        :param ip_poly:    `GXIP <geosoft.gxapi.GXIP>` (polygon) channel (can be "")
+        :type  db:         GXDB
+        :type  file:       str
+        :type  line:       str
+        :type  res_data:   str
+        :type  ip_data:    str
+        :type  res_model:  str
+        :type  ip_model:   str
+        :type  res_synth:  str
+        :type  ip_synth:   str
+        :type  res_poly:   str
+        :type  ip_poly:    str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -367,6 +693,15 @@ class GXIP:
     def export_ipdata(self, db, chan, title):
         """
         Exports data in the Geosoft IPDATA format.
+        
+        :param db:     Database to export from
+        :param chan:   Channel to export
+        :param title:  Title for IPDATA files
+        :type  db:     GXDB
+        :type  chan:   str
+        :type  title:  str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.export_ipdata(db._wrapper, chan.encode(), title.encode())
         
@@ -377,6 +712,17 @@ class GXIP:
     def export_ipdata_dir(self, db, chan, title, dir):
         """
         Exports data in the Geosoft IPDATA format in the specified directory
+        
+        :param db:     Database to export from
+        :param chan:   Channel to export
+        :param title:  Title for IPDATA files
+        :param dir:    Directory for IPDATA files
+        :type  db:     GXDB
+        :type  chan:   str
+        :type  title:  str
+        :type  dir:    str
+
+        .. versionadded:: 6.4
         """
         self._wrapper.export_ipdata_dir(db._wrapper, chan.encode(), title.encode(), dir.encode())
         
@@ -387,6 +733,27 @@ class GXIP:
     def export_ipred(self, db, title, chan, suffix, filter, wts, stn1, stn2, max_n):
         """
         Exports pseudo-section in the Geosoft IPRED format.
+        
+        :param db:      Database to export from
+        :param title:   Title for first line of file
+        :param chan:    Channel to process
+        :param suffix:  File suffix (type)
+        :param filter:  `IP_FILTER`
+        :param wts:     The Fraser Filter weights
+        :param stn1:    First Station position (`rDUMMY <geosoft.gxapi.rDUMMY>` for default)
+        :param stn2:    Last Station position  (`rDUMMY <geosoft.gxapi.rDUMMY>` for default)
+        :param max_n:   Maximum n spacing
+        :type  db:      GXDB
+        :type  title:   str
+        :type  chan:    str
+        :type  suffix:  str
+        :type  filter:  int
+        :type  wts:     str
+        :type  stn1:    float
+        :type  stn2:    float
+        :type  max_n:   int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -403,6 +770,29 @@ class GXIP:
     def export_ipred_dir(self, db, title, chan, suffix, filter, wts, stn1, stn2, max_n, dir):
         """
         Exports pseudo-section in the Geosoft IPRED format in the specified directory
+        
+        :param db:      Database to export from
+        :param title:   Title for first line of file
+        :param chan:    Channel to process
+        :param suffix:  File suffix (type)
+        :param filter:  `IP_FILTER`
+        :param wts:     The Fraser Filter weights
+        :param stn1:    First Station position (`rDUMMY <geosoft.gxapi.rDUMMY>` for default)
+        :param stn2:    Last Station position  (`rDUMMY <geosoft.gxapi.rDUMMY>` for default)
+        :param max_n:   Maximum n spacing
+        :param dir:     Directory to export to
+        :type  db:      GXDB
+        :type  title:   str
+        :type  chan:    str
+        :type  suffix:  str
+        :type  filter:  int
+        :type  wts:     str
+        :type  stn1:    float
+        :type  stn2:    float
+        :type  max_n:   int
+        :type  dir:     str
+
+        .. versionadded:: 6.4
 
         **Note:**
 
@@ -419,6 +809,17 @@ class GXIP:
     def export_line_ipdata(self, db, line, chan, title):
         """
         Exports one line of data in the Geosoft IPDATA format.
+        
+        :param db:     Database to export from
+        :param line:   Line to export
+        :param chan:   Channel to export
+        :param title:  Title for IPDATA files
+        :type  db:     GXDB
+        :type  line:   str
+        :type  chan:   str
+        :type  title:  str
+
+        .. versionadded:: 5.1.8
         """
         self._wrapper.export_line_ipdata(db._wrapper, line.encode(), chan.encode(), title.encode())
         
@@ -429,6 +830,17 @@ class GXIP:
     def export_sgdf(self, db, file, chan, chan2):
         """
         Exports data to a Scintrex Geophysical Data Format file.
+        
+        :param db:     Database to export from
+        :param file:   SGDF file to create
+        :param chan:   Time Domain channel or Frequency Amplitude Channel
+        :param chan2:  Frequency Domain Phase channel (optional)
+        :type  db:     GXDB
+        :type  file:   str
+        :type  chan:   str
+        :type  chan2:  str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.export_sgdf(db._wrapper, file.encode(), chan.encode(), chan2.encode())
         
@@ -439,6 +851,13 @@ class GXIP:
     def get_n_value_lst(self, db, lst):
         """
         Fill a list with unique N values in selected lines.
+        
+        :param db:   Database
+        :param lst:  `GXLST <geosoft.gxapi.GXLST>` object
+        :type  db:   GXDB
+        :type  lst:  GXLST
+
+        .. versionadded:: 6.1
         """
         self._wrapper.get_n_value_lst(db._wrapper, lst._wrapper)
         
@@ -449,6 +868,21 @@ class GXIP:
     def get_topo_line(self, db, line, x_min, x_max, x_inc, vv):
         """
         Get topography values for a line.
+        
+        :param db:     Database to import data to
+        :param line:   Line name
+        :param x_min:  Starting "X" (station) value (`rDUMMY <geosoft.gxapi.rDUMMY>` for default)
+        :param x_max:  Ending "X" (station) value (`rDUMMY <geosoft.gxapi.rDUMMY>` for default)
+        :param x_inc:  "X" increment along the line (`rDUMMY <geosoft.gxapi.rDUMMY>` for default = half "A" separation)
+        :param vv:     Returned topography values
+        :type  db:     GXDB
+        :type  line:   str
+        :type  x_min:  float
+        :type  x_max:  float
+        :type  x_inc:  float
+        :type  vv:     GXVV
+
+        .. versionadded:: 6.4.2
 
         **Note:**
 
@@ -466,6 +900,16 @@ class GXIP:
     def get_chan_domain(self, db, chan):
         """
         Is this channel registered as a Time or Frequency domain channel?
+        
+        :param db:    Database
+        :param chan:  Channel to check
+        :type  db:    GXDB
+        :type  chan:  str
+
+        :returns:     `IP_DOMAIN`
+        :rtype:       int
+
+        .. versionadded:: 5.1.8
         """
         ret_val = self._wrapper.get_chan_domain(db._wrapper, chan.encode())
         return ret_val
@@ -476,6 +920,15 @@ class GXIP:
     def get_chan_label(cls, chan, label, units):
         """
         Get the default label and units for a given channel.
+        
+        :param chan:   Input channel
+        :param label:  Returned label
+        :param units:  Returned units
+        :type  chan:   str
+        :type  label:  str_ref
+        :type  units:  str_ref
+
+        .. versionadded:: 5.0
         """
         label.value, units.value = gxapi_cy.WrapIP.get_chan_label(GXContext._get_tls_geo(), chan.encode(), label.value.encode(), units.value.encode())
         
@@ -486,6 +939,21 @@ class GXIP:
     def get_channel_info(self, db, chan, domain, delay, n_windows, vv):
         """
         Time Windows or Frequency info from a channel.
+        
+        :param db:         Database
+        :param chan:       Channel to check
+        :param domain:     `IP_DOMAIN`
+        :param delay:      Delay or Base Frequency
+        :param n_windows:  Number of time windows or frequencies
+        :param vv:         Time windows or frequencies
+        :type  db:         GXDB
+        :type  chan:       str
+        :type  domain:     int_ref
+        :type  delay:      float_ref
+        :type  n_windows:  int_ref
+        :type  vv:         GXVV
+
+        .. versionadded:: 8.1
         """
         domain.value, delay.value, n_windows.value = self._wrapper.get_channel_info(db._wrapper, chan.encode(), domain.value, delay.value, n_windows.value, vv._wrapper)
         
@@ -496,6 +964,21 @@ class GXIP:
     def set_channel_info(self, db, chan, domain, delay, n_windows, vv):
         """
         Set Time Windows or Frequency info for a channel.
+        
+        :param db:         Database
+        :param chan:       Channel to check
+        :param domain:     `IP_DOMAIN`
+        :param delay:      Delay or Base Frequency
+        :param n_windows:  Number of time windows or frequencies
+        :param vv:         Time windows or frequencies
+        :type  db:         GXDB
+        :type  chan:       str
+        :type  domain:     int
+        :type  delay:      float
+        :type  n_windows:  int
+        :type  vv:         GXVV
+
+        .. versionadded:: 8.1
         """
         self._wrapper.set_channel_info(db._wrapper, chan.encode(), domain, delay, n_windows, vv._wrapper)
         
@@ -506,6 +989,15 @@ class GXIP:
     def import_dump(self, sys, db, dump_file):
         """
         Imports data from an `GXIP <geosoft.gxapi.GXIP>` instrument dump file.
+        
+        :param sys:        `IP_SYS`
+        :param db:         `GXDB <geosoft.gxapi.GXDB>` Handle
+        :param dump_file:  Dump file name
+        :type  sys:        int
+        :type  db:         GXDB
+        :type  dump_file:  str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.import_dump(sys, db._wrapper, dump_file.encode())
         
@@ -516,6 +1008,15 @@ class GXIP:
     def import_grid(self, db, grid, chan):
         """
         Imports data from a grid
+        
+        :param db:    Database to import data to
+        :param grid:  The name of the grid file, with decorations
+        :param chan:  The name of the channel to import to
+        :type  db:    GXDB
+        :type  grid:  str
+        :type  chan:  str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -532,6 +1033,33 @@ class GXIP:
     def import_i2_x(self, db, file, line, res_data, ip_data, res_model, ip_model, res_synth, ip_synth, res_poly, ip_poly, mode):
         """
         Imports an Interpex RESIX I2X format file to a line.
+        
+        :param db:         Database to import to
+        :param file:       Name of file to import
+        :param line:       Line to import to
+        :param res_data:   Resistivity (data) channel
+        :param ip_data:    `GXIP <geosoft.gxapi.GXIP>` (data) channel (can be "")
+        :param res_model:  Image model resistivity channel (can be "")
+        :param ip_model:   Image model `GXIP <geosoft.gxapi.GXIP>` channel (can be "")
+        :param res_synth:  Image model synthetic resistivity channel (can be "")
+        :param ip_synth:   Image model synthetic `GXIP <geosoft.gxapi.GXIP>` channel (can be "")
+        :param res_poly:   Resistivity (polygon) channel (can be "")
+        :param ip_poly:    `GXIP <geosoft.gxapi.GXIP>` (polygon) channel (can be "")
+        :param mode:       `IP_I2XIMPMODE`
+        :type  db:         GXDB
+        :type  file:       str
+        :type  line:       str
+        :type  res_data:   str
+        :type  ip_data:    str
+        :type  res_model:  str
+        :type  ip_model:   str
+        :type  res_synth:  str
+        :type  ip_synth:   str
+        :type  res_poly:   str
+        :type  ip_poly:    str
+        :type  mode:       int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -547,6 +1075,37 @@ class GXIP:
     def import_i2_x_ex(self, db, file, line, res_data, ip_data, res_model, ip_model, res_synth, ip_synth, res_poly, ip_poly, res_zonge, ip_zonge, mode):
         """
         Same as `import_i2_x <geosoft.gxapi.GXIP.import_i2_x>`, with Zonge data imported as well.
+        
+        :param db:         Database to import to
+        :param file:       Name of file to import
+        :param line:       Line to import to
+        :param res_data:   Resistivity (data) channel
+        :param ip_data:    `GXIP <geosoft.gxapi.GXIP>` (data) channel (can be "")
+        :param res_model:  Image model resistivity channel (can be "")
+        :param ip_model:   Image model `GXIP <geosoft.gxapi.GXIP>` channel (can be "")
+        :param res_synth:  Image model synthetic resistivity channel (can be "")
+        :param ip_synth:   Image model synthetic `GXIP <geosoft.gxapi.GXIP>` channel (can be "")
+        :param res_poly:   Resistivity (polygon) channel (can be "")
+        :param ip_poly:    `GXIP <geosoft.gxapi.GXIP>` (polygon) channel (can be "")
+        :param res_zonge:  Zonge Resistivity channel (can be "")
+        :param ip_zonge:   Zonge `GXIP <geosoft.gxapi.GXIP>` channel (can be "")
+        :param mode:       `IP_I2XIMPMODE`
+        :type  db:         GXDB
+        :type  file:       str
+        :type  line:       str
+        :type  res_data:   str
+        :type  ip_data:    str
+        :type  res_model:  str
+        :type  ip_model:   str
+        :type  res_synth:  str
+        :type  ip_synth:   str
+        :type  res_poly:   str
+        :type  ip_poly:    str
+        :type  res_zonge:  str
+        :type  ip_zonge:   str
+        :type  mode:       int
+
+        .. versionadded:: 6.1
 
         **Note:**
 
@@ -562,6 +1121,13 @@ class GXIP:
     def import_instrumentation_gdd(self, db, file):
         """
         Imports an Instrumentation GDD format file.
+        
+        :param db:    Database to import to
+        :param file:  GDD file name
+        :type  db:    GXDB
+        :type  file:  str
+
+        .. versionadded:: 8.0
         """
         self._wrapper.import_instrumentation_gdd(db._wrapper, file.encode())
         
@@ -572,6 +1138,15 @@ class GXIP:
     def import_ipdata(self, db, file, chan):
         """
         Imports data in the Geosoft IPDATA format.
+        
+        :param db:    Database to import to
+        :param file:  IPDATA file name
+        :param chan:  Channel to import to
+        :type  db:    GXDB
+        :type  file:  str
+        :type  chan:  str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.import_ipdata(db._wrapper, file.encode(), chan.encode())
         
@@ -582,6 +1157,17 @@ class GXIP:
     def import_ipdata2(self, db, file, chan, chan2):
         """
         Imports data in the Geosoft IPDATA format - up to two arrays.
+        
+        :param db:     Database to import to
+        :param file:   IPDATA file name
+        :param chan:   Channel to import to (default is "`GXIP <geosoft.gxapi.GXIP>`")
+        :param chan2:  (optional) Second channel to import to
+        :type  db:     GXDB
+        :type  file:   str
+        :type  chan:   str
+        :type  chan2:  str
+
+        .. versionadded:: 5.1
 
         **Note:**
 
@@ -601,6 +1187,15 @@ class GXIP:
     def import_ipred(self, db, file, chan):
         """
         Imports data from the Geosoft IPRED format.
+        
+        :param db:    Database to import to
+        :param file:  File to import from
+        :param chan:  Channel to import
+        :type  db:    GXDB
+        :type  file:  str
+        :type  chan:  str
+
+        .. versionadded:: 5.1
 
         **Note:**
 
@@ -616,6 +1211,15 @@ class GXIP:
     def import_merge_ipred(self, db, file, chan):
         """
         Imports IPRED data to an existing line.
+        
+        :param db:    Database to import to
+        :param file:  File to import from
+        :param chan:  Channel to import
+        :type  db:    GXDB
+        :type  file:  str
+        :type  chan:  str
+
+        .. versionadded:: 5.1.8
 
         **Note:**
 
@@ -631,6 +1235,13 @@ class GXIP:
     def import_sgdf(self, db, file):
         """
         Imports data from a Scintrex Geophysical Data Format file.
+        
+        :param db:    Database to import to
+        :param file:  SGDF file name
+        :type  db:    GXDB
+        :type  file:  str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.import_sgdf(db._wrapper, file.encode())
         
@@ -641,6 +1252,13 @@ class GXIP:
     def import_topo_csv(self, db, csv):
         """
         Imports topography data from a CSV line-station file
+        
+        :param db:   Database to calculate topography for
+        :param csv:  The name of CSV file
+        :type  db:   GXDB
+        :type  csv:  str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -656,6 +1274,13 @@ class GXIP:
     def import_topo_grid(self, db, grid):
         """
         Imports topography data from a grid
+        
+        :param db:    Database to calculate topography for
+        :param grid:  The name of the grid file, with decorations
+        :type  db:    GXDB
+        :type  grid:  str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -671,6 +1296,19 @@ class GXIP:
     def import_zonge_avg(self, db, file, line, scale, mult):
         """
         Imports a Zonge AVG format file.
+        
+        :param db:     Database to import to
+        :param file:   FLD file name
+        :param line:   Line number (will be scaled if applicable)
+        :param scale:  `IP_STNSCALE`
+        :param mult:   Line, station multiplier (for `IP_STNSCALE_VALUE <geosoft.gxapi.IP_STNSCALE_VALUE>`)
+        :type  db:     GXDB
+        :type  file:   str
+        :type  line:   float
+        :type  scale:  int
+        :type  mult:   float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -685,6 +1323,17 @@ class GXIP:
     def import_zonge_fld(self, db, file, scale, mult):
         """
         Imports a Zonge FLD format file.
+        
+        :param db:     Database to import to
+        :param file:   FLD file name
+        :param scale:  `IP_STNSCALE`
+        :param mult:   Line, station multiplier (for `IP_STNSCALE_VALUE <geosoft.gxapi.IP_STNSCALE_VALUE>`)
+        :type  db:     GXDB
+        :type  file:   str
+        :type  scale:  int
+        :type  mult:   float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -701,6 +1350,19 @@ class GXIP:
     def new_xy_database(self, db, new_db, chan_vv, mask, pr_n_val):
         """
         Create a subset database using a mask channel, "N" value
+        
+        :param db:        `GXDB <geosoft.gxapi.GXDB>` object
+        :param new_db:    New `GXDB <geosoft.gxapi.GXDB>` object
+        :param chan_vv:   Channel list
+        :param mask:      Mask channel
+        :param pr_n_val:  "N" Value
+        :type  db:        GXDB
+        :type  new_db:    GXDB
+        :type  chan_vv:   GXVV
+        :type  mask:      str
+        :type  pr_n_val:  float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -716,6 +1378,17 @@ class GXIP:
     def pseudo_plot(self, db, ini_file, cur_line, map):
         """
         Create pseudo-sections of a single line using a control file.
+        
+        :param db:        Database
+        :param ini_file:  "IPPLOT" INI file name
+        :param cur_line:  Current line name
+        :param map:       Map name to create
+        :type  db:        GXDB
+        :type  ini_file:  str
+        :type  cur_line:  str
+        :type  map:       str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -731,6 +1404,19 @@ class GXIP:
     def pseudo_plot2(self, db, ini_file, cur_line, tag, map):
         """
         Same as `pseudo_plot <geosoft.gxapi.GXIP.pseudo_plot>`, but specify a tag for grids created.
+        
+        :param db:        Database
+        :param ini_file:  "IPPLOT" INI file name
+        :param cur_line:  Current line name
+        :param tag:       Tag for created grids
+        :param map:       Map name to create
+        :type  db:        GXDB
+        :type  ini_file:  str
+        :type  cur_line:  str
+        :type  tag:       str
+        :type  map:       str
+
+        .. versionadded:: 5.1.8
 
         **Note:**
 
@@ -746,6 +1432,21 @@ class GXIP:
     def pseudo_plot2_dir(self, db, ini_file, cur_line, tag, map, dir):
         """
         Same as `pseudo_plot2 <geosoft.gxapi.GXIP.pseudo_plot2>`, but with directory specified.
+        
+        :param db:        Database
+        :param ini_file:  "IPPLOT" INI file name
+        :param cur_line:  Current line name
+        :param tag:       Tag for created grids
+        :param map:       Map name to create
+        :param dir:       Directory to create files
+        :type  db:        GXDB
+        :type  ini_file:  str
+        :type  cur_line:  str
+        :type  tag:       str
+        :type  map:       str
+        :type  dir:       str
+
+        .. versionadded:: 6.4
 
         **Note:**
 
@@ -761,6 +1462,17 @@ class GXIP:
     def ps_stack(self, db, chan, con_file, map):
         """
         Create a stacked pseudo-section plot using a control file.
+        
+        :param db:        `GXDB <geosoft.gxapi.GXDB>` object
+        :param chan:      Channel to plot
+        :param con_file:  "IPPLOT" INI file name
+        :param map:       Map name to create
+        :type  db:        GXDB
+        :type  chan:      str
+        :type  con_file:  str
+        :type  map:       str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -776,6 +1488,19 @@ class GXIP:
     def ps_stack2(self, db, chan, con_file, type, map):
         """
         As `ps_stack <geosoft.gxapi.GXIP.ps_stack>`, but select section spacing option.
+        
+        :param db:        `GXDB <geosoft.gxapi.GXDB>` object
+        :param chan:      Channel to plot
+        :param con_file:  "IPPLOT" INI file name
+        :param type:      `IP_STACK_TYPE`
+        :param map:       Map name to create
+        :type  db:        GXDB
+        :type  chan:      str
+        :type  con_file:  str
+        :type  type:      int
+        :type  map:       str
+
+        .. versionadded:: 5.1
         """
         self._wrapper.ps_stack2(db._wrapper, chan.encode(), con_file.encode(), type, map.encode())
         
@@ -786,6 +1511,21 @@ class GXIP:
     def ps_stack2_dir(self, db, chan, con_file, type, map, dir):
         """
         Same as `pseudo_plot2 <geosoft.gxapi.GXIP.pseudo_plot2>`, but with directory specified.
+        
+        :param db:        `GXDB <geosoft.gxapi.GXDB>` object
+        :param chan:      Channel to plot
+        :param con_file:  "IPPLOT" INI file name
+        :param type:      `IP_STACK_TYPE`
+        :param map:       Map name to create
+        :param dir:       Directory to create files
+        :type  db:        GXDB
+        :type  chan:      str
+        :type  con_file:  str
+        :type  type:      int
+        :type  map:       str
+        :type  dir:       str
+
+        .. versionadded:: 6.4
         """
         self._wrapper.ps_stack2_dir(db._wrapper, chan.encode(), con_file.encode(), type, map.encode(), dir.encode())
         
@@ -796,6 +1536,13 @@ class GXIP:
     def qc_chan_lst(self, db, lst):
         """
         Fill a list with QC channels.
+        
+        :param db:   Database
+        :param lst:  `GXLST <geosoft.gxapi.GXLST>` object
+        :type  db:   GXDB
+        :type  lst:  GXLST
+
+        .. versionadded:: 7.3
 
         **Note:**
 
@@ -811,6 +1558,11 @@ class GXIP:
     def recalculate(self, db):
         """
         Recalculate derived channel values.
+        
+        :param db:  Database
+        :type  db:  GXDB
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -841,6 +1593,13 @@ class GXIP:
     def recalculate_ex(self, db, recalculate_xyz):
         """
         Recalculate derived channel values, with option for including/excluding location calculations.
+        
+        :param db:               Database
+        :param recalculate_xyz:  Recalculate XYZ locations (TRUE or FALSE)?
+        :type  db:               GXDB
+        :type  recalculate_xyz:  int
+
+        .. versionadded:: 8.0
 
         **Note:**
 
@@ -856,6 +1615,11 @@ class GXIP:
     def recalculate_z(self, db):
         """
         Recalculate Z channel values.
+        
+        :param db:  Database
+        :type  db:  GXDB
+
+        .. versionadded:: 5.1.1
 
         **Note:**
 
@@ -878,6 +1642,11 @@ class GXIP:
     def set_import_line(self, line):
         """
         Set the line name for some imports.
+        
+        :param line:  Line name
+        :type  line:  str
+
+        .. versionadded:: 9.3
 
         **Note:**
 
@@ -892,6 +1661,11 @@ class GXIP:
     def set_import_mode(self, append):
         """
         When importing data to a line, set append/overwrite mode.
+        
+        :param append:  0: Overwrite, 1: Append
+        :type  append:  int
+
+        .. versionadded:: 6.3
 
         **Note:**
 
@@ -910,6 +1684,17 @@ class GXIP:
     def window(self, db, va_chan, chan, windows):
         """
         Window an `GXIP <geosoft.gxapi.GXIP>` array channel to produce a normal channel.
+        
+        :param db:       `GXDB <geosoft.gxapi.GXDB>` object
+        :param va_chan:  `GXVA <geosoft.gxapi.GXVA>` channel to use
+        :param chan:     New channel
+        :param windows:  Window list
+        :type  db:       GXDB
+        :type  va_chan:  str
+        :type  chan:     str
+        :type  windows:  str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -929,6 +1714,11 @@ class GXIP:
     def winnow_chan_list(cls, lst):
         """
         Removes obviously non-pseudo-section type channels from list.
+        
+        :param lst:  List of channels
+        :type  lst:  GXLST
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapIP.winnow_chan_list(GXContext._get_tls_geo(), lst._wrapper)
         
@@ -939,6 +1729,13 @@ class GXIP:
     def winnow_chan_list2(cls, lst, db):
         """
         Same as `winnow_chan_list <geosoft.gxapi.GXIP.winnow_chan_list>`, but removes current X,Y,Z.
+        
+        :param lst:  List of channels
+        :param db:   Database
+        :type  lst:  GXLST
+        :type  db:   GXDB
+
+        .. versionadded:: 5.1.3
         """
         gxapi_cy.WrapIP.winnow_chan_list2(GXContext._get_tls_geo(), lst._wrapper, db._wrapper)
         
@@ -949,6 +1746,16 @@ class GXIP:
     def is_valid_line(self, db, line):
         """
         See if a given database line is registered for the `GXIP <geosoft.gxapi.GXIP>` system
+        
+        :param db:    Database
+        :param line:  Line name
+        :type  db:    GXDB
+        :type  line:  str
+
+        :returns:     1 if the line is a valid `GXIP <geosoft.gxapi.GXIP>` line, 0 if not
+        :rtype:       int
+
+        .. versionadded:: 8.1
         """
         ret_val = self._wrapper.is_valid_line(db._wrapper, line.encode())
         return ret_val
@@ -959,6 +1766,16 @@ class GXIP:
     def line_array_type(self, db, line):
         """
         Return the type of `GXIP <geosoft.gxapi.GXIP>` array for the input line. If necessary, first imports the specified line into the `GXIP <geosoft.gxapi.GXIP>` object
+        
+        :param db:    Database
+        :param line:  Line name
+        :type  db:    GXDB
+        :type  line:  str
+
+        :returns:     `IP_ARRAY`
+        :rtype:       int
+
+        .. versionadded:: 8.1
         """
         ret_val = self._wrapper.line_array_type(db._wrapper, line.encode())
         return ret_val
@@ -969,6 +1786,17 @@ class GXIP:
     def a_spacing(self, db, line):
         """
         Return the A-Spacing for the input line. If necessary, first imports the specified line into the `GXIP <geosoft.gxapi.GXIP>` object.
+        
+        :param db:    Database
+        :param line:  Line name
+        :type  db:    GXDB
+        :type  line:  str
+
+        :returns:     The A-Spacing value. If there are multiple A-Spacings, the base or smallest value.
+                      				 This value could be `rDUMMY <geosoft.gxapi.rDUMMY>` for some arrays (such as 3D) where no A-Spacing is explicitly defined.
+        :rtype:       float
+
+        .. versionadded:: 8.1
         """
         ret_val = self._wrapper.a_spacing(db._wrapper, line.encode())
         return ret_val
@@ -979,6 +1807,12 @@ class GXIP:
     def pldp_convention(self):
         """
         Return the user's plot point convention for pole-dipole arrays.
+        
+
+        :returns:    The user's PLDP plot point convention `IP_PLDP_CONV`
+        :rtype:      int
+
+        .. versionadded:: 8.1
         """
         ret_val = self._wrapper.pldp_convention()
         return ret_val
@@ -989,6 +1823,23 @@ class GXIP:
     def get_electrode_locations_and_mask_values(self, db, line, tx_rx, v_vx, v_vy, v_vm1, v_vm2):
         """
         Get unique electrodes, along with current mask info.
+        
+        :param db:     `GXDB <geosoft.gxapi.GXDB>` object
+        :param line:   Line name ("" for all selected lines)
+        :param tx_rx:  Electrode type. 0:Tx, 1:Rx
+        :param v_vx:   X locations
+        :param v_vy:   Y locations
+        :param v_vm1:  `GXIP <geosoft.gxapi.GXIP>` QC channel values ("QC" or "QC_IP")
+        :param v_vm2:  Resistivity QC channel values ("QC_RES")
+        :type  db:     GXDB
+        :type  line:   str
+        :type  tx_rx:  int
+        :type  v_vx:   GXVV
+        :type  v_vy:   GXVV
+        :type  v_vm1:  GXVV
+        :type  v_vm2:  GXVV
+
+        .. versionadded:: 9.0
 
         **Note:**
 
@@ -1004,6 +1855,25 @@ class GXIP:
     def get_electrode_locations_and_mask_values2(self, db, line, tx_rx, v_vx, v_vy, v_vm1, v_vm2, v_vlines):
         """
         Get unique electrodes, along with current mask info.
+        
+        :param db:        `GXDB <geosoft.gxapi.GXDB>` object
+        :param line:      Line name ("" for all selected lines)
+        :param tx_rx:     Electrode type. 0:Tx, 1:Rx
+        :param v_vx:      X locations
+        :param v_vy:      Y locations
+        :param v_vm1:     `GXIP <geosoft.gxapi.GXIP>` QC channel values ("QC" or "QC_IP")
+        :param v_vm2:     Resistivity QC channel values ("QC_RES")
+        :param v_vlines:  Line symbol values (`GS_INT <geosoft.gxapi.GS_INT>`)
+        :type  db:        GXDB
+        :type  line:      str
+        :type  tx_rx:     int
+        :type  v_vx:      GXVV
+        :type  v_vy:      GXVV
+        :type  v_vm1:     GXVV
+        :type  v_vm2:     GXVV
+        :type  v_vlines:  GXVV
+
+        .. versionadded:: 9.2
 
         **Note:**
 
@@ -1019,6 +1889,23 @@ class GXIP:
     def set_electrode_mask_values(self, db, line, tx_rx, v_vx, v_vy, v_vm1, v_vm2):
         """
         Set unique electrodes, along with current mask info.
+        
+        :param db:     `GXDB <geosoft.gxapi.GXDB>` object
+        :param line:   Line name ("" for all selected lines)
+        :param tx_rx:  Electrode type. 0:Tx, 1:Rx
+        :param v_vx:   X locations
+        :param v_vy:   Y locations
+        :param v_vm1:  `GXIP <geosoft.gxapi.GXIP>` QC channel values ("QC" or "QC_IP")
+        :param v_vm2:  Resistivity QC channel values ("QC_RES")
+        :type  db:     GXDB
+        :type  line:   str
+        :type  tx_rx:  int
+        :type  v_vx:   GXVV
+        :type  v_vy:   GXVV
+        :type  v_vm1:  GXVV
+        :type  v_vm2:  GXVV
+
+        .. versionadded:: 9.0
 
         **Note:**
 
@@ -1033,6 +1920,23 @@ class GXIP:
     def set_electrode_mask_values_single_qc_channel(self, db, line, tx_rx, qc_type, v_vx, v_vy, v_vm):
         """
         Set unique electrodes, along with current mask info.
+        
+        :param db:       `GXDB <geosoft.gxapi.GXDB>` object
+        :param line:     Line name ("" for all selected lines)
+        :param tx_rx:    Electrode type. 0:Tx, 1:Rx
+        :param qc_type:  QC channel type.  `IP_QCTYPE`
+        :param v_vx:     X locations
+        :param v_vy:     Y locations
+        :param v_vm:     QC channel values ("QC")
+        :type  db:       GXDB
+        :type  line:     str
+        :type  tx_rx:    int
+        :type  qc_type:  int
+        :type  v_vx:     GXVV
+        :type  v_vy:     GXVV
+        :type  v_vm:     GXVV
+
+        .. versionadded:: 9.2
 
         **Note:**
 
@@ -1047,6 +1951,18 @@ class GXIP:
     def get_qc_channel(cls, db, qc_type, chan):
         """
         Get the QC channel handle, if it exists.
+        
+        :param db:       `GXDB <geosoft.gxapi.GXDB>` object
+        :param qc_type:  QC channel type.  `IP_QCTYPE`
+        :param chan:     String to place name into
+        :type  db:       GXDB
+        :type  qc_type:  int
+        :type  chan:     str_ref
+
+        :returns:        Channel handle,  `NULLSYMB <geosoft.gxapi.NULLSYMB>` if not found
+        :rtype:          int
+
+        .. versionadded:: 9.2
 
         **Note:**
 

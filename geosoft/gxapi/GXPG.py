@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -70,6 +69,11 @@ class GXPG:
     def copy(self, pgs):
         """
         Copy the data from one pager to another.
+        
+        :param pgs:  Source `GXPG <geosoft.gxapi.GXPG>` object
+        :type  pgs:  GXPG
+
+        .. versionadded:: 5.0
         """
         self._wrapper.copy(pgs._wrapper)
         
@@ -80,6 +84,23 @@ class GXPG:
     def copy_subset(self, pgs, y_row_d, x_col_d, y_row_s, x_col_s, ny, nx):
         """
         Copy a subset of data from one pager to another.
+        
+        :param pgs:      Source `GXPG <geosoft.gxapi.GXPG>` object
+        :param y_row_d:  Y (row) Origin on destination
+        :param x_col_d:  X (col) Origin on destination
+        :param y_row_s:  Y (row) Origin on source
+        :param x_col_s:  X (col) Origin on source
+        :param ny:       Number of Y (rows) to copy
+        :param nx:       Number of X (columns) to copy
+        :type  pgs:      GXPG
+        :type  y_row_d:  int
+        :type  x_col_d:  int
+        :type  y_row_s:  int
+        :type  x_col_s:  int
+        :type  ny:       int
+        :type  nx:       int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -94,6 +115,18 @@ class GXPG:
     def create(cls, row, col, type):
         """
         Creates a Pager object
+        
+        :param row:   # elements in y (# of row)
+        :param col:   # elements in x (# of column)
+        :param type:  `GS_TYPES`
+        :type  row:   int
+        :type  col:   int
+        :type  type:  int
+
+        :returns:     `GXPG <geosoft.gxapi.GXPG>` Object
+        :rtype:       GXPG
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapPG.create(GXContext._get_tls_geo(), row, col, type)
         return GXPG(ret_val)
@@ -104,6 +137,13 @@ class GXPG:
     def create_s(cls, bf):
         """
         Create a 2D `GXPG <geosoft.gxapi.GXPG>` from serialized source.
+        
+        :type  bf:  GXBF
+
+        :returns:    `GXPG <geosoft.gxapi.GXPG>` Object
+        :rtype:      GXPG
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -120,6 +160,9 @@ class GXPG:
     def dummy(self):
         """
         Sets the Entire pager to dummy.
+        
+
+        .. versionadded:: 5.0
         """
         self._wrapper.dummy()
         
@@ -130,6 +173,12 @@ class GXPG:
     def e_type(self):
         """
         Gets the type of pager.
+        
+
+        :returns:    `GS_TYPES`
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.e_type()
         return ret_val
@@ -140,6 +189,12 @@ class GXPG:
     def n_cols(self):
         """
         Gets the # of columns in pager.
+        
+
+        :returns:    # of columns.
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.n_cols()
         return ret_val
@@ -150,6 +205,12 @@ class GXPG:
     def n_rows(self):
         """
         Gets the # of rows in pager.
+        
+
+        :returns:    # of rows.
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.n_rows()
         return ret_val
@@ -160,6 +221,12 @@ class GXPG:
     def n_slices(self):
         """
         Gets the # of slices (z) in pager.
+        
+
+        :returns:    # of rows.
+        :rtype:      int
+
+        .. versionadded:: 6.2
         """
         ret_val = self._wrapper.n_slices()
         return ret_val
@@ -170,6 +237,13 @@ class GXPG:
     def range(self, min, max):
         """
         Computes the range of the entire pager.
+        
+        :param min:  Minimum Data (Dummy if no range)
+        :param max:  Maximum Data (Dummy if no range)
+        :type  min:  float_ref
+        :type  max:  float_ref
+
+        .. versionadded:: 5.0
         """
         min.value, max.value = self._wrapper.range(min.value, max.value)
         
@@ -180,6 +254,14 @@ class GXPG:
     def get(self, col, row):
         """
         Read a single value from a 2D `GXPG <geosoft.gxapi.GXPG>`
+        
+        :param col:  iBx - element # in x (column #)
+        :param row:  iBy - element # in y (row #)
+        :type  col:  int
+        :type  row:  int
+        :rtype:      float
+
+        .. versionadded:: 8.3
 
         **Note:**
 
@@ -194,6 +276,17 @@ class GXPG:
     def read_col(self, col, o, n, vv):
         """
         Read a set of elements in X (column) from pager into vv
+        
+        :param col:  iBx - element # in x (column #)
+        :param o:    iBy - begining element # in y to read (0 is the first)
+        :param n:    iNy - # elements to read (0 for whole vector)
+        :param vv:   hVV - `GXVV <geosoft.gxapi.GXVV>` handle
+        :type  col:  int
+        :type  o:    int
+        :type  n:    int
+        :type  vv:   GXVV
+
+        .. versionadded:: 5.0
         """
         self._wrapper.read_col(col, o, n, vv._wrapper)
         
@@ -204,6 +297,17 @@ class GXPG:
     def read_row(self, row, o, n, vv):
         """
         Read a set of elements in Y (row) from pager into vv
+        
+        :param row:  iBy - element # in y (row #)
+        :param o:    iBx - begining element # in x to read (0 is the first)
+        :param n:    iNx - # elements to read (0 for whole vector)
+        :param vv:   hVV - `GXVV <geosoft.gxapi.GXVV>` handle
+        :type  row:  int
+        :type  o:    int
+        :type  n:    int
+        :type  vv:   GXVV
+
+        .. versionadded:: 5.0
         """
         self._wrapper.read_row(row, o, n, vv._wrapper)
         
@@ -214,6 +318,13 @@ class GXPG:
     def re_allocate(self, n_row, n_col):
         """
         Changes the size of Pager
+        
+        :param n_row:  Number of Y (rows) to reallocate
+        :param n_col:  Number of X (columns) to reallocate
+        :type  n_row:  int
+        :type  n_col:  int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.re_allocate(n_row, n_col)
         
@@ -224,6 +335,10 @@ class GXPG:
     def serial(self, bf):
         """
         Serialize a 2D `GXPG <geosoft.gxapi.GXPG>` to a `GXBF <geosoft.gxapi.GXBF>`.
+        
+        :type  bf:  GXBF
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -238,6 +353,11 @@ class GXPG:
     def statistics(self, st):
         """
         Compute the statistics of a pager object.
+        
+        :param st:  hST - statistics object
+        :type  st:  GXST
+
+        .. versionadded:: 6.3.1
         """
         self._wrapper.statistics(st._wrapper)
         
@@ -248,6 +368,17 @@ class GXPG:
     def write_col(self, col, o, n, vv):
         """
         Write a set of elements in X (column) from vv into pager
+        
+        :param col:  iBx - element # in x (column #)
+        :param o:    iBy - begining element # in y to write (0 is the first)
+        :param n:    iNy - # elements to write (0 for whole vector)
+        :param vv:   hVV - `GXVV <geosoft.gxapi.GXVV>` handle
+        :type  col:  int
+        :type  o:    int
+        :type  n:    int
+        :type  vv:   GXVV
+
+        .. versionadded:: 5.0
         """
         self._wrapper.write_col(col, o, n, vv._wrapper)
         
@@ -258,6 +389,17 @@ class GXPG:
     def write_row(self, row, o, n, vv):
         """
         Write a set of elements in Y (row) from vv into pager
+        
+        :param row:  iBy - element # in y (row #)
+        :param o:    iBx - begining element # in x to write (0 is the first)
+        :param n:    iNx - # elements to write (0 for whole vector)
+        :param vv:   hVV - `GXVV <geosoft.gxapi.GXVV>` handle
+        :type  row:  int
+        :type  o:    int
+        :type  n:    int
+        :type  vv:   GXVV
+
+        .. versionadded:: 5.0
         """
         self._wrapper.write_row(row, o, n, vv._wrapper)
         
@@ -272,6 +414,29 @@ class GXPG:
     def copy_subset_3d(self, pgs, sliced, n, vv, slices, rows, cols, n_slice, n_row, n_col):
         """
         Copy a subset of data from one pager to another.
+        
+        :param pgs:      Source `GXPG <geosoft.gxapi.GXPG>` object
+        :param sliced:   Z (slice) Origin on destination
+        :param n:        Y (row) Origin on destination
+        :param vv:       X (col) Origin on destination
+        :param slices:   Z (slice) Origin on source
+        :param rows:     Y (row) Origin on source
+        :param cols:     X (col) Origin on source
+        :param n_slice:  Number of Z (slice) to copy
+        :param n_row:    Number of Y (rows) to copy
+        :param n_col:    Number of X (columns) to copy
+        :type  pgs:      GXPG
+        :type  sliced:   int
+        :type  n:        int
+        :type  vv:       int
+        :type  slices:   int
+        :type  rows:     int
+        :type  cols:     int
+        :type  n_slice:  int
+        :type  n_row:    int
+        :type  n_col:    int
+
+        .. versionadded:: 8.0
 
         **Note:**
 
@@ -286,6 +451,20 @@ class GXPG:
     def create_3d(cls, slice, row, col, type):
         """
         Creates a Pager object
+        
+        :param slice:  # elements in z (# of slices)
+        :param row:    # elements in y (# of row)
+        :param col:    # elements in x (# of column)
+        :param type:   `GS_TYPES`
+        :type  slice:  int
+        :type  row:    int
+        :type  col:    int
+        :type  type:   int
+
+        :returns:      `GXPG <geosoft.gxapi.GXPG>` Object
+        :rtype:        GXPG
+
+        .. versionadded:: 6.2
         """
         ret_val = gxapi_cy.WrapPG.create_3d(GXContext._get_tls_geo(), slice, row, col, type)
         return GXPG(ret_val)
@@ -296,6 +475,19 @@ class GXPG:
     def read_col_3d(self, slice, col, o, n, vv):
         """
         Read a set of elements in X (column) from pager into vv
+        
+        :param slice:  iBz - element # in z (slice #)
+        :param col:    iBx - element # in x (column #)
+        :param o:      iBy - begining element # in y to read (0 is the first)
+        :param n:      iNy - # elements to read (0 for whole vector)
+        :param vv:     hVV - `GXVV <geosoft.gxapi.GXVV>` handle
+        :type  slice:  int
+        :type  col:    int
+        :type  o:      int
+        :type  n:      int
+        :type  vv:     GXVV
+
+        .. versionadded:: 6.2
         """
         self._wrapper.read_col_3d(slice, col, o, n, vv._wrapper)
         
@@ -306,6 +498,19 @@ class GXPG:
     def read_row_3d(self, slice, row, o, n, vv):
         """
         Read a set of elements in Y (row) from pager into vv
+        
+        :param slice:  iBz - element # in z (slice #)
+        :param row:    iBy - element # in y (row #)
+        :param o:      iBx - begining element # in x to read (0 is the first)
+        :param n:      iNx - # elements to read (0 for whole vector)
+        :param vv:     hVV - `GXVV <geosoft.gxapi.GXVV>` handle
+        :type  slice:  int
+        :type  row:    int
+        :type  o:      int
+        :type  n:      int
+        :type  vv:     GXVV
+
+        .. versionadded:: 6.2
         """
         self._wrapper.read_row_3d(slice, row, o, n, vv._wrapper)
         
@@ -316,6 +521,19 @@ class GXPG:
     def read_trace_3d(self, col, row, o, n, vv):
         """
         Read a set of elements in Z (trace) from pager into vv
+        
+        :param col:  iBx - element # in x (column #)
+        :param row:  iBy - element # in y (row #)
+        :param o:    iBy - begining element # in z to read (0 is the first)
+        :param n:    iNy - # elements to read (0 for whole vector)
+        :param vv:   hVV - `GXVV <geosoft.gxapi.GXVV>` handle
+        :type  col:  int
+        :type  row:  int
+        :type  o:    int
+        :type  n:    int
+        :type  vv:   GXVV
+
+        .. versionadded:: 6.3
         """
         self._wrapper.read_trace_3d(col, row, o, n, vv._wrapper)
         
@@ -326,6 +544,15 @@ class GXPG:
     def re_allocate_3d(self, n_slice, n_row, n_col):
         """
         Changes the size of 3D Pager
+        
+        :param n_slice:  Number of Z (slices) to reallocate
+        :param n_row:    Number of Y (rows) to reallocate
+        :param n_col:    Number of X (columns) to reallocate
+        :type  n_slice:  int
+        :type  n_row:    int
+        :type  n_col:    int
+
+        .. versionadded:: 6.2
         """
         self._wrapper.re_allocate_3d(n_slice, n_row, n_col)
         
@@ -336,6 +563,19 @@ class GXPG:
     def write_col_3d(self, slice, col, o, n, vv):
         """
         Write a set of elements in X (column) from vv into pager
+        
+        :param slice:  iBz - element # in z (slice #)
+        :param col:    iBx - element # in x (column #)
+        :param o:      iBy - begining element # in y to write (0 is the first)
+        :param n:      iNy - # elements to write (0 for whole vector)
+        :param vv:     hVV - `GXVV <geosoft.gxapi.GXVV>` handle
+        :type  slice:  int
+        :type  col:    int
+        :type  o:      int
+        :type  n:      int
+        :type  vv:     GXVV
+
+        .. versionadded:: 6.2
         """
         self._wrapper.write_col_3d(slice, col, o, n, vv._wrapper)
         
@@ -346,6 +586,19 @@ class GXPG:
     def write_row_3d(self, slice, row, o, n, vv):
         """
         Write a set of elements in Y (row) from vv into pager
+        
+        :param slice:  iBz - element # in z (slice #)
+        :param row:    iBy - element # in y (row #)
+        :param o:      iBx - begining element # in x to write (0 is the first)
+        :param n:      iNx - # elements to write (0 for whole vector)
+        :param vv:     hVV - `GXVV <geosoft.gxapi.GXVV>` handle
+        :type  slice:  int
+        :type  row:    int
+        :type  o:      int
+        :type  n:      int
+        :type  vv:     GXVV
+
+        .. versionadded:: 6.2
         """
         self._wrapper.write_row_3d(slice, row, o, n, vv._wrapper)
         
@@ -356,6 +609,19 @@ class GXPG:
     def write_trace_3d(self, col, row, o, n, vv):
         """
         Write a set of elements in Z (trace) from pager into vv
+        
+        :param col:  iBx - element # in x (column #)
+        :param row:  iBy - element # in y (row #)
+        :param o:    iBy - begining element # in z to read (0 is the first)
+        :param n:    iNy - # elements to read (0 for whole vector)
+        :param vv:   hVV - `GXVV <geosoft.gxapi.GXVV>` handle
+        :type  col:  int
+        :type  row:  int
+        :type  o:    int
+        :type  n:    int
+        :type  vv:   GXVV
+
+        .. versionadded:: 6.3
         """
         self._wrapper.write_trace_3d(col, row, o, n, vv._wrapper)
         
@@ -370,6 +636,21 @@ class GXPG:
     def read_bf(self, bf, dir, conv, rev_x, rev_y, rev_z):
         """
         Read the contents of a 2D or 3D pager to from a `GXBF <geosoft.gxapi.GXBF>`.
+        
+        :param bf:     `GXBF <geosoft.gxapi.GXBF>` to read from
+        :param dir:    `PG_3D_DIR`
+        :param conv:   `PG_BF_CONV`
+        :param rev_x:  Reverse X
+        :param rev_y:  Reverse Y
+        :param rev_z:  Reverse Z
+        :type  bf:     GXBF
+        :type  dir:    int
+        :type  conv:   int
+        :type  rev_x:  int
+        :type  rev_y:  int
+        :type  rev_z:  int
+
+        .. versionadded:: 6.2
         """
         self._wrapper.read_bf(bf._wrapper, dir, conv, rev_x, rev_y, rev_z)
         
@@ -380,6 +661,21 @@ class GXPG:
     def read_ra(self, ra, dir, rev_x, rev_y, rev_z, dummy):
         """
         Read the contents of a 2D or 3D pager to from an `GXRA <geosoft.gxapi.GXRA>`.
+        
+        :param ra:     `GXRA <geosoft.gxapi.GXRA>` to read from
+        :param dir:    `PG_3D_DIR`
+        :param rev_x:  Reverse X
+        :param rev_y:  Reverse Y
+        :param rev_z:  Reverse Z
+        :param dummy:  Dummy
+        :type  ra:     GXRA
+        :type  dir:    int
+        :type  rev_x:  int
+        :type  rev_y:  int
+        :type  rev_z:  int
+        :type  dummy:  str
+
+        .. versionadded:: 6.2
 
         **Note:**
 
@@ -394,6 +690,21 @@ class GXPG:
     def write_bf(self, bf, dir, conv, rev_x, rev_y, rev_z):
         """
         Write the contents of a 2D or 3D pager to a `GXBF <geosoft.gxapi.GXBF>`.
+        
+        :param bf:     `GXBF <geosoft.gxapi.GXBF>` to write to
+        :param dir:    `PG_3D_DIR`
+        :param conv:   `PG_BF_CONV`
+        :param rev_x:  Reverse X
+        :param rev_y:  Reverse Y
+        :param rev_z:  Reverse Z
+        :type  bf:     GXBF
+        :type  dir:    int
+        :type  conv:   int
+        :type  rev_x:  int
+        :type  rev_y:  int
+        :type  rev_z:  int
+
+        .. versionadded:: 6.2
         """
         self._wrapper.write_bf(bf._wrapper, dir, conv, rev_x, rev_y, rev_z)
         
@@ -404,6 +715,23 @@ class GXPG:
     def write_bf_ex(self, bf, dir, conv, rev_x, rev_y, rev_z, p_dummy):
         """
         Write the contents of a 2D or 3D pager to a `GXBF <geosoft.gxapi.GXBF>`.
+        
+        :param bf:       `GXBF <geosoft.gxapi.GXBF>` to write to
+        :param dir:      `PG_3D_DIR`
+        :param conv:     `PG_BF_CONV`
+        :param rev_x:    Reverse X
+        :param rev_y:    Reverse Y
+        :param rev_z:    Reverse Z
+        :param p_dummy:  Dummy value
+        :type  bf:       GXBF
+        :type  dir:      int
+        :type  conv:     int
+        :type  rev_x:    int
+        :type  rev_y:    int
+        :type  rev_z:    int
+        :type  p_dummy:  float
+
+        .. versionadded:: 9.3
         """
         self._wrapper.write_bf_ex(bf._wrapper, dir, conv, rev_x, rev_y, rev_z, p_dummy)
         
@@ -414,6 +742,21 @@ class GXPG:
     def write_wa(self, wa, dir, rev_x, rev_y, rev_z, dummy):
         """
         Write the contents of a 2D or 3D pager to a `GXWA <geosoft.gxapi.GXWA>`
+        
+        :param wa:     `GXWA <geosoft.gxapi.GXWA>` to write to
+        :param dir:    `PG_3D_DIR`
+        :param rev_x:  Reverse X
+        :param rev_y:  Reverse Y
+        :param rev_z:  Reverse Z
+        :param dummy:  Dummy
+        :type  wa:     GXWA
+        :type  dir:    int
+        :type  rev_x:  int
+        :type  rev_y:  int
+        :type  rev_z:  int
+        :type  dummy:  str
+
+        .. versionadded:: 6.2
 
         **Note:**
 

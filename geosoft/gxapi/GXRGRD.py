@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXIMG import GXIMG
@@ -64,6 +63,9 @@ class GXRGRD:
     def clear(self):
         """
         Clears all the parameters in a `GXRGRD <geosoft.gxapi.GXRGRD>` object
+        
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -78,6 +80,12 @@ class GXRGRD:
     def create(cls):
         """
         Create a handle to a Rangrid object
+        
+
+        :returns:    `GXRGRD <geosoft.gxapi.GXRGRD>` Object
+        :rtype:      GXRGRD
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -95,6 +103,24 @@ class GXRGRD:
     def create_img(cls, vv_x, vv_y, vv_z, ipj, ctl, grid):
         """
         Run Rangrid directly on XYZ `GXVV <geosoft.gxapi.GXVV>` data, output to an `GXIMG <geosoft.gxapi.GXIMG>`.
+        
+        :param vv_x:  X data (any numeric `GXVV <geosoft.gxapi.GXVV>` type)
+        :param vv_y:  Y data (any numeric `GXVV <geosoft.gxapi.GXVV>` type)
+        :param vv_z:  Z (grid value) data (any numeric `GXVV <geosoft.gxapi.GXVV>` type)
+        :param ipj:   Projection to apply to the output `GXIMG <geosoft.gxapi.GXIMG>`
+        :param ctl:   RANGRID control file.
+        :param grid:  Output grid name (optional)
+        :type  vv_x:  GXVV
+        :type  vv_y:  GXVV
+        :type  vv_z:  GXVV
+        :type  ipj:   GXIPJ
+        :type  ctl:   str
+        :type  grid:  str
+
+        :returns:     `GXIMG <geosoft.gxapi.GXIMG>` object
+        :rtype:       GXIMG
+
+        .. versionadded:: 7.0.1
 
         **Note:**
 
@@ -113,6 +139,16 @@ class GXRGRD:
     def default(self, zchan, in_dat):
         """
         Set the defaults.
+        
+        :param zchan:   Name of Z Channel to perfrom gridding on
+        :param in_dat:  Handle to source `GXDAT <geosoft.gxapi.GXDAT>` object (from database)
+        :type  zchan:   str
+        :type  in_dat:  GXDAT
+
+        :returns:       0 OK, 1 Error.
+        :rtype:         int
+
+        .. versionadded:: 6.0.1
         """
         ret_val = self._wrapper.default(zchan.encode(), in_dat._wrapper)
         return ret_val
@@ -124,6 +160,14 @@ class GXRGRD:
         """
         Retrieves a Rangrid object's control parameters from a file,
         or sets the parameters to default if the file doesn't exist.
+        
+        :param file:  Name of file to get the parameter settings from
+        :type  file:  str
+
+        :returns:     0 OK, 1 Error.
+        :rtype:       int
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -143,6 +187,16 @@ class GXRGRD:
         """
         Executes the Rangrid program, using the input channel and
         output file parameters.
+        
+        :param in_dat:   Handle to source `GXDAT <geosoft.gxapi.GXDAT>` object (from database)
+        :param out_dat:  Handle to output grid file `GXDAT <geosoft.gxapi.GXDAT>`
+        :type  in_dat:   GXDAT
+        :type  out_dat:  GXDAT
+
+        :returns:        0 OK, 1 Error.
+        :rtype:          int
+
+        .. versionadded:: 6.0.1
         """
         ret_val = self._wrapper.run(in_dat._wrapper, out_dat._wrapper)
         return ret_val
@@ -153,6 +207,24 @@ class GXRGRD:
     def run2(cls, db, x, y, z, ctl, grd):
         """
         Executes the Rangrid program directly on a database.
+        
+        :param db:   Handle to a database
+        :param x:    Y Channel
+        :param y:    X Channel
+        :param z:    Data channel
+        :param ctl:  RANGRID control file.
+        :param grd:  Output grid name
+        :type  db:   GXDB
+        :type  x:    str
+        :type  y:    str
+        :type  z:    str
+        :type  ctl:  str
+        :type  grd:  str
+
+        :returns:    0, always.
+        :rtype:      int
+
+        .. versionadded:: 6.0.1
         """
         ret_val = gxapi_cy.WrapRGRD.run2(GXContext._get_tls_geo(), db._wrapper, x.encode(), y.encode(), z.encode(), ctl.encode(), grd.encode())
         return ret_val
@@ -164,6 +236,14 @@ class GXRGRD:
         """
         Puts the Rangrid object's control parameters back into
         its control file.
+        
+        :param name:  Name of file to put the parameter settings into
+        :type  name:  str
+
+        :returns:     0 OK, 1 Error.
+        :rtype:       int
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -179,6 +259,21 @@ class GXRGRD:
     def run_vv(cls, vv_x, vv_y, vv_z, ipj, ctl, grd):
         """
         Executes the Rangrid program directly on input data VVs.
+        
+        :param vv_x:  X data
+        :param vv_y:  Y data
+        :param vv_z:  Z (grid value) data
+        :param ipj:   Projection to put into grid
+        :param ctl:   RANGRID control file.
+        :param grd:   Output grid name
+        :type  vv_x:  GXVV
+        :type  vv_y:  GXVV
+        :type  vv_z:  GXVV
+        :type  ipj:   GXIPJ
+        :type  ctl:   str
+        :type  grd:   str
+
+        .. versionadded:: 6.3
         """
         gxapi_cy.WrapRGRD.run_vv(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, ipj._wrapper, ctl.encode(), grd.encode())
         

@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -65,6 +64,12 @@ class GXPRAGA3:
     def launch(cls):
         """
         This method launches the application.
+        
+
+        :returns:    1 - OK, 2 - Cancel
+        :rtype:      int
+
+        .. versionadded:: 6.4
         """
         ret_val = gxapi_cy.WrapPRAGA3.launch(GXContext._get_tls_geo())
         return ret_val

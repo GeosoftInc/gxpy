@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -61,6 +60,20 @@ class GXVOXD:
     def create(cls, vox, table, zone, contour):
         """
         Create a new `GXVOXD <geosoft.gxapi.GXVOXD>`
+        
+        :param vox:      `GXVOX <geosoft.gxapi.GXVOX>` Object
+        :param table:    Color table name, "" for default
+        :param zone:     `ITR_ZONE`
+        :param contour:  Color contour interval or `rDUMMY <geosoft.gxapi.rDUMMY>`
+        :type  vox:      GXVOX
+        :type  table:    str
+        :type  zone:     int
+        :type  contour:  float
+
+        :returns:        `GXVOXD <geosoft.gxapi.GXVOXD>` handle, terminates if creation fails
+        :rtype:          GXVOXD
+
+        .. versionadded:: 6.2
 
         **Note:**
 
@@ -76,6 +89,16 @@ class GXVOXD:
     def create_itr(cls, vox, itr):
         """
         Create a new `GXVOXD <geosoft.gxapi.GXVOXD>` with our own `GXITR <geosoft.gxapi.GXITR>`
+        
+        :param vox:  `GXVOX <geosoft.gxapi.GXVOX>` Object
+        :param itr:  `GXITR <geosoft.gxapi.GXITR>` Object
+        :type  vox:  GXVOX
+        :type  itr:  GXITR
+
+        :returns:    `GXVOXD <geosoft.gxapi.GXVOXD>` handle, terminates if creation fails
+        :rtype:      GXVOXD
+
+        .. versionadded:: 6.2
 
         **Note:**
 
@@ -91,6 +114,14 @@ class GXVOXD:
     def create_thematic(cls, vox):
         """
         Create a new `GXVOXD <geosoft.gxapi.GXVOXD>` for a thematic `GXVOX <geosoft.gxapi.GXVOX>` object.
+        
+        :param vox:  `GXVOX <geosoft.gxapi.GXVOX>` Object
+        :type  vox:  GXVOX
+
+        :returns:    `GXVOXD <geosoft.gxapi.GXVOXD>` handle, terminates if creation fails
+        :rtype:      GXVOXD
+
+        .. versionadded:: 7.0
 
         **Note:**
 
@@ -114,6 +145,12 @@ class GXVOXD:
     def is_thematic(self):
         """
         Is this a thematic voxel?
+        
+
+        :returns:     1 if `GXVOX <geosoft.gxapi.GXVOX>` is thematic
+        :rtype:       int
+
+        .. versionadded:: 9.3
 
         **Note:**
 
@@ -132,6 +169,13 @@ class GXVOXD:
     def get_thematic_info(self, tpat, vv):
         """
         Get a copy of a thematic voxel's `GXTPAT <geosoft.gxapi.GXTPAT>` object and a `GXVV <geosoft.gxapi.GXVV>` containing the current display selections.
+        
+        :param tpat:  `GXTPAT <geosoft.gxapi.GXTPAT>` object to get
+        :param vv:    `GXVV <geosoft.gxapi.GXVV>` (int) object to fill with current selections
+        :type  tpat:  GXTPAT
+        :type  vv:    GXVV
+
+        .. versionadded:: 9.3
         """
         self._wrapper.get_thematic_info(tpat._wrapper, vv._wrapper)
         
@@ -142,6 +186,11 @@ class GXVOXD:
     def set_thematic_selection(self, vv):
         """
         Get a copy of a thematic voxel's `GXTPAT <geosoft.gxapi.GXTPAT>` object and a `GXVV <geosoft.gxapi.GXVV>` containing the current display selections.
+        
+        :param vv:    `GXVV <geosoft.gxapi.GXVV>` (int) object to set the current selections to
+        :type  vv:    GXVV
+
+        .. versionadded:: 9.3
         """
         self._wrapper.set_thematic_selection(vv._wrapper)
         
@@ -154,6 +203,25 @@ class GXVOXD:
     def get_draw_controls(self, box, trans, min_x, min_y, min_z, max_x, max_y, max_z):
         """
         Get the draw controls
+        
+        :param box:    Draw Bounding Box
+        :param trans:  Transparency
+        :param min_x:  Min X
+        :param min_y:  Min Y
+        :param min_z:  Min Z
+        :param max_x:  Max X
+        :param max_y:  Max Y
+        :param max_z:  Max Z
+        :type  box:    int_ref
+        :type  trans:  float_ref
+        :type  min_x:  float_ref
+        :type  min_y:  float_ref
+        :type  min_z:  float_ref
+        :type  max_x:  float_ref
+        :type  max_y:  float_ref
+        :type  max_z:  float_ref
+
+        .. versionadded:: 6.2
         """
         box.value, trans.value, min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._wrapper.get_draw_controls(box.value, trans.value, min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         
@@ -164,6 +232,11 @@ class GXVOXD:
     def get_name(self, name):
         """
         Gets the file name of the voxel.
+        
+        :param name:  File name returned
+        :type  name:  str_ref
+
+        .. versionadded:: 8.2
         """
         name.value = self._wrapper.get_name(name.value.encode())
         
@@ -174,6 +247,11 @@ class GXVOXD:
     def get_itr(self, itr):
         """
         Get the `GXITR <geosoft.gxapi.GXITR>` of the `GXVOXD <geosoft.gxapi.GXVOXD>`
+        
+        :param itr:   `GXITR <geosoft.gxapi.GXITR>` object
+        :type  itr:   GXITR
+
+        .. versionadded:: 6.2
         """
         self._wrapper.get_itr(itr._wrapper)
         
@@ -184,6 +262,13 @@ class GXVOXD:
     def get_shell_controls(self, min, max):
         """
         Get the shell controls
+        
+        :param min:   Min Value (`rDUMMY <geosoft.gxapi.rDUMMY>` for no limit)
+        :param max:   Max Value (`rDUMMY <geosoft.gxapi.rDUMMY>` for no limit)
+        :type  min:   float_ref
+        :type  max:   float_ref
+
+        .. versionadded:: 6.2
         """
         min.value, max.value = self._wrapper.get_shell_controls(min.value, max.value)
         
@@ -194,6 +279,25 @@ class GXVOXD:
     def set_draw_controls(self, box, trans, min_x, min_y, min_z, max_x, max_y, max_z):
         """
         Set the draw controls
+        
+        :param box:    Draw Bounding Box
+        :param trans:  Transparency
+        :param min_x:  Min X
+        :param min_y:  Min Y
+        :param min_z:  Min Z
+        :param max_x:  Max X
+        :param max_y:  Max Y
+        :param max_z:  Max Z
+        :type  box:    int
+        :type  trans:  float
+        :type  min_x:  float
+        :type  min_y:  float
+        :type  min_z:  float
+        :type  max_x:  float
+        :type  max_y:  float
+        :type  max_z:  float
+
+        .. versionadded:: 6.2
         """
         self._wrapper.set_draw_controls(box, trans, min_x, min_y, min_z, max_x, max_y, max_z)
         
@@ -204,6 +308,11 @@ class GXVOXD:
     def set_itr(self, itr):
         """
         Set the `GXITR <geosoft.gxapi.GXITR>` of the `GXVOXD <geosoft.gxapi.GXVOXD>`
+        
+        :param itr:   `GXITR <geosoft.gxapi.GXITR>` object
+        :type  itr:   GXITR
+
+        .. versionadded:: 6.2
         """
         self._wrapper.set_itr(itr._wrapper)
         
@@ -214,6 +323,13 @@ class GXVOXD:
     def set_shell_controls(self, min, max):
         """
         Set the shell controls
+        
+        :param min:   Min Value (`rDUMMY <geosoft.gxapi.rDUMMY>` for no limit)
+        :param max:   Max Value (`rDUMMY <geosoft.gxapi.rDUMMY>` for no limit)
+        :type  min:   float
+        :type  max:   float
+
+        .. versionadded:: 6.2
         """
         self._wrapper.set_shell_controls(min, max)
         

@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -61,6 +60,21 @@ class GXEXT:
     def get_info(cls, img, xmin, ymin, xmax, ymax, ipj):
         """
         Retrieves information about an external image format.
+        
+        :param img:   Image Name
+        :param xmin:  X Min
+        :param ymin:  Y Min
+        :param xmax:  X Max
+        :param ymax:  Y Max
+        :param ipj:   Projection Information
+        :type  img:   str
+        :type  xmin:  float_ref
+        :type  ymin:  float_ref
+        :type  xmax:  float_ref
+        :type  ymax:  float_ref
+        :type  ipj:   GXIPJ
+
+        .. versionadded:: 5.0
         """
         xmin.value, ymin.value, xmax.value, ymax.value = gxapi_cy.WrapEXT.get_info(GXContext._get_tls_geo(), img.encode(), xmin.value, ymin.value, xmax.value, ymax.value, ipj._wrapper)
         

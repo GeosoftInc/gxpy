@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -61,6 +60,11 @@ class GXWA:
     def puts(self, str_val):
         """
         Writes a string to the file.
+        
+        :param str_val:  String to write
+        :type  str_val:  str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.puts(str_val.encode())
         
@@ -71,6 +75,16 @@ class GXWA:
     def create(cls, file, append):
         """
         Creates an ASCII file to write to.
+        
+        :param file:    Name of the File
+        :param append:  `WA_OPEN`
+        :type  file:    str
+        :type  append:  int
+
+        :returns:       `GXWA <geosoft.gxapi.GXWA>` Handle
+        :rtype:         GXWA
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -85,12 +99,24 @@ class GXWA:
     def create_ex(cls, file, append, encode):
         """
         Creates an ASCII file to write to.
+        
+        :param file:    Name of the File
+        :param append:  `WA_OPEN`
+        :param encode:  `WA_ENCODE`
+        :type  file:    str
+        :type  append:  int
+        :type  encode:  int
+
+        :returns:       `GXWA <geosoft.gxapi.GXWA>` Handle
+        :rtype:         GXWA
+
+        .. versionadded:: 6.2
 
         **Note:**
 
         Before version 6.2. text in on the GX API level were handled as characters in the current ANSI code page
         defining how characters above ASCII 127 would be displayed. 6.2. introduced Unicode in the core
-        montaj engine that greatly increased the number of symbols that can be used. The `WA_ENCODE_` constants
+        montaj engine that greatly increased the number of symbols that can be used. The `WA_ENCODE` constants
         were introduce that controls how text are written to files on disk with the `GXWA <geosoft.gxapi.GXWA>` class.
         """
         ret_val = gxapi_cy.WrapWA.create_ex(GXContext._get_tls_geo(), file.encode(), append, encode)
@@ -102,6 +128,18 @@ class GXWA:
     def create_sbf(cls, sbf, file, append):
         """
         Creates an ASCII file to write to in an `GXSBF <geosoft.gxapi.GXSBF>`.
+        
+        :param sbf:     Storage
+        :param file:    Name of the File
+        :param append:  `WA_OPEN`
+        :type  sbf:     GXSBF
+        :type  file:    str
+        :type  append:  int
+
+        :returns:       `GXWA <geosoft.gxapi.GXWA>` Handle
+        :rtype:         GXWA
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -116,13 +154,27 @@ class GXWA:
     def create_sbf_ex(cls, sbf, file, append, encode):
         """
         Creates an ASCII file to write to in an `GXSBF <geosoft.gxapi.GXSBF>`.
+        
+        :param sbf:     Storage
+        :param file:    Name of the File
+        :param append:  `WA_OPEN`
+        :param encode:  `WA_ENCODE`
+        :type  sbf:     GXSBF
+        :type  file:    str
+        :type  append:  int
+        :type  encode:  int
+
+        :returns:       `GXWA <geosoft.gxapi.GXWA>` Handle
+        :rtype:         GXWA
+
+        .. versionadded:: 6.2
 
         **Note:**
 
         Also see sbf.gxh
         Before version 6.2. text in on the GX API level were handled as characters in the current ANSI code page
         defining how characters above ASCII 127 would be displayed. 6.2. introduced Unicode in the core
-        montaj engine that greatly increased the number of symbols that can be used. The `WA_ENCODE_` constants
+        montaj engine that greatly increased the number of symbols that can be used. The `WA_ENCODE` constants
         were introduce that controls how text are written to files on disk with the `GXWA <geosoft.gxapi.GXWA>` class.
         """
         ret_val = gxapi_cy.WrapWA.create_sbf_ex(GXContext._get_tls_geo(), sbf._wrapper, file.encode(), append, encode)
@@ -136,6 +188,9 @@ class GXWA:
     def new_line(self):
         """
         Forces a new line in the `GXWA <geosoft.gxapi.GXWA>` object.
+        
+
+        .. versionadded:: 5.0
         """
         self._wrapper.new_line()
         

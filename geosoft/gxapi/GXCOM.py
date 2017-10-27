@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -61,6 +60,26 @@ class GXCOM:
     def create(cls, port, baud, data_size, parity, stop_bits, flow_control, time_out):
         """
         Create `GXCOM <geosoft.gxapi.GXCOM>` object.
+        
+        :param port:          Port name to open ("COM1" is example)
+        :param baud:          `COM_BAUD`
+        :param data_size:     `COM_DATASIZE`
+        :param parity:        `COM_PARITY`
+        :param stop_bits:     `COM_STOPBITS`
+        :param flow_control:  `COM_FLOWCONTROL`
+        :param time_out:      Timeout in Ms (500)
+        :type  port:          str
+        :type  baud:          int
+        :type  data_size:     int
+        :type  parity:        int
+        :type  stop_bits:     int
+        :type  flow_control:  int
+        :type  time_out:      int
+
+        :returns:             `GXCOM <geosoft.gxapi.GXCOM>` Object
+        :rtype:               GXCOM
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapCOM.create(GXContext._get_tls_geo(), port.encode(), baud, data_size, parity, stop_bits, flow_control, time_out)
         return GXCOM(ret_val)
@@ -71,6 +90,26 @@ class GXCOM:
     def create_no_terminate(cls, port, baud, data_size, parity, stop_bits, flow_control, time_out):
         """
         Create `GXCOM <geosoft.gxapi.GXCOM>` object.
+        
+        :param port:          Port name to open ("COM1" is example)
+        :param baud:          `COM_BAUD`
+        :param data_size:     `COM_DATASIZE`
+        :param parity:        `COM_PARITY`
+        :param stop_bits:     `COM_STOPBITS`
+        :param flow_control:  `COM_FLOWCONTROL`
+        :param time_out:      Timeout in Ms (500)
+        :type  port:          str
+        :type  baud:          int
+        :type  data_size:     int
+        :type  parity:        int
+        :type  stop_bits:     int
+        :type  flow_control:  int
+        :type  time_out:      int
+
+        :returns:             `GXCOM <geosoft.gxapi.GXCOM>` Object
+        :rtype:               GXCOM
+
+        .. versionadded:: 6.0
         """
         ret_val = gxapi_cy.WrapCOM.create_no_terminate(GXContext._get_tls_geo(), port.encode(), baud, data_size, parity, stop_bits, flow_control, time_out)
         return GXCOM(ret_val)
@@ -83,6 +122,15 @@ class GXCOM:
     def read_line_no_terminate(self, line):
         """
         Reads a Line from the `GXCOM <geosoft.gxapi.GXCOM>`
+        
+        :param line:  String for line
+        :type  line:  str_ref
+
+        :returns:     0 - if successful in reading a line
+                      1 - if an error was encountered
+        :rtype:       int
+
+        .. versionadded:: 6.0.1
         """
         ret_val, line.value = self._wrapper.read_line_no_terminate(line.value.encode())
         return ret_val
@@ -93,6 +141,15 @@ class GXCOM:
     def read_chars_no_terminate(self, line):
         """
         Reads characters from the `GXCOM <geosoft.gxapi.GXCOM>`, times out and does not terminate
+        
+        :param line:  String for characters
+        :type  line:  str_ref
+
+        :returns:     0 - if successful
+                      1 - if time out or error
+        :rtype:       int
+
+        .. versionadded:: 6.0.1
         """
         ret_val, line.value = self._wrapper.read_chars_no_terminate(line.value.encode())
         return ret_val
@@ -103,6 +160,11 @@ class GXCOM:
     def read_line(self, line):
         """
         Reads a Line from the `GXCOM <geosoft.gxapi.GXCOM>`
+        
+        :param line:  String for line
+        :type  line:  str_ref
+
+        .. versionadded:: 5.0
         """
         line.value = self._wrapper.read_line(line.value.encode())
         
@@ -113,6 +175,15 @@ class GXCOM:
     def write_chars_no_terminate(self, line):
         """
         Writes characters to the `GXCOM <geosoft.gxapi.GXCOM>`.  Does not terminate upon error
+        
+        :param line:  Line to write
+        :type  line:  str
+
+        :returns:     0 - if successful in writing a string
+                      1 - if time out or error was encountered
+        :rtype:       int
+
+        .. versionadded:: 6.0.1
         """
         ret_val = self._wrapper.write_chars_no_terminate(line.encode())
         return ret_val
@@ -123,6 +194,9 @@ class GXCOM:
     def purge_comm(self):
         """
         Purges the input and output buffers.
+        
+
+        .. versionadded:: 5.1.8
         """
         self._wrapper.purge_comm()
         
@@ -133,6 +207,11 @@ class GXCOM:
     def read_chars(self, line):
         """
         Reads characters from the `GXCOM <geosoft.gxapi.GXCOM>`
+        
+        :param line:  String for characters
+        :type  line:  str_ref
+
+        .. versionadded:: 5.0
         """
         line.value = self._wrapper.read_chars(line.value.encode())
         
@@ -143,6 +222,13 @@ class GXCOM:
     def read_em61_lines_wa(self, lines, wa):
         """
         Reads Lines from the `GXCOM <geosoft.gxapi.GXCOM>` to a `GXWA <geosoft.gxapi.GXWA>`: Geonics EM61 only
+        
+        :param lines:  Number of lines
+        :param wa:     Where to put lines
+        :type  lines:  int
+        :type  wa:     GXWA
+
+        .. versionadded:: 5.0
         """
         self._wrapper.read_em61_lines_wa(lines, wa._wrapper)
         
@@ -153,6 +239,11 @@ class GXCOM:
     def read_file2_wa(self, wa):
         """
         Reads entire dataset from the `GXCOM <geosoft.gxapi.GXCOM>` to a `GXWA <geosoft.gxapi.GXWA>`
+        
+        :param wa:   Where to put lines
+        :type  wa:   GXWA
+
+        .. versionadded:: 5.0
         """
         self._wrapper.read_file2_wa(wa._wrapper)
         
@@ -163,6 +254,13 @@ class GXCOM:
     def read_lines_wa(self, lines, wa):
         """
         Reads Lines from the `GXCOM <geosoft.gxapi.GXCOM>` to a `GXWA <geosoft.gxapi.GXWA>`
+        
+        :param lines:  Number of lines
+        :param wa:     Where to put lines
+        :type  lines:  int
+        :type  wa:     GXWA
+
+        .. versionadded:: 5.0
         """
         self._wrapper.read_lines_wa(lines, wa._wrapper)
         
@@ -173,6 +271,11 @@ class GXCOM:
     def set_time_out(self, time_out):
         """
         Set the timeout value.
+        
+        :param time_out:  Timeout in Ms (500)
+        :type  time_out:  int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.set_time_out(time_out)
         
@@ -183,6 +286,11 @@ class GXCOM:
     def write_chars(self, line):
         """
         Writes characters to the `GXCOM <geosoft.gxapi.GXCOM>`
+        
+        :param line:  Line to write
+        :type  line:  str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.write_chars(line.encode())
         
@@ -193,6 +301,11 @@ class GXCOM:
     def write_line(self, line):
         """
         Writes a Line to the `GXCOM <geosoft.gxapi.GXCOM>`
+        
+        :param line:  Line to write
+        :type  line:  str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.write_line(line.encode())
         

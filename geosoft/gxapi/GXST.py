@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -89,6 +88,12 @@ class GXST:
         """
         This method creates a statistics object which is used to
         accumulate statistics.
+        
+
+        :returns:    `GXST <geosoft.gxapi.GXST>` Object
+        :rtype:      GXST
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapST.create(GXContext._get_tls_geo())
         return GXST(ret_val)
@@ -100,6 +105,12 @@ class GXST:
         """
         This method creates a statistics object which stores
         all values.
+        
+
+        :returns:    `GXST <geosoft.gxapi.GXST>` Object
+        :rtype:      GXST
+
+        .. versionadded:: 5.1.8
         """
         ret_val = gxapi_cy.WrapST.create_exact(GXContext._get_tls_geo())
         return GXST(ret_val)
@@ -110,6 +121,11 @@ class GXST:
     def data(self, val):
         """
         Add this value to the statistics object.
+        
+        :param val:  Value to Add
+        :type  val:  float
+
+        .. versionadded:: 5.0
         """
         self._wrapper.data(val)
         
@@ -120,6 +136,11 @@ class GXST:
     def data_vv(self, vv):
         """
         Add all the values in this `GXVV <geosoft.gxapi.GXVV>` to the statistics object.
+        
+        :param vv:  `GXVV <geosoft.gxapi.GXVV>` object
+        :type  vv:  GXVV
+
+        .. versionadded:: 5.0
         """
         self._wrapper.data_vv(vv._wrapper)
         
@@ -132,6 +153,11 @@ class GXST:
     def get_histogram_bins(self, vv):
         """
         Retrieve number of items in each hostogram bin
+        
+        :param vv:  `GXVV <geosoft.gxapi.GXVV>` for numbers of items
+        :type  vv:  GXVV
+
+        .. versionadded:: 6.1
 
         **Note:**
 
@@ -148,6 +174,15 @@ class GXST:
     def get_histogram_info(self, div, min, max):
         """
         Retrieve number of bins, min and max value in histogram
+        
+        :param div:  # of bins
+        :param min:  Min (value at start of 2nd bin)
+        :param max:  Max (value at end of 2nd last bin)
+        :type  div:  int_ref
+        :type  min:  float_ref
+        :type  max:  float_ref
+
+        .. versionadded:: 6.1
 
         **Note:**
 
@@ -165,6 +200,11 @@ class GXST:
     def histogram(self, bins):
         """
         This method prepares `GXST <geosoft.gxapi.GXST>` for recording histogram.
+        
+        :param bins:  # of bins
+        :type  bins:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -191,6 +231,15 @@ class GXST:
     def histogram2(self, bins, min, max):
         """
         This method prepares `GXST <geosoft.gxapi.GXST>` for recording histogram.
+        
+        :param bins:  # of bins
+        :param min:   Min
+        :param max:   Max
+        :type  bins:  int
+        :type  min:   float
+        :type  max:   float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -209,6 +258,14 @@ class GXST:
     def equivalent_percentile(self, value):
         """
         Return corresponding Percentile for a Value.
+        
+        :param value:  Input value
+        :type  value:  float
+
+        :returns:      The percentile at the given value (0 - 100)
+        :rtype:        float
+
+        .. versionadded:: 5.0.8
 
         **Note:**
 
@@ -224,6 +281,14 @@ class GXST:
     def equivalent_value(self, percent):
         """
         Return corresponding Value for a Percentile
+        
+        :param percent:  Input percentile (0 - 100)
+        :type  percent:  float
+
+        :returns:        The value at the given percentile.
+        :rtype:          float
+
+        .. versionadded:: 5.0.8
 
         **Note:**
 
@@ -239,6 +304,9 @@ class GXST:
     def reset(self):
         """
         Resets the Statistics.
+        
+
+        .. versionadded:: 5.0
         """
         self._wrapper.reset()
         
@@ -250,6 +318,15 @@ class GXST:
         """
         This method allows you to retrieve (and compute) the
         information from the `GXST <geosoft.gxapi.GXST>` object.
+        
+        :param id:  `ST_INFO`
+        :type  id:  int
+
+        :returns:    Data you asked for
+                    `GS_R8DM <geosoft.gxapi.GS_R8DM>` for none
+        :rtype:      float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -268,6 +345,18 @@ class GXST:
     def get_norm_prob(cls, x):
         """
         Return percent value
+        
+        :param x:  Real
+        :type  x:  float
+
+        :returns:    real
+                   
+                   
+                   Notes			this function is based on Normal Cumulative distribution function
+                   mit to about 5 standard deviations
+        :rtype:      float
+
+        .. versionadded:: 7.1
         """
         ret_val = gxapi_cy.WrapST.get_norm_prob(GXContext._get_tls_geo(), x)
         return ret_val
@@ -278,6 +367,18 @@ class GXST:
     def get_norm_prob_x(cls, percent):
         """
         Return number of sigmas from 50% a given percent is
+        
+        :param percent:  Real
+        :type  percent:  float
+
+        :returns:        real
+                         
+                         
+                         Notes			this function is based on Normal Cumulative distribution function
+                         mit to about 5 standard deviations
+        :rtype:          float
+
+        .. versionadded:: 7.1
         """
         ret_val = gxapi_cy.WrapST.get_norm_prob_x(GXContext._get_tls_geo(), percent)
         return ret_val
@@ -288,6 +389,13 @@ class GXST:
     def normal_test(self):
         """
         Test the "normality" of the histogram distribution
+        
+
+        :returns:    The normality statistic.
+                    Terminates if no histogram in the `GXST <geosoft.gxapi.GXST>` object.
+        :rtype:      float
+
+        .. versionadded:: 5.0
 
         **Note:**
 

@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -64,6 +63,11 @@ class GXBF:
     def ch_size(self, size):
         """
         Changes the size of a file
+        
+        :param size:  New length in bytes
+        :type  size:  int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.ch_size(size)
         
@@ -74,6 +78,13 @@ class GXBF:
     def seek(self, offset, ref):
         """
         Moves file position
+        
+        :param offset:  Number of bytes from reference point
+        :param ref:     `BF_SEEK`
+        :type  offset:  int
+        :type  ref:     int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -89,6 +100,11 @@ class GXBF:
     def copy(self, b_fw):
         """
         Copy entire contents of a source `GXBF <geosoft.gxapi.GXBF>` to a destination `GXBF <geosoft.gxapi.GXBF>`
+        
+        :param b_fw:  Destination `GXBF <geosoft.gxapi.GXBF>`
+        :type  b_fw:  GXBF
+
+        .. versionadded:: 5.0
         """
         self._wrapper.copy(b_fw._wrapper)
         
@@ -99,6 +115,16 @@ class GXBF:
     def crc(self, size, crc):
         """
         Compute CRC of a file.
+        
+        :param size:  Number of bytes to CRC
+        :param crc:   CRC start (use `CRC_INIT_VALUE <geosoft.gxapi.CRC_INIT_VALUE>` for new)
+        :type  size:  int
+        :type  crc:   int
+
+        :returns:     CRC Value
+        :rtype:       int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.crc(size, crc)
         return ret_val
@@ -109,6 +135,16 @@ class GXBF:
     def create(cls, file, status):
         """
         Create `GXBF <geosoft.gxapi.GXBF>` object.
+        
+        :param file:    File name to open ("" is a temporary file)
+        :param status:  `BF_OPEN_MODE`
+        :type  file:    str
+        :type  status:  int
+
+        :returns:       `GXBF <geosoft.gxapi.GXBF>` Object
+        :rtype:         GXBF
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -133,6 +169,18 @@ class GXBF:
     def create_sbf(cls, sbf, file, status):
         """
         Create `GXBF <geosoft.gxapi.GXBF>` object inside an `GXSBF <geosoft.gxapi.GXSBF>`.
+        
+        :param sbf:     Storage
+        :param file:    File name to open ("" is a temporary file)
+        :param status:  `BF_OPEN_MODE`
+        :type  sbf:     GXSBF
+        :type  file:    str
+        :type  status:  int
+
+        :returns:       `GXBF <geosoft.gxapi.GXBF>` Object
+        :rtype:         GXBF
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -151,6 +199,13 @@ class GXBF:
     def eof(self):
         """
         Returns 1 if at the end of the file
+        
+
+        :returns:    1 if at the end of the file,
+                    0 if not at the end of the file
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.eof()
         return ret_val
@@ -161,6 +216,13 @@ class GXBF:
     def query_write(self):
         """
         Check if you can write to the `GXBF <geosoft.gxapi.GXBF>`.
+        
+
+        :returns:    0 - No
+                    1 - Yes
+        :rtype:      int
+
+        .. versionadded:: 5.1.1
         """
         ret_val = self._wrapper.query_write()
         return ret_val
@@ -171,6 +233,15 @@ class GXBF:
     def read_binary_string(self, bytes, encoding, data):
         """
         Reads string data from current position in `GXBF <geosoft.gxapi.GXBF>`
+        
+        :param bytes:     Number of bytes to read
+        :param encoding:  `BF_ENCODE`
+        :param data:      Data
+        :type  bytes:     int
+        :type  encoding:  int
+        :type  data:      str_ref
+
+        .. versionadded:: 6.3
         """
         data.value = self._wrapper.read_binary_string(bytes, encoding, data.value.encode())
         
@@ -181,6 +252,12 @@ class GXBF:
     def size(self):
         """
         Returns the file length
+        
+
+        :returns:    File size in bytes.
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.size()
         return ret_val
@@ -191,6 +268,12 @@ class GXBF:
     def tell(self):
         """
         Returns current position of file pointer in bytes
+        
+
+        :returns:    Current file pointer location
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.tell()
         return ret_val
@@ -201,6 +284,13 @@ class GXBF:
     def read_int(self, type, data):
         """
         Reads int data from current position in `GXBF <geosoft.gxapi.GXBF>`
+        
+        :param type:  `GS_TYPES` and `BF_BYTEORDER`
+        :param data:  Data
+        :type  type:  int
+        :type  data:  int_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -224,6 +314,13 @@ class GXBF:
     def read_double(self, type, data):
         """
         Reads real data from current position in `GXBF <geosoft.gxapi.GXBF>`
+        
+        :param type:  `GS_TYPES` and `BF_BYTEORDER`
+        :param data:  Data
+        :type  type:  int
+        :type  data:  float_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -247,6 +344,13 @@ class GXBF:
     def read_vv(self, type, vv):
         """
         Read data to a `GXVV <geosoft.gxapi.GXVV>` from current position in `GXBF <geosoft.gxapi.GXBF>`
+        
+        :param type:  `GS_TYPES` and `BF_BYTEORDER`
+        :param vv:    `GXVV <geosoft.gxapi.GXVV>` data to read, `GXVV <geosoft.gxapi.GXVV>` length is read
+        :type  type:  int
+        :type  vv:    GXVV
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -270,6 +374,11 @@ class GXBF:
     def set_destroy_status(self, status):
         """
         Set the flag to delete the file on close
+        
+        :param status:  `BF_CLOSE`
+        :type  status:  int
+
+        .. versionadded:: 6.0
         """
         self._wrapper.set_destroy_status(status)
         
@@ -280,6 +389,13 @@ class GXBF:
     def write_binary_string(self, encoding, data):
         """
         Write a binary string to a `GXBF <geosoft.gxapi.GXBF>`
+        
+        :param encoding:  `BF_ENCODE`
+        :param data:      String to write out
+        :type  encoding:  int
+        :type  data:      str
+
+        .. versionadded:: 6.3
         """
         self._wrapper.write_binary_string(encoding, data.encode())
         
@@ -290,6 +406,9 @@ class GXBF:
     def write_data_null(self):
         """
         Writes a null byte (0) to `GXBF <geosoft.gxapi.GXBF>`
+        
+
+        .. versionadded:: 5.0
         """
         self._wrapper.write_data_null()
         
@@ -300,6 +419,13 @@ class GXBF:
     def write_int(self, type, data):
         """
         Writes int to the `GXBF <geosoft.gxapi.GXBF>`
+        
+        :param type:  `GS_TYPES` and `BF_BYTEORDER`
+        :param data:  Data
+        :type  type:  int
+        :type  data:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -318,6 +444,13 @@ class GXBF:
     def write_double(self, type, data):
         """
         Writes real to the `GXBF <geosoft.gxapi.GXBF>`
+        
+        :param type:  `GS_TYPES` and `BF_BYTEORDER`
+        :param data:  Data
+        :type  type:  int
+        :type  data:  float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -336,6 +469,13 @@ class GXBF:
     def write_vv(self, type, vv):
         """
         Writes `GXVV <geosoft.gxapi.GXVV>` to the `GXBF <geosoft.gxapi.GXBF>`
+        
+        :param type:  `GS_TYPES` and `BF_BYTEORDER`
+        :param vv:    Data
+        :type  type:  int
+        :type  vv:    GXVV
+
+        .. versionadded:: 5.0
 
         **Note:**
 

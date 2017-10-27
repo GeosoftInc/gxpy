@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -65,6 +64,18 @@ class GXMAPL:
     def create(cls, name, ref_name, line):
         """
         Create a `GXMAPL <geosoft.gxapi.GXMAPL>`.
+        
+        :param name:      `GXMAPL <geosoft.gxapi.GXMAPL>` file name
+        :param ref_name:  Map base reference name
+        :param line:      Start line number in file (0 is first)
+        :type  name:      str
+        :type  ref_name:  str
+        :type  line:      int
+
+        :returns:         `GXMAPL <geosoft.gxapi.GXMAPL>`, aborts if creation fails
+        :rtype:           GXMAPL
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -81,6 +92,19 @@ class GXMAPL:
     def create_reg(cls, name, ref_name, line, reg):
         """
         Create a `GXMAPL <geosoft.gxapi.GXMAPL>` with `GXREG <geosoft.gxapi.GXREG>`.
+        
+        :param name:      `GXMAPL <geosoft.gxapi.GXMAPL>` file name
+        :param ref_name:  Map base reference name
+        :param line:      Start line number in file (0 is first)
+        :type  name:      str
+        :type  ref_name:  str
+        :type  line:      int
+        :type  reg:       GXREG
+
+        :returns:         `GXMAPL <geosoft.gxapi.GXMAPL>`, aborts if creation fails
+        :rtype:           GXMAPL
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -99,6 +123,10 @@ class GXMAPL:
     def process(self, map):
         """
         Process a `GXMAPL <geosoft.gxapi.GXMAPL>`
+        
+        :type  map:   GXMAP
+
+        .. versionadded:: 5.0
         """
         self._wrapper.process(map._wrapper)
         
@@ -109,6 +137,13 @@ class GXMAPL:
     def replace_string(self, var, repl):
         """
         Adds a replacement string to a mapplot control file.
+        
+        :param var:   Variable
+        :param repl:  Replacement
+        :type  var:   str
+        :type  repl:  str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.replace_string(var.encode(), repl.encode())
         

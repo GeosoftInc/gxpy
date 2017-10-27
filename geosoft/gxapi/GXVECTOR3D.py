@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -63,6 +62,11 @@ class GXVECTOR3D:
     def get_itr(self, itr):
         """
         Get the `GXITR <geosoft.gxapi.GXITR>` of the `GXVECTOR3D <geosoft.gxapi.GXVECTOR3D>`
+        
+        :param itr:        `GXITR <geosoft.gxapi.GXITR>` object
+        :type  itr:        GXITR
+
+        .. versionadded:: 9.3
         """
         self._wrapper.get_itr(itr._wrapper)
         
@@ -73,6 +77,11 @@ class GXVECTOR3D:
     def set_itr(self, itr):
         """
         Set the `GXITR <geosoft.gxapi.GXITR>` of the `GXVECTOR3D <geosoft.gxapi.GXVECTOR3D>`
+        
+        :param itr:        `GXITR <geosoft.gxapi.GXITR>` object
+        :type  itr:        GXITR
+
+        .. versionadded:: 9.3
         """
         self._wrapper.set_itr(itr._wrapper)
         

@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -61,6 +60,11 @@ class GXDOCU:
     def copy(self, doc_us):
         """
         Copy `GXDOCU <geosoft.gxapi.GXDOCU>`
+        
+        :param doc_us:  Source `GXDOCU <geosoft.gxapi.GXDOCU>`
+        :type  doc_us:  GXDOCU
+
+        .. versionadded:: 5.1.1
         """
         self._wrapper.copy(doc_us._wrapper)
         
@@ -71,6 +75,12 @@ class GXDOCU:
     def create(cls):
         """
         Create a document onject
+        
+
+        :returns:    `GXDOCU <geosoft.gxapi.GXDOCU>` Object
+        :rtype:      GXDOCU
+
+        .. versionadded:: 5.1.1
         """
         ret_val = gxapi_cy.WrapDOCU.create(GXContext._get_tls_geo())
         return GXDOCU(ret_val)
@@ -81,6 +91,14 @@ class GXDOCU:
     def create_s(cls, bf):
         """
         Create from a serialized source
+        
+        :param bf:  `GXBF <geosoft.gxapi.GXBF>` from which to read `GXDOCU <geosoft.gxapi.GXDOCU>`
+        :type  bf:  GXBF
+
+        :returns:    `GXDOCU <geosoft.gxapi.GXDOCU>` Object
+        :rtype:      GXDOCU
+
+        .. versionadded:: 5.1.1
         """
         ret_val = gxapi_cy.WrapDOCU.create_s(GXContext._get_tls_geo(), bf._wrapper)
         return GXDOCU(ret_val)
@@ -93,6 +111,11 @@ class GXDOCU:
     def get_file(self, file):
         """
         Get the document and place in a file.
+        
+        :param file:  File to which to write document
+        :type  file:  str
+
+        .. versionadded:: 5.1.1
         """
         self._wrapper.get_file(file.encode())
         
@@ -103,6 +126,11 @@ class GXDOCU:
     def get_file_meta(self, file):
         """
         Get the document and place in a file with metadata.
+        
+        :param file:  File to which to write document
+        :type  file:  str
+
+        .. versionadded:: 5.1.8
 
         **Note:**
 
@@ -123,6 +151,11 @@ class GXDOCU:
     def get_meta(self, meta):
         """
         Get the document's meta
+        
+        :param meta:  `GXMETA <geosoft.gxapi.GXMETA>` object to fill in with the document's meta
+        :type  meta:  GXMETA
+
+        .. versionadded:: 5.1.1
         """
         self._wrapper.get_meta(meta._wrapper)
         
@@ -133,6 +166,11 @@ class GXDOCU:
     def doc_name(self, name):
         """
         The document name.
+        
+        :param name:  Buffer to fill with document name
+        :type  name:  str_ref
+
+        .. versionadded:: 5.1.1
         """
         name.value = self._wrapper.doc_name(name.value.encode())
         
@@ -143,6 +181,11 @@ class GXDOCU:
     def file_name(self, name):
         """
         The original document file name.
+        
+        :param name:  Buffer to fill with document file name
+        :type  name:  str_ref
+
+        .. versionadded:: 5.1.1
         """
         name.value = self._wrapper.file_name(name.value.encode())
         
@@ -153,6 +196,12 @@ class GXDOCU:
     def have_meta(self):
         """
         Do you have metadata?
+        
+
+        :returns:     `GEO_BOOL`
+        :rtype:       int
+
+        .. versionadded:: 5.1.1
         """
         ret_val = self._wrapper.have_meta()
         return ret_val
@@ -163,6 +212,12 @@ class GXDOCU:
     def is_reference(self):
         """
         Is the document only a reference (a URL) ?
+        
+
+        :returns:     1 - Yes, 0 - No
+        :rtype:       int
+
+        .. versionadded:: 5.1.6
         """
         ret_val = self._wrapper.is_reference()
         return ret_val
@@ -173,6 +228,11 @@ class GXDOCU:
     def open(self, mode):
         """
         Open a document in the document viewer
+        
+        :param mode:  `DOCU_OPEN`
+        :type  mode:  int
+
+        .. versionadded:: 5.1.1
 
         **Note:**
 
@@ -188,6 +248,11 @@ class GXDOCU:
     def serial(self, bf):
         """
         Serialize `GXDOCU <geosoft.gxapi.GXDOCU>`
+        
+        :param bf:    `GXBF <geosoft.gxapi.GXBF>` in which to write object
+        :type  bf:    GXBF
+
+        .. versionadded:: 5.1.1
         """
         self._wrapper.serial(bf._wrapper)
         
@@ -198,6 +263,15 @@ class GXDOCU:
     def set_file(self, type, name, file):
         """
         Set the document from a file source.
+        
+        :param type:  Document type
+        :param name:  Document name, if "" file name will be used
+        :param file:  Document file, must exist
+        :type  type:  str
+        :type  name:  str
+        :type  file:  str
+
+        .. versionadded:: 5.1.1
 
         **Note:**
 
@@ -243,6 +317,15 @@ class GXDOCU:
     def set_file_meta(self, type, name, file):
         """
         Set the document from a file source with metadata.
+        
+        :param type:  Document type extension
+        :param name:  Document name, if NULL use file name
+        :param file:  Document file or URL
+        :type  type:  str
+        :type  name:  str
+        :type  file:  str
+
+        .. versionadded:: 5.1.8
 
         **Note:**
 
@@ -271,6 +354,11 @@ class GXDOCU:
     def set_meta(self, meta):
         """
         Set the document's meta
+        
+        :param meta:  `GXMETA <geosoft.gxapi.GXMETA>` to add to the document's meta
+        :type  meta:  GXMETA
+
+        .. versionadded:: 5.1.1
         """
         self._wrapper.set_meta(meta._wrapper)
         

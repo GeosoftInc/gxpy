@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -64,6 +63,14 @@ class GXHXYZ:
     def create(cls, name):
         """
         Create a handle to an `GXHXYZ <geosoft.gxapi.GXHXYZ>` object
+        
+        :param name:  File Name
+        :type  name:  str
+
+        :returns:     `GXHXYZ <geosoft.gxapi.GXHXYZ>` Object
+        :rtype:       GXHXYZ
+
+        .. versionadded:: 5.1.3
         """
         ret_val = gxapi_cy.WrapHXYZ.create(GXContext._get_tls_geo(), name.encode())
         return GXHXYZ(ret_val)
@@ -76,6 +83,11 @@ class GXHXYZ:
     def get_meta(self, meta):
         """
         Get the metadata of a grid.
+        
+        :param meta:  `GXMETA <geosoft.gxapi.GXMETA>` object to save `GXHXYZ <geosoft.gxapi.GXHXYZ>`'s meta to
+        :type  meta:  GXMETA
+
+        .. versionadded:: 5.1.3
         """
         self._wrapper.get_meta(meta._wrapper)
         
@@ -86,6 +98,18 @@ class GXHXYZ:
     def h_create_db(cls, db, gvv, name):
         """
         Make an `GXHXYZ <geosoft.gxapi.GXHXYZ>` from GDB
+        
+        :param db:    `GXDB <geosoft.gxapi.GXDB>` handle
+        :param gvv:   `GXVV <geosoft.gxapi.GXVV>` of channels to export
+        :param name:  Name of `GXHXYZ <geosoft.gxapi.GXHXYZ>` object
+        :type  db:    GXDB
+        :type  gvv:   GXVV
+        :type  name:  str
+
+        :returns:     `GXHXYZ <geosoft.gxapi.GXHXYZ>` object
+        :rtype:       GXHXYZ
+
+        .. versionadded:: 5.1.5
         """
         ret_val = gxapi_cy.WrapHXYZ.h_create_db(GXContext._get_tls_geo(), db._wrapper, gvv._wrapper, name.encode())
         return GXHXYZ(ret_val)
@@ -96,6 +120,24 @@ class GXHXYZ:
     def h_create_sql(cls, template, x, y, z, ipj, name):
         """
         Make an `GXHXYZ <geosoft.gxapi.GXHXYZ>` from SQL Query
+        
+        :param template:  Template File Name
+        :param x:         X field name
+        :param y:         Y field name
+        :param z:         Z field name
+        :param ipj:       Projection of data values
+        :param name:      Name of `GXHXYZ <geosoft.gxapi.GXHXYZ>` object
+        :type  template:  str
+        :type  x:         str
+        :type  y:         str
+        :type  z:         str
+        :type  ipj:       GXIPJ
+        :type  name:      str
+
+        :returns:         `GXHXYZ <geosoft.gxapi.GXHXYZ>` object
+        :rtype:           GXHXYZ
+
+        .. versionadded:: 5.1.3
         """
         ret_val = gxapi_cy.WrapHXYZ.h_create_sql(GXContext._get_tls_geo(), template.encode(), x.encode(), y.encode(), z.encode(), ipj._wrapper, name.encode())
         return GXHXYZ(ret_val)
@@ -106,6 +148,11 @@ class GXHXYZ:
     def set_meta(self, meta):
         """
         Set the metadata of a grid.
+        
+        :param meta:  `GXMETA <geosoft.gxapi.GXMETA>` object to add to `GXHXYZ <geosoft.gxapi.GXHXYZ>`'s meta
+        :type  meta:  GXMETA
+
+        .. versionadded:: 5.1.3
         """
         self._wrapper.set_meta(meta._wrapper)
         

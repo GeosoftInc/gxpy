@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -63,6 +62,13 @@ class GXIEXP:
         """
         This method adds an image to the `GXIEXP <geosoft.gxapi.GXIEXP>` object with a
         variable name.
+        
+        :param img:   Image to add
+        :param var:   Variable name
+        :type  img:   GXIMG
+        :type  var:   str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.add_grid(img._wrapper, var.encode())
         
@@ -73,6 +79,12 @@ class GXIEXP:
     def create(cls):
         """
         This method creates an `GXIEXP <geosoft.gxapi.GXIEXP>` object.
+        
+
+        :returns:    `GXIEXP <geosoft.gxapi.GXIEXP>` Object
+        :rtype:      GXIEXP
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapIEXP.create(GXContext._get_tls_geo())
         return GXIEXP(ret_val)
@@ -85,6 +97,13 @@ class GXIEXP:
     def do_formula(self, formula, max_len):
         """
         This method runs a formula on the grids.
+        
+        :param formula:  Formula
+        :param max_len:  Max. Buff size
+        :type  formula:  str
+        :type  max_len:  int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.do_formula(formula.encode(), max_len)
         

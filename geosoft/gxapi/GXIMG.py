@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXPG import GXPG
@@ -41,7 +40,7 @@ class GXIMG:
     -> creates a new grid file "mag.grd" compressed for size, numbers
     stored as 2-byte integers..
     
-    See `DAT_XGD_`.DOC for information about file name decorations available
+    See `DAT_XGD`.DOC for information about file name decorations available
     for all `GXDAT <geosoft.gxapi.GXDAT>` types.
     
     Different grid types support different features.  For example, not all
@@ -91,6 +90,13 @@ class GXIMG:
     def average2(cls, grid_in, grid_out):
         """
         Reduce the dimensions in a 2D pager by a factor of 2
+        
+        :param grid_in:   Name of source Grid
+        :param grid_out:  Name of output Grid
+        :type  grid_in:   str
+        :type  grid_out:  str
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -111,6 +117,11 @@ class GXIMG:
     def copy(self, im_go):
         """
         Copy IMGs.
+        
+        :param im_go:  Target `GXIMG <geosoft.gxapi.GXIMG>`
+        :type  im_go:  GXIMG
+
+        .. versionadded:: 5.0
         """
         self._wrapper.copy(im_go._wrapper)
         
@@ -121,6 +132,20 @@ class GXIMG:
     def create(cls, type, kx, width, height):
         """
         Creates an `GXIMG <geosoft.gxapi.GXIMG>` not tied to a file at all
+        
+        :param type:    Data type `GS_TYPES`
+        :param kx:      Grid orientation (KX): 1 (rows in X) -1 (rows in Y)
+        :param width:   Grid width
+        :param height:  Grid height
+        :type  type:    int
+        :type  kx:      int
+        :type  width:   int
+        :type  height:  int
+
+        :returns:       `GXIMG <geosoft.gxapi.GXIMG>` object
+        :rtype:         GXIMG
+
+        .. versionadded:: 5.0.3
 
         **Note:**
 
@@ -135,6 +160,18 @@ class GXIMG:
     def create_file(cls, type, grid, mode):
         """
         Creates an Image object tied to a grid file.
+        
+        :param type:  Data type, `GS_TYPES` or `GS_TYPE_DEFAULT <geosoft.gxapi.GS_TYPE_DEFAULT>` to use native `GXDAT <geosoft.gxapi.GXDAT>` type.
+        :param grid:  Name of the Grid to link to
+        :param mode:  Grid file open mode `IMG_FILE`
+        :type  type:  int
+        :type  grid:  str
+        :type  mode:  int
+
+        :returns:     `GXIMG <geosoft.gxapi.GXIMG>` object
+        :rtype:       GXIMG
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -152,6 +189,20 @@ class GXIMG:
     def create_mem(cls, type, kx, width, height):
         """
         Creates an `GXIMG <geosoft.gxapi.GXIMG>` object that is backed only by memory.
+        
+        :param type:    Data type, `GS_TYPES`
+        :param kx:      Grid orientation (KX): 1 (rows in X) -1 (rows in Y)
+        :param width:   Grid width
+        :param height:  Grid height
+        :type  type:    int
+        :type  kx:      int
+        :type  width:   int
+        :type  height:  int
+
+        :returns:       `GXIMG <geosoft.gxapi.GXIMG>` object
+        :rtype:         GXIMG
+
+        .. versionadded:: 5.0.6
 
         **Note:**
 
@@ -166,6 +217,22 @@ class GXIMG:
     def create_new_file(cls, type, kx, width, height, grid):
         """
         Creates an output image file using User defined info.
+        
+        :param type:    Data type, `GS_TYPES` Cannot be `GS_TYPE_DEFAULT <geosoft.gxapi.GS_TYPE_DEFAULT>`
+        :param kx:      Grid orientation (KX): 1 (rows in X) -1 (rows in Y)
+        :param width:   Grid width
+        :param height:  Grid height
+        :param grid:    Name of the Grid to link to
+        :type  type:    int
+        :type  kx:      int
+        :type  width:   int
+        :type  height:  int
+        :type  grid:    str
+
+        :returns:       `GXIMG <geosoft.gxapi.GXIMG>` object
+        :rtype:         GXIMG
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -191,6 +258,18 @@ class GXIMG:
     def create_out_file(cls, type, grid, img):
         """
         Creates an output image file using input image info.
+        
+        :param type:  Data type, `GS_TYPES` or `GS_TYPE_DEFAULT <geosoft.gxapi.GS_TYPE_DEFAULT>`
+        :param grid:  Name of the Grid to link to
+        :param img:   Input Image for new image creation
+        :type  type:  int
+        :type  grid:  str
+        :type  img:   GXIMG
+
+        :returns:     `GXIMG <geosoft.gxapi.GXIMG>` object
+        :rtype:       GXIMG
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -208,6 +287,11 @@ class GXIMG:
     def create_projected(self, ipj):
         """
         Applies a projection to an image.
+        
+        :param ipj:  Projection to apply
+        :type  ipj:  GXIPJ
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -223,6 +307,13 @@ class GXIMG:
     def create_projected2(self, ipj, cell_size):
         """
         Applies a projection to an image, specify cell size.
+        
+        :param ipj:        Projection to apply
+        :param cell_size:  Cell size
+        :type  ipj:        GXIPJ
+        :type  cell_size:  float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -240,6 +331,15 @@ class GXIMG:
     def create_projected3(self, ipj, cell_size, exp_pct):
         """
         Same as `create_projected2 <geosoft.gxapi.GXIMG.create_projected2>`, but set expansion of bounds.
+        
+        :param ipj:        Projection to apply
+        :param cell_size:  Cell size
+        :param exp_pct:    Expansion percent (>=0).
+        :type  ipj:        GXIPJ
+        :type  cell_size:  float
+        :type  exp_pct:    float
+
+        .. versionadded:: 6.3.1
 
         **Note:**
 
@@ -268,6 +368,12 @@ class GXIMG:
     def geth_pg(self):
         """
         Get the actual pager of a grid.
+        
+
+        :returns:    `GXPG <geosoft.gxapi.GXPG>` Object
+        :rtype:      GXPG
+
+        .. versionadded:: 5.0.8
 
         .. seealso::
 
@@ -282,6 +388,19 @@ class GXIMG:
     def get_info(self, dx, dy, xo, yo, rot):
         """
         Retrieves location information about this image.
+        
+        :param dx:   X element separation
+        :param dy:   Y element separation
+        :param xo:   X location of first point
+        :param yo:   Y location of first point
+        :param rot:  Grid X axis rotation deg. CCW from reference X
+        :type  dx:   float_ref
+        :type  dy:   float_ref
+        :type  xo:   float_ref
+        :type  yo:   float_ref
+        :type  rot:  float_ref
+
+        .. versionadded:: 5.0
         """
         dx.value, dy.value, xo.value, yo.value, rot.value = self._wrapper.get_info(dx.value, dy.value, xo.value, yo.value, rot.value)
         
@@ -292,6 +411,11 @@ class GXIMG:
     def get_ipj(self, ipj):
         """
         Get the projection of a grid.
+        
+        :param ipj:  Projection of the grid
+        :type  ipj:  GXIPJ
+
+        .. versionadded:: 5.0
         """
         self._wrapper.get_ipj(ipj._wrapper)
         
@@ -302,6 +426,11 @@ class GXIMG:
     def get_meta(self, meta):
         """
         Get the metadata of a grid.
+        
+        :param meta:  Metadata of the grid
+        :type  meta:  GXMETA
+
+        .. versionadded:: 5.0.8
         """
         self._wrapper.get_meta(meta._wrapper)
         
@@ -312,6 +441,11 @@ class GXIMG:
     def get_pg(self, pg):
         """
         Get a copy of the pager of a grid.
+        
+        :param pg:   `GXPG <geosoft.gxapi.GXPG>` object to hold pager of the grid
+        :type  pg:   GXPG
+
+        .. versionadded:: 5.0
 
         .. seealso::
 
@@ -326,6 +460,13 @@ class GXIMG:
     def get_projected_cell_size(self, ipj, cell):
         """
         Returns default cell size from projected image.
+        
+        :param ipj:   Projection to apply
+        :param cell:  Returned cell size
+        :type  ipj:   GXIPJ
+        :type  cell:  float_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -343,6 +484,11 @@ class GXIMG:
     def get_tr(self, tr):
         """
         Get the trend information from a grid.
+        
+        :param tr:   Trend information from the grid
+        :type  tr:   GXTR
+
+        .. versionadded:: 5.0
         """
         self._wrapper.get_tr(tr._wrapper)
         
@@ -353,6 +499,14 @@ class GXIMG:
     def element_type(self, xg_dor_img):
         """
         Returns the element type.
+        
+        :param xg_dor_img:  0 for XGD, 1 for `GXIMG <geosoft.gxapi.GXIMG>`
+        :type  xg_dor_img:  int
+
+        :returns:           Element type
+        :rtype:             int
+
+        .. versionadded:: 5.0.5
         """
         ret_val = self._wrapper.element_type(xg_dor_img)
         return ret_val
@@ -363,6 +517,12 @@ class GXIMG:
     def e_type(self):
         """
         Returns the element type.
+        
+
+        :returns:    Element type
+        :rtype:      int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -377,6 +537,15 @@ class GXIMG:
     def get_def_itr(self, itr):
         """
         Get default transform, if it exists
+        
+        :param itr:  Transform
+        :type  itr:  GXITR
+
+        :returns:    0 - Okay
+                     1 - No default possible/available
+        :rtype:      int
+
+        .. versionadded:: 5.0.2
         """
         ret_val = self._wrapper.get_def_itr(itr._wrapper)
         return ret_val
@@ -387,6 +556,12 @@ class GXIMG:
     def is_colour(self):
         """
         Is this a Geosoft color grid?
+        
+
+        :returns:    `GEO_BOOL`
+        :rtype:      int
+
+        .. versionadded:: 6.0.1
         """
         ret_val = self._wrapper.is_colour()
         return ret_val
@@ -397,6 +572,14 @@ class GXIMG:
     def is_valid_img_file(cls, file):
         """
         Is this a valid `GXIMG <geosoft.gxapi.GXIMG>` file?
+        
+        :param file:  File to check
+        :type  file:  str
+
+        :returns:     `GEO_BOOL`
+        :rtype:       int
+
+        .. versionadded:: 8.0
         """
         ret_val = gxapi_cy.WrapIMG.is_valid_img_file(GXContext._get_tls_geo(), file.encode())
         return ret_val
@@ -407,6 +590,16 @@ class GXIMG:
     def is_valid_img_file_ex(cls, file, err_msg):
         """
         Is this a valid `GXIMG <geosoft.gxapi.GXIMG>` file? Returns error message if it cannot be opened for any reason.
+        
+        :param file:     File to check
+        :param err_msg:  Error message registered if unable to open
+        :type  file:     str
+        :type  err_msg:  str_ref
+
+        :returns:        `GEO_BOOL`
+        :rtype:          int
+
+        .. versionadded:: 8.0.1
         """
         ret_val, err_msg.value = gxapi_cy.WrapIMG.is_valid_img_file_ex(GXContext._get_tls_geo(), file.encode(), err_msg.value.encode())
         return ret_val
@@ -417,6 +610,12 @@ class GXIMG:
     def ne(self):
         """
         Gets the # of elements in the optimal KX direction.
+        
+
+        :returns:    # of elements in the optimal KX direction
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.ne()
         return ret_val
@@ -427,6 +626,13 @@ class GXIMG:
     def inherit(self, ipj, cell):
         """
         Inherit a projection/new cell size on the `GXIMG <geosoft.gxapi.GXIMG>`.
+        
+        :param ipj:   Projection
+        :param cell:  Optional cell size
+        :type  ipj:   GXIPJ
+        :type  cell:  float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -447,6 +653,11 @@ class GXIMG:
     def inherit_img(self, im_gs):
         """
         Make a grids match in size and coordinate system
+        
+        :param im_gs:  Source `GXIMG <geosoft.gxapi.GXIMG>`
+        :type  im_gs:  GXIMG
+
+        .. versionadded:: 5.1.8
         """
         self._wrapper.inherit_img(im_gs._wrapper)
         
@@ -457,6 +668,12 @@ class GXIMG:
     def nv(self):
         """
         Gets the # of vectors in the optimal KX direction.
+        
+
+        :returns:    # of vectors in the optimal KX direction
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.nv()
         return ret_val
@@ -467,6 +684,12 @@ class GXIMG:
     def nx(self):
         """
         Gets the # of X elements.
+        
+
+        :returns:    # of X elements.
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.nx()
         return ret_val
@@ -477,6 +700,12 @@ class GXIMG:
     def ny(self):
         """
         Gets the # of Y elements.
+        
+
+        :returns:    # of Y elements.
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.ny()
         return ret_val
@@ -487,6 +716,14 @@ class GXIMG:
     def query_int(self, query):
         """
         Query information about the `GXIMG <geosoft.gxapi.GXIMG>`
+        
+        :param query:  `IMG_QUERY`
+        :type  query:  int
+
+        :returns:      Information requested, dummy if unknown or invalid.
+        :rtype:        int
+
+        .. versionadded:: 5.0.5
 
         **Note:**
 
@@ -502,6 +739,12 @@ class GXIMG:
     def query_kx(self):
         """
         Asks the `GXIMG <geosoft.gxapi.GXIMG>` for the most efficient way to access the data.
+        
+
+        :returns:    -1 by columns, 1 by rows, 0 rows and columns are equally efficient.
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.query_kx()
         return ret_val
@@ -512,6 +755,15 @@ class GXIMG:
     def set_def_itr(self, itr):
         """
         Set default transform
+        
+        :param itr:  Transform
+        :type  itr:  GXITR
+
+        :returns:    0 - Okay
+                     1 - No default possible/available
+        :rtype:      int
+
+        .. versionadded:: 5.0.2
         """
         ret_val = self._wrapper.set_def_itr(itr._wrapper)
         return ret_val
@@ -522,6 +774,13 @@ class GXIMG:
     def user_preference_to_plot_as_colour_shaded_grid(cls):
         """
         Returns the global setting.
+        
+
+        :returns:    0 - User wishes to plot grids as regular (flat) grid
+                  1 - User wishes to plot grids as color-shaded grids
+        :rtype:      int
+
+        .. versionadded:: 7.3
         """
         ret_val = gxapi_cy.WrapIMG.user_preference_to_plot_as_colour_shaded_grid(GXContext._get_tls_geo())
         return ret_val
@@ -532,6 +791,11 @@ class GXIMG:
     def load_img(self, im_gi):
         """
         Loads an `GXIMG <geosoft.gxapi.GXIMG>` into a master `GXIMG <geosoft.gxapi.GXIMG>`.
+        
+        :param im_gi:  `GXIMG <geosoft.gxapi.GXIMG>` to load
+        :type  im_gi:  GXIMG
+
+        .. versionadded:: 5.0.6
 
         **Note:**
 
@@ -547,6 +811,9 @@ class GXIMG:
         """
         Load `GXIMG <geosoft.gxapi.GXIMG>` data from file into a pager to increase
         access time.
+        
+
+        .. versionadded:: 5.0
         """
         self._wrapper.load_into_pager()
         
@@ -557,6 +824,11 @@ class GXIMG:
     def opt_kx(self, kx):
         """
         Force optimal KX as desired.
+        
+        :param kx:   KX -1 by column 1 by row
+        :type  kx:   int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -575,6 +847,17 @@ class GXIMG:
     def read_v(self, v, be, ne, vv):
         """
         Read a vector in the optimal KX direction.
+        
+        :param v:    Vector to Read
+        :param be:   Begining element # to read (0 is the first)
+        :param ne:   # elements to read (0 for whole vector)
+        :param vv:   `GXVV <geosoft.gxapi.GXVV>` handle
+        :type  v:    int
+        :type  be:   int
+        :type  ne:   int
+        :type  vv:   GXVV
+
+        .. versionadded:: 5.0
         """
         self._wrapper.read_v(v, be, ne, vv._wrapper)
         
@@ -585,6 +868,16 @@ class GXIMG:
     def read_x(self, bx, by, ny, vv):
         """
         Read a column (constant X)
+        
+        :param bx:   X column
+        :param by:   Start Y to read
+        :param ny:   # Y to read (0 for whole vector)
+        :type  bx:   int
+        :type  by:   int
+        :type  ny:   int
+        :type  vv:   GXVV
+
+        .. versionadded:: 5.0
         """
         self._wrapper.read_x(bx, by, ny, vv._wrapper)
         
@@ -595,6 +888,16 @@ class GXIMG:
     def read_y(self, by, bx, nx, vv):
         """
         Read a row (constant Y)
+        
+        :param by:   Y row
+        :param bx:   Start X to read
+        :param nx:   # X to read (0 for whole vector)
+        :type  by:   int
+        :type  bx:   int
+        :type  nx:   int
+        :type  vv:   GXVV
+
+        .. versionadded:: 5.0
         """
         self._wrapper.read_y(by, bx, nx, vv._wrapper)
         
@@ -605,6 +908,11 @@ class GXIMG:
     def refresh_gi(cls, grid):
         """
         Refresh the GI of a grid after it has moved or changed.
+        
+        :param grid:  Grid name
+        :type  grid:  str
+
+        .. versionadded:: 7.0
         """
         gxapi_cy.WrapIMG.refresh_gi(GXContext._get_tls_geo(), grid.encode())
         
@@ -615,6 +923,19 @@ class GXIMG:
     def relocate(self, min_x, min_y, max_x, max_y, asp):
         """
         Re-locate a grid image.
+        
+        :param min_x:  Area X minimum
+        :param min_y:  Area Y minimum
+        :param max_x:  Area X maximum
+        :param max_y:  Area Y maximum
+        :param asp:    `IMG_RELOCATE`
+        :type  min_x:  float
+        :type  min_y:  float
+        :type  max_x:  float
+        :type  max_y:  float
+        :type  asp:    int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.relocate(min_x, min_y, max_x, max_y, asp)
         
@@ -625,6 +946,19 @@ class GXIMG:
     def report(cls, grid, wa, force, decimals, title):
         """
         Writes grid info report to a file
+        
+        :param grid:      Grid name
+        :param wa:        Text file to write to
+        :param force:     Recalc statistics (0 - no; 1 - yes)
+        :param decimals:  Number of decimals to put in results
+        :param title:     Title for report
+        :type  grid:      str
+        :type  wa:        GXWA
+        :type  force:     int
+        :type  decimals:  int
+        :type  title:     str
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapIMG.report(GXContext._get_tls_geo(), grid.encode(), wa._wrapper, force, decimals, title.encode())
         
@@ -635,6 +969,19 @@ class GXIMG:
     def report_csv(cls, grid, wa, force, decimals, header):
         """
         Writes grid info as a line to a CSV file
+        
+        :param grid:      Grid name
+        :param wa:        Text file to write to
+        :param force:     Recalc statistics (0 - no; 1 - yes)
+        :param decimals:  Number of decimals to put in results
+        :param header:    Write header line (0 - no; 1 - yes)?
+        :type  grid:      str
+        :type  wa:        GXWA
+        :type  force:     int
+        :type  decimals:  int
+        :type  header:    int
+
+        .. versionadded:: 6.4.2
 
         **Note:**
 
@@ -650,6 +997,16 @@ class GXIMG:
     def get_z(self, x, y):
         """
         Gets the grid value at a point
+        
+        :param x:    X location in the grid projection
+        :param y:    Y location in the grid projection
+        :type  x:    float
+        :type  y:    float
+
+        :returns:    Grid value
+        :rtype:      float
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.get_z(x, y)
         return ret_val
@@ -660,6 +1017,14 @@ class GXIMG:
     def query_double(self, query):
         """
         Query information about the `GXIMG <geosoft.gxapi.GXIMG>`
+        
+        :param query:  `IMG_QUERY`
+        :type  query:  int
+
+        :returns:      Information requested, dummy if unknown or invalid.
+        :rtype:        float
+
+        .. versionadded:: 5.0.5
 
         **Note:**
 
@@ -675,6 +1040,9 @@ class GXIMG:
     def set_grid_unchanged(self):
         """
         Mark the grid as unchanged so it will not output lineage
+        
+
+        .. versionadded:: 7.0
         """
         self._wrapper.set_grid_unchanged()
         
@@ -685,6 +1053,19 @@ class GXIMG:
     def set_info(self, dx, dy, xo, yo, rot):
         """
         Sets location information about this image.
+        
+        :param dx:   X element separation
+        :param dy:   Y element separation
+        :param xo:   X location of first point
+        :param yo:   Y location of first point
+        :param rot:  Grid X axis rotation deg. CCW from reference X
+        :type  dx:   float
+        :type  dy:   float
+        :type  xo:   float
+        :type  yo:   float
+        :type  rot:  float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -700,6 +1081,11 @@ class GXIMG:
     def set_ipj(self, ipj):
         """
         Set the projection of a grid.
+        
+        :param ipj:  Projection
+        :type  ipj:  GXIPJ
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -715,6 +1101,11 @@ class GXIMG:
     def set_meta(self, meta):
         """
         Set the metadata of a grid.
+        
+        :param meta:  Metadata to add to the grid
+        :type  meta:  GXMETA
+
+        .. versionadded:: 5.0.8
         """
         self._wrapper.set_meta(meta._wrapper)
         
@@ -725,6 +1116,11 @@ class GXIMG:
     def set_pg(self, pg):
         """
         Copy a pager into the pager of a grid.
+        
+        :param pg:   Pager object to copy into the pager of the grid
+        :type  pg:   GXPG
+
+        .. versionadded:: 5.0
         """
         self._wrapper.set_pg(pg._wrapper)
         
@@ -735,6 +1131,11 @@ class GXIMG:
     def set_tr(self, tr):
         """
         Set the trend information to a grid.
+        
+        :param tr:   Trend information to set for the grid
+        :type  tr:   GXTR
+
+        .. versionadded:: 5.0
         """
         self._wrapper.set_tr(tr._wrapper)
         
@@ -745,6 +1146,11 @@ class GXIMG:
     def sync(cls, grid):
         """
         Syncronize the Metadata for this Grid
+        
+        :param grid:  Grid name
+        :type  grid:  str
+
+        .. versionadded:: 7.0
         """
         gxapi_cy.WrapIMG.sync(GXContext._get_tls_geo(), grid.encode())
         
@@ -755,6 +1161,17 @@ class GXIMG:
     def write_v(self, v, be, ne, vv):
         """
         Write a vector in the optimal KX direction.
+        
+        :param v:    Vector to write
+        :param be:   Begining element to write (0 is the first)
+        :param ne:   # elements to write (0 for whole vector)
+        :param vv:   `GXVV <geosoft.gxapi.GXVV>` handle
+        :type  v:    int
+        :type  be:   int
+        :type  ne:   int
+        :type  vv:   GXVV
+
+        .. versionadded:: 5.0
         """
         self._wrapper.write_v(v, be, ne, vv._wrapper)
         
@@ -765,6 +1182,16 @@ class GXIMG:
     def write_x(self, bx, by, ny, vv):
         """
         Write a column (constant X)
+        
+        :param bx:   X column
+        :param by:   Start Y to write
+        :param ny:   # Y to write (0 for whole vector)
+        :type  bx:   int
+        :type  by:   int
+        :type  ny:   int
+        :type  vv:   GXVV
+
+        .. versionadded:: 5.0
         """
         self._wrapper.write_x(bx, by, ny, vv._wrapper)
         
@@ -775,6 +1202,16 @@ class GXIMG:
     def write_y(self, by, bx, nx, vv):
         """
         Write a row (constant Y)
+        
+        :param by:   Y row
+        :param bx:   Start X to write
+        :param nx:   # X write (0 for whole vector)
+        :type  by:   int
+        :type  bx:   int
+        :type  nx:   int
+        :type  vv:   GXVV
+
+        .. versionadded:: 5.0
         """
         self._wrapper.write_y(by, bx, nx, vv._wrapper)
         
@@ -785,6 +1222,13 @@ class GXIMG:
     def set_double_parameter(self, name, value):
         """
         Store a real parameter in an `GXIMG <geosoft.gxapi.GXIMG>` object
+        
+        :param name:   Parameter name (case insensitive)
+        :param value:  Parameter value to store
+        :type  name:   str
+        :type  value:  float
+
+        .. versionadded:: 8.2
         """
         self._wrapper.set_double_parameter(name.encode(), value)
         
@@ -795,6 +1239,14 @@ class GXIMG:
     def get_double_parameter(self, name):
         """
         Store a real parameter in an `GXIMG <geosoft.gxapi.GXIMG>` object
+        
+        :param name:  Parameter name (case insensitive)
+        :type  name:  str
+
+        :returns:     Parameter value, `rDUMMY <geosoft.gxapi.rDUMMY>` if not found.
+        :rtype:       float
+
+        .. versionadded:: 8.2
         """
         ret_val = self._wrapper.get_double_parameter(name.encode())
         return ret_val

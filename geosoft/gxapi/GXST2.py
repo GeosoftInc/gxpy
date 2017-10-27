@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -64,6 +63,12 @@ class GXST2:
     def create(cls):
         """
         Creates a statistics object which is used to accumulate statistics.
+        
+
+        :returns:    `GXST2 <geosoft.gxapi.GXST2>` Object
+        :rtype:      GXST2
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapST2.create(GXContext._get_tls_geo())
         return GXST2(ret_val)
@@ -74,6 +79,13 @@ class GXST2:
     def data_vv(self, vv_x, vv_y):
         """
         Add all the values in VVx and VVy to `GXST2 <geosoft.gxapi.GXST2>` object.
+        
+        :param vv_x:  VVx handle
+        :param vv_y:  VVy handle
+        :type  vv_x:  GXVV
+        :type  vv_y:  GXVV
+
+        .. versionadded:: 5.0
         """
         self._wrapper.data_vv(vv_x._wrapper, vv_y._wrapper)
         
@@ -86,6 +98,12 @@ class GXST2:
     def items(self):
         """
         Gets Number of items
+        
+
+        :returns:    Number of items in `GXST2 <geosoft.gxapi.GXST2>`
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.items()
         return ret_val
@@ -96,6 +114,9 @@ class GXST2:
     def reset(self):
         """
         Resets the Statistics.
+        
+
+        .. versionadded:: 5.0
         """
         self._wrapper.reset()
         
@@ -106,6 +127,15 @@ class GXST2:
     def get(self, id):
         """
         Gets correlation coeff. from the `GXST2 <geosoft.gxapi.GXST2>` object.
+        
+        :param id:   `ST2_CORRELATION`
+        :type  id:   int
+
+        :returns:    Data you asked for
+                     `GS_R8DM <geosoft.gxapi.GS_R8DM>` for none
+        :rtype:      float
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.get(id)
         return ret_val

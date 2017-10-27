@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXSURFACEITEM import GXSURFACEITEM
@@ -64,6 +63,16 @@ class GXSURFACE:
     def create(cls, surface_file, ipj):
         """
         Create a new Geosurface file
+        
+        :param surface_file:  Geosurface file name
+        :param ipj:           `GXIPJ <geosoft.gxapi.GXIPJ>` containing coordinate system of the Geosurface
+        :type  surface_file:  str
+        :type  ipj:           GXIPJ
+
+        :returns:             `GXSURFACE <geosoft.gxapi.GXSURFACE>` Object
+        :rtype:               GXSURFACE
+
+        .. versionadded:: 8.4
         """
         ret_val = gxapi_cy.WrapSURFACE.create(GXContext._get_tls_geo(), surface_file.encode(), ipj._wrapper)
         return GXSURFACE(ret_val)
@@ -74,6 +83,16 @@ class GXSURFACE:
     def open(cls, surface_file, mode):
         """
         Open a Geosurface file
+        
+        :param surface_file:  Geosurface file name
+        :param mode:          `SURFACE_OPEN`
+        :type  surface_file:  str
+        :type  mode:          int
+
+        :returns:             `GXSURFACE <geosoft.gxapi.GXSURFACE>` Object
+        :rtype:               GXSURFACE
+
+        .. versionadded:: 8.4
         """
         ret_val = gxapi_cy.WrapSURFACE.open(GXContext._get_tls_geo(), surface_file.encode(), mode)
         return GXSURFACE(ret_val)
@@ -86,6 +105,11 @@ class GXSURFACE:
     def get_ipj(self, ipj):
         """
         Get the coordinate system of the `GXSURFACE <geosoft.gxapi.GXSURFACE>`.
+        
+        :param ipj:      `GXIPJ <geosoft.gxapi.GXIPJ>` in which to place the Geosurface coordinate system
+        :type  ipj:      GXIPJ
+
+        .. versionadded:: 8.4
         """
         self._wrapper.get_ipj(ipj._wrapper)
         
@@ -96,6 +120,11 @@ class GXSURFACE:
     def set_ipj(self, ipj):
         """
         Change the coordinate system of the `GXSURFACE <geosoft.gxapi.GXSURFACE>`.
+        
+        :param ipj:      `GXIPJ <geosoft.gxapi.GXIPJ>` containing the new coordinate system of the Geosurface
+        :type  ipj:      GXIPJ
+
+        .. versionadded:: 8.4
         """
         self._wrapper.set_ipj(ipj._wrapper)
         
@@ -106,6 +135,11 @@ class GXSURFACE:
     def get_surface_items(self, lst):
         """
         Get the surfaces items in a Geosurface file
+        
+        :param lst:      `GXLST <geosoft.gxapi.GXLST>` to fill
+        :type  lst:      GXLST
+
+        .. versionadded:: 8.4
         """
         self._wrapper.get_surface_items(lst._wrapper)
         
@@ -116,6 +150,14 @@ class GXSURFACE:
     def get_surface_item(self, guid):
         """
         Get the an existing surface item from the `GXSURFACE <geosoft.gxapi.GXSURFACE>`
+        
+        :param guid:     Item GUID
+        :type  guid:     str
+
+        :returns:        `GXSURFACEITEM <geosoft.gxapi.GXSURFACEITEM>` Object
+        :rtype:          GXSURFACEITEM
+
+        .. versionadded:: 8.4
         """
         ret_val = self._wrapper.get_surface_item(guid.encode())
         return GXSURFACEITEM(ret_val)
@@ -126,6 +168,11 @@ class GXSURFACE:
     def add_surface_item(self, surfaceitem):
         """
         Add a new surface item to the `GXSURFACE <geosoft.gxapi.GXSURFACE>`
+        
+        :param surfaceitem:  `GXSURFACEITEM <geosoft.gxapi.GXSURFACEITEM>` to add
+        :type  surfaceitem:  GXSURFACEITEM
+
+        .. versionadded:: 8.4
         """
         self._wrapper.add_surface_item(surfaceitem._wrapper)
         
@@ -136,6 +183,13 @@ class GXSURFACE:
     def get_surface_names(cls, surface_file, lst):
         """
         Get the surface item names in a Geosurface file
+        
+        :param surface_file:  Geosurface file
+        :param lst:           `GXLST <geosoft.gxapi.GXLST>` to fill
+        :type  surface_file:  str
+        :type  lst:           GXLST
+
+        .. versionadded:: 8.0
         """
         gxapi_cy.WrapSURFACE.get_surface_names(GXContext._get_tls_geo(), surface_file.encode(), lst._wrapper)
         
@@ -146,6 +200,13 @@ class GXSURFACE:
     def get_closed_surface_names(cls, surface_file, lst):
         """
         Get the names of closed surface items in a Geosurface file (may return an empty list)
+        
+        :param surface_file:  Geosurface file
+        :param lst:           `GXLST <geosoft.gxapi.GXLST>` to fill (may return an empty `GXLST <geosoft.gxapi.GXLST>` if none of the surfaces are closed)
+        :type  surface_file:  str
+        :type  lst:           GXLST
+
+        .. versionadded:: 8.0
         """
         gxapi_cy.WrapSURFACE.get_closed_surface_names(GXContext._get_tls_geo(), surface_file.encode(), lst._wrapper)
         
@@ -156,6 +217,21 @@ class GXSURFACE:
     def get_extents(self, min_x, min_y, min_z, max_x, max_y, max_z):
         """
         Get the spatial range of all surface items.
+        
+        :param min_x:    Minimum valid data in X.
+        :param min_y:    Minimum valid data in Y.
+        :param min_z:    Minimum valid data in Z.
+        :param max_x:    Maximum valid data in X.
+        :param max_y:    Maximum valid data in Y.
+        :param max_z:    Maximum valid data in Z.
+        :type  min_x:    float_ref
+        :type  min_y:    float_ref
+        :type  min_z:    float_ref
+        :type  max_x:    float_ref
+        :type  max_y:    float_ref
+        :type  max_z:    float_ref
+
+        .. versionadded:: 8.5
         """
         min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._wrapper.get_extents(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         
@@ -166,6 +242,18 @@ class GXSURFACE:
     def crc(cls, surface_file, output, crc):
         """
         Compute an XML CRC of a Geosurface file.
+        
+        :param surface_file:  Geosurface file
+        :param output:        Output file
+        :param crc:           CRC (unused, always set to 0)
+        :type  surface_file:  str
+        :type  output:        str
+        :type  crc:           int_ref
+
+        :returns:             CRC Value (always 0)
+        :rtype:               int
+
+        .. versionadded:: 8.0
         """
         ret_val, crc.value = gxapi_cy.WrapSURFACE.crc(GXContext._get_tls_geo(), surface_file.encode(), output.encode(), crc.value)
         return ret_val
@@ -176,6 +264,11 @@ class GXSURFACE:
     def sync(cls, name):
         """
         Syncronize the Metadata for this Geosurface
+        
+        :param name:  Geosurface file
+        :type  name:  str
+
+        .. versionadded:: 8.0
         """
         gxapi_cy.WrapSURFACE.sync(GXContext._get_tls_geo(), name.encode())
         
@@ -186,6 +279,14 @@ class GXSURFACE:
     def create_from_dxf(cls, ipj, surface_file, dxf_file):
         """
         Create Geosurface file from DXF file.
+        
+        :param surface_file:  Geosurface file
+        :param dxf_file:      DXF file
+        :type  ipj:           GXIPJ
+        :type  surface_file:  str
+        :type  dxf_file:      str
+
+        .. versionadded:: 8.2
         """
         gxapi_cy.WrapSURFACE.create_from_dxf(GXContext._get_tls_geo(), ipj._wrapper, surface_file.encode(), dxf_file.encode())
         
@@ -196,6 +297,14 @@ class GXSURFACE:
     def create_from_vulcan_triangulation(cls, triangulation_file, ipj, surface_file):
         """
         Create Geosurface file from a Maptek Vulcan triangulation file.
+        
+        :param triangulation_file:  00t file
+        :param surface_file:        Geosurface file
+        :type  triangulation_file:  str
+        :type  ipj:                 GXIPJ
+        :type  surface_file:        str
+
+        .. versionadded:: 8.4
         """
         gxapi_cy.WrapSURFACE.create_from_vulcan_triangulation(GXContext._get_tls_geo(), triangulation_file.encode(), ipj._wrapper, surface_file.encode())
         
@@ -206,6 +315,14 @@ class GXSURFACE:
     def append_vulcan_triangulation(cls, triangulation_file, ipj, surface_file):
         """
         Create new surface from a Maptek Vulcan triangulation file and add to an existing geosurface.
+        
+        :param triangulation_file:  00t file
+        :param surface_file:        Geosurface file
+        :type  triangulation_file:  str
+        :type  ipj:                 GXIPJ
+        :type  surface_file:        str
+
+        .. versionadded:: 8.4
         """
         gxapi_cy.WrapSURFACE.append_vulcan_triangulation(GXContext._get_tls_geo(), triangulation_file.encode(), ipj._wrapper, surface_file.encode())
         

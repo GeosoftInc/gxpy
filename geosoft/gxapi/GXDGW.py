@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXLST import GXLST
@@ -54,7 +53,7 @@ class GXDGW:
     Before version 6.2. there used to be a parameter, MONTAJ.GX_CHARSET, that
     affected characters above ASCII 127. 6.2. introduced Unicode in the core
     montaj engine that eliminated the need for such a setting. All strings
-    on the GX API level are encoded in `UTF8_` during runtime which makes it possible
+    on the GX API level are encoded in `UTF8` during runtime which makes it possible
     to represent all possible characters without using character sets.
     """
 
@@ -99,6 +98,14 @@ class GXDGW:
         """
         This method creates a Dialog window from a specified
         resource. The Resource is loaded into memory but not displayed.
+        
+        :param name:  Name of the Window Resource to use
+        :type  name:  str
+
+        :returns:     Handle to the `GXDGW <geosoft.gxapi.GXDGW>` object.
+        :rtype:       GXDGW
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapDGW.create(GXContext._get_tls_geo(), name.encode())
         return GXDGW(ret_val)
@@ -111,6 +118,18 @@ class GXDGW:
     def get_info_meta(self, obj, dlg_obj_type, meta, meta_obj, meta_attrib):
         """
         Copies the Dialog information to a `GXMETA <geosoft.gxapi.GXMETA>` attribute.
+        
+        :param obj:           Dialog Object
+        :param dlg_obj_type:  `DGW_OBJECT`
+        :param meta_obj:      Object
+        :param meta_attrib:   Attribute
+        :type  obj:           int
+        :type  dlg_obj_type:  int
+        :type  meta:          GXMETA
+        :type  meta_obj:      int
+        :type  meta_attrib:   int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.get_info_meta(obj, dlg_obj_type, meta._wrapper, meta_obj, meta_attrib)
         
@@ -122,6 +141,17 @@ class GXDGW:
         """
         This method uses the information in a Dialog box to
         set a `GXSYS <geosoft.gxapi.GXSYS>` variable.
+        
+        :param id:     Dialog Object
+        :param info:   `DGW_OBJECT`
+        :param group:  Group name of the Variable
+        :param field:  Variable name
+        :type  id:     int
+        :type  info:   int
+        :type  group:  str
+        :type  field:  str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.get_info_sys(id, info, group.encode(), field.encode())
         
@@ -133,6 +163,14 @@ class GXDGW:
         """
         This method retrieves the list (`GXLST <geosoft.gxapi.GXLST>`) object associated
         with a Dialog object.
+        
+        :param id:   Dialog Object
+        :type  id:   int
+
+        :returns:    The List Object
+        :rtype:      GXLST
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.get_list(id)
         return GXLST(ret_val)
@@ -144,6 +182,15 @@ class GXDGW:
         """
         This method fills the specified string with the text from
         the text object specified.
+        
+        :param id:    Handle to the TEXT Object
+        :param info:  `DGW_OBJECT`
+        :param buff:  Where to place the String
+        :type  id:    int
+        :type  info:  int
+        :type  buff:  str_ref
+
+        .. versionadded:: 5.0
         """
         buff.value = self._wrapper.gt_info(id, info, buff.value.encode())
         
@@ -154,6 +201,12 @@ class GXDGW:
     def run_dialogue(self):
         """
         This method runs the Dialog window.
+        
+
+        :returns:    The Exit Code of the Dialog window.
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.run_dialogue()
         return ret_val
@@ -165,6 +218,15 @@ class GXDGW:
         """
         This method sets the string of a text object. If the string
         is too long it will be truncated.
+        
+        :param id:    Handle to the TEXT Object
+        :param info:  `DGW_OBJECT`
+        :param buff:  String to set the Text To
+        :type  id:    int
+        :type  info:  int
+        :type  buff:  str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.set_info(id, info, buff.encode())
         
@@ -175,6 +237,18 @@ class GXDGW:
     def set_info_meta(self, obj, dlg_obj_type, meta, meta_obj, meta_attrib):
         """
         This sets a text object to the text found in a `GXMETA <geosoft.gxapi.GXMETA>` attribute.
+        
+        :param obj:           Dialog Object
+        :param dlg_obj_type:  `DGW_OBJECT`
+        :param meta_obj:      Object
+        :param meta_attrib:   Attribute
+        :type  obj:           int
+        :type  dlg_obj_type:  int
+        :type  meta:          GXMETA
+        :type  meta_obj:      int
+        :type  meta_attrib:   int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.set_info_meta(obj, dlg_obj_type, meta._wrapper, meta_obj, meta_attrib)
         
@@ -187,6 +261,17 @@ class GXDGW:
         This sets a text object to the text found in a system
         parameter variable. If the variable has not been set,
         the text is not set.
+        
+        :param id:     Dialog Object
+        :param info:   `DGW_OBJECT`
+        :param group:  Group name of the Variable
+        :param field:  Variable name
+        :type  id:     int
+        :type  info:   int
+        :type  group:  str
+        :type  field:  str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.set_info_sys(id, info, group.encode(), field.encode())
         
@@ -197,6 +282,11 @@ class GXDGW:
     def set_title(self, title):
         """
         Changes the title of the dialog.
+        
+        :param title:  Title to set
+        :type  title:  str
+
+        .. versionadded:: 5.0
 
         **Note:**
 

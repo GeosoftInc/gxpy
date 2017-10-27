@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -64,6 +63,21 @@ class GXIGRF:
     def calc(self, el, lon, lat, str_val, inc, dec):
         """
         Calculate `GXIGRF <geosoft.gxapi.GXIGRF>` data for a given `GXIGRF <geosoft.gxapi.GXIGRF>` model.
+        
+        :param el:       Elevation (metres)
+        :param lon:      Longitude (-180 to 180)
+        :param lat:      Latitude  (-90 to 90) Returns
+        :param str_val:  Field strength
+        :param inc:      Field inclination
+        :param dec:      Field declination
+        :type  el:       float
+        :type  lon:      float
+        :type  lat:      float
+        :type  str_val:  float_ref
+        :type  inc:      float_ref
+        :type  dec:      float_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -80,6 +94,21 @@ class GXIGRF:
     def calc_vv(self, gv_vel, gv_vlon, gv_vlat, gv_vfs, gv_vinc, gv_vdec):
         """
         Calculate `GXIGRF <geosoft.gxapi.GXIGRF>` data `GXVV <geosoft.gxapi.GXVV>`'s for a given `GXIGRF <geosoft.gxapi.GXIGRF>` model.
+        
+        :param gv_vel:   Input elevation data (metres)
+        :param gv_vlon:  Input longitude data (-180 to 180)
+        :param gv_vlat:  Input latitude data  (-90 to 90)
+        :param gv_vfs:   Output total field
+        :param gv_vinc:  Output inclination
+        :param gv_vdec:  Output declination
+        :type  gv_vel:   GXVV
+        :type  gv_vlon:  GXVV
+        :type  gv_vlat:  GXVV
+        :type  gv_vfs:   GXVV
+        :type  gv_vinc:  GXVV
+        :type  gv_vdec:  GXVV
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -104,6 +133,18 @@ class GXIGRF:
     def create(cls, date, year, filename):
         """
         Create an `GXIGRF <geosoft.gxapi.GXIGRF>`.
+        
+        :param date:      Date required
+        :param year:      Year of the `GXIGRF <geosoft.gxapi.GXIGRF>` model to use
+        :param filename:  Name of the `GXIGRF <geosoft.gxapi.GXIGRF>` reference data file
+        :type  date:      float
+        :type  year:      int
+        :type  filename:  str
+
+        :returns:         `GXIGRF <geosoft.gxapi.GXIGRF>` Object
+        :rtype:           GXIGRF
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -120,6 +161,15 @@ class GXIGRF:
     def date_range(cls, file_name, min, max):
         """
         Determine the range of years covered by an `GXIGRF <geosoft.gxapi.GXIGRF>` or DGRF file
+        
+        :param file_name:  Model data file name
+        :param min:        Minimum year  (`rMAX <geosoft.gxapi.rMAX>` if none found)
+        :param max:        Maximum year  (`rMIN <geosoft.gxapi.rMIN>` if none found)
+        :type  file_name:  str
+        :type  min:        float_ref
+        :type  max:        float_ref
+
+        .. versionadded:: 6.1
 
         **Note:**
 

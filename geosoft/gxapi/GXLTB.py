@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -83,6 +82,13 @@ class GXLTB:
     def add_record(self, key, rec):
         """
         Add a new record.
+        
+        :param key:  Key name
+        :param rec:  Returned record number
+        :type  key:  str
+        :type  rec:  int_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -98,6 +104,15 @@ class GXLTB:
     def contract(self, lt_bc):
         """
         Contract the contents of two same-key and same-fields tables.
+        
+        :param lt_bc:  Contract `GXLTB <geosoft.gxapi.GXLTB>`
+        :type  lt_bc:  GXLTB
+
+        :returns:      x    - Handle to `GXLTB <geosoft.gxapi.GXLTB>` object
+                       NULL - Error of some kind
+        :rtype:        GXLTB
+
+        .. versionadded:: 5.1
 
         **Note:**
 
@@ -119,6 +134,21 @@ class GXLTB:
     def create(cls, file, type, delim, key):
         """
         Creates a `GXLTB <geosoft.gxapi.GXLTB>` object from a file.
+        
+        :param file:   File name, .csv assumed, searched locally then in GEOSOFT.
+        :param type:   `LTB_TYPE`
+        :param delim:  `LTB_DELIM`
+        :param key:    Key to find if only one record required, "" to read entire table.
+        :type  file:   str
+        :type  type:   int
+        :type  delim:  int
+        :type  key:    str
+
+        :returns:      x    - Handle to `GXLTB <geosoft.gxapi.GXLTB>` object
+                       NULL - Error of some kind
+        :rtype:        GXLTB
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -133,6 +163,25 @@ class GXLTB:
     def create_crypt(cls, file, type, delim, case, key, crypt):
         """
         Creates a `GXLTB <geosoft.gxapi.GXLTB>` object from an encrypted file.
+        
+        :param file:   File name, .csv assumed, searched locally then in GEOSOFT.
+        :param type:   `LTB_TYPE`
+        :param delim:  `LTB_DELIM`
+        :param case:   `LTB_CASE`
+        :param key:    Key to find if only one record required, "" to read entire table.
+        :param crypt:  Decryption Key `SYS_CRYPT_KEY`
+        :type  file:   str
+        :type  type:   int
+        :type  delim:  int
+        :type  case:   int
+        :type  key:    str
+        :type  crypt:  str
+
+        :returns:      x    - Handle to `GXLTB <geosoft.gxapi.GXLTB>` object
+                       NULL - Error of some kind
+        :rtype:        GXLTB
+
+        .. versionadded:: 6.2
 
         **Note:**
 
@@ -147,6 +196,23 @@ class GXLTB:
     def create_ex(cls, file, type, delim, case, key):
         """
         Creates a `GXLTB <geosoft.gxapi.GXLTB>` object from a file.
+        
+        :param file:   File name, .csv assumed, searched locally then in GEOSOFT.
+        :param type:   `LTB_TYPE`
+        :param delim:  `LTB_DELIM`
+        :param case:   `LTB_CASE`
+        :param key:    Key to find if only one record required, "" to read entire table.
+        :type  file:   str
+        :type  type:   int
+        :type  delim:  int
+        :type  case:   int
+        :type  key:    str
+
+        :returns:      x    - Handle to `GXLTB <geosoft.gxapi.GXLTB>` object
+                       NULL - Error of some kind
+        :rtype:        GXLTB
+
+        .. versionadded:: 6.1
 
         **Note:**
 
@@ -161,6 +227,11 @@ class GXLTB:
     def delete_record(self, rec):
         """
         Delete a record.
+        
+        :param rec:  Record number to delete
+        :type  rec:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -178,6 +249,17 @@ class GXLTB:
     def get_con_lst(self, fld, match, match_type, lst):
         """
         Populate a `GXLST <geosoft.gxapi.GXLST>` with `GXLTB <geosoft.gxapi.GXLTB>` names from matching fields.
+        
+        :param fld:         Field
+        :param match:       String to match to field, must be lower-case
+        :param match_type:  `LTB_CONLST`
+        :param lst:         List to populate
+        :type  fld:         int
+        :type  match:       str
+        :type  match_type:  int
+        :type  lst:         GXLST
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -194,6 +276,13 @@ class GXLTB:
     def get_lst(self, fld, lst):
         """
         Populate an `GXLST <geosoft.gxapi.GXLST>` with `GXLTB <geosoft.gxapi.GXLTB>` names
+        
+        :param fld:  Field to get, 0 for key field
+        :param lst:  List to populate
+        :type  fld:  int
+        :type  lst:  GXLST
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -210,6 +299,15 @@ class GXLTB:
     def get_lst2(self, fld_n, fld_v, lst):
         """
         Populate an `GXLST <geosoft.gxapi.GXLST>` with `GXLTB <geosoft.gxapi.GXLTB>` names and values
+        
+        :param fld_n:  Field for names, 0 for key field
+        :param fld_v:  Field for values, 0 for key field
+        :param lst:    List to populate
+        :type  fld_n:  int
+        :type  fld_v:  int
+        :type  lst:    GXLST
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -226,6 +324,12 @@ class GXLTB:
     def fields(self):
         """
         Get number of fields.
+        
+
+        :returns:    Number of fields in the `GXLTB <geosoft.gxapi.GXLTB>`.
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.fields()
         return ret_val
@@ -236,6 +340,15 @@ class GXLTB:
     def find_field(self, field):
         """
         Return the field number for the specified field.
+        
+        :param field:  Field name
+        :type  field:  str
+
+        :returns:      -1 if field does not exist.
+                       field number if field does exist.
+        :rtype:        int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.find_field(field.encode())
         return ret_val
@@ -246,6 +359,15 @@ class GXLTB:
     def find_key(self, key):
         """
         Return the key index of a record.
+        
+        :param key:  Key name
+        :type  key:  str
+
+        :returns:    -1 if key does not exist.
+                     record number if key does exist.
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.find_key(key.encode())
         return ret_val
@@ -256,6 +378,13 @@ class GXLTB:
     def get_field(self, field_num, field):
         """
         Get a field name by index.
+        
+        :param field_num:  Field number
+        :param field:      Returned field name
+        :type  field_num:  int
+        :type  field:      str_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -270,6 +399,17 @@ class GXLTB:
     def get_int(self, record, field):
         """
         Get a int entry from the `GXLTB <geosoft.gxapi.GXLTB>`
+        
+        :param record:  Record number
+        :param field:   Field number
+        :type  record:  int
+        :type  field:   int
+
+        :returns:       If the record or field are out of range,
+                        an empty string or dummy value is returned.
+        :rtype:         int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.get_int(record, field)
         return ret_val
@@ -280,6 +420,15 @@ class GXLTB:
     def get_string(self, record, field, token):
         """
         Get an entry from the `GXLTB <geosoft.gxapi.GXLTB>`
+        
+        :param record:  Record number
+        :param field:   Field number
+        :param token:   Returned field token
+        :type  record:  int
+        :type  field:   int
+        :type  token:   str_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -295,6 +444,15 @@ class GXLTB:
     def get_english_string(self, record, field, token):
         """
         Get the English entry from the `GXLTB <geosoft.gxapi.GXLTB>`
+        
+        :param record:  Record number
+        :param field:   Field number
+        :param token:   Returned field token
+        :type  record:  int
+        :type  field:   int
+        :type  token:   str_ref
+
+        .. versionadded:: 8.2
 
         **Note:**
 
@@ -310,6 +468,12 @@ class GXLTB:
     def records(self):
         """
         Get number of records in `GXLTB <geosoft.gxapi.GXLTB>`.
+        
+
+        :returns:    Number of records in the `GXLTB <geosoft.gxapi.GXLTB>`.
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.records()
         return ret_val
@@ -320,6 +484,19 @@ class GXLTB:
     def search(self, rec, fld, field):
         """
         Search for a record containing field value
+        
+        :param rec:    Search start record
+        :param fld:    Field number
+        :param field:  Search string (case sensitive)
+        :type  rec:    int
+        :type  fld:    int
+        :type  field:  str
+
+        :returns:      -1 if search failed.
+                       record number if search succeeds
+        :rtype:        int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.search(rec, fld, field.encode())
         return ret_val
@@ -330,6 +507,15 @@ class GXLTB:
     def merge(self, lt_bc):
         """
         Merge the contents of two same-key tables.
+        
+        :param lt_bc:  Child `GXLTB <geosoft.gxapi.GXLTB>`
+        :type  lt_bc:  GXLTB
+
+        :returns:      x    - Handle to `GXLTB <geosoft.gxapi.GXLTB>` object
+                       NULL - Error of some kind
+        :rtype:        GXLTB
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -358,6 +544,17 @@ class GXLTB:
     def get_double(self, record, field):
         """
         Get a real entry from the `GXLTB <geosoft.gxapi.GXLTB>`
+        
+        :param record:  Record number
+        :param field:   Field number
+        :type  record:  int
+        :type  field:   int
+
+        :returns:       If the record or field are out of range,
+                        an empty string or dummy value is returned.
+        :rtype:         float
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.get_double(record, field)
         return ret_val
@@ -368,6 +565,11 @@ class GXLTB:
     def save(self, file):
         """
         Save `GXLTB <geosoft.gxapi.GXLTB>` changes to existing or new file
+        
+        :param file:  File name, .csv assumed.  If "", save to original file.
+        :type  file:  str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.save(file.encode())
         
@@ -378,6 +580,13 @@ class GXLTB:
     def save_crypt(self, file, crypt):
         """
         Save `GXLTB <geosoft.gxapi.GXLTB>` to a new file using encryption
+        
+        :param file:   File name, .csv assumed.  If "", save to original file.
+        :param crypt:  Encryption key  `SYS_CRYPT_KEY`
+        :type  file:   str
+        :type  crypt:  str
+
+        .. versionadded:: 6.2
         """
         self._wrapper.save_crypt(file.encode(), crypt.encode())
         
@@ -388,6 +597,15 @@ class GXLTB:
     def set_int(self, record, field, data):
         """
         Set a long entry
+        
+        :param record:  Record number
+        :param field:   Field number
+        :param data:    Entry
+        :type  record:  int
+        :type  field:   int
+        :type  data:    int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.set_int(record, field, data)
         
@@ -398,6 +616,15 @@ class GXLTB:
     def set_double(self, record, field, data):
         """
         Set a double entry
+        
+        :param record:  Record number
+        :param field:   Field number
+        :param data:    Entry
+        :type  record:  int
+        :type  field:   int
+        :type  data:    float
+
+        .. versionadded:: 5.0
         """
         self._wrapper.set_double(record, field, data)
         
@@ -408,6 +635,15 @@ class GXLTB:
     def set_string(self, record, field, token):
         """
         Set an entry
+        
+        :param record:  Record number
+        :param field:   Field number
+        :param token:   Entry
+        :type  record:  int
+        :type  field:   int
+        :type  token:   str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.set_string(record, field, token.encode())
         

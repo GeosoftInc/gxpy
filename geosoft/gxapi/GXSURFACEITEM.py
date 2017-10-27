@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -63,6 +62,16 @@ class GXSURFACEITEM:
     def create(cls, type, name):
         """
         Create a `GXSURFACEITEM <geosoft.gxapi.GXSURFACEITEM>`
+        
+        :param type:  Type
+        :param name:  Name
+        :type  type:  str
+        :type  name:  str
+
+        :returns:     `GXSURFACEITEM <geosoft.gxapi.GXSURFACEITEM>` Object
+        :rtype:       GXSURFACEITEM
+
+        .. versionadded:: 8.4
 
         .. seealso::
 
@@ -79,6 +88,11 @@ class GXSURFACEITEM:
     def get_guid(self, guid):
         """
         Gets the GUID of the surface item.
+        
+        :param guid:         GUID
+        :type  guid:         str_ref
+
+        .. versionadded:: 8.4
 
         **Note:**
 
@@ -93,6 +107,25 @@ class GXSURFACEITEM:
     def set_properties(self, type, name, source_guid, source_name, source_measure, secondary_source_guid, secondary_source_name, secondary_source_measure):
         """
         Sets the properties of the surface item.
+        
+        :param type:                      Type
+        :param name:                      Name
+        :param source_guid:               SourceGuid
+        :param source_name:               SourceName
+        :param source_measure:            SourceMeasure
+        :param secondary_source_guid:     SecondarySourceGuid
+        :param secondary_source_name:     SecondarySourceName
+        :param secondary_source_measure:  SecondarySourceMeasure
+        :type  type:                      str
+        :type  name:                      str
+        :type  source_guid:               str
+        :type  source_name:               str
+        :type  source_measure:            float
+        :type  secondary_source_guid:     str
+        :type  secondary_source_name:     str
+        :type  secondary_source_measure:  float
+
+        .. versionadded:: 8.4
 
         .. seealso::
 
@@ -107,6 +140,29 @@ class GXSURFACEITEM:
     def set_properties_ex(self, type, name, source_guid, source_name, source_measure, secondary_source_guid, secondary_source_name, secondary_source_option, secondary_source_measure, secondary_source_measure2):
         """
         Sets the properties of the surface item (includes new properties introduced in 8.5).
+        
+        :param type:                       Type
+        :param name:                       Name
+        :param source_guid:                SourceGuid
+        :param source_name:                SourceName
+        :param source_measure:             SourceMeasure
+        :param secondary_source_guid:      SecondarySourceGuid
+        :param secondary_source_name:      SecondarySourceName
+        :param secondary_source_option:    SecondarySourceOption
+        :param secondary_source_measure:   SecondarySourceMeasure
+        :param secondary_source_measure2:  SecondarySourceMeasure2
+        :type  type:                       str
+        :type  name:                       str
+        :type  source_guid:                str
+        :type  source_name:                str
+        :type  source_measure:             float
+        :type  secondary_source_guid:      str
+        :type  secondary_source_name:      str
+        :type  secondary_source_option:    int
+        :type  secondary_source_measure:   float
+        :type  secondary_source_measure2:  float
+
+        .. versionadded:: 8.5
 
         .. seealso::
 
@@ -121,6 +177,25 @@ class GXSURFACEITEM:
     def get_properties(self, type, name, source_guid, source_name, source_measure, secondary_source_guid, secondary_source_name, secondary_source_measure):
         """
         Gets the properties of the surface item.
+        
+        :param type:                      Type
+        :param name:                      Name
+        :param source_guid:               SourceGuid
+        :param source_name:               SourceName
+        :param source_measure:            SourceMeasure
+        :param secondary_source_guid:     SecondarySourceGuid
+        :param secondary_source_name:     SecondarySourceName
+        :param secondary_source_measure:  SecondarySourceMeasure
+        :type  type:                      str_ref
+        :type  name:                      str_ref
+        :type  source_guid:               str_ref
+        :type  source_name:               str_ref
+        :type  source_measure:            float_ref
+        :type  secondary_source_guid:     str_ref
+        :type  secondary_source_name:     str_ref
+        :type  secondary_source_measure:  float_ref
+
+        .. versionadded:: 8.4
         """
         type.value, name.value, source_guid.value, source_name.value, source_measure.value, secondary_source_guid.value, secondary_source_name.value, secondary_source_measure.value = self._wrapper.get_properties(type.value.encode(), name.value.encode(), source_guid.value.encode(), source_name.value.encode(), source_measure.value, secondary_source_guid.value.encode(), secondary_source_name.value.encode(), secondary_source_measure.value)
         
@@ -131,6 +206,29 @@ class GXSURFACEITEM:
     def get_properties_ex(self, type, name, source_guid, source_name, source_measure, secondary_source_guid, secondary_source_name, secondary_source_option, secondary_source_measure, secondary_source_measure2):
         """
         Gets the properties of the surface item  (includes new properties introduced in 8.5).
+        
+        :param type:                       Type
+        :param name:                       Name
+        :param source_guid:                SourceGuid
+        :param source_name:                SourceName
+        :param source_measure:             SourceMeasure
+        :param secondary_source_guid:      SecondarySourceGuid
+        :param secondary_source_name:      SecondarySourceName
+        :param secondary_source_option:    SecondarySourceOption
+        :param secondary_source_measure:   SecondarySourceMeasure
+        :param secondary_source_measure2:  SecondarySourceMeasure2
+        :type  type:                       str_ref
+        :type  name:                       str_ref
+        :type  source_guid:                str_ref
+        :type  source_name:                str_ref
+        :type  source_measure:             float_ref
+        :type  secondary_source_guid:      str_ref
+        :type  secondary_source_name:      str_ref
+        :type  secondary_source_option:    int_ref
+        :type  secondary_source_measure:   float_ref
+        :type  secondary_source_measure2:  float_ref
+
+        .. versionadded:: 8.5
         """
         type.value, name.value, source_guid.value, source_name.value, source_measure.value, secondary_source_guid.value, secondary_source_name.value, secondary_source_option.value, secondary_source_measure.value, secondary_source_measure2.value = self._wrapper.get_properties_ex(type.value.encode(), name.value.encode(), source_guid.value.encode(), source_name.value.encode(), source_measure.value, secondary_source_guid.value.encode(), secondary_source_name.value.encode(), secondary_source_option.value, secondary_source_measure.value, secondary_source_measure2.value)
         
@@ -141,6 +239,15 @@ class GXSURFACEITEM:
     def set_default_render_properties(self, color, transparency, render_mode):
         """
         Sets default render properties of the surface item.
+        
+        :param color:         Color
+        :param transparency:  Transparency
+        :param render_mode:   `SURFACERENDER_MODE`
+        :type  color:         int
+        :type  transparency:  float
+        :type  render_mode:   int
+
+        .. versionadded:: 8.4
 
         .. seealso::
 
@@ -155,6 +262,15 @@ class GXSURFACEITEM:
     def get_default_render_properties(self, color, transparency, render_mode):
         """
         Gets default render properties of the surface item.
+        
+        :param color:         Color
+        :param transparency:  Transparency
+        :param render_mode:   `SURFACERENDER_MODE`
+        :type  color:         int_ref
+        :type  transparency:  float_ref
+        :type  render_mode:   int_ref
+
+        .. versionadded:: 8.4
 
         .. seealso::
 
@@ -169,6 +285,12 @@ class GXSURFACEITEM:
     def num_components(self):
         """
         Get the number of components in the surface item.
+        
+
+        :returns:            Number of components in the surface item.
+        :rtype:              int
+
+        .. versionadded:: 8.4
         """
         ret_val = self._wrapper.num_components()
         return ret_val
@@ -179,6 +301,24 @@ class GXSURFACEITEM:
     def add_mesh(self, vert_v_vx, vert_v_vy, vert_v_vz, tri_vv_pt1, tri_vv_pt2, tri_vv_pt3):
         """
         Adds a triangular polyhedral mesh component to the surface item.
+        
+        :param vert_v_vx:    Vertices X location
+        :param vert_v_vy:    Vertices Y location
+        :param vert_v_vz:    Vertices Z location
+        :param tri_vv_pt1:   Triangles 1st Vertex
+        :param tri_vv_pt2:   Triangles 2nd Vertex
+        :param tri_vv_pt3:   Triangles 3rd Vertex
+        :type  vert_v_vx:    GXVV
+        :type  vert_v_vy:    GXVV
+        :type  vert_v_vz:    GXVV
+        :type  tri_vv_pt1:   GXVV
+        :type  tri_vv_pt2:   GXVV
+        :type  tri_vv_pt3:   GXVV
+
+        :returns:            The index of the component added.
+        :rtype:              int
+
+        .. versionadded:: 8.4
         """
         ret_val = self._wrapper.add_mesh(vert_v_vx._wrapper, vert_v_vy._wrapper, vert_v_vz._wrapper, tri_vv_pt1._wrapper, tri_vv_pt2._wrapper, tri_vv_pt3._wrapper)
         return ret_val
@@ -189,6 +329,23 @@ class GXSURFACEITEM:
     def get_mesh(self, index, vert_v_vx, vert_v_vy, vert_v_vz, tri_vv_pt1, tri_vv_pt2, tri_vv_pt3):
         """
         Gets a triangular polyhedral mesh of a component in the surface item.
+        
+        :param index:        Index of the component
+        :param vert_v_vx:    Vertices X
+        :param vert_v_vy:    Vertices Y
+        :param vert_v_vz:    Vertices Z
+        :param tri_vv_pt1:   Triangles 1st Vertex
+        :param tri_vv_pt2:   Triangles 2nd Vertex
+        :param tri_vv_pt3:   Triangles 3rd Vertex
+        :type  index:        int
+        :type  vert_v_vx:    GXVV
+        :type  vert_v_vy:    GXVV
+        :type  vert_v_vz:    GXVV
+        :type  tri_vv_pt1:   GXVV
+        :type  tri_vv_pt2:   GXVV
+        :type  tri_vv_pt3:   GXVV
+
+        .. versionadded:: 8.4
         """
         self._wrapper.get_mesh(index, vert_v_vx._wrapper, vert_v_vy._wrapper, vert_v_vz._wrapper, tri_vv_pt1._wrapper, tri_vv_pt2._wrapper, tri_vv_pt3._wrapper)
         
@@ -199,6 +356,21 @@ class GXSURFACEITEM:
     def get_extents(self, min_x, min_y, min_z, max_x, max_y, max_z):
         """
         Get the spatial range of the the surface item.
+        
+        :param min_x:        Minimum valid data in X.
+        :param min_y:        Minimum valid data in Y.
+        :param min_z:        Minimum valid data in Z.
+        :param max_x:        Maximum valid data in X.
+        :param max_y:        Maximum valid data in Y.
+        :param max_z:        Maximum valid data in Z.
+        :type  min_x:        float_ref
+        :type  min_y:        float_ref
+        :type  min_z:        float_ref
+        :type  max_x:        float_ref
+        :type  max_y:        float_ref
+        :type  max_z:        float_ref
+
+        .. versionadded:: 8.5
         """
         min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._wrapper.get_extents(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         
@@ -209,6 +381,21 @@ class GXSURFACEITEM:
     def get_mesh_info(self, index, closed, n_inner_comps, area, volume, volume_confidence_interval):
         """
         Gets information about a triangular polyhedral mesh component in the surface item.
+        
+        :param index:                       Index of the component
+        :param closed:                      `GEO_BOOL` indicating if mesh is closed
+        :param n_inner_comps:               Number of inner components
+        :param area:                        Area
+        :param volume:                      Volume
+        :param volume_confidence_interval:  Volume confidence interval
+        :type  index:                       int
+        :type  closed:                      int_ref
+        :type  n_inner_comps:               int_ref
+        :type  area:                        float_ref
+        :type  volume:                      float_ref
+        :type  volume_confidence_interval:  float_ref
+
+        .. versionadded:: 8.4
         """
         closed.value, n_inner_comps.value, area.value, volume.value, volume_confidence_interval.value = self._wrapper.get_mesh_info(index, closed.value, n_inner_comps.value, area.value, volume.value, volume_confidence_interval.value)
         
@@ -219,6 +406,17 @@ class GXSURFACEITEM:
     def get_info(self, closed, area, volume, volume_confidence_interval):
         """
         Gets information about the surface item.
+        
+        :param closed:                      `GEO_BOOL` indicating if all meshes in item is closed
+        :param area:                        Area
+        :param volume:                      Volume
+        :param volume_confidence_interval:  Volume confidence interval
+        :type  closed:                      int_ref
+        :type  area:                        float_ref
+        :type  volume:                      float_ref
+        :type  volume_confidence_interval:  float_ref
+
+        .. versionadded:: 8.5
         """
         closed.value, area.value, volume.value, volume_confidence_interval.value = self._wrapper.get_info(closed.value, area.value, volume.value, volume_confidence_interval.value)
         
@@ -229,6 +427,13 @@ class GXSURFACEITEM:
     def get_geometry_info(self, vertices, triangles):
         """
         Get the total number of vertices and triangles of all mesh components in item.
+        
+        :param vertices:     Total number of vertices
+        :param triangles:    Total number of triangles
+        :type  vertices:     int_ref
+        :type  triangles:    int_ref
+
+        .. versionadded:: 8.5
         """
         vertices.value, triangles.value = self._wrapper.get_geometry_info(vertices.value, triangles.value)
         
@@ -239,6 +444,23 @@ class GXSURFACEITEM:
     def compute_extended_info(self, components, vertices, edges, triangles, inconsistent, invalid, intersectiona):
         """
         Compute more information (including validation) about of all mesh components in the surface item.
+        
+        :param components:     Number of inner components (recomputed)
+        :param vertices:       Total number of valid vertices
+        :param edges:          Total number of valid edges
+        :param triangles:      Total number of valid triangles
+        :param inconsistent:   Number of inconsistent triangles
+        :param invalid:        Number of invalid triangles
+        :param intersectiona:  Number of self intersections
+        :type  components:     int_ref
+        :type  vertices:       int_ref
+        :type  edges:          int_ref
+        :type  triangles:      int_ref
+        :type  inconsistent:   int_ref
+        :type  invalid:        int_ref
+        :type  intersectiona:  int_ref
+
+        .. versionadded:: 8.5
         """
         components.value, vertices.value, edges.value, triangles.value, inconsistent.value, invalid.value, intersectiona.value = self._wrapper.compute_extended_info(components.value, vertices.value, edges.value, triangles.value, inconsistent.value, invalid.value, intersectiona.value)
         

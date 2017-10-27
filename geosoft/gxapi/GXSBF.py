@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -67,6 +66,16 @@ class GXSBF:
     def create(self, file, status):
         """
         Create a child `GXSBF <geosoft.gxapi.GXSBF>` object inside an `GXSBF <geosoft.gxapi.GXSBF>`.
+        
+        :param file:    Directory name to open / create
+        :param status:  `SBF_OPEN`
+        :type  file:    str
+        :type  status:  int
+
+        :returns:       `GXSBF <geosoft.gxapi.GXSBF>` object, terminates if fails.
+        :rtype:         GXSBF
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.create(file.encode(), status)
         return GXSBF(ret_val)
@@ -77,6 +86,13 @@ class GXSBF:
     def create_obj_list(self, lst, type):
         """
         Fills an `GXLST <geosoft.gxapi.GXLST>` with embedded storage names of an `GXSBF <geosoft.gxapi.GXSBF>`.
+        
+        :param lst:   `GXLST <geosoft.gxapi.GXLST>` handle
+        :param type:  `SBF_TYPE`
+        :type  lst:   GXLST
+        :type  type:  int
+
+        .. versionadded:: 5.0.7
 
         **Note:**
 
@@ -94,6 +110,11 @@ class GXSBF:
     def del_dir(self, dir):
         """
         Delete a directory (storage) from this storage.
+        
+        :param dir:  Dir/Storage Name
+        :type  dir:  str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.del_dir(dir.encode())
         
@@ -104,6 +125,11 @@ class GXSBF:
     def del_file(self, file):
         """
         Delete a file from this storage.
+        
+        :param file:  File Name
+        :type  file:  str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.del_file(file.encode())
         
@@ -116,6 +142,14 @@ class GXSBF:
     def h_get_db(cls, db):
         """
         Get the embedded file storage from a database.
+        
+        :param db:  Database
+        :type  db:  GXDB
+
+        :returns:    `GXSBF <geosoft.gxapi.GXSBF>` Object
+        :rtype:      GXSBF
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapSBF.h_get_db(GXContext._get_tls_geo(), db._wrapper)
         return GXSBF(ret_val)
@@ -126,6 +160,14 @@ class GXSBF:
     def h_get_map(cls, map):
         """
         Get the embedded file storage from a map.
+        
+        :param map:  `GXMAP <geosoft.gxapi.GXMAP>` object
+        :type  map:  GXMAP
+
+        :returns:    `GXSBF <geosoft.gxapi.GXSBF>` Object
+        :rtype:      GXSBF
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapSBF.h_get_map(GXContext._get_tls_geo(), map._wrapper)
         return GXSBF(ret_val)
@@ -136,6 +178,12 @@ class GXSBF:
     def h_get_sys(cls):
         """
         Get the main embedded file storage (in workspace).
+        
+
+        :returns:    `GXSBF <geosoft.gxapi.GXSBF>` Object
+        :rtype:      GXSBF
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapSBF.h_get_sys(GXContext._get_tls_geo())
         return GXSBF(ret_val)
@@ -146,6 +194,15 @@ class GXSBF:
     def exist_dir(self, dir):
         """
         Check to see if a directory (storage) exists inside this storage.
+        
+        :param dir:  Dir/Storage Name
+        :type  dir:  str
+
+        :returns:    0 - Does not exist
+                     1 - Exists
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.exist_dir(dir.encode())
         return ret_val
@@ -156,6 +213,15 @@ class GXSBF:
     def exist_file(self, file):
         """
         Check to see if a file exists inside this storage.
+        
+        :param file:  File Name
+        :type  file:  str
+
+        :returns:     0 - Does not exist
+                      1 - Exists
+        :rtype:       int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.exist_file(file.encode())
         return ret_val
@@ -166,6 +232,17 @@ class GXSBF:
     def save_log(self, dir, file, file_save, p5):
         """
         Save an embedded file to an ASCII file.
+        
+        :param dir:        Directory name in the Parent `GXSBF <geosoft.gxapi.GXSBF>`
+        :param file:       File name in the directory
+        :param file_save:  File to save as (as an ASCII file)
+        :param p5:         Append Mode: 0 - New file, 1 - Append file
+        :type  dir:        str
+        :type  file:       str
+        :type  file_save:  str
+        :type  p5:         int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.save_log(dir.encode(), file.encode(), file_save.encode(), p5)
         

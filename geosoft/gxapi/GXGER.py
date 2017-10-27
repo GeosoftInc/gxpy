@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -86,6 +85,14 @@ class GXGER:
     def create(cls, file):
         """
         Opens an ASCII error file to read from.
+        
+        :param file:  `GXGER <geosoft.gxapi.GXGER>` file name.
+        :type  file:  str
+
+        :returns:     `GXGER <geosoft.gxapi.GXGER>` Object
+        :rtype:       GXGER
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -103,6 +110,17 @@ class GXGER:
     def get(self, num, message):
         """
         Get a message string.
+        
+        :param num:      Message number
+        :param message:  Message string returned, replacements filtered
+        :type  num:      int
+        :type  message:  str_ref
+
+        :returns:        0 if message found
+                         1 if no message, passed message remains unchanged
+        :rtype:          int
+
+        .. versionadded:: 5.0
         """
         ret_val, message.value = self._wrapper.get(num, message.value.encode())
         return ret_val
@@ -113,6 +131,13 @@ class GXGER:
     def set_int(self, parm, set):
         """
         Set a replacement string value to an int.
+        
+        :param parm:  Replacement string (ie. "%1")
+        :param set:   Setting
+        :type  parm:  str
+        :type  set:   int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.set_int(parm.encode(), set)
         
@@ -123,6 +148,13 @@ class GXGER:
     def set_double(self, parm, set):
         """
         Set a replacement string value to a real.
+        
+        :param parm:  Replacement string (ie. "%1")
+        :param set:   Setting
+        :type  parm:  str
+        :type  set:   float
+
+        .. versionadded:: 5.0
         """
         self._wrapper.set_double(parm.encode(), set)
         
@@ -133,6 +165,13 @@ class GXGER:
     def set_string(self, parm, set):
         """
         Set a replacement string value.
+        
+        :param parm:  Replacement string (ie. "%1")
+        :param set:   Setting
+        :type  parm:  str
+        :type  set:   str
+
+        .. versionadded:: 5.0
         """
         self._wrapper.set_string(parm.encode(), set.encode())
         

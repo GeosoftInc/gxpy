@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -61,6 +60,11 @@ class GXTEST:
     def enable_disable_arc_engine_license(cls, enable):
         """
         Forcefully disable ArEngine license availability for testing purposes
+        
+        :param enable:  Enable/disable? `GEO_BOOL`
+        :type  enable:  int
+
+        .. versionadded:: 6.4.2
         """
         gxapi_cy.WrapTEST.enable_disable_arc_engine_license(GXContext._get_tls_geo(), enable)
         
@@ -71,6 +75,12 @@ class GXTEST:
     def arc_engine_license(cls):
         """
         Test availability of an ArEngine license on this system
+        
+
+        :returns:    0 - Not available, 1 - Available
+        :rtype:      int
+
+        .. versionadded:: 6.4
         """
         ret_val = gxapi_cy.WrapTEST.arc_engine_license(GXContext._get_tls_geo())
         return ret_val
@@ -81,6 +91,12 @@ class GXTEST:
     def test_mode(cls):
         """
         Checks to see if we are running inside testing system
+        
+
+        :returns:    `GEO_BOOL`
+        :rtype:      int
+
+        .. versionadded:: 6.4.2
         """
         ret_val = gxapi_cy.WrapTEST.test_mode(GXContext._get_tls_geo())
         return ret_val
@@ -91,6 +107,13 @@ class GXTEST:
     def wrapper_test(cls, funcs, log):
         """
         Test to make sure all wrappers are valid linking
+        
+        :param funcs:  List of functions to test
+        :param log:    Output log file
+        :type  funcs:  str
+        :type  log:    str
+
+        .. versionadded:: 6.1
         """
         gxapi_cy.WrapTEST.wrapper_test(GXContext._get_tls_geo(), funcs.encode(), log.encode())
         
@@ -101,6 +124,13 @@ class GXTEST:
     def core_class(cls, cl, log):
         """
         Generic Class Test Wrapper
+        
+        :param cl:   Name of class to test
+        :param log:  Output log file
+        :type  cl:   str
+        :type  log:  str
+
+        .. versionadded:: 9.2
         """
         gxapi_cy.WrapTEST.core_class(GXContext._get_tls_geo(), cl.encode(), log.encode())
         

@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXVA import GXVA
@@ -67,6 +66,16 @@ class GXDBREAD:
         """
         Create a `GXDBREAD <geosoft.gxapi.GXDBREAD>` object
         Add channels using the `add_channel <geosoft.gxapi.GXDBREAD.add_channel>` method.channel.
+        
+        :param db:        Database input
+        :param line_lst:  List of lines to process NAME = line name, VALUE = line symbol
+        :type  db:        GXDB
+        :type  line_lst:  GXLST
+
+        :returns:         `GXDBREAD <geosoft.gxapi.GXDBREAD>` object
+        :rtype:           GXDBREAD
+
+        .. versionadded:: 8.5
         """
         ret_val = gxapi_cy.WrapDBREAD.create(GXContext._get_tls_geo(), db._wrapper, line_lst._wrapper)
         return GXDBREAD(ret_val)
@@ -78,6 +87,16 @@ class GXDBREAD:
         """
         Create a `GXDBREAD <geosoft.gxapi.GXDBREAD>` object for a XY-located data. Add channels using the
         `add_channel <geosoft.gxapi.GXDBREAD.add_channel>` method.
+        
+        :param db:        Database input
+        :param line_lst:  List of lines to process NAME = line name, VALUE = line symbol
+        :type  db:        GXDB
+        :type  line_lst:  GXLST
+
+        :returns:         `GXDBREAD <geosoft.gxapi.GXDBREAD>` object
+        :rtype:           GXDBREAD
+
+        .. versionadded:: 8.5
         """
         ret_val = gxapi_cy.WrapDBREAD.create_xy(GXContext._get_tls_geo(), db._wrapper, line_lst._wrapper)
         return GXDBREAD(ret_val)
@@ -89,6 +108,16 @@ class GXDBREAD:
         """
         Create a `GXDBREAD <geosoft.gxapi.GXDBREAD>` object for a XYZ-located data.
         Add channels using the `add_channel <geosoft.gxapi.GXDBREAD.add_channel>` method.
+        
+        :param db:        Database input
+        :param line_lst:  List of lines to process NAME = line name, VALUE = line symbol
+        :type  db:        GXDB
+        :type  line_lst:  GXLST
+
+        :returns:         `GXDBREAD <geosoft.gxapi.GXDBREAD>` object
+        :rtype:           GXDBREAD
+
+        .. versionadded:: 8.5
         """
         ret_val = gxapi_cy.WrapDBREAD.create_xyz(GXContext._get_tls_geo(), db._wrapper, line_lst._wrapper)
         return GXDBREAD(ret_val)
@@ -101,6 +130,14 @@ class GXDBREAD:
     def add_channel(self, chan):
         """
         Add a data channel to the `GXDBREAD <geosoft.gxapi.GXDBREAD>` object.
+        
+        :param chan:    Channel handle (does not need to be locked, but can be.)
+        :type  chan:    int
+
+        :returns:       Channel index. Use for getting the correct `GXVV <geosoft.gxapi.GXVV>` or `GXVA <geosoft.gxapi.GXVA>` object.
+        :rtype:         int
+
+        .. versionadded:: 8.5
         """
         ret_val = self._wrapper.add_channel(chan)
         return ret_val
@@ -115,6 +152,14 @@ class GXDBREAD:
     def get_vv(self, chan):
         """
         Get the `GXVV <geosoft.gxapi.GXVV>` handle for a channel.
+        
+        :param chan:    Index of channel to access.
+        :type  chan:    int
+
+        :returns:       `GXVV <geosoft.gxapi.GXVV>` handle
+        :rtype:         GXVV
+
+        .. versionadded:: 8.5
 
         **Note:**
 
@@ -131,6 +176,14 @@ class GXDBREAD:
     def get_va(self, chan):
         """
         Get the `GXVA <geosoft.gxapi.GXVA>` handle for an array channel.
+        
+        :param chan:    Index of channel to access.
+        :type  chan:    int
+
+        :returns:       `GXVA <geosoft.gxapi.GXVA>` handle
+        :rtype:         GXVA
+
+        .. versionadded:: 8.5
 
         **Note:**
 
@@ -147,6 +200,12 @@ class GXDBREAD:
     def get_v_vx(self):
         """
         Get the X channel `GXVV <geosoft.gxapi.GXVV>` handle.
+        
+
+        :returns:       `GXVV <geosoft.gxapi.GXVV>` handle
+        :rtype:         GXVV
+
+        .. versionadded:: 8.5
 
         **Note:**
 
@@ -162,6 +221,12 @@ class GXDBREAD:
     def get_v_vy(self):
         """
         Get the Y channel `GXVV <geosoft.gxapi.GXVV>` handle.
+        
+
+        :returns:       `GXVV <geosoft.gxapi.GXVV>` handle
+        :rtype:         GXVV
+
+        .. versionadded:: 8.5
 
         **Note:**
 
@@ -177,6 +242,12 @@ class GXDBREAD:
     def get_v_vz(self):
         """
         Get the Z channel `GXVV <geosoft.gxapi.GXVV>` handle.
+        
+
+        :returns:       `GXVV <geosoft.gxapi.GXVV>` handle
+        :rtype:         GXVV
+
+        .. versionadded:: 8.5
 
         **Note:**
 
@@ -193,6 +264,14 @@ class GXDBREAD:
     def get_chan_array_size(self, chan):
         """
         Get the number of columns of data in a channel.
+        
+        :param chan:    Index of channel to access.
+        :type  chan:    int
+
+        :returns:       The number of columns (array size) for a channel
+        :rtype:         int
+
+        .. versionadded:: 8.5
 
         **Note:**
 
@@ -209,6 +288,12 @@ class GXDBREAD:
     def get_number_of_blocks_to_process(self):
         """
         Get the number of blocks to be served up.
+        
+
+        :returns:       The number of blocks to process in the selected lines.
+        :rtype:         int
+
+        .. versionadded:: 8.5
 
         **Note:**
 
@@ -229,6 +314,18 @@ class GXDBREAD:
     def get_next_block(self, line, block, n_blocks):
         """
         Get the next block of data.
+        
+        :param line:      (returned) The index into the input selected line list of the line whose data is contained in the current block
+        :param block:     (returned) The block index (0 to NBlocks-1) for the current line of data.
+        :param n_blocks:  (returned) The number of blocks that the current line is split into.
+        :type  line:      int_ref
+        :type  block:     int_ref
+        :type  n_blocks:  int_ref
+
+        :returns:         Returns the current block index, or -1 if at end of file (no new data returned).
+        :rtype:           int
+
+        .. versionadded:: 8.5
 
         **Note:**
 

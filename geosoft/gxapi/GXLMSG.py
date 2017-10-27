@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -61,6 +60,17 @@ class GXLMSG:
     def goto_point(cls, x, y, z, ipj):
         """
         Sends a move cursor message
+        
+        :param x:    X location
+        :param y:    Y location
+        :param z:    Z location
+        :param ipj:  `GXIPJ <geosoft.gxapi.GXIPJ>` (if (`GXIPJ <geosoft.gxapi.GXIPJ>`)0, default coordinate system)
+        :type  x:    float
+        :type  y:    float
+        :type  z:    float
+        :type  ipj:  GXIPJ
+
+        .. versionadded:: 5.0.7
         """
         gxapi_cy.WrapLMSG.goto_point(GXContext._get_tls_geo(), x, y, z, ipj._wrapper)
         
@@ -71,6 +81,19 @@ class GXLMSG:
     def view_area(cls, x0, y0, x1, y1, ipj):
         """
         Sends a view area message
+        
+        :param x0:   X0 location
+        :param y0:   Y0 location
+        :param x1:   X1 location
+        :param y1:   Y1 location
+        :param ipj:  `GXIPJ <geosoft.gxapi.GXIPJ>` (if (`GXIPJ <geosoft.gxapi.GXIPJ>`)0, default coordinate system)
+        :type  x0:   float
+        :type  y0:   float
+        :type  x1:   float
+        :type  y1:   float
+        :type  ipj:  GXIPJ
+
+        .. versionadded:: 5.0.7
         """
         gxapi_cy.WrapLMSG.view_area(GXContext._get_tls_geo(), x0, y0, x1, y1, ipj._wrapper)
         

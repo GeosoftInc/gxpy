@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -65,6 +64,18 @@ class GXEXP:
     def create(cls, db, formula, max_len):
         """
         This method creates an `GXEXP <geosoft.gxapi.GXEXP>` object.
+        
+        :param db:       Database Object
+        :param formula:  Expression using channel names
+        :param max_len:  Maximum size of expression after expanding all local variables (those with $ prefix).
+        :type  db:       GXDB
+        :type  formula:  str
+        :type  max_len:  int
+
+        :returns:        `GXEXP <geosoft.gxapi.GXEXP>` Object
+        :rtype:          GXEXP
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -104,6 +115,16 @@ class GXEXP:
     def create_file(cls, db, file):
         """
         This method creates an `GXEXP <geosoft.gxapi.GXEXP>` object from a file
+        
+        :param db:    Database Object
+        :param file:  File name
+        :type  db:    GXDB
+        :type  file:  str
+
+        :returns:     `GXEXP <geosoft.gxapi.GXEXP>` Object
+        :rtype:       GXEXP
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapEXP.create_file(GXContext._get_tls_geo(), db._wrapper, file.encode())
         return GXEXP(ret_val)

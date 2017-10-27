@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -62,6 +61,23 @@ class GXIPGUI:
     def modify_job(cls, ip, db, ini, plot_type, page):
         """
         Modify parameters for an `GXIP <geosoft.gxapi.GXIP>` plot.
+        
+        :param ip:         `GXDH <geosoft.gxapi.GXDH>` Handle
+        :param db:         `GXDB <geosoft.gxapi.GXDB>` Handle
+        :param ini:        Job Name (``*.inp``)
+        :param plot_type:  Job type `IP_PLOT`
+        :param page:       Page to open `GXGUI <geosoft.gxapi.GXGUI>` on
+        :type  ip:         GXIP
+        :type  db:         GXDB
+        :type  ini:        str
+        :type  plot_type:  int
+        :type  page:       int_ref
+
+        :returns:          0 - Ok
+                           -1 - User Cancelled
+        :rtype:            int
+
+        .. versionadded:: 6.1
         """
         ret_val, page.value = gxapi_cy.WrapIPGUI.modify_job(GXContext._get_tls_geo(), ip._wrapper, db._wrapper, ini.encode(), plot_type, page.value)
         return ret_val
@@ -72,6 +88,15 @@ class GXIPGUI:
     def launch_ipqc_tool(cls, db, line, chan):
         """
         Launch the In-Line `GXIP <geosoft.gxapi.GXIP>` QC tool on a database.
+        
+        :param db:    Database name
+        :param line:  Current Line (can be blank)
+        :param chan:  Channel to open with (can be blank)
+        :type  db:    str
+        :type  line:  str
+        :type  chan:  str
+
+        .. versionadded:: 8.1
 
         **Note:**
 
@@ -86,6 +111,15 @@ class GXIPGUI:
     def launch_offset_ipqc_tool(cls, db, line, chan):
         """
         Launch the Offset `GXIP <geosoft.gxapi.GXIP>` QC tool on a database.
+        
+        :param db:    Database name
+        :param line:  Current Line (can be blank)
+        :param chan:  Channel to open with (can be blank)
+        :type  db:    str
+        :type  line:  str
+        :type  chan:  str
+
+        .. versionadded:: 9.1
 
         **Note:**
 
@@ -100,6 +134,12 @@ class GXIPGUI:
     def ipqc_tool_exists(cls):
         """
         See if there is an IPQC Tool (Offset or Inline) already open.
+        
+
+        :returns:    0 if not open, 1 if open
+        :rtype:      int
+
+        .. versionadded:: 8.1
 
         **Note:**
 

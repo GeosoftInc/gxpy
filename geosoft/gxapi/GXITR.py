@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXREG import GXREG
@@ -85,6 +84,11 @@ class GXITR:
     def change_brightness(self, brt):
         """
         Change the brightness.
+        
+        :param brt:  -1.0 - black; 0.0 no change; 1.0 white
+        :type  brt:  float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -101,6 +105,13 @@ class GXITR:
     def color_vv(self, vv_d, vv_c):
         """
         Get color transform of a `GXVV <geosoft.gxapi.GXVV>`.
+        
+        :param vv_d:  Input `GXVV <geosoft.gxapi.GXVV>` of values (none-string)
+        :param vv_c:  Output `GXVV <geosoft.gxapi.GXVV>` of colors (type INT)
+        :type  vv_d:  GXVV
+        :type  vv_c:  GXVV
+
+        .. versionadded:: 5.1.6
 
         **Note:**
 
@@ -116,6 +127,11 @@ class GXITR:
     def copy(self, it_rs):
         """
         Copies ITRs
+        
+        :param it_rs:  `GXITR <geosoft.gxapi.GXITR>` Source
+        :type  it_rs:  GXITR
+
+        .. versionadded:: 5.0
         """
         self._wrapper.copy(it_rs._wrapper)
         
@@ -126,6 +142,12 @@ class GXITR:
     def create(cls):
         """
         Create an `GXITR <geosoft.gxapi.GXITR>` object
+        
+
+        :returns:    `GXITR <geosoft.gxapi.GXITR>` object
+        :rtype:      GXITR
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapITR.create(GXContext._get_tls_geo())
         return GXITR(ret_val)
@@ -136,6 +158,14 @@ class GXITR:
     def create_file(cls, file):
         """
         Create an `GXITR <geosoft.gxapi.GXITR>` object from an itr, tbl, zon, lut file.
+        
+        :param file:  File name, type determined from extension
+        :type  file:  str
+
+        :returns:     `GXITR <geosoft.gxapi.GXITR>` object
+        :rtype:       GXITR
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapITR.create_file(GXContext._get_tls_geo(), file.encode())
         return GXITR(ret_val)
@@ -146,6 +176,19 @@ class GXITR:
     def create_img(cls, img, tbl, zone, contour):
         """
         Create an `GXITR <geosoft.gxapi.GXITR>` for an image.
+        
+        :param tbl:      Color table name, NULL for default
+        :param zone:     `ITR_ZONE`
+        :param contour:  Color contour interval or `rDUMMY <geosoft.gxapi.rDUMMY>`
+        :type  img:      GXIMG
+        :type  tbl:      str
+        :type  zone:     int
+        :type  contour:  float
+
+        :returns:        `GXITR <geosoft.gxapi.GXITR>` object
+        :rtype:          GXITR
+
+        .. versionadded:: 5.1
 
         **Note:**
 
@@ -166,6 +209,16 @@ class GXITR:
     def create_map(cls, map, name):
         """
         Create `GXITR <geosoft.gxapi.GXITR>` from Map with `GXAGG <geosoft.gxapi.GXAGG>` Group name.
+        
+        :param map:   `GXMAP <geosoft.gxapi.GXMAP>` on which to place the view
+        :param name:  `GXAGG <geosoft.gxapi.GXAGG>` Group name
+        :type  map:   GXMAP
+        :type  name:  str
+
+        :returns:     `GXITR <geosoft.gxapi.GXITR>` object
+        :rtype:       GXITR
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapITR.create_map(GXContext._get_tls_geo(), map._wrapper, name.encode())
         return GXITR(ret_val)
@@ -176,6 +229,14 @@ class GXITR:
     def create_s(cls, bf):
         """
         Create an `GXITR <geosoft.gxapi.GXITR>` object from a `GXBF <geosoft.gxapi.GXBF>`
+        
+        :param bf:  `GXBF <geosoft.gxapi.GXBF>` to serialize from
+        :type  bf:  GXBF
+
+        :returns:    `GXITR <geosoft.gxapi.GXITR>` object
+        :rtype:      GXITR
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapITR.create_s(GXContext._get_tls_geo(), bf._wrapper)
         return GXITR(ret_val)
@@ -188,6 +249,13 @@ class GXITR:
     def equal_area(self, st, contour):
         """
         Calculate an equal area transform.
+        
+        :param st:       Stat object with a histogram
+        :param contour:  Color contour interval or dummy for none
+        :type  st:       GXST
+        :type  contour:  float
+
+        .. versionadded:: 5.1.2
         """
         self._wrapper.equal_area(st._wrapper, contour)
         
@@ -198,6 +266,13 @@ class GXITR:
     def get_data_limits(self, min, max):
         """
         Get `GXITR <geosoft.gxapi.GXITR>` max/min data limits.
+        
+        :param min:  Data minimum value (or `rDUMMY <geosoft.gxapi.rDUMMY>` if not set)
+        :param max:  Data maximum value (or `rDUMMY <geosoft.gxapi.rDUMMY>` if not set)
+        :type  min:  float_ref
+        :type  max:  float_ref
+
+        .. versionadded:: 6.0
 
         **Note:**
 
@@ -217,6 +292,12 @@ class GXITR:
     def get_reg(self):
         """
         Get the `GXITR <geosoft.gxapi.GXITR>`'s `GXREG <geosoft.gxapi.GXREG>`
+        
+
+        :returns:    `GXREG <geosoft.gxapi.GXREG>` object
+        :rtype:      GXREG
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.get_reg()
         return GXREG(ret_val)
@@ -227,6 +308,13 @@ class GXITR:
     def get_zone_color(self, zone, color):
         """
         Get the color in a zone of the `GXITR <geosoft.gxapi.GXITR>`
+        
+        :param zone:   Number of the zone to set.
+        :param color:  `MVIEW_COLOR`
+        :type  zone:   int
+        :type  color:  int_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -241,6 +329,14 @@ class GXITR:
     def color_value(self, val):
         """
         Transform single data value to color
+        
+        :param val:  Data value
+        :type  val:  float
+
+        :returns:    `MVIEW_COLOR`
+        :rtype:      int
+
+        .. versionadded:: 5.1
         """
         ret_val = self._wrapper.color_value(val)
         return ret_val
@@ -251,6 +347,12 @@ class GXITR:
     def get_size(self):
         """
         Get the number of zones in an `GXITR <geosoft.gxapi.GXITR>`
+        
+
+        :returns:    The number of zones.
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.get_size()
         return ret_val
@@ -261,6 +363,12 @@ class GXITR:
     def get_zone_model_type(self):
         """
         Get the `GXITR <geosoft.gxapi.GXITR>` zone model (e.g. Linear, LogLin, Equal Area).
+        
+
+        :returns:    `ITR_ZONE_MODEL`
+        :rtype:      int
+
+        .. versionadded:: 6.4
 
         **Note:**
 
@@ -276,6 +384,15 @@ class GXITR:
     def linear(self, min, max, contour):
         """
         Calculate a linear transform.
+        
+        :param min:      Minimum
+        :param max:      Maximum
+        :param contour:  Color contour interval or dummy for none
+        :type  min:      float
+        :type  max:      float
+        :type  contour:  float
+
+        .. versionadded:: 5.0
         """
         self._wrapper.linear(min, max, contour)
         
@@ -286,6 +403,11 @@ class GXITR:
     def load_a(self, file):
         """
         Load to an ASCII file, ZON, TBL or ER-Mapper LUT
+        
+        :param file:  File name
+        :type  file:  str
+
+        .. versionadded:: 5.1.6
         """
         self._wrapper.load_a(file.encode())
         
@@ -296,6 +418,15 @@ class GXITR:
     def log_linear(self, min, max, contour):
         """
         Calculate a log transform.
+        
+        :param min:      Minimum ( > 0)
+        :param max:      Maximum ( > minimum)
+        :param contour:  Color contour interval or dummy for none
+        :type  min:      float
+        :type  max:      float
+        :type  contour:  float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -310,6 +441,17 @@ class GXITR:
     def normal(self, std_dev, mean, exp, contour):
         """
         Calculate a normal distribution transform.
+        
+        :param std_dev:  Standard deviation
+        :param mean:     Mean
+        :param exp:      Expansion, normally 1.0
+        :param contour:  Color contour interval or dummy for none
+        :type  std_dev:  float
+        :type  mean:     float
+        :type  exp:      float
+        :type  contour:  float
+
+        .. versionadded:: 5.1.2
         """
         self._wrapper.normal(std_dev, mean, exp, contour)
         
@@ -320,6 +462,11 @@ class GXITR:
     def power_zone(self, pow):
         """
         Modified `GXITR <geosoft.gxapi.GXITR>` zone values to 10 (or e) raized to the power of the values
+        
+        :param pow:  `ITR_POWER`
+        :type  pow:  int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.power_zone(pow)
         
@@ -330,6 +477,12 @@ class GXITR:
     def get_brightness(self):
         """
         Get the brightness setting of the `GXITR <geosoft.gxapi.GXITR>`
+        
+
+        :returns:    The brightness setting of the `GXITR <geosoft.gxapi.GXITR>`
+        :rtype:      float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -350,6 +503,14 @@ class GXITR:
     def get_zone_value(self, zone):
         """
         Get the value in a zone of the `GXITR <geosoft.gxapi.GXITR>`
+        
+        :param zone:  Number of the zone to set.
+        :type  zone:  int
+
+        :returns:     The value of the specified zone.
+        :rtype:       float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -364,6 +525,11 @@ class GXITR:
     def save_a(self, file):
         """
         Save to an ASCII file, ZON, TBL or ER-Mapper LUT
+        
+        :param file:  File name
+        :type  file:  str
+
+        .. versionadded:: 5.1.2
         """
         self._wrapper.save_a(file.encode())
         
@@ -374,6 +540,11 @@ class GXITR:
     def save_file(self, file):
         """
         Save to any type (based on the extension of the input file name).
+        
+        :param file:  File name
+        :type  file:  str
+
+        .. versionadded:: 8.2
         """
         self._wrapper.save_file(file.encode())
         
@@ -384,6 +555,11 @@ class GXITR:
     def serial(self, bf):
         """
         Serialize an `GXITR <geosoft.gxapi.GXITR>` to a `GXBF <geosoft.gxapi.GXBF>`
+        
+        :param bf:   `GXBF <geosoft.gxapi.GXBF>` to serialize to
+        :type  bf:   GXBF
+
+        .. versionadded:: 5.0
         """
         self._wrapper.serial(bf._wrapper)
         
@@ -394,6 +570,15 @@ class GXITR:
     def set_agg_map(cls, map, name, itr):
         """
         Set `GXITR <geosoft.gxapi.GXITR>` to an `GXAGG <geosoft.gxapi.GXAGG>` in map
+        
+        :param map:   `GXMAP <geosoft.gxapi.GXMAP>` on which to place the view
+        :param name:  `GXAGG <geosoft.gxapi.GXAGG>` group name
+        :param itr:   `GXITR <geosoft.gxapi.GXITR>` object to set
+        :type  map:   GXMAP
+        :type  name:  str
+        :type  itr:   GXITR
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -408,6 +593,13 @@ class GXITR:
     def set_bright_contrast(self, brt, con):
         """
         Set the brightness of the `GXITR <geosoft.gxapi.GXITR>` colors
+        
+        :param brt:  0.0 - black; 0.5 normal; 1.0 white
+        :param con:  0.0 - flat; 1.0 normal
+        :type  brt:  float
+        :type  con:  float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -429,6 +621,11 @@ class GXITR:
     def set_color_model(self, model):
         """
         Set the color model of an `GXITR <geosoft.gxapi.GXITR>`.
+        
+        :param model:  `ITR_COLOR_MODEL`
+        :type  model:  int
+
+        .. versionadded:: 5.0.2
         """
         self._wrapper.set_color_model(model)
         
@@ -439,6 +636,13 @@ class GXITR:
     def set_data_limits(self, min, max):
         """
         Set `GXITR <geosoft.gxapi.GXITR>` max/min data limits.
+        
+        :param min:  Data minimum value
+        :param max:  Data maximum value
+        :type  min:  float
+        :type  max:  float
+
+        .. versionadded:: 6.3
         """
         self._wrapper.set_data_limits(min, max)
         
@@ -449,6 +653,11 @@ class GXITR:
     def set_size(self, zones):
         """
         Set the number of zones in an `GXITR <geosoft.gxapi.GXITR>`
+        
+        :param zones:  Number of zones to set `GXITR <geosoft.gxapi.GXITR>` to.
+        :type  zones:  int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.set_size(zones)
         
@@ -459,6 +668,13 @@ class GXITR:
     def set_zone_color(self, zone, color):
         """
         Set the color in a zone of the `GXITR <geosoft.gxapi.GXITR>`
+        
+        :param zone:   Number of the zone to set.
+        :param color:  `MVIEW_COLOR`
+        :type  zone:   int
+        :type  color:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -473,6 +689,13 @@ class GXITR:
     def set_zone_value(self, zone, value):
         """
         Set the value in a zone of the `GXITR <geosoft.gxapi.GXITR>`
+        
+        :param zone:   Number of the zone to set.
+        :param value:  The value to set
+        :type  zone:   int
+        :type  value:  float
+
+        .. versionadded:: 5.0
 
         **Note:**
 

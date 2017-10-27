@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -62,6 +61,11 @@ class GXMXD:
     def create_metadata(cls, mxd):
         """
         Create metadata for this brand new `GXMXD <geosoft.gxapi.GXMXD>` (we are the creator)
+        
+        :param mxd:  `GXMXD <geosoft.gxapi.GXMXD>` file name
+        :type  mxd:  str
+
+        .. versionadded:: 7.0
         """
         gxapi_cy.WrapMXD.create_metadata(GXContext._get_tls_geo(), mxd.encode())
         
@@ -72,6 +76,13 @@ class GXMXD:
     def convert_to_map(cls, mxd, map):
         """
         Create Geosoft map from ArcGIS `GXMXD <geosoft.gxapi.GXMXD>`
+        
+        :param mxd:  ArcGIS `GXMXD <geosoft.gxapi.GXMXD>` file name
+        :param map:  Geosoft map file name
+        :type  mxd:  str
+        :type  map:  str
+
+        .. versionadded:: 9.0
         """
         gxapi_cy.WrapMXD.convert_to_map(GXContext._get_tls_geo(), mxd.encode(), map.encode())
         
@@ -82,6 +93,11 @@ class GXMXD:
     def sync(cls, mxd):
         """
         Syncronize any Metadata for this `GXMXD <geosoft.gxapi.GXMXD>`
+        
+        :param mxd:  `GXMXD <geosoft.gxapi.GXMXD>` file name
+        :type  mxd:  str
+
+        .. versionadded:: 7.0
         """
         gxapi_cy.WrapMXD.sync(GXContext._get_tls_geo(), mxd.encode())
         

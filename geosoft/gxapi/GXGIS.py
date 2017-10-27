@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXIPJ import GXIPJ
@@ -64,6 +63,18 @@ class GXGIS:
     def create(cls, file, info, type):
         """
         Creates a `GXGIS <geosoft.gxapi.GXGIS>` Object
+        
+        :param file:  Data source (file)
+        :param info:  Data qualifying information if required.
+        :param type:  `GIS_TYPE`
+        :type  file:  str
+        :type  info:  str
+        :type  type:  int
+
+        :returns:     `GXGIS <geosoft.gxapi.GXGIS>` Object
+        :rtype:       GXGIS
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapGIS.create(GXContext._get_tls_geo(), file.encode(), info.encode(), type)
         return GXGIS(ret_val)
@@ -74,6 +85,17 @@ class GXGIS:
     def create_map2_d(self, map, map_scale, ipj, map2_d):
         """
         `create_map2_d <geosoft.gxapi.GXGIS.create_map2_d>`   Create a new 2D map for `GXGIS <geosoft.gxapi.GXGIS>` imports.
+        
+        :param map:        Map name
+        :param map_scale:  Map scale (can be `rDUMMY <geosoft.gxapi.rDUMMY>`)
+        :param ipj:        Projection (no orientation)
+        :param map2_d:     `GIS_MAP2D`
+        :type  map:        str
+        :type  map_scale:  float
+        :type  ipj:        GXIPJ
+        :type  map2_d:     int
+
+        .. versionadded:: 7.1
 
         **Note:**
 
@@ -91,6 +113,13 @@ class GXGIS:
     def get_bpr_models_lst(self, file, lst):
         """
         Get a `GXLST <geosoft.gxapi.GXLST>` of block models contained in a Gemcom BPR or BRP2 file
+        
+        :param file:  BPR or BPR2 file
+        :param lst:   Returned `GXLST <geosoft.gxapi.GXLST>` of block models
+        :type  file:  str
+        :type  lst:   GXLST
+
+        .. versionadded:: 7.1
 
         **Note:**
 
@@ -115,6 +144,13 @@ class GXGIS:
     def get_ipj(self):
         """
         Get the `GXGIS <geosoft.gxapi.GXGIS>` `GXIPJ <geosoft.gxapi.GXIPJ>`
+        
+
+        :returns:    `GXIPJ <geosoft.gxapi.GXIPJ>` handle
+                     NULL if error
+        :rtype:      GXIPJ
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -131,6 +167,11 @@ class GXGIS:
     def get_meta(self, meta):
         """
         Get the `GXGIS <geosoft.gxapi.GXGIS>` `GXMETA <geosoft.gxapi.GXMETA>`
+        
+        :param meta:  Meta object to store `GXGIS <geosoft.gxapi.GXGIS>` meta information
+        :type  meta:  GXMETA
+
+        .. versionadded:: 6.0
         """
         self._wrapper.get_meta(meta._wrapper)
         
@@ -141,6 +182,21 @@ class GXGIS:
     def get_range(self, x_min, x_max, y_min, y_max, z_min, z_max):
         """
         Get the range of data in the `GXGIS <geosoft.gxapi.GXGIS>`
+        
+        :param x_min:  X min
+        :param x_max:  X max
+        :param y_min:  Y min
+        :param y_max:  Y max
+        :param z_min:  Z min
+        :param z_max:  Z max
+        :type  x_min:  float_ref
+        :type  x_max:  float_ref
+        :type  y_min:  float_ref
+        :type  y_max:  float_ref
+        :type  z_min:  float_ref
+        :type  z_max:  float_ref
+
+        .. versionadded:: 5.0
         """
         x_min.value, x_max.value, y_min.value, y_max.value, z_min.value, z_max.value = self._wrapper.get_range(x_min.value, x_max.value, y_min.value, y_max.value, z_min.value, z_max.value)
         
@@ -151,6 +207,14 @@ class GXGIS:
     def datamine_type(cls, file):
         """
         Returns the type of a Datamine file.
+        
+        :param file:  Name of input datamine file
+        :type  file:  str
+
+        :returns:     Datamine file types - bitwise AND of types.
+        :rtype:       int
+
+        .. versionadded:: 6.3
 
         **Note:**
 
@@ -168,6 +232,11 @@ class GXGIS:
     def get_file_name(self, name):
         """
         Get the file name
+        
+        :param name:  Returned file name
+        :type  name:  str_ref
+
+        .. versionadded:: 7.1
         """
         name.value = self._wrapper.get_file_name(name.value.encode())
         
@@ -178,6 +247,15 @@ class GXGIS:
     def is_mi_map_file(cls, map):
         """
         Returns TRUE if file is a MapInfo MAP file.
+        
+        :param map:  Name of input map file
+        :type  map:  str
+
+        :returns:    0 if not a MapInfo MAP file
+                     1 if it is.
+        :rtype:      int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -194,6 +272,15 @@ class GXGIS:
     def is_mi_raster_tab_file(cls, tab):
         """
         Returns TRUE if file is a MapInfo Raster TAB file.
+        
+        :param tab:  Name of input tab file
+        :type  tab:  str
+
+        :returns:    0 if not a MapInfo Raster TAB file
+                     1 if it is.
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapGIS.is_mi_raster_tab_file(GXContext._get_tls_geo(), tab.encode())
         return ret_val
@@ -204,6 +291,15 @@ class GXGIS:
     def is_mi_rotated_raster_tab_file(cls, tab):
         """
         Returns TRUE if file is a rotated MapInfo Raster TAB file.
+        
+        :param tab:  Name of input tab file
+        :type  tab:  str
+
+        :returns:    0 if not a rotated MapInfo Raster TAB file
+                     1 if it is (see conditions below).
+        :rtype:      int
+
+        .. versionadded:: 6.4
 
         **Note:**
 
@@ -227,6 +323,13 @@ class GXGIS:
     def is_shp_file_3d(self):
         """
         Returns TRUE if an ArcView `GXSHP <geosoft.gxapi.GXSHP>` file is type POINTZ, ARCZ, POLYGONZ or MULTIPOINTZ
+        
+
+        :returns:    0 if the `GXSHP <geosoft.gxapi.GXSHP>` file is 2D
+                     1 if the `GXSHP <geosoft.gxapi.GXSHP>` file is of type POINTZ, ARCZ, POLYGONZ or MULTIPOINTZ
+        :rtype:      int
+
+        .. versionadded:: 6.3
 
         **Note:**
 
@@ -242,6 +345,13 @@ class GXGIS:
     def is_shp_file_point(self):
         """
         Returns TRUE if an ArcView `GXSHP <geosoft.gxapi.GXSHP>` file is type POINT or POINTZ
+        
+
+        :returns:    0 if the `GXSHP <geosoft.gxapi.GXSHP>` file is not points
+                     if the `GXSHP <geosoft.gxapi.GXSHP>` file is of type POINT or POINTZ
+        :rtype:      int
+
+        .. versionadded:: 7.1
 
         **Note:**
 
@@ -256,6 +366,12 @@ class GXGIS:
     def num_attribs(self):
         """
         The number of attribute fields in the `GXGIS <geosoft.gxapi.GXGIS>` dataset
+        
+
+        :returns:    The number of attribute fields
+        :rtype:      int
+
+        .. versionadded:: 7.1
         """
         ret_val = self._wrapper.num_attribs()
         return ret_val
@@ -266,6 +382,12 @@ class GXGIS:
     def num_shapes(self):
         """
         The number of shape entities in the `GXGIS <geosoft.gxapi.GXGIS>` dataset
+        
+
+        :returns:    The number of shape entities
+        :rtype:      int
+
+        .. versionadded:: 7.1
         """
         ret_val = self._wrapper.num_shapes()
         return ret_val
@@ -276,6 +398,15 @@ class GXGIS:
     def scan_mi_raster_tab_file(cls, tab, file, ipj):
         """
         Scan and set up a MapInf RASTER.
+        
+        :param tab:   Name of input file
+        :param file:  Name of Raster file (an `GXIMG <geosoft.gxapi.GXIMG>` `GXDAT <geosoft.gxapi.GXDAT>`)
+        :param ipj:   Projection
+        :type  tab:   str
+        :type  file:  str_ref
+        :type  ipj:   GXIPJ
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -290,6 +421,11 @@ class GXGIS:
     def load_ascii(self, wa):
         """
         Save `GXGIS <geosoft.gxapi.GXGIS>` attribute table information (string fields) into a `GXWA <geosoft.gxapi.GXWA>`.
+        
+        :param wa:   `GXWA <geosoft.gxapi.GXWA>` object
+        :type  wa:   GXWA
+
+        .. versionadded:: 7.3
 
         **Note:**
 
@@ -307,6 +443,11 @@ class GXGIS:
     def load_gdb(self, db):
         """
         Load `GXGIS <geosoft.gxapi.GXGIS>` table information into a GDB.
+        
+        :param db:   Database
+        :type  db:   GXDB
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -329,6 +470,11 @@ class GXGIS:
     def load_map(self, mview):
         """
         Load `GXGIS <geosoft.gxapi.GXGIS>` table drawing into a `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
+        
+        :param mview:  View in which to place `GXGIS <geosoft.gxapi.GXGIS>` drawing.
+        :type  mview:  GXMVIEW
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -343,6 +489,13 @@ class GXGIS:
     def load_map_ex(self, map, view_name):
         """
         Load `GXGIS <geosoft.gxapi.GXGIS>` table drawing into a `GXMAP <geosoft.gxapi.GXMAP>`.
+        
+        :param map:        Map handle
+        :param view_name:  Name of existing data view
+        :type  map:        GXMAP
+        :type  view_name:  str
+
+        .. versionadded:: 7.1
 
         **Note:**
 
@@ -357,6 +510,18 @@ class GXGIS:
     def load_meta_groups_map(self, mview, meta, ph_object, prefix, name_field):
         """
         Load `GXGIS <geosoft.gxapi.GXGIS>` table drawing into a `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
+        
+        :param mview:       View in which to place `GXGIS <geosoft.gxapi.GXGIS>` drawing.
+        :param ph_object:   Class
+        :param prefix:      Group Name prefix
+        :param name_field:  Name field (Empty to use ID of entity)
+        :type  mview:       GXMVIEW
+        :type  meta:        GXMETA
+        :type  ph_object:   int
+        :type  prefix:      str
+        :type  name_field:  str
+
+        .. versionadded:: 5.1.8
 
         **Note:**
 
@@ -375,6 +540,11 @@ class GXGIS:
     def load_ply(self, ply):
         """
         Load `GXGIS <geosoft.gxapi.GXGIS>` table drawing into a Multi-Polygon object.
+        
+        :param ply:  Polygon object in which to place `GXGIS <geosoft.gxapi.GXGIS>` shapes.
+        :type  ply:  GXPLY
+
+        .. versionadded:: 5.1.6
         """
         self._wrapper.load_ply(ply._wrapper)
         
@@ -385,6 +555,11 @@ class GXGIS:
     def load_shapes_gdb(self, db):
         """
         Load `GXGIS <geosoft.gxapi.GXGIS>` shapes table information into separate lines in a GDB.
+        
+        :param db:   Database
+        :type  db:   GXDB
+
+        .. versionadded:: 7.1
 
         **Note:**
 
@@ -409,6 +584,11 @@ class GXGIS:
     def set_dm_wireframe_pt_file(self, file):
         """
         Specify the wireframe point file corresponding to the input file.
+        
+        :param file:  Name of the wireframe point file
+        :type  file:  str
+
+        .. versionadded:: 6.3
 
         **Note:**
 
@@ -427,6 +607,11 @@ class GXGIS:
     def set_ipj(self, ipj):
         """
         Save the `GXIPJ <geosoft.gxapi.GXIPJ>` back to `GXGIS <geosoft.gxapi.GXGIS>` file
+        
+        :param ipj:  `GXIPJ <geosoft.gxapi.GXIPJ>` to save
+        :type  ipj:  GXIPJ
+
+        .. versionadded:: 6.0
         """
         self._wrapper.set_ipj(ipj._wrapper)
         
@@ -437,6 +622,11 @@ class GXGIS:
     def set_lst(self, lst):
         """
         Save a `GXLST <geosoft.gxapi.GXLST>` of items inside the `GXGIS <geosoft.gxapi.GXGIS>` object for special use.
+        
+        :param lst:  `GXLST <geosoft.gxapi.GXLST>` object to save to `GXGIS <geosoft.gxapi.GXGIS>` `GXLST <geosoft.gxapi.GXLST>`.
+        :type  lst:  GXLST
+
+        .. versionadded:: 7.1
 
         **Note:**
 
@@ -453,6 +643,11 @@ class GXGIS:
     def set_meta(self, meta):
         """
         Save the `GXMETA <geosoft.gxapi.GXMETA>` back to `GXGIS <geosoft.gxapi.GXGIS>`
+        
+        :param meta:  `GXMETA <geosoft.gxapi.GXMETA>` object to save to `GXGIS <geosoft.gxapi.GXGIS>` meta
+        :type  meta:  GXMETA
+
+        .. versionadded:: 6.0
         """
         self._wrapper.set_meta(meta._wrapper)
         
@@ -463,6 +658,11 @@ class GXGIS:
     def set_triangulation_object_index(self, i_toi):
         """
         Set the triangulation object index (Micromine)
+        
+        :param i_toi:  Triangulation object index
+        :type  i_toi:  int
+
+        .. versionadded:: 7.1
         """
         self._wrapper.set_triangulation_object_index(i_toi)
         

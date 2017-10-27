@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -64,6 +63,9 @@ class GXKGRD:
     def clear(self):
         """
         Clears all the parameters in a `GXKGRD <geosoft.gxapi.GXKGRD>` object
+        
+
+        .. versionadded:: 5.0
         """
         self._wrapper.clear()
         
@@ -74,6 +76,12 @@ class GXKGRD:
     def create(cls):
         """
         Create a handle to a Krigrid object
+        
+
+        :returns:    `GXKGRD <geosoft.gxapi.GXKGRD>` Object
+        :rtype:      GXKGRD
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -93,6 +101,14 @@ class GXKGRD:
     def load_parms(self, file):
         """
         Retrieves a Krigrid object's control parameters from a file.
+        
+        :param file:  Name of file to get the parameter settings from
+        :type  file:  str
+
+        :returns:     0 OK, 1 Error.
+        :rtype:       int
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 
@@ -112,6 +128,30 @@ class GXKGRD:
         """
         Executes the Krigrid program, using the input channel and
         output file parameters.
+        
+        :param zchan:         Name of Z Channel to perfrom gridding on
+        :param in_dat:        Handle to source `GXDAT <geosoft.gxapi.GXDAT>` object (from database)
+        :param out_grd_dat:   Handle to output grid file `GXDAT <geosoft.gxapi.GXDAT>`
+        :param out_err_dat:   Handle to output error grid file `GXDAT <geosoft.gxapi.GXDAT>` ((`GXDAT <geosoft.gxapi.GXDAT>`)0) if no error grid required
+        :param in_var_name:   Name of input variogram file
+        :param out_var_name:  Name of output variogram file
+        :param vao:           Flag of variogram only
+        :param vi:            Flag of input variogram
+        :param vo:            Flag of output variogram
+        :type  zchan:         str
+        :type  in_dat:        GXDAT
+        :type  out_grd_dat:   GXDAT
+        :type  out_err_dat:   GXDAT
+        :type  in_var_name:   str
+        :type  out_var_name:  str
+        :type  vao:           int
+        :type  vi:            int
+        :type  vo:            int
+
+        :returns:             0 OK, 1 Error.
+        :rtype:               int
+
+        .. versionadded:: 6.0.1
         """
         ret_val = self._wrapper.run(zchan.encode(), in_dat._wrapper, out_grd_dat._wrapper, out_err_dat._wrapper, in_var_name.encode(), out_var_name.encode(), vao, vi, vo)
         return ret_val
@@ -122,6 +162,32 @@ class GXKGRD:
     def run2(cls, db, x, y, z, ctl, grd, err_grd, in_var, out_var, vao):
         """
         Executes the Krigrid program directly on a database.
+        
+        :param db:       Handle to a database
+        :param x:        Y Channel
+        :param y:        X Channel
+        :param z:        Data channel
+        :param ctl:      KRIGRID control file.
+        :param grd:      (output grid name (not required if variogram analysis only))
+        :param err_grd:  (output error file, "" for none)
+        :param in_var:   (input variogram file, "" for none)
+        :param out_var:  (output variogram file, "" for none)
+        :param vao:      1 if Variogram Analysis Only, other wise 0
+        :type  db:       GXDB
+        :type  x:        str
+        :type  y:        str
+        :type  z:        str
+        :type  ctl:      str
+        :type  grd:      str
+        :type  err_grd:  str
+        :type  in_var:   str
+        :type  out_var:  str
+        :type  vao:      int
+
+        :returns:        0 OK, 1 Error.
+        :rtype:          int
+
+        .. versionadded:: 6.0.1
         """
         ret_val = gxapi_cy.WrapKGRD.run2(GXContext._get_tls_geo(), db._wrapper, x.encode(), y.encode(), z.encode(), ctl.encode(), grd.encode(), err_grd.encode(), in_var.encode(), out_var.encode(), vao)
         return ret_val
@@ -132,6 +198,34 @@ class GXKGRD:
     def run3(cls, db, x, y, z, ctl, grd, err_grd, in_var, out_var, log_file, vao):
         """
         Executes the Krigrid program directly on a database and specifies the log file
+        
+        :param db:        Handle to a database
+        :param x:         Y Channel
+        :param y:         X Channel
+        :param z:         Data channel
+        :param ctl:       KRIGRID control file.
+        :param grd:       (output grid name (not required if variogram analysis only))
+        :param err_grd:   (output error file, "" for none)
+        :param in_var:    (input variogram file, "" for none)
+        :param out_var:   (output variogram file, "" for none)
+        :param log_file:  (log file name, "" for default)
+        :param vao:       1 if Variogram Analysis Only, other wise 0
+        :type  db:        GXDB
+        :type  x:         str
+        :type  y:         str
+        :type  z:         str
+        :type  ctl:       str
+        :type  grd:       str
+        :type  err_grd:   str
+        :type  in_var:    str
+        :type  out_var:   str
+        :type  log_file:  str
+        :type  vao:       int
+
+        :returns:         0 OK, 1 Error.
+        :rtype:           int
+
+        .. versionadded:: 6.4
         """
         ret_val = gxapi_cy.WrapKGRD.run3(GXContext._get_tls_geo(), db._wrapper, x.encode(), y.encode(), z.encode(), ctl.encode(), grd.encode(), err_grd.encode(), in_var.encode(), out_var.encode(), log_file.encode(), vao)
         return ret_val
@@ -143,6 +237,14 @@ class GXKGRD:
         """
         Puts the Krigrid object's control parameters back into
         its control file.
+        
+        :param name:  Name of file to put the parameter settings into
+        :type  name:  str
+
+        :returns:     0 OK, 1 Error.
+        :rtype:       int
+
+        .. versionadded:: 6.0.1
 
         **Note:**
 

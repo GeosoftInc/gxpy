@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -74,6 +73,20 @@ class GXHTTP:
     def create(cls, url, user_name, password, purpose):
         """
         This method creates a connection to an `GXHTTP <geosoft.gxapi.GXHTTP>` server
+        
+        :param url:        URL of the server
+        :param user_name:  User name, "" for none
+        :param password:   Password,  "" for none
+        :param purpose:    Purpose of communication (for user verification)
+        :type  url:        str
+        :type  user_name:  str
+        :type  password:   str
+        :type  purpose:    str
+
+        :returns:          `GXHTTP <geosoft.gxapi.GXHTTP>` Object
+        :rtype:            GXHTTP
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -109,6 +122,15 @@ class GXHTTP:
     def download(self, file, bf, dynamic):
         """
         Download file from the internet to a `GXBF <geosoft.gxapi.GXBF>`.
+        
+        :param file:     File Name on the `GXHTTP <geosoft.gxapi.GXHTTP>` site
+        :param bf:       `GXBF <geosoft.gxapi.GXBF>` in which to place the file
+        :param dynamic:  Dynamic content (0 - no, 1 - yes)
+        :type  file:     str
+        :type  bf:       GXBF
+        :type  dynamic:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -124,6 +146,15 @@ class GXHTTP:
     def silent_download(self, file, bf, dynamic):
         """
         Download file from the internet to a `GXBF <geosoft.gxapi.GXBF>` with no prompt for proxy authentication.
+        
+        :param file:     File Name on the `GXHTTP <geosoft.gxapi.GXHTTP>` site
+        :param bf:       `GXBF <geosoft.gxapi.GXBF>` in which to place the file
+        :param dynamic:  Dynamic content (0 - no, 1 - yes)
+        :type  file:     str
+        :type  bf:       GXBF
+        :type  dynamic:  int
+
+        .. versionadded:: 8.2
 
         **Note:**
 
@@ -139,6 +170,17 @@ class GXHTTP:
     def get(self, cl, method, bf, ret_bf):
         """
         Get data from a server.
+        
+        :param cl:      Http path (file or an ISAPI DLL), no spaces
+        :param method:  Http search string, no spaces
+        :param bf:      Data to send
+        :param ret_bf:  Data returned
+        :type  cl:      str
+        :type  method:  str
+        :type  bf:      GXBF
+        :type  ret_bf:  GXBF
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -157,6 +199,15 @@ class GXHTTP:
     def post(self, cl, method, bf):
         """
         Post data to the server.
+        
+        :param cl:      Http path (file or an ISAPI DLL)
+        :param method:  Http search string, no spaces
+        :param bf:      Data to post
+        :type  cl:      str
+        :type  method:  str
+        :type  bf:      GXBF
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -175,6 +226,13 @@ class GXHTTP:
         """
         Assigns the proxy username and password so that
         user is not prompted when the first download fails
+        
+        :param username:  Username
+        :param password:  Password
+        :type  username:  str
+        :type  password:  str
+
+        .. versionadded:: 7.2
         """
         self._wrapper.set_proxy_credentials(username.encode(), password.encode())
         

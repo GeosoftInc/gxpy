@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -64,6 +63,11 @@ class GXCSYMB:
     def set_angle(self, angle):
         """
         Set the symbol angle.
+        
+        :param angle:  Symbol angle
+        :type  angle:  float
+
+        .. versionadded:: 5.0
         """
         self._wrapper.set_angle(angle)
         
@@ -74,6 +78,11 @@ class GXCSYMB:
     def set_base(self, base):
         """
         Set base value to subtract from Z values.
+        
+        :param base:   Symbol Base
+        :type  base:   float
+
+        .. versionadded:: 5.0
         """
         self._wrapper.set_base(base)
         
@@ -85,6 +94,11 @@ class GXCSYMB:
         """
         Associate symbol edge or fill colors with Z data
         and color transform.
+        
+        :param att:    `CSYMB_COLOR`
+        :type  att:    int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -101,6 +115,11 @@ class GXCSYMB:
     def set_fixed(self, fixed):
         """
         Set symbol sizing to fixed (or proportionate)
+        
+        :param fixed:  TRUE  = Fixed symbol sizing FALSE = Proportionate sizing
+        :type  fixed:  int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.set_fixed(fixed)
         
@@ -111,6 +130,11 @@ class GXCSYMB:
     def set_number(self, number):
         """
         Set the symbol number.
+        
+        :param number:  Symbol number (0x1-0x1ffff)
+        :type  number:  int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -130,6 +154,11 @@ class GXCSYMB:
     def set_scale(self, scale):
         """
         Set the symbol scale.
+        
+        :param scale:  Symbol scale (> 0.0)
+        :type  scale:  float
+
+        .. versionadded:: 5.0
         """
         self._wrapper.set_scale(scale)
         
@@ -140,6 +169,15 @@ class GXCSYMB:
     def add_data(self, vv_x, vv_y, vv_z):
         """
         Add x,y,z data to a color symbol object.
+        
+        :param vv_x:   `GXVV <geosoft.gxapi.GXVV>` for X data
+        :param vv_y:   `GXVV <geosoft.gxapi.GXVV>` for Y data
+        :param vv_z:   `GXVV <geosoft.gxapi.GXVV>` for Z data
+        :type  vv_x:   GXVV
+        :type  vv_y:   GXVV
+        :type  vv_z:   GXVV
+
+        .. versionadded:: 5.0
         """
         self._wrapper.add_data(vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
         
@@ -150,6 +188,14 @@ class GXCSYMB:
     def create(cls, itr):
         """
         Create a `GXCSYMB <geosoft.gxapi.GXCSYMB>`.
+        
+        :param itr:  ZON, `GXAGG <geosoft.gxapi.GXAGG>`, or `GXITR <geosoft.gxapi.GXITR>` file name
+        :type  itr:  str
+
+        :returns:    `GXCSYMB <geosoft.gxapi.GXCSYMB>` handle
+        :rtype:      GXCSYMB
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapCSYMB.create(GXContext._get_tls_geo(), itr.encode())
         return GXCSYMB(ret_val)
@@ -162,6 +208,11 @@ class GXCSYMB:
     def get_itr(self, itr):
         """
         Get the `GXITR <geosoft.gxapi.GXITR>` of the `GXCSYMB <geosoft.gxapi.GXCSYMB>`
+        
+        :param itr:    `GXITR <geosoft.gxapi.GXITR>` object
+        :type  itr:    GXITR
+
+        .. versionadded:: 9.3
         """
         self._wrapper.get_itr(itr._wrapper)
         
@@ -172,6 +223,17 @@ class GXCSYMB:
     def set_font(self, font, geo_font, weight, italic):
         """
         Set the symbol font name.
+        
+        :param font:      Font name
+        :param geo_font:  Geosoft font? (TRUE or FALSE)
+        :param weight:    `MVIEW_FONT_WEIGHT`
+        :param italic:    Italics? (TRUE or FALSE)
+        :type  font:      str
+        :type  geo_font:  int
+        :type  weight:    int
+        :type  italic:    int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.set_font(font.encode(), geo_font, weight, italic)
         
@@ -182,6 +244,13 @@ class GXCSYMB:
     def set_static_col(self, col, att):
         """
         Set a static color for the symbol edge or fill.
+        
+        :param col:    Color value
+        :param att:    `CSYMB_COLOR`
+        :type  col:    int
+        :type  att:    int
+
+        .. versionadded:: 5.0
 
         **Note:**
 

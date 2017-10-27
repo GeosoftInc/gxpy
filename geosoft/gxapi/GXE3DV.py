@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXMVIEW import GXMVIEW
@@ -62,6 +61,12 @@ class GXE3DV:
     def get_data_view(self):
         """
         Get the current data (3D) `GXMVIEW <geosoft.gxapi.GXMVIEW>`
+        
+
+        :returns:      `GXMVIEW <geosoft.gxapi.GXMVIEW>` object
+        :rtype:        GXMVIEW
+
+        .. versionadded:: 9.3
         """
         ret_val = self._wrapper.get_data_view()
         return GXMVIEW(ret_val)
@@ -72,6 +77,12 @@ class GXE3DV:
     def get_base_view(self):
         """
         Get the current Base `GXMVIEW <geosoft.gxapi.GXMVIEW>` (used to draw 2D legends for groups)
+        
+
+        :returns:      `GXMVIEW <geosoft.gxapi.GXMVIEW>` object
+        :rtype:        GXMVIEW
+
+        .. versionadded:: 9.3
         """
         ret_val = self._wrapper.get_base_view()
         return GXMVIEW(ret_val)

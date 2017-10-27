@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -62,6 +61,15 @@ class GXVAU:
     def prune(cls, v_ap, vv_r, o):
         """
         Prune values from a `GXVA <geosoft.gxapi.GXVA>` based on reference `GXVA <geosoft.gxapi.GXVA>`
+        
+        :param v_ap:  `GXVA <geosoft.gxapi.GXVA>` to prune
+        :param vv_r:  Reference `GXVV <geosoft.gxapi.GXVV>`
+        :param o:     `VAU_PRUNE`
+        :type  v_ap:  GXVA
+        :type  vv_r:  GXVV
+        :type  o:     int
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -78,6 +86,17 @@ class GXVAU:
     def total_vector(cls, xva, yva, zva, tva):
         """
         Calculate total vector for X,Y and Z components
+        
+        :param xva:  X Component object
+        :param yva:  Y Component object
+        :param zva:  Z Component object
+        :param tva:  Returned total vector `GXVA <geosoft.gxapi.GXVA>` object
+        :type  xva:  GXVA
+        :type  yva:  GXVA
+        :type  zva:  GXVA
+        :type  tva:  GXVA
+
+        .. versionadded:: 5.0
         """
         gxapi_cy.WrapVAU.total_vector(GXContext._get_tls_geo(), xva._wrapper, yva._wrapper, zva._wrapper, tva._wrapper)
         

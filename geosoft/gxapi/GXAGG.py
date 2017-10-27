@@ -1,7 +1,6 @@
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -64,6 +63,11 @@ class GXAGG:
     def set_model(self, model):
         """
         Sets the Color Model
+        
+        :param model:  `AGG_MODEL`
+        :type  model:  int
+
+        .. versionadded:: 5.0
         """
         self._wrapper.set_model(model)
         
@@ -74,6 +78,11 @@ class GXAGG:
     def change_brightness(self, brt):
         """
         Change the brightness.
+        
+        :param brt:  -1.0 - black; 0.0 no change; 1.0 white
+        :type  brt:  float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -90,6 +99,12 @@ class GXAGG:
     def create(cls):
         """
         Create an aggregate
+        
+
+        :returns:    `GXAGG <geosoft.gxapi.GXAGG>` object
+        :rtype:      GXAGG
+
+        .. versionadded:: 5.0
         """
         ret_val = gxapi_cy.WrapAGG.create(GXContext._get_tls_geo())
         return GXAGG(ret_val)
@@ -100,6 +115,16 @@ class GXAGG:
     def create_map(cls, map, name):
         """
         Create `GXAGG <geosoft.gxapi.GXAGG>` from Map with Group name.
+        
+        :param map:   `GXMAP <geosoft.gxapi.GXMAP>` on which to place the view
+        :param name:  `GXAGG <geosoft.gxapi.GXAGG>` group name
+        :type  map:   GXMAP
+        :type  name:  str
+
+        :returns:     `GXAGG <geosoft.gxapi.GXAGG>` object
+        :rtype:       GXAGG
+
+        .. versionadded:: 5.0.5
 
         **Note:**
 
@@ -119,6 +144,12 @@ class GXAGG:
     def get_layer_itr(self, layer, itr):
         """
         Get the `GXITR <geosoft.gxapi.GXITR>` of a layer
+        
+        :param layer:  Layer number
+        :type  layer:  int
+        :type  itr:    GXITR
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -138,6 +169,14 @@ class GXAGG:
     def list_img(self, gvv):
         """
         Lists file names of all the IMGs inside of the `GXAGG <geosoft.gxapi.GXAGG>`.
+        
+        :param gvv:  `GXVV <geosoft.gxapi.GXVV>` of type -`STR_FILE <geosoft.gxapi.STR_FILE>`
+        :type  gvv:  GXVV
+
+        :returns:    The number of IMGs.
+        :rtype:      int
+
+        .. versionadded:: 5.0.6
 
         **Note:**
 
@@ -152,6 +191,12 @@ class GXAGG:
     def num_layers(self):
         """
         Get the number of layers in an aggregate.
+        
+
+        :returns:    The number of layers in an aggregate.
+        :rtype:      int
+
+        .. versionadded:: 5.0
         """
         ret_val = self._wrapper.num_layers()
         return ret_val
@@ -162,6 +207,17 @@ class GXAGG:
     def layer_img(self, name, zone, color, cont):
         """
         Add an image as a layer in an aggregate.
+        
+        :param name:   Grid name
+        :param zone:   `AGG_LAYER_ZONE` transform to use if color table has none defined.
+        :param color:  Color table name, "" for default This can be a .TBL .ZON .`GXITR <geosoft.gxapi.GXITR>` or .`GXAGG <geosoft.gxapi.GXAGG>` file .TBL is the default
+        :param cont:   Color contour interval or `rDUMMY <geosoft.gxapi.rDUMMY>` for default
+        :type  name:   str
+        :type  zone:   int
+        :type  color:  str
+        :type  cont:   float
+
+        .. versionadded:: 5.0
 
         .. seealso::
 
@@ -176,6 +232,21 @@ class GXAGG:
     def layer_img_ex(self, name, zone, color, min, max, cont):
         """
         Add an image as a layer in an aggregate.
+        
+        :param name:   Grid name
+        :param zone:   `AGG_LAYER_ZONE` transform to use if color table has none defined.
+        :param color:  Color table name, "" for default This can be a .TBL .ZON .`GXITR <geosoft.gxapi.GXITR>` or .`GXAGG <geosoft.gxapi.GXAGG>` file .TBL is the default
+        :param min:    Minimum value or `rDUMMY <geosoft.gxapi.rDUMMY>` for default
+        :param max:    Maximum value or `rDUMMY <geosoft.gxapi.rDUMMY>` for default
+        :param cont:   Color contour interval or `rDUMMY <geosoft.gxapi.rDUMMY>` for default
+        :type  name:   str
+        :type  zone:   int
+        :type  color:  str
+        :type  min:    float
+        :type  max:    float
+        :type  cont:   float
+
+        .. versionadded:: 8.2
 
         .. seealso::
 
@@ -190,6 +261,19 @@ class GXAGG:
     def layer_shade_img(self, name, color, inc, dec, scl):
         """
         Add a shaded image as a layer in an aggregate.
+        
+        :param name:   Grid name
+        :param color:  Color table name, "" for default
+        :param inc:    Inclination
+        :param dec:    Declination
+        :param scl:    Scale (`rDUMMY <geosoft.gxapi.rDUMMY>` for default, returns value used)
+        :type  name:   str
+        :type  color:  str
+        :type  inc:    float
+        :type  dec:    float
+        :type  scl:    float_ref
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -209,6 +293,10 @@ class GXAGG:
     def get_brightness(self):
         """
         Get the brightness setting of the `GXAGG <geosoft.gxapi.GXAGG>`
+        
+        :rtype:      float
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -236,6 +324,12 @@ class GXAGG:
     def set_layer_itr(self, layer, itr):
         """
         Set the `GXITR <geosoft.gxapi.GXITR>` of a layer
+        
+        :param layer:  Layer number
+        :type  layer:  int
+        :type  itr:    GXITR
+
+        .. versionadded:: 5.0
 
         **Note:**
 
@@ -255,6 +349,11 @@ class GXAGG:
     def set_render_method(self, method):
         """
         Sets the Rendering Method
+        
+        :param method:  `AGG_RENDER`
+        :type  method:  int
+
+        .. versionadded:: 5.1.1
         """
         self._wrapper.set_render_method(method)
         
