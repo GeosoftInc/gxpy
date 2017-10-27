@@ -19,7 +19,7 @@ class GXARCDB:
     """
     GXARCDB class.
 
-    The `GXARCDB` class is used in ArcGIS to access table contents from
+    The `GXARCDB <geosoft.gxapi.GXARCDB>` class is used in ArcGIS to access table contents from
     data sources and layers.
     """
 
@@ -62,7 +62,7 @@ class GXARCDB:
 
     def create_dat(self, x_field, y_field, d_field):
         """
-        Create a handle to a ARCGIS table `GXDAT` 2D object
+        Create a handle to a ARCGIS table `GXDAT <geosoft.gxapi.GXDAT>` 2D object
         """
         ret_val = self._wrapper.create_dat(x_field.encode(), y_field.encode(), d_field.encode())
         return GXDAT(ret_val)
@@ -72,7 +72,7 @@ class GXARCDB:
 
     def create_dat_3d(self, x_field, y_field, z_field, d_field):
         """
-        Create a handle to a ARCGIS table `GXDAT` 3D object
+        Create a handle to a ARCGIS table `GXDAT <geosoft.gxapi.GXDAT>` 3D object
         """
         ret_val = self._wrapper.create_dat_3d(x_field.encode(), y_field.encode(), z_field.encode(), d_field.encode())
         return GXDAT(ret_val)
@@ -92,7 +92,7 @@ class GXARCDB:
 
     def export_to_db(self, db, temp, line):
         """
-        Export data from an `GXARCDB` table into a group in a Geosoft GDB using a template.
+        Export data from an `GXARCDB <geosoft.gxapi.GXARCDB>` table into a group in a Geosoft GDB using a template.
 
         **Note:**
 
@@ -109,7 +109,7 @@ class GXARCDB:
 
     def field_lst(self, lst):
         """
-        Place the list of field names in a `GXLST`.
+        Place the list of field names in a `GXLST <geosoft.gxapi.GXLST>`.
 
         **Note:**
 
@@ -126,7 +126,7 @@ class GXARCDB:
         """
         This method attempts to make a table handle from an IUnknown pointer
         
-        Returns				 `GXARCDB` Handle, `ARCDB_NULL` if not successful
+        Returns				 `GXARCDB <geosoft.gxapi.GXARCDB>` Handle, `ARCDB_NULL <geosoft.gxapi.ARCDB_NULL>` if not successful
         """
         ret_val = gxapi_cy.WrapARCDB.from_i_unknown(GXContext._get_tls_geo(), unknown)
         return GXARCDB(ret_val)
@@ -140,7 +140,7 @@ class GXARCDB:
 
         **Note:**
 
-        If the table does not have an `GXIPJ`, the `GXIPJ` that is
+        If the table does not have an `GXIPJ <geosoft.gxapi.GXIPJ>`, the `GXIPJ <geosoft.gxapi.GXIPJ>` that is
         returned will have an unknown projection.
         """
         self._wrapper.get_ipj(ipj._wrapper)
@@ -182,7 +182,7 @@ class GXARCDB:
     @classmethod
     def sel_tbl_ex_gui(cls, table_type):
         """
-        Select table `GXGUI` with table type.
+        Select table `GXGUI <geosoft.gxapi.GXGUI>` with table type.
         """
         ret_val, table_type.value = gxapi_cy.WrapARCDB.sel_tbl_ex_gui(GXContext._get_tls_geo(), table_type.value)
         return GXARCDB(ret_val)
@@ -192,11 +192,11 @@ class GXARCDB:
     @classmethod
     def sel_tbl_gui(cls):
         """
-        Select table `GXGUI`.
+        Select table `GXGUI <geosoft.gxapi.GXGUI>`.
 
         **Note:**
 
-        Terminates with Cancel on cancel, returns `ARCDB_NULL` if there are no valid tables in current document.
+        Terminates with Cancel on cancel, returns `ARCDB_NULL <geosoft.gxapi.ARCDB_NULL>` if there are no valid tables in current document.
         """
         ret_val = gxapi_cy.WrapARCDB.sel_tbl_gui(GXContext._get_tls_geo())
         return GXARCDB(ret_val)

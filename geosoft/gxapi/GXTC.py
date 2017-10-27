@@ -18,11 +18,11 @@ class GXTC:
     """
     GXTC class.
 
-    The `GXTC` object is used in gravitational modelling to create
+    The `GXTC <geosoft.gxapi.GXTC>` object is used in gravitational modelling to create
     a terrain correction grid from a topography grid. This is
-    accomplished with a call first to `grregter`, which determines
+    accomplished with a call first to `grregter <geosoft.gxapi.GXTC.grregter>`, which determines
     the terrain correction from an input topography grid, then
-    to `grterain`, which calculates the actual corrections at
+    to `grterain <geosoft.gxapi.GXTC.grterain>`, which calculates the actual corrections at
     the input positions.
     """
 

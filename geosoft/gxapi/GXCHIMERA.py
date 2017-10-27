@@ -18,7 +18,7 @@ class GXCHIMERA:
     """
     GXCHIMERA class.
 
-    `GXCHIMERA` GX function library.
+    `GXCHIMERA <geosoft.gxapi.GXCHIMERA>` GX function library.
     """
 
     def __enter__(self):
@@ -64,9 +64,9 @@ class GXCHIMERA:
 
         **Note:**
 
-        The number of channels is taken from the Data handles `GXVV`.
+        The number of channels is taken from the Data handles `GXVV <geosoft.gxapi.GXVV>`.
         Plots a bar plot with the center of the "X" axis at the symbol location.
-        See the note on offset symbols in `rose_plot`
+        See the note on offset symbols in `rose_plot <geosoft.gxapi.GXCHIMERA.rose_plot>`
         """
         gxapi_cy.WrapCHIMERA.bar_plot(GXContext._get_tls_geo(), mview._wrapper, data_group.encode(), offset_group.encode(), xvv._wrapper, yvv._wrapper, dvv._wrapper, cvv._wrapper, col, offset, offset_size, width)
         
@@ -102,7 +102,7 @@ class GXCHIMERA:
 
         **Note:**
 
-        Same as `categorize_by_value`, but if the
+        Same as `categorize_by_value <geosoft.gxapi.GXCHIMERA.categorize_by_value>`, but if the
         input value is less than the detection limit,
         the output value is set to zero.
         """
@@ -124,7 +124,7 @@ class GXCHIMERA:
             are replaced by -0.5*value, and detection limit is ignored.
         
         2. If not auto-converting negatives, and the detection limit is not
-           `rDUMMY`, then values less than the detection limit are converted to
+           `rDUMMY <geosoft.gxapi.rDUMMY>`, then values less than the detection limit are converted to
            one-half the detection limit.
         """
         gxapi_cy.WrapCHIMERA.clip_to_detect_limit(GXContext._get_tls_geo(), vv._wrapper, det_limit, conv)
@@ -188,7 +188,7 @@ class GXCHIMERA:
         **Note:**
 
         Input a channel expression. Units for individual channels
-        are stored in the input INI. Returns a `GXVV` for the given line
+        are stored in the input INI. Returns a `GXVV <geosoft.gxapi.GXVV>` for the given line
         with the calculated expression values.
         """
         gxapi_cy.WrapCHIMERA.get_expression_data_vv(GXContext._get_tls_geo(), db._wrapper, line, stage.encode(), exp.encode(), ini.encode(), gvv._wrapper)
@@ -208,7 +208,7 @@ class GXCHIMERA:
         Book-keeping VVs returned let you easily
         write back results to new channels in the
         correct locations.
-        Set the "Dummy Row" `GXVV` to 1 if you wish to
+        Set the "Dummy Row" `GXVV <geosoft.gxapi.GXVV>` to 1 if you wish to
         remove any row where a value for the corresponding
         channel is a dummy.
         
@@ -286,8 +286,8 @@ class GXCHIMERA:
         **Note:**
 
         The database should be a currently open database.
-        This function supercedes `GXEDB.launch_histogram`, (which now
-        just gets the name of the `GXEDB` and calls this function).
+        This function supercedes `GXEDB.launch_histogram <geosoft.gxapi.GXEDB.launch_histogram>`, (which now
+        just gets the name of the `GXEDB <geosoft.gxapi.GXEDB>` and calls this function).
         """
         gxapi_cy.WrapCHIMERA.launch_histogram(GXContext._get_tls_geo(), db.encode(), chan.encode())
         
@@ -324,8 +324,8 @@ class GXCHIMERA:
         SCATTER.MASK      name of channel to use for mask
         
         The database should be a currently open database.
-        This function supercedes `GXEDB.launch_scatter`, (which now
-        just gets the name of the `GXEDB` and calls this function).
+        This function supercedes `GXEDB.launch_scatter <geosoft.gxapi.GXEDB.launch_scatter>`, (which now
+        just gets the name of the `GXEDB <geosoft.gxapi.GXEDB>` and calls this function).
         """
         gxapi_cy.WrapCHIMERA.launch_scatter(GXContext._get_tls_geo(), db.encode())
         
@@ -358,17 +358,17 @@ class GXCHIMERA:
     @classmethod
     def mask_chan_lst(cls, db, lst):
         """
-        Load a `GXLST` with mask channels.
+        Load a `GXLST <geosoft.gxapi.GXLST>` with mask channels.
 
         **Note:**
 
-        Loads a `GXLST` with all channels with CLASS "MASK", as well
+        Loads a `GXLST <geosoft.gxapi.GXLST>` with all channels with CLASS "MASK", as well
         as all channels containing the string "MASK", as long
         as the CLASS for these channels is not set to something
         other than "" or "MASK".
         
-        This function has been duplicated by `GXDB.mask_chan_lst`, which
-        is safe to use in applications which do not have `GXCHIMERA` loaded.
+        This function has been duplicated by `GXDB.mask_chan_lst <geosoft.gxapi.GXDB.mask_chan_lst>`, which
+        is safe to use in applications which do not have `GXCHIMERA <geosoft.gxapi.GXCHIMERA>` loaded.
         """
         gxapi_cy.WrapCHIMERA.mask_chan_lst(GXContext._get_tls_geo(), db._wrapper, lst._wrapper)
         
@@ -382,13 +382,13 @@ class GXCHIMERA:
 
         **Note:**
 
-        Loads a `GXLST` with all channels in the preferred order:
+        Loads a `GXLST <geosoft.gxapi.GXLST>` with all channels in the preferred order:
         
         First:  Sample, E, N, assay channels,
         Middle: Data from survey (other channels),
         Last:   Duplicate, Standard, Chemmask (and other masks), weight, lab, batch
         
-        If the input `GXLST` object has values, it is used as the channel `GXLST`,
+        If the input `GXLST <geosoft.gxapi.GXLST>` object has values, it is used as the channel `GXLST <geosoft.gxapi.GXLST>`,
         otherwise, get all the database channels. (This allows you to pass in
         the currently displayed channels and only reload those).
         """
@@ -404,10 +404,10 @@ class GXCHIMERA:
 
         **Note:**
 
-        The number of channels is taken from the Data handles `GXVV`.
-        The values in each data `GXVV` are summed and the pie arc is
+        The number of channels is taken from the Data handles `GXVV <geosoft.gxapi.GXVV>`.
+        The values in each data `GXVV <geosoft.gxapi.GXVV>` are summed and the pie arc is
         is given by the percent contribution of each constituent.
-        See the note on offset symbols in `rose_plot`
+        See the note on offset symbols in `rose_plot <geosoft.gxapi.GXCHIMERA.rose_plot>`
         """
         gxapi_cy.WrapCHIMERA.pie_plot(GXContext._get_tls_geo(), mview._wrapper, data_group.encode(), offset_group.encode(), xvv._wrapper, yvv._wrapper, dvv._wrapper, cvv._wrapper, col, offset, offset_size, radius)
         
@@ -417,13 +417,13 @@ class GXCHIMERA:
     @classmethod
     def pie_plot2(cls, mview, data_group, offset_group, xvv, yvv, dvv, cvv, col, offset, offset_size, radius, start_angle):
         """
-        Same as `pie_plot`, with a starting angle.
+        Same as `pie_plot <geosoft.gxapi.GXCHIMERA.pie_plot>`, with a starting angle.
 
         **Note:**
 
         The starting angle is the location of the edge of the first pie
         slice, counted in degrees counter-clockwise from horizontal
-        (3 o'clock). Zero degrees gives the same plot as `pie_plot`.
+        (3 o'clock). Zero degrees gives the same plot as `pie_plot <geosoft.gxapi.GXCHIMERA.pie_plot>`.
         """
         gxapi_cy.WrapCHIMERA.pie_plot2(GXContext._get_tls_geo(), mview._wrapper, data_group.encode(), offset_group.encode(), xvv._wrapper, yvv._wrapper, dvv._wrapper, cvv._wrapper, col, offset, offset_size, radius, start_angle)
         
@@ -452,7 +452,7 @@ class GXCHIMERA:
         **Note:**
 
         If the input string is not an element symbol (elements in the range
-        1-92, "H" to "U"), then returns a dummy (`GS_R8DM`).
+        1-92, "H" to "U"), then returns a dummy (`GS_R8DM <geosoft.gxapi.GS_R8DM>`).
         """
         ret_val = gxapi_cy.WrapCHIMERA.atomic_weight(GXContext._get_tls_geo(), element.encode())
         return ret_val
@@ -466,8 +466,8 @@ class GXCHIMERA:
 
         **Note:**
 
-        The number of channels is taken from the Data handles `GXVV`.
-        The values in each data `GXVV` give the radius, in view units,
+        The number of channels is taken from the Data handles `GXVV <geosoft.gxapi.GXVV>`.
+        The values in each data `GXVV <geosoft.gxapi.GXVV>` give the radius, in view units,
         of the sector arc to plots. Values <=0 or dummies are not
         plotted.
         
@@ -488,13 +488,13 @@ class GXCHIMERA:
     @classmethod
     def rose_plot2(cls, mview, data_group, offset_group, xvv, yvv, dvv, cvv, col, offset, offset_size, start_angle):
         """
-        Same as `rose_plot`, with a starting angle.
+        Same as `rose_plot <geosoft.gxapi.GXCHIMERA.rose_plot>`, with a starting angle.
 
         **Note:**
 
         The starting angle is the location of the edge of the first pie
         slice, counted in degrees counter-clockwise from horizontal
-        (3 o'clock). Zero degrees gives the same plot as `rose_plot`.
+        (3 o'clock). Zero degrees gives the same plot as `rose_plot <geosoft.gxapi.GXCHIMERA.rose_plot>`.
         """
         gxapi_cy.WrapCHIMERA.rose_plot2(GXContext._get_tls_geo(), mview._wrapper, data_group.encode(), offset_group.encode(), xvv._wrapper, yvv._wrapper, dvv._wrapper, cvv._wrapper, col, offset, offset_size, start_angle)
         
@@ -580,9 +580,9 @@ class GXCHIMERA:
         
         Values NOT in the data (missing indices) will
         be initialized to dummy if the channel is new,
-        or if the value in the last `GXVV` below is set to 1.
+        or if the value in the last `GXVV <geosoft.gxapi.GXVV>` below is set to 1.
         
-        New channel types will be set using the data `GXVV` type.
+        New channel types will be set using the data `GXVV <geosoft.gxapi.GXVV>` type.
         Any metadata (CLASS, display formats) should be set separately.
         """
         gxapi_cy.WrapCHIMERA.set_lithogeochem_data(GXContext._get_tls_geo(), db._wrapper, lst._wrapper, vv_d._wrapper, vv_line._wrapper, vv_n._wrapper, vv_used._wrapper, vv_index._wrapper, vv_fids._wrapper, vv_fidi._wrapper, vv_dummy._wrapper)
@@ -597,9 +597,9 @@ class GXCHIMERA:
 
         **Note:**
 
-        The number of channels is taken from the Data handles `GXVV`.
+        The number of channels is taken from the Data handles `GXVV <geosoft.gxapi.GXVV>`.
         Plots a bar plot with the center of the "X" axis at the symbol location.
-        See the note on offset symbols in `rose_plot`
+        See the note on offset symbols in `rose_plot <geosoft.gxapi.GXCHIMERA.rose_plot>`
         """
         gxapi_cy.WrapCHIMERA.stacked_bar_plot(GXContext._get_tls_geo(), mview._wrapper, data_group.encode(), offset_group.encode(), xvv._wrapper, yvv._wrapper, dvv._wrapper, cvv._wrapper, col, offset, offset_size, width)
         
@@ -613,7 +613,7 @@ class GXCHIMERA:
 
         **Note:**
 
-        If the tolerance is `rDUMMY`, then the minimum and maximum
+        If the tolerance is `rDUMMY <geosoft.gxapi.rDUMMY>`, then the minimum and maximum
         values are used, and must be specified.
         """
         gxapi_cy.WrapCHIMERA.standard(GXContext._get_tls_geo(), mview._wrapper, vv._wrapper, old, tol, min, max, title.encode(), unit.encode(), x0, y0, xs, ys)
@@ -628,7 +628,7 @@ class GXCHIMERA:
 
         **Note:**
 
-        Same as `standard` but plot in a new view.
+        Same as `standard <geosoft.gxapi.GXCHIMERA.standard>` but plot in a new view.
         """
         min_y.value, max_y.value = gxapi_cy.WrapCHIMERA.standard_view(GXContext._get_tls_geo(), map._wrapper, view.encode(), group.encode(), ipj._wrapper, vvy._wrapper, old, tol, min, max, title.encode(), unit.encode(), xs, vvx._wrapper, vv_line._wrapper, vv_fid._wrapper, db._wrapper, min_y.value, max_y.value)
         
@@ -642,7 +642,7 @@ class GXCHIMERA:
 
         **Note:**
 
-        The mask channel `GXVV` is used for plotting precedence; those points with
+        The mask channel `GXVV <geosoft.gxapi.GXVV>` is used for plotting precedence; those points with
         mask = dummy are plotted first, then overwritten with the non-masked
         values, so you don't get "good" points being covered up by masked values.
         The view scaling is not altered with any projection. The base view

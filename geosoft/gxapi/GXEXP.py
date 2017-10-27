@@ -18,11 +18,11 @@ class GXEXP:
     """
     GXEXP class.
 
-    `GXEXP` objects are created from text strings that contain
+    `GXEXP <geosoft.gxapi.GXEXP>` objects are created from text strings that contain
     C-like math to be applied to channels in a database.
-    It is used with the `GXDU.math` function (see `GXDU`). See also
-    `GXIEXP` for applying math expressions to images (grids).
-    See also `GXDU.math` applies expressions to the database
+    It is used with the `GXDU.math <geosoft.gxapi.GXDU.math>` function (see `GXDU <geosoft.gxapi.GXDU>`). See also
+    `GXIEXP <geosoft.gxapi.GXIEXP>` for applying math expressions to images (grids).
+    See also `GXDU.math <geosoft.gxapi.GXDU.math>` applies expressions to the database
     """
 
     def __enter__(self):
@@ -64,7 +64,7 @@ class GXEXP:
     @classmethod
     def create(cls, db, formula, max_len):
         """
-        This method creates an `GXEXP` object.
+        This method creates an `GXEXP <geosoft.gxapi.GXEXP>` object.
 
         **Note:**
 
@@ -90,7 +90,7 @@ class GXEXP:
         
            ``$``
              prefix to a local GX variable name.  Such names will be
-             evaluated to the variable value at the time `create`
+             evaluated to the variable value at the time `create <geosoft.gxapi.GXEXP.create>`
              is called.
         
         All other tokens are assumed to be channel names.
@@ -103,7 +103,7 @@ class GXEXP:
     @classmethod
     def create_file(cls, db, file):
         """
-        This method creates an `GXEXP` object from a file
+        This method creates an `GXEXP <geosoft.gxapi.GXEXP>` object from a file
         """
         ret_val = gxapi_cy.WrapEXP.create_file(GXContext._get_tls_geo(), db._wrapper, file.encode())
         return GXEXP(ret_val)

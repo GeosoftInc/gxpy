@@ -18,7 +18,7 @@ class GXPJ:
     """
     GXPJ class.
 
-    The `GXPJ` object is created from two `GXIPJ` objects,
+    The `GXPJ <geosoft.gxapi.GXPJ>` object is created from two `GXIPJ <geosoft.gxapi.GXIPJ>` objects,
     and is used for converting data in an OASIS database
     or map object from one map coordinate (projection)
     system to another.
@@ -68,7 +68,7 @@ class GXPJ:
         **Note:**
 
         A rectangular area from (MinX, MinY) to (MaxX, MaxY)
-        is projected throught the `GXPJ`. The resulting (non-rectangular)
+        is projected throught the `GXPJ <geosoft.gxapi.GXPJ>`. The resulting (non-rectangular)
         area is then digitized along its edges, then thinned to
         remove near-collinear points. The thinning is done to any
         point whose neighbors subtend an angle greater than
@@ -87,7 +87,7 @@ class GXPJ:
 
         **Note:**
 
-        This function is equivalent to `GXVV.project`.
+        This function is equivalent to `GXVV.project <geosoft.gxapi.GXVV.project>`.
         """
         self._wrapper.convert_vv(vv_x._wrapper, vv_y._wrapper)
         
@@ -101,7 +101,7 @@ class GXPJ:
 
         **Note:**
 
-        This function is equivalent to `GXVV.project_3d`.
+        This function is equivalent to `GXVV.project_3d <geosoft.gxapi.GXVV.project_3d>`.
         """
         self._wrapper.convert_vv3(vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
         
@@ -127,11 +127,11 @@ class GXPJ:
 
         This function is used (for instance) when projecting voxel model locations
         where the user expects that the vertical position will not change. The
-        regular `convert_xyz` may result in shifts of hundreds, even a thousand
+        regular `convert_xyz <geosoft.gxapi.GXPJ.convert_xyz>` may result in shifts of hundreds, even a thousand
         meters in case where you are going from the geoid to an ellipsoid.
         The value of Z can have an important effect on the accuracy of the results, as
-        the normal `convert_xy` assumes a value of Z=0 internally and calls
-        `convert_xyz`.
+        the normal `convert_xy <geosoft.gxapi.GXPJ.convert_xy>` assumes a value of Z=0 internally and calls
+        `convert_xyz <geosoft.gxapi.GXPJ.convert_xyz>`.
         """
         x.value, y.value = self._wrapper.convert_xy_from_xyz(x.value, y.value, z)
         
@@ -167,7 +167,7 @@ class GXPJ:
 
         If converting to/from long/lat in the natural coordinate
         system of the source/target, only the long/lat system
-        can be passed as (`GXIPJ`)0.
+        can be passed as (`GXIPJ <geosoft.gxapi.GXIPJ>`)0.
         """
         ret_val = gxapi_cy.WrapPJ.create_ipj(GXContext._get_tls_geo(), ip_jin._wrapper, ip_jout._wrapper)
         return GXPJ(ret_val)
@@ -177,12 +177,12 @@ class GXPJ:
     @classmethod
     def create_rectified(cls, lon, lat, x, y, rot, scl, dir):
         """
-        Create a rectified `GXPJ` from lon,lat,rotation
+        Create a rectified `GXPJ <geosoft.gxapi.GXPJ>` from lon,lat,rotation
 
         **Note:**
 
         Given an X,Y coordinate system, the lat/lon origin and
-        angle of the coordinate system, this will create a `GXPJ`
+        angle of the coordinate system, this will create a `GXPJ <geosoft.gxapi.GXPJ>`
         to convert between X,Y coordinates and Lon,Lat.
         The Lon/Lat is determined using a Transverse Mercator
         projection with central meridian through the center
@@ -212,7 +212,7 @@ class GXPJ:
         be in a file with extension .ll2 in the \\etc directory.  The geoid is the
         name of the geoid model which will be in a grid file with extension .grd
         in the \\etc directory.  If the geoid model is missing, this method will
-        return `PJ_ELEVATION_NONE` and elevation coordinates will not be changed.
+        return `PJ_ELEVATION_NONE <geosoft.gxapi.PJ_ELEVATION_NONE>` and elevation coordinates will not be changed.
         """
         ret_val = self._wrapper.elevation()
         return ret_val
@@ -247,7 +247,7 @@ class GXPJ:
         **Note:**
 
         A rectangular area from (dMinX, dMinY) to (dMaxX, dMaxY)
-        is projected throught the `GXPJ`. The resulting region area is
+        is projected throught the `GXPJ <geosoft.gxapi.GXPJ>`. The resulting region area is
         then digitized along its edges and a new bounding rectangle
         is computed.  If there is a lot of curve through the
         projection the resulting bounding region may be slightly
@@ -265,7 +265,7 @@ class GXPJ:
 
         **Note:**
 
-        This is the same as `project_bounding_rectangle` except that the bounding
+        This is the same as `project_bounding_rectangle <geosoft.gxapi.GXPJ.project_bounding_rectangle>` except that the bounding
         rectangle will be limited to an area within which the projection can be
         performed to an accuracy better than the specified error tolerance.
         """
@@ -298,7 +298,7 @@ class GXPJ:
 
         **Note:**
 
-        This is the same as `project_bounding_rectangle_res` except that the bounding
+        This is the same as `project_bounding_rectangle_res <geosoft.gxapi.GXPJ.project_bounding_rectangle_res>` except that the bounding
         rectangle will be limited to an area within which the projection can be
         performed to an accuracy better than the specified error tolerance.
         """
@@ -321,7 +321,7 @@ class GXPJ:
 
         .. seealso::
 
-            `project_bounding_rectangle`.
+            `project_bounding_rectangle <geosoft.gxapi.GXPJ.project_bounding_rectangle>`.
         """
         min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.project_limited_bounding_rectangle(min_xl, min_yl, max_xl, max_yl, min_x.value, min_y.value, max_x.value, max_y.value)
         
@@ -331,11 +331,11 @@ class GXPJ:
 
     def setup_ldt(self):
         """
-        Setup the `GXPJ` with LDT check.
+        Setup the `GXPJ <geosoft.gxapi.GXPJ>` with LDT check.
 
         **Note:**
 
-        By default, a `GXPJ` on the same datum will not apply a LDT,
+        By default, a `GXPJ <geosoft.gxapi.GXPJ>` on the same datum will not apply a LDT,
         is intended for transformations between datums.  However,
         in some instances you might want to convert between LDTs on
         the same datum, such as when you have two sets of coordinates

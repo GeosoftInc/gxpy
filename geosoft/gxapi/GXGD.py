@@ -19,7 +19,7 @@ class GXGD:
     GXGD class.
 
     This class provides access to Geosoft grid files using an old interface.
-    Only the `GXDU.sample_gd` function uses this class.  Use the `GXIMG` class
+    Only the `GXDU.sample_gd <geosoft.gxapi.GXDU.sample_gd>` function uses this class.  Use the `GXIMG <geosoft.gxapi.GXIMG>` class
     instead.
     """
 
@@ -62,7 +62,7 @@ class GXGD:
     @classmethod
     def create(cls, name, type):
         """
-        This method creates a `GXGD` object.
+        This method creates a `GXGD <geosoft.gxapi.GXGD>` object.
         """
         ret_val = gxapi_cy.WrapGD.create(GXContext._get_tls_geo(), name.encode(), type)
         return GXGD(ret_val)

@@ -18,20 +18,20 @@ class GXIPJ:
     """
     GXIPJ class.
 
-    The `GXIPJ` class describes a single spatial reference in the world,
+    The `GXIPJ <geosoft.gxapi.GXIPJ>` class describes a single spatial reference in the world,
     defined under a coordinate system, an orientation,
     and a warp (which can be used to distort the projected object
     to a particular shape or boundary).
 
     **Note:**
 
-    `GXIPJ` objects may be attached to channels or views. Two IPJs taken
-    together are used to create a `GXPJ` object, which allows for the
+    `GXIPJ <geosoft.gxapi.GXIPJ>` objects may be attached to channels or views. Two IPJs taken
+    together are used to create a `GXPJ <geosoft.gxapi.GXPJ>` object, which allows for the
     conversion of positions from one projection to the other.
-    See also the `GXLL2` class, which creates Datum correction lookups.
+    See also the `GXLL2 <geosoft.gxapi.GXLL2>` class, which creates Datum correction lookups.
     
-    See also          `GXPJ`    Converts coordinates between projections
-    `GXLL2`   Creates Datum correction lookups.
+    See also          `GXPJ <geosoft.gxapi.GXPJ>`    Converts coordinates between projections
+    `GXLL2 <geosoft.gxapi.GXLL2>`   Creates Datum correction lookups.
     """
 
     def __enter__(self):
@@ -73,7 +73,7 @@ class GXIPJ:
 
     def clear_warp(self):
         """
-        Clear warp parameters (if any) from an `GXIPJ`.
+        Clear warp parameters (if any) from an `GXIPJ <geosoft.gxapi.GXIPJ>`.
         """
         self._wrapper.clear_warp()
         
@@ -83,11 +83,11 @@ class GXIPJ:
 
     def make_geographic(self):
         """
-        Remove a projected coordinate system from an `GXIPJ`
+        Remove a projected coordinate system from an `GXIPJ <geosoft.gxapi.GXIPJ>`
 
         **Note:**
 
-        This function does nothing if the `GXIPJ` is not a projected coordinate system.
+        This function does nothing if the `GXIPJ <geosoft.gxapi.GXIPJ>` is not a projected coordinate system.
         """
         self._wrapper.make_geographic()
         
@@ -117,7 +117,7 @@ class GXIPJ:
 
     def add_exagg_warp(self, x_exag, y_exag, z_exag, x_orig, y_orig, z_orig):
         """
-        Add a warp to `GXIPJ` to exaggerate X, Y and Z.
+        Add a warp to `GXIPJ <geosoft.gxapi.GXIPJ>` to exaggerate X, Y and Z.
         """
         self._wrapper.add_exagg_warp(x_exag, y_exag, z_exag, x_orig, y_orig, z_orig)
         
@@ -127,7 +127,7 @@ class GXIPJ:
 
     def add_log_warp(self, x, y):
         """
-        Add a warp to `GXIPJ` to log one or both coordinantes
+        Add a warp to `GXIPJ <geosoft.gxapi.GXIPJ>` to log one or both coordinantes
         """
         self._wrapper.add_log_warp(x, y)
         
@@ -137,7 +137,7 @@ class GXIPJ:
 
     def add_matrix_warp(self, v00, v01, v02, v03, v10, v11, v12, v13, v20, v21, v22, v23, v30, v31, v32, v33):
         """
-        Add a warp to `GXIPJ` using a matrix
+        Add a warp to `GXIPJ <geosoft.gxapi.GXIPJ>` using a matrix
         """
         self._wrapper.add_matrix_warp(v00, v01, v02, v03, v10, v11, v12, v13, v20, v21, v22, v23, v30, v31, v32, v33)
         
@@ -147,13 +147,13 @@ class GXIPJ:
 
     def add_warp(self, type, vv_x_old, vv_y_old, vv_x_new, vv_y_new):
         """
-        Add a warp to `GXIPJ`.
+        Add a warp to `GXIPJ <geosoft.gxapi.GXIPJ>`.
 
         **Note:**
 
         There must be at least "warp type" points in the
-        warp point `GXVV`'s.
-        All point `GXVV`'s must have the same number of points.
+        warp point `GXVV <geosoft.gxapi.GXVV>`'s.
+        All point `GXVV <geosoft.gxapi.GXVV>`'s must have the same number of points.
         If there are more points than required by the warp,
         the warp will be determined by least-square fitting
         to the warp surface for all but the 4-point warp.
@@ -184,7 +184,7 @@ class GXIPJ:
 
     def clear_orientation(self):
         """
-        Clear an orientation warp from an `GXIPJ`.
+        Clear an orientation warp from an `GXIPJ <geosoft.gxapi.GXIPJ>`.
         """
         self._wrapper.clear_orientation()
         
@@ -194,7 +194,7 @@ class GXIPJ:
 
     def convert_orientation_warp_vv(self, vv_x, vv_y, vv_z, f_forward):
         """
-        Convert X,Y and Z VVs using the orientation warp from an `GXIPJ`.
+        Convert X,Y and Z VVs using the orientation warp from an `GXIPJ <geosoft.gxapi.GXIPJ>`.
         """
         self._wrapper.convert_orientation_warp_vv(vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, f_forward)
         
@@ -214,7 +214,7 @@ class GXIPJ:
 
     def copy_projection(self, ip_jd):
         """
-        Copy the projection from one `GXIPJ` to another
+        Copy the projection from one `GXIPJ <geosoft.gxapi.GXIPJ>` to another
 
         **Note:**
 
@@ -239,7 +239,7 @@ class GXIPJ:
     @classmethod
     def create_s(cls, bf):
         """
-        Create `GXIPJ` from serialized source.
+        Create `GXIPJ <geosoft.gxapi.GXIPJ>` from serialized source.
         """
         ret_val = gxapi_cy.WrapIPJ.create_s(GXContext._get_tls_geo(), bf._wrapper)
         return GXIPJ(ret_val)
@@ -249,7 +249,7 @@ class GXIPJ:
     @classmethod
     def create_xml(cls, file):
         """
-        Create an `GXIPJ` from serialized Geosoft MetaData XML file
+        Create an `GXIPJ <geosoft.gxapi.GXIPJ>` from serialized Geosoft MetaData XML file
         """
         ret_val = gxapi_cy.WrapIPJ.create_xml(GXContext._get_tls_geo(), file.encode())
         return GXIPJ(ret_val)
@@ -318,21 +318,21 @@ class GXIPJ:
 
     def get_orientation_info(self, x, y, z, az, swing):
         """
-        Get `GXIPJ` orientation parameters.
+        Get `GXIPJ <geosoft.gxapi.GXIPJ>` orientation parameters.
 
         **Note:**
 
         IPJ_ORIENT_TYPE:
-        `IPJ_ORIENT_DEFAULT` - no special orientation - plan view.
-        This is equivalent to `IPJ_ORIENT_PLAN` with
+        `IPJ_ORIENT_DEFAULT <geosoft.gxapi.IPJ_ORIENT_DEFAULT>` - no special orientation - plan view.
+        This is equivalent to `IPJ_ORIENT_PLAN <geosoft.gxapi.IPJ_ORIENT_PLAN>` with
         dXo = dYo = dZo = dRotation = 0.0.
         
-        `IPJ_ORIENT_PLAN`      Azimuth = Rotation CCW degrees
+        `IPJ_ORIENT_PLAN <geosoft.gxapi.IPJ_ORIENT_PLAN>`      Azimuth = Rotation CCW degrees
         The plan differs from the default view in that
         a reference level is set, and the axes can be
         rotated and offset from the local X,Y.
         
-        `IPJ_ORIENT_SECTION`   Azimuth - CW degrees from North
+        `IPJ_ORIENT_SECTION <geosoft.gxapi.IPJ_ORIENT_SECTION>`   Azimuth - CW degrees from North
         -360 <= azimuth <= 360
         Swing - degrees bottom towards viewer
         -90 < swing < 90
@@ -370,16 +370,16 @@ class GXIPJ:
 
         **Note:**
 
-        This is the same as `get_plane_equation`, but the
+        This is the same as `get_plane_equation <geosoft.gxapi.GXIPJ.get_plane_equation>`, but the
         input projected coordinate system (PCS) may
-        be different from that of the `GXIPJ` you want the
+        be different from that of the `GXIPJ <geosoft.gxapi.GXIPJ>` you want the
         plane equation values described in. This may be
         required, for instance, when a 3D view has been created
         in one PCS, and an oriented grid from a different PCS is
         to be displayed in that view.
         
-        If the two input IPJs share the same PCS then the `get_plane_equation`
-        function is called directly, using the input `GXIPJ`.
+        If the two input IPJs share the same PCS then the `get_plane_equation <geosoft.gxapi.GXIPJ.get_plane_equation>`
+        function is called directly, using the input `GXIPJ <geosoft.gxapi.GXIPJ>`.
         """
         pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value = self._wrapper.get_plane_equation2(ip_jo._wrapper, min_x, min_y, max_x, max_y, pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value)
         
@@ -409,7 +409,7 @@ class GXIPJ:
 
     def convert_warp(self, x, y, z, f_forward):
         """
-        Converts a point X, Y, Z to the new `GXIPJ` plane.
+        Converts a point X, Y, Z to the new `GXIPJ <geosoft.gxapi.GXIPJ>` plane.
         """
         ret_val, x.value, y.value, z.value = self._wrapper.convert_warp(x.value, y.value, z.value, f_forward)
         return ret_val
@@ -419,7 +419,7 @@ class GXIPJ:
 
     def convert_warp_vv(self, vv_x, vv_y, f_forward):
         """
-        Converts a set of X & Y VVs to the new `GXIPJ` plane. The Z is assumed to be 0
+        Converts a set of X & Y VVs to the new `GXIPJ <geosoft.gxapi.GXIPJ>` plane. The Z is assumed to be 0
         """
         ret_val = self._wrapper.convert_warp_vv(vv_x._wrapper, vv_y._wrapper, f_forward)
         return ret_val
@@ -433,7 +433,7 @@ class GXIPJ:
 
         **Note:**
 
-        This does not compare LDT information (use `compare_datums` for that).
+        This does not compare LDT information (use `compare_datums <geosoft.gxapi.GXIPJ.compare_datums>` for that).
         """
         ret_val = self._wrapper.coordinate_systems_are_the_same(ipj2._wrapper)
         return ret_val
@@ -443,7 +443,7 @@ class GXIPJ:
 
     def coordinate_systems_are_the_same_within_a_small_tolerance(self, ipj2):
         """
-        Same as `coordinate_systems_are_the_same`, but allows for small numerical differences
+        Same as `coordinate_systems_are_the_same <geosoft.gxapi.GXIPJ.coordinate_systems_are_the_same>`, but allows for small numerical differences
         """
         ret_val = self._wrapper.coordinate_systems_are_the_same_within_a_small_tolerance(ipj2._wrapper)
         return ret_val
@@ -453,7 +453,7 @@ class GXIPJ:
 
     def get_display_name(self, str_val):
         """
-        Get a name for display purposes from `GXIPJ`
+        Get a name for display purposes from `GXIPJ <geosoft.gxapi.GXIPJ>`
         """
         str_val.value = self._wrapper.get_display_name(str_val.value.encode())
         
@@ -483,7 +483,7 @@ class GXIPJ:
         **Note:**
 
         See GXF revision 3 for string descriptions
-        All strings must be the same length, 160 (`STR_GXF`) recommended.
+        All strings must be the same length, 160 (`STR_GXF <geosoft.gxapi.STR_GXF>`) recommended.
         Strings too short will be truncated.
         """
         str1.value, str2.value, str3.value, str4.value, str5.value = self._wrapper.get_gxf(str1.value.encode(), str2.value.encode(), str3.value.encode(), str4.value.encode(), str5.value.encode())
@@ -504,7 +504,7 @@ class GXIPJ:
 
     def get_name(self, type, str_val):
         """
-        Get an `GXIPJ` name
+        Get an `GXIPJ <geosoft.gxapi.GXIPJ>` name
         """
         str_val.value = self._wrapper.get_name(type, str_val.value.encode())
         
@@ -514,7 +514,7 @@ class GXIPJ:
 
     def set_vcs(self, str_val):
         """
-        Set the Vertical Coordinate System in the `GXIPJ` name string
+        Set the Vertical Coordinate System in the `GXIPJ <geosoft.gxapi.GXIPJ>` name string
 
         **Note:**
 
@@ -542,12 +542,12 @@ class GXIPJ:
 
     def get_orientation(self):
         """
-        Get `GXIPJ` orientation in space.
+        Get `GXIPJ <geosoft.gxapi.GXIPJ>` orientation in space.
 
         **Note:**
 
         Projections can be created oriented horizontally (e.g. in plan maps)
-        or vertically (in section maps - Wholeplot and `GXIP`).
+        or vertically (in section maps - Wholeplot and `GXIP <geosoft.gxapi.GXIP>`).
         """
         ret_val = self._wrapper.get_orientation()
         return ret_val
@@ -557,7 +557,7 @@ class GXIPJ:
 
     def get_orientation_name(self, str_val):
         """
-        Get a name for display purposes from `GXIPJ`
+        Get a name for display purposes from `GXIPJ <geosoft.gxapi.GXIPJ>`
         """
         str_val.value = self._wrapper.get_orientation_name(str_val.value.encode())
         
@@ -577,7 +577,7 @@ class GXIPJ:
 
     def get_xml(self, str_val):
         """
-        Get an Geosoft Metadata XML string from an `GXIPJ`
+        Get an Geosoft Metadata XML string from an `GXIPJ <geosoft.gxapi.GXIPJ>`
         """
         str_val.value = self._wrapper.get_xml(str_val.value.encode())
         
@@ -587,7 +587,7 @@ class GXIPJ:
 
     def has_projection(self):
         """
-        Does the `GXIPJ` object contain a projection?
+        Does the `GXIPJ <geosoft.gxapi.GXIPJ>` object contain a projection?
         """
         ret_val = self._wrapper.has_projection()
         return ret_val
@@ -637,7 +637,7 @@ class GXIPJ:
 
     def orientations_are_the_same_within_a_small_tolerance(self, ipj2):
         """
-        Same as `orientations_are_the_same`, but allows for small numerical differences
+        Same as `orientations_are_the_same <geosoft.gxapi.GXIPJ.orientations_are_the_same>`, but allows for small numerical differences
         """
         ret_val = self._wrapper.orientations_are_the_same_within_a_small_tolerance(ipj2._wrapper)
         return ret_val
@@ -655,11 +655,11 @@ class GXIPJ:
         
         The following orientations can be used to orient sections or section views:
         
-        `IPJ_ORIENT_SECTION` - Target-type sections with Z projection horizontally
-        `IPJ_ORIENT_SECTION_NORMAL` - Like `IPJ_ORIENT_SECTION`, but Z projects
+        `IPJ_ORIENT_SECTION <geosoft.gxapi.IPJ_ORIENT_SECTION>` - Target-type sections with Z projection horizontally
+        `IPJ_ORIENT_SECTION_NORMAL <geosoft.gxapi.IPJ_ORIENT_SECTION_NORMAL>` - Like `IPJ_ORIENT_SECTION <geosoft.gxapi.IPJ_ORIENT_SECTION>`, but Z projects
         perpendicular to the secton plane.
-        `IPJ_ORIENT_SECTION_CROOKED` - Crooked sections
-        `IPJ_ORIENT_3D` - Some Sections extracted from a voxel - e.g. VoxelToGrids,
+        `IPJ_ORIENT_SECTION_CROOKED <geosoft.gxapi.IPJ_ORIENT_SECTION_CROOKED>` - Crooked sections
+        `IPJ_ORIENT_3D <geosoft.gxapi.IPJ_ORIENT_3D>` - Some Sections extracted from a voxel - e.g. VoxelToGrids,
         as the voxel can have any orientation in 3D.
         
         It is sometimes important to ignore the section orientation, for instance
@@ -678,8 +678,8 @@ class GXIPJ:
         **Note:**
 
         This function checks only the projected coordinated system
-        in the `GXIPJ` object, so should only be used with projections
-        of type `IPJ_TYPE_PCS`.
+        in the `GXIPJ <geosoft.gxapi.GXIPJ>` object, so should only be used with projections
+        of type `IPJ_TYPE_PCS <geosoft.gxapi.IPJ_TYPE_PCS>`.
         This function does not test the validity of datums or local
         datum transforms.
         """
@@ -691,13 +691,13 @@ class GXIPJ:
 
     def set_gxf_safe(self, str1, str2, str3, str4, str5):
         """
-        Same as `set_gxf`, but fails gracefully.
+        Same as `set_gxf <geosoft.gxapi.GXIPJ.set_gxf>`, but fails gracefully.
 
         **Note:**
 
-        `set_gxf` will fail and terminate the GX if anything goes wrong (e.g. having a wrong
+        `set_gxf <geosoft.gxapi.GXIPJ.set_gxf>` will fail and terminate the GX if anything goes wrong (e.g. having a wrong
         parameter). If this function fails, it simply returns 0 and leaves the
-        `GXIPJ` unchanged.
+        `GXIPJ <geosoft.gxapi.GXIPJ>` unchanged.
         """
         ret_val = self._wrapper.set_gxf_safe(str1.encode(), str2.encode(), str3.encode(), str4.encode(), str5.encode())
         return ret_val
@@ -707,7 +707,7 @@ class GXIPJ:
 
     def source_type(self):
         """
-        Get `GXIPJ` source type
+        Get `GXIPJ <geosoft.gxapi.GXIPJ>` source type
         """
         ret_val = self._wrapper.source_type()
         return ret_val
@@ -747,7 +747,7 @@ class GXIPJ:
 
     def warped(self):
         """
-        Does `GXIPJ` contain a warp?
+        Does `GXIPJ <geosoft.gxapi.GXIPJ>` contain a warp?
         """
         ret_val = self._wrapper.warped()
         return ret_val
@@ -767,7 +767,7 @@ class GXIPJ:
 
     def warps_are_the_same_within_a_small_tolerance(self, ipj2):
         """
-        Same as `warps_are_the_same`, but allows for small numerical differences
+        Same as `warps_are_the_same <geosoft.gxapi.GXIPJ.warps_are_the_same>`, but allows for small numerical differences
         """
         ret_val = self._wrapper.warps_are_the_same_within_a_small_tolerance(ipj2._wrapper)
         return ret_val
@@ -777,7 +777,7 @@ class GXIPJ:
 
     def warp_type(self):
         """
-        Obtain the warp type of an `GXIPJ`.
+        Obtain the warp type of an `GXIPJ <geosoft.gxapi.GXIPJ>`.
         """
         ret_val = self._wrapper.warp_type()
         return ret_val
@@ -822,7 +822,7 @@ class GXIPJ:
 
     def read(self, type, str1, str2, str3):
         """
-        Read and define an `GXIPJ` from a standard file.
+        Read and define an `GXIPJ <geosoft.gxapi.GXIPJ>` from a standard file.
         """
         self._wrapper.read(type, str1.encode(), str2.encode(), str3.encode())
         
@@ -846,8 +846,8 @@ class GXIPJ:
 
         **Note:**
 
-        If the `GXIPJ` is not a projected coordinate system
-        then the returned azimuth is `GS_R8DM`;
+        If the `GXIPJ <geosoft.gxapi.GXIPJ>` is not a projected coordinate system
+        then the returned azimuth is `GS_R8DM <geosoft.gxapi.GS_R8DM>`;
         """
         ret_val = self._wrapper.get_north_azimuth(x, y)
         return ret_val
@@ -871,7 +871,7 @@ class GXIPJ:
 
     def serial(self, bf):
         """
-        Serialize `GXIPJ` to a `GXBF`.
+        Serialize `GXIPJ <geosoft.gxapi.GXIPJ>` to a `GXBF <geosoft.gxapi.GXBF>`.
         """
         self._wrapper.serial(bf._wrapper)
         
@@ -881,7 +881,7 @@ class GXIPJ:
 
     def serial_fgdcxml(self, file):
         """
-        Write the `GXIPJ` as a FDGC MetaData XML object
+        Write the `GXIPJ <geosoft.gxapi.GXIPJ>` as a FDGC MetaData XML object
         """
         self._wrapper.serial_fgdcxml(file.encode())
         
@@ -891,7 +891,7 @@ class GXIPJ:
 
     def serial_isoxml(self, file):
         """
-        Write the `GXIPJ` as a ISO MetaData XML object
+        Write the `GXIPJ <geosoft.gxapi.GXIPJ>` as a ISO MetaData XML object
         """
         self._wrapper.serial_isoxml(file.encode())
         
@@ -901,7 +901,7 @@ class GXIPJ:
 
     def serial_xml(self, file):
         """
-        Write the `GXIPJ` as a Geosoft MetaData XML object
+        Write the `GXIPJ <geosoft.gxapi.GXIPJ>` as a Geosoft MetaData XML object
         """
         self._wrapper.serial_xml(file.encode())
         
@@ -1006,7 +1006,7 @@ class GXIPJ:
         **Note:**
 
         If the projection is not supported in Geosoft, the
-        `GXIPJ` will be unknown.
+        `GXIPJ <geosoft.gxapi.GXIPJ>` will be unknown.
         """
         self._wrapper.set_esri(esri.encode())
         
@@ -1207,11 +1207,11 @@ class GXIPJ:
 
         **Note:**
 
-        This sets up the orientation of an `GXIPJ` for plan view plots,
+        This sets up the orientation of an `GXIPJ <geosoft.gxapi.GXIPJ>` for plan view plots,
         for instance in Wholeplot. These differ from regular plan
         map views in that the elevation of the view plane is set, and
         the view may be rotated. In addition, when viewed in a map,
-        a view with this `GXIPJ` will give a status bar location (X, Y, Z)
+        a view with this `GXIPJ <geosoft.gxapi.GXIPJ>` will give a status bar location (X, Y, Z)
         of the actual location in space, as opposed to just the X, Y of
         the view plane itself.
         """
@@ -1227,9 +1227,9 @@ class GXIPJ:
 
         **Note:**
 
-        This sets up the orientation of an `GXIPJ` for section view plots,
+        This sets up the orientation of an `GXIPJ <geosoft.gxapi.GXIPJ>` for section view plots,
         for instance in Wholeplot. In addition, when viewed in a map,
-        a view with this `GXIPJ` will give a status bar location (X, Y, Z)
+        a view with this `GXIPJ <geosoft.gxapi.GXIPJ>` will give a status bar location (X, Y, Z)
         of the actual location in space, as opposed to just the X, Y of
         the view plane itself.
         Swung sections are tricky because they are set up for section
@@ -1283,7 +1283,7 @@ class GXIPJ:
 
     def set_xml(self, str_val):
         """
-        Set an `GXIPJ` from a Geosoft Metadata XML string
+        Set an `GXIPJ <geosoft.gxapi.GXIPJ>` from a Geosoft Metadata XML string
         """
         self._wrapper.set_xml(str_val.encode())
         
@@ -1317,7 +1317,7 @@ class GXIPJ:
 
         **Note:**
 
-        Reproject a section grid to a new `GXIPJ`, adjusting its orientation and registration so that
+        Reproject a section grid to a new `GXIPJ <geosoft.gxapi.GXIPJ>`, adjusting its orientation and registration so that
         it remains in the same location.
         """
         x0.value, y0.value, dx.value, dy.value, rot.value = self._wrapper.reproject_section_grid(output_ipj._wrapper, x0.value, y0.value, dx.value, dy.value, rot.value)

@@ -18,10 +18,10 @@ class GXMETA:
     """
     GXMETA class.
 
-    A `GXMETA` object contains hierarchical organized metadata
-    of any type, including other objects.  `GXMETA` information
+    A `GXMETA <geosoft.gxapi.GXMETA>` object contains hierarchical organized metadata
+    of any type, including other objects.  `GXMETA <geosoft.gxapi.GXMETA>` information
     is organized in an XML-like structure based on a data
-    schema that describes the data hierarchy.   `GXMETA` objects
+    schema that describes the data hierarchy.   `GXMETA <geosoft.gxapi.GXMETA>` objects
     are used by many entities that need to store metadata
     specific to the entities or to the application.
     
@@ -81,7 +81,7 @@ class GXMETA:
 
     def delete_attrib(self, ph_attribute):
         """
-        Delete Attrib from `GXMETA`.
+        Delete Attrib from `GXMETA <geosoft.gxapi.GXMETA>`.
         """
         self._wrapper.delete_attrib(ph_attribute)
         
@@ -129,7 +129,7 @@ class GXMETA:
 
     def delete_class(self, ph_class):
         """
-        Delete Class from `GXMETA`.
+        Delete Class from `GXMETA <geosoft.gxapi.GXMETA>`.
         """
         self._wrapper.delete_class(ph_class)
         
@@ -143,7 +143,7 @@ class GXMETA:
 
     def copy(self, source_meta):
         """
-        Copy a `GXMETA` to another
+        Copy a `GXMETA <geosoft.gxapi.GXMETA>` to another
         """
         self._wrapper.copy(source_meta._wrapper)
         
@@ -163,7 +163,7 @@ class GXMETA:
     @classmethod
     def create_s(cls, bf):
         """
-        Create a `GXMETA` Object from a `GXBF`
+        Create a `GXMETA <geosoft.gxapi.GXMETA>` Object from a `GXBF <geosoft.gxapi.GXBF>`
         """
         ret_val = gxapi_cy.WrapMETA.create_s(GXContext._get_tls_geo(), bf._wrapper)
         return GXMETA(ret_val)
@@ -175,7 +175,7 @@ class GXMETA:
 
     def serial(self, bf):
         """
-        Serialize an `GXMETA` to a `GXBF`
+        Serialize an `GXMETA <geosoft.gxapi.GXMETA>` to a `GXBF <geosoft.gxapi.GXBF>`
         """
         self._wrapper.serial(bf._wrapper)
         
@@ -314,7 +314,7 @@ class GXMETA:
 
     def delete_item(self, ph_item):
         """
-        Delete item from `GXMETA`.
+        Delete item from `GXMETA <geosoft.gxapi.GXMETA>`.
         """
         self._wrapper.delete_item(ph_item)
         
@@ -436,7 +436,7 @@ class GXMETA:
 
     def h_copy_across_attribute(self, source_meta, ph_attribute):
         """
-        Copy an Attribute from one `GXMETA` to another
+        Copy an Attribute from one `GXMETA <geosoft.gxapi.GXMETA>` to another
         """
         ret_val = self._wrapper.h_copy_across_attribute(source_meta._wrapper, ph_attribute)
         return ret_val
@@ -446,7 +446,7 @@ class GXMETA:
 
     def h_copy_across_class(self, source_meta, ph_class):
         """
-        Copy a Class from one `GXMETA` to another
+        Copy a Class from one `GXMETA <geosoft.gxapi.GXMETA>` to another
 
         **Note:**
 
@@ -460,7 +460,7 @@ class GXMETA:
 
     def h_copy_across_data(self, source_meta, ph_data):
         """
-        Copy a Data value from one `GXMETA` to another
+        Copy a Data value from one `GXMETA <geosoft.gxapi.GXMETA>` to another
         """
         ret_val = self._wrapper.h_copy_across_data(source_meta._wrapper, ph_data)
         return ret_val
@@ -470,7 +470,7 @@ class GXMETA:
 
     def h_copy_across_item(self, source_meta, ph_item):
         """
-        Copy an Item from one `GXMETA` to another
+        Copy an Item from one `GXMETA <geosoft.gxapi.GXMETA>` to another
         """
         ret_val = self._wrapper.h_copy_across_item(source_meta._wrapper, ph_item)
         return ret_val
@@ -480,7 +480,7 @@ class GXMETA:
 
     def h_copy_across_type(self, source_meta, ph_type):
         """
-        Copy a Type from one `GXMETA` to another
+        Copy a Type from one `GXMETA <geosoft.gxapi.GXMETA>` to another
 
         **Note:**
 
@@ -494,7 +494,7 @@ class GXMETA:
 
     def move_datas_across(self, source_meta, ph_i_obj, ph_o_obj):
         """
-        Moves data items from one `GXMETA` to another
+        Moves data items from one `GXMETA <geosoft.gxapi.GXMETA>` to another
         """
         self._wrapper.move_datas_across(source_meta._wrapper, ph_i_obj, ph_o_obj)
         
@@ -518,7 +518,7 @@ class GXMETA:
 
     def delete_data(self, ph_data):
         """
-        Delete Data from `GXMETA`.
+        Delete Data from `GXMETA <geosoft.gxapi.GXMETA>`.
         """
         self._wrapper.delete_data(ph_data)
         
@@ -528,7 +528,7 @@ class GXMETA:
 
     def delete_type(self, ph_type):
         """
-        Delete Type from `GXMETA`.
+        Delete Type from `GXMETA <geosoft.gxapi.GXMETA>`.
         """
         self._wrapper.delete_type(ph_type)
         

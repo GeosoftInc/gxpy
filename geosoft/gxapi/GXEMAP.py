@@ -20,7 +20,7 @@ class GXEMAP:
     """
     GXEMAP class.
 
-    The `GXEMAP` class provides access to a map as displayed within
+    The `GXEMAP <geosoft.gxapi.GXEMAP>` class provides access to a map as displayed within
     Oasis montaj, but (usually) does not change data within the map itself.
     It performs functions such as setting the currently displayed area,
     or drawing "tracking" lines or boxes on the map (which are not
@@ -29,51 +29,51 @@ class GXEMAP:
     **Note:**
 
     To obtain access to the map itself, it is recommended practice
-    to begin with an `GXEMAP` object, and use the `lock` function to
+    to begin with an `GXEMAP <geosoft.gxapi.GXEMAP>` object, and use the `lock <geosoft.gxapi.GXEMAP.lock>` function to
     lock the underlying map to prevent external changes. The returned
-    `GXMAP` object (see `GXMAP`) may then be safely used to make changes to the map itself.
+    `GXMAP <geosoft.gxapi.GXMAP>` object (see `GXMAP <geosoft.gxapi.GXMAP>`) may then be safely used to make changes to the map itself.
     
-    `GXMAP` Redraw Rules:
+    `GXMAP <geosoft.gxapi.GXMAP>` Redraw Rules:
     
         1. Redraws only occur at the end of the proccess (GX or SCRIPT) not during.
            You can safely call other GX's and the map will not redraw. If you need the
-           map to redraw immediately use `redraw` instead.
-        2. If the final GX calls `GXSYS.cancel_`, the map redraw is not done. If you
-           need to force a redraw when the user hits cancel use the `redraw` function.
-        3. You can set the redraw flag to `EMAP_REDRAW_YES` or `EMAP_REDRAW_NO` at any
-            time using `set_redraw_flag`. This flag will only be looked at, when
-            the last call to `un_lock` occurs and is ignored on a `GXSYS.cancel_`.
-        4. `redraw` only works if the current map is not locked. It will do nothing
-           if the map is locked.  Issue an `un_lock` before using this function.
+           map to redraw immediately use `redraw <geosoft.gxapi.GXEMAP.redraw>` instead.
+        2. If the final GX calls `GXSYS.cancel_ <geosoft.gxapi.GXSYS.cancel_>`, the map redraw is not done. If you
+           need to force a redraw when the user hits cancel use the `redraw <geosoft.gxapi.GXEMAP.redraw>` function.
+        3. You can set the redraw flag to `EMAP_REDRAW_YES <geosoft.gxapi.EMAP_REDRAW_YES>` or `EMAP_REDRAW_NO <geosoft.gxapi.EMAP_REDRAW_NO>` at any
+            time using `set_redraw_flag <geosoft.gxapi.GXEMAP.set_redraw_flag>`. This flag will only be looked at, when
+            the last call to `un_lock <geosoft.gxapi.GXEMAP.un_lock>` occurs and is ignored on a `GXSYS.cancel_ <geosoft.gxapi.GXSYS.cancel_>`.
+        4. `redraw <geosoft.gxapi.GXEMAP.redraw>` only works if the current map is not locked. It will do nothing
+           if the map is locked.  Issue an `un_lock <geosoft.gxapi.GXEMAP.un_lock>` before using this function.
     
     
-    VIRTUAL `GXEMAP` SUPPORT
+    VIRTUAL `GXEMAP <geosoft.gxapi.GXEMAP>` SUPPORT
     
     These methods are only available when running in an external application.
-    They allow the GX to open a `GXMAP` and then create a Virtual `GXEMAP` from that
-    map. The GX can then call `make_current` and set the current `GXEMAP` so
-    that code that follows sees this map as the current `GXMAP`.
+    They allow the GX to open a `GXMAP <geosoft.gxapi.GXMAP>` and then create a Virtual `GXEMAP <geosoft.gxapi.GXEMAP>` from that
+    map. The GX can then call `make_current <geosoft.gxapi.GXEMAP.make_current>` and set the current `GXEMAP <geosoft.gxapi.GXEMAP>` so
+    that code that follows sees this map as the current `GXMAP <geosoft.gxapi.GXMAP>`.
     
     Supported methods on Virtual EMAPS are:
     
-        | `current`
-        | `current_no_activate`
-        | `make_current`
-        | `have_current`
-        | `current_if_exists`
-        | `GXMAP.current`
-        | `lock`
-        | `un_lock`
-        | `is_locked`
-        | `get_name`
-        | `set_redraw_flag`
-        | `redraw`
-        | `loaded`
-        | `load`
-        | `load_no_activate`
-        | `un_load_verify`
-        | `un_load`
-        | `create_virtual`
+        | `current <geosoft.gxapi.GXEMAP.current>`
+        | `current_no_activate <geosoft.gxapi.GXEMAP.current_no_activate>`
+        | `make_current <geosoft.gxapi.GXEMAP.make_current>`
+        | `have_current <geosoft.gxapi.GXEMAP.have_current>`
+        | `current_if_exists <geosoft.gxapi.GXEMAP.current_if_exists>`
+        | `GXMAP.current <geosoft.gxapi.GXMAP.current>`
+        | `lock <geosoft.gxapi.GXEMAP.lock>`
+        | `un_lock <geosoft.gxapi.GXEMAP.un_lock>`
+        | `is_locked <geosoft.gxapi.GXEMAP.is_locked>`
+        | `get_name <geosoft.gxapi.GXEMAP.get_name>`
+        | `set_redraw_flag <geosoft.gxapi.GXEMAP.set_redraw_flag>`
+        | `redraw <geosoft.gxapi.GXEMAP.redraw>`
+        | `loaded <geosoft.gxapi.GXEMAP.loaded>`
+        | `load <geosoft.gxapi.GXEMAP.load>`
+        | `load_no_activate <geosoft.gxapi.GXEMAP.load_no_activate>`
+        | `un_load_verify <geosoft.gxapi.GXEMAP.un_load_verify>`
+        | `un_load <geosoft.gxapi.GXEMAP.un_load>`
+        | `create_virtual <geosoft.gxapi.GXEMAP.create_virtual>`
     """
 
     def __enter__(self):
@@ -115,7 +115,7 @@ class GXEMAP:
 
     def drop_map_clip_data(self, hglobal):
         """
-        Drop Map clipboard data on this `GXEMAP`
+        Drop Map clipboard data on this `GXEMAP <geosoft.gxapi.GXEMAP>`
         """
         self._wrapper.drop_map_clip_data(hglobal)
         
@@ -358,7 +358,7 @@ class GXEMAP:
 
         Activating a group basically enters the edit mode associated
         with the type of group. E.g. a vector group will enable the
-        edit toolbar for that gorup and an `GXAGG` will bring up the
+        edit toolbar for that gorup and an `GXAGG <geosoft.gxapi.GXAGG>` will bring up the
         image color tool. Be sure to pass a combined name containing
         both the view name and the group separated by a "/" or "\\".
         """
@@ -394,7 +394,7 @@ class GXEMAP:
 
         **Note:**
 
-        This function acts just like `current` except that the document is not activated (brought to foreground) and no
+        This function acts just like `current <geosoft.gxapi.GXEMAP.current>` except that the document is not activated (brought to foreground) and no
         guarantee is given about which document is currently active.
         """
         ret_val = gxapi_cy.WrapEMAP.current_no_activate(GXContext._get_tls_geo())
@@ -422,9 +422,9 @@ class GXEMAP:
         **Note:**
 
         Can only be run in interactive mode. After this call the
-        `GXEMAP` object will become invalid. If this is the last view on
+        `GXEMAP <geosoft.gxapi.GXEMAP>` object will become invalid. If this is the last view on
         the document and the document has been modified the map will be
-        unloaded and optionally saved depending on the `EMAP_REMOVE`
+        unloaded and optionally saved depending on the `EMAP_REMOVE_`
         parameter.
         """
         self._wrapper.destroy_view(unload_flag)
@@ -440,7 +440,7 @@ class GXEMAP:
         **Note:**
 
         To get TT and GFN fonts, call twice with the same list
-        and `EMAP_FONT_TT`, then `EMAP_FONT_GFN`, or vice-versa to
+        and `EMAP_FONT_TT <geosoft.gxapi.EMAP_FONT_TT>`, then `EMAP_FONT_GFN <geosoft.gxapi.EMAP_FONT_GFN>`, or vice-versa to
         change order of listing.
         """
         self._wrapper.font_lst(lst._wrapper, which)
@@ -456,7 +456,7 @@ class GXEMAP:
         **Note:**
 
         This function operates on the current map.
-        Unlike `set_current_view` this function's action
+        Unlike `set_current_view <geosoft.gxapi.GXEMAP.set_current_view>` this function's action
         survive the GX finishing.
         """
         ret_val = self._wrapper.change_current_view(view.encode())
@@ -467,7 +467,7 @@ class GXEMAP:
 
     def create_group_snapshot(self, lst):
         """
-        Loads an `GXLST` with the current view/group names
+        Loads an `GXLST <geosoft.gxapi.GXLST>` with the current view/group names
         existing in a map. Typically used to track group
         changes that are about to occur.
         """
@@ -517,7 +517,7 @@ class GXEMAP:
     @classmethod
     def get_maps_lst(cls, lst, path):
         """
-        Load the file names of open maps into a `GXLST`.
+        Load the file names of open maps into a `GXLST <geosoft.gxapi.GXLST>`.
         """
         ret_val = gxapi_cy.WrapEMAP.get_maps_lst(GXContext._get_tls_geo(), lst._wrapper, path)
         return ret_val
@@ -527,7 +527,7 @@ class GXEMAP:
 
     def get_name(self, name):
         """
-        Get the name of the map object of this `GXEMAP`.
+        Get the name of the map object of this `GXEMAP <geosoft.gxapi.GXEMAP>`.
         """
         name.value = self._wrapper.get_name(name.value.encode())
         
@@ -591,7 +591,7 @@ class GXEMAP:
 
     def get_e_3dv(self):
         """
-        Get an `GXE3DV` from the `GXEMAP`
+        Get an `GXE3DV <geosoft.gxapi.GXE3DV>` from the `GXEMAP <geosoft.gxapi.GXEMAP>`
         """
         ret_val = self._wrapper.get_e_3dv()
         return GXE3DV(ret_val)
@@ -651,9 +651,9 @@ class GXEMAP:
 
     def doubleize_group_snapshot(self, state):
         """
-        The `GXLST` passed in must contain View\\Group strings in
+        The `GXLST <geosoft.gxapi.GXLST>` passed in must contain View\\Group strings in
         the Name field only. The function will compare with
-        a more current `GXLST` and zoom the map to the new entry.
+        a more current `GXLST <geosoft.gxapi.GXLST>` and zoom the map to the new entry.
 
         **Note:**
 
@@ -685,12 +685,12 @@ class GXEMAP:
 
     def get_view_ipj(self, view, ipj):
         """
-        Get a view's `GXIPJ`.
+        Get a view's `GXIPJ <geosoft.gxapi.GXIPJ>`.
 
         **Note:**
 
         This function can be used to obtain a views coordinate system 
-        without having to call `lock`. This could be an expensive operation
+        without having to call `lock <geosoft.gxapi.GXEMAP.lock>`. This could be an expensive operation
         that cause undesirable UX.
         """
         self._wrapper.get_view_ipj(view.encode(), ipj._wrapper)
@@ -725,7 +725,7 @@ class GXEMAP:
 
         **Note:**
 
-        This function acts just like `load` except that the document(s) is not activated (brought to foreground) and no
+        This function acts just like `load <geosoft.gxapi.GXEMAP.load>` except that the document(s) is not activated (brought to foreground) and no
         guarantee is given about which document is currently active.
         """
         ret_val = gxapi_cy.WrapEMAP.load_no_activate(GXContext._get_tls_geo(), name.encode())
@@ -736,7 +736,7 @@ class GXEMAP:
     @classmethod
     def load_with_view(cls, name, p2):
         """
-        Load an `GXEMAP` with the view from a current `GXEMAP`.
+        Load an `GXEMAP <geosoft.gxapi.GXEMAP>` with the view from a current `GXEMAP <geosoft.gxapi.GXEMAP>`.
 
         **Note:**
 
@@ -756,7 +756,7 @@ class GXEMAP:
 
         **Note:**
 
-        The Redraw flag is set to `EMAP_REDRAW_YES` when this functions is called.
+        The Redraw flag is set to `EMAP_REDRAW_YES <geosoft.gxapi.EMAP_REDRAW_YES>` when this functions is called.
         """
         ret_val = self._wrapper.lock()
         return GXMAP(ret_val)
@@ -766,7 +766,7 @@ class GXEMAP:
 
     def make_current(self):
         """
-        Makes this `GXEMAP` object the current active object to the user.
+        Makes this `GXEMAP <geosoft.gxapi.GXEMAP>` object the current active object to the user.
         """
         self._wrapper.make_current()
         
@@ -815,18 +815,14 @@ class GXEMAP:
         **Note:**
 
         This function is generally used to prevent redrawing of
-        the map, which normally occurs after the last `un_lock`
+        the map, which normally occurs after the last `un_lock <geosoft.gxapi.GXEMAP.un_lock>`
         call, in cases where it is known that no changes are being
         made to the map.
         
-        Typical usage:
-        
-        ap = `lock`(EMap);
-        etRedrawFlag_EMAP(EMap,`EMAP_REDRAW_NO`);
-        
-        Stuff....
-        
-        `un_lock`(Map);
+        Typical usage would be to call `lock <geosoft.gxapi.GXEMAP.lock>` followed by
+        `set_redraw_flag <geosoft.gxapi.GXEMAP.set_redraw_flag>` (with def_val:`EMAP_REDRAW_NO`) prior
+        to querying information from the map. And then end with a call to
+        `un_lock <geosoft.gxapi.GXEMAP.un_lock>`.
         """
         self._wrapper.set_redraw_flag(redraw)
         
@@ -836,12 +832,12 @@ class GXEMAP:
     @classmethod
     def un_load(cls, name):
         """
-        Unloads a `GXMAP`.
+        Unloads a `GXMAP <geosoft.gxapi.GXMAP>`.
 
         **Note:**
 
-        If the `GXMAP` is not loaded, nothing happens.
-        Same as `un_load_verify` with FALSE to prompt save.
+        If the `GXMAP <geosoft.gxapi.GXMAP>` is not loaded, nothing happens.
+        Same as `un_load_verify <geosoft.gxapi.GXEMAP.un_load_verify>` with FALSE to prompt save.
         """
         gxapi_cy.WrapEMAP.un_load(GXContext._get_tls_geo(), name.encode())
         
@@ -930,16 +926,16 @@ class GXEMAP:
 
     def digitize(self, wa, img, digits, prompt, prefix, delim, newline):
         """
-        Digitise points from the current map and place in a `GXWA`.
+        Digitise points from the current map and place in a `GXWA <geosoft.gxapi.GXWA>`.
 
         **Note:**
 
         The command line will start to recieve digitized points
         from the mouse.  Whenever the left mouse button is
         pressed, the current view X,Y are placed on the workspace
-        command line.  If a valid `GXIMG` is passed, the Z value is
+        command line.  If a valid `GXIMG <geosoft.gxapi.GXIMG>` is passed, the Z value is
         also placed on the command line.  If auto-newline is
-        specified, the line is immediately placed into `GXWA`,
+        specified, the line is immediately placed into `GXWA <geosoft.gxapi.GXWA>`,
         otherwise the user has the oportunity to enter data
         before pressing Enter.
         
@@ -960,7 +956,7 @@ class GXEMAP:
         The command line will start to recieve digitized points
         from the mouse.  Whenever the left mouse button is
         pressed, the current view X,Y are placed on the workspace
-        command line.  If a valid `GXIMG` is passed, the Z value is
+        command line.  If a valid `GXIMG <geosoft.gxapi.GXIMG>` is passed, the Z value is
         also placed on the command line.  If auto-newline is
         specified, the line is immediately placed into the VVs,
         otherwise the user has the oportunity to enter data
@@ -980,7 +976,7 @@ class GXEMAP:
 
         **Note:**
 
-        Same as `digitize2`, but the closest peaks to the selected locations are
+        Same as `digitize2 <geosoft.gxapi.GXEMAP.digitize2>`, but the closest peaks to the selected locations are
         returned instead of the selected location. The method chooses the highest value
         of the 8 surrounding points, the repeats this process until no higher value can
         be found in any of the 8 surrounding points. If there are two or more points with
@@ -999,7 +995,7 @@ class GXEMAP:
 
         **Note:**
 
-        This is the same as `digitize2`, except that it automatically
+        This is the same as `digitize2 <geosoft.gxapi.GXEMAP.digitize2>`, except that it automatically
         detects, (except for the 2nd and 3rd points) when a selected location
         is within the entered number of pixels from the starting point. If yes,
         the polygon is assumed to be closed, and the operation is the same as
@@ -1028,7 +1024,7 @@ class GXEMAP:
         **Note:**
 
         If the data view has a rotational (or other) warp, then the
-        `get_box` function returns only opposite diagonal points in the
+        `get_box <geosoft.gxapi.GXEMAP.get_box>` function returns only opposite diagonal points in the
         box, not enough info to determine the other two corners. This
         function returns the exact coordinates of all four corners, calculated
         from the pixel locations.
@@ -1045,7 +1041,7 @@ class GXEMAP:
 
         **Note:**
 
-        If the input angle is `rDUMMY`, an extra step is inserted
+        If the input angle is `rDUMMY <geosoft.gxapi.rDUMMY>`, an extra step is inserted
         for the user to define the angle by drawing a line
         with the mouse.
         The output primary axis angle will always be in the
@@ -1054,7 +1050,7 @@ class GXEMAP:
         the secondary axis at 90 degrees greater than the primary (
         going counter-clockwise).
         The coordinates are returned in the current User projection
-        (See `GXMVIEW.get_user_ipj` and `GXMVIEW.set_user_ipj`.)
+        (See `GXMVIEW.get_user_ipj <geosoft.gxapi.GXMVIEW.get_user_ipj>` and `GXMVIEW.set_user_ipj <geosoft.gxapi.GXMVIEW.set_user_ipj>`.)
         """
         ret_val, angle.value, x1.value, y1.value, x_len.value, y_len.value = self._wrapper.get_grid(str_val.encode(), nx, ny, angle.value, x1.value, y1.value, x_len.value, y_len.value)
         return ret_val
@@ -1069,7 +1065,7 @@ class GXEMAP:
         **Note:**
 
         The coordinates are returned in the current User projection
-        (See `GXMVIEW.get_user_ipj` and `GXMVIEW.set_user_ipj`.)
+        (See `GXMVIEW.get_user_ipj <geosoft.gxapi.GXMVIEW.get_user_ipj>` and `GXMVIEW.set_user_ipj <geosoft.gxapi.GXMVIEW.set_user_ipj>`.)
         """
         ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.get_line(str_val.encode(), min_x.value, min_y.value, max_x.value, max_y.value)
         return ret_val
@@ -1084,7 +1080,7 @@ class GXEMAP:
         **Note:**
 
         The coordinates are returned in the current User projection
-        (See `GXMVIEW.get_user_ipj` and `GXMVIEW.set_user_ipj`.)
+        (See `GXMVIEW.get_user_ipj <geosoft.gxapi.GXMVIEW.get_user_ipj>` and `GXMVIEW.set_user_ipj <geosoft.gxapi.GXMVIEW.set_user_ipj>`.)
         """
         ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.get_line_ex(str_val.encode(), min_x.value, min_y.value, max_x.value, max_y.value)
         return ret_val
@@ -1099,7 +1095,7 @@ class GXEMAP:
         **Note:**
 
         The coordinates are returned in the current User projection
-        (See `GXMVIEW.get_user_ipj` and `GXMVIEW.set_user_ipj`.)
+        (See `GXMVIEW.get_user_ipj <geosoft.gxapi.GXMVIEW.get_user_ipj>` and `GXMVIEW.set_user_ipj <geosoft.gxapi.GXMVIEW.set_user_ipj>`.)
         This is useful for digitizing a line in an oriented view and getting
         the true coordinates in (X, Y, Z) at the selected point on the view plane.
         """
@@ -1170,7 +1166,7 @@ class GXEMAP:
         **Note:**
 
         The coordinates are returned in the current User projection
-        (See `GXMVIEW.get_user_ipj` and `GXMVIEW.set_user_ipj`.)
+        (See `GXMVIEW.get_user_ipj <geosoft.gxapi.GXMVIEW.get_user_ipj>` and `GXMVIEW.set_user_ipj <geosoft.gxapi.GXMVIEW.set_user_ipj>`.)
         """
         ret_val = self._wrapper.get_poly_line(str_val.encode(), vv_x._wrapper, vv_y._wrapper)
         return ret_val
@@ -1185,7 +1181,7 @@ class GXEMAP:
         **Note:**
 
         The coordinates are returned in the current User projection
-        (See `GXMVIEW.get_user_ipj` and `GXMVIEW.set_user_ipj`.) In this version
+        (See `GXMVIEW.get_user_ipj <geosoft.gxapi.GXMVIEW.get_user_ipj>` and `GXMVIEW.set_user_ipj <geosoft.gxapi.GXMVIEW.set_user_ipj>`.) In this version
         of the method X, Y and Z (depth) are returned. Initially created
         to deal with crooked sections.
         """
@@ -1202,8 +1198,8 @@ class GXEMAP:
         **Note:**
 
         The coordinates are returned in the current User projection
-        (See `GXMVIEW.get_user_ipj` and `GXMVIEW.set_user_ipj`.)
-        If the user `GXIPJ` distorts the coordinates from being rectilinear
+        (See `GXMVIEW.get_user_ipj <geosoft.gxapi.GXMVIEW.get_user_ipj>` and `GXMVIEW.set_user_ipj <geosoft.gxapi.GXMVIEW.set_user_ipj>`.)
+        If the user `GXIPJ <geosoft.gxapi.GXIPJ>` distorts the coordinates from being rectilinear
         (e.g. for a TriPlot graph), then care should be taken since the
         (Xmin, Ymin) and (Xmax, Ymax) values returned do not necessarily
         correspond to the lower-left and upper-right corners. In fact, the
@@ -1307,7 +1303,7 @@ class GXEMAP:
     @classmethod
     def create_virtual(cls, name):
         """
-        Makes this `GXEMAP` object the current active object to the user.
+        Makes this `GXEMAP <geosoft.gxapi.GXEMAP>` object the current active object to the user.
         """
         ret_val = gxapi_cy.WrapEMAP.create_virtual(GXContext._get_tls_geo(), name.encode())
         return GXEMAP(ret_val)
@@ -1321,7 +1317,7 @@ class GXEMAP:
     @classmethod
     def load_control(cls, map_file, window):
         """
-        Version of `load` that can be used to load a database via subclassing into a Windows control.
+        Version of `load <geosoft.gxapi.GXEMAP.load>` that can be used to load a database via subclassing into a Windows control.
         """
         gxapi_cy.WrapEMAP.load_control(GXContext._get_tls_geo(), map_file.encode(), window)
         
@@ -1331,7 +1327,7 @@ class GXEMAP:
     @classmethod
     def load_with_view_control(cls, map_file, emap, window):
         """
-        Version of `GXEDB.load_with_view` that can be used to load a database via subclassing into a Windows control.
+        Version of `GXEDB.load_with_view <geosoft.gxapi.GXEDB.load_with_view>` that can be used to load a database via subclassing into a Windows control.
         """
         gxapi_cy.WrapEMAP.load_with_view_control(GXContext._get_tls_geo(), map_file.encode(), emap._wrapper, window)
         

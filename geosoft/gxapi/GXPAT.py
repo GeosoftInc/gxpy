@@ -18,7 +18,7 @@ class GXPAT:
     """
     GXPAT class.
 
-    A `GXPAT` object is created from a Geosoft format pattern file.
+    A `GXPAT <geosoft.gxapi.GXPAT>` object is created from a Geosoft format pattern file.
     It contains all the individual patterns listed in the file.
     
     Notes: You may create your own fill patterns. They can be added to the "user.pat"
@@ -77,7 +77,7 @@ class GXPAT:
 
     def get_lst(self, cl, lst):
         """
-        Copies all pattern names into a `GXLST` object.
+        Copies all pattern names into a `GXLST <geosoft.gxapi.GXLST>` object.
 
         **Note:**
 

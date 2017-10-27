@@ -60,7 +60,7 @@ class GXDOCU:
 
     def copy(self, doc_us):
         """
-        Copy `GXDOCU`
+        Copy `GXDOCU <geosoft.gxapi.GXDOCU>`
         """
         self._wrapper.copy(doc_us._wrapper)
         
@@ -187,7 +187,7 @@ class GXDOCU:
 
     def serial(self, bf):
         """
-        Serialize `GXDOCU`
+        Serialize `GXDOCU <geosoft.gxapi.GXDOCU>`
         """
         self._wrapper.serial(bf._wrapper)
         
@@ -226,12 +226,12 @@ class GXDOCU:
         The document name can be a URL link to the document using one of
         the supported protocols. The following protocols are supported:
         
-           http://www.mywebserver.com/MyFile.doc                 - `GXHTTP`
+           http://www.mywebserver.com/MyFile.doc                 - `GXHTTP <geosoft.gxapi.GXHTTP>`
            dap://my.dap.server.com/dcs?DatasetName?MyFile.doc    - DAP (DAP Document Access)
            ftp://my.ftp.server.com/Dir1/MyFile.doc               - FTP protocol
         
         The full file name will be stored but no data will be stored with
-        the `GXDOCU` class and the document can be retrieved using the sGetFile_DOCU
+        the `GXDOCU <geosoft.gxapi.GXDOCU>` class and the document can be retrieved using the sGetFile_DOCU
         method.
         """
         self._wrapper.set_file(type.encode(), name.encode(), file.encode())
@@ -246,12 +246,12 @@ class GXDOCU:
 
         **Note:**
 
-        See `set_file`.
+        See `set_file <geosoft.gxapi.GXDOCU.set_file>`.
         This function is the same as sSetFile_DOCU, plus insures that a
-        `GXMETA` exists that includes the "Data" class.  If the file has
+        `GXMETA <geosoft.gxapi.GXMETA>` exists that includes the "Data" class.  If the file has
         associated metadata, either supported natively in the file, or
         through an associated file "filename.extension.GeosoftMeta",
-        that metadata will be loaded into the `GXDOCU` meta, and a Data
+        that metadata will be loaded into the `GXDOCU <geosoft.gxapi.GXDOCU>` meta, and a Data
         class will be constructed if one does not exist.
         
         Also, the Document type Extension is very important in that it

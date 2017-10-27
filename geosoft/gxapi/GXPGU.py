@@ -18,8 +18,8 @@ class GXPGU:
     """
     GXPGU class.
 
-    A collection of methods applied to `GXPG` objects, including
-    fills, trending and 2-D `GXFFT` operations.
+    A collection of methods applied to `GXPG <geosoft.gxapi.GXPG>` objects, including
+    fills, trending and 2-D `GXFFT <geosoft.gxapi.GXFFT>` operations.
     """
 
     def __enter__(self):
@@ -71,7 +71,7 @@ class GXPGU:
     @classmethod
     def direct_gridding_dat(cls, pg, xo, yo, dx, dy, rot, dat, method):
         """
-        Direct-gridding method, `GXDAT` version.
+        Direct-gridding method, `GXDAT <geosoft.gxapi.GXDAT>` version.
 
         **Note:**
 
@@ -86,7 +86,7 @@ class GXPGU:
     @classmethod
     def direct_gridding_dat_3d(cls, pg, xo, yo, zo, dx, dy, dz, rot, dat, method):
         """
-        Direct-gridding method, `GXDAT` version, 3D.
+        Direct-gridding method, `GXDAT <geosoft.gxapi.GXDAT>` version, 3D.
 
         **Note:**
 
@@ -101,7 +101,7 @@ class GXPGU:
     @classmethod
     def direct_gridding_db(cls, pg, xo, yo, dx, dy, rot, db, x, y, z, method):
         """
-        Direct-gridding method, `GXDB` version.
+        Direct-gridding method, `GXDB <geosoft.gxapi.GXDB>` version.
 
         **Note:**
 
@@ -116,7 +116,7 @@ class GXPGU:
     @classmethod
     def direct_gridding_db_3d(cls, pg, xo, yo, zo, dx, dy, dz, rot, db, x, y, z, data, method):
         """
-        Direct-gridding method, `GXDB` version, 3D.
+        Direct-gridding method, `GXDB <geosoft.gxapi.GXDB>` version, 3D.
 
         **Note:**
 
@@ -131,7 +131,7 @@ class GXPGU:
     @classmethod
     def direct_gridding_vv(cls, pg, xo, yo, dx, dy, rot, v_vx, v_vy, v_vz, method):
         """
-        Direct-gridding method, `GXVV` version.
+        Direct-gridding method, `GXVV <geosoft.gxapi.GXVV>` version.
 
         **Note:**
 
@@ -180,7 +180,7 @@ class GXPGU:
     @classmethod
     def filt_sym(cls, pg, npass, usefile, file, size, vv):
         """
-        Apply 5x5, 7x7 or 9X9 symmetric convolution filter to a `GXPG`.
+        Apply 5x5, 7x7 or 9X9 symmetric convolution filter to a `GXPG <geosoft.gxapi.GXPG>`.
         """
         gxapi_cy.WrapPGU.filt_sym(GXContext._get_tls_geo(), pg._wrapper, npass, usefile, file.encode(), size, vv._wrapper)
         
@@ -190,7 +190,7 @@ class GXPGU:
     @classmethod
     def filt_sym5(cls, pg, npass, usefile, file, vv):
         """
-        Apply 5x5 symmetric convolution filter to a `GXPG`.
+        Apply 5x5 symmetric convolution filter to a `GXPG <geosoft.gxapi.GXPG>`.
         """
         gxapi_cy.WrapPGU.filt_sym5(GXContext._get_tls_geo(), pg._wrapper, npass, usefile, file.encode(), vv._wrapper)
         
@@ -205,7 +205,7 @@ class GXPGU:
         **Note:**
 
         Blakey test limit defines how grid peaks are to be found.
-        For example, with the `BLAKEY_TEST_ONESIDE`, a grid
+        For example, with the `BLAKEY_TEST_ONESIDE <geosoft.gxapi.BLAKEY_TEST_ONESIDE>`, a grid
         point will be picked if its grid value is greater than
         the value of one or more of its four neighouring points.
         """
@@ -217,11 +217,11 @@ class GXPGU:
     @classmethod
     def dw_gridding_dat(cls, pg, dat, reg):
         """
-        `dw_gridding_dat`     Inverse-distance weighting gridding method, `GXDAT` version.
+        `dw_gridding_dat <geosoft.gxapi.GXPGU.dw_gridding_dat>`     Inverse-distance weighting gridding method, `GXDAT <geosoft.gxapi.GXDAT>` version.
 
         **Note:**
 
-        See the notes for `dw_gridding_db`.
+        See the notes for `dw_gridding_db <geosoft.gxapi.GXPGU.dw_gridding_db>`.
         """
         gxapi_cy.WrapPGU.dw_gridding_dat(GXContext._get_tls_geo(), pg._wrapper, dat._wrapper, reg._wrapper)
         
@@ -231,11 +231,11 @@ class GXPGU:
     @classmethod
     def dw_gridding_dat_3d(cls, pg, dat, reg):
         """
-        `dw_gridding_dat_3d`     Inverse-distance weighting gridding method, `GXDAT` version, 3D.
+        `dw_gridding_dat_3d <geosoft.gxapi.GXPGU.dw_gridding_dat_3d>`     Inverse-distance weighting gridding method, `GXDAT <geosoft.gxapi.GXDAT>` version, 3D.
 
         **Note:**
 
-        See the notes for `dw_gridding_db_3d`.
+        See the notes for `dw_gridding_db_3d <geosoft.gxapi.GXPGU.dw_gridding_db_3d>`.
         """
         gxapi_cy.WrapPGU.dw_gridding_dat_3d(GXContext._get_tls_geo(), pg._wrapper, dat._wrapper, reg._wrapper)
         
@@ -245,7 +245,7 @@ class GXPGU:
     @classmethod
     def dw_gridding_db(cls, pg, db, x, y, z, reg):
         """
-        `dw_gridding_db`     Inverse-distance weighting gridding method, `GXDB` version.
+        `dw_gridding_db <geosoft.gxapi.GXPGU.dw_gridding_db>`     Inverse-distance weighting gridding method, `GXDB <geosoft.gxapi.GXDB>` version.
 
         **Note:**
 
@@ -259,15 +259,15 @@ class GXPGU:
         If the blanking distance is set, all cells whose center point is not within the blanking distance of
         at least one data point are set to dummy.
         
-        `GXREG` Parameters:
+        `GXREG <geosoft.gxapi.GXREG>` Parameters:
         
         X0, Y0, DX, DY: Grid origin, and cell sizes (required)
         WT_POWER (default=2), WT_SLOPE (default=1) Weighting function parameters
         SEARCH_RADIUS: Distance weighting limit (default = 4 * SQRT(DX*DY))
         BLANKING_DISTANCE: Dummy values farther from data than this distance. (default = 4 * SQRT(DX*DY))
         LOG: Apply log transform to input data before gridding (0:No (default), 1:Yes)?
-        LOG_BASE: One of `VV_LOG_BASE_10` (default) or `VV_LOG_BASE_E`
-        LOG_NEGATIVE: One of `VV_LOG_NEGATIVE_NO` (default) or `VV_LOG_NEGATIVE_YES`
+        LOG_BASE: One of `VV_LOG_BASE_10 <geosoft.gxapi.VV_LOG_BASE_10>` (default) or `VV_LOG_BASE_E <geosoft.gxapi.VV_LOG_BASE_E>`
+        LOG_NEGATIVE: One of `VV_LOG_NEGATIVE_NO <geosoft.gxapi.VV_LOG_NEGATIVE_NO>` (default) or `VV_LOG_NEGATIVE_YES <geosoft.gxapi.VV_LOG_NEGATIVE_YES>`
         """
         gxapi_cy.WrapPGU.dw_gridding_db(GXContext._get_tls_geo(), pg._wrapper, db._wrapper, x, y, z, reg._wrapper)
         
@@ -277,7 +277,7 @@ class GXPGU:
     @classmethod
     def dw_gridding_db_3d(cls, pg, db, x, y, z, data, reg):
         """
-        `dw_gridding_db_3d`     Inverse-distance weighting gridding method, `GXDB` version, 3D.
+        `dw_gridding_db_3d <geosoft.gxapi.GXPGU.dw_gridding_db_3d>`     Inverse-distance weighting gridding method, `GXDB <geosoft.gxapi.GXDB>` version, 3D.
 
         **Note:**
 
@@ -291,15 +291,15 @@ class GXPGU:
         If the blanking distance is set, all cells whose center point is not within the blanking distance of
         at least one data point are set to dummy.
         
-        `GXREG` Parameters:
+        `GXREG <geosoft.gxapi.GXREG>` Parameters:
         
         X0, Y0, Z0, DX, DY, DZ: Grid origin, and cell sizes (required)
         WT_POWER (default=2), WT_SLOPE (default=1) Weighting function parameters
         SEARCH_RADIUS: Distance weighting limit (default = 4 * CUBE_ROOT(DX*DY*DZ))
         BLANKING_DISTANCE: Dummy values farther from data than this distance. (default = 4 * CUBE_ROOT(DX*DY*DZ))
         LOG: Apply log transform to input data before gridding (0:No (default), 1:Yes)?
-        LOG_BASE: One of `VV_LOG_BASE_10` (default) or `VV_LOG_BASE_E`
-        LOG_NEGATIVE: One of `VV_LOG_NEGATIVE_NO` (default) or `VV_LOG_NEGATIVE_YES`
+        LOG_BASE: One of `VV_LOG_BASE_10 <geosoft.gxapi.VV_LOG_BASE_10>` (default) or `VV_LOG_BASE_E <geosoft.gxapi.VV_LOG_BASE_E>`
+        LOG_NEGATIVE: One of `VV_LOG_NEGATIVE_NO <geosoft.gxapi.VV_LOG_NEGATIVE_NO>` (default) or `VV_LOG_NEGATIVE_YES <geosoft.gxapi.VV_LOG_NEGATIVE_YES>`
         """
         gxapi_cy.WrapPGU.dw_gridding_db_3d(GXContext._get_tls_geo(), pg._wrapper, db._wrapper, x, y, z, data, reg._wrapper)
         
@@ -309,11 +309,11 @@ class GXPGU:
     @classmethod
     def dw_gridding_vv(cls, pg, vv_x, vv_y, vv_z, reg):
         """
-        `dw_gridding_vv`     Inverse-distance weighting gridding method, `GXVV` version.
+        `dw_gridding_vv <geosoft.gxapi.GXPGU.dw_gridding_vv>`     Inverse-distance weighting gridding method, `GXVV <geosoft.gxapi.GXVV>` version.
 
         **Note:**
 
-        See the notes for `dw_gridding_db`.
+        See the notes for `dw_gridding_db <geosoft.gxapi.GXPGU.dw_gridding_db>`.
         """
         gxapi_cy.WrapPGU.dw_gridding_vv(GXContext._get_tls_geo(), pg._wrapper, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, reg._wrapper)
         
@@ -323,23 +323,23 @@ class GXPGU:
     @classmethod
     def numeric_to_thematic(cls, pg_i, vv, pg_o):
         """
-        `numeric_to_thematic`    Set index values in a pager based on a numeric pager with translation `GXVV`.
+        `numeric_to_thematic <geosoft.gxapi.GXPGU.numeric_to_thematic>`    Set index values in a pager based on a numeric pager with translation `GXVV <geosoft.gxapi.GXVV>`.
         
         Returns			  Nothing
 
         **Note:**
 
-        The values in the input data `GXVV` represent the center-of-range
+        The values in the input data `GXVV <geosoft.gxapi.GXVV>` represent the center-of-range
         values of unique properties with indices 0 to N-1, where N
-        is the number of items in the input `GXVV`.
+        is the number of items in the input `GXVV <geosoft.gxapi.GXVV>`.
         
-        This `GXVV` is sorted from smallest to largest, and each value in
-        in the input numeric `GXPG` is tested to see into which range it goes.
+        This `GXVV <geosoft.gxapi.GXVV>` is sorted from smallest to largest, and each value in
+        in the input numeric `GXPG <geosoft.gxapi.GXPG>` is tested to see into which range it goes.
         The closest range value for each item is used, so the half-way point
         is the dividing point. The top and bottom-most range widths are determined
         by the "inside half-width" to the nearest range.
         
-        The INDEX of the closest range is then inserted into the output `GXPG`, so
+        The INDEX of the closest range is then inserted into the output `GXPG <geosoft.gxapi.GXPG>`, so
         it can be used in a thematic voxel (for instance).
         """
         gxapi_cy.WrapPGU.numeric_to_thematic(GXContext._get_tls_geo(), pg_i._wrapper, vv._wrapper, pg_o._wrapper)
@@ -409,7 +409,7 @@ class GXPGU:
     @classmethod
     def save_file(cls, pg, xo, yo, dx, dy, rot, tr, ipj, file):
         """
-        Writes a `GXPG` to an image file.
+        Writes a `GXPG <geosoft.gxapi.GXPG>` to an image file.
 
         **Note:**
 
@@ -423,18 +423,18 @@ class GXPGU:
     @classmethod
     def thematic_to_numeric(cls, pg_i, vv, pg_o):
         """
-        Set numeric values in a pager based on an index pager with translation `GXVV`.
+        Set numeric values in a pager based on an index pager with translation `GXVV <geosoft.gxapi.GXVV>`.
         
         Returns			  Nothing
 
         **Note:**
 
-        The items in the input data `GXVV` are inserted into
-        the output `GXPG` using the indices in the index `GXPG`.
+        The items in the input data `GXVV <geosoft.gxapi.GXVV>` are inserted into
+        the output `GXPG <geosoft.gxapi.GXPG>` using the indices in the index `GXPG <geosoft.gxapi.GXPG>`.
         
         This function is useful when converting a thematic voxel, which is
-        type `GS_LONG` and contains indices into its own internal `GXTPAT`
-        object, and you provide a numeric mapping `GXVV`, calculated using
+        type `GS_LONG <geosoft.gxapi.GS_LONG>` and contains indices into its own internal `GXTPAT <geosoft.gxapi.GXTPAT>`
+        object, and you provide a numeric mapping `GXVV <geosoft.gxapi.GXVV>`, calculated using
         SetupTranslateToNumericVV_TPAT.
         """
         gxapi_cy.WrapPGU.thematic_to_numeric(GXContext._get_tls_geo(), pg_i._wrapper, vv._wrapper, pg_o._wrapper)
@@ -508,7 +508,7 @@ class GXPGU:
     @classmethod
     def correlation_matrix2(cls, pg_u, corr, pg_o):
         """
-        Same as `correlation_matrix`, but select correlation type.
+        Same as `correlation_matrix <geosoft.gxapi.GXPGU.correlation_matrix>`, but select correlation type.
         """
         gxapi_cy.WrapPGU.correlation_matrix2(GXContext._get_tls_geo(), pg_u._wrapper, corr, pg_o._wrapper)
         
@@ -525,7 +525,7 @@ class GXPGU:
         This is an "in-place" operation, and set up so that the input and
         output pagers may be the same handle. (If they are different, the
         input pager remains unchanged).
-        Pagers and VVs must be type `GS_DOUBLE`.
+        Pagers and VVs must be type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`.
         """
         gxapi_cy.WrapPGU.invert_matrix(GXContext._get_tls_geo(), pg_i._wrapper, pg_o._wrapper)
         
@@ -557,8 +557,8 @@ class GXPGU:
         Solves the system Ax = b for a given b, using the LU decomposition
         of the matrix a
         The LU decomposition and the permutation vector are obtained
-        from `lu_back_sub`.
-        Pagers and VVs must be type `GS_DOUBLE` except for the permutation vector,
+        from `lu_back_sub <geosoft.gxapi.GXPGU.lu_back_sub>`.
+        Pagers and VVs must be type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>` except for the permutation vector,
         which should be INT
         """
         gxapi_cy.WrapPGU.lu_back_sub(GXContext._get_tls_geo(), pg_a._wrapper, vv_i._wrapper, vv_b._wrapper, vv_sol._wrapper)
@@ -581,8 +581,8 @@ class GXPGU:
         output pagers may be the same handle. (If they are different, the
         input pager remains unchanged).
         The LU decomposition, and the permutation vector are used for
-        `lu_back_sub`.
-        Pagers must be type `GS_DOUBLE` and the permutation vector type INT
+        `lu_back_sub <geosoft.gxapi.GXPGU.lu_back_sub>`.
+        Pagers must be type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>` and the permutation vector type INT
         """
         gxapi_cy.WrapPGU.lu_decomp(GXContext._get_tls_geo(), pg_i._wrapper, pg_o._wrapper, vv_perm._wrapper)
         
@@ -611,18 +611,18 @@ class GXPGU:
     @classmethod
     def matrix_vector_mult(cls, pg_u, vv_x, vv_o):
         """
-        Multiply a `GXVV` by a pager like a matrix*vector multiply.
+        Multiply a `GXVV <geosoft.gxapi.GXVV>` by a pager like a matrix*vector multiply.
 
         **Note:**
 
-        The matrix is input as an M rows (data) by N columns (variables) `GXPG`.
-        The vector must be of length N. The output `GXVV` is set to length M.
-        The `GXPG` and VVs must be type `GS_DOUBLE`.
+        The matrix is input as an M rows (data) by N columns (variables) `GXPG <geosoft.gxapi.GXPG>`.
+        The vector must be of length N. The output `GXVV <geosoft.gxapi.GXVV>` is set to length M.
+        The `GXPG <geosoft.gxapi.GXPG>` and VVs must be type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`.
         
         Terminates if: 
         
-             Matrices, `GXVV` are not expected sizes (taken from U)
-             PGs are not `GS_DOUBLE`.
+             Matrices, `GXVV <geosoft.gxapi.GXVV>` are not expected sizes (taken from U)
+             PGs are not `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`.
         
         Dummies are treated as 0 values.
         """
@@ -634,24 +634,24 @@ class GXPGU:
     @classmethod
     def sv_decompose(cls, pg_a, pg_u, vv_w, pg_v):
         """
-        Do a singular value decomposition on a matrix stored as a `GXPG`
+        Do a singular value decomposition on a matrix stored as a `GXPG <geosoft.gxapi.GXPG>`
 
         **Note:**
 
-        The matrix is input as an N rows (data) by M columns (variables) `GXPG`.
+        The matrix is input as an N rows (data) by M columns (variables) `GXPG <geosoft.gxapi.GXPG>`.
         On return, the matrix is decomposed to A = U * W * Vt. If M<N, then an error will 
-        be registered. In this case, augment the "A" `GXPG` with rows of zero values.
+        be registered. In this case, augment the "A" `GXPG <geosoft.gxapi.GXPG>` with rows of zero values.
         
-        The input matrices must be A[M,N], U[M.N] and V[N,N]. The length of the W `GXVV`
+        The input matrices must be A[M,N], U[M.N] and V[N,N]. The length of the W `GXVV <geosoft.gxapi.GXVV>`
         is set by sSVD_PGU to N.
         
-        The Pagers must be type `GS_DOUBLE`.
+        The Pagers must be type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`.
         
         Terminates if: 
         
              U is not M by N. (Taken from size of A)
              V is not N by N. (Taken from #columns in A).
-             PGs, VV are not `GS_DOUBLE`
+             PGs, VV are not `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`
         """
         gxapi_cy.WrapPGU.sv_decompose(GXContext._get_tls_geo(), pg_a._wrapper, pg_u._wrapper, vv_w._wrapper, pg_v._wrapper)
         
@@ -665,19 +665,19 @@ class GXPGU:
 
         **Note:**
 
-        The matrix is input as an N rows (data) by M columns (variables) `GXPG`.
+        The matrix is input as an N rows (data) by M columns (variables) `GXPG <geosoft.gxapi.GXPG>`.
         On return, the matrix is decomposed to A = U * W * Vt.
         If M<N, then an error will be registered. In this case, augment the
-        "A" `GXPG` with rows of zero values.
-        The input matrices must be A[M,N], U[M.N] and V[N,N]. The length of the W `GXVV`
+        "A" `GXPG <geosoft.gxapi.GXPG>` with rows of zero values.
+        The input matrices must be A[M,N], U[M.N] and V[N,N]. The length of the W `GXVV <geosoft.gxapi.GXVV>`
         is set by sSVDecompose_PGU to N.
-        The Pagers must be type `GS_DOUBLE`.
+        The Pagers must be type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`.
         
         Terminates if: 
         
              U is not M by N. (Taken from size of A)
              V is not N by N. (Taken from #columns in A).
-             PGs, VV are not `GS_DOUBLE`.
+             PGs, VV are not `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`.
         
         Dummies are treated as 0 values.
         """
@@ -699,7 +699,7 @@ class GXPGU:
 
         Calculate communalities (sums of the squares of the column
         values in each row)
-        Pagers and VVs must be type `GS_DOUBLE`.
+        Pagers and VVs must be type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`.
         """
         gxapi_cy.WrapPGU.pc_communality(GXContext._get_tls_geo(), pg_i._wrapper, vv_c._wrapper)
         
@@ -713,16 +713,16 @@ class GXPGU:
 
         **Note:**
 
-        Works on columns of the `GXPG`.
+        Works on columns of the `GXPG <geosoft.gxapi.GXPG>`.
         Calculates the correlation matrix from the columns of the
         standardized data, then computes the eigen values and eigenvectors
         of the correlation matrix. The loadings are the eigenvectors, ordered
         by descending eigenvalues, scaled by the square root of the
         eigenvalues. The returned pager must be sized the same as the
         input pager.
-        Correlations are performed using "`PGU_CORR_SIMPLE`", so if you want
+        Correlations are performed using "`PGU_CORR_SIMPLE <geosoft.gxapi.PGU_CORR_SIMPLE>`", so if you want
         Pearson correlations, or wish to use a modified correlation matrix,
-        use `pc_loadings2` and input the correlation matrix directly.
+        use `pc_loadings2 <geosoft.gxapi.GXPGU.pc_loadings2>` and input the correlation matrix directly.
         """
         gxapi_cy.WrapPGU.pc_loadings(GXContext._get_tls_geo(), pg_x._wrapper, pg_loadings._wrapper)
         
@@ -736,7 +736,7 @@ class GXPGU:
 
         **Note:**
 
-        See `pc_loadings`.
+        See `pc_loadings <geosoft.gxapi.GXPGU.pc_loadings>`.
         """
         gxapi_cy.WrapPGU.pc_loadings2(GXContext._get_tls_geo(), pg_c._wrapper, pg_loadings._wrapper)
         
@@ -753,10 +753,10 @@ class GXPGU:
         t  -1
         Forms the product X Ap (Ap Ap),  where X is the
         standardized data matrix, and Ap is the matrix of
-        principal component loadings (see `pc_loadings`).
+        principal component loadings (see `pc_loadings <geosoft.gxapi.GXPGU.pc_loadings>`).
         The loadings must be input, and can be calculated by calling
-        `pc_loadings`.
-        Pagers and VVs must be type `GS_DOUBLE`.
+        `pc_loadings <geosoft.gxapi.GXPGU.pc_loadings>`.
+        Pagers and VVs must be type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`.
         """
         gxapi_cy.WrapPGU.pc_scores(GXContext._get_tls_geo(), pg_x._wrapper, pg_loadings._wrapper, pg_scores._wrapper)
         
@@ -770,7 +770,7 @@ class GXPGU:
 
         **Note:**
 
-        Works on columns of the `GXPG`.
+        Works on columns of the `GXPG <geosoft.gxapi.GXPG>`.
         """
         gxapi_cy.WrapPGU.pc_standardize(GXContext._get_tls_geo(), pg._wrapper, vv_m._wrapper, vv_s._wrapper, dir)
         
@@ -784,9 +784,9 @@ class GXPGU:
 
         **Note:**
 
-        Like `pc_standardize`, except that not all the values are
+        Like `pc_standardize <geosoft.gxapi.GXPGU.pc_standardize>`, except that not all the values are
         included in the calculation of the means and standard
-        deviations. The inclusion is controlled by a mask `GXVV`,
+        deviations. The inclusion is controlled by a mask `GXVV <geosoft.gxapi.GXVV>`,
         The rows where the mask is dummy are not included
         in the calculation, but ALL the values are standardized.
         """
@@ -802,13 +802,13 @@ class GXPGU:
 
         **Note:**
 
-        Works on columns of the `GXPG`.
+        Works on columns of the `GXPG <geosoft.gxapi.GXPG>`.
         Forward direction: Applies the selected transform to the data.
         Backward direction: Applies the inverse transform to the data.
-        The detection limits are input with a `GXVV`. In the forward
+        The detection limits are input with a `GXVV <geosoft.gxapi.GXVV>`. In the forward
         transform, data values less than the detection limit are set
         to the limit.
-        The factor limits are input with a `GXVV`. In the forward
+        The factor limits are input with a `GXVV <geosoft.gxapi.GXVV>`. In the forward
         transform, data values greater than the maximum values are set
         to the maximum.
         """
@@ -828,7 +828,7 @@ class GXPGU:
         scheme to move move each factor axis to positions so that
         projections from each variable on the factor axes are either
         near the extremities or near the origin.
-        Pagers must be type `GS_DOUBLE`.
+        Pagers must be type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`.
         """
         gxapi_cy.WrapPGU.pc_varimax(GXContext._get_tls_geo(), pg_i._wrapper, pg_o._wrapper)
         

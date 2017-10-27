@@ -29,7 +29,7 @@ class GXDGW:
     
     By default, "new look" GX dialogs uses the "Tahoma" font. This font can be
     overridden by updating the application settings. This can be done programmatically
-    using the `GXSYS.global_set` function using the following parameters:
+    using the `GXSYS.global_set <geosoft.gxapi.GXSYS.global_set>` function using the following parameters:
     
     MONTAJ.GX_FONT="Font_name"
     
@@ -41,7 +41,7 @@ class GXDGW:
     
     MONTAJ.GX_CAPTION_FONT="Caption_Font": Font for the field captions (labels)
     MONTAJ.GX_BUTTON_FONT="Button_Font"  : Font for buttons, including the "Browse" button
-    MONTAJ.GX_TITLE_FONT="Title_Font"    : Font for special titles (see `set_title`).
+    MONTAJ.GX_TITLE_FONT="Title_Font"    : Font for special titles (see `set_title <geosoft.gxapi.GXDGW.set_title>`).
     
     The font used for the text in edit windows remains the default, or the
     value specified using MONTAJ.GX_FONT.
@@ -54,7 +54,7 @@ class GXDGW:
     Before version 6.2. there used to be a parameter, MONTAJ.GX_CHARSET, that
     affected characters above ASCII 127. 6.2. introduced Unicode in the core
     montaj engine that eliminated the need for such a setting. All strings
-    on the GX API level are encoded in `UTF8` during runtime which makes it possible
+    on the GX API level are encoded in `UTF8_` during runtime which makes it possible
     to represent all possible characters without using character sets.
     """
 
@@ -110,7 +110,7 @@ class GXDGW:
 
     def get_info_meta(self, obj, dlg_obj_type, meta, meta_obj, meta_attrib):
         """
-        Copies the Dialog information to a `GXMETA` attribute.
+        Copies the Dialog information to a `GXMETA <geosoft.gxapi.GXMETA>` attribute.
         """
         self._wrapper.get_info_meta(obj, dlg_obj_type, meta._wrapper, meta_obj, meta_attrib)
         
@@ -121,7 +121,7 @@ class GXDGW:
     def get_info_sys(self, id, info, group, field):
         """
         This method uses the information in a Dialog box to
-        set a `GXSYS` variable.
+        set a `GXSYS <geosoft.gxapi.GXSYS>` variable.
         """
         self._wrapper.get_info_sys(id, info, group.encode(), field.encode())
         
@@ -131,7 +131,7 @@ class GXDGW:
 
     def get_list(self, id):
         """
-        This method retrieves the list (`GXLST`) object associated
+        This method retrieves the list (`GXLST <geosoft.gxapi.GXLST>`) object associated
         with a Dialog object.
         """
         ret_val = self._wrapper.get_list(id)
@@ -174,7 +174,7 @@ class GXDGW:
 
     def set_info_meta(self, obj, dlg_obj_type, meta, meta_obj, meta_attrib):
         """
-        This sets a text object to the text found in a `GXMETA` attribute.
+        This sets a text object to the text found in a `GXMETA <geosoft.gxapi.GXMETA>` attribute.
         """
         self._wrapper.set_info_meta(obj, dlg_obj_type, meta._wrapper, meta_obj, meta_attrib)
         
@@ -200,12 +200,12 @@ class GXDGW:
 
         **Note:**
 
-        A "Special", additional title can be added to a dialog by using
-        the following syntax:
+        A "Special", additional title can be added to a dialog by passing a title
+        to `set_title <geosoft.gxapi.GXDGW.set_title>` with the following syntax:
         
-        `set_title`(Diag, "Window Title\\nAdditional Title");
+        ``"Window Title\\nAdditional Title"``
         
-        In the title argument, a line break character '\\n' is used to
+        In the title argument, a line break character ``'\\n'`` is used to
         separate the parts.
         
         The window title free_appears as the title in the upper bar of the dialog.

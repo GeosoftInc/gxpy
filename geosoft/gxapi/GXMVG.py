@@ -19,7 +19,7 @@ class GXMVG:
     """
     GXMVG class.
 
-    The `GXMVG` class provides the ability to create view graphs.
+    The `GXMVG <geosoft.gxapi.GXMVG>` class provides the ability to create view graphs.
     """
 
     def __enter__(self):
@@ -95,7 +95,7 @@ class GXMVG:
     @classmethod
     def create(cls, map, name, xmin_m, ymin_m, xmax_m, ymax_m, xmin_u, ymin_u, xmax_u, ymax_u):
         """
-        Create a `GXMVG` object
+        Create a `GXMVG <geosoft.gxapi.GXMVG>` object
 
         **Note:**
 
@@ -111,7 +111,7 @@ class GXMVG:
 
     def get_mview(self):
         """
-        Get the `GXMVIEW` Handle of the Object.
+        Get the `GXMVIEW <geosoft.gxapi.GXMVIEW>` Handle of the Object.
 
         **Note:**
 
@@ -125,7 +125,7 @@ class GXMVG:
 
     def grid(self, d1st_x, d1st_y, d_x, d_y, d_dx, d_dy, l_type):
         """
-        Draw a grid in the current `GXMVG`
+        Draw a grid in the current `GXMVG <geosoft.gxapi.GXMVG>`
 
         **Note:**
 
@@ -191,11 +191,11 @@ class GXMVG:
 
     def poly_line_va(self, draw, wrap, vv_x, va, vv_array):
         """
-        Creates PolyLines/polygons from `GXVV` and `GXVA`.
+        Creates PolyLines/polygons from `GXVV <geosoft.gxapi.GXVV>` and `GXVA <geosoft.gxapi.GXVA>`.
 
         **Note:**
 
-        If the `GXVV` contains dummies, the polylines
+        If the `GXVV <geosoft.gxapi.GXVV>` contains dummies, the polylines
         will break at the dummies; the polygons
         will skip the dummies.
         
@@ -212,11 +212,11 @@ class GXMVG:
 
     def poly_line_vv(self, draw, wrap, vv_x, vv_y):
         """
-        Creates PolyLines/polygons from `GXVV` and `GXVV`.
+        Creates PolyLines/polygons from `GXVV <geosoft.gxapi.GXVV>` and `GXVV <geosoft.gxapi.GXVV>`.
 
         **Note:**
 
-        If the `GXVV` contains dummies, the polylines
+        If the `GXVV <geosoft.gxapi.GXVV>` contains dummies, the polylines
         will break at the dummies; the polygons
         will skip the dummies.
         

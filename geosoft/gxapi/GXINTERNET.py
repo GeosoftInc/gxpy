@@ -62,12 +62,12 @@ class GXINTERNET:
     @classmethod
     def download_http(cls, url, file, size):
         """
-        Download `GXHTTP` file from the internet to file.
+        Download `GXHTTP <geosoft.gxapi.GXHTTP>` file from the internet to file.
 
         **Note:**
 
         The file must be stored on a server that supports
-        the `GXHTTP` protocol and not require a password.
+        the `GXHTTP <geosoft.gxapi.GXHTTP>` protocol and not require a password.
 
         .. seealso::
 

@@ -19,16 +19,16 @@ class GXEDB:
     """
     GXEDB class.
 
-    The `GXEDB` class provides access to a database as displayed within
+    The `GXEDB <geosoft.gxapi.GXEDB>` class provides access to a database as displayed within
     Oasis montaj, but does not change data within the database itself.
     It performs functions such as setting the current line.
 
     **Note:**
 
     To obtain access to the database itself, it is recommended practice
-    to begin with an `GXEDB` object, and use the `lock` function to
+    to begin with an `GXEDB <geosoft.gxapi.GXEDB>` object, and use the `lock <geosoft.gxapi.GXEDB.lock>` function to
     lock the underlying map to prevent external changes. The returned
-    `GXDB` object (see `GXDB`) may then be safely used to make changes to the map itself.
+    `GXDB <geosoft.gxapi.GXDB>` object (see `GXDB <geosoft.gxapi.GXDB>`) may then be safely used to make changes to the map itself.
     """
 
     def __enter__(self):
@@ -111,7 +111,7 @@ class GXEDB:
 
         **Note:**
 
-        This function acts just like `current` except that the document is not activated (brought to foreground) and no
+        This function acts just like `current <geosoft.gxapi.GXEDB.current>` except that the document is not activated (brought to foreground) and no
         guarantee is given about which document is currently active.
         """
         ret_val = gxapi_cy.WrapEDB.current_no_activate(GXContext._get_tls_geo())
@@ -153,9 +153,9 @@ class GXEDB:
         **Note:**
 
         Can only be run in interactive mode. After this call the
-        `GXEDB` object will become invalid. If this is the last view on
+        `GXEDB <geosoft.gxapi.GXEDB>` object will become invalid. If this is the last view on
         the document and the document has been modified the map will be
-        unloaded and optionally saved depending on the `EDB_REMOVE`
+        unloaded and optionally saved depending on the `EDB_REMOVE_`
         parameter.
         """
         self._wrapper.destroy_view(unload_flag)
@@ -280,14 +280,14 @@ class GXEDB:
 
         **Note:**
 
-        The returned `GXVV` is sized to the maximum number of profiles
+        The returned `GXVV <geosoft.gxapi.GXVV>` is sized to the maximum number of profiles
         that can be displayed. If a profile is not currently displayed,
         its height fraction is 0.  The sum of all the fractions returned
         is equal to 1.
         
         The profile splits refers to the relative sizes of the individual
         profile windows. To get/set the fraction of the total database window
-        devoted to the profiles, use the `set_split` and `get_split` functions.
+        devoted to the profiles, use the `set_split <geosoft.gxapi.GXEDB.set_split>` and `get_split <geosoft.gxapi.GXEDB.get_split>` functions.
         """
         self._wrapper.get_profile_split_vv(vv._wrapper)
         
@@ -361,14 +361,14 @@ class GXEDB:
 
         **Note:**
 
-        The `GXVV` elements must be INT.
+        The `GXVV <geosoft.gxapi.GXVV>` elements must be INT.
         
         Displayed channel lists are filled in the order the channels
         appear on the display, left to right.
 
         .. seealso::
 
-            `disp_chan_list`
+            `disp_chan_list <geosoft.gxapi.GXEDB.disp_chan_list>`
         """
         ret_val = self._wrapper.all_chan_list(vv._wrapper)
         return ret_val
@@ -392,14 +392,14 @@ class GXEDB:
 
         **Note:**
 
-        The `GXVV` elements must be INT.
+        The `GXVV <geosoft.gxapi.GXVV>` elements must be INT.
         
         Displayed channel lists are filled in the order the channels
         appear on the display, left to right.
 
         .. seealso::
 
-            `disp_chan_lst`
+            `disp_chan_lst <geosoft.gxapi.GXEDB.disp_chan_lst>`
         """
         ret_val = self._wrapper.disp_chan_list(vv._wrapper)
         return ret_val
@@ -421,7 +421,7 @@ class GXEDB:
 
         .. seealso::
 
-            `disp_chan_list`
+            `disp_chan_list <geosoft.gxapi.GXEDB.disp_chan_list>`
         """
         ret_val = self._wrapper.disp_chan_lst(lst._wrapper)
         return ret_val
@@ -446,7 +446,7 @@ class GXEDB:
 
         .. seealso::
 
-            `disp_chan_list`
+            `disp_chan_list <geosoft.gxapi.GXEDB.disp_chan_list>`
         """
         ret_val = self._wrapper.disp_class_chan_lst(lst._wrapper, class_name.encode())
         return ret_val
@@ -540,7 +540,7 @@ class GXEDB:
     @classmethod
     def get_databases_lst(cls, lst, path):
         """
-        Load the file names of open databases into a `GXLST`.
+        Load the file names of open databases into a `GXLST <geosoft.gxapi.GXLST>`.
         """
         ret_val = gxapi_cy.WrapEDB.get_databases_lst(GXContext._get_tls_geo(), lst._wrapper, path)
         return ret_val
@@ -559,7 +559,7 @@ class GXEDB:
         can use this method to retrieve the selected range
         from any channel, loaded or not.
         
-        The `GXVV` will be resized to the length of the data
+        The `GXVV <geosoft.gxapi.GXVV>` will be resized to the length of the data
         """
         ret_val = self._wrapper.get_mark_chan_vv(vv._wrapper, chan)
         return ret_val
@@ -578,7 +578,7 @@ class GXEDB:
         can use this method to retrieve the selected range
         from any channel, loaded or not.
         
-        The `GXVA` will be resized to the length of the data
+        The `GXVA <geosoft.gxapi.GXVA>` will be resized to the length of the data
         """
         ret_val = self._wrapper.get_mark_chan_va(vv._wrapper, chan)
         return ret_val
@@ -588,7 +588,7 @@ class GXEDB:
 
     def get_name(self, name):
         """
-        Get the name of the database object of this `GXEDB`.
+        Get the name of the database object of this `GXEDB <geosoft.gxapi.GXEDB>`.
         """
         name.value = self._wrapper.get_name(name.value.encode())
         
@@ -731,7 +731,7 @@ class GXEDB:
 
         .. seealso::
 
-            `GXCHIMERA.launch_histogram` in chimera.gxh
+            `GXCHIMERA.launch_histogram <geosoft.gxapi.GXCHIMERA.launch_histogram>` in chimera.gxh
         """
         self._wrapper.launch_histogram(chan.encode())
         
@@ -755,7 +755,7 @@ class GXEDB:
 
         .. seealso::
 
-            `GXCHIMERA.launch_scatter` in chimera.gxh
+            `GXCHIMERA.launch_scatter <geosoft.gxapi.GXCHIMERA.launch_scatter>` in chimera.gxh
         """
         self._wrapper.launch_scatter()
         
@@ -789,7 +789,7 @@ class GXEDB:
 
         **Note:**
 
-        This function acts just like `load` except that the document(s) is not activated (brought to foreground) and no
+        This function acts just like `load <geosoft.gxapi.GXEDB.load>` except that the document(s) is not activated (brought to foreground) and no
         guarantee is given about which document is currently active.
         """
         ret_val = gxapi_cy.WrapEDB.load_no_activate(GXContext._get_tls_geo(), name.encode())
@@ -829,7 +829,7 @@ class GXEDB:
 
         **Note:**
 
-        See `load`. This is used for brand new databases, to set
+        See `load <geosoft.gxapi.GXEDB.load>`. This is used for brand new databases, to set
         an internal flag such that if on closing the user chooses
         not to save changes, the database is deleted.
         """
@@ -858,7 +858,7 @@ class GXEDB:
     @classmethod
     def load_with_view(cls, name, p2):
         """
-        Load an `GXEDB` with the view from a current `GXEDB`.
+        Load an `GXEDB <geosoft.gxapi.GXEDB>` with the view from a current `GXEDB <geosoft.gxapi.GXEDB>`.
 
         **Note:**
 
@@ -884,7 +884,7 @@ class GXEDB:
 
     def make_current(self):
         """
-        Makes this `GXEDB` object the current active object to the user.
+        Makes this `GXEDB <geosoft.gxapi.GXEDB>` object the current active object to the user.
         """
         self._wrapper.make_current()
         
@@ -1064,12 +1064,12 @@ class GXEDB:
 
         **Note:**
 
-        The input `GXVV` values are the fractional heights for each
+        The input `GXVV <geosoft.gxapi.GXVV>` values are the fractional heights for each
         profile window. Values are summed, and normalized (so you can
-        enter "1,1,1", with a `GXVV` of length 3, if you want 3 equal profile windows).
+        enter "1,1,1", with a `GXVV <geosoft.gxapi.GXVV>` of length 3, if you want 3 equal profile windows).
         
-        `GXVV` values beyond the maximum number of displayable
-        profiles (`MAX_PROF_WND`) are ignored.
+        `GXVV <geosoft.gxapi.GXVV>` values beyond the maximum number of displayable
+        profiles (`MAX_PROF_WND <geosoft.gxapi.MAX_PROF_WND>`) are ignored.
         """
         self._wrapper.set_profile_split_vv(vv._wrapper)
         
@@ -1118,11 +1118,11 @@ class GXEDB:
 
     def statistics(self, st):
         """
-        Add all currently selected data to the `GXST`.
+        Add all currently selected data to the `GXST <geosoft.gxapi.GXST>`.
 
         **Note:**
 
-        Use `histogram` to get median or histogram.
+        Use `histogram <geosoft.gxapi.GXEDB.histogram>` to get median or histogram.
         """
         self._wrapper.statistics(st._wrapper)
         
@@ -1137,7 +1137,7 @@ class GXEDB:
         **Note:**
 
         If the database is not loaded, nothing happens.
-        Same as `un_load_verify` with FALSE to prompt save.
+        Same as `un_load_verify <geosoft.gxapi.GXEDB.un_load_verify>` with FALSE to prompt save.
         """
         gxapi_cy.WrapEDB.un_load(GXContext._get_tls_geo(), name.encode())
         
@@ -1202,9 +1202,9 @@ class GXEDB:
 
         If the database is not loaded, nothing happens.
         The user can be prompted to save before unloading.
-        If `EDB_UNLOAD_NO_PROMPT`, data is always saved.
+        If `EDB_UNLOAD_NO_PROMPT <geosoft.gxapi.EDB_UNLOAD_NO_PROMPT>`, data is always saved.
         EDB_UNLOAD_MULTIPROMPT is now obsolete and
-        is equivalent to `EDB_UNLOAD_SINGLE_PROMPT`.
+        is equivalent to `EDB_UNLOAD_SINGLE_PROMPT <geosoft.gxapi.EDB_UNLOAD_SINGLE_PROMPT>`.
         """
         gxapi_cy.WrapEDB.un_load_verify(GXContext._get_tls_geo(), name.encode(), prompt)
         
@@ -1228,7 +1228,7 @@ class GXEDB:
     @classmethod
     def load_control(cls, db_file, window):
         """
-        Version of `load` that can be used to load a database via subclassing into a Windows control.
+        Version of `load <geosoft.gxapi.GXEDB.load>` that can be used to load a database via subclassing into a Windows control.
         """
         gxapi_cy.WrapEDB.load_control(GXContext._get_tls_geo(), db_file.encode(), window)
         
@@ -1238,7 +1238,7 @@ class GXEDB:
     @classmethod
     def load_new_control(cls, db_file, window):
         """
-        Version of `load_new` that can be used to load a database via subclassing into a Windows control.
+        Version of `load_new <geosoft.gxapi.GXEDB.load_new>` that can be used to load a database via subclassing into a Windows control.
         """
         gxapi_cy.WrapEDB.load_new_control(GXContext._get_tls_geo(), db_file.encode(), window)
         
@@ -1248,7 +1248,7 @@ class GXEDB:
     @classmethod
     def load_pass_control(cls, db_file, user, password, window):
         """
-        Version of `load_pass` that can be used to load a database via subclassing into a Windows control.
+        Version of `load_pass <geosoft.gxapi.GXEDB.load_pass>` that can be used to load a database via subclassing into a Windows control.
         """
         gxapi_cy.WrapEDB.load_pass_control(GXContext._get_tls_geo(), db_file.encode(), user.encode(), password.encode(), window)
         
@@ -1258,7 +1258,7 @@ class GXEDB:
     @classmethod
     def load_with_view_control(cls, db_file, edb, window):
         """
-        Version of `load_with_view` that can be used to load a database via subclassing into a Windows control.
+        Version of `load_with_view <geosoft.gxapi.GXEDB.load_with_view>` that can be used to load a database via subclassing into a Windows control.
         """
         gxapi_cy.WrapEDB.load_with_view_control(GXContext._get_tls_geo(), db_file.encode(), edb._wrapper, window)
         

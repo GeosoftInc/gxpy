@@ -18,9 +18,9 @@ class GXAGG:
     """
     GXAGG class.
 
-    The `GXAGG` class is used to handle image display on maps.
+    The `GXAGG <geosoft.gxapi.GXAGG>` class is used to handle image display on maps.
     An aggregate contains one or more image layers (LAY) with
-    each layer representing a grid or image file. The `GXAGG`
+    each layer representing a grid or image file. The `GXAGG <geosoft.gxapi.GXAGG>`
     will combine all the layers to form one image
     """
 
@@ -99,7 +99,7 @@ class GXAGG:
     @classmethod
     def create_map(cls, map, name):
         """
-        Create `GXAGG` from Map with Group name.
+        Create `GXAGG <geosoft.gxapi.GXAGG>` from Map with Group name.
 
         **Note:**
 
@@ -118,7 +118,7 @@ class GXAGG:
 
     def get_layer_itr(self, layer, itr):
         """
-        Get the `GXITR` of a layer
+        Get the `GXITR <geosoft.gxapi.GXITR>` of a layer
 
         **Note:**
 
@@ -127,7 +127,7 @@ class GXAGG:
         
         An error will occur if the layer does not exist.
         
-        Caller must create/destroy `GXITR`.
+        Caller must create/destroy `GXITR <geosoft.gxapi.GXITR>`.
         """
         self._wrapper.get_layer_itr(layer, itr._wrapper)
         
@@ -137,11 +137,11 @@ class GXAGG:
 
     def list_img(self, gvv):
         """
-        Lists file names of all the IMGs inside of the `GXAGG`.
+        Lists file names of all the IMGs inside of the `GXAGG <geosoft.gxapi.GXAGG>`.
 
         **Note:**
 
-        The returned `GXVV` contains the file names.
+        The returned `GXVV <geosoft.gxapi.GXVV>` contains the file names.
         """
         ret_val = self._wrapper.list_img(gvv._wrapper)
         return ret_val
@@ -165,7 +165,7 @@ class GXAGG:
 
         .. seealso::
 
-            `layer_shade_img`
+            `layer_shade_img <geosoft.gxapi.GXAGG.layer_shade_img>`
         """
         self._wrapper.layer_img(name.encode(), zone, color.encode(), cont)
         
@@ -179,7 +179,7 @@ class GXAGG:
 
         .. seealso::
 
-            `layer_shade_img`
+            `layer_shade_img <geosoft.gxapi.GXAGG.layer_shade_img>`
         """
         self._wrapper.layer_img_ex(name.encode(), zone, color.encode(), min, max, cont)
         
@@ -208,15 +208,15 @@ class GXAGG:
 
     def get_brightness(self):
         """
-        Get the brightness setting of the `GXAGG`
+        Get the brightness setting of the `GXAGG <geosoft.gxapi.GXAGG>`
 
         **Note:**
 
         Brightness can range from -1.0 (black) to 1.0 (white).
         This brightness control is relative to the normal color
-        when the `GXAGG` is created.
+        when the `GXAGG <geosoft.gxapi.GXAGG>` is created.
         
-        `GXAGG` brightness depends on the brightness of the `GXITR` of each layer.
+        `GXAGG <geosoft.gxapi.GXAGG>` brightness depends on the brightness of the `GXITR <geosoft.gxapi.GXITR>` of each layer.
         Calling dGetBright_AGG will poll all layers, and if all have the same
         brightness, this is returned.  If any of the layers have a different
         brightness, the current brightness of each layer is changed to be
@@ -225,7 +225,7 @@ class GXAGG:
 
         .. seealso::
 
-            `change_brightness`, `get_brightness`, `change_brightness`
+            `change_brightness <geosoft.gxapi.GXAGG.change_brightness>`, `get_brightness <geosoft.gxapi.GXAGG.get_brightness>`, `change_brightness <geosoft.gxapi.GXAGG.change_brightness>`
         """
         ret_val = self._wrapper.get_brightness()
         return ret_val
@@ -235,7 +235,7 @@ class GXAGG:
 
     def set_layer_itr(self, layer, itr):
         """
-        Set the `GXITR` of a layer
+        Set the `GXITR <geosoft.gxapi.GXITR>` of a layer
 
         **Note:**
 
@@ -244,7 +244,7 @@ class GXAGG:
         
         An error will occur if the layer does not exist.
         
-        Caller must create/destroy `GXITR`.
+        Caller must create/destroy `GXITR <geosoft.gxapi.GXITR>`.
         """
         self._wrapper.set_layer_itr(layer, itr._wrapper)
         

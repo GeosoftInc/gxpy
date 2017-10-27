@@ -18,9 +18,9 @@ class GXDU:
     """
     GXDU class.
 
-    `GXDU` functions provide a variety of common utilities that can be applied
-    efficiently to the contents of a database. Most `GXDU` library functions take
-    as their first argument a `GXDB` object, and apply standard processes to data
+    `GXDU <geosoft.gxapi.GXDU>` functions provide a variety of common utilities that can be applied
+    efficiently to the contents of a database. Most `GXDU <geosoft.gxapi.GXDU>` library functions take
+    as their first argument a `GXDB <geosoft.gxapi.GXDB>` object, and apply standard processes to data
     stored in an OASIS database, including import and export functions.
 
     **Note:**
@@ -28,7 +28,7 @@ class GXDU:
     The following defines are used by GX functions but are not required
     for any methods:
     
-    `DU_LINES`
+    `DU_LINES_`
     """
 
     def __enter__(self):
@@ -148,13 +148,13 @@ class GXDU:
     @classmethod
     def ado_table_names(cls, connect, vv):
         """
-        Scans a ADO-compliant database and returns the table names in a `GXVV`
+        Scans a ADO-compliant database and returns the table names in a `GXVV <geosoft.gxapi.GXVV>`
 
         **Note:**
 
-        The `GXVV` must be created to hold strings of length
-        `STR_DB_SYMBOL`; i.e. use
-        Creat_VV(-`STR_DB_SYMBOL`, 0), or it will assert.
+        The `GXVV <geosoft.gxapi.GXVV>` must be created to hold strings of length
+        `STR_DB_SYMBOL <geosoft.gxapi.STR_DB_SYMBOL>`; i.e. use
+        Creat_VV(-`STR_DB_SYMBOL <geosoft.gxapi.STR_DB_SYMBOL>`, 0), or it will assert.
         """
         gxapi_cy.WrapDU.ado_table_names(GXContext._get_tls_geo(), connect.encode(), vv._wrapper)
         
@@ -297,7 +297,7 @@ class GXDU:
         **Note:**
 
         The original line will be deleted.
-        This is similar to `break_line`, but the output lines
+        This is similar to `break_line <geosoft.gxapi.GXDU.break_line>`, but the output lines
         are "group" lines, without the line type letters at the
         start. (See db.gxh for information of Group Lines).
         All channels are associated with each group line, and the
@@ -335,7 +335,7 @@ class GXDU:
 
         .. seealso::
 
-            `trend`
+            `trend <geosoft.gxapi.GXDU.trend>`
         """
         gxapi_cy.WrapDU.b_spline(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch, sd, rou, tau)
         
@@ -388,7 +388,7 @@ class GXDU:
 
         .. seealso::
 
-            `copy_line_chan_across` function
+            `copy_line_chan_across <geosoft.gxapi.GXDU.copy_line_chan_across>` function
         """
         gxapi_cy.WrapDU.copy_line_across(GXContext._get_tls_geo(), idb._wrapper, i_line, odb._wrapper, o_line)
         
@@ -407,7 +407,7 @@ class GXDU:
 
         .. seealso::
 
-            `copy_line_across` function
+            `copy_line_across <geosoft.gxapi.GXDU.copy_line_across>` function
         """
         gxapi_cy.WrapDU.copy_line_chan_across(GXContext._get_tls_geo(), idb._wrapper, i_line, vv_chan._wrapper, odb._wrapper, o_line)
         
@@ -424,7 +424,7 @@ class GXDU:
         The input line's channel data is ReFidded to the mask
         channel, and then pruned from the output line data,
         based on the value of the VVU_PRUNE_XXX variable.
-        For `VVU_PRUNE_DUMMY`, only those items where the mask channel
+        For `VVU_PRUNE_DUMMY <geosoft.gxapi.VVU_PRUNE_DUMMY>`, only those items where the mask channel
         value is not a dummy are retained, while the complement
         is retained for VV_PRUNE_VALID.
         """
@@ -436,13 +436,13 @@ class GXDU:
     @classmethod
     def dao_table_names(cls, file, type, vv):
         """
-        Scans a DAO-compliant database and returns the table names in a `GXVV`
+        Scans a DAO-compliant database and returns the table names in a `GXVV <geosoft.gxapi.GXVV>`
 
         **Note:**
 
-        The `GXVV` must be created to hold strings of length
-        `STR_DB_SYMBOL`; i.e. use
-        Creat_VV(-`STR_DB_SYMBOL`, 0), or it will assert.
+        The `GXVV <geosoft.gxapi.GXVV>` must be created to hold strings of length
+        `STR_DB_SYMBOL <geosoft.gxapi.STR_DB_SYMBOL>`; i.e. use
+        Creat_VV(-`STR_DB_SYMBOL <geosoft.gxapi.STR_DB_SYMBOL>`, 0), or it will assert.
         """
         gxapi_cy.WrapDU.dao_table_names(GXContext._get_tls_geo(), file.encode(), type.encode(), vv._wrapper)
         
@@ -469,7 +469,7 @@ class GXDU:
         Differences with dummies result in dummies.
         An even number of differences locates data accurately.
         An odd number of differences locates result 1/2 element lower
-        in the `GXVV`.
+        in the `GXVV <geosoft.gxapi.GXVV>`.
         """
         gxapi_cy.WrapDU.diff(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch, n)
         
@@ -509,7 +509,7 @@ class GXDU:
     @classmethod
     def dup_chan_locks(cls, d_bi, d_bo):
         """
-        Duplicate all channels protect-info from input `GXDB`.
+        Duplicate all channels protect-info from input `GXDB <geosoft.gxapi.GXDB>`.
         """
         gxapi_cy.WrapDU.dup_chan_locks(GXContext._get_tls_geo(), d_bi._wrapper, d_bo._wrapper)
         
@@ -519,7 +519,7 @@ class GXDU:
     @classmethod
     def dup_chans(cls, d_bi, d_bo):
         """
-        Duplicate all channels from input `GXDB`.
+        Duplicate all channels from input `GXDB <geosoft.gxapi.GXDB>`.
         """
         gxapi_cy.WrapDU.dup_chans(GXContext._get_tls_geo(), d_bi._wrapper, d_bo._wrapper)
         
@@ -556,9 +556,9 @@ class GXDU:
         Option to filter out data where one of the channels has a dummy in it.
         Option to allow a header with the channel names.
         
-        The `DU_CHANNELS_DISPLAYED` option can be used to export any selection of
+        The `DU_CHANNELS_DISPLAYED <geosoft.gxapi.DU_CHANNELS_DISPLAYED>` option can be used to export any selection of
         channels, listed by the symbols (DB_SYMB) values, cast to int values and
-        stored in a `GXVV`.
+        stored in a `GXVV <geosoft.gxapi.GXVV>`.
         """
         gxapi_cy.WrapDU.export1(GXContext._get_tls_geo(), db._wrapper, format, cur_line.encode(), chan_vv._wrapper, chan, data.encode(), dummies, header)
         
@@ -568,11 +568,11 @@ class GXDU:
     @classmethod
     def export2(cls, db, format, cur_line, chan_vv, chan, data, dummies, header, line_names):
         """
-        Like `export1`, but include line names as data.
+        Like `export1 <geosoft.gxapi.GXDU.export1>`, but include line names as data.
 
         **Note:**
 
-        See `export1`.
+        See `export1 <geosoft.gxapi.GXDU.export1>`.
         The line names are printed as the first column of data exported.
         """
         gxapi_cy.WrapDU.export2(GXContext._get_tls_geo(), db._wrapper, format, cur_line.encode(), chan_vv._wrapper, chan, data.encode(), dummies, header, line_names)
@@ -587,7 +587,7 @@ class GXDU:
 
         **Note:**
 
-        Other defined FIELDS stored in the database (see `import_amira` function)
+        Other defined FIELDS stored in the database (see `import_amira <geosoft.gxapi.GXDU.import_amira>` function)
         will be automatically included in the export
         """
         gxapi_cy.WrapDU.export_amira(GXContext._get_tls_geo(), db._wrapper, wa._wrapper, one_cols_ch.encode(), array_ch.encode(), time_ch.encode(), errors_ch.encode(), datatype.encode(), units.encode(), config.encode(), instrument.encode(), frequency.encode())
@@ -702,7 +702,7 @@ class GXDU:
 
         **Note:**
 
-        The iDispChanList_DBE or `GXDB.symb_list` methods can be
+        The iDispChanList_DBE or `GXDB.symb_list <geosoft.gxapi.GXDB.symb_list>` methods can be
         used to obtain a list of channels.
         """
         gxapi_cy.WrapDU.export_gbn(GXContext._get_tls_geo(), db._wrapper, vv._wrapper, data.encode())
@@ -717,10 +717,10 @@ class GXDU:
 
         **Note:**
 
-        Similar to `export_gbn`, with the addition that
+        Similar to `export_gbn <geosoft.gxapi.GXDU.export_gbn>`, with the addition that
         Groups go to individual tables, and lines go to
         a single table, or individual tables, based on the
-        value of `DU_LINEOUT`
+        value of `DU_LINEOUT_`
         """
         gxapi_cy.WrapDU.export_mdb(GXContext._get_tls_geo(), db._wrapper, cur_line.encode(), chan_vv._wrapper, chan, single, data.encode())
         
@@ -734,10 +734,10 @@ class GXDU:
 
         **Note:**
 
-        Similar to `export_gbn`, with the addition that
+        Similar to `export_gbn <geosoft.gxapi.GXDU.export_gbn>`, with the addition that
         Groups go to individual tables, and lines go to
         a single table, or individual tables, based on the
-        value of `DU_LINEOUT`
+        value of `DU_LINEOUT_`
         """
         gxapi_cy.WrapDU.export_geodatabase(GXContext._get_tls_geo(), db._wrapper, feature_class_name.encode(), cur_line.encode(), chan_vv._wrapper, chan, output, single, data.encode())
         
@@ -765,9 +765,9 @@ class GXDU:
 
         **Note:**
 
-        Similar to `export_mdb`, with the addition that groups go to indiviual files
+        Similar to `export_mdb <geosoft.gxapi.GXDU.export_mdb>`, with the addition that groups go to indiviual files
         with group name suffixes, and lines go to a single file, or multiple files
-        with line name suffixes, based on the value of `DU_LINEOUT`.
+        with line name suffixes, based on the value of `DU_LINEOUT_`.
         """
         gxapi_cy.WrapDU.export_shp(GXContext._get_tls_geo(), db._wrapper, cur_line.encode(), chan_vv._wrapper, chan, single, data.encode(), lst._wrapper)
         
@@ -811,7 +811,7 @@ class GXDU:
 
         .. seealso::
 
-            `export_xyz`
+            `export_xyz <geosoft.gxapi.GXDU.export_xyz>`
         """
         gxapi_cy.WrapDU.export_xyz2(GXContext._get_tls_geo(), db._wrapper, wa._wrapper, ra._wrapper)
         
@@ -821,7 +821,7 @@ class GXDU:
     @classmethod
     def fft(cls, db, line, s_ch, r_ch, i_ch):
         """
-        Apply an `GXFFT` to space data.
+        Apply an `GXFFT <geosoft.gxapi.GXFFT>` to space data.
         """
         gxapi_cy.WrapDU.fft(GXContext._get_tls_geo(), db._wrapper, line, s_ch, r_ch, i_ch)
         
@@ -889,13 +889,13 @@ class GXDU:
     @classmethod
     def get_chan_data_lst(cls, db, chan, mask, lst):
         """
-        Populate a `GXLST` with unique items in a channel.
+        Populate a `GXLST <geosoft.gxapi.GXLST>` with unique items in a channel.
 
         **Note:**
 
         Items from all selected lines are collected,
         sorted, and duplicates removed. The output
-        `GXLST` name and value are set to the item values.
+        `GXLST <geosoft.gxapi.GXLST>` name and value are set to the item values.
         Non-string channels are converted internally to
         string values using Copy_VV,
         so results may differ from what
@@ -912,15 +912,15 @@ class GXDU:
     @classmethod
     def get_chan_data_vv(cls, db, chan, mask, vv):
         """
-        Populate a `GXVV` with unique items in a channel.
+        Populate a `GXVV <geosoft.gxapi.GXVV>` with unique items in a channel.
 
         **Note:**
 
         Items from all selected lines are collected,
         sorted, and duplicates removed.
         The data is collected in the channel's data type,
-        so normal `GXVV.sort` rules apply.
-        If the output `GXVV` and channel type are not the
+        so normal `GXVV.sort <geosoft.gxapi.GXVV.sort>` rules apply.
+        If the output `GXVV <geosoft.gxapi.GXVV>` and channel type are not the
         same, then the data is converted using the
         Copy_VV function, so see that for conversion rules.
         If a mask channel is selected, then only those items
@@ -992,7 +992,7 @@ class GXDU:
 
         Updates channel with Direction in degrees azimuth (counter-clockwise
         relative the +Y direction).
-        `GS_R8DM` if the line has no data, or if there is a
+        `GS_R8DM <geosoft.gxapi.GS_R8DM>` if the line has no data, or if there is a
         problem.
         """
         gxapi_cy.WrapDU.head(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch, tb._wrapper, dir)
@@ -1003,18 +1003,18 @@ class GXDU:
     @classmethod
     def import_bin3(cls, db, data, template, line, flight, date, wa):
         """
-        Same as `import_bin2`, but returns the name of the imported line.
+        Same as `import_bin2 <geosoft.gxapi.GXDU.import_bin2>`, but returns the name of the imported line.
 
         **Note:**
 
-        See `import_bin2`. Because the name of the created line is
+        See `import_bin2 <geosoft.gxapi.GXDU.import_bin2>`. Because the name of the created line is
         not necessarily the value passed in (and the value passed in
         can be blank), this version returns the name of the line
         to which the data is actually imported.
 
         .. seealso::
 
-            `import_bin2`
+            `import_bin2 <geosoft.gxapi.GXDU.import_bin2>`
         """
         line.value = gxapi_cy.WrapDU.import_bin3(GXContext._get_tls_geo(), db._wrapper, data.encode(), template.encode(), line.value.encode(), flight, date, wa._wrapper)
         
@@ -1183,7 +1183,7 @@ class GXDU:
 
         .. seealso::
 
-            `lab_template`
+            `lab_template <geosoft.gxapi.GXDU.lab_template>`
         """
         gxapi_cy.WrapDU.import_bin(GXContext._get_tls_geo(), db._wrapper, data.encode(), template.encode(), line.encode(), flight, date)
         
@@ -1211,7 +1211,7 @@ class GXDU:
 
         .. seealso::
 
-            `lab_template`
+            `lab_template <geosoft.gxapi.GXDU.lab_template>`
         """
         gxapi_cy.WrapDU.import_bin2(GXContext._get_tls_geo(), db._wrapper, data.encode(), template.encode(), line.encode(), flight, date, wa._wrapper)
         
@@ -1221,15 +1221,15 @@ class GXDU:
     @classmethod
     def import_bin4(cls, db, mode, data, template, line, flight, date, wa):
         """
-        Same as `import_bin2` but with an import mode
+        Same as `import_bin2 <geosoft.gxapi.GXDU.import_bin2>` but with an import mode
 
         **Note:**
 
-        Same as `import_bin2` but with an import mode
+        Same as `import_bin2 <geosoft.gxapi.GXDU.import_bin2>` but with an import mode
 
         .. seealso::
 
-            `import_bin2`
+            `import_bin2 <geosoft.gxapi.GXDU.import_bin2>`
         """
         gxapi_cy.WrapDU.import_bin4(GXContext._get_tls_geo(), db._wrapper, mode, data.encode(), template.encode(), line.encode(), flight, date, wa._wrapper)
         
@@ -1549,7 +1549,7 @@ class GXDU:
 
         .. seealso::
 
-            `import_bin`
+            `import_bin <geosoft.gxapi.GXDU.import_bin>`
         """
         gxapi_cy.WrapDU.lab_template(GXContext._get_tls_geo(), data.encode(), template.encode(), type, delimit.encode(), name_off, unit_off, data_off, sample_type, data_type)
         
@@ -1563,11 +1563,11 @@ class GXDU:
 
         **Note:**
 
-        See GRAVITY.`GXDAT` for a description of the file format.
+        See GRAVITY.`GXDAT <geosoft.gxapi.GXDAT>` for a description of the file format.
         
         Existing data in the line will be replaced.
         
-        The following `GXREG` parameters will be set if they appear
+        The following `GXREG <geosoft.gxapi.GXREG>` parameters will be set if they appear
         in the data file:
         default
         OPERATOR             ""
@@ -1584,9 +1584,9 @@ class GXDU:
         MAP_PROJECTION       ""
         
         If the corresponding constant is not specified and the
-        `GXREG` already has the constant defined, it is not changed.
+        `GXREG <geosoft.gxapi.GXREG>` already has the constant defined, it is not changed.
         If the constant is not defined and it is not already in
-        the `GXREG`, the indicated default will be set.
+        the `GXREG <geosoft.gxapi.GXREG>`, the indicated default will be set.
         """
         gxapi_cy.WrapDU.load_gravity(GXContext._get_tls_geo(), db._wrapper, reg._wrapper, line, data.encode())
         
@@ -1596,19 +1596,19 @@ class GXDU:
     @classmethod
     def load_ltb(cls, db, line, ltb, mode):
         """
-        Load `GXLTB` into a database line.
+        Load `GXLTB <geosoft.gxapi.GXLTB>` into a database line.
 
         **Note:**
 
-        A new channel will be created for all `GXLTB` fields
+        A new channel will be created for all `GXLTB <geosoft.gxapi.GXLTB>` fields
         that do not already exist.
-        The `GXLTB` field type will be double if all entries can be
+        The `GXLTB <geosoft.gxapi.GXLTB>` field type will be double if all entries can be
         converted to double, otherwise it will be a string type
         set to the larger of 16 characters or the longest string
         in the field.
         
-        For _APPEND, the `GXLTB` data is simply added the end of each
-        channel.  `re_fid_all_ch` can be used to re-fid data to
+        For _APPEND, the `GXLTB <geosoft.gxapi.GXLTB>` data is simply added the end of each
+        channel.  `re_fid_all_ch <geosoft.gxapi.GXDU.re_fid_all_ch>` can be used to re-fid data to
         match a specifc channel and there-by case all channels to be
         the same length before appending data.
         """
@@ -1648,17 +1648,17 @@ class GXDU:
         side of expressions and READONLY lock channels on the right
         side of expressions.  Channels are unlocked before returning.
         Therefore, channels on the left side of an expression cannot
-        be locked READONLY because the `math` attempt to lock the
+        be locked READONLY because the `math <geosoft.gxapi.GXDU.math>` attempt to lock the
         channel READWRITE will fail.  Similarly, channels on the right
         side of an expression cannot be locked READWRITE because
-        `math`'s attempt to lock the channels READONLY will fail.
+        `math <geosoft.gxapi.GXDU.math>`'s attempt to lock the channels READONLY will fail.
         
         If this is confusing, just make sure no channels used in the
-        expression are locked before calling `math`.
+        expression are locked before calling `math <geosoft.gxapi.GXDU.math>`.
 
         .. seealso::
 
-            `GXEXP`
+            `GXEXP <geosoft.gxapi.GXEXP>`
         """
         gxapi_cy.WrapDU.math(GXContext._get_tls_geo(), db._wrapper, line, exp._wrapper)
         
@@ -1726,7 +1726,7 @@ class GXDU:
 
         .. seealso::
 
-            `re_fid_all_ch`
+            `re_fid_all_ch <geosoft.gxapi.GXDU.re_fid_all_ch>`
         """
         gxapi_cy.WrapDU.normal(GXContext._get_tls_geo(), db._wrapper, ch, ignore)
         
@@ -1817,7 +1817,7 @@ class GXDU:
     @classmethod
     def qc_survey_plan(cls, db, wa, pply, sl_spa, sl_azi, slx, sly, sl_sta, sl_inc, tl_spa, tl_azi, tlx, tly, tl_sta, tl_inc, type, sample_spacing, extend_outside):
         """
-        Create a database containing proposed survey plan in a `GXPLY`
+        Create a database containing proposed survey plan in a `GXPLY <geosoft.gxapi.GXPLY>`
 
         **Note:**
 
@@ -1860,8 +1860,8 @@ class GXDU:
         columns in the output channel is more than the input channel,
         the remaining columns are dummied.
         
-        This function is fundamentally different in behaviour from `re_fid_ch`.
-        The values in the Reference channel in `re_fid` are the "X" locations
+        This function is fundamentally different in behaviour from `re_fid_ch <geosoft.gxapi.GXDU.re_fid_ch>`.
+        The values in the Reference channel in `re_fid <geosoft.gxapi.GXDU.re_fid>` are the "X" locations
         corresponding to the "Y" locations in the "Original Channel". Output
         Channel values are calculated at the new "X" locations specified by
         the Start Fid and the Fid Increment.
@@ -1883,7 +1883,7 @@ class GXDU:
 
         .. seealso::
 
-            `normal`
+            `normal <geosoft.gxapi.GXDU.normal>`
         """
         gxapi_cy.WrapDU.re_fid_all_ch(GXContext._get_tls_geo(), db._wrapper, line, ref_ch)
         
@@ -1900,7 +1900,7 @@ class GXDU:
         The original channel can be an array channel, in which case
         the columns are individually re-fidded.
         
-        `re_fid_ch` resamples the "Channel to refid" to the "Reference Channel" Fid
+        `re_fid_ch <geosoft.gxapi.GXDU.re_fid_ch>` resamples the "Channel to refid" to the "Reference Channel" Fid
         range and increment.
         """
         gxapi_cy.WrapDU.re_fid_ch(GXContext._get_tls_geo(), db._wrapper, line, ref_ch, ch)
@@ -1921,7 +1921,7 @@ class GXDU:
     @classmethod
     def sample_gd(cls, db, line, ix_ch, iy_ch, o_ch, img):
         """
-        Sample a `GXGD` at a specified X and Y.
+        Sample a `GXGD <geosoft.gxapi.GXGD>` at a specified X and Y.
 
         **Note:**
 
@@ -1935,7 +1935,7 @@ class GXDU:
     @classmethod
     def sample_img(cls, db, line, ix_ch, iy_ch, o_ch, img):
         """
-        Sample a `GXIMG` at a specified X and Y.
+        Sample a `GXIMG <geosoft.gxapi.GXIMG>` at a specified X and Y.
 
         **Note:**
 
@@ -1949,7 +1949,7 @@ class GXDU:
     @classmethod
     def sample_img_line_lst(cls, db, lst, ix_ch, iy_ch, o_ch, img):
         """
-        Sample an `GXIMG` at a specified X and Y, for a `GXLST` of lines.
+        Sample an `GXIMG <geosoft.gxapi.GXIMG>` at a specified X and Y, for a `GXLST <geosoft.gxapi.GXLST>` of lines.
 
         **Note:**
 
@@ -2147,12 +2147,12 @@ class GXDU:
 
         **Note:**
 
-        If the input channel is a `GXVA` (array) channel, then the columns set using
-        `GXDB.set_va_windows`() are used in the statistics; all columns are used by default.
+        If the input channel is a `GXVA <geosoft.gxapi.GXVA>` (array) channel, then the columns set using
+        `GXDB.set_va_windows <geosoft.gxapi.GXDB.set_va_windows>` are used in the statistics; all columns are used by default.
 
         .. seealso::
 
-            `GXST`
+            `GXST <geosoft.gxapi.GXST>`
         """
         gxapi_cy.WrapDU.stat(GXContext._get_tls_geo(), db._wrapper, line, i_ch, st._wrapper)
         
@@ -2202,7 +2202,7 @@ class GXDU:
 
         .. seealso::
 
-            `b_spline`
+            `b_spline <geosoft.gxapi.GXDU.b_spline>`
         """
         gxapi_cy.WrapDU.trend(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch, order)
         
@@ -2234,7 +2234,7 @@ class GXDU:
         Takes the first and XY locations in a line (using the
         current X and Y channels) and defines a section grid
         as a slice through a voxel file.
-        The grid cell sizes can be left as `GS_R8DM`, in which
+        The grid cell sizes can be left as `GS_R8DM <geosoft.gxapi.GS_R8DM>`, in which
         case an attempt will be made to match the voxel cell
         size, based on the line azimuth, voxel rotation, etc.
         
@@ -2256,7 +2256,7 @@ class GXDU:
 
         **Note:**
 
-        Channels to be written should be placed in a `GXLST` object.
+        Channels to be written should be placed in a `GXLST <geosoft.gxapi.GXLST>` object.
         
         Channels are written in the order of the list.  Only the
         channel names in the list are used.
@@ -2361,7 +2361,7 @@ class GXDU:
 
         The Z and Data channels may be array channels, but both must have
         the same number of columns.
-        Only values where all channels are non-dummy (or, for `GXVA` channels,
+        Only values where all channels are non-dummy (or, for `GXVA <geosoft.gxapi.GXVA>` channels,
         where the Z or Data value are defined) are included in the calculation.
         If no non-dummy values are found, Dummy values are returned.
         This function is optimized for cases where Z and Data are array channels
@@ -2379,7 +2379,7 @@ class GXDU:
 
         **Note:**
 
-        Control parameters are passed in the `GXREG` (to allow for future expansion without
+        Control parameters are passed in the `GXREG <geosoft.gxapi.GXREG>` (to allow for future expansion without
         the need to modify the wrappers).
         The input drillhole database must contain current X, Y and Z channels.
         Drillhole data should be equally spaced (or nearly so) down the hole.

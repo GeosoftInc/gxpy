@@ -29,9 +29,9 @@ class GXTPAT:
     Label:         Text to use as a short-form in labels, graphs etc.
     By default, this is the same as the code.
     ex: "FVol."
-    Pattern Attributes:  (See DEFAULT.`GXPAT` in \\src\\etc for more inforation)
-    Pattern:       The Pattern Index; defined in DEFAULT.`GXPAT`, or in the user's
-    USER.`GXPAT` file. If not specified, defaults to 0 (solid fill).
+    Pattern Attributes:  (See DEFAULT.`GXPAT <geosoft.gxapi.GXPAT>` in \\src\\etc for more inforation)
+    Pattern:       The Pattern Index; defined in DEFAULT.`GXPAT <geosoft.gxapi.GXPAT>`, or in the user's
+    USER.`GXPAT <geosoft.gxapi.GXPAT>` file. If not specified, defaults to 0 (solid fill).
     Size:          The pattern tile size. If not specified, defaults to 2.0mm.
     Density:       The tiling density. If not specified, defaults to 1.0.
     Thickness:     The line thickness in the tile, expressed as a integer
@@ -128,7 +128,7 @@ class GXTPAT:
 
     def get_solid_pattern(self, index, code, label, descr, color):
         """
-        Get solid pattern info from the `GXTPAT`.
+        Get solid pattern info from the `GXTPAT <geosoft.gxapi.GXTPAT>`.
 
         **Note:**
 
@@ -143,7 +143,7 @@ class GXTPAT:
 
     def size(self):
         """
-        Returns the number of rows (items) in the `GXTPAT` object.
+        Returns the number of rows (items) in the `GXTPAT <geosoft.gxapi.GXTPAT>` object.
         """
         ret_val = self._wrapper.size()
         return ret_val
@@ -191,14 +191,14 @@ class GXTPAT:
 
     def setup_translation_vv(self, ltb, field, vv_values):
         """
-        Initializes a `GXVV` used to map `GXTPAT` indices to output values
+        Initializes a `GXVV <geosoft.gxapi.GXVV>` used to map `GXTPAT <geosoft.gxapi.GXTPAT>` indices to output values
 
         **Note:**
 
-        The input `GXLTB` object should have key values matching the `GXTPAT` codes.
+        The input `GXLTB <geosoft.gxapi.GXLTB>` object should have key values matching the `GXTPAT <geosoft.gxapi.GXTPAT>` codes.
         Whether the matches are case sensitive or not is dependent on how the
-        `GXLTB` oject was created (see ltb.h).
-        The `GXLTB` field values are converted to the output `GXVV` type.
+        `GXLTB <geosoft.gxapi.GXLTB>` oject was created (see ltb.h).
+        The `GXLTB <geosoft.gxapi.GXLTB>` field values are converted to the output `GXVV <geosoft.gxapi.GXVV>` type.
         """
         self._wrapper.setup_translation_vv(ltb._wrapper, field, vv_values._wrapper)
         

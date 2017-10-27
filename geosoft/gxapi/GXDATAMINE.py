@@ -18,8 +18,8 @@ class GXDATAMINE:
     """
     GXDATAMINE class.
 
-    `GXDATAMINE` functions provide an interface to Datamine Software Limited files.
-    See also `GXGIS` for various other Datamine-specific functions.
+    `GXDATAMINE <geosoft.gxapi.GXDATAMINE>` functions provide an interface to Datamine Software Limited files.
+    See also `GXGIS <geosoft.gxapi.GXGIS>` for various other Datamine-specific functions.
 
     **Note:**
 
@@ -79,11 +79,11 @@ class GXDATAMINE:
     @classmethod
     def numeric_field_lst(cls, file, lst):
         """
-        Return a `GXLST` containing the non-standard numeric fields in a Datamine file.
+        Return a `GXLST <geosoft.gxapi.GXLST>` containing the non-standard numeric fields in a Datamine file.
 
         **Note:**
 
-        At this time, only `GIS_DMTYPE_BLOCKMODEL` files are supported.
+        At this time, only `GIS_DMTYPE_BLOCKMODEL <geosoft.gxapi.GIS_DMTYPE_BLOCKMODEL>` files are supported.
         The field names go in the name part, and field indices (1 to N)
         in the value part.
         """

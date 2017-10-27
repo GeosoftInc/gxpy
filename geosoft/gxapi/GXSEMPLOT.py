@@ -18,7 +18,7 @@ class GXSEMPLOT:
     """
     GXSEMPLOT class.
 
-    Oasis montaj implementation of RTE `GXSEMPLOT`
+    Oasis montaj implementation of RTE `GXSEMPLOT <geosoft.gxapi.GXSEMPLOT>`
     """
 
     def __enter__(self):
@@ -118,10 +118,10 @@ class GXSEMPLOT:
 
         **Note:**
 
-        The Parameters `GXGUI` is loaded based on settings stored in
+        The Parameters `GXGUI <geosoft.gxapi.GXGUI>` is loaded based on settings stored in
         the map. The map is then re-plotted, overwriting the old one,
         based on the new settings. Note that the selection of data
-        in the current `GXDB` is used to replot the map.
+        in the current `GXDB <geosoft.gxapi.GXDB>` is used to replot the map.
         """
         gxapi_cy.WrapSEMPLOT.edit_map_plot_parameters(GXContext._get_tls_geo(), db._wrapper, mask_ch.encode(), mineral_ch.encode(), map._wrapper, view.encode())
         
@@ -204,16 +204,16 @@ class GXSEMPLOT:
     @classmethod
     def filter_lst(cls, lst):
         """
-        Fill a `GXLST` with existing `GXSEMPLOT` filters
+        Fill a `GXLST <geosoft.gxapi.GXLST>` with existing `GXSEMPLOT <geosoft.gxapi.GXSEMPLOT>` filters
 
         **Note:**
 
         "Supplied" filters are stored in \\etc, while user-edited and new filters
         are stored in user\\etc. This function finds all files with the extension
         ".semfilter", first in user\\etc, then in \\etc, and adds the file names
-        (without the extension) to the `GXLST`. The name with the extension is stored
+        (without the extension) to the `GXLST <geosoft.gxapi.GXLST>`. The name with the extension is stored
         as the value.
-        The `GXLST` is cleared first.
+        The `GXLST <geosoft.gxapi.GXLST>` is cleared first.
         """
         gxapi_cy.WrapSEMPLOT.filter_lst(GXContext._get_tls_geo(), lst._wrapper)
         
@@ -240,7 +240,7 @@ class GXSEMPLOT:
     @classmethod
     def get_associated_lst(cls, db, group, lst):
         """
-        Get the associated channels for this group in a `GXLST`
+        Get the associated channels for this group in a `GXLST <geosoft.gxapi.GXLST>`
         """
         gxapi_cy.WrapSEMPLOT.get_associated_lst(GXContext._get_tls_geo(), db._wrapper, group, lst._wrapper)
         
@@ -250,7 +250,7 @@ class GXSEMPLOT:
     @classmethod
     def get_current_mineral_lst(cls, db, mineral_ch, lst):
         """
-        Retrieve `GXLST` of minerals in selected lines.
+        Retrieve `GXLST <geosoft.gxapi.GXLST>` of minerals in selected lines.
 
         **Note:**
 
@@ -265,7 +265,7 @@ class GXSEMPLOT:
     @classmethod
     def get_current_position_lst(cls, db, lst):
         """
-        Retrieve `GXLST` of positions in selected lines.
+        Retrieve `GXLST <geosoft.gxapi.GXLST>` of positions in selected lines.
         """
         gxapi_cy.WrapSEMPLOT.get_current_position_lst(GXContext._get_tls_geo(), db._wrapper, lst._wrapper)
         
@@ -275,7 +275,7 @@ class GXSEMPLOT:
     @classmethod
     def get_full_mineral_lst(cls, lst):
         """
-        Retrieve `GXLST` of all minerals in Semplot_Minerals.csv
+        Retrieve `GXLST <geosoft.gxapi.GXLST>` of all minerals in Semplot_Minerals.csv
         """
         gxapi_cy.WrapSEMPLOT.get_full_mineral_lst(GXContext._get_tls_geo(), lst._wrapper)
         
@@ -285,7 +285,7 @@ class GXSEMPLOT:
     @classmethod
     def get_full_position_lst(cls, lst):
         """
-        Retrieve `GXLST` of all possible mineral positions.
+        Retrieve `GXLST <geosoft.gxapi.GXLST>` of all possible mineral positions.
         """
         gxapi_cy.WrapSEMPLOT.get_full_position_lst(GXContext._get_tls_geo(), lst._wrapper)
         
@@ -303,7 +303,7 @@ class GXSEMPLOT:
         item (if the channel exists in the database) is the Sample Number.
         After this are included all string channels which are NOT oxides or
         elements. (The list can include the mineral).
-        Channel symbol is the `GXLST` value (except for the first item - "Anomaly")
+        Channel symbol is the `GXLST <geosoft.gxapi.GXLST>` value (except for the first item - "Anomaly")
         """
         gxapi_cy.WrapSEMPLOT.get_grouping_lst(GXContext._get_tls_geo(), db._wrapper, lst._wrapper)
         
@@ -347,7 +347,7 @@ class GXSEMPLOT:
 
         **Note:**
 
-        First looks at the `GXSEMPLOT`.MINERAL_CHANNEL value.
+        First looks at the `GXSEMPLOT <geosoft.gxapi.GXSEMPLOT>`.MINERAL_CHANNEL value.
         If not found, returns the first MINERAL class
         channel found. If still not found, returns a
         blank string.
@@ -360,7 +360,7 @@ class GXSEMPLOT:
     @classmethod
     def import_ascii_wizard(cls, name, temp, anomaly):
         """
-        Generate a `GXSEMPLOT` ASCII import template.
+        Generate a `GXSEMPLOT <geosoft.gxapi.GXSEMPLOT>` ASCII import template.
 
         **Note:**
 
@@ -389,7 +389,7 @@ class GXSEMPLOT:
 
         **Note:**
 
-        This wrapper is for `GXSEMPLOT`, and does not require the import licence.
+        This wrapper is for `GXSEMPLOT <geosoft.gxapi.GXSEMPLOT>`, and does not require the import licence.
         
            1. Binary import templates have extension .I2 by convention.  See
               BINARY.I2 for a description of the template format.
@@ -405,7 +405,7 @@ class GXSEMPLOT:
 
         .. seealso::
 
-            `GXDU.lab_template` in du.gxh
+            `GXDU.lab_template <geosoft.gxapi.GXDU.lab_template>` in du.gxh
         """
         gxapi_cy.WrapSEMPLOT.import_bin(GXContext._get_tls_geo(), db._wrapper, data.encode(), template.encode(), line.encode(), flight, date)
         
@@ -431,7 +431,7 @@ class GXSEMPLOT:
 
         Maintains a list of the symbols used in plotting. Call before
         Plotting one or more legends - symbols are accumulated.
-        `plot_symbol_legend` uses this information to create a legend.
+        `plot_symbol_legend <geosoft.gxapi.GXSEMPLOT.plot_symbol_legend>` uses this information to create a legend.
         """
         gxapi_cy.WrapSEMPLOT.init_group_symbols_used(GXContext._get_tls_geo(), db._wrapper)
         
@@ -457,10 +457,10 @@ class GXSEMPLOT:
 
         First checks the view name to see if it starts with
         ``"XYplt_"`` or ``"Triplt_"``. Failing that it looks in the
-        view `GXREG` for a value for "Components.Type", which will
+        view `GXREG <geosoft.gxapi.GXREG>` for a value for "Components.Type", which will
         be either "XYPlot" or "TriPlot".
         If the view does not appear to be an XYPlot or a TriPlot view,
-        the function returns `SEMPLOT_PLOT_UNKNOWN`.
+        the function returns `SEMPLOT_PLOT_UNKNOWN <geosoft.gxapi.SEMPLOT_PLOT_UNKNOWN>`.
         """
         ret_val = gxapi_cy.WrapSEMPLOT.view_type(GXContext._get_tls_geo(), map._wrapper, view.encode())
         return ret_val
@@ -532,7 +532,7 @@ class GXSEMPLOT:
         **Note:**
 
         Looks first in user\\etc, then in \\etc.
-        See `SEMPLOT_EXT` definitions above for which files to look for.
+        See `SEMPLOT_EXT_` definitions above for which files to look for.
         """
         gxapi_cy.WrapSEMPLOT.overlay_lst(GXContext._get_tls_geo(), lst._wrapper, extension, type)
         
@@ -551,10 +551,10 @@ class GXSEMPLOT:
         Only values with mask values of 1 are plotted, if the mask
         channel is specified.
         
-        Call "`reset_used_channel`" prior to this function
+        Call "`reset_used_channel <geosoft.gxapi.GXSEMPLOT.reset_used_channel>`" prior to this function
         in order to track the values actually plotted.
         
-        Call `init_group_symbols_used` prior to this function
+        Call `init_group_symbols_used <geosoft.gxapi.GXSEMPLOT.init_group_symbols_used>` prior to this function
         to reset recording of the symbols used in plotting (for legends etc).
         """
         gxapi_cy.WrapSEMPLOT.plot(GXContext._get_tls_geo(), db._wrapper, template.encode(), mask_ch.encode(), mineral_ch.encode(), map.encode(), map_mode, plot_symb)
@@ -569,7 +569,7 @@ class GXSEMPLOT:
 
         **Note:**
 
-        This function depends on `init_group_symbols_used`
+        This function depends on `init_group_symbols_used <geosoft.gxapi.GXSEMPLOT.init_group_symbols_used>`
         before the plot for which this legend is created is made.
         The symbols and groups to use in the legend are stored to
         a database blob after the plot is made. These values are
@@ -598,17 +598,17 @@ class GXSEMPLOT:
     @classmethod
     def replot(cls, db, mask_ch, mineral_ch, map, view):
         """
-        Replot an existing `GXSEMPLOT` plot based on current data.
+        Replot an existing `GXSEMPLOT <geosoft.gxapi.GXSEMPLOT>` plot based on current data.
 
         **Note:**
 
         Note that the selection of data
-        in the current `GXDB` is used to replot the map.
+        in the current `GXDB <geosoft.gxapi.GXDB>` is used to replot the map.
         
-        Call "`reset_used_channel`" prior to this function
+        Call "`reset_used_channel <geosoft.gxapi.GXSEMPLOT.reset_used_channel>`" prior to this function
         in order to track the values actually plotted.
         
-        Call `init_group_symbols_used` prior to this function
+        Call `init_group_symbols_used <geosoft.gxapi.GXSEMPLOT.init_group_symbols_used>` prior to this function
         to reset recording of the symbols used in plotting (for legends etc).
         """
         gxapi_cy.WrapSEMPLOT.replot(GXContext._get_tls_geo(), db._wrapper, mask_ch.encode(), mineral_ch.encode(), map._wrapper, view.encode())
@@ -623,7 +623,7 @@ class GXSEMPLOT:
 
         **Note:**
 
-        Searches the VIEW `GXREG` for information on a previously
+        Searches the VIEW `GXREG <geosoft.gxapi.GXREG>` for information on a previously
         created legend, and if it finds that info, replots the Legend,
         using the current data, group key etc.
         """
@@ -721,7 +721,7 @@ class GXSEMPLOT:
     @classmethod
     def set_itr(cls, db, ch, itr):
         """
-        Put `GXITR` into a channel.
+        Put `GXITR <geosoft.gxapi.GXITR>` into a channel.
         """
         gxapi_cy.WrapSEMPLOT.set_itr(GXContext._get_tls_geo(), db._wrapper, ch, itr._wrapper)
         

@@ -18,15 +18,15 @@ class GXDAT:
     """
     GXDAT class.
 
-    The `GXDAT` object is used to access data from an variety of data sources
-    using the same access functions. The `GXDAT` interface supports data access
+    The `GXDAT <geosoft.gxapi.GXDAT>` object is used to access data from an variety of data sources
+    using the same access functions. The `GXDAT <geosoft.gxapi.GXDAT>` interface supports data access
     on a point-by-point, of line-by-line basis.  For example,
-    the `GXBIGRID.run` function uses 2 `GXDAT` objects - one `GXDAT` associated with the
+    the `GXBIGRID.run <geosoft.gxapi.GXBIGRID.run>` function uses 2 `GXDAT <geosoft.gxapi.GXDAT>` objects - one `GXDAT <geosoft.gxapi.GXDAT>` associated with the
     input data source, which is read line-by-line, and a second associated with
     the output grid file output grid file.
     
-    Use a specific `GXDAT` creation method for an associated
-    information source in order to make a `GXDAT` as required
+    Use a specific `GXDAT <geosoft.gxapi.GXDAT>` creation method for an associated
+    information source in order to make a `GXDAT <geosoft.gxapi.GXDAT>` as required
     by a specific processing function.  The gridding methods all use DATs.
     """
 
@@ -69,7 +69,7 @@ class GXDAT:
     @classmethod
     def create_db(cls, db, x_ch, y_ch, z_ch):
         """
-        Create a handle to a database `GXDAT` object
+        Create a handle to a database `GXDAT <geosoft.gxapi.GXDAT>` object
         """
         ret_val = gxapi_cy.WrapDAT.create_db(GXContext._get_tls_geo(), db._wrapper, x_ch.encode(), y_ch.encode(), z_ch.encode())
         return GXDAT(ret_val)
@@ -79,7 +79,7 @@ class GXDAT:
     @classmethod
     def create_xgd(cls, name, mode):
         """
-        Create a handle to a grid file `GXDAT` object
+        Create a handle to a grid file `GXDAT <geosoft.gxapi.GXDAT>` object
         """
         ret_val = gxapi_cy.WrapDAT.create_xgd(GXContext._get_tls_geo(), name.encode(), mode)
         return GXDAT(ret_val)
@@ -91,12 +91,12 @@ class GXDAT:
     @classmethod
     def get_lst(cls, lst, interface, flags, mode):
         """
-        Put available `GXDAT` filters and qualifiers in a `GXLST`
+        Put available `GXDAT <geosoft.gxapi.GXDAT>` filters and qualifiers in a `GXLST <geosoft.gxapi.GXLST>`
 
         **Note:**
 
         The filters displayed in the Grid/Image file browse dialog are put
-        in the "Name" of the `GXLST`, while the file qualifiers are stored in
+        in the "Name" of the `GXLST <geosoft.gxapi.GXLST>`, while the file qualifiers are stored in
         the "Value".
         """
         gxapi_cy.WrapDAT.get_lst(GXContext._get_tls_geo(), lst._wrapper, interface.encode(), flags, mode)
@@ -107,11 +107,11 @@ class GXDAT:
 
     def range_xyz(self, min_x, min_y, min_z, max_x, max_y, max_z, num_non_dummy):
         """
-        Determine the range in X, Y and Z in the `GXDAT` source
+        Determine the range in X, Y and Z in the `GXDAT <geosoft.gxapi.GXDAT>` source
 
         **Note:**
 
-        Terminates if unable to open an RPT `GXDAT` interface.
+        Terminates if unable to open an RPT `GXDAT <geosoft.gxapi.GXDAT>` interface.
         """
         min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value, num_non_dummy.value = self._wrapper.range_xyz(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value, num_non_dummy.value)
         

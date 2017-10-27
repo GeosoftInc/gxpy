@@ -18,7 +18,7 @@ class GXGEOSTRING:
     """
     GXGEOSTRING class.
 
-    The `GXGEOSTRING` class is used to read information stored in Geostring files 
+    The `GXGEOSTRING <geosoft.gxapi.GXGEOSTRING>` class is used to read information stored in Geostring files 
     (``*.geosoft_string``). Geosoft geostrings are 3D vector files that store digitized 
     interpretations drawn on section maps. Both polygon and polyline features can be 
     stored in the same file. This API currently only provides read access, 

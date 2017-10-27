@@ -18,7 +18,7 @@ class GXPRAGA3:
     """
     GXPRAGA3 class.
 
-    `GXPRAGA3` application methods
+    `GXPRAGA3 <geosoft.gxapi.GXPRAGA3>` application methods
 
     **Note:**
 

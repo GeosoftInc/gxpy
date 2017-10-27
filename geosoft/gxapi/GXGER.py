@@ -26,8 +26,8 @@ class GXGER:
 
     **Note:**
 
-    `GXGER` message files contain numbered messages that can be used within GXs.
-    Following is an example from the file GEOSOFT.`GXGER`:
+    `GXGER <geosoft.gxapi.GXGER>` message files contain numbered messages that can be used within GXs.
+    Following is an example from the file GEOSOFT.`GXGER <geosoft.gxapi.GXGER>`:
     
     
           #20008
@@ -40,8 +40,8 @@ class GXGER:
     
     A '#' character in column 1 indicates a message number.  The message
     follows on lines that begin with a '!' character.  Strings in the message
-    may be replaced at run time with values using the `set_string`,
-    `set_int` and `set_double` methods. The iGet_GER will return the message
+    may be replaced at run time with values using the `set_string <geosoft.gxapi.GXGER.set_string>`,
+    `set_int <geosoft.gxapi.GXGER.set_int>` and `set_double <geosoft.gxapi.GXGER.set_double>` methods. The iGet_GER will return the message
     with strings replaced by their settings.  By convention, we recommend
     that you use "%1", "%2", etc. as replacement strings.
     """
@@ -89,7 +89,7 @@ class GXGER:
 
         **Note:**
 
-        The `GXGER` file may be in the local directory or the GEOSOFT
+        The `GXGER <geosoft.gxapi.GXGER>` file may be in the local directory or the GEOSOFT
         directory.
         """
         ret_val = gxapi_cy.WrapGER.create(GXContext._get_tls_geo(), file.encode())

@@ -77,8 +77,8 @@ class GXFFT:
 
         **Note:**
 
-        Reduction to magnetic pole (`red_pol`) and downward continuation
-        (`contin`) should be called BEFORE using `app_susc`.
+        Reduction to magnetic pole (`red_pol <geosoft.gxapi.GXFFT.red_pol>`) and downward continuation
+        (`contin <geosoft.gxapi.GXFFT.contin>`) should be called BEFORE using `app_susc <geosoft.gxapi.GXFFT.app_susc>`.
         """
         self._wrapper.app_susc(strength)
         
@@ -138,12 +138,12 @@ class GXFFT:
     @classmethod
     def create(cls, gvv, interv, trend):
         """
-        Create a New `GXFFT` with detrend options.
+        Create a New `GXFFT <geosoft.gxapi.GXFFT>` with detrend options.
 
         **Note:**
 
         The detrending options control the removal of a trend from the data
-        before the `GXFFT` is applied. The default data expansion is 10% before `GXFFT`.
+        before the `GXFFT <geosoft.gxapi.GXFFT>` is applied. The default data expansion is 10% before `GXFFT <geosoft.gxapi.GXFFT>`.
         """
         ret_val = gxapi_cy.WrapFFT.create(GXContext._get_tls_geo(), gvv._wrapper, interv, trend)
         return GXFFT(ret_val)
@@ -153,13 +153,13 @@ class GXFFT:
     @classmethod
     def create_ex(cls, gvv, interv, trend, expansion):
         """
-        Create a New `GXFFT` with detrend and expansion options.
+        Create a New `GXFFT <geosoft.gxapi.GXFFT>` with detrend and expansion options.
 
         **Note:**
 
         The detrending options control the removal of a trend from the data
-        before the `GXFFT` is applied. The expansion options control the minimum
-        data expansion before the `GXFFT` is applied.
+        before the `GXFFT <geosoft.gxapi.GXFFT>` is applied. The expansion options control the minimum
+        data expansion before the `GXFFT <geosoft.gxapi.GXFFT>` is applied.
         """
         ret_val = gxapi_cy.WrapFFT.create_ex(GXContext._get_tls_geo(), gvv._wrapper, interv, trend, expansion)
         return GXFFT(ret_val)
@@ -169,13 +169,13 @@ class GXFFT:
     @classmethod
     def create_ref(cls, gvv, interv, trend):
         """
-        Create `GXFFT` object with detrend options from reference (original) channel,
-        but no `GXFFT` process.
+        Create `GXFFT <geosoft.gxapi.GXFFT>` object with detrend options from reference (original) channel,
+        but no `GXFFT <geosoft.gxapi.GXFFT>` process.
 
         **Note:**
 
         This just creates an object.  It is intended to be called
-        immediately after with `set_vv`.
+        immediately after with `set_vv <geosoft.gxapi.GXFFT.set_vv>`.
         """
         ret_val = gxapi_cy.WrapFFT.create_ref(GXContext._get_tls_geo(), gvv._wrapper, interv, trend)
         return GXFFT(ret_val)
@@ -185,13 +185,13 @@ class GXFFT:
     @classmethod
     def create_ref_ex(cls, gvv, interv, trend, expansion, d_cmult):
         """
-        Create `GXFFT` object with detrend and expansion options from reference (original) channel,
-        but no `GXFFT` process.
+        Create `GXFFT <geosoft.gxapi.GXFFT>` object with detrend and expansion options from reference (original) channel,
+        but no `GXFFT <geosoft.gxapi.GXFFT>` process.
 
         **Note:**
 
         This just creates an object.  It is intended to be called
-        immediately after with `set_vv`.
+        immediately after with `set_vv <geosoft.gxapi.GXFFT.set_vv>`.
         """
         ret_val = gxapi_cy.WrapFFT.create_ref_ex(GXContext._get_tls_geo(), gvv._wrapper, interv, trend, expansion, d_cmult)
         return GXFFT(ret_val)
@@ -213,7 +213,7 @@ class GXFFT:
 
     def get_vv(self, gv_vr, gv_vi):
         """
-        Copies real and imaginary `GXVV`'s to user `GXVV`'s.
+        Copies real and imaginary `GXVV <geosoft.gxapi.GXVV>`'s to user `GXVV <geosoft.gxapi.GXVV>`'s.
         """
         self._wrapper.get_vv(gv_vr._wrapper, gv_vi._wrapper)
         
@@ -253,7 +253,7 @@ class GXFFT:
 
     def inverse(self, gvv, gv_vm):
         """
-        Inverse the `GXFFT` from wave number domain to space domain
+        Inverse the `GXFFT <geosoft.gxapi.GXFFT>` from wave number domain to space domain
         """
         self._wrapper.inverse(gvv._wrapper, gv_vm._wrapper)
         
@@ -313,12 +313,12 @@ class GXFFT:
 
     def set_vv(self, gv_vr, gv_vi):
         """
-        Sets real and imaginary VVs in `GXFFT`.
+        Sets real and imaginary VVs in `GXFFT <geosoft.gxapi.GXFFT>`.
 
         **Note:**
 
-        The `GXVV` must have been obtained from the same `GXFFT`
-        using the `set_vv` method.
+        The `GXVV <geosoft.gxapi.GXVV>` must have been obtained from the same `GXFFT <geosoft.gxapi.GXFFT>`
+        using the `set_vv <geosoft.gxapi.GXFFT.set_vv>` method.
         """
         self._wrapper.set_vv(gv_vr._wrapper, gv_vi._wrapper)
         

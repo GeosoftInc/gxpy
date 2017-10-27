@@ -18,7 +18,7 @@ class GXFLT:
     """
     GXFLT class.
 
-    The `GXFLT` class allows the application of user-defined convolution filters to data in an OASIS database
+    The `GXFLT <geosoft.gxapi.GXFLT>` class allows the application of user-defined convolution filters to data in an OASIS database
     """
 
     def __enter__(self):

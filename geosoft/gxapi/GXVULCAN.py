@@ -18,7 +18,7 @@ class GXVULCAN:
     """
     GXVULCAN class.
 
-    The `GXVULCAN` class is used for importing Maptek® Vulcan block and triangulation files.
+    The `GXVULCAN <geosoft.gxapi.GXVULCAN>` class is used for importing Maptek® Vulcan block and triangulation files.
     """
 
     def __enter__(self):

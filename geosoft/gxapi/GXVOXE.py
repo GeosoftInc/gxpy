@@ -18,7 +18,7 @@ class GXVOXE:
     """
     GXVOXE class.
 
-    `GXVOX` evaluator class. Used to sample values from
+    `GXVOX <geosoft.gxapi.GXVOX>` evaluator class. Used to sample values from
     the voxel.
     """
 
@@ -61,7 +61,7 @@ class GXVOXE:
     @classmethod
     def create(cls, vox):
         """
-        Create a handle to an `GXVOXE` object
+        Create a handle to an `GXVOXE <geosoft.gxapi.GXVOXE>` object
         """
         ret_val = gxapi_cy.WrapVOXE.create(GXContext._get_tls_geo(), vox._wrapper)
         return GXVOXE(ret_val)

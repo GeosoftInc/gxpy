@@ -19,7 +19,7 @@ class GXLL2:
     GXLL2 class.
 
     local datum lookup creator
-    ll2 methods are used to create `GXLL2` objects.  `GXLL2` objects contain
+    ll2 methods are used to create `GXLL2 <geosoft.gxapi.GXLL2>` objects.  `GXLL2 <geosoft.gxapi.GXLL2>` objects contain
     latitude, longitude correction lookup tables to convert between datums.
     """
 
@@ -62,11 +62,11 @@ class GXLL2:
     @classmethod
     def create(cls, lon0, lat0, lon, lat, nlon, nlat, in_ipj, out_ipj):
         """
-        Create an empty `GXLL2` table to be filled
+        Create an empty `GXLL2 <geosoft.gxapi.GXLL2>` table to be filled
 
         .. seealso::
 
-            `destroy`, `set_row`, `save`
+            `destroy <geosoft.gxapi.GXLL2.destroy>`, `set_row <geosoft.gxapi.GXLL2.set_row>`, `save <geosoft.gxapi.GXLL2.save>`
         """
         ret_val = gxapi_cy.WrapLL2.create(GXContext._get_tls_geo(), lon0, lat0, lon, lat, nlon, nlat, in_ipj._wrapper, out_ipj._wrapper)
         return GXLL2(ret_val)
@@ -78,7 +78,7 @@ class GXLL2:
 
     def save(self, name):
         """
-        Save an `GXLL2` to a named resource
+        Save an `GXLL2 <geosoft.gxapi.GXLL2>` to a named resource
 
         **Note:**
 
@@ -94,15 +94,15 @@ class GXLL2:
 
     def set_row(self, row, lon_vv, lat_vv):
         """
-        Define a row of the `GXLL2`
+        Define a row of the `GXLL2 <geosoft.gxapi.GXLL2>`
 
         **Note:**
 
         The correction data is in degrees, added to the input
         datum to product output datum results.
         
-        The `GXVV` lengths must be equal to #longitudes defined
-        by `create`.
+        The `GXVV <geosoft.gxapi.GXVV>` lengths must be equal to #longitudes defined
+        by `create <geosoft.gxapi.GXLL2.create>`.
         """
         self._wrapper.set_row(row, lon_vv._wrapper, lat_vv._wrapper)
         

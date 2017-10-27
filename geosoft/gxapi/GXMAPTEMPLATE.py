@@ -18,7 +18,7 @@ class GXMAPTEMPLATE:
     """
     GXMAPTEMPLATE class.
 
-    A `GXMAPTEMPLATE` wraps and provides manipulation and usage for the XML content in map template files.
+    A `GXMAPTEMPLATE <geosoft.gxapi.GXMAPTEMPLATE>` wraps and provides manipulation and usage for the XML content in map template files.
     See the annotated schema file maptemplate.xsd in the <GEOSOFT>\\maptemplate folder and the accompanying
     documentation in that folder for documentation on the file format.
     """
@@ -108,7 +108,7 @@ class GXMAPTEMPLATE:
     @classmethod
     def create(cls, name, base, mode):
         """
-        Create a `GXMAPTEMPLATE` from an existing file.
+        Create a `GXMAPTEMPLATE <geosoft.gxapi.GXMAPTEMPLATE>` from an existing file.
 
         **Note:**
 

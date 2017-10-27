@@ -60,7 +60,7 @@ class GXDATALINKD:
     @classmethod
     def create_arc_lyr(cls, arc_lyr_file):
         """
-        Create an `GXDATALINKD` object from a ArcGIS LYR file
+        Create an `GXDATALINKD <geosoft.gxapi.GXDATALINKD>` object from a ArcGIS LYR file
 
         **Note:**
 
@@ -74,7 +74,7 @@ class GXDATALINKD:
     @classmethod
     def create_arc_lyr_ex(cls, arc_lyr_file, o3d_group):
         """
-        Create an `GXDATALINKD` object from a ArcGIS LYR file
+        Create an `GXDATALINKD <geosoft.gxapi.GXDATALINKD>` object from a ArcGIS LYR file
 
         **Note:**
 
@@ -88,7 +88,7 @@ class GXDATALINKD:
     @classmethod
     def create_arc_lyr_from_tmp(cls, arc_lyr_file):
         """
-        Create an `GXDATALINKD` object from a temporary ArcGIS LYR file
+        Create an `GXDATALINKD <geosoft.gxapi.GXDATALINKD>` object from a temporary ArcGIS LYR file
 
         **Note:**
 
@@ -102,7 +102,7 @@ class GXDATALINKD:
     @classmethod
     def create_arc_lyr_from_tmp_ex(cls, arc_lyr_file, o3d_group):
         """
-        Create an `GXDATALINKD` object from a temporary ArcGIS LYR file
+        Create an `GXDATALINKD <geosoft.gxapi.GXDATALINKD>` object from a temporary ArcGIS LYR file
 
         **Note:**
 
@@ -116,7 +116,7 @@ class GXDATALINKD:
     @classmethod
     def create_bing(cls, layer):
         """
-        Create an `GXDATALINKD` object for a BING dataset
+        Create an `GXDATALINKD <geosoft.gxapi.GXDATALINKD>` object for a BING dataset
         """
         ret_val = gxapi_cy.WrapDATALINKD.create_bing(GXContext._get_tls_geo(), layer)
         return GXDATALINKD(ret_val)

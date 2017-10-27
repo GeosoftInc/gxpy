@@ -18,7 +18,7 @@ class GXWA:
     """
     GXWA class.
 
-    The `GXWA` class enables you to access and write data to ASCII files.
+    The `GXWA <geosoft.gxapi.GXWA>` class enables you to access and write data to ASCII files.
     """
 
     def __enter__(self):
@@ -74,7 +74,7 @@ class GXWA:
 
         **Note:**
 
-        ANSI Encoding is assumed, See `create_ex` to override this.
+        ANSI Encoding is assumed, See `create_ex <geosoft.gxapi.GXWA.create_ex>` to override this.
         """
         ret_val = gxapi_cy.WrapWA.create(GXContext._get_tls_geo(), file.encode(), append)
         return GXWA(ret_val)
@@ -90,8 +90,8 @@ class GXWA:
 
         Before version 6.2. text in on the GX API level were handled as characters in the current ANSI code page
         defining how characters above ASCII 127 would be displayed. 6.2. introduced Unicode in the core
-        montaj engine that greatly increased the number of symbols that can be used. The `WA_ENCODE` constants
-        were introduce that controls how text are written to files on disk with the `GXWA` class.
+        montaj engine that greatly increased the number of symbols that can be used. The `WA_ENCODE_` constants
+        were introduce that controls how text are written to files on disk with the `GXWA <geosoft.gxapi.GXWA>` class.
         """
         ret_val = gxapi_cy.WrapWA.create_ex(GXContext._get_tls_geo(), file.encode(), append, encode)
         return GXWA(ret_val)
@@ -101,11 +101,11 @@ class GXWA:
     @classmethod
     def create_sbf(cls, sbf, file, append):
         """
-        Creates an ASCII file to write to in an `GXSBF`.
+        Creates an ASCII file to write to in an `GXSBF <geosoft.gxapi.GXSBF>`.
 
         **Note:**
 
-        See sbf.gxh. ANSI Encoding is assumed, See `create_sbf_ex` to override this.
+        See sbf.gxh. ANSI Encoding is assumed, See `create_sbf_ex <geosoft.gxapi.GXWA.create_sbf_ex>` to override this.
         """
         ret_val = gxapi_cy.WrapWA.create_sbf(GXContext._get_tls_geo(), sbf._wrapper, file.encode(), append)
         return GXWA(ret_val)
@@ -115,15 +115,15 @@ class GXWA:
     @classmethod
     def create_sbf_ex(cls, sbf, file, append, encode):
         """
-        Creates an ASCII file to write to in an `GXSBF`.
+        Creates an ASCII file to write to in an `GXSBF <geosoft.gxapi.GXSBF>`.
 
         **Note:**
 
         Also see sbf.gxh
         Before version 6.2. text in on the GX API level were handled as characters in the current ANSI code page
         defining how characters above ASCII 127 would be displayed. 6.2. introduced Unicode in the core
-        montaj engine that greatly increased the number of symbols that can be used. The `WA_ENCODE` constants
-        were introduce that controls how text are written to files on disk with the `GXWA` class.
+        montaj engine that greatly increased the number of symbols that can be used. The `WA_ENCODE_` constants
+        were introduce that controls how text are written to files on disk with the `GXWA <geosoft.gxapi.GXWA>` class.
         """
         ret_val = gxapi_cy.WrapWA.create_sbf_ex(GXContext._get_tls_geo(), sbf._wrapper, file.encode(), append, encode)
         return GXWA(ret_val)
@@ -135,7 +135,7 @@ class GXWA:
 
     def new_line(self):
         """
-        Forces a new line in the `GXWA` object.
+        Forces a new line in the `GXWA <geosoft.gxapi.GXWA>` object.
         """
         self._wrapper.new_line()
         

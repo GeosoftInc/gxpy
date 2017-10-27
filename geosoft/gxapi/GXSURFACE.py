@@ -19,8 +19,8 @@ class GXSURFACE:
     """
     GXSURFACE class.
 
-    The `GXSURFACE` class allows you to create, read and alter Geosurface files (``*.geosoft_surface``).
-    A Geosurface file can contain one or more surface items (see `GXSURFACEITEM` class). In turn each item can
+    The `GXSURFACE <geosoft.gxapi.GXSURFACE>` class allows you to create, read and alter Geosurface files (``*.geosoft_surface``).
+    A Geosurface file can contain one or more surface items (see `GXSURFACEITEM <geosoft.gxapi.GXSURFACEITEM>` class). In turn each item can
     contains one or more triangular polyhedral meshes.
     """
 
@@ -85,7 +85,7 @@ class GXSURFACE:
 
     def get_ipj(self, ipj):
         """
-        Get the coordinate system of the `GXSURFACE`.
+        Get the coordinate system of the `GXSURFACE <geosoft.gxapi.GXSURFACE>`.
         """
         self._wrapper.get_ipj(ipj._wrapper)
         
@@ -95,7 +95,7 @@ class GXSURFACE:
 
     def set_ipj(self, ipj):
         """
-        Change the coordinate system of the `GXSURFACE`.
+        Change the coordinate system of the `GXSURFACE <geosoft.gxapi.GXSURFACE>`.
         """
         self._wrapper.set_ipj(ipj._wrapper)
         
@@ -115,7 +115,7 @@ class GXSURFACE:
 
     def get_surface_item(self, guid):
         """
-        Get the an existing surface item from the `GXSURFACE`
+        Get the an existing surface item from the `GXSURFACE <geosoft.gxapi.GXSURFACE>`
         """
         ret_val = self._wrapper.get_surface_item(guid.encode())
         return GXSURFACEITEM(ret_val)
@@ -125,7 +125,7 @@ class GXSURFACE:
 
     def add_surface_item(self, surfaceitem):
         """
-        Add a new surface item to the `GXSURFACE`
+        Add a new surface item to the `GXSURFACE <geosoft.gxapi.GXSURFACE>`
         """
         self._wrapper.add_surface_item(surfaceitem._wrapper)
         

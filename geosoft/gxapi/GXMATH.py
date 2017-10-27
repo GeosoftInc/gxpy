@@ -369,7 +369,7 @@ class GXMATH:
 
         .. seealso::
 
-            `lambda_trans_rev_`
+            `lambda_trans_rev_ <geosoft.gxapi.GXMATH.lambda_trans_rev_>`
         """
         ret_val = gxapi_cy.WrapMATH.lambda_trans_(GXContext._get_tls_geo(), z, lda)
         return ret_val
@@ -387,7 +387,7 @@ class GXMATH:
 
         .. seealso::
 
-            `lambda_trans_`
+            `lambda_trans_ <geosoft.gxapi.GXMATH.lambda_trans_>`
         """
         ret_val = gxapi_cy.WrapMATH.lambda_trans_rev_(GXContext._get_tls_geo(), z, lda)
         return ret_val
@@ -448,7 +448,7 @@ class GXMATH:
 
         .. seealso::
 
-            `un_log_z_`
+            `un_log_z_ <geosoft.gxapi.GXMATH.un_log_z_>`
         """
         ret_val = gxapi_cy.WrapMATH.log_z_(GXContext._get_tls_geo(), z, mode, min)
         return ret_val
@@ -514,7 +514,7 @@ class GXMATH:
 
         **Note:**
 
-        Use `s_rand_` to seed the random number generator before a series of
+        Use `s_rand_ <geosoft.gxapi.GXMATH.s_rand_>` to seed the random number generator before a series of
         calls to this function are made.
         The standard "C" function rand() is called.
         """
@@ -606,7 +606,7 @@ class GXMATH:
 
         .. seealso::
 
-            `log_z_`
+            `log_z_ <geosoft.gxapi.GXMATH.log_z_>`
         """
         ret_val = gxapi_cy.WrapMATH.un_log_z_(GXContext._get_tls_geo(), z, mode, min)
         return ret_val
@@ -620,7 +620,7 @@ class GXMATH:
 
         **Note:**
 
-        Use the `rand_` function to create a random number between  0 and 1.
+        Use the `rand_ <geosoft.gxapi.GXMATH.rand_>` function to create a random number between  0 and 1.
         The standard "C" function srand() is called.
         """
         gxapi_cy.WrapMATH.s_rand_(GXContext._get_tls_geo())

@@ -18,7 +18,7 @@ class GXPDF3D:
     """
     GXPDF3D class.
 
-    The `GXPDF3D` class provides the ability to create 3D PDFs.
+    The `GXPDF3D <geosoft.gxapi.GXPDF3D>` class provides the ability to create 3D PDFs.
     """
 
     def __enter__(self):

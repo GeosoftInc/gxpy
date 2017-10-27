@@ -61,7 +61,7 @@ class GXBIGRID:
 
     def clear(self):
         """
-        Clears all the parameters in a `GXBIGRID` object
+        Clears all the parameters in a `GXBIGRID <geosoft.gxapi.GXBIGRID>` object
         """
         self._wrapper.clear()
         
@@ -78,7 +78,7 @@ class GXBIGRID:
         The Bigrid object is initially empty. It will store the
         control file parameters which the Bigrid program needs
         to execute. Use the LoadParms_BIGRID method to get the
-        control file parameters into the `GXBIGRID` object.
+        control file parameters into the `GXBIGRID <geosoft.gxapi.GXBIGRID>` object.
         """
         ret_val = gxapi_cy.WrapBIGRID.create(GXContext._get_tls_geo())
         return GXBIGRID(ret_val)
@@ -97,9 +97,9 @@ class GXBIGRID:
 
         If the control file name passed into this function is a file
         which does not exist, then the defaults for a Bigrid control
-        file will be generated and put into the `GXBIGRID` object.
+        file will be generated and put into the `GXBIGRID <geosoft.gxapi.GXBIGRID>` object.
         Otherwise, the control file's settings are retrieved from
-        the file and loaded into the `GXBIGRID` object.
+        the file and loaded into the `GXBIGRID <geosoft.gxapi.GXBIGRID>` object.
         """
         ret_val = self._wrapper.load_parms(file.encode())
         return ret_val

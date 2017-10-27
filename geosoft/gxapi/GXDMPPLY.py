@@ -60,7 +60,7 @@ class GXDMPPLY:
 
     def clear(self):
         """
-        Clear/remove all polygons from the `GXDMPPLY`.
+        Clear/remove all polygons from the `GXDMPPLY <geosoft.gxapi.GXDMPPLY>`.
         """
         self._wrapper.clear()
         
@@ -80,7 +80,7 @@ class GXDMPPLY:
     @classmethod
     def create(cls):
         """
-        Creates a `GXDMPPLY` object.
+        Creates a `GXDMPPLY <geosoft.gxapi.GXDMPPLY>` object.
         """
         ret_val = gxapi_cy.WrapDMPPLY.create(GXContext._get_tls_geo())
         return GXDMPPLY(ret_val)
@@ -152,11 +152,11 @@ class GXDMPPLY:
 
     def get_poly(self, p, vv_x, vv_y, vv_z):
         """
-        Get a specific polygon from a `GXDMPPLY` object.
+        Get a specific polygon from a `GXDMPPLY <geosoft.gxapi.GXDMPPLY>` object.
 
         **Note:**
 
-        Get the number of points from the `GXVV` length.
+        Get the number of points from the `GXVV <geosoft.gxapi.GXVV>` length.
         """
         self._wrapper.get_poly(p, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
         
@@ -182,7 +182,7 @@ class GXDMPPLY:
 
     def get_vertex(self, p, v, x, y, z):
         """
-        Get a vertex location from a `GXDMPPLY` object.
+        Get a vertex location from a `GXDMPPLY <geosoft.gxapi.GXDMPPLY>` object.
         """
         x.value, y.value, z.value = self._wrapper.get_vertex(p, v, x.value, y.value, z.value)
         
@@ -192,7 +192,7 @@ class GXDMPPLY:
 
     def num_joins(self):
         """
-        Get the number of joining lines in a `GXDMPPLY` object.
+        Get the number of joining lines in a `GXDMPPLY <geosoft.gxapi.GXDMPPLY>` object.
         """
         ret_val = self._wrapper.num_joins()
         return ret_val
@@ -202,7 +202,7 @@ class GXDMPPLY:
 
     def num_polys(self):
         """
-        Get the number of polygons in a `GXDMPPLY` object.
+        Get the number of polygons in a `GXDMPPLY <geosoft.gxapi.GXDMPPLY>` object.
 
         **Note:**
 
@@ -275,7 +275,7 @@ class GXDMPPLY:
 
         **Note:**
 
-        This is the inverse operation of `project_poly`.
+        This is the inverse operation of `project_poly <geosoft.gxapi.GXDMPPLY.project_poly>`.
         
         Input the 2D locations on the projected vertical plane. These locations
         are projected back onto the original polygon plane.
@@ -298,11 +298,11 @@ class GXDMPPLY:
 
     def set_poly(self, p, vv_x, vv_y, vv_z):
         """
-        Set a specific polygon into a `GXDMPPLY` object.
+        Set a specific polygon into a `GXDMPPLY <geosoft.gxapi.GXDMPPLY>` object.
 
         **Note:**
 
-        Get the number of points from the `GXVV` length.
+        Get the number of points from the `GXVV <geosoft.gxapi.GXVV>` length.
         """
         self._wrapper.set_poly(p, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
         

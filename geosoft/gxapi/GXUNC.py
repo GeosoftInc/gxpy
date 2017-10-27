@@ -18,7 +18,7 @@ class GXUNC:
     """
     GXUNC class.
 
-    This library is not a class. Use the `GXUNC` library functions
+    This library is not a class. Use the `GXUNC <geosoft.gxapi.GXUNC>` library functions
     to work with Unicode characters and strings. Since version 6.2
     all strings are represented internally in the the GX engine
     as UTF-8. The character set concept was discarded as a way to
@@ -106,7 +106,7 @@ class GXUNC:
 
         **Note:**
 
-        Invalid symbols in the `GXVV` will be set to -1 by this call. `GXVV` has to be of type `GS_LONG`.
+        Invalid symbols in the `GXVV <geosoft.gxapi.GXVV>` will be set to -1 by this call. `GXVV <geosoft.gxapi.GXVV>` has to be of type `GS_LONG <geosoft.gxapi.GS_LONG>`.
         """
         gxapi_cy.WrapUNC.validate_symbols(GXContext._get_tls_geo(), vv._wrapper, face.encode(), geofont)
         

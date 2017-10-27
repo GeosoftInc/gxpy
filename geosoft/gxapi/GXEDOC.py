@@ -18,7 +18,7 @@ class GXEDOC:
     """
     GXEDOC class.
 
-    The `GXEDOC` class provides access to a generic documents views as loaded within
+    The `GXEDOC <geosoft.gxapi.GXEDOC>` class provides access to a generic documents views as loaded within
     Oasis montaj.
     """
 
@@ -61,11 +61,11 @@ class GXEDOC:
     @classmethod
     def create_new_gms_3d(cls, name, nx, ny, type):
         """
-        Creates a new `GXGMSYS` 3D Model into the workspace, flags as new.
+        Creates a new `GXGMSYS <geosoft.gxapi.GXGMSYS>` 3D Model into the workspace, flags as new.
 
         **Note:**
 
-        See `load`. This is used for brand new documents, it also sets
+        See `load <geosoft.gxapi.GXEDOC.load>`. This is used for brand new documents, it also sets
         an internal flag such that if on closing the user chooses
         not to save changes, the document is deleted thus keeping the
         project folders clean.
@@ -96,7 +96,7 @@ class GXEDOC:
 
         **Note:**
 
-        This function acts just like `current` except that the document is not activated (brought to foreground) and no
+        This function acts just like `current <geosoft.gxapi.GXEDOC.current>` except that the document is not activated (brought to foreground) and no
         				guarantee is given about which document is currently active.
         """
         ret_val = gxapi_cy.WrapEDOC.current_no_activate(GXContext._get_tls_geo(), type)
@@ -119,7 +119,7 @@ class GXEDOC:
     @classmethod
     def get_documents_lst(cls, lst, path, type):
         """
-        Load the file names of open documents into a `GXLST`.
+        Load the file names of open documents into a `GXLST <geosoft.gxapi.GXLST>`.
         """
         ret_val = gxapi_cy.WrapEDOC.get_documents_lst(GXContext._get_tls_geo(), lst._wrapper, path, type)
         return ret_val
@@ -129,7 +129,7 @@ class GXEDOC:
 
     def get_name(self, name):
         """
-        Get the name of the document object of this `GXEDOC`.
+        Get the name of the document object of this `GXEDOC <geosoft.gxapi.GXEDOC>`.
         """
         name.value = self._wrapper.get_name(name.value.encode())
         
@@ -221,7 +221,7 @@ class GXEDOC:
 
         **Note:**
 
-        This function acts just like `load` except that the document(s) is not activated (brought to foreground) and no
+        This function acts just like `load <geosoft.gxapi.GXEDOC.load>` except that the document(s) is not activated (brought to foreground) and no
         					guarantee is given about which document is currently active.
         """
         ret_val = gxapi_cy.WrapEDOC.load_no_activate(GXContext._get_tls_geo(), name.encode(), type)
@@ -232,7 +232,7 @@ class GXEDOC:
 
     def make_current(self):
         """
-        Makes this `GXEDOC` object the current active object to the user.
+        Makes this `GXEDOC <geosoft.gxapi.GXEDOC>` object the current active object to the user.
         """
         self._wrapper.make_current()
         
@@ -277,7 +277,7 @@ class GXEDOC:
         **Note:**
 
         If the document is not loaded, nothing happens.
-        Same as `un_load_verify` with FALSE to prompt save.
+        Same as `un_load_verify <geosoft.gxapi.GXEDOC.un_load_verify>` with FALSE to prompt save.
         """
         gxapi_cy.WrapEDOC.un_load(GXContext._get_tls_geo(), name.encode(), type)
         
@@ -317,7 +317,7 @@ class GXEDOC:
 
         If the document is not loaded, nothing happens.
         The user can be prompted to save before unloading.
-        If `EDOC_UNLOAD_NO_PROMPT`, data is always saved.
+        If `EDOC_UNLOAD_NO_PROMPT <geosoft.gxapi.EDOC_UNLOAD_NO_PROMPT>`, data is always saved.
         """
         gxapi_cy.WrapEDOC.un_load_verify(GXContext._get_tls_geo(), name.encode(), verify, type)
         

@@ -138,7 +138,7 @@ class GXPROJ:
     @classmethod
     def list_documents(cls, gvv, type):
         """
-        Fills a `GXVV` with documents of a certain type.
+        Fills a `GXVV <geosoft.gxapi.GXVV>` with documents of a certain type.
 
         **Note:**
 
@@ -149,9 +149,9 @@ class GXPROJ:
         3DView           List 3D Views.
         Voxel            List Voxels.
         VoxelInversion   List VOXI Documents.
-        `GXMXD`              List ArcGIS MXDs.
-        GMS3D            List GM-`GXSYS` 3D Models.
-        GMS2D            List GM-`GXSYS` 2D Models.
+        `GXMXD <geosoft.gxapi.GXMXD>`              List ArcGIS MXDs.
+        GMS3D            List GM-`GXSYS <geosoft.gxapi.GXSYS>` 3D Models.
+        GMS2D            List GM-`GXSYS <geosoft.gxapi.GXSYS>` 2D Models.
         All              Lists all files.
         """
         ret_val = gxapi_cy.WrapPROJ.list_documents(GXContext._get_tls_geo(), gvv._wrapper, type.encode())
@@ -162,7 +162,7 @@ class GXPROJ:
     @classmethod
     def list_loaded_documents(cls, gvv, type):
         """
-        Fills a `GXVV` with loaded documents of a certain type.
+        Fills a `GXVV <geosoft.gxapi.GXVV>` with loaded documents of a certain type.
 
         **Note:**
 
@@ -173,9 +173,9 @@ class GXPROJ:
         3DView           List 3D Views.
         Voxel            List Voxels.
         VoxelInversion   List VOXI Documents.
-        `GXMXD`              List ArcGIS MXDs.
-        GMS3D            List GM-`GXSYS` 3D Models.
-        GMS2D            List GM-`GXSYS` 2D Models.
+        `GXMXD <geosoft.gxapi.GXMXD>`              List ArcGIS MXDs.
+        GMS3D            List GM-`GXSYS <geosoft.gxapi.GXSYS>` 3D Models.
+        GMS2D            List GM-`GXSYS <geosoft.gxapi.GXSYS>` 2D Models.
         All              Lists all files.
         """
         ret_val = gxapi_cy.WrapPROJ.list_loaded_documents(GXContext._get_tls_geo(), gvv._wrapper, type.encode())
@@ -206,14 +206,14 @@ class GXPROJ:
     @classmethod
     def list_tools(cls, lst, type):
         """
-        Fills an `GXLST` object with tools of a certain type and
+        Fills an `GXLST <geosoft.gxapi.GXLST>` object with tools of a certain type and
         notes the current visibility setting.
 
         **Note:**
 
         GX will terminate if there is an error.
         
-        `GXLST` object will hold the tool name in the name column and
+        `GXLST <geosoft.gxapi.GXLST>` object will hold the tool name in the name column and
         include whether the tool is currently visible in the value
         column (1=visible, 0-hidden).
         """

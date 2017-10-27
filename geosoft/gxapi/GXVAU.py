@@ -19,7 +19,7 @@ class GXVAU:
     GXVAU class.
 
     This is not a class. These are methods that work on
-    data stored in `GXVA` objects
+    data stored in `GXVA <geosoft.gxapi.GXVA>` objects
     """
 
     def __enter__(self):
@@ -61,13 +61,13 @@ class GXVAU:
     @classmethod
     def prune(cls, v_ap, vv_r, o):
         """
-        Prune values from a `GXVA` based on reference `GXVA`
+        Prune values from a `GXVA <geosoft.gxapi.GXVA>` based on reference `GXVA <geosoft.gxapi.GXVA>`
 
         **Note:**
 
-        Pruning will shorten the `GXVA` by removing values
+        Pruning will shorten the `GXVA <geosoft.gxapi.GXVA>` by removing values
         that are either dummy or non-dummy in the reference
-        `GXVA`
+        `GXVA <geosoft.gxapi.GXVA>`
         """
         gxapi_cy.WrapVAU.prune(GXContext._get_tls_geo(), v_ap._wrapper, vv_r._wrapper, o)
         

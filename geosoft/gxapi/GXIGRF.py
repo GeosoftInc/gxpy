@@ -19,8 +19,8 @@ class GXIGRF:
     GXIGRF class.
 
     International Geomagnetic Reference Field
-    Methods to work with `GXIGRF` objects. The `GXIGRF` object
-    contains data for the `GXIGRF` model of the geomagnetic
+    Methods to work with `GXIGRF <geosoft.gxapi.GXIGRF>` objects. The `GXIGRF <geosoft.gxapi.GXIGRF>` object
+    contains data for the `GXIGRF <geosoft.gxapi.GXIGRF>` model of the geomagnetic
     reference field.
     """
 
@@ -63,13 +63,13 @@ class GXIGRF:
 
     def calc(self, el, lon, lat, str_val, inc, dec):
         """
-        Calculate `GXIGRF` data for a given `GXIGRF` model.
+        Calculate `GXIGRF <geosoft.gxapi.GXIGRF>` data for a given `GXIGRF <geosoft.gxapi.GXIGRF>` model.
 
         **Note:**
 
-        Calculate `GXIGRF` data (total field, inclination, and declination)
-        for a given `GXIGRF` model. The model used will be the same as that
-        obtained with `create`.
+        Calculate `GXIGRF <geosoft.gxapi.GXIGRF>` data (total field, inclination, and declination)
+        for a given `GXIGRF <geosoft.gxapi.GXIGRF>` model. The model used will be the same as that
+        obtained with `create <geosoft.gxapi.GXIGRF.create>`.
         """
         str_val.value, inc.value, dec.value = self._wrapper.calc(el, lon, lat, str_val.value, inc.value, dec.value)
         
@@ -79,21 +79,21 @@ class GXIGRF:
 
     def calc_vv(self, gv_vel, gv_vlon, gv_vlat, gv_vfs, gv_vinc, gv_vdec):
         """
-        Calculate `GXIGRF` data `GXVV`'s for a given `GXIGRF` model.
+        Calculate `GXIGRF <geosoft.gxapi.GXIGRF>` data `GXVV <geosoft.gxapi.GXVV>`'s for a given `GXIGRF <geosoft.gxapi.GXIGRF>` model.
 
         **Note:**
 
-        Calculate `GXIGRF` data (total field, inclination, and declination)
-        for a given `GXIGRF` model. The model used will be the same as that
-        obtained with `create`.
-        All of the `GXVV`'s should be the same length. The function
+        Calculate `GXIGRF <geosoft.gxapi.GXIGRF>` data (total field, inclination, and declination)
+        for a given `GXIGRF <geosoft.gxapi.GXIGRF>` model. The model used will be the same as that
+        obtained with `create <geosoft.gxapi.GXIGRF.create>`.
+        All of the `GXVV <geosoft.gxapi.GXVV>`'s should be the same length. The function
         will abort if they are not.
         
         No assumption is made on what data types are contained by
-        any of the `GXVV`'s. However, all total field, inclination, and
+        any of the `GXVV <geosoft.gxapi.GXVV>`'s. However, all total field, inclination, and
         declination values are internally calculated as real data.
         These values will be converted to the types contained in the
-        output `GXVV`'s.
+        output `GXVV <geosoft.gxapi.GXVV>`'s.
         """
         self._wrapper.calc_vv(gv_vel._wrapper, gv_vlon._wrapper, gv_vlat._wrapper, gv_vfs._wrapper, gv_vinc._wrapper, gv_vdec._wrapper)
         
@@ -103,12 +103,12 @@ class GXIGRF:
     @classmethod
     def create(cls, date, year, filename):
         """
-        Create an `GXIGRF`.
+        Create an `GXIGRF <geosoft.gxapi.GXIGRF>`.
 
         **Note:**
 
-        If the year of the `GXIGRF` model is dummy, then
-        the `GXIGRF` year nearest to the line's date will
+        If the year of the `GXIGRF <geosoft.gxapi.GXIGRF>` model is dummy, then
+        the `GXIGRF <geosoft.gxapi.GXIGRF>` year nearest to the line's date will
         be used. Otherwise, the specified year is used.
         """
         ret_val = gxapi_cy.WrapIGRF.create(GXContext._get_tls_geo(), date, year, filename.encode())
@@ -119,7 +119,7 @@ class GXIGRF:
     @classmethod
     def date_range(cls, file_name, min, max):
         """
-        Determine the range of years covered by an `GXIGRF` or DGRF file
+        Determine the range of years covered by an `GXIGRF <geosoft.gxapi.GXIGRF>` or DGRF file
 
         **Note:**
 

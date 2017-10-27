@@ -20,7 +20,7 @@ class GXCSYMB:
 
     This class is used for generating and modifying colored symbol objects.
     Symbol fills are assigned colors based on their Z values and a zone, Aggregate
-    or `GXITR` file which defines what colors are associated with different ranges
+    or `GXITR <geosoft.gxapi.GXITR>` file which defines what colors are associated with different ranges
     of Z values. The position of a symbol is defined by its X,Y coordinates.
     """
 
@@ -88,7 +88,7 @@ class GXCSYMB:
 
         **Note:**
 
-        Use this method after a call to `set_static_col`. This method
+        Use this method after a call to `set_static_col <geosoft.gxapi.GXCSYMB.set_static_col>`. This method
         reestablishes the symbol color association with their Z data
         values and color transform.
         """
@@ -118,8 +118,8 @@ class GXCSYMB:
         code point. GFN fonts wil produce valid symbols depending on the font for 0x01-0x7f and the degree,
         plus-minus and diameter symbol (latin small letter o with stroke) for 0xB0, 0xB1 and 0xF8 respectively.
         
-        It is possible to check if a character is valid using `GXUNC.is_valid_utf16_char`. The high 16-bits are reserved
-        for future use. Also see: `GXUNC.valid_symbol` and `GXUNC.validate_symbols`
+        It is possible to check if a character is valid using `GXUNC.is_valid_utf16_char <geosoft.gxapi.GXUNC.is_valid_utf16_char>`. The high 16-bits are reserved
+        for future use. Also see: `GXUNC.valid_symbol <geosoft.gxapi.GXUNC.valid_symbol>` and `GXUNC.validate_symbols <geosoft.gxapi.GXUNC.validate_symbols>`
         """
         self._wrapper.set_number(number)
         
@@ -149,7 +149,7 @@ class GXCSYMB:
     @classmethod
     def create(cls, itr):
         """
-        Create a `GXCSYMB`.
+        Create a `GXCSYMB <geosoft.gxapi.GXCSYMB>`.
         """
         ret_val = gxapi_cy.WrapCSYMB.create(GXContext._get_tls_geo(), itr.encode())
         return GXCSYMB(ret_val)
@@ -161,7 +161,7 @@ class GXCSYMB:
 
     def get_itr(self, itr):
         """
-        Get the `GXITR` of the `GXCSYMB`
+        Get the `GXITR <geosoft.gxapi.GXITR>` of the `GXCSYMB <geosoft.gxapi.GXCSYMB>`
         """
         self._wrapper.get_itr(itr._wrapper)
         

@@ -18,7 +18,7 @@ class GXUSERMETA:
     """
     GXUSERMETA class.
 
-    The `GXUSERMETA` class handles user style metadata tied to real
+    The `GXUSERMETA <geosoft.gxapi.GXUSERMETA>` class handles user style metadata tied to real
     data.
     """
 
@@ -61,7 +61,7 @@ class GXUSERMETA:
     @classmethod
     def create(cls, format):
         """
-        Creates an empty `GXUSERMETA` object
+        Creates an empty `GXUSERMETA <geosoft.gxapi.GXUSERMETA>` object
         """
         ret_val = gxapi_cy.WrapUSERMETA.create(GXContext._get_tls_geo(), format)
         return GXUSERMETA(ret_val)
@@ -71,7 +71,7 @@ class GXUSERMETA:
     @classmethod
     def create_s(cls, file):
         """
-        Create a `GXUSERMETA` from a file
+        Create a `GXUSERMETA <geosoft.gxapi.GXUSERMETA>` from a file
         """
         ret_val = gxapi_cy.WrapUSERMETA.create_s(GXContext._get_tls_geo(), file.encode())
         return GXUSERMETA(ret_val)
@@ -113,7 +113,7 @@ class GXUSERMETA:
 
     def get_ipj(self, ipj):
         """
-        Get the `GXIPJ`
+        Get the `GXIPJ <geosoft.gxapi.GXIPJ>`
         """
         self._wrapper.get_ipj(ipj._wrapper)
         
@@ -143,7 +143,7 @@ class GXUSERMETA:
 
     def compare(self, usermeta2):
         """
-        Compare 2 `GXUSERMETA`'s
+        Compare 2 `GXUSERMETA <geosoft.gxapi.GXUSERMETA>`'s
         """
         ret_val = self._wrapper.compare(usermeta2._wrapper)
         return ret_val
@@ -203,7 +203,7 @@ class GXUSERMETA:
 
     def serial(self, save_geo, file):
         """
-        Serialize `GXUSERMETA` to a `GXBF`.
+        Serialize `GXUSERMETA <geosoft.gxapi.GXUSERMETA>` to a `GXBF <geosoft.gxapi.GXBF>`.
         """
         self._wrapper.serial(save_geo, file.encode())
         
@@ -263,7 +263,7 @@ class GXUSERMETA:
 
     def set_ipj(self, ipj):
         """
-        Set the `GXIPJ`
+        Set the `GXIPJ <geosoft.gxapi.GXIPJ>`
         """
         self._wrapper.set_ipj(ipj._wrapper)
         

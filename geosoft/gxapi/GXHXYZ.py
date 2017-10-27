@@ -63,7 +63,7 @@ class GXHXYZ:
     @classmethod
     def create(cls, name):
         """
-        Create a handle to an `GXHXYZ` object
+        Create a handle to an `GXHXYZ <geosoft.gxapi.GXHXYZ>` object
         """
         ret_val = gxapi_cy.WrapHXYZ.create(GXContext._get_tls_geo(), name.encode())
         return GXHXYZ(ret_val)
@@ -85,7 +85,7 @@ class GXHXYZ:
     @classmethod
     def h_create_db(cls, db, gvv, name):
         """
-        Make an `GXHXYZ` from GDB
+        Make an `GXHXYZ <geosoft.gxapi.GXHXYZ>` from GDB
         """
         ret_val = gxapi_cy.WrapHXYZ.h_create_db(GXContext._get_tls_geo(), db._wrapper, gvv._wrapper, name.encode())
         return GXHXYZ(ret_val)
@@ -95,7 +95,7 @@ class GXHXYZ:
     @classmethod
     def h_create_sql(cls, template, x, y, z, ipj, name):
         """
-        Make an `GXHXYZ` from SQL Query
+        Make an `GXHXYZ <geosoft.gxapi.GXHXYZ>` from SQL Query
         """
         ret_val = gxapi_cy.WrapHXYZ.h_create_sql(GXContext._get_tls_geo(), template.encode(), x.encode(), y.encode(), z.encode(), ipj._wrapper, name.encode())
         return GXHXYZ(ret_val)

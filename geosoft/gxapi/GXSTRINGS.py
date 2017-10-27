@@ -18,7 +18,7 @@ class GXSTRINGS:
     """
     GXSTRINGS class.
 
-    The `GXSTRINGS` class is used for displaying digitization tools for interpretations
+    The `GXSTRINGS <geosoft.gxapi.GXSTRINGS>` class is used for displaying digitization tools for interpretations
     """
 
     def __enter__(self):

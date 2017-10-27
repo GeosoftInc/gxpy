@@ -18,7 +18,7 @@ class GXRA:
     """
     GXRA class.
 
-    The `GXRA` class is used to access ASCII files sequentially or
+    The `GXRA <geosoft.gxapi.GXRA>` class is used to access ASCII files sequentially or
     by line number. The files are opened in read-only mode, so no
     write operations are defined
     """
@@ -62,7 +62,7 @@ class GXRA:
     @classmethod
     def create(cls, file):
         """
-        Creates `GXRA`
+        Creates `GXRA <geosoft.gxapi.GXRA>`
         """
         ret_val = gxapi_cy.WrapRA.create(GXContext._get_tls_geo(), file.encode())
         return GXRA(ret_val)
@@ -72,12 +72,12 @@ class GXRA:
     @classmethod
     def create_sbf(cls, sbf, file):
         """
-        Creates `GXRA` on an `GXSBF`
+        Creates `GXRA <geosoft.gxapi.GXRA>` on an `GXSBF <geosoft.gxapi.GXSBF>`
 
         **Note:**
 
-        This method allows you to open an `GXRA` in a structured file
-        storage (an `GXSBF`).  SBFs can be created inside other data
+        This method allows you to open an `GXRA <geosoft.gxapi.GXRA>` in a structured file
+        storage (an `GXSBF <geosoft.gxapi.GXSBF>`).  SBFs can be created inside other data
         containers, such as workspaces, maps, images and databases.
         This lets you store application specific information together
         with the data to which it applies.
@@ -96,7 +96,7 @@ class GXRA:
 
     def gets(self, strbuff):
         """
-        Get next full line from `GXRA`
+        Get next full line from `GXRA <geosoft.gxapi.GXRA>`
         """
         ret_val, strbuff.value = self._wrapper.gets(strbuff.value.encode())
         return ret_val
@@ -106,7 +106,7 @@ class GXRA:
 
     def len(self):
         """
-        Returns the total number of lines in `GXRA`
+        Returns the total number of lines in `GXRA <geosoft.gxapi.GXRA>`
         """
         ret_val = self._wrapper.len()
         return ret_val

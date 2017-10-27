@@ -20,20 +20,20 @@ class GXVV:
     """
     GXVV class.
 
-    The `GXVV` class stores very long vector (array) data (such
+    The `GXVV <geosoft.gxapi.GXVV>` class stores very long vector (array) data (such
     as channel data from an OASIS database) in memory and
     performs specific actions on the data. This set of
-    functions is similar to the `GXVM` functions except that
+    functions is similar to the `GXVM <geosoft.gxapi.GXVM>` functions except that
     you cannot access data directly and therefore you cannot
-    use a `GXVV` to pass data to an external (non-Geosoft)
+    use a `GXVV <geosoft.gxapi.GXVV>` to pass data to an external (non-Geosoft)
     Dynamic Link Library (DLL) object function.
     
     If you want to pass data to a DLL, you must move a subset
     of the data stored in memory to a small vector object and
-    then use the `GXGEO.get_ptr_vm` function to pass a pointer to the
+    then use the `GXGEO.get_ptr_vm <geosoft.gxapi.GXGEO.get_ptr_vm>` function to pass a pointer to the
     data on to the external function.
     
-    See `GXVVU` for more utility methods.
+    See `GXVVU <geosoft.gxapi.GXVVU>` for more utility methods.
     """
 
     def __enter__(self):
@@ -75,7 +75,7 @@ class GXVV:
 
     def get_data(self, start, elements, data, gs_type):
         """
-        Copy data from user memory to a `GXVV`
+        Copy data from user memory to a `GXVV <geosoft.gxapi.GXVV>`
         """
         self._wrapper.get_data(start, elements, data, gs_type)
         
@@ -85,7 +85,7 @@ class GXVV:
 
     def set_data(self, start, elements, data, gs_type):
         """
-        Copy data from user memory to a `GXVV`
+        Copy data from user memory to a `GXVV <geosoft.gxapi.GXVV>`
         """
         self._wrapper.set_data(start, elements, data, gs_type)
         
@@ -95,7 +95,7 @@ class GXVV:
 
     def copy(self, vv_s):
         """
-        Copy one `GXVV` to another.
+        Copy one `GXVV <geosoft.gxapi.GXVV>` to another.
         """
         self._wrapper.copy(vv_s._wrapper)
         
@@ -109,10 +109,10 @@ class GXVV:
 
         **Note:**
 
-        1. Unlike Copy_VV destination `GXVV` is not reallocated, nor is
+        1. Unlike Copy_VV destination `GXVV <geosoft.gxapi.GXVV>` is not reallocated, nor is
         the length changed. The caller must make any desired changes.
         
-        2. All `GXVV` types are supported and will be converted using
+        2. All `GXVV <geosoft.gxapi.GXVV>` types are supported and will be converted using
         Convert_GS if necessary.
         """
         self._wrapper.copy2(dest, vv_s._wrapper, source, n)
@@ -138,7 +138,7 @@ class GXVV:
 
     def log_linear(self, log_min):
         """
-        Take the log10 or original value of a `GXVV`.
+        Take the log10 or original value of a `GXVV <geosoft.gxapi.GXVV>`.
 
         **Note:**
 
@@ -162,15 +162,15 @@ class GXVV:
 
     def mask(self, vv_m):
         """
-        Mask one `GXVV` against another.
+        Mask one `GXVV <geosoft.gxapi.GXVV>` against another.
 
         **Note:**
 
-        All elements in the mask `GXVV` that are dummies will replace
-        the value in the original `GXVV` with a dummy.
+        All elements in the mask `GXVV <geosoft.gxapi.GXVV>` that are dummies will replace
+        the value in the original `GXVV <geosoft.gxapi.GXVV>` with a dummy.
         
-        The modified `GXVV` will always be the same length as the mask
-        `GXVV` after this call.  If the mask is longer than the target,
+        The modified `GXVV <geosoft.gxapi.GXVV>` will always be the same length as the mask
+        `GXVV <geosoft.gxapi.GXVV>` after this call.  If the mask is longer than the target,
         the target will be lengthenned with dummies.
         """
         self._wrapper.mask(vv_m._wrapper)
@@ -181,7 +181,7 @@ class GXVV:
 
     def reverse(self):
         """
-        Reverses the order of the data in a `GXVV`.
+        Reverses the order of the data in a `GXVV <geosoft.gxapi.GXVV>`.
         """
         self._wrapper.reverse()
         
@@ -201,11 +201,11 @@ class GXVV:
 
     def trans(self, base, mult):
         """
-        Translate (`GXVV` + base ) * mult
+        Translate (`GXVV <geosoft.gxapi.GXVV>` + base ) * mult
 
         **Note:**
 
-        All `GXVV` types now supported.
+        All `GXVV <geosoft.gxapi.GXVV>` types now supported.
         """
         self._wrapper.trans(base, mult)
         
@@ -215,7 +215,7 @@ class GXVV:
 
     def abs(self):
         """
-        Take the absolute value of values in a `GXVV`.
+        Take the absolute value of values in a `GXVV <geosoft.gxapi.GXVV>`.
         """
         self._wrapper.abs()
         
@@ -239,7 +239,7 @@ class GXVV:
 
         **Note:**
 
-        The multipliers must be defined and within the `GS_R8MN` `GS_R8MX` range.
+        The multipliers must be defined and within the `GS_R8MN <geosoft.gxapi.GS_R8MN>` `GS_R8MX <geosoft.gxapi.GS_R8MX>` range.
         """
         self._wrapper.add2(f1, vv_y._wrapper, f2, vv_z._wrapper)
         
@@ -249,7 +249,7 @@ class GXVV:
 
     def append(self, vv_a):
         """
-        Appends `GXVV`'s
+        Appends `GXVV <geosoft.gxapi.GXVV>`'s
         """
         self._wrapper.append(vv_a._wrapper)
         
@@ -259,7 +259,7 @@ class GXVV:
 
     def crc(self, pul_crc):
         """
-        Compute the CRC value of a `GXVV`.
+        Compute the CRC value of a `GXVV <geosoft.gxapi.GXVV>`.
         """
         ret_val = self._wrapper.crc(pul_crc)
         return ret_val
@@ -269,7 +269,7 @@ class GXVV:
 
     def crc_inexact(self, pul_crc, float_bits, double_bits):
         """
-        Compute the CRC value of a `GXVV` and allows you to specify
+        Compute the CRC value of a `GXVV <geosoft.gxapi.GXVV>` and allows you to specify
         number of bits of floats/doubles to drop so that the CRC
         will be same even of this are changed.
 
@@ -286,20 +286,20 @@ class GXVV:
     @classmethod
     def create(cls, type, elements):
         """
-        Create a `GXVV`.
+        Create a `GXVV <geosoft.gxapi.GXVV>`.
 
         **Note:**
 
-        To set the fiducial start and increment for the data in the `GXVV`
-        you need to call `set_fid_start` and `set_fid_incr`.
+        To set the fiducial start and increment for the data in the `GXVV <geosoft.gxapi.GXVV>`
+        you need to call `set_fid_start <geosoft.gxapi.GXVV.set_fid_start>` and `set_fid_incr <geosoft.gxapi.GXVV.set_fid_incr>`.
         
-        If you are basing the `GXVV` data on fiducial information from a
-        different `GXVV`, call GetFidStart_VV and GetFidIncr_VV to obtain
-        that `GXVV`'s fiducial information. Do this prior to setting the
-        new `GXVV`'s fiducial start and increment.
+        If you are basing the `GXVV <geosoft.gxapi.GXVV>` data on fiducial information from a
+        different `GXVV <geosoft.gxapi.GXVV>`, call GetFidStart_VV and GetFidIncr_VV to obtain
+        that `GXVV <geosoft.gxapi.GXVV>`'s fiducial information. Do this prior to setting the
+        new `GXVV <geosoft.gxapi.GXVV>`'s fiducial start and increment.
         
-        If you do not know the required length for a `GXVV`, use 0
-        and the `GXVV` length will be adjusted as needed.  This is
+        If you do not know the required length for a `GXVV <geosoft.gxapi.GXVV>`, use 0
+        and the `GXVV <geosoft.gxapi.GXVV>` length will be adjusted as needed.  This is
         a bit less efficient than setting the length when you
         know it.
         """
@@ -311,15 +311,15 @@ class GXVV:
     @classmethod
     def create_ext(cls, type, elements):
         """
-        Create a `GXVV`, using one of the `GS_TYPES` special data types.
+        Create a `GXVV <geosoft.gxapi.GXVV>`, using one of the `GS_TYPES_` special data types.
 
         **Note:**
 
-        See `create`
+        See `create <geosoft.gxapi.GXVV.create>`
         
-        Do not use data type flags: `GS_INT` or `GS_REAL`,
+        Do not use data type flags: `GS_INT <geosoft.gxapi.GS_INT>` or `GS_REAL <geosoft.gxapi.GS_REAL>`,
         this will result in a respective data type of unsigned byte or
-        short for the `GXVV`.
+        short for the `GXVV <geosoft.gxapi.GXVV>`.
         """
         ret_val = gxapi_cy.WrapVV.create_ext(GXContext._get_tls_geo(), type, elements)
         return GXVV(ret_val)
@@ -329,7 +329,7 @@ class GXVV:
     @classmethod
     def create_s(cls, bf):
         """
-        Create a `GXVV`  from serialized source.
+        Create a `GXVV <geosoft.gxapi.GXVV>`  from serialized source.
         """
         ret_val = gxapi_cy.WrapVV.create_s(GXContext._get_tls_geo(), bf._wrapper)
         return GXVV(ret_val)
@@ -348,7 +348,7 @@ class GXVV:
         Differences with dummies result in dummies.
         An even number of differences locates data accurately.
         An odd number of differences locates result 1/2 element lower
-        in the `GXVV`.
+        in the `GXVV <geosoft.gxapi.GXVV>`.
         """
         self._wrapper.diff(n)
         
@@ -358,7 +358,7 @@ class GXVV:
 
     def divide(self, vv_y, vv_z):
         """
-        Divide one `GXVV` by another: VV_A / VV_B = VV_C
+        Divide one `GXVV <geosoft.gxapi.GXVV>` by another: VV_A / VV_B = VV_C
         """
         self._wrapper.divide(vv_y._wrapper, vv_z._wrapper)
         
@@ -368,11 +368,11 @@ class GXVV:
 
     def fid_norm(self, vv2):
         """
-        Re-sample a pair of `GXVV`'s to match each other.
+        Re-sample a pair of `GXVV <geosoft.gxapi.GXVV>`'s to match each other.
 
         **Note:**
 
-        Both `GXVV`'s will return with the same start
+        Both `GXVV <geosoft.gxapi.GXVV>`'s will return with the same start
         fid and fid increment.  The smaller start fid
         and fid increment will be used.
         """
@@ -384,7 +384,7 @@ class GXVV:
 
     def fill_int(self, int):
         """
-        Fill a `GXVV` with an int value.
+        Fill a `GXVV <geosoft.gxapi.GXVV>` with an int value.
         """
         self._wrapper.fill_int(int)
         
@@ -394,7 +394,7 @@ class GXVV:
 
     def fill_double(self, val):
         """
-        Fill a `GXVV` with a real value.
+        Fill a `GXVV <geosoft.gxapi.GXVV>` with a real value.
         """
         self._wrapper.fill_double(val)
         
@@ -404,7 +404,7 @@ class GXVV:
 
     def fill_string(self, str_val):
         """
-        Fill a `GXVV` with a string value.
+        Fill a `GXVV <geosoft.gxapi.GXVV>` with a string value.
         """
         self._wrapper.fill_string(str_val.encode())
         
@@ -414,7 +414,7 @@ class GXVV:
 
     def count_dummies(self, start, elem):
         """
-        Count the number of dummies in a `GXVV`
+        Count the number of dummies in a `GXVV <geosoft.gxapi.GXVV>`
         """
         ret_val = self._wrapper.count_dummies(start, elem)
         return ret_val
@@ -424,7 +424,7 @@ class GXVV:
 
     def find_dum(self, start, end, yn, order):
         """
-        Finds the first dummy or non-dummy value in a `GXVV`
+        Finds the first dummy or non-dummy value in a `GXVV <geosoft.gxapi.GXVV>`
 
         **Note:**
 
@@ -440,7 +440,7 @@ class GXVV:
 
     def get_fid_expansion(self):
         """
-        Gets the Fiducial expansion from a `GXVV`
+        Gets the Fiducial expansion from a `GXVV <geosoft.gxapi.GXVV>`
         """
         ret_val = self._wrapper.get_fid_expansion()
         return ret_val
@@ -450,7 +450,7 @@ class GXVV:
 
     def get_int(self, element):
         """
-        Get an integer element from a `GXVV`.
+        Get an integer element from a `GXVV <geosoft.gxapi.GXVV>`.
         """
         ret_val = self._wrapper.get_int(element)
         return ret_val
@@ -460,7 +460,7 @@ class GXVV:
 
     def get_string(self, element, str_val):
         """
-        Get a string element from a `GXVV`.
+        Get a string element from a `GXVV <geosoft.gxapi.GXVV>`.
 
         **Note:**
 
@@ -493,7 +493,7 @@ class GXVV:
 
     def length(self):
         """
-        Returns current `GXVV` length.
+        Returns current `GXVV <geosoft.gxapi.GXVV>` length.
         """
         ret_val = self._wrapper.length()
         return ret_val
@@ -503,25 +503,25 @@ class GXVV:
 
     def index_insert(self, vv_d, vv_i):
         """
-        Insert items into a `GXVV` using an index `GXVV`.
+        Insert items into a `GXVV <geosoft.gxapi.GXVV>` using an index `GXVV <geosoft.gxapi.GXVV>`.
 
         **Note:**
 
-        The items in the input data `GXVV` are inserted into
-        the output `GXVV` using the indices in the index `GXVV`.
+        The items in the input data `GXVV <geosoft.gxapi.GXVV>` are inserted into
+        the output `GXVV <geosoft.gxapi.GXVV>` using the indices in the index `GXVV <geosoft.gxapi.GXVV>`.
         Values not referenced are not altered, so the output
-        `GXVV` should be pre-initialized. The output `GXVV` length
+        `GXVV <geosoft.gxapi.GXVV>` should be pre-initialized. The output `GXVV <geosoft.gxapi.GXVV>` length
         will NOT be changed, and index values referencing
-        beyond the end of the output `GXVV` data will return an
+        beyond the end of the output `GXVV <geosoft.gxapi.GXVV>` data will return an
         error.
         
         This function is useful when working with channel data that include
         dummies, but where the dummies must be removed before processing.
-        Create and initialize an index (0, 1, 2...) `GXVV`, using the `init_index`
+        Create and initialize an index (0, 1, 2...) `GXVV <geosoft.gxapi.GXVV>`, using the `init_index <geosoft.gxapi.GXVV.init_index>`
         function, and when you remove
         the dummies, remove the corresponding index values as well.
-        After processing, init a `GXVV` to dummies, then use `index_insert` to
-        put the processed values at the correct locations in the data `GXVV`
+        After processing, init a `GXVV <geosoft.gxapi.GXVV>` to dummies, then use `index_insert <geosoft.gxapi.GXVV.index_insert>` to
+        put the processed values at the correct locations in the data `GXVV <geosoft.gxapi.GXVV>`
         before you write it back to the channel.
         """
         self._wrapper.index_insert(vv_d._wrapper, vv_i._wrapper)
@@ -532,12 +532,12 @@ class GXVV:
 
     def index_order(self, vv_d):
         """
-        Reorder a `GXVV`.
+        Reorder a `GXVV <geosoft.gxapi.GXVV>`.
 
         **Note:**
 
-        Given an index `GXVV` (of type INT), this method reorders a
-        `GXVV`. Please make sure that the index holds valid information.
+        Given an index `GXVV <geosoft.gxapi.GXVV>` (of type INT), this method reorders a
+        `GXVV <geosoft.gxapi.GXVV>`. Please make sure that the index holds valid information.
         """
         self._wrapper.index_order(vv_d._wrapper)
         
@@ -547,13 +547,13 @@ class GXVV:
 
     def init_index(self, n):
         """
-        Initialize an index `GXVV` to values 0, 1, 2, etc...
+        Initialize an index `GXVV <geosoft.gxapi.GXVV>` to values 0, 1, 2, etc...
 
         **Note:**
 
-        Populates a `GXVV` with the values 0, 1, 2, 3, 4 etc., to be
-        used for various indexing functions, such as `index_insert` or
-        `index_order`.
+        Populates a `GXVV <geosoft.gxapi.GXVV>` with the values 0, 1, 2, 3, 4 etc., to be
+        used for various indexing functions, such as `index_insert <geosoft.gxapi.GXVV.index_insert>` or
+        `index_order <geosoft.gxapi.GXVV.index_order>`.
         """
         self._wrapper.init_index(n)
         
@@ -563,11 +563,11 @@ class GXVV:
 
     def inv_log(self, log_base, log_neg, log_min):
         """
-        Inverse of the `log` function.
+        Inverse of the `log <geosoft.gxapi.GXVV.log>` function.
 
         **Note:**
 
-        This is the inverse function for `log`, with the same inputs.
+        This is the inverse function for `log <geosoft.gxapi.GXVV.log>`, with the same inputs.
         
         NEGATIVE_NO    - will not return values smaller than the input minimum
         NEGATIVE_YES   - if the data is in the range +/- minimum,
@@ -596,15 +596,15 @@ class GXVV:
 
     def lines_to_xy(self, vv_x, vv_y):
         """
-        Convert a 2D Line segment `GXVV` into X and Y VVs.
+        Convert a 2D Line segment `GXVV <geosoft.gxapi.GXVV>` into X and Y VVs.
 
         **Note:**
 
-        Some GX functions (such as `GXTIN.get_voronoi_edges`) return
-        a special `GXVV` where each element contains the start and end
+        Some GX functions (such as `GXTIN.get_voronoi_edges <geosoft.gxapi.GXTIN.get_voronoi_edges>`) return
+        a special `GXVV <geosoft.gxapi.GXVV>` where each element contains the start and end
         points of lines, (X_1, Y_1) and (X_2, Y_2).
         This GX dumps the individual X and Y values into individual
-        X and Y VVs of type `GS_DOUBLE` (REAL). N lines produces 2*N
+        X and Y VVs of type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>` (REAL). N lines produces 2*N
         X and Y values.
         """
         self._wrapper.lines_to_xy(vv_x._wrapper, vv_y._wrapper)
@@ -615,18 +615,18 @@ class GXVV:
 
     def lookup_index(self, vvi, vvr):
         """
-        Lookup a `GXVV` from another `GXVV` using an index `GXVV`.
+        Lookup a `GXVV <geosoft.gxapi.GXVV>` from another `GXVV <geosoft.gxapi.GXVV>` using an index `GXVV <geosoft.gxapi.GXVV>`.
 
         **Note:**
 
         This method assigns index values of 0.0, 1.0, 2.0 etc. to the individual
-        values in the input Data `GXVV`, and uses linear interpolation to calculate the values of
-        Result `GXVV` at the input indices contained in the Index `GXVV`.
+        values in the input Data `GXVV <geosoft.gxapi.GXVV>`, and uses linear interpolation to calculate the values of
+        Result `GXVV <geosoft.gxapi.GXVV>` at the input indices contained in the Index `GXVV <geosoft.gxapi.GXVV>`.
         
-        If the input Data `GXVV` is string type, then only values at the integral index values
+        If the input Data `GXVV <geosoft.gxapi.GXVV>` is string type, then only values at the integral index values
         are returned.
         
-        See also `setup_index` for an example of how this can be implemented.
+        See also `setup_index <geosoft.gxapi.GXVV.setup_index>` for an example of how this can be implemented.
         """
         self._wrapper.lookup_index(vvi._wrapper, vvr._wrapper)
         
@@ -636,29 +636,29 @@ class GXVV:
 
     def make_mem_based(self):
         """
-        Make this `GXVV` use regular instead of virtual memory.
+        Make this `GXVV <geosoft.gxapi.GXVV>` use regular instead of virtual memory.
 
         **Note:**
 
         This function should be called immediately aftter
-        `create`.
+        `create <geosoft.gxapi.GXVV.create>`.
         
         Normal VVs are optimised to prevent thrashing, and to
         efficiently support many extremely large VVs, although
         there is a small performance penalty.
-        This function is intended for `GXVV`'s that you know can be
+        This function is intended for `GXVV <geosoft.gxapi.GXVV>`'s that you know can be
         handled by the operating system virtual memory manager,
-        and will be used heavily.  By using a memory based `GXVV`, you
+        and will be used heavily.  By using a memory based `GXVV <geosoft.gxapi.GXVV>`, you
         can achieve some performance improvements provided your
         application does not cause the memory manager to "thrash".
         
         External programs that use the GX API may prefer to use
-        memory-based `GXVV`'s because you can get direct access to
-        the `GXVV` through the `GXGEO.get_ptr_vv` function (see gx_extern.h).
+        memory-based `GXVV <geosoft.gxapi.GXVV>`'s because you can get direct access to
+        the `GXVV <geosoft.gxapi.GXVV>` through the `GXGEO.get_ptr_vv <geosoft.gxapi.GXGEO.get_ptr_vv>` function (see gx_extern.h).
 
         .. seealso::
 
-            `GXGEO.get_ptr_vv` in gx_extern.h
+            `GXGEO.get_ptr_vv <geosoft.gxapi.GXGEO.get_ptr_vv>` in gx_extern.h
         """
         self._wrapper.make_mem_based()
         
@@ -696,14 +696,14 @@ class GXVV:
 
     def mask_str(self, vv_m, str_val):
         """
-        Mask one `GXVV` against another using a string.
+        Mask one `GXVV <geosoft.gxapi.GXVV>` against another using a string.
 
         **Note:**
 
-        All elements in the mask `GXVV` that are same as string will replace
-        the original `GXVV` with a 1.
+        All elements in the mask `GXVV <geosoft.gxapi.GXVV>` that are same as string will replace
+        the original `GXVV <geosoft.gxapi.GXVV>` with a 1.
         
-        The modified `GXVV` will always be expanded to the MaskVV size but
+        The modified `GXVV <geosoft.gxapi.GXVV>` will always be expanded to the MaskVV size but
         not shortened after this call.  If the mask is longer than the target,
         the target will be lengthenned with dummies before applying the mask.
         """
@@ -735,7 +735,7 @@ class GXVV:
 
     def polygon_mask(self, yvv, rvv, pply, dummy):
         """
-        Mask a `GXVV` using XY data and a polygon
+        Mask a `GXVV <geosoft.gxapi.GXVV>` using XY data and a polygon
 
         **Note:**
 
@@ -749,11 +749,11 @@ class GXVV:
     @classmethod
     def project(cls, pj, vv_x, vv_y):
         """
-        This method projects an X and Y `GXVV`.
+        This method projects an X and Y `GXVV <geosoft.gxapi.GXVV>`.
 
         **Note:**
 
-        This function is equivalent to `GXPJ.convert_vv`.
+        This function is equivalent to `GXPJ.convert_vv <geosoft.gxapi.GXPJ.convert_vv>`.
         """
         gxapi_cy.WrapVV.project(GXContext._get_tls_geo(), pj._wrapper, vv_x._wrapper, vv_y._wrapper)
         
@@ -763,11 +763,11 @@ class GXVV:
     @classmethod
     def project_3d(cls, pj, vv_x, vv_y, vv_z):
         """
-        This method projects an X,Y,Z `GXVV`.
+        This method projects an X,Y,Z `GXVV <geosoft.gxapi.GXVV>`.
 
         **Note:**
 
-        This function is equivalent to `GXPJ.convert_vv3`.
+        This function is equivalent to `GXPJ.convert_vv3 <geosoft.gxapi.GXPJ.convert_vv3>`.
         """
         gxapi_cy.WrapVV.project_3d(GXContext._get_tls_geo(), pj._wrapper, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
         
@@ -777,11 +777,11 @@ class GXVV:
 
     def range_double(self, min, max):
         """
-        Get the min. and max. values of a `GXVV` while ignoring dummies.
+        Get the min. and max. values of a `GXVV <geosoft.gxapi.GXVV>` while ignoring dummies.
 
         **Note:**
 
-        Minimum and maximum become `GS_R8DM` if entire `GXVV` is dummy.
+        Minimum and maximum become `GS_R8DM <geosoft.gxapi.GS_R8DM>` if entire `GXVV <geosoft.gxapi.GXVV>` is dummy.
         """
         min.value, max.value = self._wrapper.range_double(min.value, max.value)
         
@@ -791,7 +791,7 @@ class GXVV:
 
     def re_fid(self, start, incr, length):
         """
-        Re-sample a `GXVV` to a new fid start/icrement
+        Re-sample a `GXVV <geosoft.gxapi.GXVV>` to a new fid start/icrement
         """
         self._wrapper.re_fid(start, incr, length)
         
@@ -801,12 +801,12 @@ class GXVV:
 
     def re_fid_vv(self, vv_m):
         """
-        Re-sample a `GXVV` to match another `GXVV`.
+        Re-sample a `GXVV <geosoft.gxapi.GXVV>` to match another `GXVV <geosoft.gxapi.GXVV>`.
 
         **Note:**
 
-        This method will honor the `GXVV` FID Expansion and will expand/contract
-        `GXVV`'s based on this flag if it is used.
+        This method will honor the `GXVV <geosoft.gxapi.GXVV>` FID Expansion and will expand/contract
+        `GXVV <geosoft.gxapi.GXVV>`'s based on this flag if it is used.
         """
         self._wrapper.re_fid_vv(vv_m._wrapper)
         
@@ -816,7 +816,7 @@ class GXVV:
 
     def re_sample(self, c_start, c_incr, n_start, n_incr, length, extr):
         """
-        Resamples a `GXVV` from one fid/incr to another fid/incr.
+        Resamples a `GXVV <geosoft.gxapi.GXVV>` from one fid/incr to another fid/incr.
         """
         self._wrapper.re_sample(c_start, c_incr, n_start, n_incr, length, extr)
         
@@ -826,7 +826,7 @@ class GXVV:
 
     def get_fid_incr(self):
         """
-        Gets the Fiducial increment from a `GXVV`
+        Gets the Fiducial increment from a `GXVV <geosoft.gxapi.GXVV>`
         """
         ret_val = self._wrapper.get_fid_incr()
         return ret_val
@@ -836,7 +836,7 @@ class GXVV:
 
     def get_fid_start(self):
         """
-        Gets the Fiducial start from a `GXVV`
+        Gets the Fiducial start from a `GXVV <geosoft.gxapi.GXVV>`
         """
         ret_val = self._wrapper.get_fid_start()
         return ret_val
@@ -846,7 +846,7 @@ class GXVV:
 
     def get_double(self, element):
         """
-        Get a real element from a `GXVV`.
+        Get a real element from a `GXVV <geosoft.gxapi.GXVV>`.
 
         **Note:**
 
@@ -861,7 +861,7 @@ class GXVV:
 
     def sum(self):
         """
-        Calculate the sum of the values in a `GXVV`.
+        Calculate the sum of the values in a `GXVV <geosoft.gxapi.GXVV>`.
 
         **Note:**
 
@@ -889,7 +889,7 @@ class GXVV:
 
     def set_fid_expansion(self, expand):
         """
-        Sets the Fiducial expansion from a `GXVV`
+        Sets the Fiducial expansion from a `GXVV <geosoft.gxapi.GXVV>`
         """
         self._wrapper.set_fid_expansion(expand)
         
@@ -899,7 +899,7 @@ class GXVV:
 
     def set_fid_incr(self, incr):
         """
-        Sets the Fiducial increment of a `GXVV`
+        Sets the Fiducial increment of a `GXVV <geosoft.gxapi.GXVV>`
         """
         self._wrapper.set_fid_incr(incr)
         
@@ -909,7 +909,7 @@ class GXVV:
 
     def set_fid_start(self, start):
         """
-        Sets the Fiducial start of a `GXVV`
+        Sets the Fiducial start of a `GXVV <geosoft.gxapi.GXVV>`
         """
         self._wrapper.set_fid_start(start)
         
@@ -919,16 +919,16 @@ class GXVV:
 
     def set_int(self, element, value):
         """
-        Set an integer element in a `GXVV`.
+        Set an integer element in a `GXVV <geosoft.gxapi.GXVV>`.
 
         **Note:**
 
         Element being set cannot be < 0.
-        If the element is > current `GXVV` length, the `GXVV` length is
+        If the element is > current `GXVV <geosoft.gxapi.GXVV>` length, the `GXVV <geosoft.gxapi.GXVV>` length is
         increased.
         It is good practice to set the length ahead of time to the
-        expected maximum value, as some `GXVV` processes rely on the
-        current maximum length of the `GXVV` when you pass it in as an
+        expected maximum value, as some `GXVV <geosoft.gxapi.GXVV>` processes rely on the
+        current maximum length of the `GXVV <geosoft.gxapi.GXVV>` when you pass it in as an
         argument, and unexpected results may occur if the length is
         not what you expect it to be because of dynamic allocation at
         an earlier time.
@@ -941,12 +941,12 @@ class GXVV:
 
     def set_int_n(self, start, n, value):
         """
-        Set N integer elements in a `GXVV`.
+        Set N integer elements in a `GXVV <geosoft.gxapi.GXVV>`.
 
         **Note:**
 
         Element being set cannot be < 0.
-        If the element is > current `GXVV` length, the `GXVV` length is
+        If the element is > current `GXVV <geosoft.gxapi.GXVV>` length, the `GXVV <geosoft.gxapi.GXVV>` length is
         increased.
         """
         self._wrapper.set_int_n(start, n, value)
@@ -957,15 +957,15 @@ class GXVV:
 
     def set_len(self, size):
         """
-        Set the length of a `GXVV`.
+        Set the length of a `GXVV <geosoft.gxapi.GXVV>`.
 
         **Note:**
 
-        If increasing the `GXVV` size, new elements are set to dummies.
+        If increasing the `GXVV <geosoft.gxapi.GXVV>` size, new elements are set to dummies.
         
         It is good practice to set the length ahead of time to the
-        expected maximum value, as some `GXVV` processes rely on the
-        current maximum length of the `GXVV` when you pass it in as an
+        expected maximum value, as some `GXVV <geosoft.gxapi.GXVV>` processes rely on the
+        current maximum length of the `GXVV <geosoft.gxapi.GXVV>` when you pass it in as an
         argument, and unexpected results may occur if the length is
         not what you expect it to be because of dynamic allocation at
         an earlier time.
@@ -978,16 +978,16 @@ class GXVV:
 
     def set_double(self, element, value):
         """
-        Set a real element in a `GXVV`.
+        Set a real element in a `GXVV <geosoft.gxapi.GXVV>`.
 
         **Note:**
 
         Element being set cannot be < 0.
-        If the element is > current `GXVV` length, the `GXVV` length is
+        If the element is > current `GXVV <geosoft.gxapi.GXVV>` length, the `GXVV <geosoft.gxapi.GXVV>` length is
         increased.
         It is good practice to set the length ahead of time to the
-        expected maximum value, as some `GXVV` processes rely on the
-        current maximum length of the `GXVV` when you pass it in as an
+        expected maximum value, as some `GXVV <geosoft.gxapi.GXVV>` processes rely on the
+        current maximum length of the `GXVV <geosoft.gxapi.GXVV>` when you pass it in as an
         argument, and unexpected results may occur if the length is
         not what you expect it to be because of dynamic allocation at
         an earlier time.
@@ -1000,12 +1000,12 @@ class GXVV:
 
     def set_double_n(self, start, n, value):
         """
-        Set N real elements in a `GXVV`.
+        Set N real elements in a `GXVV <geosoft.gxapi.GXVV>`.
 
         **Note:**
 
         Element being set cannot be < 0.
-        If the element is > current `GXVV` length, the `GXVV` length is
+        If the element is > current `GXVV <geosoft.gxapi.GXVV>` length, the `GXVV <geosoft.gxapi.GXVV>` length is
         increased.
         """
         self._wrapper.set_double_n(start, n, value)
@@ -1016,16 +1016,16 @@ class GXVV:
 
     def set_string(self, element, value):
         """
-        Set a string element in a `GXVV`.
+        Set a string element in a `GXVV <geosoft.gxapi.GXVV>`.
 
         **Note:**
 
         Element being set cannot be < 0.
-        If the element is > current `GXVV` length, the `GXVV` length is
+        If the element is > current `GXVV <geosoft.gxapi.GXVV>` length, the `GXVV <geosoft.gxapi.GXVV>` length is
         increased.
         It is good practice to set the length ahead of time to the
-        expected maximum value, as some `GXVV` processes rely on the
-        current maximum length of the `GXVV` when you pass it in as an
+        expected maximum value, as some `GXVV <geosoft.gxapi.GXVV>` processes rely on the
+        current maximum length of the `GXVV <geosoft.gxapi.GXVV>` when you pass it in as an
         argument, and unexpected results may occur if the length is
         not what you expect it to be because of dynamic allocation at
         an earlier time.
@@ -1038,12 +1038,12 @@ class GXVV:
 
     def set_string_n(self, start, n, value):
         """
-        Set N string elements in a `GXVV`.
+        Set N string elements in a `GXVV <geosoft.gxapi.GXVV>`.
 
         **Note:**
 
         Element being set cannot be < 0.
-        If the element is > current `GXVV` length, the `GXVV` length is
+        If the element is > current `GXVV <geosoft.gxapi.GXVV>` length, the `GXVV <geosoft.gxapi.GXVV>` length is
         increased.
         """
         self._wrapper.set_string_n(start, n, value.encode())
@@ -1054,36 +1054,33 @@ class GXVV:
 
     def setup_index(self, vvq, vvi, mode, space):
         """
-        Setup an index `GXVV` from VV1 to VV2.
+        Setup an index `GXVV <geosoft.gxapi.GXVV>` from VV1 to VV2.
 
         **Note:**
 
-        The input reference `GXVV` must be in ascending numerical order.
-        If your reference data is NOT ordered, then use the the
-        `sort_index1` function to create an order index, then sort
-        both the reference and data VVs using this index `GXVV` before
-        you call `setup_index`.
+        The input reference `GXVV <geosoft.gxapi.GXVV>` must be in ascending numerical order.
+        If your reference data is NOT ordered, then use the `sort_index1 <geosoft.gxapi.GXVV.sort_index1>` 
+        function to create an order index, then sort both the reference and data VVs 
+        using this index `GXVV <geosoft.gxapi.GXVV>` before you call `setup_index <geosoft.gxapi.GXVV.setup_index>`.
         
-        Example: You have a reference data set taken at specific times, hVVt, hVVy
-        and you want to calculate/estimate/interpolate the values hVVy2 at a second set
-        of times hVVt2
+        Example: You have a reference data set taken at specific times, ``hVVt``, ``hVVy``
+        and you want to calculate/estimate/interpolate the values ``hVVy2`` at a second set
+        of times ``hVVt2``
         
-        Step 1: Create an index, hVVi, type `GS_DOUBLE`, and call `setup_index`.
+        Step 1: Create an index, ``hVVi``, type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`, and call `setup_index <geosoft.gxapi.GXVV.setup_index>`.
         
-        e.g. : `setup_index`(hVVt, hVVt2, hVVi, VV_LOOKUP_XXX, rSpacing);
-        
-        Internally, this assigns index values of 0.0, 1.0, 2.0 etc. to the individual
-        values in hVVt, then, depending on the lookup method chosen, assigns
-        fractional index values to the input values in hVVt2.
-        
-        Step 2: To determine what the lookup values hVVy2 should be at times hVVt2,
-        call the sLookupIndex_VV function:
-        
-        e.g. : `lookup_index`(hVVy, hVVi, hVVy2);
+        with: ``hVVt2, hVVi, VV_LOOKUP_XXX, rSpacing``
         
         Internally, this assigns index values of 0.0, 1.0, 2.0 etc. to the individual
-        values in hVVy, and uses linear interpolation to calculate the values of
-        hVVy2 at the input indices contained in hVVi.
+        values in ``hVVt``, then, depending on the lookup method chosen, assigns
+        fractional index values to the input values in ``hVVt2``.
+        
+        Step 2: To determine what the lookup values ``hVVy2`` should be at times ``hVVt2``,
+        call the `lookup_index <geosoft.gxapi.GXVV.lookup_index>` function for hVVy with ``hVVi, hVVy2``
+        
+        Internally, this assigns index values of 0.0, 1.0, 2.0 etc. to the individual
+        values in ``hVVy``, and uses linear interpolation to calculate the values of
+        ``hVVy2`` at the input indices contained in ``hVVi``.
         """
         self._wrapper.setup_index(vvq._wrapper, vvi._wrapper, mode, space)
         
@@ -1093,7 +1090,7 @@ class GXVV:
 
     def sort(self, order):
         """
-        Sort a `GXVV`.
+        Sort a `GXVV <geosoft.gxapi.GXVV>`.
         """
         self._wrapper.sort(order)
         
@@ -1103,13 +1100,13 @@ class GXVV:
 
     def sort_index(self, ivv):
         """
-        Sort index `GXVV` based on a data `GXVV`.
+        Sort index `GXVV <geosoft.gxapi.GXVV>` based on a data `GXVV <geosoft.gxapi.GXVV>`.
 
         **Note:**
 
-        Create an Index `GXVV` (of type `GS_LONG`) based on a data `GXVV`.
+        Create an Index `GXVV <geosoft.gxapi.GXVV>` (of type `GS_LONG <geosoft.gxapi.GS_LONG>`) based on a data `GXVV <geosoft.gxapi.GXVV>`.
         This index vv can then be used by the IndexOrder method
-        to order a group of `GXVV`'s.
+        to order a group of `GXVV <geosoft.gxapi.GXVV>`'s.
         """
         self._wrapper.sort_index(ivv._wrapper)
         
@@ -1119,16 +1116,16 @@ class GXVV:
 
     def sort_index1(self, ivv, ord1):
         """
-        Sort index `GXVV` based on 1 data `GXVV` - set orders.
+        Sort index `GXVV <geosoft.gxapi.GXVV>` based on 1 data `GXVV <geosoft.gxapi.GXVV>` - set orders.
 
         **Note:**
 
-        Create an Index `GXVV` (of type `GS_LONG`) based on a data `GXVV`.
+        Create an Index `GXVV <geosoft.gxapi.GXVV>` (of type `GS_LONG <geosoft.gxapi.GS_LONG>`) based on a data `GXVV <geosoft.gxapi.GXVV>`.
         This index vv can then be used by the IndexOrder method
-        to order a group of `GXVV`'s. The individual VVs may be ordered
+        to order a group of `GXVV <geosoft.gxapi.GXVV>`'s. The individual VVs may be ordered
         in ascending or descending order.
-        If the primary `GXVV` values of two indices are the same, then
-        the secondary `GXVV` values are compared. If the secondary values
+        If the primary `GXVV <geosoft.gxapi.GXVV>` values of two indices are the same, then
+        the secondary `GXVV <geosoft.gxapi.GXVV>` values are compared. If the secondary values
         are the same, the ternary values are compared, etc.
         """
         self._wrapper.sort_index1(ivv._wrapper, ord1)
@@ -1139,16 +1136,16 @@ class GXVV:
 
     def sort_index2(self, d2_vv, ivv, ord1, ord2):
         """
-        Sort index `GXVV` based on 2 data VVs - set orders.
+        Sort index `GXVV <geosoft.gxapi.GXVV>` based on 2 data VVs - set orders.
 
         **Note:**
 
-        Create an Index `GXVV` (of type `GS_LONG`) based on a data `GXVV`.
+        Create an Index `GXVV <geosoft.gxapi.GXVV>` (of type `GS_LONG <geosoft.gxapi.GS_LONG>`) based on a data `GXVV <geosoft.gxapi.GXVV>`.
         This index vv can then be used by the IndexOrder method
-        to order a group of `GXVV`'s. The individual VVs may be ordered
+        to order a group of `GXVV <geosoft.gxapi.GXVV>`'s. The individual VVs may be ordered
         in ascending or descending order.
-        If the primary `GXVV` values of two indices are the same, then
-        the secondary `GXVV` values are compared. If the secondary values
+        If the primary `GXVV <geosoft.gxapi.GXVV>` values of two indices are the same, then
+        the secondary `GXVV <geosoft.gxapi.GXVV>` values are compared. If the secondary values
         are the same, the ternary values are compared, etc
         """
         self._wrapper.sort_index2(d2_vv._wrapper, ivv._wrapper, ord1, ord2)
@@ -1159,16 +1156,16 @@ class GXVV:
 
     def sort_index3(self, d2_vv, d3_vv, ivv, ord1, ord2, ord3):
         """
-        Sort index `GXVV` based on 3 data VVs - set orders.
+        Sort index `GXVV <geosoft.gxapi.GXVV>` based on 3 data VVs - set orders.
 
         **Note:**
 
-        Create an Index `GXVV` (of type `GS_LONG`) based on a data `GXVV`.
+        Create an Index `GXVV <geosoft.gxapi.GXVV>` (of type `GS_LONG <geosoft.gxapi.GS_LONG>`) based on a data `GXVV <geosoft.gxapi.GXVV>`.
         This index vv can then be used by the IndexOrder method
-        to order a group of `GXVV`'s. The individual VVs may be ordered
+        to order a group of `GXVV <geosoft.gxapi.GXVV>`'s. The individual VVs may be ordered
         in ascending or descending order.
-        If the primary `GXVV` values of two indices are the same, then
-        the secondary `GXVV` values are compared. If the secondary values
+        If the primary `GXVV <geosoft.gxapi.GXVV>` values of two indices are the same, then
+        the secondary `GXVV <geosoft.gxapi.GXVV>` values are compared. If the secondary values
         are the same, the third values are compared, etc
         """
         self._wrapper.sort_index3(d2_vv._wrapper, d3_vv._wrapper, ivv._wrapper, ord1, ord2, ord3)
@@ -1179,16 +1176,16 @@ class GXVV:
 
     def sort_index4(self, d2_vv, d3_vv, d4_vv, ivv, ord1, ord2, ord3, ord4):
         """
-        Sort index `GXVV` based on 4 data VVs - set orders.
+        Sort index `GXVV <geosoft.gxapi.GXVV>` based on 4 data VVs - set orders.
 
         **Note:**
 
-        Create an Index `GXVV` (of type `GS_LONG`) based on a data `GXVV`.
+        Create an Index `GXVV <geosoft.gxapi.GXVV>` (of type `GS_LONG <geosoft.gxapi.GS_LONG>`) based on a data `GXVV <geosoft.gxapi.GXVV>`.
         This index vv can then be used by the IndexOrder method
-        to order a group of `GXVV`'s. The individual VVs may be ordered
+        to order a group of `GXVV <geosoft.gxapi.GXVV>`'s. The individual VVs may be ordered
         in ascending or descending order.
-        If the primary `GXVV` values of two indices are the same, then
-        the secondary `GXVV` values are compared. If the secondary values
+        If the primary `GXVV <geosoft.gxapi.GXVV>` values of two indices are the same, then
+        the secondary `GXVV <geosoft.gxapi.GXVV>` values are compared. If the secondary values
         are the same, the third values are compared, etc
         """
         self._wrapper.sort_index4(d2_vv._wrapper, d3_vv._wrapper, d4_vv._wrapper, ivv._wrapper, ord1, ord2, ord3, ord4)
@@ -1199,7 +1196,7 @@ class GXVV:
     @classmethod
     def statistics(cls, st, vv):
         """
-        Add a `GXVV` to a `GXST`.
+        Add a `GXVV <geosoft.gxapi.GXVV>` to a `GXST <geosoft.gxapi.GXST>`.
         """
         gxapi_cy.WrapVV.statistics(GXContext._get_tls_geo(), st._wrapper, vv._wrapper)
         
@@ -1209,7 +1206,7 @@ class GXVV:
 
     def subtract(self, vv_y, vv_z):
         """
-        Subtract one `GXVV` from another: VV_A - VV_B = VV_C
+        Subtract one `GXVV <geosoft.gxapi.GXVV>` from another: VV_A - VV_B = VV_C
         """
         self._wrapper.subtract(vv_y._wrapper, vv_z._wrapper)
         
@@ -1242,7 +1239,7 @@ class GXVV:
 
     def write_xml(self, file, format, decimal):
         """
-        Write the `GXVV` data as an XML object with bytes and formating.
+        Write the `GXVV <geosoft.gxapi.GXVV>` data as an XML object with bytes and formating.
         """
         self._wrapper.write_xml(file.encode(), format, decimal)
         

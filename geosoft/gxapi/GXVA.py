@@ -21,18 +21,18 @@ class GXVA:
     """
     GXVA class.
 
-    The `GXVA` class is the 2-Dimensional analogue to the `GXVV` class.
-    When displayed in a database, `GXVA` objects are displayed graphically
+    The `GXVA <geosoft.gxapi.GXVA>` class is the 2-Dimensional analogue to the `GXVV <geosoft.gxapi.GXVV>` class.
+    When displayed in a database, `GXVA <geosoft.gxapi.GXVA>` objects are displayed graphically
     as profiles, one to a cell, and can also be displayed one column of
-    data at a time by specifying an index; e.g. CH[0]. A `GXVA` object is
+    data at a time by specifying an index; e.g. CH[0]. A `GXVA <geosoft.gxapi.GXVA>` object is
     declared with a fixed number of columns, which cannot be altered.
     The number of rows, however can be changed, in the same way that
-    the length of a `GXVV` can be changed. Data can be added or extracted
+    the length of a `GXVV <geosoft.gxapi.GXVV>` can be changed. Data can be added or extracted
     using VVs, either by row or column.
     
-    A `GXVA` is used to store an array of data in which each element may have
+    A `GXVA <geosoft.gxapi.GXVA>` is used to store an array of data in which each element may have
     multiple elements.  For example, 256-channel radiometric data can
-    be stored in a `GXVA` that is 256 elements wide.
+    be stored in a `GXVA <geosoft.gxapi.GXVA>` that is 256 elements wide.
     """
 
     def __enter__(self):
@@ -74,7 +74,7 @@ class GXVA:
 
     def get_array(self, start_row, start_col, rows, cols, data, gs_type):
         """
-        Get an array of data from a `GXVA`.
+        Get an array of data from a `GXVA <geosoft.gxapi.GXVA>`.
         """
         self._wrapper.get_array(start_row, start_col, rows, cols, data, gs_type)
         
@@ -94,12 +94,12 @@ class GXVA:
 
     def add_elevations_vv_to_depths(self, vv, negative_depths):
         """
-        Add one `GXVV` value to each row of the `GXVA`, output true elevation.
+        Add one `GXVV <geosoft.gxapi.GXVV>` value to each row of the `GXVA <geosoft.gxapi.GXVA>`, output true elevation.
 
         **Note:**
 
-        Adds each value in an input elevation `GXVV` to all the values at
-        the same fid in a depths `GXVA`. Includes an option for negative depths down
+        Adds each value in an input elevation `GXVV <geosoft.gxapi.GXVV>` to all the values at
+        the same fid in a depths `GXVA <geosoft.gxapi.GXVA>`. Includes an option for negative depths down
         (e.g. a relative level).
         """
         self._wrapper.add_elevations_vv_to_depths(vv._wrapper, negative_depths)
@@ -125,13 +125,13 @@ class GXVA:
 
     def average(self, vv, rc):
         """
-        Average elements in a `GXVA` by row or column
+        Average elements in a `GXVA <geosoft.gxapi.GXVA>` by row or column
 
         **Note:**
 
-        The output `GXVV` will be dimensioned by the number of
-        rows or columns in the input `GXVV` depending on the
-        `VA_AVERAGE` setting.
+        The output `GXVV <geosoft.gxapi.GXVV>` will be dimensioned by the number of
+        rows or columns in the input `GXVV <geosoft.gxapi.GXVV>` depending on the
+        `VA_AVERAGE_` setting.
         
         Dummies are not included in the average.
         """
@@ -143,7 +143,7 @@ class GXVA:
 
     def copy(self, v_as):
         """
-        Copy one `GXVA` to another.
+        Copy one `GXVA <geosoft.gxapi.GXVA>` to another.
         """
         self._wrapper.copy(v_as._wrapper)
         
@@ -157,10 +157,10 @@ class GXVA:
 
         **Note:**
 
-        1. Unlike `copy` destination `GXVA` is not reallocated, nor are
+        1. Unlike `copy <geosoft.gxapi.GXVA.copy>` destination `GXVA <geosoft.gxapi.GXVA>` is not reallocated, nor are
         the dimensions changed. The caller must make any desired changes.
         
-        2. All `GXVA` types are supported and will be converted using
+        2. All `GXVA <geosoft.gxapi.GXVA>` types are supported and will be converted using
         Convert_GS if necessary.
         """
         self._wrapper.copy2(d_row, d_col, v_as._wrapper, s_row, s_col, rows, cols)
@@ -171,7 +171,7 @@ class GXVA:
     @classmethod
     def create(cls, type, rows, cols):
         """
-        Create a `GXVA`.
+        Create a `GXVA <geosoft.gxapi.GXVA>`.
         """
         ret_val = gxapi_cy.WrapVA.create(GXContext._get_tls_geo(), type, rows, cols)
         return GXVA(ret_val)
@@ -181,11 +181,11 @@ class GXVA:
     @classmethod
     def create_ext(cls, type, rows, cols):
         """
-        Create a `GXVA`, using one of the `GS_TYPES` special data types.
+        Create a `GXVA <geosoft.gxapi.GXVA>`, using one of the `GS_TYPES_` special data types.
 
         **Note:**
 
-        See `GXVV.create`
+        See `GXVV.create <geosoft.gxapi.GXVV.create>`
         """
         ret_val = gxapi_cy.WrapVA.create_ext(GXContext._get_tls_geo(), type, rows, cols)
         return GXVA(ret_val)
@@ -195,11 +195,11 @@ class GXVA:
     @classmethod
     def create_vv(cls, vv, rows, columns):
         """
-        Create a `GXVA` using the data in a `GXVV`.
+        Create a `GXVA <geosoft.gxapi.GXVA>` using the data in a `GXVV <geosoft.gxapi.GXVV>`.
 
         **Note:**
 
-        See `GXVV.create`
+        See `GXVV.create <geosoft.gxapi.GXVV.create>`
         """
         ret_val = gxapi_cy.WrapVA.create_vv(GXContext._get_tls_geo(), vv._wrapper, rows, columns)
         return GXVA(ret_val)
@@ -211,14 +211,14 @@ class GXVA:
 
     def get_full_vv(self):
         """
-        Get the full `GXVV` from the `GXVA`.
+        Get the full `GXVV <geosoft.gxapi.GXVV>` from the `GXVA <geosoft.gxapi.GXVA>`.
 
         **Note:**
 
-        No data is copied, this is the handle to the data `GXVV` in the `GXVA`.
-        The fid start/increment of the `GXVA` is passed to the `GXVV` at the time
-        of the call.  If a new `GXVA` is read, you must call GetFull_VV_VA
-        to get the new fid in the `GXVV`.
+        No data is copied, this is the handle to the data `GXVV <geosoft.gxapi.GXVV>` in the `GXVA <geosoft.gxapi.GXVA>`.
+        The fid start/increment of the `GXVA <geosoft.gxapi.GXVA>` is passed to the `GXVV <geosoft.gxapi.GXVV>` at the time
+        of the call.  If a new `GXVA <geosoft.gxapi.GXVA>` is read, you must call GetFull_VV_VA
+        to get the new fid in the `GXVV <geosoft.gxapi.GXVV>`.
         """
         ret_val = self._wrapper.get_full_vv()
         return GXVV(ret_val)
@@ -228,7 +228,7 @@ class GXVA:
 
     def get_vv(self, no, row_col, vv):
         """
-        Get a row or column of data as a `GXVV` from an array.
+        Get a row or column of data as a `GXVV <geosoft.gxapi.GXVV>` from an array.
         """
         self._wrapper.get_vv(no, row_col, vv._wrapper)
         
@@ -238,11 +238,11 @@ class GXVA:
 
     def col(self):
         """
-        Return number of columns in `GXVA`
+        Return number of columns in `GXVA <geosoft.gxapi.GXVA>`
 
         **Note:**
 
-        `len` returns the number of rows.
+        `len <geosoft.gxapi.GXVA.len>` returns the number of rows.
         """
         ret_val = self._wrapper.col()
         return ret_val
@@ -252,7 +252,7 @@ class GXVA:
 
     def get_int(self, row, col):
         """
-        Get an integer element from a `GXVA`.
+        Get an integer element from a `GXVA <geosoft.gxapi.GXVA>`.
 
         **Note:**
 
@@ -267,11 +267,11 @@ class GXVA:
 
     def get_string(self, row, col, str_val):
         """
-        Get a string element from a `GXVA`.
+        Get a string element from a `GXVA <geosoft.gxapi.GXVA>`.
 
         **Note:**
 
-        Returns element wanted, `rDUMMY`, `iDUMMY` or blank string
+        Returns element wanted, `rDUMMY <geosoft.gxapi.rDUMMY>`, `iDUMMY <geosoft.gxapi.iDUMMY>` or blank string
         if the value is dummy or outside of the range of data.
         
         Type conversions are performed if necessary.  Dummy values
@@ -285,11 +285,11 @@ class GXVA:
 
     def len(self):
         """
-        Return length (number of rows) in a `GXVA`.
+        Return length (number of rows) in a `GXVA <geosoft.gxapi.GXVA>`.
 
         **Note:**
 
-        `col` returns the number of columns.
+        `col <geosoft.gxapi.GXVA.col>` returns the number of columns.
         """
         ret_val = self._wrapper.len()
         return ret_val
@@ -299,12 +299,12 @@ class GXVA:
     @classmethod
     def index_order(cls, vv, va):
         """
-        Reorder a `GXVA` based on an index `GXVV`
+        Reorder a `GXVA <geosoft.gxapi.GXVA>` based on an index `GXVV <geosoft.gxapi.GXVV>`
 
         **Note:**
 
-        Given a row index `GXVV` (of type INT), this method reorders a
-        `GXVA`. Please make sure that the index holds valid information.
+        Given a row index `GXVV <geosoft.gxapi.GXVV>` (of type INT), this method reorders a
+        `GXVA <geosoft.gxapi.GXVA>`. Please make sure that the index holds valid information.
         """
         gxapi_cy.WrapVA.index_order(GXContext._get_tls_geo(), vv._wrapper, va._wrapper)
         
@@ -314,13 +314,13 @@ class GXVA:
 
     def lookup_index(self, vvi, var):
         """
-        Lookup a `GXVA` from another `GXVA` using an index `GXVV`.
+        Lookup a `GXVA <geosoft.gxapi.GXVA>` from another `GXVA <geosoft.gxapi.GXVA>` using an index `GXVV <geosoft.gxapi.GXVV>`.
 
         **Note:**
 
-        Fractional values in the `GXVV` will interpolate between the value
+        Fractional values in the `GXVV <geosoft.gxapi.GXVV>` will interpolate between the value
         at the whole integer value and the next whole integer, dummy
-        if outside the `GXVA`.
+        if outside the `GXVA <geosoft.gxapi.GXVA>`.
         """
         self._wrapper.lookup_index(vvi._wrapper, var._wrapper)
         
@@ -341,7 +341,7 @@ class GXVA:
 
     def re_fid(self, start, incr, length):
         """
-        Re-sample a `GXVA` to a new fid start/icrement
+        Re-sample a `GXVA <geosoft.gxapi.GXVA>` to a new fid start/icrement
         """
         self._wrapper.re_fid(start, incr, length)
         
@@ -351,7 +351,7 @@ class GXVA:
 
     def reverse(self):
         """
-        Reverses the order of the rows in a `GXVA`.
+        Reverses the order of the rows in a `GXVA <geosoft.gxapi.GXVA>`.
         """
         self._wrapper.reverse()
         
@@ -361,7 +361,7 @@ class GXVA:
 
     def get_fid_incr(self):
         """
-        Gets the Fiducial increment from a `GXVA`
+        Gets the Fiducial increment from a `GXVA <geosoft.gxapi.GXVA>`
         """
         ret_val = self._wrapper.get_fid_incr()
         return ret_val
@@ -371,7 +371,7 @@ class GXVA:
 
     def get_fid_start(self):
         """
-        Gets the Fiducial start from a `GXVA`
+        Gets the Fiducial start from a `GXVA <geosoft.gxapi.GXVA>`
         """
         ret_val = self._wrapper.get_fid_start()
         return ret_val
@@ -381,7 +381,7 @@ class GXVA:
 
     def get_double(self, row, col):
         """
-        Get a real element from a `GXVA`.
+        Get a real element from a `GXVA <geosoft.gxapi.GXVA>`.
 
         **Note:**
 
@@ -396,7 +396,7 @@ class GXVA:
 
     def set_fid_incr(self, incr):
         """
-        Sets the Fiducial increment of a `GXVA`
+        Sets the Fiducial increment of a `GXVA <geosoft.gxapi.GXVA>`
         """
         self._wrapper.set_fid_incr(incr)
         
@@ -406,7 +406,7 @@ class GXVA:
 
     def set_fid_start(self, start):
         """
-        Sets the Fiducial start of a `GXVA`
+        Sets the Fiducial start of a `GXVA <geosoft.gxapi.GXVA>`
         """
         self._wrapper.set_fid_start(start)
         
@@ -416,12 +416,12 @@ class GXVA:
 
     def set_int(self, row, col, value):
         """
-        Set an integer element in a `GXVA`.
+        Set an integer element in a `GXVA <geosoft.gxapi.GXVA>`.
 
         **Note:**
 
         Element being set cannot be < 0.
-        If the element is > current `GXVA` length, the `GXVA` length is
+        If the element is > current `GXVA <geosoft.gxapi.GXVA>` length, the `GXVA <geosoft.gxapi.GXVA>` length is
         increased.
         """
         self._wrapper.set_int(row, col, value)
@@ -432,12 +432,12 @@ class GXVA:
 
     def set_ln(self, rows):
         """
-        Set the length (number of rows) of the `GXVA`
+        Set the length (number of rows) of the `GXVA <geosoft.gxapi.GXVA>`
 
         **Note:**
 
-        The number of columns in a `GXVA` is fixed, and cannot be
-        altered once the `GXVA` is created.
+        The number of columns in a `GXVA <geosoft.gxapi.GXVA>` is fixed, and cannot be
+        altered once the `GXVA <geosoft.gxapi.GXVA>` is created.
         """
         self._wrapper.set_ln(rows)
         
@@ -447,12 +447,12 @@ class GXVA:
 
     def set_double(self, row, col, value):
         """
-        Set a real element in a `GXVA`.
+        Set a real element in a `GXVA <geosoft.gxapi.GXVA>`.
 
         **Note:**
 
         Element being set cannot be < 0.
-        If the element is > current `GXVA` length, the `GXVA` length is
+        If the element is > current `GXVA <geosoft.gxapi.GXVA>` length, the `GXVA <geosoft.gxapi.GXVA>` length is
         increased.
         """
         self._wrapper.set_double(row, col, value)
@@ -463,12 +463,12 @@ class GXVA:
 
     def set_string(self, row, col, value):
         """
-        Set a string element in a `GXVA`.
+        Set a string element in a `GXVA <geosoft.gxapi.GXVA>`.
 
         **Note:**
 
         Element being set cannot be < 0.
-        If the element is > current `GXVA` length, the `GXVA` length is
+        If the element is > current `GXVA <geosoft.gxapi.GXVA>` length, the `GXVA <geosoft.gxapi.GXVA>` length is
         increased.
         """
         self._wrapper.set_string(row, col, value.encode())
@@ -479,7 +479,7 @@ class GXVA:
 
     def set_vv(self, no, row_col, vv):
         """
-        Set a row or column of data in an array from a `GXVV`.
+        Set a row or column of data in an array from a `GXVV <geosoft.gxapi.GXVV>`.
         """
         self._wrapper.set_vv(no, row_col, vv._wrapper)
         
@@ -489,11 +489,11 @@ class GXVA:
 
     def trans(self, base, mult):
         """
-        Translate (`GXVA` + base ) * mult
+        Translate (`GXVA <geosoft.gxapi.GXVA>` + base ) * mult
 
         **Note:**
 
-        Supports all `GXVA` types using an internal double `GXVV`.
+        Supports all `GXVA <geosoft.gxapi.GXVA>` types using an internal double `GXVV <geosoft.gxapi.GXVV>`.
         """
         self._wrapper.trans(base, mult)
         
@@ -503,11 +503,11 @@ class GXVA:
 
     def window(self, start, count, vv):
         """
-        Window a `GXVA` to a `GXVV` based in intergral frame
+        Window a `GXVA <geosoft.gxapi.GXVA>` to a `GXVV <geosoft.gxapi.GXVV>` based in intergral frame
 
         **Note:**
 
-        The defined window must be within the `GXVA` element dimensions.
+        The defined window must be within the `GXVA <geosoft.gxapi.GXVA>` element dimensions.
         The windowed result will be the simple sum of all
         values in the window.
         If any values are dummy, the result will be dummy.
@@ -520,11 +520,11 @@ class GXVA:
 
     def window2(self, start, end, vv):
         """
-        Window a `GXVA` to a `GXVV` based on fractional frame
+        Window a `GXVA <geosoft.gxapi.GXVA>` to a `GXVV <geosoft.gxapi.GXVV>` based on fractional frame
 
         **Note:**
 
-        The defined window must be within the `GXVA` element dimensions.
+        The defined window must be within the `GXVA <geosoft.gxapi.GXVA>` element dimensions.
         The windowed result will be the simple sum of all
         values in the window.
         If any values are dummy, the result will be dummy.
@@ -537,12 +537,12 @@ class GXVA:
 
     def check_for_repeating(self, vv_t, subtract_vv, vv_sub, tol):
         """
-        Window a `GXVA` to a `GXVV` based on fractional frame
+        Window a `GXVA <geosoft.gxapi.GXVA>` to a `GXVV <geosoft.gxapi.GXVV>` based on fractional frame
 
         **Note:**
 
         Returns 1 if all rows contain values which match the input values.
-        Optionally, row values can be offset by amounts specified with a secondary `GXVV`.
+        Optionally, row values can be offset by amounts specified with a secondary `GXVV <geosoft.gxapi.GXVV>`.
         This function was designed to detect "depth" array channels, including those which might
         have been offset with topography on each row.
         An absolute tolerance can be specified to ignore numerical noise.
@@ -555,12 +555,12 @@ class GXVA:
 
     def check_for_repeating2(self, vv_t, subtract_vv, vv_sub, tol, bad_row, bad_col):
         """
-        Window a `GXVA` to a `GXVV` based on fractional frame
+        Window a `GXVA <geosoft.gxapi.GXVA>` to a `GXVV <geosoft.gxapi.GXVV>` based on fractional frame
 
         **Note:**
 
         Returns 1 if all rows contain values which match the input values.
-        Optionally, row values can be offset by amounts specified with a secondary `GXVV`.
+        Optionally, row values can be offset by amounts specified with a secondary `GXVV <geosoft.gxapi.GXVV>`.
         This function was designed to detect "depth" array channels, including those which might
         have been offset with topography on each row.
         An absolute tolerance can be specified to ignore numerical noise.

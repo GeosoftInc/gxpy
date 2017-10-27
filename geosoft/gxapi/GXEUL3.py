@@ -61,7 +61,7 @@ class GXEUL3:
 
     def destr(self):
         """
-        Destroys a `GXEUL3` object.
+        Destroys a `GXEUL3 <geosoft.gxapi.GXEUL3>` object.
         """
         self._wrapper.destr()
         
@@ -71,7 +71,7 @@ class GXEUL3:
     @classmethod
     def creat(cls, imgt, imgtx, imgty, imgtz, wnd_siz, gi, tolrnc, max_dis, obs_flg, obs_hght, obs_elev):
         """
-        Creates an `GXEUL3` object.
+        Creates an `GXEUL3 <geosoft.gxapi.GXEUL3>` object.
         """
         ret_val = gxapi_cy.WrapEUL3.creat(GXContext._get_tls_geo(), imgt._wrapper, imgtx._wrapper, imgty._wrapper, imgtz._wrapper, wnd_siz, gi, tolrnc, max_dis, obs_flg, obs_hght, obs_elev)
         return GXEUL3(ret_val)
@@ -81,7 +81,7 @@ class GXEUL3:
 
     def get_result(self, vv_r, pi_res_field):
         """
-        Get a result field `GXVV` from `GXEUL3` object
+        Get a result field `GXVV <geosoft.gxapi.GXVV>` from `GXEUL3 <geosoft.gxapi.GXEUL3>` object
         """
         self._wrapper.get_result(vv_r._wrapper, pi_res_field)
         
@@ -91,7 +91,7 @@ class GXEUL3:
 
     def write(self, out_fil):
         """
-        Write the results of `GXEUL3` object to output file.
+        Write the results of `GXEUL3 <geosoft.gxapi.GXEUL3>` object to output file.
         """
         self._wrapper.write(out_fil.encode())
         

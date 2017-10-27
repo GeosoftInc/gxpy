@@ -21,7 +21,7 @@ class GX3DN:
     This class manages the rendering of a 3D view. It allows
     the positioning of the camera, specification of the zoom
     as well as some rendering controls for the axis. It is
-    directly related to the `GXMVIEW` class.
+    directly related to the `GXMVIEW <geosoft.gxapi.GXMVIEW>` class.
     """
 
     def __enter__(self):
@@ -63,7 +63,7 @@ class GX3DN:
 
     def copy(self, source):
         """
-        Copy one `GX3DN` object to another.
+        Copy one `GX3DN <geosoft.gxapi.GX3DN>` object to another.
         """
         self._wrapper.copy(source._wrapper)
         
@@ -73,7 +73,7 @@ class GX3DN:
     @classmethod
     def create(cls):
         """
-        Creates a `GX3DN`.
+        Creates a `GX3DN <geosoft.gxapi.GX3DN>`.
         """
         ret_val = gxapi_cy.Wrap3DN.create(GXContext._get_tls_geo())
         return GX3DN(ret_val)

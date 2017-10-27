@@ -19,7 +19,7 @@ class GXIP:
     """
     GXIP class.
 
-    This class is used in the `GXIP` System for the import, export
+    This class is used in the `GXIP <geosoft.gxapi.GXIP>` System for the import, export
     and processing of Induced Polarization data.
 
     **Note:**
@@ -27,9 +27,9 @@ class GXIP:
     The following defines are used in GX code but are not
     part of any functions:
     
-    `IP_ARRAY`
-    `IP_CHANNELS`
-    `IP_LINES`
+    `IP_ARRAY_`
+    `IP_CHANNELS_`
+    `IP_LINES_`
     """
 
     def __enter__(self):
@@ -75,7 +75,7 @@ class GXIP:
 
         **Note:**
 
-        Uses `GXTIN` gridding to sample the model.
+        Uses `GXTIN <geosoft.gxapi.GXTIN>` gridding to sample the model.
         By setting the final value, a resistivity grid can be
         created from conductivity data.
         """
@@ -97,7 +97,7 @@ class GXIP:
 
     def export_ubcip3(self, db, line, chan, error_chan, obs, topo, version):
         """
-        Export of `GXIP` data to UBC format.
+        Export of `GXIP <geosoft.gxapi.GXIP>` data to UBC format.
 
         **Note:**
 
@@ -119,7 +119,7 @@ class GXIP:
 
         UBC Version 3 Control file.
         Outputs a control file for use in the
-        UBC 2D `GXIP` inversion program IPINV2D.
+        UBC 2D `GXIP <geosoft.gxapi.GXIP>` inversion program IPINV2D.
         """
         gxapi_cy.WrapIP.export_ubcip_control(GXContext._get_tls_geo(), control.encode(), n_iter, i_rest, chi_factor, obs.encode(), cond.encode(), mesh.encode(), topo.encode(), initial.encode(), ref_mod.encode(), alphas.encode(), wts.encode())
         
@@ -143,7 +143,7 @@ class GXIP:
 
     def export_ubc_res3(self, db, line, voltage_chan, current_chan, error_chan, obs, topo, version):
         """
-        Export of `GXIP` Resistivity data to UBC format.
+        Export of `GXIP <geosoft.gxapi.GXIP>` Resistivity data to UBC format.
 
         **Note:**
 
@@ -192,12 +192,12 @@ class GXIP:
 
     def export_data_to_ubc_3d(self, db, line_lst, locations_only, include_z, chan, error_chan, mask_chan, ip_type, comments, obs):
         """
-        Export of `GXIP` data to UBC 3D `GXIP` format.
+        Export of `GXIP <geosoft.gxapi.GXIP>` data to UBC 3D `GXIP <geosoft.gxapi.GXIP>` format.
 
         **Note:**
 
         Outputs a ``*.DAT`` file of the survey data for use in the
-        UBC `GXIP` 3D inversion programs.
+        UBC `GXIP <geosoft.gxapi.GXIP>` 3D inversion programs.
         """
         self._wrapper.export_data_to_ubc_3d(db._wrapper, line_lst._wrapper, locations_only, include_z, chan.encode(), error_chan.encode(), mask_chan.encode(), ip_type, comments.encode(), obs.encode())
         
@@ -211,7 +211,7 @@ class GXIP:
 
         **Note:**
 
-        Imports the MOD file values to a `GXPG` object.
+        Imports the MOD file values to a `GXPG <geosoft.gxapi.GXPG>` object.
         The CON/CHG selection is necessary because the import sets
         padding values to dummies based on the type of file.
         """
@@ -252,7 +252,7 @@ class GXIP:
 
     def open_job(self, job, type):
         """
-        Open a `GXIP` plotting job
+        Open a `GXIP <geosoft.gxapi.GXIP>` plotting job
         """
         self._wrapper.open_job(job.encode(), type)
         
@@ -262,7 +262,7 @@ class GXIP:
 
     def save_job(self, job, type):
         """
-        Save a `GXIP` plotting job
+        Save a `GXIP <geosoft.gxapi.GXIP>` plotting job
         """
         self._wrapper.save_job(job.encode(), type)
         
@@ -277,7 +277,7 @@ class GXIP:
         **Note:**
 
         The cells are removed from the left, right and bottom.
-        The returned `GXPG` is the trimmed version.
+        The returned `GXPG <geosoft.gxapi.GXPG>` is the trimmed version.
         The input cell size VVs are also trimmed to match,
         and the origin is updated (still upper left corner).
         """
@@ -303,11 +303,11 @@ class GXIP:
 
     def write_distant_electrodes_lst(self, db, lst):
         """
-        Write distant electrode locations to channels for a `GXLST` of lines
+        Write distant electrode locations to channels for a `GXLST <geosoft.gxapi.GXLST>` of lines
 
         **Note:**
 
-        Writes values for lines in the input `GXLST`.
+        Writes values for lines in the input `GXLST <geosoft.gxapi.GXLST>`.
         """
         self._wrapper.write_distant_electrodes_lst(db._wrapper, lst._wrapper)
         
@@ -340,7 +340,7 @@ class GXIP:
     @classmethod
     def create(cls):
         """
-        Create `GXIP`.
+        Create `GXIP <geosoft.gxapi.GXIP>`.
         """
         ret_val = gxapi_cy.WrapIP.create(GXContext._get_tls_geo())
         return GXIP(ret_val)
@@ -505,7 +505,7 @@ class GXIP:
 
     def import_dump(self, sys, db, dump_file):
         """
-        Imports data from an `GXIP` instrument dump file.
+        Imports data from an `GXIP <geosoft.gxapi.GXIP>` instrument dump file.
         """
         self._wrapper.import_dump(sys, db._wrapper, dump_file.encode())
         
@@ -546,7 +546,7 @@ class GXIP:
 
     def import_i2_x_ex(self, db, file, line, res_data, ip_data, res_model, ip_model, res_synth, ip_synth, res_poly, ip_poly, res_zonge, ip_zonge, mode):
         """
-        Same as `import_i2_x`, with Zonge data imported as well.
+        Same as `import_i2_x <geosoft.gxapi.GXIP.import_i2_x>`, with Zonge data imported as well.
 
         **Note:**
 
@@ -604,7 +604,7 @@ class GXIP:
 
         **Note:**
 
-        This import produces a limited `GXIP` data set with no Current "I",
+        This import produces a limited `GXIP <geosoft.gxapi.GXIP>` data set with no Current "I",
         Voltage "Vp" or Apparent Resistivity "ResApp" values.
         """
         self._wrapper.import_ipred(db._wrapper, file.encode(), chan.encode())
@@ -674,7 +674,7 @@ class GXIP:
 
         **Note:**
 
-        See `import_zonge_fld`
+        See `import_zonge_fld <geosoft.gxapi.GXIP.import_zonge_fld>`
         """
         self._wrapper.import_zonge_avg(db._wrapper, file.encode(), line, scale, mult)
         
@@ -690,7 +690,7 @@ class GXIP:
 
         The Zonge Line and Station numbers may not be the X or Y position
         values, and a conversion is required.
-        The line direction is taken from the `GXIP` setup values.
+        The line direction is taken from the `GXIP <geosoft.gxapi.GXIP>` setup values.
         """
         self._wrapper.import_zonge_fld(db._wrapper, file.encode(), scale, mult)
         
@@ -730,7 +730,7 @@ class GXIP:
 
     def pseudo_plot2(self, db, ini_file, cur_line, tag, map):
         """
-        Same as `pseudo_plot`, but specify a tag for grids created.
+        Same as `pseudo_plot <geosoft.gxapi.GXIP.pseudo_plot>`, but specify a tag for grids created.
 
         **Note:**
 
@@ -745,7 +745,7 @@ class GXIP:
 
     def pseudo_plot2_dir(self, db, ini_file, cur_line, tag, map, dir):
         """
-        Same as `pseudo_plot2`, but with directory specified.
+        Same as `pseudo_plot2 <geosoft.gxapi.GXIP.pseudo_plot2>`, but with directory specified.
 
         **Note:**
 
@@ -775,7 +775,7 @@ class GXIP:
 
     def ps_stack2(self, db, chan, con_file, type, map):
         """
-        As `ps_stack`, but select section spacing option.
+        As `ps_stack <geosoft.gxapi.GXIP.ps_stack>`, but select section spacing option.
         """
         self._wrapper.ps_stack2(db._wrapper, chan.encode(), con_file.encode(), type, map.encode())
         
@@ -785,7 +785,7 @@ class GXIP:
 
     def ps_stack2_dir(self, db, chan, con_file, type, map, dir):
         """
-        Same as `pseudo_plot2`, but with directory specified.
+        Same as `pseudo_plot2 <geosoft.gxapi.GXIP.pseudo_plot2>`, but with directory specified.
         """
         self._wrapper.ps_stack2_dir(db._wrapper, chan.encode(), con_file.encode(), type, map.encode(), dir.encode())
         
@@ -828,9 +828,9 @@ class GXIP:
                channel, and the "N" values.
         
         Warning: If you make a change to an electrode location, you
-        would have to call `recalculate`, then recalculate "Topo"
+        would have to call `recalculate <geosoft.gxapi.GXIP.recalculate>`, then recalculate "Topo"
         (since the X and Y values would have changed), then call
-        `recalculate_z`, since "Z" values are based on "Topo" values.
+        `recalculate_z <geosoft.gxapi.GXIP.recalculate_z>`, since "Z" values are based on "Topo" values.
         """
         self._wrapper.recalculate(db._wrapper)
         
@@ -844,7 +844,7 @@ class GXIP:
 
         **Note:**
 
-        See `recalculate`. This version allows you to suppress the recalculation of the
+        See `recalculate <geosoft.gxapi.GXIP.recalculate>`. This version allows you to suppress the recalculation of the
         current X, Y and Z channel values from the station locations.
         """
         self._wrapper.recalculate_ex(db._wrapper, recalculate_xyz)
@@ -867,7 +867,7 @@ class GXIP:
 
         .. seealso::
 
-            `recalculate`
+            `recalculate <geosoft.gxapi.GXIP.recalculate>`
         """
         self._wrapper.recalculate_z(db._wrapper)
         
@@ -909,12 +909,12 @@ class GXIP:
 
     def window(self, db, va_chan, chan, windows):
         """
-        Window an `GXIP` array channel to produce a normal channel.
+        Window an `GXIP <geosoft.gxapi.GXIP>` array channel to produce a normal channel.
 
         **Note:**
 
         The array channels cannot be used directly to produce sections.
-        `window` allows the user to select one or more of the windows
+        `window <geosoft.gxapi.GXIP.window>` allows the user to select one or more of the windows
         and create a new channel. In time domain, if more than one channel
         is selected a weighted sum is performed, according to window widths.
         In frequency domain a simple sum is performed.
@@ -938,7 +938,7 @@ class GXIP:
     @classmethod
     def winnow_chan_list2(cls, lst, db):
         """
-        Same as `winnow_chan_list`, but removes current X,Y,Z.
+        Same as `winnow_chan_list <geosoft.gxapi.GXIP.winnow_chan_list>`, but removes current X,Y,Z.
         """
         gxapi_cy.WrapIP.winnow_chan_list2(GXContext._get_tls_geo(), lst._wrapper, db._wrapper)
         
@@ -948,7 +948,7 @@ class GXIP:
 
     def is_valid_line(self, db, line):
         """
-        See if a given database line is registered for the `GXIP` system
+        See if a given database line is registered for the `GXIP <geosoft.gxapi.GXIP>` system
         """
         ret_val = self._wrapper.is_valid_line(db._wrapper, line.encode())
         return ret_val
@@ -958,7 +958,7 @@ class GXIP:
 
     def line_array_type(self, db, line):
         """
-        Return the type of `GXIP` array for the input line. If necessary, first imports the specified line into the `GXIP` object
+        Return the type of `GXIP <geosoft.gxapi.GXIP>` array for the input line. If necessary, first imports the specified line into the `GXIP <geosoft.gxapi.GXIP>` object
         """
         ret_val = self._wrapper.line_array_type(db._wrapper, line.encode())
         return ret_val
@@ -968,7 +968,7 @@ class GXIP:
 
     def a_spacing(self, db, line):
         """
-        Return the A-Spacing for the input line. If necessary, first imports the specified line into the `GXIP` object.
+        Return the A-Spacing for the input line. If necessary, first imports the specified line into the `GXIP <geosoft.gxapi.GXIP>` object.
         """
         ret_val = self._wrapper.a_spacing(db._wrapper, line.encode())
         return ret_val
@@ -1050,7 +1050,7 @@ class GXIP:
 
         **Note:**
 
-        For `GXIP`, looks for "QC_IP", then "QC_OffTime", then "QC".
+        For `GXIP <geosoft.gxapi.GXIP>`, looks for "QC_IP", then "QC_OffTime", then "QC".
         For Resistivity, looks for "QC_Res", then "QC_OnTime" (case insensitive).
         """
         ret_val, chan.value = gxapi_cy.WrapIP.get_qc_channel(GXContext._get_tls_geo(), db._wrapper, qc_type, chan.value.encode())

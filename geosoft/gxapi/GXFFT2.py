@@ -19,8 +19,8 @@ class GXFFT2:
     GXFFT2 class.
 
     2-D Fast Fourier Transforms
-    These methods now work with an `GXIMG` object, instead of creating
-    their own `GXFFT2` object.
+    These methods now work with an `GXIMG <geosoft.gxapi.GXIMG>` object, instead of creating
+    their own `GXFFT2 <geosoft.gxapi.GXFFT2>` object.
     """
 
     def __enter__(self):
@@ -62,7 +62,7 @@ class GXFFT2:
     @classmethod
     def fft2_in(cls, im_gi, trn_fil, spc_fil):
         """
-        `GXFFT2` transform
+        `GXFFT2 <geosoft.gxapi.GXFFT2>` transform
         """
         gxapi_cy.WrapFFT2.fft2_in(GXContext._get_tls_geo(), im_gi._wrapper, trn_fil.encode(), spc_fil.encode())
         
@@ -72,7 +72,7 @@ class GXFFT2:
     @classmethod
     def filter_pg(cls, pg, con_fil, tr, dx, dy, rot):
         """
-        Apply 2D `GXFFT` filters to data in pager
+        Apply 2D `GXFFT <geosoft.gxapi.GXFFT>` filters to data in pager
         """
         gxapi_cy.WrapFFT2.filter_pg(GXContext._get_tls_geo(), pg._wrapper, con_fil.encode(), tr._wrapper, dx, dy, rot)
         
@@ -82,7 +82,7 @@ class GXFFT2:
     @classmethod
     def flt(cls, im_gi, out_fil, con_fil):
         """
-        `GXFFT2` filter
+        `GXFFT2 <geosoft.gxapi.GXFFT2>` filter
         """
         gxapi_cy.WrapFFT2.flt(GXContext._get_tls_geo(), im_gi._wrapper, out_fil.encode(), con_fil.encode())
         
@@ -92,7 +92,7 @@ class GXFFT2:
     @classmethod
     def flt_inv(cls, im_gi, out_fil, con_fil):
         """
-        `GXFFT2` filter and inverse
+        `GXFFT2 <geosoft.gxapi.GXFFT2>` filter and inverse
         """
         gxapi_cy.WrapFFT2.flt_inv(GXContext._get_tls_geo(), im_gi._wrapper, out_fil.encode(), con_fil.encode())
         
@@ -102,7 +102,7 @@ class GXFFT2:
     @classmethod
     def pow_spc(cls, im_gi, spc_fil):
         """
-        `GXFFT2` transform power spectrum
+        `GXFFT2 <geosoft.gxapi.GXFFT2>` transform power spectrum
         """
         gxapi_cy.WrapFFT2.pow_spc(GXContext._get_tls_geo(), im_gi._wrapper, spc_fil.encode())
         
@@ -112,7 +112,7 @@ class GXFFT2:
     @classmethod
     def rad_spc(cls, im_gi, spc_fil):
         """
-        `GXFFT2` transform Radially averaged power spectrum
+        `GXFFT2 <geosoft.gxapi.GXFFT2>` transform Radially averaged power spectrum
         """
         gxapi_cy.WrapFFT2.rad_spc(GXContext._get_tls_geo(), im_gi._wrapper, spc_fil.encode())
         
@@ -122,7 +122,7 @@ class GXFFT2:
     @classmethod
     def rad_spc1(cls, img, vv):
         """
-        `GXFFT2` transform Radially averaged power spectrum for one `GXIMG`
+        `GXFFT2 <geosoft.gxapi.GXFFT2>` transform Radially averaged power spectrum for one `GXIMG <geosoft.gxapi.GXIMG>`
         """
         gxapi_cy.WrapFFT2.rad_spc1(GXContext._get_tls_geo(), img._wrapper, vv._wrapper)
         
@@ -132,7 +132,7 @@ class GXFFT2:
     @classmethod
     def rad_spc2(cls, img1, img2, vv, v_vst, opt):
         """
-        `GXFFT2` transform Radially averaged power spectrum for two IMGs
+        `GXFFT2 <geosoft.gxapi.GXFFT2>` transform Radially averaged power spectrum for two IMGs
         """
         gxapi_cy.WrapFFT2.rad_spc2(GXContext._get_tls_geo(), img1._wrapper, img2._wrapper, vv._wrapper, v_vst._wrapper, opt)
         
@@ -142,7 +142,7 @@ class GXFFT2:
     @classmethod
     def td_xd_y(cls, img_tx, img_ty, out_fil, inv_flg):
         """
-        `GXFFT2` filter (calculate T from the derivatives Tx and Ty)
+        `GXFFT2 <geosoft.gxapi.GXFFT2>` filter (calculate T from the derivatives Tx and Ty)
         """
         gxapi_cy.WrapFFT2.td_xd_y(GXContext._get_tls_geo(), img_tx._wrapper, img_ty._wrapper, out_fil.encode(), inv_flg)
         
@@ -152,7 +152,7 @@ class GXFFT2:
     @classmethod
     def trans_pg(cls, pg, opt):
         """
-        Apply 2D `GXFFT` transform to data in pager
+        Apply 2D `GXFFT <geosoft.gxapi.GXFFT>` transform to data in pager
         """
         gxapi_cy.WrapFFT2.trans_pg(GXContext._get_tls_geo(), pg._wrapper, opt)
         

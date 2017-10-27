@@ -18,7 +18,7 @@ class GXSTR:
     """
     GXSTR class.
 
-    This library is not a class. Use the `GXSTR` library functions
+    This library is not a class. Use the `GXSTR <geosoft.gxapi.GXSTR>` library functions
     to work with and manipulate string variables. Since the
     GX Programming Language does not provide string literal
     tokens, you must use these functions for any string operations
@@ -161,7 +161,7 @@ class GXSTR:
         **Note:**
 
         The multifile string must use '|' as a delimiter.
-        Do not pass a string after calling `tokenize`.
+        Do not pass a string after calling `tokenize <geosoft.gxapi.GXSTR.tokenize>`.
         """
         out_str.value = gxapi_cy.WrapSTR.get_m_file(GXContext._get_tls_geo(), in_str.encode(), out_str.value.encode(), index)
         
@@ -488,8 +488,8 @@ class GXSTR:
         String may be modified. This function should not be
         used to determine if a file name string is defined, because
         a valid file name can contain spaces, and once "tested" the
-        name will be altered. Instead, use `str_min2`, or use
-        `GXSYS.file_exist` to see if the file actually exists.
+        name will be altered. Instead, use `str_min2 <geosoft.gxapi.GXSTR.str_min2>`, or use
+        `GXSYS.file_exist <geosoft.gxapi.GXSYS.file_exist>` to see if the file actually exists.
         """
         ret_val, str_val.value = gxapi_cy.WrapSTR.str_min(GXContext._get_tls_geo(), str_val.value.encode())
         return ret_val
@@ -565,7 +565,7 @@ class GXSTR:
     @classmethod
     def xyz_line(cls, line, xyz):
         """
-        Make a valid XYZ line name from a valid `GXDB` line name.
+        Make a valid XYZ line name from a valid `GXDB <geosoft.gxapi.GXDB>` line name.
         """
         xyz.value = gxapi_cy.WrapSTR.xyz_line(GXContext._get_tls_geo(), line.encode(), xyz.value.encode())
         
@@ -766,7 +766,7 @@ class GXSTR:
         trailing delimiters are ignored.
         
         DO NOT use this function except in GXC code. The corresponding
-        `get_token` function will not operate correctly in GX.Net code.
+        `get_token <geosoft.gxapi.GXSTR.get_token>` function will not operate correctly in GX.Net code.
         """
         ret_val = gxapi_cy.WrapSTR.count_tokens(GXContext._get_tls_geo(), str_val.encode(), delims.encode())
         return ret_val
@@ -780,18 +780,18 @@ class GXSTR:
 
         **Note:**
 
-        Call `tokens`  to prepare the tokenized
+        Call `tokens <geosoft.gxapi.GXSTR.tokens>`  to prepare the tokenized
         string.
         You MUST NOT get tokens beyond number of tokens returned
-        by `tokens` or `tokens2`.
+        by `tokens <geosoft.gxapi.GXSTR.tokens>` or `tokens2 <geosoft.gxapi.GXSTR.tokens2>`.
         The first token has index 0.
         
         DO NOT use this function except in GXC code.
-        `get_token` function will not operate correctly in GX.Net code.
+        `get_token <geosoft.gxapi.GXSTR.get_token>` function will not operate correctly in GX.Net code.
 
         .. seealso::
 
-            `tokens`, GetToken_STR
+            `tokens <geosoft.gxapi.GXSTR.tokens>`, GetToken_STR
         """
         dest.value = gxapi_cy.WrapSTR.get_token(GXContext._get_tls_geo(), dest.value.encode(), orig.encode(), tok)
         
@@ -856,11 +856,11 @@ class GXSTR:
         Use GetToken_STR to extract tokens.
         
         DO NOT use this function except in GXC code. The corresponding
-        `get_token` function will not operate correctly in GX.Net code.
+        `get_token <geosoft.gxapi.GXSTR.get_token>` function will not operate correctly in GX.Net code.
 
         .. seealso::
 
-            `tokens2`, GetToken_STR
+            `tokens2 <geosoft.gxapi.GXSTR.tokens2>`, GetToken_STR
         """
         ret_val, str_val.value = gxapi_cy.WrapSTR.tokens(GXContext._get_tls_geo(), str_val.value.encode(), delims.encode())
         return ret_val
@@ -875,10 +875,10 @@ class GXSTR:
         **Note:**
 
         This function is for old GX compatibility only.
-        See `tokenize`.
+        See `tokenize <geosoft.gxapi.GXSTR.tokenize>`.
         
         DO NOT use this function except in GXC code. The corresponding
-        `get_token` function will not operate correctly in GX.Net code.
+        `get_token <geosoft.gxapi.GXSTR.get_token>` function will not operate correctly in GX.Net code.
         """
         ret_val, str_val.value = gxapi_cy.WrapSTR.tokens2(GXContext._get_tls_geo(), str_val.value.encode(), soft.encode(), hard.encode(), esc.encode(), quote.encode())
         return ret_val

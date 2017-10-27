@@ -85,7 +85,7 @@ class GXSQLSRV:
     @classmethod
     def get_database_languages_lst(cls, lst, server, user, password, win_auth):
         """
-        Get a list of the languages into `GXLST`
+        Get a list of the languages into `GXLST <geosoft.gxapi.GXLST>`
         """
         ret_val = gxapi_cy.WrapSQLSRV.get_database_languages_lst(GXContext._get_tls_geo(), lst._wrapper, server.encode(), user.encode(), password.encode(), win_auth)
         return ret_val
@@ -95,7 +95,7 @@ class GXSQLSRV:
     @classmethod
     def get_databases_lst(cls, lst, server, user, password, win_auth):
         """
-        Get a list of the database into `GXLST`
+        Get a list of the database into `GXLST <geosoft.gxapi.GXLST>`
         """
         ret_val = gxapi_cy.WrapSQLSRV.get_databases_lst(GXContext._get_tls_geo(), lst._wrapper, server.encode(), user.encode(), password.encode(), win_auth)
         return ret_val
@@ -115,7 +115,7 @@ class GXSQLSRV:
     @classmethod
     def get_servers_lst(cls, lst):
         """
-        Get a list of the visible servers into `GXLST`
+        Get a list of the visible servers into `GXLST <geosoft.gxapi.GXLST>`
         """
         ret_val = gxapi_cy.WrapSQLSRV.get_servers_lst(GXContext._get_tls_geo(), lst._wrapper)
         return ret_val

@@ -18,32 +18,34 @@ class GXST:
     """
     GXST class.
 
-    Mono-variate statistics. The `GXST` class is used to accumulate statistical
+    Mono-variate statistics. The `GXST <geosoft.gxapi.GXST>` class is used to accumulate statistical
     information about a set of data. This class is usually used in conjunction
-    with others. For instance, `GXDU.stat` (see `GXDU`) will add a channel's
-    data to the `GXST` object, and sComputeST_IMG (see `GXIMG`) will compute
+    with others. For instance, `GXDU.stat <geosoft.gxapi.GXDU.stat>` (see `GXDU <geosoft.gxapi.GXDU>`) will add a channel's
+    data to the `GXST <geosoft.gxapi.GXST>` object, and sComputeST_IMG (see `GXIMG <geosoft.gxapi.GXIMG>`) will compute
     statistics for a grid.
 
     **Note:**
 
+    .. _histogram_ranges:
+    
     *** Histogram ranges and color zone ranges ***
     
     Histogram bins are defined with inclusive minima and exclusive maxima;
     for instance if Min = 0 and Inc = 1, then the second bin would include
     all values z such that  0 >= z > 1 (the first bin has all values < 0).
     
-    Color zones used in displaying grids (`GXITR`, ZON etc...) are the
+    Color zones used in displaying grids (`GXITR <geosoft.gxapi.GXITR>`, ZON etc...) are the
     opposite, with exclusive minima and inclusive maxima.
     For instance, if a zone is defined from 0 to 1, then it would
     contain all values of z such that 0 > z >= 1.
     
     These definitions mean that it is impossible to perfectly assign
-    `GXITR` colors to individual bars of a histogram. The best work-around
+    `GXITR <geosoft.gxapi.GXITR>` colors to individual bars of a histogram. The best work-around
     when the data values are integers is to define the color zones using
     0.5 values between the integers. A general work-around is to make the
     number of histogram bins much larger than the number of color zones.
     
-    See also  `GXST2` (bi-variate statistics)
+    See also  `GXST2 <geosoft.gxapi.GXST2>` (bi-variate statistics)
     """
 
     def __enter__(self):
@@ -117,7 +119,7 @@ class GXST:
 
     def data_vv(self, vv):
         """
-        Add all the values in this `GXVV` to the statistics object.
+        Add all the values in this `GXVV <geosoft.gxapi.GXVV>` to the statistics object.
         """
         self._wrapper.data_vv(vv._wrapper)
         
@@ -133,9 +135,9 @@ class GXST:
 
         **Note:**
 
-        The length of the returned `GXVV` is set to the total
+        The length of the returned `GXVV <geosoft.gxapi.GXVV>` is set to the total
         number of bins. If a histogram is not defined in
-        the `GXST`, then the returned length is zero.
+        the `GXST <geosoft.gxapi.GXST>`, then the returned length is zero.
         """
         self._wrapper.get_histogram_bins(vv._wrapper)
         
@@ -149,9 +151,9 @@ class GXST:
 
         **Note:**
 
-        The items correspond to those in `histogram2`.
+        The items correspond to those in `histogram2 <geosoft.gxapi.GXST.histogram2>`.
         If a histogram is not defined in
-        the `GXST`, then the returned number of bins is zero, and
+        the `GXST <geosoft.gxapi.GXST>`, then the returned number of bins is zero, and
         the min and max values will be dummies.
         """
         div.value, min.value, max.value = self._wrapper.get_histogram_info(div.value, min.value, max.value)
@@ -160,9 +162,9 @@ class GXST:
 
 
 
-    def histogram(self, div):
+    def histogram(self, bins):
         """
-        This method prepares `GXST` for recording histogram.
+        This method prepares `GXST <geosoft.gxapi.GXST>` for recording histogram.
 
         **Note:**
 
@@ -170,25 +172,25 @@ class GXST:
         and the one after the maximum, so it must be a value >2.
         
         IMPORTANT: This function gets the histogram minimum and
-        maximum from the current min and max values stored in the `GXST`,
-        so this is equivalent to calling
+        maximum from the current min and max values stored in the `GXST <geosoft.gxapi.GXST>`,
+        so this is equivalent to calling `histogram2 <geosoft.gxapi.GXST.histogram2>` with
         
-        `histogram2`( #bins, Min, (Max-Min)/(# bins -2));
+        ``#bins, Min, (Max-Min)/(# bins -2))``
         
         You should already have the data loaded in order to call this
         function.
         
-        See the note above "Histogram ranges and color zone ranges"
+        See histogram_ranges_
         """
-        self._wrapper.histogram(div)
+        self._wrapper.histogram(bins)
         
 
 
 
 
-    def histogram2(self, div, min, max):
+    def histogram2(self, bins, min, max):
         """
-        This method prepares `GXST` for recording histogram.
+        This method prepares `GXST <geosoft.gxapi.GXST>` for recording histogram.
 
         **Note:**
 
@@ -196,9 +198,9 @@ class GXST:
         and the one after the maximum, so it must be a value >2.
         The width of the individual bins will be (Min-Max)/(# - 2)
         
-        See the note above "Histogram ranges and color zone ranges"
+        See histogram_ranges_
         """
-        self._wrapper.histogram2(div, min, max)
+        self._wrapper.histogram2(bins, min, max)
         
 
 
@@ -247,15 +249,15 @@ class GXST:
     def get_info(self, id):
         """
         This method allows you to retrieve (and compute) the
-        information from the `GXST` object.
+        information from the `GXST <geosoft.gxapi.GXST>` object.
 
         **Note:**
 
-        The following can only be determined if the `GXST` has recorded
-        a histogram: `ST_MEDIAN`, `ST_MODE`
+        The following can only be determined if the `GXST <geosoft.gxapi.GXST>` has recorded
+        a histogram: `ST_MEDIAN <geosoft.gxapi.ST_MEDIAN>`, `ST_MODE <geosoft.gxapi.ST_MODE>`
         
-        `ST_MINPOS` can be used to retrieve the smallest value greater
-        than zero, but not from `GXST` objects recovered from serialized object.
+        `ST_MINPOS <geosoft.gxapi.ST_MINPOS>` can be used to retrieve the smallest value greater
+        than zero, but not from `GXST <geosoft.gxapi.GXST>` objects recovered from serialized object.
         """
         ret_val = self._wrapper.get_info(id)
         return ret_val

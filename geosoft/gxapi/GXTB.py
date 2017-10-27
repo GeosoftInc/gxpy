@@ -18,9 +18,9 @@ class GXTB:
     """
     GXTB class.
 
-    The `GXTB` class is a high-performance table class used to
+    The `GXTB <geosoft.gxapi.GXTB>` class is a high-performance table class used to
     perform table-based processing, such as leveling data in
-    an OASIS database. The `GXLTB` class is recommended for use
+    an OASIS database. The `GXLTB <geosoft.gxapi.GXLTB>` class is recommended for use
     with small tables produced from short lists such as the
     different geographic projections and their defining parameters.
     """
@@ -84,7 +84,7 @@ class GXTB:
         **Note:**
 
         If the table contains fewer data columns than are defined by the
-        the table header, the `GXTB` object will read in the table and dummy
+        the table header, the `GXTB <geosoft.gxapi.GXTB>` object will read in the table and dummy
         the elements of the missing data columns.
         """
         ret_val = gxapi_cy.WrapTB.create(GXContext._get_tls_geo(), name.encode())
@@ -102,7 +102,7 @@ class GXTB:
         The table will contain fields for all channels in
         the database.
         
-        The database is not loaded with data.  Use the `load_db`
+        The database is not loaded with data.  Use the `load_db <geosoft.gxapi.GXTB.load_db>`
         function to load data into the table.
         """
         ret_val = gxapi_cy.WrapTB.create_db(GXContext._get_tls_geo(), db._wrapper)
@@ -113,7 +113,7 @@ class GXTB:
     @classmethod
     def create_ltb(cls, ltb):
         """
-        Create a table from an `GXLTB` database.
+        Create a table from an `GXLTB <geosoft.gxapi.GXLTB>` database.
         """
         ret_val = gxapi_cy.WrapTB.create_ltb(GXContext._get_tls_geo(), ltb._wrapper)
         return GXTB(ret_val)
@@ -215,7 +215,7 @@ class GXTB:
 
     def load_db(self, db, line):
         """
-        Load a database into a `GXTB`
+        Load a database into a `GXTB <geosoft.gxapi.GXTB>`
 
         **Note:**
 
@@ -250,7 +250,7 @@ class GXTB:
 
     def save_db(self, db, line):
         """
-        Save a `GXTB` in a database line
+        Save a `GXTB <geosoft.gxapi.GXTB>` in a database line
 
         **Note:**
 
@@ -281,8 +281,8 @@ class GXTB:
         **Note:**
 
         The table field containing the element to be set MUST be
-        of type `GS_BYTE`, `GS_USHORT`, `GS_SHORT`, or `GS_LONG`.
-        If the field is `GS_BYTE`, `GS_USHORT`, or `GS_LONG`, the new data
+        of type `GS_BYTE <geosoft.gxapi.GS_BYTE>`, `GS_USHORT <geosoft.gxapi.GS_USHORT>`, `GS_SHORT <geosoft.gxapi.GS_SHORT>`, or `GS_LONG <geosoft.gxapi.GS_LONG>`.
+        If the field is `GS_BYTE <geosoft.gxapi.GS_BYTE>`, `GS_USHORT <geosoft.gxapi.GS_USHORT>`, or `GS_LONG <geosoft.gxapi.GS_LONG>`, the new data
         value will cause an overflow if the value is out of range of
         the data type. The new element value will then be invalid.
         
@@ -307,8 +307,8 @@ class GXTB:
         **Note:**
 
         The table field containing the element to be set MUST be
-        of type `GS_FLOAT` or `GS_DOUBLE`.
-        If the field is `GS_FLOAT` the new data value will cause an
+        of type `GS_FLOAT <geosoft.gxapi.GS_FLOAT>` or `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`.
+        If the field is `GS_FLOAT <geosoft.gxapi.GS_FLOAT>` the new data value will cause an
         overflow if the value is out of range of the data type.
         The new element value will then be invalid.
         

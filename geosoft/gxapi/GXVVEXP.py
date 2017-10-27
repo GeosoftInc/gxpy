@@ -18,8 +18,8 @@ class GXVVEXP:
     """
     GXVVEXP class.
 
-    The `GXVVEXP` class is similar to the `GXIEXP` class, but is used
-    to apply math expressions to `GXVV` objects.
+    The `GXVVEXP <geosoft.gxapi.GXVVEXP>` class is similar to the `GXIEXP <geosoft.gxapi.GXIEXP>` class, but is used
+    to apply math expressions to `GXVV <geosoft.gxapi.GXVV>` objects.
     """
 
     def __enter__(self):
@@ -61,7 +61,7 @@ class GXVVEXP:
 
     def add_vv(self, vv, var):
         """
-        This method adds a `GXVV` to the `GXVVEXP` object with a
+        This method adds a `GXVV <geosoft.gxapi.GXVV>` to the `GXVVEXP <geosoft.gxapi.GXVVEXP>` object with a
         variable name.
         """
         self._wrapper.add_vv(vv._wrapper, var.encode())
@@ -72,7 +72,7 @@ class GXVVEXP:
     @classmethod
     def create(cls):
         """
-        This method creates an `GXVVEXP` object.
+        This method creates an `GXVVEXP <geosoft.gxapi.GXVVEXP>` object.
         """
         ret_val = gxapi_cy.WrapVVEXP.create(GXContext._get_tls_geo())
         return GXVVEXP(ret_val)

@@ -18,7 +18,7 @@ class GXPLY:
     """
     GXPLY class.
 
-    The `GXPLY` object contains the definitions for one or more
+    The `GXPLY <geosoft.gxapi.GXPLY>` object contains the definitions for one or more
     polygons, and does import and export of polygon files.
     """
 
@@ -85,7 +85,7 @@ class GXPLY:
 
         **Note:**
 
-        The `GXPLY` is re-projected to the new projection.
+        The `GXPLY <geosoft.gxapi.GXPLY>` is re-projected to the new projection.
         """
         self._wrapper.change_ipj(ipj._wrapper)
         
@@ -95,7 +95,7 @@ class GXPLY:
 
     def clear(self):
         """
-        Clear/remove all polygons from the `GXPLY`.
+        Clear/remove all polygons from the `GXPLY <geosoft.gxapi.GXPLY>`.
         """
         self._wrapper.clear()
         
@@ -105,7 +105,7 @@ class GXPLY:
 
     def copy(self, srce):
         """
-        Destroys a `GXPLY` Object
+        Destroys a `GXPLY <geosoft.gxapi.GXPLY>` Object
         """
         self._wrapper.copy(srce._wrapper)
         
@@ -125,7 +125,7 @@ class GXPLY:
     @classmethod
     def create_s(cls, bf):
         """
-        Create an `GXPLY` Object from a `GXBF`
+        Create an `GXPLY <geosoft.gxapi.GXPLY>` Object from a `GXBF <geosoft.gxapi.GXBF>`
         """
         ret_val = gxapi_cy.WrapPLY.create_s(GXContext._get_tls_geo(), bf._wrapper)
         return GXPLY(ret_val)
@@ -141,7 +141,7 @@ class GXPLY:
 
         **Note:**
 
-        If there are no polygons in the `GXPLY` object, returns dummies.
+        If there are no polygons in the `GXPLY <geosoft.gxapi.GXPLY>` object, returns dummies.
         """
         min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.extent(min_x.value, min_y.value, max_x.value, max_y.value)
         
@@ -161,7 +161,7 @@ class GXPLY:
 
     def get_polygon(self, vv_x, vv_y, poly):
         """
-        Get a polygon from the `GXPLY`
+        Get a polygon from the `GXPLY <geosoft.gxapi.GXPLY>`
         """
         self._wrapper.get_polygon(vv_x._wrapper, vv_y._wrapper, poly)
         
@@ -171,7 +171,7 @@ class GXPLY:
 
     def get_polygon_ex(self, vv_x, vv_y, poly, exclude):
         """
-        Get a polygon from the `GXPLY`
+        Get a polygon from the `GXPLY <geosoft.gxapi.GXPLY>`
         """
         exclude.value = self._wrapper.get_polygon_ex(vv_x._wrapper, vv_y._wrapper, poly, exclude.value)
         
@@ -191,15 +191,15 @@ class GXPLY:
 
     def clip_line_int(self, min_x, min_y, max_x, max_y, vv, inc, first):
         """
-        Clips a line in or out of the polygons for intersections (`GS_DOUBLE`).
-        Intersections are returned as fiducials down the line stored in `GXVV`
+        Clips a line in or out of the polygons for intersections (`GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`).
+        Intersections are returned as fiducials down the line stored in `GXVV <geosoft.gxapi.GXVV>`
         starting at the first point of the line.
         Examples:
-        No intersection: `PLY_LINE_CLIP_OUTSIDE`, 0 intersections
-        Starts outside, ends inside: `PLY_LINE_CLIP_OUTSIDE`, 1 intersection
-        Starts outside, intersects then ends inside or outside: `PLY_LINE_CLIP_OUTSIDE`, 2 intersections
-        Starts inside, ends inside : `PLY_LINE_CLIP_INSIDE`, 1 intersection (gives end-of-line)
-        Starts inside, ends outside : `PLY_LINE_CLIP_INSIDE`, 1 intersection
+        No intersection: `PLY_LINE_CLIP_OUTSIDE <geosoft.gxapi.PLY_LINE_CLIP_OUTSIDE>`, 0 intersections
+        Starts outside, ends inside: `PLY_LINE_CLIP_OUTSIDE <geosoft.gxapi.PLY_LINE_CLIP_OUTSIDE>`, 1 intersection
+        Starts outside, intersects then ends inside or outside: `PLY_LINE_CLIP_OUTSIDE <geosoft.gxapi.PLY_LINE_CLIP_OUTSIDE>`, 2 intersections
+        Starts inside, ends inside : `PLY_LINE_CLIP_INSIDE <geosoft.gxapi.PLY_LINE_CLIP_INSIDE>`, 1 intersection (gives end-of-line)
+        Starts inside, ends outside : `PLY_LINE_CLIP_INSIDE <geosoft.gxapi.PLY_LINE_CLIP_INSIDE>`, 1 intersection
         """
         ret_val, first.value = self._wrapper.clip_line_int(min_x, min_y, max_x, max_y, vv._wrapper, inc, first.value)
         return ret_val
@@ -225,7 +225,7 @@ class GXPLY:
 
     def get_description(self, desc):
         """
-        Get the `GXPLY` description string
+        Get the `GXPLY <geosoft.gxapi.GXPLY>` description string
         """
         desc.value = self._wrapper.get_description(desc.value.encode())
         
@@ -299,7 +299,7 @@ class GXPLY:
 
     def serial(self, bf):
         """
-        Serialize an `GXPLY` to a `GXBF`
+        Serialize an `GXPLY <geosoft.gxapi.GXPLY>` to a `GXBF <geosoft.gxapi.GXBF>`
         """
         self._wrapper.serial(bf._wrapper)
         
@@ -309,7 +309,7 @@ class GXPLY:
 
     def set_description(self, desc):
         """
-        Set the `GXPLY` description string
+        Set the `GXPLY <geosoft.gxapi.GXPLY>` description string
         """
         self._wrapper.set_description(desc.encode())
         

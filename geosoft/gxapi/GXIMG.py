@@ -19,30 +19,30 @@ class GXIMG:
     """
     GXIMG class.
 
-    The `GXIMG` class performs read and write operations on grid
+    The `GXIMG <geosoft.gxapi.GXIMG>` class performs read and write operations on grid
     file data. When efficient access along both rows and columns
-    is desired the `GXPG` class is recommended (see `GXPG` and `GXPGU`);
-    the `GXIMG` is first created, then the `GXPG` is obtained from
-    the `GXIMG` using `get_pg`.
+    is desired the `GXPG <geosoft.gxapi.GXPG>` class is recommended (see `GXPG <geosoft.gxapi.GXPG>` and `GXPGU <geosoft.gxapi.GXPGU>`);
+    the `GXIMG <geosoft.gxapi.GXIMG>` is first created, then the `GXPG <geosoft.gxapi.GXPG>` is obtained from
+    the `GXIMG <geosoft.gxapi.GXIMG>` using `get_pg <geosoft.gxapi.GXIMG.get_pg>`.
 
     **Note:**
 
-    The `GXIMG` methods use the XGD DATs to access grid files in different
+    The `GXIMG <geosoft.gxapi.GXIMG>` methods use the XGD DATs to access grid files in different
     formats.  The characteristics of a grid can be controlled using
     decorations on a grid file name.  For example:
     
-    `create_new_file`(`GS_DOUBLE`,1,100,100,"mag.grd");
+    `create_new_file <geosoft.gxapi.GXIMG.create_new_file>`(`GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`,1,100,100,"mag.grd");
     -> creates a new grid file "mag.grd" with all defaults.
     
-    `create_new_file`(`GS_DOUBLE`,1,100,100,"mag.grd(GRD;comp=none)");
+    `create_new_file <geosoft.gxapi.GXIMG.create_new_file>`(`GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`,1,100,100,"mag.grd(GRD;comp=none)");
     -> creates a new grid file "mag.grd" with no compression.
     
-    `create_new_file`(`GS_DOUBLE`,1,100,100,"mag.grd(GRD;comp=size;type=short");
+    `create_new_file <geosoft.gxapi.GXIMG.create_new_file>`(`GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`,1,100,100,"mag.grd(GRD;comp=size;type=short");
     -> creates a new grid file "mag.grd" compressed for size, numbers
     stored as 2-byte integers..
     
-    See `DAT_XGD`.DOC for information about file name decorations available
-    for all `GXDAT` types.
+    See `DAT_XGD_`.DOC for information about file name decorations available
+    for all `GXDAT <geosoft.gxapi.GXDAT>` types.
     
     Different grid types support different features.  For example, not all
     grid types support projection information.  Geosoft will always create
@@ -120,11 +120,11 @@ class GXIMG:
     @classmethod
     def create(cls, type, kx, width, height):
         """
-        Creates an `GXIMG` not tied to a file at all
+        Creates an `GXIMG <geosoft.gxapi.GXIMG>` not tied to a file at all
 
         **Note:**
 
-        Once destroyed all the data in this `GXIMG` is lost.
+        Once destroyed all the data in this `GXIMG <geosoft.gxapi.GXIMG>` is lost.
         """
         ret_val = gxapi_cy.WrapIMG.create(GXContext._get_tls_geo(), type, kx, width, height)
         return GXIMG(ret_val)
@@ -138,8 +138,8 @@ class GXIMG:
 
         **Note:**
 
-        When the `GS_DOUBLE` data type is chosen the actual on-disk
-        type of the input image will be used instead of `GS_DOUBLE`
+        When the `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>` data type is chosen the actual on-disk
+        type of the input image will be used instead of `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`
         if the on-disk values represent color data as opposed
         to real numbers.
         """
@@ -151,7 +151,7 @@ class GXIMG:
     @classmethod
     def create_mem(cls, type, kx, width, height):
         """
-        Creates an `GXIMG` object that is backed only by memory.
+        Creates an `GXIMG <geosoft.gxapi.GXIMG>` object that is backed only by memory.
 
         **Note:**
 
@@ -194,8 +194,8 @@ class GXIMG:
 
         **Note:**
 
-        When the `GS_DOUBLE` data type is chosen the actual on-disk
-        type of the input image will be used instead of `GS_DOUBLE`
+        When the `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>` data type is chosen the actual on-disk
+        type of the input image will be used instead of `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`
         if the on-disk values represent color data as opposed
         to real numbers.
         """
@@ -211,7 +211,7 @@ class GXIMG:
 
         **Note:**
 
-        The `GXIMG` now appears to be in the projected coordinate
+        The `GXIMG <geosoft.gxapi.GXIMG>` now appears to be in the projected coordinate
         system space.
         """
         self._wrapper.create_projected(ipj._wrapper)
@@ -226,10 +226,10 @@ class GXIMG:
 
         **Note:**
 
-        The `GXIMG` now appears to be in the projected coordinate
+        The `GXIMG <geosoft.gxapi.GXIMG>` now appears to be in the projected coordinate
         system space, with the specified cell size. If the cell
-        size is `rDUMMY` (`GS_R8DM`), one is automatically calculated,
-        as with `create_projected`.
+        size is `rDUMMY <geosoft.gxapi.rDUMMY>` (`GS_R8DM <geosoft.gxapi.GS_R8DM>`), one is automatically calculated,
+        as with `create_projected <geosoft.gxapi.GXIMG.create_projected>`.
         """
         self._wrapper.create_projected2(ipj._wrapper, cell_size)
         
@@ -239,22 +239,22 @@ class GXIMG:
 
     def create_projected3(self, ipj, cell_size, exp_pct):
         """
-        Same as `create_projected2`, but set expansion of bounds.
+        Same as `create_projected2 <geosoft.gxapi.GXIMG.create_projected2>`, but set expansion of bounds.
 
         **Note:**
 
-        The `GXIMG` now appears to be in the projected coordinate
+        The `GXIMG <geosoft.gxapi.GXIMG>` now appears to be in the projected coordinate
         system space, with the specified cell size. If the cell
-        size is `rDUMMY` (`GS_R8DM`), one is automatically calculated,
-        as with `create_projected`.
+        size is `rDUMMY <geosoft.gxapi.rDUMMY>` (`GS_R8DM <geosoft.gxapi.GS_R8DM>`), one is automatically calculated,
+        as with `create_projected <geosoft.gxapi.GXIMG.create_projected>`.
         The expansion percent expands the bounds of the projected grid
         in order to allow for the curving of bounding edges. Normally,
         edges are sampled in order to allow for curving, but this
-        parameter is set to 1.0 (for 1 percent) in the `create_projected`
-        and `create_projected2` wrappers, and will generally create a
+        parameter is set to 1.0 (for 1 percent) in the `create_projected <geosoft.gxapi.GXIMG.create_projected>`
+        and `create_projected2 <geosoft.gxapi.GXIMG.create_projected2>` wrappers, and will generally create a
         white/dummy border around the new grid. This new method allows
         you to specify the expansion, or turn it off (by setting it to 0).
-        If the value is set to `rDUMMY`, then expansion is left at 1.0,
+        If the value is set to `rDUMMY <geosoft.gxapi.rDUMMY>`, then expansion is left at 1.0,
         the legacy behaviour.
         """
         self._wrapper.create_projected3(ipj._wrapper, cell_size, exp_pct)
@@ -271,7 +271,7 @@ class GXIMG:
 
         .. seealso::
 
-            `get_pg` to get just a copy of the grid's pager.
+            `get_pg <geosoft.gxapi.GXIMG.get_pg>` to get just a copy of the grid's pager.
         """
         ret_val = self._wrapper.geth_pg()
         return GXPG(ret_val)
@@ -315,7 +315,7 @@ class GXIMG:
 
         .. seealso::
 
-            `geth_pg` to get the actual pager of the grid.
+            `geth_pg <geosoft.gxapi.GXIMG.geth_pg>` to get the actual pager of the grid.
         """
         self._wrapper.get_pg(pg._wrapper)
         
@@ -330,9 +330,9 @@ class GXIMG:
         **Note:**
 
         Returns the cell size calculated by CreateProjected_PJIMG, or by
-        `create_projected2` when
-        `GS_R8DM` is entered as the optional cell size. No inheritance
-        is actually performed to the input `GXIMG`.
+        `create_projected2 <geosoft.gxapi.GXIMG.create_projected2>` when
+        `GS_R8DM <geosoft.gxapi.GS_R8DM>` is entered as the optional cell size. No inheritance
+        is actually performed to the input `GXIMG <geosoft.gxapi.GXIMG>`.
         """
         cell.value = self._wrapper.get_projected_cell_size(ipj._wrapper, cell.value)
         
@@ -396,7 +396,7 @@ class GXIMG:
     @classmethod
     def is_valid_img_file(cls, file):
         """
-        Is this a valid `GXIMG` file?
+        Is this a valid `GXIMG <geosoft.gxapi.GXIMG>` file?
         """
         ret_val = gxapi_cy.WrapIMG.is_valid_img_file(GXContext._get_tls_geo(), file.encode())
         return ret_val
@@ -406,7 +406,7 @@ class GXIMG:
     @classmethod
     def is_valid_img_file_ex(cls, file, err_msg):
         """
-        Is this a valid `GXIMG` file? Returns error message if it cannot be opened for any reason.
+        Is this a valid `GXIMG <geosoft.gxapi.GXIMG>` file? Returns error message if it cannot be opened for any reason.
         """
         ret_val, err_msg.value = gxapi_cy.WrapIMG.is_valid_img_file_ex(GXContext._get_tls_geo(), file.encode(), err_msg.value.encode())
         return ret_val
@@ -426,16 +426,16 @@ class GXIMG:
 
     def inherit(self, ipj, cell):
         """
-        Inherit a projection/new cell size on the `GXIMG`.
+        Inherit a projection/new cell size on the `GXIMG <geosoft.gxapi.GXIMG>`.
 
         **Note:**
 
-        If cell size is `GS_R8DM`, then "nice" values for the cell
+        If cell size is `GS_R8DM <geosoft.gxapi.GS_R8DM>`, then "nice" values for the cell
         size of the new projected grid will be determined so that
         the new grid has about the same number of cells as the old.
         If the cell size is specified, the inheritance will always
-        work, even if the input `GXIPJ` is identical to the original
-        `GXIPJ`, and the cell boundaries will be forced to be aligned
+        work, even if the input `GXIPJ <geosoft.gxapi.GXIPJ>` is identical to the original
+        `GXIPJ <geosoft.gxapi.GXIPJ>`, and the cell boundaries will be forced to be aligned
         with the new cell size.
         """
         self._wrapper.inherit(ipj._wrapper, cell)
@@ -486,7 +486,7 @@ class GXIMG:
 
     def query_int(self, query):
         """
-        Query information about the `GXIMG`
+        Query information about the `GXIMG <geosoft.gxapi.GXIMG>`
 
         **Note:**
 
@@ -501,7 +501,7 @@ class GXIMG:
 
     def query_kx(self):
         """
-        Asks the `GXIMG` for the most efficient way to access the data.
+        Asks the `GXIMG <geosoft.gxapi.GXIMG>` for the most efficient way to access the data.
         """
         ret_val = self._wrapper.query_kx()
         return ret_val
@@ -531,7 +531,7 @@ class GXIMG:
 
     def load_img(self, im_gi):
         """
-        Loads an `GXIMG` into a master `GXIMG`.
+        Loads an `GXIMG <geosoft.gxapi.GXIMG>` into a master `GXIMG <geosoft.gxapi.GXIMG>`.
 
         **Note:**
 
@@ -545,7 +545,7 @@ class GXIMG:
 
     def load_into_pager(self):
         """
-        Load `GXIMG` data from file into a pager to increase
+        Load `GXIMG <geosoft.gxapi.GXIMG>` data from file into a pager to increase
         access time.
         """
         self._wrapper.load_into_pager()
@@ -560,7 +560,7 @@ class GXIMG:
 
         **Note:**
 
-        This will force loading an image into a `GXPG` if it is not already
+        This will force loading an image into a `GXPG <geosoft.gxapi.GXPG>` if it is not already
         accessible in the direction requested.
         
         Subsequent calls to methods that use the optimal KX will use the
@@ -659,7 +659,7 @@ class GXIMG:
 
     def query_double(self, query):
         """
-        Query information about the `GXIMG`
+        Query information about the `GXIMG <geosoft.gxapi.GXIMG>`
 
         **Note:**
 
@@ -688,7 +688,7 @@ class GXIMG:
 
         **Note:**
 
-        Calls to this function should be made BEFORE calls to `set_ipj`,
+        Calls to this function should be made BEFORE calls to `set_ipj <geosoft.gxapi.GXIMG.set_ipj>`,
         as the latter function sets up the bounding rectangle in the metadata.
         """
         self._wrapper.set_info(dx, dy, xo, yo, rot)
@@ -703,8 +703,8 @@ class GXIMG:
 
         **Note:**
 
-        Calls to this function should be made AFTER calls to `set_info`,
-        as `set_ipj` sets up the bounding rectangle in the metadata.
+        Calls to this function should be made AFTER calls to `set_info <geosoft.gxapi.GXIMG.set_info>`,
+        as `set_ipj <geosoft.gxapi.GXIMG.set_ipj>` sets up the bounding rectangle in the metadata.
         """
         self._wrapper.set_ipj(ipj._wrapper)
         
@@ -784,7 +784,7 @@ class GXIMG:
 
     def set_double_parameter(self, name, value):
         """
-        Store a real parameter in an `GXIMG` object
+        Store a real parameter in an `GXIMG <geosoft.gxapi.GXIMG>` object
         """
         self._wrapper.set_double_parameter(name.encode(), value)
         
@@ -794,7 +794,7 @@ class GXIMG:
 
     def get_double_parameter(self, name):
         """
-        Store a real parameter in an `GXIMG` object
+        Store a real parameter in an `GXIMG <geosoft.gxapi.GXIMG>` object
         """
         ret_val = self._wrapper.get_double_parameter(name.encode())
         return ret_val

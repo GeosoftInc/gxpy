@@ -18,7 +18,7 @@ class GXTRND:
     """
     GXTRND class.
 
-    The `GXTRND` methods are used to determine trend directions in database data by locating
+    The `GXTRND <geosoft.gxapi.GXTRND>` methods are used to determine trend directions in database data by locating
     maxima and minima along lines and joining them in a specified direction.
     The resulting trend lines are appended to the database and used by gridding methods
     such as Bigrid and Rangrid to enforce features in the specified direction.

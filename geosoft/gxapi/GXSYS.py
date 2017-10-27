@@ -20,7 +20,7 @@ class GXSYS:
     """
     GXSYS class.
 
-    The `GXSYS` library functions perform a wide range functions,
+    The `GXSYS <geosoft.gxapi.GXSYS>` library functions perform a wide range functions,
     including the storage and retrieval of named parameters
     from the current workspace; writing messages to the user;
     display of progress bars; retrieving file, date and time
@@ -35,27 +35,36 @@ class GXSYS:
     For example, a parameter could be named as "PARM[1]".
     The index can be a positive number, or it can be a '*'.
     
-    If the index is a '*' in "`set_string`", then the value string
+    If the index is a '*' in `set_string <geosoft.gxapi.GXSYS.set_string>`, then the value string
     will be parsed into multiple values. Commas are assumed to be delimiters.
     
     E.g.
     
-    `set_string`("group1",
-    "multiparm[*]",
-    "value1,\\"value,2\\",\\"value 3\\",  value4  ,\\"value 5 \\"");
+    ::
     
-    This call will set   multiparm[0] ="value1"
-    multiparm[1] ="value,2"
-    multiparm[2] ="value 3"
-    multiparm[3] ="value4"
-    multiparm[4] ="value 5"
+       "group1",
+       "multiparm[*]",
+       "value1,\\"value,2\\",\\"value 3\\",  value4  ,\\"value 5 \\""
     
-    To read a parameter, name the parameter with the index.  Thre is no
-    looped-reading ability.  For example:
     
-    GetString_SYS("group1","multiparm[3]",sSetting);
+    Will set:
     
-    returns sSetting = "value4"
+    ::
+    
+        multiparm[0] ="value1"
+        multiparm[1] ="value,2"
+        multiparm[2] ="value 3"
+        multiparm[3] ="value4"
+        multiparm[4] ="value 5"
+    
+    To read a parameter, name the parameter with the index.  There is no
+    looped-reading ability. For example using the following with `gt_string <geosoft.gxapi.GXSYS.gt_string>`:
+    
+    ``"group1","multiparm[3]",setting``
+    
+    will return:
+    
+    ``setting = "value4"``
     """
 
     def __enter__(self):
@@ -306,7 +315,7 @@ class GXSYS:
         This wrapper is mostly for use outside of GXs,
         because in general if an error is registered in a GX
         the GX would terminate before it could be called.
-        Use `num_errors_ap` to get the number of registered errors.
+        Use `num_errors_ap <geosoft.gxapi.GXSYS.num_errors_ap>` to get the number of registered errors.
         """
         err_str.value = gxapi_cy.WrapSYS.get_error_message_ap(GXContext._get_tls_geo(), err, err_str.value.encode())
         
@@ -380,7 +389,7 @@ class GXSYS:
 
         .. seealso::
 
-            `set_interactive`, `run_gx`
+            `set_interactive <geosoft.gxapi.GXSYS.set_interactive>`, `run_gx <geosoft.gxapi.GXSYS.run_gx>`
         """
         ret_val = gxapi_cy.WrapSYS.run_gs(GXContext._get_tls_geo(), gs.encode())
         return ret_val
@@ -396,11 +405,11 @@ class GXSYS:
 
         If the called GX returns an error, they will not be
         displayed until the "top" calling GX terminates, unless you
-        call `show_error`().
+        call `show_error <geosoft.gxapi.GXSYS.show_error>`.
 
         .. seealso::
 
-            `run_gx_ex`, `set_interactive` and `run_gs`
+            `run_gx_ex <geosoft.gxapi.GXSYS.run_gx_ex>`, `set_interactive <geosoft.gxapi.GXSYS.set_interactive>` and `run_gs <geosoft.gxapi.GXSYS.run_gs>`
         """
         ret_val = gxapi_cy.WrapSYS.run_gx(GXContext._get_tls_geo(), gx.encode())
         return ret_val
@@ -414,7 +423,7 @@ class GXSYS:
 
         .. seealso::
 
-            `run_gx`, `set_return`
+            `run_gx <geosoft.gxapi.GXSYS.run_gx>`, `set_return <geosoft.gxapi.GXSYS.set_return>`
         """
         ret_val, ret.value = gxapi_cy.WrapSYS.run_gx_ex(GXContext._get_tls_geo(), gx.encode(), ret.value)
         return ret_val
@@ -440,19 +449,11 @@ class GXSYS:
     @classmethod
     def shell_execute(cls, verb, file, parameters, directory, show):
         """
-        MS ShellExecute function
-
-        **Note:**
-
-        Examples
-        
-        `shell_execute`(open;http://www.geosoft.com);
-        `shell_execute`(open;"mailto:geonet@lists.geosoft.com");
-        `shell_execute`(open;"mailto:majordomo@lists.geosoft.com?body=UNSUBSCRIBE%20gxnet");
+        Call Microsoft ShellExecute function (See `MSDN <https://msdn.microsoft.com/en-us/library/windows/desktop/bb762153(v=vs.85).aspx>`_)
 
         .. seealso::
 
-            `do_command`
+            `do_command <geosoft.gxapi.GXSYS.do_command>`
         """
         ret_val = gxapi_cy.WrapSYS.shell_execute(GXContext._get_tls_geo(), verb.encode(), file.encode(), parameters.encode(), directory.encode(), show)
         return ret_val
@@ -466,7 +467,7 @@ class GXSYS:
 
         **Note:**
 
-        This value is returned in the `run_gx_ex` call only.
+        This value is returned in the `run_gx_ex <geosoft.gxapi.GXSYS.run_gx_ex>` call only.
         """
         gxapi_cy.WrapSYS.set_return(GXContext._get_tls_geo(), ret)
         
@@ -486,25 +487,33 @@ class GXSYS:
 
         Commands syntax:  "[type] command"
         
+        =======  ============================================================================================
         type     command
-        ----     -------
-        ID       Internal Menu Command
-        See "Internal Menu Commands" in GX Developer documentation.
+        =======  ============================================================================================
+        ID       Internal Menu Command (as found in omn and geobar files e.g. ``*ID_EDIT_SELECT``)
+        -------  --------------------------------------------------------------------------------------------
         GX       gx file name
+        -------  --------------------------------------------------------------------------------------------
         GS       gs file name
-        DOTNET   dll file name
-        Use qualifiers to specify class and method e.g. [DOTNET] geogxnet.dll(Geosoft.GX.NewGDB.NewGDB;Run)
-        PDF      pdf file name
+        -------  --------------------------------------------------------------------------------------------
+        DOTNET   dll file name 
+                 Use qualifiers to specify class and method e.g.:
+                 ``"[DOTNET] geogxnet.dll(Geosoft.GX.NewGDB.NewGDB;Run)"``
+        -------  --------------------------------------------------------------------------------------------
+        PDF      Geosoft pdf file name (Not Adobe PDF document, a legacy Geosoft Sushi script)
+        -------  --------------------------------------------------------------------------------------------
         DOS      DOS style command
+        -------  --------------------------------------------------------------------------------------------
         HLP      help file name
+        =======  ============================================================================================
         
         The must be ONE space between the "]" and the command.  For example:
         
-        `do_command`("[ID] ID_EDIT_SELECT");  // bring up the line edit tool
+        ``"[ID] ID_EDIT_SELECT"``  // bring up the line edit tool
 
         .. seealso::
 
-            ShellExecute_SYS
+            `shell_execute <geosoft.gxapi.GXSYS.shell_execute>`
         """
         gxapi_cy.WrapSYS.do_command(GXContext._get_tls_geo(), command.encode())
         
@@ -520,11 +529,11 @@ class GXSYS:
 
         Use this function to register your own error
         messages when an error occurs in your code.  Your
-        errors can be provided in your own `GXGER` file.  See
-        GEOSOFT.`GXGER` for an example of the `GXGER` file format.
+        errors can be provided in your own `GXGER <geosoft.gxapi.GXGER>` file.  See
+        GEOSOFT.`GXGER <geosoft.gxapi.GXGER>` for an example of the `GXGER <geosoft.gxapi.GXGER>` file format.
         
         If the error # is not found in your error file, the
-        OE32.`GXGER` file, then the GEOSOFT.`GXGER` file will be
+        OE32.`GXGER <geosoft.gxapi.GXGER>` file, then the GEOSOFT.`GXGER <geosoft.gxapi.GXGER>` file will be
         searched.
         """
         gxapi_cy.WrapSYS.error(GXContext._get_tls_geo(), error_file.encode(), module.encode(), error)
@@ -560,7 +569,7 @@ class GXSYS:
         Use this function to evaluate errors in passed
         function arguments.  Functions called by GX programs
         should be tolerant of all errors in the passed argument
-        list.  The `assert_gx` can be used to test each
+        list.  The `assert_gx <geosoft.gxapi.GXSYS.assert_gx>` can be used to test each
         argument before doing any work in the function.  If
         an assertion fails, an error will be registered with
         the name of the function and the parameter name and
@@ -568,7 +577,7 @@ class GXSYS:
         cleaning up (if necessary) and return.
         
         You could also test the validity of arguments and call
-        the `error`, `error_tag` and `terminate`
+        the `error <geosoft.gxapi.GXSYS.error>`, `error_tag <geosoft.gxapi.GXSYS.error_tag>` and `terminate <geosoft.gxapi.GXSYS.terminate>`
         functions if you would like to provide a more specific
         error message.
         """
@@ -598,36 +607,6 @@ class GXSYS:
 
 
     @classmethod
-    def show_error(cls):
-        """
-        Display any errors to the user.
-
-        **Note:**
-
-        If you call a GX from another GX using `run_gx`, and
-        the called GX registers errors, they will not be displayed
-        until after the "top" GX exits.
-        If you wish to continue without exiting, call this function
-        so that errors are displayed immediately to the user. For
-        instance, when creating a new map from inside another GX:
-        
-        --- Run NEWMAP wizard. Keep trying if something is wrong (like a
-        too-small map scale), but exit if the user cancels (iRet==-1) ---
-        
-        do {
-        iRet = `run_gx`("newmap.gx");
-        if(iRet==1) `show_error`();     // Dump errors.
-        } while(iRet==1);
-        
-        This wrapper is not intended for use outside a GX, because it
-        uses the GX run-time machinery to display the error messages.
-        """
-        gxapi_cy.WrapSYS.show_error(GXContext._get_tls_geo())
-        
-
-
-
-    @classmethod
     def terminate(cls, name):
         """
         DLL error termination
@@ -635,15 +614,15 @@ class GXSYS:
         **Note:**
 
         Call this function immediately before returning to
-        the caller after an error has occured inside the
-        DLL.  If an error has occured, you should clean-up
-        (free memory, close files), call `error` to register
-        your own error messages, call `error_tag` to set any
-        error message tags, call `terminate` and return.
+        the caller after an error has occurred inside the
+        DLL.  If an error has occurred, you should clean-up
+        (free memory, close files), call `error <geosoft.gxapi.GXSYS.error>` to register
+        your own error messages, call `error_tag <geosoft.gxapi.GXSYS.error_tag>` to set any
+        error message tags, call `terminate <geosoft.gxapi.GXSYS.terminate>` and return.
         
         Geosoft functions that detect an error will have
         already registered their own errors and called
-        `terminate`.
+        `terminate <geosoft.gxapi.GXSYS.terminate>`.
         """
         gxapi_cy.WrapSYS.terminate(GXContext._get_tls_geo(), name.encode())
         
@@ -687,12 +666,12 @@ class GXSYS:
     @classmethod
     def find_files_vv(cls, vv, mask):
         """
-        Fill a `GXVV` with files matching an input file mask.
+        Fill a `GXVV <geosoft.gxapi.GXVV>` with files matching an input file mask.
 
         **Note:**
 
-        Fill a `GXVV` with files matching the input file mask.
-        The `GXVV` should be of string type.
+        Fill a `GXVV <geosoft.gxapi.GXVV>` with files matching the input file mask.
+        The `GXVV <geosoft.gxapi.GXVV>` should be of string type.
         """
         gxapi_cy.WrapSYS.find_files_vv(GXContext._get_tls_geo(), vv._wrapper, mask.encode())
         
@@ -1485,11 +1464,11 @@ class GXSYS:
     @classmethod
     def create_clipboard_ra(cls):
         """
-        Create a `GXRA` to read text from the clipboard.
+        Create a `GXRA <geosoft.gxapi.GXRA>` to read text from the clipboard.
 
         **Note:**
 
-        Destroy the `GXRA` as soon as possible. As long as it
+        Destroy the `GXRA <geosoft.gxapi.GXRA>` as soon as possible. As long as it
         open the clipboard is not accessible from any
         application.
         """
@@ -1501,11 +1480,11 @@ class GXSYS:
     @classmethod
     def create_clipboard_wa(cls):
         """
-        Create a `GXWA` to write text on the clipboard.
+        Create a `GXWA <geosoft.gxapi.GXWA>` to write text on the clipboard.
 
         **Note:**
 
-        Destroy the `GXWA` as soon as possible. As long as it
+        Destroy the `GXWA <geosoft.gxapi.GXWA>` as soon as possible. As long as it
         open the clipboard is not accessible from any
         application.
         """
@@ -1542,7 +1521,7 @@ class GXSYS:
         **Note:**
 
         To get TT and GFN fonts, call twice with the same list
-        and `SYS_FONT_TT`, then `SYS_FONT_GFN`, or vice-versa to
+        and `SYS_FONT_TT <geosoft.gxapi.SYS_FONT_TT>`, then `SYS_FONT_GFN <geosoft.gxapi.SYS_FONT_GFN>`, or vice-versa to
         change order of listing.
         """
         gxapi_cy.WrapSYS.font_lst(GXContext._get_tls_geo(), lst._wrapper, which)
@@ -1721,7 +1700,7 @@ class GXSYS:
         Gets all the user-definable pattern parameters from
         a specified group. Parameters are:
         "PAT_NUMBER"    0 is solid fill (default)
-        "PAT_SIZE"      pattern tile size in mm. (can return `iDUMMY`)
+        "PAT_SIZE"      pattern tile size in mm. (can return `iDUMMY <geosoft.gxapi.iDUMMY>`)
         "PAT_THICKNESS" pattern line thickness in percent of the tile size.
         valid range is 0-100.
         "PAT_DENSITY"   Tile spacing. A value of 1 means tiles are laid with no overlap.
@@ -1730,7 +1709,7 @@ class GXSYS:
         "PAT_BACKCOLOR" Background color value.
         
         Returned values may be DUMMY, but will be acceptable for use with
-        the `GXGUI.color_form` function, to set defaults.
+        the `GXGUI.color_form <geosoft.gxapi.GXGUI.color_form>` function, to set defaults.
         """
         pat.value, size.value, thick.value, dense.value, col.value, back_col.value = gxapi_cy.WrapSYS.get_pattern(GXContext._get_tls_geo(), group.encode(), pat.value, size.value, thick.value, dense.value, col.value, back_col.value)
         
@@ -1740,7 +1719,7 @@ class GXSYS:
     @classmethod
     def get_reg(cls, reg, group):
         """
-        Get `GXREG` parameters.
+        Get `GXREG <geosoft.gxapi.GXREG>` parameters.
         """
         gxapi_cy.WrapSYS.get_reg(GXContext._get_tls_geo(), reg._wrapper, group.encode())
         
@@ -1922,7 +1901,7 @@ class GXSYS:
     @classmethod
     def set_reg(cls, reg):
         """
-        Copy contents of a `GXREG` to current parameters.
+        Copy contents of a `GXREG <geosoft.gxapi.GXREG>` to current parameters.
         """
         gxapi_cy.WrapSYS.set_reg(GXContext._get_tls_geo(), reg._wrapper)
         
@@ -2108,7 +2087,7 @@ class GXSYS:
 
         .. seealso::
 
-            `save_ptmp`, `destroy_ptmp`
+            `save_ptmp <geosoft.gxapi.GXSYS.save_ptmp>`, `destroy_ptmp <geosoft.gxapi.GXSYS.destroy_ptmp>`
         """
         gxapi_cy.WrapSYS.get_ptmp(GXContext._get_tls_geo(), ptmp)
         
@@ -2126,7 +2105,7 @@ class GXSYS:
 
         .. seealso::
 
-            `get_ptmp`, `destroy_ptmp`
+            `get_ptmp <geosoft.gxapi.GXSYS.get_ptmp>`, `destroy_ptmp <geosoft.gxapi.GXSYS.destroy_ptmp>`
         """
         ret_val = gxapi_cy.WrapSYS.save_ptmp(GXContext._get_tls_geo(), groups.encode())
         return ret_val
@@ -2381,12 +2360,12 @@ class GXSYS:
 
         **Note:**
 
-        Call to `interactive` will return the value
+        Call to `interactive <geosoft.gxapi.GXSYS.interactive>` will return the value
         set here.
 
         .. seealso::
 
-            `interactive`, `run_gx` and `run_gs`
+            `interactive <geosoft.gxapi.GXSYS.interactive>`, `run_gx <geosoft.gxapi.GXSYS.run_gx>` and `run_gs <geosoft.gxapi.GXSYS.run_gs>`
         """
         gxapi_cy.WrapSYS.set_interactive(GXContext._get_tls_geo(), mode)
         
@@ -2400,18 +2379,18 @@ class GXSYS:
     @classmethod
     def get_workspace_reg(cls, reg):
         """
-        Get a copy of the workspace `GXREG`;
+        Get a copy of the workspace `GXREG <geosoft.gxapi.GXREG>`;
 
         **Note:**
 
-        The workspace `GXREG` is separate from the reg used
-        to store `GXSYS` parameters.
+        The workspace `GXREG <geosoft.gxapi.GXREG>` is separate from the reg used
+        to store `GXSYS <geosoft.gxapi.GXSYS>` parameters.
         
-        Because `get_workspace_reg` returns a copy of the
-        workspace `GXREG`, and not the workspace `GXREG` itself,
-        you must call `set_workspace_reg` if you make changes
-        to your own `GXREG` object and you wish them to take
-        effect in the workspace `GXREG`.
+        Because `get_workspace_reg <geosoft.gxapi.GXSYS.get_workspace_reg>` returns a copy of the
+        workspace `GXREG <geosoft.gxapi.GXREG>`, and not the workspace `GXREG <geosoft.gxapi.GXREG>` itself,
+        you must call `set_workspace_reg <geosoft.gxapi.GXSYS.set_workspace_reg>` if you make changes
+        to your own `GXREG <geosoft.gxapi.GXREG>` object and you wish them to take
+        effect in the workspace `GXREG <geosoft.gxapi.GXREG>`.
         """
         gxapi_cy.WrapSYS.get_workspace_reg(GXContext._get_tls_geo(), reg._wrapper)
         
@@ -2421,18 +2400,18 @@ class GXSYS:
     @classmethod
     def set_workspace_reg(cls, reg):
         """
-        Set the workspace `GXREG`;
+        Set the workspace `GXREG <geosoft.gxapi.GXREG>`;
 
         **Note:**
 
-        The workspace `GXREG` is separate from the reg used
-        to store `GXSYS` parameters.
+        The workspace `GXREG <geosoft.gxapi.GXREG>` is separate from the reg used
+        to store `GXSYS <geosoft.gxapi.GXSYS>` parameters.
         
-        Because `get_workspace_reg` returns a copy of the
-        workspace `GXREG`, and not the workspace `GXREG` itself,
-        you must call `set_workspace_reg` if you make changes
-        to your own `GXREG` object and you wish them to take
-        effect in the workspace `GXREG`
+        Because `get_workspace_reg <geosoft.gxapi.GXSYS.get_workspace_reg>` returns a copy of the
+        workspace `GXREG <geosoft.gxapi.GXREG>`, and not the workspace `GXREG <geosoft.gxapi.GXREG>` itself,
+        you must call `set_workspace_reg <geosoft.gxapi.GXSYS.set_workspace_reg>` if you make changes
+        to your own `GXREG <geosoft.gxapi.GXREG>` object and you wish them to take
+        effect in the workspace `GXREG <geosoft.gxapi.GXREG>`
         """
         gxapi_cy.WrapSYS.set_workspace_reg(GXContext._get_tls_geo(), reg._wrapper)
         
@@ -2457,7 +2436,7 @@ class GXSYS:
     @classmethod
     def decrypt_string(cls, input, output, key):
         """
-        Decrypts a string that has been previously encrypted by `encrypt_string`().
+        Decrypts a string that has been previously encrypted by `encrypt_string <geosoft.gxapi.GXSYS.encrypt_string>`.
         """
         output.value = gxapi_cy.WrapSYS.decrypt_string(GXContext._get_tls_geo(), input.encode(), output.value.encode(), key)
         
@@ -2467,7 +2446,7 @@ class GXSYS:
     @classmethod
     def is_encrypted_string(cls, input):
         """
-        Checks whether the specified string was encrypted by `encrypt_string`().
+        Checks whether the specified string was encrypted by `encrypt_string <geosoft.gxapi.GXSYS.encrypt_string>`.
         """
         ret_val = gxapi_cy.WrapSYS.is_encrypted_string(GXContext._get_tls_geo(), input.encode())
         return ret_val
@@ -2481,7 +2460,7 @@ class GXSYS:
     @classmethod
     def disable_gx_debugger(cls):
         """
-        Disable GX Debugger `GXGUI` if active
+        Disable GX Debugger `GXGUI <geosoft.gxapi.GXGUI>` if active
 
         **Note:**
 
@@ -2495,7 +2474,7 @@ class GXSYS:
     @classmethod
     def enable_gx_debugger(cls, src_dir, first_gx):
         """
-        Enable GX Debugger `GXGUI`
+        Enable GX Debugger `GXGUI <geosoft.gxapi.GXGUI>`
 
         **Note:**
 
@@ -2505,7 +2484,7 @@ class GXSYS:
         The source of the GX should be found in the path (e.g. <path>\\somewhere\\gxname.gxc)
         and a breakpoint will be set on the first executing line of this GX. Make sure the
         GX binary is newer than the source file, otherwise unexpected results may occur. As
-        soon as the GX is run the `GXGUI` will become visible and it will be possible to set more
+        soon as the GX is run the `GXGUI <geosoft.gxapi.GXGUI>` will become visible and it will be possible to set more
         breakpoints in any of the GXC files found in the path.
         """
         gxapi_cy.WrapSYS.enable_gx_debugger(GXContext._get_tls_geo(), src_dir.encode(), first_gx.encode())

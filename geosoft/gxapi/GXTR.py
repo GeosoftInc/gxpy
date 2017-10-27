@@ -18,9 +18,9 @@ class GXTR:
     """
     GXTR class.
 
-    The `GXTR` object contains trend information about a grid or
+    The `GXTR <geosoft.gxapi.GXTR>` object contains trend information about a grid or
     grid pager. Currently, it is used only in conjunction with
-    the `GXIMG.get_tr`, `GXIMG.set_tr`, and `GXPGU.trend` functions.
+    the `GXIMG.get_tr <geosoft.gxapi.GXIMG.get_tr>`, `GXIMG.set_tr <geosoft.gxapi.GXIMG.set_tr>`, and `GXPGU.trend <geosoft.gxapi.GXPGU.trend>` functions.
     """
 
     def __enter__(self):

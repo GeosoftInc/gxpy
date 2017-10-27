@@ -227,7 +227,7 @@ class GXGU:
     @classmethod
     def geonics_dat2_db(cls, db, ra, log_wa, line_mult, stat_mult):
         """
-        Convert a Geonics EM31/EM38/EM61 file in `GXDAT` format to a database.
+        Convert a Geonics EM31/EM38/EM61 file in `GXDAT <geosoft.gxapi.GXDAT>` format to a database.
 
         **Note:**
 
@@ -264,7 +264,7 @@ class GXGU:
     @classmethod
     def gr_demvv(cls, im_gdem, vv_x, vv_y, vv_z):
         """
-        Get gravity DEM grid `GXVV` for Bouguer anomaly
+        Get gravity DEM grid `GXVV <geosoft.gxapi.GXVV>` for Bouguer anomaly
         """
         gxapi_cy.WrapGU.gr_demvv(GXContext._get_tls_geo(), im_gdem._wrapper, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
         
@@ -326,7 +326,7 @@ class GXGU:
 
         .. seealso::
 
-            `GXSTR.gen_group_name`
+            `GXSTR.gen_group_name <geosoft.gxapi.GXSTR.gen_group_name>`
         """
         ostr.value = gxapi_cy.WrapGU.gen_ux_detect_symbols_group_name(GXContext._get_tls_geo(), target_gdb.encode(), targets.encode(), ostr.value.encode())
         
@@ -458,7 +458,7 @@ class GXGU:
         All VVs must be REAL
         
         The output X and Y values are the same as the inputs,
-        except if `PEAKEULER_XY_FIT` is selected. All other
+        except if `PEAKEULER_XY_FIT <geosoft.gxapi.PEAKEULER_XY_FIT>` is selected. All other
         output values are set to dummy if:
         
              a) The input X or Y is a dummy
@@ -482,7 +482,7 @@ class GXGU:
 
         .. seealso::
 
-            `vv_euler`
+            `vv_euler <geosoft.gxapi.GXGU.vv_euler>`
         """
         gxapi_cy.WrapGU.vv_euler2(GXContext._get_tls_geo(), vv_xin._wrapper, vv_yin._wrapper, img_data._wrapper, imgx._wrapper, imgy._wrapper, imgz._wrapper, vv_xout._wrapper, vv_yout._wrapper, vv_depth._wrapper, vvdc._wrapper, vv_zer._wrapper, vvx_yer._wrapper, vv_wnd._wrapper, si, wt_pow, x_yfit)
         

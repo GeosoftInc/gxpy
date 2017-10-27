@@ -19,8 +19,8 @@ class GXGIS:
     """
     GXGIS class.
 
-    The `GXGIS` class is used for the import, export,
-    and interrogation of `GXGIS` Data stored in external formats,
+    The `GXGIS <geosoft.gxapi.GXGIS>` class is used for the import, export,
+    and interrogation of `GXGIS <geosoft.gxapi.GXGIS>` Data stored in external formats,
     such as MapInfo® TAB files.
     """
 
@@ -63,7 +63,7 @@ class GXGIS:
     @classmethod
     def create(cls, file, info, type):
         """
-        Creates a `GXGIS` Object
+        Creates a `GXGIS <geosoft.gxapi.GXGIS>` Object
         """
         ret_val = gxapi_cy.WrapGIS.create(GXContext._get_tls_geo(), file.encode(), info.encode(), type)
         return GXGIS(ret_val)
@@ -73,7 +73,7 @@ class GXGIS:
 
     def create_map2_d(self, map, map_scale, ipj, map2_d):
         """
-        `create_map2_d`   Create a new 2D map for `GXGIS` imports.
+        `create_map2_d <geosoft.gxapi.GXGIS.create_map2_d>`   Create a new 2D map for `GXGIS <geosoft.gxapi.GXGIS>` imports.
 
         **Note:**
 
@@ -90,11 +90,11 @@ class GXGIS:
 
     def get_bpr_models_lst(self, file, lst):
         """
-        Get a `GXLST` of block models contained in a Gemcom BPR or BRP2 file
+        Get a `GXLST <geosoft.gxapi.GXLST>` of block models contained in a Gemcom BPR or BRP2 file
 
         **Note:**
 
-        The Returned `GXLST` has items in the following format:
+        The Returned `GXLST <geosoft.gxapi.GXLST>` has items in the following format:
         
         Name:  If there is only one sub-directory with models, then only
         the block model name "Rock Type_5" is required to ensure uniqueness.
@@ -114,12 +114,12 @@ class GXGIS:
 
     def get_ipj(self):
         """
-        Get the `GXGIS` `GXIPJ`
+        Get the `GXGIS <geosoft.gxapi.GXGIS>` `GXIPJ <geosoft.gxapi.GXIPJ>`
 
         **Note:**
 
         This is your copy, you must destroy it.
-        If the `GXGIS` does not have an `GXIPJ`, an `GXIPJ` with
+        If the `GXGIS <geosoft.gxapi.GXGIS>` does not have an `GXIPJ <geosoft.gxapi.GXIPJ>`, an `GXIPJ <geosoft.gxapi.GXIPJ>` with
         no warp and UNKNOWN projection is returned.
         """
         ret_val = self._wrapper.get_ipj()
@@ -130,7 +130,7 @@ class GXGIS:
 
     def get_meta(self, meta):
         """
-        Get the `GXGIS` `GXMETA`
+        Get the `GXGIS <geosoft.gxapi.GXGIS>` `GXMETA <geosoft.gxapi.GXMETA>`
         """
         self._wrapper.get_meta(meta._wrapper)
         
@@ -140,7 +140,7 @@ class GXGIS:
 
     def get_range(self, x_min, x_max, y_min, y_max, z_min, z_max):
         """
-        Get the range of data in the `GXGIS`
+        Get the range of data in the `GXGIS <geosoft.gxapi.GXGIS>`
         """
         x_min.value, x_max.value, y_min.value, y_max.value, z_min.value, z_max.value = self._wrapper.get_range(x_min.value, x_max.value, y_min.value, y_max.value, z_min.value, z_max.value)
         
@@ -156,7 +156,7 @@ class GXGIS:
 
         Terminates if file is not a Datamine file.
         A datamine file can contain fields from a multitude
-        of types, so use `GXMATH.and_` or `GXMATH.or_` to determine if
+        of types, so use `GXMATH.and_ <geosoft.gxapi.GXMATH.and_>` or `GXMATH.or_ <geosoft.gxapi.GXMATH.or_>` to determine if
         the file contains the required data.
         """
         ret_val = gxapi_cy.WrapGIS.datamine_type(GXContext._get_tls_geo(), file.encode())
@@ -226,12 +226,12 @@ class GXGIS:
 
     def is_shp_file_3d(self):
         """
-        Returns TRUE if an ArcView `GXSHP` file is type POINTZ, ARCZ, POLYGONZ or MULTIPOINTZ
+        Returns TRUE if an ArcView `GXSHP <geosoft.gxapi.GXSHP>` file is type POINTZ, ARCZ, POLYGONZ or MULTIPOINTZ
 
         **Note:**
 
-        `GXSHP` files come in 2D and 3D forms.
-        Fails if not `GIS_TYPE_ARCVIEW`.
+        `GXSHP <geosoft.gxapi.GXSHP>` files come in 2D and 3D forms.
+        Fails if not `GIS_TYPE_ARCVIEW <geosoft.gxapi.GIS_TYPE_ARCVIEW>`.
         """
         ret_val = self._wrapper.is_shp_file_3d()
         return ret_val
@@ -241,11 +241,11 @@ class GXGIS:
 
     def is_shp_file_point(self):
         """
-        Returns TRUE if an ArcView `GXSHP` file is type POINT or POINTZ
+        Returns TRUE if an ArcView `GXSHP <geosoft.gxapi.GXSHP>` file is type POINT or POINTZ
 
         **Note:**
 
-        Fails if not `GIS_TYPE_ARCVIEW`.
+        Fails if not `GIS_TYPE_ARCVIEW <geosoft.gxapi.GIS_TYPE_ARCVIEW>`.
         """
         ret_val = self._wrapper.is_shp_file_point()
         return ret_val
@@ -255,7 +255,7 @@ class GXGIS:
 
     def num_attribs(self):
         """
-        The number of attribute fields in the `GXGIS` dataset
+        The number of attribute fields in the `GXGIS <geosoft.gxapi.GXGIS>` dataset
         """
         ret_val = self._wrapper.num_attribs()
         return ret_val
@@ -265,7 +265,7 @@ class GXGIS:
 
     def num_shapes(self):
         """
-        The number of shape entities in the `GXGIS` dataset
+        The number of shape entities in the `GXGIS <geosoft.gxapi.GXGIS>` dataset
         """
         ret_val = self._wrapper.num_shapes()
         return ret_val
@@ -289,11 +289,11 @@ class GXGIS:
 
     def load_ascii(self, wa):
         """
-        Save `GXGIS` attribute table information (string fields) into a `GXWA`.
+        Save `GXGIS <geosoft.gxapi.GXGIS>` attribute table information (string fields) into a `GXWA <geosoft.gxapi.GXWA>`.
 
         **Note:**
 
-        All string fields (excluding X/Y and numerical fields) will be saved into the `GXWA` columns.
+        All string fields (excluding X/Y and numerical fields) will be saved into the `GXWA <geosoft.gxapi.GXWA>` columns.
         
         e field names are saved in the first line, followed by a blank line.
         e field columns are separated by a tab (delimited character).
@@ -306,17 +306,17 @@ class GXGIS:
 
     def load_gdb(self, db):
         """
-        Load `GXGIS` table information into a GDB.
+        Load `GXGIS <geosoft.gxapi.GXGIS>` table information into a GDB.
 
         **Note:**
 
         All fields of the database will be loaded into the group.
         
         Channels will use the same name (or a allowable alias) as
-        the `GXGIS` field name.
+        the `GXGIS <geosoft.gxapi.GXGIS>` field name.
         
         If a channel does not exist, it will be created based on the
-        characteristics of the `GXGIS` field.
+        characteristics of the `GXGIS <geosoft.gxapi.GXGIS>` field.
         
         If a channel exists, it will be used as-is.
         """
@@ -328,11 +328,11 @@ class GXGIS:
 
     def load_map(self, mview):
         """
-        Load `GXGIS` table drawing into a `GXMVIEW`.
+        Load `GXGIS <geosoft.gxapi.GXGIS>` table drawing into a `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
 
         **Note:**
 
-        The `GXGIS` drawing will be drawin in the current group.
+        The `GXGIS <geosoft.gxapi.GXGIS>` drawing will be drawin in the current group.
         """
         self._wrapper.load_map(mview._wrapper)
         
@@ -342,11 +342,11 @@ class GXGIS:
 
     def load_map_ex(self, map, view_name):
         """
-        Load `GXGIS` table drawing into a `GXMAP`.
+        Load `GXGIS <geosoft.gxapi.GXGIS>` table drawing into a `GXMAP <geosoft.gxapi.GXMAP>`.
 
         **Note:**
 
-        The `GXGIS` drawing will be drawin in the current group.
+        The `GXGIS <geosoft.gxapi.GXGIS>` drawing will be drawin in the current group.
         """
         self._wrapper.load_map_ex(map._wrapper, view_name.encode())
         
@@ -356,11 +356,11 @@ class GXGIS:
 
     def load_meta_groups_map(self, mview, meta, ph_object, prefix, name_field):
         """
-        Load `GXGIS` table drawing into a `GXMVIEW`.
+        Load `GXGIS <geosoft.gxapi.GXGIS>` table drawing into a `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
 
         **Note:**
 
-        The `GXGIS` drawing will be drawn in the current group.
+        The `GXGIS <geosoft.gxapi.GXGIS>` drawing will be drawn in the current group.
         A group will be created for every entity and data items
         containing an entity's field will be added to the Meta
         information of every group into the class specified.
@@ -374,7 +374,7 @@ class GXGIS:
 
     def load_ply(self, ply):
         """
-        Load `GXGIS` table drawing into a Multi-Polygon object.
+        Load `GXGIS <geosoft.gxapi.GXGIS>` table drawing into a Multi-Polygon object.
         """
         self._wrapper.load_ply(ply._wrapper)
         
@@ -384,17 +384,17 @@ class GXGIS:
 
     def load_shapes_gdb(self, db):
         """
-        Load `GXGIS` shapes table information into separate lines in a GDB.
+        Load `GXGIS <geosoft.gxapi.GXGIS>` shapes table information into separate lines in a GDB.
 
         **Note:**
 
         All fields of the database will be loaded into the group.
         
         Channels will use the same name (or a allowable alias) as
-        the `GXGIS` field name.
+        the `GXGIS <geosoft.gxapi.GXGIS>` field name.
         
         If a channel does not exist, it will be created based on the
-        characteristics of the `GXGIS` field.
+        characteristics of the `GXGIS <geosoft.gxapi.GXGIS>` field.
         
         If a channel exists, it will be used as-is.
         
@@ -426,7 +426,7 @@ class GXGIS:
 
     def set_ipj(self, ipj):
         """
-        Save the `GXIPJ` back to `GXGIS` file
+        Save the `GXIPJ <geosoft.gxapi.GXIPJ>` back to `GXGIS <geosoft.gxapi.GXGIS>` file
         """
         self._wrapper.set_ipj(ipj._wrapper)
         
@@ -436,13 +436,13 @@ class GXGIS:
 
     def set_lst(self, lst):
         """
-        Save a `GXLST` of items inside the `GXGIS` object for special use.
+        Save a `GXLST <geosoft.gxapi.GXLST>` of items inside the `GXGIS <geosoft.gxapi.GXGIS>` object for special use.
 
         **Note:**
 
-        If the `GXGIS` `GXLST` object already exists, it is destroyed and
-        recreated to match the size of the input `GXLST`, before the
-        input `GXLST` is copied to it.
+        If the `GXGIS <geosoft.gxapi.GXGIS>` `GXLST <geosoft.gxapi.GXLST>` object already exists, it is destroyed and
+        recreated to match the size of the input `GXLST <geosoft.gxapi.GXLST>`, before the
+        input `GXLST <geosoft.gxapi.GXLST>` is copied to it.
         """
         self._wrapper.set_lst(lst._wrapper)
         
@@ -452,7 +452,7 @@ class GXGIS:
 
     def set_meta(self, meta):
         """
-        Save the `GXMETA` back to `GXGIS`
+        Save the `GXMETA <geosoft.gxapi.GXMETA>` back to `GXGIS <geosoft.gxapi.GXGIS>`
         """
         self._wrapper.set_meta(meta._wrapper)
         

@@ -23,7 +23,7 @@ class GXVOX:
     High Performance 3D Grid. Designed for accessing
     3D grids quickly using slices. It designed arround
     non-uniform multi-resolution  compressed storage.
-    o sample a voxel at specific locations, use the `GXVOXE` class.
+    o sample a voxel at specific locations, use the `GXVOXE <geosoft.gxapi.GXVOXE>` class.
     """
 
     def __enter__(self):
@@ -75,7 +75,7 @@ class GXVOX:
     @classmethod
     def create(cls, name):
         """
-        Create a handle to an `GXVOX` object
+        Create a handle to an `GXVOX <geosoft.gxapi.GXVOX>` object
         """
         ret_val = gxapi_cy.WrapVOX.create(GXContext._get_tls_geo(), name.encode())
         return GXVOX(ret_val)
@@ -85,7 +85,7 @@ class GXVOX:
 
     def create_pg(self):
         """
-        Create a 3D `GXPG` from a `GXVOX` object
+        Create a 3D `GXPG <geosoft.gxapi.GXPG>` from a `GXVOX <geosoft.gxapi.GXVOX>` object
         """
         ret_val = self._wrapper.create_pg()
         return GXPG(ret_val)
@@ -95,7 +95,7 @@ class GXVOX:
 
     def create_type_pg(self, type):
         """
-        Create a 3D `GXPG` from a `GXVOX` object with a specific Type
+        Create a 3D `GXPG <geosoft.gxapi.GXPG>` from a `GXVOX <geosoft.gxapi.GXVOX>` object with a specific Type
         """
         ret_val = self._wrapper.create_type_pg(type)
         return GXPG(ret_val)
@@ -107,7 +107,7 @@ class GXVOX:
 
     def dump(self, name):
         """
-        Export all layers of this `GXVOX` in all directions.
+        Export all layers of this `GXVOX <geosoft.gxapi.GXVOX>` in all directions.
         """
         self._wrapper.dump(name.encode())
         
@@ -117,7 +117,7 @@ class GXVOX:
 
     def export_img(self, name, dir):
         """
-        Export all layers of this `GXVOX` into grid files.
+        Export all layers of this `GXVOX <geosoft.gxapi.GXVOX>` into grid files.
         """
         self._wrapper.export_img(name.encode(), dir)
         
@@ -127,7 +127,7 @@ class GXVOX:
 
     def export_to_grids(self, name, dir, start, incr, num, cell_size, interp):
         """
-        Export all layers of this `GXVOX` into grid files, with optional cell size.
+        Export all layers of this `GXVOX <geosoft.gxapi.GXVOX>` into grid files, with optional cell size.
 
         **Note:**
 
@@ -143,7 +143,7 @@ class GXVOX:
     @classmethod
     def export_xml(cls, voxel, crc, file):
         """
-        Export a `GXVOX` to a compressed XML file
+        Export a `GXVOX <geosoft.gxapi.GXVOX>` to a compressed XML file
         """
         crc.value = gxapi_cy.WrapVOX.export_xml(GXContext._get_tls_geo(), voxel.encode(), crc.value, file.encode())
         
@@ -163,7 +163,7 @@ class GXVOX:
     @classmethod
     def export_ji_gs_xml(cls, voxel, file):
         """
-        Export a `GXVOX` to a compressed XML file. Verbose version.
+        Export a `GXVOX <geosoft.gxapi.GXVOX>` to a compressed XML file. Verbose version.
         """
         gxapi_cy.WrapVOX.export_ji_gs_xml(GXContext._get_tls_geo(), voxel.encode(), file.encode())
         
@@ -193,7 +193,7 @@ class GXVOX:
     @classmethod
     def generate_db(cls, voxel_file, db, symb):
         """
-        Generate a `GXVOX` from a Database
+        Generate a `GXVOX <geosoft.gxapi.GXVOX>` from a Database
         """
         gxapi_cy.WrapVOX.generate_db(GXContext._get_tls_geo(), voxel_file.encode(), db._wrapper, symb)
         
@@ -203,7 +203,7 @@ class GXVOX:
     @classmethod
     def generate_vector_voxel_from_db(cls, voxel_file, db, type, symb_x, symb_y, symb_z, inc, dec):
         """
-        Generate a vector voxel `GXVOX` from a Database
+        Generate a vector voxel `GXVOX <geosoft.gxapi.GXVOX>` from a Database
         """
         gxapi_cy.WrapVOX.generate_vector_voxel_from_db(GXContext._get_tls_geo(), voxel_file.encode(), db._wrapper, type, symb_x, symb_y, symb_z, inc, dec)
         
@@ -213,7 +213,7 @@ class GXVOX:
     @classmethod
     def generate_pg(cls, name, pg, ox, oy, oz, cx, cy, cz, ipj, meta):
         """
-        Generate a `GXVOX` from a 3D Pager
+        Generate a `GXVOX <geosoft.gxapi.GXVOX>` from a 3D Pager
         """
         ret_val = gxapi_cy.WrapVOX.generate_pg(GXContext._get_tls_geo(), name.encode(), pg._wrapper, ox, oy, oz, cx, cy, cz, ipj._wrapper, meta._wrapper)
         return GXVOX(ret_val)
@@ -223,7 +223,7 @@ class GXVOX:
     @classmethod
     def generate_constant_value(cls, name, value, type, ox, oy, oz, cx, cy, cz, cell_count_x, cell_count_y, cell_count_z, ipj, meta):
         """
-        Generate a `GXVOX` with a constant value
+        Generate a `GXVOX <geosoft.gxapi.GXVOX>` with a constant value
         """
         ret_val = gxapi_cy.WrapVOX.generate_constant_value(GXContext._get_tls_geo(), name.encode(), value, type, ox, oy, oz, cx, cy, cz, cell_count_x, cell_count_y, cell_count_z, ipj._wrapper, meta._wrapper)
         return GXVOX(ret_val)
@@ -233,11 +233,11 @@ class GXVOX:
     @classmethod
     def generate_pgvv(cls, name, pg, ox, oy, oz, cx, cy, cz, ipj, meta):
         """
-        Generate a `GXVOX` from a 3D Pager, cells sizes passed in VVs.
+        Generate a `GXVOX <geosoft.gxapi.GXVOX>` from a 3D Pager, cells sizes passed in VVs.
 
         **Note:**
 
-        The input cell size VVs' lengths must match the input `GXPG` dimensions.
+        The input cell size VVs' lengths must match the input `GXPG <geosoft.gxapi.GXPG>` dimensions.
         """
         ret_val = gxapi_cy.WrapVOX.generate_pgvv(GXContext._get_tls_geo(), name.encode(), pg._wrapper, ox, oy, oz, cx._wrapper, cy._wrapper, cz._wrapper, ipj._wrapper, meta._wrapper)
         return GXVOX(ret_val)
@@ -247,7 +247,7 @@ class GXVOX:
     @classmethod
     def generate_constant_value_vv(cls, name, value, type, ox, oy, oz, cx, cy, cz, ipj, meta):
         """
-        Generate a `GXVOX` with a constant value, cells sizes passed in VVs.
+        Generate a `GXVOX <geosoft.gxapi.GXVOX>` with a constant value, cells sizes passed in VVs.
         """
         ret_val = gxapi_cy.WrapVOX.generate_constant_value_vv(GXContext._get_tls_geo(), name.encode(), value, type, ox, oy, oz, cx._wrapper, cy._wrapper, cz._wrapper, ipj._wrapper, meta._wrapper)
         return GXVOX(ret_val)
@@ -257,12 +257,12 @@ class GXVOX:
     @classmethod
     def init_generate_by_subset_pg(cls, data_type, nx, ny, nz):
         """
-        Initialize the generate of a `GXVOX` from a series of 3D subset pagers
+        Initialize the generate of a `GXVOX <geosoft.gxapi.GXVOX>` from a series of 3D subset pagers
 
         **Note:**
 
-        Call `init_generate_by_subset_pg` first, then add a series of subset PGs using `add_generate_by_subset_pg`, and finally
-        serialize using `end_generate_by_subset_pg`
+        Call `init_generate_by_subset_pg <geosoft.gxapi.GXVOX.init_generate_by_subset_pg>` first, then add a series of subset PGs using `add_generate_by_subset_pg <geosoft.gxapi.GXVOX.add_generate_by_subset_pg>`, and finally
+        serialize using `end_generate_by_subset_pg <geosoft.gxapi.GXVOX.end_generate_by_subset_pg>`
         """
         ret_val = gxapi_cy.WrapVOX.init_generate_by_subset_pg(GXContext._get_tls_geo(), data_type, nx, ny, nz)
         return GXVOX(ret_val)
@@ -277,7 +277,7 @@ class GXVOX:
 
         **Note:**
 
-        See `init_generate_by_subset_pg` and `end_generate_by_subset_pg`.
+        See `init_generate_by_subset_pg <geosoft.gxapi.GXVOX.init_generate_by_subset_pg>` and `end_generate_by_subset_pg <geosoft.gxapi.GXVOX.end_generate_by_subset_pg>`.
         """
         self._wrapper.add_generate_by_subset_pg(pg._wrapper, dir, offset)
         
@@ -291,7 +291,7 @@ class GXVOX:
 
         **Note:**
 
-        You must begin by calling `init_generate_by_subset_pg` and add data using `add_generate_by_subset_pg`.
+        You must begin by calling `init_generate_by_subset_pg <geosoft.gxapi.GXVOX.init_generate_by_subset_pg>` and add data using `add_generate_by_subset_pg <geosoft.gxapi.GXVOX.add_generate_by_subset_pg>`.
         """
         self._wrapper.end_generate_by_subset_pg(name.encode(), ox, oy, oz, cx, cy, cz, ipj._wrapper, meta._wrapper)
         
@@ -379,8 +379,8 @@ class GXVOX:
 
         **Note:**
 
-        Find the non-dummy volume of a `GXVOX` object. If the voxel is all dummies,
-        returns `iMAX` for the minima, and `iMIN` for the maxima.
+        Find the non-dummy volume of a `GXVOX <geosoft.gxapi.GXVOX>` object. If the voxel is all dummies,
+        returns `iMAX <geosoft.gxapi.iMAX>` for the minima, and `iMIN <geosoft.gxapi.iMIN>` for the maxima.
         """
         min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._wrapper.get_limits(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         
@@ -394,12 +394,12 @@ class GXVOX:
 
         **Note:**
 
-        Find the non-dummy volume of a `GXVOX` in true (X, Y, Z). This method
+        Find the non-dummy volume of a `GXVOX <geosoft.gxapi.GXVOX>` in true (X, Y, Z). This method
         works for voxels which are rotated or oriented in 3D, and returns
         the true min and max X, Y and Z limits in the data.
         The bounds are the bounds for the voxel
         center points. If the voxel is all dummies,
-        returns `rMAX` for the minima, and `rMIN` for the maxima.
+        returns `rMAX <geosoft.gxapi.rMAX>` for the minima, and `rMIN <geosoft.gxapi.rMIN>` for the maxima.
         """
         min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._wrapper.get_limits_xyz(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         
@@ -469,16 +469,16 @@ class GXVOX:
 
     def get_tpat(self, tpat):
         """
-        Get a copy of a thematic voxel's `GXTPAT` object.
+        Get a copy of a thematic voxel's `GXTPAT <geosoft.gxapi.GXTPAT>` object.
 
         **Note:**
 
-        Each row in the `GXTPAT` object corresponds to a stored index
-        value in the thematic voxel. The `GXTPAT` should NOT be modified
+        Each row in the `GXTPAT <geosoft.gxapi.GXTPAT>` object corresponds to a stored index
+        value in the thematic voxel. The `GXTPAT <geosoft.gxapi.GXTPAT>` should NOT be modified
         by the addition or deletion of items, if it is to be
-        restored into the `GXVOX` object, but the CODE, LABEL, DESCRIPTION
+        restored into the `GXVOX <geosoft.gxapi.GXVOX>` object, but the CODE, LABEL, DESCRIPTION
         or COLOR info can be changed.
-        The `GXTPAT` object is stored inside the `GXVOX` `GXMETA` object.
+        The `GXTPAT <geosoft.gxapi.GXTPAT>` object is stored inside the `GXVOX <geosoft.gxapi.GXVOX>` `GXMETA <geosoft.gxapi.GXMETA>` object.
         """
         self._wrapper.get_tpat(tpat._wrapper)
         
@@ -488,7 +488,7 @@ class GXVOX:
     @classmethod
     def grid_points(cls, name, error, cell_size, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, vv_x, vv_y, vv_z, vv_d, ipj):
         """
-        Grid a `GXVOX` from point `GXVV`'s.
+        Grid a `GXVOX <geosoft.gxapi.GXVOX>` from point `GXVV <geosoft.gxapi.GXVV>`'s.
         """
         ret_val = gxapi_cy.WrapVOX.grid_points(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_d._wrapper, ipj._wrapper)
         return GXVOX(ret_val)
@@ -498,7 +498,7 @@ class GXVOX:
     @classmethod
     def grid_points_z(cls, name, error, cell_size, cell_size_z, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, vv_x, vv_y, vv_z, vv_d, ipj):
         """
-        Grid a `GXVOX` from point `GXVV`'s (using variable Z's)
+        Grid a `GXVOX <geosoft.gxapi.GXVOX>` from point `GXVV <geosoft.gxapi.GXVV>`'s (using variable Z's)
         """
         ret_val = gxapi_cy.WrapVOX.grid_points_z(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, cell_size_z.encode(), var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_d._wrapper, ipj._wrapper)
         return GXVOX(ret_val)
@@ -508,7 +508,7 @@ class GXVOX:
     @classmethod
     def grid_points_z_ex(cls, name, error, cell_size, cell_size_z, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, strike, dip, plunge, along_strike_weight, down_dip_weight, type, vv_x, vv_y, vv_z, vv_d, ipj):
         """
-        Grid a `GXVOX` from point `GXVV`'s (using variable Z's)
+        Grid a `GXVOX <geosoft.gxapi.GXVOX>` from point `GXVV <geosoft.gxapi.GXVV>`'s (using variable Z's)
         """
         ret_val, slope.value, range.value, sill.value = gxapi_cy.WrapVOX.grid_points_z_ex(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, cell_size_z.encode(), var_only, min_radius, max_radius, min_points, max_points, model, power, slope.value, range.value, nugget, sill.value, strike, dip, plunge, along_strike_weight, down_dip_weight, type, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_d._wrapper, ipj._wrapper)
         return GXVOX(ret_val)
@@ -543,7 +543,7 @@ class GXVOX:
         **Note:**
 
         A thematic voxel is one where the stored integer values
-        represent indices into an internally stored `GXTPAT` object.
+        represent indices into an internally stored `GXTPAT <geosoft.gxapi.GXTPAT>` object.
         Thematic voxels contain their own color definitions, and
         normal numerical operations, such as applying ITRs for display,
         are not valid.
@@ -581,7 +581,7 @@ class GXVOX:
     @classmethod
     def log_grid_points_z_ex(cls, name, error, cell_size, cell_size_z, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, strike, dip, plunge, along_strike_weight, down_dip_weight, log_opt, min_log, type, vv_x, vv_y, vv_z, vv_d, ipj):
         """
-        Log grid a `GXVOX` from point `GXVV`'s (using variable Z's)
+        Log grid a `GXVOX <geosoft.gxapi.GXVOX>` from point `GXVV <geosoft.gxapi.GXVV>`'s (using variable Z's)
         """
         ret_val, slope.value, range.value, sill.value = gxapi_cy.WrapVOX.log_grid_points_z_ex(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, cell_size_z.encode(), var_only, min_radius, max_radius, min_points, max_points, model, power, slope.value, range.value, nugget, sill.value, strike, dip, plunge, along_strike_weight, down_dip_weight, log_opt, min_log, type, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_d._wrapper, ipj._wrapper)
         return GXVOX(ret_val)
@@ -591,15 +591,15 @@ class GXVOX:
     @classmethod
     def krig(cls, name, cell_size, type, vv_x, vv_y, vv_z, vv_d, ipj, reg):
         """
-        A more compact and extensible form of `log_grid_points_z_ex`.
+        A more compact and extensible form of `log_grid_points_z_ex <geosoft.gxapi.GXVOX.log_grid_points_z_ex>`.
 
         **Note:**
 
         Optional Parameters.
         
-        If these values are not set in the `GXREG`, then default parameters will be used.
+        If these values are not set in the `GXREG <geosoft.gxapi.GXREG>`, then default parameters will be used.
         
-        ERROR_VOXEL:		Name of error `GXVOX` ("" for none)
+        ERROR_VOXEL:		Name of error `GXVOX <geosoft.gxapi.GXVOX>` ("" for none)
         CELLSIZEZ:      Z Cell size string (space delimited, "" for default)
         RADIUS_MIN:		Minimum Search Radius (REAL) (Default = 4) (Blanking Distance)
         RADIUS_MAX:		Maximum Search Radius (REAL) (Default = 16)
@@ -616,15 +616,15 @@ class GXVOX:
         PLUNGE:				Plunge (REAL) (Default = 0)
         STRIKE WEIGHT:	Along-Strike Weight (REAL) (Default = 1)
         DIP_WEIGHT:      Down-Dip Weight (REAL) (Default = 1)
-        LOG_OPT:			One of `VOX_GRID_LOGOPT` (Default = 0)
+        LOG_OPT:			One of `VOX_GRID_LOGOPT_` (Default = 0)
         MIN_LOG:			Log Minimum (REAL)	(Default = 1)
         MIN_X:				Minimum X (REAL) (default = DUMMY to determine from the data. If input, nearest lt. or eq. multiple of cell size chosen)
         MAX_X:				Maximum X (REAL) (default = DUMMY to determine from the data. If input, nearest gt. or eq. multiple of cell size chosen)
         MIN_Y:				Minimum Y (REAL) (default = DUMMY to determine from the data. If input, nearest lt. or eq. external multiple of cell size chosen)
         MAX_Y:				Maximum Y (REAL) (default = DUMMY to determine from the data. If input, nearest gt. or eq. multiple of cell size chosen)
         MIN_Z:				Minimum Z (REAL) (default = DUMMY to determine from the data. If input, nearest lt. or eq. multiple of cell size chosen)
-        MAX_Z:				Maximum Z (REAL) (default = DUMMY to determine from the data. If input, nearest gt. or eq. multiple of cell size chosen)A more compact and extensible form of `log_grid_points_z_ex`. Only the most
-        basic parameters are entered directly. Optional parameters are passed via a `GXREG` object.
+        MAX_Z:				Maximum Z (REAL) (default = DUMMY to determine from the data. If input, nearest gt. or eq. multiple of cell size chosen)A more compact and extensible form of `log_grid_points_z_ex <geosoft.gxapi.GXVOX.log_grid_points_z_ex>`. Only the most
+        basic parameters are entered directly. Optional parameters are passed via a `GXREG <geosoft.gxapi.GXREG>` object.
         """
         ret_val = gxapi_cy.WrapVOX.krig(GXContext._get_tls_geo(), name.encode(), cell_size, type, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_d._wrapper, ipj._wrapper, reg._wrapper)
         return GXVOX(ret_val)
@@ -658,7 +658,7 @@ class GXVOX:
     @classmethod
     def nearest_neighbour_grid(cls, name, cell_size, max_radius, type, vv_x, vv_y, vv_z, vv_d, ipj):
         """
-        Grid a `GXVOX` from point `GXVV`'s using the Nearest Neighbours method.
+        Grid a `GXVOX <geosoft.gxapi.GXVOX>` from point `GXVV <geosoft.gxapi.GXVV>`'s using the Nearest Neighbours method.
         """
         ret_val = gxapi_cy.WrapVOX.nearest_neighbour_grid(GXContext._get_tls_geo(), name.encode(), cell_size, max_radius, type, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_d._wrapper, ipj._wrapper)
         return GXVOX(ret_val)
@@ -688,11 +688,11 @@ class GXVOX:
 
     def resample_pg(self, ipj, orig_x, orig_y, orig_z, spacing_x, spacing_y, spacing_z, size_x, size_y, size_z, min_z, max_z, interp):
         """
-        Resample a voxel over an input volume to a `GXPG`.
+        Resample a voxel over an input volume to a `GXPG <geosoft.gxapi.GXPG>`.
 
         **Note:**
 
-        Creates and dummies a `GXPG` object based on the input
+        Creates and dummies a `GXPG <geosoft.gxapi.GXPG>` object based on the input
         dimensions, then resamples the voxel to the pager
         at the locations determined by input projection, origin and spacings.
         """
@@ -757,7 +757,7 @@ class GXVOX:
 
         **Note:**
 
-        Sample at voxel at XYZ locations input in VVs. Values returned in a `GXVV`.
+        Sample at voxel at XYZ locations input in VVs. Values returned in a `GXVV <geosoft.gxapi.GXVV>`.
         """
         self._wrapper.sample_vv(xvv._wrapper, yvv._wrapper, zvv._wrapper, interp, dvv._wrapper)
         
@@ -817,16 +817,16 @@ class GXVOX:
 
     def set_tpat(self, tpat):
         """
-        Set a thematic voxel's `GXTPAT` object.
+        Set a thematic voxel's `GXTPAT <geosoft.gxapi.GXTPAT>` object.
 
         **Note:**
 
-        Each row in the `GXTPAT` object corresponds to a stored index
-        value in the thematic voxel. The `GXTPAT` should NOT be modified
+        Each row in the `GXTPAT <geosoft.gxapi.GXTPAT>` object corresponds to a stored index
+        value in the thematic voxel. The `GXTPAT <geosoft.gxapi.GXTPAT>` should NOT be modified
         by the addition or deletion of items, if it is to be
-        restored into the `GXVOX` object, but the CODE, LABEL, DESCRIPTION
+        restored into the `GXVOX <geosoft.gxapi.GXVOX>` object, but the CODE, LABEL, DESCRIPTION
         or COLOR info can be changed.
-        The `GXTPAT` object is stored inside the `GXVOX` `GXMETA` object.
+        The `GXTPAT <geosoft.gxapi.GXTPAT>` object is stored inside the `GXVOX <geosoft.gxapi.GXVOX>` `GXMETA <geosoft.gxapi.GXMETA>` object.
         """
         self._wrapper.set_tpat(tpat._wrapper)
         
@@ -836,7 +836,7 @@ class GXVOX:
 
     def slice_ipj(self, name, ipj, mode, orig_x, orig_y, cell_size_x, cell_size_y, size_x, size_y):
         """
-        Extract a slice of a voxel based on an `GXIPJ`
+        Extract a slice of a voxel based on an `GXIPJ <geosoft.gxapi.GXIPJ>`
         """
         self._wrapper.slice_ipj(name.encode(), ipj._wrapper, mode, orig_x, orig_y, cell_size_x, cell_size_y, size_x, size_y)
         
@@ -846,7 +846,7 @@ class GXVOX:
 
     def slice_multi_layer_ipj(self, name, ipj, mode, orig_x, orig_y, cell_size_x, cell_size_y, size_x, size_y, layers, start_elev, elev_inc):
         """
-        Extract multiple slices of a voxel based on an `GXIPJ`
+        Extract multiple slices of a voxel based on an `GXIPJ <geosoft.gxapi.GXIPJ>`
         """
         self._wrapper.slice_multi_layer_ipj(name.encode(), ipj._wrapper, mode, orig_x, orig_y, cell_size_x, cell_size_y, size_x, size_y, layers, start_elev, elev_inc)
         
@@ -856,7 +856,7 @@ class GXVOX:
 
     def subset_to_double_extents(self, output_vox):
         """
-        Subset a `GXVOX` to real extents.
+        Subset a `GXVOX <geosoft.gxapi.GXVOX>` to real extents.
         """
         self._wrapper.subset_to_double_extents(output_vox.encode())
         
@@ -876,11 +876,11 @@ class GXVOX:
 
     def window_ply(self, pply, mask, min_z, max_z, output_vox, clip_dummies):
         """
-        Window a `GXVOX` to a `GXPLY` file and Z.
+        Window a `GXVOX <geosoft.gxapi.GXVOX>` to a `GXPLY <geosoft.gxapi.GXPLY>` file and Z.
 
         **Note:**
 
-        The voxel is windowed horizontally to the input `GXPLY` file.
+        The voxel is windowed horizontally to the input `GXPLY <geosoft.gxapi.GXPLY>` file.
         Optionally, it will be windowed to the input Z range as well.
         The output can be clipped to the non-dummied cells.
         """
@@ -892,7 +892,7 @@ class GXVOX:
 
     def window_xyz(self, min_x, min_y, min_z, max_x, max_y, max_z, output_vox, clip_dummies):
         """
-        Window a `GXVOX` to ranges in X, Y and Z.
+        Window a `GXVOX <geosoft.gxapi.GXVOX>` to ranges in X, Y and Z.
 
         **Note:**
 
@@ -907,7 +907,7 @@ class GXVOX:
 
     def write_xml(self, file):
         """
-        Export the `GXVOX` to XML
+        Export the `GXVOX <geosoft.gxapi.GXVOX>` to XML
         """
         self._wrapper.write_xml(file.encode())
         
@@ -977,7 +977,7 @@ class GXVOX:
     @classmethod
     def dw_grid_db(cls, voxel, db, x, y, z, data, reg):
         """
-        `dw_grid_db`     Inverse-distance weighting gridding method, `GXDB` version, 3D.
+        `dw_grid_db <geosoft.gxapi.GXVOX.dw_grid_db>`     Inverse-distance weighting gridding method, `GXDB <geosoft.gxapi.GXDB>` version, 3D.
 
         **Note:**
 
@@ -991,15 +991,15 @@ class GXVOX:
         If the blanking distance is set, all cells whose center point is not within the blanking distance of
         at least one data point are set to dummy.
         
-        `GXREG` Parameters:
+        `GXREG <geosoft.gxapi.GXREG>` Parameters:
         
         X0, Y0, Z0, DX, DY, DZ: Voxel origin, and cell sizes (required)
         WT_POWER (default=2), WT_SLOPE (default=1) Weighting function parameters
         SEARCH_RADIUS: Distance weighting limit (default = 4 * CUBE_ROOT(DX*DY*DZ))
         BLANKING_DISTANCE: Dummy values farther from data than this distance. (default = 4 * CUBE_ROOT(DX*DY*DZ))
         LOG: Apply log transform to input data before gridding (0:No (default), 1:Yes)?
-        LOG_BASE: One of `VV_LOG_BASE_10` (default) or `VV_LOG_BASE_E`
-        LOG_NEGATIVE: One of `VV_LOG_NEGATIVE_NO` (default) or `VV_LOG_NEGATIVE_YES`
+        LOG_BASE: One of `VV_LOG_BASE_10 <geosoft.gxapi.VV_LOG_BASE_10>` (default) or `VV_LOG_BASE_E <geosoft.gxapi.VV_LOG_BASE_E>`
+        LOG_NEGATIVE: One of `VV_LOG_NEGATIVE_NO <geosoft.gxapi.VV_LOG_NEGATIVE_NO>` (default) or `VV_LOG_NEGATIVE_YES <geosoft.gxapi.VV_LOG_NEGATIVE_YES>`
         """
         gxapi_cy.WrapVOX.dw_grid_db(GXContext._get_tls_geo(), voxel.encode(), db._wrapper, x, y, z, data, reg._wrapper)
         
@@ -1009,19 +1009,19 @@ class GXVOX:
     @classmethod
     def tin_grid_db(cls, voxel, db, x, y, z, data, method, z_cell, reg):
         """
-        `tin_grid_db`   `GXTIN`-Gridding, `GXDB` version, 3D.
+        `tin_grid_db <geosoft.gxapi.GXVOX.tin_grid_db>`   `GXTIN <geosoft.gxapi.GXTIN>`-Gridding, `GXDB <geosoft.gxapi.GXDB>` version, 3D.
 
         **Note:**
 
         Designed for data in array channels position vertically at single XY locations.
-        Creates a `GXTIN` using the XY locations and uses the coefficients for the top layer on
+        Creates a `GXTIN <geosoft.gxapi.GXTIN>` using the XY locations and uses the coefficients for the top layer on
         each layer below to make it efficient.
         
-        `GXREG` Parameters:
+        `GXREG <geosoft.gxapi.GXREG>` Parameters:
         
         X0, Y0, Z0, DX, DY, DZ: Voxel origin, and cell sizes (required)
         NX, NY, NZ: Voxel dimensions.
-        DZ and NZ are used only if the input cell sizes `GXVV` is of zero length.
+        DZ and NZ are used only if the input cell sizes `GXVV <geosoft.gxapi.GXVV>` is of zero length.
         """
         gxapi_cy.WrapVOX.tin_grid_db(GXContext._get_tls_geo(), voxel.encode(), db._wrapper, x, y, z, data, method, z_cell._wrapper, reg._wrapper)
         
@@ -1041,7 +1041,7 @@ class GXVOX:
     @classmethod
     def generate_gocad(cls, name, header, property, ipj):
         """
-        Generate a `GXVOX` from a GOCAD File
+        Generate a `GXVOX <geosoft.gxapi.GXVOX>` from a GOCAD File
         """
         ret_val = gxapi_cy.WrapVOX.generate_gocad(GXContext._get_tls_geo(), name.encode(), header.encode(), property.encode(), ipj._wrapper)
         return GXVOX(ret_val)
@@ -1051,7 +1051,7 @@ class GXVOX:
     @classmethod
     def generate_oriented_gocad(cls, name, header, property, ipj, orientation):
         """
-        Generate a `GXVOX` from a GOCAD File
+        Generate a `GXVOX <geosoft.gxapi.GXVOX>` from a GOCAD File
 
         **Note:**
 
@@ -1065,7 +1065,7 @@ class GXVOX:
     @classmethod
     def generate_ubc(cls, name, mesh, mod, dummy, ipj):
         """
-        Generate a `GXVOX` from a UBC File
+        Generate a `GXVOX <geosoft.gxapi.GXVOX>` from a UBC File
         """
         ret_val = gxapi_cy.WrapVOX.generate_ubc(GXContext._get_tls_geo(), name.encode(), mesh.encode(), mod.encode(), dummy, ipj._wrapper)
         return GXVOX(ret_val)
@@ -1075,7 +1075,7 @@ class GXVOX:
     @classmethod
     def generate_xyz(cls, name, ra, type, ipj):
         """
-        Generate a `GXVOX` from an XYZ File
+        Generate a `GXVOX <geosoft.gxapi.GXVOX>` from an XYZ File
         """
         gxapi_cy.WrapVOX.generate_xyz(GXContext._get_tls_geo(), name.encode(), ra._wrapper, type, ipj._wrapper)
         

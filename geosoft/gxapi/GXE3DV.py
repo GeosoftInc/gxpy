@@ -61,7 +61,7 @@ class GXE3DV:
 
     def get_data_view(self):
         """
-        Get the current data (3D) `GXMVIEW`
+        Get the current data (3D) `GXMVIEW <geosoft.gxapi.GXMVIEW>`
         """
         ret_val = self._wrapper.get_data_view()
         return GXMVIEW(ret_val)
@@ -71,7 +71,7 @@ class GXE3DV:
 
     def get_base_view(self):
         """
-        Get the current Base `GXMVIEW` (used to draw 2D legends for groups)
+        Get the current Base `GXMVIEW <geosoft.gxapi.GXMVIEW>` (used to draw 2D legends for groups)
         """
         ret_val = self._wrapper.get_base_view()
         return GXMVIEW(ret_val)

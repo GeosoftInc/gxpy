@@ -61,7 +61,7 @@ class GXARCDH:
     @classmethod
     def close_project(cls):
         """
-        Closes the current `GXDH` project in the Target extension
+        Closes the current `GXDH <geosoft.gxapi.GXDH>` project in the Target extension
         """
         gxapi_cy.WrapARCDH.close_project(GXContext._get_tls_geo())
         
@@ -71,7 +71,7 @@ class GXARCDH:
     @classmethod
     def set_project(cls, path, project):
         """
-        Sets the current `GXDH` project in the Target extension
+        Sets the current `GXDH <geosoft.gxapi.GXDH>` project in the Target extension
         """
         gxapi_cy.WrapARCDH.set_project(GXContext._get_tls_geo(), path.encode(), project.encode())
         

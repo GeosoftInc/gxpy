@@ -18,11 +18,11 @@ class GXMAPL:
     """
     GXMAPL class.
 
-    The `GXMAPL` class is the interface with the MAPPLOT program,
+    The `GXMAPL <geosoft.gxapi.GXMAPL>` class is the interface with the MAPPLOT program,
     which reads a MAPPLOT control file and plots graphical
-    entities to a map. The `GXMAPL` object is created for a given
+    entities to a map. The `GXMAPL <geosoft.gxapi.GXMAPL>` object is created for a given
     control file, then passed to the MAPPLOT program, along
-    with the target `GXMAP` object on which to do the drawing
+    with the target `GXMAP <geosoft.gxapi.GXMAP>` object on which to do the drawing
     """
 
     def __enter__(self):
@@ -64,13 +64,13 @@ class GXMAPL:
     @classmethod
     def create(cls, name, ref_name, line):
         """
-        Create a `GXMAPL`.
+        Create a `GXMAPL <geosoft.gxapi.GXMAPL>`.
 
         **Note:**
 
         The default map groups will use the reference name with
         "_Data" and "_Base" added.  If no reference name is specified,
-        the name "`GXMAPL`" is used
+        the name "`GXMAPL <geosoft.gxapi.GXMAPL>`" is used
         """
         ret_val = gxapi_cy.WrapMAPL.create(GXContext._get_tls_geo(), name.encode(), ref_name.encode(), line)
         return GXMAPL(ret_val)
@@ -80,13 +80,13 @@ class GXMAPL:
     @classmethod
     def create_reg(cls, name, ref_name, line, reg):
         """
-        Create a `GXMAPL` with `GXREG`.
+        Create a `GXMAPL <geosoft.gxapi.GXMAPL>` with `GXREG <geosoft.gxapi.GXREG>`.
 
         **Note:**
 
         The default map groups will use the reference name with
         "_Data" and "_Base" added.  If no reference name is specified,
-        the name "`GXMAPL`" is used
+        the name "`GXMAPL <geosoft.gxapi.GXMAPL>`" is used
         """
         ret_val = gxapi_cy.WrapMAPL.create_reg(GXContext._get_tls_geo(), name.encode(), ref_name.encode(), line, reg._wrapper)
         return GXMAPL(ret_val)
@@ -98,7 +98,7 @@ class GXMAPL:
 
     def process(self, map):
         """
-        Process a `GXMAPL`
+        Process a `GXMAPL <geosoft.gxapi.GXMAPL>`
         """
         self._wrapper.process(map._wrapper)
         

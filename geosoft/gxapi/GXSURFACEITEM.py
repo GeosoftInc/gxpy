@@ -18,8 +18,8 @@ class GXSURFACEITEM:
     """
     GXSURFACEITEM class.
 
-    The `GXSURFACEITEM` allows you to create, read and alter Geosurface files (``*.geosoft_surface``).
-    A Geosurface file can contain one or more surface items (see `GXSURFACE` class). A surface item can
+    The `GXSURFACEITEM <geosoft.gxapi.GXSURFACEITEM>` allows you to create, read and alter Geosurface files (``*.geosoft_surface``).
+    A Geosurface file can contain one or more surface items (see `GXSURFACE <geosoft.gxapi.GXSURFACE>` class). A surface item can
     contains one or more triangular polyhedral meshes.
     """
 
@@ -62,11 +62,11 @@ class GXSURFACEITEM:
     @classmethod
     def create(cls, type, name):
         """
-        Create a `GXSURFACEITEM`
+        Create a `GXSURFACEITEM <geosoft.gxapi.GXSURFACEITEM>`
 
         .. seealso::
 
-            `set_properties` and `set_default_render_properties`
+            `set_properties <geosoft.gxapi.GXSURFACEITEM.set_properties>` and `set_default_render_properties <geosoft.gxapi.GXSURFACEITEM.set_default_render_properties>`
         """
         ret_val = gxapi_cy.WrapSURFACEITEM.create(GXContext._get_tls_geo(), type.encode(), name.encode())
         return GXSURFACEITEM(ret_val)
@@ -82,7 +82,7 @@ class GXSURFACEITEM:
 
         **Note:**
 
-        The value returned by this call will not be valid for newly created items until after a call to `GXSURFACE.add_surface_item`.
+        The value returned by this call will not be valid for newly created items until after a call to `GXSURFACE.add_surface_item <geosoft.gxapi.GXSURFACE.add_surface_item>`.
         """
         guid.value = self._wrapper.get_guid(guid.value.encode())
         
@@ -96,7 +96,7 @@ class GXSURFACEITEM:
 
         .. seealso::
 
-            `GXSYS.generate_guid`
+            `GXSYS.generate_guid <geosoft.gxapi.GXSYS.generate_guid>`
         """
         self._wrapper.set_properties(type.encode(), name.encode(), source_guid.encode(), source_name.encode(), source_measure, secondary_source_guid.encode(), secondary_source_name.encode(), secondary_source_measure)
         
@@ -110,7 +110,7 @@ class GXSURFACEITEM:
 
         .. seealso::
 
-            `GXSYS.generate_guid`
+            `GXSYS.generate_guid <geosoft.gxapi.GXSYS.generate_guid>`
         """
         self._wrapper.set_properties_ex(type.encode(), name.encode(), source_guid.encode(), source_name.encode(), source_measure, secondary_source_guid.encode(), secondary_source_name.encode(), secondary_source_option, secondary_source_measure, secondary_source_measure2)
         
@@ -144,7 +144,7 @@ class GXSURFACEITEM:
 
         .. seealso::
 
-            `GXMVIEW.color`
+            `GXMVIEW.color <geosoft.gxapi.GXMVIEW.color>`
         """
         self._wrapper.set_default_render_properties(color, transparency, render_mode)
         
@@ -158,7 +158,7 @@ class GXSURFACEITEM:
 
         .. seealso::
 
-            `GXMVIEW.color`
+            `GXMVIEW.color <geosoft.gxapi.GXMVIEW.color>`
         """
         color.value, transparency.value, render_mode.value = self._wrapper.get_default_render_properties(color.value, transparency.value, render_mode.value)
         

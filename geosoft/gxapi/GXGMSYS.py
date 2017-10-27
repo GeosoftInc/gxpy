@@ -18,7 +18,7 @@ class GXGMSYS:
     """
     GXGMSYS class.
 
-    The `GXGMSYS` Methods
+    The `GXGMSYS <geosoft.gxapi.GXGMSYS>` Methods
     """
 
     def __enter__(self):
@@ -60,7 +60,7 @@ class GXGMSYS:
     @classmethod
     def launch(cls, model):
         """
-        Launch `GXGMSYS` with extension
+        Launch `GXGMSYS <geosoft.gxapi.GXGMSYS>` with extension
         """
         gxapi_cy.WrapGMSYS.launch(GXContext._get_tls_geo(), model.encode())
         

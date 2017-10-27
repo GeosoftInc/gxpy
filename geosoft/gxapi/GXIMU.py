@@ -20,7 +20,7 @@ class GXIMU:
     GXIMU class.
 
     Not a class. This is a catch-all group of functions working
-    on `GXIMG` objects (see `GXIMG`). Grid operations include masking,
+    on `GXIMG <geosoft.gxapi.GXIMG>` objects (see `GXIMG <geosoft.gxapi.GXIMG>`). Grid operations include masking,
     trending, windowing, expanding and grid stitching.
     """
 
@@ -171,7 +171,7 @@ class GXIMU:
     @classmethod
     def get_zvv(cls, img, vv_x, vv_y, vv_z):
         """
-        Extract an interpolated image value for given XY `GXVV` locations
+        Extract an interpolated image value for given XY `GXVV <geosoft.gxapi.GXVV>` locations
         """
         gxapi_cy.WrapIMU.get_zvv(GXContext._get_tls_geo(), img._wrapper, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
         
@@ -181,7 +181,7 @@ class GXIMU:
     @classmethod
     def get_z_peaks_vv(cls, img, vv_x, vv_y, vv_z):
         """
-        Same as `get_zvv`, but find the closest peak value to the input locations, and return
+        Same as `get_zvv <geosoft.gxapi.GXIMU.get_zvv>`, but find the closest peak value to the input locations, and return
         				             the peak value and peak value location.
 
         **Note:**
@@ -201,7 +201,7 @@ class GXIMU:
 
         **Note:**
 
-        The `GXIMG` parameters MUST be of type `GS_DOUBLE`!
+        The `GXIMG <geosoft.gxapi.GXIMG>` parameters MUST be of type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`!
         If not, the method will terminate.
         """
         gxapi_cy.WrapIMU.grid_add(GXContext._get_tls_geo(), img1._wrapper, m1, img2._wrapper, m2, imgo._wrapper)
@@ -216,7 +216,7 @@ class GXIMU:
 
         **Note:**
 
-        The `GXIMG` parameters MUST be of type `GS_FLOAT`!
+        The `GXIMG <geosoft.gxapi.GXIMG>` parameters MUST be of type `GS_FLOAT <geosoft.gxapi.GS_FLOAT>`!
         If not, the method will terminate.
         """
         gxapi_cy.WrapIMU.grid_agc(GXContext._get_tls_geo(), i_img._wrapper, o_img._wrapper, width, max_gain, remove_background)
@@ -232,7 +232,7 @@ class GXIMU:
 
         **Note:**
 
-        The `GXIMG` parameters must be of type `GS_DOUBLE`!
+        The `GXIMG <geosoft.gxapi.GXIMG>` parameters must be of type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`!
         If not, the method will terminate.
         """
         gxapi_cy.WrapIMU.grid_bool(GXContext._get_tls_geo(), img1._wrapper, img2._wrapper, out.encode(), bool, sizing, olap)
@@ -257,8 +257,8 @@ class GXIMU:
 
         **Note:**
 
-        Unlike `grid_ply` and GridPlyEx_IMU, the image is not
-        altered. It just gives the `GXPLY`.
+        Unlike `grid_ply <geosoft.gxapi.GXIMU.grid_ply>` and GridPlyEx_IMU, the image is not
+        altered. It just gives the `GXPLY <geosoft.gxapi.GXPLY>`.
         """
         gxapi_cy.WrapIMU.grid_edge_ply(GXContext._get_tls_geo(), img._wrapper, ply._wrapper, min_points)
         
@@ -273,7 +273,7 @@ class GXIMU:
 
         **Note:**
 
-        The `GXIMG` parameter MUST be of type `GS_FLOAT`!
+        The `GXIMG <geosoft.gxapi.GXIMG>` parameter MUST be of type `GS_FLOAT <geosoft.gxapi.GS_FLOAT>`!
         If not, the method will terminate.
         """
         gxapi_cy.WrapIMU.grid_expand(GXContext._get_tls_geo(), im_gi._wrapper, out.encode(), per, shape, x, y)
@@ -284,7 +284,7 @@ class GXIMU:
     @classmethod
     def grid_exp_fill(cls, in_grd, out_grd, p_ex, t_ex):
         """
-        Extends and fills a grid for `GXFFT2`.
+        Extends and fills a grid for `GXFFT2 <geosoft.gxapi.GXFFT2>`.
         """
         gxapi_cy.WrapIMU.grid_exp_fill(GXContext._get_tls_geo(), in_grd.encode(), out_grd.encode(), p_ex, t_ex)
         
@@ -298,7 +298,7 @@ class GXIMU:
 
         **Note:**
 
-        The `GXIMG` parameters MUST be of type `GS_FLOAT`!
+        The `GXIMG <geosoft.gxapi.GXIMG>` parameters MUST be of type `GS_FLOAT <geosoft.gxapi.GS_FLOAT>`!
         If not, the method will terminate.
         """
         gxapi_cy.WrapIMU.grid_fill(GXContext._get_tls_geo(), im_gi._wrapper, im_go._wrapper, rollopt, rolldist, mxf, mxp, rollbase, alimit, elimit, width, npass)
@@ -314,7 +314,7 @@ class GXIMU:
 
         **Note:**
 
-        The `GXIMG` parameters MUST be of type `GS_FLOAT`!
+        The `GXIMG <geosoft.gxapi.GXIMG>` parameters MUST be of type `GS_FLOAT <geosoft.gxapi.GS_FLOAT>`!
         If not, the method will terminate.
         """
         gxapi_cy.WrapIMU.grid_filt(GXContext._get_tls_geo(), img._wrapper, imgo._wrapper, passes, mult, dum, hz, usefile, file.encode(), vv._wrapper)
@@ -351,10 +351,10 @@ class GXIMU:
 
         **Note:**
 
-        The `GXIMG` parameters MUST be of type `GS_DOUBLE`!
+        The `GXIMG <geosoft.gxapi.GXIMG>` parameters MUST be of type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`!
         If not, the method will terminate.
         
-        The `GXPLY` will contain more than one polygon
+        The `GXPLY <geosoft.gxapi.GXPLY>` will contain more than one polygon
         if it was loaded from a file containing
         coordinates of more than one polygon.
         """
@@ -383,17 +383,17 @@ class GXIMU:
     @classmethod
     def grid_ply(cls, img, ply, refresh):
         """
-        Get the grid edge in a `GXPLY`
+        Get the grid edge in a `GXPLY <geosoft.gxapi.GXPLY>`
 
         **Note:**
 
-        This will optionally refresh the grid boundary `GXPLY` and return
-        the `GXPLY`.
+        This will optionally refresh the grid boundary `GXPLY <geosoft.gxapi.GXPLY>` and return
+        the `GXPLY <geosoft.gxapi.GXPLY>`.
         
         If the boundary is not refreshed and has never been calculated,
         the boundary will be the bounding rectangle of the grid.
         
-        The grid `GXPLY` will be added to existing ploygons in the passed `GXPLY`.
+        The grid `GXPLY <geosoft.gxapi.GXPLY>` will be added to existing ploygons in the passed `GXPLY <geosoft.gxapi.GXPLY>`.
         """
         gxapi_cy.WrapIMU.grid_ply(GXContext._get_tls_geo(), img._wrapper, ply._wrapper, refresh)
         
@@ -403,17 +403,17 @@ class GXIMU:
     @classmethod
     def grid_ply_ex(cls, img, ply, refresh, min_points):
         """
-        Get the grid edge in a `GXPLY` (with min points)
+        Get the grid edge in a `GXPLY <geosoft.gxapi.GXPLY>` (with min points)
 
         **Note:**
 
-        This will optionally refresh the grid boundary `GXPLY` and return
-        the `GXPLY`.
+        This will optionally refresh the grid boundary `GXPLY <geosoft.gxapi.GXPLY>` and return
+        the `GXPLY <geosoft.gxapi.GXPLY>`.
         
         If the boundary is not refreshed and has never been calculated,
         the boundary will be the bounding rectangle of the grid.
         
-        The grid `GXPLY` will be added to existing ploygons in the passed `GXPLY`.
+        The grid `GXPLY <geosoft.gxapi.GXPLY>` will be added to existing ploygons in the passed `GXPLY <geosoft.gxapi.GXPLY>`.
         """
         gxapi_cy.WrapIMU.grid_ply_ex(GXContext._get_tls_geo(), img._wrapper, ply._wrapper, refresh, min_points)
         
@@ -461,7 +461,7 @@ class GXIMU:
 
         **Note:**
 
-        Pass `GS_R8DM` as parameters to obtain default values.
+        Pass `GS_R8DM <geosoft.gxapi.GS_R8DM>` as parameters to obtain default values.
         The default values are returned.
         """
         inc.value, dec.value, scl.value = gxapi_cy.WrapIMU.grid_shad(GXContext._get_tls_geo(), in_grid.encode(), sh_grid.encode(), inc.value, dec.value, scl.value)
@@ -472,14 +472,14 @@ class GXIMU:
     @classmethod
     def grid_st(cls, grid, st):
         """
-        Update an `GXST` object using a grid.
+        Update an `GXST <geosoft.gxapi.GXST>` object using a grid.
 
         **Note:**
 
-        The input `GXST` object is not initialized by `grid_st`,
+        The input `GXST <geosoft.gxapi.GXST>` object is not initialized by `grid_st <geosoft.gxapi.GXIMU.grid_st>`,
         so this function can be used to accumulate statistical
         info on more than a single grid.
-        See `GXST`.
+        See `GXST <geosoft.gxapi.GXST>`.
         """
         gxapi_cy.WrapIMU.grid_st(GXContext._get_tls_geo(), grid.encode(), st._wrapper)
         
@@ -521,7 +521,7 @@ class GXIMU:
 
         **Note:**
 
-        If the `IMU_STAT_FORCED` value is set, the
+        If the `IMU_STAT_FORCED_` value is set, the
         statistics will be recalculated.
         Statistics are returned in the parameter set.
         """
@@ -628,8 +628,8 @@ class GXIMU:
 
         **Note:**
 
-        Both Images must be of type `GS_DOUBLE`.
-        The `GXVM` parameter must be of type REAL,
+        Both Images must be of type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`.
+        The `GXVM <geosoft.gxapi.GXVM>` parameter must be of type REAL,
         and be of size 10 at most.
         
         The number of coefficients must be
@@ -659,7 +659,7 @@ class GXIMU:
         **Note:**
 
         If the grid has a line orientation that does NOT
-        match the `IMU_TRANS` value, this method will
+        match the `IMU_TRANS_` value, this method will
         not succeed.
         """
         gxapi_cy.WrapIMU.grid_trns(GXContext._get_tls_geo(), grid.encode(), tcon)
@@ -690,7 +690,7 @@ class GXIMU:
         integers. A multiplier is applied to the final
         volume (to correct for units).
         
-        The `GXIMG` parameters MUST be of type `GS_FLOAT`!
+        The `GXIMG <geosoft.gxapi.GXIMG>` parameters MUST be of type `GS_FLOAT <geosoft.gxapi.GS_FLOAT>`!
         If not, the method will terminate.
         """
         vol_a.value, vol_b.value, diff.value = gxapi_cy.WrapIMU.grid_vol(GXContext._get_tls_geo(), img._wrapper, rbase, mult, vol_a.value, vol_b.value, diff.value)
@@ -717,7 +717,7 @@ class GXIMU:
         **Note:**
 
         To change the cell size or work in a different projection,
-        first inherit the `GXIMG` by calling
+        first inherit the `GXIMG <geosoft.gxapi.GXIMG>` by calling
         
         The windowed grid will be adjusted/expanded to include the
         defined area and line up on an even grid cell.
@@ -734,8 +734,8 @@ class GXIMU:
 
         **Note:**
 
-        The `GXIMG` (image) of the grid to export must
-        be of type `GS_FLOAT`. If not, this method will
+        The `GXIMG <geosoft.gxapi.GXIMG>` (image) of the grid to export must
+        be of type `GS_FLOAT <geosoft.gxapi.GS_FLOAT>`. If not, this method will
         terminate with an error.
         """
         gxapi_cy.WrapIMU.grid_xyz(GXContext._get_tls_geo(), img._wrapper, xyz.encode(), index, dec_x, dec_y, lab)
@@ -816,7 +816,7 @@ class GXIMU:
         (A+C)/2.0 > B*(1.0+Precision factor).
         This factor must be within (-1.0,1.0).
         
-        Note: `peak_size2` is probably a better routine...
+        Note: `peak_size2 <geosoft.gxapi.GXIMU.peak_size2>` is probably a better routine...
         """
         gxapi_cy.WrapIMU.peak_size(GXContext._get_tls_geo(), grid.encode(), vv_x._wrapper, vv_y._wrapper, max, prec, v_vz._wrapper)
         
@@ -841,7 +841,7 @@ class GXIMU:
         of d3, and s1=m2-m1 and s2=m3-m2.
         
         This algorithm tends to give much smaller (and more reasonable)
-        results than `peak_size`.
+        results than `peak_size <geosoft.gxapi.GXIMU.peak_size>`.
         """
         gxapi_cy.WrapIMU.peak_size2(GXContext._get_tls_geo(), grid.encode(), vv_x._wrapper, vv_y._wrapper, max, v_vz._wrapper)
         
@@ -879,7 +879,7 @@ class GXIMU:
 
         **Note:**
 
-        Returned `GXVV` will start at X1,Y1 and will sample
+        Returned `GXVV <geosoft.gxapi.GXVV>` will start at X1,Y1 and will sample
         up to X2,Y2 at the specified separation.
         """
         gxapi_cy.WrapIMU.profile(GXContext._get_tls_geo(), img._wrapper, x1, y1, x2, y2, samsep, vv_z._wrapper)
@@ -890,7 +890,7 @@ class GXIMU:
     @classmethod
     def profile_vv(cls, img, vv_x, vv_y, vv_z):
         """
-        Extract a `GXVV` profile from a grid.
+        Extract a `GXVV <geosoft.gxapi.GXVV>` profile from a grid.
 
         .. seealso::
 
@@ -908,10 +908,10 @@ class GXIMU:
 
         **Note:**
 
-        If an `GXIPJ` is IPJ_CS_UNKNOWN, the
-        `GXIPJ` of the first grid in the list will be used and
-        the `GXIPJ` will be returned in this setting.
-        Otherwise, the range in the requested `GXIPJ` will be
+        If an `GXIPJ <geosoft.gxapi.GXIPJ>` is IPJ_CS_UNKNOWN, the
+        `GXIPJ <geosoft.gxapi.GXIPJ>` of the first grid in the list will be used and
+        the `GXIPJ <geosoft.gxapi.GXIPJ>` will be returned in this setting.
+        Otherwise, the range in the requested `GXIPJ <geosoft.gxapi.GXIPJ>` will be
         determined.
         """
         min_x.value, min_y.value, max_x.value, max_y.value = gxapi_cy.WrapIMU.range_grids(GXContext._get_tls_geo(), grids.encode(), ipj._wrapper, min_x.value, min_y.value, max_x.value, max_y.value)
@@ -931,9 +931,9 @@ class GXIMU:
         It scans each row and and column and finds the first non-dummy
         position at the start and end, and then determines the coordinates
         at those points.
-        If the grid has no data, no `GXIPJ` object, or if the Source Type of
-        the `GXIPJ` is not `IPJ_TYPE_PCS` (projected coordinate system), then the
-        returned values are dummies (`GS_R8DM`).
+        If the grid has no data, no `GXIPJ <geosoft.gxapi.GXIPJ>` object, or if the Source Type of
+        the `GXIPJ <geosoft.gxapi.GXIPJ>` is not `IPJ_TYPE_PCS <geosoft.gxapi.IPJ_TYPE_PCS>` (projected coordinate system), then the
+        returned values are dummies (`GS_R8DM <geosoft.gxapi.GS_R8DM>`).
         """
         min_lat.value, min_lon.value, max_lat.value, max_lon.value = gxapi_cy.WrapIMU.range_ll(GXContext._get_tls_geo(), img._wrapper, min_lat.value, min_lon.value, max_lat.value, max_lon.value)
         
@@ -970,7 +970,7 @@ class GXIMU:
         resolution, then put set it as the grid boundary by
         calling this funtion.  This is similar to the
         GridPLYEx function except that you get to alter the
-        `GXPLY` before it is placed back in the `GXIMG`.
+        `GXPLY <geosoft.gxapi.GXPLY>` before it is placed back in the `GXIMG <geosoft.gxapi.GXIMG>`.
         """
         gxapi_cy.WrapIMU.update_ply(GXContext._get_tls_geo(), img._wrapper, ply._wrapper)
         

@@ -21,11 +21,11 @@ class GXMAP:
     """
     GXMAP class.
 
-    MAPs are containers for `GXMVIEW` objects. A view is a 3-D translation
-    and a clip window on a map. Graphic entities can be drawn in an `GXMVIEW`.
-    It is recommended that the `GXMAP` class be instantiated by first creating
-    an `GXEMAP` object and calling the `GXEMAP.lock`() function.
-    (See the explanation on the distinction between the `GXMAP` and `GXEMAP` classes).
+    MAPs are containers for `GXMVIEW <geosoft.gxapi.GXMVIEW>` objects. A view is a 3-D translation
+    and a clip window on a map. Graphic entities can be drawn in an `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
+    It is recommended that the `GXMAP <geosoft.gxapi.GXMAP>` class be instantiated by first creating
+    an `GXEMAP <geosoft.gxapi.GXEMAP>` object and calling the `GXEMAP.lock <geosoft.gxapi.GXEMAP.lock>` function.
+    (See the explanation on the distinction between the `GXMAP <geosoft.gxapi.GXMAP>` and `GXEMAP <geosoft.gxapi.GXEMAP>` classes).
     """
 
     def __enter__(self):
@@ -121,7 +121,7 @@ class GXMAP:
 
     def create_linked_3d_view(self, mview, view_name, min_x, min_y, max_x, max_y):
         """
-        Create a 3D View in this map that is linked to a `GXMVIEW` in a 3D View file.
+        Create a 3D View in this map that is linked to a `GXMVIEW <geosoft.gxapi.GXMVIEW>` in a 3D View file.
         """
         self._wrapper.create_linked_3d_view(mview._wrapper, view_name.encode(), min_x, min_y, max_x, max_y)
         
@@ -144,7 +144,7 @@ class GXMAP:
 
         .. seealso::
 
-            `GXLST` class.
+            `GXLST <geosoft.gxapi.GXLST>` class.
         """
         self._wrapper.agg_list(lst._wrapper, optn)
         
@@ -163,7 +163,7 @@ class GXMAP:
 
         .. seealso::
 
-            `GXLST` class.
+            `GXLST <geosoft.gxapi.GXLST>` class.
         """
         self._wrapper.agg_list_ex(lst._wrapper, optn, mode)
         
@@ -203,7 +203,7 @@ class GXMAP:
 
     def crc_map(self, crc, file):
         """
-        Generate an XML CRC of a `GXMAP`
+        Generate an XML CRC of a `GXMAP <geosoft.gxapi.GXMAP>`
         """
         crc.value = self._wrapper.crc_map(crc.value, file.encode())
         
@@ -213,7 +213,7 @@ class GXMAP:
     @classmethod
     def create(cls, name, mode):
         """
-        Create a `GXMAP`.
+        Create a `GXMAP <geosoft.gxapi.GXMAP>`.
         """
         ret_val = gxapi_cy.WrapMAP.create(GXContext._get_tls_geo(), name.encode(), mode)
         return GXMAP(ret_val)
@@ -274,7 +274,7 @@ class GXMAP:
         greatly increased the number of symbols that can be used. The only caveat
         of the new system is that text may appear corrupted (especially with GFN fonts) in
         versions prior to 6.2 that render maps created in version 6.2 and later.
-        The constant `DUPMAP_COPY_PRE62` provides a way to create maps that can be
+        The constant `DUPMAP_COPY_PRE62 <geosoft.gxapi.DUPMAP_COPY_PRE62>` provides a way to create maps that can be
         distributed to versions prior to 6.2.
         """
         self._wrapper.dup_map(ma_pd._wrapper, content)
@@ -285,7 +285,7 @@ class GXMAP:
 
     def get_lpt(self):
         """
-        Get the `GXLPT` Object of a `GXMAP`.
+        Get the `GXLPT <geosoft.gxapi.GXLPT>` Object of a `GXMAP <geosoft.gxapi.GXMAP>`.
         """
         ret_val = self._wrapper.get_lpt()
         return GXLPT(ret_val)
@@ -305,11 +305,11 @@ class GXMAP:
 
     def get_meta(self):
         """
-        Get the map's `GXMETA`
+        Get the map's `GXMETA <geosoft.gxapi.GXMETA>`
 
         **Note:**
 
-        If the map has no `GXMETA`, an empty `GXMETA` will be created.
+        If the map has no `GXMETA <geosoft.gxapi.GXMETA>`, an empty `GXMETA <geosoft.gxapi.GXMETA>` will be created.
         """
         ret_val = self._wrapper.get_meta()
         return GXMETA(ret_val)
@@ -319,11 +319,11 @@ class GXMAP:
 
     def get_reg(self):
         """
-        Get the map's `GXREG`
+        Get the map's `GXREG <geosoft.gxapi.GXREG>`
 
         **Note:**
 
-        If the map has no `GXREG`, an empty `GXREG` will be created.
+        If the map has no `GXREG <geosoft.gxapi.GXREG>`, an empty `GXREG <geosoft.gxapi.GXREG>` will be created.
         """
         ret_val = self._wrapper.get_reg()
         return GXREG(ret_val)
@@ -338,13 +338,13 @@ class GXMAP:
         **Note:**
 
         Returns all groups in the form "ViewName\\GroupName"
-        To get a `GXLST` of groups in a specific map view, use
-        the `GXMVIEW.list_groups` function.
+        To get a `GXLST <geosoft.gxapi.GXLST>` of groups in a specific map view, use
+        the `GXMVIEW.list_groups <geosoft.gxapi.GXMVIEW.list_groups>` function.
 
         .. seealso::
 
-            `GXLST` class.
-            `GXMVIEW.list_groups`
+            `GXLST <geosoft.gxapi.GXLST>` class.
+            `GXMVIEW.list_groups <geosoft.gxapi.GXMVIEW.list_groups>`
         """
         self._wrapper.group_list(lst._wrapper)
         
@@ -358,7 +358,7 @@ class GXMAP:
 
         .. seealso::
 
-            `GXLST` class.
+            `GXLST <geosoft.gxapi.GXLST>` class.
         """
         self._wrapper.group_list_ex(lst._wrapper, mode)
         
@@ -493,8 +493,8 @@ class GXMAP:
 
         **Note:**
 
-        This is the same as `resize_all_ex` with
-        `MVIEW_EXTENT_CLIP`.
+        This is the same as `resize_all_ex <geosoft.gxapi.GXMAP.resize_all_ex>` with
+        `MVIEW_EXTENT_CLIP <geosoft.gxapi.MVIEW_EXTENT_CLIP>`.
         """
         self._wrapper.resize_all()
         
@@ -504,11 +504,11 @@ class GXMAP:
 
     def resize_all_ex(self, ext):
         """
-        `resize_all` with selection of view extent type selection.
+        `resize_all <geosoft.gxapi.GXMAP.resize_all>` with selection of view extent type selection.
 
         **Note:**
 
-        `MVIEW_EXTENT_VISIBLE` gives a more "reasonable" map size, and won't
+        `MVIEW_EXTENT_VISIBLE <geosoft.gxapi.MVIEW_EXTENT_VISIBLE>` gives a more "reasonable" map size, and won't
         clip off labels outside a graph window.
         """
         self._wrapper.resize_all_ex(ext)
@@ -540,7 +540,7 @@ class GXMAP:
 
     def save_as_mxd(self, mxd):
         """
-        Save as ArcGIS `GXMXD`
+        Save as ArcGIS `GXMXD <geosoft.gxapi.GXMXD>`
         """
         self._wrapper.save_as_mxd(mxd.encode())
         
@@ -613,7 +613,7 @@ class GXMAP:
 
         **Note:**
 
-        The map size is area on the `GXMAP` that contains graphics
+        The map size is area on the `GXMAP <geosoft.gxapi.GXMAP>` that contains graphics
         to be plotted.  The area can be bigger or smaller that
         the current views.  In the absense of any other information
         only the area defined by the map size is plotted.
@@ -630,7 +630,7 @@ class GXMAP:
 
     def set_meta(self, meta):
         """
-        Write a `GXMETA` to a map.
+        Write a `GXMETA <geosoft.gxapi.GXMETA>` to a map.
         """
         self._wrapper.set_meta(meta._wrapper)
         
@@ -640,7 +640,7 @@ class GXMAP:
 
     def set_reg(self, reg):
         """
-        Write a `GXREG` to a map.
+        Write a `GXREG <geosoft.gxapi.GXREG>` to a map.
         """
         self._wrapper.set_reg(reg._wrapper)
         
@@ -674,7 +674,7 @@ class GXMAP:
 
         .. seealso::
 
-            `GXLST` class.
+            `GXLST <geosoft.gxapi.GXLST>` class.
         """
         self._wrapper.view_list(lst._wrapper)
         

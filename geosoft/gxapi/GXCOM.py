@@ -60,7 +60,7 @@ class GXCOM:
     @classmethod
     def create(cls, port, baud, data_size, parity, stop_bits, flow_control, time_out):
         """
-        Create `GXCOM` object.
+        Create `GXCOM <geosoft.gxapi.GXCOM>` object.
         """
         ret_val = gxapi_cy.WrapCOM.create(GXContext._get_tls_geo(), port.encode(), baud, data_size, parity, stop_bits, flow_control, time_out)
         return GXCOM(ret_val)
@@ -70,7 +70,7 @@ class GXCOM:
     @classmethod
     def create_no_terminate(cls, port, baud, data_size, parity, stop_bits, flow_control, time_out):
         """
-        Create `GXCOM` object.
+        Create `GXCOM <geosoft.gxapi.GXCOM>` object.
         """
         ret_val = gxapi_cy.WrapCOM.create_no_terminate(GXContext._get_tls_geo(), port.encode(), baud, data_size, parity, stop_bits, flow_control, time_out)
         return GXCOM(ret_val)
@@ -82,7 +82,7 @@ class GXCOM:
 
     def read_line_no_terminate(self, line):
         """
-        Reads a Line from the `GXCOM`
+        Reads a Line from the `GXCOM <geosoft.gxapi.GXCOM>`
         """
         ret_val, line.value = self._wrapper.read_line_no_terminate(line.value.encode())
         return ret_val
@@ -92,7 +92,7 @@ class GXCOM:
 
     def read_chars_no_terminate(self, line):
         """
-        Reads characters from the `GXCOM`, times out and does not terminate
+        Reads characters from the `GXCOM <geosoft.gxapi.GXCOM>`, times out and does not terminate
         """
         ret_val, line.value = self._wrapper.read_chars_no_terminate(line.value.encode())
         return ret_val
@@ -102,7 +102,7 @@ class GXCOM:
 
     def read_line(self, line):
         """
-        Reads a Line from the `GXCOM`
+        Reads a Line from the `GXCOM <geosoft.gxapi.GXCOM>`
         """
         line.value = self._wrapper.read_line(line.value.encode())
         
@@ -112,7 +112,7 @@ class GXCOM:
 
     def write_chars_no_terminate(self, line):
         """
-        Writes characters to the `GXCOM`.  Does not terminate upon error
+        Writes characters to the `GXCOM <geosoft.gxapi.GXCOM>`.  Does not terminate upon error
         """
         ret_val = self._wrapper.write_chars_no_terminate(line.encode())
         return ret_val
@@ -132,7 +132,7 @@ class GXCOM:
 
     def read_chars(self, line):
         """
-        Reads characters from the `GXCOM`
+        Reads characters from the `GXCOM <geosoft.gxapi.GXCOM>`
         """
         line.value = self._wrapper.read_chars(line.value.encode())
         
@@ -142,7 +142,7 @@ class GXCOM:
 
     def read_em61_lines_wa(self, lines, wa):
         """
-        Reads Lines from the `GXCOM` to a `GXWA`: Geonics EM61 only
+        Reads Lines from the `GXCOM <geosoft.gxapi.GXCOM>` to a `GXWA <geosoft.gxapi.GXWA>`: Geonics EM61 only
         """
         self._wrapper.read_em61_lines_wa(lines, wa._wrapper)
         
@@ -152,7 +152,7 @@ class GXCOM:
 
     def read_file2_wa(self, wa):
         """
-        Reads entire dataset from the `GXCOM` to a `GXWA`
+        Reads entire dataset from the `GXCOM <geosoft.gxapi.GXCOM>` to a `GXWA <geosoft.gxapi.GXWA>`
         """
         self._wrapper.read_file2_wa(wa._wrapper)
         
@@ -162,7 +162,7 @@ class GXCOM:
 
     def read_lines_wa(self, lines, wa):
         """
-        Reads Lines from the `GXCOM` to a `GXWA`
+        Reads Lines from the `GXCOM <geosoft.gxapi.GXCOM>` to a `GXWA <geosoft.gxapi.GXWA>`
         """
         self._wrapper.read_lines_wa(lines, wa._wrapper)
         
@@ -182,7 +182,7 @@ class GXCOM:
 
     def write_chars(self, line):
         """
-        Writes characters to the `GXCOM`
+        Writes characters to the `GXCOM <geosoft.gxapi.GXCOM>`
         """
         self._wrapper.write_chars(line.encode())
         
@@ -192,7 +192,7 @@ class GXCOM:
 
     def write_line(self, line):
         """
-        Writes a Line to the `GXCOM`
+        Writes a Line to the `GXCOM <geosoft.gxapi.GXCOM>`
         """
         self._wrapper.write_line(line.encode())
         

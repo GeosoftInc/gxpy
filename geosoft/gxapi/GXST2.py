@@ -18,10 +18,10 @@ class GXST2:
     """
     GXST2 class.
 
-    Bi-variate statistics. The `GXST2` class accumulates statistics
+    Bi-variate statistics. The `GXST2 <geosoft.gxapi.GXST2>` class accumulates statistics
     on two data vectors simultaneously in order to compute correlation
-    information. Statistics are accumulated using the `data_vv` function.
-    See also `GXST` (mono-variate statistics).
+    information. Statistics are accumulated using the `data_vv <geosoft.gxapi.GXST2.data_vv>` function.
+    See also `GXST <geosoft.gxapi.GXST>` (mono-variate statistics).
     """
 
     def __enter__(self):
@@ -73,7 +73,7 @@ class GXST2:
 
     def data_vv(self, vv_x, vv_y):
         """
-        Add all the values in VVx and VVy to `GXST2` object.
+        Add all the values in VVx and VVy to `GXST2 <geosoft.gxapi.GXST2>` object.
         """
         self._wrapper.data_vv(vv_x._wrapper, vv_y._wrapper)
         
@@ -105,7 +105,7 @@ class GXST2:
 
     def get(self, id):
         """
-        Gets correlation coeff. from the `GXST2` object.
+        Gets correlation coeff. from the `GXST2 <geosoft.gxapi.GXST2>` object.
         """
         ret_val = self._wrapper.get(id)
         return ret_val

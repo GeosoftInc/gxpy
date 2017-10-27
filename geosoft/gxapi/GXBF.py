@@ -18,7 +18,7 @@ class GXBF:
     """
     GXBF class.
 
-    The `GXBF` class is used to access (or create) Binary files and remove
+    The `GXBF <geosoft.gxapi.GXBF>` class is used to access (or create) Binary files and remove
     (or destroy) files from use. You can also perform a variety of
     additional tasks, such as positioning within files, reading from
     files and writing to files.
@@ -88,7 +88,7 @@ class GXBF:
 
     def copy(self, b_fw):
         """
-        Copy entire contents of a source `GXBF` to a destination `GXBF`
+        Copy entire contents of a source `GXBF <geosoft.gxapi.GXBF>` to a destination `GXBF <geosoft.gxapi.GXBF>`
         """
         self._wrapper.copy(b_fw._wrapper)
         
@@ -108,7 +108,7 @@ class GXBF:
     @classmethod
     def create(cls, file, status):
         """
-        Create `GXBF` object.
+        Create `GXBF <geosoft.gxapi.GXBF>` object.
 
         **Note:**
 
@@ -132,7 +132,7 @@ class GXBF:
     @classmethod
     def create_sbf(cls, sbf, file, status):
         """
-        Create `GXBF` object inside an `GXSBF`.
+        Create `GXBF <geosoft.gxapi.GXBF>` object inside an `GXSBF <geosoft.gxapi.GXSBF>`.
 
         **Note:**
 
@@ -160,7 +160,7 @@ class GXBF:
 
     def query_write(self):
         """
-        Check if you can write to the `GXBF`.
+        Check if you can write to the `GXBF <geosoft.gxapi.GXBF>`.
         """
         ret_val = self._wrapper.query_write()
         return ret_val
@@ -170,7 +170,7 @@ class GXBF:
 
     def read_binary_string(self, bytes, encoding, data):
         """
-        Reads string data from current position in `GXBF`
+        Reads string data from current position in `GXBF <geosoft.gxapi.GXBF>`
         """
         data.value = self._wrapper.read_binary_string(bytes, encoding, data.value.encode())
         
@@ -200,17 +200,17 @@ class GXBF:
 
     def read_int(self, type, data):
         """
-        Reads int data from current position in `GXBF`
+        Reads int data from current position in `GXBF <geosoft.gxapi.GXBF>`
 
         **Note:**
 
         If the data source may be in byte order different from that
         required by the reader, you can add the source byte-order
-        to the `GXBF` elelment type.  The byte order will be swapped
+        to the `GXBF <geosoft.gxapi.GXBF>` elelment type.  The byte order will be swapped
         if required.  For example, to write out a real number 3.5
         with Most-Significant_Byte first (Mortorola) convention:
         
-        `write_double`(hBF,`BF_BYTEORDER_MSB`+`GS_REAL`,3.5).
+        `write_double <geosoft.gxapi.GXBF.write_double>`(hBF,`BF_BYTEORDER_MSB <geosoft.gxapi.BF_BYTEORDER_MSB>`+`GS_REAL <geosoft.gxapi.GS_REAL>`,3.5).
         
         If a byte order is not specified, the source is assumed to be
         in the native byte order of the reading/writing computer.
@@ -223,17 +223,17 @@ class GXBF:
 
     def read_double(self, type, data):
         """
-        Reads real data from current position in `GXBF`
+        Reads real data from current position in `GXBF <geosoft.gxapi.GXBF>`
 
         **Note:**
 
         If the data source may be in byte order different from that
         required by the reader, you can add the source byte-order
-        to the `GXBF` elelment type.  The byte order will be swapped
+        to the `GXBF <geosoft.gxapi.GXBF>` elelment type.  The byte order will be swapped
         if required.  For example, to write out a real number 3.5
         with Most-Significant_Byte first (Mortorola) convention:
         
-        `write_double`(hBF,`BF_BYTEORDER_MSB`+`GS_REAL`,3.5).
+        `write_double <geosoft.gxapi.GXBF.write_double>`(hBF,`BF_BYTEORDER_MSB <geosoft.gxapi.BF_BYTEORDER_MSB>`+`GS_REAL <geosoft.gxapi.GS_REAL>`,3.5).
         
         If a byte order is not specified, the source is assumed to be
         in the native byte order of the reading/writing computer.
@@ -246,17 +246,17 @@ class GXBF:
 
     def read_vv(self, type, vv):
         """
-        Read data to a `GXVV` from current position in `GXBF`
+        Read data to a `GXVV <geosoft.gxapi.GXVV>` from current position in `GXBF <geosoft.gxapi.GXBF>`
 
         **Note:**
 
         If the data source may be in byte order different from that
         required by the reader, you can add the source byte-order
-        to the `GXBF` elelment type.  The byte order will be swapped
+        to the `GXBF <geosoft.gxapi.GXBF>` elelment type.  The byte order will be swapped
         if required.  For example, to write out a real number 3.5
         with Most-Significant_Byte first (Mortorola) convention:
         
-        `write_double`(hBF,`BF_BYTEORDER_MSB`+`GS_REAL`,3.5).
+        `write_double <geosoft.gxapi.GXBF.write_double>`(hBF,`BF_BYTEORDER_MSB <geosoft.gxapi.BF_BYTEORDER_MSB>`+`GS_REAL <geosoft.gxapi.GS_REAL>`,3.5).
         
         If a byte order is not specified, the source is assumed to be
         in the native byte order of the reading/writing computer.
@@ -279,7 +279,7 @@ class GXBF:
 
     def write_binary_string(self, encoding, data):
         """
-        Write a binary string to a `GXBF`
+        Write a binary string to a `GXBF <geosoft.gxapi.GXBF>`
         """
         self._wrapper.write_binary_string(encoding, data.encode())
         
@@ -289,7 +289,7 @@ class GXBF:
 
     def write_data_null(self):
         """
-        Writes a null byte (0) to `GXBF`
+        Writes a null byte (0) to `GXBF <geosoft.gxapi.GXBF>`
         """
         self._wrapper.write_data_null()
         
@@ -299,7 +299,7 @@ class GXBF:
 
     def write_int(self, type, data):
         """
-        Writes int to the `GXBF`
+        Writes int to the `GXBF <geosoft.gxapi.GXBF>`
 
         **Note:**
 
@@ -317,7 +317,7 @@ class GXBF:
 
     def write_double(self, type, data):
         """
-        Writes real to the `GXBF`
+        Writes real to the `GXBF <geosoft.gxapi.GXBF>`
 
         **Note:**
 
@@ -335,7 +335,7 @@ class GXBF:
 
     def write_vv(self, type, vv):
         """
-        Writes `GXVV` to the `GXBF`
+        Writes `GXVV <geosoft.gxapi.GXVV>` to the `GXBF <geosoft.gxapi.GXBF>`
 
         **Note:**
 

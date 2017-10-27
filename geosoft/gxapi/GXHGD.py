@@ -64,7 +64,7 @@ class GXHGD:
     @classmethod
     def create(cls, name):
         """
-        Create a handle to an `GXHGD` object
+        Create a handle to an `GXHGD <geosoft.gxapi.GXHGD>` object
         """
         ret_val = gxapi_cy.WrapHGD.create(GXContext._get_tls_geo(), name.encode())
         return GXHGD(ret_val)
@@ -76,7 +76,7 @@ class GXHGD:
 
     def export_img(self, name):
         """
-        Export all layers of this `GXHGD` into grid files.
+        Export all layers of this `GXHGD <geosoft.gxapi.GXHGD>` into grid files.
         """
         self._wrapper.export_img(name.encode())
         
@@ -96,7 +96,7 @@ class GXHGD:
     @classmethod
     def h_create_img(cls, img, name):
         """
-        Make an `GXHGD` from an `GXIMG`
+        Make an `GXHGD <geosoft.gxapi.GXHGD>` from an `GXIMG <geosoft.gxapi.GXIMG>`
         """
         ret_val = gxapi_cy.WrapHGD.h_create_img(GXContext._get_tls_geo(), img._wrapper, name.encode())
         return GXHGD(ret_val)

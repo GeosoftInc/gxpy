@@ -18,7 +18,7 @@ class GXIPGUI:
     """
     GXIPGUI class.
 
-    This class is used in the `GXIP` System for `GXGUI` functions
+    This class is used in the `GXIP <geosoft.gxapi.GXIP>` System for `GXGUI <geosoft.gxapi.GXGUI>` functions
     such as defining parameters for pseudo-section plots.
     """
 
@@ -61,7 +61,7 @@ class GXIPGUI:
     @classmethod
     def modify_job(cls, ip, db, ini, plot_type, page):
         """
-        Modify parameters for an `GXIP` plot.
+        Modify parameters for an `GXIP <geosoft.gxapi.GXIP>` plot.
         """
         ret_val, page.value = gxapi_cy.WrapIPGUI.modify_job(GXContext._get_tls_geo(), ip._wrapper, db._wrapper, ini.encode(), plot_type, page.value)
         return ret_val
@@ -71,7 +71,7 @@ class GXIPGUI:
     @classmethod
     def launch_ipqc_tool(cls, db, line, chan):
         """
-        Launch the In-Line `GXIP` QC tool on a database.
+        Launch the In-Line `GXIP <geosoft.gxapi.GXIP>` QC tool on a database.
 
         **Note:**
 
@@ -85,7 +85,7 @@ class GXIPGUI:
     @classmethod
     def launch_offset_ipqc_tool(cls, db, line, chan):
         """
-        Launch the Offset `GXIP` QC tool on a database.
+        Launch the Offset `GXIP <geosoft.gxapi.GXIP>` QC tool on a database.
 
         **Note:**
 

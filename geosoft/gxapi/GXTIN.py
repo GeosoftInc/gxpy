@@ -18,10 +18,10 @@ class GXTIN:
     """
     GXTIN class.
 
-    The `GXTIN` class calculates the Delaunay triangulation of the
+    The `GXTIN <geosoft.gxapi.GXTIN>` class calculates the Delaunay triangulation of the
     positions in a database. This is the "best" set of triangles
     that can be formed from irregularly distributed points. The
-    serialized `GXTIN` files can be used for gridding using the
+    serialized `GXTIN <geosoft.gxapi.GXTIN>` files can be used for gridding using the
     Tin-based Nearest Neighbour Algorithm, or for plotting the
     Delaunay triangles or Voronoi cells to a map.
     """
@@ -65,7 +65,7 @@ class GXTIN:
 
     def copy(self, source):
         """
-        Copy `GXTIN`
+        Copy `GXTIN <geosoft.gxapi.GXTIN>`
         """
         self._wrapper.copy(source._wrapper)
         
@@ -75,12 +75,12 @@ class GXTIN:
     @classmethod
     def create(cls, vv_x, vv_y, vv_z):
         """
-        This method creates a `GXTIN` object.
+        This method creates a `GXTIN <geosoft.gxapi.GXTIN>` object.
 
         **Note:**
 
-        CreateTIN does the `GXTIN` calculation.
-        The Z values are not required, and a 0-length `GXVV` can be used to indicate
+        CreateTIN does the `GXTIN <geosoft.gxapi.GXTIN>` calculation.
+        The Z values are not required, and a 0-length `GXVV <geosoft.gxapi.GXVV>` can be used to indicate
         the values are not to be used.
         """
         ret_val = gxapi_cy.WrapTIN.create(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
@@ -91,7 +91,7 @@ class GXTIN:
     @classmethod
     def create_s(cls, bf):
         """
-        Create `GXTIN` from a serialized source
+        Create `GXTIN <geosoft.gxapi.GXTIN>` from a serialized source
         """
         ret_val = gxapi_cy.WrapTIN.create_s(GXContext._get_tls_geo(), bf._wrapper)
         return GXTIN(ret_val)
@@ -103,7 +103,7 @@ class GXTIN:
     @classmethod
     def export_xml(cls, tin, crc, file):
         """
-        Export a `GXTIN` object as XML
+        Export a `GXTIN <geosoft.gxapi.GXTIN>` object as XML
         """
         crc.value = gxapi_cy.WrapTIN.export_xml(GXContext._get_tls_geo(), tin.encode(), crc.value, file.encode())
         
@@ -113,7 +113,7 @@ class GXTIN:
 
     def get_convex_hull(self, ply):
         """
-        Get the convex hull of the `GXTIN`.
+        Get the convex hull of the `GXTIN <geosoft.gxapi.GXTIN>`.
 
         **Note:**
 
@@ -138,20 +138,20 @@ class GXTIN:
 
     def get_joins(self, vv_joins, vv_index, vv_num):
         """
-        Get joins from a `GXTIN` mesh.
+        Get joins from a `GXTIN <geosoft.gxapi.GXTIN>` mesh.
 
         **Note:**
 
         The join information is returned in three VVs.
         
-            - The joins `GXVV` is a list off the adjacent nodes for
+            - The joins `GXVV <geosoft.gxapi.GXVV>` is a list off the adjacent nodes for
               each node, arranged for 1st node, 2nd node etc.
-            - The index `GXVV` gives the starting index in the
-              joins `GXVV` for the adjacent nodes to each node.
-            - The number `GXVV` gives the number of adjacent nodes
+            - The index `GXVV <geosoft.gxapi.GXVV>` gives the starting index in the
+              joins `GXVV <geosoft.gxapi.GXVV>` for the adjacent nodes to each node.
+            - The number `GXVV <geosoft.gxapi.GXVV>` gives the number of adjacent nodes
               for each node.
         
-        All VVs must be type `GS_LONG`.
+        All VVs must be type `GS_LONG <geosoft.gxapi.GS_LONG>`.
         """
         self._wrapper.get_joins(vv_joins._wrapper, vv_index._wrapper, vv_num._wrapper)
         
@@ -161,7 +161,7 @@ class GXTIN:
 
     def get_mesh(self, vv):
         """
-        Get lines from a `GXTIN` mesh.
+        Get lines from a `GXTIN <geosoft.gxapi.GXTIN>` mesh.
         """
         self._wrapper.get_mesh(vv._wrapper)
         
@@ -171,11 +171,11 @@ class GXTIN:
 
     def get_nodes(self, vvx, vvy, vvz):
         """
-        Get the X,Y locations and Z values of the `GXTIN` nodes.
+        Get the X,Y locations and Z values of the `GXTIN <geosoft.gxapi.GXTIN>` nodes.
 
         **Note:**
 
-        If this is not a Z-valued `GXTIN`, the Z values will
+        If this is not a Z-valued `GXTIN <geosoft.gxapi.GXTIN>`, the Z values will
         be dummies.
         """
         self._wrapper.get_nodes(vvx._wrapper, vvy._wrapper, vvz._wrapper)
@@ -216,7 +216,7 @@ class GXTIN:
 
     def is_z_valued(self):
         """
-        Does the `GXTIN` contain Z values with each X,Y?
+        Does the `GXTIN <geosoft.gxapi.GXTIN>` contain Z values with each X,Y?
         """
         ret_val = self._wrapper.is_z_valued()
         return ret_val
@@ -255,7 +255,7 @@ class GXTIN:
 
     def nodes(self):
         """
-        Returns the number of nodes in the `GXTIN`
+        Returns the number of nodes in the `GXTIN <geosoft.gxapi.GXTIN>`
         """
         ret_val = self._wrapper.nodes()
         return ret_val
@@ -269,11 +269,11 @@ class GXTIN:
 
         **Note:**
 
-        The `GXTIN` have been created using max length = `rDUMMY` to
-        ensure that the `GXTIN` has a convex hull (otherwise the
+        The `GXTIN <geosoft.gxapi.GXTIN>` have been created using max length = `rDUMMY <geosoft.gxapi.rDUMMY>` to
+        ensure that the `GXTIN <geosoft.gxapi.GXTIN>` has a convex hull (otherwise the
         routine that locates the triangle for a given location may fail).
-        The `GXTIN` must also have been created using the Z values.
-        Values located outside the convex hull are set to `rDUMMY`.
+        The `GXTIN <geosoft.gxapi.GXTIN>` must also have been created using the Z values.
+        Values located outside the convex hull are set to `rDUMMY <geosoft.gxapi.rDUMMY>`.
         The method is based on the following paper:
         
         Sambridge, M., Braun, J., and McQueen, H., 1995,
@@ -289,7 +289,7 @@ class GXTIN:
 
     def triangles(self):
         """
-        Returns the number of triangles in the `GXTIN`.
+        Returns the number of triangles in the `GXTIN <geosoft.gxapi.GXTIN>`.
         """
         ret_val = self._wrapper.triangles()
         return ret_val
@@ -303,13 +303,13 @@ class GXTIN:
 
         **Note:**
 
-        The `GXTIN` have been created using max length = `rDUMMY` to
-        ensure that the `GXTIN` has a convex hull (otherwise the
+        The `GXTIN <geosoft.gxapi.GXTIN>` have been created using max length = `rDUMMY <geosoft.gxapi.rDUMMY>` to
+        ensure that the `GXTIN <geosoft.gxapi.GXTIN>` has a convex hull (otherwise the
         routine that locates the triangle for a given location may fail).
-        The `GXTIN` must also have been created using the Z values.
-        Values located outside the convex hull are set to `rDUMMY`.
+        The `GXTIN <geosoft.gxapi.GXTIN>` must also have been created using the Z values.
+        Values located outside the convex hull are set to `rDUMMY <geosoft.gxapi.rDUMMY>`.
         
-        The values are set assuming that each `GXTIN` triangle defines a
+        The values are set assuming that each `GXTIN <geosoft.gxapi.GXTIN>` triangle defines a
         plane.
         """
         self._wrapper.linear_interp_vv(vvx._wrapper, vvy._wrapper, vvz._wrapper)
@@ -324,11 +324,11 @@ class GXTIN:
 
         **Note:**
 
-        The `GXTIN` have been created using max length = `rDUMMY` to
-        ensure that the `GXTIN` has a convex hull (otherwise the
+        The `GXTIN <geosoft.gxapi.GXTIN>` have been created using max length = `rDUMMY <geosoft.gxapi.rDUMMY>` to
+        ensure that the `GXTIN <geosoft.gxapi.GXTIN>` has a convex hull (otherwise the
         routine that locates the triangle for a given location may fail).
-        The `GXTIN` must also have been created using the Z values.
-        Values located outside the convex hull are set to `rDUMMY`.
+        The `GXTIN <geosoft.gxapi.GXTIN>` must also have been created using the Z values.
+        Values located outside the convex hull are set to `rDUMMY <geosoft.gxapi.rDUMMY>`.
         
         Within each voronoi triangle, the Z value of node closest to the input
         X,Y location is returned.
@@ -346,7 +346,7 @@ class GXTIN:
         **Note:**
 
         The TINned range is the range of X and Y covered by
-        the `GXTIN` triangles. It can thus be less than the full
+        the `GXTIN <geosoft.gxapi.GXTIN>` triangles. It can thus be less than the full
         X and Y range of the nodes themselves, if a full
         convex hull is not calculated.
         """
@@ -358,7 +358,7 @@ class GXTIN:
 
     def serial(self, bf):
         """
-        Serialize `GXTIN`
+        Serialize `GXTIN <geosoft.gxapi.GXTIN>`
         """
         self._wrapper.serial(bf._wrapper)
         

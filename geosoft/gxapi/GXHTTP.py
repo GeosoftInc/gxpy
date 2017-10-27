@@ -18,13 +18,13 @@ class GXHTTP:
     """
     GXHTTP class.
 
-    Connect to an Internet Server using `GXHTTP`.
+    Connect to an Internet Server using `GXHTTP <geosoft.gxapi.GXHTTP>`.
 
     **Note:**
 
     References:
     
-    1. http://www.w3.org/Protocols/`GXHTTP`/HTTP2.html
+    1. http://www.w3.org/Protocols/`GXHTTP <geosoft.gxapi.GXHTTP>`/HTTP2.html
     
     2. http://www.w3.org/Addressing/URL/5_BNF.html
     
@@ -73,7 +73,7 @@ class GXHTTP:
     @classmethod
     def create(cls, url, user_name, password, purpose):
         """
-        This method creates a connection to an `GXHTTP` server
+        This method creates a connection to an `GXHTTP <geosoft.gxapi.GXHTTP>` server
 
         **Note:**
 
@@ -108,12 +108,12 @@ class GXHTTP:
 
     def download(self, file, bf, dynamic):
         """
-        Download file from the internet to a `GXBF`.
+        Download file from the internet to a `GXBF <geosoft.gxapi.GXBF>`.
 
         **Note:**
 
         The file will be written starting at the current location
-        in the `GXBF`
+        in the `GXBF <geosoft.gxapi.GXBF>`
         """
         self._wrapper.download(file.encode(), bf._wrapper, dynamic)
         
@@ -123,12 +123,12 @@ class GXHTTP:
 
     def silent_download(self, file, bf, dynamic):
         """
-        Download file from the internet to a `GXBF` with no prompt for proxy authentication.
+        Download file from the internet to a `GXBF <geosoft.gxapi.GXBF>` with no prompt for proxy authentication.
 
         **Note:**
 
         The file will be written starting at the current location
-        in the `GXBF`. No prompt for proxy authentication
+        in the `GXBF <geosoft.gxapi.GXBF>`. No prompt for proxy authentication
         """
         self._wrapper.silent_download(file.encode(), bf._wrapper, dynamic)
         
@@ -142,8 +142,8 @@ class GXHTTP:
 
         **Note:**
 
-        Full contents of the `GXBF` are sent in an `GXHTTP` GET message.
-        `GXBF` pointer is returned to location before the call.
+        Full contents of the `GXBF <geosoft.gxapi.GXBF>` are sent in an `GXHTTP <geosoft.gxapi.GXHTTP>` GET message.
+        `GXBF <geosoft.gxapi.GXBF>` pointer is returned to location before the call.
         
         request URL will be:
         http://server/path?search
@@ -160,7 +160,7 @@ class GXHTTP:
 
         **Note:**
 
-        Full contents of the `GXBF` are sent as an `GXHTTP` POST message.
+        Full contents of the `GXBF <geosoft.gxapi.GXBF>` are sent as an `GXHTTP <geosoft.gxapi.GXHTTP>` POST message.
         
         request URL will be:
         http://server/path?search

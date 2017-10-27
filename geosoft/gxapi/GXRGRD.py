@@ -19,9 +19,9 @@ class GXRGRD:
     """
     GXRGRD class.
 
-    The `GXRGRD` object is used as a storage place for the control
+    The `GXRGRD <geosoft.gxapi.GXRGRD>` object is used as a storage place for the control
     parameters which the Rangrid (minimum curvature) program needs to execute. The
-    Run_RGRD function executes the Rangrid program using the `GXRGRD` object.
+    Run_RGRD function executes the Rangrid program using the `GXRGRD <geosoft.gxapi.GXRGRD>` object.
     """
 
     def __enter__(self):
@@ -63,11 +63,11 @@ class GXRGRD:
 
     def clear(self):
         """
-        Clears all the parameters in a `GXRGRD` object
+        Clears all the parameters in a `GXRGRD <geosoft.gxapi.GXRGRD>` object
 
         **Note:**
 
-        DLL name `clear`
+        DLL name `clear <geosoft.gxapi.GXRGRD.clear>`
         """
         self._wrapper.clear()
         
@@ -84,7 +84,7 @@ class GXRGRD:
         The Rangrid object is initially empty. It will store the
         control file parameters which the Rangrid program needs
         to execute. Use the LoadParms_RGRD method to get the
-        control file parameters into the `GXRGRD` object.
+        control file parameters into the `GXRGRD <geosoft.gxapi.GXRGRD>` object.
         """
         ret_val = gxapi_cy.WrapRGRD.create(GXContext._get_tls_geo())
         return GXRGRD(ret_val)
@@ -94,12 +94,12 @@ class GXRGRD:
     @classmethod
     def create_img(cls, vv_x, vv_y, vv_z, ipj, ctl, grid):
         """
-        Run Rangrid directly on XYZ `GXVV` data, output to an `GXIMG`.
+        Run Rangrid directly on XYZ `GXVV <geosoft.gxapi.GXVV>` data, output to an `GXIMG <geosoft.gxapi.GXIMG>`.
 
         **Note:**
 
-        If the grid file name is defined, the `GXIMG` is tied to a new output file.
-        If the grid file name is not defined, the `GXIMG` is memory-based; not
+        If the grid file name is defined, the `GXIMG <geosoft.gxapi.GXIMG>` is tied to a new output file.
+        If the grid file name is not defined, the `GXIMG <geosoft.gxapi.GXIMG>` is memory-based; not
         tied to a file.
         """
         ret_val = gxapi_cy.WrapRGRD.create_img(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, ipj._wrapper, ctl.encode(), grid.encode())
@@ -129,9 +129,9 @@ class GXRGRD:
 
         If the control file name passed into this function is a file
         which does not exist, then the defaults for a Rangrid control
-        file will be generated and put into the `GXRGRD` object.
+        file will be generated and put into the `GXRGRD <geosoft.gxapi.GXRGRD>` object.
         Otherwise, the control file's settings are retrieved from
-        the file and loaded into the `GXRGRD` object.
+        the file and loaded into the `GXRGRD <geosoft.gxapi.GXRGRD>` object.
         """
         ret_val = self._wrapper.load_parms(file.encode())
         return ret_val

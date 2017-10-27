@@ -18,7 +18,7 @@ class GXLST:
     """
     GXLST class.
 
-    The `GXLST` class is used to create and retrieve lists,
+    The `GXLST <geosoft.gxapi.GXLST>` class is used to create and retrieve lists,
     and to perform specific actions on lists, including
     retrieving list items, sorting lists and adding or
     removing list items.
@@ -77,8 +77,8 @@ class GXLST:
 
         **Note:**
 
-        A number of `GXDB` functions return LSTs with the channel
-        or line name in the "Name" part of a `GXLST`, and the
+        A number of `GXDB <geosoft.gxapi.GXDB>` functions return LSTs with the channel
+        or line name in the "Name" part of a `GXLST <geosoft.gxapi.GXLST>`, and the
         handle (DB_SYMB) in the value part. This function lets
         you quickly add a new item without the need of coverting
         the handle into a string value.
@@ -109,9 +109,9 @@ class GXLST:
 
         **Note:**
 
-        Item names and values are added using "`add_unique_item`",
+        Item names and values are added using "`add_unique_item <geosoft.gxapi.GXLST.add_unique_item>`",
         so that existing items with the same name are replaced, and if
-        items are duplicated in the appended `GXLST`, the last one will be
+        items are duplicated in the appended `GXLST <geosoft.gxapi.GXLST>`, the last one will be
         the one to remain after the process is complete.
         """
         self._wrapper.append(lst2._wrapper)
@@ -122,7 +122,7 @@ class GXLST:
     @classmethod
     def assay_channel(cls):
         """
-        Create a `GXLST` of assay channel mask strings from file.
+        Create a `GXLST <geosoft.gxapi.GXLST>` of assay channel mask strings from file.
 
         **Note:**
 
@@ -148,7 +148,7 @@ class GXLST:
 
         .. seealso::
 
-            `find_item_mask`
+            `find_item_mask <geosoft.gxapi.GXLST.find_item_mask>`
         """
         ret_val = gxapi_cy.WrapLST.assay_channel(GXContext._get_tls_geo())
         return GXLST(ret_val)
@@ -168,7 +168,7 @@ class GXLST:
 
     def convert_from_csv_string(self, buff):
         """
-        Load a `GXLST` with items from a string.
+        Load a `GXLST <geosoft.gxapi.GXLST>` with items from a string.
 
         **Note:**
 
@@ -185,7 +185,7 @@ class GXLST:
 
     def copy(self, source):
         """
-        Copy one `GXLST` object to another.
+        Copy one `GXLST <geosoft.gxapi.GXLST>` object to another.
         """
         self._wrapper.copy(source._wrapper)
         
@@ -206,7 +206,7 @@ class GXLST:
     @classmethod
     def create_s(cls, bf):
         """
-        Create `GXLST` from serialized source.
+        Create `GXLST <geosoft.gxapi.GXLST>` from serialized source.
         """
         ret_val = gxapi_cy.WrapLST.create_s(GXContext._get_tls_geo(), bf._wrapper)
         return GXLST(ret_val)
@@ -229,15 +229,15 @@ class GXLST:
 
     def find_items(self, type, lst2, vv):
         """
-        Searches a `GXLST` for items in a second `GXLST`, returns indices of those found.
+        Searches a `GXLST <geosoft.gxapi.GXLST>` for items in a second `GXLST <geosoft.gxapi.GXLST>`, returns indices of those found.
 
         **Note:**
 
         This is a much more efficient way of determining if items in
-        one `GXLST` are found in a second, than by calling `find_item`
+        one `GXLST <geosoft.gxapi.GXLST>` are found in a second, than by calling `find_item <geosoft.gxapi.GXLST.find_item>`
         repeatedly in a loop.
-        The returned INT `GXVV` contains the same number of items as
-        the "search items" `GXLST`, and contains -1 for items where the
+        The returned INT `GXVV <geosoft.gxapi.GXVV>` contains the same number of items as
+        the "search items" `GXLST <geosoft.gxapi.GXLST>`, and contains -1 for items where the
         value is not found, and the index of items that are found.
         Comparisons are case-tolerant.
         """
@@ -267,8 +267,8 @@ class GXLST:
 
         **Note:**
 
-        A number of `GXDB` functions return LSTs with the channel
-        or line name in the "Name" part of a `GXLST`, and the
+        A number of `GXDB <geosoft.gxapi.GXDB>` functions return LSTs with the channel
+        or line name in the "Name" part of a `GXLST <geosoft.gxapi.GXLST>`, and the
         handle (DB_SYMB) in the value part. This function lets
         you quickly retrieve both the name and symbol handle
         for a given item, which needing to convert between types.
@@ -281,7 +281,7 @@ class GXLST:
 
     def convert_to_csv_string(self, buff):
         """
-        Load a string with names from a `GXLST`.
+        Load a string with names from a `GXLST <geosoft.gxapi.GXLST>`.
 
         **Note:**
 
@@ -314,14 +314,14 @@ class GXLST:
 
         **Note:**
 
-        Comparsions are case-intolerant (unlike `find_item`).
+        Comparsions are case-intolerant (unlike `find_item <geosoft.gxapi.GXLST.find_item>`).
         This means items in the list such as "``*(ppm)``" will be
         found if the input search string is "Ni (ppm)" or "Ni(ppm)",
         but not if it is "Ni (PPM)", so you should include
         both "``*ppm*``" and "``*PPM*``".
         
         It is NOT the input string that should be the mask, but
-        the `GXLST` items themselves
+        the `GXLST <geosoft.gxapi.GXLST>` items themselves
         
         This function was designed originally for geochemical
         processes in order to identify if a given channel name
@@ -329,7 +329,7 @@ class GXLST:
 
         .. seealso::
 
-            `assay_channel`
+            `assay_channel <geosoft.gxapi.GXLST.assay_channel>`
         """
         ret_val = self._wrapper.find_item_mask(type, name.encode())
         return ret_val
@@ -466,17 +466,17 @@ class GXLST:
 
     def select_csv_string_items(self, buff, ls_to):
         """
-        Load a `GXLST` with items from a second `GXLST` found in a CSV string.
+        Load a `GXLST <geosoft.gxapi.GXLST>` with items from a second `GXLST <geosoft.gxapi.GXLST>` found in a CSV string.
 
         **Note:**
 
         Items in the input string must be separated with
         commas. Parsing uses the sCommaTokens_GS function.
-        Both the name and value of the input `GXLST` items whose
+        Both the name and value of the input `GXLST <geosoft.gxapi.GXLST>` items whose
         name matches an item in the input string are
-        copied to the output `GXLST`.
+        copied to the output `GXLST <geosoft.gxapi.GXLST>`.
         Items are copied in the same order they appear in the
-        input string. Items in the string not found in the input `GXLST`
+        input string. Items in the string not found in the input `GXLST <geosoft.gxapi.GXLST>`
         are ignored, and no error is registered.
         Item matches are case-tolerant.
         """
@@ -488,7 +488,7 @@ class GXLST:
 
     def serial(self, bf):
         """
-        Serialize `GXLST` to a `GXBF`.
+        Serialize `GXLST <geosoft.gxapi.GXLST>` to a `GXBF <geosoft.gxapi.GXBF>`.
         """
         self._wrapper.serial(bf._wrapper)
         
@@ -498,7 +498,7 @@ class GXLST:
 
     def set_item(self, type, item, buff):
         """
-        Place an item at a specified point in the `GXLST`.
+        Place an item at a specified point in the `GXLST <geosoft.gxapi.GXLST>`.
 
         **Note:**
 

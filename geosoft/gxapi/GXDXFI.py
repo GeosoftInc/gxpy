@@ -18,7 +18,7 @@ class GXDXFI:
     """
     GXDXFI class.
 
-    The `GXDXFI` class is used for importing AutoCAD® dxf files into Geosoft maps.
+    The `GXDXFI <geosoft.gxapi.GXDXFI>` class is used for importing AutoCAD® dxf files into Geosoft maps.
     """
 
     def __enter__(self):
@@ -60,7 +60,7 @@ class GXDXFI:
     @classmethod
     def create(cls, name):
         """
-        Create `GXDXFI`.
+        Create `GXDXFI <geosoft.gxapi.GXDXFI>`.
         """
         ret_val = gxapi_cy.WrapDXFI.create(GXContext._get_tls_geo(), name.encode())
         return GXDXFI(ret_val)
@@ -72,7 +72,7 @@ class GXDXFI:
     @classmethod
     def dxf2_ply(cls, ply, dxfi):
         """
-        Convert a DXF file to a `GXPLY` object
+        Convert a DXF file to a `GXPLY <geosoft.gxapi.GXPLY>` object
         """
         gxapi_cy.WrapDXFI.dxf2_ply(GXContext._get_tls_geo(), ply._wrapper, dxfi._wrapper)
         

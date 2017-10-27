@@ -77,7 +77,7 @@ class GXGUI:
     @classmethod
     def fft2_spec_filter(cls, spec_file_name, con_file_name):
         """
-        Interactive `GXFFT2` radially averaged power spectrum filter
+        Interactive `GXFFT2 <geosoft.gxapi.GXFFT2>` radially averaged power spectrum filter
         """
         gxapi_cy.WrapGUI.fft2_spec_filter(GXContext._get_tls_geo(), spec_file_name.encode(), con_file_name.encode())
         
@@ -188,14 +188,14 @@ class GXGUI:
         **Note:**
 
         Color value is set on input, and new value returned.
-        If the input color type is `C_TRANSPARENT`, then the color
+        If the input color type is `C_TRANSPARENT <geosoft.gxapi.C_TRANSPARENT>`, then the color
         is set to white, if any other type is input the output is
         guaranteed to be of the same type.
         
-        If the third flag is `GS_TRUE` is used, then on exit, if white is
+        If the third flag is `GS_TRUE <geosoft.gxapi.GS_TRUE>` is used, then on exit, if white is
         selected, the user is prompted: 'Do you want white (Yes) or
         "None" (No) ?' and the color is converted as requested.
-        If this is not the case, the `C_TRANSPARENT` is converted
+        If this is not the case, the `C_TRANSPARENT <geosoft.gxapi.C_TRANSPARENT>` is converted
         to white (if "Ok" is selected) and no choice is offered.
         """
         ret_val, col.value = gxapi_cy.WrapGUI.color_form(GXContext._get_tls_geo(), col.value, no_col)
@@ -206,13 +206,13 @@ class GXGUI:
     @classmethod
     def color_transform(cls, itr, st):
         """
-        Define an `GXITR` of up to 8 zones.
+        Define an `GXITR <geosoft.gxapi.GXITR>` of up to 8 zones.
 
         **Note:**
 
         The statistics object is required in order to determine
         data ranges, percentiles, etc. Create it using
-        `GXST.create_exact`, or be sure to enable histogram statistics.
+        `GXST.create_exact <geosoft.gxapi.GXST.create_exact>`, or be sure to enable histogram statistics.
         """
         ret_val = gxapi_cy.WrapGUI.color_transform(GXContext._get_tls_geo(), itr._wrapper, st._wrapper)
         return ret_val
@@ -222,15 +222,15 @@ class GXGUI:
     @classmethod
     def coord_sys_wizard(cls, ipj, editable, mode, source_label, source):
         """
-        Launch the coordinate system definition/display `GXGUI`.
+        Launch the coordinate system definition/display `GXGUI <geosoft.gxapi.GXGUI>`.
 
         **Note:**
 
         Launches the new GX.Net single-dialog coordinate system
-        definition dialog. The input `GXIPJ` is modified on return
+        definition dialog. The input `GXIPJ <geosoft.gxapi.GXIPJ>` is modified on return
         if OK is selected (and the editable parameter is 1).
         The "Data source label" and "Data source" is information displayed
-        in the dialog for the user to know where the `GXIPJ` came from (e.g. "Grid: X.grd")
+        in the dialog for the user to know where the `GXIPJ <geosoft.gxapi.GXIPJ>` came from (e.g. "Grid: X.grd")
         """
         ret_val = gxapi_cy.WrapGUI.coord_sys_wizard(GXContext._get_tls_geo(), ipj._wrapper, editable, mode, source_label.encode(), source.encode())
         return ret_val
@@ -240,11 +240,11 @@ class GXGUI:
     @classmethod
     def coord_sys_wizard_licensed(cls, ipj, editable, mode, source_label, source):
         """
-        Launch the coordinate system definition/display `GXGUI`.
+        Launch the coordinate system definition/display `GXGUI <geosoft.gxapi.GXGUI>`.
 
         **Note:**
 
-        Same as `coord_sys_wizard_licensed` but will always be editable. The other
+        Same as `coord_sys_wizard_licensed <geosoft.gxapi.GXGUI.coord_sys_wizard_licensed>` but will always be editable. The other
         method is not editable in the viewer while this one is.
         """
         ret_val = gxapi_cy.WrapGUI.coord_sys_wizard_licensed(GXContext._get_tls_geo(), ipj._wrapper, editable, mode, source_label.encode(), source.encode())
@@ -255,11 +255,11 @@ class GXGUI:
     @classmethod
     def coord_sys_wizard_grid(cls, ipj, target_ipj, editable, mode, source_label, source, nx, ny, x0, y0, dx, dy, rot):
         """
-        Launch the coordinate system definition/display `GXGUI`.
+        Launch the coordinate system definition/display `GXGUI <geosoft.gxapi.GXGUI>`.
 
         **Note:**
 
-        Same as `coord_sys_wizard_licensed` but allows the original grid info to be adjusted
+        Same as `coord_sys_wizard_licensed <geosoft.gxapi.GXGUI.coord_sys_wizard_licensed>` but allows the original grid info to be adjusted
         when projections on section or oriented plan grids are modified.
         In the tool, it is the "modified" orientation required to keep the edited projection's grid
         in the same location as it was in the target projection.
@@ -321,10 +321,10 @@ class GXGUI:
 
         **Note:**
 
-        Only uses the current `GXDB`. This function does
+        Only uses the current `GXDB <geosoft.gxapi.GXDB>`. This function does
         not exactly work as supposed to. Instead of using
-        the `GXEDB` handle passed to it, it only will use
-        the current `GXDB`. Please see ExportXYXTemplateEditorEx_GUI
+        the `GXEDB <geosoft.gxapi.GXEDB>` handle passed to it, it only will use
+        the current `GXDB <geosoft.gxapi.GXDB>`. Please see ExportXYXTemplateEditorEx_GUI
         for an updated function.
         """
         ret_val = gxapi_cy.WrapGUI.export_xyz_template_editor(GXContext._get_tls_geo(), db._wrapper, template.encode(), size)
@@ -352,7 +352,7 @@ class GXGUI:
         **Note:**
 
         For example, if "Database (``*.gdb``)" is input,
-        then the `FILE_FILTER_GDB` value is returned.
+        then the `FILE_FILTER_GDB <geosoft.gxapi.FILE_FILTER_GDB>` value is returned.
         """
         ret_val = gxapi_cy.WrapGUI.file_filter_index(GXContext._get_tls_geo(), filter.encode())
         return ret_val
@@ -362,7 +362,7 @@ class GXGUI:
     @classmethod
     def gcs_datum_warning_shp(cls, data_source, ipj):
         """
-        Launch the GCS Datum Warning dialog for `GXSHP` files.
+        Launch the GCS Datum Warning dialog for `GXSHP <geosoft.gxapi.GXSHP>` files.
 
         **Note:**
 
@@ -376,7 +376,7 @@ class GXGUI:
     @classmethod
     def gcs_datum_warning_shpdb_ex(cls, source_lst, datum_from_lst, ldtlst, db):
         """
-        Launch the GCS Datum Warning dialog for `GXSHP` files (Database).
+        Launch the GCS Datum Warning dialog for `GXSHP <geosoft.gxapi.GXSHP>` files (Database).
 
         **Note:**
 
@@ -390,7 +390,7 @@ class GXGUI:
     @classmethod
     def gcs_datum_warning_shp_ex(cls, source_lst, datum_from_lst, ldtlst, mview):
         """
-        Launch the GCS Datum Warning dialog for `GXSHP` files.
+        Launch the GCS Datum Warning dialog for `GXSHP <geosoft.gxapi.GXSHP>` files.
 
         **Note:**
 
@@ -460,12 +460,12 @@ class GXGUI:
         **Note:**
 
         Returns the four parts of the file filter;
-        e.g. for `FILE_FILTER_GDB` it returns:
+        e.g. for `FILE_FILTER_GDB <geosoft.gxapi.FILE_FILTER_GDB>` it returns:
         
         Filter:    "Database (``*.gdb``)"
         Mask:      "``*.gdb``"
         Extension: "gdb"
-        Directory: "`GS_DIRECTORY_NONE`"
+        Directory: "`GS_DIRECTORY_NONE <geosoft.gxapi.GS_DIRECTORY_NONE>`"
         
         This function is useful for constuction open/save dialog
         file filters, especially in GX.Net functions.
@@ -478,12 +478,12 @@ class GXGUI:
     @classmethod
     def get_gs_directory(cls, path, dir):
         """
-        Return the directory path for value of `GS_DIRECTORY`.
+        Return the directory path for value of `GS_DIRECTORY_`.
 
         **Note:**
 
-        Works along with the `get_file_filter` function. Note that
-        most values of FILE_FILTER_XXX will return `GS_DIRECTORY_NONE`,
+        Works along with the `get_file_filter <geosoft.gxapi.GXGUI.get_file_filter>` function. Note that
+        most values of FILE_FILTER_XXX will return `GS_DIRECTORY_NONE <geosoft.gxapi.GS_DIRECTORY_NONE>`,
         and give the current workspace directory.
         
         This function is useful for constuction open/save dialog
@@ -507,13 +507,13 @@ class GXGUI:
     @classmethod
     def color_transform_ex(cls, itr, st, zones, load_save, file):
         """
-        Define an `GXITR` of up to 12 zones, with file load/save buttons.
+        Define an `GXITR <geosoft.gxapi.GXITR>` of up to 12 zones, with file load/save buttons.
 
         **Note:**
 
         The statistics object is required in order to determine
         data ranges, percentiles, etc. Create it using
-        `GXST.create_exact`, or be sure to enable histogram statistics.
+        `GXST.create_exact <geosoft.gxapi.GXST.create_exact>`, or be sure to enable histogram statistics.
         The color transform file name is used as the default when the save
         button is pushed, and is updated both after the load and save buttons
         are pushed by the value input or selected by the user.
@@ -526,20 +526,20 @@ class GXGUI:
     @classmethod
     def cumulative_percent(cls, file, itr):
         """
-        Define a percent-based `GXITR` of up to 12 zones.
+        Define a percent-based `GXITR <geosoft.gxapi.GXITR>` of up to 12 zones.
 
         **Note:**
 
-        The `GXITR` values are interpreted as cumulative percent values, using
-        the "PERCENT=1" value in the `GXITR`'s `GXREG`.
+        The `GXITR <geosoft.gxapi.GXITR>` values are interpreted as cumulative percent values, using
+        the "PERCENT=1" value in the `GXITR <geosoft.gxapi.GXITR>`'s `GXREG <geosoft.gxapi.GXREG>`.
         
         Note that processes using ITRs do not automatically know to convert between
-        percent values and "actual" data values. The `GXREG` "PERCENT" value is simply
+        percent values and "actual" data values. The `GXREG <geosoft.gxapi.GXREG>` "PERCENT" value is simply
         a flag to indicate to a user that the values are intended to be in the range
-        from 0 < x < 100. The `GXITR` should not, therefore, be applied directly to data
+        from 0 < x < 100. The `GXITR <geosoft.gxapi.GXITR>` should not, therefore, be applied directly to data
         unless that data is already given in percent.
         
-        If the file name is defined on input, the initial `GXITR` will be loaded from it.
+        If the file name is defined on input, the initial `GXITR <geosoft.gxapi.GXITR>` will be loaded from it.
         If it is left blank, a default 5-color transform with
         The color transform file name is used as the default when the save
         button is pushed, and is updated both after the load and save buttons
@@ -614,7 +614,7 @@ class GXGUI:
     @classmethod
     def import_drill_database_ado2(cls, connect, temp, table, type, reg):
         """
-        Same as `import_drill_database_ado`, but template name is returned.
+        Same as `import_drill_database_ado <geosoft.gxapi.GXGUI.import_drill_database_ado>`, but template name is returned.
 
         **Note:**
 
@@ -667,11 +667,11 @@ class GXGUI:
     @classmethod
     def import_drill_database_odbc_maxwell(cls, connect, temp, table, type, reg):
         """
-        Same as `import_drill_database_odbc` but customized for Maxwell.
+        Same as `import_drill_database_odbc <geosoft.gxapi.GXGUI.import_drill_database_odbc>` but customized for Maxwell.
 
         **Note:**
 
-        Same as `import_drill_database_odbc` but customized for Maxwell.
+        Same as `import_drill_database_odbc <geosoft.gxapi.GXGUI.import_drill_database_odbc>` but customized for Maxwell.
         """
         ret_val, connect.value, temp.value, table.value, type.value = gxapi_cy.WrapGUI.import_drill_database_odbc_maxwell(GXContext._get_tls_geo(), connect.value.encode(), temp.value.encode(), table.value.encode(), type.value, reg._wrapper)
         return ret_val
@@ -707,7 +707,7 @@ class GXGUI:
 
         This is an improved version of ImportChemDatabase_GUI using the
         new ADO technology, as opposed to DAO. Use in conjuction with
-        `GXDU.import_ado`. See also ImportDatabaseADO_GUI.
+        `GXDU.import_ado <geosoft.gxapi.GXDU.import_ado>`. See also ImportDatabaseADO_GUI.
         """
         ret_val, table.value = gxapi_cy.WrapGUI.import_chem_database_ado(GXContext._get_tls_geo(), connect.encode(), temp.encode(), table.value.encode(), type)
         return ret_val
@@ -727,7 +727,7 @@ class GXGUI:
         requests the file type.
         This function DOES NOT import the table itself, but
         creates an import template which may be used to import
-        the table (see `GXDU.import_dao`()).
+        the table (see `GXDU.import_dao <geosoft.gxapi.GXDU.import_dao>`).
         """
         ret_val, table.value = gxapi_cy.WrapGUI.import_database(GXContext._get_tls_geo(), name.encode(), temp.encode(), table.value.encode())
         return ret_val
@@ -746,7 +746,7 @@ class GXGUI:
         
         2. This function DOES NOT import the table itself, but
            creates an import template which may be used to import
-           the table (see `GXDU.import_ado`()).
+           the table (see `GXDU.import_ado <geosoft.gxapi.GXDU.import_ado>`).
         
         3. If connection string is of type "FILENAME=..." the connection will attempt to resolve
            it as a file database. (see also ODBCFileConnect_GUI)
@@ -789,7 +789,7 @@ class GXGUI:
         
         4. This function DOES NOT import the table itself, but
            creates an import template which may be used to import
-           the data (see `GXDU.import_dao`()).
+           the data (see `GXDU.import_dao <geosoft.gxapi.GXDU.import_dao>`).
         
         5. If connection string is of type "FILENAME=..." the connection will attempt to resolve
            it as a file database. (see also ODBCFileConnect_GUI)
@@ -832,7 +832,7 @@ class GXGUI:
         
         This function DOES NOT import the table itself, but
         creates an import template which may be used to import
-        the data (see `GXDU.import_dao`()).
+        the data (see `GXDU.import_dao <geosoft.gxapi.GXDU.import_dao>`).
         """
         ret_val, line.value = gxapi_cy.WrapGUI.import_database_sqlado(GXContext._get_tls_geo(), connect.encode(), sql.encode(), temp.encode(), line.value.encode())
         return ret_val
@@ -847,8 +847,8 @@ class GXGUI:
         **Note:**
 
         This is an improved version of ImportDrillDatabase_GUI using the
-        new ADO technology, as opposed to DAO. Use in conjuction with
-        `GXDU.import_ado`. See also ImportDatabaseADO_GUI.
+        new ADO technology, as opposed to DAO. Use in conjunction with
+        `GXDU.import_ado <geosoft.gxapi.GXDU.import_ado>`. See also ImportDatabaseADO_GUI.
         """
         ret_val, table.value, type.value = gxapi_cy.WrapGUI.import_drill_database_ado(GXContext._get_tls_geo(), connect.encode(), temp.encode(), table.value.encode(), type.value, reg._wrapper)
         return ret_val
@@ -862,13 +862,13 @@ class GXGUI:
 
         **Note:**
 
-        This is similar to ImportDatabaseSQL_GUI, but dispenses with
+        This is similar to `import_database_sql <geosoft.gxapi.GXGUI.import_database_sql>`, but dispenses with
         the dialog offering a selection of queries. Instead, the
         user supplies the query as a string.
         
         This function DOES NOT import the table itself, but
         creates an import template which may be used to import
-        the data (see `GXDU.import_dao`()).
+        the data (see `GXDU.import_dao <geosoft.gxapi.GXDU.import_dao>`).
         """
         ret_val = gxapi_cy.WrapGUI.import_template_sql(GXContext._get_tls_geo(), name.encode(), temp.encode(), sql.encode(), line.encode())
         return ret_val
@@ -882,13 +882,13 @@ class GXGUI:
 
         **Note:**
 
-        This is similar to ImportDatabaseSQL_GUI, but dispenses with
+        This is similar to `import_database_sql <geosoft.gxapi.GXGUI.import_database_sql>`, but dispenses with
         the dialog offering a selection of queries. Instead, the
         user supplies the query as a string.
         
         This function DOES NOT import the table itself, but
         creates an import template which may be used to import
-        the data (see `GXDU.import_ado`()).
+        the data (see `GXDU.import_ado <geosoft.gxapi.GXDU.import_ado>`).
         """
         ret_val = gxapi_cy.WrapGUI.import_template_sqlado(GXContext._get_tls_geo(), name.encode(), temp.encode(), sql.encode(), line.encode())
         return ret_val
@@ -943,7 +943,7 @@ class GXGUI:
     @classmethod
     def meta_data_tool(cls, meta, root_token, schema):
         """
-        Edit a `GXMETA` object
+        Edit a `GXMETA <geosoft.gxapi.GXMETA>` object
         """
         ret_val = gxapi_cy.WrapGUI.meta_data_tool(GXContext._get_tls_geo(), meta._wrapper, root_token, schema)
         return ret_val
@@ -1017,7 +1017,7 @@ class GXGUI:
 
         **Note:**
 
-        Same as `pattern_form` but for line patterns.
+        Same as `pattern_form <geosoft.gxapi.GXGUI.pattern_form>` but for line patterns.
         """
         ret_val, pattern.value, thickness.value, pitch.value, colour.value = gxapi_cy.WrapGUI.line_pattern_form(GXContext._get_tls_geo(), pattern.value, thickness.value, pitch.value, colour.value)
         return ret_val
@@ -1034,20 +1034,20 @@ class GXGUI:
         Takes as input two LSTs, one contains all available items,
         the second currently selected items. These are processed,
         and in the left panel are displayed all items in the first
-        `GXLST` not in the selection `GXLST`, and on the right all items
-        in the first `GXLST` which are in the selection `GXLST`. (Items in
-        the selection `GXLST` NOT in the first `GXLST` are ignored).
+        `GXLST <geosoft.gxapi.GXLST>` not in the selection `GXLST <geosoft.gxapi.GXLST>`, and on the right all items
+        in the first `GXLST <geosoft.gxapi.GXLST>` which are in the selection `GXLST <geosoft.gxapi.GXLST>`. (Items in
+        the selection `GXLST <geosoft.gxapi.GXLST>` NOT in the first `GXLST <geosoft.gxapi.GXLST>` are ignored).
         Once the user has finalized the selections, the final selections
-        are returned in the selection `GXLST`.
+        are returned in the selection `GXLST <geosoft.gxapi.GXLST>`.
         
-        Selections and display are based on the `LST_ITEM_NAME` part of the
-        `GXLST` item, but on export both the `LST_ITEM_NAME` and `LST_ITEM_VALUE`
-        elements of the selected items from the first `GXLST` are transferred
+        Selections and display are based on the `LST_ITEM_NAME <geosoft.gxapi.LST_ITEM_NAME>` part of the
+        `GXLST <geosoft.gxapi.GXLST>` item, but on export both the `LST_ITEM_NAME <geosoft.gxapi.LST_ITEM_NAME>` and `LST_ITEM_VALUE <geosoft.gxapi.LST_ITEM_VALUE>`
+        elements of the selected items from the first `GXLST <geosoft.gxapi.GXLST>` are transferred
         to the second list for output.
         
         The sConvertToCSV_LST and sConvertFromCSV_LST functions in lst.h
         can be used to convert the selection LSTs to forms that can be
-        stored and retrieved from GX parameters (or `GXREG` or INI, etc.).
+        stored and retrieved from GX parameters (or `GXREG <geosoft.gxapi.GXREG>` or INI, etc.).
         """
         ret_val = gxapi_cy.WrapGUI.two_panel_selection(GXContext._get_tls_geo(), ls_tf._wrapper, ls_ts._wrapper, title.encode())
         return ret_val
@@ -1061,7 +1061,7 @@ class GXGUI:
 
         **Note:**
 
-        Same as `two_panel_selection`, but the items in the
+        Same as `two_panel_selection <geosoft.gxapi.GXGUI.two_panel_selection>`, but the items in the
         two lists are not sorted alphabetically, but are ordered
         exactly as input, and when an item is selected it is
         added at the end of the lists.
@@ -1078,7 +1078,7 @@ class GXGUI:
 
         **Note:**
 
-        Same as `two_panel_selection`, but the items in the
+        Same as `two_panel_selection <geosoft.gxapi.GXGUI.two_panel_selection>`, but the items in the
         two lists are not sorted alphabetically, but are ordered
         exactly as input, and when an item is selected it is
         added at the end of the lists.
@@ -1095,7 +1095,7 @@ class GXGUI:
 
         **Note:**
 
-        Same as `two_panel_selection_ex`, but user can specify a help
+        Same as `two_panel_selection_ex <geosoft.gxapi.GXGUI.two_panel_selection_ex>`, but user can specify a help
         link.
         """
         ret_val = gxapi_cy.WrapGUI.two_panel_selection_ex2(GXContext._get_tls_geo(), ls_tf._wrapper, ls_ts._wrapper, sorted, allow_no_select, title.encode(), help.encode())
@@ -1166,7 +1166,7 @@ class GXGUI:
     @classmethod
     def meta_data_viewer(cls, meta, root_token, schema):
         """
-        View a `GXMETA` object
+        View a `GXMETA <geosoft.gxapi.GXMETA>` object
         """
         gxapi_cy.WrapGUI.meta_data_viewer(GXContext._get_tls_geo(), meta._wrapper, root_token, schema)
         
@@ -1204,7 +1204,7 @@ class GXGUI:
 
         **Note:**
 
-        Same as `render_pattern` but for line patterns.
+        Same as `render_pattern <geosoft.gxapi.GXGUI.render_pattern>` but for line patterns.
         """
         gxapi_cy.WrapGUI.render_line_pattern(GXContext._get_tls_geo(), hdc, h_dc, left, bottom, right, top, pattern, thickness, pitch, col, p11, p12)
         
@@ -1266,7 +1266,7 @@ class GXGUI:
     @classmethod
     def show_hist(cls, st):
         """
-        Display Histogram of data from `GXST`
+        Display Histogram of data from `GXST <geosoft.gxapi.GXST>`
         """
         gxapi_cy.WrapGUI.show_hist(GXContext._get_tls_geo(), st._wrapper)
         
@@ -1276,7 +1276,7 @@ class GXGUI:
     @classmethod
     def simple_map_dialog(cls, map, title, help_id):
         """
-        General purpose map display `GXGUI` with no interaction.
+        General purpose map display `GXGUI <geosoft.gxapi.GXGUI>` with no interaction.
 
         **Note:**
 
@@ -1291,7 +1291,7 @@ class GXGUI:
     @classmethod
     def thematic_voxel_info(cls, vox):
         """
-        Display GX.Net thematic voxel info `GXGUI`.
+        Display GX.Net thematic voxel info `GXGUI <geosoft.gxapi.GXGUI>`.
 
         **Note:**
 

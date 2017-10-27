@@ -18,7 +18,7 @@ class GXVECTOR3D:
     """
     GXVECTOR3D class.
 
-    `GXVECTOR3D` Display object.
+    `GXVECTOR3D <geosoft.gxapi.GXVECTOR3D>` Display object.
     """
 
     def __enter__(self):
@@ -62,7 +62,7 @@ class GXVECTOR3D:
 
     def get_itr(self, itr):
         """
-        Get the `GXITR` of the `GXVECTOR3D`
+        Get the `GXITR <geosoft.gxapi.GXITR>` of the `GXVECTOR3D <geosoft.gxapi.GXVECTOR3D>`
         """
         self._wrapper.get_itr(itr._wrapper)
         
@@ -72,7 +72,7 @@ class GXVECTOR3D:
 
     def set_itr(self, itr):
         """
-        Set the `GXITR` of the `GXVECTOR3D`
+        Set the `GXITR <geosoft.gxapi.GXITR>` of the `GXVECTOR3D <geosoft.gxapi.GXVECTOR3D>`
         """
         self._wrapper.set_itr(itr._wrapper)
         

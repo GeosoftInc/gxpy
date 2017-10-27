@@ -18,7 +18,7 @@ class GXDSEL:
     """
     GXDSEL class.
 
-    The `GXDSEL` object is used to select subsets of data from the DATA object
+    The `GXDSEL <geosoft.gxapi.GXDSEL>` object is used to select subsets of data from the DATA object
     """
 
     def __enter__(self):
@@ -153,7 +153,7 @@ class GXDSEL:
 
         **Note:**
 
-        Resolution must be specified in the units of the selection `GXIPJ`.
+        Resolution must be specified in the units of the selection `GXIPJ <geosoft.gxapi.GXIPJ>`.
         
         This will be the optimum data resoulution.  (grid cell for grids, data
         separation for other data types).
@@ -201,7 +201,7 @@ class GXDSEL:
         If reprojection is not forced, the data may come in any projection.
         
         The spatial resolution and accuracy are accumed to be in the
-        coordinate system defined by this `GXIPJ`.
+        coordinate system defined by this `GXIPJ <geosoft.gxapi.GXIPJ>`.
         """
         self._wrapper.set_ipj(ipj._wrapper, force)
         
@@ -215,7 +215,7 @@ class GXDSEL:
 
         **Note:**
 
-        Must be specified in the units of the selection `GXIPJ`.
+        Must be specified in the units of the selection `GXIPJ <geosoft.gxapi.GXIPJ>`.
         
         The spatial accuracy is used improve compression performance for
         the spatial component of the data returned.

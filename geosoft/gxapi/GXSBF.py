@@ -18,13 +18,13 @@ class GXSBF:
     """
     GXSBF class.
 
-    The `GXSBF` class provides a means of storing data in a
+    The `GXSBF <geosoft.gxapi.GXSBF>` class provides a means of storing data in a
     file-type directory structure within a workspace, database
-    or map. Each of these three objects contains its own `GXSBF` object,
-    which may be accessed using the `h_get_sys`, `h_get_db` and
-    `h_get_map` functions. To access data in a file, or create a
-    new file in the `GXSBF` object, call the CreatSBF_BF function (see `GXBF`),
-    which will return a `GXBF` object to use.
+    or map. Each of these three objects contains its own `GXSBF <geosoft.gxapi.GXSBF>` object,
+    which may be accessed using the `h_get_sys <geosoft.gxapi.GXSBF.h_get_sys>`, `h_get_db <geosoft.gxapi.GXSBF.h_get_db>` and
+    `h_get_map <geosoft.gxapi.GXSBF.h_get_map>` functions. To access data in a file, or create a
+    new file in the `GXSBF <geosoft.gxapi.GXSBF>` object, call the CreatSBF_BF function (see `GXBF <geosoft.gxapi.GXBF>`),
+    which will return a `GXBF <geosoft.gxapi.GXBF>` object to use.
     """
 
     def __enter__(self):
@@ -66,7 +66,7 @@ class GXSBF:
 
     def create(self, file, status):
         """
-        Create a child `GXSBF` object inside an `GXSBF`.
+        Create a child `GXSBF <geosoft.gxapi.GXSBF>` object inside an `GXSBF <geosoft.gxapi.GXSBF>`.
         """
         ret_val = self._wrapper.create(file.encode(), status)
         return GXSBF(ret_val)
@@ -76,14 +76,14 @@ class GXSBF:
 
     def create_obj_list(self, lst, type):
         """
-        Fills an `GXLST` with embedded storage names of an `GXSBF`.
+        Fills an `GXLST <geosoft.gxapi.GXLST>` with embedded storage names of an `GXSBF <geosoft.gxapi.GXSBF>`.
 
         **Note:**
 
-        Function will populate an `GXLST` object with embedded files (`SBF_TYPE_FILES`),
-        directories (`SBF_TYPE_DIRS`), or both (pass `SBF_TYPE_BOTH`) in an `GXSBF`.
+        Function will populate an `GXLST <geosoft.gxapi.GXLST>` object with embedded files (`SBF_TYPE_FILES <geosoft.gxapi.SBF_TYPE_FILES>`),
+        directories (`SBF_TYPE_DIRS <geosoft.gxapi.SBF_TYPE_DIRS>`), or both (pass `SBF_TYPE_BOTH <geosoft.gxapi.SBF_TYPE_BOTH>`) in an `GXSBF <geosoft.gxapi.GXSBF>`.
         Along with the Name of the file or directory, a constant "dir" or "file" string is written
-        to the `GXLST` also.
+        to the `GXLST <geosoft.gxapi.GXLST>` also.
         """
         self._wrapper.create_obj_list(lst._wrapper, type)
         

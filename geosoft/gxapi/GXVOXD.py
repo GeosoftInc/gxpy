@@ -18,7 +18,7 @@ class GXVOXD:
     """
     GXVOXD class.
 
-    `GXVOX` Display object.
+    `GXVOX <geosoft.gxapi.GXVOX>` Display object.
     """
 
     def __enter__(self):
@@ -60,12 +60,12 @@ class GXVOXD:
     @classmethod
     def create(cls, vox, table, zone, contour):
         """
-        Create a new `GXVOXD`
+        Create a new `GXVOXD <geosoft.gxapi.GXVOXD>`
 
         **Note:**
 
-        Fails if the `GXVOX` object is NOT thematic.
-        (See the `create_thematic` function.)
+        Fails if the `GXVOX <geosoft.gxapi.GXVOX>` object is NOT thematic.
+        (See the `create_thematic <geosoft.gxapi.GXVOXD.create_thematic>` function.)
         """
         ret_val = gxapi_cy.WrapVOXD.create(GXContext._get_tls_geo(), vox._wrapper, table.encode(), zone, contour)
         return GXVOXD(ret_val)
@@ -75,12 +75,12 @@ class GXVOXD:
     @classmethod
     def create_itr(cls, vox, itr):
         """
-        Create a new `GXVOXD` with our own `GXITR`
+        Create a new `GXVOXD <geosoft.gxapi.GXVOXD>` with our own `GXITR <geosoft.gxapi.GXITR>`
 
         **Note:**
 
-        Fails if the `GXVOX` object is thematic.
-        (See the `create_thematic` function.)
+        Fails if the `GXVOX <geosoft.gxapi.GXVOX>` object is thematic.
+        (See the `create_thematic <geosoft.gxapi.GXVOXD.create_thematic>` function.)
         """
         ret_val = gxapi_cy.WrapVOXD.create_itr(GXContext._get_tls_geo(), vox._wrapper, itr._wrapper)
         return GXVOXD(ret_val)
@@ -90,20 +90,20 @@ class GXVOXD:
     @classmethod
     def create_thematic(cls, vox):
         """
-        Create a new `GXVOXD` for a thematic `GXVOX` object.
+        Create a new `GXVOXD <geosoft.gxapi.GXVOXD>` for a thematic `GXVOX <geosoft.gxapi.GXVOX>` object.
 
         **Note:**
 
         A thematic voxel is one where the stored integer values
-        represent indices into an internally stored `GXTPAT` object.
+        represent indices into an internally stored `GXTPAT <geosoft.gxapi.GXTPAT>` object.
         Thematic voxels contain their own color definitions, and
         normal numerical operations, such as applying ITRs for display,
         are not valid.
         
-        To determine if a `GXVOX` object is thematic, use the
-        `is_thematic` function.
+        To determine if a `GXVOX <geosoft.gxapi.GXVOX>` object is thematic, use the
+        `is_thematic <geosoft.gxapi.GXVOXD.is_thematic>` function.
         
-        Fails if the `GXVOX` object is NOT thematic.
+        Fails if the `GXVOX <geosoft.gxapi.GXVOX>` object is NOT thematic.
         """
         ret_val = gxapi_cy.WrapVOXD.create_thematic(GXContext._get_tls_geo(), vox._wrapper)
         return GXVOXD(ret_val)
@@ -118,7 +118,7 @@ class GXVOXD:
         **Note:**
 
         A thematic voxel is one where the stored integer values
-        represent indices into an internally stored `GXTPAT` object.
+        represent indices into an internally stored `GXTPAT <geosoft.gxapi.GXTPAT>` object.
         Thematic voxels contain their own color definitions, and
         normal numerical operations, such as applying ITRs for display,
         are not valid.
@@ -131,7 +131,7 @@ class GXVOXD:
 
     def get_thematic_info(self, tpat, vv):
         """
-        Get a copy of a thematic voxel's `GXTPAT` object and a `GXVV` containing the current display selections.
+        Get a copy of a thematic voxel's `GXTPAT <geosoft.gxapi.GXTPAT>` object and a `GXVV <geosoft.gxapi.GXVV>` containing the current display selections.
         """
         self._wrapper.get_thematic_info(tpat._wrapper, vv._wrapper)
         
@@ -141,7 +141,7 @@ class GXVOXD:
 
     def set_thematic_selection(self, vv):
         """
-        Get a copy of a thematic voxel's `GXTPAT` object and a `GXVV` containing the current display selections.
+        Get a copy of a thematic voxel's `GXTPAT <geosoft.gxapi.GXTPAT>` object and a `GXVV <geosoft.gxapi.GXVV>` containing the current display selections.
         """
         self._wrapper.set_thematic_selection(vv._wrapper)
         
@@ -173,7 +173,7 @@ class GXVOXD:
 
     def get_itr(self, itr):
         """
-        Get the `GXITR` of the `GXVOXD`
+        Get the `GXITR <geosoft.gxapi.GXITR>` of the `GXVOXD <geosoft.gxapi.GXVOXD>`
         """
         self._wrapper.get_itr(itr._wrapper)
         
@@ -203,7 +203,7 @@ class GXVOXD:
 
     def set_itr(self, itr):
         """
-        Set the `GXITR` of the `GXVOXD`
+        Set the `GXITR <geosoft.gxapi.GXITR>` of the `GXVOXD <geosoft.gxapi.GXVOXD>`
         """
         self._wrapper.set_itr(itr._wrapper)
         

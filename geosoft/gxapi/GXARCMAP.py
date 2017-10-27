@@ -101,7 +101,7 @@ class GXARCMAP:
     @classmethod
     def get_current_document_info(cls, mxd, layer, map):
         """
-        Get some info on the current `GXMXD` in ArcMap and selected layer (if any)
+        Get some info on the current `GXMXD <geosoft.gxapi.GXMXD>` in ArcMap and selected layer (if any)
         """
         mxd.value, layer.value, map.value = gxapi_cy.WrapARCMAP.get_current_document_info(GXContext._get_tls_geo(), mxd.value.encode(), layer.value.encode(), map.value.encode())
         
@@ -240,7 +240,7 @@ class GXARCMAP:
 
         **Note:**
 
-        Loads any file type recognized as "raster" formats by ARC `GXGIS`.
+        Loads any file type recognized as "raster" formats by ARC `GXGIS <geosoft.gxapi.GXGIS>`.
         This includes geosoft GRD files.
         """
         gxapi_cy.WrapARCMAP.load_raster(GXContext._get_tls_geo(), file.encode())
@@ -251,7 +251,7 @@ class GXARCMAP:
     @classmethod
     def load_shape(cls, file, layer_prefix, layer_suffix):
         """
-        Load a `GXSHP` file to the current data frame
+        Load a `GXSHP <geosoft.gxapi.GXSHP>` file to the current data frame
 
         **Note:**
 
@@ -267,12 +267,12 @@ class GXARCMAP:
     @classmethod
     def map_view_to_shape(cls, map, view, shp, lst):
         """
-        Create `GXSHP` file(s) from a Geosoft Map view.
+        Create `GXSHP <geosoft.gxapi.GXSHP>` file(s) from a Geosoft Map view.
 
         **Note:**
 
-        The output `GXSHP` file name(s) are made up as follows
-        (where NAME is the input `GXSHP` file name):
+        The output `GXSHP <geosoft.gxapi.GXSHP>` file name(s) are made up as follows
+        (where NAME is the input `GXSHP <geosoft.gxapi.GXSHP>` file name):
         
               NAME_pt.shp    (point objects)
               NAME_ln.shp    (line or arc objects)
@@ -296,7 +296,7 @@ class GXARCMAP:
     @classmethod
     def show_layer_by_name_in_3d(cls, mxd_file, dataframe_name, layer_name):
         """
-        Shows a layer in ArcMap in a 3D view in an `GXMXD`
+        Shows a layer in ArcMap in a 3D view in an `GXMXD <geosoft.gxapi.GXMXD>`
         """
         gxapi_cy.WrapARCMAP.show_layer_by_name_in_3d(GXContext._get_tls_geo(), mxd_file.encode(), dataframe_name.encode(), layer_name.encode())
         
@@ -316,7 +316,7 @@ class GXARCMAP:
     @classmethod
     def get_ipj_for_predefined_esri_gcs(cls, ipj, esri_gcs_code):
         """
-        Fills an `GXIPJ` with a predefined ESRI GCS
+        Fills an `GXIPJ <geosoft.gxapi.GXIPJ>` with a predefined ESRI GCS
         """
         gxapi_cy.WrapARCMAP.get_ipj_for_predefined_esri_gcs(GXContext._get_tls_geo(), ipj._wrapper, esri_gcs_code)
         
@@ -326,7 +326,7 @@ class GXARCMAP:
     @classmethod
     def get_ipj_for_predefined_esri_pcs(cls, ipj, esri_pcs_code):
         """
-        Fills an `GXIPJ` with a predefined ESRI PCS
+        Fills an `GXIPJ <geosoft.gxapi.GXIPJ>` with a predefined ESRI PCS
         """
         gxapi_cy.WrapARCMAP.get_ipj_for_predefined_esri_pcs(GXContext._get_tls_geo(), ipj._wrapper, esri_pcs_code)
         

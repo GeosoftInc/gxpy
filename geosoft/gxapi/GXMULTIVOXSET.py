@@ -70,7 +70,7 @@ class GXMULTIVOXSET:
     @classmethod
     def export_to_xyz(cls, voxel_file, xyz, dir, rev_x, rev_y, rev_z, dummies):
         """
-        Export a `GXMULTIVOXSET` to an XYZ File
+        Export a `GXMULTIVOXSET <geosoft.gxapi.GXMULTIVOXSET>` to an XYZ File
         """
         gxapi_cy.WrapMULTIVOXSET.export_to_xyz(GXContext._get_tls_geo(), voxel_file.encode(), xyz.encode(), dir, rev_x, rev_y, rev_z, dummies)
         
@@ -80,7 +80,7 @@ class GXMULTIVOXSET:
     @classmethod
     def export_to_binary(cls, voxel_file, binary_file, dir, rev_x, rev_y, rev_z, swap, output_type):
         """
-        Export contents of `GXMULTIVOXSET` to a Binary File.
+        Export contents of `GXMULTIVOXSET <geosoft.gxapi.GXMULTIVOXSET>` to a Binary File.
         """
         gxapi_cy.WrapMULTIVOXSET.export_to_binary(GXContext._get_tls_geo(), voxel_file.encode(), binary_file.encode(), dir, rev_x, rev_y, rev_z, swap, output_type)
         
@@ -90,7 +90,7 @@ class GXMULTIVOXSET:
     @classmethod
     def export_to_xml(cls, voxel_file, xml_file):
         """
-        Export a `GXMULTIVOXSET` to XML
+        Export a `GXMULTIVOXSET <geosoft.gxapi.GXMULTIVOXSET>` to XML
         """
         gxapi_cy.WrapMULTIVOXSET.export_to_xml(GXContext._get_tls_geo(), voxel_file.encode(), xml_file.encode())
         
@@ -100,7 +100,7 @@ class GXMULTIVOXSET:
     @classmethod
     def check_equal_to_legacy_voxel(cls, voxel_file, legacy_voxel_file):
         """
-        Compare `GXMULTIVOXSET` to Legacy Voxel
+        Compare `GXMULTIVOXSET <geosoft.gxapi.GXMULTIVOXSET>` to Legacy Voxel
         """
         gxapi_cy.WrapMULTIVOXSET.check_equal_to_legacy_voxel(GXContext._get_tls_geo(), voxel_file.encode(), legacy_voxel_file.encode())
         

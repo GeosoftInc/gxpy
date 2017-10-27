@@ -18,8 +18,8 @@ class GXIEXP:
     """
     GXIEXP class.
 
-    The `GXIEXP` class is similar to the `GXEXP` class, but is used
-    to apply math expressions to grids (`GXIMG` objects).
+    The `GXIEXP <geosoft.gxapi.GXIEXP>` class is similar to the `GXEXP <geosoft.gxapi.GXEXP>` class, but is used
+    to apply math expressions to grids (`GXIMG <geosoft.gxapi.GXIMG>` objects).
     """
 
     def __enter__(self):
@@ -61,7 +61,7 @@ class GXIEXP:
 
     def add_grid(self, img, var):
         """
-        This method adds an image to the `GXIEXP` object with a
+        This method adds an image to the `GXIEXP <geosoft.gxapi.GXIEXP>` object with a
         variable name.
         """
         self._wrapper.add_grid(img._wrapper, var.encode())
@@ -72,7 +72,7 @@ class GXIEXP:
     @classmethod
     def create(cls):
         """
-        This method creates an `GXIEXP` object.
+        This method creates an `GXIEXP <geosoft.gxapi.GXIEXP>` object.
         """
         ret_val = gxapi_cy.WrapIEXP.create(GXContext._get_tls_geo())
         return GXIEXP(ret_val)

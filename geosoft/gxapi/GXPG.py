@@ -24,10 +24,10 @@ class GXPG:
 
     **Note:**
 
-    Typically a grid is accessed using the `GXIMG` class, and a `GXPG`
-    is obtained from the `GXIMG` using the `GXIMG.get_pg` function.
-    Following operations on the `GXPG`, it can be written back to
-    the `GXIMG` using `GXIMG.set_pg`.
+    Typically a grid is accessed using the `GXIMG <geosoft.gxapi.GXIMG>` class, and a `GXPG <geosoft.gxapi.GXPG>`
+    is obtained from the `GXIMG <geosoft.gxapi.GXIMG>` using the `GXIMG.get_pg <geosoft.gxapi.GXIMG.get_pg>` function.
+    Following operations on the `GXPG <geosoft.gxapi.GXPG>`, it can be written back to
+    the `GXIMG <geosoft.gxapi.GXIMG>` using `GXIMG.set_pg <geosoft.gxapi.GXIMG.set_pg>`.
     """
 
     def __enter__(self):
@@ -103,7 +103,7 @@ class GXPG:
     @classmethod
     def create_s(cls, bf):
         """
-        Create a 2D `GXPG` from serialized source.
+        Create a 2D `GXPG <geosoft.gxapi.GXPG>` from serialized source.
 
         **Note:**
 
@@ -179,7 +179,7 @@ class GXPG:
 
     def get(self, col, row):
         """
-        Read a single value from a 2D `GXPG`
+        Read a single value from a 2D `GXPG <geosoft.gxapi.GXPG>`
 
         **Note:**
 
@@ -223,11 +223,11 @@ class GXPG:
 
     def serial(self, bf):
         """
-        Serialize a 2D `GXPG` to a `GXBF`.
+        Serialize a 2D `GXPG <geosoft.gxapi.GXPG>` to a `GXBF <geosoft.gxapi.GXBF>`.
 
         **Note:**
 
-        For 3D pagers, use `write_bf`.
+        For 3D pagers, use `write_bf <geosoft.gxapi.GXPG.write_bf>`.
         """
         self._wrapper.serial(bf._wrapper)
         
@@ -369,7 +369,7 @@ class GXPG:
 
     def read_bf(self, bf, dir, conv, rev_x, rev_y, rev_z):
         """
-        Read the contents of a 2D or 3D pager to from a `GXBF`.
+        Read the contents of a 2D or 3D pager to from a `GXBF <geosoft.gxapi.GXBF>`.
         """
         self._wrapper.read_bf(bf._wrapper, dir, conv, rev_x, rev_y, rev_z)
         
@@ -379,7 +379,7 @@ class GXPG:
 
     def read_ra(self, ra, dir, rev_x, rev_y, rev_z, dummy):
         """
-        Read the contents of a 2D or 3D pager to from an `GXRA`.
+        Read the contents of a 2D or 3D pager to from an `GXRA <geosoft.gxapi.GXRA>`.
 
         **Note:**
 
@@ -393,7 +393,7 @@ class GXPG:
 
     def write_bf(self, bf, dir, conv, rev_x, rev_y, rev_z):
         """
-        Write the contents of a 2D or 3D pager to a `GXBF`.
+        Write the contents of a 2D or 3D pager to a `GXBF <geosoft.gxapi.GXBF>`.
         """
         self._wrapper.write_bf(bf._wrapper, dir, conv, rev_x, rev_y, rev_z)
         
@@ -403,7 +403,7 @@ class GXPG:
 
     def write_bf_ex(self, bf, dir, conv, rev_x, rev_y, rev_z, p_dummy):
         """
-        Write the contents of a 2D or 3D pager to a `GXBF`.
+        Write the contents of a 2D or 3D pager to a `GXBF <geosoft.gxapi.GXBF>`.
         """
         self._wrapper.write_bf_ex(bf._wrapper, dir, conv, rev_x, rev_y, rev_z, p_dummy)
         
@@ -413,7 +413,7 @@ class GXPG:
 
     def write_wa(self, wa, dir, rev_x, rev_y, rev_z, dummy):
         """
-        Write the contents of a 2D or 3D pager to a `GXWA`
+        Write the contents of a 2D or 3D pager to a `GXWA <geosoft.gxapi.GXWA>`
 
         **Note:**
 

@@ -18,17 +18,17 @@ class GXLTB:
     """
     GXLTB class.
 
-    An `GXLTB` object is typically created from a CSV (comma-separated values)
+    An `GXLTB <geosoft.gxapi.GXLTB>` object is typically created from a CSV (comma-separated values)
     file, and is a table of information that may be accessed by row
-    or column. The `GXLTB` class is recommended for use with small tables
+    or column. The `GXLTB <geosoft.gxapi.GXLTB>` class is recommended for use with small tables
     produced from short lists (of the order of 1000's or records) such
     as the different geographic projections and their defining parameters.
     Large tables, such as those required for table-lookup functions, should
-    be accessed using the `GXTB` class.
+    be accessed using the `GXTB <geosoft.gxapi.GXTB>` class.
 
     **Note:**
 
-    An `GXLTB` ASCII table file has the following structure:
+    An `GXLTB <geosoft.gxapi.GXLTB>` ASCII table file has the following structure:
     
     / comments
     key_name,col_1,col_2,col_3,etc...    /field names
@@ -102,13 +102,13 @@ class GXLTB:
         **Note:**
 
         The "Key" of the child must be the same as the "Key" of the Master.
-        The fields of two `GXLTB` must be the same.
+        The fields of two `GXLTB <geosoft.gxapi.GXLTB>` must be the same.
         
         Contracting takes place as follows:
         
-        1. The Master `GXLTB` is copied to the New `GXLTB`.
-        2. All records in the contract LIB are deleted from the New `GXLTB` (if there are any)
-        3. The New `GXLTB` is returned.
+        1. The Master `GXLTB <geosoft.gxapi.GXLTB>` is copied to the New `GXLTB <geosoft.gxapi.GXLTB>`.
+        2. All records in the contract LIB are deleted from the New `GXLTB <geosoft.gxapi.GXLTB>` (if there are any)
+        3. The New `GXLTB <geosoft.gxapi.GXLTB>` is returned.
         """
         ret_val = self._wrapper.contract(lt_bc._wrapper)
         return GXLTB(ret_val)
@@ -118,7 +118,7 @@ class GXLTB:
     @classmethod
     def create(cls, file, type, delim, key):
         """
-        Creates a `GXLTB` object from a file.
+        Creates a `GXLTB <geosoft.gxapi.GXLTB>` object from a file.
 
         **Note:**
 
@@ -132,7 +132,7 @@ class GXLTB:
     @classmethod
     def create_crypt(cls, file, type, delim, case, key, crypt):
         """
-        Creates a `GXLTB` object from an encrypted file.
+        Creates a `GXLTB <geosoft.gxapi.GXLTB>` object from an encrypted file.
 
         **Note:**
 
@@ -146,7 +146,7 @@ class GXLTB:
     @classmethod
     def create_ex(cls, file, type, delim, case, key):
         """
-        Creates a `GXLTB` object from a file.
+        Creates a `GXLTB <geosoft.gxapi.GXLTB>` object from a file.
 
         **Note:**
 
@@ -177,13 +177,13 @@ class GXLTB:
 
     def get_con_lst(self, fld, match, match_type, lst):
         """
-        Populate a `GXLST` with `GXLTB` names from matching fields.
+        Populate a `GXLST <geosoft.gxapi.GXLST>` with `GXLTB <geosoft.gxapi.GXLTB>` names from matching fields.
 
         **Note:**
 
-        The `GXLST` object will be in the order of the file.
-        The `GXLST` names will be the `GXLTB` key fields and the
-        `GXLST` values will be the `GXLTB` record numbers.
+        The `GXLST <geosoft.gxapi.GXLST>` object will be in the order of the file.
+        The `GXLST <geosoft.gxapi.GXLST>` names will be the `GXLTB <geosoft.gxapi.GXLTB>` key fields and the
+        `GXLST <geosoft.gxapi.GXLST>` values will be the `GXLTB <geosoft.gxapi.GXLTB>` record numbers.
         """
         self._wrapper.get_con_lst(fld, match.encode(), match_type, lst._wrapper)
         
@@ -193,13 +193,13 @@ class GXLTB:
 
     def get_lst(self, fld, lst):
         """
-        Populate an `GXLST` with `GXLTB` names
+        Populate an `GXLST <geosoft.gxapi.GXLST>` with `GXLTB <geosoft.gxapi.GXLTB>` names
 
         **Note:**
 
-        The `GXLST` object will be in the order of the file.
-        The `GXLST` names will be the `GXLTB` fields and the
-        `GXLST` values will be the `GXLTB` record numbers.
+        The `GXLST <geosoft.gxapi.GXLST>` object will be in the order of the file.
+        The `GXLST <geosoft.gxapi.GXLST>` names will be the `GXLTB <geosoft.gxapi.GXLTB>` fields and the
+        `GXLST <geosoft.gxapi.GXLST>` values will be the `GXLTB <geosoft.gxapi.GXLTB>` record numbers.
         """
         self._wrapper.get_lst(fld, lst._wrapper)
         
@@ -209,13 +209,13 @@ class GXLTB:
 
     def get_lst2(self, fld_n, fld_v, lst):
         """
-        Populate an `GXLST` with `GXLTB` names and values
+        Populate an `GXLST <geosoft.gxapi.GXLST>` with `GXLTB <geosoft.gxapi.GXLTB>` names and values
 
         **Note:**
 
-        The `GXLST` object will be in the order of the file.
-        The `GXLST` names will come from the `GXLTB` name field and the
-        `GXLST` values will come from value field specified.
+        The `GXLST <geosoft.gxapi.GXLST>` object will be in the order of the file.
+        The `GXLST <geosoft.gxapi.GXLST>` names will come from the `GXLTB <geosoft.gxapi.GXLTB>` name field and the
+        `GXLST <geosoft.gxapi.GXLST>` values will come from value field specified.
         """
         self._wrapper.get_lst2(fld_n, fld_v, lst._wrapper)
         
@@ -269,7 +269,7 @@ class GXLTB:
 
     def get_int(self, record, field):
         """
-        Get a int entry from the `GXLTB`
+        Get a int entry from the `GXLTB <geosoft.gxapi.GXLTB>`
         """
         ret_val = self._wrapper.get_int(record, field)
         return ret_val
@@ -279,7 +279,7 @@ class GXLTB:
 
     def get_string(self, record, field, token):
         """
-        Get an entry from the `GXLTB`
+        Get an entry from the `GXLTB <geosoft.gxapi.GXLTB>`
 
         **Note:**
 
@@ -294,7 +294,7 @@ class GXLTB:
 
     def get_english_string(self, record, field, token):
         """
-        Get the English entry from the `GXLTB`
+        Get the English entry from the `GXLTB <geosoft.gxapi.GXLTB>`
 
         **Note:**
 
@@ -309,7 +309,7 @@ class GXLTB:
 
     def records(self):
         """
-        Get number of records in `GXLTB`.
+        Get number of records in `GXLTB <geosoft.gxapi.GXLTB>`.
         """
         ret_val = self._wrapper.records()
         return ret_val
@@ -336,18 +336,18 @@ class GXLTB:
         Merging takes place as follows:
         
         1. The "Key" of the child must be the same as the "Key" of the Master.
-        2. The fields of the Master `GXLTB` are collected in-order.
-        3. Any new fields of the Child `GXLTB` are added to the end of the list.
-        4. A new `GXLTB` is created to contain the new field list (in-order).
-        5. The Child table contents are added to the New `GXLTB`.
-        6. The Master table contents are added/replace the New `GXLTB`.
-        7. The New `GXLTB` is returned.
+        2. The fields of the Master `GXLTB <geosoft.gxapi.GXLTB>` are collected in-order.
+        3. Any new fields of the Child `GXLTB <geosoft.gxapi.GXLTB>` are added to the end of the list.
+        4. A new `GXLTB <geosoft.gxapi.GXLTB>` is created to contain the new field list (in-order).
+        5. The Child table contents are added to the New `GXLTB <geosoft.gxapi.GXLTB>`.
+        6. The Master table contents are added/replace the New `GXLTB <geosoft.gxapi.GXLTB>`.
+        7. The New `GXLTB <geosoft.gxapi.GXLTB>` is returned.
         
         If the fields of the Master and Child are the same, steps 4, 5, 6 are
         replaced by:
         
-        4. The Master `GXLTB` is copied to the New `GXLTB`.
-        5. Any New records found in the child are added to the New `GXLTB`
+        4. The Master `GXLTB <geosoft.gxapi.GXLTB>` is copied to the New `GXLTB <geosoft.gxapi.GXLTB>`.
+        5. Any New records found in the child are added to the New `GXLTB <geosoft.gxapi.GXLTB>`
         """
         ret_val = self._wrapper.merge(lt_bc._wrapper)
         return GXLTB(ret_val)
@@ -357,7 +357,7 @@ class GXLTB:
 
     def get_double(self, record, field):
         """
-        Get a real entry from the `GXLTB`
+        Get a real entry from the `GXLTB <geosoft.gxapi.GXLTB>`
         """
         ret_val = self._wrapper.get_double(record, field)
         return ret_val
@@ -367,7 +367,7 @@ class GXLTB:
 
     def save(self, file):
         """
-        Save `GXLTB` changes to existing or new file
+        Save `GXLTB <geosoft.gxapi.GXLTB>` changes to existing or new file
         """
         self._wrapper.save(file.encode())
         
@@ -377,7 +377,7 @@ class GXLTB:
 
     def save_crypt(self, file, crypt):
         """
-        Save `GXLTB` to a new file using encryption
+        Save `GXLTB <geosoft.gxapi.GXLTB>` to a new file using encryption
         """
         self._wrapper.save_crypt(file.encode(), crypt.encode())
         

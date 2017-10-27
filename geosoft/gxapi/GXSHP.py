@@ -18,7 +18,7 @@ class GXSHP:
     """
     GXSHP class.
 
-    The `GXSHP` class is used to create ESRI shape files.
+    The `GXSHP <geosoft.gxapi.GXSHP>` class is used to create ESRI shape files.
 
     **Note:**
 
@@ -66,12 +66,12 @@ class GXSHP:
 
     def append_item(self):
         """
-        Append the current item and data to an old `GXSHP` object.
+        Append the current item and data to an old `GXSHP <geosoft.gxapi.GXSHP>` object.
 
         **Note:**
 
-        The currently stored `GXSHP` item and data are written to the
-        `GXSHP` geometry and data files. (If no data fields have been
+        The currently stored `GXSHP <geosoft.gxapi.GXSHP>` item and data are written to the
+        `GXSHP <geosoft.gxapi.GXSHP>` geometry and data files. (If no data fields have been
         defined, then the data file is not written).
         """
         self._wrapper.append_item()
@@ -82,7 +82,7 @@ class GXSHP:
     @classmethod
     def create(cls, name, type):
         """
-        Create a new `GXSHP` object
+        Create a new `GXSHP <geosoft.gxapi.GXSHP>` object
 
         **Note:**
 
@@ -96,13 +96,13 @@ class GXSHP:
         
         Type                    Required geometry function.
         
-        `SHP_GEOM_TYPE_POINT`     `set_point`
-        `SHP_GEOM_TYPE_ARC`       `set_arc`
-        `SHP_GEOM_TYPE_POLYGON`   `set_polygon`
+        `SHP_GEOM_TYPE_POINT <geosoft.gxapi.SHP_GEOM_TYPE_POINT>`     `set_point <geosoft.gxapi.GXSHP.set_point>`
+        `SHP_GEOM_TYPE_ARC <geosoft.gxapi.SHP_GEOM_TYPE_ARC>`       `set_arc <geosoft.gxapi.GXSHP.set_arc>`
+        `SHP_GEOM_TYPE_POLYGON <geosoft.gxapi.SHP_GEOM_TYPE_POLYGON>`   `set_polygon <geosoft.gxapi.GXSHP.set_polygon>`
         
-        `SHP_GEOM_TYPE_POINTZ`    `set_point_z`
-        `SHP_GEOM_TYPE_ARCZ`      `set_arc_z`
-        `SHP_GEOM_TYPE_POLYGONZ`  `set_polygon_z`
+        `SHP_GEOM_TYPE_POINTZ <geosoft.gxapi.SHP_GEOM_TYPE_POINTZ>`    `set_point_z <geosoft.gxapi.GXSHP.set_point_z>`
+        `SHP_GEOM_TYPE_ARCZ <geosoft.gxapi.SHP_GEOM_TYPE_ARCZ>`      `set_arc_z <geosoft.gxapi.GXSHP.set_arc_z>`
+        `SHP_GEOM_TYPE_POLYGONZ <geosoft.gxapi.SHP_GEOM_TYPE_POLYGONZ>`  `set_polygon_z <geosoft.gxapi.GXSHP.set_polygon_z>`
         """
         ret_val = gxapi_cy.WrapSHP.create(GXContext._get_tls_geo(), name.encode(), type)
         return GXSHP(ret_val)
@@ -199,7 +199,7 @@ class GXSHP:
 
     def type(self):
         """
-        Get the `GXSHP` object's geometry type.
+        Get the `GXSHP <geosoft.gxapi.GXSHP>` object's geometry type.
         """
         ret_val = self._wrapper.type()
         return ret_val
@@ -209,7 +209,7 @@ class GXSHP:
     @classmethod
     def open(cls, name):
         """
-        Open an old `GXSHP` object
+        Open an old `GXSHP <geosoft.gxapi.GXSHP>` object
         """
         ret_val = gxapi_cy.WrapSHP.open(GXContext._get_tls_geo(), name.encode())
         return GXSHP(ret_val)
@@ -223,7 +223,7 @@ class GXSHP:
 
         **Note:**
 
-        Can ONLY be used for `SHP_GEOM_TYPE_ARC` files.
+        Can ONLY be used for `SHP_GEOM_TYPE_ARC <geosoft.gxapi.SHP_GEOM_TYPE_ARC>` files.
         """
         self._wrapper.set_arc(vv_x._wrapper, vv_y._wrapper)
         
@@ -237,7 +237,7 @@ class GXSHP:
 
         **Note:**
 
-        Can ONLY be used for `SHP_GEOM_TYPE_ARCZ` files.
+        Can ONLY be used for `SHP_GEOM_TYPE_ARCZ <geosoft.gxapi.SHP_GEOM_TYPE_ARCZ>` files.
         """
         self._wrapper.set_arc_z(vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
         
@@ -261,12 +261,12 @@ class GXSHP:
 
     def set_ipj(self, ipj):
         """
-        Set a `GXSHP` object's projection.
+        Set a `GXSHP <geosoft.gxapi.GXSHP>` object's projection.
 
         **Note:**
 
-        If the `GXSHP` object has a projection, and it
-        is not `IPJ_TYPE_NONE`, then it will be output
+        If the `GXSHP <geosoft.gxapi.GXSHP>` object has a projection, and it
+        is not `IPJ_TYPE_NONE <geosoft.gxapi.IPJ_TYPE_NONE>`, then it will be output
         to a file with the .prj extension when the
         first object is output.
         This function should be called BEFORE the first
@@ -284,7 +284,7 @@ class GXSHP:
 
         **Note:**
 
-        Can ONLY be used for `SHP_GEOM_TYPE_POINT` files.
+        Can ONLY be used for `SHP_GEOM_TYPE_POINT <geosoft.gxapi.SHP_GEOM_TYPE_POINT>` files.
         """
         self._wrapper.set_point(x, y)
         
@@ -298,7 +298,7 @@ class GXSHP:
 
         **Note:**
 
-        Can ONLY be used for `SHP_GEOM_TYPE_POINTZ` files.
+        Can ONLY be used for `SHP_GEOM_TYPE_POINTZ <geosoft.gxapi.SHP_GEOM_TYPE_POINTZ>` files.
         """
         self._wrapper.set_point_z(x, y, z)
         
@@ -312,7 +312,7 @@ class GXSHP:
 
         **Note:**
 
-        Can ONLY be used for `SHP_GEOM_TYPE_POLYGON` files.
+        Can ONLY be used for `SHP_GEOM_TYPE_POLYGON <geosoft.gxapi.SHP_GEOM_TYPE_POLYGON>` files.
         """
         self._wrapper.set_polygon(vv_x._wrapper, vv_y._wrapper, inclusive)
         
@@ -326,7 +326,7 @@ class GXSHP:
 
         **Note:**
 
-        Can ONLY be used for `SHP_GEOM_TYPE_POLYGONZ` files.
+        Can ONLY be used for `SHP_GEOM_TYPE_POLYGONZ <geosoft.gxapi.SHP_GEOM_TYPE_POLYGONZ>` files.
         """
         self._wrapper.set_polygon_z(vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, inclusive)
         
@@ -368,8 +368,8 @@ class GXSHP:
 
         **Note:**
 
-        The currently stored `GXSHP` item and data are written to the
-        `GXSHP` geometry and data files. (If no data fields have been
+        The currently stored `GXSHP <geosoft.gxapi.GXSHP>` item and data are written to the
+        `GXSHP <geosoft.gxapi.GXSHP>` geometry and data files. (If no data fields have been
         defined, then the data file is not written).
         """
         self._wrapper.write_item()

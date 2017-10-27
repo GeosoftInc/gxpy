@@ -20,7 +20,7 @@ class GXLPT:
 
     This class allows access to the current default line patterns.
     It does not allow the definition of individual patterns. It is
-    is used primarily with `GXMAP` class functions.
+    is used primarily with `GXMAP <geosoft.gxapi.GXMAP>` class functions.
     """
 
     def __enter__(self):
@@ -74,7 +74,7 @@ class GXLPT:
 
     def get_lst(self, lst):
         """
-        Copies all pattern names into a `GXLST` object.
+        Copies all pattern names into a `GXLST <geosoft.gxapi.GXLST>` object.
         """
         self._wrapper.get_lst(lst._wrapper)
         
@@ -84,7 +84,7 @@ class GXLPT:
 
     def get_standard_lst(self, lst):
         """
-        Copies the six standard line types into a `GXLST` object.
+        Copies the six standard line types into a `GXLST <geosoft.gxapi.GXLST>` object.
 
         **Note:**
 

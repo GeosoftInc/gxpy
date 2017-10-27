@@ -18,8 +18,8 @@ class GXPGEXP:
     """
     GXPGEXP class.
 
-    The `GXPGEXP` class is similar to the `GXEXP` class, but is used
-    to apply math expressions to pagers (`GXPG` objects).
+    The `GXPGEXP <geosoft.gxapi.GXPGEXP>` class is similar to the `GXEXP <geosoft.gxapi.GXEXP>` class, but is used
+    to apply math expressions to pagers (`GXPG <geosoft.gxapi.GXPG>` objects).
     
     It works only on PGs of the same dimensions.
     """
@@ -63,7 +63,7 @@ class GXPGEXP:
 
     def add_pager(self, pg, var):
         """
-        This method adds an pager to the `GXPGEXP` object with a
+        This method adds an pager to the `GXPGEXP <geosoft.gxapi.GXPGEXP>` object with a
         variable name.
         """
         self._wrapper.add_pager(pg._wrapper, var.encode())
@@ -74,7 +74,7 @@ class GXPGEXP:
     @classmethod
     def create(cls):
         """
-        This method creates an `GXPGEXP` object.
+        This method creates an `GXPGEXP <geosoft.gxapi.GXPGEXP>` object.
         """
         ret_val = gxapi_cy.WrapPGEXP.create(GXContext._get_tls_geo())
         return GXPGEXP(ret_val)

@@ -18,8 +18,8 @@ class GXMXD:
     """
     GXMXD class.
 
-    A `GXMXD` wraps and provides manipulation and usage for
-    the content of an ArcGIS `GXMXD` file.
+    A `GXMXD <geosoft.gxapi.GXMXD>` wraps and provides manipulation and usage for
+    the content of an ArcGIS `GXMXD <geosoft.gxapi.GXMXD>` file.
     """
 
     def __enter__(self):
@@ -61,7 +61,7 @@ class GXMXD:
     @classmethod
     def create_metadata(cls, mxd):
         """
-        Create metadata for this brand new `GXMXD` (we are the creator)
+        Create metadata for this brand new `GXMXD <geosoft.gxapi.GXMXD>` (we are the creator)
         """
         gxapi_cy.WrapMXD.create_metadata(GXContext._get_tls_geo(), mxd.encode())
         
@@ -71,7 +71,7 @@ class GXMXD:
     @classmethod
     def convert_to_map(cls, mxd, map):
         """
-        Create Geosoft map from ArcGIS `GXMXD`
+        Create Geosoft map from ArcGIS `GXMXD <geosoft.gxapi.GXMXD>`
         """
         gxapi_cy.WrapMXD.convert_to_map(GXContext._get_tls_geo(), mxd.encode(), map.encode())
         
@@ -81,7 +81,7 @@ class GXMXD:
     @classmethod
     def sync(cls, mxd):
         """
-        Syncronize any Metadata for this `GXMXD`
+        Syncronize any Metadata for this `GXMXD <geosoft.gxapi.GXMXD>`
         """
         gxapi_cy.WrapMXD.sync(GXContext._get_tls_geo(), mxd.encode())
         
