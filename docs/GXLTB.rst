@@ -8,40 +8,31 @@ GXLTB class
 .. autoclass:: geosoft.gxapi.GXLTB
    :members:
 
+
 .. _LTB_CASE:
 
 LTB_CASE constants
 -----------------------------------------------------------------------
 
-::
+Case handling of `GXLTB <geosoft.gxapi.GXLTB>` strings
 
-   Case handling of LTB strings 
+.. autodata:: geosoft.gxapi.LTB_CASE_INSENSITIVE
+    :annotation:
+.. autodata:: geosoft.gxapi.LTB_CASE_SENSITIVE
+    :annotation:
 
-.. autoattribute:: geosoft.gxapi.LTB_CASE_INSENSITIVE
-
-::
-
-   Ignore case 
-
-.. autoattribute:: geosoft.gxapi.LTB_CASE_SENSITIVE
-
-::
-
-   Case is used 
 
 .. _LTB_CONLST:
 
 LTB_CONLST constants
 -----------------------------------------------------------------------
 
-::
+Matching types
 
-   Matching types 
-
-.. autoattribute:: geosoft.gxapi.LTB_CONLST_EXACT
-
-
-.. autoattribute:: geosoft.gxapi.LTB_CONLST_ANY
+.. autodata:: geosoft.gxapi.LTB_CONLST_EXACT
+    :annotation:
+.. autodata:: geosoft.gxapi.LTB_CONLST_ANY
+    :annotation:
 
 
 .. _LTB_DELIM:
@@ -49,47 +40,26 @@ LTB_CONLST constants
 LTB_DELIM constants
 -----------------------------------------------------------------------
 
-::
+Types of `GXLTB <geosoft.gxapi.GXLTB>` Delimiters
 
-   Types of LTB Delimiters 
+.. autodata:: geosoft.gxapi.LTB_DELIM_SPACE
+    :annotation:
+.. autodata:: geosoft.gxapi.LTB_DELIM_COMMA
+    :annotation:
+.. autodata:: geosoft.gxapi.LTB_DELIM_SPACECOMMA
+    :annotation:
 
-.. autoattribute:: geosoft.gxapi.LTB_DELIM_SPACE
-
-::
-
-   Spaces 
-
-.. autoattribute:: geosoft.gxapi.LTB_DELIM_COMMA
-
-::
-
-   Commas 
-
-.. autoattribute:: geosoft.gxapi.LTB_DELIM_SPACECOMMA
-
-::
-
-   Spaces and Commas 
 
 .. _LTB_TYPE:
 
 LTB_TYPE constants
 -----------------------------------------------------------------------
 
-::
+Types of `GXLTB <geosoft.gxapi.GXLTB>` Headers
 
-   Types of LTB Headers 
-
-.. autoattribute:: geosoft.gxapi.LTB_TYPE_HEADER
-
-::
-
-   Has a header 
-
-.. autoattribute:: geosoft.gxapi.LTB_TYPE_NOHEADER
-
-::
-
-   Has no header 
+.. autodata:: geosoft.gxapi.LTB_TYPE_HEADER
+    :annotation:
+.. autodata:: geosoft.gxapi.LTB_TYPE_NOHEADER
+    :annotation:
 
 	

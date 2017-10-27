@@ -8,22 +8,20 @@ GXVVU class
 .. autoclass:: geosoft.gxapi.GXVVU
    :members:
 
+
 .. _QC_CRITERION:
 
 QC_CRITERION constants
 -----------------------------------------------------------------------
 
-::
+Criterion
 
-   Criterion 
-
-.. autoattribute:: geosoft.gxapi.QC_CRITERION_1
-
-
-.. autoattribute:: geosoft.gxapi.QC_CRITERION_2
-
-
-.. autoattribute:: geosoft.gxapi.QC_CRITERION_12
+.. autodata:: geosoft.gxapi.QC_CRITERION_1
+    :annotation:
+.. autodata:: geosoft.gxapi.QC_CRITERION_2
+    :annotation:
+.. autodata:: geosoft.gxapi.QC_CRITERION_12
+    :annotation:
 
 
 .. _TEM_ARRAY:
@@ -31,17 +29,14 @@ QC_CRITERION constants
 TEM_ARRAY constants
 -----------------------------------------------------------------------
 
-::
+Array Type
 
-   Array Type 
-
-.. autoattribute:: geosoft.gxapi.TEM_ARRAY_VERTICALSOUNDING
-
-
-.. autoattribute:: geosoft.gxapi.TEM_ARRAY_PROFILING
-
-
-.. autoattribute:: geosoft.gxapi.TEM_ARRAY_BOREHOLE
+.. autodata:: geosoft.gxapi.TEM_ARRAY_VERTICALSOUNDING
+    :annotation:
+.. autodata:: geosoft.gxapi.TEM_ARRAY_PROFILING
+    :annotation:
+.. autodata:: geosoft.gxapi.TEM_ARRAY_BOREHOLE
+    :annotation:
 
 
 .. _VV_DUP:
@@ -49,53 +44,31 @@ TEM_ARRAY constants
 VV_DUP constants
 -----------------------------------------------------------------------
 
-::
+Duplicate handling mode
 
-   Duplicate handling mode 
+.. autodata:: geosoft.gxapi.VV_DUP_AVERAGE
+    :annotation:
+.. autodata:: geosoft.gxapi.VV_DUP_1
+    :annotation:
+.. autodata:: geosoft.gxapi.VV_DUP_2
+    :annotation:
+.. autodata:: geosoft.gxapi.VV_DUP_DUMMY
+    :annotation:
+.. autodata:: geosoft.gxapi.VV_DUP_SAMPLE
+    :annotation:
 
-.. autoattribute:: geosoft.gxapi.VV_DUP_AVERAGE
-
-::
-
-   Average numeric values (for strings, same as VV_DUP_1) 
-
-.. autoattribute:: geosoft.gxapi.VV_DUP_1
-
-::
-
-   Use first value of the pair 
-
-.. autoattribute:: geosoft.gxapi.VV_DUP_2
-
-::
-
-   Use second value of the pair 
-
-.. autoattribute:: geosoft.gxapi.VV_DUP_DUMMY
-
-::
-
-   Set to dummy 
-
-.. autoattribute:: geosoft.gxapi.VV_DUP_SAMPLE
-
-::
-
-   Set to "3" (cannot use with string data VV) 
 
 .. _VV_XYDUP:
 
 VV_XYDUP constants
 -----------------------------------------------------------------------
 
-::
+Sample handling
 
-   Sample handling 
-
-.. autoattribute:: geosoft.gxapi.VV_XYDUP_AVERAGE
-
-
-.. autoattribute:: geosoft.gxapi.VV_XYDUP_SUM
+.. autodata:: geosoft.gxapi.VV_XYDUP_AVERAGE
+    :annotation:
+.. autodata:: geosoft.gxapi.VV_XYDUP_SUM
+    :annotation:
 
 
 .. _VVU_CASE:
@@ -103,14 +76,12 @@ VV_XYDUP constants
 VVU_CASE constants
 -----------------------------------------------------------------------
 
-::
+String case handling
 
-   String case handling 
-
-.. autoattribute:: geosoft.gxapi.VVU_CASE_TOLERANT
-
-
-.. autoattribute:: geosoft.gxapi.VVU_CASE_SENSITIVE
+.. autodata:: geosoft.gxapi.VVU_CASE_TOLERANT
+    :annotation:
+.. autodata:: geosoft.gxapi.VVU_CASE_SENSITIVE
+    :annotation:
 
 
 .. _VVU_CLIP:
@@ -118,71 +89,46 @@ VVU_CASE constants
 VVU_CLIP constants
 -----------------------------------------------------------------------
 
-::
+Type of clipping
 
-   Type of clipping 
+.. autodata:: geosoft.gxapi.VVU_CLIP_DUMMY
+    :annotation:
+.. autodata:: geosoft.gxapi.VVU_CLIP_LIMIT
+    :annotation:
 
-.. autoattribute:: geosoft.gxapi.VVU_CLIP_DUMMY
-
-::
-
-   Clip replaces clipped values with a dummy. 
-
-.. autoattribute:: geosoft.gxapi.VVU_CLIP_LIMIT
-
-::
-
-   Clip replaces clipped values with the limit. 
 
 .. _VVU_DUMMYREPEAT:
 
 VVU_DUMMYREPEAT constants
 -----------------------------------------------------------------------
 
-::
+How to deal with repeats
 
-   How to deal with repeats 
+.. autodata:: geosoft.gxapi.VVU_DUMMYREPEAT_FIRST
+    :annotation:
+.. autodata:: geosoft.gxapi.VVU_DUMMYREPEAT_LAST
+    :annotation:
+.. autodata:: geosoft.gxapi.VVU_DUMMYREPEAT_MIDDLE
+    :annotation:
 
-.. autoattribute:: geosoft.gxapi.VVU_DUMMYREPEAT_FIRST
-
-::
-
-   Dummies all but first point. 
-
-.. autoattribute:: geosoft.gxapi.VVU_DUMMYREPEAT_LAST
-
-::
-
-   Dummies all but last point. 
-
-.. autoattribute:: geosoft.gxapi.VVU_DUMMYREPEAT_MIDDLE
-
-::
-
-   Dummies all but middle point. 
 
 .. _VVU_INTERP:
 
 VVU_INTERP constants
 -----------------------------------------------------------------------
 
-::
+Interpolation method to use
 
-   Interpolation method to use 
-
-.. autoattribute:: geosoft.gxapi.VVU_INTERP_NEAREST
-
-
-.. autoattribute:: geosoft.gxapi.VVU_INTERP_LINEAR
-
-
-.. autoattribute:: geosoft.gxapi.VVU_INTERP_CUBIC
-
-
-.. autoattribute:: geosoft.gxapi.VVU_INTERP_AKIMA
-
-
-.. autoattribute:: geosoft.gxapi.VVU_INTERP_PREDICT
+.. autodata:: geosoft.gxapi.VVU_INTERP_NEAREST
+    :annotation:
+.. autodata:: geosoft.gxapi.VVU_INTERP_LINEAR
+    :annotation:
+.. autodata:: geosoft.gxapi.VVU_INTERP_CUBIC
+    :annotation:
+.. autodata:: geosoft.gxapi.VVU_INTERP_AKIMA
+    :annotation:
+.. autodata:: geosoft.gxapi.VVU_INTERP_PREDICT
+    :annotation:
 
 
 .. _VVU_INTERP_EDGE:
@@ -190,20 +136,16 @@ VVU_INTERP constants
 VVU_INTERP_EDGE constants
 -----------------------------------------------------------------------
 
-::
+Interpolation method to use on edges
 
-   Interpolation method to use on edges 
-
-.. autoattribute:: geosoft.gxapi.VVU_INTERP_EDGE_NONE
-
-
-.. autoattribute:: geosoft.gxapi.VVU_INTERP_EDGE_SAME
-
-
-.. autoattribute:: geosoft.gxapi.VVU_INTERP_EDGE_NEAREST
-
-
-.. autoattribute:: geosoft.gxapi.VVU_INTERP_EDGE_LINEAR
+.. autodata:: geosoft.gxapi.VVU_INTERP_EDGE_NONE
+    :annotation:
+.. autodata:: geosoft.gxapi.VVU_INTERP_EDGE_SAME
+    :annotation:
+.. autodata:: geosoft.gxapi.VVU_INTERP_EDGE_NEAREST
+    :annotation:
+.. autodata:: geosoft.gxapi.VVU_INTERP_EDGE_LINEAR
+    :annotation:
 
 
 .. _VVU_LINE:
@@ -211,14 +153,12 @@ VVU_INTERP_EDGE constants
 VVU_LINE constants
 -----------------------------------------------------------------------
 
-::
+Line Types
 
-   Line Types 
-
-.. autoattribute:: geosoft.gxapi.LINE_2_POINTS
-
-
-.. autoattribute:: geosoft.gxapi.LINE_POINT_AZIMUTH
+.. autodata:: geosoft.gxapi.LINE_2_POINTS
+    :annotation:
+.. autodata:: geosoft.gxapi.LINE_POINT_AZIMUTH
+    :annotation:
 
 
 .. _VVU_MASK:
@@ -226,62 +166,42 @@ VVU_LINE constants
 VVU_MASK constants
 -----------------------------------------------------------------------
 
-::
+Type of clipping
 
-   Type of clipping 
+.. autodata:: geosoft.gxapi.VVU_MASK_INSIDE
+    :annotation:
+.. autodata:: geosoft.gxapi.VVU_MASK_OUTSIDE
+    :annotation:
 
-.. autoattribute:: geosoft.gxapi.VVU_MASK_INSIDE
-
-::
-
-   Mask VV is set to dummy at locations inside the PLY. 
-
-.. autoattribute:: geosoft.gxapi.VVU_MASK_OUTSIDE
-
-::
-
-   Mask VV is set to dummy at locations outside the PLY. 
 
 .. _VVU_MATCH:
 
 VVU_MATCH constants
 -----------------------------------------------------------------------
 
-::
+Matching style
 
-   Matching style 
+.. autodata:: geosoft.gxapi.VVU_MATCH_FULL_STRINGS
+    :annotation:
+.. autodata:: geosoft.gxapi.VVU_MATCH_INPUT_LENGTH
+    :annotation:
 
-.. autoattribute:: geosoft.gxapi.VVU_MATCH_FULL_STRINGS
-
-::
-
-   Entire string 
-
-.. autoattribute:: geosoft.gxapi.VVU_MATCH_INPUT_LENGTH
-
-::
-
-   Match the first part of a string. 
 
 .. _VVU_MODE:
 
 VVU_MODE constants
 -----------------------------------------------------------------------
 
-::
+Statistic to select
 
-   Statistic to select 
-
-.. autoattribute:: geosoft.gxapi.VVU_MODE_MEAN
-
-
-.. autoattribute:: geosoft.gxapi.VVU_MODE_MEDIAN
-
-
-.. autoattribute:: geosoft.gxapi.VVU_MODE_MAXIMUM
-
-
-.. autoattribute:: geosoft.gxapi.VVU_MODE_MINIMUM
+.. autodata:: geosoft.gxapi.VVU_MODE_MEAN
+    :annotation:
+.. autodata:: geosoft.gxapi.VVU_MODE_MEDIAN
+    :annotation:
+.. autodata:: geosoft.gxapi.VVU_MODE_MAXIMUM
+    :annotation:
+.. autodata:: geosoft.gxapi.VVU_MODE_MINIMUM
+    :annotation:
 
 
 .. _VVU_OFFSET:
@@ -289,20 +209,16 @@ VVU_MODE constants
 VVU_OFFSET constants
 -----------------------------------------------------------------------
 
-::
+Heading
 
-   Heading 
-
-.. autoattribute:: geosoft.gxapi.VVU_OFFSET_FORWARD
-
-
-.. autoattribute:: geosoft.gxapi.VVU_OFFSET_BACKWARD
-
-
-.. autoattribute:: geosoft.gxapi.VVU_OFFSET_RIGHT
-
-
-.. autoattribute:: geosoft.gxapi.VVU_OFFSET_LEFT
+.. autodata:: geosoft.gxapi.VVU_OFFSET_FORWARD
+    :annotation:
+.. autodata:: geosoft.gxapi.VVU_OFFSET_BACKWARD
+    :annotation:
+.. autodata:: geosoft.gxapi.VVU_OFFSET_RIGHT
+    :annotation:
+.. autodata:: geosoft.gxapi.VVU_OFFSET_LEFT
+    :annotation:
 
 
 .. _VVU_PRUNE:
@@ -310,41 +226,29 @@ VVU_OFFSET constants
 VVU_PRUNE constants
 -----------------------------------------------------------------------
 
-::
+Prune options
 
-   Prune options 
+.. autodata:: geosoft.gxapi.VVU_PRUNE_DUMMY
+    :annotation:
+.. autodata:: geosoft.gxapi.VVU_PRUNE_VALID
+    :annotation:
 
-.. autoattribute:: geosoft.gxapi.VVU_PRUNE_DUMMY
-
-::
-
-   0 
-
-.. autoattribute:: geosoft.gxapi.VVU_PRUNE_VALID
-
-::
-
-   1 
 
 .. _VVU_SPL:
 
 VVU_SPL constants
 -----------------------------------------------------------------------
 
-::
+Spline types
 
-   Spline types 
-
-.. autoattribute:: geosoft.gxapi.VVU_SPL_LINEAR
-
-
-.. autoattribute:: geosoft.gxapi.VVU_SPL_CUBIC
-
-
-.. autoattribute:: geosoft.gxapi.VVU_SPL_AKIMA
-
-
-.. autoattribute:: geosoft.gxapi.VVU_SPL_NEAREST
+.. autodata:: geosoft.gxapi.VVU_SPL_LINEAR
+    :annotation:
+.. autodata:: geosoft.gxapi.VVU_SPL_CUBIC
+    :annotation:
+.. autodata:: geosoft.gxapi.VVU_SPL_AKIMA
+    :annotation:
+.. autodata:: geosoft.gxapi.VVU_SPL_NEAREST
+    :annotation:
 
 
 .. _VVU_SRCHREPL_CASE:
@@ -352,14 +256,11 @@ VVU_SPL constants
 VVU_SRCHREPL_CASE constants
 -----------------------------------------------------------------------
 
-::
+Search and Replace handling of string case
 
-   Search and Replace handling of string case 
-
-.. autoattribute:: geosoft.gxapi.VVU_SRCHREPL_CASE_TOLERANT
-
-
-.. autoattribute:: geosoft.gxapi.VVU_SRCHREPL_CASE_SENSITIVE
-
+.. autodata:: geosoft.gxapi.VVU_SRCHREPL_CASE_TOLERANT
+    :annotation:
+.. autodata:: geosoft.gxapi.VVU_SRCHREPL_CASE_SENSITIVE
+    :annotation:
 
 	

@@ -8,31 +8,19 @@ GXVOXE class
 .. autoclass:: geosoft.gxapi.GXVOXE
    :members:
 
+
 .. _VOXE_EVAL:
 
 VOXE_EVAL constants
 -----------------------------------------------------------------------
 
-::
+Voxel Evaluation modes
 
-   Voxel Evaluation modes 
-
-.. autoattribute:: geosoft.gxapi.VOXE_EVAL_NEAR
-
-::
-
-   Nearest value 
-
-.. autoattribute:: geosoft.gxapi.VOXE_EVAL_INTERP
-
-::
-
-   Linear Interpolation 
-
-.. autoattribute:: geosoft.gxapi.VOXE_EVAL_BEST
-
-::
-
-   Best Interpolation 
+.. autodata:: geosoft.gxapi.VOXE_EVAL_NEAR
+    :annotation:
+.. autodata:: geosoft.gxapi.VOXE_EVAL_INTERP
+    :annotation:
+.. autodata:: geosoft.gxapi.VOXE_EVAL_BEST
+    :annotation:
 
 	

@@ -8,25 +8,17 @@ GXREG class
 .. autoclass:: geosoft.gxapi.GXREG
    :members:
 
+
 .. _REG_MERGE:
 
 REG_MERGE constants
 -----------------------------------------------------------------------
 
-::
+`GXREG <geosoft.gxapi.GXREG>` merge options
 
-   REG merge options 
-
-.. autoattribute:: geosoft.gxapi.REG_MERGE_REPLACE
-
-::
-
-   Replace Values 
-
-.. autoattribute:: geosoft.gxapi.REG_MERGE_ADD
-
-::
-
-   Only append values 
+.. autodata:: geosoft.gxapi.REG_MERGE_REPLACE
+    :annotation:
+.. autodata:: geosoft.gxapi.REG_MERGE_ADD
+    :annotation:
 
 	

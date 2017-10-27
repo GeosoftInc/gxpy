@@ -8,19 +8,17 @@ GXACQUIRE class
 .. autoclass:: geosoft.gxapi.GXACQUIRE
    :members:
 
+
 .. _ACQUIRE_SEL:
 
 ACQUIRE_SEL constants
 -----------------------------------------------------------------------
 
-::
+Type of Selection
 
-   Type of Selection 
-
-.. autoattribute:: geosoft.gxapi.ACQUIRE_SEL_HOLES
-
-
-.. autoattribute:: geosoft.gxapi.ACQUIRE_SEL_POINT
-
+.. autodata:: geosoft.gxapi.ACQUIRE_SEL_HOLES
+    :annotation:
+.. autodata:: geosoft.gxapi.ACQUIRE_SEL_POINT
+    :annotation:
 
 	

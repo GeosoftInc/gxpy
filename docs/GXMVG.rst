@@ -8,19 +8,18 @@ GXMVG class
 .. autoclass:: geosoft.gxapi.GXMVG
    :members:
 
+
 .. _MVG_DRAW:
 
 MVG_DRAW constants
 -----------------------------------------------------------------------
 
-::
+`GXMVG <geosoft.gxapi.GXMVG>` draw define
 
-   MVG draw define 
-
-.. autoattribute:: geosoft.gxapi.MVG_DRAW_POLYLINE
-
-
-.. autoattribute:: geosoft.gxapi.MVG_DRAW_POLYGON
+.. autodata:: geosoft.gxapi.MVG_DRAW_POLYLINE
+    :annotation:
+.. autodata:: geosoft.gxapi.MVG_DRAW_POLYGON
+    :annotation:
 
 
 .. _MVG_GRID:
@@ -28,17 +27,14 @@ MVG_DRAW constants
 MVG_GRID constants
 -----------------------------------------------------------------------
 
-::
+`GXMVG <geosoft.gxapi.GXMVG>` grid define
 
-   MVG grid define 
-
-.. autoattribute:: geosoft.gxapi.MVG_GRID_DOT
-
-
-.. autoattribute:: geosoft.gxapi.MVG_GRID_LINE
-
-
-.. autoattribute:: geosoft.gxapi.MVG_GRID_CROSS
+.. autodata:: geosoft.gxapi.MVG_GRID_DOT
+    :annotation:
+.. autodata:: geosoft.gxapi.MVG_GRID_LINE
+    :annotation:
+.. autodata:: geosoft.gxapi.MVG_GRID_CROSS
+    :annotation:
 
 
 .. _MVG_LABEL_BOUND:
@@ -46,14 +42,12 @@ MVG_GRID constants
 MVG_LABEL_BOUND constants
 -----------------------------------------------------------------------
 
-::
+`GXMVG <geosoft.gxapi.GXMVG>` label bound define
 
-   MVG label bound define 
-
-.. autoattribute:: geosoft.gxapi.MVG_LABEL_BOUND_NO
-
-
-.. autoattribute:: geosoft.gxapi.MVG_LABEL_BOUND_YES
+.. autodata:: geosoft.gxapi.MVG_LABEL_BOUND_NO
+    :annotation:
+.. autodata:: geosoft.gxapi.MVG_LABEL_BOUND_YES
+    :annotation:
 
 
 .. _MVG_LABEL_JUST:
@@ -61,20 +55,16 @@ MVG_LABEL_BOUND constants
 MVG_LABEL_JUST constants
 -----------------------------------------------------------------------
 
-::
+`GXMVG <geosoft.gxapi.GXMVG>` label justification define
 
-   MVG label justification define 
-
-.. autoattribute:: geosoft.gxapi.MVG_LABEL_JUST_TOP
-
-
-.. autoattribute:: geosoft.gxapi.MVG_LABEL_JUST_BOTTOM
-
-
-.. autoattribute:: geosoft.gxapi.MVG_LABEL_JUST_LEFT
-
-
-.. autoattribute:: geosoft.gxapi.MVG_LABEL_JUST_RIGHT
+.. autodata:: geosoft.gxapi.MVG_LABEL_JUST_TOP
+    :annotation:
+.. autodata:: geosoft.gxapi.MVG_LABEL_JUST_BOTTOM
+    :annotation:
+.. autodata:: geosoft.gxapi.MVG_LABEL_JUST_LEFT
+    :annotation:
+.. autodata:: geosoft.gxapi.MVG_LABEL_JUST_RIGHT
+    :annotation:
 
 
 .. _MVG_LABEL_ORIENT:
@@ -82,17 +72,14 @@ MVG_LABEL_JUST constants
 MVG_LABEL_ORIENT constants
 -----------------------------------------------------------------------
 
-::
+`GXMVG <geosoft.gxapi.GXMVG>` label orientation
 
-   MVG label orientation 
-
-.. autoattribute:: geosoft.gxapi.MVG_LABEL_ORIENT_HORIZONTAL
-
-
-.. autoattribute:: geosoft.gxapi.MVG_LABEL_ORIENT_TOP_RIGHT
-
-
-.. autoattribute:: geosoft.gxapi.MVG_LABEL_ORIENT_TOP_LEFT
+.. autodata:: geosoft.gxapi.MVG_LABEL_ORIENT_HORIZONTAL
+    :annotation:
+.. autodata:: geosoft.gxapi.MVG_LABEL_ORIENT_TOP_RIGHT
+    :annotation:
+.. autodata:: geosoft.gxapi.MVG_LABEL_ORIENT_TOP_LEFT
+    :annotation:
 
 
 .. _MVG_SCALE:
@@ -100,17 +87,14 @@ MVG_LABEL_ORIENT constants
 MVG_SCALE constants
 -----------------------------------------------------------------------
 
-::
+`GXMVG <geosoft.gxapi.GXMVG>` scale define
 
-   MVG scale define 
-
-.. autoattribute:: geosoft.gxapi.MVG_SCALE_LINEAR
-
-
-.. autoattribute:: geosoft.gxapi.MVG_SCALE_LOG
-
-
-.. autoattribute:: geosoft.gxapi.MVG_SCALE_LOGLINEAR
+.. autodata:: geosoft.gxapi.MVG_SCALE_LINEAR
+    :annotation:
+.. autodata:: geosoft.gxapi.MVG_SCALE_LOG
+    :annotation:
+.. autodata:: geosoft.gxapi.MVG_SCALE_LOGLINEAR
+    :annotation:
 
 
 .. _MVG_WRAP:
@@ -118,14 +102,11 @@ MVG_SCALE constants
 MVG_WRAP constants
 -----------------------------------------------------------------------
 
-::
+`GXMVG <geosoft.gxapi.GXMVG>` wrap define
 
-   MVG wrap define 
-
-.. autoattribute:: geosoft.gxapi.MVG_WRAP_NO
-
-
-.. autoattribute:: geosoft.gxapi.MVG_WRAP_YES
-
+.. autodata:: geosoft.gxapi.MVG_WRAP_NO
+    :annotation:
+.. autodata:: geosoft.gxapi.MVG_WRAP_YES
+    :annotation:
 
 	
