@@ -2,14 +2,21 @@
 """
 Created on Sun Jan  5 10:15:34 2014
 
-@author: Ian
+INSTALLATION
+
+This program requires pyqt5 to be part of Python. To install, open a command
+window as administrator:
+
+   pip install pyqt5
+
+see https://www.riverbankcomputing.com/software/pyqt/intro for copyright.
+
+@author: Ian MacLeod, Geosoft, 2015
 """
-#TODO: Validate on some real data
 #TODO: save classification map
-#TODO: add Help
+#TODO: add some Help
 #TODO: graphics - show the som adjusting as it goes.
 
-# comment-out following 2 lines to support remote debugging
 #import pydevd
 #pydevd.settrace('localhost', port=34765, stdoutToServer=True, stderrToServer=True)
 

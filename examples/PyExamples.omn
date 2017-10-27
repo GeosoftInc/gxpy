@@ -7,6 +7,6 @@
 
 MENU "PyExamples"
 ITEM "Hello", hello_world_extension.py
-ITEM "Add channels", chanadd.py
+ITEM "Add to a channel", chanadd.py
 ITEM "SOM Analysis", som_om.py
 ITEM "Project test", test_project
