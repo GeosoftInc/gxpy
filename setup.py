@@ -93,7 +93,7 @@ setup(
     ],
     package_data={
         'geosoft': ['*.json'],
-        'geosoft.gxapi': ['geosoft.key', 'gxapi.pyd', '*.dll'],
+        'geosoft.gxapi': ['geosoft.key', 'gxapi_cy.pyd',  'gxapi_cy_extend.pyd', '*.dll'],
         'geosoft.gxpy._jdcal': ['*.txt', '*.rst'],
         'geosoft.gxpy.user_input': ['*.gx']
     },
