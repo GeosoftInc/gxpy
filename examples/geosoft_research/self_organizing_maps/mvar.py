@@ -685,8 +685,8 @@ class SOMgdb:
             err = euclidean_distance(classes[clss], data)
             clss[mask] = gxu.gx_dummy(clss.dtype)
             err[mask] = gxu.gx_dummy(err.dtype)
-            self.gdb.write_channel(lsymb, self.outClass, clss)
-            self.gdb.write_channel(lsymb, self.outDist, err)
+            self.gdb.write_channel(lsymb, self.outClass, clss, fid=fid)
+            self.gdb.write_channel(lsymb, self.outDist, err, fid=fid)
 
             n += 1
             self.progress('Writing line {}'.format(ln), (n * 100.0) / nl)
