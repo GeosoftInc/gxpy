@@ -42,8 +42,8 @@ if 'bdist_wheel' in sys.argv:
                 shutil.copyfile('gxapi_cy.cp35-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy.pyd')
                 shutil.copyfile('gxapi_cy_extend.cp35-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy_extend.pyd')
             elif pythontag == "cp36":
-                shutil.copyfile('gxapi_cy.cp35-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy.pyd')
-                shutil.copyfile('gxapi_cy_extend.cp35-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy_extend.pyd')
+                shutil.copyfile('gxapi_cy.cp36-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy.pyd')
+                shutil.copyfile('gxapi_cy_extend.cp36-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy_extend.pyd')
             break
 else:
     # Copy the version we are building for
