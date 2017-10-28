@@ -8,19 +8,18 @@ GXGEOSTRING class
 .. autoclass:: geosoft.gxapi.GXGEOSTRING
    :members:
 
+
 .. _GEOSTRING_OPEN:
 
 GEOSTRING_OPEN constants
 -----------------------------------------------------------------------
 
-::
+Open Modes
 
-   Open Modes 
-
-.. autoattribute:: geosoft.gxapi.GEOSTRING_OPEN_READ
-
-
-.. autoattribute:: geosoft.gxapi.GEOSTRING_OPEN_READWRITE
+.. autodata:: geosoft.gxapi.GEOSTRING_OPEN_READ
+    :annotation:
+.. autodata:: geosoft.gxapi.GEOSTRING_OPEN_READWRITE
+    :annotation:
 
 
 .. _SECTION_ORIENTATION:
@@ -28,23 +27,17 @@ GEOSTRING_OPEN constants
 SECTION_ORIENTATION constants
 -----------------------------------------------------------------------
 
-::
+Section orientation types
 
-   Section orientation types 
-
-.. autoattribute:: geosoft.gxapi.SECTION_ORIENTATION_UNKNOWN
-
-
-.. autoattribute:: geosoft.gxapi.SECTION_ORIENTATION_PLAN
-
-
-.. autoattribute:: geosoft.gxapi.SECTION_ORIENTATION_SECTION
-
-
-.. autoattribute:: geosoft.gxapi.SECTION_ORIENTATION_CROOKED
-
-
-.. autoattribute:: geosoft.gxapi.SECTION_ORIENTATION_GMSYS
-
+.. autodata:: geosoft.gxapi.SECTION_ORIENTATION_UNKNOWN
+    :annotation:
+.. autodata:: geosoft.gxapi.SECTION_ORIENTATION_PLAN
+    :annotation:
+.. autodata:: geosoft.gxapi.SECTION_ORIENTATION_SECTION
+    :annotation:
+.. autodata:: geosoft.gxapi.SECTION_ORIENTATION_CROOKED
+    :annotation:
+.. autodata:: geosoft.gxapi.SECTION_ORIENTATION_GMSYS
+    :annotation:
 
 	

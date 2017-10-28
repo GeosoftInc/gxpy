@@ -1,17 +1,14 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>GXLPT class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
-    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -37,7 +34,7 @@
 </script>
 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -98,71 +95,56 @@
 <span id="gxlpt"></span><h1>GXLPT class<a class="headerlink" href="#gxlpt-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXLPT">
-<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXLPT</code><a class="headerlink" href="#geosoft.gxapi.GXLPT" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="k">class</span> <span class="nc">allows</span> <span class="n">access</span> <span class="n">to</span> <span class="n">the</span> <span class="n">current</span> <span class="n">default</span> <span class="n">line</span> <span class="n">patterns</span><span class="o">.</span>
-<span class="n">It</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">allow</span> <span class="n">the</span> <span class="n">definition</span> <span class="n">of</span> <span class="n">individual</span> <span class="n">patterns</span><span class="o">.</span> <span class="n">It</span> <span class="ow">is</span>
-<span class="ow">is</span> <span class="n">used</span> <span class="n">primarily</span> <span class="k">with</span> <span class="n">MAP</span> <span class="k">class</span> <span class="nc">functions</span><span class="o">.</span>
-</pre></div>
-</div>
-<dl class="staticmethod">
+<em class="property">class </em><code class="descname">GXLPT</code><span class="sig-paren">(</span><em>wrapper=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXLPT" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXLPT class.</p>
+<p>This class allows access to the current default line patterns.
+It does not allow the definition of individual patterns. It is
+is used primarily with <a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXMAP</span></code></a> class functions.</p>
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXLPT.create">
-<em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXLPT:<a class="headerlink" href="#geosoft.gxapi.GXLPT.create" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Creates</span> <span class="n">a</span> <span class="n">line</span> <span class="n">pattern</span> <span class="nb">object</span> <span class="k">with</span> <span class="n">current</span> <span class="n">default</span> <span class="n">patterns</span><span class="o">.</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXLPT.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a line pattern object with current default patterns.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">LPT Object</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXLPT" title="geosoft.gxapi.GXLPT"><code class="xref py py-obj docutils literal"><span class="pre">GXLPT</span></code></a> Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXLPT" title="geosoft.gxapi.GXLPT"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLPT</span></code></a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXLPT" title="geosoft.gxapi.GXLPT">GXLPT</a></td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXLPT.get_lst">
-<code class="descname">get_lst</code><span class="sig-paren">(</span><em>(GXLST)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLPT.get_lst" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Copies</span> <span class="nb">all</span> <span class="n">pattern</span> <span class="n">names</span> <span class="n">into</span> <span class="n">a</span> <span class="n">LST</span> <span class="nb">object</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">get_lst</code><span class="sig-paren">(</span><em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXLPT.get_lst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copies all pattern names into a <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> object.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; LST Handle</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> Handle</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXLPT.get_standard_lst">
-<code class="descname">get_standard_lst</code><span class="sig-paren">(</span><em>(GXLST)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXLPT.get_standard_lst" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Copies</span> <span class="n">the</span> <span class="n">six</span> <span class="n">standard</span> <span class="n">line</span> <span class="n">types</span> <span class="n">into</span> <span class="n">a</span> <span class="n">LST</span> <span class="nb">object</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">get_standard_lst</code><span class="sig-paren">(</span><em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXLPT.get_standard_lst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copies the six standard line types into a <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> object.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; LST Handle</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> Handle</td>
 </tr>
 </tbody>
 </table>
@@ -170,38 +152,32 @@
 <p><span class="versionmodified">New in version 9.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">six</span> <span class="n">standard</span> <span class="n">line</span> <span class="n">types</span> <span class="n">are</span> <span class="s2">&quot;solid&quot;</span><span class="p">,</span> <span class="s2">&quot;long dash&quot;</span><span class="p">,</span> <span class="s2">&quot;dotted&quot;</span><span class="p">,</span> <span class="s2">&quot;short dash&quot;</span><span class="p">,</span> <span class="s2">&quot;long, short dash&quot;</span> <span class="ow">and</span> <span class="s2">&quot;dash dot&quot;</span><span class="o">.</span>
-</pre></div>
-</div>
+<p>The six standard line types are “solid”, “long dash”, “dotted”, “short dash”, “long, short dash” and “dash dot”.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXLPT.is_null">
-<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool<a class="headerlink" href="#geosoft.gxapi.GXLPT.is_null" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if the instance of <code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLPT</span> <span class="pre">is</span> <span class="pre">null</span> <span class="pre">(undefined)</span></code></p>
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXLPT.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the instance of <code class="xref py py-obj docutils literal"><span class="pre">GXLPT</span></code> is null (undefined)`</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null instance of <a class="reference internal" href="#geosoft.gxapi.GXLPT" title="geosoft.gxapi.GXLPT"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLPT</span></code></a>, False otherwise.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool`</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXLPT</span></code>, False otherwise.</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXLPT.null">
-<em class="property">static </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXLPT<a class="headerlink" href="#geosoft.gxapi.GXLPT.null" title="Permalink to this definition">¶</a></dt>
-<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXLPT" title="geosoft.gxapi.GXLPT"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLPT</span></code></a></p>
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXLPT.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXLPT</span></code></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXLPT" title="geosoft.gxapi.GXLPT"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLPT</span></code></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXLPT" title="geosoft.gxapi.GXLPT"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLPT</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <code class="xref py py-obj docutils literal"><span class="pre">GXLPT</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -236,7 +212,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

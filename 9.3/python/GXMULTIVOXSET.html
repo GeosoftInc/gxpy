@@ -1,17 +1,14 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>GXMULTIVOXSET class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
-    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -37,7 +34,7 @@
 </script>
 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -110,56 +107,45 @@
 <span id="gxmultivoxset"></span><h1>GXMULTIVOXSET class<a class="headerlink" href="#gxmultivoxset-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXMULTIVOXSET">
-<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXMULTIVOXSET</code><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">High</span> <span class="n">Performance</span> <span class="mi">3</span><span class="n">D</span> <span class="n">Grid</span><span class="o">.</span>
-</pre></div>
-</div>
-<dl class="staticmethod">
+<em class="property">class </em><code class="descname">GXMULTIVOXSET</code><span class="sig-paren">(</span><em>wrapper=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXMULTIVOXSET class.</p>
+<p>High Performance 3D Grid.</p>
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMULTIVOXSET.check_equal_to_legacy_voxel">
-<em class="property">static </em><code class="descname">check_equal_to_legacy_voxel</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.check_equal_to_legacy_voxel" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Compare</span> <span class="n">MULTIVOXSET</span> <span class="n">to</span> <span class="n">Legacy</span> <span class="n">Voxel</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">check_equal_to_legacy_voxel</code><span class="sig-paren">(</span><em>voxel_file</em>, <em>legacy_voxel_file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.check_equal_to_legacy_voxel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compare <a class="reference internal" href="#geosoft.gxapi.GXMULTIVOXSET" title="geosoft.gxapi.GXMULTIVOXSET"><code class="xref py py-obj docutils literal"><span class="pre">GXMULTIVOXSET</span></code></a> to Legacy Voxel</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Voxel file</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; Legacy Voxel file</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>voxel_file</strong> (<em>str</em>) – Voxel file</li>
+<li><strong>legacy_voxel_file</strong> (<em>str</em>) – Legacy Voxel file</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.0.</span></p>
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMULTIVOXSET.compute_default_cell_size">
-<em class="property">static </em><code class="descname">compute_default_cell_size</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.compute_default_cell_size" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Used</span> <span class="k">if</span> <span class="n">the</span> <span class="n">user</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">provide</span> <span class="n">a</span> <span class="n">default</span> <span class="n">cell</span> <span class="n">size</span><span class="o">.</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">compute_default_cell_size</code><span class="sig-paren">(</span><em>min_x</em>, <em>max_x</em>, <em>min_y</em>, <em>max_y</em>, <em>min_z</em>, <em>max_z</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.compute_default_cell_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used if the user does not provide a default cell size.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>float</em>) &#8211; MinX</li>
-<li><strong>arg2</strong> (<em>float</em>) &#8211; MaxX</li>
-<li><strong>arg3</strong> (<em>float</em>) &#8211; MinY</li>
-<li><strong>arg4</strong> (<em>float</em>) &#8211; MaxY</li>
-<li><strong>arg5</strong> (<em>float</em>) &#8211; MinZ</li>
-<li><strong>arg6</strong> (<em>float</em>) &#8211; MaxZ</li>
+<li><strong>min_x</strong> (<em>float</em>) – MinX</li>
+<li><strong>max_x</strong> (<em>float</em>) – MaxX</li>
+<li><strong>min_y</strong> (<em>float</em>) – MinY</li>
+<li><strong>max_y</strong> (<em>float</em>) – MaxY</li>
+<li><strong>min_z</strong> (<em>float</em>) – MinZ</li>
+<li><strong>max_z</strong> (<em>float</em>) – MaxZ</li>
 </ul>
 </td>
 </tr>
@@ -172,1077 +158,851 @@
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.0.</span></p>
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Compute</span> <span class="n">a</span> <span class="n">default</span> <span class="n">cell</span> <span class="n">size</span> <span class="k">for</span> <span class="n">a</span> <span class="n">voxel</span> <span class="n">given</span> <span class="n">a</span> <span class="n">data</span> <span class="nb">range</span><span class="o">.</span>
-</pre></div>
-</div>
+<p>Compute a default cell size for a voxel given a data range.</p>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMULTIVOXSET.convert_double_to_vector">
-<em class="property">static </em><code class="descname">convert_double_to_vector</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(int)arg7</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.convert_double_to_vector" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="mi">3</span> <span class="n">Double</span> <span class="n">Voxels</span> <span class="n">to</span> <span class="n">a</span> <span class="n">Vector</span> <span class="n">Voxel</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">convert_double_to_vector</code><span class="sig-paren">(</span><em>x_file_name</em>, <em>y_file_name</em>, <em>z_file_name</em>, <em>out_file_name</em>, <em>inclination</em>, <em>declination</em>, <em>rotated</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.convert_double_to_vector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert 3 Double Voxels to a Vector Voxel</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Input X Voxel file</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; Input Y Voxel file</li>
-<li><strong>arg3</strong> (<em>str</em>) &#8211; Input Z Voxel file</li>
-<li><strong>arg4</strong> (<em>str</em>) &#8211; Output Vector Voxel file</li>
-<li><strong>arg5</strong> (<em>float</em>) &#8211; Inclination</li>
-<li><strong>arg6</strong> (<em>float</em>) &#8211; Declination</li>
-<li><strong>arg7</strong> (<em>int</em>) &#8211; Rotated ? (0/1)</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x_file_name</strong> (<em>str</em>) – Input X Voxel file</li>
+<li><strong>y_file_name</strong> (<em>str</em>) – Input Y Voxel file</li>
+<li><strong>z_file_name</strong> (<em>str</em>) – Input Z Voxel file</li>
+<li><strong>out_file_name</strong> (<em>str</em>) – Output Vector Voxel file</li>
+<li><strong>inclination</strong> (<em>float</em>) – Inclination</li>
+<li><strong>declination</strong> (<em>float</em>) – Declination</li>
+<li><strong>rotated</strong> (<em>int</em>) – Rotated ? (0/1)</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.0.</span></p>
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMULTIVOXSET.convert_vector_to_double">
-<em class="property">static </em><code class="descname">convert_vector_to_double</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.convert_vector_to_double" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">a</span> <span class="n">Vector</span> <span class="n">Voxel</span> <span class="n">to</span> <span class="mi">3</span> <span class="n">double</span> <span class="n">Voxels</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">convert_vector_to_double</code><span class="sig-paren">(</span><em>file_name</em>, <em>x_file_name</em>, <em>y_file_name</em>, <em>z_file_name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.convert_vector_to_double" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a Vector Voxel to 3 double Voxels</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Input Vector Voxel file</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; Output X Voxel file</li>
-<li><strong>arg3</strong> (<em>str</em>) &#8211; Output Y Voxel file</li>
-<li><strong>arg4</strong> (<em>str</em>) &#8211; Output Z Voxel file</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>file_name</strong> (<em>str</em>) – Input Vector Voxel file</li>
+<li><strong>x_file_name</strong> (<em>str</em>) – Output X Voxel file</li>
+<li><strong>y_file_name</strong> (<em>str</em>) – Output Y Voxel file</li>
+<li><strong>z_file_name</strong> (<em>str</em>) – Output Z Voxel file</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.0.</span></p>
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMULTIVOXSET.create_double_constant">
-<em class="property">static </em><code class="descname">create_double_constant</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(float)arg7</em>, <em>(float)arg8</em>, <em>(int)arg9</em>, <em>(int)arg10</em>, <em>(int)arg11</em>, <em>(GXIPJ)arg12</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.create_double_constant" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Generate</span> <span class="n">a</span> <span class="n">double</span> <span class="n">MultiVoxset</span> <span class="k">with</span> <span class="n">a</span> <span class="n">constant</span> <span class="n">value</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">create_double_constant</code><span class="sig-paren">(</span><em>name</em>, <em>value</em>, <em>ox</em>, <em>oy</em>, <em>oz</em>, <em>cell_x</em>, <em>cell_y</em>, <em>cell_z</em>, <em>size_x</em>, <em>size_y</em>, <em>size_z</em>, <em>ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.create_double_constant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a double MultiVoxset with a constant value</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Name of output Voxel File</li>
-<li><strong>arg2</strong> (<em>float</em>) &#8211; Constant Value to use - DUMMY for a trully sparse voxel</li>
-<li><strong>arg3</strong> (<em>float</em>) &#8211; Origin X</li>
-<li><strong>arg4</strong> (<em>float</em>) &#8211; Origin Y</li>
-<li><strong>arg5</strong> (<em>float</em>) &#8211; Origin Z</li>
-<li><strong>arg6</strong> (<em>float</em>) &#8211; Cell Size X</li>
-<li><strong>arg7</strong> (<em>float</em>) &#8211; Cell Size Y</li>
-<li><strong>arg8</strong> (<em>float</em>) &#8211; Cell Size Z</li>
-<li><strong>arg9</strong> (<em>int</em>) &#8211; Cell Count X</li>
-<li><strong>arg10</strong> (<em>int</em>) &#8211; Cell Count Y</li>
-<li><strong>arg11</strong> (<em>int</em>) &#8211; Cell Count Z</li>
-<li><strong>arg12</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; Projection</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Name of output Voxel File</li>
+<li><strong>value</strong> (<em>float</em>) – Constant Value to use - DUMMY for a trully sparse voxel</li>
+<li><strong>ox</strong> (<em>float</em>) – Origin X</li>
+<li><strong>oy</strong> (<em>float</em>) – Origin Y</li>
+<li><strong>oz</strong> (<em>float</em>) – Origin Z</li>
+<li><strong>cell_x</strong> (<em>float</em>) – Cell Size X</li>
+<li><strong>cell_y</strong> (<em>float</em>) – Cell Size Y</li>
+<li><strong>cell_z</strong> (<em>float</em>) – Cell Size Z</li>
+<li><strong>size_x</strong> (<em>int</em>) – Cell Count X</li>
+<li><strong>size_y</strong> (<em>int</em>) – Cell Count Y</li>
+<li><strong>size_z</strong> (<em>int</em>) – Cell Count Z</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.0.</span></p>
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMULTIVOXSET.create_double_constant_vv">
-<em class="property">static </em><code class="descname">create_double_constant_vv</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(GXVV)arg6</em>, <em>(GXVV)arg7</em>, <em>(GXVV)arg8</em>, <em>(GXIPJ)arg9</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.create_double_constant_vv" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Generate</span> <span class="n">a</span> <span class="n">double</span> <span class="n">MultiVoxset</span> <span class="k">with</span> <span class="n">a</span> <span class="n">constant</span> <span class="n">value</span> <span class="ow">and</span> <span class="n">non</span><span class="o">-</span><span class="n">uniform</span> <span class="n">cell</span> <span class="n">sizes</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">create_double_constant_vv</code><span class="sig-paren">(</span><em>name</em>, <em>value</em>, <em>ox</em>, <em>oy</em>, <em>oz</em>, <em>cx</em>, <em>cy</em>, <em>cz</em>, <em>ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.create_double_constant_vv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a double MultiVoxset with a constant value and non-uniform cell sizes</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Name of output Voxel</li>
-<li><strong>arg2</strong> (<em>float</em>) &#8211; The contant Value to fill with - DUMMY for a trully sparse voxel</li>
-<li><strong>arg3</strong> (<em>float</em>) &#8211; Origin X</li>
-<li><strong>arg4</strong> (<em>float</em>) &#8211; Origin Y</li>
-<li><strong>arg5</strong> (<em>float</em>) &#8211; Origin Z</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Cell Sizes X</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Cell Sizes Y</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Cell Sizes Z</li>
-<li><strong>arg9</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; Projection</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Name of output Voxel</li>
+<li><strong>value</strong> (<em>float</em>) – The contant Value to fill with - DUMMY for a trully sparse voxel</li>
+<li><strong>ox</strong> (<em>float</em>) – Origin X</li>
+<li><strong>oy</strong> (<em>float</em>) – Origin Y</li>
+<li><strong>oz</strong> (<em>float</em>) – Origin Z</li>
+<li><strong>cx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Cell Sizes X</li>
+<li><strong>cy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Cell Sizes Y</li>
+<li><strong>cz</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Cell Sizes Z</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.0.</span></p>
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMULTIVOXSET.create_thematic_constant">
-<em class="property">static </em><code class="descname">create_thematic_constant</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(float)arg7</em>, <em>(float)arg8</em>, <em>(int)arg9</em>, <em>(int)arg10</em>, <em>(int)arg11</em>, <em>(GXIPJ)arg12</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.create_thematic_constant" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Generate</span> <span class="n">a</span> <span class="n">double</span> <span class="n">MultiVoxset</span> <span class="k">with</span> <span class="n">a</span> <span class="n">constant</span> <span class="n">value</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">create_thematic_constant</code><span class="sig-paren">(</span><em>name</em>, <em>value</em>, <em>ox</em>, <em>oy</em>, <em>oz</em>, <em>cell_x</em>, <em>cell_y</em>, <em>cell_z</em>, <em>size_x</em>, <em>size_y</em>, <em>size_z</em>, <em>ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.create_thematic_constant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a double MultiVoxset with a constant value</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Name of output Voxel File</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; Constant Value to use - DUMMY for a trully sparse voxel</li>
-<li><strong>arg3</strong> (<em>float</em>) &#8211; Origin X</li>
-<li><strong>arg4</strong> (<em>float</em>) &#8211; Origin Y</li>
-<li><strong>arg5</strong> (<em>float</em>) &#8211; Origin Z</li>
-<li><strong>arg6</strong> (<em>float</em>) &#8211; Cell Size X</li>
-<li><strong>arg7</strong> (<em>float</em>) &#8211; Cell Size Y</li>
-<li><strong>arg8</strong> (<em>float</em>) &#8211; Cell Size Z</li>
-<li><strong>arg9</strong> (<em>int</em>) &#8211; Cell Count X</li>
-<li><strong>arg10</strong> (<em>int</em>) &#8211; Cell Count Y</li>
-<li><strong>arg11</strong> (<em>int</em>) &#8211; Cell Count Z</li>
-<li><strong>arg12</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; Projection</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Name of output Voxel File</li>
+<li><strong>value</strong> (<em>int</em>) – Constant Value to use - DUMMY for a trully sparse voxel</li>
+<li><strong>ox</strong> (<em>float</em>) – Origin X</li>
+<li><strong>oy</strong> (<em>float</em>) – Origin Y</li>
+<li><strong>oz</strong> (<em>float</em>) – Origin Z</li>
+<li><strong>cell_x</strong> (<em>float</em>) – Cell Size X</li>
+<li><strong>cell_y</strong> (<em>float</em>) – Cell Size Y</li>
+<li><strong>cell_z</strong> (<em>float</em>) – Cell Size Z</li>
+<li><strong>size_x</strong> (<em>int</em>) – Cell Count X</li>
+<li><strong>size_y</strong> (<em>int</em>) – Cell Count Y</li>
+<li><strong>size_z</strong> (<em>int</em>) – Cell Count Z</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.0.</span></p>
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMULTIVOXSET.create_thematic_constant_vv">
-<em class="property">static </em><code class="descname">create_thematic_constant_vv</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(GXVV)arg6</em>, <em>(GXVV)arg7</em>, <em>(GXVV)arg8</em>, <em>(GXIPJ)arg9</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.create_thematic_constant_vv" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Generate</span> <span class="n">a</span> <span class="n">double</span> <span class="n">MultiVoxset</span> <span class="k">with</span> <span class="n">a</span> <span class="n">constant</span> <span class="n">value</span> <span class="ow">and</span> <span class="n">non</span><span class="o">-</span><span class="n">uniform</span> <span class="n">cell</span> <span class="n">sizes</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">create_thematic_constant_vv</code><span class="sig-paren">(</span><em>name</em>, <em>value</em>, <em>ox</em>, <em>oy</em>, <em>oz</em>, <em>cx</em>, <em>cy</em>, <em>cz</em>, <em>ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.create_thematic_constant_vv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a double MultiVoxset with a constant value and non-uniform cell sizes</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Name of output Voxel</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; The contant Value to fill with - DUMMY for a trully sparse voxel</li>
-<li><strong>arg3</strong> (<em>float</em>) &#8211; Origin X</li>
-<li><strong>arg4</strong> (<em>float</em>) &#8211; Origin Y</li>
-<li><strong>arg5</strong> (<em>float</em>) &#8211; Origin Z</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Cell Sizes X</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Cell Sizes Y</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Cell Sizes Z</li>
-<li><strong>arg9</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; Projection</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Name of output Voxel</li>
+<li><strong>value</strong> (<em>int</em>) – The contant Value to fill with - DUMMY for a trully sparse voxel</li>
+<li><strong>ox</strong> (<em>float</em>) – Origin X</li>
+<li><strong>oy</strong> (<em>float</em>) – Origin Y</li>
+<li><strong>oz</strong> (<em>float</em>) – Origin Z</li>
+<li><strong>cx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Cell Sizes X</li>
+<li><strong>cy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Cell Sizes Y</li>
+<li><strong>cz</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Cell Sizes Z</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.0.</span></p>
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMULTIVOXSET.create_vector_constant">
-<em class="property">static </em><code class="descname">create_vector_constant</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(float)arg7</em>, <em>(float)arg8</em>, <em>(float)arg9</em>, <em>(float)arg10</em>, <em>(int)arg11</em>, <em>(int)arg12</em>, <em>(int)arg13</em>, <em>(GXIPJ)arg14</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.create_vector_constant" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Generate</span> <span class="n">a</span> <span class="n">double</span> <span class="n">MultiVoxset</span> <span class="k">with</span> <span class="n">a</span> <span class="n">constant</span> <span class="n">value</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">create_vector_constant</code><span class="sig-paren">(</span><em>name</em>, <em>value_x</em>, <em>value_y</em>, <em>value_z</em>, <em>ox</em>, <em>oy</em>, <em>oz</em>, <em>cell_x</em>, <em>cell_y</em>, <em>cell_z</em>, <em>size_x</em>, <em>size_y</em>, <em>size_z</em>, <em>ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.create_vector_constant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a double MultiVoxset with a constant value</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Name of output Voxel File</li>
-<li><strong>arg2</strong> (<em>float</em>) &#8211; X Constant Value to use - DUMMY for a trully sparse voxel</li>
-<li><strong>arg3</strong> (<em>float</em>) &#8211; Y Constant Value to use - DUMMY for a trully sparse voxel</li>
-<li><strong>arg4</strong> (<em>float</em>) &#8211; Z Constant Value to use - DUMMY for a trully sparse voxel</li>
-<li><strong>arg5</strong> (<em>float</em>) &#8211; Origin X</li>
-<li><strong>arg6</strong> (<em>float</em>) &#8211; Origin Y</li>
-<li><strong>arg7</strong> (<em>float</em>) &#8211; Origin Z</li>
-<li><strong>arg8</strong> (<em>float</em>) &#8211; Cell Size X</li>
-<li><strong>arg9</strong> (<em>float</em>) &#8211; Cell Size Y</li>
-<li><strong>arg10</strong> (<em>float</em>) &#8211; Cell Size Z</li>
-<li><strong>arg11</strong> (<em>int</em>) &#8211; Cell Count X</li>
-<li><strong>arg12</strong> (<em>int</em>) &#8211; Cell Count Y</li>
-<li><strong>arg13</strong> (<em>int</em>) &#8211; Cell Count Z</li>
-<li><strong>arg14</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; Projection</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Name of output Voxel File</li>
+<li><strong>value_x</strong> (<em>float</em>) – X Constant Value to use - DUMMY for a trully sparse voxel</li>
+<li><strong>value_y</strong> (<em>float</em>) – Y Constant Value to use - DUMMY for a trully sparse voxel</li>
+<li><strong>value_z</strong> (<em>float</em>) – Z Constant Value to use - DUMMY for a trully sparse voxel</li>
+<li><strong>ox</strong> (<em>float</em>) – Origin X</li>
+<li><strong>oy</strong> (<em>float</em>) – Origin Y</li>
+<li><strong>oz</strong> (<em>float</em>) – Origin Z</li>
+<li><strong>cell_x</strong> (<em>float</em>) – Cell Size X</li>
+<li><strong>cell_y</strong> (<em>float</em>) – Cell Size Y</li>
+<li><strong>cell_z</strong> (<em>float</em>) – Cell Size Z</li>
+<li><strong>size_x</strong> (<em>int</em>) – Cell Count X</li>
+<li><strong>size_y</strong> (<em>int</em>) – Cell Count Y</li>
+<li><strong>size_z</strong> (<em>int</em>) – Cell Count Z</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.0.</span></p>
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMULTIVOXSET.create_vector_constant_vv">
-<em class="property">static </em><code class="descname">create_vector_constant_vv</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(float)arg7</em>, <em>(GXVV)arg8</em>, <em>(GXVV)arg9</em>, <em>(GXVV)arg10</em>, <em>(GXIPJ)arg11</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.create_vector_constant_vv" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Generate</span> <span class="n">a</span> <span class="n">double</span> <span class="n">MultiVoxset</span> <span class="k">with</span> <span class="n">a</span> <span class="n">constant</span> <span class="n">value</span> <span class="ow">and</span> <span class="n">non</span><span class="o">-</span><span class="n">uniform</span> <span class="n">cell</span> <span class="n">sizes</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">create_vector_constant_vv</code><span class="sig-paren">(</span><em>name</em>, <em>x_value</em>, <em>y_value</em>, <em>z_value</em>, <em>ox</em>, <em>oy</em>, <em>oz</em>, <em>cx</em>, <em>cy</em>, <em>cz</em>, <em>ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.create_vector_constant_vv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a double MultiVoxset with a constant value and non-uniform cell sizes</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Name of output Voxel</li>
-<li><strong>arg2</strong> (<em>float</em>) &#8211; The X contant Value to fill with - DUMMY for a trully sparse voxel</li>
-<li><strong>arg3</strong> (<em>float</em>) &#8211; The Y contant Value to fill with - DUMMY for a trully sparse voxel</li>
-<li><strong>arg4</strong> (<em>float</em>) &#8211; The Z contant Value to fill with - DUMMY for a trully sparse voxel</li>
-<li><strong>arg5</strong> (<em>float</em>) &#8211; Origin X</li>
-<li><strong>arg6</strong> (<em>float</em>) &#8211; Origin Y</li>
-<li><strong>arg7</strong> (<em>float</em>) &#8211; Origin Z</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Cell Sizes X</li>
-<li><strong>arg9</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Cell Sizes Y</li>
-<li><strong>arg10</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Cell Sizes Z</li>
-<li><strong>arg11</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; Projection</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Name of output Voxel</li>
+<li><strong>x_value</strong> (<em>float</em>) – The X contant Value to fill with - DUMMY for a trully sparse voxel</li>
+<li><strong>y_value</strong> (<em>float</em>) – The Y contant Value to fill with - DUMMY for a trully sparse voxel</li>
+<li><strong>z_value</strong> (<em>float</em>) – The Z contant Value to fill with - DUMMY for a trully sparse voxel</li>
+<li><strong>ox</strong> (<em>float</em>) – Origin X</li>
+<li><strong>oy</strong> (<em>float</em>) – Origin Y</li>
+<li><strong>oz</strong> (<em>float</em>) – Origin Z</li>
+<li><strong>cx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Cell Sizes X</li>
+<li><strong>cy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Cell Sizes Y</li>
+<li><strong>cz</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Cell Sizes Z</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.0.</span></p>
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMULTIVOXSET.export_to_binary">
-<em class="property">static </em><code class="descname">export_to_binary</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em>, <em>(int)arg7</em>, <em>(int)arg8</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.export_to_binary" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Export</span> <span class="n">contents</span> <span class="n">of</span> <span class="n">MULTIVOXSET</span> <span class="n">to</span> <span class="n">a</span> <span class="n">Binary</span> <span class="n">File</span><span class="o">.</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">export_to_binary</code><span class="sig-paren">(</span><em>voxel_file</em>, <em>binary_file</em>, <em>dir</em>, <em>rev_x</em>, <em>rev_y</em>, <em>rev_z</em>, <em>swap</em>, <em>output_type</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.export_to_binary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export contents of <a class="reference internal" href="#geosoft.gxapi.GXMULTIVOXSET" title="geosoft.gxapi.GXMULTIVOXSET"><code class="xref py py-obj docutils literal"><span class="pre">GXMULTIVOXSET</span></code></a> to a Binary File.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Input Voxel file</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; Binary file to write to</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#direction3d"><span class="std std-ref">DIRECTION3D constants</span></a></li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; Reverse X ? (0/1)</li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; Reverse Y ? (0/1)</li>
-<li><strong>arg6</strong> (<em>int</em>) &#8211; Reverse Z ? (0/1)</li>
-<li><strong>arg7</strong> (<em>int</em>) &#8211; Swap Bytes ? (0/1)</li>
-<li><strong>arg8</strong> (<em>int</em>) &#8211; Output Type (Geosoft Type)</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>voxel_file</strong> (<em>str</em>) – Input Voxel file</li>
+<li><strong>binary_file</strong> (<em>str</em>) – Binary file to write to</li>
+<li><strong>dir</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">DIRECTION3D</span></code></li>
+<li><strong>rev_x</strong> (<em>int</em>) – Reverse X ? (0/1)</li>
+<li><strong>rev_y</strong> (<em>int</em>) – Reverse Y ? (0/1)</li>
+<li><strong>rev_z</strong> (<em>int</em>) – Reverse Z ? (0/1)</li>
+<li><strong>swap</strong> (<em>int</em>) – Swap Bytes ? (0/1)</li>
+<li><strong>output_type</strong> (<em>int</em>) – Output Type (Geosoft Type)</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.0.</span></p>
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMULTIVOXSET.export_to_gdb">
-<em class="property">static </em><code class="descname">export_to_gdb</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXDB)arg2</em>, <em>(str)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em>, <em>(int)arg7</em>, <em>(int)arg8</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.export_to_gdb" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Export</span> <span class="n">To</span> <span class="n">GDB</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">export_to_gdb</code><span class="sig-paren">(</span><em>voxel_file</em>, <em>db</em>, <em>chan</em>, <em>dir</em>, <em>rev_x</em>, <em>rev_y</em>, <em>rev_z</em>, <em>dummies</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.export_to_gdb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export To GDB</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Input Voxel file</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database</li>
-<li><strong>arg3</strong> (<em>str</em>) &#8211; Channel Name</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#direction3d"><span class="std std-ref">DIRECTION3D constants</span></a></li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; Reverse X ? (0/1)</li>
-<li><strong>arg6</strong> (<em>int</em>) &#8211; Reverse Y ? (0/1)</li>
-<li><strong>arg7</strong> (<em>int</em>) &#8211; Reverse Z ? (0/1)</li>
-<li><strong>arg8</strong> (<em>int</em>) &#8211; Write Dummies? (0/1)</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>voxel_file</strong> (<em>str</em>) – Input Voxel file</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
+<li><strong>chan</strong> (<em>str</em>) – Channel Name</li>
+<li><strong>dir</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">DIRECTION3D</span></code></li>
+<li><strong>rev_x</strong> (<em>int</em>) – Reverse X ? (0/1)</li>
+<li><strong>rev_y</strong> (<em>int</em>) – Reverse Y ? (0/1)</li>
+<li><strong>rev_z</strong> (<em>int</em>) – Reverse Z ? (0/1)</li>
+<li><strong>dummies</strong> (<em>int</em>) – Write Dummies? (0/1)</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.0.</span></p>
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMULTIVOXSET.export_to_segy">
-<em class="property">static </em><code class="descname">export_to_segy</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(float)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.export_to_segy" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Export</span> <span class="n">To</span> <span class="n">SEGY</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">export_to_segy</code><span class="sig-paren">(</span><em>voxel_file</em>, <em>voxel_name</em>, <em>output_segy_filename</em>, <em>sample_interval</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.export_to_segy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export To SEGY</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Input Voxel file</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; Voxel Name</li>
-<li><strong>arg3</strong> (<em>str</em>) &#8211; Output Segy file</li>
-<li><strong>arg4</strong> (<em>float</em>) &#8211; Sampling Internal</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>voxel_file</strong> (<em>str</em>) – Input Voxel file</li>
+<li><strong>voxel_name</strong> (<em>str</em>) – Voxel Name</li>
+<li><strong>output_segy_filename</strong> (<em>str</em>) – Output Segy file</li>
+<li><strong>sample_interval</strong> (<em>float</em>) – Sampling Internal</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.0.</span></p>
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMULTIVOXSET.export_to_voxel">
-<em class="property">static </em><code class="descname">export_to_voxel</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.export_to_voxel" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Exports</span> <span class="n">a</span> <span class="n">Multi</span><span class="o">-</span><span class="n">Voxset</span> <span class="n">into</span> <span class="n">a</span> <span class="n">Voxel</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">export_to_voxel</code><span class="sig-paren">(</span><em>project_file</em>, <em>multi_voxset_uuid</em>, <em>multi_voxset_attribute</em>, <em>voxel_file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.export_to_voxel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports a Multi-Voxset into a Voxel</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Project file</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; Multi-Voxset UUID</li>
-<li><strong>arg3</strong> (<em>str</em>) &#8211; Multi-Voxset attribute</li>
-<li><strong>arg4</strong> (<em>str</em>) &#8211; Output Voxel file</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>project_file</strong> (<em>str</em>) – Project file</li>
+<li><strong>multi_voxset_uuid</strong> (<em>str</em>) – Multi-Voxset UUID</li>
+<li><strong>multi_voxset_attribute</strong> (<em>str</em>) – Multi-Voxset attribute</li>
+<li><strong>voxel_file</strong> (<em>str</em>) – Output Voxel file</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.0.</span></p>
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMULTIVOXSET.export_to_wa">
-<em class="property">static </em><code class="descname">export_to_wa</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXWA)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em>, <em>(str)arg7</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.export_to_wa" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Export</span> <span class="n">To</span> <span class="n">GDB</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">export_to_wa</code><span class="sig-paren">(</span><em>file_name</em>, <em>wa</em>, <em>dir</em>, <em>rev_x</em>, <em>rev_y</em>, <em>rev_z</em>, <em>dummy</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.export_to_wa" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export To GDB</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Input Voxel file</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXWA</span></code></a>) &#8211; WA File</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#direction3d"><span class="std std-ref">DIRECTION3D constants</span></a></li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; Reverse X ? (0/1)</li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; Reverse Y ? (0/1)</li>
-<li><strong>arg6</strong> (<em>int</em>) &#8211; Reverse Z ? (0/1)</li>
-<li><strong>arg7</strong> (<em>str</em>) &#8211; The Dummy string to write</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>file_name</strong> (<em>str</em>) – Input Voxel file</li>
+<li><strong>wa</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><em>GXWA</em></a>) – <a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal"><span class="pre">GXWA</span></code></a> File</li>
+<li><strong>dir</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">DIRECTION3D</span></code></li>
+<li><strong>rev_x</strong> (<em>int</em>) – Reverse X ? (0/1)</li>
+<li><strong>rev_y</strong> (<em>int</em>) – Reverse Y ? (0/1)</li>
+<li><strong>rev_z</strong> (<em>int</em>) – Reverse Z ? (0/1)</li>
+<li><strong>dummy</strong> (<em>str</em>) – The Dummy string to write</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.0.</span></p>
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMULTIVOXSET.export_to_xml">
-<em class="property">static </em><code class="descname">export_to_xml</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.export_to_xml" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Export</span> <span class="n">a</span> <span class="n">MULTIVOXSET</span> <span class="n">to</span> <span class="n">XML</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">export_to_xml</code><span class="sig-paren">(</span><em>voxel_file</em>, <em>xml_file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.export_to_xml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a <a class="reference internal" href="#geosoft.gxapi.GXMULTIVOXSET" title="geosoft.gxapi.GXMULTIVOXSET"><code class="xref py py-obj docutils literal"><span class="pre">GXMULTIVOXSET</span></code></a> to XML</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Voxel file</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; XML file</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>voxel_file</strong> (<em>str</em>) – Voxel file</li>
+<li><strong>xml_file</strong> (<em>str</em>) – XML file</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.0.</span></p>
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMULTIVOXSET.export_to_xyz">
-<em class="property">static </em><code class="descname">export_to_xyz</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em>, <em>(int)arg7</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.export_to_xyz" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Export</span> <span class="n">a</span> <span class="n">MULTIVOXSET</span> <span class="n">to</span> <span class="n">an</span> <span class="n">XYZ</span> <span class="n">File</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">export_to_xyz</code><span class="sig-paren">(</span><em>voxel_file</em>, <em>xyz</em>, <em>dir</em>, <em>rev_x</em>, <em>rev_y</em>, <em>rev_z</em>, <em>dummies</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.export_to_xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a <a class="reference internal" href="#geosoft.gxapi.GXMULTIVOXSET" title="geosoft.gxapi.GXMULTIVOXSET"><code class="xref py py-obj docutils literal"><span class="pre">GXMULTIVOXSET</span></code></a> to an XYZ File</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Input Voxel file</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; File Name</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#direction3d"><span class="std std-ref">DIRECTION3D constants</span></a></li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; Reverse X ? (0/1)</li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; Reverse Y ? (0/1)</li>
-<li><strong>arg6</strong> (<em>int</em>) &#8211; Reverse Z ? (0/1)</li>
-<li><strong>arg7</strong> (<em>int</em>) &#8211; Write Dummies? (0/1)</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>voxel_file</strong> (<em>str</em>) – Input Voxel file</li>
+<li><strong>xyz</strong> (<em>str</em>) – File Name</li>
+<li><strong>dir</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">DIRECTION3D</span></code></li>
+<li><strong>rev_x</strong> (<em>int</em>) – Reverse X ? (0/1)</li>
+<li><strong>rev_y</strong> (<em>int</em>) – Reverse Y ? (0/1)</li>
+<li><strong>rev_z</strong> (<em>int</em>) – Reverse Z ? (0/1)</li>
+<li><strong>dummies</strong> (<em>int</em>) – Write Dummies? (0/1)</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.0.</span></p>
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMULTIVOXSET.filter">
-<em class="property">static </em><code class="descname">filter</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em>, <em>(str)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.filter" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Apply</span> <span class="n">a</span> <span class="mi">3</span><span class="n">D</span> <span class="nb">filter</span> <span class="n">to</span> <span class="n">a</span> <span class="n">voxel</span><span class="o">.</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">filter</code><span class="sig-paren">(</span><em>input_file</em>, <em>output_file</em>, <em>filter</em>, <em>filter_file</em>, <em>n_passes</em>, <em>interpolate_dummies</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply a 3D filter to a voxel.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Name of the input voxel</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; Name of the output voxel</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#filter3d"><span class="std std-ref">FILTER3D constants</span></a></li>
-<li><strong>arg4</strong> (<em>str</em>) &#8211; Filter file, if filter is VOX_FILTER3D_FILE</li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; Number of filter passes</li>
-<li><strong>arg6</strong> (<em>int</em>) &#8211; (1: interpolate dummies)</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>input_file</strong> (<em>str</em>) – Name of the input voxel</li>
+<li><strong>output_file</strong> (<em>str</em>) – Name of the output voxel</li>
+<li><strong>filter</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">FILTER3D</span></code></li>
+<li><strong>filter_file</strong> (<em>str</em>) – Filter file, if filter is <a class="reference internal" href="GXVOX.html#geosoft.gxapi.VOX_FILTER3D_FILE" title="geosoft.gxapi.VOX_FILTER3D_FILE"><code class="xref py py-obj docutils literal"><span class="pre">VOX_FILTER3D_FILE</span></code></a></li>
+<li><strong>n_passes</strong> (<em>int</em>) – Number of filter passes</li>
+<li><strong>interpolate_dummies</strong> (<em>int</em>) – (1: interpolate dummies)</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.0.</span></p>
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMULTIVOXSET.grid_direct_from_gdb">
-<em class="property">static </em><code class="descname">grid_direct_from_gdb</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em>, <em>(int)arg7</em>, <em>(float)arg8</em>, <em>(float)arg9</em>, <em>(float)arg10</em>, <em>(int)arg11</em>, <em>(GXDB)arg12</em>, <em>(int)arg13</em>, <em>(int)arg14</em>, <em>(int)arg15</em>, <em>(int)arg16</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.grid_direct_from_gdb" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">voxel</span> <span class="n">using</span> <span class="n">direct</span> <span class="n">gridding</span><span class="o">.</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">grid_direct_from_gdb</code><span class="sig-paren">(</span><em>output_voxel_filename</em>, <em>origin_x</em>, <em>origin_y</em>, <em>origin_z</em>, <em>cell_count_x</em>, <em>cell_count_y</em>, <em>cell_count_z</em>, <em>cell_size_x</em>, <em>cell_size_y</em>, <em>cell_size_z</em>, <em>method</em>, <em>db</em>, <em>x_channel</em>, <em>y_channel</em>, <em>z_channel</em>, <em>data_channel</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.grid_direct_from_gdb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a voxel using direct gridding.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Output voxel filename</li>
-<li><strong>arg2</strong> (<em>float</em>) &#8211; Voxel origin X</li>
-<li><strong>arg3</strong> (<em>float</em>) &#8211; Voxel origin Y</li>
-<li><strong>arg4</strong> (<em>float</em>) &#8211; Voxel origin Z</li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; Voxel cell count X</li>
-<li><strong>arg6</strong> (<em>int</em>) &#8211; Voxel cell count Y</li>
-<li><strong>arg7</strong> (<em>int</em>) &#8211; Voxel cell count Z</li>
-<li><strong>arg8</strong> (<em>float</em>) &#8211; Voxel cell size X</li>
-<li><strong>arg9</strong> (<em>float</em>) &#8211; Voxel cell size Y</li>
-<li><strong>arg10</strong> (<em>float</em>) &#8211; Voxel cell size Z</li>
-<li><strong>arg11</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#multivoxset-directgrid-method"><span class="std std-ref">MULTIVOXSET_DIRECTGRID_METHOD constants</span></a></li>
-<li><strong>arg12</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database</li>
-<li><strong>arg13</strong> (<em>int</em>) &#8211; X channel [DB_LOCK_READONLY]</li>
-<li><strong>arg14</strong> (<em>int</em>) &#8211; Y channel [DB_LOCK_READONLY]</li>
-<li><strong>arg15</strong> (<em>int</em>) &#8211; Z channel [DB_LOCK_READONLY]</li>
-<li><strong>arg16</strong> (<em>int</em>) &#8211; Data channel [DB_LOCK_READONLY]</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>output_voxel_filename</strong> (<em>str</em>) – Output voxel filename</li>
+<li><strong>origin_x</strong> (<em>float</em>) – Voxel origin X</li>
+<li><strong>origin_y</strong> (<em>float</em>) – Voxel origin Y</li>
+<li><strong>origin_z</strong> (<em>float</em>) – Voxel origin Z</li>
+<li><strong>cell_count_x</strong> (<em>int</em>) – Voxel cell count X</li>
+<li><strong>cell_count_y</strong> (<em>int</em>) – Voxel cell count Y</li>
+<li><strong>cell_count_z</strong> (<em>int</em>) – Voxel cell count Z</li>
+<li><strong>cell_size_x</strong> (<em>float</em>) – Voxel cell size X</li>
+<li><strong>cell_size_y</strong> (<em>float</em>) – Voxel cell size Y</li>
+<li><strong>cell_size_z</strong> (<em>float</em>) – Voxel cell size Z</li>
+<li><strong>method</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">MULTIVOXSET_DIRECTGRID_METHOD</span></code></li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
+<li><strong>x_channel</strong> (<em>int</em>) – X channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
+<li><strong>y_channel</strong> (<em>int</em>) – Y channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
+<li><strong>z_channel</strong> (<em>int</em>) – Z channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
+<li><strong>data_channel</strong> (<em>int</em>) – Data channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.0.</span></p>
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">Z</span> <span class="ow">and</span> <span class="n">Data</span> <span class="n">channels</span> <span class="n">may</span> <span class="n">be</span> <span class="n">array</span> <span class="n">channels</span><span class="o">.</span> <span class="n">If</span> <span class="n">they</span> <span class="n">are</span><span class="p">,</span> <span class="n">the</span> <span class="n">array</span> <span class="n">sizes</span> <span class="n">must</span> <span class="n">match</span><span class="o">.</span>
-</pre></div>
-</div>
+<p>The Z and Data channels may be array channels. If they are, the array sizes must match.</p>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMULTIVOXSET.import_from_datamine">
-<em class="property">static </em><code class="descname">import_from_datamine</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(GXIPJ)arg3</em>, <em>(str)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.import_from_datamine" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">Geosoft</span> <span class="n">Voxel</span> <span class="n">file</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">Datamine</span> <span class="n">block</span> <span class="n">model</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">import_from_datamine</code><span class="sig-paren">(</span><em>file</em>, <em>field</em>, <em>ipj</em>, <em>voxel</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.import_from_datamine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Geosoft Voxel file from a Datamine block model file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Datamine file name</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; Field to use for data</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; Projection to set</li>
-<li><strong>arg4</strong> (<em>str</em>) &#8211; Output voxel file name</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>file</strong> (<em>str</em>) – Datamine file name</li>
+<li><strong>field</strong> (<em>str</em>) – Field to use for data</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection to set</li>
+<li><strong>voxel</strong> (<em>str</em>) – Output voxel file name</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.0.</span></p>
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">Geosoft</span> <span class="n">Voxel</span> <span class="n">file</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">Datamine</span> <span class="n">block</span> <span class="n">model</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<p>Create a Geosoft Voxel file from a Datamine block model file.</p>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMULTIVOXSET.import_from_gdb">
-<em class="property">static </em><code class="descname">import_from_gdb</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXDB)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.import_from_gdb" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Imports</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">Geosoft</span> <span class="n">Database</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">import_from_gdb</code><span class="sig-paren">(</span><em>voxel_file</em>, <em>db</em>, <em>symb</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.import_from_gdb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Imports from a Geosoft Database</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Name of output Voxel file</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; DB To import from</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; Symbol to import data from</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>voxel_file</strong> (<em>str</em>) – Name of output Voxel file</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> To import from</li>
+<li><strong>symb</strong> (<em>int</em>) – Symbol to import data from</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.0.</span></p>
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMULTIVOXSET.import_from_gocad">
-<em class="property">static </em><code class="descname">import_from_gocad</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(GXIPJ)arg4</em>, <em>(int)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.import_from_gocad" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Imports</span> <span class="n">a</span> <span class="n">MultiVoxset</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">GOCAD</span> <span class="n">File</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">import_from_gocad</code><span class="sig-paren">(</span><em>name</em>, <em>header</em>, <em>property</em>, <em>ipj</em>, <em>orientation</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.import_from_gocad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Imports a MultiVoxset from a GOCAD File</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Name of output VOX</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; Name of GOCAD Voxel file</li>
-<li><strong>arg3</strong> (<em>str</em>) &#8211; Propert name to import</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; IPJ</li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#gocad-orientation"><span class="std std-ref">GOCAD_ORIENTATION constants</span></a></li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Name of output <a class="reference internal" href="GXVOX.html#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal"><span class="pre">GXVOX</span></code></a></li>
+<li><strong>header</strong> (<em>str</em>) – Name of GOCAD Voxel file</li>
+<li><strong>property</strong> (<em>str</em>) – Propert name to import</li>
+<li><strong>orientation</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">GOCAD_ORIENTATION</span></code></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.0.</span></p>
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMULTIVOXSET.import_from_ubc">
-<em class="property">static </em><code class="descname">import_from_ubc</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(float)arg4</em>, <em>(GXIPJ)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.import_from_ubc" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Import</span> <span class="n">UBC</span> <span class="n">file</span> <span class="n">into</span> <span class="n">a</span> <span class="n">MultiVoxset</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">import_from_ubc</code><span class="sig-paren">(</span><em>name</em>, <em>mesh</em>, <em>mod</em>, <em>dummy</em>, <em>ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.import_from_ubc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Import UBC file into a MultiVoxset</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Name of output VOX</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; Name of UBC Mesh File</li>
-<li><strong>arg3</strong> (<em>str</em>) &#8211; Name of UBC Mod File</li>
-<li><strong>arg4</strong> (<em>float</em>) &#8211; Dummy Value</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; Projection</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Name of output <a class="reference internal" href="GXVOX.html#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal"><span class="pre">GXVOX</span></code></a></li>
+<li><strong>mesh</strong> (<em>str</em>) – Name of UBC Mesh File</li>
+<li><strong>mod</strong> (<em>str</em>) – Name of UBC Mod File</li>
+<li><strong>dummy</strong> (<em>float</em>) – Dummy Value</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.0.</span></p>
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMULTIVOXSET.import_from_vector_gdb">
-<em class="property">static </em><code class="descname">import_from_vector_gdb</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXDB)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em>, <em>(float)arg7</em>, <em>(float)arg8</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.import_from_vector_gdb" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Imports</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">Vector</span> <span class="n">Geosoft</span> <span class="n">Database</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">import_from_vector_gdb</code><span class="sig-paren">(</span><em>voxel_file</em>, <em>db</em>, <em>vector_type</em>, <em>symb_x</em>, <em>symb_y</em>, <em>symb_z</em>, <em>inc</em>, <em>dec</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.import_from_vector_gdb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Imports from a Vector Geosoft Database</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Voxel Name</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; DB To import from</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#vector-import"><span class="std std-ref">VECTOR_IMPORT constants</span></a>Import XYZ, UVW or Amplitude/Inclination/Declination channels</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; Symbol to import X, U or Amplitude data from</li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; Symbol to import Y, V or Inclination data from</li>
-<li><strong>arg6</strong> (<em>int</em>) &#8211; Symbol to import Z, W or Declination data from</li>
-<li><strong>arg7</strong> (<em>float</em>) &#8211; Inclination value for VOX_VECTORVOX_UVW (-90° to 90°)</li>
-<li><strong>arg8</strong> (<em>float</em>) &#8211; Declination value for VOX_VECTORVOX_UVW (-180° to 180°)</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>voxel_file</strong> (<em>str</em>) – Voxel Name</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> To import from</li>
+<li><strong>vector_type</strong> (<em>int</em>) – VECTOR_IMPORTImport XYZ, UVW or Amplitude/Inclination/Declination channels</li>
+<li><strong>symb_x</strong> (<em>int</em>) – Symbol to import X, U or Amplitude data from</li>
+<li><strong>symb_y</strong> (<em>int</em>) – Symbol to import Y, V or Inclination data from</li>
+<li><strong>symb_z</strong> (<em>int</em>) – Symbol to import Z, W or Declination data from</li>
+<li><strong>inc</strong> (<em>float</em>) – Inclination value for <a class="reference internal" href="GXVOX.html#geosoft.gxapi.VOX_VECTORVOX_UVW" title="geosoft.gxapi.VOX_VECTORVOX_UVW"><code class="xref py py-obj docutils literal"><span class="pre">VOX_VECTORVOX_UVW</span></code></a> (-90° to 90°)</li>
+<li><strong>dec</strong> (<em>float</em>) – Declination value for <a class="reference internal" href="GXVOX.html#geosoft.gxapi.VOX_VECTORVOX_UVW" title="geosoft.gxapi.VOX_VECTORVOX_UVW"><code class="xref py py-obj docutils literal"><span class="pre">VOX_VECTORVOX_UVW</span></code></a> (-180° to 180°)</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.0.</span></p>
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMULTIVOXSET.import_from_voxel">
-<em class="property">static </em><code class="descname">import_from_voxel</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str_ref)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.import_from_voxel" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Import</span> <span class="n">a</span> <span class="n">Voxel</span> <span class="n">directly</span> <span class="n">into</span> <span class="n">a</span> <span class="n">Multi</span><span class="o">-</span><span class="n">Voxset</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">import_from_voxel</code><span class="sig-paren">(</span><em>project_file</em>, <em>voxel_file</em>, <em>multi_voxset_attribute</em>, <em>p_uuid_string</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.import_from_voxel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Import a Voxel directly into a Multi-Voxset</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Project file</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; Input Voxel file</li>
-<li><strong>arg3</strong> (<em>str</em>) &#8211; Multi-Voxset attribute</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; UUID string returned</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>project_file</strong> (<em>str</em>) – Project file</li>
+<li><strong>voxel_file</strong> (<em>str</em>) – Input Voxel file</li>
+<li><strong>multi_voxset_attribute</strong> (<em>str</em>) – Multi-Voxset attribute</li>
+<li><strong>p_uuid_string</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – UUID string returned</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.0.</span></p>
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMULTIVOXSET.import_from_xyz">
-<em class="property">static </em><code class="descname">import_from_xyz</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXRA)arg2</em>, <em>(int)arg3</em>, <em>(GXIPJ)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.import_from_xyz" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Import</span> <span class="n">XYZ</span> <span class="n">file</span> <span class="n">into</span> <span class="n">a</span> <span class="n">Multi</span><span class="o">-</span><span class="n">Voxset</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">import_from_xyz</code><span class="sig-paren">(</span><em>name</em>, <em>ra</em>, <em>type</em>, <em>ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.import_from_xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Import XYZ file into a Multi-Voxset</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Name of output Voxel file</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="GXRA.html#geosoft.gxapi.GXRA" title="geosoft.gxapi.GXRA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXRA</span></code></a>) &#8211; RA To import from</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; Data Type <span class="xref std std-ref">GS_TYPES</span></li>
-<li><strong>arg4</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; Projection</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Name of output Voxel file</li>
+<li><strong>ra</strong> (<a class="reference internal" href="GXRA.html#geosoft.gxapi.GXRA" title="geosoft.gxapi.GXRA"><em>GXRA</em></a>) – <a class="reference internal" href="GXRA.html#geosoft.gxapi.GXRA" title="geosoft.gxapi.GXRA"><code class="xref py py-obj docutils literal"><span class="pre">GXRA</span></code></a> To import from</li>
+<li><strong>type</strong> (<em>int</em>) – Data Type <code class="xref py py-obj docutils literal"><span class="pre">GS_TYPES</span></code></li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.0.</span></p>
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMULTIVOXSET.list_properties_gocad">
-<em class="property">static </em><code class="descname">list_properties_gocad</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXLST)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.list_properties_gocad" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">List</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">properties</span> <span class="n">available</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">GOCAD</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<dl class="method">
+<dt id="geosoft.gxapi.GXMULTIVOXSET.is_null">
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the instance of <code class="xref py py-obj docutils literal"><span class="pre">GXMULTIVOXSET</span></code> is null (undefined)`</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Name of GOCAD Voxel file</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; List object to populate</li>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXMULTIVOXSET</span></code>, False otherwise.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIVOXSET.list_properties_gocad">
+<em class="property">classmethod </em><code class="descname">list_properties_gocad</code><span class="sig-paren">(</span><em>header</em>, <em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.list_properties_gocad" title="Permalink to this definition">¶</a></dt>
+<dd><p>List all the properties available in this GOCAD file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>header</strong> (<em>str</em>) – Name of GOCAD Voxel file</li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – List object to populate</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.0.</span></p>
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIVOXSET.null">
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXMULTIVOXSET</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <code class="xref py py-obj docutils literal"><span class="pre">GXMULTIVOXSET</span></code></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
 
 <div class="section" id="direction3d-constants">
 <span id="direction3d"></span><h2>DIRECTION3D constants<a class="headerlink" href="#direction3d-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Direction</span> <span class="ow">in</span> <span class="mi">3</span><span class="n">D</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<p>Direction in 3D</p>
+<dl class="data">
 <dt id="geosoft.gxapi.DIRECTION3D_XYZ">
-<code class="descclassname">gxapi.</code><code class="descname">DIRECTION3D_XYZ</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.DIRECTION3D_XYZ" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">DIRECTION3D_XYZ</code><a class="headerlink" href="#geosoft.gxapi.DIRECTION3D_XYZ" title="Permalink to this definition">¶</a></dt>
+<dd><p>XYZ</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">XYZ</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<dl class="data">
 <dt id="geosoft.gxapi.DIRECTION3D_YXZ">
-<code class="descclassname">gxapi.</code><code class="descname">DIRECTION3D_YXZ</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.DIRECTION3D_YXZ" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">DIRECTION3D_YXZ</code><a class="headerlink" href="#geosoft.gxapi.DIRECTION3D_YXZ" title="Permalink to this definition">¶</a></dt>
+<dd><p>YXZ</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">YXZ</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<dl class="data">
 <dt id="geosoft.gxapi.DIRECTION3D_XZY">
-<code class="descclassname">gxapi.</code><code class="descname">DIRECTION3D_XZY</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxapi.DIRECTION3D_XZY" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">DIRECTION3D_XZY</code><a class="headerlink" href="#geosoft.gxapi.DIRECTION3D_XZY" title="Permalink to this definition">¶</a></dt>
+<dd><p>XZY</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">XZY</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<dl class="data">
 <dt id="geosoft.gxapi.DIRECTION3D_YZX">
-<code class="descclassname">gxapi.</code><code class="descname">DIRECTION3D_YZX</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxapi.DIRECTION3D_YZX" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">DIRECTION3D_YZX</code><a class="headerlink" href="#geosoft.gxapi.DIRECTION3D_YZX" title="Permalink to this definition">¶</a></dt>
+<dd><p>YZX</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">YZX</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<dl class="data">
 <dt id="geosoft.gxapi.DIRECTION3D_ZXY">
-<code class="descclassname">gxapi.</code><code class="descname">DIRECTION3D_ZXY</code><em class="property"> = 4</em><a class="headerlink" href="#geosoft.gxapi.DIRECTION3D_ZXY" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">DIRECTION3D_ZXY</code><a class="headerlink" href="#geosoft.gxapi.DIRECTION3D_ZXY" title="Permalink to this definition">¶</a></dt>
+<dd><p>ZXY</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ZXY</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<dl class="data">
 <dt id="geosoft.gxapi.DIRECTION3D_ZYX">
-<code class="descclassname">gxapi.</code><code class="descname">DIRECTION3D_ZYX</code><em class="property"> = 5</em><a class="headerlink" href="#geosoft.gxapi.DIRECTION3D_ZYX" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">DIRECTION3D_ZYX</code><a class="headerlink" href="#geosoft.gxapi.DIRECTION3D_ZYX" title="Permalink to this definition">¶</a></dt>
+<dd><p>ZYX</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ZYX</span>
-</pre></div>
-</div>
 </div>
 <div class="section" id="gocad-orientation-constants">
 <span id="gocad-orientation"></span><h2>GOCAD_ORIENTATION constants<a class="headerlink" href="#gocad-orientation-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">GOCAD</span> <span class="n">Orientations</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<p>GOCAD Orientations</p>
+<dl class="data">
 <dt id="geosoft.gxapi.GOCAD_ORIENTATIONS_NORMAL">
-<code class="descclassname">gxapi.</code><code class="descname">GOCAD_ORIENTATIONS_NORMAL</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.GOCAD_ORIENTATIONS_NORMAL" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">GOCAD_ORIENTATIONS_NORMAL</code><a class="headerlink" href="#geosoft.gxapi.GOCAD_ORIENTATIONS_NORMAL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Normal</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Normal</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<dl class="data">
 <dt id="geosoft.gxapi.GOCAD_ORIENTATIONS_INVERTED">
-<code class="descclassname">gxapi.</code><code class="descname">GOCAD_ORIENTATIONS_INVERTED</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.GOCAD_ORIENTATIONS_INVERTED" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">GOCAD_ORIENTATIONS_INVERTED</code><a class="headerlink" href="#geosoft.gxapi.GOCAD_ORIENTATIONS_INVERTED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverted (Z)</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Inverted</span> <span class="p">(</span><span class="n">Z</span><span class="p">)</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<dl class="data">
 <dt id="geosoft.gxapi.GOCAD_ORIENTATIONS_NORMAL_ZFIRST">
-<code class="descclassname">gxapi.</code><code class="descname">GOCAD_ORIENTATIONS_NORMAL_ZFIRST</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxapi.GOCAD_ORIENTATIONS_NORMAL_ZFIRST" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">GOCAD_ORIENTATIONS_NORMAL_ZFIRST</code><a class="headerlink" href="#geosoft.gxapi.GOCAD_ORIENTATIONS_NORMAL_ZFIRST" title="Permalink to this definition">¶</a></dt>
+<dd><p>Normal (ZFirst)</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Normal</span> <span class="p">(</span><span class="n">ZFirst</span><span class="p">)</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<dl class="data">
 <dt id="geosoft.gxapi.GOCAD_ORIENTATIONS_INVERTED_ZFIRST">
-<code class="descclassname">gxapi.</code><code class="descname">GOCAD_ORIENTATIONS_INVERTED_ZFIRST</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxapi.GOCAD_ORIENTATIONS_INVERTED_ZFIRST" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">GOCAD_ORIENTATIONS_INVERTED_ZFIRST</code><a class="headerlink" href="#geosoft.gxapi.GOCAD_ORIENTATIONS_INVERTED_ZFIRST" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverted (Z) (ZFirst)</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Inverted</span> <span class="p">(</span><span class="n">Z</span><span class="p">)</span> <span class="p">(</span><span class="n">ZFirst</span><span class="p">)</span>
-</pre></div>
-</div>
 </div>
 <div class="section" id="vector-import-constants">
 <span id="vector-import"></span><h2>VECTOR_IMPORT constants<a class="headerlink" href="#vector-import-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Vector</span> <span class="n">voxel</span> <span class="kn">import</span> <span class="nn">direction</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<p>Vector voxel import direction</p>
+<dl class="data">
 <dt id="geosoft.gxapi.VECTOR_IMPORT_XYZ">
-<code class="descclassname">gxapi.</code><code class="descname">VECTOR_IMPORT_XYZ</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.VECTOR_IMPORT_XYZ" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">VECTOR_IMPORT_XYZ</code><a class="headerlink" href="#geosoft.gxapi.VECTOR_IMPORT_XYZ" title="Permalink to this definition">¶</a></dt>
+<dd><p>X, Y and Z</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="ow">and</span> <span class="n">Z</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<dl class="data">
 <dt id="geosoft.gxapi.VECTOR_IMPORT_UVW">
-<code class="descclassname">gxapi.</code><code class="descname">VECTOR_IMPORT_UVW</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.VECTOR_IMPORT_UVW" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">VECTOR_IMPORT_UVW</code><a class="headerlink" href="#geosoft.gxapi.VECTOR_IMPORT_UVW" title="Permalink to this definition">¶</a></dt>
+<dd><p>U, V and W</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">U</span><span class="p">,</span> <span class="n">V</span> <span class="ow">and</span> <span class="n">W</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<dl class="data">
 <dt id="geosoft.gxapi.VECTOR_IMPORT_AID">
-<code class="descclassname">gxapi.</code><code class="descname">VECTOR_IMPORT_AID</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxapi.VECTOR_IMPORT_AID" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">VECTOR_IMPORT_AID</code><a class="headerlink" href="#geosoft.gxapi.VECTOR_IMPORT_AID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Amplitude, Inclination and Declination</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Amplitude</span><span class="p">,</span> <span class="n">Inclination</span> <span class="ow">and</span> <span class="n">Declination</span>
-</pre></div>
-</div>
 </div>
 <div class="section" id="filter3d-constants">
 <span id="filter3d"></span><h2>FILTER3D constants<a class="headerlink" href="#filter3d-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Voxel</span> <span class="nb">filter</span> <span class="nb">type</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<p>Voxel filter type</p>
+<dl class="data">
 <dt id="geosoft.gxapi.FILTER3D_FILE">
-<code class="descclassname">gxapi.</code><code class="descname">FILTER3D_FILE</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.FILTER3D_FILE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">FILTER3D_FILE</code><a class="headerlink" href="#geosoft.gxapi.FILTER3D_FILE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify a file containing the 27-point filter</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Specify</span> <span class="n">a</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">the</span> <span class="mi">27</span><span class="o">-</span><span class="n">point</span> <span class="nb">filter</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<dl class="data">
 <dt id="geosoft.gxapi.FILTER3D_SMOOTHING">
-<code class="descclassname">gxapi.</code><code class="descname">FILTER3D_SMOOTHING</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.FILTER3D_SMOOTHING" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">FILTER3D_SMOOTHING</code><a class="headerlink" href="#geosoft.gxapi.FILTER3D_SMOOTHING" title="Permalink to this definition">¶</a></dt>
+<dd><p>Smoothing filter</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Smoothing</span> <span class="nb">filter</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<dl class="data">
 <dt id="geosoft.gxapi.FILTER3D_LAPLACE">
-<code class="descclassname">gxapi.</code><code class="descname">FILTER3D_LAPLACE</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxapi.FILTER3D_LAPLACE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">FILTER3D_LAPLACE</code><a class="headerlink" href="#geosoft.gxapi.FILTER3D_LAPLACE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Laplace filter</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Laplace</span> <span class="nb">filter</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<dl class="data">
 <dt id="geosoft.gxapi.FILTER3D_X_GRADIENT">
-<code class="descclassname">gxapi.</code><code class="descname">FILTER3D_X_GRADIENT</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxapi.FILTER3D_X_GRADIENT" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">FILTER3D_X_GRADIENT</code><a class="headerlink" href="#geosoft.gxapi.FILTER3D_X_GRADIENT" title="Permalink to this definition">¶</a></dt>
+<dd><p>X-Gradient filter</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">X</span><span class="o">-</span><span class="n">Gradient</span> <span class="nb">filter</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<dl class="data">
 <dt id="geosoft.gxapi.FILTER3D_Y_GRADIENT">
-<code class="descclassname">gxapi.</code><code class="descname">FILTER3D_Y_GRADIENT</code><em class="property"> = 4</em><a class="headerlink" href="#geosoft.gxapi.FILTER3D_Y_GRADIENT" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">FILTER3D_Y_GRADIENT</code><a class="headerlink" href="#geosoft.gxapi.FILTER3D_Y_GRADIENT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Y-Gradient filter</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Y</span><span class="o">-</span><span class="n">Gradient</span> <span class="nb">filter</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<dl class="data">
 <dt id="geosoft.gxapi.FILTER3D_Z_GRADIENT">
-<code class="descclassname">gxapi.</code><code class="descname">FILTER3D_Z_GRADIENT</code><em class="property"> = 5</em><a class="headerlink" href="#geosoft.gxapi.FILTER3D_Z_GRADIENT" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">FILTER3D_Z_GRADIENT</code><a class="headerlink" href="#geosoft.gxapi.FILTER3D_Z_GRADIENT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Z-Gradient filter</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Z</span><span class="o">-</span><span class="n">Gradient</span> <span class="nb">filter</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<dl class="data">
 <dt id="geosoft.gxapi.FILTER3D_TOTAL_GRADIENT">
-<code class="descclassname">gxapi.</code><code class="descname">FILTER3D_TOTAL_GRADIENT</code><em class="property"> = 6</em><a class="headerlink" href="#geosoft.gxapi.FILTER3D_TOTAL_GRADIENT" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">FILTER3D_TOTAL_GRADIENT</code><a class="headerlink" href="#geosoft.gxapi.FILTER3D_TOTAL_GRADIENT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Total-Gradient filter</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Total</span><span class="o">-</span><span class="n">Gradient</span> <span class="nb">filter</span>
-</pre></div>
-</div>
 </div>
 <div class="section" id="multivoxset-directgrid-method-constants">
 <span id="multivoxset-directgrid-method"></span><h2>MULTIVOXSET_DIRECTGRID_METHOD constants<a class="headerlink" href="#multivoxset-directgrid-method-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">How</span> <span class="n">to</span> <span class="n">calculate</span> <span class="n">the</span> <span class="n">cell</span> <span class="n">values</span> <span class="k">for</span> <span class="n">direct</span> <span class="n">gridding</span><span class="o">.</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<p>How to calculate the cell values for direct gridding.</p>
+<dl class="data">
 <dt id="geosoft.gxapi.MULTIVOXSET_DIRECTGRID_MIN">
-<code class="descclassname">gxapi.</code><code class="descname">MULTIVOXSET_DIRECTGRID_MIN</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.MULTIVOXSET_DIRECTGRID_MIN" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">MULTIVOXSET_DIRECTGRID_MIN</code><a class="headerlink" href="#geosoft.gxapi.MULTIVOXSET_DIRECTGRID_MIN" title="Permalink to this definition">¶</a></dt>
+<dd><p>MULTIVOXSET_DIRECTGRID_MIN</p>
+</dd></dl>
 
-<dl class="attribute">
+<dl class="data">
 <dt id="geosoft.gxapi.MULTIVOXSET_DIRECTGRID_MAX">
-<code class="descclassname">gxapi.</code><code class="descname">MULTIVOXSET_DIRECTGRID_MAX</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.MULTIVOXSET_DIRECTGRID_MAX" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">MULTIVOXSET_DIRECTGRID_MAX</code><a class="headerlink" href="#geosoft.gxapi.MULTIVOXSET_DIRECTGRID_MAX" title="Permalink to this definition">¶</a></dt>
+<dd><p>MULTIVOXSET_DIRECTGRID_MAX</p>
+</dd></dl>
 
-<dl class="attribute">
+<dl class="data">
 <dt id="geosoft.gxapi.MULTIVOXSET_DIRECTGRID_MEAN">
-<code class="descclassname">gxapi.</code><code class="descname">MULTIVOXSET_DIRECTGRID_MEAN</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxapi.MULTIVOXSET_DIRECTGRID_MEAN" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">MULTIVOXSET_DIRECTGRID_MEAN</code><a class="headerlink" href="#geosoft.gxapi.MULTIVOXSET_DIRECTGRID_MEAN" title="Permalink to this definition">¶</a></dt>
+<dd><p>MULTIVOXSET_DIRECTGRID_MEAN</p>
+</dd></dl>
 
 </div>
 </div>
@@ -1272,7 +1032,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

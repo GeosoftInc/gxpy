@@ -8,40 +8,31 @@ GXSTR class
 .. autoclass:: geosoft.gxapi.GXSTR
    :members:
 
+
 .. _FILE_EXT:
 
 FILE_EXT constants
 -----------------------------------------------------------------------
 
-::
+Extension option
 
-   Extension option 
+.. autodata:: geosoft.gxapi.FILE_EXT_ADD_IF_NONE
+    :annotation:
+.. autodata:: geosoft.gxapi.FILE_EXT_FORCE
+    :annotation:
 
-.. autoattribute:: geosoft.gxapi.FILE_EXT_ADD_IF_NONE
-
-::
-
-   Will add the extension only if no extension is present. 
-
-.. autoattribute:: geosoft.gxapi.FILE_EXT_FORCE
-
-::
-
-   Will cause a renaming of the file extension to the new extension. 
 
 .. _STR_CASE:
 
 STR_CASE constants
 -----------------------------------------------------------------------
 
-::
+Case sensitivity
 
-   Case sensitivity 
-
-.. autoattribute:: geosoft.gxapi.STR_CASE_TOLERANT
-
-
-.. autoattribute:: geosoft.gxapi.STR_CASE_SENSITIVE
+.. autodata:: geosoft.gxapi.STR_CASE_TOLERANT
+    :annotation:
+.. autodata:: geosoft.gxapi.STR_CASE_SENSITIVE
+    :annotation:
 
 
 .. _STR_ESCAPE:
@@ -49,89 +40,50 @@ STR_CASE constants
 STR_ESCAPE constants
 -----------------------------------------------------------------------
 
-::
+How to handle escape
 
-   How to handle escape 
+.. autodata:: geosoft.gxapi.ESCAPE_CONVERT
+    :annotation:
+.. autodata:: geosoft.gxapi.ESCAPE_REPLACE
+    :annotation:
 
-.. autoattribute:: geosoft.gxapi.ESCAPE_CONVERT
-
-::
-
-   Converts non-standard characters in a string to escape sequences. 
-
-.. autoattribute:: geosoft.gxapi.ESCAPE_REPLACE
-
-::
-
-   Replaces escape sequences with original characters. 
 
 .. _STR_FILE_PART:
 
 STR_FILE_PART constants
 -----------------------------------------------------------------------
 
-::
+Parts of a path string
 
-   Parts of a path string 
+.. autodata:: geosoft.gxapi.STR_FILE_PART_NAME
+    :annotation:
+.. autodata:: geosoft.gxapi.STR_FILE_PART_EXTENSION
+    :annotation:
+.. autodata:: geosoft.gxapi.STR_FILE_PART_DIRECTORY
+    :annotation:
+.. autodata:: geosoft.gxapi.STR_FILE_PART_VOLUME
+    :annotation:
+.. autodata:: geosoft.gxapi.STR_FILE_PART_QUALIFIERS
+    :annotation:
+.. autodata:: geosoft.gxapi.STR_FILE_PART_NAME_EXTENSION
+    :annotation:
+.. autodata:: geosoft.gxapi.STR_FILE_PART_FULLPATH_NO_QUALIFIERS
+    :annotation:
 
-.. autoattribute:: geosoft.gxapi.STR_FILE_PART_NAME
-
-::
-
-   File Name 
-
-.. autoattribute:: geosoft.gxapi.STR_FILE_PART_EXTENSION
-
-::
-
-   Extension 
-
-.. autoattribute:: geosoft.gxapi.STR_FILE_PART_DIRECTORY
-
-::
-
-   Directory 
-
-.. autoattribute:: geosoft.gxapi.STR_FILE_PART_VOLUME
-
-::
-
-   Drive 
-
-.. autoattribute:: geosoft.gxapi.STR_FILE_PART_QUALIFIERS
-
-::
-
-   Qualifiers 
-
-.. autoattribute:: geosoft.gxapi.STR_FILE_PART_NAME_EXTENSION
-
-::
-
-   Name and the Extension together 
-
-.. autoattribute:: geosoft.gxapi.STR_FILE_PART_FULLPATH_NO_QUALIFIERS
-
-::
-
-   Full name of file with no qualifiers 
 
 .. _STR_JUSTIFY:
 
 STR_JUSTIFY constants
 -----------------------------------------------------------------------
 
-::
+String justification style
 
-   String justification style 
-
-.. autoattribute:: geosoft.gxapi.STR_JUSTIFY_LEFT
-
-
-.. autoattribute:: geosoft.gxapi.STR_JUSTIFY_CENTER
-
-
-.. autoattribute:: geosoft.gxapi.STR_JUSTIFY_RIGHT
+.. autodata:: geosoft.gxapi.STR_JUSTIFY_LEFT
+    :annotation:
+.. autodata:: geosoft.gxapi.STR_JUSTIFY_CENTER
+    :annotation:
+.. autodata:: geosoft.gxapi.STR_JUSTIFY_RIGHT
+    :annotation:
 
 
 .. _STR_TRIM:
@@ -139,17 +91,13 @@ STR_JUSTIFY constants
 STR_TRIM constants
 -----------------------------------------------------------------------
 
-::
+What to trim
 
-   What to trim 
-
-.. autoattribute:: geosoft.gxapi.STR_TRIMRIGHT
-
-
-.. autoattribute:: geosoft.gxapi.STR_TRIMLEFT
-
-
-.. autoattribute:: geosoft.gxapi.STR_TRIMBOTH
-
+.. autodata:: geosoft.gxapi.STR_TRIMRIGHT
+    :annotation:
+.. autodata:: geosoft.gxapi.STR_TRIMLEFT
+    :annotation:
+.. autodata:: geosoft.gxapi.STR_TRIMBOTH
+    :annotation:
 
 	

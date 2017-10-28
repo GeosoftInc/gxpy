@@ -8,19 +8,18 @@ GXDAT class
 .. autoclass:: geosoft.gxapi.GXDAT
    :members:
 
+
 .. _DAT_FILE:
 
 DAT_FILE constants
 -----------------------------------------------------------------------
 
-::
+Type of grid
 
-   Type of grid 
-
-.. autoattribute:: geosoft.gxapi.DAT_FILE_GRID
-
-
-.. autoattribute:: geosoft.gxapi.DAT_FILE_IMAGE
+.. autodata:: geosoft.gxapi.DAT_FILE_GRID
+    :annotation:
+.. autodata:: geosoft.gxapi.DAT_FILE_IMAGE
+    :annotation:
 
 
 .. _DAT_FILE_FORM:
@@ -28,14 +27,12 @@ DAT_FILE constants
 DAT_FILE_FORM constants
 -----------------------------------------------------------------------
 
-::
+Type of form
 
-   Type of form 
-
-.. autoattribute:: geosoft.gxapi.DAT_FILE_FORM_OPEN
-
-
-.. autoattribute:: geosoft.gxapi.DAT_FILE_FORM_SAVE
+.. autodata:: geosoft.gxapi.DAT_FILE_FORM_OPEN
+    :annotation:
+.. autodata:: geosoft.gxapi.DAT_FILE_FORM_SAVE
+    :annotation:
 
 
 .. _DAT_XGD:
@@ -43,17 +40,13 @@ DAT_FILE_FORM constants
 DAT_XGD constants
 -----------------------------------------------------------------------
 
-::
+`GXDAT <geosoft.gxapi.GXDAT>` Open modes
 
-   DAT Open modes 
-
-.. autoattribute:: geosoft.gxapi.DAT_XGD_READ
-
-
-.. autoattribute:: geosoft.gxapi.DAT_XGD_NEW
-
-
-.. autoattribute:: geosoft.gxapi.DAT_XGD_WRITE
-
+.. autodata:: geosoft.gxapi.DAT_XGD_READ
+    :annotation:
+.. autodata:: geosoft.gxapi.DAT_XGD_NEW
+    :annotation:
+.. autodata:: geosoft.gxapi.DAT_XGD_WRITE
+    :annotation:
 
 	

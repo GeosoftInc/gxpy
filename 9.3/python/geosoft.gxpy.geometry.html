@@ -1,17 +1,14 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>geosoft.gxpy.geometry submodule &#8212; Geosoft GX Python API 9.3.0 documentation</title>
-    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -37,7 +34,7 @@
 </script>
 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -129,14 +126,14 @@
 </div>
 <dl class="class">
 <dt id="geosoft.gxpy.geometry.Geometry">
-<em class="property">class </em><code class="descclassname">geosoft.gxpy.geometry.</code><code class="descname">Geometry</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.geometry.Geometry" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Geometry</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.geometry.Geometry" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Geometry base class for all geometries.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>coordinate_system</strong> &#8211; <code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.Coordinate_system</span></code> instance.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>coordinate_system</strong> – <code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.Coordinate_system</span></code> instance.</td>
 </tr>
 </tbody>
 </table>
@@ -153,14 +150,14 @@
 
 <dl class="exception">
 <dt id="geosoft.gxpy.geometry.GeometryException">
-<em class="property">exception </em><code class="descclassname">geosoft.gxpy.geometry.</code><code class="descname">GeometryException</code><a class="headerlink" href="#geosoft.gxpy.geometry.GeometryException" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="descname">GeometryException</code><a class="headerlink" href="#geosoft.gxpy.geometry.GeometryException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
 <p>Exceptions from <a class="reference internal" href="#module-geosoft.gxpy.geometry" title="geosoft.gxpy.geometry"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxpy.geometry</span></code></a>.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="geosoft.gxpy.geometry.PPoint">
-<em class="property">class </em><code class="descclassname">geosoft.gxpy.geometry.</code><code class="descname">PPoint</code><span class="sig-paren">(</span><em>xyz</em>, <em>z=0.0</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.geometry.PPoint" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">PPoint</code><span class="sig-paren">(</span><em>xyz</em>, <em>z=0.0</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.geometry.PPoint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#geosoft.gxpy.geometry.Geometry" title="geosoft.gxpy.geometry.Geometry"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.geometry.Geometry</span></code></a>, <code class="xref py py-class docutils literal"><span class="pre">collections.abc.Sequence</span></code></p>
 <p>Poly-Point class. Basic instance arithmetic and equality testing is supported.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -168,9 +165,9 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>xyz</strong> &#8211; array-like, either ((x, y), ...), ((x, y, z), ...) or (vv_x, vv_y, [vv_z]).
+<li><strong>xyz</strong> – array-like, either ((x, y), …), ((x, y, z), …) or (vv_x, vv_y, [vv_z]).
 vv data is resampled to match the first vv.</li>
-<li><strong>z</strong> &#8211; constant z value for (x, y) data, ignored for (x, y, z) data</li>
+<li><strong>z</strong> – constant z value for (x, y) data, ignored for (x, y, z) data</li>
 </ul>
 </td>
 </tr>
@@ -277,14 +274,14 @@ vv data is resampled to match the first vv.</li>
 
 <dl class="class">
 <dt id="geosoft.gxpy.geometry.Point">
-<em class="property">class </em><code class="descclassname">geosoft.gxpy.geometry.</code><code class="descname">Point</code><span class="sig-paren">(</span><em>p</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.geometry.Point" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Point</code><span class="sig-paren">(</span><em>p</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.geometry.Point" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#geosoft.gxpy.geometry.Geometry" title="geosoft.gxpy.geometry.Geometry"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.geometry.Geometry</span></code></a></p>
 <p>Spatial location (x,y,z).  Basic instance arithmetic and equality testing is supported.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>p</strong> &#8211; <p>point in one of the following forms:</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>p</strong> – <p>point in one of the following forms:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Point</span>   <span class="n">makes</span> <span class="n">a</span> <span class="n">copy</span>
 <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">[,</span><span class="n">z</span><span class="p">])</span> <span class="n">implied</span> <span class="n">z</span> <span class="ow">is</span> <span class="mf">0.0</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">provided</span>
 <span class="n">k</span> <span class="n">makes</span> <span class="n">a</span> <span class="n">point</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
@@ -352,14 +349,14 @@ vv data is resampled to match the first vv.</li>
 
 <dl class="class">
 <dt id="geosoft.gxpy.geometry.Point2">
-<em class="property">class </em><code class="descclassname">geosoft.gxpy.geometry.</code><code class="descname">Point2</code><span class="sig-paren">(</span><em>p</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.geometry.Point2" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Point2</code><span class="sig-paren">(</span><em>p</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.geometry.Point2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#geosoft.gxpy.geometry.Geometry" title="geosoft.gxpy.geometry.Geometry"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.geometry.Geometry</span></code></a></p>
 <p>Two points, for a line, or a rectangle, or a cube.  Basic instance arithmetic and equality testing is supported.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>p</strong> &#8211; <p>Points in one of the following forms:</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>p</strong> – <p>Points in one of the following forms:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">Point</span><span class="p">,</span> <span class="n">Point</span><span class="p">)</span>
 <span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">[,</span><span class="n">z</span><span class="p">]),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">[,</span><span class="n">z</span><span class="p">]))</span> <span class="n">implied</span> <span class="n">z</span> <span class="ow">is</span> <span class="mi">0</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">specified</span>
 <span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span> <span class="n">implied</span> <span class="n">z</span> <span class="ow">is</span> <span class="mi">0</span>
@@ -457,7 +454,7 @@ vv data is resampled to match the first vv.</li>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

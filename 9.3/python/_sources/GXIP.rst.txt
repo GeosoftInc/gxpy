@@ -8,43 +8,34 @@ GXIP class
 .. autoclass:: geosoft.gxapi.GXIP
    :members:
 
+
 .. _IP_ARRAY:
 
 IP_ARRAY constants
 -----------------------------------------------------------------------
 
-::
+`GXIP <geosoft.gxapi.GXIP>` Array options
 
-   IP Array options 
-
-.. autoattribute:: geosoft.gxapi.IP_ARRAY_DPDP
-
-
-.. autoattribute:: geosoft.gxapi.IP_ARRAY_PLDP
-
-
-.. autoattribute:: geosoft.gxapi.IP_ARRAY_PLPL
-
-
-.. autoattribute:: geosoft.gxapi.IP_ARRAY_GRAD
-
-
-.. autoattribute:: geosoft.gxapi.IP_ARRAY_WENNER
-
-
-.. autoattribute:: geosoft.gxapi.IP_ARRAY_SCHLUMBERGER
-
-
-.. autoattribute:: geosoft.gxapi.IP_ARRAY_UNKNOWN
-
-
-.. autoattribute:: geosoft.gxapi.IP_ARRAY_3D
-
-
-.. autoattribute:: geosoft.gxapi.IP_ARRAY_3D_PLDP
-
-
-.. autoattribute:: geosoft.gxapi.IP_ARRAY_3D_PLPL
+.. autodata:: geosoft.gxapi.IP_ARRAY_DPDP
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_ARRAY_PLDP
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_ARRAY_PLPL
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_ARRAY_GRAD
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_ARRAY_WENNER
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_ARRAY_SCHLUMBERGER
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_ARRAY_UNKNOWN
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_ARRAY_3D
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_ARRAY_3D_PLDP
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_ARRAY_3D_PLPL
+    :annotation:
 
 
 .. _IP_CHANNELS:
@@ -52,17 +43,14 @@ IP_ARRAY constants
 IP_CHANNELS constants
 -----------------------------------------------------------------------
 
-::
+Channels to display
 
-   Channels to display 
-
-.. autoattribute:: geosoft.gxapi.IP_CHANNELS_DISPLAYED
-
-
-.. autoattribute:: geosoft.gxapi.IP_CHANNELS_SELECTED
-
-
-.. autoattribute:: geosoft.gxapi.IP_CHANNELS_ALL
+.. autodata:: geosoft.gxapi.IP_CHANNELS_DISPLAYED
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_CHANNELS_SELECTED
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_CHANNELS_ALL
+    :annotation:
 
 
 .. _IP_DOMAIN:
@@ -70,20 +58,16 @@ IP_CHANNELS constants
 IP_DOMAIN constants
 -----------------------------------------------------------------------
 
-::
+Types of Domains
 
-   Types of Domains 
-
-.. autoattribute:: geosoft.gxapi.IP_DOMAIN_NONE
-
-
-.. autoattribute:: geosoft.gxapi.IP_DOMAIN_TIME
-
-
-.. autoattribute:: geosoft.gxapi.IP_DOMAIN_FREQUENCY
-
-
-.. autoattribute:: geosoft.gxapi.IP_DOMAIN_BOTH
+.. autodata:: geosoft.gxapi.IP_DOMAIN_NONE
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_DOMAIN_TIME
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_DOMAIN_FREQUENCY
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_DOMAIN_BOTH
+    :annotation:
 
 
 .. _IP_DUPLICATE:
@@ -91,14 +75,12 @@ IP_DOMAIN constants
 IP_DUPLICATE constants
 -----------------------------------------------------------------------
 
-::
+How to handle duplicates
 
-   How to handle duplicates 
-
-.. autoattribute:: geosoft.gxapi.IP_DUPLICATE_APPEND
-
-
-.. autoattribute:: geosoft.gxapi.IP_DUPLICATE_OVERWRITE
+.. autodata:: geosoft.gxapi.IP_DUPLICATE_APPEND
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_DUPLICATE_OVERWRITE
+    :annotation:
 
 
 .. _IP_FILTER:
@@ -106,86 +88,42 @@ IP_DUPLICATE constants
 IP_FILTER constants
 -----------------------------------------------------------------------
 
-::
+Fraser Filters
 
-   Fraser Filters 
+.. autodata:: geosoft.gxapi.IP_FILTER_PANTLEG
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_FILTER_PANTLEGP
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_FILTER_PYRIAMID
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_FILTER_PYRIAMIDP
+    :annotation:
 
-.. autoattribute:: geosoft.gxapi.IP_FILTER_PANTLEG
-
-::
-
-   Regular pant-leg filter:    _!_  maxn:
-   /\ `*`\ _\ `*`\ \   n1
-   /\ `*`\ / \\ `*`\ \  n2
-   /\ `*`\ /   \\ `*`\ \ n3
-   :  : 
-
-.. autoattribute:: geosoft.gxapi.IP_FILTER_PANTLEGP
-
-::
-
-   Regular pant-leg filter with top at first point:
-   !  nscp:
-   /\ `*`\ \   n1
-   /\ `*`\ _\ `*`\ \  n2
-   /\ `*`\ / \\ `*`\ \ n3
-   :  : 
-
-.. autoattribute:: geosoft.gxapi.IP_FILTER_PYRIAMID
-
-::
-
-   Regular pyramid filter:     _!_  maxn:
-   /\ `*`\  \ `*`\ \   n1
-   /\ `*`\  \ `*`\  \ `*`\ \  n2
-   /\ `*`\  \ `*`\  \ `*`\  \ `*`\ \ n3
-   :  : 
-
-.. autoattribute:: geosoft.gxapi.IP_FILTER_PYRIAMIDP
-
-::
-
-   Regular pyramid filter      !  maxn:
-   with peak on a point:      /\ `*`\ \   n1
-   /\ `*`\  \ `*`\ \  n2
-   /\ `*`\  \ `*`\  \ `*`\ \ n3
-   :  : 
 
 .. _IP_I2XIMPMODE:
 
 IP_I2XIMPMODE constants
 -----------------------------------------------------------------------
 
-::
+Interpext Import Mode
 
-   Interpext Import Mode 
+.. autodata:: geosoft.gxapi.IP_I2XIMPMODE_REPLACE
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_I2XIMPMODE_MERGE
+    :annotation:
 
-.. autoattribute:: geosoft.gxapi.IP_I2XIMPMODE_REPLACE
-
-::
-
-   Recreates the line from scratch. 
-
-.. autoattribute:: geosoft.gxapi.IP_I2XIMPMODE_MERGE
-
-::
-
-   Looks for matching Tx1 and N values and
-   replaces data in matching lines only. 
 
 .. _IP_I2XINV:
 
 IP_I2XINV constants
 -----------------------------------------------------------------------
 
-::
+Type of Inversion
 
-   Type of Inversion 
-
-.. autoattribute:: geosoft.gxapi.IP_I2XINV_IMAGE
-
-
-.. autoattribute:: geosoft.gxapi.IP_I2XINV_ZONGE
+.. autodata:: geosoft.gxapi.IP_I2XINV_IMAGE
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_I2XINV_ZONGE
+    :annotation:
 
 
 .. _IP_LINES:
@@ -193,17 +131,14 @@ IP_I2XINV constants
 IP_LINES constants
 -----------------------------------------------------------------------
 
-::
+Lines to display
 
-   Lines to display 
-
-.. autoattribute:: geosoft.gxapi.IP_LINES_DISPLAYED
-
-
-.. autoattribute:: geosoft.gxapi.IP_LINES_SELECTED
-
-
-.. autoattribute:: geosoft.gxapi.IP_LINES_ALL
+.. autodata:: geosoft.gxapi.IP_LINES_DISPLAYED
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_LINES_SELECTED
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_LINES_ALL
+    :annotation:
 
 
 .. _IP_PLOT:
@@ -211,14 +146,12 @@ IP_LINES constants
 IP_PLOT constants
 -----------------------------------------------------------------------
 
-::
+Type of Plot
 
-   Type of Plot 
-
-.. autoattribute:: geosoft.gxapi.IP_PLOT_PSEUDOSECTION
-
-
-.. autoattribute:: geosoft.gxapi.IP_PLOT_STACKEDSECTION
+.. autodata:: geosoft.gxapi.IP_PLOT_PSEUDOSECTION
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_PLOT_STACKEDSECTION
+    :annotation:
 
 
 .. _IP_QCTYPE:
@@ -226,125 +159,75 @@ IP_PLOT constants
 IP_QCTYPE constants
 -----------------------------------------------------------------------
 
-::
+Type of Measurement
 
-   Type of Measurement 
+.. autodata:: geosoft.gxapi.IP_QCTYPE_RESISTIVITY
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_QCTYPE_IP
+    :annotation:
 
-.. autoattribute:: geosoft.gxapi.IP_QCTYPE_RESISTIVITY
-
-::
-
-   Resistivity 
-
-.. autoattribute:: geosoft.gxapi.IP_QCTYPE_IP
-
-::
-
-   IP 
 
 .. _IP_STACK_TYPE:
 
 IP_STACK_TYPE constants
 -----------------------------------------------------------------------
 
-::
+Spacing Types
 
-   Spacing Types 
+.. autodata:: geosoft.gxapi.IP_STACK_TYPE_MAP
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_STACK_TYPE_EQUAL
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_STACK_TYPE_GEOGRAPHIC
+    :annotation:
 
-.. autoattribute:: geosoft.gxapi.IP_STACK_TYPE_MAP
-
-::
-
-   Use map-based spacing, and preserve the directions of the
-   original lines by rotating the sections as desired to their true
-   locations. (At present only N-S and E-W sections are supported). 
-
-.. autoattribute:: geosoft.gxapi.IP_STACK_TYPE_EQUAL
-
-::
-
-   Spaces the sections equally, with enough room to
-   guarantee no overlap with high N-values or closely spaced lines. 
-
-.. autoattribute:: geosoft.gxapi.IP_STACK_TYPE_GEOGRAPHIC
-
-::
-
-   Now the same as IP_STACK_MAP 
 
 .. _IP_STNSCALE:
 
 IP_STNSCALE constants
 -----------------------------------------------------------------------
 
-::
+Station Scaling
 
-   Station Scaling 
+.. autodata:: geosoft.gxapi.IP_STNSCALE_NONE
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_STNSCALE_ASPACE
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_STNSCALE_VALUE
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_STNSCALE_FILE
+    :annotation:
 
-.. autoattribute:: geosoft.gxapi.IP_STNSCALE_NONE
-
-::
-
-   Station numbers become X or Y locations 
-
-.. autoattribute:: geosoft.gxapi.IP_STNSCALE_ASPACE
-
-::
-
-   Multiply station numbers by the A spacing 
-
-.. autoattribute:: geosoft.gxapi.IP_STNSCALE_VALUE
-
-::
-
-   Multiply by an input value. 
-
-.. autoattribute:: geosoft.gxapi.IP_STNSCALE_FILE
-
-::
-
-   Look up locations from a CSV Line/Station/X/Y file 
 
 .. _IP_SYS:
 
 IP_SYS constants
 -----------------------------------------------------------------------
 
-::
+Instrument
 
-   Instrument 
-
-.. autoattribute:: geosoft.gxapi.IP_SYS_IPDATA
-
-
-.. autoattribute:: geosoft.gxapi.IP_SYS_IP2
-
-
-.. autoattribute:: geosoft.gxapi.IP_SYS_IP6
-
-
-.. autoattribute:: geosoft.gxapi.IP_SYS_IP10
-
-
-.. autoattribute:: geosoft.gxapi.IP_SYS_SYSCALR2
-
-
-.. autoattribute:: geosoft.gxapi.IP_SYS_IPR11
-
-
-.. autoattribute:: geosoft.gxapi.IP_SYS_IPR12
-
-
-.. autoattribute:: geosoft.gxapi.IP_SYS_PHOENIX
-
-
-.. autoattribute:: geosoft.gxapi.IP_SYS_PHOENIX_V2
-
-
-.. autoattribute:: geosoft.gxapi.IP_SYS_ELREC_PRO
-
-
-.. autoattribute:: geosoft.gxapi.IP_SYS_PROSYS_II
+.. autodata:: geosoft.gxapi.IP_SYS_IPDATA
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_SYS_IP2
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_SYS_IP6
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_SYS_IP10
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_SYS_SYSCALR2
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_SYS_IPR11
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_SYS_IPR12
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_SYS_PHOENIX
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_SYS_PHOENIX_V2
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_SYS_ELREC_PRO
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_SYS_PROSYS_II
+    :annotation:
 
 
 .. _IP_UBC_CONTROL:
@@ -352,23 +235,18 @@ IP_SYS constants
 IP_UBC_CONTROL constants
 -----------------------------------------------------------------------
 
-::
+Types of Domains
 
-   Types of Domains 
-
-.. autoattribute:: geosoft.gxapi.IP_UBC_CONTROL_NONE
-
-
-.. autoattribute:: geosoft.gxapi.IP_UBC_CONTROL_DEFAULT
-
-
-.. autoattribute:: geosoft.gxapi.IP_UBC_CONTROL_FILE
-
-
-.. autoattribute:: geosoft.gxapi.IP_UBC_CONTROL_VALUE
-
-
-.. autoattribute:: geosoft.gxapi.IP_UBC_CONTROL_LENGTH
+.. autodata:: geosoft.gxapi.IP_UBC_CONTROL_NONE
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_UBC_CONTROL_DEFAULT
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_UBC_CONTROL_FILE
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_UBC_CONTROL_VALUE
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_UBC_CONTROL_LENGTH
+    :annotation:
 
 
 .. _IP_PLDP_CONV:
@@ -376,17 +254,13 @@ IP_UBC_CONTROL constants
 IP_PLDP_CONV constants
 -----------------------------------------------------------------------
 
-::
+Types of Domains
 
-   Types of Domains 
-
-.. autoattribute:: geosoft.gxapi.IP_PLDP_CONV_CLOSE_RX
-
-
-.. autoattribute:: geosoft.gxapi.IP_PLDP_CONV_MID_RX
-
-
-.. autoattribute:: geosoft.gxapi.IP_PLDP_CONV_DISTANT_RX
-
+.. autodata:: geosoft.gxapi.IP_PLDP_CONV_CLOSE_RX
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_PLDP_CONV_MID_RX
+    :annotation:
+.. autodata:: geosoft.gxapi.IP_PLDP_CONV_DISTANT_RX
+    :annotation:
 
 	

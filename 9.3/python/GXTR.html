@@ -1,17 +1,14 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>GXTR class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
-    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -37,7 +34,7 @@
 </script>
 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -98,85 +95,72 @@
 <span id="gxtr"></span><h1>GXTR class<a class="headerlink" href="#gxtr-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXTR">
-<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXTR</code><a class="headerlink" href="#geosoft.gxapi.GXTR" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-The TR object contains trend information about a grid or
+<em class="property">class </em><code class="descname">GXTR</code><span class="sig-paren">(</span><em>wrapper=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTR" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXTR class.</p>
+<p>The <a class="reference internal" href="#geosoft.gxapi.GXTR" title="geosoft.gxapi.GXTR"><code class="xref py py-obj docutils literal"><span class="pre">GXTR</span></code></a> object contains trend information about a grid or
 grid pager. Currently, it is used only in conjunction with
-the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG.get_tr" title="geosoft.gxapi.GXIMG.get_tr"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXIMG.get_tr()</span></code></a>, <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG.set_tr" title="geosoft.gxapi.GXIMG.set_tr"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXIMG.set_tr()</span></code></a>, and <a class="reference internal" href="GXPGU.html#geosoft.gxapi.GXPGU.trend" title="geosoft.gxapi.GXPGU.trend"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXPGU.trend()</span></code></a> functions.
-</pre>
+the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG.get_tr" title="geosoft.gxapi.GXIMG.get_tr"><code class="xref py py-obj docutils literal"><span class="pre">GXIMG.get_tr</span></code></a>, <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG.set_tr" title="geosoft.gxapi.GXIMG.set_tr"><code class="xref py py-obj docutils literal"><span class="pre">GXIMG.set_tr</span></code></a>, and <a class="reference internal" href="GXPGU.html#geosoft.gxapi.GXPGU.trend" title="geosoft.gxapi.GXPGU.trend"><code class="xref py py-obj docutils literal"><span class="pre">GXPGU.trend</span></code></a> functions.</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXTR.copy">
-<code class="descname">copy</code><span class="sig-paren">(</span><em>(GXTR)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXTR.copy" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">copies</span> <span class="n">a</span> <span class="n">table</span> <span class="n">resource</span> <span class="n">to</span> <span class="n">another</span> <span class="n">trend</span> <span class="n">table</span> <span class="n">resource</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">copy</code><span class="sig-paren">(</span><em>t_rs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTR.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method copies a table resource to another trend table resource.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="#geosoft.gxapi.GXTR" title="geosoft.gxapi.GXTR"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXTR</span></code></a>) &#8211; Source Trend Object to Copy</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>t_rs</strong> (<a class="reference internal" href="#geosoft.gxapi.GXTR" title="geosoft.gxapi.GXTR"><em>GXTR</em></a>) – Source Trend Object to Copy</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 8.1.0.</span></p>
+<p><span class="versionmodified">New in version 8.1.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXTR.create">
-<em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; GXTR:<a class="headerlink" href="#geosoft.gxapi.GXTR.create" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Creates</span> <span class="n">a</span> <span class="n">Trend</span> <span class="nb">object</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>order</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTR.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a Trend object</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Trend order (must &gt;=0 and &lt;=3)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>order</strong> (<em>int</em>) – Trend order (must &gt;=0 and &lt;=3)</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">TR Object</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXTR" title="geosoft.gxapi.GXTR"><code class="xref py py-obj docutils literal"><span class="pre">GXTR</span></code></a> Object</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXTR" title="geosoft.gxapi.GXTR"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXTR</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXTR" title="geosoft.gxapi.GXTR">GXTR</a></td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTR.is_null">
-<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool<a class="headerlink" href="#geosoft.gxapi.GXTR.is_null" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if the instance of <code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXTR</span> <span class="pre">is</span> <span class="pre">null</span> <span class="pre">(undefined)</span></code></p>
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTR.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the instance of <code class="xref py py-obj docutils literal"><span class="pre">GXTR</span></code> is null (undefined)`</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null instance of <a class="reference internal" href="#geosoft.gxapi.GXTR" title="geosoft.gxapi.GXTR"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXTR</span></code></a>, False otherwise.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool`</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXTR</span></code>, False otherwise.</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXTR.null">
-<em class="property">static </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXTR<a class="headerlink" href="#geosoft.gxapi.GXTR.null" title="Permalink to this definition">¶</a></dt>
-<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXTR" title="geosoft.gxapi.GXTR"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXTR</span></code></a></p>
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTR.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXTR</span></code></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXTR" title="geosoft.gxapi.GXTR"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXTR</span></code></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXTR" title="geosoft.gxapi.GXTR"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXTR</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <code class="xref py py-obj docutils literal"><span class="pre">GXTR</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -211,7 +195,7 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG.get_tr" t
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

@@ -1,17 +1,14 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>geosoft.gxpy.vv submodule &#8212; Geosoft GX Python API 9.3.0 documentation</title>
-    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -37,7 +34,7 @@
 </script>
 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -130,7 +127,7 @@ data to the same fiducial so that vector-to-vector operations can be performed.<
 </div>
 <dl class="class">
 <dt id="geosoft.gxpy.vv.GXvv">
-<em class="property">class </em><code class="descclassname">geosoft.gxpy.vv.</code><code class="descname">GXvv</code><span class="sig-paren">(</span><em>array=None</em>, <em>dtype=None</em>, <em>fid=(0.0</em>, <em>1.0)</em>, <em>unit_of_measure=''</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.vv.GXvv" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">GXvv</code><span class="sig-paren">(</span><em>array=None</em>, <em>dtype=None</em>, <em>fid=(0.0</em>, <em>1.0)</em>, <em>unit_of_measure=''</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.vv.GXvv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>VV class wrapper.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -138,11 +135,11 @@ data to the same fiducial so that vector-to-vector operations can be performed.<
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>array</strong> &#8211; array-like, None to create an empty VV</li>
-<li><strong>dtype</strong> &#8211; numpy data type.  For unicode strings &#8216;U#&#8217;, where # is a string length. If not specified
-the type is taken from first element in array, of if no array the default is &#8216;float&#8217;.</li>
-<li><strong>fid</strong> &#8211; (start, increment) fiducial</li>
-<li><strong>unit_of_measure</strong> &#8211; unit of measure for the contained data.</li>
+<li><strong>array</strong> – array-like, None to create an empty VV</li>
+<li><strong>dtype</strong> – numpy data type.  For unicode strings ‘U#’, where # is a string length. If not specified
+the type is taken from first element in array, of if no array the default is ‘float’.</li>
+<li><strong>fid</strong> – (start, increment) fiducial</li>
+<li><strong>unit_of_measure</strong> – unit of measure for the contained data.</li>
 </ul>
 </td>
 </tr>
@@ -194,9 +191,9 @@ the type is taken from first element in array, of if no array the default is &#8
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>start</strong> &#8211; index of first value, must be &gt;=0</li>
-<li><strong>n</strong> &#8211; number of values wanted</li>
-<li><strong>dtype</strong> &#8211; numpy data type wanted</li>
+<li><strong>start</strong> – index of first value, must be &gt;=0</li>
+<li><strong>n</strong> – number of values wanted</li>
+<li><strong>dtype</strong> – numpy data type wanted</li>
 </ul>
 </td>
 </tr>
@@ -268,8 +265,8 @@ in another dtype.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>fid</strong> &#8211; (start,incr)</li>
-<li><strong>length</strong> &#8211; length</li>
+<li><strong>fid</strong> – (start,incr)</li>
+<li><strong>length</strong> – length</li>
 </ul>
 </td>
 </tr>
@@ -289,8 +286,8 @@ in another dtype.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>data</strong> &#8211; data array</li>
-<li><strong>fid</strong> &#8211; fid tuple (start,increment), default does not change</li>
+<li><strong>data</strong> – data array, must be dimension 1</li>
+<li><strong>fid</strong> – fid tuple (start,increment), default does not change</li>
 </ul>
 </td>
 </tr>
@@ -298,6 +295,9 @@ in another dtype.</p>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 9.3: </span>default fid leaves fid unchanged</p>
 </div>
 </dd></dl>
 
@@ -311,7 +311,7 @@ in another dtype.</p>
 
 <dl class="exception">
 <dt id="geosoft.gxpy.vv.VVException">
-<em class="property">exception </em><code class="descclassname">geosoft.gxpy.vv.</code><code class="descname">VVException</code><a class="headerlink" href="#geosoft.gxpy.vv.VVException" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="descname">VVException</code><a class="headerlink" href="#geosoft.gxpy.vv.VVException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
 <p>Exceptions from <a class="reference internal" href="#module-geosoft.gxpy.vv" title="geosoft.gxpy.vv"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxpy.vv</span></code></a>.</p>
 <div class="versionadded">
@@ -346,7 +346,7 @@ in another dtype.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

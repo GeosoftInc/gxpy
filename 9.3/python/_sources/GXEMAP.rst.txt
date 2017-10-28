@@ -8,19 +8,18 @@ GXEMAP class
 .. autoclass:: geosoft.gxapi.GXEMAP
    :members:
 
+
 .. _EMAP_FONT:
 
 EMAP_FONT constants
 -----------------------------------------------------------------------
 
-::
+Font Types
 
-   Font Types 
-
-.. autoattribute:: geosoft.gxapi.EMAP_FONT_TT
-
-
-.. autoattribute:: geosoft.gxapi.EMAP_FONT_GFN
+.. autodata:: geosoft.gxapi.EMAP_FONT_TT
+    :annotation:
+.. autodata:: geosoft.gxapi.EMAP_FONT_GFN
+    :annotation:
 
 
 .. _EMAP_PATH:
@@ -28,47 +27,29 @@ EMAP_FONT constants
 EMAP_PATH constants
 -----------------------------------------------------------------------
 
-::
+Four forms
 
-   Four forms 
+.. autodata:: geosoft.gxapi.EMAP_PATH_FULL
+    :annotation:
+.. autodata:: geosoft.gxapi.EMAP_PATH_DIR
+    :annotation:
+.. autodata:: geosoft.gxapi.EMAP_PATH_NAME_EXT
+    :annotation:
+.. autodata:: geosoft.gxapi.EMAP_PATH_NAME
+    :annotation:
 
-.. autoattribute:: geosoft.gxapi.EMAP_PATH_FULL
-
-::
-
-   d:\directory\file.gdb 
-
-.. autoattribute:: geosoft.gxapi.EMAP_PATH_DIR
-
-::
-
-   \directory\file.gdb 
-
-.. autoattribute:: geosoft.gxapi.EMAP_PATH_NAME_EXT
-
-::
-
-   File.gdb 
-
-.. autoattribute:: geosoft.gxapi.EMAP_PATH_NAME
-
-::
-
-   File 
 
 .. _EMAP_REDRAW:
 
 EMAP_REDRAW constants
 -----------------------------------------------------------------------
 
-::
+Redraw Options
 
-   Redraw Options 
-
-.. autoattribute:: geosoft.gxapi.EMAP_REDRAW_NO
-
-
-.. autoattribute:: geosoft.gxapi.EMAP_REDRAW_YES
+.. autodata:: geosoft.gxapi.EMAP_REDRAW_NO
+    :annotation:
+.. autodata:: geosoft.gxapi.EMAP_REDRAW_YES
+    :annotation:
 
 
 .. _EMAP_REMOVE:
@@ -76,17 +57,14 @@ EMAP_REDRAW constants
 EMAP_REMOVE constants
 -----------------------------------------------------------------------
 
-::
+How to handle pending changes in document
 
-   How to handle pending changes in document 
-
-.. autoattribute:: geosoft.gxapi.EMAP_REMOVE_SAVE
-
-
-.. autoattribute:: geosoft.gxapi.EMAP_REMOVE_PROMPT
-
-
-.. autoattribute:: geosoft.gxapi.EMAP_REMOVE_DISCARD
+.. autodata:: geosoft.gxapi.EMAP_REMOVE_SAVE
+    :annotation:
+.. autodata:: geosoft.gxapi.EMAP_REMOVE_PROMPT
+    :annotation:
+.. autodata:: geosoft.gxapi.EMAP_REMOVE_DISCARD
+    :annotation:
 
 
 .. _EMAP_TRACK:
@@ -94,68 +72,42 @@ EMAP_REMOVE constants
 EMAP_TRACK constants
 -----------------------------------------------------------------------
 
-::
+Tracking Options
 
-   Tracking Options 
+.. autodata:: geosoft.gxapi.EMAP_TRACK_ERASE
+    :annotation:
+.. autodata:: geosoft.gxapi.EMAP_TRACK_RMENU
+    :annotation:
+.. autodata:: geosoft.gxapi.EMAP_TRACK_CYCLE
+    :annotation:
 
-.. autoattribute:: geosoft.gxapi.EMAP_TRACK_ERASE
-
-::
-
-   Erase Object after you return? 
-
-.. autoattribute:: geosoft.gxapi.EMAP_TRACK_RMENU
-
-::
-
-   Allow use of right-menu 
-
-.. autoattribute:: geosoft.gxapi.EMAP_TRACK_CYCLE
-
-::
-
-   If user holds down left-mouse, will return many times 
 
 .. _EMAP_VIEWPORT:
 
 EMAP_VIEWPORT constants
 -----------------------------------------------------------------------
 
-::
+Tracking Options
 
-   Tracking Options 
+.. autodata:: geosoft.gxapi.EMAP_VIEWPORT_NORMAL
+    :annotation:
+.. autodata:: geosoft.gxapi.EMAP_VIEWPORT_BROWSEZOOM
+    :annotation:
+.. autodata:: geosoft.gxapi.EMAP_VIEWPORT_BROWSEAOI
+    :annotation:
 
-.. autoattribute:: geosoft.gxapi.EMAP_VIEWPORT_NORMAL
-
-::
-
-   Normal map usage 
-
-.. autoattribute:: geosoft.gxapi.EMAP_VIEWPORT_BROWSEZOOM
-
-::
-
-   Zoom Mode 
-
-.. autoattribute:: geosoft.gxapi.EMAP_VIEWPORT_BROWSEAOI
-
-::
-
-   Change Area Of Interest Mode 
 
 .. _EMAP_WINDOW_POSITION:
 
 EMAP_WINDOW_POSITION constants
 -----------------------------------------------------------------------
 
-::
+Window Positioning Options
 
-   Window Positioning Options 
-
-.. autoattribute:: geosoft.gxapi.EMAP_WINDOW_POSITION_DOCKED
-
-
-.. autoattribute:: geosoft.gxapi.EMAP_WINDOW_POSITION_FLOATING
+.. autodata:: geosoft.gxapi.EMAP_WINDOW_POSITION_DOCKED
+    :annotation:
+.. autodata:: geosoft.gxapi.EMAP_WINDOW_POSITION_FLOATING
+    :annotation:
 
 
 .. _EMAP_WINDOW_STATE:
@@ -163,17 +115,14 @@ EMAP_WINDOW_POSITION constants
 EMAP_WINDOW_STATE constants
 -----------------------------------------------------------------------
 
-::
+Window State Options
 
-   Window State Options 
-
-.. autoattribute:: geosoft.gxapi.EMAP_WINDOW_RESTORE
-
-
-.. autoattribute:: geosoft.gxapi.EMAP_WINDOW_MINIMIZE
-
-
-.. autoattribute:: geosoft.gxapi.EMAP_WINDOW_MAXIMIZE
+.. autodata:: geosoft.gxapi.EMAP_WINDOW_RESTORE
+    :annotation:
+.. autodata:: geosoft.gxapi.EMAP_WINDOW_MINIMIZE
+    :annotation:
+.. autodata:: geosoft.gxapi.EMAP_WINDOW_MAXIMIZE
+    :annotation:
 
 
 .. _LAYOUT_VIEW_UNITS:
@@ -181,26 +130,13 @@ EMAP_WINDOW_STATE constants
 LAYOUT_VIEW_UNITS constants
 -----------------------------------------------------------------------
 
-::
+Base dlayout display units
 
-   Base dlayout display units 
-
-.. autoattribute:: geosoft.gxapi.LAYOUT_VIEW_MM
-
-::
-
-   Millimeters 
-
-.. autoattribute:: geosoft.gxapi.LAYOUT_VIEW_CM
-
-::
-
-   Centimeters 
-
-.. autoattribute:: geosoft.gxapi.LAYOUT_VIEW_IN
-
-::
-
-   Inches 
+.. autodata:: geosoft.gxapi.LAYOUT_VIEW_MM
+    :annotation:
+.. autodata:: geosoft.gxapi.LAYOUT_VIEW_CM
+    :annotation:
+.. autodata:: geosoft.gxapi.LAYOUT_VIEW_IN
+    :annotation:
 
 	

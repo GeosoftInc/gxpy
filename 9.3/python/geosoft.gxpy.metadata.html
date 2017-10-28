@@ -1,17 +1,14 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>geosoft.gxpy.metadata submodule &#8212; Geosoft GX Python API 9.3.0 documentation</title>
-    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -37,7 +34,7 @@
 </script>
 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -127,34 +124,34 @@
 </div>
 <dl class="data">
 <dt id="geosoft.gxpy.metadata.META_INVALID">
-<code class="descclassname">geosoft.gxpy.metadata.</code><code class="descname">META_INVALID</code><em class="property"> = -1</em><a class="headerlink" href="#geosoft.gxpy.metadata.META_INVALID" title="Permalink to this definition">¶</a></dt>
+<code class="descname">META_INVALID</code><em class="property"> = -1</em><a class="headerlink" href="#geosoft.gxpy.metadata.META_INVALID" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxpy.metadata.META_ROOT_NODE">
-<code class="descclassname">geosoft.gxpy.metadata.</code><code class="descname">META_ROOT_NODE</code><em class="property"> = -100</em><a class="headerlink" href="#geosoft.gxpy.metadata.META_ROOT_NODE" title="Permalink to this definition">¶</a></dt>
+<code class="descname">META_ROOT_NODE</code><em class="property"> = -100</em><a class="headerlink" href="#geosoft.gxpy.metadata.META_ROOT_NODE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxpy.metadata.META_TYPE_ATTRIBUTE">
-<code class="descclassname">geosoft.gxpy.metadata.</code><code class="descname">META_TYPE_ATTRIBUTE</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.metadata.META_TYPE_ATTRIBUTE" title="Permalink to this definition">¶</a></dt>
+<code class="descname">META_TYPE_ATTRIBUTE</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.metadata.META_TYPE_ATTRIBUTE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxpy.metadata.META_TYPE_NODE">
-<code class="descclassname">geosoft.gxpy.metadata.</code><code class="descname">META_TYPE_NODE</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.metadata.META_TYPE_NODE" title="Permalink to this definition">¶</a></dt>
+<code class="descname">META_TYPE_NODE</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.metadata.META_TYPE_NODE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="class">
 <dt id="geosoft.gxpy.metadata.Metadata">
-<em class="property">class </em><code class="descclassname">geosoft.gxpy.metadata.</code><code class="descname">Metadata</code><span class="sig-paren">(</span><em>metadata=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.metadata.Metadata" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Metadata</code><span class="sig-paren">(</span><em>metadata=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.metadata.Metadata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-<p>Simple interface to work with Geosoft metadata objects :class::<cite>geosoft.gxapi.GXMETA</cite>.</p>
+<p>Simple interface to work with Geosoft metadata objects :class::<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxapi.GXMETA</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gxmeta</strong> &#8211; Geosoft <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMETA</span></code></a> instance, or None (default) in which case an
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gxmeta</strong> – Geosoft <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMETA</span></code></a> instance, or None (default) in which case an
 empty metadata instance is created.</td>
 </tr>
 </tbody>
@@ -164,8 +161,8 @@ each node of the tree containing 0 or more attributes and 0 or more nested nodes
 <p>While geosoft metadata can contain custom typed attributes and indeed any Geosoft object, this simple interface
 currently supports only Python types int, float, string and Python structures like tuple, arrays and
 dictionaries.</p>
-<p>Nodes are identified by a string in the form: <cite>/node/[...]/</cite> (eg. <cite>&#8216;/geosoft/data/&#8217;</cite>).</p>
-<p>Attributes are identified by a string in the form <cite>/node/[...]/attribute</cite> (eg. <cite>&#8216;geosoft/data/keywords&#8217;</cite>).</p>
+<p>Nodes are identified by a string in the form: <code class="xref py py-obj docutils literal"><span class="pre">/node/[...]/</span></code> (eg. <code class="xref py py-obj docutils literal"><span class="pre">'/geosoft/data/'</span></code>).</p>
+<p>Attributes are identified by a string in the form <code class="xref py py-obj docutils literal"><span class="pre">/node/[...]/attribute</span></code> (eg. <code class="xref py py-obj docutils literal"><span class="pre">'geosoft/data/keywords'</span></code>).</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
@@ -177,9 +174,9 @@ dictionaries.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>attribute_name</strong> &#8211; name of the attribute (eg. <cite>&#8216;my_metadata/parameters/frequency&#8217;</cite>)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>attribute_name</strong> – name of the attribute (eg. <code class="xref py py-obj docutils literal"><span class="pre">'my_metadata/parameters/frequency'</span></code>)</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">metadata token number or <cite>META_INVALID</cite> if the attribute does not exist.</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">metadata token number or <a class="reference internal" href="#geosoft.gxpy.metadata.META_INVALID" title="geosoft.gxpy.metadata.META_INVALID"><code class="xref py py-obj docutils literal"><span class="pre">META_INVALID</span></code></a> if the attribute does not exist.</td>
 </tr>
 </tbody>
 </table>
@@ -194,7 +191,7 @@ dictionaries.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>attr_name</strong> &#8211; attribute name (eg. &#8216;/my_metadata/parameters/frequency&#8217;)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>attr_name</strong> – attribute name (eg. ‘/my_metadata/parameters/frequency’)</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">attribute setting</td>
 </tr>
@@ -212,12 +209,12 @@ dictionaries.</p>
 <dl class="method">
 <dt id="geosoft.gxpy.metadata.Metadata.has_attribute">
 <code class="descname">has_attribute</code><span class="sig-paren">(</span><em>attribute_name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.metadata.Metadata.has_attribute" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns <cite>True</cite> if this attribute exists in the metadata.</p>
+<dd><p>Returns <code class="xref py py-obj docutils literal"><span class="pre">True</span></code> if this attribute exists in the metadata.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>attribute_name</strong> &#8211; name of a attribute (eg. <cite>&#8216;geosoft/data/keywords&#8217;</cite>)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>attribute_name</strong> – name of a attribute (eg. <code class="xref py py-obj docutils literal"><span class="pre">'geosoft/data/keywords'</span></code>)</td>
 </tr>
 </tbody>
 </table>
@@ -229,12 +226,12 @@ dictionaries.</p>
 <dl class="method">
 <dt id="geosoft.gxpy.metadata.Metadata.has_node">
 <code class="descname">has_node</code><span class="sig-paren">(</span><em>node_name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.metadata.Metadata.has_node" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns <cite>True</cite> if this node exists in the metadata.</p>
+<dd><p>Returns <code class="xref py py-obj docutils literal"><span class="pre">True</span></code> if this node exists in the metadata.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>node_name</strong> &#8211; name of a node (eg. <cite>&#8216;geosoft/data/&#8217;</cite>)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>node_name</strong> – name of a node (eg. <code class="xref py py-obj docutils literal"><span class="pre">'geosoft/data/'</span></code>)</td>
 </tr>
 </tbody>
 </table>
@@ -263,13 +260,13 @@ dictionaries.</p>
 <dl class="method">
 <dt id="geosoft.gxpy.metadata.Metadata.meta_type">
 <code class="descname">meta_type</code><span class="sig-paren">(</span><em>meta_name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.metadata.Metadata.meta_type" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return if this is a node (<cite>META_TYPE_NODE</cite>) or an attribute (<cite>META_TYPE_ATTRIBUTE</cite>).</p>
-<p>Returns <cite>META_INVALID</cite> if neither.</p>
+<dd><p>Return if this is a node (<a class="reference internal" href="#geosoft.gxpy.metadata.META_TYPE_NODE" title="geosoft.gxpy.metadata.META_TYPE_NODE"><code class="xref py py-obj docutils literal"><span class="pre">META_TYPE_NODE</span></code></a>) or an attribute (<a class="reference internal" href="#geosoft.gxpy.metadata.META_TYPE_ATTRIBUTE" title="geosoft.gxpy.metadata.META_TYPE_ATTRIBUTE"><code class="xref py py-obj docutils literal"><span class="pre">META_TYPE_ATTRIBUTE</span></code></a>).</p>
+<p>Returns <a class="reference internal" href="#geosoft.gxpy.metadata.META_INVALID" title="geosoft.gxpy.metadata.META_INVALID"><code class="xref py py-obj docutils literal"><span class="pre">META_INVALID</span></code></a> if neither.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>meta_name</strong> &#8211; </td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>meta_name</strong> – </td>
 </tr>
 </tbody>
 </table>
@@ -286,7 +283,7 @@ dictionaries.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>attr_name</strong> &#8211; attribute name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>attr_name</strong> – attribute name</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">(node token, attribute token)</td>
 </tr>
@@ -303,7 +300,7 @@ dictionaries.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>node_name</strong> &#8211; name of the node (eg. <cite>&#8216;my_metadata/parameters&#8217;</cite>)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>node_name</strong> – name of the node (eg. <code class="xref py py-obj docutils literal"><span class="pre">'my_metadata/parameters'</span></code>)</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">metadata token number</td>
 </tr>
@@ -321,8 +318,8 @@ dictionaries.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>attr_name</strong> &#8211; attribute name (eg. <cite>&#8216;/my_metadata/parameters/frequency&#8217;</cite>)</li>
-<li><strong>value</strong> &#8211; int, float, string or a Python structure such as tuple, array or dict.</li>
+<li><strong>attr_name</strong> – attribute name (eg. <code class="xref py py-obj docutils literal"><span class="pre">'/my_metadata/parameters/frequency'</span></code>)</li>
+<li><strong>value</strong> – int, float, string or a Python structure such as tuple, array or dict.</li>
 </ul>
 </td>
 </tr>
@@ -335,7 +332,7 @@ dictionaries.</p>
 
 <dl class="exception">
 <dt id="geosoft.gxpy.metadata.MetadataException">
-<em class="property">exception </em><code class="descclassname">geosoft.gxpy.metadata.</code><code class="descname">MetadataException</code><a class="headerlink" href="#geosoft.gxpy.metadata.MetadataException" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="descname">MetadataException</code><a class="headerlink" href="#geosoft.gxpy.metadata.MetadataException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
 <p>Exceptions from <a class="reference internal" href="#module-geosoft.gxpy.metadata" title="geosoft.gxpy.metadata"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxpy.metadata</span></code></a>.</p>
 <div class="versionadded">
@@ -370,7 +367,7 @@ dictionaries.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

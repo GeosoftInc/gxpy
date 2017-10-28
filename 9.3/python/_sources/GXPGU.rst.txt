@@ -8,25 +8,22 @@ GXPGU class
 .. autoclass:: geosoft.gxapi.GXPGU
    :members:
 
+
 .. _BLAKEY_TEST:
 
 BLAKEY_TEST constants
 -----------------------------------------------------------------------
 
-::
+Types of BLAKEY tests
 
-   Types of BLAKEY tests 
-
-.. autoattribute:: geosoft.gxapi.BLAKEY_TEST_ONESIDE
-
-
-.. autoattribute:: geosoft.gxapi.BLAKEY_TEST_TWOSIDE
-
-
-.. autoattribute:: geosoft.gxapi.BLAKEY_TEST_THREESIDE
-
-
-.. autoattribute:: geosoft.gxapi.BLAKEY_TEST_FOURSIDE
+.. autodata:: geosoft.gxapi.BLAKEY_TEST_ONESIDE
+    :annotation:
+.. autodata:: geosoft.gxapi.BLAKEY_TEST_TWOSIDE
+    :annotation:
+.. autodata:: geosoft.gxapi.BLAKEY_TEST_THREESIDE
+    :annotation:
+.. autodata:: geosoft.gxapi.BLAKEY_TEST_FOURSIDE
+    :annotation:
 
 
 .. _PGU_CORR:
@@ -34,91 +31,55 @@ BLAKEY_TEST constants
 PGU_CORR constants
 -----------------------------------------------------------------------
 
-::
+Correlation (must be synchronized with `ST2_CORRELATION`)
 
-   Correlation (must be synchronized with \ :ref:`ST2_CORRELATION`\ ) 
+.. autodata:: geosoft.gxapi.PGU_CORR_SIMPLE
+    :annotation:
+.. autodata:: geosoft.gxapi.PGU_CORR_PEARSON
+    :annotation:
 
-.. autoattribute:: geosoft.gxapi.PGU_CORR_SIMPLE
-
-::
-
-   Simple correlation 
-
-.. autoattribute:: geosoft.gxapi.PGU_CORR_PEARSON
-
-::
-
-   Pearson's correlation (normalized to standard deviations) 
 
 .. _PGU_DIRECTGRID:
 
 PGU_DIRECTGRID constants
 -----------------------------------------------------------------------
 
-::
+Type of statistic to use on the data points in each cell.
 
-   Type of statistic to use on the data points in each cell. 
+.. autodata:: geosoft.gxapi.PGU_DIRECTGRID_MINIMUM
+    :annotation:
+.. autodata:: geosoft.gxapi.PGU_DIRECTGRID_MAXIMUM
+    :annotation:
+.. autodata:: geosoft.gxapi.PGU_DIRECTGRID_MEAN
+    :annotation:
+.. autodata:: geosoft.gxapi.PGU_DIRECTGRID_ITEMS
+    :annotation:
 
-.. autoattribute:: geosoft.gxapi.PGU_DIRECTGRID_MINIMUM
-
-::
-
-   Select the minimum value found in each cell 
-
-.. autoattribute:: geosoft.gxapi.PGU_DIRECTGRID_MAXIMUM
-
-::
-
-   Select the maximum value found in each cell 
-
-.. autoattribute:: geosoft.gxapi.PGU_DIRECTGRID_MEAN
-
-::
-
-   Select the mean of all values found in each cell 
-
-.. autoattribute:: geosoft.gxapi.PGU_DIRECTGRID_ITEMS
-
-::
-
-   The number of valid (non-dummy) items found in each cell 
 
 .. _PGU_DIRECTION:
 
 PGU_DIRECTION constants
 -----------------------------------------------------------------------
 
-::
+Direction
 
-   Direction 
+.. autodata:: geosoft.gxapi.PGU_FORWARD
+    :annotation:
+.. autodata:: geosoft.gxapi.PGU_BACKWARD
+    :annotation:
 
-.. autoattribute:: geosoft.gxapi.PGU_FORWARD
-
-::
-
-   Forward direction: Removes mean and standard deviation,
-   storing the values in the VVs. 
-
-.. autoattribute:: geosoft.gxapi.PGU_BACKWARD
-
-::
-
-   Backward direction: Applies mean and standard deviation
-   values in the VVs to the data. 
 
 .. _PGU_TRANS:
 
 PGU_TRANS constants
 -----------------------------------------------------------------------
 
-::
+Transform methods for the columns
 
-   Transform methods for the columns 
-
-.. autoattribute:: geosoft.gxapi.PGU_TRANS_NONE
-
-
-.. autoattribute:: geosoft.gxapi.PGU_TRANS_LOG
+.. autodata:: geosoft.gxapi.PGU_TRANS_NONE
+    :annotation:
+.. autodata:: geosoft.gxapi.PGU_TRANS_LOG
+    :annotation:
 
 
 .. _PGU_INTERP_ORDER:
@@ -126,26 +87,19 @@ PGU_TRANS constants
 PGU_INTERP_ORDER constants
 -----------------------------------------------------------------------
 
-::
+Interpolation direction order
 
-   Interpolation direction order 
-
-.. autoattribute:: geosoft.gxapi.PGU_INTERP_ORDER_XYZ
-
-
-.. autoattribute:: geosoft.gxapi.PGU_INTERP_ORDER_XZY
-
-
-.. autoattribute:: geosoft.gxapi.PGU_INTERP_ORDER_YXZ
-
-
-.. autoattribute:: geosoft.gxapi.PGU_INTERP_ORDER_YZX
-
-
-.. autoattribute:: geosoft.gxapi.PGU_INTERP_ORDER_ZXY
-
-
-.. autoattribute:: geosoft.gxapi.PGU_INTERP_ORDER_ZYX
-
+.. autodata:: geosoft.gxapi.PGU_INTERP_ORDER_XYZ
+    :annotation:
+.. autodata:: geosoft.gxapi.PGU_INTERP_ORDER_XZY
+    :annotation:
+.. autodata:: geosoft.gxapi.PGU_INTERP_ORDER_YXZ
+    :annotation:
+.. autodata:: geosoft.gxapi.PGU_INTERP_ORDER_YZX
+    :annotation:
+.. autodata:: geosoft.gxapi.PGU_INTERP_ORDER_ZXY
+    :annotation:
+.. autodata:: geosoft.gxapi.PGU_INTERP_ORDER_ZYX
+    :annotation:
 
 	

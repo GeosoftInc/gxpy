@@ -1,17 +1,14 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>GXCSYMB class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
-    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -37,7 +34,7 @@
 </script>
 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -106,116 +103,95 @@
 <span id="gxcsymb"></span><h1>GXCSYMB class<a class="headerlink" href="#gxcsymb-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXCSYMB">
-<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXCSYMB</code><a class="headerlink" href="#geosoft.gxapi.GXCSYMB" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="k">class</span> <span class="nc">is</span> <span class="n">used</span> <span class="k">for</span> <span class="n">generating</span> <span class="ow">and</span> <span class="n">modifying</span> <span class="n">colored</span> <span class="n">symbol</span> <span class="n">objects</span><span class="o">.</span>
-<span class="n">Symbol</span> <span class="n">fills</span> <span class="n">are</span> <span class="n">assigned</span> <span class="n">colors</span> <span class="n">based</span> <span class="n">on</span> <span class="n">their</span> <span class="n">Z</span> <span class="n">values</span> <span class="ow">and</span> <span class="n">a</span> <span class="n">zone</span><span class="p">,</span> <span class="n">Aggregate</span>
-<span class="ow">or</span> <span class="n">ITR</span> <span class="n">file</span> <span class="n">which</span> <span class="n">defines</span> <span class="n">what</span> <span class="n">colors</span> <span class="n">are</span> <span class="n">associated</span> <span class="k">with</span> <span class="n">different</span> <span class="n">ranges</span>
-<span class="n">of</span> <span class="n">Z</span> <span class="n">values</span><span class="o">.</span> <span class="n">The</span> <span class="n">position</span> <span class="n">of</span> <span class="n">a</span> <span class="n">symbol</span> <span class="ow">is</span> <span class="n">defined</span> <span class="n">by</span> <span class="n">its</span> <span class="n">X</span><span class="p">,</span><span class="n">Y</span> <span class="n">coordinates</span><span class="o">.</span>
-</pre></div>
-</div>
+<em class="property">class </em><code class="descname">GXCSYMB</code><span class="sig-paren">(</span><em>wrapper=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCSYMB" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXCSYMB class.</p>
+<p>This class is used for generating and modifying colored symbol objects.
+Symbol fills are assigned colors based on their Z values and a zone, Aggregate
+or <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a> file which defines what colors are associated with different ranges
+of Z values. The position of a symbol is defined by its X,Y coordinates.</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXCSYMB.add_data">
-<code class="descname">add_data</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCSYMB.add_data" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Add</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span> <span class="n">data</span> <span class="n">to</span> <span class="n">a</span> <span class="n">color</span> <span class="n">symbol</span> <span class="nb">object</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">add_data</code><span class="sig-paren">(</span><em>vv_x</em>, <em>vv_y</em>, <em>vv_z</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCSYMB.add_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add x,y,z data to a color symbol object.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VV for X data</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VV for Y data</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VV for Z data</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> for X data</li>
+<li><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> for Y data</li>
+<li><strong>vv_z</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> for Z data</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
-</td>
-</tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXCSYMB.create">
-<em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; GXCSYMB:<a class="headerlink" href="#geosoft.gxapi.GXCSYMB.create" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">CSYMB</span><span class="o">.</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>itr</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCSYMB.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a <a class="reference internal" href="#geosoft.gxapi.GXCSYMB" title="geosoft.gxapi.GXCSYMB"><code class="xref py py-obj docutils literal"><span class="pre">GXCSYMB</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>str</em>) &#8211; ZON, AGG, or ITR file name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>itr</strong> (<em>str</em>) – ZON, <a class="reference internal" href="GXAGG.html#geosoft.gxapi.GXAGG" title="geosoft.gxapi.GXAGG"><code class="xref py py-obj docutils literal"><span class="pre">GXAGG</span></code></a>, or <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a> file name</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">CSYMB handle</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXCSYMB" title="geosoft.gxapi.GXCSYMB"><code class="xref py py-obj docutils literal"><span class="pre">GXCSYMB</span></code></a> handle</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXCSYMB" title="geosoft.gxapi.GXCSYMB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXCSYMB</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXCSYMB" title="geosoft.gxapi.GXCSYMB">GXCSYMB</a></td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXCSYMB.get_itr">
-<code class="descname">get_itr</code><span class="sig-paren">(</span><em>(GXITR)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCSYMB.get_itr" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">ITR</span> <span class="n">of</span> <span class="n">the</span> <span class="n">CSYMB</span>
-</pre></div>
-</div>
+<code class="descname">get_itr</code><span class="sig-paren">(</span><em>itr</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCSYMB.get_itr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a> of the <a class="reference internal" href="#geosoft.gxapi.GXCSYMB" title="geosoft.gxapi.GXCSYMB"><code class="xref py py-obj docutils literal"><span class="pre">GXCSYMB</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXITR</span></code></a>) &#8211; ITR object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>itr</strong> (<a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><em>GXITR</em></a>) – <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a> object</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.0.</span></p>
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXCSYMB.is_null">
-<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool<a class="headerlink" href="#geosoft.gxapi.GXCSYMB.is_null" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if the instance of <code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXCSYMB</span> <span class="pre">is</span> <span class="pre">null</span> <span class="pre">(undefined)</span></code></p>
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCSYMB.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the instance of <code class="xref py py-obj docutils literal"><span class="pre">GXCSYMB</span></code> is null (undefined)`</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null instance of <a class="reference internal" href="#geosoft.gxapi.GXCSYMB" title="geosoft.gxapi.GXCSYMB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXCSYMB</span></code></a>, False otherwise.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool`</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXCSYMB</span></code>, False otherwise.</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXCSYMB.null">
-<em class="property">static </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXCSYMB<a class="headerlink" href="#geosoft.gxapi.GXCSYMB.null" title="Permalink to this definition">¶</a></dt>
-<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXCSYMB" title="geosoft.gxapi.GXCSYMB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXCSYMB</span></code></a></p>
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCSYMB.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXCSYMB</span></code></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXCSYMB" title="geosoft.gxapi.GXCSYMB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXCSYMB</span></code></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXCSYMB" title="geosoft.gxapi.GXCSYMB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXCSYMB</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <code class="xref py py-obj docutils literal"><span class="pre">GXCSYMB</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -223,247 +199,182 @@
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXCSYMB.set_angle">
-<code class="descname">set_angle</code><span class="sig-paren">(</span><em>(float)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCSYMB.set_angle" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">symbol</span> <span class="n">angle</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">set_angle</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCSYMB.set_angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the symbol angle.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>float</em>) &#8211; Symbol angle</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>angle</strong> (<em>float</em>) – Symbol angle</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXCSYMB.set_base">
-<code class="descname">set_base</code><span class="sig-paren">(</span><em>(float)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCSYMB.set_base" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">base</span> <span class="n">value</span> <span class="n">to</span> <span class="n">subtract</span> <span class="kn">from</span> <span class="nn">Z</span> <span class="n">values</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">set_base</code><span class="sig-paren">(</span><em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCSYMB.set_base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set base value to subtract from Z values.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>float</em>) &#8211; Symbol Base</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>base</strong> (<em>float</em>) – Symbol Base</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXCSYMB.set_dynamic_col">
-<code class="descname">set_dynamic_col</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCSYMB.set_dynamic_col" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Associate</span> <span class="n">symbol</span> <span class="n">edge</span> <span class="ow">or</span> <span class="n">fill</span> <span class="n">colors</span> <span class="k">with</span> <span class="n">Z</span> <span class="n">data</span>
-<span class="ow">and</span> <span class="n">color</span> <span class="n">transform</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">set_dynamic_col</code><span class="sig-paren">(</span><em>att</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCSYMB.set_dynamic_col" title="Permalink to this definition">¶</a></dt>
+<dd><p>Associate symbol edge or fill colors with Z data
+and color transform.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#csymb-color"><span class="std std-ref">CSYMB_COLOR constants</span></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>att</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">CSYMB_COLOR</span></code></td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-Use this method after a call to <a class="reference internal" href="#geosoft.gxapi.GXCSYMB.set_static_col" title="geosoft.gxapi.GXCSYMB.set_static_col"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXCSYMB.set_static_col()</span></code></a>. This method
+<p>Use this method after a call to <a class="reference internal" href="#geosoft.gxapi.GXCSYMB.set_static_col" title="geosoft.gxapi.GXCSYMB.set_static_col"><code class="xref py py-obj docutils literal"><span class="pre">set_static_col</span></code></a>. This method
 reestablishes the symbol color association with their Z data
-values and color transform.
-</pre>
+values and color transform.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXCSYMB.set_fixed">
-<code class="descname">set_fixed</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCSYMB.set_fixed" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">symbol</span> <span class="n">sizing</span> <span class="n">to</span> <span class="n">fixed</span> <span class="p">(</span><span class="ow">or</span> <span class="n">proportionate</span><span class="p">)</span>
-</pre></div>
-</div>
+<code class="descname">set_fixed</code><span class="sig-paren">(</span><em>fixed</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCSYMB.set_fixed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set symbol sizing to fixed (or proportionate)</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; TRUE  = Fixed symbol sizing FALSE = Proportionate sizing</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>fixed</strong> (<em>int</em>) – TRUE  = Fixed symbol sizing FALSE = Proportionate sizing</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXCSYMB.set_font">
-<code class="descname">set_font</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCSYMB.set_font" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">symbol</span> <span class="n">font</span> <span class="n">name</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">set_font</code><span class="sig-paren">(</span><em>font</em>, <em>geo_font</em>, <em>weight</em>, <em>italic</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCSYMB.set_font" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the symbol font name.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Font name</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; Geosoft font? (TRUE or FALSE)</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXMVIEW.html#mview-font-weight"><span class="std std-ref">MVIEW_FONT_WEIGHT constants</span></a></li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; Italics? (TRUE or FALSE)</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>font</strong> (<em>str</em>) – Font name</li>
+<li><strong>geo_font</strong> (<em>int</em>) – Geosoft font? (TRUE or FALSE)</li>
+<li><strong>weight</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">MVIEW_FONT_WEIGHT</span></code></li>
+<li><strong>italic</strong> (<em>int</em>) – Italics? (TRUE or FALSE)</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXCSYMB.set_number">
-<code class="descname">set_number</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCSYMB.set_number" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">symbol</span> <span class="n">number</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">set_number</code><span class="sig-paren">(</span><em>number</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCSYMB.set_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the symbol number.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; Symbol number (0x1-0x1ffff)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>number</strong> (<em>int</em>) – Symbol number (0x1-0x1ffff)</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The lower 16 bits of the number is interpreted as UTF-16 with a valid Unicode character
+<p>The lower 16 bits of the number is interpreted as UTF-16 with a valid Unicode character
 code point. GFN fonts wil produce valid symbols depending on the font for 0x01-0x7f and the degree,
-plus-minus and diameter symbol (latin small letter o with stroke) for 0xB0, 0xB1 and 0xF8 respectively.
-
-It is possible to check if a character is valid using <a class="reference internal" href="GXUNC.html#geosoft.gxapi.GXUNC.is_valid_utf16_char" title="geosoft.gxapi.GXUNC.is_valid_utf16_char"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXUNC.is_valid_utf16_char()</span></code></a>. The high 16-bits are reserved
-for future use. Also see: <a class="reference internal" href="GXUNC.html#geosoft.gxapi.GXUNC.valid_symbol" title="geosoft.gxapi.GXUNC.valid_symbol"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXUNC.valid_symbol()</span></code></a> and <a class="reference internal" href="GXUNC.html#geosoft.gxapi.GXUNC.validate_symbols" title="geosoft.gxapi.GXUNC.validate_symbols"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXUNC.validate_symbols()</span></code></a>
-</pre>
+plus-minus and diameter symbol (latin small letter o with stroke) for 0xB0, 0xB1 and 0xF8 respectively.</p>
+<p>It is possible to check if a character is valid using <a class="reference internal" href="GXUNC.html#geosoft.gxapi.GXUNC.is_valid_utf16_char" title="geosoft.gxapi.GXUNC.is_valid_utf16_char"><code class="xref py py-obj docutils literal"><span class="pre">GXUNC.is_valid_utf16_char</span></code></a>. The high 16-bits are reserved
+for future use. Also see: <a class="reference internal" href="GXUNC.html#geosoft.gxapi.GXUNC.valid_symbol" title="geosoft.gxapi.GXUNC.valid_symbol"><code class="xref py py-obj docutils literal"><span class="pre">GXUNC.valid_symbol</span></code></a> and <a class="reference internal" href="GXUNC.html#geosoft.gxapi.GXUNC.validate_symbols" title="geosoft.gxapi.GXUNC.validate_symbols"><code class="xref py py-obj docutils literal"><span class="pre">GXUNC.validate_symbols</span></code></a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXCSYMB.set_scale">
-<code class="descname">set_scale</code><span class="sig-paren">(</span><em>(float)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCSYMB.set_scale" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">the</span> <span class="n">symbol</span> <span class="n">scale</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">set_scale</code><span class="sig-paren">(</span><em>scale</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCSYMB.set_scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the symbol scale.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>float</em>) &#8211; Symbol scale (&gt; 0.0)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>scale</strong> (<em>float</em>) – Symbol scale (&gt; 0.0)</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXCSYMB.set_static_col">
-<code class="descname">set_static_col</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXCSYMB.set_static_col" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Set</span> <span class="n">a</span> <span class="n">static</span> <span class="n">color</span> <span class="k">for</span> <span class="n">the</span> <span class="n">symbol</span> <span class="n">edge</span> <span class="ow">or</span> <span class="n">fill</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">set_static_col</code><span class="sig-paren">(</span><em>col</em>, <em>att</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCSYMB.set_static_col" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a static color for the symbol edge or fill.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; Color value</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#csymb-color"><span class="std std-ref">CSYMB_COLOR constants</span></a></li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>col</strong> (<em>int</em>) – Color value</li>
+<li><strong>att</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">CSYMB_COLOR</span></code></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Use</span> <span class="n">this</span> <span class="n">method</span> <span class="n">to</span> <span class="nb">set</span> <span class="n">a</span> <span class="n">STATIC</span> <span class="n">color</span> <span class="k">for</span> <span class="n">symbol</span> <span class="n">edge</span> <span class="ow">or</span> <span class="n">fill</span><span class="o">.</span>
-<span class="n">By</span> <span class="n">default</span><span class="p">,</span> <span class="n">both</span> <span class="n">edge</span> <span class="ow">and</span> <span class="n">fill</span> <span class="n">colors</span> <span class="n">vary</span> <span class="n">according</span> <span class="n">to</span> <span class="n">their</span>
-<span class="n">Z</span> <span class="n">data</span> <span class="n">values</span> <span class="ow">and</span> <span class="n">a</span> <span class="n">color</span> <span class="n">transform</span><span class="o">.</span>
-</pre></div>
-</div>
+<p>Use this method to set a STATIC color for symbol edge or fill.
+By default, both edge and fill colors vary according to their
+Z data values and a color transform.</p>
 </dd></dl>
 
 </dd></dl>
 
 <div class="section" id="csymb-color-constants">
 <span id="csymb-color"></span><h2>CSYMB_COLOR constants<a class="headerlink" href="#csymb-color-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Color</span> <span class="n">Symbol</span> <span class="n">filling</span> <span class="n">defines</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<p>Color Symbol filling defines</p>
+<dl class="data">
 <dt id="geosoft.gxapi.CSYMB_COLOR_EDGE">
-<code class="descclassname">gxapi.</code><code class="descname">CSYMB_COLOR_EDGE</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.CSYMB_COLOR_EDGE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">CSYMB_COLOR_EDGE</code><a class="headerlink" href="#geosoft.gxapi.CSYMB_COLOR_EDGE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw Edges only</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Draw</span> <span class="n">Edges</span> <span class="n">only</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<dl class="data">
 <dt id="geosoft.gxapi.CSYMB_COLOR_FILL">
-<code class="descclassname">gxapi.</code><code class="descname">CSYMB_COLOR_FILL</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.CSYMB_COLOR_FILL" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">CSYMB_COLOR_FILL</code><a class="headerlink" href="#geosoft.gxapi.CSYMB_COLOR_FILL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fill Symbols</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Fill</span> <span class="n">Symbols</span>
-</pre></div>
-</div>
 </div>
 </div>
 
@@ -492,7 +403,7 @@ for future use. Also see: <a class="reference internal" href="GXUNC.html#geosoft
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

@@ -1,17 +1,14 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>geosoft.gxpy.system submodule &#8212; Geosoft GX Python API 9.3.0 documentation</title>
-    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -37,7 +34,7 @@
 </script>
 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -103,7 +100,7 @@
 </div>
 <dl class="exception">
 <dt id="geosoft.gxpy.system.GXSysException">
-<em class="property">exception </em><code class="descclassname">geosoft.gxpy.system.</code><code class="descname">GXSysException</code><a class="headerlink" href="#geosoft.gxpy.system.GXSysException" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="descname">GXSysException</code><a class="headerlink" href="#geosoft.gxpy.system.GXSysException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
 <p>Exceptions from <a class="reference internal" href="#module-geosoft.gxpy.system" title="geosoft.gxpy.system"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxpy.system</span></code></a>.</p>
 <div class="versionadded">
@@ -113,7 +110,7 @@
 
 <dl class="function">
 <dt id="geosoft.gxpy.system.app_name">
-<code class="descclassname">geosoft.gxpy.system.</code><code class="descname">app_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.app_name" title="Permalink to this definition">¶</a></dt>
+<code class="descname">app_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.app_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns application script name.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
@@ -122,15 +119,15 @@
 
 <dl class="function">
 <dt id="geosoft.gxpy.system.call_location">
-<code class="descclassname">geosoft.gxpy.system.</code><code class="descname">call_location</code><span class="sig-paren">(</span><em>stack=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.call_location" title="Permalink to this definition">¶</a></dt>
+<code class="descname">call_location</code><span class="sig-paren">(</span><em>stack=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.call_location" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns function call location including file and line number as a string</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>stack</strong> &#8211; depth into the calling stack, 0 (default) is this function, 1 is parent, etc.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>stack</strong> – depth into the calling stack, 0 (default) is this function, 1 is parent, etc.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">string formatted as &#8216;&lt;file&gt;, line XX in &lt;function&gt;&#8217;, empty string if too deep into the stack</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">string formatted as ‘&lt;file&gt;, line XX in &lt;function&gt;’, empty string if too deep into the stack</td>
 </tr>
 </tbody>
 </table>
@@ -141,13 +138,13 @@
 
 <dl class="function">
 <dt id="geosoft.gxpy.system.func_name">
-<code class="descclassname">geosoft.gxpy.system.</code><code class="descname">func_name</code><span class="sig-paren">(</span><em>stack=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.func_name" title="Permalink to this definition">¶</a></dt>
+<code class="descname">func_name</code><span class="sig-paren">(</span><em>stack=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.func_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns function name.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>stack</strong> &#8211; depth into the calling stack, 0 (default) is this function, 1 is parent, etc.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>stack</strong> – depth into the calling stack, 0 (default) is this function, 1 is parent, etc.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">function name, None if too deep into the stack</td>
 </tr>
@@ -163,16 +160,16 @@
 
 <dl class="function">
 <dt id="geosoft.gxpy.system.parallel_map">
-<code class="descclassname">geosoft.gxpy.system.</code><code class="descname">parallel_map</code><span class="sig-paren">(</span><em>f</em>, <em>l</em>, <em>threads=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.parallel_map" title="Permalink to this definition">¶</a></dt>
+<code class="descname">parallel_map</code><span class="sig-paren">(</span><em>f</em>, <em>l</em>, <em>threads=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.parallel_map" title="Permalink to this definition">¶</a></dt>
 <dd><p>A parallel equivalent of the map() built-in Python function (it supports only one iterable argument though).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>f</strong> &#8211; function to run in parallel f(). Must be thread-safe, of course.</li>
-<li><strong>l</strong> &#8211; iterable list of arguments to pass to each thread.  Use tuples for multiple arguments.</li>
-<li><strong>threads</strong> &#8211; number of threads to use, default is number of cores on computer</li>
+<li><strong>f</strong> – function to run in parallel f(). Must be thread-safe, of course.</li>
+<li><strong>l</strong> – iterable list of arguments to pass to each thread.  Use tuples for multiple arguments.</li>
+<li><strong>threads</strong> – number of threads to use, default is number of cores on computer</li>
 </ul>
 </td>
 </tr>
@@ -210,7 +207,7 @@
 
 <dl class="function">
 <dt id="geosoft.gxpy.system.remove_dir">
-<code class="descclassname">geosoft.gxpy.system.</code><code class="descname">remove_dir</code><span class="sig-paren">(</span><em>directory</em>, <em>wait=200</em>, <em>tries=10</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.remove_dir" title="Permalink to this definition">¶</a></dt>
+<code class="descname">remove_dir</code><span class="sig-paren">(</span><em>directory</em>, <em>wait=200</em>, <em>tries=10</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.remove_dir" title="Permalink to this definition">¶</a></dt>
 <dd><p>Robust directory removal, with timed retries to allow for OS timing lags.  If you need to use this
 you may have a coding error in which you are not properly releasing a resource.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -218,9 +215,9 @@ you may have a coding error in which you are not properly releasing a resource.<
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>directory</strong> &#8211; directory name, must be a directory</li>
-<li><strong>wait</strong> &#8211; wait between retries in milliseconds</li>
-<li><strong>tries</strong> &#8211; number of times to retry</li>
+<li><strong>directory</strong> – directory name, must be a directory</li>
+<li><strong>wait</strong> – wait between retries in milliseconds</li>
+<li><strong>tries</strong> – number of times to retry</li>
 </ul>
 </td>
 </tr>
@@ -233,23 +230,23 @@ you may have a coding error in which you are not properly releasing a resource.<
 
 <dl class="function">
 <dt id="geosoft.gxpy.system.translate">
-<code class="descclassname">geosoft.gxpy.system.</code><code class="descname">translate</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.translate" title="Permalink to this definition">¶</a></dt>
+<code class="descname">translate</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.translate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Translate string to user language.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="geosoft.gxpy.system.unzip">
-<code class="descclassname">geosoft.gxpy.system.</code><code class="descname">unzip</code><span class="sig-paren">(</span><em>zip_file_name</em>, <em>folder=None</em>, <em>report=None</em>, <em>checkready=25</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.unzip" title="Permalink to this definition">¶</a></dt>
+<code class="descname">unzip</code><span class="sig-paren">(</span><em>zip_file_name</em>, <em>folder=None</em>, <em>report=None</em>, <em>checkready=25</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.unzip" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decompress and write the content of a zip file to a folder.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>zip_file_name</strong> &#8211; zip file name, must have extension</li>
-<li><strong>folder</strong> &#8211; folder to write results, create it it does not exist</li>
-<li><strong>report</strong> &#8211; ignored</li>
-<li><strong>checkready</strong> &#8211; time in 1/10 second to check completion of each file, default 25</li>
+<li><strong>zip_file_name</strong> – zip file name, must have extension</li>
+<li><strong>folder</strong> – folder to write results, create it it does not exist</li>
+<li><strong>report</strong> – ignored</li>
+<li><strong>checkready</strong> – time in 1/10 second to check completion of each file, default 25</li>
 </ul>
 </td>
 </tr>
@@ -265,7 +262,7 @@ you may have a coding error in which you are not properly releasing a resource.<
 
 <dl class="function">
 <dt id="geosoft.gxpy.system.wait_on_file">
-<code class="descclassname">geosoft.gxpy.system.</code><code class="descname">wait_on_file</code><span class="sig-paren">(</span><em>fileName</em>, <em>wait=100</em>, <em>retries=10</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.wait_on_file" title="Permalink to this definition">¶</a></dt>
+<code class="descname">wait_on_file</code><span class="sig-paren">(</span><em>fileName</em>, <em>wait=100</em>, <em>retries=10</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.wait_on_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Working with large files on systems that cache the file can cause a situation
 where the file is not yet completely written out before an attempt is made to open
 a file that has just been closed.</p>
@@ -276,7 +273,7 @@ open.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>fileName</strong> &#8211; </td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>fileName</strong> – </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Wait:</th><td class="field-body">time in milliseconds to wait between retries</td>
 </tr>
@@ -318,7 +315,7 @@ open.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

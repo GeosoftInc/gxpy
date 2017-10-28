@@ -8,25 +8,17 @@ GXLST class
 .. autoclass:: geosoft.gxapi.GXLST
    :members:
 
+
 .. _LST_ITEM:
 
 LST_ITEM constants
 -----------------------------------------------------------------------
 
-::
+`GXLST <geosoft.gxapi.GXLST>` data access
 
-   LST data access 
-
-.. autoattribute:: geosoft.gxapi.LST_ITEM_NAME
-
-::
-
-   Access the "Name" part of the LST item. 
-
-.. autoattribute:: geosoft.gxapi.LST_ITEM_VALUE
-
-::
-
-   Access the "Value" part of the LST item. 
+.. autodata:: geosoft.gxapi.LST_ITEM_NAME
+    :annotation:
+.. autodata:: geosoft.gxapi.LST_ITEM_VALUE
+    :annotation:
 
 	

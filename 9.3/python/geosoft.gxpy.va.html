@@ -1,17 +1,14 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>geosoft.gxpy.va submodule &#8212; Geosoft GX Python API 9.3.0 documentation</title>
-    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -37,7 +34,7 @@
 </script>
 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -126,11 +123,11 @@ data to the same fiducial so that vector-to-vector operations can be performed.<
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Regression tests provide usage examples:    
-<a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_va.py">va tests</a></p>
+<a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_gxva.py">va tests</a></p>
 </div>
 <dl class="class">
 <dt id="geosoft.gxpy.va.GXva">
-<em class="property">class </em><code class="descclassname">geosoft.gxpy.va.</code><code class="descname">GXva</code><span class="sig-paren">(</span><em>array=None</em>, <em>width=None</em>, <em>dtype=None</em>, <em>fid=(0.0</em>, <em>1.0)</em>, <em>unit_of_measure=''</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.va.GXva" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">GXva</code><span class="sig-paren">(</span><em>array=None</em>, <em>width=None</em>, <em>dtype=None</em>, <em>fid=(0.0</em>, <em>1.0)</em>, <em>unit_of_measure=''</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.va.GXva" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>VA class wrapper.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -138,17 +135,17 @@ data to the same fiducial so that vector-to-vector operations can be performed.<
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>array</strong> &#8211; 2D numpy array, None for an empty VA</li>
-<li><strong>dtype</strong> &#8211; numpy data type, default np.float</li>
-<li><strong>width</strong> &#8211; array width, default is determined from array.  The array will be
-reshaped to this width if specified.</li>
-<li><strong>fid</strong> &#8211; fid tuple (start,increment), default (0.0, 1.0)</li>
-<li><strong>unit_of_measure</strong> &#8211; the unit of measurement for the data</li>
+<li><strong>array</strong> – 2D numpy array, None for an empty VA</li>
+<li><strong>dtype</strong> – numpy data type, default np.float</li>
+<li><strong>width</strong> – array width, default is determined from array.</li>
+<li><strong>fid</strong> – fid tuple (start,increment), default (0.0, 1.0)</li>
+<li><strong>unit_of_measure</strong> – the unit of measurement for the data</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
+<p>Maximum number of elements must be less that 2^31 - 1</p>
 <div class="versionchanged">
 <p><span class="versionmodified">Changed in version 9.3: </span>added unit_of_measure</p>
 </div>
@@ -194,11 +191,11 @@ reshaped to this width if specified.</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>start</strong> &#8211; index of first value, must be &gt;=0</li>
-<li><strong>n</strong> &#8211; number of values wanted</li>
-<li><strong>start_col</strong> &#8211; index of the first column wanted</li>
-<li><strong>n_col</strong> &#8211; number of columns</li>
-<li><strong>dtype</strong> &#8211; numpy data type wanted</li>
+<li><strong>start</strong> – index of first value, must be &gt;=0</li>
+<li><strong>n</strong> – number of values wanted</li>
+<li><strong>start_col</strong> – index of the first column wanted</li>
+<li><strong>n_col</strong> – number of columns</li>
+<li><strong>dtype</strong> – numpy data type wanted</li>
 </ul>
 </td>
 </tr>
@@ -219,6 +216,13 @@ reshaped to this width if specified.</li>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="geosoft.gxpy.va.GXva.gxva">
+<code class="descname">gxva</code><a class="headerlink" href="#geosoft.gxpy.va.GXva.gxva" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVA</span></code></a> instance handle.</p>
+<p>..versionadded:: 9.3</p>
+</dd></dl>
+
+<dl class="attribute">
 <dt id="geosoft.gxpy.va.GXva.length">
 <code class="descname">length</code><a class="headerlink" href="#geosoft.gxpy.va.GXva.length" title="Permalink to this definition">¶</a></dt>
 <dd><p>number of elements in the VA</p>
@@ -231,7 +235,7 @@ reshaped to this width if specified.</li>
 <dt id="geosoft.gxpy.va.GXva.np">
 <code class="descname">np</code><a class="headerlink" href="#geosoft.gxpy.va.GXva.np" title="Permalink to this definition">¶</a></dt>
 <dd><p>Numpy array of VA data, in the data type of the VA.  Use <a class="reference internal" href="#geosoft.gxpy.va.GXva.get_data" title="geosoft.gxpy.va.GXva.get_data"><code class="xref py py-meth docutils literal"><span class="pre">get_data()</span></code></a> to get a numpy array
-in another <cite>dtype</cite>.  Array will be 2-dimensional.</p>
+in another <a class="reference internal" href="#geosoft.gxpy.va.GXva.dtype" title="geosoft.gxpy.va.GXva.dtype"><code class="xref py py-obj docutils literal"><span class="pre">dtype</span></code></a>.  Array will be 2-dimensional.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
@@ -246,8 +250,8 @@ in another <cite>dtype</cite>.  Array will be 2-dimensional.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>fid</strong> &#8211; (start,incr)</li>
-<li><strong>length</strong> &#8211; length</li>
+<li><strong>fid</strong> – (start,incr)</li>
+<li><strong>length</strong> – length</li>
 </ul>
 </td>
 </tr>
@@ -267,13 +271,14 @@ in another <cite>dtype</cite>.  Array will be 2-dimensional.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>npdata</strong> &#8211; numpy data array (must be 2D)</li>
-<li><strong>fid</strong> &#8211; fid tuple (start,increment), default (0.0,1.0)</li>
+<li><strong>npdata</strong> – numpy data array (must be 2D)</li>
+<li><strong>fid</strong> – fid tuple (start,increment), default (0.0,1.0)</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
+<p>Maximum number of elements must be less that 2^31 - 1</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
@@ -298,7 +303,7 @@ in another <cite>dtype</cite>.  Array will be 2-dimensional.</p>
 
 <dl class="exception">
 <dt id="geosoft.gxpy.va.VAException">
-<em class="property">exception </em><code class="descclassname">geosoft.gxpy.va.</code><code class="descname">VAException</code><a class="headerlink" href="#geosoft.gxpy.va.VAException" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="descname">VAException</code><a class="headerlink" href="#geosoft.gxpy.va.VAException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
 <p>Exceptions from <a class="reference internal" href="#module-geosoft.gxpy.va" title="geosoft.gxpy.va"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxpy.va</span></code></a>.</p>
 <div class="versionadded">
@@ -333,7 +338,7 @@ in another <cite>dtype</cite>.  Array will be 2-dimensional.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

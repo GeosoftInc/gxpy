@@ -1,17 +1,14 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>geosoft.gxpy.agg submodule &#8212; Geosoft GX Python API 9.3.0 documentation</title>
-    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -37,7 +34,7 @@
 </script>
 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -116,7 +113,7 @@
 </tr>
 </tbody>
 </table>
-<p>Geosoft aggregates are &#8220;aggregations&#8221; of one or more grid layers that together create a
+<p>Geosoft aggregates are “aggregations” of one or more grid layers that together create a
 georeferenced image that can be placed in a map view or rendered on a plane in a 3D view.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
@@ -129,7 +126,7 @@ georeferenced image that can be placed in a map view or rendered on a plane in a
 </div>
 <dl class="exception">
 <dt id="geosoft.gxpy.agg.AggregateException">
-<em class="property">exception </em><code class="descclassname">geosoft.gxpy.agg.</code><code class="descname">AggregateException</code><a class="headerlink" href="#geosoft.gxpy.agg.AggregateException" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="descname">AggregateException</code><a class="headerlink" href="#geosoft.gxpy.agg.AggregateException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
 <p>Exceptions from <a class="reference internal" href="#module-geosoft.gxpy.agg" title="geosoft.gxpy.agg"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxpy.agg</span></code></a>.</p>
 <div class="versionadded">
@@ -139,7 +136,7 @@ georeferenced image that can be placed in a map view or rendered on a plane in a
 
 <dl class="class">
 <dt id="geosoft.gxpy.agg.Aggregate_image">
-<em class="property">class </em><code class="descclassname">geosoft.gxpy.agg.</code><code class="descname">Aggregate_image</code><a class="headerlink" href="#geosoft.gxpy.agg.Aggregate_image" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Aggregate_image</code><a class="headerlink" href="#geosoft.gxpy.agg.Aggregate_image" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>The AGG class supports the creation of aggregate images from one or more grid data sets. Aggergates
 can be placed into a 2D or 3D view for display.</p>
@@ -147,7 +144,7 @@ can be placed into a 2D or 3D view for display.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>grid_file</strong> &#8211; if specified, the <a class="reference internal" href="#geosoft.gxpy.agg.Aggregate_image.add_layer" title="geosoft.gxpy.agg.Aggregate_image.add_layer"><code class="xref py py-meth docutils literal"><span class="pre">add_layer()</span></code></a> method is called with remaining parameters
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>grid_file</strong> – if specified, the <a class="reference internal" href="#geosoft.gxpy.agg.Aggregate_image.add_layer" title="geosoft.gxpy.agg.Aggregate_image.add_layer"><code class="xref py py-meth docutils literal"><span class="pre">add_layer()</span></code></a> method is called with remaining parameters
 to create a single-image aggregate.</p>
 </td>
 </tr>
@@ -181,10 +178,10 @@ to create a single-image aggregate.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>grid_file</strong> &#8211; The name of a grid file (image or data) to add.</li>
-<li><strong>color_map</strong> &#8211; <code class="xref py py-class docutils literal"><span class="pre">gxpy.group.Color_map</span></code> instance, or the name of a file, which may be 
-<cite>.tbl</cite>, <cite>.zon</cite>, <cite>.itr</cite>, or <cite>.agg</cite>.</li>
-<li><strong>zone</strong> &#8211; <p>Colour distribution method:</p>
+<li><strong>grid_file</strong> – The name of a grid file (image or data) to add.</li>
+<li><strong>color_map</strong> – <code class="xref py py-class docutils literal"><span class="pre">gxpy.group.Color_map</span></code> instance, or the name of a file, which may be 
+<code class="xref py py-obj docutils literal"><span class="pre">tbl</span></code>, <code class="xref py py-obj docutils literal"><span class="pre">zon</span></code>, <code class="xref py py-obj docutils literal"><span class="pre">itr</span></code>, or <a class="reference internal" href="#module-geosoft.gxpy.agg" title="geosoft.gxpy.agg"><code class="xref py py-obj docutils literal"><span class="pre">agg</span></code></a>.</li>
+<li><strong>zone</strong> – <p>Colour distribution method:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ZONE_DEFAULT</span>        <span class="k">as</span> <span class="nb">set</span> <span class="n">by</span> <span class="n">user</span> <span class="k">global</span> <span class="n">default</span> <span class="n">settings</span>
 <span class="n">ZONE_LINEAR</span>         <span class="n">linearly</span> <span class="n">distributed</span>
 <span class="n">ZONE_NORMAL</span>         <span class="n">normal</span> <span class="p">(</span><span class="n">Gaussian</span><span class="p">)</span> <span class="n">distribution</span>
@@ -198,14 +195,14 @@ to create a single-image aggregate.</p>
 </pre></div>
 </div>
 </li>
-<li><strong>shade</strong> &#8211; True, to add a shading layer</li>
-<li><strong>minimum</strong> &#8211; Minimum data value. All grid values less than or equal to the
+<li><strong>shade</strong> – True, to add a shading layer</li>
+<li><strong>minimum</strong> – Minimum data value. All grid values less than or equal to the
 minimum will be assigned the first color in the table.  The default is
 calculated from the data.</li>
-<li><strong>maximum</strong> &#8211; Maximum data value.  All grid values greater than or equal to the maximum
+<li><strong>maximum</strong> – Maximum data value.  All grid values greater than or equal to the maximum
 will be assigned the last color in the table.  The default is calculated from
 the data.</li>
-<li><strong>contour</strong> &#8211; Break colors on this interval, colors will be thinned if necessary.</li>
+<li><strong>contour</strong> – Break colors on this interval, colors will be thinned if necessary.</li>
 </ul>
 </td>
 </tr>
@@ -228,6 +225,12 @@ the data.</li>
 <dd><p>Close an Aggregate, releases resources.</p>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="geosoft.gxpy.agg.Aggregate_image.gxagg">
+<code class="descname">gxagg</code><a class="headerlink" href="#geosoft.gxpy.agg.Aggregate_image.gxagg" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="GXAGG.html#geosoft.gxapi.GXAGG" title="geosoft.gxapi.GXAGG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXAGG</span></code></a> instance handle.</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="geosoft.gxpy.agg.Aggregate_image.layer_color_map">
 <code class="descname">layer_color_map</code><span class="sig-paren">(</span><em>layer=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.agg.Aggregate_image.layer_color_map" title="Permalink to this definition">¶</a></dt>
@@ -236,7 +239,7 @@ the data.</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>layer</strong> &#8211; layer number or layer name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>layer</strong> – layer number or layer name</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color_map" title="geosoft.gxpy.group.Color_map"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.group.Color_map</span></code></a></td>
 </tr>
@@ -270,7 +273,7 @@ the data.</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>layer</strong> &#8211; layer number or layer name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>layer</strong> – layer number or layer name</td>
 </tr>
 </tbody>
 </table>
@@ -293,7 +296,7 @@ the data.</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>grid_file</strong> &#8211; grid file name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>grid_file</strong> – grid file name</td>
 </tr>
 </tbody>
 </table>
@@ -311,7 +314,7 @@ the data.</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gxagg</strong> &#8211; <a class="reference internal" href="GXAGG.html#geosoft.gxapi.GXAGG" title="geosoft.gxapi.GXAGG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXAGG</span></code></a> instance</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gxagg</strong> – <a class="reference internal" href="GXAGG.html#geosoft.gxapi.GXAGG" title="geosoft.gxapi.GXAGG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXAGG</span></code></a> instance</td>
 </tr>
 </tbody>
 </table>
@@ -324,37 +327,37 @@ the data.</li>
 
 <dl class="data">
 <dt id="geosoft.gxpy.agg.ZONE_DEFAULT">
-<code class="descclassname">geosoft.gxpy.agg.</code><code class="descname">ZONE_DEFAULT</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.agg.ZONE_DEFAULT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ZONE_DEFAULT</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.agg.ZONE_DEFAULT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxpy.agg.ZONE_EQUALAREA">
-<code class="descclassname">geosoft.gxpy.agg.</code><code class="descname">ZONE_EQUALAREA</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxpy.agg.ZONE_EQUALAREA" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ZONE_EQUALAREA</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxpy.agg.ZONE_EQUALAREA" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxpy.agg.ZONE_LAST">
-<code class="descclassname">geosoft.gxpy.agg.</code><code class="descname">ZONE_LAST</code><em class="property"> = 6</em><a class="headerlink" href="#geosoft.gxpy.agg.ZONE_LAST" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ZONE_LAST</code><em class="property"> = 6</em><a class="headerlink" href="#geosoft.gxpy.agg.ZONE_LAST" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxpy.agg.ZONE_LINEAR">
-<code class="descclassname">geosoft.gxpy.agg.</code><code class="descname">ZONE_LINEAR</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.agg.ZONE_LINEAR" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ZONE_LINEAR</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.agg.ZONE_LINEAR" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxpy.agg.ZONE_LOGLINEAR">
-<code class="descclassname">geosoft.gxpy.agg.</code><code class="descname">ZONE_LOGLINEAR</code><em class="property"> = 5</em><a class="headerlink" href="#geosoft.gxpy.agg.ZONE_LOGLINEAR" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ZONE_LOGLINEAR</code><em class="property"> = 5</em><a class="headerlink" href="#geosoft.gxpy.agg.ZONE_LOGLINEAR" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxpy.agg.ZONE_NORMAL">
-<code class="descclassname">geosoft.gxpy.agg.</code><code class="descname">ZONE_NORMAL</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.agg.ZONE_NORMAL" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ZONE_NORMAL</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.agg.ZONE_NORMAL" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxpy.agg.ZONE_SHADE">
-<code class="descclassname">geosoft.gxpy.agg.</code><code class="descname">ZONE_SHADE</code><em class="property"> = 4</em><a class="headerlink" href="#geosoft.gxpy.agg.ZONE_SHADE" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ZONE_SHADE</code><em class="property"> = 4</em><a class="headerlink" href="#geosoft.gxpy.agg.ZONE_SHADE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -384,7 +387,7 @@ the data.</li>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

@@ -1,17 +1,14 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>GXARCDH class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
-    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -37,7 +34,7 @@
 </script>
 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -98,45 +95,28 @@
 <span id="gxarcdh"></span><h1>GXARCDH class<a class="headerlink" href="#gxarcdh-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXARCDH">
-<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXARCDH</code><a class="headerlink" href="#geosoft.gxapi.GXARCDH" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">library</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">class</span><span class="o">.</span> <span class="n">It</span> <span class="n">contains</span> <span class="n">various</span> <span class="n">utilities</span>
-<span class="n">used</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">Target</span> <span class="n">extension</span> <span class="k">for</span> <span class="n">ArcGIS</span><span class="o">.</span>
-</pre></div>
-</div>
-<dl class="staticmethod">
+<em class="property">class </em><code class="descname">GXARCDH</code><span class="sig-paren">(</span><em>wrapper=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXARCDH" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXARCDH class.</p>
+<p>This library is not a class. It contains various utilities
+used in the Target extension for ArcGIS.</p>
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXARCDH.close_project">
-<em class="property">static </em><code class="descname">close_project</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXARCDH.close_project" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Closes</span> <span class="n">the</span> <span class="n">current</span> <span class="n">DH</span> <span class="n">project</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">Target</span> <span class="n">extension</span>
-</pre></div>
-</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">None</td>
-</tr>
-</tbody>
-</table>
+<em class="property">classmethod </em><code class="descname">close_project</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXARCDH.close_project" title="Permalink to this definition">¶</a></dt>
+<dd><p>Closes the current <a class="reference internal" href="GXDH.html#geosoft.gxapi.GXDH" title="geosoft.gxapi.GXDH"><code class="xref py py-obj docutils literal"><span class="pre">GXDH</span></code></a> project in the Target extension</p>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 8.0.0.</span></p>
+<p><span class="versionmodified">New in version 8.0.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXARCDH.geostrings_extension_available">
-<em class="property">static </em><code class="descname">geostrings_extension_available</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXARCDH.geostrings_extension_available" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Verifies</span> <span class="k">if</span> <span class="n">the</span> <span class="n">geostrings</span> <span class="n">extension</span> <span class="ow">in</span> <span class="n">TfA</span> <span class="ow">is</span> <span class="n">available</span><span class="o">.</span> <span class="n">Return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">true</span><span class="p">,</span> <span class="mi">0</span> <span class="n">otherwise</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">geostrings_extension_available</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXARCDH.geostrings_extension_available" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verifies if the geostrings extension in TfA is available. Return 1 if true, 0 otherwise</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -145,21 +125,15 @@
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXARCDH.get_current_string_file_gdb">
-<em class="property">static </em><code class="descname">get_current_string_file_gdb</code><span class="sig-paren">(</span><em>(str_ref)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXARCDH.get_current_string_file_gdb" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Gets</span> <span class="n">the</span> <span class="n">current</span> <span class="n">Geostring</span> <span class="n">File</span> <span class="n">Geodatabase</span><span class="o">.</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">get_current_string_file_gdb</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXARCDH.get_current_string_file_gdb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the current Geostring File Geodatabase.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Name returned</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Name returned</td>
 </tr>
 </tbody>
 </table>
@@ -168,17 +142,46 @@
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXARCDH.has_string_file_gdb_edits">
-<em class="property">static </em><code class="descname">has_string_file_gdb_edits</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXARCDH.has_string_file_gdb_edits" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span>Is a Geostring File Geodatabase loaded and contains edits?
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">has_string_file_gdb_edits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXARCDH.has_string_file_gdb_edits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is a Geostring File Geodatabase loaded and contains edits?</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 8.0.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXARCDH.is_null">
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXARCDH.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the instance of <code class="xref py py-obj docutils literal"><span class="pre">GXARCDH</span></code> is null (undefined)`</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXARCDH</span></code>, False otherwise.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXARCDH.is_valid_feature_class_name">
+<em class="property">classmethod </em><code class="descname">is_valid_feature_class_name</code><span class="sig-paren">(</span><em>feature_class_name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXARCDH.is_valid_feature_class_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is this a valid featureclass name?</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>feature_class_name</strong> (<em>str</em>) – Featureclass name</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
@@ -189,44 +192,17 @@
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXARCDH.is_valid_feature_class_name">
-<em class="property">static </em><code class="descname">is_valid_feature_class_name</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXARCDH.is_valid_feature_class_name" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span>Is this a valid featureclass name?
-</pre></div>
-</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>str</em>) &#8211; Featureclass name</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
-</tr>
-</tbody>
-</table>
-<div class="versionadded">
-<p><span class="versionmodified">New in version 8.0.1.</span></p>
-</div>
-</dd></dl>
-
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXARCDH.is_valid_fgdb_file_name">
-<em class="property">static </em><code class="descname">is_valid_fgdb_file_name</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXARCDH.is_valid_fgdb_file_name" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span>Is this a valid FGDB filename?
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">is_valid_fgdb_file_name</code><span class="sig-paren">(</span><em>fgdb</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXARCDH.is_valid_fgdb_file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is this a valid FGDB filename?</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>str</em>) &#8211; FGDB filename</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>fgdb</strong> (<em>str</em>) – FGDB filename</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -235,107 +211,87 @@
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXARCDH.null">
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXARCDH.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXARCDH</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <code class="xref py py-obj docutils literal"><span class="pre">GXARCDH</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXARCDH.s_prompt_for_esri_symbol">
-<em class="property">static </em><code class="descname">s_prompt_for_esri_symbol</code><span class="sig-paren">(</span><em>(HWND)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em>, <em>(str_ref)arg4</em>, <em>(int_ref)arg5</em>, <em>(int_ref)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXARCDH.s_prompt_for_esri_symbol" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Prompt</span> <span class="n">the</span> <span class="n">user</span> <span class="n">to</span> <span class="n">select</span> <span class="n">an</span> <span class="n">ESRI</span> <span class="n">symbol</span> <span class="ow">and</span> <span class="k">return</span> <span class="n">it</span> <span class="k">as</span> <span class="n">an</span> <span class="n">XML</span> <span class="n">string</span><span class="o">.</span> <span class="n">The</span> <span class="n">output</span> <span class="n">string</span> <span class="n">will</span> <span class="n">be</span> <span class="n">empty</span> <span class="k">if</span> <span class="n">the</span> <span class="n">user</span> <span class="n">cancels</span> <span class="n">the</span> <span class="n">dialog</span><span class="o">.</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">s_prompt_for_esri_symbol</code><span class="sig-paren">(</span><em>hwnd</em>, <em>h_wnd</em>, <em>input_xml_string</em>, <em>xml</em>, <em>fill_color</em>, <em>edge_color</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXARCDH.s_prompt_for_esri_symbol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prompt the user to select an ESRI symbol and return it as an XML string. The output string will be empty if the user cancels the dialog.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.HWND</span></code>) &#8211; Window handle</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; Initial symbol that you want displayed when the dialog is launched (use &#8220;&#8221; if none)</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; (This parameter is ignored if an initial symbol was specified) Initial symbol type that you want displayed when the dialog is launched (0 for Fill, 1 for Line)</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Returned XML string representing the symbol that was chosen by the user</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; RGBA representation of fill color to be set</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; RGBA representation of edge color to be set</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>hwnd</strong> (<em>int</em>) – Window handle</li>
+<li><strong>h_wnd</strong> (<em>str</em>) – Initial symbol that you want displayed when the dialog is launched (use “” if none)</li>
+<li><strong>input_xml_string</strong> (<em>int</em>) – (This parameter is ignored if an initial symbol was specified) Initial symbol type that you want displayed when the dialog is launched (0 for Fill, 1 for Line)</li>
+<li><strong>xml</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Returned XML string representing the symbol that was chosen by the user</li>
+<li><strong>fill_color</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – RGBA representation of fill color to be set</li>
+<li><strong>edge_color</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – RGBA representation of edge color to be set</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 8.2.0.</span></p>
+<p><span class="versionmodified">New in version 8.2.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXARCDH.set_project">
-<em class="property">static </em><code class="descname">set_project</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXARCDH.set_project" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sets</span> <span class="n">the</span> <span class="n">current</span> <span class="n">DH</span> <span class="n">project</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">Target</span> <span class="n">extension</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">set_project</code><span class="sig-paren">(</span><em>path</em>, <em>project</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXARCDH.set_project" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the current <a class="reference internal" href="GXDH.html#geosoft.gxapi.GXDH" title="geosoft.gxapi.GXDH"><code class="xref py py-obj docutils literal"><span class="pre">GXDH</span></code></a> project in the Target extension</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Path String</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; Project Name</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>path</strong> (<em>str</em>) – Path String</li>
+<li><strong>project</strong> (<em>str</em>) – Project Name</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
-</td>
-</tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 8.0.0.</span></p>
+<p><span class="versionmodified">New in version 8.0.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXARCDH.set_string_file_gdb">
-<em class="property">static </em><code class="descname">set_string_file_gdb</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXARCDH.set_string_file_gdb" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sets</span> <span class="n">the</span> <span class="n">current</span> <span class="n">Geostring</span> <span class="n">File</span> <span class="n">Geodatabase</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">Target</span> <span class="n">extension</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">set_string_file_gdb</code><span class="sig-paren">(</span><em>string_file_gdb</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXARCDH.set_string_file_gdb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the current Geostring File Geodatabase in the Target extension</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>str</em>) &#8211; File Geodatabase</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>string_file_gdb</strong> (<em>str</em>) – File Geodatabase</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 8.0.0.</span></p>
+<p><span class="versionmodified">New in version 8.0.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXARCDH.stop_editing_string_file_gdb">
-<em class="property">static </em><code class="descname">stop_editing_string_file_gdb</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXARCDH.stop_editing_string_file_gdb" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Stops</span> <span class="n">editing</span> <span class="n">session</span> <span class="k">for</span> <span class="n">current</span> <span class="n">string</span> <span class="n">fGDB</span>
-</pre></div>
-</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">None</td>
-</tr>
-</tbody>
-</table>
+<em class="property">classmethod </em><code class="descname">stop_editing_string_file_gdb</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXARCDH.stop_editing_string_file_gdb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops editing session for current string fGDB</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.0.1.</span></p>
 </div>
@@ -370,7 +326,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

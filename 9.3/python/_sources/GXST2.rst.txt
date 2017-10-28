@@ -8,25 +8,17 @@ GXST2 class
 .. autoclass:: geosoft.gxapi.GXST2
    :members:
 
+
 .. _ST2_CORRELATION:
 
 ST2_CORRELATION constants
 -----------------------------------------------------------------------
 
-::
+Correlation style
 
-   Correlation style 
-
-.. autoattribute:: geosoft.gxapi.ST2_CORR
-
-::
-
-   Simple correlation 
-
-.. autoattribute:: geosoft.gxapi.ST2_PCORR
-
-::
-
-   Pearson's correlation (normalized to standard deviations) 
+.. autodata:: geosoft.gxapi.ST2_CORR
+    :annotation:
+.. autodata:: geosoft.gxapi.ST2_PCORR
+    :annotation:
 
 	

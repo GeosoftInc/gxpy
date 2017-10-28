@@ -1,17 +1,14 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>GXMAPTEMPLATE class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
-    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -37,7 +34,7 @@
 </script>
 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -106,197 +103,142 @@
 <span id="gxmaptemplate"></span><h1>GXMAPTEMPLATE class<a class="headerlink" href="#gxmaptemplate-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXMAPTEMPLATE">
-<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXMAPTEMPLATE</code><a class="headerlink" href="#geosoft.gxapi.GXMAPTEMPLATE" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-A MAPTEMPLATE wraps and provides manipulation and usage for the XML content in map template files.
+<em class="property">class </em><code class="descname">GXMAPTEMPLATE</code><span class="sig-paren">(</span><em>wrapper=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAPTEMPLATE" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXMAPTEMPLATE class.</p>
+<p>A <a class="reference internal" href="#geosoft.gxapi.GXMAPTEMPLATE" title="geosoft.gxapi.GXMAPTEMPLATE"><code class="xref py py-obj docutils literal"><span class="pre">GXMAPTEMPLATE</span></code></a> wraps and provides manipulation and usage for the XML content in map template files.
 See the annotated schema file maptemplate.xsd in the &lt;GEOSOFT&gt;maptemplate folder and the accompanying
-documentation in that folder for documentation on the file format.
-</pre>
+documentation in that folder for documentation on the file format.</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAPTEMPLATE.commit">
-<code class="descname">commit</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAPTEMPLATE.commit" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Commit</span> <span class="nb">any</span> <span class="n">changes</span> <span class="n">to</span> <span class="n">the</span> <span class="nb">map</span> <span class="n">template</span> <span class="n">to</span> <span class="n">disk</span>
-</pre></div>
-</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">None</td>
-</tr>
-</tbody>
-</table>
+<code class="descname">commit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAPTEMPLATE.commit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Commit any changes to the map template to disk</p>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.3.0.</span></p>
+<p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMAPTEMPLATE.create">
-<em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; GXMAPTEMPLATE:<a class="headerlink" href="#geosoft.gxapi.GXMAPTEMPLATE.create" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">MAPTEMPLATE</span> <span class="kn">from</span> <span class="nn">an</span> <span class="n">existing</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>name</em>, <em>base</em>, <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAPTEMPLATE.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a <a class="reference internal" href="#geosoft.gxapi.GXMAPTEMPLATE" title="geosoft.gxapi.GXMAPTEMPLATE"><code class="xref py py-obj docutils literal"><span class="pre">GXMAPTEMPLATE</span></code></a> from an existing file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Map Template file name</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; Map Template base template to create from</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#maptemplate-open"><span class="std std-ref">MAPTEMPLATE_OPEN constants</span></a></li>
+<li><strong>name</strong> (<em>str</em>) – Map Template file name</li>
+<li><strong>base</strong> (<em>str</em>) – Map Template base template to create from</li>
+<li><strong>mode</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">MAPTEMPLATE_OPEN</span></code></li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">MAPTEMPLATE Object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXMAPTEMPLATE" title="geosoft.gxapi.GXMAPTEMPLATE"><code class="xref py py-obj docutils literal"><span class="pre">GXMAPTEMPLATE</span></code></a> Object</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXMAPTEMPLATE" title="geosoft.gxapi.GXMAPTEMPLATE"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMAPTEMPLATE</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXMAPTEMPLATE" title="geosoft.gxapi.GXMAPTEMPLATE">GXMAPTEMPLATE</a></p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.3.0.</span></p>
+<p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<pre class="literal-block">
-The base template name should be the file name part of a geosoft_maptemplate
+<p>The base template name should be the file name part of a geosoft_maptemplate
 file in the &lt;geosoft&gt;maptemplate or &lt;geosoftuser&gt;maptemplate folders. A base file
-in the user folder will override any in the Geosoft install dir.
-</pre>
+in the user folder will override any in the Geosoft install dir.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAPTEMPLATE.create_map">
-<code class="descname">create_map</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAPTEMPLATE.create_map" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="nb">map</span> <span class="kn">from</span> <span class="nn">the</span> <span class="nb">map</span> <span class="n">template</span>
-</pre></div>
-</div>
+<code class="descname">create_map</code><span class="sig-paren">(</span><em>map</em>, <em>group</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAPTEMPLATE.create_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a map from the map template</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; New map file name (if it exists it will be overwritten)</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; Group name to use for settings</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>map</strong> (<em>str</em>) – New map file name (if it exists it will be overwritten)</li>
+<li><strong>group</strong> (<em>str</em>) – Group name to use for settings</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.3.0.</span></p>
+<p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAPTEMPLATE.discard">
-<code class="descname">discard</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAPTEMPLATE.discard" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Discard</span> <span class="nb">all</span> <span class="n">changes</span> <span class="n">made</span> <span class="n">to</span> <span class="n">the</span> <span class="nb">map</span> <span class="n">template</span> <span class="ow">and</span> <span class="n">reload</span> <span class="kn">from</span> <span class="nn">disk.</span>
-</pre></div>
-</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">None</td>
-</tr>
-</tbody>
-</table>
+<code class="descname">discard</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAPTEMPLATE.discard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Discard all changes made to the map template and reload from disk.</p>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.3.0.</span></p>
+<p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAPTEMPLATE.get_file_name">
-<code class="descname">get_file_name</code><span class="sig-paren">(</span><em>(str_ref)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAPTEMPLATE.get_file_name" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">file</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">map</span> <span class="n">template</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">get_file_name</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAPTEMPLATE.get_file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the file name of the map template.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Returned map template file name</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Returned map template file name</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.3.0.</span></p>
+<p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAPTEMPLATE.get_tmp_copy">
-<code class="descname">get_tmp_copy</code><span class="sig-paren">(</span><em>(str_ref)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAPTEMPLATE.get_tmp_copy" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="n">temporary</span> <span class="n">XML</span> <span class="n">file</span> <span class="k">for</span> <span class="n">manipulation</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">map</span> <span class="n">template</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">get_tmp_copy</code><span class="sig-paren">(</span><em>tmp</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAPTEMPLATE.get_tmp_copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a temporary XML file for manipulation of the map template.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Returned temporary map template file name</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tmp</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Returned temporary map template file name</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.3.0.</span></p>
+<p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">After</span> <span class="n">manipulating</span> <span class="n">contents</span> <span class="n">the</span> <span class="nb">object</span> <span class="n">may</span> <span class="n">be</span> <span class="n">updated</span> <span class="n">by</span> <span class="n">a</span> <span class="n">call</span> <span class="n">to</span>
-<span class="n">the</span> <span class="n">UpdateFromTmpCopy</span> <span class="n">method</span><span class="o">.</span>
-</pre></div>
-</div>
+<p>After manipulating contents the object may be updated by a call to
+the UpdateFromTmpCopy method.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAPTEMPLATE.is_null">
-<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool<a class="headerlink" href="#geosoft.gxapi.GXMAPTEMPLATE.is_null" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if the instance of <code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMAPTEMPLATE</span> <span class="pre">is</span> <span class="pre">null</span> <span class="pre">(undefined)</span></code></p>
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAPTEMPLATE.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the instance of <code class="xref py py-obj docutils literal"><span class="pre">GXMAPTEMPLATE</span></code> is null (undefined)`</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null instance of <a class="reference internal" href="#geosoft.gxapi.GXMAPTEMPLATE" title="geosoft.gxapi.GXMAPTEMPLATE"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMAPTEMPLATE</span></code></a>, False otherwise.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool`</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXMAPTEMPLATE</span></code>, False otherwise.</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMAPTEMPLATE.null">
-<em class="property">static </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXMAPTEMPLATE<a class="headerlink" href="#geosoft.gxapi.GXMAPTEMPLATE.null" title="Permalink to this definition">¶</a></dt>
-<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXMAPTEMPLATE" title="geosoft.gxapi.GXMAPTEMPLATE"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMAPTEMPLATE</span></code></a></p>
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAPTEMPLATE.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXMAPTEMPLATE</span></code></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXMAPTEMPLATE" title="geosoft.gxapi.GXMAPTEMPLATE"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMAPTEMPLATE</span></code></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXMAPTEMPLATE" title="geosoft.gxapi.GXMAPTEMPLATE"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMAPTEMPLATE</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <code class="xref py py-obj docutils literal"><span class="pre">GXMAPTEMPLATE</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -304,149 +246,105 @@ in the user folder will override any in the Geosoft install dir.
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAPTEMPLATE.refresh">
-<code class="descname">refresh</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAPTEMPLATE.refresh" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Refresh</span> <span class="n">the</span> <span class="nb">map</span> <span class="n">template</span> <span class="k">with</span> <span class="nb">any</span> <span class="n">newly</span> <span class="n">saved</span> <span class="n">items</span>
-</pre></div>
-</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">None</td>
-</tr>
-</tbody>
-</table>
+<code class="descname">refresh</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAPTEMPLATE.refresh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Refresh the map template with any newly saved items</p>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 7.0.0.</span></p>
+<p><span class="versionmodified">New in version 7.0.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAPTEMPLATE.render_preview">
-<code class="descname">render_preview</code><span class="sig-paren">(</span><em>(HDC)arg1</em>, <em>(int)arg2</em>, <em>(int)arg3</em>, <em>(int)arg4</em>, <em>(int)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAPTEMPLATE.render_preview" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">preview</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">map</span> <span class="n">template</span> <span class="n">onto</span> <span class="n">a</span>
-<span class="n">Windows</span> <span class="n">DC</span> <span class="n">handle</span>
-</pre></div>
-</div>
+<code class="descname">render_preview</code><span class="sig-paren">(</span><em>hdc</em>, <em>left</em>, <em>bottom</em>, <em>right</em>, <em>top</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAPTEMPLATE.render_preview" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a preview of the map template onto a
+Windows DC handle</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.HDC</span></code>) &#8211; DC Handle</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; Left value of the render rect in Windows coordinates (bottom&gt;top)</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; Bottom value</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; Right value</li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; Top value</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>hdc</strong> (<em>int</em>) – DC Handle</li>
+<li><strong>left</strong> (<em>int</em>) – Left value of the render rect in Windows coordinates (bottom&gt;top)</li>
+<li><strong>bottom</strong> (<em>int</em>) – Bottom value</li>
+<li><strong>right</strong> (<em>int</em>) – Right value</li>
+<li><strong>top</strong> (<em>int</em>) – Top value</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.3.0.</span></p>
+<p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAPTEMPLATE.render_preview_map_production">
-<code class="descname">render_preview_map_production</code><span class="sig-paren">(</span><em>(HDC)arg1</em>, <em>(int_ref)arg2</em>, <em>(int_ref)arg3</em>, <em>(int_ref)arg4</em>, <em>(int_ref)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAPTEMPLATE.render_preview_map_production" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Render</span> <span class="n">a</span> <span class="n">preview</span> <span class="k">for</span> <span class="nb">map</span> <span class="n">sheet</span> <span class="n">production</span> <span class="n">purposes</span>
-</pre></div>
-</div>
+<code class="descname">render_preview_map_production</code><span class="sig-paren">(</span><em>hdc</em>, <em>left</em>, <em>bottom</em>, <em>right</em>, <em>top</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAPTEMPLATE.render_preview_map_production" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render a preview for map sheet production purposes</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.HDC</span></code>) &#8211; DC Handle (pass 0 to just query the Data view pixel location)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Left value of the render rect in Windows coordinates (bottom&gt;top)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Bottom value</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Right value</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Top value</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>hdc</strong> (<em>int</em>) – DC Handle (pass 0 to just query the Data view pixel location)</li>
+<li><strong>left</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Left value of the render rect in Windows coordinates (bottom&gt;top)</li>
+<li><strong>bottom</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Bottom value</li>
+<li><strong>right</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Right value</li>
+<li><strong>top</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Top value</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.4.0.</span></p>
+<p><span class="versionmodified">New in version 6.4.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">can</span> <span class="n">also</span> <span class="n">be</span> <span class="n">used</span> <span class="n">to</span> <span class="n">get</span> <span class="n">the</span> <span class="n">data</span> <span class="n">view</span> <span class="n">pixel</span> <span class="n">location</span>
-<span class="n">by</span> <span class="n">passing</span> <span class="n">a</span> <span class="n">null</span> <span class="n">DC</span> <span class="n">handle</span><span class="o">.</span> <span class="n">This</span> <span class="n">help</span> <span class="n">to</span> <span class="n">plot</span> <span class="n">the</span> <span class="n">view</span> <span class="n">contents</span>
-<span class="n">preview</span> <span class="kn">from</span> <span class="nn">another</span> <span class="n">location</span><span class="o">.</span>
-</pre></div>
-</div>
+<p>This method can also be used to get the data view pixel location
+by passing a null DC handle. This help to plot the view contents
+preview from another location.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAPTEMPLATE.update_from_tmp_copy">
-<code class="descname">update_from_tmp_copy</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAPTEMPLATE.update_from_tmp_copy" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Update</span> <span class="n">the</span> <span class="nb">object</span> <span class="n">contents</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">temporary</span> <span class="n">XML</span> <span class="n">file</span> <span class="n">that</span> <span class="n">may</span> <span class="n">have</span> <span class="n">bee</span> <span class="n">manipulated</span> <span class="n">externally</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">update_from_tmp_copy</code><span class="sig-paren">(</span><em>tmp</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAPTEMPLATE.update_from_tmp_copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the object contents from a temporary XML file that may have bee manipulated externally.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>str</em>) &#8211; Temporary map template file name</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tmp</strong> (<em>str</em>) – Temporary map template file name</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.3.0.</span></p>
+<p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">will</span> <span class="ow">not</span> <span class="n">modify</span> <span class="n">the</span> <span class="n">original</span> <span class="n">contents</span> <span class="n">of</span> <span class="n">the</span> <span class="n">file</span> <span class="n">until</span> <span class="n">a</span> <span class="n">call</span> <span class="n">to</span> <span class="n">the</span>
-<span class="n">the</span> <span class="n">Commit</span> <span class="n">method</span> <span class="ow">is</span> <span class="n">made</span> <span class="ow">or</span> <span class="n">the</span> <span class="nb">object</span> <span class="ow">is</span> <span class="n">destroyed</span><span class="o">.</span> <span class="n">A</span> <span class="n">call</span> <span class="n">to</span> <span class="n">the</span> <span class="n">Discard</span> <span class="n">method</span>
-<span class="n">will</span> <span class="n">restore</span> <span class="n">the</span> <span class="n">contents</span> <span class="n">to</span> <span class="n">that</span> <span class="n">of</span> <span class="n">the</span> <span class="n">original</span> <span class="n">file</span><span class="o">.</span> <span class="n">The</span> <span class="n">temporary</span> <span class="n">file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">deleted</span>
-<span class="ow">and</span> <span class="n">should</span> <span class="n">be</span> <span class="n">to</span> <span class="ow">not</span> <span class="n">leak</span> <span class="n">file</span> <span class="n">resources</span><span class="o">.</span>
-</pre></div>
-</div>
+<p>This method will not modify the original contents of the file until a call to the
+the Commit method is made or the object is destroyed. A call to the Discard method
+will restore the contents to that of the original file. The temporary file is not deleted
+and should be to not leak file resources.</p>
 </dd></dl>
 
 </dd></dl>
 
 <div class="section" id="maptemplate-open-constants">
 <span id="maptemplate-open"></span><h2>MAPTEMPLATE_OPEN constants<a class="headerlink" href="#maptemplate-open-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Open</span> <span class="n">Modes</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<p>Open Modes</p>
+<dl class="data">
 <dt id="geosoft.gxapi.MAPTEMPLATE_WRITENEW">
-<code class="descclassname">gxapi.</code><code class="descname">MAPTEMPLATE_WRITENEW</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.MAPTEMPLATE_WRITENEW" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">MAPTEMPLATE_WRITENEW</code><a class="headerlink" href="#geosoft.gxapi.MAPTEMPLATE_WRITENEW" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create new empty map template (will overwrite existing files)</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">new</span> <span class="n">empty</span> <span class="nb">map</span> <span class="n">template</span> <span class="p">(</span><span class="n">will</span> <span class="n">overwrite</span> <span class="n">existing</span> <span class="n">files</span><span class="p">)</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<dl class="data">
 <dt id="geosoft.gxapi.MAPTEMPLATE_EXIST">
-<code class="descclassname">gxapi.</code><code class="descname">MAPTEMPLATE_EXIST</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.MAPTEMPLATE_EXIST" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">MAPTEMPLATE_EXIST</code><a class="headerlink" href="#geosoft.gxapi.MAPTEMPLATE_EXIST" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create from existing template on disk</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="kn">from</span> <span class="nn">existing</span> <span class="n">template</span> <span class="n">on</span> <span class="n">disk</span>
-</pre></div>
-</div>
 </div>
 </div>
 
@@ -475,7 +373,7 @@ in the user folder will override any in the Geosoft install dir.
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

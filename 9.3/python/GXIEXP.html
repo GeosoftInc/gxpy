@@ -1,17 +1,14 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>GXIEXP class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
-    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -37,7 +34,7 @@
 </script>
 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -98,118 +95,95 @@
 <span id="gxiexp"></span><h1>GXIEXP class<a class="headerlink" href="#gxiexp-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXIEXP">
-<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXIEXP</code><a class="headerlink" href="#geosoft.gxapi.GXIEXP" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">IEXP</span> <span class="k">class</span> <span class="nc">is</span> <span class="n">similar</span> <span class="n">to</span> <span class="n">the</span> <span class="n">EXP</span> <span class="n">class</span><span class="p">,</span> <span class="n">but</span> <span class="ow">is</span> <span class="n">used</span>
-<span class="n">to</span> <span class="n">apply</span> <span class="n">math</span> <span class="n">expressions</span> <span class="n">to</span> <span class="n">grids</span> <span class="p">(</span><span class="n">IMG</span> <span class="n">objects</span><span class="p">)</span><span class="o">.</span>
-</pre></div>
-</div>
+<em class="property">class </em><code class="descname">GXIEXP</code><span class="sig-paren">(</span><em>wrapper=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIEXP" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXIEXP class.</p>
+<p>The <a class="reference internal" href="#geosoft.gxapi.GXIEXP" title="geosoft.gxapi.GXIEXP"><code class="xref py py-obj docutils literal"><span class="pre">GXIEXP</span></code></a> class is similar to the <a class="reference internal" href="GXEXP.html#geosoft.gxapi.GXEXP" title="geosoft.gxapi.GXEXP"><code class="xref py py-obj docutils literal"><span class="pre">GXEXP</span></code></a> class, but is used
+to apply math expressions to grids (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal"><span class="pre">GXIMG</span></code></a> objects).</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXIEXP.add_grid">
-<code class="descname">add_grid</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIEXP.add_grid" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">adds</span> <span class="n">an</span> <span class="n">image</span> <span class="n">to</span> <span class="n">the</span> <span class="n">IEXP</span> <span class="nb">object</span> <span class="k">with</span> <span class="n">a</span>
-<span class="n">variable</span> <span class="n">name</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">add_grid</code><span class="sig-paren">(</span><em>img</em>, <em>var</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIEXP.add_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method adds an image to the <a class="reference internal" href="#geosoft.gxapi.GXIEXP" title="geosoft.gxapi.GXIEXP"><code class="xref py py-obj docutils literal"><span class="pre">GXIEXP</span></code></a> object with a
+variable name.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; Image to add</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; Variable name</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image to add</li>
+<li><strong>var</strong> (<em>str</em>) – Variable name</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
-</td>
-</tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXIEXP.create">
-<em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXIEXP:<a class="headerlink" href="#geosoft.gxapi.GXIEXP.create" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">creates</span> <span class="n">an</span> <span class="n">IEXP</span> <span class="nb">object</span><span class="o">.</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIEXP.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method creates an <a class="reference internal" href="#geosoft.gxapi.GXIEXP" title="geosoft.gxapi.GXIEXP"><code class="xref py py-obj docutils literal"><span class="pre">GXIEXP</span></code></a> object.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">IEXP Object</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXIEXP" title="geosoft.gxapi.GXIEXP"><code class="xref py py-obj docutils literal"><span class="pre">GXIEXP</span></code></a> Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXIEXP" title="geosoft.gxapi.GXIEXP"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIEXP</span></code></a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXIEXP" title="geosoft.gxapi.GXIEXP">GXIEXP</a></td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIEXP.do_formula">
-<code class="descname">do_formula</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXIEXP.do_formula" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">runs</span> <span class="n">a</span> <span class="n">formula</span> <span class="n">on</span> <span class="n">the</span> <span class="n">grids</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">do_formula</code><span class="sig-paren">(</span><em>formula</em>, <em>max_len</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIEXP.do_formula" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method runs a formula on the grids.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Formula</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; Max. Buff size</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>formula</strong> (<em>str</em>) – Formula</li>
+<li><strong>max_len</strong> (<em>int</em>) – Max. Buff size</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIEXP.is_null">
-<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool<a class="headerlink" href="#geosoft.gxapi.GXIEXP.is_null" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if the instance of <code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIEXP</span> <span class="pre">is</span> <span class="pre">null</span> <span class="pre">(undefined)</span></code></p>
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIEXP.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the instance of <code class="xref py py-obj docutils literal"><span class="pre">GXIEXP</span></code> is null (undefined)`</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null instance of <a class="reference internal" href="#geosoft.gxapi.GXIEXP" title="geosoft.gxapi.GXIEXP"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIEXP</span></code></a>, False otherwise.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool`</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXIEXP</span></code>, False otherwise.</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXIEXP.null">
-<em class="property">static </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXIEXP<a class="headerlink" href="#geosoft.gxapi.GXIEXP.null" title="Permalink to this definition">¶</a></dt>
-<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXIEXP" title="geosoft.gxapi.GXIEXP"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIEXP</span></code></a></p>
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIEXP.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXIEXP</span></code></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXIEXP" title="geosoft.gxapi.GXIEXP"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIEXP</span></code></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXIEXP" title="geosoft.gxapi.GXIEXP"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIEXP</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <code class="xref py py-obj docutils literal"><span class="pre">GXIEXP</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -244,7 +218,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

@@ -1,17 +1,14 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>GXTC class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
-    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -37,7 +34,7 @@
 </script>
 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -108,249 +105,208 @@
 <span id="gxtc"></span><h1>GXTC class<a class="headerlink" href="#gxtc-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXTC">
-<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXTC</code><a class="headerlink" href="#geosoft.gxapi.GXTC" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-The TC object is used in gravitational modelling to create
+<em class="property">class </em><code class="descname">GXTC</code><span class="sig-paren">(</span><em>wrapper=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTC" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXTC class.</p>
+<p>The <a class="reference internal" href="#geosoft.gxapi.GXTC" title="geosoft.gxapi.GXTC"><code class="xref py py-obj docutils literal"><span class="pre">GXTC</span></code></a> object is used in gravitational modelling to create
 a terrain correction grid from a topography grid. This is
-accomplished with a call first to <a class="reference internal" href="#geosoft.gxapi.GXTC.grregter" title="geosoft.gxapi.GXTC.grregter"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXTC.grregter()</span></code></a>, which determines
+accomplished with a call first to <a class="reference internal" href="#geosoft.gxapi.GXTC.grregter" title="geosoft.gxapi.GXTC.grregter"><code class="xref py py-obj docutils literal"><span class="pre">grregter</span></code></a>, which determines
 the terrain correction from an input topography grid, then
-to <a class="reference internal" href="#geosoft.gxapi.GXTC.grterain" title="geosoft.gxapi.GXTC.grterain"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXTC.grterain()</span></code></a>, which calculates the actual corrections at
-the input positions.
-</pre>
-<dl class="staticmethod">
+to <a class="reference internal" href="#geosoft.gxapi.GXTC.grterain" title="geosoft.gxapi.GXTC.grterain"><code class="xref py py-obj docutils literal"><span class="pre">grterain</span></code></a>, which calculates the actual corrections at
+the input positions.</p>
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXTC.create">
-<em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(float)arg7</em>, <em>(int)arg8</em>, <em>(float)arg9</em>, <em>(int)arg10</em><span class="sig-paren">)</span> &rarr; GXTC:<a class="headerlink" href="#geosoft.gxapi.GXTC.create" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Creates</span> <span class="n">a</span> <span class="n">Terrain</span> <span class="n">Correction</span> <span class="nb">object</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>img</em>, <em>elev_unit</em>, <em>dinner</em>, <em>douter</em>, <em>dens_t</em>, <em>dens_w</em>, <em>elev_w</em>, <em>edge</em>, <em>edge_elev</em>, <em>opt</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTC.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a Terrain Correction object</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; Topo (DEM) grid</li>
-<li><strong>arg2</strong> (<em>float</em>) &#8211; Elevation unit in 1 metre (i.e. 0.3048 for feet)</li>
-<li><strong>arg3</strong> (<em>float</em>) &#8211; Inner distance (in topo grid projection units, default in metres)</li>
-<li><strong>arg4</strong> (<em>float</em>) &#8211; Outer distance (in topo grid projection units, default in metres)</li>
-<li><strong>arg5</strong> (<em>float</em>) &#8211; Terrain density in g/cc</li>
-<li><strong>arg6</strong> (<em>float</em>) &#8211; Water density in g/cc</li>
-<li><strong>arg7</strong> (<em>float</em>) &#8211; Water reference elevation (in elevation unit)</li>
-<li><strong>arg8</strong> (<em>int</em>) &#8211; <code class="docutils literal"><span class="pre">True</span></code> to calculate an edge correction (compensation)</li>
-<li><strong>arg9</strong> (<em>float</em>) &#8211; Average elevation beyond max distance (in elevation unit)</li>
-<li><strong>arg10</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#tc-opt"><span class="std std-ref">TC_OPT constants</span></a></li>
+<li><strong>img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Topo (DEM) grid</li>
+<li><strong>elev_unit</strong> (<em>float</em>) – Elevation unit in 1 metre (i.e. 0.3048 for feet)</li>
+<li><strong>dinner</strong> (<em>float</em>) – Inner distance (in topo grid projection units, default in metres)</li>
+<li><strong>douter</strong> (<em>float</em>) – Outer distance (in topo grid projection units, default in metres)</li>
+<li><strong>dens_t</strong> (<em>float</em>) – Terrain density in g/cc</li>
+<li><strong>dens_w</strong> (<em>float</em>) – Water density in g/cc</li>
+<li><strong>elev_w</strong> (<em>float</em>) – Water reference elevation (in elevation unit)</li>
+<li><strong>edge</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">GS_TRUE</span></code> to calculate an edge correction (compensation)</li>
+<li><strong>edge_elev</strong> (<em>float</em>) – Average elevation beyond max distance (in elevation unit)</li>
+<li><strong>opt</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">TC_OPT</span></code></li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TC Object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXTC" title="geosoft.gxapi.GXTC"><code class="xref py py-obj docutils literal"><span class="pre">GXTC</span></code></a> Object</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXTC" title="geosoft.gxapi.GXTC"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXTC</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXTC" title="geosoft.gxapi.GXTC">GXTC</a></p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXTC.create_ex">
-<em class="property">static </em><code class="descname">create_ex</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(float)arg7</em>, <em>(int)arg8</em>, <em>(float)arg9</em>, <em>(int)arg10</em>, <em>(int)arg11</em><span class="sig-paren">)</span> &rarr; GXTC:<a class="headerlink" href="#geosoft.gxapi.GXTC.create_ex" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Creates</span> <span class="n">a</span> <span class="n">Terrain</span> <span class="n">Correction</span> <span class="nb">object</span>  <span class="k">with</span> <span class="n">surveytype</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">create_ex</code><span class="sig-paren">(</span><em>img</em>, <em>elev_unit</em>, <em>dinner</em>, <em>douter</em>, <em>dens_t</em>, <em>dens_w</em>, <em>elev_w</em>, <em>edge</em>, <em>edge_elev</em>, <em>opt</em>, <em>survey_type</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTC.create_ex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a Terrain Correction object     with surveytype</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; Topo (DEM) grid</li>
-<li><strong>arg2</strong> (<em>float</em>) &#8211; Elevation unit in 1 metre (i.e. 0.3048 for feet)</li>
-<li><strong>arg3</strong> (<em>float</em>) &#8211; Inner distance (in topo grid projection units, default in metres)</li>
-<li><strong>arg4</strong> (<em>float</em>) &#8211; Outer distance (in topo grid projection units, default in metres)</li>
-<li><strong>arg5</strong> (<em>float</em>) &#8211; Terrain density in g/cc</li>
-<li><strong>arg6</strong> (<em>float</em>) &#8211; Water density in g/cc</li>
-<li><strong>arg7</strong> (<em>float</em>) &#8211; Water reference elevation (in elevation unit)</li>
-<li><strong>arg8</strong> (<em>int</em>) &#8211; <code class="docutils literal"><span class="pre">True</span></code> to calculate an edge correction (compensation)</li>
-<li><strong>arg9</strong> (<em>float</em>) &#8211; Average elevation beyond max distance (in elevation unit)</li>
-<li><strong>arg10</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#tc-opt"><span class="std std-ref">TC_OPT constants</span></a></li>
-<li><strong>arg11</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#tc-surveytype"><span class="std std-ref">TC_SURVEYTYPE constants</span></a></li>
+<li><strong>img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Topo (DEM) grid</li>
+<li><strong>elev_unit</strong> (<em>float</em>) – Elevation unit in 1 metre (i.e. 0.3048 for feet)</li>
+<li><strong>dinner</strong> (<em>float</em>) – Inner distance (in topo grid projection units, default in metres)</li>
+<li><strong>douter</strong> (<em>float</em>) – Outer distance (in topo grid projection units, default in metres)</li>
+<li><strong>dens_t</strong> (<em>float</em>) – Terrain density in g/cc</li>
+<li><strong>dens_w</strong> (<em>float</em>) – Water density in g/cc</li>
+<li><strong>elev_w</strong> (<em>float</em>) – Water reference elevation (in elevation unit)</li>
+<li><strong>edge</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">GS_TRUE</span></code> to calculate an edge correction (compensation)</li>
+<li><strong>edge_elev</strong> (<em>float</em>) – Average elevation beyond max distance (in elevation unit)</li>
+<li><strong>opt</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">TC_OPT</span></code></li>
+<li><strong>survey_type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">TC_SURVEYTYPE</span></code></li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TC Object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXTC" title="geosoft.gxapi.GXTC"><code class="xref py py-obj docutils literal"><span class="pre">GXTC</span></code></a> Object</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXTC" title="geosoft.gxapi.GXTC"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXTC</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXTC" title="geosoft.gxapi.GXTC">GXTC</a></p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.2.0.</span></p>
+<p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTC.g_gterain">
-<code class="descname">g_gterain</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em>, <em>(GXVV)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(int)arg7</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXTC.g_gterain" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculate</span> <span class="n">GG</span> <span class="n">terrain</span> <span class="n">corrections</span>
-</pre></div>
-</div>
+<code class="descname">g_gterain</code><span class="sig-paren">(</span><em>gv_vx</em>, <em>p3</em>, <em>p4</em>, <em>p5</em>, <em>p6</em>, <em>p7</em>, <em>p8</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTC.g_gterain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate GG terrain corrections</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Input X channel data (in topo grid projection units, default in metres)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Input Y channel data (in topo grid projection units, default in metres)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Input Elevation channel data (in elevation unit)</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Output Terrain Corrected channel data</li>
-<li><strong>arg5</strong> (<em>float</em>) &#8211; Terrain density (default 2.67)</li>
-<li><strong>arg6</strong> (<em>float</em>) &#8211; Terrain reference level (default 0.0)</li>
-<li><strong>arg7</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#gg-element"><span class="std std-ref">GG_ELEMENT constants</span></a></li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>gv_vx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input X channel data (in topo grid projection units, default in metres)</li>
+<li><strong>p3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input Y channel data (in topo grid projection units, default in metres)</li>
+<li><strong>p4</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input Elevation channel data (in elevation unit)</li>
+<li><strong>p5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Output Terrain Corrected channel data</li>
+<li><strong>p6</strong> (<em>float</em>) – Terrain density (default 2.67)</li>
+<li><strong>p7</strong> (<em>float</em>) – Terrain reference level (default 0.0)</li>
+<li><strong>p8</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">GG_ELEMENT</span></code></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.0.0.</span></p>
+<p><span class="versionmodified">New in version 6.0.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTC.grregter">
-<code class="descname">grregter</code><span class="sig-paren">(</span><em>(GXIMG)arg1</em>, <em>(GXIMG)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXTC.grregter" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">terrain</span> <span class="n">correction</span> <span class="n">grid</span> <span class="k">for</span> <span class="n">a</span> <span class="n">topo</span> <span class="n">grid</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">grregter</code><span class="sig-paren">(</span><em>im_gi</em>, <em>im_go</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTC.grregter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a terrain correction grid for a topo grid.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; Input IMG (local DEM topo grid used for station elevation)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; Image of output grid</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>im_gi</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Input <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal"><span class="pre">GXIMG</span></code></a> (local DEM topo grid used for station elevation)</li>
+<li><strong>im_go</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image of output grid</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTC.grterain">
-<code class="descname">grterain</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em>, <em>(GXVV)arg4</em>, <em>(GXVV)arg5</em>, <em>(GXIMG)arg6</em>, <em>(float)arg7</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXTC.grterain" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculate</span> <span class="n">terrain</span> <span class="n">corrections</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">grterain</code><span class="sig-paren">(</span><em>gv_vx</em>, <em>gv_vy</em>, <em>gv_velev</em>, <em>gv_vslop</em>, <em>gv_vtcor</em>, <em>im_gcor</em>, <em>dens_t</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTC.grterain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate terrain corrections.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Input X channel data (in topo grid projection units, default in metres)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Input Y channel data (in topo grid projection units, default in metres)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Input Elevation channel data (in elevation unit)</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Input slope channel data</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Output Terrain Corrected channel data</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; Image of input correction grid</li>
-<li><strong>arg7</strong> (<em>float</em>) &#8211; Terrain density (default 2.67)</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>gv_vx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input X channel data (in topo grid projection units, default in metres)</li>
+<li><strong>gv_vy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input Y channel data (in topo grid projection units, default in metres)</li>
+<li><strong>gv_velev</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input Elevation channel data (in elevation unit)</li>
+<li><strong>gv_vslop</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input slope channel data</li>
+<li><strong>gv_vtcor</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Output Terrain Corrected channel data</li>
+<li><strong>im_gcor</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image of input correction grid</li>
+<li><strong>dens_t</strong> (<em>float</em>) – Terrain density (default 2.67)</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTC.grterain2">
-<code class="descname">grterain2</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em>, <em>(GXVV)arg4</em>, <em>(GXVV)arg5</em>, <em>(GXVV)arg6</em>, <em>(GXIMG)arg7</em>, <em>(float)arg8</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXTC.grterain2" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculate</span> <span class="n">terrain</span> <span class="n">corrections</span> <span class="p">(</span><span class="n">work</span> <span class="k">for</span> <span class="n">marine</span> <span class="n">gravity</span> <span class="n">too</span><span class="p">)</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">grterain2</code><span class="sig-paren">(</span><em>gv_vx</em>, <em>gv_vy</em>, <em>gv_velev</em>, <em>gv_vslop</em>, <em>gv_vwater</em>, <em>gv_vtcor</em>, <em>im_gcor</em>, <em>dens_t</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTC.grterain2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate terrain corrections (work for marine gravity too).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Input X channel data (in topo grid projection units, default in metres)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Input Y channel data (in topo grid projection units, default in metres)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Input Elevation channel data (in elevation unit)</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Input slope channel data</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Input Water depth channel data (in metres)</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; Output Terrain Corrected channel data</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>) &#8211; Image of input correction grid</li>
-<li><strong>arg8</strong> (<em>float</em>) &#8211; Terrain density (default 2.67)</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>gv_vx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input X channel data (in topo grid projection units, default in metres)</li>
+<li><strong>gv_vy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input Y channel data (in topo grid projection units, default in metres)</li>
+<li><strong>gv_velev</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input Elevation channel data (in elevation unit)</li>
+<li><strong>gv_vslop</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input slope channel data</li>
+<li><strong>gv_vwater</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input Water depth channel data (in metres)</li>
+<li><strong>gv_vtcor</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Output Terrain Corrected channel data</li>
+<li><strong>im_gcor</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image of input correction grid</li>
+<li><strong>dens_t</strong> (<em>float</em>) – Terrain density (default 2.67)</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.0.0.</span></p>
+<p><span class="versionmodified">New in version 6.0.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTC.is_null">
-<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool<a class="headerlink" href="#geosoft.gxapi.GXTC.is_null" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if the instance of <code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXTC</span> <span class="pre">is</span> <span class="pre">null</span> <span class="pre">(undefined)</span></code></p>
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTC.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the instance of <code class="xref py py-obj docutils literal"><span class="pre">GXTC</span></code> is null (undefined)`</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null instance of <a class="reference internal" href="#geosoft.gxapi.GXTC" title="geosoft.gxapi.GXTC"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXTC</span></code></a>, False otherwise.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool`</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXTC</span></code>, False otherwise.</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXTC.null">
-<em class="property">static </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXTC<a class="headerlink" href="#geosoft.gxapi.GXTC.null" title="Permalink to this definition">¶</a></dt>
-<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXTC" title="geosoft.gxapi.GXTC"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXTC</span></code></a></p>
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTC.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXTC</span></code></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXTC" title="geosoft.gxapi.GXTC"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXTC</span></code></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXTC" title="geosoft.gxapi.GXTC"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXTC</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <code class="xref py py-obj docutils literal"><span class="pre">GXTC</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -360,102 +316,76 @@ the input positions.
 
 <div class="section" id="tc-opt-constants">
 <span id="tc-opt"></span><h2>TC_OPT constants<a class="headerlink" href="#tc-opt-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Optimization</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<p>Optimization</p>
+<dl class="data">
 <dt id="geosoft.gxapi.TC_OPT_NONE">
-<code class="descclassname">gxapi.</code><code class="descname">TC_OPT_NONE</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.TC_OPT_NONE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">TC_OPT_NONE</code><a class="headerlink" href="#geosoft.gxapi.TC_OPT_NONE" title="Permalink to this definition">¶</a></dt>
+<dd><p>(slow)    no optimization</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">slow</span><span class="p">)</span>    <span class="n">no</span> <span class="n">optimization</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<dl class="data">
 <dt id="geosoft.gxapi.TC_OPT_MAX">
-<code class="descclassname">gxapi.</code><code class="descname">TC_OPT_MAX</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.TC_OPT_MAX" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">TC_OPT_MAX</code><a class="headerlink" href="#geosoft.gxapi.TC_OPT_MAX" title="Permalink to this definition">¶</a></dt>
+<dd><p>(faster)  desampling and using qspline (4x4 points) interp
+on coarser averaged grid</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">faster</span><span class="p">)</span>  <span class="n">desampling</span> <span class="ow">and</span> <span class="n">using</span> <span class="n">qspline</span> <span class="p">(</span><span class="mi">4</span><span class="n">x4</span> <span class="n">points</span><span class="p">)</span> <span class="n">interp</span>
-<span class="n">on</span> <span class="n">coarser</span> <span class="n">averaged</span> <span class="n">grid</span>
-</pre></div>
-</div>
 </div>
 <div class="section" id="tc-surveytype-constants">
 <span id="tc-surveytype"></span><h2>TC_SURVEYTYPE constants<a class="headerlink" href="#tc-surveytype-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Survey</span> <span class="n">Type</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<p>Survey Type</p>
+<dl class="data">
 <dt id="geosoft.gxapi.TC_SURVEYTYPE_GROUND">
-<code class="descclassname">gxapi.</code><code class="descname">TC_SURVEYTYPE_GROUND</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.TC_SURVEYTYPE_GROUND" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">TC_SURVEYTYPE_GROUND</code><a class="headerlink" href="#geosoft.gxapi.TC_SURVEYTYPE_GROUND" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ground</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Ground</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<dl class="data">
 <dt id="geosoft.gxapi.TC_SURVEYTYPE_SHIPBORNE">
-<code class="descclassname">gxapi.</code><code class="descname">TC_SURVEYTYPE_SHIPBORNE</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.TC_SURVEYTYPE_SHIPBORNE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">TC_SURVEYTYPE_SHIPBORNE</code><a class="headerlink" href="#geosoft.gxapi.TC_SURVEYTYPE_SHIPBORNE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shipborne</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Shipborne</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<dl class="data">
 <dt id="geosoft.gxapi.TC_SURVEYTYPE_AIRBORNE">
-<code class="descclassname">gxapi.</code><code class="descname">TC_SURVEYTYPE_AIRBORNE</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxapi.TC_SURVEYTYPE_AIRBORNE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">TC_SURVEYTYPE_AIRBORNE</code><a class="headerlink" href="#geosoft.gxapi.TC_SURVEYTYPE_AIRBORNE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Airborne</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Airborne</span>
-</pre></div>
-</div>
 </div>
 <div class="section" id="gg-element-constants">
 <span id="gg-element"></span><h2>GG_ELEMENT constants<a class="headerlink" href="#gg-element-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">GG</span> <span class="n">element</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<p>GG element</p>
+<dl class="data">
 <dt id="geosoft.gxapi.GG_ELEMENT_XX">
-<code class="descclassname">gxapi.</code><code class="descname">GG_ELEMENT_XX</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.GG_ELEMENT_XX" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">GG_ELEMENT_XX</code><a class="headerlink" href="#geosoft.gxapi.GG_ELEMENT_XX" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gxx</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Gxx</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<dl class="data">
 <dt id="geosoft.gxapi.GG_ELEMENT_YY">
-<code class="descclassname">gxapi.</code><code class="descname">GG_ELEMENT_YY</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.GG_ELEMENT_YY" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">GG_ELEMENT_YY</code><a class="headerlink" href="#geosoft.gxapi.GG_ELEMENT_YY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gyy</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Gyy</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<dl class="data">
 <dt id="geosoft.gxapi.GG_ELEMENT_XY">
-<code class="descclassname">gxapi.</code><code class="descname">GG_ELEMENT_XY</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxapi.GG_ELEMENT_XY" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">GG_ELEMENT_XY</code><a class="headerlink" href="#geosoft.gxapi.GG_ELEMENT_XY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gxy</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Gxy</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<dl class="data">
 <dt id="geosoft.gxapi.GG_ELEMENT_XZ">
-<code class="descclassname">gxapi.</code><code class="descname">GG_ELEMENT_XZ</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxapi.GG_ELEMENT_XZ" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">GG_ELEMENT_XZ</code><a class="headerlink" href="#geosoft.gxapi.GG_ELEMENT_XZ" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gxz</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Gxz</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<dl class="data">
 <dt id="geosoft.gxapi.GG_ELEMENT_YZ">
-<code class="descclassname">gxapi.</code><code class="descname">GG_ELEMENT_YZ</code><em class="property"> = 4</em><a class="headerlink" href="#geosoft.gxapi.GG_ELEMENT_YZ" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">GG_ELEMENT_YZ</code><a class="headerlink" href="#geosoft.gxapi.GG_ELEMENT_YZ" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gyz</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Gyz</span>
-</pre></div>
-</div>
 </div>
 </div>
 
@@ -484,7 +414,7 @@ the input positions.
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

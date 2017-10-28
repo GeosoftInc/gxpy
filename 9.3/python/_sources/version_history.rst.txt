@@ -584,22 +584,22 @@ geosoft.gxapi module history
 ==========================================
 
   
-Version 9.3.0
+Version 9.3
 -----------------
 
 
 New Functions
 ^^^^^^^^^^^^^
 
-:func:`geosoft.gxapi.GXCSYMB.get_itr` Get the ITR of the CSYMB
+:func:`geosoft.gxapi.GXCSYMB.get_itr` Get the `GXITR <geosoft.gxapi.GXITR>` of the `GXCSYMB <geosoft.gxapi.GXCSYMB>`
 
 :func:`geosoft.gxapi.GXDH.edit_classification_table_file_gui` Edit a symbol color/pattern CSV file
 
-:func:`geosoft.gxapi.GXE3DV.get_base_view` Get the current Base MVIEW (used to draw 2D legends for groups)
+:func:`geosoft.gxapi.GXE3DV.get_base_view` Get the current Base `GXMVIEW <geosoft.gxapi.GXMVIEW>` (used to draw 2D legends for groups)
 
-:func:`geosoft.gxapi.GXE3DV.get_data_view` Get the current data (3D) MVIEW
+:func:`geosoft.gxapi.GXE3DV.get_data_view` Get the current data (3D) `GXMVIEW <geosoft.gxapi.GXMVIEW>`
 
-:func:`geosoft.gxapi.GXEMAP.get_e_3dv` Get an E3DV from the EMAP
+:func:`geosoft.gxapi.GXEMAP.get_e_3dv` Get an `GXE3DV <geosoft.gxapi.GXE3DV>` from the `GXEMAP <geosoft.gxapi.GXEMAP>`
 
 :func:`geosoft.gxapi.GXGUI.custom_file_form` General file Open/Save Form for Multiple/Single file selections and custom filter capability
 
@@ -607,7 +607,7 @@ New Functions
 
 :func:`geosoft.gxapi.GXIP.set_import_line` Set the line name for some imports.
 
-:func:`geosoft.gxapi.GXMULTIVOXSET.check_equal_to_legacy_voxel` Compare MULTIVOXSET to Legacy Voxel
+:func:`geosoft.gxapi.GXMULTIVOXSET.check_equal_to_legacy_voxel` Compare `GXMULTIVOXSET <geosoft.gxapi.GXMULTIVOXSET>` to Legacy Voxel
 
 :func:`geosoft.gxapi.GXMULTIVOXSET.compute_default_cell_size` Used if the user does not provide a default cell size.
 
@@ -627,7 +627,7 @@ New Functions
 
 :func:`geosoft.gxapi.GXMULTIVOXSET.create_vector_constant` Generate a double MultiVoxset with a constant value
 
-:func:`geosoft.gxapi.GXMULTIVOXSET.export_to_binary` Export contents of MULTIVOXSET to a Binary File.
+:func:`geosoft.gxapi.GXMULTIVOXSET.export_to_binary` Export contents of `GXMULTIVOXSET <geosoft.gxapi.GXMULTIVOXSET>` to a Binary File.
 
 :func:`geosoft.gxapi.GXMULTIVOXSET.export_to_gdb` Export To GDB
 
@@ -637,9 +637,9 @@ New Functions
 
 :func:`geosoft.gxapi.GXMULTIVOXSET.export_to_wa` Export To GDB
 
-:func:`geosoft.gxapi.GXMULTIVOXSET.export_to_xml` Export a MULTIVOXSET to XML
+:func:`geosoft.gxapi.GXMULTIVOXSET.export_to_xml` Export a `GXMULTIVOXSET <geosoft.gxapi.GXMULTIVOXSET>` to XML
 
-:func:`geosoft.gxapi.GXMULTIVOXSET.export_to_xyz` Export a MULTIVOXSET to an XYZ File
+:func:`geosoft.gxapi.GXMULTIVOXSET.export_to_xyz` Export a `GXMULTIVOXSET <geosoft.gxapi.GXMULTIVOXSET>` to an XYZ File
 
 :func:`geosoft.gxapi.GXMULTIVOXSET.filter` Apply a 3D filter to a voxel.
 
@@ -661,68 +661,70 @@ New Functions
 
 :func:`geosoft.gxapi.GXMULTIVOXSET.list_properties_gocad` List all the properties available in this GOCAD file.
 
-:func:`geosoft.gxapi.GXMVIEW.delete_group_itr` Deletes existing ITR associated with a group.
+:func:`geosoft.gxapi.GXMVIEW.delete_group_itr` Deletes existing `GXITR <geosoft.gxapi.GXITR>` associated with a group.
 
 :func:`geosoft.gxapi.GXMVIEW.delete_group_storage` Deletes existing generic storage associated with a group.
 
-:func:`geosoft.gxapi.GXMVIEW.delete_group_tpat` Deletes existing TPAT associated with a group.
+:func:`geosoft.gxapi.GXMVIEW.delete_group_tpat` Deletes existing `GXTPAT <geosoft.gxapi.GXTPAT>` associated with a group.
 
 :func:`geosoft.gxapi.GXMVIEW.find_group_by_guid` Find a Group by name.
 
-:func:`geosoft.gxapi.GXMVIEW.get_group_guid` Gets a GUID of a group in the MVIEW.
+:func:`geosoft.gxapi.GXMVIEW.get_group_guid` Gets a GUID of a group in the `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
 
-:func:`geosoft.gxapi.GXMVIEW.get_group_itr` Get group ITR
+:func:`geosoft.gxapi.GXMVIEW.get_group_itr` Get group `GXITR <geosoft.gxapi.GXITR>`
 
-:func:`geosoft.gxapi.GXMVIEW.get_group_tpat` Get group TPAT
+:func:`geosoft.gxapi.GXMVIEW.get_group_tpat` Get group `GXTPAT <geosoft.gxapi.GXTPAT>`
 
-:func:`geosoft.gxapi.GXMVIEW.get_guid` Gets the GUID of the MVIEW.
+:func:`geosoft.gxapi.GXMVIEW.get_guid` Gets the GUID of the `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
 
-:func:`geosoft.gxapi.GXMVIEW.get_vector_3d` Get an existing VECTOR3D object from the view.
+:func:`geosoft.gxapi.GXMVIEW.get_vector_3d` Get an existing `GXVECTOR3D <geosoft.gxapi.GXVECTOR3D>` object from the view.
 
-:func:`geosoft.gxapi.GXMVIEW.group_itr_exists` Determine if group ITR exists.
+:func:`geosoft.gxapi.GXMVIEW.group_itr_exists` Determine if group `GXITR <geosoft.gxapi.GXITR>` exists.
 
 :func:`geosoft.gxapi.GXMVIEW.group_storage_exists` Determine if generic storage associated with a group exists.
 
-:func:`geosoft.gxapi.GXMVIEW.group_tpat_exists` Determine if group TPAT exists.
+:func:`geosoft.gxapi.GXMVIEW.group_tpat_exists` Determine if group `GXTPAT <geosoft.gxapi.GXTPAT>` exists.
 
-:func:`geosoft.gxapi.GXMVIEW.set_group_itr` Set group ITR
+:func:`geosoft.gxapi.GXMVIEW.read_group_storage` Reads existing generic storage associated with a group into an in-memory `GXBF <geosoft.gxapi.GXBF>`.
 
-:func:`geosoft.gxapi.GXMVIEW.set_group_tpat` Set group TPAT
+:func:`geosoft.gxapi.GXMVIEW.set_group_itr` Set group `GXITR <geosoft.gxapi.GXITR>`
+
+:func:`geosoft.gxapi.GXMVIEW.set_group_tpat` Set group `GXTPAT <geosoft.gxapi.GXTPAT>`
 
 :func:`geosoft.gxapi.GXMVIEW.write_group_storage` Open generic existing storage associated with a group for reading.
 
-:func:`geosoft.gxapi.GXPG.write_bf_ex` Write the contents of a 2D or 3D pager to a BF.
+:func:`geosoft.gxapi.GXPG.write_bf_ex` Write the contents of a 2D or 3D pager to a `GXBF <geosoft.gxapi.GXBF>`.
 
 :func:`geosoft.gxapi.GXSYS.display_task_dialog_ui` Show a Windows TaskDialog UI (see https://msdn.microsoft.com/en-us/library/windows/desktop/bb760441(v=vs.85).aspx).
 
-:func:`geosoft.gxapi.GXVECTOR3D.get_itr` Get the ITR of the VECTOR3D
+:func:`geosoft.gxapi.GXVECTOR3D.get_itr` Get the `GXITR <geosoft.gxapi.GXITR>` of the `GXVECTOR3D <geosoft.gxapi.GXVECTOR3D>`
 
-:func:`geosoft.gxapi.GXVECTOR3D.set_itr` Set the ITR of the VECTOR3D
+:func:`geosoft.gxapi.GXVECTOR3D.set_itr` Set the `GXITR <geosoft.gxapi.GXITR>` of the `GXVECTOR3D <geosoft.gxapi.GXVECTOR3D>`
 
 :func:`geosoft.gxapi.GXVOX.get_multi_voxset_guid` Get the UUID
 
-:func:`geosoft.gxapi.GXVOXD.get_thematic_info` Get a copy of a thematic voxel's TPAT object and a VV containing the current display selections.
+:func:`geosoft.gxapi.GXVOXD.get_thematic_info` Get a copy of a thematic voxel's `GXTPAT <geosoft.gxapi.GXTPAT>` object and a `GXVV <geosoft.gxapi.GXVV>` containing the current display selections.
 
 :func:`geosoft.gxapi.GXVOXD.is_thematic` Is this a thematic voxel?
 
-:func:`geosoft.gxapi.GXVOXD.set_thematic_selection` Get a copy of a thematic voxel's TPAT object and a VV containing the current display selections.
+:func:`geosoft.gxapi.GXVOXD.set_thematic_selection` Get a copy of a thematic voxel's `GXTPAT <geosoft.gxapi.GXTPAT>` object and a `GXVV <geosoft.gxapi.GXVV>` containing the current display selections.
 
 
   
-Version 9.2.0
+Version 9.2
 -----------------
 
 
 New Functions
 ^^^^^^^^^^^^^
 
-:func:`geosoft.gxapi.GX3DV.from_map` Get an 3DV from MAP handle (e.g. from \ :func:`geosoft.gxapi.GXEMAP.lock`\  on open geosoft_3dv document in project)
+:func:`geosoft.gxapi.GX3DV.from_map` Get an `GX3DV <geosoft.gxapi.GX3DV>` from `GXMAP <geosoft.gxapi.GXMAP>` handle (e.g. from `GXEMAP.lock <geosoft.gxapi.GXEMAP.lock>` on open geosoft_3dv document in project)
 
 :func:`geosoft.gxapi.GXEDB.get_cur_point` Returns the coordinates of the currently selected point in the database (first value if range selected)
 
 :func:`geosoft.gxapi.GXEMAP.packed_files` The number of packed files in the map.
 
-:func:`geosoft.gxapi.GXIP.export_data_to_ubc_3d` Export of IP data to UBC 3D IP format.
+:func:`geosoft.gxapi.GXIP.export_data_to_ubc_3d` Export of `GXIP <geosoft.gxapi.GXIP>` data to UBC 3D `GXIP <geosoft.gxapi.GXIP>` format.
 
 :func:`geosoft.gxapi.GXIP.get_electrode_locations_and_mask_values2` Get unique electrodes, along with current mask info.
 
@@ -730,17 +732,17 @@ New Functions
 
 :func:`geosoft.gxapi.GXIP.set_electrode_mask_values_single_qc_channel` Set unique electrodes, along with current mask info.
 
-:func:`geosoft.gxapi.GXIPJ.set_vcs` Set the Verical Coordinate System in the IPJ name string
+:func:`geosoft.gxapi.GXIPJ.set_vcs` Set the Vertical Coordinate System in the `GXIPJ <geosoft.gxapi.GXIPJ>` name string
 
-:func:`geosoft.gxapi.GXMAP.create_linked_3d_view` Create a 3D View in this map that is linked to a MVIEW in a 3D View file.
+:func:`geosoft.gxapi.GXMAP.create_linked_3d_view` Create a 3D View in this map that is linked to a `GXMVIEW <geosoft.gxapi.GXMVIEW>` in a 3D View file.
 
-:func:`geosoft.gxapi.GXMVIEW.get_3d_point_of_view` Get 3D point of view (values are will be rDUMMY if view for 2D views)
+:func:`geosoft.gxapi.GXMVIEW.get_3d_point_of_view` Get 3D point of view (values are will be `rDUMMY <geosoft.gxapi.rDUMMY>` if view for 2D views)
 
 :func:`geosoft.gxapi.GXMVIEW.get_aggregate` Get an existing Aggregate object from the view.
 
 :func:`geosoft.gxapi.GXMVIEW.get_col_symbol` Get an existing colored symbol object from the view.
 
-:func:`geosoft.gxapi.GXMVIEW.get_datalinkd` Get an existing Data Link Display (DATALINKD) object from the view.
+:func:`geosoft.gxapi.GXMVIEW.get_datalinkd` Get an existing Data Link Display (`GXDATALINKD <geosoft.gxapi.GXDATALINKD>`) object from the view.
 
 :func:`geosoft.gxapi.GXMVIEW.set_3d_point_of_view` Set 3D point of view (no effect on 2D views)
 
@@ -748,7 +750,7 @@ New Functions
 
 :func:`geosoft.gxapi.GXPROJ.current_document` Get the name and type of the loaded document with focus.
 
-:func:`geosoft.gxapi.GXPROJ.list_loaded_documents` Fills a VV with loaded documents of a certain type.
+:func:`geosoft.gxapi.GXPROJ.list_loaded_documents` Fills a `GXVV <geosoft.gxapi.GXVV>` with loaded documents of a certain type.
 
 :func:`geosoft.gxapi.GXSYS.log_script_run` This method logs that a script was run
 
@@ -768,27 +770,11 @@ New Classes
 
 :exc:`geosoft.gxapi.GXError` A subclass of `RuntimeError <https://docs.python.org/3/library/exceptions.html#RuntimeError>`_ which is raised whenever
 
-:exc:`geosoft.gxapi.GXExit` A subclass of `SystemExit <https://docs.python.org/3/library/exceptions.html#SystemExit>`_ which is raised when a script
+:exc:`geosoft.gxapi.GXExit` A subclass of `SystemExit <https://docs.python.org/3/library/exceptions.html#SystemExit>`_ which is raised when a
 
 
 New Functions
 ^^^^^^^^^^^^^
-
-:func:`geosoft.gxapi.GXContext.clear_ui_console` Clears the console owned by UI applications. Has no effect on consoles owning standalone scripts.
-
-:func:`geosoft.gxapi.GXContext.create` Creates the GX execution context (will return the current one if it exists).
-
-:func:`geosoft.gxapi.GXContext.current` Get the current thread's GX execution context (throws if not created yet).
-
-:func:`geosoft.gxapi.GXContext.enable_application_windows` Used by to prevent user interaction while showing modal windows with APIs where it might be hard to use proper window parenting
-
-:func:`geosoft.gxapi.GXContext.get_active_wnd_id` Get currently active window (main window, floating document or other popup, 0 if not available).
-
-:func:`geosoft.gxapi.GXContext.get_main_wnd_id` Get the main window handle (0 if not available).
-
-:func:`geosoft.gxapi.GXContext.has_ui_console` Checks if a console owned by UI applications is available
-
-:func:`geosoft.gxapi.GXContext.show_ui_console` Shows or hides console owned by UI applications. Showing the console Will also bring the window to the front if behind
 
 :func:`geosoft.gxapi.GXDB.valid_symb` This method checks to see if the specified symbol is a valid symbol in the database.
 
@@ -796,7 +782,7 @@ New Functions
 
 :func:`geosoft.gxapi.GXDU.get_xyz_num_fields` Get the number of fields in the XYZ file.
 
-:func:`geosoft.gxapi.GXDU.import_bin4` Same as \ :func:`geosoft.gxapi.GXDU.import_bin2`\  but with an import mode
+:func:`geosoft.gxapi.GXDU.import_bin4` Same as `import_bin2 <geosoft.gxapi.GXDU.import_bin2>` but with an import mode
 
 :func:`geosoft.gxapi.GXDU.table_selected_lines_fid` Place a Line/Fid information into a Channel for the selected lines in the database.
 
@@ -804,9 +790,9 @@ New Functions
 
 :func:`geosoft.gxapi.GXEMAP.get_point_3d` Returns the coordinates of a user selected point.
 
-:func:`geosoft.gxapi.GXEMAP.get_view_ipj` Get a view's IPJ.
+:func:`geosoft.gxapi.GXEMAP.get_view_ipj` Get a view's `GXIPJ <geosoft.gxapi.GXIPJ>`.
 
-:func:`geosoft.gxapi.GXIPGUI.launch_offset_ipqc_tool` Launch the Offset IP QC tool on a database.
+:func:`geosoft.gxapi.GXIPGUI.launch_offset_ipqc_tool` Launch the Offset `GXIP <geosoft.gxapi.GXIP>` QC tool on a database.
 
 :func:`geosoft.gxapi.GXMVIEW.get_3d_group_flags` Get a 3D geometry group's 3D rendering flags.
 
@@ -816,16 +802,16 @@ New Functions
 
 
   
-Version 9.0.0
+Version 9.0
 -----------------
 
 
 New Functions
 ^^^^^^^^^^^^^
 
-:func:`geosoft.gxapi.GXDATALINKD.create_arc_lyr_ex` Create an DATALINKD object from a ArcGIS LYR file
+:func:`geosoft.gxapi.GXDATALINKD.create_arc_lyr_ex` Create an `GXDATALINKD <geosoft.gxapi.GXDATALINKD>` object from a ArcGIS LYR file
 
-:func:`geosoft.gxapi.GXDATALINKD.create_arc_lyr_from_tmp_ex` Create an DATALINKD object from a temporary ArcGIS LYR file
+:func:`geosoft.gxapi.GXDATALINKD.create_arc_lyr_from_tmp_ex` Create an `GXDATALINKD <geosoft.gxapi.GXDATALINKD>` object from a temporary ArcGIS LYR file
 
 :func:`geosoft.gxapi.GXDB.get_line_selection` Get the selection status for a line.
 
@@ -833,29 +819,29 @@ New Functions
 
 :func:`geosoft.gxapi.GXDBWRITE.add_block` Add the current block of data.
 
-:func:`geosoft.gxapi.GXDBWRITE.add_channel` Add a data channel to the DBWRITE object.
+:func:`geosoft.gxapi.GXDBWRITE.add_channel` Add a data channel to the `GXDBWRITE <geosoft.gxapi.GXDBWRITE>` object.
 
 :func:`geosoft.gxapi.GXDBWRITE.commit` Commit remaining data to the database.
 
-:func:`geosoft.gxapi.GXDBWRITE.create_xy` Create a DBWRITE object for a XY-located data. Add channels using the
+:func:`geosoft.gxapi.GXDBWRITE.create_xy` Create a `GXDBWRITE <geosoft.gxapi.GXDBWRITE>` object for a XY-located data. Add channels using the
 
-:func:`geosoft.gxapi.GXDBWRITE.create_xyz` Create a DBWRITE object for a XYZ-located data.
+:func:`geosoft.gxapi.GXDBWRITE.create_xyz` Create a `GXDBWRITE <geosoft.gxapi.GXDBWRITE>` object for a XYZ-located data.
 
-:func:`geosoft.gxapi.GXDBWRITE.create` Create a DBWRITE object
+:func:`geosoft.gxapi.GXDBWRITE.create` Create a `GXDBWRITE <geosoft.gxapi.GXDBWRITE>` object
 
 :func:`geosoft.gxapi.GXDBWRITE.get_chan_array_size` Get the number of columns of data in a channel.
 
-:func:`geosoft.gxapi.GXDBWRITE.get_db` Get the output DB handle from the DBWRITE object.
+:func:`geosoft.gxapi.GXDBWRITE.get_db` Get the output `GXDB <geosoft.gxapi.GXDB>` handle from the `GXDBWRITE <geosoft.gxapi.GXDBWRITE>` object.
 
-:func:`geosoft.gxapi.GXDBWRITE.get_v_vx` Get the X channel VV handle.
+:func:`geosoft.gxapi.GXDBWRITE.get_v_vx` Get the X channel `GXVV <geosoft.gxapi.GXVV>` handle.
 
-:func:`geosoft.gxapi.GXDBWRITE.get_v_vy` Get the Y channel VV handle.
+:func:`geosoft.gxapi.GXDBWRITE.get_v_vy` Get the Y channel `GXVV <geosoft.gxapi.GXVV>` handle.
 
-:func:`geosoft.gxapi.GXDBWRITE.get_v_vz` Get the Z channel VV handle.
+:func:`geosoft.gxapi.GXDBWRITE.get_v_vz` Get the Z channel `GXVV <geosoft.gxapi.GXVV>` handle.
 
-:func:`geosoft.gxapi.GXDBWRITE.get_va` Get the VA handle for an array channel.
+:func:`geosoft.gxapi.GXDBWRITE.get_va` Get the `GXVA <geosoft.gxapi.GXVA>` handle for an array channel.
 
-:func:`geosoft.gxapi.GXDBWRITE.get_vv` Get the VV handle for a channel.
+:func:`geosoft.gxapi.GXDBWRITE.get_vv` Get the `GXVV <geosoft.gxapi.GXVV>` handle for a channel.
 
 :func:`geosoft.gxapi.GXDBWRITE.test_func` Temporary test function.
 
@@ -897,7 +883,7 @@ New Functions
 
 :func:`geosoft.gxapi.GXEUL3.ex_euler_derive` Calculates gradients
 
-:func:`geosoft.gxapi.GXGUI.coord_sys_wizard_grid` Launch the coordinate system definition/display GUI.
+:func:`geosoft.gxapi.GXGUI.coord_sys_wizard_grid` Launch the coordinate system definition/display `GXGUI <geosoft.gxapi.GXGUI>`.
 
 :func:`geosoft.gxapi.GXGUI.get_client_window_area` Get the location of the Oasis montaj client window.
 
@@ -915,7 +901,7 @@ New Functions
 
 :func:`geosoft.gxapi.GXGUI.set_window_state` Changes the state of the Oasis montaj window
 
-:func:`geosoft.gxapi.GXIMU.get_z_peaks_vv` Same as \ :func:`geosoft.gxapi.GXIMU.get_zvv`\ , but find the closest peak value to the input locations, and return
+:func:`geosoft.gxapi.GXIMU.get_z_peaks_vv` Same as `get_zvv <geosoft.gxapi.GXIMU.get_zvv>`, but find the closest peak value to the input locations, and return
 
 :func:`geosoft.gxapi.GXIP.get_electrode_locations_and_mask_values` Get unique electrodes, along with current mask info.
 
@@ -925,15 +911,15 @@ New Functions
 
 :func:`geosoft.gxapi.GXIPJ.set_3d_view_from_axes` Set 3D orientation parameters
 
-:func:`geosoft.gxapi.GXLPT.get_standard_lst` Copies the six standard line types into a LST object.
+:func:`geosoft.gxapi.GXLPT.get_standard_lst` Copies the six standard line types into a `GXLST <geosoft.gxapi.GXLST>` object.
 
 :func:`geosoft.gxapi.GXMVIEW.is_projection_empty` Returns 1 if the view projection and view user projection are both empty (undefined).
 
-:func:`geosoft.gxapi.GXMXD.convert_to_map` Create Geosoft map from ArcGIS MXD
+:func:`geosoft.gxapi.GXMXD.convert_to_map` Create Geosoft map from ArcGIS `GXMXD <geosoft.gxapi.GXMXD>`
 
 :func:`geosoft.gxapi.GXSYS.check_arc_license_ex` Check to see if a ESRI ArcEngine or ArcView license is available, returns type and version of available engine.
 
-:func:`geosoft.gxapi.GXSYS.decrypt_string` Decrypts a string that has been previously encrypted by \ :func:`geosoft.gxapi.GXSYS.encrypt_string`\ ().
+:func:`geosoft.gxapi.GXSYS.decrypt_string` Decrypts a string that has been previously encrypted by `encrypt_string <geosoft.gxapi.GXSYS.encrypt_string>`.
 
 :func:`geosoft.gxapi.GXSYS.encrypt_string` Encrypts a string for secure storage in configuration files
 
@@ -941,7 +927,7 @@ New Functions
 
 :func:`geosoft.gxapi.GXSYS.get_loaded_menus` Get the loaded menus.
 
-:func:`geosoft.gxapi.GXSYS.is_encrypted_string` Checks whether the specified string was encrypted by \ :func:`geosoft.gxapi.GXSYS.encrypt_string`\ ().
+:func:`geosoft.gxapi.GXSYS.is_encrypted_string` Checks whether the specified string was encrypted by `encrypt_string <geosoft.gxapi.GXSYS.encrypt_string>`.
 
 :func:`geosoft.gxapi.GXSYS.set_loaded_menus` Load a list of menus
 
@@ -951,20 +937,20 @@ New Functions
 
 
   
-Version 8.5.0
+Version 8.5
 -----------------
 
 
 New Functions
 ^^^^^^^^^^^^^
 
-:func:`geosoft.gxapi.GXDBREAD.add_channel` Add a data channel to the DBREAD object.
+:func:`geosoft.gxapi.GXDBREAD.add_channel` Add a data channel to the `GXDBREAD <geosoft.gxapi.GXDBREAD>` object.
 
-:func:`geosoft.gxapi.GXDBREAD.create_xy` Create a DBREAD object for a XY-located data. Add channels using the
+:func:`geosoft.gxapi.GXDBREAD.create_xy` Create a `GXDBREAD <geosoft.gxapi.GXDBREAD>` object for a XY-located data. Add channels using the
 
-:func:`geosoft.gxapi.GXDBREAD.create_xyz` Create a DBREAD object for a XYZ-located data.
+:func:`geosoft.gxapi.GXDBREAD.create_xyz` Create a `GXDBREAD <geosoft.gxapi.GXDBREAD>` object for a XYZ-located data.
 
-:func:`geosoft.gxapi.GXDBREAD.create` Create a DBREAD object
+:func:`geosoft.gxapi.GXDBREAD.create` Create a `GXDBREAD <geosoft.gxapi.GXDBREAD>` object
 
 :func:`geosoft.gxapi.GXDBREAD.get_chan_array_size` Get the number of columns of data in a channel.
 
@@ -972,15 +958,15 @@ New Functions
 
 :func:`geosoft.gxapi.GXDBREAD.get_number_of_blocks_to_process` Get the number of blocks to be served up.
 
-:func:`geosoft.gxapi.GXDBREAD.get_v_vx` Get the X channel VV handle.
+:func:`geosoft.gxapi.GXDBREAD.get_v_vx` Get the X channel `GXVV <geosoft.gxapi.GXVV>` handle.
 
-:func:`geosoft.gxapi.GXDBREAD.get_v_vy` Get the Y channel VV handle.
+:func:`geosoft.gxapi.GXDBREAD.get_v_vy` Get the Y channel `GXVV <geosoft.gxapi.GXVV>` handle.
 
-:func:`geosoft.gxapi.GXDBREAD.get_v_vz` Get the Z channel VV handle.
+:func:`geosoft.gxapi.GXDBREAD.get_v_vz` Get the Z channel `GXVV <geosoft.gxapi.GXVV>` handle.
 
-:func:`geosoft.gxapi.GXDBREAD.get_va` Get the VA handle for an array channel.
+:func:`geosoft.gxapi.GXDBREAD.get_va` Get the `GXVA <geosoft.gxapi.GXVA>` handle for an array channel.
 
-:func:`geosoft.gxapi.GXDBREAD.get_vv` Get the VV handle for a channel.
+:func:`geosoft.gxapi.GXDBREAD.get_vv` Get the `GXVV <geosoft.gxapi.GXVV>` handle for a channel.
 
 :func:`geosoft.gxapi.GXDU.import_io_gas` Import data columns from an ioGAS data file.
 
@@ -1026,10 +1012,10 @@ New Functions
 
 :func:`geosoft.gxapi.GXVOX.export_seg_y` Export a voxel to a depth SEG-Y file
 
-:func:`geosoft.gxapi.GXVOX.generate_vector_voxel_from_db` Generate a vector voxel VOX from a Database
+:func:`geosoft.gxapi.GXVOX.generate_vector_voxel_from_db` Generate a vector voxel `GXVOX <geosoft.gxapi.GXVOX>` from a Database
 
-:func:`geosoft.gxapi.GXVOX.init_generate_by_subset_pg` Initialize the generate of a VOX from a series of 3D subset pagers
+:func:`geosoft.gxapi.GXVOX.init_generate_by_subset_pg` Initialize the generate of a `GXVOX <geosoft.gxapi.GXVOX>` from a series of 3D subset pagers
 
-:func:`geosoft.gxapi.GXVOX.tin_grid_db` \ :func:`geosoft.gxapi.GXVOX.tin_grid_db`\    TIN-Gridding, DB version, 3D.
+:func:`geosoft.gxapi.GXVOX.tin_grid_db` `tin_grid_db <geosoft.gxapi.GXVOX.tin_grid_db>`   `GXTIN <geosoft.gxapi.GXTIN>`-Gridding, `GXDB <geosoft.gxapi.GXDB>` version, 3D.
 
 

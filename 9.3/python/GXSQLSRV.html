@@ -1,17 +1,14 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>GXSQLSRV class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
-    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -37,7 +34,7 @@
 </script>
 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -106,32 +103,29 @@
 <span id="gxsqlsrv"></span><h1>GXSQLSRV class<a class="headerlink" href="#gxsqlsrv-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXSQLSRV">
-<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXSQLSRV</code><a class="headerlink" href="#geosoft.gxapi.GXSQLSRV" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SQL</span> <span class="n">Server</span> <span class="ow">and</span> <span class="n">MSDE</span> <span class="n">utility</span> <span class="n">functions</span>
-</pre></div>
-</div>
-<dl class="staticmethod">
+<em class="property">class </em><code class="descname">GXSQLSRV</code><span class="sig-paren">(</span><em>wrapper=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSQLSRV" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXSQLSRV class.</p>
+<p>SQL Server and MSDE utility functions</p>
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXSQLSRV.attach_mdf">
-<em class="property">static </em><code class="descname">attach_mdf</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em>, <em>(str)arg5</em>, <em>(str)arg6</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSQLSRV.attach_mdf" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Attaches</span> <span class="n">an</span> <span class="n">MDF</span> <span class="n">SQL</span> <span class="n">server</span> <span class="n">file</span> <span class="n">to</span> <span class="n">a</span> <span class="n">server</span><span class="o">.</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">attach_mdf</code><span class="sig-paren">(</span><em>server</em>, <em>user</em>, <em>password</em>, <em>db</em>, <em>mdf_file_name</em>, <em>ldf_file_name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSQLSRV.attach_mdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attaches an MDF SQL server file to a server.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; SQL server to use</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; User name (if blank assume NT Integrated Security)</li>
-<li><strong>arg3</strong> (<em>str</em>) &#8211; Password</li>
-<li><strong>arg4</strong> (<em>str</em>) &#8211; DB name</li>
-<li><strong>arg5</strong> (<em>str</em>) &#8211; MDF name</li>
-<li><strong>arg6</strong> (<em>str</em>) &#8211; LDF name (if blank, tries single db attach)</li>
+<li><strong>server</strong> (<em>str</em>) – SQL server to use</li>
+<li><strong>user</strong> (<em>str</em>) – User name (if blank assume NT Integrated Security)</li>
+<li><strong>password</strong> (<em>str</em>) – Password</li>
+<li><strong>db</strong> (<em>str</em>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> name</li>
+<li><strong>mdf_file_name</strong> (<em>str</em>) – MDF name</li>
+<li><strong>ldf_file_name</strong> (<em>str</em>) – LDF name (if blank, tries single db attach)</li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">0 - OK
-1 - DB Operation Canceled
+1 - <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> Operation Canceled
 Terminates on Error</p>
 </td>
 </tr>
@@ -144,32 +138,28 @@ Terminates on Error</p>
 <p><span class="versionmodified">New in version 5.1.8.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">file</span><span class="s1">&#39;s path need to be visible as local files on the server.</span>
-<span class="n">Network</span> <span class="n">drives</span> <span class="ow">and</span> <span class="n">substitutes</span> <span class="n">may</span> <span class="ow">not</span> <span class="n">work</span><span class="o">.</span>
-</pre></div>
-</div>
+<p>The file’s path need to be visible as local files on the server.
+Network drives and substitutes may not work.</p>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXSQLSRV.detach_db">
-<em class="property">static </em><code class="descname">detach_db</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSQLSRV.detach_db" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Detaches</span> <span class="n">a</span> <span class="n">SQL</span> <span class="n">Server</span> <span class="n">database</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">server</span><span class="o">.</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">detach_db</code><span class="sig-paren">(</span><em>server</em>, <em>user</em>, <em>password</em>, <em>db</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSQLSRV.detach_db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Detaches a SQL Server database from a server.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; SQL server to use</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; User name (if blank assume NT Integrated Security)</li>
-<li><strong>arg3</strong> (<em>str</em>) &#8211; Password</li>
-<li><strong>arg4</strong> (<em>str</em>) &#8211; DB name</li>
+<li><strong>server</strong> (<em>str</em>) – SQL server to use</li>
+<li><strong>user</strong> (<em>str</em>) – User name (if blank assume NT Integrated Security)</li>
+<li><strong>password</strong> (<em>str</em>) – Password</li>
+<li><strong>db</strong> (<em>str</em>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> name</li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">0 - OK
-1 - DB Operation Canceled</p>
+1 - <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> Operation Canceled</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
@@ -182,22 +172,19 @@ Terminates on Error</p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXSQLSRV.get_database_languages_lst">
-<em class="property">static </em><code class="descname">get_database_languages_lst</code><span class="sig-paren">(</span><em>(GXLST)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em>, <em>(int)arg5</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSQLSRV.get_database_languages_lst" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">the</span> <span class="n">languages</span> <span class="n">into</span> <span class="n">LST</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">get_database_languages_lst</code><span class="sig-paren">(</span><em>lst</em>, <em>server</em>, <em>user</em>, <em>password</em>, <em>win_auth</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSQLSRV.get_database_languages_lst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of the languages into <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; LST</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; SQL server to use</li>
-<li><strong>arg3</strong> (<em>str</em>) &#8211; User name</li>
-<li><strong>arg4</strong> (<em>str</em>) &#8211; Password</li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; 0 - SQL authentication, 1 - NT integrated securty</li>
+<li><strong>server</strong> (<em>str</em>) – SQL server to use</li>
+<li><strong>user</strong> (<em>str</em>) – User name</li>
+<li><strong>password</strong> (<em>str</em>) – Password</li>
+<li><strong>win_auth</strong> (<em>int</em>) – 0 - SQL authentication, 1 - NT integrated securty</li>
 </ul>
 </td>
 </tr>
@@ -214,22 +201,19 @@ Terminates on Error</p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXSQLSRV.get_databases_lst">
-<em class="property">static </em><code class="descname">get_databases_lst</code><span class="sig-paren">(</span><em>(GXLST)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(str)arg4</em>, <em>(int)arg5</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSQLSRV.get_databases_lst" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">the</span> <span class="n">database</span> <span class="n">into</span> <span class="n">LST</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">get_databases_lst</code><span class="sig-paren">(</span><em>lst</em>, <em>server</em>, <em>user</em>, <em>password</em>, <em>win_auth</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSQLSRV.get_databases_lst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of the database into <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; LST</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; SQL server to use</li>
-<li><strong>arg3</strong> (<em>str</em>) &#8211; User name</li>
-<li><strong>arg4</strong> (<em>str</em>) &#8211; Password</li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; 0 - SQL authentication, 1 - NT integrated securty</li>
+<li><strong>server</strong> (<em>str</em>) – SQL server to use</li>
+<li><strong>user</strong> (<em>str</em>) – User name</li>
+<li><strong>password</strong> (<em>str</em>) – Password</li>
+<li><strong>win_auth</strong> (<em>int</em>) – 0 - SQL authentication, 1 - NT integrated securty</li>
 </ul>
 </td>
 </tr>
@@ -246,29 +230,21 @@ Terminates on Error</p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXSQLSRV.get_login_gui">
-<em class="property">static </em><code class="descname">get_login_gui</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str_ref)arg2</em>, <em>(str_ref)arg3</em>, <em>(int)arg4</em>, <em>(int_ref)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSQLSRV.get_login_gui" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span><span class="o">/</span><span class="n">Test</span> <span class="n">login</span> <span class="n">information</span> <span class="n">to</span> <span class="n">SQL</span> <span class="n">Server</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">get_login_gui</code><span class="sig-paren">(</span><em>server</em>, <em>user</em>, <em>password</em>, <em>mode</em>, <em>win_auth</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSQLSRV.get_login_gui" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get/Test login information to SQL Server</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; SQL server to use</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; User name (default &amp; returned)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.str_ref</span></code></a>) &#8211; Password (default &amp; returned)</li>
-<li><strong>arg4</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#mfcsql-driver"><span class="std std-ref">MFCSQL_DRIVER constants</span></a></li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Windows Authentication (default &amp; returned)</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>server</strong> (<em>str</em>) – SQL server to use</li>
+<li><strong>user</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – User name (default &amp; returned)</li>
+<li><strong>password</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Password (default &amp; returned)</li>
+<li><strong>mode</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">MFCSQL_DRIVER</span></code></li>
+<li><strong>win_auth</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Windows Authentication (default &amp; returned)</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
@@ -278,68 +254,82 @@ Terminates on Error</p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXSQLSRV.get_servers_lst">
-<em class="property">static </em><code class="descname">get_servers_lst</code><span class="sig-paren">(</span><em>(GXLST)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSQLSRV.get_servers_lst" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">the</span> <span class="n">visible</span> <span class="n">servers</span> <span class="n">into</span> <span class="n">LST</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">get_servers_lst</code><span class="sig-paren">(</span><em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSQLSRV.get_servers_lst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of the visible servers into <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; LST</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Number of servers</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Number of servers</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.1.8.</span></p>
 </div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXSQLSRV.is_null">
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSQLSRV.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the instance of <code class="xref py py-obj docutils literal"><span class="pre">GXSQLSRV</span></code> is null (undefined)`</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXSQLSRV</span></code>, False otherwise.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSQLSRV.null">
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSQLSRV.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXSQLSRV</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <code class="xref py py-obj docutils literal"><span class="pre">GXSQLSRV</span></code></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
 
 <div class="section" id="mfcsql-driver-constants">
 <span id="mfcsql-driver"></span><h2>MFCSQL_DRIVER constants<a class="headerlink" href="#mfcsql-driver-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SQL</span> <span class="n">Server</span> <span class="n">Driver</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<p>SQL Server Driver</p>
+<dl class="data">
 <dt id="geosoft.gxapi.MFCSQL_DRIVER_NOPROMPT">
-<code class="descclassname">gxapi.</code><code class="descname">MFCSQL_DRIVER_NOPROMPT</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.MFCSQL_DRIVER_NOPROMPT" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">MFCSQL_DRIVER_NOPROMPT</code><a class="headerlink" href="#geosoft.gxapi.MFCSQL_DRIVER_NOPROMPT" title="Permalink to this definition">¶</a></dt>
+<dd><p>No dialog box, Error if authentication parameters are wrong</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">No</span> <span class="n">dialog</span> <span class="n">box</span><span class="p">,</span> <span class="n">Error</span> <span class="k">if</span> <span class="n">authentication</span> <span class="n">parameters</span> <span class="n">are</span> <span class="n">wrong</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<dl class="data">
 <dt id="geosoft.gxapi.MFCSQL_DRIVER_COMPLETE">
-<code class="descclassname">gxapi.</code><code class="descname">MFCSQL_DRIVER_COMPLETE</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.MFCSQL_DRIVER_COMPLETE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">MFCSQL_DRIVER_COMPLETE</code><a class="headerlink" href="#geosoft.gxapi.MFCSQL_DRIVER_COMPLETE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only shows dialog box if authentication parameters are wrong</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Only</span> <span class="n">shows</span> <span class="n">dialog</span> <span class="n">box</span> <span class="k">if</span> <span class="n">authentication</span> <span class="n">parameters</span> <span class="n">are</span> <span class="n">wrong</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<dl class="data">
 <dt id="geosoft.gxapi.MFCSQL_DRIVER_PROMPT">
-<code class="descclassname">gxapi.</code><code class="descname">MFCSQL_DRIVER_PROMPT</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxapi.MFCSQL_DRIVER_PROMPT" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">MFCSQL_DRIVER_PROMPT</code><a class="headerlink" href="#geosoft.gxapi.MFCSQL_DRIVER_PROMPT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Always show dialog box, with option to change parameter</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Always</span> <span class="n">show</span> <span class="n">dialog</span> <span class="n">box</span><span class="p">,</span> <span class="k">with</span> <span class="n">option</span> <span class="n">to</span> <span class="n">change</span> <span class="n">parameter</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<dl class="data">
 <dt id="geosoft.gxapi.MFCSQL_DRIVER_COMPLETE_REQUIRED">
-<code class="descclassname">gxapi.</code><code class="descname">MFCSQL_DRIVER_COMPLETE_REQUIRED</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxapi.MFCSQL_DRIVER_COMPLETE_REQUIRED" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">MFCSQL_DRIVER_COMPLETE_REQUIRED</code><a class="headerlink" href="#geosoft.gxapi.MFCSQL_DRIVER_COMPLETE_REQUIRED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as <a class="reference internal" href="#geosoft.gxapi.MFCSQL_DRIVER_COMPLETE" title="geosoft.gxapi.MFCSQL_DRIVER_COMPLETE"><code class="xref py py-obj docutils literal"><span class="pre">MFCSQL_DRIVER_COMPLETE</span></code></a> except only missing parameters are editable</p>
+</dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Same</span> <span class="k">as</span> <span class="n">MFCSQL_DRIVER_COMPLETE</span> <span class="k">except</span> <span class="n">only</span> <span class="n">missing</span> <span class="n">parameters</span> <span class="n">are</span> <span class="n">editable</span>
-</pre></div>
-</div>
 </div>
 </div>
 
@@ -368,7 +358,7 @@ Terminates on Error</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

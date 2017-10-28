@@ -8,19 +8,18 @@ GXGU class
 .. autoclass:: geosoft.gxapi.GXGU
    :members:
 
+
 .. _EM_ERR:
 
 EM_ERR constants
 -----------------------------------------------------------------------
 
-::
+Error Scaling
 
-   Error Scaling 
-
-.. autoattribute:: geosoft.gxapi.EM_ERR_UNSCALED
-
-
-.. autoattribute:: geosoft.gxapi.EM_ERR_LOGSCALING
+.. autodata:: geosoft.gxapi.EM_ERR_UNSCALED
+    :annotation:
+.. autodata:: geosoft.gxapi.EM_ERR_LOGSCALING
+    :annotation:
 
 
 .. _EM_INV:
@@ -28,17 +27,14 @@ EM_ERR constants
 EM_INV constants
 -----------------------------------------------------------------------
 
-::
+Type of Inversion
 
-   Type of Inversion 
-
-.. autoattribute:: geosoft.gxapi.EM_INV_INPHASE
-
-
-.. autoattribute:: geosoft.gxapi.EM_INV_QUADRATURE
-
-
-.. autoattribute:: geosoft.gxapi.EM_INV_BOTH
+.. autodata:: geosoft.gxapi.EM_INV_INPHASE
+    :annotation:
+.. autodata:: geosoft.gxapi.EM_INV_QUADRATURE
+    :annotation:
+.. autodata:: geosoft.gxapi.EM_INV_BOTH
+    :annotation:
 
 
 .. _EMPLATE_DOMAIN:
@@ -46,14 +42,12 @@ EM_INV constants
 EMPLATE_DOMAIN constants
 -----------------------------------------------------------------------
 
-::
+Type of Domain
 
-   Type of Domain 
-
-.. autoattribute:: geosoft.gxapi.EMPLATE_FREQUENCY
-
-
-.. autoattribute:: geosoft.gxapi.EMPLATE_TIME
+.. autodata:: geosoft.gxapi.EMPLATE_FREQUENCY
+    :annotation:
+.. autodata:: geosoft.gxapi.EMPLATE_TIME
+    :annotation:
 
 
 .. _EMPLATE_TX:
@@ -61,17 +55,14 @@ EMPLATE_DOMAIN constants
 EMPLATE_TX constants
 -----------------------------------------------------------------------
 
-::
+Orientation
 
-   Orientation 
-
-.. autoattribute:: geosoft.gxapi.EMPLATE_TX_X
-
-
-.. autoattribute:: geosoft.gxapi.EMPLATE_TX_Y
-
-
-.. autoattribute:: geosoft.gxapi.EMPLATE_TX_Z
+.. autodata:: geosoft.gxapi.EMPLATE_TX_X
+    :annotation:
+.. autodata:: geosoft.gxapi.EMPLATE_TX_Y
+    :annotation:
+.. autodata:: geosoft.gxapi.EMPLATE_TX_Z
+    :annotation:
 
 
 .. _GU_DAARC500_DATATYPE:
@@ -79,29 +70,22 @@ EMPLATE_TX constants
 GU_DAARC500_DATATYPE constants
 -----------------------------------------------------------------------
 
-::
+Supported serial data types for import
 
-   Supported serial data types for import 
-
-.. autoattribute:: geosoft.gxapi.GU_DAARC500_UNKNOWN
-
-
-.. autoattribute:: geosoft.gxapi.GU_DAARC500_GENERIC_ASCII
-
-
-.. autoattribute:: geosoft.gxapi.GU_DAARC500_GPS
-
-
-.. autoattribute:: geosoft.gxapi.GU_DAARC500_GR820_256D
-
-
-.. autoattribute:: geosoft.gxapi.GU_DAARC500_GR820_256DU
-
-
-.. autoattribute:: geosoft.gxapi.GU_DAARC500_GR820_512DU
-
-
-.. autoattribute:: geosoft.gxapi.GU_DAARC500_NAV
+.. autodata:: geosoft.gxapi.GU_DAARC500_UNKNOWN
+    :annotation:
+.. autodata:: geosoft.gxapi.GU_DAARC500_GENERIC_ASCII
+    :annotation:
+.. autodata:: geosoft.gxapi.GU_DAARC500_GPS
+    :annotation:
+.. autodata:: geosoft.gxapi.GU_DAARC500_GR820_256D
+    :annotation:
+.. autodata:: geosoft.gxapi.GU_DAARC500_GR820_256DU
+    :annotation:
+.. autodata:: geosoft.gxapi.GU_DAARC500_GR820_512DU
+    :annotation:
+.. autodata:: geosoft.gxapi.GU_DAARC500_NAV
+    :annotation:
 
 
 .. _PEAKEULER_XY:
@@ -109,14 +93,11 @@ GU_DAARC500_DATATYPE constants
 PEAKEULER_XY constants
 -----------------------------------------------------------------------
 
-::
+Fit Options
 
-   Fit Options 
-
-.. autoattribute:: geosoft.gxapi.PEAKEULER_XY_NOFIT
-
-
-.. autoattribute:: geosoft.gxapi.PEAKEULER_XY_FIT
-
+.. autodata:: geosoft.gxapi.PEAKEULER_XY_NOFIT
+    :annotation:
+.. autodata:: geosoft.gxapi.PEAKEULER_XY_FIT
+    :annotation:
 
 	

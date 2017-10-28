@@ -1,17 +1,14 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>GXMAPL class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
-    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -37,7 +34,7 @@
 </script>
 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -98,114 +95,100 @@
 <span id="gxmapl"></span><h1>GXMAPL class<a class="headerlink" href="#gxmapl-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXMAPL">
-<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXMAPL</code><a class="headerlink" href="#geosoft.gxapi.GXMAPL" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">MAPL</span> <span class="k">class</span> <span class="nc">is</span> <span class="n">the</span> <span class="n">interface</span> <span class="k">with</span> <span class="n">the</span> <span class="n">MAPPLOT</span> <span class="n">program</span><span class="p">,</span>
-<span class="n">which</span> <span class="n">reads</span> <span class="n">a</span> <span class="n">MAPPLOT</span> <span class="n">control</span> <span class="n">file</span> <span class="ow">and</span> <span class="n">plots</span> <span class="n">graphical</span>
-<span class="n">entities</span> <span class="n">to</span> <span class="n">a</span> <span class="nb">map</span><span class="o">.</span> <span class="n">The</span> <span class="n">MAPL</span> <span class="nb">object</span> <span class="ow">is</span> <span class="n">created</span> <span class="k">for</span> <span class="n">a</span> <span class="n">given</span>
-<span class="n">control</span> <span class="n">file</span><span class="p">,</span> <span class="n">then</span> <span class="n">passed</span> <span class="n">to</span> <span class="n">the</span> <span class="n">MAPPLOT</span> <span class="n">program</span><span class="p">,</span> <span class="n">along</span>
-<span class="k">with</span> <span class="n">the</span> <span class="n">target</span> <span class="n">MAP</span> <span class="nb">object</span> <span class="n">on</span> <span class="n">which</span> <span class="n">to</span> <span class="n">do</span> <span class="n">the</span> <span class="n">drawing</span>
-</pre></div>
-</div>
-<dl class="staticmethod">
+<em class="property">class </em><code class="descname">GXMAPL</code><span class="sig-paren">(</span><em>wrapper=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAPL" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXMAPL class.</p>
+<p>The <a class="reference internal" href="#geosoft.gxapi.GXMAPL" title="geosoft.gxapi.GXMAPL"><code class="xref py py-obj docutils literal"><span class="pre">GXMAPL</span></code></a> class is the interface with the MAPPLOT program,
+which reads a MAPPLOT control file and plots graphical
+entities to a map. The <a class="reference internal" href="#geosoft.gxapi.GXMAPL" title="geosoft.gxapi.GXMAPL"><code class="xref py py-obj docutils literal"><span class="pre">GXMAPL</span></code></a> object is created for a given
+control file, then passed to the MAPPLOT program, along
+with the target <a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXMAP</span></code></a> object on which to do the drawing</p>
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMAPL.create">
-<em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; GXMAPL:<a class="headerlink" href="#geosoft.gxapi.GXMAPL.create" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">MAPL</span><span class="o">.</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>name</em>, <em>ref_name</em>, <em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAPL.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a <a class="reference internal" href="#geosoft.gxapi.GXMAPL" title="geosoft.gxapi.GXMAPL"><code class="xref py py-obj docutils literal"><span class="pre">GXMAPL</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; MAPL file name</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; Map base reference name</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; Start line number in file (0 is first)</li>
+<li><strong>name</strong> (<em>str</em>) – <a class="reference internal" href="#geosoft.gxapi.GXMAPL" title="geosoft.gxapi.GXMAPL"><code class="xref py py-obj docutils literal"><span class="pre">GXMAPL</span></code></a> file name</li>
+<li><strong>ref_name</strong> (<em>str</em>) – Map base reference name</li>
+<li><strong>line</strong> (<em>int</em>) – Start line number in file (0 is first)</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">MAPL, aborts if creation fails</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXMAPL" title="geosoft.gxapi.GXMAPL"><code class="xref py py-obj docutils literal"><span class="pre">GXMAPL</span></code></a>, aborts if creation fails</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXMAPL" title="geosoft.gxapi.GXMAPL"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMAPL</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXMAPL" title="geosoft.gxapi.GXMAPL">GXMAPL</a></p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">default</span> <span class="nb">map</span> <span class="n">groups</span> <span class="n">will</span> <span class="n">use</span> <span class="n">the</span> <span class="n">reference</span> <span class="n">name</span> <span class="k">with</span>
-<span class="s2">&quot;_Data&quot;</span> <span class="ow">and</span> <span class="s2">&quot;_Base&quot;</span> <span class="n">added</span><span class="o">.</span>  <span class="n">If</span> <span class="n">no</span> <span class="n">reference</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">specified</span><span class="p">,</span>
-<span class="n">the</span> <span class="n">name</span> <span class="s2">&quot;MAPL&quot;</span> <span class="ow">is</span> <span class="n">used</span>
-</pre></div>
-</div>
+<p>The default map groups will use the reference name with
+“_Data” and “_Base” added.  If no reference name is specified,
+the name “<a class="reference internal" href="#geosoft.gxapi.GXMAPL" title="geosoft.gxapi.GXMAPL"><code class="xref py py-obj docutils literal"><span class="pre">GXMAPL</span></code></a>” is used</p>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMAPL.create_reg">
-<em class="property">static </em><code class="descname">create_reg</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em>, <em>(GXREG)arg4</em><span class="sig-paren">)</span> &rarr; GXMAPL:<a class="headerlink" href="#geosoft.gxapi.GXMAPL.create_reg" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">MAPL</span> <span class="k">with</span> <span class="n">REG</span><span class="o">.</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">create_reg</code><span class="sig-paren">(</span><em>name</em>, <em>ref_name</em>, <em>line</em>, <em>reg</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAPL.create_reg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a <a class="reference internal" href="#geosoft.gxapi.GXMAPL" title="geosoft.gxapi.GXMAPL"><code class="xref py py-obj docutils literal"><span class="pre">GXMAPL</span></code></a> with <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; MAPL file name</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; Map base reference name</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; Start line number in file (0 is first)</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXREG</span></code></a>) &#8211; REG</li>
+<li><strong>name</strong> (<em>str</em>) – <a class="reference internal" href="#geosoft.gxapi.GXMAPL" title="geosoft.gxapi.GXMAPL"><code class="xref py py-obj docutils literal"><span class="pre">GXMAPL</span></code></a> file name</li>
+<li><strong>ref_name</strong> (<em>str</em>) – Map base reference name</li>
+<li><strong>line</strong> (<em>int</em>) – Start line number in file (0 is first)</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">MAPL, aborts if creation fails</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXMAPL" title="geosoft.gxapi.GXMAPL"><code class="xref py py-obj docutils literal"><span class="pre">GXMAPL</span></code></a>, aborts if creation fails</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXMAPL" title="geosoft.gxapi.GXMAPL"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMAPL</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXMAPL" title="geosoft.gxapi.GXMAPL">GXMAPL</a></p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">default</span> <span class="nb">map</span> <span class="n">groups</span> <span class="n">will</span> <span class="n">use</span> <span class="n">the</span> <span class="n">reference</span> <span class="n">name</span> <span class="k">with</span>
-<span class="s2">&quot;_Data&quot;</span> <span class="ow">and</span> <span class="s2">&quot;_Base&quot;</span> <span class="n">added</span><span class="o">.</span>  <span class="n">If</span> <span class="n">no</span> <span class="n">reference</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">specified</span><span class="p">,</span>
-<span class="n">the</span> <span class="n">name</span> <span class="s2">&quot;MAPL&quot;</span> <span class="ow">is</span> <span class="n">used</span>
-</pre></div>
-</div>
+<p>The default map groups will use the reference name with
+“_Data” and “_Base” added.  If no reference name is specified,
+the name “<a class="reference internal" href="#geosoft.gxapi.GXMAPL" title="geosoft.gxapi.GXMAPL"><code class="xref py py-obj docutils literal"><span class="pre">GXMAPL</span></code></a>” is used</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAPL.is_null">
-<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool<a class="headerlink" href="#geosoft.gxapi.GXMAPL.is_null" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if the instance of <code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMAPL</span> <span class="pre">is</span> <span class="pre">null</span> <span class="pre">(undefined)</span></code></p>
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAPL.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the instance of <code class="xref py py-obj docutils literal"><span class="pre">GXMAPL</span></code> is null (undefined)`</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null instance of <a class="reference internal" href="#geosoft.gxapi.GXMAPL" title="geosoft.gxapi.GXMAPL"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMAPL</span></code></a>, False otherwise.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool`</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXMAPL</span></code>, False otherwise.</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMAPL.null">
-<em class="property">static </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXMAPL<a class="headerlink" href="#geosoft.gxapi.GXMAPL.null" title="Permalink to this definition">¶</a></dt>
-<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXMAPL" title="geosoft.gxapi.GXMAPL"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMAPL</span></code></a></p>
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAPL.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXMAPL</span></code></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXMAPL" title="geosoft.gxapi.GXMAPL"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMAPL</span></code></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXMAPL" title="geosoft.gxapi.GXMAPL"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMAPL</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <code class="xref py py-obj docutils literal"><span class="pre">GXMAPL</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -213,53 +196,37 @@
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAPL.process">
-<code class="descname">process</code><span class="sig-paren">(</span><em>(GXMAP)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAPL.process" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Process</span> <span class="n">a</span> <span class="n">MAPL</span>
-</pre></div>
-</div>
+<code class="descname">process</code><span class="sig-paren">(</span><em>map</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAPL.process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process a <a class="reference internal" href="#geosoft.gxapi.GXMAPL" title="geosoft.gxapi.GXMAPL"><code class="xref py py-obj docutils literal"><span class="pre">GXMAPL</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMAP</span></code></a>) &#8211; MAP</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
-</tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMAPL.replace_string">
-<code class="descname">replace_string</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMAPL.replace_string" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Adds</span> <span class="n">a</span> <span class="n">replacement</span> <span class="n">string</span> <span class="n">to</span> <span class="n">a</span> <span class="n">mapplot</span> <span class="n">control</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">replace_string</code><span class="sig-paren">(</span><em>var</em>, <em>repl</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAPL.replace_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a replacement string to a mapplot control file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Variable</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; Replacement</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>var</strong> (<em>str</em>) – Variable</li>
+<li><strong>repl</strong> (<em>str</em>) – Replacement</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 </dd></dl>
 
@@ -292,7 +259,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking
