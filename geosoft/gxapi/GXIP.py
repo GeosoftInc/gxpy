@@ -986,20 +986,20 @@ class GXIP:
 
 
 
-    def import_dump(self, sys, db, dump_file):
+    def import_dump(self, ip_sys, db, dump_file):
         """
         Imports data from an `GXIP <geosoft.gxapi.GXIP>` instrument dump file.
         
-        :param sys:        `IP_SYS`
+        :param ip_sys:     `IP_SYS`
         :param db:         `GXDB <geosoft.gxapi.GXDB>` Handle
         :param dump_file:  Dump file name
-        :type  sys:        int
+        :type  ip_sys:     int
         :type  db:         GXDB
         :type  dump_file:  str
 
         .. versionadded:: 5.0
         """
-        self._wrapper.import_dump(sys, db._wrapper, dump_file.encode())
+        self._wrapper.import_dump(ip_sys, db._wrapper, dump_file.encode())
         
 
 

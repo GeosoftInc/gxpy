@@ -102,7 +102,9 @@ class GXError(RuntimeError):
 #
 # Open Modes
 
+#: Geo3dv mview read
 GEO3DV_MVIEW_READ = 0
+#: Geo3dv mview writeold
 GEO3DV_MVIEW_WRITEOLD = 2	
 
 #
@@ -194,7 +196,9 @@ BF_BYTEORDER_MSB = 512
 #
 # Close Flags
 
+#: Bf keep
 BF_KEEP = 0
+#: Bf delete
 BF_DELETE = 1
 
 #
@@ -226,8 +230,11 @@ BF_READWRITE_APP = 4
 #
 # Seek Location
 
+#: Start
 BF_SEEK_START = 0
+#: Current
 BF_SEEK_CURRENT = 1
+#: Eof
 BF_SEEK_EOF = 2	
 
 #
@@ -241,7 +248,9 @@ BF_SEEK_EOF = 2
 #
 # Type of grid
 
+#: Grid
 DAT_FILE_GRID = 1
+#: Image
 DAT_FILE_IMAGE = 2
 
 #
@@ -249,7 +258,9 @@ DAT_FILE_IMAGE = 2
 #
 # Type of form
 
+#: Open
 DAT_FILE_FORM_OPEN = 0
+#: Save
 DAT_FILE_FORM_SAVE = 1
 
 #
@@ -257,8 +268,11 @@ DAT_FILE_FORM_SAVE = 1
 #
 # `GXDAT <geosoft.gxapi.GXDAT>` Open modes
 
+#: Read
 DAT_XGD_READ = 0
+#: New
 DAT_XGD_NEW = 1
+#: Write
 DAT_XGD_WRITE = 2	
 
 #
@@ -278,11 +292,17 @@ DAT_XGD_WRITE = 2
 #
 # Datamine file types
 
+#: String
 GIS_DMTYPE_STRING = 2
+#: Wireframe tr
 GIS_DMTYPE_WIREFRAME_TR = 8
+#: Dtm
 GIS_DMTYPE_DTM = 16
+#: Blockmodel
 GIS_DMTYPE_BLOCKMODEL = 32
+#: Wireframe pt
 GIS_DMTYPE_WIREFRAME_PT = 64
+#: Pointdata
 GIS_DMTYPE_POINTDATA = 1024	
 
 #
@@ -296,6 +316,7 @@ GIS_DMTYPE_POINTDATA = 1024
 #
 # Activity Blob
 
+#: Db activity blob
 DB_ACTIVITY_BLOB = "OE.DB_ACTIVITY_LOG"
 
 #
@@ -303,6 +324,7 @@ DB_ACTIVITY_BLOB = "OE.DB_ACTIVITY_LOG"
 #
 # Blob Categories
 
+#: Normal
 DB_CATEGORY_BLOB_NORMAL = 0
 
 #
@@ -314,15 +336,25 @@ DB_CATEGORY_BLOB_NORMAL = 0
 # to define a string channel with up to 10 characters.
 # Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.
 
+#: Byte
 DB_CATEGORY_CHAN_BYTE = 0
+#: Ushort
 DB_CATEGORY_CHAN_USHORT = 1
+#: Short
 DB_CATEGORY_CHAN_SHORT = 2
+#: Long
 DB_CATEGORY_CHAN_LONG = 3
+#: Float
 DB_CATEGORY_CHAN_FLOAT = 4
+#: Double
 DB_CATEGORY_CHAN_DOUBLE = 5
+#: Ubyte
 DB_CATEGORY_CHAN_UBYTE = 6
+#: Ulong
 DB_CATEGORY_CHAN_ULONG = 7
+#: Long64
 DB_CATEGORY_CHAN_LONG64 = 8
+#: Ulong64
 DB_CATEGORY_CHAN_ULONG64 = 9
 
 #
@@ -330,7 +362,9 @@ DB_CATEGORY_CHAN_ULONG64 = 9
 #
 # Line Categories
 
+#: Flight
 DB_CATEGORY_LINE_FLIGHT = 100
+#: Group
 DB_CATEGORY_LINE_GROUP = 200
 #: Same as `DB_CATEGORY_LINE_FLIGHT <geosoft.gxapi.DB_CATEGORY_LINE_FLIGHT>`
 DB_CATEGORY_LINE_NORMAL = 100
@@ -340,6 +374,7 @@ DB_CATEGORY_LINE_NORMAL = 100
 #
 # User Categories
 
+#: Normal
 DB_CATEGORY_USER_NORMAL = 0
 
 #
@@ -347,12 +382,19 @@ DB_CATEGORY_USER_NORMAL = 0
 #
 # Channel formats
 
+#: Normal
 DB_CHAN_FORMAT_NORMAL = 0
+#: Exp
 DB_CHAN_FORMAT_EXP = 1
+#: Time
 DB_CHAN_FORMAT_TIME = 2
+#: Date
 DB_CHAN_FORMAT_DATE = 3
+#: Geogr
 DB_CHAN_FORMAT_GEOGR = 4
+#: Sigdig
 DB_CHAN_FORMAT_SIGDIG = 5
+#: Hex
 DB_CHAN_FORMAT_HEX = 6
 
 #
@@ -360,7 +402,9 @@ DB_CHAN_FORMAT_HEX = 6
 #
 # Channel Read-only Protection Status
 
+#: Db chan unprotected
 DB_CHAN_UNPROTECTED = 0
+#: Db chan protected
 DB_CHAN_PROTECTED = 1
 
 #
@@ -368,8 +412,11 @@ DB_CHAN_PROTECTED = 1
 #
 # Channel symbol for special channels
 
+#: Db chan x
 DB_CHAN_X = 0
+#: Db chan y
 DB_CHAN_Y = 1
+#: Db chan z
 DB_CHAN_Z = 2
 
 #
@@ -377,13 +424,19 @@ DB_CHAN_Z = 2
 #
 # Supported compression levels
 
+#: None
 DB_COMP_NONE = 0
+#: Speed
 DB_COMP_SPEED = 1
+#: Size
 DB_COMP_SIZE = 2
 
 
+#: None
 DB_COORDPAIR_NONE = 0
+#: X
 DB_COORDPAIR_X = 1
+#: Y
 DB_COORDPAIR_Y = 2
 
 #
@@ -391,6 +444,7 @@ DB_COORDPAIR_Y = 2
 #
 # Class name max size
 
+#: Db group class size
 DB_GROUP_CLASS_SIZE = 16
 
 #
@@ -440,12 +494,19 @@ DB_INFO_CHANGESLOST = 21
 #
 # Line Label Formats
 
+#: Line
 DB_LINE_LABEL_FORMAT_LINE = 1
+#: Version
 DB_LINE_LABEL_FORMAT_VERSION = 2
+#: Type
 DB_LINE_LABEL_FORMAT_TYPE = 4
+#: Flight
 DB_LINE_LABEL_FORMAT_FLIGHT = 8
+#: Full
 DB_LINE_LABEL_FORMAT_FULL = 15
+#: Date
 DB_LINE_LABEL_FORMAT_DATE = 16
+#: Link
 DB_LINE_LABEL_FORMAT_LINK = 7
 
 #
@@ -453,7 +514,9 @@ DB_LINE_LABEL_FORMAT_LINK = 7
 #
 # Select modes
 
+#: Include
 DB_LINE_SELECT_INCLUDE = 0
+#: Exclude
 DB_LINE_SELECT_EXCLUDE = 1
 
 #
@@ -461,12 +524,19 @@ DB_LINE_SELECT_EXCLUDE = 1
 #
 # Line types
 
+#: Normal
 DB_LINE_TYPE_NORMAL = 0
+#: Base
 DB_LINE_TYPE_BASE = 1
+#: Tie
 DB_LINE_TYPE_TIE = 2
+#: Test
 DB_LINE_TYPE_TEST = 3
+#: Trend
 DB_LINE_TYPE_TREND = 4
+#: Special
 DB_LINE_TYPE_SPECIAL = 5
+#: Random
 DB_LINE_TYPE_RANDOM = 6
 
 #
@@ -476,7 +546,9 @@ DB_LINE_TYPE_RANDOM = 6
 
 #: Used only by GetSymbLock_DB
 DB_LOCK_NONE = -1
+#: Readonly
 DB_LOCK_READONLY = 0
+#: Readwrite
 DB_LOCK_READWRITE = 1
 
 #
@@ -484,6 +556,7 @@ DB_LOCK_READWRITE = 1
 #
 # Get Database file names
 
+#: File
 DB_NAME_FILE = 0
 
 #
@@ -491,7 +564,9 @@ DB_NAME_FILE = 0
 #
 # Symbol Ownership
 
+#: Shared
 DB_OWN_SHARED = 0
+#: User
 DB_OWN_USER = 1
 
 #
@@ -499,9 +574,13 @@ DB_OWN_USER = 1
 #
 # Symbol types
 
+#: Db symb blob
 DB_SYMB_BLOB = 0
+#: Db symb line
 DB_SYMB_LINE = 1
+#: Db symb chan
 DB_SYMB_CHAN = 2
+#: Db symb user
 DB_SYMB_USER = 3
 
 #
@@ -517,17 +596,27 @@ DB_SYMB_NAME_SIZE = 64
 #
 # Wait Times
 
+#: None
 DB_WAIT_NONE = 0
+#: Infinity
 DB_WAIT_INFINITY = -1
 
 
+#: None
 DB_ARRAY_BASETYPE_NONE = 0
+#: Time windows
 DB_ARRAY_BASETYPE_TIME_WINDOWS = 1
+#: Times
 DB_ARRAY_BASETYPE_TIMES = 2
+#: Frequencies
 DB_ARRAY_BASETYPE_FREQUENCIES = 3
+#: Elevations
 DB_ARRAY_BASETYPE_ELEVATIONS = 4
+#: Depths
 DB_ARRAY_BASETYPE_DEPTHS = 5
+#: Velocities
 DB_ARRAY_BASETYPE_VELOCITIES = 6
+#: Discrete time windows
 DB_ARRAY_BASETYPE_DISCRETE_TIME_WINDOWS = 7
 
 #
@@ -535,6 +624,7 @@ DB_ARRAY_BASETYPE_DISCRETE_TIME_WINDOWS = 7
 #
 # Database Null
 
+#: Nullsymb
 NULLSYMB = -1	
 
 #
@@ -560,15 +650,25 @@ NULLSYMB = -1
 #
 # Line Label Formats
 
+#: Default
 DSEL_PICTURE_QUALITY_DEFAULT = 0
+#: Lossless
 DSEL_PICTURE_QUALITY_LOSSLESS = 1
+#: Semilossy
 DSEL_PICTURE_QUALITY_SEMILOSSY = 2
+#: Lossy
 DSEL_PICTURE_QUALITY_LOSSY = 3
+#: Native
 DSEL_PICTURE_QUALITY_NATIVE = 4
+#: Ecw
 DSEL_PICTURE_QUALITY_ECW = 5
+#: Jpg
 DSEL_PICTURE_QUALITY_JPG = 6
+#: Png
 DSEL_PICTURE_QUALITY_PNG = 7
+#: Bmp
 DSEL_PICTURE_QUALITY_BMP = 8
+#: Tif
 DSEL_PICTURE_QUALITY_TIF = 9	
 
 #
@@ -869,7 +969,9 @@ TIME_FORMAT_HMS = 2
 #
 # Open Modes
 
+#: Read
 GEOSTRING_OPEN_READ = 0
+#: Readwrite
 GEOSTRING_OPEN_READWRITE = 1
 
 #
@@ -877,10 +979,15 @@ GEOSTRING_OPEN_READWRITE = 1
 #
 # Section orientation types
 
+#: Unknown
 SECTION_ORIENTATION_UNKNOWN = 0
+#: Plan
 SECTION_ORIENTATION_PLAN = 1
+#: Section
 SECTION_ORIENTATION_SECTION = 2
+#: Crooked
 SECTION_ORIENTATION_CROOKED = 2
+#: Gmsys
 SECTION_ORIENTATION_GMSYS = 2	
 
 #
@@ -968,8 +1075,11 @@ IMG_FILE_READORWRITE = 3
 #
 # Information to Query
 
+#: Iwrite
 IMG_QUERY_iWRITE = 0
+#: Ipg
 IMG_QUERY_iPG = 1
+#: Iwritepg
 IMG_QUERY_iWRITEPG = 2
 #: The element type used to open the `GXIMG <geosoft.gxapi.GXIMG>`.
 IMG_QUERY_iIMGTYPE = 3
@@ -985,18 +1095,31 @@ IMG_QUERY_iDATTYPE = 4
 #: 1 - pixelate
 #: 2 - color
 IMG_QUERY_iRENDER = 5
+#: Ikx
 IMG_QUERY_iKX = 6
+#: Inx
 IMG_QUERY_iNX = 7
+#: Iny
 IMG_QUERY_iNY = 8
+#: Inv
 IMG_QUERY_iNV = 9
+#: Ine
 IMG_QUERY_iNE = 10
+#: Rxo
 IMG_QUERY_rXO = 11
+#: Ryo
 IMG_QUERY_rYO = 12
+#: Rdx
 IMG_QUERY_rDX = 13
+#: Rdy
 IMG_QUERY_rDY = 14
+#: Rrot
 IMG_QUERY_rROT = 15
+#: Rbase
 IMG_QUERY_rBASE = 16
+#: Rmult
 IMG_QUERY_rMULT = 17
+#: Rcompression ratio
 IMG_QUERY_rCOMPRESSION_RATIO = 18
 
 #
@@ -1070,7 +1193,9 @@ IMU_DOUBLE_CRC_BITS_MAX = 51
 #
 # Shape of output grid
 
+#: Rectangle
 IMU_EXPAND_SHAPE_RECTANGLE = 0
+#: Square
 IMU_EXPAND_SHAPE_SQUARE = 1
 
 #
@@ -1078,7 +1203,9 @@ IMU_EXPAND_SHAPE_SQUARE = 1
 #
 # Defines for Grid Filling Method Options
 
+#: Linear
 IMU_FILL_ROLLOPT_LINEAR = 1
+#: Square
 IMU_FILL_ROLLOPT_SQUARE = 2
 
 #
@@ -1087,7 +1214,9 @@ IMU_FILL_ROLLOPT_SQUARE = 2
 # Settings for placing dummy values in grid if any of filter
 # values are dummy
 
+#: No
 IMU_FILT_DUMMY_NO = 0
+#: Yes
 IMU_FILT_DUMMY_YES = 1
 
 #
@@ -1096,7 +1225,9 @@ IMU_FILT_DUMMY_YES = 1
 # Flags which indicate if a file is to be used to read the
 # filter values
 
+#: No
 IMU_FILT_FILE_NO = 0
+#: Yes
 IMU_FILT_FILE_YES = 1
 
 #
@@ -1105,8 +1236,11 @@ IMU_FILT_FILE_YES = 1
 # Flags which indicate which type of horizontal derivative
 # is being applied (X direction, Y direction, none at all)
 
+#: No
 IMU_FILT_HZDRV_NO = 0
+#: X
 IMU_FILT_HZDRV_X = 1
+#: Y
 IMU_FILT_HZDRV_Y = 2
 
 #
@@ -1126,7 +1260,9 @@ IMU_FLOAT_CRC_BITS_MAX = 22
 #
 # Defined options for masking grids
 
+#: Inside
 IMU_MASK_INSIDE = 0
+#: Outside
 IMU_MASK_OUTSIDE = 1
 
 #
@@ -1134,7 +1270,9 @@ IMU_MASK_OUTSIDE = 1
 #
 # Defined options for forcing recalculating the grid values
 
+#: No
 IMU_STAT_FORCED_NO = 0
+#: Yes
 IMU_STAT_FORCED_YES = 1
 
 #
@@ -1155,7 +1293,9 @@ IMU_TRANS_X = -1
 #
 # Points in grid to use
 
+#: All
 IMU_TREND_ALL = 0
+#: Edge
 IMU_TREND_EDGE = 1
 
 #
@@ -1163,7 +1303,9 @@ IMU_TREND_EDGE = 1
 #
 # Output grid coordinate units
 
+#: Imu wind grid
 IMU_WIND_GRID = 0
+#: Imu wind ground
 IMU_WIND_GROUND = 1
 
 #
@@ -1171,7 +1313,9 @@ IMU_WIND_GROUND = 1
 #
 # Option for handling out-of-range Z values
 
+#: Imu wind dummy
 IMU_WIND_DUMMY = 0
+#: Imu wind clip
 IMU_WIND_CLIP = 1
 
 #
@@ -1180,7 +1324,9 @@ IMU_WIND_CLIP = 1
 # Flags whether to use grid index numbers as
 # station numbers.
 
+#: No
 IMU_XYZ_INDEX_NO = 0
+#: Yes
 IMU_XYZ_INDEX_YES = 1
 
 #
@@ -1188,7 +1334,9 @@ IMU_XYZ_INDEX_YES = 1
 #
 # XYZ Label Flags
 
+#: No
 IMU_XYZ_LABEL_NO = 1
+#: Yes
 IMU_XYZ_LABEL_YES = 0	
 
 #
@@ -1216,12 +1364,19 @@ IPJ_3D_FLAG_ORDER_ROTATION = 4
 #
 # 3D Rotation Mode
 
+#: Default
 IPJ_3D_ROTATE_DEFAULT = 0
+#: Xyz
 IPJ_3D_ROTATE_XYZ = 1
+#: Xzy
 IPJ_3D_ROTATE_XZY = 2
+#: Yxz
 IPJ_3D_ROTATE_YXZ = 3
+#: Yzx
 IPJ_3D_ROTATE_YZX = 4
+#: Zxy
 IPJ_3D_ROTATE_ZXY = 5
+#: Zyx
 IPJ_3D_ROTATE_ZYX = 6
 
 #
@@ -1229,18 +1384,31 @@ IPJ_3D_ROTATE_ZYX = 6
 #
 # Projection Setting
 
+#: Scale
 IPJ_CSP_SCALE = 0
+#: Falseeast
 IPJ_CSP_FALSEEAST = 1
+#: Falsenorth
 IPJ_CSP_FALSENORTH = 2
+#: Latorigin
 IPJ_CSP_LATORIGIN = 3
+#: Lonorigin
 IPJ_CSP_LONORIGIN = 4
+#: Parallel 1
 IPJ_CSP_PARALLEL_1 = 5
+#: Parallel 2
 IPJ_CSP_PARALLEL_2 = 6
+#: Azimuth
 IPJ_CSP_AZIMUTH = 7
+#: Angle
 IPJ_CSP_ANGLE = 8
+#: Pointlat 1
 IPJ_CSP_POINTLAT_1 = 9
+#: Pointlon 1
 IPJ_CSP_POINTLON_1 = 10
+#: Pointlat 2
 IPJ_CSP_POINTLAT_2 = 11
+#: Pointlon 2
 IPJ_CSP_POINTLON_2 = 12
 
 #
@@ -1327,12 +1495,19 @@ IPJ_ORIENT_SECTION_CROOKED = 6
 #
 # Projection List
 
+#: Coordinatesystem
 IPJ_PARM_LST_COORDINATESYSTEM = 0
+#: Datum
 IPJ_PARM_LST_DATUM = 1
+#: Projection
 IPJ_PARM_LST_PROJECTION = 2
+#: Units
 IPJ_PARM_LST_UNITS = 3
+#: Localdatumdescription
 IPJ_PARM_LST_LOCALDATUMDESCRIPTION = 4
+#: Localdatumname
 IPJ_PARM_LST_LOCALDATUMNAME = 5
+#: Unitsdescription
 IPJ_PARM_LST_UNITSDESCRIPTION = 6
 
 #
@@ -1362,6 +1537,7 @@ IPJ_TYPE_ANY = 3
 #: Not used for `read <geosoft.gxapi.GXIPJ.read>`.  This is used for
 #: `source_type <geosoft.gxapi.GXIPJ.source_type>` to indicate no projection.
 IPJ_TYPE_NONE = 4
+#: Wrp
 IPJ_TYPE_WRP = 5
 #: tests the projection tables for internal consistency
 #: and creates report files in the project directory.
@@ -1377,7 +1553,9 @@ IPJ_TYPE_TEST = 6
 #
 # Projection Unit Type
 
+#: Abbreviation
 IPJ_UNIT_ABBREVIATION = 0
+#: Fullname
 IPJ_UNIT_FULLNAME = 1
 
 #
@@ -1415,8 +1593,11 @@ IPJ_WARP_MULTIPOINT_Y = 7
 #
 # `GXITR <geosoft.gxapi.GXITR>` Color Model defines
 
+#: Hsv
 ITR_COLOR_MODEL_HSV = 1
+#: Rgb
 ITR_COLOR_MODEL_RGB = 2
+#: Cmy
 ITR_COLOR_MODEL_CMY = 3
 
 #
@@ -1434,11 +1615,17 @@ ITR_POWER_EXP = 1
 #
 # Zoning Methods
 
+#: Default
 ITR_ZONE_DEFAULT = 0
+#: Linear
 ITR_ZONE_LINEAR = 1
+#: Normal
 ITR_ZONE_NORMAL = 2
+#: Equalarea
 ITR_ZONE_EQUALAREA = 3
+#: Shade
 ITR_ZONE_SHADE = 4
+#: Loglinear
 ITR_ZONE_LOGLINEAR = 5
 
 #
@@ -1544,7 +1731,9 @@ LTB_CASE_SENSITIVE = 1
 #
 # Matching types
 
+#: Exact
 LTB_CONLST_EXACT = 0
+#: Any
 LTB_CONLST_ANY = 1
 
 #
@@ -1681,8 +1870,11 @@ MAP_EXPORT_RASTER_FORMAT_TIFF = "TIFF"
 #
 # Map List modes
 
+#: All
 MAP_LIST_MODE_ALL = 0
+#: 3d
 MAP_LIST_MODE_3D = 1
+#: Not3d
 MAP_LIST_MODE_NOT3D = 2
 
 #
@@ -1690,7 +1882,9 @@ MAP_LIST_MODE_NOT3D = 2
 #
 # Open Modes
 
+#: Map writenew
 MAP_WRITENEW = 1
+#: Map writeold
 MAP_WRITEOLD = 2	
 
 #
@@ -1732,6 +1926,7 @@ MAPTEMPLATE_EXIST = 1
 #
 # `GXMETA <geosoft.gxapi.GXMETA>` Invalid Token
 
+#: H meta invalid token
 H_META_INVALID_TOKEN = -1
 
 #
@@ -1785,16 +1980,27 @@ META_CORE_ATTRIB_Attrib_FlatName = -317
 META_CORE_CLASS_Base = -100
 #: All Predefined symbols are in this class
 META_CORE_CLASS_Predefined = -101
+#: Attributes
 META_CORE_CLASS_Attributes = -102
+#: Classattributes
 META_CORE_CLASS_ClassAttributes = -103
+#: Typeattributes
 META_CORE_CLASS_TypeAttributes = -104
+#: Objectattributes
 META_CORE_CLASS_ObjectAttributes = -105
+#: Enumattributes
 META_CORE_CLASS_EnumAttributes = -106
+#: Attributeattributes
 META_CORE_CLASS_AttributeAttributes = -107
+#: Itemattributes
 META_CORE_CLASS_ItemAttributes = -108
+#: Types
 META_CORE_CLASS_Types = -109
+#: Enums
 META_CORE_CLASS_Enums = -110
+#: Enum bool
 META_CORE_CLASS_Enum_Bool = -111
+#: Enum classtype
 META_CORE_CLASS_Enum_ClassType = -112
 
 #
@@ -1832,6 +2038,7 @@ META_CORE_TYPE_String = -212
 META_CORE_TYPE_Object = -213
 #: Enumeration
 META_CORE_TYPE_Enum = -214
+#: Classtype
 META_CORE_TYPE_ClassType = -215	
 
 #
@@ -1913,9 +2120,13 @@ C_TRANSPARENT = 0
 #
 # What parts of the cylinder are closed
 
+#: Open
 MVIEW_CYLINDER3D_OPEN = 0
+#: Closestart
 MVIEW_CYLINDER3D_CLOSESTART = 1
+#: Closeend
 MVIEW_CYLINDER3D_CLOSEEND = 2
+#: Closeall
 MVIEW_CYLINDER3D_CLOSEALL = 3
 
 #
@@ -1993,12 +2204,19 @@ MVIEW_FIT_VIEW = 1
 #
 # Font weight defines
 
+#: Normal
 MVIEW_FONT_WEIGHT_NORMAL = 0
+#: Ultralight
 MVIEW_FONT_WEIGHT_ULTRALIGHT = 1
+#: Light
 MVIEW_FONT_WEIGHT_LIGHT = 2
+#: Medium
 MVIEW_FONT_WEIGHT_MEDIUM = 3
+#: Bold
 MVIEW_FONT_WEIGHT_BOLD = 4
+#: Xbold
 MVIEW_FONT_WEIGHT_XBOLD = 5
+#: Xxbold
 MVIEW_FONT_WEIGHT_XXBOLD = 6
 
 #
@@ -2006,8 +2224,11 @@ MVIEW_FONT_WEIGHT_XXBOLD = 6
 #
 # Grid Drawing defines
 
+#: Dot
 MVIEW_GRID_DOT = 0
+#: Line
 MVIEW_GRID_LINE = 1
+#: Cross
 MVIEW_GRID_CROSS = 2
 
 #
@@ -2047,16 +2268,27 @@ HIDE_OFF = 0
 #
 # Defines for mview types
 
+#: Agg
 MVIEW_IS_AGG = 0
+#: Movable
 MVIEW_IS_MOVABLE = 3
+#: Csymb
 MVIEW_IS_CSYMB = 4
+#: Linked
 MVIEW_IS_LINKED = 5
+#: Made
 MVIEW_IS_MADE = 6
+#: Hidden
 MVIEW_IS_HIDDEN = 7
+#: Clipped
 MVIEW_IS_CLIPPED = 8
+#: Meta
 MVIEW_IS_META = 9
+#: Voxd
 MVIEW_IS_VOXD = 10
+#: Shadow 2d interpretation
 MVIEW_IS_SHADOW_2D_INTERPRETATION = 11
+#: Vector3d
 MVIEW_IS_VECTOR3D = 12
 
 #
@@ -2074,9 +2306,13 @@ MVIEW_LABEL_BOUND_YES = 1
 #
 # Label Justification Defines
 
+#: Top
 MVIEW_LABEL_JUST_TOP = 0
+#: Bottom
 MVIEW_LABEL_JUST_BOTTOM = 1
+#: Left
 MVIEW_LABEL_JUST_LEFT = 2
+#: Right
 MVIEW_LABEL_JUST_RIGHT = 3
 
 #
@@ -2084,8 +2320,11 @@ MVIEW_LABEL_JUST_RIGHT = 3
 #
 # Label Orientation Defines
 
+#: Horizontal
 MVIEW_LABEL_ORIENT_HORIZONTAL = 0
+#: Top right
 MVIEW_LABEL_ORIENT_TOP_RIGHT = 1
+#: Top left
 MVIEW_LABEL_ORIENT_TOP_LEFT = 2
 
 #
@@ -2155,9 +2394,13 @@ MVIEW_SMOOTH_AKIMA = 2
 #
 # Tiling defines
 
+#: Rectangular
 MVIEW_TILE_RECTANGULAR = 0
+#: Diagonal
 MVIEW_TILE_DIAGONAL = 1
+#: Triangular
 MVIEW_TILE_TRIANGULAR = 2
+#: Random
 MVIEW_TILE_RANDOM = 3
 
 #
@@ -2194,14 +2437,23 @@ MVIEW_EXTENT_UNIT_VIEW_UNWARPED = 3
 #
 # Text reference locations
 
+#: Bottom left
 TEXT_REF_BOTTOM_LEFT = 0
+#: Bottom center
 TEXT_REF_BOTTOM_CENTER = 1
+#: Bottom right
 TEXT_REF_BOTTOM_RIGHT = 2
+#: Middle left
 TEXT_REF_MIDDLE_LEFT = 3
+#: Middle center
 TEXT_REF_MIDDLE_CENTER = 4
+#: Middle right
 TEXT_REF_MIDDLE_RIGHT = 5
+#: Top left
 TEXT_REF_TOP_LEFT = 6
+#: Top center
 TEXT_REF_TOP_CENTER = 7
+#: Top right
 TEXT_REF_TOP_RIGHT = 8
 
 #
@@ -2242,7 +2494,9 @@ EMLAY_V_COAXIAL = 2
 #
 # Direction of alignment
 
+#: Horizontal
 ARROW_ALIGNMENT_HORIZONTAL = 0
+#: Vertical
 ARROW_ALIGNMENT_VERTICAL = 1
 
 #
@@ -2327,10 +2581,15 @@ MVU_ARROW_FIXED = 2
 #
 # Compass direction
 
+#: None
 MVU_FLIGHT_COMPASS_NONE = -1
+#: East
 MVU_FLIGHT_COMPASS_EAST = 0
+#: North
 MVU_FLIGHT_COMPASS_NORTH = 1
+#: West
 MVU_FLIGHT_COMPASS_WEST = 2
+#: South
 MVU_FLIGHT_COMPASS_SOUTH = 3
 
 #
@@ -2338,7 +2597,9 @@ MVU_FLIGHT_COMPASS_SOUTH = 3
 #
 # Show Dummies
 
+#: Notincluded
 MVU_FLIGHT_DUMMIES_NOTINCLUDED = 0
+#: Included
 MVU_FLIGHT_DUMMIES_INCLUDED = 1
 
 #
@@ -2380,6 +2641,7 @@ MVU_FLIGHT_DIRECTION = 8
 #
 # TODO
 
+#: Marching cubes
 MVU_VOX_SURFACE_METHOD_MARCHING_CUBES = 0
 
 #
@@ -2387,7 +2649,9 @@ MVU_VOX_SURFACE_METHOD_MARCHING_CUBES = 0
 #
 # TODO
 
+#: Open
 MVU_VOX_SURFACE_OPTION_OPEN = 0
+#: Closed
 MVU_VOX_SURFACE_OPTION_CLOSED = 1
 
 #
@@ -2395,8 +2659,11 @@ MVU_VOX_SURFACE_OPTION_CLOSED = 1
 #
 # Type of Box
 
+#: Left
 MVU_TEXTBOX_LEFT = 0
+#: Center
 MVU_TEXTBOX_CENTER = 1
+#: Right
 MVU_TEXTBOX_RIGHT = 2
 
 #
@@ -2404,8 +2671,11 @@ MVU_TEXTBOX_RIGHT = 2
 #
 # Head Acuteness
 
+#: Sharp
 MVU_VPOINT_SHARP = 0
+#: Medium
 MVU_VPOINT_MEDIUM = 1
+#: Blunt
 MVU_VPOINT_BLUNT = 2
 
 #
@@ -2413,8 +2683,11 @@ MVU_VPOINT_BLUNT = 2
 #
 # Head Position
 
+#: Head
 MVU_VPOS_HEAD = 0
+#: Middle
 MVU_VPOS_MIDDLE = 1
+#: Tail
 MVU_VPOS_TAIL = 2
 
 #
@@ -2422,10 +2695,15 @@ MVU_VPOS_TAIL = 2
 #
 # Head Size
 
+#: Nohead
 MVU_VSIZE_NOHEAD = 0
+#: Smallhead
 MVU_VSIZE_SMALLHEAD = 1
+#: Mediumhead
 MVU_VSIZE_MEDIUMHEAD = 2
+#: Largehead
 MVU_VSIZE_LARGEHEAD = 3
+#: Notail
 MVU_VSIZE_NOTAIL = 4
 
 #
@@ -2433,8 +2711,11 @@ MVU_VSIZE_NOTAIL = 4
 #
 # Head Style
 
+#: Lines
 MVU_VSTYLE_LINES = 0
+#: Barb
 MVU_VSTYLE_BARB = 1
+#: Triangle
 MVU_VSTYLE_TRIANGLE = 2	
 
 #
@@ -2460,11 +2741,17 @@ MVU_VSTYLE_TRIANGLE = 2
 #
 # 3D Pager direction
 
+#: Xyz
 PG_3D_DIR_XYZ = 0
+#: Yxz
 PG_3D_DIR_YXZ = 1
+#: Xzy
 PG_3D_DIR_XZY = 2
+#: Yzx
 PG_3D_DIR_YZX = 3
+#: Zxy
 PG_3D_DIR_ZXY = 4
+#: Zyx
 PG_3D_DIR_ZYX = 5
 
 #
@@ -2502,7 +2789,9 @@ PJ_ELEVATION_GEOID = 2
 #
 # Conversion direction
 
+#: Xy2ll
 PJ_RECT_XY2LL = 0
+#: Ll2xy
 PJ_RECT_LL2XY = 1	
 
 #
@@ -2536,6 +2825,7 @@ PLY_LINE_CLIP_INSIDE = 0
 PLY_LINE_CLIP_NO_INTERSECT = 0
 #: The start point of the line is outside
 PLY_LINE_CLIP_OUTSIDE = 1
+#: Error
 PLY_LINE_CLIP_ERROR = 2	
 
 #
@@ -2607,27 +2897,45 @@ ST_ITEMS = 0
 ST_NPOS = 1
 #: Number of items equal to zero
 ST_NZERO = 22
+#: St dummies
 ST_DUMMIES = 2
+#: St min
 ST_MIN = 3
+#: St max
 ST_MAX = 4
+#: St range
 ST_RANGE = 5
+#: St mean
 ST_MEAN = 6
+#: St median
 ST_MEDIAN = 7
+#: St mode
 ST_MODE = 8
+#: St geomean
 ST_GEOMEAN = 9
+#: St variance
 ST_VARIANCE = 10
+#: St stddev
 ST_STDDEV = 11
+#: St stderr
 ST_STDERR = 12
+#: St skew
 ST_SKEW = 13
+#: St kurtosis
 ST_KURTOSIS = 14
+#: St base
 ST_BASE = 15
 #: Sums and sums of powers
 ST_SUM = 16
+#: St sum2
 ST_SUM2 = 17
+#: St sum3
 ST_SUM3 = 18
+#: St sum4
 ST_SUM4 = 19
 #: Smallest value greater than zero.
 ST_MINPOS = 21
+#: St hist maxcount
 ST_HIST_MAXCOUNT = 100	
 
 #
@@ -2667,7 +2975,9 @@ FILE_EXT_FORCE = 1
 #
 # Case sensitivity
 
+#: Tolerant
 STR_CASE_TOLERANT = 0
+#: Sensitive
 STR_CASE_SENSITIVE = 1
 
 #
@@ -2705,8 +3015,11 @@ STR_FILE_PART_FULLPATH_NO_QUALIFIERS = 6
 #
 # String justification style
 
+#: Left
 STR_JUSTIFY_LEFT = 0
+#: Center
 STR_JUSTIFY_CENTER = 1
+#: Right
 STR_JUSTIFY_RIGHT = 2
 
 #
@@ -2714,8 +3027,11 @@ STR_JUSTIFY_RIGHT = 2
 #
 # What to trim
 
+#: Str trimright
 STR_TRIMRIGHT = 1
+#: Str trimleft
 STR_TRIMLEFT = 2
+#: Str trimboth
 STR_TRIMBOTH = 3	
 
 #
@@ -2729,7 +3045,9 @@ STR_TRIMBOTH = 3
 #
 # Open Modes
 
+#: Read
 SURFACE_OPEN_READ = 0
+#: Readwrite
 SURFACE_OPEN_READWRITE = 1	
 
 #
@@ -2743,8 +3061,11 @@ SURFACE_OPEN_READWRITE = 1
 #
 # Open Modes
 
+#: Surfacerender smooth
 SURFACERENDER_SMOOTH = 0
+#: Surfacerender fill
 SURFACERENDER_FILL = 1
+#: Surfacerender edges
 SURFACERENDER_EDGES = 2	
 
 #
@@ -2840,17 +3161,29 @@ REG_DOMAIN_USER = 1
 #
 # Shell execute defines
 
+#: Sw hide
 SW_HIDE = 0
+#: Sw shownormal
 SW_SHOWNORMAL = 1
+#: Sw showminimized
 SW_SHOWMINIMIZED = 2
+#: Sw showmaximized
 SW_SHOWMAXIMIZED = 3
+#: Sw shownoactivate
 SW_SHOWNOACTIVATE = 4
+#: Sw show
 SW_SHOW = 5
+#: Sw minimize
 SW_MINIMIZE = 6
+#: Sw showminnoactive
 SW_SHOWMINNOACTIVE = 7
+#: Sw showna
 SW_SHOWNA = 8
+#: Sw restore
 SW_RESTORE = 9
+#: Sw showdefault
 SW_SHOWDEFAULT = 10
+#: Sw forceminimize
 SW_FORCEMINIMIZE = 11
 
 #
@@ -2963,20 +3296,35 @@ SYS_FONT_TT = 0
 #
 # System information
 
+#: Version major
 SYS_INFO_VERSION_MAJOR = 0
+#: Version minor
 SYS_INFO_VERSION_MINOR = 1
+#: Version sp
 SYS_INFO_VERSION_SP = 2
+#: Build number
 SYS_INFO_BUILD_NUMBER = 3
+#: Build label
 SYS_INFO_BUILD_LABEL = 4
+#: Version label
 SYS_INFO_VERSION_LABEL = 5
+#: Productname
 SYS_INFO_PRODUCTNAME = 6
+#: Servername
 SYS_INFO_SERVERNAME = 7
+#: Legalcopyright
 SYS_INFO_LEGALCOPYRIGHT = 8
+#: Registry
 SYS_INFO_REGISTRY = 9
+#: Registry environment
 SYS_INFO_REGISTRY_ENVIRONMENT = 10
+#: Registry support
 SYS_INFO_REGISTRY_SUPPORT = 11
+#: Registry interapp
 SYS_INFO_REGISTRY_INTERAPP = 12
+#: Ois registry
 SYS_INFO_OIS_REGISTRY = 13
+#: Test registry
 SYS_INFO_TEST_REGISTRY = 14
 
 #
@@ -2984,11 +3332,17 @@ SYS_INFO_TEST_REGISTRY = 14
 #
 # Type of lineage sources
 
+#: Map
 SYS_LINEAGE_SOURCE_MAP = 0
+#: Mxd
 SYS_LINEAGE_SOURCE_MXD = 1
+#: Db
 SYS_LINEAGE_SOURCE_DB = 2
+#: Maptemplate
 SYS_LINEAGE_SOURCE_MAPTEMPLATE = 3
+#: Grid
 SYS_LINEAGE_SOURCE_GRID = 4
+#: Voxel
 SYS_LINEAGE_SOURCE_VOXEL = 5
 
 #
@@ -3266,9 +3620,13 @@ TB_SEARCH_LINEAR = 1
 #
 # Default string sizes.
 
+#: Tpat code size
 TPAT_CODE_SIZE = 21
+#: Tpat label size
 TPAT_LABEL_SIZE = 32
+#: Tpat desc size
 TPAT_DESC_SIZE = 128
+#: Tpat symbfont size
 TPAT_SYMBFONT_SIZE = 32	
 
 #
@@ -3567,7 +3925,9 @@ VV_LOOKUP_INTERPCLOSE = 4
 #
 # Where to mask
 
+#: Inside
 VV_MASK_INSIDE = 0
+#: Outside
 VV_MASK_OUTSIDE = 1
 
 #
@@ -3587,7 +3947,9 @@ VV_ORDER_DECREASING = 2
 #
 # Sort order
 
+#: Ascending
 VV_SORT_ASCENDING = 0
+#: Descending
 VV_SORT_DESCENDING = 1
 
 #
@@ -3644,7 +4006,9 @@ WA_APPEND = 1
 #
 # Type of Selection
 
+#: Holes
 ACQUIRE_SEL_HOLES = 0
+#: Point
 ACQUIRE_SEL_POINT = 1	
 
 #
@@ -3732,6 +4096,7 @@ ARCMAP_LOAD_NAMETAGISPREFIX = 4096
 #
 # Maximum channels in Chimera database
 
+#: Chimera max chan
 CHIMERA_MAX_CHAN = 128
 
 #
@@ -3739,8 +4104,11 @@ CHIMERA_MAX_CHAN = 128
 #
 # Chimera plot type
 
+#: Rose
 CHIMERA_PLOT_ROSE = 0
+#: Pie
 CHIMERA_PLOT_PIE = 1
+#: Bar
 CHIMERA_PLOT_BAR = 2	
 
 #
@@ -3754,20 +4122,35 @@ CHIMERA_PLOT_BAR = 2
 #
 # Connection Speed
 
+#: 110
 COM_BAUD_110 = 0
+#: 300
 COM_BAUD_300 = 1
+#: 600
 COM_BAUD_600 = 2
+#: 1200
 COM_BAUD_1200 = 3
+#: 2400
 COM_BAUD_2400 = 4
+#: 4800
 COM_BAUD_4800 = 5
+#: 9600
 COM_BAUD_9600 = 6
+#: 14400
 COM_BAUD_14400 = 7
+#: 19200
 COM_BAUD_19200 = 8
+#: 56000
 COM_BAUD_56000 = 9
+#: 57600
 COM_BAUD_57600 = 10
+#: 115200
 COM_BAUD_115200 = 11
+#: 128000
 COM_BAUD_128000 = 12
+#: 256000
 COM_BAUD_256000 = 13
+#: 38400
 COM_BAUD_38400 = 14
 
 #
@@ -3775,9 +4158,13 @@ COM_BAUD_38400 = 14
 #
 # Data Bits
 
+#: Five
 COM_DATASIZE_FIVE = 5
+#: Six
 COM_DATASIZE_SIX = 6
+#: Seven
 COM_DATASIZE_SEVEN = 7
+#: Eight
 COM_DATASIZE_EIGHT = 8
 
 #
@@ -3785,9 +4172,13 @@ COM_DATASIZE_EIGHT = 8
 #
 # Flow Control Options
 
+#: None
 COM_FLOWCONTROL_NONE = 0
+#: Rts cts
 COM_FLOWCONTROL_RTS_CTS = 1
+#: Dtr dsr
 COM_FLOWCONTROL_DTR_DSR = 2
+#: Xon xoff
 COM_FLOWCONTROL_XON_XOFF = 3
 
 #
@@ -3795,10 +4186,15 @@ COM_FLOWCONTROL_XON_XOFF = 3
 #
 # Parity
 
+#: Even
 COM_PARITY_EVEN = 0
+#: Nark
 COM_PARITY_NARK = 1
+#: None
 COM_PARITY_NONE = 2
+#: Odd
 COM_PARITY_ODD = 3
+#: Space
 COM_PARITY_SPACE = 4
 
 #
@@ -3806,8 +4202,11 @@ COM_PARITY_SPACE = 4
 #
 # Stop Bits
 
+#: One
 COM_STOPBITS_ONE = 0
+#: One5
 COM_STOPBITS_ONE5 = 1
+#: Two
 COM_STOPBITS_TWO = 2	
 
 #
@@ -3873,7 +4272,9 @@ DGW_HIDE = 8
 #
 # Default filenames
 
+#: Dh default rockcode file
 DH_DEFAULT_ROCKCODE_FILE = "agso.csv"
+#: Dh default structurecode file
 DH_DEFAULT_STRUCTURECODE_FILE = "structcodes.csv"
 
 #
@@ -3883,6 +4284,7 @@ DH_DEFAULT_STRUCTURECODE_FILE = "structcodes.csv"
 # `GXDH <geosoft.gxapi.GXDH>` GXs to store all the currently selected holes, as input to the two-panel
 # selection tool. This should be big enough for 65,000 16-character hole names!
 
+#: Str dh holes
 STR_DH_HOLES = 1048576
 
 #
@@ -3904,7 +4306,9 @@ DH_COMP_REFRESH = 2
 #
 # Composite Hole Selection
 
+#: All
 DH_COMPSTDB_HOLSEL_ALL = 0
+#: Selected
 DH_COMPSTDB_HOLSEL_SELECTED = 1
 
 #
@@ -3912,9 +4316,13 @@ DH_COMPSTDB_HOLSEL_SELECTED = 1
 #
 # Composite Interval
 
+#: Fixed
 DH_COMPSTDB_INTSEL_FIXED = 0
+#: Lithology
 DH_COMPSTDB_INTSEL_LITHOLOGY = 1
+#: Bestfitlith
 DH_COMPSTDB_INTSEL_BESTFITLITH = 2
+#: Intfile
 DH_COMPSTDB_INTSEL_INTFILE = 3
 
 #
@@ -3922,10 +4330,15 @@ DH_COMPSTDB_INTSEL_INTFILE = 3
 #
 # What to import
 
+#: Dipazimuth
 DH_DATA_DIPAZIMUTH = 0
+#: Eastnorth
 DH_DATA_EASTNORTH = 1
+#: Fromto
 DH_DATA_FROMTO = 2
+#: Point
 DH_DATA_POINT = 3
+#: Collar
 DH_DATA_COLLAR = 4
 #: The type is not known
 DH_DATA_UNKNOWN = 100
@@ -3935,6 +4348,7 @@ DH_DATA_UNKNOWN = 100
 #
 # Plans
 
+#: Dh define plan
 DH_DEFINE_PLAN = 1
 
 #
@@ -3942,8 +4356,11 @@ DH_DEFINE_PLAN = 1
 #
 # Types of Sections
 
+#: Ns
 DH_DEFINE_SECT_NS = 1
+#: Ew
 DH_DEFINE_SECT_EW = 2
+#: Angled
 DH_DEFINE_SECT_ANGLED = 3
 
 #
@@ -3951,8 +4368,11 @@ DH_DEFINE_SECT_ANGLED = 3
 #
 # Type of Export
 
+#: Csv
 DH_EXP_CSV = 0
+#: Ascii
 DH_EXP_ASCII = 1
+#: Access
 DH_EXP_ACCESS = 2
 #: Collars as points
 DH_EXP_SHP = 3
@@ -3966,7 +4386,9 @@ DH_EXP_SHP_TRACES = 5
 #
 # Holes to select
 
+#: All
 DH_HOLES_ALL = 0
+#: Selected
 DH_HOLES_SELECTED = 1
 
 #
@@ -3974,7 +4396,9 @@ DH_HOLES_SELECTED = 1
 #
 # Masks
 
+#: Append
 DH_MASK_APPEND = 0
+#: New
 DH_MASK_NEW = 1
 
 #
@@ -3982,13 +4406,21 @@ DH_MASK_NEW = 1
 #
 # Type of Plot
 
+#: Plan
 DH_PLOT_PLAN = 0
+#: Section
 DH_PLOT_SECTION = 1
+#: Striplog
 DH_PLOT_STRIPLOG = 2
+#: Hole traces
 DH_PLOT_HOLE_TRACES = 3
+#: 3d
 DH_PLOT_3D = 4
+#: Section stack
 DH_PLOT_SECTION_STACK = 5
+#: Section fence
 DH_PLOT_SECTION_FENCE = 6
+#: Section crooked
 DH_PLOT_SECTION_CROOKED = 7
 
 #
@@ -3996,6 +4428,7 @@ DH_PLOT_SECTION_CROOKED = 7
 #
 # Sections
 
+#: Section
 DH_SECT_PAGE_SECTION = 1
 
 #
@@ -4004,11 +4437,17 @@ DH_SECT_PAGE_SECTION = 1
 # Surface selection for creation of geological
 # top or bottom surfaces.
 
+#: First layer from
 DH_SURFACE_FIRST_LAYER_FROM = 0
+#: First layer to
 DH_SURFACE_FIRST_LAYER_TO = 1
+#: Second layer from
 DH_SURFACE_SECOND_LAYER_FROM = 2
+#: Second layer to
 DH_SURFACE_SECOND_LAYER_TO = 3
+#: Last layer from
 DH_SURFACE_LAST_LAYER_FROM = 4
+#: Last layer to
 DH_SURFACE_LAST_LAYER_TO = 5
 
 #
@@ -4016,7 +4455,9 @@ DH_SURFACE_LAST_LAYER_TO = 5
 #
 # Dip convention
 
+#: Negative
 DIP_CONVENTION_NEGATIVE = -1
+#: Positive
 DIP_CONVENTION_POSITIVE = 1	
 
 #
@@ -4036,7 +4477,9 @@ DIP_CONVENTION_POSITIVE = 1
 #
 # How to open document
 
+#: View
 DOCU_OPEN_VIEW = 0
+#: Edit
 DOCU_OPEN_EDIT = 1	
 
 #
@@ -4050,11 +4493,17 @@ DOCU_OPEN_EDIT = 1
 #
 # Duplicate Types
 
+#: First
 DB_DUP_FIRST = 1
+#: Average
 DB_DUP_AVERAGE = 2
+#: Minimum
 DB_DUP_MINIMUM = 3
+#: Maximum
 DB_DUP_MAXIMUM = 4
+#: Median
 DB_DUP_MEDIAN = 5
+#: Last
 DB_DUP_LAST = 6
 
 #
@@ -4062,7 +4511,9 @@ DB_DUP_LAST = 6
 #
 # Duplicate Edit Flags
 
+#: Single
 DB_DUPEDIT_SINGLE = 0
+#: All
 DB_DUPEDIT_ALL = 1
 
 #
@@ -4070,7 +4521,9 @@ DB_DUPEDIT_ALL = 1
 #
 # Channels to Display
 
+#: Displayed
 DU_CHANNELS_DISPLAYED = 0
+#: All
 DU_CHANNELS_ALL = 1
 
 #
@@ -4078,9 +4531,13 @@ DU_CHANNELS_ALL = 1
 #
 # Export Type
 
+#: Csv
 DU_EXPORT_CSV = 0
+#: Oddf
 DU_EXPORT_ODDF = 1
+#: Post pc
 DU_EXPORT_POST_PC = 2
+#: Post unix
 DU_EXPORT_POST_UNIX = 3
 
 #
@@ -4088,7 +4545,9 @@ DU_EXPORT_POST_UNIX = 3
 #
 # Filling Options
 
+#: Inside
 DU_FILL_INSIDE = 0
+#: Outside
 DU_FILL_OUTSIDE = 1
 
 #
@@ -4096,9 +4555,13 @@ DU_FILL_OUTSIDE = 1
 #
 # Import Mode
 
+#: Append
 DU_IMPORT_APPEND = 0
+#: Replace
 DU_IMPORT_REPLACE = 1
+#: Merge
 DU_IMPORT_MERGE = 2
+#: Merge append
 DU_IMPORT_MERGE_APPEND = 3
 
 #
@@ -4106,10 +4569,15 @@ DU_IMPORT_MERGE_APPEND = 3
 #
 # Inside Interpolation Method
 
+#: Nearest
 DU_INTERP_NEAREST = 1
+#: Linear
 DU_INTERP_LINEAR = 2
+#: Cubic
 DU_INTERP_CUBIC = 3
+#: Akima
 DU_INTERP_AKIMA = 4
+#: Predict
 DU_INTERP_PREDICT = 5
 
 #
@@ -4117,9 +4585,13 @@ DU_INTERP_PREDICT = 5
 #
 # Edge Interpolation Method
 
+#: None
 DU_INTERP_EDGE_NONE = 0
+#: Same
 DU_INTERP_EDGE_SAME = 1
+#: Nearest
 DU_INTERP_EDGE_NEAREST = 2
+#: Linear
 DU_INTERP_EDGE_LINEAR = 3
 
 #
@@ -4154,7 +4626,9 @@ DU_LEVEL_ALL = 2
 #
 # Lineout Options (du.h)
 
+#: Single
 DU_LINEOUT_SINGLE = 0
+#: Multiple
 DU_LINEOUT_MULTIPLE = 1
 
 #
@@ -4162,7 +4636,9 @@ DU_LINEOUT_MULTIPLE = 1
 #
 # Export to geodatabase feature type (du.h)
 
+#: Point
 DU_FEATURE_TYPE_OUTPUT_POINT = 0
+#: Line
 DU_FEATURE_TYPE_OUTPUT_LINE = 1
 
 #
@@ -4170,8 +4646,11 @@ DU_FEATURE_TYPE_OUTPUT_LINE = 1
 #
 # Export to geodatabase overwrite mode(du.h)
 
+#: Overwrite geodatabase
 DU_GEODATABASE_EXPORT_TYPE_OVERWRITE_GEODATABASE = 0
+#: Overwrite featureclass
 DU_GEODATABASE_EXPORT_TYPE_OVERWRITE_FEATURECLASS = 1
+#: Append
 DU_GEODATABASE_EXPORT_TYPE_APPEND = 2
 
 #
@@ -4179,8 +4658,11 @@ DU_GEODATABASE_EXPORT_TYPE_APPEND = 2
 #
 # Lines to display
 
+#: Displayed
 DU_LINES_DISPLAYED = 0
+#: Selected
 DU_LINES_SELECTED = 1
+#: All
 DU_LINES_ALL = 2
 
 #
@@ -4188,7 +4670,9 @@ DU_LINES_ALL = 2
 #
 # Load table options
 
+#: Replace
 DU_LOADLTB_REPLACE = 0
+#: Append
 DU_LOADLTB_APPEND = 1
 
 #
@@ -4241,7 +4725,9 @@ DU_LOOKUP_MAXOPTION = 8
 #
 # Masking Options
 
+#: Inside
 DU_MASK_INSIDE = 0
+#: Outside
 DU_MASK_OUTSIDE = 1
 
 #
@@ -4249,6 +4735,7 @@ DU_MASK_OUTSIDE = 1
 #
 # Merge flags
 
+#: Append
 DU_MERGE_APPEND = 0
 
 #
@@ -4302,7 +4789,9 @@ DU_REFID_NEAREST = 3
 #
 # Sort Direction
 
+#: Ascending
 DU_SORT_ASCENDING = 0
+#: Descending
 DU_SORT_DESCENDING = 1
 
 #
@@ -4310,8 +4799,11 @@ DU_SORT_DESCENDING = 1
 #
 # Sort Direction
 
+#: Xyposition
 DU_SPLITLINE_XYPOSITION = 0
+#: Sequential
 DU_SPLITLINE_SEQUENTIAL = 1
+#: Toversions
 DU_SPLITLINE_TOVERSIONS = 2
 
 #
@@ -4319,7 +4811,9 @@ DU_SPLITLINE_TOVERSIONS = 2
 #
 # Storage Type
 
+#: Line
 DU_STORAGE_LINE = 0
+#: Group
 DU_STORAGE_GROUP = 1
 
 #
@@ -4327,8 +4821,11 @@ DU_STORAGE_GROUP = 1
 #
 # Type Plan
 
+#: Qc plan surveyline
 QC_PLAN_SURVEYLINE = 0
+#: Qc plan tieline
 QC_PLAN_TIELINE = 1
+#: Qc plan bothlines
 QC_PLAN_BOTHLINES = 2
 
 #
@@ -4346,8 +4843,11 @@ DU_DISTANCE_CHANNEL_CARTESIAN_COORDINATES = 1
 #
 # How to calculate the cell values for direct gridding.
 
+#: Du directgrid min
 DU_DIRECTGRID_MIN = 0
+#: Du directgrid max
 DU_DIRECTGRID_MAX = 1
+#: Du directgrid mean
 DU_DIRECTGRID_MEAN = 2	
 
 #
@@ -4367,6 +4867,7 @@ DU_DIRECTGRID_MEAN = 2
 #
 # The following value should be kept synchronized with the value defined in src\\geoguilib\\stdafx.h
 
+#: Max prof wnd
 MAX_PROF_WND = 5
 
 #
@@ -4443,8 +4944,11 @@ EDB_PROF_I_SAMERANGE = 15
 #
 # Profile Scale Options
 
+#: Linear
 EDB_PROFILE_SCALE_LINEAR = 0
+#: Log
 EDB_PROFILE_SCALE_LOG = 1
+#: Loglinear
 EDB_PROFILE_SCALE_LOGLINEAR = 2
 
 #
@@ -4452,8 +4956,11 @@ EDB_PROFILE_SCALE_LOGLINEAR = 2
 #
 # How to handle pending changes in document
 
+#: Save
 EDB_REMOVE_SAVE = 0
+#: Prompt
 EDB_REMOVE_PROMPT = 1
+#: Discard
 EDB_REMOVE_DISCARD = 2
 
 #
@@ -4461,7 +4968,9 @@ EDB_REMOVE_DISCARD = 2
 #
 # What type of prompt
 
+#: No prompt
 EDB_UNLOAD_NO_PROMPT = 0
+#: Single prompt
 EDB_UNLOAD_SINGLE_PROMPT = 1
 #: Obsolete
 EDB_UNLOAD_MULTI_PROMPT = 2
@@ -4471,7 +4980,9 @@ EDB_UNLOAD_MULTI_PROMPT = 2
 #
 # Window Positioning Options
 
+#: Docked
 EDB_WINDOW_POSITION_DOCKED = 0
+#: Floating
 EDB_WINDOW_POSITION_FLOATING = 1
 
 #
@@ -4479,8 +4990,11 @@ EDB_WINDOW_POSITION_FLOATING = 1
 #
 # Window State Options
 
+#: Edb window restore
 EDB_WINDOW_RESTORE = 0
+#: Edb window minimize
 EDB_WINDOW_MINIMIZE = 1
+#: Edb window maximize
 EDB_WINDOW_MAXIMIZE = 2
 
 #
@@ -4488,7 +5002,9 @@ EDB_WINDOW_MAXIMIZE = 2
 #
 # Window State Options
 
+#: Edb yaxis normal
 EDB_YAXIS_NORMAL = 0
+#: Edb yaxis inverted
 EDB_YAXIS_INVERTED = 1	
 
 #
@@ -4530,7 +5046,9 @@ EDOC_TYPE_GMS2D = 3
 #
 # What type of prompt
 
+#: No prompt
 EDOC_UNLOAD_NO_PROMPT = 0
+#: Prompt
 EDOC_UNLOAD_PROMPT = 1
 
 #
@@ -4538,7 +5056,9 @@ EDOC_UNLOAD_PROMPT = 1
 #
 # Window Positioning Options
 
+#: Docked
 EDOC_WINDOW_POSITION_DOCKED = 0
+#: Floating
 EDOC_WINDOW_POSITION_FLOATING = 1
 
 #
@@ -4546,8 +5066,11 @@ EDOC_WINDOW_POSITION_FLOATING = 1
 #
 # Window State Options
 
+#: Edoc window restore
 EDOC_WINDOW_RESTORE = 0
+#: Edoc window minimize
 EDOC_WINDOW_MINIMIZE = 1
+#: Edoc window maximize
 EDOC_WINDOW_MAXIMIZE = 2
 
 #
@@ -4581,7 +5104,9 @@ GMS2D_MODELTYPE_TIME = 1
 #
 # Font Types
 
+#: Tt
 EMAP_FONT_TT = 0
+#: Gfn
 EMAP_FONT_GFN = 1
 
 #
@@ -4603,7 +5128,9 @@ EMAP_PATH_NAME = 3
 #
 # Redraw Options
 
+#: No
 EMAP_REDRAW_NO = 0
+#: Yes
 EMAP_REDRAW_YES = 1
 
 #
@@ -4611,8 +5138,11 @@ EMAP_REDRAW_YES = 1
 #
 # How to handle pending changes in document
 
+#: Save
 EMAP_REMOVE_SAVE = 0
+#: Prompt
 EMAP_REMOVE_PROMPT = 1
+#: Discard
 EMAP_REMOVE_DISCARD = 2
 
 #
@@ -4644,7 +5174,9 @@ EMAP_VIEWPORT_BROWSEAOI = 2
 #
 # Window Positioning Options
 
+#: Docked
 EMAP_WINDOW_POSITION_DOCKED = 0
+#: Floating
 EMAP_WINDOW_POSITION_FLOATING = 1
 
 #
@@ -4652,8 +5184,11 @@ EMAP_WINDOW_POSITION_FLOATING = 1
 #
 # Window State Options
 
+#: Emap window restore
 EMAP_WINDOW_RESTORE = 0
+#: Emap window minimize
 EMAP_WINDOW_MINIMIZE = 1
+#: Emap window maximize
 EMAP_WINDOW_MAXIMIZE = 2
 
 #
@@ -4705,7 +5240,9 @@ EMAPTEMPLATE_TRACK_CYCLE = 4
 #
 # Window Positioning Options
 
+#: Docked
 EMAPTEMPLATE_WINDOW_POSITION_DOCKED = 0
+#: Floating
 EMAPTEMPLATE_WINDOW_POSITION_FLOATING = 1
 
 #
@@ -4713,8 +5250,11 @@ EMAPTEMPLATE_WINDOW_POSITION_FLOATING = 1
 #
 # Window State Options
 
+#: Emaptemplate window restore
 EMAPTEMPLATE_WINDOW_RESTORE = 0
+#: Emaptemplate window minimize
 EMAPTEMPLATE_WINDOW_MINIMIZE = 1
+#: Emaptemplate window maximize
 EMAPTEMPLATE_WINDOW_MAXIMIZE = 2	
 
 #
@@ -4728,13 +5268,21 @@ EMAPTEMPLATE_WINDOW_MAXIMIZE = 2
 #
 # Euler result types
 
+#: X
 EUL3_RESULT_X = 1
+#: Y
 EUL3_RESULT_Y = 2
+#: Depth
 EUL3_RESULT_DEPTH = 3
+#: Background
 EUL3_RESULT_BACKGROUND = 4
+#: Deptherror
 EUL3_RESULT_DEPTHERROR = 5
+#: Locationerror
 EUL3_RESULT_LOCATIONERROR = 6
+#: Windowx
 EUL3_RESULT_WINDOWX = 7
+#: Windowy
 EUL3_RESULT_WINDOWY = 8	
 
 #
@@ -4774,7 +5322,9 @@ FFT_DETREND_MEAN = 3
 #
 # Pager Direction
 
+#: Forward
 FFT2_PG_FORWARD = 0
+#: Inverse
 FFT2_PG_INVERSE = 1	
 
 #
@@ -4794,8 +5344,11 @@ FFT2_PG_INVERSE = 1
 #
 # Grid open mode
 
+#: Readonly
 GD_STATUS_READONLY = 0
+#: New
 GD_STATUS_NEW = 1
+#: Old
 GD_STATUS_OLD = 2	
 
 #
@@ -4821,7 +5374,9 @@ GD_STATUS_OLD = 2
 #
 # Error Scaling
 
+#: Unscaled
 EM_ERR_UNSCALED = 0
+#: Logscaling
 EM_ERR_LOGSCALING = 1
 
 #
@@ -4829,8 +5384,11 @@ EM_ERR_LOGSCALING = 1
 #
 # Type of Inversion
 
+#: Inphase
 EM_INV_INPHASE = 0
+#: Quadrature
 EM_INV_QUADRATURE = 1
+#: Both
 EM_INV_BOTH = 2
 
 #
@@ -4838,7 +5396,9 @@ EM_INV_BOTH = 2
 #
 # Type of Domain
 
+#: Emplate frequency
 EMPLATE_FREQUENCY = 1
+#: Emplate time
 EMPLATE_TIME = 9
 
 #
@@ -4846,8 +5406,11 @@ EMPLATE_TIME = 9
 #
 # Orientation
 
+#: X
 EMPLATE_TX_X = 1
+#: Y
 EMPLATE_TX_Y = 2
+#: Z
 EMPLATE_TX_Z = 3
 
 #
@@ -4855,12 +5418,19 @@ EMPLATE_TX_Z = 3
 #
 # Supported serial data types for import
 
+#: Gu daarc500 unknown
 GU_DAARC500_UNKNOWN = 0
+#: Gu daarc500 generic ascii
 GU_DAARC500_GENERIC_ASCII = 1
+#: Gu daarc500 gps
 GU_DAARC500_GPS = 2
+#: Gu daarc500 gr820 256d
 GU_DAARC500_GR820_256D = 3
+#: Gu daarc500 gr820 256du
 GU_DAARC500_GR820_256DU = 4
+#: Gu daarc500 gr820 512du
 GU_DAARC500_GR820_512DU = 5
+#: Gu daarc500 nav
 GU_DAARC500_NAV = 6
 
 #
@@ -4868,7 +5438,9 @@ GU_DAARC500_NAV = 6
 #
 # Fit Options
 
+#: Nofit
 PEAKEULER_XY_NOFIT = 0
+#: Fit
 PEAKEULER_XY_FIT = 1	
 
 #
@@ -5198,31 +5770,57 @@ FILE_FORM_SAVE = 1
 #
 # Geosoft predefined directory
 
+#: None
 GS_DIRECTORY_NONE = 0
+#: Geosoft
 GS_DIRECTORY_GEOSOFT = 1
+#: Bin
 GS_DIRECTORY_BIN = 2
+#: Ger
 GS_DIRECTORY_GER = 3
+#: Omn
 GS_DIRECTORY_OMN = 4
+#: Tbl
 GS_DIRECTORY_TBL = 5
+#: Fonts
 GS_DIRECTORY_FONTS = 6
+#: Gx
 GS_DIRECTORY_GX = 7
+#: Gs
 GS_DIRECTORY_GS = 8
+#: Apps
 GS_DIRECTORY_APPS = 9
+#: Etc
 GS_DIRECTORY_ETC = 10
+#: Hlp
 GS_DIRECTORY_HLP = 11
+#: Gxdev
 GS_DIRECTORY_GXDEV = 12
+#: Component
 GS_DIRECTORY_COMPONENT = 13
+#: Csv
 GS_DIRECTORY_CSV = 14
+#: Lic
 GS_DIRECTORY_LIC = 15
+#: Ini
 GS_DIRECTORY_INI = 16
+#: Temp
 GS_DIRECTORY_TEMP = 17
+#: Uetc
 GS_DIRECTORY_UETC = 18
+#: Umaptemplate
 GS_DIRECTORY_UMAPTEMPLATE = 19
+#: Component scripts
 GS_DIRECTORY_COMPONENT_SCRIPTS = 50
+#: Component html
 GS_DIRECTORY_COMPONENT_HTML = 51
+#: Img
 GS_DIRECTORY_IMG = 52
+#: Bar
 GS_DIRECTORY_BAR = 53
+#: Gxnet
 GS_DIRECTORY_GXNET = 54
+#: Maptemplate
 GS_DIRECTORY_MAPTEMPLATE = 55
 
 #
@@ -5230,7 +5828,9 @@ GS_DIRECTORY_MAPTEMPLATE = 55
 #
 # Import Chem defines
 
+#: Data
 IMPCH_TYPE_DATA = 0
+#: Assay
 IMPCH_TYPE_ASSAY = 1
 
 #
@@ -5238,8 +5838,11 @@ IMPCH_TYPE_ASSAY = 1
 #
 # Window State Options
 
+#: Window restore
 WINDOW_RESTORE = 0
+#: Window minimize
 WINDOW_MINIMIZE = 1
+#: Window maximize
 WINDOW_MAXIMIZE = 2
 
 #
@@ -5247,10 +5850,15 @@ WINDOW_MAXIMIZE = 2
 #
 # XTool docking alignment flags
 
+#: Left
 XTOOL_ALIGN_LEFT = 1
+#: Top
 XTOOL_ALIGN_TOP = 2
+#: Right
 XTOOL_ALIGN_RIGHT = 4
+#: Bottom
 XTOOL_ALIGN_BOTTOM = 8
+#: Any
 XTOOL_ALIGN_ANY = 15
 
 #
@@ -5258,10 +5866,15 @@ XTOOL_ALIGN_ANY = 15
 #
 # XTool default docking state
 
+#: Top
 XTOOL_DOCK_TOP = 1
+#: Left
 XTOOL_DOCK_LEFT = 2
+#: Right
 XTOOL_DOCK_RIGHT = 3
+#: Bottom
 XTOOL_DOCK_BOTTOM = 4
+#: Float
 XTOOL_DOCK_FLOAT = 5	
 
 #
@@ -5293,15 +5906,25 @@ XTOOL_DOCK_FLOAT = 5
 #
 # `GXIP <geosoft.gxapi.GXIP>` Array options
 
+#: Dpdp
 IP_ARRAY_DPDP = 0
+#: Pldp
 IP_ARRAY_PLDP = 1
+#: Plpl
 IP_ARRAY_PLPL = 2
+#: Grad
 IP_ARRAY_GRAD = 3
+#: Wenner
 IP_ARRAY_WENNER = 5
+#: Schlumberger
 IP_ARRAY_SCHLUMBERGER = 6
+#: Unknown
 IP_ARRAY_UNKNOWN = 7
+#: 3d
 IP_ARRAY_3D = 9
+#: 3d pldp
 IP_ARRAY_3D_PLDP = 10
+#: 3d plpl
 IP_ARRAY_3D_PLPL = 11
 
 #
@@ -5309,8 +5932,11 @@ IP_ARRAY_3D_PLPL = 11
 #
 # Channels to display
 
+#: Displayed
 IP_CHANNELS_DISPLAYED = 0
+#: Selected
 IP_CHANNELS_SELECTED = 1
+#: All
 IP_CHANNELS_ALL = 2
 
 #
@@ -5318,9 +5944,13 @@ IP_CHANNELS_ALL = 2
 #
 # Types of Domains
 
+#: None
 IP_DOMAIN_NONE = -1
+#: Time
 IP_DOMAIN_TIME = 0
+#: Frequency
 IP_DOMAIN_FREQUENCY = 1
+#: Both
 IP_DOMAIN_BOTH = 2
 
 #
@@ -5328,7 +5958,9 @@ IP_DOMAIN_BOTH = 2
 #
 # How to handle duplicates
 
+#: Append
 IP_DUPLICATE_APPEND = 0
+#: Overwrite
 IP_DUPLICATE_OVERWRITE = 1
 
 #
@@ -5338,7 +5970,7 @@ IP_DUPLICATE_OVERWRITE = 1
 
 #: ::
 #: 
-#:     Regular pant-leg filter    
+#:     Regular pant-leg filter:
 #: 
 #: 
 #:        _!_    
@@ -5349,7 +5981,7 @@ IP_DUPLICATE_OVERWRITE = 1
 IP_FILTER_PANTLEG = 1
 #: ::
 #: 
-#:     Regular pant-leg filter with top at first point::
+#:     Regular pant-leg filter with top at first point:
 #: 
 #:        !  nscp:
 #:       /*\\   n1
@@ -5359,7 +5991,7 @@ IP_FILTER_PANTLEG = 1
 IP_FILTER_PANTLEGP = 2
 #: ::
 #: 
-#:     Regular pyramid filter::
+#:     Regular pyramid filter:
 #: 
 #:        _!_  maxn:
 #:       /* *\\   n1
@@ -5369,7 +6001,7 @@ IP_FILTER_PANTLEGP = 2
 IP_FILTER_PYRIAMID = 3
 #: ::
 #: 
-#:     Regular pyramid filter with peak on a point::
+#:     Regular pyramid filter with peak on a point:
 #: 
 #:        !  maxn:
 #:       /*\\   n1
@@ -5394,7 +6026,9 @@ IP_I2XIMPMODE_MERGE = 1
 #
 # Type of Inversion
 
+#: Image
 IP_I2XINV_IMAGE = 0
+#: Zonge
 IP_I2XINV_ZONGE = 1
 
 #
@@ -5402,8 +6036,11 @@ IP_I2XINV_ZONGE = 1
 #
 # Lines to display
 
+#: Displayed
 IP_LINES_DISPLAYED = 0
+#: Selected
 IP_LINES_SELECTED = 1
+#: All
 IP_LINES_ALL = 2
 
 #
@@ -5411,7 +6048,9 @@ IP_LINES_ALL = 2
 #
 # Type of Plot
 
+#: Pseudosection
 IP_PLOT_PSEUDOSECTION = 0
+#: Stackedsection
 IP_PLOT_STACKEDSECTION = 1
 
 #
@@ -5458,16 +6097,27 @@ IP_STNSCALE_FILE = 3
 #
 # Instrument
 
+#: Ipdata
 IP_SYS_IPDATA = 0
+#: Ip2
 IP_SYS_IP2 = 1
+#: Ip6
 IP_SYS_IP6 = 2
+#: Ip10
 IP_SYS_IP10 = 3
+#: Syscalr2
 IP_SYS_SYSCALR2 = 4
+#: Ipr11
 IP_SYS_IPR11 = 5
+#: Ipr12
 IP_SYS_IPR12 = 6
+#: Phoenix
 IP_SYS_PHOENIX = 7
+#: Phoenix v2
 IP_SYS_PHOENIX_V2 = 8
+#: Elrec pro
 IP_SYS_ELREC_PRO = 9
+#: Prosys ii
 IP_SYS_PROSYS_II = 10
 
 #
@@ -5475,10 +6125,15 @@ IP_SYS_PROSYS_II = 10
 #
 # Types of Domains
 
+#: None
 IP_UBC_CONTROL_NONE = -1
+#: Default
 IP_UBC_CONTROL_DEFAULT = 0
+#: File
 IP_UBC_CONTROL_FILE = 1
+#: Value
 IP_UBC_CONTROL_VALUE = 2
+#: Length
 IP_UBC_CONTROL_LENGTH = 3
 
 #
@@ -5486,8 +6141,11 @@ IP_UBC_CONTROL_LENGTH = 3
 #
 # Types of Domains
 
+#: Close rx
 IP_PLDP_CONV_CLOSE_RX = 0
+#: Mid rx
 IP_PLDP_CONV_MID_RX = 1
+#: Distant rx
 IP_PLDP_CONV_DISTANT_RX = 2	
 
 #
@@ -5595,8 +6253,11 @@ FILTER3D_TOTAL_GRADIENT = 6
 #
 # How to calculate the cell values for direct gridding.
 
+#: Multivoxset directgrid min
 MULTIVOXSET_DIRECTGRID_MIN = 0
+#: Multivoxset directgrid max
 MULTIVOXSET_DIRECTGRID_MAX = 1
+#: Multivoxset directgrid mean
 MULTIVOXSET_DIRECTGRID_MEAN = 2	
 
 #
@@ -5610,7 +6271,9 @@ MULTIVOXSET_DIRECTGRID_MEAN = 2
 #
 # `GXMVG <geosoft.gxapi.GXMVG>` draw define
 
+#: Polyline
 MVG_DRAW_POLYLINE = 0
+#: Polygon
 MVG_DRAW_POLYGON = 1
 
 #
@@ -5618,8 +6281,11 @@ MVG_DRAW_POLYGON = 1
 #
 # `GXMVG <geosoft.gxapi.GXMVG>` grid define
 
+#: Dot
 MVG_GRID_DOT = 0
+#: Line
 MVG_GRID_LINE = 1
+#: Cross
 MVG_GRID_CROSS = 2
 
 #
@@ -5627,7 +6293,9 @@ MVG_GRID_CROSS = 2
 #
 # `GXMVG <geosoft.gxapi.GXMVG>` label bound define
 
+#: No
 MVG_LABEL_BOUND_NO = 0
+#: Yes
 MVG_LABEL_BOUND_YES = 1
 
 #
@@ -5635,9 +6303,13 @@ MVG_LABEL_BOUND_YES = 1
 #
 # `GXMVG <geosoft.gxapi.GXMVG>` label justification define
 
+#: Top
 MVG_LABEL_JUST_TOP = 0
+#: Bottom
 MVG_LABEL_JUST_BOTTOM = 1
+#: Left
 MVG_LABEL_JUST_LEFT = 2
+#: Right
 MVG_LABEL_JUST_RIGHT = 3
 
 #
@@ -5645,8 +6317,11 @@ MVG_LABEL_JUST_RIGHT = 3
 #
 # `GXMVG <geosoft.gxapi.GXMVG>` label orientation
 
+#: Horizontal
 MVG_LABEL_ORIENT_HORIZONTAL = 0
+#: Top right
 MVG_LABEL_ORIENT_TOP_RIGHT = 1
+#: Top left
 MVG_LABEL_ORIENT_TOP_LEFT = 2
 
 #
@@ -5654,8 +6329,11 @@ MVG_LABEL_ORIENT_TOP_LEFT = 2
 #
 # `GXMVG <geosoft.gxapi.GXMVG>` scale define
 
+#: Linear
 MVG_SCALE_LINEAR = 0
+#: Log
 MVG_SCALE_LOG = 1
+#: Loglinear
 MVG_SCALE_LOGLINEAR = 2
 
 #
@@ -5663,7 +6341,9 @@ MVG_SCALE_LOGLINEAR = 2
 #
 # `GXMVG <geosoft.gxapi.GXMVG>` wrap define
 
+#: No
 MVG_WRAP_NO = 0
+#: Yes
 MVG_WRAP_YES = 1	
 
 #
@@ -5689,9 +6369,13 @@ MVG_WRAP_YES = 1
 #
 # Types of BLAKEY tests
 
+#: Oneside
 BLAKEY_TEST_ONESIDE = 1
+#: Twoside
 BLAKEY_TEST_TWOSIDE = 2
+#: Threeside
 BLAKEY_TEST_THREESIDE = 3
+#: Fourside
 BLAKEY_TEST_FOURSIDE = 4
 
 #
@@ -5735,7 +6419,9 @@ PGU_BACKWARD = 1
 #
 # Transform methods for the columns
 
+#: None
 PGU_TRANS_NONE = 0
+#: Log
 PGU_TRANS_LOG = 1
 
 #
@@ -5743,11 +6429,17 @@ PGU_TRANS_LOG = 1
 #
 # Interpolation direction order
 
+#: Xyz
 PGU_INTERP_ORDER_XYZ = 0
+#: Xzy
 PGU_INTERP_ORDER_XZY = 1
+#: Yxz
 PGU_INTERP_ORDER_YXZ = 2
+#: Yzx
 PGU_INTERP_ORDER_YZX = 3
+#: Zxy
 PGU_INTERP_ORDER_ZXY = 4
+#: Zyx
 PGU_INTERP_ORDER_ZYX = 5	
 
 #
@@ -5813,6 +6505,7 @@ PROJ_DISPLAY_ALWAYS = 2
 #
 # `GXSEMPLOT <geosoft.gxapi.GXSEMPLOT>` group class.
 
+#: Semplot group class
 SEMPLOT_GROUP_CLASS = "Semplot"
 
 #
@@ -5920,16 +6613,27 @@ STK_AXIS_Y = 1
 #
 # Stack flags
 
+#: Profile
 STK_FLAG_PROFILE = 0
+#: Fid
 STK_FLAG_FID = 1
+#: Symbol
 STK_FLAG_SYMBOL = 2
+#: Xbar
 STK_FLAG_XBAR = 3
+#: Xlabel
 STK_FLAG_XLABEL = 4
+#: Xtitle
 STK_FLAG_XTITLE = 5
+#: Ybar
 STK_FLAG_YBAR = 6
+#: Ylabel
 STK_FLAG_YLABEL = 7
+#: Ytitle
 STK_FLAG_YTITLE = 8
+#: Grid1
 STK_FLAG_GRID1 = 9
+#: Grid2
 STK_FLAG_GRID2 = 10
 
 #
@@ -6016,7 +6720,9 @@ GG_ELEMENT_YZ = 4
 #
 # Node to find
 
+#: Trnd min
 TRND_MIN = 0
+#: Trnd max
 TRND_MAX = 1	
 
 #
@@ -6044,7 +6750,9 @@ UTF8_MAX_CHAR = 5
 #
 # Prune Options
 
+#: Dummy
 VAU_PRUNE_DUMMY = 0
+#: Valid
 VAU_PRUNE_VALID = 1	
 
 #
@@ -6064,8 +6772,11 @@ VAU_PRUNE_VALID = 1
 #
 # Criterion
 
+#: 1
 QC_CRITERION_1 = 0
+#: 2
 QC_CRITERION_2 = 1
+#: 12
 QC_CRITERION_12 = 2
 
 #
@@ -6073,8 +6784,11 @@ QC_CRITERION_12 = 2
 #
 # Array Type
 
+#: Verticalsounding
 TEM_ARRAY_VERTICALSOUNDING = 0
+#: Profiling
 TEM_ARRAY_PROFILING = 1
+#: Borehole
 TEM_ARRAY_BOREHOLE = 2
 
 #
@@ -6098,7 +6812,9 @@ VV_DUP_SAMPLE = 4
 #
 # Sample handling
 
+#: Average
 VV_XYDUP_AVERAGE = 0
+#: Sum
 VV_XYDUP_SUM = 1
 
 #
@@ -6106,7 +6822,9 @@ VV_XYDUP_SUM = 1
 #
 # String case handling
 
+#: Tolerant
 VVU_CASE_TOLERANT = 0
+#: Sensitive
 VVU_CASE_SENSITIVE = 1
 
 #
@@ -6136,10 +6854,15 @@ VVU_DUMMYREPEAT_MIDDLE = 2
 #
 # Interpolation method to use
 
+#: Nearest
 VVU_INTERP_NEAREST = 1
+#: Linear
 VVU_INTERP_LINEAR = 2
+#: Cubic
 VVU_INTERP_CUBIC = 3
+#: Akima
 VVU_INTERP_AKIMA = 4
+#: Predict
 VVU_INTERP_PREDICT = 5
 
 #
@@ -6147,9 +6870,13 @@ VVU_INTERP_PREDICT = 5
 #
 # Interpolation method to use on edges
 
+#: None
 VVU_INTERP_EDGE_NONE = 0
+#: Same
 VVU_INTERP_EDGE_SAME = 1
+#: Nearest
 VVU_INTERP_EDGE_NEAREST = 2
+#: Linear
 VVU_INTERP_EDGE_LINEAR = 3
 
 #
@@ -6157,7 +6884,9 @@ VVU_INTERP_EDGE_LINEAR = 3
 #
 # Line Types
 
+#: Line 2 points
 LINE_2_POINTS = 0
+#: Line point azimuth
 LINE_POINT_AZIMUTH = 1
 
 #
@@ -6185,9 +6914,13 @@ VVU_MATCH_INPUT_LENGTH = 1
 #
 # Statistic to select
 
+#: Mean
 VVU_MODE_MEAN = 0
+#: Median
 VVU_MODE_MEDIAN = 1
+#: Maximum
 VVU_MODE_MAXIMUM = 2
+#: Minimum
 VVU_MODE_MINIMUM = 3
 
 #
@@ -6195,9 +6928,13 @@ VVU_MODE_MINIMUM = 3
 #
 # Heading
 
+#: Forward
 VVU_OFFSET_FORWARD = 0
+#: Backward
 VVU_OFFSET_BACKWARD = 1
+#: Right
 VVU_OFFSET_RIGHT = 2
+#: Left
 VVU_OFFSET_LEFT = 3
 
 #
@@ -6215,9 +6952,13 @@ VVU_PRUNE_VALID = 1
 #
 # Spline types
 
+#: Linear
 VVU_SPL_LINEAR = 0
+#: Cubic
 VVU_SPL_CUBIC = 1
+#: Akima
 VVU_SPL_AKIMA = 2
+#: Nearest
 VVU_SPL_NEAREST = 3
 
 #
@@ -6225,7 +6966,9 @@ VVU_SPL_NEAREST = 3
 #
 # Search and Replace handling of string case
 
+#: Tolerant
 VVU_SRCHREPL_CASE_TOLERANT = 0
+#: Sensitive
 VVU_SRCHREPL_CASE_SENSITIVE = 1	
 
 ### endblock Constants

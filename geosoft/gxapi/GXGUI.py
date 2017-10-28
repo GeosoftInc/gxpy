@@ -2115,38 +2115,38 @@ class GXGUI:
 
 
     @classmethod
-    def render_pattern(cls, hdc, h_dc, left, bottom, right, top, pat, size, thick, col, back_col, p12, p13, p14):
+    def render_pattern(cls, hdc, left, bottom, right, top, pat, size, thick, dense, col, back_col, is_enabled, is_button, is_selected):
         """
         - Render a pattern.
         
-        :param hdc:       DC handle
-        :param h_dc:      Left value of the render rect in Windows coordinates (bottom>top)
-        :param left:      Bottom value
-        :param bottom:    Right value
-        :param right:     Top value
-        :param top:       Pattern number
-        :param pat:       Pattern size,           // input `GS_R8DM <geosoft.gxapi.GS_R8DM>` to use default
-        :param size:      Pattern thick (0-100)   // input `GS_S4DM <geosoft.gxapi.GS_S4DM>` to use default
-        :param thick:     Pattern density,        // input `GS_R8DM <geosoft.gxapi.GS_R8DM>` to use default
-        :param col:       Pattern color	  // input `GS_S4DM <geosoft.gxapi.GS_S4DM>` to use default
-        :param back_col:  Pattern background color // input `GS_S4DM <geosoft.gxapi.GS_S4DM>` to use default; can be `C_TRANSPARENT <geosoft.gxapi.C_TRANSPARENT>`
-        :param p12:       Is this window enabled?
-        :param p13:       Is this a button?
-        :param p14:       Is this window selected?
-        :type  hdc:       int
-        :type  h_dc:      int
-        :type  left:      int
-        :type  bottom:    int
-        :type  right:     int
-        :type  top:       int
-        :type  pat:       float
-        :type  size:      int
-        :type  thick:     float
-        :type  col:       int
-        :type  back_col:  int
-        :type  p12:       int
-        :type  p13:       int
-        :type  p14:       int
+        :param hdc:          DC handle
+        :param left:         Left value of the render rect in Windows coordinates (bottom>top)
+        :param bottom:       Bottom value
+        :param right:        Right value
+        :param top:          Top value
+        :param pat:          Pattern number
+        :param size:         Pattern size,           // input `GS_R8DM <geosoft.gxapi.GS_R8DM>` to use default
+        :param thick:        Pattern thick (0-100)   // input `GS_S4DM <geosoft.gxapi.GS_S4DM>` to use default
+        :param dense:        Pattern density,        // input `GS_R8DM <geosoft.gxapi.GS_R8DM>` to use default
+        :param col:          Pattern color	  // input `GS_S4DM <geosoft.gxapi.GS_S4DM>` to use default
+        :param back_col:     Pattern background color // input `GS_S4DM <geosoft.gxapi.GS_S4DM>` to use default; can be `C_TRANSPARENT <geosoft.gxapi.C_TRANSPARENT>`
+        :param is_enabled:   Is this window enabled?
+        :param is_button:    Is this a button?
+        :param is_selected:  Is this window selected?
+        :type  hdc:          int
+        :type  left:         int
+        :type  bottom:       int
+        :type  right:        int
+        :type  top:          int
+        :type  pat:          int
+        :type  size:         float
+        :type  thick:        int
+        :type  dense:        float
+        :type  col:          int
+        :type  back_col:     int
+        :type  is_enabled:   int
+        :type  is_button:    int
+        :type  is_selected:  int
 
         .. versionadded:: 5.0
 
@@ -2154,40 +2154,40 @@ class GXGUI:
 
         Renders a Geosoft pattern to a Windows DC.
         """
-        gxapi_cy.WrapGUI.render_pattern(GXContext._get_tls_geo(), hdc, h_dc, left, bottom, right, top, pat, size, thick, col, back_col, p12, p13, p14)
+        gxapi_cy.WrapGUI.render_pattern(GXContext._get_tls_geo(), hdc, left, bottom, right, top, pat, size, thick, dense, col, back_col, is_enabled, is_button, is_selected)
         
 
 
 
     @classmethod
-    def render_line_pattern(cls, hdc, h_dc, left, bottom, right, top, pattern, thickness, pitch, col, p11, p12):
+    def render_line_pattern(cls, hdc, left, bottom, right, top, pattern, thickness, pitch, col, is_enabled, is_button, is_selected):
         """
         Render a line pattern.
         
-        :param hdc:        DC Handle
-        :param h_dc:       Left value of the render rect in Windows coordinates (bottom>top)
-        :param left:       Bottom value
-        :param bottom:     Right value
-        :param right:      Top value
-        :param top:        Pattern number
-        :param pattern:    Pattern thickness
-        :param thickness:  Pattern pitch
-        :param pitch:      Pattern color
-        :param col:        Is this window enabled?
-        :param p11:        Is this a button?
-        :param p12:        Is this window selected?
-        :type  hdc:        int
-        :type  h_dc:       int
-        :type  left:       int
-        :type  bottom:     int
-        :type  right:      int
-        :type  top:        int
-        :type  pattern:    float
-        :type  thickness:  float
-        :type  pitch:      int
-        :type  col:        int
-        :type  p11:        int
-        :type  p12:        int
+        :param hdc:          DC Handle
+        :param left:         Left value of the render rect in Windows coordinates (bottom>top)
+        :param bottom:       Bottom value
+        :param right:        Right value
+        :param top:          Top value
+        :param pattern:      Pattern number
+        :param thickness:    Pattern thickness
+        :param pitch:        Pattern pitch
+        :param col:          Pattern color
+        :param is_enabled:   Is this window enabled?
+        :param is_button:    Is this a button?
+        :param is_selected:  Is this window selected?
+        :type  hdc:          int
+        :type  left:         int
+        :type  bottom:       int
+        :type  right:        int
+        :type  top:          int
+        :type  pattern:      int
+        :type  thickness:    float
+        :type  pitch:        float
+        :type  col:          int
+        :type  is_enabled:   int
+        :type  is_button:    int
+        :type  is_selected:  int
 
         .. versionadded:: 8.1
 
@@ -2195,7 +2195,7 @@ class GXGUI:
 
         Same as `render_pattern <geosoft.gxapi.GXGUI.render_pattern>` but for line patterns.
         """
-        gxapi_cy.WrapGUI.render_line_pattern(GXContext._get_tls_geo(), hdc, h_dc, left, bottom, right, top, pattern, thickness, pitch, col, p11, p12)
+        gxapi_cy.WrapGUI.render_line_pattern(GXContext._get_tls_geo(), hdc, left, bottom, right, top, pattern, thickness, pitch, col, is_enabled, is_button, is_selected)
         
 
 

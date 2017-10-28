@@ -61,6 +61,10 @@ class GXContext:
         p_geo = GXContext._get_tls_geo()
         return p_geo._internal_p()
 
+    @classmethod
+    def _redirect_std_streams(cls):
+        gxapi_cy.WrapPGeo.gx_redirect_std_streams()
+
     def get_main_wnd_id(self):
         p_geo = GXContext._get_tls_geo()
         return p_geo.get_main_wnd()
@@ -73,15 +77,19 @@ class GXContext:
         p_geo = GXContext._get_tls_geo()
         return p_geo.enable_application_windows(enable)
 
-
     def has_ui_console(self):
-        return True # TODO 
+        p_geo = GXContext._get_tls_geo()
+        return p_geo.has_ui_console()
     
     def is_ui_console_visible(self):
-        return True # TODO 
+        p_geo = GXContext._get_tls_geo()
+        return p_geo.is_ui_console_visible()
 
     def show_ui_console(self, show):
-        pass # TODO
+        p_geo = GXContext._get_tls_geo()
+        return p_geo.show_ui_console(show)
 
-    def clear_ui_console(self, show):
-        pass # TODO
+    def clear_ui_console(self):
+        p_geo = GXContext._get_tls_geo()
+        return p_geo.clear_ui_console()
+

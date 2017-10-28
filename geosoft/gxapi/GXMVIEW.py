@@ -4250,32 +4250,32 @@ class GXMVIEW:
 
 
 
-    def render(self, hdc, h_dc, left, bottom, right, top, min_x, min_y, max_x):
+    def render(self, hdc, left, bottom, right, top, min_x, min_y, max_x, max_y):
         """
         Render a specified area of view onto a Windows DC handle
         
         :param hdc:     DC Handle
-        :param h_dc:    Left value of the render rect in Windows coordinates (bottom>top)
-        :param left:    Bottom value
-        :param bottom:  Right value
-        :param right:   Top value
-        :param top:     Area X minimum
-        :param min_x:   Area Y minimum
-        :param min_y:   Area X maximum
-        :param max_x:   Area Y maximum
+        :param left:    Left value of the render rect in Windows coordinates (bottom>top)
+        :param bottom:  Bottom value
+        :param right:   Right value
+        :param top:     Top value
+        :param min_x:   Area X minimum
+        :param min_y:   Area Y minimum
+        :param max_x:   Area X maximum
+        :param max_y:   Area Y maximum
         :type  hdc:     int
-        :type  h_dc:    int
         :type  left:    int
         :type  bottom:  int
         :type  right:   int
-        :type  top:     float
+        :type  top:     int
         :type  min_x:   float
         :type  min_y:   float
         :type  max_x:   float
+        :type  max_y:   float
 
         .. versionadded:: 6.4
         """
-        self._wrapper.render(hdc, h_dc, left, bottom, right, top, min_x, min_y, max_x)
+        self._wrapper.render(hdc, left, bottom, right, top, min_x, min_y, max_x, max_y)
         
 
 
@@ -4300,22 +4300,22 @@ class GXMVIEW:
 
 
 
-    def axis_x(self, hdc, h_dc, left, bottom, right, top):
+    def axis_x(self, y_loc, left, right, major_tick, minor_tick, tick_size):
         """
         Draw an X axis
         
-        :param hdc:     Y location in view units
-        :param h_dc:    Left  X
-        :param left:    Right X
-        :param bottom:  Major tick interval
-        :param right:   Minor tick interval (half size of major)
-        :param top:     Tick size in view units (negative for down ticks)
-        :type  hdc:     float
-        :type  h_dc:    float
-        :type  left:    float
-        :type  bottom:  float
-        :type  right:   float
-        :type  top:     float
+        :param y_loc:       Y location in view units
+        :param left:        Left  X
+        :param right:       Right X
+        :param major_tick:  Major tick interval
+        :param minor_tick:  Minor tick interval (half size of major)
+        :param tick_size:   Tick size in view units (negative for down ticks)
+        :type  y_loc:       float
+        :type  left:        float
+        :type  right:       float
+        :type  major_tick:  float
+        :type  minor_tick:  float
+        :type  tick_size:   float
 
         .. versionadded:: 5.0
 
@@ -4327,28 +4327,28 @@ class GXMVIEW:
 
             rOptimumTick_MVIEW
         """
-        self._wrapper.axis_x(hdc, h_dc, left, bottom, right, top)
+        self._wrapper.axis_x(y_loc, left, right, major_tick, minor_tick, tick_size)
         
 
 
 
 
-    def axis_y(self, hdc, h_dc, left, bottom, right, top):
+    def axis_y(self, x_loc, bottom, top, major_tick, minor_tick, tick_size):
         """
         Draw a  Y axis
         
-        :param hdc:     X location in view units
-        :param h_dc:    Bottom Y
-        :param left:    Top    Y
-        :param bottom:  Major tick interval
-        :param right:   Minor tick interval (half size of major)
-        :param top:     Tick size in view units (negative for left ticks)
-        :type  hdc:     float
-        :type  h_dc:    float
-        :type  left:    float
-        :type  bottom:  float
-        :type  right:   float
-        :type  top:     float
+        :param x_loc:       X location in view units
+        :param bottom:      Bottom Y
+        :param top:         Top    Y
+        :param major_tick:  Major tick interval
+        :param minor_tick:  Minor tick interval (half size of major)
+        :param tick_size:   Tick size in view units (negative for left ticks)
+        :type  x_loc:       float
+        :type  bottom:      float
+        :type  top:         float
+        :type  major_tick:  float
+        :type  minor_tick:  float
+        :type  tick_size:   float
 
         .. versionadded:: 5.0
 
@@ -4360,26 +4360,26 @@ class GXMVIEW:
 
             rOptimumTick_MVIEW
         """
-        self._wrapper.axis_y(hdc, h_dc, left, bottom, right, top)
+        self._wrapper.axis_y(x_loc, bottom, top, major_tick, minor_tick, tick_size)
         
 
 
 
 
-    def grid(self, hdc, h_dc, left, bottom, right):
+    def grid(self, x_inc, y_inc, dx, dy, grid_type):
         """
         Draw a grid in the current window
         
-        :param hdc:     X grid increment
-        :param h_dc:    Y grid increment
-        :param left:    dX dot increment/cross X size
-        :param bottom:  dY dot increment/cross Y size
-        :param right:   `MVIEW_GRID`
-        :type  hdc:     float
-        :type  h_dc:    float
-        :type  left:    float
-        :type  bottom:  float
-        :type  right:   int
+        :param x_inc:      X grid increment
+        :param y_inc:      Y grid increment
+        :param dx:         dX dot increment/cross X size
+        :param dy:         dY dot increment/cross Y size
+        :param grid_type:  `MVIEW_GRID`
+        :type  x_inc:      float
+        :type  y_inc:      float
+        :type  dx:         float
+        :type  dy:         float
+        :type  grid_type:  int
 
         .. versionadded:: 5.0
 
@@ -4392,28 +4392,28 @@ class GXMVIEW:
 
             `axis_x <geosoft.gxapi.GXMVIEW.axis_x>`, `axis_y <geosoft.gxapi.GXMVIEW.axis_y>`, `optimum_tick <geosoft.gxapi.GXMVIEW.optimum_tick>`
         """
-        self._wrapper.grid(hdc, h_dc, left, bottom, right)
+        self._wrapper.grid(x_inc, y_inc, dx, dy, grid_type)
         
 
 
 
 
-    def label_fid(self, hdc, h_dc, left, bottom, right, top):
+    def label_fid(self, vv_x, fid_start, fid_incr, interval, y_loc, y_scale):
         """
         Label fiducials on a profile
         
-        :param hdc:     X `GXVV <geosoft.gxapi.GXVV>`
-        :param h_dc:    Fiducial start
-        :param left:    Fiducial increment
-        :param bottom:  Fiducial label interval, default 100.0
-        :param right:   Y location in view unit
-        :param top:     Y scale
-        :type  hdc:     GXVV
-        :type  h_dc:    float
-        :type  left:    float
-        :type  bottom:  float
-        :type  right:   float
-        :type  top:     float
+        :param vv_x:       X `GXVV <geosoft.gxapi.GXVV>`
+        :param fid_start:  Fiducial start
+        :param fid_incr:   Fiducial increment
+        :param interval:   Fiducial label interval, default 100.0
+        :param y_loc:      Y location in view unit
+        :param y_scale:    Y scale
+        :type  vv_x:       GXVV
+        :type  fid_start:  float
+        :type  fid_incr:   float
+        :type  interval:   float
+        :type  y_loc:      float
+        :type  y_scale:    float
 
         .. versionadded:: 5.0
 
@@ -4426,30 +4426,30 @@ class GXMVIEW:
         The incoming X `GXVV <geosoft.gxapi.GXVV>` is used to define the place for
         label.
         """
-        self._wrapper.label_fid(hdc._wrapper, h_dc, left, bottom, right, top)
+        self._wrapper.label_fid(vv_x._wrapper, fid_start, fid_incr, interval, y_loc, y_scale)
         
 
 
 
 
-    def label_x(self, hdc, h_dc, left, bottom, right, top, min_x):
+    def label_x(self, l_loc, left, right, lable_int, just, bound, orient):
         """
         Label annotations on the X axis
         
-        :param hdc:     Y location in view units
-        :param h_dc:    Left  X
-        :param left:    Right X
-        :param bottom:  Label interval
-        :param right:   `MVIEW_LABEL_JUST`
-        :param top:     `MVIEW_LABEL_BOUND`
-        :param min_x:   `MVIEW_LABEL_ORIENT`
-        :type  hdc:     float
-        :type  h_dc:    float
-        :type  left:    float
-        :type  bottom:  float
-        :type  right:   int
-        :type  top:     int
-        :type  min_x:   int
+        :param l_loc:      Y location in view units
+        :param left:       Left  X
+        :param right:      Right X
+        :param lable_int:  Label interval
+        :param just:       `MVIEW_LABEL_JUST`
+        :param bound:      `MVIEW_LABEL_BOUND`
+        :param orient:     `MVIEW_LABEL_ORIENT`
+        :type  l_loc:      float
+        :type  left:       float
+        :type  right:      float
+        :type  lable_int:  float
+        :type  just:       int
+        :type  bound:      int
+        :type  orient:     int
 
         .. versionadded:: 5.0
 
@@ -4463,30 +4463,30 @@ class GXMVIEW:
 
             `axis_x <geosoft.gxapi.GXMVIEW.axis_x>`, `axis_y <geosoft.gxapi.GXMVIEW.axis_y>`, `optimum_tick <geosoft.gxapi.GXMVIEW.optimum_tick>`
         """
-        self._wrapper.label_x(hdc, h_dc, left, bottom, right, top, min_x)
+        self._wrapper.label_x(l_loc, left, right, lable_int, just, bound, orient)
         
 
 
 
 
-    def label_y(self, hdc, h_dc, left, bottom, right, top, min_x):
+    def label_y(self, x, bottom, top, lable_int, just, bound, orient):
         """
         Label annotations on the Y axis
         
-        :param hdc:     X location in view units
-        :param h_dc:    Bottom Y
-        :param left:    Top    Y
-        :param bottom:  Label interval
-        :param right:   `MVIEW_LABEL_JUST`
-        :param top:     `MVIEW_LABEL_BOUND`
-        :param min_x:   `MVIEW_LABEL_ORIENT`
-        :type  hdc:     float
-        :type  h_dc:    float
-        :type  left:    float
-        :type  bottom:  float
-        :type  right:   int
-        :type  top:     int
-        :type  min_x:   int
+        :param x:          X location in view units
+        :param bottom:     Bottom Y
+        :param top:        Top    Y
+        :param lable_int:  Label interval
+        :param just:       `MVIEW_LABEL_JUST`
+        :param bound:      `MVIEW_LABEL_BOUND`
+        :param orient:     `MVIEW_LABEL_ORIENT`
+        :type  x:          float
+        :type  bottom:     float
+        :type  top:        float
+        :type  lable_int:  float
+        :type  just:       int
+        :type  bound:      int
+        :type  orient:     int
 
         .. versionadded:: 5.0
 
@@ -4500,26 +4500,26 @@ class GXMVIEW:
 
             `axis_x <geosoft.gxapi.GXMVIEW.axis_x>`, `axis_y <geosoft.gxapi.GXMVIEW.axis_y>`, `optimum_tick <geosoft.gxapi.GXMVIEW.optimum_tick>`
         """
-        self._wrapper.label_y(hdc, h_dc, left, bottom, right, top, min_x)
+        self._wrapper.label_y(x, bottom, top, lable_int, just, bound, orient)
         
 
 
 
     @classmethod
-    def optimum_tick(cls, mview, hdc, h_dc):
+    def optimum_tick(cls, min, max, sep):
         """
         Return a default optimum tick interval
         
-        :param mview:  Minimum of range
-        :param hdc:    Maximum
-        :param h_dc:   Optimum interval
-        :type  mview:  float
-        :type  hdc:    float
-        :type  h_dc:   float_ref
+        :param min:  Minimum of range
+        :param max:  Maximum
+        :param sep:  Optimum interval
+        :type  min:  float
+        :type  max:  float
+        :type  sep:  float_ref
 
         .. versionadded:: 5.0
         """
-        h_dc.value = gxapi_cy.WrapMVIEW.optimum_tick(GXContext._get_tls_geo(), mview, hdc, h_dc.value)
+        sep.value = gxapi_cy.WrapMVIEW.optimum_tick(GXContext._get_tls_geo(), min, max, sep.value)
         
 
 
@@ -4556,41 +4556,41 @@ class GXMVIEW:
 
 
     @classmethod
-    def create_crooked_section(cls, map, ipj, h_dc, left, bottom, right, top, min_x, min_y, max_x, max_y, v_vxs, v_vx, v_vy):
+    def create_crooked_section(cls, map, ipj, name, x0, y0, xs, ys, scale, v_ex, dist0, elev, v_vxs, v_vx, v_vy):
         """
         Creates a new crooked section view.
         
-        :param map:     `GXMAP <geosoft.gxapi.GXMAP>` Object
-        :param ipj:     Geographic projection of input X, Y locations below (without orientation)
-        :param h_dc:    View Name
-        :param left:    Base view bottom left corner X (mm)
-        :param bottom:  Base view bottom left corner Y (mm)
-        :param right:   Base view size in X (mm)
-        :param top:     Base view size in Y (mm)
-        :param min_x:   Map horizontal scale (X-axis)
-        :param min_y:   Vertical exaggeration (1.0 is normal, must be >0.0)
-        :param max_x:   Starting distance at the left side of the view.
-        :param max_y:   Elevation at TOP of the view
-        :param v_vxs:   Cumulative distances along the secton
-        :param v_vx:    True X locations along the section
-        :param v_vy:    True Y locations along the section
-        :type  map:     GXMAP
-        :type  ipj:     GXIPJ
-        :type  h_dc:    str
-        :type  left:    float
-        :type  bottom:  float
-        :type  right:   float
-        :type  top:     float
-        :type  min_x:   float
-        :type  min_y:   float
-        :type  max_x:   float
-        :type  max_y:   float
-        :type  v_vxs:   GXVV
-        :type  v_vx:    GXVV
-        :type  v_vy:    GXVV
+        :param map:    `GXMAP <geosoft.gxapi.GXMAP>` Object
+        :param ipj:    Geographic projection of input X, Y locations below (without orientation)
+        :param name:   View Name
+        :param x0:     Base view bottom left corner X (mm)
+        :param y0:     Base view bottom left corner Y (mm)
+        :param xs:     Base view size in X (mm)
+        :param ys:     Base view size in Y (mm)
+        :param scale:  Map horizontal scale (X-axis)
+        :param v_ex:   Vertical exaggeration (1.0 is normal, must be >0.0)
+        :param dist0:  Starting distance at the left side of the view.
+        :param elev:   Elevation at TOP of the view
+        :param v_vxs:  Cumulative distances along the secton
+        :param v_vx:   True X locations along the section
+        :param v_vy:   True Y locations along the section
+        :type  map:    GXMAP
+        :type  ipj:    GXIPJ
+        :type  name:   str
+        :type  x0:     float
+        :type  y0:     float
+        :type  xs:     float
+        :type  ys:     float
+        :type  scale:  float
+        :type  v_ex:   float
+        :type  dist0:  float
+        :type  elev:   float
+        :type  v_vxs:  GXVV
+        :type  v_vx:   GXVV
+        :type  v_vy:   GXVV
 
-        :returns:       `GXMVIEW <geosoft.gxapi.GXMVIEW>`, aborts if creation fails
-        :rtype:         GXMVIEW
+        :returns:      `GXMVIEW <geosoft.gxapi.GXMVIEW>`, aborts if creation fails
+        :rtype:        GXMVIEW
 
         .. versionadded:: 7.2
 
@@ -4607,7 +4607,7 @@ class GXMVIEW:
         If the scale is set to `rDUMMY <geosoft.gxapi.rDUMMY>`, then it will be calculated so that
         the points will all fit horizontally.
         """
-        ret_val = gxapi_cy.WrapMVIEW.create_crooked_section(GXContext._get_tls_geo(), map._wrapper, ipj._wrapper, h_dc.encode(), left, bottom, right, top, min_x, min_y, max_x, max_y, v_vxs._wrapper, v_vx._wrapper, v_vy._wrapper)
+        ret_val = gxapi_cy.WrapMVIEW.create_crooked_section(GXContext._get_tls_geo(), map._wrapper, ipj._wrapper, name.encode(), x0, y0, xs, ys, scale, v_ex, dist0, elev, v_vxs._wrapper, v_vx._wrapper, v_vy._wrapper)
         return GXMVIEW(ret_val)
 
 
