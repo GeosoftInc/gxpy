@@ -18,7 +18,11 @@ Open Modes
 
 .. autodata:: geosoft.gxapi.MAPTEMPLATE_WRITENEW
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.MAPTEMPLATE_WRITENEW
 .. autodata:: geosoft.gxapi.MAPTEMPLATE_EXIST
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.MAPTEMPLATE_EXIST
 
 	

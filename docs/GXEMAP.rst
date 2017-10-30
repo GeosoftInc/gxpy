@@ -18,8 +18,12 @@ Font Types
 
 .. autodata:: geosoft.gxapi.EMAP_FONT_TT
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.EMAP_FONT_TT
 .. autodata:: geosoft.gxapi.EMAP_FONT_GFN
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.EMAP_FONT_GFN
 
 
 .. _EMAP_PATH:
@@ -31,12 +35,20 @@ Four forms
 
 .. autodata:: geosoft.gxapi.EMAP_PATH_FULL
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.EMAP_PATH_FULL
 .. autodata:: geosoft.gxapi.EMAP_PATH_DIR
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.EMAP_PATH_DIR
 .. autodata:: geosoft.gxapi.EMAP_PATH_NAME_EXT
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.EMAP_PATH_NAME_EXT
 .. autodata:: geosoft.gxapi.EMAP_PATH_NAME
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.EMAP_PATH_NAME
 
 
 .. _EMAP_REDRAW:
@@ -48,8 +60,12 @@ Redraw Options
 
 .. autodata:: geosoft.gxapi.EMAP_REDRAW_NO
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.EMAP_REDRAW_NO
 .. autodata:: geosoft.gxapi.EMAP_REDRAW_YES
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.EMAP_REDRAW_YES
 
 
 .. _EMAP_REMOVE:
@@ -61,10 +77,16 @@ How to handle pending changes in document
 
 .. autodata:: geosoft.gxapi.EMAP_REMOVE_SAVE
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.EMAP_REMOVE_SAVE
 .. autodata:: geosoft.gxapi.EMAP_REMOVE_PROMPT
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.EMAP_REMOVE_PROMPT
 .. autodata:: geosoft.gxapi.EMAP_REMOVE_DISCARD
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.EMAP_REMOVE_DISCARD
 
 
 .. _EMAP_TRACK:
@@ -76,10 +98,16 @@ Tracking Options
 
 .. autodata:: geosoft.gxapi.EMAP_TRACK_ERASE
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.EMAP_TRACK_ERASE
 .. autodata:: geosoft.gxapi.EMAP_TRACK_RMENU
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.EMAP_TRACK_RMENU
 .. autodata:: geosoft.gxapi.EMAP_TRACK_CYCLE
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.EMAP_TRACK_CYCLE
 
 
 .. _EMAP_VIEWPORT:
@@ -91,10 +119,16 @@ Tracking Options
 
 .. autodata:: geosoft.gxapi.EMAP_VIEWPORT_NORMAL
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.EMAP_VIEWPORT_NORMAL
 .. autodata:: geosoft.gxapi.EMAP_VIEWPORT_BROWSEZOOM
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.EMAP_VIEWPORT_BROWSEZOOM
 .. autodata:: geosoft.gxapi.EMAP_VIEWPORT_BROWSEAOI
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.EMAP_VIEWPORT_BROWSEAOI
 
 
 .. _EMAP_WINDOW_POSITION:
@@ -106,8 +140,12 @@ Window Positioning Options
 
 .. autodata:: geosoft.gxapi.EMAP_WINDOW_POSITION_DOCKED
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.EMAP_WINDOW_POSITION_DOCKED
 .. autodata:: geosoft.gxapi.EMAP_WINDOW_POSITION_FLOATING
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.EMAP_WINDOW_POSITION_FLOATING
 
 
 .. _EMAP_WINDOW_STATE:
@@ -119,10 +157,16 @@ Window State Options
 
 .. autodata:: geosoft.gxapi.EMAP_WINDOW_RESTORE
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.EMAP_WINDOW_RESTORE
 .. autodata:: geosoft.gxapi.EMAP_WINDOW_MINIMIZE
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.EMAP_WINDOW_MINIMIZE
 .. autodata:: geosoft.gxapi.EMAP_WINDOW_MAXIMIZE
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.EMAP_WINDOW_MAXIMIZE
 
 
 .. _LAYOUT_VIEW_UNITS:
@@ -134,9 +178,15 @@ Base dlayout display units
 
 .. autodata:: geosoft.gxapi.LAYOUT_VIEW_MM
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.LAYOUT_VIEW_MM
 .. autodata:: geosoft.gxapi.LAYOUT_VIEW_CM
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.LAYOUT_VIEW_CM
 .. autodata:: geosoft.gxapi.LAYOUT_VIEW_IN
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.LAYOUT_VIEW_IN
 
 	

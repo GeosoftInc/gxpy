@@ -18,7 +18,11 @@ Node to find
 
 .. autodata:: geosoft.gxapi.TRND_MIN
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.TRND_MIN
 .. autodata:: geosoft.gxapi.TRND_MAX
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.TRND_MAX
 
 	

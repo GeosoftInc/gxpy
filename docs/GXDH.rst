@@ -18,8 +18,12 @@ Default filenames
 
 .. autodata:: geosoft.gxapi.DH_DEFAULT_ROCKCODE_FILE
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_DEFAULT_ROCKCODE_FILE
 .. autodata:: geosoft.gxapi.DH_DEFAULT_STRUCTURECODE_FILE
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_DEFAULT_STRUCTURECODE_FILE
 
 
 .. _STR_DH_HOLES:
@@ -33,6 +37,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!
 
 .. autodata:: geosoft.gxapi.STR_DH_HOLES
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.STR_DH_HOLES
 
 
 .. _DH_COMP_CHOICE:
@@ -44,12 +50,20 @@ Composition
 
 .. autodata:: geosoft.gxapi.DH_COMP_DONE
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_COMP_DONE
 .. autodata:: geosoft.gxapi.DH_COMP_CANCEL
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_COMP_CANCEL
 .. autodata:: geosoft.gxapi.DH_COMP_SELECT
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_COMP_SELECT
 .. autodata:: geosoft.gxapi.DH_COMP_REFRESH
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_COMP_REFRESH
 
 
 .. _DH_COMPSTDB_HOLSEL:
@@ -61,8 +75,12 @@ Composite Hole Selection
 
 .. autodata:: geosoft.gxapi.DH_COMPSTDB_HOLSEL_ALL
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_COMPSTDB_HOLSEL_ALL
 .. autodata:: geosoft.gxapi.DH_COMPSTDB_HOLSEL_SELECTED
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_COMPSTDB_HOLSEL_SELECTED
 
 
 .. _DH_COMPSTDB_INTSEL:
@@ -74,12 +92,20 @@ Composite Interval
 
 .. autodata:: geosoft.gxapi.DH_COMPSTDB_INTSEL_FIXED
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_COMPSTDB_INTSEL_FIXED
 .. autodata:: geosoft.gxapi.DH_COMPSTDB_INTSEL_LITHOLOGY
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_COMPSTDB_INTSEL_LITHOLOGY
 .. autodata:: geosoft.gxapi.DH_COMPSTDB_INTSEL_BESTFITLITH
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_COMPSTDB_INTSEL_BESTFITLITH
 .. autodata:: geosoft.gxapi.DH_COMPSTDB_INTSEL_INTFILE
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_COMPSTDB_INTSEL_INTFILE
 
 
 .. _DH_DATA:
@@ -91,16 +117,28 @@ What to import
 
 .. autodata:: geosoft.gxapi.DH_DATA_DIPAZIMUTH
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_DATA_DIPAZIMUTH
 .. autodata:: geosoft.gxapi.DH_DATA_EASTNORTH
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_DATA_EASTNORTH
 .. autodata:: geosoft.gxapi.DH_DATA_FROMTO
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_DATA_FROMTO
 .. autodata:: geosoft.gxapi.DH_DATA_POINT
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_DATA_POINT
 .. autodata:: geosoft.gxapi.DH_DATA_COLLAR
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_DATA_COLLAR
 .. autodata:: geosoft.gxapi.DH_DATA_UNKNOWN
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_DATA_UNKNOWN
 
 
 .. _DH_DEFINE_PLAN:
@@ -112,6 +150,8 @@ Plans
 
 .. autodata:: geosoft.gxapi.DH_DEFINE_PLAN
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_DEFINE_PLAN
 
 
 .. _DH_DEFINE_SECT:
@@ -123,10 +163,16 @@ Types of Sections
 
 .. autodata:: geosoft.gxapi.DH_DEFINE_SECT_NS
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_DEFINE_SECT_NS
 .. autodata:: geosoft.gxapi.DH_DEFINE_SECT_EW
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_DEFINE_SECT_EW
 .. autodata:: geosoft.gxapi.DH_DEFINE_SECT_ANGLED
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_DEFINE_SECT_ANGLED
 
 
 .. _DH_EXP:
@@ -138,16 +184,28 @@ Type of Export
 
 .. autodata:: geosoft.gxapi.DH_EXP_CSV
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_EXP_CSV
 .. autodata:: geosoft.gxapi.DH_EXP_ASCII
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_EXP_ASCII
 .. autodata:: geosoft.gxapi.DH_EXP_ACCESS
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_EXP_ACCESS
 .. autodata:: geosoft.gxapi.DH_EXP_SHP
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_EXP_SHP
 .. autodata:: geosoft.gxapi.DH_EXP_SURPAC
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_EXP_SURPAC
 .. autodata:: geosoft.gxapi.DH_EXP_SHP_TRACES
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_EXP_SHP_TRACES
 
 
 .. _DH_HOLES:
@@ -159,8 +217,12 @@ Holes to select
 
 .. autodata:: geosoft.gxapi.DH_HOLES_ALL
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_HOLES_ALL
 .. autodata:: geosoft.gxapi.DH_HOLES_SELECTED
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_HOLES_SELECTED
 
 
 .. _DH_MASK:
@@ -172,8 +234,12 @@ Masks
 
 .. autodata:: geosoft.gxapi.DH_MASK_APPEND
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_MASK_APPEND
 .. autodata:: geosoft.gxapi.DH_MASK_NEW
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_MASK_NEW
 
 
 .. _DH_PLOT:
@@ -185,20 +251,36 @@ Type of Plot
 
 .. autodata:: geosoft.gxapi.DH_PLOT_PLAN
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_PLOT_PLAN
 .. autodata:: geosoft.gxapi.DH_PLOT_SECTION
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_PLOT_SECTION
 .. autodata:: geosoft.gxapi.DH_PLOT_STRIPLOG
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_PLOT_STRIPLOG
 .. autodata:: geosoft.gxapi.DH_PLOT_HOLE_TRACES
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_PLOT_HOLE_TRACES
 .. autodata:: geosoft.gxapi.DH_PLOT_3D
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_PLOT_3D
 .. autodata:: geosoft.gxapi.DH_PLOT_SECTION_STACK
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_PLOT_SECTION_STACK
 .. autodata:: geosoft.gxapi.DH_PLOT_SECTION_FENCE
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_PLOT_SECTION_FENCE
 .. autodata:: geosoft.gxapi.DH_PLOT_SECTION_CROOKED
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_PLOT_SECTION_CROOKED
 
 
 .. _DH_SECT_PAGE:
@@ -210,6 +292,8 @@ Sections
 
 .. autodata:: geosoft.gxapi.DH_SECT_PAGE_SECTION
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_SECT_PAGE_SECTION
 
 
 .. _DH_SURFACE:
@@ -222,16 +306,28 @@ top or bottom surfaces.
 
 .. autodata:: geosoft.gxapi.DH_SURFACE_FIRST_LAYER_FROM
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_SURFACE_FIRST_LAYER_FROM
 .. autodata:: geosoft.gxapi.DH_SURFACE_FIRST_LAYER_TO
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_SURFACE_FIRST_LAYER_TO
 .. autodata:: geosoft.gxapi.DH_SURFACE_SECOND_LAYER_FROM
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_SURFACE_SECOND_LAYER_FROM
 .. autodata:: geosoft.gxapi.DH_SURFACE_SECOND_LAYER_TO
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_SURFACE_SECOND_LAYER_TO
 .. autodata:: geosoft.gxapi.DH_SURFACE_LAST_LAYER_FROM
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_SURFACE_LAST_LAYER_FROM
 .. autodata:: geosoft.gxapi.DH_SURFACE_LAST_LAYER_TO
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_SURFACE_LAST_LAYER_TO
 
 
 .. _DIP_CONVENTION:
@@ -243,7 +339,11 @@ Dip convention
 
 .. autodata:: geosoft.gxapi.DIP_CONVENTION_NEGATIVE
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DIP_CONVENTION_NEGATIVE
 .. autodata:: geosoft.gxapi.DIP_CONVENTION_POSITIVE
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DIP_CONVENTION_POSITIVE
 
 	

@@ -18,9 +18,15 @@ USERMETA_FORMAT constants
 
 .. autodata:: geosoft.gxapi.USERMETA_FORMAT_DEFAULT
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.USERMETA_FORMAT_DEFAULT
 .. autodata:: geosoft.gxapi.USERMETA_FORMAT_ISO
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.USERMETA_FORMAT_ISO
 .. autodata:: geosoft.gxapi.USERMETA_FORMAT_FGDC
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.USERMETA_FORMAT_FGDC
 
 	

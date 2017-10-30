@@ -18,7 +18,11 @@ Pager Direction
 
 .. autodata:: geosoft.gxapi.FFT2_PG_FORWARD
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.FFT2_PG_FORWARD
 .. autodata:: geosoft.gxapi.FFT2_PG_INVERSE
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.FFT2_PG_INVERSE
 
 	

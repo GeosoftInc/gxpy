@@ -18,5 +18,7 @@ UTF-8 Defines
 
 .. autodata:: geosoft.gxapi.UTF8_MAX_CHAR
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.UTF8_MAX_CHAR
 
 	

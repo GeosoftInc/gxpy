@@ -18,7 +18,11 @@ Which variables to return from sReadBlockModelVariableInfo
 
 .. autodata:: geosoft.gxapi.BLOCK_MODEL_NUMERIC_VARIABLE
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.BLOCK_MODEL_NUMERIC_VARIABLE
 .. autodata:: geosoft.gxapi.BLOCK_MODEL_STRING_VARIABLE
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.BLOCK_MODEL_STRING_VARIABLE
 
 	

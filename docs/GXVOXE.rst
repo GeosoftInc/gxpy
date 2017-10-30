@@ -18,9 +18,15 @@ Voxel Evaluation modes
 
 .. autodata:: geosoft.gxapi.VOXE_EVAL_NEAR
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.VOXE_EVAL_NEAR
 .. autodata:: geosoft.gxapi.VOXE_EVAL_INTERP
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.VOXE_EVAL_INTERP
 .. autodata:: geosoft.gxapi.VOXE_EVAL_BEST
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.VOXE_EVAL_BEST
 
 	

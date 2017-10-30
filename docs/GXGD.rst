@@ -18,9 +18,15 @@ Grid open mode
 
 .. autodata:: geosoft.gxapi.GD_STATUS_READONLY
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.GD_STATUS_READONLY
 .. autodata:: geosoft.gxapi.GD_STATUS_NEW
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.GD_STATUS_NEW
 .. autodata:: geosoft.gxapi.GD_STATUS_OLD
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.GD_STATUS_OLD
 
 	

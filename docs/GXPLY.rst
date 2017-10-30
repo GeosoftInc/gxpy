@@ -18,12 +18,20 @@ Polygon clipping mode
 
 .. autodata:: geosoft.gxapi.PLY_CLIP_NO_INTERSECT
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.PLY_CLIP_NO_INTERSECT
 .. autodata:: geosoft.gxapi.PLY_CLIP_INTERSECT
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.PLY_CLIP_INTERSECT
 .. autodata:: geosoft.gxapi.PLY_CLIP_A_IN_B
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.PLY_CLIP_A_IN_B
 .. autodata:: geosoft.gxapi.PLY_CLIP_B_IN_A
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.PLY_CLIP_B_IN_A
 
 
 .. _PLY_LINE_CLIP:
@@ -35,11 +43,19 @@ Polygon line clip indicator
 
 .. autodata:: geosoft.gxapi.PLY_LINE_CLIP_INSIDE
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.PLY_LINE_CLIP_INSIDE
 .. autodata:: geosoft.gxapi.PLY_LINE_CLIP_NO_INTERSECT
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.PLY_LINE_CLIP_NO_INTERSECT
 .. autodata:: geosoft.gxapi.PLY_LINE_CLIP_OUTSIDE
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.PLY_LINE_CLIP_OUTSIDE
 .. autodata:: geosoft.gxapi.PLY_LINE_CLIP_ERROR
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.PLY_LINE_CLIP_ERROR
 
 	

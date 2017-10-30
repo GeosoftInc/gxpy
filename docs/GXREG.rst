@@ -18,7 +18,11 @@ REG_MERGE constants
 
 .. autodata:: geosoft.gxapi.REG_MERGE_REPLACE
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.REG_MERGE_REPLACE
 .. autodata:: geosoft.gxapi.REG_MERGE_ADD
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.REG_MERGE_ADD
 
 	

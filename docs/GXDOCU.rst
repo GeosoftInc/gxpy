@@ -18,7 +18,11 @@ How to open document
 
 .. autodata:: geosoft.gxapi.DOCU_OPEN_VIEW
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DOCU_OPEN_VIEW
 .. autodata:: geosoft.gxapi.DOCU_OPEN_EDIT
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DOCU_OPEN_EDIT
 
 	
