@@ -18,7 +18,11 @@ Open Modes
 
 .. autodata:: geosoft.gxapi.GEO3DV_MVIEW_READ
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.GEO3DV_MVIEW_READ
 .. autodata:: geosoft.gxapi.GEO3DV_MVIEW_WRITEOLD
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.GEO3DV_MVIEW_WRITEOLD
 
 	

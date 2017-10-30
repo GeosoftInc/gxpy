@@ -1440,12 +1440,22 @@ as <a class="reference internal" href="#geosoft.gxapi.GXIMG.set_ipj" title="geos
 <dt id="geosoft.gxapi.IMG_FILE_READONLY">
 <code class="descname">IMG_FILE_READONLY</code><a class="headerlink" href="#geosoft.gxapi.IMG_FILE_READONLY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reading only</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMG_FILE_READONLY</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.IMG_FILE_READWRITE">
 <code class="descname">IMG_FILE_READWRITE</code><a class="headerlink" href="#geosoft.gxapi.IMG_FILE_READWRITE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reading and writting</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMG_FILE_READWRITE</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
@@ -1456,6 +1466,11 @@ projection or location information.  If you can write
 to the original grid (dat), the changed projection
 or location information will be passed on to the grid,
 otherwise changes will only occur in the .gi file.</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMG_FILE_READORWRITE</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -1465,25 +1480,45 @@ otherwise changes will only occur in the .gi file.</p>
 <dl class="data">
 <dt id="geosoft.gxapi.IMG_QUERY_iWRITE">
 <code class="descname">IMG_QUERY_iWRITE</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_iWRITE" title="Permalink to this definition">¶</a></dt>
-<dd><p>iWRITE</p>
+<dd><p>Iwrite</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMG_QUERY_iWRITE</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.IMG_QUERY_iPG">
 <code class="descname">IMG_QUERY_iPG</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_iPG" title="Permalink to this definition">¶</a></dt>
-<dd><p>iPG</p>
+<dd><p>Ipg</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMG_QUERY_iPG</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.IMG_QUERY_iWRITEPG">
 <code class="descname">IMG_QUERY_iWRITEPG</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_iWRITEPG" title="Permalink to this definition">¶</a></dt>
-<dd><p>iWRITEPG</p>
+<dd><p>Iwritepg</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMG_QUERY_iWRITEPG</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.IMG_QUERY_iIMGTYPE">
 <code class="descname">IMG_QUERY_iIMGTYPE</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_iIMGTYPE" title="Permalink to this definition">¶</a></dt>
 <dd><p>The element type used to open the <a class="reference internal" href="#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal"><span class="pre">GXIMG</span></code></a>.</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMG_QUERY_iIMGTYPE</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
@@ -1496,6 +1531,11 @@ Types are:   0 - byte
 3 - 32-bit long
 4 - 32-bit float
 5 - 64-bit double</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMG_QUERY_iDATTYPE</code><em class="property"> = 4</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
@@ -1504,84 +1544,154 @@ Types are:   0 - byte
 <dd><p>Render modes are:    0 - interpolate
 1 - pixelate
 2 - color</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMG_QUERY_iRENDER</code><em class="property"> = 5</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.IMG_QUERY_iKX">
 <code class="descname">IMG_QUERY_iKX</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_iKX" title="Permalink to this definition">¶</a></dt>
-<dd><p>iKX</p>
+<dd><p>Ikx</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMG_QUERY_iKX</code><em class="property"> = 6</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.IMG_QUERY_iNX">
 <code class="descname">IMG_QUERY_iNX</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_iNX" title="Permalink to this definition">¶</a></dt>
-<dd><p>iNX</p>
+<dd><p>Inx</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMG_QUERY_iNX</code><em class="property"> = 7</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.IMG_QUERY_iNY">
 <code class="descname">IMG_QUERY_iNY</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_iNY" title="Permalink to this definition">¶</a></dt>
-<dd><p>iNY</p>
+<dd><p>Iny</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMG_QUERY_iNY</code><em class="property"> = 8</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.IMG_QUERY_iNV">
 <code class="descname">IMG_QUERY_iNV</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_iNV" title="Permalink to this definition">¶</a></dt>
-<dd><p>iNV</p>
+<dd><p>Inv</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMG_QUERY_iNV</code><em class="property"> = 9</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.IMG_QUERY_iNE">
 <code class="descname">IMG_QUERY_iNE</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_iNE" title="Permalink to this definition">¶</a></dt>
-<dd><p>iNE</p>
+<dd><p>Ine</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMG_QUERY_iNE</code><em class="property"> = 10</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.IMG_QUERY_rXO">
 <code class="descname">IMG_QUERY_rXO</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_rXO" title="Permalink to this definition">¶</a></dt>
-<dd><p>rXO</p>
+<dd><p>Rxo</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMG_QUERY_rXO</code><em class="property"> = 11</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.IMG_QUERY_rYO">
 <code class="descname">IMG_QUERY_rYO</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_rYO" title="Permalink to this definition">¶</a></dt>
-<dd><p>rYO</p>
+<dd><p>Ryo</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMG_QUERY_rYO</code><em class="property"> = 12</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.IMG_QUERY_rDX">
 <code class="descname">IMG_QUERY_rDX</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_rDX" title="Permalink to this definition">¶</a></dt>
-<dd><p>rDX</p>
+<dd><p>Rdx</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMG_QUERY_rDX</code><em class="property"> = 13</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.IMG_QUERY_rDY">
 <code class="descname">IMG_QUERY_rDY</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_rDY" title="Permalink to this definition">¶</a></dt>
-<dd><p>rDY</p>
+<dd><p>Rdy</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMG_QUERY_rDY</code><em class="property"> = 14</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.IMG_QUERY_rROT">
 <code class="descname">IMG_QUERY_rROT</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_rROT" title="Permalink to this definition">¶</a></dt>
-<dd><p>rROT</p>
+<dd><p>Rrot</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMG_QUERY_rROT</code><em class="property"> = 15</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.IMG_QUERY_rBASE">
 <code class="descname">IMG_QUERY_rBASE</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_rBASE" title="Permalink to this definition">¶</a></dt>
-<dd><p>rBASE</p>
+<dd><p>Rbase</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMG_QUERY_rBASE</code><em class="property"> = 16</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.IMG_QUERY_rMULT">
 <code class="descname">IMG_QUERY_rMULT</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_rMULT" title="Permalink to this definition">¶</a></dt>
-<dd><p>rMULT</p>
+<dd><p>Rmult</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMG_QUERY_rMULT</code><em class="property"> = 17</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.IMG_QUERY_rCOMPRESSION_RATIO">
 <code class="descname">IMG_QUERY_rCOMPRESSION_RATIO</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_rCOMPRESSION_RATIO" title="Permalink to this definition">¶</a></dt>
-<dd><p>rCOMPRESSION_RATIO</p>
+<dd><p>Rcompression ratio</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMG_QUERY_rCOMPRESSION_RATIO</code><em class="property"> = 18</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -1592,12 +1702,22 @@ Types are:   0 - byte
 <dt id="geosoft.gxapi.IMG_RELOCATE_FIT">
 <code class="descname">IMG_RELOCATE_FIT</code><a class="headerlink" href="#geosoft.gxapi.IMG_RELOCATE_FIT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Will fit the image to fill the specified area</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMG_RELOCATE_FIT</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.IMG_RELOCATE_ASPECT">
 <code class="descname">IMG_RELOCATE_ASPECT</code><a class="headerlink" href="#geosoft.gxapi.IMG_RELOCATE_ASPECT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Will maintain aspect ratio</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMG_RELOCATE_ASPECT</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>

@@ -617,12 +617,22 @@ in the native byte order of the writing computer.</p>
 <dt id="geosoft.gxapi.BF_BYTEORDER_LSB">
 <code class="descname">BF_BYTEORDER_LSB</code><a class="headerlink" href="#geosoft.gxapi.BF_BYTEORDER_LSB" title="Permalink to this definition">¶</a></dt>
 <dd><p>Least significant byte first (Intel, Windows)</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">BF_BYTEORDER_LSB</code><em class="property"> = 256</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.BF_BYTEORDER_MSB">
 <code class="descname">BF_BYTEORDER_MSB</code><a class="headerlink" href="#geosoft.gxapi.BF_BYTEORDER_MSB" title="Permalink to this definition">¶</a></dt>
 <dd><p>Most significant byte first (Mororola, Sun)</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">BF_BYTEORDER_MSB</code><em class="property"> = 512</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -632,13 +642,23 @@ in the native byte order of the writing computer.</p>
 <dl class="data">
 <dt id="geosoft.gxapi.BF_KEEP">
 <code class="descname">BF_KEEP</code><a class="headerlink" href="#geosoft.gxapi.BF_KEEP" title="Permalink to this definition">¶</a></dt>
-<dd><p>BF_KEEP</p>
+<dd><p>Bf keep</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">BF_KEEP</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.BF_DELETE">
 <code class="descname">BF_DELETE</code><a class="headerlink" href="#geosoft.gxapi.BF_DELETE" title="Permalink to this definition">¶</a></dt>
-<dd><p>BF_DELETE</p>
+<dd><p>Bf delete</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">BF_DELETE</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -649,12 +669,22 @@ in the native byte order of the writing computer.</p>
 <dt id="geosoft.gxapi.BF_ENCODE_ANSI">
 <code class="descname">BF_ENCODE_ANSI</code><a class="headerlink" href="#geosoft.gxapi.BF_ENCODE_ANSI" title="Permalink to this definition">¶</a></dt>
 <dd><p>String is stored as ANSI code page</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">BF_ENCODE_ANSI</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.BF_ENCODE_UTF8">
 <code class="descname">BF_ENCODE_UTF8</code><a class="headerlink" href="#geosoft.gxapi.BF_ENCODE_UTF8" title="Permalink to this definition">¶</a></dt>
 <dd><p>String is stored as <code class="xref py py-obj docutils literal"><span class="pre">UTF8</span></code></p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">BF_ENCODE_UTF8</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -665,24 +695,44 @@ in the native byte order of the writing computer.</p>
 <dt id="geosoft.gxapi.BF_READ">
 <code class="descname">BF_READ</code><a class="headerlink" href="#geosoft.gxapi.BF_READ" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read only</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">BF_READ</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.BF_READWRITE_NEW">
 <code class="descname">BF_READWRITE_NEW</code><a class="headerlink" href="#geosoft.gxapi.BF_READWRITE_NEW" title="Permalink to this definition">¶</a></dt>
 <dd><p>Erases existing file</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">BF_READWRITE_NEW</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.BF_READWRITE_OLD">
 <code class="descname">BF_READWRITE_OLD</code><a class="headerlink" href="#geosoft.gxapi.BF_READWRITE_OLD" title="Permalink to this definition">¶</a></dt>
 <dd><p>File must pre-exist</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">BF_READWRITE_OLD</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.BF_READWRITE_APP">
 <code class="descname">BF_READWRITE_APP</code><a class="headerlink" href="#geosoft.gxapi.BF_READWRITE_APP" title="Permalink to this definition">¶</a></dt>
 <dd><p>Open and append onto pre-existing file (cannot be read from)</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">BF_READWRITE_APP</code><em class="property"> = 4</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -692,19 +742,34 @@ in the native byte order of the writing computer.</p>
 <dl class="data">
 <dt id="geosoft.gxapi.BF_SEEK_START">
 <code class="descname">BF_SEEK_START</code><a class="headerlink" href="#geosoft.gxapi.BF_SEEK_START" title="Permalink to this definition">¶</a></dt>
-<dd><p>START</p>
+<dd><p>Start</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">BF_SEEK_START</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.BF_SEEK_CURRENT">
 <code class="descname">BF_SEEK_CURRENT</code><a class="headerlink" href="#geosoft.gxapi.BF_SEEK_CURRENT" title="Permalink to this definition">¶</a></dt>
-<dd><p>CURRENT</p>
+<dd><p>Current</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">BF_SEEK_CURRENT</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.BF_SEEK_EOF">
 <code class="descname">BF_SEEK_EOF</code><a class="headerlink" href="#geosoft.gxapi.BF_SEEK_EOF" title="Permalink to this definition">¶</a></dt>
-<dd><p>EOF</p>
+<dd><p>Eof</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">BF_SEEK_EOF</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>

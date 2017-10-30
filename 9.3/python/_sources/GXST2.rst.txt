@@ -18,7 +18,11 @@ Correlation style
 
 .. autodata:: geosoft.gxapi.ST2_CORR
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.ST2_CORR
 .. autodata:: geosoft.gxapi.ST2_PCORR
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.ST2_PCORR
 
 	

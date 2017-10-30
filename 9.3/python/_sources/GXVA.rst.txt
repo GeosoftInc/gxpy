@@ -18,8 +18,12 @@ VA_AVERAGE constants
 
 .. autodata:: geosoft.gxapi.VA_AVERAGE_ROWS
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.VA_AVERAGE_ROWS
 .. autodata:: geosoft.gxapi.VA_AVERAGE_COLUMNS
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.VA_AVERAGE_COLUMNS
 
 
 .. _VA_OBJECT:
@@ -31,7 +35,11 @@ VA_OBJECT constants
 
 .. autodata:: geosoft.gxapi.VA_ROW
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.VA_ROW
 .. autodata:: geosoft.gxapi.VA_COL
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.VA_COL
 
 	

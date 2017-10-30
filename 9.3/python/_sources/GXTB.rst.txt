@@ -18,7 +18,11 @@ TB_SEARCH constants
 
 .. autodata:: geosoft.gxapi.TB_SEARCH_BINARY
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.TB_SEARCH_BINARY
 .. autodata:: geosoft.gxapi.TB_SEARCH_LINEAR
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.TB_SEARCH_LINEAR
 
 	

@@ -461,24 +461,44 @@ placed in the aggregate.</p>
 it will be used with the default zoning
 method of the data, which is usually
 <a class="reference internal" href="#geosoft.gxapi.AGG_LAYER_ZONE_EQUALAREA" title="geosoft.gxapi.AGG_LAYER_ZONE_EQUALAREA"><code class="xref py py-obj docutils literal"><span class="pre">AGG_LAYER_ZONE_EQUALAREA</span></code></a>.</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">AGG_LAYER_ZONE_DEFAULT</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.AGG_LAYER_ZONE_LINEAR">
 <code class="descname">AGG_LAYER_ZONE_LINEAR</code><a class="headerlink" href="#geosoft.gxapi.AGG_LAYER_ZONE_LINEAR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Linear Distribution</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">AGG_LAYER_ZONE_LINEAR</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.AGG_LAYER_ZONE_NORMAL">
 <code class="descname">AGG_LAYER_ZONE_NORMAL</code><a class="headerlink" href="#geosoft.gxapi.AGG_LAYER_ZONE_NORMAL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Normal Distribution</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">AGG_LAYER_ZONE_NORMAL</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.AGG_LAYER_ZONE_EQUALAREA">
 <code class="descname">AGG_LAYER_ZONE_EQUALAREA</code><a class="headerlink" href="#geosoft.gxapi.AGG_LAYER_ZONE_EQUALAREA" title="Permalink to this definition">¶</a></dt>
 <dd><p>Equal Area Distribution</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">AGG_LAYER_ZONE_EQUALAREA</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
@@ -495,12 +515,22 @@ If the file already exists, it will used as it is.
 Shading is always at inclination = declination = 45 deg.
 with default scaling.  If different shading is desired,
 use the <a class="reference internal" href="#geosoft.gxapi.GXAGG.layer_shade_img" title="geosoft.gxapi.GXAGG.layer_shade_img"><code class="xref py py-obj docutils literal"><span class="pre">layer_shade_img</span></code></a> method.</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">AGG_LAYER_ZONE_SHADE</code><em class="property"> = 4</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.AGG_LAYER_ZONE_LOGLINEAR">
 <code class="descname">AGG_LAYER_ZONE_LOGLINEAR</code><a class="headerlink" href="#geosoft.gxapi.AGG_LAYER_ZONE_LOGLINEAR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Log Linear Distribution</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">AGG_LAYER_ZONE_LOGLINEAR</code><em class="property"> = 5</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
@@ -510,6 +540,11 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXAGG.layer_shade_img
 data will be used if it exists.  If it
 does not exist, the behaviour is the same
 as <a class="reference internal" href="#geosoft.gxapi.AGG_LAYER_ZONE_DEFAULT" title="geosoft.gxapi.AGG_LAYER_ZONE_DEFAULT"><code class="xref py py-obj docutils literal"><span class="pre">AGG_LAYER_ZONE_DEFAULT</span></code></a>.</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">AGG_LAYER_ZONE_LAST</code><em class="property"> = 6</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -520,18 +555,33 @@ as <a class="reference internal" href="#geosoft.gxapi.AGG_LAYER_ZONE_DEFAULT" ti
 <dt id="geosoft.gxapi.AGG_MODEL_HSV">
 <code class="descname">AGG_MODEL_HSV</code><a class="headerlink" href="#geosoft.gxapi.AGG_MODEL_HSV" title="Permalink to this definition">¶</a></dt>
 <dd><p>Hue Saturation Value</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">AGG_MODEL_HSV</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.AGG_MODEL_RGB">
 <code class="descname">AGG_MODEL_RGB</code><a class="headerlink" href="#geosoft.gxapi.AGG_MODEL_RGB" title="Permalink to this definition">¶</a></dt>
 <dd><p>Red Green Blue</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">AGG_MODEL_RGB</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.AGG_MODEL_CMY">
 <code class="descname">AGG_MODEL_CMY</code><a class="headerlink" href="#geosoft.gxapi.AGG_MODEL_CMY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cyan Magenta Yellow</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">AGG_MODEL_CMY</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -542,24 +592,44 @@ as <a class="reference internal" href="#geosoft.gxapi.AGG_LAYER_ZONE_DEFAULT" ti
 <dt id="geosoft.gxapi.AGG_RENDER_ADD">
 <code class="descname">AGG_RENDER_ADD</code><a class="headerlink" href="#geosoft.gxapi.AGG_RENDER_ADD" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add all the colors together</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">AGG_RENDER_ADD</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.AGG_RENDER_BLEND">
 <code class="descname">AGG_RENDER_BLEND</code><a class="headerlink" href="#geosoft.gxapi.AGG_RENDER_BLEND" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds and divides by the number of non-dummy colors</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">AGG_RENDER_BLEND</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.AGG_RENDER_BLEND_ALL">
 <code class="descname">AGG_RENDER_BLEND_ALL</code><a class="headerlink" href="#geosoft.gxapi.AGG_RENDER_BLEND_ALL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds and divides by the number of colors</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">AGG_RENDER_BLEND_ALL</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.AGG_RENDER_FADE">
 <code class="descname">AGG_RENDER_FADE</code><a class="headerlink" href="#geosoft.gxapi.AGG_RENDER_FADE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Multiplies current colors by the input’s colors over 255 (input works as the percentage of color to preserve)</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">AGG_RENDER_FADE</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>

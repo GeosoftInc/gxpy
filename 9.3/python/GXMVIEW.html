@@ -194,14 +194,14 @@ See <a class="reference internal" href="#geosoft.gxapi.GXMVIEW.start_group" titl
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMVIEW.axis_x">
-<code class="descname">axis_x</code><span class="sig-paren">(</span><em>hdc</em>, <em>left</em>, <em>right</em>, <em>major_tick</em>, <em>minor_tick</em>, <em>tick_size</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVIEW.axis_x" title="Permalink to this definition">¶</a></dt>
+<code class="descname">axis_x</code><span class="sig-paren">(</span><em>y_loc</em>, <em>left</em>, <em>right</em>, <em>major_tick</em>, <em>minor_tick</em>, <em>tick_size</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVIEW.axis_x" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw an X axis</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>hdc</strong> (<em>float</em>) – Y location in view units</li>
+<li><strong>y_loc</strong> (<em>float</em>) – Y location in view units</li>
 <li><strong>left</strong> (<em>float</em>) – Left  X</li>
 <li><strong>right</strong> (<em>float</em>) – Right X</li>
 <li><strong>major_tick</strong> (<em>float</em>) – Major tick interval</li>
@@ -225,19 +225,19 @@ See <a class="reference internal" href="#geosoft.gxapi.GXMVIEW.start_group" titl
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMVIEW.axis_y">
-<code class="descname">axis_y</code><span class="sig-paren">(</span><em>hdc</em>, <em>h_dc</em>, <em>left</em>, <em>bottom</em>, <em>right</em>, <em>top</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVIEW.axis_y" title="Permalink to this definition">¶</a></dt>
+<code class="descname">axis_y</code><span class="sig-paren">(</span><em>x_loc</em>, <em>bottom</em>, <em>top</em>, <em>major_tick</em>, <em>minor_tick</em>, <em>tick_size</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVIEW.axis_y" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw a  Y axis</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>hdc</strong> (<em>float</em>) – X location in view units</li>
-<li><strong>h_dc</strong> (<em>float</em>) – Bottom Y</li>
-<li><strong>left</strong> (<em>float</em>) – Top    Y</li>
-<li><strong>bottom</strong> (<em>float</em>) – Major tick interval</li>
-<li><strong>right</strong> (<em>float</em>) – Minor tick interval (half size of major)</li>
-<li><strong>top</strong> (<em>float</em>) – Tick size in view units (negative for left ticks)</li>
+<li><strong>x_loc</strong> (<em>float</em>) – X location in view units</li>
+<li><strong>bottom</strong> (<em>float</em>) – Bottom Y</li>
+<li><strong>top</strong> (<em>float</em>) – Top    Y</li>
+<li><strong>major_tick</strong> (<em>float</em>) – Major tick interval</li>
+<li><strong>minor_tick</strong> (<em>float</em>) – Minor tick interval (half size of major)</li>
+<li><strong>tick_size</strong> (<em>float</em>) – Tick size in view units (negative for left ticks)</li>
 </ul>
 </td>
 </tr>
@@ -956,7 +956,7 @@ origin is set to the map origin.</p>
 
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXMVIEW.create_crooked_section">
-<em class="property">classmethod </em><code class="descname">create_crooked_section</code><span class="sig-paren">(</span><em>map</em>, <em>ipj</em>, <em>h_dc</em>, <em>left</em>, <em>bottom</em>, <em>right</em>, <em>top</em>, <em>min_x</em>, <em>min_y</em>, <em>max_x</em>, <em>max_y</em>, <em>v_vxs</em>, <em>v_vx</em>, <em>v_vy</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVIEW.create_crooked_section" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">create_crooked_section</code><span class="sig-paren">(</span><em>map</em>, <em>ipj</em>, <em>name</em>, <em>x0</em>, <em>y0</em>, <em>xs</em>, <em>ys</em>, <em>scale</em>, <em>v_ex</em>, <em>dist0</em>, <em>elev</em>, <em>v_vxs</em>, <em>v_vx</em>, <em>v_vy</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVIEW.create_crooked_section" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a new crooked section view.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -965,15 +965,15 @@ origin is set to the map origin.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>map</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) – <a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXMAP</span></code></a> Object</li>
 <li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Geographic projection of input X, Y locations below (without orientation)</li>
-<li><strong>h_dc</strong> (<em>str</em>) – View Name</li>
-<li><strong>left</strong> (<em>float</em>) – Base view bottom left corner X (mm)</li>
-<li><strong>bottom</strong> (<em>float</em>) – Base view bottom left corner Y (mm)</li>
-<li><strong>right</strong> (<em>float</em>) – Base view size in X (mm)</li>
-<li><strong>top</strong> (<em>float</em>) – Base view size in Y (mm)</li>
-<li><strong>min_x</strong> (<em>float</em>) – Map horizontal scale (X-axis)</li>
-<li><strong>min_y</strong> (<em>float</em>) – Vertical exaggeration (1.0 is normal, must be &gt;0.0)</li>
-<li><strong>max_x</strong> (<em>float</em>) – Starting distance at the left side of the view.</li>
-<li><strong>max_y</strong> (<em>float</em>) – Elevation at TOP of the view</li>
+<li><strong>name</strong> (<em>str</em>) – View Name</li>
+<li><strong>x0</strong> (<em>float</em>) – Base view bottom left corner X (mm)</li>
+<li><strong>y0</strong> (<em>float</em>) – Base view bottom left corner Y (mm)</li>
+<li><strong>xs</strong> (<em>float</em>) – Base view size in X (mm)</li>
+<li><strong>ys</strong> (<em>float</em>) – Base view size in Y (mm)</li>
+<li><strong>scale</strong> (<em>float</em>) – Map horizontal scale (X-axis)</li>
+<li><strong>v_ex</strong> (<em>float</em>) – Vertical exaggeration (1.0 is normal, must be &gt;0.0)</li>
+<li><strong>dist0</strong> (<em>float</em>) – Starting distance at the left side of the view.</li>
+<li><strong>elev</strong> (<em>float</em>) – Elevation at TOP of the view</li>
 <li><strong>v_vxs</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Cumulative distances along the secton</li>
 <li><strong>v_vx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – True X locations along the section</li>
 <li><strong>v_vy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – True Y locations along the section</li>
@@ -2551,18 +2551,18 @@ oriented views (especially sections).</p>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMVIEW.grid">
-<code class="descname">grid</code><span class="sig-paren">(</span><em>hdc</em>, <em>h_dc</em>, <em>left</em>, <em>bottom</em>, <em>right</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVIEW.grid" title="Permalink to this definition">¶</a></dt>
+<code class="descname">grid</code><span class="sig-paren">(</span><em>x_inc</em>, <em>y_inc</em>, <em>dx</em>, <em>dy</em>, <em>grid_type</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVIEW.grid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw a grid in the current window</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>hdc</strong> (<em>float</em>) – X grid increment</li>
-<li><strong>h_dc</strong> (<em>float</em>) – Y grid increment</li>
-<li><strong>left</strong> (<em>float</em>) – dX dot increment/cross X size</li>
-<li><strong>bottom</strong> (<em>float</em>) – dY dot increment/cross Y size</li>
-<li><strong>right</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">MVIEW_GRID</span></code></li>
+<li><strong>x_inc</strong> (<em>float</em>) – X grid increment</li>
+<li><strong>y_inc</strong> (<em>float</em>) – Y grid increment</li>
+<li><strong>dx</strong> (<em>float</em>) – dX dot increment/cross X size</li>
+<li><strong>dy</strong> (<em>float</em>) – dY dot increment/cross Y size</li>
+<li><strong>grid_type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">MVIEW_GRID</span></code></li>
 </ul>
 </td>
 </tr>
@@ -2934,19 +2934,19 @@ as the voxel can have any orientation in 3D.</p>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMVIEW.label_fid">
-<code class="descname">label_fid</code><span class="sig-paren">(</span><em>hdc</em>, <em>h_dc</em>, <em>left</em>, <em>bottom</em>, <em>right</em>, <em>top</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVIEW.label_fid" title="Permalink to this definition">¶</a></dt>
+<code class="descname">label_fid</code><span class="sig-paren">(</span><em>vv_x</em>, <em>fid_start</em>, <em>fid_incr</em>, <em>interval</em>, <em>y_loc</em>, <em>y_scale</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVIEW.label_fid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Label fiducials on a profile</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>hdc</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a></li>
-<li><strong>h_dc</strong> (<em>float</em>) – Fiducial start</li>
-<li><strong>left</strong> (<em>float</em>) – Fiducial increment</li>
-<li><strong>bottom</strong> (<em>float</em>) – Fiducial label interval, default 100.0</li>
-<li><strong>right</strong> (<em>float</em>) – Y location in view unit</li>
-<li><strong>top</strong> (<em>float</em>) – Y scale</li>
+<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a></li>
+<li><strong>fid_start</strong> (<em>float</em>) – Fiducial start</li>
+<li><strong>fid_incr</strong> (<em>float</em>) – Fiducial increment</li>
+<li><strong>interval</strong> (<em>float</em>) – Fiducial label interval, default 100.0</li>
+<li><strong>y_loc</strong> (<em>float</em>) – Y location in view unit</li>
+<li><strong>y_scale</strong> (<em>float</em>) – Y scale</li>
 </ul>
 </td>
 </tr>
@@ -2965,20 +2965,20 @@ label.</p>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMVIEW.label_x">
-<code class="descname">label_x</code><span class="sig-paren">(</span><em>hdc</em>, <em>h_dc</em>, <em>left</em>, <em>bottom</em>, <em>right</em>, <em>top</em>, <em>min_x</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVIEW.label_x" title="Permalink to this definition">¶</a></dt>
+<code class="descname">label_x</code><span class="sig-paren">(</span><em>l_loc</em>, <em>left</em>, <em>right</em>, <em>lable_int</em>, <em>just</em>, <em>bound</em>, <em>orient</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVIEW.label_x" title="Permalink to this definition">¶</a></dt>
 <dd><p>Label annotations on the X axis</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>hdc</strong> (<em>float</em>) – Y location in view units</li>
-<li><strong>h_dc</strong> (<em>float</em>) – Left  X</li>
-<li><strong>left</strong> (<em>float</em>) – Right X</li>
-<li><strong>bottom</strong> (<em>float</em>) – Label interval</li>
-<li><strong>right</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">MVIEW_LABEL_JUST</span></code></li>
-<li><strong>top</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">MVIEW_LABEL_BOUND</span></code></li>
-<li><strong>min_x</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">MVIEW_LABEL_ORIENT</span></code></li>
+<li><strong>l_loc</strong> (<em>float</em>) – Y location in view units</li>
+<li><strong>left</strong> (<em>float</em>) – Left  X</li>
+<li><strong>right</strong> (<em>float</em>) – Right X</li>
+<li><strong>lable_int</strong> (<em>float</em>) – Label interval</li>
+<li><strong>just</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">MVIEW_LABEL_JUST</span></code></li>
+<li><strong>bound</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">MVIEW_LABEL_BOUND</span></code></li>
+<li><strong>orient</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">MVIEW_LABEL_ORIENT</span></code></li>
 </ul>
 </td>
 </tr>
@@ -2999,20 +2999,20 @@ labels are drawn vertically (top right or top left)</p>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMVIEW.label_y">
-<code class="descname">label_y</code><span class="sig-paren">(</span><em>hdc</em>, <em>h_dc</em>, <em>left</em>, <em>bottom</em>, <em>right</em>, <em>top</em>, <em>min_x</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVIEW.label_y" title="Permalink to this definition">¶</a></dt>
+<code class="descname">label_y</code><span class="sig-paren">(</span><em>x</em>, <em>bottom</em>, <em>top</em>, <em>lable_int</em>, <em>just</em>, <em>bound</em>, <em>orient</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVIEW.label_y" title="Permalink to this definition">¶</a></dt>
 <dd><p>Label annotations on the Y axis</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>hdc</strong> (<em>float</em>) – X location in view units</li>
-<li><strong>h_dc</strong> (<em>float</em>) – Bottom Y</li>
-<li><strong>left</strong> (<em>float</em>) – Top    Y</li>
-<li><strong>bottom</strong> (<em>float</em>) – Label interval</li>
-<li><strong>right</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">MVIEW_LABEL_JUST</span></code></li>
-<li><strong>top</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">MVIEW_LABEL_BOUND</span></code></li>
-<li><strong>min_x</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">MVIEW_LABEL_ORIENT</span></code></li>
+<li><strong>x</strong> (<em>float</em>) – X location in view units</li>
+<li><strong>bottom</strong> (<em>float</em>) – Bottom Y</li>
+<li><strong>top</strong> (<em>float</em>) – Top    Y</li>
+<li><strong>lable_int</strong> (<em>float</em>) – Label interval</li>
+<li><strong>just</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">MVIEW_LABEL_JUST</span></code></li>
+<li><strong>bound</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">MVIEW_LABEL_BOUND</span></code></li>
+<li><strong>orient</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">MVIEW_LABEL_ORIENT</span></code></li>
 </ul>
 </td>
 </tr>
@@ -3546,16 +3546,16 @@ It will be <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUM
 
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXMVIEW.optimum_tick">
-<em class="property">classmethod </em><code class="descname">optimum_tick</code><span class="sig-paren">(</span><em>mview</em>, <em>hdc</em>, <em>h_dc</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVIEW.optimum_tick" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">optimum_tick</code><span class="sig-paren">(</span><em>min</em>, <em>max</em>, <em>sep</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVIEW.optimum_tick" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a default optimum tick interval</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>mview</strong> (<em>float</em>) – Minimum of range</li>
-<li><strong>hdc</strong> (<em>float</em>) – Maximum</li>
-<li><strong>h_dc</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Optimum interval</li>
+<li><strong>min</strong> (<em>float</em>) – Minimum of range</li>
+<li><strong>max</strong> (<em>float</em>) – Maximum</li>
+<li><strong>sep</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Optimum interval</li>
 </ul>
 </td>
 </tr>
@@ -5561,6 +5561,11 @@ A contour map that’s exported to a shape file will use this value as a Z-value
 <dt id="geosoft.gxapi.MAKER_GX">
 <code class="descname">MAKER_GX</code><a class="headerlink" href="#geosoft.gxapi.MAKER_GX" title="Permalink to this definition">¶</a></dt>
 <dd><p>GX</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAKER_GX</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -5571,12 +5576,22 @@ A contour map that’s exported to a shape file will use this value as a Z-value
 <dt id="geosoft.gxapi.CLIP_ON">
 <code class="descname">CLIP_ON</code><a class="headerlink" href="#geosoft.gxapi.CLIP_ON" title="Permalink to this definition">¶</a></dt>
 <dd><p>Turn ON clipping</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">CLIP_ON</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.CLIP_OFF">
 <code class="descname">CLIP_OFF</code><a class="headerlink" href="#geosoft.gxapi.CLIP_OFF" title="Permalink to this definition">¶</a></dt>
 <dd><p>Turn OFF clipping</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">CLIP_OFF</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -5591,120 +5606,220 @@ intensities.</p>
 <dt id="geosoft.gxapi.C_BLACK">
 <code class="descname">C_BLACK</code><a class="headerlink" href="#geosoft.gxapi.C_BLACK" title="Permalink to this definition">¶</a></dt>
 <dd><p>Black</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">C_BLACK</code><em class="property"> = 33554432</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.C_RED">
 <code class="descname">C_RED</code><a class="headerlink" href="#geosoft.gxapi.C_RED" title="Permalink to this definition">¶</a></dt>
 <dd><p>Red</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">C_RED</code><em class="property"> = 33554687</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.C_GREEN">
 <code class="descname">C_GREEN</code><a class="headerlink" href="#geosoft.gxapi.C_GREEN" title="Permalink to this definition">¶</a></dt>
 <dd><p>Green</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">C_GREEN</code><em class="property"> = 33619712</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.C_BLUE">
 <code class="descname">C_BLUE</code><a class="headerlink" href="#geosoft.gxapi.C_BLUE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Blue</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">C_BLUE</code><em class="property"> = 50266112</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.C_CYAN">
 <code class="descname">C_CYAN</code><a class="headerlink" href="#geosoft.gxapi.C_CYAN" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cyan</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">C_CYAN</code><em class="property"> = 50331903</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.C_MAGENTA">
 <code class="descname">C_MAGENTA</code><a class="headerlink" href="#geosoft.gxapi.C_MAGENTA" title="Permalink to this definition">¶</a></dt>
 <dd><p>Magenta</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">C_MAGENTA</code><em class="property"> = 50396928</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.C_YELLOW">
 <code class="descname">C_YELLOW</code><a class="headerlink" href="#geosoft.gxapi.C_YELLOW" title="Permalink to this definition">¶</a></dt>
 <dd><p>Yellow</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">C_YELLOW</code><em class="property"> = 67043328</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.C_GREY">
 <code class="descname">C_GREY</code><a class="headerlink" href="#geosoft.gxapi.C_GREY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Grey</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">C_GREY</code><em class="property"> = 41975936</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.C_LT_RED">
 <code class="descname">C_LT_RED</code><a class="headerlink" href="#geosoft.gxapi.C_LT_RED" title="Permalink to this definition">¶</a></dt>
 <dd><p>Light Red</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">C_LT_RED</code><em class="property"> = 54542336</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.C_LT_GREEN">
 <code class="descname">C_LT_GREEN</code><a class="headerlink" href="#geosoft.gxapi.C_LT_GREEN" title="Permalink to this definition">¶</a></dt>
 <dd><p>Light Green</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">C_LT_GREEN</code><em class="property"> = 54526016</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.C_LT_BLUE">
 <code class="descname">C_LT_BLUE</code><a class="headerlink" href="#geosoft.gxapi.C_LT_BLUE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Light Blue</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">C_LT_BLUE</code><em class="property"> = 50348096</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.C_LT_CYAN">
 <code class="descname">C_LT_CYAN</code><a class="headerlink" href="#geosoft.gxapi.C_LT_CYAN" title="Permalink to this definition">¶</a></dt>
 <dd><p>Light Cyan</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">C_LT_CYAN</code><em class="property"> = 50331712</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.C_LT_MAGENTA">
 <code class="descname">C_LT_MAGENTA</code><a class="headerlink" href="#geosoft.gxapi.C_LT_MAGENTA" title="Permalink to this definition">¶</a></dt>
 <dd><p>Light Magenta</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">C_LT_MAGENTA</code><em class="property"> = 50348032</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.C_LT_YELLOW">
 <code class="descname">C_LT_YELLOW</code><a class="headerlink" href="#geosoft.gxapi.C_LT_YELLOW" title="Permalink to this definition">¶</a></dt>
 <dd><p>Light Yellow</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">C_LT_YELLOW</code><em class="property"> = 54525952</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.C_LT_GREY">
 <code class="descname">C_LT_GREY</code><a class="headerlink" href="#geosoft.gxapi.C_LT_GREY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Light Grey</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">C_LT_GREY</code><em class="property"> = 54542400</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.C_GREY10">
 <code class="descname">C_GREY10</code><a class="headerlink" href="#geosoft.gxapi.C_GREY10" title="Permalink to this definition">¶</a></dt>
 <dd><p>Grey 10%</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">C_GREY10</code><em class="property"> = 51910680</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.C_GREY25">
 <code class="descname">C_GREY25</code><a class="headerlink" href="#geosoft.gxapi.C_GREY25" title="Permalink to this definition">¶</a></dt>
 <dd><p>Grey 25%</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">C_GREY25</code><em class="property"> = 54542400</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.C_GREY50">
 <code class="descname">C_GREY50</code><a class="headerlink" href="#geosoft.gxapi.C_GREY50" title="Permalink to this definition">¶</a></dt>
 <dd><p>Grey 50%</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">C_GREY50</code><em class="property"> = 41975936</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.C_WHITE">
 <code class="descname">C_WHITE</code><a class="headerlink" href="#geosoft.gxapi.C_WHITE" title="Permalink to this definition">¶</a></dt>
 <dd><p>White</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">C_WHITE</code><em class="property"> = 50331648</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.C_TRANSPARENT">
 <code class="descname">C_TRANSPARENT</code><a class="headerlink" href="#geosoft.gxapi.C_TRANSPARENT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transparent or no-draw</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">C_TRANSPARENT</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -5714,25 +5829,45 @@ intensities.</p>
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_CYLINDER3D_OPEN">
 <code class="descname">MVIEW_CYLINDER3D_OPEN</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_CYLINDER3D_OPEN" title="Permalink to this definition">¶</a></dt>
-<dd><p>OPEN</p>
+<dd><p>Open</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_CYLINDER3D_OPEN</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_CYLINDER3D_CLOSESTART">
 <code class="descname">MVIEW_CYLINDER3D_CLOSESTART</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_CYLINDER3D_CLOSESTART" title="Permalink to this definition">¶</a></dt>
-<dd><p>CLOSESTART</p>
+<dd><p>Closestart</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_CYLINDER3D_CLOSESTART</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_CYLINDER3D_CLOSEEND">
 <code class="descname">MVIEW_CYLINDER3D_CLOSEEND</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_CYLINDER3D_CLOSEEND" title="Permalink to this definition">¶</a></dt>
-<dd><p>CLOSEEND</p>
+<dd><p>Closeend</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_CYLINDER3D_CLOSEEND</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_CYLINDER3D_CLOSEALL">
 <code class="descname">MVIEW_CYLINDER3D_CLOSEALL</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_CYLINDER3D_CLOSEALL" title="Permalink to this definition">¶</a></dt>
-<dd><p>CLOSEALL</p>
+<dd><p>Closeall</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_CYLINDER3D_CLOSEALL</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -5743,12 +5878,22 @@ intensities.</p>
 <dt id="geosoft.gxapi.MVIEW_DRAW_POLYLINE">
 <code class="descname">MVIEW_DRAW_POLYLINE</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_DRAW_POLYLINE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw Polylines</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_DRAW_POLYLINE</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_DRAW_POLYGON">
 <code class="descname">MVIEW_DRAW_POLYGON</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_DRAW_POLYGON" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw Polygons</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_DRAW_POLYGON</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -5759,60 +5904,110 @@ intensities.</p>
 <dt id="geosoft.gxapi.MVIEW_DRAWOBJ3D_ENTITY_POINTS">
 <code class="descname">MVIEW_DRAWOBJ3D_ENTITY_POINTS</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_DRAWOBJ3D_ENTITY_POINTS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw 3D Points (no normals) [1 verticies per object]</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_DRAWOBJ3D_ENTITY_POINTS</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_DRAWOBJ3D_ENTITY_LINES">
 <code class="descname">MVIEW_DRAWOBJ3D_ENTITY_LINES</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_DRAWOBJ3D_ENTITY_LINES" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw 3D Lines (no normals) [2 verticies per object]</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_DRAWOBJ3D_ENTITY_LINES</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_DRAWOBJ3D_ENTITY_LINE_STRIPS">
 <code class="descname">MVIEW_DRAWOBJ3D_ENTITY_LINE_STRIPS</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_DRAWOBJ3D_ENTITY_LINE_STRIPS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw 3D Line strip (no normals) [2+x verticies per object]</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_DRAWOBJ3D_ENTITY_LINE_STRIPS</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_DRAWOBJ3D_ENTITY_LINE_LOOPS">
 <code class="descname">MVIEW_DRAWOBJ3D_ENTITY_LINE_LOOPS</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_DRAWOBJ3D_ENTITY_LINE_LOOPS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw 3D Line loop (no normals, closes loop with first point) [2+x verticies per object]</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_DRAWOBJ3D_ENTITY_LINE_LOOPS</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_DRAWOBJ3D_ENTITY_TRIANGLES">
 <code class="descname">MVIEW_DRAWOBJ3D_ENTITY_TRIANGLES</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_DRAWOBJ3D_ENTITY_TRIANGLES" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw 3D Triangles [3 verticies per object]</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_DRAWOBJ3D_ENTITY_TRIANGLES</code><em class="property"> = 4</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_DRAWOBJ3D_ENTITY_TRIANGLE_STRIPS">
 <code class="descname">MVIEW_DRAWOBJ3D_ENTITY_TRIANGLE_STRIPS</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_DRAWOBJ3D_ENTITY_TRIANGLE_STRIPS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw 3D Triangle strips [3+x verticies per object]</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_DRAWOBJ3D_ENTITY_TRIANGLE_STRIPS</code><em class="property"> = 5</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_DRAWOBJ3D_ENTITY_TRIANGLE_FANS">
 <code class="descname">MVIEW_DRAWOBJ3D_ENTITY_TRIANGLE_FANS</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_DRAWOBJ3D_ENTITY_TRIANGLE_FANS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw 3D Triangle fans [3+x verticies per object]</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_DRAWOBJ3D_ENTITY_TRIANGLE_FANS</code><em class="property"> = 6</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_DRAWOBJ3D_ENTITY_QUADS">
 <code class="descname">MVIEW_DRAWOBJ3D_ENTITY_QUADS</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_DRAWOBJ3D_ENTITY_QUADS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw 3D Quads (Must be in the same plane) [4 verticies per object]</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_DRAWOBJ3D_ENTITY_QUADS</code><em class="property"> = 7</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_DRAWOBJ3D_ENTITY_QUADS_STRIPS">
 <code class="descname">MVIEW_DRAWOBJ3D_ENTITY_QUADS_STRIPS</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_DRAWOBJ3D_ENTITY_QUADS_STRIPS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw 3D Quad Strips (Must be in the same plane) [4+2x verticies per object]</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_DRAWOBJ3D_ENTITY_QUADS_STRIPS</code><em class="property"> = 8</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_DRAWOBJ3D_ENTITY_POLYGONS">
 <code class="descname">MVIEW_DRAWOBJ3D_ENTITY_POLYGONS</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_DRAWOBJ3D_ENTITY_POLYGONS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw 3D Quad Polygones (Must be in the same plane, must be convex and cannot intersect itself)</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_DRAWOBJ3D_ENTITY_POLYGONS</code><em class="property"> = 9</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -5823,12 +6018,22 @@ intensities.</p>
 <dt id="geosoft.gxapi.MVIEW_DRAWOBJ3D_MODE_FLAT">
 <code class="descname">MVIEW_DRAWOBJ3D_MODE_FLAT</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_DRAWOBJ3D_MODE_FLAT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw flat shaded faces (one normal and color per object)</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_DRAWOBJ3D_MODE_FLAT</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_DRAWOBJ3D_MODE_SMOOTH">
 <code class="descname">MVIEW_DRAWOBJ3D_MODE_SMOOTH</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_DRAWOBJ3D_MODE_SMOOTH" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw smooth shaded faces (one normal and color per vertex)</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_DRAWOBJ3D_MODE_SMOOTH</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -5839,24 +6044,44 @@ intensities.</p>
 <dt id="geosoft.gxapi.MVIEW_EXTENT_ALL">
 <code class="descname">MVIEW_EXTENT_ALL</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_EXTENT_ALL" title="Permalink to this definition">¶</a></dt>
 <dd><p>All objects</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_EXTENT_ALL</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_EXTENT_CLIP">
 <code class="descname">MVIEW_EXTENT_CLIP</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_EXTENT_CLIP" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clipping regions</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_EXTENT_CLIP</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_EXTENT_MAP">
 <code class="descname">MVIEW_EXTENT_MAP</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_EXTENT_MAP" title="Permalink to this definition">¶</a></dt>
 <dd><p>Map extents</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_EXTENT_MAP</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_EXTENT_VISIBLE">
 <code class="descname">MVIEW_EXTENT_VISIBLE</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_EXTENT_VISIBLE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Visible objects</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_EXTENT_VISIBLE</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -5867,12 +6092,22 @@ intensities.</p>
 <dt id="geosoft.gxapi.MVIEW_FIT_MAP">
 <code class="descname">MVIEW_FIT_MAP</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_FIT_MAP" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit it to the map area</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_FIT_MAP</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_FIT_VIEW">
 <code class="descname">MVIEW_FIT_VIEW</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_FIT_VIEW" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit it to the view area</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_FIT_VIEW</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -5882,43 +6117,78 @@ intensities.</p>
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_FONT_WEIGHT_NORMAL">
 <code class="descname">MVIEW_FONT_WEIGHT_NORMAL</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_FONT_WEIGHT_NORMAL" title="Permalink to this definition">¶</a></dt>
-<dd><p>NORMAL</p>
+<dd><p>Normal</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_FONT_WEIGHT_NORMAL</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_FONT_WEIGHT_ULTRALIGHT">
 <code class="descname">MVIEW_FONT_WEIGHT_ULTRALIGHT</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_FONT_WEIGHT_ULTRALIGHT" title="Permalink to this definition">¶</a></dt>
-<dd><p>ULTRALIGHT</p>
+<dd><p>Ultralight</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_FONT_WEIGHT_ULTRALIGHT</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_FONT_WEIGHT_LIGHT">
 <code class="descname">MVIEW_FONT_WEIGHT_LIGHT</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_FONT_WEIGHT_LIGHT" title="Permalink to this definition">¶</a></dt>
-<dd><p>LIGHT</p>
+<dd><p>Light</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_FONT_WEIGHT_LIGHT</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_FONT_WEIGHT_MEDIUM">
 <code class="descname">MVIEW_FONT_WEIGHT_MEDIUM</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_FONT_WEIGHT_MEDIUM" title="Permalink to this definition">¶</a></dt>
-<dd><p>MEDIUM</p>
+<dd><p>Medium</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_FONT_WEIGHT_MEDIUM</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_FONT_WEIGHT_BOLD">
 <code class="descname">MVIEW_FONT_WEIGHT_BOLD</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_FONT_WEIGHT_BOLD" title="Permalink to this definition">¶</a></dt>
-<dd><p>BOLD</p>
+<dd><p>Bold</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_FONT_WEIGHT_BOLD</code><em class="property"> = 4</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_FONT_WEIGHT_XBOLD">
 <code class="descname">MVIEW_FONT_WEIGHT_XBOLD</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_FONT_WEIGHT_XBOLD" title="Permalink to this definition">¶</a></dt>
-<dd><p>XBOLD</p>
+<dd><p>Xbold</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_FONT_WEIGHT_XBOLD</code><em class="property"> = 5</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_FONT_WEIGHT_XXBOLD">
 <code class="descname">MVIEW_FONT_WEIGHT_XXBOLD</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_FONT_WEIGHT_XXBOLD" title="Permalink to this definition">¶</a></dt>
-<dd><p>XXBOLD</p>
+<dd><p>Xxbold</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_FONT_WEIGHT_XXBOLD</code><em class="property"> = 6</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -5928,19 +6198,34 @@ intensities.</p>
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_GRID_DOT">
 <code class="descname">MVIEW_GRID_DOT</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_GRID_DOT" title="Permalink to this definition">¶</a></dt>
-<dd><p>DOT</p>
+<dd><p>Dot</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_GRID_DOT</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_GRID_LINE">
 <code class="descname">MVIEW_GRID_LINE</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_GRID_LINE" title="Permalink to this definition">¶</a></dt>
-<dd><p>LINE</p>
+<dd><p>Line</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_GRID_LINE</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_GRID_CROSS">
 <code class="descname">MVIEW_GRID_CROSS</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_GRID_CROSS" title="Permalink to this definition">¶</a></dt>
-<dd><p>CROSS</p>
+<dd><p>Cross</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_GRID_CROSS</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -5951,12 +6236,22 @@ intensities.</p>
 <dt id="geosoft.gxapi.MVIEW_GROUP_NEW">
 <code class="descname">MVIEW_GROUP_NEW</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_GROUP_NEW" title="Permalink to this definition">¶</a></dt>
 <dd><p>New Group (destroy any existing group)</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_GROUP_NEW</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_GROUP_APPEND">
 <code class="descname">MVIEW_GROUP_APPEND</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_GROUP_APPEND" title="Permalink to this definition">¶</a></dt>
 <dd><p>Append to an existing Group</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_GROUP_APPEND</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -5967,18 +6262,33 @@ intensities.</p>
 <dt id="geosoft.gxapi.MVIEW_GROUP_LIST_ALL">
 <code class="descname">MVIEW_GROUP_LIST_ALL</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_GROUP_LIST_ALL" title="Permalink to this definition">¶</a></dt>
 <dd><p>All the groups.</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_GROUP_LIST_ALL</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_GROUP_LIST_MARKED">
 <code class="descname">MVIEW_GROUP_LIST_MARKED</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_GROUP_LIST_MARKED" title="Permalink to this definition">¶</a></dt>
 <dd><p>Those groups marked using the various mark functions.</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_GROUP_LIST_MARKED</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_GROUP_LIST_VISIBLE">
 <code class="descname">MVIEW_GROUP_LIST_VISIBLE</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_GROUP_LIST_VISIBLE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Those groups checked as visible in the view/group manager.</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_GROUP_LIST_VISIBLE</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -5989,12 +6299,22 @@ intensities.</p>
 <dt id="geosoft.gxapi.HIDE_ON">
 <code class="descname">HIDE_ON</code><a class="headerlink" href="#geosoft.gxapi.HIDE_ON" title="Permalink to this definition">¶</a></dt>
 <dd><p>Turn ON hidding</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">HIDE_ON</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.HIDE_OFF">
 <code class="descname">HIDE_OFF</code><a class="headerlink" href="#geosoft.gxapi.HIDE_OFF" title="Permalink to this definition">¶</a></dt>
 <dd><p>Turn OFF hidding</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">HIDE_OFF</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -6004,67 +6324,122 @@ intensities.</p>
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_IS_AGG">
 <code class="descname">MVIEW_IS_AGG</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_IS_AGG" title="Permalink to this definition">¶</a></dt>
-<dd><p>AGG</p>
+<dd><p>Agg</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_IS_AGG</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_IS_MOVABLE">
 <code class="descname">MVIEW_IS_MOVABLE</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_IS_MOVABLE" title="Permalink to this definition">¶</a></dt>
-<dd><p>MOVABLE</p>
+<dd><p>Movable</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_IS_MOVABLE</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_IS_CSYMB">
 <code class="descname">MVIEW_IS_CSYMB</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_IS_CSYMB" title="Permalink to this definition">¶</a></dt>
-<dd><p>CSYMB</p>
+<dd><p>Csymb</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_IS_CSYMB</code><em class="property"> = 4</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_IS_LINKED">
 <code class="descname">MVIEW_IS_LINKED</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_IS_LINKED" title="Permalink to this definition">¶</a></dt>
-<dd><p>LINKED</p>
+<dd><p>Linked</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_IS_LINKED</code><em class="property"> = 5</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_IS_MADE">
 <code class="descname">MVIEW_IS_MADE</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_IS_MADE" title="Permalink to this definition">¶</a></dt>
-<dd><p>MADE</p>
+<dd><p>Made</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_IS_MADE</code><em class="property"> = 6</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_IS_HIDDEN">
 <code class="descname">MVIEW_IS_HIDDEN</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_IS_HIDDEN" title="Permalink to this definition">¶</a></dt>
-<dd><p>HIDDEN</p>
+<dd><p>Hidden</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_IS_HIDDEN</code><em class="property"> = 7</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_IS_CLIPPED">
 <code class="descname">MVIEW_IS_CLIPPED</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_IS_CLIPPED" title="Permalink to this definition">¶</a></dt>
-<dd><p>CLIPPED</p>
+<dd><p>Clipped</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_IS_CLIPPED</code><em class="property"> = 8</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_IS_META">
 <code class="descname">MVIEW_IS_META</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_IS_META" title="Permalink to this definition">¶</a></dt>
-<dd><p>META</p>
+<dd><p>Meta</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_IS_META</code><em class="property"> = 9</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_IS_VOXD">
 <code class="descname">MVIEW_IS_VOXD</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_IS_VOXD" title="Permalink to this definition">¶</a></dt>
-<dd><p>VOXD</p>
+<dd><p>Voxd</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_IS_VOXD</code><em class="property"> = 10</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_IS_SHADOW_2D_INTERPRETATION">
 <code class="descname">MVIEW_IS_SHADOW_2D_INTERPRETATION</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_IS_SHADOW_2D_INTERPRETATION" title="Permalink to this definition">¶</a></dt>
-<dd><p>SHADOW_2D_INTERPRETATION</p>
+<dd><p>Shadow 2d interpretation</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_IS_SHADOW_2D_INTERPRETATION</code><em class="property"> = 11</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_IS_VECTOR3D">
 <code class="descname">MVIEW_IS_VECTOR3D</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_IS_VECTOR3D" title="Permalink to this definition">¶</a></dt>
-<dd><p>VECTOR3D</p>
+<dd><p>Vector3d</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_IS_VECTOR3D</code><em class="property"> = 12</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -6075,12 +6450,22 @@ intensities.</p>
 <dt id="geosoft.gxapi.MVIEW_LABEL_BOUND_NO">
 <code class="descname">MVIEW_LABEL_BOUND_NO</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_LABEL_BOUND_NO" title="Permalink to this definition">¶</a></dt>
 <dd><p>Label Not Bound</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_LABEL_BOUND_NO</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_LABEL_BOUND_YES">
 <code class="descname">MVIEW_LABEL_BOUND_YES</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_LABEL_BOUND_YES" title="Permalink to this definition">¶</a></dt>
 <dd><p>Label Bound</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_LABEL_BOUND_YES</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -6090,25 +6475,45 @@ intensities.</p>
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_LABEL_JUST_TOP">
 <code class="descname">MVIEW_LABEL_JUST_TOP</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_LABEL_JUST_TOP" title="Permalink to this definition">¶</a></dt>
-<dd><p>TOP</p>
+<dd><p>Top</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_LABEL_JUST_TOP</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_LABEL_JUST_BOTTOM">
 <code class="descname">MVIEW_LABEL_JUST_BOTTOM</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_LABEL_JUST_BOTTOM" title="Permalink to this definition">¶</a></dt>
-<dd><p>BOTTOM</p>
+<dd><p>Bottom</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_LABEL_JUST_BOTTOM</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_LABEL_JUST_LEFT">
 <code class="descname">MVIEW_LABEL_JUST_LEFT</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_LABEL_JUST_LEFT" title="Permalink to this definition">¶</a></dt>
-<dd><p>LEFT</p>
+<dd><p>Left</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_LABEL_JUST_LEFT</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_LABEL_JUST_RIGHT">
 <code class="descname">MVIEW_LABEL_JUST_RIGHT</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_LABEL_JUST_RIGHT" title="Permalink to this definition">¶</a></dt>
-<dd><p>RIGHT</p>
+<dd><p>Right</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_LABEL_JUST_RIGHT</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -6118,19 +6523,34 @@ intensities.</p>
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_LABEL_ORIENT_HORIZONTAL">
 <code class="descname">MVIEW_LABEL_ORIENT_HORIZONTAL</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_LABEL_ORIENT_HORIZONTAL" title="Permalink to this definition">¶</a></dt>
-<dd><p>HORIZONTAL</p>
+<dd><p>Horizontal</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_LABEL_ORIENT_HORIZONTAL</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_LABEL_ORIENT_TOP_RIGHT">
 <code class="descname">MVIEW_LABEL_ORIENT_TOP_RIGHT</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_LABEL_ORIENT_TOP_RIGHT" title="Permalink to this definition">¶</a></dt>
-<dd><p>TOP_RIGHT</p>
+<dd><p>Top right</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_LABEL_ORIENT_TOP_RIGHT</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_LABEL_ORIENT_TOP_LEFT">
 <code class="descname">MVIEW_LABEL_ORIENT_TOP_LEFT</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_LABEL_ORIENT_TOP_LEFT" title="Permalink to this definition">¶</a></dt>
-<dd><p>TOP_LEFT</p>
+<dd><p>Top left</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_LABEL_ORIENT_TOP_LEFT</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -6141,6 +6561,11 @@ intensities.</p>
 <dt id="geosoft.gxapi.MVIEW_NAME_LENGTH">
 <code class="descname">MVIEW_NAME_LENGTH</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_NAME_LENGTH" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum Length (1040)</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_NAME_LENGTH</code><em class="property"> = 1040</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -6151,18 +6576,33 @@ intensities.</p>
 <dt id="geosoft.gxapi.MVIEW_READ">
 <code class="descname">MVIEW_READ</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_READ" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read Only - No changes</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_READ</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_WRITENEW">
 <code class="descname">MVIEW_WRITENEW</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_WRITENEW" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create new <a class="reference internal" href="#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW</span></code></a> - destroys any existing <a class="reference internal" href="#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW</span></code></a></p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_WRITENEW</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_WRITEOLD">
 <code class="descname">MVIEW_WRITEOLD</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_WRITEOLD" title="Permalink to this definition">¶</a></dt>
 <dd><p>Open existing <a class="reference internal" href="#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW</span></code></a> for read/write (must exist)</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_WRITEOLD</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -6175,6 +6615,11 @@ intensities.</p>
 <dd><p>No reprojection is used and all locations and
 attributes are assumed to be in the view coordinate
 system.</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_PJ_OFF</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
@@ -6182,6 +6627,11 @@ system.</p>
 <code class="descname">MVIEW_PJ_LOCATION</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_PJ_LOCATION" title="Permalink to this definition">¶</a></dt>
 <dd><p>Only locations will be transformed to the view
 coordinate system.</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_PJ_LOCATION</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
@@ -6189,12 +6639,22 @@ coordinate system.</p>
 <code class="descname">MVIEW_PJ_ALL</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_PJ_ALL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Locations and attributes (sizes, thicknesses, angles)
 will be transformed to the view coordinate system.</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_PJ_ALL</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_PJ_ON">
 <code class="descname">MVIEW_PJ_ON</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_PJ_ON" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mode before the last <a class="reference internal" href="#geosoft.gxapi.MVIEW_PJ_OFF" title="geosoft.gxapi.MVIEW_PJ_OFF"><code class="xref py py-obj docutils literal"><span class="pre">MVIEW_PJ_OFF</span></code></a>.</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_PJ_ON</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -6205,18 +6665,33 @@ will be transformed to the view coordinate system.</p>
 <dt id="geosoft.gxapi.MVIEW_RELOCATE_FIT">
 <code class="descname">MVIEW_RELOCATE_FIT</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_RELOCATE_FIT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Will fit the image to fill the specified area</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_RELOCATE_FIT</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_RELOCATE_ASPECT">
 <code class="descname">MVIEW_RELOCATE_ASPECT</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_RELOCATE_ASPECT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Will maintain aspect ratio</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_RELOCATE_ASPECT</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_RELOCATE_ASPECT_CENTER">
 <code class="descname">MVIEW_RELOCATE_ASPECT_CENTER</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_RELOCATE_ASPECT_CENTER" title="Permalink to this definition">¶</a></dt>
 <dd><p>Will maintain aspect ratio and center in specified area</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_RELOCATE_ASPECT_CENTER</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -6227,18 +6702,33 @@ will be transformed to the view coordinate system.</p>
 <dt id="geosoft.gxapi.MVIEW_SMOOTH_NEAREST">
 <code class="descname">MVIEW_SMOOTH_NEAREST</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_SMOOTH_NEAREST" title="Permalink to this definition">¶</a></dt>
 <dd><p>Nearest neighbour</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_SMOOTH_NEAREST</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_SMOOTH_CUBIC">
 <code class="descname">MVIEW_SMOOTH_CUBIC</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_SMOOTH_CUBIC" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cubic Spline</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_SMOOTH_CUBIC</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_SMOOTH_AKIMA">
 <code class="descname">MVIEW_SMOOTH_AKIMA</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_SMOOTH_AKIMA" title="Permalink to this definition">¶</a></dt>
 <dd><p>Akima</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_SMOOTH_AKIMA</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -6248,25 +6738,45 @@ will be transformed to the view coordinate system.</p>
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_TILE_RECTANGULAR">
 <code class="descname">MVIEW_TILE_RECTANGULAR</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_TILE_RECTANGULAR" title="Permalink to this definition">¶</a></dt>
-<dd><p>RECTANGULAR</p>
+<dd><p>Rectangular</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_TILE_RECTANGULAR</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_TILE_DIAGONAL">
 <code class="descname">MVIEW_TILE_DIAGONAL</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_TILE_DIAGONAL" title="Permalink to this definition">¶</a></dt>
-<dd><p>DIAGONAL</p>
+<dd><p>Diagonal</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_TILE_DIAGONAL</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_TILE_TRIANGULAR">
 <code class="descname">MVIEW_TILE_TRIANGULAR</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_TILE_TRIANGULAR" title="Permalink to this definition">¶</a></dt>
-<dd><p>TRIANGULAR</p>
+<dd><p>Triangular</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_TILE_TRIANGULAR</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_TILE_RANDOM">
 <code class="descname">MVIEW_TILE_RANDOM</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_TILE_RANDOM" title="Permalink to this definition">¶</a></dt>
-<dd><p>RANDOM</p>
+<dd><p>Random</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_TILE_RANDOM</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -6277,24 +6787,44 @@ will be transformed to the view coordinate system.</p>
 <dt id="geosoft.gxapi.MVIEW_UNIT_VIEW">
 <code class="descname">MVIEW_UNIT_VIEW</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_UNIT_VIEW" title="Permalink to this definition">¶</a></dt>
 <dd><p>View coordinates</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_UNIT_VIEW</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_UNIT_PLOT">
 <code class="descname">MVIEW_UNIT_PLOT</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_UNIT_PLOT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot hi-metric (mm*100) on the map.</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_UNIT_PLOT</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_UNIT_MM">
 <code class="descname">MVIEW_UNIT_MM</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_UNIT_MM" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot mm on the map.</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_UNIT_MM</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_UNIT_VIEW_UNWARPED">
 <code class="descname">MVIEW_UNIT_VIEW_UNWARPED</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_UNIT_VIEW_UNWARPED" title="Permalink to this definition">¶</a></dt>
 <dd><p>View coordinates without a warp if there is one</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_UNIT_VIEW_UNWARPED</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -6306,24 +6836,44 @@ will be transformed to the view coordinate system.</p>
 <dt id="geosoft.gxapi.MVIEW_EXTENT_UNIT_VIEW">
 <code class="descname">MVIEW_EXTENT_UNIT_VIEW</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_EXTENT_UNIT_VIEW" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference internal" href="#geosoft.gxapi.MVIEW_UNIT_VIEW" title="geosoft.gxapi.MVIEW_UNIT_VIEW"><code class="xref py py-obj docutils literal"><span class="pre">MVIEW_UNIT_VIEW</span></code></a></p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_EXTENT_UNIT_VIEW</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_EXTENT_UNIT_PLOT">
 <code class="descname">MVIEW_EXTENT_UNIT_PLOT</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_EXTENT_UNIT_PLOT" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference internal" href="#geosoft.gxapi.MVIEW_UNIT_PLOT" title="geosoft.gxapi.MVIEW_UNIT_PLOT"><code class="xref py py-obj docutils literal"><span class="pre">MVIEW_UNIT_PLOT</span></code></a></p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_EXTENT_UNIT_PLOT</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_EXTENT_UNIT_MM">
 <code class="descname">MVIEW_EXTENT_UNIT_MM</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_EXTENT_UNIT_MM" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference internal" href="#geosoft.gxapi.MVIEW_UNIT_MM" title="geosoft.gxapi.MVIEW_UNIT_MM"><code class="xref py py-obj docutils literal"><span class="pre">MVIEW_UNIT_MM</span></code></a></p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_EXTENT_UNIT_MM</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVIEW_EXTENT_UNIT_VIEW_UNWARPED">
 <code class="descname">MVIEW_EXTENT_UNIT_VIEW_UNWARPED</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_EXTENT_UNIT_VIEW_UNWARPED" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference internal" href="#geosoft.gxapi.MVIEW_UNIT_VIEW_UNWARPED" title="geosoft.gxapi.MVIEW_UNIT_VIEW_UNWARPED"><code class="xref py py-obj docutils literal"><span class="pre">MVIEW_UNIT_VIEW_UNWARPED</span></code></a></p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_EXTENT_UNIT_VIEW_UNWARPED</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -6333,55 +6883,100 @@ will be transformed to the view coordinate system.</p>
 <dl class="data">
 <dt id="geosoft.gxapi.TEXT_REF_BOTTOM_LEFT">
 <code class="descname">TEXT_REF_BOTTOM_LEFT</code><a class="headerlink" href="#geosoft.gxapi.TEXT_REF_BOTTOM_LEFT" title="Permalink to this definition">¶</a></dt>
-<dd><p>BOTTOM_LEFT</p>
+<dd><p>Bottom left</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">TEXT_REF_BOTTOM_LEFT</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.TEXT_REF_BOTTOM_CENTER">
 <code class="descname">TEXT_REF_BOTTOM_CENTER</code><a class="headerlink" href="#geosoft.gxapi.TEXT_REF_BOTTOM_CENTER" title="Permalink to this definition">¶</a></dt>
-<dd><p>BOTTOM_CENTER</p>
+<dd><p>Bottom center</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">TEXT_REF_BOTTOM_CENTER</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.TEXT_REF_BOTTOM_RIGHT">
 <code class="descname">TEXT_REF_BOTTOM_RIGHT</code><a class="headerlink" href="#geosoft.gxapi.TEXT_REF_BOTTOM_RIGHT" title="Permalink to this definition">¶</a></dt>
-<dd><p>BOTTOM_RIGHT</p>
+<dd><p>Bottom right</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">TEXT_REF_BOTTOM_RIGHT</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.TEXT_REF_MIDDLE_LEFT">
 <code class="descname">TEXT_REF_MIDDLE_LEFT</code><a class="headerlink" href="#geosoft.gxapi.TEXT_REF_MIDDLE_LEFT" title="Permalink to this definition">¶</a></dt>
-<dd><p>MIDDLE_LEFT</p>
+<dd><p>Middle left</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">TEXT_REF_MIDDLE_LEFT</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.TEXT_REF_MIDDLE_CENTER">
 <code class="descname">TEXT_REF_MIDDLE_CENTER</code><a class="headerlink" href="#geosoft.gxapi.TEXT_REF_MIDDLE_CENTER" title="Permalink to this definition">¶</a></dt>
-<dd><p>MIDDLE_CENTER</p>
+<dd><p>Middle center</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">TEXT_REF_MIDDLE_CENTER</code><em class="property"> = 4</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.TEXT_REF_MIDDLE_RIGHT">
 <code class="descname">TEXT_REF_MIDDLE_RIGHT</code><a class="headerlink" href="#geosoft.gxapi.TEXT_REF_MIDDLE_RIGHT" title="Permalink to this definition">¶</a></dt>
-<dd><p>MIDDLE_RIGHT</p>
+<dd><p>Middle right</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">TEXT_REF_MIDDLE_RIGHT</code><em class="property"> = 5</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.TEXT_REF_TOP_LEFT">
 <code class="descname">TEXT_REF_TOP_LEFT</code><a class="headerlink" href="#geosoft.gxapi.TEXT_REF_TOP_LEFT" title="Permalink to this definition">¶</a></dt>
-<dd><p>TOP_LEFT</p>
+<dd><p>Top left</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">TEXT_REF_TOP_LEFT</code><em class="property"> = 6</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.TEXT_REF_TOP_CENTER">
 <code class="descname">TEXT_REF_TOP_CENTER</code><a class="headerlink" href="#geosoft.gxapi.TEXT_REF_TOP_CENTER" title="Permalink to this definition">¶</a></dt>
-<dd><p>TOP_CENTER</p>
+<dd><p>Top center</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">TEXT_REF_TOP_CENTER</code><em class="property"> = 7</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.TEXT_REF_TOP_RIGHT">
 <code class="descname">TEXT_REF_TOP_RIGHT</code><a class="headerlink" href="#geosoft.gxapi.TEXT_REF_TOP_RIGHT" title="Permalink to this definition">¶</a></dt>
-<dd><p>TOP_RIGHT</p>
+<dd><p>Top right</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">TEXT_REF_TOP_RIGHT</code><em class="property"> = 8</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -6394,6 +6989,11 @@ has predefined optimum behaviour and any changes to these flags are ignored.</p>
 <dt id="geosoft.gxapi.MVIEW_3D_RENDER_BACKFACES">
 <code class="descname">MVIEW_3D_RENDER_BACKFACES</code><a class="headerlink" href="#geosoft.gxapi.MVIEW_3D_RENDER_BACKFACES" title="Permalink to this definition">¶</a></dt>
 <dd><p>This flag is enabled if the backfaces of geometry should be rendered</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_3D_RENDER_BACKFACES</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
@@ -6403,6 +7003,11 @@ has predefined optimum behaviour and any changes to these flags are ignored.</p>
 any geometric objects (spheres, cubes etc.) for 3D groups with the following flags
 will render untransformed while only the centers of the objects are changed.
 This ensures the objects appear in the correct place with respect to other data being rendered (and scaled).</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVIEW_3D_DONT_SCALE_GEOMETRY</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>

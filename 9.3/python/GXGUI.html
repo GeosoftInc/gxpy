@@ -2096,7 +2096,7 @@ A value of 2 means they overlap each other.</dd>
 
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXGUI.render_line_pattern">
-<em class="property">classmethod </em><code class="descname">render_line_pattern</code><span class="sig-paren">(</span><em>hdc</em>, <em>h_dc</em>, <em>left</em>, <em>bottom</em>, <em>right</em>, <em>top</em>, <em>pattern</em>, <em>thickness</em>, <em>pitch</em>, <em>col</em>, <em>p11</em>, <em>p12</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGUI.render_line_pattern" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">render_line_pattern</code><span class="sig-paren">(</span><em>hdc</em>, <em>left</em>, <em>bottom</em>, <em>right</em>, <em>top</em>, <em>pattern</em>, <em>thickness</em>, <em>pitch</em>, <em>col</em>, <em>is_enabled</em>, <em>is_button</em>, <em>is_selected</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGUI.render_line_pattern" title="Permalink to this definition">¶</a></dt>
 <dd><p>Render a line pattern.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -2104,17 +2104,17 @@ A value of 2 means they overlap each other.</dd>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>hdc</strong> (<em>int</em>) – DC Handle</li>
-<li><strong>h_dc</strong> (<em>int</em>) – Left value of the render rect in Windows coordinates (bottom&gt;top)</li>
-<li><strong>left</strong> (<em>int</em>) – Bottom value</li>
-<li><strong>bottom</strong> (<em>int</em>) – Right value</li>
-<li><strong>right</strong> (<em>int</em>) – Top value</li>
-<li><strong>top</strong> (<em>int</em>) – Pattern number</li>
-<li><strong>pattern</strong> (<em>float</em>) – Pattern thickness</li>
-<li><strong>thickness</strong> (<em>float</em>) – Pattern pitch</li>
-<li><strong>pitch</strong> (<em>int</em>) – Pattern color</li>
-<li><strong>col</strong> (<em>int</em>) – Is this window enabled?</li>
-<li><strong>p11</strong> (<em>int</em>) – Is this a button?</li>
-<li><strong>p12</strong> (<em>int</em>) – Is this window selected?</li>
+<li><strong>left</strong> (<em>int</em>) – Left value of the render rect in Windows coordinates (bottom&gt;top)</li>
+<li><strong>bottom</strong> (<em>int</em>) – Bottom value</li>
+<li><strong>right</strong> (<em>int</em>) – Right value</li>
+<li><strong>top</strong> (<em>int</em>) – Top value</li>
+<li><strong>pattern</strong> (<em>int</em>) – Pattern number</li>
+<li><strong>thickness</strong> (<em>float</em>) – Pattern thickness</li>
+<li><strong>pitch</strong> (<em>float</em>) – Pattern pitch</li>
+<li><strong>col</strong> (<em>int</em>) – Pattern color</li>
+<li><strong>is_enabled</strong> (<em>int</em>) – Is this window enabled?</li>
+<li><strong>is_button</strong> (<em>int</em>) – Is this a button?</li>
+<li><strong>is_selected</strong> (<em>int</em>) – Is this window selected?</li>
 </ul>
 </td>
 </tr>
@@ -2129,7 +2129,7 @@ A value of 2 means they overlap each other.</dd>
 
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXGUI.render_pattern">
-<em class="property">classmethod </em><code class="descname">render_pattern</code><span class="sig-paren">(</span><em>hdc</em>, <em>h_dc</em>, <em>left</em>, <em>bottom</em>, <em>right</em>, <em>top</em>, <em>pat</em>, <em>size</em>, <em>thick</em>, <em>col</em>, <em>back_col</em>, <em>p12</em>, <em>p13</em>, <em>p14</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGUI.render_pattern" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">render_pattern</code><span class="sig-paren">(</span><em>hdc</em>, <em>left</em>, <em>bottom</em>, <em>right</em>, <em>top</em>, <em>pat</em>, <em>size</em>, <em>thick</em>, <em>dense</em>, <em>col</em>, <em>back_col</em>, <em>is_enabled</em>, <em>is_button</em>, <em>is_selected</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGUI.render_pattern" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>Render a pattern.</li>
 </ul>
@@ -2139,19 +2139,19 @@ A value of 2 means they overlap each other.</dd>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>hdc</strong> (<em>int</em>) – DC handle</li>
-<li><strong>h_dc</strong> (<em>int</em>) – Left value of the render rect in Windows coordinates (bottom&gt;top)</li>
-<li><strong>left</strong> (<em>int</em>) – Bottom value</li>
-<li><strong>bottom</strong> (<em>int</em>) – Right value</li>
-<li><strong>right</strong> (<em>int</em>) – Top value</li>
-<li><strong>top</strong> (<em>int</em>) – Pattern number</li>
-<li><strong>pat</strong> (<em>float</em>) – Pattern size,           // input <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_R8DM" title="geosoft.gxapi.GS_R8DM"><code class="xref py py-obj docutils literal"><span class="pre">GS_R8DM</span></code></a> to use default</li>
-<li><strong>size</strong> (<em>int</em>) – Pattern thick (0-100)   // input <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_S4DM" title="geosoft.gxapi.GS_S4DM"><code class="xref py py-obj docutils literal"><span class="pre">GS_S4DM</span></code></a> to use default</li>
-<li><strong>thick</strong> (<em>float</em>) – Pattern density,        // input <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_R8DM" title="geosoft.gxapi.GS_R8DM"><code class="xref py py-obj docutils literal"><span class="pre">GS_R8DM</span></code></a> to use default</li>
-<li><strong>col</strong> (<em>int</em>) – Pattern color   // input <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_S4DM" title="geosoft.gxapi.GS_S4DM"><code class="xref py py-obj docutils literal"><span class="pre">GS_S4DM</span></code></a> to use default</li>
+<li><strong>left</strong> (<em>int</em>) – Left value of the render rect in Windows coordinates (bottom&gt;top)</li>
+<li><strong>bottom</strong> (<em>int</em>) – Bottom value</li>
+<li><strong>right</strong> (<em>int</em>) – Right value</li>
+<li><strong>top</strong> (<em>int</em>) – Top value</li>
+<li><strong>pat</strong> (<em>int</em>) – Pattern number</li>
+<li><strong>size</strong> (<em>float</em>) – Pattern size,           // input <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_R8DM" title="geosoft.gxapi.GS_R8DM"><code class="xref py py-obj docutils literal"><span class="pre">GS_R8DM</span></code></a> to use default</li>
+<li><strong>thick</strong> (<em>int</em>) – Pattern thick (0-100)   // input <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_S4DM" title="geosoft.gxapi.GS_S4DM"><code class="xref py py-obj docutils literal"><span class="pre">GS_S4DM</span></code></a> to use default</li>
+<li><strong>dense</strong> (<em>float</em>) – Pattern density,        // input <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_R8DM" title="geosoft.gxapi.GS_R8DM"><code class="xref py py-obj docutils literal"><span class="pre">GS_R8DM</span></code></a> to use default</li>
+<li><strong>col</strong> (<em>int</em>) – Pattern color        // input <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_S4DM" title="geosoft.gxapi.GS_S4DM"><code class="xref py py-obj docutils literal"><span class="pre">GS_S4DM</span></code></a> to use default</li>
 <li><strong>back_col</strong> (<em>int</em>) – Pattern background color // input <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_S4DM" title="geosoft.gxapi.GS_S4DM"><code class="xref py py-obj docutils literal"><span class="pre">GS_S4DM</span></code></a> to use default; can be <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.C_TRANSPARENT" title="geosoft.gxapi.C_TRANSPARENT"><code class="xref py py-obj docutils literal"><span class="pre">C_TRANSPARENT</span></code></a></li>
-<li><strong>p12</strong> (<em>int</em>) – Is this window enabled?</li>
-<li><strong>p13</strong> (<em>int</em>) – Is this a button?</li>
-<li><strong>p14</strong> (<em>int</em>) – Is this window selected?</li>
+<li><strong>is_enabled</strong> (<em>int</em>) – Is this window enabled?</li>
+<li><strong>is_button</strong> (<em>int</em>) – Is this a button?</li>
+<li><strong>is_selected</strong> (<em>int</em>) – Is this window selected?</li>
 </ul>
 </td>
 </tr>
@@ -2591,18 +2591,33 @@ link.</p>
 <dt id="geosoft.gxapi.AOI_RETURN_CANCEL">
 <code class="descname">AOI_RETURN_CANCEL</code><a class="headerlink" href="#geosoft.gxapi.AOI_RETURN_CANCEL" title="Permalink to this definition">¶</a></dt>
 <dd><p>User canceled</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">AOI_RETURN_CANCEL</code><em class="property"> = -1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.AOI_RETURN_NODEFINE">
 <code class="descname">AOI_RETURN_NODEFINE</code><a class="headerlink" href="#geosoft.gxapi.AOI_RETURN_NODEFINE" title="Permalink to this definition">¶</a></dt>
 <dd><p>User chose to continue with no AOI defined or available</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">AOI_RETURN_NODEFINE</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.AOI_RETURN_DEFINE">
 <code class="descname">AOI_RETURN_DEFINE</code><a class="headerlink" href="#geosoft.gxapi.AOI_RETURN_DEFINE" title="Permalink to this definition">¶</a></dt>
 <dd><p>User chose to continue and defined valid AOI parameters</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">AOI_RETURN_DEFINE</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -2619,30 +2634,55 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <dt id="geosoft.gxapi.COORDSYS_MODE_ALL">
 <code class="descname">COORDSYS_MODE_ALL</code><a class="headerlink" href="#geosoft.gxapi.COORDSYS_MODE_ALL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Allow Geographic (GCS), Projected (PCS), and Unknown</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COORDSYS_MODE_ALL</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.COORDSYS_MODE_GCS">
 <code class="descname">COORDSYS_MODE_GCS</code><a class="headerlink" href="#geosoft.gxapi.COORDSYS_MODE_GCS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Allow only Geographic (GCS)</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COORDSYS_MODE_GCS</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.COORDSYS_MODE_PCS">
 <code class="descname">COORDSYS_MODE_PCS</code><a class="headerlink" href="#geosoft.gxapi.COORDSYS_MODE_PCS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Allow only Projected (PCS)</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COORDSYS_MODE_PCS</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.COORDSYS_MODE_GCS_PCS">
 <code class="descname">COORDSYS_MODE_GCS_PCS</code><a class="headerlink" href="#geosoft.gxapi.COORDSYS_MODE_GCS_PCS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Allow only Geographic (GCS) and Projected (PCS)</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COORDSYS_MODE_GCS_PCS</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.COORDSYS_MODE_PCS_UNKNOWN">
 <code class="descname">COORDSYS_MODE_PCS_UNKNOWN</code><a class="headerlink" href="#geosoft.gxapi.COORDSYS_MODE_PCS_UNKNOWN" title="Permalink to this definition">¶</a></dt>
 <dd><p>Allow only Projected (PCS), or Unknown</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COORDSYS_MODE_PCS_UNKNOWN</code><em class="property"> = 4</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -2653,18 +2693,33 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <dt id="geosoft.gxapi.DAT_TYPE_GRID">
 <code class="descname">DAT_TYPE_GRID</code><a class="headerlink" href="#geosoft.gxapi.DAT_TYPE_GRID" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display only grid formats</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">DAT_TYPE_GRID</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.DAT_TYPE_IMAGE">
 <code class="descname">DAT_TYPE_IMAGE</code><a class="headerlink" href="#geosoft.gxapi.DAT_TYPE_IMAGE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display only image formats</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">DAT_TYPE_IMAGE</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.DAT_TYPE_GRID_AND_IMAGE">
 <code class="descname">DAT_TYPE_GRID_AND_IMAGE</code><a class="headerlink" href="#geosoft.gxapi.DAT_TYPE_GRID_AND_IMAGE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Displays both grids and image formats</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">DAT_TYPE_GRID_AND_IMAGE</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -2675,762 +2730,1397 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <dt id="geosoft.gxapi.FILE_FILTER_ALL">
 <code class="descname">FILE_FILTER_ALL</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_ALL" title="Permalink to this definition">¶</a></dt>
 <dd><p>All files              <code class="docutils literal"><span class="pre">*.*</span></code>                  ANYWHERE</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_ALL</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_GDB">
 <code class="descname">FILE_FILTER_GDB</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_GDB" title="Permalink to this definition">¶</a></dt>
 <dd><p>Geosoft Database       <code class="docutils literal"><span class="pre">*.gdb</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_GDB</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_GX">
 <code class="descname">FILE_FILTER_GX</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_GX" title="Permalink to this definition">¶</a></dt>
 <dd><p>Geosoft Executable     <code class="docutils literal"><span class="pre">*.gx</span></code>                 GEOSOFT</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_GX</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_GS">
 <code class="descname">FILE_FILTER_GS</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_GS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Geosoft Script         <code class="docutils literal"><span class="pre">*.gs</span></code>                 BOTH</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_GS</code><em class="property"> = 4</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_INI">
 <code class="descname">FILE_FILTER_INI</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_INI" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parameter files        <code class="docutils literal"><span class="pre">*.ini</span></code>                GEOSOFT</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_INI</code><em class="property"> = 5</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_OMN">
 <code class="descname">FILE_FILTER_OMN</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_OMN" title="Permalink to this definition">¶</a></dt>
 <dd><p>Oasis Menu files       <code class="docutils literal"><span class="pre">*.omn</span></code>                GEOSOFT</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_OMN</code><em class="property"> = 6</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_VU">
 <code class="descname">FILE_FILTER_VU</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_VU" title="Permalink to this definition">¶</a></dt>
 <dd><p>Oasis View files       <code class="docutils literal"><span class="pre">*.vu</span></code>                 LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_VU</code><em class="property"> = 7</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_MAP">
 <code class="descname">FILE_FILTER_MAP</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_MAP" title="Permalink to this definition">¶</a></dt>
 <dd><p>Oasis Map files        <code class="docutils literal"><span class="pre">*.map</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_MAP</code><em class="property"> = 8</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_PRJ">
 <code class="descname">FILE_FILTER_PRJ</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_PRJ" title="Permalink to this definition">¶</a></dt>
 <dd><p>Projection file        <code class="docutils literal"><span class="pre">*.prj</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_PRJ</code><em class="property"> = 9</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_CON">
 <code class="descname">FILE_FILTER_CON</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_CON" title="Permalink to this definition">¶</a></dt>
 <dd><p>Configuration file     <code class="docutils literal"><span class="pre">*.con</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_CON</code><em class="property"> = 10</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_MNU">
 <code class="descname">FILE_FILTER_MNU</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_MNU" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sushi MNU files        <code class="docutils literal"><span class="pre">*.mnu</span></code>                GEOSOFT</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_MNU</code><em class="property"> = 11</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_PDF">
 <code class="descname">FILE_FILTER_PDF</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_PDF" title="Permalink to this definition">¶</a></dt>
 <dd><p>PDF files              <code class="docutils literal"><span class="pre">*.pdf</span></code>                GEOSOFT</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_PDF</code><em class="property"> = 12</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_PLT">
 <code class="descname">FILE_FILTER_PLT</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_PLT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Geosoft PLT files      <code class="docutils literal"><span class="pre">*.plt</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_PLT</code><em class="property"> = 13</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_GWS">
 <code class="descname">FILE_FILTER_GWS</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_GWS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Geosoft workspace      <code class="docutils literal"><span class="pre">*.gws</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_GWS</code><em class="property"> = 14</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_AGG">
 <code class="descname">FILE_FILTER_AGG</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_AGG" title="Permalink to this definition">¶</a></dt>
 <dd><p>Aggregate              <code class="docutils literal"><span class="pre">*.agg</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_AGG</code><em class="property"> = 15</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_TBL">
 <code class="descname">FILE_FILTER_TBL</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_TBL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Color table            <code class="docutils literal"><span class="pre">*.tbl</span></code>                GEOSOFT</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_TBL</code><em class="property"> = 16</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_ZON">
 <code class="descname">FILE_FILTER_ZON</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_ZON" title="Permalink to this definition">¶</a></dt>
 <dd><p>Zone                   <code class="docutils literal"><span class="pre">*.zon</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_ZON</code><em class="property"> = 17</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_ITR">
 <code class="descname">FILE_FILTER_ITR</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_ITR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Image transform        <code class="docutils literal"><span class="pre">*.itr</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_ITR</code><em class="property"> = 18</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_DXF">
 <code class="descname">FILE_FILTER_DXF</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_DXF" title="Permalink to this definition">¶</a></dt>
 <dd><p>AutoCAD DXF files      <code class="docutils literal"><span class="pre">*.dxf</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_DXF</code><em class="property"> = 19</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_TIF">
 <code class="descname">FILE_FILTER_TIF</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_TIF" title="Permalink to this definition">¶</a></dt>
 <dd><p>TIFF files             <code class="docutils literal"><span class="pre">*.tif</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_TIF</code><em class="property"> = 20</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_EMF">
 <code class="descname">FILE_FILTER_EMF</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_EMF" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enhanced Metafies      <code class="docutils literal"><span class="pre">*.emf</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_EMF</code><em class="property"> = 21</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_BMP">
 <code class="descname">FILE_FILTER_BMP</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_BMP" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bitmap files           <code class="docutils literal"><span class="pre">*.bmp</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_BMP</code><em class="property"> = 22</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_LUT">
 <code class="descname">FILE_FILTER_LUT</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_LUT" title="Permalink to this definition">¶</a></dt>
 <dd><p>ER Mapper LUT          <code class="docutils literal"><span class="pre">*.lut</span></code>                GEOSOFT</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_LUT</code><em class="property"> = 23</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_PNG">
 <code class="descname">FILE_FILTER_PNG</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_PNG" title="Permalink to this definition">¶</a></dt>
 <dd><p>PNG files              <code class="docutils literal"><span class="pre">*.png</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_PNG</code><em class="property"> = 24</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_JPG">
 <code class="descname">FILE_FILTER_JPG</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_JPG" title="Permalink to this definition">¶</a></dt>
 <dd><p>JPG files              <code class="docutils literal"><span class="pre">*.jpg</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_JPG</code><em class="property"> = 25</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_PCX">
 <code class="descname">FILE_FILTER_PCX</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_PCX" title="Permalink to this definition">¶</a></dt>
 <dd><p>PCX files              <code class="docutils literal"><span class="pre">*.pcx</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_PCX</code><em class="property"> = 26</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_GIF">
 <code class="descname">FILE_FILTER_GIF</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_GIF" title="Permalink to this definition">¶</a></dt>
 <dd><p>GIF files              <code class="docutils literal"><span class="pre">*.gif</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_GIF</code><em class="property"> = 27</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_GRD">
 <code class="descname">FILE_FILTER_GRD</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_GRD" title="Permalink to this definition">¶</a></dt>
 <dd><p>GRD files              <code class="docutils literal"><span class="pre">*.grd</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_GRD</code><em class="property"> = 28</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_ERS">
 <code class="descname">FILE_FILTER_ERS</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_ERS" title="Permalink to this definition">¶</a></dt>
 <dd><p>ERS files              <code class="docutils literal"><span class="pre">*.ers</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_ERS</code><em class="property"> = 29</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_EPS">
 <code class="descname">FILE_FILTER_EPS</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_EPS" title="Permalink to this definition">¶</a></dt>
 <dd><p>EPS files              <code class="docutils literal"><span class="pre">*.eps</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_EPS</code><em class="property"> = 30</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_SHP">
 <code class="descname">FILE_FILTER_SHP</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_SHP" title="Permalink to this definition">¶</a></dt>
 <dd><p>ArcView Shape files    <code class="docutils literal"><span class="pre">*.shp</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_SHP</code><em class="property"> = 31</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_CGM">
 <code class="descname">FILE_FILTER_CGM</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_CGM" title="Permalink to this definition">¶</a></dt>
 <dd><p>CGM files              <code class="docutils literal"><span class="pre">*.cgm</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_CGM</code><em class="property"> = 32</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_TAB">
 <code class="descname">FILE_FILTER_TAB</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_TAB" title="Permalink to this definition">¶</a></dt>
 <dd><p>MapInfo Tab files      <code class="docutils literal"><span class="pre">*.tab</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_TAB</code><em class="property"> = 33</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_COMPS">
 <code class="descname">FILE_FILTER_COMPS</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_COMPS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Software Components    Components           LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_COMPS</code><em class="property"> = 34</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_CSV">
 <code class="descname">FILE_FILTER_CSV</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_CSV" title="Permalink to this definition">¶</a></dt>
 <dd><p>MapInfo Tab files      <code class="docutils literal"><span class="pre">*.tab</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_CSV</code><em class="property"> = 35</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_GPF">
 <code class="descname">FILE_FILTER_GPF</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_GPF" title="Permalink to this definition">¶</a></dt>
 <dd><p>Geosoft Project        <code class="docutils literal"><span class="pre">*.gpf</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_GPF</code><em class="property"> = 36</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_PLY">
 <code class="descname">FILE_FILTER_PLY</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_PLY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Geosoft Polygons       <code class="docutils literal"><span class="pre">*.ply</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_PLY</code><em class="property"> = 37</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_STM">
 <code class="descname">FILE_FILTER_STM</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_STM" title="Permalink to this definition">¶</a></dt>
 <dd><p>Scatter templates      <code class="docutils literal"><span class="pre">*.stm</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_STM</code><em class="property"> = 38</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_TTM">
 <code class="descname">FILE_FILTER_TTM</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_TTM" title="Permalink to this definition">¶</a></dt>
 <dd><p>Triplot templates      <code class="docutils literal"><span class="pre">*.ttm</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_TTM</code><em class="property"> = 39</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_XYZ">
 <code class="descname">FILE_FILTER_XYZ</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_XYZ" title="Permalink to this definition">¶</a></dt>
 <dd><p>Geosoft XYZ files      <code class="docutils literal"><span class="pre">*.xyz</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_XYZ</code><em class="property"> = 40</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_BAR">
 <code class="descname">FILE_FILTER_BAR</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_BAR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Geosoft Bar file       <code class="docutils literal"><span class="pre">*.geobar</span></code>             LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_BAR</code><em class="property"> = 41</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_GEOSOFT_LICENSE">
 <code class="descname">FILE_FILTER_GEOSOFT_LICENSE</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_GEOSOFT_LICENSE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Geosoft License files   <code class="docutils literal"><span class="pre">*.geosoft_license</span></code>   LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_GEOSOFT_LICENSE</code><em class="property"> = 42</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_XML">
 <code class="descname">FILE_FILTER_XML</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_XML" title="Permalink to this definition">¶</a></dt>
 <dd><p>XML files              <code class="docutils literal"><span class="pre">*.xml</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_XML</code><em class="property"> = 43</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_GXNET">
 <code class="descname">FILE_FILTER_GXNET</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_GXNET" title="Permalink to this definition">¶</a></dt>
 <dd><p>GX.NET files           <code class="docutils literal"><span class="pre">*.dll</span></code>                GEOSOFT</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_GXNET</code><em class="property"> = 44</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_ECW">
 <code class="descname">FILE_FILTER_ECW</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_ECW" title="Permalink to this definition">¶</a></dt>
 <dd><p>ECW files              <code class="docutils literal"><span class="pre">*.ecw</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_ECW</code><em class="property"> = 45</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_J2K">
 <code class="descname">FILE_FILTER_J2K</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_J2K" title="Permalink to this definition">¶</a></dt>
 <dd><p>J2K JPEG 2000 files    <code class="docutils literal"><span class="pre">*.j2k</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_J2K</code><em class="property"> = 46</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_JP2">
 <code class="descname">FILE_FILTER_JP2</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_JP2" title="Permalink to this definition">¶</a></dt>
 <dd><p>JP2 JPEG 2000 files    <code class="docutils literal"><span class="pre">*.jp2</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_JP2</code><em class="property"> = 47</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_SEL">
 <code class="descname">FILE_FILTER_SEL</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_SEL" title="Permalink to this definition">¶</a></dt>
 <dd><p>acQuire parameters     <code class="docutils literal"><span class="pre">*.sel</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_SEL</code><em class="property"> = 48</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_SVG">
 <code class="descname">FILE_FILTER_SVG</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_SVG" title="Permalink to this definition">¶</a></dt>
 <dd><p>SVG file               <code class="docutils literal"><span class="pre">*.svg</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_SVG</code><em class="property"> = 49</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_SVZ">
 <code class="descname">FILE_FILTER_SVZ</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_SVZ" title="Permalink to this definition">¶</a></dt>
 <dd><p>SVG Compressed file    <code class="docutils literal"><span class="pre">*.svz</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_SVZ</code><em class="property"> = 50</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_WRP">
 <code class="descname">FILE_FILTER_WRP</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_WRP" title="Permalink to this definition">¶</a></dt>
 <dd><p>Warp file              <code class="docutils literal"><span class="pre">*.wrp</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_WRP</code><em class="property"> = 51</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_MAPPLOT">
 <code class="descname">FILE_FILTER_MAPPLOT</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_MAPPLOT" title="Permalink to this definition">¶</a></dt>
 <dd><p>MAPPLOT file           <code class="docutils literal"><span class="pre">*.con</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_MAPPLOT</code><em class="property"> = 52</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_DTM">
 <code class="descname">FILE_FILTER_DTM</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_DTM" title="Permalink to this definition">¶</a></dt>
 <dd><p>Surpac DTM files       <code class="docutils literal"><span class="pre">*.dtm</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_DTM</code><em class="property"> = 53</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_VOXEL">
 <code class="descname">FILE_FILTER_VOXEL</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_VOXEL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Geosoft Voxel          <code class="docutils literal"><span class="pre">*.geosoft_voxel</span></code>      LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_VOXEL</code><em class="property"> = 54</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_MAPTEMPLATE">
 <code class="descname">FILE_FILTER_MAPTEMPLATE</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_MAPTEMPLATE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Map Template file      <code class="docutils literal"><span class="pre">*.geosoft_maptemplate</span></code>      LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_MAPTEMPLATE</code><em class="property"> = 55</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_ACTION">
 <code class="descname">FILE_FILTER_ACTION</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_ACTION" title="Permalink to this definition">¶</a></dt>
 <dd><p>Action Scripts         <code class="docutils literal"><span class="pre">*.action</span></code>             LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_ACTION</code><em class="property"> = 56</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_DM">
 <code class="descname">FILE_FILTER_DM</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_DM" title="Permalink to this definition">¶</a></dt>
 <dd><p>Datamine files         <code class="docutils literal"><span class="pre">*.dm</span></code>                 LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_DM</code><em class="property"> = 57</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_KML">
 <code class="descname">FILE_FILTER_KML</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_KML" title="Permalink to this definition">¶</a></dt>
 <dd><p>Google Earth KML       <code class="docutils literal"><span class="pre">*.kml</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_KML</code><em class="property"> = 58</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_KMZ">
 <code class="descname">FILE_FILTER_KMZ</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_KMZ" title="Permalink to this definition">¶</a></dt>
 <dd><p>Google Earth Compressed KML  <code class="docutils literal"><span class="pre">*.kmz</span></code>          LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_KMZ</code><em class="property"> = 59</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_TARGET_PLAN">
 <code class="descname">FILE_FILTER_TARGET_PLAN</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_TARGET_PLAN" title="Permalink to this definition">¶</a></dt>
 <dd><p>Target parameter ini file for plans      <code class="docutils literal"><span class="pre">*.inp</span></code>    LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_TARGET_PLAN</code><em class="property"> = 60</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_TARGET_SECTION">
 <code class="descname">FILE_FILTER_TARGET_SECTION</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_TARGET_SECTION" title="Permalink to this definition">¶</a></dt>
 <dd><p>Target parameter ini file for sections   <code class="docutils literal"><span class="pre">*.ins</span></code>    LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_TARGET_SECTION</code><em class="property"> = 61</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_TARGET_STRIPLOG">
 <code class="descname">FILE_FILTER_TARGET_STRIPLOG</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_TARGET_STRIPLOG" title="Permalink to this definition">¶</a></dt>
 <dd><p>Target parameter ini file for strip logs <code class="docutils literal"><span class="pre">*.inl</span></code>    LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_TARGET_STRIPLOG</code><em class="property"> = 62</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_TARGET_3D">
 <code class="descname">FILE_FILTER_TARGET_3D</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_TARGET_3D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Target parameter ini file for 3D plots   <code class="docutils literal"><span class="pre">*.in3</span></code>    LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_TARGET_3D</code><em class="property"> = 63</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_ARGIS_LYR">
 <code class="descname">FILE_FILTER_ARGIS_LYR</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_ARGIS_LYR" title="Permalink to this definition">¶</a></dt>
 <dd><p>ArcGIS Layer files                    <code class="docutils literal"><span class="pre">*.lyr</span></code>    LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_ARGIS_LYR</code><em class="property"> = 64</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_ARGIS_MXD">
 <code class="descname">FILE_FILTER_ARGIS_MXD</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_ARGIS_MXD" title="Permalink to this definition">¶</a></dt>
 <dd><p>ArcGIS Map Document files     <code class="docutils literal"><span class="pre">*.mxd</span></code>    LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_ARGIS_MXD</code><em class="property"> = 65</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_GOCAD_TS">
 <code class="descname">FILE_FILTER_GOCAD_TS</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_GOCAD_TS" title="Permalink to this definition">¶</a></dt>
 <dd><p>GOCAD TSurf files                     <code class="docutils literal"><span class="pre">*.ts</span></code>     LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_GOCAD_TS</code><em class="property"> = 66</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_LST">
 <code class="descname">FILE_FILTER_LST</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_LST" title="Permalink to this definition">¶</a></dt>
 <dd><p>Geosoft list of items: names, values  <code class="docutils literal"><span class="pre">*.lst</span></code>     LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_LST</code><em class="property"> = 67</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_ECS">
 <code class="descname">FILE_FILTER_ECS</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_ECS" title="Permalink to this definition">¶</a></dt>
 <dd><p>GM-<a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS" title="geosoft.gxapi.GXSYS"><code class="xref py py-obj docutils literal"><span class="pre">GXSYS</span></code></a> external coordinate system     <code class="docutils literal"><span class="pre">*.ecs</span></code>     LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_ECS</code><em class="property"> = 68</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_TARGET_FENCE">
 <code class="descname">FILE_FILTER_TARGET_FENCE</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_TARGET_FENCE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Target parameter ini file for fence sections   <code class="docutils literal"><span class="pre">*.ins</span></code>    LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_TARGET_FENCE</code><em class="property"> = 69</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_GMS3D">
 <code class="descname">FILE_FILTER_GMS3D</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_GMS3D" title="Permalink to this definition">¶</a></dt>
 <dd><p>GM-<a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS" title="geosoft.gxapi.GXSYS"><code class="xref py py-obj docutils literal"><span class="pre">GXSYS</span></code></a> 3D model   <code class="docutils literal"><span class="pre">*.geosoft_gmsys3d</span></code>    LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_GMS3D</code><em class="property"> = 70</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_BT2">
 <code class="descname">FILE_FILTER_BT2</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_BT2" title="Permalink to this definition">¶</a></dt>
 <dd><p>GEMCOM BT2 <code class="docutils literal"><span class="pre">*.bt2</span></code> LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_BT2</code><em class="property"> = 71</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_BPR">
 <code class="descname">FILE_FILTER_BPR</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_BPR" title="Permalink to this definition">¶</a></dt>
 <dd><p>GEMCOM BPR <code class="docutils literal"><span class="pre">*.bpr</span></code> LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_BPR</code><em class="property"> = 72</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_BPR2">
 <code class="descname">FILE_FILTER_BPR2</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_BPR2" title="Permalink to this definition">¶</a></dt>
 <dd><p>GEMCOM BPR2 <code class="docutils literal"><span class="pre">*.bpr2</span></code> LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_BPR2</code><em class="property"> = 73</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_XLS">
 <code class="descname">FILE_FILTER_XLS</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_XLS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Excel 97-2003 workbook               <code class="docutils literal"><span class="pre">*.xls</span></code>                                       LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_XLS</code><em class="property"> = 74</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_XLSX">
 <code class="descname">FILE_FILTER_XLSX</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_XLSX" title="Permalink to this definition">¶</a></dt>
 <dd><p>Excel 2007 workbook                  <code class="docutils literal"><span class="pre">*.xlsx</span></code>                              LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_XLSX</code><em class="property"> = 75</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_MDB">
 <code class="descname">FILE_FILTER_MDB</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_MDB" title="Permalink to this definition">¶</a></dt>
 <dd><p>Access 97-2003                               <code class="docutils literal"><span class="pre">*.mdb</span></code>                               LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_MDB</code><em class="property"> = 76</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_ACCDB">
 <code class="descname">FILE_FILTER_ACCDB</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_ACCDB" title="Permalink to this definition">¶</a></dt>
 <dd><p>Access 2007                                  <code class="docutils literal"><span class="pre">*.accdb</span></code>                             LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_ACCDB</code><em class="property"> = 77</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_INTERSECTION_TBL">
 <code class="descname">FILE_FILTER_INTERSECTION_TBL</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_INTERSECTION_TBL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Levelling intersection               <code class="docutils literal"><span class="pre">*.tbl</span></code>                                       LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_INTERSECTION_TBL</code><em class="property"> = 78</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_UBC_CON">
 <code class="descname">FILE_FILTER_UBC_CON</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_UBC_CON" title="Permalink to this definition">¶</a></dt>
 <dd><p>UBC DCIP2D Conductivity model files <code class="docutils literal"><span class="pre">*.con</span></code>                LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_UBC_CON</code><em class="property"> = 79</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_UBC_CHG">
 <code class="descname">FILE_FILTER_UBC_CHG</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_UBC_CHG" title="Permalink to this definition">¶</a></dt>
 <dd><p>UBC DCIP2D Chargeability model files <code class="docutils literal"><span class="pre">*.chg</span></code>       LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_UBC_CHG</code><em class="property"> = 80</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_UBC_MSH">
 <code class="descname">FILE_FILTER_UBC_MSH</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_UBC_MSH" title="Permalink to this definition">¶</a></dt>
 <dd><p>UBC DCIP2D Mesh files                <code class="docutils literal"><span class="pre">*.msh</span></code>                                       LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_UBC_MSH</code><em class="property"> = 81</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_UBC_MSH_DAT">
 <code class="descname">FILE_FILTER_UBC_MSH_DAT</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_UBC_MSH_DAT" title="Permalink to this definition">¶</a></dt>
 <dd><p>UBC DCIP2D Mesh files                <code class="docutils literal"><span class="pre">*.dat</span></code>                                       LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_UBC_MSH_DAT</code><em class="property"> = 82</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_UBC_TOPO_DAT">
 <code class="descname">FILE_FILTER_UBC_TOPO_DAT</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_UBC_TOPO_DAT" title="Permalink to this definition">¶</a></dt>
 <dd><p>UBC DCIP2D Topo files                <code class="docutils literal"><span class="pre">*.dat</span></code>                                       LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_UBC_TOPO_DAT</code><em class="property"> = 83</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_UBC_TOPO_XYZ">
 <code class="descname">FILE_FILTER_UBC_TOPO_XYZ</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_UBC_TOPO_XYZ" title="Permalink to this definition">¶</a></dt>
 <dd><p>UBC DCIP2D Topo files                <code class="docutils literal"><span class="pre">*.xyz</span></code>                                       LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_UBC_TOPO_XYZ</code><em class="property"> = 84</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_XYZ_TEMPLATE_I0">
 <code class="descname">FILE_FILTER_XYZ_TEMPLATE_I0</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_XYZ_TEMPLATE_I0" title="Permalink to this definition">¶</a></dt>
 <dd><p>XYZ Import Templates               <code class="docutils literal"><span class="pre">*.i0</span></code>                          LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_XYZ_TEMPLATE_I0</code><em class="property"> = 85</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_PICO_TEMPLATE_I1">
 <code class="descname">FILE_FILTER_PICO_TEMPLATE_I1</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_PICO_TEMPLATE_I1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Picodas Import Templates      <code class="docutils literal"><span class="pre">*.i1</span></code>                               LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_PICO_TEMPLATE_I1</code><em class="property"> = 86</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_BB_TEMPLATE_I2">
 <code class="descname">FILE_FILTER_BB_TEMPLATE_I2</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_BB_TEMPLATE_I2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Block Binary Import Templates <code class="docutils literal"><span class="pre">*.i2</span></code>                               LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_BB_TEMPLATE_I2</code><em class="property"> = 87</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_ASCII_TEMPLATE_I3">
 <code class="descname">FILE_FILTER_ASCII_TEMPLATE_I3</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_ASCII_TEMPLATE_I3" title="Permalink to this definition">¶</a></dt>
 <dd><p>ASCII Import Templates                  <code class="docutils literal"><span class="pre">*.i3</span></code>                             LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_ASCII_TEMPLATE_I3</code><em class="property"> = 88</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_ODBC_TEMPLATE_I4">
 <code class="descname">FILE_FILTER_ODBC_TEMPLATE_I4</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_ODBC_TEMPLATE_I4" title="Permalink to this definition">¶</a></dt>
 <dd><p>ODBC Import Templates                   <code class="docutils literal"><span class="pre">*.i4</span></code>                             LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_ODBC_TEMPLATE_I4</code><em class="property"> = 89</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_EXP">
 <code class="descname">FILE_FILTER_EXP</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_EXP" title="Permalink to this definition">¶</a></dt>
 <dd><p>Math expression files                   <code class="docutils literal"><span class="pre">*.exp</span></code>                    LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_EXP</code><em class="property"> = 90</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_SEGY">
 <code class="descname">FILE_FILTER_SEGY</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_SEGY" title="Permalink to this definition">¶</a></dt>
 <dd><p>SEG-Y files                                                  <code class="docutils literal"><span class="pre">*.sgy</span></code>                       LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_SEGY</code><em class="property"> = 91</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_DAARC500">
 <code class="descname">FILE_FILTER_DAARC500</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_DAARC500" title="Permalink to this definition">¶</a></dt>
 <dd><p>DAARC500 files                                               xYYMMDD                    LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_DAARC500</code><em class="property"> = 92</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_TXT">
 <code class="descname">FILE_FILTER_TXT</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_TXT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Text files                                                   <code class="docutils literal"><span class="pre">*.txt</span></code>                       LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_TXT</code><em class="property"> = 93</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_VOXEL_INVERSION">
 <code class="descname">FILE_FILTER_VOXEL_INVERSION</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_VOXEL_INVERSION" title="Permalink to this definition">¶</a></dt>
 <dd><p>Voxi                                                                 <code class="docutils literal"><span class="pre">*.geosoft_voxi</span></code>      LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_VOXEL_INVERSION</code><em class="property"> = 94</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_GMS">
 <code class="descname">FILE_FILTER_GMS</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_GMS" title="Permalink to this definition">¶</a></dt>
 <dd><p>GM-<a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS" title="geosoft.gxapi.GXSYS"><code class="xref py py-obj docutils literal"><span class="pre">GXSYS</span></code></a> Profile model file          <code class="docutils literal"><span class="pre">*.gms</span></code>       LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_GMS</code><em class="property"> = 95</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_FLT3D">
 <code class="descname">FILE_FILTER_FLT3D</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_FLT3D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Geosoft 3D filter files                      <code class="docutils literal"><span class="pre">*.flt3d</span></code>                     LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_FLT3D</code><em class="property"> = 96</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_RESOURCE_PACK">
 <code class="descname">FILE_FILTER_RESOURCE_PACK</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_RESOURCE_PACK" title="Permalink to this definition">¶</a></dt>
 <dd><p>Geosoft Resource Update Packages <code class="docutils literal"><span class="pre">*.geosoft_resource_pack</span></code> LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_RESOURCE_PACK</code><em class="property"> = 97</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_GEOSTRING">
 <code class="descname">FILE_FILTER_GEOSTRING</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_GEOSTRING" title="Permalink to this definition">¶</a></dt>
 <dd><p>Geostring files <code class="docutils literal"><span class="pre">*.geosoft_string</span></code> LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_GEOSTRING</code><em class="property"> = 98</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_GEOSURFACE">
 <code class="descname">FILE_FILTER_GEOSURFACE</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_GEOSURFACE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Geosurface files <code class="docutils literal"><span class="pre">*.geosoft_surface</span></code> LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_GEOSURFACE</code><em class="property"> = 99</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_GEOSOFT3DV">
 <code class="descname">FILE_FILTER_GEOSOFT3DV</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_GEOSOFT3DV" title="Permalink to this definition">¶</a></dt>
 <dd><p>Geosoft <a class="reference internal" href="GX3DV.html#geosoft.gxapi.GX3DV" title="geosoft.gxapi.GX3DV"><code class="xref py py-obj docutils literal"><span class="pre">GX3DV</span></code></a> <code class="docutils literal"><span class="pre">*.geosoft_3dv</span></code> LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_GEOSOFT3DV</code><em class="property"> = 100</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_VECTORVOXEL">
 <code class="descname">FILE_FILTER_VECTORVOXEL</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_VECTORVOXEL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Geosoft Vector Voxel <code class="docutils literal"><span class="pre">*.geosoft_vectorvoxel</span></code> LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_VECTORVOXEL</code><em class="property"> = 101</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_FLT">
 <code class="descname">FILE_FILTER_FLT</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_FLT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Geosoft Filters <code class="docutils literal"><span class="pre">*.flt</span></code> LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_FLT</code><em class="property"> = 102</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_XYZ_TEMPLATE_O0">
 <code class="descname">FILE_FILTER_XYZ_TEMPLATE_O0</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_XYZ_TEMPLATE_O0" title="Permalink to this definition">¶</a></dt>
 <dd><p>XYZ Export Templates <code class="docutils literal"><span class="pre">*.o0</span></code> LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_XYZ_TEMPLATE_O0</code><em class="property"> = 103</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_GMS2D">
 <code class="descname">FILE_FILTER_GMS2D</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_GMS2D" title="Permalink to this definition">¶</a></dt>
 <dd><p>GM-<a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS" title="geosoft.gxapi.GXSYS"><code class="xref py py-obj docutils literal"><span class="pre">GXSYS</span></code></a> Profile model    <code class="docutils literal"><span class="pre">*.geosoft_gmsys2d</span></code>   LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_GMS2D</code><em class="property"> = 104</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_IP_DATABASE_TEMPLATE">
 <code class="descname">FILE_FILTER_IP_DATABASE_TEMPLATE</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_IP_DATABASE_TEMPLATE" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference internal" href="GXIP.html#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> Database Template <code class="docutils literal"><span class="pre">*.geosoft_ipdatabasetemplate</span></code> LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_IP_DATABASE_TEMPLATE</code><em class="property"> = 105</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_GEOSOFT_RESOURCE_MODULE">
 <code class="descname">FILE_FILTER_GEOSOFT_RESOURCE_MODULE</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_GEOSOFT_RESOURCE_MODULE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Geosoft Resource Module <code class="docutils literal"><span class="pre">*.geosoft_resources</span></code>  LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_GEOSOFT_RESOURCE_MODULE</code><em class="property"> = 106</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_VT">
 <code class="descname">FILE_FILTER_VT</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_VT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shell VT files     <code class="docutils literal"><span class="pre">*.vt</span></code>        LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_VT</code><em class="property"> = 107</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_INT">
 <code class="descname">FILE_FILTER_INT</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_INT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shell INT files     <code class="docutils literal"><span class="pre">*.int</span></code>      LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_INT</code><em class="property"> = 108</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_SGT">
 <code class="descname">FILE_FILTER_SGT</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_SGT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shell SGT files     <code class="docutils literal"><span class="pre">*.sgt</span></code>      LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_SGT</code><em class="property"> = 109</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_IMGVIEW">
 <code class="descname">FILE_FILTER_IMGVIEW</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_IMGVIEW" title="Permalink to this definition">¶</a></dt>
 <dd><p>Image Viewer files  <code class="docutils literal"><span class="pre">*.imgview</span></code>  LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_IMGVIEW</code><em class="property"> = 110</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_ZIP">
 <code class="descname">FILE_FILTER_ZIP</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_ZIP" title="Permalink to this definition">¶</a></dt>
 <dd><p>Zip files  <code class="docutils literal"><span class="pre">*.zip</span></code>  LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_ZIP</code><em class="property"> = 111</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_GPS_TABLE">
 <code class="descname">FILE_FILTER_GPS_TABLE</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_GPS_TABLE" title="Permalink to this definition">¶</a></dt>
 <dd><p>GPS Table <code class="docutils literal"><span class="pre">*.tbl</span></code> GEOSOFT</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_GPS_TABLE</code><em class="property"> = 112</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_VULCAN_TRIANGULATION">
 <code class="descname">FILE_FILTER_VULCAN_TRIANGULATION</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_VULCAN_TRIANGULATION" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maptek Vulcan trianguilation file   <code class="docutils literal"><span class="pre">*.tbl</span></code>     LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_VULCAN_TRIANGULATION</code><em class="property"> = 113</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_VULCAN_BLOCK_MODEL">
 <code class="descname">FILE_FILTER_VULCAN_BLOCK_MODEL</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_VULCAN_BLOCK_MODEL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maptek Vulcan block model file       <code class="docutils literal"><span class="pre">*.bmf</span></code>                        LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_VULCAN_BLOCK_MODEL</code><em class="property"> = 114</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_PRJVIEW">
 <code class="descname">FILE_FILTER_PRJVIEW</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_PRJVIEW" title="Permalink to this definition">¶</a></dt>
 <dd><p>Layout files  <code class="docutils literal"><span class="pre">*.prjview</span></code>  LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_PRJVIEW</code><em class="property"> = 115</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_LEAPFROG_MODEL">
 <code class="descname">FILE_FILTER_LEAPFROG_MODEL</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_LEAPFROG_MODEL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Leapfrog model files  <code class="docutils literal"><span class="pre">*.lfm</span></code>  LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_LEAPFROG_MODEL</code><em class="property"> = 116</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_IOGAS">
 <code class="descname">FILE_FILTER_IOGAS</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_IOGAS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reflex ioGAS files  <code class="docutils literal"><span class="pre">*.gas</span></code>  LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_IOGAS</code><em class="property"> = 117</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_ASEG_ESF">
 <code class="descname">FILE_FILTER_ASEG_ESF</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_ASEG_ESF" title="Permalink to this definition">¶</a></dt>
 <dd><p>ASEG ESF file  <code class="docutils literal"><span class="pre">*.esf</span></code>  LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_ASEG_ESF</code><em class="property"> = 118</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_LACOSTE_DAT">
 <code class="descname">FILE_FILTER_LACOSTE_DAT</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_LACOSTE_DAT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Micro-g LaCoste MGS-6 gravity files  <code class="docutils literal"><span class="pre">*.:class</span></code>:<code class="xref py py-obj docutils literal"><span class="pre">DAT</span></code>  LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_LACOSTE_DAT</code><em class="property"> = 119</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_VAR">
 <code class="descname">FILE_FILTER_VAR</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_VAR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Geosoft variogram file  <code class="docutils literal"><span class="pre">*.var</span></code>  LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_VAR</code><em class="property"> = 120</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_P190">
 <code class="descname">FILE_FILTER_P190</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_P190" title="Permalink to this definition">¶</a></dt>
 <dd><p>UKOOA data exchange file  <code class="docutils literal"><span class="pre">*.p190</span></code>  LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_P190</code><em class="property"> = 121</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_UBC_OBS_DAT">
 <code class="descname">FILE_FILTER_UBC_OBS_DAT</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_UBC_OBS_DAT" title="Permalink to this definition">¶</a></dt>
 <dd><p>UBC observation files <code class="docutils literal"><span class="pre">*.dat</span></code>              LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_UBC_OBS_DAT</code><em class="property"> = 122</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_UBC_LOC">
 <code class="descname">FILE_FILTER_UBC_LOC</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_UBC_LOC" title="Permalink to this definition">¶</a></dt>
 <dd><p>UBC location files <code class="docutils literal"><span class="pre">*.loc</span></code>         LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_UBC_LOC</code><em class="property"> = 123</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_UBC_MOD">
 <code class="descname">FILE_FILTER_UBC_MOD</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_UBC_MOD" title="Permalink to this definition">¶</a></dt>
 <dd><p>UBC model files <code class="docutils literal"><span class="pre">*.mod</span></code>            LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_UBC_MOD</code><em class="property"> = 124</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_UBC_DEN">
 <code class="descname">FILE_FILTER_UBC_DEN</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_UBC_DEN" title="Permalink to this definition">¶</a></dt>
 <dd><p>UBC density model files <code class="docutils literal"><span class="pre">*.den</span></code>            LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_UBC_DEN</code><em class="property"> = 125</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_UBC_SUS">
 <code class="descname">FILE_FILTER_UBC_SUS</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_UBC_SUS" title="Permalink to this definition">¶</a></dt>
 <dd><p>UBC susceptibility model files <code class="docutils literal"><span class="pre">*.sus</span></code>             LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_UBC_SUS</code><em class="property"> = 126</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FILTER_GOCAD_VOXET">
 <code class="descname">FILE_FILTER_GOCAD_VOXET</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_GOCAD_VOXET" title="Permalink to this definition">¶</a></dt>
 <dd><p>GOCAD voxet files <code class="docutils literal"><span class="pre">*.vo</span></code>           LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_GOCAD_VOXET</code><em class="property"> = 127</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -3441,12 +4131,22 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <dt id="geosoft.gxapi.FILE_FORM_OPEN">
 <code class="descname">FILE_FORM_OPEN</code><a class="headerlink" href="#geosoft.gxapi.FILE_FORM_OPEN" title="Permalink to this definition">¶</a></dt>
 <dd><p>Open a file</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FORM_OPEN</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_FORM_SAVE">
 <code class="descname">FILE_FORM_SAVE</code><a class="headerlink" href="#geosoft.gxapi.FILE_FORM_SAVE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save a file</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FORM_SAVE</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -3456,157 +4156,287 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <dl class="data">
 <dt id="geosoft.gxapi.GS_DIRECTORY_NONE">
 <code class="descname">GS_DIRECTORY_NONE</code><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_NONE" title="Permalink to this definition">¶</a></dt>
-<dd><p>NONE</p>
+<dd><p>None</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">GS_DIRECTORY_NONE</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.GS_DIRECTORY_GEOSOFT">
 <code class="descname">GS_DIRECTORY_GEOSOFT</code><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_GEOSOFT" title="Permalink to this definition">¶</a></dt>
-<dd><p>GEOSOFT</p>
+<dd><p>Geosoft</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">GS_DIRECTORY_GEOSOFT</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.GS_DIRECTORY_BIN">
 <code class="descname">GS_DIRECTORY_BIN</code><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_BIN" title="Permalink to this definition">¶</a></dt>
-<dd><p>BIN</p>
+<dd><p>Bin</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">GS_DIRECTORY_BIN</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.GS_DIRECTORY_GER">
 <code class="descname">GS_DIRECTORY_GER</code><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_GER" title="Permalink to this definition">¶</a></dt>
-<dd><p>GER</p>
+<dd><p>Ger</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">GS_DIRECTORY_GER</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.GS_DIRECTORY_OMN">
 <code class="descname">GS_DIRECTORY_OMN</code><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_OMN" title="Permalink to this definition">¶</a></dt>
-<dd><p>OMN</p>
+<dd><p>Omn</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">GS_DIRECTORY_OMN</code><em class="property"> = 4</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.GS_DIRECTORY_TBL">
 <code class="descname">GS_DIRECTORY_TBL</code><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_TBL" title="Permalink to this definition">¶</a></dt>
-<dd><p>TBL</p>
+<dd><p>Tbl</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">GS_DIRECTORY_TBL</code><em class="property"> = 5</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.GS_DIRECTORY_FONTS">
 <code class="descname">GS_DIRECTORY_FONTS</code><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_FONTS" title="Permalink to this definition">¶</a></dt>
-<dd><p>FONTS</p>
+<dd><p>Fonts</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">GS_DIRECTORY_FONTS</code><em class="property"> = 6</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.GS_DIRECTORY_GX">
 <code class="descname">GS_DIRECTORY_GX</code><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_GX" title="Permalink to this definition">¶</a></dt>
-<dd><p>GX</p>
+<dd><p>Gx</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">GS_DIRECTORY_GX</code><em class="property"> = 7</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.GS_DIRECTORY_GS">
 <code class="descname">GS_DIRECTORY_GS</code><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_GS" title="Permalink to this definition">¶</a></dt>
-<dd><p>GS</p>
+<dd><p>Gs</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">GS_DIRECTORY_GS</code><em class="property"> = 8</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.GS_DIRECTORY_APPS">
 <code class="descname">GS_DIRECTORY_APPS</code><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_APPS" title="Permalink to this definition">¶</a></dt>
-<dd><p>APPS</p>
+<dd><p>Apps</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">GS_DIRECTORY_APPS</code><em class="property"> = 9</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.GS_DIRECTORY_ETC">
 <code class="descname">GS_DIRECTORY_ETC</code><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_ETC" title="Permalink to this definition">¶</a></dt>
-<dd><p>ETC</p>
+<dd><p>Etc</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">GS_DIRECTORY_ETC</code><em class="property"> = 10</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.GS_DIRECTORY_HLP">
 <code class="descname">GS_DIRECTORY_HLP</code><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_HLP" title="Permalink to this definition">¶</a></dt>
-<dd><p>HLP</p>
+<dd><p>Hlp</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">GS_DIRECTORY_HLP</code><em class="property"> = 11</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.GS_DIRECTORY_GXDEV">
 <code class="descname">GS_DIRECTORY_GXDEV</code><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_GXDEV" title="Permalink to this definition">¶</a></dt>
-<dd><p>GXDEV</p>
+<dd><p>Gxdev</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">GS_DIRECTORY_GXDEV</code><em class="property"> = 12</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.GS_DIRECTORY_COMPONENT">
 <code class="descname">GS_DIRECTORY_COMPONENT</code><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_COMPONENT" title="Permalink to this definition">¶</a></dt>
-<dd><p>COMPONENT</p>
+<dd><p>Component</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">GS_DIRECTORY_COMPONENT</code><em class="property"> = 13</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.GS_DIRECTORY_CSV">
 <code class="descname">GS_DIRECTORY_CSV</code><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_CSV" title="Permalink to this definition">¶</a></dt>
-<dd><p>CSV</p>
+<dd><p>Csv</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">GS_DIRECTORY_CSV</code><em class="property"> = 14</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.GS_DIRECTORY_LIC">
 <code class="descname">GS_DIRECTORY_LIC</code><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_LIC" title="Permalink to this definition">¶</a></dt>
-<dd><p>LIC</p>
+<dd><p>Lic</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">GS_DIRECTORY_LIC</code><em class="property"> = 15</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.GS_DIRECTORY_INI">
 <code class="descname">GS_DIRECTORY_INI</code><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_INI" title="Permalink to this definition">¶</a></dt>
-<dd><p>INI</p>
+<dd><p>Ini</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">GS_DIRECTORY_INI</code><em class="property"> = 16</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.GS_DIRECTORY_TEMP">
 <code class="descname">GS_DIRECTORY_TEMP</code><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_TEMP" title="Permalink to this definition">¶</a></dt>
-<dd><p>TEMP</p>
+<dd><p>Temp</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">GS_DIRECTORY_TEMP</code><em class="property"> = 17</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.GS_DIRECTORY_UETC">
 <code class="descname">GS_DIRECTORY_UETC</code><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_UETC" title="Permalink to this definition">¶</a></dt>
-<dd><p>UETC</p>
+<dd><p>Uetc</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">GS_DIRECTORY_UETC</code><em class="property"> = 18</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.GS_DIRECTORY_UMAPTEMPLATE">
 <code class="descname">GS_DIRECTORY_UMAPTEMPLATE</code><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_UMAPTEMPLATE" title="Permalink to this definition">¶</a></dt>
-<dd><p>UMAPTEMPLATE</p>
+<dd><p>Umaptemplate</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">GS_DIRECTORY_UMAPTEMPLATE</code><em class="property"> = 19</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.GS_DIRECTORY_COMPONENT_SCRIPTS">
 <code class="descname">GS_DIRECTORY_COMPONENT_SCRIPTS</code><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_COMPONENT_SCRIPTS" title="Permalink to this definition">¶</a></dt>
-<dd><p>COMPONENT_SCRIPTS</p>
+<dd><p>Component scripts</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">GS_DIRECTORY_COMPONENT_SCRIPTS</code><em class="property"> = 50</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.GS_DIRECTORY_COMPONENT_HTML">
 <code class="descname">GS_DIRECTORY_COMPONENT_HTML</code><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_COMPONENT_HTML" title="Permalink to this definition">¶</a></dt>
-<dd><p>COMPONENT_HTML</p>
+<dd><p>Component html</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">GS_DIRECTORY_COMPONENT_HTML</code><em class="property"> = 51</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.GS_DIRECTORY_IMG">
 <code class="descname">GS_DIRECTORY_IMG</code><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_IMG" title="Permalink to this definition">¶</a></dt>
-<dd><p>IMG</p>
+<dd><p>Img</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">GS_DIRECTORY_IMG</code><em class="property"> = 52</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.GS_DIRECTORY_BAR">
 <code class="descname">GS_DIRECTORY_BAR</code><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_BAR" title="Permalink to this definition">¶</a></dt>
-<dd><p>BAR</p>
+<dd><p>Bar</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">GS_DIRECTORY_BAR</code><em class="property"> = 53</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.GS_DIRECTORY_GXNET">
 <code class="descname">GS_DIRECTORY_GXNET</code><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_GXNET" title="Permalink to this definition">¶</a></dt>
-<dd><p>GXNET</p>
+<dd><p>Gxnet</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">GS_DIRECTORY_GXNET</code><em class="property"> = 54</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.GS_DIRECTORY_MAPTEMPLATE">
 <code class="descname">GS_DIRECTORY_MAPTEMPLATE</code><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_MAPTEMPLATE" title="Permalink to this definition">¶</a></dt>
-<dd><p>MAPTEMPLATE</p>
+<dd><p>Maptemplate</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">GS_DIRECTORY_MAPTEMPLATE</code><em class="property"> = 55</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -3616,13 +4446,23 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <dl class="data">
 <dt id="geosoft.gxapi.IMPCH_TYPE_DATA">
 <code class="descname">IMPCH_TYPE_DATA</code><a class="headerlink" href="#geosoft.gxapi.IMPCH_TYPE_DATA" title="Permalink to this definition">¶</a></dt>
-<dd><p>DATA</p>
+<dd><p>Data</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMPCH_TYPE_DATA</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.IMPCH_TYPE_ASSAY">
 <code class="descname">IMPCH_TYPE_ASSAY</code><a class="headerlink" href="#geosoft.gxapi.IMPCH_TYPE_ASSAY" title="Permalink to this definition">¶</a></dt>
-<dd><p>ASSAY</p>
+<dd><p>Assay</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMPCH_TYPE_ASSAY</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -3632,19 +4472,34 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <dl class="data">
 <dt id="geosoft.gxapi.WINDOW_RESTORE">
 <code class="descname">WINDOW_RESTORE</code><a class="headerlink" href="#geosoft.gxapi.WINDOW_RESTORE" title="Permalink to this definition">¶</a></dt>
-<dd><p>WINDOW_RESTORE</p>
+<dd><p>Window restore</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">WINDOW_RESTORE</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.WINDOW_MINIMIZE">
 <code class="descname">WINDOW_MINIMIZE</code><a class="headerlink" href="#geosoft.gxapi.WINDOW_MINIMIZE" title="Permalink to this definition">¶</a></dt>
-<dd><p>WINDOW_MINIMIZE</p>
+<dd><p>Window minimize</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">WINDOW_MINIMIZE</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.WINDOW_MAXIMIZE">
 <code class="descname">WINDOW_MAXIMIZE</code><a class="headerlink" href="#geosoft.gxapi.WINDOW_MAXIMIZE" title="Permalink to this definition">¶</a></dt>
-<dd><p>WINDOW_MAXIMIZE</p>
+<dd><p>Window maximize</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">WINDOW_MAXIMIZE</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -3654,31 +4509,56 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <dl class="data">
 <dt id="geosoft.gxapi.XTOOL_ALIGN_LEFT">
 <code class="descname">XTOOL_ALIGN_LEFT</code><a class="headerlink" href="#geosoft.gxapi.XTOOL_ALIGN_LEFT" title="Permalink to this definition">¶</a></dt>
-<dd><p>LEFT</p>
+<dd><p>Left</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">XTOOL_ALIGN_LEFT</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.XTOOL_ALIGN_TOP">
 <code class="descname">XTOOL_ALIGN_TOP</code><a class="headerlink" href="#geosoft.gxapi.XTOOL_ALIGN_TOP" title="Permalink to this definition">¶</a></dt>
-<dd><p>TOP</p>
+<dd><p>Top</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">XTOOL_ALIGN_TOP</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.XTOOL_ALIGN_RIGHT">
 <code class="descname">XTOOL_ALIGN_RIGHT</code><a class="headerlink" href="#geosoft.gxapi.XTOOL_ALIGN_RIGHT" title="Permalink to this definition">¶</a></dt>
-<dd><p>RIGHT</p>
+<dd><p>Right</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">XTOOL_ALIGN_RIGHT</code><em class="property"> = 4</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.XTOOL_ALIGN_BOTTOM">
 <code class="descname">XTOOL_ALIGN_BOTTOM</code><a class="headerlink" href="#geosoft.gxapi.XTOOL_ALIGN_BOTTOM" title="Permalink to this definition">¶</a></dt>
-<dd><p>BOTTOM</p>
+<dd><p>Bottom</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">XTOOL_ALIGN_BOTTOM</code><em class="property"> = 8</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.XTOOL_ALIGN_ANY">
 <code class="descname">XTOOL_ALIGN_ANY</code><a class="headerlink" href="#geosoft.gxapi.XTOOL_ALIGN_ANY" title="Permalink to this definition">¶</a></dt>
-<dd><p>ANY</p>
+<dd><p>Any</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">XTOOL_ALIGN_ANY</code><em class="property"> = 15</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -3688,31 +4568,56 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <dl class="data">
 <dt id="geosoft.gxapi.XTOOL_DOCK_TOP">
 <code class="descname">XTOOL_DOCK_TOP</code><a class="headerlink" href="#geosoft.gxapi.XTOOL_DOCK_TOP" title="Permalink to this definition">¶</a></dt>
-<dd><p>TOP</p>
+<dd><p>Top</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">XTOOL_DOCK_TOP</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.XTOOL_DOCK_LEFT">
 <code class="descname">XTOOL_DOCK_LEFT</code><a class="headerlink" href="#geosoft.gxapi.XTOOL_DOCK_LEFT" title="Permalink to this definition">¶</a></dt>
-<dd><p>LEFT</p>
+<dd><p>Left</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">XTOOL_DOCK_LEFT</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.XTOOL_DOCK_RIGHT">
 <code class="descname">XTOOL_DOCK_RIGHT</code><a class="headerlink" href="#geosoft.gxapi.XTOOL_DOCK_RIGHT" title="Permalink to this definition">¶</a></dt>
-<dd><p>RIGHT</p>
+<dd><p>Right</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">XTOOL_DOCK_RIGHT</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.XTOOL_DOCK_BOTTOM">
 <code class="descname">XTOOL_DOCK_BOTTOM</code><a class="headerlink" href="#geosoft.gxapi.XTOOL_DOCK_BOTTOM" title="Permalink to this definition">¶</a></dt>
-<dd><p>BOTTOM</p>
+<dd><p>Bottom</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">XTOOL_DOCK_BOTTOM</code><em class="property"> = 4</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.XTOOL_DOCK_FLOAT">
 <code class="descname">XTOOL_DOCK_FLOAT</code><a class="headerlink" href="#geosoft.gxapi.XTOOL_DOCK_FLOAT" title="Permalink to this definition">¶</a></dt>
-<dd><p>FLOAT</p>
+<dd><p>Float</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">XTOOL_DOCK_FLOAT</code><em class="property"> = 5</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>

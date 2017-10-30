@@ -18,8 +18,12 @@ STK_AXIS constants
 
 .. autodata:: geosoft.gxapi.STK_AXIS_X
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.STK_AXIS_X
 .. autodata:: geosoft.gxapi.STK_AXIS_Y
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.STK_AXIS_Y
 
 
 .. _STK_FLAG:
@@ -31,26 +35,48 @@ Stack flags
 
 .. autodata:: geosoft.gxapi.STK_FLAG_PROFILE
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.STK_FLAG_PROFILE
 .. autodata:: geosoft.gxapi.STK_FLAG_FID
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.STK_FLAG_FID
 .. autodata:: geosoft.gxapi.STK_FLAG_SYMBOL
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.STK_FLAG_SYMBOL
 .. autodata:: geosoft.gxapi.STK_FLAG_XBAR
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.STK_FLAG_XBAR
 .. autodata:: geosoft.gxapi.STK_FLAG_XLABEL
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.STK_FLAG_XLABEL
 .. autodata:: geosoft.gxapi.STK_FLAG_XTITLE
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.STK_FLAG_XTITLE
 .. autodata:: geosoft.gxapi.STK_FLAG_YBAR
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.STK_FLAG_YBAR
 .. autodata:: geosoft.gxapi.STK_FLAG_YLABEL
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.STK_FLAG_YLABEL
 .. autodata:: geosoft.gxapi.STK_FLAG_YTITLE
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.STK_FLAG_YTITLE
 .. autodata:: geosoft.gxapi.STK_FLAG_GRID1
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.STK_FLAG_GRID1
 .. autodata:: geosoft.gxapi.STK_FLAG_GRID2
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.STK_FLAG_GRID2
 
 
 .. _STK_GRID:
@@ -62,7 +88,11 @@ Stack Grid define
 
 .. autodata:: geosoft.gxapi.STK_GRID_PRIMARY
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.STK_GRID_PRIMARY
 .. autodata:: geosoft.gxapi.STK_GRID_SECONDARY
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.STK_GRID_SECONDARY
 
 	

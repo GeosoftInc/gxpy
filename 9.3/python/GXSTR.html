@@ -1638,12 +1638,22 @@ triming to take place.</p>
 <dt id="geosoft.gxapi.FILE_EXT_ADD_IF_NONE">
 <code class="descname">FILE_EXT_ADD_IF_NONE</code><a class="headerlink" href="#geosoft.gxapi.FILE_EXT_ADD_IF_NONE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Will add the extension only if no extension is present.</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_EXT_ADD_IF_NONE</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_EXT_FORCE">
 <code class="descname">FILE_EXT_FORCE</code><a class="headerlink" href="#geosoft.gxapi.FILE_EXT_FORCE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Will cause a renaming of the file extension to the new extension.</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_EXT_FORCE</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -1653,13 +1663,23 @@ triming to take place.</p>
 <dl class="data">
 <dt id="geosoft.gxapi.STR_CASE_TOLERANT">
 <code class="descname">STR_CASE_TOLERANT</code><a class="headerlink" href="#geosoft.gxapi.STR_CASE_TOLERANT" title="Permalink to this definition">¶</a></dt>
-<dd><p>TOLERANT</p>
+<dd><p>Tolerant</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">STR_CASE_TOLERANT</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.STR_CASE_SENSITIVE">
 <code class="descname">STR_CASE_SENSITIVE</code><a class="headerlink" href="#geosoft.gxapi.STR_CASE_SENSITIVE" title="Permalink to this definition">¶</a></dt>
-<dd><p>SENSITIVE</p>
+<dd><p>Sensitive</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">STR_CASE_SENSITIVE</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -1670,12 +1690,22 @@ triming to take place.</p>
 <dt id="geosoft.gxapi.ESCAPE_CONVERT">
 <code class="descname">ESCAPE_CONVERT</code><a class="headerlink" href="#geosoft.gxapi.ESCAPE_CONVERT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts non-standard characters in a string to escape sequences.</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">ESCAPE_CONVERT</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.ESCAPE_REPLACE">
 <code class="descname">ESCAPE_REPLACE</code><a class="headerlink" href="#geosoft.gxapi.ESCAPE_REPLACE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Replaces escape sequences with original characters.</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">ESCAPE_REPLACE</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -1686,42 +1716,77 @@ triming to take place.</p>
 <dt id="geosoft.gxapi.STR_FILE_PART_NAME">
 <code class="descname">STR_FILE_PART_NAME</code><a class="headerlink" href="#geosoft.gxapi.STR_FILE_PART_NAME" title="Permalink to this definition">¶</a></dt>
 <dd><p>File Name</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">STR_FILE_PART_NAME</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.STR_FILE_PART_EXTENSION">
 <code class="descname">STR_FILE_PART_EXTENSION</code><a class="headerlink" href="#geosoft.gxapi.STR_FILE_PART_EXTENSION" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extension</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">STR_FILE_PART_EXTENSION</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.STR_FILE_PART_DIRECTORY">
 <code class="descname">STR_FILE_PART_DIRECTORY</code><a class="headerlink" href="#geosoft.gxapi.STR_FILE_PART_DIRECTORY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Directory</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">STR_FILE_PART_DIRECTORY</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.STR_FILE_PART_VOLUME">
 <code class="descname">STR_FILE_PART_VOLUME</code><a class="headerlink" href="#geosoft.gxapi.STR_FILE_PART_VOLUME" title="Permalink to this definition">¶</a></dt>
 <dd><p>Drive</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">STR_FILE_PART_VOLUME</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.STR_FILE_PART_QUALIFIERS">
 <code class="descname">STR_FILE_PART_QUALIFIERS</code><a class="headerlink" href="#geosoft.gxapi.STR_FILE_PART_QUALIFIERS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Qualifiers</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">STR_FILE_PART_QUALIFIERS</code><em class="property"> = 4</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.STR_FILE_PART_NAME_EXTENSION">
 <code class="descname">STR_FILE_PART_NAME_EXTENSION</code><a class="headerlink" href="#geosoft.gxapi.STR_FILE_PART_NAME_EXTENSION" title="Permalink to this definition">¶</a></dt>
 <dd><p>Name and the Extension together</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">STR_FILE_PART_NAME_EXTENSION</code><em class="property"> = 5</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.STR_FILE_PART_FULLPATH_NO_QUALIFIERS">
 <code class="descname">STR_FILE_PART_FULLPATH_NO_QUALIFIERS</code><a class="headerlink" href="#geosoft.gxapi.STR_FILE_PART_FULLPATH_NO_QUALIFIERS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Full name of file with no qualifiers</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">STR_FILE_PART_FULLPATH_NO_QUALIFIERS</code><em class="property"> = 6</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -1731,19 +1796,34 @@ triming to take place.</p>
 <dl class="data">
 <dt id="geosoft.gxapi.STR_JUSTIFY_LEFT">
 <code class="descname">STR_JUSTIFY_LEFT</code><a class="headerlink" href="#geosoft.gxapi.STR_JUSTIFY_LEFT" title="Permalink to this definition">¶</a></dt>
-<dd><p>LEFT</p>
+<dd><p>Left</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">STR_JUSTIFY_LEFT</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.STR_JUSTIFY_CENTER">
 <code class="descname">STR_JUSTIFY_CENTER</code><a class="headerlink" href="#geosoft.gxapi.STR_JUSTIFY_CENTER" title="Permalink to this definition">¶</a></dt>
-<dd><p>CENTER</p>
+<dd><p>Center</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">STR_JUSTIFY_CENTER</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.STR_JUSTIFY_RIGHT">
 <code class="descname">STR_JUSTIFY_RIGHT</code><a class="headerlink" href="#geosoft.gxapi.STR_JUSTIFY_RIGHT" title="Permalink to this definition">¶</a></dt>
-<dd><p>RIGHT</p>
+<dd><p>Right</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">STR_JUSTIFY_RIGHT</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -1753,19 +1833,34 @@ triming to take place.</p>
 <dl class="data">
 <dt id="geosoft.gxapi.STR_TRIMRIGHT">
 <code class="descname">STR_TRIMRIGHT</code><a class="headerlink" href="#geosoft.gxapi.STR_TRIMRIGHT" title="Permalink to this definition">¶</a></dt>
-<dd><p>STR_TRIMRIGHT</p>
+<dd><p>Str trimright</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">STR_TRIMRIGHT</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.STR_TRIMLEFT">
 <code class="descname">STR_TRIMLEFT</code><a class="headerlink" href="#geosoft.gxapi.STR_TRIMLEFT" title="Permalink to this definition">¶</a></dt>
-<dd><p>STR_TRIMLEFT</p>
+<dd><p>Str trimleft</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">STR_TRIMLEFT</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.STR_TRIMBOTH">
 <code class="descname">STR_TRIMBOTH</code><a class="headerlink" href="#geosoft.gxapi.STR_TRIMBOTH" title="Permalink to this definition">¶</a></dt>
-<dd><p>STR_TRIMBOTH</p>
+<dd><p>Str trimboth</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">STR_TRIMBOTH</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>

@@ -18,7 +18,11 @@ LST_ITEM constants
 
 .. autodata:: geosoft.gxapi.LST_ITEM_NAME
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.LST_ITEM_NAME
 .. autodata:: geosoft.gxapi.LST_ITEM_VALUE
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.LST_ITEM_VALUE
 
 	
