@@ -66,6 +66,7 @@ _res_heap = {}
 _max_resource_heap = 1000000
 _stack_depth = 5
 _max_warnings = 10
+_NULL_ID = -1
 
 
 def _reset_globals():
@@ -114,6 +115,8 @@ def track_resource(resource_class, info):
         rs += ' [{}]'.format(info)
         _res_heap[_res_id] = rs
         return _res_id
+    else:
+        return _NULL_ID
 
 
 def pop_resource(id):
@@ -124,11 +127,12 @@ def pop_resource(id):
     
     .. versionadded:: 9.2
     """
-    if len(_res_heap):
-        try:
-            del (_res_heap[id])
-        except KeyError:
-            pass
+    if id != _NULL_ID:
+        if len(_res_heap):
+            try:
+                del (_res_heap[id])
+            except KeyError:
+                pass
 
 GX_WARNING_FILE = '_gx_warning_'
 
