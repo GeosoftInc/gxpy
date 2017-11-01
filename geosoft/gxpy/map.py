@@ -781,6 +781,9 @@ class Map:
         .. versionadded:: 9.2
         """
 
+        if outer_pen is None:
+            outer_pen = gxg.Pen(line_thick=0.0500)
+
         with _Mapplot(self) as mpl:
 
             mpl.start_group('surround', view=VIEW_BASE, mode=GROUP_APPEND)
