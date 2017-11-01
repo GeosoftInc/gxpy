@@ -1141,6 +1141,20 @@ class Draw_3d(Draw):
                     raise GroupException(_t('Symbol type not implemented'))
 
 
+def contour(view, group_name, grid_file_name, **kwargs):
+    """
+    Create a contour group from a grid file.  A default contour interval is determined from the grid.
+
+    :param group_name: name for the contour group
+    :param grid_file_name: Grid file name
+
+    .. versionadded:: 9.3
+    """
+
+    with Draw(view, group_name) as g:
+        g.contour(grid_file_name, **kwargs)
+
+
 def legend_color_bar(view,
                      group_name,
                      cmap,

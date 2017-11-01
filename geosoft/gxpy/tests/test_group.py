@@ -1218,8 +1218,7 @@ class Test(GXPYTest):
 
                 self.assertEqual(len(v.group_list_agg), 1)
 
-                with gxg.Draw(v, 'contour') as g:
-                    g.contour(grid_file)
+                gxg.contour(v, 'contour', grid_file)
 
         self.crc_map(map_file)
 
@@ -1259,8 +1258,7 @@ class Test(GXPYTest):
 
                 self.assertEqual(len(v.group_list_agg), 1)
 
-                with gxg.Draw(v, 'contour') as g:
-                    g.contour(grid_file)
+                gxg.contour(v, 'contour', grid_file)
 
         self.crc_map(map_file)
 
