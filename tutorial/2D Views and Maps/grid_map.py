@@ -8,9 +8,10 @@ import geosoft.gxpy.viewer as gxviewer
 
 gxc = gx.GXpy()
 
-# get grid coordinate system and extent
+# create a map from grid coordinate system and extent
 with gxgrd.Grid('Wittichica Creek Residual Total Field.grd') as grd:
     grid_file_name = grd.file_name_decorated
+
     # create a map for this grid on A4 media, scale to fit the extent
     with gxmap.Map.new('Wittichica residual TMI',
                        fixed_size=False,
@@ -21,7 +22,7 @@ with gxgrd.Grid('Wittichica Creek Residual Total Field.grd') as grd:
                        overwrite=True) as gmap:
         map_file_name = gmap.file_name
 
-# draw into the views on the map
+# draw into the views on the map. We are reopening the map as the Aggregate class only works with a closed grid.
 with gxmap.Map.open(map_file_name) as gmap:
 
     # add a map surround to the map
@@ -33,6 +34,7 @@ with gxmap.Map.open(map_file_name) as gmap:
             g.rectangle(v.extent_clip,
                         pen=g.new_pen(line_thick=0.1, line_color='K'))
 
+    # add the grid image to the view
     with gxview.View(gmap, "data") as v:
         with gxagg.Aggregate_image.new(grid_file_name) as agg:
             gxgroup.Aggregate_group.new(v, agg)
