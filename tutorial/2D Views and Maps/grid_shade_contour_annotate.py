@@ -38,9 +38,8 @@ with gxmap.Map.open(map_file_name) as gmap:
                                      cmap=agg.layer_color_map(0),
                                      cmap2=agg.layer_color_map(1))
 
-        # contour lines
-        with gxgroup.Draw(v, 'TMI_contour') as d:
-            d.contour(grid_file_name)
+        # contour the grid
+        gxgroup.contour(v, 'TMI_contour', grid_file_name)
 
     # map title and creator tag
     with gxview.View(gmap, "base") as v:
@@ -74,4 +73,4 @@ with gxmap.Map.open(map_file_name) as gmap:
 gxviewer.view_document(map_file_name, wait_for_close=False)
 
 # save to a PNG file
-#gxmap.save_as_image(map_file_name, "wittichica_mag.png", type=gxmap.RASTER_FORMAT_PNG)
+gxmap.save_as_image(map_file_name, "wittichica_mag.png", type=gxmap.RASTER_FORMAT_PNG)

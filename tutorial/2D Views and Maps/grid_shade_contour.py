@@ -31,9 +31,8 @@ with gxmap.Map.open(map_file_name) as gmap:
         with gxagg.Aggregate_image.new(grid_file_name, shade=True, contour=20) as agg:
             gxgroup.Aggregate_group.new(v, agg)
 
-        # contour lines
-        with gxgroup.Draw(v, 'TMI_contour') as d:
-            d.contour(grid_file_name)
+        # contour the grid
+        gxgroup.contour(v, 'TMI_contour', grid_file_name)
 
 # display the map in a Geosoft viewer
 gxviewer.view_document(map_file_name, wait_for_close=False)
