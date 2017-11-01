@@ -68,7 +68,7 @@ class GXIP:
 
 
     @classmethod
-    def convert_ubcip2_d_to_grid(cls, file, pg, vv_x, vv_z, x, z, cx, cz, reciprocal):
+    def convert_ubcip_2d_to_grid(cls, file, pg, vv_x, vv_z, x, z, cx, cz, reciprocal):
         """
         Convert a UBC 2D model to a regular grid.
         
@@ -99,7 +99,7 @@ class GXIP:
         By setting the final value, a resistivity grid can be
         created from conductivity data.
         """
-        gxapi_cy.WrapIP.convert_ubcip2_d_to_grid(GXContext._get_tls_geo(), file.encode(), pg._wrapper, vv_x._wrapper, vv_z._wrapper, x, z, cx, cz, reciprocal)
+        gxapi_cy.WrapIP.convert_ubcip_2d_to_grid(GXContext._get_tls_geo(), file.encode(), pg._wrapper, vv_x._wrapper, vv_z._wrapper, x, z, cx, cz, reciprocal)
         
 
 
@@ -462,7 +462,7 @@ class GXIP:
 
 
     @classmethod
-    def import_ubc2_d_topo(cls, file, elev0, vv_x, vv_z):
+    def import_ubc_2d_topo(cls, file, elev0, vv_x, vv_z):
         """
         Import a Topography file from the UBC IPINV2D program.
         
@@ -482,7 +482,7 @@ class GXIP:
         Imports the maximum elevation (top of mesh)
         as well as the topo (X, Z) values.
         """
-        elev0.value = gxapi_cy.WrapIP.import_ubc2_d_topo(GXContext._get_tls_geo(), file.encode(), elev0.value, vv_x._wrapper, vv_z._wrapper)
+        elev0.value = gxapi_cy.WrapIP.import_ubc_2d_topo(GXContext._get_tls_geo(), file.encode(), elev0.value, vv_x._wrapper, vv_z._wrapper)
         
 
 
@@ -522,7 +522,7 @@ class GXIP:
 
 
     @classmethod
-    def trim_ubc2_d_model(cls, pg, trim_xl, trim_xr, trim_z, vv_x, vv_z, x):
+    def trim_ubc_2d_model(cls, pg, trim_xl, trim_xr, trim_z, vv_x, vv_z, x):
         """
         Trim the padding cells from the UBC IPINV2D Model.
         
@@ -553,7 +553,7 @@ class GXIP:
         The input cell size VVs are also trimmed to match,
         and the origin is updated (still upper left corner).
         """
-        ret_val, x.value = gxapi_cy.WrapIP.trim_ubc2_d_model(GXContext._get_tls_geo(), pg._wrapper, trim_xl, trim_xr, trim_z, vv_x._wrapper, vv_z._wrapper, x.value)
+        ret_val, x.value = gxapi_cy.WrapIP.trim_ubc_2d_model(GXContext._get_tls_geo(), pg._wrapper, trim_xl, trim_xr, trim_z, vv_x._wrapper, vv_z._wrapper, x.value)
         return GXPG(ret_val)
 
 

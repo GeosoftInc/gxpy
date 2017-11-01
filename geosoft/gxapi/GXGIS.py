@@ -82,9 +82,9 @@ class GXGIS:
 
 
 
-    def create_map2_d(self, map, map_scale, ipj, map2_d):
+    def create_map_2d(self, map, map_scale, ipj, map2_d):
         """
-        `create_map2_d <geosoft.gxapi.GXGIS.create_map2_d>`   Create a new 2D map for `GXGIS <geosoft.gxapi.GXGIS>` imports.
+        `create_map_2d <geosoft.gxapi.GXGIS.create_map_2d>`   Create a new 2D map for `GXGIS <geosoft.gxapi.GXGIS>` imports.
         
         :param map:        Map name
         :param map_scale:  Map scale (can be `rDUMMY <geosoft.gxapi.rDUMMY>`)
@@ -102,7 +102,7 @@ class GXGIS:
         This function was created to minimize duplication in
         creation of new maps with 2D views.
         """
-        self._wrapper.create_map2_d(map.encode(), map_scale, ipj._wrapper, map2_d)
+        self._wrapper.create_map_2d(map.encode(), map_scale, ipj._wrapper, map2_d)
         
 
 

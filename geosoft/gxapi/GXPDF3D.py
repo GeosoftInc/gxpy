@@ -101,7 +101,7 @@ class GXPDF3D:
 
 
     @classmethod
-    def export2_d(cls, input_map, output_file, create_layersin_pdf, geospatial_pdf, open_pdf):
+    def export_2d(cls, input_map, output_file, create_layersin_pdf, geospatial_pdf, open_pdf):
         """
         Export a 2D map to a PDF file.
         
@@ -118,7 +118,7 @@ class GXPDF3D:
 
         .. versionadded:: 8.5
         """
-        gxapi_cy.WrapPDF3D.export2_d(GXContext._get_tls_geo(), input_map.encode(), output_file.encode(), create_layersin_pdf, geospatial_pdf, open_pdf)
+        gxapi_cy.WrapPDF3D.export_2d(GXContext._get_tls_geo(), input_map.encode(), output_file.encode(), create_layersin_pdf, geospatial_pdf, open_pdf)
         
 
 

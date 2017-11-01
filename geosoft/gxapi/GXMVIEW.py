@@ -835,7 +835,7 @@ class GXMVIEW:
 
 
 
-    def set_h_3dn(self, o3dn):
+    def set_3dn(self, o3dn):
         """
         Set the `GX3DN <geosoft.gxapi.GX3DN>` object for this view
         
@@ -848,7 +848,7 @@ class GXMVIEW:
 
         To make the view a 2D view, set a `GX3DN <geosoft.gxapi.GX3DN>` of NULL.
         """
-        self._wrapper.set_h_3dn(o3dn._wrapper)
+        self._wrapper.set_3dn(o3dn._wrapper)
         
 
 
@@ -3477,7 +3477,7 @@ class GXMVIEW:
 
 
 
-    def hide_shadow2_d_interpretations(self, mode):
+    def hide_shadow_2d_interpretations(self, mode):
         """
         Hide/Show 2d shadow interpretations.
         
@@ -3486,7 +3486,7 @@ class GXMVIEW:
 
         .. versionadded:: 8.5
         """
-        self._wrapper.hide_shadow2_d_interpretations(mode)
+        self._wrapper.hide_shadow_2d_interpretations(mode)
         
 
 

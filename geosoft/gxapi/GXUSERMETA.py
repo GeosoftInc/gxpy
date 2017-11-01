@@ -479,7 +479,7 @@ class GXUSERMETA:
 
 
     @classmethod
-    def update_extents2_d(cls, filename, ipj, min_x, min_y, max_x, max_y):
+    def update_extents_2d(cls, filename, ipj, min_x, min_y, max_x, max_y):
         """
         Edit an existing XML metadata file by
         changing the extents and projection data
@@ -499,7 +499,7 @@ class GXUSERMETA:
 
         .. versionadded:: 7.0.1
         """
-        gxapi_cy.WrapUSERMETA.update_extents2_d(GXContext._get_tls_geo(), filename.encode(), ipj._wrapper, min_x, min_y, max_x, max_y)
+        gxapi_cy.WrapUSERMETA.update_extents_2d(GXContext._get_tls_geo(), filename.encode(), ipj._wrapper, min_x, min_y, max_x, max_y)
         
 
 

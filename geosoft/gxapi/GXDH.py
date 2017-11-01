@@ -2011,7 +2011,7 @@ class GXDH:
 
 
 
-    def modify_hole_traces_3dgui(self, ini, page):
+    def modify_hole_traces_3d_gui(self, ini, page):
         """
         Modify parameters for a hole traces plot to an existing 3D view.
         
@@ -2026,7 +2026,7 @@ class GXDH:
 
         .. versionadded:: 6.1
         """
-        ret_val, page.value = self._wrapper.modify_hole_traces_3dgui(ini.encode(), page.value)
+        ret_val, page.value = self._wrapper.modify_hole_traces_3d_gui(ini.encode(), page.value)
         return ret_val
 
 
