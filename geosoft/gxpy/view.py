@@ -630,7 +630,7 @@ class View_3d(View):
 
         # make this a 3D view
         h3dn = gxapi.GX3DN.create()
-        g_3dv.gxview.set_h_3dn(h3dn)
+        g_3dv.gxview.set_3dn(h3dn)
         g_3dv.gxview.fit_map_window_3d(map_minx, map_miny, map_maxx, map_maxy,
                                        view_minx, view_miny, view_maxx, view_maxy)
 
