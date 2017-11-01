@@ -89,6 +89,16 @@ VIEW_DATA = 1 #:
 STYLE_FIGURE = 0 #:
 STYLE_MAP = 1 #:
 
+RASTER_FORMAT_EMF = gxapi.MAP_EXPORT_RASTER_FORMAT_EMF #:
+RASTER_FORMAT_BMP = gxapi.MAP_EXPORT_RASTER_FORMAT_BMP #:
+RASTER_FORMAT_JPEGL = gxapi.MAP_EXPORT_RASTER_FORMAT_JPEGL #:
+RASTER_FORMAT_JPEG  = gxapi.MAP_EXPORT_RASTER_FORMAT_JPEG  #:
+RASTER_FORMAT_JPEGH = gxapi.MAP_EXPORT_RASTER_FORMAT_JPEGH #:
+RASTER_FORMAT_GIF = gxapi.MAP_EXPORT_RASTER_FORMAT_GIF #:
+RASTER_FORMAT_PCX = gxapi.MAP_EXPORT_RASTER_FORMAT_PCX #:
+RASTER_FORMAT_PNG = gxapi.MAP_EXPORT_RASTER_FORMAT_PNG #:
+RASTER_FORMAT_EPS = gxapi.MAP_EXPORT_RASTER_FORMAT_EPS #:
+RASTER_FORMAT_TIFF  = gxapi.MAP_EXPORT_RASTER_FORMAT_TIFF #:
 
 def map_file_name(file_name, file_type='map'):
     """
@@ -155,15 +165,15 @@ def delete_files(file_name):
     remove(file_name)
 
 
-def save_as_image(mapfile, imagefile, type="PNG", pix_width=1000, pix_height=0):
+def save_as_image(mapfile, imagefile, type=RASTER_FORMAT_PNG, pix_width=1000, pix_height=0):
     """
     Save a map to an image file
+
     :param mapfile:     mapfile name
     :param imagefile:   name of the output raster file
-    :param type:        one of type list below
+    :param type:        one of the RASTER_FORMAT types, default`RASTER_FORMAT_PNG`
     :param pix_width:   image pixel width, if 0 use pix_height only
     :param pix_height:  image pixel height, if 0 use pix_width only
-    :return:
 
     .. versionadded:: 9.2
     """
@@ -771,9 +781,6 @@ class Map:
         .. versionadded:: 9.2
         """
 
-        if outer_pen is None:
-            outer_pen = gxg.Pen(line_thick=0.0500)
-
         with _Mapplot(self) as mpl:
 
             mpl.start_group('surround', view=VIEW_BASE, mode=GROUP_APPEND)
@@ -1139,6 +1146,8 @@ class _Mapplot:
         else:
             if pen is None:
                 pen = gxg.Pen(line_color=text_def.color, line_thick=text_def.line_thick)
+            elif isinstance(pen, str):
+                pen = gxg.Pen.from_mapplot_string(pen)
             ls = pen.line_style
             lp = pen.line_pitch
             pen = pen.mapplot_string
