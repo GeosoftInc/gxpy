@@ -2,7 +2,7 @@ Geosoft GX for Python Repository
 ================================
 
 This is the repository for Geosoft GX Developer support for Python development.  Refer to the
-documentation for installation and developer information.
+documentation for more information.
 
 `GX Developer documentation <https://geosoftgxdev.atlassian.net/wiki/display/GD/Python+in+GX+Developer>`__
 
