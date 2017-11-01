@@ -115,7 +115,7 @@ class GXVOX:
         """
         Create a 3D `GXPG <geosoft.gxapi.GXPG>` from a `GXVOX <geosoft.gxapi.GXVOX>` object with a specific Type
         
-        :param type:  `GS_TYPES`
+        :param type:  :ref:`GS_TYPES`
         :type  type:  int
 
         :returns:     `GXPG <geosoft.gxapi.GXPG>` Object
@@ -151,7 +151,7 @@ class GXVOX:
         Export all layers of this `GXVOX <geosoft.gxapi.GXVOX>` into grid files.
         
         :param name:  Name of grids (each layers adds _Number to the name)
-        :param dir:   `VOX_DIR`
+        :param dir:   :ref:`VOX_DIR`
         :type  name:  str
         :type  dir:   int
 
@@ -168,12 +168,12 @@ class GXVOX:
         Export all layers of this `GXVOX <geosoft.gxapi.GXVOX>` into grid files, with optional cell size.
         
         :param name:       Name of grids (each layers adds _Number to the name)
-        :param dir:        `VOX_DIR`
+        :param dir:        :ref:`VOX_DIR`
         :param start:      Starting index
         :param incr:       Increment in index
         :param num:        Total number of grids (-1 or `iDUMMY <geosoft.gxapi.iDUMMY>` for all)
         :param cell_size:  Cell size (can be `GS_R8DM <geosoft.gxapi.GS_R8DM>`)
-        :param interp:     `VOX_SLICE_MODE`
+        :param interp:     :ref:`VOX_SLICE_MODE`
         :type  name:       str
         :type  dir:        int
         :type  start:      int
@@ -254,7 +254,7 @@ class GXVOX:
         Export a Voxel to an XYZ File
         
         :param xyz:      File Name
-        :param dir:      `VOX_DIRECTION`
+        :param dir:      :ref:`VOX_DIRECTION`
         :param rev_x:    Reverse X ? (0/1)
         :param rev_y:    Reverse Y ? (0/1)
         :param rev_z:    Reverse Z ? (0/1)
@@ -278,7 +278,7 @@ class GXVOX:
         """
         Apply a 3D filter to a voxel.
         
-        :param filter:               `VOX_FILTER3D`
+        :param filter:               :ref:`VOX_FILTER3D`
         :param filter_file:          Filter file, if filter is `VOX_FILTER3D_FILE <geosoft.gxapi.VOX_FILTER3D_FILE>`
         :param n_passes:             Number of filter passes
         :param interpolate_dummies:  (1: interpolate dummies)
@@ -387,7 +387,7 @@ class GXVOX:
         
         :param name:          Name of output `GXVOX <geosoft.gxapi.GXVOX>`
         :param value:         Value to use
-        :param type:          `GS_TYPES`
+        :param type:          :ref:`GS_TYPES`
         :param ox:            Origin X
         :param oy:            Origin Y
         :param oz:            Origin Z
@@ -471,7 +471,7 @@ class GXVOX:
         
         :param name:   Name of output `GXVOX <geosoft.gxapi.GXVOX>`
         :param value:  The Value to use
-        :param type:   `GS_TYPES`
+        :param type:   :ref:`GS_TYPES`
         :param ox:     Origin X
         :param oy:     Origin Y
         :param oz:     Origin Z
@@ -507,7 +507,7 @@ class GXVOX:
         """
         Initialize the generate of a `GXVOX <geosoft.gxapi.GXVOX>` from a series of 3D subset pagers
         
-        :param data_type:  `GS_TYPES`
+        :param data_type:  :ref:`GS_TYPES`
         :param nx:         Points in X
         :param ny:         Points in Y
         :param nz:         Points in Z
@@ -538,7 +538,7 @@ class GXVOX:
         full voxel in the other two directions.
         
         :param pg:      Subset pager with the Voxel Data
-        :param dir:     Subset orientation - the "16" (thin) dimension is in the other axis.`VOX_DIR`
+        :param dir:     Subset orientation - the "16" (thin) dimension is in the other axis.:ref:`VOX_DIR`
         :param offset:  Offset of the subset `GXPG <geosoft.gxapi.GXPG>` corner, along the "thin" dimension.
         :type  pg:      GXPG
         :type  dir:     int
@@ -977,7 +977,7 @@ class GXVOX:
         :param range:       Range
         :param nugget:      Nugget
         :param sill:        Sill
-        :param type:        `GS_TYPES`
+        :param type:        :ref:`GS_TYPES`
         :param vv_x:        X `GXVV <geosoft.gxapi.GXVV>`
         :param vv_y:        Y `GXVV <geosoft.gxapi.GXVV>`
         :param vv_z:        Z `GXVV <geosoft.gxapi.GXVV>`
@@ -1033,7 +1033,7 @@ class GXVOX:
         :param range:        Range
         :param nugget:       Nugget
         :param sill:         Sill
-        :param type:         `GS_TYPES`
+        :param type:         :ref:`GS_TYPES`
         :param vv_x:         X `GXVV <geosoft.gxapi.GXVV>`
         :param vv_y:         Y `GXVV <geosoft.gxapi.GXVV>`
         :param vv_z:         Z `GXVV <geosoft.gxapi.GXVV>`
@@ -1095,7 +1095,7 @@ class GXVOX:
         :param plunge:               Plunge
         :param along_strike_weight:  Strike Weight
         :param down_dip_weight:      Dip Plane Weight
-        :param type:                 `GS_TYPES`
+        :param type:                 :ref:`GS_TYPES`
         :param vv_x:                 X `GXVV <geosoft.gxapi.GXVV>`
         :param vv_y:                 Y `GXVV <geosoft.gxapi.GXVV>`
         :param vv_z:                 Z `GXVV <geosoft.gxapi.GXVV>`
@@ -1273,9 +1273,9 @@ class GXVOX:
         :param plunge:               Plunge
         :param along_strike_weight:  Strike Weight
         :param down_dip_weight:      Dip Plane Weight
-        :param log_opt:              `VOX_GRID_LOGOPT` Log Option
+        :param log_opt:              :ref:`VOX_GRID_LOGOPT` Log Option
         :param min_log:              Minimum log
-        :param type:                 `GS_TYPES`
+        :param type:                 :ref:`GS_TYPES`
         :param vv_x:                 X `GXVV <geosoft.gxapi.GXVV>`
         :param vv_y:                 Y `GXVV <geosoft.gxapi.GXVV>`
         :param vv_z:                 Z `GXVV <geosoft.gxapi.GXVV>`
@@ -1326,7 +1326,7 @@ class GXVOX:
         
         :param name:       Name of output `GXVOX <geosoft.gxapi.GXVOX>`
         :param cell_size:  Cell size (DUMMY for default)
-        :param type:       `GS_TYPES`
+        :param type:       :ref:`GS_TYPES`
         :param vv_x:       X `GXVV <geosoft.gxapi.GXVV>`
         :param vv_y:       Y `GXVV <geosoft.gxapi.GXVV>`
         :param vv_z:       Z `GXVV <geosoft.gxapi.GXVV>`
@@ -1369,7 +1369,7 @@ class GXVOX:
         PLUNGE:				Plunge (REAL) (Default = 0)
         STRIKE WEIGHT:	Along-Strike Weight (REAL) (Default = 1)
         DIP_WEIGHT:      Down-Dip Weight (REAL) (Default = 1)
-        LOG_OPT:			One of `VOX_GRID_LOGOPT` (Default = 0)
+        LOG_OPT:			One of :ref:`VOX_GRID_LOGOPT` (Default = 0)
         MIN_LOG:			Log Minimum (REAL)	(Default = 1)
         MIN_X:				Minimum X (REAL) (default = DUMMY to determine from the data. If input, nearest lt. or eq. multiple of cell size chosen)
         MAX_X:				Maximum X (REAL) (default = DUMMY to determine from the data. If input, nearest gt. or eq. multiple of cell size chosen)
@@ -1443,7 +1443,7 @@ class GXVOX:
         :param name:        Name of output `GXVOX <geosoft.gxapi.GXVOX>`
         :param cell_size:   Cell size (DUMMY for default)
         :param max_radius:  Maximum radius (DUMMY for none)
-        :param type:        `GS_TYPES`
+        :param type:        :ref:`GS_TYPES`
         :param vv_x:        X `GXVV <geosoft.gxapi.GXVV>`
         :param vv_y:        Y `GXVV <geosoft.gxapi.GXVV>`
         :param vv_z:        Z `GXVV <geosoft.gxapi.GXVV>`
@@ -1532,7 +1532,7 @@ class GXVOX:
         :param size_z:     Samples in Z
         :param min_z:      Minimum Z to resample (can be `rDUMMY <geosoft.gxapi.rDUMMY>`)
         :param max_z:      Maximum Z to resample (can be `rDUMMY <geosoft.gxapi.rDUMMY>`)
-        :param interp:     `VOX_SLICE_MODE`
+        :param interp:     :ref:`VOX_SLICE_MODE`
         :type  ipj:        GXIPJ
         :type  orig_x:     float
         :type  orig_y:     float
@@ -1744,7 +1744,7 @@ class GXVOX:
         """
         Set the Voxel Origin
         
-        :param origin:    Type of origin being set `VOX_ORIGIN`
+        :param origin:    Type of origin being set :ref:`VOX_ORIGIN`
         :param origin_x:  Origin X
         :param origin_y:  Origin Y
         :param origin_z:  Origin Z
@@ -1816,7 +1816,7 @@ class GXVOX:
         
         :param name:         Grid Name
         :param ipj:          Grid `GXIPJ <geosoft.gxapi.GXIPJ>` (includes orientation, etc)
-        :param mode:         `VOX_SLICE_MODE`
+        :param mode:         :ref:`VOX_SLICE_MODE`
         :param orig_x:       Grid Origin X
         :param orig_y:       Grid Origin Y
         :param cell_size_x:  Grid Cell Size in X
@@ -1847,7 +1847,7 @@ class GXVOX:
         
         :param name:         Grid Name
         :param ipj:          Grid `GXIPJ <geosoft.gxapi.GXIPJ>` (includes orientation, etc)
-        :param mode:         `VOX_SLICE_MODE`
+        :param mode:         :ref:`VOX_SLICE_MODE`
         :param orig_x:       Grid Origin X
         :param orig_y:       Grid Origin Y
         :param cell_size_x:  Grid Cell Size in X
@@ -2277,7 +2277,7 @@ class GXVOX:
         :param name:         Name of output `GXVOX <geosoft.gxapi.GXVOX>`
         :param header:       Name of GOCAD Voxel file
         :param property:     Propert name to import
-        :param orientation:  `VOX_GOCAD_ORIENTATION`
+        :param orientation:  :ref:`VOX_GOCAD_ORIENTATION`
         :type  name:         str
         :type  header:       str
         :type  property:     str
@@ -2331,7 +2331,7 @@ class GXVOX:
         
         :param name:  Voxel Name
         :param ra:    `GXRA <geosoft.gxapi.GXRA>` To import from
-        :param type:  Data Type `GS_TYPES`
+        :param type:  Data Type :ref:`GS_TYPES`
         :param ipj:   Projection
         :type  name:  str
         :type  ra:    GXRA
@@ -2369,7 +2369,7 @@ class GXVOX:
         
         :param db:       Database
         :param chan:     Channel Name
-        :param dir:      `VOX_DIRECTION`
+        :param dir:      :ref:`VOX_DIRECTION`
         :param rev_x:    Reverse X ? (0/1)
         :param rev_y:    Reverse Y ? (0/1)
         :param rev_z:    Reverse Z ? (0/1)

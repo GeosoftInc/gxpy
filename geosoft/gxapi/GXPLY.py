@@ -270,7 +270,7 @@ class GXPLY:
         :type  max_x:  float
         :type  max_y:  float
 
-        :returns:      `PLY_CLIP`
+        :returns:      :ref:`PLY_CLIP`
         :rtype:        int
 
         .. versionadded:: 5.1.3
@@ -299,7 +299,7 @@ class GXPLY:
         :param max_y:  Max y of line to clip
         :param vv:     DOUBLE `GXVV <geosoft.gxapi.GXVV>` holding intersection fids
         :param inc:    Data element increment (precision)
-        :param first:  First point value (`PLY_LINE_CLIP` value)
+        :param first:  First point value (:ref:`PLY_LINE_CLIP` value)
         :type  min_x:  float
         :type  min_y:  float
         :type  max_x:  float
@@ -328,7 +328,7 @@ class GXPLY:
         :type  ppl_yb:  GXPLY
         :type  ppl_yc:  GXPLY
 
-        :returns:       `PLY_CLIP`
+        :returns:       :ref:`PLY_CLIP`
         :rtype:         int
 
         .. versionadded:: 5.1.3

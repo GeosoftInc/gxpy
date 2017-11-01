@@ -242,7 +242,7 @@ class GXSURFACEITEM:
         
         :param color:         Color
         :param transparency:  Transparency
-        :param render_mode:   `SURFACERENDER_MODE`
+        :param render_mode:   :ref:`SURFACERENDER_MODE`
         :type  color:         int
         :type  transparency:  float
         :type  render_mode:   int
@@ -265,7 +265,7 @@ class GXSURFACEITEM:
         
         :param color:         Color
         :param transparency:  Transparency
-        :param render_mode:   `SURFACERENDER_MODE`
+        :param render_mode:   :ref:`SURFACERENDER_MODE`
         :type  color:         int_ref
         :type  transparency:  float_ref
         :type  render_mode:   int_ref
@@ -383,13 +383,13 @@ class GXSURFACEITEM:
         Gets information about a triangular polyhedral mesh component in the surface item.
         
         :param index:                       Index of the component
-        :param closed:                      `GEO_BOOL` indicating if mesh is closed
+        :param closed:                      indicating if mesh is closed
         :param n_inner_comps:               Number of inner components
         :param area:                        Area
         :param volume:                      Volume
         :param volume_confidence_interval:  Volume confidence interval
         :type  index:                       int
-        :type  closed:                      int_ref
+        :type  closed:                      bool_ref
         :type  n_inner_comps:               int_ref
         :type  area:                        float_ref
         :type  volume:                      float_ref
@@ -407,11 +407,11 @@ class GXSURFACEITEM:
         """
         Gets information about the surface item.
         
-        :param closed:                      `GEO_BOOL` indicating if all meshes in item is closed
+        :param closed:                      indicating if all meshes in item is closed
         :param area:                        Area
         :param volume:                      Volume
         :param volume_confidence_interval:  Volume confidence interval
-        :type  closed:                      int_ref
+        :type  closed:                      bool_ref
         :type  area:                        float_ref
         :type  volume:                      float_ref
         :type  volume_confidence_interval:  float_ref

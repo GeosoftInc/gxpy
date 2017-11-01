@@ -70,9 +70,7 @@ class GXUNC:
         
         :param ch:  UTF-16 value (32-bit int, lower 16 bits used, upper bits reserved for future use)
         :type  ch:  int
-
-        :returns:    `GEO_BOOL`
-        :rtype:      int
+        :rtype:      bool
 
         .. versionadded:: 6.2
         """
@@ -87,14 +85,12 @@ class GXUNC:
         See if a Symbol number is valid in a particular font.
         
         :param face:     Face name (undecorated)
-        :param geofont:  Geosoft font? `GEO_BOOL`
+        :param geofont:  Geosoft font?
         :param number:   Symbol number
         :type  face:     str
-        :type  geofont:  int
+        :type  geofont:  bool
         :type  number:   int
-
-        :returns:        `GEO_BOOL`
-        :rtype:          int
+        :rtype:          bool
 
         .. versionadded:: 6.2
         """
@@ -132,10 +128,10 @@ class GXUNC:
         
         :param vv:       `GXVV <geosoft.gxapi.GXVV>` of symbols
         :param face:     Face name (undecorated)
-        :param geofont:  Geosoft font? `GEO_BOOL`
+        :param geofont:  Geosoft font?
         :type  vv:       GXVV
         :type  face:     str
-        :type  geofont:  int
+        :type  geofont:  bool
 
         .. versionadded:: 6.2
 

@@ -73,8 +73,8 @@ class GXMETA:
         Create an attribute
         
         :param name:      Attribute Name
-        :param ph_class:  Parent class or `META_CORE_CLASS`
-        :param ph_type:   Type of Attribute or `META_CORE_TYPE`
+        :param ph_class:  Parent class or :ref:`META_CORE_CLASS`
+        :param ph_type:   Type of Attribute or :ref:`META_CORE_TYPE`
         :type  name:      str
         :type  ph_class:  int
         :type  ph_type:   int
@@ -113,7 +113,7 @@ class GXMETA:
         """
         Allow/disallow an attribute to be editable in the browser
         
-        :param ph_attribute:  Attribute or `META_CORE_ATTRIB`
+        :param ph_attribute:  Attribute or :ref:`META_CORE_ATTRIB`
         :param editable:      Editable Flag
         :type  ph_attribute:  int
         :type  editable:      int
@@ -130,7 +130,7 @@ class GXMETA:
         """
         Allow/disallow an attribute to be visible in the browser
         
-        :param ph_attribute:  Attribute or `META_CORE_ATTRIB`
+        :param ph_attribute:  Attribute or :ref:`META_CORE_ATTRIB`
         :param visible:       Editable Flag
         :type  ph_attribute:  int
         :type  visible:       int
@@ -380,9 +380,7 @@ class GXMETA:
         :param ph_attrib:  Attribute
         :type  ph_object:  int
         :type  ph_attrib:  int
-
-        :returns:          `GEO_BOOL`
-        :rtype:            int
+        :rtype:            bool
 
         .. versionadded:: 6.0.1
         """
@@ -831,8 +829,8 @@ class GXMETA:
         Create an attribute
         
         :param name:      Attribute Name
-        :param ph_class:  Parent Class or `META_CORE_CLASS`
-        :param ph_type:   Parent Type or `META_CORE_TYPE`
+        :param ph_class:  Parent Class or :ref:`META_CORE_CLASS`
+        :param ph_type:   Parent Type or :ref:`META_CORE_TYPE`
         :type  name:      str
         :type  ph_class:  int
         :type  ph_type:   int

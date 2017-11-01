@@ -178,7 +178,7 @@ class GXITR:
         Create an `GXITR <geosoft.gxapi.GXITR>` for an image.
         
         :param tbl:      Color table name, NULL for default
-        :param zone:     `ITR_ZONE`
+        :param zone:     :ref:`ITR_ZONE`
         :param contour:  Color contour interval or `rDUMMY <geosoft.gxapi.rDUMMY>`
         :type  img:      GXIMG
         :type  tbl:      str
@@ -310,7 +310,7 @@ class GXITR:
         Get the color in a zone of the `GXITR <geosoft.gxapi.GXITR>`
         
         :param zone:   Number of the zone to set.
-        :param color:  `MVIEW_COLOR`
+        :param color:  :ref:`MVIEW_COLOR`
         :type  zone:   int
         :type  color:  int_ref
 
@@ -333,7 +333,7 @@ class GXITR:
         :param val:  Data value
         :type  val:  float
 
-        :returns:    `MVIEW_COLOR`
+        :returns:    :ref:`MVIEW_COLOR`
         :rtype:      int
 
         .. versionadded:: 5.1
@@ -365,7 +365,7 @@ class GXITR:
         Get the `GXITR <geosoft.gxapi.GXITR>` zone model (e.g. Linear, LogLin, Equal Area).
         
 
-        :returns:    `ITR_ZONE_MODEL`
+        :returns:    :ref:`ITR_ZONE_MODEL`
         :rtype:      int
 
         .. versionadded:: 6.4
@@ -463,7 +463,7 @@ class GXITR:
         """
         Modified `GXITR <geosoft.gxapi.GXITR>` zone values to 10 (or e) raized to the power of the values
         
-        :param pow:  `ITR_POWER`
+        :param pow:  :ref:`ITR_POWER`
         :type  pow:  int
 
         .. versionadded:: 5.0
@@ -622,7 +622,7 @@ class GXITR:
         """
         Set the color model of an `GXITR <geosoft.gxapi.GXITR>`.
         
-        :param model:  `ITR_COLOR_MODEL`
+        :param model:  :ref:`ITR_COLOR_MODEL`
         :type  model:  int
 
         .. versionadded:: 5.0.2
@@ -670,7 +670,7 @@ class GXITR:
         Set the color in a zone of the `GXITR <geosoft.gxapi.GXITR>`
         
         :param zone:   Number of the zone to set.
-        :param color:  `MVIEW_COLOR`
+        :param color:  :ref:`MVIEW_COLOR`
         :type  zone:   int
         :type  color:  int
 

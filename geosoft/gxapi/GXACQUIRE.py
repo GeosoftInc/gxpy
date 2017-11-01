@@ -159,7 +159,7 @@ class GXACQUIRE:
         Run the acQuire Selection Tool.
         
         :param selection_file:  Selection File Name
-        :param mode:            `ACQUIRE_SEL`
+        :param mode:            :ref:`ACQUIRE_SEL`
         :type  selection_file:  str
         :type  mode:            int
 

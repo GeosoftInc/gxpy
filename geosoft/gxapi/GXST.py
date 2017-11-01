@@ -319,7 +319,7 @@ class GXST:
         This method allows you to retrieve (and compute) the
         information from the `GXST <geosoft.gxapi.GXST>` object.
         
-        :param id:  `ST_INFO`
+        :param id:  :ref:`ST_INFO`
         :type  id:  int
 
         :returns:    Data you asked for

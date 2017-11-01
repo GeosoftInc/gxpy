@@ -63,7 +63,7 @@ class GXMULTIVOXSET:
         
         :param name:  Name of output Voxel file
         :param ra:    `GXRA <geosoft.gxapi.GXRA>` To import from
-        :param type:  Data Type `GS_TYPES`
+        :param type:  Data Type :ref:`GS_TYPES`
         :param ipj:   Projection
         :type  name:  str
         :type  ra:    GXRA
@@ -84,7 +84,7 @@ class GXMULTIVOXSET:
         
         :param voxel_file:  Input Voxel file
         :param xyz:         File Name
-        :param dir:         `DIRECTION3D`
+        :param dir:         :ref:`DIRECTION3D`
         :param rev_x:       Reverse X ? (0/1)
         :param rev_y:       Reverse Y ? (0/1)
         :param rev_z:       Reverse Z ? (0/1)
@@ -111,7 +111,7 @@ class GXMULTIVOXSET:
         
         :param voxel_file:   Input Voxel file
         :param binary_file:  Binary file to write to
-        :param dir:          `DIRECTION3D`
+        :param dir:          :ref:`DIRECTION3D`
         :param rev_x:        Reverse X ? (0/1)
         :param rev_y:        Reverse Y ? (0/1)
         :param rev_z:        Reverse Z ? (0/1)
@@ -198,7 +198,7 @@ class GXMULTIVOXSET:
         :param name:         Name of output `GXVOX <geosoft.gxapi.GXVOX>`
         :param header:       Name of GOCAD Voxel file
         :param property:     Propert name to import
-        :param orientation:  `GOCAD_ORIENTATION`
+        :param orientation:  :ref:`GOCAD_ORIENTATION`
         :type  name:         str
         :type  header:       str
         :type  property:     str
@@ -306,7 +306,7 @@ class GXMULTIVOXSET:
         :param voxel_file:  Input Voxel file
         :param db:          Database
         :param chan:        Channel Name
-        :param dir:         `DIRECTION3D`
+        :param dir:         :ref:`DIRECTION3D`
         :param rev_x:       Reverse X ? (0/1)
         :param rev_y:       Reverse Y ? (0/1)
         :param rev_z:       Reverse Z ? (0/1)
@@ -334,7 +334,7 @@ class GXMULTIVOXSET:
         
         :param file_name:  Input Voxel file
         :param wa:         `GXWA <geosoft.gxapi.GXWA>` File
-        :param dir:        `DIRECTION3D`
+        :param dir:        :ref:`DIRECTION3D`
         :param rev_x:      Reverse X ? (0/1)
         :param rev_y:      Reverse Y ? (0/1)
         :param rev_z:      Reverse Z ? (0/1)
@@ -720,7 +720,7 @@ class GXMULTIVOXSET:
         
         :param input_file:           Name of the input voxel
         :param output_file:          Name of the output voxel
-        :param filter:               `FILTER3D`
+        :param filter:               :ref:`FILTER3D`
         :param filter_file:          Filter file, if filter is `VOX_FILTER3D_FILE <geosoft.gxapi.VOX_FILTER3D_FILE>`
         :param n_passes:             Number of filter passes
         :param interpolate_dummies:  (1: interpolate dummies)
@@ -753,7 +753,7 @@ class GXMULTIVOXSET:
         :param cell_size_x:            Voxel cell size X
         :param cell_size_y:            Voxel cell size Y
         :param cell_size_z:            Voxel cell size Z
-        :param method:                 `MULTIVOXSET_DIRECTGRID_METHOD`
+        :param method:                 :ref:`MULTIVOXSET_DIRECTGRID_METHOD`
         :param db:                     Database
         :param x_channel:              X channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
         :param y_channel:              Y channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]

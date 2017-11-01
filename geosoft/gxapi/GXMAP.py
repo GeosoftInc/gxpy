@@ -72,9 +72,9 @@ class GXMAP:
         :param view:      View to export coordinates in
         :param pix_size:  Resolution in view units of one pixel (or dummy, will be used if DPI is dummy)
         :param dpi:       Resolution in DPI (will override view resolution if not dummy, map page size will be used to determine pixel size of output)
-        :param bits:      `MAP_EXPORT_BITS`
-        :param dither:    `MAP_EXPORT_METHOD`
-        :param format:    `MAP_EXPORT_FORMAT`
+        :param bits:      :ref:`MAP_EXPORT_BITS`
+        :param dither:    :ref:`MAP_EXPORT_METHOD`
+        :param format:    :ref:`MAP_EXPORT_FORMAT`
         :param options:   Extended Options String (format specific)
         :type  name:      str
         :type  view:      str
@@ -102,9 +102,9 @@ class GXMAP:
         :param size_x:   Number of Pixels in X (X or Y should be specified the other should be 0 and computed by export, or both can be 0 and DPI defined)
         :param size_y:   Number of Pixels in Y (X or Y should be specified the other should be 0 and computed by export, or both can be 0 and DPI defined)
         :param dpi:      Resolution in DPI (will override X and Y if not dummy, map page size will be used to determine pixel size of output)
-        :param bits:     `MAP_EXPORT_BITS`
-        :param dither:   `MAP_EXPORT_METHOD`
-        :param format:   `MAP_EXPORT_RASTER_FORMAT`
+        :param bits:     :ref:`MAP_EXPORT_BITS`
+        :param dither:   :ref:`MAP_EXPORT_METHOD`
+        :param format:   :ref:`MAP_EXPORT_RASTER_FORMAT`
         :param options:  Extended Options String (format specific)
         :type  name:     str
         :type  view:     str
@@ -132,13 +132,13 @@ class GXMAP:
         :param view:      View to export coordinates in
         :param pix_size:  Resolution in view units of one pixel (or dummy, will be used if DPI is dummy)
         :param dpi:       Resolution in DPI (will override view resolution if not dummy, map page size will be used to determine pixel size of output)
-        :param bits:      `MAP_EXPORT_BITS`
-        :param dither:    `MAP_EXPORT_METHOD`
+        :param bits:      :ref:`MAP_EXPORT_BITS`
+        :param dither:    :ref:`MAP_EXPORT_METHOD`
         :param min_x:     Area To Export Min X location in view units
         :param min_y:     Area To Export Min Y location in view units
         :param max_x:     Area To Export Max X location in view units
         :param max_y:     Area To Export Max Y location in view units
-        :param format:    `MAP_EXPORT_FORMAT`
+        :param format:    :ref:`MAP_EXPORT_FORMAT`
         :param options:   Extended Options String (format specific)
         :type  name:      str
         :type  view:      str
@@ -174,9 +174,9 @@ class GXMAP:
         :param size_x:   Number of Pixels in X (X or Y should be specified the other should be 0 and computed by export, or both can be 0 and DPI defined)
         :param size_y:   Number of Pixels in Y (X or Y should be specified the other should be 0 and computed by export, or both can be 0 and DPI defined)
         :param dpi:      Resolution in DPI (will override X and Y if not dummy, map page size will be used to determine pixel size of output)
-        :param bits:     `MAP_EXPORT_BITS`
-        :param dither:   `MAP_EXPORT_METHOD`
-        :param format:   `MAP_EXPORT_RASTER_FORMAT`
+        :param bits:     :ref:`MAP_EXPORT_BITS`
+        :param dither:   :ref:`MAP_EXPORT_METHOD`
+        :param format:   :ref:`MAP_EXPORT_RASTER_FORMAT`
         :param options:  Extended Options String (format specific)
         :type  name:     str
         :type  view:     str
@@ -292,7 +292,7 @@ class GXMAP:
         
         :param lst:   List to hold the views (allow up to 96 characters)
         :param optn:  0 - view/agg only 1 - view/agg/layer
-        :param mode:  `MAP_LIST_MODE`
+        :param mode:  :ref:`MAP_LIST_MODE`
         :type  lst:   GXLST
         :type  optn:  int
         :type  mode:  int
@@ -379,7 +379,7 @@ class GXMAP:
         Create a `GXMAP <geosoft.gxapi.GXMAP>`.
         
         :param name:  `GXMAP <geosoft.gxapi.GXMAP>` file name
-        :param mode:  `MAP_OPEN`
+        :param mode:  :ref:`MAP_OPEN`
         :type  name:  str
         :type  mode:  int
 
@@ -454,7 +454,7 @@ class GXMAP:
         Duplicate copy of current map.
         
         :param ma_pd:    Destination `GXMAP <geosoft.gxapi.GXMAP>` object
-        :param content:  `DUPMAP`
+        :param content:  :ref:`DUPMAP`
         :type  ma_pd:    GXMAP
         :type  content:  int
 
@@ -585,7 +585,7 @@ class GXMAP:
         Get a list of views/groups in this map for this mode
         
         :param lst:   List to hold the views.  View names may be up to 2080 characters in length.
-        :param mode:  `MAP_LIST_MODE`
+        :param mode:  :ref:`MAP_LIST_MODE`
         :type  lst:   GXLST
         :type  mode:  int
 
@@ -607,10 +607,10 @@ class GXMAP:
         
         :param view:    Name of view to duplicate
         :param n_view:  Name of new view created (pass in "" and the new name is returned)
-        :param copy:    Copy all groups `GEO_BOOL`
+        :param copy:    Copy all groups
         :type  view:    str
         :type  n_view:  str_ref
-        :type  copy:    int
+        :type  copy:    bool
 
         .. versionadded:: 5.1.2
         """
@@ -809,7 +809,7 @@ class GXMAP:
         """
         `resize_all <geosoft.gxapi.GXMAP.resize_all>` with selection of view extent type selection.
         
-        :param ext:  `MVIEW_EXTENT`
+        :param ext:  :ref:`MVIEW_EXTENT`
         :type  ext:  int
 
         .. versionadded:: 6.3
@@ -1060,7 +1060,7 @@ class GXMAP:
         Get a list of views of certain types in this map
         
         :param lst:   List to hold the views.  View names may be up to 2080 characters in length.
-        :param mode:  `MAP_LIST_MODE`
+        :param mode:  :ref:`MAP_LIST_MODE`
         :type  lst:   GXLST
         :type  mode:  int
 

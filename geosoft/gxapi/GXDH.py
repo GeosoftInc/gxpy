@@ -28,7 +28,7 @@ class GXDH:
 
     The `GXDH <geosoft.gxapi.GXDH>` class has some defines not used by any functions.
         `DH_DEFINE_PLAN <geosoft.gxapi.DH_DEFINE_PLAN>`
-        `DH_DEFINE_SECT`
+        :ref:`DH_DEFINE_SECT`
     """
 
     def __enter__(self):
@@ -164,7 +164,7 @@ class GXDH:
         :param lst:        `GXLST <geosoft.gxapi.GXLST>` of holes to check
         :param chan_code:  Channel code
         :param geology:    Geology item
-        :param surface:    `DH_SURFACE` Surface selection (top or bottom)
+        :param surface:    :ref:`DH_SURFACE` Surface selection (top or bottom)
         :param gap:        Max gap to skip when compositing (`GS_R8DM <geosoft.gxapi.GS_R8DM>` for none)
         :param vv_x:       X locations of the contact
         :param vv_y:       Y locations of the contact
@@ -837,8 +837,8 @@ class GXDH:
         
         :param mast_db:   Input assay `GXDB <geosoft.gxapi.GXDB>` object
         :param comp_db:   Output composite `GXDB <geosoft.gxapi.GXDB>` object
-        :param hol_sel:   `DH_COMPSTDB_HOLSEL`
-        :param int_sel:   `DH_COMPSTDB_INTSEL`
+        :param hol_sel:   :ref:`DH_COMPSTDB_HOLSEL`
+        :param int_sel:   :ref:`DH_COMPSTDB_INTSEL`
         :param fix_int:   Fixed interval length
         :param lith_ch:   Name of lithology cannel
         :param int_file:  Name of interval file
@@ -976,7 +976,7 @@ class GXDH:
         Create a default job from scratch.
         
         :param ini:   File name of the INI file to create (forces correct suffix)
-        :param type:  `DH_PLOT`
+        :param type:  :ref:`DH_PLOT`
         :type  ini:   str
         :type  type:  int
 
@@ -1088,7 +1088,7 @@ class GXDH:
         Exports a Drill Hole database to an external file.
         
         :param file:  File name
-        :param type:  `DH_EXP`
+        :param type:  :ref:`DH_EXP`
         :type  file:  str
         :type  type:  int
 
@@ -1108,7 +1108,7 @@ class GXDH:
         :param file:        File name (.pdb folder for File Geodatabase or .sde connector for SDE)
         :param pre:         String to prefix dataset names with
         :param feat_class:  Feature class name to export (pass empty for all or name of table, will contain the name of the output dataset for if a rename occurs)
-        :param overwrite:   `GEO_BOOL` Overwrite existing feature classes? Pass `GS_FALSE <geosoft.gxapi.GS_FALSE>` to create copies.
+        :param overwrite:   Overwrite existing feature classes? ``False`` will create copies.
         :type  lst:         GXLST
         :type  file:        str
         :type  pre:         str
@@ -1155,7 +1155,7 @@ class GXDH:
         
         :param lst:   Hole Names in the Name and Value parts of the `GXLST <geosoft.gxapi.GXLST>`
         :param file:  File name
-        :param type:  `DH_EXP`
+        :param type:  :ref:`DH_EXP`
         :type  lst:   GXLST
         :type  file:  str
         :type  type:  int
@@ -1220,7 +1220,7 @@ class GXDH:
         Get the type of data in a Wholeplot database.
         
         :param db:    `GXDB <geosoft.gxapi.GXDB>` Handle
-        :param type:  `DH_DATA`
+        :param type:  :ref:`DH_DATA`
         :type  db:    GXDB
         :type  type:  int_ref
 
@@ -1414,7 +1414,7 @@ class GXDH:
         Return list of default channels by collar/assay/survey table type.
         
         :param lst:   `GXLST <geosoft.gxapi.GXLST>` handle
-        :param type:  `DH_DATA`
+        :param type:  :ref:`DH_DATA`
         :type  lst:   GXLST
         :type  type:  int
 
@@ -1509,7 +1509,7 @@ class GXDH:
         :type  y1:   float
         :type  y2:   float
 
-        :returns:    `DH_COMP_CHOICE`
+        :returns:    :ref:`DH_COMP_CHOICE`
         :rtype:      int
 
         .. versionadded:: 5.1.3
@@ -1696,7 +1696,7 @@ class GXDH:
         
         :param db:        `GXDB <geosoft.gxapi.GXDB>` Handle
         :param template:  Name of template file to extract to.
-        :param imp_type:  The stored import template type `DH_DATA`
+        :param imp_type:  The stored import template type :ref:`DH_DATA`
         :type  db:        GXDB
         :type  template:  str
         :type  imp_type:  int_ref
@@ -1728,7 +1728,7 @@ class GXDH:
         Retrieve the file, `GXDH <geosoft.gxapi.GXDH>` Table name and type from an import template.
         
         :param template:   Template name
-        :param data_type:  `DH_DATA`
+        :param data_type:  :ref:`DH_DATA`
         :param file:       File name (blank for ODBC, or undefined).
         :param table:      Table name (blank for `DH_DATA_UNKNOWN <geosoft.gxapi.DH_DATA_UNKNOWN>`, or undefined).
         :type  template:   str
@@ -1770,7 +1770,7 @@ class GXDH:
         Retrieve the file, `GXDH <geosoft.gxapi.GXDH>` Table name, type and channel list from an import template.
         
         :param template:   Template name
-        :param data_type:  `DH_DATA`
+        :param data_type:  :ref:`DH_DATA`
         :param file:       File name (blank for ODBC, or undefined).
         :param table:      Table name (blank for `DH_DATA_UNKNOWN <geosoft.gxapi.DH_DATA_UNKNOWN>`, or undefined).
         :param lst:        Channel list (returned)
@@ -1830,11 +1830,9 @@ class GXDH:
     @classmethod
     def have_current(cls):
         """
-        Returns true if a drill project is loaded
+        Returns ``True`` if a drill project is loaded
         
-
-        :returns:    `GEO_BOOL`
-        :rtype:      int
+        :rtype:      bool
 
         .. versionadded:: 6.1
         """
@@ -1846,13 +1844,11 @@ class GXDH:
     @classmethod
     def have_current2(cls, db):
         """
-        Returns true if a drill project is loaded, and the collar database if it is loaded.
+        Returns ``True`` if a drill project is loaded, and the collar database if it is loaded.
         
         :param db:  Collar table name (returned)
         :type  db:  str_ref
-
-        :returns:    `GEO_BOOL`
-        :rtype:      int
+        :rtype:      bool
 
         .. versionadded:: 6.1
         """
@@ -1994,7 +1990,7 @@ class GXDH:
         Modify parameters for a section plot.
         
         :param ini:   Job Name (``*.ins``)
-        :param page:  `DH_SECT_PAGE`
+        :param page:  :ref:`DH_SECT_PAGE`
         :type  ini:   str
         :type  page:  int_ref
 
@@ -2062,7 +2058,7 @@ class GXDH:
         Modify parameters for a hole traces plot to a current plan or section view.
         
         :param ini:        Job Name
-        :param plot_type:  `DH_PLOT` One of `DH_PLOT_PLAN <geosoft.gxapi.DH_PLOT_PLAN>` or `DH_PLOT_SECTION <geosoft.gxapi.DH_PLOT_SECTION>`
+        :param plot_type:  :ref:`DH_PLOT` One of `DH_PLOT_PLAN <geosoft.gxapi.DH_PLOT_PLAN>` or `DH_PLOT_SECTION <geosoft.gxapi.DH_PLOT_SECTION>`
         :param page:       Page to open `GXGUI <geosoft.gxapi.GXGUI>` on
         :type  ini:        str
         :type  plot_type:  int
@@ -2089,7 +2085,7 @@ class GXDH:
         Modify parameters for a plan plot.
         
         :param ini:   Job Name (``*.inp``)
-        :param page:  `DH_SECT_PAGE`
+        :param page:  :ref:`DH_SECT_PAGE`
         :type  ini:   str
         :type  page:  int_ref
 
@@ -2182,7 +2178,7 @@ class GXDH:
         Modify parameters for a section plot.
         
         :param ini:   Job Name (``*.ins``)
-        :param page:  `DH_SECT_PAGE`
+        :param page:  :ref:`DH_SECT_PAGE`
         :type  ini:   str
         :type  page:  int_ref
 
@@ -2240,7 +2236,7 @@ class GXDH:
         Modify parameters for a section plot.
         
         :param ini:   Job Name (``*.ins``)
-        :param page:  `DH_SECT_PAGE`
+        :param page:  :ref:`DH_SECT_PAGE`
         :type  ini:   str
         :type  page:  int_ref
 
@@ -2272,7 +2268,7 @@ class GXDH:
         Modify parameters for a strip log plot.
         
         :param ini:   Job Name   (``*.inl``)
-        :param page:  `DH_SECT_PAGE`
+        :param page:  :ref:`DH_SECT_PAGE`
         :type  ini:   str
         :type  page:  int_ref
 
@@ -2344,7 +2340,7 @@ class GXDH:
         :param line:     Line
         :param hole:     Hole channel
         :param table:    Table
-        :param type:     `DH_DATA`
+        :param type:     :ref:`DH_DATA`
         :param log:      Log file name
         :type  project:  str
         :type  db:       GXDB
@@ -2624,7 +2620,7 @@ class GXDH:
         Load parameters from a Job into the Drill object.
         
         :param ini:   The job file file to read
-        :param type:  `DH_PLOT`
+        :param type:  :ref:`DH_PLOT`
         :type  ini:   str
         :type  type:  int
 
@@ -2659,8 +2655,8 @@ class GXDH:
         :param ipj:     Projection from data to polygon coordinates
         :param tol:     Slice thickness - `rDUMMY <geosoft.gxapi.rDUMMY>` for no limiting thickness
         :param mask:    Name of mask channel
-        :param select:  `DH_HOLES`
-        :param append:  `DH_MASK`
+        :param select:  :ref:`DH_HOLES`
+        :param append:  :ref:`DH_MASK`
         :type  pply:    GXPLY
         :type  ipj:     GXIPJ
         :type  tol:     float
@@ -2707,7 +2703,7 @@ class GXDH:
         Open a `GXDH <geosoft.gxapi.GXDH>` plotting job
         
         :param job:   Job file name
-        :param type:  `DH_PLOT`
+        :param type:  :ref:`DH_PLOT`
         :type  job:   str
         :type  type:  int
 
@@ -3023,7 +3019,7 @@ class GXDH:
         Replot holes on an existing drill map.
         
         :param job:        Parameter (INI) name
-        :param plot_type:  `DH_PLOT`
+        :param plot_type:  :ref:`DH_PLOT`
         :type  job:        str
         :type  plot_type:  int
 
@@ -3050,7 +3046,7 @@ class GXDH:
         Plot the currently selected holes on an existing section view.
         
         :param job:        Parameter (INI) name
-        :param plot_type:  `DH_PLOT` Section plot type (`DH_PLOT_SECTION <geosoft.gxapi.DH_PLOT_SECTION>` or `DH_PLOT_SECTION_CROOKED <geosoft.gxapi.DH_PLOT_SECTION_CROOKED>`
+        :param plot_type:  :ref:`DH_PLOT` Section plot type (`DH_PLOT_SECTION <geosoft.gxapi.DH_PLOT_SECTION>` or `DH_PLOT_SECTION_CROOKED <geosoft.gxapi.DH_PLOT_SECTION_CROOKED>`
         :param view:       View name
         :type  job:        str
         :type  plot_type:  int
@@ -3120,7 +3116,7 @@ class GXDH:
         :param top:       Minimum hole depth to start output values
         :param bot:       Maximum hole depth for output values
         :param inc:       Increment for output values
-        :param dip_conv:  `DIP_CONVENTION`
+        :param dip_conv:  :ref:`DIP_CONVENTION`
         :param order:     Polynomial order
         :param vv_x:      X (Easting) - Output
         :param vv_y:      Y (Northin) - Output
@@ -3176,7 +3172,7 @@ class GXDH:
         :param top:       Minimum hole depth to start output values
         :param bot:       Maximum hole depth for output values
         :param inc:       Increment for output values
-        :param dip_conv:  `DIP_CONVENTION`
+        :param dip_conv:  :ref:`DIP_CONVENTION`
         :param vv_x:      X (Easting) - Output
         :param vv_y:      Y (Northin) - Output
         :param vv_z:      Z (Elevation) - Output
@@ -3226,7 +3222,7 @@ class GXDH:
         :param top:       Minimum hole depth to start output values
         :param bot:       Maximum hole depth for output values
         :param inc:       Increment for output values
-        :param dip_conv:  `DIP_CONVENTION`
+        :param dip_conv:  :ref:`DIP_CONVENTION`
         :param vv_x:      X (Easting) - Output
         :param vv_y:      Y (Northin) - Output
         :param vv_z:      Z (Elevation) - Output
@@ -3276,7 +3272,7 @@ class GXDH:
         :param top:       Minimum hole depth to start output values
         :param bot:       Maximum hole depth for output values
         :param inc:       Increment for output values
-        :param dip_conv:  `DIP_CONVENTION`
+        :param dip_conv:  :ref:`DIP_CONVENTION`
         :param vv_x:      X (Easting) - Output
         :param vv_y:      Y (Northin) - Output
         :param vv_z:      Z (Elevation) - Output
@@ -3344,7 +3340,7 @@ class GXDH:
         Save a `GXDH <geosoft.gxapi.GXDH>` plotting job
         
         :param job:   Job file name
-        :param type:  `DH_PLOT`
+        :param type:  :ref:`DH_PLOT`
         :type  job:   str
         :type  type:  int
 
@@ -3668,7 +3664,7 @@ class GXDH:
         
         :param db:        `GXDB <geosoft.gxapi.GXDB>` Handle
         :param template:  Import template name
-        :param imp_type:  `DH_DATA`
+        :param imp_type:  :ref:`DH_DATA`
         :type  db:        GXDB
         :type  template:  str
         :type  imp_type:  int
@@ -3695,7 +3691,7 @@ class GXDH:
         
         :param mast_db:                       Input assay `GXDB <geosoft.gxapi.GXDB>` object
         :param comp_db:                       Output composite `GXDB <geosoft.gxapi.GXDB>` object
-        :param hol_sel:                       `DH_COMPSTDB_HOLSEL`
+        :param hol_sel:                       :ref:`DH_COMPSTDB_HOLSEL`
         :param assay_ch:                      The primary assay channel.
         :param cut_off_grade:                 Minimum Cut off grade for Primary Assay
         :param clip_grade:                    Maximum Cut off grade for Primary Assay
@@ -3817,7 +3813,7 @@ class GXDH:
         Run a Wholeplot plot job.
         
         :param job:        Parameter (INI) name
-        :param plot_type:  `DH_PLOT`
+        :param plot_type:  :ref:`DH_PLOT`
         :type  job:        str
         :type  plot_type:  int
 

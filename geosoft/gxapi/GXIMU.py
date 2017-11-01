@@ -62,7 +62,7 @@ class GXIMU:
     @classmethod
     def agg_to_geo_color(cls, agg, grid, ipj, res):
         """
-        Create a geosoft color grid from an aggregate.
+        Create a Geosoft color grid from an aggregate.
         
         :param agg:   Input Aggregate
         :param grid:  Output image name
@@ -133,8 +133,8 @@ class GXIMU:
         
         :param grid:         Grid
         :param pul_crc:      Starting CRC (use `CRC_INIT_VALUE <geosoft.gxapi.CRC_INIT_VALUE>` if none)
-        :param float_bits:   `IMU_FLOAT_CRC_BITS`
-        :param double_bits:  `IMU_DOUBLE_CRC_BITS`
+        :param float_bits:   :ref:`IMU_FLOAT_CRC_BITS`
+        :param double_bits:  :ref:`IMU_DOUBLE_CRC_BITS`
         :type  grid:         str
         :type  pul_crc:      int
         :type  float_bits:   int
@@ -147,7 +147,7 @@ class GXIMU:
 
         **Note:**
 
-        Very usefull for testing where the last bits of accuracy
+        Very useful for testing where the last bits of accuracy
         are not as important.
         """
         ret_val = gxapi_cy.WrapIMU.crc_grid_inexact(GXContext._get_tls_geo(), grid.encode(), pul_crc, float_bits, double_bits)
@@ -164,8 +164,8 @@ class GXIMU:
         
         :param img:          Input image
         :param pul_crc:      Starting CRC (use `CRC_INIT_VALUE <geosoft.gxapi.CRC_INIT_VALUE>` if none)
-        :param float_bits:   `IMU_FLOAT_CRC_BITS`
-        :param double_bits:  `IMU_DOUBLE_CRC_BITS`
+        :param float_bits:   :ref:`IMU_FLOAT_CRC_BITS`
+        :param double_bits:  :ref:`IMU_DOUBLE_CRC_BITS`
         :type  img:          GXIMG
         :type  pul_crc:      int
         :type  float_bits:   int
@@ -178,7 +178,7 @@ class GXIMU:
 
         **Note:**
 
-        Very usefull for testing where the last bits of accuracy
+        Very useful for testing where the last bits of accuracy
         are not as important.
         """
         ret_val = gxapi_cy.WrapIMU.crc_inexact(GXContext._get_tls_geo(), img._wrapper, pul_crc, float_bits, double_bits)
@@ -375,9 +375,9 @@ class GXIMU:
         :param img1:    Image of first input grid
         :param img2:    Image of second input grid
         :param out:     File name of output grid
-        :param bool:    `IMU_BOOL_OPT`
-        :param sizing:  `IMU_BOOL_SIZING`
-        :param olap:    `IMU_BOOL_OLAP`
+        :param bool:    :ref:`IMU_BOOL_OPT`
+        :param sizing:  :ref:`IMU_BOOL_SIZING`
+        :param olap:    :ref:`IMU_BOOL_OLAP`
         :type  img1:    GXIMG
         :type  img2:    GXIMG
         :type  out:     str
@@ -449,7 +449,7 @@ class GXIMU:
         :param im_gi:  Image of input grid
         :param out:    File name of output grid
         :param per:    Minimum percentage to expand the grid by
-        :param shape:  `IMU_EXPAND_SHAPE`
+        :param shape:  :ref:`IMU_EXPAND_SHAPE`
         :param x:      X Dimension the output grid is expanded to
         :param y:      Y Dimension the output grid is expanded to
         :type  im_gi:  GXIMG
@@ -499,7 +499,7 @@ class GXIMU:
         
         :param im_gi:     Image of input grid
         :param im_go:     Image of output grid
-        :param rollopt:   `IMU_FILL_ROLLOPT`
+        :param rollopt:   :ref:`IMU_FILL_ROLLOPT`
         :param rolldist:  Distance at which to roll off to 0
         :param mxf:       Maximum prediction filter length
         :param mxp:       Maximum prediction filter area
@@ -542,9 +542,9 @@ class GXIMU:
         :param imgo:     Image of second grid
         :param passes:   Number of passes to apply filter (>0)
         :param mult:     Multiplier to apply to grid values
-        :param dum:      `IMU_FILT_DUMMY`
-        :param hz:       `IMU_FILT_HZDRV`
-        :param usefile:  `IMU_FILT_FILE`
+        :param dum:      :ref:`IMU_FILT_DUMMY`
+        :param hz:       :ref:`IMU_FILT_HZDRV`
+        :param usefile:  :ref:`IMU_FILT_FILE`
         :param file:     Name of file containing filter values
         :param vv:       `GXVV <geosoft.gxapi.GXVV>` containing filter values (if not using a file for the values) MUST BE OF TYPE 'real'
         :type  img:      GXIMG
@@ -625,7 +625,7 @@ class GXIMU:
         :param in_grid:  Name of input grid
         :param m_grid:   Name of output mask grid file
         :param pply:     Polygon containing mask coordinates
-        :param mode:     `IMU_MASK`
+        :param mode:     :ref:`IMU_MASK`
         :type  in_grid:  str
         :type  m_grid:   str
         :type  pply:     GXPLY
@@ -956,7 +956,7 @@ class GXIMU:
         Reports statistics of a grid's elements.
         
         :param grid:    Name of the grid to get stats from
-        :param force:   `IMU_STAT_FORCED`
+        :param force:   :ref:`IMU_STAT_FORCED`
         :param items:   Number of valid elements in grid
         :param dums:    Number of dummies in grid
         :param min:     Minimum grid value
@@ -976,7 +976,7 @@ class GXIMU:
 
         **Note:**
 
-        If the `IMU_STAT_FORCED` value is set, the
+        If the :ref:`IMU_STAT_FORCED` value is set, the
         statistics will be recalculated.
         Statistics are returned in the parameter set.
         """
@@ -1175,7 +1175,7 @@ class GXIMU:
         :param imgi:       Handle to input image
         :param imgo:       Handle to output image
         :param tr_option:  0-calculate, 1-given, 2-replace
-        :param edge:       `IMU_TREND`
+        :param edge:       :ref:`IMU_TREND`
         :param order:      Trend order
         :param vm:         `GXVM <geosoft.gxapi.GXVM>` holds coefficients
         :param num_coefs:  Number of coefficients
@@ -1220,7 +1220,7 @@ class GXIMU:
         the grid columns.
         
         :param grid:  Name of the grid to transpose
-        :param tcon:  Transpose condition value `IMU_TRANS`
+        :param tcon:  Transpose condition value :ref:`IMU_TRANS`
         :type  grid:  str
         :type  tcon:  int
 
@@ -1229,7 +1229,7 @@ class GXIMU:
         **Note:**
 
         If the grid has a line orientation that does NOT
-        match the `IMU_TRANS` value, this method will
+        match the :ref:`IMU_TRANS` value, this method will
         not succeed.
         """
         gxapi_cy.WrapIMU.grid_trns(GXContext._get_tls_geo(), grid.encode(), tcon)
@@ -1298,7 +1298,7 @@ class GXIMU:
         
         :param img:    Image of input grid
         :param out:    Name of output grid file
-        :param coord:  `IMU_WIND_COORD`
+        :param coord:  :ref:`IMU_WIND_COORD`
         :param xmin:   Min. limit of window in X direction (can be `rDUMMY <geosoft.gxapi.rDUMMY>`)
         :param xmax:   Max. limit of window in X direction (can be `rDUMMY <geosoft.gxapi.rDUMMY>`)
         :param ymin:   Min. limit of window in Y direction (can be `rDUMMY <geosoft.gxapi.rDUMMY>`)
@@ -1306,7 +1306,7 @@ class GXIMU:
         :param zmin:   Minimum Z data value in output grid (can be `rDUMMY <geosoft.gxapi.rDUMMY>`)
         :param zmax:   Maximum Z data value in output grid (can be `rDUMMY <geosoft.gxapi.rDUMMY>`)
         :param csize:  New grid cell size
-        :param clip:   `IMU_WIND_DUMMIES`
+        :param clip:   :ref:`IMU_WIND_DUMMIES`
         :param dec:    Decimation factor
         :param mdf:    Name of .MDF file for data clipping
         :type  img:    GXIMG
@@ -1343,7 +1343,7 @@ class GXIMU:
         :param ymax:  Maximum Y (can be `rDUMMY <geosoft.gxapi.rDUMMY>`)
         :param zmin:  Minimum Z (can be `rDUMMY <geosoft.gxapi.rDUMMY>`)
         :param zmax:  Maximum Z (can be `rDUMMY <geosoft.gxapi.rDUMMY>`)
-        :param clip:  `IMU_WIND_DUMMIES`
+        :param clip:  :ref:`IMU_WIND_DUMMIES`
         :type  img:   GXIMG
         :type  out:   str
         :type  xmin:  float
@@ -1376,10 +1376,10 @@ class GXIMU:
         
         :param img:    Image of the grid to export
         :param xyz:    Name of new XYZ file
-        :param index:  `IMU_XYZ_INDEX`
+        :param index:  :ref:`IMU_XYZ_INDEX`
         :param dec_x:  X direction decimation factor
         :param dec_y:  Y direction decimation factor
-        :param lab:    `IMU_XYZ_LABEL`
+        :param lab:    :ref:`IMU_XYZ_LABEL`
         :type  img:    GXIMG
         :type  xyz:    str
         :type  index:  int
@@ -1408,7 +1408,7 @@ class GXIMU:
         :param grid:  Name of the Grid
         :type  grid:  str
 
-        :returns:     `GS_TYPES`
+        :returns:     :ref:`GS_TYPES`
         :rtype:       int
 
         .. versionadded:: 5.0

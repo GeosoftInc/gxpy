@@ -129,11 +129,9 @@ class GXEMAP:
 
     def drag_drop_enabled(self):
         """
-        Is drag-and-drop enabled for the map?
+        Checks if drag-and-drop enabled for the map
         
-
-        :returns:     `GEO_BOOL`
-        :rtype:       int
+        :rtype:       bool
 
         .. versionadded:: 5.0
         """
@@ -147,8 +145,8 @@ class GXEMAP:
         """
         Set whether drag-and-drop is enabled for the map.
         
-        :param enable:  Enables/disables drag-and-drop `GEO_BOOL`
-        :type  enable:  int
+        :param enable:  Enables/disables drag-and-drop
+        :type  enable:  bool
 
         .. versionadded:: 5.0
         """
@@ -328,15 +326,15 @@ class GXEMAP:
         """
         Get the base layout view properties.
         
-        :param snap_to_grid:  `GEO_BOOL` Snap to grid
+        :param snap_to_grid:  Snap to grid
         :param snap_dist:     Snapping distance (always in mm)
         :param view_grid:     View Grid
         :param view_rulers:   View Rulers
-        :param view_units:    `LAYOUT_VIEW_UNITS` View Units
+        :param view_units:    :ref:`LAYOUT_VIEW_UNITS` View Units
         :param grid_red:      Grid Red Component (0-255)
         :param grid_green:    Grid Green Component (0-255)
         :param grid_blue:     Grid Blue Component (0-255)
-        :type  snap_to_grid:  int_ref
+        :type  snap_to_grid:  bool_ref
         :type  snap_dist:     float_ref
         :type  view_grid:     int_ref
         :type  view_rulers:   int_ref
@@ -378,7 +376,7 @@ class GXEMAP:
         Retrieve the current state of the map window
         
 
-        :returns:     `EMAP_WINDOW_STATE`
+        :returns:     :ref:`EMAP_WINDOW_STATE`
         :rtype:       int
 
         .. versionadded:: 5.0
@@ -419,15 +417,15 @@ class GXEMAP:
         """
         Set the base layout view properties.
         
-        :param snap_to_grid:  `GEO_BOOL` Snap to grid
+        :param snap_to_grid:  Snap to grid
         :param snap_dist:     Snapping distance (always in mm)
         :param view_grid:     View Grid
         :param view_rulers:   View Rulers
-        :param view_units:    `LAYOUT_VIEW_UNITS` View Units
+        :param view_units:    :ref:`LAYOUT_VIEW_UNITS` View Units
         :param grid_red:      Grid Red Component (0-255)
         :param grid_green:    Grid Green Component (0-255)
         :param grid_blue:     Grid Blue Component (0-255)
-        :type  snap_to_grid:  int
+        :type  snap_to_grid:  bool
         :type  snap_dist:     float
         :type  view_grid:     int
         :type  view_rulers:   int
@@ -468,7 +466,7 @@ class GXEMAP:
         """
         Changes the state of the map window
         
-        :param state:  `EMAP_WINDOW_STATE`
+        :param state:  :ref:`EMAP_WINDOW_STATE`
         :type  state:  int
 
         .. versionadded:: 5.0
@@ -597,7 +595,7 @@ class GXEMAP:
         """
         Removes the view from the workspace.
         
-        :param unload_flag:  `EMAP_REMOVE`
+        :param unload_flag:  :ref:`EMAP_REMOVE`
         :type  unload_flag:  int
 
         .. versionadded:: 5.0
@@ -607,7 +605,7 @@ class GXEMAP:
         Can only be run in interactive mode. After this call the
         `GXEMAP <geosoft.gxapi.GXEMAP>` object will become invalid. If this is the last view on
         the document and the document has been modified the map will be
-        unloaded and optionally saved depending on the `EMAP_REMOVE`
+        unloaded and optionally saved depending on the :ref:`EMAP_REMOVE`
         parameter.
         """
         self._wrapper.destroy_view(unload_flag)
@@ -621,7 +619,7 @@ class GXEMAP:
         List all Windows and geosoft fonts.
         
         :param lst:    List Object
-        :param which:  `EMAP_FONT`
+        :param which:  :ref:`EMAP_FONT`
         :type  lst:    GXLST
         :type  which:  int
 
@@ -742,7 +740,7 @@ class GXEMAP:
         Load the file names of open maps into a `GXLST <geosoft.gxapi.GXLST>`.
         
         :param lst:   `GXLST <geosoft.gxapi.GXLST>` to load
-        :param path:  `EMAP_PATH`
+        :param path:  :ref:`EMAP_PATH`
         :type  lst:   GXLST
         :type  path:  int
 
@@ -882,11 +880,9 @@ class GXEMAP:
 
     def is_locked(self):
         """
-        Is this Map locked
+        Checks if map is locked
         
-
-        :returns:     `GEO_BOOL`
-        :rtype:       int
+        :rtype:       bool
 
         .. versionadded:: 5.0
         """
@@ -918,9 +914,7 @@ class GXEMAP:
         """
         Checks if a map is currently opened in a read-only mode.
         
-
-        :returns:     `GEO_BOOL`
-        :rtype:       int
+        :rtype:       bool
 
         .. versionadded:: 5.0
         """
@@ -938,8 +932,8 @@ class GXEMAP:
         :param top:          Window top position
         :param right:        Window right position
         :param bottom:       Window bottom position
-        :param state:        Window state `EMAP_WINDOW_STATE`
-        :param is_floating:  Docked or floating `EMAP_WINDOW_POSITION`
+        :param state:        Window state :ref:`EMAP_WINDOW_STATE`
+        :param is_floating:  Docked or floating :ref:`EMAP_WINDOW_POSITION`
         :type  left:         int_ref
         :type  top:          int_ref
         :type  right:        int_ref
@@ -963,8 +957,8 @@ class GXEMAP:
         :param top:          Window top position
         :param right:        Window right position
         :param bottom:       Window bottom position
-        :param state:        Window state `EMAP_WINDOW_STATE`
-        :param is_floating:  Docked or floating `EMAP_WINDOW_POSITION`
+        :param state:        Window state :ref:`EMAP_WINDOW_STATE`
+        :param is_floating:  Docked or floating :ref:`EMAP_WINDOW_POSITION`
         :type  left:         int
         :type  top:          int
         :type  right:        int
@@ -1240,7 +1234,7 @@ class GXEMAP:
         """
         Set the redraw flag.
         
-        :param redraw:  `EMAP_REDRAW`
+        :param redraw:  :ref:`EMAP_REDRAW`
         :type  redraw:  int
 
         .. versionadded:: 5.0
@@ -1301,9 +1295,9 @@ class GXEMAP:
         Unloads an edited map, optional prompt to save.
         
         :param name:    Name of map to unload
-        :param prompt:  Prompt? `GEO_BOOL`
+        :param prompt:  Prompt?
         :type  name:    str
-        :type  prompt:  int
+        :type  prompt:  bool
 
         .. versionadded:: 5.0
 
@@ -1995,7 +1989,7 @@ class GXEMAP:
         """
         Get point without prompt or cursor change with tracking
         
-        :param flags:  `EMAP_TRACK`
+        :param flags:  :ref:`EMAP_TRACK`
         :param x:      X coordinate in current view user units.
         :param y:      Y
         :type  flags:  int
@@ -2073,7 +2067,7 @@ class GXEMAP:
         """
         Set the viewport mode.
         
-        :param mode:  `EMAP_VIEWPORT`
+        :param mode:  :ref:`EMAP_VIEWPORT`
         :type  mode:  int
 
         .. versionadded:: 5.0

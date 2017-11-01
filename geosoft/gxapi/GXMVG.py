@@ -194,7 +194,7 @@ class GXMVG:
         :param d_y:     Y grid increment of rescaled map unit (see above Rescaling functions)
         :param d_dx:    X dot increment/cross X size of rescaled map unit
         :param d_dy:    Y dot increment/cross Y size of rescaled map unit
-        :param l_type:  `MVG_GRID`
+        :param l_type:  :ref:`MVG_GRID`
         :type  d1st_x:  float
         :type  d1st_y:  float
         :type  d_x:     float
@@ -229,9 +229,9 @@ class GXMVG:
         :param lx:       Left  X (rescaling unit)
         :param rx:       Right X (rescaling unit)
         :param maj_int:  Major tick interval (ignored if in LOG or LOGLINEAR rescaling)
-        :param just:     Label justification `MVG_LABEL_JUST`
-        :param bound:    Edge label bounding `MVG_LABEL_BOUND`
-        :param orient:   Label orientation   `MVG_LABEL_ORIENT`
+        :param just:     Label justification :ref:`MVG_LABEL_JUST`
+        :param bound:    Edge label bounding :ref:`MVG_LABEL_BOUND`
+        :param orient:   Label orientation   :ref:`MVG_LABEL_ORIENT`
         :type  y:        float
         :type  lx:       float
         :type  rx:       float
@@ -269,9 +269,9 @@ class GXMVG:
         :param by:       Bottom  Y (rescaling unit)
         :param ty:       Top Y (rescaling unit)
         :param maj_int:  Label interval (ignored if in LOG or LOGLINEAR rescaling)
-        :param just:     Label justification `MVG_LABEL_JUST`
-        :param bound:    Edge label bounding `MVG_LABEL_BOUND`
-        :param orient:   Label orientation   `MVG_LABEL_ORIENT`
+        :param just:     Label justification :ref:`MVG_LABEL_JUST`
+        :param bound:    Edge label bounding :ref:`MVG_LABEL_BOUND`
+        :param orient:   Label orientation   :ref:`MVG_LABEL_ORIENT`
         :type  x:        float
         :type  by:       float
         :type  ty:       float
@@ -305,8 +305,8 @@ class GXMVG:
         """
         Creates PolyLines/polygons from `GXVV <geosoft.gxapi.GXVV>` and `GXVA <geosoft.gxapi.GXVA>`.
         
-        :param draw:      `MVG_DRAW`
-        :param wrap:      `MVG_WRAP`
+        :param draw:      :ref:`MVG_DRAW`
+        :param wrap:      :ref:`MVG_WRAP`
         :param vv_x:      X `GXVV <geosoft.gxapi.GXVV>`
         :param va:        Y VAs
         :param vv_array:  `GXVV <geosoft.gxapi.GXVV>` containing list of `GXVA <geosoft.gxapi.GXVA>` ranges, such as 1,2 40 ... Entire `GXVA <geosoft.gxapi.GXVA>` is drawn if this `GXVV <geosoft.gxapi.GXVV>` is empty.
@@ -339,8 +339,8 @@ class GXMVG:
         """
         Creates PolyLines/polygons from `GXVV <geosoft.gxapi.GXVV>` and `GXVV <geosoft.gxapi.GXVV>`.
         
-        :param draw:  `MVG_DRAW`
-        :param wrap:  `MVG_WRAP`
+        :param draw:  :ref:`MVG_DRAW`
+        :param wrap:  :ref:`MVG_WRAP`
         :param vv_x:  X `GXVV <geosoft.gxapi.GXVV>`
         :param vv_y:  Y `GXVV <geosoft.gxapi.GXVV>`
         :type  draw:  int
@@ -371,7 +371,7 @@ class GXMVG:
         """
         Re-scale horizontal axis
         
-        :param scale:    `MVG_SCALE`
+        :param scale:    :ref:`MVG_SCALE`
         :param min:      Scale information: new minimum X
         :param max:      Scale information: new maximum X
         :param log_min:  Scale information: minimum X to apply log10, it is defined only for LOGLINEAR scale
@@ -399,7 +399,7 @@ class GXMVG:
         """
         Re-scale vertical axis
         
-        :param scale:    `MVG_SCALE`
+        :param scale:    :ref:`MVG_SCALE`
         :param min:      Scale information: new minimum Y
         :param max:      Scale information: new maximum Y
         :param log_min:  Scale information: minimum Y to apply log10, it is defined only for LOGLINEAR scale

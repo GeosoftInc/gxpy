@@ -668,7 +668,7 @@ MVIEW_EXTENT_UNIT constants
 -----------------------------------------------------------------------
 
 Types of units for extents (these map to the
-`MVIEW_UNIT` defines directly)
+:ref:`MVIEW_UNIT` defines directly)
 
 .. autodata:: geosoft.gxapi.MVIEW_EXTENT_UNIT_VIEW
     :annotation:

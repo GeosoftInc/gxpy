@@ -62,7 +62,7 @@ class GXUSERMETA:
         """
         Creates an empty `GXUSERMETA <geosoft.gxapi.GXUSERMETA>` object
         
-        :param format:  `USERMETA_FORMAT` Type of Meta to create
+        :param format:  :ref:`USERMETA_FORMAT` Type of Meta to create
         :type  format:  int
 
         :returns:       `GXUSERMETA <geosoft.gxapi.GXUSERMETA>` Object
@@ -191,7 +191,7 @@ class GXUSERMETA:
         """
         Get the XML Format
         
-        :param format:    `USERMETA_FORMAT`
+        :param format:    :ref:`USERMETA_FORMAT`
         :type  format:    int_ref
 
         .. versionadded:: 7.0
@@ -300,9 +300,9 @@ class GXUSERMETA:
         """
         Serialize `GXUSERMETA <geosoft.gxapi.GXUSERMETA>` to a `GXBF <geosoft.gxapi.GXBF>`.
         
-        :param save_geo:  `GEO_BOOL` Output Geosoft Metadata?
+        :param save_geo:  Output Geosoft Metadata?
         :param file:      File name to save to
-        :type  save_geo:  int
+        :type  save_geo:  bool
         :type  file:      str
 
         .. versionadded:: 7.0
@@ -528,9 +528,9 @@ class GXUSERMETA:
         Add lineage to XML
         
         :param file_name:  Filename of existing metadata to update
-        :param save_geo:   `GEO_BOOL` Output Geosoft Metadata?
+        :param save_geo:   Output Geosoft Metadata?
         :type  file_name:  str
-        :type  save_geo:   int
+        :type  save_geo:   bool
 
         .. versionadded:: 8.2
         """

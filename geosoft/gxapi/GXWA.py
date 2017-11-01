@@ -77,7 +77,7 @@ class GXWA:
         Creates an ASCII file to write to.
         
         :param file:    Name of the File
-        :param append:  `WA_OPEN`
+        :param append:  :ref:`WA_OPEN`
         :type  file:    str
         :type  append:  int
 
@@ -101,8 +101,8 @@ class GXWA:
         Creates an ASCII file to write to.
         
         :param file:    Name of the File
-        :param append:  `WA_OPEN`
-        :param encode:  `WA_ENCODE`
+        :param append:  :ref:`WA_OPEN`
+        :param encode:  :ref:`WA_ENCODE`
         :type  file:    str
         :type  append:  int
         :type  encode:  int
@@ -116,7 +116,7 @@ class GXWA:
 
         Before version 6.2. text in on the GX API level were handled as characters in the current ANSI code page
         defining how characters above ASCII 127 would be displayed. 6.2. introduced Unicode in the core
-        montaj engine that greatly increased the number of symbols that can be used. The `WA_ENCODE` constants
+        montaj engine that greatly increased the number of symbols that can be used. The :ref:`WA_ENCODE` constants
         were introduce that controls how text are written to files on disk with the `GXWA <geosoft.gxapi.GXWA>` class.
         """
         ret_val = gxapi_cy.WrapWA.create_ex(GXContext._get_tls_geo(), file.encode(), append, encode)
@@ -131,7 +131,7 @@ class GXWA:
         
         :param sbf:     Storage
         :param file:    Name of the File
-        :param append:  `WA_OPEN`
+        :param append:  :ref:`WA_OPEN`
         :type  sbf:     GXSBF
         :type  file:    str
         :type  append:  int
@@ -157,8 +157,8 @@ class GXWA:
         
         :param sbf:     Storage
         :param file:    Name of the File
-        :param append:  `WA_OPEN`
-        :param encode:  `WA_ENCODE`
+        :param append:  :ref:`WA_OPEN`
+        :param encode:  :ref:`WA_ENCODE`
         :type  sbf:     GXSBF
         :type  file:    str
         :type  append:  int
@@ -174,7 +174,7 @@ class GXWA:
         Also see sbf.gxh
         Before version 6.2. text in on the GX API level were handled as characters in the current ANSI code page
         defining how characters above ASCII 127 would be displayed. 6.2. introduced Unicode in the core
-        montaj engine that greatly increased the number of symbols that can be used. The `WA_ENCODE` constants
+        montaj engine that greatly increased the number of symbols that can be used. The :ref:`WA_ENCODE` constants
         were introduce that controls how text are written to files on disk with the `GXWA <geosoft.gxapi.GXWA>` class.
         """
         ret_val = gxapi_cy.WrapWA.create_sbf_ex(GXContext._get_tls_geo(), sbf._wrapper, file.encode(), append, encode)

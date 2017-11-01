@@ -84,7 +84,7 @@ class GXSTR:
         Convert a date string to a GX real.
         
         :param str_val:  Date string
-        :param type:     `DATE_FORMAT`
+        :param type:     :ref:`DATE_FORMAT`
         :type  str_val:  str
         :type  type:     int
 
@@ -108,7 +108,7 @@ class GXSTR:
         Convert a formated string to a real.
         
         :param str_val:  Date string
-        :param type:     `GS_FORMATS`
+        :param type:     :ref:`GS_FORMATS`
         :type  str_val:  str
         :type  type:     int
 
@@ -146,7 +146,7 @@ class GXSTR:
         Convert a time string to a GX real.
         
         :param str_val:  Date string
-        :param type:     `TIME_FORMAT`
+        :param type:     :ref:`TIME_FORMAT`
         :type  str_val:  str
         :type  type:     int
 
@@ -201,7 +201,7 @@ class GXSTR:
         :param ifile:  File name to extend
         :param ext:    Extension if "", extenstion and '.' are stripped.
         :param ofile:  Extended file name (can be same as input)
-        :param opt:    `FILE_EXT`
+        :param opt:    :ref:`FILE_EXT`
         :type  ifile:  str
         :type  ext:    str
         :type  ofile:  str_ref
@@ -221,7 +221,7 @@ class GXSTR:
         
         :param file:       File name
         :param file_part:  Destination string, can be same as input
-        :param part:       `STR_FILE_PART`
+        :param part:       :ref:`STR_FILE_PART`
         :type  file:       str
         :type  file_part:  str_ref
         :type  part:       int
@@ -305,7 +305,7 @@ class GXSTR:
         :param real:   Date value in decimal years to format
         :param buff:   Resulting string
         :param width:  Width of the field
-        :param type:   `DATE_FORMAT`
+        :param type:   :ref:`DATE_FORMAT`
         :type  real:   float
         :type  buff:   str_ref
         :type  width:  int
@@ -386,7 +386,7 @@ class GXSTR:
         
         :param real:   Value to format
         :param buff:   Resulting string
-        :param type:   `GS_FORMATS`
+        :param type:   :ref:`GS_FORMATS`
         :param width:  Width of the field
         :param dec:    Significant digits/decimals
         :type  real:   float
@@ -411,7 +411,7 @@ class GXSTR:
         :param buff:   Resulting string
         :param width:  Width of the field
         :param deci:   Decimals to format with
-        :param type:   `TIME_FORMAT`
+        :param type:   :ref:`TIME_FORMAT`
         :type  real:   float
         :type  buff:   str_ref
         :type  width:  int
@@ -435,7 +435,7 @@ class GXSTR:
         Convert/replace escape sequences in strings.
         
         :param str_val:  String to modify
-        :param opt:      `STR_ESCAPE`
+        :param opt:      :ref:`STR_ESCAPE`
         :type  str_val:  str_ref
         :type  opt:      int
 
@@ -516,7 +516,7 @@ class GXSTR:
         :param in_str:   String to justify
         :param out_str:  Result string, can be same as input
         :param width:    Justification width
-        :param just:     `STR_JUSTIFY`
+        :param just:     :ref:`STR_JUSTIFY`
         :type  in_str:   str
         :type  out_str:  str_ref
         :type  width:    int
@@ -659,7 +659,7 @@ class GXSTR:
         
         :param first:   String A
         :param second:  String B
-        :param mode:    `STR_CASE`
+        :param mode:    :ref:`STR_CASE`
         :type  first:   str
         :type  second:  str
         :type  mode:    int
@@ -845,7 +845,7 @@ class GXSTR:
         :param first:   String A
         :param second:  String B
         :param n_char:  Number of characters to compare
-        :param mode:    `STR_CASE`
+        :param mode:    :ref:`STR_CASE`
         :type  first:   str
         :type  second:  str
         :type  n_char:  int
@@ -870,7 +870,7 @@ class GXSTR:
         
         :param str_val:  String to scan
         :param sub:      String to look for
-        :param mode:     `STR_CASE`
+        :param mode:     :ref:`STR_CASE`
         :type  str_val:  str
         :type  sub:      str
         :type  mode:     int
@@ -1140,7 +1140,7 @@ class GXSTR:
         Remove leading and/or trailing whitespace.
         
         :param str_val:  String to trim
-        :param trim:     `STR_TRIM`
+        :param trim:     :ref:`STR_TRIM`
         :type  str_val:  str_ref
         :type  trim:     int
 

@@ -259,7 +259,7 @@ class GXPJ:
         :param x:    (X,Y) origin
         :param rot:  Coordinate Y relative to geographic N (deg azm)
         :param scl:  Scale to convert X,Y to m.
-        :param dir:  `PJ_RECT`
+        :param dir:  :ref:`PJ_RECT`
         :type  lon:  float
         :type  lat:  float
         :type  x:    float
@@ -295,7 +295,7 @@ class GXPJ:
         Get elevation correction method
         
 
-        :returns:    `PJ_ELEVATION`
+        :returns:    :ref:`PJ_ELEVATION`
         :rtype:      int
 
         .. versionadded:: 5.1

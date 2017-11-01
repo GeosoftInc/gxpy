@@ -102,7 +102,7 @@ class GXDXFI:
         :param pb_group:      TRUE to place entire DXF in one group
         :param group:         Group name for one group (can be "" if above is FALSE)
         :param pb_one_color:  TRUE to force one color
-        :param color:         `MVIEW_COLOR` (ignored if above is FALSE)
+        :param color:         :ref:`MVIEW_COLOR` (ignored if above is FALSE)
         :type  view:          GXMVIEW
         :type  max_pen:       int
         :type  pb_group:      int

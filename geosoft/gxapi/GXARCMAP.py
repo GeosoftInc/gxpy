@@ -187,7 +187,7 @@ class GXARCMAP:
         :param map:        Map File Name
         :param extra_csv:  Optional Extra Datasets CSV Filename (Rasters and shape files to display with layers)
         :param layer_tag:  Optional frame/layer tag (suffix)
-        :param flags:      Combination of `ARCMAP_LOAD_FLAGS`
+        :param flags:      Combination of :ref:`ARCMAP_LOAD_FLAGS`
         :type  map:        str
         :type  extra_csv:  str
         :type  layer_tag:  str
@@ -225,7 +225,7 @@ class GXARCMAP:
         :param view:       View Name
         :param extra_csv:  Optional Extra Datasets CSV Filename (Rasters and shape files to display with layers)
         :param layer_tag:  Optional frame/layer tag (suffix)
-        :param flags:      Combination of `ARCMAP_LOAD_FLAGS`
+        :param flags:      Combination of :ref:`ARCMAP_LOAD_FLAGS`
         :type  map:        str
         :type  view:       str
         :type  extra_csv:  str
@@ -319,16 +319,16 @@ class GXARCMAP:
         :param view:       View Name
         :param extra_csv:  Optional Extra Datasets CSV Filename (Rasters and shape files to display with layers)
         :param layer_tag:  Optional frame/layer tag (suffix)
-        :param fit:        Fit to map size; one of `GEO_BOOL`
-        :param activate:   Activate view (3D); one of `GEO_BOOL`
-        :param prefix:     Layer name tag is prefix; one of `GEO_BOOL`
+        :param fit:        Fit to map size
+        :param activate:   Activate view (3D)
+        :param prefix:     Layer name tag is prefix
         :type  map:        str
         :type  view:       str
         :type  extra_csv:  str
         :type  layer_tag:  str
         :type  fit:        int
-        :type  activate:   int
-        :type  prefix:     int
+        :type  activate:   bool
+        :type  prefix:     bool
 
         .. versionadded:: 8.0
 

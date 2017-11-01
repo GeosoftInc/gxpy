@@ -26,9 +26,9 @@ class GXIP:
     The following defines are used in GX code but are not
     part of any functions:
     
-    `IP_ARRAY`
-    `IP_CHANNELS`
-    `IP_LINES`
+    :ref:`IP_ARRAY`
+    :ref:`IP_CHANNELS`
+    :ref:`IP_LINES`
     """
 
     def __enter__(self):
@@ -110,7 +110,7 @@ class GXIP:
         Create a default job from scratch.
         
         :param ini:   File name of the INI file to create (forces correct suffix)
-        :param type:  `IP_PLOT`
+        :param type:  :ref:`IP_PLOT`
         :type  ini:   str
         :type  type:  int
 
@@ -207,15 +207,15 @@ class GXIP:
         :param chi_factor:           chifact
         :param obs:                  RES obs file
         :param topo:                 Topography file (required)
-        :param cond_selection:       Conductivity type `IP_UBC_CONTROL` FILE or VALUE
+        :param cond_selection:       Conductivity type :ref:`IP_UBC_CONTROL` FILE or VALUE
         :param cond:                 Conductivity file (can be "") or value
-        :param mesh_selection:       Mesh type `IP_UBC_CONTROL` FILE, VALUE or DEFAULT
+        :param mesh_selection:       Mesh type :ref:`IP_UBC_CONTROL` FILE, VALUE or DEFAULT
         :param mesh:                 Mesh file (can be "") or value
-        :param initial_selection:    Initial model type `IP_UBC_CONTROL` FILE, VALUE or DEFAULT
+        :param initial_selection:    Initial model type :ref:`IP_UBC_CONTROL` FILE, VALUE or DEFAULT
         :param initial:              Initial model file (can be "") or value
-        :param reference_selection:  Reference model type `IP_UBC_CONTROL` FILE, VALUE or DEFAULT
+        :param reference_selection:  Reference model type :ref:`IP_UBC_CONTROL` FILE, VALUE or DEFAULT
         :param ref_cond:             Reference model file (can be "") or value(
-        :param alphas_selection:     Alphas type `IP_UBC_CONTROL` FILE, VALUE, LENGTH or DEFAULT
+        :param alphas_selection:     Alphas type :ref:`IP_UBC_CONTROL` FILE, VALUE, LENGTH or DEFAULT
         :param alphas:               Alphas  file (can be ""), value or length
         :param wts:                  Weights file
         :type  control:              str
@@ -333,13 +333,13 @@ class GXIP:
         :param chi_factor:           chifact
         :param obs:                  RES obs file
         :param topo:                 Topography file (required)
-        :param mesh_selection:       Mesh type `IP_UBC_CONTROL` FILE, VALUE or DEFAULT
+        :param mesh_selection:       Mesh type :ref:`IP_UBC_CONTROL` FILE, VALUE or DEFAULT
         :param mesh:                 Mesh file (can be "") or value
-        :param initial_selection:    Initial model type `IP_UBC_CONTROL` FILE, VALUE or DEFAULT
+        :param initial_selection:    Initial model type :ref:`IP_UBC_CONTROL` FILE, VALUE or DEFAULT
         :param initial:              Initial model file (can be "") or value
-        :param reference_selection:  Reference model type `IP_UBC_CONTROL` FILE, VALUE or DEFAULT
+        :param reference_selection:  Reference model type :ref:`IP_UBC_CONTROL` FILE, VALUE or DEFAULT
         :param ref_cond:             Reference model file (can be "") or value(
-        :param alphas_selection:     Alphas type `IP_UBC_CONTROL` FILE, VALUE, LENGTH or DEFAULT
+        :param alphas_selection:     Alphas type :ref:`IP_UBC_CONTROL` FILE, VALUE, LENGTH or DEFAULT
         :param alphas:               Alphas  file (can be ""), value or length
         :param wts:                  Weights file
         :type  control:              str
@@ -493,7 +493,7 @@ class GXIP:
         Open a `GXIP <geosoft.gxapi.GXIP>` plotting job
         
         :param job:   Job file name
-        :param type:  Job type `IP_PLOT`
+        :param type:  Job type :ref:`IP_PLOT`
         :type  job:   str
         :type  type:  int
 
@@ -510,7 +510,7 @@ class GXIP:
         Save a `GXIP <geosoft.gxapi.GXIP>` plotting job
         
         :param job:   Job file name
-        :param type:  Job type  `IP_PLOT`
+        :param type:  Job type  :ref:`IP_PLOT`
         :type  job:   str
         :type  type:  int
 
@@ -610,7 +610,7 @@ class GXIP:
         :param db:       Database to export from
         :param chan:     Mask or reference channel (required)
         :param qc_chan:  QC channel (can be left blank)
-        :param out:      `IP_DUPLICATE`
+        :param out:      :ref:`IP_DUPLICATE`
         :type  db:       GXDB
         :type  chan:     str
         :type  qc_chan:  str
@@ -738,7 +738,7 @@ class GXIP:
         :param title:   Title for first line of file
         :param chan:    Channel to process
         :param suffix:  File suffix (type)
-        :param filter:  `IP_FILTER`
+        :param filter:  :ref:`IP_FILTER`
         :param wts:     The Fraser Filter weights
         :param stn1:    First Station position (`rDUMMY <geosoft.gxapi.rDUMMY>` for default)
         :param stn2:    Last Station position  (`rDUMMY <geosoft.gxapi.rDUMMY>` for default)
@@ -775,7 +775,7 @@ class GXIP:
         :param title:   Title for first line of file
         :param chan:    Channel to process
         :param suffix:  File suffix (type)
-        :param filter:  `IP_FILTER`
+        :param filter:  :ref:`IP_FILTER`
         :param wts:     The Fraser Filter weights
         :param stn1:    First Station position (`rDUMMY <geosoft.gxapi.rDUMMY>` for default)
         :param stn2:    Last Station position  (`rDUMMY <geosoft.gxapi.rDUMMY>` for default)
@@ -906,7 +906,7 @@ class GXIP:
         :type  db:    GXDB
         :type  chan:  str
 
-        :returns:     `IP_DOMAIN`
+        :returns:     :ref:`IP_DOMAIN`
         :rtype:       int
 
         .. versionadded:: 5.1.8
@@ -942,7 +942,7 @@ class GXIP:
         
         :param db:         Database
         :param chan:       Channel to check
-        :param domain:     `IP_DOMAIN`
+        :param domain:     :ref:`IP_DOMAIN`
         :param delay:      Delay or Base Frequency
         :param n_windows:  Number of time windows or frequencies
         :param vv:         Time windows or frequencies
@@ -967,7 +967,7 @@ class GXIP:
         
         :param db:         Database
         :param chan:       Channel to check
-        :param domain:     `IP_DOMAIN`
+        :param domain:     :ref:`IP_DOMAIN`
         :param delay:      Delay or Base Frequency
         :param n_windows:  Number of time windows or frequencies
         :param vv:         Time windows or frequencies
@@ -990,7 +990,7 @@ class GXIP:
         """
         Imports data from an `GXIP <geosoft.gxapi.GXIP>` instrument dump file.
         
-        :param ip_sys:     `IP_SYS`
+        :param ip_sys:     :ref:`IP_SYS`
         :param db:         `GXDB <geosoft.gxapi.GXDB>` Handle
         :param dump_file:  Dump file name
         :type  ip_sys:     int
@@ -1045,7 +1045,7 @@ class GXIP:
         :param ip_synth:   Image model synthetic `GXIP <geosoft.gxapi.GXIP>` channel (can be "")
         :param res_poly:   Resistivity (polygon) channel (can be "")
         :param ip_poly:    `GXIP <geosoft.gxapi.GXIP>` (polygon) channel (can be "")
-        :param mode:       `IP_I2XIMPMODE`
+        :param mode:       :ref:`IP_I2XIMPMODE`
         :type  db:         GXDB
         :type  file:       str
         :type  line:       str
@@ -1089,7 +1089,7 @@ class GXIP:
         :param ip_poly:    `GXIP <geosoft.gxapi.GXIP>` (polygon) channel (can be "")
         :param res_zonge:  Zonge Resistivity channel (can be "")
         :param ip_zonge:   Zonge `GXIP <geosoft.gxapi.GXIP>` channel (can be "")
-        :param mode:       `IP_I2XIMPMODE`
+        :param mode:       :ref:`IP_I2XIMPMODE`
         :type  db:         GXDB
         :type  file:       str
         :type  line:       str
@@ -1300,7 +1300,7 @@ class GXIP:
         :param db:     Database to import to
         :param file:   FLD file name
         :param line:   Line number (will be scaled if applicable)
-        :param scale:  `IP_STNSCALE`
+        :param scale:  :ref:`IP_STNSCALE`
         :param mult:   Line, station multiplier (for `IP_STNSCALE_VALUE <geosoft.gxapi.IP_STNSCALE_VALUE>`)
         :type  db:     GXDB
         :type  file:   str
@@ -1326,7 +1326,7 @@ class GXIP:
         
         :param db:     Database to import to
         :param file:   FLD file name
-        :param scale:  `IP_STNSCALE`
+        :param scale:  :ref:`IP_STNSCALE`
         :param mult:   Line, station multiplier (for `IP_STNSCALE_VALUE <geosoft.gxapi.IP_STNSCALE_VALUE>`)
         :type  db:     GXDB
         :type  file:   str
@@ -1492,7 +1492,7 @@ class GXIP:
         :param db:        `GXDB <geosoft.gxapi.GXDB>` object
         :param chan:      Channel to plot
         :param con_file:  "IPPLOT" INI file name
-        :param type:      `IP_STACK_TYPE`
+        :param type:      :ref:`IP_STACK_TYPE`
         :param map:       Map name to create
         :type  db:        GXDB
         :type  chan:      str
@@ -1515,7 +1515,7 @@ class GXIP:
         :param db:        `GXDB <geosoft.gxapi.GXDB>` object
         :param chan:      Channel to plot
         :param con_file:  "IPPLOT" INI file name
-        :param type:      `IP_STACK_TYPE`
+        :param type:      :ref:`IP_STACK_TYPE`
         :param map:       Map name to create
         :param dir:       Directory to create files
         :type  db:        GXDB
@@ -1772,7 +1772,7 @@ class GXIP:
         :type  db:    GXDB
         :type  line:  str
 
-        :returns:     `IP_ARRAY`
+        :returns:     :ref:`IP_ARRAY`
         :rtype:       int
 
         .. versionadded:: 8.1
@@ -1809,7 +1809,7 @@ class GXIP:
         Return the user's plot point convention for pole-dipole arrays.
         
 
-        :returns:    The user's PLDP plot point convention `IP_PLDP_CONV`
+        :returns:    The user's PLDP plot point convention :ref:`IP_PLDP_CONV`
         :rtype:      int
 
         .. versionadded:: 8.1
@@ -1924,7 +1924,7 @@ class GXIP:
         :param db:       `GXDB <geosoft.gxapi.GXDB>` object
         :param line:     Line name ("" for all selected lines)
         :param tx_rx:    Electrode type. 0:Tx, 1:Rx
-        :param qc_type:  QC channel type.  `IP_QCTYPE`
+        :param qc_type:  QC channel type.  :ref:`IP_QCTYPE`
         :param v_vx:     X locations
         :param v_vy:     Y locations
         :param v_vm:     QC channel values ("QC")
@@ -1953,7 +1953,7 @@ class GXIP:
         Get the QC channel handle, if it exists.
         
         :param db:       `GXDB <geosoft.gxapi.GXDB>` object
-        :param qc_type:  QC channel type.  `IP_QCTYPE`
+        :param qc_type:  QC channel type.  :ref:`IP_QCTYPE`
         :param chan:     String to place name into
         :type  db:       GXDB
         :type  qc_type:  int

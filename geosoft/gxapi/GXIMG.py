@@ -40,7 +40,7 @@ class GXIMG:
     -> creates a new grid file "mag.grd" compressed for size, numbers
     stored as 2-byte integers..
     
-    See `DAT_XGD`.DOC for information about file name decorations available
+    See :ref:`DAT_XGD`.DOC for information about file name decorations available
     for all `GXDAT <geosoft.gxapi.GXDAT>` types.
     
     Different grid types support different features.  For example, not all
@@ -133,7 +133,7 @@ class GXIMG:
         """
         Creates an `GXIMG <geosoft.gxapi.GXIMG>` not tied to a file at all
         
-        :param type:    Data type `GS_TYPES`
+        :param type:    Data type :ref:`GS_TYPES`
         :param kx:      Grid orientation (KX): 1 (rows in X) -1 (rows in Y)
         :param width:   Grid width
         :param height:  Grid height
@@ -161,9 +161,9 @@ class GXIMG:
         """
         Creates an Image object tied to a grid file.
         
-        :param type:  Data type, `GS_TYPES` or `GS_TYPE_DEFAULT <geosoft.gxapi.GS_TYPE_DEFAULT>` to use native `GXDAT <geosoft.gxapi.GXDAT>` type.
+        :param type:  Data type, :ref:`GS_TYPES` or `GS_TYPE_DEFAULT <geosoft.gxapi.GS_TYPE_DEFAULT>` to use native `GXDAT <geosoft.gxapi.GXDAT>` type.
         :param grid:  Name of the Grid to link to
-        :param mode:  Grid file open mode `IMG_FILE`
+        :param mode:  Grid file open mode :ref:`IMG_FILE`
         :type  type:  int
         :type  grid:  str
         :type  mode:  int
@@ -190,7 +190,7 @@ class GXIMG:
         """
         Creates an `GXIMG <geosoft.gxapi.GXIMG>` object that is backed only by memory.
         
-        :param type:    Data type, `GS_TYPES`
+        :param type:    Data type, :ref:`GS_TYPES`
         :param kx:      Grid orientation (KX): 1 (rows in X) -1 (rows in Y)
         :param width:   Grid width
         :param height:  Grid height
@@ -218,7 +218,7 @@ class GXIMG:
         """
         Creates an output image file using User defined info.
         
-        :param type:    Data type, `GS_TYPES` Cannot be `GS_TYPE_DEFAULT <geosoft.gxapi.GS_TYPE_DEFAULT>`
+        :param type:    Data type, :ref:`GS_TYPES` Cannot be `GS_TYPE_DEFAULT <geosoft.gxapi.GS_TYPE_DEFAULT>`
         :param kx:      Grid orientation (KX): 1 (rows in X) -1 (rows in Y)
         :param width:   Grid width
         :param height:  Grid height
@@ -259,7 +259,7 @@ class GXIMG:
         """
         Creates an output image file using input image info.
         
-        :param type:  Data type, `GS_TYPES` or `GS_TYPE_DEFAULT <geosoft.gxapi.GS_TYPE_DEFAULT>`
+        :param type:  Data type, :ref:`GS_TYPES` or `GS_TYPE_DEFAULT <geosoft.gxapi.GS_TYPE_DEFAULT>`
         :param grid:  Name of the Grid to link to
         :param img:   Input Image for new image creation
         :type  type:  int
@@ -557,9 +557,7 @@ class GXIMG:
         """
         Is this a Geosoft color grid?
         
-
-        :returns:    `GEO_BOOL`
-        :rtype:      int
+        :rtype:      bool
 
         .. versionadded:: 6.0.1
         """
@@ -575,9 +573,7 @@ class GXIMG:
         
         :param file:  File to check
         :type  file:  str
-
-        :returns:     `GEO_BOOL`
-        :rtype:       int
+        :rtype:       bool
 
         .. versionadded:: 8.0
         """
@@ -595,9 +591,7 @@ class GXIMG:
         :param err_msg:  Error message registered if unable to open
         :type  file:     str
         :type  err_msg:  str_ref
-
-        :returns:        `GEO_BOOL`
-        :rtype:          int
+        :rtype:          bool
 
         .. versionadded:: 8.0.1
         """
@@ -717,7 +711,7 @@ class GXIMG:
         """
         Query information about the `GXIMG <geosoft.gxapi.GXIMG>`
         
-        :param query:  `IMG_QUERY`
+        :param query:  :ref:`IMG_QUERY`
         :type  query:  int
 
         :returns:      Information requested, dummy if unknown or invalid.
@@ -928,7 +922,7 @@ class GXIMG:
         :param min_y:  Area Y minimum
         :param max_x:  Area X maximum
         :param max_y:  Area Y maximum
-        :param asp:    `IMG_RELOCATE`
+        :param asp:    :ref:`IMG_RELOCATE`
         :type  min_x:  float
         :type  min_y:  float
         :type  max_x:  float
@@ -1018,7 +1012,7 @@ class GXIMG:
         """
         Query information about the `GXIMG <geosoft.gxapi.GXIMG>`
         
-        :param query:  `IMG_QUERY`
+        :param query:  :ref:`IMG_QUERY`
         :type  query:  int
 
         :returns:      Information requested, dummy if unknown or invalid.

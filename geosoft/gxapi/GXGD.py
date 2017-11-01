@@ -64,7 +64,7 @@ class GXGD:
         This method creates a `GXGD <geosoft.gxapi.GXGD>` object.
         
         :param name:  Name of the Grid File
-        :param type:  `GD_STATUS`
+        :param type:  :ref:`GD_STATUS`
         :type  name:  str
         :type  type:  int
 

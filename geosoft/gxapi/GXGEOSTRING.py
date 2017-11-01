@@ -66,7 +66,7 @@ class GXGEOSTRING:
         Open a Geostring file
         
         :param geostring_file:  Geostring file name
-        :param mode:            `GEOSTRING_OPEN`
+        :param mode:            :ref:`GEOSTRING_OPEN`
         :type  geostring_file:  str
         :type  mode:            int
 
@@ -211,7 +211,7 @@ class GXGEOSTRING:
         :param guid:            Feature GUID
         :param name:            Name
         :param description:     Description
-        :param polygon:         `GEO_BOOL` indicating if feature is decribed by polygons (shapes are polylines if not set)
+        :param polygon:         Indicates if feature is described by polygons (shapes are polylines if not set)
         :param pat_number:      The fill pattern number (see `GXMVIEW.pat_number <geosoft.gxapi.GXMVIEW.pat_number>`)
         :param pat_size:        The fill pattern size (see `GXMVIEW.pat_size <geosoft.gxapi.GXMVIEW.pat_size>`)
         :param pat_thick:       The fill pattern thickness (see `GXMVIEW.pat_thick <geosoft.gxapi.GXMVIEW.pat_thick>`)
@@ -225,7 +225,7 @@ class GXGEOSTRING:
         :type  guid:            str
         :type  name:            str_ref
         :type  description:     str_ref
-        :type  polygon:         int_ref
+        :type  polygon:         bool_ref
         :type  pat_number:      int_ref
         :type  pat_size:        float_ref
         :type  pat_thick:       float_ref
@@ -252,7 +252,7 @@ class GXGEOSTRING:
         :param guid:            Section GUID
         :param name:            Name
         :param container_name:  ContainerName
-        :param orientation:     `SECTION_ORIENTATION`
+        :param orientation:     :ref:`SECTION_ORIENTATION`
         :param easting:         Easting
         :param northing:        Northing
         :param elevation:       Elevation

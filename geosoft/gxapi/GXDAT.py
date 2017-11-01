@@ -95,7 +95,7 @@ class GXDAT:
         Create a handle to a grid file `GXDAT <geosoft.gxapi.GXDAT>` object
         
         :param name:  Name of grid file to associate `GXDAT <geosoft.gxapi.GXDAT>` with
-        :param mode:  `DAT_XGD`
+        :param mode:  :ref:`DAT_XGD`
         :type  name:  str
         :type  mode:  int
 
@@ -118,8 +118,8 @@ class GXDAT:
         
         :param lst:        `GXLST <geosoft.gxapi.GXLST>` object to populate
         :param interface:  `GXDAT <geosoft.gxapi.GXDAT>` interface name ("XGD" only support option currently)
-        :param flags:      `DAT_FILE`
-        :param mode:       `DAT_FILE_FORM`
+        :param flags:      :ref:`DAT_FILE`
+        :param mode:       :ref:`DAT_FILE_FORM`
         :type  lst:        GXLST
         :type  interface:  str
         :type  flags:      int

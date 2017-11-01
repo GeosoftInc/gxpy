@@ -136,8 +136,8 @@ class GXLTB:
         Creates a `GXLTB <geosoft.gxapi.GXLTB>` object from a file.
         
         :param file:   File name, .csv assumed, searched locally then in GEOSOFT.
-        :param type:   `LTB_TYPE`
-        :param delim:  `LTB_DELIM`
+        :param type:   :ref:`LTB_TYPE`
+        :param delim:  :ref:`LTB_DELIM`
         :param key:    Key to find if only one record required, "" to read entire table.
         :type  file:   str
         :type  type:   int
@@ -165,11 +165,11 @@ class GXLTB:
         Creates a `GXLTB <geosoft.gxapi.GXLTB>` object from an encrypted file.
         
         :param file:   File name, .csv assumed, searched locally then in GEOSOFT.
-        :param type:   `LTB_TYPE`
-        :param delim:  `LTB_DELIM`
-        :param case:   `LTB_CASE`
+        :param type:   :ref:`LTB_TYPE`
+        :param delim:  :ref:`LTB_DELIM`
+        :param case:   :ref:`LTB_CASE`
         :param key:    Key to find if only one record required, "" to read entire table.
-        :param crypt:  Decryption Key `SYS_CRYPT_KEY`
+        :param crypt:  Decryption Key :ref:`SYS_CRYPT_KEY`
         :type  file:   str
         :type  type:   int
         :type  delim:  int
@@ -198,9 +198,9 @@ class GXLTB:
         Creates a `GXLTB <geosoft.gxapi.GXLTB>` object from a file.
         
         :param file:   File name, .csv assumed, searched locally then in GEOSOFT.
-        :param type:   `LTB_TYPE`
-        :param delim:  `LTB_DELIM`
-        :param case:   `LTB_CASE`
+        :param type:   :ref:`LTB_TYPE`
+        :param delim:  :ref:`LTB_DELIM`
+        :param case:   :ref:`LTB_CASE`
         :param key:    Key to find if only one record required, "" to read entire table.
         :type  file:   str
         :type  type:   int
@@ -252,7 +252,7 @@ class GXLTB:
         
         :param fld:         Field
         :param match:       String to match to field, must be lower-case
-        :param match_type:  `LTB_CONLST`
+        :param match_type:  :ref:`LTB_CONLST`
         :param lst:         List to populate
         :type  fld:         int
         :type  match:       str
@@ -582,7 +582,7 @@ class GXLTB:
         Save `GXLTB <geosoft.gxapi.GXLTB>` to a new file using encryption
         
         :param file:   File name, .csv assumed.  If "", save to original file.
-        :param crypt:  Encryption key  `SYS_CRYPT_KEY`
+        :param crypt:  Encryption key  :ref:`SYS_CRYPT_KEY`
         :type  file:   str
         :type  crypt:  str
 

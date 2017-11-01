@@ -87,7 +87,7 @@ class GXSHP:
         Create a new `GXSHP <geosoft.gxapi.GXSHP>` object
         
         :param name:  File name
-        :param type:  `SHP_GEOM_TYPE`
+        :param type:  :ref:`SHP_GEOM_TYPE`
         :type  name:  str
         :type  type:  int
 
@@ -268,7 +268,7 @@ class GXSHP:
         Get the `GXSHP <geosoft.gxapi.GXSHP>` object's geometry type.
         
 
-        :returns:    The `GXSHP <geosoft.gxapi.GXSHP>` object's geometry type (`SHP_GEOM_TYPE`)
+        :returns:    The `GXSHP <geosoft.gxapi.GXSHP>` object's geometry type (:ref:`SHP_GEOM_TYPE`)
         :rtype:      int
 
         .. versionadded:: 7.2
@@ -436,10 +436,10 @@ class GXSHP:
         
         :param vv_x:       X locations
         :param vv_y:       Y locations
-        :param inclusive:  `GEO_BOOL` `GS_TRUE <geosoft.gxapi.GS_TRUE>` for outer ring polygon (inclusive/island), `GS_FALSE <geosoft.gxapi.GS_FALSE>` for inner ring (exclusive/hole)
+        :param inclusive:  ``True`` for outer ring polygon (inclusive/island), ``False` for inner ring (exclusive/hole)
         :type  vv_x:       GXVV
         :type  vv_y:       GXVV
-        :type  inclusive:  int
+        :type  inclusive:  bool
 
         .. versionadded:: 6.3
 
@@ -460,7 +460,7 @@ class GXSHP:
         :param vv_x:       X locations
         :param vv_y:       Y locations
         :param vv_z:       Z locations
-        :param inclusive:  `GEO_BOOL` `GS_TRUE <geosoft.gxapi.GS_TRUE>` for outer ring polygon (inclusive/island), `GS_FALSE <geosoft.gxapi.GS_FALSE>` for inner ring (exclusive/hole)
+        :param inclusive:  ``True`` for outer ring polygon (inclusive/island), ``False` for inner ring (exclusive/hole)
         :type  vv_x:       GXVV
         :type  vv_y:       GXVV
         :type  vv_z:       GXVV

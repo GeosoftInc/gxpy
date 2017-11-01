@@ -515,7 +515,7 @@ class GXSYS:
         
         :param command:  Command name
         :param args:     Command line arguments
-        :param process:  Flags `SYS_RUN_TYPE` `SYS_RUN_DISPLAY` `SYS_RUN_HOLD` `SYS_RUN_WIN`
+        :param process:  Flags :ref:`SYS_RUN_TYPE` :ref:`SYS_RUN_DISPLAY` :ref:`SYS_RUN_HOLD` :ref:`SYS_RUN_WIN`
         :type  command:  str
         :type  args:     str
         :type  process:  int
@@ -660,7 +660,7 @@ class GXSYS:
         :param file:        File
         :param parameters:  Parameters
         :param directory:   Directory
-        :param show:        `SHELL_EXECUTE`
+        :param show:        :ref:`SHELL_EXECUTE`
         :type  verb:        str
         :type  file:        str
         :type  parameters:  str
@@ -1172,9 +1172,7 @@ class GXSYS:
         
         :param file:  File path name to check
         :type  file:  str
-
-        :returns:     `GEO_BOOL`
-        :rtype:       int
+        :rtype:       bool
 
         .. versionadded:: 6.2
         """
@@ -1189,7 +1187,7 @@ class GXSYS:
         Get full path for a file with Geosoft subdirectory parameter.
         
         :param file:      File to get path name for
-        :param mode:      `SYS_SEARCH_PATH`
+        :param mode:      :ref:`SYS_SEARCH_PATH`
         :param fullname:  Buffer to place path name into
         :type  file:      str
         :type  mode:      int
@@ -1226,8 +1224,8 @@ class GXSYS:
         Get full path for a file.
         
         :param file:      File to get path name for
-        :param mode:      `SYS_SEARCH_PATH`
-        :param dir_mode:  `GEO_DIRECTORY`
+        :param mode:      :ref:`SYS_SEARCH_PATH`
+        :param dir_mode:  :ref:`GEO_DIRECTORY`
         :param fullname:  Buffer to place path name into
         :type  file:      str
         :type  mode:      int
@@ -1264,7 +1262,7 @@ class GXSYS:
         """
         Get a directory path
         
-        :param sys_dir:  `SYS_DIR`
+        :param sys_dir:  :ref:`SYS_DIR`
         :param dir:      Returned directory path string
         :type  sys_dir:  int
         :type  dir:      str_ref
@@ -1285,7 +1283,7 @@ class GXSYS:
         """
         Get a Geosoft path
         
-        :param type:  `SYS_PATH`
+        :param type:  :ref:`SYS_PATH`
         :param path:  String in which to place path
         :type  type:  int
         :type  path:  str_ref
@@ -1786,7 +1784,7 @@ class GXSYS:
         :param version:  Version String
         :type  version:  str_ref
 
-        :returns:        `ARC_LICENSE`
+        :returns:        :ref:`ARC_LICENSE`
         :rtype:          int
 
         .. versionadded:: 9.0
@@ -1898,7 +1896,7 @@ class GXSYS:
         """
         Add a source to the current lineage object
         
-        :param source_type:  `SYS_LINEAGE_SOURCE`
+        :param source_type:  :ref:`SYS_LINEAGE_SOURCE`
         :param source_name:  Source Name
         :type  source_type:  int
         :type  source_name:  str
@@ -2104,7 +2102,7 @@ class GXSYS:
         """
         Clear all menus
         
-        :param flag:  `SYS_MENU_CLEAR`
+        :param flag:  :ref:`SYS_MENU_CLEAR`
         :type  flag:  int
 
         .. versionadded:: 5.0
@@ -2295,7 +2293,7 @@ class GXSYS:
         List all Windows and geosoft fonts.
         
         :param lst:    List Object
-        :param which:  `SYS_FONT`
+        :param which:  :ref:`SYS_FONT`
         :type  lst:    GXLST
         :type  which:  int
 
@@ -3097,7 +3095,7 @@ class GXSYS:
         """
         Get system information
         
-        :param sys_info:  `SYS_INFO`
+        :param sys_info:  :ref:`SYS_INFO`
         :param info:      Returned setting
         :type  sys_info:  int
         :type  info:      str_ref
@@ -3114,7 +3112,7 @@ class GXSYS:
         """
         Get a registry value
         
-        :param domain:   `REG_DOMAIN`
+        :param domain:   :ref:`REG_DOMAIN`
         :param key:      Key to set
         :param sub_key:  Value name within key
         :param value:    String for value data
@@ -3139,7 +3137,7 @@ class GXSYS:
         """
         Delete a registry value
         
-        :param domain:  `REG_DOMAIN`
+        :param domain:  :ref:`REG_DOMAIN`
         :param key:     Key to delete
         :type  domain:  int
         :type  key:     str
@@ -3164,7 +3162,7 @@ class GXSYS:
         """
         Delete a registry value
         
-        :param domain:      `REG_DOMAIN`
+        :param domain:      :ref:`REG_DOMAIN`
         :param key:         Key
         :param value_name:  Name of value to delete
         :type  domain:      int
@@ -3187,7 +3185,7 @@ class GXSYS:
         """
         Set/create a registry value
         
-        :param domain:   `REG_DOMAIN`
+        :param domain:   :ref:`REG_DOMAIN`
         :param key:      Key to set
         :param sub_key:  Name of Subkey within key
         :param value:    Value for Subkey
@@ -3529,11 +3527,11 @@ class GXSYS:
         :param title:                    Title
         :param main_instruction:         Main instruction (empty string for none)
         :param content:                  Content (empty string for none)
-        :param common_buttons:           Common Buttons, one of `TD_BUTTON`
+        :param common_buttons:           Common Buttons, one of :ref:`TD_BUTTON`
         :param custom_button_lst:        Optional `GXLST <geosoft.gxapi.GXLST>` of custom buttons. Name in `GXLST <geosoft.gxapi.GXLST>` will be used for button text, while value should be an int to return. Pass (`GXLST <geosoft.gxapi.GXLST>`)0 to only use standard button flags.
-        :param icon:                     Icon `TD_ICON`
+        :param icon:                     Icon :ref:`TD_ICON`
         :param footer:                   Footer (empty string for none)
-        :param footer_icon:              Footer Icon `TD_ICON`
+        :param footer_icon:              Footer Icon :ref:`TD_ICON`
         :param verification_check_text:  Verification checkbox text (empty string for none)
         :param verification_checked:     Verification checkbox checked (in/out)
         :param expanded_information:     Expanded information (empty string for none)
@@ -3553,7 +3551,7 @@ class GXSYS:
         :type  collapsed_control_text:   str
         :type  expanded_control_text:    str
 
-        :returns:                        Button ID. One of `TD_ID` or the int value from `GXLST <geosoft.gxapi.GXLST>` of custom buttons.
+        :returns:                        Button ID. One of :ref:`TD_ID` or the int value from `GXLST <geosoft.gxapi.GXLST>` of custom buttons.
         :rtype:                          int
 
         .. versionadded:: 9.3
@@ -3778,7 +3776,7 @@ class GXSYS:
         
         :param input:   Input string for encryption.
         :param output:  Output buffer for encrypted result.
-        :param key:     `SYS_ENCRYPTION_KEY`
+        :param key:     :ref:`SYS_ENCRYPTION_KEY`
         :type  input:   str
         :type  output:  str_ref
         :type  key:     int
@@ -3797,7 +3795,7 @@ class GXSYS:
         
         :param input:   Input string for decryption.
         :param output:  Output buffer for decrypted result.
-        :param key:     `SYS_ENCRYPTION_KEY`
+        :param key:     :ref:`SYS_ENCRYPTION_KEY`
         :type  input:   str
         :type  output:  str_ref
         :type  key:     int

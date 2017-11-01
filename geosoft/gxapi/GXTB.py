@@ -65,7 +65,7 @@ class GXTB:
         """
         Set the search mode of a table.
         
-        :param mode:  `TB_SEARCH`
+        :param mode:  :ref:`TB_SEARCH`
         :type  mode:  int
 
         .. versionadded:: 5.0
@@ -195,7 +195,7 @@ class GXTB:
         :param col:  Column of element to Get
         :type  col:  int
 
-        :returns:    `DB_CATEGORY_CHAN`
+        :returns:    :ref:`DB_CATEGORY_CHAN`
         :rtype:      int
 
         .. versionadded:: 5.0.1
@@ -249,7 +249,7 @@ class GXTB:
         :param col:  Column of element to Get
         :type  col:  int
 
-        :returns:    `DB_CHAN_FORMAT`
+        :returns:    :ref:`DB_CHAN_FORMAT`
         :rtype:      int
 
         .. versionadded:: 5.0.1

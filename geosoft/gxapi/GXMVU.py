@@ -68,9 +68,9 @@ class GXMVU:
         :param hy:     Head Y location
         :param tx:     Tail X location
         :param ty:     Tail Y location
-        :param ratio:  See `MVU_ARROW` definitions for explanation
+        :param ratio:  See :ref:`MVU_ARROW` definitions for explanation
         :param angle:  Angle of barbs with respect to the tail in degrees.
-        :param type:   `MVU_ARROW`
+        :param type:   :ref:`MVU_ARROW`
         :type  mview:  GXMVIEW
         :type  hx:     float
         :type  hy:     float
@@ -98,10 +98,10 @@ class GXMVU:
         :param vv_dx:      X Vector value (can be negative)
         :param vv_dy:      Y Vector value (can be negative)
         :param scale:      Scaling (units/mm)
-        :param pos:        `MVU_VPOS`
-        :param size:       `MVU_VSIZE`
-        :param style:      `MVU_VSTYLE`
-        :param point:      `MVU_VPOINT`
+        :param pos:        :ref:`MVU_VPOS`
+        :param size:       :ref:`MVU_VSIZE`
+        :param style:      :ref:`MVU_VSTYLE`
+        :param point:      :ref:`MVU_VPOINT`
         :param thickness:  Line thickness (can be Dummy)
         :type  mview:      GXMVIEW
         :type  vv_x:       GXVV
@@ -150,7 +150,7 @@ class GXMVU:
         :param bar_txt_size:  Text size for overall title
         :param bar_width:     Bar width in mm
         :param dist_fid:      Distance based (1) or fiducial based (0)
-        :param label:         `BARCHART_LABEL`
+        :param label:         :ref:`BARCHART_LABEL`
         :param tick:          Draw ticks along X axis (1) or not (0)
         :param right_axis:    Draw right vertical axis (1) or not
         :param top_axis:      Draw top horizontal axis (1)
@@ -347,7 +347,7 @@ class GXMVU:
         :param width:    Box width
         :param x:        X location (bottom left corner of color boxes)
         :param y:        Y location
-        :param style:    `COLORBAR_STYLE`
+        :param style:    :ref:`COLORBAR_STYLE`
         :type  mview:    GXMVIEW
         :type  itr:      GXITR
         :type  itr2:     GXITR
@@ -384,7 +384,7 @@ class GXMVU:
         :param height:        Box height in mm
         :param x:             X location (bottom left corner of color boxes) in mm
         :param y:             Y location in mm
-        :param label_orient:  `COLORBAR_LABEL`
+        :param label_orient:  :ref:`COLORBAR_LABEL`
         :type  mview:         GXMVIEW
         :type  itr:           GXITR
         :type  decimal:       int
@@ -426,7 +426,7 @@ class GXMVU:
         :param width:         Box width
         :param x:             X location (bottom left corner of color boxes)
         :param y:             Y location
-        :param label_orient:  `COLORBAR_LABEL`
+        :param label_orient:  :ref:`COLORBAR_LABEL`
         :type  mview:         GXMVIEW
         :type  itr:           GXITR
         :type  itr2:          GXITR
@@ -463,8 +463,8 @@ class GXMVU:
         :param width:         Box width
         :param x:             X location (bottom left corner of color boxes)
         :param y:             Y location
-        :param style:         `COLORBAR_STYLE`
-        :param label_orient:  `COLORBAR_LABEL`
+        :param style:         :ref:`COLORBAR_STYLE`
+        :param label_orient:  :ref:`COLORBAR_LABEL`
         :type  mview:         GXMVIEW
         :type  itr:           GXITR
         :type  itr2:          GXITR
@@ -502,8 +502,8 @@ class GXMVU:
         :param width:         Box width
         :param x:             X location (bottom left corner of color boxes)
         :param y:             Y location
-        :param style:         `COLORBAR_STYLE`
-        :param label_orient:  `COLORBAR_LABEL`
+        :param style:         :ref:`COLORBAR_STYLE`
+        :param label_orient:  :ref:`COLORBAR_LABEL`
         :type  mview:         GXMVIEW
         :type  itr:           GXITR
         :type  decimal:       int
@@ -535,7 +535,7 @@ class GXMVU:
         :param width:    Box width
         :param x:        X location (bottom left corner of color boxes)
         :param y:        Y location
-        :param style:    `COLORBAR_STYLE`
+        :param style:    :ref:`COLORBAR_STYLE`
         :type  mview:    GXMVIEW
         :type  itr:      GXITR
         :type  decimal:  int
@@ -752,7 +752,7 @@ class GXMVU:
         :param vv_y:   Y `GXVV <geosoft.gxapi.GXVV>`
         :param size:   Arrow size in mm
         :param loc:    Location to draw in mm - can be X or Y depending on next parameter
-        :param align:  `ARROW_ALIGNMENT`
+        :param align:  :ref:`ARROW_ALIGNMENT`
         :type  mview:  GXMVIEW
         :type  vv_x:   GXVV
         :type  vv_y:   GXVV
@@ -784,7 +784,7 @@ class GXMVU:
         :param size_y:              Plot Y size
         :param coil_sep:            Coil Separation (m)
         :param coil_frequency:      Coil Frequency (Hz)
-        :param coil_configuration:  `EMLAY_GEOMETRY`
+        :param coil_configuration:  :ref:`EMLAY_GEOMETRY`
         :param r:                   Inverted or current resistivity
         :param h:                   Inverted or current height
         :param i:                   In-phase datum
@@ -934,7 +934,7 @@ class GXMVU:
         :param vv_x:    X
         :param vv_y:    Y
         :param line:    Line label
-        :param locate:  `MVU_FLIGHT_LOCATE`
+        :param locate:  :ref:`MVU_FLIGHT_LOCATE`
         :param vangle:  Lines steeper than this angle are considered vertical and the up label direction is used.
         :param up:      Up label direction:   1 up is right, -1 up is left
         :param loff:    Along line label offset in mm.
@@ -1408,8 +1408,8 @@ class GXMVU:
         :type  marg_ymax:  float
         :type  inside:     float
 
-        :returns:          `GEO_BOOL` TRUE if the parameters are good.
-        :rtype:            int
+        :returns:          ``True`` if the parameters are good.
+        :rtype:            bool
 
         .. versionadded:: 6.3
 
@@ -1459,8 +1459,8 @@ class GXMVU:
         :type  marg_ymax:  float
         :type  inside:     float
 
-        :returns:          `GEO_BOOL` TRUE if the parameters are good.
-        :rtype:            int
+        :returns:          ``True`` if the parameters are good.
+        :rtype:            bool
 
         .. versionadded:: 8.3
 
@@ -1696,7 +1696,7 @@ class GXMVU:
         :param vv_x:    X
         :param vv_y:    Y
         :param line:    Line label
-        :param locate:  `MVU_FLIGHT_LOCATE`
+        :param locate:  :ref:`MVU_FLIGHT_LOCATE`
         :param vangle:  Lines steeper than this angle are considered vertical and the up label direction is used.
         :param up:      Up label direction:   1 up is right -1 up is left
         :param loff:    Along line label offset in mm.
@@ -1738,8 +1738,8 @@ class GXMVU:
         :param vv_x:     X
         :param vv_y:     Y
         :param line:     Line label
-        :param locate:   `MVU_FLIGHT_LOCATE`
-        :param compass:  `MVU_FLIGHT_COMPASS`
+        :param locate:   :ref:`MVU_FLIGHT_LOCATE`
+        :param compass:  :ref:`MVU_FLIGHT_COMPASS`
         :param vangle:   Lines steeper than this angle are considered vertical and the up label direction is used.
         :param up:       Up label direction:   1 up is right -1 up is left
         :param loff:     Along line label offset in mm.
@@ -1781,14 +1781,14 @@ class GXMVU:
         :param vv_x:     X
         :param vv_y:     Y
         :param line:     Line label
-        :param locate:   `MVU_FLIGHT_LOCATE`
-        :param compass:  `MVU_FLIGHT_COMPASS`
+        :param locate:   :ref:`MVU_FLIGHT_LOCATE`
+        :param compass:  :ref:`MVU_FLIGHT_COMPASS`
         :param vangle:   Lines steeper than this angle are considered vertical and the up label direction is used.
         :param up:       Up label direction:   1 up is right -1 up is left
         :param loff:     Along line label offset in mm.
         :param voff:     Perpendicular label offset mm.
         :param gap:      Maximum gap before breaking line, 0.0 for no breaks.
-        :param dummies:  `MVU_FLIGHT_DUMMIES`
+        :param dummies:  :ref:`MVU_FLIGHT_DUMMIES`
         :type  mview:    GXMVIEW
         :type  vv_x:     GXVV
         :type  vv_y:     GXVV
@@ -1890,8 +1890,8 @@ class GXMVU:
         
         :param mview:         View
         :param vox:           Voxel model
-        :param method:        `MVU_VOX_SURFACE_METHOD`
-        :param option:        `MVU_VOX_SURFACE_OPTION`
+        :param method:        :ref:`MVU_VOX_SURFACE_METHOD`
+        :param option:        :ref:`MVU_VOX_SURFACE_OPTION`
         :param min_value:     TODO
         :param max_value:     TODO
         :param col:           Drawing color
@@ -1929,7 +1929,7 @@ class GXMVU:
         :param vv_x:      X locations
         :param vv_y:      Y locations
         :param vv_z:      Values to post
-        :param dummy:     Do not plot dummy values? `GEO_BOOL`
+        :param dummy:     Do not plot dummy values?
         :param size:      Numb Size
         :param format:    Format
         :param decimals:  Decimals
@@ -1939,7 +1939,7 @@ class GXMVU:
         :type  vv_x:      GXVV
         :type  vv_y:      GXVV
         :type  vv_z:      GXVV
-        :type  dummy:     int
+        :type  dummy:     bool
         :type  size:      int
         :type  format:    int
         :type  decimals:  int
@@ -1963,7 +1963,7 @@ class GXMVU:
         :param vv_y:        Y locations
         :param vv_z:        Values to post
         :param vv_s:        Station
-        :param dummy:       Do not plot dummy values? `GEO_BOOL`
+        :param dummy:       Do not plot dummy values?
         :param base:        Base to remove, default is 0.0
         :param min_detect:  Detection limit, can be `GS_R8DM <geosoft.gxapi.GS_R8DM>`
         :param size:        Numb Size
@@ -1983,7 +1983,7 @@ class GXMVU:
         :type  vv_y:        GXVV
         :type  vv_z:        GXVV
         :type  vv_s:        GXVV
-        :type  dummy:       int
+        :type  dummy:       bool
         :type  base:        float
         :type  min_detect:  float
         :type  size:        int
@@ -2259,7 +2259,7 @@ class GXMVU:
         :param ymax:   Max Y
         :param text:   Text
         :param space:  Line spacing (1.2 good)
-        :param type:   `MVU_TEXTBOX`
+        :param type:   :ref:`MVU_TEXTBOX`
         :type  mview:  GXMVIEW
         :type  xmin:   float
         :type  ymin:   float

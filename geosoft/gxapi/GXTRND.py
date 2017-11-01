@@ -71,7 +71,7 @@ class GXTRND:
         :param v_vym:   Y MaxMin (returned)
         :param v_vzm:   Data MaxMin (returned)
         :param window:  MaxMin Window
-        :param trnd:    `TRND_NODE`
+        :param trnd:    :ref:`TRND_NODE`
         :type  vv_x:    GXVV
         :type  vv_y:    GXVV
         :type  vv_z:    GXVV
@@ -102,7 +102,7 @@ class GXTRND:
         :param window:      MaxMin Window
         :param max_length:  Maximum join length
         :param mesh_vv:     `GXVV <geosoft.gxapi.GXVV>` of type GS_D2POINT (returned)
-        :param trnd:        `TRND_NODE`
+        :param trnd:        :ref:`TRND_NODE`
         :type  db:          GXDB
         :type  chan:        str
         :type  window:      float

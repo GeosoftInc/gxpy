@@ -89,7 +89,7 @@ class GXDB:
         The database is opened in ReadWrite Mode.
         
         :param file:   Name of the Database File to Create
-        :param level:  `DB_COMP`
+        :param level:  :ref:`DB_COMP`
         :type  file:   str
         :type  level:  int
 
@@ -496,7 +496,7 @@ class GXDB:
 
         **Note:**
 
-        The returned format is one of the `DB_CHAN_FORMAT`.
+        The returned format is one of the :ref:`DB_CHAN_FORMAT`.
         The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
         ret_val = self._wrapper.get_chan_format(chan)
@@ -586,7 +586,7 @@ class GXDB:
         :param chan:  Channel handle
         :type  chan:  int
 
-        :returns:     `DB_CHAN_PROTECTION`
+        :returns:     :ref:`DB_CHAN_PROTECTION`
         :rtype:       int
 
         .. versionadded:: 6.0.1
@@ -616,7 +616,7 @@ class GXDB:
 
         **Note:**
 
-        The type returned is one of the `DB_CATEGORY_CHAN`.
+        The type returned is one of the :ref:`DB_CATEGORY_CHAN`.
         Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL
         or string types.
         The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
@@ -677,7 +677,7 @@ class GXDB:
         """
         Gets a name from the database.
         
-        :param name:      `DB_NAME`
+        :param name:      :ref:`DB_NAME`
         :param psz_name:  Name returned
         :type  name:      int
         :type  psz_name:  str_ref
@@ -774,7 +774,7 @@ class GXDB:
         :type  chan:  str
         :type  pair:  str_ref
 
-        :returns:     `DB_COORDPAIR`
+        :returns:     :ref:`DB_COORDPAIR`
         :rtype:       int
 
         .. versionadded:: 5.0
@@ -984,7 +984,7 @@ class GXDB:
         """
         This method sets all the channels' read-only protection status.
         
-        :param prot:  `DB_CHAN_PROTECTION`
+        :param prot:  :ref:`DB_CHAN_PROTECTION`
         :type  prot:  int
 
         .. versionadded:: 7.0
@@ -1053,7 +1053,7 @@ class GXDB:
         This method sets a channel's display format.
         
         :param chan:    Channel handle
-        :param format:  `DB_CHAN_FORMAT`
+        :param format:  :ref:`DB_CHAN_FORMAT`
         :type  chan:    int
         :type  format:  int
 
@@ -1145,7 +1145,7 @@ class GXDB:
         status.
         
         :param chan:  Channel handle
-        :param prot:  `DB_CHAN_PROTECTION`
+        :param prot:  :ref:`DB_CHAN_PROTECTION`
         :type  chan:  int
         :type  prot:  int
 
@@ -1448,7 +1448,7 @@ class GXDB:
         :param super:     Name of the Super User       "SUPER"
         :param password:  Password of the Super User   ""
         :param page:      Page Size Must be (64,128,256,512,1024,2048,4096) normally 1024
-        :param level:     `DB_COMP`
+        :param level:     :ref:`DB_COMP`
         :type  file:      str
         :type  lines:     int
         :type  chans:     int
@@ -1577,9 +1577,7 @@ class GXDB:
         :type  file:      str
         :type  user:      str
         :type  password:  str
-
-        :returns:         `GEO_BOOL`
-        :rtype:           int
+        :rtype:           bool
 
         .. versionadded:: 6.1
 
@@ -1608,9 +1606,7 @@ class GXDB:
         :type  file:      str
         :type  user:      str
         :type  password:  str
-
-        :returns:         `GEO_BOOL`
-        :rtype:           int
+        :rtype:           bool
 
         .. versionadded:: 6.4.2
 
@@ -1982,7 +1978,7 @@ class GXDB:
         Set the selection status for a line.
         
         :param line:  Handle of line to select/deselect
-        :param mode:  `DB_LINE_SELECT`
+        :param mode:  :ref:`DB_LINE_SELECT`
         :type  line:  int
         :type  mode:  int
 
@@ -2001,7 +1997,7 @@ class GXDB:
         :param line:  Line handle
         :type  line:  int
 
-        :returns:     One of `DB_LINE_SELECT`
+        :returns:     One of :ref:`DB_LINE_SELECT`
         :rtype:       int
 
         .. versionadded:: 9.0
@@ -2176,7 +2172,7 @@ class GXDB:
         :param line:  Line handle to look at
         :type  line:  int
 
-        :returns:     `DB_CATEGORY_LINE` or `iDUMMY <geosoft.gxapi.iDUMMY>`.
+        :returns:     :ref:`DB_CATEGORY_LINE` or `iDUMMY <geosoft.gxapi.iDUMMY>`.
         :rtype:       int
 
         .. versionadded:: 5.0
@@ -2219,7 +2215,7 @@ class GXDB:
         
         :param line:    Line symbol
         :param label:   String in which to place label
-        :param format:  `DB_LINE_LABEL_FORMAT`
+        :param format:  :ref:`DB_LINE_LABEL_FORMAT`
         :type  line:    int
         :type  label:   str_ref
         :type  format:  int
@@ -2296,7 +2292,7 @@ class GXDB:
         :param line:  Line handle to look at
         :type  line:  int
 
-        :returns:     `DB_LINE_TYPE`
+        :returns:     :ref:`DB_LINE_TYPE`
         :rtype:       int
 
         .. versionadded:: 5.0
@@ -2500,7 +2496,7 @@ class GXDB:
         Select/deselect lines based on selection string
         
         :param select:  Selection
-        :param mode:    `DB_LINE_SELECT`
+        :param mode:    :ref:`DB_LINE_SELECT`
         :type  select:  str
         :type  mode:    int
 
@@ -2649,7 +2645,7 @@ class GXDB:
         This method sets a line's type.
         
         :param line:  Line handle
-        :param type:  `DB_LINE_TYPE`
+        :param type:  :ref:`DB_LINE_TYPE`
         :type  line:  int
         :type  type:  int
 
@@ -2876,9 +2872,9 @@ class GXDB:
         Create a new Symbol.
         
         :param name:      Symbol Name
-        :param symb:      `DB_SYMB_TYPE`
-        :param owner:     `DB_OWN`
-        :param category:  `DB_CATEGORY_USER`, `DB_CATEGORY_LINE`, `DB_CATEGORY_CHAN`, `DB_CATEGORY_BLOB`
+        :param symb:      :ref:`DB_SYMB_TYPE`
+        :param owner:     :ref:`DB_OWN`
+        :param category:  :ref:`DB_CATEGORY_USER`, :ref:`DB_CATEGORY_LINE`, :ref:`DB_CATEGORY_CHAN`, :ref:`DB_CATEGORY_BLOB`
         :type  name:      str
         :type  symb:      int
         :type  owner:     int
@@ -2931,10 +2927,10 @@ class GXDB:
         Create a new Symbol.
         
         :param name:      Symbol Name
-        :param symb:      `DB_SYMB_TYPE`
-        :param owner:     `DB_OWN`
-        :param category:  `DB_CATEGORY_USER`, `DB_CATEGORY_LINE`, `DB_CATEGORY_CHAN`, `DB_CATEGORY_BLOB`
-        :param extra:     Extra info, which depends on `DB_SYMB_TYPE` `DB_SYMB_CHAN <geosoft.gxapi.DB_SYMB_CHAN>` - element width for a `GXVA <geosoft.gxapi.GXVA>` channel ignores for all other `DB_SYMB_TYPE` types
+        :param symb:      :ref:`DB_SYMB_TYPE`
+        :param owner:     :ref:`DB_OWN`
+        :param category:  :ref:`DB_CATEGORY_USER`, :ref:`DB_CATEGORY_LINE`, :ref:`DB_CATEGORY_CHAN`, :ref:`DB_CATEGORY_BLOB`
+        :param extra:     Extra info, which depends on :ref:`DB_SYMB_TYPE` `DB_SYMB_CHAN <geosoft.gxapi.DB_SYMB_CHAN>` - element width for a `GXVA <geosoft.gxapi.GXVA>` channel ignores for all other :ref:`DB_SYMB_TYPE` types
         :type  name:      str
         :type  symb:      int
         :type  owner:     int
@@ -3138,7 +3134,7 @@ class GXDB:
         Get handle to the specified symbol.
         
         :param symb:  Name of symbol
-        :param type:  `DB_SYMB_TYPE`
+        :param type:  :ref:`DB_SYMB_TYPE`
         :type  symb:  str
         :type  type:  int
 
@@ -3198,7 +3194,7 @@ class GXDB:
         """
         Searches for current X, Y or Z channel symbol
         
-        :param chan:  `DB_CHAN_SYMBOL`
+        :param chan:  :ref:`DB_CHAN_SYMBOL`
         :type  chan:  int
 
         :returns:     x - Symbol Handle
@@ -3276,7 +3272,7 @@ class GXDB:
         in the database.
         
         :param symb:  Name of Symbol
-        :param type:  `DB_SYMB_TYPE`
+        :param type:  :ref:`DB_SYMB_TYPE`
         :type  symb:  str
         :type  type:  int
 
@@ -3316,7 +3312,7 @@ class GXDB:
         This method checks to see if the specified symbol is a valid symbol in the database.
         
         :param symb:  Symbol to check
-        :param type:  `DB_SYMB_TYPE`
+        :param type:  :ref:`DB_SYMB_TYPE`
         :type  symb:  int
         :type  type:  int
 
@@ -3339,7 +3335,7 @@ class GXDB:
         :param symb:  Symbol to Lock
         :type  symb:  int
 
-        :returns:     `DB_LOCK`
+        :returns:     :ref:`DB_LOCK`
         :rtype:       int
 
         .. versionadded:: 6.3
@@ -3354,7 +3350,7 @@ class GXDB:
         """
         Gets current X, Y or Z channel name
         
-        :param chan_symb:  `DB_CHAN_SYMBOL`
+        :param chan_symb:  :ref:`DB_CHAN_SYMBOL`
         :param chan:       Returned name
         :type  chan_symb:  int
         :type  chan:       str_ref
@@ -3377,7 +3373,7 @@ class GXDB:
         Place a list of symbols in a `GXVV <geosoft.gxapi.GXVV>`.
         
         :param vv:    `GXVV <geosoft.gxapi.GXVV>` to populate, must be type INT.
-        :param symb:  `DB_SYMB_TYPE`
+        :param symb:  :ref:`DB_SYMB_TYPE`
         :type  vv:    GXVV
         :type  symb:  int
 
@@ -3420,8 +3416,8 @@ class GXDB:
         Locks a symbol for READONLY or READWRITE.
         
         :param symb:  Symbol to Lock
-        :param lock:  `DB_LOCK`
-        :param wait:  `DB_WAIT`
+        :param lock:  :ref:`DB_LOCK`
+        :param wait:  :ref:`DB_WAIT`
         :type  symb:  int
         :type  lock:  int
         :type  wait:  int
@@ -3508,7 +3504,7 @@ class GXDB:
         """
         Sets current X, Y or Z channel name
         
-        :param chan_symb:  `DB_CHAN_SYMBOL`
+        :param chan_symb:  :ref:`DB_CHAN_SYMBOL`
         :param chan:       Channel name
         :type  chan_symb:  int
         :type  chan:       str
@@ -3559,7 +3555,7 @@ class GXDB:
         Populate a `GXLST <geosoft.gxapi.GXLST>` with database symbols.
         
         :param lst:   List to Populate
-        :param type:  `DB_SYMB_TYPE`
+        :param type:  :ref:`DB_SYMB_TYPE`
         :type  lst:   GXLST
         :type  type:  int
 
@@ -3681,10 +3677,10 @@ class GXDB:
         
         :param comment:  Comment
         :param val:      Value
-        :param indent:   Indent comment one tab? `GEO_BOOL`
+        :param indent:   Indent comment one tab?
         :type  comment:  str
         :type  val:      int
-        :type  indent:   int
+        :type  indent:   bool
 
         .. versionadded:: 5.0.8
 
@@ -3711,10 +3707,10 @@ class GXDB:
         
         :param comment:  Comment
         :param val:      Value
-        :param indent:   Indent comment one tab? `GEO_BOOL`
+        :param indent:   Indent comment one tab?
         :type  comment:  str
         :type  val:      float
-        :type  indent:   int
+        :type  indent:   bool
 
         .. versionadded:: 5.0.8
 
@@ -3740,9 +3736,9 @@ class GXDB:
         Add a comment with the date and time to the activity log of the database.
         
         :param comment:  Comment
-        :param indent:   Indent comment one tab? `GEO_BOOL`
+        :param indent:   Indent comment one tab?
         :type  comment:  str
-        :type  indent:   int
+        :type  indent:   bool
 
         .. versionadded:: 5.0.8
 
@@ -3952,17 +3948,17 @@ class GXDB:
         Set the array channel base coordinate type, offset and values.
         
         :param ch:             Channel (Locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`)
-        :param domain:         `DB_ARRAY_BASETYPE`
+        :param domain:         :ref:`DB_ARRAY_BASETYPE`
         :param base:           Optional offset or base frequency
         :param vv:             Values (one per array channel column) (REAL)
         :param units:          Units
-        :param allow_changes:  Allow changes to existing values?`GEO_BOOL`
+        :param allow_changes:  Allow changes to existing values?
         :type  ch:             int
         :type  domain:         int
         :type  base:           float
         :type  vv:             GXVV
         :type  units:          str
-        :type  allow_changes:  int
+        :type  allow_changes:  bool
 
         .. versionadded:: 8.2
 
@@ -3981,7 +3977,7 @@ class GXDB:
         Set the array channel base coordinate type, offset and values.
         
         :param ch:      Channel (Locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`)
-        :param domain:  `DB_ARRAY_BASETYPE`
+        :param domain:  :ref:`DB_ARRAY_BASETYPE`
         :param base:    Optional offset or base frequency
         :param vv:      Values (one per array channel column) (REAL)
         :param units:   Units
@@ -4035,7 +4031,7 @@ class GXDB:
         """
         Get information about the database.
         
-        :param item:  `DB_INFO`
+        :param item:  :ref:`DB_INFO`
         :type  item:  int
 
         :returns:     x - Return Value

@@ -93,15 +93,15 @@ class GXGU:
         
         :param coil_spacing:        Coil spacing: error if == 0
         :param coil_frequency:      Frequency
-        :param coil_configuration:  `EMLAY_GEOMETRY`
+        :param coil_configuration:  :ref:`EMLAY_GEOMETRY`
         :param tol:                 Fractional error in best fit resistivity
         :param threshold:           Don't invert values below this
         :param vv_height:           Height above ground
         :param vv_in_phase:         In-phase part (ppm)
         :param vv_quadrature:       Quadrature part (ppm)
         :param vv_res:              On return - inverted halfspace resistivities
-        :param inv:                 `EM_INV`
-        :param err:                 `EM_ERR`
+        :param inv:                 :ref:`EM_INV`
+        :param err:                 :ref:`EM_ERR`
         :param start_val:           Starting value for inversion (can be `rDUMMY <geosoft.gxapi.rDUMMY>`)
         :type  coil_spacing:        float
         :type  coil_frequency:      float
@@ -130,7 +130,7 @@ class GXGU:
         
         :param coil_spacing:        Coil separation
         :param coil_frequency:      Frequency
-        :param coil_configuration:  `EMLAY_GEOMETRY`
+        :param coil_configuration:  :ref:`EMLAY_GEOMETRY`
         :param rvv:                 Input resistivity values
         :param hvv:                 Input height values
         :param ivv:                 Output In-phase
@@ -520,7 +520,7 @@ class GXGU:
         :param coil_spacing:        Coil spacing, error if == 0
         :param coil_frequency:      Coil frequency
         :param coil_height:         Coil height above layer [0]
-        :param coil_configuration:  `EMLAY_GEOMETRY`
+        :param coil_configuration:  :ref:`EMLAY_GEOMETRY`
         :param n_layers:            Number of layers (including lower halfspace)
         :param vv_thickness:        sNLayer-1 thicknesses  [0] to [sNLayer-2]
         :param vv_sigma:            sNLayer conductivities [0] to [sNLayer-1]
@@ -561,9 +561,9 @@ class GXGU:
         :param y_off:          Rx offset in Y from Tx
         :param z_off:          Rx offset in Z from Tx (+'ve down)
         :param plate_depth:    Depth below Tx
-        :param n_spons:        `EMPLATE_DOMAIN`
+        :param n_spons:        :ref:`EMPLATE_DOMAIN`
         :param sig_tvv:        The plate conductances (`GXVV <geosoft.gxapi.GXVV>` length <= 100)
-        :param tx_orient:      `EMPLATE_TX`
+        :param tx_orient:      :ref:`EMPLATE_TX`
         :param tx_freq:        Tx frequency (for `EMPLATE_TIME <geosoft.gxapi.EMPLATE_TIME>`)
         :param tx_dt:          Tx time window spacing (for `EMPLATE_TIME <geosoft.gxapi.EMPLATE_TIME>`)
         :param params:         The frequency/time parameters (SI units: f[Hz] or t[s])
@@ -873,7 +873,7 @@ class GXGU:
         :param wnd_sz:    Window size
         :param si:        Structure index
         :param wt_pow:    Weighting factor
-        :param x_yfit:    `PEAKEULER_XY`
+        :param x_yfit:    :ref:`PEAKEULER_XY`
         :type  vv_xin:    GXVV
         :type  vv_yin:    GXVV
         :type  img_data:  GXIMG
@@ -931,7 +931,7 @@ class GXGU:
         :param vv_wnd:    Window size (diameters of targets)
         :param si:        Structure index
         :param wt_pow:    Weighting factor
-        :param x_yfit:    `PEAKEULER_XY`
+        :param x_yfit:    :ref:`PEAKEULER_XY`
         :type  vv_xin:    GXVV
         :type  vv_yin:    GXVV
         :type  img_data:  GXIMG

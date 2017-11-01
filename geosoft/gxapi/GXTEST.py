@@ -61,8 +61,8 @@ class GXTEST:
         """
         Forcefully disable ArEngine license availability for testing purposes
         
-        :param enable:  Enable/disable? `GEO_BOOL`
-        :type  enable:  int
+        :param enable:  Enable/disable?
+        :type  enable:  bool
 
         .. versionadded:: 6.4.2
         """
@@ -92,9 +92,7 @@ class GXTEST:
         """
         Checks to see if we are running inside testing system
         
-
-        :returns:    `GEO_BOOL`
-        :rtype:      int
+        :rtype:      bool
 
         .. versionadded:: 6.4.2
         """

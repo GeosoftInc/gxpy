@@ -128,7 +128,7 @@ class GXST2:
         """
         Gets correlation coeff. from the `GXST2 <geosoft.gxapi.GXST2>` object.
         
-        :param id:   `ST2_CORRELATION`
+        :param id:   :ref:`ST2_CORRELATION`
         :type  id:   int
 
         :returns:    Data you asked for

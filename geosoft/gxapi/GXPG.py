@@ -118,7 +118,7 @@ class GXPG:
         
         :param row:   # elements in y (# of row)
         :param col:   # elements in x (# of column)
-        :param type:  `GS_TYPES`
+        :param type:  :ref:`GS_TYPES`
         :type  row:   int
         :type  col:   int
         :type  type:  int
@@ -175,7 +175,7 @@ class GXPG:
         Gets the type of pager.
         
 
-        :returns:    `GS_TYPES`
+        :returns:    :ref:`GS_TYPES`
         :rtype:      int
 
         .. versionadded:: 5.0
@@ -455,7 +455,7 @@ class GXPG:
         :param slice:  # elements in z (# of slices)
         :param row:    # elements in y (# of row)
         :param col:    # elements in x (# of column)
-        :param type:   `GS_TYPES`
+        :param type:   :ref:`GS_TYPES`
         :type  slice:  int
         :type  row:    int
         :type  col:    int
@@ -638,8 +638,8 @@ class GXPG:
         Read the contents of a 2D or 3D pager to from a `GXBF <geosoft.gxapi.GXBF>`.
         
         :param bf:     `GXBF <geosoft.gxapi.GXBF>` to read from
-        :param dir:    `PG_3D_DIR`
-        :param conv:   `PG_BF_CONV`
+        :param dir:    :ref:`PG_3D_DIR`
+        :param conv:   :ref:`PG_BF_CONV`
         :param rev_x:  Reverse X
         :param rev_y:  Reverse Y
         :param rev_z:  Reverse Z
@@ -663,7 +663,7 @@ class GXPG:
         Read the contents of a 2D or 3D pager to from an `GXRA <geosoft.gxapi.GXRA>`.
         
         :param ra:     `GXRA <geosoft.gxapi.GXRA>` to read from
-        :param dir:    `PG_3D_DIR`
+        :param dir:    :ref:`PG_3D_DIR`
         :param rev_x:  Reverse X
         :param rev_y:  Reverse Y
         :param rev_z:  Reverse Z
@@ -692,8 +692,8 @@ class GXPG:
         Write the contents of a 2D or 3D pager to a `GXBF <geosoft.gxapi.GXBF>`.
         
         :param bf:     `GXBF <geosoft.gxapi.GXBF>` to write to
-        :param dir:    `PG_3D_DIR`
-        :param conv:   `PG_BF_CONV`
+        :param dir:    :ref:`PG_3D_DIR`
+        :param conv:   :ref:`PG_BF_CONV`
         :param rev_x:  Reverse X
         :param rev_y:  Reverse Y
         :param rev_z:  Reverse Z
@@ -717,8 +717,8 @@ class GXPG:
         Write the contents of a 2D or 3D pager to a `GXBF <geosoft.gxapi.GXBF>`.
         
         :param bf:       `GXBF <geosoft.gxapi.GXBF>` to write to
-        :param dir:      `PG_3D_DIR`
-        :param conv:     `PG_BF_CONV`
+        :param dir:      :ref:`PG_3D_DIR`
+        :param conv:     :ref:`PG_BF_CONV`
         :param rev_x:    Reverse X
         :param rev_y:    Reverse Y
         :param rev_z:    Reverse Z
@@ -744,7 +744,7 @@ class GXPG:
         Write the contents of a 2D or 3D pager to a `GXWA <geosoft.gxapi.GXWA>`
         
         :param wa:     `GXWA <geosoft.gxapi.GXWA>` to write to
-        :param dir:    `PG_3D_DIR`
+        :param dir:    :ref:`PG_3D_DIR`
         :param rev_x:  Reverse X
         :param rev_y:  Reverse Y
         :param rev_z:  Reverse Z

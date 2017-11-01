@@ -245,7 +245,7 @@ class GXARCDB:
         Template creation for importing geochem data.
         
         :param temp:   Template to make
-        :param type:   `IMPCH_TYPE`
+        :param type:   :ref:`IMPCH_TYPE`
         :type  temp:   str
         :type  type:   int
 
@@ -264,7 +264,7 @@ class GXARCDB:
         """
         Select table `GXGUI <geosoft.gxapi.GXGUI>` with table type.
         
-        :param table_type:  `ARC_SELTBL_TYPE`
+        :param table_type:  :ref:`ARC_SELTBL_TYPE`
         :type  table_type:  int_ref
 
         :returns:           Handle to the table (Terminate on Error)

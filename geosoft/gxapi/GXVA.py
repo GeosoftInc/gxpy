@@ -80,7 +80,7 @@ class GXVA:
         :param rows:       # rows
         :param cols:       # cols
         :param data:       Data buffer to copy `GXVA <geosoft.gxapi.GXVA>` data into
-        :param gs_type:    `GS_TYPES`
+        :param gs_type:    :ref:`GS_TYPES`
         :type  start_row:  int
         :type  start_col:  int
         :type  rows:       int
@@ -105,7 +105,7 @@ class GXVA:
         :param rows:       # rows
         :param cols:       # cols
         :param data:       Data buffer to copy into `GXVA <geosoft.gxapi.GXVA>`
-        :param gs_type:    `GS_TYPES`
+        :param gs_type:    :ref:`GS_TYPES`
         :type  start_row:  int
         :type  start_col:  int
         :type  rows:       int
@@ -169,7 +169,7 @@ class GXVA:
         Average elements in a `GXVA <geosoft.gxapi.GXVA>` by row or column
         
         :param vv:  `GXVV <geosoft.gxapi.GXVV>` in which to place average results
-        :param rc:  `VA_AVERAGE`
+        :param rc:  :ref:`VA_AVERAGE`
         :type  vv:  GXVV
         :type  rc:  int
 
@@ -179,7 +179,7 @@ class GXVA:
 
         The output `GXVV <geosoft.gxapi.GXVV>` will be dimensioned by the number of
         rows or columns in the input `GXVV <geosoft.gxapi.GXVV>` depending on the
-        `VA_AVERAGE` setting.
+        :ref:`VA_AVERAGE` setting.
         
         Dummies are not included in the average.
         """
@@ -243,7 +243,7 @@ class GXVA:
         """
         Create a `GXVA <geosoft.gxapi.GXVA>`.
         
-        :param type:  `GEO_VAR`
+        :param type:  :ref:`GEO_VAR`
         :param rows:  Maximum number of rows in the `GXVA <geosoft.gxapi.GXVA>`, >= 0
         :param cols:  Number of columns in the `GXVA <geosoft.gxapi.GXVA>`, > 0
         :type  type:  int
@@ -263,9 +263,9 @@ class GXVA:
     @classmethod
     def create_ext(cls, type, rows, cols):
         """
-        Create a `GXVA <geosoft.gxapi.GXVA>`, using one of the `GS_TYPES` special data types.
+        Create a `GXVA <geosoft.gxapi.GXVA>`, using one of the :ref:`GS_TYPES` special data types.
         
-        :param type:  `GS_TYPES`
+        :param type:  :ref:`GS_TYPES`
         :param rows:  Maximum number of rows in the `GXVA <geosoft.gxapi.GXVA>`, >= 0
         :param cols:  Number of columns in the `GXVA <geosoft.gxapi.GXVA>`, > 0
         :type  type:  int
@@ -343,7 +343,7 @@ class GXVA:
         Get a row or column of data as a `GXVV <geosoft.gxapi.GXVV>` from an array.
         
         :param no:       Row or Column # (0 is first)
-        :param row_col:  `VA_OBJECT`
+        :param row_col:  :ref:`VA_OBJECT`
         :param vv:       `GXVV <geosoft.gxapi.GXVV>` in which to place data
         :type  no:       int
         :type  row_col:  int
@@ -733,7 +733,7 @@ class GXVA:
         Set a row or column of data in an array from a `GXVV <geosoft.gxapi.GXVV>`.
         
         :param no:       Row or Column # (0 is first)
-        :param row_col:  `VA_OBJECT`
+        :param row_col:  :ref:`VA_OBJECT`
         :param vv:       `GXVV <geosoft.gxapi.GXVV>` from which to get data
         :type  no:       int
         :type  row_col:  int

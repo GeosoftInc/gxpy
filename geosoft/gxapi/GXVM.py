@@ -79,7 +79,7 @@ class GXVM:
         """
         Create a `GXVM <geosoft.gxapi.GXVM>`.
         
-        :param type:      `GEO_VAR`
+        :param type:      :ref:`GEO_VAR`
         :param elements:  `GXVM <geosoft.gxapi.GXVM>` length (less than 16777215)
         :type  type:      int
         :type  elements:  int
@@ -101,9 +101,9 @@ class GXVM:
     @classmethod
     def create_ext(cls, type, elements):
         """
-        Create a `GXVM <geosoft.gxapi.GXVM>`, using one of the `GS_TYPES` special data types.
+        Create a `GXVM <geosoft.gxapi.GXVM>`, using one of the :ref:`GS_TYPES` special data types.
         
-        :param type:      `GS_TYPES`
+        :param type:      :ref:`GS_TYPES`
         :param elements:  `GXVM <geosoft.gxapi.GXVM>` length (less than 16777215)
         :type  type:      int
         :type  elements:  int

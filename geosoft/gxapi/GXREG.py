@@ -262,7 +262,7 @@ class GXREG:
         Merge
         
         :param srce:  Source
-        :param type:  `REG_MERGE`
+        :param type:  :ref:`REG_MERGE`
         :type  srce:  GXREG
         :type  type:  int
 

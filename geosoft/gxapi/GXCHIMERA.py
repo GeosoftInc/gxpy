@@ -464,15 +464,13 @@ class GXCHIMERA:
         :param chan:        Returned channel name
         :param units:       Returned units
         :param factor:      Buffer factor (e.g. ppm = 1.e-6)
-        :param oxide:       `GEO_BOOL` is this an oxide?
+        :param oxide:       is this an oxide?
         :type  input_chan:  str
         :type  chan:        str_ref
         :type  units:       str_ref
         :type  factor:      float_ref
-        :type  oxide:       int_ref
-
-        :returns:           `GEO_BOOL`
-        :rtype:             int
+        :type  oxide:       bool_ref
+        :rtype:             bool
 
         .. versionadded:: 7.2
 
@@ -494,12 +492,10 @@ class GXCHIMERA:
         Tests a string to see if it is an element symbol
         
         :param chan:  String to test
-        :param case:  `STR_CASE`
+        :param case:  :ref:`STR_CASE`
         :type  chan:  str
         :type  case:  int
-
-        :returns:     `GEO_BOOL`
-        :rtype:       int
+        :rtype:       bool
 
         .. versionadded:: 5.0.7
 

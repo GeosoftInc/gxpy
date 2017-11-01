@@ -161,7 +161,7 @@ class GXMVIEW:
         :param end_z:         End Z
         :param start_radius:  Start Radius (can be zero)
         :param end_radius:    End Radius (can be zero)
-        :param flags:         `MVIEW_CYLINDER3D`
+        :param flags:         :ref:`MVIEW_CYLINDER3D`
         :type  start_x:       float
         :type  start_y:       float
         :type  start_z:       float
@@ -191,8 +191,8 @@ class GXMVIEW:
         """
         Draw a 3D object optimized for rendering
         
-        :param type:           `MVIEW_DRAWOBJ3D_ENTITY`
-        :param mode:           `MVIEW_DRAWOBJ3D_MODE`
+        :param type:           :ref:`MVIEW_DRAWOBJ3D_ENTITY`
+        :param mode:           :ref:`MVIEW_DRAWOBJ3D_MODE`
         :param objects:        Number of Objects
         :param default_count:  Default Count (if variable and not specified)
         :param vert_v_vx:      Verticies X
@@ -429,7 +429,7 @@ class GXMVIEW:
         :param min_y:  Area Y minimum
         :param max_x:  Area X maximum
         :param max_y:  Area Y maximum
-        :param asp:    `MVIEW_RELOCATE`
+        :param asp:    :ref:`MVIEW_RELOCATE`
         :type  group:  str
         :type  min_x:  float
         :type  min_y:  float
@@ -1106,7 +1106,7 @@ class GXMVIEW:
         
         :param vv_x:     X `GXVV <geosoft.gxapi.GXVV>`
         :param vv_y:     Y `GXVV <geosoft.gxapi.GXVV>`
-        :param unit:     `MVIEW_UNIT`
+        :param unit:     :ref:`MVIEW_UNIT`
         :param exclude:  Exclude
         :type  vv_x:     GXVV
         :type  vv_y:     GXVV
@@ -1134,7 +1134,7 @@ class GXMVIEW:
         :param min_y:    Y minimum
         :param max_x:    X maximum
         :param max_y:    Y maximum
-        :param unit:     `MVIEW_UNIT`
+        :param unit:     :ref:`MVIEW_UNIT`
         :param exclude:  Exclude
         :type  min_x:    float
         :type  min_y:    float
@@ -1172,7 +1172,7 @@ class GXMVIEW:
         """
         Set the Clipping mode on/off for all groups.
         
-        :param mode:   `MVIEW_CLIP`
+        :param mode:   :ref:`MVIEW_CLIP`
         :type  mode:   int
 
         .. versionadded:: 5.0
@@ -1187,7 +1187,7 @@ class GXMVIEW:
         """
         Set the Clipping mode on/off for marked groups.
         
-        :param mode:   `MVIEW_CLIP`
+        :param mode:   :ref:`MVIEW_CLIP`
         :type  mode:   int
 
         .. versionadded:: 5.0
@@ -1204,7 +1204,7 @@ class GXMVIEW:
         
         :param vv_x:   X `GXVV <geosoft.gxapi.GXVV>`
         :param vv_y:   Y `GXVV <geosoft.gxapi.GXVV>`
-        :param unit:   `MVIEW_UNIT`
+        :param unit:   :ref:`MVIEW_UNIT`
         :type  vv_x:   GXVV
         :type  vv_y:   GXVV
         :type  unit:   int
@@ -1230,7 +1230,7 @@ class GXMVIEW:
         :param min_y:  Y minimum
         :param max_x:  X maximum
         :param max_y:  Y maximum
-        :param unit:   `MVIEW_UNIT`
+        :param unit:   :ref:`MVIEW_UNIT`
         :type  min_x:  float
         :type  min_y:  float
         :type  max_x:  float
@@ -1358,7 +1358,7 @@ class GXMVIEW:
         """
         Set the Clipping mode on or off for new groups.
         
-        :param mode:   `MVIEW_CLIP`
+        :param mode:   :ref:`MVIEW_CLIP`
         :type  mode:   int
 
         .. versionadded:: 5.0
@@ -1649,7 +1649,7 @@ class GXMVIEW:
         """
         Set the view clipping mode on or off.
         
-        :param mode:   `MVIEW_CLIP`
+        :param mode:   :ref:`MVIEW_CLIP`
         :type  mode:   int
 
         .. versionadded:: 5.0
@@ -1710,7 +1710,7 @@ class GXMVIEW:
         """
         Set the line edge smoothing.
         
-        :param smooth:  `MVIEW_SMOOTH`
+        :param smooth:  :ref:`MVIEW_SMOOTH`
         :type  smooth:  int
 
         .. versionadded:: 6.3
@@ -1883,7 +1883,7 @@ class GXMVIEW:
         """
         Sets the tiling method (i.e. rectangle, triangle)
         
-        :param style:  `MVIEW_TILE`
+        :param style:  :ref:`MVIEW_TILE`
         :type  style:  int
 
         .. versionadded:: 5.0
@@ -1981,13 +1981,13 @@ class GXMVIEW:
         Set the symbol font and style.
         
         :param face:     Face name
-        :param geofont:  Geosoft font? `GEO_BOOL`
-        :param weight:   `MVIEW_FONT_WEIGHT`
-        :param italic:   Italic font? `GEO_BOOL`
+        :param geofont:  Geosoft font?
+        :param weight:   :ref:`MVIEW_FONT_WEIGHT`
+        :param italic:   Italic font?
         :type  face:     str
-        :type  geofont:  int
+        :type  geofont:  bool
         :type  weight:   int
-        :type  italic:   int
+        :type  italic:   bool
 
         .. versionadded:: 5.0
 
@@ -2080,7 +2080,7 @@ class GXMVIEW:
         
         :param face:      Font face name
         :param geo_font:  Geosoft font? (TRUE or FALSE)
-        :param weight:    `MVIEW_FONT_WEIGHT`
+        :param weight:    :ref:`MVIEW_FONT_WEIGHT`
         :param italic:    Italic font? (TRUE or FALSE)
         :type  face:      str
         :type  geo_font:  int
@@ -2104,7 +2104,7 @@ class GXMVIEW:
         charset  - Before version 6.2. this decoration was honoured and it affected the display
         of characters above ASCII 127. 6.2. introduced Unicode in the core
         montaj engine that eliminated the need for such a setting. All strings
-        on the GX API level are encoded in `UTF8` during runtime which makes it possible
+        on the GX API level are encoded in :ref:`UTF8` during runtime which makes it possible
         to represent all possible characters without using character sets. This decoration
         will now be ignored.
         
@@ -2134,7 +2134,7 @@ class GXMVIEW:
         """
         Set the text plot reference point.
         
-        :param ref:    `TEXT_REF`
+        :param ref:    :ref:`TEXT_REF`
         :type  ref:    int
 
         .. versionadded:: 5.0
@@ -2431,7 +2431,7 @@ class GXMVIEW:
         """
         Draw a polyline or polygon (dummies deleted).
         
-        :param type:   `MVIEW_DRAW`
+        :param type:   :ref:`MVIEW_DRAW`
         :param vv_x:   X coordinates.
         :param vv_y:   Y coordinates.
         :type  type:   int
@@ -2869,7 +2869,7 @@ class GXMVIEW:
         :param db:      Database required? (0 = No, 1 = Yes)
         :param map:     Map required?      (0 = No, 1 = Yes)
         :param prog:    Program name
-        :param type:    `MAKER`
+        :param type:    :ref:`MAKER`
         :param name:    Maker name, used in menu prompt
         :param groups:  INI groups (terminate each with a ";")
         :type  db:      int
@@ -3405,7 +3405,7 @@ class GXMVIEW:
         :param ymin:        Minimum Y, returned
         :param xmax:        Maximum X, returned
         :param ymax:        Maximum Y, returned
-        :param unit:        `MVIEW_UNIT`
+        :param unit:        :ref:`MVIEW_UNIT`
         :type  group_name:  str
         :type  xmin:        float_ref
         :type  ymin:        float_ref
@@ -3466,7 +3466,7 @@ class GXMVIEW:
         """
         Hide/Show marked groups.
         
-        :param mode:   `MVIEW_HIDE`
+        :param mode:   :ref:`MVIEW_HIDE`
         :type  mode:   int
 
         .. versionadded:: 5.0
@@ -3481,7 +3481,7 @@ class GXMVIEW:
         """
         Hide/Show 2d shadow interpretations.
         
-        :param mode:   `MVIEW_HIDE`
+        :param mode:   :ref:`MVIEW_HIDE`
         :type  mode:   int
 
         .. versionadded:: 8.5
@@ -3535,7 +3535,7 @@ class GXMVIEW:
         Query a status or characteristic of a group
         
         :param group:  Group name
-        :param what:   `MVIEW_IS`
+        :param what:   :ref:`MVIEW_IS`
         :type  group:  str
         :type  what:   int
 
@@ -3572,9 +3572,7 @@ class GXMVIEW:
         """
         Is this view movable?
         
-
-        :returns:      `GEO_BOOL`
-        :rtype:        int
+        :rtype:        bool
 
         .. versionadded:: 6.4
 
@@ -3594,9 +3592,7 @@ class GXMVIEW:
         """
         Is this view visible?
         
-
-        :returns:      `GEO_BOOL`
-        :rtype:        int
+        :rtype:        bool
 
         .. versionadded:: 6.3
         """
@@ -3611,7 +3607,7 @@ class GXMVIEW:
         Get a list of the groups in a view.
         
         :param lst:    List
-        :param flag:   `MVIEW_GROUP_LIST`
+        :param flag:   :ref:`MVIEW_GROUP_LIST`
         :type  lst:    GXLST
         :type  flag:   int
 
@@ -3823,12 +3819,11 @@ class GXMVIEW:
 
 
 
-    def set_movability(self, flag):
+    def set_movability(self, movable):
         """
         Set the view movability
         
-        :param flag:   `GEO_BOOL`
-        :type  flag:   int
+        :type  movable:  bool
 
         .. versionadded:: 6.4
 
@@ -3838,7 +3833,7 @@ class GXMVIEW:
         flag is for preventing accidental moving in the `GXGUI <geosoft.gxapi.GXGUI>`.
         By default views are not movable.
         """
-        self._wrapper.set_movability(flag)
+        self._wrapper.set_movability(movable)
         
 
 
@@ -3863,16 +3858,15 @@ class GXMVIEW:
 
 
 
-    def set_visibility(self, flag):
+    def set_visibility(self, visible):
         """
         Set the view visibility
         
-        :param flag:   `GEO_BOOL`
-        :type  flag:   int
+        :type  visible:  bool
 
         .. versionadded:: 6.3
         """
-        self._wrapper.set_visibility(flag)
+        self._wrapper.set_visibility(visible)
         
 
 
@@ -3883,7 +3877,7 @@ class GXMVIEW:
         Start a group.
         
         :param name:   Group name, can be NULL, Maximum length is `MVIEW_NAME_LENGTH <geosoft.gxapi.MVIEW_NAME_LENGTH>`
-        :param mode:   `MVIEW_GROUP`
+        :param mode:   :ref:`MVIEW_GROUP`
         :type  name:   str
         :type  mode:   int
 
@@ -3895,7 +3889,7 @@ class GXMVIEW:
         before drawing to a group.
         
         If the group name is NULL, output will be sent to
-        the primary group stream and the `MVIEW_GROUP` is
+        the primary group stream and the :ref:`MVIEW_GROUP` is
         ignored.
         
         Group names must be different from view names.
@@ -4044,7 +4038,7 @@ class GXMVIEW:
         """
         Set the working projection mode
         
-        :param mode:   `MVIEW_PJ`
+        :param mode:   :ref:`MVIEW_PJ`
         :type  mode:   int
 
         .. versionadded:: 5.0
@@ -4134,7 +4128,7 @@ class GXMVIEW:
         :param group_num:  Group number
         :type  group_num:  int
 
-        :returns:          Combination of `MVIEW_3D_RENDER` flags or 0
+        :returns:          Combination of :ref:`MVIEW_3D_RENDER` flags or 0
         :rtype:            int
 
         .. versionadded:: 9.1
@@ -4150,7 +4144,7 @@ class GXMVIEW:
         Set a 3D geometry group's 3D rendering flags.
         
         :param group_num:  Group number
-        :param flags:      Combination of `MVIEW_3D_RENDER` flags or 0
+        :param flags:      Combination of :ref:`MVIEW_3D_RENDER` flags or 0
         :type  group_num:  int
         :type  flags:      int
 
@@ -4374,7 +4368,7 @@ class GXMVIEW:
         :param y_inc:      Y grid increment
         :param dx:         dX dot increment/cross X size
         :param dy:         dY dot increment/cross Y size
-        :param grid_type:  `MVIEW_GRID`
+        :param grid_type:  :ref:`MVIEW_GRID`
         :type  x_inc:      float
         :type  y_inc:      float
         :type  dx:         float
@@ -4440,9 +4434,9 @@ class GXMVIEW:
         :param left:       Left  X
         :param right:      Right X
         :param lable_int:  Label interval
-        :param just:       `MVIEW_LABEL_JUST`
-        :param bound:      `MVIEW_LABEL_BOUND`
-        :param orient:     `MVIEW_LABEL_ORIENT`
+        :param just:       :ref:`MVIEW_LABEL_JUST`
+        :param bound:      :ref:`MVIEW_LABEL_BOUND`
+        :param orient:     :ref:`MVIEW_LABEL_ORIENT`
         :type  l_loc:      float
         :type  left:       float
         :type  right:      float
@@ -4477,9 +4471,9 @@ class GXMVIEW:
         :param bottom:     Bottom Y
         :param top:        Top    Y
         :param lable_int:  Label interval
-        :param just:       `MVIEW_LABEL_JUST`
-        :param bound:      `MVIEW_LABEL_BOUND`
-        :param orient:     `MVIEW_LABEL_ORIENT`
+        :param just:       :ref:`MVIEW_LABEL_JUST`
+        :param bound:      :ref:`MVIEW_LABEL_BOUND`
+        :param orient:     :ref:`MVIEW_LABEL_ORIENT`
         :type  x:          float
         :type  bottom:     float
         :type  top:        float
@@ -4535,7 +4529,7 @@ class GXMVIEW:
         
         :param map:   `GXMAP <geosoft.gxapi.GXMAP>` on which to place the view
         :param name:  View name (maximum `MVIEW_NAME_LENGTH <geosoft.gxapi.MVIEW_NAME_LENGTH>`)
-        :param mode:  `MVIEW_OPEN`
+        :param mode:  :ref:`MVIEW_OPEN`
         :type  map:   GXMAP
         :type  name:  str
         :type  mode:  int
@@ -4673,8 +4667,8 @@ class GXMVIEW:
         """
         Get the view extents
         
-        :param what:   `MVIEW_EXTENT`
-        :param unit:   `MVIEW_EXTENT_UNIT`
+        :param what:   :ref:`MVIEW_EXTENT`
+        :param unit:   :ref:`MVIEW_EXTENT_UNIT`
         :param min_x:  X minimum
         :param min_y:  Y minimum
         :param max_x:  X maximum
@@ -4857,7 +4851,7 @@ class GXMVIEW:
         :param v_min_y:   Min Y in ground coordinate ..
         :param v_max_x:   Max X in ground coordinate ..
         :param v_max_y:   Max Y in ground coordinate ..
-        :param fit_view:  `MVIEW_FIT`
+        :param fit_view:  :ref:`MVIEW_FIT`
         :type  m_min_x:   float_ref
         :type  m_min_y:   float_ref
         :type  m_max_x:   float_ref
@@ -5209,7 +5203,7 @@ class GXMVIEW:
         :param min_y:  Y minimum
         :param max_x:  X maximum
         :param max_y:  Y maximum
-        :param unit:   `MVIEW_UNIT`
+        :param unit:   :ref:`MVIEW_UNIT`
         :type  min_x:  float
         :type  min_y:  float
         :type  max_x:  float

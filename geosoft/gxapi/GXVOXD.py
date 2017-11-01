@@ -63,7 +63,7 @@ class GXVOXD:
         
         :param vox:      `GXVOX <geosoft.gxapi.GXVOX>` Object
         :param table:    Color table name, "" for default
-        :param zone:     `ITR_ZONE`
+        :param zone:     :ref:`ITR_ZONE`
         :param contour:  Color contour interval or `rDUMMY <geosoft.gxapi.rDUMMY>`
         :type  vox:      GXVOX
         :type  table:    str

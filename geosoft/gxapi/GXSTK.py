@@ -105,10 +105,10 @@ class GXSTK:
         """
         Get axis number display format.
         
-        :param xy:   `STK_AXIS`
+        :param xy:   :ref:`STK_AXIS`
         :type  xy:   int
 
-        :returns:    The current format - `DB_CHAN_FORMAT`
+        :returns:    The current format - :ref:`DB_CHAN_FORMAT`
         :rtype:      int
 
         .. versionadded:: 5.1.5
@@ -136,7 +136,7 @@ class GXSTK:
         :param tick_size1:     Major tick size in mm for bottom/left axis bar.
         :param tick_size2:     Major tick size in mm for top/right axis bar.
         :param min_tick:       ?BARMINORTICK  - Number of minor ticks. (0) none, (-1) automatic
-        :param xy:             `STK_AXIS`
+        :param xy:             :ref:`STK_AXIS`
         :type  bar_draw:       int_ref
         :type  min_loc:        float_ref
         :type  max_loc:        float_ref
@@ -194,7 +194,7 @@ class GXSTK:
         """
         Get flag indicating part of `GXSTK <geosoft.gxapi.GXSTK>` object is to be drawn or not
         
-        :param part:  `STK_FLAG`
+        :param part:  :ref:`STK_FLAG`
         :type  part:  int
 
         :returns:     FALSE (0) if part of the object is not to be drawn
@@ -262,7 +262,7 @@ class GXSTK:
         :param x_sep:   Separation between vertical grid lines.
         :param y_sep:   Separation between horizontal grid lines.
         :param color:   Grid line color string in RGB model. Default is black
-        :param grid12:  `STK_GRID`
+        :param grid12:  :ref:`STK_GRID`
         :type  grid:    int_ref
         :type  min_x:   float_ref
         :type  max_x:   float_ref
@@ -302,7 +302,7 @@ class GXSTK:
         :param text_size:   Text size in mm to draw profile labels. Default is 5mm
         :param color:       Text color string in RGB model. Default is black
         :param bound:       ?LABELBOUND    - Edge bound.  0 - No
-        :param xy:          `STK_AXIS`
+        :param xy:          :ref:`STK_AXIS`
         :type  axis:        int_ref
         :type  min_loc:     float_ref
         :type  min_orient:  int_ref
@@ -482,7 +482,7 @@ class GXSTK:
         :param font:           Font to draw titles. Default is use 'default' font set in Montaj
         :param text_size:      Text size in mm to draw titles. Default is 5mm
         :param color:          Text color string in RGB model. Default is black
-        :param xy:             `STK_AXIS`
+        :param xy:             :ref:`STK_AXIS`
         :type  title1:         str_ref
         :type  title2:         str_ref
         :type  title1_orient:  int_ref
@@ -514,7 +514,7 @@ class GXSTK:
         Set flag indicating part of `GXSTK <geosoft.gxapi.GXSTK>` object is to be drawn or not
         
         :param flag:  Flag to set (0 or 1)
-        :param part:  `STK_FLAG`
+        :param part:  :ref:`STK_FLAG`
         :type  flag:  int
         :type  part:  int
 
@@ -551,8 +551,8 @@ class GXSTK:
         """
         Set axis number display format.
         
-        :param format:  `DB_CHAN_FORMAT`
-        :param xy:      `STK_AXIS`
+        :param format:  :ref:`DB_CHAN_FORMAT`
+        :param xy:      :ref:`STK_AXIS`
         :type  format:  int
         :type  xy:      int
 
@@ -582,7 +582,7 @@ class GXSTK:
         :param tick_size1:     Major tick size in mm for bottom/left axis bar.
         :param tick_size2:     Major tick size in mm for top/right axis bar.
         :param min_tick:       ?BARMINORTICK  - Number of minor ticks. (0) none, (-1) automatic
-        :param xy:             `STK_AXIS`
+        :param xy:             :ref:`STK_AXIS`
         :type  bar_draw:       int
         :type  min_loc:        float
         :type  max_loc:        float
@@ -689,7 +689,7 @@ class GXSTK:
         :param x_sep:   Separation between vertical grid lines.
         :param y_sep:   Separation between horizontal grid lines.
         :param color:   Grid line color string in RGB model. Default is black
-        :param grid12:  `STK_GRID`
+        :param grid12:  :ref:`STK_GRID`
         :type  grid:    int
         :type  min_x:   float
         :type  max_x:   float
@@ -729,7 +729,7 @@ class GXSTK:
         :param text_size:   Text size in mm to draw profile labels. Default is 5mm
         :param color:       Text color string in RGB model. Default is black
         :param bound:       ?LABELBOUND    - Edge bound.  0 - No
-        :param xy:          `STK_AXIS`
+        :param xy:          :ref:`STK_AXIS`
         :type  axis:        int
         :type  min_loc:     float
         :type  min_orient:  int
@@ -928,7 +928,7 @@ class GXSTK:
         :param font:           Font to draw titles. Default is use 'default' font set in Montaj
         :param text_size:      Text size in mm to draw titles. Default is 5mm
         :param color:          Text color string in RGB model. Default is black
-        :param xy:             `STK_AXIS`
+        :param xy:             :ref:`STK_AXIS`
         :type  title1:         str
         :type  title2:         str
         :type  title1_orient:  int

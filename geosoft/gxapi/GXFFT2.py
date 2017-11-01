@@ -241,7 +241,7 @@ class GXFFT2:
         Apply 2D `GXFFT <geosoft.gxapi.GXFFT>` transform to data in pager
         
         :param pg:   Pager obj
-        :param opt:  `FFT2_PG`
+        :param opt:  :ref:`FFT2_PG`
         :type  pg:   GXPG
         :type  opt:  int
 

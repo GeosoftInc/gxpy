@@ -208,7 +208,7 @@ BF_DELETE = 1
 
 #: String is stored as ANSI code page
 BF_ENCODE_ANSI = 0
-#: String is stored as `UTF8`
+#: String is stored as :ref:`UTF8`
 BF_ENCODE_UTF8 = 1
 
 #
@@ -2421,7 +2421,7 @@ MVIEW_UNIT_VIEW_UNWARPED = 3
 # MVIEW_EXTENT_UNIT constants
 #
 # Types of units for extents (these map to the
-# `MVIEW_UNIT` defines directly)
+# :ref:`MVIEW_UNIT` defines directly)
 
 #: `MVIEW_UNIT_VIEW <geosoft.gxapi.MVIEW_UNIT_VIEW>`
 MVIEW_EXTENT_UNIT_VIEW = 0
@@ -3978,9 +3978,9 @@ VV_WINDOW_LIMIT = 1
 WA_ENCODE_ANSI = 0
 #: Write all data without any conversion check
 WA_ENCODE_RAW = 1
-#: `UTF8` (If no exisiting BOM header found with `WA_APPEND <geosoft.gxapi.WA_APPEND>`, encoding will switch to `WA_ENCODE_ANSI <geosoft.gxapi.WA_ENCODE_ANSI>`)
+#: :ref:`UTF8` (If no exisiting BOM header found with `WA_APPEND <geosoft.gxapi.WA_APPEND>`, encoding will switch to `WA_ENCODE_ANSI <geosoft.gxapi.WA_ENCODE_ANSI>`)
 WA_ENCODE_UTF8 = 2
-#: `UTF8` w.o. header (will assume `UTF8` encoding if `WA_APPEND <geosoft.gxapi.WA_APPEND>` is used)
+#: :ref:`UTF8` w.o. header (will assume :ref:`UTF8` encoding if `WA_APPEND <geosoft.gxapi.WA_APPEND>` is used)
 WA_ENCODE_UTF8_NOHEADER = 3
 #: UTF16 w.o. header (will assume UTF16 encoding if `WA_APPEND <geosoft.gxapi.WA_APPEND>` is used)
 WA_ENCODE_UTF16_NOHEADER = 4
@@ -6381,7 +6381,7 @@ BLAKEY_TEST_FOURSIDE = 4
 #
 # PGU_CORR constants
 #
-# Correlation (must be synchronized with `ST2_CORRELATION`)
+# Correlation (must be synchronized with :ref:`ST2_CORRELATION`)
 
 #: Simple correlation
 PGU_CORR_SIMPLE = 0
@@ -6665,7 +6665,7 @@ STK_GRID_SECONDARY = 1
 
 #: (slow)    no optimization
 TC_OPT_NONE = 0
-#: (faster)  desampling and using qspline (4x4 points) interp
+#: (faster)  desampling and using qspline (4x4 points) interpolation
 #: on coarser averaged grid
 TC_OPT_MAX = 1
 
@@ -6736,7 +6736,7 @@ TRND_MAX = 1
 #
 # UTF-8 Defines
 
-#: Maximum width of a single Unicode code point as a `UTF8` string, including terminator (5)
+#: Maximum width of a single Unicode code point as a :ref:`UTF8` string, including terminator (5)
 UTF8_MAX_CHAR = 5	
 
 #

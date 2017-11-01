@@ -80,7 +80,7 @@ class GXBF:
         Moves file position
         
         :param offset:  Number of bytes from reference point
-        :param ref:     `BF_SEEK`
+        :param ref:     :ref:`BF_SEEK`
         :type  offset:  int
         :type  ref:     int
 
@@ -137,7 +137,7 @@ class GXBF:
         Create `GXBF <geosoft.gxapi.GXBF>` object.
         
         :param file:    File name to open ("" is a temporary file)
-        :param status:  `BF_OPEN_MODE`
+        :param status:  :ref:`BF_OPEN_MODE`
         :type  file:    str
         :type  status:  int
 
@@ -172,7 +172,7 @@ class GXBF:
         
         :param sbf:     Storage
         :param file:    File name to open ("" is a temporary file)
-        :param status:  `BF_OPEN_MODE`
+        :param status:  :ref:`BF_OPEN_MODE`
         :type  sbf:     GXSBF
         :type  file:    str
         :type  status:  int
@@ -235,7 +235,7 @@ class GXBF:
         Reads string data from current position in `GXBF <geosoft.gxapi.GXBF>`
         
         :param bytes:     Number of bytes to read
-        :param encoding:  `BF_ENCODE`
+        :param encoding:  :ref:`BF_ENCODE`
         :param data:      Data
         :type  bytes:     int
         :type  encoding:  int
@@ -285,7 +285,7 @@ class GXBF:
         """
         Reads int data from current position in `GXBF <geosoft.gxapi.GXBF>`
         
-        :param type:  `GS_TYPES` and `BF_BYTEORDER`
+        :param type:  :ref:`GS_TYPES` and :ref:`BF_BYTEORDER`
         :param data:  Data
         :type  type:  int
         :type  data:  int_ref
@@ -315,7 +315,7 @@ class GXBF:
         """
         Reads real data from current position in `GXBF <geosoft.gxapi.GXBF>`
         
-        :param type:  `GS_TYPES` and `BF_BYTEORDER`
+        :param type:  :ref:`GS_TYPES` and :ref:`BF_BYTEORDER`
         :param data:  Data
         :type  type:  int
         :type  data:  float_ref
@@ -345,7 +345,7 @@ class GXBF:
         """
         Read data to a `GXVV <geosoft.gxapi.GXVV>` from current position in `GXBF <geosoft.gxapi.GXBF>`
         
-        :param type:  `GS_TYPES` and `BF_BYTEORDER`
+        :param type:  :ref:`GS_TYPES` and :ref:`BF_BYTEORDER`
         :param vv:    `GXVV <geosoft.gxapi.GXVV>` data to read, `GXVV <geosoft.gxapi.GXVV>` length is read
         :type  type:  int
         :type  vv:    GXVV
@@ -375,7 +375,7 @@ class GXBF:
         """
         Set the flag to delete the file on close
         
-        :param status:  `BF_CLOSE`
+        :param status:  :ref:`BF_CLOSE`
         :type  status:  int
 
         .. versionadded:: 6.0
@@ -390,7 +390,7 @@ class GXBF:
         """
         Write a binary string to a `GXBF <geosoft.gxapi.GXBF>`
         
-        :param encoding:  `BF_ENCODE`
+        :param encoding:  :ref:`BF_ENCODE`
         :param data:      String to write out
         :type  encoding:  int
         :type  data:      str
@@ -420,7 +420,7 @@ class GXBF:
         """
         Writes int to the `GXBF <geosoft.gxapi.GXBF>`
         
-        :param type:  `GS_TYPES` and `BF_BYTEORDER`
+        :param type:  :ref:`GS_TYPES` and :ref:`BF_BYTEORDER`
         :param data:  Data
         :type  type:  int
         :type  data:  int
@@ -445,7 +445,7 @@ class GXBF:
         """
         Writes real to the `GXBF <geosoft.gxapi.GXBF>`
         
-        :param type:  `GS_TYPES` and `BF_BYTEORDER`
+        :param type:  :ref:`GS_TYPES` and :ref:`BF_BYTEORDER`
         :param data:  Data
         :type  type:  int
         :type  data:  float
@@ -470,7 +470,7 @@ class GXBF:
         """
         Writes `GXVV <geosoft.gxapi.GXVV>` to the `GXBF <geosoft.gxapi.GXBF>`
         
-        :param type:  `GS_TYPES` and `BF_BYTEORDER`
+        :param type:  :ref:`GS_TYPES` and :ref:`BF_BYTEORDER`
         :param vv:    Data
         :type  type:  int
         :type  vv:    GXVV

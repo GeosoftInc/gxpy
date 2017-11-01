@@ -68,7 +68,7 @@ class GXSBF:
         Create a child `GXSBF <geosoft.gxapi.GXSBF>` object inside an `GXSBF <geosoft.gxapi.GXSBF>`.
         
         :param file:    Directory name to open / create
-        :param status:  `SBF_OPEN`
+        :param status:  :ref:`SBF_OPEN`
         :type  file:    str
         :type  status:  int
 
@@ -88,7 +88,7 @@ class GXSBF:
         Fills an `GXLST <geosoft.gxapi.GXLST>` with embedded storage names of an `GXSBF <geosoft.gxapi.GXSBF>`.
         
         :param lst:   `GXLST <geosoft.gxapi.GXLST>` handle
-        :param type:  `SBF_TYPE`
+        :param type:  :ref:`SBF_TYPE`
         :type  lst:   GXLST
         :type  type:  int
 

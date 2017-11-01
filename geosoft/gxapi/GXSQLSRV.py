@@ -174,7 +174,7 @@ class GXSQLSRV:
         :param server:    SQL server to use
         :param user:      User name (default & returned)
         :param password:  Password (default & returned)
-        :param mode:      `MFCSQL_DRIVER`
+        :param mode:      :ref:`MFCSQL_DRIVER`
         :param win_auth:  Windows Authentication (default & returned)
         :type  server:    str
         :type  user:      str_ref

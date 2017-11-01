@@ -86,7 +86,7 @@ class GXPGU:
         :param dy:      Y cell size
         :param rot:     Rotation angle (degrees CCW).
         :param dat:     `GXDAT <geosoft.gxapi.GXDAT>` source
-        :param method:  `PGU_DIRECTGRID`
+        :param method:  :ref:`PGU_DIRECTGRID`
         :type  pg:      GXPG
         :type  xo:      float
         :type  yo:      float
@@ -122,7 +122,7 @@ class GXPGU:
         :param dz:      Z cell size
         :param rot:     Rotation angle (degrees CCW, vertical axis only).
         :param dat:     3D `GXDAT <geosoft.gxapi.GXDAT>` source
-        :param method:  `PGU_DIRECTGRID`
+        :param method:  :ref:`PGU_DIRECTGRID`
         :type  pg:      GXPG
         :type  xo:      float
         :type  yo:      float
@@ -161,7 +161,7 @@ class GXPGU:
         :param x:       X Channel [READONLY]
         :param y:       Y Channel [READONLY]
         :param z:       Data Channel [READONLY]
-        :param method:  `PGU_DIRECTGRID`
+        :param method:  :ref:`PGU_DIRECTGRID`
         :type  pg:      GXPG
         :type  xo:      float
         :type  yo:      float
@@ -204,7 +204,7 @@ class GXPGU:
         :param y:       Y Channel [READONLY]
         :param z:       Z Channel [READONLY]
         :param data:    Data Channel [READONLY]
-        :param method:  `PGU_DIRECTGRID`
+        :param method:  :ref:`PGU_DIRECTGRID`
         :type  pg:      GXPG
         :type  xo:      float
         :type  yo:      float
@@ -246,7 +246,7 @@ class GXPGU:
         :param v_vx:    X locations of values
         :param v_vy:    Y locations of values
         :param v_vz:    Z values to grid
-        :param method:  `PGU_DIRECTGRID`
+        :param method:  :ref:`PGU_DIRECTGRID`
         :type  pg:      GXPG
         :type  xo:      float
         :type  yo:      float
@@ -405,7 +405,7 @@ class GXPGU:
         Pick grid peaks.
         
         :param grid:  Grid file name
-        :param nlmt:  `BLAKEY_TEST`
+        :param nlmt:  :ref:`BLAKEY_TEST`
         :param vv_x:  X of found peaks
         :param vv_y:  Y of found peaks
         :param vv_z:  Z values of found peaks
@@ -901,7 +901,7 @@ class GXPGU:
         Same as `correlation_matrix <geosoft.gxapi.GXPGU.correlation_matrix>`, but select correlation type.
         
         :param pg_u:  Input matrix
-        :param corr:  `PGU_CORR`
+        :param corr:  :ref:`PGU_CORR`
         :param pg_o:  Returned correlation matrix
         :type  pg_u:  GXPG
         :type  corr:  int
@@ -1282,7 +1282,7 @@ class GXPGU:
         :param pg:    Matrix to standardize
         :param vv_m:  Means
         :param vv_s:  Standard deviations
-        :param dir:   `PGU_DIRECTION`
+        :param dir:   :ref:`PGU_DIRECTION`
         :type  pg:    GXPG
         :type  vv_m:  GXVV
         :type  vv_s:  GXVV
@@ -1338,8 +1338,8 @@ class GXPGU:
         :param pg:    Matrix to transform
         :param vv_d:  Detection limits for the columns
         :param vv_f:  Maximum values for the columns
-        :param vv_t:  `PGU_TRANS`
-        :param dir:   `PGU_DIRECTION`
+        :param vv_t:  :ref:`PGU_TRANS`
+        :param dir:   :ref:`PGU_DIRECTION`
         :type  pg:    GXPG
         :type  vv_d:  GXVV
         :type  vv_f:  GXVV

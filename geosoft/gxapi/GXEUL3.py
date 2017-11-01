@@ -114,7 +114,7 @@ class GXEUL3:
         Get a result field `GXVV <geosoft.gxapi.GXVV>` from `GXEUL3 <geosoft.gxapi.GXEUL3>` object
         
         :param vv_r:          `GXVV <geosoft.gxapi.GXVV>` to store the result
-        :param pi_res_field:  `EUL3_RESULT`
+        :param pi_res_field:  :ref:`EUL3_RESULT`
         :type  vv_r:          GXVV
         :type  pi_res_field:  int
 

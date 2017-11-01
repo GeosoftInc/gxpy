@@ -27,7 +27,7 @@ class GXDU:
     The following defines are used by GX functions but are not required
     for any methods:
     
-    `DU_LINES`
+    :ref:`DU_LINES`
     """
 
     def __enter__(self):
@@ -77,7 +77,7 @@ class GXDU:
         :param o_ch:       Output Channel Token     [`DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`]
         :param ref_field:  Reference field name in table
         :param l_field:    Lookup output name in table
-        :param mode:       `DU_LOOKUP`
+        :param mode:       :ref:`DU_LOOKUP`
         :param close:      CLOSE lookup distance. If 0.0, distance is calculated from lookup reference channel.
         :param tb:         `GXTB <geosoft.gxapi.GXTB>` table Object
         :type  db:         GXDB
@@ -119,7 +119,7 @@ class GXDU:
         :param r1_field:  Primary reference field name in table
         :param r2_field:  Secondary reference field name in table
         :param l_field:   Lookup result field name in table
-        :param mode:      `DU_LOOKUP`
+        :param mode:      :ref:`DU_LOOKUP`
         :param close:     CLOSE lookup distance.  If 0.0, distance is calculated from secondary reference channel.
         :param tb:        Table Object
         :type  db:        GXDB
@@ -164,7 +164,7 @@ class GXDU:
         :param r1:     Primary reference field name in table
         :param r2:     Secondary reference field name in table
         :param field:  Lookup result field name in table
-        :param mode:   `DU_LOOKUP`
+        :param mode:   :ref:`DU_LOOKUP`
         :param dist:   CLOSE lookup distance.  If 0.0, distance calculated from secondary reference channel.
         :param tb:     Table Object
         :type  db:     GXDB
@@ -209,7 +209,7 @@ class GXDU:
         :param r1:     Primary reference field name in table
         :param r2:     Secondary reference field name in table
         :param field:  Lookup result field name in table
-        :param mode:   `DU_LOOKUP`
+        :param mode:   :ref:`DU_LOOKUP`
         :param dist:   CLOSE lookup distance.  If 0.0, distance calculated from secondary reference channel.
         :param tb:     Table Object
         :type  db:     GXDB
@@ -725,7 +725,7 @@ class GXDU:
         :param db:      Database Object
         :param i_line:  Input  Line Symbol [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
         :param mask:    Mask Channel Symbol [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
-        :param prune:   `VVU_PRUNE`
+        :param prune:   :ref:`VVU_PRUNE`
         :param o_line:  Output Line Symbol [`DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`]
         :type  db:      GXDB
         :type  i_line:  int
@@ -860,7 +860,7 @@ class GXDU:
         :param x_ch:  X channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
         :param y_ch:  Y channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
         :param z_ch:  Z channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`] (can be `NULLSYMB <geosoft.gxapi.NULLSYMB>`)
-        :param type:  `DU_DISTANCE_CHANNEL_TYPE`
+        :param type:  :ref:`DU_DISTANCE_CHANNEL_TYPE`
         :param o_ch:  Output Distance channel [`DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`]
         :type  db:    GXDB
         :type  line:  int
@@ -943,8 +943,8 @@ class GXDU:
         :param line:     Line
         :param x_ch:     Channel X, unlocked
         :param y_ch:     Channel Y, unlocked
-        :param option:   `DB_DUP`
-        :param single:   `DB_DUPEDIT`
+        :param option:   :ref:`DB_DUP`
+        :param single:   :ref:`DB_DUPEDIT`
         :param fid_num:  Fiducial number (required if `DB_DUPEDIT_SINGLE <geosoft.gxapi.DB_DUPEDIT_SINGLE>`)
         :type  db:       GXDB
         :type  line:     int
@@ -972,10 +972,10 @@ class GXDU:
         Export to a specific format.
         
         :param db:        Database
-        :param format:    `DU_EXPORT`
+        :param format:    :ref:`DU_EXPORT`
         :param cur_line:  Current line
         :param chan_vv:   List of channels - channel symbols stored as INT
-        :param chan:      `DU_CHANNELS`
+        :param chan:      :ref:`DU_CHANNELS`
         :param data:      Data file name
         :param dummies:   Write out dummies?
         :param header:    Include a header with channel names?
@@ -1015,10 +1015,10 @@ class GXDU:
         Like `export1 <geosoft.gxapi.GXDU.export1>`, but include line names as data.
         
         :param db:          Database
-        :param format:      `DU_EXPORT`
+        :param format:      :ref:`DU_EXPORT`
         :param cur_line:    Current line
         :param chan_vv:     List of channels - channel symbols stored as INT
-        :param chan:        `DU_CHANNELS`
+        :param chan:        :ref:`DU_CHANNELS`
         :param data:        Data file name
         :param dummies:     Write out dummies?
         :param header:      Include a header with channel names?
@@ -1093,7 +1093,7 @@ class GXDU:
         :param db:        Database
         :param cur_line:  Current line
         :param chan_vv:   Displayed channels
-        :param chan:      `DU_CHANNELS`
+        :param chan:      :ref:`DU_CHANNELS`
         :param defn:      Header file name
         :param data:      Data file name
         :type  db:        GXDB
@@ -1130,7 +1130,7 @@ class GXDU:
         :param db:        Database
         :param cur_line:  Current line
         :param chan_vv:   Displayed channels
-        :param chan:      `DU_CHANNELS`
+        :param chan:      :ref:`DU_CHANNELS`
         :param defn:      Export header file name
         :param data:      Export data file name
         :param proj:      Export projection file name
@@ -1201,7 +1201,7 @@ class GXDU:
         :param db:        Database
         :param cur_line:  Current line
         :param chan_vv:   Displayed channels
-        :param chan:      `DU_CHANNELS`
+        :param chan:      :ref:`DU_CHANNELS`
         :param data:      Data file name
         :param dummies:   Write out dummies?
         :param header:    Include a header with channel names?
@@ -1288,8 +1288,8 @@ class GXDU:
         :param db:        Database
         :param cur_line:  Current line
         :param chan_vv:   Displayed channels
-        :param chan:      `DU_CHANNELS`
-        :param single:    `DU_LINEOUT`
+        :param chan:      :ref:`DU_CHANNELS`
+        :param single:    :ref:`DU_LINEOUT`
         :param data:      Export data file name
         :type  db:        GXDB
         :type  cur_line:  str
@@ -1305,7 +1305,7 @@ class GXDU:
         Similar to `export_gbn <geosoft.gxapi.GXDU.export_gbn>`, with the addition that
         Groups go to individual tables, and lines go to
         a single table, or individual tables, based on the
-        value of `DU_LINEOUT`
+        value of :ref:`DU_LINEOUT`
         """
         gxapi_cy.WrapDU.export_mdb(GXContext._get_tls_geo(), db._wrapper, cur_line.encode(), chan_vv._wrapper, chan, single, data.encode())
         
@@ -1321,9 +1321,9 @@ class GXDU:
         :param feature_class_name:  Feature class name
         :param cur_line:            Current line
         :param chan_vv:             Displayed channels
-        :param chan:                `DU_CHANNELS`
-        :param output:              `DU_FEATURE_TYPE_OUTPUT`
-        :param single:              `DU_LINEOUT`
+        :param chan:                :ref:`DU_CHANNELS`
+        :param output:              :ref:`DU_FEATURE_TYPE_OUTPUT`
+        :param single:              :ref:`DU_LINEOUT`
         :param data:                Export data file name
         :type  db:                  GXDB
         :type  feature_class_name:  str
@@ -1341,7 +1341,7 @@ class GXDU:
         Similar to `export_gbn <geosoft.gxapi.GXDU.export_gbn>`, with the addition that
         Groups go to individual tables, and lines go to
         a single table, or individual tables, based on the
-        value of `DU_LINEOUT`
+        value of :ref:`DU_LINEOUT`
         """
         gxapi_cy.WrapDU.export_geodatabase(GXContext._get_tls_geo(), db._wrapper, feature_class_name.encode(), cur_line.encode(), chan_vv._wrapper, chan, output, single, data.encode())
         
@@ -1385,8 +1385,8 @@ class GXDU:
         :param db:        Database
         :param cur_line:  Current line
         :param chan_vv:   Displayed channels
-        :param chan:      `DU_CHANNELS`
-        :param single:    `DU_LINEOUT`
+        :param chan:      :ref:`DU_CHANNELS`
+        :param single:    :ref:`DU_LINEOUT`
         :param data:      Export shape file name or base filename (shp assumed if no extension given)
         :param lst:       `GXLST <geosoft.gxapi.GXLST>` object will be filled with shape files created
         :type  db:        GXDB
@@ -1403,7 +1403,7 @@ class GXDU:
 
         Similar to `export_mdb <geosoft.gxapi.GXDU.export_mdb>`, with the addition that groups go to indiviual files
         with group name suffixes, and lines go to a single file, or multiple files
-        with line name suffixes, based on the value of `DU_LINEOUT`.
+        with line name suffixes, based on the value of :ref:`DU_LINEOUT`.
         """
         gxapi_cy.WrapDU.export_shp(GXContext._get_tls_geo(), db._wrapper, cur_line.encode(), chan_vv._wrapper, chan, single, data.encode(), lst._wrapper)
         
@@ -1527,7 +1527,7 @@ class GXDU:
         :param in_file:   Input Table file Name
         :param out_file:  Output Table file Name
         :param max_dz:    Max. gradient
-        :param m0:        `DU_LEVEL`
+        :param m0:        :ref:`DU_LEVEL`
         :type  db:        GXDB
         :type  in_file:   str
         :type  out_file:  str
@@ -1549,7 +1549,7 @@ class GXDU:
         :param db:        Input intersection database object
         :param out_file:  Output Table File Name
         :param max_dz:    Max. gradient
-        :param m0:        `DU_LEVEL`
+        :param m0:        :ref:`DU_LEVEL`
         :type  db:        GXDB
         :type  out_file:  str
         :type  max_dz:    float
@@ -1959,7 +1959,7 @@ class GXDU:
         
         :param db:       Database
         :param connect:  Import database connection string
-        :param storage:  `DU_STORAGE`
+        :param storage:  :ref:`DU_STORAGE`
         :type  db:       GXDB
         :type  connect:  str
         :type  storage:  int
@@ -1993,7 +1993,7 @@ class GXDU:
         :param db:       Database
         :param data:     Import data file name
         :param type:     Database type
-        :param storage:  `DU_STORAGE`
+        :param storage:  :ref:`DU_STORAGE`
         :type  db:       GXDB
         :type  data:     str
         :type  type:     str
@@ -2216,7 +2216,7 @@ class GXDU:
         Same as `import_bin2 <geosoft.gxapi.GXDU.import_bin2>` but with an import mode
         
         :param db:        Database
-        :param mode:      `DU_IMPORT`
+        :param mode:      :ref:`DU_IMPORT`
         :param data:      Import data file name
         :param template:  Import template name
         :param line:      Optional Line name (see note 3.)
@@ -2255,7 +2255,7 @@ class GXDU:
         :param line:     Output line (`DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`)
         :param file:     Name of file to import
         :param channel:  Channel to import, 1-8
-        :param type:     `GU_DAARC500_DATATYPE`
+        :param type:     :ref:`GU_DAARC500_DATATYPE`
         :type  db:       GXDB
         :type  line:     int
         :type  file:     str
@@ -2482,7 +2482,7 @@ class GXDU:
         Import XYZ data into the database.
         
         :param db:        Database
-        :param mode:      `DU_IMPORT`
+        :param mode:      :ref:`DU_IMPORT`
         :param data:      Import data file name
         :param template:  Import template name
         :type  db:        GXDB
@@ -2511,7 +2511,7 @@ class GXDU:
         Import XYZ data into the database.
         
         :param db:        Database
-        :param mode:      `DU_IMPORT`
+        :param mode:      :ref:`DU_IMPORT`
         :param data:      Import data file name
         :param template:  Import template name
         :type  db:        GXDB
@@ -2589,8 +2589,8 @@ class GXDU:
         :param line:     Line handle
         :param i_ch:     Channel to interpolate [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
         :param o_ch:     Output interpolated channel [`DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`]
-        :param inside:   `DU_INTERP`
-        :param outside:  `DU_INTERP_EDGE`
+        :param inside:   :ref:`DU_INTERP`
+        :param outside:  :ref:`DU_INTERP_EDGE`
         :type  db:       GXDB
         :type  line:     int
         :type  i_ch:     int
@@ -2614,8 +2614,8 @@ class GXDU:
         :param line:     Line handle
         :param i_ch:     Channel to interpolate [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
         :param o_ch:     Output interpolated channel [`DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`]
-        :param inside:   `DU_INTERP`
-        :param outside:  `DU_INTERP_EDGE`
+        :param inside:   :ref:`DU_INTERP`
+        :param outside:  :ref:`DU_INTERP_EDGE`
         :param gap:      Maximum gap to interpolate (fiducials)
         :param extend:   Maximum items to extend at ends.
         :type  db:       GXDB
@@ -2771,7 +2771,7 @@ class GXDU:
         
         :param data:         Data file name
         :param template:     New template name
-        :param type:         `DU_LAB_TYPE`
+        :param type:         :ref:`DU_LAB_TYPE`
         :param delimit:      Delimiter string
         :param name_off:     Offset to column labels line (0 for first line)
         :param unit_off:     Offset to unit labels line, -1 if none
@@ -2874,7 +2874,7 @@ class GXDU:
         :param db:    Database
         :param line:  Line
         :param ltb:   Table
-        :param mode:  `DU_LOADLTB`
+        :param mode:  :ref:`DU_LOADLTB`
         :type  db:    GXDB
         :type  line:  int
         :type  ltb:   GXLTB
@@ -2990,7 +2990,7 @@ class GXDU:
         :param i_line:  Input Line1 [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
         :param m_line:  Input Line2 [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
         :param o_line:  Output Line [`DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`]
-        :param mode:    `DU_MERGE`
+        :param mode:    :ref:`DU_MERGE`
         :type  db:      GXDB
         :type  i_line:  int
         :type  m_line:  int
@@ -3015,7 +3015,7 @@ class GXDU:
         :param incr:         Base fid increment
         :param start_index:  Start index (can be negative)
         :param num:          Number of fids
-        :param opt:          `DU_MODFID`
+        :param opt:          :ref:`DU_MODFID`
         :type  db:           GXDB
         :type  ln:           int
         :type  fid_start:    float
@@ -3048,7 +3048,7 @@ class GXDU:
         :param i_ch:  Input channel   [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
         :param c_ch:  Control channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
         :param o_ch:  Result channel  [`DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`]
-        :param mode:  `DU_MOVE`
+        :param mode:  :ref:`DU_MOVE`
         :type  db:    GXDB
         :type  line:  int
         :type  i_ch:  int
@@ -3101,10 +3101,10 @@ class GXDU:
         
         :param db:      Database handle
         :param ch:      Base Channel for normalization.  [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
-        :param ignore:  Ignore write protection on channels? `GEO_BOOL`
+        :param ignore:  Ignore write protection on channels?
         :type  db:      GXDB
         :type  ch:      int
-        :type  ignore:  int
+        :type  ignore:  bool
 
         .. versionadded:: 5.0
 
@@ -3128,7 +3128,7 @@ class GXDU:
         :param y_chan:  Y Channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
         :param r_chan:  Channel to fill [`DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`]
         :param pply:    Polygon Object to use
-        :param dummy:   `DU_FILL`
+        :param dummy:   :ref:`DU_FILL`
         :type  db:      GXDB
         :type  line:    int
         :type  x_chan:  int
@@ -3155,7 +3155,7 @@ class GXDU:
         :param y_chan:  Y Channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
         :param r_chan:  Channel to mask [`DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`]
         :param pply:    Polygon Object to use
-        :param dummy:   `DU_MASK`
+        :param dummy:   :ref:`DU_MASK`
         :type  db:      GXDB
         :type  line:    int
         :type  x_chan:  int
@@ -3342,7 +3342,7 @@ class GXDU:
         :param tly:             Tie line reference Y coordinate
         :param tl_sta:          Tie line starting number of LINES
         :param tl_inc:          Line number increment for Tie line
-        :param type:            `QC_PLAN_TYPE`
+        :param type:            :ref:`QC_PLAN_TYPE`
         :param sample_spacing:  Sample spacing (spacing between points in lines)
         :param extend_outside:  Spacing to extend lines outside polygon
         :type  db:              GXDB
@@ -3422,7 +3422,7 @@ class GXDU:
         :param in_ch:   Original Channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]  "Y" values
         :param ref_ch:  Reference Channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`] "X" locations
         :param out_ch:  Output Channel [`DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`]
-        :param mode:    `DU_REFID`
+        :param mode:    :ref:`DU_REFID`
         :param start:   Start Fid, if `GS_R8DM <geosoft.gxapi.GS_R8DM>`, use ref channel minimum
         :param incr:    Fid increment, if `GS_R8DM <geosoft.gxapi.GS_R8DM>` use nominal spacing of the reference channel.
         :param gap:     Maximum gap to interpolate across
@@ -3728,7 +3728,7 @@ class GXDU:
         :param db:    Database
         :param line:  Line symbol
         :param ch:    Channel to sort [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
-        :param sort:  `DU_SORT`
+        :param sort:  :ref:`DU_SORT`
         :type  db:    GXDB
         :type  line:  int
         :type  ch:    int
@@ -3750,7 +3750,7 @@ class GXDU:
         :param line:   Line symbol
         :param ch:     Channel to sort [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
         :param in_ch:  Output index channel (should be int) [`DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`]
-        :param sort:   `DU_SORT`
+        :param sort:   :ref:`DU_SORT`
         :type  db:     GXDB
         :type  line:   int
         :type  ch:     int
@@ -3772,9 +3772,9 @@ class GXDU:
         :param db:     Database
         :param line:   Line symbol
         :param ch1:    Sort by this channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
-        :param sort1:  `DU_SORT`
+        :param sort1:  :ref:`DU_SORT`
         :param ch2:    Then by this channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
-        :param sort2:  `DU_SORT`
+        :param sort2:  :ref:`DU_SORT`
         :param in_ch:  Output index channel (should be int) [`DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`]
         :type  db:     GXDB
         :type  line:   int
@@ -3854,7 +3854,7 @@ class GXDU:
         :param dirctn:      Line direction, 0-any, 1-X, 2-Y.
         :param tolrnc:      Lateral tolerance, DUMMY for the default (10% of the separation between the first two points.
         :param down_tol:    Downline Tolerance, DUMMY for none
-        :param method:      `DU_SPLITLINE`
+        :param method:      :ref:`DU_SPLITLINE`
         :param first_line:  First line in the sequence, for `DU_SPLITLINE_SEQUENTIAL <geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL>`. On return, the next line in the sequence.
         :param line_inc:    Increment in the line number sequence, for `DU_SPLITLINE_SEQUENTIAL <geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL>`
         :type  db:          GXDB
@@ -3892,7 +3892,7 @@ class GXDU:
         :param dirctn:       Line direction, 0-any, 1-X, 2-Y.
         :param tolrnc:       Lateral tolerance, DUMMY for the default (10% of the separation between the first two points.
         :param down_tol:     Downline Tolerance, DUMMY for none
-        :param method:       `DU_SPLITLINE`
+        :param method:       :ref:`DU_SPLITLINE`
         :param first_line:   First line in the sequence, for `DU_SPLITLINE_SEQUENTIAL <geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL>`. On return, the next line in the sequence.
         :param line_inc:     Increment in the line number sequence, for `DU_SPLITLINE_SEQUENTIAL <geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL>`
         :param reset_fi_ds:  Reset starting fiducials to zero (0: No, 1: Yes)
@@ -3932,7 +3932,7 @@ class GXDU:
         :param dirctn:            Line direction, 0-any, 1-X, 2-Y.
         :param tolrnc:            Lateral tolerance, DUMMY for the default (10% of the separation between the first two points.
         :param down_tol:          Downline Tolerance, DUMMY for none
-        :param method:            `DU_SPLITLINE`
+        :param method:            :ref:`DU_SPLITLINE`
         :param first_line:        First line in the sequence, for `DU_SPLITLINE_SEQUENTIAL <geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL>`. On return, the next line in the sequence.
         :param line_inc:          Increment in the line number sequence, for `DU_SPLITLINE_SEQUENTIAL <geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL>`
         :param retain_line_type:  Maintain line types for `DU_SPLITLINE_SEQUENTIAL <geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL>`  (0: No, 1: Yes)
@@ -3975,8 +3975,8 @@ class GXDU:
         :param over_a_distance_of:            ...over a distance of
         :param minimum_line_length:           Delete lines shorter than (can be `rDUMMY <geosoft.gxapi.rDUMMY>`)
         :param break_on_separation_distance:  Break on data XY separation greater than (can be `rDUMMY <geosoft.gxapi.rDUMMY>`)
-        :param save_discards:                 GEO_BOOLGS_TRUE to save too-short segments as special lines, `GS_FALSE <geosoft.gxapi.GS_FALSE>` to discard
-        :param method:                        `DU_SPLITLINE` ONLY DU_SPLITLINEXY_SEQUENTIAL and DU_SPLITLINEXY_VERSIONS
+        :param save_discards:                 Whether to save too-short segments as special lines or to discard them
+        :param method:                        :ref:`DU_SPLITLINE` ONLY DU_SPLITLINEXY_SEQUENTIAL and DU_SPLITLINEXY_VERSIONS
         :param first_line:                    First line in the sequence, for `DU_SPLITLINE_SEQUENTIAL <geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL>`. On return, the next line in the sequence.
         :param line_inc:                      Increment in the line number sequence, for `DU_SPLITLINE_SEQUENTIAL <geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL>`
         :param reset_fi_ds:                   Reset starting fiducials to zero (0: No, 1: Yes)
@@ -4018,8 +4018,8 @@ class GXDU:
         :param over_a_distance_of:            ...over a distance of
         :param minimum_line_length:           Delete lines shorter than (can be `rDUMMY <geosoft.gxapi.rDUMMY>`)
         :param break_on_separation_distance:  Break on data XY separation greater than (can be `rDUMMY <geosoft.gxapi.rDUMMY>`)
-        :param save_discards:                 GEO_BOOLGS_TRUE to save too-short segments as special lines, `GS_FALSE <geosoft.gxapi.GS_FALSE>` to discard
-        :param method:                        `DU_SPLITLINE` ONLY DU_SPLITLINEXY_SEQUENTIAL and DU_SPLITLINEXY_VERSIONS
+        :param save_discards:                 Whether to save too-short segments as special lines or to discard them
+        :param method:                        :ref:`DU_SPLITLINE` ONLY DU_SPLITLINEXY_SEQUENTIAL and DU_SPLITLINEXY_VERSIONS
         :param first_line:                    First line in the sequence, for `DU_SPLITLINE_SEQUENTIAL <geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL>`. On return, the next line in the sequence.
         :param line_inc:                      Increment in the line number sequence, for `DU_SPLITLINE_SEQUENTIAL <geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL>`
         :param retain_line_type:              Maintain line types for `DU_SPLITLINE_SEQUENTIAL <geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL>`  (0: No, 1: Yes)
@@ -4673,7 +4673,7 @@ class GXDU:
         :param cell_size_x:            Voxel cell size X
         :param cell_size_y:            Voxel cell size Y
         :param cell_size_z:            Voxel cell size Z
-        :param method:                 `DU_DIRECTGRID_METHOD`
+        :param method:                 :ref:`DU_DIRECTGRID_METHOD`
         :type  db:                     GXDB
         :type  x_channel:              int
         :type  y_channel:              int
@@ -4722,7 +4722,7 @@ class GXDU:
         :param cell_size_x:                   Voxel cell size X
         :param cell_size_y:                   Voxel cell size Y
         :param cell_size_z:                   Voxel cell size Z
-        :param pb_replace_zeroes_with_dummy:  Replace zero values in output with DUMMY? `GEO_BOOL`
+        :param pb_replace_zeroes_with_dummy:  Replace zero values in output with DUMMY?
         :type  db:                            GXDB
         :type  x_channel:                     int
         :type  y_channel:                     int
@@ -4738,7 +4738,7 @@ class GXDU:
         :type  cell_size_x:                   float
         :type  cell_size_y:                   float
         :type  cell_size_z:                   float
-        :type  pb_replace_zeroes_with_dummy:  int
+        :type  pb_replace_zeroes_with_dummy:  bool
 
         .. versionadded:: 8.4
 

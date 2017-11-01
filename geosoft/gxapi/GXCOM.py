@@ -62,11 +62,11 @@ class GXCOM:
         Create `GXCOM <geosoft.gxapi.GXCOM>` object.
         
         :param port:          Port name to open ("COM1" is example)
-        :param baud:          `COM_BAUD`
-        :param data_size:     `COM_DATASIZE`
-        :param parity:        `COM_PARITY`
-        :param stop_bits:     `COM_STOPBITS`
-        :param flow_control:  `COM_FLOWCONTROL`
+        :param baud:          :ref:`COM_BAUD`
+        :param data_size:     :ref:`COM_DATASIZE`
+        :param parity:        :ref:`COM_PARITY`
+        :param stop_bits:     :ref:`COM_STOPBITS`
+        :param flow_control:  :ref:`COM_FLOWCONTROL`
         :param time_out:      Timeout in Ms (500)
         :type  port:          str
         :type  baud:          int
@@ -92,11 +92,11 @@ class GXCOM:
         Create `GXCOM <geosoft.gxapi.GXCOM>` object.
         
         :param port:          Port name to open ("COM1" is example)
-        :param baud:          `COM_BAUD`
-        :param data_size:     `COM_DATASIZE`
-        :param parity:        `COM_PARITY`
-        :param stop_bits:     `COM_STOPBITS`
-        :param flow_control:  `COM_FLOWCONTROL`
+        :param baud:          :ref:`COM_BAUD`
+        :param data_size:     :ref:`COM_DATASIZE`
+        :param parity:        :ref:`COM_PARITY`
+        :param stop_bits:     :ref:`COM_STOPBITS`
+        :param flow_control:  :ref:`COM_FLOWCONTROL`
         :param time_out:      Timeout in Ms (500)
         :type  port:          str
         :type  baud:          int

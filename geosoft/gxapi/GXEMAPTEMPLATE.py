@@ -99,11 +99,9 @@ class GXEMAPTEMPLATE:
 
     def drag_drop_enabled(self):
         """
-        Is drag-and-drop enabled for the map?
+        Checks if drag-and-drop is enabled for the map
         
-
-        :returns:             `GEO_BOOL`
-        :rtype:               int
+        :rtype:               bool
 
         .. versionadded:: 5.0
         """
@@ -117,8 +115,8 @@ class GXEMAPTEMPLATE:
         """
         Set whether drag-and-drop is enabled for the map.
         
-        :param enable:        Enables/disables drag-and-drop `GEO_BOOL`
-        :type  enable:        int
+        :param enable:        Enables/disables drag-and-drop
+        :type  enable:        bool
 
         .. versionadded:: 5.0
         """
@@ -193,7 +191,7 @@ class GXEMAPTEMPLATE:
         Load the file names of open maps into a `GXLST <geosoft.gxapi.GXLST>`.
         
         :param lst:   `GXLST <geosoft.gxapi.GXLST>` to load
-        :param path:  `EMAPTEMPLATE_PATH`
+        :param path:  :ref:`EMAPTEMPLATE_PATH`
         :type  lst:   GXLST
         :type  path:  int
 
@@ -268,9 +266,7 @@ class GXEMAPTEMPLATE:
         """
         Is this MapTemplate locked
         
-
-        :returns:             `GEO_BOOL`
-        :rtype:               int
+        :rtype:               bool
 
         .. versionadded:: 5.0
         """
@@ -306,8 +302,8 @@ class GXEMAPTEMPLATE:
         :param top:           Window top position
         :param right:         Window right position
         :param bottom:        Window bottom position
-        :param state:         Window state `EMAPTEMPLATE_WINDOW_STATE`
-        :param is_floating:   Docked or floating `EMAPTEMPLATE_WINDOW_POSITION`
+        :param state:         Window state :ref:`EMAPTEMPLATE_WINDOW_STATE`
+        :param is_floating:   Docked or floating :ref:`EMAPTEMPLATE_WINDOW_POSITION`
         :type  left:          int_ref
         :type  top:           int_ref
         :type  right:         int_ref
@@ -331,8 +327,8 @@ class GXEMAPTEMPLATE:
         :param top:           Window top position
         :param right:         Window right position
         :param bottom:        Window bottom position
-        :param state:         Window state `EMAPTEMPLATE_WINDOW_STATE`
-        :param is_floating:   Docked or floating `EMAPTEMPLATE_WINDOW_POSITION`
+        :param state:         Window state :ref:`EMAPTEMPLATE_WINDOW_STATE`
+        :param is_floating:   Docked or floating :ref:`EMAPTEMPLATE_WINDOW_POSITION`
         :type  left:          int
         :type  top:           int
         :type  right:         int
@@ -352,9 +348,7 @@ class GXEMAPTEMPLATE:
         """
         Checks if a map is currently opened in a read-only mode.
         
-
-        :returns:             `GEO_BOOL`
-        :rtype:               int
+        :rtype:               bool
 
         .. versionadded:: 5.0
         """
@@ -483,9 +477,9 @@ class GXEMAPTEMPLATE:
         Unloads an edited map, optional prompt to save.
         
         :param name:    Name of map to unload
-        :param prompt:  prompt `GEO_BOOL`
+        :param prompt:  prompt
         :type  name:    str
-        :type  prompt:  int
+        :type  prompt:  bool
 
         .. versionadded:: 5.0
 
@@ -645,7 +639,7 @@ class GXEMAPTEMPLATE:
         """
         Get point without prompt or cursor change with tracking
         
-        :param flags:         `EMAPTEMPLATE_TRACK`
+        :param flags:         :ref:`EMAPTEMPLATE_TRACK`
         :param x:             X coordinate in current view user units.
         :param y:             Y
         :type  flags:         int
@@ -675,14 +669,14 @@ class GXEMAPTEMPLATE:
         :param item:          returned item name
         :type  item:          str_ref
 
-        :returns:             `GEO_BOOL` Is item a view?
-        :rtype:               int
+        :returns:             Returns ``True`` if the item is a view
+        :rtype:               bool
 
         .. versionadded:: 5.0
 
         **Note:**
 
-        If nothing is selected the string will be empty and the function will return `GS_FALSE <geosoft.gxapi.GS_FALSE>`;
+        If nothing is selected the string will be empty and the function will return ``False``
         """
         ret_val, item.value = self._wrapper.get_item_selection(item.value.encode())
         return ret_val
@@ -743,15 +737,15 @@ class GXEMAPTEMPLATE:
         """
         Get the base layout view properties.
         
-        :param snap_to_grid:  `GEO_BOOL` Snap to grid
+        :param snap_to_grid:  Snap to grid
         :param snap_dist:     Snapping distance (always in mm)
         :param view_grid:     View Grid
         :param view_rulers:   View Rulers
-        :param view_units:    `LAYOUT_VIEW_UNITS` View Units
+        :param view_units:    :ref:`LAYOUT_VIEW_UNITS` View Units
         :param grid_red:      Grid Red Component (0-255)
         :param grid_green:    Grid Green Component (0-255)
         :param grid_blue:     Grid Blue Component (0-255)
-        :type  snap_to_grid:  int_ref
+        :type  snap_to_grid:  bool_ref
         :type  snap_dist:     float_ref
         :type  view_grid:     int_ref
         :type  view_rulers:   int_ref
@@ -778,7 +772,7 @@ class GXEMAPTEMPLATE:
         Retrieve the current state of the map window
         
 
-        :returns:             `EMAPTEMPLATE_WINDOW_STATE`
+        :returns:             :ref:`EMAPTEMPLATE_WINDOW_STATE`
         :rtype:               int
 
         .. versionadded:: 5.0
@@ -819,15 +813,15 @@ class GXEMAPTEMPLATE:
         """
         Set the base layout view properties.
         
-        :param snap_to_grid:  `GEO_BOOL` Snap to grid
+        :param snap_to_grid:  Snap to grid
         :param snap_dist:     Snapping distance (always in mm)
         :param view_grid:     View Grid
         :param view_rulers:   View Rulers
-        :param view_units:    `LAYOUT_VIEW_UNITS` View Units
+        :param view_units:    :ref:`LAYOUT_VIEW_UNITS` View Units
         :param grid_red:      Grid Red Component (0-255)
         :param grid_green:    Grid Green Component (0-255)
         :param grid_blue:     Grid Blue Component (0-255)
-        :type  snap_to_grid:  int
+        :type  snap_to_grid:  bool
         :type  snap_dist:     float
         :type  view_grid:     int
         :type  view_rulers:   int
@@ -853,7 +847,7 @@ class GXEMAPTEMPLATE:
         """
         Changes the state of the map window
         
-        :param state:         `EMAPTEMPLATE_WINDOW_STATE`
+        :param state:         :ref:`EMAPTEMPLATE_WINDOW_STATE`
         :type  state:         int
 
         .. versionadded:: 5.0

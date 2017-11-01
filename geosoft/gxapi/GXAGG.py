@@ -64,7 +64,7 @@ class GXAGG:
         """
         Sets the Color Model
         
-        :param model:  `AGG_MODEL`
+        :param model:  :ref:`AGG_MODEL`
         :type  model:  int
 
         .. versionadded:: 5.0
@@ -209,7 +209,7 @@ class GXAGG:
         Add an image as a layer in an aggregate.
         
         :param name:   Grid name
-        :param zone:   `AGG_LAYER_ZONE` transform to use if color table has none defined.
+        :param zone:   :ref:`AGG_LAYER_ZONE` transform to use if color table has none defined.
         :param color:  Color table name, "" for default This can be a .TBL .ZON .`GXITR <geosoft.gxapi.GXITR>` or .`GXAGG <geosoft.gxapi.GXAGG>` file .TBL is the default
         :param cont:   Color contour interval or `rDUMMY <geosoft.gxapi.rDUMMY>` for default
         :type  name:   str
@@ -234,7 +234,7 @@ class GXAGG:
         Add an image as a layer in an aggregate.
         
         :param name:   Grid name
-        :param zone:   `AGG_LAYER_ZONE` transform to use if color table has none defined.
+        :param zone:   :ref:`AGG_LAYER_ZONE` transform to use if color table has none defined.
         :param color:  Color table name, "" for default This can be a .TBL .ZON .`GXITR <geosoft.gxapi.GXITR>` or .`GXAGG <geosoft.gxapi.GXAGG>` file .TBL is the default
         :param min:    Minimum value or `rDUMMY <geosoft.gxapi.rDUMMY>` for default
         :param max:    Maximum value or `rDUMMY <geosoft.gxapi.rDUMMY>` for default
@@ -350,7 +350,7 @@ class GXAGG:
         """
         Sets the Rendering Method
         
-        :param method:  `AGG_RENDER`
+        :param method:  :ref:`AGG_RENDER`
         :type  method:  int
 
         .. versionadded:: 5.1.1

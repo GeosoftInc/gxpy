@@ -194,7 +194,7 @@ class GXFFT:
         
         :param gvv:     `GXVV <geosoft.gxapi.GXVV>` to transform.
         :param interv:  Element space interval
-        :param trend:   `FFT_DETREND`
+        :param trend:   :ref:`FFT_DETREND`
         :type  gvv:     GXVV
         :type  interv:  float
         :type  trend:   int
@@ -221,7 +221,7 @@ class GXFFT:
         
         :param gvv:        `GXVV <geosoft.gxapi.GXVV>` to transform.
         :param interv:     Element space interval
-        :param trend:      `FFT_DETREND`
+        :param trend:      :ref:`FFT_DETREND`
         :param expansion:  Minimum expansion %
         :type  gvv:        GXVV
         :type  interv:     float
@@ -252,7 +252,7 @@ class GXFFT:
         
         :param gvv:     `GXVV <geosoft.gxapi.GXVV>` contains channel data to perform `GXFFT <geosoft.gxapi.GXFFT>` operations upon.
         :param interv:  Element space interval, should be the same as in `create_ex <geosoft.gxapi.GXFFT.create_ex>` call
-        :param trend:   `FFT_DETREND`
+        :param trend:   :ref:`FFT_DETREND`
         :type  gvv:     GXVV
         :type  interv:  float
         :type  trend:   int
@@ -280,7 +280,7 @@ class GXFFT:
         
         :param gvv:        `GXVV <geosoft.gxapi.GXVV>` contains channel data to perform `GXFFT <geosoft.gxapi.GXFFT>` operations upon.
         :param interv:     Element space interval, should be the same as in `create_ex <geosoft.gxapi.GXFFT.create_ex>` call
-        :param trend:      `FFT_DETREND`
+        :param trend:      :ref:`FFT_DETREND`
         :param expansion:  Minimum expansion %, should be the same as in `create_ex <geosoft.gxapi.GXFFT.create_ex>` call
         :param d_cmult:    DC level multiple
         :type  gvv:        GXVV

@@ -62,7 +62,7 @@ class GX3DV:
         """
         Open `GX3DV <geosoft.gxapi.GX3DV>`'s 3D `GXMVIEW <geosoft.gxapi.GXMVIEW>`
         
-        :param mode:  `GEO3DV_OPEN`
+        :param mode:  :ref:`GEO3DV_OPEN`
         :type  mode:  int
 
         :returns:     `GXMVIEW <geosoft.gxapi.GXMVIEW>`, aborts on failure

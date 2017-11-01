@@ -95,7 +95,7 @@ class GXCSYMB:
         Associate symbol edge or fill colors with Z data
         and color transform.
         
-        :param att:    `CSYMB_COLOR`
+        :param att:    :ref:`CSYMB_COLOR`
         :type  att:    int
 
         .. versionadded:: 5.0
@@ -226,7 +226,7 @@ class GXCSYMB:
         
         :param font:      Font name
         :param geo_font:  Geosoft font? (TRUE or FALSE)
-        :param weight:    `MVIEW_FONT_WEIGHT`
+        :param weight:    :ref:`MVIEW_FONT_WEIGHT`
         :param italic:    Italics? (TRUE or FALSE)
         :type  font:      str
         :type  geo_font:  int
@@ -246,7 +246,7 @@ class GXCSYMB:
         Set a static color for the symbol edge or fill.
         
         :param col:    Color value
-        :param att:    `CSYMB_COLOR`
+        :param att:    :ref:`CSYMB_COLOR`
         :type  col:    int
         :type  att:    int
 

@@ -64,7 +64,7 @@ class GXVAU:
         
         :param v_ap:  `GXVA <geosoft.gxapi.GXVA>` to prune
         :param vv_r:  Reference `GXVV <geosoft.gxapi.GXVV>`
-        :param o:     `VAU_PRUNE`
+        :param o:     :ref:`VAU_PRUNE`
         :type  v_ap:  GXVA
         :type  vv_r:  GXVV
         :type  o:     int

@@ -66,7 +66,7 @@ class GXGIS:
         
         :param file:  Data source (file)
         :param info:  Data qualifying information if required.
-        :param type:  `GIS_TYPE`
+        :param type:  :ref:`GIS_TYPE`
         :type  file:  str
         :type  info:  str
         :type  type:  int
@@ -89,7 +89,7 @@ class GXGIS:
         :param map:        Map name
         :param map_scale:  Map scale (can be `rDUMMY <geosoft.gxapi.rDUMMY>`)
         :param ipj:        Projection (no orientation)
-        :param map2_d:     `GIS_MAP2D`
+        :param map2_d:     :ref:`GIS_MAP2D`
         :type  map:        str
         :type  map_scale:  float
         :type  ipj:        GXIPJ

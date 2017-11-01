@@ -79,7 +79,7 @@ class GXVV:
         :param start:     Start Location
         :param elements:  Number of Elements
         :param data:      Data buffer copy data into from `GXVV <geosoft.gxapi.GXVV>`
-        :param gs_type:   `GS_TYPES`
+        :param gs_type:   :ref:`GS_TYPES`
         :type  start:     int
         :type  elements:  int
         :type  data:      bytearray
@@ -100,7 +100,7 @@ class GXVV:
         :param start:     Start Location
         :param elements:  Number of Elements
         :param data:      Data buffer to copy into into `GXVV <geosoft.gxapi.GXVV>`
-        :param gs_type:   `GS_TYPES`
+        :param gs_type:   :ref:`GS_TYPES`
         :type  start:     int
         :type  elements:  int
         :type  data:      bytearray
@@ -162,9 +162,9 @@ class GXVV:
         """
         Apply log to the vv.
         
-        :param log_base:  `VV_LOG_BASE`
-        :param log_neg:   `VV_LOG_NEGATIVE`
-        :param log_min:   Minimum value for `VV_LOG_NEGATIVE`
+        :param log_base:  :ref:`VV_LOG_BASE`
+        :param log_neg:   :ref:`VV_LOG_NEGATIVE`
+        :param log_min:   Minimum value for :ref:`VV_LOG_NEGATIVE`
         :type  log_base:  int
         :type  log_neg:   int
         :type  log_min:   float
@@ -378,8 +378,8 @@ class GXVV:
         will be same even of this are changed.
         
         :param pul_crc:      Previous CRC `CRC_INIT_VALUE <geosoft.gxapi.CRC_INIT_VALUE>`
-        :param float_bits:   `VV_FLOAT_CRC_BITS`
-        :param double_bits:  `VV_DOUBLE_CRC_BITS`
+        :param float_bits:   :ref:`VV_FLOAT_CRC_BITS`
+        :param double_bits:  :ref:`VV_DOUBLE_CRC_BITS`
         :type  pul_crc:      int
         :type  float_bits:   int
         :type  double_bits:  int
@@ -391,7 +391,7 @@ class GXVV:
 
         **Note:**
 
-        Very usefull for testing where the last bits of accuracy
+        Very useful for testing where the last bits of accuracy
         are not as important.
         """
         ret_val = self._wrapper.crc_inexact(pul_crc, float_bits, double_bits)
@@ -404,7 +404,7 @@ class GXVV:
         """
         Create a `GXVV <geosoft.gxapi.GXVV>`.
         
-        :param type:      `GEO_VAR`
+        :param type:      :ref:`GEO_VAR`
         :param elements:  Maximum number of elements in the `GXVV <geosoft.gxapi.GXVV>`, >= 0
         :type  type:      int
         :type  elements:  int
@@ -437,9 +437,9 @@ class GXVV:
     @classmethod
     def create_ext(cls, type, elements):
         """
-        Create a `GXVV <geosoft.gxapi.GXVV>`, using one of the `GS_TYPES` special data types.
+        Create a `GXVV <geosoft.gxapi.GXVV>`, using one of the :ref:`GS_TYPES` special data types.
         
-        :param type:      `GS_TYPES`
+        :param type:      :ref:`GS_TYPES`
         :param elements:  Maximum number of elements in the `GXVV <geosoft.gxapi.GXVV>`, >= 0
         :type  type:      int
         :type  elements:  int
@@ -818,9 +818,9 @@ class GXVV:
         """
         Inverse of the `log <geosoft.gxapi.GXVV.log>` function.
         
-        :param log_base:  `VV_LOG_BASE`
-        :param log_neg:   `VV_LOG_NEGATIVE`
-        :param log_min:   Minimum value for `VV_LOG_NEGATIVE`
+        :param log_base:  :ref:`VV_LOG_BASE`
+        :param log_neg:   :ref:`VV_LOG_NEGATIVE`
+        :param log_min:   Minimum value for :ref:`VV_LOG_NEGATIVE`
         :type  log_base:  int
         :type  log_neg:   int
         :type  log_min:   float
@@ -853,7 +853,7 @@ class GXVV:
         :param rep:  Returned: Do any values repeat (0: No, 1: Yes)?
         :type  rep:  int_ref
 
-        :returns:    `VV_ORDER`
+        :returns:    :ref:`VV_ORDER`
         :rtype:      int
 
         .. versionadded:: 6.4
@@ -1064,7 +1064,7 @@ class GXVV:
         :param yvv:    Y `GXVV <geosoft.gxapi.GXVV>`
         :param rvv:    `GXVV <geosoft.gxapi.GXVV>` to be masked
         :param pply:   Polygon Object
-        :param dummy:  `VV_MASK`
+        :param dummy:  :ref:`VV_MASK`
         :type  yvv:    GXVV
         :type  rvv:    GXVV
         :type  pply:   GXPLY
@@ -1550,7 +1550,7 @@ class GXVV:
         
         :param vvq:    Query `GXVV <geosoft.gxapi.GXVV>` (same type as Data `GXVV <geosoft.gxapi.GXVV>`)
         :param vvi:    `GXVV <geosoft.gxapi.GXVV>` index `GXVV <geosoft.gxapi.GXVV>` of type REAL
-        :param mode:   `VV_LOOKUP`
+        :param mode:   :ref:`VV_LOOKUP`
         :param space:  Spacing for some modes
         :type  vvq:    GXVV
         :type  vvi:    GXVV
@@ -1595,7 +1595,7 @@ class GXVV:
         """
         Sort a `GXVV <geosoft.gxapi.GXVV>`.
         
-        :param order:  `VV_SORT`
+        :param order:  :ref:`VV_SORT`
         :type  order:  int
 
         .. versionadded:: 5.1.5
@@ -1632,7 +1632,7 @@ class GXVV:
         Sort index `GXVV <geosoft.gxapi.GXVV>` based on 1 data `GXVV <geosoft.gxapi.GXVV>` - set orders.
         
         :param ivv:   Index `GXVV <geosoft.gxapi.GXVV>` of type INT
-        :param ord1:  `VV_SORT`
+        :param ord1:  :ref:`VV_SORT`
         :type  ivv:   GXVV
         :type  ord1:  int
 
@@ -1660,8 +1660,8 @@ class GXVV:
         
         :param d2_vv:  Secondary Data `GXVV <geosoft.gxapi.GXVV>`
         :param ivv:    Index `GXVV <geosoft.gxapi.GXVV>` of type INT
-        :param ord1:   Primary Sort order `VV_SORT`
-        :param ord2:   Secondary Sort order `VV_SORT`
+        :param ord1:   Primary Sort order :ref:`VV_SORT`
+        :param ord2:   Secondary Sort order :ref:`VV_SORT`
         :type  d2_vv:  GXVV
         :type  ivv:    GXVV
         :type  ord1:   int
@@ -1692,9 +1692,9 @@ class GXVV:
         :param d2_vv:  Secondary Data `GXVV <geosoft.gxapi.GXVV>`
         :param d3_vv:  Ternary Data `GXVV <geosoft.gxapi.GXVV>`
         :param ivv:    Index `GXVV <geosoft.gxapi.GXVV>` of type INT
-        :param ord1:   Primary Sort order `VV_SORT`
-        :param ord2:   Secondary sort order `VV_SORT`
-        :param ord3:   Third Sort order `VV_SORT`
+        :param ord1:   Primary Sort order :ref:`VV_SORT`
+        :param ord2:   Secondary sort order :ref:`VV_SORT`
+        :param ord3:   Third Sort order :ref:`VV_SORT`
         :type  d2_vv:  GXVV
         :type  d3_vv:  GXVV
         :type  ivv:    GXVV
@@ -1728,10 +1728,10 @@ class GXVV:
         :param d3_vv:  Ternary Data `GXVV <geosoft.gxapi.GXVV>`
         :param d4_vv:  Quaternary Data `GXVV <geosoft.gxapi.GXVV>`
         :param ivv:    Index `GXVV <geosoft.gxapi.GXVV>` of type INT
-        :param ord1:   Primary Ssort order `VV_SORT`
-        :param ord2:   Secondary Sort order `VV_SORT`
-        :param ord3:   Third Sort order `VV_SORT`
-        :param ord4:   Fourth Sort order `VV_SORT`
+        :param ord1:   Primary Ssort order :ref:`VV_SORT`
+        :param ord2:   Secondary Sort order :ref:`VV_SORT`
+        :param ord3:   Third Sort order :ref:`VV_SORT`
+        :param ord4:   Fourth Sort order :ref:`VV_SORT`
         :type  d2_vv:  GXVV
         :type  d3_vv:  GXVV
         :type  d4_vv:  GXVV
@@ -1815,7 +1815,7 @@ class GXVV:
         
         :param min:   Min Val
         :param max:   Max Val
-        :param mode:  `VV_WINDOW`
+        :param mode:  :ref:`VV_WINDOW`
         :type  min:   float
         :type  max:   float
         :type  mode:  int

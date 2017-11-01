@@ -94,7 +94,7 @@ class GXVVU:
         
         :param ref_vv:  Reference `GXVV <geosoft.gxapi.GXVV>`
         :param dat_vv:  Data `GXVV <geosoft.gxapi.GXVV>` to average
-        :param mode:    `VVU_MODE`
+        :param mode:    :ref:`VVU_MODE`
         :type  ref_vv:  GXVV
         :type  dat_vv:  GXVV
         :type  mode:    int
@@ -161,7 +161,7 @@ class GXVVU:
         :param ref_vv1:  Reference `GXVV <geosoft.gxapi.GXVV>`
         :param ref_vv2:  Reference `GXVV <geosoft.gxapi.GXVV>`
         :param dat_vv:   Data `GXVV <geosoft.gxapi.GXVV>` to average
-        :param mode:     `VVU_MODE`
+        :param mode:     :ref:`VVU_MODE`
         :type  ref_vv1:  GXVV
         :type  ref_vv2:  GXVV
         :type  dat_vv:   GXVV
@@ -268,7 +268,7 @@ class GXVVU:
         :param vv:    `GXVV <geosoft.gxapi.GXVV>` to clip
         :param min:   Minimum value, `rDUMMY <geosoft.gxapi.rDUMMY>` for no minimum clip
         :param max:   Maximum value, `rDUMMY <geosoft.gxapi.rDUMMY>` for no maximum clip
-        :param clip:  `VVU_CLIP`
+        :param clip:  :ref:`VVU_CLIP`
         :type  vv:    GXVV
         :type  min:   float
         :type  max:   float
@@ -346,7 +346,7 @@ class GXVVU:
         :param y1:    Y of 1st point to define straight line
         :param x2:    X of 2nd point or line azimuth in degrees (North is 0 degree)
         :param y2:    Y of 2nd point or `GS_R8DM <geosoft.gxapi.GS_R8DM>` if line azimuth is defined
-        :param line:  `VVU_LINE`
+        :param line:  :ref:`VVU_LINE`
         :type  vv_x:  GXVV
         :type  vv_y:  GXVV
         :type  vv_d:  GXVV
@@ -556,7 +556,7 @@ class GXVVU:
         """
         Dummy repeat values in a `GXVV <geosoft.gxapi.GXVV>`.
         
-        :param mode:  `VVU_DUMMYREPEAT`
+        :param mode:  :ref:`VVU_DUMMYREPEAT`
         :type  vv:    GXVV
         :type  mode:  int
 
@@ -911,8 +911,8 @@ class GXVVU:
         Replace all dummies by interpolating from valid data.
         
         :param vv:      Input `GXVV <geosoft.gxapi.GXVV>`
-        :param input:   `VVU_INTERP`
-        :param output:  `VVU_INTERP_EDGE`
+        :param input:   :ref:`VVU_INTERP`
+        :param output:  :ref:`VVU_INTERP_EDGE`
         :type  vv:      GXVV
         :type  input:   int
         :type  output:  int
@@ -985,8 +985,8 @@ class GXVVU:
         
         :param vv:     `GXVV <geosoft.gxapi.GXVV>` to search
         :param text:   Text to match
-        :param case:   `VVU_CASE`
-        :param match:  `VVU_MATCH`
+        :param case:   :ref:`VVU_CASE`
+        :param match:  :ref:`VVU_MATCH`
         :param start:  Index to begin search (-1 for full `GXVV <geosoft.gxapi.GXVV>`)
         :param dir:    1: forward search, -1: backward search
         :type  vv:     GXVV
@@ -1258,7 +1258,7 @@ class GXVVU:
         :param vv_xi:    Input X
         :param vv_yi:    Input Y
         :param dist:     Offset distance
-        :param heading:  `VVU_OFFSET`
+        :param heading:  :ref:`VVU_OFFSET`
         :param v_vxo:    Output X
         :param v_vyo:    Output Y
         :type  vv_xi:    GXVV
@@ -1642,7 +1642,7 @@ class GXVVU:
         :param vv_y:  Y `GXVV <geosoft.gxapi.GXVV>`
         :param vv_m:  `GXVV <geosoft.gxapi.GXVV>` to be masked
         :param pply:  `GXPLY <geosoft.gxapi.GXPLY>` object
-        :param mask:  `VVU_MASK`
+        :param mask:  :ref:`VVU_MASK`
         :type  vv_x:  GXVV
         :type  vv_y:  GXVV
         :type  vv_m:  GXVV
@@ -1667,7 +1667,7 @@ class GXVVU:
         
         :param vv_p:  `GXVV <geosoft.gxapi.GXVV>` to prune
         :param vv_r:  Reference `GXVV <geosoft.gxapi.GXVV>`
-        :param o:     `VVU_PRUNE`
+        :param o:     :ref:`VVU_PRUNE`
         :type  vv_p:  GXVV
         :type  vv_r:  GXVV
         :type  o:     int
@@ -1697,7 +1697,7 @@ class GXVVU:
         :param max_tol:  Maximum tolerance/deviation applied to a single reading (criterion #1). `GS_R8DM <geosoft.gxapi.GS_R8DM>` if criterion #1 does not apply. Otherwise, must be positive value including 0.0
         :param all_tol:  Allowed tolerance/deviation over a given distance (next parameter) (criterion #2). `GS_R8DM <geosoft.gxapi.GS_R8DM>` if criterion #2 does not apply. Otherwise, must be positive value including 0.0
         :param dist:     The specified distance. `GS_R8DM <geosoft.gxapi.GS_R8DM>` if criterion #2 does not apply. Otherwise, must be positive value excluding 0.0
-        :param qc:       `QC_CRITERION`
+        :param qc:       :ref:`QC_CRITERION`
         :type  vv_i:     GXVV
         :type  vv_d:     GXVV
         :type  v_vf:     GXVV
@@ -1916,7 +1916,7 @@ class GXVVU:
         
         :param data_vv:    Data `GXVV <geosoft.gxapi.GXVV>`
         :param sample_vv:  Sample Type `GXVV <geosoft.gxapi.GXVV>`
-        :param output:     `VV_DUP`
+        :param output:     :ref:`VV_DUP`
         :type  data_vv:    GXVV
         :type  sample_vv:  GXVV
         :type  output:     int
@@ -1929,7 +1929,7 @@ class GXVVU:
         a numeric or text `GXVV <geosoft.gxapi.GXVV>` containing data values, and a sample type `GXVV <geosoft.gxapi.GXVV>`.
         Sample pairs have types "1" and "2". This routine searches for
         types in order "1 2 1 2", and replaces the pair of values in the
-        data `GXVV <geosoft.gxapi.GXVV>` according to the `VV_DUP` value.
+        data `GXVV <geosoft.gxapi.GXVV>` according to the :ref:`VV_DUP` value.
         Results for samples out of order, for unmatched pairs, or when the
         sample type does not equal "1" or "2" remain unchanged.
         """
@@ -1946,7 +1946,7 @@ class GXVVU:
         :param xvv:     X `GXVV <geosoft.gxapi.GXVV>`
         :param yvv:     Y `GXVV <geosoft.gxapi.GXVV>`
         :param zvv:     (optional) Z `GXVV <geosoft.gxapi.GXVV>`
-        :param xy_dup:  `VV_XYDUP`
+        :param xy_dup:  :ref:`VV_XYDUP`
         :type  xvv:     GXVV
         :type  yvv:     GXVV
         :type  zvv:     GXVV
@@ -1958,7 +1958,7 @@ class GXVVU:
 
         Searches for duplicated (X, Y) locations and removes the
         duplicates (can be more than just a pair). The "Z" values,
-        if defined, are treated according to the value of `VV_XYDUP`.
+        if defined, are treated according to the value of :ref:`VV_XYDUP`.
         The returned VVs are shortened to the new length, without
         duplicates.
         The Z `GXVV <geosoft.gxapi.GXVV>` can be set to NULL on input, in which case it is ignored.
@@ -2001,7 +2001,7 @@ class GXVVU:
         
         :param vv_i:    Input `GXVV <geosoft.gxapi.GXVV>`
         :param vv_o:    Output `GXVV <geosoft.gxapi.GXVV>`
-        :param stat:    `ST_INFO`
+        :param stat:    :ref:`ST_INFO`
         :param window:  Window size (>0, increased to nearest odd value)
         :param shrink:  Shrink window at ends (1:Yes, 0:No)
         :type  vv_i:    GXVV
@@ -2092,7 +2092,7 @@ class GXVVU:
         :param decimal:  Decimals for formating numeric `GXVV <geosoft.gxapi.GXVV>`
         :param val:      Formatted string to replace
         :param rpl:      Replacement
-        :param mode:     `VVU_SRCHREPL_CASE`
+        :param mode:     :ref:`VVU_SRCHREPL_CASE`
         :type  vv:       GXVV
         :type  format:   int
         :type  decimal:  int
@@ -2125,7 +2125,7 @@ class GXVVU:
         :param decimal:  Decimals for formating numeric `GXVV <geosoft.gxapi.GXVV>`
         :param val:      Formatted string to replace
         :param rpl:      Replacement
-        :param mode:     `VVU_SRCHREPL_CASE`
+        :param mode:     :ref:`VVU_SRCHREPL_CASE`
         :param items:    Number of items replaced (returned)
         :type  vv:       GXVV
         :type  format:   int
@@ -2164,7 +2164,7 @@ class GXVVU:
         :param incr:    Separation Distance
         :param gap:     Maximum gap to interpolate across
         :param ext:     Number of elements to extend
-        :param type:    `VVU_SPL`
+        :param type:    :ref:`VVU_SPL`
         :type  vv_x:    GXVV
         :type  vv_y:    GXVV
         :type  vv_o:    GXVV
@@ -2191,7 +2191,7 @@ class GXVVU:
         :param vv_y:   Y to be splined (no dummies)
         :param vv_x2:  X2 (no dummies)
         :param vv_o:   Y output
-        :param type:   `VVU_SPL`
+        :param type:   :ref:`VVU_SPL`
         :type  vv_x:   GXVV
         :type  vv_y:   GXVV
         :type  vv_x2:  GXVV

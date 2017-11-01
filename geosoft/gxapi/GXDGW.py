@@ -53,7 +53,7 @@ class GXDGW:
     Before version 6.2. there used to be a parameter, MONTAJ.GX_CHARSET, that
     affected characters above ASCII 127. 6.2. introduced Unicode in the core
     montaj engine that eliminated the need for such a setting. All strings
-    on the GX API level are encoded in `UTF8` during runtime which makes it possible
+    on the GX API level are encoded in :ref:`UTF8` during runtime which makes it possible
     to represent all possible characters without using character sets.
     """
 
@@ -120,7 +120,7 @@ class GXDGW:
         Copies the Dialog information to a `GXMETA <geosoft.gxapi.GXMETA>` attribute.
         
         :param obj:           Dialog Object
-        :param dlg_obj_type:  `DGW_OBJECT`
+        :param dlg_obj_type:  :ref:`DGW_OBJECT`
         :param meta_obj:      Object
         :param meta_attrib:   Attribute
         :type  obj:           int
@@ -143,7 +143,7 @@ class GXDGW:
         set a `GXSYS <geosoft.gxapi.GXSYS>` variable.
         
         :param id:     Dialog Object
-        :param info:   `DGW_OBJECT`
+        :param info:   :ref:`DGW_OBJECT`
         :param group:  Group name of the Variable
         :param field:  Variable name
         :type  id:     int
@@ -184,7 +184,7 @@ class GXDGW:
         the text object specified.
         
         :param id:    Handle to the TEXT Object
-        :param info:  `DGW_OBJECT`
+        :param info:  :ref:`DGW_OBJECT`
         :param buff:  Where to place the String
         :type  id:    int
         :type  info:  int
@@ -220,7 +220,7 @@ class GXDGW:
         is too long it will be truncated.
         
         :param id:    Handle to the TEXT Object
-        :param info:  `DGW_OBJECT`
+        :param info:  :ref:`DGW_OBJECT`
         :param buff:  String to set the Text To
         :type  id:    int
         :type  info:  int
@@ -239,7 +239,7 @@ class GXDGW:
         This sets a text object to the text found in a `GXMETA <geosoft.gxapi.GXMETA>` attribute.
         
         :param obj:           Dialog Object
-        :param dlg_obj_type:  `DGW_OBJECT`
+        :param dlg_obj_type:  :ref:`DGW_OBJECT`
         :param meta_obj:      Object
         :param meta_attrib:   Attribute
         :type  obj:           int
@@ -263,7 +263,7 @@ class GXDGW:
         the text is not set.
         
         :param id:     Dialog Object
-        :param info:   `DGW_OBJECT`
+        :param info:   :ref:`DGW_OBJECT`
         :param group:  Group name of the Variable
         :param field:  Variable name
         :type  id:     int

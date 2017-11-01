@@ -188,9 +188,9 @@ class GXLAYOUT:
         Add a constraint between any two rectangles or to one with absolute positioning
         
         :param rect_from:    From rectangle (Or -1 for parent)
-        :param constr_from:  `LAYOUT_CONSTR` From constraint flag
+        :param constr_from:  :ref:`LAYOUT_CONSTR` From constraint flag
         :param rect_to:      To rectangle (Or -1 for parent Or -2 for absolute positioning)
-        :param constr_to:    `LAYOUT_CONSTR` To constraint flag
+        :param constr_to:    :ref:`LAYOUT_CONSTR` To constraint flag
         :param o_mod:        Offset modifier
         :param m_mod:        Multiplicative modifier
         :type  rect_from:    int

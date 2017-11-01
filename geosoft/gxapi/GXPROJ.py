@@ -82,7 +82,7 @@ class GXPROJ:
         
         :param name:     Document name
         :param type:     Type of document to add
-        :param display:  `PROJ_DISPLAY`
+        :param display:  :ref:`PROJ_DISPLAY`
         :type  name:     str
         :type  type:     str
         :type  display:  int
@@ -159,7 +159,7 @@ class GXPROJ:
         The current command environment
         
 
-        :returns:    `COMMAND_ENV`
+        :returns:    :ref:`COMMAND_ENV`
                   
                   Notes									We are moving towards embedded tools and menus and this setting can be
                   queried from the project to determine how specific commands should react.
@@ -282,7 +282,7 @@ class GXPROJ:
         notes the current visibility setting.
         
         :param lst:   `GXLST <geosoft.gxapi.GXLST>` object to hold list
-        :param type:  `TOOL_TYPE`
+        :param type:  :ref:`TOOL_TYPE`
         :type  lst:   GXLST
         :type  type:  int
 

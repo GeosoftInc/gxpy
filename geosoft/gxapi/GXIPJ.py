@@ -221,7 +221,7 @@ class GXIPJ:
         """
         Add a warp to `GXIPJ <geosoft.gxapi.GXIPJ>`.
         
-        :param type:      `IPJ_TYPE`
+        :param type:      :ref:`IPJ_TYPE`
         :param vv_x_old:  Old X `GXVV <geosoft.gxapi.GXVV>` (real)
         :param vv_y_old:  Old Y `GXVV <geosoft.gxapi.GXVV>` (real)
         :param vv_x_new:  New X `GXVV <geosoft.gxapi.GXVV>` (real)
@@ -440,8 +440,8 @@ class GXIPJ:
         :param sx:       Scaling in X
         :param sy:       Scaling in Y
         :param str_val:  Scaling in Z
-        :param rotate:   `IPJ_3D_ROTATE`
-        :param flags:    `IPJ_3D_FLAG`
+        :param rotate:   :ref:`IPJ_3D_ROTATE`
+        :param flags:    :ref:`IPJ_3D_FLAG`
         :type  x:        float_ref
         :type  y:        float_ref
         :type  z:        float_ref
@@ -495,7 +495,7 @@ class GXIPJ:
         """
         Get a list of parameters.
         
-        :param parm:   `IPJ_PARM_LST`
+        :param parm:   :ref:`IPJ_PARM_LST`
         :param datum:  Datum filter, "" for no filter
         :param lst:    List returned
         :type  parm:   int
@@ -862,7 +862,7 @@ class GXIPJ:
         """
         Get an `GXIPJ <geosoft.gxapi.GXIPJ>` name
         
-        :param type:     `IPJ_NAME`
+        :param type:     :ref:`IPJ_NAME`
         :param str_val:  Name returned
         :type  type:     int
         :type  str_val:  str_ref
@@ -913,7 +913,7 @@ class GXIPJ:
         Get `GXIPJ <geosoft.gxapi.GXIPJ>` orientation in space.
         
 
-        :returns:    `IPJ_ORIENT`
+        :returns:    :ref:`IPJ_ORIENT`
         :rtype:      int
 
         .. versionadded:: 5.1.4
@@ -1178,7 +1178,7 @@ class GXIPJ:
         Get `GXIPJ <geosoft.gxapi.GXIPJ>` source type
         
 
-        :returns:    `IPJ_TYPE`
+        :returns:    :ref:`IPJ_TYPE`
         :rtype:      int
 
         .. versionadded:: 5.0
@@ -1225,7 +1225,7 @@ class GXIPJ:
         Get a unit name given a scale factor
         
         :param val:   Factor to meters
-        :param type:  `IPJ_UNIT`
+        :param type:  :ref:`IPJ_UNIT`
         :param name:  Name returned, "" if cannot find unit
         :type  val:   float
         :type  type:  int
@@ -1243,9 +1243,7 @@ class GXIPJ:
         """
         Does `GXIPJ <geosoft.gxapi.GXIPJ>` contain a warp?
         
-
-        :returns:    `GEO_BOOL`
-        :rtype:      int
+        :rtype:      bool
 
         .. versionadded:: 5.0
         """
@@ -1298,7 +1296,7 @@ class GXIPJ:
         Obtain the warp type of an `GXIPJ <geosoft.gxapi.GXIPJ>`.
         
 
-        :returns:    `IPJ_WARP`
+        :returns:    :ref:`IPJ_WARP`
         :rtype:      int
 
         .. versionadded:: 7.0
@@ -1380,7 +1378,7 @@ class GXIPJ:
         """
         Read and define an `GXIPJ <geosoft.gxapi.GXIPJ>` from a standard file.
         
-        :param type:  `IPJ_TYPE`
+        :param type:  :ref:`IPJ_TYPE`
         :param str1:  String 1
         :param str2:  String 2
         :param str3:  String 3
@@ -1401,7 +1399,7 @@ class GXIPJ:
         """
         Get projection method parameter
         
-        :param parm:  `IPJ_CSP`
+        :param parm:  :ref:`IPJ_CSP`
         :type  parm:  int
 
         :returns:     Parameter setting, `rDUMMY <geosoft.gxapi.rDUMMY>` if dot used
@@ -1602,8 +1600,8 @@ class GXIPJ:
         :param sx:       Scaling in X
         :param sy:       Scaling in Y
         :param str_val:  Scaling in Z
-        :param rotate:   `IPJ_3D_ROTATE`
-        :param flags:    `IPJ_3D_FLAG`
+        :param rotate:   :ref:`IPJ_3D_ROTATE`
+        :param flags:    :ref:`IPJ_3D_FLAG`
         :type  x:        float
         :type  y:        float
         :type  z:        float
@@ -1896,7 +1894,7 @@ class GXIPJ:
         """
         Set projection method parameter
         
-        :param parm:        `IPJ_CSP`
+        :param parm:        :ref:`IPJ_CSP`
         :param parm_value:  Parameter value
         :type  parm:        int
         :type  parm_value:  float

@@ -121,7 +121,7 @@ class GXVULCAN:
         Query a block model for the variable names and descriptions.
         
         :param block_model_file:  Block model file
-        :param query:             `BLOCK_MODEL_VARIABLE_TYPE` Which variables to return.
+        :param query:             :ref:`BLOCK_MODEL_VARIABLE_TYPE` Which variables to return.
         :param lst:               List used to return variable names/descriptions.
         :type  block_model_file:  str
         :type  query:             int
@@ -162,13 +162,13 @@ class GXVULCAN:
         :param ipj:                    Block model projection
         :param variable_to_export:     Variable to import
         :param output_voxel_filename:  Ouput voxel filename
-        :param remove_default_values:  Remove default values from input? `GEO_BOOL`
+        :param remove_default_values:  Remove default values from input?
         :param rock_code_filename:     Rock code file for string variable imports. Optional, unused for numeric variable imports.
         :type  block_model_file:       str
         :type  ipj:                    GXIPJ
         :type  variable_to_export:     str
         :type  output_voxel_filename:  str
-        :type  remove_default_values:  int
+        :type  remove_default_values:  bool
         :type  rock_code_filename:     str
 
         .. versionadded:: 8.4

@@ -295,7 +295,7 @@ class GXLST:
         """
         Searches a `GXLST <geosoft.gxapi.GXLST>` for items in a second `GXLST <geosoft.gxapi.GXLST>`, returns indices of those found.
         
-        :param type:  `LST_ITEM` data to do the search on
+        :param type:  :ref:`LST_ITEM` data to do the search on
         :param lst2:  Items to search for
         :param vv:    `GS_LONG <geosoft.gxapi.GS_LONG>` `GXVV <geosoft.gxapi.GXVV>` of returned indices into the first `GXLST <geosoft.gxapi.GXLST>`.
         :type  type:  int
@@ -324,7 +324,7 @@ class GXLST:
         """
         This places the specified item into the buffer provided.
         
-        :param type:  `LST_ITEM` data to retrieve
+        :param type:  :ref:`LST_ITEM` data to retrieve
         :param item:  Item Number to Get
         :param buff:  Buffer to Place Item Into
         :type  type:  int
@@ -394,7 +394,7 @@ class GXLST:
         """
         Searches the list for a specified item.
         
-        :param type:  `LST_ITEM` data to do the search on
+        :param type:  :ref:`LST_ITEM` data to do the search on
         :param name:  String to Search For
         :type  type:  int
         :type  name:  str
@@ -419,7 +419,7 @@ class GXLST:
         """
         Searches the list for a specified item, list contains masks.
         
-        :param type:  `LST_ITEM` data to search
+        :param type:  :ref:`LST_ITEM` data to search
         :param name:  String to try `GXLST <geosoft.gxapi.GXLST>` mask items on Search For
         :type  type:  int
         :type  name:  str
@@ -459,7 +459,7 @@ class GXLST:
         """
         Get an integer item.
         
-        :param type:  `LST_ITEM` data to retrieve
+        :param type:  :ref:`LST_ITEM` data to retrieve
         :param item:  Item Number to Get
         :type  type:  int
         :type  item:  int
@@ -594,7 +594,7 @@ class GXLST:
         """
         Get a real item.
         
-        :param type:  `LST_ITEM` data to retrieve
+        :param type:  :ref:`LST_ITEM` data to retrieve
         :param item:  Item Number to Get
         :type  type:  int
         :type  item:  int
@@ -688,7 +688,7 @@ class GXLST:
         """
         Place an item at a specified point in the `GXLST <geosoft.gxapi.GXLST>`.
         
-        :param type:  `LST_ITEM` data to insert
+        :param type:  :ref:`LST_ITEM` data to insert
         :param item:  Item Number to Set
         :param buff:  Item to Set
         :type  type:  int
@@ -711,7 +711,7 @@ class GXLST:
         """
         Sorts a list.
         
-        :param type:  `LST_ITEM` data to sort on
+        :param type:  :ref:`LST_ITEM` data to sort on
         :param ord:   0 - Ascending, 1 - Decending
         :type  type:  int
         :type  ord:   int

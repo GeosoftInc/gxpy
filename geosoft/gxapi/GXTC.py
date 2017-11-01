@@ -73,9 +73,9 @@ class GXTC:
         :param dens_t:     Terrain density in g/cc
         :param dens_w:     Water density in g/cc
         :param elev_w:     Water reference elevation (in elevation unit)
-        :param edge:       `GS_TRUE <geosoft.gxapi.GS_TRUE>` to calculate an edge correction (compensation)
+        :param edge:       1 to calculate an edge correction (compensation), 0 otherwise
         :param edge_elev:  Average elevation beyond max distance (in elevation unit)
-        :param opt:        `TC_OPT`
+        :param opt:        :ref:`TC_OPT`
         :type  img:        GXIMG
         :type  elev_unit:  float
         :type  dinner:     float
@@ -109,10 +109,10 @@ class GXTC:
         :param dens_t:       Terrain density in g/cc
         :param dens_w:       Water density in g/cc
         :param elev_w:       Water reference elevation (in elevation unit)
-        :param edge:         `GS_TRUE <geosoft.gxapi.GS_TRUE>` to calculate an edge correction (compensation)
+        :param edge:         1 to calculate an edge correction (compensation), 0 otherwise
         :param edge_elev:    Average elevation beyond max distance (in elevation unit)
-        :param opt:          `TC_OPT`
-        :param survey_type:  `TC_SURVEYTYPE`
+        :param opt:          :ref:`TC_OPT`
+        :param survey_type:  :ref:`TC_SURVEYTYPE`
         :type  img:          GXIMG
         :type  elev_unit:    float
         :type  dinner:       float
@@ -221,7 +221,7 @@ class GXTC:
         :param p5:     Output Terrain Corrected channel data
         :param p6:     Terrain density (default 2.67)
         :param p7:     Terrain reference level (default 0.0)
-        :param p8:     `GG_ELEMENT`
+        :param p8:     :ref:`GG_ELEMENT`
         :type  gv_vx:  GXVV
         :type  p3:     GXVV
         :type  p4:     GXVV

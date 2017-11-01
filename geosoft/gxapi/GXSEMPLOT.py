@@ -235,14 +235,14 @@ class GXSEMPLOT:
         :param map:        Associated map
         :param mview:      View with group
         :param group:      Group name
-        :param plot_type:  `SEMPLOT_PLOT`
+        :param plot_type:  :ref:`SEMPLOT_PLOT`
         :param x_stage:    XStage
         :param x_oxide:    XOxide
         :param y_stage:    YStage
         :param y_oxide:    YOxide
         :param z_stage:    ZStage
         :param z_oxide:    ZOxide
-        :param extension:  `SEMPLOT_EXT`
+        :param extension:  :ref:`SEMPLOT_EXT`
         :type  overlay:    str
         :type  map:        str
         :type  mview:      GXMVIEW
@@ -307,7 +307,7 @@ class GXSEMPLOT:
         :param mask_ch:     Mask channel ("" for None)
         :param mineral_ch:  Mineral channel
         :param mineral:     Mineral to export ("" for all)
-        :param export:      `SEMPLOT_EXPORT` Channel selection
+        :param export:      :ref:`SEMPLOT_EXPORT` Channel selection
         :type  db:          GXDB
         :type  lst:         GXLST
         :type  new_db:      GXDB
@@ -758,7 +758,7 @@ class GXSEMPLOT:
         :type  map:   GXMAP
         :type  view:  str
 
-        :returns:     `SEMPLOT_PLOT`
+        :returns:     :ref:`SEMPLOT_PLOT`
         :rtype:       int
 
         .. versionadded:: 6.4.2
@@ -867,8 +867,8 @@ class GXSEMPLOT:
         Fill a list with the available plot overlay names
         
         :param lst:        Input `GXLST <geosoft.gxapi.GXLST>`.
-        :param extension:  `SEMPLOT_EXT`
-        :param type:       `SEMPLOT_PLOT`
+        :param extension:  :ref:`SEMPLOT_EXT`
+        :param type:       :ref:`SEMPLOT_PLOT`
         :type  lst:        GXLST
         :type  extension:  int
         :type  type:       int
@@ -878,7 +878,7 @@ class GXSEMPLOT:
         **Note:**
 
         Looks first in user\\etc, then in \\etc.
-        See `SEMPLOT_EXT` definitions above for which files to look for.
+        See :ref:`SEMPLOT_EXT` definitions above for which files to look for.
         """
         gxapi_cy.WrapSEMPLOT.overlay_lst(GXContext._get_tls_geo(), lst._wrapper, extension, type)
         
@@ -1256,7 +1256,7 @@ class GXSEMPLOT:
         Fill a list with the available plot template names
         
         :param lst:   Input `GXLST <geosoft.gxapi.GXLST>`.
-        :param type:  `SEMPLOT_PLOT`
+        :param type:  :ref:`SEMPLOT_PLOT`
         :type  lst:   GXLST
         :type  type:  int
 

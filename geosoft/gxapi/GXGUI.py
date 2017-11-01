@@ -135,7 +135,7 @@ class GXGUI:
         Retrieve the current state of the Oasis montaj window
         
 
-        :returns:    `WINDOW_STATE`
+        :returns:    :ref:`WINDOW_STATE`
         :rtype:      int
 
         .. versionadded:: 9.0
@@ -150,7 +150,7 @@ class GXGUI:
         """
         Changes the state of the Oasis montaj window
         
-        :param state:  `WINDOW_STATE`
+        :param state:  :ref:`WINDOW_STATE`
         :type  state:  int
 
         .. versionadded:: 9.0
@@ -169,7 +169,7 @@ class GXGUI:
         :param top:     Window top position
         :param right:   Window right position
         :param bottom:  Window bottom position
-        :param state:   Window state `WINDOW_STATE`
+        :param state:   Window state :ref:`WINDOW_STATE`
         :type  left:    int_ref
         :type  top:     int_ref
         :type  right:   int_ref
@@ -192,7 +192,7 @@ class GXGUI:
         :param top:     Window top position
         :param right:   Window right position
         :param bottom:  Window bottom position
-        :param state:   Window state `WINDOW_STATE`
+        :param state:   Window state :ref:`WINDOW_STATE`
         :type  left:    int
         :type  top:     int
         :type  right:   int
@@ -286,7 +286,7 @@ class GXGUI:
         is set to white, if any other type is input the output is
         guaranteed to be of the same type.
         
-        If the third flag is `GS_TRUE <geosoft.gxapi.GS_TRUE>` is used, then on exit, if white is
+        If ``no_col`` is 1, then on exit, if white is
         selected, the user is prompted: 'Do you want white (Yes) or
         "None" (No) ?' and the color is converted as requested.
         If this is not the case, the `C_TRANSPARENT <geosoft.gxapi.C_TRANSPARENT>` is converted
@@ -331,7 +331,7 @@ class GXGUI:
         
         :param ipj:           `GXIPJ <geosoft.gxapi.GXIPJ>` object
         :param editable:      Editable `GXIPJ <geosoft.gxapi.GXIPJ>` (0:No, 1:Yes)
-        :param mode:          `COORDSYS_MODE`
+        :param mode:          :ref:`COORDSYS_MODE`
         :param source_label:  Data source label
         :param source:        Data source
         :type  ipj:           GXIPJ
@@ -366,7 +366,7 @@ class GXGUI:
         
         :param ipj:           `GXIPJ <geosoft.gxapi.GXIPJ>` object
         :param editable:      Editable `GXIPJ <geosoft.gxapi.GXIPJ>` (0:No, 1:Yes)
-        :param mode:          `COORDSYS_MODE`
+        :param mode:          :ref:`COORDSYS_MODE`
         :param source_label:  Data source label
         :param source:        Data source
         :type  ipj:           GXIPJ
@@ -399,7 +399,7 @@ class GXGUI:
         :param ipj:           Original grid `GXIPJ <geosoft.gxapi.GXIPJ>` object
         :param target_ipj:    Source (target) grid `GXIPJ <geosoft.gxapi.GXIPJ>` object. This is supplied so the modified orientation can be calculated and displayed.
         :param editable:      Editable `GXIPJ <geosoft.gxapi.GXIPJ>` (0:No, 1:Yes)
-        :param mode:          `COORDSYS_MODE`
+        :param mode:          :ref:`COORDSYS_MODE`
         :param source_label:  Data source label
         :param source:        Data source
         :param nx:            Number of cells in X
@@ -570,7 +570,7 @@ class GXGUI:
         :param filter:  Input filter string
         :type  filter:  str
 
-        :returns:       `FILE_FILTER`, -1 if not found
+        :returns:       :ref:`FILE_FILTER`, -1 if not found
         :rtype:         int
 
         .. versionadded:: 7.0
@@ -684,7 +684,7 @@ class GXGUI:
         :type  ply:    GXPLY
         :type  ipj:    GXIPJ
 
-        :returns:      `AOI_RETURN_STATE`
+        :returns:      :ref:`AOI_RETURN_STATE`
         :rtype:        int
 
         .. versionadded:: 5.0
@@ -722,7 +722,7 @@ class GXGUI:
         :type  ply:    GXPLY
         :type  ipj:    GXIPJ
 
-        :returns:      `AOI_RETURN_STATE`
+        :returns:      :ref:`AOI_RETURN_STATE`
         :rtype:        int
 
         .. versionadded:: 5.0
@@ -743,8 +743,8 @@ class GXGUI:
         """
         Return the user default extension and qualifier for grids/images.
         
-        :param flags:  `DAT_TYPE`
-        :param open:   `FILE_FORM`
+        :param flags:  :ref:`DAT_TYPE`
+        :param open:   :ref:`FILE_FORM`
         :param ext:    Returned default extension (e.g. "grd")
         :param qual:   Returned default qualifier (e.g. "GRD")
         :type  flags:  int
@@ -773,11 +773,11 @@ class GXGUI:
         """
         Return the defined filter, mask, extension and directory for an input filter.
         
-        :param file_filter:  `FILE_FILTER`
+        :param file_filter:  :ref:`FILE_FILTER`
         :param filter:       Returned file filter string
         :param mask:         Returned file mask string
         :param ext:          Returned file extension
-        :param path:         `GS_DIRECTORY` Returned directory.
+        :param path:         :ref:`GS_DIRECTORY` Returned directory.
         :type  file_filter:  int
         :type  filter:       str_ref
         :type  mask:         str_ref
@@ -807,9 +807,9 @@ class GXGUI:
     @classmethod
     def get_gs_directory(cls, path, dir):
         """
-        Return the directory path for value of `GS_DIRECTORY`.
+        Return the directory path for value of :ref:`GS_DIRECTORY`.
         
-        :param path:  `GS_DIRECTORY` Returned directory.
+        :param path:  :ref:`GS_DIRECTORY` Returned directory.
         :param dir:   Returned directory path
         :type  path:  int
         :type  dir:   str_ref
@@ -935,8 +935,8 @@ class GXGUI:
         :param title:            Title of the Form
         :param default:          Default value
         :param psz_file_path:    Where the file name(s) is returned
-        :param type:             `DAT_TYPE`
-        :param validation_type:  `FILE_FORM`
+        :param type:             :ref:`DAT_TYPE`
+        :param validation_type:  :ref:`FILE_FORM`
         :param multi:            Allow Multiple file selections = TRUE Single   file selections = FALSE
         :type  title:            str
         :type  default:          str
@@ -973,11 +973,11 @@ class GXGUI:
         General file Open/Save Form for Multiple/Single file selections and multiple filter capability
         
         :param title:      Title of the Form
-        :param filt_vv:    INT `GXVV <geosoft.gxapi.GXVV>` of file filters to use `FILE_FILTER` The first one is default, can pass (`GXVV <geosoft.gxapi.GXVV>`) 0 for to use next parameter.
-        :param filter:     `FILE_FILTER` (ignored if parameter above is not zero)
+        :param filt_vv:    INT `GXVV <geosoft.gxapi.GXVV>` of file filters to use :ref:`FILE_FILTER` The first one is default, can pass (`GXVV <geosoft.gxapi.GXVV>`) 0 for to use next parameter.
+        :param filter:     :ref:`FILE_FILTER` (ignored if parameter above is not zero)
         :param default:    Default value
         :param file_path:  Where the file name(s) is returned
-        :param type:       `FILE_FORM`
+        :param type:       :ref:`FILE_FORM`
         :param multi:      Allow Multiple file selections = TRUE Single   file selections = FALSE
         :type  title:      str
         :type  filt_vv:    GXVV
@@ -1021,7 +1021,7 @@ class GXGUI:
         :param filter:     Custom filter.
         :param default:    Default value
         :param file_path:  Where the file name(s) is returned
-        :param type:       `FILE_FORM`
+        :param type:       :ref:`FILE_FORM`
         :param multi:      Allow Multiple file selections = TRUE Single   file selections = FALSE
         :type  title:      str
         :type  filter:     str
@@ -1055,7 +1055,7 @@ class GXGUI:
         :param connect:  External database connection string (Blank for OLEDB Wizard)
         :param temp:     Template to make (if left blank, the created template name is returned)
         :param table:    Name of table
-        :param type:     Type of import returned `DH_DATA`
+        :param type:     Type of import returned :ref:`DH_DATA`
         :param reg:      Drill Hole Object `GXREG <geosoft.gxapi.GXREG>` handle
         :type  connect:  str
         :type  temp:     str_ref
@@ -1088,14 +1088,14 @@ class GXGUI:
         :param connect:  External database connection string  (e.g. "d:\\Personal\\test.mdb|Table" or "d:\\File\\test.gdb|TableX|FeatureClassY)"
         :param temp:     Template to make (if left blank, the created template name is returned)
         :param table:    Name of table
-        :param type:     Type of import returned `DH_DATA`
-        :param geochem:  `GEO_BOOL` Geosoft Geochemistry Database?
+        :param type:     Type of import returned :ref:`DH_DATA`
+        :param geochem:  Geosoft Geochemistry Database?
         :param reg:      Drill Hole Object `GXREG <geosoft.gxapi.GXREG>` handle
         :type  connect:  str
         :type  temp:     str_ref
         :type  table:    str_ref
         :type  type:     int_ref
-        :type  geochem:  int
+        :type  geochem:  bool
         :type  reg:      GXREG
 
         :returns:        0 - OK
@@ -1124,7 +1124,7 @@ class GXGUI:
         :param connect:  Connection string
         :param temp:     Template to make
         :param table:    Name of table
-        :param type:     Type of import returned `DH_DATA`
+        :param type:     Type of import returned :ref:`DH_DATA`
         :param reg:      Drill Hole Object `GXREG <geosoft.gxapi.GXREG>` handle
         :type  connect:  str_ref
         :type  temp:     str_ref
@@ -1161,7 +1161,7 @@ class GXGUI:
         :param connect:  Connection string
         :param temp:     Template to make
         :param table:    Name of table
-        :param type:     Type of import returned `DH_DATA`
+        :param type:     Type of import returned :ref:`DH_DATA`
         :param reg:      Drill Hole Object `GXREG <geosoft.gxapi.GXREG>` handle
         :type  connect:  str_ref
         :type  temp:     str_ref
@@ -1212,7 +1212,7 @@ class GXGUI:
         :param name:   Data file name
         :param temp:   Template to make
         :param table:  Name of table
-        :param type:   `IMPCH_TYPE`
+        :param type:   :ref:`IMPCH_TYPE`
         :type  name:   str
         :type  temp:   str
         :type  table:  str_ref
@@ -1237,7 +1237,7 @@ class GXGUI:
         :param connect:  External database connection string (Blank for OLEDB Wizard)
         :param temp:     Template to make
         :param table:    Name of table
-        :param type:     `IMPCH_TYPE`
+        :param type:     :ref:`IMPCH_TYPE`
         :type  connect:  str
         :type  temp:     str
         :type  table:    str_ref
@@ -1449,7 +1449,7 @@ class GXGUI:
         :param connect:  External database connection string (Blank for OLEDB Wizard)
         :param temp:     Template to make
         :param table:    Name of table
-        :param type:     Type of import returned `DH_DATA`
+        :param type:     Type of import returned :ref:`DH_DATA`
         :param reg:      Drill Hole Object `GXREG <geosoft.gxapi.GXREG>` handle
         :type  connect:  str
         :type  temp:     str
@@ -1614,15 +1614,15 @@ class GXGUI:
         - Select a symbol.
         
         :param symb_font:  Symbol font file name
-        :param geo_font:   Geosoft font? `GEO_BOOL`
-        :param weight:     Weight `MVIEW_FONT_WEIGHT`
+        :param geo_font:   Geosoft font?
+        :param weight:     Weight :ref:`MVIEW_FONT_WEIGHT`
         :param symb_num:   Symbol number
         :param symb_size:  Symbol size
         :param symb_ang:   Symbol angle
         :param edge_col:   Edge color
         :param fill_col:   Fill color
         :type  symb_font:  str_ref
-        :type  geo_font:   int_ref
+        :type  geo_font:   bool_ref
         :type  weight:     int_ref
         :type  symb_num:   int_ref
         :type  symb_size:  float_ref
@@ -1675,7 +1675,7 @@ class GXGUI:
         
         :param name:  Data file name
         :param temp:  Template to make
-        :param type:  `IMPCH_TYPE`
+        :param type:  :ref:`IMPCH_TYPE`
         :type  name:  str
         :type  temp:  str
         :type  type:  int
@@ -1695,7 +1695,7 @@ class GXGUI:
         :param name:   Data file name
         :param temp:   Template to make
         :param table:  Name of table
-        :param type:   Type of import returned `DH_DATA`
+        :param type:   Type of import returned :ref:`DH_DATA`
         :param reg:    Drill Hole Object `GXREG <geosoft.gxapi.GXREG>` handle
         :type  name:   str
         :type  temp:   str
@@ -2007,8 +2007,8 @@ class GXGUI:
         :param dll:     Assembly name
         :param func:    Control Class Name
         :param meta:    `GXMETA <geosoft.gxapi.GXMETA>` Handle (holding tool configuration data)
-        :param align:   `XTOOL_ALIGN` (can specify one or more or `XTOOL_ALIGN_ANY <geosoft.gxapi.XTOOL_ALIGN_ANY>`)
-        :param dock:    `XTOOL_DOCK`
+        :param align:   :ref:`XTOOL_ALIGN` (can specify one or more or `XTOOL_ALIGN_ANY <geosoft.gxapi.XTOOL_ALIGN_ANY>`)
+        :param dock:    :ref:`XTOOL_DOCK`
         :param width:   Default width
         :param height:  Default height
         :type  dll:     str
@@ -2034,8 +2034,8 @@ class GXGUI:
         :param dll:     Assembly name
         :param func:    Control Class Name
         :param meta:    `GXMETA <geosoft.gxapi.GXMETA>` Handle (holding tool configuration data)
-        :param align:   `XTOOL_ALIGN` (can specify one or more or `XTOOL_ALIGN_ANY <geosoft.gxapi.XTOOL_ALIGN_ANY>`)
-        :param dock:    `XTOOL_DOCK`
+        :param align:   :ref:`XTOOL_ALIGN` (can specify one or more or `XTOOL_ALIGN_ANY <geosoft.gxapi.XTOOL_ALIGN_ANY>`)
+        :param dock:    :ref:`XTOOL_DOCK`
         :param width:   Default width
         :param height:  Default height
         :type  dll:     str
@@ -2061,8 +2061,8 @@ class GXGUI:
         :param dll:     DLL name
         :param func:    Function Name
         :param meta:    `GXMETA <geosoft.gxapi.GXMETA>` Handle (holding tool configuration data)
-        :param align:   `XTOOL_ALIGN` (can specify one or more or `XTOOL_ALIGN_ANY <geosoft.gxapi.XTOOL_ALIGN_ANY>`)
-        :param dock:    `XTOOL_DOCK`
+        :param align:   :ref:`XTOOL_ALIGN` (can specify one or more or `XTOOL_ALIGN_ANY <geosoft.gxapi.XTOOL_ALIGN_ANY>`)
+        :param dock:    :ref:`XTOOL_DOCK`
         :param width:   Default width
         :param height:  Default height
         :type  dll:     str
@@ -2241,8 +2241,8 @@ class GXGUI:
         Ability to set the progress bar to stay visible even
         if main application is processing messages
         
-        :param on:  `GEO_BOOL` Should progress bar remain visible
-        :type  on:  int
+        :param on:  Should progress bar remain visible
+        :type  on:  bool
 
         .. versionadded:: 5.0
 

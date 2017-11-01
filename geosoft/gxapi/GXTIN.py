@@ -316,7 +316,7 @@ class GXTIN:
         Does the `GXTIN <geosoft.gxapi.GXTIN>` contain Z values with each X,Y?
         
 
-        :returns:    Returns `GS_TRUE <geosoft.gxapi.GS_TRUE>` if Z values are defined in the `GXTIN <geosoft.gxapi.GXTIN>`
+        :returns:    Returns 1 if Z values are defined in the `GXTIN <geosoft.gxapi.GXTIN>`
         :rtype:      int
 
         .. versionadded:: 5.0

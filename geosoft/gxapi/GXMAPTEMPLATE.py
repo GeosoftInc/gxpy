@@ -124,7 +124,7 @@ class GXMAPTEMPLATE:
         
         :param name:  Map Template file name
         :param base:  Map Template base template to create from
-        :param mode:  `MAPTEMPLATE_OPEN`
+        :param mode:  :ref:`MAPTEMPLATE_OPEN`
         :type  name:  str
         :type  base:  str
         :type  mode:  int

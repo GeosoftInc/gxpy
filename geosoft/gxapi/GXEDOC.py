@@ -65,7 +65,7 @@ class GXEDOC:
         :param name:  Document to load.
         :param nx:    X Size
         :param ny:    Y Size
-        :param type:  `GMS3D_MODELTYPE`
+        :param type:  :ref:`GMS3D_MODELTYPE`
         :type  name:  str
         :type  nx:    int
         :type  ny:    int
@@ -97,7 +97,7 @@ class GXEDOC:
         """
         This method returns the Current Edited Document.
         
-        :param type:  `EDOC_TYPE`
+        :param type:  :ref:`EDOC_TYPE`
         :type  type:  int
 
         :returns:     `GXEDOC <geosoft.gxapi.GXEDOC>` Object
@@ -115,7 +115,7 @@ class GXEDOC:
         """
         This method returns the Current Edited Document.
         
-        :param type:  `EDOC_TYPE`
+        :param type:  :ref:`EDOC_TYPE`
         :type  type:  int
 
         :returns:     `GXEDOC <geosoft.gxapi.GXEDOC>` Object
@@ -138,7 +138,7 @@ class GXEDOC:
         """
         This method returns the Current Edited Document.
         
-        :param type:  `EDOC_TYPE`
+        :param type:  :ref:`EDOC_TYPE`
         :type  type:  int
 
         :returns:     `GXEDOC <geosoft.gxapi.GXEDOC>` Object to current edited document. If there is no current document,
@@ -160,8 +160,8 @@ class GXEDOC:
         Load the file names of open documents into a `GXLST <geosoft.gxapi.GXLST>`.
         
         :param lst:   `GXLST <geosoft.gxapi.GXLST>` to load
-        :param path:  `EDOC_PATH`
-        :param type:  `EDOC_TYPE`
+        :param path:  :ref:`EDOC_PATH`
+        :param type:  :ref:`EDOC_TYPE`
         :type  lst:   GXLST
         :type  path:  int
         :type  type:  int
@@ -198,7 +198,7 @@ class GXEDOC:
         Retrieve the current state of the document window
         
 
-        :returns:     `EDOC_WINDOW_STATE`
+        :returns:     :ref:`EDOC_WINDOW_STATE`
         :rtype:       int
 
         .. versionadded:: 5.0
@@ -213,11 +213,9 @@ class GXEDOC:
         """
         Returns true if a document is loaded
         
-        :param type:  `EDOC_TYPE`
+        :param type:  :ref:`EDOC_TYPE`
         :type  type:  int
-
-        :returns:     `GEO_BOOL`
-        :rtype:       int
+        :rtype:       bool
 
         .. versionadded:: 5.0
         """
@@ -232,7 +230,7 @@ class GXEDOC:
         Returns 1 if a document is loaded .
         
         :param name:  document name
-        :param type:  `EDOC_TYPE`
+        :param type:  :ref:`EDOC_TYPE`
         :type  name:  str
         :type  type:  int
 
@@ -255,8 +253,8 @@ class GXEDOC:
         :param top:          Window top position
         :param right:        Window right position
         :param bottom:       Window bottom position
-        :param state:        Window state `EDOC_WINDOW_STATE`
-        :param is_floating:  Docked or floating `EDOC_WINDOW_POSITION`
+        :param state:        Window state :ref:`EDOC_WINDOW_STATE`
+        :param is_floating:  Docked or floating :ref:`EDOC_WINDOW_POSITION`
         :type  left:         int_ref
         :type  top:          int_ref
         :type  right:        int_ref
@@ -280,8 +278,8 @@ class GXEDOC:
         :param top:          Window top position
         :param right:        Window right position
         :param bottom:       Window bottom position
-        :param state:        Window state `EDOC_WINDOW_STATE`
-        :param is_floating:  Docked or floating `EDOC_WINDOW_POSITION`
+        :param state:        Window state :ref:`EDOC_WINDOW_STATE`
+        :param is_floating:  Docked or floating :ref:`EDOC_WINDOW_POSITION`
         :type  left:         int
         :type  top:          int
         :type  right:        int
@@ -301,9 +299,7 @@ class GXEDOC:
         """
         Checks if a document is currently opened in a read-only mode.
         
-
-        :returns:     `GEO_BOOL`
-        :rtype:       int
+        :rtype:       bool
 
         .. versionadded:: 5.0
         """
@@ -318,7 +314,7 @@ class GXEDOC:
         Loads a list of documents into the workspace
         
         :param name:  list of documents (';' or '|' delimited) to load.
-        :param type:  `EDOC_TYPE`
+        :param type:  :ref:`EDOC_TYPE`
         :type  name:  str
         :type  type:  int
 
@@ -347,7 +343,7 @@ class GXEDOC:
         Loads a list of documents into the workspace
         
         :param name:  list of documents (';' or '|' delimited) to load.
-        :param type:  `EDOC_TYPE`
+        :param type:  :ref:`EDOC_TYPE`
         :type  name:  str
         :type  type:  int
 
@@ -385,7 +381,7 @@ class GXEDOC:
         """
         Changes the state of the document window
         
-        :param state:  `EDOC_WINDOW_STATE`
+        :param state:  :ref:`EDOC_WINDOW_STATE`
         :type  state:  int
 
         .. versionadded:: 5.0
@@ -401,7 +397,7 @@ class GXEDOC:
         Syncronize the Metadata of a document that is not currently open
         
         :param file:  Document file name
-        :param type:  `EDOC_TYPE`
+        :param type:  :ref:`EDOC_TYPE`
         :type  file:  str
         :type  type:  int
 
@@ -431,7 +427,7 @@ class GXEDOC:
         Unloads an edited document.
         
         :param name:  Name of document to unload
-        :param type:  `EDOC_TYPE`
+        :param type:  :ref:`EDOC_TYPE`
         :type  name:  str
         :type  type:  int
 
@@ -452,7 +448,7 @@ class GXEDOC:
         """
         Unloads all opened documents
         
-        :param type:  `EDOC_TYPE`
+        :param type:  :ref:`EDOC_TYPE`
         :type  type:  int
 
         .. versionadded:: 5.0
@@ -468,7 +464,7 @@ class GXEDOC:
         Unloads a document in the workspace, discards changes.
         
         :param name:  Name of document to unload
-        :param type:  `EDOC_TYPE`
+        :param type:  :ref:`EDOC_TYPE`
         :type  name:  str
         :type  type:  int
 
@@ -489,8 +485,8 @@ class GXEDOC:
         Unloads an edited document, optional prompt to save.
         
         :param name:    Name of document to unload
-        :param verify:  `EDOC_UNLOAD`
-        :param type:    `EDOC_TYPE`
+        :param verify:  :ref:`EDOC_UNLOAD`
+        :param type:    :ref:`EDOC_TYPE`
         :type  name:    str
         :type  verify:  int
         :type  type:    int

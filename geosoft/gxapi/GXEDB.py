@@ -176,7 +176,7 @@ class GXEDB:
         """
         Removes the view from the workspace.
         
-        :param unload_flag:  `EDB_REMOVE`
+        :param unload_flag:  :ref:`EDB_REMOVE`
         :type  unload_flag:  int
 
         .. versionadded:: 5.0
@@ -186,7 +186,7 @@ class GXEDB:
         Can only be run in interactive mode. After this call the
         `GXEDB <geosoft.gxapi.GXEDB>` object will become invalid. If this is the last view on
         the document and the document has been modified the map will be
-        unloaded and optionally saved depending on the `EDB_REMOVE`
+        unloaded and optionally saved depending on the :ref:`EDB_REMOVE`
         parameter.
         """
         self._wrapper.destroy_view(unload_flag)
@@ -345,7 +345,7 @@ class GXEDB:
         :param prof:    Profile number in window (see `window_profiles <geosoft.gxapi.GXEDB.window_profiles>` which returns number of profiles in a window)
         :param min_y:   Minimum y
         :param max_y:   Maximum y
-        :param scl:     `EDB_PROFILE_SCALE`
+        :param scl:     :ref:`EDB_PROFILE_SCALE`
         :type  window:  int
         :type  prof:    int
         :type  min_y:   float_ref
@@ -821,7 +821,7 @@ class GXEDB:
         Load the file names of open databases into a `GXLST <geosoft.gxapi.GXLST>`.
         
         :param lst:   `GXLST <geosoft.gxapi.GXLST>` to load
-        :param path:  `EDB_PATH`
+        :param path:  :ref:`EDB_PATH`
         :type  lst:   GXLST
         :type  path:  int
 
@@ -918,7 +918,7 @@ class GXEDB:
         
         :param window:  Profile window number (0 to `MAX_PROF_WND <geosoft.gxapi.MAX_PROF_WND>`-1, see `profile_open <geosoft.gxapi.GXEDB.profile_open>`)
         :param prof:    Profile number in window (see `get_profile_range_y <geosoft.gxapi.GXEDB.get_profile_range_y>`)
-        :param parm:    `EDB_PROF`
+        :param parm:    :ref:`EDB_PROF`
         :type  window:  int
         :type  prof:    int
         :type  parm:    int
@@ -939,7 +939,7 @@ class GXEDB:
         Retrieve the current state of the database window
         
 
-        :returns:    `EDB_WINDOW_STATE`
+        :returns:    :ref:`EDB_WINDOW_STATE`
         :rtype:      int
 
         .. versionadded:: 5.0
@@ -952,11 +952,9 @@ class GXEDB:
     @classmethod
     def have_current(cls):
         """
-        Returns true if a database is loaded
+        Checks if any database is currently loaded
         
-
-        :returns:    `GEO_BOOL`
-        :rtype:      int
+        :rtype:      bool
 
         .. versionadded:: 5.0
         """
@@ -968,11 +966,9 @@ class GXEDB:
 
     def is_locked(self):
         """
-        Is this Database locked
+        Checks if the database locked
         
-
-        :returns:    `GEO_BOOL`
-        :rtype:      int
+        :rtype:      bool
 
         .. versionadded:: 5.0
         """
@@ -984,13 +980,11 @@ class GXEDB:
     @classmethod
     def loaded(cls, name):
         """
-        Returns 1 if a database is loaded .
+        Checks if a specific database is loaded.
         
         :param name:  Database name
         :type  name:  str
-
-        :returns:     1 if database is loaded, 0 otherwise.
-        :rtype:       int
+        :rtype:       bool
 
         .. versionadded:: 5.0
         """
@@ -1028,9 +1022,7 @@ class GXEDB:
         """
         Checks if a database is currently opened in a read-only mode.
         
-
-        :returns:    `GEO_BOOL`
-        :rtype:      int
+        :rtype:      bool
 
         .. versionadded:: 5.0
         """
@@ -1048,8 +1040,8 @@ class GXEDB:
         :param top:          Window top position
         :param right:        Window right position
         :param bottom:       Window bottom position
-        :param state:        Window state `EDB_WINDOW_STATE`
-        :param is_floating:  Docked or floating `EDB_WINDOW_POSITION`
+        :param state:        Window state :ref:`EDB_WINDOW_STATE`
+        :param is_floating:  Docked or floating :ref:`EDB_WINDOW_POSITION`
         :type  left:         int_ref
         :type  top:          int_ref
         :type  right:        int_ref
@@ -1073,8 +1065,8 @@ class GXEDB:
         :param top:          Window top position
         :param right:        Window right position
         :param bottom:       Window bottom position
-        :param state:        Window state `EDB_WINDOW_STATE`
-        :param is_floating:  Docked or floating `EDB_WINDOW_POSITION`
+        :param state:        Window state :ref:`EDB_WINDOW_STATE`
+        :param is_floating:  Docked or floating :ref:`EDB_WINDOW_POSITION`
         :type  left:         int
         :type  top:          int
         :type  right:        int
@@ -1121,7 +1113,7 @@ class GXEDB:
         :param window:  Profile window number (0 to `MAX_PROF_WND <geosoft.gxapi.MAX_PROF_WND>`-1, see `profile_open <geosoft.gxapi.GXEDB.profile_open>`)
         :type  window:  int
 
-        :returns:       `EDB_YAXIS_DIRECTION`
+        :returns:       :ref:`EDB_YAXIS_DIRECTION`
         :rtype:         int
 
         .. versionadded:: 8.3
@@ -1432,7 +1424,7 @@ class GXEDB:
         
         :param window:  Profile window number (0 to `MAX_PROF_WND <geosoft.gxapi.MAX_PROF_WND>`-1, see `profile_open <geosoft.gxapi.GXEDB.profile_open>`)
         :param prof:    Profile number in window (see `get_profile_range_y <geosoft.gxapi.GXEDB.get_profile_range_y>`)
-        :param parm:    `EDB_PROF`
+        :param parm:    :ref:`EDB_PROF`
         :type  window:  int
         :type  prof:    int
         :type  parm:    int
@@ -1555,7 +1547,7 @@ class GXEDB:
         
         :param window:  Profile window number (0 to `MAX_PROF_WND <geosoft.gxapi.MAX_PROF_WND>`-1, see `profile_open <geosoft.gxapi.GXEDB.profile_open>`)
         :param prof:    Profile number in window (see `get_profile_range_y <geosoft.gxapi.GXEDB.get_profile_range_y>`)
-        :param parm:    `EDB_PROF`
+        :param parm:    :ref:`EDB_PROF`
         :param value:   Setting
         :type  window:  int
         :type  prof:    int
@@ -1576,7 +1568,7 @@ class GXEDB:
         
         :param window:  Profile window number (0 to `MAX_PROF_WND <geosoft.gxapi.MAX_PROF_WND>`-1, see `profile_open <geosoft.gxapi.GXEDB.profile_open>`)
         :param prof:    Profile number in window (see `get_profile_range_y <geosoft.gxapi.GXEDB.get_profile_range_y>`)
-        :param parm:    `EDB_PROF`
+        :param parm:    :ref:`EDB_PROF`
         :param value:   Setting
         :type  window:  int
         :type  prof:    int
@@ -1618,7 +1610,7 @@ class GXEDB:
         :param max_x:  Profile number in window (see `get_profile_range_y <geosoft.gxapi.GXEDB.get_profile_range_y>`)
         :param min_y:  Minimum y
         :param max_y:  Maximum y
-        :param scl:    `EDB_PROFILE_SCALE`
+        :param scl:    :ref:`EDB_PROFILE_SCALE`
         :type  min_x:  int
         :type  max_x:  int
         :type  min_y:  float
@@ -1724,7 +1716,7 @@ class GXEDB:
         """
         Changes the state of the database window
         
-        :param state:  `EDB_WINDOW_STATE`
+        :param state:  :ref:`EDB_WINDOW_STATE`
         :type  state:  int
 
         .. versionadded:: 5.0
@@ -1865,7 +1857,7 @@ class GXEDB:
         Unloads an edited database, optional prompt to save.
         
         :param name:    Name of database to unload
-        :param prompt:  `EDB_UNLOAD`
+        :param prompt:  :ref:`EDB_UNLOAD`
         :type  name:    str
         :type  prompt:  int
 

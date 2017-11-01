@@ -86,7 +86,7 @@ class GXVOXE:
         :param vv_y:    Y `GXVV <geosoft.gxapi.GXVV>` (must be double)
         :param vv_z:    Z `GXVV <geosoft.gxapi.GXVV>` (must be double)
         :param vv_d:    D `GXVV <geosoft.gxapi.GXVV>` (must be double)
-        :param interp:  `VOXE_EVAL`
+        :param interp:  :ref:`VOXE_EVAL`
         :type  vv_x:    GXVV
         :type  vv_y:    GXVV
         :type  vv_z:    GXVV
@@ -108,7 +108,7 @@ class GXVOXE:
         :param x:       X Location
         :param y:       Y Location
         :param z:       Z Location
-        :param interp:  `VOXE_EVAL`
+        :param interp:  :ref:`VOXE_EVAL`
         :type  x:       float
         :type  y:       float
         :type  z:       float
@@ -136,7 +136,7 @@ class GXVOXE:
         :param vy:      Y Delta
         :param vz:      Z Delta
         :param vv:      Data `GXVV <geosoft.gxapi.GXVV>` (must be double)
-        :param interp:  `VOXE_EVAL`
+        :param interp:  :ref:`VOXE_EVAL`
         :type  ox:      float
         :type  oy:      float
         :type  oz:      float

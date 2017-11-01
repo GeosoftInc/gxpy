@@ -85,7 +85,7 @@ class GXSURFACE:
         Open a Geosurface file
         
         :param surface_file:  Geosurface file name
-        :param mode:          `SURFACE_OPEN`
+        :param mode:          :ref:`SURFACE_OPEN`
         :type  surface_file:  str
         :type  mode:          int
 

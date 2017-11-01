@@ -195,11 +195,9 @@ class GXDOCU:
 
     def have_meta(self):
         """
-        Do you have metadata?
+        Checks if a document has metadata.
         
-
-        :returns:     `GEO_BOOL`
-        :rtype:       int
+        :rtype:       bool
 
         .. versionadded:: 5.1.1
         """
@@ -229,7 +227,7 @@ class GXDOCU:
         """
         Open a document in the document viewer
         
-        :param mode:  `DOCU_OPEN`
+        :param mode:  :ref:`DOCU_OPEN`
         :type  mode:  int
 
         .. versionadded:: 5.1.1
