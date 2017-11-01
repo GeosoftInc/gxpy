@@ -77,7 +77,7 @@ setup(
     name='geosoft',
     version=version_tag,
     description='Geosoft GX API module for Python',
-    long_description=read('README.rst'),
+    long_description=read('README.md'),
     author='Geosoft Inc.',
     author_email='support@geosoft.com',
     platforms=["win_amd64"],
