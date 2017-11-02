@@ -1,8 +1,8 @@
 """
-Views, which can be 2D or 3D, contain graphical elements that can be displayed to a user in a Geosoft
-map viewer or a Geosoft 3D viewer.  Geosoft maps can contain any number of 2D or 3D views.
+Views, which can be 2D or 3D, contain groups of graphical elements that can be displayed to a user in a Geosoft
+Map viewer or a Geosoft 3D viewer.  Geosoft maps can contain any number of 2D or 3D views.
 
-Views contain one or more :class:`geosoft.gxpy.group.Group`.  2D views can contain 2D groups, while
+Views contain one or more :class:`geosoft.gxpy.group.Group` instances.  2D views can contain 2D groups, while
 3D views can contain both 2D and 3D groups.
 
 :Classes:
@@ -12,8 +12,8 @@ Views contain one or more :class:`geosoft.gxpy.group.Group`.  2D views can conta
     :class:`View_3d` 3D view in a `geosoft.3dv` file, or a 3D view on a 2D map.
     ================ ==========================================================
 
-2D and 3D views can be placed on a :class:`geosoft.gxpy.map.Map`, though 3D views
-are stored in a `geosoft_3dv` file which can be worked with and viewed separately from a map.
+Both 2D and 3D views can be placed on a :class:`geosoft.gxpy.map.Map`, though 3D views
+are stored in a `geosoft_3dv` file which can also be viewed separately from a map.
 
 .. seealso:: :mod:`geosoft.gxpy.map`, :mod:`geosoft.gxpy.group`
 
@@ -21,7 +21,7 @@ are stored in a `geosoft_3dv` file which can be worked with and viewed separatel
 
 .. note::
 
-    Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_view.py>`_
+    Regression tests provide usage examples: `View tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_view.py>`_
 
 """
 import os
