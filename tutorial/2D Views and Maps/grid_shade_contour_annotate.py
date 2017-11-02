@@ -25,7 +25,7 @@ with gxgrd.Grid('Wittichica Creek Residual Total Field.grd') as grd:
 with gxmap.Map.open(map_file_name) as gmap:
 
     # work with the data view, draw a line around the data view
-    with gxview.View(gmap, "data") as v:
+    with gxview.View.open(gmap, "data") as v:
 
         # add the grid image to the view, with shading, 20 nT contour interval to match default contour lines
         with gxagg.Aggregate_image.new(grid_file_name, shade=True, contour=20) as agg:
@@ -42,7 +42,7 @@ with gxmap.Map.open(map_file_name) as gmap:
         gxgroup.contour(v, 'TMI_contour', grid_file_name)
 
     # map title and creator tag
-    with gxview.View(gmap, "base") as v:
+    with gxview.View.open(gmap, "base") as v:
         with gxgroup.Draw(v, 'title') as g:
 
             g.text("Tutorial Example\nresidual mag",

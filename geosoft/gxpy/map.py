@@ -219,12 +219,15 @@ class Map:
     :mod:`geosoft.gxpy.view` module provides classes and methods for working with individual 2D or
     3D views, and the :mod:`geosoft.gxpy.group` modules contains classes that deal with drawing groups..
 
-    Geosoft maps will always have a 2D 'base' view, which uses map cm as the coordinate system and is
-    intended for drawing map annotations, such as titles, a scale bar, North arrow and legends.  The
-    lower-left corner of the base view ia at location (0, 0) and the upper-right corner is defined by the
-    media size and may be adjusted to fit the data view.
+    Geosoft maps will always have a 2D 'base' view and is intended for drawing map annotations, such as titles, 
+    a scale bar, North arrow and legends.  The lower-left corner of the base view ia at location (0, 0) and the 
+    upper-right corner is defined by the media size and may be adjusted to fit the data view.
+    
+    When drawing to the base view the native unit is millimetres and locations and graphic entity
+    sizes are assumed to be mm.  When drawing to the map using map methods the units are in map cm,
+    including graphic entity scaling.    
 
-    Geosoft maps will also have one or more data views, each with it's own defined coordinate system
+    Maps will also have one or more data views, each with it's own defined coordinate system
     and graphical content.  Creating a new map will create one data view, which will become the map's 
     `current_data_view`, within which any spatial data drawn by Geosoft 2D drawing applications
     will be placed.  Maps may have more than one data view, including 3D data views, and the 
@@ -854,14 +857,14 @@ class Map:
 
         :param location:    (reference, x_offset, y_offset) reference is a reference point relative to the
                             base map extents (1 through 9) nd the offsets are the offset from that reference
-                            point in cm.
+                            point in map cm.
         :param direction:   North direction in degrees azimuth (clockwise from map Y axis).  The efault is 
                             calculated direction of North at the center of the data view.
-        :param length:      arrow length in cm
+        :param length:      arrow length in cm on the map.
         :param inclination: magnetic inclination, not shown if not specified
         :param declination: magnetic declination, not shown if not specified
-        :param text_def:    :class:`gxpy.group.Text_def` instance, or `None` for the default.
-        :param pen:         :class:`gxpy.group.Pen` instance, or `None` for the default
+        :param text_def:    :class:`geosoft.gxpy.group.Text_def` instance, or `None` for the default.
+        :param pen:         :class:`geosoft.gxpy.group.Pen` instance, or `None` for the default
 
         .. versionadded:: 9.2
         """
@@ -907,12 +910,12 @@ class Map:
         Draw a scale bar.
         
         :param location:    (ref_point, x_off, y_off) bar location reference point an offset from that point
-        :param length:      maximum scale bar length, default is 5 cm. scale=0.0 will suppress drawing of the bar.
+        :param length:      maximum scale bar length in map cm, default is 5 cm. 0 will suppress drawing of the bar.
         :param sections:    number of major sections in the bar, default is determined automatically.
         :param post_scale:  True to post the actual scale as a string, e.g. '1:50,000'.  Note that a posted
                             scale is only relevant for printed maps.  The default does not post the scale.
-        :param text_def:    :class:`gxpy.view.Text_def` instance.
-        :param pen:         :class:`gxpy.view.Pen` instance.
+        :param text_def:    :class:`geosoft.gxpy.view.Text_def` instance.
+        :param pen:         :class:`geosoft.gxpy.view.Pen` instance.
 
 
         .. versionadded:: 9.2
@@ -965,7 +968,7 @@ class Map:
 
         :param view_name:    name of the data view to annotate
         :param tick:        inner tick size in cm
-        :param offset:      posting offset from the edge in cm. The posting edge is adjusted to be outside
+        :param offset:      posting offset from the edge in map cm. The posting edge is adjusted to be outside
                             character height for a subsequent call to an edge annotation.  This allows one to
                             annotate both geographic and projected coordinates.
         :param top:         TOP_IN or TOP_OUT (default) for vertical annotations

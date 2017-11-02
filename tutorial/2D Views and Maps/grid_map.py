@@ -25,7 +25,7 @@ with gxgrd.Grid('Wittichica Creek Residual Total Field.grd') as grd:
 with gxmap.Map.open(map_file_name) as gmap:
 
     # work with the data view
-    with gxview.View(gmap, "data") as v:
+    with gxview.View.open(gmap, "data") as v:
 
         # add the grid image to the view
         with gxagg.Aggregate_image.new(grid_file_name) as agg:
