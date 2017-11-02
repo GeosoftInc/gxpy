@@ -115,18 +115,18 @@ class Point(Geometry):
             else:
                 self.p = np.array((p[0], p[0], p[0]), dtype=float)
         else:
-            if type(p) is Point:
+            if isinstance(p, Point):
                 self.p = p.p.copy()
             else:
                 self.p = np.array((p, p, p))
 
     def __add__(self, p):
-        if type(p) is not Point:
+        if not isinstance(p, Point):
             p = Point(p)
         return Point(self.p + p.p)
 
     def __sub__(self, p):
-        if type(p) is not Point:
+        if not isinstance(p, Point):
             p = Point(p)
         return Point(self.p - p.p)
 
@@ -134,12 +134,12 @@ class Point(Geometry):
         return Point(-self.p)
 
     def __mul__(self, p):
-        if type(p) is not Point:
+        if not isinstance(p, Point):
             p = Point(p)
         return Point(self.p * p.p)
 
     def __truediv__(self, p):
-        if type(p) is not Point:
+        if not isinstance(p, Point):
             p = Point(p)
         return Point(self.p / p.p)
 
@@ -256,18 +256,18 @@ class Point2(Geometry):
                  or (self.p0 == other.p1) and (self.p1 == other.p0))
 
     def __add__(self, p):
-        if type(p) is Point2:
+        if isinstance(p, Point2):
             return Point2((self.p0 + p.p0, self.p1 + p.p1))
         else:
-            if type(p) is not Point:
+            if not isinstance(p, Point):
                 p = Point(p)
             return Point2((self.p0 + p, self.p1 + p))
 
     def __sub__(self, p):
-        if type(p) is Point2:
+        if isinstance(p, Point2):
             return Point2((self.p0 - p.p0, self.p1 - p.p1))
         else:
-            if type(p) is not Point:
+            if not isinstance(p, Point):
                 p = Point(p)
             return Point2((self.p0 - p, self.p1 - p))
 
@@ -275,17 +275,17 @@ class Point2(Geometry):
         return Point2((-self.p0, -self.p1))
 
     def __mul__(self, p):
-        if type(p) is Point2:
+        if isinstance(p, Point2):
             return Point2((self.p0 * p.p0, self.p1 * p.p1))
         else:
-            if type(p) is not Point:
+            if not isinstance(p, Point):
                 p = Point(p)
             return Point2((self.p0 * p, self.p1 * p))
 
     def __truediv__(self, p):
-        if type(p) is Point2:
+        if isinstance(p, Point2):
             return Point2((self.p0 / p.p0, self.p1 / p.p1))
-        if type(p) is not Point:
+        if not isinstance(p, Point):
             p = Point(p)
             return Point2((self.p0 / p, self.p1 / p))
 
@@ -421,16 +421,16 @@ class PPoint(Geometry, Sequence):
         return Point(self.pp[item])
 
     def __add__(self, p):
-        if type(p) is PPoint:
+        if isinstance(p, PPoint):
             return PPoint(self.pp + p.pp)
-        if type(p) is Point:
+        if isinstance(p, Point):
             return PPoint(self.pp + p.p)
         return PPoint(self.pp + Point(p).p)
 
     def __sub__(self, p):
-        if type(p) is PPoint:
+        if isinstance(p, PPoint):
             return PPoint(self.pp - p.pp)
-        if type(p) is Point:
+        if isinstance(p, Point):
             return PPoint(self.pp - p.p)
         return PPoint(self.pp - Point(p).p)
 
@@ -438,16 +438,16 @@ class PPoint(Geometry, Sequence):
         return PPoint(self.pp * -1.0)
 
     def __mul__(self, p):
-        if type(p) is PPoint:
+        if isinstance(p, PPoint):
             return PPoint(self.pp * p.pp)
-        if type(p) is Point:
+        if isinstance(p, Point):
             return PPoint(self.pp * p.p)
         return PPoint(self.pp * Point(p).p)
 
     def __truediv__(self, p):
-        if type(p) is PPoint:
+        if isinstance(p, PPoint):
             return PPoint(self.pp / p.pp)
-        if type(p) is Point:
+        if isinstance(p, Point):
             return PPoint(self.pp / p.p)
         return PPoint(self.pp / Point(p).p)
 

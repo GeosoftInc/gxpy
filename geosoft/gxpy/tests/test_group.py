@@ -1099,78 +1099,26 @@ class Test(GXPYTest):
 
         self.crc_map(v3d_file)
 
-    @unittest.skip('not required for regression tests')
-    def test_polydata_3d_grid(self):
-        self.start()
-
-        def render_spheres(item, cmap_radius):
-            value = item[3]
-            cmap, radius = cmap_radius
-            if np.isnan(value):
-                xyz = (item[0], item[1], item[2])
-                return xyz, gxg.SYMBOL_3D_SPHERE, gxg.Color(gxg.C_GREY10).int_value, (radius * 0.5,)
-            xyz = (item[0], item[1], item[2])
-            cint = cmap.color_of_value(value)
-            return xyz, gxg.SYMBOL_3D_SPHERE, cint.int_value, (radius,)
-
-        # test grid file
-        folder, files = gsys.unzip(os.path.join(os.path.dirname(self._test_case_py), 'testgrids.zip'),
-                                   folder=self.gx.temp_folder())
-
-        grid_file = os.path.join(folder, 'test_agg_utm.grd')
-        with gxgrd.Grid(grid_file) as grd:
-
-            # orient the grid just to make it look interesting
-            gxf = grd.coordinate_system.gxf
-            gxf[0] += ' <0,0,0,0,45,25>'
-            grd.x0 = 0
-            grd.y0 = 0
-            grd.coordinate_system = gxf
-
-            data = grd.xyzv()
-
-            cmap = gxg.Color_map()
-            try:
-                std = np.nanstd(data[:, :, 3])
-                mean = np.nanmean(data[:, :, 3])
-                cmap.set_normal(std, mean)
-            except:
-                cmap.set_linear(0,1)
-
-            with gxv.View_3d.new(coordinate_system=grd.coordinate_system) as v:
-                v3d_file = v.file_name
-                with gxg.Draw_3d(v, 'outer') as g:
-                    g.polydata_3d(data.reshape((-1,4)), render_spheres, (cmap, grd.dx * 0.25))
-                    g.box_3d(grd.extent_3d(), wireframe=True, pen=gxg.Pen(line_color='b', line_thick=grd.dx))
-
-        self.crc_map(v3d_file)
-
-    @unittest.skip('not required for regression tests')
-    def test_polydata_3d_gdb(self):
+    def test_polydata_3d_grd(self):
         self.start()
 
         def render_spheres(item, cmap_radius):
             cmap, radius = cmap_radius
             if not np.isnan(item[2]):
                 cint = cmap.color_of_value(item[2]).int_value
-                return item, gxg.SYMBOL_3D_SPHERE, cint, (radius,)
+                return gxg.SYMBOL_3D_SPHERE, item, cint, radius
 
-        folder, files = gsys.unzip(os.path.join(os.path.dirname(self._test_case_py), 'dem.zip'),
+        folder, files = gsys.unzip(os.path.join(os.path.dirname(self._test_case_py), 'dem_small.zip'),
                                    folder=self.gx.temp_folder())
 
-        gdb_file = os.path.join(folder, 'dem')
-        with gxdb.Geosoft_gdb.open(gdb_file) as gdb:
-            gdb.xyz_channels = ('x', 'y', 'elevation')
+        grid_file = os.path.join(folder, 'dem_small.grd')
+        with gxgrd.Grid.open(grid_file) as grd:
 
-            data = None
-            for l in gdb.lines():
-                dataline = gxu.dummy_to_nan(gdb.read_line(l, channels=('x', 'y', 'elevation'))[0])
-                if data is None:
-                    data = dataline
-                else:
-                    data = np.append(data, dataline, axis=0)
+            # get the data and replace z with DEM valie
+            data = grd.xyzv().reshape(-1, 4)
+            data[:, 2] = data[:, 3] * 3
+            data = data[:, 0:3]
 
-            data *= (1, 1, 10)
             cmap = gxg.Color_map()
             try:
                 std = np.nanstd(data[:, 2])
@@ -1179,13 +1127,102 @@ class Test(GXPYTest):
             except:
                 cmap.set_linear(0, 1)
 
-            with gxv.View_3d.new(coordinate_system=gdb.coordinate_system) as v:
+            with gxv.View_3d.new(coordinate_system=grd.coordinate_system) as v:
                 v3d_file = v.file_name
-                with gxg.Draw_3d(v, 'outer') as g:
-                    g.polydata_3d(data.reshape((-1, 3)), render_spheres, (cmap, 50 * v.units_per_map_cm))
-                    g.box_3d(gxgm.Point2(gdb.extent_xyz()) * (1.0, 1.0, 10.0),
+                with gxg.Draw_3d(v, 'dem_points') as g:
+                    g.polydata_3d(data.reshape((-1, 3)), render_spheres, (cmap, 10 * v.units_per_map_cm))
+                    p_min = gxgm.Point((np.nanmin(data[:, 0]), np.nanmin(data[:, 1]), np.nanmin(data[:, 2])))
+                    p_max = gxgm.Point((np.nanmax(data[:, 0]), np.nanmax(data[:, 1]), np.nanmax(data[:, 2])))
+                    extent = gxgm.Point2((p_min, p_max))
+                    g.box_3d(extent,
                              wireframe=True,
-                             pen=gxg.Pen(line_color='c', line_thick=200 * v.units_per_map_cm))
+                             pen=gxg.Pen(line_color='c', line_thick= 20 * v.units_per_map_cm))
+
+        self.crc_map(v3d_file)
+
+    def test_polydata_3d_grd_cone(self):
+        self.start()
+
+        def render_spheres(item, cmap_radius):
+            cmap, radius = cmap_radius
+            if not np.isnan(item[2]):
+                cint = cmap.color_of_value(item[2]).int_value
+                item = gxgm.Point(item)
+                item2 = item + (0, radius, radius * 2)
+                return gxg.SYMBOL_3D_CONE, gxgm.Point2((item, item2)), cint, radius
+
+        folder, files = gsys.unzip(os.path.join(os.path.dirname(self._test_case_py), 'dem_small.zip'),
+                                   folder=self.gx.temp_folder())
+
+        grid_file = os.path.join(folder, 'dem_small.grd')
+        with gxgrd.Grid.open(grid_file) as grd:
+
+            # get the data and replace z with DEM valie
+            data = grd.xyzv().reshape(-1, 4)
+            data[:, 2] = data[:, 3] * 3
+            data = data[:, 0:3]
+
+            cmap = gxg.Color_map()
+            try:
+                std = np.nanstd(data[:, 2])
+                mean = np.nanmean(data[:, 2])
+                cmap.set_normal(std, mean)
+            except:
+                cmap.set_linear(0, 1)
+
+            with gxv.View_3d.new(coordinate_system=grd.coordinate_system) as v:
+                v3d_file = v.file_name
+                with gxg.Draw_3d(v, 'dem_points') as g:
+                    g.polydata_3d(data.reshape((-1, 3)), render_spheres, (cmap, 10 * v.units_per_map_cm))
+                    p_min = gxgm.Point((np.nanmin(data[:, 0]), np.nanmin(data[:, 1]), np.nanmin(data[:, 2])))
+                    p_max = gxgm.Point((np.nanmax(data[:, 0]), np.nanmax(data[:, 1]), np.nanmax(data[:, 2])))
+                    extent = gxgm.Point2((p_min, p_max))
+                    g.box_3d(extent,
+                             wireframe=True,
+                             pen=gxg.Pen(line_color='c', line_thick= 20 * v.units_per_map_cm))
+
+        self.crc_map(v3d_file)
+
+    def test_polydata_3d_grd_cylinder(self):
+        self.start()
+
+        def render_spheres(item, cmap_radius):
+            cmap, radius = cmap_radius
+            if not np.isnan(item[2]):
+                cint = cmap.color_of_value(item[2]).int_value
+                item = gxgm.Point(item)
+                item2 = item + (0, radius, radius * 2)
+                return gxg.SYMBOL_3D_CYLINDER, gxgm.Point2((item, item2)), cint, radius
+
+        folder, files = gsys.unzip(os.path.join(os.path.dirname(self._test_case_py), 'dem_small.zip'),
+                                   folder=self.gx.temp_folder())
+
+        grid_file = os.path.join(folder, 'dem_small.grd')
+        with gxgrd.Grid.open(grid_file) as grd:
+
+            # get the data and replace z with DEM valie
+            data = grd.xyzv().reshape(-1, 4)
+            data[:, 2] = data[:, 3] * 3
+            data = data[:, 0:3]
+
+            cmap = gxg.Color_map()
+            try:
+                std = np.nanstd(data[:, 2])
+                mean = np.nanmean(data[:, 2])
+                cmap.set_normal(std, mean)
+            except:
+                cmap.set_linear(0, 1)
+
+            with gxv.View_3d.new(coordinate_system=grd.coordinate_system) as v:
+                v3d_file = v.file_name
+                with gxg.Draw_3d(v, 'dem_points') as g:
+                    g.polydata_3d(data.reshape((-1, 3)), render_spheres, (cmap, 10 * v.units_per_map_cm))
+                    p_min = gxgm.Point((np.nanmin(data[:, 0]), np.nanmin(data[:, 1]), np.nanmin(data[:, 2])))
+                    p_max = gxgm.Point((np.nanmax(data[:, 0]), np.nanmax(data[:, 1]), np.nanmax(data[:, 2])))
+                    extent = gxgm.Point2((p_min, p_max))
+                    g.box_3d(extent,
+                             wireframe=True,
+                             pen=gxg.Pen(line_color='c', line_thick= 20 * v.units_per_map_cm))
 
         self.crc_map(v3d_file)
 

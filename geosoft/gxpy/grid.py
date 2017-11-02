@@ -1002,7 +1002,9 @@ class Grid:
 
         x, y, z) is the location of each grid point in 3D space and v is the grid value at that location.
         Dummies will be numpy.nan.
-        
+
+        :returns: numpy array shape (nx, ny, 4)
+
         .. versionadded:: 9.2
         """
 
@@ -1043,7 +1045,7 @@ class Grid:
         Returns the (x, y, z) location of an indexed point in the grid.
 
         :param item: tuple (ix, iy) grid point, or the point number counting by row
-        :return: trye (x, y, z) location
+        :return: tuple (x, y, z) location
 
         .. versionadded:: 9.2.1
         """

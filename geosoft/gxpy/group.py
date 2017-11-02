@@ -827,7 +827,7 @@ class Draw(Group):
 
         self.view.gxview.text_ref(reference)
         self.view.gxview.text_angle(angle)
-        if type(location) is not gxgm.Point:
+        if not isinstance(location, gxgm.Point):
             location = gxgm.Point(location)
         self.view.gxview.text(text, location.x, location.y)
 
@@ -1073,21 +1073,21 @@ class Draw_3d(Draw):
                     render_info_func=None,
                     passback=None):
         """
-        Create 3D objects rendered by the data.
+        Create 3D objects rendered using data attributes.
 
         :param view:                a 3D view in which to place the group
         :param data:                iterable that yields items passed to your `render_info_func` callback
         :param render_info_func:    a callback that given `(item, passback)` returns the rendering `(symbol_type,
                                     geometry, color_integer, attibute)`:
                                     
-                                    ================== ======== =============== ===========
-                                    Symbol             Geometry Color           Attributes
-                                    ================== ======== =============== ===========
+                                    ================== ======== =============== =========
+                                    Symbol             Geometry Color           Attribute
+                                    ================== ======== =============== =========
                                     SYMBOL_3D_SPHERE   Point    Color.int_value radius
                                     SYMBOL_3D_CUBE     Point2   Color.int_value None
                                     SYMBOL_3D_CYLINDER Point2   Color.int_value radius
-                                    SYMBOL_3D_CONE     Point2   Color.int_value base_radius
-                                    ================== ======== =============== ===========
+                                    SYMBOL_3D_CONE     Point2   Color.int_value radius
+                                    ================== ======== =============== =========
 
         :param passback:            something passed back to your render_info_func function, default None.
         
@@ -1115,13 +1115,13 @@ class Draw_3d(Draw):
         for item in data:
             render = render_info_func(item, passback)
             if render:
-                symbol, geometry, color, attributes = render
+                symbol, geometry, color, attribute = render
                 if color != cint:
                     self.view.gxview.fill_color(color)
                     cint = color
 
                 if symbol == SYMBOL_3D_SPHERE:
-                    self.view.gxview.sphere_3d(geometry[0], geometry[1], geometry[2], attributes)
+                    self.view.gxview.sphere_3d(geometry[0], geometry[1], geometry[2], attribute)
 
                 elif symbol == SYMBOL_3D_CUBE:
                     self.view.gxview.box_3d(geometry.p0.x, geometry.p0.y, geometry.p0.z,
@@ -1130,12 +1130,12 @@ class Draw_3d(Draw):
                 elif symbol == SYMBOL_3D_CYLINDER:
                     self.view.gxview.cylinder_3d(geometry.p0.x, geometry.p0.y, geometry.p0.z,
                                                  geometry.p1.x, geometry.p1.y, geometry.p1.z,
-                                                 attributes, attributes, CYLINDER_CLOSE_ALL)
+                                                 attribute, attribute, CYLINDER_CLOSE_ALL)
 
                 elif symbol == SYMBOL_3D_CONE:
                     self.view.gxview.cylinder_3d(geometry.p0.x, geometry.p0.y, geometry.p0.z,
                                                  geometry.p1.x, geometry.p1.y, geometry.p1.z,
-                                                 attributes, 0, CYLINDER_CLOSE_ALL)
+                                                 attribute, 0, CYLINDER_CLOSE_ALL)
 
                 else:
                     raise GroupException(_t('Symbol type not implemented'))
@@ -1192,7 +1192,7 @@ def legend_color_bar(view,
             COLOR_BAR_BOTTOM = 2
             COLOR_BAR_TOP = 3
 
-    :param location:            offset or (x, y) offset from view reference point, in cm.  The default is
+    :param location:            offset or (x, y) offset from `bar_location` reference point, in cm.  The default is
                                 determined to center the bar off the location side specified.
     :param decimals:            annotation decimal places
     :param annotation_height:   annotation number height
@@ -1222,8 +1222,7 @@ def legend_color_bar(view,
     .. versionadded:: 9.2
     """
 
-    #ensure group name is unique in the view
-
+    # ensure group name is unique in the view
     while group_name in view.group_list:
         group_name += '_'
 
@@ -1646,7 +1645,7 @@ class Text_def:
 
     @color.setter
     def color(self, color):
-        if type(color) is Color:
+        if isinstance(color, Color):
             self._color = color
         else:
             self._color = Color(color)
@@ -1697,8 +1696,7 @@ class Text_def:
     @property
     def mapplot_string(self):
         """
-        Return a text definition for mapplot.
-        :returns: 
+        Mapplot text definition string.
         """
         if 'default' in self._font.lower():
             font = 'DEFAULT'
@@ -1804,9 +1802,12 @@ class Pen:
     def from_mapplot_string(cls, cstr):
         """
         Create a :class:`Pen` instance from a mapplot-style string descriptor using either a
-        rgbRGB or cmyCMY color model.  Lower case letters indicate line color, uppercase
+        krgbKRGB or kcmyKCMY color model.  Lower case letters indicate line color, uppercase
         indicates fill color, 'k', 'K' for black.  Each letter may be followed by an intensity
         between 0 and 255.  If an intensity is not specified 255 is assumed.
+
+        Line thinckness can be defined by 't' followed by a thickness in 1000'th of the view unit,
+        which for the default 'base' view would be microns.
 
         :param cstr:    mapplot-style color definition
                       
@@ -1818,6 +1819,7 @@ class Pen:
             'rG64'      red line, light-green fill
             'c64'       light cyan line, equivalent to 'R191G255B255'
             'c64K96'    light cyan line, light-grey fill
+            'bt500'     blue line, 0.5 units thick
             =========== ==============================================
             
         .. versionadded:: 9.2
@@ -1891,7 +1893,7 @@ class Pen:
 
     @line_color.setter
     def line_color(self, color):
-        if type(color) is Color:
+        if isinstance(color, Color):
             self._line_color = color
         else:
             self._line_color = Color(color)
@@ -1903,7 +1905,7 @@ class Pen:
     @fill_color.setter
     def fill_color(self, color):
         """pen fill color as a :class:`color` instance, can be set."""
-        if type(color) is Color:
+        if isinstance(color, Color):
             self._fill_color = color
         else:
             self._fill_color = Color(color)
