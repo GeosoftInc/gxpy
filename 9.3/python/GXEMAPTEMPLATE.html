@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>GXEMAPTEMPLATE class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -111,7 +114,7 @@
 <p>The <a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE" title="geosoft.gxapi.GXEMAPTEMPLATE"><code class="xref py py-obj docutils literal"><span class="pre">GXEMAPTEMPLATE</span></code></a> class provides access to a map template as displayed within
 Oasis montaj, but does not change data within the template itself.
 It performs functions such as setting the currently displayed area,
-or drawing “tracking” lines or boxes on the template (which are not
+or drawing &#8220;tracking&#8221; lines or boxes on the template (which are not
 part of the template itself).</p>
 <p><strong>Note:</strong></p>
 <p>To obtain access to the map template itself, it is recommended practice
@@ -148,7 +151,7 @@ that code that follows sees this map template as the current <a class="reference
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – Name of map to create a virtual EMAMTEMPLATE from</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) &#8211; Name of map to create a virtual EMAMTEMPLATE from</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE" title="geosoft.gxapi.GXEMAPTEMPLATE"><code class="xref py py-obj docutils literal"><span class="pre">GXEMAPTEMPLATE</span></code></a> Object</td>
 </tr>
@@ -225,14 +228,12 @@ guarantee is given about which document is currently active.</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAPTEMPLATE.drag_drop_enabled">
 <code class="descname">drag_drop_enabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.drag_drop_enabled" title="Permalink to this definition">¶</a></dt>
-<dd><p>Is drag-and-drop enabled for the map?</p>
+<dd><p>Checks if drag-and-drop is enabled for the map</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><code class="xref py py-obj docutils literal"><span class="pre">GEO_BOOL</span></code></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
@@ -250,11 +251,11 @@ guarantee is given about which document is currently active.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>state</strong> (<em>str</em>) – user prompt string</li>
-<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – X minimum in current view user units.</li>
-<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Y minimum in current view user units.</li>
-<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – X maximum in current view user units.</li>
-<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Y maximum in current view user units.</li>
+<li><strong>state</strong> (<em>str</em>) &#8211; user prompt string</li>
+<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; X minimum in current view user units.</li>
+<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Y minimum in current view user units.</li>
+<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; X maximum in current view user units.</li>
+<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Y maximum in current view user units.</li>
 </ul>
 </td>
 </tr>
@@ -284,10 +285,10 @@ guarantee is given about which document is currently active.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – X Min returned</li>
-<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Y Min returned</li>
-<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – X Max returned</li>
-<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Y Max returned</li>
+<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; X Min returned</li>
+<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Y Min returned</li>
+<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; X Max returned</li>
+<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Y Max returned</li>
 </ul>
 </td>
 </tr>
@@ -309,11 +310,11 @@ guarantee is given about which document is currently active.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>item</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – returned item name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>item</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; returned item name</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><code class="xref py py-obj docutils literal"><span class="pre">GEO_BOOL</span></code> Is item a view?</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Returns <code class="docutils literal"><span class="pre">True</span></code> if the item is a view</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
@@ -321,7 +322,7 @@ guarantee is given about which document is currently active.</p>
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>If nothing is selected the string will be empty and the function will return <code class="xref py py-obj docutils literal"><span class="pre">GS_FALSE</span></code>;</p>
+<p>If nothing is selected the string will be empty and the function will return <code class="docutils literal"><span class="pre">False</span></code></p>
 </dd></dl>
 
 <dl class="method">
@@ -333,11 +334,11 @@ guarantee is given about which document is currently active.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>str_val</strong> (<em>str</em>) – user prompt string</li>
-<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – X1 in view user units</li>
-<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Y1</li>
-<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – X2</li>
-<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Y2</li>
+<li><strong>str_val</strong> (<em>str</em>) &#8211; user prompt string</li>
+<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; X1 in view user units</li>
+<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Y1</li>
+<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; X2</li>
+<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Y2</li>
 </ul>
 </td>
 </tr>
@@ -367,8 +368,8 @@ guarantee is given about which document is currently active.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> to load</li>
-<li><strong>path</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">EMAPTEMPLATE_PATH</span></code></li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> to load</li>
+<li><strong>path</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#emaptemplate-path"><span class="std std-ref">EMAPTEMPLATE_PATH constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -394,7 +395,7 @@ The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="g
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Name returned</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Name returned</td>
 </tr>
 </tbody>
 </table>
@@ -412,9 +413,9 @@ The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>str_val</strong> (<em>str</em>) – user prompt string</li>
-<li><strong>x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – X coordinate in current view user units.</li>
-<li><strong>y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Y</li>
+<li><strong>str_val</strong> (<em>str</em>) &#8211; user prompt string</li>
+<li><strong>x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; X coordinate in current view user units.</li>
+<li><strong>y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Y</li>
 </ul>
 </td>
 </tr>
@@ -444,11 +445,11 @@ The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>str_val</strong> (<em>str</em>) – user prompt string</li>
-<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – X minimum in current view user units.   (defines corner)</li>
-<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Y</li>
-<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – X maximum</li>
-<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Y</li>
+<li><strong>str_val</strong> (<em>str</em>) &#8211; user prompt string</li>
+<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; X minimum in current view user units.   (defines corner)</li>
+<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Y</li>
+<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; X maximum</li>
+<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Y</li>
 </ul>
 </td>
 </tr>
@@ -478,14 +479,14 @@ The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>snap_to_grid</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – <code class="xref py py-obj docutils literal"><span class="pre">GEO_BOOL</span></code> Snap to grid</li>
-<li><strong>snap_dist</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Snapping distance (always in mm)</li>
-<li><strong>view_grid</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – View Grid</li>
-<li><strong>view_rulers</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – View Rulers</li>
-<li><strong>view_units</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – <code class="xref py py-obj docutils literal"><span class="pre">LAYOUT_VIEW_UNITS</span></code> View Units</li>
-<li><strong>grid_red</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Grid Red Component (0-255)</li>
-<li><strong>grid_green</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Grid Green Component (0-255)</li>
-<li><strong>grid_blue</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Grid Blue Component (0-255)</li>
+<li><strong>snap_to_grid</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.bool_ref" title="geosoft.gxapi.bool_ref"><em>bool_ref</em></a>) &#8211; Snap to grid</li>
+<li><strong>snap_dist</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Snapping distance (always in mm)</li>
+<li><strong>view_grid</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; View Grid</li>
+<li><strong>view_rulers</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; View Rulers</li>
+<li><strong>view_units</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; <a class="reference internal" href="GXEMAP.html#layout-view-units"><span class="std std-ref">LAYOUT_VIEW_UNITS constants</span></a> View Units</li>
+<li><strong>grid_red</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Grid Red Component (0-255)</li>
+<li><strong>grid_green</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Grid Green Component (0-255)</li>
+<li><strong>grid_blue</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Grid Blue Component (0-255)</li>
 </ul>
 </td>
 </tr>
@@ -502,18 +503,18 @@ view of a map.</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAPTEMPLATE.get_window_position">
 <code class="descname">get_window_position</code><span class="sig-paren">(</span><em>left</em>, <em>top</em>, <em>right</em>, <em>bottom</em>, <em>state</em>, <em>is_floating</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.get_window_position" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the map window’s position and dock state</p>
+<dd><p>Get the map window&#8217;s position and dock state</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>left</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Window left position</li>
-<li><strong>top</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Window top position</li>
-<li><strong>right</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Window right position</li>
-<li><strong>bottom</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Window bottom position</li>
-<li><strong>state</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Window state <code class="xref py py-obj docutils literal"><span class="pre">EMAPTEMPLATE_WINDOW_STATE</span></code></li>
-<li><strong>is_floating</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Docked or floating <code class="xref py py-obj docutils literal"><span class="pre">EMAPTEMPLATE_WINDOW_POSITION</span></code></li>
+<li><strong>left</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Window left position</li>
+<li><strong>top</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Window top position</li>
+<li><strong>right</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Window right position</li>
+<li><strong>bottom</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Window bottom position</li>
+<li><strong>state</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Window state <a class="reference internal" href="#emaptemplate-window-state"><span class="std std-ref">EMAPTEMPLATE_WINDOW_STATE constants</span></a></li>
+<li><strong>is_floating</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Docked or floating <a class="reference internal" href="#emaptemplate-window-position"><span class="std std-ref">EMAPTEMPLATE_WINDOW_POSITION constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -532,7 +533,7 @@ view of a map.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><code class="xref py py-obj docutils literal"><span class="pre">EMAPTEMPLATE_WINDOW_STATE</span></code></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#emaptemplate-window-state"><span class="std std-ref">EMAPTEMPLATE_WINDOW_STATE constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
@@ -572,9 +573,9 @@ view of a map.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>field</strong> (<em>str</em>) – <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> field name</li>
-<li><strong>value</strong> (<em>str</em>) – <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> field value to find</li>
-<li><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – buffer for map name</li>
+<li><strong>field</strong> (<em>str</em>) &#8211; <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> field name</li>
+<li><strong>value</strong> (<em>str</em>) &#8211; <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> field value to find</li>
+<li><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; buffer for map name</li>
 </ul>
 </td>
 </tr>
@@ -600,9 +601,7 @@ view of a map.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><code class="xref py py-obj docutils literal"><span class="pre">GEO_BOOL</span></code></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
@@ -633,7 +632,7 @@ view of a map.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – list of maps (‘;’ or ‘|’ delimited) to load.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) &#8211; list of maps (&#8216;;&#8217; or &#8216;|&#8217; delimited) to load.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE" title="geosoft.gxapi.GXEMAPTEMPLATE"><code class="xref py py-obj docutils literal"><span class="pre">GXEMAPTEMPLATE</span></code></a> Object to edited map.</td>
 </tr>
@@ -660,7 +659,7 @@ directory as the first file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – List of documents (‘;’ or ‘|’ delimited) to load.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) &#8211; List of documents (&#8216;;&#8217; or &#8216;|&#8217; delimited) to load.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Handle to current edited document, which will be the last
 database in the list if multiple files were provided.</td>
@@ -685,7 +684,7 @@ guarantee is given about which document is currently active.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – map name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) &#8211; map name</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">1 if map is loaded, 0 otherwise.</td>
 </tr>
@@ -748,9 +747,7 @@ guarantee is given about which document is currently active.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><code class="xref py py-obj docutils literal"><span class="pre">GEO_BOOL</span></code></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
@@ -768,10 +765,10 @@ guarantee is given about which document is currently active.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>min_x</strong> (<em>float</em>) – X Min</li>
-<li><strong>min_y</strong> (<em>float</em>) – Y Min</li>
-<li><strong>max_x</strong> (<em>float</em>) – X Max</li>
-<li><strong>max_y</strong> (<em>float</em>) – Y Max</li>
+<li><strong>min_x</strong> (<em>float</em>) &#8211; X Min</li>
+<li><strong>min_y</strong> (<em>float</em>) &#8211; Y Min</li>
+<li><strong>max_x</strong> (<em>float</em>) &#8211; X Max</li>
+<li><strong>max_y</strong> (<em>float</em>) &#8211; Y Max</li>
 </ul>
 </td>
 </tr>
@@ -793,7 +790,7 @@ guarantee is given about which document is currently active.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>enable</strong> (<em>int</em>) – Enables/disables drag-and-drop <code class="xref py py-obj docutils literal"><span class="pre">GEO_BOOL</span></code></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>enable</strong> (<em>bool</em>) &#8211; Enables/disables drag-and-drop</td>
 </tr>
 </tbody>
 </table>
@@ -810,7 +807,7 @@ guarantee is given about which document is currently active.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>item</strong> (<em>str</em>) – item name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>item</strong> (<em>str</em>) &#8211; item name</td>
 </tr>
 </tbody>
 </table>
@@ -830,14 +827,14 @@ guarantee is given about which document is currently active.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>snap_to_grid</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">GEO_BOOL</span></code> Snap to grid</li>
-<li><strong>snap_dist</strong> (<em>float</em>) – Snapping distance (always in mm)</li>
-<li><strong>view_grid</strong> (<em>int</em>) – View Grid</li>
-<li><strong>view_rulers</strong> (<em>int</em>) – View Rulers</li>
-<li><strong>view_units</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">LAYOUT_VIEW_UNITS</span></code> View Units</li>
-<li><strong>grid_red</strong> (<em>int</em>) – Grid Red Component (0-255)</li>
-<li><strong>grid_green</strong> (<em>int</em>) – Grid Green Component (0-255)</li>
-<li><strong>grid_blue</strong> (<em>int</em>) – Grid Blue Component (0-255)</li>
+<li><strong>snap_to_grid</strong> (<em>bool</em>) &#8211; Snap to grid</li>
+<li><strong>snap_dist</strong> (<em>float</em>) &#8211; Snapping distance (always in mm)</li>
+<li><strong>view_grid</strong> (<em>int</em>) &#8211; View Grid</li>
+<li><strong>view_rulers</strong> (<em>int</em>) &#8211; View Rulers</li>
+<li><strong>view_units</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXEMAP.html#layout-view-units"><span class="std std-ref">LAYOUT_VIEW_UNITS constants</span></a> View Units</li>
+<li><strong>grid_red</strong> (<em>int</em>) &#8211; Grid Red Component (0-255)</li>
+<li><strong>grid_green</strong> (<em>int</em>) &#8211; Grid Green Component (0-255)</li>
+<li><strong>grid_blue</strong> (<em>int</em>) &#8211; Grid Blue Component (0-255)</li>
 </ul>
 </td>
 </tr>
@@ -854,18 +851,18 @@ view of a map.</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAPTEMPLATE.set_window_position">
 <code class="descname">set_window_position</code><span class="sig-paren">(</span><em>left</em>, <em>top</em>, <em>right</em>, <em>bottom</em>, <em>state</em>, <em>is_floating</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.set_window_position" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the map window’s position and dock state</p>
+<dd><p>Get the map window&#8217;s position and dock state</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>left</strong> (<em>int</em>) – Window left position</li>
-<li><strong>top</strong> (<em>int</em>) – Window top position</li>
-<li><strong>right</strong> (<em>int</em>) – Window right position</li>
-<li><strong>bottom</strong> (<em>int</em>) – Window bottom position</li>
-<li><strong>state</strong> (<em>int</em>) – Window state <code class="xref py py-obj docutils literal"><span class="pre">EMAPTEMPLATE_WINDOW_STATE</span></code></li>
-<li><strong>is_floating</strong> (<em>int</em>) – Docked or floating <code class="xref py py-obj docutils literal"><span class="pre">EMAPTEMPLATE_WINDOW_POSITION</span></code></li>
+<li><strong>left</strong> (<em>int</em>) &#8211; Window left position</li>
+<li><strong>top</strong> (<em>int</em>) &#8211; Window top position</li>
+<li><strong>right</strong> (<em>int</em>) &#8211; Window right position</li>
+<li><strong>bottom</strong> (<em>int</em>) &#8211; Window bottom position</li>
+<li><strong>state</strong> (<em>int</em>) &#8211; Window state <a class="reference internal" href="#emaptemplate-window-state"><span class="std std-ref">EMAPTEMPLATE_WINDOW_STATE constants</span></a></li>
+<li><strong>is_floating</strong> (<em>int</em>) &#8211; Docked or floating <a class="reference internal" href="#emaptemplate-window-position"><span class="std std-ref">EMAPTEMPLATE_WINDOW_POSITION constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -884,7 +881,7 @@ view of a map.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>state</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">EMAPTEMPLATE_WINDOW_STATE</span></code></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>state</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#emaptemplate-window-state"><span class="std std-ref">EMAPTEMPLATE_WINDOW_STATE constants</span></a></td>
 </tr>
 </tbody>
 </table>
@@ -902,9 +899,9 @@ view of a map.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>flags</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">EMAPTEMPLATE_TRACK</span></code></li>
-<li><strong>x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – X coordinate in current view user units.</li>
-<li><strong>y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Y</li>
+<li><strong>flags</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#emaptemplate-track"><span class="std std-ref">EMAPTEMPLATE_TRACK constants</span></a></li>
+<li><strong>x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; X coordinate in current view user units.</li>
+<li><strong>y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Y</li>
 </ul>
 </td>
 </tr>
@@ -930,7 +927,7 @@ view of a map.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – Name of the map to unload</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) &#8211; Name of the map to unload</td>
 </tr>
 </tbody>
 </table>
@@ -960,8 +957,8 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.un_loa
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> (<em>str</em>) – Name of map to unload</li>
-<li><strong>prompt</strong> (<em>int</em>) – prompt <code class="xref py py-obj docutils literal"><span class="pre">GEO_BOOL</span></code></li>
+<li><strong>name</strong> (<em>str</em>) &#8211; Name of map to unload</li>
+<li><strong>prompt</strong> (<em>bool</em>) &#8211; prompt</li>
 </ul>
 </td>
 </tr>
@@ -972,7 +969,7 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.un_loa
 </div>
 <p><strong>Note:</strong></p>
 <p>If the map is not loaded, nothing happens.
-If “FALSE”, map is saved without a prompt.</p>
+If &#8220;FALSE&#8221;, map is saved without a prompt.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1161,7 +1158,7 @@ If “FALSE”, map is saved without a prompt.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

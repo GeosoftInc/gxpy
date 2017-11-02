@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>GXUNC class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -135,11 +138,9 @@ with TrueType fonts).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ch</strong> (<em>int</em>) – UTF-16 value (32-bit int, lower 16 bits used, upper bits reserved for future use)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ch</strong> (<em>int</em>) &#8211; UTF-16 value (32-bit int, lower 16 bits used, upper bits reserved for future use)</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><code class="xref py py-obj docutils literal"><span class="pre">GEO_BOOL</span></code></td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
@@ -171,8 +172,8 @@ with TrueType fonts).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>ch</strong> (<em>int</em>) – UTF-16 value (32-bit int, lower 16 bits used, upper bits reserved for future use)</li>
-<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Converted string</li>
+<li><strong>ch</strong> (<em>int</em>) &#8211; UTF-16 value (32-bit int, lower 16 bits used, upper bits reserved for future use)</li>
+<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Converted string</li>
 </ul>
 </td>
 </tr>
@@ -194,16 +195,13 @@ with TrueType fonts).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>face</strong> (<em>str</em>) – Face name (undecorated)</li>
-<li><strong>geofont</strong> (<em>int</em>) – Geosoft font? <code class="xref py py-obj docutils literal"><span class="pre">GEO_BOOL</span></code></li>
-<li><strong>number</strong> (<em>int</em>) – Symbol number</li>
+<li><strong>face</strong> (<em>str</em>) &#8211; Face name (undecorated)</li>
+<li><strong>geofont</strong> (<em>bool</em>) &#8211; Geosoft font?</li>
+<li><strong>number</strong> (<em>int</em>) &#8211; Symbol number</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><code class="xref py py-obj docutils literal"><span class="pre">GEO_BOOL</span></code></p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
 </td>
 </tr>
 </tbody>
@@ -223,9 +221,9 @@ are valid in a particular font.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> of symbols</li>
-<li><strong>face</strong> (<em>str</em>) – Face name (undecorated)</li>
-<li><strong>geofont</strong> (<em>int</em>) – Geosoft font? <code class="xref py py-obj docutils literal"><span class="pre">GEO_BOOL</span></code></li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> of symbols</li>
+<li><strong>face</strong> (<em>str</em>) &#8211; Face name (undecorated)</li>
+<li><strong>geofont</strong> (<em>bool</em>) &#8211; Geosoft font?</li>
 </ul>
 </td>
 </tr>
@@ -246,7 +244,7 @@ are valid in a particular font.</p>
 <dl class="data">
 <dt id="geosoft.gxapi.UTF8_MAX_CHAR">
 <code class="descname">UTF8_MAX_CHAR</code><a class="headerlink" href="#geosoft.gxapi.UTF8_MAX_CHAR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Maximum width of a single Unicode code point as a <code class="xref py py-obj docutils literal"><span class="pre">UTF8</span></code> string, including terminator (5)</p>
+<dd><p>Maximum width of a single Unicode code point as a <a class="reference internal" href="#utf8"><span class="std std-ref">UTF8 constants</span></a> string, including terminator (5)</p>
 <dl class="attribute">
 <dt>
 <code class="descclassname">gxapi.</code><code class="descname">UTF8_MAX_CHAR</code><em class="property"> = 5</em></dt>
@@ -282,7 +280,7 @@ are valid in a particular font.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

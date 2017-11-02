@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>GXDAT class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -125,10 +128,10 @@ by a specific processing function.  The gridding methods all use DATs.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Handle to database which <a class="reference internal" href="#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><code class="xref py py-obj docutils literal"><span class="pre">GXDAT</span></code></a> is connected with</li>
-<li><strong>x_ch</strong> (<em>str</em>) – Name of X channel in database</li>
-<li><strong>y_ch</strong> (<em>str</em>) – Name of Y channel in database</li>
-<li><strong>z_ch</strong> (<em>str</em>) – Name of Z channel in database</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Handle to database which <a class="reference internal" href="#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><code class="xref py py-obj docutils literal"><span class="pre">GXDAT</span></code></a> is connected with</li>
+<li><strong>x_ch</strong> (<em>str</em>) &#8211; Name of X channel in database</li>
+<li><strong>y_ch</strong> (<em>str</em>) &#8211; Name of Y channel in database</li>
+<li><strong>z_ch</strong> (<em>str</em>) &#8211; Name of Z channel in database</li>
 </ul>
 </td>
 </tr>
@@ -154,8 +157,8 @@ by a specific processing function.  The gridding methods all use DATs.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>name</strong> (<em>str</em>) – Name of grid file to associate <a class="reference internal" href="#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><code class="xref py py-obj docutils literal"><span class="pre">GXDAT</span></code></a> with</li>
-<li><strong>mode</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">DAT_XGD</span></code></li>
+<li><strong>name</strong> (<em>str</em>) &#8211; Name of grid file to associate <a class="reference internal" href="#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><code class="xref py py-obj docutils literal"><span class="pre">GXDAT</span></code></a> with</li>
+<li><strong>mode</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dat-xgd"><span class="std std-ref">DAT_XGD constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -181,10 +184,10 @@ by a specific processing function.  The gridding methods all use DATs.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> object to populate</li>
-<li><strong>interface</strong> (<em>str</em>) – <a class="reference internal" href="#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><code class="xref py py-obj docutils literal"><span class="pre">GXDAT</span></code></a> interface name (“XGD” only support option currently)</li>
-<li><strong>flags</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">DAT_FILE</span></code></li>
-<li><strong>mode</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">DAT_FILE_FORM</span></code></li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> object to populate</li>
+<li><strong>interface</strong> (<em>str</em>) &#8211; <a class="reference internal" href="#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><code class="xref py py-obj docutils literal"><span class="pre">GXDAT</span></code></a> interface name (&#8220;XGD&#8221; only support option currently)</li>
+<li><strong>flags</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dat-file"><span class="std std-ref">DAT_FILE constants</span></a></li>
+<li><strong>mode</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dat-file-form"><span class="std std-ref">DAT_FILE_FORM constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -195,8 +198,8 @@ by a specific processing function.  The gridding methods all use DATs.</p>
 </div>
 <p><strong>Note:</strong></p>
 <p>The filters displayed in the Grid/Image file browse dialog are put
-in the “Name” of the <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a>, while the file qualifiers are stored in
-the “Value”.</p>
+in the &#8220;Name&#8221; of the <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a>, while the file qualifiers are stored in
+the &#8220;Value&#8221;.</p>
 </dd></dl>
 
 <dl class="method">
@@ -236,13 +239,13 @@ the “Value”.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Minimum X (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rMAX" title="geosoft.gxapi.rMAX"><code class="xref py py-obj docutils literal"><span class="pre">rMAX</span></code></a> if none)</li>
-<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Minimum Y (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rMAX" title="geosoft.gxapi.rMAX"><code class="xref py py-obj docutils literal"><span class="pre">rMAX</span></code></a> if none)</li>
-<li><strong>min_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Minimum Z (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rMAX" title="geosoft.gxapi.rMAX"><code class="xref py py-obj docutils literal"><span class="pre">rMAX</span></code></a> if none)</li>
-<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Maximum X (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rMIN" title="geosoft.gxapi.rMIN"><code class="xref py py-obj docutils literal"><span class="pre">rMIN</span></code></a> if none)</li>
-<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Maximum Y (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rMIN" title="geosoft.gxapi.rMIN"><code class="xref py py-obj docutils literal"><span class="pre">rMIN</span></code></a> if none)</li>
-<li><strong>max_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Maximum Z (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rMIN" title="geosoft.gxapi.rMIN"><code class="xref py py-obj docutils literal"><span class="pre">rMIN</span></code></a> if none)</li>
-<li><strong>num_non_dummy</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Number of non-dummy XYZ.</li>
+<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Minimum X (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rMAX" title="geosoft.gxapi.rMAX"><code class="xref py py-obj docutils literal"><span class="pre">rMAX</span></code></a> if none)</li>
+<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Minimum Y (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rMAX" title="geosoft.gxapi.rMAX"><code class="xref py py-obj docutils literal"><span class="pre">rMAX</span></code></a> if none)</li>
+<li><strong>min_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Minimum Z (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rMAX" title="geosoft.gxapi.rMAX"><code class="xref py py-obj docutils literal"><span class="pre">rMAX</span></code></a> if none)</li>
+<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Maximum X (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rMIN" title="geosoft.gxapi.rMIN"><code class="xref py py-obj docutils literal"><span class="pre">rMIN</span></code></a> if none)</li>
+<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Maximum Y (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rMIN" title="geosoft.gxapi.rMIN"><code class="xref py py-obj docutils literal"><span class="pre">rMIN</span></code></a> if none)</li>
+<li><strong>max_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Maximum Z (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rMIN" title="geosoft.gxapi.rMIN"><code class="xref py py-obj docutils literal"><span class="pre">rMIN</span></code></a> if none)</li>
+<li><strong>num_non_dummy</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Number of non-dummy XYZ.</li>
 </ul>
 </td>
 </tr>
@@ -373,7 +376,7 @@ the “Value”.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

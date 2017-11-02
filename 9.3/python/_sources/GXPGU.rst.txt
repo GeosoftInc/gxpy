@@ -39,7 +39,7 @@ Types of BLAKEY tests
 PGU_CORR constants
 -----------------------------------------------------------------------
 
-Correlation (must be synchronized with `ST2_CORRELATION`)
+Correlation (must be synchronized with :ref:`ST2_CORRELATION`)
 
 .. autodata:: geosoft.gxapi.PGU_CORR_SIMPLE
     :annotation:

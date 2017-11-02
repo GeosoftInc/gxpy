@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>GXITR class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -116,7 +119,7 @@ used in conjunction with <a class="reference internal" href="GXMVIEW.html#geosof
 <p>Histogram bins are defined with inclusive minima and exclusive maxima;
 for instance if Min = 0 and Inc = 1, then the second bin would include
 all values z such that  0 &lt;= z &lt; 1 (the first bin has all values &lt; 0).</p>
-<p>Color zones used in displaying grids (<a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a>, ZON etc…) are the
+<p>Color zones used in displaying grids (<a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a>, ZON etc...) are the
 opposite, with exclusive minima and inclusive maxima.
 For instance, if a zone is defined from 0 to 1, then it would
 contain all values of z such that 0 &lt; z &lt;= 1.</p>
@@ -134,7 +137,7 @@ number of histogram bins much larger than the number of color zones.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>brt</strong> (<em>float</em>) – -1.0 - black; 0.0 no change; 1.0 white</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>brt</strong> (<em>float</em>) &#8211; -1.0 - black; 0.0 no change; 1.0 white</td>
 </tr>
 </tbody>
 </table>
@@ -155,9 +158,9 @@ number of histogram bins much larger than the number of color zones.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>val</strong> (<em>float</em>) – Data value</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>val</strong> (<em>float</em>) &#8211; Data value</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><code class="xref py py-obj docutils literal"><span class="pre">MVIEW_COLOR</span></code></td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="GXMVIEW.html#mview-color"><span class="std std-ref">MVIEW_COLOR constants</span></a></td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
@@ -177,8 +180,8 @@ number of histogram bins much larger than the number of color zones.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>vv_d</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> of values (none-string)</li>
-<li><strong>vv_c</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Output <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> of colors (type INT)</li>
+<li><strong>vv_d</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Input <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> of values (none-string)</li>
+<li><strong>vv_c</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Output <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> of colors (type INT)</li>
 </ul>
 </td>
 </tr>
@@ -200,7 +203,7 @@ is 0 (no color).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>it_rs</strong> (<a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><em>GXITR</em></a>) – <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a> Source</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>it_rs</strong> (<a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><em>GXITR</em></a>) &#8211; <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a> Source</td>
 </tr>
 </tbody>
 </table>
@@ -236,7 +239,7 @@ is 0 (no color).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – File name, type determined from extension</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; File name, type determined from extension</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a> object</td>
 </tr>
@@ -258,9 +261,9 @@ is 0 (no color).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>tbl</strong> (<em>str</em>) – Color table name, NULL for default</li>
-<li><strong>zone</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">ITR_ZONE</span></code></li>
-<li><strong>contour</strong> (<em>float</em>) – Color contour interval or <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a></li>
+<li><strong>tbl</strong> (<em>str</em>) &#8211; Color table name, NULL for default</li>
+<li><strong>zone</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#itr-zone"><span class="std std-ref">ITR_ZONE constants</span></a></li>
+<li><strong>contour</strong> (<em>float</em>) &#8211; Color contour interval or <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a></li>
 </ul>
 </td>
 </tr>
@@ -280,7 +283,7 @@ is 0 (no color).</p>
 a model if it can.</p>
 <p>If a shaded relief model is selected, a shaded image
 will be created and a shaded image file will be created with
-the same name as the original grid but with the suffux “_s”
+the same name as the original grid but with the suffux &#8220;_s&#8221;
 added to the name part of the grid.</p>
 </dd></dl>
 
@@ -293,8 +296,8 @@ added to the name part of the grid.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>map</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) – <a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXMAP</span></code></a> on which to place the view</li>
-<li><strong>name</strong> (<em>str</em>) – <a class="reference internal" href="GXAGG.html#geosoft.gxapi.GXAGG" title="geosoft.gxapi.GXAGG"><code class="xref py py-obj docutils literal"><span class="pre">GXAGG</span></code></a> Group name</li>
+<li><strong>map</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) &#8211; <a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXMAP</span></code></a> on which to place the view</li>
+<li><strong>name</strong> (<em>str</em>) &#8211; <a class="reference internal" href="GXAGG.html#geosoft.gxapi.GXAGG" title="geosoft.gxapi.GXAGG"><code class="xref py py-obj docutils literal"><span class="pre">GXAGG</span></code></a> Group name</li>
 </ul>
 </td>
 </tr>
@@ -319,7 +322,7 @@ added to the name part of the grid.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>bf</strong> (<a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><em>GXBF</em></a>) – <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a> to serialize from</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>bf</strong> (<a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><em>GXBF</em></a>) &#8211; <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a> to serialize from</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a> object</td>
 </tr>
@@ -341,8 +344,8 @@ added to the name part of the grid.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>st</strong> (<a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><em>GXST</em></a>) – Stat object with a histogram</li>
-<li><strong>contour</strong> (<em>float</em>) – Color contour interval or dummy for none</li>
+<li><strong>st</strong> (<a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><em>GXST</em></a>) &#8211; Stat object with a histogram</li>
+<li><strong>contour</strong> (<em>float</em>) &#8211; Color contour interval or dummy for none</li>
 </ul>
 </td>
 </tr>
@@ -389,8 +392,8 @@ when the <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosof
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>min</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Data minimum value (or <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> if not set)</li>
-<li><strong>max</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Data maximum value (or <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> if not set)</li>
+<li><strong>min</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Data minimum value (or <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> if not set)</li>
+<li><strong>max</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Data maximum value (or <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> if not set)</li>
 </ul>
 </td>
 </tr>
@@ -411,7 +414,7 @@ those cases dummy values will be returned.</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXITR.get_reg">
 <code class="descname">get_reg</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXITR.get_reg" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a>’s <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a></p>
+<dd><p>Get the <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a>&#8216;s <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -455,8 +458,8 @@ those cases dummy values will be returned.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>zone</strong> (<em>int</em>) – Number of the zone to set.</li>
-<li><strong>color</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – <code class="xref py py-obj docutils literal"><span class="pre">MVIEW_COLOR</span></code></li>
+<li><strong>zone</strong> (<em>int</em>) &#8211; Number of the zone to set.</li>
+<li><strong>color</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; <a class="reference internal" href="GXMVIEW.html#mview-color"><span class="std std-ref">MVIEW_COLOR constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -477,7 +480,7 @@ those cases dummy values will be returned.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><code class="xref py py-obj docutils literal"><span class="pre">ITR_ZONE_MODEL</span></code></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#itr-zone-model"><span class="std std-ref">ITR_ZONE_MODEL constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
@@ -499,7 +502,7 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>zone</strong> (<em>int</em>) – Number of the zone to set.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>zone</strong> (<em>int</em>) &#8211; Number of the zone to set.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The value of the specified zone.</td>
 </tr>
@@ -537,9 +540,9 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>min</strong> (<em>float</em>) – Minimum</li>
-<li><strong>max</strong> (<em>float</em>) – Maximum</li>
-<li><strong>contour</strong> (<em>float</em>) – Color contour interval or dummy for none</li>
+<li><strong>min</strong> (<em>float</em>) &#8211; Minimum</li>
+<li><strong>max</strong> (<em>float</em>) &#8211; Maximum</li>
+<li><strong>contour</strong> (<em>float</em>) &#8211; Color contour interval or dummy for none</li>
 </ul>
 </td>
 </tr>
@@ -558,7 +561,7 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – File name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; File name</td>
 </tr>
 </tbody>
 </table>
@@ -576,9 +579,9 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>min</strong> (<em>float</em>) – Minimum ( &gt; 0)</li>
-<li><strong>max</strong> (<em>float</em>) – Maximum ( &gt; minimum)</li>
-<li><strong>contour</strong> (<em>float</em>) – Color contour interval or dummy for none</li>
+<li><strong>min</strong> (<em>float</em>) &#8211; Minimum ( &gt; 0)</li>
+<li><strong>max</strong> (<em>float</em>) &#8211; Maximum ( &gt; minimum)</li>
+<li><strong>contour</strong> (<em>float</em>) &#8211; Color contour interval or dummy for none</li>
 </ul>
 </td>
 </tr>
@@ -600,10 +603,10 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>std_dev</strong> (<em>float</em>) – Standard deviation</li>
-<li><strong>mean</strong> (<em>float</em>) – Mean</li>
-<li><strong>exp</strong> (<em>float</em>) – Expansion, normally 1.0</li>
-<li><strong>contour</strong> (<em>float</em>) – Color contour interval or dummy for none</li>
+<li><strong>std_dev</strong> (<em>float</em>) &#8211; Standard deviation</li>
+<li><strong>mean</strong> (<em>float</em>) &#8211; Mean</li>
+<li><strong>exp</strong> (<em>float</em>) &#8211; Expansion, normally 1.0</li>
+<li><strong>contour</strong> (<em>float</em>) &#8211; Color contour interval or dummy for none</li>
 </ul>
 </td>
 </tr>
@@ -636,7 +639,7 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pow</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">ITR_POWER</span></code></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pow</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#itr-power"><span class="std std-ref">ITR_POWER constants</span></a></td>
 </tr>
 </tbody>
 </table>
@@ -653,7 +656,7 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – File name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; File name</td>
 </tr>
 </tbody>
 </table>
@@ -670,7 +673,7 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – File name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; File name</td>
 </tr>
 </tbody>
 </table>
@@ -687,7 +690,7 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>bf</strong> (<a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><em>GXBF</em></a>) – <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a> to serialize to</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>bf</strong> (<a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><em>GXBF</em></a>) &#8211; <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a> to serialize to</td>
 </tr>
 </tbody>
 </table>
@@ -705,9 +708,9 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>map</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) – <a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXMAP</span></code></a> on which to place the view</li>
-<li><strong>name</strong> (<em>str</em>) – <a class="reference internal" href="GXAGG.html#geosoft.gxapi.GXAGG" title="geosoft.gxapi.GXAGG"><code class="xref py py-obj docutils literal"><span class="pre">GXAGG</span></code></a> group name</li>
-<li><strong>itr</strong> (<a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><em>GXITR</em></a>) – <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a> object to set</li>
+<li><strong>map</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) &#8211; <a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXMAP</span></code></a> on which to place the view</li>
+<li><strong>name</strong> (<em>str</em>) &#8211; <a class="reference internal" href="GXAGG.html#geosoft.gxapi.GXAGG" title="geosoft.gxapi.GXAGG"><code class="xref py py-obj docutils literal"><span class="pre">GXAGG</span></code></a> group name</li>
+<li><strong>itr</strong> (<a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><em>GXITR</em></a>) &#8211; <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a> object to set</li>
 </ul>
 </td>
 </tr>
@@ -729,8 +732,8 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>brt</strong> (<em>float</em>) – 0.0 - black; 0.5 normal; 1.0 white</li>
-<li><strong>con</strong> (<em>float</em>) – 0.0 - flat; 1.0 normal</li>
+<li><strong>brt</strong> (<em>float</em>) &#8211; 0.0 - black; 0.5 normal; 1.0 white</li>
+<li><strong>con</strong> (<em>float</em>) &#8211; 0.0 - flat; 1.0 normal</li>
 </ul>
 </td>
 </tr>
@@ -757,7 +760,7 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>model</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">ITR_COLOR_MODEL</span></code></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>model</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#itr-color-model"><span class="std std-ref">ITR_COLOR_MODEL constants</span></a></td>
 </tr>
 </tbody>
 </table>
@@ -775,8 +778,8 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>min</strong> (<em>float</em>) – Data minimum value</li>
-<li><strong>max</strong> (<em>float</em>) – Data maximum value</li>
+<li><strong>min</strong> (<em>float</em>) &#8211; Data minimum value</li>
+<li><strong>max</strong> (<em>float</em>) &#8211; Data maximum value</li>
 </ul>
 </td>
 </tr>
@@ -795,7 +798,7 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>zones</strong> (<em>int</em>) – Number of zones to set <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a> to.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>zones</strong> (<em>int</em>) &#8211; Number of zones to set <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a> to.</td>
 </tr>
 </tbody>
 </table>
@@ -813,8 +816,8 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>zone</strong> (<em>int</em>) – Number of the zone to set.</li>
-<li><strong>color</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">MVIEW_COLOR</span></code></li>
+<li><strong>zone</strong> (<em>int</em>) &#8211; Number of the zone to set.</li>
+<li><strong>color</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXMVIEW.html#mview-color"><span class="std std-ref">MVIEW_COLOR constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -836,8 +839,8 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>zone</strong> (<em>int</em>) – Number of the zone to set.</li>
-<li><strong>value</strong> (<em>float</em>) – The value to set</li>
+<li><strong>zone</strong> (<em>int</em>) &#8211; Number of the zone to set.</li>
+<li><strong>value</strong> (<em>float</em>) &#8211; The value to set</li>
 </ul>
 </td>
 </tr>
@@ -1082,7 +1085,7 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

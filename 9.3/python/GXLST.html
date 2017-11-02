@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>GXLST class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -118,8 +121,8 @@ removing list items.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> (<em>str</em>) – Name of the Item</li>
-<li><strong>val</strong> (<em>str</em>) – Value of the Item</li>
+<li><strong>name</strong> (<em>str</em>) &#8211; Name of the Item</li>
+<li><strong>val</strong> (<em>str</em>) &#8211; Value of the Item</li>
 </ul>
 </td>
 </tr>
@@ -139,8 +142,8 @@ removing list items.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> (<em>str</em>) – Name of the channel, line or blob symbol</li>
-<li><strong>symb</strong> (<em>int</em>) – Symbol handle</li>
+<li><strong>name</strong> (<em>str</em>) &#8211; Name of the channel, line or blob symbol</li>
+<li><strong>symb</strong> (<em>int</em>) &#8211; Symbol handle</li>
 </ul>
 </td>
 </tr>
@@ -151,7 +154,7 @@ removing list items.</p>
 </div>
 <p><strong>Note:</strong></p>
 <p>A number of <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> functions return LSTs with the channel
-or line name in the “Name” part of a <a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a>, and the
+or line name in the &#8220;Name&#8221; part of a <a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a>, and the
 handle (DB_SYMB) in the value part. This function lets
 you quickly add a new item without the need of coverting
 the handle into a string value.</p>
@@ -166,8 +169,8 @@ the handle into a string value.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> (<em>str</em>) – Name of the Item</li>
-<li><strong>val</strong> (<em>str</em>) – Value of the Item</li>
+<li><strong>name</strong> (<em>str</em>) &#8211; Name of the Item</li>
+<li><strong>val</strong> (<em>str</em>) &#8211; Value of the Item</li>
 </ul>
 </td>
 </tr>
@@ -188,7 +191,7 @@ the handle into a string value.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lst2</strong> (<a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – List to append to the above <a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a>.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lst2</strong> (<a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; List to append to the above <a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a>.</td>
 </tr>
 </tbody>
 </table>
@@ -196,7 +199,7 @@ the handle into a string value.</p>
 <p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>Item names and values are added using “<a class="reference internal" href="#geosoft.gxapi.GXLST.add_unique_item" title="geosoft.gxapi.GXLST.add_unique_item"><code class="xref py py-obj docutils literal"><span class="pre">add_unique_item</span></code></a>”,
+<p>Item names and values are added using &#8220;<a class="reference internal" href="#geosoft.gxapi.GXLST.add_unique_item" title="geosoft.gxapi.GXLST.add_unique_item"><code class="xref py py-obj docutils literal"><span class="pre">add_unique_item</span></code></a>&#8221;,
 so that existing items with the same name are replaced, and if
 items are duplicated in the appended <a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a>, the last one will be
 the one to remain after the process is complete.</p>
@@ -221,20 +224,20 @@ the one to remain after the process is complete.</p>
 </div>
 <p><strong>Note:</strong></p>
 <p>Searches the local directory, then useretc, then etc to see
-if the file “assaylist.csv” exists.
+if the file &#8220;assaylist.csv&#8221; exists.
 The file contains strings of those channel names which are
 to be interpreted as assay channels for geochemical processes.
 Items can be on the same line, separated by commas, or on
 separate lines (and combinations of both).
 If this function is used in combination with the lFindItemMask_LST
-function, then you can use mask-strings such as “<code class="docutils literal"><span class="pre">*ppm</span></code>”
+function, then you can use mask-strings such as &#8220;<code class="docutils literal"><span class="pre">*ppm</span></code>&#8221;
 The following is a sample file:</p>
 <p><code class="docutils literal"><span class="pre">*ppm,</span> <span class="pre">*(ppm),</span> <span class="pre">*PPM,</span> <span class="pre">*(PPM),</span> <span class="pre">FeCl,</span> <span class="pre">MnO2</span></code>
 <code class="docutils literal"><span class="pre">&quot;Fe</span> <span class="pre">%&quot;</span></code>
 <code class="docutils literal"><span class="pre">FeO</span></code></p>
 <p>If the file is not found, or if no items are parsed, the list
 is returned with zero size.</p>
-<p>See the “assaylist.csv” file in the oasismontajetc directory
+<p>See the &#8220;assaylist.csv&#8221; file in the oasismontajetc directory
 for more details.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
@@ -259,7 +262,7 @@ for more details.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>buff</strong> (<em>str</em>) – Comma separated items</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>buff</strong> (<em>str</em>) &#8211; Comma separated items</td>
 </tr>
 </tbody>
 </table>
@@ -281,7 +284,7 @@ item.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Buffer to add items to</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Buffer to add items to</td>
 </tr>
 </tbody>
 </table>
@@ -301,7 +304,7 @@ items separated by commas.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>source</strong> (<a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – Source List to Copy from</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>source</strong> (<a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; Source List to Copy from</td>
 </tr>
 </tbody>
 </table>
@@ -319,7 +322,7 @@ is empty when created.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>width</strong> (<em>int</em>) – Width of the list to make. This number should be large enough for both the item name and the item value.  Must be &gt; 2 and &lt;= 4096.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>width</strong> (<em>int</em>) &#8211; Width of the list to make. This number should be large enough for both the item name and the item value.  Must be &gt; 2 and &lt;= 4096.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Handle to the List Object.</td>
 </tr>
@@ -360,7 +363,7 @@ it are shifted up one.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>item</strong> (<em>int</em>) – Item Number to Delete</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>item</strong> (<em>int</em>) &#8211; Item Number to Delete</td>
 </tr>
 </tbody>
 </table>
@@ -378,8 +381,8 @@ it are shifted up one.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">LST_ITEM</span></code> data to do the search on</li>
-<li><strong>name</strong> (<em>str</em>) – String to Search For</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#lst-item"><span class="std std-ref">LST_ITEM constants</span></a> data to do the search on</li>
+<li><strong>name</strong> (<em>str</em>) &#8211; String to Search For</li>
 </ul>
 </td>
 </tr>
@@ -408,8 +411,8 @@ it are shifted up one.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">LST_ITEM</span></code> data to search</li>
-<li><strong>name</strong> (<em>str</em>) – String to try <a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> mask items on Search For</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#lst-item"><span class="std std-ref">LST_ITEM constants</span></a> data to search</li>
+<li><strong>name</strong> (<em>str</em>) &#8211; String to try <a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> mask items on Search For</li>
 </ul>
 </td>
 </tr>
@@ -427,15 +430,15 @@ it are shifted up one.</p>
 </div>
 <p><strong>Note:</strong></p>
 <p>Comparsions are case-intolerant (unlike <a class="reference internal" href="#geosoft.gxapi.GXLST.find_item" title="geosoft.gxapi.GXLST.find_item"><code class="xref py py-obj docutils literal"><span class="pre">find_item</span></code></a>).
-This means items in the list such as “<code class="docutils literal"><span class="pre">*(ppm)</span></code>” will be
-found if the input search string is “Ni (ppm)” or “Ni(ppm)”,
-but not if it is “Ni (PPM)”, so you should include
-both “<code class="docutils literal"><span class="pre">*ppm*</span></code>” and “<code class="docutils literal"><span class="pre">*PPM*</span></code>”.</p>
+This means items in the list such as &#8220;<code class="docutils literal"><span class="pre">*(ppm)</span></code>&#8221; will be
+found if the input search string is &#8220;Ni (ppm)&#8221; or &#8220;Ni(ppm)&#8221;,
+but not if it is &#8220;Ni (PPM)&#8221;, so you should include
+both &#8220;<code class="docutils literal"><span class="pre">*ppm*</span></code>&#8221; and &#8220;<code class="docutils literal"><span class="pre">*PPM*</span></code>&#8221;.</p>
 <p>It is NOT the input string that should be the mask, but
 the <a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> items themselves</p>
 <p>This function was designed originally for geochemical
 processes in order to identify if a given channel name
-indicates that the channel should be given the “Assay” class.</p>
+indicates that the channel should be given the &#8220;Assay&#8221; class.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="#geosoft.gxapi.GXLST.assay_channel" title="geosoft.gxapi.GXLST.assay_channel"><code class="xref py py-obj docutils literal"><span class="pre">assay_channel</span></code></a></p>
@@ -451,9 +454,9 @@ indicates that the channel should be given the “Assay” class.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">LST_ITEM</span></code> data to do the search on</li>
-<li><strong>lst2</strong> (<a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – Items to search for</li>
-<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_LONG" title="geosoft.gxapi.GS_LONG"><code class="xref py py-obj docutils literal"><span class="pre">GS_LONG</span></code></a> <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> of returned indices into the first <a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a>.</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#lst-item"><span class="std std-ref">LST_ITEM constants</span></a> data to do the search on</li>
+<li><strong>lst2</strong> (<a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; Items to search for</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_LONG" title="geosoft.gxapi.GS_LONG"><code class="xref py py-obj docutils literal"><span class="pre">GS_LONG</span></code></a> <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> of returned indices into the first <a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a>.</li>
 </ul>
 </td>
 </tr>
@@ -467,7 +470,7 @@ indicates that the channel should be given the “Assay” class.</p>
 one <a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> are found in a second, than by calling <a class="reference internal" href="#geosoft.gxapi.GXLST.find_item" title="geosoft.gxapi.GXLST.find_item"><code class="xref py py-obj docutils literal"><span class="pre">find_item</span></code></a>
 repeatedly in a loop.
 The returned INT <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> contains the same number of items as
-the “search items” <a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a>, and contains -1 for items where the
+the &#8220;search items&#8221; <a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a>, and contains -1 for items where the
 value is not found, and the index of items that are found.
 Comparisons are case-tolerant.</p>
 </dd></dl>
@@ -481,8 +484,8 @@ Comparisons are case-tolerant.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">LST_ITEM</span></code> data to retrieve</li>
-<li><strong>item</strong> (<em>int</em>) – Item Number to Get</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#lst-item"><span class="std std-ref">LST_ITEM constants</span></a> data to retrieve</li>
+<li><strong>item</strong> (<em>int</em>) &#8211; Item Number to Get</li>
 </ul>
 </td>
 </tr>
@@ -508,8 +511,8 @@ Comparisons are case-tolerant.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">LST_ITEM</span></code> data to retrieve</li>
-<li><strong>item</strong> (<em>int</em>) – Item Number to Get</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#lst-item"><span class="std std-ref">LST_ITEM constants</span></a> data to retrieve</li>
+<li><strong>item</strong> (<em>int</em>) &#8211; Item Number to Get</li>
 </ul>
 </td>
 </tr>
@@ -535,9 +538,9 @@ Comparisons are case-tolerant.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">LST_ITEM</span></code> data to retrieve</li>
-<li><strong>item</strong> (<em>int</em>) – Item Number to Get</li>
-<li><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Buffer to Place Item Into</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#lst-item"><span class="std std-ref">LST_ITEM constants</span></a> data to retrieve</li>
+<li><strong>item</strong> (<em>int</em>) &#8211; Item Number to Get</li>
+<li><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Buffer to Place Item Into</li>
 </ul>
 </td>
 </tr>
@@ -547,7 +550,7 @@ Comparisons are case-tolerant.</p>
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>If item number is not in the list, the buffer will be “”.</p>
+<p>If item number is not in the list, the buffer will be &#8220;&#8221;.</p>
 </dd></dl>
 
 <dl class="method">
@@ -559,9 +562,9 @@ Comparisons are case-tolerant.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>item</strong> (<em>int</em>) – Item number to get</li>
-<li><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Buffer to Place Symbol name into</li>
-<li><strong>symb</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Symbol handle</li>
+<li><strong>item</strong> (<em>int</em>) &#8211; Item number to get</li>
+<li><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Buffer to Place Symbol name into</li>
+<li><strong>symb</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Symbol handle</li>
 </ul>
 </td>
 </tr>
@@ -572,7 +575,7 @@ Comparisons are case-tolerant.</p>
 </div>
 <p><strong>Note:</strong></p>
 <p>A number of <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> functions return LSTs with the channel
-or line name in the “Name” part of a <a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a>, and the
+or line name in the &#8220;Name&#8221; part of a <a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a>, and the
 handle (DB_SYMB) in the value part. This function lets
 you quickly retrieve both the name and symbol handle
 for a given item, which needing to convert between types.</p>
@@ -587,9 +590,9 @@ for a given item, which needing to convert between types.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>item</strong> (<em>int</em>) – Item index</li>
-<li><strong>name</strong> (<em>str</em>) – Name of the Item</li>
-<li><strong>val</strong> (<em>str</em>) – Value of the Item</li>
+<li><strong>item</strong> (<em>int</em>) &#8211; Item index</li>
+<li><strong>name</strong> (<em>str</em>) &#8211; Name of the Item</li>
+<li><strong>val</strong> (<em>str</em>) &#8211; Value of the Item</li>
 </ul>
 </td>
 </tr>
@@ -626,9 +629,9 @@ Items above the list index are shifted up one index value.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>csv</strong> (<em>str</em>) – The CSV file</li>
-<li><strong>name_field</strong> (<em>str</em>) – Column label for the item name</li>
-<li><strong>value_field</strong> (<em>str</em>) – Column label for the item value</li>
+<li><strong>csv</strong> (<em>str</em>) &#8211; The CSV file</li>
+<li><strong>name_field</strong> (<em>str</em>) &#8211; Column label for the item name</li>
+<li><strong>value_field</strong> (<em>str</em>) &#8211; Column label for the item value</li>
 </ul>
 </td>
 </tr>
@@ -652,7 +655,7 @@ Leading and trailing spaces are removed in the names and values.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – Name of the file</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; Name of the file</td>
 </tr>
 </tbody>
 </table>
@@ -666,7 +669,7 @@ optional list item value.  The name and value must be
 delimited by a space, tab or comma.
 If the item name or value contains spaces, tabs or commas,
 it must be contined in quotes.
-blank lines and lines that begin with a ‘/’ character are
+blank lines and lines that begin with a &#8216;/&#8217; character are
 ignored.</p>
 <p>The default extension is .lst.  If the file cannot
 be found in the local directory, the GEOSOFTetc directory
@@ -699,7 +702,7 @@ sorted.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>res</strong> (<em>str</em>) – Name of the Resource</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>res</strong> (<em>str</em>) &#8211; Name of the Resource</td>
 </tr>
 </tbody>
 </table>
@@ -716,7 +719,7 @@ sorted.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – Name of the file</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; Name of the file</td>
 </tr>
 </tbody>
 </table>
@@ -730,7 +733,7 @@ optional list item value.  The name and value must be
 delimited by a space, tab or comma.
 If the item name or value contains spaces, tabs or commas,
 it must be contined in quotes.
-blank lines and lines that begin with a ‘/’ character are
+blank lines and lines that begin with a &#8216;/&#8217; character are
 ignored.</p>
 <p>The default extension is .lst.  If the file has a full path
 it will be created as specified.  Otherwise we look for the
@@ -747,8 +750,8 @@ does not exist it will be created in the GEOSOFTetc directory.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>buff</strong> (<em>str</em>) – Comma separated item names</li>
-<li><strong>ls_to</strong> (<a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> to add selected items to</li>
+<li><strong>buff</strong> (<em>str</em>) &#8211; Comma separated item names</li>
+<li><strong>ls_to</strong> (<a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; <a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> to add selected items to</li>
 </ul>
 </td>
 </tr>
@@ -793,9 +796,9 @@ Item matches are case-tolerant.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">LST_ITEM</span></code> data to insert</li>
-<li><strong>item</strong> (<em>int</em>) – Item Number to Set</li>
-<li><strong>buff</strong> (<em>str</em>) – Item to Set</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#lst-item"><span class="std std-ref">LST_ITEM constants</span></a> data to insert</li>
+<li><strong>item</strong> (<em>int</em>) &#8211; Item Number to Set</li>
+<li><strong>buff</strong> (<em>str</em>) &#8211; Item to Set</li>
 </ul>
 </td>
 </tr>
@@ -836,8 +839,8 @@ Item matches are case-tolerant.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">LST_ITEM</span></code> data to sort on</li>
-<li><strong>ord</strong> (<em>int</em>) – 0 - Ascending, 1 - Decending</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#lst-item"><span class="std std-ref">LST_ITEM constants</span></a> data to sort on</li>
+<li><strong>ord</strong> (<em>int</em>) &#8211; 0 - Ascending, 1 - Decending</li>
 </ul>
 </td>
 </tr>
@@ -856,7 +859,7 @@ Item matches are case-tolerant.</p>
 <dl class="data">
 <dt id="geosoft.gxapi.LST_ITEM_NAME">
 <code class="descname">LST_ITEM_NAME</code><a class="headerlink" href="#geosoft.gxapi.LST_ITEM_NAME" title="Permalink to this definition">¶</a></dt>
-<dd><p>Access the “Name” part of the <a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> item.</p>
+<dd><p>Access the &#8220;Name&#8221; part of the <a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> item.</p>
 <dl class="attribute">
 <dt>
 <code class="descclassname">gxapi.</code><code class="descname">LST_ITEM_NAME</code><em class="property"> = 0</em></dt>
@@ -867,7 +870,7 @@ Item matches are case-tolerant.</p>
 <dl class="data">
 <dt id="geosoft.gxapi.LST_ITEM_VALUE">
 <code class="descname">LST_ITEM_VALUE</code><a class="headerlink" href="#geosoft.gxapi.LST_ITEM_VALUE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Access the “Value” part of the <a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> item.</p>
+<dd><p>Access the &#8220;Value&#8221; part of the <a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> item.</p>
 <dl class="attribute">
 <dt>
 <code class="descclassname">gxapi.</code><code class="descname">LST_ITEM_VALUE</code><em class="property"> = 1</em></dt>
@@ -903,7 +906,7 @@ Item matches are case-tolerant.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

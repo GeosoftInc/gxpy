@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>GXAGG class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -119,7 +122,7 @@ will combine all the layers to form one image</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>brt</strong> (<em>float</em>) – -1.0 - black; 0.0 no change; 1.0 white</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>brt</strong> (<em>float</em>) &#8211; -1.0 - black; 0.0 no change; 1.0 white</td>
 </tr>
 </tbody>
 </table>
@@ -160,8 +163,8 @@ will combine all the layers to form one image</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>map</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) – <a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXMAP</span></code></a> on which to place the view</li>
-<li><strong>name</strong> (<em>str</em>) – <a class="reference internal" href="#geosoft.gxapi.GXAGG" title="geosoft.gxapi.GXAGG"><code class="xref py py-obj docutils literal"><span class="pre">GXAGG</span></code></a> group name</li>
+<li><strong>map</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) &#8211; <a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXMAP</span></code></a> on which to place the view</li>
+<li><strong>name</strong> (<em>str</em>) &#8211; <a class="reference internal" href="#geosoft.gxapi.GXAGG" title="geosoft.gxapi.GXAGG"><code class="xref py py-obj docutils literal"><span class="pre">GXAGG</span></code></a> group name</li>
 </ul>
 </td>
 </tr>
@@ -179,7 +182,7 @@ will combine all the layers to form one image</p>
 <p><strong>Note:</strong></p>
 <p>The Agg Group name must include the View name with a
 backslash separating the view name and group name; e.g.
-“DataAGG_test” (when used as a string, the double slash
+&#8220;DataAGG_test&#8221; (when used as a string, the double slash
 represents as single ).</p>
 </dd></dl>
 
@@ -222,7 +225,7 @@ returned.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>layer</strong> (<em>int</em>) – Layer number</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>layer</strong> (<em>int</em>) &#8211; Layer number</td>
 </tr>
 </tbody>
 </table>
@@ -259,10 +262,10 @@ placed in the aggregate.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> (<em>str</em>) – Grid name</li>
-<li><strong>zone</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">AGG_LAYER_ZONE</span></code> transform to use if color table has none defined.</li>
-<li><strong>color</strong> (<em>str</em>) – Color table name, “” for default This can be a .TBL .ZON .`GXITR &lt;geosoft.gxapi.GXITR&gt;` or .`GXAGG &lt;geosoft.gxapi.GXAGG&gt;` file .TBL is the default</li>
-<li><strong>cont</strong> (<em>float</em>) – Color contour interval or <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default</li>
+<li><strong>name</strong> (<em>str</em>) &#8211; Grid name</li>
+<li><strong>zone</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#agg-layer-zone"><span class="std std-ref">AGG_LAYER_ZONE constants</span></a> transform to use if color table has none defined.</li>
+<li><strong>color</strong> (<em>str</em>) &#8211; Color table name, &#8220;&#8221; for default This can be a .TBL .ZON .`GXITR &lt;geosoft.gxapi.GXITR&gt;` or .`GXAGG &lt;geosoft.gxapi.GXAGG&gt;` file .TBL is the default</li>
+<li><strong>cont</strong> (<em>float</em>) &#8211; Color contour interval or <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default</li>
 </ul>
 </td>
 </tr>
@@ -286,12 +289,12 @@ placed in the aggregate.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> (<em>str</em>) – Grid name</li>
-<li><strong>zone</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">AGG_LAYER_ZONE</span></code> transform to use if color table has none defined.</li>
-<li><strong>color</strong> (<em>str</em>) – Color table name, “” for default This can be a .TBL .ZON .`GXITR &lt;geosoft.gxapi.GXITR&gt;` or .`GXAGG &lt;geosoft.gxapi.GXAGG&gt;` file .TBL is the default</li>
-<li><strong>min</strong> (<em>float</em>) – Minimum value or <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default</li>
-<li><strong>max</strong> (<em>float</em>) – Maximum value or <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default</li>
-<li><strong>cont</strong> (<em>float</em>) – Color contour interval or <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default</li>
+<li><strong>name</strong> (<em>str</em>) &#8211; Grid name</li>
+<li><strong>zone</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#agg-layer-zone"><span class="std std-ref">AGG_LAYER_ZONE constants</span></a> transform to use if color table has none defined.</li>
+<li><strong>color</strong> (<em>str</em>) &#8211; Color table name, &#8220;&#8221; for default This can be a .TBL .ZON .`GXITR &lt;geosoft.gxapi.GXITR&gt;` or .`GXAGG &lt;geosoft.gxapi.GXAGG&gt;` file .TBL is the default</li>
+<li><strong>min</strong> (<em>float</em>) &#8211; Minimum value or <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default</li>
+<li><strong>max</strong> (<em>float</em>) &#8211; Maximum value or <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default</li>
+<li><strong>cont</strong> (<em>float</em>) &#8211; Color contour interval or <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default</li>
 </ul>
 </td>
 </tr>
@@ -315,11 +318,11 @@ placed in the aggregate.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> (<em>str</em>) – Grid name</li>
-<li><strong>color</strong> (<em>str</em>) – Color table name, “” for default</li>
-<li><strong>inc</strong> (<em>float</em>) – Inclination</li>
-<li><strong>dec</strong> (<em>float</em>) – Declination</li>
-<li><strong>scl</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Scale (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default, returns value used)</li>
+<li><strong>name</strong> (<em>str</em>) &#8211; Grid name</li>
+<li><strong>color</strong> (<em>str</em>) &#8211; Color table name, &#8220;&#8221; for default</li>
+<li><strong>inc</strong> (<em>float</em>) &#8211; Inclination</li>
+<li><strong>dec</strong> (<em>float</em>) &#8211; Declination</li>
+<li><strong>scl</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Scale (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default, returns value used)</li>
 </ul>
 </td>
 </tr>
@@ -331,7 +334,7 @@ placed in the aggregate.</p>
 <p><strong>Note:</strong></p>
 <p>A new grid file will be created to hold the shaded
 image data.  This file will have the same name as the
-original grid but with “_s” added to the root name.
+original grid but with &#8220;_s&#8221; added to the root name.
 It will always be located in the workspace directory
 regardless of the location of the original source image.
 If the file already exists, it will replaced.</p>
@@ -345,7 +348,7 @@ If the file already exists, it will replaced.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> of type -<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.STR_FILE" title="geosoft.gxapi.STR_FILE"><code class="xref py py-obj docutils literal"><span class="pre">STR_FILE</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> of type -<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.STR_FILE" title="geosoft.gxapi.STR_FILE"><code class="xref py py-obj docutils literal"><span class="pre">STR_FILE</span></code></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The number of IMGs.</td>
 </tr>
@@ -401,7 +404,7 @@ If the file already exists, it will replaced.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>layer</strong> (<em>int</em>) – Layer number</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>layer</strong> (<em>int</em>) &#8211; Layer number</td>
 </tr>
 </tbody>
 </table>
@@ -423,7 +426,7 @@ placed in the aggregate.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>model</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">AGG_MODEL</span></code></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>model</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#agg-model"><span class="std std-ref">AGG_MODEL constants</span></a></td>
 </tr>
 </tbody>
 </table>
@@ -440,7 +443,7 @@ placed in the aggregate.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>method</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">AGG_RENDER</span></code></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>method</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#agg-render"><span class="std std-ref">AGG_RENDER constants</span></a></td>
 </tr>
 </tbody>
 </table>
@@ -508,7 +511,7 @@ method of the data, which is usually
 layer is created from the specified grid.  A new grid
 file will also be created to hold the shaded relief
 image data.  This file will have the same name as the
-original grid but with “_s” added to the root name.
+original grid but with &#8220;_s&#8221; added to the root name.
 It will always be located in the workspace directory
 regardless of the location of the original source image.
 If the file already exists, it will used as it is.
@@ -624,7 +627,7 @@ as <a class="reference internal" href="#geosoft.gxapi.AGG_LAYER_ZONE_DEFAULT" ti
 <dl class="data">
 <dt id="geosoft.gxapi.AGG_RENDER_FADE">
 <code class="descname">AGG_RENDER_FADE</code><a class="headerlink" href="#geosoft.gxapi.AGG_RENDER_FADE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Multiplies current colors by the input’s colors over 255 (input works as the percentage of color to preserve)</p>
+<dd><p>Multiplies current colors by the input&#8217;s colors over 255 (input works as the percentage of color to preserve)</p>
 <dl class="attribute">
 <dt>
 <code class="descclassname">gxapi.</code><code class="descname">AGG_RENDER_FADE</code><em class="property"> = 3</em></dt>
@@ -660,7 +663,7 @@ as <a class="reference internal" href="#geosoft.gxapi.AGG_LAYER_ZONE_DEFAULT" ti
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

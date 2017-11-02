@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>GXEUL3 class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -116,17 +119,17 @@ for potential field interpretation.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>imgt</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image of grid T</li>
-<li><strong>imgtx</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image of grid Tx</li>
-<li><strong>imgty</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image of grid Ty</li>
-<li><strong>imgtz</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image of grid Tz</li>
-<li><strong>wnd_siz</strong> (<em>int</em>) – Window size (maximum 20)</li>
-<li><strong>gi</strong> (<em>float</em>) – Geometric index, from 0.0 to 3.0</li>
-<li><strong>tolrnc</strong> (<em>float</em>) – Max tolerance to allow (percentage)</li>
-<li><strong>max_dis</strong> (<em>float</em>) – Max dist. acceptable (0 for infinite)</li>
-<li><strong>obs_flg</strong> (<em>int</em>) – ObsFlg  Height (0) or Elevation (1)</li>
-<li><strong>obs_hght</strong> (<em>float</em>) – Height of observation plane</li>
-<li><strong>obs_elev</strong> (<em>float</em>) – Elevation of observation plane</li>
+<li><strong>imgt</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) &#8211; Image of grid T</li>
+<li><strong>imgtx</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) &#8211; Image of grid Tx</li>
+<li><strong>imgty</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) &#8211; Image of grid Ty</li>
+<li><strong>imgtz</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) &#8211; Image of grid Tz</li>
+<li><strong>wnd_siz</strong> (<em>int</em>) &#8211; Window size (maximum 20)</li>
+<li><strong>gi</strong> (<em>float</em>) &#8211; Geometric index, from 0.0 to 3.0</li>
+<li><strong>tolrnc</strong> (<em>float</em>) &#8211; Max tolerance to allow (percentage)</li>
+<li><strong>max_dis</strong> (<em>float</em>) &#8211; Max dist. acceptable (0 for infinite)</li>
+<li><strong>obs_flg</strong> (<em>int</em>) &#8211; ObsFlg  Height (0) or Elevation (1)</li>
+<li><strong>obs_hght</strong> (<em>float</em>) &#8211; Height of observation plane</li>
+<li><strong>obs_elev</strong> (<em>float</em>) &#8211; Elevation of observation plane</li>
 </ul>
 </td>
 </tr>
@@ -161,26 +164,26 @@ for potential field interpretation.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>typ</strong> (<em>int</em>) – Solution type flag (0 for contacts, 1 for dykes)</li>
-<li><strong>p2</strong> (<em>float</em>) – Structural index value (used only when generating dykes)</li>
-<li><strong>p3</strong> (<em>int</em>) – Window length</li>
-<li><strong>p4</strong> (<em>float</em>) – Field strength in nT</li>
-<li><strong>p5</strong> (<em>float</em>) – Inclination</li>
-<li><strong>p6</strong> (<em>float</em>) – Declination</li>
-<li><strong>p7</strong> (<em>float</em>) – Profile azimuth wrt north</li>
-<li><strong>p8</strong> (<em>float</em>) – Minimum depth for returned solutions</li>
-<li><strong>p9</strong> (<em>float</em>) – Maximum depth for returned solutions</li>
-<li><strong>p10</strong> (<em>float</em>) – Percentage error allowed before rejection</li>
-<li><strong>p11</strong> (<em>int</em>) – Number of points in profile</li>
-<li><strong>p12</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Array of point distances along profile</li>
-<li><strong>p13</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Array of observed values</li>
-<li><strong>p14</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Array of horizontal derivative values. Can be NULL for calculated</li>
-<li><strong>p15</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Array of vertical derivative values. Can be NULL for calculated</li>
-<li><strong>p16</strong> (<em>int</em>) – Length of solutions arrays passed in</li>
-<li><strong>p17</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – The profile distance for each solution</li>
-<li><strong>p18</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – The depth for each solution</li>
-<li><strong>p19</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – The dip for each solution</li>
-<li><strong>p20</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – The susceptibility for each solution</li>
+<li><strong>typ</strong> (<em>int</em>) &#8211; Solution type flag (0 for contacts, 1 for dykes)</li>
+<li><strong>p2</strong> (<em>float</em>) &#8211; Structural index value (used only when generating dykes)</li>
+<li><strong>p3</strong> (<em>int</em>) &#8211; Window length</li>
+<li><strong>p4</strong> (<em>float</em>) &#8211; Field strength in nT</li>
+<li><strong>p5</strong> (<em>float</em>) &#8211; Inclination</li>
+<li><strong>p6</strong> (<em>float</em>) &#8211; Declination</li>
+<li><strong>p7</strong> (<em>float</em>) &#8211; Profile azimuth wrt north</li>
+<li><strong>p8</strong> (<em>float</em>) &#8211; Minimum depth for returned solutions</li>
+<li><strong>p9</strong> (<em>float</em>) &#8211; Maximum depth for returned solutions</li>
+<li><strong>p10</strong> (<em>float</em>) &#8211; Percentage error allowed before rejection</li>
+<li><strong>p11</strong> (<em>int</em>) &#8211; Number of points in profile</li>
+<li><strong>p12</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Array of point distances along profile</li>
+<li><strong>p13</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Array of observed values</li>
+<li><strong>p14</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Array of horizontal derivative values. Can be NULL for calculated</li>
+<li><strong>p15</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Array of vertical derivative values. Can be NULL for calculated</li>
+<li><strong>p16</strong> (<em>int</em>) &#8211; Length of solutions arrays passed in</li>
+<li><strong>p17</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; The profile distance for each solution</li>
+<li><strong>p18</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; The depth for each solution</li>
+<li><strong>p19</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; The dip for each solution</li>
+<li><strong>p20</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; The susceptibility for each solution</li>
 </ul>
 </td>
 </tr>
@@ -206,13 +209,13 @@ for potential field interpretation.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>vv_dist</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input distance</li>
-<li><strong>pr_dx</strong> (<em>float</em>) – Sample Interval</li>
-<li><strong>vv_mag</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input mag</li>
-<li><strong>length</strong> (<em>int</em>) – SampleCount</li>
-<li><strong>vv_gx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Horizontal Gradient out</li>
-<li><strong>vv_gz</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Vertical Gradient out</li>
-<li><strong>max_sol</strong> (<em>int</em>) – Output array size limit</li>
+<li><strong>vv_dist</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Input distance</li>
+<li><strong>pr_dx</strong> (<em>float</em>) &#8211; Sample Interval</li>
+<li><strong>vv_mag</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Input mag</li>
+<li><strong>length</strong> (<em>int</em>) &#8211; SampleCount</li>
+<li><strong>vv_gx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Horizontal Gradient out</li>
+<li><strong>vv_gz</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Vertical Gradient out</li>
+<li><strong>max_sol</strong> (<em>int</em>) &#8211; Output array size limit</li>
 </ul>
 </td>
 </tr>
@@ -238,8 +241,8 @@ for potential field interpretation.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>vv_r</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> to store the result</li>
-<li><strong>pi_res_field</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">EUL3_RESULT</span></code></li>
+<li><strong>vv_r</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> to store the result</li>
+<li><strong>pi_res_field</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#eul3-result"><span class="std std-ref">EUL3_RESULT constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -286,7 +289,7 @@ for potential field interpretation.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>out_fil</strong> (<em>str</em>) – Output File Name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>out_fil</strong> (<em>str</em>) &#8211; Output File Name</td>
 </tr>
 </tbody>
 </table>
@@ -416,7 +419,7 @@ for potential field interpretation.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

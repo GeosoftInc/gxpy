@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>GXIMG class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -116,14 +119,14 @@ the <a class="reference internal" href="#geosoft.gxapi.GXIMG" title="geosoft.gxa
 <p>The <a class="reference internal" href="#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal"><span class="pre">GXIMG</span></code></a> methods use the XGD DATs to access grid files in different
 formats.  The characteristics of a grid can be controlled using
 decorations on a grid file name.  For example:</p>
-<p><code class="xref py py-obj docutils literal"><span class="pre">create_new_file</span></code>,1,100,100,”mag.grd”);
--&gt; creates a new grid file “mag.grd” with all defaults.</p>
-<p><code class="xref py py-obj docutils literal"><span class="pre">create_new_file</span></code>,1,100,100,”mag.grd(GRD;comp=none)”);
--&gt; creates a new grid file “mag.grd” with no compression.</p>
-<p><code class="xref py py-obj docutils literal"><span class="pre">create_new_file</span></code>,1,100,100,”mag.grd(GRD;comp=size;type=short”);
--&gt; creates a new grid file “mag.grd” compressed for size, numbers
+<p><code class="xref py py-obj docutils literal"><span class="pre">create_new_file</span></code>,1,100,100,&#8221;mag.grd&#8221;);
+-&gt; creates a new grid file &#8220;mag.grd&#8221; with all defaults.</p>
+<p><code class="xref py py-obj docutils literal"><span class="pre">create_new_file</span></code>,1,100,100,&#8221;mag.grd(GRD;comp=none)&#8221;);
+-&gt; creates a new grid file &#8220;mag.grd&#8221; with no compression.</p>
+<p><code class="xref py py-obj docutils literal"><span class="pre">create_new_file</span></code>,1,100,100,&#8221;mag.grd(GRD;comp=size;type=short&#8221;);
+-&gt; creates a new grid file &#8220;mag.grd&#8221; compressed for size, numbers
 stored as 2-byte integers..</p>
-<p>See <code class="xref py py-obj docutils literal"><span class="pre">DAT_XGD</span></code>.DOC for information about file name decorations available
+<p>See <a class="reference internal" href="GXDAT.html#dat-xgd"><span class="std std-ref">DAT_XGD constants</span></a>.DOC for information about file name decorations available
 for all <a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><code class="xref py py-obj docutils literal"><span class="pre">GXDAT</span></code></a> types.</p>
 <p>Different grid types support different features.  For example, not all
 grid types support projection information.  Geosoft will always create
@@ -139,8 +142,8 @@ and the <code class="docutils literal"><span class="pre">*.gi</span></code> file
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>grid_in</strong> (<em>str</em>) – Name of source Grid</li>
-<li><strong>grid_out</strong> (<em>str</em>) – Name of output Grid</li>
+<li><strong>grid_in</strong> (<em>str</em>) &#8211; Name of source Grid</li>
+<li><strong>grid_out</strong> (<em>str</em>) &#8211; Name of output Grid</li>
 </ul>
 </td>
 </tr>
@@ -153,7 +156,7 @@ and the <code class="docutils literal"><span class="pre">*.gi</span></code> file
 <p>This method is useful for reducing the dimensions in a 2D pager by a factor of 2.
 The output pager retains the same origin, but the X and Y spacing is double that of the original. Essentially,
 the process removes all the even-indexed rows and columns, while leaving the locations of all the remaining
-data points in the “odd” rows and columns unchanged.</p>
+data points in the &#8220;odd&#8221; rows and columns unchanged.</p>
 <p>The output values at the output data locations are created by performing an average of the original data point and
 its valid surrounding data points; what is essentially a 3x3 smoothing filter.</p>
 </dd></dl>
@@ -166,7 +169,7 @@ its valid surrounding data points; what is essentially a 3x3 smoothing filter.</
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>im_go</strong> (<a class="reference internal" href="#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Target <a class="reference internal" href="#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal"><span class="pre">GXIMG</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>im_go</strong> (<a class="reference internal" href="#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) &#8211; Target <a class="reference internal" href="#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal"><span class="pre">GXIMG</span></code></a></td>
 </tr>
 </tbody>
 </table>
@@ -184,10 +187,10 @@ its valid surrounding data points; what is essentially a 3x3 smoothing filter.</
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>type</strong> (<em>int</em>) – Data type <code class="xref py py-obj docutils literal"><span class="pre">GS_TYPES</span></code></li>
-<li><strong>kx</strong> (<em>int</em>) – Grid orientation (KX): 1 (rows in X) -1 (rows in Y)</li>
-<li><strong>width</strong> (<em>int</em>) – Grid width</li>
-<li><strong>height</strong> (<em>int</em>) – Grid height</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; Data type <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
+<li><strong>kx</strong> (<em>int</em>) &#8211; Grid orientation (KX): 1 (rows in X) -1 (rows in Y)</li>
+<li><strong>width</strong> (<em>int</em>) &#8211; Grid width</li>
+<li><strong>height</strong> (<em>int</em>) &#8211; Grid height</li>
 </ul>
 </td>
 </tr>
@@ -215,9 +218,9 @@ its valid surrounding data points; what is essentially a 3x3 smoothing filter.</
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>type</strong> (<em>int</em>) – Data type, <code class="xref py py-obj docutils literal"><span class="pre">GS_TYPES</span></code> or <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_TYPE_DEFAULT" title="geosoft.gxapi.GS_TYPE_DEFAULT"><code class="xref py py-obj docutils literal"><span class="pre">GS_TYPE_DEFAULT</span></code></a> to use native <a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><code class="xref py py-obj docutils literal"><span class="pre">GXDAT</span></code></a> type.</li>
-<li><strong>grid</strong> (<em>str</em>) – Name of the Grid to link to</li>
-<li><strong>mode</strong> (<em>int</em>) – Grid file open mode <code class="xref py py-obj docutils literal"><span class="pre">IMG_FILE</span></code></li>
+<li><strong>type</strong> (<em>int</em>) &#8211; Data type, <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> or <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_TYPE_DEFAULT" title="geosoft.gxapi.GS_TYPE_DEFAULT"><code class="xref py py-obj docutils literal"><span class="pre">GS_TYPE_DEFAULT</span></code></a> to use native <a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><code class="xref py py-obj docutils literal"><span class="pre">GXDAT</span></code></a> type.</li>
+<li><strong>grid</strong> (<em>str</em>) &#8211; Name of the Grid to link to</li>
+<li><strong>mode</strong> (<em>int</em>) &#8211; Grid file open mode <a class="reference internal" href="#img-file"><span class="std std-ref">IMG_FILE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -248,10 +251,10 @@ to real numbers.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>type</strong> (<em>int</em>) – Data type, <code class="xref py py-obj docutils literal"><span class="pre">GS_TYPES</span></code></li>
-<li><strong>kx</strong> (<em>int</em>) – Grid orientation (KX): 1 (rows in X) -1 (rows in Y)</li>
-<li><strong>width</strong> (<em>int</em>) – Grid width</li>
-<li><strong>height</strong> (<em>int</em>) – Grid height</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; Data type, <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
+<li><strong>kx</strong> (<em>int</em>) &#8211; Grid orientation (KX): 1 (rows in X) -1 (rows in Y)</li>
+<li><strong>width</strong> (<em>int</em>) &#8211; Grid width</li>
+<li><strong>height</strong> (<em>int</em>) &#8211; Grid height</li>
 </ul>
 </td>
 </tr>
@@ -279,11 +282,11 @@ to real numbers.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>type</strong> (<em>int</em>) – Data type, <code class="xref py py-obj docutils literal"><span class="pre">GS_TYPES</span></code> Cannot be <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_TYPE_DEFAULT" title="geosoft.gxapi.GS_TYPE_DEFAULT"><code class="xref py py-obj docutils literal"><span class="pre">GS_TYPE_DEFAULT</span></code></a></li>
-<li><strong>kx</strong> (<em>int</em>) – Grid orientation (KX): 1 (rows in X) -1 (rows in Y)</li>
-<li><strong>width</strong> (<em>int</em>) – Grid width</li>
-<li><strong>height</strong> (<em>int</em>) – Grid height</li>
-<li><strong>grid</strong> (<em>str</em>) – Name of the Grid to link to</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; Data type, <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> Cannot be <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_TYPE_DEFAULT" title="geosoft.gxapi.GS_TYPE_DEFAULT"><code class="xref py py-obj docutils literal"><span class="pre">GS_TYPE_DEFAULT</span></code></a></li>
+<li><strong>kx</strong> (<em>int</em>) &#8211; Grid orientation (KX): 1 (rows in X) -1 (rows in Y)</li>
+<li><strong>width</strong> (<em>int</em>) &#8211; Grid width</li>
+<li><strong>height</strong> (<em>int</em>) &#8211; Grid height</li>
+<li><strong>grid</strong> (<em>str</em>) &#8211; Name of the Grid to link to</li>
 </ul>
 </td>
 </tr>
@@ -303,7 +306,7 @@ to real numbers.</p>
 related functions to output ERMapper image (ERS, ECW) files:</p>
 <p>This function internally called ERMapper plugin to create ERS header
 files. To find the location of ERMapper plugin library, a registry setting
-needs to set. The key in the registry is HKEY_LOCAL_MACHINESOFTWARE”MyProgram(libversion7.0)”
+needs to set. The key in the registry is HKEY_LOCAL_MACHINESOFTWARE&#8221;MyProgram(libversion7.0)&#8221;
 and in that key register a string BASE_PATH = D:Oasismontajpluginser_mapper.
 MyProgram is the name of your application and D:Oasismontajpluginser_mapper
 is the location of ERMapper library.</p>
@@ -320,9 +323,9 @@ of your application.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>type</strong> (<em>int</em>) – Data type, <code class="xref py py-obj docutils literal"><span class="pre">GS_TYPES</span></code> or <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_TYPE_DEFAULT" title="geosoft.gxapi.GS_TYPE_DEFAULT"><code class="xref py py-obj docutils literal"><span class="pre">GS_TYPE_DEFAULT</span></code></a></li>
-<li><strong>grid</strong> (<em>str</em>) – Name of the Grid to link to</li>
-<li><strong>img</strong> (<a class="reference internal" href="#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Input Image for new image creation</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; Data type, <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> or <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_TYPE_DEFAULT" title="geosoft.gxapi.GS_TYPE_DEFAULT"><code class="xref py py-obj docutils literal"><span class="pre">GS_TYPE_DEFAULT</span></code></a></li>
+<li><strong>grid</strong> (<em>str</em>) &#8211; Name of the Grid to link to</li>
+<li><strong>img</strong> (<a class="reference internal" href="#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) &#8211; Input Image for new image creation</li>
 </ul>
 </td>
 </tr>
@@ -352,7 +355,7 @@ to real numbers.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection to apply</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) &#8211; Projection to apply</td>
 </tr>
 </tbody>
 </table>
@@ -373,8 +376,8 @@ system space.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection to apply</li>
-<li><strong>cell_size</strong> (<em>float</em>) – Cell size</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) &#8211; Projection to apply</li>
+<li><strong>cell_size</strong> (<em>float</em>) &#8211; Cell size</li>
 </ul>
 </td>
 </tr>
@@ -399,9 +402,9 @@ as with <a class="reference internal" href="#geosoft.gxapi.GXIMG.create_projecte
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection to apply</li>
-<li><strong>cell_size</strong> (<em>float</em>) – Cell size</li>
-<li><strong>exp_pct</strong> (<em>float</em>) – Expansion percent (&gt;=0).</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) &#8211; Projection to apply</li>
+<li><strong>cell_size</strong> (<em>float</em>) &#8211; Cell size</li>
+<li><strong>exp_pct</strong> (<em>float</em>) &#8211; Expansion percent (&gt;=0).</li>
 </ul>
 </td>
 </tr>
@@ -455,7 +458,7 @@ the legacy behaviour.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>xg_dor_img</strong> (<em>int</em>) – 0 for XGD, 1 for <a class="reference internal" href="#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal"><span class="pre">GXIMG</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>xg_dor_img</strong> (<em>int</em>) &#8211; 0 for XGD, 1 for <a class="reference internal" href="#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal"><span class="pre">GXIMG</span></code></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Element type</td>
 </tr>
@@ -476,7 +479,7 @@ the legacy behaviour.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>itr</strong> (<a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><em>GXITR</em></a>) – Transform</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>itr</strong> (<a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><em>GXITR</em></a>) &#8211; Transform</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - Okay
 1 - No default possible/available</td>
@@ -498,7 +501,7 @@ the legacy behaviour.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – Parameter name (case insensitive)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) &#8211; Parameter name (case insensitive)</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Parameter value, <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> if not found.</td>
 </tr>
@@ -520,11 +523,11 @@ the legacy behaviour.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>dx</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – X element separation</li>
-<li><strong>dy</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Y element separation</li>
-<li><strong>xo</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – X location of first point</li>
-<li><strong>yo</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Y location of first point</li>
-<li><strong>rot</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Grid X axis rotation deg. CCW from reference X</li>
+<li><strong>dx</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; X element separation</li>
+<li><strong>dy</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Y element separation</li>
+<li><strong>xo</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; X location of first point</li>
+<li><strong>yo</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Y location of first point</li>
+<li><strong>rot</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Grid X axis rotation deg. CCW from reference X</li>
 </ul>
 </td>
 </tr>
@@ -543,7 +546,7 @@ the legacy behaviour.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection of the grid</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) &#8211; Projection of the grid</td>
 </tr>
 </tbody>
 </table>
@@ -560,7 +563,7 @@ the legacy behaviour.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – Metadata of the grid</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) &#8211; Metadata of the grid</td>
 </tr>
 </tbody>
 </table>
@@ -577,7 +580,7 @@ the legacy behaviour.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – <a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal"><span class="pre">GXPG</span></code></a> object to hold pager of the grid</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) &#8211; <a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal"><span class="pre">GXPG</span></code></a> object to hold pager of the grid</td>
 </tr>
 </tbody>
 </table>
@@ -599,8 +602,8 @@ the legacy behaviour.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection to apply</li>
-<li><strong>cell</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Returned cell size</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) &#8211; Projection to apply</li>
+<li><strong>cell</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Returned cell size</li>
 </ul>
 </td>
 </tr>
@@ -624,7 +627,7 @@ is actually performed to the input <a class="reference internal" href="#geosoft.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tr</strong> (<a class="reference internal" href="GXTR.html#geosoft.gxapi.GXTR" title="geosoft.gxapi.GXTR"><em>GXTR</em></a>) – Trend information from the grid</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tr</strong> (<a class="reference internal" href="GXTR.html#geosoft.gxapi.GXTR" title="geosoft.gxapi.GXTR"><em>GXTR</em></a>) &#8211; Trend information from the grid</td>
 </tr>
 </tbody>
 </table>
@@ -642,8 +645,8 @@ is actually performed to the input <a class="reference internal" href="#geosoft.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>x</strong> (<em>float</em>) – X location in the grid projection</li>
-<li><strong>y</strong> (<em>float</em>) – Y location in the grid projection</li>
+<li><strong>x</strong> (<em>float</em>) &#8211; X location in the grid projection</li>
+<li><strong>y</strong> (<em>float</em>) &#8211; Y location in the grid projection</li>
 </ul>
 </td>
 </tr>
@@ -679,7 +682,7 @@ is actually performed to the input <a class="reference internal" href="#geosoft.
 </div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#geosoft.gxapi.GXIMG.get_pg" title="geosoft.gxapi.GXIMG.get_pg"><code class="xref py py-obj docutils literal"><span class="pre">get_pg</span></code></a> to get just a copy of the grid’s pager.</p>
+<p class="last"><a class="reference internal" href="#geosoft.gxapi.GXIMG.get_pg" title="geosoft.gxapi.GXIMG.get_pg"><code class="xref py py-obj docutils literal"><span class="pre">get_pg</span></code></a> to get just a copy of the grid&#8217;s pager.</p>
 </div>
 </dd></dl>
 
@@ -692,8 +695,8 @@ is actually performed to the input <a class="reference internal" href="#geosoft.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection</li>
-<li><strong>cell</strong> (<em>float</em>) – Optional cell size</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) &#8211; Projection</li>
+<li><strong>cell</strong> (<em>float</em>) &#8211; Optional cell size</li>
 </ul>
 </td>
 </tr>
@@ -703,7 +706,7 @@ is actually performed to the input <a class="reference internal" href="#geosoft.
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>If cell size is <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_R8DM" title="geosoft.gxapi.GS_R8DM"><code class="xref py py-obj docutils literal"><span class="pre">GS_R8DM</span></code></a>, then “nice” values for the cell
+<p>If cell size is <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_R8DM" title="geosoft.gxapi.GS_R8DM"><code class="xref py py-obj docutils literal"><span class="pre">GS_R8DM</span></code></a>, then &#8220;nice&#8221; values for the cell
 size of the new projected grid will be determined so that
 the new grid has about the same number of cells as the old.
 If the cell size is specified, the inheritance will always
@@ -720,7 +723,7 @@ with the new cell size.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>im_gs</strong> (<a class="reference internal" href="#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Source <a class="reference internal" href="#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal"><span class="pre">GXIMG</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>im_gs</strong> (<a class="reference internal" href="#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) &#8211; Source <a class="reference internal" href="#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal"><span class="pre">GXIMG</span></code></a></td>
 </tr>
 </tbody>
 </table>
@@ -737,9 +740,7 @@ with the new cell size.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><code class="xref py py-obj docutils literal"><span class="pre">GEO_BOOL</span></code></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
@@ -770,11 +771,9 @@ with the new cell size.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – File to check</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; File to check</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><code class="xref py py-obj docutils literal"><span class="pre">GEO_BOOL</span></code></td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
@@ -792,15 +791,12 @@ with the new cell size.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>file</strong> (<em>str</em>) – File to check</li>
-<li><strong>err_msg</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Error message registered if unable to open</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; File to check</li>
+<li><strong>err_msg</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Error message registered if unable to open</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><code class="xref py py-obj docutils literal"><span class="pre">GEO_BOOL</span></code></p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
 </td>
 </tr>
 </tbody>
@@ -818,7 +814,7 @@ with the new cell size.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>im_gi</strong> (<a class="reference internal" href="#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – <a class="reference internal" href="#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal"><span class="pre">GXIMG</span></code></a> to load</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>im_gi</strong> (<a class="reference internal" href="#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) &#8211; <a class="reference internal" href="#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal"><span class="pre">GXIMG</span></code></a> to load</td>
 </tr>
 </tbody>
 </table>
@@ -937,7 +933,7 @@ access time.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>kx</strong> (<em>int</em>) – KX -1 by column 1 by row</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>kx</strong> (<em>int</em>) &#8211; KX -1 by column 1 by row</td>
 </tr>
 </tbody>
 </table>
@@ -959,7 +955,7 @@ KX set here.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>query</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">IMG_QUERY</span></code></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>query</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#img-query"><span class="std std-ref">IMG_QUERY constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Information requested, dummy if unknown or invalid.</td>
 </tr>
@@ -983,7 +979,7 @@ int or real.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>query</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">IMG_QUERY</span></code></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>query</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#img-query"><span class="std std-ref">IMG_QUERY constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Information requested, dummy if unknown or invalid.</td>
 </tr>
@@ -1027,10 +1023,10 @@ int or real.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>v</strong> (<em>int</em>) – Vector to Read</li>
-<li><strong>be</strong> (<em>int</em>) – Begining element # to read (0 is the first)</li>
-<li><strong>ne</strong> (<em>int</em>) – # elements to read (0 for whole vector)</li>
-<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> handle</li>
+<li><strong>v</strong> (<em>int</em>) &#8211; Vector to Read</li>
+<li><strong>be</strong> (<em>int</em>) &#8211; Begining element # to read (0 is the first)</li>
+<li><strong>ne</strong> (<em>int</em>) &#8211; # elements to read (0 for whole vector)</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> handle</li>
 </ul>
 </td>
 </tr>
@@ -1050,9 +1046,9 @@ int or real.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>bx</strong> (<em>int</em>) – X column</li>
-<li><strong>by</strong> (<em>int</em>) – Start Y to read</li>
-<li><strong>ny</strong> (<em>int</em>) – # Y to read (0 for whole vector)</li>
+<li><strong>bx</strong> (<em>int</em>) &#8211; X column</li>
+<li><strong>by</strong> (<em>int</em>) &#8211; Start Y to read</li>
+<li><strong>ny</strong> (<em>int</em>) &#8211; # Y to read (0 for whole vector)</li>
 </ul>
 </td>
 </tr>
@@ -1072,9 +1068,9 @@ int or real.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>by</strong> (<em>int</em>) – Y row</li>
-<li><strong>bx</strong> (<em>int</em>) – Start X to read</li>
-<li><strong>nx</strong> (<em>int</em>) – # X to read (0 for whole vector)</li>
+<li><strong>by</strong> (<em>int</em>) &#8211; Y row</li>
+<li><strong>bx</strong> (<em>int</em>) &#8211; Start X to read</li>
+<li><strong>nx</strong> (<em>int</em>) &#8211; # X to read (0 for whole vector)</li>
 </ul>
 </td>
 </tr>
@@ -1093,7 +1089,7 @@ int or real.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>grid</strong> (<em>str</em>) – Grid name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>grid</strong> (<em>str</em>) &#8211; Grid name</td>
 </tr>
 </tbody>
 </table>
@@ -1111,11 +1107,11 @@ int or real.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>min_x</strong> (<em>float</em>) – Area X minimum</li>
-<li><strong>min_y</strong> (<em>float</em>) – Area Y minimum</li>
-<li><strong>max_x</strong> (<em>float</em>) – Area X maximum</li>
-<li><strong>max_y</strong> (<em>float</em>) – Area Y maximum</li>
-<li><strong>asp</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">IMG_RELOCATE</span></code></li>
+<li><strong>min_x</strong> (<em>float</em>) &#8211; Area X minimum</li>
+<li><strong>min_y</strong> (<em>float</em>) &#8211; Area Y minimum</li>
+<li><strong>max_x</strong> (<em>float</em>) &#8211; Area X maximum</li>
+<li><strong>max_y</strong> (<em>float</em>) &#8211; Area Y maximum</li>
+<li><strong>asp</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#img-relocate"><span class="std std-ref">IMG_RELOCATE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1135,11 +1131,11 @@ int or real.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>grid</strong> (<em>str</em>) – Grid name</li>
-<li><strong>wa</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><em>GXWA</em></a>) – Text file to write to</li>
-<li><strong>force</strong> (<em>int</em>) – Recalc statistics (0 - no; 1 - yes)</li>
-<li><strong>decimals</strong> (<em>int</em>) – Number of decimals to put in results</li>
-<li><strong>title</strong> (<em>str</em>) – Title for report</li>
+<li><strong>grid</strong> (<em>str</em>) &#8211; Grid name</li>
+<li><strong>wa</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><em>GXWA</em></a>) &#8211; Text file to write to</li>
+<li><strong>force</strong> (<em>int</em>) &#8211; Recalc statistics (0 - no; 1 - yes)</li>
+<li><strong>decimals</strong> (<em>int</em>) &#8211; Number of decimals to put in results</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title for report</li>
 </ul>
 </td>
 </tr>
@@ -1159,11 +1155,11 @@ int or real.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>grid</strong> (<em>str</em>) – Grid name</li>
-<li><strong>wa</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><em>GXWA</em></a>) – Text file to write to</li>
-<li><strong>force</strong> (<em>int</em>) – Recalc statistics (0 - no; 1 - yes)</li>
-<li><strong>decimals</strong> (<em>int</em>) – Number of decimals to put in results</li>
-<li><strong>header</strong> (<em>int</em>) – Write header line (0 - no; 1 - yes)?</li>
+<li><strong>grid</strong> (<em>str</em>) &#8211; Grid name</li>
+<li><strong>wa</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><em>GXWA</em></a>) &#8211; Text file to write to</li>
+<li><strong>force</strong> (<em>int</em>) &#8211; Recalc statistics (0 - no; 1 - yes)</li>
+<li><strong>decimals</strong> (<em>int</em>) &#8211; Number of decimals to put in results</li>
+<li><strong>header</strong> (<em>int</em>) &#8211; Write header line (0 - no; 1 - yes)?</li>
 </ul>
 </td>
 </tr>
@@ -1185,7 +1181,7 @@ The header line should only be written to a new text file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>itr</strong> (<a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><em>GXITR</em></a>) – Transform</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>itr</strong> (<a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><em>GXITR</em></a>) &#8211; Transform</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - Okay
 1 - No default possible/available</td>
@@ -1208,8 +1204,8 @@ The header line should only be written to a new text file.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> (<em>str</em>) – Parameter name (case insensitive)</li>
-<li><strong>value</strong> (<em>float</em>) – Parameter value to store</li>
+<li><strong>name</strong> (<em>str</em>) &#8211; Parameter name (case insensitive)</li>
+<li><strong>value</strong> (<em>float</em>) &#8211; Parameter value to store</li>
 </ul>
 </td>
 </tr>
@@ -1238,11 +1234,11 @@ The header line should only be written to a new text file.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>dx</strong> (<em>float</em>) – X element separation</li>
-<li><strong>dy</strong> (<em>float</em>) – Y element separation</li>
-<li><strong>xo</strong> (<em>float</em>) – X location of first point</li>
-<li><strong>yo</strong> (<em>float</em>) – Y location of first point</li>
-<li><strong>rot</strong> (<em>float</em>) – Grid X axis rotation deg. CCW from reference X</li>
+<li><strong>dx</strong> (<em>float</em>) &#8211; X element separation</li>
+<li><strong>dy</strong> (<em>float</em>) &#8211; Y element separation</li>
+<li><strong>xo</strong> (<em>float</em>) &#8211; X location of first point</li>
+<li><strong>yo</strong> (<em>float</em>) &#8211; Y location of first point</li>
+<li><strong>rot</strong> (<em>float</em>) &#8211; Grid X axis rotation deg. CCW from reference X</li>
 </ul>
 </td>
 </tr>
@@ -1264,7 +1260,7 @@ as the latter function sets up the bounding rectangle in the metadata.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) &#8211; Projection</td>
 </tr>
 </tbody>
 </table>
@@ -1284,7 +1280,7 @@ as <a class="reference internal" href="#geosoft.gxapi.GXIMG.set_ipj" title="geos
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – Metadata to add to the grid</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) &#8211; Metadata to add to the grid</td>
 </tr>
 </tbody>
 </table>
@@ -1301,7 +1297,7 @@ as <a class="reference internal" href="#geosoft.gxapi.GXIMG.set_ipj" title="geos
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Pager object to copy into the pager of the grid</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) &#8211; Pager object to copy into the pager of the grid</td>
 </tr>
 </tbody>
 </table>
@@ -1318,7 +1314,7 @@ as <a class="reference internal" href="#geosoft.gxapi.GXIMG.set_ipj" title="geos
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tr</strong> (<a class="reference internal" href="GXTR.html#geosoft.gxapi.GXTR" title="geosoft.gxapi.GXTR"><em>GXTR</em></a>) – Trend information to set for the grid</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tr</strong> (<a class="reference internal" href="GXTR.html#geosoft.gxapi.GXTR" title="geosoft.gxapi.GXTR"><em>GXTR</em></a>) &#8211; Trend information to set for the grid</td>
 </tr>
 </tbody>
 </table>
@@ -1335,7 +1331,7 @@ as <a class="reference internal" href="#geosoft.gxapi.GXIMG.set_ipj" title="geos
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>grid</strong> (<em>str</em>) – Grid name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>grid</strong> (<em>str</em>) &#8211; Grid name</td>
 </tr>
 </tbody>
 </table>
@@ -1373,10 +1369,10 @@ as <a class="reference internal" href="#geosoft.gxapi.GXIMG.set_ipj" title="geos
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>v</strong> (<em>int</em>) – Vector to write</li>
-<li><strong>be</strong> (<em>int</em>) – Begining element to write (0 is the first)</li>
-<li><strong>ne</strong> (<em>int</em>) – # elements to write (0 for whole vector)</li>
-<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> handle</li>
+<li><strong>v</strong> (<em>int</em>) &#8211; Vector to write</li>
+<li><strong>be</strong> (<em>int</em>) &#8211; Begining element to write (0 is the first)</li>
+<li><strong>ne</strong> (<em>int</em>) &#8211; # elements to write (0 for whole vector)</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> handle</li>
 </ul>
 </td>
 </tr>
@@ -1396,9 +1392,9 @@ as <a class="reference internal" href="#geosoft.gxapi.GXIMG.set_ipj" title="geos
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>bx</strong> (<em>int</em>) – X column</li>
-<li><strong>by</strong> (<em>int</em>) – Start Y to write</li>
-<li><strong>ny</strong> (<em>int</em>) – # Y to write (0 for whole vector)</li>
+<li><strong>bx</strong> (<em>int</em>) &#8211; X column</li>
+<li><strong>by</strong> (<em>int</em>) &#8211; Start Y to write</li>
+<li><strong>ny</strong> (<em>int</em>) &#8211; # Y to write (0 for whole vector)</li>
 </ul>
 </td>
 </tr>
@@ -1418,9 +1414,9 @@ as <a class="reference internal" href="#geosoft.gxapi.GXIMG.set_ipj" title="geos
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>by</strong> (<em>int</em>) – Y row</li>
-<li><strong>bx</strong> (<em>int</em>) – Start X to write</li>
-<li><strong>nx</strong> (<em>int</em>) – # X write (0 for whole vector)</li>
+<li><strong>by</strong> (<em>int</em>) &#8211; Y row</li>
+<li><strong>bx</strong> (<em>int</em>) &#8211; Start X to write</li>
+<li><strong>nx</strong> (<em>int</em>) &#8211; # X write (0 for whole vector)</li>
 </ul>
 </td>
 </tr>
@@ -1748,7 +1744,7 @@ Types are:   0 - byte
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

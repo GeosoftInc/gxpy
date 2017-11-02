@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>GXPG class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -122,7 +125,7 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pgs</strong> (<a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Source <a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal"><span class="pre">GXPG</span></code></a> object</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pgs</strong> (<a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) &#8211; Source <a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal"><span class="pre">GXPG</span></code></a> object</td>
 </tr>
 </tbody>
 </table>
@@ -140,13 +143,13 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>pgs</strong> (<a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Source <a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal"><span class="pre">GXPG</span></code></a> object</li>
-<li><strong>y_row_d</strong> (<em>int</em>) – Y (row) Origin on destination</li>
-<li><strong>x_col_d</strong> (<em>int</em>) – X (col) Origin on destination</li>
-<li><strong>y_row_s</strong> (<em>int</em>) – Y (row) Origin on source</li>
-<li><strong>x_col_s</strong> (<em>int</em>) – X (col) Origin on source</li>
-<li><strong>ny</strong> (<em>int</em>) – Number of Y (rows) to copy</li>
-<li><strong>nx</strong> (<em>int</em>) – Number of X (columns) to copy</li>
+<li><strong>pgs</strong> (<a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) &#8211; Source <a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal"><span class="pre">GXPG</span></code></a> object</li>
+<li><strong>y_row_d</strong> (<em>int</em>) &#8211; Y (row) Origin on destination</li>
+<li><strong>x_col_d</strong> (<em>int</em>) &#8211; X (col) Origin on destination</li>
+<li><strong>y_row_s</strong> (<em>int</em>) &#8211; Y (row) Origin on source</li>
+<li><strong>x_col_s</strong> (<em>int</em>) &#8211; X (col) Origin on source</li>
+<li><strong>ny</strong> (<em>int</em>) &#8211; Number of Y (rows) to copy</li>
+<li><strong>nx</strong> (<em>int</em>) &#8211; Number of X (columns) to copy</li>
 </ul>
 </td>
 </tr>
@@ -168,16 +171,16 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>pgs</strong> (<a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Source <a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal"><span class="pre">GXPG</span></code></a> object</li>
-<li><strong>sliced</strong> (<em>int</em>) – Z (slice) Origin on destination</li>
-<li><strong>n</strong> (<em>int</em>) – Y (row) Origin on destination</li>
-<li><strong>vv</strong> (<em>int</em>) – X (col) Origin on destination</li>
-<li><strong>slices</strong> (<em>int</em>) – Z (slice) Origin on source</li>
-<li><strong>rows</strong> (<em>int</em>) – Y (row) Origin on source</li>
-<li><strong>cols</strong> (<em>int</em>) – X (col) Origin on source</li>
-<li><strong>n_slice</strong> (<em>int</em>) – Number of Z (slice) to copy</li>
-<li><strong>n_row</strong> (<em>int</em>) – Number of Y (rows) to copy</li>
-<li><strong>n_col</strong> (<em>int</em>) – Number of X (columns) to copy</li>
+<li><strong>pgs</strong> (<a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) &#8211; Source <a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal"><span class="pre">GXPG</span></code></a> object</li>
+<li><strong>sliced</strong> (<em>int</em>) &#8211; Z (slice) Origin on destination</li>
+<li><strong>n</strong> (<em>int</em>) &#8211; Y (row) Origin on destination</li>
+<li><strong>vv</strong> (<em>int</em>) &#8211; X (col) Origin on destination</li>
+<li><strong>slices</strong> (<em>int</em>) &#8211; Z (slice) Origin on source</li>
+<li><strong>rows</strong> (<em>int</em>) &#8211; Y (row) Origin on source</li>
+<li><strong>cols</strong> (<em>int</em>) &#8211; X (col) Origin on source</li>
+<li><strong>n_slice</strong> (<em>int</em>) &#8211; Number of Z (slice) to copy</li>
+<li><strong>n_row</strong> (<em>int</em>) &#8211; Number of Y (rows) to copy</li>
+<li><strong>n_col</strong> (<em>int</em>) &#8211; Number of X (columns) to copy</li>
 </ul>
 </td>
 </tr>
@@ -199,9 +202,9 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>row</strong> (<em>int</em>) – # elements in y (# of row)</li>
-<li><strong>col</strong> (<em>int</em>) – # elements in x (# of column)</li>
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">GS_TYPES</span></code></li>
+<li><strong>row</strong> (<em>int</em>) &#8211; # elements in y (# of row)</li>
+<li><strong>col</strong> (<em>int</em>) &#8211; # elements in x (# of column)</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -227,10 +230,10 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>slice</strong> (<em>int</em>) – # elements in z (# of slices)</li>
-<li><strong>row</strong> (<em>int</em>) – # elements in y (# of row)</li>
-<li><strong>col</strong> (<em>int</em>) – # elements in x (# of column)</li>
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">GS_TYPES</span></code></li>
+<li><strong>slice</strong> (<em>int</em>) &#8211; # elements in z (# of slices)</li>
+<li><strong>row</strong> (<em>int</em>) &#8211; # elements in y (# of row)</li>
+<li><strong>col</strong> (<em>int</em>) &#8211; # elements in x (# of column)</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -285,7 +288,7 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><code class="xref py py-obj docutils literal"><span class="pre">GS_TYPES</span></code></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
@@ -305,8 +308,8 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>col</strong> (<em>int</em>) – iBx - element # in x (column #)</li>
-<li><strong>row</strong> (<em>int</em>) – iBy - element # in y (row #)</li>
+<li><strong>col</strong> (<em>int</em>) &#8211; iBx - element # in x (column #)</li>
+<li><strong>row</strong> (<em>int</em>) &#8211; iBy - element # in y (row #)</li>
 </ul>
 </td>
 </tr>
@@ -416,8 +419,8 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>min</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Minimum Data (Dummy if no range)</li>
-<li><strong>max</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Maximum Data (Dummy if no range)</li>
+<li><strong>min</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Minimum Data (Dummy if no range)</li>
+<li><strong>max</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Maximum Data (Dummy if no range)</li>
 </ul>
 </td>
 </tr>
@@ -437,8 +440,8 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>n_row</strong> (<em>int</em>) – Number of Y (rows) to reallocate</li>
-<li><strong>n_col</strong> (<em>int</em>) – Number of X (columns) to reallocate</li>
+<li><strong>n_row</strong> (<em>int</em>) &#8211; Number of Y (rows) to reallocate</li>
+<li><strong>n_col</strong> (<em>int</em>) &#8211; Number of X (columns) to reallocate</li>
 </ul>
 </td>
 </tr>
@@ -458,9 +461,9 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>n_slice</strong> (<em>int</em>) – Number of Z (slices) to reallocate</li>
-<li><strong>n_row</strong> (<em>int</em>) – Number of Y (rows) to reallocate</li>
-<li><strong>n_col</strong> (<em>int</em>) – Number of X (columns) to reallocate</li>
+<li><strong>n_slice</strong> (<em>int</em>) &#8211; Number of Z (slices) to reallocate</li>
+<li><strong>n_row</strong> (<em>int</em>) &#8211; Number of Y (rows) to reallocate</li>
+<li><strong>n_col</strong> (<em>int</em>) &#8211; Number of X (columns) to reallocate</li>
 </ul>
 </td>
 </tr>
@@ -480,12 +483,12 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>bf</strong> (<a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><em>GXBF</em></a>) – <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a> to read from</li>
-<li><strong>dir</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">PG_3D_DIR</span></code></li>
-<li><strong>conv</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">PG_BF_CONV</span></code></li>
-<li><strong>rev_x</strong> (<em>int</em>) – Reverse X</li>
-<li><strong>rev_y</strong> (<em>int</em>) – Reverse Y</li>
-<li><strong>rev_z</strong> (<em>int</em>) – Reverse Z</li>
+<li><strong>bf</strong> (<a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><em>GXBF</em></a>) &#8211; <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a> to read from</li>
+<li><strong>dir</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#pg-3d-dir"><span class="std std-ref">PG_3D_DIR constants</span></a></li>
+<li><strong>conv</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#pg-bf-conv"><span class="std std-ref">PG_BF_CONV constants</span></a></li>
+<li><strong>rev_x</strong> (<em>int</em>) &#8211; Reverse X</li>
+<li><strong>rev_y</strong> (<em>int</em>) &#8211; Reverse Y</li>
+<li><strong>rev_z</strong> (<em>int</em>) &#8211; Reverse Z</li>
 </ul>
 </td>
 </tr>
@@ -505,10 +508,10 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>col</strong> (<em>int</em>) – iBx - element # in x (column #)</li>
-<li><strong>o</strong> (<em>int</em>) – iBy - begining element # in y to read (0 is the first)</li>
-<li><strong>n</strong> (<em>int</em>) – iNy - # elements to read (0 for whole vector)</li>
-<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – hVV - <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> handle</li>
+<li><strong>col</strong> (<em>int</em>) &#8211; iBx - element # in x (column #)</li>
+<li><strong>o</strong> (<em>int</em>) &#8211; iBy - begining element # in y to read (0 is the first)</li>
+<li><strong>n</strong> (<em>int</em>) &#8211; iNy - # elements to read (0 for whole vector)</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; hVV - <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> handle</li>
 </ul>
 </td>
 </tr>
@@ -528,11 +531,11 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>slice</strong> (<em>int</em>) – iBz - element # in z (slice #)</li>
-<li><strong>col</strong> (<em>int</em>) – iBx - element # in x (column #)</li>
-<li><strong>o</strong> (<em>int</em>) – iBy - begining element # in y to read (0 is the first)</li>
-<li><strong>n</strong> (<em>int</em>) – iNy - # elements to read (0 for whole vector)</li>
-<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – hVV - <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> handle</li>
+<li><strong>slice</strong> (<em>int</em>) &#8211; iBz - element # in z (slice #)</li>
+<li><strong>col</strong> (<em>int</em>) &#8211; iBx - element # in x (column #)</li>
+<li><strong>o</strong> (<em>int</em>) &#8211; iBy - begining element # in y to read (0 is the first)</li>
+<li><strong>n</strong> (<em>int</em>) &#8211; iNy - # elements to read (0 for whole vector)</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; hVV - <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> handle</li>
 </ul>
 </td>
 </tr>
@@ -552,12 +555,12 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>ra</strong> (<a class="reference internal" href="GXRA.html#geosoft.gxapi.GXRA" title="geosoft.gxapi.GXRA"><em>GXRA</em></a>) – <a class="reference internal" href="GXRA.html#geosoft.gxapi.GXRA" title="geosoft.gxapi.GXRA"><code class="xref py py-obj docutils literal"><span class="pre">GXRA</span></code></a> to read from</li>
-<li><strong>dir</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">PG_3D_DIR</span></code></li>
-<li><strong>rev_x</strong> (<em>int</em>) – Reverse X</li>
-<li><strong>rev_y</strong> (<em>int</em>) – Reverse Y</li>
-<li><strong>rev_z</strong> (<em>int</em>) – Reverse Z</li>
-<li><strong>dummy</strong> (<em>str</em>) – Dummy</li>
+<li><strong>ra</strong> (<a class="reference internal" href="GXRA.html#geosoft.gxapi.GXRA" title="geosoft.gxapi.GXRA"><em>GXRA</em></a>) &#8211; <a class="reference internal" href="GXRA.html#geosoft.gxapi.GXRA" title="geosoft.gxapi.GXRA"><code class="xref py py-obj docutils literal"><span class="pre">GXRA</span></code></a> to read from</li>
+<li><strong>dir</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#pg-3d-dir"><span class="std std-ref">PG_3D_DIR constants</span></a></li>
+<li><strong>rev_x</strong> (<em>int</em>) &#8211; Reverse X</li>
+<li><strong>rev_y</strong> (<em>int</em>) &#8211; Reverse Y</li>
+<li><strong>rev_z</strong> (<em>int</em>) &#8211; Reverse Z</li>
+<li><strong>dummy</strong> (<em>str</em>) &#8211; Dummy</li>
 </ul>
 </td>
 </tr>
@@ -579,10 +582,10 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>row</strong> (<em>int</em>) – iBy - element # in y (row #)</li>
-<li><strong>o</strong> (<em>int</em>) – iBx - begining element # in x to read (0 is the first)</li>
-<li><strong>n</strong> (<em>int</em>) – iNx - # elements to read (0 for whole vector)</li>
-<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – hVV - <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> handle</li>
+<li><strong>row</strong> (<em>int</em>) &#8211; iBy - element # in y (row #)</li>
+<li><strong>o</strong> (<em>int</em>) &#8211; iBx - begining element # in x to read (0 is the first)</li>
+<li><strong>n</strong> (<em>int</em>) &#8211; iNx - # elements to read (0 for whole vector)</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; hVV - <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> handle</li>
 </ul>
 </td>
 </tr>
@@ -602,11 +605,11 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>slice</strong> (<em>int</em>) – iBz - element # in z (slice #)</li>
-<li><strong>row</strong> (<em>int</em>) – iBy - element # in y (row #)</li>
-<li><strong>o</strong> (<em>int</em>) – iBx - begining element # in x to read (0 is the first)</li>
-<li><strong>n</strong> (<em>int</em>) – iNx - # elements to read (0 for whole vector)</li>
-<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – hVV - <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> handle</li>
+<li><strong>slice</strong> (<em>int</em>) &#8211; iBz - element # in z (slice #)</li>
+<li><strong>row</strong> (<em>int</em>) &#8211; iBy - element # in y (row #)</li>
+<li><strong>o</strong> (<em>int</em>) &#8211; iBx - begining element # in x to read (0 is the first)</li>
+<li><strong>n</strong> (<em>int</em>) &#8211; iNx - # elements to read (0 for whole vector)</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; hVV - <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> handle</li>
 </ul>
 </td>
 </tr>
@@ -626,11 +629,11 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>col</strong> (<em>int</em>) – iBx - element # in x (column #)</li>
-<li><strong>row</strong> (<em>int</em>) – iBy - element # in y (row #)</li>
-<li><strong>o</strong> (<em>int</em>) – iBy - begining element # in z to read (0 is the first)</li>
-<li><strong>n</strong> (<em>int</em>) – iNy - # elements to read (0 for whole vector)</li>
-<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – hVV - <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> handle</li>
+<li><strong>col</strong> (<em>int</em>) &#8211; iBx - element # in x (column #)</li>
+<li><strong>row</strong> (<em>int</em>) &#8211; iBy - element # in y (row #)</li>
+<li><strong>o</strong> (<em>int</em>) &#8211; iBy - begining element # in z to read (0 is the first)</li>
+<li><strong>n</strong> (<em>int</em>) &#8211; iNy - # elements to read (0 for whole vector)</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; hVV - <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> handle</li>
 </ul>
 </td>
 </tr>
@@ -666,7 +669,7 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>st</strong> (<a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><em>GXST</em></a>) – hST - statistics object</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>st</strong> (<a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><em>GXST</em></a>) &#8211; hST - statistics object</td>
 </tr>
 </tbody>
 </table>
@@ -684,12 +687,12 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>bf</strong> (<a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><em>GXBF</em></a>) – <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a> to write to</li>
-<li><strong>dir</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">PG_3D_DIR</span></code></li>
-<li><strong>conv</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">PG_BF_CONV</span></code></li>
-<li><strong>rev_x</strong> (<em>int</em>) – Reverse X</li>
-<li><strong>rev_y</strong> (<em>int</em>) – Reverse Y</li>
-<li><strong>rev_z</strong> (<em>int</em>) – Reverse Z</li>
+<li><strong>bf</strong> (<a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><em>GXBF</em></a>) &#8211; <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a> to write to</li>
+<li><strong>dir</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#pg-3d-dir"><span class="std std-ref">PG_3D_DIR constants</span></a></li>
+<li><strong>conv</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#pg-bf-conv"><span class="std std-ref">PG_BF_CONV constants</span></a></li>
+<li><strong>rev_x</strong> (<em>int</em>) &#8211; Reverse X</li>
+<li><strong>rev_y</strong> (<em>int</em>) &#8211; Reverse Y</li>
+<li><strong>rev_z</strong> (<em>int</em>) &#8211; Reverse Z</li>
 </ul>
 </td>
 </tr>
@@ -709,13 +712,13 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>bf</strong> (<a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><em>GXBF</em></a>) – <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a> to write to</li>
-<li><strong>dir</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">PG_3D_DIR</span></code></li>
-<li><strong>conv</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">PG_BF_CONV</span></code></li>
-<li><strong>rev_x</strong> (<em>int</em>) – Reverse X</li>
-<li><strong>rev_y</strong> (<em>int</em>) – Reverse Y</li>
-<li><strong>rev_z</strong> (<em>int</em>) – Reverse Z</li>
-<li><strong>p_dummy</strong> (<em>float</em>) – Dummy value</li>
+<li><strong>bf</strong> (<a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><em>GXBF</em></a>) &#8211; <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a> to write to</li>
+<li><strong>dir</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#pg-3d-dir"><span class="std std-ref">PG_3D_DIR constants</span></a></li>
+<li><strong>conv</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#pg-bf-conv"><span class="std std-ref">PG_BF_CONV constants</span></a></li>
+<li><strong>rev_x</strong> (<em>int</em>) &#8211; Reverse X</li>
+<li><strong>rev_y</strong> (<em>int</em>) &#8211; Reverse Y</li>
+<li><strong>rev_z</strong> (<em>int</em>) &#8211; Reverse Z</li>
+<li><strong>p_dummy</strong> (<em>float</em>) &#8211; Dummy value</li>
 </ul>
 </td>
 </tr>
@@ -735,10 +738,10 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>col</strong> (<em>int</em>) – iBx - element # in x (column #)</li>
-<li><strong>o</strong> (<em>int</em>) – iBy - begining element # in y to write (0 is the first)</li>
-<li><strong>n</strong> (<em>int</em>) – iNy - # elements to write (0 for whole vector)</li>
-<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – hVV - <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> handle</li>
+<li><strong>col</strong> (<em>int</em>) &#8211; iBx - element # in x (column #)</li>
+<li><strong>o</strong> (<em>int</em>) &#8211; iBy - begining element # in y to write (0 is the first)</li>
+<li><strong>n</strong> (<em>int</em>) &#8211; iNy - # elements to write (0 for whole vector)</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; hVV - <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> handle</li>
 </ul>
 </td>
 </tr>
@@ -758,11 +761,11 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>slice</strong> (<em>int</em>) – iBz - element # in z (slice #)</li>
-<li><strong>col</strong> (<em>int</em>) – iBx - element # in x (column #)</li>
-<li><strong>o</strong> (<em>int</em>) – iBy - begining element # in y to write (0 is the first)</li>
-<li><strong>n</strong> (<em>int</em>) – iNy - # elements to write (0 for whole vector)</li>
-<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – hVV - <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> handle</li>
+<li><strong>slice</strong> (<em>int</em>) &#8211; iBz - element # in z (slice #)</li>
+<li><strong>col</strong> (<em>int</em>) &#8211; iBx - element # in x (column #)</li>
+<li><strong>o</strong> (<em>int</em>) &#8211; iBy - begining element # in y to write (0 is the first)</li>
+<li><strong>n</strong> (<em>int</em>) &#8211; iNy - # elements to write (0 for whole vector)</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; hVV - <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> handle</li>
 </ul>
 </td>
 </tr>
@@ -782,10 +785,10 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>row</strong> (<em>int</em>) – iBy - element # in y (row #)</li>
-<li><strong>o</strong> (<em>int</em>) – iBx - begining element # in x to write (0 is the first)</li>
-<li><strong>n</strong> (<em>int</em>) – iNx - # elements to write (0 for whole vector)</li>
-<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – hVV - <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> handle</li>
+<li><strong>row</strong> (<em>int</em>) &#8211; iBy - element # in y (row #)</li>
+<li><strong>o</strong> (<em>int</em>) &#8211; iBx - begining element # in x to write (0 is the first)</li>
+<li><strong>n</strong> (<em>int</em>) &#8211; iNx - # elements to write (0 for whole vector)</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; hVV - <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> handle</li>
 </ul>
 </td>
 </tr>
@@ -805,11 +808,11 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>slice</strong> (<em>int</em>) – iBz - element # in z (slice #)</li>
-<li><strong>row</strong> (<em>int</em>) – iBy - element # in y (row #)</li>
-<li><strong>o</strong> (<em>int</em>) – iBx - begining element # in x to write (0 is the first)</li>
-<li><strong>n</strong> (<em>int</em>) – iNx - # elements to write (0 for whole vector)</li>
-<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – hVV - <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> handle</li>
+<li><strong>slice</strong> (<em>int</em>) &#8211; iBz - element # in z (slice #)</li>
+<li><strong>row</strong> (<em>int</em>) &#8211; iBy - element # in y (row #)</li>
+<li><strong>o</strong> (<em>int</em>) &#8211; iBx - begining element # in x to write (0 is the first)</li>
+<li><strong>n</strong> (<em>int</em>) &#8211; iNx - # elements to write (0 for whole vector)</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; hVV - <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> handle</li>
 </ul>
 </td>
 </tr>
@@ -829,11 +832,11 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>col</strong> (<em>int</em>) – iBx - element # in x (column #)</li>
-<li><strong>row</strong> (<em>int</em>) – iBy - element # in y (row #)</li>
-<li><strong>o</strong> (<em>int</em>) – iBy - begining element # in z to read (0 is the first)</li>
-<li><strong>n</strong> (<em>int</em>) – iNy - # elements to read (0 for whole vector)</li>
-<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – hVV - <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> handle</li>
+<li><strong>col</strong> (<em>int</em>) &#8211; iBx - element # in x (column #)</li>
+<li><strong>row</strong> (<em>int</em>) &#8211; iBy - element # in y (row #)</li>
+<li><strong>o</strong> (<em>int</em>) &#8211; iBy - begining element # in z to read (0 is the first)</li>
+<li><strong>n</strong> (<em>int</em>) &#8211; iNy - # elements to read (0 for whole vector)</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; hVV - <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> handle</li>
 </ul>
 </td>
 </tr>
@@ -853,12 +856,12 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>wa</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><em>GXWA</em></a>) – <a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal"><span class="pre">GXWA</span></code></a> to write to</li>
-<li><strong>dir</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">PG_3D_DIR</span></code></li>
-<li><strong>rev_x</strong> (<em>int</em>) – Reverse X</li>
-<li><strong>rev_y</strong> (<em>int</em>) – Reverse Y</li>
-<li><strong>rev_z</strong> (<em>int</em>) – Reverse Z</li>
-<li><strong>dummy</strong> (<em>str</em>) – Dummy</li>
+<li><strong>wa</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><em>GXWA</em></a>) &#8211; <a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal"><span class="pre">GXWA</span></code></a> to write to</li>
+<li><strong>dir</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#pg-3d-dir"><span class="std std-ref">PG_3D_DIR constants</span></a></li>
+<li><strong>rev_x</strong> (<em>int</em>) &#8211; Reverse X</li>
+<li><strong>rev_y</strong> (<em>int</em>) &#8211; Reverse Y</li>
+<li><strong>rev_z</strong> (<em>int</em>) &#8211; Reverse Z</li>
+<li><strong>dummy</strong> (<em>str</em>) &#8211; Dummy</li>
 </ul>
 </td>
 </tr>
@@ -996,7 +999,7 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

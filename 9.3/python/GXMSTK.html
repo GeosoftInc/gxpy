@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>GXMSTK class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -131,12 +134,12 @@ plotting profiles in a map. It is a container of <a class="reference internal" h
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</li>
-<li><strong>num_ch_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – List of names of numeric channels</li>
-<li><strong>str_ch_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – List of name of string channels</li>
-<li><strong>x_ch_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – List of channel names which can be used for X axis. Must be numeric channels but not <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal"><span class="pre">GXVA</span></code></a> channels</li>
-<li><strong>prof_ch_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – List of profiles with channel names in both <a class="reference internal" href="#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal"><span class="pre">GXMSTK</span></code></a> and <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a></li>
-<li><strong>prof_ch__un_used_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – List of profiles with channels in <a class="reference internal" href="#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal"><span class="pre">GXMSTK</span></code></a> but not in database</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database handle</li>
+<li><strong>num_ch_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; List of names of numeric channels</li>
+<li><strong>str_ch_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; List of name of string channels</li>
+<li><strong>x_ch_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; List of channel names which can be used for X axis. Must be numeric channels but not <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal"><span class="pre">GXVA</span></code></a> channels</li>
+<li><strong>prof_ch_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; List of profiles with channel names in both <a class="reference internal" href="#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal"><span class="pre">GXMSTK</span></code></a> and <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a></li>
+<li><strong>prof_ch__un_used_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; List of profiles with channels in <a class="reference internal" href="#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal"><span class="pre">GXMSTK</span></code></a> but not in database</li>
 </ul>
 </td>
 </tr>
@@ -146,8 +149,8 @@ plotting profiles in a map. It is a container of <a class="reference internal" h
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>Terms ‘used’ and ‘unused’ indicate that the a channel name
-in database also ‘in’ and ‘not in’ the <a class="reference internal" href="#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal"><span class="pre">GXMSTK</span></code></a> object respectively</p>
+<p>Terms &#8216;used&#8217; and &#8216;unused&#8217; indicate that the a channel name
+in database also &#8216;in&#8217; and &#8216;not in&#8217; the <a class="reference internal" href="#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal"><span class="pre">GXMSTK</span></code></a> object respectively</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -177,7 +180,7 @@ in database also ‘in’ and ‘not in’ the <a class="reference internal" hre
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>num</strong> (<em>int</em>) – Index to <a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal"><span class="pre">GXSTK</span></code></a> to delete (0 is first one)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>num</strong> (<em>int</em>) &#8211; Index to <a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal"><span class="pre">GXSTK</span></code></a> to delete (0 is first one)</td>
 </tr>
 </tbody>
 </table>
@@ -197,9 +200,9 @@ in database also ‘in’ and ‘not in’ the <a class="reference internal" hre
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</li>
-<li><strong>line</strong> (<em>int</em>) – Database line</li>
-<li><strong>map</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) – <a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXMAP</span></code></a> handle</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database handle</li>
+<li><strong>line</strong> (<em>int</em>) &#8211; Database line</li>
+<li><strong>map</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) &#8211; <a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXMAP</span></code></a> handle</li>
 </ul>
 </td>
 </tr>
@@ -219,11 +222,11 @@ in database also ‘in’ and ‘not in’ the <a class="reference internal" hre
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>str_val</strong> (<em>str</em>) – Input string (see notes above). Will be modified on return</li>
-<li><strong>index</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Index to the <a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal"><span class="pre">GXSTK</span></code></a> found, Must be greater than 0 if found, -1 if not found</li>
-<li><strong>group</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Output group name string</li>
-<li><strong>x_ch</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Output X channel name string</li>
-<li><strong>y_ch</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Output Y channel name string</li>
+<li><strong>str_val</strong> (<em>str</em>) &#8211; Input string (see notes above). Will be modified on return</li>
+<li><strong>index</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Index to the <a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal"><span class="pre">GXSTK</span></code></a> found, Must be greater than 0 if found, -1 if not found</li>
+<li><strong>group</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Output group name string</li>
+<li><strong>x_ch</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Output X channel name string</li>
+<li><strong>y_ch</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Output Y channel name string</li>
 </ul>
 </td>
 </tr>
@@ -234,8 +237,8 @@ in database also ‘in’ and ‘not in’ the <a class="reference internal" hre
 </div>
 <p><strong>Note:</strong></p>
 <p>Format of the input string:</p>
-<p>Map group name + ” ( ” + X channel name + ” , ” + Y channel name + ” )”</p>
-<p>for example, string “DATA ( DIST , MAG )”  indicates a map group name of DATA,
+<p>Map group name + &#8221; ( &#8221; + X channel name + &#8221; , &#8221; + Y channel name + &#8221; )&#8221;</p>
+<p>for example, string &#8220;DATA ( DIST , MAG )&#8221;  indicates a map group name of DATA,
 X channel name of DIST and Y channel name of MAG.</p>
 </dd></dl>
 
@@ -248,9 +251,9 @@ X channel name of DIST and Y channel name of MAG.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>str_val</strong> (<em>str</em>) – Input string (see notes above). Will be modified on return</li>
-<li><strong>index</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Index to the <a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal"><span class="pre">GXSTK</span></code></a> found, Must be greater than 0 if found, -1 if not found</li>
-<li><strong>vv_rtd</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Returned <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> with names of Group, X channel and Y channel <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> type must be of STRING</li>
+<li><strong>str_val</strong> (<em>str</em>) &#8211; Input string (see notes above). Will be modified on return</li>
+<li><strong>index</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Index to the <a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal"><span class="pre">GXSTK</span></code></a> found, Must be greater than 0 if found, -1 if not found</li>
+<li><strong>vv_rtd</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Returned <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> with names of Group, X channel and Y channel <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> type must be of STRING</li>
 </ul>
 </td>
 </tr>
@@ -261,8 +264,8 @@ X channel name of DIST and Y channel name of MAG.</p>
 </div>
 <p><strong>Note:</strong></p>
 <p>Format of the input string:</p>
-<p>Map group name + ” ( ” + X channel name + ” , ” + Y channel name + ” )”</p>
-<p>for example, string “DATA ( DIST , MAG )”  indicates a map group name of DATA,
+<p>Map group name + &#8221; ( &#8221; + X channel name + &#8221; , &#8221; + Y channel name + &#8221; )&#8221;</p>
+<p>for example, string &#8220;DATA ( DIST , MAG )&#8221;  indicates a map group name of DATA,
 X channel name of DIST and Y channel name of MAG.</p>
 </dd></dl>
 
@@ -294,7 +297,7 @@ X channel name of DIST and Y channel name of MAG.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>num</strong> (<em>int</em>) – Index to <a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal"><span class="pre">GXSTK</span></code></a> to get</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>num</strong> (<em>int</em>) &#8211; Index to <a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal"><span class="pre">GXSTK</span></code></a> to get</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">x     - <a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal"><span class="pre">GXSTK</span></code></a> Object handle</td>
 </tr>
@@ -343,7 +346,7 @@ X channel name of DIST and Y channel name of MAG.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ra</strong> (<a class="reference internal" href="GXRA.html#geosoft.gxapi.GXRA" title="geosoft.gxapi.GXRA"><em>GXRA</em></a>) – <a class="reference internal" href="GXRA.html#geosoft.gxapi.GXRA" title="geosoft.gxapi.GXRA"><code class="xref py py-obj docutils literal"><span class="pre">GXRA</span></code></a> handle to an INI file</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ra</strong> (<a class="reference internal" href="GXRA.html#geosoft.gxapi.GXRA" title="geosoft.gxapi.GXRA"><em>GXRA</em></a>) &#8211; <a class="reference internal" href="GXRA.html#geosoft.gxapi.GXRA" title="geosoft.gxapi.GXRA"><code class="xref py py-obj docutils literal"><span class="pre">GXRA</span></code></a> handle to an INI file</td>
 </tr>
 </tbody>
 </table>
@@ -360,7 +363,7 @@ X channel name of DIST and Y channel name of MAG.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>wa</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><em>GXWA</em></a>) – <a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal"><span class="pre">GXWA</span></code></a> handle to an INI file</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>wa</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><em>GXWA</em></a>) &#8211; <a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal"><span class="pre">GXWA</span></code></a> handle to an INI file</td>
 </tr>
 </tbody>
 </table>
@@ -377,7 +380,7 @@ X channel name of DIST and Y channel name of MAG.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>direction</strong> (<em>int</em>) – Y-axis direction: 0 - normal, 1 - inverted</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>direction</strong> (<em>int</em>) &#8211; Y-axis direction: 0 - normal, 1 - inverted</td>
 </tr>
 </tbody>
 </table>
@@ -415,7 +418,7 @@ X channel name of DIST and Y channel name of MAG.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>geosoft.gxpy.view submodule &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -93,9 +96,9 @@
             
   <div class="section" id="module-geosoft.gxpy.view">
 <span id="geosoft-gxpy-view-submodule"></span><h1>geosoft.gxpy.view submodule<a class="headerlink" href="#module-geosoft.gxpy.view" title="Permalink to this headline">¶</a></h1>
-<p>Views, which can be 2D or 3D, contain graphical elements that can be displayed to a user in a Geosoft
-map viewer or a Geosoft 3D viewer.  Geosoft maps can contain any number of 2D or 3D views.</p>
-<p>Views contain one or more <a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Group" title="geosoft.gxpy.group.Group"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.group.Group</span></code></a>.  2D views can contain 2D groups, while
+<p>Views, which can be 2D or 3D, contain groups of graphical elements that can be displayed to a user in a Geosoft
+Map viewer or a Geosoft 3D viewer.  Geosoft maps can contain any number of 2D or 3D views.</p>
+<p>Views contain one or more <a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Group" title="geosoft.gxpy.group.Group"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.group.Group</span></code></a> instances.  2D views can contain 2D groups, while
 3D views can contain both 2D and 3D groups.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -119,8 +122,8 @@ map viewer or a Geosoft 3D viewer.  Geosoft maps can contain any number of 2D or
 </tr>
 </tbody>
 </table>
-<p>2D and 3D views can be placed on a <a class="reference internal" href="geosoft.gxpy.map.html#geosoft.gxpy.map.Map" title="geosoft.gxpy.map.Map"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.map.Map</span></code></a>, though 3D views
-are stored in a <code class="xref py py-obj docutils literal"><span class="pre">geosoft_3dv</span></code> file which can be worked with and viewed separately from a map.</p>
+<p>Both 2D and 3D views can be placed on a <a class="reference internal" href="geosoft.gxpy.map.html#geosoft.gxpy.map.Map" title="geosoft.gxpy.map.Map"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.map.Map</span></code></a>, though 3D views
+are stored in a <code class="xref py py-obj docutils literal"><span class="pre">geosoft_3dv</span></code> file which can also be viewed separately from a map.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p><a class="reference internal" href="geosoft.gxpy.map.html#module-geosoft.gxpy.map" title="geosoft.gxpy.map"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxpy.map</span></code></a>, <a class="reference internal" href="geosoft.gxpy.group.html#module-geosoft.gxpy.group" title="geosoft.gxpy.group"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxpy.group</span></code></a></p>
@@ -128,7 +131,7 @@ are stored in a <code class="xref py py-obj docutils literal"><span class="pre">
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Regression tests provide usage examples: <a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_view.py">Tests</a></p>
+<p class="last">Regression tests provide usage examples: <a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_view.py">View tests</a></p>
 </div>
 <dl class="data">
 <dt id="geosoft.gxpy.view.EXTENT_ALL">
@@ -208,7 +211,7 @@ are stored in a <code class="xref py py-obj docutils literal"><span class="pre">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">name:</th><td class="field-body"><p class="first">view name, default is “_unnamed_view”.</p>
+<tr class="field-odd field"><th class="field-name">name:</th><td class="field-body"><p class="first">view name, default is &#8220;_unnamed_view&#8221;.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">map:</th><td class="field-body"><p class="first"><a class="reference internal" href="geosoft.gxpy.map.html#geosoft.gxpy.map.Map" title="geosoft.gxpy.map.Map"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.map.Map</span></code></a> instance, if not specified a new unique default map is 
@@ -231,7 +234,7 @@ created and deleted when this session finished.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">coordinate_system:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">coordinate system as a <code class="xref py py-class docutils literal"><span class="pre">gxpy.coordinate_system.Coordinate_system</span></code> instance, or 
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">coordinate system as a <code class="xref py py-class docutils literal"><span class="pre">gxpy.coordinate_system.Coordinate_system</span></code> instance, or 
 one of the Coordinate_system constructor types.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">map_location:</th><td class="field-body">(x, y) view location on the map, in map cm</td>
@@ -281,7 +284,7 @@ defined this is view units per map metre.</td>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>group_name</strong> – Name of the group to delete.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>group_name</strong> &#8211; Name of the group to delete.</td>
 </tr>
 </tbody>
 </table>
@@ -311,8 +314,8 @@ defined this is view units per map metre.</td>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>group</strong> – group name</li>
-<li><strong>unit</strong> – <p>units:</p>
+<li><strong>group</strong> &#8211; group name</li>
+<li><strong>unit</strong> &#8211; <p>units:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">UNIT_VIEW</span>
 <span class="n">UNIT_MAP</span>
 </pre></div>
@@ -336,7 +339,7 @@ defined this is view units per map metre.</td>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>extent</strong> – tuple returned from one of the extent properties.  Default is <a class="reference internal" href="#geosoft.gxpy.view.View.extent_clip" title="geosoft.gxpy.view.View.extent_clip"><code class="xref py py-attr docutils literal"><span class="pre">extent_clip</span></code></a>.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>extent</strong> &#8211; tuple returned from one of the extent properties.  Default is <a class="reference internal" href="#geosoft.gxpy.view.View.extent_clip" title="geosoft.gxpy.view.View.extent_clip"><code class="xref py py-attr docutils literal"><span class="pre">extent_clip</span></code></a>.</td>
 </tr>
 </tbody>
 </table>
@@ -359,7 +362,7 @@ defined this is view units per map metre.</td>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>view_class</strong> – desired class in this view</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>view_class</strong> &#8211; desired class in this view</td>
 </tr>
 </tbody>
 </table>
@@ -372,7 +375,7 @@ defined this is view units per map metre.</td>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">name associated with the class, ‘’ if not defined.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">name associated with the class, &#8216;&#8217; if not defined.</td>
 </tr>
 </tbody>
 </table>
@@ -457,7 +460,7 @@ defined this is view units per map metre.</td>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">coordinate_system:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">coordinate system as a class:<code class="xref py py-obj docutils literal"><span class="pre">gxpy.coordinate_system.Coordinate_system</span></code> instance, 
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">coordinate system as a class:<code class="xref py py-obj docutils literal"><span class="pre">gxpy.coordinate_system.Coordinate_system</span></code> instance, 
 or one of the Coordinate_system constructor types.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">map_location:</th><td class="field-body">New (x, y) view location on the map, in map cm.</td>
@@ -501,8 +504,8 @@ ensure group locks are properly created and released.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>x</strong> – x, or a tuple (x,y), in map cm</li>
-<li><strong>y</strong> – y if x is not a tuple</li>
+<li><strong>x</strong> &#8211; x, or a tuple (x,y), in map cm</li>
+<li><strong>y</strong> &#8211; y if x is not a tuple</li>
 </ul>
 </td>
 </tr>
@@ -521,7 +524,7 @@ ensure group locks are properly created and released.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>base_view</strong> – name of the base view on the map from which to calculate margins.  If not specified
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>base_view</strong> &#8211; name of the base view on the map from which to calculate margins.  If not specified
 only the left and bottom margin is calculated based on the view clip minimum 
 location and the right and top margins will be 0.</td>
 </tr>
@@ -564,8 +567,8 @@ All views on a map share the metadata with the map.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>view_class</strong> – class name in this view</li>
-<li><strong>name</strong> – name of the view associated with this class.</li>
+<li><strong>view_class</strong> &#8211; class name in this view</li>
+<li><strong>name</strong> &#8211; name of the view associated with this class.</li>
 </ul>
 </td>
 </tr>
@@ -595,7 +598,7 @@ All views on a map share the metadata with the map.</p>
 <dl class="attribute">
 <dt id="geosoft.gxpy.view.View.units_per_metre">
 <code class="descname">units_per_metre</code><a class="headerlink" href="#geosoft.gxpy.view.View.units_per_metre" title="Permalink to this definition">¶</a></dt>
-<dd><p>view units per view metres (eg. a view in ‘ft’ will be 3.28084)</p>
+<dd><p>view units per view metres (eg. a view in &#8216;ft&#8217; will be 3.28084)</p>
 </dd></dl>
 
 <dl class="method">
@@ -607,8 +610,8 @@ All views on a map share the metadata with the map.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>x</strong> – x, or a tuple (x,y), in view units</li>
-<li><strong>y</strong> – y if x is not a tuple</li>
+<li><strong>x</strong> &#8211; x, or a tuple (x,y), in view units</li>
+<li><strong>y</strong> &#8211; y if x is not a tuple</li>
 </ul>
 </td>
 </tr>
@@ -640,7 +643,7 @@ All views on a map share the metadata with the map.</p>
 to draw 3D elements using <a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Draw_3d" title="geosoft.gxpy.group.Draw_3d"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.group.Draw_3d</span></code></a>, which must be created from a 
 <a class="reference internal" href="#geosoft.gxpy.view.View_3d" title="geosoft.gxpy.view.View_3d"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.view.View_3d</span></code></a> instance.</p>
 <p>3D views also contain 2D drawing planes on which <a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Draw" title="geosoft.gxpy.group.Draw"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.group.Draw</span></code></a> groups are placed.
-A default horizontal plane at elevation 0, named ‘plane_0’ is created when a new 3d view is created.</p>
+A default horizontal plane at elevation 0, named &#8216;plane_0&#8217; is created when a new 3d view is created.</p>
 <p>Planes are flat by default, but can be provided a grid that defines the plane surface relief,
 which is intended for creating things like terrain surfaces on which 2d graphics are rendered.</p>
 <p>Planes can also be oriented within the 3D space to create sections, or for other more esoteric
@@ -696,7 +699,7 @@ purposes.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>plane</strong> – name of the plane or plane number</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>plane</strong> &#8211; name of the plane or plane number</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of groups on the plane</td>
 </tr>
@@ -715,7 +718,7 @@ purposes.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>plane</strong> – name of the plane</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>plane</strong> &#8211; name of the plane</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if the plane exists in the view</td>
 </tr>
@@ -741,10 +744,10 @@ purposes.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>file_name</strong> – name for the new 3D view file (.geosoft_3dv added).  If not specified a
+<li><strong>file_name</strong> &#8211; name for the new 3D view file (.geosoft_3dv added).  If not specified a
 unique temporary file is created.</li>
-<li><strong>area_2d</strong> – 2D drawing extent for the default 2D drawing plane</li>
-<li><strong>overwrite</strong> – True to overwrite an existing 3DV</li>
+<li><strong>area_2d</strong> &#8211; 2D drawing extent for the default 2D drawing plane</li>
+<li><strong>overwrite</strong> &#8211; True to overwrite an existing 3DV</li>
 </ul>
 </td>
 </tr>
@@ -764,10 +767,10 @@ unique temporary file is created.</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> – name of the plane, overwritten if it exists</li>
-<li><strong>rotation</strong> – plane rotation as (rx, ry, rz), default (0, 0, 0)</li>
-<li><strong>offset</strong> – (x, y, z) offset of the plane, default (0, 0, 0)</li>
-<li><strong>scale</strong> – (xs, ys, zs) axis scaling, default (1, 1, 1)</li>
+<li><strong>name</strong> &#8211; name of the plane, overwritten if it exists</li>
+<li><strong>rotation</strong> &#8211; plane rotation as (rx, ry, rz), default (0, 0, 0)</li>
+<li><strong>offset</strong> &#8211; (x, y, z) offset of the plane, default (0, 0, 0)</li>
+<li><strong>scale</strong> &#8211; (xs, ys, zs) axis scaling, default (1, 1, 1)</li>
 </ul>
 </td>
 </tr>
@@ -783,7 +786,7 @@ unique temporary file is created.</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file_name</strong> – name of the geosoft_3dv file</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file_name</strong> &#8211; name of the geosoft_3dv file</td>
 </tr>
 </tbody>
 </table>
@@ -849,7 +852,7 @@ unique temporary file is created.</li>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

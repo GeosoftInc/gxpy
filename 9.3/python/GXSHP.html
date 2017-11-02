@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>GXSHP class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -107,7 +110,7 @@
 <dd><p>GXSHP class.</p>
 <p>The <a class="reference internal" href="#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal"><span class="pre">GXSHP</span></code></a> class is used to create ESRI shape files.</p>
 <p><strong>Note:</strong></p>
-<p>Shape files contain a single “geometry” type, e.g.
+<p>Shape files contain a single &#8220;geometry&#8221; type, e.g.
 points, arcs or polygons. They may be accompanied by
 a DBF file containing attribute data.</p>
 <dl class="method">
@@ -119,8 +122,8 @@ a DBF file containing attribute data.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>field</strong> (<em>str</em>) – Field name</li>
-<li><strong>dec</strong> (<em>int</em>) – Number of decimal places</li>
+<li><strong>field</strong> (<em>str</em>) &#8211; Field name</li>
+<li><strong>dec</strong> (<em>int</em>) &#8211; Number of decimal places</li>
 </ul>
 </td>
 </tr>
@@ -148,7 +151,7 @@ functions to set individual data values.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>field</strong> (<em>str</em>) – Field name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>field</strong> (<em>str</em>) &#8211; Field name</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Index of the new field</td>
 </tr>
@@ -173,8 +176,8 @@ functions to set individual data values.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>field</strong> (<em>str</em>) – Field name</li>
-<li><strong>width</strong> (<em>int</em>) – Maximum number of characters in the string</li>
+<li><strong>field</strong> (<em>str</em>) &#8211; Field name</li>
+<li><strong>width</strong> (<em>int</em>) &#8211; Maximum number of characters in the string</li>
 </ul>
 </td>
 </tr>
@@ -216,8 +219,8 @@ defined, then the data file is not written).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>name</strong> (<em>str</em>) – File name</li>
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">SHP_GEOM_TYPE</span></code></li>
+<li><strong>name</strong> (<em>str</em>) &#8211; File name</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#shp-geom-type"><span class="std std-ref">SHP_GEOM_TYPE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -236,8 +239,8 @@ defined, then the data file is not written).</p>
 <p>The file name is used to create the various files. The
 file type and extension are added:</p>
 <dl class="docutils">
-<dt>e.g. “filename.shp”,</dt>
-<dd>“filename.dbf”</dd>
+<dt>e.g. &#8220;filename.shp&#8221;,</dt>
+<dd>&#8220;filename.dbf&#8221;</dd>
 </dl>
 <p>The following geometry types are currently supported:</p>
 <p>Type                    Required geometry function.</p>
@@ -257,7 +260,7 @@ file type and extension are added:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>field</strong> (<em>str</em>) – Field name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>field</strong> (<em>str</em>) &#8211; Field name</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The index, -1 if not found.</td>
 </tr>
@@ -363,7 +366,7 @@ file type and extension are added:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – File name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) &#8211; File name</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal"><span class="pre">GXSHP</span></code></a> object</td>
 </tr>
@@ -385,8 +388,8 @@ file type and extension are added:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X locations</li>
-<li><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y locations</li>
+<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; X locations</li>
+<li><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Y locations</li>
 </ul>
 </td>
 </tr>
@@ -408,9 +411,9 @@ file type and extension are added:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X locations</li>
-<li><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y locations</li>
-<li><strong>vv_z</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Z locations</li>
+<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; X locations</li>
+<li><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Y locations</li>
+<li><strong>vv_z</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Z locations</li>
 </ul>
 </td>
 </tr>
@@ -432,8 +435,8 @@ file type and extension are added:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>index</strong> (<em>int</em>) – Data field index</li>
-<li><strong>val</strong> (<em>float</em>) – Input real value</li>
+<li><strong>index</strong> (<em>int</em>) &#8211; Data field index</li>
+<li><strong>val</strong> (<em>float</em>) &#8211; Input real value</li>
 </ul>
 </td>
 </tr>
@@ -443,7 +446,7 @@ file type and extension are added:</p>
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>The input value is converted to the field’s data type.</p>
+<p>The input value is converted to the field&#8217;s data type.</p>
 </dd></dl>
 
 <dl class="method">
@@ -455,8 +458,8 @@ file type and extension are added:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>index</strong> (<em>int</em>) – Data field index</li>
-<li><strong>val</strong> (<em>int</em>) – Input int value</li>
+<li><strong>index</strong> (<em>int</em>) &#8211; Data field index</li>
+<li><strong>val</strong> (<em>int</em>) &#8211; Input int value</li>
 </ul>
 </td>
 </tr>
@@ -466,18 +469,18 @@ file type and extension are added:</p>
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>The input value is converted to the field’s data type.</p>
+<p>The input value is converted to the field&#8217;s data type.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXSHP.set_ipj">
 <code class="descname">set_ipj</code><span class="sig-paren">(</span><em>ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSHP.set_ipj" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set a <a class="reference internal" href="#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal"><span class="pre">GXSHP</span></code></a> object’s projection.</p>
+<dd><p>Set a <a class="reference internal" href="#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal"><span class="pre">GXSHP</span></code></a> object&#8217;s projection.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Input <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) &#8211; Input <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a></td>
 </tr>
 </tbody>
 </table>
@@ -502,8 +505,8 @@ object is written.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>x</strong> (<em>float</em>) – X location</li>
-<li><strong>y</strong> (<em>float</em>) – Y location</li>
+<li><strong>x</strong> (<em>float</em>) &#8211; X location</li>
+<li><strong>y</strong> (<em>float</em>) &#8211; Y location</li>
 </ul>
 </td>
 </tr>
@@ -525,9 +528,9 @@ object is written.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>x</strong> (<em>float</em>) – X location</li>
-<li><strong>y</strong> (<em>float</em>) – Y location</li>
-<li><strong>z</strong> (<em>float</em>) – Z location</li>
+<li><strong>x</strong> (<em>float</em>) &#8211; X location</li>
+<li><strong>y</strong> (<em>float</em>) &#8211; Y location</li>
+<li><strong>z</strong> (<em>float</em>) &#8211; Z location</li>
 </ul>
 </td>
 </tr>
@@ -549,9 +552,9 @@ object is written.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X locations</li>
-<li><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y locations</li>
-<li><strong>inclusive</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">GEO_BOOL</span></code> <code class="xref py py-obj docutils literal"><span class="pre">GS_TRUE</span></code> for outer ring polygon (inclusive/island), <code class="xref py py-obj docutils literal"><span class="pre">GS_FALSE</span></code> for inner ring (exclusive/hole)</li>
+<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; X locations</li>
+<li><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Y locations</li>
+<li><strong>inclusive</strong> (<em>bool</em>) &#8211; <code class="docutils literal"><span class="pre">True</span></code> for outer ring polygon (inclusive/island), <a href="#id1"><span class="problematic" id="id2">``</span></a>False` for inner ring (exclusive/hole)</li>
 </ul>
 </td>
 </tr>
@@ -573,10 +576,10 @@ object is written.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X locations</li>
-<li><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y locations</li>
-<li><strong>vv_z</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Z locations</li>
-<li><strong>inclusive</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">GEO_BOOL</span></code> <code class="xref py py-obj docutils literal"><span class="pre">GS_TRUE</span></code> for outer ring polygon (inclusive/island), <code class="xref py py-obj docutils literal"><span class="pre">GS_FALSE</span></code> for inner ring (exclusive/hole)</li>
+<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; X locations</li>
+<li><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Y locations</li>
+<li><strong>vv_z</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Z locations</li>
+<li><strong>inclusive</strong> (<em>int</em>) &#8211; <code class="docutils literal"><span class="pre">True</span></code> for outer ring polygon (inclusive/island), <a href="#id3"><span class="problematic" id="id4">``</span></a>False` for inner ring (exclusive/hole)</li>
 </ul>
 </td>
 </tr>
@@ -598,8 +601,8 @@ object is written.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>index</strong> (<em>int</em>) – Data field index</li>
-<li><strong>str_val</strong> (<em>str</em>) – Input string value</li>
+<li><strong>index</strong> (<em>int</em>) &#8211; Data field index</li>
+<li><strong>str_val</strong> (<em>str</em>) &#8211; Input string value</li>
 </ul>
 </td>
 </tr>
@@ -609,18 +612,18 @@ object is written.</p>
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>The input string is converted to the field’s data type.</p>
+<p>The input string is converted to the field&#8217;s data type.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXSHP.type">
 <code class="descname">type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSHP.type" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the <a class="reference internal" href="#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal"><span class="pre">GXSHP</span></code></a> object’s geometry type.</p>
+<dd><p>Get the <a class="reference internal" href="#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal"><span class="pre">GXSHP</span></code></a> object&#8217;s geometry type.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The <a class="reference internal" href="#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal"><span class="pre">GXSHP</span></code></a> object’s geometry type (<code class="xref py py-obj docutils literal"><span class="pre">SHP_GEOM_TYPE</span></code>)</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The <a class="reference internal" href="#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal"><span class="pre">GXSHP</span></code></a> object&#8217;s geometry type (<a class="reference internal" href="#shp-geom-type"><span class="std std-ref">SHP_GEOM_TYPE constants</span></a>)</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
@@ -743,7 +746,7 @@ defined, then the data file is not written).</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

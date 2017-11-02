@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>GXSTR class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -123,7 +126,7 @@ you want to perform.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<em>str</em>) – String to return ascii value of first character</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<em>str</em>) &#8211; String to return ascii value of first character</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">ASCII value of first character in string.</td>
 </tr>
@@ -139,19 +142,19 @@ you want to perform.</p>
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXSTR.char_n">
 <em class="property">classmethod </em><code class="descname">char_n</code><span class="sig-paren">(</span><em>str_val</em>, <em>c</em>, <em>max</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.char_n" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the ASCII value of the n’th character.</p>
+<dd><p>Returns the ASCII value of the n&#8217;th character.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>str_val</strong> (<em>str</em>) – String</li>
-<li><strong>c</strong> (<em>int</em>) – Character to get</li>
-<li><strong>max</strong> (<em>int</em>) – Maximum string length (unused)</li>
+<li><strong>str_val</strong> (<em>str</em>) &#8211; String</li>
+<li><strong>c</strong> (<em>int</em>) &#8211; Character to get</li>
+<li><strong>max</strong> (<em>int</em>) &#8211; Maximum string length (unused)</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">ASCII value of n’th character in string.
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">ASCII value of n&#8217;th character in string.
 The first character is 0.</p>
 </td>
 </tr>
@@ -174,8 +177,8 @@ The first character is 0.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>str_val</strong> (<em>str</em>) – String to tokenize</li>
-<li><strong>delims</strong> (<em>str</em>) – Delimiter characters</li>
+<li><strong>str_val</strong> (<em>str</em>) &#8211; String to tokenize</li>
+<li><strong>delims</strong> (<em>str</em>) &#8211; Delimiter characters</li>
 </ul>
 </td>
 </tr>
@@ -191,7 +194,7 @@ The first character is 0.</p>
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>Delimiters are “soft” in that one or more delimiters
+<p>Delimiters are &#8220;soft&#8221; in that one or more delimiters
 is considered a single delimiter, and preceding and
 trailing delimiters are ignored.</p>
 <p>DO NOT use this function except in GXC code. The corresponding
@@ -207,8 +210,8 @@ trailing delimiters are ignored.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to modify</li>
-<li><strong>opt</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">STR_ESCAPE</span></code></li>
+<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; String to modify</li>
+<li><strong>opt</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#str-escape"><span class="std std-ref">STR_ESCAPE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -226,13 +229,13 @@ n      new line
 r      carriage return
 t      tab
 v      vertical tab
-”      quote character
-x      take ‘x’ literally
+&#8221;      quote character
+x      take &#8216;x&#8217; literally
      backslash
 ooo    octal up to 3 characters
 xhh    hex up to 2 characters</p>
 <p>A common use of this function is to convert double-quote characters in
-a user unput string to ” so the string can be placed in a tokenized
+a user unput string to &#8221; so the string can be placed in a tokenized
 string.</p>
 </dd></dl>
 
@@ -245,12 +248,12 @@ string.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>drive</strong> (<em>str</em>) – Drive</li>
-<li><strong>dir</strong> (<em>str</em>) – Directory</li>
-<li><strong>file</strong> (<em>str</em>) – Name</li>
-<li><strong>ext</strong> (<em>str</em>) – Extension</li>
-<li><strong>qual</strong> (<em>str</em>) – Qualifiers</li>
-<li><strong>file_name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Destination string, can be same as input</li>
+<li><strong>drive</strong> (<em>str</em>) &#8211; Drive</li>
+<li><strong>dir</strong> (<em>str</em>) &#8211; Directory</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; Name</li>
+<li><strong>ext</strong> (<em>str</em>) &#8211; Extension</li>
+<li><strong>qual</strong> (<em>str</em>) &#8211; Qualifiers</li>
+<li><strong>file_name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Destination string, can be same as input</li>
 </ul>
 </td>
 </tr>
@@ -270,10 +273,10 @@ string.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>ifile</strong> (<em>str</em>) – File name to extend</li>
-<li><strong>ext</strong> (<em>str</em>) – Extension if “”, extenstion and ‘.’ are stripped.</li>
-<li><strong>ofile</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Extended file name (can be same as input)</li>
-<li><strong>opt</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">FILE_EXT</span></code></li>
+<li><strong>ifile</strong> (<em>str</em>) &#8211; File name to extend</li>
+<li><strong>ext</strong> (<em>str</em>) &#8211; Extension if &#8220;&#8221;, extenstion and &#8216;.&#8217; are stripped.</li>
+<li><strong>ofile</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Extended file name (can be same as input)</li>
+<li><strong>opt</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#file-ext"><span class="std std-ref">FILE_EXT constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -293,9 +296,9 @@ string.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>file</strong> (<em>str</em>) – File name</li>
-<li><strong>file_part</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Destination string, can be same as input</li>
-<li><strong>part</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">STR_FILE_PART</span></code></li>
+<li><strong>file</strong> (<em>str</em>) &#8211; File name</li>
+<li><strong>file_part</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Destination string, can be same as input</li>
+<li><strong>part</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#str-file-part"><span class="std std-ref">STR_FILE_PART constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -315,9 +318,9 @@ string.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>pul_crc</strong> (<em>int</em>) – CRC value to format</li>
-<li><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Resulting string</li>
-<li><strong>width</strong> (<em>int</em>) – Width of the field</li>
+<li><strong>pul_crc</strong> (<em>int</em>) &#8211; CRC value to format</li>
+<li><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Resulting string</li>
+<li><strong>width</strong> (<em>int</em>) &#8211; Width of the field</li>
 </ul>
 </td>
 </tr>
@@ -337,10 +340,10 @@ string.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>real</strong> (<em>float</em>) – Date value in decimal years to format</li>
-<li><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Resulting string</li>
-<li><strong>width</strong> (<em>int</em>) – Width of the field</li>
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">DATE_FORMAT</span></code></li>
+<li><strong>real</strong> (<em>float</em>) &#8211; Date value in decimal years to format</li>
+<li><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Resulting string</li>
+<li><strong>width</strong> (<em>int</em>) &#8211; Width of the field</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#date-format"><span class="std std-ref">DATE_FORMAT constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -360,11 +363,11 @@ string.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>real</strong> (<em>float</em>) – Value to format</li>
-<li><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Resulting string</li>
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">GS_FORMATS</span></code></li>
-<li><strong>width</strong> (<em>int</em>) – Width of the field</li>
-<li><strong>dec</strong> (<em>int</em>) – Significant digits/decimals</li>
+<li><strong>real</strong> (<em>float</em>) &#8211; Value to format</li>
+<li><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Resulting string</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-formats"><span class="std std-ref">GS_FORMATS constants</span></a></li>
+<li><strong>width</strong> (<em>int</em>) &#8211; Width of the field</li>
+<li><strong>dec</strong> (<em>int</em>) &#8211; Significant digits/decimals</li>
 </ul>
 </td>
 </tr>
@@ -384,9 +387,9 @@ string.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>int</strong> (<em>int</em>) – Value to format</li>
-<li><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Resulting string</li>
-<li><strong>width</strong> (<em>int</em>) – Width of the field</li>
+<li><strong>int</strong> (<em>int</em>) &#8211; Value to format</li>
+<li><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Resulting string</li>
+<li><strong>width</strong> (<em>int</em>) &#8211; Width of the field</li>
 </ul>
 </td>
 </tr>
@@ -406,10 +409,10 @@ string.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>real</strong> (<em>float</em>) – Value to format</li>
-<li><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Resulting string</li>
-<li><strong>width</strong> (<em>int</em>) – Width of the field</li>
-<li><strong>sig</strong> (<em>int</em>) – Significant digits</li>
+<li><strong>real</strong> (<em>float</em>) &#8211; Value to format</li>
+<li><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Resulting string</li>
+<li><strong>width</strong> (<em>int</em>) &#8211; Width of the field</li>
+<li><strong>sig</strong> (<em>int</em>) &#8211; Significant digits</li>
 </ul>
 </td>
 </tr>
@@ -429,10 +432,10 @@ string.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>real</strong> (<em>float</em>) – Value to format</li>
-<li><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Resulting string</li>
-<li><strong>width</strong> (<em>int</em>) – Width of the field</li>
-<li><strong>sig</strong> (<em>int</em>) – Decimals</li>
+<li><strong>real</strong> (<em>float</em>) &#8211; Value to format</li>
+<li><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Resulting string</li>
+<li><strong>width</strong> (<em>int</em>) &#8211; Width of the field</li>
+<li><strong>sig</strong> (<em>int</em>) &#8211; Decimals</li>
 </ul>
 </td>
 </tr>
@@ -452,11 +455,11 @@ string.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>real</strong> (<em>float</em>) – Time value in decimal hours to format</li>
-<li><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Resulting string</li>
-<li><strong>width</strong> (<em>int</em>) – Width of the field</li>
-<li><strong>deci</strong> (<em>int</em>) – Decimals to format with</li>
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">TIME_FORMAT</span></code></li>
+<li><strong>real</strong> (<em>float</em>) &#8211; Time value in decimal hours to format</li>
+<li><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Resulting string</li>
+<li><strong>width</strong> (<em>int</em>) &#8211; Width of the field</li>
+<li><strong>deci</strong> (<em>int</em>) &#8211; Decimals to format with</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#time-format"><span class="std std-ref">TIME_FORMAT constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -477,10 +480,10 @@ from type string, database and channel(optional) strings..</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>istr1</strong> (<em>str</em>) – Input type string (static part)</li>
-<li><strong>istr2</strong> (<em>str</em>) – Input db string</li>
-<li><strong>istr3</strong> (<em>str</em>) – Input ch string (could be 0 length)</li>
-<li><strong>ostr</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Output group name string</li>
+<li><strong>istr1</strong> (<em>str</em>) &#8211; Input type string (static part)</li>
+<li><strong>istr2</strong> (<em>str</em>) &#8211; Input db string</li>
+<li><strong>istr3</strong> (<em>str</em>) &#8211; Input ch string (could be 0 length)</li>
+<li><strong>ostr</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Output group name string</li>
 </ul>
 </td>
 </tr>
@@ -511,9 +514,9 @@ second and/or third part of the output string.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>in_str</strong> (<em>str</em>) – Input multifile string</li>
-<li><strong>out_str</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Output filepath string</li>
-<li><strong>index</strong> (<em>int</em>) – Index of file</li>
+<li><strong>in_str</strong> (<em>str</em>) &#8211; Input multifile string</li>
+<li><strong>out_str</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Output filepath string</li>
+<li><strong>index</strong> (<em>int</em>) &#8211; Index of file</li>
 </ul>
 </td>
 </tr>
@@ -523,7 +526,7 @@ second and/or third part of the output string.</p>
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>The multifile string must use ‘|’ as a delimiter.
+<p>The multifile string must use &#8216;|&#8217; as a delimiter.
 Do not pass a string after calling <a class="reference internal" href="#geosoft.gxapi.GXSTR.tokenize" title="geosoft.gxapi.GXSTR.tokenize"><code class="xref py py-obj docutils literal"><span class="pre">tokenize</span></code></a>.</p>
 </dd></dl>
 
@@ -536,9 +539,9 @@ Do not pass a string after calling <a class="reference internal" href="#geosoft.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>dest</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Destination string</li>
-<li><strong>orig</strong> (<em>str</em>) – Tokenized string</li>
-<li><strong>tok</strong> (<em>int</em>) – Token number wanted  (0 is the first!)</li>
+<li><strong>dest</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Destination string</li>
+<li><strong>orig</strong> (<em>str</em>) &#8211; Tokenized string</li>
+<li><strong>tok</strong> (<em>int</em>) &#8211; Token number wanted  (0 is the first!)</li>
 </ul>
 </td>
 </tr>
@@ -584,10 +587,10 @@ The first token has index 0.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>in_str</strong> (<em>str</em>) – String to justify</li>
-<li><strong>out_str</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Result string, can be same as input</li>
-<li><strong>width</strong> (<em>int</em>) – Justification width</li>
-<li><strong>just</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">STR_JUSTIFY</span></code></li>
+<li><strong>in_str</strong> (<em>str</em>) &#8211; String to justify</li>
+<li><strong>out_str</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Result string, can be same as input</li>
+<li><strong>width</strong> (<em>int</em>) &#8211; Justification width</li>
+<li><strong>just</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#str-justify"><span class="std std-ref">STR_JUSTIFY constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -598,7 +601,7 @@ The first token has index 0.</p>
 </div>
 <p><strong>Note:</strong></p>
 <p>If the string is too big to fit in the number of display characters,
-the output string will be “**” justified as specified.</p>
+the output string will be &#8220;**&#8221; justified as specified.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -609,7 +612,7 @@ the output string will be “**” justified as specified.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to trim</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; String to trim</td>
 </tr>
 </tbody>
 </table>
@@ -643,8 +646,8 @@ the output string will be “**” justified as specified.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>str_val</strong> (<em>str</em>) – String to be parsed</li>
-<li><strong>gvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Selection Buffer to fill</li>
+<li><strong>str_val</strong> (<em>str</em>) &#8211; String to be parsed</li>
+<li><strong>gvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Selection Buffer to fill</li>
 </ul>
 </td>
 </tr>
@@ -654,11 +657,11 @@ the output string will be “**” justified as specified.</p>
 <p><span class="versionmodified">New in version 5.0.1.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>Given a list such as “1,3,4,6-9,12”, it fills the
+<p>Given a list such as &#8220;1,3,4,6-9,12&#8221;, it fills the
 input buffer with 1 if the number is selected,
 0 if not. The items are delimited with spaces
 or commas, and ranges are acceptable, either using
-a “-” or “:”, e.g.  3-6 and 3:6 both mean 3,4,5, and 6.
+a &#8220;-&#8221; or &#8221;:&#8221;, e.g.  3-6 and 3:6 both mean 3,4,5, and 6.
 Only values from 0 to one less than the buffer length
 are used.  Out-of-range values are ignored.</p>
 </dd></dl>
@@ -672,8 +675,8 @@ are used.  Out-of-range values are ignored.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>dest</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Destination string</li>
-<li><strong>mask</strong> (<em>str</em>) – Pattern string</li>
+<li><strong>dest</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Destination string</li>
+<li><strong>mask</strong> (<em>str</em>) &#8211; Pattern string</li>
 </ul>
 </td>
 </tr>
@@ -693,8 +696,8 @@ are used.  Out-of-range values are ignored.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>ifile</strong> (<em>str</em>) – Input file name</li>
-<li><strong>ofile</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Output file name (can be same as input)</li>
+<li><strong>ifile</strong> (<em>str</em>) &#8211; Input file name</li>
+<li><strong>ofile</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Output file name (can be same as input)</li>
 </ul>
 </td>
 </tr>
@@ -714,9 +717,9 @@ are used.  Out-of-range values are ignored.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>istr</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to modify</li>
-<li><strong>old</strong> (<em>str</em>) – Character to replace (first character only)</li>
-<li><strong>new</strong> (<em>str</em>) – Replacement character (first character only)</li>
+<li><strong>istr</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; String to modify</li>
+<li><strong>old</strong> (<em>str</em>) &#8211; Character to replace (first character only)</li>
+<li><strong>new</strong> (<em>str</em>) &#8211; Replacement character (first character only)</li>
 </ul>
 </td>
 </tr>
@@ -726,7 +729,7 @@ are used.  Out-of-range values are ignored.</p>
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>If the input replacement character is “”, then the
+<p>If the input replacement character is &#8220;&#8221;, then the
 string will be truncated at the first character to replace.</p>
 </dd></dl>
 
@@ -739,9 +742,9 @@ string will be truncated at the first character to replace.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>istr</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to modify</li>
-<li><strong>old</strong> (<em>str</em>) – Character to replace (first character only)</li>
-<li><strong>new</strong> (<em>str</em>) – Replacement character (first character only)</li>
+<li><strong>istr</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; String to modify</li>
+<li><strong>old</strong> (<em>str</em>) &#8211; Character to replace (first character only)</li>
+<li><strong>new</strong> (<em>str</em>) &#8211; Replacement character (first character only)</li>
 </ul>
 </td>
 </tr>
@@ -751,7 +754,7 @@ string will be truncated at the first character to replace.</p>
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>If the replacement character is “” (NULL character)
+<p>If the replacement character is &#8220;&#8221; (NULL character)
 then the character to replace is removed from the
 input string, and the string is shortened.</p>
 </dd></dl>
@@ -765,9 +768,9 @@ input string, and the string is shortened.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>istr</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Destination String</li>
-<li><strong>old</strong> (<em>str</em>) – Match string to replace</li>
-<li><strong>new</strong> (<em>str</em>) – Replacement string</li>
+<li><strong>istr</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Destination String</li>
+<li><strong>old</strong> (<em>str</em>) &#8211; Match string to replace</li>
+<li><strong>new</strong> (<em>str</em>) &#8211; Replacement string</li>
 </ul>
 </td>
 </tr>
@@ -777,7 +780,7 @@ input string, and the string is shortened.</p>
 <p><span class="versionmodified">New in version 7.0.1.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>If the replacement string is “” (NULL character)
+<p>If the replacement string is &#8220;&#8221; (NULL character)
 then the string to replace is removed from the
 input string, and the string is shortened.</p>
 </dd></dl>
@@ -791,9 +794,9 @@ input string, and the string is shortened.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>istr</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to modify</li>
-<li><strong>old</strong> (<em>str</em>) – Characters to replace</li>
-<li><strong>new</strong> (<em>str</em>) – Replacement characters</li>
+<li><strong>istr</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; String to modify</li>
+<li><strong>old</strong> (<em>str</em>) &#8211; Characters to replace</li>
+<li><strong>new</strong> (<em>str</em>) &#8211; Replacement characters</li>
 </ul>
 </td>
 </tr>
@@ -816,8 +819,8 @@ the number of replacement characters.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to modify</li>
-<li><strong>rpl</strong> (<em>str</em>) – Replacement character</li>
+<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; String to modify</li>
+<li><strong>rpl</strong> (<em>str</em>) &#8211; Replacement character</li>
 </ul>
 </td>
 </tr>
@@ -840,9 +843,9 @@ of the replacement string.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>istr</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Destination String</li>
-<li><strong>old</strong> (<em>str</em>) – Match string to replace</li>
-<li><strong>new</strong> (<em>str</em>) – Replacement string</li>
+<li><strong>istr</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Destination String</li>
+<li><strong>old</strong> (<em>str</em>) &#8211; Match string to replace</li>
+<li><strong>new</strong> (<em>str</em>) &#8211; Replacement string</li>
 </ul>
 </td>
 </tr>
@@ -852,7 +855,7 @@ of the replacement string.</p>
 <p><span class="versionmodified">New in version 7.0.1.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>If the replacement string is “” (NULL character)
+<p>If the replacement string is &#8220;&#8221; (NULL character)
 then the string to replace is removed from the
 input string, and the string is shortened.</p>
 </dd></dl>
@@ -866,8 +869,8 @@ input string, and the string is shortened.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>str_val</strong> (<em>str</em>) – Date string</li>
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">DATE_FORMAT</span></code></li>
+<li><strong>str_val</strong> (<em>str</em>) &#8211; Date string</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#date-format"><span class="std std-ref">DATE_FORMAT constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -895,8 +898,8 @@ input string, and the string is shortened.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>str_val</strong> (<em>str</em>) – Date string</li>
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">GS_FORMATS</span></code></li>
+<li><strong>str_val</strong> (<em>str</em>) &#8211; Date string</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-formats"><span class="std std-ref">GS_FORMATS constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -921,7 +924,7 @@ input string, and the string is shortened.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<em>str</em>) – String to convert to an integer</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<em>str</em>) &#8211; String to convert to an integer</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Resulting Integer, <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.iDUMMY" title="geosoft.gxapi.iDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">iDUMMY</span></code></a> is bad integer</td>
 </tr>
@@ -942,7 +945,7 @@ input string, and the string is shortened.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<em>str</em>) – String to convert to a real</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<em>str</em>) &#8211; String to convert to a real</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Resulting Real, <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> if bad string.</td>
 </tr>
@@ -964,8 +967,8 @@ input string, and the string is shortened.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>str_val</strong> (<em>str</em>) – Date string</li>
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">TIME_FORMAT</span></code></li>
+<li><strong>str_val</strong> (<em>str</em>) &#8211; Date string</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#time-format"><span class="std std-ref">TIME_FORMAT constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -987,14 +990,14 @@ input string, and the string is shortened.</p>
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXSTR.set_char">
 <em class="property">classmethod </em><code class="descname">set_char</code><span class="sig-paren">(</span><em>str_val</em>, <em>ascii</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.set_char" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set a string’s first character using an ASCII value of a character.</p>
+<dd><p>Set a string&#8217;s first character using an ASCII value of a character.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String</li>
-<li><strong>ascii</strong> (<em>int</em>) – ASCII value</li>
+<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; String</li>
+<li><strong>ascii</strong> (<em>int</em>) &#8211; ASCII value</li>
 </ul>
 </td>
 </tr>
@@ -1008,15 +1011,15 @@ input string, and the string is shortened.</p>
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXSTR.set_char_n">
 <em class="property">classmethod </em><code class="descname">set_char_n</code><span class="sig-paren">(</span><em>str_val</em>, <em>c</em>, <em>ascii</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.set_char_n" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the n’th character of a string using an ASCII value</p>
+<dd><p>Set the n&#8217;th character of a string using an ASCII value</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String</li>
-<li><strong>c</strong> (<em>int</em>) – Character to set</li>
-<li><strong>ascii</strong> (<em>int</em>) – ASCII value</li>
+<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; String</li>
+<li><strong>c</strong> (<em>int</em>) &#8211; Character to set</li>
+<li><strong>ascii</strong> (<em>int</em>) &#8211; ASCII value</li>
 </ul>
 </td>
 </tr>
@@ -1036,9 +1039,9 @@ input string, and the string is shortened.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>origstr</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Original string</li>
-<li><strong>ch</strong> (<em>str</em>) – Split character (first character of string)</li>
-<li><strong>split</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Split string past split character.</li>
+<li><strong>origstr</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Original string</li>
+<li><strong>ch</strong> (<em>str</em>) &#8211; Split character (first character of string)</li>
+<li><strong>split</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Split string past split character.</li>
 </ul>
 </td>
 </tr>
@@ -1066,8 +1069,8 @@ from control file strings.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>mask</strong> (<em>str</em>) – Mask</li>
-<li><strong>test</strong> (<em>str</em>) – String to test</li>
+<li><strong>mask</strong> (<em>str</em>) &#8211; Mask</li>
+<li><strong>test</strong> (<em>str</em>) &#8211; String to test</li>
 </ul>
 </td>
 </tr>
@@ -1084,9 +1087,9 @@ from control file strings.</p>
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>Mask characters ‘*’ - matches any one or more up to
+<p>Mask characters &#8216;*&#8217; - matches any one or more up to
 next character
-‘?’ - matches one character</p>
+&#8216;?&#8217; - matches one character</p>
 <p>Test is case sensitive</p>
 </dd></dl>
 
@@ -1098,7 +1101,7 @@ next character
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to find the min length of</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; String to find the min length of</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">String length.</td>
 </tr>
@@ -1112,7 +1115,7 @@ next character
 <p><strong>Note:</strong></p>
 <p>String may be modified. This function should not be
 used to determine if a file name string is defined, because
-a valid file name can contain spaces, and once “tested” the
+a valid file name can contain spaces, and once &#8220;tested&#8221; the
 name will be altered. Instead, use <a class="reference internal" href="#geosoft.gxapi.GXSTR.str_min2" title="geosoft.gxapi.GXSTR.str_min2"><code class="xref py py-obj docutils literal"><span class="pre">str_min2</span></code></a>, or use
 <a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS.file_exist" title="geosoft.gxapi.GXSYS.file_exist"><code class="xref py py-obj docutils literal"><span class="pre">GXSYS.file_exist</span></code></a> to see if the file actually exists.</p>
 </dd></dl>
@@ -1125,7 +1128,7 @@ name will be altered. Instead, use <a class="reference internal" href="#geosoft.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<em>str</em>) – String to find the min length of</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<em>str</em>) &#8211; String to find the min length of</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">String length.</td>
 </tr>
@@ -1147,9 +1150,9 @@ name will be altered. Instead, use <a class="reference internal" href="#geosoft.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>str_val</strong> (<em>str</em>) – String to scan</li>
-<li><strong>sub</strong> (<em>str</em>) – String to look for</li>
-<li><strong>mode</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">STR_CASE</span></code></li>
+<li><strong>str_val</strong> (<em>str</em>) &#8211; String to scan</li>
+<li><strong>sub</strong> (<em>str</em>) &#8211; String to look for</li>
+<li><strong>mode</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#str-case"><span class="std std-ref">STR_CASE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1176,8 +1179,8 @@ Index of first matching location if found</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>dest</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Destination String</li>
-<li><strong>orig</strong> (<em>str</em>) – String to add</li>
+<li><strong>dest</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Destination String</li>
+<li><strong>orig</strong> (<em>str</em>) &#8211; String to add</li>
 </ul>
 </td>
 </tr>
@@ -1197,9 +1200,9 @@ Index of first matching location if found</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>first</strong> (<em>str</em>) – String A</li>
-<li><strong>second</strong> (<em>str</em>) – String B</li>
-<li><strong>mode</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">STR_CASE</span></code></li>
+<li><strong>first</strong> (<em>str</em>) &#8211; String A</li>
+<li><strong>second</strong> (<em>str</em>) &#8211; String B</li>
+<li><strong>mode</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#str-case"><span class="std std-ref">STR_CASE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1227,8 +1230,8 @@ A  &gt;  B            1</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>dest</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Destination string</li>
-<li><strong>orig</strong> (<em>str</em>) – Origin string</li>
+<li><strong>dest</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Destination string</li>
+<li><strong>orig</strong> (<em>str</em>) &#8211; Origin string</li>
 </ul>
 </td>
 </tr>
@@ -1248,8 +1251,8 @@ A  &gt;  B            1</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>mask</strong> (<em>str</em>) – Mask</li>
-<li><strong>test</strong> (<em>str</em>) – String to test</li>
+<li><strong>mask</strong> (<em>str</em>) &#8211; Mask</li>
+<li><strong>test</strong> (<em>str</em>) &#8211; String to test</li>
 </ul>
 </td>
 </tr>
@@ -1266,9 +1269,9 @@ A  &gt;  B            1</p>
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>Mask characters ‘*’ - matches any one or more up to
+<p>Mask characters &#8216;*&#8217; - matches any one or more up to
 next character
-‘?’ - matches one character</p>
+&#8216;?&#8217; - matches one character</p>
 <p>Test is case insensitive</p>
 </dd></dl>
 
@@ -1281,9 +1284,9 @@ next character
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>dest</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Destination String</li>
-<li><strong>ins</strong> (<em>int</em>) – Insert Position</li>
-<li><strong>orig</strong> (<em>str</em>) – String to add</li>
+<li><strong>dest</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Destination String</li>
+<li><strong>ins</strong> (<em>int</em>) &#8211; Insert Position</li>
+<li><strong>orig</strong> (<em>str</em>) &#8211; String to add</li>
 </ul>
 </td>
 </tr>
@@ -1305,7 +1308,7 @@ the source string will simply be Concatenated.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<em>str</em>) – String to find the length of</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<em>str</em>) &#8211; String to find the length of</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">String length.</td>
 </tr>
@@ -1327,10 +1330,10 @@ the source string will simply be Concatenated.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>first</strong> (<em>str</em>) – String A</li>
-<li><strong>second</strong> (<em>str</em>) – String B</li>
-<li><strong>n_char</strong> (<em>int</em>) – Number of characters to compare</li>
-<li><strong>mode</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">STR_CASE</span></code></li>
+<li><strong>first</strong> (<em>str</em>) &#8211; String A</li>
+<li><strong>second</strong> (<em>str</em>) &#8211; String B</li>
+<li><strong>n_char</strong> (<em>int</em>) &#8211; Number of characters to compare</li>
+<li><strong>mode</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#str-case"><span class="std std-ref">STR_CASE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1358,10 +1361,10 @@ A  &gt;  B            1</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>dest</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Destination string</li>
-<li><strong>orig</strong> (<em>str</em>) – Origin string</li>
-<li><strong>start</strong> (<em>int</em>) – Start location</li>
-<li><strong>length</strong> (<em>int</em>) – Number of characters</li>
+<li><strong>dest</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Destination string</li>
+<li><strong>orig</strong> (<em>str</em>) &#8211; Origin string</li>
+<li><strong>start</strong> (<em>int</em>) &#8211; Start location</li>
+<li><strong>length</strong> (<em>int</em>) &#8211; Number of characters</li>
 </ul>
 </td>
 </tr>
@@ -1384,7 +1387,7 @@ in the origin string.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; String</td>
 </tr>
 </tbody>
 </table>
@@ -1401,7 +1404,7 @@ in the origin string.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; String</td>
 </tr>
 </tbody>
 </table>
@@ -1419,11 +1422,11 @@ in the origin string.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – <a class="reference internal" href="#geosoft.gxapi.GXSTR" title="geosoft.gxapi.GXSTR"><code class="xref py py-obj docutils literal"><span class="pre">GXSTR</span></code></a> - String containing token(s)</li>
-<li><strong>soft</strong> (<em>str</em>) – szSoft - Soft delimiters (spaces/tabs)</li>
-<li><strong>hard</strong> (<em>str</em>) – szHard - Hard delimiters (commas)</li>
-<li><strong>esc</strong> (<em>str</em>) – szEsc  - Escape delimiters (back-slash)</li>
-<li><strong>quote</strong> (<em>str</em>) – szQuote- Quote delimiters  (quote characters)</li>
+<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; <a class="reference internal" href="#geosoft.gxapi.GXSTR" title="geosoft.gxapi.GXSTR"><code class="xref py py-obj docutils literal"><span class="pre">GXSTR</span></code></a> - String containing token(s)</li>
+<li><strong>soft</strong> (<em>str</em>) &#8211; szSoft - Soft delimiters (spaces/tabs)</li>
+<li><strong>hard</strong> (<em>str</em>) &#8211; szHard - Hard delimiters (commas)</li>
+<li><strong>esc</strong> (<em>str</em>) &#8211; szEsc  - Escape delimiters (back-slash)</li>
+<li><strong>quote</strong> (<em>str</em>) &#8211; szQuote- Quote delimiters  (quote characters)</li>
 </ul>
 </td>
 </tr>
@@ -1450,10 +1453,10 @@ hard delimiter are treated as one hard delimited.</p>
 <p>4. Any number of soft delimiters can preceed or follow
 a hard delimiter and are ignored.</p>
 <p>EXAMPLE</p>
-<p>Soft = [ ]   Hard = [,]   Escape = []    Quote = [“]</p>
-<p>[this is a , , the “test,” of   ,  ,” my delimite  fi,]</p>
+<p>Soft = [ ]   Hard = [,]   Escape = []    Quote = [&#8220;]</p>
+<p>[this is a , , the &#8220;test,&#8221; of   ,  ,&#8221; my delimite  fi,]</p>
 <p>Results in:</p>
-<p>[this] [is] [a] [] [the] [“test,”] [of] [,”] [my] [delimite] [fi] []</p>
+<p>[this] [is] [a] [] [the] [&#8220;test,&#8221;] [of] [,&#8221;] [my] [delimite] [fi] []</p>
 <p>NOT use this function except in GXC code. The corresponding
 etToken_STR function will not operate correctly in GX.Net code.</p>
 <div class="admonition seealso">
@@ -1471,8 +1474,8 @@ etToken_STR function will not operate correctly in GX.Net code.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to tokenize</li>
-<li><strong>delims</strong> (<em>str</em>) – Delimiter characters</li>
+<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; String to tokenize</li>
+<li><strong>delims</strong> (<em>str</em>) &#8211; Delimiter characters</li>
 </ul>
 </td>
 </tr>
@@ -1508,11 +1511,11 @@ Use GetToken_STR to extract tokens.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to tokenize</li>
-<li><strong>soft</strong> (<em>str</em>) – szSoft - Soft delimiters (spaces/tabs)</li>
-<li><strong>hard</strong> (<em>str</em>) – szHard - Hard delimiters (commas)</li>
-<li><strong>esc</strong> (<em>str</em>) – szEsc  - Escape delimiters (back-slash)</li>
-<li><strong>quote</strong> (<em>str</em>) – szQuote- Quote delimiters  (quote characters)</li>
+<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; String to tokenize</li>
+<li><strong>soft</strong> (<em>str</em>) &#8211; szSoft - Soft delimiters (spaces/tabs)</li>
+<li><strong>hard</strong> (<em>str</em>) &#8211; szHard - Hard delimiters (commas)</li>
+<li><strong>esc</strong> (<em>str</em>) &#8211; szEsc  - Escape delimiters (back-slash)</li>
+<li><strong>quote</strong> (<em>str</em>) &#8211; szQuote- Quote delimiters  (quote characters)</li>
 </ul>
 </td>
 </tr>
@@ -1542,7 +1545,7 @@ See <a class="reference internal" href="#geosoft.gxapi.GXSTR.tokenize" title="ge
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to trim</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; String to trim</td>
 </tr>
 </tbody>
 </table>
@@ -1569,8 +1572,8 @@ delimiters.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to trim</li>
-<li><strong>trim</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">STR_TRIM</span></code></li>
+<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; String to trim</li>
+<li><strong>trim</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#str-trim"><span class="std std-ref">STR_TRIM constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1593,7 +1596,7 @@ new line, vertical tab or formfeed (0x09 to 0x0D, 0x20)</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to unquote</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; String to unquote</td>
 </tr>
 </tbody>
 </table>
@@ -1603,7 +1606,7 @@ new line, vertical tab or formfeed (0x09 to 0x0D, 0x20)</p>
 <p><strong>Note:</strong></p>
 <p>THE STRING IS MODIFIED.
 The pointers will be advanced past a first character
-quote and a last character quote will be set to .0’.
+quote and a last character quote will be set to .0&#8217;.
 Both first and last characters must be quotes for the
 triming to take place.</p>
 </dd></dl>
@@ -1617,8 +1620,8 @@ triming to take place.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>line</strong> (<em>str</em>) – Line name to convert</li>
-<li><strong>xyz</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Buffer to hold new line name</li>
+<li><strong>line</strong> (<em>str</em>) &#8211; Line name to convert</li>
+<li><strong>xyz</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Buffer to hold new line name</li>
 </ul>
 </td>
 </tr>
@@ -1891,7 +1894,7 @@ triming to take place.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

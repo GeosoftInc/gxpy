@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>GXLTB class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -111,17 +114,17 @@
 <p>An <a class="reference internal" href="#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><code class="xref py py-obj docutils literal"><span class="pre">GXLTB</span></code></a> object is typically created from a CSV (comma-separated values)
 file, and is a table of information that may be accessed by row
 or column. The <a class="reference internal" href="#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><code class="xref py py-obj docutils literal"><span class="pre">GXLTB</span></code></a> class is recommended for use with small tables
-produced from short lists (of the order of 1000’s or records) such
+produced from short lists (of the order of 1000&#8217;s or records) such
 as the different geographic projections and their defining parameters.
 Large tables, such as those required for table-lookup functions, should
 be accessed using the <a class="reference internal" href="GXTB.html#geosoft.gxapi.GXTB" title="geosoft.gxapi.GXTB"><code class="xref py py-obj docutils literal"><span class="pre">GXTB</span></code></a> class.</p>
 <p><strong>Note:</strong></p>
 <p>An <a class="reference internal" href="#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><code class="xref py py-obj docutils literal"><span class="pre">GXLTB</span></code></a> ASCII table file has the following structure:</p>
 <p>/ comments
-key_name,col_1,col_2,col_3,etc…    /field names
-key_1,token,token,token,etc…       /data lines
-key_2,token,token,token,etc…
-etc…</p>
+key_name,col_1,col_2,col_3,etc...    /field names
+key_1,token,token,token,etc...       /data lines
+key_2,token,token,token,etc...
+etc...</p>
 <p>The first column must be the key column (all entries unique).</p>
 <p>The header line is optional and can be used to find entries.</p>
 <p>Comment and empty lines are ignored.</p>
@@ -134,8 +137,8 @@ etc…</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>key</strong> (<em>str</em>) – Key name</li>
-<li><strong>rec</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Returned record number</li>
+<li><strong>key</strong> (<em>str</em>) &#8211; Key name</li>
+<li><strong>rec</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Returned record number</li>
 </ul>
 </td>
 </tr>
@@ -157,7 +160,7 @@ and the record number is returned.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lt_bc</strong> (<a class="reference internal" href="#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><em>GXLTB</em></a>) – Contract <a class="reference internal" href="#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><code class="xref py py-obj docutils literal"><span class="pre">GXLTB</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lt_bc</strong> (<a class="reference internal" href="#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><em>GXLTB</em></a>) &#8211; Contract <a class="reference internal" href="#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><code class="xref py py-obj docutils literal"><span class="pre">GXLTB</span></code></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">x    - Handle to <a class="reference internal" href="#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><code class="xref py py-obj docutils literal"><span class="pre">GXLTB</span></code></a> object
 NULL - Error of some kind</td>
@@ -170,7 +173,7 @@ NULL - Error of some kind</td>
 <p><span class="versionmodified">New in version 5.1.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>The “Key” of the child must be the same as the “Key” of the Master.
+<p>The &#8220;Key&#8221; of the child must be the same as the &#8220;Key&#8221; of the Master.
 The fields of two <a class="reference internal" href="#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><code class="xref py py-obj docutils literal"><span class="pre">GXLTB</span></code></a> must be the same.</p>
 <p>Contracting takes place as follows:</p>
 <ol class="arabic simple">
@@ -189,10 +192,10 @@ The fields of two <a class="reference internal" href="#geosoft.gxapi.GXLTB" titl
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>file</strong> (<em>str</em>) – File name, .csv assumed, searched locally then in GEOSOFT.</li>
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">LTB_TYPE</span></code></li>
-<li><strong>delim</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">LTB_DELIM</span></code></li>
-<li><strong>key</strong> (<em>str</em>) – Key to find if only one record required, “” to read entire table.</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; File name, .csv assumed, searched locally then in GEOSOFT.</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ltb-type"><span class="std std-ref">LTB_TYPE constants</span></a></li>
+<li><strong>delim</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ltb-delim"><span class="std std-ref">LTB_DELIM constants</span></a></li>
+<li><strong>key</strong> (<em>str</em>) &#8211; Key to find if only one record required, &#8220;&#8221; to read entire table.</li>
 </ul>
 </td>
 </tr>
@@ -209,7 +212,7 @@ NULL - Error of some kind</p>
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>If the file has no header, field names are assumed to be “0”, “1”, etc.</p>
+<p>If the file has no header, field names are assumed to be &#8220;0&#8221;, &#8220;1&#8221;, etc.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -221,12 +224,12 @@ NULL - Error of some kind</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>file</strong> (<em>str</em>) – File name, .csv assumed, searched locally then in GEOSOFT.</li>
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">LTB_TYPE</span></code></li>
-<li><strong>delim</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">LTB_DELIM</span></code></li>
-<li><strong>case</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">LTB_CASE</span></code></li>
-<li><strong>key</strong> (<em>str</em>) – Key to find if only one record required, “” to read entire table.</li>
-<li><strong>crypt</strong> (<em>str</em>) – Decryption Key <code class="xref py py-obj docutils literal"><span class="pre">SYS_CRYPT_KEY</span></code></li>
+<li><strong>file</strong> (<em>str</em>) &#8211; File name, .csv assumed, searched locally then in GEOSOFT.</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ltb-type"><span class="std std-ref">LTB_TYPE constants</span></a></li>
+<li><strong>delim</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ltb-delim"><span class="std std-ref">LTB_DELIM constants</span></a></li>
+<li><strong>case</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ltb-case"><span class="std std-ref">LTB_CASE constants</span></a></li>
+<li><strong>key</strong> (<em>str</em>) &#8211; Key to find if only one record required, &#8220;&#8221; to read entire table.</li>
+<li><strong>crypt</strong> (<em>str</em>) &#8211; Decryption Key <a class="reference internal" href="GXGEOSOFT.html#sys-crypt-key"><span class="std std-ref">SYS_CRYPT_KEY constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -243,7 +246,7 @@ NULL - Error of some kind</p>
 <p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>If the file has no header, field names are assumed to be “0”, “1”, etc.</p>
+<p>If the file has no header, field names are assumed to be &#8220;0&#8221;, &#8220;1&#8221;, etc.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -255,11 +258,11 @@ NULL - Error of some kind</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>file</strong> (<em>str</em>) – File name, .csv assumed, searched locally then in GEOSOFT.</li>
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">LTB_TYPE</span></code></li>
-<li><strong>delim</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">LTB_DELIM</span></code></li>
-<li><strong>case</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">LTB_CASE</span></code></li>
-<li><strong>key</strong> (<em>str</em>) – Key to find if only one record required, “” to read entire table.</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; File name, .csv assumed, searched locally then in GEOSOFT.</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ltb-type"><span class="std std-ref">LTB_TYPE constants</span></a></li>
+<li><strong>delim</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ltb-delim"><span class="std std-ref">LTB_DELIM constants</span></a></li>
+<li><strong>case</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ltb-case"><span class="std std-ref">LTB_CASE constants</span></a></li>
+<li><strong>key</strong> (<em>str</em>) &#8211; Key to find if only one record required, &#8220;&#8221; to read entire table.</li>
 </ul>
 </td>
 </tr>
@@ -276,7 +279,7 @@ NULL - Error of some kind</p>
 <p><span class="versionmodified">New in version 6.1.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>If the file has no header, field names are assumed to be “0”, “1”, etc.</p>
+<p>If the file has no header, field names are assumed to be &#8220;0&#8221;, &#8220;1&#8221;, etc.</p>
 </dd></dl>
 
 <dl class="method">
@@ -287,7 +290,7 @@ NULL - Error of some kind</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>rec</strong> (<em>int</em>) – Record number to delete</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>rec</strong> (<em>int</em>) &#8211; Record number to delete</td>
 </tr>
 </tbody>
 </table>
@@ -326,7 +329,7 @@ by 1.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>field</strong> (<em>str</em>) – Field name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>field</strong> (<em>str</em>) &#8211; Field name</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">-1 if field does not exist.
 field number if field does exist.</td>
@@ -348,7 +351,7 @@ field number if field does exist.</td>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>key</strong> (<em>str</em>) – Key name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>key</strong> (<em>str</em>) &#8211; Key name</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">-1 if key does not exist.
 record number if key does exist.</td>
@@ -371,10 +374,10 @@ record number if key does exist.</td>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>fld</strong> (<em>int</em>) – Field</li>
-<li><strong>match</strong> (<em>str</em>) – String to match to field, must be lower-case</li>
-<li><strong>match_type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">LTB_CONLST</span></code></li>
-<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – List to populate</li>
+<li><strong>fld</strong> (<em>int</em>) &#8211; Field</li>
+<li><strong>match</strong> (<em>str</em>) &#8211; String to match to field, must be lower-case</li>
+<li><strong>match_type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ltb-conlst"><span class="std std-ref">LTB_CONLST constants</span></a></li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; List to populate</li>
 </ul>
 </td>
 </tr>
@@ -398,8 +401,8 @@ The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>record</strong> (<em>int</em>) – Record number</li>
-<li><strong>field</strong> (<em>int</em>) – Field number</li>
+<li><strong>record</strong> (<em>int</em>) &#8211; Record number</li>
+<li><strong>field</strong> (<em>int</em>) &#8211; Field number</li>
 </ul>
 </td>
 </tr>
@@ -426,9 +429,9 @@ an empty string or dummy value is returned.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>record</strong> (<em>int</em>) – Record number</li>
-<li><strong>field</strong> (<em>int</em>) – Field number</li>
-<li><strong>token</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Returned field token</li>
+<li><strong>record</strong> (<em>int</em>) &#8211; Record number</li>
+<li><strong>field</strong> (<em>int</em>) &#8211; Field number</li>
+<li><strong>token</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Returned field token</li>
 </ul>
 </td>
 </tr>
@@ -451,8 +454,8 @@ an empty string or dummy value is returned.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>field_num</strong> (<em>int</em>) – Field number</li>
-<li><strong>field</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Returned field name</li>
+<li><strong>field_num</strong> (<em>int</em>) &#8211; Field number</li>
+<li><strong>field</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Returned field name</li>
 </ul>
 </td>
 </tr>
@@ -474,8 +477,8 @@ an empty string or dummy value is returned.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>record</strong> (<em>int</em>) – Record number</li>
-<li><strong>field</strong> (<em>int</em>) – Field number</li>
+<li><strong>record</strong> (<em>int</em>) &#8211; Record number</li>
+<li><strong>field</strong> (<em>int</em>) &#8211; Field number</li>
 </ul>
 </td>
 </tr>
@@ -502,8 +505,8 @@ an empty string or dummy value is returned.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>fld</strong> (<em>int</em>) – Field to get, 0 for key field</li>
-<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – List to populate</li>
+<li><strong>fld</strong> (<em>int</em>) &#8211; Field to get, 0 for key field</li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; List to populate</li>
 </ul>
 </td>
 </tr>
@@ -527,9 +530,9 @@ The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>fld_n</strong> (<em>int</em>) – Field for names, 0 for key field</li>
-<li><strong>fld_v</strong> (<em>int</em>) – Field for values, 0 for key field</li>
-<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – List to populate</li>
+<li><strong>fld_n</strong> (<em>int</em>) &#8211; Field for names, 0 for key field</li>
+<li><strong>fld_v</strong> (<em>int</em>) &#8211; Field for values, 0 for key field</li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; List to populate</li>
 </ul>
 </td>
 </tr>
@@ -553,9 +556,9 @@ The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>record</strong> (<em>int</em>) – Record number</li>
-<li><strong>field</strong> (<em>int</em>) – Field number</li>
-<li><strong>token</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Returned field token</li>
+<li><strong>record</strong> (<em>int</em>) &#8211; Record number</li>
+<li><strong>field</strong> (<em>int</em>) &#8211; Field number</li>
+<li><strong>token</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Returned field token</li>
 </ul>
 </td>
 </tr>
@@ -591,7 +594,7 @@ an empty string or dummy value is returned.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lt_bc</strong> (<a class="reference internal" href="#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><em>GXLTB</em></a>) – Child <a class="reference internal" href="#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><code class="xref py py-obj docutils literal"><span class="pre">GXLTB</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lt_bc</strong> (<a class="reference internal" href="#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><em>GXLTB</em></a>) &#8211; Child <a class="reference internal" href="#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><code class="xref py py-obj docutils literal"><span class="pre">GXLTB</span></code></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">x    - Handle to <a class="reference internal" href="#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><code class="xref py py-obj docutils literal"><span class="pre">GXLTB</span></code></a> object
 NULL - Error of some kind</td>
@@ -606,7 +609,7 @@ NULL - Error of some kind</td>
 <p><strong>Note:</strong></p>
 <p>Merging takes place as follows:</p>
 <ol class="arabic simple">
-<li>The “Key” of the child must be the same as the “Key” of the Master.</li>
+<li>The &#8220;Key&#8221; of the child must be the same as the &#8220;Key&#8221; of the Master.</li>
 <li>The fields of the Master <a class="reference internal" href="#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><code class="xref py py-obj docutils literal"><span class="pre">GXLTB</span></code></a> are collected in-order.</li>
 <li>Any new fields of the Child <a class="reference internal" href="#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><code class="xref py py-obj docutils literal"><span class="pre">GXLTB</span></code></a> are added to the end of the list.</li>
 <li>A new <a class="reference internal" href="#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><code class="xref py py-obj docutils literal"><span class="pre">GXLTB</span></code></a> is created to contain the new field list (in-order).</li>
@@ -663,7 +666,7 @@ replaced by:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – File name, .csv assumed.  If “”, save to original file.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; File name, .csv assumed.  If &#8220;&#8221;, save to original file.</td>
 </tr>
 </tbody>
 </table>
@@ -681,8 +684,8 @@ replaced by:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>file</strong> (<em>str</em>) – File name, .csv assumed.  If “”, save to original file.</li>
-<li><strong>crypt</strong> (<em>str</em>) – Encryption key  <code class="xref py py-obj docutils literal"><span class="pre">SYS_CRYPT_KEY</span></code></li>
+<li><strong>file</strong> (<em>str</em>) &#8211; File name, .csv assumed.  If &#8220;&#8221;, save to original file.</li>
+<li><strong>crypt</strong> (<em>str</em>) &#8211; Encryption key  <a class="reference internal" href="GXGEOSOFT.html#sys-crypt-key"><span class="std std-ref">SYS_CRYPT_KEY constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -702,9 +705,9 @@ replaced by:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>rec</strong> (<em>int</em>) – Search start record</li>
-<li><strong>fld</strong> (<em>int</em>) – Field number</li>
-<li><strong>field</strong> (<em>str</em>) – Search string (case sensitive)</li>
+<li><strong>rec</strong> (<em>int</em>) &#8211; Search start record</li>
+<li><strong>fld</strong> (<em>int</em>) &#8211; Field number</li>
+<li><strong>field</strong> (<em>str</em>) &#8211; Search string (case sensitive)</li>
 </ul>
 </td>
 </tr>
@@ -731,9 +734,9 @@ record number if search succeeds</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>record</strong> (<em>int</em>) – Record number</li>
-<li><strong>field</strong> (<em>int</em>) – Field number</li>
-<li><strong>data</strong> (<em>float</em>) – Entry</li>
+<li><strong>record</strong> (<em>int</em>) &#8211; Record number</li>
+<li><strong>field</strong> (<em>int</em>) &#8211; Field number</li>
+<li><strong>data</strong> (<em>float</em>) &#8211; Entry</li>
 </ul>
 </td>
 </tr>
@@ -753,9 +756,9 @@ record number if search succeeds</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>record</strong> (<em>int</em>) – Record number</li>
-<li><strong>field</strong> (<em>int</em>) – Field number</li>
-<li><strong>data</strong> (<em>int</em>) – Entry</li>
+<li><strong>record</strong> (<em>int</em>) &#8211; Record number</li>
+<li><strong>field</strong> (<em>int</em>) &#8211; Field number</li>
+<li><strong>data</strong> (<em>int</em>) &#8211; Entry</li>
 </ul>
 </td>
 </tr>
@@ -775,9 +778,9 @@ record number if search succeeds</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>record</strong> (<em>int</em>) – Record number</li>
-<li><strong>field</strong> (<em>int</em>) – Field number</li>
-<li><strong>token</strong> (<em>str</em>) – Entry</li>
+<li><strong>record</strong> (<em>int</em>) &#8211; Record number</li>
+<li><strong>field</strong> (<em>int</em>) &#8211; Field number</li>
+<li><strong>token</strong> (<em>str</em>) &#8211; Entry</li>
 </ul>
 </td>
 </tr>
@@ -932,7 +935,7 @@ record number if search succeeds</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

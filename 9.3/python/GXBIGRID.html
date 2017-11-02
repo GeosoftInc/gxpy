@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>GXBIGRID class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -149,13 +152,13 @@ control file parameters into the <a class="reference internal" href="#geosoft.gx
 <dl class="method">
 <dt id="geosoft.gxapi.GXBIGRID.load_parms">
 <code class="descname">load_parms</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXBIGRID.load_parms" title="Permalink to this definition">¶</a></dt>
-<dd><p>Retrieves a Bigrid object’s control parameters from a file,
-or sets the parameters to default if the file doesn’t exist.</p>
+<dd><p>Retrieves a Bigrid object&#8217;s control parameters from a file,
+or sets the parameters to default if the file doesn&#8217;t exist.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – Name of file to get the parameter settings from</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; Name of file to get the parameter settings from</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - Ok
 1 - Error</td>
@@ -171,7 +174,7 @@ or sets the parameters to default if the file doesn’t exist.</p>
 <p>If the control file name passed into this function is a file
 which does not exist, then the defaults for a Bigrid control
 file will be generated and put into the <a class="reference internal" href="#geosoft.gxapi.GXBIGRID" title="geosoft.gxapi.GXBIGRID"><code class="xref py py-obj docutils literal"><span class="pre">GXBIGRID</span></code></a> object.
-Otherwise, the control file’s settings are retrieved from
+Otherwise, the control file&#8217;s settings are retrieved from
 the file and loaded into the <a class="reference internal" href="#geosoft.gxapi.GXBIGRID" title="geosoft.gxapi.GXBIGRID"><code class="xref py py-obj docutils literal"><span class="pre">GXBIGRID</span></code></a> object.</p>
 </dd></dl>
 
@@ -184,9 +187,9 @@ the file and loaded into the <a class="reference internal" href="#geosoft.gxapi.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>title</strong> (<em>str</em>) – New grid title</li>
-<li><strong>cell</strong> (<em>str</em>) – New grid cell size as a string, blank for default</li>
-<li><strong>warp</strong> (<em>str</em>) – Warp projection file name</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; New grid title</li>
+<li><strong>cell</strong> (<em>str</em>) &#8211; New grid cell size as a string, blank for default</li>
+<li><strong>warp</strong> (<em>str</em>) &#8211; Warp projection file name</li>
 </ul>
 </td>
 </tr>
@@ -228,9 +231,9 @@ output file parameters.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>zchan</strong> (<em>str</em>) – Not used, pass as “”</li>
-<li><strong>in_dat</strong> (<a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><em>GXDAT</em></a>) – Handle to source <a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><code class="xref py py-obj docutils literal"><span class="pre">GXDAT</span></code></a> object (from database)</li>
-<li><strong>out_dat</strong> (<a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><em>GXDAT</em></a>) – Handle to output grid file <a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><code class="xref py py-obj docutils literal"><span class="pre">GXDAT</span></code></a></li>
+<li><strong>zchan</strong> (<em>str</em>) &#8211; Not used, pass as &#8220;&#8221;</li>
+<li><strong>in_dat</strong> (<a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><em>GXDAT</em></a>) &#8211; Handle to source <a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><code class="xref py py-obj docutils literal"><span class="pre">GXDAT</span></code></a> object (from database)</li>
+<li><strong>out_dat</strong> (<a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><em>GXDAT</em></a>) &#8211; Handle to output grid file <a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><code class="xref py py-obj docutils literal"><span class="pre">GXDAT</span></code></a></li>
 </ul>
 </td>
 </tr>
@@ -251,10 +254,10 @@ output file parameters with a projection handle.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>zchan</strong> (<em>str</em>) – Not used, pass as “”</li>
-<li><strong>in_dat</strong> (<a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><em>GXDAT</em></a>) – Handle to source <a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><code class="xref py py-obj docutils literal"><span class="pre">GXDAT</span></code></a> object (from database)</li>
-<li><strong>out_dat</strong> (<a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><em>GXDAT</em></a>) – Handle to output grid file <a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><code class="xref py py-obj docutils literal"><span class="pre">GXDAT</span></code></a></li>
-<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> handle of the projection system</li>
+<li><strong>zchan</strong> (<em>str</em>) &#8211; Not used, pass as &#8220;&#8221;</li>
+<li><strong>in_dat</strong> (<a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><em>GXDAT</em></a>) &#8211; Handle to source <a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><code class="xref py py-obj docutils literal"><span class="pre">GXDAT</span></code></a> object (from database)</li>
+<li><strong>out_dat</strong> (<a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><em>GXDAT</em></a>) &#8211; Handle to output grid file <a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><code class="xref py py-obj docutils literal"><span class="pre">GXDAT</span></code></a></li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) &#8211; <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> handle of the projection system</li>
 </ul>
 </td>
 </tr>
@@ -268,13 +271,13 @@ output file parameters with a projection handle.</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXBIGRID.save_parms">
 <code class="descname">save_parms</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXBIGRID.save_parms" title="Permalink to this definition">¶</a></dt>
-<dd><p>Puts the Bigrid object’s control parameters back into
+<dd><p>Puts the Bigrid object&#8217;s control parameters back into
 its control file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – Name of file to put the parameter settings into</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) &#8211; Name of file to put the parameter settings into</td>
 </tr>
 </tbody>
 </table>
@@ -315,7 +318,7 @@ created. Otherwise, the old file will be overwritten.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

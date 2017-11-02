@@ -46,6 +46,8 @@ New Functions
 
 :func:`geosoft.gxpy.group.color_from_string` Return a Geosoft color number from a color string.
 
+:func:`geosoft.gxpy.group.contour` Create a contour group from a grid file.  A default contour interval is determined from the grid.
+
 :func:`geosoft.gxpy.gx.GXpy.has_entitlement` Returns True if the user has this entitlement.
 
 :func:`geosoft.gxpy.map.Map.export_geotiff` Export map as a GeoTIFF image
@@ -289,13 +291,17 @@ New Functions
 
 :func:`geosoft.gxpy.gx.track_resource` Track a resource.  Resource tracking is useful for debugging resource leaks.  If you create a class
 
+:func:`geosoft.gxpy.map.Map.aggregate_list` List of all aggregates in the map as 'view_name/group_name' (mode=0) or
+
 :func:`geosoft.gxpy.map.Map.annotate_data_ll` Annotate the data view axis
 
 :func:`geosoft.gxpy.map.Map.annotate_data_xy` Annotate a data view axis
 
-:func:`geosoft.gxpy.map.Map.create_linked_3d_view` Create a linked 3D view inside a 2D map to a :class:`gxpy.view.View_3d` in a 3DV
+:func:`geosoft.gxpy.map.Map.copy_view` Copy an existing view into a new view.
 
-:func:`geosoft.gxpy.map.Map.delete_view` Delete a view from a map. You cannot delete the last view in a mep.
+:func:`geosoft.gxpy.map.Map.create_linked_3d_view` Create a linked 3D view inside a 2D map to a `geosoft.gxpy.view.View_3d` in a 3DV
+
+:func:`geosoft.gxpy.map.Map.delete_view` Delete a view from a map. You cannot delete the last view in a map.
 
 :func:`geosoft.gxpy.map.Map.extent_data_views` Returns the extent of all data views on the map in map cm.
 
@@ -315,7 +321,7 @@ New Functions
 
 :func:`geosoft.gxpy.map.crc_map` Return the CRC of a map based on the output bitmap image.
 
-:func:`geosoft.gxpy.map.delete_files` Delete all files associates with this map name.
+:func:`geosoft.gxpy.map.delete_files` Delete all files associated with this map name.
 
 :func:`geosoft.gxpy.map.map_file_name` Return a fully resolved map file path using the file name, with .map extension
 
@@ -984,11 +990,11 @@ New Functions
 
 :func:`geosoft.gxapi.GXIPJ.set_3d_matrix_orientation` Apply a 3D orientation directly using matrix coefficients.
 
-:func:`geosoft.gxapi.GXMVIEW.hide_shadow2_d_interpretations` Hide/Show 2d shadow interpretations.
+:func:`geosoft.gxapi.GXMVIEW.hide_shadow_2d_interpretations` Hide/Show 2d shadow interpretations.
 
 :func:`geosoft.gxapi.GXMVU.generate_surface_from_voxel` TODO...
 
-:func:`geosoft.gxapi.GXPDF3D.export2_d` Export a 2D map to a PDF file.
+:func:`geosoft.gxapi.GXPDF3D.export_2d` Export a 2D map to a PDF file.
 
 :func:`geosoft.gxapi.GXPROJ.add_document_without_opening` Adds (and opens) a document file in the current project.
 

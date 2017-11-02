@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>GXIGRF class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -110,12 +113,12 @@ reference field.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>el</strong> (<em>float</em>) – Elevation (metres)</li>
-<li><strong>lon</strong> (<em>float</em>) – Longitude (-180 to 180)</li>
-<li><strong>lat</strong> (<em>float</em>) – Latitude  (-90 to 90) Returns</li>
-<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Field strength</li>
-<li><strong>inc</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Field inclination</li>
-<li><strong>dec</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Field declination</li>
+<li><strong>el</strong> (<em>float</em>) &#8211; Elevation (metres)</li>
+<li><strong>lon</strong> (<em>float</em>) &#8211; Longitude (-180 to 180)</li>
+<li><strong>lat</strong> (<em>float</em>) &#8211; Latitude  (-90 to 90) Returns</li>
+<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Field strength</li>
+<li><strong>inc</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Field inclination</li>
+<li><strong>dec</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Field declination</li>
 </ul>
 </td>
 </tr>
@@ -133,18 +136,18 @@ obtained with <a class="reference internal" href="#geosoft.gxapi.GXIGRF.create" 
 <dl class="method">
 <dt id="geosoft.gxapi.GXIGRF.calc_vv">
 <code class="descname">calc_vv</code><span class="sig-paren">(</span><em>gv_vel</em>, <em>gv_vlon</em>, <em>gv_vlat</em>, <em>gv_vfs</em>, <em>gv_vinc</em>, <em>gv_vdec</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIGRF.calc_vv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal"><span class="pre">GXIGRF</span></code></a> data <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a>’s for a given <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal"><span class="pre">GXIGRF</span></code></a> model.</p>
+<dd><p>Calculate <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal"><span class="pre">GXIGRF</span></code></a> data <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a>&#8216;s for a given <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal"><span class="pre">GXIGRF</span></code></a> model.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>gv_vel</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input elevation data (metres)</li>
-<li><strong>gv_vlon</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input longitude data (-180 to 180)</li>
-<li><strong>gv_vlat</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input latitude data  (-90 to 90)</li>
-<li><strong>gv_vfs</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Output total field</li>
-<li><strong>gv_vinc</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Output inclination</li>
-<li><strong>gv_vdec</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Output declination</li>
+<li><strong>gv_vel</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Input elevation data (metres)</li>
+<li><strong>gv_vlon</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Input longitude data (-180 to 180)</li>
+<li><strong>gv_vlat</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Input latitude data  (-90 to 90)</li>
+<li><strong>gv_vfs</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Output total field</li>
+<li><strong>gv_vinc</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Output inclination</li>
+<li><strong>gv_vdec</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Output declination</li>
 </ul>
 </td>
 </tr>
@@ -157,13 +160,13 @@ obtained with <a class="reference internal" href="#geosoft.gxapi.GXIGRF.create" 
 <p>Calculate <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal"><span class="pre">GXIGRF</span></code></a> data (total field, inclination, and declination)
 for a given <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal"><span class="pre">GXIGRF</span></code></a> model. The model used will be the same as that
 obtained with <a class="reference internal" href="#geosoft.gxapi.GXIGRF.create" title="geosoft.gxapi.GXIGRF.create"><code class="xref py py-obj docutils literal"><span class="pre">create</span></code></a>.
-All of the <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a>’s should be the same length. The function
+All of the <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a>&#8216;s should be the same length. The function
 will abort if they are not.</p>
 <p>No assumption is made on what data types are contained by
-any of the <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a>’s. However, all total field, inclination, and
+any of the <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a>&#8216;s. However, all total field, inclination, and
 declination values are internally calculated as real data.
 These values will be converted to the types contained in the
-output <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a>’s.</p>
+output <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a>&#8216;s.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -175,9 +178,9 @@ output <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>date</strong> (<em>float</em>) – Date required</li>
-<li><strong>year</strong> (<em>int</em>) – Year of the <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal"><span class="pre">GXIGRF</span></code></a> model to use</li>
-<li><strong>filename</strong> (<em>str</em>) – Name of the <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal"><span class="pre">GXIGRF</span></code></a> reference data file</li>
+<li><strong>date</strong> (<em>float</em>) &#8211; Date required</li>
+<li><strong>year</strong> (<em>int</em>) &#8211; Year of the <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal"><span class="pre">GXIGRF</span></code></a> model to use</li>
+<li><strong>filename</strong> (<em>str</em>) &#8211; Name of the <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal"><span class="pre">GXIGRF</span></code></a> reference data file</li>
 </ul>
 </td>
 </tr>
@@ -194,7 +197,7 @@ output <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="
 </div>
 <p><strong>Note:</strong></p>
 <p>If the year of the <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal"><span class="pre">GXIGRF</span></code></a> model is dummy, then
-the <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal"><span class="pre">GXIGRF</span></code></a> year nearest to the line’s date will
+the <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal"><span class="pre">GXIGRF</span></code></a> year nearest to the line&#8217;s date will
 be used. Otherwise, the specified year is used.</p>
 </dd></dl>
 
@@ -207,9 +210,9 @@ be used. Otherwise, the specified year is used.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>file_name</strong> (<em>str</em>) – Model data file name</li>
-<li><strong>min</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Minimum year  (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rMAX" title="geosoft.gxapi.rMAX"><code class="xref py py-obj docutils literal"><span class="pre">rMAX</span></code></a> if none found)</li>
-<li><strong>max</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Maximum year  (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rMIN" title="geosoft.gxapi.rMIN"><code class="xref py py-obj docutils literal"><span class="pre">rMIN</span></code></a> if none found)</li>
+<li><strong>file_name</strong> (<em>str</em>) &#8211; Model data file name</li>
+<li><strong>min</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Minimum year  (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rMAX" title="geosoft.gxapi.rMAX"><code class="xref py py-obj docutils literal"><span class="pre">rMAX</span></code></a> if none found)</li>
+<li><strong>max</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Maximum year  (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rMIN" title="geosoft.gxapi.rMIN"><code class="xref py py-obj docutils literal"><span class="pre">rMIN</span></code></a> if none found)</li>
 </ul>
 </td>
 </tr>
@@ -281,7 +284,7 @@ return an error otherwise.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

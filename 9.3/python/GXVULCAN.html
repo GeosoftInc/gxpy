@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>GXVULCAN class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -115,12 +118,12 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>block_model_file</strong> (<em>str</em>) – Block model file</li>
-<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Block model projection</li>
-<li><strong>variable_to_export</strong> (<em>str</em>) – Variable to import</li>
-<li><strong>output_voxel_filename</strong> (<em>str</em>) – Ouput voxel filename</li>
-<li><strong>remove_default_values</strong> (<em>int</em>) – Remove default values from input? <code class="xref py py-obj docutils literal"><span class="pre">GEO_BOOL</span></code></li>
-<li><strong>rock_code_filename</strong> (<em>str</em>) – Rock code file for string variable imports. Optional, unused for numeric variable imports.</li>
+<li><strong>block_model_file</strong> (<em>str</em>) &#8211; Block model file</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) &#8211; Block model projection</li>
+<li><strong>variable_to_export</strong> (<em>str</em>) &#8211; Variable to import</li>
+<li><strong>output_voxel_filename</strong> (<em>str</em>) &#8211; Ouput voxel filename</li>
+<li><strong>remove_default_values</strong> (<em>bool</em>) &#8211; Remove default values from input?</li>
+<li><strong>rock_code_filename</strong> (<em>str</em>) &#8211; Rock code file for string variable imports. Optional, unused for numeric variable imports.</li>
 </ul>
 </td>
 </tr>
@@ -140,9 +143,9 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>block_model_file</strong> (<em>str</em>) – Block model file</li>
-<li><strong>variable_name</strong> (<em>str</em>) – Variable name</li>
-<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – List used to return variable names</li>
+<li><strong>block_model_file</strong> (<em>str</em>) &#8211; Block model file</li>
+<li><strong>variable_name</strong> (<em>str</em>) &#8211; Variable name</li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; List used to return variable names</li>
 </ul>
 </td>
 </tr>
@@ -162,9 +165,9 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>block_model_file</strong> (<em>str</em>) – Block model file</li>
-<li><strong>query</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">BLOCK_MODEL_VARIABLE_TYPE</span></code> Which variables to return.</li>
-<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – List used to return variable names/descriptions.</li>
+<li><strong>block_model_file</strong> (<em>str</em>) &#8211; Block model file</li>
+<li><strong>query</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#block-model-variable-type"><span class="std std-ref">BLOCK_MODEL_VARIABLE_TYPE constants</span></a> Which variables to return.</li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; List used to return variable names/descriptions.</li>
 </ul>
 </td>
 </tr>
@@ -197,7 +200,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>block_model_file</strong> (<em>str</em>) – Block model file</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>block_model_file</strong> (<em>str</em>) &#8211; Block model file</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - No
 1 - Yes</td>
@@ -219,7 +222,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>triangulation_file</strong> (<em>str</em>) – Triangulation file</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>triangulation_file</strong> (<em>str</em>) &#8211; Triangulation file</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - No
 1 - Yes</td>
@@ -256,10 +259,10 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>triangulation_file</strong> (<em>str</em>) – Triangulation file</li>
-<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Triangulation projection</li>
-<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – Destination <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW</span></code></a></li>
-<li><strong>new_group_name</strong> (<em>str</em>) – New group name</li>
+<li><strong>triangulation_file</strong> (<em>str</em>) &#8211; Triangulation file</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) &#8211; Triangulation projection</li>
+<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) &#8211; Destination <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW</span></code></a></li>
+<li><strong>new_group_name</strong> (<em>str</em>) &#8211; New group name</li>
 </ul>
 </td>
 </tr>
@@ -325,7 +328,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

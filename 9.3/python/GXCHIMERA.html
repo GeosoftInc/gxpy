@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>GXCHIMERA class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -115,7 +118,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>element</strong> (<em>str</em>) – Element name (case insensitive)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>element</strong> (<em>str</em>) &#8211; Element name (case insensitive)</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The atomic weight of the given element.</td>
 </tr>
@@ -128,7 +131,7 @@
 </div>
 <p><strong>Note:</strong></p>
 <p>If the input string is not an element symbol (elements in the range
-1-92, “H” to “U”), then returns a dummy (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_R8DM" title="geosoft.gxapi.GS_R8DM"><code class="xref py py-obj docutils literal"><span class="pre">GS_R8DM</span></code></a>).</p>
+1-92, &#8220;H&#8221; to &#8220;U&#8221;), then returns a dummy (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_R8DM" title="geosoft.gxapi.GS_R8DM"><code class="xref py py-obj docutils literal"><span class="pre">GS_R8DM</span></code></a>).</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -140,17 +143,17 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View object to plot to</li>
-<li><strong>data_group</strong> (<em>str</em>) – Data group name</li>
-<li><strong>offset_group</strong> (<em>str</em>) – Offset group name</li>
-<li><strong>xvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X locations</li>
-<li><strong>yvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y locations</li>
-<li><strong>dvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Data handles, stored as INT values</li>
-<li><strong>cvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Colors</li>
-<li><strong>col</strong> (<em>int</em>) – Color for edges</li>
-<li><strong>offset</strong> (<em>int</em>) – Offset symbols (0: No, 1: Yes)</li>
-<li><strong>offset_size</strong> (<em>float</em>) – Offset symbol size</li>
-<li><strong>width</strong> (<em>float</em>) – Single bar width in data units.</li>
+<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) &#8211; View object to plot to</li>
+<li><strong>data_group</strong> (<em>str</em>) &#8211; Data group name</li>
+<li><strong>offset_group</strong> (<em>str</em>) &#8211; Offset group name</li>
+<li><strong>xvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; X locations</li>
+<li><strong>yvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Y locations</li>
+<li><strong>dvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Data handles, stored as INT values</li>
+<li><strong>cvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Colors</li>
+<li><strong>col</strong> (<em>int</em>) &#8211; Color for edges</li>
+<li><strong>offset</strong> (<em>int</em>) &#8211; Offset symbols (0: No, 1: Yes)</li>
+<li><strong>offset_size</strong> (<em>float</em>) &#8211; Offset symbol size</li>
+<li><strong>width</strong> (<em>float</em>) &#8211; Single bar width in data units.</li>
 </ul>
 </td>
 </tr>
@@ -161,7 +164,7 @@
 </div>
 <p><strong>Note:</strong></p>
 <p>The number of channels is taken from the Data handles <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a>.
-Plots a bar plot with the center of the “X” axis at the symbol location.
+Plots a bar plot with the center of the &#8220;X&#8221; axis at the symbol location.
 See the note on offset symbols in <a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.rose_plot" title="geosoft.gxapi.GXCHIMERA.rose_plot"><code class="xref py py-obj docutils literal"><span class="pre">rose_plot</span></code></a></p>
 </dd></dl>
 
@@ -174,9 +177,9 @@ See the note on offset symbols in <a class="reference internal" href="#geosoft.g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>vv_r</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input range minima</li>
-<li><strong>vv_i</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input data <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a>.      (REAL)</li>
-<li><strong>vv_o</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Output (altered) <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a>.(REAL)</li>
+<li><strong>vv_r</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Input range minima</li>
+<li><strong>vv_i</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Input data <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a>.      (REAL)</li>
+<li><strong>vv_o</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Output (altered) <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a>.(REAL)</li>
 </ul>
 </td>
 </tr>
@@ -190,8 +193,8 @@ See the note on offset symbols in <a class="reference internal" href="#geosoft.g
 A list of values V is input and transformed to outputs N in the following manner:</p>
 <p>if(V) &gt;= M5) N = 5
 else if(V) &gt;= M4) N = 4
-…
-…
+...
+...
 else if(V) &gt;= M1) N = 1
 else N = 0</p>
 </dd></dl>
@@ -205,10 +208,10 @@ else N = 0</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>vv_r</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input range minima</li>
-<li><strong>vv_i</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input data <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a>.      (REAL)</li>
-<li><strong>det_limit</strong> (<em>float</em>) – Detection limit (can be <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a>)</li>
-<li><strong>vv_o</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Output (altered) <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a>.(REAL)</li>
+<li><strong>vv_r</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Input range minima</li>
+<li><strong>vv_i</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Input data <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a>.      (REAL)</li>
+<li><strong>det_limit</strong> (<em>float</em>) &#8211; Detection limit (can be <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a>)</li>
+<li><strong>vv_o</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Output (altered) <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a>.(REAL)</li>
 </ul>
 </td>
 </tr>
@@ -232,9 +235,9 @@ the output value is set to zero.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input data vv (altered).</li>
-<li><strong>det_limit</strong> (<em>float</em>) – Detection limit</li>
-<li><strong>conv</strong> (<em>int</em>) – Auto-convert negatives?</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Input data vv (altered).</li>
+<li><strong>det_limit</strong> (<em>float</em>) &#8211; Detection limit</li>
+<li><strong>conv</strong> (<em>int</em>) &#8211; Auto-convert negatives?</li>
 </ul>
 </td>
 </tr>
@@ -266,12 +269,12 @@ one-half the detection limit.</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View</li>
-<li><strong>vv_xi</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Original (marker) X location</li>
-<li><strong>vv_yi</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Original (marker) Y location</li>
-<li><strong>vv_xo</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Offset (new) X location</li>
-<li><strong>vv_yo</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Offset (new) Y location</li>
-<li><strong>off_size</strong> (<em>float</em>) – Marker symbol radius</li>
+<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) &#8211; View</li>
+<li><strong>vv_xi</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Original (marker) X location</li>
+<li><strong>vv_yi</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Original (marker) Y location</li>
+<li><strong>vv_xo</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Offset (new) X location</li>
+<li><strong>vv_yo</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Offset (new) Y location</li>
+<li><strong>off_size</strong> (<em>float</em>) &#8211; Marker symbol radius</li>
 </ul>
 </td>
 </tr>
@@ -293,14 +296,14 @@ one-half the detection limit.</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View</li>
-<li><strong>vv_xi</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Original (marker) X location</li>
-<li><strong>vv_yi</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Original (marker) Y location</li>
-<li><strong>vv_xo</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Offset (new) X location</li>
-<li><strong>vv_yo</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Offset (new) Y location</li>
-<li><strong>off_size</strong> (<em>float</em>) – Offset symbol width</li>
-<li><strong>x_size</strong> (<em>float</em>) – Offset symbol height</li>
-<li><strong>y_size</strong> (<em>float</em>) – Marker symbol radius</li>
+<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) &#8211; View</li>
+<li><strong>vv_xi</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Original (marker) X location</li>
+<li><strong>vv_yi</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Original (marker) Y location</li>
+<li><strong>vv_xo</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Offset (new) X location</li>
+<li><strong>vv_yo</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Offset (new) Y location</li>
+<li><strong>off_size</strong> (<em>float</em>) &#8211; Offset symbol width</li>
+<li><strong>x_size</strong> (<em>float</em>) &#8211; Offset symbol height</li>
+<li><strong>y_size</strong> (<em>float</em>) &#8211; Marker symbol radius</li>
 </ul>
 </td>
 </tr>
@@ -322,18 +325,18 @@ one-half the detection limit.</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View</li>
-<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Duplicate data</li>
-<li><strong>log</strong> (<em>int</em>) – Log-transform: 0 - linear, 1 - log</li>
-<li><strong>det_lim</strong> (<em>float</em>) – Detect Limit</li>
-<li><strong>old</strong> (<em>int</em>) – Number of old samples in the <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a></li>
-<li><strong>vv_tol</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Tolerances (1-5 values)</li>
-<li><strong>title</strong> (<em>str</em>) – Title</li>
-<li><strong>unit</strong> (<em>str</em>) – Unit</li>
-<li><strong>x0</strong> (<em>float</em>) – X location (bottom left corner of graph)</li>
-<li><strong>y0</strong> (<em>float</em>) – Y location</li>
-<li><strong>xs</strong> (<em>float</em>) – Graph width</li>
-<li><strong>ys</strong> (<em>float</em>) – Graph height</li>
+<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) &#8211; View</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Duplicate data</li>
+<li><strong>log</strong> (<em>int</em>) &#8211; Log-transform: 0 - linear, 1 - log</li>
+<li><strong>det_lim</strong> (<em>float</em>) &#8211; Detect Limit</li>
+<li><strong>old</strong> (<em>int</em>) &#8211; Number of old samples in the <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a></li>
+<li><strong>vv_tol</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Tolerances (1-5 values)</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title</li>
+<li><strong>unit</strong> (<em>str</em>) &#8211; Unit</li>
+<li><strong>x0</strong> (<em>float</em>) &#8211; X location (bottom left corner of graph)</li>
+<li><strong>y0</strong> (<em>float</em>) &#8211; Y location</li>
+<li><strong>xs</strong> (<em>float</em>) &#8211; Graph width</li>
+<li><strong>ys</strong> (<em>float</em>) &#8211; Graph height</li>
 </ul>
 </td>
 </tr>
@@ -353,22 +356,22 @@ one-half the detection limit.</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>map</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) – Map</li>
-<li><strong>view</strong> (<em>str</em>) – New view name</li>
-<li><strong>group</strong> (<em>str</em>) – New group name</li>
-<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Duplicate data</li>
-<li><strong>log</strong> (<em>int</em>) – Log-transform: 0 - linear, 1 - log</li>
-<li><strong>det_lim</strong> (<em>float</em>) – Detect Limit</li>
-<li><strong>old</strong> (<em>int</em>) – Number of old samples in the <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a></li>
-<li><strong>vv_tol</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Tolerances (1-5 values)</li>
-<li><strong>title</strong> (<em>str</em>) – Title</li>
-<li><strong>unit</strong> (<em>str</em>) – Unit</li>
-<li><strong>vvx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> X</li>
-<li><strong>vv_line</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> Line</li>
-<li><strong>vv_fid</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> Fid</li>
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
-<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Returned MinY</li>
-<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Returned MaxY</li>
+<li><strong>map</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) &#8211; Map</li>
+<li><strong>view</strong> (<em>str</em>) &#8211; New view name</li>
+<li><strong>group</strong> (<em>str</em>) &#8211; New group name</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Duplicate data</li>
+<li><strong>log</strong> (<em>int</em>) &#8211; Log-transform: 0 - linear, 1 - log</li>
+<li><strong>det_lim</strong> (<em>float</em>) &#8211; Detect Limit</li>
+<li><strong>old</strong> (<em>int</em>) &#8211; Number of old samples in the <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a></li>
+<li><strong>vv_tol</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Tolerances (1-5 values)</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title</li>
+<li><strong>unit</strong> (<em>str</em>) &#8211; Unit</li>
+<li><strong>vvx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> X</li>
+<li><strong>vv_line</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> Line</li>
+<li><strong>vv_fid</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> Fid</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database</li>
+<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Returned MinY</li>
+<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Returned MaxY</li>
 </ul>
 </td>
 </tr>
@@ -390,37 +393,37 @@ Optional database linking.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View</li>
-<li><strong>title</strong> (<em>str</em>) – Title</li>
-<li><strong>x1</strong> (<em>float</em>) – X location (bottom left corner of box)</li>
-<li><strong>y1</strong> (<em>float</em>) – Y location</li>
-<li><strong>width</strong> (<em>float</em>) – Box width</li>
-<li><strong>height</strong> (<em>float</em>) – Box height</li>
-<li><strong>x_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Horizontal channel data</li>
-<li><strong>y_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Vertical channel data</li>
-<li><strong>m_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Mask channel data (can be NULL)</li>
-<li><strong>mask_col</strong> (<em>int</em>) – Mask Color; overrides symbol Color where mask data is not dummy. Pass an empty string to <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.color" title="geosoft.gxapi.GXMVIEW.color"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW.color</span></code></a> for no plot.</li>
-<li><strong>symbol_font</strong> (<em>str</em>) – Decorated font name, “” for default symbol font (normally symbols.gfn)</li>
-<li><strong>symbol_number</strong> (<em>int</em>) – Symbol number (&gt;=0)</li>
-<li><strong>symbol_size</strong> (<em>float</em>) – Symbol size ( &gt;=0)</li>
-<li><strong>symbol_angle</strong> (<em>float</em>) – Symbol angle (-360 to 360)</li>
-<li><strong>symbol_color</strong> (<em>int</em>) – Symbol Color</li>
-<li><strong>symbol_fill</strong> (<em>int</em>) – Symbol fill Color</li>
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database (source of data)</li>
-<li><strong>line_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Line handles for data</li>
-<li><strong>fid_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Fid values for data</li>
-<li><strong>annotn</strong> (<em>int</em>) – Annotation style 0 - outside, 1 - inside</li>
-<li><strong>x_chan</strong> (<em>str</em>) – Horizontal channel name</li>
-<li><strong>y_chan</strong> (<em>str</em>) – Vertical channel name</li>
-<li><strong>x_units</strong> (<em>str</em>) – Horizontal channel units</li>
-<li><strong>y_units</strong> (<em>str</em>) – Vertical channel units</li>
-<li><strong>x_min</strong> (<em>float</em>) – Min. Horizontal value, <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default</li>
-<li><strong>x_max</strong> (<em>float</em>) – Max. Horizontal value</li>
-<li><strong>y_min</strong> (<em>float</em>) – Min. Vertical value</li>
-<li><strong>y_max</strong> (<em>float</em>) – Max. Vertical value</li>
-<li><strong>x_lin</strong> (<em>int</em>) – Horizontal axis scaling: 0 - linear, 1 - log</li>
-<li><strong>y_lin</strong> (<em>int</em>) – Vertical axis scaling</li>
-<li><strong>overlay</strong> (<em>str</em>) – Plot overlay (“” for none)</li>
+<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) &#8211; View</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title</li>
+<li><strong>x1</strong> (<em>float</em>) &#8211; X location (bottom left corner of box)</li>
+<li><strong>y1</strong> (<em>float</em>) &#8211; Y location</li>
+<li><strong>width</strong> (<em>float</em>) &#8211; Box width</li>
+<li><strong>height</strong> (<em>float</em>) &#8211; Box height</li>
+<li><strong>x_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Horizontal channel data</li>
+<li><strong>y_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Vertical channel data</li>
+<li><strong>m_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Mask channel data (can be NULL)</li>
+<li><strong>mask_col</strong> (<em>int</em>) &#8211; Mask Color; overrides symbol Color where mask data is not dummy. Pass an empty string to <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.color" title="geosoft.gxapi.GXMVIEW.color"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW.color</span></code></a> for no plot.</li>
+<li><strong>symbol_font</strong> (<em>str</em>) &#8211; Decorated font name, &#8220;&#8221; for default symbol font (normally symbols.gfn)</li>
+<li><strong>symbol_number</strong> (<em>int</em>) &#8211; Symbol number (&gt;=0)</li>
+<li><strong>symbol_size</strong> (<em>float</em>) &#8211; Symbol size ( &gt;=0)</li>
+<li><strong>symbol_angle</strong> (<em>float</em>) &#8211; Symbol angle (-360 to 360)</li>
+<li><strong>symbol_color</strong> (<em>int</em>) &#8211; Symbol Color</li>
+<li><strong>symbol_fill</strong> (<em>int</em>) &#8211; Symbol fill Color</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database (source of data)</li>
+<li><strong>line_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Line handles for data</li>
+<li><strong>fid_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Fid values for data</li>
+<li><strong>annotn</strong> (<em>int</em>) &#8211; Annotation style 0 - outside, 1 - inside</li>
+<li><strong>x_chan</strong> (<em>str</em>) &#8211; Horizontal channel name</li>
+<li><strong>y_chan</strong> (<em>str</em>) &#8211; Vertical channel name</li>
+<li><strong>x_units</strong> (<em>str</em>) &#8211; Horizontal channel units</li>
+<li><strong>y_units</strong> (<em>str</em>) &#8211; Vertical channel units</li>
+<li><strong>x_min</strong> (<em>float</em>) &#8211; Min. Horizontal value, <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default</li>
+<li><strong>x_max</strong> (<em>float</em>) &#8211; Max. Horizontal value</li>
+<li><strong>y_min</strong> (<em>float</em>) &#8211; Min. Vertical value</li>
+<li><strong>y_max</strong> (<em>float</em>) &#8211; Max. Vertical value</li>
+<li><strong>x_lin</strong> (<em>int</em>) &#8211; Horizontal axis scaling: 0 - linear, 1 - log</li>
+<li><strong>y_lin</strong> (<em>int</em>) &#8211; Vertical axis scaling</li>
+<li><strong>overlay</strong> (<em>str</em>) &#8211; Plot overlay (&#8220;&#8221; for none)</li>
 </ul>
 </td>
 </tr>
@@ -444,32 +447,32 @@ Optional database linking.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View</li>
-<li><strong>title</strong> (<em>str</em>) – Title</li>
-<li><strong>x1</strong> (<em>float</em>) – X location (bottom left corner of box)</li>
-<li><strong>y1</strong> (<em>float</em>) – Y location</li>
-<li><strong>side</strong> (<em>float</em>) – Triangle side length</li>
-<li><strong>x_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X channel data</li>
-<li><strong>y_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y channel data</li>
-<li><strong>z_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Z channel data</li>
-<li><strong>m_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Mask channel data</li>
-<li><strong>mask_col</strong> (<em>int</em>) – Mask color; overrides symbol color where mask data is not dummy. Pass an empty string to <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.color" title="geosoft.gxapi.GXMVIEW.color"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW.color</span></code></a> for no plot.</li>
-<li><strong>symbol_font</strong> (<em>str</em>) – Decorated font name, “” for default symbol font (normally symbols.gfn)</li>
-<li><strong>symbol_number</strong> (<em>int</em>) – Symbol number (&gt;=0)</li>
-<li><strong>symbol_size</strong> (<em>float</em>) – Symbol size ( &gt;=0)</li>
-<li><strong>symbol_angle</strong> (<em>float</em>) – Symbol angle (-360 to 360)</li>
-<li><strong>symbol_color</strong> (<em>int</em>) – Symbol color</li>
-<li><strong>symbol_fill</strong> (<em>int</em>) – Symbol fill color</li>
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database (source of data)</li>
-<li><strong>line_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Line handles for data</li>
-<li><strong>fid_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Fid values for data</li>
-<li><strong>x_chan</strong> (<em>str</em>) – X channel name</li>
-<li><strong>y_chan</strong> (<em>str</em>) – Y channel name</li>
-<li><strong>z_chan</strong> (<em>str</em>) – Z channel name</li>
-<li><strong>grid</strong> (<em>int</em>) – Plot Grid lines? (0: Just outside edge tics, 1: Grid lines).</li>
-<li><strong>tic</strong> (<em>float</em>) – Tic Increment (in percent)</li>
-<li><strong>grid_inc</strong> (<em>float</em>) – Grid increment (in percent)</li>
-<li><strong>overlay</strong> (<em>str</em>) – Plot overlay (“” for none)</li>
+<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) &#8211; View</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title</li>
+<li><strong>x1</strong> (<em>float</em>) &#8211; X location (bottom left corner of box)</li>
+<li><strong>y1</strong> (<em>float</em>) &#8211; Y location</li>
+<li><strong>side</strong> (<em>float</em>) &#8211; Triangle side length</li>
+<li><strong>x_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; X channel data</li>
+<li><strong>y_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Y channel data</li>
+<li><strong>z_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Z channel data</li>
+<li><strong>m_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Mask channel data</li>
+<li><strong>mask_col</strong> (<em>int</em>) &#8211; Mask color; overrides symbol color where mask data is not dummy. Pass an empty string to <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.color" title="geosoft.gxapi.GXMVIEW.color"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW.color</span></code></a> for no plot.</li>
+<li><strong>symbol_font</strong> (<em>str</em>) &#8211; Decorated font name, &#8220;&#8221; for default symbol font (normally symbols.gfn)</li>
+<li><strong>symbol_number</strong> (<em>int</em>) &#8211; Symbol number (&gt;=0)</li>
+<li><strong>symbol_size</strong> (<em>float</em>) &#8211; Symbol size ( &gt;=0)</li>
+<li><strong>symbol_angle</strong> (<em>float</em>) &#8211; Symbol angle (-360 to 360)</li>
+<li><strong>symbol_color</strong> (<em>int</em>) &#8211; Symbol color</li>
+<li><strong>symbol_fill</strong> (<em>int</em>) &#8211; Symbol fill color</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database (source of data)</li>
+<li><strong>line_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Line handles for data</li>
+<li><strong>fid_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Fid values for data</li>
+<li><strong>x_chan</strong> (<em>str</em>) &#8211; X channel name</li>
+<li><strong>y_chan</strong> (<em>str</em>) &#8211; Y channel name</li>
+<li><strong>z_chan</strong> (<em>str</em>) &#8211; Z channel name</li>
+<li><strong>grid</strong> (<em>int</em>) &#8211; Plot Grid lines? (0: Just outside edge tics, 1: Grid lines).</li>
+<li><strong>tic</strong> (<em>float</em>) &#8211; Tic Increment (in percent)</li>
+<li><strong>grid_inc</strong> (<em>float</em>) &#8211; Grid increment (in percent)</li>
+<li><strong>overlay</strong> (<em>str</em>) &#8211; Plot overlay (&#8220;&#8221; for none)</li>
 </ul>
 </td>
 </tr>
@@ -491,12 +494,12 @@ Optional database linking.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
-<li><strong>line</strong> (<em>int</em>) – Line to read</li>
-<li><strong>stage</strong> (<em>str</em>) – Geochem stage (just “raw data stage” for now).</li>
-<li><strong>exp</strong> (<em>str</em>) – Channel expression</li>
-<li><strong>ini</strong> (<em>str</em>) – INI file name with required units (e.g. PARAMETER.CU=”ppm”) (optional)</li>
-<li><strong>gvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Returned data</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database</li>
+<li><strong>line</strong> (<em>int</em>) &#8211; Line to read</li>
+<li><strong>stage</strong> (<em>str</em>) &#8211; Geochem stage (just &#8220;raw data stage&#8221; for now).</li>
+<li><strong>exp</strong> (<em>str</em>) &#8211; Channel expression</li>
+<li><strong>ini</strong> (<em>str</em>) &#8211; INI file name with required units (e.g. PARAMETER.CU=&#8221;ppm&#8221;) (optional)</li>
+<li><strong>gvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Returned data</li>
 </ul>
 </td>
 </tr>
@@ -520,20 +523,20 @@ with the calculated expression values.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – [i] database handle</li>
-<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – [i] channels of data to get</li>
-<li><strong>m_ch</strong> (<em>int</em>) – [i] mask channel (can be <a class="reference internal" href="GXDB.html#geosoft.gxapi.NULLSYMB" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal"><span class="pre">NULLSYMB</span></code></a>)</li>
-<li><strong>vv_trans</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – [i] transforms to apply</li>
-<li><strong>remove_dummy_rows</strong> (<em>int</em>) – [i] remove dummy rows?</li>
-<li><strong>vv_dummy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – [i] dummy row if this channel value is dummy (0:No, 1:Yes)? Effective only if “remove dummy rows” value is TRUE</li>
-<li><strong>warn</strong> (<em>int</em>) – [i] warn if rows removed because of dummy data items?</li>
-<li><strong>vv_d</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – [o] (INT) returned data - one <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> handle per channel</li>
-<li><strong>vv_line</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – [o] line symbols selected</li>
-<li><strong>vv_n</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – [o] number of original data items in each line</li>
-<li><strong>vv_used</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – [o] number of non-dummy rows</li>
-<li><strong>vv_index</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – [o] indices into original data</li>
-<li><strong>vv_fids</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – [o] Fid Starts (REAL)</li>
-<li><strong>vv_fidi</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – [o] Fid Increments (REAL)</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; [i] database handle</li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; [i] channels of data to get</li>
+<li><strong>m_ch</strong> (<em>int</em>) &#8211; [i] mask channel (can be <a class="reference internal" href="GXDB.html#geosoft.gxapi.NULLSYMB" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal"><span class="pre">NULLSYMB</span></code></a>)</li>
+<li><strong>vv_trans</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; [i] transforms to apply</li>
+<li><strong>remove_dummy_rows</strong> (<em>int</em>) &#8211; [i] remove dummy rows?</li>
+<li><strong>vv_dummy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; [i] dummy row if this channel value is dummy (0:No, 1:Yes)? Effective only if &#8220;remove dummy rows&#8221; value is TRUE</li>
+<li><strong>warn</strong> (<em>int</em>) &#8211; [i] warn if rows removed because of dummy data items?</li>
+<li><strong>vv_d</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; [o] (INT) returned data - one <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> handle per channel</li>
+<li><strong>vv_line</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; [o] line symbols selected</li>
+<li><strong>vv_n</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; [o] number of original data items in each line</li>
+<li><strong>vv_used</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; [o] number of non-dummy rows</li>
+<li><strong>vv_index</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; [o] indices into original data</li>
+<li><strong>vv_fids</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; [o] Fid Starts (REAL)</li>
+<li><strong>vv_fidi</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; [o] Fid Increments (REAL)</li>
 </ul>
 </td>
 </tr>
@@ -548,7 +551,7 @@ of data, guaranteeing no dummy items.
 Book-keeping VVs returned let you easily
 write back results to new channels in the
 correct locations.
-Set the “Dummy Row” <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> to 1 if you wish to
+Set the &#8220;Dummy Row&#8221; <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> to 1 if you wish to
 remove any row where a value for the corresponding
 channel is a dummy.</p>
 <p>Transforms to apply:</p>
@@ -567,11 +570,11 @@ channel is a dummy.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> handle</li>
-<li><strong>chan</strong> (<em>str</em>) – Channel name</li>
-<li><strong>trans_opt</strong> (<em>int</em>) – Transform option: -1, 0, 1 or 2</li>
-<li><strong>trans</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Returned transform used</li>
-<li><strong>lda</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Returned lambda value for option==2</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> handle</li>
+<li><strong>chan</strong> (<em>str</em>) &#8211; Channel name</li>
+<li><strong>trans_opt</strong> (<em>int</em>) &#8211; Transform option: -1, 0, 1 or 2</li>
+<li><strong>trans</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Returned transform used</li>
+<li><strong>lda</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Returned lambda value for option==2</li>
 </ul>
 </td>
 </tr>
@@ -593,24 +596,21 @@ must have the lambda value defined.</p>
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXCHIMERA.is_acquire_chan">
 <em class="property">classmethod </em><code class="descname">is_acquire_chan</code><span class="sig-paren">(</span><em>input_chan</em>, <em>chan</em>, <em>units</em>, <em>factor</em>, <em>oxide</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.is_acquire_chan" title="Permalink to this definition">¶</a></dt>
-<dd><p>Is this channel in acQuire format (e.g. “Ag_ppm_4AWR”)</p>
+<dd><p>Is this channel in acQuire format (e.g. &#8220;Ag_ppm_4AWR&#8221;)</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>input_chan</strong> (<em>str</em>) – String to test</li>
-<li><strong>chan</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Returned channel name</li>
-<li><strong>units</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Returned units</li>
-<li><strong>factor</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Buffer factor (e.g. ppm = 1.e-6)</li>
-<li><strong>oxide</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – <code class="xref py py-obj docutils literal"><span class="pre">GEO_BOOL</span></code> is this an oxide?</li>
+<li><strong>input_chan</strong> (<em>str</em>) &#8211; String to test</li>
+<li><strong>chan</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Returned channel name</li>
+<li><strong>units</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Returned units</li>
+<li><strong>factor</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Buffer factor (e.g. ppm = 1.e-6)</li>
+<li><strong>oxide</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.bool_ref" title="geosoft.gxapi.bool_ref"><em>bool_ref</em></a>) &#8211; is this an oxide?</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><code class="xref py py-obj docutils literal"><span class="pre">GEO_BOOL</span></code></p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
 </td>
 </tr>
 </tbody>
@@ -634,15 +634,12 @@ channel name.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>chan</strong> (<em>str</em>) – String to test</li>
-<li><strong>case</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">STR_CASE</span></code></li>
+<li><strong>chan</strong> (<em>str</em>) &#8211; String to test</li>
+<li><strong>case</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXSTR.html#str-case"><span class="std std-ref">STR_CASE constants</span></a></li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><code class="xref py py-obj docutils literal"><span class="pre">GEO_BOOL</span></code></p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
 </td>
 </tr>
 </tbody>
@@ -652,7 +649,7 @@ channel name.</p>
 </div>
 <p><strong>Note:</strong></p>
 <p>Suggested use - testing to see if a channel name is an
-element so that the “ASSAY” class can be set.</p>
+element so that the &#8220;ASSAY&#8221; class can be set.</p>
 </dd></dl>
 
 <dl class="method">
@@ -678,8 +675,8 @@ element so that the “ASSAY” class can be set.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<em>str</em>) – Database name</li>
-<li><strong>chan</strong> (<em>str</em>) – First chan name</li>
+<li><strong>db</strong> (<em>str</em>) &#8211; Database name</li>
+<li><strong>chan</strong> (<em>str</em>) &#8211; First chan name</li>
 </ul>
 </td>
 </tr>
@@ -703,8 +700,8 @@ just gets the name of the <a class="reference internal" href="GXEDB.html#geosoft
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<em>str</em>) – Database name</li>
-<li><strong>chan</strong> (<em>str</em>) – First chan name</li>
+<li><strong>db</strong> (<em>str</em>) &#8211; Database name</li>
+<li><strong>chan</strong> (<em>str</em>) &#8211; First chan name</li>
 </ul>
 </td>
 </tr>
@@ -725,7 +722,7 @@ just gets the name of the <a class="reference internal" href="GXEDB.html#geosoft
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>db</strong> (<em>str</em>) – Database name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>db</strong> (<em>str</em>) &#8211; Database name</td>
 </tr>
 </tbody>
 </table>
@@ -741,10 +738,10 @@ just gets the name of the <a class="reference internal" href="GXEDB.html#geosoft
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td>SCATTER.STM</td>
-<td>name of the scatter template, “none” for none</td>
+<td>name of the scatter template, &#8220;none&#8221; for none</td>
 </tr>
 <tr class="row-even"><td>SCATTER.STM_NAME</td>
-<td>name of last template section, “” for none.</td>
+<td>name of last template section, &#8220;&#8221; for none.</td>
 </tr>
 <tr class="row-odd"><td>SCATTER.X</td>
 <td>name of channel to display in X</td>
@@ -770,7 +767,7 @@ just gets the name of the <a class="reference internal" href="GXEDB.html#geosoft
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>db</strong> (<em>str</em>) – Database name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>db</strong> (<em>str</em>) &#8211; Database name</td>
 </tr>
 </tbody>
 </table>
@@ -786,10 +783,10 @@ just gets the name of the <a class="reference internal" href="GXEDB.html#geosoft
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td>TRIPLOT.TTM</td>
-<td>name of the triplot template, “none” for none</td>
+<td>name of the triplot template, &#8220;none&#8221; for none</td>
 </tr>
 <tr class="row-even"><td>TRIPLOT.TTM_NAME</td>
-<td>name of last template section, “” for none.</td>
+<td>name of last template section, &#8220;&#8221; for none.</td>
 </tr>
 <tr class="row-odd"><td>TRIPLOT.X</td>
 <td>name of channel to display in X</td>
@@ -817,8 +814,8 @@ just gets the name of the <a class="reference internal" href="GXEDB.html#geosoft
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – hDB - Database Object</li>
-<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> object to populate</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; hDB - Database Object</li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> object to populate</li>
 </ul>
 </td>
 </tr>
@@ -828,10 +825,10 @@ just gets the name of the <a class="reference internal" href="GXEDB.html#geosoft
 <p><span class="versionmodified">New in version 5.0.7.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>Loads a <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> with all channels with CLASS “MASK”, as well
-as all channels containing the string “MASK”, as long
+<p>Loads a <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> with all channels with CLASS &#8220;MASK&#8221;, as well
+as all channels containing the string &#8220;MASK&#8221;, as long
 as the CLASS for these channels is not set to something
-other than “” or “MASK”.</p>
+other than &#8220;&#8221; or &#8220;MASK&#8221;.</p>
 <p>This function has been duplicated by <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB.mask_chan_lst" title="geosoft.gxapi.GXDB.mask_chan_lst"><code class="xref py py-obj docutils literal"><span class="pre">GXDB.mask_chan_lst</span></code></a>, which
 is safe to use in applications which do not have <a class="reference internal" href="#geosoft.gxapi.GXCHIMERA" title="geosoft.gxapi.GXCHIMERA"><code class="xref py py-obj docutils literal"><span class="pre">GXCHIMERA</span></code></a> loaded.</p>
 </dd></dl>
@@ -859,8 +856,8 @@ is safe to use in applications which do not have <a class="reference internal" h
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – hDB - Database Object</li>
-<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> object to populate [recommended 2*`STR_DB_SYMBOL &lt;geosoft.gxapi.STR_DB_SYMBOL&gt;`]</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; hDB - Database Object</li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> object to populate [recommended 2*`STR_DB_SYMBOL &lt;geosoft.gxapi.STR_DB_SYMBOL&gt;`]</li>
 </ul>
 </td>
 </tr>
@@ -888,17 +885,17 @@ the currently displayed channels and only reload those).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View object to plot to</li>
-<li><strong>data_group</strong> (<em>str</em>) – Data group name</li>
-<li><strong>offset_group</strong> (<em>str</em>) – Offset group name</li>
-<li><strong>xvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X locations</li>
-<li><strong>yvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y locations</li>
-<li><strong>dvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Data handles, stored as INT values</li>
-<li><strong>cvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Colors</li>
-<li><strong>col</strong> (<em>int</em>) – Color for edges</li>
-<li><strong>offset</strong> (<em>int</em>) – Offset symbols (0: No, 1: Yes)</li>
-<li><strong>offset_size</strong> (<em>float</em>) – Offset symbol size</li>
-<li><strong>radius</strong> (<em>float</em>) – Pie plot radius in data units.</li>
+<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) &#8211; View object to plot to</li>
+<li><strong>data_group</strong> (<em>str</em>) &#8211; Data group name</li>
+<li><strong>offset_group</strong> (<em>str</em>) &#8211; Offset group name</li>
+<li><strong>xvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; X locations</li>
+<li><strong>yvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Y locations</li>
+<li><strong>dvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Data handles, stored as INT values</li>
+<li><strong>cvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Colors</li>
+<li><strong>col</strong> (<em>int</em>) &#8211; Color for edges</li>
+<li><strong>offset</strong> (<em>int</em>) &#8211; Offset symbols (0: No, 1: Yes)</li>
+<li><strong>offset_size</strong> (<em>float</em>) &#8211; Offset symbol size</li>
+<li><strong>radius</strong> (<em>float</em>) &#8211; Pie plot radius in data units.</li>
 </ul>
 </td>
 </tr>
@@ -923,18 +920,18 @@ See the note on offset symbols in <a class="reference internal" href="#geosoft.g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View object to plot to</li>
-<li><strong>data_group</strong> (<em>str</em>) – Data group name</li>
-<li><strong>offset_group</strong> (<em>str</em>) – Offset group name</li>
-<li><strong>xvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X locations</li>
-<li><strong>yvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y locations</li>
-<li><strong>dvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Data handles, stored as INT values</li>
-<li><strong>cvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Colors</li>
-<li><strong>col</strong> (<em>int</em>) – Color for edges</li>
-<li><strong>offset</strong> (<em>int</em>) – Offset symbols (0: No, 1: Yes)</li>
-<li><strong>offset_size</strong> (<em>float</em>) – Offset symbol size</li>
-<li><strong>radius</strong> (<em>float</em>) – Pie plot radius in data units.</li>
-<li><strong>start_angle</strong> (<em>float</em>) – Starting angle in degrees CCW from horizontal (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> gives 0.0)</li>
+<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) &#8211; View object to plot to</li>
+<li><strong>data_group</strong> (<em>str</em>) &#8211; Data group name</li>
+<li><strong>offset_group</strong> (<em>str</em>) &#8211; Offset group name</li>
+<li><strong>xvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; X locations</li>
+<li><strong>yvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Y locations</li>
+<li><strong>dvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Data handles, stored as INT values</li>
+<li><strong>cvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Colors</li>
+<li><strong>col</strong> (<em>int</em>) &#8211; Color for edges</li>
+<li><strong>offset</strong> (<em>int</em>) &#8211; Offset symbols (0: No, 1: Yes)</li>
+<li><strong>offset_size</strong> (<em>float</em>) &#8211; Offset symbol size</li>
+<li><strong>radius</strong> (<em>float</em>) &#8211; Pie plot radius in data units.</li>
+<li><strong>start_angle</strong> (<em>float</em>) &#8211; Starting angle in degrees CCW from horizontal (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> gives 0.0)</li>
 </ul>
 </td>
 </tr>
@@ -946,7 +943,7 @@ See the note on offset symbols in <a class="reference internal" href="#geosoft.g
 <p><strong>Note:</strong></p>
 <p>The starting angle is the location of the edge of the first pie
 slice, counted in degrees counter-clockwise from horizontal
-(3 o’clock). Zero degrees gives the same plot as <a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.pie_plot" title="geosoft.gxapi.GXCHIMERA.pie_plot"><code class="xref py py-obj docutils literal"><span class="pre">pie_plot</span></code></a>.</p>
+(3 o&#8217;clock). Zero degrees gives the same plot as <a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.pie_plot" title="geosoft.gxapi.GXCHIMERA.pie_plot"><code class="xref py py-obj docutils literal"><span class="pre">pie_plot</span></code></a>.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -958,13 +955,13 @@ slice, counted in degrees counter-clockwise from horizontal
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – Map view object</li>
-<li><strong>title</strong> (<em>str</em>) – Title</li>
-<li><strong>x</strong> (<em>float</em>) – Left side X location</li>
-<li><strong>y_min</strong> (<em>float</em>) – Bottom Y bound</li>
-<li><strong>y_max</strong> (<em>float</em>) – Top Y bound</li>
-<li><strong>class_file</strong> (<em>str</em>) – Class file name (<a class="reference internal" href="GXTPAT.html#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT"><code class="xref py py-obj docutils literal"><span class="pre">GXTPAT</span></code></a>)</li>
-<li><strong>index_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Class indices (INT <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a>)</li>
+<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) &#8211; Map view object</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title</li>
+<li><strong>x</strong> (<em>float</em>) &#8211; Left side X location</li>
+<li><strong>y_min</strong> (<em>float</em>) &#8211; Bottom Y bound</li>
+<li><strong>y_max</strong> (<em>float</em>) &#8211; Top Y bound</li>
+<li><strong>class_file</strong> (<em>str</em>) &#8211; Class file name (<a class="reference internal" href="GXTPAT.html#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT"><code class="xref py py-obj docutils literal"><span class="pre">GXTPAT</span></code></a>)</li>
+<li><strong>index_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Class indices (INT <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a>)</li>
 </ul>
 </td>
 </tr>
@@ -986,16 +983,16 @@ slice, counted in degrees counter-clockwise from horizontal
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View object to plot to</li>
-<li><strong>data_group</strong> (<em>str</em>) – Data group name</li>
-<li><strong>offset_group</strong> (<em>str</em>) – Offset group name</li>
-<li><strong>xvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X locations</li>
-<li><strong>yvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y locations</li>
-<li><strong>dvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Data handles, stored as INT values</li>
-<li><strong>cvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Colors</li>
-<li><strong>col</strong> (<em>int</em>) – Color for edges</li>
-<li><strong>offset</strong> (<em>int</em>) – Offset symbols (0: No, 1: Yes)</li>
-<li><strong>offset_size</strong> (<em>float</em>) – Offset symbol size</li>
+<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) &#8211; View object to plot to</li>
+<li><strong>data_group</strong> (<em>str</em>) &#8211; Data group name</li>
+<li><strong>offset_group</strong> (<em>str</em>) &#8211; Offset group name</li>
+<li><strong>xvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; X locations</li>
+<li><strong>yvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Y locations</li>
+<li><strong>dvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Data handles, stored as INT values</li>
+<li><strong>cvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Colors</li>
+<li><strong>col</strong> (<em>int</em>) &#8211; Color for edges</li>
+<li><strong>offset</strong> (<em>int</em>) &#8211; Offset symbols (0: No, 1: Yes)</li>
+<li><strong>offset_size</strong> (<em>float</em>) &#8211; Offset symbol size</li>
 </ul>
 </td>
 </tr>
@@ -1028,17 +1025,17 @@ hedgehog (it also takes a lot longer!).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View object to plot to</li>
-<li><strong>data_group</strong> (<em>str</em>) – Data group name</li>
-<li><strong>offset_group</strong> (<em>str</em>) – Offset group name</li>
-<li><strong>xvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X locations</li>
-<li><strong>yvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y locations</li>
-<li><strong>dvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Data handles, stored as INT values</li>
-<li><strong>cvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Colors</li>
-<li><strong>col</strong> (<em>int</em>) – Color for edges</li>
-<li><strong>offset</strong> (<em>int</em>) – Offset symbols (0: No, 1: Yes)</li>
-<li><strong>offset_size</strong> (<em>float</em>) – Offset symbol size</li>
-<li><strong>start_angle</strong> (<em>float</em>) – Starting angle in degrees CCW from horizontal (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> gives 0.0)</li>
+<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) &#8211; View object to plot to</li>
+<li><strong>data_group</strong> (<em>str</em>) &#8211; Data group name</li>
+<li><strong>offset_group</strong> (<em>str</em>) &#8211; Offset group name</li>
+<li><strong>xvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; X locations</li>
+<li><strong>yvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Y locations</li>
+<li><strong>dvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Data handles, stored as INT values</li>
+<li><strong>cvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Colors</li>
+<li><strong>col</strong> (<em>int</em>) &#8211; Color for edges</li>
+<li><strong>offset</strong> (<em>int</em>) &#8211; Offset symbols (0: No, 1: Yes)</li>
+<li><strong>offset_size</strong> (<em>float</em>) &#8211; Offset symbol size</li>
+<li><strong>start_angle</strong> (<em>float</em>) &#8211; Starting angle in degrees CCW from horizontal (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> gives 0.0)</li>
 </ul>
 </td>
 </tr>
@@ -1050,7 +1047,7 @@ hedgehog (it also takes a lot longer!).</p>
 <p><strong>Note:</strong></p>
 <p>The starting angle is the location of the edge of the first pie
 slice, counted in degrees counter-clockwise from horizontal
-(3 o’clock). Zero degrees gives the same plot as <a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.rose_plot" title="geosoft.gxapi.GXCHIMERA.rose_plot"><code class="xref py py-obj docutils literal"><span class="pre">rose_plot</span></code></a>.</p>
+(3 o&#8217;clock). Zero degrees gives the same plot as <a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.rose_plot" title="geosoft.gxapi.GXCHIMERA.rose_plot"><code class="xref py py-obj docutils literal"><span class="pre">rose_plot</span></code></a>.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1062,37 +1059,37 @@ slice, counted in degrees counter-clockwise from horizontal
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View</li>
-<li><strong>title</strong> (<em>str</em>) – Title</li>
-<li><strong>x1</strong> (<em>float</em>) – X location (bottom left corner of box)</li>
-<li><strong>y1</strong> (<em>float</em>) – Y location</li>
-<li><strong>width</strong> (<em>float</em>) – Box width</li>
-<li><strong>height</strong> (<em>float</em>) – Box height</li>
-<li><strong>horz_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Horizontal channel</li>
-<li><strong>vert_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Vertical channel</li>
-<li><strong>sym_font</strong> (<em>str</em>) – Decorated font name, “” for default symbol font (normally symbols.gfn)</li>
-<li><strong>sym_num_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Symbol numbers</li>
-<li><strong>sym_siz_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Symbol sizes</li>
-<li><strong>sym_col_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Colors  if symbol number or Color == 0, do not plot</li>
-<li><strong>annot_style</strong> (<em>int</em>) – Annotation style 0 - outside, 1 - inside</li>
-<li><strong>h_chan</strong> (<em>str</em>) – Horizontal channel name</li>
-<li><strong>v_chan</strong> (<em>str</em>) – Vertical channel name</li>
-<li><strong>h_units</strong> (<em>str</em>) – Horizontal channel units</li>
-<li><strong>v_units</strong> (<em>str</em>) – Vertical channel units</li>
-<li><strong>h_min</strong> (<em>float</em>) – Min. Horizontal value, <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default</li>
-<li><strong>h_max</strong> (<em>float</em>) – Max. Horizontal value</li>
-<li><strong>v_min</strong> (<em>float</em>) – Min. Vertical value</li>
-<li><strong>v_max</strong> (<em>float</em>) – Max. Vertical value</li>
-<li><strong>hr_min</strong> (<em>float</em>) – Min. Horizontal range value</li>
-<li><strong>hr_max</strong> (<em>float</em>) – Max. Horizontal range value</li>
-<li><strong>vr_min</strong> (<em>float</em>) – Min. Vertical range value</li>
-<li><strong>vr_max</strong> (<em>float</em>) – Max. Vertical range value</li>
-<li><strong>use_hr_min</strong> (<em>int</em>) – Use Min Horz. Range selection?</li>
-<li><strong>use_hr_max</strong> (<em>int</em>) – Use Max Horz. Range selection?</li>
-<li><strong>use_vr_min</strong> (<em>int</em>) – Use Min Vert. Range selection?</li>
-<li><strong>use_vr_max</strong> (<em>int</em>) – Use Max Vert. Range selection?</li>
-<li><strong>h_scaling</strong> (<em>int</em>) – Horizontal axis scaling: 0 - linear, 1 - log</li>
-<li><strong>v_scaling</strong> (<em>int</em>) – Vertical axis scaling: 0 - linear, 1 - log</li>
+<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) &#8211; View</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title</li>
+<li><strong>x1</strong> (<em>float</em>) &#8211; X location (bottom left corner of box)</li>
+<li><strong>y1</strong> (<em>float</em>) &#8211; Y location</li>
+<li><strong>width</strong> (<em>float</em>) &#8211; Box width</li>
+<li><strong>height</strong> (<em>float</em>) &#8211; Box height</li>
+<li><strong>horz_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Horizontal channel</li>
+<li><strong>vert_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Vertical channel</li>
+<li><strong>sym_font</strong> (<em>str</em>) &#8211; Decorated font name, &#8220;&#8221; for default symbol font (normally symbols.gfn)</li>
+<li><strong>sym_num_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Symbol numbers</li>
+<li><strong>sym_siz_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Symbol sizes</li>
+<li><strong>sym_col_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Colors  if symbol number or Color == 0, do not plot</li>
+<li><strong>annot_style</strong> (<em>int</em>) &#8211; Annotation style 0 - outside, 1 - inside</li>
+<li><strong>h_chan</strong> (<em>str</em>) &#8211; Horizontal channel name</li>
+<li><strong>v_chan</strong> (<em>str</em>) &#8211; Vertical channel name</li>
+<li><strong>h_units</strong> (<em>str</em>) &#8211; Horizontal channel units</li>
+<li><strong>v_units</strong> (<em>str</em>) &#8211; Vertical channel units</li>
+<li><strong>h_min</strong> (<em>float</em>) &#8211; Min. Horizontal value, <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default</li>
+<li><strong>h_max</strong> (<em>float</em>) &#8211; Max. Horizontal value</li>
+<li><strong>v_min</strong> (<em>float</em>) &#8211; Min. Vertical value</li>
+<li><strong>v_max</strong> (<em>float</em>) &#8211; Max. Vertical value</li>
+<li><strong>hr_min</strong> (<em>float</em>) &#8211; Min. Horizontal range value</li>
+<li><strong>hr_max</strong> (<em>float</em>) &#8211; Max. Horizontal range value</li>
+<li><strong>vr_min</strong> (<em>float</em>) &#8211; Min. Vertical range value</li>
+<li><strong>vr_max</strong> (<em>float</em>) &#8211; Max. Vertical range value</li>
+<li><strong>use_hr_min</strong> (<em>int</em>) &#8211; Use Min Horz. Range selection?</li>
+<li><strong>use_hr_max</strong> (<em>int</em>) &#8211; Use Max Horz. Range selection?</li>
+<li><strong>use_vr_min</strong> (<em>int</em>) &#8211; Use Min Vert. Range selection?</li>
+<li><strong>use_vr_max</strong> (<em>int</em>) &#8211; Use Max Vert. Range selection?</li>
+<li><strong>h_scaling</strong> (<em>int</em>) &#8211; Horizontal axis scaling: 0 - linear, 1 - log</li>
+<li><strong>v_scaling</strong> (<em>int</em>) &#8211; Vertical axis scaling: 0 - linear, 1 - log</li>
 </ul>
 </td>
 </tr>
@@ -1115,16 +1112,16 @@ is best as the input.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – [i] database handle</li>
-<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – [i] channels of data to set</li>
-<li><strong>vv_d</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – [i] (INT) input data - one <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> handle per channel</li>
-<li><strong>vv_line</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – [i] line symbols selected</li>
-<li><strong>vv_n</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – [i] number of original data items in each line</li>
-<li><strong>vv_used</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – [i] number of non-dummy rows</li>
-<li><strong>vv_index</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – [i] indices into original data</li>
-<li><strong>vv_fids</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – [i] Fid Starts (REAL)</li>
-<li><strong>vv_fidi</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – [i] Fid Increments (REAL)</li>
-<li><strong>vv_dummy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – [i] init channel values to dummies first (0:No, 1:Yes)?</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; [i] database handle</li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; [i] channels of data to set</li>
+<li><strong>vv_d</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; [i] (INT) input data - one <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> handle per channel</li>
+<li><strong>vv_line</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; [i] line symbols selected</li>
+<li><strong>vv_n</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; [i] number of original data items in each line</li>
+<li><strong>vv_used</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; [i] number of non-dummy rows</li>
+<li><strong>vv_index</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; [i] indices into original data</li>
+<li><strong>vv_fids</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; [i] Fid Starts (REAL)</li>
+<li><strong>vv_fidi</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; [i] Fid Increments (REAL)</li>
+<li><strong>vv_dummy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; [i] init channel values to dummies first (0:No, 1:Yes)?</li>
 </ul>
 </td>
 </tr>
@@ -1156,17 +1153,17 @@ Any metadata (CLASS, display formats) should be set separately.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View object to plot to</li>
-<li><strong>data_group</strong> (<em>str</em>) – Data group name</li>
-<li><strong>offset_group</strong> (<em>str</em>) – Offset group name</li>
-<li><strong>xvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X locations</li>
-<li><strong>yvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y locations</li>
-<li><strong>dvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Data handles, stored as INT values</li>
-<li><strong>cvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Colors</li>
-<li><strong>col</strong> (<em>int</em>) – Color for edges</li>
-<li><strong>offset</strong> (<em>int</em>) – Offset symbols (0: No, 1: Yes)</li>
-<li><strong>offset_size</strong> (<em>float</em>) – Offset symbol size</li>
-<li><strong>width</strong> (<em>float</em>) – Single bar width in data units.</li>
+<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) &#8211; View object to plot to</li>
+<li><strong>data_group</strong> (<em>str</em>) &#8211; Data group name</li>
+<li><strong>offset_group</strong> (<em>str</em>) &#8211; Offset group name</li>
+<li><strong>xvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; X locations</li>
+<li><strong>yvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Y locations</li>
+<li><strong>dvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Data handles, stored as INT values</li>
+<li><strong>cvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Colors</li>
+<li><strong>col</strong> (<em>int</em>) &#8211; Color for edges</li>
+<li><strong>offset</strong> (<em>int</em>) &#8211; Offset symbols (0: No, 1: Yes)</li>
+<li><strong>offset_size</strong> (<em>float</em>) &#8211; Offset symbol size</li>
+<li><strong>width</strong> (<em>float</em>) &#8211; Single bar width in data units.</li>
 </ul>
 </td>
 </tr>
@@ -1177,7 +1174,7 @@ Any metadata (CLASS, display formats) should be set separately.</p>
 </div>
 <p><strong>Note:</strong></p>
 <p>The number of channels is taken from the Data handles <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a>.
-Plots a bar plot with the center of the “X” axis at the symbol location.
+Plots a bar plot with the center of the &#8220;X&#8221; axis at the symbol location.
 See the note on offset symbols in <a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.rose_plot" title="geosoft.gxapi.GXCHIMERA.rose_plot"><code class="xref py py-obj docutils literal"><span class="pre">rose_plot</span></code></a></p>
 </dd></dl>
 
@@ -1190,18 +1187,18 @@ See the note on offset symbols in <a class="reference internal" href="#geosoft.g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View</li>
-<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Standard data</li>
-<li><strong>old</strong> (<em>int</em>) – Number of old samples in the <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a></li>
-<li><strong>tol</strong> (<em>float</em>) – Tolerance as a function of std dev</li>
-<li><strong>min</strong> (<em>float</em>) – Minimum acceptable value</li>
-<li><strong>max</strong> (<em>float</em>) – Maximum acceptable value</li>
-<li><strong>title</strong> (<em>str</em>) – Title</li>
-<li><strong>unit</strong> (<em>str</em>) – Unit</li>
-<li><strong>x0</strong> (<em>float</em>) – X location (bottom left corner of graph)</li>
-<li><strong>y0</strong> (<em>float</em>) – Y location</li>
-<li><strong>xs</strong> (<em>float</em>) – Graph width</li>
-<li><strong>ys</strong> (<em>float</em>) – Graph height</li>
+<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) &#8211; View</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Standard data</li>
+<li><strong>old</strong> (<em>int</em>) &#8211; Number of old samples in the <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a></li>
+<li><strong>tol</strong> (<em>float</em>) &#8211; Tolerance as a function of std dev</li>
+<li><strong>min</strong> (<em>float</em>) &#8211; Minimum acceptable value</li>
+<li><strong>max</strong> (<em>float</em>) &#8211; Maximum acceptable value</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title</li>
+<li><strong>unit</strong> (<em>str</em>) &#8211; Unit</li>
+<li><strong>x0</strong> (<em>float</em>) &#8211; X location (bottom left corner of graph)</li>
+<li><strong>y0</strong> (<em>float</em>) &#8211; Y location</li>
+<li><strong>xs</strong> (<em>float</em>) &#8211; Graph width</li>
+<li><strong>ys</strong> (<em>float</em>) &#8211; Graph height</li>
 </ul>
 </td>
 </tr>
@@ -1224,23 +1221,23 @@ values are used, and must be specified.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>map</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) – Map</li>
-<li><strong>view</strong> (<em>str</em>) – New view name</li>
-<li><strong>group</strong> (<em>str</em>) – New group name</li>
-<li><strong>vvy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Standard data (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> Y)</li>
-<li><strong>old</strong> (<em>int</em>) – Number of old samples in the <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a></li>
-<li><strong>tol</strong> (<em>float</em>) – Tolerance as a function of std dev</li>
-<li><strong>min</strong> (<em>float</em>) – Minimum acceptable value</li>
-<li><strong>max</strong> (<em>float</em>) – Maximum acceptable value</li>
-<li><strong>title</strong> (<em>str</em>) – Title</li>
-<li><strong>unit</strong> (<em>str</em>) – Unit</li>
-<li><strong>xs</strong> (<em>float</em>) – Size X</li>
-<li><strong>vvx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> X</li>
-<li><strong>vv_line</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> Line</li>
-<li><strong>vv_fid</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> Fid</li>
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
-<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Returned MinY</li>
-<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Returned MaxY</li>
+<li><strong>map</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) &#8211; Map</li>
+<li><strong>view</strong> (<em>str</em>) &#8211; New view name</li>
+<li><strong>group</strong> (<em>str</em>) &#8211; New group name</li>
+<li><strong>vvy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Standard data (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> Y)</li>
+<li><strong>old</strong> (<em>int</em>) &#8211; Number of old samples in the <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a></li>
+<li><strong>tol</strong> (<em>float</em>) &#8211; Tolerance as a function of std dev</li>
+<li><strong>min</strong> (<em>float</em>) &#8211; Minimum acceptable value</li>
+<li><strong>max</strong> (<em>float</em>) &#8211; Maximum acceptable value</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title</li>
+<li><strong>unit</strong> (<em>str</em>) &#8211; Unit</li>
+<li><strong>xs</strong> (<em>float</em>) &#8211; Size X</li>
+<li><strong>vvx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> X</li>
+<li><strong>vv_line</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> Line</li>
+<li><strong>vv_fid</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> Fid</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database</li>
+<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Returned MinY</li>
+<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Returned MaxY</li>
 </ul>
 </td>
 </tr>
@@ -1264,34 +1261,34 @@ Optional database linking.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View</li>
-<li><strong>title</strong> (<em>str</em>) – Title</li>
-<li><strong>x1</strong> (<em>float</em>) – X location (bottom left corner of box)</li>
-<li><strong>y1</strong> (<em>float</em>) – Y location</li>
-<li><strong>width</strong> (<em>float</em>) – Box width</li>
-<li><strong>height</strong> (<em>float</em>) – Box height</li>
-<li><strong>x_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Horizontal channel data</li>
-<li><strong>y_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Vertical channel data</li>
-<li><strong>m_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Mask channel data</li>
-<li><strong>mask_col</strong> (<em>int</em>) – Mask color; overrides symbol color. Pass an empty string to <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.color" title="geosoft.gxapi.GXMVIEW.color"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW.color</span></code></a> for no plot.</li>
-<li><strong>class_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Class channel data</li>
-<li><strong>class_file</strong> (<em>str</em>) – Class file (<a class="reference internal" href="GXTPAT.html#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT"><code class="xref py py-obj docutils literal"><span class="pre">GXTPAT</span></code></a>) name.</li>
-<li><strong>symbol_size_override</strong> (<em>float</em>) – Symbol size override. Set to 0.0 to use class file symbol sizes.</li>
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database (source of data)</li>
-<li><strong>line_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Line handles for data</li>
-<li><strong>fid_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Fid values for data</li>
-<li><strong>annotn</strong> (<em>int</em>) – Annotation style 0 - outside, 1 - inside</li>
-<li><strong>x_chan</strong> (<em>str</em>) – Horizontal channel name</li>
-<li><strong>y_chan</strong> (<em>str</em>) – Vertical channel name</li>
-<li><strong>x_units</strong> (<em>str</em>) – Horizontal channel units</li>
-<li><strong>y_units</strong> (<em>str</em>) – Vertical channel units</li>
-<li><strong>x_min</strong> (<em>float</em>) – Min. Horizontal value, <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default</li>
-<li><strong>x_max</strong> (<em>float</em>) – Max. Horizontal value</li>
-<li><strong>y_min</strong> (<em>float</em>) – Min. Vertical value</li>
-<li><strong>y_max</strong> (<em>float</em>) – Max. Vertical value</li>
-<li><strong>x_lin</strong> (<em>int</em>) – Horizontal axis scaling: 0 - linear, 1 - log</li>
-<li><strong>y_lin</strong> (<em>int</em>) – Vertical axis scaling</li>
-<li><strong>overlay</strong> (<em>str</em>) – Plot overlay (“” for none)</li>
+<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) &#8211; View</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title</li>
+<li><strong>x1</strong> (<em>float</em>) &#8211; X location (bottom left corner of box)</li>
+<li><strong>y1</strong> (<em>float</em>) &#8211; Y location</li>
+<li><strong>width</strong> (<em>float</em>) &#8211; Box width</li>
+<li><strong>height</strong> (<em>float</em>) &#8211; Box height</li>
+<li><strong>x_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Horizontal channel data</li>
+<li><strong>y_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Vertical channel data</li>
+<li><strong>m_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Mask channel data</li>
+<li><strong>mask_col</strong> (<em>int</em>) &#8211; Mask color; overrides symbol color. Pass an empty string to <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.color" title="geosoft.gxapi.GXMVIEW.color"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW.color</span></code></a> for no plot.</li>
+<li><strong>class_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Class channel data</li>
+<li><strong>class_file</strong> (<em>str</em>) &#8211; Class file (<a class="reference internal" href="GXTPAT.html#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT"><code class="xref py py-obj docutils literal"><span class="pre">GXTPAT</span></code></a>) name.</li>
+<li><strong>symbol_size_override</strong> (<em>float</em>) &#8211; Symbol size override. Set to 0.0 to use class file symbol sizes.</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database (source of data)</li>
+<li><strong>line_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Line handles for data</li>
+<li><strong>fid_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Fid values for data</li>
+<li><strong>annotn</strong> (<em>int</em>) &#8211; Annotation style 0 - outside, 1 - inside</li>
+<li><strong>x_chan</strong> (<em>str</em>) &#8211; Horizontal channel name</li>
+<li><strong>y_chan</strong> (<em>str</em>) &#8211; Vertical channel name</li>
+<li><strong>x_units</strong> (<em>str</em>) &#8211; Horizontal channel units</li>
+<li><strong>y_units</strong> (<em>str</em>) &#8211; Vertical channel units</li>
+<li><strong>x_min</strong> (<em>float</em>) &#8211; Min. Horizontal value, <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default</li>
+<li><strong>x_max</strong> (<em>float</em>) &#8211; Max. Horizontal value</li>
+<li><strong>y_min</strong> (<em>float</em>) &#8211; Min. Vertical value</li>
+<li><strong>y_max</strong> (<em>float</em>) &#8211; Max. Vertical value</li>
+<li><strong>x_lin</strong> (<em>int</em>) &#8211; Horizontal axis scaling: 0 - linear, 1 - log</li>
+<li><strong>y_lin</strong> (<em>int</em>) &#8211; Vertical axis scaling</li>
+<li><strong>overlay</strong> (<em>str</em>) &#8211; Plot overlay (&#8220;&#8221; for none)</li>
 </ul>
 </td>
 </tr>
@@ -1315,29 +1312,29 @@ Optional database linking.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View</li>
-<li><strong>title</strong> (<em>str</em>) – Title</li>
-<li><strong>x1</strong> (<em>float</em>) – X location (bottom left corner of box)</li>
-<li><strong>y1</strong> (<em>float</em>) – Y location</li>
-<li><strong>side</strong> (<em>float</em>) – Triangle side length</li>
-<li><strong>x_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X channel data</li>
-<li><strong>y_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y channel data</li>
-<li><strong>z_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Z channel data</li>
-<li><strong>m_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Mask channel data</li>
-<li><strong>mask_col</strong> (<em>int</em>) – Mask color; overrides symbol color. Pass an empty string to <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.color" title="geosoft.gxapi.GXMVIEW.color"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW.color</span></code></a> for no plot.</li>
-<li><strong>class_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Class channel data</li>
-<li><strong>class_file</strong> (<em>str</em>) – Class file (<a class="reference internal" href="GXTPAT.html#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT"><code class="xref py py-obj docutils literal"><span class="pre">GXTPAT</span></code></a>) name.</li>
-<li><strong>symbol_size_override</strong> (<em>float</em>) – Symbol size override. Set to 0.0 to use class file symbol sizes.</li>
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database (source of data)</li>
-<li><strong>line_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Line handles for data</li>
-<li><strong>fid_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Fid values for data</li>
-<li><strong>x_chan</strong> (<em>str</em>) – X channel name</li>
-<li><strong>y_chan</strong> (<em>str</em>) – Y channel name</li>
-<li><strong>z_chan</strong> (<em>str</em>) – Z channel name</li>
-<li><strong>grid</strong> (<em>int</em>) – Plot Grid lines? (0: Just outside edge tics, 1: Grid lines).</li>
-<li><strong>tic</strong> (<em>float</em>) – Tic Increment (in percent)</li>
-<li><strong>grid_inc</strong> (<em>float</em>) – Grid increment (in percent)</li>
-<li><strong>overlay</strong> (<em>str</em>) – Plot overlay (“” for none)</li>
+<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) &#8211; View</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title</li>
+<li><strong>x1</strong> (<em>float</em>) &#8211; X location (bottom left corner of box)</li>
+<li><strong>y1</strong> (<em>float</em>) &#8211; Y location</li>
+<li><strong>side</strong> (<em>float</em>) &#8211; Triangle side length</li>
+<li><strong>x_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; X channel data</li>
+<li><strong>y_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Y channel data</li>
+<li><strong>z_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Z channel data</li>
+<li><strong>m_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Mask channel data</li>
+<li><strong>mask_col</strong> (<em>int</em>) &#8211; Mask color; overrides symbol color. Pass an empty string to <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.color" title="geosoft.gxapi.GXMVIEW.color"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW.color</span></code></a> for no plot.</li>
+<li><strong>class_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Class channel data</li>
+<li><strong>class_file</strong> (<em>str</em>) &#8211; Class file (<a class="reference internal" href="GXTPAT.html#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT"><code class="xref py py-obj docutils literal"><span class="pre">GXTPAT</span></code></a>) name.</li>
+<li><strong>symbol_size_override</strong> (<em>float</em>) &#8211; Symbol size override. Set to 0.0 to use class file symbol sizes.</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database (source of data)</li>
+<li><strong>line_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Line handles for data</li>
+<li><strong>fid_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Fid values for data</li>
+<li><strong>x_chan</strong> (<em>str</em>) &#8211; X channel name</li>
+<li><strong>y_chan</strong> (<em>str</em>) &#8211; Y channel name</li>
+<li><strong>z_chan</strong> (<em>str</em>) &#8211; Z channel name</li>
+<li><strong>grid</strong> (<em>int</em>) &#8211; Plot Grid lines? (0: Just outside edge tics, 1: Grid lines).</li>
+<li><strong>tic</strong> (<em>float</em>) &#8211; Tic Increment (in percent)</li>
+<li><strong>grid_inc</strong> (<em>float</em>) &#8211; Grid increment (in percent)</li>
+<li><strong>overlay</strong> (<em>str</em>) &#8211; Plot overlay (&#8220;&#8221; for none)</li>
 </ul>
 </td>
 </tr>
@@ -1359,38 +1356,38 @@ Optional database linking.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View</li>
-<li><strong>title</strong> (<em>str</em>) – Title</li>
-<li><strong>x1</strong> (<em>float</em>) – X location (bottom left corner of box)</li>
-<li><strong>y1</strong> (<em>float</em>) – Y location</li>
-<li><strong>width</strong> (<em>float</em>) – Box width</li>
-<li><strong>height</strong> (<em>float</em>) – Box height</li>
-<li><strong>x_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X channel</li>
-<li><strong>y_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y channel</li>
-<li><strong>z_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Z channel</li>
-<li><strong>m_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Mask channel</li>
-<li><strong>sym_font</strong> (<em>str</em>) – Decorated font name, “” for default symbol font (normally symbols.gfn)</li>
-<li><strong>sym_num_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Symbol numbers</li>
-<li><strong>sym_siz_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Symbol sizes</li>
-<li><strong>sym_col_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Colors  if symbol number or color == 0, do not plot</li>
-<li><strong>x_chan</strong> (<em>str</em>) – X channel name</li>
-<li><strong>y_chan</strong> (<em>str</em>) – Y channel name</li>
-<li><strong>z_chan</strong> (<em>str</em>) – Z channel name</li>
-<li><strong>xr_min</strong> (<em>float</em>) – Min. X range value</li>
-<li><strong>xr_max</strong> (<em>float</em>) – Max. X range value</li>
-<li><strong>yr_min</strong> (<em>float</em>) – Min. Y range value</li>
-<li><strong>yr_max</strong> (<em>float</em>) – Max. Y range value</li>
-<li><strong>zr_min</strong> (<em>float</em>) – Min. Z range value</li>
-<li><strong>zr_max</strong> (<em>float</em>) – Max. Z range value</li>
-<li><strong>use_xr_min</strong> (<em>int</em>) – Use Min X Range selection?</li>
-<li><strong>use_xr_max</strong> (<em>int</em>) – Use Max X Range selection?</li>
-<li><strong>use_yr_min</strong> (<em>int</em>) – Use Min Y Range selection?</li>
-<li><strong>use_yr_max</strong> (<em>int</em>) – Use Max Y Range selection?</li>
-<li><strong>use_zr_min</strong> (<em>int</em>) – Use Min Z Range selection?</li>
-<li><strong>use_zr_max</strong> (<em>int</em>) – Use Max Z Range selection?</li>
-<li><strong>grid</strong> (<em>int</em>) – Plot Grid lines? (0: Just outside edge tics, 1: Grid lines).</li>
-<li><strong>tic</strong> (<em>float</em>) – Tic Increment (in percent)</li>
-<li><strong>grid_inc</strong> (<em>float</em>) – Grid increment (in percent)</li>
+<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) &#8211; View</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title</li>
+<li><strong>x1</strong> (<em>float</em>) &#8211; X location (bottom left corner of box)</li>
+<li><strong>y1</strong> (<em>float</em>) &#8211; Y location</li>
+<li><strong>width</strong> (<em>float</em>) &#8211; Box width</li>
+<li><strong>height</strong> (<em>float</em>) &#8211; Box height</li>
+<li><strong>x_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; X channel</li>
+<li><strong>y_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Y channel</li>
+<li><strong>z_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Z channel</li>
+<li><strong>m_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Mask channel</li>
+<li><strong>sym_font</strong> (<em>str</em>) &#8211; Decorated font name, &#8220;&#8221; for default symbol font (normally symbols.gfn)</li>
+<li><strong>sym_num_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Symbol numbers</li>
+<li><strong>sym_siz_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Symbol sizes</li>
+<li><strong>sym_col_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Colors  if symbol number or color == 0, do not plot</li>
+<li><strong>x_chan</strong> (<em>str</em>) &#8211; X channel name</li>
+<li><strong>y_chan</strong> (<em>str</em>) &#8211; Y channel name</li>
+<li><strong>z_chan</strong> (<em>str</em>) &#8211; Z channel name</li>
+<li><strong>xr_min</strong> (<em>float</em>) &#8211; Min. X range value</li>
+<li><strong>xr_max</strong> (<em>float</em>) &#8211; Max. X range value</li>
+<li><strong>yr_min</strong> (<em>float</em>) &#8211; Min. Y range value</li>
+<li><strong>yr_max</strong> (<em>float</em>) &#8211; Max. Y range value</li>
+<li><strong>zr_min</strong> (<em>float</em>) &#8211; Min. Z range value</li>
+<li><strong>zr_max</strong> (<em>float</em>) &#8211; Max. Z range value</li>
+<li><strong>use_xr_min</strong> (<em>int</em>) &#8211; Use Min X Range selection?</li>
+<li><strong>use_xr_max</strong> (<em>int</em>) &#8211; Use Max X Range selection?</li>
+<li><strong>use_yr_min</strong> (<em>int</em>) &#8211; Use Min Y Range selection?</li>
+<li><strong>use_yr_max</strong> (<em>int</em>) &#8211; Use Max Y Range selection?</li>
+<li><strong>use_zr_min</strong> (<em>int</em>) &#8211; Use Min Z Range selection?</li>
+<li><strong>use_zr_max</strong> (<em>int</em>) &#8211; Use Max Z Range selection?</li>
+<li><strong>grid</strong> (<em>int</em>) &#8211; Plot Grid lines? (0: Just outside edge tics, 1: Grid lines).</li>
+<li><strong>tic</strong> (<em>float</em>) &#8211; Tic Increment (in percent)</li>
+<li><strong>grid_inc</strong> (<em>float</em>) &#8211; Grid increment (in percent)</li>
 </ul>
 </td>
 </tr>
@@ -1402,7 +1399,7 @@ Optional database linking.</p>
 <p><strong>Note:</strong></p>
 <p>The mask channel <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> is used for plotting precedence; those points with
 mask = dummy are plotted first, then overwritten with the non-masked
-values, so you don’t get “good” points being covered up by masked values.
+values, so you don&#8217;t get &#8220;good&#8221; points being covered up by masked values.
 The view scaling is not altered with any projection. The base view
 is best as the input.</p>
 </dd></dl>
@@ -1418,40 +1415,40 @@ Optional database linking.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View</li>
-<li><strong>title</strong> (<em>str</em>) – Title</li>
-<li><strong>x1</strong> (<em>float</em>) – X location (bottom left corner of box)</li>
-<li><strong>y1</strong> (<em>float</em>) – Y location</li>
-<li><strong>width</strong> (<em>float</em>) – Box width</li>
-<li><strong>height</strong> (<em>float</em>) – Box height</li>
-<li><strong>x_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Horizontal channel data</li>
-<li><strong>y_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Vertical channel data</li>
-<li><strong>m_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Mask channel data (can be NULL)</li>
-<li><strong>mask_col</strong> (<em>int</em>) – Mask color; overrides symbol color where mask data is not dummy. Pass an empty string to <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.color" title="geosoft.gxapi.GXMVIEW.color"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW.color</span></code></a> for no plot.</li>
-<li><strong>zone_data_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Zone channel data</li>
-<li><strong>zone_file</strong> (<em>str</em>) – Zone file name</li>
-<li><strong>symbol_font</strong> (<em>str</em>) – Decorated font name, “” for default symbol font (normally symbols.gfn)</li>
-<li><strong>symbol_number</strong> (<em>int</em>) – Symbol number (&gt;=0)</li>
-<li><strong>symbol_size</strong> (<em>float</em>) – Symbol size ( &gt;=0)</li>
-<li><strong>symbol_angle</strong> (<em>float</em>) – Symbol angle (-360 to 360)</li>
-<li><strong>symbol_color</strong> (<em>int</em>) – Symbol color</li>
-<li><strong>symbol_fill</strong> (<em>int</em>) – Symbol fill color</li>
-<li><strong>fix_edge_color</strong> (<em>int</em>) – Fix symbol edge color?</li>
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database (source of data)</li>
-<li><strong>line_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Line handles for data</li>
-<li><strong>fid_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Fid values for data</li>
-<li><strong>annotn</strong> (<em>int</em>) – Annotation style 0 - outside, 1 - inside</li>
-<li><strong>x_chan</strong> (<em>str</em>) – Horizontal channel name</li>
-<li><strong>y_chan</strong> (<em>str</em>) – Vertical channel name</li>
-<li><strong>x_units</strong> (<em>str</em>) – Horizontal channel units</li>
-<li><strong>y_units</strong> (<em>str</em>) – Vertical channel units</li>
-<li><strong>x_min</strong> (<em>float</em>) – Min. Horizontal value, <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default</li>
-<li><strong>x_max</strong> (<em>float</em>) – Max. Horizontal value</li>
-<li><strong>y_min</strong> (<em>float</em>) – Min. Vertical value</li>
-<li><strong>y_max</strong> (<em>float</em>) – Max. Vertical value</li>
-<li><strong>x_lin</strong> (<em>int</em>) – Horizontal axis scaling: 0 - linear, 1 - log</li>
-<li><strong>y_lin</strong> (<em>int</em>) – Vertical axis scaling</li>
-<li><strong>overlay</strong> (<em>str</em>) – Plot overlay (“” for none)</li>
+<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) &#8211; View</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title</li>
+<li><strong>x1</strong> (<em>float</em>) &#8211; X location (bottom left corner of box)</li>
+<li><strong>y1</strong> (<em>float</em>) &#8211; Y location</li>
+<li><strong>width</strong> (<em>float</em>) &#8211; Box width</li>
+<li><strong>height</strong> (<em>float</em>) &#8211; Box height</li>
+<li><strong>x_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Horizontal channel data</li>
+<li><strong>y_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Vertical channel data</li>
+<li><strong>m_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Mask channel data (can be NULL)</li>
+<li><strong>mask_col</strong> (<em>int</em>) &#8211; Mask color; overrides symbol color where mask data is not dummy. Pass an empty string to <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.color" title="geosoft.gxapi.GXMVIEW.color"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW.color</span></code></a> for no plot.</li>
+<li><strong>zone_data_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Zone channel data</li>
+<li><strong>zone_file</strong> (<em>str</em>) &#8211; Zone file name</li>
+<li><strong>symbol_font</strong> (<em>str</em>) &#8211; Decorated font name, &#8220;&#8221; for default symbol font (normally symbols.gfn)</li>
+<li><strong>symbol_number</strong> (<em>int</em>) &#8211; Symbol number (&gt;=0)</li>
+<li><strong>symbol_size</strong> (<em>float</em>) &#8211; Symbol size ( &gt;=0)</li>
+<li><strong>symbol_angle</strong> (<em>float</em>) &#8211; Symbol angle (-360 to 360)</li>
+<li><strong>symbol_color</strong> (<em>int</em>) &#8211; Symbol color</li>
+<li><strong>symbol_fill</strong> (<em>int</em>) &#8211; Symbol fill color</li>
+<li><strong>fix_edge_color</strong> (<em>int</em>) &#8211; Fix symbol edge color?</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database (source of data)</li>
+<li><strong>line_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Line handles for data</li>
+<li><strong>fid_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Fid values for data</li>
+<li><strong>annotn</strong> (<em>int</em>) &#8211; Annotation style 0 - outside, 1 - inside</li>
+<li><strong>x_chan</strong> (<em>str</em>) &#8211; Horizontal channel name</li>
+<li><strong>y_chan</strong> (<em>str</em>) &#8211; Vertical channel name</li>
+<li><strong>x_units</strong> (<em>str</em>) &#8211; Horizontal channel units</li>
+<li><strong>y_units</strong> (<em>str</em>) &#8211; Vertical channel units</li>
+<li><strong>x_min</strong> (<em>float</em>) &#8211; Min. Horizontal value, <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default</li>
+<li><strong>x_max</strong> (<em>float</em>) &#8211; Max. Horizontal value</li>
+<li><strong>y_min</strong> (<em>float</em>) &#8211; Min. Vertical value</li>
+<li><strong>y_max</strong> (<em>float</em>) &#8211; Max. Vertical value</li>
+<li><strong>x_lin</strong> (<em>int</em>) &#8211; Horizontal axis scaling: 0 - linear, 1 - log</li>
+<li><strong>y_lin</strong> (<em>int</em>) &#8211; Vertical axis scaling</li>
+<li><strong>overlay</strong> (<em>str</em>) &#8211; Plot overlay (&#8220;&#8221; for none)</li>
 </ul>
 </td>
 </tr>
@@ -1475,35 +1472,35 @@ Optional database linking.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View</li>
-<li><strong>title</strong> (<em>str</em>) – Title</li>
-<li><strong>x1</strong> (<em>float</em>) – X location (bottom left corner of box)</li>
-<li><strong>y1</strong> (<em>float</em>) – Y location</li>
-<li><strong>side</strong> (<em>float</em>) – Triangle side length</li>
-<li><strong>x_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X channel data</li>
-<li><strong>y_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y channel data</li>
-<li><strong>z_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Z channel data</li>
-<li><strong>m_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Mask channel data</li>
-<li><strong>mask_col</strong> (<em>int</em>) – Mask color; overrides symbol color where mask data is not dummy. Pass an empty string to <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.color" title="geosoft.gxapi.GXMVIEW.color"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW.color</span></code></a> for no plot.</li>
-<li><strong>zone_data_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Zone channel data</li>
-<li><strong>zone_file</strong> (<em>str</em>) – Zone file name</li>
-<li><strong>symbol_font</strong> (<em>str</em>) – Decorated font name, “” for default symbol font (normally symbols.gfn)</li>
-<li><strong>symbol_number</strong> (<em>int</em>) – Symbol number (&gt;=0)</li>
-<li><strong>symbol_size</strong> (<em>float</em>) – Symbol size ( &gt;=0)</li>
-<li><strong>symbol_angle</strong> (<em>float</em>) – Symbol angle (-360 to 360)</li>
-<li><strong>symbol_color</strong> (<em>int</em>) – Symbol color</li>
-<li><strong>symbol_fill</strong> (<em>int</em>) – Symbol fill color</li>
-<li><strong>fix_edge_color</strong> (<em>int</em>) – Fix symbol edge color?</li>
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database (source of data)</li>
-<li><strong>line_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Line handles for data</li>
-<li><strong>fid_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Fid values for data</li>
-<li><strong>x_chan</strong> (<em>str</em>) – X channel name</li>
-<li><strong>y_chan</strong> (<em>str</em>) – Y channel name</li>
-<li><strong>z_chan</strong> (<em>str</em>) – Z channel name</li>
-<li><strong>grid</strong> (<em>int</em>) – Plot Grid lines? (0: Just outside edge tics, 1: Grid lines).</li>
-<li><strong>tic</strong> (<em>float</em>) – Tic Increment (in percent)</li>
-<li><strong>grid_inc</strong> (<em>float</em>) – Grid increment (in percent)</li>
-<li><strong>overlay</strong> (<em>str</em>) – Plot overlay (“” for none)</li>
+<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) &#8211; View</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title</li>
+<li><strong>x1</strong> (<em>float</em>) &#8211; X location (bottom left corner of box)</li>
+<li><strong>y1</strong> (<em>float</em>) &#8211; Y location</li>
+<li><strong>side</strong> (<em>float</em>) &#8211; Triangle side length</li>
+<li><strong>x_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; X channel data</li>
+<li><strong>y_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Y channel data</li>
+<li><strong>z_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Z channel data</li>
+<li><strong>m_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Mask channel data</li>
+<li><strong>mask_col</strong> (<em>int</em>) &#8211; Mask color; overrides symbol color where mask data is not dummy. Pass an empty string to <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.color" title="geosoft.gxapi.GXMVIEW.color"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW.color</span></code></a> for no plot.</li>
+<li><strong>zone_data_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Zone channel data</li>
+<li><strong>zone_file</strong> (<em>str</em>) &#8211; Zone file name</li>
+<li><strong>symbol_font</strong> (<em>str</em>) &#8211; Decorated font name, &#8220;&#8221; for default symbol font (normally symbols.gfn)</li>
+<li><strong>symbol_number</strong> (<em>int</em>) &#8211; Symbol number (&gt;=0)</li>
+<li><strong>symbol_size</strong> (<em>float</em>) &#8211; Symbol size ( &gt;=0)</li>
+<li><strong>symbol_angle</strong> (<em>float</em>) &#8211; Symbol angle (-360 to 360)</li>
+<li><strong>symbol_color</strong> (<em>int</em>) &#8211; Symbol color</li>
+<li><strong>symbol_fill</strong> (<em>int</em>) &#8211; Symbol fill color</li>
+<li><strong>fix_edge_color</strong> (<em>int</em>) &#8211; Fix symbol edge color?</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database (source of data)</li>
+<li><strong>line_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Line handles for data</li>
+<li><strong>fid_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Fid values for data</li>
+<li><strong>x_chan</strong> (<em>str</em>) &#8211; X channel name</li>
+<li><strong>y_chan</strong> (<em>str</em>) &#8211; Y channel name</li>
+<li><strong>z_chan</strong> (<em>str</em>) &#8211; Z channel name</li>
+<li><strong>grid</strong> (<em>int</em>) &#8211; Plot Grid lines? (0: Just outside edge tics, 1: Grid lines).</li>
+<li><strong>tic</strong> (<em>float</em>) &#8211; Tic Increment (in percent)</li>
+<li><strong>grid_inc</strong> (<em>float</em>) &#8211; Grid increment (in percent)</li>
+<li><strong>overlay</strong> (<em>str</em>) &#8211; Plot overlay (&#8220;&#8221; for none)</li>
 </ul>
 </td>
 </tr>
@@ -1597,7 +1594,7 @@ Optional database linking.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

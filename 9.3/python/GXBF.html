@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>GXBF class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -121,7 +124,7 @@ files and writing to files.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>size</strong> (<em>int</em>) – New length in bytes</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>size</strong> (<em>int</em>) &#8211; New length in bytes</td>
 </tr>
 </tbody>
 </table>
@@ -138,7 +141,7 @@ files and writing to files.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>b_fw</strong> (<a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><em>GXBF</em></a>) – Destination <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>b_fw</strong> (<a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><em>GXBF</em></a>) &#8211; Destination <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a></td>
 </tr>
 </tbody>
 </table>
@@ -156,8 +159,8 @@ files and writing to files.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>size</strong> (<em>int</em>) – Number of bytes to CRC</li>
-<li><strong>crc</strong> (<em>int</em>) – CRC start (use <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.CRC_INIT_VALUE" title="geosoft.gxapi.CRC_INIT_VALUE"><code class="xref py py-obj docutils literal"><span class="pre">CRC_INIT_VALUE</span></code></a> for new)</li>
+<li><strong>size</strong> (<em>int</em>) &#8211; Number of bytes to CRC</li>
+<li><strong>crc</strong> (<em>int</em>) &#8211; CRC start (use <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.CRC_INIT_VALUE" title="geosoft.gxapi.CRC_INIT_VALUE"><code class="xref py py-obj docutils literal"><span class="pre">CRC_INIT_VALUE</span></code></a> for new)</li>
 </ul>
 </td>
 </tr>
@@ -183,8 +186,8 @@ files and writing to files.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>file</strong> (<em>str</em>) – File name to open (“” is a temporary file)</li>
-<li><strong>status</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">BF_OPEN_MODE</span></code></li>
+<li><strong>file</strong> (<em>str</em>) &#8211; File name to open (&#8220;&#8221; is a temporary file)</li>
+<li><strong>status</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#bf-open-mode"><span class="std std-ref">BF_OPEN_MODE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -208,7 +211,7 @@ as follows:</p>
 &lt;windows&gt;      the operating system Windows directory
 &lt;system&gt;       the operating system system directory
 &lt;other&gt;        other environment variables</p>
-<p>For example “&lt;geosoft&gt;/user/csv/datum.csv”</p>
+<p>For example &#8220;&lt;geosoft&gt;/user/csv/datum.csv&#8221;</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -220,9 +223,9 @@ as follows:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>sbf</strong> (<a class="reference internal" href="GXSBF.html#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><em>GXSBF</em></a>) – Storage</li>
-<li><strong>file</strong> (<em>str</em>) – File name to open (“” is a temporary file)</li>
-<li><strong>status</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">BF_OPEN_MODE</span></code></li>
+<li><strong>sbf</strong> (<a class="reference internal" href="GXSBF.html#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><em>GXSBF</em></a>) &#8211; Storage</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; File name to open (&#8220;&#8221; is a temporary file)</li>
+<li><strong>status</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#bf-open-mode"><span class="std std-ref">BF_OPEN_MODE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -318,9 +321,9 @@ as follows:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>bytes</strong> (<em>int</em>) – Number of bytes to read</li>
-<li><strong>encoding</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">BF_ENCODE</span></code></li>
-<li><strong>data</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Data</li>
+<li><strong>bytes</strong> (<em>int</em>) &#8211; Number of bytes to read</li>
+<li><strong>encoding</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#bf-encode"><span class="std std-ref">BF_ENCODE constants</span></a></li>
+<li><strong>data</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Data</li>
 </ul>
 </td>
 </tr>
@@ -340,8 +343,8 @@ as follows:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">GS_TYPES</span></code> and <code class="xref py py-obj docutils literal"><span class="pre">BF_BYTEORDER</span></code></li>
-<li><strong>data</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Data</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
+<li><strong>data</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Data</li>
 </ul>
 </td>
 </tr>
@@ -370,8 +373,8 @@ in the native byte order of the reading/writing computer.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">GS_TYPES</span></code> and <code class="xref py py-obj docutils literal"><span class="pre">BF_BYTEORDER</span></code></li>
-<li><strong>data</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Data</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
+<li><strong>data</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Data</li>
 </ul>
 </td>
 </tr>
@@ -400,8 +403,8 @@ in the native byte order of the reading/writing computer.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">GS_TYPES</span></code> and <code class="xref py py-obj docutils literal"><span class="pre">BF_BYTEORDER</span></code></li>
-<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> data to read, <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> length is read</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> data to read, <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> length is read</li>
 </ul>
 </td>
 </tr>
@@ -430,8 +433,8 @@ in the native byte order of the reading/writing computer.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>offset</strong> (<em>int</em>) – Number of bytes from reference point</li>
-<li><strong>ref</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">BF_SEEK</span></code></li>
+<li><strong>offset</strong> (<em>int</em>) &#8211; Number of bytes from reference point</li>
+<li><strong>ref</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#bf-seek"><span class="std std-ref">BF_SEEK constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -453,7 +456,7 @@ a read-only file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>status</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">BF_CLOSE</span></code></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>status</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#bf-close"><span class="std std-ref">BF_CLOSE constants</span></a></td>
 </tr>
 </tbody>
 </table>
@@ -509,8 +512,8 @@ a read-only file.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>encoding</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">BF_ENCODE</span></code></li>
-<li><strong>data</strong> (<em>str</em>) – String to write out</li>
+<li><strong>encoding</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#bf-encode"><span class="std std-ref">BF_ENCODE constants</span></a></li>
+<li><strong>data</strong> (<em>str</em>) &#8211; String to write out</li>
 </ul>
 </td>
 </tr>
@@ -539,8 +542,8 @@ a read-only file.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">GS_TYPES</span></code> and <code class="xref py py-obj docutils literal"><span class="pre">BF_BYTEORDER</span></code></li>
-<li><strong>data</strong> (<em>float</em>) – Data</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
+<li><strong>data</strong> (<em>float</em>) &#8211; Data</li>
 </ul>
 </td>
 </tr>
@@ -565,8 +568,8 @@ in the native byte order of the writing computer.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">GS_TYPES</span></code> and <code class="xref py py-obj docutils literal"><span class="pre">BF_BYTEORDER</span></code></li>
-<li><strong>data</strong> (<em>int</em>) – Data</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
+<li><strong>data</strong> (<em>int</em>) &#8211; Data</li>
 </ul>
 </td>
 </tr>
@@ -591,8 +594,8 @@ in the native byte order of the writing computer.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">GS_TYPES</span></code> and <code class="xref py py-obj docutils literal"><span class="pre">BF_BYTEORDER</span></code></li>
-<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Data</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Data</li>
 </ul>
 </td>
 </tr>
@@ -679,7 +682,7 @@ in the native byte order of the writing computer.</p>
 <dl class="data">
 <dt id="geosoft.gxapi.BF_ENCODE_UTF8">
 <code class="descname">BF_ENCODE_UTF8</code><a class="headerlink" href="#geosoft.gxapi.BF_ENCODE_UTF8" title="Permalink to this definition">¶</a></dt>
-<dd><p>String is stored as <code class="xref py py-obj docutils literal"><span class="pre">UTF8</span></code></p>
+<dd><p>String is stored as <a class="reference internal" href="GXUNC.html#utf8"><span class="std std-ref">UTF8 constants</span></a></p>
 <dl class="attribute">
 <dt>
 <code class="descclassname">gxapi.</code><code class="descname">BF_ENCODE_UTF8</code><em class="property"> = 1</em></dt>
@@ -800,7 +803,7 @@ in the native byte order of the writing computer.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

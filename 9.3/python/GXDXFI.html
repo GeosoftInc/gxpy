@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>GXDXFI class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -106,7 +109,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – DXF file name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) &#8211; DXF file name</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXDXFI" title="geosoft.gxapi.GXDXFI"><code class="xref py py-obj docutils literal"><span class="pre">GXDXFI</span></code></a> Object</td>
 </tr>
@@ -128,8 +131,8 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>ply</strong> (<a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><em>GXPLY</em></a>) – <a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal"><span class="pre">GXPLY</span></code></a> handle</li>
-<li><strong>dxfi</strong> (<a class="reference internal" href="#geosoft.gxapi.GXDXFI" title="geosoft.gxapi.GXDXFI"><em>GXDXFI</em></a>) – <a class="reference internal" href="#geosoft.gxapi.GXDXFI" title="geosoft.gxapi.GXDXFI"><code class="xref py py-obj docutils literal"><span class="pre">GXDXFI</span></code></a> handle</li>
+<li><strong>ply</strong> (<a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><em>GXPLY</em></a>) &#8211; <a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal"><span class="pre">GXPLY</span></code></a> handle</li>
+<li><strong>dxfi</strong> (<a class="reference internal" href="#geosoft.gxapi.GXDXFI" title="geosoft.gxapi.GXDXFI"><em>GXDXFI</em></a>) &#8211; <a class="reference internal" href="#geosoft.gxapi.GXDXFI" title="geosoft.gxapi.GXDXFI"><code class="xref py py-obj docutils literal"><span class="pre">GXDXFI</span></code></a> handle</li>
 </ul>
 </td>
 </tr>
@@ -149,11 +152,11 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>max_pen</strong> (<em>int</em>) – User defined number of pens to use (can be <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.iDUMMY" title="geosoft.gxapi.iDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">iDUMMY</span></code></a>)</li>
-<li><strong>pb_group</strong> (<em>int</em>) – TRUE to place entire DXF in one group</li>
-<li><strong>group</strong> (<em>str</em>) – Group name for one group (can be “” if above is FALSE)</li>
-<li><strong>pb_one_color</strong> (<em>int</em>) – TRUE to force one color</li>
-<li><strong>color</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">MVIEW_COLOR</span></code> (ignored if above is FALSE)</li>
+<li><strong>max_pen</strong> (<em>int</em>) &#8211; User defined number of pens to use (can be <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.iDUMMY" title="geosoft.gxapi.iDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">iDUMMY</span></code></a>)</li>
+<li><strong>pb_group</strong> (<em>int</em>) &#8211; TRUE to place entire DXF in one group</li>
+<li><strong>group</strong> (<em>str</em>) &#8211; Group name for one group (can be &#8220;&#8221; if above is FALSE)</li>
+<li><strong>pb_one_color</strong> (<em>int</em>) &#8211; TRUE to force one color</li>
+<li><strong>color</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXMVIEW.html#mview-color"><span class="std std-ref">MVIEW_COLOR constants</span></a> (ignored if above is FALSE)</li>
 </ul>
 </td>
 </tr>
@@ -173,12 +176,12 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – X min</li>
-<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – X max</li>
-<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Y min</li>
-<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Y max</li>
-<li><strong>min_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Z min</li>
-<li><strong>max_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Z max</li>
+<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; X min</li>
+<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; X max</li>
+<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Y min</li>
+<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Y max</li>
+<li><strong>min_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Z min</li>
+<li><strong>max_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Z max</li>
 </ul>
 </td>
 </tr>
@@ -246,7 +249,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

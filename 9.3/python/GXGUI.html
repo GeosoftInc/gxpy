@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>GXGUI class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -126,9 +129,9 @@ file import wizards, and the Histogram and Scatter tools.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>title</strong> (<em>str</em>) – Title of the Form</li>
-<li><strong>default</strong> (<em>str</em>) – Default path (Can be “”)</li>
-<li><strong>dir_path</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Result Path Buffer (default on input)</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title of the Form</li>
+<li><strong>default</strong> (<em>str</em>) &#8211; Default path (Can be &#8220;&#8221;)</li>
+<li><strong>dir_path</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Result Path Buffer (default on input)</li>
 </ul>
 </td>
 </tr>
@@ -155,8 +158,8 @@ file import wizards, and the Histogram and Scatter tools.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>col</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Color (modified)</li>
-<li><strong>no_col</strong> (<em>int</em>) – Ask about <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.C_TRANSPARENT" title="geosoft.gxapi.C_TRANSPARENT"><code class="xref py py-obj docutils literal"><span class="pre">C_TRANSPARENT</span></code></a> if white is selected (1: yes, 0: no)?</li>
+<li><strong>col</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Color (modified)</li>
+<li><strong>no_col</strong> (<em>int</em>) &#8211; Ask about <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.C_TRANSPARENT" title="geosoft.gxapi.C_TRANSPARENT"><code class="xref py py-obj docutils literal"><span class="pre">C_TRANSPARENT</span></code></a> if white is selected (1: yes, 0: no)?</li>
 </ul>
 </td>
 </tr>
@@ -177,11 +180,11 @@ file import wizards, and the Histogram and Scatter tools.</p>
 If the input color type is <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.C_TRANSPARENT" title="geosoft.gxapi.C_TRANSPARENT"><code class="xref py py-obj docutils literal"><span class="pre">C_TRANSPARENT</span></code></a>, then the color
 is set to white, if any other type is input the output is
 guaranteed to be of the same type.</p>
-<p>If the third flag is <code class="xref py py-obj docutils literal"><span class="pre">GS_TRUE</span></code> is used, then on exit, if white is
-selected, the user is prompted: ‘Do you want white (Yes) or
-“None” (No) ?’ and the color is converted as requested.
+<p>If <code class="docutils literal"><span class="pre">no_col</span></code> is 1, then on exit, if white is
+selected, the user is prompted: &#8216;Do you want white (Yes) or
+&#8220;None&#8221; (No) ?&#8217; and the color is converted as requested.
 If this is not the case, the <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.C_TRANSPARENT" title="geosoft.gxapi.C_TRANSPARENT"><code class="xref py py-obj docutils literal"><span class="pre">C_TRANSPARENT</span></code></a> is converted
-to white (if “Ok” is selected) and no choice is offered.</p>
+to white (if &#8220;Ok&#8221; is selected) and no choice is offered.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -193,8 +196,8 @@ to white (if “Ok” is selected) and no choice is offered.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>itr</strong> (<a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><em>GXITR</em></a>) – <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a> object (modified)</li>
-<li><strong>st</strong> (<a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><em>GXST</em></a>) – <a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal"><span class="pre">GXST</span></code></a> object (input)</li>
+<li><strong>itr</strong> (<a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><em>GXITR</em></a>) &#8211; <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a> object (modified)</li>
+<li><strong>st</strong> (<a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><em>GXST</em></a>) &#8211; <a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal"><span class="pre">GXST</span></code></a> object (input)</li>
 </ul>
 </td>
 </tr>
@@ -225,11 +228,11 @@ data ranges, percentiles, etc. Create it using
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>itr</strong> (<a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><em>GXITR</em></a>) – <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a> object (modified)</li>
-<li><strong>st</strong> (<a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><em>GXST</em></a>) – <a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal"><span class="pre">GXST</span></code></a> object (input)</li>
-<li><strong>zones</strong> (<em>int</em>) – Max number of zones (8 or 12)</li>
-<li><strong>load_save</strong> (<em>int</em>) – Show file load/save buttons (TRUE or FALSE)?</li>
-<li><strong>file</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Default color transform file name</li>
+<li><strong>itr</strong> (<a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><em>GXITR</em></a>) &#8211; <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a> object (modified)</li>
+<li><strong>st</strong> (<a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><em>GXST</em></a>) &#8211; <a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal"><span class="pre">GXST</span></code></a> object (input)</li>
+<li><strong>zones</strong> (<em>int</em>) &#8211; Max number of zones (8 or 12)</li>
+<li><strong>load_save</strong> (<em>int</em>) &#8211; Show file load/save buttons (TRUE or FALSE)?</li>
+<li><strong>file</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Default color transform file name</li>
 </ul>
 </td>
 </tr>
@@ -263,11 +266,11 @@ are pushed by the value input or selected by the user.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> object</li>
-<li><strong>editable</strong> (<em>int</em>) – Editable <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> (0:No, 1:Yes)</li>
-<li><strong>mode</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">COORDSYS_MODE</span></code></li>
-<li><strong>source_label</strong> (<em>str</em>) – Data source label</li>
-<li><strong>source</strong> (<em>str</em>) – Data source</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) &#8211; <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> object</li>
+<li><strong>editable</strong> (<em>int</em>) &#8211; Editable <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> (0:No, 1:Yes)</li>
+<li><strong>mode</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#coordsys-mode"><span class="std std-ref">COORDSYS_MODE constants</span></a></li>
+<li><strong>source_label</strong> (<em>str</em>) &#8211; Data source label</li>
+<li><strong>source</strong> (<em>str</em>) &#8211; Data source</li>
 </ul>
 </td>
 </tr>
@@ -287,8 +290,8 @@ are pushed by the value input or selected by the user.</p>
 <p>Launches the new GX.Net single-dialog coordinate system
 definition dialog. The input <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> is modified on return
 if OK is selected (and the editable parameter is 1).
-The “Data source label” and “Data source” is information displayed
-in the dialog for the user to know where the <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> came from (e.g. “Grid: X.grd”)</p>
+The &#8220;Data source label&#8221; and &#8220;Data source&#8221; is information displayed
+in the dialog for the user to know where the <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> came from (e.g. &#8220;Grid: X.grd&#8221;)</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -300,19 +303,19 @@ in the dialog for the user to know where the <a class="reference internal" href=
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Original grid <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> object</li>
-<li><strong>target_ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Source (target) grid <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> object. This is supplied so the modified orientation can be calculated and displayed.</li>
-<li><strong>editable</strong> (<em>int</em>) – Editable <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> (0:No, 1:Yes)</li>
-<li><strong>mode</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">COORDSYS_MODE</span></code></li>
-<li><strong>source_label</strong> (<em>str</em>) – Data source label</li>
-<li><strong>source</strong> (<em>str</em>) – Data source</li>
-<li><strong>nx</strong> (<em>int</em>) – Number of cells in X</li>
-<li><strong>ny</strong> (<em>int</em>) – Number of cells in Y</li>
-<li><strong>x0</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Grid orgin X (grid’s own coordinate system)</li>
-<li><strong>y0</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Grid orgin Y (grid’s own coordinate system)</li>
-<li><strong>dx</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Grid cell size X</li>
-<li><strong>dy</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Grid cell size Y</li>
-<li><strong>rot</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Grid rotation angle (degrees CCW)</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) &#8211; Original grid <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> object</li>
+<li><strong>target_ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) &#8211; Source (target) grid <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> object. This is supplied so the modified orientation can be calculated and displayed.</li>
+<li><strong>editable</strong> (<em>int</em>) &#8211; Editable <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> (0:No, 1:Yes)</li>
+<li><strong>mode</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#coordsys-mode"><span class="std std-ref">COORDSYS_MODE constants</span></a></li>
+<li><strong>source_label</strong> (<em>str</em>) &#8211; Data source label</li>
+<li><strong>source</strong> (<em>str</em>) &#8211; Data source</li>
+<li><strong>nx</strong> (<em>int</em>) &#8211; Number of cells in X</li>
+<li><strong>ny</strong> (<em>int</em>) &#8211; Number of cells in Y</li>
+<li><strong>x0</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Grid orgin X (grid&#8217;s own coordinate system)</li>
+<li><strong>y0</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Grid orgin Y (grid&#8217;s own coordinate system)</li>
+<li><strong>dx</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Grid cell size X</li>
+<li><strong>dy</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Grid cell size Y</li>
+<li><strong>rot</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Grid rotation angle (degrees CCW)</li>
 </ul>
 </td>
 </tr>
@@ -331,7 +334,7 @@ in the dialog for the user to know where the <a class="reference internal" href=
 <p><strong>Note:</strong></p>
 <p>Same as <a class="reference internal" href="#geosoft.gxapi.GXGUI.coord_sys_wizard_licensed" title="geosoft.gxapi.GXGUI.coord_sys_wizard_licensed"><code class="xref py py-obj docutils literal"><span class="pre">coord_sys_wizard_licensed</span></code></a> but allows the original grid info to be adjusted
 when projections on section or oriented plan grids are modified.
-In the tool, it is the “modified” orientation required to keep the edited projection’s grid
+In the tool, it is the &#8220;modified&#8221; orientation required to keep the edited projection&#8217;s grid
 in the same location as it was in the target projection.</p>
 </dd></dl>
 
@@ -344,11 +347,11 @@ in the same location as it was in the target projection.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> object</li>
-<li><strong>editable</strong> (<em>int</em>) – Editable <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> (0:No, 1:Yes)</li>
-<li><strong>mode</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">COORDSYS_MODE</span></code></li>
-<li><strong>source_label</strong> (<em>str</em>) – Data source label</li>
-<li><strong>source</strong> (<em>str</em>) – Data source</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) &#8211; <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> object</li>
+<li><strong>editable</strong> (<em>int</em>) &#8211; Editable <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> (0:No, 1:Yes)</li>
+<li><strong>mode</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#coordsys-mode"><span class="std std-ref">COORDSYS_MODE constants</span></a></li>
+<li><strong>source_label</strong> (<em>str</em>) &#8211; Data source label</li>
+<li><strong>source</strong> (<em>str</em>) &#8211; Data source</li>
 </ul>
 </td>
 </tr>
@@ -377,7 +380,7 @@ method is not editable in the viewer while this one is.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>p1</strong> (<em>int</em>) – HWND Handle</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>p1</strong> (<em>int</em>) &#8211; HWND Handle</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">x - WND object created</td>
 </tr>
@@ -402,8 +405,8 @@ destroy object call.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>file</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Default color transform file name</li>
-<li><strong>itr</strong> (<a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><em>GXITR</em></a>) – <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a> object (returned)</li>
+<li><strong>file</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Default color transform file name</li>
+<li><strong>itr</strong> (<a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><em>GXITR</em></a>) &#8211; <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a> object (returned)</li>
 </ul>
 </td>
 </tr>
@@ -421,9 +424,9 @@ destroy object call.</p>
 </div>
 <p><strong>Note:</strong></p>
 <p>The <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a> values are interpreted as cumulative percent values, using
-the “PERCENT=1” value in the <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a>’s <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a>.</p>
+the &#8220;PERCENT=1&#8221; value in the <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a>&#8216;s <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a>.</p>
 <p>Note that processes using ITRs do not automatically know to convert between
-percent values and “actual” data values. The <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> “PERCENT” value is simply
+percent values and &#8220;actual&#8221; data values. The <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> &#8220;PERCENT&#8221; value is simply
 a flag to indicate to a user that the values are intended to be in the range
 from 0 &lt; x &lt; 100. The <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a> should not, therefore, be applied directly to data
 unless that data is already given in percent.</p>
@@ -443,12 +446,12 @@ are pushed by the value input or selected by the user.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>title</strong> (<em>str</em>) – Title of the Form</li>
-<li><strong>filter</strong> (<em>str</em>) – Custom filter.</li>
-<li><strong>default</strong> (<em>str</em>) – Default value</li>
-<li><strong>file_path</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Where the file name(s) is returned</li>
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">FILE_FORM</span></code></li>
-<li><strong>multi</strong> (<em>int</em>) – Allow Multiple file selections = TRUE Single   file selections = FALSE</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title of the Form</li>
+<li><strong>filter</strong> (<em>str</em>) &#8211; Custom filter.</li>
+<li><strong>default</strong> (<em>str</em>) &#8211; Default value</li>
+<li><strong>file_path</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Where the file name(s) is returned</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#file-form"><span class="std std-ref">FILE_FORM constants</span></a></li>
+<li><strong>multi</strong> (<em>int</em>) &#8211; Allow Multiple file selections = TRUE Single   file selections = FALSE</li>
 </ul>
 </td>
 </tr>
@@ -479,12 +482,12 @@ by a semicolon and only the first file will contain the full path.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>title</strong> (<em>str</em>) – Title of the Form</li>
-<li><strong>default</strong> (<em>str</em>) – Default value</li>
-<li><strong>psz_file_path</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Where the file name(s) is returned</li>
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">DAT_TYPE</span></code></li>
-<li><strong>validation_type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">FILE_FORM</span></code></li>
-<li><strong>multi</strong> (<em>int</em>) – Allow Multiple file selections = TRUE Single   file selections = FALSE</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title of the Form</li>
+<li><strong>default</strong> (<em>str</em>) &#8211; Default value</li>
+<li><strong>psz_file_path</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Where the file name(s) is returned</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dat-type"><span class="std std-ref">DAT_TYPE constants</span></a></li>
+<li><strong>validation_type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#file-form"><span class="std std-ref">FILE_FORM constants</span></a></li>
+<li><strong>multi</strong> (<em>int</em>) &#8211; Allow Multiple file selections = TRUE Single   file selections = FALSE</li>
 </ul>
 </td>
 </tr>
@@ -519,8 +522,8 @@ All grids are required to be of the same type.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>name</strong> (<em>str</em>) – File Name</li>
-<li><strong>type</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Database type (returned)</li>
+<li><strong>name</strong> (<em>str</em>) &#8211; File Name</li>
+<li><strong>type</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Database type (returned)</li>
 </ul>
 </td>
 </tr>
@@ -538,8 +541,8 @@ terminates on error</p>
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>If the file extension is “mdb”, then an MSJET (Microsoft Access)
-database is assumed. If the file name is “ODBC”, then “ODBC” is
+<p>If the file extension is &#8220;mdb&#8221;, then an MSJET (Microsoft Access)
+database is assumed. If the file name is &#8220;ODBC&#8221;, then &#8220;ODBC&#8221; is
 returned as the type. Otherwise, a dialog appears listing the
 other valid DAO database types.</p>
 </dd></dl>
@@ -552,7 +555,7 @@ other valid DAO database types.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – File Name (for display purposes only)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; File Name (for display purposes only)</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - OK
 -1 - Cancel</td>
@@ -569,7 +572,7 @@ other valid DAO database types.</p>
 (e.g. as a string file or a as wireframe (point) file.
 The following function checks to see if there is a choice to be made
 between types supported by Geosoft for import. If not, it just returns
-the original type “hint” from Datamine. If there is a choice, it puts up
+the original type &#8220;hint&#8221; from Datamine. If there is a choice, it puts up
 a dialog with the choices for the user to pick from.
 Do a bit-wise AND with the returned type to determine the file type
 (or the type selected).</p>
@@ -589,9 +592,9 @@ may change during editing.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
-<li><strong>template</strong> (<em>str</em>) – Name of the Template (can change)</li>
-<li><strong>size</strong> (<em>int</em>) – Size of the Template</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database</li>
+<li><strong>template</strong> (<em>str</em>) &#8211; Name of the Template (can change)</li>
+<li><strong>size</strong> (<em>int</em>) &#8211; Size of the Template</li>
 </ul>
 </td>
 </tr>
@@ -626,8 +629,8 @@ may change during editing.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>edb</strong> (<a class="reference internal" href="GXEDB.html#geosoft.gxapi.GXEDB" title="geosoft.gxapi.GXEDB"><em>GXEDB</em></a>) – <a class="reference internal" href="GXEDB.html#geosoft.gxapi.GXEDB" title="geosoft.gxapi.GXEDB"><code class="xref py py-obj docutils literal"><span class="pre">GXEDB</span></code></a> object</li>
-<li><strong>template</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Template name</li>
+<li><strong>edb</strong> (<a class="reference internal" href="GXEDB.html#geosoft.gxapi.GXEDB" title="geosoft.gxapi.GXEDB"><em>GXEDB</em></a>) &#8211; <a class="reference internal" href="GXEDB.html#geosoft.gxapi.GXEDB" title="geosoft.gxapi.GXEDB"><code class="xref py py-obj docutils literal"><span class="pre">GXEDB</span></code></a> object</li>
+<li><strong>template</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Template name</li>
 </ul>
 </td>
 </tr>
@@ -654,8 +657,8 @@ may change during editing.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>spec_file_name</strong> (<em>str</em>) – Name of the input spectrum file</li>
-<li><strong>con_file_name</strong> (<em>str</em>) – Name of the output control file</li>
+<li><strong>spec_file_name</strong> (<em>str</em>) &#8211; Name of the input spectrum file</li>
+<li><strong>con_file_name</strong> (<em>str</em>) &#8211; Name of the output control file</li>
 </ul>
 </td>
 </tr>
@@ -674,9 +677,9 @@ may change during editing.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filter</strong> (<em>str</em>) – Input filter string</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filter</strong> (<em>str</em>) &#8211; Input filter string</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><code class="xref py py-obj docutils literal"><span class="pre">FILE_FILTER</span></code>, -1 if not found</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#file-filter"><span class="std std-ref">FILE_FILTER constants</span></a>, -1 if not found</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
@@ -686,7 +689,7 @@ may change during editing.</p>
 <p><span class="versionmodified">New in version 7.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>For example, if “Database (<code class="docutils literal"><span class="pre">*.gdb</span></code>)” is input,
+<p>For example, if &#8220;Database (<code class="docutils literal"><span class="pre">*.gdb</span></code>)&#8221; is input,
 then the <a class="reference internal" href="#geosoft.gxapi.FILE_FILTER_GDB" title="geosoft.gxapi.FILE_FILTER_GDB"><code class="xref py py-obj docutils literal"><span class="pre">FILE_FILTER_GDB</span></code></a> value is returned.</p>
 </dd></dl>
 
@@ -699,8 +702,8 @@ then the <a class="reference internal" href="#geosoft.gxapi.FILE_FILTER_GDB" tit
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>data_source</strong> (<em>str</em>) – Data source</li>
-<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> object</li>
+<li><strong>data_source</strong> (<em>str</em>) &#8211; Data source</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) &#8211; <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> object</li>
 </ul>
 </td>
 </tr>
@@ -729,9 +732,9 @@ then the <a class="reference internal" href="#geosoft.gxapi.FILE_FILTER_GDB" tit
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>source_lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – Data source names</li>
-<li><strong>datum_from_lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – Corresponding datum names</li>
-<li><strong>ldtlst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – Returned corresponding LDT names</li>
+<li><strong>source_lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; Data source names</li>
+<li><strong>datum_from_lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; Corresponding datum names</li>
+<li><strong>ldtlst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; Returned corresponding LDT names</li>
 </ul>
 </td>
 </tr>
@@ -760,9 +763,9 @@ then the <a class="reference internal" href="#geosoft.gxapi.FILE_FILTER_GDB" tit
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>source_lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – Data source names</li>
-<li><strong>datum_from_lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – Corresponding datum names</li>
-<li><strong>ldtlst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – Returned corresponding LDT names</li>
+<li><strong>source_lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; Data source names</li>
+<li><strong>datum_from_lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; Corresponding datum names</li>
+<li><strong>ldtlst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; Returned corresponding LDT names</li>
 </ul>
 </td>
 </tr>
@@ -791,13 +794,13 @@ then the <a class="reference internal" href="#geosoft.gxapi.FILE_FILTER_GDB" tit
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>title</strong> (<em>str</em>) – Title of the Form</li>
-<li><strong>filt_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – INT <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> of file filters to use <code class="xref py py-obj docutils literal"><span class="pre">FILE_FILTER</span></code> The first one is default, can pass (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a>) 0 for to use next parameter.</li>
-<li><strong>filter</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">FILE_FILTER</span></code> (ignored if parameter above is not zero)</li>
-<li><strong>default</strong> (<em>str</em>) – Default value</li>
-<li><strong>file_path</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Where the file name(s) is returned</li>
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">FILE_FORM</span></code></li>
-<li><strong>multi</strong> (<em>int</em>) – Allow Multiple file selections = TRUE Single   file selections = FALSE</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title of the Form</li>
+<li><strong>filt_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; INT <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> of file filters to use <a class="reference internal" href="#file-filter"><span class="std std-ref">FILE_FILTER constants</span></a> The first one is default, can pass (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a>) 0 for to use next parameter.</li>
+<li><strong>filter</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#file-filter"><span class="std std-ref">FILE_FILTER constants</span></a> (ignored if parameter above is not zero)</li>
+<li><strong>default</strong> (<em>str</em>) &#8211; Default value</li>
+<li><strong>file_path</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Where the file name(s) is returned</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#file-form"><span class="std std-ref">FILE_FORM constants</span></a></li>
+<li><strong>multi</strong> (<em>int</em>) &#8211; Allow Multiple file selections = TRUE Single   file selections = FALSE</li>
 </ul>
 </td>
 </tr>
@@ -834,16 +837,16 @@ iMultiFileSave_GUI</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – AOI Area Min X</li>
-<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – AOI Area Min Y</li>
-<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – AOI Area Max X</li>
-<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – AOI Area Max y</li>
-<li><strong>ply</strong> (<a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><em>GXPLY</em></a>) – AOI Bounding <a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal"><span class="pre">GXPLY</span></code></a> (Filled if available, otherwise empty)</li>
-<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – AOI Bounding <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a></li>
+<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; AOI Area Min X</li>
+<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; AOI Area Min Y</li>
+<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; AOI Area Max X</li>
+<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; AOI Area Max y</li>
+<li><strong>ply</strong> (<a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><em>GXPLY</em></a>) &#8211; AOI Bounding <a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal"><span class="pre">GXPLY</span></code></a> (Filled if available, otherwise empty)</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) &#8211; AOI Bounding <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a></li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><code class="xref py py-obj docutils literal"><span class="pre">AOI_RETURN_STATE</span></code></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#aoi-return-state"><span class="std std-ref">AOI_RETURN_STATE constants</span></a></p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
@@ -869,18 +872,18 @@ by a warning and optionaly cancel the process.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – AOI Area Min X</li>
-<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – AOI Area Min Y</li>
-<li><strong>min_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – AOI Area Min Z</li>
-<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – AOI Area Max X</li>
-<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – AOI Area Max y</li>
-<li><strong>max_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – AOI Area Max Z</li>
-<li><strong>ply</strong> (<a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><em>GXPLY</em></a>) – AOI Bounding <a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal"><span class="pre">GXPLY</span></code></a> (Filled if available, otherwise empty)</li>
-<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – AOI Bounding <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a></li>
+<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; AOI Area Min X</li>
+<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; AOI Area Min Y</li>
+<li><strong>min_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; AOI Area Min Z</li>
+<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; AOI Area Max X</li>
+<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; AOI Area Max y</li>
+<li><strong>max_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; AOI Area Max Z</li>
+<li><strong>ply</strong> (<a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><em>GXPLY</em></a>) &#8211; AOI Bounding <a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal"><span class="pre">GXPLY</span></code></a> (Filled if available, otherwise empty)</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) &#8211; AOI Bounding <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a></li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><code class="xref py py-obj docutils literal"><span class="pre">AOI_RETURN_STATE</span></code></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#aoi-return-state"><span class="std std-ref">AOI_RETURN_STATE constants</span></a></p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
@@ -906,10 +909,10 @@ by a warning and optionaly cancel the process.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – X Min returned (0)</li>
-<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Y Min returned (0)</li>
-<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – X Max returned (width)</li>
-<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Y Max returned (height)</li>
+<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; X Min returned (0)</li>
+<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Y Min returned (0)</li>
+<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; X Max returned (width)</li>
+<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Y Max returned (height)</li>
 </ul>
 </td>
 </tr>
@@ -933,10 +936,10 @@ width and height for the maximum X and Y.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>flags</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">DAT_TYPE</span></code></li>
-<li><strong>open</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">FILE_FORM</span></code></li>
-<li><strong>ext</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Returned default extension (e.g. “grd”)</li>
-<li><strong>qual</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Returned default qualifier (e.g. “GRD”)</li>
+<li><strong>flags</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dat-type"><span class="std std-ref">DAT_TYPE constants</span></a></li>
+<li><strong>open</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#file-form"><span class="std std-ref">FILE_FORM constants</span></a></li>
+<li><strong>ext</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Returned default extension (e.g. &#8220;grd&#8221;)</li>
+<li><strong>qual</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Returned default qualifier (e.g. &#8220;GRD&#8221;)</li>
 </ul>
 </td>
 </tr>
@@ -947,9 +950,9 @@ width and height for the maximum X and Y.</p>
 </div>
 <p><strong>Note:</strong></p>
 <p>The default grid/image filters are normally stored in
-“MONTAJ.DEFAULT_XGD_IN” and “MONTAJ.DEFAULT_XGD_OUT”</p>
+&#8220;MONTAJ.DEFAULT_XGD_IN&#8221; and &#8220;MONTAJ.DEFAULT_XGD_OUT&#8221;</p>
 <p>If no filter is defined, or the filter is not found
-then “grd” and “GRD” are returned as the default extension
+then &#8220;grd&#8221; and &#8220;GRD&#8221; are returned as the default extension
 and qualifier.</p>
 </dd></dl>
 
@@ -962,11 +965,11 @@ and qualifier.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>file_filter</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">FILE_FILTER</span></code></li>
-<li><strong>filter</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Returned file filter string</li>
-<li><strong>mask</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Returned file mask string</li>
-<li><strong>ext</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Returned file extension</li>
-<li><strong>path</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – <code class="xref py py-obj docutils literal"><span class="pre">GS_DIRECTORY</span></code> Returned directory.</li>
+<li><strong>file_filter</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#file-filter"><span class="std std-ref">FILE_FILTER constants</span></a></li>
+<li><strong>filter</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Returned file filter string</li>
+<li><strong>mask</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Returned file mask string</li>
+<li><strong>ext</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Returned file extension</li>
+<li><strong>path</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; <a class="reference internal" href="#gs-directory"><span class="std std-ref">GS_DIRECTORY constants</span></a> Returned directory.</li>
 </ul>
 </td>
 </tr>
@@ -978,10 +981,10 @@ and qualifier.</p>
 <p><strong>Note:</strong></p>
 <p>Returns the four parts of the file filter;
 e.g. for <a class="reference internal" href="#geosoft.gxapi.FILE_FILTER_GDB" title="geosoft.gxapi.FILE_FILTER_GDB"><code class="xref py py-obj docutils literal"><span class="pre">FILE_FILTER_GDB</span></code></a> it returns:</p>
-<p>Filter:    “Database (<code class="docutils literal"><span class="pre">*.gdb</span></code>)”
-Mask:      “<code class="docutils literal"><span class="pre">*.gdb</span></code>”
-Extension: “gdb”
-Directory: “<a class="reference internal" href="#geosoft.gxapi.GS_DIRECTORY_NONE" title="geosoft.gxapi.GS_DIRECTORY_NONE"><code class="xref py py-obj docutils literal"><span class="pre">GS_DIRECTORY_NONE</span></code></a>”</p>
+<p>Filter:    &#8220;Database (<code class="docutils literal"><span class="pre">*.gdb</span></code>)&#8221;
+Mask:      &#8220;<code class="docutils literal"><span class="pre">*.gdb</span></code>&#8221;
+Extension: &#8220;gdb&#8221;
+Directory: &#8220;<a class="reference internal" href="#geosoft.gxapi.GS_DIRECTORY_NONE" title="geosoft.gxapi.GS_DIRECTORY_NONE"><code class="xref py py-obj docutils literal"><span class="pre">GS_DIRECTORY_NONE</span></code></a>&#8220;</p>
 <p>This function is useful for constuction open/save dialog
 file filters, especially in GX.Net functions.</p>
 </dd></dl>
@@ -989,14 +992,14 @@ file filters, especially in GX.Net functions.</p>
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXGUI.get_gs_directory">
 <em class="property">classmethod </em><code class="descname">get_gs_directory</code><span class="sig-paren">(</span><em>path</em>, <em>dir</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGUI.get_gs_directory" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the directory path for value of <code class="xref py py-obj docutils literal"><span class="pre">GS_DIRECTORY</span></code>.</p>
+<dd><p>Return the directory path for value of <a class="reference internal" href="#gs-directory"><span class="std std-ref">GS_DIRECTORY constants</span></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>path</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">GS_DIRECTORY</span></code> Returned directory.</li>
-<li><strong>dir</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Returned directory path</li>
+<li><strong>path</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#gs-directory"><span class="std std-ref">GS_DIRECTORY constants</span></a> Returned directory.</li>
+<li><strong>dir</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Returned directory path</li>
 </ul>
 </td>
 </tr>
@@ -1040,7 +1043,7 @@ file filters, especially in GX.Net functions.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – List to place into</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; List to place into</td>
 </tr>
 </tbody>
 </table>
@@ -1052,17 +1055,17 @@ file filters, especially in GX.Net functions.</p>
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXGUI.get_window_position">
 <em class="property">classmethod </em><code class="descname">get_window_position</code><span class="sig-paren">(</span><em>left</em>, <em>top</em>, <em>right</em>, <em>bottom</em>, <em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGUI.get_window_position" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the Oasis montaj window’s position state</p>
+<dd><p>Get the Oasis montaj window&#8217;s position state</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>left</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Window left position</li>
-<li><strong>top</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Window top position</li>
-<li><strong>right</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Window right position</li>
-<li><strong>bottom</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Window bottom position</li>
-<li><strong>state</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Window state <code class="xref py py-obj docutils literal"><span class="pre">WINDOW_STATE</span></code></li>
+<li><strong>left</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Window left position</li>
+<li><strong>top</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Window top position</li>
+<li><strong>right</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Window right position</li>
+<li><strong>bottom</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Window bottom position</li>
+<li><strong>state</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Window state <a class="reference internal" href="#window-state"><span class="std std-ref">WINDOW_STATE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1081,7 +1084,7 @@ file filters, especially in GX.Net functions.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><code class="xref py py-obj docutils literal"><span class="pre">WINDOW_STATE</span></code></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#window-state"><span class="std std-ref">WINDOW_STATE constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
@@ -1100,7 +1103,7 @@ file filters, especially in GX.Net functions.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>grid_name</strong> (<em>str</em>) – Name of the grid to get stats from</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>grid_name</strong> (<em>str</em>) &#8211; Name of the grid to get stats from</td>
 </tr>
 </tbody>
 </table>
@@ -1118,8 +1121,8 @@ file filters, especially in GX.Net functions.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>name</strong> (<em>str</em>) – Data file name</li>
-<li><strong>temp</strong> (<em>str</em>) – Template to make</li>
+<li><strong>name</strong> (<em>str</em>) &#8211; Data file name</li>
+<li><strong>temp</strong> (<em>str</em>) &#8211; Template to make</li>
 </ul>
 </td>
 </tr>
@@ -1146,10 +1149,10 @@ file filters, especially in GX.Net functions.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>name</strong> (<em>str</em>) – Data file name</li>
-<li><strong>temp</strong> (<em>str</em>) – Template to make</li>
-<li><strong>table</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Name of table</li>
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">IMPCH_TYPE</span></code></li>
+<li><strong>name</strong> (<em>str</em>) &#8211; Data file name</li>
+<li><strong>temp</strong> (<em>str</em>) &#8211; Template to make</li>
+<li><strong>table</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Name of table</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#impch-type"><span class="std std-ref">IMPCH_TYPE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1176,10 +1179,10 @@ file filters, especially in GX.Net functions.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>connect</strong> (<em>str</em>) – External database connection string (Blank for OLEDB Wizard)</li>
-<li><strong>temp</strong> (<em>str</em>) – Template to make</li>
-<li><strong>table</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Name of table</li>
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">IMPCH_TYPE</span></code></li>
+<li><strong>connect</strong> (<em>str</em>) &#8211; External database connection string (Blank for OLEDB Wizard)</li>
+<li><strong>temp</strong> (<em>str</em>) &#8211; Template to make</li>
+<li><strong>table</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Name of table</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#impch-type"><span class="std std-ref">IMPCH_TYPE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1210,9 +1213,9 @@ new ADO technology, as opposed to DAO. Use in conjuction with
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> (<em>str</em>) – Data file name</li>
-<li><strong>temp</strong> (<em>str</em>) – Template to make</li>
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">IMPCH_TYPE</span></code></li>
+<li><strong>name</strong> (<em>str</em>) &#8211; Data file name</li>
+<li><strong>temp</strong> (<em>str</em>) &#8211; Template to make</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#impch-type"><span class="std std-ref">IMPCH_TYPE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1232,9 +1235,9 @@ new ADO technology, as opposed to DAO. Use in conjuction with
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>name</strong> (<em>str</em>) – External database file name</li>
-<li><strong>temp</strong> (<em>str</em>) – Template to make</li>
-<li><strong>table</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Name of table imported (returned)</li>
+<li><strong>name</strong> (<em>str</em>) &#8211; External database file name</li>
+<li><strong>temp</strong> (<em>str</em>) &#8211; Template to make</li>
+<li><strong>table</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Name of table imported (returned)</li>
 </ul>
 </td>
 </tr>
@@ -1269,9 +1272,9 @@ the table (see <a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>connect</strong> (<em>str</em>) – External database connection string (Blank for OLEDB Wizard)</li>
-<li><strong>temp</strong> (<em>str</em>) – Template to make</li>
-<li><strong>table</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Name of table imported (returned)</li>
+<li><strong>connect</strong> (<em>str</em>) &#8211; External database connection string (Blank for OLEDB Wizard)</li>
+<li><strong>temp</strong> (<em>str</em>) &#8211; Template to make</li>
+<li><strong>table</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Name of table imported (returned)</li>
 </ul>
 </td>
 </tr>
@@ -1294,7 +1297,7 @@ selected fields from that table.</li>
 <li>This function DOES NOT import the table itself, but
 creates an import template which may be used to import
 the table (see <a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU.import_ado" title="geosoft.gxapi.GXDU.import_ado"><code class="xref py py-obj docutils literal"><span class="pre">GXDU.import_ado</span></code></a>).</li>
-<li>If connection string is of type “FILENAME=…” the connection will attempt to resolve
+<li>If connection string is of type &#8220;FILENAME=...&#8221; the connection will attempt to resolve
 it as a file database. (see also ODBCFileConnect_GUI)</li>
 </ol>
 </dd></dl>
@@ -1309,10 +1312,10 @@ created using SQL.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>name</strong> (<em>str</em>) – External database file name</li>
-<li><strong>sql</strong> (<em>str</em>) – Text file with SQL queries to use, (“” - get from database)</li>
-<li><strong>temp</strong> (<em>str</em>) – Import template to make</li>
-<li><strong>line</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Name of table imported (returned)</li>
+<li><strong>name</strong> (<em>str</em>) &#8211; External database file name</li>
+<li><strong>sql</strong> (<em>str</em>) &#8211; Text file with SQL queries to use, (&#8220;&#8221; - get from database)</li>
+<li><strong>temp</strong> (<em>str</em>) &#8211; Import template to make</li>
+<li><strong>line</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Name of table imported (returned)</li>
 </ul>
 </td>
 </tr>
@@ -1335,28 +1338,28 @@ one or more database tables and fields, by selecting from
 one or more SQL selection queries. The list of queries
 is read from a text file with the following syntax:</p>
 <p>Query_Name_1
-Query…
-Query… (continued)
-…
-…
+Query...
+Query... (continued)
+...
+...
 END_QUERY
 Query_Name_2
 etc.</p>
 </li>
 <li><p class="first">Each query has a title line, the query itself, then the
-“END_QUERY” line to finish.  The title of a subsequent query
-is on the line after an “END_QUERY” line.</p>
+&#8220;END_QUERY&#8221; line to finish.  The title of a subsequent query
+is on the line after an &#8220;END_QUERY&#8221; line.</p>
 </li>
-<li><p class="first">If the text file parameter is left blank (“”), then
+<li><p class="first">If the text file parameter is left blank (&#8220;&#8221;), then
 selection queries in the database itself are listed.
 In addition to the pre-defined queries, there is a
-“User Defined” query which may be filled in by the user.</p>
+&#8220;User Defined&#8221; query which may be filled in by the user.</p>
 </li>
 <li><p class="first">This function DOES NOT import the table itself, but
 creates an import template which may be used to import
 the data (see <a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU.import_dao" title="geosoft.gxapi.GXDU.import_dao"><code class="xref py py-obj docutils literal"><span class="pre">GXDU.import_dao</span></code></a>).</p>
 </li>
-<li><p class="first">If connection string is of type “FILENAME=…” the connection will attempt to resolve
+<li><p class="first">If connection string is of type &#8220;FILENAME=...&#8221; the connection will attempt to resolve
 it as a file database. (see also ODBCFileConnect_GUI)</p>
 </li>
 </ol>
@@ -1372,10 +1375,10 @@ created using SQL (New ADO Version).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>connect</strong> (<em>str</em>) – External database connection string (Blank for OLEDB Wizard)</li>
-<li><strong>sql</strong> (<em>str</em>) – Text file with SQL queries to use, (“” - get from database)</li>
-<li><strong>temp</strong> (<em>str</em>) – Import template to make</li>
-<li><strong>line</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Name of table imported (returned)</li>
+<li><strong>connect</strong> (<em>str</em>) &#8211; External database connection string (Blank for OLEDB Wizard)</li>
+<li><strong>sql</strong> (<em>str</em>) &#8211; Text file with SQL queries to use, (&#8220;&#8221; - get from database)</li>
+<li><strong>temp</strong> (<em>str</em>) &#8211; Import template to make</li>
+<li><strong>line</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Name of table imported (returned)</li>
 </ul>
 </td>
 </tr>
@@ -1397,20 +1400,20 @@ one or more database tables and fields, by selecting from
 one or more SQL selection queries. The list of queries
 is read from a text file with the following syntax:</p>
 <p>Query_Name_1
-Query…
-Query… (continued)
-…
-…
+Query...
+Query... (continued)
+...
+...
 END_QUERY
 Query_Name_2
 etc.</p>
 <p>Each query has a title line, the query itself, then the
-“END_QUERY” line to finish.  The title of a subsequent query
-is on the line after an “END_QUERY” line.</p>
-<p>If the text file parameter is left blank (“”), then
+&#8220;END_QUERY&#8221; line to finish.  The title of a subsequent query
+is on the line after an &#8220;END_QUERY&#8221; line.</p>
+<p>If the text file parameter is left blank (&#8220;&#8221;), then
 selection queries in the database itself are listed.
 In addition to the pre-defined queries, there is a
-“User Defined” query which may be filled in by the user.</p>
+&#8220;User Defined&#8221; query which may be filled in by the user.</p>
 <p>This function DOES NOT import the table itself, but
 creates an import template which may be used to import
 the data (see <a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU.import_dao" title="geosoft.gxapi.GXDU.import_dao"><code class="xref py py-obj docutils literal"><span class="pre">GXDU.import_dao</span></code></a>).</p>
@@ -1425,11 +1428,11 @@ the data (see <a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU.i
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>connect</strong> (<em>str</em>) – External database connection string (Blank for OLEDB Wizard)</li>
-<li><strong>temp</strong> (<em>str</em>) – Template to make</li>
-<li><strong>table</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Name of table</li>
-<li><strong>type</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Type of import returned <code class="xref py py-obj docutils literal"><span class="pre">DH_DATA</span></code></li>
-<li><strong>reg</strong> (<a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><em>GXREG</em></a>) – Drill Hole Object <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> handle</li>
+<li><strong>connect</strong> (<em>str</em>) &#8211; External database connection string (Blank for OLEDB Wizard)</li>
+<li><strong>temp</strong> (<em>str</em>) &#8211; Template to make</li>
+<li><strong>table</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Name of table</li>
+<li><strong>type</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Type of import returned <a class="reference internal" href="GXDH.html#dh-data"><span class="std std-ref">DH_DATA constants</span></a></li>
+<li><strong>reg</strong> (<a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><em>GXREG</em></a>) &#8211; Drill Hole Object <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> handle</li>
 </ul>
 </td>
 </tr>
@@ -1460,11 +1463,11 @@ new ADO technology, as opposed to DAO. Use in conjunction with
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>connect</strong> (<em>str</em>) – External database connection string (Blank for OLEDB Wizard)</li>
-<li><strong>temp</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Template to make (if left blank, the created template name is returned)</li>
-<li><strong>table</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Name of table</li>
-<li><strong>type</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Type of import returned <code class="xref py py-obj docutils literal"><span class="pre">DH_DATA</span></code></li>
-<li><strong>reg</strong> (<a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><em>GXREG</em></a>) – Drill Hole Object <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> handle</li>
+<li><strong>connect</strong> (<em>str</em>) &#8211; External database connection string (Blank for OLEDB Wizard)</li>
+<li><strong>temp</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Template to make (if left blank, the created template name is returned)</li>
+<li><strong>table</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Name of table</li>
+<li><strong>type</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Type of import returned <a class="reference internal" href="GXDH.html#dh-data"><span class="std std-ref">DH_DATA constants</span></a></li>
+<li><strong>reg</strong> (<a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><em>GXREG</em></a>) &#8211; Drill Hole Object <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> handle</li>
 </ul>
 </td>
 </tr>
@@ -1483,7 +1486,7 @@ new ADO technology, as opposed to DAO. Use in conjunction with
 <p><strong>Note:</strong></p>
 <p>If it is not defined on input, the template name is set
 to be the Wholeplot table name; e.g.
-“HOLESURVEY.i4” for “Project_HOLESURVEY”</p>
+&#8220;HOLESURVEY.i4&#8221; for &#8220;Project_HOLESURVEY&#8221;</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1495,12 +1498,12 @@ to be the Wholeplot table name; e.g.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>connect</strong> (<em>str</em>) – External database connection string  (e.g. “d:Personaltest.mdb|Table” or “d:Filetest.gdb|TableX|FeatureClassY)”</li>
-<li><strong>temp</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Template to make (if left blank, the created template name is returned)</li>
-<li><strong>table</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Name of table</li>
-<li><strong>type</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Type of import returned <code class="xref py py-obj docutils literal"><span class="pre">DH_DATA</span></code></li>
-<li><strong>geochem</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">GEO_BOOL</span></code> Geosoft Geochemistry Database?</li>
-<li><strong>reg</strong> (<a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><em>GXREG</em></a>) – Drill Hole Object <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> handle</li>
+<li><strong>connect</strong> (<em>str</em>) &#8211; External database connection string  (e.g. &#8220;d:Personaltest.mdb|Table&#8221; or &#8220;d:Filetest.gdb|TableX|FeatureClassY)&#8221;</li>
+<li><strong>temp</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Template to make (if left blank, the created template name is returned)</li>
+<li><strong>table</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Name of table</li>
+<li><strong>type</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Type of import returned <a class="reference internal" href="GXDH.html#dh-data"><span class="std std-ref">DH_DATA constants</span></a></li>
+<li><strong>geochem</strong> (<em>bool</em>) &#8211; Geosoft Geochemistry Database?</li>
+<li><strong>reg</strong> (<a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><em>GXREG</em></a>) &#8211; Drill Hole Object <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> handle</li>
 </ul>
 </td>
 </tr>
@@ -1519,7 +1522,7 @@ to be the Wholeplot table name; e.g.
 <p><strong>Note:</strong></p>
 <p>If it is not defined on input, the template name is set
 to be the Wholeplot table name; e.g.
-“HOLESURVEY.i4” for “Project_HOLESURVEY”</p>
+&#8220;HOLESURVEY.i4&#8221; for &#8220;Project_HOLESURVEY&#8221;</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1532,11 +1535,11 @@ from ODBC database data.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>connect</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Connection string</li>
-<li><strong>temp</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Template to make</li>
-<li><strong>table</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Name of table</li>
-<li><strong>type</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Type of import returned <code class="xref py py-obj docutils literal"><span class="pre">DH_DATA</span></code></li>
-<li><strong>reg</strong> (<a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><em>GXREG</em></a>) – Drill Hole Object <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> handle</li>
+<li><strong>connect</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Connection string</li>
+<li><strong>temp</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Template to make</li>
+<li><strong>table</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Name of table</li>
+<li><strong>type</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Type of import returned <a class="reference internal" href="GXDH.html#dh-data"><span class="std std-ref">DH_DATA constants</span></a></li>
+<li><strong>reg</strong> (<a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><em>GXREG</em></a>) &#8211; Drill Hole Object <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> handle</li>
 </ul>
 </td>
 </tr>
@@ -1553,13 +1556,13 @@ from ODBC database data.</p>
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>If the input connection string is empty (“”), then the ODBC connection dialogs
+<p>If the input connection string is empty (&#8220;&#8221;), then the ODBC connection dialogs
 will appear (e.g. to connect to a machine database) before the import wizard
 is run. The connect string used for this connection is then returned.
 This string can then be used on input to skip the ODBC connection dialogs and
 go straight to the Wholeplot import wizard.
 Because the name of the database is not necessarily known, the template name is created
-from the name of the table opened - e.g. “HOLELOCATION.i4”.</p>
+from the name of the table opened - e.g. &#8220;HOLELOCATION.i4&#8221;.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1571,11 +1574,11 @@ from the name of the table opened - e.g. “HOLELOCATION.i4”.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>connect</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Connection string</li>
-<li><strong>temp</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Template to make</li>
-<li><strong>table</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Name of table</li>
-<li><strong>type</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Type of import returned <code class="xref py py-obj docutils literal"><span class="pre">DH_DATA</span></code></li>
-<li><strong>reg</strong> (<a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><em>GXREG</em></a>) – Drill Hole Object <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> handle</li>
+<li><strong>connect</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Connection string</li>
+<li><strong>temp</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Template to make</li>
+<li><strong>table</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Name of table</li>
+<li><strong>type</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Type of import returned <a class="reference internal" href="GXDH.html#dh-data"><span class="std std-ref">DH_DATA constants</span></a></li>
+<li><strong>reg</strong> (<a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><em>GXREG</em></a>) &#8211; Drill Hole Object <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> handle</li>
 </ul>
 </td>
 </tr>
@@ -1603,11 +1606,11 @@ from the name of the table opened - e.g. “HOLELOCATION.i4”.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> (<em>str</em>) – Data file name</li>
-<li><strong>temp</strong> (<em>str</em>) – Template to make</li>
-<li><strong>table</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Name of table</li>
-<li><strong>type</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Type of import returned <code class="xref py py-obj docutils literal"><span class="pre">DH_DATA</span></code></li>
-<li><strong>reg</strong> (<a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><em>GXREG</em></a>) – Drill Hole Object <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> handle</li>
+<li><strong>name</strong> (<em>str</em>) &#8211; Data file name</li>
+<li><strong>temp</strong> (<em>str</em>) &#8211; Template to make</li>
+<li><strong>table</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Name of table</li>
+<li><strong>type</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Type of import returned <a class="reference internal" href="GXDH.html#dh-data"><span class="std std-ref">DH_DATA constants</span></a></li>
+<li><strong>reg</strong> (<a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><em>GXREG</em></a>) &#8211; Drill Hole Object <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> handle</li>
 </ul>
 </td>
 </tr>
@@ -1627,10 +1630,10 @@ from the name of the table opened - e.g. “HOLELOCATION.i4”.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>name</strong> (<em>str</em>) – External database file name</li>
-<li><strong>temp</strong> (<em>str</em>) – Import template to make</li>
-<li><strong>sql</strong> (<em>str</em>) – SQL selection query to run on database</li>
-<li><strong>line</strong> (<em>str</em>) – Name of Oasis table to create</li>
+<li><strong>name</strong> (<em>str</em>) &#8211; External database file name</li>
+<li><strong>temp</strong> (<em>str</em>) &#8211; Import template to make</li>
+<li><strong>sql</strong> (<em>str</em>) &#8211; SQL selection query to run on database</li>
+<li><strong>line</strong> (<em>str</em>) &#8211; Name of Oasis table to create</li>
 </ul>
 </td>
 </tr>
@@ -1665,10 +1668,10 @@ the data (see <a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU.i
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>name</strong> (<em>str</em>) – External database connection string (Blank for OLEDB Wizard)</li>
-<li><strong>temp</strong> (<em>str</em>) – Import template to make</li>
-<li><strong>sql</strong> (<em>str</em>) – SQL selection query to run on database</li>
-<li><strong>line</strong> (<em>str</em>) – Name of Oasis table to create</li>
+<li><strong>name</strong> (<em>str</em>) &#8211; External database connection string (Blank for OLEDB Wizard)</li>
+<li><strong>temp</strong> (<em>str</em>) &#8211; Import template to make</li>
+<li><strong>sql</strong> (<em>str</em>) &#8211; SQL selection query to run on database</li>
+<li><strong>line</strong> (<em>str</em>) &#8211; Name of Oasis table to create</li>
 </ul>
 </td>
 </tr>
@@ -1705,10 +1708,10 @@ may change during editing.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
-<li><strong>template</strong> (<em>str</em>) – Name of the Template (can change)</li>
-<li><strong>size</strong> (<em>int</em>) – Size of the Template</li>
-<li><strong>file</strong> (<em>str</em>) – Name of the XYZ file to base it on</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database</li>
+<li><strong>template</strong> (<em>str</em>) &#8211; Name of the Template (can change)</li>
+<li><strong>size</strong> (<em>int</em>) &#8211; Size of the Template</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; Name of the XYZ file to base it on</li>
 </ul>
 </td>
 </tr>
@@ -1758,9 +1761,9 @@ may change during editing.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>dll</strong> (<em>str</em>) – Assembly name</li>
-<li><strong>func</strong> (<em>str</em>) – Control Class Name</li>
-<li><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal"><span class="pre">GXMETA</span></code></a> Handle (holding tool configuration data)</li>
+<li><strong>dll</strong> (<em>str</em>) &#8211; Assembly name</li>
+<li><strong>func</strong> (<em>str</em>) &#8211; Control Class Name</li>
+<li><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) &#8211; <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal"><span class="pre">GXMETA</span></code></a> Handle (holding tool configuration data)</li>
 </ul>
 </td>
 </tr>
@@ -1780,13 +1783,13 @@ may change during editing.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>dll</strong> (<em>str</em>) – Assembly name</li>
-<li><strong>func</strong> (<em>str</em>) – Control Class Name</li>
-<li><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal"><span class="pre">GXMETA</span></code></a> Handle (holding tool configuration data)</li>
-<li><strong>align</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">XTOOL_ALIGN</span></code> (can specify one or more or <a class="reference internal" href="#geosoft.gxapi.XTOOL_ALIGN_ANY" title="geosoft.gxapi.XTOOL_ALIGN_ANY"><code class="xref py py-obj docutils literal"><span class="pre">XTOOL_ALIGN_ANY</span></code></a>)</li>
-<li><strong>dock</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">XTOOL_DOCK</span></code></li>
-<li><strong>width</strong> (<em>int</em>) – Default width</li>
-<li><strong>height</strong> (<em>int</em>) – Default height</li>
+<li><strong>dll</strong> (<em>str</em>) &#8211; Assembly name</li>
+<li><strong>func</strong> (<em>str</em>) &#8211; Control Class Name</li>
+<li><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) &#8211; <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal"><span class="pre">GXMETA</span></code></a> Handle (holding tool configuration data)</li>
+<li><strong>align</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#xtool-align"><span class="std std-ref">XTOOL_ALIGN constants</span></a> (can specify one or more or <a class="reference internal" href="#geosoft.gxapi.XTOOL_ALIGN_ANY" title="geosoft.gxapi.XTOOL_ALIGN_ANY"><code class="xref py py-obj docutils literal"><span class="pre">XTOOL_ALIGN_ANY</span></code></a>)</li>
+<li><strong>dock</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#xtool-dock"><span class="std std-ref">XTOOL_DOCK constants</span></a></li>
+<li><strong>width</strong> (<em>int</em>) &#8211; Default width</li>
+<li><strong>height</strong> (<em>int</em>) &#8211; Default height</li>
 </ul>
 </td>
 </tr>
@@ -1806,9 +1809,9 @@ may change during editing.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>dll</strong> (<em>str</em>) – DLL name</li>
-<li><strong>func</strong> (<em>str</em>) – Function Name</li>
-<li><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal"><span class="pre">GXMETA</span></code></a> Handle (holding tool configuration data)</li>
+<li><strong>dll</strong> (<em>str</em>) &#8211; DLL name</li>
+<li><strong>func</strong> (<em>str</em>) &#8211; Function Name</li>
+<li><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) &#8211; <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal"><span class="pre">GXMETA</span></code></a> Handle (holding tool configuration data)</li>
 </ul>
 </td>
 </tr>
@@ -1828,13 +1831,13 @@ may change during editing.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>dll</strong> (<em>str</em>) – DLL name</li>
-<li><strong>func</strong> (<em>str</em>) – Function Name</li>
-<li><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal"><span class="pre">GXMETA</span></code></a> Handle (holding tool configuration data)</li>
-<li><strong>align</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">XTOOL_ALIGN</span></code> (can specify one or more or <a class="reference internal" href="#geosoft.gxapi.XTOOL_ALIGN_ANY" title="geosoft.gxapi.XTOOL_ALIGN_ANY"><code class="xref py py-obj docutils literal"><span class="pre">XTOOL_ALIGN_ANY</span></code></a>)</li>
-<li><strong>dock</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">XTOOL_DOCK</span></code></li>
-<li><strong>width</strong> (<em>int</em>) – Default width</li>
-<li><strong>height</strong> (<em>int</em>) – Default height</li>
+<li><strong>dll</strong> (<em>str</em>) &#8211; DLL name</li>
+<li><strong>func</strong> (<em>str</em>) &#8211; Function Name</li>
+<li><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) &#8211; <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal"><span class="pre">GXMETA</span></code></a> Handle (holding tool configuration data)</li>
+<li><strong>align</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#xtool-align"><span class="std std-ref">XTOOL_ALIGN constants</span></a> (can specify one or more or <a class="reference internal" href="#geosoft.gxapi.XTOOL_ALIGN_ANY" title="geosoft.gxapi.XTOOL_ALIGN_ANY"><code class="xref py py-obj docutils literal"><span class="pre">XTOOL_ALIGN_ANY</span></code></a>)</li>
+<li><strong>dock</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#xtool-dock"><span class="std std-ref">XTOOL_DOCK constants</span></a></li>
+<li><strong>width</strong> (<em>int</em>) &#8211; Default width</li>
+<li><strong>height</strong> (<em>int</em>) &#8211; Default height</li>
 </ul>
 </td>
 </tr>
@@ -1854,9 +1857,9 @@ may change during editing.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>dll</strong> (<em>str</em>) – Assembly name</li>
-<li><strong>func</strong> (<em>str</em>) – Control Class Name</li>
-<li><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal"><span class="pre">GXMETA</span></code></a> Handle (holding tool configuration data)</li>
+<li><strong>dll</strong> (<em>str</em>) &#8211; Assembly name</li>
+<li><strong>func</strong> (<em>str</em>) &#8211; Control Class Name</li>
+<li><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) &#8211; <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal"><span class="pre">GXMETA</span></code></a> Handle (holding tool configuration data)</li>
 </ul>
 </td>
 </tr>
@@ -1876,13 +1879,13 @@ may change during editing.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>dll</strong> (<em>str</em>) – Assembly name</li>
-<li><strong>func</strong> (<em>str</em>) – Control Class Name</li>
-<li><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal"><span class="pre">GXMETA</span></code></a> Handle (holding tool configuration data)</li>
-<li><strong>align</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">XTOOL_ALIGN</span></code> (can specify one or more or <a class="reference internal" href="#geosoft.gxapi.XTOOL_ALIGN_ANY" title="geosoft.gxapi.XTOOL_ALIGN_ANY"><code class="xref py py-obj docutils literal"><span class="pre">XTOOL_ALIGN_ANY</span></code></a>)</li>
-<li><strong>dock</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">XTOOL_DOCK</span></code></li>
-<li><strong>width</strong> (<em>int</em>) – Default width</li>
-<li><strong>height</strong> (<em>int</em>) – Default height</li>
+<li><strong>dll</strong> (<em>str</em>) &#8211; Assembly name</li>
+<li><strong>func</strong> (<em>str</em>) &#8211; Control Class Name</li>
+<li><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) &#8211; <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal"><span class="pre">GXMETA</span></code></a> Handle (holding tool configuration data)</li>
+<li><strong>align</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#xtool-align"><span class="std std-ref">XTOOL_ALIGN constants</span></a> (can specify one or more or <a class="reference internal" href="#geosoft.gxapi.XTOOL_ALIGN_ANY" title="geosoft.gxapi.XTOOL_ALIGN_ANY"><code class="xref py py-obj docutils literal"><span class="pre">XTOOL_ALIGN_ANY</span></code></a>)</li>
+<li><strong>dock</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#xtool-dock"><span class="std std-ref">XTOOL_DOCK constants</span></a></li>
+<li><strong>width</strong> (<em>int</em>) &#8211; Default width</li>
+<li><strong>height</strong> (<em>int</em>) &#8211; Default height</li>
 </ul>
 </td>
 </tr>
@@ -1902,10 +1905,10 @@ may change during editing.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>pattern</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Current Pattern</li>
-<li><strong>thickness</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Current Thickness</li>
-<li><strong>pitch</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Current Pitch</li>
-<li><strong>colour</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Current Pattern Color</li>
+<li><strong>pattern</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Current Pattern</li>
+<li><strong>thickness</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Current Thickness</li>
+<li><strong>pitch</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Current Pitch</li>
+<li><strong>colour</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Current Pattern Color</li>
 </ul>
 </td>
 </tr>
@@ -1934,9 +1937,9 @@ may change during editing.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – Meta object</li>
-<li><strong>root_token</strong> (<em>int</em>) – Root Token, <a class="reference internal" href="GXMETA.html#geosoft.gxapi.H_META_INVALID_TOKEN" title="geosoft.gxapi.H_META_INVALID_TOKEN"><code class="xref py py-obj docutils literal"><span class="pre">H_META_INVALID_TOKEN</span></code></a> for root</li>
-<li><strong>schema</strong> (<em>int</em>) – Display schema information ?</li>
+<li><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) &#8211; Meta object</li>
+<li><strong>root_token</strong> (<em>int</em>) &#8211; Root Token, <a class="reference internal" href="GXMETA.html#geosoft.gxapi.H_META_INVALID_TOKEN" title="geosoft.gxapi.H_META_INVALID_TOKEN"><code class="xref py py-obj docutils literal"><span class="pre">H_META_INVALID_TOKEN</span></code></a> for root</li>
+<li><strong>schema</strong> (<em>int</em>) &#8211; Display schema information ?</li>
 </ul>
 </td>
 </tr>
@@ -1963,9 +1966,9 @@ non-zero  - Cancel</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – Meta object</li>
-<li><strong>root_token</strong> (<em>int</em>) – Root token, <a class="reference internal" href="GXMETA.html#geosoft.gxapi.H_META_INVALID_TOKEN" title="geosoft.gxapi.H_META_INVALID_TOKEN"><code class="xref py py-obj docutils literal"><span class="pre">H_META_INVALID_TOKEN</span></code></a> for root</li>
-<li><strong>schema</strong> (<em>int</em>) – Display schema information ?</li>
+<li><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) &#8211; Meta object</li>
+<li><strong>root_token</strong> (<em>int</em>) &#8211; Root token, <a class="reference internal" href="GXMETA.html#geosoft.gxapi.H_META_INVALID_TOKEN" title="geosoft.gxapi.H_META_INVALID_TOKEN"><code class="xref py py-obj docutils literal"><span class="pre">H_META_INVALID_TOKEN</span></code></a> for root</li>
+<li><strong>schema</strong> (<em>int</em>) &#8211; Display schema information ?</li>
 </ul>
 </td>
 </tr>
@@ -1999,10 +2002,10 @@ non-zero  - Cancel</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>file</strong> (<em>str</em>) – File Name</li>
-<li><strong>connect</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Connection string (returned)</li>
-<li><strong>usage</strong> (<em>int</em>) – File Usage (0 - ODBC drivers not queried, 1 - Directory containing tables, 2 - File containing tables)</li>
-<li><strong>table</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Table name of file (returned if plUsage==1)</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; File Name</li>
+<li><strong>connect</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Connection string (returned)</li>
+<li><strong>usage</strong> (<em>int</em>) &#8211; File Usage (0 - ODBC drivers not queried, 1 - Directory containing tables, 2 - File containing tables)</li>
+<li><strong>table</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Table name of file (returned if plUsage==1)</li>
 </ul>
 </td>
 </tr>
@@ -2020,7 +2023,7 @@ terminates on error</p>
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>If the file extension is “mdb” or “xls” then a Microsoft Access
+<p>If the file extension is &#8220;mdb&#8221; or &#8220;xls&#8221; then a Microsoft Access
 or Excel database is assumed. Otherwise, a dialog appears listing
 the installed ODBC file database drivers. If the driver takes a
 directory as a database (FileUsage==1) the table name is also
@@ -2039,12 +2042,12 @@ the file extension.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>pat</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Current Pattern</li>
-<li><strong>size</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Current Size,           // returned</li>
-<li><strong>thick</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Current Thick (0-100)   // returned</li>
-<li><strong>dense</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Current Density,        // returned</li>
-<li><strong>col</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Current Pattern Color   // passed in and returned</li>
-<li><strong>back_col</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Current Background Color  // passed in and returned; can be <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.C_TRANSPARENT" title="geosoft.gxapi.C_TRANSPARENT"><code class="xref py py-obj docutils literal"><span class="pre">C_TRANSPARENT</span></code></a></li>
+<li><strong>pat</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Current Pattern</li>
+<li><strong>size</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Current Size,           // returned</li>
+<li><strong>thick</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Current Thick (0-100)   // returned</li>
+<li><strong>dense</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Current Density,        // returned</li>
+<li><strong>col</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Current Pattern Color   // passed in and returned</li>
+<li><strong>back_col</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Current Background Color  // passed in and returned; can be <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.C_TRANSPARENT" title="geosoft.gxapi.C_TRANSPARENT"><code class="xref py py-obj docutils literal"><span class="pre">C_TRANSPARENT</span></code></a></li>
 </ul>
 </td>
 </tr>
@@ -2085,7 +2088,7 @@ A value of 2 means they overlap each other.</dd>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – Filename string</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; Filename string</td>
 </tr>
 </tbody>
 </table>
@@ -2103,18 +2106,18 @@ A value of 2 means they overlap each other.</dd>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>hdc</strong> (<em>int</em>) – DC Handle</li>
-<li><strong>left</strong> (<em>int</em>) – Left value of the render rect in Windows coordinates (bottom&gt;top)</li>
-<li><strong>bottom</strong> (<em>int</em>) – Bottom value</li>
-<li><strong>right</strong> (<em>int</em>) – Right value</li>
-<li><strong>top</strong> (<em>int</em>) – Top value</li>
-<li><strong>pattern</strong> (<em>int</em>) – Pattern number</li>
-<li><strong>thickness</strong> (<em>float</em>) – Pattern thickness</li>
-<li><strong>pitch</strong> (<em>float</em>) – Pattern pitch</li>
-<li><strong>col</strong> (<em>int</em>) – Pattern color</li>
-<li><strong>is_enabled</strong> (<em>int</em>) – Is this window enabled?</li>
-<li><strong>is_button</strong> (<em>int</em>) – Is this a button?</li>
-<li><strong>is_selected</strong> (<em>int</em>) – Is this window selected?</li>
+<li><strong>hdc</strong> (<em>int</em>) &#8211; DC Handle</li>
+<li><strong>left</strong> (<em>int</em>) &#8211; Left value of the render rect in Windows coordinates (bottom&gt;top)</li>
+<li><strong>bottom</strong> (<em>int</em>) &#8211; Bottom value</li>
+<li><strong>right</strong> (<em>int</em>) &#8211; Right value</li>
+<li><strong>top</strong> (<em>int</em>) &#8211; Top value</li>
+<li><strong>pattern</strong> (<em>int</em>) &#8211; Pattern number</li>
+<li><strong>thickness</strong> (<em>float</em>) &#8211; Pattern thickness</li>
+<li><strong>pitch</strong> (<em>float</em>) &#8211; Pattern pitch</li>
+<li><strong>col</strong> (<em>int</em>) &#8211; Pattern color</li>
+<li><strong>is_enabled</strong> (<em>int</em>) &#8211; Is this window enabled?</li>
+<li><strong>is_button</strong> (<em>int</em>) &#8211; Is this a button?</li>
+<li><strong>is_selected</strong> (<em>int</em>) &#8211; Is this window selected?</li>
 </ul>
 </td>
 </tr>
@@ -2138,20 +2141,20 @@ A value of 2 means they overlap each other.</dd>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>hdc</strong> (<em>int</em>) – DC handle</li>
-<li><strong>left</strong> (<em>int</em>) – Left value of the render rect in Windows coordinates (bottom&gt;top)</li>
-<li><strong>bottom</strong> (<em>int</em>) – Bottom value</li>
-<li><strong>right</strong> (<em>int</em>) – Right value</li>
-<li><strong>top</strong> (<em>int</em>) – Top value</li>
-<li><strong>pat</strong> (<em>int</em>) – Pattern number</li>
-<li><strong>size</strong> (<em>float</em>) – Pattern size,           // input <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_R8DM" title="geosoft.gxapi.GS_R8DM"><code class="xref py py-obj docutils literal"><span class="pre">GS_R8DM</span></code></a> to use default</li>
-<li><strong>thick</strong> (<em>int</em>) – Pattern thick (0-100)   // input <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_S4DM" title="geosoft.gxapi.GS_S4DM"><code class="xref py py-obj docutils literal"><span class="pre">GS_S4DM</span></code></a> to use default</li>
-<li><strong>dense</strong> (<em>float</em>) – Pattern density,        // input <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_R8DM" title="geosoft.gxapi.GS_R8DM"><code class="xref py py-obj docutils literal"><span class="pre">GS_R8DM</span></code></a> to use default</li>
-<li><strong>col</strong> (<em>int</em>) – Pattern color        // input <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_S4DM" title="geosoft.gxapi.GS_S4DM"><code class="xref py py-obj docutils literal"><span class="pre">GS_S4DM</span></code></a> to use default</li>
-<li><strong>back_col</strong> (<em>int</em>) – Pattern background color // input <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_S4DM" title="geosoft.gxapi.GS_S4DM"><code class="xref py py-obj docutils literal"><span class="pre">GS_S4DM</span></code></a> to use default; can be <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.C_TRANSPARENT" title="geosoft.gxapi.C_TRANSPARENT"><code class="xref py py-obj docutils literal"><span class="pre">C_TRANSPARENT</span></code></a></li>
-<li><strong>is_enabled</strong> (<em>int</em>) – Is this window enabled?</li>
-<li><strong>is_button</strong> (<em>int</em>) – Is this a button?</li>
-<li><strong>is_selected</strong> (<em>int</em>) – Is this window selected?</li>
+<li><strong>hdc</strong> (<em>int</em>) &#8211; DC handle</li>
+<li><strong>left</strong> (<em>int</em>) &#8211; Left value of the render rect in Windows coordinates (bottom&gt;top)</li>
+<li><strong>bottom</strong> (<em>int</em>) &#8211; Bottom value</li>
+<li><strong>right</strong> (<em>int</em>) &#8211; Right value</li>
+<li><strong>top</strong> (<em>int</em>) &#8211; Top value</li>
+<li><strong>pat</strong> (<em>int</em>) &#8211; Pattern number</li>
+<li><strong>size</strong> (<em>float</em>) &#8211; Pattern size,           // input <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_R8DM" title="geosoft.gxapi.GS_R8DM"><code class="xref py py-obj docutils literal"><span class="pre">GS_R8DM</span></code></a> to use default</li>
+<li><strong>thick</strong> (<em>int</em>) &#8211; Pattern thick (0-100)   // input <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_S4DM" title="geosoft.gxapi.GS_S4DM"><code class="xref py py-obj docutils literal"><span class="pre">GS_S4DM</span></code></a> to use default</li>
+<li><strong>dense</strong> (<em>float</em>) &#8211; Pattern density,        // input <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_R8DM" title="geosoft.gxapi.GS_R8DM"><code class="xref py py-obj docutils literal"><span class="pre">GS_R8DM</span></code></a> to use default</li>
+<li><strong>col</strong> (<em>int</em>) &#8211; Pattern color        // input <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_S4DM" title="geosoft.gxapi.GS_S4DM"><code class="xref py py-obj docutils literal"><span class="pre">GS_S4DM</span></code></a> to use default</li>
+<li><strong>back_col</strong> (<em>int</em>) &#8211; Pattern background color // input <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_S4DM" title="geosoft.gxapi.GS_S4DM"><code class="xref py py-obj docutils literal"><span class="pre">GS_S4DM</span></code></a> to use default; can be <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.C_TRANSPARENT" title="geosoft.gxapi.C_TRANSPARENT"><code class="xref py py-obj docutils literal"><span class="pre">C_TRANSPARENT</span></code></a></li>
+<li><strong>is_enabled</strong> (<em>int</em>) &#8211; Is this window enabled?</li>
+<li><strong>is_button</strong> (<em>int</em>) &#8211; Is this a button?</li>
+<li><strong>is_selected</strong> (<em>int</em>) &#8211; Is this window selected?</li>
 </ul>
 </td>
 </tr>
@@ -2172,7 +2175,7 @@ A value of 2 means they overlap each other.</dd>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>wnd</strong> (<em>int</em>) – New Parent Window</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>wnd</strong> (<em>int</em>) &#8211; New Parent Window</td>
 </tr>
 </tbody>
 </table>
@@ -2192,7 +2195,7 @@ parent to ensure the dialog is correctly modal.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>printer</strong> (<em>str</em>) – Printer Name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>printer</strong> (<em>str</em>) &#8211; Printer Name</td>
 </tr>
 </tbody>
 </table>
@@ -2210,7 +2213,7 @@ if main application is processing messages</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>on</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">GEO_BOOL</span></code> Should progress bar remain visible</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>on</strong> (<em>bool</em>) &#8211; Should progress bar remain visible</td>
 </tr>
 </tbody>
 </table>
@@ -2226,17 +2229,17 @@ in some 3rd party apps, hence this function.</p>
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXGUI.set_window_position">
 <em class="property">classmethod </em><code class="descname">set_window_position</code><span class="sig-paren">(</span><em>left</em>, <em>top</em>, <em>right</em>, <em>bottom</em>, <em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGUI.set_window_position" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the Oasis montaj window’s position and state</p>
+<dd><p>Get the Oasis montaj window&#8217;s position and state</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>left</strong> (<em>int</em>) – Window left position</li>
-<li><strong>top</strong> (<em>int</em>) – Window top position</li>
-<li><strong>right</strong> (<em>int</em>) – Window right position</li>
-<li><strong>bottom</strong> (<em>int</em>) – Window bottom position</li>
-<li><strong>state</strong> (<em>int</em>) – Window state <code class="xref py py-obj docutils literal"><span class="pre">WINDOW_STATE</span></code></li>
+<li><strong>left</strong> (<em>int</em>) &#8211; Window left position</li>
+<li><strong>top</strong> (<em>int</em>) &#8211; Window top position</li>
+<li><strong>right</strong> (<em>int</em>) &#8211; Window right position</li>
+<li><strong>bottom</strong> (<em>int</em>) &#8211; Window bottom position</li>
+<li><strong>state</strong> (<em>int</em>) &#8211; Window state <a class="reference internal" href="#window-state"><span class="std std-ref">WINDOW_STATE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -2255,7 +2258,7 @@ in some 3rd party apps, hence this function.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>state</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">WINDOW_STATE</span></code></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>state</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#window-state"><span class="std std-ref">WINDOW_STATE constants</span></a></td>
 </tr>
 </tbody>
 </table>
@@ -2273,8 +2276,8 @@ in some 3rd party apps, hence this function.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>title</strong> (<em>str</em>) – Title</li>
-<li><strong>o3dv</strong> (<em>str</em>) – 3D View name (.geosoft_3dv)</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title</li>
+<li><strong>o3dv</strong> (<em>str</em>) &#8211; 3D View name (.geosoft_3dv)</li>
 </ul>
 </td>
 </tr>
@@ -2296,13 +2299,13 @@ in some 3rd party apps, hence this function.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>min</strong> (<em>float</em>) – Min    Value to display</li>
-<li><strong>max</strong> (<em>float</em>) – Max    Value to display</li>
-<li><strong>mean</strong> (<em>float</em>) – Mean   Value to display</li>
-<li><strong>std_dev</strong> (<em>float</em>) – StdDev Value to display</li>
-<li><strong>median</strong> (<em>float</em>) – Median Value to display</li>
-<li><strong>items</strong> (<em>int</em>) – Items  Number of items this comprises</li>
-<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> holding hist counts</li>
+<li><strong>min</strong> (<em>float</em>) &#8211; Min    Value to display</li>
+<li><strong>max</strong> (<em>float</em>) &#8211; Max    Value to display</li>
+<li><strong>mean</strong> (<em>float</em>) &#8211; Mean   Value to display</li>
+<li><strong>std_dev</strong> (<em>float</em>) &#8211; StdDev Value to display</li>
+<li><strong>median</strong> (<em>float</em>) &#8211; Median Value to display</li>
+<li><strong>items</strong> (<em>int</em>) &#8211; Items  Number of items this comprises</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> holding hist counts</li>
 </ul>
 </td>
 </tr>
@@ -2321,7 +2324,7 @@ in some 3rd party apps, hence this function.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>st</strong> (<a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><em>GXST</em></a>) – Statistics obj</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>st</strong> (<a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><em>GXST</em></a>) &#8211; Statistics obj</td>
 </tr>
 </tbody>
 </table>
@@ -2339,9 +2342,9 @@ in some 3rd party apps, hence this function.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>map</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) – <a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXMAP</span></code></a> object</li>
-<li><strong>title</strong> (<em>str</em>) – Title</li>
-<li><strong>help_id</strong> (<em>str</em>) – HelpID</li>
+<li><strong>map</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) &#8211; <a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXMAP</span></code></a> object</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title</li>
+<li><strong>help_id</strong> (<em>str</em>) &#8211; HelpID</li>
 </ul>
 </td>
 </tr>
@@ -2366,14 +2369,14 @@ It is generally useful to display temporary maps as graphs (e.g. variograms).</p
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>symb_font</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Symbol font file name</li>
-<li><strong>geo_font</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Geosoft font? <code class="xref py py-obj docutils literal"><span class="pre">GEO_BOOL</span></code></li>
-<li><strong>weight</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Weight <code class="xref py py-obj docutils literal"><span class="pre">MVIEW_FONT_WEIGHT</span></code></li>
-<li><strong>symb_num</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Symbol number</li>
-<li><strong>symb_size</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Symbol size</li>
-<li><strong>symb_ang</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Symbol angle</li>
-<li><strong>edge_col</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Edge color</li>
-<li><strong>fill_col</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Fill color</li>
+<li><strong>symb_font</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Symbol font file name</li>
+<li><strong>geo_font</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.bool_ref" title="geosoft.gxapi.bool_ref"><em>bool_ref</em></a>) &#8211; Geosoft font?</li>
+<li><strong>weight</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Weight <a class="reference internal" href="GXMVIEW.html#mview-font-weight"><span class="std std-ref">MVIEW_FONT_WEIGHT constants</span></a></li>
+<li><strong>symb_num</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Symbol number</li>
+<li><strong>symb_size</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Symbol size</li>
+<li><strong>symb_ang</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Symbol angle</li>
+<li><strong>edge_col</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Edge color</li>
+<li><strong>fill_col</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Fill color</li>
 </ul>
 </td>
 </tr>
@@ -2401,7 +2404,7 @@ It is generally useful to display temporary maps as graphs (e.g. variograms).</p
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>vox</strong> (<a class="reference internal" href="GXVOX.html#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><em>GXVOX</em></a>) – <a class="reference internal" href="GXVOX.html#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal"><span class="pre">GXVOX</span></code></a> object</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>vox</strong> (<a class="reference internal" href="GXVOX.html#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><em>GXVOX</em></a>) &#8211; <a class="reference internal" href="GXVOX.html#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal"><span class="pre">GXVOX</span></code></a> object</td>
 </tr>
 </tbody>
 </table>
@@ -2424,9 +2427,9 @@ numerical voxel grids.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>ls_tf</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – All available items for selection.</li>
-<li><strong>ls_ts</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – Selections (altered on output)</li>
-<li><strong>title</strong> (<em>str</em>) – Title for dialog</li>
+<li><strong>ls_tf</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; All available items for selection.</li>
+<li><strong>ls_ts</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; Selections (altered on output)</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title for dialog</li>
 </ul>
 </td>
 </tr>
@@ -2469,9 +2472,9 @@ stored and retrieved from GX parameters (or <a class="reference internal" href="
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>ls_tf</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – All available items for selection.</li>
-<li><strong>ls_ts</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – Selections (altered on output)</li>
-<li><strong>title</strong> (<em>str</em>) – Title for dialog</li>
+<li><strong>ls_tf</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; All available items for selection.</li>
+<li><strong>ls_ts</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; Selections (altered on output)</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title for dialog</li>
 </ul>
 </td>
 </tr>
@@ -2503,11 +2506,11 @@ added at the end of the lists.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>ls_tf</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – All available items for selection.</li>
-<li><strong>ls_ts</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – Selections (altered on output)</li>
-<li><strong>sorted</strong> (<em>int</em>) – Sort items alphabetically (0:No, 1:Yes)</li>
-<li><strong>allow_no_select</strong> (<em>int</em>) – Allow no items selected (0:No, 1:Yes)</li>
-<li><strong>title</strong> (<em>str</em>) – Title for dialog</li>
+<li><strong>ls_tf</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; All available items for selection.</li>
+<li><strong>ls_ts</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; Selections (altered on output)</li>
+<li><strong>sorted</strong> (<em>int</em>) &#8211; Sort items alphabetically (0:No, 1:Yes)</li>
+<li><strong>allow_no_select</strong> (<em>int</em>) &#8211; Allow no items selected (0:No, 1:Yes)</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title for dialog</li>
 </ul>
 </td>
 </tr>
@@ -2539,12 +2542,12 @@ added at the end of the lists.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>ls_tf</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – All available items for selection.</li>
-<li><strong>ls_ts</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – Selections (altered on output)</li>
-<li><strong>sorted</strong> (<em>int</em>) – Sort items alphabetically (0:No, 1:Yes)</li>
-<li><strong>allow_no_select</strong> (<em>int</em>) – Allow no items selected (0:No, 1:Yes)</li>
-<li><strong>title</strong> (<em>str</em>) – Title for dialog</li>
-<li><strong>help</strong> (<em>str</em>) – Help link</li>
+<li><strong>ls_tf</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; All available items for selection.</li>
+<li><strong>ls_ts</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; Selections (altered on output)</li>
+<li><strong>sorted</strong> (<em>int</em>) &#8211; Sort items alphabetically (0:No, 1:Yes)</li>
+<li><strong>allow_no_select</strong> (<em>int</em>) &#8211; Allow no items selected (0:No, 1:Yes)</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title for dialog</li>
+<li><strong>help</strong> (<em>str</em>) &#8211; Help link</li>
 </ul>
 </td>
 </tr>
@@ -2573,7 +2576,7 @@ link.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>vox_name</strong> (<em>str</em>) – Name of the Voxel to get stats from</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>vox_name</strong> (<em>str</em>) &#8211; Name of the Voxel to get stats from</td>
 </tr>
 </tbody>
 </table>
@@ -2628,7 +2631,7 @@ The wizard present three types of projections for selection
 by the user, Geographic (GCS), Projected (PCS), and Unknown.
 (Unknown requires only that the units be defined.)
 The Editable flag must be Yes for this option to take affect,
-and is overridden internally if the user’s license does not
+and is overridden internally if the user&#8217;s license does not
 allow modification of projections (e.g. the OM Viewer).</p>
 <dl class="data">
 <dt id="geosoft.gxapi.COORDSYS_MODE_ALL">
@@ -4648,7 +4651,7 @@ allow modification of projections (e.g. the OM Viewer).</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

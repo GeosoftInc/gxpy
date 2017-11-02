@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>GXGER class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -112,12 +115,12 @@ Following is an example from the file GEOSOFT.`GXGER &lt;geosoft.gxapi.GXGER&gt;
 ! Unable to find INI file: %1
 ! See the documentation for details</p>
 </div></blockquote>
-<p>A ‘#’ character in column 1 indicates a message number.  The message
-follows on lines that begin with a ‘!’ character.  Strings in the message
+<p>A &#8216;#&#8217; character in column 1 indicates a message number.  The message
+follows on lines that begin with a &#8216;!&#8217; character.  Strings in the message
 may be replaced at run time with values using the <a class="reference internal" href="#geosoft.gxapi.GXGER.set_string" title="geosoft.gxapi.GXGER.set_string"><code class="xref py py-obj docutils literal"><span class="pre">set_string</span></code></a>,
 <a class="reference internal" href="#geosoft.gxapi.GXGER.set_int" title="geosoft.gxapi.GXGER.set_int"><code class="xref py py-obj docutils literal"><span class="pre">set_int</span></code></a> and <a class="reference internal" href="#geosoft.gxapi.GXGER.set_double" title="geosoft.gxapi.GXGER.set_double"><code class="xref py py-obj docutils literal"><span class="pre">set_double</span></code></a> methods. The iGet_GER will return the message
 with strings replaced by their settings.  By convention, we recommend
-that you use “%1”, “%2”, etc. as replacement strings.</p>
+that you use &#8220;%1&#8221;, &#8220;%2&#8221;, etc. as replacement strings.</p>
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXGER.create">
 <em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGER.create" title="Permalink to this definition">¶</a></dt>
@@ -126,7 +129,7 @@ that you use “%1”, “%2”, etc. as replacement strings.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – <a class="reference internal" href="#geosoft.gxapi.GXGER" title="geosoft.gxapi.GXGER"><code class="xref py py-obj docutils literal"><span class="pre">GXGER</span></code></a> file name.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; <a class="reference internal" href="#geosoft.gxapi.GXGER" title="geosoft.gxapi.GXGER"><code class="xref py py-obj docutils literal"><span class="pre">GXGER</span></code></a> file name.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXGER" title="geosoft.gxapi.GXGER"><code class="xref py py-obj docutils literal"><span class="pre">GXGER</span></code></a> Object</td>
 </tr>
@@ -151,8 +154,8 @@ directory.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>num</strong> (<em>int</em>) – Message number</li>
-<li><strong>message</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Message string returned, replacements filtered</li>
+<li><strong>num</strong> (<em>int</em>) &#8211; Message number</li>
+<li><strong>message</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Message string returned, replacements filtered</li>
 </ul>
 </td>
 </tr>
@@ -207,8 +210,8 @@ directory.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>parm</strong> (<em>str</em>) – Replacement string (ie. “%1”)</li>
-<li><strong>set</strong> (<em>float</em>) – Setting</li>
+<li><strong>parm</strong> (<em>str</em>) &#8211; Replacement string (ie. &#8220;%1&#8221;)</li>
+<li><strong>set</strong> (<em>float</em>) &#8211; Setting</li>
 </ul>
 </td>
 </tr>
@@ -228,8 +231,8 @@ directory.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>parm</strong> (<em>str</em>) – Replacement string (ie. “%1”)</li>
-<li><strong>set</strong> (<em>int</em>) – Setting</li>
+<li><strong>parm</strong> (<em>str</em>) &#8211; Replacement string (ie. &#8220;%1&#8221;)</li>
+<li><strong>set</strong> (<em>int</em>) &#8211; Setting</li>
 </ul>
 </td>
 </tr>
@@ -249,8 +252,8 @@ directory.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>parm</strong> (<em>str</em>) – Replacement string (ie. “%1”)</li>
-<li><strong>set</strong> (<em>str</em>) – Setting</li>
+<li><strong>parm</strong> (<em>str</em>) &#8211; Replacement string (ie. &#8220;%1&#8221;)</li>
+<li><strong>set</strong> (<em>str</em>) &#8211; Setting</li>
 </ul>
 </td>
 </tr>
@@ -290,7 +293,7 @@ directory.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

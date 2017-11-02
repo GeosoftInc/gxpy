@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>GXEDB class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -129,7 +132,7 @@ lock the underlying map to prevent external changes. The returned
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> (INT) in which to place the list.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> (INT) in which to place the list.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Number of symbols in the list.
 Terminates GX if there was an error.</td>
@@ -165,13 +168,13 @@ the formula is applied to only these cells.</p>
 <p>If the selection is on a channel header, the
 formula is applied to every cell in the channel.</p>
 <p>The given formula string must be of the form:
-“&lt;NameOfCurrentChannel&gt;=&lt;SomeExpression&gt;;”
-e.g. “x=y+1;”</p>
+&#8220;&lt;NameOfCurrentChannel&gt;=&lt;SomeExpression&gt;;&#8221;
+e.g. &#8220;x=y+1;&#8221;</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>formula</strong> (<em>str</em>) – Formula (“&lt;NameOfCurrentChannel&gt;=&lt;SomeExpression&gt;;”)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>formula</strong> (<em>str</em>) &#8211; Formula (&#8220;&lt;NameOfCurrentChannel&gt;=&lt;SomeExpression&gt;;&#8221;)</td>
 </tr>
 </tbody>
 </table>
@@ -279,7 +282,7 @@ guarantee is given about which document is currently active.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>unload_flag</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">EDB_REMOVE</span></code></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>unload_flag</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edb-remove"><span class="std std-ref">EDB_REMOVE constants</span></a></td>
 </tr>
 </tbody>
 </table>
@@ -290,7 +293,7 @@ guarantee is given about which document is currently active.</p>
 <p>Can only be run in interactive mode. After this call the
 <a class="reference internal" href="#geosoft.gxapi.GXEDB" title="geosoft.gxapi.GXEDB"><code class="xref py py-obj docutils literal"><span class="pre">GXEDB</span></code></a> object will become invalid. If this is the last view on
 the document and the document has been modified the map will be
-unloaded and optionally saved depending on the <code class="xref py py-obj docutils literal"><span class="pre">EDB_REMOVE</span></code>
+unloaded and optionally saved depending on the <a class="reference internal" href="#edb-remove"><span class="std std-ref">EDB_REMOVE constants</span></a>
 parameter.</p>
 </dd></dl>
 
@@ -302,7 +305,7 @@ parameter.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> (INT) in which to place the list.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> (INT) in which to place the list.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Number of symbols in the list.
 Terminates GX if there was an error.</td>
@@ -332,7 +335,7 @@ appear on the display, left to right.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> object</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> object</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Number of channels in the list.
 Terminates GX if there was an error.</td>
@@ -347,7 +350,7 @@ Terminates GX if there was an error.</td>
 <p><strong>Note:</strong></p>
 <p>Displayed channel lists are filled in the order the channels
 appear on the display, left to right.</p>
-<p>The channel names will be placed in the “Name” part of
+<p>The channel names will be placed in the &#8220;Name&#8221; part of
 the list and the values are set to the symbol handle.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
@@ -364,8 +367,8 @@ the list and the values are set to the symbol handle.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> object</li>
-<li><strong>class_name</strong> (<em>str</em>) – Class name (“” for all)</li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> object</li>
+<li><strong>class_name</strong> (<em>str</em>) &#8211; Class name (&#8220;&#8221; for all)</li>
 </ul>
 </td>
 </tr>
@@ -384,10 +387,10 @@ Terminates GX if there was an error.</p>
 <p><strong>Note:</strong></p>
 <p>Displayed channel lists are filled in the order the channels
 appear on the display, left to right.</p>
-<p>The channel names will be placed in the “Name” part of
+<p>The channel names will be placed in the &#8220;Name&#8221; part of
 the list and the values are set to the symbol handle.</p>
-<p>Examples of channel classes in current use are “MASK” and
-“ASSAY”. (Searches are case tolerant).</p>
+<p>Examples of channel classes in current use are &#8220;MASK&#8221; and
+&#8220;ASSAY&#8221;. (Searches are case tolerant).</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="#geosoft.gxapi.GXEDB.disp_chan_list" title="geosoft.gxapi.GXEDB.disp_chan_list"><code class="xref py py-obj docutils literal"><span class="pre">disp_chan_list</span></code></a></p>
@@ -402,7 +405,7 @@ the list and the values are set to the symbol handle.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>chan</strong> (<em>str</em>) – Channel</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>chan</strong> (<em>str</em>) &#8211; Channel</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Column number that contains a specific channel
 <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.iDUMMY" title="geosoft.gxapi.iDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">iDUMMY</span></code></a> of channel not loaded</td>
@@ -426,10 +429,10 @@ on X,Y and Z and their projection.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – X - Modified with true point</li>
-<li><strong>y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Y - Modified with true point</li>
-<li><strong>z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Z - Modified with true point</li>
-<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection of X,Y,Z</li>
+<li><strong>x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; X - Modified with true point</li>
+<li><strong>y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Y - Modified with true point</li>
+<li><strong>z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Z - Modified with true point</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) &#8211; Projection of X,Y,Z</li>
 </ul>
 </td>
 </tr>
@@ -455,7 +458,7 @@ on X,Y and Z and their projection.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Where to put the name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Where to put the name</td>
 </tr>
 </tbody>
 </table>
@@ -463,7 +466,7 @@ on X,Y and Z and their projection.</p>
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>Returns “” if mark not currently in a channel.</p>
+<p>Returns &#8220;&#8221; if mark not currently in a channel.</p>
 </dd></dl>
 
 <dl class="method">
@@ -517,7 +520,7 @@ at the current fid (if available).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String returned here</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; String returned here</td>
 </tr>
 </tbody>
 </table>
@@ -534,7 +537,7 @@ at the current fid (if available).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Where to put the name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Where to put the name</td>
 </tr>
 </tbody>
 </table>
@@ -572,9 +575,9 @@ at the current fid (if available).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>start</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Start fiducial</li>
-<li><strong>end</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – End fiducial</li>
-<li><strong>inc</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Fiducial increment</li>
+<li><strong>start</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Start fiducial</li>
+<li><strong>end</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; End fiducial</li>
+<li><strong>inc</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Fiducial increment</li>
 </ul>
 </td>
 </tr>
@@ -601,9 +604,9 @@ at the current fid (if available).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – X coordinate (dummy if no selection or if no X channel defined)</li>
-<li><strong>y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Y coordinate (dummy if no selection or if no Y channel defined)</li>
-<li><strong>z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Z coordinate (dummy if no selection or if no Z channel defined)</li>
+<li><strong>x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; X coordinate (dummy if no selection or if no X channel defined)</li>
+<li><strong>y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Y coordinate (dummy if no selection or if no Y channel defined)</li>
+<li><strong>z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Z coordinate (dummy if no selection or if no Z channel defined)</li>
 </ul>
 </td>
 </tr>
@@ -623,10 +626,10 @@ at the current fid (if available).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Database name</li>
-<li><strong>chan</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Name of Selected channel</li>
-<li><strong>line</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Selected lines buffer</li>
-<li><strong>fid</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Fiducial range</li>
+<li><strong>db</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Database name</li>
+<li><strong>chan</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Name of Selected channel</li>
+<li><strong>line</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Selected lines buffer</li>
+<li><strong>fid</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Fiducial range</li>
 </ul>
 </td>
 </tr>
@@ -637,10 +640,10 @@ at the current fid (if available).</p>
 </div>
 <p><strong>Note:</strong></p>
 <p>Channel Name    Empty if no channel
-Line Name       “[All]” if all lines are selected
-Fid Range       “[All]” if all values in all lines are selected
-“[None]”  if no values are selected
-“10 to 20”  giving the range of values.</p>
+Line Name       &#8220;[All]&#8221; if all lines are selected
+Fid Range       &#8220;[All]&#8221; if all values in all lines are selected
+&#8220;[None]&#8221;  if no values are selected
+&#8220;10 to 20&#8221;  giving the range of values.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -652,8 +655,8 @@ Fid Range       “[All]” if all values in all lines are selected
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> to load</li>
-<li><strong>path</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">EDB_PATH</span></code></li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> to load</li>
+<li><strong>path</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edb-path"><span class="std std-ref">EDB_PATH constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -680,8 +683,8 @@ The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>start</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Fiducial start</li>
-<li><strong>num</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Number of fiducials</li>
+<li><strong>start</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Fiducial start</li>
+<li><strong>num</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Number of fiducials</li>
 </ul>
 </td>
 </tr>
@@ -701,9 +704,9 @@ The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>start</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Fiducial start</li>
-<li><strong>incr</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Fiducial increment</li>
-<li><strong>num</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Number of fiducials</li>
+<li><strong>start</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Fiducial start</li>
+<li><strong>incr</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Fiducial increment</li>
+<li><strong>num</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Number of fiducials</li>
 </ul>
 </td>
 </tr>
@@ -723,8 +726,8 @@ The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>vv</strong> (<a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><em>GXVA</em></a>) – <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal"><span class="pre">GXVA</span></code></a> in which to place the data.</li>
-<li><strong>chan</strong> (<em>int</em>) – Channel symbol to retrieve.</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><em>GXVA</em></a>) &#8211; <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal"><span class="pre">GXVA</span></code></a> in which to place the data.</li>
+<li><strong>chan</strong> (<em>int</em>) &#8211; Channel symbol to retrieve.</li>
 </ul>
 </td>
 </tr>
@@ -741,7 +744,7 @@ The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="g
 <p><span class="versionmodified">New in version 8.2.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>The current “mark” in this case is the start and
+<p>The current &#8220;mark&#8221; in this case is the start and
 end fiducials and not the selected channel. You
 can use this method to retrieve the selected range
 from any channel, loaded or not.</p>
@@ -757,8 +760,8 @@ from any channel, loaded or not.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> in which to place the data.</li>
-<li><strong>chan</strong> (<em>int</em>) – Channel symbol to retrieve.</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> in which to place the data.</li>
+<li><strong>chan</strong> (<em>int</em>) &#8211; Channel symbol to retrieve.</li>
 </ul>
 </td>
 </tr>
@@ -775,7 +778,7 @@ from any channel, loaded or not.</p>
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>The current “mark” in this case is the start and
+<p>The current &#8220;mark&#8221; in this case is the start and
 end fiducials and not the selected channel. You
 can use this method to retrieve the selected range
 from any channel, loaded or not.</p>
@@ -790,7 +793,7 @@ from any channel, loaded or not.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Name returned</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Name returned</td>
 </tr>
 </tbody>
 </table>
@@ -848,9 +851,9 @@ from any channel, loaded or not.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>window</strong> (<em>int</em>) – Profile window number (0 to <a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title="geosoft.gxapi.MAX_PROF_WND"><code class="xref py py-obj docutils literal"><span class="pre">MAX_PROF_WND</span></code></a>-1, see <a class="reference internal" href="#geosoft.gxapi.GXEDB.profile_open" title="geosoft.gxapi.GXEDB.profile_open"><code class="xref py py-obj docutils literal"><span class="pre">profile_open</span></code></a>)</li>
-<li><strong>prof</strong> (<em>int</em>) – Profile number in window (see <a class="reference internal" href="#geosoft.gxapi.GXEDB.get_profile_range_y" title="geosoft.gxapi.GXEDB.get_profile_range_y"><code class="xref py py-obj docutils literal"><span class="pre">get_profile_range_y</span></code></a>)</li>
-<li><strong>parm</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">EDB_PROF</span></code></li>
+<li><strong>window</strong> (<em>int</em>) &#8211; Profile window number (0 to <a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title="geosoft.gxapi.MAX_PROF_WND"><code class="xref py py-obj docutils literal"><span class="pre">MAX_PROF_WND</span></code></a>-1, see <a class="reference internal" href="#geosoft.gxapi.GXEDB.profile_open" title="geosoft.gxapi.GXEDB.profile_open"><code class="xref py py-obj docutils literal"><span class="pre">profile_open</span></code></a>)</li>
+<li><strong>prof</strong> (<em>int</em>) &#8211; Profile number in window (see <a class="reference internal" href="#geosoft.gxapi.GXEDB.get_profile_range_y" title="geosoft.gxapi.GXEDB.get_profile_range_y"><code class="xref py py-obj docutils literal"><span class="pre">get_profile_range_y</span></code></a>)</li>
+<li><strong>parm</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edb-prof"><span class="std std-ref">EDB_PROF constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -876,9 +879,9 @@ from any channel, loaded or not.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>window</strong> (<em>int</em>) – Profile window number (0 to <a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title="geosoft.gxapi.MAX_PROF_WND"><code class="xref py py-obj docutils literal"><span class="pre">MAX_PROF_WND</span></code></a>-1, see <a class="reference internal" href="#geosoft.gxapi.GXEDB.profile_open" title="geosoft.gxapi.GXEDB.profile_open"><code class="xref py py-obj docutils literal"><span class="pre">profile_open</span></code></a>)</li>
-<li><strong>prof</strong> (<em>int</em>) – Profile number in window (see <a class="reference internal" href="#geosoft.gxapi.GXEDB.get_profile_range_y" title="geosoft.gxapi.GXEDB.get_profile_range_y"><code class="xref py py-obj docutils literal"><span class="pre">get_profile_range_y</span></code></a>)</li>
-<li><strong>parm</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">EDB_PROF</span></code></li>
+<li><strong>window</strong> (<em>int</em>) &#8211; Profile window number (0 to <a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title="geosoft.gxapi.MAX_PROF_WND"><code class="xref py py-obj docutils literal"><span class="pre">MAX_PROF_WND</span></code></a>-1, see <a class="reference internal" href="#geosoft.gxapi.GXEDB.profile_open" title="geosoft.gxapi.GXEDB.profile_open"><code class="xref py py-obj docutils literal"><span class="pre">profile_open</span></code></a>)</li>
+<li><strong>prof</strong> (<em>int</em>) &#8211; Profile number in window (see <a class="reference internal" href="#geosoft.gxapi.GXEDB.get_profile_range_y" title="geosoft.gxapi.GXEDB.get_profile_range_y"><code class="xref py py-obj docutils literal"><span class="pre">get_profile_range_y</span></code></a>)</li>
+<li><strong>parm</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edb-prof"><span class="std std-ref">EDB_PROF constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -904,9 +907,9 @@ from any channel, loaded or not.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Minimum x</li>
-<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Maximum x</li>
-<li><strong>ph_chan_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – X axis channel, <a class="reference internal" href="GXDB.html#geosoft.gxapi.NULLSYMB" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal"><span class="pre">NULLSYMB</span></code></a> if none</li>
+<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Minimum x</li>
+<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Maximum x</li>
+<li><strong>ph_chan_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; X axis channel, <a class="reference internal" href="GXDB.html#geosoft.gxapi.NULLSYMB" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal"><span class="pre">NULLSYMB</span></code></a> if none</li>
 </ul>
 </td>
 </tr>
@@ -926,11 +929,11 @@ from any channel, loaded or not.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>window</strong> (<em>int</em>) – Profile window number (0 to <a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title="geosoft.gxapi.MAX_PROF_WND"><code class="xref py py-obj docutils literal"><span class="pre">MAX_PROF_WND</span></code></a>-1, see <a class="reference internal" href="#geosoft.gxapi.GXEDB.profile_open" title="geosoft.gxapi.GXEDB.profile_open"><code class="xref py py-obj docutils literal"><span class="pre">profile_open</span></code></a>)</li>
-<li><strong>prof</strong> (<em>int</em>) – Profile number in window (see <a class="reference internal" href="#geosoft.gxapi.GXEDB.window_profiles" title="geosoft.gxapi.GXEDB.window_profiles"><code class="xref py py-obj docutils literal"><span class="pre">window_profiles</span></code></a> which returns number of profiles in a window)</li>
-<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Minimum y</li>
-<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Maximum y</li>
-<li><strong>scl</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – <code class="xref py py-obj docutils literal"><span class="pre">EDB_PROFILE_SCALE</span></code></li>
+<li><strong>window</strong> (<em>int</em>) &#8211; Profile window number (0 to <a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title="geosoft.gxapi.MAX_PROF_WND"><code class="xref py py-obj docutils literal"><span class="pre">MAX_PROF_WND</span></code></a>-1, see <a class="reference internal" href="#geosoft.gxapi.GXEDB.profile_open" title="geosoft.gxapi.GXEDB.profile_open"><code class="xref py py-obj docutils literal"><span class="pre">profile_open</span></code></a>)</li>
+<li><strong>prof</strong> (<em>int</em>) &#8211; Profile number in window (see <a class="reference internal" href="#geosoft.gxapi.GXEDB.window_profiles" title="geosoft.gxapi.GXEDB.window_profiles"><code class="xref py py-obj docutils literal"><span class="pre">window_profiles</span></code></a> which returns number of profiles in a window)</li>
+<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Minimum y</li>
+<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Maximum y</li>
+<li><strong>scl</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; <a class="reference internal" href="#edb-profile-scale"><span class="std std-ref">EDB_PROFILE_SCALE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -950,8 +953,8 @@ from any channel, loaded or not.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>d1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Split d1 (profile window 0 height / entire profile window height)</li>
-<li><strong>d2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Split d2 (profile window 1 height / entire profile window height)</li>
+<li><strong>d1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Split d1 (profile window 0 height / entire profile window height)</li>
+<li><strong>d2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Split d2 (profile window 1 height / entire profile window height)</li>
 </ul>
 </td>
 </tr>
@@ -971,10 +974,10 @@ from any channel, loaded or not.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>d1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Split d1 (profile window 0 height / entire profile window height)</li>
-<li><strong>d2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Split d2 (profile window 1 height / entire profile window height)</li>
-<li><strong>d3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Split d3 (profile window 2 height / entire profile window height)</li>
-<li><strong>d4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Split d4 (profile window 3 height / entire profile window height)</li>
+<li><strong>d1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Split d1 (profile window 0 height / entire profile window height)</li>
+<li><strong>d2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Split d2 (profile window 1 height / entire profile window height)</li>
+<li><strong>d3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Split d3 (profile window 2 height / entire profile window height)</li>
+<li><strong>d4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Split d4 (profile window 3 height / entire profile window height)</li>
 </ul>
 </td>
 </tr>
@@ -993,7 +996,7 @@ from any channel, loaded or not.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Split <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> (REAL) (profile window heights / entire profile window height)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Split <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> (REAL) (profile window heights / entire profile window height)</td>
 </tr>
 </tbody>
 </table>
@@ -1019,8 +1022,8 @@ devoted to the profiles, use the <a class="reference internal" href="#geosoft.gx
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>grid</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Vertical grid lines?</li>
-<li><strong>interval</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Vertical grid interval</li>
+<li><strong>grid</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Vertical grid lines?</li>
+<li><strong>interval</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Vertical grid interval</li>
 </ul>
 </td>
 </tr>
@@ -1040,9 +1043,9 @@ devoted to the profiles, use the <a class="reference internal" href="#geosoft.gx
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>window</strong> (<em>int</em>) – Profile window number (0 to <a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title="geosoft.gxapi.MAX_PROF_WND"><code class="xref py py-obj docutils literal"><span class="pre">MAX_PROF_WND</span></code></a>-1, see <a class="reference internal" href="#geosoft.gxapi.GXEDB.profile_open" title="geosoft.gxapi.GXEDB.profile_open"><code class="xref py py-obj docutils literal"><span class="pre">profile_open</span></code></a>)</li>
-<li><strong>x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Window x size in pixels</li>
-<li><strong>y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Window y size in pixels</li>
+<li><strong>window</strong> (<em>int</em>) &#8211; Profile window number (0 to <a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title="geosoft.gxapi.MAX_PROF_WND"><code class="xref py py-obj docutils literal"><span class="pre">MAX_PROF_WND</span></code></a>-1, see <a class="reference internal" href="#geosoft.gxapi.GXEDB.profile_open" title="geosoft.gxapi.GXEDB.profile_open"><code class="xref py py-obj docutils literal"><span class="pre">profile_open</span></code></a>)</li>
+<li><strong>x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Window x size in pixels</li>
+<li><strong>y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Window y size in pixels</li>
 </ul>
 </td>
 </tr>
@@ -1076,18 +1079,18 @@ devoted to the profiles, use the <a class="reference internal" href="#geosoft.gx
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.get_window_position">
 <code class="descname">get_window_position</code><span class="sig-paren">(</span><em>left</em>, <em>top</em>, <em>right</em>, <em>bottom</em>, <em>state</em>, <em>is_floating</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEDB.get_window_position" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the map window’s position and dock state</p>
+<dd><p>Get the map window&#8217;s position and dock state</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>left</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Window left position</li>
-<li><strong>top</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Window top position</li>
-<li><strong>right</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Window right position</li>
-<li><strong>bottom</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Window bottom position</li>
-<li><strong>state</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Window state <code class="xref py py-obj docutils literal"><span class="pre">EDB_WINDOW_STATE</span></code></li>
-<li><strong>is_floating</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Docked or floating <code class="xref py py-obj docutils literal"><span class="pre">EDB_WINDOW_POSITION</span></code></li>
+<li><strong>left</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Window left position</li>
+<li><strong>top</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Window top position</li>
+<li><strong>right</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Window right position</li>
+<li><strong>bottom</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Window bottom position</li>
+<li><strong>state</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Window state <a class="reference internal" href="#edb-window-state"><span class="std std-ref">EDB_WINDOW_STATE constants</span></a></li>
+<li><strong>is_floating</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Docked or floating <a class="reference internal" href="#edb-window-position"><span class="std std-ref">EDB_WINDOW_POSITION constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1106,7 +1109,7 @@ devoted to the profiles, use the <a class="reference internal" href="#geosoft.gx
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><code class="xref py py-obj docutils literal"><span class="pre">EDB_WINDOW_STATE</span></code></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#edb-window-state"><span class="std std-ref">EDB_WINDOW_STATE constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
@@ -1125,9 +1128,9 @@ devoted to the profiles, use the <a class="reference internal" href="#geosoft.gx
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>window</strong> (<em>int</em>) – Profile window number (0 to <a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title="geosoft.gxapi.MAX_PROF_WND"><code class="xref py py-obj docutils literal"><span class="pre">MAX_PROF_WND</span></code></a>-1, see <a class="reference internal" href="#geosoft.gxapi.GXEDB.profile_open" title="geosoft.gxapi.GXEDB.profile_open"><code class="xref py py-obj docutils literal"><span class="pre">profile_open</span></code></a>)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>window</strong> (<em>int</em>) &#8211; Profile window number (0 to <a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title="geosoft.gxapi.MAX_PROF_WND"><code class="xref py py-obj docutils literal"><span class="pre">MAX_PROF_WND</span></code></a>-1, see <a class="reference internal" href="#geosoft.gxapi.GXEDB.profile_open" title="geosoft.gxapi.GXEDB.profile_open"><code class="xref py py-obj docutils literal"><span class="pre">profile_open</span></code></a>)</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><code class="xref py py-obj docutils literal"><span class="pre">EDB_YAXIS_DIRECTION</span></code></td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#edb-yaxis-direction"><span class="std std-ref">EDB_YAXIS_DIRECTION constants</span></a></td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
@@ -1146,7 +1149,7 @@ devoted to the profiles, use the <a class="reference internal" href="#geosoft.gx
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>col</strong> (<em>int</em>) – Channel column number, 0 is first -1 for first column without data</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>col</strong> (<em>int</em>) &#8211; Channel column number, 0 is first -1 for first column without data</td>
 </tr>
 </tbody>
 </table>
@@ -1163,7 +1166,7 @@ devoted to the profiles, use the <a class="reference internal" href="#geosoft.gx
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>elem</strong> (<em>int</em>) – Element number</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>elem</strong> (<em>int</em>) &#8211; Element number</td>
 </tr>
 </tbody>
 </table>
@@ -1180,7 +1183,7 @@ devoted to the profiles, use the <a class="reference internal" href="#geosoft.gx
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>line_symb</strong> (<em>int</em>) – Line symbol to goto to</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>line_symb</strong> (<em>int</em>) &#8211; Line symbol to goto to</td>
 </tr>
 </tbody>
 </table>
@@ -1192,14 +1195,12 @@ devoted to the profiles, use the <a class="reference internal" href="#geosoft.gx
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXEDB.have_current">
 <em class="property">classmethod </em><code class="descname">have_current</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEDB.have_current" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns true if a database is loaded</p>
+<dd><p>Checks if any database is currently loaded</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><code class="xref py py-obj docutils literal"><span class="pre">GEO_BOOL</span></code></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
@@ -1217,10 +1218,10 @@ devoted to the profiles, use the <a class="reference internal" href="#geosoft.gx
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>st</strong> (<a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><em>GXST</em></a>) – <a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal"><span class="pre">GXST</span></code></a> handle to update</li>
-<li><strong>min</strong> (<em>float</em>) – Histogram minimum</li>
-<li><strong>incr</strong> (<em>float</em>) – Histogram increment</li>
-<li><strong>count</strong> (<em>int</em>) – Number of increments</li>
+<li><strong>st</strong> (<a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><em>GXST</em></a>) &#8211; <a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal"><span class="pre">GXST</span></code></a> handle to update</li>
+<li><strong>min</strong> (<em>float</em>) &#8211; Histogram minimum</li>
+<li><strong>incr</strong> (<em>float</em>) &#8211; Histogram increment</li>
+<li><strong>count</strong> (<em>int</em>) &#8211; Number of increments</li>
 </ul>
 </td>
 </tr>
@@ -1234,14 +1235,12 @@ devoted to the profiles, use the <a class="reference internal" href="#geosoft.gx
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.is_locked">
 <code class="descname">is_locked</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEDB.is_locked" title="Permalink to this definition">¶</a></dt>
-<dd><p>Is this Database locked</p>
+<dd><p>Checks if the database locked</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><code class="xref py py-obj docutils literal"><span class="pre">GEO_BOOL</span></code></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
@@ -1272,7 +1271,7 @@ devoted to the profiles, use the <a class="reference internal" href="#geosoft.gx
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>chan</strong> (<em>str</em>) – First chan name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>chan</strong> (<em>str</em>) &#8211; First chan name</td>
 </tr>
 </tbody>
 </table>
@@ -1294,8 +1293,8 @@ devoted to the profiles, use the <a class="reference internal" href="#geosoft.gx
 </div>
 <p><strong>Note:</strong></p>
 <p>The scatter tool uses the following INI parameters</p>
-<p>SCATTER.STM       name of the scatter template,”none” for none
-SCATTER.STM_NAME  name of last template section, “” for none.
+<p>SCATTER.STM       name of the scatter template,&#8221;none&#8221; for none
+SCATTER.STM_NAME  name of last template section, &#8220;&#8221; for none.
 SCATTER.X         name of channel to display in X
 SCATTER.Y         name of channel to display in Y
 SCATTER.MASK      name of channel to use for mask</p>
@@ -1313,7 +1312,7 @@ SCATTER.MASK      name of channel to use for mask</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – List of databases (‘;’ or ‘|’ delimited) to load.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) &#8211; List of databases (&#8216;;&#8217; or &#8216;|&#8217; delimited) to load.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Handle to current edited database, which will be the last
 database in the list.</td>
@@ -1350,7 +1349,7 @@ directory as the first file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>chan</strong> (<em>str</em>) – Channel name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>chan</strong> (<em>str</em>) &#8211; Channel name</td>
 </tr>
 </tbody>
 </table>
@@ -1371,8 +1370,8 @@ loaded nothing happens.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db_file</strong> (<em>str</em>) – Database filename</li>
-<li><strong>window</strong> (<em>int</em>) – Window handle to receive document</li>
+<li><strong>db_file</strong> (<em>str</em>) &#8211; Database filename</li>
+<li><strong>window</strong> (<em>int</em>) &#8211; Window handle to receive document</li>
 </ul>
 </td>
 </tr>
@@ -1391,7 +1390,7 @@ loaded nothing happens.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – Database to load.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) &#8211; Database to load.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Handle to the current edited database.</td>
 </tr>
@@ -1417,8 +1416,8 @@ not to save changes, the database is deleted.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db_file</strong> (<em>str</em>) – Database filename</li>
-<li><strong>window</strong> (<em>int</em>) – Window handle to receive document</li>
+<li><strong>db_file</strong> (<em>str</em>) &#8211; Database filename</li>
+<li><strong>window</strong> (<em>int</em>) &#8211; Window handle to receive document</li>
 </ul>
 </td>
 </tr>
@@ -1437,7 +1436,7 @@ not to save changes, the database is deleted.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – List of documents (‘;’ or ‘|’ delimited) to load.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) &#8211; List of documents (&#8216;;&#8217; or &#8216;|&#8217; delimited) to load.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Handle to current edited document, which will be the last
 database in the list if multiple files were provided.</td>
@@ -1463,9 +1462,9 @@ guarantee is given about which document is currently active.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>name</strong> (<em>str</em>) – Name of database to load</li>
-<li><strong>login</strong> (<em>str</em>) – Login Name</li>
-<li><strong>password</strong> (<em>str</em>) – Password</li>
+<li><strong>name</strong> (<em>str</em>) &#8211; Name of database to load</li>
+<li><strong>login</strong> (<em>str</em>) &#8211; Login Name</li>
+<li><strong>password</strong> (<em>str</em>) &#8211; Password</li>
 </ul>
 </td>
 </tr>
@@ -1495,10 +1494,10 @@ the current database.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db_file</strong> (<em>str</em>) – Database filename</li>
-<li><strong>user</strong> (<em>str</em>) – Login name</li>
-<li><strong>password</strong> (<em>str</em>) – Password</li>
-<li><strong>window</strong> (<em>int</em>) – Window handle to receive document</li>
+<li><strong>db_file</strong> (<em>str</em>) &#8211; Database filename</li>
+<li><strong>user</strong> (<em>str</em>) &#8211; Login name</li>
+<li><strong>password</strong> (<em>str</em>) &#8211; Password</li>
+<li><strong>window</strong> (<em>int</em>) &#8211; Window handle to receive document</li>
 </ul>
 </td>
 </tr>
@@ -1518,8 +1517,8 @@ the current database.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>name</strong> (<em>str</em>) – Source <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> name</li>
-<li><strong>p2</strong> (<a class="reference internal" href="#geosoft.gxapi.GXEDB" title="geosoft.gxapi.GXEDB"><em>GXEDB</em></a>) – <a class="reference internal" href="#geosoft.gxapi.GXEDB" title="geosoft.gxapi.GXEDB"><code class="xref py py-obj docutils literal"><span class="pre">GXEDB</span></code></a> to use as the source view</li>
+<li><strong>name</strong> (<em>str</em>) &#8211; Source <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> name</li>
+<li><strong>p2</strong> (<a class="reference internal" href="#geosoft.gxapi.GXEDB" title="geosoft.gxapi.GXEDB"><em>GXEDB</em></a>) &#8211; <a class="reference internal" href="#geosoft.gxapi.GXEDB" title="geosoft.gxapi.GXEDB"><code class="xref py py-obj docutils literal"><span class="pre">GXEDB</span></code></a> to use as the source view</li>
 </ul>
 </td>
 </tr>
@@ -1549,9 +1548,9 @@ view as previously.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db_file</strong> (<em>str</em>) – Database filename</li>
-<li><strong>edb</strong> (<a class="reference internal" href="#geosoft.gxapi.GXEDB" title="geosoft.gxapi.GXEDB"><em>GXEDB</em></a>) – <a class="reference internal" href="#geosoft.gxapi.GXEDB" title="geosoft.gxapi.GXEDB"><code class="xref py py-obj docutils literal"><span class="pre">GXEDB</span></code></a> handle to use as the source view</li>
-<li><strong>window</strong> (<em>int</em>) – Window handle to receive document</li>
+<li><strong>db_file</strong> (<em>str</em>) &#8211; Database filename</li>
+<li><strong>edb</strong> (<a class="reference internal" href="#geosoft.gxapi.GXEDB" title="geosoft.gxapi.GXEDB"><em>GXEDB</em></a>) &#8211; <a class="reference internal" href="#geosoft.gxapi.GXEDB" title="geosoft.gxapi.GXEDB"><code class="xref py py-obj docutils literal"><span class="pre">GXEDB</span></code></a> handle to use as the source view</li>
+<li><strong>window</strong> (<em>int</em>) &#8211; Window handle to receive document</li>
 </ul>
 </td>
 </tr>
@@ -1565,16 +1564,14 @@ view as previously.</p>
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXEDB.loaded">
 <em class="property">classmethod </em><code class="descname">loaded</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEDB.loaded" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns 1 if a database is loaded .</p>
+<dd><p>Checks if a specific database is loaded.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – Database name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) &#8211; Database name</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">1 if database is loaded, 0 otherwise.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
@@ -1633,7 +1630,7 @@ view as previously.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>window</strong> (<em>int</em>) – Profile window number: 0 is the top window 1 is the middle window 2 is the bottom window</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>window</strong> (<em>int</em>) &#8211; Profile window number: 0 is the top window 1 is the middle window 2 is the bottom window</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">TRUE if window is open
 FALSE if window is closed</td>
@@ -1658,9 +1655,7 @@ is not supported in current version of Oasis montaj.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><code class="xref py py-obj docutils literal"><span class="pre">GEO_BOOL</span></code></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
@@ -1678,8 +1673,8 @@ is not supported in current version of Oasis montaj.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>window</strong> (<em>int</em>) – Profile window number (0 to <a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title="geosoft.gxapi.MAX_PROF_WND"><code class="xref py py-obj docutils literal"><span class="pre">MAX_PROF_WND</span></code></a>-1, see <a class="reference internal" href="#geosoft.gxapi.GXEDB.profile_open" title="geosoft.gxapi.GXEDB.profile_open"><code class="xref py py-obj docutils literal"><span class="pre">profile_open</span></code></a>)</li>
-<li><strong>prof</strong> (<em>int</em>) – Profile number in window (see <a class="reference internal" href="#geosoft.gxapi.GXEDB.get_profile_range_y" title="geosoft.gxapi.GXEDB.get_profile_range_y"><code class="xref py py-obj docutils literal"><span class="pre">get_profile_range_y</span></code></a>)</li>
+<li><strong>window</strong> (<em>int</em>) &#8211; Profile window number (0 to <a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title="geosoft.gxapi.MAX_PROF_WND"><code class="xref py py-obj docutils literal"><span class="pre">MAX_PROF_WND</span></code></a>-1, see <a class="reference internal" href="#geosoft.gxapi.GXEDB.profile_open" title="geosoft.gxapi.GXEDB.profile_open"><code class="xref py py-obj docutils literal"><span class="pre">profile_open</span></code></a>)</li>
+<li><strong>prof</strong> (<em>int</em>) &#8211; Profile number in window (see <a class="reference internal" href="#geosoft.gxapi.GXEDB.get_profile_range_y" title="geosoft.gxapi.GXEDB.get_profile_range_y"><code class="xref py py-obj docutils literal"><span class="pre">get_profile_range_y</span></code></a>)</li>
 </ul>
 </td>
 </tr>
@@ -1698,7 +1693,7 @@ is not supported in current version of Oasis montaj.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>chan</strong> (<em>str</em>) – Channel name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>chan</strong> (<em>str</em>) &#8211; Channel name</td>
 </tr>
 </tbody>
 </table>
@@ -1729,7 +1724,7 @@ error if the channel does not exist.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>line</strong> (<em>str</em>) – Line name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>line</strong> (<em>str</em>) &#8211; Line name</td>
 </tr>
 </tbody>
 </table>
@@ -1746,7 +1741,7 @@ error if the channel does not exist.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<em>str</em>) – Line name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<em>str</em>) &#8211; Line name</td>
 </tr>
 </tbody>
 </table>
@@ -1764,8 +1759,8 @@ error if the channel does not exist.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>start</strong> (<em>float</em>) – Start fiducial</li>
-<li><strong>end</strong> (<em>float</em>) – End fiducial</li>
+<li><strong>start</strong> (<em>float</em>) &#8211; Start fiducial</li>
+<li><strong>end</strong> (<em>float</em>) &#8211; End fiducial</li>
 </ul>
 </td>
 </tr>
@@ -1785,10 +1780,10 @@ error if the channel does not exist.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>window</strong> (<em>int</em>) – Profile window number (0 to <a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title="geosoft.gxapi.MAX_PROF_WND"><code class="xref py py-obj docutils literal"><span class="pre">MAX_PROF_WND</span></code></a>-1, see <a class="reference internal" href="#geosoft.gxapi.GXEDB.profile_open" title="geosoft.gxapi.GXEDB.profile_open"><code class="xref py py-obj docutils literal"><span class="pre">profile_open</span></code></a>)</li>
-<li><strong>prof</strong> (<em>int</em>) – Profile number in window (see <a class="reference internal" href="#geosoft.gxapi.GXEDB.get_profile_range_y" title="geosoft.gxapi.GXEDB.get_profile_range_y"><code class="xref py py-obj docutils literal"><span class="pre">get_profile_range_y</span></code></a>)</li>
-<li><strong>parm</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">EDB_PROF</span></code></li>
-<li><strong>value</strong> (<em>int</em>) – Setting</li>
+<li><strong>window</strong> (<em>int</em>) &#8211; Profile window number (0 to <a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title="geosoft.gxapi.MAX_PROF_WND"><code class="xref py py-obj docutils literal"><span class="pre">MAX_PROF_WND</span></code></a>-1, see <a class="reference internal" href="#geosoft.gxapi.GXEDB.profile_open" title="geosoft.gxapi.GXEDB.profile_open"><code class="xref py py-obj docutils literal"><span class="pre">profile_open</span></code></a>)</li>
+<li><strong>prof</strong> (<em>int</em>) &#8211; Profile number in window (see <a class="reference internal" href="#geosoft.gxapi.GXEDB.get_profile_range_y" title="geosoft.gxapi.GXEDB.get_profile_range_y"><code class="xref py py-obj docutils literal"><span class="pre">get_profile_range_y</span></code></a>)</li>
+<li><strong>parm</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edb-prof"><span class="std std-ref">EDB_PROF constants</span></a></li>
+<li><strong>value</strong> (<em>int</em>) &#8211; Setting</li>
 </ul>
 </td>
 </tr>
@@ -1808,10 +1803,10 @@ error if the channel does not exist.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>window</strong> (<em>int</em>) – Profile window number (0 to <a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title="geosoft.gxapi.MAX_PROF_WND"><code class="xref py py-obj docutils literal"><span class="pre">MAX_PROF_WND</span></code></a>-1, see <a class="reference internal" href="#geosoft.gxapi.GXEDB.profile_open" title="geosoft.gxapi.GXEDB.profile_open"><code class="xref py py-obj docutils literal"><span class="pre">profile_open</span></code></a>)</li>
-<li><strong>prof</strong> (<em>int</em>) – Profile number in window (see <a class="reference internal" href="#geosoft.gxapi.GXEDB.get_profile_range_y" title="geosoft.gxapi.GXEDB.get_profile_range_y"><code class="xref py py-obj docutils literal"><span class="pre">get_profile_range_y</span></code></a>)</li>
-<li><strong>parm</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">EDB_PROF</span></code></li>
-<li><strong>value</strong> (<em>float</em>) – Setting</li>
+<li><strong>window</strong> (<em>int</em>) &#8211; Profile window number (0 to <a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title="geosoft.gxapi.MAX_PROF_WND"><code class="xref py py-obj docutils literal"><span class="pre">MAX_PROF_WND</span></code></a>-1, see <a class="reference internal" href="#geosoft.gxapi.GXEDB.profile_open" title="geosoft.gxapi.GXEDB.profile_open"><code class="xref py py-obj docutils literal"><span class="pre">profile_open</span></code></a>)</li>
+<li><strong>prof</strong> (<em>int</em>) &#8211; Profile number in window (see <a class="reference internal" href="#geosoft.gxapi.GXEDB.get_profile_range_y" title="geosoft.gxapi.GXEDB.get_profile_range_y"><code class="xref py py-obj docutils literal"><span class="pre">get_profile_range_y</span></code></a>)</li>
+<li><strong>parm</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edb-prof"><span class="std std-ref">EDB_PROF constants</span></a></li>
+<li><strong>value</strong> (<em>float</em>) &#8211; Setting</li>
 </ul>
 </td>
 </tr>
@@ -1831,9 +1826,9 @@ error if the channel does not exist.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>min_x</strong> (<em>float</em>) – Minimum x, <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for data minimum</li>
-<li><strong>max_x</strong> (<em>float</em>) – Maximum x, <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for data maximum</li>
-<li><strong>x_ch</strong> (<em>int</em>) – X axis channel, <a class="reference internal" href="GXDB.html#geosoft.gxapi.NULLSYMB" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal"><span class="pre">NULLSYMB</span></code></a> to use fids</li>
+<li><strong>min_x</strong> (<em>float</em>) &#8211; Minimum x, <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for data minimum</li>
+<li><strong>max_x</strong> (<em>float</em>) &#8211; Maximum x, <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for data maximum</li>
+<li><strong>x_ch</strong> (<em>int</em>) &#8211; X axis channel, <a class="reference internal" href="GXDB.html#geosoft.gxapi.NULLSYMB" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal"><span class="pre">NULLSYMB</span></code></a> to use fids</li>
 </ul>
 </td>
 </tr>
@@ -1853,11 +1848,11 @@ error if the channel does not exist.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>min_x</strong> (<em>int</em>) – Profile window number (0 to <a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title="geosoft.gxapi.MAX_PROF_WND"><code class="xref py py-obj docutils literal"><span class="pre">MAX_PROF_WND</span></code></a>-1, see <a class="reference internal" href="#geosoft.gxapi.GXEDB.profile_open" title="geosoft.gxapi.GXEDB.profile_open"><code class="xref py py-obj docutils literal"><span class="pre">profile_open</span></code></a>)</li>
-<li><strong>max_x</strong> (<em>int</em>) – Profile number in window (see <a class="reference internal" href="#geosoft.gxapi.GXEDB.get_profile_range_y" title="geosoft.gxapi.GXEDB.get_profile_range_y"><code class="xref py py-obj docutils literal"><span class="pre">get_profile_range_y</span></code></a>)</li>
-<li><strong>min_y</strong> (<em>float</em>) – Minimum y</li>
-<li><strong>max_y</strong> (<em>float</em>) – Maximum y</li>
-<li><strong>scl</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">EDB_PROFILE_SCALE</span></code></li>
+<li><strong>min_x</strong> (<em>int</em>) &#8211; Profile window number (0 to <a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title="geosoft.gxapi.MAX_PROF_WND"><code class="xref py py-obj docutils literal"><span class="pre">MAX_PROF_WND</span></code></a>-1, see <a class="reference internal" href="#geosoft.gxapi.GXEDB.profile_open" title="geosoft.gxapi.GXEDB.profile_open"><code class="xref py py-obj docutils literal"><span class="pre">profile_open</span></code></a>)</li>
+<li><strong>max_x</strong> (<em>int</em>) &#8211; Profile number in window (see <a class="reference internal" href="#geosoft.gxapi.GXEDB.get_profile_range_y" title="geosoft.gxapi.GXEDB.get_profile_range_y"><code class="xref py py-obj docutils literal"><span class="pre">get_profile_range_y</span></code></a>)</li>
+<li><strong>min_y</strong> (<em>float</em>) &#8211; Minimum y</li>
+<li><strong>max_y</strong> (<em>float</em>) &#8211; Maximum y</li>
+<li><strong>scl</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edb-profile-scale"><span class="std std-ref">EDB_PROFILE_SCALE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1880,8 +1875,8 @@ loaded and/or displayed.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>d1</strong> (<em>float</em>) – Split d1 (profile window 0 height / entire profile window height)</li>
-<li><strong>d2</strong> (<em>float</em>) – Split d2 (profile window 1 height / entire profile window height)</li>
+<li><strong>d1</strong> (<em>float</em>) &#8211; Split d1 (profile window 0 height / entire profile window height)</li>
+<li><strong>d2</strong> (<em>float</em>) &#8211; Split d2 (profile window 1 height / entire profile window height)</li>
 </ul>
 </td>
 </tr>
@@ -1901,10 +1896,10 @@ loaded and/or displayed.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>d1</strong> (<em>float</em>) – Split d1 (profile window 0 height / entire profile window height)</li>
-<li><strong>d2</strong> (<em>float</em>) – Split d2 (profile window 1 height / entire profile window height)</li>
-<li><strong>d3</strong> (<em>float</em>) – Split d3 (profile window 2 height / entire profile window height)</li>
-<li><strong>d4</strong> (<em>float</em>) – Split d4 (profile window 3 height / entire profile window height)</li>
+<li><strong>d1</strong> (<em>float</em>) &#8211; Split d1 (profile window 0 height / entire profile window height)</li>
+<li><strong>d2</strong> (<em>float</em>) &#8211; Split d2 (profile window 1 height / entire profile window height)</li>
+<li><strong>d3</strong> (<em>float</em>) &#8211; Split d3 (profile window 2 height / entire profile window height)</li>
+<li><strong>d4</strong> (<em>float</em>) &#8211; Split d4 (profile window 3 height / entire profile window height)</li>
 </ul>
 </td>
 </tr>
@@ -1923,7 +1918,7 @@ loaded and/or displayed.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Split <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> (REAL) (relative sizes of each profile window)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Split <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> (REAL) (relative sizes of each profile window)</td>
 </tr>
 </tbody>
 </table>
@@ -1933,7 +1928,7 @@ loaded and/or displayed.</p>
 <p><strong>Note:</strong></p>
 <p>The input <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> values are the fractional heights for each
 profile window. Values are summed, and normalized (so you can
-enter “1,1,1”, with a <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> of length 3, if you want 3 equal profile windows).</p>
+enter &#8220;1,1,1&#8221;, with a <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> of length 3, if you want 3 equal profile windows).</p>
 <p><a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> values beyond the maximum number of displayable
 profiles (<a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title="geosoft.gxapi.MAX_PROF_WND"><code class="xref py py-obj docutils literal"><span class="pre">MAX_PROF_WND</span></code></a>) are ignored.</p>
 </dd></dl>
@@ -1946,7 +1941,7 @@ profiles (<a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>d</strong> (<em>float</em>) – Split d (0.0 &lt;= d &lt;= 1.0).</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>d</strong> (<em>float</em>) &#8211; Split d (0.0 &lt;= d &lt;= 1.0).</td>
 </tr>
 </tbody>
 </table>
@@ -1961,18 +1956,18 @@ profiles (<a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDB.set_window_position">
 <code class="descname">set_window_position</code><span class="sig-paren">(</span><em>left</em>, <em>top</em>, <em>right</em>, <em>bottom</em>, <em>state</em>, <em>is_floating</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEDB.set_window_position" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the map window’s position and dock state</p>
+<dd><p>Get the map window&#8217;s position and dock state</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>left</strong> (<em>int</em>) – Window left position</li>
-<li><strong>top</strong> (<em>int</em>) – Window top position</li>
-<li><strong>right</strong> (<em>int</em>) – Window right position</li>
-<li><strong>bottom</strong> (<em>int</em>) – Window bottom position</li>
-<li><strong>state</strong> (<em>int</em>) – Window state <code class="xref py py-obj docutils literal"><span class="pre">EDB_WINDOW_STATE</span></code></li>
-<li><strong>is_floating</strong> (<em>int</em>) – Docked or floating <code class="xref py py-obj docutils literal"><span class="pre">EDB_WINDOW_POSITION</span></code></li>
+<li><strong>left</strong> (<em>int</em>) &#8211; Window left position</li>
+<li><strong>top</strong> (<em>int</em>) &#8211; Window top position</li>
+<li><strong>right</strong> (<em>int</em>) &#8211; Window right position</li>
+<li><strong>bottom</strong> (<em>int</em>) &#8211; Window bottom position</li>
+<li><strong>state</strong> (<em>int</em>) &#8211; Window state <a class="reference internal" href="#edb-window-state"><span class="std std-ref">EDB_WINDOW_STATE constants</span></a></li>
+<li><strong>is_floating</strong> (<em>int</em>) &#8211; Docked or floating <a class="reference internal" href="#edb-window-position"><span class="std std-ref">EDB_WINDOW_POSITION constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1991,7 +1986,7 @@ profiles (<a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>state</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">EDB_WINDOW_STATE</span></code></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>state</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edb-window-state"><span class="std std-ref">EDB_WINDOW_STATE constants</span></a></td>
 </tr>
 </tbody>
 </table>
@@ -2009,8 +2004,8 @@ profiles (<a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>window</strong> (<em>int</em>) – Profile window number (0 to <a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title="geosoft.gxapi.MAX_PROF_WND"><code class="xref py py-obj docutils literal"><span class="pre">MAX_PROF_WND</span></code></a>-1, see <a class="reference internal" href="#geosoft.gxapi.GXEDB.profile_open" title="geosoft.gxapi.GXEDB.profile_open"><code class="xref py py-obj docutils literal"><span class="pre">profile_open</span></code></a>)</li>
-<li><strong>symb</strong> (<em>int</em>) – Channel symbol</li>
+<li><strong>window</strong> (<em>int</em>) &#8211; Profile window number (0 to <a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title="geosoft.gxapi.MAX_PROF_WND"><code class="xref py py-obj docutils literal"><span class="pre">MAX_PROF_WND</span></code></a>-1, see <a class="reference internal" href="#geosoft.gxapi.GXEDB.profile_open" title="geosoft.gxapi.GXEDB.profile_open"><code class="xref py py-obj docutils literal"><span class="pre">profile_open</span></code></a>)</li>
+<li><strong>symb</strong> (<em>int</em>) &#8211; Channel symbol</li>
 </ul>
 </td>
 </tr>
@@ -2032,8 +2027,8 @@ profiles (<a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>state</strong> (<em>int</em>) – Profile window number (0 to <a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title="geosoft.gxapi.MAX_PROF_WND"><code class="xref py py-obj docutils literal"><span class="pre">MAX_PROF_WND</span></code></a>-1, see <a class="reference internal" href="#geosoft.gxapi.GXEDB.profile_open" title="geosoft.gxapi.GXEDB.profile_open"><code class="xref py py-obj docutils literal"><span class="pre">profile_open</span></code></a>)</li>
-<li><strong>chan</strong> (<em>str</em>) – Name of the channel</li>
+<li><strong>state</strong> (<em>int</em>) &#8211; Profile window number (0 to <a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title="geosoft.gxapi.MAX_PROF_WND"><code class="xref py py-obj docutils literal"><span class="pre">MAX_PROF_WND</span></code></a>-1, see <a class="reference internal" href="#geosoft.gxapi.GXEDB.profile_open" title="geosoft.gxapi.GXEDB.profile_open"><code class="xref py py-obj docutils literal"><span class="pre">profile_open</span></code></a>)</li>
+<li><strong>chan</strong> (<em>str</em>) &#8211; Name of the channel</li>
 </ul>
 </td>
 </tr>
@@ -2060,7 +2055,7 @@ profiles (<a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>st</strong> (<a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><em>GXST</em></a>) – <a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal"><span class="pre">GXST</span></code></a> handle to update</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>st</strong> (<a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><em>GXST</em></a>) &#8211; <a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal"><span class="pre">GXST</span></code></a> handle to update</td>
 </tr>
 </tbody>
 </table>
@@ -2079,7 +2074,7 @@ profiles (<a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – Name of database to unload</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) &#8211; Name of database to unload</td>
 </tr>
 </tbody>
 </table>
@@ -2117,7 +2112,7 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXEDB.un_load_verify"
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>chan</strong> (<em>str</em>) – Channel name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>chan</strong> (<em>str</em>) &#8211; Channel name</td>
 </tr>
 </tbody>
 </table>
@@ -2137,7 +2132,7 @@ loaded nothing happens.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – Name of database to unload</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) &#8211; Name of database to unload</td>
 </tr>
 </tbody>
 </table>
@@ -2157,8 +2152,8 @@ loaded nothing happens.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> (<em>str</em>) – Name of database to unload</li>
-<li><strong>prompt</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">EDB_UNLOAD</span></code></li>
+<li><strong>name</strong> (<em>str</em>) &#8211; Name of database to unload</li>
+<li><strong>prompt</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edb-unload"><span class="std std-ref">EDB_UNLOAD constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -2192,7 +2187,7 @@ is equivalent to <a class="reference internal" href="#geosoft.gxapi.EDB_UNLOAD_S
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>window</strong> (<em>int</em>) – Profile window number (0 to <a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title="geosoft.gxapi.MAX_PROF_WND"><code class="xref py py-obj docutils literal"><span class="pre">MAX_PROF_WND</span></code></a>-1, see <a class="reference internal" href="#geosoft.gxapi.GXEDB.profile_open" title="geosoft.gxapi.GXEDB.profile_open"><code class="xref py py-obj docutils literal"><span class="pre">profile_open</span></code></a>)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>window</strong> (<em>int</em>) &#8211; Profile window number (0 to <a class="reference internal" href="#geosoft.gxapi.MAX_PROF_WND" title="geosoft.gxapi.MAX_PROF_WND"><code class="xref py py-obj docutils literal"><span class="pre">MAX_PROF_WND</span></code></a>-1, see <a class="reference internal" href="#geosoft.gxapi.GXEDB.profile_open" title="geosoft.gxapi.GXEDB.profile_open"><code class="xref py py-obj docutils literal"><span class="pre">profile_open</span></code></a>)</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Number of profiles in a window</td>
 </tr>
@@ -2694,7 +2689,7 @@ is equivalent to <a class="reference internal" href="#geosoft.gxapi.EDB_UNLOAD_S
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

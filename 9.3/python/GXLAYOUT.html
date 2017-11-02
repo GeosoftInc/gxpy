@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>GXLAYOUT class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -108,9 +111,9 @@
 <p>Layout class for generic relative layout calculation</p>
 <p>The relative layout algorithm allows a logical organization of layout rectangles.
 You can set constraints with English-like semantics. For example:</p>
-<p>“Set the left side of rectangle 1 equal to the right side of rectangle 2 plus 10 pixels.”
-“Set the bottom of rectangle 1 to 25 percent of the height of rectangle 2.”
-“Move node 1 such that its bottom is equal to the top of rectangle 2 minus 10 pixels.”</p>
+<p>&#8220;Set the left side of rectangle 1 equal to the right side of rectangle 2 plus 10 pixels.&#8221;
+&#8220;Set the bottom of rectangle 1 to 25 percent of the height of rectangle 2.&#8221;
+&#8220;Move node 1 such that its bottom is equal to the top of rectangle 2 minus 10 pixels.&#8221;</p>
 <p>The last constraint set would enjoy priority over any others as it would be
 the last one that would influence the rectangle calculations. See the notes for iSetConstraint
 for more details.</p>
@@ -123,12 +126,12 @@ for more details.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>rect_from</strong> (<em>int</em>) – From rectangle (Or -1 for parent)</li>
-<li><strong>constr_from</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">LAYOUT_CONSTR</span></code> From constraint flag</li>
-<li><strong>rect_to</strong> (<em>int</em>) – To rectangle (Or -1 for parent Or -2 for absolute positioning)</li>
-<li><strong>constr_to</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">LAYOUT_CONSTR</span></code> To constraint flag</li>
-<li><strong>o_mod</strong> (<em>float</em>) – Offset modifier</li>
-<li><strong>m_mod</strong> (<em>float</em>) – Multiplicative modifier</li>
+<li><strong>rect_from</strong> (<em>int</em>) &#8211; From rectangle (Or -1 for parent)</li>
+<li><strong>constr_from</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#layout-constr"><span class="std std-ref">LAYOUT_CONSTR constants</span></a> From constraint flag</li>
+<li><strong>rect_to</strong> (<em>int</em>) &#8211; To rectangle (Or -1 for parent Or -2 for absolute positioning)</li>
+<li><strong>constr_to</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#layout-constr"><span class="std std-ref">LAYOUT_CONSTR constants</span></a> To constraint flag</li>
+<li><strong>o_mod</strong> (<em>float</em>) &#8211; Offset modifier</li>
+<li><strong>m_mod</strong> (<em>float</em>) &#8211; Multiplicative modifier</li>
 </ul>
 </td>
 </tr>
@@ -174,16 +177,16 @@ A, <a class="reference internal" href="#geosoft.gxapi.LAYOUT_CONSTR_MOVEL" title
 <dl class="method">
 <dt id="geosoft.gxapi.GXLAYOUT.add_rectangle">
 <code class="descname">add_rectangle</code><span class="sig-paren">(</span><em>min_x</em>, <em>min_y</em>, <em>max_x</em>, <em>max_y</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.add_rectangle" title="Permalink to this definition">¶</a></dt>
-<dd><p>Adds a rectangle as one of the layout’s children (Higer.</p>
+<dd><p>Adds a rectangle as one of the layout&#8217;s children (Higer.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>min_x</strong> (<em>float</em>) – Rectangle Min X   (All 0’s for undefined allowed)</li>
-<li><strong>min_y</strong> (<em>float</em>) – Rectangle Min Y</li>
-<li><strong>max_x</strong> (<em>float</em>) – Rectangle Max X</li>
-<li><strong>max_y</strong> (<em>float</em>) – Rectangle Max Y</li>
+<li><strong>min_x</strong> (<em>float</em>) &#8211; Rectangle Min X   (All 0&#8217;s for undefined allowed)</li>
+<li><strong>min_y</strong> (<em>float</em>) &#8211; Rectangle Min Y</li>
+<li><strong>max_x</strong> (<em>float</em>) &#8211; Rectangle Max X</li>
+<li><strong>max_y</strong> (<em>float</em>) &#8211; Rectangle Max Y</li>
 </ul>
 </td>
 </tr>
@@ -209,10 +212,10 @@ A, <a class="reference internal" href="#geosoft.gxapi.LAYOUT_CONSTR_MOVEL" title
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Parent Rectangle Min X after calculation</li>
-<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Parent Rectangle Min Y after calculation</li>
-<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Parent Rectangle Max X after calculation</li>
-<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Parent Rectangle Max Y after calculation</li>
+<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Parent Rectangle Min X after calculation</li>
+<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Parent Rectangle Min Y after calculation</li>
+<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Parent Rectangle Max X after calculation</li>
+<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Parent Rectangle Max Y after calculation</li>
 </ul>
 </td>
 </tr>
@@ -254,8 +257,8 @@ after the calculation (returned here for convenience).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>num</strong> (<em>int</em>) – Initial number of objects (may be 0)</li>
-<li><strong>name</strong> (<em>str</em>) – Optional name of parent layout (may be empty)</li>
+<li><strong>num</strong> (<em>int</em>) &#8211; Initial number of objects (may be 0)</li>
+<li><strong>name</strong> (<em>str</em>) &#8211; Optional name of parent layout (may be empty)</li>
 </ul>
 </td>
 </tr>
@@ -281,8 +284,8 @@ after the calculation (returned here for convenience).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>rect</strong> (<em>int</em>) – Rectangle to get info for (-1 for parent)</li>
-<li><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Buffer for name of the rectangle</li>
+<li><strong>rect</strong> (<em>int</em>) &#8211; Rectangle to get info for (-1 for parent)</li>
+<li><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Buffer for name of the rectangle</li>
 </ul>
 </td>
 </tr>
@@ -302,11 +305,11 @@ after the calculation (returned here for convenience).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>rect</strong> (<em>int</em>) – Rectangle to get info for (-1 for parent)</li>
-<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Rectangle Min X</li>
-<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Rectangle Min Y</li>
-<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Rectangle Max X</li>
-<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Rectangle Max Y</li>
+<li><strong>rect</strong> (<em>int</em>) &#8211; Rectangle to get info for (-1 for parent)</li>
+<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Rectangle Min X</li>
+<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Rectangle Min Y</li>
+<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Rectangle Max X</li>
+<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Rectangle Max Y</li>
 </ul>
 </td>
 </tr>
@@ -373,11 +376,11 @@ after the calculation (returned here for convenience).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>rect</strong> (<em>int</em>) – Rectangle to set info for (-1 for parent)</li>
-<li><strong>min_x</strong> (<em>float</em>) – Rectangle Min X</li>
-<li><strong>min_y</strong> (<em>float</em>) – Rectangle Min Y</li>
-<li><strong>max_x</strong> (<em>float</em>) – Rectangle Max X</li>
-<li><strong>max_y</strong> (<em>float</em>) – Rectangle Max Y</li>
+<li><strong>rect</strong> (<em>int</em>) &#8211; Rectangle to set info for (-1 for parent)</li>
+<li><strong>min_x</strong> (<em>float</em>) &#8211; Rectangle Min X</li>
+<li><strong>min_y</strong> (<em>float</em>) &#8211; Rectangle Min Y</li>
+<li><strong>max_x</strong> (<em>float</em>) &#8211; Rectangle Max X</li>
+<li><strong>max_y</strong> (<em>float</em>) &#8211; Rectangle Max Y</li>
 </ul>
 </td>
 </tr>
@@ -397,8 +400,8 @@ after the calculation (returned here for convenience).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>rect</strong> (<em>int</em>) – Rectangle to set info for (-1 for parent)</li>
-<li><strong>p3</strong> (<em>str</em>) – Name</li>
+<li><strong>rect</strong> (<em>int</em>) &#8211; Rectangle to set info for (-1 for parent)</li>
+<li><strong>p3</strong> (<em>str</em>) &#8211; Name</li>
 </ul>
 </td>
 </tr>
@@ -417,7 +420,7 @@ after the calculation (returned here for convenience).</p>
 <dl class="data">
 <dt id="geosoft.gxapi.LAYOUT_CONSTR_LEFT">
 <code class="descname">LAYOUT_CONSTR_LEFT</code><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_LEFT" title="Permalink to this definition">¶</a></dt>
-<dd><p>Adjust rectangle’s left side</p>
+<dd><p>Adjust rectangle&#8217;s left side</p>
 <dl class="attribute">
 <dt>
 <code class="descclassname">gxapi.</code><code class="descname">LAYOUT_CONSTR_LEFT</code><em class="property"> = 0</em></dt>
@@ -428,7 +431,7 @@ after the calculation (returned here for convenience).</p>
 <dl class="data">
 <dt id="geosoft.gxapi.LAYOUT_CONSTR_RIGHT">
 <code class="descname">LAYOUT_CONSTR_RIGHT</code><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_RIGHT" title="Permalink to this definition">¶</a></dt>
-<dd><p>Adjust rectangle’s right side</p>
+<dd><p>Adjust rectangle&#8217;s right side</p>
 <dl class="attribute">
 <dt>
 <code class="descclassname">gxapi.</code><code class="descname">LAYOUT_CONSTR_RIGHT</code><em class="property"> = 1</em></dt>
@@ -439,7 +442,7 @@ after the calculation (returned here for convenience).</p>
 <dl class="data">
 <dt id="geosoft.gxapi.LAYOUT_CONSTR_TOP">
 <code class="descname">LAYOUT_CONSTR_TOP</code><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_TOP" title="Permalink to this definition">¶</a></dt>
-<dd><p>Adjust rectangle’s top side</p>
+<dd><p>Adjust rectangle&#8217;s top side</p>
 <dl class="attribute">
 <dt>
 <code class="descclassname">gxapi.</code><code class="descname">LAYOUT_CONSTR_TOP</code><em class="property"> = 2</em></dt>
@@ -450,7 +453,7 @@ after the calculation (returned here for convenience).</p>
 <dl class="data">
 <dt id="geosoft.gxapi.LAYOUT_CONSTR_BOTTOM">
 <code class="descname">LAYOUT_CONSTR_BOTTOM</code><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_BOTTOM" title="Permalink to this definition">¶</a></dt>
-<dd><p>Adjust rectangle’s bottom side</p>
+<dd><p>Adjust rectangle&#8217;s bottom side</p>
 <dl class="attribute">
 <dt>
 <code class="descclassname">gxapi.</code><code class="descname">LAYOUT_CONSTR_BOTTOM</code><em class="property"> = 3</em></dt>
@@ -461,7 +464,7 @@ after the calculation (returned here for convenience).</p>
 <dl class="data">
 <dt id="geosoft.gxapi.LAYOUT_CONSTR_WIDTH">
 <code class="descname">LAYOUT_CONSTR_WIDTH</code><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_WIDTH" title="Permalink to this definition">¶</a></dt>
-<dd><p>Adjust rectangle’s width</p>
+<dd><p>Adjust rectangle&#8217;s width</p>
 <dl class="attribute">
 <dt>
 <code class="descclassname">gxapi.</code><code class="descname">LAYOUT_CONSTR_WIDTH</code><em class="property"> = 4</em></dt>
@@ -472,7 +475,7 @@ after the calculation (returned here for convenience).</p>
 <dl class="data">
 <dt id="geosoft.gxapi.LAYOUT_CONSTR_HEIGHT">
 <code class="descname">LAYOUT_CONSTR_HEIGHT</code><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_HEIGHT" title="Permalink to this definition">¶</a></dt>
-<dd><p>Adjust rectangle’s height</p>
+<dd><p>Adjust rectangle&#8217;s height</p>
 <dl class="attribute">
 <dt>
 <code class="descclassname">gxapi.</code><code class="descname">LAYOUT_CONSTR_HEIGHT</code><em class="property"> = 5</em></dt>
@@ -574,7 +577,7 @@ after the calculation (returned here for convenience).</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>GXMAPTEMPLATE class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -126,9 +129,9 @@ documentation in that folder for documentation on the file format.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>name</strong> (<em>str</em>) – Map Template file name</li>
-<li><strong>base</strong> (<em>str</em>) – Map Template base template to create from</li>
-<li><strong>mode</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">MAPTEMPLATE_OPEN</span></code></li>
+<li><strong>name</strong> (<em>str</em>) &#8211; Map Template file name</li>
+<li><strong>base</strong> (<em>str</em>) &#8211; Map Template base template to create from</li>
+<li><strong>mode</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#maptemplate-open"><span class="std std-ref">MAPTEMPLATE_OPEN constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -158,8 +161,8 @@ in the user folder will override any in the Geosoft install dir.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>map</strong> (<em>str</em>) – New map file name (if it exists it will be overwritten)</li>
-<li><strong>group</strong> (<em>str</em>) – Group name to use for settings</li>
+<li><strong>map</strong> (<em>str</em>) &#8211; New map file name (if it exists it will be overwritten)</li>
+<li><strong>group</strong> (<em>str</em>) &#8211; Group name to use for settings</li>
 </ul>
 </td>
 </tr>
@@ -187,7 +190,7 @@ in the user folder will override any in the Geosoft install dir.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Returned map template file name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Returned map template file name</td>
 </tr>
 </tbody>
 </table>
@@ -204,7 +207,7 @@ in the user folder will override any in the Geosoft install dir.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tmp</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Returned temporary map template file name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tmp</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Returned temporary map template file name</td>
 </tr>
 </tbody>
 </table>
@@ -263,11 +266,11 @@ Windows DC handle</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>hdc</strong> (<em>int</em>) – DC Handle</li>
-<li><strong>left</strong> (<em>int</em>) – Left value of the render rect in Windows coordinates (bottom&gt;top)</li>
-<li><strong>bottom</strong> (<em>int</em>) – Bottom value</li>
-<li><strong>right</strong> (<em>int</em>) – Right value</li>
-<li><strong>top</strong> (<em>int</em>) – Top value</li>
+<li><strong>hdc</strong> (<em>int</em>) &#8211; DC Handle</li>
+<li><strong>left</strong> (<em>int</em>) &#8211; Left value of the render rect in Windows coordinates (bottom&gt;top)</li>
+<li><strong>bottom</strong> (<em>int</em>) &#8211; Bottom value</li>
+<li><strong>right</strong> (<em>int</em>) &#8211; Right value</li>
+<li><strong>top</strong> (<em>int</em>) &#8211; Top value</li>
 </ul>
 </td>
 </tr>
@@ -287,11 +290,11 @@ Windows DC handle</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>hdc</strong> (<em>int</em>) – DC Handle (pass 0 to just query the Data view pixel location)</li>
-<li><strong>left</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Left value of the render rect in Windows coordinates (bottom&gt;top)</li>
-<li><strong>bottom</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Bottom value</li>
-<li><strong>right</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Right value</li>
-<li><strong>top</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Top value</li>
+<li><strong>hdc</strong> (<em>int</em>) &#8211; DC Handle (pass 0 to just query the Data view pixel location)</li>
+<li><strong>left</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Left value of the render rect in Windows coordinates (bottom&gt;top)</li>
+<li><strong>bottom</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Bottom value</li>
+<li><strong>right</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Right value</li>
+<li><strong>top</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Top value</li>
 </ul>
 </td>
 </tr>
@@ -314,7 +317,7 @@ preview from another location.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tmp</strong> (<em>str</em>) – Temporary map template file name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tmp</strong> (<em>str</em>) &#8211; Temporary map template file name</td>
 </tr>
 </tbody>
 </table>
@@ -383,7 +386,7 @@ and should be to not leak file resources.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

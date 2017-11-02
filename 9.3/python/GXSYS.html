@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>GXSYS class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -132,9 +135,9 @@ and error handling functions.</p>
 <p><strong>Note:</strong></p>
 <p>PARAMETER CONTROL FUNCTIONS</p>
 <p>Parameters can be named with an index extension.
-For example, a parameter could be named as “PARM[1]”.
-The index can be a positive number, or it can be a ‘*’.</p>
-<p>If the index is a ‘*’ in <a class="reference internal" href="#geosoft.gxapi.GXSYS.set_string" title="geosoft.gxapi.GXSYS.set_string"><code class="xref py py-obj docutils literal"><span class="pre">set_string</span></code></a>, then the value string
+For example, a parameter could be named as &#8220;PARM[1]&#8221;.
+The index can be a positive number, or it can be a &#8216;*&#8217;.</p>
+<p>If the index is a &#8216;*&#8217; in <a class="reference internal" href="#geosoft.gxapi.GXSYS.set_string" title="geosoft.gxapi.GXSYS.set_string"><code class="xref py py-obj docutils literal"><span class="pre">set_string</span></code></a>, then the value string
 will be parsed into multiple values. Commas are assumed to be delimiters.</p>
 <p>E.g.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;group1&quot;</span><span class="p">,</span>
@@ -165,7 +168,7 @@ the line number where we stopped in the script.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> (<em>str</em>) – Message to display</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> (<em>str</em>) &#8211; Message to display</td>
 </tr>
 </tbody>
 </table>
@@ -183,8 +186,8 @@ the line number where we stopped in the script.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>abbr</strong> (<em>str</em>) – Input file name to resolve</li>
-<li><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Output name, can be the same as input</li>
+<li><strong>abbr</strong> (<em>str</em>) &#8211; Input file name to resolve</li>
+<li><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Output name, can be the same as input</li>
 </ul>
 </td>
 </tr>
@@ -194,7 +197,7 @@ the line number where we stopped in the script.</p>
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>This is mainly intended to convert “.name” to a full
+<p>This is mainly intended to convert &#8221;.name&#8221; to a full
 name at run-time.</p>
 </dd></dl>
 
@@ -207,8 +210,8 @@ name at run-time.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> (<em>str</em>) – Paramter Name</li>
-<li><strong>value</strong> (<em>str</em>) – Parameter Value</li>
+<li><strong>name</strong> (<em>str</em>) &#8211; Paramter Name</li>
+<li><strong>value</strong> (<em>str</em>) &#8211; Parameter Value</li>
 </ul>
 </td>
 </tr>
@@ -228,8 +231,8 @@ name at run-time.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>source_type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">SYS_LINEAGE_SOURCE</span></code></li>
-<li><strong>source_name</strong> (<em>str</em>) – Source Name</li>
+<li><strong>source_type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#sys-lineage-source"><span class="std std-ref">SYS_LINEAGE_SOURCE constants</span></a></li>
+<li><strong>source_name</strong> (<em>str</em>) &#8211; Source Name</li>
 </ul>
 </td>
 </tr>
@@ -248,7 +251,7 @@ name at run-time.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>exp</strong> (<em>int</em>) – Expression to evaluate (0 aborts)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>exp</strong> (<em>int</em>) &#8211; Expression to evaluate (0 aborts)</td>
 </tr>
 </tbody>
 </table>
@@ -266,9 +269,9 @@ name at run-time.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>exp</strong> (<em>int</em>) – Boolean expression (ie. (dB != 0.0) )</li>
-<li><strong>mod</strong> (<em>str</em>) – Module name</li>
-<li><strong>parm</strong> (<em>str</em>) – Argument name</li>
+<li><strong>exp</strong> (<em>int</em>) &#8211; Boolean expression (ie. (dB != 0.0) )</li>
+<li><strong>mod</strong> (<em>str</em>) &#8211; Module name</li>
+<li><strong>parm</strong> (<em>str</em>) &#8211; Argument name</li>
 </ul>
 </td>
 </tr>
@@ -309,8 +312,8 @@ error message.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>data</strong> (<em>str</em>) – File Name</li>
-<li><strong>target</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Buffer to place the target name into</li>
+<li><strong>data</strong> (<em>str</em>) &#8211; File Name</li>
+<li><strong>target</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Buffer to place the target name into</li>
 </ul>
 </td>
 </tr>
@@ -320,7 +323,7 @@ error message.</p>
 <p><span class="versionmodified">New in version 7.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>Grids are copied and the GI’s are maintained - note that support
+<p>Grids are copied and the GI&#8217;s are maintained - note that support
 for non-geosoft grids is limited since this method does not
 guarantee all grid files besides the main one are copied.</p>
 </dd></dl>
@@ -334,10 +337,10 @@ guarantee all grid files besides the main one are copied.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>date</strong> (<em>float</em>) – Date value to break</li>
-<li><strong>year</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Year</li>
-<li><strong>month</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Month (0-11)</li>
-<li><strong>day</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Day   (0-30)</li>
+<li><strong>date</strong> (<em>float</em>) &#8211; Date value to break</li>
+<li><strong>year</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Year</li>
+<li><strong>month</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Month (0-11)</li>
+<li><strong>day</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Day   (0-30)</li>
 </ul>
 </td>
 </tr>
@@ -387,9 +390,9 @@ particular, the GX will not be logged in a recorded GS.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>version</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Version String</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>version</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Version String</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><code class="xref py py-obj docutils literal"><span class="pre">ARC_LICENSE</span></code></td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#arc-license"><span class="std std-ref">ARC_LICENSE constants</span></a></td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
@@ -409,8 +412,8 @@ particular, the GX will not be logged in a recorded GS.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>cl</strong> (<em>int</em>) – Intrinsic Class Number</li>
-<li><strong>name</strong> (<em>str</em>) – Intrinsic Name (must be exact)</li>
+<li><strong>cl</strong> (<em>int</em>) &#8211; Intrinsic Class Number</li>
+<li><strong>name</strong> (<em>str</em>) &#8211; Intrinsic Name (must be exact)</li>
 </ul>
 </td>
 </tr>
@@ -478,7 +481,7 @@ any GX program that may take a while to complete.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>group</strong> (<em>str</em>) – Group to clear</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>group</strong> (<em>str</em>) &#8211; Group to clear</td>
 </tr>
 </tbody>
 </table>
@@ -495,7 +498,7 @@ any GX program that may take a while to complete.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>group</strong> (<em>str</em>) – String</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>group</strong> (<em>str</em>) &#8211; String</td>
 </tr>
 </tbody>
 </table>
@@ -530,7 +533,7 @@ any GX program that may take a while to complete.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>flag</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">SYS_MENU_CLEAR</span></code></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>flag</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#sys-menu-clear"><span class="std std-ref">SYS_MENU_CLEAR constants</span></a></td>
 </tr>
 </tbody>
 </table>
@@ -556,7 +559,7 @@ any GX program that may take a while to complete.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – File name to place it into</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; File name to place it into</td>
 </tr>
 </tbody>
 </table>
@@ -574,8 +577,8 @@ any GX program that may take a while to complete.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>src_file</strong> (<em>str</em>) – Source file</li>
-<li><strong>dest_file</strong> (<em>str</em>) – Destination file</li>
+<li><strong>src_file</strong> (<em>str</em>) &#8211; Source file</li>
+<li><strong>dest_file</strong> (<em>str</em>) &#8211; Destination file</li>
 </ul>
 </td>
 </tr>
@@ -602,8 +605,8 @@ any GX program that may take a while to complete.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>data</strong> (<em>str</em>) – File Name</li>
-<li><strong>dir</strong> (<em>str</em>) – Target directory</li>
+<li><strong>data</strong> (<em>str</em>) &#8211; File Name</li>
+<li><strong>dir</strong> (<em>str</em>) &#8211; Target directory</li>
 </ul>
 </td>
 </tr>
@@ -613,7 +616,7 @@ any GX program that may take a while to complete.</p>
 <p><span class="versionmodified">New in version 7.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>Grids are copied and the GI’s are maintained - note that support
+<p>Grids are copied and the GI&#8217;s are maintained - note that support
 for non-geosoft grids is limited since this method does not
 guarantee all grid files besides the main one are copied.</p>
 </dd></dl>
@@ -626,7 +629,7 @@ guarantee all grid files besides the main one are copied.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – File Name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; File Name</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">CRC Value</td>
 </tr>
@@ -648,8 +651,8 @@ guarantee all grid files besides the main one are copied.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>file</strong> (<em>str</em>) – File Name</li>
-<li><strong>offset</strong> (<em>int</em>) – Offset in the file (0 for start)</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; File Name</li>
+<li><strong>offset</strong> (<em>int</em>) &#8211; Offset in the file (0 for start)</li>
 </ul>
 </td>
 </tr>
@@ -744,7 +747,7 @@ Numerical Receipies Julian function.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>date</strong> (<em>float</em>) – Date</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>date</strong> (<em>float</em>) &#8211; Date</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">x - Days</td>
 </tr>
@@ -766,9 +769,9 @@ Numerical Receipies Julian function.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>input</strong> (<em>str</em>) – Input string for decryption.</li>
-<li><strong>output</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Output buffer for decrypted result.</li>
-<li><strong>key</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">SYS_ENCRYPTION_KEY</span></code></li>
+<li><strong>input</strong> (<em>str</em>) &#8211; Input string for decryption.</li>
+<li><strong>output</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Output buffer for decrypted result.</li>
+<li><strong>key</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#sys-encryption-key"><span class="std std-ref">SYS_ENCRYPTION_KEY constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -788,9 +791,9 @@ Numerical Receipies Julian function.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>group</strong> (<em>str</em>) – Group Name</li>
-<li><strong>field</strong> (<em>str</em>) – Parameter Name</li>
-<li><strong>val</strong> (<em>float</em>) – Real Value to Set</li>
+<li><strong>group</strong> (<em>str</em>) &#8211; Group Name</li>
+<li><strong>field</strong> (<em>str</em>) &#8211; Parameter Name</li>
+<li><strong>val</strong> (<em>float</em>) &#8211; Real Value to Set</li>
 </ul>
 </td>
 </tr>
@@ -813,9 +816,9 @@ setting.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>group</strong> (<em>str</em>) – Group Name</li>
-<li><strong>field</strong> (<em>str</em>) – Parameter Name</li>
-<li><strong>val</strong> (<em>int</em>) – Int Value to Set</li>
+<li><strong>group</strong> (<em>str</em>) &#8211; Group Name</li>
+<li><strong>field</strong> (<em>str</em>) &#8211; Parameter Name</li>
+<li><strong>val</strong> (<em>int</em>) &#8211; Int Value to Set</li>
 </ul>
 </td>
 </tr>
@@ -838,9 +841,9 @@ setting.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>group</strong> (<em>str</em>) – Group Name</li>
-<li><strong>field</strong> (<em>str</em>) – Parameter Name</li>
-<li><strong>val</strong> (<em>str</em>) – String to Set it To</li>
+<li><strong>group</strong> (<em>str</em>) &#8211; Group Name</li>
+<li><strong>field</strong> (<em>str</em>) &#8211; Parameter Name</li>
+<li><strong>val</strong> (<em>str</em>) &#8211; String to Set it To</li>
 </ul>
 </td>
 </tr>
@@ -862,7 +865,7 @@ setting.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>secs</strong> (<em>float</em>) – Decimal Seconds to delay</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>secs</strong> (<em>float</em>) &#8211; Decimal Seconds to delay</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Success if the delay has elapsed.</td>
 </tr>
@@ -883,7 +886,7 @@ setting.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – Name of file to delete</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; Name of file to delete</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 if file deleted.
 1 if unable to find file or delete file.</td>
@@ -905,11 +908,11 @@ setting.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – Name of grid file to delete</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; Name of grid file to delete</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 if file deleted.
-1 if file is not found, or found but could not be deleted.<p>This is a “one-line” function to take a grid file name,
-remove the qualifiers, add the “.gi” and delete the file.</p>
+1 if file is not found, or found but could not be deleted.<p>This is a &#8220;one-line&#8221; function to take a grid file name,
+remove the qualifiers, add the &#8221;.gi&#8221; and delete the file.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
@@ -929,7 +932,7 @@ remove the qualifiers, add the “.gi” and delete the file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – Name of grid file to delete</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; Name of grid file to delete</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 if grid file deleted.
 1 if grid file not found or if one or more files is found but could not be deleted.</td>
@@ -955,7 +958,7 @@ No error is registered if a file is not found or cannot be deleted.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ptmp</strong> (<em>int</em>) – PTMP object to destroy</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ptmp</strong> (<em>int</em>) &#8211; PTMP object to destroy</td>
 </tr>
 </tbody>
 </table>
@@ -972,9 +975,9 @@ No error is registered if a file is not found or cannot be deleted.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dir</strong> (<em>str</em>) – Name of directory to check</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dir</strong> (<em>str</em>) &#8211; Name of directory to check</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - Directory doesn’t exist
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - Directory doesn&#8217;t exist
 1 - Directory exists</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
@@ -1006,8 +1009,8 @@ No error is registered if a file is not found or cannot be deleted.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>title</strong> (<em>str</em>) – Title of the Window</li>
-<li><strong>real</strong> (<em>float</em>) – Number</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title of the Window</li>
+<li><strong>real</strong> (<em>float</em>) &#8211; Number</li>
 </ul>
 </td>
 </tr>
@@ -1027,8 +1030,8 @@ No error is registered if a file is not found or cannot be deleted.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>group</strong> (<em>str</em>) – Group string to lookup in gxhelp.ini</li>
-<li><strong>topic</strong> (<em>str</em>) – Index string to lookup in gxhelp.ini</li>
+<li><strong>group</strong> (<em>str</em>) &#8211; Group string to lookup in gxhelp.ini</li>
+<li><strong>topic</strong> (<em>str</em>) &#8211; Index string to lookup in gxhelp.ini</li>
 </ul>
 </td>
 </tr>
@@ -1048,8 +1051,8 @@ No error is registered if a file is not found or cannot be deleted.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>file</strong> (<em>str</em>) – Help File (blank for default)</li>
-<li><strong>topic</strong> (<em>str</em>) – Help Topic</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; Help File (blank for default)</li>
+<li><strong>topic</strong> (<em>str</em>) &#8211; Help Topic</li>
 </ul>
 </td>
 </tr>
@@ -1069,8 +1072,8 @@ No error is registered if a file is not found or cannot be deleted.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>title</strong> (<em>str</em>) – Title of the Window</li>
-<li><strong>int</strong> (<em>int</em>) – Number</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title of the Window</li>
+<li><strong>int</strong> (<em>int</em>) &#8211; Number</li>
 </ul>
 </td>
 </tr>
@@ -1090,8 +1093,8 @@ No error is registered if a file is not found or cannot be deleted.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>title</strong> (<em>str</em>) – Title of the Window</li>
-<li><strong>message</strong> (<em>str</em>) – Message String</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title of the Window</li>
+<li><strong>message</strong> (<em>str</em>) &#8211; Message String</li>
 </ul>
 </td>
 </tr>
@@ -1112,8 +1115,8 @@ for the user to hit YES or NO.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>title</strong> (<em>str</em>) – Title of the window</li>
-<li><strong>message</strong> (<em>str</em>) – Message String</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title of the window</li>
+<li><strong>message</strong> (<em>str</em>) &#8211; Message String</li>
 </ul>
 </td>
 </tr>
@@ -1141,8 +1144,8 @@ for the user to hit YES or NO or CANCEL.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>title</strong> (<em>str</em>) – Title of the window</li>
-<li><strong>message</strong> (<em>str</em>) – Message String</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title of the window</li>
+<li><strong>message</strong> (<em>str</em>) &#8211; Message String</li>
 </ul>
 </td>
 </tr>
@@ -1170,23 +1173,23 @@ for the user to hit YES or NO or CANCEL.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>title</strong> (<em>str</em>) – Title</li>
-<li><strong>main_instruction</strong> (<em>str</em>) – Main instruction (empty string for none)</li>
-<li><strong>content</strong> (<em>str</em>) – Content (empty string for none)</li>
-<li><strong>common_buttons</strong> (<em>int</em>) – Common Buttons, one of <code class="xref py py-obj docutils literal"><span class="pre">TD_BUTTON</span></code></li>
-<li><strong>custom_button_lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – Optional <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> of custom buttons. Name in <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> will be used for button text, while value should be an int to return. Pass (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a>)0 to only use standard button flags.</li>
-<li><strong>icon</strong> (<em>int</em>) – Icon <code class="xref py py-obj docutils literal"><span class="pre">TD_ICON</span></code></li>
-<li><strong>footer</strong> (<em>str</em>) – Footer (empty string for none)</li>
-<li><strong>footer_icon</strong> (<em>int</em>) – Footer Icon <code class="xref py py-obj docutils literal"><span class="pre">TD_ICON</span></code></li>
-<li><strong>verification_check_text</strong> (<em>str</em>) – Verification checkbox text (empty string for none)</li>
-<li><strong>verification_checked</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Verification checkbox checked (in/out)</li>
-<li><strong>expanded_information</strong> (<em>str</em>) – Expanded information (empty string for none)</li>
-<li><strong>collapsed_control_text</strong> (<em>str</em>) – Collapsed control text for expanded information (empty string for default; ‘More’)</li>
-<li><strong>expanded_control_text</strong> (<em>str</em>) – Expanded control text for expanded information (empty string for default; ‘Less’)</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title</li>
+<li><strong>main_instruction</strong> (<em>str</em>) &#8211; Main instruction (empty string for none)</li>
+<li><strong>content</strong> (<em>str</em>) &#8211; Content (empty string for none)</li>
+<li><strong>common_buttons</strong> (<em>int</em>) &#8211; Common Buttons, one of <a class="reference internal" href="#td-button"><span class="std std-ref">TD_BUTTON constants</span></a></li>
+<li><strong>custom_button_lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; Optional <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> of custom buttons. Name in <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> will be used for button text, while value should be an int to return. Pass (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a>)0 to only use standard button flags.</li>
+<li><strong>icon</strong> (<em>int</em>) &#8211; Icon <a class="reference internal" href="#td-icon"><span class="std std-ref">TD_ICON constants</span></a></li>
+<li><strong>footer</strong> (<em>str</em>) &#8211; Footer (empty string for none)</li>
+<li><strong>footer_icon</strong> (<em>int</em>) &#8211; Footer Icon <a class="reference internal" href="#td-icon"><span class="std std-ref">TD_ICON constants</span></a></li>
+<li><strong>verification_check_text</strong> (<em>str</em>) &#8211; Verification checkbox text (empty string for none)</li>
+<li><strong>verification_checked</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Verification checkbox checked (in/out)</li>
+<li><strong>expanded_information</strong> (<em>str</em>) &#8211; Expanded information (empty string for none)</li>
+<li><strong>collapsed_control_text</strong> (<em>str</em>) &#8211; Collapsed control text for expanded information (empty string for default; &#8216;More&#8217;)</li>
+<li><strong>expanded_control_text</strong> (<em>str</em>) &#8211; Expanded control text for expanded information (empty string for default; &#8216;Less&#8217;)</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Button ID. One of <code class="xref py py-obj docutils literal"><span class="pre">TD_ID</span></code> or the int value from <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> of custom buttons.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Button ID. One of <a class="reference internal" href="#td-id"><span class="std std-ref">TD_ID constants</span></a> or the int value from <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> of custom buttons.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
@@ -1207,7 +1210,7 @@ for the user to hit YES or NO or CANCEL.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>command</strong> (<em>str</em>) – Command</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>command</strong> (<em>str</em>) &#8211; Command</td>
 </tr>
 </tbody>
 </table>
@@ -1215,7 +1218,7 @@ for the user to hit YES or NO or CANCEL.</p>
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>Commands syntax:  “[type] command”</p>
+<p>Commands syntax:  &#8220;[type] command&#8221;</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="7%" />
@@ -1252,7 +1255,7 @@ Use qualifiers to specify class and method e.g.:
 </tr>
 </tbody>
 </table>
-<p>The must be ONE space between the “]” and the command.  For example:</p>
+<p>The must be ONE space between the &#8220;]&#8221; and the command.  For example:</p>
 <p><code class="docutils literal"><span class="pre">&quot;[ID]</span> <span class="pre">ID_EDIT_SELECT&quot;</span></code>  // bring up the line edit tool</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
@@ -1269,9 +1272,9 @@ Use qualifiers to specify class and method e.g.:
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>file</strong> (<em>str</em>) – EMF File holding data</li>
-<li><strong>size_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Size X</li>
-<li><strong>size_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Size Y</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; EMF File holding data</li>
+<li><strong>size_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Size X</li>
+<li><strong>size_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Size Y</li>
 </ul>
 </td>
 </tr>
@@ -1291,8 +1294,8 @@ Use qualifiers to specify class and method e.g.:
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>src_dir</strong> (<em>str</em>) – Path that will be scanned recursively for GXC source files</li>
-<li><strong>first_gx</strong> (<em>str</em>) – Name of gx where first breakpoint should be set</li>
+<li><strong>src_dir</strong> (<em>str</em>) &#8211; Path that will be scanned recursively for GXC source files</li>
+<li><strong>first_gx</strong> (<em>str</em>) &#8211; Name of gx where first breakpoint should be set</li>
 </ul>
 </td>
 </tr>
@@ -1304,7 +1307,7 @@ Use qualifiers to specify class and method e.g.:
 <p><strong>Note:</strong></p>
 <p>Takes as input two strings one a path that will be scanned
 recursively for GXC source files and a second string without
-a path of the GX where the first breakpoint should be set in (i.e. “gxname.gx”).
+a path of the GX where the first breakpoint should be set in (i.e. &#8220;gxname.gx&#8221;).
 The source of the GX should be found in the path (e.g. &lt;path&gt;somewheregxname.gxc)
 and a breakpoint will be set on the first executing line of this GX. Make sure the
 GX binary is newer than the source file, otherwise unexpected results may occur. As
@@ -1322,9 +1325,9 @@ or in the workspace parameters.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>input</strong> (<em>str</em>) – Input string for encryption.</li>
-<li><strong>output</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Output buffer for encrypted result.</li>
-<li><strong>key</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">SYS_ENCRYPTION_KEY</span></code></li>
+<li><strong>input</strong> (<em>str</em>) &#8211; Input string for encryption.</li>
+<li><strong>output</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Output buffer for encrypted result.</li>
+<li><strong>key</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#sys-encryption-key"><span class="std std-ref">SYS_ENCRYPTION_KEY constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1344,9 +1347,9 @@ or in the workspace parameters.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>error_file</strong> (<em>str</em>) – Your error file name, “” if none.</li>
-<li><strong>module</strong> (<em>str</em>) – Module name in which error occurred.</li>
-<li><strong>error</strong> (<em>int</em>) – Error number</li>
+<li><strong>error_file</strong> (<em>str</em>) &#8211; Your error file name, &#8220;&#8221; if none.</li>
+<li><strong>module</strong> (<em>str</em>) &#8211; Module name in which error occurred.</li>
+<li><strong>error</strong> (<em>int</em>) &#8211; Error number</li>
 </ul>
 </td>
 </tr>
@@ -1374,8 +1377,8 @@ searched.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>tag</strong> (<em>str</em>) – Tag string, ie “%1”.</li>
-<li><strong>set</strong> (<em>str</em>) – String to replace the tag.</li>
+<li><strong>tag</strong> (<em>str</em>) &#8211; Tag string, ie &#8220;%1&#8221;.</li>
+<li><strong>set</strong> (<em>str</em>) &#8211; String to replace the tag.</li>
 </ul>
 </td>
 </tr>
@@ -1387,8 +1390,8 @@ searched.</p>
 <p><strong>Note:</strong></p>
 <p>Use this method to replace tag strings in your error
 message text with run-time information.  For example,
-Geosoft error messages often use the tag strings “%1”,
-“%2”, etc. as place holders to be replaced by a string
+Geosoft error messages often use the tag strings &#8220;%1&#8221;,
+&#8220;%2&#8221;, etc. as place holders to be replaced by a string
 which is only known at run-time.</p>
 </dd></dl>
 
@@ -1401,8 +1404,8 @@ which is only known at run-time.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>group</strong> (<em>str</em>) – Group Name</li>
-<li><strong>field</strong> (<em>str</em>) – Parameter Name</li>
+<li><strong>group</strong> (<em>str</em>) &#8211; Group Name</li>
+<li><strong>field</strong> (<em>str</em>) &#8211; Parameter Name</li>
 </ul>
 </td>
 </tr>
@@ -1428,7 +1431,7 @@ which is only known at run-time.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>parm</strong> (<em>str</em>) – Setting</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>parm</strong> (<em>str</em>) &#8211; Setting</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">1 - Yes
 0 - No</td>
@@ -1451,8 +1454,8 @@ which is only known at run-time.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>group</strong> (<em>str</em>) – Group Name</li>
-<li><strong>field</strong> (<em>str</em>) – Parameter Name</li>
+<li><strong>group</strong> (<em>str</em>) &#8211; Group Name</li>
+<li><strong>field</strong> (<em>str</em>) &#8211; Parameter Name</li>
 </ul>
 </td>
 </tr>
@@ -1479,8 +1482,8 @@ which is only known at run-time.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>group</strong> (<em>str</em>) – Group Name</li>
-<li><strong>field</strong> (<em>str</em>) – Parameter Name</li>
+<li><strong>group</strong> (<em>str</em>) &#8211; Group Name</li>
+<li><strong>field</strong> (<em>str</em>) &#8211; Parameter Name</li>
 </ul>
 </td>
 </tr>
@@ -1516,7 +1519,7 @@ fashion with no error messages displayed.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – File name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; File name</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Date in decimal years, <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> if the file does not exist.</td>
 </tr>
@@ -1540,9 +1543,9 @@ to a string.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – Name of file to check</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; Name of file to check</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - File doesn’t exist
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - File doesn&#8217;t exist
 1 - File exists</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
@@ -1567,8 +1570,8 @@ directory is used for the path.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>old_file</strong> (<em>str</em>) – Old file name</li>
-<li><strong>new_file</strong> (<em>str</em>) – New file name</li>
+<li><strong>old_file</strong> (<em>str</em>) &#8211; Old file name</li>
+<li><strong>new_file</strong> (<em>str</em>) &#8211; New file name</li>
 </ul>
 </td>
 </tr>
@@ -1587,7 +1590,7 @@ directory is used for the path.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – Name of file</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; Name of file</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 none/error
 x Size</td>
@@ -1609,7 +1612,7 @@ x Size</td>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – File name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; File name</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Date in decimal hours, <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> if the file does not exist.</td>
 </tr>
@@ -1633,7 +1636,7 @@ to a string.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – File place into clipboard</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; File place into clipboard</td>
 </tr>
 </tbody>
 </table>
@@ -1651,11 +1654,9 @@ at a specific location</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – File path name to check</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; File path name to check</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><code class="xref py py-obj docutils literal"><span class="pre">GEO_BOOL</span></code></td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
@@ -1673,8 +1674,8 @@ at a specific location</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>group</strong> (<em>str</em>) – Group Name</li>
-<li><strong>add</strong> (<em>int</em>) – 0 - Clear filter, 1 - Add filter</li>
+<li><strong>group</strong> (<em>str</em>) &#8211; Group Name</li>
+<li><strong>add</strong> (<em>int</em>) &#8211; 0 - Clear filter, 1 - Add filter</li>
 </ul>
 </td>
 </tr>
@@ -1696,8 +1697,8 @@ at a specific location</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> object</li>
-<li><strong>mask</strong> (<em>str</em>) – File mask to match</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> object</li>
+<li><strong>mask</strong> (<em>str</em>) &#8211; File mask to match</li>
 </ul>
 </td>
 </tr>
@@ -1720,9 +1721,9 @@ The <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geo
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>file</strong> (<em>str</em>) – File to get path name for</li>
-<li><strong>mode</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">SYS_SEARCH_PATH</span></code></li>
-<li><strong>fullname</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Buffer to place path name into</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; File to get path name for</li>
+<li><strong>mode</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#sys-search-path"><span class="std std-ref">SYS_SEARCH_PATH constants</span></a></li>
+<li><strong>fullname</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Buffer to place path name into</li>
 </ul>
 </td>
 </tr>
@@ -1760,10 +1761,10 @@ file prefixes will be replaced by the environment settings:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>file</strong> (<em>str</em>) – File to get path name for</li>
-<li><strong>mode</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">SYS_SEARCH_PATH</span></code></li>
-<li><strong>dir_mode</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">GEO_DIRECTORY</span></code></li>
-<li><strong>fullname</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Buffer to place path name into</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; File to get path name for</li>
+<li><strong>mode</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#sys-search-path"><span class="std std-ref">SYS_SEARCH_PATH constants</span></a></li>
+<li><strong>dir_mode</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#geo-directory"><span class="std std-ref">GEO_DIRECTORY constants</span></a></li>
+<li><strong>fullname</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Buffer to place path name into</li>
 </ul>
 </td>
 </tr>
@@ -1801,8 +1802,8 @@ file prefixes will be replaced by the environment settings:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – List Object</li>
-<li><strong>which</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">SYS_FONT</span></code></li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; List Object</li>
+<li><strong>which</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#sys-font"><span class="std std-ref">SYS_FONT constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1825,7 +1826,7 @@ change order of listing.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>guid</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – GUID</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>guid</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; GUID</td>
 </tr>
 </tbody>
 </table>
@@ -1843,8 +1844,8 @@ change order of listing.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>sys_dir</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">SYS_DIR</span></code></li>
-<li><strong>dir</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Returned directory path string</li>
+<li><strong>sys_dir</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#sys-dir"><span class="std std-ref">SYS_DIR constants</span></a></li>
+<li><strong>dir</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Returned directory path string</li>
 </ul>
 </td>
 </tr>
@@ -1867,8 +1868,8 @@ exposed to Oasis montaj.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>gx</strong> (<em>str</em>) – Name of .NET GX assembly</li>
-<li><strong>entry_buffer</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Buffer to place list of entries in</li>
+<li><strong>gx</strong> (<em>str</em>) &#8211; Name of .NET GX assembly</li>
+<li><strong>entry_buffer</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Buffer to place list of entries in</li>
 </ul>
 </td>
 </tr>
@@ -1899,8 +1900,8 @@ For example: NewGDB|Run;NewGDB|RunEx</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>group</strong> (<em>str</em>) – Group Name</li>
-<li><strong>field</strong> (<em>str</em>) – Parameter Name</li>
+<li><strong>group</strong> (<em>str</em>) &#8211; Group Name</li>
+<li><strong>field</strong> (<em>str</em>) &#8211; Parameter Name</li>
 </ul>
 </td>
 </tr>
@@ -1925,7 +1926,7 @@ For example: NewGDB|Run;NewGDB|RunEx</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lst_rights</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – Rights</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lst_rights</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; Rights</td>
 </tr>
 </tbody>
 </table>
@@ -1943,8 +1944,8 @@ For example: NewGDB|Run;NewGDB|RunEx</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>parm</strong> (<em>str</em>) – Setting</li>
-<li><strong>set</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Value string</li>
+<li><strong>parm</strong> (<em>str</em>) &#8211; Setting</li>
+<li><strong>set</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Value string</li>
 </ul>
 </td>
 </tr>
@@ -1964,8 +1965,8 @@ For example: NewGDB|Run;NewGDB|RunEx</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>err</strong> (<em>int</em>) – The error index (0 to N-1, where N=number of registered errors)</li>
-<li><strong>err_str</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Buffer to return message in</li>
+<li><strong>err</strong> (<em>int</em>) &#8211; The error index (0 to N-1, where N=number of registered errors)</li>
+<li><strong>err_str</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Buffer to return message in</li>
 </ul>
 </td>
 </tr>
@@ -2010,8 +2011,8 @@ running within the geodist library</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>group</strong> (<em>str</em>) – Group Name</li>
-<li><strong>field</strong> (<em>str</em>) – Parameter Name</li>
+<li><strong>group</strong> (<em>str</em>) &#8211; Group Name</li>
+<li><strong>field</strong> (<em>str</em>) &#8211; Parameter Name</li>
 </ul>
 </td>
 </tr>
@@ -2036,7 +2037,7 @@ running within the geodist library</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cl</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Class String</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cl</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Class String</td>
 </tr>
 </tbody>
 </table>
@@ -2044,9 +2045,9 @@ running within the geodist library</p>
 <p><span class="versionmodified">New in version 6.1.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>String may be one of :  “ArcGIS”
-“OasisMontaj”
-“DapServer”</p>
+<p>String may be one of :  &#8220;ArcGIS&#8221;
+&#8220;OasisMontaj&#8221;
+&#8220;DapServer&#8221;</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -2058,8 +2059,8 @@ running within the geodist library</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>user</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – User Name</li>
-<li><strong>company</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Company Name</li>
+<li><strong>user</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; User Name</li>
+<li><strong>company</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Company Name</li>
 </ul>
 </td>
 </tr>
@@ -2079,9 +2080,9 @@ running within the geodist library</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>lst_default</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – Default menus (typically a single entry based on product)</li>
-<li><strong>lst_loaded</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – Loaded menus</li>
-<li><strong>lst_user</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – Loaded user menus</li>
+<li><strong>lst_default</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; Default menus (typically a single entry based on product)</li>
+<li><strong>lst_loaded</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; Loaded menus</li>
+<li><strong>lst_user</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; Loaded user menus</li>
 </ul>
 </td>
 </tr>
@@ -2104,8 +2105,8 @@ are semicolon separated top level menu names and/or toolbar.geobar file names.</
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">SYS_PATH</span></code></li>
-<li><strong>path</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String in which to place path</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#sys-path"><span class="std std-ref">SYS_PATH constants</span></a></li>
+<li><strong>path</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; String in which to place path</li>
 </ul>
 </td>
 </tr>
@@ -2127,13 +2128,13 @@ are semicolon separated top level menu names and/or toolbar.geobar file names.</
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>group</strong> (<em>str</em>) – Input group name</li>
-<li><strong>pat</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Pattern</li>
-<li><strong>size</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Size,</li>
-<li><strong>thick</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Thick (0-100)</li>
-<li><strong>dense</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Density,</li>
-<li><strong>col</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Pattern Color</li>
-<li><strong>back_col</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Background Color</li>
+<li><strong>group</strong> (<em>str</em>) &#8211; Input group name</li>
+<li><strong>pat</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Pattern</li>
+<li><strong>size</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Size,</li>
+<li><strong>thick</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Thick (0-100)</li>
+<li><strong>dense</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Density,</li>
+<li><strong>col</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Pattern Color</li>
+<li><strong>back_col</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Background Color</li>
 </ul>
 </td>
 </tr>
@@ -2145,14 +2146,14 @@ are semicolon separated top level menu names and/or toolbar.geobar file names.</
 <p><strong>Note:</strong></p>
 <p>Gets all the user-definable pattern parameters from
 a specified group. Parameters are:
-“PAT_NUMBER”    0 is solid fill (default)
-“PAT_SIZE”      pattern tile size in mm. (can return <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.iDUMMY" title="geosoft.gxapi.iDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">iDUMMY</span></code></a>)
-“PAT_THICKNESS” pattern line thickness in percent of the tile size.
+&#8220;PAT_NUMBER&#8221;    0 is solid fill (default)
+&#8220;PAT_SIZE&#8221;      pattern tile size in mm. (can return <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.iDUMMY" title="geosoft.gxapi.iDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">iDUMMY</span></code></a>)
+&#8220;PAT_THICKNESS&#8221; pattern line thickness in percent of the tile size.
 valid range is 0-100.
-“PAT_DENSITY”   Tile spacing. A value of 1 means tiles are laid with no overlap.
+&#8220;PAT_DENSITY&#8221;   Tile spacing. A value of 1 means tiles are laid with no overlap.
 A value of 2 means they overlap each other.
-“PAT_COLOR”     The color value.
-“PAT_BACKCOLOR” Background color value.</p>
+&#8220;PAT_COLOR&#8221;     The color value.
+&#8220;PAT_BACKCOLOR&#8221; Background color value.</p>
 <p>Returned values may be DUMMY, but will be acceptable for use with
 the <a class="reference internal" href="GXGUI.html#geosoft.gxapi.GXGUI.color_form" title="geosoft.gxapi.GXGUI.color_form"><code class="xref py py-obj docutils literal"><span class="pre">GXGUI.color_form</span></code></a> function, to set defaults.</p>
 </dd></dl>
@@ -2165,7 +2166,7 @@ the <a class="reference internal" href="GXGUI.html#geosoft.gxapi.GXGUI.color_for
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ptmp</strong> (<em>int</em>) – Saved with Save_PTMP_SYS</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ptmp</strong> (<em>int</em>) &#8211; Saved with Save_PTMP_SYS</td>
 </tr>
 </tbody>
 </table>
@@ -2187,8 +2188,8 @@ the <a class="reference internal" href="GXGUI.html#geosoft.gxapi.GXGUI.color_for
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>reg</strong> (<a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><em>GXREG</em></a>) – <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> to add parameters to</li>
-<li><strong>group</strong> (<em>str</em>) – Group name wanted</li>
+<li><strong>reg</strong> (<a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><em>GXREG</em></a>) &#8211; <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> to add parameters to</li>
+<li><strong>group</strong> (<em>str</em>) &#8211; Group name wanted</li>
 </ul>
 </td>
 </tr>
@@ -2207,7 +2208,7 @@ the <a class="reference internal" href="GXGUI.html#geosoft.gxapi.GXGUI.color_for
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal"><span class="pre">GXMETA</span></code></a> object to store the settings metadata in</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) &#8211; <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal"><span class="pre">GXMETA</span></code></a> object to store the settings metadata in</td>
 </tr>
 </tbody>
 </table>
@@ -2225,8 +2226,8 @@ the <a class="reference internal" href="GXGUI.html#geosoft.gxapi.GXGUI.color_for
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>sys_info</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">SYS_INFO</span></code></li>
-<li><strong>info</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Returned setting</li>
+<li><strong>sys_info</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#sys-info"><span class="std std-ref">SYS_INFO constants</span></a></li>
+<li><strong>info</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Returned setting</li>
 </ul>
 </td>
 </tr>
@@ -2267,9 +2268,9 @@ the <a class="reference internal" href="GXGUI.html#geosoft.gxapi.GXGUI.color_for
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>flag</strong> (<em>int</em>) – 1 - set start time, 0 - return elapsed time</li>
-<li><strong>start_time</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Start time in seconds</li>
-<li><strong>elapsed_time</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Elapsed time in seconds</li>
+<li><strong>flag</strong> (<em>int</em>) &#8211; 1 - set start time, 0 - return elapsed time</li>
+<li><strong>start_time</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Start time in seconds</li>
+<li><strong>elapsed_time</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Elapsed time in seconds</li>
 </ul>
 </td>
 </tr>
@@ -2317,7 +2318,7 @@ elapsed since the queried start time.  Do so by settign the flag to 0.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dir</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Buff for directory path string</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dir</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Buff for directory path string</td>
 </tr>
 </tbody>
 </table>
@@ -2334,7 +2335,7 @@ elapsed since the queried start time.  Do so by settign the flag to 0.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>reg</strong> (<a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><em>GXREG</em></a>) – <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> object</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>reg</strong> (<a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><em>GXREG</em></a>) &#8211; <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> object</td>
 </tr>
 </tbody>
 </table>
@@ -2360,12 +2361,12 @@ effect in the workspace <a class="reference internal" href="GXREG.html#geosoft.g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>group</strong> (<em>str</em>) – Group Name</li>
-<li><strong>field</strong> (<em>str</em>) – Parameter Name</li>
+<li><strong>group</strong> (<em>str</em>) &#8211; Group Name</li>
+<li><strong>field</strong> (<em>str</em>) &#8211; Parameter Name</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">1 - if first char in setting is a “Y” or”y”
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">1 - if first char in setting is a &#8220;Y&#8221; or&#8221;y&#8221;
 0 - Otherwise</p>
 </td>
 </tr>
@@ -2388,8 +2389,8 @@ effect in the workspace <a class="reference internal" href="GXREG.html#geosoft.g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>parm</strong> (<em>str</em>) – Name of the Parameter</li>
-<li><strong>setting</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Setting returned</li>
+<li><strong>parm</strong> (<em>str</em>) &#8211; Name of the Parameter</li>
+<li><strong>setting</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Setting returned</li>
 </ul>
 </td>
 </tr>
@@ -2415,10 +2416,10 @@ as follows</p>
 <p>[GROUP1]
 PARAM1=setting1
 PARAM2 setting2
-PARAM3 “setting3 is text”</p>
+PARAM3 &#8220;setting3 is text&#8221;</p>
 <p>To retrieve an entry, specify the group.parameter.  For
-example, iGlobal_SYS(“GROUP1.PARAM3”,sSetting) will
-retrieve the string “setting is text”.  The double
+example, iGlobal_SYS(&#8220;GROUP1.PARAM3&#8221;,sSetting) will
+retrieve the string &#8220;setting is text&#8221;.  The double
 quotes will not appear in the setting.</p>
 </dd></dl>
 
@@ -2430,7 +2431,7 @@ quotes will not appear in the setting.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ini</strong> (<em>str</em>) – New INI file name, if “”, use default.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ini</strong> (<em>str</em>) &#8211; New INI file name, if &#8220;&#8221;, use default.</td>
 </tr>
 </tbody>
 </table>
@@ -2448,8 +2449,8 @@ quotes will not appear in the setting.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>parm</strong> (<em>str</em>) – Name of the Parameter</li>
-<li><strong>set</strong> (<em>str</em>) – Setting</li>
+<li><strong>parm</strong> (<em>str</em>) &#8211; Name of the Parameter</li>
+<li><strong>set</strong> (<em>str</em>) &#8211; Setting</li>
 </ul>
 </td>
 </tr>
@@ -2468,7 +2469,7 @@ quotes will not appear in the setting.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ini</strong> (<em>str</em>) – Global INI file, if “” use default.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ini</strong> (<em>str</em>) &#8211; Global INI file, if &#8220;&#8221; use default.</td>
 </tr>
 </tbody>
 </table>
@@ -2489,9 +2490,9 @@ this function to make the changes permanent,</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>group</strong> (<em>str</em>) – Group Name</li>
-<li><strong>field</strong> (<em>str</em>) – Parameter Name</li>
-<li><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Buffer to place the string into</li>
+<li><strong>group</strong> (<em>str</em>) &#8211; Group Name</li>
+<li><strong>field</strong> (<em>str</em>) &#8211; Parameter Name</li>
+<li><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Buffer to place the string into</li>
 </ul>
 </td>
 </tr>
@@ -2533,7 +2534,7 @@ the buffer will have zero length</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>input</strong> (<em>str</em>) – Input string to inspect.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>input</strong> (<em>str</em>) &#8211; Input string to inspect.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 (false) or non-zero (true)</td>
 </tr>
@@ -2569,8 +2570,8 @@ the buffer will have zero length</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>file</strong> (<em>str</em>) – Name of the File to read from</li>
-<li><strong>groups</strong> (<em>str</em>) – Group Name to write read (“” for all groups)</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; Name of the File to read from</li>
+<li><strong>groups</strong> (<em>str</em>) &#8211; Group Name to write read (&#8220;&#8221; for all groups)</li>
 </ul>
 </td>
 </tr>
@@ -2589,7 +2590,7 @@ the buffer will have zero length</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>location</strong> (<em>str</em>) – Location that launched the script</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>location</strong> (<em>str</em>) &#8211; Location that launched the script</td>
 </tr>
 </tbody>
 </table>
@@ -2608,7 +2609,7 @@ Numerical Receipies Julian function.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>days</strong> (<em>int</em>) – Day</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>days</strong> (<em>int</em>) &#8211; Day</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">x - Date</td>
 </tr>
@@ -2629,7 +2630,7 @@ Numerical Receipies Julian function.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>sec</strong> (<em>int</em>) – Seconds</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>sec</strong> (<em>int</em>) &#8211; Seconds</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">x - Time</td>
 </tr>
@@ -2651,9 +2652,9 @@ Numerical Receipies Julian function.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>year</strong> (<em>int</em>) – Year</li>
-<li><strong>month</strong> (<em>int</em>) – Month (0-11)</li>
-<li><strong>day</strong> (<em>int</em>) – Day   (0-30)</li>
+<li><strong>year</strong> (<em>int</em>) &#8211; Year</li>
+<li><strong>month</strong> (<em>int</em>) &#8211; Month (0-11)</li>
+<li><strong>day</strong> (<em>int</em>) &#8211; Day   (0-30)</li>
 </ul>
 </td>
 </tr>
@@ -2678,7 +2679,7 @@ Numerical Receipies Julian function.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dir</strong> (<em>str</em>) – Name of directory</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dir</strong> (<em>str</em>) &#8211; Name of directory</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - Directory made
 1 - Directory cannot be made</td>
@@ -2695,12 +2696,12 @@ Numerical Receipies Julian function.</p>
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXSYS.make_file_readonly">
 <em class="property">classmethod </em><code class="descname">make_file_readonly</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSYS.make_file_readonly" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set a file’s read-only attribute.</p>
+<dd><p>Set a file&#8217;s read-only attribute.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – Name of file</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; Name of file</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 if read-only attribute successfully set,
 1 if attribute change fails.</td>
@@ -2717,12 +2718,12 @@ Numerical Receipies Julian function.</p>
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXSYS.make_file_writable">
 <em class="property">classmethod </em><code class="descname">make_file_writable</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSYS.make_file_writable" title="Permalink to this definition">¶</a></dt>
-<dd><p>Removes a file’s read-only attribute.</p>
+<dd><p>Removes a file&#8217;s read-only attribute.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – Name of file</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; Name of file</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 if read-only attribute successfully removed,
 1 if attribute change fails.</td>
@@ -2786,9 +2787,9 @@ the GX would terminate before it could be called.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>object</strong> (<em>str</em>) – Object Name</li>
-<li><strong>info_str</strong> (<em>str</em>) – Info String</li>
-<li><strong>info_val</strong> (<em>int</em>) – Info Int</li>
+<li><strong>object</strong> (<em>str</em>) &#8211; Object Name</li>
+<li><strong>info_str</strong> (<em>str</em>) &#8211; Info String</li>
+<li><strong>info_val</strong> (<em>int</em>) &#8211; Info Int</li>
 </ul>
 </td>
 </tr>
@@ -2816,8 +2817,8 @@ if no progress bar exists.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> (<em>str</em>) – New Process Name</li>
-<li><strong>reset</strong> (<em>int</em>) – 0 - Change the Name but do not change the percentage 1 - Change the Name and Reset Percent to 0 2 - Change the Name but no Percent Bar</li>
+<li><strong>name</strong> (<em>str</em>) &#8211; New Process Name</li>
+<li><strong>reset</strong> (<em>int</em>) &#8211; 0 - Change the Name but do not change the percentage 1 - Change the Name and Reset Percent to 0 2 - Change the Name but no Percent Bar</li>
 </ul>
 </td>
 </tr>
@@ -2864,7 +2865,7 @@ percentage.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>perc</strong> (<em>int</em>) – Percentage Completed (0-100).</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>perc</strong> (<em>int</em>) &#8211; Percentage Completed (0-100).</td>
 </tr>
 </tbody>
 </table>
@@ -2882,8 +2883,8 @@ percentage.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>v1</strong> (<em>int</em>) – Count</li>
-<li><strong>v2</strong> (<em>int</em>) – Max count &gt;= count</li>
+<li><strong>v1</strong> (<em>int</em>) &#8211; Count</li>
+<li><strong>v2</strong> (<em>int</em>) &#8211; Max count &gt;= count</li>
 </ul>
 </td>
 </tr>
@@ -2904,7 +2905,7 @@ to drive it.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>on</strong> (<em>int</em>) – 0 - Turn Progress Bar OFF 1 - Turn Progress Bar ON</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>on</strong> (<em>int</em>) &#8211; 0 - Turn Progress Bar OFF 1 - Turn Progress Bar ON</td>
 </tr>
 </tbody>
 </table>
@@ -2922,8 +2923,8 @@ to drive it.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>title</strong> (<em>str</em>) – Title of the window</li>
-<li><strong>result</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Buffer to place the user’s string</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title of the window</li>
+<li><strong>result</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Buffer to place the user&#8217;s string</li>
 </ul>
 </td>
 </tr>
@@ -2953,8 +2954,8 @@ Empty the user string if no default is needed.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>domain</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">REG_DOMAIN</span></code></li>
-<li><strong>key</strong> (<em>str</em>) – Key to delete</li>
+<li><strong>domain</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#reg-domain"><span class="std std-ref">REG_DOMAIN constants</span></a></li>
+<li><strong>key</strong> (<em>str</em>) &#8211; Key to delete</li>
 </ul>
 </td>
 </tr>
@@ -2983,9 +2984,9 @@ Empty the user string if no default is needed.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>domain</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">REG_DOMAIN</span></code></li>
-<li><strong>key</strong> (<em>str</em>) – Key</li>
-<li><strong>value_name</strong> (<em>str</em>) – Name of value to delete</li>
+<li><strong>domain</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#reg-domain"><span class="std std-ref">REG_DOMAIN constants</span></a></li>
+<li><strong>key</strong> (<em>str</em>) &#8211; Key</li>
+<li><strong>value_name</strong> (<em>str</em>) &#8211; Name of value to delete</li>
 </ul>
 </td>
 </tr>
@@ -3012,10 +3013,10 @@ Empty the user string if no default is needed.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>domain</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">REG_DOMAIN</span></code></li>
-<li><strong>key</strong> (<em>str</em>) – Key to set</li>
-<li><strong>sub_key</strong> (<em>str</em>) – Value name within key</li>
-<li><strong>value</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String for value data</li>
+<li><strong>domain</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#reg-domain"><span class="std std-ref">REG_DOMAIN constants</span></a></li>
+<li><strong>key</strong> (<em>str</em>) &#8211; Key to set</li>
+<li><strong>sub_key</strong> (<em>str</em>) &#8211; Value name within key</li>
+<li><strong>value</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; String for value data</li>
 </ul>
 </td>
 </tr>
@@ -3042,10 +3043,10 @@ Empty the user string if no default is needed.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>domain</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">REG_DOMAIN</span></code></li>
-<li><strong>key</strong> (<em>str</em>) – Key to set</li>
-<li><strong>sub_key</strong> (<em>str</em>) – Name of Subkey within key</li>
-<li><strong>value</strong> (<em>str</em>) – Value for Subkey</li>
+<li><strong>domain</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#reg-domain"><span class="std std-ref">REG_DOMAIN constants</span></a></li>
+<li><strong>key</strong> (<em>str</em>) &#8211; Key to set</li>
+<li><strong>sub_key</strong> (<em>str</em>) &#8211; Name of Subkey within key</li>
+<li><strong>value</strong> (<em>str</em>) &#8211; Value for Subkey</li>
 </ul>
 </td>
 </tr>
@@ -3068,8 +3069,8 @@ already exist.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>abbr</strong> (<em>str</em>) – Input file name to resolve</li>
-<li><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Output name, can be the same as input</li>
+<li><strong>abbr</strong> (<em>str</em>) &#8211; Input file name to resolve</li>
+<li><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Output name, can be the same as input</li>
 </ul>
 </td>
 </tr>
@@ -3080,7 +3081,7 @@ already exist.</p>
 </div>
 <p><strong>Note:</strong></p>
 <p>This will produce relative paths based on the workspace
-directory into “.name”.</p>
+directory into &#8221;.name&#8221;.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -3091,7 +3092,7 @@ directory into “.name”.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>output_name</strong> (<em>str</em>) – Source Name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>output_name</strong> (<em>str</em>) &#8211; Source Name</td>
 </tr>
 </tbody>
 </table>
@@ -3108,7 +3109,7 @@ directory into “.name”.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – Paramter Name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) &#8211; Paramter Name</td>
 </tr>
 </tbody>
 </table>
@@ -3125,7 +3126,7 @@ directory into “.name”.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>source_name</strong> (<em>str</em>) – Source Name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>source_name</strong> (<em>str</em>) &#8211; Source Name</td>
 </tr>
 </tbody>
 </table>
@@ -3137,15 +3138,15 @@ directory into “.name”.</p>
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXSYS.replace_string">
 <em class="property">classmethod </em><code class="descname">replace_string</code><span class="sig-paren">(</span><em>str_val</em>, <em>output</em>, <em>group</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSYS.replace_string" title="Permalink to this definition">¶</a></dt>
-<dd><p>Replace “% %” tokens in a string with parameter values</p>
+<dd><p>Replace &#8220;% %&#8221; tokens in a string with parameter values</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>str_val</strong> (<em>str</em>) – String to filter replace</li>
-<li><strong>output</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Output string</li>
-<li><strong>group</strong> (<em>str</em>) – Default group name</li>
+<li><strong>str_val</strong> (<em>str</em>) &#8211; String to filter replace</li>
+<li><strong>output</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Output string</li>
+<li><strong>group</strong> (<em>str</em>) &#8211; Default group name</li>
 </ul>
 </td>
 </tr>
@@ -3156,8 +3157,8 @@ directory into “.name”.</p>
 </div>
 <p><strong>Note:</strong></p>
 <p>If parameter does not exist, the token is removed.  Full parameter names,
-such as “%group.name%”, are used as-is.  Partial parameter names, such as
-“%name%” will have the default group attached.</p>
+such as &#8220;%group.name%&#8221;, are used as-is.  Partial parameter names, such as
+&#8220;%name%&#8221; will have the default group attached.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -3179,8 +3180,8 @@ after changes have been made.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>target</strong> (<em>str</em>) – Backup File Name</li>
-<li><strong>original</strong> (<em>str</em>) – Original file name</li>
+<li><strong>target</strong> (<em>str</em>) &#8211; Backup File Name</li>
+<li><strong>original</strong> (<em>str</em>) &#8211; Original file name</li>
 </ul>
 </td>
 </tr>
@@ -3190,7 +3191,7 @@ after changes have been made.</p>
 <p><span class="versionmodified">New in version 7.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>Grids are copied and the GI’s are maintained - note that support
+<p>Grids are copied and the GI&#8217;s are maintained - note that support
 for non-geosoft grids is limited since this method does not
 guarantee all grid files besides the main one are copied.</p>
 </dd></dl>
@@ -3204,9 +3205,9 @@ guarantee all grid files besides the main one are copied.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>command</strong> (<em>str</em>) – Command name</li>
-<li><strong>args</strong> (<em>str</em>) – Command line arguments</li>
-<li><strong>process</strong> (<em>int</em>) – Flags <code class="xref py py-obj docutils literal"><span class="pre">SYS_RUN_TYPE</span></code> <code class="xref py py-obj docutils literal"><span class="pre">SYS_RUN_DISPLAY</span></code> <code class="xref py py-obj docutils literal"><span class="pre">SYS_RUN_HOLD</span></code> <code class="xref py py-obj docutils literal"><span class="pre">SYS_RUN_WIN</span></code></li>
+<li><strong>command</strong> (<em>str</em>) &#8211; Command name</li>
+<li><strong>args</strong> (<em>str</em>) &#8211; Command line arguments</li>
+<li><strong>process</strong> (<em>int</em>) &#8211; Flags <a class="reference internal" href="#sys-run-type"><span class="std std-ref">SYS_RUN_TYPE constants</span></a> <a class="reference internal" href="#sys-run-display"><span class="std std-ref">SYS_RUN_DISPLAY constants</span></a> <a class="reference internal" href="#sys-run-hold"><span class="std std-ref">SYS_RUN_HOLD constants</span></a> <a class="reference internal" href="#sys-run-win"><span class="std std-ref">SYS_RUN_WIN constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -3241,7 +3242,7 @@ and is set to 0.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gs</strong> (<em>str</em>) – Name of GS to run.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gs</strong> (<em>str</em>) &#8211; Name of GS to run.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Exit status of the GS
 -1 cancelled
@@ -3269,7 +3270,7 @@ and is set to 0.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gx</strong> (<em>str</em>) – Name of GX to run.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gx</strong> (<em>str</em>) &#8211; Name of GX to run.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Exit status of the GX:
 -1 cancelled
@@ -3285,7 +3286,7 @@ and is set to 0.</p>
 </div>
 <p><strong>Note:</strong></p>
 <p>If the called GX returns an error, they will not be
-displayed until the “top” calling GX terminates, unless you
+displayed until the &#8220;top&#8221; calling GX terminates, unless you
 call <code class="xref py py-obj docutils literal"><span class="pre">show_error</span></code>.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
@@ -3302,8 +3303,8 @@ call <code class="xref py py-obj docutils literal"><span class="pre">show_error<
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>gx</strong> (<em>str</em>) – Name of GX to run.</li>
-<li><strong>ret</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Return value set in the child GX (0 by default)</li>
+<li><strong>gx</strong> (<em>str</em>) &#8211; Name of GX to run.</li>
+<li><strong>ret</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Return value set in the child GX (0 by default)</li>
 </ul>
 </td>
 </tr>
@@ -3336,12 +3337,12 @@ call <code class="xref py py-obj docutils literal"><span class="pre">show_error<
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>script</strong> (<em>str</em>) – Script to run</li>
-<li><strong>users</strong> (<em>int</em>) – Number of users to run</li>
-<li><strong>iterations</strong> (<em>int</em>) – Number of iterations to run (for each user)</li>
-<li><strong>wait_min_time</strong> (<em>int</em>) – Minimum wait time between iterations (0 for none)</li>
-<li><strong>wait_max_time</strong> (<em>int</em>) – Maximum wait time between iterations (0 for none)</li>
-<li><strong>ramp_up_time</strong> (<em>int</em>) – Ramp up time for users (0 for all users start immediatly)</li>
+<li><strong>script</strong> (<em>str</em>) &#8211; Script to run</li>
+<li><strong>users</strong> (<em>int</em>) &#8211; Number of users to run</li>
+<li><strong>iterations</strong> (<em>int</em>) &#8211; Number of iterations to run (for each user)</li>
+<li><strong>wait_min_time</strong> (<em>int</em>) &#8211; Minimum wait time between iterations (0 for none)</li>
+<li><strong>wait_max_time</strong> (<em>int</em>) &#8211; Maximum wait time between iterations (0 for none)</li>
+<li><strong>ramp_up_time</strong> (<em>int</em>) &#8211; Ramp up time for users (0 for all users start immediatly)</li>
 </ul>
 </td>
 </tr>
@@ -3365,8 +3366,8 @@ that are shared are protected.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>mnu</strong> (<em>str</em>) – Group name, can be “”.</li>
-<li><strong>pdf</strong> (<em>str</em>) – PDF name    (.pdf assumed)</li>
+<li><strong>mnu</strong> (<em>str</em>) &#8211; Group name, can be &#8220;&#8221;.</li>
+<li><strong>pdf</strong> (<em>str</em>) &#8211; PDF name    (.pdf assumed)</li>
 </ul>
 </td>
 </tr>
@@ -3382,9 +3383,9 @@ that are shared are protected.</p>
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>The group name of the PDF variables will be “group_pdf”,
-where “group” is the name given in the first argument,
-and “pdf” is the root PDF file name.</p>
+<p>The group name of the PDF variables will be &#8220;group_pdf&#8221;,
+where &#8220;group&#8221; is the name given in the first argument,
+and &#8220;pdf&#8221; is the root PDF file name.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -3395,7 +3396,7 @@ and “pdf” is the root PDF file name.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – Output file name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; Output file name</td>
 </tr>
 </tbody>
 </table>
@@ -3413,9 +3414,9 @@ and “pdf” is the root PDF file name.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>file</strong> (<em>str</em>) – Name of the File</li>
-<li><strong>mode</strong> (<em>int</em>) – 0 - New file, 1 - Append</li>
-<li><strong>groups</strong> (<em>str</em>) – Group Name to write out (“” for all groups)</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; Name of the File</li>
+<li><strong>mode</strong> (<em>int</em>) &#8211; 0 - New file, 1 - Append</li>
+<li><strong>groups</strong> (<em>str</em>) &#8211; Group Name to write out (&#8220;&#8221; for all groups)</li>
 </ul>
 </td>
 </tr>
@@ -3434,7 +3435,7 @@ and “pdf” is the root PDF file name.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>groups</strong> (<em>str</em>) – Group Name to save, “” for everything.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>groups</strong> (<em>str</em>) &#8211; Group Name to save, &#8220;&#8221; for everything.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">PTMP handle.</td>
 </tr>
@@ -3505,7 +3506,7 @@ function to prevent calls</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>sec</strong> (<em>float</em>) – Seconds</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>sec</strong> (<em>float</em>) &#8211; Seconds</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">x - Time</td>
 </tr>
@@ -3527,8 +3528,8 @@ function to prevent calls</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>cl</strong> (<em>str</em>) – Message Class</li>
-<li><strong>info</strong> (<em>str</em>) – Message Info</li>
+<li><strong>cl</strong> (<em>str</em>) &#8211; Message Class</li>
+<li><strong>info</strong> (<em>str</em>) &#8211; Message Info</li>
 </ul>
 </td>
 </tr>
@@ -3547,7 +3548,7 @@ function to prevent calls</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cursor</strong> (<em>str</em>) – Cursor Names</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cursor</strong> (<em>str</em>) &#8211; Cursor Names</td>
 </tr>
 </tbody>
 </table>
@@ -3573,9 +3574,9 @@ ExcludeRect, ExcludePoly, ExcludeNPoly, AddVertex, DelVertex, GeneralAdd and Gen
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>group</strong> (<em>str</em>) – Group Name</li>
-<li><strong>field</strong> (<em>str</em>) – Parameter Name</li>
-<li><strong>val</strong> (<em>float</em>) – Real</li>
+<li><strong>group</strong> (<em>str</em>) &#8211; Group Name</li>
+<li><strong>field</strong> (<em>str</em>) &#8211; Parameter Name</li>
+<li><strong>val</strong> (<em>float</em>) &#8211; Real</li>
 </ul>
 </td>
 </tr>
@@ -3595,8 +3596,8 @@ ExcludeRect, ExcludePoly, ExcludeNPoly, AddVertex, DelVertex, GeneralAdd and Gen
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>parm</strong> (<em>str</em>) – Setting</li>
-<li><strong>set</strong> (<em>str</em>) – Value</li>
+<li><strong>parm</strong> (<em>str</em>) &#8211; Setting</li>
+<li><strong>set</strong> (<em>str</em>) &#8211; Value</li>
 </ul>
 </td>
 </tr>
@@ -3616,7 +3617,7 @@ bottom corner of the OAISIS montaj application.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> (<em>str</em>) – Message String</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> (<em>str</em>) &#8211; Message String</td>
 </tr>
 </tbody>
 </table>
@@ -3634,9 +3635,9 @@ bottom corner of the OAISIS montaj application.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>group</strong> (<em>str</em>) – Group Name</li>
-<li><strong>field</strong> (<em>str</em>) – Parameter Name</li>
-<li><strong>val</strong> (<em>int</em>) – Int Value to Set</li>
+<li><strong>group</strong> (<em>str</em>) &#8211; Group Name</li>
+<li><strong>field</strong> (<em>str</em>) &#8211; Parameter Name</li>
+<li><strong>val</strong> (<em>int</em>) &#8211; Int Value to Set</li>
 </ul>
 </td>
 </tr>
@@ -3655,7 +3656,7 @@ bottom corner of the OAISIS montaj application.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mode</strong> (<em>int</em>) – 0 - interactive off 1 - interative on</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mode</strong> (<em>int</em>) &#8211; 0 - interactive off 1 - interative on</td>
 </tr>
 </tbody>
 </table>
@@ -3679,7 +3680,7 @@ set here.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>description</strong> (<em>str</em>) – Description</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>description</strong> (<em>str</em>) &#8211; Description</td>
 </tr>
 </tbody>
 </table>
@@ -3696,7 +3697,7 @@ set here.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>display_name</strong> (<em>str</em>) – DisplayName</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>display_name</strong> (<em>str</em>) &#8211; DisplayName</td>
 </tr>
 </tbody>
 </table>
@@ -3713,7 +3714,7 @@ set here.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – Name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) &#8211; Name</td>
 </tr>
 </tbody>
 </table>
@@ -3731,9 +3732,9 @@ set here.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>lst_default</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – Default menus (typically a single entry based on product, do not change the name returned by <a class="reference internal" href="#geosoft.gxapi.GXSYS.get_loaded_menus" title="geosoft.gxapi.GXSYS.get_loaded_menus"><code class="xref py py-obj docutils literal"><span class="pre">get_loaded_menus</span></code></a>)</li>
-<li><strong>lst_loaded</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – Loaded menus</li>
-<li><strong>lst_user</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – Loaded user menus</li>
+<li><strong>lst_default</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; Default menus (typically a single entry based on product, do not change the name returned by <a class="reference internal" href="#geosoft.gxapi.GXSYS.get_loaded_menus" title="geosoft.gxapi.GXSYS.get_loaded_menus"><code class="xref py py-obj docutils literal"><span class="pre">get_loaded_menus</span></code></a>)</li>
+<li><strong>lst_loaded</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; Loaded menus</li>
+<li><strong>lst_user</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; Loaded user menus</li>
 </ul>
 </td>
 </tr>
@@ -3756,13 +3757,13 @@ are semicolon separated top level menu names and/or toolbar.geobar file names.</
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>group</strong> (<em>str</em>) – Group Name</li>
-<li><strong>pat</strong> (<em>int</em>) – Pattern</li>
-<li><strong>size</strong> (<em>float</em>) – Size. Input <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_R8DM" title="geosoft.gxapi.GS_R8DM"><code class="xref py py-obj docutils literal"><span class="pre">GS_R8DM</span></code></a> to use default</li>
-<li><strong>thick</strong> (<em>int</em>) – Thickness (0-100).  Input <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_S4DM" title="geosoft.gxapi.GS_S4DM"><code class="xref py py-obj docutils literal"><span class="pre">GS_S4DM</span></code></a> to use default</li>
-<li><strong>dense</strong> (<em>float</em>) – Density. Input <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_R8DM" title="geosoft.gxapi.GS_R8DM"><code class="xref py py-obj docutils literal"><span class="pre">GS_R8DM</span></code></a> to use default</li>
-<li><strong>col</strong> (<em>int</em>) – Pattern Color</li>
-<li><strong>back_col</strong> (<em>int</em>) – Background Color. Can be <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.C_TRANSPARENT" title="geosoft.gxapi.C_TRANSPARENT"><code class="xref py py-obj docutils literal"><span class="pre">C_TRANSPARENT</span></code></a></li>
+<li><strong>group</strong> (<em>str</em>) &#8211; Group Name</li>
+<li><strong>pat</strong> (<em>int</em>) &#8211; Pattern</li>
+<li><strong>size</strong> (<em>float</em>) &#8211; Size. Input <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_R8DM" title="geosoft.gxapi.GS_R8DM"><code class="xref py py-obj docutils literal"><span class="pre">GS_R8DM</span></code></a> to use default</li>
+<li><strong>thick</strong> (<em>int</em>) &#8211; Thickness (0-100).  Input <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_S4DM" title="geosoft.gxapi.GS_S4DM"><code class="xref py py-obj docutils literal"><span class="pre">GS_S4DM</span></code></a> to use default</li>
+<li><strong>dense</strong> (<em>float</em>) &#8211; Density. Input <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_R8DM" title="geosoft.gxapi.GS_R8DM"><code class="xref py py-obj docutils literal"><span class="pre">GS_R8DM</span></code></a> to use default</li>
+<li><strong>col</strong> (<em>int</em>) &#8211; Pattern Color</li>
+<li><strong>back_col</strong> (<em>int</em>) &#8211; Background Color. Can be <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.C_TRANSPARENT" title="geosoft.gxapi.C_TRANSPARENT"><code class="xref py py-obj docutils literal"><span class="pre">C_TRANSPARENT</span></code></a></li>
 </ul>
 </td>
 </tr>
@@ -3774,14 +3775,14 @@ are semicolon separated top level menu names and/or toolbar.geobar file names.</
 <p><strong>Note:</strong></p>
 <p>Sets all the user-definable pattern parameters to
 a specified group. Parameters are:
-“PAT_NUMBER”    0 is solid fill
-“PAT_SIZE”      pattern tile size in mm.
-“PAT_THICKNESS” pattern line thickness in percent of the tile size.
+&#8220;PAT_NUMBER&#8221;    0 is solid fill
+&#8220;PAT_SIZE&#8221;      pattern tile size in mm.
+&#8220;PAT_THICKNESS&#8221; pattern line thickness in percent of the tile size.
 valid range is 0-100.
-“PAT_DENSITY”   Tile spacing. A value of 1 means tiles are laid with no overlap.
+&#8220;PAT_DENSITY&#8221;   Tile spacing. A value of 1 means tiles are laid with no overlap.
 A value of 2 means they overlap each other.
-“PAT_COLOR”     The color value.
-“PAT_BACKCOLOR” Background color value.</p>
+&#8220;PAT_COLOR&#8221;     The color value.
+&#8220;PAT_BACKCOLOR&#8221; Background color value.</p>
 <p>Input values may be DUMMY.</p>
 <p>Designed for use along with the sPatternForm_GUI function.</p>
 </dd></dl>
@@ -3794,7 +3795,7 @@ A value of 2 means they overlap each other.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>reg</strong> (<a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><em>GXREG</em></a>) – <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> object</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>reg</strong> (<a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><em>GXREG</em></a>) &#8211; <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> object</td>
 </tr>
 </tbody>
 </table>
@@ -3811,7 +3812,7 @@ A value of 2 means they overlap each other.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ret</strong> (<em>int</em>) – Return Value</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ret</strong> (<em>int</em>) &#8211; Return Value</td>
 </tr>
 </tbody>
 </table>
@@ -3830,7 +3831,7 @@ A value of 2 means they overlap each other.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>flag</strong> (<em>int</em>) – 1 - Display messages, 0 - messages reported as errors</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>flag</strong> (<em>int</em>) &#8211; 1 - Display messages, 0 - messages reported as errors</td>
 </tr>
 </tbody>
 </table>
@@ -3850,7 +3851,7 @@ appear. This setting is thread specific.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal"><span class="pre">GXMETA</span></code></a> object</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) &#8211; <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal"><span class="pre">GXMETA</span></code></a> object</td>
 </tr>
 </tbody>
 </table>
@@ -3868,9 +3869,9 @@ appear. This setting is thread specific.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>group</strong> (<em>str</em>) – Group Name</li>
-<li><strong>field</strong> (<em>str</em>) – Parameter Name</li>
-<li><strong>val</strong> (<em>str</em>) – String to Set it To</li>
+<li><strong>group</strong> (<em>str</em>) &#8211; Group Name</li>
+<li><strong>field</strong> (<em>str</em>) &#8211; Parameter Name</li>
+<li><strong>val</strong> (<em>str</em>) &#8211; String to Set it To</li>
 </ul>
 </td>
 </tr>
@@ -3889,7 +3890,7 @@ appear. This setting is thread specific.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>reg</strong> (<a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><em>GXREG</em></a>) – <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> object</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>reg</strong> (<a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><em>GXREG</em></a>) &#8211; <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> object</td>
 </tr>
 </tbody>
 </table>
@@ -3915,11 +3916,11 @@ effect in the workspace <a class="reference internal" href="GXREG.html#geosoft.g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>verb</strong> (<em>str</em>) – Verb</li>
-<li><strong>file</strong> (<em>str</em>) – File</li>
-<li><strong>parameters</strong> (<em>str</em>) – Parameters</li>
-<li><strong>directory</strong> (<em>str</em>) – Directory</li>
-<li><strong>show</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">SHELL_EXECUTE</span></code></li>
+<li><strong>verb</strong> (<em>str</em>) &#8211; Verb</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; File</li>
+<li><strong>parameters</strong> (<em>str</em>) &#8211; Parameters</li>
+<li><strong>directory</strong> (<em>str</em>) &#8211; Directory</li>
+<li><strong>show</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#shell-execute"><span class="std std-ref">SHELL_EXECUTE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -3949,8 +3950,8 @@ effect in the workspace <a class="reference internal" href="GXREG.html#geosoft.g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>in_name</strong> (<em>str</em>) – Input file name to resolve</li>
-<li><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Output name, can be the same as input</li>
+<li><strong>in_name</strong> (<em>str</em>) &#8211; Input file name to resolve</li>
+<li><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Output name, can be the same as input</li>
 </ul>
 </td>
 </tr>
@@ -3970,8 +3971,8 @@ effect in the workspace <a class="reference internal" href="GXREG.html#geosoft.g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>ext</strong> (<em>str</em>) – Input extension (without .)</li>
-<li><strong>out</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Output name</li>
+<li><strong>ext</strong> (<em>str</em>) &#8211; Input extension (without .)</li>
+<li><strong>out</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Output name</li>
 </ul>
 </td>
 </tr>
@@ -3993,8 +3994,8 @@ effect in the workspace <a class="reference internal" href="GXREG.html#geosoft.g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>path_file</strong> (<em>str</em>) – Input file name to resolve (path is removed)</li>
-<li><strong>out_filename</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Output name, can be the same as input</li>
+<li><strong>path_file</strong> (<em>str</em>) &#8211; Input file name to resolve (path is removed)</li>
+<li><strong>out_filename</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Output name, can be the same as input</li>
 </ul>
 </td>
 </tr>
@@ -4018,7 +4019,7 @@ clashes does not happen.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – Module name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) &#8211; Module name</td>
 </tr>
 </tbody>
 </table>
@@ -4067,7 +4068,7 @@ a string.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>time</strong> (<em>float</em>) – Time</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>time</strong> (<em>float</em>) &#8211; Time</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">x - Seconds (integer)</td>
 </tr>
@@ -4088,7 +4089,7 @@ a string.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>time</strong> (<em>float</em>) – Time</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>time</strong> (<em>float</em>) &#8211; Time</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">x - Number of seconds with fractions</td>
 </tr>
@@ -4110,8 +4111,8 @@ a string.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>path_file</strong> (<em>str</em>) – Input file path/name</li>
-<li><strong>file</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Output file name with path transfered</li>
+<li><strong>path_file</strong> (<em>str</em>) &#8211; Input file path/name</li>
+<li><strong>file</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Output file name with path transfered</li>
 </ul>
 </td>
 </tr>
@@ -4155,7 +4156,7 @@ a string.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – File name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; File name</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Date in decimal years, <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> if the file does not exist.</td>
 </tr>
@@ -4179,7 +4180,7 @@ to a string.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – File name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; File name</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Date in decimal hours, <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> if the file does not exist.</td>
 </tr>
@@ -4225,7 +4226,7 @@ a string.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – Name of file to check</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; Name of file to check</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - File name is not valid
 1 - File name is valid</td>
@@ -4252,7 +4253,7 @@ debugging log file (in temp folder) or output window.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>log</strong> (<em>str</em>) – String to Write out</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>log</strong> (<em>str</em>) &#8211; String to Write out</td>
 </tr>
 </tbody>
 </table>
@@ -4269,9 +4270,9 @@ debugging log file (in temp folder) or output window.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dir</strong> (<em>str</em>) – Name of directory to check</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dir</strong> (<em>str</em>) &#8211; Name of directory to check</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - Directory doesn’t allow write of does not exist
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - Directory doesn&#8217;t allow write of does not exist
 1 - Directory allows writes</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
@@ -6117,7 +6118,7 @@ on DOS and EXE programs.</p>
 <dl class="data">
 <dt id="geosoft.gxapi.SYS_RUN_HOLD_NEVER">
 <code class="descname">SYS_RUN_HOLD_NEVER</code><a class="headerlink" href="#geosoft.gxapi.SYS_RUN_HOLD_NEVER" title="Permalink to this definition">¶</a></dt>
-<dd><p>Don’t wait (Default)</p>
+<dd><p>Don&#8217;t wait (Default)</p>
 <dl class="attribute">
 <dt>
 <code class="descclassname">gxapi.</code><code class="descname">SYS_RUN_HOLD_NEVER</code><em class="property"> = 0</em></dt>
@@ -6539,7 +6540,7 @@ user on the same machine.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

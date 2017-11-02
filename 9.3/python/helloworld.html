@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>Python Examples &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -33,7 +36,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -88,7 +91,7 @@
 <div class="section" id="python-gx-extensions">
 <h2>Python GX Extensions<a class="headerlink" href="#python-gx-extensions" title="Permalink to this headline">¶</a></h2>
 <p>Python extensions have a rungx() function.</p>
-<p>Hello user extension…</p>
+<p>Hello user extension...</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Oasis montaj Python extension to say Hello.</span>
 <span class="c1"># To run this extension, select &quot;Settings / Run GX or Python...&quot;,</span>
 <span class="c1"># then browse to this script file.</span>
@@ -109,7 +112,7 @@
         <span class="n">gxpy</span><span class="o">.</span><span class="n">utility</span><span class="o">.</span><span class="n">display_message</span><span class="p">(</span><span class="s2">&quot;GX Python&quot;</span><span class="p">,</span> <span class="s2">&quot;Hello </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gxp</span><span class="o">.</span><span class="n">gid</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>Add a constant to a channel extension…</p>
+<p>Add a constant to a channel extension...</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">Add a constant value to a channel on all selected lines.</span>
 
@@ -196,7 +199,7 @@
 <div class="section" id="stand-alone-python-programs">
 <h2>Stand-Alone Python Programs<a class="headerlink" href="#stand-alone-python-programs" title="Permalink to this headline">¶</a></h2>
 <p>Stand-alone Python scripts create a GX context before calling any other API functions.</p>
-<p>Hello user program…</p>
+<p>Hello user program...</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># This sample stand-alone Python script shows a minimal use of the Pythonic gxpy module to</span>
 <span class="c1"># create a Geosoft context and say hello to the user.</span>
 <span class="c1"># This example can be run stand-alon or as a Oasis montaj extension.</span>
@@ -215,7 +218,7 @@
 
 
 <span class="c1"># running as stand-alone program</span>
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
 
     <span class="n">gxpy</span><span class="o">.</span><span class="n">utility</span><span class="o">.</span><span class="n">check_version</span><span class="p">(</span><span class="s1">&#39;9.2&#39;</span><span class="p">)</span>
 
@@ -227,7 +230,7 @@
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gxc</span><span class="o">.</span><span class="n">gid</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>Add a constant to a channel program…</p>
+<p>Add a constant to a channel program...</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Add a constant value to a channel on all selected lines.</span>
 
@@ -281,7 +284,7 @@
         <span class="n">db</span><span class="o">.</span><span class="n">write_channel</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">channel_name</span><span class="p">,</span> <span class="nb">sum</span><span class="p">,</span> <span class="n">fid</span><span class="p">)</span>
 
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
 
     <span class="n">gxpy</span><span class="o">.</span><span class="n">utility</span><span class="o">.</span><span class="n">check_version</span><span class="p">(</span><span class="s1">&#39;9.2&#39;</span><span class="p">)</span>
 
@@ -340,7 +343,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

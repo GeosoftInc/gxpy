@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>GXVM class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -124,8 +127,8 @@ very large arrays in a <a class="reference internal" href="GXVV.html#geosoft.gxa
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">GEO_VAR</span></code></li>
-<li><strong>elements</strong> (<em>int</em>) – <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal"><span class="pre">GXVM</span></code></a> length (less than 16777215)</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#geo-var"><span class="std std-ref">GEO_VAR constants</span></a></li>
+<li><strong>elements</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal"><span class="pre">GXVM</span></code></a> length (less than 16777215)</li>
 </ul>
 </td>
 </tr>
@@ -147,14 +150,14 @@ very large arrays in a <a class="reference internal" href="GXVV.html#geosoft.gxa
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXVM.create_ext">
 <em class="property">classmethod </em><code class="descname">create_ext</code><span class="sig-paren">(</span><em>type</em>, <em>elements</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVM.create_ext" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal"><span class="pre">GXVM</span></code></a>, using one of the <code class="xref py py-obj docutils literal"><span class="pre">GS_TYPES</span></code> special data types.</p>
+<dd><p>Create a <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal"><span class="pre">GXVM</span></code></a>, using one of the <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> special data types.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">GS_TYPES</span></code></li>
-<li><strong>elements</strong> (<em>int</em>) – <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal"><span class="pre">GXVM</span></code></a> length (less than 16777215)</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
+<li><strong>elements</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal"><span class="pre">GXVM</span></code></a> length (less than 16777215)</li>
 </ul>
 </td>
 </tr>
@@ -181,7 +184,7 @@ very large arrays in a <a class="reference internal" href="GXVV.html#geosoft.gxa
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>element</strong> (<em>int</em>) – Element wanted</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>element</strong> (<em>int</em>) &#8211; Element wanted</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Element wanted, or <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a>
 if the value is dummy or outside of the range of data.</td>
@@ -203,7 +206,7 @@ if the value is dummy or outside of the range of data.</td>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>element</strong> (<em>int</em>) – Element wanted</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>element</strong> (<em>int</em>) &#8211; Element wanted</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Element wanted, or <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.iDUMMY" title="geosoft.gxapi.iDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">iDUMMY</span></code></a>
 if the value is dummy or outside of the range of data.</td>
@@ -226,8 +229,8 @@ if the value is dummy or outside of the range of data.</td>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>element</strong> (<em>int</em>) – Element wanted</li>
-<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String in which to place element</li>
+<li><strong>element</strong> (<em>int</em>) &#8211; Element wanted</li>
+<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; String in which to place element</li>
 </ul>
 </td>
 </tr>
@@ -240,7 +243,7 @@ if the value is dummy or outside of the range of data.</td>
 <p>Returns element wanted, or blank string
 if the value is dummy or outside of the range of data.</p>
 <p>Type conversions are performed if necessary.  Dummy values
-are converted to “*” string.</p>
+are converted to &#8220;*&#8221; string.</p>
 </dd></dl>
 
 <dl class="method">
@@ -298,7 +301,7 @@ are converted to “*” string.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>newsize</strong> (<em>int</em>) – New size (number of elements)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>newsize</strong> (<em>int</em>) &#8211; New size (number of elements)</td>
 </tr>
 </tbody>
 </table>
@@ -318,8 +321,8 @@ are converted to “*” string.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>element</strong> (<em>int</em>) – Element to set</li>
-<li><strong>value</strong> (<em>float</em>) – Value to set</li>
+<li><strong>element</strong> (<em>int</em>) &#8211; Element to set</li>
+<li><strong>value</strong> (<em>float</em>) &#8211; Value to set</li>
 </ul>
 </td>
 </tr>
@@ -344,8 +347,8 @@ memory and should be avoided if possible.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>element</strong> (<em>int</em>) – Element to set</li>
-<li><strong>value</strong> (<em>int</em>) – Value to set</li>
+<li><strong>element</strong> (<em>int</em>) &#8211; Element to set</li>
+<li><strong>value</strong> (<em>int</em>) &#8211; Value to set</li>
 </ul>
 </td>
 </tr>
@@ -370,8 +373,8 @@ memory and should be avoided if possible.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>element</strong> (<em>int</em>) – Element to set</li>
-<li><strong>value</strong> (<em>str</em>) – String to set</li>
+<li><strong>element</strong> (<em>int</em>) &#8211; Element to set</li>
+<li><strong>value</strong> (<em>str</em>) &#8211; String to set</li>
 </ul>
 </td>
 </tr>
@@ -416,7 +419,7 @@ memory and should be avoided if possible.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

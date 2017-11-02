@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>GXDGW class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -110,27 +113,27 @@ use this class to store to, or retrieve information from
 the current workspace parameter block via dialog boxes</p>
 <p><strong>Note:</strong></p>
 <p>Setting Fonts in GX dialogs.</p>
-<p>By default, “new look” GX dialogs uses the “Tahoma” font. This font can be
+<p>By default, &#8220;new look&#8221; GX dialogs uses the &#8220;Tahoma&#8221; font. This font can be
 overridden by updating the application settings. This can be done programmatically
 using the <a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS.global_set" title="geosoft.gxapi.GXSYS.global_set"><code class="xref py py-obj docutils literal"><span class="pre">GXSYS.global_set</span></code></a> function using the following parameters:</p>
-<p>MONTAJ.GX_FONT=”Font_name”</p>
-<p>This sets the default font to “Font_name”. It applies to text in all
+<p>MONTAJ.GX_FONT=&#8221;Font_name&#8221;</p>
+<p>This sets the default font to &#8220;Font_name&#8221;. It applies to text in all
 components of the dialog.</p>
 <p>Additional customization of individual components can be accomplished
 using the following parameters:</p>
-<p>MONTAJ.GX_CAPTION_FONT=”Caption_Font”: Font for the field captions (labels)
-MONTAJ.GX_BUTTON_FONT=”Button_Font”  : Font for buttons, including the “Browse” button
-MONTAJ.GX_TITLE_FONT=”Title_Font”    : Font for special titles (see <a class="reference internal" href="#geosoft.gxapi.GXDGW.set_title" title="geosoft.gxapi.GXDGW.set_title"><code class="xref py py-obj docutils literal"><span class="pre">set_title</span></code></a>).</p>
+<p>MONTAJ.GX_CAPTION_FONT=&#8221;Caption_Font&#8221;: Font for the field captions (labels)
+MONTAJ.GX_BUTTON_FONT=&#8221;Button_Font&#8221;  : Font for buttons, including the &#8220;Browse&#8221; button
+MONTAJ.GX_TITLE_FONT=&#8221;Title_Font&#8221;    : Font for special titles (see <a class="reference internal" href="#geosoft.gxapi.GXDGW.set_title" title="geosoft.gxapi.GXDGW.set_title"><code class="xref py py-obj docutils literal"><span class="pre">set_title</span></code></a>).</p>
 <p>The font used for the text in edit windows remains the default, or the
 value specified using MONTAJ.GX_FONT.</p>
-<p>Note that the “OK” button, and the Title, use “Bold” versions of the
+<p>Note that the &#8220;OK&#8221; button, and the Title, use &#8220;Bold&#8221; versions of the
 specified font. If the bolded version does not exist as a normal font,
 then the operating system may provide its own alternative which may not
 appear the same as you expect.</p>
 <p>Before version 6.2. there used to be a parameter, MONTAJ.GX_CHARSET, that
 affected characters above ASCII 127. 6.2. introduced Unicode in the core
 montaj engine that eliminated the need for such a setting. All strings
-on the GX API level are encoded in <code class="xref py py-obj docutils literal"><span class="pre">UTF8</span></code> during runtime which makes it possible
+on the GX API level are encoded in <a class="reference internal" href="GXUNC.html#utf8"><span class="std std-ref">UTF8 constants</span></a> during runtime which makes it possible
 to represent all possible characters without using character sets.</p>
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXDGW.create">
@@ -141,7 +144,7 @@ resource. The Resource is loaded into memory but not displayed.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – Name of the Window Resource to use</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) &#8211; Name of the Window Resource to use</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Handle to the <a class="reference internal" href="#geosoft.gxapi.GXDGW" title="geosoft.gxapi.GXDGW"><code class="xref py py-obj docutils literal"><span class="pre">GXDGW</span></code></a> object.</td>
 </tr>
@@ -163,10 +166,10 @@ resource. The Resource is loaded into memory but not displayed.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>obj</strong> (<em>int</em>) – Dialog Object</li>
-<li><strong>dlg_obj_type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">DGW_OBJECT</span></code></li>
-<li><strong>meta_obj</strong> (<em>int</em>) – Object</li>
-<li><strong>meta_attrib</strong> (<em>int</em>) – Attribute</li>
+<li><strong>obj</strong> (<em>int</em>) &#8211; Dialog Object</li>
+<li><strong>dlg_obj_type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
+<li><strong>meta_obj</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>meta_attrib</strong> (<em>int</em>) &#8211; Attribute</li>
 </ul>
 </td>
 </tr>
@@ -187,10 +190,10 @@ set a <a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS" title=
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>id</strong> (<em>int</em>) – Dialog Object</li>
-<li><strong>info</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">DGW_OBJECT</span></code></li>
-<li><strong>group</strong> (<em>str</em>) – Group name of the Variable</li>
-<li><strong>field</strong> (<em>str</em>) – Variable name</li>
+<li><strong>id</strong> (<em>int</em>) &#8211; Dialog Object</li>
+<li><strong>info</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
+<li><strong>group</strong> (<em>str</em>) &#8211; Group name of the Variable</li>
+<li><strong>field</strong> (<em>str</em>) &#8211; Variable name</li>
 </ul>
 </td>
 </tr>
@@ -210,7 +213,7 @@ with a Dialog object.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> (<em>int</em>) – Dialog Object</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> (<em>int</em>) &#8211; Dialog Object</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The List Object</td>
 </tr>
@@ -233,9 +236,9 @@ the text object specified.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>id</strong> (<em>int</em>) – Handle to the TEXT Object</li>
-<li><strong>info</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">DGW_OBJECT</span></code></li>
-<li><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Where to place the String</li>
+<li><strong>id</strong> (<em>int</em>) &#8211; Handle to the TEXT Object</li>
+<li><strong>info</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
+<li><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Where to place the String</li>
 </ul>
 </td>
 </tr>
@@ -303,9 +306,9 @@ is too long it will be truncated.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>id</strong> (<em>int</em>) – Handle to the TEXT Object</li>
-<li><strong>info</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">DGW_OBJECT</span></code></li>
-<li><strong>buff</strong> (<em>str</em>) – String to set the Text To</li>
+<li><strong>id</strong> (<em>int</em>) &#8211; Handle to the TEXT Object</li>
+<li><strong>info</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
+<li><strong>buff</strong> (<em>str</em>) &#8211; String to set the Text To</li>
 </ul>
 </td>
 </tr>
@@ -325,10 +328,10 @@ is too long it will be truncated.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>obj</strong> (<em>int</em>) – Dialog Object</li>
-<li><strong>dlg_obj_type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">DGW_OBJECT</span></code></li>
-<li><strong>meta_obj</strong> (<em>int</em>) – Object</li>
-<li><strong>meta_attrib</strong> (<em>int</em>) – Attribute</li>
+<li><strong>obj</strong> (<em>int</em>) &#8211; Dialog Object</li>
+<li><strong>dlg_obj_type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
+<li><strong>meta_obj</strong> (<em>int</em>) &#8211; Object</li>
+<li><strong>meta_attrib</strong> (<em>int</em>) &#8211; Attribute</li>
 </ul>
 </td>
 </tr>
@@ -350,10 +353,10 @@ the text is not set.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>id</strong> (<em>int</em>) – Dialog Object</li>
-<li><strong>info</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">DGW_OBJECT</span></code></li>
-<li><strong>group</strong> (<em>str</em>) – Group name of the Variable</li>
-<li><strong>field</strong> (<em>str</em>) – Variable name</li>
+<li><strong>id</strong> (<em>int</em>) &#8211; Dialog Object</li>
+<li><strong>info</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
+<li><strong>group</strong> (<em>str</em>) &#8211; Group name of the Variable</li>
+<li><strong>field</strong> (<em>str</em>) &#8211; Variable name</li>
 </ul>
 </td>
 </tr>
@@ -372,7 +375,7 @@ the text is not set.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>title</strong> (<em>str</em>) – Title to set</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>title</strong> (<em>str</em>) &#8211; Title to set</td>
 </tr>
 </tbody>
 </table>
@@ -380,7 +383,7 @@ the text is not set.</p>
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>A “Special”, additional title can be added to a dialog by passing a title
+<p>A &#8220;Special&#8221;, additional title can be added to a dialog by passing a title
 to <a class="reference internal" href="#geosoft.gxapi.GXDGW.set_title" title="geosoft.gxapi.GXDGW.set_title"><code class="xref py py-obj docutils literal"><span class="pre">set_title</span></code></a> with the following syntax:</p>
 <p><code class="docutils literal"><span class="pre">&quot;Window</span> <span class="pre">Title\nAdditional</span> <span class="pre">Title&quot;</span></code></p>
 <p>In the title argument, a line break character <code class="docutils literal"><span class="pre">'\n'</span></code> is used to
@@ -390,7 +393,7 @@ The additional title free_appears below this, in the main body of the
 dialog, and is separated from the rest of the fields by a horizontal
 line. It is printed in the bold version of the default font (or of the
 special font specified using the MONTAJ.GX_TITLE_FONT parameter noted
-above in “Setting Fonts in GX dialogs.”</p>
+above in &#8220;Setting Fonts in GX dialogs.&#8221;</p>
 </dd></dl>
 
 </dd></dl>
@@ -486,7 +489,7 @@ LISTALIAS   .      .      RW     .      .</p>
 <dl class="data">
 <dt id="geosoft.gxapi.DGW_HIDE">
 <code class="descname">DGW_HIDE</code><a class="headerlink" href="#geosoft.gxapi.DGW_HIDE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Hide the button or entry and its label, if string is not “0”</p>
+<dd><p>Hide the button or entry and its label, if string is not &#8220;0&#8221;</p>
 <dl class="attribute">
 <dt>
 <code class="descclassname">gxapi.</code><code class="descname">DGW_HIDE</code><em class="property"> = 8</em></dt>
@@ -522,7 +525,7 @@ LISTALIAS   .      .      RW     .      .</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>GXPDF3D class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -99,19 +102,19 @@
 <dd><p>GXPDF3D class.</p>
 <p>The <a class="reference internal" href="#geosoft.gxapi.GXPDF3D" title="geosoft.gxapi.GXPDF3D"><code class="xref py py-obj docutils literal"><span class="pre">GXPDF3D</span></code></a> class provides the ability to create 3D PDFs.</p>
 <dl class="classmethod">
-<dt id="geosoft.gxapi.GXPDF3D.export2_d">
-<em class="property">classmethod </em><code class="descname">export2_d</code><span class="sig-paren">(</span><em>input_map</em>, <em>output_file</em>, <em>create_layersin_pdf</em>, <em>geospatial_pdf</em>, <em>open_pdf</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPDF3D.export2_d" title="Permalink to this definition">¶</a></dt>
+<dt id="geosoft.gxapi.GXPDF3D.export_2d">
+<em class="property">classmethod </em><code class="descname">export_2d</code><span class="sig-paren">(</span><em>input_map</em>, <em>output_file</em>, <em>create_layersin_pdf</em>, <em>geospatial_pdf</em>, <em>open_pdf</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPDF3D.export_2d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Export a 2D map to a PDF file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>input_map</strong> (<em>str</em>) – Input map file</li>
-<li><strong>output_file</strong> (<em>str</em>) – Output PDF file</li>
-<li><strong>create_layersin_pdf</strong> (<em>int</em>) – Create layers in PDF</li>
-<li><strong>geospatial_pdf</strong> (<em>int</em>) – Geospatial PDF</li>
-<li><strong>open_pdf</strong> (<em>int</em>) – Open PDF after export</li>
+<li><strong>input_map</strong> (<em>str</em>) &#8211; Input map file</li>
+<li><strong>output_file</strong> (<em>str</em>) &#8211; Output PDF file</li>
+<li><strong>create_layersin_pdf</strong> (<em>int</em>) &#8211; Create layers in PDF</li>
+<li><strong>geospatial_pdf</strong> (<em>int</em>) &#8211; Geospatial PDF</li>
+<li><strong>open_pdf</strong> (<em>int</em>) &#8211; Open PDF after export</li>
 </ul>
 </td>
 </tr>
@@ -159,10 +162,10 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW</span></code></a> handle</li>
-<li><strong>file_name</strong> (<em>str</em>) – Filename</li>
-<li><strong>resolution</strong> (<em>int</em>) – Resolution</li>
-<li><strong>no_clipping</strong> (<em>int</em>) – Noclipping</li>
+<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) &#8211; <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW</span></code></a> handle</li>
+<li><strong>file_name</strong> (<em>str</em>) &#8211; Filename</li>
+<li><strong>resolution</strong> (<em>int</em>) &#8211; Resolution</li>
+<li><strong>no_clipping</strong> (<em>int</em>) &#8211; Noclipping</li>
 </ul>
 </td>
 </tr>
@@ -182,11 +185,11 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW</span></code></a> handle</li>
-<li><strong>file_name</strong> (<em>str</em>) – Filename</li>
-<li><strong>page_number</strong> (<em>int</em>) – Page number</li>
-<li><strong>resolution</strong> (<em>int</em>) – Resolution</li>
-<li><strong>no_clip</strong> (<em>int</em>) – Noclipping</li>
+<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) &#8211; <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW</span></code></a> handle</li>
+<li><strong>file_name</strong> (<em>str</em>) &#8211; Filename</li>
+<li><strong>page_number</strong> (<em>int</em>) &#8211; Page number</li>
+<li><strong>resolution</strong> (<em>int</em>) &#8211; Resolution</li>
+<li><strong>no_clip</strong> (<em>int</em>) &#8211; Noclipping</li>
 </ul>
 </td>
 </tr>
@@ -226,7 +229,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

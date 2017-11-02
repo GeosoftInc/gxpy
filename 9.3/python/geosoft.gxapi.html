@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>Geosoft GX API &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -116,7 +119,7 @@ Geosoft Desktop), a GX Context must be created and held.  This can be done by cr
 the low-level <code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxapi</span></code>.  Note that the low-level module <code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxapi</span></code>, although more complex,
 is more consistent across versions.</p>
 <p>Creating a GX context requires any version of <strong>Geosoft Desktop</strong> to be installed on the target system, from which
-the library dll’s are located and loaded. <strong>Geosoft Desktop</strong> can be downloaded from
+the library dll&#8217;s are located and loaded. <strong>Geosoft Desktop</strong> can be downloaded from
 <a class="reference external" href="https://my.geosoft.com/downloads">Geosoft Downloads</a>.</p>
 <p>It is possible to redirect the location of dlls used by setting the <strong>GX_GEOSOFT_BIN_PATH</strong> environment variable
 to reference the location of the Geosoft binary files.  Refer to the
@@ -238,7 +241,7 @@ the GX Python API encounters initialization issues or other API violations. It g
 <em class="property">exception </em><code class="descname">GXError</code><span class="sig-paren">(</span><em>message</em>, <em>module</em>, <em>error_number</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXError" title="Permalink to this definition">¶</a></dt>
 <dd><p>A subclass of <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError">RuntimeError</a> which is raised whenever 
 a GX Python API call encounters an error. Often the message string of these errors are informative to the user (e.g. File 
-‘x’ is locked in another application) but there could be cases where this is not the case. In most cases an attribute, 
+&#8216;x&#8217; is locked in another application) but there could be cases where this is not the case. In most cases an attribute, 
 <code class="xref py py-attr docutils literal"><span class="pre">number</span></code>, is also available on the exception object that matches the number in the <code class="code docutils literal"><span class="pre">geosoft.ger</span></code> file.
 These numbers instead of the string (which could change or even be translated) should be used to identify and handle
 very specific exceptions.</p>
@@ -275,7 +278,7 @@ very specific exceptions.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

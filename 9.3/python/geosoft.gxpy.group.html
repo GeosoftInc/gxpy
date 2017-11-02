@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>geosoft.gxpy.group submodule &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -166,9 +169,9 @@ in a 3D view, the group is placed on a the active plane inside the 3D view</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>view</strong> – <code class="xref py py-class docutils literal"><span class="pre">gxpy.view.View</span></code> instance</li>
-<li><strong>name</strong> – group name, default uses the aggregate name</li>
-<li><strong>agg</strong> – <code class="xref py py-class docutils literal"><span class="pre">gxpy.agg.Aggregate_image</span></code> instance</li>
+<li><strong>view</strong> &#8211; <code class="xref py py-class docutils literal"><span class="pre">gxpy.view.View</span></code> instance</li>
+<li><strong>name</strong> &#8211; group name, default uses the aggregate name</li>
+<li><strong>agg</strong> &#8211; <code class="xref py py-class docutils literal"><span class="pre">gxpy.agg.Aggregate_image</span></code> instance</li>
 </ul>
 </td>
 </tr>
@@ -402,7 +405,7 @@ in a 3D view, the group is placed on a the active plane inside the 3D view</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>color</strong> – <p>string descriptor (eg. ‘R255G0B125’), color letter R, G, B, C, M, Y, H, S or V.;
+<li><strong>color</strong> &#8211; <p>string descriptor (eg. &#8216;R255G0B125&#8217;), color letter R, G, B, C, M, Y, H, S or V.;
 tuple (r, g, b), (c, m, y) or (h, s, v), each item defined in the range 0 to 255;
 24-bit color number, which can be an item selected from the following list:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">C_BLACK</span>
@@ -428,7 +431,7 @@ tuple (r, g, b), (c, m, y) or (h, s, v), each item defined in the range 0 to 255
 </pre></div>
 </div>
 </li>
-<li><strong>model</strong> – <p>model of the tuple:</p>
+<li><strong>model</strong> &#8211; <p>model of the tuple:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CMODEL_RGB</span> <span class="p">(</span><span class="n">default</span><span class="p">)</span>
 <span class="n">CMODEL_CMY</span>
 <span class="n">CMODEL_HSV</span>
@@ -482,7 +485,7 @@ tuple (r, g, b), (c, m, y) or (h, s, v), each item defined in the range 0 to 255
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>cmap</strong> – <p>the name of a Geosoft color map file (<code class="xref py py-obj docutils literal"><span class="pre">tbl,</span> <span class="pre">.zon,</span> <span class="pre">.itr,</span> <span class="pre">.agg</span></code>) from which to
+<li><strong>cmap</strong> &#8211; <p>the name of a Geosoft color map file (<code class="xref py py-obj docutils literal"><span class="pre">tbl,</span> <span class="pre">.zon,</span> <span class="pre">.itr,</span> <span class="pre">.agg</span></code>) from which to
 establish the initial colors.  If the file does not have zone values,
 which is the case for a <code class="xref py py-obj docutils literal"><span class="pre">tbl</span></code> file, the Color_map will be uninitialized and you
 can use one of the <code class="xref py py-obj docutils literal"><span class="pre">set</span></code> methods to establish zone values.</p>
@@ -490,8 +493,8 @@ can use one of the <code class="xref py py-obj docutils literal"><span class="pr
 specified length, or a <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXITR</span></code></a> instance.</p>
 <p>If not specified the Geosoft default color table is used.</p>
 </li>
-<li><strong>title</strong> – Color map title which is displayed in the color map legend.</li>
-<li><strong>unit_of_measure</strong> – Unit of measure to be displayed in a color map legend.</li>
+<li><strong>title</strong> &#8211; Color map title which is displayed in the color map legend.</li>
+<li><strong>unit_of_measure</strong> &#8211; Unit of measure to be displayed in a color map legend.</li>
 </ul>
 </td>
 </tr>
@@ -535,7 +538,7 @@ the [n-2] level are assigned the [n-1] color.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> – data value</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> &#8211; data value</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxpy.group.Color" title="geosoft.gxpy.group.Color"><code class="xref py py-class docutils literal"><span class="pre">Color</span></code></a> instance</td>
 </tr>
@@ -577,7 +580,7 @@ otherwise a <code class="xref py py-obj docutils literal"><span class="pre">itr<
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file_name</strong> – file name, if None a temporary file is created</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file_name</strong> &#8211; file name, if None a temporary file is created</td>
 </tr>
 </tbody>
 </table>
@@ -601,13 +604,13 @@ requires a colur map file:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>minimum</strong> – minimum</li>
-<li><strong>maximum</strong> – maximum</li>
-<li><strong>inner_limits</strong> – True if the range specifies the inner limits of the color mappings, in which
+<li><strong>minimum</strong> &#8211; minimum</li>
+<li><strong>maximum</strong> &#8211; maximum</li>
+<li><strong>inner_limits</strong> &#8211; True if the range specifies the inner limits of the color mappings, in which
 case values less than or equal to the minimum are mapped to the first color
 and colors greater than the maximum are mapped to the last color.  If False,
 the minimum and maximum are at the outer-edges of the color map.</li>
-<li><strong>contour_interval</strong> – align color edges on this interval, which is useful for matching colors
+<li><strong>contour_interval</strong> &#8211; align color edges on this interval, which is useful for matching colors
 contour map, for example.  The color map will be reduced in size by thinning of 
 unneeded colors if necessary.</li>
 </ul>
@@ -629,9 +632,9 @@ unneeded colors if necessary.</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>minimum</strong> – minimum, must be &gt; 0</li>
-<li><strong>maximum</strong> – maximum</li>
-<li><strong>contour_interval</strong> – align color edges on this interval, 10 for powers of 10.
+<li><strong>minimum</strong> &#8211; minimum, must be &gt; 0</li>
+<li><strong>maximum</strong> &#8211; maximum</li>
+<li><strong>contour_interval</strong> &#8211; align color edges on this interval, 10 for powers of 10.
 unneeded colors if necessary.</li>
 </ul>
 </td>
@@ -652,9 +655,9 @@ unneeded colors if necessary.</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>standard_deviation</strong> – the standard deviation of the normal distribution.</li>
-<li><strong>mean</strong> – maximum</li>
-<li><strong>contour_interval</strong> – align color edges on this interval, 10 for powers of 10.
+<li><strong>standard_deviation</strong> &#8211; the standard deviation of the normal distribution.</li>
+<li><strong>mean</strong> &#8211; maximum</li>
+<li><strong>contour_interval</strong> &#8211; align color edges on this interval, 10 for powers of 10.
 unneeded colors if necessary.</li>
 </ul>
 </td>
@@ -675,8 +678,8 @@ unneeded colors if necessary.</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>start</strong> – minimum zone boundary, values &lt;= this value will have the first color</li>
-<li><strong>increment</strong> – increment between each color.</li>
+<li><strong>start</strong> &#8211; minimum zone boundary, values &lt;= this value will have the first color</li>
+<li><strong>increment</strong> &#8211; increment between each color.</li>
 </ul>
 </td>
 </tr>
@@ -754,17 +757,17 @@ None if the unit of measure is unknown.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>view</strong> – the view in which to place the group</li>
-<li><strong>group_name</strong> – group name, which can optionally be decorated with the unit_of_measure (eg “Cu.ppm”)</li>
-<li><strong>data</strong> – iterable that yields <code class="xref py py-obj docutils literal"><span class="pre">((x,</span> <span class="pre">y),</span> <span class="pre">data)</span></code>, or <code class="xref py py-obj docutils literal"><span class="pre">((x,</span> <span class="pre">y,</span> <span class="pre">z),</span> <span class="pre">data,</span> <span class="pre">...)</span></code>.  Only the
+<li><strong>view</strong> &#8211; the view in which to place the group</li>
+<li><strong>group_name</strong> &#8211; group name, which can optionally be decorated with the unit_of_measure (eg &#8220;Cu.ppm&#8221;)</li>
+<li><strong>data</strong> &#8211; iterable that yields <code class="xref py py-obj docutils literal"><span class="pre">((x,</span> <span class="pre">y),</span> <span class="pre">data)</span></code>, or <code class="xref py py-obj docutils literal"><span class="pre">((x,</span> <span class="pre">y,</span> <span class="pre">z),</span> <span class="pre">data,</span> <span class="pre">...)</span></code>.  Only the
 first <code class="xref py py-obj docutils literal"><span class="pre">data</span></code> value is used.</li>
-<li><strong>color_map</strong> – symbol fill color <a class="reference internal" href="#geosoft.gxpy.group.Color_map" title="geosoft.gxpy.group.Color_map"><code class="xref py py-class docutils literal"><span class="pre">Color_map</span></code></a>.
+<li><strong>color_map</strong> &#8211; symbol fill color <a class="reference internal" href="#geosoft.gxpy.group.Color_map" title="geosoft.gxpy.group.Color_map"><code class="xref py py-class docutils literal"><span class="pre">Color_map</span></code></a>.
 Symbols are filled with the color lookup using <code class="xref py py-obj docutils literal"><span class="pre">data</span></code>.</li>
-<li><strong>symbol_def</strong> – <a class="reference internal" href="#geosoft.gxpy.group.Text_def" title="geosoft.gxpy.group.Text_def"><code class="xref py py-class docutils literal"><span class="pre">Text_def</span></code></a> defines the symbol font to use, normally
+<li><strong>symbol_def</strong> &#8211; <a class="reference internal" href="#geosoft.gxpy.group.Text_def" title="geosoft.gxpy.group.Text_def"><code class="xref py py-class docutils literal"><span class="pre">Text_def</span></code></a> defines the symbol font to use, normally
 <code class="xref py py-obj docutils literal"><span class="pre">symbols.gfn</span></code> is expected, and if used the symbols defined by the <code class="xref py py-obj docutils literal"><span class="pre">SYMBOL</span></code> manifest
 are valid.  For other fonts you will get the symbol requested.  The default is
 <code class="xref py py-obj docutils literal"><span class="pre">Text_def(font='symbols.gfn',</span> <span class="pre">color='k',</span> <span class="pre">weight=FONT_WEIGHT_ULTRALIGHT)</span></code></li>
-<li><strong>symbol</strong> – the symbol to plot, normally one of <code class="xref py py-obj docutils literal"><span class="pre">SYMBOL</span></code>.</li>
+<li><strong>symbol</strong> &#8211; the symbol to plot, normally one of <code class="xref py py-obj docutils literal"><span class="pre">SYMBOL</span></code>.</li>
 </ul>
 </td>
 </tr>
@@ -787,8 +790,8 @@ are valid.  For other fonts you will get the symbol requested.  The default is
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>view</strong> – view that contains the group</li>
-<li><strong>group_name</strong> – name of the group, which must be a color symbols group</li>
+<li><strong>view</strong> &#8211; view that contains the group</li>
+<li><strong>group_name</strong> &#8211; name of the group, which must be a color symbols group</li>
 </ul>
 </td>
 </tr>
@@ -821,7 +824,7 @@ Drawing groups will lock the view such that only one drawing group can be instan
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>grid_file_name</strong> – Grid file name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>grid_file_name</strong> &#8211; Grid file name</td>
 </tr>
 </tbody>
 </table>
@@ -847,11 +850,11 @@ coordinate system to have automatic reprojection occur during drawing.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>style</strong> – <a class="reference internal" href="#geosoft.gxpy.group.GRATICULE_LINE" title="geosoft.gxpy.group.GRATICULE_LINE"><code class="xref py py-obj docutils literal"><span class="pre">GRATICULE_LINE</span></code></a>, <a class="reference internal" href="#geosoft.gxpy.group.GRATICULE_CROSS" title="geosoft.gxpy.group.GRATICULE_CROSS"><code class="xref py py-obj docutils literal"><span class="pre">GRATICULE_CROSS</span></code></a> or <a class="reference internal" href="#geosoft.gxpy.group.GRATICULE_DOT" title="geosoft.gxpy.group.GRATICULE_DOT"><code class="xref py py-obj docutils literal"><span class="pre">GRATICULE_DOT</span></code></a></li>
-<li><strong>dx</strong> – vertical line separation</li>
-<li><strong>dy</strong> – horizontal line separation</li>
-<li><strong>ddh</strong> – horizontal cross size for <a class="reference internal" href="#geosoft.gxpy.group.GRATICULE_CROSS" title="geosoft.gxpy.group.GRATICULE_CROSS"><code class="xref py py-obj docutils literal"><span class="pre">GRATICULE_CROSS</span></code></a></li>
-<li><strong>ddv</strong> – vertical cross size for <a class="reference internal" href="#geosoft.gxpy.group.GRATICULE_CROSS" title="geosoft.gxpy.group.GRATICULE_CROSS"><code class="xref py py-obj docutils literal"><span class="pre">GRATICULE_CROSS</span></code></a></li>
+<li><strong>style</strong> &#8211; <a class="reference internal" href="#geosoft.gxpy.group.GRATICULE_LINE" title="geosoft.gxpy.group.GRATICULE_LINE"><code class="xref py py-obj docutils literal"><span class="pre">GRATICULE_LINE</span></code></a>, <a class="reference internal" href="#geosoft.gxpy.group.GRATICULE_CROSS" title="geosoft.gxpy.group.GRATICULE_CROSS"><code class="xref py py-obj docutils literal"><span class="pre">GRATICULE_CROSS</span></code></a> or <a class="reference internal" href="#geosoft.gxpy.group.GRATICULE_DOT" title="geosoft.gxpy.group.GRATICULE_DOT"><code class="xref py py-obj docutils literal"><span class="pre">GRATICULE_DOT</span></code></a></li>
+<li><strong>dx</strong> &#8211; vertical line separation</li>
+<li><strong>dy</strong> &#8211; horizontal line separation</li>
+<li><strong>ddh</strong> &#8211; horizontal cross size for <a class="reference internal" href="#geosoft.gxpy.group.GRATICULE_CROSS" title="geosoft.gxpy.group.GRATICULE_CROSS"><code class="xref py py-obj docutils literal"><span class="pre">GRATICULE_CROSS</span></code></a></li>
+<li><strong>ddv</strong> &#8211; vertical cross size for <a class="reference internal" href="#geosoft.gxpy.group.GRATICULE_CROSS" title="geosoft.gxpy.group.GRATICULE_CROSS"><code class="xref py py-obj docutils literal"><span class="pre">GRATICULE_CROSS</span></code></a></li>
 </ul>
 </td>
 </tr>
@@ -870,7 +873,7 @@ coordinate system to have automatic reprojection occur during drawing.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>p2</strong> – <code class="xref py py-class docutils literal"><span class="pre">geometry.Point2</span></code>, or (p1, p2)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>p2</strong> &#8211; <code class="xref py py-class docutils literal"><span class="pre">geometry.Point2</span></code>, or (p1, p2)</td>
 </tr>
 </tbody>
 </table>
@@ -889,7 +892,7 @@ dimensions (such as <code class="xref py py-obj docutils literal"><span class="p
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>kwargs</strong> – see <a class="reference internal" href="#geosoft.gxpy.group.Pen" title="geosoft.gxpy.group.Pen"><code class="xref py py-class docutils literal"><span class="pre">Pen</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>kwargs</strong> &#8211; see <a class="reference internal" href="#geosoft.gxpy.group.Pen" title="geosoft.gxpy.group.Pen"><code class="xref py py-class docutils literal"><span class="pre">Pen</span></code></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxpy.group.Pen" title="geosoft.gxpy.group.Pen"><code class="xref py py-class docutils literal"><span class="pre">Pen</span></code></a> instance</td>
 </tr>
@@ -914,7 +917,7 @@ dimensions (such as <code class="xref py py-obj docutils literal"><span class="p
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pp</strong> – <code class="xref py py-class docutils literal"><span class="pre">gxpy.geometry.PPoint</span></code></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pp</strong> &#8211; <code class="xref py py-class docutils literal"><span class="pre">gxpy.geometry.PPoint</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -937,8 +940,8 @@ appear continuous.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>pp</strong> – <code class="xref py py-class docutils literal"><span class="pre">gxpy.geometry.PPoint</span></code></li>
-<li><strong>close</strong> – if True, draw a polygon, default is a polyline</li>
+<li><strong>pp</strong> &#8211; <code class="xref py py-class docutils literal"><span class="pre">gxpy.geometry.PPoint</span></code></li>
+<li><strong>close</strong> &#8211; if True, draw a polygon, default is a polyline</li>
 </ul>
 </td>
 </tr>
@@ -973,9 +976,9 @@ appear continuous.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>text</strong> – text string.  Use line-feed characters for multi-line text.</li>
-<li><strong>location</strong> – (x, y) or a <code class="xref py py-obj docutils literal"><span class="pre">gxpy.geomerty.Point</span></code> location</li>
-<li><strong>reference</strong> – <p>reference point relative to the clip limits of the view to
+<li><strong>text</strong> &#8211; text string.  Use line-feed characters for multi-line text.</li>
+<li><strong>location</strong> &#8211; (x, y) or a <code class="xref py py-obj docutils literal"><span class="pre">gxpy.geomerty.Point</span></code> location</li>
+<li><strong>reference</strong> &#8211; <p>reference point relative to the clip limits of the view to
 which reference location.  The points are:</p>
 <blockquote>
 <div><div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span>   <span class="n">top</span> <span class="n">left</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">right</span>
@@ -985,9 +988,9 @@ which reference location.  The points are:</p>
 </div>
 </div></blockquote>
 </li>
-<li><strong>angle</strong> – baseline angle in degrees clockwise</li>
-<li><strong>text_def</strong> – text definition, if not set the current definition is used</li>
-<li><strong>line_spacing</strong> – the line spacing for multi-line text as a factor of the text height, default is 1.5</li>
+<li><strong>angle</strong> &#8211; baseline angle in degrees clockwise</li>
+<li><strong>text_def</strong> &#8211; text definition, if not set the current definition is used</li>
+<li><strong>line_spacing</strong> &#8211; the line spacing for multi-line text as a factor of the text height, default is 1.5</li>
 </ul>
 </td>
 </tr>
@@ -1018,7 +1021,7 @@ within the 3D view.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>render_backfaces</strong> – True to turn backface rendering on.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>render_backfaces</strong> &#8211; True to turn backface rendering on.</td>
 </tr>
 </tbody>
 </table>
@@ -1034,8 +1037,8 @@ within the 3D view.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>p2</strong> – box corners as geometry.Point2, or (p0, p1), or (x0, y0, z0, x1, y1, z1)</li>
-<li><strong>wireframe</strong> – True to draw edges only</li>
+<li><strong>p2</strong> &#8211; box corners as geometry.Point2, or (p0, p1), or (x0, y0, z0, x1, y1, z1)</li>
+<li><strong>wireframe</strong> &#8211; True to draw edges only</li>
 </ul>
 </td>
 </tr>
@@ -1055,8 +1058,8 @@ within the 3D view.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>p2</strong> – end points as geometry.Point2, or (p0, p1), or (x0, y0, z0, x1, y1, z1).</li>
-<li><strong>radius</strong> – cone base radius, base is as the the first point of p2.</li>
+<li><strong>p2</strong> &#8211; end points as geometry.Point2, or (p0, p1), or (x0, y0, z0, x1, y1, z1).</li>
+<li><strong>radius</strong> &#8211; cone base radius, base is as the the first point of p2.</li>
 </ul>
 </td>
 </tr>
@@ -1076,10 +1079,10 @@ within the 3D view.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>p2</strong> – end points as geometry.Point2, or (p0, p1), or (x0, y0, z0, x1, y1, z1)</li>
-<li><strong>radius</strong> – cylinder radius.</li>
-<li><strong>r2</strong> – end radius if different from the start</li>
-<li><strong>close</strong> – <p>one of:</p>
+<li><strong>p2</strong> &#8211; end points as geometry.Point2, or (p0, p1), or (x0, y0, z0, x1, y1, z1)</li>
+<li><strong>radius</strong> &#8211; cylinder radius.</li>
+<li><strong>r2</strong> &#8211; end radius if different from the start</li>
+<li><strong>close</strong> &#8211; <p>one of:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CYLINDER_OPEN</span>
 <span class="n">CYLINDER_CLOSE_START</span>
 <span class="n">CYLINDER_CLOSE_END</span>
@@ -1106,9 +1109,9 @@ within the 3D view.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>view</strong> – a 3D view in which to place the group</li>
-<li><strong>data</strong> – iterable that yields items passed to your <code class="xref py py-obj docutils literal"><span class="pre">render_info_func</span></code> callback</li>
-<li><strong>render_info_func</strong> – <p>a callback that given <code class="xref py py-obj docutils literal"><span class="pre">(item,</span> <span class="pre">passback)</span></code> returns the rendering <code class="xref py py-obj docutils literal"><span class="pre">(symbol_type,</span>
+<li><strong>view</strong> &#8211; a 3D view in which to place the group</li>
+<li><strong>data</strong> &#8211; iterable that yields items passed to your <code class="xref py py-obj docutils literal"><span class="pre">render_info_func</span></code> callback</li>
+<li><strong>render_info_func</strong> &#8211; <p>a callback that given <code class="xref py py-obj docutils literal"><span class="pre">(item,</span> <span class="pre">passback)</span></code> returns the rendering <code class="xref py py-obj docutils literal"><span class="pre">(symbol_type,</span>
 <span class="pre">geometry,</span> <span class="pre">color_integer,</span> <span class="pre">attibute)</span></code>:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -1148,7 +1151,7 @@ within the 3D view.</p>
 </tbody>
 </table>
 </li>
-<li><strong>passback</strong> – something passed back to your render_info_func function, default None.</li>
+<li><strong>passback</strong> &#8211; something passed back to your render_info_func function, default None.</li>
 </ul>
 </td>
 </tr>
@@ -1183,8 +1186,8 @@ within the 3D view.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>points</strong> – verticies of the polyline, <code class="xref py py-class docutils literal"><span class="pre">gxpy.geometry.PPoint</span></code> instance, or array-like [x,y,z]</li>
-<li><strong>style</strong> – LINE3D_STYLE_LINE, LINE3D_STYLE_TUBE or LINE3D_STYLE_TUBE_JOINED.
+<li><strong>points</strong> &#8211; verticies of the polyline, <code class="xref py py-class docutils literal"><span class="pre">gxpy.geometry.PPoint</span></code> instance, or array-like [x,y,z]</li>
+<li><strong>style</strong> &#8211; LINE3D_STYLE_LINE, LINE3D_STYLE_TUBE or LINE3D_STYLE_TUBE_JOINED.
 Lines are single-pixel-wide.  Tubes have width defined by the pen line thickness.
 Joined tubes have a joints and rounded ends.</li>
 </ul>
@@ -1206,8 +1209,8 @@ Joined tubes have a joints and rounded ends.</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>points</strong> – points to draw, <code class="xref py py-class docutils literal"><span class="pre">gxpy.geometry.PPoint</span></code> instance, or array-like [x,y,z]</li>
-<li><strong>style</strong> – POINT_STYLE_DOT or POINT_STYLE_SPHERE.  Dots are fast and intended for point clouds.
+<li><strong>points</strong> &#8211; points to draw, <code class="xref py py-class docutils literal"><span class="pre">gxpy.geometry.PPoint</span></code> instance, or array-like [x,y,z]</li>
+<li><strong>style</strong> &#8211; POINT_STYLE_DOT or POINT_STYLE_SPHERE.  Dots are fast and intended for point clouds.
 The current pen thickness is used as the sphere sizes.</li>
 </ul>
 </td>
@@ -1241,8 +1244,8 @@ be turned on.   Once on it cannot be turned off for a view.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>p</strong> – location as geometry.Point, or (x, y, z)</li>
-<li><strong>radius</strong> – sphere radius</li>
+<li><strong>p</strong> &#8211; location as geometry.Point, or (x, y, z)</li>
+<li><strong>radius</strong> &#8211; sphere radius</li>
 </ul>
 </td>
 </tr>
@@ -1350,14 +1353,14 @@ be turned on.   Once on it cannot be turned off for a view.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">view:</th><td class="field-body">gxpy.View</td>
 </tr>
-<tr class="field-even field"><th class="field-name">name:</th><td class="field-body">group name, default is “_”.</td>
+<tr class="field-even field"><th class="field-name">name:</th><td class="field-body">group name, default is &#8220;_&#8221;.</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">plane:</th><td class="field-body">plane number, or plane name if drawing to a 3D view.  Default is plane number 0.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">view_lock:</th><td class="field-body">True to lock the view for a single-stream drawing group.  Default is False.</td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">unit_of_measure:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">unit of measurement for data in this group, default is ‘’</td>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">unit of measurement for data in this group, default is &#8216;&#8217;</td>
 </tr>
 <tr class="field-even field"><th class="field-name">group_3d:</th><td class="field-body">True for a 3D drawing group, default assumes a 2D drawing group to a plane.</td>
 </tr>
@@ -1376,7 +1379,7 @@ be turned on.   Once on it cannot be turned off for a view.</p>
 <tr class="field-even field"><th class="field-name">name:</th><td class="field-body">the name of the group</td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">unit_of_measure:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">the unit of measurement (uom) for this data in this group</td>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">the unit of measurement (uom) for this data in this group</td>
 </tr>
 <tr class="field-even field"><th class="field-name">name_uom:</th><td class="field-body">uom decorated group name as it appears in a view</td>
 </tr>
@@ -1385,7 +1388,7 @@ be turned on.   Once on it cannot be turned off for a view.</p>
 <tr class="field-even field"><th class="field-name">extent_map_cm:</th><td class="field-body">extent of the group in map cm</td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">drawing_coordinate_system:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">the coordinate system of drawing coordinates. Setting to None will reset drawing
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">the coordinate system of drawing coordinates. Setting to None will reset drawing
 coordinates to the view cs.  If <code class="xref py py-obj docutils literal"><span class="pre">drawing_coordinate_system</span></code> is set to some other cs the drawing
 coordinates will be transformed into the view cs.</td>
 </tr>
@@ -1427,7 +1430,7 @@ coordinates will be transformed into the view cs.</td>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>extent</strong> – an extent in view units as a tuple (xmin, ymin, xmax, ymax), Default is the group extent.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>extent</strong> &#8211; an extent in view units as a tuple (xmin, ymin, xmax, ymax), Default is the group extent.</td>
 </tr>
 </tbody>
 </table>
@@ -1464,8 +1467,8 @@ Can be set.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>location</strong> – location (x, y) or a <code class="xref py py-obj docutils literal"><span class="pre">gxpy.geometry.Point</span></code></li>
-<li><strong>reference</strong> – <p>reference point relative to the clip limits of the view to
+<li><strong>location</strong> &#8211; location (x, y) or a <code class="xref py py-obj docutils literal"><span class="pre">gxpy.geometry.Point</span></code></li>
+<li><strong>reference</strong> &#8211; <p>reference point relative to the clip limits of the view to
 which reference location.  The points are:</p>
 <blockquote>
 <div><div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span>   <span class="n">top</span> <span class="n">left</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">right</span>
@@ -1621,10 +1624,10 @@ the the view <a class="reference internal" href="geosoft.gxpy.view.html#geosoft.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>line_color</strong> – line <a class="reference internal" href="#geosoft.gxpy.group.Color" title="geosoft.gxpy.group.Color"><code class="xref py py-class docutils literal"><span class="pre">Color</span></code></a> instance, default is black</li>
-<li><strong>fill_color</strong> – fill <a class="reference internal" href="#geosoft.gxpy.group.Color" title="geosoft.gxpy.group.Color"><code class="xref py py-class docutils literal"><span class="pre">Color</span></code></a> instance, default is transparent</li>
-<li><strong>line_thick</strong> – line thickness, default is 0.01</li>
-<li><strong>line_style</strong> – <p>line pattern style</p>
+<li><strong>line_color</strong> &#8211; line <a class="reference internal" href="#geosoft.gxpy.group.Color" title="geosoft.gxpy.group.Color"><code class="xref py py-class docutils literal"><span class="pre">Color</span></code></a> instance, default is black</li>
+<li><strong>fill_color</strong> &#8211; fill <a class="reference internal" href="#geosoft.gxpy.group.Color" title="geosoft.gxpy.group.Color"><code class="xref py py-class docutils literal"><span class="pre">Color</span></code></a> instance, default is transparent</li>
+<li><strong>line_thick</strong> &#8211; line thickness, default is 0.01</li>
+<li><strong>line_style</strong> &#8211; <p>line pattern style</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">LINE_STYLE_SOLID</span> <span class="p">(</span><span class="n">default</span><span class="p">)</span>
 <span class="n">LINE_STYLE_LONG</span>
 <span class="n">LINE_STYLE_DOTTED</span>
@@ -1634,19 +1637,19 @@ the the view <a class="reference internal" href="geosoft.gxpy.view.html#geosoft.
 </pre></div>
 </div>
 </li>
-<li><strong>line_pitch</strong> – line style pitch, default is 0.5</li>
-<li><strong>line_smooth</strong> – <p>smooth line:</p>
+<li><strong>line_pitch</strong> &#8211; line style pitch, default is 0.5</li>
+<li><strong>line_smooth</strong> &#8211; <p>smooth line:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SMOOTH_NONE</span> <span class="p">(</span><span class="n">default</span><span class="p">)</span>
 <span class="n">SMOOTH_AKIMA</span>
 <span class="n">SMOOTH_CUBIC</span>
 </pre></div>
 </div>
 </li>
-<li><strong>pat_number</strong> – pattern number for filled patterns (refer to <code class="xref py py-obj docutils literal"><span class="pre">etc/default.pat</span></code>) default 0, flood fill</li>
-<li><strong>pat_angle</strong> – pattern angle, default 0</li>
-<li><strong>pat_density</strong> – pattern density, default 1</li>
-<li><strong>pat_size</strong> – pattern size, default 1.0</li>
-<li><strong>pat_style</strong> – <p>pattern style:</p>
+<li><strong>pat_number</strong> &#8211; pattern number for filled patterns (refer to <code class="xref py py-obj docutils literal"><span class="pre">etc/default.pat</span></code>) default 0, flood fill</li>
+<li><strong>pat_angle</strong> &#8211; pattern angle, default 0</li>
+<li><strong>pat_density</strong> &#8211; pattern density, default 1</li>
+<li><strong>pat_size</strong> &#8211; pattern size, default 1.0</li>
+<li><strong>pat_style</strong> &#8211; <p>pattern style:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">TILE_RECTANGULAR</span> <span class="p">(</span><span class="n">default</span><span class="p">)</span>
 <span class="n">TILE_DIAGONAL</span>
 <span class="n">TILE_TRIANGULAR</span>
@@ -1654,9 +1657,9 @@ the the view <a class="reference internal" href="geosoft.gxpy.view.html#geosoft.
 </pre></div>
 </div>
 </li>
-<li><strong>pat_thick</strong> – pattern line thickness, default 0.01</li>
-<li><strong>default</strong> – default <a class="reference internal" href="#geosoft.gxpy.group.Pen" title="geosoft.gxpy.group.Pen"><code class="xref py py-class docutils literal"><span class="pre">Pen</span></code></a> instance, if specified defaults are established from this</li>
-<li><strong>factor</strong> – default spatial properties are multiplied by this factor.  This is useful
+<li><strong>pat_thick</strong> &#8211; pattern line thickness, default 0.01</li>
+<li><strong>default</strong> &#8211; default <a class="reference internal" href="#geosoft.gxpy.group.Pen" title="geosoft.gxpy.group.Pen"><code class="xref py py-class docutils literal"><span class="pre">Pen</span></code></a> instance, if specified defaults are established from this</li>
+<li><strong>factor</strong> &#8211; default spatial properties are multiplied by this factor.  This is useful
 for creating pens scaled to the units of a view.  The default pen properties
 are scaled to cm.  Typically you will pass <a class="reference internal" href="geosoft.gxpy.view.html#geosoft.gxpy.view.View.units_per_map_cm" title="geosoft.gxpy.view.View.units_per_map_cm"><code class="xref py py-attr docutils literal"><span class="pre">geosoft.gxpy.view.View.units_per_map_cm</span></code></a>.</li>
 </ul>
@@ -1674,13 +1677,13 @@ are scaled to cm.  Typically you will pass <a class="reference internal" href="g
 <em class="property">classmethod </em><code class="descname">from_mapplot_string</code><span class="sig-paren">(</span><em>cstr</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Pen.from_mapplot_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a <a class="reference internal" href="#geosoft.gxpy.group.Pen" title="geosoft.gxpy.group.Pen"><code class="xref py py-class docutils literal"><span class="pre">Pen</span></code></a> instance from a mapplot-style string descriptor using either a
 rgbRGB or cmyCMY color model.  Lower case letters indicate line color, uppercase
-indicates fill color, ‘k’, ‘K’ for black.  Each letter may be followed by an intensity
+indicates fill color, &#8216;k&#8217;, &#8216;K&#8217; for black.  Each letter may be followed by an intensity
 between 0 and 255.  If an intensity is not specified 255 is assumed.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cstr</strong> – mapplot-style color definition</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cstr</strong> &#8211; mapplot-style color definition</td>
 </tr>
 </tbody>
 </table>
@@ -1692,19 +1695,19 @@ between 0 and 255.  If an intensity is not specified 255 is assumed.</p>
 <col width="81%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>‘r’</td>
+<tr class="row-odd"><td>&#8216;r&#8217;</td>
 <td>red line</td>
 </tr>
-<tr class="row-even"><td>‘R’</td>
+<tr class="row-even"><td>&#8216;R&#8217;</td>
 <td>red fill</td>
 </tr>
-<tr class="row-odd"><td>‘rG64’</td>
+<tr class="row-odd"><td>&#8216;rG64&#8217;</td>
 <td>red line, light-green fill</td>
 </tr>
-<tr class="row-even"><td>‘c64’</td>
-<td>light cyan line, equivalent to ‘R191G255B255’</td>
+<tr class="row-even"><td>&#8216;c64&#8217;</td>
+<td>light cyan line, equivalent to &#8216;R191G255B255&#8217;</td>
 </tr>
-<tr class="row-odd"><td>‘c64K96’</td>
+<tr class="row-odd"><td>&#8216;c64K96&#8217;</td>
 <td>light cyan line, light-grey fill</td>
 </tr>
 </tbody>
@@ -1724,7 +1727,7 @@ between 0 and 255.  If an intensity is not specified 255 is assumed.</p>
 <dl class="attribute">
 <dt id="geosoft.gxpy.group.Pen.mapplot_string">
 <code class="descname">mapplot_string</code><a class="headerlink" href="#geosoft.gxpy.group.Pen.mapplot_string" title="Permalink to this definition">¶</a></dt>
-<dd><p>line/fill colour and thickness string suing mapplor format, eg. ‘kR125B64t1000’</p>
+<dd><p>line/fill colour and thickness string suing mapplor format, eg. &#8216;kR125B64t1000&#8217;</p>
 </dd></dl>
 
 </dd></dl>
@@ -1899,9 +1902,9 @@ between 0 and 255.  If an intensity is not specified 255 is assumed.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>font</strong> – font name.  TrueType fonts are assumed unless the name ends with ‘.gfn’,
+<li><strong>font</strong> &#8211; font name.  TrueType fonts are assumed unless the name ends with &#8216;.gfn&#8217;,
 which is a Geosoft gfn font.</li>
-<li><strong>weight</strong> – <p>one of:</p>
+<li><strong>weight</strong> &#8211; <p>one of:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">FONT_WEIGHT_ULTRALIGHT</span>
 <span class="n">FONT_WEIGHT_LIGHT</span>
 <span class="n">FONT_WEIGHT_MEDIUM</span>
@@ -1911,11 +1914,11 @@ which is a Geosoft gfn font.</li>
 </pre></div>
 </div>
 </li>
-<li><strong>line_thick</strong> – line thickness from which to determine a weight, which is calculated from the 
+<li><strong>line_thick</strong> &#8211; line thickness from which to determine a weight, which is calculated from the 
 ratio of line thickness to height.</li>
-<li><strong>italics</strong> – True for italics fonts</li>
-<li><strong>height</strong> – text height, default 0.25</li>
-<li><strong>factor</strong> – default spatial properties are multiplied by this factor.  This is useful
+<li><strong>italics</strong> &#8211; True for italics fonts</li>
+<li><strong>height</strong> &#8211; text height, default 0.25</li>
+<li><strong>factor</strong> &#8211; default spatial properties are multiplied by this factor.  This is useful
 for creating text scaled to the units of a view.  The default text properties
 are scaled to cm.</li>
 </ul>
@@ -2005,21 +2008,42 @@ greater than 5 will result in a 15 degree slant to create italics.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cstr</strong> – color string (see below)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cstr</strong> &#8211; color string (see below)</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">color</td>
 </tr>
 </tbody>
 </table>
-<p>Colour strings may be “R”, “G”, “B”, “C”, “M”, “Y”,
-“H”, “S”, “V”, or “K” or a combination of these
+<p>Colour strings may be &#8220;R&#8221;, &#8220;G&#8221;, &#8220;B&#8221;, &#8220;C&#8221;, &#8220;M&#8221;, &#8220;Y&#8221;,
+&#8220;H&#8221;, &#8220;S&#8221;, &#8220;V&#8221;, or &#8220;K&#8221; or a combination of these
 characters, each followed by up to three digits
 specifying a number between 0 and 255.
 An empty string will produce C_ANY_NONE.</p>
 <p>You must stay in the same color model, RGB, CMY,
 HSV or K.</p>
-<p>For example “R”, “R127G22”, “H255S127V32”</p>
+<p>For example &#8220;R&#8221;, &#8220;R127G22&#8221;, &#8220;H255S127V32&#8221;</p>
 <p>Characters are not case sensitive.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.group.contour">
+<code class="descname">contour</code><span class="sig-paren">(</span><em>view</em>, <em>group_name</em>, <em>grid_file_name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.contour" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a contour group from a grid file.  A default contour interval is determined from the grid.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>group_name</strong> &#8211; name for the contour group</li>
+<li><strong>grid_file_name</strong> &#8211; Grid file name</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
@@ -2034,8 +2058,8 @@ HSV or K.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>area</strong> – <code class="xref py py-class docutils literal"><span class="pre">Point2</span></code> instance, or (x0, y0, x1, y1)</li>
-<li><strong>reference</strong> – <p>reference point relative to the clip limits of the view to
+<li><strong>area</strong> &#8211; <code class="xref py py-class docutils literal"><span class="pre">Point2</span></code> instance, or (x0, y0, x1, y1)</li>
+<li><strong>reference</strong> &#8211; <p>reference point relative to the clip limits of the view to
 which reference location.  The points are:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span>   <span class="n">top</span> <span class="n">left</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">right</span>
 <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span>   <span class="n">middle</span> <span class="n">left</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">right</span>
@@ -2065,8 +2089,8 @@ which reference location.  The points are:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>line_thick</strong> – line thickness in same units as the text height</li>
-<li><strong>height</strong> – text height</li>
+<li><strong>line_thick</strong> &#8211; line thickness in same units as the text height</li>
+<li><strong>height</strong> &#8211; text height</li>
 </ul>
 </td>
 </tr>
@@ -2098,12 +2122,12 @@ which reference location.  The points are:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>view</strong> – <code class="xref py py-class docutils literal"><span class="pre">gxpy.view.View</span></code> instance in which to place the bar</li>
-<li><strong>group_name</strong> – name for the color_bar group, overwrites group if it exists.</li>
-<li><strong>cmap</strong> – <a class="reference internal" href="#geosoft.gxpy.group.Color_map" title="geosoft.gxpy.group.Color_map"><code class="xref py py-class docutils literal"><span class="pre">Color_map</span></code></a> instance</li>
-<li><strong>cmap2</strong> – optional orthogonal blended <a class="reference internal" href="#geosoft.gxpy.group.Color_map" title="geosoft.gxpy.group.Color_map"><code class="xref py py-class docutils literal"><span class="pre">Color_map</span></code></a> instance.  If making
+<li><strong>view</strong> &#8211; <code class="xref py py-class docutils literal"><span class="pre">gxpy.view.View</span></code> instance in which to place the bar</li>
+<li><strong>group_name</strong> &#8211; name for the color_bar group, overwrites group if it exists.</li>
+<li><strong>cmap</strong> &#8211; <a class="reference internal" href="#geosoft.gxpy.group.Color_map" title="geosoft.gxpy.group.Color_map"><code class="xref py py-class docutils literal"><span class="pre">Color_map</span></code></a> instance</li>
+<li><strong>cmap2</strong> &#8211; optional orthogonal blended <a class="reference internal" href="#geosoft.gxpy.group.Color_map" title="geosoft.gxpy.group.Color_map"><code class="xref py py-class docutils literal"><span class="pre">Color_map</span></code></a> instance.  If making
 a shaded-color legend, provide the shaded color map here.</li>
-<li><strong>bar_location</strong> – <p>one of:</p>
+<li><strong>bar_location</strong> &#8211; <p>one of:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">COLOR_BAR_RIGHT</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">COLOR_BAR_LEFT</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">COLOR_BAR_BOTTOM</span> <span class="o">=</span> <span class="mi">2</span>
@@ -2111,12 +2135,12 @@ a shaded-color legend, provide the shaded color map here.</li>
 </pre></div>
 </div>
 </li>
-<li><strong>location</strong> – offset or (x, y) offset from view reference point, in cm.  The default is
+<li><strong>location</strong> &#8211; offset or (x, y) offset from view reference point, in cm.  The default is
 determined to center the bar off the location side specified.</li>
-<li><strong>decimals</strong> – annotation decimal places</li>
-<li><strong>annotation_height</strong> – annotation number height</li>
-<li><strong>annotation_offset</strong> – offset of annotations from the bar (cm)</li>
-<li><strong>annotation_side</strong> – <p>side of the bar for annotations</p>
+<li><strong>decimals</strong> &#8211; annotation decimal places</li>
+<li><strong>annotation_height</strong> &#8211; annotation number height</li>
+<li><strong>annotation_offset</strong> &#8211; offset of annotations from the bar (cm)</li>
+<li><strong>annotation_side</strong> &#8211; <p>side of the bar for annotations</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">COLOR_BAR_ANNOTATE_RIGHT</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">COLOR_BAR_ANNOTATE_LEFT</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
 <span class="n">COLOR_BAR_ANNOTATE_TOP</span> <span class="o">=</span> <span class="mi">1</span>
@@ -2124,17 +2148,17 @@ determined to center the bar off the location side specified.</li>
 </pre></div>
 </div>
 </li>
-<li><strong>box_size</strong> – box size, height for vertical bars, width for horizontal bars</li>
-<li><strong>bar_width</strong> – width of the color boxes, horizontal for vertical bars, vertical for horizontal bars</li>
-<li><strong>max_bar_size</strong> – maximum bar size, default is the size of the view edge</li>
-<li><strong>minimum_gap</strong> – minimum gap to between annotations.  Annotations are dropped in necessary.</li>
-<li><strong>post_end_values</strong> – post the maximum and minimum values</li>
-<li><strong>annotate_vertical</strong> – True to orient labels vertically</li>
-<li><strong>division_line</strong> – 0, no division lines, 1 - line, 2 - tick</li>
-<li><strong>interval_1</strong> – Major annotation increment, default annotates everything</li>
-<li><strong>interval_2</strong> – secondary smaller annotations, reduced to 1/10, 1/5, 1/4 or 1/2 of interval_1.
+<li><strong>box_size</strong> &#8211; box size, height for vertical bars, width for horizontal bars</li>
+<li><strong>bar_width</strong> &#8211; width of the color boxes, horizontal for vertical bars, vertical for horizontal bars</li>
+<li><strong>max_bar_size</strong> &#8211; maximum bar size, default is the size of the view edge</li>
+<li><strong>minimum_gap</strong> &#8211; minimum gap to between annotations.  Annotations are dropped in necessary.</li>
+<li><strong>post_end_values</strong> &#8211; post the maximum and minimum values</li>
+<li><strong>annotate_vertical</strong> &#8211; True to orient labels vertically</li>
+<li><strong>division_line</strong> &#8211; 0, no division lines, 1 - line, 2 - tick</li>
+<li><strong>interval_1</strong> &#8211; Major annotation increment, default annotates everything</li>
+<li><strong>interval_2</strong> &#8211; secondary smaller annotations, reduced to 1/10, 1/5, 1/4 or 1/2 of interval_1.
 Default chooses something reasonable.</li>
-<li><strong>title</strong> – bar title, use new-lines for sub-titles.  Default uses the title and unit_of_measure
+<li><strong>title</strong> &#8211; bar title, use new-lines for sub-titles.  Default uses the title and unit_of_measure
 from <code class="xref py py-obj docutils literal"><span class="pre">cmap</span></code>.</li>
 </ul>
 </td>
@@ -2155,7 +2179,7 @@ from <code class="xref py py-obj docutils literal"><span class="pre">cmap</span>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>weight</strong> – <p>one of:</p>
+<li><strong>weight</strong> &#8211; <p>one of:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">FONT_WEIGHT_ULTRALIGHT</span>
 <span class="n">FONT_WEIGHT_LIGHT</span>
 <span class="n">FONT_WEIGHT_MEDIUM</span>
@@ -2165,7 +2189,7 @@ from <code class="xref py py-obj docutils literal"><span class="pre">cmap</span>
 </pre></div>
 </div>
 </li>
-<li><strong>height</strong> – font height</li>
+<li><strong>height</strong> &#8211; font height</li>
 </ul>
 </td>
 </tr>
@@ -2203,7 +2227,7 @@ from <code class="xref py py-obj docutils literal"><span class="pre">cmap</span>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

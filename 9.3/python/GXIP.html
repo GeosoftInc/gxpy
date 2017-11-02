@@ -1,14 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>GXIP class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +37,7 @@
 </script>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -124,9 +127,9 @@ and processing of Induced Polarization data.</p>
 <p><strong>Note:</strong></p>
 <p>The following defines are used in GX code but are not
 part of any functions:</p>
-<p><code class="xref py py-obj docutils literal"><span class="pre">IP_ARRAY</span></code>
-<code class="xref py py-obj docutils literal"><span class="pre">IP_CHANNELS</span></code>
-<code class="xref py py-obj docutils literal"><span class="pre">IP_LINES</span></code></p>
+<p><a class="reference internal" href="#ip-array"><span class="std std-ref">IP_ARRAY constants</span></a>
+<a class="reference internal" href="#ip-channels"><span class="std std-ref">IP_CHANNELS constants</span></a>
+<a class="reference internal" href="#ip-lines"><span class="std std-ref">IP_LINES constants</span></a></p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.a_spacing">
 <code class="descname">a_spacing</code><span class="sig-paren">(</span><em>db</em>, <em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIP.a_spacing" title="Permalink to this definition">¶</a></dt>
@@ -136,8 +139,8 @@ part of any functions:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
-<li><strong>line</strong> (<em>str</em>) – Line name</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database</li>
+<li><strong>line</strong> (<em>str</em>) &#8211; Line name</li>
 </ul>
 </td>
 </tr>
@@ -164,10 +167,10 @@ This value could be <a class="reference internal" href="GXGEOSOFT.html#geosoft.g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database to export from</li>
-<li><strong>chan</strong> (<em>str</em>) – Mask or reference channel (required)</li>
-<li><strong>qc_chan</strong> (<em>str</em>) – QC channel (can be left blank)</li>
-<li><strong>out</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">IP_DUPLICATE</span></code></li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database to export from</li>
+<li><strong>chan</strong> (<em>str</em>) &#8211; Mask or reference channel (required)</li>
+<li><strong>qc_chan</strong> (<em>str</em>) &#8211; QC channel (can be left blank)</li>
+<li><strong>out</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ip-duplicate"><span class="std std-ref">IP_DUPLICATE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -182,27 +185,27 @@ as long as the mask channel is defined at that FID.
 Previous averaged values (IP_DATA_AVG) are overwritten according to the
 overwrite flag.
 If the QC channel is selected, only those rows of data where the QC channel
-value is “1” will be included in the average.</p>
+value is &#8220;1&#8221; will be included in the average.</p>
 </dd></dl>
 
 <dl class="classmethod">
-<dt id="geosoft.gxapi.GXIP.convert_ubcip2_d_to_grid">
-<em class="property">classmethod </em><code class="descname">convert_ubcip2_d_to_grid</code><span class="sig-paren">(</span><em>file</em>, <em>pg</em>, <em>vv_x</em>, <em>vv_z</em>, <em>x</em>, <em>z</em>, <em>cx</em>, <em>cz</em>, <em>reciprocal</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIP.convert_ubcip2_d_to_grid" title="Permalink to this definition">¶</a></dt>
+<dt id="geosoft.gxapi.GXIP.convert_ubcip_2d_to_grid">
+<em class="property">classmethod </em><code class="descname">convert_ubcip_2d_to_grid</code><span class="sig-paren">(</span><em>file</em>, <em>pg</em>, <em>vv_x</em>, <em>vv_z</em>, <em>x</em>, <em>z</em>, <em>cx</em>, <em>cz</em>, <em>reciprocal</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIP.convert_ubcip_2d_to_grid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a UBC 2D model to a regular grid.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>file</strong> (<em>str</em>) – Output grid file name</li>
-<li><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Model data</li>
-<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Model cells sizes (input)</li>
-<li><strong>vv_z</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Model cells sizes (input)</li>
-<li><strong>x</strong> (<em>float</em>) – Top-left corner X</li>
-<li><strong>z</strong> (<em>float</em>) – Top-left corner Z</li>
-<li><strong>cx</strong> (<em>float</em>) – Output grid cell size in X</li>
-<li><strong>cz</strong> (<em>float</em>) – Output grid cell size in Z</li>
-<li><strong>reciprocal</strong> (<em>int</em>) – Output reciprocal of values (0:No, 1:Yes) for resistivity?</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; Output grid file name</li>
+<li><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) &#8211; Model data</li>
+<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Model cells sizes (input)</li>
+<li><strong>vv_z</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Model cells sizes (input)</li>
+<li><strong>x</strong> (<em>float</em>) &#8211; Top-left corner X</li>
+<li><strong>z</strong> (<em>float</em>) &#8211; Top-left corner Z</li>
+<li><strong>cx</strong> (<em>float</em>) &#8211; Output grid cell size in X</li>
+<li><strong>cz</strong> (<em>float</em>) &#8211; Output grid cell size in Z</li>
+<li><strong>reciprocal</strong> (<em>int</em>) &#8211; Output reciprocal of values (0:No, 1:Yes) for resistivity?</li>
 </ul>
 </td>
 </tr>
@@ -245,8 +248,8 @@ created from conductivity data.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>ini</strong> (<em>str</em>) – File name of the INI file to create (forces correct suffix)</li>
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">IP_PLOT</span></code></li>
+<li><strong>ini</strong> (<em>str</em>) &#8211; File name of the INI file to create (forces correct suffix)</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ip-plot"><span class="std std-ref">IP_PLOT constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -266,16 +269,16 @@ created from conductivity data.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</li>
-<li><strong>line_lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – Lines to export (Name, Symbol)</li>
-<li><strong>locations_only</strong> (<em>int</em>) – Locations only (0: No, 1: Yes)?</li>
-<li><strong>include_z</strong> (<em>int</em>) – Include Z values (0: No, 1: Yes)?</li>
-<li><strong>chan</strong> (<em>str</em>) – <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> channel name (can be “” if exporting locations only)</li>
-<li><strong>error_chan</strong> (<em>str</em>) – Error channel name (can be “” if exporting locations only)</li>
-<li><strong>mask_chan</strong> (<em>str</em>) – Mask channel name (can be “”)</li>
-<li><strong>ip_type</strong> (<em>int</em>) – IPTYPE (1: Vp, 2: Chargeability)</li>
-<li><strong>comments</strong> (<em>str</em>) – Comments (can be “”)</li>
-<li><strong>obs</strong> (<em>str</em>) – Output OBS file name</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</li>
+<li><strong>line_lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; Lines to export (Name, Symbol)</li>
+<li><strong>locations_only</strong> (<em>int</em>) &#8211; Locations only (0: No, 1: Yes)?</li>
+<li><strong>include_z</strong> (<em>int</em>) &#8211; Include Z values (0: No, 1: Yes)?</li>
+<li><strong>chan</strong> (<em>str</em>) &#8211; <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> channel name (can be &#8220;&#8221; if exporting locations only)</li>
+<li><strong>error_chan</strong> (<em>str</em>) &#8211; Error channel name (can be &#8220;&#8221; if exporting locations only)</li>
+<li><strong>mask_chan</strong> (<em>str</em>) &#8211; Mask channel name (can be &#8220;&#8221;)</li>
+<li><strong>ip_type</strong> (<em>int</em>) &#8211; IPTYPE (1: Vp, 2: Chargeability)</li>
+<li><strong>comments</strong> (<em>str</em>) &#8211; Comments (can be &#8220;&#8221;)</li>
+<li><strong>obs</strong> (<em>str</em>) &#8211; Output OBS file name</li>
 </ul>
 </td>
 </tr>
@@ -298,17 +301,17 @@ UBC <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxap
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database to export from</li>
-<li><strong>file</strong> (<em>str</em>) – Name of the file</li>
-<li><strong>line</strong> (<em>str</em>) – Name of the line</li>
-<li><strong>res_data</strong> (<em>str</em>) – Resistivity (data) channel</li>
-<li><strong>ip_data</strong> (<em>str</em>) – <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> (data) channel (can be “”)</li>
-<li><strong>res_model</strong> (<em>str</em>) – Image model resistivity channel (can be “”)</li>
-<li><strong>ip_model</strong> (<em>str</em>) – Image model <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> channel (can be “”)</li>
-<li><strong>res_synth</strong> (<em>str</em>) – Image model synthetic resistivity channel (can be “”)</li>
-<li><strong>ip_synth</strong> (<em>str</em>) – Image model synthetic <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> channel (can be “”)</li>
-<li><strong>res_poly</strong> (<em>str</em>) – Resistivity (polygon) channel (can be “”)</li>
-<li><strong>ip_poly</strong> (<em>str</em>) – <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> (polygon) channel (can be “”)</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database to export from</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; Name of the file</li>
+<li><strong>line</strong> (<em>str</em>) &#8211; Name of the line</li>
+<li><strong>res_data</strong> (<em>str</em>) &#8211; Resistivity (data) channel</li>
+<li><strong>ip_data</strong> (<em>str</em>) &#8211; <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> (data) channel (can be &#8220;&#8221;)</li>
+<li><strong>res_model</strong> (<em>str</em>) &#8211; Image model resistivity channel (can be &#8220;&#8221;)</li>
+<li><strong>ip_model</strong> (<em>str</em>) &#8211; Image model <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> channel (can be &#8220;&#8221;)</li>
+<li><strong>res_synth</strong> (<em>str</em>) &#8211; Image model synthetic resistivity channel (can be &#8220;&#8221;)</li>
+<li><strong>ip_synth</strong> (<em>str</em>) &#8211; Image model synthetic <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> channel (can be &#8220;&#8221;)</li>
+<li><strong>res_poly</strong> (<em>str</em>) &#8211; Resistivity (polygon) channel (can be &#8220;&#8221;)</li>
+<li><strong>ip_poly</strong> (<em>str</em>) &#8211; <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> (polygon) channel (can be &#8220;&#8221;)</li>
 </ul>
 </td>
 </tr>
@@ -318,7 +321,7 @@ UBC <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxap
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>Exports a line to an “.I2X” file.</p>
+<p>Exports a line to an &#8221;.I2X&#8221; file.</p>
 </dd></dl>
 
 <dl class="method">
@@ -330,9 +333,9 @@ UBC <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxap
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database to export from</li>
-<li><strong>chan</strong> (<em>str</em>) – Channel to export</li>
-<li><strong>title</strong> (<em>str</em>) – Title for IPDATA files</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database to export from</li>
+<li><strong>chan</strong> (<em>str</em>) &#8211; Channel to export</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title for IPDATA files</li>
 </ul>
 </td>
 </tr>
@@ -352,10 +355,10 @@ UBC <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxap
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database to export from</li>
-<li><strong>chan</strong> (<em>str</em>) – Channel to export</li>
-<li><strong>title</strong> (<em>str</em>) – Title for IPDATA files</li>
-<li><strong>dir</strong> (<em>str</em>) – Directory for IPDATA files</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database to export from</li>
+<li><strong>chan</strong> (<em>str</em>) &#8211; Channel to export</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title for IPDATA files</li>
+<li><strong>dir</strong> (<em>str</em>) &#8211; Directory for IPDATA files</li>
 </ul>
 </td>
 </tr>
@@ -375,15 +378,15 @@ UBC <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxap
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database to export from</li>
-<li><strong>title</strong> (<em>str</em>) – Title for first line of file</li>
-<li><strong>chan</strong> (<em>str</em>) – Channel to process</li>
-<li><strong>suffix</strong> (<em>str</em>) – File suffix (type)</li>
-<li><strong>filter</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">IP_FILTER</span></code></li>
-<li><strong>wts</strong> (<em>str</em>) – The Fraser Filter weights</li>
-<li><strong>stn1</strong> (<em>float</em>) – First Station position (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default)</li>
-<li><strong>stn2</strong> (<em>float</em>) – Last Station position  (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default)</li>
-<li><strong>max_n</strong> (<em>int</em>) – Maximum n spacing</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database to export from</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title for first line of file</li>
+<li><strong>chan</strong> (<em>str</em>) &#8211; Channel to process</li>
+<li><strong>suffix</strong> (<em>str</em>) &#8211; File suffix (type)</li>
+<li><strong>filter</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ip-filter"><span class="std std-ref">IP_FILTER constants</span></a></li>
+<li><strong>wts</strong> (<em>str</em>) &#8211; The Fraser Filter weights</li>
+<li><strong>stn1</strong> (<em>float</em>) &#8211; First Station position (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default)</li>
+<li><strong>stn2</strong> (<em>float</em>) &#8211; Last Station position  (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default)</li>
+<li><strong>max_n</strong> (<em>int</em>) &#8211; Maximum n spacing</li>
 </ul>
 </td>
 </tr>
@@ -394,8 +397,8 @@ UBC <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxap
 </div>
 <p><strong>Note:</strong></p>
 <p>The Fraser Filter weights apply to each N expansion above,
-and are listed as w1,w2,w3,…   Unspecified values beyond
-the list’s end are set to 1.0.</p>
+and are listed as w1,w2,w3,...   Unspecified values beyond
+the list&#8217;s end are set to 1.0.</p>
 </dd></dl>
 
 <dl class="method">
@@ -407,16 +410,16 @@ the list’s end are set to 1.0.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database to export from</li>
-<li><strong>title</strong> (<em>str</em>) – Title for first line of file</li>
-<li><strong>chan</strong> (<em>str</em>) – Channel to process</li>
-<li><strong>suffix</strong> (<em>str</em>) – File suffix (type)</li>
-<li><strong>filter</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">IP_FILTER</span></code></li>
-<li><strong>wts</strong> (<em>str</em>) – The Fraser Filter weights</li>
-<li><strong>stn1</strong> (<em>float</em>) – First Station position (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default)</li>
-<li><strong>stn2</strong> (<em>float</em>) – Last Station position  (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default)</li>
-<li><strong>max_n</strong> (<em>int</em>) – Maximum n spacing</li>
-<li><strong>dir</strong> (<em>str</em>) – Directory to export to</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database to export from</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title for first line of file</li>
+<li><strong>chan</strong> (<em>str</em>) &#8211; Channel to process</li>
+<li><strong>suffix</strong> (<em>str</em>) &#8211; File suffix (type)</li>
+<li><strong>filter</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ip-filter"><span class="std std-ref">IP_FILTER constants</span></a></li>
+<li><strong>wts</strong> (<em>str</em>) &#8211; The Fraser Filter weights</li>
+<li><strong>stn1</strong> (<em>float</em>) &#8211; First Station position (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default)</li>
+<li><strong>stn2</strong> (<em>float</em>) &#8211; Last Station position  (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default)</li>
+<li><strong>max_n</strong> (<em>int</em>) &#8211; Maximum n spacing</li>
+<li><strong>dir</strong> (<em>str</em>) &#8211; Directory to export to</li>
 </ul>
 </td>
 </tr>
@@ -427,8 +430,8 @@ the list’s end are set to 1.0.</p>
 </div>
 <p><strong>Note:</strong></p>
 <p>The Fraser Filter weights apply to each N expansion above,
-and are listed as w1,w2,w3,…   Unspecified values beyond
-the list’s end are set to 1.0.</p>
+and are listed as w1,w2,w3,...   Unspecified values beyond
+the list&#8217;s end are set to 1.0.</p>
 </dd></dl>
 
 <dl class="method">
@@ -440,10 +443,10 @@ the list’s end are set to 1.0.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database to export from</li>
-<li><strong>line</strong> (<em>str</em>) – Line to export</li>
-<li><strong>chan</strong> (<em>str</em>) – Channel to export</li>
-<li><strong>title</strong> (<em>str</em>) – Title for IPDATA files</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database to export from</li>
+<li><strong>line</strong> (<em>str</em>) &#8211; Line to export</li>
+<li><strong>chan</strong> (<em>str</em>) &#8211; Channel to export</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; Title for IPDATA files</li>
 </ul>
 </td>
 </tr>
@@ -463,10 +466,10 @@ the list’s end are set to 1.0.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database to export from</li>
-<li><strong>file</strong> (<em>str</em>) – SGDF file to create</li>
-<li><strong>chan</strong> (<em>str</em>) – Time Domain channel or Frequency Amplitude Channel</li>
-<li><strong>chan2</strong> (<em>str</em>) – Frequency Domain Phase channel (optional)</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database to export from</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; SGDF file to create</li>
+<li><strong>chan</strong> (<em>str</em>) &#8211; Time Domain channel or Frequency Amplitude Channel</li>
+<li><strong>chan2</strong> (<em>str</em>) &#8211; Frequency Domain Phase channel (optional)</li>
 </ul>
 </td>
 </tr>
@@ -486,14 +489,14 @@ the list’s end are set to 1.0.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</li>
-<li><strong>line</strong> (<em>str</em>) – Output line name</li>
-<li><strong>voltage_chan</strong> (<em>str</em>) – Output voltage channel name</li>
-<li><strong>current_chan</strong> (<em>str</em>) – Output current channel name</li>
-<li><strong>error_chan</strong> (<em>str</em>) – Output error channel name (“” for none)</li>
-<li><strong>obs</strong> (<em>str</em>) – Output OBS file name</li>
-<li><strong>topo</strong> (<em>str</em>) – Output TOPO file name</li>
-<li><strong>version</strong> (<em>float</em>) – Version number (3 or 5)</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</li>
+<li><strong>line</strong> (<em>str</em>) &#8211; Output line name</li>
+<li><strong>voltage_chan</strong> (<em>str</em>) &#8211; Output voltage channel name</li>
+<li><strong>current_chan</strong> (<em>str</em>) &#8211; Output current channel name</li>
+<li><strong>error_chan</strong> (<em>str</em>) &#8211; Output error channel name (&#8220;&#8221; for none)</li>
+<li><strong>obs</strong> (<em>str</em>) &#8211; Output OBS file name</li>
+<li><strong>topo</strong> (<em>str</em>) &#8211; Output TOPO file name</li>
+<li><strong>version</strong> (<em>float</em>) &#8211; Version number (3 or 5)</li>
 </ul>
 </td>
 </tr>
@@ -518,17 +521,17 @@ V/I gives volts/amp (or mV/mA).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>control</strong> (<em>str</em>) – Output control file name</li>
-<li><strong>n_iter</strong> (<em>int</em>) – niter</li>
-<li><strong>i_rest</strong> (<em>int</em>) – irest</li>
-<li><strong>chi_factor</strong> (<em>float</em>) – chifact</li>
-<li><strong>obs</strong> (<em>str</em>) – RES obs file</li>
-<li><strong>mesh</strong> (<em>str</em>) – Mesh file</li>
-<li><strong>topo</strong> (<em>str</em>) – Topography file (required)</li>
-<li><strong>initial</strong> (<em>str</em>) – Initial model file (can be “” or “NULL”)</li>
-<li><strong>ref_cond</strong> (<em>float</em>) – Reference model conductivity</li>
-<li><strong>alphas</strong> (<em>str</em>) – Alphas</li>
-<li><strong>wts</strong> (<em>str</em>) – Weights file</li>
+<li><strong>control</strong> (<em>str</em>) &#8211; Output control file name</li>
+<li><strong>n_iter</strong> (<em>int</em>) &#8211; niter</li>
+<li><strong>i_rest</strong> (<em>int</em>) &#8211; irest</li>
+<li><strong>chi_factor</strong> (<em>float</em>) &#8211; chifact</li>
+<li><strong>obs</strong> (<em>str</em>) &#8211; RES obs file</li>
+<li><strong>mesh</strong> (<em>str</em>) &#8211; Mesh file</li>
+<li><strong>topo</strong> (<em>str</em>) &#8211; Topography file (required)</li>
+<li><strong>initial</strong> (<em>str</em>) &#8211; Initial model file (can be &#8220;&#8221; or &#8220;NULL&#8221;)</li>
+<li><strong>ref_cond</strong> (<em>float</em>) &#8211; Reference model conductivity</li>
+<li><strong>alphas</strong> (<em>str</em>) &#8211; Alphas</li>
+<li><strong>wts</strong> (<em>str</em>) &#8211; Weights file</li>
 </ul>
 </td>
 </tr>
@@ -552,20 +555,20 @@ UBC 2D resistivity inversion program DCINV2D.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>control</strong> (<em>str</em>) – Output control file name</li>
-<li><strong>n_iter</strong> (<em>int</em>) – niter</li>
-<li><strong>chi_factor</strong> (<em>float</em>) – chifact</li>
-<li><strong>obs</strong> (<em>str</em>) – RES obs file</li>
-<li><strong>topo</strong> (<em>str</em>) – Topography file (required)</li>
-<li><strong>mesh_selection</strong> (<em>int</em>) – Mesh type <code class="xref py py-obj docutils literal"><span class="pre">IP_UBC_CONTROL</span></code> FILE, VALUE or DEFAULT</li>
-<li><strong>mesh</strong> (<em>str</em>) – Mesh file (can be “”) or value</li>
-<li><strong>initial_selection</strong> (<em>int</em>) – Initial model type <code class="xref py py-obj docutils literal"><span class="pre">IP_UBC_CONTROL</span></code> FILE, VALUE or DEFAULT</li>
-<li><strong>initial</strong> (<em>str</em>) – Initial model file (can be “”) or value</li>
-<li><strong>reference_selection</strong> (<em>int</em>) – Reference model type <code class="xref py py-obj docutils literal"><span class="pre">IP_UBC_CONTROL</span></code> FILE, VALUE or DEFAULT</li>
-<li><strong>ref_cond</strong> (<em>str</em>) – Reference model file (can be “”) or value(</li>
-<li><strong>alphas_selection</strong> (<em>int</em>) – Alphas type <code class="xref py py-obj docutils literal"><span class="pre">IP_UBC_CONTROL</span></code> FILE, VALUE, LENGTH or DEFAULT</li>
-<li><strong>alphas</strong> (<em>str</em>) – Alphas  file (can be “”), value or length</li>
-<li><strong>wts</strong> (<em>str</em>) – Weights file</li>
+<li><strong>control</strong> (<em>str</em>) &#8211; Output control file name</li>
+<li><strong>n_iter</strong> (<em>int</em>) &#8211; niter</li>
+<li><strong>chi_factor</strong> (<em>float</em>) &#8211; chifact</li>
+<li><strong>obs</strong> (<em>str</em>) &#8211; RES obs file</li>
+<li><strong>topo</strong> (<em>str</em>) &#8211; Topography file (required)</li>
+<li><strong>mesh_selection</strong> (<em>int</em>) &#8211; Mesh type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE or DEFAULT</li>
+<li><strong>mesh</strong> (<em>str</em>) &#8211; Mesh file (can be &#8220;&#8221;) or value</li>
+<li><strong>initial_selection</strong> (<em>int</em>) &#8211; Initial model type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE or DEFAULT</li>
+<li><strong>initial</strong> (<em>str</em>) &#8211; Initial model file (can be &#8220;&#8221;) or value</li>
+<li><strong>reference_selection</strong> (<em>int</em>) &#8211; Reference model type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE or DEFAULT</li>
+<li><strong>ref_cond</strong> (<em>str</em>) &#8211; Reference model file (can be &#8220;&#8221;) or value(</li>
+<li><strong>alphas_selection</strong> (<em>int</em>) &#8211; Alphas type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE, LENGTH or DEFAULT</li>
+<li><strong>alphas</strong> (<em>str</em>) &#8211; Alphas  file (can be &#8220;&#8221;), value or length</li>
+<li><strong>wts</strong> (<em>str</em>) &#8211; Weights file</li>
 </ul>
 </td>
 </tr>
@@ -589,13 +592,13 @@ UBC 2D resistivity inversion program DCINV2D.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</li>
-<li><strong>line</strong> (<em>str</em>) – Output line name</li>
-<li><strong>chan</strong> (<em>str</em>) – Output <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> channel name</li>
-<li><strong>error_chan</strong> (<em>str</em>) – Output error channel name (“” for none)</li>
-<li><strong>obs</strong> (<em>str</em>) – Output OBS file name</li>
-<li><strong>topo</strong> (<em>str</em>) – Output TOPO file name</li>
-<li><strong>version</strong> (<em>float</em>) – Version number (3 or 5)</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</li>
+<li><strong>line</strong> (<em>str</em>) &#8211; Output line name</li>
+<li><strong>chan</strong> (<em>str</em>) &#8211; Output <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> channel name</li>
+<li><strong>error_chan</strong> (<em>str</em>) &#8211; Output error channel name (&#8220;&#8221; for none)</li>
+<li><strong>obs</strong> (<em>str</em>) &#8211; Output OBS file name</li>
+<li><strong>topo</strong> (<em>str</em>) &#8211; Output TOPO file name</li>
+<li><strong>version</strong> (<em>float</em>) &#8211; Version number (3 or 5)</li>
 </ul>
 </td>
 </tr>
@@ -619,18 +622,18 @@ Include error channel output and version-specific formatting.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>control</strong> (<em>str</em>) – Output control file name</li>
-<li><strong>n_iter</strong> (<em>int</em>) – niter</li>
-<li><strong>i_rest</strong> (<em>int</em>) – irest</li>
-<li><strong>chi_factor</strong> (<em>float</em>) – chifact</li>
-<li><strong>obs</strong> (<em>str</em>) – <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> obs file</li>
-<li><strong>cond</strong> (<em>str</em>) – Conductivity file</li>
-<li><strong>mesh</strong> (<em>str</em>) – Mesh file</li>
-<li><strong>topo</strong> (<em>str</em>) – Topography file</li>
-<li><strong>initial</strong> (<em>str</em>) – Initial model file</li>
-<li><strong>ref_mod</strong> (<em>str</em>) – Reference model</li>
-<li><strong>alphas</strong> (<em>str</em>) – Alphas</li>
-<li><strong>wts</strong> (<em>str</em>) – Weights file</li>
+<li><strong>control</strong> (<em>str</em>) &#8211; Output control file name</li>
+<li><strong>n_iter</strong> (<em>int</em>) &#8211; niter</li>
+<li><strong>i_rest</strong> (<em>int</em>) &#8211; irest</li>
+<li><strong>chi_factor</strong> (<em>float</em>) &#8211; chifact</li>
+<li><strong>obs</strong> (<em>str</em>) &#8211; <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> obs file</li>
+<li><strong>cond</strong> (<em>str</em>) &#8211; Conductivity file</li>
+<li><strong>mesh</strong> (<em>str</em>) &#8211; Mesh file</li>
+<li><strong>topo</strong> (<em>str</em>) &#8211; Topography file</li>
+<li><strong>initial</strong> (<em>str</em>) &#8211; Initial model file</li>
+<li><strong>ref_mod</strong> (<em>str</em>) &#8211; Reference model</li>
+<li><strong>alphas</strong> (<em>str</em>) &#8211; Alphas</li>
+<li><strong>wts</strong> (<em>str</em>) &#8211; Weights file</li>
 </ul>
 </td>
 </tr>
@@ -654,22 +657,22 @@ UBC 2D <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>control</strong> (<em>str</em>) – Output control file name</li>
-<li><strong>n_iter</strong> (<em>int</em>) – niter</li>
-<li><strong>chi_factor</strong> (<em>float</em>) – chifact</li>
-<li><strong>obs</strong> (<em>str</em>) – RES obs file</li>
-<li><strong>topo</strong> (<em>str</em>) – Topography file (required)</li>
-<li><strong>cond_selection</strong> (<em>int</em>) – Conductivity type <code class="xref py py-obj docutils literal"><span class="pre">IP_UBC_CONTROL</span></code> FILE or VALUE</li>
-<li><strong>cond</strong> (<em>str</em>) – Conductivity file (can be “”) or value</li>
-<li><strong>mesh_selection</strong> (<em>int</em>) – Mesh type <code class="xref py py-obj docutils literal"><span class="pre">IP_UBC_CONTROL</span></code> FILE, VALUE or DEFAULT</li>
-<li><strong>mesh</strong> (<em>str</em>) – Mesh file (can be “”) or value</li>
-<li><strong>initial_selection</strong> (<em>int</em>) – Initial model type <code class="xref py py-obj docutils literal"><span class="pre">IP_UBC_CONTROL</span></code> FILE, VALUE or DEFAULT</li>
-<li><strong>initial</strong> (<em>str</em>) – Initial model file (can be “”) or value</li>
-<li><strong>reference_selection</strong> (<em>int</em>) – Reference model type <code class="xref py py-obj docutils literal"><span class="pre">IP_UBC_CONTROL</span></code> FILE, VALUE or DEFAULT</li>
-<li><strong>ref_cond</strong> (<em>str</em>) – Reference model file (can be “”) or value(</li>
-<li><strong>alphas_selection</strong> (<em>int</em>) – Alphas type <code class="xref py py-obj docutils literal"><span class="pre">IP_UBC_CONTROL</span></code> FILE, VALUE, LENGTH or DEFAULT</li>
-<li><strong>alphas</strong> (<em>str</em>) – Alphas  file (can be “”), value or length</li>
-<li><strong>wts</strong> (<em>str</em>) – Weights file</li>
+<li><strong>control</strong> (<em>str</em>) &#8211; Output control file name</li>
+<li><strong>n_iter</strong> (<em>int</em>) &#8211; niter</li>
+<li><strong>chi_factor</strong> (<em>float</em>) &#8211; chifact</li>
+<li><strong>obs</strong> (<em>str</em>) &#8211; RES obs file</li>
+<li><strong>topo</strong> (<em>str</em>) &#8211; Topography file (required)</li>
+<li><strong>cond_selection</strong> (<em>int</em>) &#8211; Conductivity type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE or VALUE</li>
+<li><strong>cond</strong> (<em>str</em>) &#8211; Conductivity file (can be &#8220;&#8221;) or value</li>
+<li><strong>mesh_selection</strong> (<em>int</em>) &#8211; Mesh type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE or DEFAULT</li>
+<li><strong>mesh</strong> (<em>str</em>) &#8211; Mesh file (can be &#8220;&#8221;) or value</li>
+<li><strong>initial_selection</strong> (<em>int</em>) &#8211; Initial model type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE or DEFAULT</li>
+<li><strong>initial</strong> (<em>str</em>) &#8211; Initial model file (can be &#8220;&#8221;) or value</li>
+<li><strong>reference_selection</strong> (<em>int</em>) &#8211; Reference model type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE or DEFAULT</li>
+<li><strong>ref_cond</strong> (<em>str</em>) &#8211; Reference model file (can be &#8220;&#8221;) or value(</li>
+<li><strong>alphas_selection</strong> (<em>int</em>) &#8211; Alphas type <a class="reference internal" href="#ip-ubc-control"><span class="std std-ref">IP_UBC_CONTROL constants</span></a> FILE, VALUE, LENGTH or DEFAULT</li>
+<li><strong>alphas</strong> (<em>str</em>) &#8211; Alphas  file (can be &#8220;&#8221;), value or length</li>
+<li><strong>wts</strong> (<em>str</em>) &#8211; Weights file</li>
 </ul>
 </td>
 </tr>
@@ -691,12 +694,12 @@ UBC 2D <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
-<li><strong>chan</strong> (<em>str</em>) – Channel to check</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database</li>
+<li><strong>chan</strong> (<em>str</em>) &#8211; Channel to check</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><code class="xref py py-obj docutils literal"><span class="pre">IP_DOMAIN</span></code></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#ip-domain"><span class="std std-ref">IP_DOMAIN constants</span></a></p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
@@ -718,9 +721,9 @@ UBC 2D <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>chan</strong> (<em>str</em>) – Input channel</li>
-<li><strong>label</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Returned label</li>
-<li><strong>units</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Returned units</li>
+<li><strong>chan</strong> (<em>str</em>) &#8211; Input channel</li>
+<li><strong>label</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Returned label</li>
+<li><strong>units</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Returned units</li>
 </ul>
 </td>
 </tr>
@@ -740,12 +743,12 @@ UBC 2D <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
-<li><strong>chan</strong> (<em>str</em>) – Channel to check</li>
-<li><strong>domain</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – <code class="xref py py-obj docutils literal"><span class="pre">IP_DOMAIN</span></code></li>
-<li><strong>delay</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Delay or Base Frequency</li>
-<li><strong>n_windows</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Number of time windows or frequencies</li>
-<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Time windows or frequencies</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database</li>
+<li><strong>chan</strong> (<em>str</em>) &#8211; Channel to check</li>
+<li><strong>domain</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; <a class="reference internal" href="#ip-domain"><span class="std std-ref">IP_DOMAIN constants</span></a></li>
+<li><strong>delay</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Delay or Base Frequency</li>
+<li><strong>n_windows</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Number of time windows or frequencies</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Time windows or frequencies</li>
 </ul>
 </td>
 </tr>
@@ -765,13 +768,13 @@ UBC 2D <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</li>
-<li><strong>line</strong> (<em>str</em>) – Line name (“” for all selected lines)</li>
-<li><strong>tx_rx</strong> (<em>int</em>) – Electrode type. 0:Tx, 1:Rx</li>
-<li><strong>v_vx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X locations</li>
-<li><strong>v_vy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y locations</li>
-<li><strong>v_vm1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> QC channel values (“QC” or “QC_IP”)</li>
-<li><strong>v_vm2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Resistivity QC channel values (“QC_RES”)</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</li>
+<li><strong>line</strong> (<em>str</em>) &#8211; Line name (&#8220;&#8221; for all selected lines)</li>
+<li><strong>tx_rx</strong> (<em>int</em>) &#8211; Electrode type. 0:Tx, 1:Rx</li>
+<li><strong>v_vx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; X locations</li>
+<li><strong>v_vy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Y locations</li>
+<li><strong>v_vm1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> QC channel values (&#8220;QC&#8221; or &#8220;QC_IP&#8221;)</li>
+<li><strong>v_vm2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Resistivity QC channel values (&#8220;QC_RES&#8221;)</li>
 </ul>
 </td>
 </tr>
@@ -794,14 +797,14 @@ Values returned for all currently selected lines.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</li>
-<li><strong>line</strong> (<em>str</em>) – Line name (“” for all selected lines)</li>
-<li><strong>tx_rx</strong> (<em>int</em>) – Electrode type. 0:Tx, 1:Rx</li>
-<li><strong>v_vx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X locations</li>
-<li><strong>v_vy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y locations</li>
-<li><strong>v_vm1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> QC channel values (“QC” or “QC_IP”)</li>
-<li><strong>v_vm2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Resistivity QC channel values (“QC_RES”)</li>
-<li><strong>v_vlines</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Line symbol values (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_INT" title="geosoft.gxapi.GS_INT"><code class="xref py py-obj docutils literal"><span class="pre">GS_INT</span></code></a>)</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</li>
+<li><strong>line</strong> (<em>str</em>) &#8211; Line name (&#8220;&#8221; for all selected lines)</li>
+<li><strong>tx_rx</strong> (<em>int</em>) &#8211; Electrode type. 0:Tx, 1:Rx</li>
+<li><strong>v_vx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; X locations</li>
+<li><strong>v_vy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Y locations</li>
+<li><strong>v_vm1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> QC channel values (&#8220;QC&#8221; or &#8220;QC_IP&#8221;)</li>
+<li><strong>v_vm2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Resistivity QC channel values (&#8220;QC_RES&#8221;)</li>
+<li><strong>v_vlines</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Line symbol values (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_INT" title="geosoft.gxapi.GS_INT"><code class="xref py py-obj docutils literal"><span class="pre">GS_INT</span></code></a>)</li>
 </ul>
 </td>
 </tr>
@@ -824,8 +827,8 @@ Values returned for all currently selected lines.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
-<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> object</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database</li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> object</li>
 </ul>
 </td>
 </tr>
@@ -845,9 +848,9 @@ Values returned for all currently selected lines.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</li>
-<li><strong>qc_type</strong> (<em>int</em>) – QC channel type.  <code class="xref py py-obj docutils literal"><span class="pre">IP_QCTYPE</span></code></li>
-<li><strong>chan</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to place name into</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</li>
+<li><strong>qc_type</strong> (<em>int</em>) &#8211; QC channel type.  <a class="reference internal" href="#ip-qctype"><span class="std std-ref">IP_QCTYPE constants</span></a></li>
+<li><strong>chan</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; String to place name into</li>
 </ul>
 </td>
 </tr>
@@ -863,8 +866,8 @@ Values returned for all currently selected lines.</p>
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>For <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a>, looks for “QC_IP”, then “QC_OffTime”, then “QC”.
-For Resistivity, looks for “QC_Res”, then “QC_OnTime” (case insensitive).</p>
+<p>For <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a>, looks for &#8220;QC_IP&#8221;, then &#8220;QC_OffTime&#8221;, then &#8220;QC&#8221;.
+For Resistivity, looks for &#8220;QC_Res&#8221;, then &#8220;QC_OnTime&#8221; (case insensitive).</p>
 </dd></dl>
 
 <dl class="method">
@@ -876,12 +879,12 @@ For Resistivity, looks for “QC_Res”, then “QC_OnTime” (case insensitive)
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database to import data to</li>
-<li><strong>line</strong> (<em>str</em>) – Line name</li>
-<li><strong>x_min</strong> (<em>float</em>) – Starting “X” (station) value (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default)</li>
-<li><strong>x_max</strong> (<em>float</em>) – Ending “X” (station) value (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default)</li>
-<li><strong>x_inc</strong> (<em>float</em>) – “X” increment along the line (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default = half “A” separation)</li>
-<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Returned topography values</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database to import data to</li>
+<li><strong>line</strong> (<em>str</em>) &#8211; Line name</li>
+<li><strong>x_min</strong> (<em>float</em>) &#8211; Starting &#8220;X&#8221; (station) value (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default)</li>
+<li><strong>x_max</strong> (<em>float</em>) &#8211; Ending &#8220;X&#8221; (station) value (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default)</li>
+<li><strong>x_inc</strong> (<em>float</em>) &#8211; &#8220;X&#8221; increment along the line (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a> for default = half &#8220;A&#8221; separation)</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Returned topography values</li>
 </ul>
 </td>
 </tr>
@@ -906,9 +909,9 @@ the Akima spline. Ends are extrapolated using the end data points.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>ip_sys</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">IP_SYS</span></code></li>
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> Handle</li>
-<li><strong>dump_file</strong> (<em>str</em>) – Dump file name</li>
+<li><strong>ip_sys</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ip-sys"><span class="std std-ref">IP_SYS constants</span></a></li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> Handle</li>
+<li><strong>dump_file</strong> (<em>str</em>) &#8211; Dump file name</li>
 </ul>
 </td>
 </tr>
@@ -928,9 +931,9 @@ the Akima spline. Ends are extrapolated using the end data points.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database to import data to</li>
-<li><strong>grid</strong> (<em>str</em>) – The name of the grid file, with decorations</li>
-<li><strong>chan</strong> (<em>str</em>) – The name of the channel to import to</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database to import data to</li>
+<li><strong>grid</strong> (<em>str</em>) &#8211; The name of the grid file, with decorations</li>
+<li><strong>chan</strong> (<em>str</em>) &#8211; The name of the channel to import to</li>
 </ul>
 </td>
 </tr>
@@ -941,7 +944,7 @@ the Akima spline. Ends are extrapolated using the end data points.</p>
 </div>
 <p><strong>Note:</strong></p>
 <p>Data is imported to the specified channel.
-The values are interpolated at each row’s X and Y
+The values are interpolated at each row&#8217;s X and Y
 positions.</p>
 </dd></dl>
 
@@ -954,18 +957,18 @@ positions.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database to import to</li>
-<li><strong>file</strong> (<em>str</em>) – Name of file to import</li>
-<li><strong>line</strong> (<em>str</em>) – Line to import to</li>
-<li><strong>res_data</strong> (<em>str</em>) – Resistivity (data) channel</li>
-<li><strong>ip_data</strong> (<em>str</em>) – <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> (data) channel (can be “”)</li>
-<li><strong>res_model</strong> (<em>str</em>) – Image model resistivity channel (can be “”)</li>
-<li><strong>ip_model</strong> (<em>str</em>) – Image model <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> channel (can be “”)</li>
-<li><strong>res_synth</strong> (<em>str</em>) – Image model synthetic resistivity channel (can be “”)</li>
-<li><strong>ip_synth</strong> (<em>str</em>) – Image model synthetic <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> channel (can be “”)</li>
-<li><strong>res_poly</strong> (<em>str</em>) – Resistivity (polygon) channel (can be “”)</li>
-<li><strong>ip_poly</strong> (<em>str</em>) – <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> (polygon) channel (can be “”)</li>
-<li><strong>mode</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">IP_I2XIMPMODE</span></code></li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database to import to</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; Name of file to import</li>
+<li><strong>line</strong> (<em>str</em>) &#8211; Line to import to</li>
+<li><strong>res_data</strong> (<em>str</em>) &#8211; Resistivity (data) channel</li>
+<li><strong>ip_data</strong> (<em>str</em>) &#8211; <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> (data) channel (can be &#8220;&#8221;)</li>
+<li><strong>res_model</strong> (<em>str</em>) &#8211; Image model resistivity channel (can be &#8220;&#8221;)</li>
+<li><strong>ip_model</strong> (<em>str</em>) &#8211; Image model <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> channel (can be &#8220;&#8221;)</li>
+<li><strong>res_synth</strong> (<em>str</em>) &#8211; Image model synthetic resistivity channel (can be &#8220;&#8221;)</li>
+<li><strong>ip_synth</strong> (<em>str</em>) &#8211; Image model synthetic <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> channel (can be &#8220;&#8221;)</li>
+<li><strong>res_poly</strong> (<em>str</em>) &#8211; Resistivity (polygon) channel (can be &#8220;&#8221;)</li>
+<li><strong>ip_poly</strong> (<em>str</em>) &#8211; <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> (polygon) channel (can be &#8220;&#8221;)</li>
+<li><strong>mode</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ip-i2ximpmode"><span class="std std-ref">IP_I2XIMPMODE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -975,7 +978,7 @@ positions.</p>
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>Imports a single “.I2X” file to a specified line.
+<p>Imports a single &#8221;.I2X&#8221; file to a specified line.
 If the line does not exist, it will be created.</p>
 </dd></dl>
 
@@ -988,20 +991,20 @@ If the line does not exist, it will be created.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database to import to</li>
-<li><strong>file</strong> (<em>str</em>) – Name of file to import</li>
-<li><strong>line</strong> (<em>str</em>) – Line to import to</li>
-<li><strong>res_data</strong> (<em>str</em>) – Resistivity (data) channel</li>
-<li><strong>ip_data</strong> (<em>str</em>) – <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> (data) channel (can be “”)</li>
-<li><strong>res_model</strong> (<em>str</em>) – Image model resistivity channel (can be “”)</li>
-<li><strong>ip_model</strong> (<em>str</em>) – Image model <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> channel (can be “”)</li>
-<li><strong>res_synth</strong> (<em>str</em>) – Image model synthetic resistivity channel (can be “”)</li>
-<li><strong>ip_synth</strong> (<em>str</em>) – Image model synthetic <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> channel (can be “”)</li>
-<li><strong>res_poly</strong> (<em>str</em>) – Resistivity (polygon) channel (can be “”)</li>
-<li><strong>ip_poly</strong> (<em>str</em>) – <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> (polygon) channel (can be “”)</li>
-<li><strong>res_zonge</strong> (<em>str</em>) – Zonge Resistivity channel (can be “”)</li>
-<li><strong>ip_zonge</strong> (<em>str</em>) – Zonge <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> channel (can be “”)</li>
-<li><strong>mode</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">IP_I2XIMPMODE</span></code></li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database to import to</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; Name of file to import</li>
+<li><strong>line</strong> (<em>str</em>) &#8211; Line to import to</li>
+<li><strong>res_data</strong> (<em>str</em>) &#8211; Resistivity (data) channel</li>
+<li><strong>ip_data</strong> (<em>str</em>) &#8211; <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> (data) channel (can be &#8220;&#8221;)</li>
+<li><strong>res_model</strong> (<em>str</em>) &#8211; Image model resistivity channel (can be &#8220;&#8221;)</li>
+<li><strong>ip_model</strong> (<em>str</em>) &#8211; Image model <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> channel (can be &#8220;&#8221;)</li>
+<li><strong>res_synth</strong> (<em>str</em>) &#8211; Image model synthetic resistivity channel (can be &#8220;&#8221;)</li>
+<li><strong>ip_synth</strong> (<em>str</em>) &#8211; Image model synthetic <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> channel (can be &#8220;&#8221;)</li>
+<li><strong>res_poly</strong> (<em>str</em>) &#8211; Resistivity (polygon) channel (can be &#8220;&#8221;)</li>
+<li><strong>ip_poly</strong> (<em>str</em>) &#8211; <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> (polygon) channel (can be &#8220;&#8221;)</li>
+<li><strong>res_zonge</strong> (<em>str</em>) &#8211; Zonge Resistivity channel (can be &#8220;&#8221;)</li>
+<li><strong>ip_zonge</strong> (<em>str</em>) &#8211; Zonge <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> channel (can be &#8220;&#8221;)</li>
+<li><strong>mode</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ip-i2ximpmode"><span class="std std-ref">IP_I2XIMPMODE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1011,7 +1014,7 @@ If the line does not exist, it will be created.</p>
 <p><span class="versionmodified">New in version 6.1.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>Imports a single “.I2X” file to a specified line.
+<p>Imports a single &#8221;.I2X&#8221; file to a specified line.
 If the line does not exist, it will be created.</p>
 </dd></dl>
 
@@ -1024,8 +1027,8 @@ If the line does not exist, it will be created.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database to import to</li>
-<li><strong>file</strong> (<em>str</em>) – GDD file name</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database to import to</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; GDD file name</li>
 </ul>
 </td>
 </tr>
@@ -1045,9 +1048,9 @@ If the line does not exist, it will be created.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database to import to</li>
-<li><strong>file</strong> (<em>str</em>) – IPDATA file name</li>
-<li><strong>chan</strong> (<em>str</em>) – Channel to import to</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database to import to</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; IPDATA file name</li>
+<li><strong>chan</strong> (<em>str</em>) &#8211; Channel to import to</li>
 </ul>
 </td>
 </tr>
@@ -1067,10 +1070,10 @@ If the line does not exist, it will be created.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database to import to</li>
-<li><strong>file</strong> (<em>str</em>) – IPDATA file name</li>
-<li><strong>chan</strong> (<em>str</em>) – Channel to import to (default is “<a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a>”)</li>
-<li><strong>chan2</strong> (<em>str</em>) – (optional) Second channel to import to</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database to import to</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; IPDATA file name</li>
+<li><strong>chan</strong> (<em>str</em>) &#8211; Channel to import to (default is &#8220;<a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a>&#8221;)</li>
+<li><strong>chan2</strong> (<em>str</em>) &#8211; (optional) Second channel to import to</li>
 </ul>
 </td>
 </tr>
@@ -1097,9 +1100,9 @@ domain.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database to import to</li>
-<li><strong>file</strong> (<em>str</em>) – File to import from</li>
-<li><strong>chan</strong> (<em>str</em>) – Channel to import</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database to import to</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; File to import from</li>
+<li><strong>chan</strong> (<em>str</em>) &#8211; Channel to import</li>
 </ul>
 </td>
 </tr>
@@ -1109,8 +1112,8 @@ domain.</p>
 <p><span class="versionmodified">New in version 5.1.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>This import produces a limited <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> data set with no Current “I”,
-Voltage “Vp” or Apparent Resistivity “ResApp” values.</p>
+<p>This import produces a limited <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> data set with no Current &#8220;I&#8221;,
+Voltage &#8220;Vp&#8221; or Apparent Resistivity &#8220;ResApp&#8221; values.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1122,9 +1125,9 @@ Voltage “Vp” or Apparent Resistivity “ResApp” values.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database to import to</li>
-<li><strong>file</strong> (<em>str</em>) – File to import from</li>
-<li><strong>chan</strong> (<em>str</em>) – Channel to import</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database to import to</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; File to import from</li>
+<li><strong>chan</strong> (<em>str</em>) &#8211; Channel to import</li>
 </ul>
 </td>
 </tr>
@@ -1147,8 +1150,8 @@ Data is merged on basis of Stn and N value.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database to import to</li>
-<li><strong>file</strong> (<em>str</em>) – SGDF file name</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database to import to</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; SGDF file name</li>
 </ul>
 </td>
 </tr>
@@ -1168,8 +1171,8 @@ Data is merged on basis of Stn and N value.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database to calculate topography for</li>
-<li><strong>csv</strong> (<em>str</em>) – The name of CSV file</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database to calculate topography for</li>
+<li><strong>csv</strong> (<em>str</em>) &#8211; The name of CSV file</li>
 </ul>
 </td>
 </tr>
@@ -1192,8 +1195,8 @@ is interpolated from the input topography values.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database to calculate topography for</li>
-<li><strong>grid</strong> (<em>str</em>) – The name of the grid file, with decorations</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database to calculate topography for</li>
+<li><strong>grid</strong> (<em>str</em>) &#8211; The name of the grid file, with decorations</li>
 </ul>
 </td>
 </tr>
@@ -1208,32 +1211,6 @@ is interpolated from the input topography grid.</p>
 </dd></dl>
 
 <dl class="classmethod">
-<dt id="geosoft.gxapi.GXIP.import_ubc2_d_topo">
-<em class="property">classmethod </em><code class="descname">import_ubc2_d_topo</code><span class="sig-paren">(</span><em>file</em>, <em>elev0</em>, <em>vv_x</em>, <em>vv_z</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIP.import_ubc2_d_topo" title="Permalink to this definition">¶</a></dt>
-<dd><p>Import a Topography file from the UBC IPINV2D program.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>file</strong> (<em>str</em>) – UBC Topo file to import</li>
-<li><strong>elev0</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Returned top of mesh elevation</li>
-<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Topography X values</li>
-<li><strong>vv_z</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Topography Z values (elevations)</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="versionadded">
-<p><span class="versionmodified">New in version 7.1.</span></p>
-</div>
-<p><strong>Note:</strong></p>
-<p>Imports the maximum elevation (top of mesh)
-as well as the topo (X, Z) values.</p>
-</dd></dl>
-
-<dl class="classmethod">
 <dt id="geosoft.gxapi.GXIP.import_ubc2_dmod">
 <em class="property">classmethod </em><code class="descname">import_ubc2_dmod</code><span class="sig-paren">(</span><em>file</em>, <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIP.import_ubc2_dmod" title="Permalink to this definition">¶</a></dt>
 <dd><p>Import a MOD file from the UBC IPINV2D program.</p>
@@ -1242,8 +1219,8 @@ as well as the topo (X, Z) values.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>file</strong> (<em>str</em>) – UBC MOD file name to import</li>
-<li><strong>type</strong> (<em>int</em>) – 0 - CON, 1 - CHG</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; UBC MOD file name to import</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; 0 - CON, 1 - CHG</li>
 </ul>
 </td>
 </tr>
@@ -1273,11 +1250,11 @@ padding values to dummies based on the type of file.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>file</strong> (<em>str</em>) – UBC MSH file to import</li>
-<li><strong>x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Returned origin X (top left corner)</li>
-<li><strong>z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Returned origin Z (top left corner)</li>
-<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Cell widths  (left to right) (real)</li>
-<li><strong>vv_z</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Cell heights (top down) (real)</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; UBC MSH file to import</li>
+<li><strong>x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Returned origin X (top left corner)</li>
+<li><strong>z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Returned origin Z (top left corner)</li>
+<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Cell widths  (left to right) (real)</li>
+<li><strong>vv_z</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Cell heights (top down) (real)</li>
 </ul>
 </td>
 </tr>
@@ -1290,6 +1267,32 @@ padding values to dummies based on the type of file.</p>
 <p>Imports the MSH file geometry.</p>
 </dd></dl>
 
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIP.import_ubc_2d_topo">
+<em class="property">classmethod </em><code class="descname">import_ubc_2d_topo</code><span class="sig-paren">(</span><em>file</em>, <em>elev0</em>, <em>vv_x</em>, <em>vv_z</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIP.import_ubc_2d_topo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Import a Topography file from the UBC IPINV2D program.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>file</strong> (<em>str</em>) &#8211; UBC Topo file to import</li>
+<li><strong>elev0</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Returned top of mesh elevation</li>
+<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Topography X values</li>
+<li><strong>vv_z</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Topography Z values (elevations)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 7.1.</span></p>
+</div>
+<p><strong>Note:</strong></p>
+<p>Imports the maximum elevation (top of mesh)
+as well as the topo (X, Z) values.</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.import_zonge_avg">
 <code class="descname">import_zonge_avg</code><span class="sig-paren">(</span><em>db</em>, <em>file</em>, <em>line</em>, <em>scale</em>, <em>mult</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIP.import_zonge_avg" title="Permalink to this definition">¶</a></dt>
@@ -1299,11 +1302,11 @@ padding values to dummies based on the type of file.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database to import to</li>
-<li><strong>file</strong> (<em>str</em>) – FLD file name</li>
-<li><strong>line</strong> (<em>float</em>) – Line number (will be scaled if applicable)</li>
-<li><strong>scale</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">IP_STNSCALE</span></code></li>
-<li><strong>mult</strong> (<em>float</em>) – Line, station multiplier (for <a class="reference internal" href="#geosoft.gxapi.IP_STNSCALE_VALUE" title="geosoft.gxapi.IP_STNSCALE_VALUE"><code class="xref py py-obj docutils literal"><span class="pre">IP_STNSCALE_VALUE</span></code></a>)</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database to import to</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; FLD file name</li>
+<li><strong>line</strong> (<em>float</em>) &#8211; Line number (will be scaled if applicable)</li>
+<li><strong>scale</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ip-stnscale"><span class="std std-ref">IP_STNSCALE constants</span></a></li>
+<li><strong>mult</strong> (<em>float</em>) &#8211; Line, station multiplier (for <a class="reference internal" href="#geosoft.gxapi.IP_STNSCALE_VALUE" title="geosoft.gxapi.IP_STNSCALE_VALUE"><code class="xref py py-obj docutils literal"><span class="pre">IP_STNSCALE_VALUE</span></code></a>)</li>
 </ul>
 </td>
 </tr>
@@ -1325,10 +1328,10 @@ padding values to dummies based on the type of file.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database to import to</li>
-<li><strong>file</strong> (<em>str</em>) – FLD file name</li>
-<li><strong>scale</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">IP_STNSCALE</span></code></li>
-<li><strong>mult</strong> (<em>float</em>) – Line, station multiplier (for <a class="reference internal" href="#geosoft.gxapi.IP_STNSCALE_VALUE" title="geosoft.gxapi.IP_STNSCALE_VALUE"><code class="xref py py-obj docutils literal"><span class="pre">IP_STNSCALE_VALUE</span></code></a>)</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database to import to</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; FLD file name</li>
+<li><strong>scale</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ip-stnscale"><span class="std std-ref">IP_STNSCALE constants</span></a></li>
+<li><strong>mult</strong> (<em>float</em>) &#8211; Line, station multiplier (for <a class="reference internal" href="#geosoft.gxapi.IP_STNSCALE_VALUE" title="geosoft.gxapi.IP_STNSCALE_VALUE"><code class="xref py py-obj docutils literal"><span class="pre">IP_STNSCALE_VALUE</span></code></a>)</li>
 </ul>
 </td>
 </tr>
@@ -1366,8 +1369,8 @@ The line direction is taken from the <a class="reference internal" href="#geosof
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
-<li><strong>line</strong> (<em>str</em>) – Line name</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database</li>
+<li><strong>line</strong> (<em>str</em>) &#8211; Line name</li>
 </ul>
 </td>
 </tr>
@@ -1393,12 +1396,12 @@ The line direction is taken from the <a class="reference internal" href="#geosof
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
-<li><strong>line</strong> (<em>str</em>) – Line name</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database</li>
+<li><strong>line</strong> (<em>str</em>) &#8211; Line name</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><code class="xref py py-obj docutils literal"><span class="pre">IP_ARRAY</span></code></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#ip-array"><span class="std std-ref">IP_ARRAY constants</span></a></p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
@@ -1414,17 +1417,17 @@ The line direction is taken from the <a class="reference internal" href="#geosof
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.new_xy_database">
 <code class="descname">new_xy_database</code><span class="sig-paren">(</span><em>db</em>, <em>new_db</em>, <em>chan_vv</em>, <em>mask</em>, <em>pr_n_val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIP.new_xy_database" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a subset database using a mask channel, “N” value</p>
+<dd><p>Create a subset database using a mask channel, &#8220;N&#8221; value</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</li>
-<li><strong>new_db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – New <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</li>
-<li><strong>chan_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Channel list</li>
-<li><strong>mask</strong> (<em>str</em>) – Mask channel</li>
-<li><strong>pr_n_val</strong> (<em>float</em>) – “N” Value</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</li>
+<li><strong>new_db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; New <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</li>
+<li><strong>chan_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Channel list</li>
+<li><strong>mask</strong> (<em>str</em>) &#8211; Mask channel</li>
+<li><strong>pr_n_val</strong> (<em>float</em>) &#8211; &#8220;N&#8221; Value</li>
 </ul>
 </td>
 </tr>
@@ -1461,8 +1464,8 @@ A single N value can also be selected (Dummy for all).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>job</strong> (<em>str</em>) – Job file name</li>
-<li><strong>type</strong> (<em>int</em>) – Job type <code class="xref py py-obj docutils literal"><span class="pre">IP_PLOT</span></code></li>
+<li><strong>job</strong> (<em>str</em>) &#8211; Job file name</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; Job type <a class="reference internal" href="#ip-plot"><span class="std std-ref">IP_PLOT constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1476,12 +1479,12 @@ A single N value can also be selected (Dummy for all).</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.pldp_convention">
 <code class="descname">pldp_convention</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIP.pldp_convention" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the user’s plot point convention for pole-dipole arrays.</p>
+<dd><p>Return the user&#8217;s plot point convention for pole-dipole arrays.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The user’s PLDP plot point convention <code class="xref py py-obj docutils literal"><span class="pre">IP_PLDP_CONV</span></code></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The user&#8217;s PLDP plot point convention <a class="reference internal" href="#ip-pldp-conv"><span class="std std-ref">IP_PLDP_CONV constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
@@ -1501,10 +1504,10 @@ A single N value can also be selected (Dummy for all).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</li>
-<li><strong>chan</strong> (<em>str</em>) – Channel to plot</li>
-<li><strong>con_file</strong> (<em>str</em>) – “IPPLOT” INI file name</li>
-<li><strong>map</strong> (<em>str</em>) – Map name to create</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</li>
+<li><strong>chan</strong> (<em>str</em>) &#8211; Channel to plot</li>
+<li><strong>con_file</strong> (<em>str</em>) &#8211; &#8220;IPPLOT&#8221; INI file name</li>
+<li><strong>map</strong> (<em>str</em>) &#8211; Map name to create</li>
 </ul>
 </td>
 </tr>
@@ -1527,11 +1530,11 @@ be modified by hand as required.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</li>
-<li><strong>chan</strong> (<em>str</em>) – Channel to plot</li>
-<li><strong>con_file</strong> (<em>str</em>) – “IPPLOT” INI file name</li>
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">IP_STACK_TYPE</span></code></li>
-<li><strong>map</strong> (<em>str</em>) – Map name to create</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</li>
+<li><strong>chan</strong> (<em>str</em>) &#8211; Channel to plot</li>
+<li><strong>con_file</strong> (<em>str</em>) &#8211; &#8220;IPPLOT&#8221; INI file name</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ip-stack-type"><span class="std std-ref">IP_STACK_TYPE constants</span></a></li>
+<li><strong>map</strong> (<em>str</em>) &#8211; Map name to create</li>
 </ul>
 </td>
 </tr>
@@ -1551,12 +1554,12 @@ be modified by hand as required.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</li>
-<li><strong>chan</strong> (<em>str</em>) – Channel to plot</li>
-<li><strong>con_file</strong> (<em>str</em>) – “IPPLOT” INI file name</li>
-<li><strong>type</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">IP_STACK_TYPE</span></code></li>
-<li><strong>map</strong> (<em>str</em>) – Map name to create</li>
-<li><strong>dir</strong> (<em>str</em>) – Directory to create files</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</li>
+<li><strong>chan</strong> (<em>str</em>) &#8211; Channel to plot</li>
+<li><strong>con_file</strong> (<em>str</em>) &#8211; &#8220;IPPLOT&#8221; INI file name</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ip-stack-type"><span class="std std-ref">IP_STACK_TYPE constants</span></a></li>
+<li><strong>map</strong> (<em>str</em>) &#8211; Map name to create</li>
+<li><strong>dir</strong> (<em>str</em>) &#8211; Directory to create files</li>
 </ul>
 </td>
 </tr>
@@ -1576,10 +1579,10 @@ be modified by hand as required.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
-<li><strong>ini_file</strong> (<em>str</em>) – “IPPLOT” INI file name</li>
-<li><strong>cur_line</strong> (<em>str</em>) – Current line name</li>
-<li><strong>map</strong> (<em>str</em>) – Map name to create</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database</li>
+<li><strong>ini_file</strong> (<em>str</em>) &#8211; &#8220;IPPLOT&#8221; INI file name</li>
+<li><strong>cur_line</strong> (<em>str</em>) &#8211; Current line name</li>
+<li><strong>map</strong> (<em>str</em>) &#8211; Map name to create</li>
 </ul>
 </td>
 </tr>
@@ -1602,11 +1605,11 @@ be modified by hand as required.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
-<li><strong>ini_file</strong> (<em>str</em>) – “IPPLOT” INI file name</li>
-<li><strong>cur_line</strong> (<em>str</em>) – Current line name</li>
-<li><strong>tag</strong> (<em>str</em>) – Tag for created grids</li>
-<li><strong>map</strong> (<em>str</em>) – Map name to create</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database</li>
+<li><strong>ini_file</strong> (<em>str</em>) &#8211; &#8220;IPPLOT&#8221; INI file name</li>
+<li><strong>cur_line</strong> (<em>str</em>) &#8211; Current line name</li>
+<li><strong>tag</strong> (<em>str</em>) &#8211; Tag for created grids</li>
+<li><strong>map</strong> (<em>str</em>) &#8211; Map name to create</li>
 </ul>
 </td>
 </tr>
@@ -1629,12 +1632,12 @@ be modified by hand as required.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
-<li><strong>ini_file</strong> (<em>str</em>) – “IPPLOT” INI file name</li>
-<li><strong>cur_line</strong> (<em>str</em>) – Current line name</li>
-<li><strong>tag</strong> (<em>str</em>) – Tag for created grids</li>
-<li><strong>map</strong> (<em>str</em>) – Map name to create</li>
-<li><strong>dir</strong> (<em>str</em>) – Directory to create files</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database</li>
+<li><strong>ini_file</strong> (<em>str</em>) &#8211; &#8220;IPPLOT&#8221; INI file name</li>
+<li><strong>cur_line</strong> (<em>str</em>) &#8211; Current line name</li>
+<li><strong>tag</strong> (<em>str</em>) &#8211; Tag for created grids</li>
+<li><strong>map</strong> (<em>str</em>) &#8211; Map name to create</li>
+<li><strong>dir</strong> (<em>str</em>) &#8211; Directory to create files</li>
 </ul>
 </td>
 </tr>
@@ -1657,8 +1660,8 @@ be modified by hand as required.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
-<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> object</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database</li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> object</li>
 </ul>
 </td>
 </tr>
@@ -1680,7 +1683,7 @@ QC, QC_RES.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database</td>
 </tr>
 </tbody>
 </table>
@@ -1688,25 +1691,25 @@ QC, QC_RES.</p>
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>This function recalculates “derived” channel values from
-“core” data.</p>
+<p>This function recalculates &#8220;derived&#8221; channel values from
+&#8220;core&#8221; data.</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li>Recalculates the “STN” and “N” channels, using the TX1,
+<li>Recalculates the &#8220;STN&#8221; and &#8220;N&#8221; channels, using the TX1,
 TX2, RX1 and RX2 channels (depending on the system).</li>
-<li>Recalculates the apparent resistivity “ResCalc”,
-average “IP_Avg” and metal factor “MF” channels</li>
-<li>Recalculates the “X” and “Y” channels. One of these will
-be equal to “STN”, the other to the internally stored
+<li>Recalculates the apparent resistivity &#8220;ResCalc&#8221;,
+average &#8220;IP_Avg&#8221; and metal factor &#8220;MF&#8221; channels</li>
+<li>Recalculates the &#8220;X&#8221; and &#8220;Y&#8221; channels. One of these will
+be equal to &#8220;STN&#8221;, the other to the internally stored
 line number for the current line.</li>
-<li>Recalculate the “Z” channel, based on the current “Topo”
-channel, and the “N” values.</li>
+<li>Recalculate the &#8220;Z&#8221; channel, based on the current &#8220;Topo&#8221;
+channel, and the &#8220;N&#8221; values.</li>
 </ol>
 </div></blockquote>
 <p>Warning: If you make a change to an electrode location, you
-would have to call <a class="reference internal" href="#geosoft.gxapi.GXIP.recalculate" title="geosoft.gxapi.GXIP.recalculate"><code class="xref py py-obj docutils literal"><span class="pre">recalculate</span></code></a>, then recalculate “Topo”
+would have to call <a class="reference internal" href="#geosoft.gxapi.GXIP.recalculate" title="geosoft.gxapi.GXIP.recalculate"><code class="xref py py-obj docutils literal"><span class="pre">recalculate</span></code></a>, then recalculate &#8220;Topo&#8221;
 (since the X and Y values would have changed), then call
-<a class="reference internal" href="#geosoft.gxapi.GXIP.recalculate_z" title="geosoft.gxapi.GXIP.recalculate_z"><code class="xref py py-obj docutils literal"><span class="pre">recalculate_z</span></code></a>, since “Z” values are based on “Topo” values.</p>
+<a class="reference internal" href="#geosoft.gxapi.GXIP.recalculate_z" title="geosoft.gxapi.GXIP.recalculate_z"><code class="xref py py-obj docutils literal"><span class="pre">recalculate_z</span></code></a>, since &#8220;Z&#8221; values are based on &#8220;Topo&#8221; values.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1718,8 +1721,8 @@ would have to call <a class="reference internal" href="#geosoft.gxapi.GXIP.recal
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
-<li><strong>recalculate_xyz</strong> (<em>int</em>) – Recalculate XYZ locations (TRUE or FALSE)?</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database</li>
+<li><strong>recalculate_xyz</strong> (<em>int</em>) &#8211; Recalculate XYZ locations (TRUE or FALSE)?</li>
 </ul>
 </td>
 </tr>
@@ -1741,7 +1744,7 @@ current X, Y and Z channel values from the station locations.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database</td>
 </tr>
 </tbody>
 </table>
@@ -1749,9 +1752,9 @@ current X, Y and Z channel values from the station locations.</p>
 <p><span class="versionmodified">New in version 5.1.1.</span></p>
 </div>
 <p><strong>Note:</strong></p>
-<p>The “Z” channel values are calculated as follows:
-If the “Topo” value is defined, then
-Z = Topo - 0.5*N*A, where “N” is the N-spacing, and
+<p>The &#8220;Z&#8221; channel values are calculated as follows:
+If the &#8220;Topo&#8221; value is defined, then
+Z = Topo - 0.5*N*A, where &#8220;N&#8221; is the N-spacing, and
 A is the A-spacing. If the Topography is not defined, then
 it is assumed to be equal to 0.</p>
 <div class="admonition seealso">
@@ -1769,8 +1772,8 @@ it is assumed to be equal to 0.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>job</strong> (<em>str</em>) – Job file name</li>
-<li><strong>type</strong> (<em>int</em>) – Job type  <code class="xref py py-obj docutils literal"><span class="pre">IP_PLOT</span></code></li>
+<li><strong>job</strong> (<em>str</em>) &#8211; Job file name</li>
+<li><strong>type</strong> (<em>int</em>) &#8211; Job type  <a class="reference internal" href="#ip-plot"><span class="std std-ref">IP_PLOT constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -1790,12 +1793,12 @@ it is assumed to be equal to 0.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
-<li><strong>chan</strong> (<em>str</em>) – Channel to check</li>
-<li><strong>domain</strong> (<em>int</em>) – <code class="xref py py-obj docutils literal"><span class="pre">IP_DOMAIN</span></code></li>
-<li><strong>delay</strong> (<em>float</em>) – Delay or Base Frequency</li>
-<li><strong>n_windows</strong> (<em>int</em>) – Number of time windows or frequencies</li>
-<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Time windows or frequencies</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database</li>
+<li><strong>chan</strong> (<em>str</em>) &#8211; Channel to check</li>
+<li><strong>domain</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#ip-domain"><span class="std std-ref">IP_DOMAIN constants</span></a></li>
+<li><strong>delay</strong> (<em>float</em>) &#8211; Delay or Base Frequency</li>
+<li><strong>n_windows</strong> (<em>int</em>) &#8211; Number of time windows or frequencies</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Time windows or frequencies</li>
 </ul>
 </td>
 </tr>
@@ -1815,13 +1818,13 @@ it is assumed to be equal to 0.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</li>
-<li><strong>line</strong> (<em>str</em>) – Line name (“” for all selected lines)</li>
-<li><strong>tx_rx</strong> (<em>int</em>) – Electrode type. 0:Tx, 1:Rx</li>
-<li><strong>v_vx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X locations</li>
-<li><strong>v_vy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y locations</li>
-<li><strong>v_vm1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> QC channel values (“QC” or “QC_IP”)</li>
-<li><strong>v_vm2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Resistivity QC channel values (“QC_RES”)</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</li>
+<li><strong>line</strong> (<em>str</em>) &#8211; Line name (&#8220;&#8221; for all selected lines)</li>
+<li><strong>tx_rx</strong> (<em>int</em>) &#8211; Electrode type. 0:Tx, 1:Rx</li>
+<li><strong>v_vx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; X locations</li>
+<li><strong>v_vy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Y locations</li>
+<li><strong>v_vm1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> QC channel values (&#8220;QC&#8221; or &#8220;QC_IP&#8221;)</li>
+<li><strong>v_vm2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Resistivity QC channel values (&#8220;QC_RES&#8221;)</li>
 </ul>
 </td>
 </tr>
@@ -1843,13 +1846,13 @@ it is assumed to be equal to 0.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</li>
-<li><strong>line</strong> (<em>str</em>) – Line name (“” for all selected lines)</li>
-<li><strong>tx_rx</strong> (<em>int</em>) – Electrode type. 0:Tx, 1:Rx</li>
-<li><strong>qc_type</strong> (<em>int</em>) – QC channel type.  <code class="xref py py-obj docutils literal"><span class="pre">IP_QCTYPE</span></code></li>
-<li><strong>v_vx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X locations</li>
-<li><strong>v_vy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y locations</li>
-<li><strong>v_vm</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – QC channel values (“QC”)</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</li>
+<li><strong>line</strong> (<em>str</em>) &#8211; Line name (&#8220;&#8221; for all selected lines)</li>
+<li><strong>tx_rx</strong> (<em>int</em>) &#8211; Electrode type. 0:Tx, 1:Rx</li>
+<li><strong>qc_type</strong> (<em>int</em>) &#8211; QC channel type.  <a class="reference internal" href="#ip-qctype"><span class="std std-ref">IP_QCTYPE constants</span></a></li>
+<li><strong>v_vx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; X locations</li>
+<li><strong>v_vy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Y locations</li>
+<li><strong>v_vm</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; QC channel values (&#8220;QC&#8221;)</li>
 </ul>
 </td>
 </tr>
@@ -1870,7 +1873,7 @@ it is assumed to be equal to 0.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>line</strong> (<em>str</em>) – Line name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>line</strong> (<em>str</em>) &#8211; Line name</td>
 </tr>
 </tbody>
 </table>
@@ -1889,7 +1892,7 @@ it is assumed to be equal to 0.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>append</strong> (<em>int</em>) – 0: Overwrite, 1: Append</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>append</strong> (<em>int</em>) &#8211; 0: Overwrite, 1: Append</td>
 </tr>
 </tbody>
 </table>
@@ -1900,26 +1903,26 @@ it is assumed to be equal to 0.</p>
 <p>By default, importing data overwrites existing data.
 Call this function before doing the import in order
 to append imported data to existing data.
-“Short” data channels will be dummied to the existing
+&#8220;Short&#8221; data channels will be dummied to the existing
 data length before the new data is appended.</p>
 </dd></dl>
 
 <dl class="classmethod">
-<dt id="geosoft.gxapi.GXIP.trim_ubc2_d_model">
-<em class="property">classmethod </em><code class="descname">trim_ubc2_d_model</code><span class="sig-paren">(</span><em>pg</em>, <em>trim_xl</em>, <em>trim_xr</em>, <em>trim_z</em>, <em>vv_x</em>, <em>vv_z</em>, <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIP.trim_ubc2_d_model" title="Permalink to this definition">¶</a></dt>
+<dt id="geosoft.gxapi.GXIP.trim_ubc_2d_model">
+<em class="property">classmethod </em><code class="descname">trim_ubc_2d_model</code><span class="sig-paren">(</span><em>pg</em>, <em>trim_xl</em>, <em>trim_xr</em>, <em>trim_z</em>, <em>vv_x</em>, <em>vv_z</em>, <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIP.trim_ubc_2d_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Trim the padding cells from the UBC IPINV2D Model.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Input model (unchanged)</li>
-<li><strong>trim_xl</strong> (<em>int</em>) – Cells to remove on left</li>
-<li><strong>trim_xr</strong> (<em>int</em>) – Cells to remove on right</li>
-<li><strong>trim_z</strong> (<em>int</em>) – Cells to remove on the bottom</li>
-<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Column widths (modified)</li>
-<li><strong>vv_z</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Row heights (modified)</li>
-<li><strong>x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Top left corner X (modified)</li>
+<li><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) &#8211; Input model (unchanged)</li>
+<li><strong>trim_xl</strong> (<em>int</em>) &#8211; Cells to remove on left</li>
+<li><strong>trim_xr</strong> (<em>int</em>) &#8211; Cells to remove on right</li>
+<li><strong>trim_z</strong> (<em>int</em>) &#8211; Cells to remove on the bottom</li>
+<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Column widths (modified)</li>
+<li><strong>vv_z</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Row heights (modified)</li>
+<li><strong>x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Top left corner X (modified)</li>
 </ul>
 </td>
 </tr>
@@ -1950,10 +1953,10 @@ and the origin is updated (still upper left corner).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</li>
-<li><strong>va_chan</strong> (<em>str</em>) – <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal"><span class="pre">GXVA</span></code></a> channel to use</li>
-<li><strong>chan</strong> (<em>str</em>) – New channel</li>
-<li><strong>windows</strong> (<em>str</em>) – Window list</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</li>
+<li><strong>va_chan</strong> (<em>str</em>) &#8211; <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal"><span class="pre">GXVA</span></code></a> channel to use</li>
+<li><strong>chan</strong> (<em>str</em>) &#8211; New channel</li>
+<li><strong>windows</strong> (<em>str</em>) &#8211; Window list</li>
 </ul>
 </td>
 </tr>
@@ -1979,7 +1982,7 @@ Window List Syntax:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – List of channels</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; List of channels</td>
 </tr>
 </tbody>
 </table>
@@ -1997,8 +2000,8 @@ Window List Syntax:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – List of channels</li>
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; List of channels</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database</li>
 </ul>
 </td>
 </tr>
@@ -2017,7 +2020,7 @@ Window List Syntax:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</td>
 </tr>
 </tbody>
 </table>
@@ -2037,8 +2040,8 @@ Window List Syntax:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</li>
-<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – Lines to write out</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a> object</li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; Lines to write out</li>
 </ul>
 </td>
 </tr>
@@ -2837,7 +2840,7 @@ guarantee no overlap with high N-values or closely spaced lines.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking
