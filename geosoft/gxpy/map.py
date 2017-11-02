@@ -32,6 +32,7 @@ from . import utility as gxu
 from . import dataframe as gxdf
 from . import group as gxg
 from . import view as gxv
+from . import coordinate_system as gxcs
 
 __version__ = geosoft.__version__
 
@@ -359,7 +360,7 @@ class Map:
                                 spatial data near the edge of the defined data area.
             :overwrite:         True to overwrite an existing map.  If False and map exists, raises
                                 ``MapException``.
-            :no_data_view:      True to create a map without a 'Data' view. Use :class:`geosoft.gxpy.view.View` and
+            :no_data_view:      True to create a map without a 'data' view. Use :class:`geosoft.gxpy.view.View` and
                                 :class:`geosoft.gxpy.view.View_3d` to add data views to a map.
 
         .. versionadded:: 9.2
@@ -482,6 +483,8 @@ class Map:
                      'figure' if (map_style == STYLE_FIGURE) else 'map',
                      inside_margin)
 
+        map._make_base_mm()
+
         return map
 
     @property
@@ -587,6 +590,26 @@ class Map:
         """Commit changes to the map."""
         self.gxmap.commit()
 
+    def _make_base_cm(self):
+        # scale the base view to cm
+        with gxv.View(self, name='*base', mode=gxv.WRITE_OLD) as view:
+            ex_cm = view.extent_map_cm()
+            view.locate(gxcs.Coordinate_system('cm'),
+                        map_location=(0,0),
+                        area=(0, 0, ex_cm[2], ex_cm[3]),
+                        scale=1.0)
+            pass
+
+    def _make_base_mm(self):
+        # scale the base view to mm
+        with gxv.View(self, name='*base', mode=gxv.WRITE_OLD) as view:
+            ex_cm = view.extent_map_cm()
+            view.locate(gxcs.Coordinate_system('mm'),
+                        map_location=(0, 0),
+                        area=(0, 0, ex_cm[2] * 10., ex_cm[3] * 10.),
+                        scale=1.0)
+            pass
+
     def extent_data_views(self):
         """
         Returns the extent of all data views on the map in map cm.
@@ -602,7 +625,7 @@ class Map:
 
         vlist = self.view_list
         ex = (1.0e10, 1.0e10, -1.0e10, -1.0e10)
-        base_view = self.classview('base').lower()
+        base_view = self.classview('*base').lower()
         for view_name in vlist:
             if view_name.lower() != base_view:
                 with gxv.View(self, view_name) as v:
@@ -742,9 +765,9 @@ class Map:
 
         Common view class names are::
 
-            'Base'      the base map/figure view, uses map cm
-            'Data'      the default data view for drawing spatial data.
-            'Section'   the default section view for things drawn in section
+            'base'      the base map/figure view, uses map cm
+            'data'      the default data view for drawing spatial data.
+            'section'   the default section view for things drawn in section
 
         Other class names may be defined, though they are not used by Geosoft.
 
@@ -765,9 +788,9 @@ class Map:
 
         Common view class names are::
 
-            'Base'      the base map/figure view, uses map cm
-            'Data'      the default data view for drawing spatial data.
-            'Section'   the default section view for things drawn in section
+            'base'      the base map/figure view, uses map cm
+            'data'      the default data view for drawing spatial data.
+            'section'   the default section view for things drawn in section
 
         .. versionadded:: 9.2
         """
@@ -1103,7 +1126,7 @@ class Map:
 
         .. versionadded:: 9.3
         """
-        self.gxmap.export_all_in_view(geotiff, "*Data", gxapi.rDUMMY, dpi, 
+        self.gxmap.export_all_in_view(geotiff, "*data", gxapi.rDUMMY, dpi,
             gxapi.MAP_EXPORT_BITS_24, gxapi.MAP_EXPORT_METHOD_NONE, 
             gxapi.MAP_EXPORT_FORMAT_GTIFF, "")
 
@@ -1126,7 +1149,7 @@ class _Mapplot:
     def __init__(self, map, data_view=None, ref_prefix='', **kwargs):
 
         if not (map.has_view(map.current_base_view) and map.has_view(map.current_data_view)):
-            raise MapException(_t("Map must have a '*Base' and '*Data' view."))
+            raise MapException(_t("Map must have a '*base' and '*data' view."))
 
         self._map = map
         self._ref_pre = ref_prefix

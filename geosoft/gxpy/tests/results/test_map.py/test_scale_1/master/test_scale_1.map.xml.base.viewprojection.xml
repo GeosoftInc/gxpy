@@ -27,8 +27,8 @@
       <Value index="7" value="GS_R8DM"/>
    </Item>
    <Units>
-      <Item name="Name" value=""/>
-      <Item name="Scale" value="GS_R8DM"/>
+      <Item name="Name" value="mm"/>
+      <Item name="Scale" value="0.001"/>
    </Units>
    <Orientation>
       <Item name="Type" value="0"/>

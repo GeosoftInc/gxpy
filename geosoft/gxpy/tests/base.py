@@ -24,7 +24,7 @@ import geosoft.gxpy.system as gxsys
 # To incorporate a diff tool the GXPY_DIFF_TOOL environment
 # variable should be defined.
 UPDATE_RESULTS = False
-UPDATE_RESULTS_DONT_ASK = False
+UPDATE_RESULTS_DONT_ASK = True
 
 # set to True to show viewer for each CRC call
 SHOW_TEST_VIEWERS = False
