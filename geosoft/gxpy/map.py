@@ -147,7 +147,8 @@ def unique_temporary_file_name(temproot, file_type='map'):
 
 def delete_files(file_name):
     """
-    Delete all files associates with this map name.
+    Delete all files associated with this map name.
+
     :param file_name:
 
     .. versionadded:: 9.2
@@ -189,6 +190,7 @@ def save_as_image(mapfile, imagefile, type=RASTER_FORMAT_PNG, pix_width=1000, pi
 def crc_map(mapfile, pix_width=1000):
     """
     Return the CRC of a map based on the output bitmap image.
+
     :param mapfile:     name of the map file
     :param pix_width:   image pixel width - use a higher resolution to test more detail
     :returns:           CRC as an int
@@ -212,9 +214,9 @@ class Map:
     Geosoft map files.
 
     A Geosoft map is a container for views.  A view has a defined coordinate system (2D or 3D) and
-    contains graphical elements defined relative to the coordinate system of the view.  The
-    ``geosoft.gxpy.view`` module provides classes and methods for working with individual 2D or
-    3D views.
+    contains groups of graphical elements defined relative to the coordinate system of the view.  The
+    :mod:`geosoft.gxpy.view` module provides classes and methods for working with individual 2D or
+    3D views, and the :mod:`geosoft.gxpy.group` modules contains classes that deal with drawing groups..
 
     Geosoft maps will always have a 2D 'base' view, which uses map cm as the coordinate system and is
     intended for drawing map annotations, such as titles, a scale bar, North arrow and legends.  The
@@ -489,7 +491,7 @@ class Map:
 
     @property
     def name(self):
-        """map name, base name of the map file"""
+        """map name, which is to root name of the map file"""
         return self._name
 
     @property
@@ -507,7 +509,7 @@ class Map:
     @property
     def metadata(self):
         """
-        Return the map metadata as a dictionary.  Can be set, in which case
+        Return the map file metadata as a dictionary.  Can be set, in which case
         the dictionary items passed will be added to, or replace existing metadata.
 
         .. versionadded:: 9.2
@@ -525,8 +527,11 @@ class Map:
     def current_data_view(self):
         """ 
         Current default data view which accepts drawing groups from Geosoft methods that do not
-        explicitly identify a view. Set this to a view that should accept default drawing groups.
-        If this is a 3D view, new groups are placed on the default drawing plane of the view.
+        explicitly identify a view.
+
+        Set this to a view that should accept default drawing groups.
+
+        If this is a 3D view, new 2D groups are placed on the default drawing plane of the view.
         """
         return self.get_class_name('data')
 
@@ -540,8 +545,9 @@ class Map:
     def current_base_view(self):
         """ 
         The current default base view which accepts map annotation drawing groups 
-        (like titles, North arrow, etc.) from Geosoft methods.  This can be set, though
-        Geosoft uses the 'base' view in most standard cases.
+        (like titles, North arrow, etc.) from Geosoft methods.
+
+        This can be set, though Geosoft uses the 'base' view in most standard cases.
         """
         return self.get_class_name('base')
 
@@ -553,7 +559,12 @@ class Map:
 
     @property
     def current_section_view(self):
-        """ The current default base view which accepts drawing commands from Geosoft methods."""
+        """
+        The current default section view which accepts drawing commands to a section
+        from Geosoft methods.
+
+        Can be set.
+        """
         return self.get_class_name('section')
 
     @current_section_view.setter
@@ -620,6 +631,7 @@ class Map:
     def _views(self, view_type=LIST_ALL):
         """
         Return dictionary of view names.
+
         :param view_type: `gxmap.LIST_ALL`, `gxapi.LIST_2D` or `gxapi.LIST_3D`
         :returns: list of views
         """
@@ -643,7 +655,12 @@ class Map:
         return self._views(LIST_3D)
 
     def aggregate_list(self, mode=0):
-        """list of aggregates on the map as 'view_name/group_name'"""
+        """
+        List of all aggregates in the map as 'view_name/group_name' (mode=0) or
+        'view_name/group_name/layer' (mode=1).
+
+        ..versionadded:: 9.2
+        """
         glst = gxapi.GXLST.create(gxg.GROUP_NAME_SIZE)
         self.gxmap.agg_list_ex(glst, mode, 0)
         return list(gxu.dict_from_lst(glst))
@@ -661,6 +678,8 @@ class Map:
         :param overwrite:   True to overwrite an existing view if it exists
         :param copy_all:    True to copy content of old to new, false to create an empty new view
                             with the same coordinate system, scale and clipping as the old view.
+
+        .. versionadded:: 9.2
         """
 
         old = self.classview(old)
@@ -685,7 +704,7 @@ class Map:
 
     def delete_view(self, name):
         """
-        Delete a view from a map. You cannot delete the last view in a mep.
+        Delete a view from a map. You cannot delete the last view in a map.
 
         :param name: name of the view to delete
 
@@ -756,9 +775,9 @@ class Map:
 
     def create_linked_3d_view(self, view, name='3D', area_on_map=(0, 0, 300, 300)):
         """
-        Create a linked 3D view inside a 2D map to a :class:`gxpy.view.View_3d` in a 3DV
+        Create a linked 3D view inside a 2D map to a `geosoft.gxpy.view.View_3d` in a 3DV
 
-        :param view:        :class:`gxpy.view.View_3d` instance
+        :param view:        `geosoft.gxpy.view.View_3d` instance
         :param name:        name of the linked view to create
         :param area_on_map: min_x, min_y, max_x, max_y) placement of view on map in mm
 
@@ -932,7 +951,7 @@ class Map:
         :param y_sep:       separation between Y annotations, default is calculated from data
         :param y_dec:       Y axis label decimals, default is 0
         :param compass:     True (default) to append compass direction to annotations
-        :param grid:        Plot grid lines:
+        :param grid:
 
                             ::
 
@@ -941,9 +960,9 @@ class Map:
                                 GRID_CROSSES    crosses at intersections
                                 GRID_LINES      lines
 
-        :param text_def:    ``gxg.Text_def``
-        :param edge_pen:    ``gxg.Pen``
-        :param grid_pen:    ``gxg.Pen``        
+        :param text_def:    `geosoft.gxpy.group.Text_def`
+        :param edge_pen:    `geosoft.gxpy.group.Pen`
+        :param grid_pen:    `geosoft.gxpy.group.Pen`
 
         .. versionadded:: 9.2
         """
@@ -1008,20 +1027,25 @@ class Map:
         """
         Annotate the data view axis
 
-        :param tick:    inner tick size in cm
-        :param offset:  posting offset from the edge in cm
-        :param sep:     separation between annotations, default is calculated from data
-        :param top:     TOP_IN or TOP_OUT (default) for vertical annotations
-        :param grid:    Plot grid lines:
+        :param view_name:   name of the data view to annotate
+        :param tick:        inner tick size in cm
+        :param offset:      posting offset from the edge in cm. The posting edge is adjusted to be outside
+                            character height for a subsequent call to an edge annotation.  This allows one to
+                            annotate both geographic and projected coordinates.
+        :param sep:         separation between annotations, default is calculated from data
+        :param top:         TOP_IN or TOP_OUT (default) for vertical annotations
+        :param grid:
 
-                        ::
+                            ::
 
-                            GRID_NONE       no grid
-                            GRID_DOTTED     dotted lines
-                            GRID_CROSSES    crosses at intersections
-                            GRID_LINES      lines
+                                GRID_NONE       no grid
+                                GRID_DOTTED     dotted lines
+                                GRID_CROSSES    crosses at intersections
+                                GRID_LINES      lines
 
-        :param grid_pen: color-thickness string
+        :param text_def:    `geosoft.gxpy.group.Text_def`
+        :param edge_pen:    `geosoft.gxpy.group.Pen`
+        :param grid_pen:    `geosoft.gxpy.group.Pen`
 
         .. versionadded:: 9.2
         """
@@ -1075,7 +1099,7 @@ class Map:
         Export map as a GeoTIFF image
 
         :param geotiff:     GeoTIFF file name
-        :param dpi:         DPI to use (Default is common screen resolution of 96)
+        :param dpi:         resolution in dots-per-inch, default is common screen resolution of 96 dpi.
 
         .. versionadded:: 9.3
         """
