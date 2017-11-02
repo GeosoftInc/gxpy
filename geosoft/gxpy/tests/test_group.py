@@ -88,7 +88,7 @@ class Test(GXPYTest):
         self.start()
 
         with gxmap.Map.new(data_area=(0, 0, 50, 40), coordinate_system='cm') as map:
-            with gxv.View(map, 'data') as v:
+            with gxv.View.open(map, 'data') as v:
                 self.assertFalse(bool(v.lock))
                 with gxg.Draw(v, 'rectangle') as g:
                     self.assertEqual(str(g), 'rectangle/data')
@@ -103,7 +103,7 @@ class Test(GXPYTest):
         self.start()
 
         with gxmap.Map.new(data_area=(0, 0, 50, 40), coordinate_system='cm') as map:
-            with gxv.View(map, 'data') as v:
+            with gxv.View.open(map, 'data') as v:
                 with gxg.Draw(v, 'rectangle') as g:
 
                     self.assertTrue(g.guid)
@@ -127,7 +127,7 @@ class Test(GXPYTest):
         self.start()
 
         with gxmap.Map.new(data_area=(0, 0, 50, 40), coordinate_system='cm') as map:
-            with gxv.View(map, 'data') as v:
+            with gxv.View.open(map, 'data') as v:
                 with gxg.Draw(v, 'rectangle') as g:
                     self.assertEqual(g.drawing_coordinate_system.unit_of_measure, 'cm')
                     g.drawing_coordinate_system = "NAD83 / UTM zone 15N"
@@ -143,7 +143,7 @@ class Test(GXPYTest):
         try:
             with gxmap.Map.new(data_area=(3, 2, 50, 40), coordinate_system='cm', overwrite=True) as map:
                 map_file = map.file_name
-                with gxv.View(map, 'data') as v:
+                with gxv.View.open(map, 'data') as v:
                     self.assertEqual(v.extent_map_cm(), (2.0, 6.0, 41.6, 38.4))
                     with gxg.Draw(v, 'rectangle') as g:
                         g.rectangle((3, 2, 28, 20),
@@ -159,7 +159,7 @@ class Test(GXPYTest):
 
         with gxmap.Map.new(data_area=(0, 0, 50, 40), coordinate_system='cm', overwrite=True) as map:
             map_file = map.file_name
-            with gxv.View(map, 'data') as v:
+            with gxv.View.open(map, 'data') as v:
                 with gxg.Draw(v, 'rectangle') as g:
                     g.rectangle(v.extent_clip, pen=g.new_pen(line_thick=0.5, line_color='B'))
                     g.rectangle((2, 2, 48, 38),
@@ -176,13 +176,15 @@ class Test(GXPYTest):
         area = (p1.x, p1.y, p2.x, p2.y)
         with gxmap.Map.new() as map:
             map_file = map.file_name
-            with gxv.View(map, 'data', area=area, coordinate_system='mm') as v:
+            with gxv.View.new(map, 'smooth') as v:
+                v.locate(coordinate_system='mm', area=area, map_location=(1,1), scale=0.4)
                 with gxg.Draw(v) as g:
                     g.rectangle(v.extent_clip)
                     g.polyline(pp, pen=g.new_pen(line_smooth=gxg.SMOOTH_AKIMA, line_color='r', line_thick=1))
                     g.polyline(pp, pen=g.new_pen(line_smooth=gxg.SMOOTH_CUBIC, line_color='b', line_thick=2))
                     g.polyline(pp)
-
+            map.delete_view('data')
+            map.delete_view('base')
         self.crc_map(map_file)
 
     def test_view_groups_1(self):
@@ -191,13 +193,13 @@ class Test(GXPYTest):
         testmap = os.path.join(self.gx.temp_folder(), "test")
         with gxmap.Map.new(testmap, overwrite=True) as gmap:
             map_file = gmap.file_name
-            with gxv.View(gmap, "rectangle_test", area=(0, 0, 250, 125)) as v:
+            with gxv.View.new(gmap, "rectangle_test", area=(0, 0, 250, 125)) as v:
                 with gxg.Draw(v, 'test_group') as g:
                     rect_line(g)
                     g.graticule(25, 20, style=gxg.GRATICULE_LINE)
                     g.pen = g.new_pen(line_thick=0.1)
                     g.rectangle(((0, 0), (250, 125)), pen=g.new_pen(line_thick=0.1, line_color='R'))
-            with gxv.View(gmap, "poly") as v:
+            with gxv.View.new(gmap, "poly") as v:
                 with gxg.Draw(v) as g:
                     draw_stuff(g)
 
@@ -212,7 +214,7 @@ class Test(GXPYTest):
         testmap = os.path.join(self.gx.temp_folder(), "test")
         with gxmap.Map.new(testmap, overwrite=True) as gmap:
             map_file = gmap.file_name
-            with gxv.View(gmap, "rectangle_test", area=(0, 0, 250, 125)) as v:
+            with gxv.View.new(gmap, "rectangle_test", area=(0, 0, 250, 125)) as v:
                 with gxg.Draw(v, 'line') as g:
                     rect_line(g)
                 with gxg.Draw(v, 'graticule') as g:
@@ -222,7 +224,7 @@ class Test(GXPYTest):
                     g.rectangle(((0, 0), (250, 125)), pen=g.new_pen(line_thick=0.1, line_color='R'))
                     g.rectangle(((10, 5), (240, 120)), pen=g.new_pen(line_thick=2, line_color='B'))
                 v.delete_group('graticule')
-            with gxv.View(gmap, "poly") as v:
+            with gxv.View.new(gmap, "poly") as v:
                 with gxg.Draw(v, 'test_group') as g:
                     draw_stuff(g)
 
@@ -237,10 +239,10 @@ class Test(GXPYTest):
         testmap = os.path.join(self.gx.temp_folder(), "test")
         with gxmap.Map.new(testmap, overwrite=True) as gmap:
             map_file = gmap.file_name
-            with gxv.View(gmap, "test_view") as v:
+            with gxv.View.new(gmap, "test_view") as v:
                 with gxg.Draw(v) as g:
                     rect_line(g)
-            with gxv.View(gmap, "test_view") as v:
+            with gxv.View.open(gmap, "test_view") as v:
                 pass
         gxmap.delete_files(map_file)
 
@@ -249,7 +251,7 @@ class Test(GXPYTest):
 
         testmap = os.path.join(self.gx.temp_folder(), "test.map")
         with gxmap.Map.new(testmap, overwrite=True) as gmap:
-            with gxv.View(gmap, "base") as view_base:
+            with gxv.View.open(gmap, "base") as view_base:
                 with gxg.Draw(view_base, 'Surround') as g:
                     g.rectangle(((0, 0), (280, 260)))
 
@@ -309,11 +311,11 @@ class Test(GXPYTest):
                              coordinate_system=cs, overwrite=True) as gmap:
             map_file = gmap.file_name
 
-            with gxv.View(gmap, "base") as v:
+            with gxv.View.open(gmap, "base") as v:
                 with gxg.Draw(v, 'line') as g:
                     g.rectangle(v.extent_clip, pen=g.new_pen(line_thick=1, line_color='K'))
 
-            with gxv.View(gmap, "data") as v:
+            with gxv.View.open(gmap, "data") as v:
                 with gxg.Draw(v, 'line') as g:
                     g.rectangle(area, pen=g.new_pen(line_thick=0.1, line_color='R'))
 
@@ -368,10 +370,10 @@ class Test(GXPYTest):
                              scale=(area[2] - area[0]) / 0.2,
                              coordinate_system=cs, overwrite=True) as gmap:
             map_file = gmap.file_name
-            with gxv.View(gmap, "base") as v:
+            with gxv.View.open(gmap, "base") as v:
                 with gxg.Draw(v, 'line') as g:
                     g.rectangle(v.extent_clip, pen=g.new_pen(line_thick=2, line_color='K'))
-            with gxv.View(gmap, "data") as v:
+            with gxv.View.open(gmap, "data") as v:
                 with gxg.Draw(v, 'line') as g:
                     g.rectangle(area, pen=g.new_pen(line_thick=0.1, line_color='G'))
 
@@ -389,7 +391,7 @@ class Test(GXPYTest):
                                  data_area=(ex[0], ex[1], ex[2], ex[3]),
                                  scale=(ex[2] - ex[0]) / 0.2) as gmap:
                 map_file = gmap.file_name
-                with gxv.View(gmap, "data") as v:
+                with gxv.View.open(gmap, "data") as v:
                     with gxagg.Aggregate_image.new(grid_file, zone=zone, shade=shade) as agg:
                         gxg.Aggregate_group.new(v, agg)
                 gmap.delete_view('base')
@@ -558,7 +560,7 @@ class Test(GXPYTest):
         with gxmap.Map.new(data_area=(400000, 5000000, 500000, 5150000),
                              coordinate_system='WGS 84 / UTM zone 15N [geoid]') as map:
             map_file = map.file_name
-            with gxv.View(map, 'base') as v:
+            with gxv.View.open(map, 'base') as v:
                 with gxg.Draw(v) as g:
                     g.rectangle(g.extent)
                     g.text('Text on base view')
@@ -578,7 +580,7 @@ class Test(GXPYTest):
         with gxmap.Map.new(data_area=(400000, 5000000, 500000, 5050000),
                              coordinate_system='WGS 84 / UTM zone 15N [geoid]') as map:
             map_file = map.file_name
-            with gxv.View(map, '*data') as v:
+            with gxv.View.open(map, '*data') as v:
                 with gxg.Draw(v) as g:
                     g.rectangle(g.extent)
                     ex = g.extent
@@ -622,7 +624,7 @@ class Test(GXPYTest):
         with gxmap.Map.new(data_area=(400000, 5000000, 500000, 5050000),
                              coordinate_system='WGS 84 / UTM zone 15N [geoid]') as map:
             map_file = map.file_name
-            with gxv.View(map, '*data') as v:
+            with gxv.View.open(map, '*data') as v:
                 with gxg.Draw(v) as g:
                     g.rectangle(g.extent)
                     ex = v.extent_clip
@@ -646,7 +648,7 @@ class Test(GXPYTest):
         with gxmap.Map.new(data_area=(400000, 5000000, 500000, 5050000),
                              coordinate_system='WGS 84 / UTM zone 15N [geoid]') as map:
             map_file = map.file_name
-            with gxv.View(map, '*data') as v:
+            with gxv.View.open(map, '*data') as v:
                 with gxg.Draw(v) as g:
                     g.rectangle(v.extent_clip)
                     rect = gxgm.Point2((v.extent_clip[0], v.extent_clip[1],
@@ -680,11 +682,11 @@ class Test(GXPYTest):
                              data_area=area, media="A4", margins=(7, 7, 2.5, 2.5),
                              coordinate_system=cs, overwrite=True) as gmap:
             map_file = gmap.file_name
-            with gxv.View(gmap, "base") as v:
+            with gxv.View.open(gmap, "base") as v:
                 with gxg.Draw(v, 'line') as g:
                     g.rectangle(v.extent_clip, pen=g.new_pen(line_thick=1, line_color='K'))
 
-            with gxv.View(gmap, "data") as v:
+            with gxv.View.open(gmap, "data") as v:
                 with gxg.Draw(v, 'line') as g:
                     g.rectangle(v.extent_clip, pen=g.new_pen(line_thick=0.1, line_color='G'))
                     g.rectangle(v.extent_all, pen=g.new_pen(line_thick=0.1, line_color='B'))
@@ -730,11 +732,11 @@ class Test(GXPYTest):
                              data_area=area, media="A4", margins=(2, 10, 2, 1),
                              coordinate_system=cs, overwrite=True) as gmap:
             map_file = gmap.file_name
-            with gxv.View(gmap, "base") as v:
+            with gxv.View.open(gmap, "base") as v:
                 with gxg.Draw(v, 'line') as g:
                     g.rectangle(v.extent_clip, pen=g.new_pen(line_thick=1, line_color='K'))
 
-            with gxv.View(gmap, "data") as v:
+            with gxv.View.open(gmap, "data") as v:
                 with gxg.Draw(v, 'line') as g:
                     g.rectangle(v.extent_clip, pen=g.new_pen(line_thick=0.1, line_color='G'))
                     g.rectangle(v.extent_all, pen=g.new_pen(line_thick=0.1, line_color='B'))
@@ -743,7 +745,7 @@ class Test(GXPYTest):
                     with gxg.Aggregate_group.new(v, agg) as g:
                         agg_group_name = g.name
 
-            with gxv.View(gmap, "data") as v:
+            with gxv.View.open(gmap, "data") as v:
                 with gxg.Aggregate_group.open(v, agg_group_name) as g:
                     gxg.legend_color_bar(v, 'color_legend', g.agg.layer_color_map())
 
@@ -754,10 +756,10 @@ class Test(GXPYTest):
         self.start()
 
         with gxmap.Map.new() as map:
-            with gxv.View(map, "base") as v:
+            with gxv.View.open(map, "base") as v:
                 with gxg.Draw(v, 'edge') as g:
                     g.rectangle(v.extent_clip, pen=g.new_pen(line_thick=1, line_color='K'))
-            with gxv.View(map, "data") as v:
+            with gxv.View.open(map, "data") as v:
                 with gxg.Draw(v, 'edge') as g:
                     g.rectangle(v.extent_clip, pen=g.new_pen(line_thick=1, line_color='B'))
                     self.assertTrue(g.visible)
@@ -772,7 +774,7 @@ class Test(GXPYTest):
             map_file = map.file_name
             map.delete_view('data')
 
-            with gxv.View(map, "my_data_1", map_location=(2, 3), area=(0, 0, 1000, 1500), scale=10000) as v:
+            with gxv.View.new(map, "my_data_1", map_location=(2, 3), area=(0, 0, 1000, 1500), scale=10000) as v:
                 with gxg.Draw(v, 'line') as g:
                     g.rectangle(v.extent_clip,
                                    pen=g.new_pen(line_thick=5, line_color='G'))
@@ -780,7 +782,7 @@ class Test(GXPYTest):
                     g.graticule(style=gxg.GRATICULE_LINE, pen=g.new_pen(line_thick=5))
                 ex1 = v.extent_group('line', unit=gxv.UNIT_MAP)
 
-            with gxv.View(map, "my_data_2", map_location=(15, 3), area=(0, 0, 1000, 1500), scale=10000) as v:
+            with gxv.View.new(map, "my_data_2", map_location=(15, 3), area=(0, 0, 1000, 1500), scale=10000) as v:
                 with gxg.Draw(v, 'line') as g:
                     g.rectangle(v.extent_clip,
                                    pen=g.new_pen(line_thick=5, line_color='G'))
@@ -788,7 +790,7 @@ class Test(GXPYTest):
                     g.graticule(style=gxg.GRATICULE_DOT, pen=g.new_pen(line_thick=5))
                 ex2 = v.extent_group('line', unit=gxv.UNIT_MAP)
 
-            with gxv.View(map, "my_data_3", map_location=(28, 3), area=(0, 0, 1000, 1500), scale=10000) as v:
+            with gxv.View.new(map, "my_data_3", map_location=(28, 3), area=(0, 0, 1000, 1500), scale=10000) as v:
                 with gxg.Draw(v, 'line') as g:
                     g.rectangle(v.extent_clip,
                                    pen=g.new_pen(line_thick=5, line_color='G'))
@@ -798,7 +800,7 @@ class Test(GXPYTest):
 
             area = (min(ex1[0], ex2[0], ex3[0])/10.0 - 2, max(ex1[1], ex2[1], ex3[1])/10.0 - 2,
                     max(ex1[2], ex2[2], ex3[2])/10.0 + 2, max(ex1[3], ex2[3], ex3[3])/10.0 + 2)
-            with gxv.View(map, "my_base_view", area=area, scale=100.0) as v:
+            with gxv.View.new(map, "my_base_view", area=area, scale=100.0) as v:
                 with gxg.Draw(v, 'base_edge') as g:
                     g.rectangle(v.extent_clip, pen=g.new_pen(line_thick=0.1, line_color='R'))
             map.delete_view('base')
@@ -962,7 +964,7 @@ class Test(GXPYTest):
 
         with gxmap.Map.new(data_area=(-1, -1, 11, 11), scale=100) as map:
             map_file = map.file_name
-            with gxv.View(map, '*data') as v:
+            with gxv.View.open(map, '*data') as v:
 
                 with gxg.Draw(v) as g:
                     g.rectangle(g.extent)
@@ -1204,11 +1206,11 @@ class Test(GXPYTest):
                              coordinate_system=cs, overwrite=True) as gmap:
             map_file = gmap.file_name
 
-            with gxv.View(gmap, "base") as v:
+            with gxv.View.open(gmap, "base") as v:
                 with gxg.Draw(v, 'line') as g:
                     g.rectangle(v.extent_clip, pen=g.new_pen(line_thick=1, line_color='K'))
 
-            with gxv.View(gmap, "data") as v:
+            with gxv.View.open(gmap, "data") as v:
                 with gxg.Draw(v, 'line') as g:
                     g.rectangle(area, pen=g.new_pen(line_thick=0.1, line_color='R'))
 
@@ -1240,11 +1242,11 @@ class Test(GXPYTest):
                              coordinate_system=cs, overwrite=True, scale=20000) as gmap:
             map_file = gmap.file_name
 
-            with gxv.View(gmap, "base") as v:
+            with gxv.View.open(gmap, "base") as v:
                 with gxg.Draw(v, 'line') as g:
                     g.rectangle(v.extent_clip, pen=g.new_pen(line_thick=1, line_color='K'))
 
-            with gxv.View(gmap, "data") as v:
+            with gxv.View.open(gmap, "data") as v:
                 with gxg.Draw(v, 'line') as g:
                     g.rectangle(area, pen=g.new_pen(line_thick=0.1, line_color='R'))
 

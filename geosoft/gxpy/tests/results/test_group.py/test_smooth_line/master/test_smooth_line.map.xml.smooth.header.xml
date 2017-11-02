@@ -1,14 +1,14 @@
 <header>
-   <Item name="Name" value="base"/>
+   <Item name="Name" value="smooth"/>
    <Item name="ViewMatrix" type="D4MATRIX">
-      <Value x="0" y="0" value="100"/>
+      <Value x="0" y="0" value="250"/>
       <Value x="1" y="0" value="0"/>
       <Value x="2" y="0" value="0"/>
-      <Value x="3" y="0" value="0"/>
+      <Value x="3" y="0" value="-1500"/>
       <Value x="0" y="1" value="0"/>
-      <Value x="1" y="1" value="100"/>
+      <Value x="1" y="1" value="250"/>
       <Value x="2" y="1" value="0"/>
-      <Value x="3" y="1" value="0"/>
+      <Value x="3" y="1" value="-250"/>
       <Value x="0" y="2" value="0"/>
       <Value x="1" y="2" value="0"/>
       <Value x="2" y="2" value="1"/>

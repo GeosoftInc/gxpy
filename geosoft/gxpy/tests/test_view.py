@@ -62,7 +62,7 @@ class Test(GXPYTest):
             self.assertEqual(len(vlist), 2)
             self.assertTrue('base' in vlist)
             self.assertTrue('data' in vlist)
-            with gxv.View(gmap, 'base') as v:
+            with gxv.View.open(gmap, 'base') as v:
                 self.assertTrue(v.guid)
                 self.assertEqual(v.name, "base")
                 self.assertEqual(v.scale, 1.0)
@@ -71,7 +71,7 @@ class Test(GXPYTest):
                 self.assertEqual(v.units_per_metre, 1000.0)
                 self.assertEqual(v.units_per_map_cm, 10.0)
 
-            with gxv.View(gmap, 'ft12000', coordinate_system='ft', scale=12000,
+            with gxv.View.new(gmap, 'ft12000', coordinate_system='ft', scale=12000,
                             area=(0, 0, 50000, 40000)) as v:
                 self.assertEqual(v.name, "ft12000")
                 self.assertAlmostEqual(v.scale, 12000.0)
@@ -80,7 +80,7 @@ class Test(GXPYTest):
                 self.assertAlmostEqual(v.units_per_metre, 3.280839895)
                 self.assertAlmostEqual(v.units_per_map_cm, 393.7007874)
 
-            with gxv.View(gmap) as vw:
+            with gxv.View.new(gmap) as vw:
                 self.assertEqual(vw.name, "_unnamed_view")
                 self.assertEqual(vw.scale, 100.0)
                 self.assertEqual(vw.aspect, 1.0)
@@ -88,7 +88,7 @@ class Test(GXPYTest):
                 self.assertEqual(vw.units_per_metre, 1.0)
 
         with gxmap.Map.new() as gmap:
-            with gxv.View(gmap, "test") as vw:
+            with gxv.View.new(gmap, "test") as vw:
                 self.assertEqual(vw.name, "test")
 
         with gxmap.Map.new() as gmap:
@@ -97,7 +97,7 @@ class Test(GXPYTest):
             location = (0,0)
             xcm = (area[2] - area[0])*100.0/scale
             ycm = (area[3] - area[1])*100.0/scale
-            with gxv.View(gmap, "test", map_location=location, area=area,
+            with gxv.View.new(gmap, "test", map_location=location, area=area,
                             scale=scale, coordinate_system="WGS 84 / UTM zone 34N") as vw:
                 self.assertEqual(vw.extent_clip,area)
                 self.assertEqual(vw.extent_map_cm(vw.extent_clip), (0, 0, xcm, ycm))
@@ -113,7 +113,7 @@ class Test(GXPYTest):
             mpu = 1.0 / float(gxcs.parameters(gxcs.PARM_UNITS, 'ftUS')['FACTOR'])
             xcm = 100.0 * ((area[2] - area[0]) / scale) / mpu
             ycm = 100.0 * ((area[3] - area[1]) / scale) / mpu
-            with gxv.View(gmap, "test", map_location=loc, area=area,
+            with gxv.View.new(gmap, "test", map_location=loc, area=area,
                             scale=scale, coordinate_system=("WGS 84 / UTM zone 34N", '', '', 'ftUS', '')) as vw:
                 self.assertEqual(vw.extent_clip,area)
                 mx = vw.extent_map_cm(vw.extent_clip)
@@ -135,7 +135,7 @@ class Test(GXPYTest):
             mpu = 1.0 / float(gxcs.parameters(gxcs.PARM_UNITS, 'ftUS')['FACTOR'])
             xcm = 100.0 * ((area[2] - area[0]) / scale) / mpu
             ycm = 100.0 * ((area[3] - area[1]) / scale) / mpu
-            with gxv.View(gmap, "test", map_location=loc, area=area,
+            with gxv.View.new(gmap, "test", map_location=loc, area=area,
                             scale=scale, coordinate_system='ftUS') as vw:
                 self.assertEqual(vw.extent_clip,area)
                 mx = vw.extent_map_cm(vw.extent_clip)
@@ -150,7 +150,7 @@ class Test(GXPYTest):
                 self.assertEqual(vw.units_name, 'ftUS')
 
         with gxmap.Map.new() as gmap:
-            with gxv.View(gmap, "test", area=(100, 500, 15100, 10500), scale=(50000, 10000),
+            with gxv.View.new(gmap, "test", area=(100, 500, 15100, 10500), scale=(50000, 10000),
                             map_location=(10, 25)) as vw:
                 self.assertEqual(vw.extent_clip,(100, 500, 15100, 10500))
                 self.assertEqual(vw.scale, 50000)
@@ -162,7 +162,7 @@ class Test(GXPYTest):
         self.start()
 
         with gxmap.Map.new() as gmap:
-            with gxv.View(gmap, 'ft12000',
+            with gxv.View.new(gmap, 'ft12000',
                             coordinate_system='ft', scale=12000,
                             map_location=(10, 5),
                             area=(0, 0, 50000, 40000)) as v:
@@ -180,10 +180,10 @@ class Test(GXPYTest):
         testmap = os.path.join(self.gx.temp_folder(), "test_view_reopen_map_view")
         with gxmap.Map.new(testmap, overwrite=True) as gmap:
             mapfile = gmap.file_name
-            with gxv.View(gmap, "test_view") as v:
+            with gxv.View.new(gmap, "test_view") as v:
                 with gxg.Draw(v) as g:
                     g.rectangle(v.extent_clip)
-            with gxv.View(gmap, "test_view") as v:
+            with gxv.View.open(gmap, "test_view") as v:
                 pass
         gxmap.delete_files(mapfile)
 
@@ -192,9 +192,9 @@ class Test(GXPYTest):
 
         testmap = os.path.join(self.gx.temp_folder(), "test_view_cs")
         with gxmap.Map.new(testmap, overwrite=True) as gmap:
-            with gxv.View(gmap, "rectangle_test", coordinate_system="wgs 84") as v:
+            with gxv.View.new(gmap, "rectangle_test", coordinate_system="wgs 84") as v:
                 self.assertEqual("WGS 84", str(v.coordinate_system))
-            with gxv.View(gmap, "vcs", coordinate_system="wgs 84 / UTM zone 15N [special]") as v:
+            with gxv.View.new(gmap, "vcs", coordinate_system="wgs 84 / UTM zone 15N [special]") as v:
                 self.assertTrue("WGS 84 / UTM zone 15N [special]" in str(v.coordinate_system))
 
     def test_copy_view(self):
@@ -202,11 +202,11 @@ class Test(GXPYTest):
 
         testmap = os.path.join(self.gx.temp_folder(), "test_view_cs")
         with gxmap.Map.new(testmap, overwrite=True) as gmap:
-            with gxv.View(gmap, 'test_a') as v:
+            with gxv.View.new(gmap, 'test_a') as v:
                 with gxg.Draw(v, '2D stuff') as g:
                     g.rectangle(v.extent_clip)
                     draw_2d_stuff(g)
-            with gxv.View(gmap, 'test_b', copy='test_a') as v:
+            with gxv.View.new(gmap, 'test_b', copy='test_a') as v:
                 mdf = v.mdf('base')
                 self.assertEqual(mdf[0], (36.39513677811551, 39.99513677811551, 0.0, 6.395136778115507, 19.99513677811551, 0.0))
                 self.assertEqual(mdf[1], (100.0, 1.0, 0.0, 0.0))
@@ -321,7 +321,7 @@ class Test(GXPYTest):
 
             with gxmap.Map.new() as map:
                 map_file = map.file_name
-                with gxv.View(map, '*base') as v:
+                with gxv.View.open(map, '*base') as v:
                     with gxg.Draw(v, 'edge') as g:
                         g.rectangle(v.extent_clip)
 
@@ -381,7 +381,7 @@ class Test(GXPYTest):
 
         testmap = os.path.join(self.gx.temp_folder(), "test")
         with gxmap.Map.new(testmap) as gmap:
-            with gxv.View(gmap, "test", area=(100, 500, 15100, 10500), scale=(50000, 10000),
+            with gxv.View.new(gmap, "test", area=(100, 500, 15100, 10500), scale=(50000, 10000),
                             map_location=(10, 25)) as vw:
                 m = vw.metadata
                 gm = m['geosoft']
@@ -392,7 +392,7 @@ class Test(GXPYTest):
                 vw.metadata = newstuff
 
         with gxmap.Map.open(testmap) as gmap:
-            with gxv.View(gmap, "test") as vw:
+            with gxv.View.open(gmap, "test") as vw:
                 m = vw.metadata
 
                 gm = m['geosoft']

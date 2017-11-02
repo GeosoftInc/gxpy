@@ -477,7 +477,7 @@ class Map:
                            m_left, m_right, m_bottom, m_top,
                            float(inside_margin))
 
-        with gxv.View(map=map, name='*data', mode=gxv.WRITE_OLD) as view:
+        with gxv.View.open(map, '*data') as view:
             view.coordinate_system = coordinate_system
         set_registry(map,
                      'figure' if (map_style == STYLE_FIGURE) else 'map',
@@ -592,7 +592,7 @@ class Map:
 
     def _make_base_cm(self):
         if self.has_view('*base'):
-            with gxv.View(self, name='*base', mode=gxv.WRITE_OLD) as view:
+            with gxv.View.open(self, '*base') as view:
                 ex_cm = view.extent_map_cm()
                 view.locate(gxcs.Coordinate_system('cm'),
                             map_location=(0,0),
@@ -602,7 +602,7 @@ class Map:
 
     def _make_base_mm(self):
         if self.has_view('*base'):
-            with gxv.View(self, name='*base', mode=gxv.WRITE_OLD) as view:
+            with gxv.View.open(self, '*base') as view:
                 ex_cm = view.extent_map_cm()
                 view.locate(gxcs.Coordinate_system('mm'),
                             map_location=(0, 0),
@@ -628,7 +628,7 @@ class Map:
         base_view = self.classview('*base').lower()
         for view_name in vlist:
             if view_name.lower() != base_view:
-                with gxv.View(self, view_name) as v:
+                with gxv.View.open(self, view_name) as v:
                     ex = extents(ex, v.extent_map_cm(v.extent_clip))
         if ex[0] == 1.0e10:
             raise MapException(_t('Map "{}" has no data views.').format(self.name))
@@ -751,8 +751,8 @@ class Map:
         if not (self.has_view(self.current_data_view) and self.has_view(self.current_base_view)):
             raise MapException(_t('The map must have both a base view and a data view.'))
 
-        with gxv.View(self, self.current_base_view, gxg.READ_ONLY) as base:
-            with gxv.View(self, self.current_data_view, gxg.READ_ONLY) as data:
+        with gxv.View.open(self, self.current_base_view, read_only=True) as base:
+            with gxv.View.open(self, self.current_data_view, read_only=True) as data:
                 mdf = data.mdf(base_view=base)
 
         return mdf
@@ -867,7 +867,7 @@ class Map:
         """
 
         if direction is None:
-            with gxv.View(self, '*data', mode=gxv.WRITE_OLD) as v:
+            with gxv.View.open(self, '*data') as v:
                 direction = round(v.gxview.north(), 1)
                 if direction == gxapi.rDUMMY:
                     direction = ''
@@ -1005,7 +1005,7 @@ class Map:
 
             offset = self._annotation_offset(offset, text_def.height)
 
-            with gxv.View(self, view_name) as v:
+            with gxv.View.open(self, view_name) as v:
                 with gxg.Draw(v) as g:
                     g.rectangle(v.extent_clip, pen=gxg.Pen(default=edge_pen, factor=v.units_per_map_cm))
 
@@ -1088,7 +1088,7 @@ class Map:
 
             offset = self._annotation_offset(offset, text_def.height)
 
-            with gxv.View(self, view_name) as v:
+            with gxv.View.open(self, view_name) as v:
                 with gxg.Draw(v) as g:
                     g.rectangle(v.extent_clip, pen=gxg.Pen(default=edge_pen, factor=v.units_per_map_cm))
 

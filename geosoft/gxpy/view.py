@@ -31,6 +31,7 @@ import geosoft
 import geosoft.gxapi as gxapi
 from . import coordinate_system as gxcs
 from . import utility as gxu
+from . import map as gxmap
 
 __version__ = geosoft.__version__
 
@@ -76,28 +77,12 @@ class View:
     """
     Geosoft view class.
 
-    :parameters:
+    :Constructors:
 
-        :name:          view name, default is "_unnamed_view".
-        :map:           :class:`geosoft.gxpy.map.Map` instance, if not specified a new unique default map is 
-                        created and deleted when this session finished.
-        :mode:          open view mode:
-
-                        ::
-
-                            READ_ONLY
-                            WRITE_NEW
-                            WRITE_OLD
-
-        The following are used with `mode=geosoft.gxpy.view.WRITE_NEW`:
-
-        :coordinate_system: coordinate system as a :class:`gxpy.coordinate_system.Coordinate_system` instance, or 
-                            one of the Coordinate_system constructor types.
-        :map_location:      (x, y) view location on the map, in map cm
-        :area:              (min_x, min_y, max_x, max_y) area in view units
-        :scale:             Map scale if a coordinate system is defined.  If the coordinate system is not
-                            defined this is view units per map metre.
-        :copy:              name of a view to copy into the new view.
+        ============ ==============================
+        :meth:`open` open an existing view in a map
+        :meth:`new`  create a new view in a map
+        ============ ==============================
 
     .. versionadded:: 9.2
     """
@@ -131,8 +116,8 @@ class View:
                  scale=100,
                  copy=None):
 
-        if type(map) is not geosoft.gxpy.map.Map:
-            raise ViewException(_t('First parameter is not a Map instance.'))
+        if not isinstance(map, geosoft.gxpy.map.Map):
+            raise ViewException(_t('First argument must be a map.'))
 
         self._map = map
         self._name = map.classview(name)
@@ -160,6 +145,69 @@ class View:
             if metres_per <= 0.:
                 raise ViewException(_t('Invalid units {}({})'.format(self._uname, metres_per)))
             self._metres_per_unit = 1.0 / metres_per
+
+    @classmethod
+    def new(cls,
+            map=None,
+            name="_unnamed_view",
+            coordinate_system=None,
+            map_location=(0, 0),
+            area=(0, 0, 30, 20),
+            scale=100,
+            copy=None):
+        """
+        Create a new view on a map.
+
+        :parameters:
+
+            :map:               :class:`geosoft.gxpy.map.Map` instance, if not specified a new unique default map is
+                                created and deleted when this session finished.
+            :name:              view name, default is "_unnamed_view".
+            :coordinate_system: coordinate system as a :class:`gxpy.coordinate_system.Coordinate_system` instance, or
+                                one of the Coordinate_system constructor types.
+            :map_location:      (x, y) view location on the map, in map cm
+            :area:              (min_x, min_y, max_x, max_y) area in view units
+            :scale:             Map scale if a coordinate system is defined.  If the coordinate system is not
+                                defined this is view units per map metre.
+            :copy:              name of a view to copy into the new view.
+
+        .. versionadded:: 9.2
+        """
+
+        if map is None:
+            map = gxmap.Map.new()
+
+        view = cls(map,
+                   mode=WRITE_NEW,
+                   name=name,
+                   coordinate_system=coordinate_system,
+                   map_location=map_location,
+                   area=area,
+                   scale=scale,
+                   copy=copy)
+        return view
+
+    @classmethod
+    def open(cls, map, view_name, read_only=False):
+        """
+        Open an en existing view on a map.
+
+        :param map:         :class:`geosoft.gxpy.map.Map`
+        :param view_name:   name of the view
+        :param read_only:   True to open read-only
+        :return:            :class:`View` instance
+
+        .. versionadded:: 9.2
+        """
+        if not map.has_view(view_name):
+            raise ViewException(_t('Map does not have a view named \'{}\''.format(view_name)))
+        if read_only:
+            mode = READ_ONLY
+        else:
+            mode = WRITE_OLD
+        view = cls(map, name=view_name, mode=mode)
+        return view
+
 
     @property
     def lock(self):
@@ -633,10 +681,6 @@ class View_3d(View):
         g_3dv.gxview.set_3dn(h3dn)
         g_3dv.gxview.fit_map_window_3d(map_minx, map_miny, map_maxx, map_maxy,
                                        view_minx, view_miny, view_maxx, view_maxy)
-
-        #TODO - remove?
-        # if area_2d is not None:
-        #    g_3dv.new_drawing_plane('plane_0')
 
         return g_3dv
 
