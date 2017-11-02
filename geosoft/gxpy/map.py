@@ -591,24 +591,24 @@ class Map:
         self.gxmap.commit()
 
     def _make_base_cm(self):
-        # scale the base view to cm
-        with gxv.View(self, name='*base', mode=gxv.WRITE_OLD) as view:
-            ex_cm = view.extent_map_cm()
-            view.locate(gxcs.Coordinate_system('cm'),
-                        map_location=(0,0),
-                        area=(0, 0, ex_cm[2], ex_cm[3]),
-                        scale=1.0)
-            pass
+        if self.has_view('*base'):
+            with gxv.View(self, name='*base', mode=gxv.WRITE_OLD) as view:
+                ex_cm = view.extent_map_cm()
+                view.locate(gxcs.Coordinate_system('cm'),
+                            map_location=(0,0),
+                            area=(0, 0, ex_cm[2], ex_cm[3]),
+                            scale=1.0)
+                pass
 
     def _make_base_mm(self):
-        # scale the base view to mm
-        with gxv.View(self, name='*base', mode=gxv.WRITE_OLD) as view:
-            ex_cm = view.extent_map_cm()
-            view.locate(gxcs.Coordinate_system('mm'),
-                        map_location=(0, 0),
-                        area=(0, 0, ex_cm[2] * 10., ex_cm[3] * 10.),
-                        scale=1.0)
-            pass
+        if self.has_view('*base'):
+            with gxv.View(self, name='*base', mode=gxv.WRITE_OLD) as view:
+                ex_cm = view.extent_map_cm()
+                view.locate(gxcs.Coordinate_system('mm'),
+                            map_location=(0, 0),
+                            area=(0, 0, ex_cm[2] * 10., ex_cm[3] * 10.),
+                            scale=1.0)
+                pass
 
     def extent_data_views(self):
         """

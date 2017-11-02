@@ -1,7 +1,7 @@
 <header>
    <Item name="Name" value="test_rectangle.map"/>
    <Item name="Extents" type="L2AREA">
-      <Value name="MinX" value="0"/>
+      <Value name="MinX" value="-1"/>
       <Value name="MinY" value="0"/>
       <Value name="MaxX" value="43994"/>
       <Value name="MaxY" value="39996"/>

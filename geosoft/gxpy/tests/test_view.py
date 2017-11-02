@@ -65,10 +65,10 @@ class Test(GXPYTest):
             with gxv.View(gmap, 'base') as v:
                 self.assertTrue(v.guid)
                 self.assertEqual(v.name, "base")
-                self.assertEqual(v.scale, 1000.0)
+                self.assertEqual(v.scale, 1.0)
                 self.assertEqual(v.aspect, 1.0)
-                self.assertEqual(v.units_name, 'unknown')
-                self.assertEqual(v.units_per_metre, 1.0)
+                self.assertEqual(v.units_name, 'mm')
+                self.assertEqual(v.units_per_metre, 1000.0)
                 self.assertEqual(v.units_per_map_cm, 10.0)
 
             with gxv.View(gmap, 'ft12000', coordinate_system='ft', scale=12000,
