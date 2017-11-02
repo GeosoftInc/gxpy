@@ -8,7 +8,7 @@ This is the repository for Geosoft GX Developer support for Python development. 
 
 [GX Developer Python API Reference](https://geosoftinc.github.io/gxpy/9.2/python/index.html)
 
-Also see the [Geosoft Inc . organization on Github](https://github.com/GeosoftInc) for the other programming language specific repos.
+Also see the [Geosoft Inc. organization on Github](https://github.com/GeosoftInc) for the other programming language specific repos.
 
 License
 -------
