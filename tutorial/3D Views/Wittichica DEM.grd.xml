@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type='text/xsl' href='C:\Program Files\Geosoft\Desktop Applications 9\user\stylesheets\Geosoft[geosoft.xslt].xslt'?>
+<gmd:MD_Metadata xsi:schemaLocation="http://www.isotc211.org/2005/gmd ../schemas/iso19139fra/gmd/gmd.xsd" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:map="urn:brgm:mapping" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:gfc="http://www.isotc211.org/2005/gfc" xmlns:gco="http://www.isotc211.org/2005/gco">
+	<geosoft xmlns="http://www.geosoft.com/schema/geo">
+		<dataset version="1">
+			<geo:metadata_creation_date xmlns:geo="http://www.geosoft.com/schema/geo">2017-11-03</geo:metadata_creation_date>
+			<geo:metadata_created_by xmlns:geo="http://www.geosoft.com/schema/geo">IAN-OFFICE\Ian</geo:metadata_created_by>
+			<geo:source_scale xmlns:geo="http://www.geosoft.com/schema/geo">30m</geo:source_scale>
+			<geo:uom xmlns:geo="http://www.geosoft.com/schema/geo"/>
+			<geo:title xmlns:geo="http://www.geosoft.com/schema/geo">Tittichica_DEM</geo:title>
+			<geo:unitofmeasurement xmlns:geo="http://www.geosoft.com/schema/geo"/>
+			<geo:category xmlns:geo="http://www.geosoft.com/schema/geo">Digital Terrain Model</geo:category>
+			<geo:region xmlns:geo="http://www.geosoft.com/schema/geo">Canada</geo:region>
+			<geo:continent xmlns:geo="http://www.geosoft.com/schema/geo">North America</geo:continent>
+			<geo:file_format xmlns:geo="http://www.geosoft.com/schema/geo">Geosoft Grid</geo:file_format>
+			<geo:resolution xmlns:geo="http://www.geosoft.com/schema/geo"/>
+			<geo:weblink xmlns:geo="http://www.geosoft.com/schema/geo"/>
+			<geo:data_source xmlns:geo="http://www.geosoft.com/schema/geo">https://lta.cr.usgs.gov/SRTM1Arc</geo:data_source>
+			<geo:type xmlns:geo="http://www.geosoft.com/schema/geo">Elevation</geo:type>
+			<geo:purpose xmlns:geo="http://www.geosoft.com/schema/geo"/>
+			<geo:project_name xmlns:geo="http://www.geosoft.com/schema/geo">g:\tutorial\tut.gpf</geo:project_name>
+			<geo:confidentiality xmlns:geo="http://www.geosoft.com/schema/geo">Public</geo:confidentiality>
+			<geo:project_type xmlns:geo="http://www.geosoft.com/schema/geo"/>
+			<geo:subject xmlns:geo="http://www.geosoft.com/schema/geo">Geography</geo:subject>
+			<geo:description xmlns:geo="http://www.geosoft.com/schema/geo"/>
+			<geo:Metadata_created_by xmlns:geo="http://www.geosoft.com/schema/geo"/>
+			<geo:data_created_by xmlns:geo="http://www.geosoft.com/schema/geo">IAN-OFFICE\Ian</geo:data_created_by>
+			<geo:country xmlns:geo="http://www.geosoft.com/schema/geo">Regional</geo:country>
+			<lineage>
+				<process name="regrid.gx" displaystring="Re-grid a grid" user="IAN-OFFICE\Ian" version="Version 9.3 (20171030.117)" date="2017-11-03" time="12:37:38">
+					<parameter name="REGRID::CELL" value="25" type="double"/>
+					<parameter name="REGRID::EDGECELL" value="0" type="string"/>
+					<parameter name="REGRID::GAP" value="" type="string"/>
+					<parameter name="REGRID::HIGH_PASS" value="" type="string"/>
+					<parameter name="REGRID::IN" value=".\dem_original.grd(GRD)" type="string"/>
+					<parameter name="REGRID::KX" value="" type="string"/>
+					<parameter name="REGRID::LOW_PASS" value="" type="string"/>
+					<parameter name="REGRID::NL_TOL" value="" type="string"/>
+					<parameter name="REGRID::OUT" value=".\Tittichica_DEM.grd(GRD)" type="string"/>
+					<parameter name="REGRID::SPLINE" value="1" type="string"/>
+					<parameter name="REGRID::TRA" value="" type="string"/>
+					<source name="g:\Tutorial\dem_original.grd" type="GRID">
+						<lineage>
+							<process name="Geosoft.EIMS.GXNet.dll(Geosoft.EIMS.GX.Seeker.SeekerMainForm;Run)" user="IAN-OFFICE\Ian" version="Version 9.3 (20171030.117)" date="2017-11-03" time="12:35:32">
+								<parameter name="FIND_DATA::CoordinateSystem" value="PROJCS[&quot;NAD_1983_UTM_Zone_10N&quot;,GEOGCS[&quot;GCS_North_American_1983&quot;,DATUM[&quot;D_North_American_1983&quot;,SPHEROID[&quot;GRS_1980&quot;,6378137.0,298.257222101]],PRIMEM[&quot;Greenwich&quot;,0.0],UNIT[&quot;Degree&quot;,0.0174532925199433]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;False_Easting&quot;,500000.0],PARAMETER[&quot;False_Northing&quot;,0.0],PARAMETER[&quot;Central_Meridian&quot;,-123.0],PARAMETER[&quot;Scale_Factor&quot;,0.9996],PARAMETER[&quot;Latitude_Of_Origin&quot;,0.0],UNIT[&quot;Meter&quot;,1.0],AUTHORITY[&quot;EPSG&quot;,26910]]" type="string"/>
+								<parameter name="FIND_DATA::File" value=".\dem_original.grd(GRD)" type="string"/>
+								<parameter name="FIND_DATA::MaxX" value="417168.103448276" type="string"/>
+								<parameter name="FIND_DATA::MaxY" value="6098918.10344828" type="string"/>
+								<parameter name="FIND_DATA::MinX" value="405581.896551724" type="string"/>
+								<parameter name="FIND_DATA::MinY" value="6087381.89655172" type="string"/>
+								<parameter name="FIND_DATA::Resolution" value="30.6944" type="string"/>
+								<parameter name="FIND_DATA::Title" value="SRTM1 Canada" type="string"/>
+								<parameter name="FIND_DATA::Type" value="Grid" type="string"/>
+								<parameter name="FIND_DATA::URL" value="http://dap.geosoft.com" type="string"/>
+								<source name="g:\Tutorial\Wittichica Creek Residual Total Field.GRD" type="GRID"/>
+							</process>
+						</lineage>
+					</source>
+				</process>
+			</lineage>
+			<data_creation_date>2017-11-03</data_creation_date>
+			<georeference>
+				<dataextents>
+					<extent2d minx="405300" miny="6087125" maxx="417425" maxy="6099225"/>
+				</dataextents>
+				<projection type="TRANSVERSE_MERCATOR" name="NAD83 / UTM zone 10N" wellknown_epsg="26910" projection="UTM zone 10N" ellipsoid="GRS 1980" datum="NAD83" datumtrf="NAD83 to WGS 84 (1)" datumtrf_epsg="1188" datumtrf_description="[NAD83] (4m) North America - Canada and USA (CONUS, Alaska mainland)" radius="6378137" eccentricity="0.08181919104">
+					<shift x="0" y="0" z="0"/>
+					<parameters scale="0.9996" false_east="500000" false_north="0" lat_origin="0" lon_origin="-123"/>
+					<units name="m" unit_scale="1"/>
+				</projection>
+			</georeference>
+		</dataset>
+	</geosoft>
+	<gmd:identificationInfo>
+		<gmd:MD_DataIdentification>
+			<gmd:citation>
+				<gmd:CI_Citation>
+					<gmd:alternateTitle>
+						<gco:CharacterString>SRTM 1 Arc-Second Global</gco:CharacterString>
+					</gmd:alternateTitle>
+					<gmd:title>
+						<gco:CharacterString>Tittichica_DEM</gco:CharacterString>
+					</gmd:title>
+					<gmd:collectiveTitle>
+						<gco:CharacterString>g:\tutorial\tut.gpf</gco:CharacterString>
+					</gmd:collectiveTitle>
+					<gmd:date>
+						<gmd:CI_Date>
+							<gmd:date>
+								<gco:Date>2017-11-3</gco:Date>
+							</gmd:date>
+						</gmd:CI_Date>
+					</gmd:date>
+				</gmd:CI_Citation>
+			</gmd:citation>
+			<gmd:resourceFormat>
+				<gmd:MD_Format>
+					<gmd:name>
+						<gco:CharacterString>Geosoft Grid</gco:CharacterString>
+					</gmd:name>
+				</gmd:MD_Format>
+			</gmd:resourceFormat>
+			<gmd:descriptiveKeywords>
+				<gmd:MD_Keywords>
+					<gmd:keyword>
+						<gco:CharacterString>Digital Terrain Model</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>Canada</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>North America</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>Elevation</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>Geography</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>Regional</gco:CharacterString>
+					</gmd:keyword>
+				</gmd:MD_Keywords>
+			</gmd:descriptiveKeywords>
+			<gmd:spatialResolution>
+				<gmd:MD_Resolution/>
+			</gmd:spatialResolution>
+			<gmd:resourceSpecificUsage>
+				<gmd:MD_Usage>
+					<gmd:specificUsage>
+						<gco:CharacterString>Public</gco:CharacterString>
+					</gmd:specificUsage>
+				</gmd:MD_Usage>
+			</gmd:resourceSpecificUsage>
+			<gmd:extent>
+				<gmd:EX_Extent>
+					<gmd:geographicElement>
+						<gmd:EX_GeographicBoundingBox>
+							<gmd:westBoundLongitude>
+								<gco:Decimal>-124.48160796200203</gco:Decimal>
+							</gmd:westBoundLongitude>
+							<gmd:eastBoundLongitude>
+								<gco:Decimal>-124.28848051488193</gco:Decimal>
+							</gmd:eastBoundLongitude>
+							<gmd:southBoundLatitude>
+								<gco:Decimal>54.922124598037712</gco:Decimal>
+							</gmd:southBoundLatitude>
+							<gmd:northBoundLatitude>
+								<gco:Decimal>55.032985396869122</gco:Decimal>
+							</gmd:northBoundLatitude>
+						</gmd:EX_GeographicBoundingBox>
+					</gmd:geographicElement>
+				</gmd:EX_Extent>
+			</gmd:extent>
+			<gmd:pointOfContact>
+				<gmd:CI_ResponsibleParty>
+					<gmd:individualName>
+						<gco:CharacterString>IAN-OFFICE\Ian</gco:CharacterString>
+					</gmd:individualName>
+				</gmd:CI_ResponsibleParty>
+			</gmd:pointOfContact>
+		</gmd:MD_DataIdentification>
+	</gmd:identificationInfo>
+	<gmd:contact>
+		<gmd:CI_ResponsibleParty>
+			<gmd:individualName>
+				<gco:CharacterString>IAN-OFFICE\Ian</gco:CharacterString>
+			</gmd:individualName>
+		</gmd:CI_ResponsibleParty>
+	</gmd:contact>
+	<gmd:distrbutionInfo>
+		<gmd:MD_Distrbution>
+			<gmd:distributionFormat>
+				<gmd:MD_Format>
+					<gmd:name>
+						<gco:CharacterString>Geosoft HGD</gco:CharacterString>
+					</gmd:name>
+				</gmd:MD_Format>
+			</gmd:distributionFormat>
+		</gmd:MD_Distrbution>
+	</gmd:distrbutionInfo>
+	<gmd:dataQualityInfo>
+		<gmd:DQ_DataQuality>
+			<gmd:lineage>
+				<gmd:LI_Lineage>
+					<gmd:processStep xlink:type="Geosoft Process" xlink:title="regrid.gx">
+						<gmd:LI_ProcessStep>
+							<gmd:dateTime>
+								<gco:DateTime>2017-11-03T12:37:38</gco:DateTime>
+							</gmd:dateTime>
+							<gmd:processor>
+								<gmd:CI_ResponsibleParty>
+									<gmd:individualName>
+										<gco:CharacterString>IAN-OFFICE\Ian</gco:CharacterString>
+									</gmd:individualName>
+								</gmd:CI_ResponsibleParty>
+							</gmd:processor>
+							<gmd:source xlink:type="Data Parameter" xlink:role="REGRID::CELL" xlink:title="25">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="REGRID::EDGECELL" xlink:title="0">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="REGRID::GAP" xlink:title="">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="REGRID::HIGH_PASS" xlink:title="">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="REGRID::IN" xlink:title=".\dem_original.grd(GRD)">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="REGRID::KX" xlink:title="">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="REGRID::LOW_PASS" xlink:title="">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="REGRID::NL_TOL" xlink:title="">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="REGRID::OUT" xlink:title=".\Tittichica_DEM.grd(GRD)">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="REGRID::SPLINE" xlink:title="1">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="REGRID::TRA" xlink:title="">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Source" xlink:role="GRID" xlink:title="g:\Tutorial\dem_original.grd">
+								<gmd:LI_Source/>
+							</gmd:source>
+						</gmd:LI_ProcessStep>
+					</gmd:processStep>
+				</gmd:LI_Lineage>
+			</gmd:lineage>
+		</gmd:DQ_DataQuality>
+	</gmd:dataQualityInfo>
+	<gmd:dateStamp>
+		<gco:Date>2017-11-3</gco:Date>
+	</gmd:dateStamp>
+	<gmd:referenceSystemInfo>
+		<gmd:MD_ReferenceSystem>
+			<gmd:referenceSystemIdentifier>
+				<gmd:RS_Identifier>
+					<gmd:codeSpace>
+						<gco:CharacterString>ESRI</gco:CharacterString>
+					</gmd:codeSpace>
+					<gmd:code>
+						<gco:CharacterString>PROJCS["NAD_1983_UTM_Zone_10N",GEOGCS["GCS_North_American_1983",DATUM["D_North_American_1983",SPHEROID["GRS_1980",6378137.0,298.257222101]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Transverse_Mercator"],PARAMETER["False_Easting",500000.0],PARAMETER["False_Northing",0.0],PARAMETER["Central_Meridian",-123.0],PARAMETER["Scale_Factor",0.9996],PARAMETER["Latitude_Of_Origin",0.0],UNIT["Meter",1.0],AUTHORITY["EPSG",26910]]</gco:CharacterString>
+					</gmd:code>
+					<gmd:version>
+						<gco:CharacterString>1</gco:CharacterString>
+					</gmd:version>
+				</gmd:RS_Identifier>
+			</gmd:referenceSystemIdentifier>
+		</gmd:MD_ReferenceSystem>
+	</gmd:referenceSystemInfo>
+</gmd:MD_Metadata>
