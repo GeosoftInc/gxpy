@@ -85,17 +85,17 @@ class GXMULTIVOXSET:
         :param voxel_file:  Input Voxel file
         :param xyz:         File Name
         :param dir:         :ref:`DIRECTION3D`
-        :param rev_x:       Reverse X ? (0/1)
-        :param rev_y:       Reverse Y ? (0/1)
-        :param rev_z:       Reverse Z ? (0/1)
-        :param dummies:     Write Dummies? (0/1)
+        :param rev_x:       Reverse X?
+        :param rev_y:       Reverse Y?
+        :param rev_z:       Reverse Z?
+        :param dummies:     Write Dummies?
         :type  voxel_file:  str
         :type  xyz:         str
         :type  dir:         int
-        :type  rev_x:       int
-        :type  rev_y:       int
-        :type  rev_z:       int
-        :type  dummies:     int
+        :type  rev_x:       bool
+        :type  rev_y:       bool
+        :type  rev_z:       bool
+        :type  dummies:     bool
 
         .. versionadded:: 9.3
         """
@@ -112,18 +112,18 @@ class GXMULTIVOXSET:
         :param voxel_file:   Input Voxel file
         :param binary_file:  Binary file to write to
         :param dir:          :ref:`DIRECTION3D`
-        :param rev_x:        Reverse X ? (0/1)
-        :param rev_y:        Reverse Y ? (0/1)
-        :param rev_z:        Reverse Z ? (0/1)
-        :param swap:         Swap Bytes ? (0/1)
+        :param rev_x:        Reverse X?
+        :param rev_y:        Reverse Y?
+        :param rev_z:        Reverse Z?
+        :param swap:         Swap Bytes?
         :param output_type:  Output Type (Geosoft Type)
         :type  voxel_file:   str
         :type  binary_file:  str
         :type  dir:          int
-        :type  rev_x:        int
-        :type  rev_y:        int
-        :type  rev_z:        int
-        :type  swap:         int
+        :type  rev_x:        bool
+        :type  rev_y:        bool
+        :type  rev_z:        bool
+        :type  swap:         bool
         :type  output_type:  int
 
         .. versionadded:: 9.3
@@ -307,18 +307,18 @@ class GXMULTIVOXSET:
         :param db:          Database
         :param chan:        Channel Name
         :param dir:         :ref:`DIRECTION3D`
-        :param rev_x:       Reverse X ? (0/1)
-        :param rev_y:       Reverse Y ? (0/1)
-        :param rev_z:       Reverse Z ? (0/1)
-        :param dummies:     Write Dummies? (0/1)
+        :param rev_x:       Reverse X?
+        :param rev_y:       Reverse Y?
+        :param rev_z:       Reverse Z?
+        :param dummies:     Write Dummies?
         :type  voxel_file:  str
         :type  db:          GXDB
         :type  chan:        str
         :type  dir:         int
-        :type  rev_x:       int
-        :type  rev_y:       int
-        :type  rev_z:       int
-        :type  dummies:     int
+        :type  rev_x:       bool
+        :type  rev_y:       bool
+        :type  rev_z:       bool
+        :type  dummies:     bool
 
         .. versionadded:: 9.3
         """
@@ -335,16 +335,16 @@ class GXMULTIVOXSET:
         :param file_name:  Input Voxel file
         :param wa:         `GXWA <geosoft.gxapi.GXWA>` File
         :param dir:        :ref:`DIRECTION3D`
-        :param rev_x:      Reverse X ? (0/1)
-        :param rev_y:      Reverse Y ? (0/1)
-        :param rev_z:      Reverse Z ? (0/1)
+        :param rev_x:      Reverse X?
+        :param rev_y:      Reverse Y?
+        :param rev_z:      Reverse Z?
         :param dummy:      The Dummy string to write
         :type  file_name:  str
         :type  wa:         GXWA
         :type  dir:        int
-        :type  rev_x:      int
-        :type  rev_y:      int
-        :type  rev_z:      int
+        :type  rev_x:      bool
+        :type  rev_y:      bool
+        :type  rev_z:      bool
         :type  dummy:      str
 
         .. versionadded:: 9.3
@@ -365,14 +365,14 @@ class GXMULTIVOXSET:
         :param out_file_name:  Output Vector Voxel file
         :param inclination:    Inclination
         :param declination:    Declination
-        :param rotated:        Rotated ? (0/1)
+        :param rotated:        Rotated?
         :type  x_file_name:    str
         :type  y_file_name:    str
         :type  z_file_name:    str
         :type  out_file_name:  str
         :type  inclination:    float
         :type  declination:    float
-        :type  rotated:        int
+        :type  rotated:        bool
 
         .. versionadded:: 9.3
         """
@@ -382,7 +382,7 @@ class GXMULTIVOXSET:
 
 
     @classmethod
-    def convert_vector_to_double(cls, file_name, x_file_name, y_file_name, z_file_name):
+    def convert_vector_to_double(cls, file_name, x_file_name, y_file_name, z_file_name, rotated):
         """
         Convert a Vector Voxel to 3 double Voxels
         
@@ -390,14 +390,16 @@ class GXMULTIVOXSET:
         :param x_file_name:  Output X Voxel file
         :param y_file_name:  Output Y Voxel file
         :param z_file_name:  Output Z Voxel file
+        :param rotated:      Rotated?
         :type  file_name:    str
         :type  x_file_name:  str
         :type  y_file_name:  str
         :type  z_file_name:  str
+        :type  rotated:      bool
 
         .. versionadded:: 9.3
         """
-        gxapi_cy.WrapMULTIVOXSET.convert_vector_to_double(GXContext._get_tls_geo(), file_name.encode(), x_file_name.encode(), y_file_name.encode(), z_file_name.encode())
+        gxapi_cy.WrapMULTIVOXSET.convert_vector_to_double(GXContext._get_tls_geo(), file_name.encode(), x_file_name.encode(), y_file_name.encode(), z_file_name.encode(), rotated)
         
 
 

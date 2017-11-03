@@ -2042,6 +2042,88 @@ META_CORE_TYPE_Enum = -214
 META_CORE_TYPE_ClassType = -215	
 
 #
+# GXMULTIVOXSET Constants
+# 
+
+
+
+#
+# DIRECTION3D constants
+#
+# Direction in 3D
+
+#: XYZ
+DIRECTION3D_XYZ = 0
+#: YXZ
+DIRECTION3D_YXZ = 1
+#: XZY
+DIRECTION3D_XZY = 2
+#: YZX
+DIRECTION3D_YZX = 3
+#: ZXY
+DIRECTION3D_ZXY = 4
+#: ZYX
+DIRECTION3D_ZYX = 5
+
+#
+# GOCAD_ORIENTATION constants
+#
+# GOCAD Orientations
+
+#: Normal
+GOCAD_ORIENTATIONS_NORMAL = 0
+#: Inverted (Z)
+GOCAD_ORIENTATIONS_INVERTED = 1
+#: Normal (ZFirst)
+GOCAD_ORIENTATIONS_NORMAL_ZFIRST = 2
+#: Inverted (Z) (ZFirst)
+GOCAD_ORIENTATIONS_INVERTED_ZFIRST = 3
+
+#
+# VECTOR_IMPORT constants
+#
+# Vector voxel import direction
+
+#: X, Y and Z
+VECTOR_IMPORT_XYZ = 0
+#: U, V and W
+VECTOR_IMPORT_UVW = 1
+#: Amplitude, Inclination and Declination
+VECTOR_IMPORT_AID = 2
+
+#
+# FILTER3D constants
+#
+# Voxel filter type
+
+#: Specify a file containing the 27-point filter
+FILTER3D_FILE = 0
+#: Smoothing filter
+FILTER3D_SMOOTHING = 1
+#: Laplace filter
+FILTER3D_LAPLACE = 2
+#: X-Gradient filter
+FILTER3D_X_GRADIENT = 3
+#: Y-Gradient filter
+FILTER3D_Y_GRADIENT = 4
+#: Z-Gradient filter
+FILTER3D_Z_GRADIENT = 5
+#: Total-Gradient filter
+FILTER3D_TOTAL_GRADIENT = 6
+
+#
+# MULTIVOXSET_DIRECTGRID_METHOD constants
+#
+# How to calculate the cell values for direct gridding.
+
+#: Multivoxset directgrid min
+MULTIVOXSET_DIRECTGRID_MIN = 0
+#: Multivoxset directgrid max
+MULTIVOXSET_DIRECTGRID_MAX = 1
+#: Multivoxset directgrid mean
+MULTIVOXSET_DIRECTGRID_MEAN = 2	
+
+#
 # GXMVIEW Constants
 # 
 
@@ -6179,88 +6261,6 @@ IP_PLDP_CONV_DISTANT_RX = 2
 	
 
 #
-# GXMULTIVOXSET Constants
-# 
-
-
-
-#
-# DIRECTION3D constants
-#
-# Direction in 3D
-
-#: XYZ
-DIRECTION3D_XYZ = 0
-#: YXZ
-DIRECTION3D_YXZ = 1
-#: XZY
-DIRECTION3D_XZY = 2
-#: YZX
-DIRECTION3D_YZX = 3
-#: ZXY
-DIRECTION3D_ZXY = 4
-#: ZYX
-DIRECTION3D_ZYX = 5
-
-#
-# GOCAD_ORIENTATION constants
-#
-# GOCAD Orientations
-
-#: Normal
-GOCAD_ORIENTATIONS_NORMAL = 0
-#: Inverted (Z)
-GOCAD_ORIENTATIONS_INVERTED = 1
-#: Normal (ZFirst)
-GOCAD_ORIENTATIONS_NORMAL_ZFIRST = 2
-#: Inverted (Z) (ZFirst)
-GOCAD_ORIENTATIONS_INVERTED_ZFIRST = 3
-
-#
-# VECTOR_IMPORT constants
-#
-# Vector voxel import direction
-
-#: X, Y and Z
-VECTOR_IMPORT_XYZ = 0
-#: U, V and W
-VECTOR_IMPORT_UVW = 1
-#: Amplitude, Inclination and Declination
-VECTOR_IMPORT_AID = 2
-
-#
-# FILTER3D constants
-#
-# Voxel filter type
-
-#: Specify a file containing the 27-point filter
-FILTER3D_FILE = 0
-#: Smoothing filter
-FILTER3D_SMOOTHING = 1
-#: Laplace filter
-FILTER3D_LAPLACE = 2
-#: X-Gradient filter
-FILTER3D_X_GRADIENT = 3
-#: Y-Gradient filter
-FILTER3D_Y_GRADIENT = 4
-#: Z-Gradient filter
-FILTER3D_Z_GRADIENT = 5
-#: Total-Gradient filter
-FILTER3D_TOTAL_GRADIENT = 6
-
-#
-# MULTIVOXSET_DIRECTGRID_METHOD constants
-#
-# How to calculate the cell values for direct gridding.
-
-#: Multivoxset directgrid min
-MULTIVOXSET_DIRECTGRID_MIN = 0
-#: Multivoxset directgrid max
-MULTIVOXSET_DIRECTGRID_MAX = 1
-#: Multivoxset directgrid mean
-MULTIVOXSET_DIRECTGRID_MEAN = 2	
-
-#
 # GXMVG Constants
 # 
 
@@ -7013,6 +7013,7 @@ __all__ = [
     'GXMAPTEMPLATE',
     'GXMATH',
     'GXMETA',
+    'GXMULTIVOXSET',
     'GXMVIEW',
     'GXMVU',
     'GXMXD',
@@ -7080,7 +7081,6 @@ __all__ = [
     'GXLMSG',
     'GXMISC',
     'GXMSTK',
-    'GXMULTIVOXSET',
     'GXMVG',
     'GXPDF3D',
     'GXPGEXP',
@@ -7138,6 +7138,7 @@ from .GXMAPL import GXMAPL
 from .GXMAPTEMPLATE import GXMAPTEMPLATE
 from .GXMATH import GXMATH
 from .GXMETA import GXMETA
+from .GXMULTIVOXSET import GXMULTIVOXSET
 from .GXMVIEW import GXMVIEW
 from .GXMVU import GXMVU
 from .GXMXD import GXMXD
@@ -7205,7 +7206,6 @@ from .GXKGRD import GXKGRD
 from .GXLMSG import GXLMSG
 from .GXMISC import GXMISC
 from .GXMSTK import GXMSTK
-from .GXMULTIVOXSET import GXMULTIVOXSET
 from .GXMVG import GXMVG
 from .GXPDF3D import GXPDF3D
 from .GXPGEXP import GXPGEXP
