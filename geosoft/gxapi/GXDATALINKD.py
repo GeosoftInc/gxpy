@@ -13,44 +13,35 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXDATALINKD:
+class GXDATALINKD(gxapi_cy.WrapDATALINKD):
     """
     GXDATALINKD class.
 
     DATALINK Display object.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapDATALINKD(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXDATALINKD`
+        A null (undefined) instance of `GXDATALINKD <geosoft.gxapi.GXDATALINKD>`
         
-        :returns: A null `GXDATALINKD`
+        :returns: A null `GXDATALINKD <geosoft.gxapi.GXDATALINKD>`
+        :rtype:   GXDATALINKD
         """
-        return cls()
+        return GXDATALINKD()
 
     def is_null(self):
         """
-        Check if the instance of `GXDATALINKD` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXDATALINKD`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -69,11 +60,11 @@ class GXDATALINKD:
 
         .. versionadded:: 6.4
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Needs ArcEngine licence.
+        **Note:** Needs ArcEngine licence.
         """
-        ret_val = gxapi_cy.WrapDATALINKD.create_arc_lyr(GXContext._get_tls_geo(), arc_lyr_file.encode())
+        ret_val = gxapi_cy.WrapDATALINKD._create_arc_lyr(GXContext._get_tls_geo(), arc_lyr_file.encode())
         return GXDATALINKD(ret_val)
 
 
@@ -93,11 +84,11 @@ class GXDATALINKD:
 
         .. versionadded:: 9.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Needs ArcEngine licence.
+        **Note:** Needs ArcEngine licence.
         """
-        ret_val = gxapi_cy.WrapDATALINKD.create_arc_lyr_ex(GXContext._get_tls_geo(), arc_lyr_file.encode(), o3d_group)
+        ret_val = gxapi_cy.WrapDATALINKD._create_arc_lyr_ex(GXContext._get_tls_geo(), arc_lyr_file.encode(), o3d_group)
         return GXDATALINKD(ret_val)
 
 
@@ -115,11 +106,11 @@ class GXDATALINKD:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Needs ArcEngine licence.
+        **Note:** Needs ArcEngine licence.
         """
-        ret_val = gxapi_cy.WrapDATALINKD.create_arc_lyr_from_tmp(GXContext._get_tls_geo(), arc_lyr_file.encode())
+        ret_val = gxapi_cy.WrapDATALINKD._create_arc_lyr_from_tmp(GXContext._get_tls_geo(), arc_lyr_file.encode())
         return GXDATALINKD(ret_val)
 
 
@@ -139,11 +130,11 @@ class GXDATALINKD:
 
         .. versionadded:: 9.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Needs ArcEngine licence.
+        **Note:** Needs ArcEngine licence.
         """
-        ret_val = gxapi_cy.WrapDATALINKD.create_arc_lyr_from_tmp_ex(GXContext._get_tls_geo(), arc_lyr_file.encode(), o3d_group)
+        ret_val = gxapi_cy.WrapDATALINKD._create_arc_lyr_from_tmp_ex(GXContext._get_tls_geo(), arc_lyr_file.encode(), o3d_group)
         return GXDATALINKD(ret_val)
 
 
@@ -160,8 +151,10 @@ class GXDATALINKD:
         :rtype:        GXDATALINKD
 
         .. versionadded:: 8.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapDATALINKD.create_bing(GXContext._get_tls_geo(), layer)
+        ret_val = gxapi_cy.WrapDATALINKD._create_bing(GXContext._get_tls_geo(), layer)
         return GXDATALINKD(ret_val)
 
 
@@ -183,8 +176,10 @@ class GXDATALINKD:
         :type  max_y:      float_ref
 
         .. versionadded:: 6.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        min_x.value, max_x.value, min_y.value, max_y.value = self._wrapper.get_extents(min_x.value, max_x.value, min_y.value, max_y.value)
+        min_x.value, max_x.value, min_y.value, max_y.value = self._get_extents(min_x.value, max_x.value, min_y.value, max_y.value)
         
 
 
@@ -198,8 +193,10 @@ class GXDATALINKD:
         :type  ipj:        GXIPJ
 
         .. versionadded:: 6.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.get_ipj(ipj._wrapper)
+        self._get_ipj(ipj)
         
 
 

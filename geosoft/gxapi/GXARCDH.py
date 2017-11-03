@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXARCDH:
+class GXARCDH(gxapi_cy.WrapARCDH):
     """
     GXARCDH class.
 
@@ -21,37 +21,28 @@ class GXARCDH:
     used in the Target extension for ArcGIS.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapARCDH(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXARCDH`
+        A null (undefined) instance of `GXARCDH <geosoft.gxapi.GXARCDH>`
         
-        :returns: A null `GXARCDH`
+        :returns: A null `GXARCDH <geosoft.gxapi.GXARCDH>`
+        :rtype:   GXARCDH
         """
-        return cls()
+        return GXARCDH()
 
     def is_null(self):
         """
-        Check if the instance of `GXARCDH` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXARCDH`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -64,8 +55,10 @@ class GXARCDH:
         
 
         .. versionadded:: 8.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapARCDH.close_project(GXContext._get_tls_geo())
+        gxapi_cy.WrapARCDH._close_project(GXContext._get_tls_geo())
         
 
 
@@ -81,8 +74,10 @@ class GXARCDH:
         :type  project:  str
 
         .. versionadded:: 8.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapARCDH.set_project(GXContext._get_tls_geo(), path.encode(), project.encode())
+        gxapi_cy.WrapARCDH._set_project(GXContext._get_tls_geo(), path.encode(), project.encode())
         
 
 
@@ -96,8 +91,10 @@ class GXARCDH:
         :type  string_file_gdb:  str
 
         .. versionadded:: 8.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapARCDH.set_string_file_gdb(GXContext._get_tls_geo(), string_file_gdb.encode())
+        gxapi_cy.WrapARCDH._set_string_file_gdb(GXContext._get_tls_geo(), string_file_gdb.encode())
         
 
 
@@ -109,8 +106,10 @@ class GXARCDH:
         
 
         .. versionadded:: 8.0.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapARCDH.stop_editing_string_file_gdb(GXContext._get_tls_geo())
+        gxapi_cy.WrapARCDH._stop_editing_string_file_gdb(GXContext._get_tls_geo())
         
 
 
@@ -123,8 +122,10 @@ class GXARCDH:
         :rtype:      int
 
         .. versionadded:: 8.0.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapARCDH.has_string_file_gdb_edits(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapARCDH._has_string_file_gdb_edits(GXContext._get_tls_geo())
         return ret_val
 
 
@@ -137,8 +138,10 @@ class GXARCDH:
         :rtype:      int
 
         .. versionadded:: 8.0.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapARCDH.geostrings_extension_available(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapARCDH._geostrings_extension_available(GXContext._get_tls_geo())
         return ret_val
 
 
@@ -152,8 +155,10 @@ class GXARCDH:
         :type  name:  str_ref
 
         .. versionadded:: 8.0.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        name.value = gxapi_cy.WrapARCDH.get_current_string_file_gdb(GXContext._get_tls_geo(), name.value.encode())
+        name.value = gxapi_cy.WrapARCDH._get_current_string_file_gdb(GXContext._get_tls_geo(), name.value.encode())
         
 
 
@@ -168,8 +173,10 @@ class GXARCDH:
         :rtype:       int
 
         .. versionadded:: 8.0.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapARCDH.is_valid_fgdb_file_name(GXContext._get_tls_geo(), fgdb.encode())
+        ret_val = gxapi_cy.WrapARCDH._is_valid_fgdb_file_name(GXContext._get_tls_geo(), fgdb.encode())
         return ret_val
 
 
@@ -184,8 +191,10 @@ class GXARCDH:
         :rtype:                     int
 
         .. versionadded:: 8.0.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapARCDH.is_valid_feature_class_name(GXContext._get_tls_geo(), feature_class_name.encode())
+        ret_val = gxapi_cy.WrapARCDH._is_valid_feature_class_name(GXContext._get_tls_geo(), feature_class_name.encode())
         return ret_val
 
 
@@ -209,8 +218,10 @@ class GXARCDH:
         :type  edge_color:        int_ref
 
         .. versionadded:: 8.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        xml.value, fill_color.value, edge_color.value = gxapi_cy.WrapARCDH.s_prompt_for_esri_symbol(GXContext._get_tls_geo(), hwnd, h_wnd.encode(), input_xml_string, xml.value.encode(), fill_color.value, edge_color.value)
+        xml.value, fill_color.value, edge_color.value = gxapi_cy.WrapARCDH._s_prompt_for_esri_symbol(GXContext._get_tls_geo(), hwnd, h_wnd.encode(), input_xml_string, xml.value.encode(), fill_color.value, edge_color.value)
         
 
 

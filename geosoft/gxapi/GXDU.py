@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXDU:
+class GXDU(gxapi_cy.WrapDU):
     """
     GXDU class.
 
@@ -30,37 +30,28 @@ class GXDU:
     :ref:`DU_LINES`
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapDU(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXDU`
+        A null (undefined) instance of `GXDU <geosoft.gxapi.GXDU>`
         
-        :returns: A null `GXDU`
+        :returns: A null `GXDU <geosoft.gxapi.GXDU>`
+        :rtype:   GXDU
         """
-        return cls()
+        return GXDU()
 
     def is_null(self):
         """
-        Check if the instance of `GXDU` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXDU`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -92,16 +83,16 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Fails if table does not contain requested fields.
+        **Note:** Fails if table does not contain requested fields.
         The nominal data sample spacing for the CLOSE options is
         calculated by finding the fiducial increment the
         - primary index channel for Lookup1C_DU;
         - secondary index channel for Lookup2C_DU, LookupIValC_DU
         and LookupRValC_DU
         """
-        gxapi_cy.WrapDU.table_look1(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch, ref_field.encode(), l_field.encode(), mode, close, tb._wrapper)
+        gxapi_cy.WrapDU._table_look1(GXContext._get_tls_geo(), db, line, i_ch, o_ch, ref_field.encode(), l_field.encode(), mode, close, tb)
         
 
 
@@ -136,16 +127,16 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Fails if table does not contain requested fields.
+        **Note:** Fails if table does not contain requested fields.
         The nominal data sample spacing for the CLOSE options is
         calculated by finding the fiducial increment the
         - primary index channel for Lookup1C_DU;
         - secondary index channel for Lookup2C_DU, LookupIValC_DU
         and LookupRValC_DU
         """
-        gxapi_cy.WrapDU.table_look2(GXContext._get_tls_geo(), db._wrapper, line, r1_ch, r2_ch, o_ch, r1_field.encode(), r2_field.encode(), l_field.encode(), mode, close, tb._wrapper)
+        gxapi_cy.WrapDU._table_look2(GXContext._get_tls_geo(), db, line, r1_ch, r2_ch, o_ch, r1_field.encode(), r2_field.encode(), l_field.encode(), mode, close, tb)
         
 
 
@@ -181,16 +172,16 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Fails if table does not contain requested fields.
+        **Note:** Fails if table does not contain requested fields.
         The nominal data sample spacing for the CLOSE options is
         calculated by finding the fiducial increment the
         - primary index channel for Lookup1C_DU;
         - secondary index channel for Lookup2C_DU, LookupIValC_DU
         and LookupRValC_DU
         """
-        gxapi_cy.WrapDU.table_look_i2(GXContext._get_tls_geo(), db._wrapper, line, val, i_ch, o_ch, r1.encode(), r2.encode(), field.encode(), mode, dist, tb._wrapper)
+        gxapi_cy.WrapDU._table_look_i2(GXContext._get_tls_geo(), db, line, val, i_ch, o_ch, r1.encode(), r2.encode(), field.encode(), mode, dist, tb)
         
 
 
@@ -226,16 +217,16 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Fails if table does not contain requested fields.
+        **Note:** Fails if table does not contain requested fields.
         The nominal data sample spacing for the CLOSE options is
         calculated by finding the fiducial increment the
         - primary index channel for Lookup1C_DU;
         - secondary index channel for Lookup2C_DU, LookupIValC_DU
         and LookupRValC_DU
         """
-        gxapi_cy.WrapDU.table_look_r2(GXContext._get_tls_geo(), db._wrapper, line, val, i_ch, o_ch, r1.encode(), r2.encode(), field.encode(), mode, dist, tb._wrapper)
+        gxapi_cy.WrapDU._table_look_r2(GXContext._get_tls_geo(), db, line, val, i_ch, o_ch, r1.encode(), r2.encode(), field.encode(), mode, dist, tb)
         
 
 
@@ -252,13 +243,13 @@ class GXDU:
 
         .. versionadded:: 5.0.8
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The `GXVV <geosoft.gxapi.GXVV>` must be created to hold strings of length
+        **Note:** The `GXVV <geosoft.gxapi.GXVV>` must be created to hold strings of length
         `STR_DB_SYMBOL <geosoft.gxapi.STR_DB_SYMBOL>`; i.e. use
         Creat_VV(-`STR_DB_SYMBOL <geosoft.gxapi.STR_DB_SYMBOL>`, 0), or it will assert.
         """
-        gxapi_cy.WrapDU.ado_table_names(GXContext._get_tls_geo(), connect.encode(), vv._wrapper)
+        gxapi_cy.WrapDU._ado_table_names(GXContext._get_tls_geo(), connect.encode(), vv)
         
 
 
@@ -278,8 +269,10 @@ class GXDU:
         :type  o_ch:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.an_sig(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch)
+        gxapi_cy.WrapDU._an_sig(GXContext._get_tls_geo(), db, line, i_ch, o_ch)
         
 
 
@@ -298,16 +291,16 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        If the source database and destination database have channels
+        **Note:** If the source database and destination database have channels
         with the same name, then data is appended onto the end
         of the channel in lines which have the same number.
         
         If a channel in the destination database is not also in the source
         database, it is ignored.
         """
-        gxapi_cy.WrapDU.append(GXContext._get_tls_geo(), d_bi._wrapper, d_bo._wrapper, ignore)
+        gxapi_cy.WrapDU._append(GXContext._get_tls_geo(), d_bi, d_bo, ignore)
         
 
 
@@ -326,9 +319,9 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Direction in degrees azimuth (clockwise relative
+        **Note:** Direction in degrees azimuth (clockwise relative
         the +Y direction). The result is in the range
         -90 < azimuth <= 90. The method handles lines going
         in opposite directions (they do not average to 0!)
@@ -339,7 +332,7 @@ class GXDU:
         The maximum value occurs at the angle which most closely
         approximates the trend direction of the lines.
         """
-        azimuth.value = gxapi_cy.WrapDU.avg_azimuth(GXContext._get_tls_geo(), db._wrapper, precision, azimuth.value)
+        azimuth.value = gxapi_cy.WrapDU._avg_azimuth(GXContext._get_tls_geo(), db, precision, azimuth.value)
         
 
 
@@ -366,8 +359,10 @@ class GXDU:
         :type  tb:       GXTB
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.base_data(GXContext._get_tls_geo(), db._wrapper, line, in_ch, time_ch, out_ch, tb._wrapper)
+        gxapi_cy.WrapDU._base_data(GXContext._get_tls_geo(), db, line, in_ch, time_ch, out_ch, tb)
         
 
 
@@ -396,8 +391,10 @@ class GXDU:
         :type  flag:     int
 
         .. versionadded:: 5.1.8
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.base_data_ex(GXContext._get_tls_geo(), db._wrapper, line, in_ch, time_ch, out_ch, tb._wrapper, flag)
+        gxapi_cy.WrapDU._base_data_ex(GXContext._get_tls_geo(), db, line, in_ch, time_ch, out_ch, tb, flag)
         
 
 
@@ -419,8 +416,10 @@ class GXDU:
         :type  pply:    GXPLY
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.bound_line(GXContext._get_tls_geo(), db._wrapper, line, x_chan, y_chan, pply._wrapper)
+        gxapi_cy.WrapDU._bound_line(GXContext._get_tls_geo(), db, line, x_chan, y_chan, pply)
         
 
 
@@ -448,12 +447,12 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        If the short and long wavelengths are <= 0, the input channel
+        **Note:** If the short and long wavelengths are <= 0, the input channel
         is simply copied to the output channel without filtering.
         """
-        gxapi_cy.WrapDU.bp_filt(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch, sw, lw, filt_len)
+        gxapi_cy.WrapDU._bp_filt(GXContext._get_tls_geo(), db, line, i_ch, o_ch, sw, lw, filt_len)
         
 
 
@@ -471,8 +470,10 @@ class GXDU:
         :type  chan:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.break_line(GXContext._get_tls_geo(), db._wrapper, line, chan)
+        gxapi_cy.WrapDU._break_line(GXContext._get_tls_geo(), db, line, chan)
         
 
 
@@ -493,11 +494,11 @@ class GXDU:
 
         .. versionadded:: 8.4
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The same as BreakLine, but with an option to reset each line's starting fiducial to zero.
+        **Note:** The same as BreakLine, but with an option to reset each line's starting fiducial to zero.
         """
-        gxapi_cy.WrapDU.break_line2(GXContext._get_tls_geo(), db._wrapper, line, chan, reset_fi_ds)
+        gxapi_cy.WrapDU._break_line2(GXContext._get_tls_geo(), db, line, chan, reset_fi_ds)
         
 
 
@@ -518,9 +519,9 @@ class GXDU:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The original line will be deleted.
+        **Note:** The original line will be deleted.
         This is similar to `break_line <geosoft.gxapi.GXDU.break_line>`, but the output lines
         are "group" lines, without the line type letters at the
         start. (See db.gxh for information of Group Lines).
@@ -533,7 +534,7 @@ class GXDU:
         this will NOT be true. (Groups without class names are treated
         as isolated entities for the purposes of channel loading).
         """
-        gxapi_cy.WrapDU.break_line_to_groups(GXContext._get_tls_geo(), db._wrapper, line, chan, cl.encode())
+        gxapi_cy.WrapDU._break_line_to_groups(GXContext._get_tls_geo(), db, line, chan, cl.encode())
         
 
 
@@ -556,11 +557,11 @@ class GXDU:
 
         .. versionadded:: 8.4
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The same as BreakLineToGroups, but with an option to reset each line's starting fiducial to zero.
+        **Note:** The same as BreakLineToGroups, but with an option to reset each line's starting fiducial to zero.
         """
-        gxapi_cy.WrapDU.break_line_to_groups2(GXContext._get_tls_geo(), db._wrapper, line, chan, cl.encode(), reset_fi_ds)
+        gxapi_cy.WrapDU._break_line_to_groups2(GXContext._get_tls_geo(), db, line, chan, cl.encode(), reset_fi_ds)
         
 
 
@@ -587,11 +588,13 @@ class GXDU:
 
         .. versionadded:: 5.0
 
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+
         .. seealso::
 
             `trend <geosoft.gxapi.GXDU.trend>`
         """
-        gxapi_cy.WrapDU.b_spline(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch, sd, rou, tau)
+        gxapi_cy.WrapDU._b_spline(GXContext._get_tls_geo(), db, line, i_ch, o_ch, sd, rou, tau)
         
 
 
@@ -617,16 +620,16 @@ class GXDU:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Selected lines are scanned for the (X, Y) location
+        **Note:** Selected lines are scanned for the (X, Y) location
         which is closest to the input location.
         The line and fiducial of the point are returned.
         
         Will register an error if no valid (X, Y) locations
         are found.
         """
-        xp.value, yp.value, line.value, fid.value = gxapi_cy.WrapDU.closest_point(GXContext._get_tls_geo(), db._wrapper, x, y, xp.value, yp.value, line.value, fid.value)
+        xp.value, yp.value, line.value, fid.value = gxapi_cy.WrapDU._closest_point(GXContext._get_tls_geo(), db, x, y, xp.value, yp.value, line.value, fid.value)
         
 
 
@@ -645,12 +648,12 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Existing channels in the output line will be replaced
+        **Note:** Existing channels in the output line will be replaced
         by copied channels.
         """
-        gxapi_cy.WrapDU.copy_line(GXContext._get_tls_geo(), db._wrapper, i_line, o_line)
+        gxapi_cy.WrapDU._copy_line(GXContext._get_tls_geo(), db, i_line, o_line)
         
 
 
@@ -671,16 +674,16 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Existing channels in the output line will be replaced
+        **Note:** Existing channels in the output line will be replaced
         by copied channels.
 
         .. seealso::
 
             `copy_line_chan_across <geosoft.gxapi.GXDU.copy_line_chan_across>` function
         """
-        gxapi_cy.WrapDU.copy_line_across(GXContext._get_tls_geo(), idb._wrapper, i_line, odb._wrapper, o_line)
+        gxapi_cy.WrapDU._copy_line_across(GXContext._get_tls_geo(), idb, i_line, odb, o_line)
         
 
 
@@ -703,16 +706,16 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Existing channels in the output line will be replaced
+        **Note:** Existing channels in the output line will be replaced
         by copied channels.
 
         .. seealso::
 
             `copy_line_across <geosoft.gxapi.GXDU.copy_line_across>` function
         """
-        gxapi_cy.WrapDU.copy_line_chan_across(GXContext._get_tls_geo(), idb._wrapper, i_line, vv_chan._wrapper, odb._wrapper, o_line)
+        gxapi_cy.WrapDU._copy_line_chan_across(GXContext._get_tls_geo(), idb, i_line, vv_chan, odb, o_line)
         
 
 
@@ -735,16 +738,16 @@ class GXDU:
 
         .. versionadded:: 5.0.8
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The input line's channel data is ReFidded to the mask
+        **Note:** The input line's channel data is ReFidded to the mask
         channel, and then pruned from the output line data,
         based on the value of the VVU_PRUNE_XXX variable.
         For `VVU_PRUNE_DUMMY <geosoft.gxapi.VVU_PRUNE_DUMMY>`, only those items where the mask channel
         value is not a dummy are retained, while the complement
         is retained for VV_PRUNE_VALID.
         """
-        gxapi_cy.WrapDU.copy_line_masked(GXContext._get_tls_geo(), db._wrapper, i_line, mask, prune, o_line)
+        gxapi_cy.WrapDU._copy_line_masked(GXContext._get_tls_geo(), db, i_line, mask, prune, o_line)
         
 
 
@@ -763,13 +766,13 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The `GXVV <geosoft.gxapi.GXVV>` must be created to hold strings of length
+        **Note:** The `GXVV <geosoft.gxapi.GXVV>` must be created to hold strings of length
         `STR_DB_SYMBOL <geosoft.gxapi.STR_DB_SYMBOL>`; i.e. use
         Creat_VV(-`STR_DB_SYMBOL <geosoft.gxapi.STR_DB_SYMBOL>`, 0), or it will assert.
         """
-        gxapi_cy.WrapDU.dao_table_names(GXContext._get_tls_geo(), file.encode(), type.encode(), vv._wrapper)
+        gxapi_cy.WrapDU._dao_table_names(GXContext._get_tls_geo(), file.encode(), type.encode(), vv)
         
 
 
@@ -791,8 +794,10 @@ class GXDU:
         :type  n:     int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.decimate(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch, n)
+        gxapi_cy.WrapDU._decimate(GXContext._get_tls_geo(), db, line, i_ch, o_ch, n)
         
 
 
@@ -815,14 +820,14 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Differences with dummies result in dummies.
+        **Note:** Differences with dummies result in dummies.
         An even number of differences locates data accurately.
         An odd number of differences locates result 1/2 element lower
         in the `GXVV <geosoft.gxapi.GXVV>`.
         """
-        gxapi_cy.WrapDU.diff(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch, n)
+        gxapi_cy.WrapDU._diff(GXContext._get_tls_geo(), db, line, i_ch, o_ch, n)
         
 
 
@@ -844,8 +849,10 @@ class GXDU:
         :type  o_ch:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.distance(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, o_ch)
+        gxapi_cy.WrapDU._distance(GXContext._get_tls_geo(), db, line, x_ch, y_ch, o_ch)
         
 
 
@@ -871,8 +878,10 @@ class GXDU:
         :type  o_ch:  int
 
         .. versionadded:: 8.1
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.distance_3d(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, z_ch, type, o_ch)
+        gxapi_cy.WrapDU._distance_3d(GXContext._get_tls_geo(), db, line, x_ch, y_ch, z_ch, type, o_ch)
         
 
 
@@ -894,8 +903,10 @@ class GXDU:
         :type  dist:  float_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        dist.value = gxapi_cy.WrapDU.distline(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, dist.value)
+        dist.value = gxapi_cy.WrapDU._distline(GXContext._get_tls_geo(), db, line, x_ch, y_ch, dist.value)
         
 
 
@@ -911,8 +922,10 @@ class GXDU:
         :type  d_bo:  GXDB
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapDU.dup_chan_locks(GXContext._get_tls_geo(), d_bi._wrapper, d_bo._wrapper)
+        gxapi_cy.WrapDU._dup_chan_locks(GXContext._get_tls_geo(), d_bi, d_bo)
         
 
 
@@ -928,8 +941,10 @@ class GXDU:
         :type  d_bo:  GXDB
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapDU.dup_chans(GXContext._get_tls_geo(), d_bi._wrapper, d_bo._wrapper)
+        gxapi_cy.WrapDU._dup_chans(GXContext._get_tls_geo(), d_bi, d_bo)
         
 
 
@@ -956,12 +971,12 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        All the channels must be of the same fid incr/start and length.
+        **Note:** All the channels must be of the same fid incr/start and length.
         Protected channels are modified automatically.
         """
-        gxapi_cy.WrapDU.edit_duplicates(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, option, single, fid_num)
+        gxapi_cy.WrapDU._edit_duplicates(GXContext._get_tls_geo(), db, line, x_ch, y_ch, option, single, fid_num)
         
 
 
@@ -990,9 +1005,9 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        For databases with both groups and lines:
+        **Note:** For databases with both groups and lines:
         If both lines and groups are selected, save only the lines.
         If no lines are selected, (only groups), save the current line
         if it is (1) a group and (2) selected, else save the first selected
@@ -1004,7 +1019,7 @@ class GXDU:
         channels, listed by the symbols (DB_SYMB) values, cast to int values and
         stored in a `GXVV <geosoft.gxapi.GXVV>`.
         """
-        gxapi_cy.WrapDU.export1(GXContext._get_tls_geo(), db._wrapper, format, cur_line.encode(), chan_vv._wrapper, chan, data.encode(), dummies, header)
+        gxapi_cy.WrapDU._export1(GXContext._get_tls_geo(), db, format, cur_line.encode(), chan_vv, chan, data.encode(), dummies, header)
         
 
 
@@ -1035,12 +1050,12 @@ class GXDU:
 
         .. versionadded:: 5.1.6
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        See `export1 <geosoft.gxapi.GXDU.export1>`.
+        **Note:** See `export1 <geosoft.gxapi.GXDU.export1>`.
         The line names are printed as the first column of data exported.
         """
-        gxapi_cy.WrapDU.export2(GXContext._get_tls_geo(), db._wrapper, format, cur_line.encode(), chan_vv._wrapper, chan, data.encode(), dummies, header, line_names)
+        gxapi_cy.WrapDU._export2(GXContext._get_tls_geo(), db, format, cur_line.encode(), chan_vv, chan, data.encode(), dummies, header, line_names)
         
 
 
@@ -1075,12 +1090,12 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Other defined FIELDS stored in the database (see `import_amira <geosoft.gxapi.GXDU.import_amira>` function)
+        **Note:** Other defined FIELDS stored in the database (see `import_amira <geosoft.gxapi.GXDU.import_amira>` function)
         will be automatically included in the export
         """
-        gxapi_cy.WrapDU.export_amira(GXContext._get_tls_geo(), db._wrapper, wa._wrapper, one_cols_ch.encode(), array_ch.encode(), time_ch.encode(), errors_ch.encode(), datatype.encode(), units.encode(), config.encode(), instrument.encode(), frequency.encode())
+        gxapi_cy.WrapDU._export_amira(GXContext._get_tls_geo(), db, wa, one_cols_ch.encode(), array_ch.encode(), time_ch.encode(), errors_ch.encode(), datatype.encode(), units.encode(), config.encode(), instrument.encode(), frequency.encode())
         
 
 
@@ -1105,9 +1120,9 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        At least one of the header file
+        **Note:** At least one of the header file
         or data file names must be set. (Unset names will get the
         same file name, but with the extensions .dfn (header) or
         .dat (data).
@@ -1117,7 +1132,7 @@ class GXDU:
         if it is (1) a group and (2) selected, else save the first selected
         group. ---
         """
-        gxapi_cy.WrapDU.export_aseg(GXContext._get_tls_geo(), db._wrapper, cur_line.encode(), chan_vv._wrapper, chan, defn.encode(), data.encode())
+        gxapi_cy.WrapDU._export_aseg(GXContext._get_tls_geo(), db, cur_line.encode(), chan_vv, chan, defn.encode(), data.encode())
         
 
 
@@ -1146,9 +1161,9 @@ class GXDU:
 
         .. versionadded:: 5.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        At least one of the header file
+        **Note:** At least one of the header file
         or data file names must be set. (Unset names will get the
         same file name, but with the extensions .dfn (header) or
         .dat (data).
@@ -1160,7 +1175,7 @@ class GXDU:
         
         This version supports projections
         """
-        gxapi_cy.WrapDU.export_aseg_proj(GXContext._get_tls_geo(), db._wrapper, cur_line.encode(), chan_vv._wrapper, chan, defn.encode(), data.encode(), proj.encode(), ipj._wrapper)
+        gxapi_cy.WrapDU._export_aseg_proj(GXContext._get_tls_geo(), db, cur_line.encode(), chan_vv, chan, defn.encode(), data.encode(), proj.encode(), ipj)
         
 
 
@@ -1181,14 +1196,14 @@ class GXDU:
 
         .. versionadded:: 6.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The output file is an XML describing the channel. The
+        **Note:** The output file is an XML describing the channel. The
         CRC is of the channel data ONLY. To compute a CRC of the
         full channel (include metadata) do a CRC of the generated
         file.
         """
-        crc.value = gxapi_cy.WrapDU.export_chan_crc(GXContext._get_tls_geo(), db._wrapper, symb, crc.value, file.encode())
+        crc.value = gxapi_cy.WrapDU._export_chan_crc(GXContext._get_tls_geo(), db, symb, crc.value, file.encode())
         
 
 
@@ -1215,9 +1230,9 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        For databases with both groups and lines:
+        **Note:** For databases with both groups and lines:
         If both lines and groups are selected, save only the lines.
         If no lines are selected, (only groups), save the current line
         if it is (1) a group and (2) selected, else save the first selected
@@ -1225,7 +1240,7 @@ class GXDU:
         Option to filter out data where one of the channels has a dummy in it.
         Option to allow a header with the channel names.
         """
-        gxapi_cy.WrapDU.export_csv(GXContext._get_tls_geo(), db._wrapper, cur_line.encode(), chan_vv._wrapper, chan, data.encode(), dummies, header)
+        gxapi_cy.WrapDU._export_csv(GXContext._get_tls_geo(), db, cur_line.encode(), chan_vv, chan, data.encode(), dummies, header)
         
 
 
@@ -1244,14 +1259,14 @@ class GXDU:
 
         .. versionadded:: 6.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The output file is an XML describing the channel. The
+        **Note:** The output file is an XML describing the channel. The
         CRC is of the channel data ONLY. To compute a CRC of the
         full channel (include metadata) do a CRC of the generated
         file.
         """
-        crc.value = gxapi_cy.WrapDU.export_database_crc(GXContext._get_tls_geo(), db._wrapper, crc.value, file.encode())
+        crc.value = gxapi_cy.WrapDU._export_database_crc(GXContext._get_tls_geo(), db, crc.value, file.encode())
         
 
 
@@ -1270,12 +1285,12 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The iDispChanList_DBE or `GXDB.symb_list <geosoft.gxapi.GXDB.symb_list>` methods can be
+        **Note:** The iDispChanList_DBE or `GXDB.symb_list <geosoft.gxapi.GXDB.symb_list>` methods can be
         used to obtain a list of channels.
         """
-        gxapi_cy.WrapDU.export_gbn(GXContext._get_tls_geo(), db._wrapper, vv._wrapper, data.encode())
+        gxapi_cy.WrapDU._export_gbn(GXContext._get_tls_geo(), db, vv, data.encode())
         
 
 
@@ -1300,14 +1315,14 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Similar to `export_gbn <geosoft.gxapi.GXDU.export_gbn>`, with the addition that
+        **Note:** Similar to `export_gbn <geosoft.gxapi.GXDU.export_gbn>`, with the addition that
         Groups go to individual tables, and lines go to
         a single table, or individual tables, based on the
         value of :ref:`DU_LINEOUT`
         """
-        gxapi_cy.WrapDU.export_mdb(GXContext._get_tls_geo(), db._wrapper, cur_line.encode(), chan_vv._wrapper, chan, single, data.encode())
+        gxapi_cy.WrapDU._export_mdb(GXContext._get_tls_geo(), db, cur_line.encode(), chan_vv, chan, single, data.encode())
         
 
 
@@ -1336,14 +1351,14 @@ class GXDU:
 
         .. versionadded:: 8.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Similar to `export_gbn <geosoft.gxapi.GXDU.export_gbn>`, with the addition that
+        **Note:** Similar to `export_gbn <geosoft.gxapi.GXDU.export_gbn>`, with the addition that
         Groups go to individual tables, and lines go to
         a single table, or individual tables, based on the
         value of :ref:`DU_LINEOUT`
         """
-        gxapi_cy.WrapDU.export_geodatabase(GXContext._get_tls_geo(), db._wrapper, feature_class_name.encode(), cur_line.encode(), chan_vv._wrapper, chan, output, single, data.encode())
+        gxapi_cy.WrapDU._export_geodatabase(GXContext._get_tls_geo(), db, feature_class_name.encode(), cur_line.encode(), chan_vv, chan, output, single, data.encode())
         
 
 
@@ -1368,11 +1383,11 @@ class GXDU:
 
         .. versionadded:: 8.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Searches the geodatabases for an existing Feature class
+        **Note:** Searches the geodatabases for an existing Feature class
         """
-        ret_val = gxapi_cy.WrapDU.get_existing_feature_classes_in_geodatabase(GXContext._get_tls_geo(), db._wrapper, geodatabase.encode(), lst._wrapper, vv._wrapper)
+        ret_val = gxapi_cy.WrapDU._get_existing_feature_classes_in_geodatabase(GXContext._get_tls_geo(), db, geodatabase.encode(), lst, vv)
         return ret_val
 
 
@@ -1399,13 +1414,13 @@ class GXDU:
 
         .. versionadded:: 6.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Similar to `export_mdb <geosoft.gxapi.GXDU.export_mdb>`, with the addition that groups go to indiviual files
+        **Note:** Similar to `export_mdb <geosoft.gxapi.GXDU.export_mdb>`, with the addition that groups go to indiviual files
         with group name suffixes, and lines go to a single file, or multiple files
         with line name suffixes, based on the value of :ref:`DU_LINEOUT`.
         """
-        gxapi_cy.WrapDU.export_shp(GXContext._get_tls_geo(), db._wrapper, cur_line.encode(), chan_vv._wrapper, chan, single, data.encode(), lst._wrapper)
+        gxapi_cy.WrapDU._export_shp(GXContext._get_tls_geo(), db, cur_line.encode(), chan_vv, chan, single, data.encode(), lst)
         
 
 
@@ -1424,9 +1439,9 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        1. The export template can be in the local directory or the GEOSOFT
+        **Note:** 1. The export template can be in the local directory or the GEOSOFT
         directory.  The import data file must include the path if it is not
         in the local directory.
         
@@ -1444,7 +1459,7 @@ class GXDU:
         4. This can be used to export a group, but the group must be the
         currently displayed line, and only that group will be exported.
         """
-        gxapi_cy.WrapDU.export_xyz(GXContext._get_tls_geo(), db._wrapper, data.encode(), template.encode())
+        gxapi_cy.WrapDU._export_xyz(GXContext._get_tls_geo(), db, data.encode(), template.encode())
         
 
 
@@ -1463,11 +1478,13 @@ class GXDU:
 
         .. versionadded:: 5.0
 
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
         .. seealso::
 
             `export_xyz <geosoft.gxapi.GXDU.export_xyz>`
         """
-        gxapi_cy.WrapDU.export_xyz2(GXContext._get_tls_geo(), db._wrapper, wa._wrapper, ra._wrapper)
+        gxapi_cy.WrapDU._export_xyz2(GXContext._get_tls_geo(), db, wa, ra)
         
 
 
@@ -1489,8 +1506,10 @@ class GXDU:
         :type  i_ch:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.fft(GXContext._get_tls_geo(), db._wrapper, line, s_ch, r_ch, i_ch)
+        gxapi_cy.WrapDU._fft(GXContext._get_tls_geo(), db, line, s_ch, r_ch, i_ch)
         
 
 
@@ -1512,8 +1531,10 @@ class GXDU:
         :type  flt:   int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.filter(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch, flt)
+        gxapi_cy.WrapDU._filter(GXContext._get_tls_geo(), db, line, i_ch, o_ch, flt)
         
 
 
@@ -1535,8 +1556,10 @@ class GXDU:
         :type  m0:        int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.gen_lev(GXContext._get_tls_geo(), db._wrapper, in_file.encode(), out_file.encode(), max_dz, m0)
+        gxapi_cy.WrapDU._gen_lev(GXContext._get_tls_geo(), db, in_file.encode(), out_file.encode(), max_dz, m0)
         
 
 
@@ -1557,15 +1580,15 @@ class GXDU:
 
         .. versionadded:: 7.1
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Requires channels with the following names:
+        **Note:** Requires channels with the following names:
         
         ine, TFid, TZ, TDZ
         Line, LFid, LZ, LDZ
         Mask
         """
-        gxapi_cy.WrapDU.gen_lev_db(GXContext._get_tls_geo(), db._wrapper, out_file.encode(), max_dz, m0)
+        gxapi_cy.WrapDU._gen_lev_db(GXContext._get_tls_geo(), db, out_file.encode(), max_dz, m0)
         
 
 
@@ -1581,8 +1604,10 @@ class GXDU:
         :type  temp:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapDU.gen_xyz_temp(GXContext._get_tls_geo(), xyz.encode(), temp.encode())
+        gxapi_cy.WrapDU._gen_xyz_temp(GXContext._get_tls_geo(), xyz.encode(), temp.encode())
         
 
 
@@ -1598,8 +1623,10 @@ class GXDU:
         :type  num_fields:  int_ref
 
         .. versionadded:: 9.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        num_fields.value = gxapi_cy.WrapDU.get_xyz_num_fields(GXContext._get_tls_geo(), xyz.encode(), num_fields.value)
+        num_fields.value = gxapi_cy.WrapDU._get_xyz_num_fields(GXContext._get_tls_geo(), xyz.encode(), num_fields.value)
         
 
 
@@ -1620,9 +1647,9 @@ class GXDU:
 
         .. versionadded:: 6.1
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Items from all selected lines are collected,
+        **Note:** Items from all selected lines are collected,
         sorted, and duplicates removed. The output
         `GXLST <geosoft.gxapi.GXLST>` name and value are set to the item values.
         Non-string channels are converted internally to
@@ -1633,7 +1660,7 @@ class GXDU:
         If a mask channel is selected, then only those items
         where the mask channel is not a dummy are collected.
         """
-        gxapi_cy.WrapDU.get_chan_data_lst(GXContext._get_tls_geo(), db._wrapper, chan, mask, lst._wrapper)
+        gxapi_cy.WrapDU._get_chan_data_lst(GXContext._get_tls_geo(), db, chan, mask, lst)
         
 
 
@@ -1654,9 +1681,9 @@ class GXDU:
 
         .. versionadded:: 6.1
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Items from all selected lines are collected,
+        **Note:** Items from all selected lines are collected,
         sorted, and duplicates removed.
         The data is collected in the channel's data type,
         so normal `GXVV.sort <geosoft.gxapi.GXVV.sort>` rules apply.
@@ -1666,7 +1693,7 @@ class GXDU:
         If a mask channel is selected, then only those items
         where the mask channel is not a dummy are collected.
         """
-        gxapi_cy.WrapDU.get_chan_data_vv(GXContext._get_tls_geo(), db._wrapper, chan, mask, vv._wrapper)
+        gxapi_cy.WrapDU._get_chan_data_vv(GXContext._get_tls_geo(), db, chan, mask, vv)
         
 
 
@@ -1702,8 +1729,10 @@ class GXDU:
         :type  width:  float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.gradient(GXContext._get_tls_geo(), dbi._wrapper, dbo._wrapper, ix_ch, iy_ch, iz_ch, ig_ch, ox_ch, oy_ch, oz_ch, angle, width)
+        gxapi_cy.WrapDU._gradient(GXContext._get_tls_geo(), dbi, dbo, ix_ch, iy_ch, iz_ch, ig_ch, ox_ch, oy_ch, oz_ch, angle, width)
         
 
 
@@ -1729,8 +1758,10 @@ class GXDU:
         :type  clos:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.grav_drift(GXContext._get_tls_geo(), db._wrapper, line, date, time, read, base, clos)
+        gxapi_cy.WrapDU._grav_drift(GXContext._get_tls_geo(), db, line, date, time, read, base, clos)
         
 
 
@@ -1758,8 +1789,10 @@ class GXDU:
         :type  tide:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.grav_tide(GXContext._get_tls_geo(), db._wrapper, line, lat, lon, date, time, gmt, tide)
+        gxapi_cy.WrapDU._grav_tide(GXContext._get_tls_geo(), db, line, lat, lon, date, time, gmt, tide)
         
 
 
@@ -1783,8 +1816,10 @@ class GXDU:
         :type  create_index:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.grid_load(GXContext._get_tls_geo(), db._wrapper, img._wrapper, xdec, ydec, trim_dum, create_index)
+        gxapi_cy.WrapDU._grid_load(GXContext._get_tls_geo(), db, img, xdec, ydec, trim_dum, create_index)
         
 
 
@@ -1816,8 +1851,10 @@ class GXDU:
         :type  index_ch:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.grid_load_xyz(GXContext._get_tls_geo(), db._wrapper, img._wrapper, ch_x, ch_y, ch_z, ch_data, xdec, ydec, trim_dum, index_ch)
+        gxapi_cy.WrapDU._grid_load_xyz(GXContext._get_tls_geo(), db, img, ch_x, ch_y, ch_z, ch_data, xdec, ydec, trim_dum, index_ch)
         
 
 
@@ -1842,14 +1879,14 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Updates channel with Direction in degrees azimuth (counter-clockwise
+        **Note:** Updates channel with Direction in degrees azimuth (counter-clockwise
         relative the +Y direction).
         `GS_R8DM <geosoft.gxapi.GS_R8DM>` if the line has no data, or if there is a
         problem.
         """
-        gxapi_cy.WrapDU.head(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch, tb._wrapper, dir)
+        gxapi_cy.WrapDU._head(GXContext._get_tls_geo(), db, line, i_ch, o_ch, tb, dir)
         
 
 
@@ -1875,9 +1912,9 @@ class GXDU:
 
         .. versionadded:: 6.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        See `import_bin2 <geosoft.gxapi.GXDU.import_bin2>`. Because the name of the created line is
+        **Note:** See `import_bin2 <geosoft.gxapi.GXDU.import_bin2>`. Because the name of the created line is
         not necessarily the value passed in (and the value passed in
         can be blank), this version returns the name of the line
         to which the data is actually imported.
@@ -1886,7 +1923,7 @@ class GXDU:
 
             `import_bin2 <geosoft.gxapi.GXDU.import_bin2>`
         """
-        line.value = gxapi_cy.WrapDU.import_bin3(GXContext._get_tls_geo(), db._wrapper, data.encode(), template.encode(), line.value.encode(), flight, date, wa._wrapper)
+        line.value = gxapi_cy.WrapDU._import_bin3(GXContext._get_tls_geo(), db, data.encode(), template.encode(), line.value.encode(), flight, date, wa)
         
 
 
@@ -1909,11 +1946,11 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The polygon file is provided by Ana Christina in Brazil.
+        **Note:** The polygon file is provided by Ana Christina in Brazil.
         """
-        gxapi_cy.WrapDU.imp_cb_ply(GXContext._get_tls_geo(), db._wrapper, pj._wrapper, file.encode(), x_chan, y_chan)
+        gxapi_cy.WrapDU._imp_cb_ply(GXContext._get_tls_geo(), db, pj, file.encode(), x_chan, y_chan)
         
 
 
@@ -1936,9 +1973,9 @@ class GXDU:
 
         .. versionadded:: 5.0.8
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        1. The import template can be in the local directory or the GEOSOFT
+        **Note:** 1. The import template can be in the local directory or the GEOSOFT
         directory.
         
         2. Only the import template must be specified. The database connection string,
@@ -1947,7 +1984,7 @@ class GXDU:
         
         3. If the line already exists, the data will overwrite the existing data.
         """
-        gxapi_cy.WrapDU.import_ado(GXContext._get_tls_geo(), db._wrapper, connect.encode(), table.encode(), template.encode(), line.encode())
+        gxapi_cy.WrapDU._import_ado(GXContext._get_tls_geo(), db, connect.encode(), table.encode(), template.encode(), line.encode())
         
 
 
@@ -1966,9 +2003,9 @@ class GXDU:
 
         .. versionadded:: 5.0.8
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        1. For group storage, the table names are imported "as is". For line storage,
+        **Note:** 1. For group storage, the table names are imported "as is". For line storage,
         if the table names are valid Geosoft line names, they are used as is.
         Otherwise, line names will be created with type LINE_NORMAL, starting at
         L0 and incrementing by 10 (L10, L20 etc.)
@@ -1980,7 +2017,7 @@ class GXDU:
         4. If connection string is of type "FILENAME=..." the connection will attempt to resolve
         it as a file database. (see also ODBCFileConnect_GUI)
         """
-        gxapi_cy.WrapDU.import_all_ado(GXContext._get_tls_geo(), db._wrapper, connect.encode(), storage)
+        gxapi_cy.WrapDU._import_all_ado(GXContext._get_tls_geo(), db, connect.encode(), storage)
         
 
 
@@ -2001,9 +2038,9 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        1. The file is assumed to be a DAO compliant database.
+        **Note:** 1. The file is assumed to be a DAO compliant database.
         
         2. The import data file must include the path if it is not
         in the local directory.
@@ -2031,7 +2068,7 @@ class GXDU:
         Paradox 4.x
         Paradox 5.x
         """
-        gxapi_cy.WrapDU.import_all_dao(GXContext._get_tls_geo(), db._wrapper, data.encode(), type.encode(), storage)
+        gxapi_cy.WrapDU._import_all_dao(GXContext._get_tls_geo(), db, data.encode(), type.encode(), storage)
         
 
 
@@ -2050,15 +2087,15 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        All the constant declarations are stored within the database
+        **Note:** All the constant declarations are stored within the database
         under \\TEM\\CONSTANTS. The format is as follows:
         
             1. Lines stored in the file beginning with "/" are comments
             2. Each constant occupies a line in the file. It uses the format: CONSTANT=VALUE
         """
-        gxapi_cy.WrapDU.import_amira(GXContext._get_tls_geo(), db._wrapper, ra._wrapper, wa._wrapper)
+        gxapi_cy.WrapDU._import_amira(GXContext._get_tls_geo(), db, ra, wa)
         
 
 
@@ -2082,8 +2119,10 @@ class GXDU:
         :type  chans:     int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapDU.import_aseg(GXContext._get_tls_geo(), db._wrapper, template.encode(), file.encode(), data.encode(), flc.encode(), chans)
+        gxapi_cy.WrapDU._import_aseg(GXContext._get_tls_geo(), db, template.encode(), file.encode(), data.encode(), flc.encode(), chans)
         
 
 
@@ -2114,11 +2153,11 @@ class GXDU:
 
         .. versionadded:: 5.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This version supports projections
+        **Note:** This version supports projections
         """
-        gxapi_cy.WrapDU.import_aseg_proj(GXContext._get_tls_geo(), db._wrapper, template.encode(), file.encode(), data.encode(), flc.encode(), chans, proj.encode(), x_ch.encode(), y_ch.encode())
+        gxapi_cy.WrapDU._import_aseg_proj(GXContext._get_tls_geo(), db, template.encode(), file.encode(), data.encode(), flc.encode(), chans, proj.encode(), x_ch.encode(), y_ch.encode())
         
 
 
@@ -2143,9 +2182,9 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        1. Binary import templates have extension .I2 by convention.  See
+        **Note:** 1. Binary import templates have extension .I2 by convention.  See
         BINARY.I2 for a description of the template format.
         Archive import templates have extension .I3 by convention. See
         ARCHIVE.I3 for a description of the template format.
@@ -2161,7 +2200,7 @@ class GXDU:
 
             `lab_template <geosoft.gxapi.GXDU.lab_template>`
         """
-        gxapi_cy.WrapDU.import_bin(GXContext._get_tls_geo(), db._wrapper, data.encode(), template.encode(), line.encode(), flight, date)
+        gxapi_cy.WrapDU._import_bin(GXContext._get_tls_geo(), db, data.encode(), template.encode(), line.encode(), flight, date)
         
 
 
@@ -2187,9 +2226,9 @@ class GXDU:
 
         .. versionadded:: 5.1.6
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        1. Binary import templates have extension .I2 by convention.  See
+        **Note:** 1. Binary import templates have extension .I2 by convention.  See
         BINARY.I2 for a description of the template format.
         Archive import templates have extension .I3 by convention. See
         ARCHIVE.I3 for a description of the template format.
@@ -2205,7 +2244,7 @@ class GXDU:
 
             `lab_template <geosoft.gxapi.GXDU.lab_template>`
         """
-        gxapi_cy.WrapDU.import_bin2(GXContext._get_tls_geo(), db._wrapper, data.encode(), template.encode(), line.encode(), flight, date, wa._wrapper)
+        gxapi_cy.WrapDU._import_bin2(GXContext._get_tls_geo(), db, data.encode(), template.encode(), line.encode(), flight, date, wa)
         
 
 
@@ -2233,15 +2272,15 @@ class GXDU:
 
         .. versionadded:: 9.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Same as `import_bin2 <geosoft.gxapi.GXDU.import_bin2>` but with an import mode
+        **Note:** Same as `import_bin2 <geosoft.gxapi.GXDU.import_bin2>` but with an import mode
 
         .. seealso::
 
             `import_bin2 <geosoft.gxapi.GXDU.import_bin2>`
         """
-        gxapi_cy.WrapDU.import_bin4(GXContext._get_tls_geo(), db._wrapper, mode, data.encode(), template.encode(), line.encode(), flight, date, wa._wrapper)
+        gxapi_cy.WrapDU._import_bin4(GXContext._get_tls_geo(), db, mode, data.encode(), template.encode(), line.encode(), flight, date, wa)
         
 
 
@@ -2264,13 +2303,13 @@ class GXDU:
 
         .. versionadded:: 7.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Imports data stored in a serial channel recorded
+        **Note:** Imports data stored in a serial channel recorded
         by the RMS Instruments DAARC500 instrument, and outputs the data to
         a line in the database. The channels created depend on the input data type
         """
-        gxapi_cy.WrapDU.import_daarc500_serial(GXContext._get_tls_geo(), db._wrapper, line, file.encode(), channel, type)
+        gxapi_cy.WrapDU._import_daarc500_serial(GXContext._get_tls_geo(), db, line, file.encode(), channel, type)
         
 
 
@@ -2291,9 +2330,9 @@ class GXDU:
 
         .. versionadded:: 7.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Imports GPS data stored in a serial channel recorded
+        **Note:** Imports GPS data stored in a serial channel recorded
         by the RMS Instruments DAARC500 instrument, and outputs the data to
         a line in the database. Makes the following channels:
         
@@ -2301,7 +2340,7 @@ class GXDU:
         NumSat (Number of satellites), GPS_HDOP (Horizontal Dilution of Position),
         Undulation, GPS_DiffAge (Age of differential channel).
         """
-        gxapi_cy.WrapDU.import_daarc500_serial_gps(GXContext._get_tls_geo(), db._wrapper, line, file.encode(), channel)
+        gxapi_cy.WrapDU._import_daarc500_serial_gps(GXContext._get_tls_geo(), db, line, file.encode(), channel)
         
 
 
@@ -2326,9 +2365,9 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        1. The import template can be in the local directory or the GEOSOFT
+        **Note:** 1. The import template can be in the local directory or the GEOSOFT
         directory.  The import data file must include the path if it is not
         in the local directory.
         
@@ -2339,7 +2378,7 @@ class GXDU:
         
         3. If the line already exists, the data will overwrite the existing data.
         """
-        gxapi_cy.WrapDU.import_dao(GXContext._get_tls_geo(), db._wrapper, data.encode(), type.encode(), table.encode(), template.encode(), line.encode())
+        gxapi_cy.WrapDU._import_dao(GXContext._get_tls_geo(), db, data.encode(), type.encode(), table.encode(), template.encode(), line.encode())
         
 
 
@@ -2360,9 +2399,9 @@ class GXDU:
 
         .. versionadded:: 7.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        1. The import template can be in the local directory or the GEOSOFT
+        **Note:** 1. The import template can be in the local directory or the GEOSOFT
         directory.
         
         2. Only the import template must be specified. The Geodatabase connection string
@@ -2371,7 +2410,7 @@ class GXDU:
         
         3. If the line already exists, the data will overwrite the existing data.
         """
-        gxapi_cy.WrapDU.import_esri(GXContext._get_tls_geo(), db._wrapper, connect.encode(), template.encode(), line.encode())
+        gxapi_cy.WrapDU._import_esri(GXContext._get_tls_geo(), db, connect.encode(), template.encode(), line.encode())
         
 
 
@@ -2387,8 +2426,10 @@ class GXDU:
         :type  file:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapDU.import_gbn(GXContext._get_tls_geo(), db._wrapper, file.encode())
+        gxapi_cy.WrapDU._import_gbn(GXContext._get_tls_geo(), db, file.encode())
         
 
 
@@ -2404,8 +2445,10 @@ class GXDU:
         :type  file:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapDU.import_oddf(GXContext._get_tls_geo(), db._wrapper, file.encode())
+        gxapi_cy.WrapDU._import_oddf(GXContext._get_tls_geo(), db, file.encode())
         
 
 
@@ -2425,8 +2468,10 @@ class GXDU:
         :type  chans:     int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapDU.import_pico(GXContext._get_tls_geo(), db._wrapper, template.encode(), data.encode(), chans)
+        gxapi_cy.WrapDU._import_pico(GXContext._get_tls_geo(), db, template.encode(), data.encode(), chans)
         
 
 
@@ -2449,12 +2494,12 @@ class GXDU:
 
         .. versionadded:: 6.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Each slice in X,Y or Z is imported to its own line in the database
+        **Note:** Each slice in X,Y or Z is imported to its own line in the database
         beginning with L0.
         """
-        gxapi_cy.WrapDU.import_ubc_mod_msh(GXContext._get_tls_geo(), db._wrapper, mesh.encode(), mods.encode(), dir, dummy)
+        gxapi_cy.WrapDU._import_ubc_mod_msh(GXContext._get_tls_geo(), db, mesh.encode(), mods.encode(), dir, dummy)
         
 
 
@@ -2470,8 +2515,10 @@ class GXDU:
         :type  file:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapDU.import_usgs_post(GXContext._get_tls_geo(), db._wrapper, file.encode())
+        gxapi_cy.WrapDU._import_usgs_post(GXContext._get_tls_geo(), db, file.encode())
         
 
 
@@ -2492,15 +2539,15 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        1. The import template can be in the local directory or the GEOSOFT
+        **Note:** 1. The import template can be in the local directory or the GEOSOFT
         directory.  The import data file must include the path if it is not
         in the local directory.
         
         2. Both the import template and data file must exist.
         """
-        gxapi_cy.WrapDU.import_xyz(GXContext._get_tls_geo(), db._wrapper, mode, data.encode(), template.encode())
+        gxapi_cy.WrapDU._import_xyz(GXContext._get_tls_geo(), db, mode, data.encode(), template.encode())
         
 
 
@@ -2522,15 +2569,15 @@ class GXDU:
 
         .. versionadded:: 5.1.6
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        1. The import template can be in the local directory or the GEOSOFT
+        **Note:** 1. The import template can be in the local directory or the GEOSOFT
         directory.  The import data file must include the path if it is not
         in the local directory.
         
         2. Both the import template and data file must exist.
         """
-        gxapi_cy.WrapDU.import_xyz2(GXContext._get_tls_geo(), db._wrapper, mode, data.encode(), template.encode(), wa._wrapper)
+        gxapi_cy.WrapDU._import_xyz2(GXContext._get_tls_geo(), db, mode, data.encode(), template.encode(), wa)
         
 
 
@@ -2549,12 +2596,12 @@ class GXDU:
 
         .. versionadded:: 8.5
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        1. All columns in the speficied ioGAS data file will be imported.
+        **Note:** 1. All columns in the speficied ioGAS data file will be imported.
         2. If a line already exists, the data will overwrite the existing data.
         """
-        gxapi_cy.WrapDU.import_io_gas(GXContext._get_tls_geo(), db._wrapper, data_csv.encode(), template.encode())
+        gxapi_cy.WrapDU._import_io_gas(GXContext._get_tls_geo(), db, data_csv.encode(), template.encode())
         
 
 
@@ -2574,8 +2621,10 @@ class GXDU:
         :type  ch:     int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.index_order(GXContext._get_tls_geo(), db._wrapper, line, in_ch, ch)
+        gxapi_cy.WrapDU._index_order(GXContext._get_tls_geo(), db, line, in_ch, ch)
         
 
 
@@ -2599,8 +2648,10 @@ class GXDU:
         :type  outside:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.interp(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch, inside, outside)
+        gxapi_cy.WrapDU._interp(GXContext._get_tls_geo(), db, line, i_ch, o_ch, inside, outside)
         
 
 
@@ -2628,8 +2679,10 @@ class GXDU:
         :type  extend:   int
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.interp_gap(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch, inside, outside, gap, extend)
+        gxapi_cy.WrapDU._interp_gap(GXContext._get_tls_geo(), db, line, i_ch, o_ch, inside, outside, gap, extend)
         
 
 
@@ -2653,8 +2706,10 @@ class GXDU:
         :type  file:    str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.intersect(GXContext._get_tls_geo(), db._wrapper, x_chan, y_chan, z_chan, tol, file.encode())
+        gxapi_cy.WrapDU._intersect(GXContext._get_tls_geo(), db, x_chan, y_chan, z_chan, tol, file.encode())
         
 
 
@@ -2678,8 +2733,10 @@ class GXDU:
         :type  file:    str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.intersect_all(GXContext._get_tls_geo(), db._wrapper, x_chan, y_chan, z_chan, tol, file.encode())
+        gxapi_cy.WrapDU._intersect_all(GXContext._get_tls_geo(), db, x_chan, y_chan, z_chan, tol, file.encode())
         
 
 
@@ -2696,11 +2753,11 @@ class GXDU:
 
         .. versionadded:: 7.1
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        If the TBL exists, it is overwritten.
+        **Note:** If the TBL exists, it is overwritten.
         """
-        gxapi_cy.WrapDU.intersect_gd_bto_tbl(GXContext._get_tls_geo(), db.encode(), tbl.encode())
+        gxapi_cy.WrapDU._intersect_gd_bto_tbl(GXContext._get_tls_geo(), db.encode(), tbl.encode())
         
 
 
@@ -2725,9 +2782,9 @@ class GXDU:
 
         .. versionadded:: 5.1.4
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Reads intersection information from an existing intersect
+        **Note:** Reads intersection information from an existing intersect
         table and looks up the values at the intersections for the
         input Z channel. This makes it unnecessary to re-calculate
         the intersections every time if you want to determine
@@ -2735,7 +2792,7 @@ class GXDU:
         after processing levelling corrections. Existing intersections
         whose locations do not exist in the database are ignored.
         """
-        gxapi_cy.WrapDU.intersect_old(GXContext._get_tls_geo(), db._wrapper, x_chan, y_chan, z_chan, in_file.encode(), out_file.encode())
+        gxapi_cy.WrapDU._intersect_old(GXContext._get_tls_geo(), db, x_chan, y_chan, z_chan, in_file.encode(), out_file.encode())
         
 
 
@@ -2752,14 +2809,14 @@ class GXDU:
 
         .. versionadded:: 7.1
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        If the GDB exists, it is deleted, so it should not
+        **Note:** If the GDB exists, it is deleted, so it should not
         be loaded.
         The database is split by Tie lines (or whatever lines are found in column 3
         of the TBL file.
         """
-        gxapi_cy.WrapDU.intersect_tb_lto_gdb(GXContext._get_tls_geo(), tbl.encode(), db.encode())
+        gxapi_cy.WrapDU._intersect_tb_lto_gdb(GXContext._get_tls_geo(), tbl.encode(), db.encode())
         
 
 
@@ -2790,9 +2847,9 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The template can be used to import the file using
+        **Note:** The template can be used to import the file using
         sImportBIN_DU.
         
         The first column is assumed to be the sample number.
@@ -2813,7 +2870,7 @@ class GXDU:
 
             `import_bin <geosoft.gxapi.GXDU.import_bin>`
         """
-        gxapi_cy.WrapDU.lab_template(GXContext._get_tls_geo(), data.encode(), template.encode(), type, delimit.encode(), name_off, unit_off, data_off, sample_type, data_type)
+        gxapi_cy.WrapDU._lab_template(GXContext._get_tls_geo(), data.encode(), template.encode(), type, delimit.encode(), name_off, unit_off, data_off, sample_type, data_type)
         
 
 
@@ -2834,9 +2891,9 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        See GRAVITY.`GXDAT <geosoft.gxapi.GXDAT>` for a description of the file format.
+        **Note:** See GRAVITY.`GXDAT <geosoft.gxapi.GXDAT>` for a description of the file format.
         
         Existing data in the line will be replaced.
         
@@ -2861,7 +2918,7 @@ class GXDU:
         If the constant is not defined and it is not already in
         the `GXREG <geosoft.gxapi.GXREG>`, the indicated default will be set.
         """
-        gxapi_cy.WrapDU.load_gravity(GXContext._get_tls_geo(), db._wrapper, reg._wrapper, line, data.encode())
+        gxapi_cy.WrapDU._load_gravity(GXContext._get_tls_geo(), db, reg, line, data.encode())
         
 
 
@@ -2882,9 +2939,9 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        A new channel will be created for all `GXLTB <geosoft.gxapi.GXLTB>` fields
+        **Note:** A new channel will be created for all `GXLTB <geosoft.gxapi.GXLTB>` fields
         that do not already exist.
         The `GXLTB <geosoft.gxapi.GXLTB>` field type will be double if all entries can be
         converted to double, otherwise it will be a string type
@@ -2896,7 +2953,7 @@ class GXDU:
         match a specifc channel and there-by case all channels to be
         the same length before appending data.
         """
-        gxapi_cy.WrapDU.load_ltb(GXContext._get_tls_geo(), db._wrapper, line, ltb._wrapper, mode)
+        gxapi_cy.WrapDU._load_ltb(GXContext._get_tls_geo(), db, line, ltb, mode)
         
 
 
@@ -2916,8 +2973,10 @@ class GXDU:
         :type  o_ch:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapDU.make_fid(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch)
+        gxapi_cy.WrapDU._make_fid(GXContext._get_tls_geo(), db, line, i_ch, o_ch)
         
 
 
@@ -2937,8 +2996,10 @@ class GXDU:
         :type  m_ch:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.mask(GXContext._get_tls_geo(), db._wrapper, line, i_ch, m_ch)
+        gxapi_cy.WrapDU._mask(GXContext._get_tls_geo(), db, line, i_ch, m_ch)
         
 
 
@@ -2957,9 +3018,9 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The MATH_DU method will READWRITE lock channels on the left
+        **Note:** The MATH_DU method will READWRITE lock channels on the left
         side of expressions and READONLY lock channels on the right
         side of expressions.  Channels are unlocked before returning.
         Therefore, channels on the left side of an expression cannot
@@ -2975,7 +3036,7 @@ class GXDU:
 
             `GXEXP <geosoft.gxapi.GXEXP>`
         """
-        gxapi_cy.WrapDU.math(GXContext._get_tls_geo(), db._wrapper, line, exp._wrapper)
+        gxapi_cy.WrapDU._math(GXContext._get_tls_geo(), db, line, exp)
         
 
 
@@ -2998,8 +3059,10 @@ class GXDU:
         :type  mode:    int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.merge_line(GXContext._get_tls_geo(), db._wrapper, i_line, m_line, o_line, mode)
+        gxapi_cy.WrapDU._merge_line(GXContext._get_tls_geo(), db, i_line, m_line, o_line, mode)
         
 
 
@@ -3026,14 +3089,14 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Channels that do not have the same fid start or fid
+        **Note:** Channels that do not have the same fid start or fid
         increment are not processed.
         
         Protected channels are modified automatically.
         """
-        gxapi_cy.WrapDU.mod_fid_range(GXContext._get_tls_geo(), db._wrapper, ln, fid_start, incr, start_index, num, opt)
+        gxapi_cy.WrapDU._mod_fid_range(GXContext._get_tls_geo(), db, ln, fid_start, incr, start_index, num, opt)
         
 
 
@@ -3058,12 +3121,12 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The input channel is moved to the absolute location
+        **Note:** The input channel is moved to the absolute location
         of the control channel.
         """
-        gxapi_cy.WrapDU.move(GXContext._get_tls_geo(), db._wrapper, line, i_ch, c_ch, o_ch, mode)
+        gxapi_cy.WrapDU._move(GXContext._get_tls_geo(), db, line, i_ch, c_ch, o_ch, mode)
         
 
 
@@ -3088,8 +3151,10 @@ class GXDU:
         :type  tol:    float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.nl_filt(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch, width, tol)
+        gxapi_cy.WrapDU._nl_filt(GXContext._get_tls_geo(), db, line, i_ch, o_ch, width, tol)
         
 
 
@@ -3108,11 +3173,13 @@ class GXDU:
 
         .. versionadded:: 5.0
 
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
         .. seealso::
 
             `re_fid_all_ch <geosoft.gxapi.GXDU.re_fid_all_ch>`
         """
-        gxapi_cy.WrapDU.normal(GXContext._get_tls_geo(), db._wrapper, ch, ignore)
+        gxapi_cy.WrapDU._normal(GXContext._get_tls_geo(), db, ch, ignore)
         
 
 
@@ -3138,8 +3205,10 @@ class GXDU:
         :type  dummy:   int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.poly_fill(GXContext._get_tls_geo(), db._wrapper, line, x_chan, y_chan, r_chan, pply._wrapper, dummy)
+        gxapi_cy.WrapDU._poly_fill(GXContext._get_tls_geo(), db, line, x_chan, y_chan, r_chan, pply, dummy)
         
 
 
@@ -3165,8 +3234,10 @@ class GXDU:
         :type  dummy:   int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.poly_mask(GXContext._get_tls_geo(), db._wrapper, line, x_chan, y_chan, r_chan, pply._wrapper, dummy)
+        gxapi_cy.WrapDU._poly_mask(GXContext._get_tls_geo(), db, line, x_chan, y_chan, r_chan, pply, dummy)
         
 
 
@@ -3193,11 +3264,11 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Output channels can be the same as input channels
+        **Note:** Output channels can be the same as input channels
         """
-        gxapi_cy.WrapDU.project_data(GXContext._get_tls_geo(), db._wrapper, line, ix_ch, iy_ch, ox_ch, oy_ch, pj._wrapper)
+        gxapi_cy.WrapDU._project_data(GXContext._get_tls_geo(), db, line, ix_ch, iy_ch, ox_ch, oy_ch, pj)
         
 
 
@@ -3228,11 +3299,11 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Output channels can be the same as input channels
+        **Note:** Output channels can be the same as input channels
         """
-        gxapi_cy.WrapDU.project_xyz(GXContext._get_tls_geo(), db._wrapper, line, ix_ch, iy_ch, iz_ch, ox_ch, oy_ch, oz_ch, pj._wrapper)
+        gxapi_cy.WrapDU._project_xyz(GXContext._get_tls_geo(), db, line, ix_ch, iy_ch, iz_ch, ox_ch, oy_ch, oz_ch, pj)
         
 
 
@@ -3285,11 +3356,11 @@ class GXDU:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Output channels can be the same as input channels
+        **Note:** Output channels can be the same as input channels
         """
-        gxapi_cy.WrapDU.proj_points(GXContext._get_tls_geo(), db._wrapper, line, ix_ch, iy_ch, iz_ch, ox_ch, oy_ch, oz_ch, i_name_chan, i_datum_chan, i_method_chan, i_unit_chan, il_datum_chan, o_name_chan, o_datum_chan, o_method_chan, o_unit_chan, ol_datum_chan, error_chan, force_local_datum)
+        gxapi_cy.WrapDU._proj_points(GXContext._get_tls_geo(), db, line, ix_ch, iy_ch, iz_ch, ox_ch, oy_ch, oz_ch, i_name_chan, i_datum_chan, i_method_chan, i_unit_chan, il_datum_chan, o_name_chan, o_datum_chan, o_method_chan, o_unit_chan, ol_datum_chan, error_chan, force_local_datum)
         
 
 
@@ -3308,16 +3379,16 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        This must be called before QCSeparation_DU. It uses a pager to
+        **Note:** This must be called before QCSeparation_DU. It uses a pager to
         establish the relative positions of the selected lines, then,
         for every point determines the closest point in another line to
         the left and to the right (as determined by looking in the
         direction of the line.) These distances are stored to two new
         channels in the database, "Closest_Left" and "Closest_Right"
         """
-        gxapi_cy.WrapDU.qc_init_separation(GXContext._get_tls_geo(), db._wrapper, sep, dir)
+        gxapi_cy.WrapDU._qc_init_separation(GXContext._get_tls_geo(), db, sep, dir)
         
 
 
@@ -3367,15 +3438,15 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The LINE on which has the reference (X,Y) will have the starting Line number
+        **Note:** The LINE on which has the reference (X,Y) will have the starting Line number
         The lines on the right hand side of the reference line (while looking
         into azimuth of ref. line) have increasing line numbers. The lines
         on the left hand side have the decreasing line numbers from the starting
         number. Returns an error code or 0 (if successful)
         """
-        ret_val = gxapi_cy.WrapDU.qc_survey_plan(GXContext._get_tls_geo(), db._wrapper, wa._wrapper, pply._wrapper, sl_spa, sl_azi, slx, sly, sl_sta, sl_inc, tl_spa, tl_azi, tlx, tly, tl_sta, tl_inc, type, sample_spacing, extend_outside)
+        ret_val = gxapi_cy.WrapDU._qc_survey_plan(GXContext._get_tls_geo(), db, wa, pply, sl_spa, sl_azi, slx, sly, sl_sta, sl_inc, tl_spa, tl_azi, tlx, tly, tl_sta, tl_inc, type, sample_spacing, extend_outside)
         return ret_val
 
 
@@ -3402,12 +3473,12 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The direction is calculated from the first and last
+        **Note:** The direction is calculated from the first and last
         non-dummy locations in the X and Y reference channels.
         """
-        ret_val = gxapi_cy.WrapDU.direction(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch)
+        ret_val = gxapi_cy.WrapDU._direction(GXContext._get_tls_geo(), db, line, x_ch, y_ch)
         return ret_val
 
 
@@ -3438,9 +3509,9 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The original channel can be an array channel, in which case
+        **Note:** The original channel can be an array channel, in which case
         the columns (up to the number of columns available in the output)
         are individually interpolated. If the number of
         columns in the output channel is more than the input channel,
@@ -3452,7 +3523,7 @@ class GXDU:
         Channel values are calculated at the new "X" locations specified by
         the Start Fid and the Fid Increment.
         """
-        gxapi_cy.WrapDU.re_fid(GXContext._get_tls_geo(), db._wrapper, line, in_ch, ref_ch, out_ch, mode, start, incr, gap)
+        gxapi_cy.WrapDU._re_fid(GXContext._get_tls_geo(), db, line, in_ch, ref_ch, out_ch, mode, start, incr, gap)
         
 
 
@@ -3471,16 +3542,16 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Channels can be array channels, in which case
+        **Note:** Channels can be array channels, in which case
         the columns are individually re-fidded.
 
         .. seealso::
 
             `normal <geosoft.gxapi.GXDU.normal>`
         """
-        gxapi_cy.WrapDU.re_fid_all_ch(GXContext._get_tls_geo(), db._wrapper, line, ref_ch)
+        gxapi_cy.WrapDU._re_fid_all_ch(GXContext._get_tls_geo(), db, line, ref_ch)
         
 
 
@@ -3501,15 +3572,15 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The original channel can be an array channel, in which case
+        **Note:** The original channel can be an array channel, in which case
         the columns are individually re-fidded.
         
         `re_fid_ch <geosoft.gxapi.GXDU.re_fid_ch>` resamples the "Channel to refid" to the "Reference Channel" Fid
         range and increment.
         """
-        gxapi_cy.WrapDU.re_fid_ch(GXContext._get_tls_geo(), db._wrapper, line, ref_ch, ch)
+        gxapi_cy.WrapDU._re_fid_ch(GXContext._get_tls_geo(), db, line, ref_ch, ch)
         
 
 
@@ -3539,8 +3610,10 @@ class GXDU:
         :type  deg:       float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.rotate(GXContext._get_tls_geo(), db._wrapper, line, in_x_ch, in_y_ch, out_x_ch, out_y_ch, x0, y0, deg)
+        gxapi_cy.WrapDU._rotate(GXContext._get_tls_geo(), db, line, in_x_ch, in_y_ch, out_x_ch, out_y_ch, x0, y0, deg)
         
 
 
@@ -3565,11 +3638,11 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Values in result channel
+        **Note:** Values in result channel
         """
-        gxapi_cy.WrapDU.sample_gd(GXContext._get_tls_geo(), db._wrapper, line, ix_ch, iy_ch, o_ch, img._wrapper)
+        gxapi_cy.WrapDU._sample_gd(GXContext._get_tls_geo(), db, line, ix_ch, iy_ch, o_ch, img)
         
 
 
@@ -3594,11 +3667,11 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Values in result channel
+        **Note:** Values in result channel
         """
-        gxapi_cy.WrapDU.sample_img(GXContext._get_tls_geo(), db._wrapper, line, ix_ch, iy_ch, o_ch, img._wrapper)
+        gxapi_cy.WrapDU._sample_img(GXContext._get_tls_geo(), db, line, ix_ch, iy_ch, o_ch, img)
         
 
 
@@ -3623,11 +3696,11 @@ class GXDU:
 
         .. versionadded:: 8.3
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Values in result channel
+        **Note:** Values in result channel
         """
-        gxapi_cy.WrapDU.sample_img_line_lst(GXContext._get_tls_geo(), db._wrapper, lst._wrapper, ix_ch, iy_ch, o_ch, img._wrapper)
+        gxapi_cy.WrapDU._sample_img_line_lst(GXContext._get_tls_geo(), db, lst, ix_ch, iy_ch, o_ch, img)
         
 
 
@@ -3646,11 +3719,11 @@ class GXDU:
 
         .. versionadded:: 5.0.8
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        All the channels are listed
+        **Note:** All the channels are listed
         """
-        gxapi_cy.WrapDU.scan_ado(GXContext._get_tls_geo(), connect.encode(), table.encode(), template.encode())
+        gxapi_cy.WrapDU._scan_ado(GXContext._get_tls_geo(), connect.encode(), table.encode(), template.encode())
         
 
 
@@ -3671,8 +3744,10 @@ class GXDU:
         :type  template:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapDU.scan_aseg(GXContext._get_tls_geo(), file.encode(), data.encode(), flc.encode(), template.encode())
+        gxapi_cy.WrapDU._scan_aseg(GXContext._get_tls_geo(), file.encode(), data.encode(), flc.encode(), template.encode())
         
 
 
@@ -3693,11 +3768,11 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        All the channels are listed
+        **Note:** All the channels are listed
         """
-        gxapi_cy.WrapDU.scan_dao(GXContext._get_tls_geo(), file.encode(), type.encode(), table.encode(), template.encode())
+        gxapi_cy.WrapDU._scan_dao(GXContext._get_tls_geo(), file.encode(), type.encode(), table.encode(), template.encode())
         
 
 
@@ -3714,8 +3789,10 @@ class GXDU:
         :type  template:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.scan_pico(GXContext._get_tls_geo(), data.encode(), template.encode())
+        gxapi_cy.WrapDU._scan_pico(GXContext._get_tls_geo(), data.encode(), template.encode())
         
 
 
@@ -3735,8 +3812,10 @@ class GXDU:
         :type  sort:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.sort(GXContext._get_tls_geo(), db._wrapper, line, ch, sort)
+        gxapi_cy.WrapDU._sort(GXContext._get_tls_geo(), db, line, ch, sort)
         
 
 
@@ -3758,8 +3837,10 @@ class GXDU:
         :type  sort:   int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.sort_index(GXContext._get_tls_geo(), db._wrapper, line, ch, in_ch, sort)
+        gxapi_cy.WrapDU._sort_index(GXContext._get_tls_geo(), db, line, ch, in_ch, sort)
         
 
 
@@ -3785,8 +3866,10 @@ class GXDU:
         :type  in_ch:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.sort_index2(GXContext._get_tls_geo(), db._wrapper, line, ch1, sort1, ch2, sort2, in_ch)
+        gxapi_cy.WrapDU._sort_index2(GXContext._get_tls_geo(), db, line, ch1, sort1, ch2, sort2, in_ch)
         
 
 
@@ -3807,8 +3890,10 @@ class GXDU:
         :type  fid:     float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.split_line(GXContext._get_tls_geo(), db._wrapper, i_line, o_line, fid)
+        gxapi_cy.WrapDU._split_line(GXContext._get_tls_geo(), db, i_line, o_line, fid)
         
 
 
@@ -3832,11 +3917,11 @@ class GXDU:
 
         .. versionadded:: 8.4
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The same as SplitLine, but with an option to reset each line's starting fiducial to zero.
+        **Note:** The same as SplitLine, but with an option to reset each line's starting fiducial to zero.
         """
-        gxapi_cy.WrapDU.split_line2(GXContext._get_tls_geo(), db._wrapper, i_line, o_line, fid, reset_fi_ds)
+        gxapi_cy.WrapDU._split_line2(GXContext._get_tls_geo(), db, i_line, o_line, fid, reset_fi_ds)
         
 
 
@@ -3870,11 +3955,11 @@ class GXDU:
 
         .. versionadded:: 8.3
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The original line will be deleted.
+        **Note:** The original line will be deleted.
         """
-        first_line.value = gxapi_cy.WrapDU.split_line_xy(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, dirctn, tolrnc, down_tol, method, first_line.value, line_inc)
+        first_line.value = gxapi_cy.WrapDU._split_line_xy(GXContext._get_tls_geo(), db, line, x_ch, y_ch, dirctn, tolrnc, down_tol, method, first_line.value, line_inc)
         
 
 
@@ -3910,11 +3995,11 @@ class GXDU:
 
         .. versionadded:: 8.4
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The same as SplitLineXY, but with an option to reset each line's starting fiducial to zero.
+        **Note:** The same as SplitLineXY, but with an option to reset each line's starting fiducial to zero.
         """
-        first_line.value = gxapi_cy.WrapDU.split_line_xy2(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, dirctn, tolrnc, down_tol, method, first_line.value, line_inc, reset_fi_ds)
+        first_line.value = gxapi_cy.WrapDU._split_line_xy2(GXContext._get_tls_geo(), db, line, x_ch, y_ch, dirctn, tolrnc, down_tol, method, first_line.value, line_inc, reset_fi_ds)
         
 
 
@@ -3952,11 +4037,11 @@ class GXDU:
 
         .. versionadded:: 9.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The same as SplitLineXY2, but with the option to maintain line types when outputting sequentially numbered lines.
+        **Note:** The same as SplitLineXY2, but with the option to maintain line types when outputting sequentially numbered lines.
         """
-        first_line.value = gxapi_cy.WrapDU.split_line_xy3(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, dirctn, tolrnc, down_tol, method, first_line.value, line_inc, retain_line_type, reset_fi_ds)
+        first_line.value = gxapi_cy.WrapDU._split_line_xy3(GXContext._get_tls_geo(), db, line, x_ch, y_ch, dirctn, tolrnc, down_tol, method, first_line.value, line_inc, retain_line_type, reset_fi_ds)
         
 
 
@@ -3996,11 +4081,11 @@ class GXDU:
 
         .. versionadded:: 8.5
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Split a line based on changes in heading.
+        **Note:** Split a line based on changes in heading.
         """
-        first_line.value = gxapi_cy.WrapDU.split_line_by_direction(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, angular_change, over_a_distance_of, minimum_line_length, break_on_separation_distance, save_discards, method, first_line.value, line_inc, reset_fi_ds)
+        first_line.value = gxapi_cy.WrapDU._split_line_by_direction(GXContext._get_tls_geo(), db, line, x_ch, y_ch, angular_change, over_a_distance_of, minimum_line_length, break_on_separation_distance, save_discards, method, first_line.value, line_inc, reset_fi_ds)
         
 
 
@@ -4041,11 +4126,11 @@ class GXDU:
 
         .. versionadded:: 9.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Split a line based on changes in heading.
+        **Note:** Split a line based on changes in heading.
         """
-        first_line.value = gxapi_cy.WrapDU.split_line_by_direction2(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, angular_change, over_a_distance_of, minimum_line_length, break_on_separation_distance, save_discards, method, first_line.value, line_inc, retain_line_type, reset_fi_ds)
+        first_line.value = gxapi_cy.WrapDU._split_line_by_direction2(GXContext._get_tls_geo(), db, line, x_ch, y_ch, angular_change, over_a_distance_of, minimum_line_length, break_on_separation_distance, save_discards, method, first_line.value, line_inc, retain_line_type, reset_fi_ds)
         
 
 
@@ -4066,16 +4151,16 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        If the input channel is a `GXVA <geosoft.gxapi.GXVA>` (array) channel, then the columns set using
+        **Note:** If the input channel is a `GXVA <geosoft.gxapi.GXVA>` (array) channel, then the columns set using
         `GXDB.set_va_windows <geosoft.gxapi.GXDB.set_va_windows>` are used in the statistics; all columns are used by default.
 
         .. seealso::
 
             `GXST <geosoft.gxapi.GXST>`
         """
-        gxapi_cy.WrapDU.stat(GXContext._get_tls_geo(), db._wrapper, line, i_ch, st._wrapper)
+        gxapi_cy.WrapDU._stat(GXContext._get_tls_geo(), db, line, i_ch, st)
         
 
 
@@ -4097,8 +4182,10 @@ class GXDU:
         :type  field:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.table_line_fid(GXContext._get_tls_geo(), db._wrapper, chan, ref, tb._wrapper, field)
+        gxapi_cy.WrapDU._table_line_fid(GXContext._get_tls_geo(), db, chan, ref, tb, field)
         
 
 
@@ -4120,8 +4207,10 @@ class GXDU:
         :type  field:  int
 
         .. versionadded:: 9.1
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.table_selected_lines_fid(GXContext._get_tls_geo(), db._wrapper, chan, ref, tb._wrapper, field)
+        gxapi_cy.WrapDU._table_selected_lines_fid(GXContext._get_tls_geo(), db, chan, ref, tb, field)
         
 
 
@@ -4150,13 +4239,13 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        When DU_TIME_LOG option is used, Time channel will be converted
+        **Note:** When DU_TIME_LOG option is used, Time channel will be converted
         with logarithmic before calculating time constant.
         Logarthmic conversion is always applied to the response channel.
         """
-        gxapi_cy.WrapDU.time_constant(GXContext._get_tls_geo(), db._wrapper, line, resp_chan, time_chan, tau_chan, intercept_chan, fit_chan, log_opt)
+        gxapi_cy.WrapDU._time_constant(GXContext._get_tls_geo(), db, line, resp_chan, time_chan, tau_chan, intercept_chan, fit_chan, log_opt)
         
 
 
@@ -4179,11 +4268,13 @@ class GXDU:
 
         .. versionadded:: 5.0
 
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+
         .. seealso::
 
             `b_spline <geosoft.gxapi.GXDU.b_spline>`
         """
-        gxapi_cy.WrapDU.trend(GXContext._get_tls_geo(), db._wrapper, line, i_ch, o_ch, order)
+        gxapi_cy.WrapDU._trend(GXContext._get_tls_geo(), db, line, i_ch, o_ch, order)
         
 
 
@@ -4204,12 +4295,12 @@ class GXDU:
 
         .. versionadded:: 7.1
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Updates the TZ, TDZ, LZ and LDZ channels at the intersections,
+        **Note:** Updates the TZ, TDZ, LZ and LDZ channels at the intersections,
         using the current flight database.
         """
-        gxapi_cy.WrapDU.update_intersect_db(GXContext._get_tls_geo(), db._wrapper, x_chan, z_chan, int_db._wrapper)
+        gxapi_cy.WrapDU._update_intersect_db(GXContext._get_tls_geo(), db, x_chan, z_chan, int_db)
         
 
 
@@ -4240,9 +4331,9 @@ class GXDU:
 
         .. versionadded:: 6.4
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Takes the first and XY locations in a line (using the
+        **Note:** Takes the first and XY locations in a line (using the
         current X and Y channels) and defines a section grid
         as a slice through a voxel file.
         The grid cell sizes can be left as `GS_R8DM <geosoft.gxapi.GS_R8DM>`, in which
@@ -4255,7 +4346,7 @@ class GXDU:
         (This is to simplify creating multiple grids from
         at once, where not all may intersect).
         """
-        gxapi_cy.WrapDU.voxel_section(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, vox._wrapper, grid.encode(), cell_x, cell_y, interp)
+        gxapi_cy.WrapDU._voxel_section(GXContext._get_tls_geo(), db, line, x_ch, y_ch, vox, grid.encode(), cell_x, cell_y, interp)
         
 
 
@@ -4276,9 +4367,9 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Channels to be written should be placed in a `GXLST <geosoft.gxapi.GXLST>` object.
+        **Note:** Channels to be written should be placed in a `GXLST <geosoft.gxapi.GXLST>` object.
         
         Channels are written in the order of the list.  Only the
         channel names in the list are used.
@@ -4286,7 +4377,7 @@ class GXDU:
         Data is formated as in the channel definition and
         channels are separated by a single space character.
         """
-        gxapi_cy.WrapDU.write_wa(GXContext._get_tls_geo(), db._wrapper, line, lst._wrapper, wa._wrapper)
+        gxapi_cy.WrapDU._write_wa(GXContext._get_tls_geo(), db, line, lst, wa)
         
 
 
@@ -4311,11 +4402,11 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The original line will be deleted.
+        **Note:** The original line will be deleted.
         """
-        gxapi_cy.WrapDU.xyz_line(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, dirctn, tolrnc)
+        gxapi_cy.WrapDU._xyz_line(GXContext._get_tls_geo(), db, line, x_ch, y_ch, dirctn, tolrnc)
         
 
 
@@ -4342,11 +4433,11 @@ class GXDU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The original line will be deleted.
+        **Note:** The original line will be deleted.
         """
-        gxapi_cy.WrapDU.xyz_line2(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, dirctn, tolrnc, down_tol)
+        gxapi_cy.WrapDU._xyz_line2(GXContext._get_tls_geo(), db, line, x_ch, y_ch, dirctn, tolrnc, down_tol)
         
 
 
@@ -4375,11 +4466,11 @@ class GXDU:
 
         .. versionadded:: 8.4
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The same as XyzLine2, but with an option to reset each line's starting fiducial to zero.
+        **Note:** The same as XyzLine2, but with an option to reset each line's starting fiducial to zero.
         """
-        gxapi_cy.WrapDU.xyz_line3(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, dirctn, tolrnc, down_tol, reset_fi_ds)
+        gxapi_cy.WrapDU._xyz_line3(GXContext._get_tls_geo(), db, line, x_ch, y_ch, dirctn, tolrnc, down_tol, reset_fi_ds)
         
 
 
@@ -4403,8 +4494,10 @@ class GXDU:
         :type  zmax:    float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapDU.z_mask(GXContext._get_tls_geo(), db._wrapper, line, chan, z_chan, zmin, zmax)
+        gxapi_cy.WrapDU._z_mask(GXContext._get_tls_geo(), db, line, chan, z_chan, zmin, zmax)
         
 
 
@@ -4427,12 +4520,12 @@ class GXDU:
 
         .. versionadded:: 8.5
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Returns the range in X and Y of the current X and Y channels.
+        **Note:** Returns the range in X and Y of the current X and Y channels.
         Returned values are dummy if no valid items are found.
         """
-        x_min.value, y_min.value, x_max.value, y_max.value = gxapi_cy.WrapDU.range_xy(GXContext._get_tls_geo(), db._wrapper, x_min.value, y_min.value, x_max.value, y_max.value)
+        x_min.value, y_min.value, x_max.value, y_max.value = gxapi_cy.WrapDU._range_xy(GXContext._get_tls_geo(), db, x_min.value, y_min.value, x_max.value, y_max.value)
         
 
 
@@ -4467,13 +4560,13 @@ class GXDU:
 
         .. versionadded:: 8.5
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The X, Y and Z channels should be normal (not array) channels.
+        **Note:** The X, Y and Z channels should be normal (not array) channels.
         Only locations where all values are non-dummy are included in the calculation.
         If no non-dummy values are found, Dummy values are returned.
         """
-        x_min.value, y_min.value, z_min.value, x_max.value, y_max.value, z_max.value, n_tot.value = gxapi_cy.WrapDU.range_xyz(GXContext._get_tls_geo(), db._wrapper, x_ch, y_ch, z_ch, x_min.value, y_min.value, z_min.value, x_max.value, y_max.value, z_max.value, n_tot.value)
+        x_min.value, y_min.value, z_min.value, x_max.value, y_max.value, z_max.value, n_tot.value = gxapi_cy.WrapDU._range_xyz(GXContext._get_tls_geo(), db, x_ch, y_ch, z_ch, x_min.value, y_min.value, z_min.value, x_max.value, y_max.value, z_max.value, n_tot.value)
         
 
 
@@ -4514,9 +4607,9 @@ class GXDU:
 
         .. versionadded:: 8.1
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The Z and Data channels may be array channels, but both must have
+        **Note:** The Z and Data channels may be array channels, but both must have
         the same number of columns.
         Only values where all channels are non-dummy (or, for `GXVA <geosoft.gxapi.GXVA>` channels,
         where the Z or Data value are defined) are included in the calculation.
@@ -4524,7 +4617,7 @@ class GXDU:
         This function is optimized for cases where Z and Data are array channels
         with many columns (e.g. 32 or more columns).
         """
-        x_min.value, y_min.value, z_min.value, d_min.value, x_max.value, y_max.value, z_max.value, d_max.value, n_tot.value = gxapi_cy.WrapDU.range_xyz_data(GXContext._get_tls_geo(), db._wrapper, x_ch, y_ch, z_ch, d_ch, x_min.value, y_min.value, z_min.value, d_min.value, x_max.value, y_max.value, z_max.value, d_max.value, n_tot.value)
+        x_min.value, y_min.value, z_min.value, d_min.value, x_max.value, y_max.value, z_max.value, d_max.value, n_tot.value = gxapi_cy.WrapDU._range_xyz_data(GXContext._get_tls_geo(), db, x_ch, y_ch, z_ch, d_ch, x_min.value, y_min.value, z_min.value, d_min.value, x_max.value, y_max.value, z_max.value, d_max.value, n_tot.value)
         
 
 
@@ -4545,9 +4638,9 @@ class GXDU:
 
         .. versionadded:: 8.2
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Control parameters are passed in the `GXREG <geosoft.gxapi.GXREG>` (to allow for future expansion without
+        **Note:** Control parameters are passed in the `GXREG <geosoft.gxapi.GXREG>` (to allow for future expansion without
         the need to modify the wrappers).
         The input drillhole database must contain current X, Y and Z channels.
         Drillhole data should be equally spaced (or nearly so) down the hole.
@@ -4558,7 +4651,7 @@ class GXDU:
         MINIMUM - the minimum weighting value to apply, at the radius (Default = 0.0001).
         POWER - Exponential power to use in the weighting function (negative of this is used) (Default = 2).
         """
-        gxapi_cy.WrapDU.create_drillhole_parameter_weight_constraint_database(GXContext._get_tls_geo(), db._wrapper, ch, reg._wrapper, database.encode())
+        gxapi_cy.WrapDU._create_drillhole_parameter_weight_constraint_database(GXContext._get_tls_geo(), db, ch, reg, database.encode())
         
 
 
@@ -4595,12 +4688,12 @@ class GXDU:
 
         .. versionadded:: 8.3
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Calculate a draped flight path, enforcing maximum descent and ascent rates. Additional Inputs are the sample distance along the line
+        **Note:** Calculate a draped flight path, enforcing maximum descent and ascent rates. Additional Inputs are the sample distance along the line
         and a topography grid.
         """
-        gxapi_cy.WrapDU.calculate_draped_survey_altitude(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, img._wrapper, z_ch, ascent, descent, drape_height, n_hanning, hanning_width, min_curvature)
+        gxapi_cy.WrapDU._calculate_draped_survey_altitude(GXContext._get_tls_geo(), db, line, x_ch, y_ch, img, z_ch, ascent, descent, drape_height, n_hanning, hanning_width, min_curvature)
         
 
 
@@ -4641,14 +4734,14 @@ class GXDU:
 
         .. versionadded:: 8.4
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Calculate a draped flight path, enforcing maximum descent and ascent rates.
+        **Note:** Calculate a draped flight path, enforcing maximum descent and ascent rates.
         Set both a nominal and minimum drape height.
         Additional Inputs are the sample distance along the line
         and a topography grid.
         """
-        gxapi_cy.WrapDU.calculate_draped_survey_altitude2(GXContext._get_tls_geo(), db._wrapper, line, x_ch, y_ch, img._wrapper, dem_ch, z_ch, ascent, descent, drape_height, min_drape_height, n_hanning, hanning_width, min_curvature)
+        gxapi_cy.WrapDU._calculate_draped_survey_altitude2(GXContext._get_tls_geo(), db, line, x_ch, y_ch, img, dem_ch, z_ch, ascent, descent, drape_height, min_drape_height, n_hanning, hanning_width, min_curvature)
         
 
 
@@ -4693,11 +4786,11 @@ class GXDU:
 
         .. versionadded:: 8.4
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The Z and Data channels may be array channels. If they are, the array sizes must match.
+        **Note:** The Z and Data channels may be array channels. If they are, the array sizes must match.
         """
-        gxapi_cy.WrapDU.direct_grid_data_to_voxel(GXContext._get_tls_geo(), db._wrapper, x_channel, y_channel, z_channel, data_channel, output_voxel_filename.encode(), origin_x, origin_y, origin_z, cell_count_x, cell_count_y, cell_count_z, cell_size_x, cell_size_y, cell_size_z, method)
+        gxapi_cy.WrapDU._direct_grid_data_to_voxel(GXContext._get_tls_geo(), db, x_channel, y_channel, z_channel, data_channel, output_voxel_filename.encode(), origin_x, origin_y, origin_z, cell_count_x, cell_count_y, cell_count_z, cell_size_x, cell_size_y, cell_size_z, method)
         
 
 
@@ -4742,11 +4835,11 @@ class GXDU:
 
         .. versionadded:: 8.4
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The Z and Data channels may be array channels. If they are, the array sizes must match.
+        **Note:** The Z and Data channels may be array channels. If they are, the array sizes must match.
         """
-        gxapi_cy.WrapDU.direct_grid_item_counts_to_voxel(GXContext._get_tls_geo(), db._wrapper, x_channel, y_channel, z_channel, data_channel, output_voxel_filename.encode(), origin_x, origin_y, origin_z, cell_count_x, cell_count_y, cell_count_z, cell_size_x, cell_size_y, cell_size_z, pb_replace_zeroes_with_dummy)
+        gxapi_cy.WrapDU._direct_grid_item_counts_to_voxel(GXContext._get_tls_geo(), db, x_channel, y_channel, z_channel, data_channel, output_voxel_filename.encode(), origin_x, origin_y, origin_z, cell_count_x, cell_count_y, cell_count_z, cell_size_x, cell_size_y, cell_size_z, pb_replace_zeroes_with_dummy)
         
 
 

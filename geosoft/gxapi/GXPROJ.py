@@ -13,44 +13,35 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXPROJ:
+class GXPROJ(gxapi_cy.WrapPROJ):
     """
     GXPROJ class.
 
     Project functions
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapPROJ(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXPROJ`
+        A null (undefined) instance of `GXPROJ <geosoft.gxapi.GXPROJ>`
         
-        :returns: A null `GXPROJ`
+        :returns: A null `GXPROJ <geosoft.gxapi.GXPROJ>`
+        :rtype:   GXPROJ
         """
-        return cls()
+        return GXPROJ()
 
     def is_null(self):
         """
-        Check if the instance of `GXPROJ` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXPROJ`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Drag-and-drop methods
@@ -65,8 +56,12 @@ class GXPROJ:
         :type  hglobal:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapPROJ.drop_map_clip_data(GXContext._get_tls_geo(), hglobal)
+        gxapi_cy.WrapPROJ._drop_map_clip_data(GXContext._get_tls_geo(), hglobal)
         
 
 
@@ -93,9 +88,11 @@ class GXPROJ:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The passed file name must be a valid
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The passed file name must be a valid
         file name complete with an extension and
         qualifiers (if applicable).
         
@@ -110,7 +107,7 @@ class GXPROJ:
             GMS3D         
             GMS2D
         """
-        ret_val = gxapi_cy.WrapPROJ.add_document(GXContext._get_tls_geo(), name.encode(), type.encode(), display)
+        ret_val = gxapi_cy.WrapPROJ._add_document(GXContext._get_tls_geo(), name.encode(), type.encode(), display)
         return ret_val
 
 
@@ -131,9 +128,11 @@ class GXPROJ:
 
         .. versionadded:: 8.5
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The passed file name must be a valid
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The passed file name must be a valid
         file name complete with an extension and
         qualifiers (if applicable).
         
@@ -148,7 +147,7 @@ class GXPROJ:
             GMS3D         
             GMS2D
         """
-        ret_val = gxapi_cy.WrapPROJ.add_document_without_opening(GXContext._get_tls_geo(), name.encode(), type.encode())
+        ret_val = gxapi_cy.WrapPROJ._add_document_without_opening(GXContext._get_tls_geo(), name.encode(), type.encode())
         return ret_val
 
 
@@ -167,8 +166,12 @@ class GXPROJ:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapPROJ.get_command_environment(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapPROJ._get_command_environment(GXContext._get_tls_geo())
         return ret_val
 
 
@@ -188,9 +191,11 @@ class GXPROJ:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The type string can be one of the following:
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The type string can be one of the following:
         Database         List Databases.
         Grid             List Grids.
         Map              List Maps.
@@ -202,7 +207,7 @@ class GXPROJ:
         GMS2D            List GM-`GXSYS <geosoft.gxapi.GXSYS>` 2D Models.
         All              Lists all files.
         """
-        ret_val = gxapi_cy.WrapPROJ.list_documents(GXContext._get_tls_geo(), gvv._wrapper, type.encode())
+        ret_val = gxapi_cy.WrapPROJ._list_documents(GXContext._get_tls_geo(), gvv, type.encode())
         return ret_val
 
 
@@ -222,9 +227,11 @@ class GXPROJ:
 
         .. versionadded:: 9.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The type string can be one of the following:
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The type string can be one of the following:
         Database         List Databases.
         Grid             List Grids.
         Map              List Maps.
@@ -236,7 +243,7 @@ class GXPROJ:
         GMS2D            List GM-`GXSYS <geosoft.gxapi.GXSYS>` 2D Models.
         All              Lists all files.
         """
-        ret_val = gxapi_cy.WrapPROJ.list_loaded_documents(GXContext._get_tls_geo(), gvv._wrapper, type.encode())
+        ret_val = gxapi_cy.WrapPROJ._list_loaded_documents(GXContext._get_tls_geo(), gvv, type.encode())
         return ret_val
 
 
@@ -252,8 +259,12 @@ class GXPROJ:
         :type  type:  str_ref
 
         .. versionadded:: 9.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        name.value, type.value = gxapi_cy.WrapPROJ.current_document(GXContext._get_tls_geo(), name.value.encode(), type.value.encode())
+        name.value, type.value = gxapi_cy.WrapPROJ._current_document(GXContext._get_tls_geo(), name.value.encode(), type.value.encode())
         
 
 
@@ -269,8 +280,12 @@ class GXPROJ:
         :type  type:  str
 
         .. versionadded:: 9.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        name.value = gxapi_cy.WrapPROJ.current_document_of_type(GXContext._get_tls_geo(), name.value.encode(), type.encode())
+        name.value = gxapi_cy.WrapPROJ._current_document_of_type(GXContext._get_tls_geo(), name.value.encode(), type.encode())
         
 
 
@@ -291,15 +306,17 @@ class GXPROJ:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        GX will terminate if there is an error.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** GX will terminate if there is an error.
         
         `GXLST <geosoft.gxapi.GXLST>` object will hold the tool name in the name column and
         include whether the tool is currently visible in the value
         column (1=visible, 0-hidden).
         """
-        ret_val = gxapi_cy.WrapPROJ.list_tools(GXContext._get_tls_geo(), lst._wrapper, type)
+        ret_val = gxapi_cy.WrapPROJ._list_tools(GXContext._get_tls_geo(), lst, type)
         return ret_val
 
 
@@ -318,13 +335,15 @@ class GXPROJ:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The passed file name must be a valid
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The passed file name must be a valid
         file name complete with an extension and
         qualifiers (if applicable).
         """
-        ret_val = gxapi_cy.WrapPROJ.remove_document(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapPROJ._remove_document(GXContext._get_tls_geo(), name.encode())
         return ret_val
 
 
@@ -343,11 +362,13 @@ class GXPROJ:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Nothing
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Nothing
         """
-        ret_val = gxapi_cy.WrapPROJ.remove_tool(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapPROJ._remove_tool(GXContext._get_tls_geo(), name.encode())
         return ret_val
 
 
@@ -367,9 +388,11 @@ class GXPROJ:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This wrapper brings up the save dialog tool to allow
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** This wrapper brings up the save dialog tool to allow
         the user to save the modified documents for this project.
         Only documents that have actually changed will be listed.
         
@@ -385,7 +408,7 @@ class GXPROJ:
             GMS2D
             All
         """
-        ret_val = gxapi_cy.WrapPROJ.save_close_documents(GXContext._get_tls_geo(), type.encode())
+        ret_val = gxapi_cy.WrapPROJ._save_close_documents(GXContext._get_tls_geo(), type.encode())
         return ret_val
 
 
@@ -400,11 +423,13 @@ class GXPROJ:
 
         .. versionadded:: 8.4
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Return the name of the project file.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Return the name of the project file.
         """
-        name.value = gxapi_cy.WrapPROJ.get_name(GXContext._get_tls_geo(), name.value.encode())
+        name.value = gxapi_cy.WrapPROJ._get_name(GXContext._get_tls_geo(), name.value.encode())
         
 
 

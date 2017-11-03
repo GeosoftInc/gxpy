@@ -14,7 +14,7 @@ from .GXDAT import GXDAT
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXARCDB:
+class GXARCDB(gxapi_cy.WrapARCDB):
     """
     GXARCDB class.
 
@@ -22,37 +22,28 @@ class GXARCDB:
     data sources and layers.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapARCDB(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXARCDB`
+        A null (undefined) instance of `GXARCDB <geosoft.gxapi.GXARCDB>`
         
-        :returns: A null `GXARCDB`
+        :returns: A null `GXARCDB <geosoft.gxapi.GXARCDB>`
+        :rtype:   GXARCDB
         """
-        return cls()
+        return GXARCDB()
 
     def is_null(self):
         """
-        Check if the instance of `GXARCDB` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXARCDB`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -74,8 +65,10 @@ class GXARCDB:
         :rtype:          GXDAT
 
         .. versionadded:: 8.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = self._wrapper.create_dat(x_field.encode(), y_field.encode(), d_field.encode())
+        ret_val = self._create_dat(x_field.encode(), y_field.encode(), d_field.encode())
         return GXDAT(ret_val)
 
 
@@ -98,8 +91,10 @@ class GXARCDB:
         :rtype:          GXDAT
 
         .. versionadded:: 8.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = self._wrapper.create_dat_3d(x_field.encode(), y_field.encode(), z_field.encode(), d_field.encode())
+        ret_val = self._create_dat_3d(x_field.encode(), y_field.encode(), z_field.encode(), d_field.encode())
         return GXDAT(ret_val)
 
 
@@ -114,8 +109,10 @@ class GXARCDB:
         :rtype:      GXARCDB
 
         .. versionadded:: 8.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapARCDB.current(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapARCDB._current(GXContext._get_tls_geo())
         return GXARCDB(ret_val)
 
 
@@ -134,14 +131,14 @@ class GXARCDB:
 
         .. versionadded:: 8.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        1. The import template can be in the local directory or the GEOSOFT
+        **Note:** 1. The import template can be in the local directory or the GEOSOFT
            directory.
         
         3. If the line already exists, the data will overwrite the existing data.
         """
-        self._wrapper.export_to_db(db._wrapper, temp.encode(), line.encode())
+        self._export_to_db(db, temp.encode(), line.encode())
         
 
 
@@ -155,12 +152,12 @@ class GXARCDB:
 
         .. versionadded:: 8.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If Z or M values are supported by the table geometry the strings
+        **Note:** If Z or M values are supported by the table geometry the strings
         "<Z Values>" and "<M Values>" will be added accordingly.
         """
-        self._wrapper.field_lst(lst._wrapper)
+        self._field_lst(lst)
         
 
 
@@ -177,8 +174,10 @@ class GXARCDB:
         :rtype:          GXARCDB
 
         .. versionadded:: 8.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapARCDB.from_i_unknown(GXContext._get_tls_geo(), unknown)
+        ret_val = gxapi_cy.WrapARCDB._from_i_unknown(GXContext._get_tls_geo(), unknown)
         return GXARCDB(ret_val)
 
 
@@ -193,12 +192,12 @@ class GXARCDB:
 
         .. versionadded:: 8.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the table does not have an `GXIPJ <geosoft.gxapi.GXIPJ>`, the `GXIPJ <geosoft.gxapi.GXIPJ>` that is
+        **Note:** If the table does not have an `GXIPJ <geosoft.gxapi.GXIPJ>`, the `GXIPJ <geosoft.gxapi.GXIPJ>` that is
         returned will have an unknown projection.
         """
-        self._wrapper.get_ipj(ipj._wrapper)
+        self._get_ipj(ipj)
         
 
 
@@ -217,8 +216,10 @@ class GXARCDB:
         :rtype:        int
 
         .. versionadded:: 8.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.exist_field(field.encode())
+        ret_val = self._exist_field(field.encode())
         return ret_val
 
 
@@ -233,8 +234,10 @@ class GXARCDB:
         :rtype:        int
 
         .. versionadded:: 8.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.get_i_unknown()
+        ret_val = self._get_i_unknown()
         return ret_val
 
 
@@ -253,8 +256,10 @@ class GXARCDB:
         :rtype:        int
 
         .. versionadded:: 8.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = self._wrapper.import_chem_database_wizard(temp.encode(), type)
+        ret_val = self._import_chem_database_wizard(temp.encode(), type)
         return ret_val
 
 
@@ -271,8 +276,10 @@ class GXARCDB:
         :rtype:             GXARCDB
 
         .. versionadded:: 8.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val, table_type.value = gxapi_cy.WrapARCDB.sel_tbl_ex_gui(GXContext._get_tls_geo(), table_type.value)
+        ret_val, table_type.value = gxapi_cy.WrapARCDB._sel_tbl_ex_gui(GXContext._get_tls_geo(), table_type.value)
         return GXARCDB(ret_val)
 
 
@@ -288,11 +295,11 @@ class GXARCDB:
 
         .. versionadded:: 8.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Terminates with Cancel on cancel, returns `ARCDB_NULL <geosoft.gxapi.ARCDB_NULL>` if there are no valid tables in current document.
+        **Note:** Terminates with Cancel on cancel, returns `ARCDB_NULL <geosoft.gxapi.ARCDB_NULL>` if there are no valid tables in current document.
         """
-        ret_val = gxapi_cy.WrapARCDB.sel_tbl_gui(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapARCDB._sel_tbl_gui(GXContext._get_tls_geo())
         return GXARCDB(ret_val)
 
 

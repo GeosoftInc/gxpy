@@ -13,44 +13,35 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXDSEL:
+class GXDSEL(gxapi_cy.WrapDSEL):
     """
     GXDSEL class.
 
     The `GXDSEL <geosoft.gxapi.GXDSEL>` object is used to select subsets of data from the DATA object
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapDSEL(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXDSEL`
+        A null (undefined) instance of `GXDSEL <geosoft.gxapi.GXDSEL>`
         
-        :returns: A null `GXDSEL`
+        :returns: A null `GXDSEL <geosoft.gxapi.GXDSEL>`
+        :rtype:   GXDSEL
         """
-        return cls()
+        return GXDSEL()
 
     def is_null(self):
         """
-        Check if the instance of `GXDSEL` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXDSEL`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -66,8 +57,10 @@ class GXDSEL:
         :rtype:      GXDSEL
 
         .. versionadded:: 5.0.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapDSEL.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapDSEL._create(GXContext._get_tls_geo())
         return GXDSEL(ret_val)
 
 
@@ -82,15 +75,15 @@ class GXDSEL:
 
         .. versionadded:: 5.0.8
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This is the number of significant figures that you require for the data.
+        **Note:** This is the number of significant figures that you require for the data.
         You can reduce this number to achieve better compression ratios.
         This should only be used when there is one data type in the data.
         
         See sSpatialResolution_DSEL to set the desired spatial resolution.
         """
-        self._wrapper.data_significant_figures(sf)
+        self._data_significant_figures(sf)
         
 
 
@@ -106,8 +99,10 @@ class GXDSEL:
         :type  query:  str
 
         .. versionadded:: 5.1.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.meta_query(query.encode())
+        self._meta_query(query.encode())
         
 
 
@@ -122,11 +117,11 @@ class GXDSEL:
 
         .. versionadded:: 5.1.4
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Affected Data Types: PICTURE
+        **Note:** Affected Data Types: PICTURE
         """
-        self._wrapper.picture_quality(quality)
+        self._picture_quality(quality)
         
 
 
@@ -140,8 +135,10 @@ class GXDSEL:
         :type  request:  int
 
         .. versionadded:: 5.1.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.request_all_info(request)
+        self._request_all_info(request)
         
 
 
@@ -156,12 +153,12 @@ class GXDSEL:
 
         .. versionadded:: 5.1.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The DAP server may not handle clipping and may return
+        **Note:** The DAP server may not handle clipping and may return
         more data than requested.
         """
-        self._wrapper.select_area(pply._wrapper)
+        self._select_area(pply)
         
 
 
@@ -181,8 +178,10 @@ class GXDSEL:
         :type  max_y:  float
 
         .. versionadded:: 5.0.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.select_rect(min_x, min_y, max_x, max_y)
+        self._select_rect(min_x, min_y, max_x, max_y)
         
 
 
@@ -199,9 +198,9 @@ class GXDSEL:
 
         .. versionadded:: 5.0.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Resolution must be specified in the units of the selection `GXIPJ <geosoft.gxapi.GXIPJ>`.
+        **Note:** Resolution must be specified in the units of the selection `GXIPJ <geosoft.gxapi.GXIPJ>`.
         
         This will be the optimum data resoulution.  (grid cell for grids, data
         separation for other data types).
@@ -211,7 +210,7 @@ class GXDSEL:
         Call sRequireResolution_DSEL with TRUE to force the client to re-sample
         the data to the resolution requested.
         """
-        self._wrapper.select_resolution(res, force)
+        self._select_resolution(res, force)
         
 
 
@@ -227,8 +226,10 @@ class GXDSEL:
         :type  height:  int
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.select_size(width, height)
+        self._select_size(width, height)
         
 
 
@@ -242,8 +243,10 @@ class GXDSEL:
         :type  value:  int
 
         .. versionadded:: 8.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_extract_as_document(value)
+        self._set_extract_as_document(value)
         
 
 
@@ -260,9 +263,9 @@ class GXDSEL:
 
         .. versionadded:: 5.0.8
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the server supports reprojection, the data will be
+        **Note:** If the server supports reprojection, the data will be
         reprojected at the server.
         
         If reprojection is not forced, the data may come in any projection.
@@ -270,7 +273,7 @@ class GXDSEL:
         The spatial resolution and accuracy are accumed to be in the
         coordinate system defined by this `GXIPJ <geosoft.gxapi.GXIPJ>`.
         """
-        self._wrapper.set_ipj(ipj._wrapper, force)
+        self._set_ipj(ipj, force)
         
 
 
@@ -285,16 +288,16 @@ class GXDSEL:
 
         .. versionadded:: 5.0.8
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Must be specified in the units of the selection `GXIPJ <geosoft.gxapi.GXIPJ>`.
+        **Note:** Must be specified in the units of the selection `GXIPJ <geosoft.gxapi.GXIPJ>`.
         
         The spatial accuracy is used improve compression performance for
         the spatial component of the data returned.
         You can reduce this number to achieve better compression ratios.
         This should only be used when there is one data type in the data.
         """
-        self._wrapper.spatial_accuracy(acc)
+        self._spatial_accuracy(acc)
         
 
 

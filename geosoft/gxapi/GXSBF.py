@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXSBF:
+class GXSBF(gxapi_cy.WrapSBF):
     """
     GXSBF class.
 
@@ -26,37 +26,28 @@ class GXSBF:
     which will return a `GXBF <geosoft.gxapi.GXBF>` object to use.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapSBF(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXSBF`
+        A null (undefined) instance of `GXSBF <geosoft.gxapi.GXSBF>`
         
-        :returns: A null `GXSBF`
+        :returns: A null `GXSBF <geosoft.gxapi.GXSBF>`
+        :rtype:   GXSBF
         """
-        return cls()
+        return GXSBF()
 
     def is_null(self):
         """
-        Check if the instance of `GXSBF` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXSBF`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -76,8 +67,10 @@ class GXSBF:
         :rtype:         GXSBF
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.create(file.encode(), status)
+        ret_val = self._create(file.encode(), status)
         return GXSBF(ret_val)
 
 
@@ -94,14 +87,14 @@ class GXSBF:
 
         .. versionadded:: 5.0.7
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Function will populate an `GXLST <geosoft.gxapi.GXLST>` object with embedded files (`SBF_TYPE_FILES <geosoft.gxapi.SBF_TYPE_FILES>`),
+        **Note:** Function will populate an `GXLST <geosoft.gxapi.GXLST>` object with embedded files (`SBF_TYPE_FILES <geosoft.gxapi.SBF_TYPE_FILES>`),
         directories (`SBF_TYPE_DIRS <geosoft.gxapi.SBF_TYPE_DIRS>`), or both (pass `SBF_TYPE_BOTH <geosoft.gxapi.SBF_TYPE_BOTH>`) in an `GXSBF <geosoft.gxapi.GXSBF>`.
         Along with the Name of the file or directory, a constant "dir" or "file" string is written
         to the `GXLST <geosoft.gxapi.GXLST>` also.
         """
-        self._wrapper.create_obj_list(lst._wrapper, type)
+        self._create_obj_list(lst, type)
         
 
 
@@ -115,8 +108,10 @@ class GXSBF:
         :type  dir:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.del_dir(dir.encode())
+        self._del_dir(dir.encode())
         
 
 
@@ -130,8 +125,10 @@ class GXSBF:
         :type  file:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.del_file(file.encode())
+        self._del_file(file.encode())
         
 
 
@@ -150,8 +147,10 @@ class GXSBF:
         :rtype:      GXSBF
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSBF.h_get_db(GXContext._get_tls_geo(), db._wrapper)
+        ret_val = gxapi_cy.WrapSBF._h_get_db(GXContext._get_tls_geo(), db)
         return GXSBF(ret_val)
 
 
@@ -168,8 +167,10 @@ class GXSBF:
         :rtype:      GXSBF
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSBF.h_get_map(GXContext._get_tls_geo(), map._wrapper)
+        ret_val = gxapi_cy.WrapSBF._h_get_map(GXContext._get_tls_geo(), map)
         return GXSBF(ret_val)
 
 
@@ -184,8 +185,10 @@ class GXSBF:
         :rtype:      GXSBF
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSBF.h_get_sys(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapSBF._h_get_sys(GXContext._get_tls_geo())
         return GXSBF(ret_val)
 
 
@@ -203,8 +206,10 @@ class GXSBF:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.exist_dir(dir.encode())
+        ret_val = self._exist_dir(dir.encode())
         return ret_val
 
 
@@ -222,8 +227,10 @@ class GXSBF:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.exist_file(file.encode())
+        ret_val = self._exist_file(file.encode())
         return ret_val
 
 
@@ -243,8 +250,10 @@ class GXSBF:
         :type  p5:         int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.save_log(dir.encode(), file.encode(), file_save.encode(), p5)
+        self._save_log(dir.encode(), file.encode(), file_save.encode(), p5)
         
 
 

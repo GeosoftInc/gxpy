@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXTR:
+class GXTR(gxapi_cy.WrapTR):
     """
     GXTR class.
 
@@ -22,37 +22,28 @@ class GXTR:
     the `GXIMG.get_tr <geosoft.gxapi.GXIMG.get_tr>`, `GXIMG.set_tr <geosoft.gxapi.GXIMG.set_tr>`, and `GXPGU.trend <geosoft.gxapi.GXPGU.trend>` functions.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapTR(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXTR`
+        A null (undefined) instance of `GXTR <geosoft.gxapi.GXTR>`
         
-        :returns: A null `GXTR`
+        :returns: A null `GXTR <geosoft.gxapi.GXTR>`
+        :rtype:   GXTR
         """
-        return cls()
+        return GXTR()
 
     def is_null(self):
         """
-        Check if the instance of `GXTR` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXTR`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -70,8 +61,10 @@ class GXTR:
         :rtype:        GXTR
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapTR.create(GXContext._get_tls_geo(), order)
+        ret_val = gxapi_cy.WrapTR._create(GXContext._get_tls_geo(), order)
         return GXTR(ret_val)
 
 
@@ -87,8 +80,10 @@ class GXTR:
         :type  t_rs:  GXTR
 
         .. versionadded:: 8.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.copy(t_rs._wrapper)
+        self._copy(t_rs)
         
 
 

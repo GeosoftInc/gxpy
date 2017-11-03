@@ -13,44 +13,35 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXCHIMERA:
+class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     """
     GXCHIMERA class.
 
     `GXCHIMERA <geosoft.gxapi.GXCHIMERA>` GX function library.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapCHIMERA(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXCHIMERA`
+        A null (undefined) instance of `GXCHIMERA <geosoft.gxapi.GXCHIMERA>`
         
-        :returns: A null `GXCHIMERA`
+        :returns: A null `GXCHIMERA <geosoft.gxapi.GXCHIMERA>`
+        :rtype:   GXCHIMERA
         """
-        return cls()
+        return GXCHIMERA()
 
     def is_null(self):
         """
-        Check if the instance of `GXCHIMERA` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXCHIMERA`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -86,13 +77,13 @@ class GXCHIMERA:
 
         .. versionadded:: 5.0.7
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The number of channels is taken from the Data handles `GXVV <geosoft.gxapi.GXVV>`.
+        **Note:** The number of channels is taken from the Data handles `GXVV <geosoft.gxapi.GXVV>`.
         Plots a bar plot with the center of the "X" axis at the symbol location.
         See the note on offset symbols in `rose_plot <geosoft.gxapi.GXCHIMERA.rose_plot>`
         """
-        gxapi_cy.WrapCHIMERA.bar_plot(GXContext._get_tls_geo(), mview._wrapper, data_group.encode(), offset_group.encode(), xvv._wrapper, yvv._wrapper, dvv._wrapper, cvv._wrapper, col, offset, offset_size, width)
+        gxapi_cy.WrapCHIMERA._bar_plot(GXContext._get_tls_geo(), mview, data_group.encode(), offset_group.encode(), xvv, yvv, dvv, cvv, col, offset, offset_size, width)
         
 
 
@@ -111,9 +102,9 @@ class GXCHIMERA:
 
         .. versionadded:: 6.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        A list of minima (e.g.  M1, M2, M3, M4, M5) is input.
+        **Note:** A list of minima (e.g.  M1, M2, M3, M4, M5) is input.
         A list of values V is input and transformed to outputs N in the following manner:
         
         if(V) >= M5) N = 5
@@ -123,7 +114,7 @@ class GXCHIMERA:
         else if(V) >= M1) N = 1
         else N = 0
         """
-        gxapi_cy.WrapCHIMERA.categorize_by_value(GXContext._get_tls_geo(), vv_r._wrapper, vv_i._wrapper, vv_o._wrapper)
+        gxapi_cy.WrapCHIMERA._categorize_by_value(GXContext._get_tls_geo(), vv_r, vv_i, vv_o)
         
 
 
@@ -144,13 +135,13 @@ class GXCHIMERA:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Same as `categorize_by_value <geosoft.gxapi.GXCHIMERA.categorize_by_value>`, but if the
+        **Note:** Same as `categorize_by_value <geosoft.gxapi.GXCHIMERA.categorize_by_value>`, but if the
         input value is less than the detection limit,
         the output value is set to zero.
         """
-        gxapi_cy.WrapCHIMERA.categorize_by_value_det_limit(GXContext._get_tls_geo(), vv_r._wrapper, vv_i._wrapper, det_limit, vv_o._wrapper)
+        gxapi_cy.WrapCHIMERA._categorize_by_value_det_limit(GXContext._get_tls_geo(), vv_r, vv_i, det_limit, vv_o)
         
 
 
@@ -169,9 +160,9 @@ class GXCHIMERA:
 
         .. versionadded:: 5.0.8
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Flow:
+        **Note:** Flow:
         
         1. If auto-converting negatives, then all negative values
             are replaced by -0.5*value, and detection limit is ignored.
@@ -180,7 +171,7 @@ class GXCHIMERA:
            `rDUMMY <geosoft.gxapi.rDUMMY>`, then values less than the detection limit are converted to
            one-half the detection limit.
         """
-        gxapi_cy.WrapCHIMERA.clip_to_detect_limit(GXContext._get_tls_geo(), vv._wrapper, det_limit, conv)
+        gxapi_cy.WrapCHIMERA._clip_to_detect_limit(GXContext._get_tls_geo(), vv, det_limit, conv)
         
 
 
@@ -205,11 +196,11 @@ class GXCHIMERA:
 
         .. versionadded:: 5.0.7
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Draws black filled circle (symbols.gfn #7) and a joining line.
+        **Note:** Draws black filled circle (symbols.gfn #7) and a joining line.
         """
-        gxapi_cy.WrapCHIMERA.draw_circle_offset_markers(GXContext._get_tls_geo(), mview._wrapper, vv_xi._wrapper, vv_yi._wrapper, vv_xo._wrapper, vv_yo._wrapper, off_size)
+        gxapi_cy.WrapCHIMERA._draw_circle_offset_markers(GXContext._get_tls_geo(), mview, vv_xi, vv_yi, vv_xo, vv_yo, off_size)
         
 
 
@@ -238,11 +229,11 @@ class GXCHIMERA:
 
         .. versionadded:: 5.0.7
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Draws black filled circle (symbols.gfn #7) and a joining line.
+        **Note:** Draws black filled circle (symbols.gfn #7) and a joining line.
         """
-        gxapi_cy.WrapCHIMERA.draw_rectangle_offset_markers(GXContext._get_tls_geo(), mview._wrapper, vv_xi._wrapper, vv_yi._wrapper, vv_xo._wrapper, vv_yo._wrapper, off_size, x_size, y_size)
+        gxapi_cy.WrapCHIMERA._draw_rectangle_offset_markers(GXContext._get_tls_geo(), mview, vv_xi, vv_yi, vv_xo, vv_yo, off_size, x_size, y_size)
         
 
 
@@ -278,8 +269,10 @@ class GXCHIMERA:
         :type  ys:       float
 
         .. versionadded:: 5.0.7
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapCHIMERA.duplicate_chem(GXContext._get_tls_geo(), mview._wrapper, vv._wrapper, log, det_lim, old, vv_tol._wrapper, title.encode(), unit.encode(), x0, y0, xs, ys)
+        gxapi_cy.WrapCHIMERA._duplicate_chem(GXContext._get_tls_geo(), mview, vv, log, det_lim, old, vv_tol, title.encode(), unit.encode(), x0, y0, xs, ys)
         
 
 
@@ -324,8 +317,10 @@ class GXCHIMERA:
         :type  max_y:    float_ref
 
         .. versionadded:: 8.3
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        min_y.value, max_y.value = gxapi_cy.WrapCHIMERA.duplicate_chem_view(GXContext._get_tls_geo(), map._wrapper, view.encode(), group.encode(), ipj._wrapper, vv._wrapper, log, det_lim, old, vv_tol._wrapper, title.encode(), unit.encode(), vvx._wrapper, vv_line._wrapper, vv_fid._wrapper, db._wrapper, min_y.value, max_y.value)
+        min_y.value, max_y.value = gxapi_cy.WrapCHIMERA._duplicate_chem_view(GXContext._get_tls_geo(), map, view.encode(), group.encode(), ipj, vv, log, det_lim, old, vv_tol, title.encode(), unit.encode(), vvx, vv_line, vv_fid, db, min_y.value, max_y.value)
         
 
 
@@ -350,13 +345,13 @@ class GXCHIMERA:
 
         .. versionadded:: 6.4
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Input a channel expression. Units for individual channels
+        **Note:** Input a channel expression. Units for individual channels
         are stored in the input INI. Returns a `GXVV <geosoft.gxapi.GXVV>` for the given line
         with the calculated expression values.
         """
-        gxapi_cy.WrapCHIMERA.get_expression_data_vv(GXContext._get_tls_geo(), db._wrapper, line, stage.encode(), exp.encode(), ini.encode(), gvv._wrapper)
+        gxapi_cy.WrapCHIMERA._get_expression_data_vv(GXContext._get_tls_geo(), db, line, stage.encode(), exp.encode(), ini.encode(), gvv)
         
 
 
@@ -397,9 +392,9 @@ class GXCHIMERA:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        This function is a quick way to get all rows
+        **Note:** This function is a quick way to get all rows
         of data, guaranteeing no dummy items.
         Book-keeping VVs returned let you easily
         write back results to new channels in the
@@ -415,7 +410,7 @@ class GXCHIMERA:
         1 - Log transform: base e with log min = CHIMERA_LOG_MIN
         2 - Lambda transform
         """
-        gxapi_cy.WrapCHIMERA.get_lithogeochem_data(GXContext._get_tls_geo(), db._wrapper, lst._wrapper, m_ch, vv_trans._wrapper, remove_dummy_rows, vv_dummy._wrapper, warn, vv_d._wrapper, vv_line._wrapper, vv_n._wrapper, vv_used._wrapper, vv_index._wrapper, vv_fids._wrapper, vv_fidi._wrapper)
+        gxapi_cy.WrapCHIMERA._get_lithogeochem_data(GXContext._get_tls_geo(), db, lst, m_ch, vv_trans, remove_dummy_rows, vv_dummy, warn, vv_d, vv_line, vv_n, vv_used, vv_index, vv_fids, vv_fidi)
         
 
 
@@ -438,9 +433,9 @@ class GXCHIMERA:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        If the lambda transform is requested, the channel
+        **Note:** If the lambda transform is requested, the channel
         must have the lambda value defined.
         
         Input Transform options
@@ -450,7 +445,7 @@ class GXCHIMERA:
         1 - Log transform: base e with log min = CHIMERA_LOG_MIN
         2 - Lambda transform
         """
-        trans.value, lda.value = gxapi_cy.WrapCHIMERA.get_transform(GXContext._get_tls_geo(), db._wrapper, chan.encode(), trans_opt, trans.value, lda.value)
+        trans.value, lda.value = gxapi_cy.WrapCHIMERA._get_transform(GXContext._get_tls_geo(), db, chan.encode(), trans_opt, trans.value, lda.value)
         
 
 
@@ -474,14 +469,14 @@ class GXCHIMERA:
 
         .. versionadded:: 7.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Expressions can take acQuire-type named channels
+        **Note:** Expressions can take acQuire-type named channels
         if the exact element/oxide is not found. This function
         extracts the channel name, and units from an acQuire-formatted
         channel name.
         """
-        ret_val, chan.value, units.value, factor.value, oxide.value = gxapi_cy.WrapCHIMERA.is_acquire_chan(GXContext._get_tls_geo(), input_chan.encode(), chan.value.encode(), units.value.encode(), factor.value, oxide.value)
+        ret_val, chan.value, units.value, factor.value, oxide.value = gxapi_cy.WrapCHIMERA._is_acquire_chan(GXContext._get_tls_geo(), input_chan.encode(), chan.value.encode(), units.value.encode(), factor.value, oxide.value)
         return ret_val
 
 
@@ -499,12 +494,12 @@ class GXCHIMERA:
 
         .. versionadded:: 5.0.7
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Suggested use - testing to see if a channel name is an
+        **Note:** Suggested use - testing to see if a channel name is an
         element so that the "ASSAY" class can be set.
         """
-        ret_val = gxapi_cy.WrapCHIMERA.is_element(GXContext._get_tls_geo(), chan.encode(), case)
+        ret_val = gxapi_cy.WrapCHIMERA._is_element(GXContext._get_tls_geo(), chan.encode(), case)
         return ret_val
 
 
@@ -521,13 +516,13 @@ class GXCHIMERA:
 
         .. versionadded:: 5.0.6
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The database should be a currently open database.
+        **Note:** The database should be a currently open database.
         This function supercedes `GXEDB.launch_histogram <geosoft.gxapi.GXEDB.launch_histogram>`, (which now
         just gets the name of the `GXEDB <geosoft.gxapi.GXEDB>` and calls this function).
         """
-        gxapi_cy.WrapCHIMERA.launch_histogram(GXContext._get_tls_geo(), db.encode(), chan.encode())
+        gxapi_cy.WrapCHIMERA._launch_histogram(GXContext._get_tls_geo(), db.encode(), chan.encode())
         
 
 
@@ -544,11 +539,11 @@ class GXCHIMERA:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The database should be a currently open database.
+        **Note:** The database should be a currently open database.
         """
-        gxapi_cy.WrapCHIMERA.launch_probability(GXContext._get_tls_geo(), db.encode(), chan.encode())
+        gxapi_cy.WrapCHIMERA._launch_probability(GXContext._get_tls_geo(), db.encode(), chan.encode())
         
 
 
@@ -563,9 +558,9 @@ class GXCHIMERA:
 
         .. versionadded:: 5.0.6
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The scatter tool uses the following INI parameters
+        **Note:** The scatter tool uses the following INI parameters
         
         ================  ===============================================
         SCATTER.STM       name of the scatter template, "none" for none
@@ -583,7 +578,7 @@ class GXCHIMERA:
         This function supercedes `GXEDB.launch_scatter <geosoft.gxapi.GXEDB.launch_scatter>`, (which now
         just gets the name of the `GXEDB <geosoft.gxapi.GXEDB>` and calls this function).
         """
-        gxapi_cy.WrapCHIMERA.launch_scatter(GXContext._get_tls_geo(), db.encode())
+        gxapi_cy.WrapCHIMERA._launch_scatter(GXContext._get_tls_geo(), db.encode())
         
 
 
@@ -598,9 +593,9 @@ class GXCHIMERA:
 
         .. versionadded:: 5.0.7
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The Triplot tool uses the following INI parameters
+        **Note:** The Triplot tool uses the following INI parameters
         
         ================  ===============================================
         TRIPLOT.TTM       name of the triplot template, "none" for none
@@ -618,7 +613,7 @@ class GXCHIMERA:
         
         The database should be a currently open database.
         """
-        gxapi_cy.WrapCHIMERA.launch_triplot(GXContext._get_tls_geo(), db.encode())
+        gxapi_cy.WrapCHIMERA._launch_triplot(GXContext._get_tls_geo(), db.encode())
         
 
 
@@ -635,9 +630,9 @@ class GXCHIMERA:
 
         .. versionadded:: 5.0.7
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Loads a `GXLST <geosoft.gxapi.GXLST>` with all channels with CLASS "MASK", as well
+        **Note:** Loads a `GXLST <geosoft.gxapi.GXLST>` with all channels with CLASS "MASK", as well
         as all channels containing the string "MASK", as long
         as the CLASS for these channels is not set to something
         other than "" or "MASK".
@@ -645,7 +640,7 @@ class GXCHIMERA:
         This function has been duplicated by `GXDB.mask_chan_lst <geosoft.gxapi.GXDB.mask_chan_lst>`, which
         is safe to use in applications which do not have `GXCHIMERA <geosoft.gxapi.GXCHIMERA>` loaded.
         """
-        gxapi_cy.WrapCHIMERA.mask_chan_lst(GXContext._get_tls_geo(), db._wrapper, lst._wrapper)
+        gxapi_cy.WrapCHIMERA._mask_chan_lst(GXContext._get_tls_geo(), db, lst)
         
 
 
@@ -662,9 +657,9 @@ class GXCHIMERA:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Loads a `GXLST <geosoft.gxapi.GXLST>` with all channels in the preferred order:
+        **Note:** Loads a `GXLST <geosoft.gxapi.GXLST>` with all channels in the preferred order:
         
         First:  Sample, E, N, assay channels,
         Middle: Data from survey (other channels),
@@ -674,7 +669,7 @@ class GXCHIMERA:
         otherwise, get all the database channels. (This allows you to pass in
         the currently displayed channels and only reload those).
         """
-        gxapi_cy.WrapCHIMERA.ordered_channel_lst(GXContext._get_tls_geo(), db._wrapper, lst._wrapper)
+        gxapi_cy.WrapCHIMERA._ordered_channel_lst(GXContext._get_tls_geo(), db, lst)
         
 
 
@@ -709,14 +704,14 @@ class GXCHIMERA:
 
         .. versionadded:: 5.0.7
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The number of channels is taken from the Data handles `GXVV <geosoft.gxapi.GXVV>`.
+        **Note:** The number of channels is taken from the Data handles `GXVV <geosoft.gxapi.GXVV>`.
         The values in each data `GXVV <geosoft.gxapi.GXVV>` are summed and the pie arc is
         is given by the percent contribution of each constituent.
         See the note on offset symbols in `rose_plot <geosoft.gxapi.GXCHIMERA.rose_plot>`
         """
-        gxapi_cy.WrapCHIMERA.pie_plot(GXContext._get_tls_geo(), mview._wrapper, data_group.encode(), offset_group.encode(), xvv._wrapper, yvv._wrapper, dvv._wrapper, cvv._wrapper, col, offset, offset_size, radius)
+        gxapi_cy.WrapCHIMERA._pie_plot(GXContext._get_tls_geo(), mview, data_group.encode(), offset_group.encode(), xvv, yvv, dvv, cvv, col, offset, offset_size, radius)
         
 
 
@@ -753,13 +748,13 @@ class GXCHIMERA:
 
         .. versionadded:: 5.1.5
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The starting angle is the location of the edge of the first pie
+        **Note:** The starting angle is the location of the edge of the first pie
         slice, counted in degrees counter-clockwise from horizontal
         (3 o'clock). Zero degrees gives the same plot as `pie_plot <geosoft.gxapi.GXCHIMERA.pie_plot>`.
         """
-        gxapi_cy.WrapCHIMERA.pie_plot2(GXContext._get_tls_geo(), mview._wrapper, data_group.encode(), offset_group.encode(), xvv._wrapper, yvv._wrapper, dvv._wrapper, cvv._wrapper, col, offset, offset_size, radius, start_angle)
+        gxapi_cy.WrapCHIMERA._pie_plot2(GXContext._get_tls_geo(), mview, data_group.encode(), offset_group.encode(), xvv, yvv, dvv, cvv, col, offset, offset_size, radius, start_angle)
         
 
 
@@ -786,11 +781,11 @@ class GXCHIMERA:
 
         .. versionadded:: 8.0.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Plot in a legend the classes in the class file found in the input class indices.
+        **Note:** Plot in a legend the classes in the class file found in the input class indices.
         """
-        gxapi_cy.WrapCHIMERA.plot_string_classified_symbols_legend_from_class_file(GXContext._get_tls_geo(), mview._wrapper, title.encode(), x, y_min, y_max, class_file.encode(), index_vv._wrapper)
+        gxapi_cy.WrapCHIMERA._plot_string_classified_symbols_legend_from_class_file(GXContext._get_tls_geo(), mview, title.encode(), x, y_min, y_max, class_file.encode(), index_vv)
         
 
 
@@ -808,12 +803,12 @@ class GXCHIMERA:
 
         .. versionadded:: 6.4.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        If the input string is not an element symbol (elements in the range
+        **Note:** If the input string is not an element symbol (elements in the range
         1-92, "H" to "U"), then returns a dummy (`GS_R8DM <geosoft.gxapi.GS_R8DM>`).
         """
-        ret_val = gxapi_cy.WrapCHIMERA.atomic_weight(GXContext._get_tls_geo(), element.encode())
+        ret_val = gxapi_cy.WrapCHIMERA._atomic_weight(GXContext._get_tls_geo(), element.encode())
         return ret_val
 
 
@@ -846,9 +841,9 @@ class GXCHIMERA:
 
         .. versionadded:: 5.0.7
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The number of channels is taken from the Data handles `GXVV <geosoft.gxapi.GXVV>`.
+        **Note:** The number of channels is taken from the Data handles `GXVV <geosoft.gxapi.GXVV>`.
         The values in each data `GXVV <geosoft.gxapi.GXVV>` give the radius, in view units,
         of the sector arc to plots. Values <=0 or dummies are not
         plotted.
@@ -862,7 +857,7 @@ class GXCHIMERA:
         pushed to the outside edge and your plot will look like a
         hedgehog (it also takes a lot longer!).
         """
-        gxapi_cy.WrapCHIMERA.rose_plot(GXContext._get_tls_geo(), mview._wrapper, data_group.encode(), offset_group.encode(), xvv._wrapper, yvv._wrapper, dvv._wrapper, cvv._wrapper, col, offset, offset_size)
+        gxapi_cy.WrapCHIMERA._rose_plot(GXContext._get_tls_geo(), mview, data_group.encode(), offset_group.encode(), xvv, yvv, dvv, cvv, col, offset, offset_size)
         
 
 
@@ -897,13 +892,13 @@ class GXCHIMERA:
 
         .. versionadded:: 5.1.5
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The starting angle is the location of the edge of the first pie
+        **Note:** The starting angle is the location of the edge of the first pie
         slice, counted in degrees counter-clockwise from horizontal
         (3 o'clock). Zero degrees gives the same plot as `rose_plot <geosoft.gxapi.GXCHIMERA.rose_plot>`.
         """
-        gxapi_cy.WrapCHIMERA.rose_plot2(GXContext._get_tls_geo(), mview._wrapper, data_group.encode(), offset_group.encode(), xvv._wrapper, yvv._wrapper, dvv._wrapper, cvv._wrapper, col, offset, offset_size, start_angle)
+        gxapi_cy.WrapCHIMERA._rose_plot2(GXContext._get_tls_geo(), mview, data_group.encode(), offset_group.encode(), xvv, yvv, dvv, cvv, col, offset, offset_size, start_angle)
         
 
 
@@ -978,12 +973,12 @@ class GXCHIMERA:
 
         .. versionadded:: 5.0.7
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The view scaling is not altered with any projection. The base view
+        **Note:** The view scaling is not altered with any projection. The base view
         is best as the input.
         """
-        gxapi_cy.WrapCHIMERA.scatter2(GXContext._get_tls_geo(), mview._wrapper, title.encode(), x1, y1, width, height, horz_vv._wrapper, vert_vv._wrapper, sym_font.encode(), sym_num_vv._wrapper, sym_siz_vv._wrapper, sym_col_vv._wrapper, annot_style, h_chan.encode(), v_chan.encode(), h_units.encode(), v_units.encode(), h_min, h_max, v_min, v_max, hr_min, hr_max, vr_min, vr_max, use_hr_min, use_hr_max, use_vr_min, use_vr_max, h_scaling, v_scaling)
+        gxapi_cy.WrapCHIMERA._scatter2(GXContext._get_tls_geo(), mview, title.encode(), x1, y1, width, height, horz_vv, vert_vv, sym_font.encode(), sym_num_vv, sym_siz_vv, sym_col_vv, annot_style, h_chan.encode(), v_chan.encode(), h_units.encode(), v_units.encode(), h_min, h_max, v_min, v_max, hr_min, hr_max, vr_min, vr_max, use_hr_min, use_hr_max, use_vr_min, use_vr_max, h_scaling, v_scaling)
         
 
 
@@ -1060,11 +1055,11 @@ class GXCHIMERA:
 
         .. versionadded:: 8.0.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Plot a scatter plot using a single fixed symbol.
+        **Note:** Plot a scatter plot using a single fixed symbol.
         """
-        gxapi_cy.WrapCHIMERA.fixed_symbol_scatter_plot(GXContext._get_tls_geo(), mview._wrapper, title.encode(), x1, y1, width, height, x_vv._wrapper, y_vv._wrapper, m_vv._wrapper, mask_col, symbol_font.encode(), symbol_number, symbol_size, symbol_angle, symbol_color, symbol_fill, db._wrapper, line_vv._wrapper, fid_vv._wrapper, annotn, x_chan.encode(), y_chan.encode(), x_units.encode(), y_units.encode(), x_min, x_max, y_min, y_max, x_lin, y_lin, overlay.encode())
+        gxapi_cy.WrapCHIMERA._fixed_symbol_scatter_plot(GXContext._get_tls_geo(), mview, title.encode(), x1, y1, width, height, x_vv, y_vv, m_vv, mask_col, symbol_font.encode(), symbol_number, symbol_size, symbol_angle, symbol_color, symbol_fill, db, line_vv, fid_vv, annotn, x_chan.encode(), y_chan.encode(), x_units.encode(), y_units.encode(), x_min, x_max, y_min, y_max, x_lin, y_lin, overlay.encode())
         
 
 
@@ -1147,11 +1142,11 @@ class GXCHIMERA:
 
         .. versionadded:: 8.0.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Plot a scatter plot using colors based on a zone file.
+        **Note:** Plot a scatter plot using colors based on a zone file.
         """
-        gxapi_cy.WrapCHIMERA.zone_coloured_scatter_plot(GXContext._get_tls_geo(), mview._wrapper, title.encode(), x1, y1, width, height, x_vv._wrapper, y_vv._wrapper, m_vv._wrapper, mask_col, zone_data_vv._wrapper, zone_file.encode(), symbol_font.encode(), symbol_number, symbol_size, symbol_angle, symbol_color, symbol_fill, fix_edge_color, db._wrapper, line_vv._wrapper, fid_vv._wrapper, annotn, x_chan.encode(), y_chan.encode(), x_units.encode(), y_units.encode(), x_min, x_max, y_min, y_max, x_lin, y_lin, overlay.encode())
+        gxapi_cy.WrapCHIMERA._zone_coloured_scatter_plot(GXContext._get_tls_geo(), mview, title.encode(), x1, y1, width, height, x_vv, y_vv, m_vv, mask_col, zone_data_vv, zone_file.encode(), symbol_font.encode(), symbol_number, symbol_size, symbol_angle, symbol_color, symbol_fill, fix_edge_color, db, line_vv, fid_vv, annotn, x_chan.encode(), y_chan.encode(), x_units.encode(), y_units.encode(), x_min, x_max, y_min, y_max, x_lin, y_lin, overlay.encode())
         
 
 
@@ -1222,11 +1217,11 @@ class GXCHIMERA:
 
         .. versionadded:: 8.0.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Plot a scatter plot using symbols based on a symbol class file.
+        **Note:** Plot a scatter plot using symbols based on a symbol class file.
         """
-        gxapi_cy.WrapCHIMERA.string_classified_scatter_plot(GXContext._get_tls_geo(), mview._wrapper, title.encode(), x1, y1, width, height, x_vv._wrapper, y_vv._wrapper, m_vv._wrapper, mask_col, class_vv._wrapper, class_file.encode(), symbol_size_override, db._wrapper, line_vv._wrapper, fid_vv._wrapper, annotn, x_chan.encode(), y_chan.encode(), x_units.encode(), y_units.encode(), x_min, x_max, y_min, y_max, x_lin, y_lin, overlay.encode())
+        gxapi_cy.WrapCHIMERA._string_classified_scatter_plot(GXContext._get_tls_geo(), mview, title.encode(), x1, y1, width, height, x_vv, y_vv, m_vv, mask_col, class_vv, class_file.encode(), symbol_size_override, db, line_vv, fid_vv, annotn, x_chan.encode(), y_chan.encode(), x_units.encode(), y_units.encode(), x_min, x_max, y_min, y_max, x_lin, y_lin, overlay.encode())
         
 
 
@@ -1259,9 +1254,9 @@ class GXCHIMERA:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        This function would normally be called after
+        **Note:** This function would normally be called after
         AAGetLithogeochemData_CHIMERA to write processed values
         back into a database, in the correct lines,
         and in the correct fiducial locations wrt the
@@ -1275,7 +1270,7 @@ class GXCHIMERA:
         New channel types will be set using the data `GXVV <geosoft.gxapi.GXVV>` type.
         Any metadata (CLASS, display formats) should be set separately.
         """
-        gxapi_cy.WrapCHIMERA.set_lithogeochem_data(GXContext._get_tls_geo(), db._wrapper, lst._wrapper, vv_d._wrapper, vv_line._wrapper, vv_n._wrapper, vv_used._wrapper, vv_index._wrapper, vv_fids._wrapper, vv_fidi._wrapper, vv_dummy._wrapper)
+        gxapi_cy.WrapCHIMERA._set_lithogeochem_data(GXContext._get_tls_geo(), db, lst, vv_d, vv_line, vv_n, vv_used, vv_index, vv_fids, vv_fidi, vv_dummy)
         
 
 
@@ -1310,13 +1305,13 @@ class GXCHIMERA:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The number of channels is taken from the Data handles `GXVV <geosoft.gxapi.GXVV>`.
+        **Note:** The number of channels is taken from the Data handles `GXVV <geosoft.gxapi.GXVV>`.
         Plots a bar plot with the center of the "X" axis at the symbol location.
         See the note on offset symbols in `rose_plot <geosoft.gxapi.GXCHIMERA.rose_plot>`
         """
-        gxapi_cy.WrapCHIMERA.stacked_bar_plot(GXContext._get_tls_geo(), mview._wrapper, data_group.encode(), offset_group.encode(), xvv._wrapper, yvv._wrapper, dvv._wrapper, cvv._wrapper, col, offset, offset_size, width)
+        gxapi_cy.WrapCHIMERA._stacked_bar_plot(GXContext._get_tls_geo(), mview, data_group.encode(), offset_group.encode(), xvv, yvv, dvv, cvv, col, offset, offset_size, width)
         
 
 
@@ -1353,12 +1348,12 @@ class GXCHIMERA:
 
         .. versionadded:: 5.0.7
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        If the tolerance is `rDUMMY <geosoft.gxapi.rDUMMY>`, then the minimum and maximum
+        **Note:** If the tolerance is `rDUMMY <geosoft.gxapi.rDUMMY>`, then the minimum and maximum
         values are used, and must be specified.
         """
-        gxapi_cy.WrapCHIMERA.standard(GXContext._get_tls_geo(), mview._wrapper, vv._wrapper, old, tol, min, max, title.encode(), unit.encode(), x0, y0, xs, ys)
+        gxapi_cy.WrapCHIMERA._standard(GXContext._get_tls_geo(), mview, vv, old, tol, min, max, title.encode(), unit.encode(), x0, y0, xs, ys)
         
 
 
@@ -1406,11 +1401,11 @@ class GXCHIMERA:
 
         .. versionadded:: 8.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Same as `standard <geosoft.gxapi.GXCHIMERA.standard>` but plot in a new view.
+        **Note:** Same as `standard <geosoft.gxapi.GXCHIMERA.standard>` but plot in a new view.
         """
-        min_y.value, max_y.value = gxapi_cy.WrapCHIMERA.standard_view(GXContext._get_tls_geo(), map._wrapper, view.encode(), group.encode(), ipj._wrapper, vvy._wrapper, old, tol, min, max, title.encode(), unit.encode(), xs, vvx._wrapper, vv_line._wrapper, vv_fid._wrapper, db._wrapper, min_y.value, max_y.value)
+        min_y.value, max_y.value = gxapi_cy.WrapCHIMERA._standard_view(GXContext._get_tls_geo(), map, view.encode(), group.encode(), ipj, vvy, old, tol, min, max, title.encode(), unit.encode(), xs, vvx, vv_line, vv_fid, db, min_y.value, max_y.value)
         
 
 
@@ -1487,15 +1482,15 @@ class GXCHIMERA:
 
         .. versionadded:: 5.1.6
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The mask channel `GXVV <geosoft.gxapi.GXVV>` is used for plotting precedence; those points with
+        **Note:** The mask channel `GXVV <geosoft.gxapi.GXVV>` is used for plotting precedence; those points with
         mask = dummy are plotted first, then overwritten with the non-masked
         values, so you don't get "good" points being covered up by masked values.
         The view scaling is not altered with any projection. The base view
         is best as the input.
         """
-        gxapi_cy.WrapCHIMERA.tri_plot2(GXContext._get_tls_geo(), mview._wrapper, title.encode(), x1, y1, width, height, x_vv._wrapper, y_vv._wrapper, z_vv._wrapper, m_vv._wrapper, sym_font.encode(), sym_num_vv._wrapper, sym_siz_vv._wrapper, sym_col_vv._wrapper, x_chan.encode(), y_chan.encode(), z_chan.encode(), xr_min, xr_max, yr_min, yr_max, zr_min, zr_max, use_xr_min, use_xr_max, use_yr_min, use_yr_max, use_zr_min, use_zr_max, grid, tic, grid_inc)
+        gxapi_cy.WrapCHIMERA._tri_plot2(GXContext._get_tls_geo(), mview, title.encode(), x1, y1, width, height, x_vv, y_vv, z_vv, m_vv, sym_font.encode(), sym_num_vv, sym_siz_vv, sym_col_vv, x_chan.encode(), y_chan.encode(), z_chan.encode(), xr_min, xr_max, yr_min, yr_max, zr_min, zr_max, use_xr_min, use_xr_max, use_yr_min, use_yr_max, use_zr_min, use_zr_max, grid, tic, grid_inc)
         
 
 
@@ -1562,11 +1557,11 @@ class GXCHIMERA:
 
         .. versionadded:: 8.0.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Plot a tri plot using a single fixed symbol.
+        **Note:** Plot a tri plot using a single fixed symbol.
         """
-        gxapi_cy.WrapCHIMERA.fixed_symbol_tri_plot(GXContext._get_tls_geo(), mview._wrapper, title.encode(), x1, y1, side, x_vv._wrapper, y_vv._wrapper, z_vv._wrapper, m_vv._wrapper, mask_col, symbol_font.encode(), symbol_number, symbol_size, symbol_angle, symbol_color, symbol_fill, db._wrapper, line_vv._wrapper, fid_vv._wrapper, x_chan.encode(), y_chan.encode(), z_chan.encode(), grid, tic, grid_inc, overlay.encode())
+        gxapi_cy.WrapCHIMERA._fixed_symbol_tri_plot(GXContext._get_tls_geo(), mview, title.encode(), x1, y1, side, x_vv, y_vv, z_vv, m_vv, mask_col, symbol_font.encode(), symbol_number, symbol_size, symbol_angle, symbol_color, symbol_fill, db, line_vv, fid_vv, x_chan.encode(), y_chan.encode(), z_chan.encode(), grid, tic, grid_inc, overlay.encode())
         
 
 
@@ -1639,11 +1634,11 @@ class GXCHIMERA:
 
         .. versionadded:: 8.0.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Plot a tri plot using colors based on a zone file.
+        **Note:** Plot a tri plot using colors based on a zone file.
         """
-        gxapi_cy.WrapCHIMERA.zone_coloured_tri_plot(GXContext._get_tls_geo(), mview._wrapper, title.encode(), x1, y1, side, x_vv._wrapper, y_vv._wrapper, z_vv._wrapper, m_vv._wrapper, mask_col, zone_data_vv._wrapper, zone_file.encode(), symbol_font.encode(), symbol_number, symbol_size, symbol_angle, symbol_color, symbol_fill, fix_edge_color, db._wrapper, line_vv._wrapper, fid_vv._wrapper, x_chan.encode(), y_chan.encode(), z_chan.encode(), grid, tic, grid_inc, overlay.encode())
+        gxapi_cy.WrapCHIMERA._zone_coloured_tri_plot(GXContext._get_tls_geo(), mview, title.encode(), x1, y1, side, x_vv, y_vv, z_vv, m_vv, mask_col, zone_data_vv, zone_file.encode(), symbol_font.encode(), symbol_number, symbol_size, symbol_angle, symbol_color, symbol_fill, fix_edge_color, db, line_vv, fid_vv, x_chan.encode(), y_chan.encode(), z_chan.encode(), grid, tic, grid_inc, overlay.encode())
         
 
 
@@ -1704,11 +1699,11 @@ class GXCHIMERA:
 
         .. versionadded:: 8.0.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Plot a tri-plot using symbols based on a symbol class file.
+        **Note:** Plot a tri-plot using symbols based on a symbol class file.
         """
-        gxapi_cy.WrapCHIMERA.string_classified_tri_plot(GXContext._get_tls_geo(), mview._wrapper, title.encode(), x1, y1, side, x_vv._wrapper, y_vv._wrapper, z_vv._wrapper, m_vv._wrapper, mask_col, class_vv._wrapper, class_file.encode(), symbol_size_override, db._wrapper, line_vv._wrapper, fid_vv._wrapper, x_chan.encode(), y_chan.encode(), z_chan.encode(), grid, tic, grid_inc, overlay.encode())
+        gxapi_cy.WrapCHIMERA._string_classified_tri_plot(GXContext._get_tls_geo(), mview, title.encode(), x1, y1, side, x_vv, y_vv, z_vv, m_vv, mask_col, class_vv, class_file.encode(), symbol_size_override, db, line_vv, fid_vv, x_chan.encode(), y_chan.encode(), z_chan.encode(), grid, tic, grid_inc, overlay.encode())
         
 
 

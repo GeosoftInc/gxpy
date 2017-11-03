@@ -13,44 +13,35 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXVECTOR3D:
+class GXVECTOR3D(gxapi_cy.WrapVECTOR3D):
     """
     GXVECTOR3D class.
 
     `GXVECTOR3D <geosoft.gxapi.GXVECTOR3D>` Display object.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapVECTOR3D(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXVECTOR3D`
+        A null (undefined) instance of `GXVECTOR3D <geosoft.gxapi.GXVECTOR3D>`
         
-        :returns: A null `GXVECTOR3D`
+        :returns: A null `GXVECTOR3D <geosoft.gxapi.GXVECTOR3D>`
+        :rtype:   GXVECTOR3D
         """
-        return cls()
+        return GXVECTOR3D()
 
     def is_null(self):
         """
-        Check if the instance of `GXVECTOR3D` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXVECTOR3D`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -67,8 +58,10 @@ class GXVECTOR3D:
         :type  itr:        GXITR
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.get_itr(itr._wrapper)
+        self._get_itr(itr)
         
 
 
@@ -82,8 +75,10 @@ class GXVECTOR3D:
         :type  itr:        GXITR
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_itr(itr._wrapper)
+        self._set_itr(itr)
         
 
 

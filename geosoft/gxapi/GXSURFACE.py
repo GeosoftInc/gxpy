@@ -14,7 +14,7 @@ from .GXSURFACEITEM import GXSURFACEITEM
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXSURFACE:
+class GXSURFACE(gxapi_cy.WrapSURFACE):
     """
     GXSURFACE class.
 
@@ -23,37 +23,28 @@ class GXSURFACE:
     contains one or more triangular polyhedral meshes.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapSURFACE(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXSURFACE`
+        A null (undefined) instance of `GXSURFACE <geosoft.gxapi.GXSURFACE>`
         
-        :returns: A null `GXSURFACE`
+        :returns: A null `GXSURFACE <geosoft.gxapi.GXSURFACE>`
+        :rtype:   GXSURFACE
         """
-        return cls()
+        return GXSURFACE()
 
     def is_null(self):
         """
-        Check if the instance of `GXSURFACE` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXSURFACE`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -73,8 +64,10 @@ class GXSURFACE:
         :rtype:               GXSURFACE
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSURFACE.create(GXContext._get_tls_geo(), surface_file.encode(), ipj._wrapper)
+        ret_val = gxapi_cy.WrapSURFACE._create(GXContext._get_tls_geo(), surface_file.encode(), ipj)
         return GXSURFACE(ret_val)
 
 
@@ -93,8 +86,10 @@ class GXSURFACE:
         :rtype:               GXSURFACE
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSURFACE.open(GXContext._get_tls_geo(), surface_file.encode(), mode)
+        ret_val = gxapi_cy.WrapSURFACE._open(GXContext._get_tls_geo(), surface_file.encode(), mode)
         return GXSURFACE(ret_val)
 
 
@@ -110,8 +105,10 @@ class GXSURFACE:
         :type  ipj:      GXIPJ
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.get_ipj(ipj._wrapper)
+        self._get_ipj(ipj)
         
 
 
@@ -125,8 +122,10 @@ class GXSURFACE:
         :type  ipj:      GXIPJ
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_ipj(ipj._wrapper)
+        self._set_ipj(ipj)
         
 
 
@@ -140,8 +139,10 @@ class GXSURFACE:
         :type  lst:      GXLST
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.get_surface_items(lst._wrapper)
+        self._get_surface_items(lst)
         
 
 
@@ -158,8 +159,10 @@ class GXSURFACE:
         :rtype:          GXSURFACEITEM
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.get_surface_item(guid.encode())
+        ret_val = self._get_surface_item(guid.encode())
         return GXSURFACEITEM(ret_val)
 
 
@@ -173,8 +176,10 @@ class GXSURFACE:
         :type  surfaceitem:  GXSURFACEITEM
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.add_surface_item(surfaceitem._wrapper)
+        self._add_surface_item(surfaceitem)
         
 
 
@@ -190,8 +195,10 @@ class GXSURFACE:
         :type  lst:           GXLST
 
         .. versionadded:: 8.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSURFACE.get_surface_names(GXContext._get_tls_geo(), surface_file.encode(), lst._wrapper)
+        gxapi_cy.WrapSURFACE._get_surface_names(GXContext._get_tls_geo(), surface_file.encode(), lst)
         
 
 
@@ -207,8 +214,10 @@ class GXSURFACE:
         :type  lst:           GXLST
 
         .. versionadded:: 8.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSURFACE.get_closed_surface_names(GXContext._get_tls_geo(), surface_file.encode(), lst._wrapper)
+        gxapi_cy.WrapSURFACE._get_closed_surface_names(GXContext._get_tls_geo(), surface_file.encode(), lst)
         
 
 
@@ -232,8 +241,10 @@ class GXSURFACE:
         :type  max_z:    float_ref
 
         .. versionadded:: 8.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._wrapper.get_extents(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
+        min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._get_extents(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         
 
 
@@ -254,8 +265,10 @@ class GXSURFACE:
         :rtype:               int
 
         .. versionadded:: 8.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val, crc.value = gxapi_cy.WrapSURFACE.crc(GXContext._get_tls_geo(), surface_file.encode(), output.encode(), crc.value)
+        ret_val, crc.value = gxapi_cy.WrapSURFACE._crc(GXContext._get_tls_geo(), surface_file.encode(), output.encode(), crc.value)
         return ret_val
 
 
@@ -269,8 +282,10 @@ class GXSURFACE:
         :type  name:  str
 
         .. versionadded:: 8.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSURFACE.sync(GXContext._get_tls_geo(), name.encode())
+        gxapi_cy.WrapSURFACE._sync(GXContext._get_tls_geo(), name.encode())
         
 
 
@@ -287,8 +302,10 @@ class GXSURFACE:
         :type  dxf_file:      str
 
         .. versionadded:: 8.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSURFACE.create_from_dxf(GXContext._get_tls_geo(), ipj._wrapper, surface_file.encode(), dxf_file.encode())
+        gxapi_cy.WrapSURFACE._create_from_dxf(GXContext._get_tls_geo(), ipj, surface_file.encode(), dxf_file.encode())
         
 
 
@@ -305,8 +322,10 @@ class GXSURFACE:
         :type  surface_file:        str
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapSURFACE.create_from_vulcan_triangulation(GXContext._get_tls_geo(), triangulation_file.encode(), ipj._wrapper, surface_file.encode())
+        gxapi_cy.WrapSURFACE._create_from_vulcan_triangulation(GXContext._get_tls_geo(), triangulation_file.encode(), ipj, surface_file.encode())
         
 
 
@@ -323,8 +342,10 @@ class GXSURFACE:
         :type  surface_file:        str
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapSURFACE.append_vulcan_triangulation(GXContext._get_tls_geo(), triangulation_file.encode(), ipj._wrapper, surface_file.encode())
+        gxapi_cy.WrapSURFACE._append_vulcan_triangulation(GXContext._get_tls_geo(), triangulation_file.encode(), ipj, surface_file.encode())
         
 
 

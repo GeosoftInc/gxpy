@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXGUI:
+class GXGUI(gxapi_cy.WrapGUI):
     """
     GXGUI class.
 
@@ -22,37 +22,28 @@ class GXGUI:
     file import wizards, and the Histogram and Scatter tools.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapGUI(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXGUI`
+        A null (undefined) instance of `GXGUI <geosoft.gxapi.GXGUI>`
         
-        :returns: A null `GXGUI`
+        :returns: A null `GXGUI <geosoft.gxapi.GXGUI>`
+        :rtype:   GXGUI
         """
-        return cls()
+        return GXGUI()
 
     def is_null(self):
         """
-        Check if the instance of `GXGUI` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXGUI`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -71,12 +62,14 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The object returned must be destroyed by the
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The object returned must be destroyed by the
         destroy object call.
         """
-        ret_val = gxapi_cy.WrapGUI.create_wnd_from_hwnd(GXContext._get_tls_geo(), p1)
+        ret_val = gxapi_cy.WrapGUI._create_wnd_from_hwnd(GXContext._get_tls_geo(), p1)
         return ret_val
 
 
@@ -92,8 +85,12 @@ class GXGUI:
         :type  con_file_name:   str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapGUI.fft2_spec_filter(GXContext._get_tls_geo(), spec_file_name.encode(), con_file_name.encode())
+        gxapi_cy.WrapGUI._fft2_spec_filter(GXContext._get_tls_geo(), spec_file_name.encode(), con_file_name.encode())
         
 
 
@@ -108,8 +105,12 @@ class GXGUI:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapGUI.get_parent_wnd(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapGUI._get_parent_wnd(GXContext._get_tls_geo())
         return ret_val
 
 
@@ -123,8 +124,12 @@ class GXGUI:
         :type  lst:  GXLST
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapGUI.get_printer_lst(GXContext._get_tls_geo(), lst._wrapper)
+        gxapi_cy.WrapGUI._get_printer_lst(GXContext._get_tls_geo(), lst)
         
 
 
@@ -139,8 +144,12 @@ class GXGUI:
         :rtype:      int
 
         .. versionadded:: 9.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapGUI.get_window_state(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapGUI._get_window_state(GXContext._get_tls_geo())
         return ret_val
 
 
@@ -154,8 +163,12 @@ class GXGUI:
         :type  state:  int
 
         .. versionadded:: 9.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapGUI.set_window_state(GXContext._get_tls_geo(), state)
+        gxapi_cy.WrapGUI._set_window_state(GXContext._get_tls_geo(), state)
         
 
 
@@ -177,8 +190,12 @@ class GXGUI:
         :type  state:   int_ref
 
         .. versionadded:: 9.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        left.value, top.value, right.value, bottom.value, state.value = gxapi_cy.WrapGUI.get_window_position(GXContext._get_tls_geo(), left.value, top.value, right.value, bottom.value, state.value)
+        left.value, top.value, right.value, bottom.value, state.value = gxapi_cy.WrapGUI._get_window_position(GXContext._get_tls_geo(), left.value, top.value, right.value, bottom.value, state.value)
         
 
 
@@ -200,8 +217,12 @@ class GXGUI:
         :type  state:   int
 
         .. versionadded:: 9.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapGUI.set_window_position(GXContext._get_tls_geo(), left, top, right, bottom, state)
+        gxapi_cy.WrapGUI._set_window_position(GXContext._get_tls_geo(), left, top, right, bottom, state)
         
 
 
@@ -222,13 +243,15 @@ class GXGUI:
 
         .. versionadded:: 9.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Returns the coordinates of the client window area (where MDI document windows are placed).
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Returns the coordinates of the client window area (where MDI document windows are placed).
         The returned coordinates are 0,0 for the minimum X and Y and the window width
         width and height for the maximum X and Y.
         """
-        min_x.value, min_y.value, max_x.value, max_y.value = gxapi_cy.WrapGUI.get_client_window_area(GXContext._get_tls_geo(), min_x.value, min_y.value, max_x.value, max_y.value)
+        min_x.value, min_y.value, max_x.value, max_y.value = gxapi_cy.WrapGUI._get_client_window_area(GXContext._get_tls_geo(), min_x.value, min_y.value, max_x.value, max_y.value)
         
 
 
@@ -242,8 +265,12 @@ class GXGUI:
         :type  grid_name:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapGUI.grid_stat_hist(GXContext._get_tls_geo(), grid_name.encode())
+        gxapi_cy.WrapGUI._grid_stat_hist(GXContext._get_tls_geo(), grid_name.encode())
         
 
 
@@ -257,8 +284,12 @@ class GXGUI:
         :type  vox_name:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapGUI.voxel_stat_hist(GXContext._get_tls_geo(), vox_name.encode())
+        gxapi_cy.WrapGUI._voxel_stat_hist(GXContext._get_tls_geo(), vox_name.encode())
         
 
 
@@ -279,9 +310,11 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Color value is set on input, and new value returned.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Color value is set on input, and new value returned.
         If the input color type is `C_TRANSPARENT <geosoft.gxapi.C_TRANSPARENT>`, then the color
         is set to white, if any other type is input the output is
         guaranteed to be of the same type.
@@ -292,7 +325,7 @@ class GXGUI:
         If this is not the case, the `C_TRANSPARENT <geosoft.gxapi.C_TRANSPARENT>` is converted
         to white (if "Ok" is selected) and no choice is offered.
         """
-        ret_val, col.value = gxapi_cy.WrapGUI.color_form(GXContext._get_tls_geo(), col.value, no_col)
+        ret_val, col.value = gxapi_cy.WrapGUI._color_form(GXContext._get_tls_geo(), col.value, no_col)
         return ret_val
 
 
@@ -313,13 +346,15 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The statistics object is required in order to determine
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The statistics object is required in order to determine
         data ranges, percentiles, etc. Create it using
         `GXST.create_exact <geosoft.gxapi.GXST.create_exact>`, or be sure to enable histogram statistics.
         """
-        ret_val = gxapi_cy.WrapGUI.color_transform(GXContext._get_tls_geo(), itr._wrapper, st._wrapper)
+        ret_val = gxapi_cy.WrapGUI._color_transform(GXContext._get_tls_geo(), itr, st)
         return ret_val
 
 
@@ -346,15 +381,17 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Launches the new GX.Net single-dialog coordinate system
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Launches the new GX.Net single-dialog coordinate system
         definition dialog. The input `GXIPJ <geosoft.gxapi.GXIPJ>` is modified on return
         if OK is selected (and the editable parameter is 1).
         The "Data source label" and "Data source" is information displayed
         in the dialog for the user to know where the `GXIPJ <geosoft.gxapi.GXIPJ>` came from (e.g. "Grid: X.grd")
         """
-        ret_val = gxapi_cy.WrapGUI.coord_sys_wizard(GXContext._get_tls_geo(), ipj._wrapper, editable, mode, source_label.encode(), source.encode())
+        ret_val = gxapi_cy.WrapGUI._coord_sys_wizard(GXContext._get_tls_geo(), ipj, editable, mode, source_label.encode(), source.encode())
         return ret_val
 
 
@@ -381,12 +418,14 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Same as `coord_sys_wizard_licensed <geosoft.gxapi.GXGUI.coord_sys_wizard_licensed>` but will always be editable. The other
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Same as `coord_sys_wizard_licensed <geosoft.gxapi.GXGUI.coord_sys_wizard_licensed>` but will always be editable. The other
         method is not editable in the viewer while this one is.
         """
-        ret_val = gxapi_cy.WrapGUI.coord_sys_wizard_licensed(GXContext._get_tls_geo(), ipj._wrapper, editable, mode, source_label.encode(), source.encode())
+        ret_val = gxapi_cy.WrapGUI._coord_sys_wizard_licensed(GXContext._get_tls_geo(), ipj, editable, mode, source_label.encode(), source.encode())
         return ret_val
 
 
@@ -429,14 +468,16 @@ class GXGUI:
 
         .. versionadded:: 9.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Same as `coord_sys_wizard_licensed <geosoft.gxapi.GXGUI.coord_sys_wizard_licensed>` but allows the original grid info to be adjusted
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Same as `coord_sys_wizard_licensed <geosoft.gxapi.GXGUI.coord_sys_wizard_licensed>` but allows the original grid info to be adjusted
         when projections on section or oriented plan grids are modified.
         In the tool, it is the "modified" orientation required to keep the edited projection's grid
         in the same location as it was in the target projection.
         """
-        ret_val, x0.value, y0.value, dx.value, dy.value, rot.value = gxapi_cy.WrapGUI.coord_sys_wizard_grid(GXContext._get_tls_geo(), ipj._wrapper, target_ipj._wrapper, editable, mode, source_label.encode(), source.encode(), nx, ny, x0.value, y0.value, dx.value, dy.value, rot.value)
+        ret_val, x0.value, y0.value, dx.value, dy.value, rot.value = gxapi_cy.WrapGUI._coord_sys_wizard_grid(GXContext._get_tls_geo(), ipj, target_ipj, editable, mode, source_label.encode(), source.encode(), nx, ny, x0.value, y0.value, dx.value, dy.value, rot.value)
         return ret_val
 
 
@@ -458,14 +499,16 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        If the file extension is "mdb", then an MSJET (Microsoft Access)
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** If the file extension is "mdb", then an MSJET (Microsoft Access)
         database is assumed. If the file name is "ODBC", then "ODBC" is
         returned as the type. Otherwise, a dialog appears listing the
         other valid DAO database types.
         """
-        ret_val, type.value = gxapi_cy.WrapGUI.database_type(GXContext._get_tls_geo(), name.encode(), type.value.encode())
+        ret_val, type.value = gxapi_cy.WrapGUI._database_type(GXContext._get_tls_geo(), name.encode(), type.value.encode())
         return ret_val
 
 
@@ -485,9 +528,11 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Often, a Datamine file can be opened a number of different ways
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Often, a Datamine file can be opened a number of different ways
         (e.g. as a string file or a as wireframe (point) file.
         The following function checks to see if there is a choice to be made
         between types supported by Geosoft for import. If not, it just returns
@@ -501,7 +546,7 @@ class GXGUI:
         dmString
         dmWireframePoint
         """
-        ret_val, type.value = gxapi_cy.WrapGUI.datamine_type(GXContext._get_tls_geo(), file.encode(), type.value)
+        ret_val, type.value = gxapi_cy.WrapGUI._datamine_type(GXContext._get_tls_geo(), file.encode(), type.value)
         return ret_val
 
 
@@ -526,15 +571,17 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Only uses the current `GXDB <geosoft.gxapi.GXDB>`. This function does
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Only uses the current `GXDB <geosoft.gxapi.GXDB>`. This function does
         not exactly work as supposed to. Instead of using
         the `GXEDB <geosoft.gxapi.GXEDB>` handle passed to it, it only will use
         the current `GXDB <geosoft.gxapi.GXDB>`. Please see ExportXYXTemplateEditorEx_GUI
         for an updated function.
         """
-        ret_val = gxapi_cy.WrapGUI.export_xyz_template_editor(GXContext._get_tls_geo(), db._wrapper, template.encode(), size)
+        ret_val = gxapi_cy.WrapGUI._export_xyz_template_editor(GXContext._get_tls_geo(), db, template.encode(), size)
         return ret_val
 
 
@@ -556,8 +603,12 @@ class GXGUI:
         :rtype:           int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val, template.value = gxapi_cy.WrapGUI.export_xyz_template_editor_ex(GXContext._get_tls_geo(), edb._wrapper, template.value.encode())
+        ret_val, template.value = gxapi_cy.WrapGUI._export_xyz_template_editor_ex(GXContext._get_tls_geo(), edb, template.value.encode())
         return ret_val
 
 
@@ -575,12 +626,12 @@ class GXGUI:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        For example, if "Database (``*.gdb``)" is input,
+        **Note:** For example, if "Database (``*.gdb``)" is input,
         then the `FILE_FILTER_GDB <geosoft.gxapi.FILE_FILTER_GDB>` value is returned.
         """
-        ret_val = gxapi_cy.WrapGUI.file_filter_index(GXContext._get_tls_geo(), filter.encode())
+        ret_val = gxapi_cy.WrapGUI._file_filter_index(GXContext._get_tls_geo(), filter.encode())
         return ret_val
 
 
@@ -601,11 +652,11 @@ class GXGUI:
 
         .. versionadded:: 7.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Runs the GCS Warning dialog with one data source
+        **Note:** Runs the GCS Warning dialog with one data source
         """
-        ret_val = gxapi_cy.WrapGUI.gcs_datum_warning_shp(GXContext._get_tls_geo(), data_source.encode(), ipj._wrapper)
+        ret_val = gxapi_cy.WrapGUI._gcs_datum_warning_shp(GXContext._get_tls_geo(), data_source.encode(), ipj)
         return ret_val
 
 
@@ -629,11 +680,11 @@ class GXGUI:
 
         .. versionadded:: 7.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Runs the GCS Warning dialog with multiple data sources (Database)
+        **Note:** Runs the GCS Warning dialog with multiple data sources (Database)
         """
-        ret_val = gxapi_cy.WrapGUI.gcs_datum_warning_shpdb_ex(GXContext._get_tls_geo(), source_lst._wrapper, datum_from_lst._wrapper, ldtlst._wrapper, db._wrapper)
+        ret_val = gxapi_cy.WrapGUI._gcs_datum_warning_shpdb_ex(GXContext._get_tls_geo(), source_lst, datum_from_lst, ldtlst, db)
         return ret_val
 
 
@@ -657,11 +708,11 @@ class GXGUI:
 
         .. versionadded:: 7.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Runs the GCS Warning dialog with multiple data sources
+        **Note:** Runs the GCS Warning dialog with multiple data sources
         """
-        ret_val = gxapi_cy.WrapGUI.gcs_datum_warning_shp_ex(GXContext._get_tls_geo(), source_lst._wrapper, datum_from_lst._wrapper, ldtlst._wrapper, mview._wrapper)
+        ret_val = gxapi_cy.WrapGUI._gcs_datum_warning_shp_ex(GXContext._get_tls_geo(), source_lst, datum_from_lst, ldtlst, mview)
         return ret_val
 
 
@@ -689,13 +740,15 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Depending on what is currently visible on screen and
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Depending on what is currently visible on screen and
         the defined coordinate system the user may be prompted
         by a warning and optionaly cancel the process.
         """
-        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = gxapi_cy.WrapGUI.get_area_of_interest(GXContext._get_tls_geo(), min_x.value, min_y.value, max_x.value, max_y.value, ply._wrapper, ipj._wrapper)
+        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = gxapi_cy.WrapGUI._get_area_of_interest(GXContext._get_tls_geo(), min_x.value, min_y.value, max_x.value, max_y.value, ply, ipj)
         return ret_val
 
 
@@ -727,13 +780,15 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Depending on what is currently visible on screen and
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Depending on what is currently visible on screen and
         the defined coordinate system the user may be prompted
         by a warning and optionaly cancel the process.
         """
-        ret_val, min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = gxapi_cy.WrapGUI.get_area_of_interest_3d(GXContext._get_tls_geo(), min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value, ply._wrapper, ipj._wrapper)
+        ret_val, min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = gxapi_cy.WrapGUI._get_area_of_interest_3d(GXContext._get_tls_geo(), min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value, ply, ipj)
         return ret_val
 
 
@@ -754,16 +809,16 @@ class GXGUI:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The default grid/image filters are normally stored in
+        **Note:** The default grid/image filters are normally stored in
         "MONTAJ.DEFAULT_XGD_IN" and "MONTAJ.DEFAULT_XGD_OUT"
         
         If no filter is defined, or the filter is not found
         then "grd" and "GRD" are returned as the default extension
         and qualifier.
         """
-        ext.value, qual.value = gxapi_cy.WrapGUI.get_dat_defaults(GXContext._get_tls_geo(), flags, open, ext.value.encode(), qual.value.encode())
+        ext.value, qual.value = gxapi_cy.WrapGUI._get_dat_defaults(GXContext._get_tls_geo(), flags, open, ext.value.encode(), qual.value.encode())
         
 
 
@@ -786,9 +841,9 @@ class GXGUI:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Returns the four parts of the file filter;
+        **Note:** Returns the four parts of the file filter;
         e.g. for `FILE_FILTER_GDB <geosoft.gxapi.FILE_FILTER_GDB>` it returns:
         
         Filter:    "Database (``*.gdb``)"
@@ -799,7 +854,7 @@ class GXGUI:
         This function is useful for constuction open/save dialog
         file filters, especially in GX.Net functions.
         """
-        filter.value, mask.value, ext.value, path.value = gxapi_cy.WrapGUI.get_file_filter(GXContext._get_tls_geo(), file_filter, filter.value.encode(), mask.value.encode(), ext.value.encode(), path.value)
+        filter.value, mask.value, ext.value, path.value = gxapi_cy.WrapGUI._get_file_filter(GXContext._get_tls_geo(), file_filter, filter.value.encode(), mask.value.encode(), ext.value.encode(), path.value)
         
 
 
@@ -816,16 +871,16 @@ class GXGUI:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Works along with the `get_file_filter <geosoft.gxapi.GXGUI.get_file_filter>` function. Note that
+        **Note:** Works along with the `get_file_filter <geosoft.gxapi.GXGUI.get_file_filter>` function. Note that
         most values of FILE_FILTER_XXX will return `GS_DIRECTORY_NONE <geosoft.gxapi.GS_DIRECTORY_NONE>`,
         and give the current workspace directory.
         
         This function is useful for constuction open/save dialog
         file filters, especially in GX.Net functions.
         """
-        dir.value = gxapi_cy.WrapGUI.get_gs_directory(GXContext._get_tls_geo(), path, dir.value.encode())
+        dir.value = gxapi_cy.WrapGUI._get_gs_directory(GXContext._get_tls_geo(), path, dir.value.encode())
         
 
 
@@ -847,8 +902,12 @@ class GXGUI:
         :rtype:           int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val, dir_path.value = gxapi_cy.WrapGUI.browse_dir(GXContext._get_tls_geo(), title.encode(), default.encode(), dir_path.value.encode())
+        ret_val, dir_path.value = gxapi_cy.WrapGUI._browse_dir(GXContext._get_tls_geo(), title.encode(), default.encode(), dir_path.value.encode())
         return ret_val
 
 
@@ -875,16 +934,18 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The statistics object is required in order to determine
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The statistics object is required in order to determine
         data ranges, percentiles, etc. Create it using
         `GXST.create_exact <geosoft.gxapi.GXST.create_exact>`, or be sure to enable histogram statistics.
         The color transform file name is used as the default when the save
         button is pushed, and is updated both after the load and save buttons
         are pushed by the value input or selected by the user.
         """
-        ret_val, file.value = gxapi_cy.WrapGUI.color_transform_ex(GXContext._get_tls_geo(), itr._wrapper, st._wrapper, zones, load_save, file.value.encode())
+        ret_val, file.value = gxapi_cy.WrapGUI._color_transform_ex(GXContext._get_tls_geo(), itr, st, zones, load_save, file.value.encode())
         return ret_val
 
 
@@ -905,9 +966,11 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The `GXITR <geosoft.gxapi.GXITR>` values are interpreted as cumulative percent values, using
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The `GXITR <geosoft.gxapi.GXITR>` values are interpreted as cumulative percent values, using
         the "PERCENT=1" value in the `GXITR <geosoft.gxapi.GXITR>`'s `GXREG <geosoft.gxapi.GXREG>`.
         
         Note that processes using ITRs do not automatically know to convert between
@@ -922,7 +985,7 @@ class GXGUI:
         button is pushed, and is updated both after the load and save buttons
         are pushed by the value input or selected by the user.
         """
-        ret_val, file.value = gxapi_cy.WrapGUI.cumulative_percent(GXContext._get_tls_geo(), file.value.encode(), itr._wrapper)
+        ret_val, file.value = gxapi_cy.WrapGUI._cumulative_percent(GXContext._get_tls_geo(), file.value.encode(), itr)
         return ret_val
 
 
@@ -951,9 +1014,11 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Remember to make the string size big enough for multiple file
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Remember to make the string size big enough for multiple file
         selections. In the case of multiple selections the names will be separated
         by a semicolon and only the first file will contain the full path.
         
@@ -962,7 +1027,7 @@ class GXGUI:
         drive:\\path1\\path2\\name.grid|name2.grid|name3.grid(QUALIFIERS)
         All grids are required to be of the same type.
         """
-        ret_val, psz_file_path.value = gxapi_cy.WrapGUI.dat_file_form(GXContext._get_tls_geo(), title.encode(), default.encode(), psz_file_path.value.encode(), type, validation_type, multi)
+        ret_val, psz_file_path.value = gxapi_cy.WrapGUI._dat_file_form(GXContext._get_tls_geo(), title.encode(), default.encode(), psz_file_path.value.encode(), type, validation_type, multi)
         return ret_val
 
 
@@ -993,9 +1058,11 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Remember to make the string size big enough for multiple file
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Remember to make the string size big enough for multiple file
         selections. In the case of multiple selections the names will be separated
         by a semicolon and only the first file will contain the full path.
         
@@ -1007,7 +1074,7 @@ class GXGUI:
         iMultiFileOpen_GUI
         iMultiFileSave_GUI
         """
-        ret_val, file_path.value = gxapi_cy.WrapGUI.gen_file_form(GXContext._get_tls_geo(), title.encode(), filt_vv._wrapper, filter, default.encode(), file_path.value.encode(), type, multi)
+        ret_val, file_path.value = gxapi_cy.WrapGUI._gen_file_form(GXContext._get_tls_geo(), title.encode(), filt_vv, filter, default.encode(), file_path.value.encode(), type, multi)
         return ret_val
 
 
@@ -1036,13 +1103,15 @@ class GXGUI:
 
         .. versionadded:: 9.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Remember to make the string size big enough for multiple file
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Remember to make the string size big enough for multiple file
         selections. In the case of multiple selections the names will be separated
         by a semicolon and only the first file will contain the full path.
         """
-        ret_val, file_path.value = gxapi_cy.WrapGUI.custom_file_form(GXContext._get_tls_geo(), title.encode(), filter.encode(), default.encode(), file_path.value.encode(), type, multi)
+        ret_val, file_path.value = gxapi_cy.WrapGUI._custom_file_form(GXContext._get_tls_geo(), title.encode(), filter.encode(), default.encode(), file_path.value.encode(), type, multi)
         return ret_val
 
 
@@ -1069,13 +1138,15 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        If it is not defined on input, the template name is set
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** If it is not defined on input, the template name is set
         to be the Wholeplot table name; e.g.
         "HOLESURVEY.i4" for "Project_HOLESURVEY"
         """
-        ret_val, temp.value, table.value, type.value = gxapi_cy.WrapGUI.import_drill_database_ado2(GXContext._get_tls_geo(), connect.encode(), temp.value.encode(), table.value.encode(), type.value, reg._wrapper)
+        ret_val, temp.value, table.value, type.value = gxapi_cy.WrapGUI._import_drill_database_ado2(GXContext._get_tls_geo(), connect.encode(), temp.value.encode(), table.value.encode(), type.value, reg)
         return ret_val
 
 
@@ -1104,13 +1175,15 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        If it is not defined on input, the template name is set
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** If it is not defined on input, the template name is set
         to be the Wholeplot table name; e.g.
         "HOLESURVEY.i4" for "Project_HOLESURVEY"
         """
-        ret_val, temp.value, table.value, type.value = gxapi_cy.WrapGUI.import_drill_database_esri(GXContext._get_tls_geo(), connect.encode(), temp.value.encode(), table.value.encode(), type.value, geochem, reg._wrapper)
+        ret_val, temp.value, table.value, type.value = gxapi_cy.WrapGUI._import_drill_database_esri(GXContext._get_tls_geo(), connect.encode(), temp.value.encode(), table.value.encode(), type.value, geochem, reg)
         return ret_val
 
 
@@ -1138,9 +1211,11 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        If the input connection string is empty (""), then the ODBC connection dialogs
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** If the input connection string is empty (""), then the ODBC connection dialogs
         will appear (e.g. to connect to a machine database) before the import wizard
         is run. The connect string used for this connection is then returned.
         This string can then be used on input to skip the ODBC connection dialogs and
@@ -1148,7 +1223,7 @@ class GXGUI:
         Because the name of the database is not necessarily known, the template name is created
         from the name of the table opened - e.g. "HOLELOCATION.i4".
         """
-        ret_val, connect.value, temp.value, table.value, type.value = gxapi_cy.WrapGUI.import_drill_database_odbc(GXContext._get_tls_geo(), connect.value.encode(), temp.value.encode(), table.value.encode(), type.value, reg._wrapper)
+        ret_val, connect.value, temp.value, table.value, type.value = gxapi_cy.WrapGUI._import_drill_database_odbc(GXContext._get_tls_geo(), connect.value.encode(), temp.value.encode(), table.value.encode(), type.value, reg)
         return ret_val
 
 
@@ -1174,11 +1249,13 @@ class GXGUI:
 
         .. versionadded:: 8.3
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Same as `import_drill_database_odbc <geosoft.gxapi.GXGUI.import_drill_database_odbc>` but customized for Maxwell.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Same as `import_drill_database_odbc <geosoft.gxapi.GXGUI.import_drill_database_odbc>` but customized for Maxwell.
         """
-        ret_val, connect.value, temp.value, table.value, type.value = gxapi_cy.WrapGUI.import_drill_database_odbc_maxwell(GXContext._get_tls_geo(), connect.value.encode(), temp.value.encode(), table.value.encode(), type.value, reg._wrapper)
+        ret_val, connect.value, temp.value, table.value, type.value = gxapi_cy.WrapGUI._import_drill_database_odbc_maxwell(GXContext._get_tls_geo(), connect.value.encode(), temp.value.encode(), table.value.encode(), type.value, reg)
         return ret_val
 
 
@@ -1198,8 +1275,12 @@ class GXGUI:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapGUI.import_ascii_wizard(GXContext._get_tls_geo(), name.encode(), temp.encode())
+        ret_val = gxapi_cy.WrapGUI._import_ascii_wizard(GXContext._get_tls_geo(), name.encode(), temp.encode())
         return ret_val
 
 
@@ -1223,8 +1304,12 @@ class GXGUI:
         :rtype:        int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val, table.value = gxapi_cy.WrapGUI.import_chem_database(GXContext._get_tls_geo(), name.encode(), temp.encode(), table.value.encode(), type)
+        ret_val, table.value = gxapi_cy.WrapGUI._import_chem_database(GXContext._get_tls_geo(), name.encode(), temp.encode(), table.value.encode(), type)
         return ret_val
 
 
@@ -1249,13 +1334,15 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        This is an improved version of ImportChemDatabase_GUI using the
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** This is an improved version of ImportChemDatabase_GUI using the
         new ADO technology, as opposed to DAO. Use in conjuction with
         `GXDU.import_ado <geosoft.gxapi.GXDU.import_ado>`. See also ImportDatabaseADO_GUI.
         """
-        ret_val, table.value = gxapi_cy.WrapGUI.import_chem_database_ado(GXContext._get_tls_geo(), connect.encode(), temp.encode(), table.value.encode(), type)
+        ret_val, table.value = gxapi_cy.WrapGUI._import_chem_database_ado(GXContext._get_tls_geo(), connect.encode(), temp.encode(), table.value.encode(), type)
         return ret_val
 
 
@@ -1278,9 +1365,11 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        This is used to select a single database table, and
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** This is used to select a single database table, and
         selected fields from that table. If the database is not
         Microsoft Access (type .mdb), an introductory dialog
         requests the file type.
@@ -1288,7 +1377,7 @@ class GXGUI:
         creates an import template which may be used to import
         the table (see `GXDU.import_dao <geosoft.gxapi.GXDU.import_dao>`).
         """
-        ret_val, table.value = gxapi_cy.WrapGUI.import_database(GXContext._get_tls_geo(), name.encode(), temp.encode(), table.value.encode())
+        ret_val, table.value = gxapi_cy.WrapGUI._import_database(GXContext._get_tls_geo(), name.encode(), temp.encode(), table.value.encode())
         return ret_val
 
 
@@ -1311,9 +1400,11 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        1. This is used to select a single database table, and
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** 1. This is used to select a single database table, and
            selected fields from that table.
         
         2. This function DOES NOT import the table itself, but
@@ -1323,7 +1414,7 @@ class GXGUI:
         3. If connection string is of type "FILENAME=..." the connection will attempt to resolve
            it as a file database. (see also ODBCFileConnect_GUI)
         """
-        ret_val, table.value = gxapi_cy.WrapGUI.import_database_ado(GXContext._get_tls_geo(), connect.encode(), temp.encode(), table.value.encode())
+        ret_val, table.value = gxapi_cy.WrapGUI._import_database_ado(GXContext._get_tls_geo(), connect.encode(), temp.encode(), table.value.encode())
         return ret_val
 
 
@@ -1349,9 +1440,11 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        1. This is used to build an Oasis montaj group (line) from
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** 1. This is used to build an Oasis montaj group (line) from
            one or more database tables and fields, by selecting from
            one or more SQL selection queries. The list of queries
            is read from a text file with the following syntax:
@@ -1381,7 +1474,7 @@ class GXGUI:
         5. If connection string is of type "FILENAME=..." the connection will attempt to resolve
            it as a file database. (see also ODBCFileConnect_GUI)
         """
-        ret_val, line.value = gxapi_cy.WrapGUI.import_database_sql(GXContext._get_tls_geo(), name.encode(), sql.encode(), temp.encode(), line.value.encode())
+        ret_val, line.value = gxapi_cy.WrapGUI._import_database_sql(GXContext._get_tls_geo(), name.encode(), sql.encode(), temp.encode(), line.value.encode())
         return ret_val
 
 
@@ -1407,9 +1500,11 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        This is used to build an Oasis montaj group (line) from
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** This is used to build an Oasis montaj group (line) from
         one or more database tables and fields, by selecting from
         one or more SQL selection queries. The list of queries
         is read from a text file with the following syntax:
@@ -1436,7 +1531,7 @@ class GXGUI:
         creates an import template which may be used to import
         the data (see `GXDU.import_dao <geosoft.gxapi.GXDU.import_dao>`).
         """
-        ret_val, line.value = gxapi_cy.WrapGUI.import_database_sqlado(GXContext._get_tls_geo(), connect.encode(), sql.encode(), temp.encode(), line.value.encode())
+        ret_val, line.value = gxapi_cy.WrapGUI._import_database_sqlado(GXContext._get_tls_geo(), connect.encode(), sql.encode(), temp.encode(), line.value.encode())
         return ret_val
 
 
@@ -1463,13 +1558,15 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        This is an improved version of ImportDrillDatabase_GUI using the
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** This is an improved version of ImportDrillDatabase_GUI using the
         new ADO technology, as opposed to DAO. Use in conjunction with
         `GXDU.import_ado <geosoft.gxapi.GXDU.import_ado>`. See also ImportDatabaseADO_GUI.
         """
-        ret_val, table.value, type.value = gxapi_cy.WrapGUI.import_drill_database_ado(GXContext._get_tls_geo(), connect.encode(), temp.encode(), table.value.encode(), type.value, reg._wrapper)
+        ret_val, table.value, type.value = gxapi_cy.WrapGUI._import_drill_database_ado(GXContext._get_tls_geo(), connect.encode(), temp.encode(), table.value.encode(), type.value, reg)
         return ret_val
 
 
@@ -1495,9 +1592,11 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        This is similar to `import_database_sql <geosoft.gxapi.GXGUI.import_database_sql>`, but dispenses with
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** This is similar to `import_database_sql <geosoft.gxapi.GXGUI.import_database_sql>`, but dispenses with
         the dialog offering a selection of queries. Instead, the
         user supplies the query as a string.
         
@@ -1505,7 +1604,7 @@ class GXGUI:
         creates an import template which may be used to import
         the data (see `GXDU.import_dao <geosoft.gxapi.GXDU.import_dao>`).
         """
-        ret_val = gxapi_cy.WrapGUI.import_template_sql(GXContext._get_tls_geo(), name.encode(), temp.encode(), sql.encode(), line.encode())
+        ret_val = gxapi_cy.WrapGUI._import_template_sql(GXContext._get_tls_geo(), name.encode(), temp.encode(), sql.encode(), line.encode())
         return ret_val
 
 
@@ -1531,9 +1630,11 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        This is similar to `import_database_sql <geosoft.gxapi.GXGUI.import_database_sql>`, but dispenses with
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** This is similar to `import_database_sql <geosoft.gxapi.GXGUI.import_database_sql>`, but dispenses with
         the dialog offering a selection of queries. Instead, the
         user supplies the query as a string.
         
@@ -1541,7 +1642,7 @@ class GXGUI:
         creates an import template which may be used to import
         the data (see `GXDU.import_ado <geosoft.gxapi.GXDU.import_ado>`).
         """
-        ret_val = gxapi_cy.WrapGUI.import_template_sqlado(GXContext._get_tls_geo(), name.encode(), temp.encode(), sql.encode(), line.encode())
+        ret_val = gxapi_cy.WrapGUI._import_template_sqlado(GXContext._get_tls_geo(), name.encode(), temp.encode(), sql.encode(), line.encode())
         return ret_val
 
 
@@ -1567,8 +1668,12 @@ class GXGUI:
         :rtype:           int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapGUI.import_xyz_template_editor(GXContext._get_tls_geo(), db._wrapper, template.encode(), size, file.encode())
+        ret_val = gxapi_cy.WrapGUI._import_xyz_template_editor(GXContext._get_tls_geo(), db, template.encode(), size, file.encode())
         return ret_val
 
 
@@ -1594,16 +1699,18 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        If the file extension is "mdb" or "xls" then a Microsoft Access
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** If the file extension is "mdb" or "xls" then a Microsoft Access
         or Excel database is assumed. Otherwise, a dialog appears listing
         the installed ODBC file database drivers. If the driver takes a
         directory as a database (FileUsage==1) the table name is also
         returned. This is needed because the table name may or may not include
         the file extension.
         """
-        ret_val, connect.value, table.value = gxapi_cy.WrapGUI.odbc_file_connect(GXContext._get_tls_geo(), file.encode(), connect.value.encode(), usage, table.value.encode())
+        ret_val, connect.value, table.value = gxapi_cy.WrapGUI._odbc_file_connect(GXContext._get_tls_geo(), file.encode(), connect.value.encode(), usage, table.value.encode())
         return ret_val
 
 
@@ -1636,11 +1743,13 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Symbols are set on input, and new values returned.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Symbols are set on input, and new values returned.
         """
-        ret_val, symb_font.value, geo_font.value, weight.value, symb_num.value, symb_size.value, symb_ang.value, edge_col.value, fill_col.value = gxapi_cy.WrapGUI.symbol_form(GXContext._get_tls_geo(), symb_font.value.encode(), geo_font.value, weight.value, symb_num.value, symb_size.value, symb_ang.value, edge_col.value, fill_col.value)
+        ret_val, symb_font.value, geo_font.value, weight.value, symb_num.value, symb_size.value, symb_ang.value, edge_col.value, fill_col.value = gxapi_cy.WrapGUI._symbol_form(GXContext._get_tls_geo(), symb_font.value.encode(), geo_font.value, weight.value, symb_num.value, symb_size.value, symb_ang.value, edge_col.value, fill_col.value)
         return ret_val
 
 
@@ -1662,8 +1771,12 @@ class GXGUI:
         :rtype:             int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapGUI.meta_data_tool(GXContext._get_tls_geo(), meta._wrapper, root_token, schema)
+        ret_val = gxapi_cy.WrapGUI._meta_data_tool(GXContext._get_tls_geo(), meta, root_token, schema)
         return ret_val
 
 
@@ -1681,8 +1794,12 @@ class GXGUI:
         :type  type:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapGUI.import_chem_wizard(GXContext._get_tls_geo(), name.encode(), temp.encode(), type)
+        gxapi_cy.WrapGUI._import_chem_wizard(GXContext._get_tls_geo(), name.encode(), temp.encode(), type)
         
 
 
@@ -1704,8 +1821,12 @@ class GXGUI:
         :type  reg:    GXREG
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        table.value, type.value = gxapi_cy.WrapGUI.import_drill_wizard(GXContext._get_tls_geo(), name.encode(), temp.encode(), table.value.encode(), type.value, reg._wrapper)
+        table.value, type.value = gxapi_cy.WrapGUI._import_drill_wizard(GXContext._get_tls_geo(), name.encode(), temp.encode(), table.value.encode(), type.value, reg)
         
 
 
@@ -1717,8 +1838,12 @@ class GXGUI:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapGUI.internet_trust(GXContext._get_tls_geo())
+        gxapi_cy.WrapGUI._internet_trust(GXContext._get_tls_geo())
         
 
 
@@ -1747,9 +1872,11 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Pattern values set on input, and new values returned.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Pattern values set on input, and new values returned.
         Solid fill is indicated by Pattern number 0.
         
         Returned Values (not set on input)
@@ -1767,7 +1894,7 @@ class GXGUI:
         
         The pattern Angle and Style parameters are not user-definable.
         """
-        ret_val, pat.value, size.value, thick.value, dense.value, col.value, back_col.value = gxapi_cy.WrapGUI.pattern_form(GXContext._get_tls_geo(), pat.value, size.value, thick.value, dense.value, col.value, back_col.value)
+        ret_val, pat.value, size.value, thick.value, dense.value, col.value, back_col.value = gxapi_cy.WrapGUI._pattern_form(GXContext._get_tls_geo(), pat.value, size.value, thick.value, dense.value, col.value, back_col.value)
         return ret_val
 
 
@@ -1792,11 +1919,13 @@ class GXGUI:
 
         .. versionadded:: 8.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Same as `pattern_form <geosoft.gxapi.GXGUI.pattern_form>` but for line patterns.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Same as `pattern_form <geosoft.gxapi.GXGUI.pattern_form>` but for line patterns.
         """
-        ret_val, pattern.value, thickness.value, pitch.value, colour.value = gxapi_cy.WrapGUI.line_pattern_form(GXContext._get_tls_geo(), pattern.value, thickness.value, pitch.value, colour.value)
+        ret_val, pattern.value, thickness.value, pitch.value, colour.value = gxapi_cy.WrapGUI._line_pattern_form(GXContext._get_tls_geo(), pattern.value, thickness.value, pitch.value, colour.value)
         return ret_val
 
 
@@ -1819,9 +1948,11 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Takes as input two LSTs, one contains all available items,
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Takes as input two LSTs, one contains all available items,
         the second currently selected items. These are processed,
         and in the left panel are displayed all items in the first
         `GXLST <geosoft.gxapi.GXLST>` not in the selection `GXLST <geosoft.gxapi.GXLST>`, and on the right all items
@@ -1839,7 +1970,7 @@ class GXGUI:
         can be used to convert the selection LSTs to forms that can be
         stored and retrieved from GX parameters (or `GXREG <geosoft.gxapi.GXREG>` or INI, etc.).
         """
-        ret_val = gxapi_cy.WrapGUI.two_panel_selection(GXContext._get_tls_geo(), ls_tf._wrapper, ls_ts._wrapper, title.encode())
+        ret_val = gxapi_cy.WrapGUI._two_panel_selection(GXContext._get_tls_geo(), ls_tf, ls_ts, title.encode())
         return ret_val
 
 
@@ -1862,14 +1993,16 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Same as `two_panel_selection <geosoft.gxapi.GXGUI.two_panel_selection>`, but the items in the
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Same as `two_panel_selection <geosoft.gxapi.GXGUI.two_panel_selection>`, but the items in the
         two lists are not sorted alphabetically, but are ordered
         exactly as input, and when an item is selected it is
         added at the end of the lists.
         """
-        ret_val = gxapi_cy.WrapGUI.two_panel_selection2(GXContext._get_tls_geo(), ls_tf._wrapper, ls_ts._wrapper, title.encode())
+        ret_val = gxapi_cy.WrapGUI._two_panel_selection2(GXContext._get_tls_geo(), ls_tf, ls_ts, title.encode())
         return ret_val
 
 
@@ -1896,14 +2029,16 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Same as `two_panel_selection <geosoft.gxapi.GXGUI.two_panel_selection>`, but the items in the
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Same as `two_panel_selection <geosoft.gxapi.GXGUI.two_panel_selection>`, but the items in the
         two lists are not sorted alphabetically, but are ordered
         exactly as input, and when an item is selected it is
         added at the end of the lists.
         """
-        ret_val = gxapi_cy.WrapGUI.two_panel_selection_ex(GXContext._get_tls_geo(), ls_tf._wrapper, ls_ts._wrapper, sorted, allow_no_select, title.encode())
+        ret_val = gxapi_cy.WrapGUI._two_panel_selection_ex(GXContext._get_tls_geo(), ls_tf, ls_ts, sorted, allow_no_select, title.encode())
         return ret_val
 
 
@@ -1932,12 +2067,14 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Same as `two_panel_selection_ex <geosoft.gxapi.GXGUI.two_panel_selection_ex>`, but user can specify a help
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Same as `two_panel_selection_ex <geosoft.gxapi.GXGUI.two_panel_selection_ex>`, but user can specify a help
         link.
         """
-        ret_val = gxapi_cy.WrapGUI.two_panel_selection_ex2(GXContext._get_tls_geo(), ls_tf._wrapper, ls_ts._wrapper, sorted, allow_no_select, title.encode(), help.encode())
+        ret_val = gxapi_cy.WrapGUI._two_panel_selection_ex2(GXContext._get_tls_geo(), ls_tf, ls_ts, sorted, allow_no_select, title.encode(), help.encode())
         return ret_val
 
 
@@ -1955,8 +2092,12 @@ class GXGUI:
         :type  meta:  GXMETA
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapGUI.launch_single_geo_dotnetx_tool(GXContext._get_tls_geo(), dll.encode(), func.encode(), meta._wrapper)
+        gxapi_cy.WrapGUI._launch_single_geo_dotnetx_tool(GXContext._get_tls_geo(), dll.encode(), func.encode(), meta)
         
 
 
@@ -1974,8 +2115,12 @@ class GXGUI:
         :type  meta:  GXMETA
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapGUI.launch_geo_dotnetx_tool(GXContext._get_tls_geo(), dll.encode(), func.encode(), meta._wrapper)
+        gxapi_cy.WrapGUI._launch_geo_dotnetx_tool(GXContext._get_tls_geo(), dll.encode(), func.encode(), meta)
         
 
 
@@ -1993,8 +2138,12 @@ class GXGUI:
         :type  meta:  GXMETA
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapGUI.launch_geo_x_tool(GXContext._get_tls_geo(), dll.encode(), func.encode(), meta._wrapper)
+        gxapi_cy.WrapGUI._launch_geo_x_tool(GXContext._get_tls_geo(), dll.encode(), func.encode(), meta)
         
 
 
@@ -2020,8 +2169,12 @@ class GXGUI:
         :type  height:  int
 
         .. versionadded:: 9.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapGUI.launch_single_geo_dotnetx_tool_ex(GXContext._get_tls_geo(), dll.encode(), func.encode(), meta._wrapper, align, dock, width, height)
+        gxapi_cy.WrapGUI._launch_single_geo_dotnetx_tool_ex(GXContext._get_tls_geo(), dll.encode(), func.encode(), meta, align, dock, width, height)
         
 
 
@@ -2047,8 +2200,12 @@ class GXGUI:
         :type  height:  int
 
         .. versionadded:: 9.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapGUI.launch_geo_dotnetx_tool_ex(GXContext._get_tls_geo(), dll.encode(), func.encode(), meta._wrapper, align, dock, width, height)
+        gxapi_cy.WrapGUI._launch_geo_dotnetx_tool_ex(GXContext._get_tls_geo(), dll.encode(), func.encode(), meta, align, dock, width, height)
         
 
 
@@ -2074,8 +2231,12 @@ class GXGUI:
         :type  height:  int
 
         .. versionadded:: 9.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapGUI.launch_geo_x_tool_ex(GXContext._get_tls_geo(), dll.encode(), func.encode(), meta._wrapper, align, dock, width, height)
+        gxapi_cy.WrapGUI._launch_geo_x_tool_ex(GXContext._get_tls_geo(), dll.encode(), func.encode(), meta, align, dock, width, height)
         
 
 
@@ -2093,8 +2254,12 @@ class GXGUI:
         :type  schema:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapGUI.meta_data_viewer(GXContext._get_tls_geo(), meta._wrapper, root_token, schema)
+        gxapi_cy.WrapGUI._meta_data_viewer(GXContext._get_tls_geo(), meta, root_token, schema)
         
 
 
@@ -2108,8 +2273,12 @@ class GXGUI:
         :type  file:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapGUI.print_file(GXContext._get_tls_geo(), file.encode())
+        gxapi_cy.WrapGUI._print_file(GXContext._get_tls_geo(), file.encode())
         
 
 
@@ -2150,11 +2319,13 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Renders a Geosoft pattern to a Windows DC.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Renders a Geosoft pattern to a Windows DC.
         """
-        gxapi_cy.WrapGUI.render_pattern(GXContext._get_tls_geo(), hdc, left, bottom, right, top, pat, size, thick, dense, col, back_col, is_enabled, is_button, is_selected)
+        gxapi_cy.WrapGUI._render_pattern(GXContext._get_tls_geo(), hdc, left, bottom, right, top, pat, size, thick, dense, col, back_col, is_enabled, is_button, is_selected)
         
 
 
@@ -2191,11 +2362,13 @@ class GXGUI:
 
         .. versionadded:: 8.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Same as `render_pattern <geosoft.gxapi.GXGUI.render_pattern>` but for line patterns.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Same as `render_pattern <geosoft.gxapi.GXGUI.render_pattern>` but for line patterns.
         """
-        gxapi_cy.WrapGUI.render_line_pattern(GXContext._get_tls_geo(), hdc, left, bottom, right, top, pattern, thickness, pitch, col, is_enabled, is_button, is_selected)
+        gxapi_cy.WrapGUI._render_line_pattern(GXContext._get_tls_geo(), hdc, left, bottom, right, top, pattern, thickness, pitch, col, is_enabled, is_button, is_selected)
         
 
 
@@ -2210,12 +2383,14 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The parent WND is used by all modal dialogs as a
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The parent WND is used by all modal dialogs as a
         parent to ensure the dialog is correctly modal.
         """
-        gxapi_cy.WrapGUI.set_parent_wnd(GXContext._get_tls_geo(), wnd)
+        gxapi_cy.WrapGUI._set_parent_wnd(GXContext._get_tls_geo(), wnd)
         
 
 
@@ -2229,8 +2404,12 @@ class GXGUI:
         :type  printer:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapGUI.set_printer(GXContext._get_tls_geo(), printer.encode())
+        gxapi_cy.WrapGUI._set_printer(GXContext._get_tls_geo(), printer.encode())
         
 
 
@@ -2246,13 +2425,15 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        In montaj the progress bar is hidden when the main window
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** In montaj the progress bar is hidden when the main window
         start processing messages. This is not always desirable
         in some 3rd party apps, hence this function.
         """
-        gxapi_cy.WrapGUI.set_prog_always_on(GXContext._get_tls_geo(), on)
+        gxapi_cy.WrapGUI._set_prog_always_on(GXContext._get_tls_geo(), on)
         
 
 
@@ -2278,8 +2459,12 @@ class GXGUI:
         :type  vv:       GXVV
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapGUI.show_direct_hist(GXContext._get_tls_geo(), min, max, mean, std_dev, median, items, vv._wrapper)
+        gxapi_cy.WrapGUI._show_direct_hist(GXContext._get_tls_geo(), min, max, mean, std_dev, median, items, vv)
         
 
 
@@ -2293,8 +2478,12 @@ class GXGUI:
         :type  st:  GXST
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapGUI.show_hist(GXContext._get_tls_geo(), st._wrapper)
+        gxapi_cy.WrapGUI._show_hist(GXContext._get_tls_geo(), st)
         
 
 
@@ -2313,12 +2502,14 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This function displays a map in a simple resizable dialog that fits the map into it.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** This function displays a map in a simple resizable dialog that fits the map into it.
         It is generally useful to display temporary maps as graphs (e.g. variograms).
         """
-        gxapi_cy.WrapGUI.simple_map_dialog(GXContext._get_tls_geo(), map._wrapper, title.encode(), help_id.encode())
+        gxapi_cy.WrapGUI._simple_map_dialog(GXContext._get_tls_geo(), map, title.encode(), help_id.encode())
         
 
 
@@ -2333,14 +2524,16 @@ class GXGUI:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Displays the thematic voxel codes, colors, total volume for
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Displays the thematic voxel codes, colors, total volume for
         each code, and number of valid items (cubes) for each code.
         This is a replacement for the numeric stats done on normal
         numerical voxel grids.
         """
-        gxapi_cy.WrapGUI.thematic_voxel_info(GXContext._get_tls_geo(), vox._wrapper)
+        gxapi_cy.WrapGUI._thematic_voxel_info(GXContext._get_tls_geo(), vox)
         
 
 
@@ -2357,11 +2550,13 @@ class GXGUI:
 
         .. versionadded:: 9.3
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Any changes made to the 3D View will be persisted.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Any changes made to the 3D View will be persisted.
         """
-        gxapi_cy.WrapGUI.show_3d_viewer_dialog(GXContext._get_tls_geo(), title.encode(), o3dv.encode())
+        gxapi_cy.WrapGUI._show_3d_viewer_dialog(GXContext._get_tls_geo(), title.encode(), o3dv.encode())
         
 
 

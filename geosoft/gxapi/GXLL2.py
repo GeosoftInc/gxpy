@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXLL2:
+class GXLL2(gxapi_cy.WrapLL2):
     """
     GXLL2 class.
 
@@ -22,37 +22,28 @@ class GXLL2:
     latitude, longitude correction lookup tables to convert between datums.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapLL2(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXLL2`
+        A null (undefined) instance of `GXLL2 <geosoft.gxapi.GXLL2>`
         
-        :returns: A null `GXLL2`
+        :returns: A null `GXLL2 <geosoft.gxapi.GXLL2>`
+        :rtype:   GXLL2
         """
-        return cls()
+        return GXLL2()
 
     def is_null(self):
         """
-        Check if the instance of `GXLL2` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXLL2`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -85,11 +76,13 @@ class GXLL2:
 
         .. versionadded:: 5.0
 
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+
         .. seealso::
 
             `destroy <geosoft.gxapi.GXLL2.destroy>`, `set_row <geosoft.gxapi.GXLL2.set_row>`, `save <geosoft.gxapi.GXLL2.save>`
         """
-        ret_val = gxapi_cy.WrapLL2.create(GXContext._get_tls_geo(), lon0, lat0, lon, lat, nlon, nlat, in_ipj._wrapper, out_ipj._wrapper)
+        ret_val = gxapi_cy.WrapLL2._create(GXContext._get_tls_geo(), lon0, lat0, lon, lat, nlon, nlat, in_ipj, out_ipj)
         return GXLL2(ret_val)
 
 
@@ -106,13 +99,13 @@ class GXLL2:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The named resource is the name of the datum transform define
+        **Note:** The named resource is the name of the datum transform define
         inside square brackets in the datum transform name in the
         datumtrf table.
         """
-        self._wrapper.save(name.encode())
+        self._save(name.encode())
         
 
 
@@ -131,15 +124,15 @@ class GXLL2:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The correction data is in degrees, added to the input
+        **Note:** The correction data is in degrees, added to the input
         datum to product output datum results.
         
         The `GXVV <geosoft.gxapi.GXVV>` lengths must be equal to #longitudes defined
         by `create <geosoft.gxapi.GXLL2.create>`.
         """
-        self._wrapper.set_row(row, lon_vv._wrapper, lat_vv._wrapper)
+        self._set_row(row, lon_vv, lat_vv)
         
 
 

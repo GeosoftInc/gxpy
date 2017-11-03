@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXUNC:
+class GXUNC(gxapi_cy.WrapUNC):
     """
     GXUNC class.
 
@@ -27,37 +27,28 @@ class GXUNC:
     with TrueType fonts).
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapUNC(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXUNC`
+        A null (undefined) instance of `GXUNC <geosoft.gxapi.GXUNC>`
         
-        :returns: A null `GXUNC`
+        :returns: A null `GXUNC <geosoft.gxapi.GXUNC>`
+        :rtype:   GXUNC
         """
-        return cls()
+        return GXUNC()
 
     def is_null(self):
         """
-        Check if the instance of `GXUNC` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXUNC`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # UTF
@@ -73,8 +64,10 @@ class GXUNC:
         :rtype:      bool
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapUNC.is_valid_utf16_char(GXContext._get_tls_geo(), ch)
+        ret_val = gxapi_cy.WrapUNC._is_valid_utf16_char(GXContext._get_tls_geo(), ch)
         return ret_val
 
 
@@ -93,8 +86,10 @@ class GXUNC:
         :rtype:          bool
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapUNC.valid_symbol(GXContext._get_tls_geo(), face.encode(), geofont, number)
+        ret_val = gxapi_cy.WrapUNC._valid_symbol(GXContext._get_tls_geo(), face.encode(), geofont, number)
         return ret_val
 
 
@@ -111,11 +106,11 @@ class GXUNC:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        An empty string will be returned for invalid symbols
+        **Note:** An empty string will be returned for invalid symbols
         """
-        str_val.value = gxapi_cy.WrapUNC.utf16_val_to_str(GXContext._get_tls_geo(), ch, str_val.value.encode())
+        str_val.value = gxapi_cy.WrapUNC._utf16_val_to_str(GXContext._get_tls_geo(), ch, str_val.value.encode())
         
 
 
@@ -135,11 +130,11 @@ class GXUNC:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Invalid symbols in the `GXVV <geosoft.gxapi.GXVV>` will be set to -1 by this call. `GXVV <geosoft.gxapi.GXVV>` has to be of type `GS_LONG <geosoft.gxapi.GS_LONG>`.
+        **Note:** Invalid symbols in the `GXVV <geosoft.gxapi.GXVV>` will be set to -1 by this call. `GXVV <geosoft.gxapi.GXVV>` has to be of type `GS_LONG <geosoft.gxapi.GS_LONG>`.
         """
-        gxapi_cy.WrapUNC.validate_symbols(GXContext._get_tls_geo(), vv._wrapper, face.encode(), geofont)
+        gxapi_cy.WrapUNC._validate_symbols(GXContext._get_tls_geo(), vv, face.encode(), geofont)
         
 
 

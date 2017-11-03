@@ -14,7 +14,7 @@ from .GXIPJ import GXIPJ
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXGIS:
+class GXGIS(gxapi_cy.WrapGIS):
     """
     GXGIS class.
 
@@ -23,37 +23,28 @@ class GXGIS:
     such as MapInfo® TAB files.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapGIS(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXGIS`
+        A null (undefined) instance of `GXGIS <geosoft.gxapi.GXGIS>`
         
-        :returns: A null `GXGIS`
+        :returns: A null `GXGIS <geosoft.gxapi.GXGIS>`
+        :rtype:   GXGIS
         """
-        return cls()
+        return GXGIS()
 
     def is_null(self):
         """
-        Check if the instance of `GXGIS` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXGIS`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -75,8 +66,10 @@ class GXGIS:
         :rtype:       GXGIS
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapGIS.create(GXContext._get_tls_geo(), file.encode(), info.encode(), type)
+        ret_val = gxapi_cy.WrapGIS._create(GXContext._get_tls_geo(), file.encode(), info.encode(), type)
         return GXGIS(ret_val)
 
 
@@ -97,12 +90,12 @@ class GXGIS:
 
         .. versionadded:: 7.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This function was created to minimize duplication in
+        **Note:** This function was created to minimize duplication in
         creation of new maps with 2D views.
         """
-        self._wrapper.create_map_2d(map.encode(), map_scale, ipj._wrapper, map2_d)
+        self._create_map_2d(map.encode(), map_scale, ipj, map2_d)
         
 
 
@@ -121,9 +114,9 @@ class GXGIS:
 
         .. versionadded:: 7.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The Returned `GXLST <geosoft.gxapi.GXLST>` has items in the following format:
+        **Note:** The Returned `GXLST <geosoft.gxapi.GXLST>` has items in the following format:
         
         Name:  If there is only one sub-directory with models, then only
         the block model name "Rock Type_5" is required to ensure uniqueness.
@@ -135,7 +128,7 @@ class GXGIS:
         or more sub-directories, identified in the ``*.CAT`` file located
         beside the input BPR or BPR2.
         """
-        self._wrapper.get_bpr_models_lst(file.encode(), lst._wrapper)
+        self._get_bpr_models_lst(file.encode(), lst)
         
 
 
@@ -152,13 +145,13 @@ class GXGIS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This is your copy, you must destroy it.
+        **Note:** This is your copy, you must destroy it.
         If the `GXGIS <geosoft.gxapi.GXGIS>` does not have an `GXIPJ <geosoft.gxapi.GXIPJ>`, an `GXIPJ <geosoft.gxapi.GXIPJ>` with
         no warp and UNKNOWN projection is returned.
         """
-        ret_val = self._wrapper.get_ipj()
+        ret_val = self._get_ipj()
         return GXIPJ(ret_val)
 
 
@@ -172,8 +165,10 @@ class GXGIS:
         :type  meta:  GXMETA
 
         .. versionadded:: 6.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.get_meta(meta._wrapper)
+        self._get_meta(meta)
         
 
 
@@ -197,8 +192,10 @@ class GXGIS:
         :type  z_max:  float_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        x_min.value, x_max.value, y_min.value, y_max.value, z_min.value, z_max.value = self._wrapper.get_range(x_min.value, x_max.value, y_min.value, y_max.value, z_min.value, z_max.value)
+        x_min.value, x_max.value, y_min.value, y_max.value, z_min.value, z_max.value = self._get_range(x_min.value, x_max.value, y_min.value, y_max.value, z_min.value, z_max.value)
         
 
 
@@ -216,14 +213,14 @@ class GXGIS:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Terminates if file is not a Datamine file.
+        **Note:** Terminates if file is not a Datamine file.
         A datamine file can contain fields from a multitude
         of types, so use `GXMATH.and_ <geosoft.gxapi.GXMATH.and_>` or `GXMATH.or_ <geosoft.gxapi.GXMATH.or_>` to determine if
         the file contains the required data.
         """
-        ret_val = gxapi_cy.WrapGIS.datamine_type(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapGIS._datamine_type(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
@@ -237,8 +234,10 @@ class GXGIS:
         :type  name:  str_ref
 
         .. versionadded:: 7.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        name.value = self._wrapper.get_file_name(name.value.encode())
+        name.value = self._get_file_name(name.value.encode())
         
 
 
@@ -257,13 +256,13 @@ class GXGIS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        It is important not to overwrite a MapInfo MAP file
+        **Note:** It is important not to overwrite a MapInfo MAP file
         with a Geosoft one. Use this function to test the MAP
         file (looks at the first few bytes).
         """
-        ret_val = gxapi_cy.WrapGIS.is_mi_map_file(GXContext._get_tls_geo(), map.encode())
+        ret_val = gxapi_cy.WrapGIS._is_mi_map_file(GXContext._get_tls_geo(), map.encode())
         return ret_val
 
 
@@ -281,8 +280,10 @@ class GXGIS:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapGIS.is_mi_raster_tab_file(GXContext._get_tls_geo(), tab.encode())
+        ret_val = gxapi_cy.WrapGIS._is_mi_raster_tab_file(GXContext._get_tls_geo(), tab.encode())
         return ret_val
 
 
@@ -301,9 +302,9 @@ class GXGIS:
 
         .. versionadded:: 6.4
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Returns 1 if:
+        **Note:** Returns 1 if:
         
             a) This is a MapInfo RASTER file
             b) A three-point warp is defined.
@@ -314,7 +315,7 @@ class GXGIS:
         This function will register an error (and return 0)
         if problems are encountered opening or reading the TAB file.
         """
-        ret_val = gxapi_cy.WrapGIS.is_mi_rotated_raster_tab_file(GXContext._get_tls_geo(), tab.encode())
+        ret_val = gxapi_cy.WrapGIS._is_mi_rotated_raster_tab_file(GXContext._get_tls_geo(), tab.encode())
         return ret_val
 
 
@@ -331,12 +332,12 @@ class GXGIS:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        `GXSHP <geosoft.gxapi.GXSHP>` files come in 2D and 3D forms.
+        **Note:** `GXSHP <geosoft.gxapi.GXSHP>` files come in 2D and 3D forms.
         Fails if not `GIS_TYPE_ARCVIEW <geosoft.gxapi.GIS_TYPE_ARCVIEW>`.
         """
-        ret_val = self._wrapper.is_shp_file_3d()
+        ret_val = self._is_shp_file_3d()
         return ret_val
 
 
@@ -353,11 +354,11 @@ class GXGIS:
 
         .. versionadded:: 7.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Fails if not `GIS_TYPE_ARCVIEW <geosoft.gxapi.GIS_TYPE_ARCVIEW>`.
+        **Note:** Fails if not `GIS_TYPE_ARCVIEW <geosoft.gxapi.GIS_TYPE_ARCVIEW>`.
         """
-        ret_val = self._wrapper.is_shp_file_point()
+        ret_val = self._is_shp_file_point()
         return ret_val
 
 
@@ -372,8 +373,10 @@ class GXGIS:
         :rtype:      int
 
         .. versionadded:: 7.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.num_attribs()
+        ret_val = self._num_attribs()
         return ret_val
 
 
@@ -388,8 +391,10 @@ class GXGIS:
         :rtype:      int
 
         .. versionadded:: 7.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.num_shapes()
+        ret_val = self._num_shapes()
         return ret_val
 
 
@@ -408,11 +413,11 @@ class GXGIS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This will create a GI file for the raster image.
+        **Note:** This will create a GI file for the raster image.
         """
-        file.value = gxapi_cy.WrapGIS.scan_mi_raster_tab_file(GXContext._get_tls_geo(), tab.encode(), file.value.encode(), ipj._wrapper)
+        file.value = gxapi_cy.WrapGIS._scan_mi_raster_tab_file(GXContext._get_tls_geo(), tab.encode(), file.value.encode(), ipj)
         
 
 
@@ -427,14 +432,14 @@ class GXGIS:
 
         .. versionadded:: 7.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        All string fields (excluding X/Y and numerical fields) will be saved into the `GXWA <geosoft.gxapi.GXWA>` columns.
+        **Note:** All string fields (excluding X/Y and numerical fields) will be saved into the `GXWA <geosoft.gxapi.GXWA>` columns.
         
         e field names are saved in the first line, followed by a blank line.
         e field columns are separated by a tab (delimited character).
         """
-        self._wrapper.load_ascii(wa._wrapper)
+        self._load_ascii(wa)
         
 
 
@@ -449,9 +454,9 @@ class GXGIS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        All fields of the database will be loaded into the group.
+        **Note:** All fields of the database will be loaded into the group.
         
         Channels will use the same name (or a allowable alias) as
         the `GXGIS <geosoft.gxapi.GXGIS>` field name.
@@ -461,7 +466,7 @@ class GXGIS:
         
         If a channel exists, it will be used as-is.
         """
-        self._wrapper.load_gdb(db._wrapper)
+        self._load_gdb(db)
         
 
 
@@ -476,11 +481,11 @@ class GXGIS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The `GXGIS <geosoft.gxapi.GXGIS>` drawing will be drawin in the current group.
+        **Note:** The `GXGIS <geosoft.gxapi.GXGIS>` drawing will be drawin in the current group.
         """
-        self._wrapper.load_map(mview._wrapper)
+        self._load_map(mview)
         
 
 
@@ -497,11 +502,11 @@ class GXGIS:
 
         .. versionadded:: 7.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The `GXGIS <geosoft.gxapi.GXGIS>` drawing will be drawin in the current group.
+        **Note:** The `GXGIS <geosoft.gxapi.GXGIS>` drawing will be drawin in the current group.
         """
-        self._wrapper.load_map_ex(map._wrapper, view_name.encode())
+        self._load_map_ex(map, view_name.encode())
         
 
 
@@ -523,15 +528,15 @@ class GXGIS:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The `GXGIS <geosoft.gxapi.GXGIS>` drawing will be drawn in the current group.
+        **Note:** The `GXGIS <geosoft.gxapi.GXGIS>` drawing will be drawn in the current group.
         A group will be created for every entity and data items
         containing an entity's field will be added to the Meta
         information of every group into the class specified.
         Note that the map may grow very large for big datasets.
         """
-        self._wrapper.load_meta_groups_map(mview._wrapper, meta._wrapper, ph_object, prefix.encode(), name_field.encode())
+        self._load_meta_groups_map(mview, meta, ph_object, prefix.encode(), name_field.encode())
         
 
 
@@ -545,8 +550,10 @@ class GXGIS:
         :type  ply:  GXPLY
 
         .. versionadded:: 5.1.6
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.load_ply(ply._wrapper)
+        self._load_ply(ply)
         
 
 
@@ -561,9 +568,9 @@ class GXGIS:
 
         .. versionadded:: 7.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        All fields of the database will be loaded into the group.
+        **Note:** All fields of the database will be loaded into the group.
         
         Channels will use the same name (or a allowable alias) as
         the `GXGIS <geosoft.gxapi.GXGIS>` field name.
@@ -575,7 +582,7 @@ class GXGIS:
         
         The shape ID will be used as the line numbers.
         """
-        self._wrapper.load_shapes_gdb(db._wrapper)
+        self._load_shapes_gdb(db)
         
 
 
@@ -590,15 +597,15 @@ class GXGIS:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Datamine wireframe models are specified by pairs of files,
+        **Note:** Datamine wireframe models are specified by pairs of files,
         the first is the triangle node file, and the second gives
         the XYZ locations of the node points. This
         function allows you to specify the latter when reading the
         first, so that the full model can be decoded.
         """
-        self._wrapper.set_dm_wireframe_pt_file(file.encode())
+        self._set_dm_wireframe_pt_file(file.encode())
         
 
 
@@ -612,8 +619,10 @@ class GXGIS:
         :type  ipj:  GXIPJ
 
         .. versionadded:: 6.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_ipj(ipj._wrapper)
+        self._set_ipj(ipj)
         
 
 
@@ -628,13 +637,13 @@ class GXGIS:
 
         .. versionadded:: 7.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the `GXGIS <geosoft.gxapi.GXGIS>` `GXLST <geosoft.gxapi.GXLST>` object already exists, it is destroyed and
+        **Note:** If the `GXGIS <geosoft.gxapi.GXGIS>` `GXLST <geosoft.gxapi.GXLST>` object already exists, it is destroyed and
         recreated to match the size of the input `GXLST <geosoft.gxapi.GXLST>`, before the
         input `GXLST <geosoft.gxapi.GXLST>` is copied to it.
         """
-        self._wrapper.set_lst(lst._wrapper)
+        self._set_lst(lst)
         
 
 
@@ -648,8 +657,10 @@ class GXGIS:
         :type  meta:  GXMETA
 
         .. versionadded:: 6.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_meta(meta._wrapper)
+        self._set_meta(meta)
         
 
 
@@ -663,8 +674,10 @@ class GXGIS:
         :type  i_toi:  int
 
         .. versionadded:: 7.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_triangulation_object_index(i_toi)
+        self._set_triangulation_object_index(i_toi)
         
 
 

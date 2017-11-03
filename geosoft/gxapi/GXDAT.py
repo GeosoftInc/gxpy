@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXDAT:
+class GXDAT(gxapi_cy.WrapDAT):
     """
     GXDAT class.
 
@@ -29,37 +29,28 @@ class GXDAT:
     by a specific processing function.  The gridding methods all use DATs.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapDAT(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXDAT`
+        A null (undefined) instance of `GXDAT <geosoft.gxapi.GXDAT>`
         
-        :returns: A null `GXDAT`
+        :returns: A null `GXDAT <geosoft.gxapi.GXDAT>`
+        :rtype:   GXDAT
         """
-        return cls()
+        return GXDAT()
 
     def is_null(self):
         """
-        Check if the instance of `GXDAT` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXDAT`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -83,8 +74,10 @@ class GXDAT:
         :rtype:       GXDAT
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapDAT.create_db(GXContext._get_tls_geo(), db._wrapper, x_ch.encode(), y_ch.encode(), z_ch.encode())
+        ret_val = gxapi_cy.WrapDAT._create_db(GXContext._get_tls_geo(), db, x_ch.encode(), y_ch.encode(), z_ch.encode())
         return GXDAT(ret_val)
 
 
@@ -103,8 +96,10 @@ class GXDAT:
         :rtype:       GXDAT
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapDAT.create_xgd(GXContext._get_tls_geo(), name.encode(), mode)
+        ret_val = gxapi_cy.WrapDAT._create_xgd(GXContext._get_tls_geo(), name.encode(), mode)
         return GXDAT(ret_val)
 
 
@@ -127,13 +122,13 @@ class GXDAT:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The filters displayed in the Grid/Image file browse dialog are put
+        **Note:** The filters displayed in the Grid/Image file browse dialog are put
         in the "Name" of the `GXLST <geosoft.gxapi.GXLST>`, while the file qualifiers are stored in
         the "Value".
         """
-        gxapi_cy.WrapDAT.get_lst(GXContext._get_tls_geo(), lst._wrapper, interface.encode(), flags, mode)
+        gxapi_cy.WrapDAT._get_lst(GXContext._get_tls_geo(), lst, interface.encode(), flags, mode)
         
 
 
@@ -160,11 +155,11 @@ class GXDAT:
 
         .. versionadded:: 7.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Terminates if unable to open an RPT `GXDAT <geosoft.gxapi.GXDAT>` interface.
+        **Note:** Terminates if unable to open an RPT `GXDAT <geosoft.gxapi.GXDAT>` interface.
         """
-        min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value, num_non_dummy.value = self._wrapper.range_xyz(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value, num_non_dummy.value)
+        min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value, num_non_dummy.value = self._range_xyz(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value, num_non_dummy.value)
         
 
 

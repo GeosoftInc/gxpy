@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXFFT:
+class GXFFT(gxapi_cy.WrapFFT):
     """
     GXFFT class.
 
@@ -23,37 +23,28 @@ class GXFFT:
     domain to the wavenumber or Fourier domain.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapFFT(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXFFT`
+        A null (undefined) instance of `GXFFT <geosoft.gxapi.GXFFT>`
         
-        :returns: A null `GXFFT`
+        :returns: A null `GXFFT <geosoft.gxapi.GXFFT>`
+        :rtype:   GXFFT
         """
-        return cls()
+        return GXFFT()
 
     def is_null(self):
         """
-        Check if the instance of `GXFFT` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXFFT`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -70,8 +61,10 @@ class GXFFT:
         :type  dens:   float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.app_dens(thick, dens)
+        self._app_dens(thick, dens)
         
 
 
@@ -86,12 +79,12 @@ class GXFFT:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Reduction to magnetic pole (`red_pol <geosoft.gxapi.GXFFT.red_pol>`) and downward continuation
+        **Note:** Reduction to magnetic pole (`red_pol <geosoft.gxapi.GXFFT.red_pol>`) and downward continuation
         (`contin <geosoft.gxapi.GXFFT.contin>`) should be called BEFORE using `app_susc <geosoft.gxapi.GXFFT.app_susc>`.
         """
-        self._wrapper.app_susc(strength)
+        self._app_susc(strength)
         
 
 
@@ -109,8 +102,10 @@ class GXFFT:
         :type  pass_defined:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.band_pass(llen, hlen, pass_defined)
+        self._band_pass(llen, hlen, pass_defined)
         
 
 
@@ -128,8 +123,10 @@ class GXFFT:
         :type  filter_type:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.b_worth(clen, degree, filter_type)
+        self._b_worth(clen, degree, filter_type)
         
 
 
@@ -145,8 +142,10 @@ class GXFFT:
         :type  filter_type:  int
 
         .. versionadded:: 8.5
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.rc_filter(clen, filter_type)
+        self._rc_filter(clen, filter_type)
         
 
 
@@ -160,8 +159,10 @@ class GXFFT:
         :type  dist:  float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.contin(dist)
+        self._contin(dist)
         
 
 
@@ -181,8 +182,10 @@ class GXFFT:
         :type  type:    int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.cos_roll(llen, hlen, degree, type)
+        self._cos_roll(llen, hlen, degree, type)
         
 
 
@@ -204,12 +207,12 @@ class GXFFT:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The detrending options control the removal of a trend from the data
+        **Note:** The detrending options control the removal of a trend from the data
         before the `GXFFT <geosoft.gxapi.GXFFT>` is applied. The default data expansion is 10% before `GXFFT <geosoft.gxapi.GXFFT>`.
         """
-        ret_val = gxapi_cy.WrapFFT.create(GXContext._get_tls_geo(), gvv._wrapper, interv, trend)
+        ret_val = gxapi_cy.WrapFFT._create(GXContext._get_tls_geo(), gvv, interv, trend)
         return GXFFT(ret_val)
 
 
@@ -233,13 +236,13 @@ class GXFFT:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The detrending options control the removal of a trend from the data
+        **Note:** The detrending options control the removal of a trend from the data
         before the `GXFFT <geosoft.gxapi.GXFFT>` is applied. The expansion options control the minimum
         data expansion before the `GXFFT <geosoft.gxapi.GXFFT>` is applied.
         """
-        ret_val = gxapi_cy.WrapFFT.create_ex(GXContext._get_tls_geo(), gvv._wrapper, interv, trend, expansion)
+        ret_val = gxapi_cy.WrapFFT._create_ex(GXContext._get_tls_geo(), gvv, interv, trend, expansion)
         return GXFFT(ret_val)
 
 
@@ -262,12 +265,12 @@ class GXFFT:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        This just creates an object.  It is intended to be called
+        **Note:** This just creates an object.  It is intended to be called
         immediately after with `set_vv <geosoft.gxapi.GXFFT.set_vv>`.
         """
-        ret_val = gxapi_cy.WrapFFT.create_ref(GXContext._get_tls_geo(), gvv._wrapper, interv, trend)
+        ret_val = gxapi_cy.WrapFFT._create_ref(GXContext._get_tls_geo(), gvv, interv, trend)
         return GXFFT(ret_val)
 
 
@@ -294,12 +297,12 @@ class GXFFT:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        This just creates an object.  It is intended to be called
+        **Note:** This just creates an object.  It is intended to be called
         immediately after with `set_vv <geosoft.gxapi.GXFFT.set_vv>`.
         """
-        ret_val = gxapi_cy.WrapFFT.create_ref_ex(GXContext._get_tls_geo(), gvv._wrapper, interv, trend, expansion, d_cmult)
+        ret_val = gxapi_cy.WrapFFT._create_ref_ex(GXContext._get_tls_geo(), gvv, interv, trend, expansion, d_cmult)
         return GXFFT(ret_val)
 
 
@@ -317,8 +320,10 @@ class GXFFT:
         :type  type:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.gaus(dev, type)
+        self._gaus(dev, type)
         
 
 
@@ -334,8 +339,10 @@ class GXFFT:
         :type  gv_vi:  GXVV
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.get_vv(gv_vr._wrapper, gv_vi._wrapper)
+        self._get_vv(gv_vr, gv_vi)
         
 
 
@@ -349,8 +356,10 @@ class GXFFT:
         :type  order:  float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.h_drv(order)
+        self._h_drv(order)
         
 
 
@@ -366,8 +375,10 @@ class GXFFT:
         :type  fid_int:  float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.high_pass(wlen, fid_int)
+        self._high_pass(wlen, fid_int)
         
 
 
@@ -379,8 +390,10 @@ class GXFFT:
         
 
         .. versionadded:: 5.1.4
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.h_int()
+        self._h_int()
         
 
 
@@ -396,8 +409,10 @@ class GXFFT:
         :type  gv_vm:  GXVV
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.inverse(gvv._wrapper, gv_vm._wrapper)
+        self._inverse(gvv, gv_vm)
         
 
 
@@ -411,8 +426,10 @@ class GXFFT:
         :type  wlen:  float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.low_pass(wlen)
+        self._low_pass(wlen)
         
 
 
@@ -432,8 +449,10 @@ class GXFFT:
         :type  dir:   float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.red_pol(inc, dec, incp, dir)
+        self._red_pol(inc, dec, incp, dir)
         
 
 
@@ -448,8 +467,10 @@ class GXFFT:
         :rtype:      float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = self._wrapper.nyquist()
+        ret_val = self._nyquist()
         return ret_val
 
 
@@ -464,8 +485,10 @@ class GXFFT:
         :rtype:      float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = self._wrapper.samp_incr()
+        ret_val = self._samp_incr()
         return ret_val
 
 
@@ -480,8 +503,10 @@ class GXFFT:
         :rtype:      float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = self._wrapper.wave_incr()
+        ret_val = self._wave_incr()
         return ret_val
 
 
@@ -498,12 +523,12 @@ class GXFFT:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The `GXVV <geosoft.gxapi.GXVV>` must have been obtained from the same `GXFFT <geosoft.gxapi.GXFFT>`
+        **Note:** The `GXVV <geosoft.gxapi.GXVV>` must have been obtained from the same `GXFFT <geosoft.gxapi.GXFFT>`
         using the `set_vv <geosoft.gxapi.GXFFT.set_vv>` method.
         """
-        self._wrapper.set_vv(gv_vr._wrapper, gv_vi._wrapper)
+        self._set_vv(gv_vr, gv_vi)
         
 
 
@@ -517,8 +542,10 @@ class GXFFT:
         :type  gvv:  GXVV
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.spectrum(gvv._wrapper)
+        self._spectrum(gvv)
         
 
 
@@ -532,8 +559,10 @@ class GXFFT:
         :type  order:  float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.v_drv(order)
+        self._v_drv(order)
         
 
 
@@ -545,8 +574,10 @@ class GXFFT:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.v_int()
+        self._v_int()
         
 
 
@@ -562,8 +593,10 @@ class GXFFT:
         :type  out_file:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.write_spectrum(gvv._wrapper, out_file.encode())
+        self._write_spectrum(gvv, out_file.encode())
         
 
 

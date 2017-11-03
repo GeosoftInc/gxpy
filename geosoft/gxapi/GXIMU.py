@@ -14,7 +14,7 @@ from .GXIMG import GXIMG
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXIMU:
+class GXIMU(gxapi_cy.WrapIMU):
     """
     GXIMU class.
 
@@ -23,37 +23,28 @@ class GXIMU:
     trending, windowing, expanding and grid stitching.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapIMU(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXIMU`
+        A null (undefined) instance of `GXIMU <geosoft.gxapi.GXIMU>`
         
-        :returns: A null `GXIMU`
+        :returns: A null `GXIMU <geosoft.gxapi.GXIMU>`
+        :rtype:   GXIMU
         """
-        return cls()
+        return GXIMU()
 
     def is_null(self):
         """
-        Check if the instance of `GXIMU` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXIMU`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -75,11 +66,11 @@ class GXIMU:
 
         .. versionadded:: 5.1.6
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        This consumes a very small amount of memory
+        **Note:** This consumes a very small amount of memory
         """
-        gxapi_cy.WrapIMU.agg_to_geo_color(GXContext._get_tls_geo(), agg._wrapper, grid.encode(), ipj._wrapper, res)
+        gxapi_cy.WrapIMU._agg_to_geo_color(GXContext._get_tls_geo(), agg, grid.encode(), ipj, res)
         
 
 
@@ -98,8 +89,10 @@ class GXIMU:
         :rtype:          int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapIMU.crc(GXContext._get_tls_geo(), img._wrapper, pul_crc)
+        ret_val = gxapi_cy.WrapIMU._crc(GXContext._get_tls_geo(), img, pul_crc)
         return ret_val
 
 
@@ -118,8 +111,10 @@ class GXIMU:
         :rtype:          int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapIMU.crc_grid(GXContext._get_tls_geo(), grid.encode(), pul_crc)
+        ret_val = gxapi_cy.WrapIMU._crc_grid(GXContext._get_tls_geo(), grid.encode(), pul_crc)
         return ret_val
 
 
@@ -145,12 +140,12 @@ class GXIMU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Very useful for testing where the last bits of accuracy
+        **Note:** Very useful for testing where the last bits of accuracy
         are not as important.
         """
-        ret_val = gxapi_cy.WrapIMU.crc_grid_inexact(GXContext._get_tls_geo(), grid.encode(), pul_crc, float_bits, double_bits)
+        ret_val = gxapi_cy.WrapIMU._crc_grid_inexact(GXContext._get_tls_geo(), grid.encode(), pul_crc, float_bits, double_bits)
         return ret_val
 
 
@@ -176,12 +171,12 @@ class GXIMU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Very useful for testing where the last bits of accuracy
+        **Note:** Very useful for testing where the last bits of accuracy
         are not as important.
         """
-        ret_val = gxapi_cy.WrapIMU.crc_inexact(GXContext._get_tls_geo(), img._wrapper, pul_crc, float_bits, double_bits)
+        ret_val = gxapi_cy.WrapIMU._crc_inexact(GXContext._get_tls_geo(), img, pul_crc, float_bits, double_bits)
         return ret_val
 
 
@@ -199,8 +194,10 @@ class GXIMU:
         :type  file:  str
 
         .. versionadded:: 7.2
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        crc.value = gxapi_cy.WrapIMU.export_grid_without_data_section_xml(GXContext._get_tls_geo(), grid.encode(), crc.value, file.encode())
+        crc.value = gxapi_cy.WrapIMU._export_grid_without_data_section_xml(GXContext._get_tls_geo(), grid.encode(), crc.value, file.encode())
         
 
 
@@ -218,8 +215,10 @@ class GXIMU:
         :type  file:  str
 
         .. versionadded:: 6.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        crc.value = gxapi_cy.WrapIMU.export_grid_xml(GXContext._get_tls_geo(), grid.encode(), crc.value, file.encode())
+        crc.value = gxapi_cy.WrapIMU._export_grid_xml(GXContext._get_tls_geo(), grid.encode(), crc.value, file.encode())
         
 
 
@@ -237,8 +236,10 @@ class GXIMU:
         :type  file:  str
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        crc.value = gxapi_cy.WrapIMU.export_raw_xml(GXContext._get_tls_geo(), img._wrapper, crc.value, file.encode())
+        crc.value = gxapi_cy.WrapIMU._export_raw_xml(GXContext._get_tls_geo(), img, crc.value, file.encode())
         
 
 
@@ -256,8 +257,10 @@ class GXIMU:
         :type  file:  str
 
         .. versionadded:: 6.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        crc.value = gxapi_cy.WrapIMU.export_xml(GXContext._get_tls_geo(), img._wrapper, crc.value, file.encode())
+        crc.value = gxapi_cy.WrapIMU._export_xml(GXContext._get_tls_geo(), img, crc.value, file.encode())
         
 
 
@@ -277,8 +280,10 @@ class GXIMU:
         :type  vv_z:  GXVV
 
         .. versionadded:: 5.0.8
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapIMU.get_zvv(GXContext._get_tls_geo(), img._wrapper, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
+        gxapi_cy.WrapIMU._get_zvv(GXContext._get_tls_geo(), img, vv_x, vv_y, vv_z)
         
 
 
@@ -300,12 +305,12 @@ class GXIMU:
 
         .. versionadded:: 9.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The returned locations will always be a grid point location; no interpolation is performed when locating the peaks. A simple search is
+        **Note:** The returned locations will always be a grid point location; no interpolation is performed when locating the peaks. A simple search is
         				done of all neighbouring points from the starting point, and once no neighbours can be located with a higher value, the search stops.
         """
-        gxapi_cy.WrapIMU.get_z_peaks_vv(GXContext._get_tls_geo(), img._wrapper, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
+        gxapi_cy.WrapIMU._get_z_peaks_vv(GXContext._get_tls_geo(), img, vv_x, vv_y, vv_z)
         
 
 
@@ -328,12 +333,12 @@ class GXIMU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The `GXIMG <geosoft.gxapi.GXIMG>` parameters MUST be of type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`!
+        **Note:** The `GXIMG <geosoft.gxapi.GXIMG>` parameters MUST be of type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`!
         If not, the method will terminate.
         """
-        gxapi_cy.WrapIMU.grid_add(GXContext._get_tls_geo(), img1._wrapper, m1, img2._wrapper, m2, imgo._wrapper)
+        gxapi_cy.WrapIMU._grid_add(GXContext._get_tls_geo(), img1, m1, img2, m2, imgo)
         
 
 
@@ -356,12 +361,12 @@ class GXIMU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The `GXIMG <geosoft.gxapi.GXIMG>` parameters MUST be of type `GS_FLOAT <geosoft.gxapi.GS_FLOAT>`!
+        **Note:** The `GXIMG <geosoft.gxapi.GXIMG>` parameters MUST be of type `GS_FLOAT <geosoft.gxapi.GS_FLOAT>`!
         If not, the method will terminate.
         """
-        gxapi_cy.WrapIMU.grid_agc(GXContext._get_tls_geo(), i_img._wrapper, o_img._wrapper, width, max_gain, remove_background)
+        gxapi_cy.WrapIMU._grid_agc(GXContext._get_tls_geo(), i_img, o_img, width, max_gain, remove_background)
         
 
 
@@ -387,12 +392,12 @@ class GXIMU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The `GXIMG <geosoft.gxapi.GXIMG>` parameters must be of type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`!
+        **Note:** The `GXIMG <geosoft.gxapi.GXIMG>` parameters must be of type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`!
         If not, the method will terminate.
         """
-        gxapi_cy.WrapIMU.grid_bool(GXContext._get_tls_geo(), img1._wrapper, img2._wrapper, out.encode(), bool, sizing, olap)
+        gxapi_cy.WrapIMU._grid_bool(GXContext._get_tls_geo(), img1, img2, out.encode(), bool, sizing, olap)
         
 
 
@@ -410,8 +415,10 @@ class GXIMU:
         :type  vv_y:  GXVV
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapIMU.grid_edge(GXContext._get_tls_geo(), grid.encode(), vv_x._wrapper, vv_y._wrapper)
+        gxapi_cy.WrapIMU._grid_edge(GXContext._get_tls_geo(), grid.encode(), vv_x, vv_y)
         
 
 
@@ -430,12 +437,12 @@ class GXIMU:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Unlike `grid_ply <geosoft.gxapi.GXIMU.grid_ply>` and GridPlyEx_IMU, the image is not
+        **Note:** Unlike `grid_ply <geosoft.gxapi.GXIMU.grid_ply>` and GridPlyEx_IMU, the image is not
         altered. It just gives the `GXPLY <geosoft.gxapi.GXPLY>`.
         """
-        gxapi_cy.WrapIMU.grid_edge_ply(GXContext._get_tls_geo(), img._wrapper, ply._wrapper, min_points)
+        gxapi_cy.WrapIMU._grid_edge_ply(GXContext._get_tls_geo(), img, ply, min_points)
         
 
 
@@ -461,12 +468,12 @@ class GXIMU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The `GXIMG <geosoft.gxapi.GXIMG>` parameter MUST be of type `GS_FLOAT <geosoft.gxapi.GS_FLOAT>`!
+        **Note:** The `GXIMG <geosoft.gxapi.GXIMG>` parameter MUST be of type `GS_FLOAT <geosoft.gxapi.GS_FLOAT>`!
         If not, the method will terminate.
         """
-        gxapi_cy.WrapIMU.grid_expand(GXContext._get_tls_geo(), im_gi._wrapper, out.encode(), per, shape, x, y)
+        gxapi_cy.WrapIMU._grid_expand(GXContext._get_tls_geo(), im_gi, out.encode(), per, shape, x, y)
         
 
 
@@ -486,8 +493,10 @@ class GXIMU:
         :type  t_ex:     int
 
         .. versionadded:: 7.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapIMU.grid_exp_fill(GXContext._get_tls_geo(), in_grd.encode(), out_grd.encode(), p_ex, t_ex)
+        gxapi_cy.WrapIMU._grid_exp_fill(GXContext._get_tls_geo(), in_grd.encode(), out_grd.encode(), p_ex, t_ex)
         
 
 
@@ -522,12 +531,12 @@ class GXIMU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The `GXIMG <geosoft.gxapi.GXIMG>` parameters MUST be of type `GS_FLOAT <geosoft.gxapi.GS_FLOAT>`!
+        **Note:** The `GXIMG <geosoft.gxapi.GXIMG>` parameters MUST be of type `GS_FLOAT <geosoft.gxapi.GS_FLOAT>`!
         If not, the method will terminate.
         """
-        gxapi_cy.WrapIMU.grid_fill(GXContext._get_tls_geo(), im_gi._wrapper, im_go._wrapper, rollopt, rolldist, mxf, mxp, rollbase, alimit, elimit, width, npass)
+        gxapi_cy.WrapIMU._grid_fill(GXContext._get_tls_geo(), im_gi, im_go, rollopt, rolldist, mxf, mxp, rollbase, alimit, elimit, width, npass)
         
 
 
@@ -559,12 +568,12 @@ class GXIMU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The `GXIMG <geosoft.gxapi.GXIMG>` parameters MUST be of type `GS_FLOAT <geosoft.gxapi.GS_FLOAT>`!
+        **Note:** The `GXIMG <geosoft.gxapi.GXIMG>` parameters MUST be of type `GS_FLOAT <geosoft.gxapi.GS_FLOAT>`!
         If not, the method will terminate.
         """
-        gxapi_cy.WrapIMU.grid_filt(GXContext._get_tls_geo(), img._wrapper, imgo._wrapper, passes, mult, dum, hz, usefile, file.encode(), vv._wrapper)
+        gxapi_cy.WrapIMU._grid_filt(GXContext._get_tls_geo(), img, imgo, passes, mult, dum, hz, usefile, file.encode(), vv)
         
 
 
@@ -588,8 +597,10 @@ class GXIMU:
         :type  rot:     float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapIMU.grid_head(GXContext._get_tls_geo(), grid.encode(), esep, vsep, x_orig, y_orig, rot)
+        gxapi_cy.WrapIMU._grid_head(GXContext._get_tls_geo(), grid.encode(), esep, vsep, x_orig, y_orig, rot)
         
 
 
@@ -609,8 +620,10 @@ class GXIMU:
         :type  iter:     int
 
         .. versionadded:: 7.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapIMU.grid_in_fill(GXContext._get_tls_geo(), im_gi._wrapper, out_grd.encode(), extend, iter)
+        gxapi_cy.WrapIMU._grid_in_fill(GXContext._get_tls_geo(), im_gi, out_grd.encode(), extend, iter)
         
 
 
@@ -633,16 +646,16 @@ class GXIMU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The `GXIMG <geosoft.gxapi.GXIMG>` parameters MUST be of type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`!
+        **Note:** The `GXIMG <geosoft.gxapi.GXIMG>` parameters MUST be of type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`!
         If not, the method will terminate.
         
         The `GXPLY <geosoft.gxapi.GXPLY>` will contain more than one polygon
         if it was loaded from a file containing
         coordinates of more than one polygon.
         """
-        gxapi_cy.WrapIMU.grid_mask(GXContext._get_tls_geo(), in_grid.encode(), m_grid.encode(), pply._wrapper, mode)
+        gxapi_cy.WrapIMU._grid_mask(GXContext._get_tls_geo(), in_grid.encode(), m_grid.encode(), pply, mode)
         
 
 
@@ -665,14 +678,14 @@ class GXIMU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Peak test directions defines how grid peaks are to be found.
+        **Note:** Peak test directions defines how grid peaks are to be found.
         For example, with the 1, a grid point will be picked if its
         value is greater than it's two neighbors in at least one
         direction.  Up to 4 directions can be tested.
         """
-        gxapi_cy.WrapIMU.grid_peak(GXContext._get_tls_geo(), grid.encode(), nlmt, v_vx._wrapper, v_vy._wrapper, v_vz._wrapper)
+        gxapi_cy.WrapIMU._grid_peak(GXContext._get_tls_geo(), grid.encode(), nlmt, v_vx, v_vy, v_vz)
         
 
 
@@ -691,9 +704,9 @@ class GXIMU:
 
         .. versionadded:: 5.1
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        This will optionally refresh the grid boundary `GXPLY <geosoft.gxapi.GXPLY>` and return
+        **Note:** This will optionally refresh the grid boundary `GXPLY <geosoft.gxapi.GXPLY>` and return
         the `GXPLY <geosoft.gxapi.GXPLY>`.
         
         If the boundary is not refreshed and has never been calculated,
@@ -701,7 +714,7 @@ class GXIMU:
         
         The grid `GXPLY <geosoft.gxapi.GXPLY>` will be added to existing ploygons in the passed `GXPLY <geosoft.gxapi.GXPLY>`.
         """
-        gxapi_cy.WrapIMU.grid_ply(GXContext._get_tls_geo(), img._wrapper, ply._wrapper, refresh)
+        gxapi_cy.WrapIMU._grid_ply(GXContext._get_tls_geo(), img, ply, refresh)
         
 
 
@@ -722,9 +735,9 @@ class GXIMU:
 
         .. versionadded:: 5.1.6
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        This will optionally refresh the grid boundary `GXPLY <geosoft.gxapi.GXPLY>` and return
+        **Note:** This will optionally refresh the grid boundary `GXPLY <geosoft.gxapi.GXPLY>` and return
         the `GXPLY <geosoft.gxapi.GXPLY>`.
         
         If the boundary is not refreshed and has never been calculated,
@@ -732,7 +745,7 @@ class GXIMU:
         
         The grid `GXPLY <geosoft.gxapi.GXPLY>` will be added to existing ploygons in the passed `GXPLY <geosoft.gxapi.GXPLY>`.
         """
-        gxapi_cy.WrapIMU.grid_ply_ex(GXContext._get_tls_geo(), img._wrapper, ply._wrapper, refresh, min_points)
+        gxapi_cy.WrapIMU._grid_ply_ex(GXContext._get_tls_geo(), img, ply, refresh, min_points)
         
 
 
@@ -758,8 +771,10 @@ class GXIMU:
         :type  max_y:                 float
 
         .. versionadded:: 7.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapIMU.grid_reproject_and_window(GXContext._get_tls_geo(), input_grid_filename.encode(), output_grid_filename.encode(), new_projection._wrapper, min_x, max_x, min_y, max_y)
+        gxapi_cy.WrapIMU._grid_reproject_and_window(GXContext._get_tls_geo(), input_grid_filename.encode(), output_grid_filename.encode(), new_projection, min_x, max_x, min_y, max_y)
         
 
 
@@ -788,11 +803,11 @@ class GXIMU:
 
         .. versionadded:: 7.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Works only for un rotated grids.
+        **Note:** Works only for un rotated grids.
         """
-        gxapi_cy.WrapIMU.grid_resample(GXContext._get_tls_geo(), input_grid_filename.encode(), output_grid_filename.encode(), o_x, o_y, d_x, d_y, n_x, n_y)
+        gxapi_cy.WrapIMU._grid_resample(GXContext._get_tls_geo(), input_grid_filename.encode(), output_grid_filename.encode(), o_x, o_y, d_x, d_y, n_x, n_y)
         
 
 
@@ -808,8 +823,10 @@ class GXIMU:
         :type  out_grd:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapIMU.grid_resize(GXContext._get_tls_geo(), in_grd.encode(), out_grd.encode())
+        gxapi_cy.WrapIMU._grid_resize(GXContext._get_tls_geo(), in_grd.encode(), out_grd.encode())
         
 
 
@@ -832,12 +849,12 @@ class GXIMU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Pass `GS_R8DM <geosoft.gxapi.GS_R8DM>` as parameters to obtain default values.
+        **Note:** Pass `GS_R8DM <geosoft.gxapi.GS_R8DM>` as parameters to obtain default values.
         The default values are returned.
         """
-        inc.value, dec.value, scl.value = gxapi_cy.WrapIMU.grid_shad(GXContext._get_tls_geo(), in_grid.encode(), sh_grid.encode(), inc.value, dec.value, scl.value)
+        inc.value, dec.value, scl.value = gxapi_cy.WrapIMU._grid_shad(GXContext._get_tls_geo(), in_grid.encode(), sh_grid.encode(), inc.value, dec.value, scl.value)
         
 
 
@@ -854,14 +871,14 @@ class GXIMU:
 
         .. versionadded:: 5.1.2
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The input `GXST <geosoft.gxapi.GXST>` object is not initialized by `grid_st <geosoft.gxapi.GXIMU.grid_st>`,
+        **Note:** The input `GXST <geosoft.gxapi.GXST>` object is not initialized by `grid_st <geosoft.gxapi.GXIMU.grid_st>`,
         so this function can be used to accumulate statistical
         info on more than a single grid.
         See `GXST <geosoft.gxapi.GXST>`.
         """
-        gxapi_cy.WrapIMU.grid_st(GXContext._get_tls_geo(), grid.encode(), st._wrapper)
+        gxapi_cy.WrapIMU._grid_st(GXContext._get_tls_geo(), grid.encode(), st)
         
 
 
@@ -898,11 +915,11 @@ class GXIMU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Statistics are returned in the parameter set
+        **Note:** Statistics are returned in the parameter set
         """
-        type.value, xelem.value, yelem.value, xsep.value, ysep.value, kx.value, x_orig.value, y_orig.value, rot.value, base.value, mult.value = gxapi_cy.WrapIMU.grid_stat(GXContext._get_tls_geo(), grid.encode(), type.value, xelem.value, yelem.value, xsep.value, ysep.value, kx.value, x_orig.value, y_orig.value, rot.value, base.value, mult.value)
+        type.value, xelem.value, yelem.value, xsep.value, ysep.value, kx.value, x_orig.value, y_orig.value, rot.value, base.value, mult.value = gxapi_cy.WrapIMU._grid_stat(GXContext._get_tls_geo(), grid.encode(), type.value, xelem.value, yelem.value, xsep.value, ysep.value, kx.value, x_orig.value, y_orig.value, rot.value, base.value, mult.value)
         
 
 
@@ -941,11 +958,11 @@ class GXIMU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Statistics are returned in the parameter set
+        **Note:** Statistics are returned in the parameter set
         """
-        type.value, xelem.value, yelem.value, xsep.value, ysep.value, kx.value, x_orig.value, y_orig.value, rot.value, base.value, mult.value, comp.value = gxapi_cy.WrapIMU.grid_stat_comp(GXContext._get_tls_geo(), grid.encode(), type.value, xelem.value, yelem.value, xsep.value, ysep.value, kx.value, x_orig.value, y_orig.value, rot.value, base.value, mult.value, comp.value)
+        type.value, xelem.value, yelem.value, xsep.value, ysep.value, kx.value, x_orig.value, y_orig.value, rot.value, base.value, mult.value, comp.value = gxapi_cy.WrapIMU._grid_stat_comp(GXContext._get_tls_geo(), grid.encode(), type.value, xelem.value, yelem.value, xsep.value, ysep.value, kx.value, x_orig.value, y_orig.value, rot.value, base.value, mult.value, comp.value)
         
 
 
@@ -974,13 +991,13 @@ class GXIMU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the :ref:`IMU_STAT_FORCED` value is set, the
+        **Note:** If the :ref:`IMU_STAT_FORCED` value is set, the
         statistics will be recalculated.
         Statistics are returned in the parameter set.
         """
-        items.value, dums.value, min.value, max.value, mean.value, stddev.value = gxapi_cy.WrapIMU.grid_stat_ext(GXContext._get_tls_geo(), grid.encode(), force, items.value, dums.value, min.value, max.value, mean.value, stddev.value)
+        items.value, dums.value, min.value, max.value, mean.value, stddev.value = gxapi_cy.WrapIMU._grid_stat_ext(GXContext._get_tls_geo(), grid.encode(), force, items.value, dums.value, min.value, max.value, mean.value, stddev.value)
         
 
 
@@ -1003,11 +1020,11 @@ class GXIMU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Trend Info are returned in the parameter set
+        **Note:** Trend Info are returned in the parameter set
         """
-        trend_valid.value, co.value, cx.value, cy.value = gxapi_cy.WrapIMU.grid_stat_trend(GXContext._get_tls_geo(), grid.encode(), trend_valid.value, co.value, cx.value, cy.value)
+        trend_valid.value, co.value, cx.value, cy.value = gxapi_cy.WrapIMU._grid_stat_trend(GXContext._get_tls_geo(), grid.encode(), trend_valid.value, co.value, cx.value, cy.value)
         
 
 
@@ -1032,11 +1049,11 @@ class GXIMU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Trend Info are returned in the parameter set
+        **Note:** Trend Info are returned in the parameter set
         """
-        order.value, num_coef.value, xo.value, yo.value = gxapi_cy.WrapIMU.grid_stat_trend_ext(GXContext._get_tls_geo(), grid.encode(), order.value, num_coef.value, xo.value, yo.value, vm._wrapper)
+        order.value, num_coef.value, xo.value, yo.value = gxapi_cy.WrapIMU._grid_stat_trend_ext(GXContext._get_tls_geo(), grid.encode(), order.value, num_coef.value, xo.value, yo.value, vm)
         
 
 
@@ -1054,9 +1071,9 @@ class GXIMU:
 
         .. versionadded:: 8.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This method calculates the standard deviation of the horizontal
+        **Note:** This method calculates the standard deviation of the horizontal
         differences in the X and Y directions for the supplied
         image.  This is useful for shading routines.  A good
         default scaling factor is 2.5 / standard deviation.
@@ -1065,7 +1082,7 @@ class GXIMU:
         
         The cell sizes are used to determine the slopes.
         """
-        ret_val = gxapi_cy.WrapIMU.slope_standard_deviation(GXContext._get_tls_geo(), img._wrapper)
+        ret_val = gxapi_cy.WrapIMU._slope_standard_deviation(GXContext._get_tls_geo(), img)
         return ret_val
 
 
@@ -1103,8 +1120,10 @@ class GXIMU:
         :type  width:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapIMU.grid_stitch(GXContext._get_tls_geo(), grid1.encode(), grid2.encode(), grid3.encode(), method, tr_order1, tr_order2, tr_calc, gap, spline, path, pply._wrapper, weighting, width)
+        gxapi_cy.WrapIMU._grid_stitch(GXContext._get_tls_geo(), grid1.encode(), grid2.encode(), grid3.encode(), method, tr_order1, tr_order2, tr_calc, gap, spline, path, pply, weighting, width)
         
 
 
@@ -1119,13 +1138,13 @@ class GXIMU:
 
         .. versionadded:: 5.1.4
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Data validation is done internally, not in the GX.
+        **Note:** Data validation is done internally, not in the GX.
         This is simply a way of avoiding writing a new GX wrapper
         every time an option is added.
         """
-        gxapi_cy.WrapIMU.grid_stitch_ctl(GXContext._get_tls_geo(), ctl.encode())
+        gxapi_cy.WrapIMU._grid_stitch_ctl(GXContext._get_tls_geo(), ctl.encode())
         
 
 
@@ -1156,13 +1175,13 @@ class GXIMU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The background color can be either selected
+        **Note:** The background color can be either selected
         from one of 8 settings, or can be specified
         as a combination of Reg,Green, and Blue values.
         """
-        gxapi_cy.WrapIMU.grid_tiff(GXContext._get_tls_geo(), grds.encode(), tiff.encode(), bcol.encode(), red, green, blue, csize, reg, scale)
+        gxapi_cy.WrapIMU._grid_tiff(GXContext._get_tls_geo(), grds.encode(), tiff.encode(), bcol.encode(), red, green, blue, csize, reg, scale)
         
 
 
@@ -1189,9 +1208,9 @@ class GXIMU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Both Images must be of type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`.
+        **Note:** Both Images must be of type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`.
         The `GXVM <geosoft.gxapi.GXVM>` parameter must be of type REAL,
         and be of size 10 at most.
         
@@ -1208,7 +1227,7 @@ class GXIMU:
         2                 6
         3                 10
         """
-        gxapi_cy.WrapIMU.grid_trnd(GXContext._get_tls_geo(), imgi._wrapper, imgo._wrapper, tr_option, edge, order, vm._wrapper, num_coefs)
+        gxapi_cy.WrapIMU._grid_trnd(GXContext._get_tls_geo(), imgi, imgo, tr_option, edge, order, vm, num_coefs)
         
 
 
@@ -1226,13 +1245,13 @@ class GXIMU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the grid has a line orientation that does NOT
+        **Note:** If the grid has a line orientation that does NOT
         match the :ref:`IMU_TRANS` value, this method will
         not succeed.
         """
-        gxapi_cy.WrapIMU.grid_trns(GXContext._get_tls_geo(), grid.encode(), tcon)
+        gxapi_cy.WrapIMU._grid_trns(GXContext._get_tls_geo(), grid.encode(), tcon)
         
 
 
@@ -1248,8 +1267,10 @@ class GXIMU:
         :type  im_go:  GXIMG
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapIMU.grid_vd(GXContext._get_tls_geo(), im_gi._wrapper, im_go._wrapper)
+        gxapi_cy.WrapIMU._grid_vd(GXContext._get_tls_geo(), im_gi, im_go)
         
 
 
@@ -1275,9 +1296,9 @@ class GXIMU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Volumes are calculated above and below a
+        **Note:** Volumes are calculated above and below a
         reference base level, and reported as positive
         integers. A multiplier is applied to the final
         volume (to correct for units).
@@ -1285,7 +1306,7 @@ class GXIMU:
         The `GXIMG <geosoft.gxapi.GXIMG>` parameters MUST be of type `GS_FLOAT <geosoft.gxapi.GS_FLOAT>`!
         If not, the method will terminate.
         """
-        vol_a.value, vol_b.value, diff.value = gxapi_cy.WrapIMU.grid_vol(GXContext._get_tls_geo(), img._wrapper, rbase, mult, vol_a.value, vol_b.value, diff.value)
+        vol_a.value, vol_b.value, diff.value = gxapi_cy.WrapIMU._grid_vol(GXContext._get_tls_geo(), img, rbase, mult, vol_a.value, vol_b.value, diff.value)
         
 
 
@@ -1324,8 +1345,10 @@ class GXIMU:
         :type  mdf:    str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapIMU.grid_wind(GXContext._get_tls_geo(), img._wrapper, out.encode(), coord, xmin, xmax, ymin, ymax, zmin, zmax, csize, clip, dec, mdf.encode())
+        gxapi_cy.WrapIMU._grid_wind(GXContext._get_tls_geo(), img, out.encode(), coord, xmin, xmax, ymin, ymax, zmin, zmax, csize, clip, dec, mdf.encode())
         
 
 
@@ -1356,15 +1379,15 @@ class GXIMU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        To change the cell size or work in a different projection,
+        **Note:** To change the cell size or work in a different projection,
         first inherit the `GXIMG <geosoft.gxapi.GXIMG>` by calling
         
         The windowed grid will be adjusted/expanded to include the
         defined area and line up on an even grid cell.
         """
-        gxapi_cy.WrapIMU.grid_wind2(GXContext._get_tls_geo(), img._wrapper, out.encode(), xmin, xmax, ymin, ymax, zmin, zmax, clip)
+        gxapi_cy.WrapIMU._grid_wind2(GXContext._get_tls_geo(), img, out.encode(), xmin, xmax, ymin, ymax, zmin, zmax, clip)
         
 
 
@@ -1389,13 +1412,13 @@ class GXIMU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The `GXIMG <geosoft.gxapi.GXIMG>` (image) of the grid to export must
+        **Note:** The `GXIMG <geosoft.gxapi.GXIMG>` (image) of the grid to export must
         be of type `GS_FLOAT <geosoft.gxapi.GS_FLOAT>`. If not, this method will
         terminate with an error.
         """
-        gxapi_cy.WrapIMU.grid_xyz(GXContext._get_tls_geo(), img._wrapper, xyz.encode(), index, dec_x, dec_y, lab)
+        gxapi_cy.WrapIMU._grid_xyz(GXContext._get_tls_geo(), img, xyz.encode(), index, dec_x, dec_y, lab)
         
 
 
@@ -1412,8 +1435,10 @@ class GXIMU:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapIMU.grid_type(GXContext._get_tls_geo(), grid.encode())
+        ret_val = gxapi_cy.WrapIMU._grid_type(GXContext._get_tls_geo(), grid.encode())
         return ret_val
 
 
@@ -1427,8 +1452,10 @@ class GXIMU:
         :type  file:  str
 
         .. versionadded:: 5.1.6
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapIMU.make_mi_tab_file(GXContext._get_tls_geo(), file.encode())
+        gxapi_cy.WrapIMU._make_mi_tab_file(GXContext._get_tls_geo(), file.encode())
         
 
 
@@ -1442,8 +1469,10 @@ class GXIMU:
         :type  file:  str
 
         .. versionadded:: 5.1.5
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapIMU.make_mi_tabfrom_grid(GXContext._get_tls_geo(), file.encode())
+        gxapi_cy.WrapIMU._make_mi_tabfrom_grid(GXContext._get_tls_geo(), file.encode())
         
 
 
@@ -1457,8 +1486,10 @@ class GXIMU:
         :type  map:  str
 
         .. versionadded:: 5.1.5
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapIMU.make_mi_tabfrom_map(GXContext._get_tls_geo(), map.encode())
+        gxapi_cy.WrapIMU._make_mi_tabfrom_map(GXContext._get_tls_geo(), map.encode())
         
 
 
@@ -1482,13 +1513,13 @@ class GXIMU:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The images are simply placed on the output image, starting with
+        **Note:** The images are simply placed on the output image, starting with
         the first image. Note that this function may require very large
         amounts of virtual memory.
         """
-        ret_val = gxapi_cy.WrapIMU.mosaic(GXContext._get_tls_geo(), grids.encode(), name.encode(), ipj._wrapper, cell)
+        ret_val = gxapi_cy.WrapIMU._mosaic(GXContext._get_tls_geo(), grids.encode(), name.encode(), ipj, cell)
         return GXIMG(ret_val)
 
 
@@ -1513,9 +1544,9 @@ class GXIMU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Extending from the peak location of an anomaly to the inflection
+        **Note:** Extending from the peak location of an anomaly to the inflection
         points of the grid values along each of the 8 directions results in
         8 radii. Anomaly size is defined as the 2*mediam of the 8 radii.
         
@@ -1527,7 +1558,7 @@ class GXIMU:
         
         Note: `peak_size2 <geosoft.gxapi.GXIMU.peak_size2>` is probably a better routine...
         """
-        gxapi_cy.WrapIMU.peak_size(GXContext._get_tls_geo(), grid.encode(), vv_x._wrapper, vv_y._wrapper, max, prec, v_vz._wrapper)
+        gxapi_cy.WrapIMU._peak_size(GXContext._get_tls_geo(), grid.encode(), vv_x, vv_y, max, prec, v_vz)
         
 
 
@@ -1550,9 +1581,9 @@ class GXIMU:
 
         .. versionadded:: 5.1.4
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Extending from the peak location of an anomaly to the inflection
+        **Note:** Extending from the peak location of an anomaly to the inflection
         points of the grid values along each of the 8 directions results in
         8 radii. Anomaly size is defined as the 2*mediam of the 8 radii.
         
@@ -1565,7 +1596,7 @@ class GXIMU:
         This algorithm tends to give much smaller (and more reasonable)
         results than `peak_size <geosoft.gxapi.GXIMU.peak_size>`.
         """
-        gxapi_cy.WrapIMU.peak_size2(GXContext._get_tls_geo(), grid.encode(), vv_x._wrapper, vv_y._wrapper, max, v_vz._wrapper)
+        gxapi_cy.WrapIMU._peak_size2(GXContext._get_tls_geo(), grid.encode(), vv_x, vv_y, max, v_vz)
         
 
 
@@ -1586,9 +1617,9 @@ class GXIMU:
 
         .. versionadded:: 5.0.8
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        X and Y location VVs are input. If a point (X, Y) is located within
+        **Note:** X and Y location VVs are input. If a point (X, Y) is located within
         one-half cell width from a location in the grid, then the value of
         the grid at that location is incremented by 1.
         The cells are inclusive at the minima, and exclusive at the maxima:
@@ -1600,7 +1631,7 @@ class GXIMU:
         This function is useful, for instance, in determining the density of
         sample locations in a survey area.
         """
-        put.value = gxapi_cy.WrapIMU.pigeon_hole(GXContext._get_tls_geo(), img._wrapper, vv_x._wrapper, vv_y._wrapper, put.value)
+        put.value = gxapi_cy.WrapIMU._pigeon_hole(GXContext._get_tls_geo(), img, vv_x, vv_y, put.value)
         
 
 
@@ -1627,12 +1658,12 @@ class GXIMU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Returned `GXVV <geosoft.gxapi.GXVV>` will start at X1,Y1 and will sample
+        **Note:** Returned `GXVV <geosoft.gxapi.GXVV>` will start at X1,Y1 and will sample
         up to X2,Y2 at the specified separation.
         """
-        gxapi_cy.WrapIMU.profile(GXContext._get_tls_geo(), img._wrapper, x1, y1, x2, y2, samsep, vv_z._wrapper)
+        gxapi_cy.WrapIMU._profile(GXContext._get_tls_geo(), img, x1, y1, x2, y2, samsep, vv_z)
         
 
 
@@ -1653,11 +1684,13 @@ class GXIMU:
 
         .. versionadded:: 5.0
 
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+
         .. seealso::
 
             iGetPolyLine_DBE
         """
-        gxapi_cy.WrapIMU.profile_vv(GXContext._get_tls_geo(), img._wrapper, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
+        gxapi_cy.WrapIMU._profile_vv(GXContext._get_tls_geo(), img, vv_x, vv_y, vv_z)
         
 
 
@@ -1682,15 +1715,15 @@ class GXIMU:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        If an `GXIPJ <geosoft.gxapi.GXIPJ>` is IPJ_CS_UNKNOWN, the
+        **Note:** If an `GXIPJ <geosoft.gxapi.GXIPJ>` is IPJ_CS_UNKNOWN, the
         `GXIPJ <geosoft.gxapi.GXIPJ>` of the first grid in the list will be used and
         the `GXIPJ <geosoft.gxapi.GXIPJ>` will be returned in this setting.
         Otherwise, the range in the requested `GXIPJ <geosoft.gxapi.GXIPJ>` will be
         determined.
         """
-        min_x.value, min_y.value, max_x.value, max_y.value = gxapi_cy.WrapIMU.range_grids(GXContext._get_tls_geo(), grids.encode(), ipj._wrapper, min_x.value, min_y.value, max_x.value, max_y.value)
+        min_x.value, min_y.value, max_x.value, max_y.value = gxapi_cy.WrapIMU._range_grids(GXContext._get_tls_geo(), grids.encode(), ipj, min_x.value, min_y.value, max_x.value, max_y.value)
         
 
 
@@ -1713,9 +1746,9 @@ class GXIMU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        This routine determines the latitude and longitudes along the
+        **Note:** This routine determines the latitude and longitudes along the
         edge of a grid and returns the minimal and maximal values.
         It scans each row and and column and finds the first non-dummy
         position at the start and end, and then determines the coordinates
@@ -1724,7 +1757,7 @@ class GXIMU:
         the `GXIPJ <geosoft.gxapi.GXIPJ>` is not `IPJ_TYPE_PCS <geosoft.gxapi.IPJ_TYPE_PCS>` (projected coordinate system), then the
         returned values are dummies (`GS_R8DM <geosoft.gxapi.GS_R8DM>`).
         """
-        min_lat.value, min_lon.value, max_lat.value, max_lon.value = gxapi_cy.WrapIMU.range_ll(GXContext._get_tls_geo(), img._wrapper, min_lat.value, min_lon.value, max_lat.value, max_lon.value)
+        min_lat.value, min_lon.value, max_lat.value, max_lon.value = gxapi_cy.WrapIMU._range_ll(GXContext._get_tls_geo(), img, min_lat.value, min_lon.value, max_lat.value, max_lon.value)
         
 
 
@@ -1751,15 +1784,15 @@ class GXIMU:
 
         .. versionadded:: 5.0.5
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The maximum values needed will beused to
+        **Note:** The maximum values needed will beused to
         decimate the sampling of the grid in order to
         improve performance.  100000 is often a good
         number when absolute precision is not
         required.
         """
-        gxapi_cy.WrapIMU.stat_window(GXContext._get_tls_geo(), img._wrapper, min_x, min_y, max_x, max_y, max, st._wrapper)
+        gxapi_cy.WrapIMU._stat_window(GXContext._get_tls_geo(), img, min_x, min_y, max_x, max_y, max, st)
         
 
 
@@ -1776,16 +1809,16 @@ class GXIMU:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        You can call the GridEdgePLY function to get an edge,
+        **Note:** You can call the GridEdgePLY function to get an edge,
         perhaps alter the edge, such as thin it to a reasonable
         resolution, then put set it as the grid boundary by
         calling this funtion.  This is similar to the
         GridPLYEx function except that you get to alter the
         `GXPLY <geosoft.gxapi.GXPLY>` before it is placed back in the `GXIMG <geosoft.gxapi.GXIMG>`.
         """
-        gxapi_cy.WrapIMU.update_ply(GXContext._get_tls_geo(), img._wrapper, ply._wrapper)
+        gxapi_cy.WrapIMU._update_ply(GXContext._get_tls_geo(), img, ply)
         
 
 

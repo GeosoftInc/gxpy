@@ -13,44 +13,35 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXPDF3D:
+class GXPDF3D(gxapi_cy.WrapPDF3D):
     """
     GXPDF3D class.
 
     The `GXPDF3D <geosoft.gxapi.GXPDF3D>` class provides the ability to create 3D PDFs.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapPDF3D(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXPDF3D`
+        A null (undefined) instance of `GXPDF3D <geosoft.gxapi.GXPDF3D>`
         
-        :returns: A null `GXPDF3D`
+        :returns: A null `GXPDF3D <geosoft.gxapi.GXPDF3D>`
+        :rtype:   GXPDF3D
         """
-        return cls()
+        return GXPDF3D()
 
     def is_null(self):
         """
-        Check if the instance of `GXPDF3D` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXPDF3D`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -71,8 +62,10 @@ class GXPDF3D:
         :type  no_clipping:  int
 
         .. versionadded:: 6.4.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapPDF3D.render(GXContext._get_tls_geo(), mview._wrapper, file_name.encode(), resolution, no_clipping)
+        gxapi_cy.WrapPDF3D._render(GXContext._get_tls_geo(), mview, file_name.encode(), resolution, no_clipping)
         
 
 
@@ -94,8 +87,10 @@ class GXPDF3D:
         :type  no_clip:      int
 
         .. versionadded:: 7.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapPDF3D.render_to_page(GXContext._get_tls_geo(), mview._wrapper, file_name.encode(), page_number, resolution, no_clip)
+        gxapi_cy.WrapPDF3D._render_to_page(GXContext._get_tls_geo(), mview, file_name.encode(), page_number, resolution, no_clip)
         
 
 
@@ -117,8 +112,10 @@ class GXPDF3D:
         :type  open_pdf:             int
 
         .. versionadded:: 8.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapPDF3D.export_2d(GXContext._get_tls_geo(), input_map.encode(), output_file.encode(), create_layersin_pdf, geospatial_pdf, open_pdf)
+        gxapi_cy.WrapPDF3D._export_2d(GXContext._get_tls_geo(), input_map.encode(), output_file.encode(), create_layersin_pdf, geospatial_pdf, open_pdf)
         
 
 

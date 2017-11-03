@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXVOXE:
+class GXVOXE(gxapi_cy.WrapVOXE):
     """
     GXVOXE class.
 
@@ -21,37 +21,28 @@ class GXVOXE:
     the voxel.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapVOXE(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXVOXE`
+        A null (undefined) instance of `GXVOXE <geosoft.gxapi.GXVOXE>`
         
-        :returns: A null `GXVOXE`
+        :returns: A null `GXVOXE <geosoft.gxapi.GXVOXE>`
+        :rtype:   GXVOXE
         """
-        return cls()
+        return GXVOXE()
 
     def is_null(self):
         """
-        Check if the instance of `GXVOXE` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXVOXE`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -69,8 +60,10 @@ class GXVOXE:
         :rtype:      GXVOXE
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapVOXE.create(GXContext._get_tls_geo(), vox._wrapper)
+        ret_val = gxapi_cy.WrapVOXE._create(GXContext._get_tls_geo(), vox)
         return GXVOXE(ret_val)
 
 
@@ -94,8 +87,10 @@ class GXVOXE:
         :type  interp:  int
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.profile(vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_d._wrapper, interp)
+        self._profile(vv_x, vv_y, vv_z, vv_d, interp)
         
 
 
@@ -118,8 +113,10 @@ class GXVOXE:
         :rtype:         float
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.value(x, y, z, interp)
+        ret_val = self._value(x, y, z, interp)
         return ret_val
 
 
@@ -147,8 +144,10 @@ class GXVOXE:
         :type  interp:  int
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.vector(ox, oy, oz, vx, vy, vz, vv._wrapper, interp)
+        self._vector(ox, oy, oz, vx, vy, vz, vv, interp)
         
 
 

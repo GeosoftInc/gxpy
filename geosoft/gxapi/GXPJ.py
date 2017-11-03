@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXPJ:
+class GXPJ(gxapi_cy.WrapPJ):
     """
     GXPJ class.
 
@@ -23,37 +23,28 @@ class GXPJ:
     system to another.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapPJ(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXPJ`
+        A null (undefined) instance of `GXPJ <geosoft.gxapi.GXPJ>`
         
-        :returns: A null `GXPJ`
+        :returns: A null `GXPJ <geosoft.gxapi.GXPJ>`
+        :rtype:   GXPJ
         """
-        return cls()
+        return GXPJ()
 
     def is_null(self):
         """
-        Check if the instance of `GXPJ` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXPJ`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -79,9 +70,9 @@ class GXPJ:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        A rectangular area from (MinX, MinY) to (MaxX, MaxY)
+        **Note:** A rectangular area from (MinX, MinY) to (MaxX, MaxY)
         is projected throught the `GXPJ <geosoft.gxapi.GXPJ>`. The resulting (non-rectangular)
         area is then digitized along its edges, then thinned to
         remove near-collinear points. The thinning is done to any
@@ -89,7 +80,7 @@ class GXPJ:
         (180 degrees - maximum deviation).  (i.e. if max. dev = 0,
         only co-linear points would be removed).
         """
-        self._wrapper.clip_ply(min_x, min_y, max_x, max_y, max_dev, pply._wrapper)
+        self._clip_ply(min_x, min_y, max_x, max_y, max_dev, pply)
         
 
 
@@ -106,11 +97,11 @@ class GXPJ:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This function is equivalent to `GXVV.project <geosoft.gxapi.GXVV.project>`.
+        **Note:** This function is equivalent to `GXVV.project <geosoft.gxapi.GXVV.project>`.
         """
-        self._wrapper.convert_vv(vv_x._wrapper, vv_y._wrapper)
+        self._convert_vv(vv_x, vv_y)
         
 
 
@@ -129,11 +120,11 @@ class GXPJ:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This function is equivalent to `GXVV.project_3d <geosoft.gxapi.GXVV.project_3d>`.
+        **Note:** This function is equivalent to `GXVV.project_3d <geosoft.gxapi.GXVV.project_3d>`.
         """
-        self._wrapper.convert_vv3(vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
+        self._convert_vv3(vv_x, vv_y, vv_z)
         
 
 
@@ -149,8 +140,10 @@ class GXPJ:
         :type  y:   float_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        x.value, y.value = self._wrapper.convert_xy(x.value, y.value)
+        x.value, y.value = self._convert_xy(x.value, y.value)
         
 
 
@@ -169,9 +162,9 @@ class GXPJ:
 
         .. versionadded:: 7.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This function is used (for instance) when projecting voxel model locations
+        **Note:** This function is used (for instance) when projecting voxel model locations
         where the user expects that the vertical position will not change. The
         regular `convert_xyz <geosoft.gxapi.GXPJ.convert_xyz>` may result in shifts of hundreds, even a thousand
         meters in case where you are going from the geoid to an ellipsoid.
@@ -179,7 +172,7 @@ class GXPJ:
         the normal `convert_xy <geosoft.gxapi.GXPJ.convert_xy>` assumes a value of Z=0 internally and calls
         `convert_xyz <geosoft.gxapi.GXPJ.convert_xyz>`.
         """
-        x.value, y.value = self._wrapper.convert_xy_from_xyz(x.value, y.value, z)
+        x.value, y.value = self._convert_xy_from_xyz(x.value, y.value, z)
         
 
 
@@ -197,8 +190,10 @@ class GXPJ:
         :type  z:   float_ref
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        x.value, y.value, z.value = self._wrapper.convert_xyz(x.value, y.value, z.value)
+        x.value, y.value, z.value = self._convert_xyz(x.value, y.value, z.value)
         
 
 
@@ -217,8 +212,10 @@ class GXPJ:
         :rtype:         GXPJ
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapPJ.create(GXContext._get_tls_geo(), input.encode(), output.encode())
+        ret_val = gxapi_cy.WrapPJ._create(GXContext._get_tls_geo(), input.encode(), output.encode())
         return GXPJ(ret_val)
 
 
@@ -238,13 +235,13 @@ class GXPJ:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If converting to/from long/lat in the natural coordinate
+        **Note:** If converting to/from long/lat in the natural coordinate
         system of the source/target, only the long/lat system
         can be passed as (`GXIPJ <geosoft.gxapi.GXIPJ>`)0.
         """
-        ret_val = gxapi_cy.WrapPJ.create_ipj(GXContext._get_tls_geo(), ip_jin._wrapper, ip_jout._wrapper)
+        ret_val = gxapi_cy.WrapPJ._create_ipj(GXContext._get_tls_geo(), ip_jin, ip_jout)
         return GXPJ(ret_val)
 
 
@@ -273,16 +270,16 @@ class GXPJ:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Given an X,Y coordinate system, the lat/lon origin and
+        **Note:** Given an X,Y coordinate system, the lat/lon origin and
         angle of the coordinate system, this will create a `GXPJ <geosoft.gxapi.GXPJ>`
         to convert between X,Y coordinates and Lon,Lat.
         The Lon/Lat is determined using a Transverse Mercator
         projection with central meridian through the center
         of the coordinates on a WGS 84 datum.
         """
-        ret_val = gxapi_cy.WrapPJ.create_rectified(GXContext._get_tls_geo(), lon, lat, x, y, rot, scl, dir)
+        ret_val = gxapi_cy.WrapPJ._create_rectified(GXContext._get_tls_geo(), lon, lat, x, y, rot, scl, dir)
         return GXPJ(ret_val)
 
 
@@ -300,9 +297,9 @@ class GXPJ:
 
         .. versionadded:: 5.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        To determine the model in use, refer to the datum_trf column in the
+        **Note:** To determine the model in use, refer to the datum_trf column in the
         user\\csv\\datumtrf.csv file.  The datum and geoid model are named in
         the sqare brackets following the transform name as follows:
         
@@ -314,7 +311,7 @@ class GXPJ:
         in the \\etc directory.  If the geoid model is missing, this method will
         return `PJ_ELEVATION_NONE <geosoft.gxapi.PJ_ELEVATION_NONE>` and elevation coordinates will not be changed.
         """
-        ret_val = self._wrapper.elevation()
+        ret_val = self._elevation()
         return ret_val
 
 
@@ -330,8 +327,10 @@ class GXPJ:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.is_input_ll()
+        ret_val = self._is_input_ll()
         return ret_val
 
 
@@ -347,8 +346,10 @@ class GXPJ:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.is_output_ll()
+        ret_val = self._is_output_ll()
         return ret_val
 
 
@@ -369,16 +370,16 @@ class GXPJ:
 
         .. versionadded:: 5.1.4
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        A rectangular area from (dMinX, dMinY) to (dMaxX, dMaxY)
+        **Note:** A rectangular area from (dMinX, dMinY) to (dMaxX, dMaxY)
         is projected throught the `GXPJ <geosoft.gxapi.GXPJ>`. The resulting region area is
         then digitized along its edges and a new bounding rectangle
         is computed.  If there is a lot of curve through the
         projection the resulting bounding region may be slightly
         smaller than the true region.
         """
-        min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.project_bounding_rectangle(min_x.value, min_y.value, max_x.value, max_y.value)
+        min_x.value, min_y.value, max_x.value, max_y.value = self._project_bounding_rectangle(min_x.value, min_y.value, max_x.value, max_y.value)
         
 
 
@@ -401,13 +402,13 @@ class GXPJ:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This is the same as `project_bounding_rectangle <geosoft.gxapi.GXPJ.project_bounding_rectangle>` except that the bounding
+        **Note:** This is the same as `project_bounding_rectangle <geosoft.gxapi.GXPJ.project_bounding_rectangle>` except that the bounding
         rectangle will be limited to an area within which the projection can be
         performed to an accuracy better than the specified error tolerance.
         """
-        min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.project_bounding_rectangle2(min_x.value, min_y.value, max_x.value, max_y.value, err)
+        min_x.value, min_y.value, max_x.value, max_y.value = self._project_bounding_rectangle2(min_x.value, min_y.value, max_x.value, max_y.value, err)
         
 
 
@@ -430,14 +431,14 @@ class GXPJ:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This function behaves just like ProjBoundingRectangle_PJ
+        **Note:** This function behaves just like ProjBoundingRectangle_PJ
         except that it also computes an approximate resolution
         at the reprojected coordinate system from a given original
         resolution.
         """
-        min_x.value, min_y.value, max_x.value, max_y.value, res.value = self._wrapper.project_bounding_rectangle_res(min_x.value, min_y.value, max_x.value, max_y.value, res.value)
+        min_x.value, min_y.value, max_x.value, max_y.value, res.value = self._project_bounding_rectangle_res(min_x.value, min_y.value, max_x.value, max_y.value, res.value)
         
 
 
@@ -462,13 +463,13 @@ class GXPJ:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This is the same as `project_bounding_rectangle_res <geosoft.gxapi.GXPJ.project_bounding_rectangle_res>` except that the bounding
+        **Note:** This is the same as `project_bounding_rectangle_res <geosoft.gxapi.GXPJ.project_bounding_rectangle_res>` except that the bounding
         rectangle will be limited to an area within which the projection can be
         performed to an accuracy better than the specified error tolerance.
         """
-        min_x.value, min_y.value, max_x.value, max_y.value, res.value = self._wrapper.project_bounding_rectangle_res2(min_x.value, min_y.value, max_x.value, max_y.value, res.value, err)
+        min_x.value, min_y.value, max_x.value, max_y.value, res.value = self._project_bounding_rectangle_res2(min_x.value, min_y.value, max_x.value, max_y.value, res.value, err)
         
 
 
@@ -497,9 +498,9 @@ class GXPJ:
 
         .. versionadded:: 6.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The bounding rectangle will be limited to no larger
+        **Note:** The bounding rectangle will be limited to no larger
         than the area specified in the output projection.  This
         is useful when projecting from limits that are unreasonable
         in the target projection.
@@ -508,7 +509,7 @@ class GXPJ:
 
             `project_bounding_rectangle <geosoft.gxapi.GXPJ.project_bounding_rectangle>`.
         """
-        min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.project_limited_bounding_rectangle(min_xl, min_yl, max_xl, max_yl, min_x.value, min_y.value, max_x.value, max_y.value)
+        min_x.value, min_y.value, max_x.value, max_y.value = self._project_limited_bounding_rectangle(min_xl, min_yl, max_xl, max_yl, min_x.value, min_y.value, max_x.value, max_y.value)
         
 
 
@@ -521,9 +522,9 @@ class GXPJ:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        By default, a `GXPJ <geosoft.gxapi.GXPJ>` on the same datum will not apply a LDT,
+        **Note:** By default, a `GXPJ <geosoft.gxapi.GXPJ>` on the same datum will not apply a LDT,
         is intended for transformations between datums.  However,
         in some instances you might want to convert between LDTs on
         the same datum, such as when you have two sets of coordinates
@@ -534,7 +535,7 @@ class GXPJ:
         convert both sets back to their original WGS84 coordinates
         and combine in WGS84.
         """
-        self._wrapper.setup_ldt()
+        self._setup_ldt()
         
 
 

@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXVVU:
+class GXVVU(gxapi_cy.WrapVVU):
     """
     GXVVU class.
 
@@ -22,37 +22,28 @@ class GXVVU:
     splining, clipping and filtering.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapVVU(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXVVU`
+        A null (undefined) instance of `GXVVU <geosoft.gxapi.GXVVU>`
         
-        :returns: A null `GXVVU`
+        :returns: A null `GXVVU <geosoft.gxapi.GXVVU>`
+        :rtype:   GXVVU
         """
-        return cls()
+        return GXVVU()
 
     def is_null(self):
         """
-        Check if the instance of `GXVVU` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXVVU`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -70,9 +61,9 @@ class GXVVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Repeated values in the reference `GXVV <geosoft.gxapi.GXVV>` will be averaged
+        **Note:** Repeated values in the reference `GXVV <geosoft.gxapi.GXVV>` will be averaged
         in the data `GXVV <geosoft.gxapi.GXVV>`.  The first value in the data `GXVV <geosoft.gxapi.GXVV>` will be set to the
         average and subsequent data `GXVV <geosoft.gxapi.GXVV>` values will be dummied out.
         Data is processed only to the minimum length of the
@@ -82,7 +73,7 @@ class GXVVU:
 
             `remove_dummy <geosoft.gxapi.GXVVU.remove_dummy>`
         """
-        gxapi_cy.WrapVVU.average_repeat(GXContext._get_tls_geo(), ref_vv._wrapper, dat_vv._wrapper)
+        gxapi_cy.WrapVVU._average_repeat(GXContext._get_tls_geo(), ref_vv, dat_vv)
         
 
 
@@ -101,9 +92,9 @@ class GXVVU:
 
         .. versionadded:: 8.0.1
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Repeated values in the reference `GXVV <geosoft.gxapi.GXVV>` will be set to the mean, median, minimum or maximum value
+        **Note:** Repeated values in the reference `GXVV <geosoft.gxapi.GXVV>` will be set to the mean, median, minimum or maximum value
         in the data `GXVV <geosoft.gxapi.GXVV>`.  For minimum and maximum, the index in the data `GXVV <geosoft.gxapi.GXVV>` containing the minimum or maximum value
         is retained, and the other repeated values are dummied out. For mean and median, the first value in the 
         data `GXVV <geosoft.gxapi.GXVV>` will be reset and subsequent data `GXVV <geosoft.gxapi.GXVV>` values will be dummied out.
@@ -114,7 +105,7 @@ class GXVVU:
 
             `remove_dummy <geosoft.gxapi.GXVVU.remove_dummy>`
         """
-        gxapi_cy.WrapVVU.average_repeat_ex(GXContext._get_tls_geo(), ref_vv._wrapper, dat_vv._wrapper, mode)
+        gxapi_cy.WrapVVU._average_repeat_ex(GXContext._get_tls_geo(), ref_vv, dat_vv, mode)
         
 
 
@@ -133,9 +124,9 @@ class GXVVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Repeated values in the reference `GXVV <geosoft.gxapi.GXVV>` will be averaged
+        **Note:** Repeated values in the reference `GXVV <geosoft.gxapi.GXVV>` will be averaged
         in the data `GXVV <geosoft.gxapi.GXVV>`.  The first value in the data `GXVV <geosoft.gxapi.GXVV>` will be set to the
         average and subsequent data `GXVV <geosoft.gxapi.GXVV>` values will be dummied out.
         Data is processed only to the minimum length of the
@@ -148,7 +139,7 @@ class GXVVU:
 
             RemoveDummy_VV
         """
-        gxapi_cy.WrapVVU.average_repeat2(GXContext._get_tls_geo(), ref_vv1._wrapper, ref_vv2._wrapper, dat_vv._wrapper)
+        gxapi_cy.WrapVVU._average_repeat2(GXContext._get_tls_geo(), ref_vv1, ref_vv2, dat_vv)
         
 
 
@@ -169,9 +160,9 @@ class GXVVU:
 
         .. versionadded:: 8.0.1
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Repeated values in the reference `GXVV <geosoft.gxapi.GXVV>` will be set to the mean, median, minimum or maximum value
+        **Note:** Repeated values in the reference `GXVV <geosoft.gxapi.GXVV>` will be set to the mean, median, minimum or maximum value
         in the data `GXVV <geosoft.gxapi.GXVV>`.  The first value in the data `GXVV <geosoft.gxapi.GXVV>` will be reset and subsequent data `GXVV <geosoft.gxapi.GXVV>` values will be dummied out.
         Data is processed only to the minimum length of the
         input `GXVV <geosoft.gxapi.GXVV>` lengths.
@@ -183,7 +174,7 @@ class GXVVU:
 
             RemoveDummy_VV
         """
-        gxapi_cy.WrapVVU.average_repeat2_ex(GXContext._get_tls_geo(), ref_vv1._wrapper, ref_vv2._wrapper, dat_vv._wrapper, mode)
+        gxapi_cy.WrapVVU._average_repeat2_ex(GXContext._get_tls_geo(), ref_vv1, ref_vv2, dat_vv, mode)
         
 
 
@@ -203,12 +194,12 @@ class GXVVU:
 
         .. versionadded:: 7.1
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The `GXVV <geosoft.gxapi.GXVV>` should be sorted.Search comparison is made on double
+        **Note:** The `GXVV <geosoft.gxapi.GXVV>` should be sorted.Search comparison is made on double
         comparison of the data.
         """
-        l_min.value, l_max.value = gxapi_cy.WrapVVU.binary_search(GXContext._get_tls_geo(), vv._wrapper, val, l_min.value, l_max.value)
+        l_min.value, l_max.value = gxapi_cy.WrapVVU._binary_search(GXContext._get_tls_geo(), vv, val, l_min.value, l_max.value)
         
 
 
@@ -224,8 +215,10 @@ class GXVVU:
         :type  lm:  float
 
         .. versionadded:: 5.1.8
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapVVU.box_cox(GXContext._get_tls_geo(), vv._wrapper, lm)
+        gxapi_cy.WrapVVU._box_cox(GXContext._get_tls_geo(), vv, lm)
         
 
 
@@ -248,14 +241,14 @@ class GXVVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        If the short and long wavelengths are <= 0, the input channel
+        **Note:** If the short and long wavelengths are <= 0, the input channel
         is simply copied to the output channel without filtering.
         
         The wavelengths are in fiducials.
         """
-        gxapi_cy.WrapVVU.bp_filt(GXContext._get_tls_geo(), vv_i._wrapper, vv_o._wrapper, pr_sw, pr_lw, flen)
+        gxapi_cy.WrapVVU._bp_filt(GXContext._get_tls_geo(), vv_i, vv_o, pr_sw, pr_lw, flen)
         
 
 
@@ -275,8 +268,10 @@ class GXVVU:
         :type  clip:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapVVU.clip(GXContext._get_tls_geo(), vv._wrapper, min, max, clip)
+        gxapi_cy.WrapVVU._clip(GXContext._get_tls_geo(), vv, min, max, clip)
         
 
 
@@ -295,9 +290,9 @@ class GXVVU:
 
         .. versionadded:: 5.1.6
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Flow:
+        **Note:** Flow:
         
         1. If auto-converting negatives, then all negative values
             are replaced by -0.5*value, and detection limit is ignored.
@@ -308,7 +303,7 @@ class GXVVU:
         
         This function is identical to `GXCHIMERA.clip_to_detect_limit <geosoft.gxapi.GXCHIMERA.clip_to_detect_limit>`.
         """
-        gxapi_cy.WrapVVU.clip_to_detect_limit(GXContext._get_tls_geo(), vv._wrapper, det_limit, conv)
+        gxapi_cy.WrapVVU._clip_to_detect_limit(GXContext._get_tls_geo(), vv, det_limit, conv)
         
 
 
@@ -324,12 +319,12 @@ class GXVVU:
 
         .. versionadded:: 6.1
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        For a decimation factor N, will remove all values except
+        **Note:** For a decimation factor N, will remove all values except
         those with indices equal to MN, where M is an integer.
         """
-        gxapi_cy.WrapVVU.decimate(GXContext._get_tls_geo(), vv._wrapper, decimate)
+        gxapi_cy.WrapVVU._decimate(GXContext._get_tls_geo(), vv, decimate)
         
 
 
@@ -357,8 +352,10 @@ class GXVVU:
         :type  line:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapVVU.deviation(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_d._wrapper, x1, y1, x2, y2, line)
+        gxapi_cy.WrapVVU._deviation(GXContext._get_tls_geo(), vv_x, vv_y, vv_d, x1, y1, x2, y2, line)
         
 
 
@@ -384,8 +381,10 @@ class GXVVU:
         :type  y_fid_incr:   float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapVVU.distance(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_d._wrapper, x_fid_start, x_fid_incr, y_fid_start, y_fid_incr)
+        gxapi_cy.WrapVVU._distance(GXContext._get_tls_geo(), vv_x, vv_y, vv_d, x_fid_start, x_fid_incr, y_fid_start, y_fid_incr)
         
 
 
@@ -414,11 +413,11 @@ class GXVVU:
 
         .. versionadded:: 7.2
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The fist distace element is `rDUMMY <geosoft.gxapi.rDUMMY>`.
+        **Note:** The fist distace element is `rDUMMY <geosoft.gxapi.rDUMMY>`.
         """
-        gxapi_cy.WrapVVU.distance_non_cumulative(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_d._wrapper, x_fid_start, x_fid_incr, y_fid_start, y_fid_incr)
+        gxapi_cy.WrapVVU._distance_non_cumulative(GXContext._get_tls_geo(), vv_x, vv_y, vv_d, x_fid_start, x_fid_incr, y_fid_start, y_fid_incr)
         
 
 
@@ -441,16 +440,16 @@ class GXVVU:
 
         .. versionadded:: 8.0.1
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The output `GXVV <geosoft.gxapi.GXVV>` is the length of the shortest X,Y or Z input `GXVV <geosoft.gxapi.GXVV>`.
+        **Note:** The output `GXVV <geosoft.gxapi.GXVV>` is the length of the shortest X,Y or Z input `GXVV <geosoft.gxapi.GXVV>`.
         Any values with dummies are ignored - the distance at that
         point is equal to the distance at the previous valid point.
         The returned `GXVV <geosoft.gxapi.GXVV>` is the cumulative straight-line distance
         between the points. No re-sampling is performed.
         VVs of any type are supported.
         """
-        gxapi_cy.WrapVVU.distance_3d(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, start_distance, vv_d._wrapper)
+        gxapi_cy.WrapVVU._distance_3d(GXContext._get_tls_geo(), vv_x, vv_y, vv_z, start_distance, vv_d)
         
 
 
@@ -473,14 +472,14 @@ class GXVVU:
 
         .. versionadded:: 8.1
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Locate the starting points of line segements determined by an input gap distance.
+        **Note:** Locate the starting points of line segements determined by an input gap distance.
         The returned indices indicate where to break the line, given an input gap.
         The number of returned indices is one less than the number of line segments.
         (So if there are no gaps the returned `GXVV <geosoft.gxapi.GXVV>` has zero length).
         """
-        gxapi_cy.WrapVVU.find_gaps_3d(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, gap, vv_g._wrapper)
+        gxapi_cy.WrapVVU._find_gaps_3d(GXContext._get_tls_geo(), vv_x, vv_y, vv_z, gap, vv_g)
         
 
 
@@ -503,16 +502,16 @@ class GXVVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the Inside flag is TRUE, values within the specified
+        **Note:** If the Inside flag is TRUE, values within the specified
         range are set to dummy. If the inside flag is FALSE,
         values outside the range are set to dummy.  If the Inclusive
         flag is TRUE, then dMin and dMax are considered part of the
         range. If it is FALSE, then < or > are used, and dMin and
         dMax lie outside the range.
         """
-        gxapi_cy.WrapVVU.dummy_range(GXContext._get_tls_geo(), vv._wrapper, min, max, inside, incl)
+        gxapi_cy.WrapVVU._dummy_range(GXContext._get_tls_geo(), vv, min, max, inside, incl)
         
 
 
@@ -537,16 +536,16 @@ class GXVVU:
 
         .. versionadded:: 5.0.7
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the Inside flag is TRUE, values within the specified
+        **Note:** If the Inside flag is TRUE, values within the specified
         range are set to dummy. If the inside flag is FALSE,
         values outside the range are set to dummy.  If the Inclusive
         flag is TRUE, then dMin and dMax are considered part of the
         range. If it is FALSE, then < or > are used, and dMin and
         dMax lie outside the range.
         """
-        gxapi_cy.WrapVVU.dummy_range_ex(GXContext._get_tls_geo(), vv._wrapper, min, max, inside, include_min, include_max)
+        gxapi_cy.WrapVVU._dummy_range_ex(GXContext._get_tls_geo(), vv, min, max, inside, include_min, include_max)
         
 
 
@@ -562,12 +561,12 @@ class GXVVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Either the first, middle or last point will be left.
+        **Note:** Either the first, middle or last point will be left.
                           Use `interp <geosoft.gxapi.GXVVU.interp>` to interpolate after if desired.
         """
-        gxapi_cy.WrapVVU.dummy_repeat(GXContext._get_tls_geo(), vv._wrapper, mode)
+        gxapi_cy.WrapVVU._dummy_repeat(GXContext._get_tls_geo(), vv, mode)
         
 
 
@@ -588,9 +587,9 @@ class GXVVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Created for duplicate sample handling in `GXCHIMERA <geosoft.gxapi.GXCHIMERA>`. On input,
+        **Note:** Created for duplicate sample handling in `GXCHIMERA <geosoft.gxapi.GXCHIMERA>`. On input,
         a numeric `GXVV <geosoft.gxapi.GXVV>` containing data values, and a sample type `GXVV <geosoft.gxapi.GXVV>`.
         Sample pairs have types "1" and "2". This routine searches for
         types in order "1 2 1 2", and writes the mean values of pairs
@@ -599,7 +598,7 @@ class GXVVU:
         for samples out of order, for unmatched values, or when the
         sample type does not equal "1" or "2" are set to dummy.
         """
-        gxapi_cy.WrapVVU.dup_stats(GXContext._get_tls_geo(), data_vv._wrapper, sample_vv._wrapper, mean_vv._wrapper, diff_vv._wrapper)
+        gxapi_cy.WrapVVU._dup_stats(GXContext._get_tls_geo(), data_vv, sample_vv, mean_vv, diff_vv)
         
 
 
@@ -620,13 +619,13 @@ class GXVVU:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        `GXVV <geosoft.gxapi.GXVV>` is set to input length (except for -1)
+        **Note:** `GXVV <geosoft.gxapi.GXVV>` is set to input length (except for -1)
         See RAND for a short discription of the
         random number generator used.
         """
-        gxapi_cy.WrapVVU.exp_dist(GXContext._get_tls_geo(), vv._wrapper, seed, mean, length)
+        gxapi_cy.WrapVVU._exp_dist(GXContext._get_tls_geo(), vv, seed, mean, length)
         
 
 
@@ -644,8 +643,10 @@ class GXVVU:
         :type  flt:   int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapVVU.filter(GXContext._get_tls_geo(), vv_i._wrapper, vv_o._wrapper, flt)
+        gxapi_cy.WrapVVU._filter(GXContext._get_tls_geo(), vv_i, vv_o, flt)
         
 
 
@@ -670,9 +671,9 @@ class GXVVU:
 
         .. versionadded:: 7.3
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        This is a much more efficient way of determining if items in
+        **Note:** This is a much more efficient way of determining if items in
         one `GXVV <geosoft.gxapi.GXVV>` are found in a second, than by searching
         repeatedly in a loop.
         The returned `GS_LONG <geosoft.gxapi.GS_LONG>` `GXVV <geosoft.gxapi.GXVV>` contains the same number of items as
@@ -685,7 +686,7 @@ class GXVVU:
         will do so internally. Since the input VVs may already be sorted,
         the method will run faster if this stage can be skipped.
         """
-        gxapi_cy.WrapVVU.find_string_items(GXContext._get_tls_geo(), vv_source._wrapper, vv_search._wrapper, pis_source_sorted, pis_search_sorted, pis_case_tolerant, vv_i._wrapper)
+        gxapi_cy.WrapVVU._find_string_items(GXContext._get_tls_geo(), vv_source, vv_search, pis_source_sorted, pis_search_sorted, pis_case_tolerant, vv_i)
         
 
 
@@ -705,8 +706,10 @@ class GXVVU:
         :type  vv_o:    GXVV
 
         .. versionadded:: 6.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapVVU.fractal_filter(GXContext._get_tls_geo(), vv_i._wrapper, order, number, vv_o._wrapper)
+        gxapi_cy.WrapVVU._fractal_filter(GXContext._get_tls_geo(), vv_i, order, number, vv_o)
         
 
 
@@ -730,13 +733,13 @@ class GXVVU:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Input X and Y location VVs, and a location.
+        **Note:** Input X and Y location VVs, and a location.
         Returns the index of the point in the `GXVV <geosoft.gxapi.GXVV>` closest to the
         input point.
         """
-        ret_val = gxapi_cy.WrapVVU.close_xy(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, x, y)
+        ret_val = gxapi_cy.WrapVVU._close_xy(GXContext._get_tls_geo(), vv_x, vv_y, x, y)
         return ret_val
 
 
@@ -762,16 +765,16 @@ class GXVVU:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Input X and Y location VVs, and a location.
+        **Note:** Input X and Y location VVs, and a location.
         Returns the index of the point in the `GXVV <geosoft.gxapi.GXVV>` closest to the
         input point.
         This skips points where the mask value is dummy.
         If no valid points are in the VVs, or all the mask `GXVV <geosoft.gxapi.GXVV>` values
         are dummy, the returned index is -1.
         """
-        ret_val = gxapi_cy.WrapVVU.close_xym(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_m._wrapper, x, y)
+        ret_val = gxapi_cy.WrapVVU._close_xym(GXContext._get_tls_geo(), vv_x, vv_y, vv_m, x, y)
         return ret_val
 
 
@@ -799,13 +802,13 @@ class GXVVU:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Input X, Y and Z location VVs, and a location.
+        **Note:** Input X, Y and Z location VVs, and a location.
         Returns the index of the point in the `GXVV <geosoft.gxapi.GXVV>` closest to the
         input point.
         """
-        ret_val = gxapi_cy.WrapVVU.close_xyz(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, x, y, z)
+        ret_val = gxapi_cy.WrapVVU._close_xyz(GXContext._get_tls_geo(), vv_x, vv_y, vv_z, x, y, z)
         return ret_val
 
 
@@ -835,16 +838,16 @@ class GXVVU:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Input X, Y and Z location VVs, and a location.
+        **Note:** Input X, Y and Z location VVs, and a location.
         Returns the index of the point in the `GXVV <geosoft.gxapi.GXVV>` closest to the
         input point.
         This skips points where the mask value is dummy.
         If no valid points are in the VVs, or all the mask `GXVV <geosoft.gxapi.GXVV>` values
         are dummy, the returned index is -1.
         """
-        ret_val = gxapi_cy.WrapVVU.close_xyzm(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_m._wrapper, x, y, z)
+        ret_val = gxapi_cy.WrapVVU._close_xyzm(GXContext._get_tls_geo(), vv_x, vv_y, vv_z, vv_m, x, y, z)
         return ret_val
 
 
@@ -862,12 +865,12 @@ class GXVVU:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The `GXVV <geosoft.gxapi.GXVV>` length remains the same. Any point that is less than or equal to
+        **Note:** The `GXVV <geosoft.gxapi.GXVV>` length remains the same. Any point that is less than or equal to
         the previous (valid) point in the `GXVV <geosoft.gxapi.GXVV>` is dummied.
         """
-        ret_val = gxapi_cy.WrapVVU.dummy_back_tracks(GXContext._get_tls_geo(), vv._wrapper)
+        ret_val = gxapi_cy.WrapVVU._dummy_back_tracks(GXContext._get_tls_geo(), vv)
         return ret_val
 
 
@@ -894,13 +897,13 @@ class GXVVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Start and end of range are always defined lowest
+        **Note:** Start and end of range are always defined lowest
         to largest even if decreasing search order.  To search
         entire `GXVV <geosoft.gxapi.GXVV>` range, specify 0,-1.
         """
-        ret_val = gxapi_cy.WrapVVU.find_dummy(GXContext._get_tls_geo(), vv._wrapper, dir, type, start, end)
+        ret_val = gxapi_cy.WrapVVU._find_dummy(GXContext._get_tls_geo(), vv, dir, type, start, end)
         return ret_val
 
 
@@ -919,9 +922,9 @@ class GXVVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Edge behaviour
+        **Note:** Edge behaviour
              Dummies at the ends are treated as follows
              for various combinations of the inside and outside interpolation
              choices:
@@ -943,7 +946,7 @@ class GXVVU:
         In all other cases and combinations of the two interpolation
         choices, the dummies are left "as is".
         """
-        gxapi_cy.WrapVVU.interp(GXContext._get_tls_geo(), vv._wrapper, input, output)
+        gxapi_cy.WrapVVU._interp(GXContext._get_tls_geo(), vv, input, output)
         
 
 
@@ -969,11 +972,11 @@ class GXVVU:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The X & Y VVs are returned as the calculated fill in line segments.
+        **Note:** The X & Y VVs are returned as the calculated fill in line segments.
         """
-        ret_val = gxapi_cy.WrapVVU.qc_fill_gaps(GXContext._get_tls_geo(), vvx._wrapper, vvy._wrapper, vvf._wrapper, vvd._wrapper, dist)
+        ret_val = gxapi_cy.WrapVVU._qc_fill_gaps(GXContext._get_tls_geo(), vvx, vvy, vvf, vvd, dist)
         return ret_val
 
 
@@ -1001,9 +1004,9 @@ class GXVVU:
 
         .. versionadded:: 5.0.8
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Search comparison is made on string comparison
+        **Note:** Search comparison is made on string comparison
         of the data. Returns index of first item matching
         the input string.
         If start index is -1 or dummy, then full `GXVV <geosoft.gxapi.GXVV>` is searched.
@@ -1016,7 +1019,7 @@ class GXVVU:
 
             sSearchReplace_VV
         """
-        ret_val = gxapi_cy.WrapVVU.search_text(GXContext._get_tls_geo(), vv._wrapper, text.encode(), case, match, start, dir)
+        ret_val = gxapi_cy.WrapVVU._search_text(GXContext._get_tls_geo(), vv, text.encode(), case, match, start, dir)
         return ret_val
 
 
@@ -1033,13 +1036,13 @@ class GXVVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        `GXVV <geosoft.gxapi.GXVV>` to mask will be resampled to reference `GXVV <geosoft.gxapi.GXVV>` if required.
+        **Note:** `GXVV <geosoft.gxapi.GXVV>` to mask will be resampled to reference `GXVV <geosoft.gxapi.GXVV>` if required.
         The returned length of the `GXVV <geosoft.gxapi.GXVV>` to mask will be the shorter
         of the reference `GXVV <geosoft.gxapi.GXVV>` or the mask `GXVV <geosoft.gxapi.GXVV>`.
         """
-        gxapi_cy.WrapVVU.mask(GXContext._get_tls_geo(), vv_d._wrapper, vv_m._wrapper)
+        gxapi_cy.WrapVVU._mask(GXContext._get_tls_geo(), vv_d, vv_m)
         
 
 
@@ -1058,11 +1061,11 @@ class GXVVU:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        If both values are non-dummies, then result is 1, else dummy.
+        **Note:** If both values are non-dummies, then result is 1, else dummy.
         """
-        gxapi_cy.WrapVVU.mask_and(GXContext._get_tls_geo(), vv_a._wrapper, vv_b._wrapper, vv_c._wrapper)
+        gxapi_cy.WrapVVU._mask_and(GXContext._get_tls_geo(), vv_a, vv_b, vv_c)
         
 
 
@@ -1081,11 +1084,11 @@ class GXVVU:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        If either values is non-dummy, then result is 1, else dummy.
+        **Note:** If either values is non-dummy, then result is 1, else dummy.
         """
-        gxapi_cy.WrapVVU.mask_or(GXContext._get_tls_geo(), vv_a._wrapper, vv_b._wrapper, vv_c._wrapper)
+        gxapi_cy.WrapVVU._mask_or(GXContext._get_tls_geo(), vv_a, vv_b, vv_c)
         
 
 
@@ -1105,8 +1108,10 @@ class GXVVU:
         :type  pr_ftol:  float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapVVU.nl_filt(GXContext._get_tls_geo(), vv_i._wrapper, vv_o._wrapper, fwid, pr_ftol)
+        gxapi_cy.WrapVVU._nl_filt(GXContext._get_tls_geo(), vv_i, vv_o, fwid, pr_ftol)
         
 
 
@@ -1127,16 +1132,16 @@ class GXVVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        This function checks vertical deviation of data in input `GXVV <geosoft.gxapi.GXVV>`
+        **Note:** This function checks vertical deviation of data in input `GXVV <geosoft.gxapi.GXVV>`
         against a moving straight line. The straight line at any time is
         defined by two extreme points of a data segment.  Output `GXVV <geosoft.gxapi.GXVV>` will
         be 0 if data point in input `GXVV <geosoft.gxapi.GXVV>` falls within the deviation,
         otherwise, it will be 1.
         Output `GXVV <geosoft.gxapi.GXVV>` will be 0 if the straight line is vertical.
         """
-        gxapi_cy.WrapVVU.noise_check(GXContext._get_tls_geo(), vv_i._wrapper, vv_f._wrapper, all_tol, num)
+        gxapi_cy.WrapVVU._noise_check(GXContext._get_tls_geo(), vv_i, vv_f, all_tol, num)
         
 
 
@@ -1159,9 +1164,9 @@ class GXVVU:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        This function checks vertical deviation of data in an input `GXVV <geosoft.gxapi.GXVV>`
+        **Note:** This function checks vertical deviation of data in an input `GXVV <geosoft.gxapi.GXVV>`
         against a moving straight line, where the X-axis value is
         taken to be the data index, and the Y-axis value is the
         input data `GXVV <geosoft.gxapi.GXVV>` value. The straight line is drawn between data points
@@ -1174,7 +1179,7 @@ class GXVVU:
         The output maximum deviation `GXVV <geosoft.gxapi.GXVV>` contains the maximum deviation at each point
         for all the moving line segments that it is a part of.
         """
-        gxapi_cy.WrapVVU.noise_check2(GXContext._get_tls_geo(), vv_i._wrapper, vv_f._wrapper, vv_d._wrapper, all_tol, num)
+        gxapi_cy.WrapVVU._noise_check2(GXContext._get_tls_geo(), vv_i, vv_f, vv_d, all_tol, num)
         
 
 
@@ -1197,13 +1202,13 @@ class GXVVU:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        `GXVV <geosoft.gxapi.GXVV>` is set to input length (except for -1)
+        **Note:** `GXVV <geosoft.gxapi.GXVV>` is set to input length (except for -1)
         See RAND for a short discription of the
         random number generator used.
         """
-        gxapi_cy.WrapVVU.normal_dist(GXContext._get_tls_geo(), vv._wrapper, seed, mean, var, length)
+        gxapi_cy.WrapVVU._normal_dist(GXContext._get_tls_geo(), vv, seed, mean, var, length)
         
 
 
@@ -1228,9 +1233,9 @@ class GXVVU:
 
         .. versionadded:: 5.0.7
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Often on maps plotted symbols and text overlap each other.
+        **Note:** Often on maps plotted symbols and text overlap each other.
         This routine accepts of `GXVV <geosoft.gxapi.GXVV>` of locations and returns a new
         set of locations offset from the originals, and guaranteed
         not to overlap, given the size of the original symbols.
@@ -1245,7 +1250,7 @@ class GXVVU:
         pushed to the outside edge and your plot will look like a
         hedgehog (it also takes a lot longer!).
         """
-        gxapi_cy.WrapVVU.offset_circles(GXContext._get_tls_geo(), vv_xi._wrapper, vv_yi._wrapper, offset, radius, vv_xo._wrapper, vv_yo._wrapper)
+        gxapi_cy.WrapVVU._offset_circles(GXContext._get_tls_geo(), vv_xi, vv_yi, offset, radius, vv_xo, vv_yo)
         
 
 
@@ -1270,9 +1275,9 @@ class GXVVU:
 
         .. versionadded:: 5.0.8
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        In many applications, measurements are taken with an instrument which
+        **Note:** In many applications, measurements are taken with an instrument which
         is towed behind, or pushed ahead of where the locations are recorded.
         Use this function to estimate the actual location of the instrument.
         The method determines the heading along the line, using a "thinned"
@@ -1298,7 +1303,7 @@ class GXVVU:
             5. For each input point, calculate the bearing using the nearest points
                on the smoothed curve
         """
-        gxapi_cy.WrapVVU.offset_correct(GXContext._get_tls_geo(), vv_xi._wrapper, vv_yi._wrapper, dist, heading, v_vxo._wrapper, v_vyo._wrapper)
+        gxapi_cy.WrapVVU._offset_correct(GXContext._get_tls_geo(), vv_xi, vv_yi, dist, heading, v_vxo, v_vyo)
         
 
 
@@ -1322,8 +1327,10 @@ class GXVVU:
         :type  vv_yo:    GXVV
 
         .. versionadded:: 5.1.3
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapVVU.offset_correct2(GXContext._get_tls_geo(), vv_xi._wrapper, vv_yi._wrapper, dist, azimuth, vv_xo._wrapper, vv_yo._wrapper)
+        gxapi_cy.WrapVVU._offset_correct2(GXContext._get_tls_geo(), vv_xi, vv_yi, dist, azimuth, vv_xo, vv_yo)
         
 
 
@@ -1350,11 +1357,11 @@ class GXVVU:
 
         .. versionadded:: 5.1.4
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        See the algorithm note #2 above for the default smoothing interval.
+        **Note:** See the algorithm note #2 above for the default smoothing interval.
         """
-        gxapi_cy.WrapVVU.offset_correct3(GXContext._get_tls_geo(), vv_xi._wrapper, vv_yi._wrapper, dist, azimuth, interval, vv_xo._wrapper, vv_yo._wrapper)
+        gxapi_cy.WrapVVU._offset_correct3(GXContext._get_tls_geo(), vv_xi, vv_yi, dist, azimuth, interval, vv_xo, vv_yo)
         
 
 
@@ -1387,9 +1394,9 @@ class GXVVU:
 
         .. versionadded:: 9.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        In many applications, measurements are taken with an instrument which
+        **Note:** In many applications, measurements are taken with an instrument which
         is towed behind, or pushed ahead of where the locations are recorded.
         Use this function to estimate the actual location of the instrument.
         The method determines the heading along the line, using a "thinned"
@@ -1415,7 +1422,7 @@ class GXVVU:
             5. For each input point, calculate the bearing using the nearest points
                on the smoothed curve
         """
-        gxapi_cy.WrapVVU.offset_correct_xyz(GXContext._get_tls_geo(), vv_xi._wrapper, vv_yi._wrapper, vv_zi._wrapper, x_off, y_off, z_off, interval, v_vxo._wrapper, v_vyo._wrapper, v_vzo._wrapper)
+        gxapi_cy.WrapVVU._offset_correct_xyz(GXContext._get_tls_geo(), vv_xi, vv_yi, vv_zi, x_off, y_off, z_off, interval, v_vxo, v_vyo, v_vzo)
         
 
 
@@ -1442,9 +1449,9 @@ class GXVVU:
 
         .. versionadded:: 5.0.7
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Often on maps plotted symbols and text overlap each other.
+        **Note:** Often on maps plotted symbols and text overlap each other.
         This routine accepts of `GXVV <geosoft.gxapi.GXVV>` of locations and returns a new
         set of locations offset from the originals, and guaranteed
         not to overlap, given the size of the original symbols.
@@ -1461,7 +1468,7 @@ class GXVVU:
         pushed to the outside edge and your plot will look like a
         hedgehog (it also takes a lot longer!).
         """
-        gxapi_cy.WrapVVU.offset_rectangles(GXContext._get_tls_geo(), vv_xi._wrapper, vv_yi._wrapper, offset, size_x, size_y, vv_xo._wrapper, vv_yo._wrapper)
+        gxapi_cy.WrapVVU._offset_rectangles(GXContext._get_tls_geo(), vv_xi, vv_yi, offset, size_x, size_y, vv_xo, vv_yo)
         
 
 
@@ -1482,9 +1489,9 @@ class GXVVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Peaks are the maximum point within a sequence of
+        **Note:** Peaks are the maximum point within a sequence of
         positive values in the input `GXVV <geosoft.gxapi.GXVV>`.  The width is the
         number of points in the positive sequence.
         
@@ -1495,7 +1502,7 @@ class GXVVU:
         Use `filter <geosoft.gxapi.GXVVU.filter>` to apply a Laplace filter
         "-0.5,1.0,-0.5" to make curvature data.
         """
-        gxapi_cy.WrapVVU.pick_peak(GXContext._get_tls_geo(), vv_i._wrapper, vv_o._wrapper, pr_tol, width)
+        gxapi_cy.WrapVVU._pick_peak(GXContext._get_tls_geo(), vv_i, vv_o, pr_tol, width)
         
 
 
@@ -1516,9 +1523,9 @@ class GXVVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Peaks are the maximum point within a sequence of
+        **Note:** Peaks are the maximum point within a sequence of
         values in the input `GXVV <geosoft.gxapi.GXVV>`. Maximum points must be above
         the base level and have a local amplitude greater
         than the minimum amplitude specified.
@@ -1526,7 +1533,7 @@ class GXVVU:
         A `GXVV <geosoft.gxapi.GXVV>` may have to be pre-filtered before finding
         the peak values.
         """
-        gxapi_cy.WrapVVU.pick_peak2(GXContext._get_tls_geo(), vv_i._wrapper, vv_o._wrapper, pr_base_lvl, pr_ampl)
+        gxapi_cy.WrapVVU._pick_peak2(GXContext._get_tls_geo(), vv_i, vv_o, pr_base_lvl, pr_ampl)
         
 
 
@@ -1557,9 +1564,9 @@ class GXVVU:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Uses Method 2 above, but also returns the anomaly width (defined
+        **Note:** Uses Method 2 above, but also returns the anomaly width (defined
         as the distance between the surrounding troughs), and the
         width at the half-amplitude. The half-amplitude width is
         calculated in two parts, individually for each side based on
@@ -1569,7 +1576,7 @@ class GXVVU:
         The returned VVs are packed; no dummies. Instead the
         indicies of the peak locations are returned.
         """
-        gxapi_cy.WrapVVU.pick_peak3(GXContext._get_tls_geo(), vv_i._wrapper, vv_x._wrapper, vv_y._wrapper, pr_base_lvl, pr_ampl, v_vind._wrapper, v_vamp._wrapper, v_vwid._wrapper, v_vhawid._wrapper)
+        gxapi_cy.WrapVVU._pick_peak3(GXContext._get_tls_geo(), vv_i, vv_x, vv_y, pr_base_lvl, pr_ampl, v_vind, v_vamp, v_vwid, v_vhawid)
         
 
 
@@ -1588,9 +1595,9 @@ class GXVVU:
 
         .. versionadded:: 5.0.6
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The output `GXVV <geosoft.gxapi.GXVV>` length must be set as desired before calling.
+        **Note:** The output `GXVV <geosoft.gxapi.GXVV>` length must be set as desired before calling.
         
         The X scale is unitless (1 per element), i.e. 0,1,2,3,...
 
@@ -1598,7 +1605,7 @@ class GXVVU:
 
             `trend <geosoft.gxapi.GXVVU.trend>`, `trend2 <geosoft.gxapi.GXVVU.trend2>`, `poly_fill2 <geosoft.gxapi.GXVVU.poly_fill2>`
         """
-        gxapi_cy.WrapVVU.poly_fill(GXContext._get_tls_geo(), vv_d._wrapper, order, vv_c._wrapper)
+        gxapi_cy.WrapVVU._poly_fill(GXContext._get_tls_geo(), vv_d, order, vv_c)
         
 
 
@@ -1619,16 +1626,16 @@ class GXVVU:
 
         .. versionadded:: 5.0.6
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The output `GXVV <geosoft.gxapi.GXVV>` length must be set as desired before calling.
+        **Note:** The output `GXVV <geosoft.gxapi.GXVV>` length must be set as desired before calling.
         The X scale is defined by a X `GXVV <geosoft.gxapi.GXVV>` (see Trend_VV for unitless X).
 
         .. seealso::
 
             `trend <geosoft.gxapi.GXVVU.trend>`, `trend2 <geosoft.gxapi.GXVVU.trend2>`, `poly_fill <geosoft.gxapi.GXVVU.poly_fill>`
         """
-        gxapi_cy.WrapVVU.poly_fill2(GXContext._get_tls_geo(), vv_x._wrapper, vv_d._wrapper, order, vv_c._wrapper)
+        gxapi_cy.WrapVVU._poly_fill2(GXContext._get_tls_geo(), vv_x, vv_d, order, vv_c)
         
 
 
@@ -1651,11 +1658,11 @@ class GXVVU:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The VVs have to be the same length
+        **Note:** The VVs have to be the same length
         """
-        gxapi_cy.WrapVVU.polygon_mask(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_m._wrapper, pply._wrapper, mask)
+        gxapi_cy.WrapVVU._polygon_mask(GXContext._get_tls_geo(), vv_x, vv_y, vv_m, pply, mask)
         
 
 
@@ -1674,13 +1681,13 @@ class GXVVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Pruning will shorten the `GXVV <geosoft.gxapi.GXVV>` by removing values
+        **Note:** Pruning will shorten the `GXVV <geosoft.gxapi.GXVV>` by removing values
         that are either dummy or non-dummy in the reference
         `GXVV <geosoft.gxapi.GXVV>`
         """
-        gxapi_cy.WrapVVU.prune(GXContext._get_tls_geo(), vv_p._wrapper, vv_r._wrapper, o)
+        gxapi_cy.WrapVVU._prune(GXContext._get_tls_geo(), vv_p, vv_r, o)
         
 
 
@@ -1709,9 +1716,9 @@ class GXVVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        This function tests data in input `GXVV <geosoft.gxapi.GXVV>` against
+        **Note:** This function tests data in input `GXVV <geosoft.gxapi.GXVV>` against
         two separate criteria. Each element of the output `GXVV <geosoft.gxapi.GXVV>`
         will have one of the following indicators:
         
@@ -1737,7 +1744,7 @@ class GXVVU:
          -3        The input data failed on above two tests
         =========  ==============================================================
         """
-        gxapi_cy.WrapVVU.qc(GXContext._get_tls_geo(), vv_i._wrapper, vv_d._wrapper, v_vf._wrapper, nominal, max_tol, all_tol, dist, qc)
+        gxapi_cy.WrapVVU._qc(GXContext._get_tls_geo(), vv_i, vv_d, v_vf, nominal, max_tol, all_tol, dist, qc)
         
 
 
@@ -1758,12 +1765,12 @@ class GXVVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        For each value in the VVs, finds sqrt(dV1*dV1 + dV2*dV2)
+        **Note:** For each value in the VVs, finds sqrt(dV1*dV1 + dV2*dV2)
         and returns the min and max values.
         """
-        min.value, max.value = gxapi_cy.WrapVVU.range_vector_mag(GXContext._get_tls_geo(), vv1._wrapper, vv2._wrapper, min.value, max.value)
+        min.value, max.value = gxapi_cy.WrapVVU._range_vector_mag(GXContext._get_tls_geo(), vv1, vv2, min.value, max.value)
         
 
 
@@ -1783,8 +1790,10 @@ class GXVVU:
         :type  int:   float_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        slp.value, int.value = gxapi_cy.WrapVVU.regress(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, slp.value, int.value)
+        slp.value, int.value = gxapi_cy.WrapVVU._regress(GXContext._get_tls_geo(), vv_x, vv_y, slp.value, int.value)
         
 
 
@@ -1805,9 +1814,9 @@ class GXVVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Created for duplicate sample handling in `GXCHIMERA <geosoft.gxapi.GXCHIMERA>`. On input,
+        **Note:** Created for duplicate sample handling in `GXCHIMERA <geosoft.gxapi.GXCHIMERA>`. On input,
         a numeric or text `GXVV <geosoft.gxapi.GXVV>` containing data values, and a sample type `GXVV <geosoft.gxapi.GXVV>`.
         Sample pairs have types "1" and "2". This routine searches for
         types in order "1 2 1 2", and calulates the unnormalized relative variance,
@@ -1818,7 +1827,7 @@ class GXVVU:
         Samples out of order, unmatched pairs, or when the
         sample type does not equal "1" or "2" are ignored.
         """
-        rel_var.value, num_dup.value = gxapi_cy.WrapVVU.rel_var_dup(GXContext._get_tls_geo(), data_vv._wrapper, sample_vv._wrapper, rel_var.value, num_dup.value)
+        rel_var.value, num_dup.value = gxapi_cy.WrapVVU._rel_var_dup(GXContext._get_tls_geo(), data_vv, sample_vv, rel_var.value, num_dup.value)
         
 
 
@@ -1831,8 +1840,10 @@ class GXVVU:
         :type  vv:  GXVV
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapVVU.remove_dummy(GXContext._get_tls_geo(), vv._wrapper)
+        gxapi_cy.WrapVVU._remove_dummy(GXContext._get_tls_geo(), vv)
         
 
 
@@ -1849,12 +1860,12 @@ class GXVVU:
 
         .. versionadded:: 5.0.8
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Removes all indices where either `GXVV <geosoft.gxapi.GXVV>` has a dummy, or is
+        **Note:** Removes all indices where either `GXVV <geosoft.gxapi.GXVV>` has a dummy, or is
         not defined (due to length differences).
         """
-        gxapi_cy.WrapVVU.remove_dummy2(GXContext._get_tls_geo(), vv1._wrapper, vv2._wrapper)
+        gxapi_cy.WrapVVU._remove_dummy2(GXContext._get_tls_geo(), vv1, vv2)
         
 
 
@@ -1873,12 +1884,12 @@ class GXVVU:
 
         .. versionadded:: 5.0.8
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Removes all indices where any `GXVV <geosoft.gxapi.GXVV>` has a dummy, or is
+        **Note:** Removes all indices where any `GXVV <geosoft.gxapi.GXVV>` has a dummy, or is
         not defined (due to length differences).
         """
-        gxapi_cy.WrapVVU.remove_dummy3(GXContext._get_tls_geo(), vv1._wrapper, vv2._wrapper, vv3._wrapper)
+        gxapi_cy.WrapVVU._remove_dummy3(GXContext._get_tls_geo(), vv1, vv2, vv3)
         
 
 
@@ -1899,12 +1910,12 @@ class GXVVU:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Removes all indices where any `GXVV <geosoft.gxapi.GXVV>` has a dummy, or is
+        **Note:** Removes all indices where any `GXVV <geosoft.gxapi.GXVV>` has a dummy, or is
         not defined (due to length differences).
         """
-        gxapi_cy.WrapVVU.remove_dummy4(GXContext._get_tls_geo(), vv1._wrapper, vv2._wrapper, vv3._wrapper, vv4._wrapper)
+        gxapi_cy.WrapVVU._remove_dummy4(GXContext._get_tls_geo(), vv1, vv2, vv3, vv4)
         
 
 
@@ -1923,9 +1934,9 @@ class GXVVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Created for duplicate sample handling in `GXCHIMERA <geosoft.gxapi.GXCHIMERA>`. On input,
+        **Note:** Created for duplicate sample handling in `GXCHIMERA <geosoft.gxapi.GXCHIMERA>`. On input,
         a numeric or text `GXVV <geosoft.gxapi.GXVV>` containing data values, and a sample type `GXVV <geosoft.gxapi.GXVV>`.
         Sample pairs have types "1" and "2". This routine searches for
         types in order "1 2 1 2", and replaces the pair of values in the
@@ -1933,7 +1944,7 @@ class GXVVU:
         Results for samples out of order, for unmatched pairs, or when the
         sample type does not equal "1" or "2" remain unchanged.
         """
-        gxapi_cy.WrapVVU.remove_dup(GXContext._get_tls_geo(), data_vv._wrapper, sample_vv._wrapper, output)
+        gxapi_cy.WrapVVU._remove_dup(GXContext._get_tls_geo(), data_vv, sample_vv, output)
         
 
 
@@ -1954,16 +1965,16 @@ class GXVVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Searches for duplicated (X, Y) locations and removes the
+        **Note:** Searches for duplicated (X, Y) locations and removes the
         duplicates (can be more than just a pair). The "Z" values,
         if defined, are treated according to the value of :ref:`VV_XYDUP`.
         The returned VVs are shortened to the new length, without
         duplicates.
         The Z `GXVV <geosoft.gxapi.GXVV>` can be set to NULL on input, in which case it is ignored.
         """
-        gxapi_cy.WrapVVU.remove_xy_dup(GXContext._get_tls_geo(), xvv._wrapper, yvv._wrapper, zvv._wrapper, xy_dup)
+        gxapi_cy.WrapVVU._remove_xy_dup(GXContext._get_tls_geo(), xvv, yvv, zvv, xy_dup)
         
 
 
@@ -1982,14 +1993,14 @@ class GXVVU:
 
         .. versionadded:: 7.2
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Searches for duplicated (X, Y) locations and removes the
+        **Note:** Searches for duplicated (X, Y) locations and removes the
         duplicates (can be more than just a pair). The Index `GXVV <geosoft.gxapi.GXVV>` is
         updated accordingly .i.e if  (X,Y) location of Index[0] == Index[1]
         Index[1] is removed.
         """
-        gxapi_cy.WrapVVU.remove_xy_dup_index(GXContext._get_tls_geo(), xvv._wrapper, yvv._wrapper, index_vv._wrapper)
+        gxapi_cy.WrapVVU._remove_xy_dup_index(GXContext._get_tls_geo(), xvv, yvv, index_vv)
         
 
 
@@ -2012,9 +2023,9 @@ class GXVVU:
 
         .. versionadded:: 5.1
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        If the input VVs are not REAL, copies are made to
+        **Note:** If the input VVs are not REAL, copies are made to
         temporary REALs for processing.
         
         If the window size is even, it is increased by 1 so that the
@@ -2051,7 +2062,7 @@ class GXVVU:
         number of occurrences, then the smallest of these values is
         returned.
         """
-        gxapi_cy.WrapVVU.rolling_stats(GXContext._get_tls_geo(), vv_i._wrapper, vv_o._wrapper, stat, window, shrink)
+        gxapi_cy.WrapVVU._rolling_stats(GXContext._get_tls_geo(), vv_i, vv_o, stat, window, shrink)
         
 
 
@@ -2069,16 +2080,16 @@ class GXVVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Search comparison is made on double comparison
+        **Note:** Search comparison is made on double comparison
         of the data.
 
         .. seealso::
 
             SearchReplaceText_VV
         """
-        gxapi_cy.WrapVVU.search_replace(GXContext._get_tls_geo(), vv._wrapper, val, rpl)
+        gxapi_cy.WrapVVU._search_replace(GXContext._get_tls_geo(), vv, val, rpl)
         
 
 
@@ -2102,16 +2113,16 @@ class GXVVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Search comparison is made on string comparison
+        **Note:** Search comparison is made on string comparison
         of the data.
 
         .. seealso::
 
             SearchReplace_VV
         """
-        gxapi_cy.WrapVVU.search_replace_text(GXContext._get_tls_geo(), vv._wrapper, format, decimal, val.encode(), rpl.encode(), mode)
+        gxapi_cy.WrapVVU._search_replace_text(GXContext._get_tls_geo(), vv, format, decimal, val.encode(), rpl.encode(), mode)
         
 
 
@@ -2137,16 +2148,16 @@ class GXVVU:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Search comparison is made on a string comparison
+        **Note:** Search comparison is made on a string comparison
         of the data.
 
         .. seealso::
 
             SearchReplaceText_VV
         """
-        items.value = gxapi_cy.WrapVVU.search_replace_text_ex(GXContext._get_tls_geo(), vv._wrapper, format, decimal, val.encode(), rpl.encode(), mode, items.value)
+        items.value = gxapi_cy.WrapVVU._search_replace_text_ex(GXContext._get_tls_geo(), vv, format, decimal, val.encode(), rpl.encode(), mode, items.value)
         
 
 
@@ -2176,8 +2187,10 @@ class GXVVU:
         :type  type:    int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapVVU.spline(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_o._wrapper, length, start, incr, gap, ext, type)
+        gxapi_cy.WrapVVU._spline(GXContext._get_tls_geo(), vv_x, vv_y, vv_o, length, start, incr, gap, ext, type)
         
 
 
@@ -2199,8 +2212,10 @@ class GXVVU:
         :type  type:   int
 
         .. versionadded:: 5.1.3
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapVVU.spline2(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_x2._wrapper, vv_o._wrapper, type)
+        gxapi_cy.WrapVVU._spline2(GXContext._get_tls_geo(), vv_x, vv_y, vv_x2, vv_o, type)
         
 
 
@@ -2220,11 +2235,11 @@ class GXVVU:
 
         .. versionadded:: 9.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Parses a series of space, tab or comma-delimited values to a `GXVV <geosoft.gxapi.GXVV>`.
+        **Note:** Parses a series of space, tab or comma-delimited values to a `GXVV <geosoft.gxapi.GXVV>`.
         """
-        ret_val = gxapi_cy.WrapVVU.tokenize_to_values(GXContext._get_tls_geo(), vv._wrapper, str_val.encode())
+        ret_val = gxapi_cy.WrapVVU._tokenize_to_values(GXContext._get_tls_geo(), vv, str_val.encode())
         return ret_val
 
 
@@ -2242,11 +2257,11 @@ class GXVVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        (new `GXVV <geosoft.gxapi.GXVV>`) = ((old `GXVV <geosoft.gxapi.GXVV>`) + base) * scale
+        **Note:** (new `GXVV <geosoft.gxapi.GXVV>`) = ((old `GXVV <geosoft.gxapi.GXVV>`) + base) * scale
         """
-        gxapi_cy.WrapVVU.translate(GXContext._get_tls_geo(), vv._wrapper, base, mult)
+        gxapi_cy.WrapVVU._translate(GXContext._get_tls_geo(), vv, base, mult)
         
 
 
@@ -2265,9 +2280,9 @@ class GXVVU:
 
         .. versionadded:: 5.0.6
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Returns coefficients c[0] .. c[n]
+        **Note:** Returns coefficients c[0] .. c[n]
         
            Y(x) = c[0] + c[1]x + c[2](x**2) + ... + c[n](x**n)
         
@@ -2280,7 +2295,7 @@ class GXVVU:
 
             `poly_fill <geosoft.gxapi.GXVVU.poly_fill>`, `trend2 <geosoft.gxapi.GXVVU.trend2>`, `poly_fill2 <geosoft.gxapi.GXVVU.poly_fill2>`
         """
-        gxapi_cy.WrapVVU.trend(GXContext._get_tls_geo(), vv_d._wrapper, order, vv_c._wrapper)
+        gxapi_cy.WrapVVU._trend(GXContext._get_tls_geo(), vv_d, order, vv_c)
         
 
 
@@ -2301,9 +2316,9 @@ class GXVVU:
 
         .. versionadded:: 5.0.6
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Returns coefficients c[0] .. c[n]
+        **Note:** Returns coefficients c[0] .. c[n]
         
            Y(x) = c[0] + c[1]x + c[2](x**2) + ... + c[n](x**n)
         
@@ -2316,7 +2331,7 @@ class GXVVU:
 
             `poly_fill <geosoft.gxapi.GXVVU.poly_fill>`, `trend2 <geosoft.gxapi.GXVVU.trend2>`, `poly_fill2 <geosoft.gxapi.GXVVU.poly_fill2>`
         """
-        gxapi_cy.WrapVVU.trend2(GXContext._get_tls_geo(), vv_x._wrapper, vv_d._wrapper, order, vv_c._wrapper)
+        gxapi_cy.WrapVVU._trend2(GXContext._get_tls_geo(), vv_x, vv_d, order, vv_c)
         
 
 
@@ -2339,13 +2354,13 @@ class GXVVU:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        `GXVV <geosoft.gxapi.GXVV>` is set to input length (except for -1)
+        **Note:** `GXVV <geosoft.gxapi.GXVV>` is set to input length (except for -1)
         See rand.gxh for a short discription of the
         random number generator used.
         """
-        gxapi_cy.WrapVVU.uniform_dist(GXContext._get_tls_geo(), vv._wrapper, seed, min, max, length)
+        gxapi_cy.WrapVVU._uniform_dist(GXContext._get_tls_geo(), vv, seed, min, max, length)
         
 
 

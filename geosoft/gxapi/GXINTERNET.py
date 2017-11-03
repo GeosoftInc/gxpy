@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXINTERNET:
+class GXINTERNET(gxapi_cy.WrapINTERNET):
     """
     GXINTERNET class.
 
@@ -22,37 +22,28 @@ class GXINTERNET:
     Supported by Oasis montaj ONLY.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapINTERNET(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXINTERNET`
+        A null (undefined) instance of `GXINTERNET <geosoft.gxapi.GXINTERNET>`
         
-        :returns: A null `GXINTERNET`
+        :returns: A null `GXINTERNET <geosoft.gxapi.GXINTERNET>`
+        :rtype:   GXINTERNET
         """
-        return cls()
+        return GXINTERNET()
 
     def is_null(self):
         """
-        Check if the instance of `GXINTERNET` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXINTERNET`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -76,16 +67,16 @@ class GXINTERNET:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The file must be stored on a server that supports
+        **Note:** The file must be stored on a server that supports
         the `GXHTTP <geosoft.gxapi.GXHTTP>` protocol and not require a password.
 
         .. seealso::
 
             iserver.gxh internet class.
         """
-        ret_val = gxapi_cy.WrapINTERNET.download_http(GXContext._get_tls_geo(), url.encode(), file.encode(), size)
+        ret_val = gxapi_cy.WrapINTERNET._download_http(GXContext._get_tls_geo(), url.encode(), file.encode(), size)
         return ret_val
 
 
@@ -114,12 +105,12 @@ class GXINTERNET:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Requires a MAPI complient mail system to be installed
+        **Note:** Requires a MAPI complient mail system to be installed
         on the client machine.
         """
-        gxapi_cy.WrapINTERNET.send_mail(GXContext._get_tls_geo(), recipient.encode(), p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6.encode(), p7.encode(), p8.encode())
+        gxapi_cy.WrapINTERNET._send_mail(GXContext._get_tls_geo(), recipient.encode(), p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6.encode(), p7.encode(), p8.encode())
         
 
 

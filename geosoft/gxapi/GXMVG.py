@@ -14,44 +14,35 @@ from .GXMVIEW import GXMVIEW
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXMVG:
+class GXMVG(gxapi_cy.WrapMVG):
     """
     GXMVG class.
 
     The `GXMVG <geosoft.gxapi.GXMVG>` class provides the ability to create view graphs.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapMVG(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXMVG`
+        A null (undefined) instance of `GXMVG <geosoft.gxapi.GXMVG>`
         
-        :returns: A null `GXMVG`
+        :returns: A null `GXMVG <geosoft.gxapi.GXMVG>`
+        :rtype:   GXMVG
         """
-        return cls()
+        return GXMVG()
 
     def is_null(self):
         """
-        Check if the instance of `GXMVG` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXMVG`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -77,14 +68,14 @@ class GXMVG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        When Log annotation is applied, nice tick intervals will be
+        **Note:** When Log annotation is applied, nice tick intervals will be
         calculated
         
         Obsolete
         """
-        self._wrapper.axis_x(d_y, d_lx, d_rx, d_maj_int, d_min_int, d_size)
+        self._axis_x(d_y, d_lx, d_rx, d_maj_int, d_min_int, d_size)
         
 
 
@@ -109,14 +100,14 @@ class GXMVG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        When Log annotation is applied, nice tick intervals will be
+        **Note:** When Log annotation is applied, nice tick intervals will be
         calculated
         
         Obsolete
         """
-        self._wrapper.axis_y(d_x, d_by, d_ty, d_maj_int, d_min_int, d_size)
+        self._axis_y(d_x, d_by, d_ty, d_maj_int, d_min_int, d_size)
         
 
 
@@ -152,11 +143,11 @@ class GXMVG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Obsolete
+        **Note:** Obsolete
         """
-        ret_val = gxapi_cy.WrapMVG.create(GXContext._get_tls_geo(), map._wrapper, name.encode(), xmin_m, ymin_m, xmax_m, ymax_m, xmin_u, ymin_u, xmax_u, ymax_u)
+        ret_val = gxapi_cy.WrapMVG._create(GXContext._get_tls_geo(), map, name.encode(), xmin_m, ymin_m, xmax_m, ymax_m, xmin_u, ymin_u, xmax_u, ymax_u)
         return GXMVG(ret_val)
 
 
@@ -174,11 +165,11 @@ class GXMVG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Obsolete
+        **Note:** Obsolete
         """
-        ret_val = self._wrapper.get_mview()
+        ret_val = self._get_mview()
         return GXMVIEW(ret_val)
 
 
@@ -205,9 +196,9 @@ class GXMVG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The grid will be drawn in the current window.
+        **Note:** The grid will be drawn in the current window.
         
         In the LOG and LOGLINEAR rescaling modes, grids will be
         drawn in decades and the X/Y grid increments will be
@@ -215,7 +206,7 @@ class GXMVG:
         
         Obsolete
         """
-        self._wrapper.grid(d1st_x, d1st_y, d_x, d_y, d_dx, d_dy, l_type)
+        self._grid(d1st_x, d1st_y, d_x, d_y, d_dx, d_dy, l_type)
         
 
 
@@ -242,9 +233,9 @@ class GXMVG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Label bounding will justify edge labels to be inside
+        **Note:** Label bounding will justify edge labels to be inside
         the bar limits.
         
         When Log annotation is applied, labels will be drawn in decades.
@@ -255,7 +246,7 @@ class GXMVG:
 
             sAxisX_MVG
         """
-        self._wrapper.label_x(y, lx, rx, maj_int, just, bound, orient)
+        self._label_x(y, lx, rx, maj_int, just, bound, orient)
         
 
 
@@ -282,9 +273,9 @@ class GXMVG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Label bounding will justify edge labels to be inside
+        **Note:** Label bounding will justify edge labels to be inside
         the bar limits.
         
         When Log annotation is applied, labels will be drawn in decades.
@@ -295,7 +286,7 @@ class GXMVG:
 
             sAxisY_MVG
         """
-        self._wrapper.label_y(x, by, ty, maj_int, just, bound, orient)
+        self._label_y(x, by, ty, maj_int, just, bound, orient)
         
 
 
@@ -318,9 +309,9 @@ class GXMVG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        If the `GXVV <geosoft.gxapi.GXVV>` contains dummies, the polylines
+        **Note:** If the `GXVV <geosoft.gxapi.GXVV>` contains dummies, the polylines
         will break at the dummies; the polygons
         will skip the dummies.
         
@@ -329,7 +320,7 @@ class GXMVG:
         
         Obsolete
         """
-        self._wrapper.poly_line_va(draw, wrap, vv_x._wrapper, va._wrapper, vv_array._wrapper)
+        self._poly_line_va(draw, wrap, vv_x, va, vv_array)
         
 
 
@@ -350,9 +341,9 @@ class GXMVG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        If the `GXVV <geosoft.gxapi.GXVV>` contains dummies, the polylines
+        **Note:** If the `GXVV <geosoft.gxapi.GXVV>` contains dummies, the polylines
         will break at the dummies; the polygons
         will skip the dummies.
         
@@ -361,7 +352,7 @@ class GXMVG:
         
         Obsolete
         """
-        self._wrapper.poly_line_vv(draw, wrap, vv_x._wrapper, vv_y._wrapper)
+        self._poly_line_vv(draw, wrap, vv_x, vv_y)
         
 
 
@@ -382,14 +373,14 @@ class GXMVG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        When RescaleX_MVG is used, only the scaling information
+        **Note:** When RescaleX_MVG is used, only the scaling information
         related to X axis will be considered
         
         Obsolete
         """
-        self._wrapper.rescale_x_range(scale, min, max, log_min)
+        self._rescale_x_range(scale, min, max, log_min)
         
 
 
@@ -410,14 +401,14 @@ class GXMVG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        When RescaleY_MVG is used, only the scaling information
+        **Note:** When RescaleY_MVG is used, only the scaling information
         related to Y axis will be considered
         
         Obsolete
         """
-        self._wrapper.rescale_y_range(scale, min, max, log_min)
+        self._rescale_y_range(scale, min, max, log_min)
         
 
 

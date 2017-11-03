@@ -13,44 +13,35 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXVOXD:
+class GXVOXD(gxapi_cy.WrapVOXD):
     """
     GXVOXD class.
 
     `GXVOX <geosoft.gxapi.GXVOX>` Display object.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapVOXD(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXVOXD`
+        A null (undefined) instance of `GXVOXD <geosoft.gxapi.GXVOXD>`
         
-        :returns: A null `GXVOXD`
+        :returns: A null `GXVOXD <geosoft.gxapi.GXVOXD>`
+        :rtype:   GXVOXD
         """
-        return cls()
+        return GXVOXD()
 
     def is_null(self):
         """
-        Check if the instance of `GXVOXD` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXVOXD`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -75,12 +66,12 @@ class GXVOXD:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Fails if the `GXVOX <geosoft.gxapi.GXVOX>` object is NOT thematic.
+        **Note:** Fails if the `GXVOX <geosoft.gxapi.GXVOX>` object is NOT thematic.
         (See the `create_thematic <geosoft.gxapi.GXVOXD.create_thematic>` function.)
         """
-        ret_val = gxapi_cy.WrapVOXD.create(GXContext._get_tls_geo(), vox._wrapper, table.encode(), zone, contour)
+        ret_val = gxapi_cy.WrapVOXD._create(GXContext._get_tls_geo(), vox, table.encode(), zone, contour)
         return GXVOXD(ret_val)
 
 
@@ -100,12 +91,12 @@ class GXVOXD:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Fails if the `GXVOX <geosoft.gxapi.GXVOX>` object is thematic.
+        **Note:** Fails if the `GXVOX <geosoft.gxapi.GXVOX>` object is thematic.
         (See the `create_thematic <geosoft.gxapi.GXVOXD.create_thematic>` function.)
         """
-        ret_val = gxapi_cy.WrapVOXD.create_itr(GXContext._get_tls_geo(), vox._wrapper, itr._wrapper)
+        ret_val = gxapi_cy.WrapVOXD._create_itr(GXContext._get_tls_geo(), vox, itr)
         return GXVOXD(ret_val)
 
 
@@ -123,9 +114,9 @@ class GXVOXD:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        A thematic voxel is one where the stored integer values
+        **Note:** A thematic voxel is one where the stored integer values
         represent indices into an internally stored `GXTPAT <geosoft.gxapi.GXTPAT>` object.
         Thematic voxels contain their own color definitions, and
         normal numerical operations, such as applying ITRs for display,
@@ -136,7 +127,7 @@ class GXVOXD:
         
         Fails if the `GXVOX <geosoft.gxapi.GXVOX>` object is NOT thematic.
         """
-        ret_val = gxapi_cy.WrapVOXD.create_thematic(GXContext._get_tls_geo(), vox._wrapper)
+        ret_val = gxapi_cy.WrapVOXD._create_thematic(GXContext._get_tls_geo(), vox)
         return GXVOXD(ret_val)
 
 
@@ -152,15 +143,15 @@ class GXVOXD:
 
         .. versionadded:: 9.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        A thematic voxel is one where the stored integer values
+        **Note:** A thematic voxel is one where the stored integer values
         represent indices into an internally stored `GXTPAT <geosoft.gxapi.GXTPAT>` object.
         Thematic voxels contain their own color definitions, and
         normal numerical operations, such as applying ITRs for display,
         are not valid.
         """
-        ret_val = self._wrapper.is_thematic()
+        ret_val = self._is_thematic()
         return ret_val
 
 
@@ -176,8 +167,10 @@ class GXVOXD:
         :type  vv:    GXVV
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.get_thematic_info(tpat._wrapper, vv._wrapper)
+        self._get_thematic_info(tpat, vv)
         
 
 
@@ -191,8 +184,10 @@ class GXVOXD:
         :type  vv:    GXVV
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_thematic_selection(vv._wrapper)
+        self._set_thematic_selection(vv)
         
 
 
@@ -222,8 +217,10 @@ class GXVOXD:
         :type  max_z:  float_ref
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        box.value, trans.value, min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._wrapper.get_draw_controls(box.value, trans.value, min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
+        box.value, trans.value, min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._get_draw_controls(box.value, trans.value, min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         
 
 
@@ -237,8 +234,10 @@ class GXVOXD:
         :type  name:  str_ref
 
         .. versionadded:: 8.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        name.value = self._wrapper.get_name(name.value.encode())
+        name.value = self._get_name(name.value.encode())
         
 
 
@@ -252,8 +251,10 @@ class GXVOXD:
         :type  itr:   GXITR
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.get_itr(itr._wrapper)
+        self._get_itr(itr)
         
 
 
@@ -269,8 +270,10 @@ class GXVOXD:
         :type  max:   float_ref
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        min.value, max.value = self._wrapper.get_shell_controls(min.value, max.value)
+        min.value, max.value = self._get_shell_controls(min.value, max.value)
         
 
 
@@ -298,8 +301,10 @@ class GXVOXD:
         :type  max_z:  float
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_draw_controls(box, trans, min_x, min_y, min_z, max_x, max_y, max_z)
+        self._set_draw_controls(box, trans, min_x, min_y, min_z, max_x, max_y, max_z)
         
 
 
@@ -313,8 +318,10 @@ class GXVOXD:
         :type  itr:   GXITR
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_itr(itr._wrapper)
+        self._set_itr(itr)
         
 
 
@@ -330,8 +337,10 @@ class GXVOXD:
         :type  max:   float
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_shell_controls(min, max)
+        self._set_shell_controls(min, max)
         
 
 

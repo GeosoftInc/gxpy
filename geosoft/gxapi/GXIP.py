@@ -14,7 +14,7 @@ from .GXPG import GXPG
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXIP:
+class GXIP(gxapi_cy.WrapIP):
     """
     GXIP class.
 
@@ -31,37 +31,28 @@ class GXIP:
     :ref:`IP_LINES`
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapIP(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXIP`
+        A null (undefined) instance of `GXIP <geosoft.gxapi.GXIP>`
         
-        :returns: A null `GXIP`
+        :returns: A null `GXIP <geosoft.gxapi.GXIP>`
+        :rtype:   GXIP
         """
-        return cls()
+        return GXIP()
 
     def is_null(self):
         """
-        Check if the instance of `GXIP` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXIP`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Plot Jobs
@@ -93,13 +84,13 @@ class GXIP:
 
         .. versionadded:: 7.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Uses `GXTIN <geosoft.gxapi.GXTIN>` gridding to sample the model.
+        **Note:** Uses `GXTIN <geosoft.gxapi.GXTIN>` gridding to sample the model.
         By setting the final value, a resistivity grid can be
         created from conductivity data.
         """
-        gxapi_cy.WrapIP.convert_ubcip_2d_to_grid(GXContext._get_tls_geo(), file.encode(), pg._wrapper, vv_x._wrapper, vv_z._wrapper, x, z, cx, cz, reciprocal)
+        gxapi_cy.WrapIP._convert_ubcip_2d_to_grid(GXContext._get_tls_geo(), file.encode(), pg, vv_x, vv_z, x, z, cx, cz, reciprocal)
         
 
 
@@ -115,8 +106,10 @@ class GXIP:
         :type  type:  int
 
         .. versionadded:: 6.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.create_default_job(ini.encode(), type)
+        self._create_default_job(ini.encode(), type)
         
 
 
@@ -143,13 +136,13 @@ class GXIP:
 
         .. versionadded:: 8.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Outputs a ``*.DAT`` file of the survey data for use in the
+        **Note:** Outputs a ``*.DAT`` file of the survey data for use in the
         UBC 2D inversion program IPINV2D.
         Include error channel output and version-specific formatting.
         """
-        self._wrapper.export_ubcip3(db._wrapper, line.encode(), chan.encode(), error_chan.encode(), obs.encode(), topo.encode(), version)
+        self._export_ubcip3(db, line.encode(), chan.encode(), error_chan.encode(), obs.encode(), topo.encode(), version)
         
 
 
@@ -186,13 +179,13 @@ class GXIP:
 
         .. versionadded:: 6.4
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        UBC Version 3 Control file.
+        **Note:** UBC Version 3 Control file.
         Outputs a control file for use in the
         UBC 2D `GXIP <geosoft.gxapi.GXIP>` inversion program IPINV2D.
         """
-        gxapi_cy.WrapIP.export_ubcip_control(GXContext._get_tls_geo(), control.encode(), n_iter, i_rest, chi_factor, obs.encode(), cond.encode(), mesh.encode(), topo.encode(), initial.encode(), ref_mod.encode(), alphas.encode(), wts.encode())
+        gxapi_cy.WrapIP._export_ubcip_control(GXContext._get_tls_geo(), control.encode(), n_iter, i_rest, chi_factor, obs.encode(), cond.encode(), mesh.encode(), topo.encode(), initial.encode(), ref_mod.encode(), alphas.encode(), wts.encode())
         
 
 
@@ -237,11 +230,11 @@ class GXIP:
 
         .. versionadded:: 8.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        UBC Version 5 Control file.
+        **Note:** UBC Version 5 Control file.
         """
-        gxapi_cy.WrapIP.export_ubcip_control_v5(GXContext._get_tls_geo(), control.encode(), n_iter, chi_factor, obs.encode(), topo.encode(), cond_selection, cond.encode(), mesh_selection, mesh.encode(), initial_selection, initial.encode(), reference_selection, ref_cond.encode(), alphas_selection, alphas.encode(), wts.encode())
+        gxapi_cy.WrapIP._export_ubcip_control_v5(GXContext._get_tls_geo(), control.encode(), n_iter, chi_factor, obs.encode(), topo.encode(), cond_selection, cond.encode(), mesh_selection, mesh.encode(), initial_selection, initial.encode(), reference_selection, ref_cond.encode(), alphas_selection, alphas.encode(), wts.encode())
         
 
 
@@ -270,14 +263,14 @@ class GXIP:
 
         .. versionadded:: 8.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Outputs a ``*.DAT`` file of the survey data for use in the
+        **Note:** Outputs a ``*.DAT`` file of the survey data for use in the
         UBC 2D inversion program DCINV2D.
         Voltage and current channels should be in units such that
         V/I gives volts/amp (or mV/mA).
         """
-        self._wrapper.export_ubc_res3(db._wrapper, line.encode(), voltage_chan.encode(), current_chan.encode(), error_chan.encode(), obs.encode(), topo.encode(), version)
+        self._export_ubc_res3(db, line.encode(), voltage_chan.encode(), current_chan.encode(), error_chan.encode(), obs.encode(), topo.encode(), version)
         
 
 
@@ -312,13 +305,13 @@ class GXIP:
 
         .. versionadded:: 6.4
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        UBC Version 3.
+        **Note:** UBC Version 3.
         Outputs a control file for use in the
         UBC 2D resistivity inversion program DCINV2D.
         """
-        gxapi_cy.WrapIP.export_ubc_res_control(GXContext._get_tls_geo(), control.encode(), n_iter, i_rest, chi_factor, obs.encode(), mesh.encode(), topo.encode(), initial.encode(), ref_cond, alphas.encode(), wts.encode())
+        gxapi_cy.WrapIP._export_ubc_res_control(GXContext._get_tls_geo(), control.encode(), n_iter, i_rest, chi_factor, obs.encode(), mesh.encode(), topo.encode(), initial.encode(), ref_cond, alphas.encode(), wts.encode())
         
 
 
@@ -359,13 +352,13 @@ class GXIP:
 
         .. versionadded:: 8.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        UBC Version 5.
+        **Note:** UBC Version 5.
         Outputs a control file for use in the
         UBC 2D resistivity inversion program DCINV2D.
         """
-        gxapi_cy.WrapIP.export_ubc_res_control_v5(GXContext._get_tls_geo(), control.encode(), n_iter, chi_factor, obs.encode(), topo.encode(), mesh_selection, mesh.encode(), initial_selection, initial.encode(), reference_selection, ref_cond.encode(), alphas_selection, alphas.encode(), wts.encode())
+        gxapi_cy.WrapIP._export_ubc_res_control_v5(GXContext._get_tls_geo(), control.encode(), n_iter, chi_factor, obs.encode(), topo.encode(), mesh_selection, mesh.encode(), initial_selection, initial.encode(), reference_selection, ref_cond.encode(), alphas_selection, alphas.encode(), wts.encode())
         
 
 
@@ -398,12 +391,12 @@ class GXIP:
 
         .. versionadded:: 9.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Outputs a ``*.DAT`` file of the survey data for use in the
+        **Note:** Outputs a ``*.DAT`` file of the survey data for use in the
         UBC `GXIP <geosoft.gxapi.GXIP>` 3D inversion programs.
         """
-        self._wrapper.export_data_to_ubc_3d(db._wrapper, line_lst._wrapper, locations_only, include_z, chan.encode(), error_chan.encode(), mask_chan.encode(), ip_type, comments.encode(), obs.encode())
+        self._export_data_to_ubc_3d(db, line_lst, locations_only, include_z, chan.encode(), error_chan.encode(), mask_chan.encode(), ip_type, comments.encode(), obs.encode())
         
 
 
@@ -423,13 +416,13 @@ class GXIP:
 
         .. versionadded:: 7.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Imports the MOD file values to a `GXPG <geosoft.gxapi.GXPG>` object.
+        **Note:** Imports the MOD file values to a `GXPG <geosoft.gxapi.GXPG>` object.
         The CON/CHG selection is necessary because the import sets
         padding values to dummies based on the type of file.
         """
-        ret_val = gxapi_cy.WrapIP.import_ubc2_dmod(GXContext._get_tls_geo(), file.encode(), type)
+        ret_val = gxapi_cy.WrapIP._import_ubc2_dmod(GXContext._get_tls_geo(), file.encode(), type)
         return GXPG(ret_val)
 
 
@@ -452,11 +445,11 @@ class GXIP:
 
         .. versionadded:: 7.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Imports the MSH file geometry.
+        **Note:** Imports the MSH file geometry.
         """
-        x.value, z.value = gxapi_cy.WrapIP.import_ubc2_dmsh(GXContext._get_tls_geo(), file.encode(), x.value, z.value, vv_x._wrapper, vv_z._wrapper)
+        x.value, z.value = gxapi_cy.WrapIP._import_ubc2_dmsh(GXContext._get_tls_geo(), file.encode(), x.value, z.value, vv_x, vv_z)
         
 
 
@@ -477,12 +470,12 @@ class GXIP:
 
         .. versionadded:: 7.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Imports the maximum elevation (top of mesh)
+        **Note:** Imports the maximum elevation (top of mesh)
         as well as the topo (X, Z) values.
         """
-        elev0.value = gxapi_cy.WrapIP.import_ubc_2d_topo(GXContext._get_tls_geo(), file.encode(), elev0.value, vv_x._wrapper, vv_z._wrapper)
+        elev0.value = gxapi_cy.WrapIP._import_ubc_2d_topo(GXContext._get_tls_geo(), file.encode(), elev0.value, vv_x, vv_z)
         
 
 
@@ -498,8 +491,10 @@ class GXIP:
         :type  type:  int
 
         .. versionadded:: 6.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.open_job(job.encode(), type)
+        self._open_job(job.encode(), type)
         
 
 
@@ -515,8 +510,10 @@ class GXIP:
         :type  type:  int
 
         .. versionadded:: 6.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.save_job(job.encode(), type)
+        self._save_job(job.encode(), type)
         
 
 
@@ -546,14 +543,14 @@ class GXIP:
 
         .. versionadded:: 7.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The cells are removed from the left, right and bottom.
+        **Note:** The cells are removed from the left, right and bottom.
         The returned `GXPG <geosoft.gxapi.GXPG>` is the trimmed version.
         The input cell size VVs are also trimmed to match,
         and the origin is updated (still upper left corner).
         """
-        ret_val, x.value = gxapi_cy.WrapIP.trim_ubc_2d_model(GXContext._get_tls_geo(), pg._wrapper, trim_xl, trim_xr, trim_z, vv_x._wrapper, vv_z._wrapper, x.value)
+        ret_val, x.value = gxapi_cy.WrapIP._trim_ubc_2d_model(GXContext._get_tls_geo(), pg, trim_xl, trim_xr, trim_z, vv_x, vv_z, x.value)
         return GXPG(ret_val)
 
 
@@ -568,11 +565,11 @@ class GXIP:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Writes values for ALL lines.
+        **Note:** Writes values for ALL lines.
         """
-        self._wrapper.write_distant_electrodes(db._wrapper)
+        self._write_distant_electrodes(db)
         
 
 
@@ -589,11 +586,11 @@ class GXIP:
 
         .. versionadded:: 6.4.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Writes values for lines in the input `GXLST <geosoft.gxapi.GXLST>`.
+        **Note:** Writes values for lines in the input `GXLST <geosoft.gxapi.GXLST>`.
         """
-        self._wrapper.write_distant_electrodes_lst(db._wrapper, lst._wrapper)
+        self._write_distant_electrodes_lst(db, lst)
         
 
 
@@ -618,16 +615,16 @@ class GXIP:
 
         .. versionadded:: 7.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Averages all values with shared station and N values,
+        **Note:** Averages all values with shared station and N values,
         as long as the mask channel is defined at that FID.
         Previous averaged values (IP_DATA_AVG) are overwritten according to the
         overwrite flag.
         If the QC channel is selected, only those rows of data where the QC channel
         value is "1" will be included in the average.
         """
-        self._wrapper.average_duplicates_qc(db._wrapper, chan.encode(), qc_chan.encode(), out)
+        self._average_duplicates_qc(db, chan.encode(), qc_chan.encode(), out)
         
 
 
@@ -642,8 +639,10 @@ class GXIP:
         :rtype:      GXIP
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapIP.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapIP._create(GXContext._get_tls_geo())
         return GXIP(ret_val)
 
 
@@ -680,11 +679,11 @@ class GXIP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Exports a line to an ".I2X" file.
+        **Note:** Exports a line to an ".I2X" file.
         """
-        self._wrapper.export_i2_x(db._wrapper, file.encode(), line.encode(), res_data.encode(), ip_data.encode(), res_model.encode(), ip_model.encode(), res_synth.encode(), ip_synth.encode(), res_poly.encode(), ip_poly.encode())
+        self._export_i2_x(db, file.encode(), line.encode(), res_data.encode(), ip_data.encode(), res_model.encode(), ip_model.encode(), res_synth.encode(), ip_synth.encode(), res_poly.encode(), ip_poly.encode())
         
 
 
@@ -702,8 +701,10 @@ class GXIP:
         :type  title:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.export_ipdata(db._wrapper, chan.encode(), title.encode())
+        self._export_ipdata(db, chan.encode(), title.encode())
         
 
 
@@ -723,8 +724,10 @@ class GXIP:
         :type  dir:    str
 
         .. versionadded:: 6.4
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.export_ipdata_dir(db._wrapper, chan.encode(), title.encode(), dir.encode())
+        self._export_ipdata_dir(db, chan.encode(), title.encode(), dir.encode())
         
 
 
@@ -755,13 +758,13 @@ class GXIP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The Fraser Filter weights apply to each N expansion above,
+        **Note:** The Fraser Filter weights apply to each N expansion above,
         and are listed as w1,w2,w3,...   Unspecified values beyond
         the list's end are set to 1.0.
         """
-        self._wrapper.export_ipred(db._wrapper, title.encode(), chan.encode(), suffix.encode(), filter, wts.encode(), stn1, stn2, max_n)
+        self._export_ipred(db, title.encode(), chan.encode(), suffix.encode(), filter, wts.encode(), stn1, stn2, max_n)
         
 
 
@@ -794,13 +797,13 @@ class GXIP:
 
         .. versionadded:: 6.4
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The Fraser Filter weights apply to each N expansion above,
+        **Note:** The Fraser Filter weights apply to each N expansion above,
         and are listed as w1,w2,w3,...   Unspecified values beyond
         the list's end are set to 1.0.
         """
-        self._wrapper.export_ipred_dir(db._wrapper, title.encode(), chan.encode(), suffix.encode(), filter, wts.encode(), stn1, stn2, max_n, dir.encode())
+        self._export_ipred_dir(db, title.encode(), chan.encode(), suffix.encode(), filter, wts.encode(), stn1, stn2, max_n, dir.encode())
         
 
 
@@ -820,8 +823,10 @@ class GXIP:
         :type  title:  str
 
         .. versionadded:: 5.1.8
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.export_line_ipdata(db._wrapper, line.encode(), chan.encode(), title.encode())
+        self._export_line_ipdata(db, line.encode(), chan.encode(), title.encode())
         
 
 
@@ -841,8 +846,10 @@ class GXIP:
         :type  chan2:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.export_sgdf(db._wrapper, file.encode(), chan.encode(), chan2.encode())
+        self._export_sgdf(db, file.encode(), chan.encode(), chan2.encode())
         
 
 
@@ -858,8 +865,10 @@ class GXIP:
         :type  lst:  GXLST
 
         .. versionadded:: 6.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.get_n_value_lst(db._wrapper, lst._wrapper)
+        self._get_n_value_lst(db, lst)
         
 
 
@@ -884,14 +893,14 @@ class GXIP:
 
         .. versionadded:: 6.4.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        If topography info is available, returns values calculated for
+        **Note:** If topography info is available, returns values calculated for
         the input line. If no topography is available, returned values
         will be dummies. Values between actual data are interpolated using
         the Akima spline. Ends are extrapolated using the end data points.
         """
-        self._wrapper.get_topo_line(db._wrapper, line.encode(), x_min, x_max, x_inc, vv._wrapper)
+        self._get_topo_line(db, line.encode(), x_min, x_max, x_inc, vv)
         
 
 
@@ -910,8 +919,10 @@ class GXIP:
         :rtype:       int
 
         .. versionadded:: 5.1.8
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = self._wrapper.get_chan_domain(db._wrapper, chan.encode())
+        ret_val = self._get_chan_domain(db, chan.encode())
         return ret_val
 
 
@@ -929,8 +940,10 @@ class GXIP:
         :type  units:  str_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        label.value, units.value = gxapi_cy.WrapIP.get_chan_label(GXContext._get_tls_geo(), chan.encode(), label.value.encode(), units.value.encode())
+        label.value, units.value = gxapi_cy.WrapIP._get_chan_label(GXContext._get_tls_geo(), chan.encode(), label.value.encode(), units.value.encode())
         
 
 
@@ -954,8 +967,10 @@ class GXIP:
         :type  vv:         GXVV
 
         .. versionadded:: 8.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        domain.value, delay.value, n_windows.value = self._wrapper.get_channel_info(db._wrapper, chan.encode(), domain.value, delay.value, n_windows.value, vv._wrapper)
+        domain.value, delay.value, n_windows.value = self._get_channel_info(db, chan.encode(), domain.value, delay.value, n_windows.value, vv)
         
 
 
@@ -979,8 +994,10 @@ class GXIP:
         :type  vv:         GXVV
 
         .. versionadded:: 8.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.set_channel_info(db._wrapper, chan.encode(), domain, delay, n_windows, vv._wrapper)
+        self._set_channel_info(db, chan.encode(), domain, delay, n_windows, vv)
         
 
 
@@ -998,8 +1015,10 @@ class GXIP:
         :type  dump_file:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.import_dump(ip_sys, db._wrapper, dump_file.encode())
+        self._import_dump(ip_sys, db, dump_file.encode())
         
 
 
@@ -1018,13 +1037,13 @@ class GXIP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Data is imported to the specified channel.
+        **Note:** Data is imported to the specified channel.
         The values are interpolated at each row's X and Y
         positions.
         """
-        self._wrapper.import_grid(db._wrapper, grid.encode(), chan.encode())
+        self._import_grid(db, grid.encode(), chan.encode())
         
 
 
@@ -1061,12 +1080,12 @@ class GXIP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Imports a single ".I2X" file to a specified line.
+        **Note:** Imports a single ".I2X" file to a specified line.
         If the line does not exist, it will be created.
         """
-        self._wrapper.import_i2_x(db._wrapper, file.encode(), line.encode(), res_data.encode(), ip_data.encode(), res_model.encode(), ip_model.encode(), res_synth.encode(), ip_synth.encode(), res_poly.encode(), ip_poly.encode(), mode)
+        self._import_i2_x(db, file.encode(), line.encode(), res_data.encode(), ip_data.encode(), res_model.encode(), ip_model.encode(), res_synth.encode(), ip_synth.encode(), res_poly.encode(), ip_poly.encode(), mode)
         
 
 
@@ -1107,12 +1126,12 @@ class GXIP:
 
         .. versionadded:: 6.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Imports a single ".I2X" file to a specified line.
+        **Note:** Imports a single ".I2X" file to a specified line.
         If the line does not exist, it will be created.
         """
-        self._wrapper.import_i2_x_ex(db._wrapper, file.encode(), line.encode(), res_data.encode(), ip_data.encode(), res_model.encode(), ip_model.encode(), res_synth.encode(), ip_synth.encode(), res_poly.encode(), ip_poly.encode(), res_zonge.encode(), ip_zonge.encode(), mode)
+        self._import_i2_x_ex(db, file.encode(), line.encode(), res_data.encode(), ip_data.encode(), res_model.encode(), ip_model.encode(), res_synth.encode(), ip_synth.encode(), res_poly.encode(), ip_poly.encode(), res_zonge.encode(), ip_zonge.encode(), mode)
         
 
 
@@ -1128,8 +1147,10 @@ class GXIP:
         :type  file:  str
 
         .. versionadded:: 8.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.import_instrumentation_gdd(db._wrapper, file.encode())
+        self._import_instrumentation_gdd(db, file.encode())
         
 
 
@@ -1147,8 +1168,10 @@ class GXIP:
         :type  chan:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.import_ipdata(db._wrapper, file.encode(), chan.encode())
+        self._import_ipdata(db, file.encode(), chan.encode())
         
 
 
@@ -1169,16 +1192,16 @@ class GXIP:
 
         .. versionadded:: 5.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The second channel may be specified for frequency domain data sets
+        **Note:** The second channel may be specified for frequency domain data sets
         with two array channels; e.g. amplitude and phase, or real and
         imaginary parts. If the second channel is specified, and no
         time or frequncy information is specified in the header (using
         the T= or F= fields) then the import is assumed to be frequency
         domain.
         """
-        self._wrapper.import_ipdata2(db._wrapper, file.encode(), chan.encode(), chan2.encode())
+        self._import_ipdata2(db, file.encode(), chan.encode(), chan2.encode())
         
 
 
@@ -1197,12 +1220,12 @@ class GXIP:
 
         .. versionadded:: 5.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        This import produces a limited `GXIP <geosoft.gxapi.GXIP>` data set with no Current "I",
+        **Note:** This import produces a limited `GXIP <geosoft.gxapi.GXIP>` data set with no Current "I",
         Voltage "Vp" or Apparent Resistivity "ResApp" values.
         """
-        self._wrapper.import_ipred(db._wrapper, file.encode(), chan.encode())
+        self._import_ipred(db, file.encode(), chan.encode())
         
 
 
@@ -1221,12 +1244,12 @@ class GXIP:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Exits with error if the line does not exist.
+        **Note:** Exits with error if the line does not exist.
         Data is merged on basis of Stn and N value.
         """
-        self._wrapper.import_merge_ipred(db._wrapper, file.encode(), chan.encode())
+        self._import_merge_ipred(db, file.encode(), chan.encode())
         
 
 
@@ -1242,8 +1265,10 @@ class GXIP:
         :type  file:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.import_sgdf(db._wrapper, file.encode())
+        self._import_sgdf(db, file.encode())
         
 
 
@@ -1260,12 +1285,12 @@ class GXIP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The elevation of each point in the current database
+        **Note:** The elevation of each point in the current database
         is interpolated from the input topography values.
         """
-        self._wrapper.import_topo_csv(db._wrapper, csv.encode())
+        self._import_topo_csv(db, csv.encode())
         
 
 
@@ -1282,12 +1307,12 @@ class GXIP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The elevation of each point in the current database
+        **Note:** The elevation of each point in the current database
         is interpolated from the input topography grid.
         """
-        self._wrapper.import_topo_grid(db._wrapper, grid.encode())
+        self._import_topo_grid(db, grid.encode())
         
 
 
@@ -1310,11 +1335,11 @@ class GXIP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        See `import_zonge_fld <geosoft.gxapi.GXIP.import_zonge_fld>`
+        **Note:** See `import_zonge_fld <geosoft.gxapi.GXIP.import_zonge_fld>`
         """
-        self._wrapper.import_zonge_avg(db._wrapper, file.encode(), line, scale, mult)
+        self._import_zonge_avg(db, file.encode(), line, scale, mult)
         
 
 
@@ -1335,13 +1360,13 @@ class GXIP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The Zonge Line and Station numbers may not be the X or Y position
+        **Note:** The Zonge Line and Station numbers may not be the X or Y position
         values, and a conversion is required.
         The line direction is taken from the `GXIP <geosoft.gxapi.GXIP>` setup values.
         """
-        self._wrapper.import_zonge_fld(db._wrapper, file.encode(), scale, mult)
+        self._import_zonge_fld(db, file.encode(), scale, mult)
         
 
 
@@ -1364,12 +1389,12 @@ class GXIP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        A mask channel can be used to select a subset of the data.
+        **Note:** A mask channel can be used to select a subset of the data.
         A single N value can also be selected (Dummy for all).
         """
-        self._wrapper.new_xy_database(db._wrapper, new_db._wrapper, chan_vv._wrapper, mask.encode(), pr_n_val)
+        self._new_xy_database(db, new_db, chan_vv, mask.encode(), pr_n_val)
         
 
 
@@ -1390,12 +1415,12 @@ class GXIP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The control file is created using the IPPLTCON GX. It may then
+        **Note:** The control file is created using the IPPLTCON GX. It may then
         be modified by hand as required.
         """
-        self._wrapper.pseudo_plot(db._wrapper, ini_file.encode(), cur_line.encode(), map.encode())
+        self._pseudo_plot(db, ini_file.encode(), cur_line.encode(), map.encode())
         
 
 
@@ -1418,12 +1443,12 @@ class GXIP:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The control file is created using the IPPLTCON GX. It may then
+        **Note:** The control file is created using the IPPLTCON GX. It may then
         be modified by hand as required.
         """
-        self._wrapper.pseudo_plot2(db._wrapper, ini_file.encode(), cur_line.encode(), tag.encode(), map.encode())
+        self._pseudo_plot2(db, ini_file.encode(), cur_line.encode(), tag.encode(), map.encode())
         
 
 
@@ -1448,12 +1473,12 @@ class GXIP:
 
         .. versionadded:: 6.4
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The control file is created using the IPPLTCON GX. It may then
+        **Note:** The control file is created using the IPPLTCON GX. It may then
         be modified by hand as required.
         """
-        self._wrapper.pseudo_plot2_dir(db._wrapper, ini_file.encode(), cur_line.encode(), tag.encode(), map.encode(), dir.encode())
+        self._pseudo_plot2_dir(db, ini_file.encode(), cur_line.encode(), tag.encode(), map.encode(), dir.encode())
         
 
 
@@ -1474,12 +1499,12 @@ class GXIP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The control file is created using the IPSTAKCON GX. It may then
+        **Note:** The control file is created using the IPSTAKCON GX. It may then
         be modified by hand as required.
         """
-        self._wrapper.ps_stack(db._wrapper, chan.encode(), con_file.encode(), map.encode())
+        self._ps_stack(db, chan.encode(), con_file.encode(), map.encode())
         
 
 
@@ -1501,8 +1526,10 @@ class GXIP:
         :type  map:       str
 
         .. versionadded:: 5.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.ps_stack2(db._wrapper, chan.encode(), con_file.encode(), type, map.encode())
+        self._ps_stack2(db, chan.encode(), con_file.encode(), type, map.encode())
         
 
 
@@ -1526,8 +1553,10 @@ class GXIP:
         :type  dir:       str
 
         .. versionadded:: 6.4
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.ps_stack2_dir(db._wrapper, chan.encode(), con_file.encode(), type, map.encode(), dir.encode())
+        self._ps_stack2_dir(db, chan.encode(), con_file.encode(), type, map.encode(), dir.encode())
         
 
 
@@ -1544,12 +1573,12 @@ class GXIP:
 
         .. versionadded:: 7.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Searches for the following QC channels existing in a database:
+        **Note:** Searches for the following QC channels existing in a database:
         QC, QC_RES.
         """
-        self._wrapper.qc_chan_lst(db._wrapper, lst._wrapper)
+        self._qc_chan_lst(db, lst)
         
 
 
@@ -1564,9 +1593,9 @@ class GXIP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        This function recalculates "derived" channel values from
+        **Note:** This function recalculates "derived" channel values from
         "core" data.
         
             1. Recalculates the "STN" and "N" channels, using the TX1,
@@ -1584,7 +1613,7 @@ class GXIP:
         (since the X and Y values would have changed), then call
         `recalculate_z <geosoft.gxapi.GXIP.recalculate_z>`, since "Z" values are based on "Topo" values.
         """
-        self._wrapper.recalculate(db._wrapper)
+        self._recalculate(db)
         
 
 
@@ -1601,12 +1630,12 @@ class GXIP:
 
         .. versionadded:: 8.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        See `recalculate <geosoft.gxapi.GXIP.recalculate>`. This version allows you to suppress the recalculation of the
+        **Note:** See `recalculate <geosoft.gxapi.GXIP.recalculate>`. This version allows you to suppress the recalculation of the
         current X, Y and Z channel values from the station locations.
         """
-        self._wrapper.recalculate_ex(db._wrapper, recalculate_xyz)
+        self._recalculate_ex(db, recalculate_xyz)
         
 
 
@@ -1621,9 +1650,9 @@ class GXIP:
 
         .. versionadded:: 5.1.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The "Z" channel values are calculated as follows:
+        **Note:** The "Z" channel values are calculated as follows:
         If the "Topo" value is defined, then
         Z = Topo - 0.5*N*A, where "N" is the N-spacing, and
         A is the A-spacing. If the Topography is not defined, then
@@ -1633,7 +1662,7 @@ class GXIP:
 
             `recalculate <geosoft.gxapi.GXIP.recalculate>`
         """
-        self._wrapper.recalculate_z(db._wrapper)
+        self._recalculate_z(db)
         
 
 
@@ -1648,11 +1677,11 @@ class GXIP:
 
         .. versionadded:: 9.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        For some imports, no line name is derivable from the import itself.
+        **Note:** For some imports, no line name is derivable from the import itself.
         """
-        self._wrapper.set_import_line(line.encode())
+        self._set_import_line(line.encode())
         
 
 
@@ -1667,15 +1696,15 @@ class GXIP:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        By default, importing data overwrites existing data.
+        **Note:** By default, importing data overwrites existing data.
         Call this function before doing the import in order
         to append imported data to existing data.
         "Short" data channels will be dummied to the existing
         data length before the new data is appended.
         """
-        self._wrapper.set_import_mode(append)
+        self._set_import_mode(append)
         
 
 
@@ -1696,16 +1725,16 @@ class GXIP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The array channels cannot be used directly to produce sections.
+        **Note:** The array channels cannot be used directly to produce sections.
         `window <geosoft.gxapi.GXIP.window>` allows the user to select one or more of the windows
         and create a new channel. In time domain, if more than one channel
         is selected a weighted sum is performed, according to window widths.
         In frequency domain a simple sum is performed.
         Window List Syntax:
         """
-        self._wrapper.window(db._wrapper, va_chan.encode(), chan.encode(), windows.encode())
+        self._window(db, va_chan.encode(), chan.encode(), windows.encode())
         
 
 
@@ -1719,8 +1748,10 @@ class GXIP:
         :type  lst:  GXLST
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapIP.winnow_chan_list(GXContext._get_tls_geo(), lst._wrapper)
+        gxapi_cy.WrapIP._winnow_chan_list(GXContext._get_tls_geo(), lst)
         
 
 
@@ -1736,8 +1767,10 @@ class GXIP:
         :type  db:   GXDB
 
         .. versionadded:: 5.1.3
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapIP.winnow_chan_list2(GXContext._get_tls_geo(), lst._wrapper, db._wrapper)
+        gxapi_cy.WrapIP._winnow_chan_list2(GXContext._get_tls_geo(), lst, db)
         
 
 
@@ -1756,8 +1789,10 @@ class GXIP:
         :rtype:       int
 
         .. versionadded:: 8.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = self._wrapper.is_valid_line(db._wrapper, line.encode())
+        ret_val = self._is_valid_line(db, line.encode())
         return ret_val
 
 
@@ -1776,8 +1811,10 @@ class GXIP:
         :rtype:       int
 
         .. versionadded:: 8.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = self._wrapper.line_array_type(db._wrapper, line.encode())
+        ret_val = self._line_array_type(db, line.encode())
         return ret_val
 
 
@@ -1797,8 +1834,10 @@ class GXIP:
         :rtype:       float
 
         .. versionadded:: 8.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = self._wrapper.a_spacing(db._wrapper, line.encode())
+        ret_val = self._a_spacing(db, line.encode())
         return ret_val
 
 
@@ -1813,8 +1852,10 @@ class GXIP:
         :rtype:      int
 
         .. versionadded:: 8.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = self._wrapper.pldp_convention()
+        ret_val = self._pldp_convention()
         return ret_val
 
 
@@ -1841,12 +1882,12 @@ class GXIP:
 
         .. versionadded:: 9.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The mask values are determined from the first row where a given electrode is found.
+        **Note:** The mask values are determined from the first row where a given electrode is found.
         Values returned for all currently selected lines.
         """
-        self._wrapper.get_electrode_locations_and_mask_values(db._wrapper, line.encode(), tx_rx, v_vx._wrapper, v_vy._wrapper, v_vm1._wrapper, v_vm2._wrapper)
+        self._get_electrode_locations_and_mask_values(db, line.encode(), tx_rx, v_vx, v_vy, v_vm1, v_vm2)
         
 
 
@@ -1875,12 +1916,12 @@ class GXIP:
 
         .. versionadded:: 9.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The mask values are determined from the first row where a given electrode is found.
+        **Note:** The mask values are determined from the first row where a given electrode is found.
         Values returned for all currently selected lines.
         """
-        self._wrapper.get_electrode_locations_and_mask_values2(db._wrapper, line.encode(), tx_rx, v_vx._wrapper, v_vy._wrapper, v_vm1._wrapper, v_vm2._wrapper, v_vlines._wrapper)
+        self._get_electrode_locations_and_mask_values2(db, line.encode(), tx_rx, v_vx, v_vy, v_vm1, v_vm2, v_vlines)
         
 
 
@@ -1907,11 +1948,11 @@ class GXIP:
 
         .. versionadded:: 9.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Mask values are set for all included electrode locations, currently selected lines.
+        **Note:** Mask values are set for all included electrode locations, currently selected lines.
         """
-        self._wrapper.set_electrode_mask_values(db._wrapper, line.encode(), tx_rx, v_vx._wrapper, v_vy._wrapper, v_vm1._wrapper, v_vm2._wrapper)
+        self._set_electrode_mask_values(db, line.encode(), tx_rx, v_vx, v_vy, v_vm1, v_vm2)
         
 
 
@@ -1938,11 +1979,11 @@ class GXIP:
 
         .. versionadded:: 9.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Mask values are set for all included electrode locations, currently selected lines.
+        **Note:** Mask values are set for all included electrode locations, currently selected lines.
         """
-        self._wrapper.set_electrode_mask_values_single_qc_channel(db._wrapper, line.encode(), tx_rx, qc_type, v_vx._wrapper, v_vy._wrapper, v_vm._wrapper)
+        self._set_electrode_mask_values_single_qc_channel(db, line.encode(), tx_rx, qc_type, v_vx, v_vy, v_vm)
         
 
 
@@ -1964,12 +2005,12 @@ class GXIP:
 
         .. versionadded:: 9.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        For `GXIP <geosoft.gxapi.GXIP>`, looks for "QC_IP", then "QC_OffTime", then "QC".
+        **Note:** For `GXIP <geosoft.gxapi.GXIP>`, looks for "QC_IP", then "QC_OffTime", then "QC".
         For Resistivity, looks for "QC_Res", then "QC_OnTime" (case insensitive).
         """
-        ret_val, chan.value = gxapi_cy.WrapIP.get_qc_channel(GXContext._get_tls_geo(), db._wrapper, qc_type, chan.value.encode())
+        ret_val, chan.value = gxapi_cy.WrapIP._get_qc_channel(GXContext._get_tls_geo(), db, qc_type, chan.value.encode())
         return ret_val
 
 

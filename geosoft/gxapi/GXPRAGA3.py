@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXPRAGA3:
+class GXPRAGA3(gxapi_cy.WrapPRAGA3):
     """
     GXPRAGA3 class.
 
@@ -24,37 +24,28 @@ class GXPRAGA3:
     No notes
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapPRAGA3(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXPRAGA3`
+        A null (undefined) instance of `GXPRAGA3 <geosoft.gxapi.GXPRAGA3>`
         
-        :returns: A null `GXPRAGA3`
+        :returns: A null `GXPRAGA3 <geosoft.gxapi.GXPRAGA3>`
+        :rtype:   GXPRAGA3
         """
-        return cls()
+        return GXPRAGA3()
 
     def is_null(self):
         """
-        Check if the instance of `GXPRAGA3` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXPRAGA3`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -70,8 +61,10 @@ class GXPRAGA3:
         :rtype:      int
 
         .. versionadded:: 6.4
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapPRAGA3.launch(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapPRAGA3._launch(GXContext._get_tls_geo())
         return ret_val
 
 

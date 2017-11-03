@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GX3DN:
+class GX3DN(gxapi_cy.Wrap3DN):
     """
     GX3DN class.
 
@@ -23,37 +23,28 @@ class GX3DN:
     directly related to the `GXMVIEW <geosoft.gxapi.GXMVIEW>` class.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.Wrap3DN(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GX3DN`
+        A null (undefined) instance of `GX3DN <geosoft.gxapi.GX3DN>`
         
-        :returns: A null `GX3DN`
+        :returns: A null `GX3DN <geosoft.gxapi.GX3DN>`
+        :rtype:   GX3DN
         """
-        return cls()
+        return GX3DN()
 
     def is_null(self):
         """
-        Check if the instance of `GX3DN` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GX3DN`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -68,8 +59,10 @@ class GX3DN:
         :type  source:  GX3DN
 
         .. versionadded:: 5.1.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.copy(source._wrapper)
+        self._copy(source)
         
 
 
@@ -84,8 +77,10 @@ class GX3DN:
         :rtype:      GX3DN
 
         .. versionadded:: 5.1.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.Wrap3DN.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.Wrap3DN._create(GXContext._get_tls_geo())
         return GX3DN(ret_val)
 
 
@@ -105,8 +100,10 @@ class GX3DN:
         :type  inclination:  float_ref
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        distance.value, declination.value, inclination.value = self._wrapper.get_point_of_view(distance.value, declination.value, inclination.value)
+        distance.value, declination.value, inclination.value = self._get_point_of_view(distance.value, declination.value, inclination.value)
         
 
 
@@ -124,8 +121,10 @@ class GX3DN:
         :type  z:     float_ref
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        x.value, y.value, z.value = self._wrapper.get_scale(x.value, y.value, z.value)
+        x.value, y.value, z.value = self._get_scale(x.value, y.value, z.value)
         
 
 
@@ -140,8 +139,10 @@ class GX3DN:
         :rtype:       int
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.get_axis_color()
+        ret_val = self._get_axis_color()
         return ret_val
 
 
@@ -155,8 +156,10 @@ class GX3DN:
         :type  font:  str_ref
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        font.value = self._wrapper.get_axis_font(font.value.encode())
+        font.value = self._get_axis_font(font.value.encode())
         
 
 
@@ -171,8 +174,10 @@ class GX3DN:
         :rtype:       int
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.get_background_color()
+        ret_val = self._get_background_color()
         return ret_val
 
 
@@ -194,8 +199,10 @@ class GX3DN:
         :type  label_z:  str_ref
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        box.value, axis.value, label_x.value, label_y.value, label_z.value = self._wrapper.get_render_controls(box.value, axis.value, label_x.value.encode(), label_y.value.encode(), label_z.value.encode())
+        box.value, axis.value, label_x.value, label_y.value, label_z.value = self._get_render_controls(box.value, axis.value, label_x.value.encode(), label_y.value.encode(), label_z.value.encode())
         
 
 
@@ -210,8 +217,10 @@ class GX3DN:
         :rtype:       int
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.get_shading()
+        ret_val = self._get_shading()
         return ret_val
 
 
@@ -225,8 +234,10 @@ class GX3DN:
         :type  color:  int
 
         .. versionadded:: 5.1.6
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_axis_color(color)
+        self._set_axis_color(color)
         
 
 
@@ -240,8 +251,10 @@ class GX3DN:
         :type  font:  str
 
         .. versionadded:: 5.1.6
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_axis_font(font.encode())
+        self._set_axis_font(font.encode())
         
 
 
@@ -255,8 +268,10 @@ class GX3DN:
         :type  color:  int
 
         .. versionadded:: 5.1.6
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_background_color(color)
+        self._set_background_color(color)
         
 
 
@@ -274,8 +289,10 @@ class GX3DN:
         :type  inclination:  float
 
         .. versionadded:: 5.1.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_point_of_view(distance, declination, inclination)
+        self._set_point_of_view(distance, declination, inclination)
         
 
 
@@ -297,8 +314,10 @@ class GX3DN:
         :type  label_z:  str
 
         .. versionadded:: 5.1.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_render_controls(box, axis, label_x.encode(), label_y.encode(), label_z.encode())
+        self._set_render_controls(box, axis, label_x.encode(), label_y.encode(), label_z.encode())
         
 
 
@@ -317,16 +336,16 @@ class GX3DN:
 
         .. versionadded:: 6.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        By default all scales are equal (1.0). By setting
+        **Note:** By default all scales are equal (1.0). By setting
         these scales, relative adjustments to the overall
         view of the 3D objects can be made. Note that they
         are relative to each other. Thus, setting the scaling
         to 5,5,5 is the same as 1,1,1. This is typically used
         to exaggerate one scale such as Z (1,1,5).
         """
-        self._wrapper.set_scale(x, y, z)
+        self._set_scale(x, y, z)
         
 
 
@@ -340,8 +359,10 @@ class GX3DN:
         :type  shading:  int
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_shading(shading)
+        self._set_shading(shading)
         
 
 

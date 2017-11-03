@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXMATH:
+class GXMATH(gxapi_cy.WrapMATH):
     """
     GXMATH class.
 
@@ -22,37 +22,28 @@ class GXMATH:
     logarithmic and geometric functions.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapMATH(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXMATH`
+        A null (undefined) instance of `GXMATH <geosoft.gxapi.GXMATH>`
         
-        :returns: A null `GXMATH`
+        :returns: A null `GXMATH <geosoft.gxapi.GXMATH>`
+        :rtype:   GXMATH
         """
-        return cls()
+        return GXMATH()
 
     def is_null(self):
         """
-        Check if the instance of `GXMATH` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXMATH`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -83,8 +74,10 @@ class GXMATH:
         :type  z3:  float_ref
 
         .. versionadded:: 6.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        x3.value, y3.value, z3.value = gxapi_cy.WrapMATH.cross_product_(GXContext._get_tls_geo(), x1, y1, z1, x2, y2, z2, x3.value, y3.value, z3.value)
+        x3.value, y3.value, z3.value = gxapi_cy.WrapMATH._cross_product_(GXContext._get_tls_geo(), x1, y1, z1, x2, y2, z2, x3.value, y3.value, z3.value)
         
 
 
@@ -102,11 +95,11 @@ class GXMATH:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Dummy values return dummy
+        **Note:** Dummy values return dummy
         """
-        ret_val = gxapi_cy.WrapMATH.abs_int_(GXContext._get_tls_geo(), n)
+        ret_val = gxapi_cy.WrapMATH._abs_int_(GXContext._get_tls_geo(), n)
         return ret_val
 
 
@@ -127,8 +120,10 @@ class GXMATH:
         :rtype:          int
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapMATH.and_(GXContext._get_tls_geo(), pi_val1, pi_val2)
+        ret_val = gxapi_cy.WrapMATH._and_(GXContext._get_tls_geo(), pi_val1, pi_val2)
         return ret_val
 
 
@@ -148,11 +143,11 @@ class GXMATH:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If A or B is a dummy, returns dummy.
+        **Note:** If A or B is a dummy, returns dummy.
         """
-        ret_val = gxapi_cy.WrapMATH.mod_int_(GXContext._get_tls_geo(), a, b)
+        ret_val = gxapi_cy.WrapMATH._mod_int_(GXContext._get_tls_geo(), a, b)
         return ret_val
 
 
@@ -173,8 +168,10 @@ class GXMATH:
         :rtype:          int
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapMATH.or_(GXContext._get_tls_geo(), pi_val1, pi_val2)
+        ret_val = gxapi_cy.WrapMATH._or_(GXContext._get_tls_geo(), pi_val1, pi_val2)
         return ret_val
 
 
@@ -192,13 +189,13 @@ class GXMATH:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Negative values with decimal parts larger than .5 round down (-1.5 -> 2.0)
+        **Note:** Negative values with decimal parts larger than .5 round down (-1.5 -> 2.0)
         Positive values with decimal parts larger than .5 round up (1.5 -> 2.0)
         Dummy values return dummy
         """
-        ret_val = gxapi_cy.WrapMATH.round_int_(GXContext._get_tls_geo(), z)
+        ret_val = gxapi_cy.WrapMATH._round_int_(GXContext._get_tls_geo(), z)
         return ret_val
 
 
@@ -219,8 +216,10 @@ class GXMATH:
         :rtype:          int
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapMATH.xor_(GXContext._get_tls_geo(), pi_val1, pi_val2)
+        ret_val = gxapi_cy.WrapMATH._xor_(GXContext._get_tls_geo(), pi_val1, pi_val2)
         return ret_val
 
 
@@ -239,9 +238,9 @@ class GXMATH:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Will fail if the input upper bound is less than the lower
+        **Note:** Will fail if the input upper bound is less than the lower
         bound, but will work if the two values are equal.
         The input bounds are overwritten.
         
@@ -254,7 +253,7 @@ class GXMATH:
         For example,  the values (.034, 23) return (.03, 30) for
         fine scaling, and (0.01, 100) for coarse scaling.
         """
-        min.value, max.value = gxapi_cy.WrapMATH.nicer_log_scale_(GXContext._get_tls_geo(), min.value, max.value, fine)
+        min.value, max.value = gxapi_cy.WrapMATH._nicer_log_scale_(GXContext._get_tls_geo(), min.value, max.value, fine)
         
 
 
@@ -274,8 +273,10 @@ class GXMATH:
         :type  pow:  int_ref
 
         .. versionadded:: 6.0.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        min.value, max.value, inc.value, pow.value = gxapi_cy.WrapMATH.nicer_scale_(GXContext._get_tls_geo(), min.value, max.value, inc.value, pow.value)
+        min.value, max.value, inc.value, pow.value = gxapi_cy.WrapMATH._nicer_scale_(GXContext._get_tls_geo(), min.value, max.value, inc.value, pow.value)
         
 
 
@@ -294,12 +295,12 @@ class GXMATH:
 
         .. versionadded:: 6.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Divides each component by the vector
+        **Note:** Divides each component by the vector
         magnitude.
         """
-        x.value, y.value, z.value = gxapi_cy.WrapMATH.normalise_3d_(GXContext._get_tls_geo(), x.value, y.value, z.value)
+        x.value, y.value, z.value = gxapi_cy.WrapMATH._normalise_3d_(GXContext._get_tls_geo(), x.value, y.value, z.value)
         
 
 
@@ -317,11 +318,11 @@ class GXMATH:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Dummy values return dummy
+        **Note:** Dummy values return dummy
         """
-        ret_val = gxapi_cy.WrapMATH.abs_double_(GXContext._get_tls_geo(), z)
+        ret_val = gxapi_cy.WrapMATH._abs_double_(GXContext._get_tls_geo(), z)
         return ret_val
 
 
@@ -339,11 +340,11 @@ class GXMATH:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Dummy values or values < -1 or > 1 return dummy
+        **Note:** Dummy values or values < -1 or > 1 return dummy
         """
-        ret_val = gxapi_cy.WrapMATH.arc_cos_(GXContext._get_tls_geo(), val)
+        ret_val = gxapi_cy.WrapMATH._arc_cos_(GXContext._get_tls_geo(), val)
         return ret_val
 
 
@@ -361,11 +362,11 @@ class GXMATH:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Dummy values or values < -1 or > 1 return dummy
+        **Note:** Dummy values or values < -1 or > 1 return dummy
         """
-        ret_val = gxapi_cy.WrapMATH.arc_sin_(GXContext._get_tls_geo(), val)
+        ret_val = gxapi_cy.WrapMATH._arc_sin_(GXContext._get_tls_geo(), val)
         return ret_val
 
 
@@ -383,11 +384,11 @@ class GXMATH:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Dummy values return dummy
+        **Note:** Dummy values return dummy
         """
-        ret_val = gxapi_cy.WrapMATH.arc_tan_(GXContext._get_tls_geo(), val)
+        ret_val = gxapi_cy.WrapMATH._arc_tan_(GXContext._get_tls_geo(), val)
         return ret_val
 
 
@@ -407,11 +408,11 @@ class GXMATH:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If either X or Y is a dummy, returns dummy
+        **Note:** If either X or Y is a dummy, returns dummy
         """
-        ret_val = gxapi_cy.WrapMATH.arc_tan2_(GXContext._get_tls_geo(), y, x)
+        ret_val = gxapi_cy.WrapMATH._arc_tan2_(GXContext._get_tls_geo(), y, x)
         return ret_val
 
 
@@ -429,11 +430,11 @@ class GXMATH:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Dummy values return dummy
+        **Note:** Dummy values return dummy
         """
-        ret_val = gxapi_cy.WrapMATH.ceil_(GXContext._get_tls_geo(), z)
+        ret_val = gxapi_cy.WrapMATH._ceil_(GXContext._get_tls_geo(), z)
         return ret_val
 
 
@@ -451,11 +452,11 @@ class GXMATH:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Dummy values return dummy
+        **Note:** Dummy values return dummy
         """
-        ret_val = gxapi_cy.WrapMATH.cos_(GXContext._get_tls_geo(), val)
+        ret_val = gxapi_cy.WrapMATH._cos_(GXContext._get_tls_geo(), val)
         return ret_val
 
 
@@ -482,8 +483,10 @@ class GXMATH:
         :rtype:      float
 
         .. versionadded:: 6.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapMATH.dot_product_3d_(GXContext._get_tls_geo(), x1, y1, z1, x2, y2, z2)
+        ret_val = gxapi_cy.WrapMATH._dot_product_3d_(GXContext._get_tls_geo(), x1, y1, z1, x2, y2, z2)
         return ret_val
 
 
@@ -501,11 +504,11 @@ class GXMATH:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Dummy values return dummy
+        **Note:** Dummy values return dummy
         """
-        ret_val = gxapi_cy.WrapMATH.exp_(GXContext._get_tls_geo(), val)
+        ret_val = gxapi_cy.WrapMATH._exp_(GXContext._get_tls_geo(), val)
         return ret_val
 
 
@@ -523,11 +526,11 @@ class GXMATH:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Dummy values return dummy
+        **Note:** Dummy values return dummy
         """
-        ret_val = gxapi_cy.WrapMATH.floor_(GXContext._get_tls_geo(), z)
+        ret_val = gxapi_cy.WrapMATH._floor_(GXContext._get_tls_geo(), z)
         return ret_val
 
 
@@ -547,11 +550,11 @@ class GXMATH:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If either X or Y is a dummy, the returned value is dummy
+        **Note:** If either X or Y is a dummy, the returned value is dummy
         """
-        ret_val = gxapi_cy.WrapMATH.hypot_(GXContext._get_tls_geo(), x, y)
+        ret_val = gxapi_cy.WrapMATH._hypot_(GXContext._get_tls_geo(), x, y)
         return ret_val
 
 
@@ -571,9 +574,9 @@ class GXMATH:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Returns 0 for input Z = 0.
+        **Note:** Returns 0 for input Z = 0.
         returns log10(Z) for lambda = 0.
         returns (Z^lambda - 1)/lambda for Z > 0.
         returns dummy for Z = dummy.
@@ -582,7 +585,7 @@ class GXMATH:
 
             `lambda_trans_rev_ <geosoft.gxapi.GXMATH.lambda_trans_rev_>`
         """
-        ret_val = gxapi_cy.WrapMATH.lambda_trans_(GXContext._get_tls_geo(), z, lda)
+        ret_val = gxapi_cy.WrapMATH._lambda_trans_(GXContext._get_tls_geo(), z, lda)
         return ret_val
 
 
@@ -602,15 +605,15 @@ class GXMATH:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        See rLambdaTrans.
+        **Note:** See rLambdaTrans.
 
         .. seealso::
 
             `lambda_trans_ <geosoft.gxapi.GXMATH.lambda_trans_>`
         """
-        ret_val = gxapi_cy.WrapMATH.lambda_trans_rev_(GXContext._get_tls_geo(), z, lda)
+        ret_val = gxapi_cy.WrapMATH._lambda_trans_rev_(GXContext._get_tls_geo(), z, lda)
         return ret_val
 
 
@@ -628,11 +631,11 @@ class GXMATH:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Dummy values return dummy
+        **Note:** Dummy values return dummy
         """
-        ret_val = gxapi_cy.WrapMATH.log_(GXContext._get_tls_geo(), val)
+        ret_val = gxapi_cy.WrapMATH._log_(GXContext._get_tls_geo(), val)
         return ret_val
 
 
@@ -650,11 +653,11 @@ class GXMATH:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Dummy values return dummy
+        **Note:** Dummy values return dummy
         """
-        ret_val = gxapi_cy.WrapMATH.log10_(GXContext._get_tls_geo(), val)
+        ret_val = gxapi_cy.WrapMATH._log10_(GXContext._get_tls_geo(), val)
         return ret_val
 
 
@@ -677,9 +680,9 @@ class GXMATH:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Mode = 0 (regular log mode) returns:
+        **Note:** Mode = 0 (regular log mode) returns:
         
         ::
         
@@ -699,7 +702,7 @@ class GXMATH:
 
             `un_log_z_ <geosoft.gxapi.GXMATH.un_log_z_>`
         """
-        ret_val = gxapi_cy.WrapMATH.log_z_(GXContext._get_tls_geo(), z, mode, min)
+        ret_val = gxapi_cy.WrapMATH._log_z_(GXContext._get_tls_geo(), z, mode, min)
         return ret_val
 
 
@@ -719,9 +722,9 @@ class GXMATH:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The modulus of A with respect to B is defined
+        **Note:** The modulus of A with respect to B is defined
         as the difference of A with the largest integral multiple of B
         smaller than or equal to A.
         
@@ -731,7 +734,7 @@ class GXMATH:
         
         f A or B is a dummy, returns dummy.
         """
-        ret_val = gxapi_cy.WrapMATH.mod_double_(GXContext._get_tls_geo(), a, b)
+        ret_val = gxapi_cy.WrapMATH._mod_double_(GXContext._get_tls_geo(), a, b)
         return ret_val
 
 
@@ -764,13 +767,13 @@ class GXMATH:
 
         .. versionadded:: 6.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Rotates a vector by the input angle around an arbitrary axis.
+        **Note:** Rotates a vector by the input angle around an arbitrary axis.
         Angles are measured clockwise looking along the axis (away from the origin).
         Assumes a right hand coordinate system.
         """
-        x3.value, y3.value, z3.value = gxapi_cy.WrapMATH.rotate_vector_(GXContext._get_tls_geo(), x1, y1, z1, angle, x2, y2, z2, x3.value, y3.value, z3.value)
+        x3.value, y3.value, z3.value = gxapi_cy.WrapMATH._rotate_vector_(GXContext._get_tls_geo(), x1, y1, z1, angle, x2, y2, z2, x3.value, y3.value, z3.value)
         
 
 
@@ -790,11 +793,11 @@ class GXMATH:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If either X or Y is a dummy, returns dummy
+        **Note:** If either X or Y is a dummy, returns dummy
         """
-        ret_val = gxapi_cy.WrapMATH.pow_(GXContext._get_tls_geo(), x, y)
+        ret_val = gxapi_cy.WrapMATH._pow_(GXContext._get_tls_geo(), x, y)
         return ret_val
 
 
@@ -810,13 +813,13 @@ class GXMATH:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Use `s_rand_ <geosoft.gxapi.GXMATH.s_rand_>` to seed the random number generator before a series of
+        **Note:** Use `s_rand_ <geosoft.gxapi.GXMATH.s_rand_>` to seed the random number generator before a series of
         calls to this function are made.
         The standard "C" function rand() is called.
         """
-        ret_val = gxapi_cy.WrapMATH.rand_(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapMATH._rand_(GXContext._get_tls_geo())
         return ret_val
 
 
@@ -836,13 +839,13 @@ class GXMATH:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Negative values ending in 5XXX to n sig digits round down
+        **Note:** Negative values ending in 5XXX to n sig digits round down
         Positive values ending in 5XXX to n sig digits round up
         Dummy values return dummy
         """
-        ret_val = gxapi_cy.WrapMATH.round_double_(GXContext._get_tls_geo(), z, n)
+        ret_val = gxapi_cy.WrapMATH._round_double_(GXContext._get_tls_geo(), z, n)
         return ret_val
 
 
@@ -862,11 +865,11 @@ class GXMATH:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Dummy values return dummy
+        **Note:** Dummy values return dummy
         """
-        ret_val = gxapi_cy.WrapMATH.sign_(GXContext._get_tls_geo(), z_sign, z_val)
+        ret_val = gxapi_cy.WrapMATH._sign_(GXContext._get_tls_geo(), z_sign, z_val)
         return ret_val
 
 
@@ -884,11 +887,11 @@ class GXMATH:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Dummy values return dummy
+        **Note:** Dummy values return dummy
         """
-        ret_val = gxapi_cy.WrapMATH.sin_(GXContext._get_tls_geo(), val)
+        ret_val = gxapi_cy.WrapMATH._sin_(GXContext._get_tls_geo(), val)
         return ret_val
 
 
@@ -906,11 +909,11 @@ class GXMATH:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Dummy values return dummy
+        **Note:** Dummy values return dummy
         """
-        ret_val = gxapi_cy.WrapMATH.sqrt_(GXContext._get_tls_geo(), val)
+        ret_val = gxapi_cy.WrapMATH._sqrt_(GXContext._get_tls_geo(), val)
         return ret_val
 
 
@@ -928,11 +931,11 @@ class GXMATH:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Dummy values return dummy
+        **Note:** Dummy values return dummy
         """
-        ret_val = gxapi_cy.WrapMATH.tan_(GXContext._get_tls_geo(), val)
+        ret_val = gxapi_cy.WrapMATH._tan_(GXContext._get_tls_geo(), val)
         return ret_val
 
 
@@ -954,15 +957,15 @@ class GXMATH:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        See Notes for rLogZ.
+        **Note:** See Notes for rLogZ.
 
         .. seealso::
 
             `log_z_ <geosoft.gxapi.GXMATH.log_z_>`
         """
-        ret_val = gxapi_cy.WrapMATH.un_log_z_(GXContext._get_tls_geo(), z, mode, min)
+        ret_val = gxapi_cy.WrapMATH._un_log_z_(GXContext._get_tls_geo(), z, mode, min)
         return ret_val
 
 
@@ -975,12 +978,12 @@ class GXMATH:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Use the `rand_ <geosoft.gxapi.GXMATH.rand_>` function to create a random number between  0 and 1.
+        **Note:** Use the `rand_ <geosoft.gxapi.GXMATH.rand_>` function to create a random number between  0 and 1.
         The standard "C" function srand() is called.
         """
-        gxapi_cy.WrapMATH.s_rand_(GXContext._get_tls_geo())
+        gxapi_cy.WrapMATH._s_rand_(GXContext._get_tls_geo())
         
 
 

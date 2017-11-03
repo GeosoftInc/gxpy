@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXPG:
+class GXPG(gxapi_cy.WrapPG):
     """
     GXPG class.
 
@@ -29,37 +29,28 @@ class GXPG:
     the `GXIMG <geosoft.gxapi.GXIMG>` using `GXIMG.set_pg <geosoft.gxapi.GXIMG.set_pg>`.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapPG(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXPG`
+        A null (undefined) instance of `GXPG <geosoft.gxapi.GXPG>`
         
-        :returns: A null `GXPG`
+        :returns: A null `GXPG <geosoft.gxapi.GXPG>`
+        :rtype:   GXPG
         """
-        return cls()
+        return GXPG()
 
     def is_null(self):
         """
-        Check if the instance of `GXPG` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXPG`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # 2D Methods
@@ -74,8 +65,10 @@ class GXPG:
         :type  pgs:  GXPG
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.copy(pgs._wrapper)
+        self._copy(pgs)
         
 
 
@@ -102,11 +95,11 @@ class GXPG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        2D Only
+        **Note:** 2D Only
         """
-        self._wrapper.copy_subset(pgs._wrapper, y_row_d, x_col_d, y_row_s, x_col_s, ny, nx)
+        self._copy_subset(pgs, y_row_d, x_col_d, y_row_s, x_col_s, ny, nx)
         
 
 
@@ -127,8 +120,10 @@ class GXPG:
         :rtype:       GXPG
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapPG.create(GXContext._get_tls_geo(), row, col, type)
+        ret_val = gxapi_cy.WrapPG._create(GXContext._get_tls_geo(), row, col, type)
         return GXPG(ret_val)
 
 
@@ -145,11 +140,11 @@ class GXPG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        For 3D pagers, use CreateBF_PG.
+        **Note:** For 3D pagers, use CreateBF_PG.
         """
-        ret_val = gxapi_cy.WrapPG.create_s(GXContext._get_tls_geo(), bf._wrapper)
+        ret_val = gxapi_cy.WrapPG._create_s(GXContext._get_tls_geo(), bf)
         return GXPG(ret_val)
 
 
@@ -163,8 +158,10 @@ class GXPG:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.dummy()
+        self._dummy()
         
 
 
@@ -179,8 +176,10 @@ class GXPG:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.e_type()
+        ret_val = self._e_type()
         return ret_val
 
 
@@ -195,8 +194,10 @@ class GXPG:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.n_cols()
+        ret_val = self._n_cols()
         return ret_val
 
 
@@ -211,8 +212,10 @@ class GXPG:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.n_rows()
+        ret_val = self._n_rows()
         return ret_val
 
 
@@ -227,8 +230,10 @@ class GXPG:
         :rtype:      int
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.n_slices()
+        ret_val = self._n_slices()
         return ret_val
 
 
@@ -244,8 +249,10 @@ class GXPG:
         :type  max:  float_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        min.value, max.value = self._wrapper.range(min.value, max.value)
+        min.value, max.value = self._range(min.value, max.value)
         
 
 
@@ -263,11 +270,11 @@ class GXPG:
 
         .. versionadded:: 8.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This is a low-performance method.
+        **Note:** This is a low-performance method.
         """
-        ret_val = self._wrapper.get(col, row)
+        ret_val = self._get(col, row)
         return ret_val
 
 
@@ -287,8 +294,10 @@ class GXPG:
         :type  vv:   GXVV
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.read_col(col, o, n, vv._wrapper)
+        self._read_col(col, o, n, vv)
         
 
 
@@ -308,8 +317,10 @@ class GXPG:
         :type  vv:   GXVV
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.read_row(row, o, n, vv._wrapper)
+        self._read_row(row, o, n, vv)
         
 
 
@@ -325,8 +336,10 @@ class GXPG:
         :type  n_col:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.re_allocate(n_row, n_col)
+        self._re_allocate(n_row, n_col)
         
 
 
@@ -340,11 +353,11 @@ class GXPG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        For 3D pagers, use `write_bf <geosoft.gxapi.GXPG.write_bf>`.
+        **Note:** For 3D pagers, use `write_bf <geosoft.gxapi.GXPG.write_bf>`.
         """
-        self._wrapper.serial(bf._wrapper)
+        self._serial(bf)
         
 
 
@@ -358,8 +371,10 @@ class GXPG:
         :type  st:  GXST
 
         .. versionadded:: 6.3.1
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.statistics(st._wrapper)
+        self._statistics(st)
         
 
 
@@ -379,8 +394,10 @@ class GXPG:
         :type  vv:   GXVV
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.write_col(col, o, n, vv._wrapper)
+        self._write_col(col, o, n, vv)
         
 
 
@@ -400,8 +417,10 @@ class GXPG:
         :type  vv:   GXVV
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.write_row(row, o, n, vv._wrapper)
+        self._write_row(row, o, n, vv)
         
 
 
@@ -438,11 +457,11 @@ class GXPG:
 
         .. versionadded:: 8.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        2D Only
+        **Note:** 2D Only
         """
-        self._wrapper.copy_subset_3d(pgs._wrapper, sliced, n, vv, slices, rows, cols, n_slice, n_row, n_col)
+        self._copy_subset_3d(pgs, sliced, n, vv, slices, rows, cols, n_slice, n_row, n_col)
         
 
 
@@ -465,8 +484,10 @@ class GXPG:
         :rtype:        GXPG
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapPG.create_3d(GXContext._get_tls_geo(), slice, row, col, type)
+        ret_val = gxapi_cy.WrapPG._create_3d(GXContext._get_tls_geo(), slice, row, col, type)
         return GXPG(ret_val)
 
 
@@ -488,8 +509,10 @@ class GXPG:
         :type  vv:     GXVV
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.read_col_3d(slice, col, o, n, vv._wrapper)
+        self._read_col_3d(slice, col, o, n, vv)
         
 
 
@@ -511,8 +534,10 @@ class GXPG:
         :type  vv:     GXVV
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.read_row_3d(slice, row, o, n, vv._wrapper)
+        self._read_row_3d(slice, row, o, n, vv)
         
 
 
@@ -534,8 +559,10 @@ class GXPG:
         :type  vv:   GXVV
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.read_trace_3d(col, row, o, n, vv._wrapper)
+        self._read_trace_3d(col, row, o, n, vv)
         
 
 
@@ -553,8 +580,10 @@ class GXPG:
         :type  n_col:    int
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.re_allocate_3d(n_slice, n_row, n_col)
+        self._re_allocate_3d(n_slice, n_row, n_col)
         
 
 
@@ -576,8 +605,10 @@ class GXPG:
         :type  vv:     GXVV
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.write_col_3d(slice, col, o, n, vv._wrapper)
+        self._write_col_3d(slice, col, o, n, vv)
         
 
 
@@ -599,8 +630,10 @@ class GXPG:
         :type  vv:     GXVV
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.write_row_3d(slice, row, o, n, vv._wrapper)
+        self._write_row_3d(slice, row, o, n, vv)
         
 
 
@@ -622,8 +655,10 @@ class GXPG:
         :type  vv:   GXVV
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.write_trace_3d(col, row, o, n, vv._wrapper)
+        self._write_trace_3d(col, row, o, n, vv)
         
 
 
@@ -651,8 +686,10 @@ class GXPG:
         :type  rev_z:  int
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.read_bf(bf._wrapper, dir, conv, rev_x, rev_y, rev_z)
+        self._read_bf(bf, dir, conv, rev_x, rev_y, rev_z)
         
 
 
@@ -677,11 +714,11 @@ class GXPG:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Each line must hold only 1 value
+        **Note:** Each line must hold only 1 value
         """
-        self._wrapper.read_ra(ra._wrapper, dir, rev_x, rev_y, rev_z, dummy.encode())
+        self._read_ra(ra, dir, rev_x, rev_y, rev_z, dummy.encode())
         
 
 
@@ -705,8 +742,10 @@ class GXPG:
         :type  rev_z:  int
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.write_bf(bf._wrapper, dir, conv, rev_x, rev_y, rev_z)
+        self._write_bf(bf, dir, conv, rev_x, rev_y, rev_z)
         
 
 
@@ -732,8 +771,10 @@ class GXPG:
         :type  p_dummy:  float
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.write_bf_ex(bf._wrapper, dir, conv, rev_x, rev_y, rev_z, p_dummy)
+        self._write_bf_ex(bf, dir, conv, rev_x, rev_y, rev_z, p_dummy)
         
 
 
@@ -758,11 +799,11 @@ class GXPG:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Each line will hold only 1 value
+        **Note:** Each line will hold only 1 value
         """
-        self._wrapper.write_wa(wa._wrapper, dir, rev_x, rev_y, rev_z, dummy.encode())
+        self._write_wa(wa, dir, rev_x, rev_y, rev_z, dummy.encode())
         
 
 

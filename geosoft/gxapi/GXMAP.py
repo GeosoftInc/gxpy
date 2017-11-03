@@ -16,7 +16,7 @@ from .GXREG import GXREG
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXMAP:
+class GXMAP(gxapi_cy.WrapMAP):
     """
     GXMAP class.
 
@@ -27,37 +27,28 @@ class GXMAP:
     (See the explanation on the distinction between the `GXMAP <geosoft.gxapi.GXMAP>` and `GXEMAP <geosoft.gxapi.GXEMAP>` classes).
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapMAP(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXMAP`
+        A null (undefined) instance of `GXMAP <geosoft.gxapi.GXMAP>`
         
-        :returns: A null `GXMAP`
+        :returns: A null `GXMAP <geosoft.gxapi.GXMAP>`
+        :rtype:   GXMAP
         """
-        return cls()
+        return GXMAP()
 
     def is_null(self):
         """
-        Check if the instance of `GXMAP` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXMAP`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Export
@@ -86,8 +77,10 @@ class GXMAP:
         :type  options:   str
 
         .. versionadded:: 7.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.export_all_in_view(name.encode(), view.encode(), pix_size, dpi, bits, dither, format.encode(), options.encode())
+        self._export_all_in_view(name.encode(), view.encode(), pix_size, dpi, bits, dither, format.encode(), options.encode())
         
 
 
@@ -117,8 +110,10 @@ class GXMAP:
         :type  options:  str
 
         .. versionadded:: 7.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.export_all_raster(name.encode(), view.encode(), size_x, size_y, dpi, bits, dither, format.encode(), options.encode())
+        self._export_all_raster(name.encode(), view.encode(), size_x, size_y, dpi, bits, dither, format.encode(), options.encode())
         
 
 
@@ -154,8 +149,10 @@ class GXMAP:
         :type  options:   str
 
         .. versionadded:: 7.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.export_area_in_view(name.encode(), view.encode(), pix_size, dpi, bits, dither, min_x, min_y, max_x, max_y, format.encode(), options.encode())
+        self._export_area_in_view(name.encode(), view.encode(), pix_size, dpi, bits, dither, min_x, min_y, max_x, max_y, format.encode(), options.encode())
         
 
 
@@ -193,8 +190,10 @@ class GXMAP:
         :type  options:  str
 
         .. versionadded:: 7.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.export_area_raster(name.encode(), view.encode(), min_x, min_y, max_x, max_y, size_x, size_y, dpi, bits, dither, format.encode(), options.encode())
+        self._export_area_raster(name.encode(), view.encode(), min_x, min_y, max_x, max_y, size_x, size_y, dpi, bits, dither, format.encode(), options.encode())
         
 
 
@@ -220,8 +219,10 @@ class GXMAP:
         :type  max_res:  int
 
         .. versionadded:: 6.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.render_bitmap(view.encode(), min_x, min_y, max_x, max_y, file.encode(), max_res)
+        self._render_bitmap(view.encode(), min_x, min_y, max_x, max_y, file.encode(), max_res)
         
 
 
@@ -249,8 +250,10 @@ class GXMAP:
         :type  max_y:      float
 
         .. versionadded:: 9.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.create_linked_3d_view(mview._wrapper, view_name.encode(), min_x, min_y, max_x, max_y)
+        self._create_linked_3d_view(mview, view_name.encode(), min_x, min_y, max_x, max_y)
         
 
 
@@ -271,16 +274,16 @@ class GXMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        List items are returned as view/agg/layer.
+        **Note:** List items are returned as view/agg/layer.
         The layer name is optional
 
         .. seealso::
 
             `GXLST <geosoft.gxapi.GXLST>` class.
         """
-        self._wrapper.agg_list(lst._wrapper, optn)
+        self._agg_list(lst, optn)
         
 
 
@@ -299,16 +302,16 @@ class GXMAP:
 
         .. versionadded:: 5.1.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        List items are returned as view/agg/layer.
+        **Note:** List items are returned as view/agg/layer.
         The layer name is optional
 
         .. seealso::
 
             `GXLST <geosoft.gxapi.GXLST>` class.
         """
-        self._wrapper.agg_list_ex(lst._wrapper, optn, mode)
+        self._agg_list_ex(lst, optn, mode)
         
 
 
@@ -320,8 +323,10 @@ class GXMAP:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.clean()
+        self._clean()
         
 
 
@@ -333,8 +338,10 @@ class GXMAP:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.commit()
+        self._commit()
         
 
 
@@ -350,8 +357,10 @@ class GXMAP:
         :type  dest_view:  str
 
         .. versionadded:: 5.1.8
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.copy_map_to_view(dest_map.encode(), dest_view.encode())
+        self._copy_map_to_view(dest_map.encode(), dest_view.encode())
         
 
 
@@ -367,8 +376,10 @@ class GXMAP:
         :type  file:  str
 
         .. versionadded:: 6.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        crc.value = self._wrapper.crc_map(crc.value, file.encode())
+        crc.value = self._crc_map(crc.value, file.encode())
         
 
 
@@ -387,8 +398,10 @@ class GXMAP:
         :rtype:       GXMAP
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapMAP.create(GXContext._get_tls_geo(), name.encode(), mode)
+        ret_val = gxapi_cy.WrapMAP._create(GXContext._get_tls_geo(), name.encode(), mode)
         return GXMAP(ret_val)
 
 
@@ -404,12 +417,14 @@ class GXMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If there is no current map, and running interactively,
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** If there is no current map, and running interactively,
         the user is prompted to open a map.
         """
-        ret_val = gxapi_cy.WrapMAP.current(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapMAP._current(GXContext._get_tls_geo())
         return GXMAP(ret_val)
 
 
@@ -424,11 +439,11 @@ class GXMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the view does not exist, nothing happens.
+        **Note:** If the view does not exist, nothing happens.
         """
-        self._wrapper.delete_view(name.encode())
+        self._delete_view(name.encode())
         
 
 
@@ -442,8 +457,10 @@ class GXMAP:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.discard()
+        self._discard()
         
 
 
@@ -460,9 +477,9 @@ class GXMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Before version 6.2 text in maps were displayed with a character set
+        **Note:** Before version 6.2 text in maps were displayed with a character set
         defining how characters above ASCII 127 would be displayed. 6.2 introduced
         Unicode in the core montaj engine that eliminated the need for such a setting and
         greatly increased the number of symbols that can be used. The only caveat
@@ -471,7 +488,7 @@ class GXMAP:
         The constant `DUPMAP_COPY_PRE62 <geosoft.gxapi.DUPMAP_COPY_PRE62>` provides a way to create maps that can be
         distributed to versions prior to 6.2.
         """
-        self._wrapper.dup_map(ma_pd._wrapper, content)
+        self._dup_map(ma_pd, content)
         
 
 
@@ -486,8 +503,10 @@ class GXMAP:
         :rtype:      GXLPT
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.get_lpt()
+        ret_val = self._get_lpt()
         return GXLPT(ret_val)
 
 
@@ -507,8 +526,10 @@ class GXMAP:
         :type  ymax:  float_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        xmin.value, ymin.value, xmax.value, ymax.value = self._wrapper.get_map_size(xmin.value, ymin.value, xmax.value, ymax.value)
+        xmin.value, ymin.value, xmax.value, ymax.value = self._get_map_size(xmin.value, ymin.value, xmax.value, ymax.value)
         
 
 
@@ -524,11 +545,11 @@ class GXMAP:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the map has no `GXMETA <geosoft.gxapi.GXMETA>`, an empty `GXMETA <geosoft.gxapi.GXMETA>` will be created.
+        **Note:** If the map has no `GXMETA <geosoft.gxapi.GXMETA>`, an empty `GXMETA <geosoft.gxapi.GXMETA>` will be created.
         """
-        ret_val = self._wrapper.get_meta()
+        ret_val = self._get_meta()
         return GXMETA(ret_val)
 
 
@@ -544,11 +565,11 @@ class GXMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the map has no `GXREG <geosoft.gxapi.GXREG>`, an empty `GXREG <geosoft.gxapi.GXREG>` will be created.
+        **Note:** If the map has no `GXREG <geosoft.gxapi.GXREG>`, an empty `GXREG <geosoft.gxapi.GXREG>` will be created.
         """
-        ret_val = self._wrapper.get_reg()
+        ret_val = self._get_reg()
         return GXREG(ret_val)
 
 
@@ -563,9 +584,9 @@ class GXMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Returns all groups in the form "ViewName\\GroupName"
+        **Note:** Returns all groups in the form "ViewName\\GroupName"
         To get a `GXLST <geosoft.gxapi.GXLST>` of groups in a specific map view, use
         the `GXMVIEW.list_groups <geosoft.gxapi.GXMVIEW.list_groups>` function.
 
@@ -574,7 +595,7 @@ class GXMAP:
             `GXLST <geosoft.gxapi.GXLST>` class.
             `GXMVIEW.list_groups <geosoft.gxapi.GXMVIEW.list_groups>`
         """
-        self._wrapper.group_list(lst._wrapper)
+        self._group_list(lst)
         
 
 
@@ -591,11 +612,13 @@ class GXMAP:
 
         .. versionadded:: 5.1.2
 
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
         .. seealso::
 
             `GXLST <geosoft.gxapi.GXLST>` class.
         """
-        self._wrapper.group_list_ex(lst._wrapper, mode)
+        self._group_list_ex(lst, mode)
         
 
 
@@ -613,8 +636,10 @@ class GXMAP:
         :type  copy:    bool
 
         .. versionadded:: 5.1.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        n_view.value = self._wrapper.duplicate_view(view.encode(), n_view.value.encode(), copy)
+        n_view.value = self._duplicate_view(view.encode(), n_view.value.encode(), copy)
         
 
 
@@ -632,8 +657,10 @@ class GXMAP:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.exist_view(name.encode())
+        ret_val = self._exist_view(name.encode())
         return ret_val
 
 
@@ -650,9 +677,9 @@ class GXMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Map class names are intended to be used to record the
+        **Note:** Map class names are intended to be used to record the
         names of certain view classes in the map, such as the
         "Data", "Base" and "Section" views.
         
@@ -664,7 +691,7 @@ class GXMAP:
         If a name is not set, the class name is set and
         returned.
         """
-        name.value = self._wrapper.get_class_name(cl.encode(), name.value.encode())
+        name.value = self._get_class_name(cl.encode(), name.value.encode())
         
 
 
@@ -678,8 +705,10 @@ class GXMAP:
         :type  name:  str_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        name.value = self._wrapper.get_file_name(name.value.encode())
+        name.value = self._get_file_name(name.value.encode())
         
 
 
@@ -693,8 +722,10 @@ class GXMAP:
         :type  name:  str_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        name.value = self._wrapper.get_map_name(name.value.encode())
+        name.value = self._get_map_name(name.value.encode())
         
 
 
@@ -709,8 +740,10 @@ class GXMAP:
         :rtype:      int
 
         .. versionadded:: 6.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.packed_files()
+        ret_val = self._packed_files()
         return ret_val
 
 
@@ -727,14 +760,14 @@ class GXMAP:
 
         .. versionadded:: 6.4
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The option to force will simply overwrite the files.
+        **Note:** The option to force will simply overwrite the files.
         When the non-force option is in effect the method will
         stop if any files are going to be overwritting. These
         file names will end up in the Errors string.
         """
-        errors.value = self._wrapper.un_pack_files_ex(force, errors.value.encode())
+        errors.value = self._un_pack_files_ex(force, errors.value.encode())
         
 
 
@@ -752,8 +785,10 @@ class GXMAP:
         :type  errors:  str_ref
 
         .. versionadded:: 7.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        errors.value = self._wrapper.un_pack_files_to_folder(force, dir.encode(), errors.value.encode())
+        errors.value = self._un_pack_files_to_folder(force, dir.encode(), errors.value.encode())
         
 
 
@@ -765,8 +800,10 @@ class GXMAP:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.pack_files()
+        self._pack_files()
         
 
 
@@ -780,8 +817,10 @@ class GXMAP:
         :type  name:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.render(name.encode())
+        self._render(name.encode())
         
 
 
@@ -794,12 +833,12 @@ class GXMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This is the same as `resize_all_ex <geosoft.gxapi.GXMAP.resize_all_ex>` with
+        **Note:** This is the same as `resize_all_ex <geosoft.gxapi.GXMAP.resize_all_ex>` with
         `MVIEW_EXTENT_CLIP <geosoft.gxapi.MVIEW_EXTENT_CLIP>`.
         """
-        self._wrapper.resize_all()
+        self._resize_all()
         
 
 
@@ -814,12 +853,12 @@ class GXMAP:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        `MVIEW_EXTENT_VISIBLE <geosoft.gxapi.MVIEW_EXTENT_VISIBLE>` gives a more "reasonable" map size, and won't
+        **Note:** `MVIEW_EXTENT_VISIBLE <geosoft.gxapi.MVIEW_EXTENT_VISIBLE>` gives a more "reasonable" map size, and won't
         clip off labels outside a graph window.
         """
-        self._wrapper.resize_all_ex(ext)
+        self._resize_all_ex(ext)
         
 
 
@@ -835,9 +874,9 @@ class GXMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If there is a "Data" view, the scale is derived from
+        **Note:** If there is a "Data" view, the scale is derived from
         this view.
         
         If their is no data view, the scale is derived
@@ -846,7 +885,7 @@ class GXMAP:
         
         All views must be closed, or open read-only.
         """
-        ret_val = self._wrapper.get_map_scale()
+        ret_val = self._get_map_scale()
         return ret_val
 
 
@@ -860,8 +899,10 @@ class GXMAP:
         :type  mxd:  str
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.save_as_mxd(mxd.encode())
+        self._save_as_mxd(mxd.encode())
         
 
 
@@ -878,9 +919,9 @@ class GXMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Map class names are intended to be used to record the
+        **Note:** Map class names are intended to be used to record the
         names of certain view classes in the map, such as the
         "Data", "Base" and "Section" views.
         
@@ -892,7 +933,7 @@ class GXMAP:
         If a name is not set, the class name is set and
         returned.
         """
-        self._wrapper.set_class_name(cl.encode(), name.encode())
+        self._set_class_name(cl.encode(), name.encode())
         
 
 
@@ -904,8 +945,12 @@ class GXMAP:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.set_current()
+        self._set_current()
         
 
 
@@ -919,8 +964,10 @@ class GXMAP:
         :type  name:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_map_name(name.encode())
+        self._set_map_name(name.encode())
         
 
 
@@ -935,12 +982,12 @@ class GXMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        All views in the map will be resized for the new
+        **Note:** All views in the map will be resized for the new
         map scale.
         """
-        self._wrapper.set_map_scale(scale)
+        self._set_map_scale(scale)
         
 
 
@@ -961,9 +1008,9 @@ class GXMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The map size is area on the `GXMAP <geosoft.gxapi.GXMAP>` that contains graphics
+        **Note:** The map size is area on the `GXMAP <geosoft.gxapi.GXMAP>` that contains graphics
         to be plotted.  The area can be bigger or smaller that
         the current views.  In the absense of any other information
         only the area defined by the map size is plotted.
@@ -972,7 +1019,7 @@ class GXMAP:
 
             SetSizeViews_MAP
         """
-        self._wrapper.set_map_size(xmin, ymin, xmax, ymax)
+        self._set_map_size(xmin, ymin, xmax, ymax)
         
 
 
@@ -986,8 +1033,10 @@ class GXMAP:
         :type  meta:  GXMETA
 
         .. versionadded:: 5.1.8
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_meta(meta._wrapper)
+        self._set_meta(meta)
         
 
 
@@ -1001,8 +1050,10 @@ class GXMAP:
         :type  reg:  GXREG
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_reg(reg._wrapper)
+        self._set_reg(reg)
         
 
 
@@ -1016,8 +1067,10 @@ class GXMAP:
         :type  map:  str
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapMAP.sync(GXContext._get_tls_geo(), map.encode())
+        gxapi_cy.WrapMAP._sync(GXContext._get_tls_geo(), map.encode())
         
 
 
@@ -1029,8 +1082,10 @@ class GXMAP:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.un_pack_files()
+        self._un_pack_files()
         
 
 
@@ -1045,11 +1100,13 @@ class GXMAP:
 
         .. versionadded:: 5.0
 
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
         .. seealso::
 
             `GXLST <geosoft.gxapi.GXLST>` class.
         """
-        self._wrapper.view_list(lst._wrapper)
+        self._view_list(lst)
         
 
 
@@ -1065,8 +1122,10 @@ class GXMAP:
         :type  mode:  int
 
         .. versionadded:: 5.1.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.view_list_ex(lst._wrapper, mode)
+        self._view_list_ex(lst, mode)
         
 
 
@@ -1081,8 +1140,10 @@ class GXMAP:
         :rtype:      int
 
         .. versionadded:: 8.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.get_data_proj()
+        ret_val = self._get_data_proj()
         return ret_val
 
 

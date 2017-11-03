@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXHTTP:
+class GXHTTP(gxapi_cy.WrapHTTP):
     """
     GXHTTP class.
 
@@ -33,37 +33,28 @@ class GXHTTP:
     be  specified as "This%20one"
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapHTTP(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXHTTP`
+        A null (undefined) instance of `GXHTTP <geosoft.gxapi.GXHTTP>`
         
-        :returns: A null `GXHTTP`
+        :returns: A null `GXHTTP <geosoft.gxapi.GXHTTP>`
+        :rtype:   GXHTTP
         """
-        return cls()
+        return GXHTTP()
 
     def is_null(self):
         """
-        Check if the instance of `GXHTTP` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXHTTP`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -88,9 +79,9 @@ class GXHTTP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        An OM user has the ability to control access and verification of access
+        **Note:** An OM user has the ability to control access and verification of access
         to servers over the Internet.  A GX Developer has no way to change the
         users choice of access.  This is to prevent the creation of GX's that
         may be dangerous or may be used to collect information without the
@@ -111,7 +102,7 @@ class GXHTTP:
         relationship with your server to "Trusted".  Your user will have the
         opportunity to do so the first time a script is run.
         """
-        ret_val = gxapi_cy.WrapHTTP.create(GXContext._get_tls_geo(), url.encode(), user_name.encode(), password.encode(), purpose.encode())
+        ret_val = gxapi_cy.WrapHTTP._create(GXContext._get_tls_geo(), url.encode(), user_name.encode(), password.encode(), purpose.encode())
         return GXHTTP(ret_val)
 
 
@@ -132,12 +123,12 @@ class GXHTTP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The file will be written starting at the current location
+        **Note:** The file will be written starting at the current location
         in the `GXBF <geosoft.gxapi.GXBF>`
         """
-        self._wrapper.download(file.encode(), bf._wrapper, dynamic)
+        self._download(file.encode(), bf, dynamic)
         
 
 
@@ -156,12 +147,12 @@ class GXHTTP:
 
         .. versionadded:: 8.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The file will be written starting at the current location
+        **Note:** The file will be written starting at the current location
         in the `GXBF <geosoft.gxapi.GXBF>`. No prompt for proxy authentication
         """
-        self._wrapper.silent_download(file.encode(), bf._wrapper, dynamic)
+        self._silent_download(file.encode(), bf, dynamic)
         
 
 
@@ -182,15 +173,15 @@ class GXHTTP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Full contents of the `GXBF <geosoft.gxapi.GXBF>` are sent in an `GXHTTP <geosoft.gxapi.GXHTTP>` GET message.
+        **Note:** Full contents of the `GXBF <geosoft.gxapi.GXBF>` are sent in an `GXHTTP <geosoft.gxapi.GXHTTP>` GET message.
         `GXBF <geosoft.gxapi.GXBF>` pointer is returned to location before the call.
         
         request URL will be:
         http://server/path?search
         """
-        self._wrapper.get(cl.encode(), method.encode(), bf._wrapper, ret_bf._wrapper)
+        self._get(cl.encode(), method.encode(), bf, ret_bf)
         
 
 
@@ -209,14 +200,14 @@ class GXHTTP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Full contents of the `GXBF <geosoft.gxapi.GXBF>` are sent as an `GXHTTP <geosoft.gxapi.GXHTTP>` POST message.
+        **Note:** Full contents of the `GXBF <geosoft.gxapi.GXBF>` are sent as an `GXHTTP <geosoft.gxapi.GXHTTP>` POST message.
         
         request URL will be:
         http://server/path?search
         """
-        self._wrapper.post(cl.encode(), method.encode(), bf._wrapper)
+        self._post(cl.encode(), method.encode(), bf)
         
 
 
@@ -233,8 +224,10 @@ class GXHTTP:
         :type  password:  str
 
         .. versionadded:: 7.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_proxy_credentials(username.encode(), password.encode())
+        self._set_proxy_credentials(username.encode(), password.encode())
         
 
 

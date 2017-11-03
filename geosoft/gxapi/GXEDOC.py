@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXEDOC:
+class GXEDOC(gxapi_cy.WrapEDOC):
     """
     GXEDOC class.
 
@@ -21,37 +21,28 @@ class GXEDOC:
     Oasis montaj.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapEDOC(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXEDOC`
+        A null (undefined) instance of `GXEDOC <geosoft.gxapi.GXEDOC>`
         
-        :returns: A null `GXEDOC`
+        :returns: A null `GXEDOC <geosoft.gxapi.GXEDOC>`
+        :rtype:   GXEDOC
         """
-        return cls()
+        return GXEDOC()
 
     def is_null(self):
         """
-        Check if the instance of `GXEDOC` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXEDOC`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # GMSYS 3D Models
@@ -76,14 +67,16 @@ class GXEDOC:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        See `load <geosoft.gxapi.GXEDOC.load>`. This is used for brand new documents, it also sets
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** See `load <geosoft.gxapi.GXEDOC.load>`. This is used for brand new documents, it also sets
         an internal flag such that if on closing the user chooses
         not to save changes, the document is deleted thus keeping the
         project folders clean.
         """
-        ret_val = gxapi_cy.WrapEDOC.create_new_gms_3d(GXContext._get_tls_geo(), name.encode(), nx, ny, type)
+        ret_val = gxapi_cy.WrapEDOC._create_new_gms_3d(GXContext._get_tls_geo(), name.encode(), nx, ny, type)
         return GXEDOC(ret_val)
 
 
@@ -104,8 +97,12 @@ class GXEDOC:
         :rtype:       GXEDOC
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapEDOC.current(GXContext._get_tls_geo(), type)
+        ret_val = gxapi_cy.WrapEDOC._current(GXContext._get_tls_geo(), type)
         return GXEDOC(ret_val)
 
 
@@ -123,12 +120,14 @@ class GXEDOC:
 
         .. versionadded:: 9.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This function acts just like `current <geosoft.gxapi.GXEDOC.current>` except that the document is not activated (brought to foreground) and no
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** This function acts just like `current <geosoft.gxapi.GXEDOC.current>` except that the document is not activated (brought to foreground) and no
         				guarantee is given about which document is currently active.
         """
-        ret_val = gxapi_cy.WrapEDOC.current_no_activate(GXContext._get_tls_geo(), type)
+        ret_val = gxapi_cy.WrapEDOC._current_no_activate(GXContext._get_tls_geo(), type)
         return GXEDOC(ret_val)
 
 
@@ -146,8 +145,12 @@ class GXEDOC:
         :rtype:       GXEDOC
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapEDOC.current_if_exists(GXContext._get_tls_geo(), type)
+        ret_val = gxapi_cy.WrapEDOC._current_if_exists(GXContext._get_tls_geo(), type)
         return GXEDOC(ret_val)
 
 
@@ -171,8 +174,12 @@ class GXEDOC:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapEDOC.get_documents_lst(GXContext._get_tls_geo(), lst._wrapper, path, type)
+        ret_val = gxapi_cy.WrapEDOC._get_documents_lst(GXContext._get_tls_geo(), lst, path, type)
         return ret_val
 
 
@@ -186,8 +193,12 @@ class GXEDOC:
         :type  name:  str_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        name.value = self._wrapper.get_name(name.value.encode())
+        name.value = self._get_name(name.value.encode())
         
 
 
@@ -202,8 +213,12 @@ class GXEDOC:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = self._wrapper.get_window_state()
+        ret_val = self._get_window_state()
         return ret_val
 
 
@@ -218,8 +233,12 @@ class GXEDOC:
         :rtype:       bool
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapEDOC.have_current(GXContext._get_tls_geo(), type)
+        ret_val = gxapi_cy.WrapEDOC._have_current(GXContext._get_tls_geo(), type)
         return ret_val
 
 
@@ -238,8 +257,12 @@ class GXEDOC:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapEDOC.loaded(GXContext._get_tls_geo(), name.encode(), type)
+        ret_val = gxapi_cy.WrapEDOC._loaded(GXContext._get_tls_geo(), name.encode(), type)
         return ret_val
 
 
@@ -263,8 +286,12 @@ class GXEDOC:
         :type  is_floating:  int_ref
 
         .. versionadded:: 9.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        left.value, top.value, right.value, bottom.value, state.value, is_floating.value = self._wrapper.get_window_position(left.value, top.value, right.value, bottom.value, state.value, is_floating.value)
+        left.value, top.value, right.value, bottom.value, state.value, is_floating.value = self._get_window_position(left.value, top.value, right.value, bottom.value, state.value, is_floating.value)
         
 
 
@@ -288,8 +315,12 @@ class GXEDOC:
         :type  is_floating:  int
 
         .. versionadded:: 9.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.set_window_position(left, top, right, bottom, state, is_floating)
+        self._set_window_position(left, top, right, bottom, state, is_floating)
         
 
 
@@ -302,8 +333,12 @@ class GXEDOC:
         :rtype:       bool
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = self._wrapper.read_only()
+        ret_val = self._read_only()
         return ret_val
 
 
@@ -324,15 +359,17 @@ class GXEDOC:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The last listed document will become the current document.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The last listed document will become the current document.
         
         Only the first file in the list may have a directory path.
         All other files in the list are assumed to be in the same
         directory as the first file.
         """
-        ret_val = gxapi_cy.WrapEDOC.load(GXContext._get_tls_geo(), name.encode(), type)
+        ret_val = gxapi_cy.WrapEDOC._load(GXContext._get_tls_geo(), name.encode(), type)
         return GXEDOC(ret_val)
 
 
@@ -353,12 +390,14 @@ class GXEDOC:
 
         .. versionadded:: 9.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This function acts just like `load <geosoft.gxapi.GXEDOC.load>` except that the document(s) is not activated (brought to foreground) and no
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** This function acts just like `load <geosoft.gxapi.GXEDOC.load>` except that the document(s) is not activated (brought to foreground) and no
         					guarantee is given about which document is currently active.
         """
-        ret_val = gxapi_cy.WrapEDOC.load_no_activate(GXContext._get_tls_geo(), name.encode(), type)
+        ret_val = gxapi_cy.WrapEDOC._load_no_activate(GXContext._get_tls_geo(), name.encode(), type)
         return GXEDOC(ret_val)
 
 
@@ -370,8 +409,12 @@ class GXEDOC:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.make_current()
+        self._make_current()
         
 
 
@@ -385,8 +428,12 @@ class GXEDOC:
         :type  state:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.set_window_state(state)
+        self._set_window_state(state)
         
 
 
@@ -402,8 +449,12 @@ class GXEDOC:
         :type  type:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapEDOC.sync(GXContext._get_tls_geo(), file.encode(), type)
+        gxapi_cy.WrapEDOC._sync(GXContext._get_tls_geo(), file.encode(), type)
         
 
 
@@ -415,8 +466,12 @@ class GXEDOC:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.sync_open()
+        self._sync_open()
         
 
 
@@ -433,12 +488,14 @@ class GXEDOC:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the document is not loaded, nothing happens.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** If the document is not loaded, nothing happens.
         Same as `un_load_verify <geosoft.gxapi.GXEDOC.un_load_verify>` with FALSE to prompt save.
         """
-        gxapi_cy.WrapEDOC.un_load(GXContext._get_tls_geo(), name.encode(), type)
+        gxapi_cy.WrapEDOC._un_load(GXContext._get_tls_geo(), name.encode(), type)
         
 
 
@@ -452,8 +509,12 @@ class GXEDOC:
         :type  type:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapEDOC.un_load_all(GXContext._get_tls_geo(), type)
+        gxapi_cy.WrapEDOC._un_load_all(GXContext._get_tls_geo(), type)
         
 
 
@@ -470,11 +531,13 @@ class GXEDOC:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the document is not loaded, nothing happens.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** If the document is not loaded, nothing happens.
         """
-        gxapi_cy.WrapEDOC.un_load_discard(GXContext._get_tls_geo(), name.encode(), type)
+        gxapi_cy.WrapEDOC._un_load_discard(GXContext._get_tls_geo(), name.encode(), type)
         
 
 
@@ -493,13 +556,15 @@ class GXEDOC:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the document is not loaded, nothing happens.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** If the document is not loaded, nothing happens.
         The user can be prompted to save before unloading.
         If `EDOC_UNLOAD_NO_PROMPT <geosoft.gxapi.EDOC_UNLOAD_NO_PROMPT>`, data is always saved.
         """
-        gxapi_cy.WrapEDOC.un_load_verify(GXContext._get_tls_geo(), name.encode(), verify, type)
+        gxapi_cy.WrapEDOC._un_load_verify(GXContext._get_tls_geo(), name.encode(), verify, type)
         
 
 

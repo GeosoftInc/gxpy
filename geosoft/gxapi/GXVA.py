@@ -16,7 +16,7 @@ from . import gxapi_cy_extend
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXVA:
+class GXVA(gxapi_cy.WrapVA):
     """
     GXVA class.
 
@@ -34,37 +34,28 @@ class GXVA:
     be stored in a `GXVA <geosoft.gxapi.GXVA>` that is 256 elements wide.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapVA(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXVA`
+        A null (undefined) instance of `GXVA <geosoft.gxapi.GXVA>`
         
-        :returns: A null `GXVA`
+        :returns: A null `GXVA <geosoft.gxapi.GXVA>`
+        :rtype:   GXVA
         """
-        return cls()
+        return GXVA()
 
     def is_null(self):
         """
-        Check if the instance of `GXVA` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXVA`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -89,8 +80,10 @@ class GXVA:
         :type  gs_type:    int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.get_array(start_row, start_col, rows, cols, data, gs_type)
+        self._get_array(start_row, start_col, rows, cols, data, gs_type)
         
 
 
@@ -114,8 +107,10 @@ class GXVA:
         :type  gs_type:    int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_array(start_row, start_col, rows, cols, data, gs_type)
+        self._set_array(start_row, start_col, rows, cols, data, gs_type)
         
 
 
@@ -132,13 +127,13 @@ class GXVA:
 
         .. versionadded:: 7.2
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Adds each value in an input elevation `GXVV <geosoft.gxapi.GXVV>` to all the values at
+        **Note:** Adds each value in an input elevation `GXVV <geosoft.gxapi.GXVV>` to all the values at
         the same fid in a depths `GXVA <geosoft.gxapi.GXVA>`. Includes an option for negative depths down
         (e.g. a relative level).
         """
-        self._wrapper.add_elevations_vv_to_depths(vv._wrapper, negative_depths)
+        self._add_elevations_vv_to_depths(vv, negative_depths)
         
 
 
@@ -153,12 +148,12 @@ class GXVA:
 
         .. versionadded:: 5.1.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the VAs have different numbers of columns, the smaller number
+        **Note:** If the VAs have different numbers of columns, the smaller number
         is used in the copy operation.
         """
-        self._wrapper.append(v_aa._wrapper)
+        self._append(v_aa)
         
 
 
@@ -175,15 +170,15 @@ class GXVA:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The output `GXVV <geosoft.gxapi.GXVV>` will be dimensioned by the number of
+        **Note:** The output `GXVV <geosoft.gxapi.GXVV>` will be dimensioned by the number of
         rows or columns in the input `GXVV <geosoft.gxapi.GXVV>` depending on the
         :ref:`VA_AVERAGE` setting.
         
         Dummies are not included in the average.
         """
-        self._wrapper.average(vv._wrapper, rc)
+        self._average(vv, rc)
         
 
 
@@ -197,8 +192,10 @@ class GXVA:
         :type  v_as:  GXVA
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.copy(v_as._wrapper)
+        self._copy(v_as)
         
 
 
@@ -225,15 +222,15 @@ class GXVA:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        1. Unlike `copy <geosoft.gxapi.GXVA.copy>` destination `GXVA <geosoft.gxapi.GXVA>` is not reallocated, nor are
+        **Note:** 1. Unlike `copy <geosoft.gxapi.GXVA.copy>` destination `GXVA <geosoft.gxapi.GXVA>` is not reallocated, nor are
         the dimensions changed. The caller must make any desired changes.
         
         2. All `GXVA <geosoft.gxapi.GXVA>` types are supported and will be converted using
         Convert_GS if necessary.
         """
-        self._wrapper.copy2(d_row, d_col, v_as._wrapper, s_row, s_col, rows, cols)
+        self._copy2(d_row, d_col, v_as, s_row, s_col, rows, cols)
         
 
 
@@ -254,8 +251,10 @@ class GXVA:
         :rtype:       GXVA
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapVA.create(GXContext._get_tls_geo(), type, rows, cols)
+        ret_val = gxapi_cy.WrapVA._create(GXContext._get_tls_geo(), type, rows, cols)
         return GXVA(ret_val)
 
 
@@ -277,11 +276,11 @@ class GXVA:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        See `GXVV.create <geosoft.gxapi.GXVV.create>`
+        **Note:** See `GXVV.create <geosoft.gxapi.GXVV.create>`
         """
-        ret_val = gxapi_cy.WrapVA.create_ext(GXContext._get_tls_geo(), type, rows, cols)
+        ret_val = gxapi_cy.WrapVA._create_ext(GXContext._get_tls_geo(), type, rows, cols)
         return GXVA(ret_val)
 
 
@@ -303,11 +302,11 @@ class GXVA:
 
         .. versionadded:: 7.2.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        See `GXVV.create <geosoft.gxapi.GXVV.create>`
+        **Note:** See `GXVV.create <geosoft.gxapi.GXVV.create>`
         """
-        ret_val = gxapi_cy.WrapVA.create_vv(GXContext._get_tls_geo(), vv._wrapper, rows, columns)
+        ret_val = gxapi_cy.WrapVA._create_vv(GXContext._get_tls_geo(), vv, rows, columns)
         return GXVA(ret_val)
 
 
@@ -325,14 +324,14 @@ class GXVA:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        No data is copied, this is the handle to the data `GXVV <geosoft.gxapi.GXVV>` in the `GXVA <geosoft.gxapi.GXVA>`.
+        **Note:** No data is copied, this is the handle to the data `GXVV <geosoft.gxapi.GXVV>` in the `GXVA <geosoft.gxapi.GXVA>`.
         The fid start/increment of the `GXVA <geosoft.gxapi.GXVA>` is passed to the `GXVV <geosoft.gxapi.GXVV>` at the time
         of the call.  If a new `GXVA <geosoft.gxapi.GXVA>` is read, you must call GetFull_VV_VA
         to get the new fid in the `GXVV <geosoft.gxapi.GXVV>`.
         """
-        ret_val = self._wrapper.get_full_vv()
+        ret_val = self._get_full_vv()
         return GXVV(ret_val)
 
 
@@ -350,8 +349,10 @@ class GXVA:
         :type  vv:       GXVV
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.get_vv(no, row_col, vv._wrapper)
+        self._get_vv(no, row_col, vv)
         
 
 
@@ -367,11 +368,11 @@ class GXVA:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        `len <geosoft.gxapi.GXVA.len>` returns the number of rows.
+        **Note:** `len <geosoft.gxapi.GXVA.len>` returns the number of rows.
         """
-        ret_val = self._wrapper.col()
+        ret_val = self._col()
         return ret_val
 
 
@@ -392,12 +393,12 @@ class GXVA:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Type conversions are performed if necessary.  Dummy values
+        **Note:** Type conversions are performed if necessary.  Dummy values
         are converted to "*" string.
         """
-        ret_val = self._wrapper.get_int(row, col)
+        ret_val = self._get_int(row, col)
         return ret_val
 
 
@@ -416,15 +417,15 @@ class GXVA:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Returns element wanted, `rDUMMY <geosoft.gxapi.rDUMMY>`, `iDUMMY <geosoft.gxapi.iDUMMY>` or blank string
+        **Note:** Returns element wanted, `rDUMMY <geosoft.gxapi.rDUMMY>`, `iDUMMY <geosoft.gxapi.iDUMMY>` or blank string
         if the value is dummy or outside of the range of data.
         
         Type conversions are performed if necessary.  Dummy values
         are converted to "*" string.
         """
-        str_val.value = self._wrapper.get_string(row, col, str_val.value.encode())
+        str_val.value = self._get_string(row, col, str_val.value.encode())
         
 
 
@@ -440,11 +441,11 @@ class GXVA:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        `col <geosoft.gxapi.GXVA.col>` returns the number of columns.
+        **Note:** `col <geosoft.gxapi.GXVA.col>` returns the number of columns.
         """
-        ret_val = self._wrapper.len()
+        ret_val = self._len()
         return ret_val
 
 
@@ -461,12 +462,12 @@ class GXVA:
 
         .. versionadded:: 5.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Given a row index `GXVV <geosoft.gxapi.GXVV>` (of type INT), this method reorders a
+        **Note:** Given a row index `GXVV <geosoft.gxapi.GXVV>` (of type INT), this method reorders a
         `GXVA <geosoft.gxapi.GXVA>`. Please make sure that the index holds valid information.
         """
-        gxapi_cy.WrapVA.index_order(GXContext._get_tls_geo(), vv._wrapper, va._wrapper)
+        gxapi_cy.WrapVA._index_order(GXContext._get_tls_geo(), vv, va)
         
 
 
@@ -483,13 +484,13 @@ class GXVA:
 
         .. versionadded:: 6.4.2
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Fractional values in the `GXVV <geosoft.gxapi.GXVV>` will interpolate between the value
+        **Note:** Fractional values in the `GXVV <geosoft.gxapi.GXVV>` will interpolate between the value
         at the whole integer value and the next whole integer, dummy
         if outside the `GXVA <geosoft.gxapi.GXVA>`.
         """
-        self._wrapper.lookup_index(vvi._wrapper, var._wrapper)
+        self._lookup_index(vvi, var)
         
 
 
@@ -506,8 +507,10 @@ class GXVA:
         :type  max:  float_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        min.value, max.value = self._wrapper.range_double(min.value, max.value)
+        min.value, max.value = self._range_double(min.value, max.value)
         
 
 
@@ -525,8 +528,10 @@ class GXVA:
         :type  length:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.re_fid(start, incr, length)
+        self._re_fid(start, incr, length)
         
 
 
@@ -538,8 +543,10 @@ class GXVA:
         
 
         .. versionadded:: 5.1.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.reverse()
+        self._reverse()
         
 
 
@@ -554,8 +561,10 @@ class GXVA:
         :rtype:      float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.get_fid_incr()
+        ret_val = self._get_fid_incr()
         return ret_val
 
 
@@ -570,8 +579,10 @@ class GXVA:
         :rtype:      float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.get_fid_start()
+        ret_val = self._get_fid_start()
         return ret_val
 
 
@@ -592,12 +603,12 @@ class GXVA:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Type conversions are performed if necessary.  Dummy values
+        **Note:** Type conversions are performed if necessary.  Dummy values
         are converted to "*" string.
         """
-        ret_val = self._wrapper.get_double(row, col)
+        ret_val = self._get_double(row, col)
         return ret_val
 
 
@@ -611,8 +622,10 @@ class GXVA:
         :type  incr:  float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_fid_incr(incr)
+        self._set_fid_incr(incr)
         
 
 
@@ -626,8 +639,10 @@ class GXVA:
         :type  start:  float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_fid_start(start)
+        self._set_fid_start(start)
         
 
 
@@ -646,13 +661,13 @@ class GXVA:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Element being set cannot be < 0.
+        **Note:** Element being set cannot be < 0.
         If the element is > current `GXVA <geosoft.gxapi.GXVA>` length, the `GXVA <geosoft.gxapi.GXVA>` length is
         increased.
         """
-        self._wrapper.set_int(row, col, value)
+        self._set_int(row, col, value)
         
 
 
@@ -667,12 +682,12 @@ class GXVA:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The number of columns in a `GXVA <geosoft.gxapi.GXVA>` is fixed, and cannot be
+        **Note:** The number of columns in a `GXVA <geosoft.gxapi.GXVA>` is fixed, and cannot be
         altered once the `GXVA <geosoft.gxapi.GXVA>` is created.
         """
-        self._wrapper.set_ln(rows)
+        self._set_ln(rows)
         
 
 
@@ -691,13 +706,13 @@ class GXVA:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Element being set cannot be < 0.
+        **Note:** Element being set cannot be < 0.
         If the element is > current `GXVA <geosoft.gxapi.GXVA>` length, the `GXVA <geosoft.gxapi.GXVA>` length is
         increased.
         """
-        self._wrapper.set_double(row, col, value)
+        self._set_double(row, col, value)
         
 
 
@@ -716,13 +731,13 @@ class GXVA:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Element being set cannot be < 0.
+        **Note:** Element being set cannot be < 0.
         If the element is > current `GXVA <geosoft.gxapi.GXVA>` length, the `GXVA <geosoft.gxapi.GXVA>` length is
         increased.
         """
-        self._wrapper.set_string(row, col, value.encode())
+        self._set_string(row, col, value.encode())
         
 
 
@@ -740,8 +755,10 @@ class GXVA:
         :type  vv:       GXVV
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_vv(no, row_col, vv._wrapper)
+        self._set_vv(no, row_col, vv)
         
 
 
@@ -758,11 +775,11 @@ class GXVA:
 
         .. versionadded:: 7.2
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Supports all `GXVA <geosoft.gxapi.GXVA>` types using an internal double `GXVV <geosoft.gxapi.GXVV>`.
+        **Note:** Supports all `GXVA <geosoft.gxapi.GXVA>` types using an internal double `GXVV <geosoft.gxapi.GXVV>`.
         """
-        self._wrapper.trans(base, mult)
+        self._trans(base, mult)
         
 
 
@@ -781,14 +798,14 @@ class GXVA:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The defined window must be within the `GXVA <geosoft.gxapi.GXVA>` element dimensions.
+        **Note:** The defined window must be within the `GXVA <geosoft.gxapi.GXVA>` element dimensions.
         The windowed result will be the simple sum of all
         values in the window.
         If any values are dummy, the result will be dummy.
         """
-        self._wrapper.window(start, count, vv._wrapper)
+        self._window(start, count, vv)
         
 
 
@@ -807,14 +824,14 @@ class GXVA:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The defined window must be within the `GXVA <geosoft.gxapi.GXVA>` element dimensions.
+        **Note:** The defined window must be within the `GXVA <geosoft.gxapi.GXVA>` element dimensions.
         The windowed result will be the simple sum of all
         values in the window.
         If any values are dummy, the result will be dummy.
         """
-        self._wrapper.window2(start, end, vv._wrapper)
+        self._window2(start, end, vv)
         
 
 
@@ -838,15 +855,15 @@ class GXVA:
 
         .. versionadded:: 8.2
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Returns 1 if all rows contain values which match the input values.
+        **Note:** Returns 1 if all rows contain values which match the input values.
         Optionally, row values can be offset by amounts specified with a secondary `GXVV <geosoft.gxapi.GXVV>`.
         This function was designed to detect "depth" array channels, including those which might
         have been offset with topography on each row.
         An absolute tolerance can be specified to ignore numerical noise.
         """
-        ret_val = self._wrapper.check_for_repeating(vv_t._wrapper, subtract_vv, vv_sub._wrapper, tol)
+        ret_val = self._check_for_repeating(vv_t, subtract_vv, vv_sub, tol)
         return ret_val
 
 
@@ -874,16 +891,16 @@ class GXVA:
 
         .. versionadded:: 8.2
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Returns 1 if all rows contain values which match the input values.
+        **Note:** Returns 1 if all rows contain values which match the input values.
         Optionally, row values can be offset by amounts specified with a secondary `GXVV <geosoft.gxapi.GXVV>`.
         This function was designed to detect "depth" array channels, including those which might
         have been offset with topography on each row.
         An absolute tolerance can be specified to ignore numerical noise.
         This version returns the row and column index of first mismatch.
         """
-        ret_val, bad_row.value, bad_col.value = self._wrapper.check_for_repeating2(vv_t._wrapper, subtract_vv, vv_sub._wrapper, tol, bad_row.value, bad_col.value)
+        ret_val, bad_row.value, bad_col.value = self._check_for_repeating2(vv_t, subtract_vv, vv_sub, tol, bad_row.value, bad_col.value)
         return ret_val
 
 
@@ -910,7 +927,7 @@ class GXVA:
         self.set_array(start_row, start_col, rows, columns, np_array.data.tobytes(), gs_type)
     
     def get_data_array(self, start_row: int, start_col: int, rows: int, cols: int, gs_type: int):
-        return gxapi_cy_extend.GXMemMethods.get_array_data_va(GXContext._internal_p(), self._wrapper.handle, start_row, start_col, rows, cols, gs_type)
+        return gxapi_cy_extend.GXMemMethods.get_array_data_va(GXContext._internal_p(), self._internal_handle(), start_row, start_col, rows, cols, gs_type)
 ### endblock ClassExtend
 
 

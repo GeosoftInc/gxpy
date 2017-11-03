@@ -14,7 +14,7 @@ from .GXDB import GXDB
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXEDB:
+class GXEDB(gxapi_cy.WrapEDB):
     """
     GXEDB class.
 
@@ -30,37 +30,28 @@ class GXEDB:
     `GXDB <geosoft.gxapi.GXDB>` object (see `GXDB <geosoft.gxapi.GXDB>`) may then be safely used to make changes to the map itself.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapEDB(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXEDB`
+        A null (undefined) instance of `GXEDB <geosoft.gxapi.GXEDB>`
         
-        :returns: A null `GXEDB`
+        :returns: A null `GXEDB <geosoft.gxapi.GXEDB>`
+        :rtype:   GXEDB
         """
-        return cls()
+        return GXEDB()
 
     def is_null(self):
         """
-        Check if the instance of `GXEDB` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXEDB`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -92,8 +83,12 @@ class GXEDB:
         :type  formula:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.apply_formula_internal(formula.encode())
+        self._apply_formula_internal(formula.encode())
         
 
 
@@ -108,8 +103,12 @@ class GXEDB:
         :rtype:      GXEDB
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapEDB.current(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapEDB._current(GXContext._get_tls_geo())
         return GXEDB(ret_val)
 
 
@@ -125,12 +124,14 @@ class GXEDB:
 
         .. versionadded:: 9.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This function acts just like `current <geosoft.gxapi.GXEDB.current>` except that the document is not activated (brought to foreground) and no
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** This function acts just like `current <geosoft.gxapi.GXEDB.current>` except that the document is not activated (brought to foreground) and no
         guarantee is given about which document is currently active.
         """
-        ret_val = gxapi_cy.WrapEDB.current_no_activate(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapEDB._current_no_activate(GXContext._get_tls_geo())
         return GXEDB(ret_val)
 
 
@@ -146,8 +147,12 @@ class GXEDB:
         :rtype:      GXEDB
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapEDB.current_if_exists(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapEDB._current_if_exists(GXContext._get_tls_geo())
         return GXEDB(ret_val)
 
 
@@ -160,11 +165,13 @@ class GXEDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Deletes an empty line 0 from the database.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Deletes an empty line 0 from the database.
         """
-        self._wrapper.del_line0()
+        self._del_line0()
         
 
 
@@ -181,15 +188,17 @@ class GXEDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Can only be run in interactive mode. After this call the
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Can only be run in interactive mode. After this call the
         `GXEDB <geosoft.gxapi.GXEDB>` object will become invalid. If this is the last view on
         the document and the document has been modified the map will be
         unloaded and optionally saved depending on the :ref:`EDB_REMOVE`
         parameter.
         """
-        self._wrapper.destroy_view(unload_flag)
+        self._destroy_view(unload_flag)
         
 
 
@@ -205,8 +214,12 @@ class GXEDB:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = self._wrapper.get_cur_chan_symb()
+        ret_val = self._get_cur_chan_symb()
         return ret_val
 
 
@@ -222,8 +235,12 @@ class GXEDB:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = self._wrapper.get_cur_line_symb()
+        ret_val = self._get_cur_line_symb()
         return ret_val
 
 
@@ -239,8 +256,12 @@ class GXEDB:
         :type  num:    int_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        start.value, num.value = self._wrapper.get_displ_fid_range(start.value, num.value)
+        start.value, num.value = self._get_displ_fid_range(start.value, num.value)
         
 
 
@@ -258,8 +279,12 @@ class GXEDB:
         :type  z:    float_ref
 
         .. versionadded:: 9.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        x.value, y.value, z.value = self._wrapper.get_cur_point(x.value, y.value, z.value)
+        x.value, y.value, z.value = self._get_cur_point(x.value, y.value, z.value)
         
 
 
@@ -277,8 +302,12 @@ class GXEDB:
         :type  num:    int_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        start.value, incr.value, num.value = self._wrapper.get_fid_range(start.value, incr.value, num.value)
+        start.value, incr.value, num.value = self._get_fid_range(start.value, incr.value, num.value)
         
 
 
@@ -294,8 +323,12 @@ class GXEDB:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = self._wrapper.get_next_line_symb()
+        ret_val = self._get_next_line_symb()
         return ret_val
 
 
@@ -311,8 +344,12 @@ class GXEDB:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = self._wrapper.get_prev_line_symb()
+        ret_val = self._get_prev_line_symb()
         return ret_val
 
 
@@ -330,8 +367,12 @@ class GXEDB:
         :type  ph_chan_x:  int_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        min_x.value, max_x.value, ph_chan_x.value = self._wrapper.get_profile_range_x(min_x.value, max_x.value, ph_chan_x.value)
+        min_x.value, max_x.value, ph_chan_x.value = self._get_profile_range_x(min_x.value, max_x.value, ph_chan_x.value)
         
 
 
@@ -353,8 +394,12 @@ class GXEDB:
         :type  scl:     int_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        min_y.value, max_y.value, scl.value = self._wrapper.get_profile_range_y(window, prof, min_y.value, max_y.value, scl.value)
+        min_y.value, max_y.value, scl.value = self._get_profile_range_y(window, prof, min_y.value, max_y.value, scl.value)
         
 
 
@@ -370,8 +415,12 @@ class GXEDB:
         :type  d2:   float_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        d1.value, d2.value = self._wrapper.get_profile_split(d1.value, d2.value)
+        d1.value, d2.value = self._get_profile_split(d1.value, d2.value)
         
 
 
@@ -391,8 +440,12 @@ class GXEDB:
         :type  d4:   float_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        d1.value, d2.value, d3.value, d4.value = self._wrapper.get_profile_split5(d1.value, d2.value, d3.value, d4.value)
+        d1.value, d2.value, d3.value, d4.value = self._get_profile_split5(d1.value, d2.value, d3.value, d4.value)
         
 
 
@@ -407,9 +460,11 @@ class GXEDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The returned `GXVV <geosoft.gxapi.GXVV>` is sized to the maximum number of profiles
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The returned `GXVV <geosoft.gxapi.GXVV>` is sized to the maximum number of profiles
         that can be displayed. If a profile is not currently displayed,
         its height fraction is 0.  The sum of all the fractions returned
         is equal to 1.
@@ -418,7 +473,7 @@ class GXEDB:
         profile windows. To get/set the fraction of the total database window
         devoted to the profiles, use the `set_split <geosoft.gxapi.GXEDB.set_split>` and `get_split <geosoft.gxapi.GXEDB.get_split>` functions.
         """
-        self._wrapper.get_profile_split_vv(vv._wrapper)
+        self._get_profile_split_vv(vv)
         
 
 
@@ -434,8 +489,12 @@ class GXEDB:
         :type  interval:  float_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        grid.value, interval.value = self._wrapper.get_profile_vertical_grid_lines(grid.value, interval.value)
+        grid.value, interval.value = self._get_profile_vertical_grid_lines(grid.value, interval.value)
         
 
 
@@ -453,8 +512,12 @@ class GXEDB:
         :type  y:       int_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        x.value, y.value = self._wrapper.get_profile_window(window, x.value, y.value)
+        x.value, y.value = self._get_profile_window(window, x.value, y.value)
         
 
 
@@ -468,8 +531,12 @@ class GXEDB:
         :type  col:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.goto_column(col)
+        self._goto_column(col)
         
 
 
@@ -483,8 +550,12 @@ class GXEDB:
         :type  elem:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.goto_elem(elem)
+        self._goto_elem(elem)
         
 
 
@@ -498,8 +569,12 @@ class GXEDB:
         :type  line_symb:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.goto_line(line_symb)
+        self._goto_line(line_symb)
         
 
 
@@ -519,8 +594,12 @@ class GXEDB:
         :type  count:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.histogram(st._wrapper, min, incr, count)
+        self._histogram(st, min, incr, count)
         
 
 
@@ -539,9 +618,11 @@ class GXEDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The `GXVV <geosoft.gxapi.GXVV>` elements must be INT.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The `GXVV <geosoft.gxapi.GXVV>` elements must be INT.
         
         Displayed channel lists are filled in the order the channels
         appear on the display, left to right.
@@ -550,7 +631,7 @@ class GXEDB:
 
             `disp_chan_list <geosoft.gxapi.GXEDB.disp_chan_list>`
         """
-        ret_val = self._wrapper.all_chan_list(vv._wrapper)
+        ret_val = self._all_chan_list(vv)
         return ret_val
 
 
@@ -565,8 +646,12 @@ class GXEDB:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = self._wrapper.channels()
+        ret_val = self._channels()
         return ret_val
 
 
@@ -585,9 +670,11 @@ class GXEDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The `GXVV <geosoft.gxapi.GXVV>` elements must be INT.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The `GXVV <geosoft.gxapi.GXVV>` elements must be INT.
         
         Displayed channel lists are filled in the order the channels
         appear on the display, left to right.
@@ -596,7 +683,7 @@ class GXEDB:
 
             `disp_chan_lst <geosoft.gxapi.GXEDB.disp_chan_lst>`
         """
-        ret_val = self._wrapper.disp_chan_list(vv._wrapper)
+        ret_val = self._disp_chan_list(vv)
         return ret_val
 
 
@@ -615,9 +702,11 @@ class GXEDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Displayed channel lists are filled in the order the channels
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Displayed channel lists are filled in the order the channels
         appear on the display, left to right.
         
         The channel names will be placed in the "Name" part of
@@ -627,7 +716,7 @@ class GXEDB:
 
             `disp_chan_list <geosoft.gxapi.GXEDB.disp_chan_list>`
         """
-        ret_val = self._wrapper.disp_chan_lst(lst._wrapper)
+        ret_val = self._disp_chan_lst(lst)
         return ret_val
 
 
@@ -648,9 +737,11 @@ class GXEDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Displayed channel lists are filled in the order the channels
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Displayed channel lists are filled in the order the channels
         appear on the display, left to right.
         
         The channel names will be placed in the "Name" part of
@@ -663,7 +754,7 @@ class GXEDB:
 
             `disp_chan_list <geosoft.gxapi.GXEDB.disp_chan_list>`
         """
-        ret_val = self._wrapper.disp_class_chan_lst(lst._wrapper, class_name.encode())
+        ret_val = self._disp_class_chan_lst(lst, class_name.encode())
         return ret_val
 
 
@@ -681,8 +772,12 @@ class GXEDB:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = self._wrapper.find_channel_column(chan.encode())
+        ret_val = self._find_channel_column(chan.encode())
         return ret_val
 
 
@@ -707,8 +802,12 @@ class GXEDB:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val, x.value, y.value, z.value = self._wrapper.find_nearest(x.value, y.value, z.value, ipj._wrapper)
+        ret_val, x.value, y.value, z.value = self._find_nearest(x.value, y.value, z.value, ipj)
         return ret_val
 
 
@@ -723,11 +822,13 @@ class GXEDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Returns "" if mark not currently in a channel.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Returns "" if mark not currently in a channel.
         """
-        str_val.value = self._wrapper.get_cur_chan(str_val.value.encode())
+        str_val.value = self._get_cur_chan(str_val.value.encode())
         
 
 
@@ -742,8 +843,12 @@ class GXEDB:
         :type  val:  str_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        val.value = self._wrapper.get_cur_fid_string(val.value.encode())
+        val.value = self._get_cur_fid_string(val.value.encode())
         
 
 
@@ -757,8 +862,12 @@ class GXEDB:
         :type  str_val:  str_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        str_val.value = self._wrapper.get_cur_line(str_val.value.encode())
+        str_val.value = self._get_cur_line(str_val.value.encode())
         
 
 
@@ -780,8 +889,12 @@ class GXEDB:
         :rtype:        int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val, start.value, end.value, inc.value = self._wrapper.get_cur_mark(start.value, end.value, inc.value)
+        ret_val, start.value, end.value, inc.value = self._get_cur_mark(start.value, end.value, inc.value)
         return ret_val
 
 
@@ -802,15 +915,17 @@ class GXEDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Channel Name    Empty if no channel
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Channel Name    Empty if no channel
         Line Name       "[All]" if all lines are selected
         Fid Range       "[All]" if all values in all lines are selected
         "[None]"  if no values are selected
         "10 to 20"  giving the range of values.
         """
-        db.value, chan.value, line.value, fid.value = self._wrapper.get_current_selection(db.value.encode(), chan.value.encode(), line.value.encode(), fid.value.encode())
+        db.value, chan.value, line.value, fid.value = self._get_current_selection(db.value.encode(), chan.value.encode(), line.value.encode(), fid.value.encode())
         
 
 
@@ -830,8 +945,12 @@ class GXEDB:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapEDB.get_databases_lst(GXContext._get_tls_geo(), lst._wrapper, path)
+        ret_val = gxapi_cy.WrapEDB._get_databases_lst(GXContext._get_tls_geo(), lst, path)
         return ret_val
 
 
@@ -852,16 +971,18 @@ class GXEDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The current "mark" in this case is the start and
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The current "mark" in this case is the start and
         end fiducials and not the selected channel. You
         can use this method to retrieve the selected range
         from any channel, loaded or not.
         
         The `GXVV <geosoft.gxapi.GXVV>` will be resized to the length of the data
         """
-        ret_val = self._wrapper.get_mark_chan_vv(vv._wrapper, chan)
+        ret_val = self._get_mark_chan_vv(vv, chan)
         return ret_val
 
 
@@ -882,16 +1003,18 @@ class GXEDB:
 
         .. versionadded:: 8.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The current "mark" in this case is the start and
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The current "mark" in this case is the start and
         end fiducials and not the selected channel. You
         can use this method to retrieve the selected range
         from any channel, loaded or not.
         
         The `GXVA <geosoft.gxapi.GXVA>` will be resized to the length of the data
         """
-        ret_val = self._wrapper.get_mark_chan_va(vv._wrapper, chan)
+        ret_val = self._get_mark_chan_va(vv, chan)
         return ret_val
 
 
@@ -905,8 +1028,12 @@ class GXEDB:
         :type  name:  str_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        name.value = self._wrapper.get_name(name.value.encode())
+        name.value = self._get_name(name.value.encode())
         
 
 
@@ -927,8 +1054,12 @@ class GXEDB:
         :rtype:         int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = self._wrapper.get_profile_parm_int(window, prof, parm)
+        ret_val = self._get_profile_parm_int(window, prof, parm)
         return ret_val
 
 
@@ -943,8 +1074,12 @@ class GXEDB:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = self._wrapper.get_window_state()
+        ret_val = self._get_window_state()
         return ret_val
 
 
@@ -957,8 +1092,12 @@ class GXEDB:
         :rtype:      bool
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapEDB.have_current(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapEDB._have_current(GXContext._get_tls_geo())
         return ret_val
 
 
@@ -971,8 +1110,12 @@ class GXEDB:
         :rtype:      bool
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = self._wrapper.is_locked()
+        ret_val = self._is_locked()
         return ret_val
 
 
@@ -987,8 +1130,12 @@ class GXEDB:
         :rtype:       bool
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapEDB.loaded(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapEDB._loaded(GXContext._get_tls_geo(), name.encode())
         return ret_val
 
 
@@ -1007,12 +1154,14 @@ class GXEDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This functions will return FALSE if requested window
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** This functions will return FALSE if requested window
         is not supported in current version of Oasis montaj.
         """
-        ret_val = self._wrapper.profile_open(window)
+        ret_val = self._profile_open(window)
         return ret_val
 
 
@@ -1025,8 +1174,12 @@ class GXEDB:
         :rtype:      bool
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = self._wrapper.read_only()
+        ret_val = self._read_only()
         return ret_val
 
 
@@ -1050,8 +1203,12 @@ class GXEDB:
         :type  is_floating:  int_ref
 
         .. versionadded:: 9.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        left.value, top.value, right.value, bottom.value, state.value, is_floating.value = self._wrapper.get_window_position(left.value, top.value, right.value, bottom.value, state.value, is_floating.value)
+        left.value, top.value, right.value, bottom.value, state.value, is_floating.value = self._get_window_position(left.value, top.value, right.value, bottom.value, state.value, is_floating.value)
         
 
 
@@ -1075,8 +1232,12 @@ class GXEDB:
         :type  is_floating:  int
 
         .. versionadded:: 9.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.set_window_position(left, top, right, bottom, state, is_floating)
+        self._set_window_position(left, top, right, bottom, state, is_floating)
         
 
 
@@ -1096,11 +1257,13 @@ class GXEDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the symbol is not loaded, it will be loaded.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** If the symbol is not loaded, it will be loaded.
         """
-        ret_val = self._wrapper.show_profile_name(state, chan.encode())
+        ret_val = self._show_profile_name(state, chan.encode())
         return ret_val
 
 
@@ -1117,8 +1280,12 @@ class GXEDB:
         :rtype:         int
 
         .. versionadded:: 8.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = self._wrapper.get_window_y_axis_direction(window)
+        ret_val = self._get_window_y_axis_direction(window)
         return ret_val
 
 
@@ -1135,8 +1302,12 @@ class GXEDB:
         :rtype:         int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = self._wrapper.window_profiles(window)
+        ret_val = self._window_profiles(window)
         return ret_val
 
 
@@ -1151,11 +1322,13 @@ class GXEDB:
 
         .. versionadded:: 5.0.6
 
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
         .. seealso::
 
             `GXCHIMERA.launch_histogram <geosoft.gxapi.GXCHIMERA.launch_histogram>` in chimera.gxh
         """
-        self._wrapper.launch_histogram(chan.encode())
+        self._launch_histogram(chan.encode())
         
 
 
@@ -1168,9 +1341,9 @@ class GXEDB:
 
         .. versionadded:: 5.0.6
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The scatter tool uses the following INI parameters
+        **Note:** The scatter tool uses the following INI parameters
         
         SCATTER.STM       name of the scatter template,"none" for none
         SCATTER.STM_NAME  name of last template section, "" for none.
@@ -1182,7 +1355,7 @@ class GXEDB:
 
             `GXCHIMERA.launch_scatter <geosoft.gxapi.GXCHIMERA.launch_scatter>` in chimera.gxh
         """
-        self._wrapper.launch_scatter()
+        self._launch_scatter()
         
 
 
@@ -1201,9 +1374,11 @@ class GXEDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The last listed database will become the current database.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The last listed database will become the current database.
         
         Databases may already be loaded.
         
@@ -1211,7 +1386,7 @@ class GXEDB:
         All other files in the list are assumed to be in the same
         directory as the first file.
         """
-        ret_val = gxapi_cy.WrapEDB.load(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapEDB._load(GXContext._get_tls_geo(), name.encode())
         return GXEDB(ret_val)
 
 
@@ -1230,12 +1405,14 @@ class GXEDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This function acts just like `load <geosoft.gxapi.GXEDB.load>` except that the document(s) is not activated (brought to foreground) and no
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** This function acts just like `load <geosoft.gxapi.GXEDB.load>` except that the document(s) is not activated (brought to foreground) and no
         guarantee is given about which document is currently active.
         """
-        ret_val = gxapi_cy.WrapEDB.load_no_activate(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapEDB._load_no_activate(GXContext._get_tls_geo(), name.encode())
         return GXEDB(ret_val)
 
 
@@ -1247,8 +1424,12 @@ class GXEDB:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.load_all_chans()
+        self._load_all_chans()
         
 
 
@@ -1263,12 +1444,14 @@ class GXEDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the channel does not exist, or if channel is already
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** If the channel does not exist, or if channel is already
         loaded nothing happens.
         """
-        self._wrapper.load_chan(chan.encode())
+        self._load_chan(chan.encode())
         
 
 
@@ -1286,13 +1469,15 @@ class GXEDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        See `load <geosoft.gxapi.GXEDB.load>`. This is used for brand new databases, to set
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** See `load <geosoft.gxapi.GXEDB.load>`. This is used for brand new databases, to set
         an internal flag such that if on closing the user chooses
         not to save changes, the database is deleted.
         """
-        ret_val = gxapi_cy.WrapEDB.load_new(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapEDB._load_new(GXContext._get_tls_geo(), name.encode())
         return GXEDB(ret_val)
 
 
@@ -1314,14 +1499,16 @@ class GXEDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The loaded database will become the current database.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The loaded database will become the current database.
         
         If the database is already loaded, it simply becomes
         the current database.
         """
-        ret_val = gxapi_cy.WrapEDB.load_pass(GXContext._get_tls_geo(), name.encode(), login.encode(), password.encode())
+        ret_val = gxapi_cy.WrapEDB._load_pass(GXContext._get_tls_geo(), name.encode(), login.encode(), password.encode())
         return GXEDB(ret_val)
 
 
@@ -1341,13 +1528,15 @@ class GXEDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Can only be run in interactive mode. Is used by
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Can only be run in interactive mode. Is used by
         dbsubset to create a new database with the same
         view as previously.
         """
-        ret_val = gxapi_cy.WrapEDB.load_with_view(GXContext._get_tls_geo(), name.encode(), p2._wrapper)
+        ret_val = gxapi_cy.WrapEDB._load_with_view(GXContext._get_tls_geo(), name.encode(), p2)
         return GXEDB(ret_val)
 
 
@@ -1362,8 +1551,12 @@ class GXEDB:
         :rtype:      GXDB
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = self._wrapper.lock()
+        ret_val = self._lock()
         return GXDB(ret_val)
 
 
@@ -1375,8 +1568,12 @@ class GXEDB:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.make_current()
+        self._make_current()
         
 
 
@@ -1392,8 +1589,12 @@ class GXEDB:
         :type  prof:    int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.remove_profile(window, prof)
+        self._remove_profile(window, prof)
         
 
 
@@ -1411,8 +1612,12 @@ class GXEDB:
         :rtype:      float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = self._wrapper.get_cur_fid()
+        ret_val = self._get_cur_fid()
         return ret_val
 
 
@@ -1433,8 +1638,12 @@ class GXEDB:
         :rtype:         float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = self._wrapper.get_profile_parm_double(window, prof, parm)
+        ret_val = self._get_profile_parm_double(window, prof, parm)
         return ret_val
 
 
@@ -1450,8 +1659,12 @@ class GXEDB:
         :rtype:      float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = self._wrapper.get_split()
+        ret_val = self._get_split()
         return ret_val
 
 
@@ -1466,12 +1679,14 @@ class GXEDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Skips channels without makers; will not return an
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Skips channels without makers; will not return an
         error if the channel does not exist.
         """
-        self._wrapper.run_channel_maker(chan.encode())
+        self._run_channel_maker(chan.encode())
         
 
 
@@ -1484,11 +1699,13 @@ class GXEDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Skips channels without makers.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Skips channels without makers.
         """
-        self._wrapper.run_channel_makers()
+        self._run_channel_makers()
         
 
 
@@ -1502,8 +1719,12 @@ class GXEDB:
         :type  line:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.set_cur_line(line.encode())
+        self._set_cur_line(line.encode())
         
 
 
@@ -1517,8 +1738,12 @@ class GXEDB:
         :type  str_val:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.set_cur_line_no_message(str_val.encode())
+        self._set_cur_line_no_message(str_val.encode())
         
 
 
@@ -1534,8 +1759,12 @@ class GXEDB:
         :type  end:    float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.set_cur_mark(start, end)
+        self._set_cur_mark(start, end)
         
 
 
@@ -1555,8 +1784,12 @@ class GXEDB:
         :type  value:   int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.set_profile_parm_i(window, prof, parm, value)
+        self._set_profile_parm_i(window, prof, parm, value)
         
 
 
@@ -1576,8 +1809,12 @@ class GXEDB:
         :type  value:   float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.set_profile_parm_r(window, prof, parm, value)
+        self._set_profile_parm_r(window, prof, parm, value)
         
 
 
@@ -1595,8 +1832,12 @@ class GXEDB:
         :type  x_ch:   int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.set_profile_range_x(min_x, max_x, x_ch)
+        self._set_profile_range_x(min_x, max_x, x_ch)
         
 
 
@@ -1619,12 +1860,14 @@ class GXEDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If channel is not loaded or displayed, it will
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** If channel is not loaded or displayed, it will
         loaded and/or displayed.
         """
-        self._wrapper.set_profile_range_y(min_x, max_x, min_y, max_y, scl)
+        self._set_profile_range_y(min_x, max_x, min_y, max_y, scl)
         
 
 
@@ -1640,8 +1883,12 @@ class GXEDB:
         :type  d2:   float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.set_profile_split(d1, d2)
+        self._set_profile_split(d1, d2)
         
 
 
@@ -1661,8 +1908,12 @@ class GXEDB:
         :type  d4:   float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.set_profile_split5(d1, d2, d3, d4)
+        self._set_profile_split5(d1, d2, d3, d4)
         
 
 
@@ -1677,16 +1928,18 @@ class GXEDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The input `GXVV <geosoft.gxapi.GXVV>` values are the fractional heights for each
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The input `GXVV <geosoft.gxapi.GXVV>` values are the fractional heights for each
         profile window. Values are summed, and normalized (so you can
         enter "1,1,1", with a `GXVV <geosoft.gxapi.GXVV>` of length 3, if you want 3 equal profile windows).
         
         `GXVV <geosoft.gxapi.GXVV>` values beyond the maximum number of displayable
         profiles (`MAX_PROF_WND <geosoft.gxapi.MAX_PROF_WND>`) are ignored.
         """
-        self._wrapper.set_profile_split_vv(vv._wrapper)
+        self._set_profile_split_vv(vv)
         
 
 
@@ -1701,12 +1954,14 @@ class GXEDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        d = (spreadsheet window height/
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** d = (spreadsheet window height/
         (spreadsheet window height + entire profile window height))
         """
-        self._wrapper.set_split(d)
+        self._set_split(d)
         
 
 
@@ -1720,8 +1975,12 @@ class GXEDB:
         :type  state:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.set_window_state(state)
+        self._set_window_state(state)
         
 
 
@@ -1738,11 +1997,13 @@ class GXEDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the symbol is not loaded, it will be loaded.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** If the symbol is not loaded, it will be loaded.
         """
-        self._wrapper.show_profile(window, symb)
+        self._show_profile(window, symb)
         
 
 
@@ -1757,11 +2018,13 @@ class GXEDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Use `histogram <geosoft.gxapi.GXEDB.histogram>` to get median or histogram.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Use `histogram <geosoft.gxapi.GXEDB.histogram>` to get median or histogram.
         """
-        self._wrapper.statistics(st._wrapper)
+        self._statistics(st)
         
 
 
@@ -1776,12 +2039,14 @@ class GXEDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the database is not loaded, nothing happens.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** If the database is not loaded, nothing happens.
         Same as `un_load_verify <geosoft.gxapi.GXEDB.un_load_verify>` with FALSE to prompt save.
         """
-        gxapi_cy.WrapEDB.un_load(GXContext._get_tls_geo(), name.encode())
+        gxapi_cy.WrapEDB._un_load(GXContext._get_tls_geo(), name.encode())
         
 
 
@@ -1793,8 +2058,12 @@ class GXEDB:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapEDB.un_load_all(GXContext._get_tls_geo())
+        gxapi_cy.WrapEDB._un_load_all(GXContext._get_tls_geo())
         
 
 
@@ -1806,8 +2075,12 @@ class GXEDB:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.un_load_all_chans()
+        self._un_load_all_chans()
         
 
 
@@ -1822,12 +2095,14 @@ class GXEDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the channel does not exist, or if channel is already
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** If the channel does not exist, or if channel is already
         loaded nothing happens.
         """
-        self._wrapper.un_load_chan(chan.encode())
+        self._un_load_chan(chan.encode())
         
 
 
@@ -1842,11 +2117,13 @@ class GXEDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the database is not loaded, nothing happens.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** If the database is not loaded, nothing happens.
         """
-        gxapi_cy.WrapEDB.un_load_discard(GXContext._get_tls_geo(), name.encode())
+        gxapi_cy.WrapEDB._un_load_discard(GXContext._get_tls_geo(), name.encode())
         
 
 
@@ -1863,15 +2140,17 @@ class GXEDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the database is not loaded, nothing happens.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** If the database is not loaded, nothing happens.
         The user can be prompted to save before unloading.
         If `EDB_UNLOAD_NO_PROMPT <geosoft.gxapi.EDB_UNLOAD_NO_PROMPT>`, data is always saved.
         EDB_UNLOAD_MULTIPROMPT is now obsolete and
         is equivalent to `EDB_UNLOAD_SINGLE_PROMPT <geosoft.gxapi.EDB_UNLOAD_SINGLE_PROMPT>`.
         """
-        gxapi_cy.WrapEDB.un_load_verify(GXContext._get_tls_geo(), name.encode(), prompt)
+        gxapi_cy.WrapEDB._un_load_verify(GXContext._get_tls_geo(), name.encode(), prompt)
         
 
 
@@ -1883,8 +2162,12 @@ class GXEDB:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.un_lock()
+        self._un_lock()
         
 
 
@@ -1904,8 +2187,12 @@ class GXEDB:
         :type  window:   int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapEDB.load_control(GXContext._get_tls_geo(), db_file.encode(), window)
+        gxapi_cy.WrapEDB._load_control(GXContext._get_tls_geo(), db_file.encode(), window)
         
 
 
@@ -1921,8 +2208,12 @@ class GXEDB:
         :type  window:   int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapEDB.load_new_control(GXContext._get_tls_geo(), db_file.encode(), window)
+        gxapi_cy.WrapEDB._load_new_control(GXContext._get_tls_geo(), db_file.encode(), window)
         
 
 
@@ -1942,8 +2233,12 @@ class GXEDB:
         :type  window:    int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapEDB.load_pass_control(GXContext._get_tls_geo(), db_file.encode(), user.encode(), password.encode(), window)
+        gxapi_cy.WrapEDB._load_pass_control(GXContext._get_tls_geo(), db_file.encode(), user.encode(), password.encode(), window)
         
 
 
@@ -1961,8 +2256,12 @@ class GXEDB:
         :type  window:   int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapEDB.load_with_view_control(GXContext._get_tls_geo(), db_file.encode(), edb._wrapper, window)
+        gxapi_cy.WrapEDB._load_with_view_control(GXContext._get_tls_geo(), db_file.encode(), edb, window)
         
 
 

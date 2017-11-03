@@ -14,7 +14,7 @@ from .GXIMG import GXIMG
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXRGRD:
+class GXRGRD(gxapi_cy.WrapRGRD):
     """
     GXRGRD class.
 
@@ -23,37 +23,28 @@ class GXRGRD:
     Run_RGRD function executes the Rangrid program using the `GXRGRD <geosoft.gxapi.GXRGRD>` object.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapRGRD(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXRGRD`
+        A null (undefined) instance of `GXRGRD <geosoft.gxapi.GXRGRD>`
         
-        :returns: A null `GXRGRD`
+        :returns: A null `GXRGRD <geosoft.gxapi.GXRGRD>`
+        :rtype:   GXRGRD
         """
-        return cls()
+        return GXRGRD()
 
     def is_null(self):
         """
-        Check if the instance of `GXRGRD` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXRGRD`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -67,11 +58,11 @@ class GXRGRD:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        DLL name `clear <geosoft.gxapi.GXRGRD.clear>`
+        **Note:** DLL name `clear <geosoft.gxapi.GXRGRD.clear>`
         """
-        self._wrapper.clear()
+        self._clear()
         
 
 
@@ -87,14 +78,14 @@ class GXRGRD:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The Rangrid object is initially empty. It will store the
+        **Note:** The Rangrid object is initially empty. It will store the
         control file parameters which the Rangrid program needs
         to execute. Use the LoadParms_RGRD method to get the
         control file parameters into the `GXRGRD <geosoft.gxapi.GXRGRD>` object.
         """
-        ret_val = gxapi_cy.WrapRGRD.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapRGRD._create(GXContext._get_tls_geo())
         return GXRGRD(ret_val)
 
 
@@ -122,13 +113,13 @@ class GXRGRD:
 
         .. versionadded:: 7.0.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        If the grid file name is defined, the `GXIMG <geosoft.gxapi.GXIMG>` is tied to a new output file.
+        **Note:** If the grid file name is defined, the `GXIMG <geosoft.gxapi.GXIMG>` is tied to a new output file.
         If the grid file name is not defined, the `GXIMG <geosoft.gxapi.GXIMG>` is memory-based; not
         tied to a file.
         """
-        ret_val = gxapi_cy.WrapRGRD.create_img(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, ipj._wrapper, ctl.encode(), grid.encode())
+        ret_val = gxapi_cy.WrapRGRD._create_img(GXContext._get_tls_geo(), vv_x, vv_y, vv_z, ipj, ctl.encode(), grid.encode())
         return GXIMG(ret_val)
 
 
@@ -149,8 +140,10 @@ class GXRGRD:
         :rtype:         int
 
         .. versionadded:: 6.0.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = self._wrapper.default(zchan.encode(), in_dat._wrapper)
+        ret_val = self._default(zchan.encode(), in_dat)
         return ret_val
 
 
@@ -169,15 +162,15 @@ class GXRGRD:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        If the control file name passed into this function is a file
+        **Note:** If the control file name passed into this function is a file
         which does not exist, then the defaults for a Rangrid control
         file will be generated and put into the `GXRGRD <geosoft.gxapi.GXRGRD>` object.
         Otherwise, the control file's settings are retrieved from
         the file and loaded into the `GXRGRD <geosoft.gxapi.GXRGRD>` object.
         """
-        ret_val = self._wrapper.load_parms(file.encode())
+        ret_val = self._load_parms(file.encode())
         return ret_val
 
 
@@ -197,8 +190,10 @@ class GXRGRD:
         :rtype:          int
 
         .. versionadded:: 6.0.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = self._wrapper.run(in_dat._wrapper, out_dat._wrapper)
+        ret_val = self._run(in_dat, out_dat)
         return ret_val
 
 
@@ -225,8 +220,10 @@ class GXRGRD:
         :rtype:      int
 
         .. versionadded:: 6.0.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapRGRD.run2(GXContext._get_tls_geo(), db._wrapper, x.encode(), y.encode(), z.encode(), ctl.encode(), grd.encode())
+        ret_val = gxapi_cy.WrapRGRD._run2(GXContext._get_tls_geo(), db, x.encode(), y.encode(), z.encode(), ctl.encode(), grd.encode())
         return ret_val
 
 
@@ -245,12 +242,12 @@ class GXRGRD:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        If the control file did not previously exist, it will be
+        **Note:** If the control file did not previously exist, it will be
         created. Otherwise, the old file will be overwritten.
         """
-        ret_val = self._wrapper.save_parms(name.encode())
+        ret_val = self._save_parms(name.encode())
         return ret_val
 
 
@@ -274,8 +271,10 @@ class GXRGRD:
         :type  grd:   str
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapRGRD.run_vv(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, ipj._wrapper, ctl.encode(), grd.encode())
+        gxapi_cy.WrapRGRD._run_vv(GXContext._get_tls_geo(), vv_x, vv_y, vv_z, ipj, ctl.encode(), grd.encode())
         
 
 

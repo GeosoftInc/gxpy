@@ -15,7 +15,7 @@ from .GXMAP import GXMAP
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXEMAP:
+class GXEMAP(gxapi_cy.WrapEMAP):
     """
     GXEMAP class.
 
@@ -75,37 +75,28 @@ class GXEMAP:
         | `create_virtual <geosoft.gxapi.GXEMAP.create_virtual>`
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapEMAP(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXEMAP`
+        A null (undefined) instance of `GXEMAP <geosoft.gxapi.GXEMAP>`
         
-        :returns: A null `GXEMAP`
+        :returns: A null `GXEMAP <geosoft.gxapi.GXEMAP>`
+        :rtype:   GXEMAP
         """
-        return cls()
+        return GXEMAP()
 
     def is_null(self):
         """
-        Check if the instance of `GXEMAP` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXEMAP`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Drag-and-drop methods
@@ -120,8 +111,12 @@ class GXEMAP:
         :type  hglobal:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.drop_map_clip_data(hglobal)
+        self._drop_map_clip_data(hglobal)
         
 
 
@@ -134,8 +129,12 @@ class GXEMAP:
         :rtype:       bool
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = self._wrapper.drag_drop_enabled()
+        ret_val = self._drag_drop_enabled()
         return ret_val
 
 
@@ -149,8 +148,12 @@ class GXEMAP:
         :type  enable:  bool
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.set_drag_drop_enabled(enable)
+        self._set_drag_drop_enabled(enable)
         
 
 
@@ -167,9 +170,11 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Four objects are placed on the clipboard:
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Four objects are placed on the clipboard:
         
             1. Georefernce Text
             2. Bitmap of current window screen resolution
@@ -177,7 +182,7 @@ class GXEMAP:
             4. Entire map as a Geosoft View (go to view mode and hit paste). The coordinates are placed
                in the current view coordinates.
         """
-        self._wrapper.copy_to_clip()
+        self._copy_to_clip()
         
 
 
@@ -198,15 +203,17 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Locations are in the current view user units.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Locations are in the current view user units.
         
         The line is temporary and will disappear on the next
         screen refresh.  This function is for you to provide
         interactive screen feedback to your user.
         """
-        self._wrapper.draw_line(min_x, min_y, max_x, max_y)
+        self._draw_line(min_x, min_y, max_x, max_y)
         
 
 
@@ -227,15 +234,17 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Locations are in the current view user units.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Locations are in the current view user units.
         
         The line is temporary and will disappear on the next
         screen refresh.  This function is for you to provide
         interactive screen feedback to your user.
         """
-        self._wrapper.draw_rect(min_x, min_y, max_x, max_y)
+        self._draw_rect(min_x, min_y, max_x, max_y)
         
 
 
@@ -256,15 +265,17 @@ class GXEMAP:
 
         .. versionadded:: 9.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Plot a square symbol on a section view, but input 3D user coordinates
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Plot a square symbol on a section view, but input 3D user coordinates
         
         The line is temporary and will disappear on the next
         screen refresh.  This function is for you to provide
         interactive screen feedback to your user.
         """
-        self._wrapper.draw_rect_3d(x, y, z, pix)
+        self._draw_rect_3d(x, y, z, pix)
         
 
 
@@ -285,12 +296,14 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Coordinates are based on the current view units.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Coordinates are based on the current view units.
         For 3D views this will return the full map extents.
         """
-        min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.get_display_area(min_x.value, min_y.value, max_x.value, max_y.value)
+        min_x.value, min_y.value, max_x.value, max_y.value = self._get_display_area(min_x.value, min_y.value, max_x.value, max_y.value)
         
 
 
@@ -311,12 +324,14 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Coordinates are in millimeters.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Coordinates are in millimeters.
         For 3D views this will return the full map extents.
         """
-        min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.get_display_area_raw(min_x.value, min_y.value, max_x.value, max_y.value)
+        min_x.value, min_y.value, max_x.value, max_y.value = self._get_display_area_raw(min_x.value, min_y.value, max_x.value, max_y.value)
         
 
 
@@ -345,12 +360,14 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This affects the display units and other related properties for the base
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** This affects the display units and other related properties for the base
         view of a map.
         """
-        snap_to_grid.value, snap_dist.value, view_grid.value, view_rulers.value, view_units.value, grid_red.value, grid_green.value, grid_blue.value = self._wrapper.get_map_layout_props(snap_to_grid.value, snap_dist.value, view_grid.value, view_rulers.value, view_units.value, grid_red.value, grid_green.value, grid_blue.value)
+        snap_to_grid.value, snap_dist.value, view_grid.value, view_rulers.value, view_units.value, grid_red.value, grid_green.value, grid_blue.value = self._get_map_layout_props(snap_to_grid.value, snap_dist.value, view_grid.value, view_rulers.value, view_units.value, grid_red.value, grid_green.value, grid_blue.value)
         
 
 
@@ -364,8 +381,12 @@ class GXEMAP:
         :type  snap:  float_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        snap.value = self._wrapper.get_map_snap(snap.value)
+        snap.value = self._get_map_snap(snap.value)
         
 
 
@@ -380,8 +401,12 @@ class GXEMAP:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = self._wrapper.get_window_state()
+        ret_val = self._get_window_state()
         return ret_val
 
 
@@ -402,12 +427,14 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Coordinates are based on the current view user units.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Coordinates are based on the current view user units.
         The map is immediatly redrawn.
         """
-        self._wrapper.set_display_area(min_x, min_y, max_x, max_y)
+        self._set_display_area(min_x, min_y, max_x, max_y)
         
 
 
@@ -436,12 +463,14 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This affects the display units and other related properties for the base
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** This affects the display units and other related properties for the base
         view of a map.
         """
-        self._wrapper.set_map_layout_props(snap_to_grid, snap_dist, view_grid, view_rulers, view_units, grid_red, grid_green, grid_blue)
+        self._set_map_layout_props(snap_to_grid, snap_dist, view_grid, view_rulers, view_units, grid_red, grid_green, grid_blue)
         
 
 
@@ -455,8 +484,12 @@ class GXEMAP:
         :type  snap:  float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.set_map_snap(snap)
+        self._set_map_snap(snap)
         
 
 
@@ -470,8 +503,12 @@ class GXEMAP:
         :type  state:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.set_window_state(state)
+        self._set_window_state(state)
         
 
 
@@ -490,8 +527,12 @@ class GXEMAP:
         :rtype:       int
 
         .. versionadded:: 9.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = self._wrapper.packed_files()
+        ret_val = self._packed_files()
         return ret_val
 
 
@@ -506,15 +547,17 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Activating a group basically enters the edit mode associated
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Activating a group basically enters the edit mode associated
         with the type of group. E.g. a vector group will enable the
         edit toolbar for that gorup and an `GXAGG <geosoft.gxapi.GXAGG>` will bring up the
         image color tool. Be sure to pass a combined name containing
         both the view name and the group separated by a "/" or "\\".
         """
-        self._wrapper.activate_group(view_group.encode())
+        self._activate_group(view_group.encode())
         
 
 
@@ -528,8 +571,12 @@ class GXEMAP:
         :type  view:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.activate_view(view.encode())
+        self._activate_view(view.encode())
         
 
 
@@ -544,8 +591,12 @@ class GXEMAP:
         :rtype:      GXEMAP
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapEMAP.current(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapEMAP._current(GXContext._get_tls_geo())
         return GXEMAP(ret_val)
 
 
@@ -561,12 +612,14 @@ class GXEMAP:
 
         .. versionadded:: 9.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This function acts just like `current <geosoft.gxapi.GXEMAP.current>` except that the document is not activated (brought to foreground) and no
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** This function acts just like `current <geosoft.gxapi.GXEMAP.current>` except that the document is not activated (brought to foreground) and no
         guarantee is given about which document is currently active.
         """
-        ret_val = gxapi_cy.WrapEMAP.current_no_activate(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapEMAP._current_no_activate(GXContext._get_tls_geo())
         return GXEMAP(ret_val)
 
 
@@ -582,8 +635,12 @@ class GXEMAP:
         :rtype:      GXEMAP
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapEMAP.current_if_exists(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapEMAP._current_if_exists(GXContext._get_tls_geo())
         return GXEMAP(ret_val)
 
 
@@ -600,15 +657,17 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Can only be run in interactive mode. After this call the
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Can only be run in interactive mode. After this call the
         `GXEMAP <geosoft.gxapi.GXEMAP>` object will become invalid. If this is the last view on
         the document and the document has been modified the map will be
         unloaded and optionally saved depending on the :ref:`EMAP_REMOVE`
         parameter.
         """
-        self._wrapper.destroy_view(unload_flag)
+        self._destroy_view(unload_flag)
         
 
 
@@ -625,13 +684,15 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        To get TT and GFN fonts, call twice with the same list
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** To get TT and GFN fonts, call twice with the same list
         and `EMAP_FONT_TT <geosoft.gxapi.EMAP_FONT_TT>`, then `EMAP_FONT_GFN <geosoft.gxapi.EMAP_FONT_GFN>`, or vice-versa to
         change order of listing.
         """
-        self._wrapper.font_lst(lst._wrapper, which)
+        self._font_lst(lst, which)
         
 
 
@@ -649,13 +710,15 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This function operates on the current map.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** This function operates on the current map.
         Unlike `set_current_view <geosoft.gxapi.GXEMAP.set_current_view>` this function's action
         survive the GX finishing.
         """
-        ret_val = self._wrapper.change_current_view(view.encode())
+        ret_val = self._change_current_view(view.encode())
         return ret_val
 
 
@@ -675,8 +738,12 @@ class GXEMAP:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = self._wrapper.create_group_snapshot(lst._wrapper)
+        ret_val = self._create_group_snapshot(lst)
         return ret_val
 
 
@@ -690,8 +757,12 @@ class GXEMAP:
         :type  name:  str_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        name.value = self._wrapper.get_3d_view_name(name.value.encode())
+        name.value = self._get_3d_view_name(name.value.encode())
         
 
 
@@ -706,11 +777,13 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This function operates on the current map.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** This function operates on the current map.
         """
-        group.value = self._wrapper.get_current_group(group.value.encode())
+        group.value = self._get_current_group(group.value.encode())
         
 
 
@@ -725,11 +798,13 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This function operates on the current map.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** This function operates on the current map.
         """
-        view.value = self._wrapper.get_current_view(view.value.encode())
+        view.value = self._get_current_view(view.value.encode())
         
 
 
@@ -749,8 +824,12 @@ class GXEMAP:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapEMAP.get_maps_lst(GXContext._get_tls_geo(), lst._wrapper, path)
+        ret_val = gxapi_cy.WrapEMAP._get_maps_lst(GXContext._get_tls_geo(), lst, path)
         return ret_val
 
 
@@ -764,8 +843,12 @@ class GXEMAP:
         :type  name:  str_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        name.value = self._wrapper.get_name(name.value.encode())
+        name.value = self._get_name(name.value.encode())
         
 
 
@@ -781,8 +864,12 @@ class GXEMAP:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapEMAP.have_current(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapEMAP._have_current(GXContext._get_tls_geo())
         return ret_val
 
 
@@ -804,8 +891,12 @@ class GXEMAP:
         :rtype:        int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val, name.value = gxapi_cy.WrapEMAP.i_get_specified_map_name(GXContext._get_tls_geo(), field.encode(), value.encode(), name.value.encode())
+        ret_val, name.value = gxapi_cy.WrapEMAP._i_get_specified_map_name(GXContext._get_tls_geo(), field.encode(), value.encode(), name.value.encode())
         return ret_val
 
 
@@ -820,8 +911,12 @@ class GXEMAP:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = self._wrapper.is_grid()
+        ret_val = self._is_grid()
         return ret_val
 
 
@@ -836,11 +931,13 @@ class GXEMAP:
 
         .. versionadded:: 9.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Use this method to reload (if loaded) a grid document if the file on disk changed.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Use this method to reload (if loaded) a grid document if the file on disk changed.
         """
-        gxapi_cy.WrapEMAP.reload_grid(GXContext._get_tls_geo(), name.encode())
+        gxapi_cy.WrapEMAP._reload_grid(GXContext._get_tls_geo(), name.encode())
         
 
 
@@ -855,8 +952,12 @@ class GXEMAP:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = self._wrapper.is_3d_view()
+        ret_val = self._is_3d_view()
         return ret_val
 
 
@@ -871,8 +972,12 @@ class GXEMAP:
         :rtype:       GXE3DV
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = self._wrapper.get_e_3dv()
+        ret_val = self._get_e_3dv()
         return GXE3DV(ret_val)
 
 
@@ -885,8 +990,12 @@ class GXEMAP:
         :rtype:       bool
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = self._wrapper.is_locked()
+        ret_val = self._is_locked()
         return ret_val
 
 
@@ -903,8 +1012,12 @@ class GXEMAP:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapEMAP.loaded(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapEMAP._loaded(GXContext._get_tls_geo(), name.encode())
         return ret_val
 
 
@@ -917,8 +1030,12 @@ class GXEMAP:
         :rtype:       bool
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = self._wrapper.read_only()
+        ret_val = self._read_only()
         return ret_val
 
 
@@ -942,8 +1059,12 @@ class GXEMAP:
         :type  is_floating:  int_ref
 
         .. versionadded:: 9.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        left.value, top.value, right.value, bottom.value, state.value, is_floating.value = self._wrapper.get_window_position(left.value, top.value, right.value, bottom.value, state.value, is_floating.value)
+        left.value, top.value, right.value, bottom.value, state.value, is_floating.value = self._get_window_position(left.value, top.value, right.value, bottom.value, state.value, is_floating.value)
         
 
 
@@ -967,8 +1088,12 @@ class GXEMAP:
         :type  is_floating:  int
 
         .. versionadded:: 9.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.set_window_position(left, top, right, bottom, state, is_floating)
+        self._set_window_position(left, top, right, bottom, state, is_floating)
         
 
 
@@ -989,12 +1114,14 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Typically this function is used in conjunction with
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Typically this function is used in conjunction with
         CreateSnapshot_EMAP.
         """
-        ret_val = self._wrapper.doubleize_group_snapshot(state._wrapper)
+        ret_val = self._doubleize_group_snapshot(state)
         return ret_val
 
 
@@ -1012,14 +1139,16 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This function operates on the current map.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** This function operates on the current map.
         It changes the view only during the execution of the
         GX. As soon as the GX terminates the view will revert
         to the original one.
         """
-        ret_val = self._wrapper.set_current_view(view.encode())
+        ret_val = self._set_current_view(view.encode())
         return ret_val
 
 
@@ -1036,13 +1165,15 @@ class GXEMAP:
 
         .. versionadded:: 9.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This function can be used to obtain a views coordinate system 
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** This function can be used to obtain a views coordinate system 
         without having to call `lock <geosoft.gxapi.GXEMAP.lock>`. This could be an expensive operation
         that cause undesirable UX.
         """
-        self._wrapper.get_view_ipj(view.encode(), ipj._wrapper)
+        self._get_view_ipj(view.encode(), ipj)
         
 
 
@@ -1060,9 +1191,11 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The last map in the list will be the current map.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The last map in the list will be the current map.
         
         Maps may already be loaded.
         
@@ -1070,7 +1203,7 @@ class GXEMAP:
         All other files in the list are assumed to be in the same
         directory as the first file.
         """
-        ret_val = gxapi_cy.WrapEMAP.load(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapEMAP._load(GXContext._get_tls_geo(), name.encode())
         return GXEMAP(ret_val)
 
 
@@ -1089,12 +1222,14 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This function acts just like `load <geosoft.gxapi.GXEMAP.load>` except that the document(s) is not activated (brought to foreground) and no
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** This function acts just like `load <geosoft.gxapi.GXEMAP.load>` except that the document(s) is not activated (brought to foreground) and no
         guarantee is given about which document is currently active.
         """
-        ret_val = gxapi_cy.WrapEMAP.load_no_activate(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapEMAP._load_no_activate(GXContext._get_tls_geo(), name.encode())
         return GXEMAP(ret_val)
 
 
@@ -1114,13 +1249,15 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Can only be run in interactive mode. Is used by
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Can only be run in interactive mode. Is used by
         dbsubset to create a new database with the same
         view as previously.
         """
-        ret_val = gxapi_cy.WrapEMAP.load_with_view(GXContext._get_tls_geo(), name.encode(), p2._wrapper)
+        ret_val = gxapi_cy.WrapEMAP._load_with_view(GXContext._get_tls_geo(), name.encode(), p2)
         return GXEMAP(ret_val)
 
 
@@ -1136,11 +1273,13 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The Redraw flag is set to `EMAP_REDRAW_YES <geosoft.gxapi.EMAP_REDRAW_YES>` when this functions is called.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The Redraw flag is set to `EMAP_REDRAW_YES <geosoft.gxapi.EMAP_REDRAW_YES>` when this functions is called.
         """
-        ret_val = self._wrapper.lock()
+        ret_val = self._lock()
         return GXMAP(ret_val)
 
 
@@ -1152,8 +1291,12 @@ class GXEMAP:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.make_current()
+        self._make_current()
         
 
 
@@ -1191,8 +1334,12 @@ class GXEMAP:
         :type  file:           str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.print_(entire_map, scale_to_fit, print_to_file, all_pages, centre, copies, first_page, last_page, scale_factor, overlap_size, offset_x, offset_y, file.encode())
+        self._print_(entire_map, scale_to_fit, print_to_file, all_pages, centre, copies, first_page, last_page, scale_factor, overlap_size, offset_x, offset_y, file.encode())
         
 
 
@@ -1205,11 +1352,13 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Redraws the map immediately. Map must not be locked.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Redraws the map immediately. Map must not be locked.
         """
-        self._wrapper.redraw()
+        self._redraw()
         
 
 
@@ -1223,8 +1372,12 @@ class GXEMAP:
         :type  view_group:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.select_group(view_group.encode())
+        self._select_group(view_group.encode())
         
 
 
@@ -1239,9 +1392,11 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This function is generally used to prevent redrawing of
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** This function is generally used to prevent redrawing of
         the map, which normally occurs after the last `un_lock <geosoft.gxapi.GXEMAP.un_lock>`
         call, in cases where it is known that no changes are being
         made to the map.
@@ -1251,7 +1406,7 @@ class GXEMAP:
         to querying information from the map. And then end with a call to
         `un_lock <geosoft.gxapi.GXEMAP.un_lock>`.
         """
-        self._wrapper.set_redraw_flag(redraw)
+        self._set_redraw_flag(redraw)
         
 
 
@@ -1266,12 +1421,14 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the `GXMAP <geosoft.gxapi.GXMAP>` is not loaded, nothing happens.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** If the `GXMAP <geosoft.gxapi.GXMAP>` is not loaded, nothing happens.
         Same as `un_load_verify <geosoft.gxapi.GXEMAP.un_load_verify>` with FALSE to prompt save.
         """
-        gxapi_cy.WrapEMAP.un_load(GXContext._get_tls_geo(), name.encode())
+        gxapi_cy.WrapEMAP._un_load(GXContext._get_tls_geo(), name.encode())
         
 
 
@@ -1283,8 +1440,12 @@ class GXEMAP:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapEMAP.un_load_all(GXContext._get_tls_geo())
+        gxapi_cy.WrapEMAP._un_load_all(GXContext._get_tls_geo())
         
 
 
@@ -1301,12 +1462,14 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the map is not loaded, nothing happens.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** If the map is not loaded, nothing happens.
         If "FALSE", map is saved without a prompt.
         """
-        gxapi_cy.WrapEMAP.un_load_verify(GXContext._get_tls_geo(), name.encode(), prompt)
+        gxapi_cy.WrapEMAP._un_load_verify(GXContext._get_tls_geo(), name.encode(), prompt)
         
 
 
@@ -1318,8 +1481,12 @@ class GXEMAP:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.un_lock()
+        self._un_lock()
         
 
 
@@ -1339,8 +1506,12 @@ class GXEMAP:
         :type  y:     float_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        x.value, y.value = self._wrapper.get_cur_point(x.value, y.value)
+        x.value, y.value = self._get_cur_point(x.value, y.value)
         
 
 
@@ -1356,8 +1527,12 @@ class GXEMAP:
         :type  y:     float_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        x.value, y.value = self._wrapper.get_cur_point_mm(x.value, y.value)
+        x.value, y.value = self._get_cur_point_mm(x.value, y.value)
         
 
 
@@ -1373,8 +1548,12 @@ class GXEMAP:
         :type  y:     float_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        x.value, y.value = self._wrapper.get_cursor(x.value, y.value)
+        x.value, y.value = self._get_cursor(x.value, y.value)
         
 
 
@@ -1390,8 +1569,12 @@ class GXEMAP:
         :type  y:     float_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        x.value, y.value = self._wrapper.get_cursor_mm(x.value, y.value)
+        x.value, y.value = self._get_cursor_mm(x.value, y.value)
         
 
 
@@ -1422,9 +1605,11 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The command line will start to recieve digitized points
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The command line will start to recieve digitized points
         from the mouse.  Whenever the left mouse button is
         pressed, the current view X,Y are placed on the workspace
         command line.  If a valid `GXIMG <geosoft.gxapi.GXIMG>` is passed, the Z value is
@@ -1435,7 +1620,7 @@ class GXEMAP:
         
         Locations are in the current view user units
         """
-        ret_val = self._wrapper.digitize(wa._wrapper, img._wrapper, digits, prompt.encode(), prefix.encode(), delim.encode(), newline)
+        ret_val = self._digitize(wa, img, digits, prompt.encode(), prefix.encode(), delim.encode(), newline)
         return ret_val
 
 
@@ -1464,9 +1649,11 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The command line will start to recieve digitized points
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The command line will start to recieve digitized points
         from the mouse.  Whenever the left mouse button is
         pressed, the current view X,Y are placed on the workspace
         command line.  If a valid `GXIMG <geosoft.gxapi.GXIMG>` is passed, the Z value is
@@ -1477,7 +1664,7 @@ class GXEMAP:
         
         Locations are in the current view user units
         """
-        ret_val = self._wrapper.digitize2(vvx._wrapper, vvy._wrapper, vvz._wrapper, img._wrapper, prompt.encode(), newline)
+        ret_val = self._digitize2(vvx, vvy, vvz, img, prompt.encode(), newline)
         return ret_val
 
 
@@ -1506,16 +1693,18 @@ class GXEMAP:
 
         .. versionadded:: 9.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Same as `digitize2 <geosoft.gxapi.GXEMAP.digitize2>`, but the closest peaks to the selected locations are
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Same as `digitize2 <geosoft.gxapi.GXEMAP.digitize2>`, but the closest peaks to the selected locations are
         returned instead of the selected location. The method chooses the highest value
         of the 8 surrounding points, the repeats this process until no higher value can
         be found in any of the 8 surrounding points. If there are two or more points with
         a higher value, it will just take the first one and continue, and this method will
         stall on flat areas as well (since no surrounding point is larger).
         """
-        ret_val = self._wrapper.digitize_peaks(vvx._wrapper, vvy._wrapper, vvz._wrapper, img._wrapper, prompt.encode(), newline)
+        ret_val = self._digitize_peaks(vvx, vvy, vvz, img, prompt.encode(), newline)
         return ret_val
 
 
@@ -1546,15 +1735,17 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This is the same as `digitize2 <geosoft.gxapi.GXEMAP.digitize2>`, except that it automatically
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** This is the same as `digitize2 <geosoft.gxapi.GXEMAP.digitize2>`, except that it automatically
         detects, (except for the 2nd and 3rd points) when a selected location
         is within the entered number of pixels from the starting point. If yes,
         the polygon is assumed to be closed, and the operation is the same as
         the RMB "done" command, and the process returns 0.
         """
-        ret_val = self._wrapper.digitize_polygon(vvx._wrapper, vvy._wrapper, vvz._wrapper, img._wrapper, prompt.encode(), newline, pixel_radius)
+        ret_val = self._digitize_polygon(vvx, vvy, vvz, img, prompt.encode(), newline, pixel_radius)
         return ret_val
 
 
@@ -1580,8 +1771,12 @@ class GXEMAP:
         :rtype:          int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.get_box(str_val.encode(), min_x.value, min_y.value, max_x.value, max_y.value)
+        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._get_box(str_val.encode(), min_x.value, min_y.value, max_x.value, max_y.value)
         return ret_val
 
 
@@ -1616,15 +1811,17 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the data view has a rotational (or other) warp, then the
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** If the data view has a rotational (or other) warp, then the
         `get_box <geosoft.gxapi.GXEMAP.get_box>` function returns only opposite diagonal points in the
         box, not enough info to determine the other two corners. This
         function returns the exact coordinates of all four corners, calculated
         from the pixel locations.
         """
-        ret_val, x1.value, y1.value, x2.value, y2.value, x3.value, y3.value, x4.value, y4.value = self._wrapper.get_box2(str_val.encode(), x1.value, y1.value, x2.value, y2.value, x3.value, y3.value, x4.value, y4.value)
+        ret_val, x1.value, y1.value, x2.value, y2.value, x3.value, y3.value, x4.value, y4.value = self._get_box2(str_val.encode(), x1.value, y1.value, x2.value, y2.value, x3.value, y3.value, x4.value, y4.value)
         return ret_val
 
 
@@ -1657,9 +1854,11 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the input angle is `rDUMMY <geosoft.gxapi.rDUMMY>`, an extra step is inserted
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** If the input angle is `rDUMMY <geosoft.gxapi.rDUMMY>`, an extra step is inserted
         for the user to define the angle by drawing a line
         with the mouse.
         The output primary axis angle will always be in the
@@ -1670,7 +1869,7 @@ class GXEMAP:
         The coordinates are returned in the current User projection
         (See `GXMVIEW.get_user_ipj <geosoft.gxapi.GXMVIEW.get_user_ipj>` and `GXMVIEW.set_user_ipj <geosoft.gxapi.GXMVIEW.set_user_ipj>`.)
         """
-        ret_val, angle.value, x1.value, y1.value, x_len.value, y_len.value = self._wrapper.get_grid(str_val.encode(), nx, ny, angle.value, x1.value, y1.value, x_len.value, y_len.value)
+        ret_val, angle.value, x1.value, y1.value, x_len.value, y_len.value = self._get_grid(str_val.encode(), nx, ny, angle.value, x1.value, y1.value, x_len.value, y_len.value)
         return ret_val
 
 
@@ -1697,12 +1896,14 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The coordinates are returned in the current User projection
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The coordinates are returned in the current User projection
         (See `GXMVIEW.get_user_ipj <geosoft.gxapi.GXMVIEW.get_user_ipj>` and `GXMVIEW.set_user_ipj <geosoft.gxapi.GXMVIEW.set_user_ipj>`.)
         """
-        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.get_line(str_val.encode(), min_x.value, min_y.value, max_x.value, max_y.value)
+        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._get_line(str_val.encode(), min_x.value, min_y.value, max_x.value, max_y.value)
         return ret_val
 
 
@@ -1730,12 +1931,14 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The coordinates are returned in the current User projection
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The coordinates are returned in the current User projection
         (See `GXMVIEW.get_user_ipj <geosoft.gxapi.GXMVIEW.get_user_ipj>` and `GXMVIEW.set_user_ipj <geosoft.gxapi.GXMVIEW.set_user_ipj>`.)
         """
-        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.get_line_ex(str_val.encode(), min_x.value, min_y.value, max_x.value, max_y.value)
+        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._get_line_ex(str_val.encode(), min_x.value, min_y.value, max_x.value, max_y.value)
         return ret_val
 
 
@@ -1767,14 +1970,16 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The coordinates are returned in the current User projection
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The coordinates are returned in the current User projection
         (See `GXMVIEW.get_user_ipj <geosoft.gxapi.GXMVIEW.get_user_ipj>` and `GXMVIEW.set_user_ipj <geosoft.gxapi.GXMVIEW.set_user_ipj>`.)
         This is useful for digitizing a line in an oriented view and getting
         the true coordinates in (X, Y, Z) at the selected point on the view plane.
         """
-        ret_val, min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._wrapper.get_line_xyz(str_val.encode(), min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
+        ret_val, min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._get_line_xyz(str_val.encode(), min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         return ret_val
 
 
@@ -1797,15 +2002,17 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This will wait for user to select a point.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** This will wait for user to select a point.
 
         .. seealso::
 
             iTrackPoint, GetCurPoint, GetCursor
         """
-        ret_val, x.value, y.value = self._wrapper.get_point(str_val.encode(), x.value, y.value)
+        ret_val, x.value, y.value = self._get_point(str_val.encode(), x.value, y.value)
         return ret_val
 
 
@@ -1830,15 +2037,17 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This will wait for user to select a point.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** This will wait for user to select a point.
 
         .. seealso::
 
             iTrackPoint, GetCurPoint, GetCursor
         """
-        ret_val, x.value, y.value = self._wrapper.get_point_ex(str_val.encode(), x.value, y.value)
+        ret_val, x.value, y.value = self._get_point_ex(str_val.encode(), x.value, y.value)
         return ret_val
 
 
@@ -1865,15 +2074,17 @@ class GXEMAP:
 
         .. versionadded:: 9.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This will wait for user to select a point.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** This will wait for user to select a point.
 
         .. seealso::
 
             iTrackPoint, GetCurPoint, GetCursor
         """
-        ret_val, x.value, y.value, z.value = self._wrapper.get_point_3d(str_val.encode(), x.value, y.value, z.value)
+        ret_val, x.value, y.value, z.value = self._get_point_3d(str_val.encode(), x.value, y.value, z.value)
         return ret_val
 
 
@@ -1896,12 +2107,14 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The coordinates are returned in the current User projection
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The coordinates are returned in the current User projection
         (See `GXMVIEW.get_user_ipj <geosoft.gxapi.GXMVIEW.get_user_ipj>` and `GXMVIEW.set_user_ipj <geosoft.gxapi.GXMVIEW.set_user_ipj>`.)
         """
-        ret_val = self._wrapper.get_poly_line(str_val.encode(), vv_x._wrapper, vv_y._wrapper)
+        ret_val = self._get_poly_line(str_val.encode(), vv_x, vv_y)
         return ret_val
 
 
@@ -1926,14 +2139,16 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The coordinates are returned in the current User projection
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The coordinates are returned in the current User projection
         (See `GXMVIEW.get_user_ipj <geosoft.gxapi.GXMVIEW.get_user_ipj>` and `GXMVIEW.set_user_ipj <geosoft.gxapi.GXMVIEW.set_user_ipj>`.) In this version
         of the method X, Y and Z (depth) are returned. Initially created
         to deal with crooked sections.
         """
-        ret_val = self._wrapper.get_poly_line_xyz(str_val.encode(), vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
+        ret_val = self._get_poly_line_xyz(str_val.encode(), vv_x, vv_y, vv_z)
         return ret_val
 
 
@@ -1960,9 +2175,11 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The coordinates are returned in the current User projection
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The coordinates are returned in the current User projection
         (See `GXMVIEW.get_user_ipj <geosoft.gxapi.GXMVIEW.get_user_ipj>` and `GXMVIEW.set_user_ipj <geosoft.gxapi.GXMVIEW.set_user_ipj>`.)
         If the user `GXIPJ <geosoft.gxapi.GXIPJ>` distorts the coordinates from being rectilinear
         (e.g. for a TriPlot graph), then care should be taken since the
@@ -1979,7 +2196,7 @@ class GXEMAP:
         max values. What appears to be a rectangle as seen on the map is not
         necessarily a rectangle in the User coordinates.
         """
-        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.get_rect(str_val.encode(), min_x.value, min_y.value, max_x.value, max_y.value)
+        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._get_rect(str_val.encode(), min_x.value, min_y.value, max_x.value, max_y.value)
         return ret_val
 
 
@@ -2001,8 +2218,12 @@ class GXEMAP:
         :rtype:        int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val, x.value, y.value = self._wrapper.track_point(flags, x.value, y.value)
+        ret_val, x.value, y.value = self._track_point(flags, x.value, y.value)
         return ret_val
 
 
@@ -2027,11 +2248,13 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Coordinates are based on the current view units.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Coordinates are based on the current view units.
         """
-        min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.get_aoi_area(min_x.value, min_y.value, max_x.value, max_y.value)
+        min_x.value, min_y.value, max_x.value, max_y.value = self._get_aoi_area(min_x.value, min_y.value, max_x.value, max_y.value)
         
 
 
@@ -2052,12 +2275,14 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Coordinates are based on the current view user units.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Coordinates are based on the current view user units.
         The map is immediatly redrawn.
         """
-        self._wrapper.set_aoi_area(min_x, min_y, max_x, max_y)
+        self._set_aoi_area(min_x, min_y, max_x, max_y)
         
 
 
@@ -2072,13 +2297,15 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This is handy for using a map to define an area of interest. Use in conjunction
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** This is handy for using a map to define an area of interest. Use in conjunction
         with Get/Set AOIArea. If this is used inside montaj it is important to set or provide
         for a method to set the map mode back to normal as this is not exposed in the interface.
         """
-        self._wrapper.set_viewport_mode(mode)
+        self._set_viewport_mode(mode)
         
 
 
@@ -2099,11 +2326,13 @@ class GXEMAP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Works only in Vertex Edit Mode
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Works only in Vertex Edit Mode
         """
-        self._wrapper.get_selected_vertices(vv_x._wrapper, vv_y._wrapper)
+        self._get_selected_vertices(vv_x, vv_y)
         
 
 
@@ -2124,8 +2353,12 @@ class GXEMAP:
         :rtype:       GXEMAP
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapEMAP.create_virtual(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapEMAP._create_virtual(GXContext._get_tls_geo(), name.encode())
         return GXEMAP(ret_val)
 
 
@@ -2145,8 +2378,12 @@ class GXEMAP:
         :type  window:    int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapEMAP.load_control(GXContext._get_tls_geo(), map_file.encode(), window)
+        gxapi_cy.WrapEMAP._load_control(GXContext._get_tls_geo(), map_file.encode(), window)
         
 
 
@@ -2164,8 +2401,12 @@ class GXEMAP:
         :type  window:    int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapEMAP.load_with_view_control(GXContext._get_tls_geo(), map_file.encode(), emap._wrapper, window)
+        gxapi_cy.WrapEMAP._load_with_view_control(GXContext._get_tls_geo(), map_file.encode(), emap, window)
         
 
 

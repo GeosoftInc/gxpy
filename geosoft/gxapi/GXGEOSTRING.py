@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXGEOSTRING:
+class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
     """
     GXGEOSTRING class.
 
@@ -24,37 +24,28 @@ class GXGEOSTRING:
     but read/write support could be added in the future.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapGEOSTRING(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXGEOSTRING`
+        A null (undefined) instance of `GXGEOSTRING <geosoft.gxapi.GXGEOSTRING>`
         
-        :returns: A null `GXGEOSTRING`
+        :returns: A null `GXGEOSTRING <geosoft.gxapi.GXGEOSTRING>`
+        :rtype:   GXGEOSTRING
         """
-        return cls()
+        return GXGEOSTRING()
 
     def is_null(self):
         """
-        Check if the instance of `GXGEOSTRING` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXGEOSTRING`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -74,8 +65,10 @@ class GXGEOSTRING:
         :rtype:                 GXGEOSTRING
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapGEOSTRING.open(GXContext._get_tls_geo(), geostring_file.encode(), mode)
+        ret_val = gxapi_cy.WrapGEOSTRING._open(GXContext._get_tls_geo(), geostring_file.encode(), mode)
         return GXGEOSTRING(ret_val)
 
 
@@ -91,8 +84,10 @@ class GXGEOSTRING:
         :type  ipj:        GXIPJ
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.get_ipj(ipj._wrapper)
+        self._get_ipj(ipj)
         
 
 
@@ -107,11 +102,11 @@ class GXGEOSTRING:
 
         .. versionadded:: 8.4
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        List items are returned with feature GUID in name and feature name in value.
+        **Note:** List items are returned with feature GUID in name and feature name in value.
         """
-        self._wrapper.get_features(lst._wrapper)
+        self._get_features(lst)
         
 
 
@@ -126,11 +121,11 @@ class GXGEOSTRING:
 
         .. versionadded:: 8.4
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        List items are returned with section GUID in name and section name in value.
+        **Note:** List items are returned with section GUID in name and section name in value.
         """
-        self._wrapper.get_sections(lst._wrapper)
+        self._get_sections(lst)
         
 
 
@@ -144,8 +139,10 @@ class GXGEOSTRING:
         :type  lst:        GXLST
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.get_all_shapes(lst._wrapper)
+        self._get_all_shapes(lst)
         
 
 
@@ -161,8 +158,10 @@ class GXGEOSTRING:
         :type  lst:        GXLST
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.get_shapes_for_feature(guid.encode(), lst._wrapper)
+        self._get_shapes_for_feature(guid.encode(), lst)
         
 
 
@@ -178,8 +177,10 @@ class GXGEOSTRING:
         :type  lst:        GXLST
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.get_shapes_for_section(guid.encode(), lst._wrapper)
+        self._get_shapes_for_section(guid.encode(), lst)
         
 
 
@@ -197,8 +198,10 @@ class GXGEOSTRING:
         :type  lst:           GXLST
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.get_shapes_for_feature_and_section(feature_guid.encode(), section_guid.encode(), lst._wrapper)
+        self._get_shapes_for_feature_and_section(feature_guid.encode(), section_guid.encode(), lst)
         
 
 
@@ -238,8 +241,10 @@ class GXGEOSTRING:
         :type  line_color:      int_ref
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        name.value, description.value, polygon.value, pat_number.value, pat_size.value, pat_thick.value, pat_density.value, pat_color.value, pat_bg_color.value, line_style.value, line_thickness.value, line_pitch.value, line_color.value = self._wrapper.get_feature_properties(guid.encode(), name.value.encode(), description.value.encode(), polygon.value, pat_number.value, pat_size.value, pat_thick.value, pat_density.value, pat_color.value, pat_bg_color.value, line_style.value, line_thickness.value, line_pitch.value, line_color.value)
+        name.value, description.value, polygon.value, pat_number.value, pat_size.value, pat_thick.value, pat_density.value, pat_color.value, pat_bg_color.value, line_style.value, line_thickness.value, line_pitch.value, line_color.value = self._get_feature_properties(guid.encode(), name.value.encode(), description.value.encode(), polygon.value, pat_number.value, pat_size.value, pat_thick.value, pat_density.value, pat_color.value, pat_bg_color.value, line_style.value, line_thickness.value, line_pitch.value, line_color.value)
         
 
 
@@ -277,8 +282,10 @@ class GXGEOSTRING:
         :type  d:               float_ref
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        name.value, container_name.value, orientation.value, easting.value, northing.value, elevation.value, azimuth.value, swing.value, a.value, b.value, c.value, d.value = self._wrapper.get_section_properties(guid.encode(), name.value.encode(), container_name.value.encode(), orientation.value, easting.value, northing.value, elevation.value, azimuth.value, swing.value, a.value, b.value, c.value, d.value)
+        name.value, container_name.value, orientation.value, easting.value, northing.value, elevation.value, azimuth.value, swing.value, a.value, b.value, c.value, d.value = self._get_section_properties(guid.encode(), name.value.encode(), container_name.value.encode(), orientation.value, easting.value, northing.value, elevation.value, azimuth.value, swing.value, a.value, b.value, c.value, d.value)
         
 
 
@@ -302,8 +309,10 @@ class GXGEOSTRING:
         :type  vert_v_vz:     GXVV
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        feature_guid.value, section_guid.value = self._wrapper.get_shape_properties(guid.encode(), feature_guid.value.encode(), section_guid.value.encode(), vert_v_vx._wrapper, vert_v_vy._wrapper, vert_v_vz._wrapper)
+        feature_guid.value, section_guid.value = self._get_shape_properties(guid.encode(), feature_guid.value.encode(), section_guid.value.encode(), vert_v_vx, vert_v_vy, vert_v_vz)
         
 
 

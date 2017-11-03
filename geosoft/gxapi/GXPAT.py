@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXPAT:
+class GXPAT(gxapi_cy.WrapPAT):
     """
     GXPAT class.
 
@@ -25,37 +25,28 @@ class GXPAT:
     range between 20000 and 29999.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapPAT(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXPAT`
+        A null (undefined) instance of `GXPAT <geosoft.gxapi.GXPAT>`
         
-        :returns: A null `GXPAT`
+        :returns: A null `GXPAT <geosoft.gxapi.GXPAT>`
+        :rtype:   GXPAT
         """
-        return cls()
+        return GXPAT()
 
     def is_null(self):
         """
-        Check if the instance of `GXPAT` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXPAT`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -71,8 +62,10 @@ class GXPAT:
         :rtype:      GXPAT
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapPAT.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapPAT._create(GXContext._get_tls_geo())
         return GXPAT(ret_val)
 
 
@@ -91,13 +84,13 @@ class GXPAT:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Returns a list of the available patterns.
+        **Note:** Returns a list of the available patterns.
         There will always be at least two items,
         "None" and "Solid Fill"
         """
-        self._wrapper.get_lst(cl.encode(), lst._wrapper)
+        self._get_lst(cl.encode(), lst)
         
 
 

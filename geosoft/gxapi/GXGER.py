@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXGER:
+class GXGER(gxapi_cy.WrapGER):
     """
     GXGER class.
 
@@ -45,37 +45,28 @@ class GXGER:
     that you use "%1", "%2", etc. as replacement strings.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapGER(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXGER`
+        A null (undefined) instance of `GXGER <geosoft.gxapi.GXGER>`
         
-        :returns: A null `GXGER`
+        :returns: A null `GXGER <geosoft.gxapi.GXGER>`
+        :rtype:   GXGER
         """
-        return cls()
+        return GXGER()
 
     def is_null(self):
         """
-        Check if the instance of `GXGER` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXGER`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -94,12 +85,12 @@ class GXGER:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The `GXGER <geosoft.gxapi.GXGER>` file may be in the local directory or the GEOSOFT
+        **Note:** The `GXGER <geosoft.gxapi.GXGER>` file may be in the local directory or the GEOSOFT
         directory.
         """
-        ret_val = gxapi_cy.WrapGER.create(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapGER._create(GXContext._get_tls_geo(), file.encode())
         return GXGER(ret_val)
 
 
@@ -121,8 +112,10 @@ class GXGER:
         :rtype:          int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val, message.value = self._wrapper.get(num, message.value.encode())
+        ret_val, message.value = self._get(num, message.value.encode())
         return ret_val
 
 
@@ -138,8 +131,10 @@ class GXGER:
         :type  set:   int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_int(parm.encode(), set)
+        self._set_int(parm.encode(), set)
         
 
 
@@ -155,8 +150,10 @@ class GXGER:
         :type  set:   float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_double(parm.encode(), set)
+        self._set_double(parm.encode(), set)
         
 
 
@@ -172,8 +169,10 @@ class GXGER:
         :type  set:   str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_string(parm.encode(), set.encode())
+        self._set_string(parm.encode(), set.encode())
         
 
 

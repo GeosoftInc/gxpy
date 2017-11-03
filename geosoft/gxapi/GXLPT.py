@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXLPT:
+class GXLPT(gxapi_cy.WrapLPT):
     """
     GXLPT class.
 
@@ -22,37 +22,28 @@ class GXLPT:
     is used primarily with `GXMAP <geosoft.gxapi.GXMAP>` class functions.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapLPT(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXLPT`
+        A null (undefined) instance of `GXLPT <geosoft.gxapi.GXLPT>`
         
-        :returns: A null `GXLPT`
+        :returns: A null `GXLPT <geosoft.gxapi.GXLPT>`
+        :rtype:   GXLPT
         """
-        return cls()
+        return GXLPT()
 
     def is_null(self):
         """
-        Check if the instance of `GXLPT` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXLPT`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -68,8 +59,10 @@ class GXLPT:
         :rtype:      GXLPT
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapLPT.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapLPT._create(GXContext._get_tls_geo())
         return GXLPT(ret_val)
 
 
@@ -85,8 +78,10 @@ class GXLPT:
         :type  lst:  GXLST
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.get_lst(lst._wrapper)
+        self._get_lst(lst)
         
 
 
@@ -101,11 +96,11 @@ class GXLPT:
 
         .. versionadded:: 9.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The six standard line types are "solid", "long dash", "dotted", "short dash", "long, short dash" and "dash dot".
+        **Note:** The six standard line types are "solid", "long dash", "dotted", "short dash", "long, short dash" and "dash dot".
         """
-        self._wrapper.get_standard_lst(lst._wrapper)
+        self._get_standard_lst(lst)
         
 
 

@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXIPJ:
+class GXIPJ(gxapi_cy.WrapIPJ):
     """
     GXIPJ class.
 
@@ -33,37 +33,28 @@ class GXIPJ:
     `GXLL2 <geosoft.gxapi.GXLL2>`   Creates Datum correction lookups.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapIPJ(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXIPJ`
+        A null (undefined) instance of `GXIPJ <geosoft.gxapi.GXIPJ>`
         
-        :returns: A null `GXIPJ`
+        :returns: A null `GXIPJ <geosoft.gxapi.GXIPJ>`
+        :rtype:   GXIPJ
         """
-        return cls()
+        return GXIPJ()
 
     def is_null(self):
         """
-        Check if the instance of `GXIPJ` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXIPJ`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -76,8 +67,10 @@ class GXIPJ:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.clear_warp()
+        self._clear_warp()
         
 
 
@@ -90,11 +83,11 @@ class GXIPJ:
 
         .. versionadded:: 5.1.5
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This function does nothing if the `GXIPJ <geosoft.gxapi.GXIPJ>` is not a projected coordinate system.
+        **Note:** This function does nothing if the `GXIPJ <geosoft.gxapi.GXIPJ>` is not a projected coordinate system.
         """
-        self._wrapper.make_geographic()
+        self._make_geographic()
         
 
 
@@ -106,8 +99,10 @@ class GXIPJ:
         
 
         .. versionadded:: 5.1.8
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.make_wgs84()
+        self._make_wgs84()
         
 
 
@@ -123,8 +118,10 @@ class GXIPJ:
         :type  str_val:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_units(scale, str_val.encode())
+        self._set_units(scale, str_val.encode())
         
 
 
@@ -148,8 +145,10 @@ class GXIPJ:
         :type  z_orig:  float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.add_exagg_warp(x_exag, y_exag, z_exag, x_orig, y_orig, z_orig)
+        self._add_exagg_warp(x_exag, y_exag, z_exag, x_orig, y_orig, z_orig)
         
 
 
@@ -165,8 +164,10 @@ class GXIPJ:
         :type  y:    int
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.add_log_warp(x, y)
+        self._add_log_warp(x, y)
         
 
 
@@ -210,8 +211,10 @@ class GXIPJ:
         :type  v33:  float
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.add_matrix_warp(v00, v01, v02, v03, v10, v11, v12, v13, v20, v21, v22, v23, v30, v31, v32, v33)
+        self._add_matrix_warp(v00, v01, v02, v03, v10, v11, v12, v13, v20, v21, v22, v23, v30, v31, v32, v33)
         
 
 
@@ -234,9 +237,9 @@ class GXIPJ:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        There must be at least "warp type" points in the
+        **Note:** There must be at least "warp type" points in the
         warp point `GXVV <geosoft.gxapi.GXVV>`'s.
         All point `GXVV <geosoft.gxapi.GXVV>`'s must have the same number of points.
         If there are more points than required by the warp,
@@ -246,7 +249,7 @@ class GXIPJ:
         
         Cannot be used with WARP_MATRIX or WARP_LOG
         """
-        self._wrapper.add_warp(type, vv_x_old._wrapper, vv_y_old._wrapper, vv_x_new._wrapper, vv_y_new._wrapper)
+        self._add_warp(type, vv_x_old, vv_y_old, vv_x_new, vv_y_new)
         
 
 
@@ -259,12 +262,12 @@ class GXIPJ:
 
         .. versionadded:: 7.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Clears the Datum, Local Datum and Projection info.
+        **Note:** Clears the Datum, Local Datum and Projection info.
         Leaves units, any warp or orientation warp unchanged.
         """
-        self._wrapper.clear_coordinate_system()
+        self._clear_coordinate_system()
         
 
 
@@ -276,8 +279,10 @@ class GXIPJ:
         
 
         .. versionadded:: 5.1.6
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.clear_orientation()
+        self._clear_orientation()
         
 
 
@@ -297,8 +302,10 @@ class GXIPJ:
         :type  f_forward:  int
 
         .. versionadded:: 6.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.convert_orientation_warp_vv(vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, f_forward)
+        self._convert_orientation_warp_vv(vv_x, vv_y, vv_z, f_forward)
         
 
 
@@ -312,8 +319,10 @@ class GXIPJ:
         :type  ip_jd:  GXIPJ
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.copy(ip_jd._wrapper)
+        self._copy(ip_jd)
         
 
 
@@ -328,12 +337,12 @@ class GXIPJ:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Copies the projection parameters, while leaving the rest
+        **Note:** Copies the projection parameters, while leaving the rest
         (e.g. Datum, Local Datum Transform) unchanged.
         """
-        self._wrapper.copy_projection(ip_jd._wrapper)
+        self._copy_projection(ip_jd)
         
 
 
@@ -348,8 +357,10 @@ class GXIPJ:
         :rtype:      GXIPJ
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapIPJ.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapIPJ._create(GXContext._get_tls_geo())
         return GXIPJ(ret_val)
 
 
@@ -365,8 +376,10 @@ class GXIPJ:
         :rtype:      GXIPJ
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapIPJ.create_s(GXContext._get_tls_geo(), bf._wrapper)
+        ret_val = gxapi_cy.WrapIPJ._create_s(GXContext._get_tls_geo(), bf)
         return GXIPJ(ret_val)
 
 
@@ -383,8 +396,10 @@ class GXIPJ:
         :rtype:       GXIPJ
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapIPJ.create_xml(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapIPJ._create_xml(GXContext._get_tls_geo(), file.encode())
         return GXIPJ(ret_val)
 
 
@@ -417,11 +432,11 @@ class GXIPJ:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The view must have a 3D orientation
+        **Note:** The view must have a 3D orientation
         """
-        x.value, y.value, z.value, rx.value, ry.value, rz.value, sx.value, sy.value, str_val.value = self._wrapper.get_3d_view(x.value, y.value, z.value, rx.value, ry.value, rz.value, sx.value, sy.value, str_val.value)
+        x.value, y.value, z.value, rx.value, ry.value, rz.value, sx.value, sy.value, str_val.value = self._get_3d_view(x.value, y.value, z.value, rx.value, ry.value, rz.value, sx.value, sy.value, str_val.value)
         
 
 
@@ -456,11 +471,11 @@ class GXIPJ:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The view must have a 3D orientation
+        **Note:** The view must have a 3D orientation
         """
-        x.value, y.value, z.value, rx.value, ry.value, rz.value, sx.value, sy.value, str_val.value, rotate.value, flags.value = self._wrapper.get_3d_view_ex(x.value, y.value, z.value, rx.value, ry.value, rz.value, sx.value, sy.value, str_val.value, rotate.value, flags.value)
+        x.value, y.value, z.value, rx.value, ry.value, rz.value, sx.value, sy.value, str_val.value, rotate.value, flags.value = self._get_3d_view_ex(x.value, y.value, z.value, rx.value, ry.value, rz.value, sx.value, sy.value, str_val.value, rotate.value, flags.value)
         
 
 
@@ -481,11 +496,11 @@ class GXIPJ:
 
         .. versionadded:: 7.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Returns the orignal VVs used to set up the crooked section path.
+        **Note:** Returns the orignal VVs used to set up the crooked section path.
         """
-        log_z.value = self._wrapper.get_crooked_section_view_v_vs(dist_vv._wrapper, xvv._wrapper, yvv._wrapper, log_z.value)
+        log_z.value = self._get_crooked_section_view_v_vs(dist_vv, xvv, yvv, log_z.value)
         
 
 
@@ -504,12 +519,12 @@ class GXIPJ:
 
         .. versionadded:: 6.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The datum filter string, if specified, will limit the requested
+        **Note:** The datum filter string, if specified, will limit the requested
         list to those valid for the spacified datum.
         """
-        gxapi_cy.WrapIPJ.get_list(GXContext._get_tls_geo(), parm, datum.encode(), lst._wrapper)
+        gxapi_cy.WrapIPJ._get_list(GXContext._get_tls_geo(), parm, datum.encode(), lst)
         
 
 
@@ -532,9 +547,9 @@ class GXIPJ:
 
         .. versionadded:: 5.1.6
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        IPJ_ORIENT_TYPE:
+        **Note:** IPJ_ORIENT_TYPE:
         `IPJ_ORIENT_DEFAULT <geosoft.gxapi.IPJ_ORIENT_DEFAULT>` - no special orientation - plan view.
         This is equivalent to `IPJ_ORIENT_PLAN <geosoft.gxapi.IPJ_ORIENT_PLAN>` with
         dXo = dYo = dZo = dRotation = 0.0.
@@ -552,7 +567,7 @@ class GXIPJ:
         HORIZONTALLY onto the viewing plan in order to
         preserve elevations, even if the section has a swing.
         """
-        x.value, y.value, z.value, az.value, swing.value = self._wrapper.get_orientation_info(x.value, y.value, z.value, az.value, swing.value)
+        x.value, y.value, z.value, az.value, swing.value = self._get_orientation_info(x.value, y.value, z.value, az.value, swing.value)
         
 
 
@@ -591,15 +606,15 @@ class GXIPJ:
 
         .. versionadded:: 5.1.6
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Two opposite corners of the plane are required.
+        **Note:** Two opposite corners of the plane are required.
         Because the origin of the plane does not necessarily
         have a stable back-projection into true 3d coordinates.
         In practice, use the current view extents, or the corners
         of a grid.
         """
-        pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value = self._wrapper.get_plane_equation(min_x, min_y, max_x, max_y, pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value)
+        pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value = self._get_plane_equation(min_x, min_y, max_x, max_y, pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value)
         
 
 
@@ -640,9 +655,9 @@ class GXIPJ:
 
         .. versionadded:: 6.4.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This is the same as `get_plane_equation <geosoft.gxapi.GXIPJ.get_plane_equation>`, but the
+        **Note:** This is the same as `get_plane_equation <geosoft.gxapi.GXIPJ.get_plane_equation>`, but the
         input projected coordinate system (PCS) may
         be different from that of the `GXIPJ <geosoft.gxapi.GXIPJ>` you want the
         plane equation values described in. This may be
@@ -653,7 +668,7 @@ class GXIPJ:
         If the two input IPJs share the same PCS then the `get_plane_equation <geosoft.gxapi.GXIPJ.get_plane_equation>`
         function is called directly, using the input `GXIPJ <geosoft.gxapi.GXIPJ>`.
         """
-        pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value = self._wrapper.get_plane_equation2(ip_jo._wrapper, min_x, min_y, max_x, max_y, pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value)
+        pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value = self._get_plane_equation2(ip_jo, min_x, min_y, max_x, max_y, pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value)
         
 
 
@@ -673,9 +688,9 @@ class GXIPJ:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        To transform between different datums requires the use of a local
+        **Note:** To transform between different datums requires the use of a local
         datum transform.  The local datum transform can be defined when
         a coordinate system is created, but the definition is optional.
         This function will test that the local datum transforms are defined.
@@ -683,7 +698,7 @@ class GXIPJ:
         local datum transform is still possible, but only the effect of
         ellipsoid shape will be modelled in the transform.
         """
-        ret_val = self._wrapper.compare_datums(ipj2._wrapper)
+        ret_val = self._compare_datums(ipj2)
         return ret_val
 
 
@@ -706,8 +721,10 @@ class GXIPJ:
         :rtype:            int
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val, x.value, y.value, z.value = self._wrapper.convert_warp(x.value, y.value, z.value, f_forward)
+        ret_val, x.value, y.value, z.value = self._convert_warp(x.value, y.value, z.value, f_forward)
         return ret_val
 
 
@@ -728,8 +745,10 @@ class GXIPJ:
         :rtype:            int
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.convert_warp_vv(vv_x._wrapper, vv_y._wrapper, f_forward)
+        ret_val = self._convert_warp_vv(vv_x, vv_y, f_forward)
         return ret_val
 
 
@@ -748,11 +767,11 @@ class GXIPJ:
 
         .. versionadded:: 7.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This does not compare LDT information (use `compare_datums <geosoft.gxapi.GXIPJ.compare_datums>` for that).
+        **Note:** This does not compare LDT information (use `compare_datums <geosoft.gxapi.GXIPJ.compare_datums>` for that).
         """
-        ret_val = self._wrapper.coordinate_systems_are_the_same(ipj2._wrapper)
+        ret_val = self._coordinate_systems_are_the_same(ipj2)
         return ret_val
 
 
@@ -770,8 +789,10 @@ class GXIPJ:
         :rtype:       int
 
         .. versionadded:: 7.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.coordinate_systems_are_the_same_within_a_small_tolerance(ipj2._wrapper)
+        ret_val = self._coordinate_systems_are_the_same_within_a_small_tolerance(ipj2)
         return ret_val
 
 
@@ -785,8 +806,10 @@ class GXIPJ:
         :type  str_val:  str_ref
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        str_val.value = self._wrapper.get_display_name(str_val.value.encode())
+        str_val.value = self._get_display_name(str_val.value.encode())
         
 
 
@@ -801,12 +824,12 @@ class GXIPJ:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the projection is not supported in ESRI, the projection
+        **Note:** If the projection is not supported in ESRI, the projection
         string will be empty.
         """
-        esri.value = self._wrapper.get_esri(esri.value.encode())
+        esri.value = self._get_esri(esri.value.encode())
         
 
 
@@ -829,13 +852,13 @@ class GXIPJ:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        See GXF revision 3 for string descriptions
+        **Note:** See GXF revision 3 for string descriptions
         All strings must be the same length, 160 (`STR_GXF <geosoft.gxapi.STR_GXF>`) recommended.
         Strings too short will be truncated.
         """
-        str1.value, str2.value, str3.value, str4.value, str5.value = self._wrapper.get_gxf(str1.value.encode(), str2.value.encode(), str3.value.encode(), str4.value.encode(), str5.value.encode())
+        str1.value, str2.value, str3.value, str4.value, str5.value = self._get_gxf(str1.value.encode(), str2.value.encode(), str3.value.encode(), str4.value.encode(), str5.value.encode())
         
 
 
@@ -851,8 +874,10 @@ class GXIPJ:
         :type  units:  str_ref
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        coord.value, units.value = self._wrapper.get_mi_coord_sys(coord.value.encode(), units.value.encode())
+        coord.value, units.value = self._get_mi_coord_sys(coord.value.encode(), units.value.encode())
         
 
 
@@ -868,8 +893,10 @@ class GXIPJ:
         :type  str_val:  str_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        str_val.value = self._wrapper.get_name(type, str_val.value.encode())
+        str_val.value = self._get_name(type, str_val.value.encode())
         
 
 
@@ -884,9 +911,9 @@ class GXIPJ:
 
         .. versionadded:: 9.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The vertical coordinate system (vcs) describes the datum used for vertical coordinates. The vcs name, if
+        **Note:** The vertical coordinate system (vcs) describes the datum used for vertical coordinates. The vcs name, if
         known, will appear in square brackets as part of the coordinate system name.
         
         Examples:
@@ -902,7 +929,7 @@ class GXIPJ:
              "NAVD88"          - Clears existing vcs, if any, and sets the VCS name to "NAVD88".
              ""                - Clears the vcs
         """
-        self._wrapper.set_vcs(str_val.encode())
+        self._set_vcs(str_val.encode())
         
 
 
@@ -918,12 +945,12 @@ class GXIPJ:
 
         .. versionadded:: 5.1.4
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Projections can be created oriented horizontally (e.g. in plan maps)
+        **Note:** Projections can be created oriented horizontally (e.g. in plan maps)
         or vertically (in section maps - Wholeplot and `GXIP <geosoft.gxapi.GXIP>`).
         """
-        ret_val = self._wrapper.get_orientation()
+        ret_val = self._get_orientation()
         return ret_val
 
 
@@ -937,8 +964,10 @@ class GXIPJ:
         :type  str_val:  str_ref
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        str_val.value = self._wrapper.get_orientation_name(str_val.value.encode())
+        str_val.value = self._get_orientation_name(str_val.value.encode())
         
 
 
@@ -954,8 +983,10 @@ class GXIPJ:
         :type  str_val:  str_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        scale.value, str_val.value = self._wrapper.get_units(scale.value, str_val.value.encode())
+        scale.value, str_val.value = self._get_units(scale.value, str_val.value.encode())
         
 
 
@@ -969,8 +1000,10 @@ class GXIPJ:
         :type  str_val:  str_ref
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        str_val.value = self._wrapper.get_xml(str_val.value.encode())
+        str_val.value = self._get_xml(str_val.value.encode())
         
 
 
@@ -986,8 +1019,10 @@ class GXIPJ:
         :rtype:      int
 
         .. versionadded:: 7.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.has_projection()
+        ret_val = self._has_projection()
         return ret_val
 
 
@@ -1003,8 +1038,10 @@ class GXIPJ:
         :rtype:      int
 
         .. versionadded:: 6.3.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.is_3d_inverted()
+        ret_val = self._is_3d_inverted()
         return ret_val
 
 
@@ -1020,8 +1057,10 @@ class GXIPJ:
         :rtype:      int
 
         .. versionadded:: 6.3.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.is_3d_inverted_angles()
+        ret_val = self._is_3d_inverted_angles()
         return ret_val
 
 
@@ -1037,8 +1076,10 @@ class GXIPJ:
         :rtype:      int
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.is_geographic()
+        ret_val = self._is_geographic()
         return ret_val
 
 
@@ -1056,8 +1097,10 @@ class GXIPJ:
         :rtype:       int
 
         .. versionadded:: 7.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.orientations_are_the_same(ipj2._wrapper)
+        ret_val = self._orientations_are_the_same(ipj2)
         return ret_val
 
 
@@ -1075,8 +1118,10 @@ class GXIPJ:
         :rtype:       int
 
         .. versionadded:: 7.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.orientations_are_the_same_within_a_small_tolerance(ipj2._wrapper)
+        ret_val = self._orientations_are_the_same_within_a_small_tolerance(ipj2)
         return ret_val
 
 
@@ -1093,9 +1138,9 @@ class GXIPJ:
 
         .. versionadded:: 8.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Returns     1 if there is a section orientation
+        **Note:** Returns     1 if there is a section orientation
         
         The following orientations can be used to orient sections or section views:
         
@@ -1109,7 +1154,7 @@ class GXIPJ:
         It is sometimes important to ignore the section orientation, for instance
         when rendering a grid in 3D where it has been located on a plane.
         """
-        ret_val = self._wrapper.has_section_orientation()
+        ret_val = self._has_section_orientation()
         return ret_val
 
 
@@ -1126,15 +1171,15 @@ class GXIPJ:
 
         .. versionadded:: 7.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This function checks only the projected coordinated system
+        **Note:** This function checks only the projected coordinated system
         in the `GXIPJ <geosoft.gxapi.GXIPJ>` object, so should only be used with projections
         of type `IPJ_TYPE_PCS <geosoft.gxapi.IPJ_TYPE_PCS>`.
         This function does not test the validity of datums or local
         datum transforms.
         """
-        ret_val = self._wrapper.projection_type_is_fully_supported()
+        ret_val = self._projection_type_is_fully_supported()
         return ret_val
 
 
@@ -1161,13 +1206,13 @@ class GXIPJ:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        `set_gxf <geosoft.gxapi.GXIPJ.set_gxf>` will fail and terminate the GX if anything goes wrong (e.g. having a wrong
+        **Note:** `set_gxf <geosoft.gxapi.GXIPJ.set_gxf>` will fail and terminate the GX if anything goes wrong (e.g. having a wrong
         parameter). If this function fails, it simply returns 0 and leaves the
         `GXIPJ <geosoft.gxapi.GXIPJ>` unchanged.
         """
-        ret_val = self._wrapper.set_gxf_safe(str1.encode(), str2.encode(), str3.encode(), str4.encode(), str5.encode())
+        ret_val = self._set_gxf_safe(str1.encode(), str2.encode(), str3.encode(), str4.encode(), str5.encode())
         return ret_val
 
 
@@ -1182,8 +1227,10 @@ class GXIPJ:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.source_type()
+        ret_val = self._source_type()
         return ret_val
 
 
@@ -1204,9 +1251,9 @@ class GXIPJ:
 
         .. versionadded:: 6.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        To transform between different datums requires the use of a local
+        **Note:** To transform between different datums requires the use of a local
         datum transform.  The local datum transform can be defined when
         a coordinate system is created, but the definition is optional.
         This function will test that the local datum transforms are defined.
@@ -1214,7 +1261,7 @@ class GXIPJ:
         local datum transform is still possible, but only the effect of
         ellipsoid shape will be modelled in the transform.
         """
-        ret_val = self._wrapper.support_datum_transform(ipj2._wrapper)
+        ret_val = self._support_datum_transform(ipj2)
         return ret_val
 
 
@@ -1232,8 +1279,10 @@ class GXIPJ:
         :type  name:  str_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        name.value = gxapi_cy.WrapIPJ.unit_name(GXContext._get_tls_geo(), val, type, name.value.encode())
+        name.value = gxapi_cy.WrapIPJ._unit_name(GXContext._get_tls_geo(), val, type, name.value.encode())
         
 
 
@@ -1246,8 +1295,10 @@ class GXIPJ:
         :rtype:      bool
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.warped()
+        ret_val = self._warped()
         return ret_val
 
 
@@ -1265,8 +1316,10 @@ class GXIPJ:
         :rtype:       int
 
         .. versionadded:: 7.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.warps_are_the_same(ipj2._wrapper)
+        ret_val = self._warps_are_the_same(ipj2)
         return ret_val
 
 
@@ -1284,8 +1337,10 @@ class GXIPJ:
         :rtype:       int
 
         .. versionadded:: 7.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.warps_are_the_same_within_a_small_tolerance(ipj2._wrapper)
+        ret_val = self._warps_are_the_same_within_a_small_tolerance(ipj2)
         return ret_val
 
 
@@ -1300,8 +1355,10 @@ class GXIPJ:
         :rtype:      int
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.warp_type()
+        ret_val = self._warp_type()
         return ret_val
 
 
@@ -1322,16 +1379,16 @@ class GXIPJ:
 
         .. versionadded:: 5.1.5
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Terminates with invalid or unsupported ranges.
+        **Note:** Terminates with invalid or unsupported ranges.
         If the map crosses the equator, or if map is within 20 degrees of the
         equator, uses an equatorial mercator projection centered at the central
         longitude. Otherwise, uses a Lambert Conic Conformal (1SP) projection
         for the map. Global maps outside of +/- 70 degrees latitude are not
         supported.
         """
-        self._wrapper.make_projected(min_lon, min_lat, max_lon, max_lat)
+        self._make_projected(min_lon, min_lat, max_lon, max_lat)
         
 
 
@@ -1362,13 +1419,13 @@ class GXIPJ:
 
         .. versionadded:: 5.1.5
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        if there are any problems reprojecting, new resolutions will
+        **Note:** if there are any problems reprojecting, new resolutions will
         dummy.  The conversion to new resolution is based on measurements
         along the four edges and two diagonals.
         """
-        min_res.value, max_res.value, diag_res.value = self._wrapper.new_box_resolution(ip_jo._wrapper, res, min_x, min_y, max_x, max_y, min_res.value, max_res.value, diag_res.value)
+        min_res.value, max_res.value, diag_res.value = self._new_box_resolution(ip_jo, res, min_x, min_y, max_x, max_y, min_res.value, max_res.value, diag_res.value)
         
 
 
@@ -1388,8 +1445,10 @@ class GXIPJ:
         :type  str3:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.read(type, str1.encode(), str2.encode(), str3.encode())
+        self._read(type, str1.encode(), str2.encode(), str3.encode())
         
 
 
@@ -1406,8 +1465,10 @@ class GXIPJ:
         :rtype:       float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.get_method_parm(parm)
+        ret_val = self._get_method_parm(parm)
         return ret_val
 
 
@@ -1427,12 +1488,12 @@ class GXIPJ:
 
         .. versionadded:: 7.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the `GXIPJ <geosoft.gxapi.GXIPJ>` is not a projected coordinate system
+        **Note:** If the `GXIPJ <geosoft.gxapi.GXIPJ>` is not a projected coordinate system
         then the returned azimuth is `GS_R8DM <geosoft.gxapi.GS_R8DM>`;
         """
-        ret_val = self._wrapper.get_north_azimuth(x, y)
+        ret_val = self._get_north_azimuth(x, y)
         return ret_val
 
 
@@ -1452,11 +1513,11 @@ class GXIPJ:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If name cannot be found, returns default.
+        **Note:** If name cannot be found, returns default.
         """
-        ret_val = gxapi_cy.WrapIPJ.unit_scale(GXContext._get_tls_geo(), name.encode(), default)
+        ret_val = gxapi_cy.WrapIPJ._unit_scale(GXContext._get_tls_geo(), name.encode(), default)
         return ret_val
 
 
@@ -1469,8 +1530,10 @@ class GXIPJ:
         :type  bf:   GXBF
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.serial(bf._wrapper)
+        self._serial(bf)
         
 
 
@@ -1484,8 +1547,10 @@ class GXIPJ:
         :type  file:  str
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.serial_fgdcxml(file.encode())
+        self._serial_fgdcxml(file.encode())
         
 
 
@@ -1499,8 +1564,10 @@ class GXIPJ:
         :type  file:  str
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.serial_isoxml(file.encode())
+        self._serial_isoxml(file.encode())
         
 
 
@@ -1514,8 +1581,10 @@ class GXIPJ:
         :type  file:  str
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.serial_xml(file.encode())
+        self._serial_xml(file.encode())
         
 
 
@@ -1529,8 +1598,10 @@ class GXIPJ:
         :type  inverted:  int
 
         .. versionadded:: 6.3.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_3d_inverted(inverted)
+        self._set_3d_inverted(inverted)
         
 
 
@@ -1544,8 +1615,10 @@ class GXIPJ:
         :type  inverted:  int
 
         .. versionadded:: 6.3.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_3d_inverted_angles(inverted)
+        self._set_3d_inverted_angles(inverted)
         
 
 
@@ -1576,12 +1649,12 @@ class GXIPJ:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Sets up translation, scaling and rotation in all three directions
+        **Note:** Sets up translation, scaling and rotation in all three directions
         for 3D objects.
         """
-        self._wrapper.set_3d_view(x, y, z, rx, ry, rz, sx, sy, str_val)
+        self._set_3d_view(x, y, z, rx, ry, rz, sx, sy, str_val)
         
 
 
@@ -1616,12 +1689,12 @@ class GXIPJ:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Sets up translation, scaling and rotation in all three directions
+        **Note:** Sets up translation, scaling and rotation in all three directions
         for 3D objects.
         """
-        self._wrapper.set_3d_view_ex(x, y, z, rx, ry, rz, sx, sy, str_val, rotate, flags)
+        self._set_3d_view_ex(x, y, z, rx, ry, rz, sx, sy, str_val, rotate, flags)
         
 
 
@@ -1658,12 +1731,12 @@ class GXIPJ:
 
         .. versionadded:: 9.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Sets up translation, scaling and rotation in all three directions
+        **Note:** Sets up translation, scaling and rotation in all three directions
         for 3D objects, based on input origin and X and Y axis vectors.
         """
-        self._wrapper.set_3d_view_from_axes(x, y, z, x1, x2, x3, y1, y2, y3, sx, sy, str_val)
+        self._set_3d_view_from_axes(x, y, z, x1, x2, x3, y1, y2, y3, sx, sy, str_val)
         
 
 
@@ -1684,12 +1757,12 @@ class GXIPJ:
 
         .. versionadded:: 7.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        A non-plane section. It is a vertical section which curves along a path in
+        **Note:** A non-plane section. It is a vertical section which curves along a path in
         (X, Y).
         """
-        self._wrapper.set_crooked_section_view(dist_vv._wrapper, xvv._wrapper, yvv._wrapper, log_z)
+        self._set_crooked_section_view(dist_vv, xvv, yvv, log_z)
         
 
 
@@ -1703,8 +1776,10 @@ class GXIPJ:
         :type  depth:  float
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_depth_section_view(depth)
+        self._set_depth_section_view(depth)
         
 
 
@@ -1719,12 +1794,12 @@ class GXIPJ:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the projection is not supported in Geosoft, the
+        **Note:** If the projection is not supported in Geosoft, the
         `GXIPJ <geosoft.gxapi.GXIPJ>` will be unknown.
         """
-        self._wrapper.set_esri(esri.encode())
+        self._set_esri(esri.encode())
         
 
 
@@ -1747,9 +1822,9 @@ class GXIPJ:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Simplest Usage:
+        **Note:** Simplest Usage:
         
         The coordinate system can be resolved from the "coordinate system name"
         if the name is specified using an EPSG number or naming convention such as:
@@ -1884,7 +1959,7 @@ class GXIPJ:
             "<525000,2500000,0,0,0,15>","4210","16137","",""
             ""Arc 1960 / UTM zone 37S"<525000,2500000,0,0,0,15>","","","",""
         """
-        self._wrapper.set_gxf(str1.encode(), str2.encode(), str3.encode(), str4.encode(), str5.encode())
+        self._set_gxf(str1.encode(), str2.encode(), str3.encode(), str4.encode(), str5.encode())
         
 
 
@@ -1901,11 +1976,11 @@ class GXIPJ:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If parameter is not valid, nothing happens.
+        **Note:** If parameter is not valid, nothing happens.
         """
-        self._wrapper.set_method_parm(parm, parm_value)
+        self._set_method_parm(parm, parm_value)
         
 
 
@@ -1921,8 +1996,10 @@ class GXIPJ:
         :type  units:  str
 
         .. versionadded:: 5.1.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_mi_coord_sys(coord.encode(), units.encode())
+        self._set_mi_coord_sys(coord.encode(), units.encode())
         
 
 
@@ -1945,13 +2022,13 @@ class GXIPJ:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This section is the type where values are projected
+        **Note:** This section is the type where values are projected
         normal to the section, and the "Y" values in a grid
         do not necessarily correspond to the elvations for a swung section.
         """
-        self._wrapper.set_normal_section_view(x, y, z, azimuth, swing)
+        self._set_normal_section_view(x, y, z, azimuth, swing)
         
 
 
@@ -1972,9 +2049,9 @@ class GXIPJ:
 
         .. versionadded:: 5.1.6
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This sets up the orientation of an `GXIPJ <geosoft.gxapi.GXIPJ>` for plan view plots,
+        **Note:** This sets up the orientation of an `GXIPJ <geosoft.gxapi.GXIPJ>` for plan view plots,
         for instance in Wholeplot. These differ from regular plan
         map views in that the elevation of the view plane is set, and
         the view may be rotated. In addition, when viewed in a map,
@@ -1982,7 +2059,7 @@ class GXIPJ:
         of the actual location in space, as opposed to just the X, Y of
         the view plane itself.
         """
-        self._wrapper.set_plan_view(x, y, z, rot)
+        self._set_plan_view(x, y, z, rot)
         
 
 
@@ -2005,9 +2082,9 @@ class GXIPJ:
 
         .. versionadded:: 5.1.6
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This sets up the orientation of an `GXIPJ <geosoft.gxapi.GXIPJ>` for section view plots,
+        **Note:** This sets up the orientation of an `GXIPJ <geosoft.gxapi.GXIPJ>` for section view plots,
         for instance in Wholeplot. In addition, when viewed in a map,
         a view with this `GXIPJ <geosoft.gxapi.GXIPJ>` will give a status bar location (X, Y, Z)
         of the actual location in space, as opposed to just the X, Y of
@@ -2020,7 +2097,7 @@ class GXIPJ:
         This function is NOT suitable for simply creating
         an orientation for a dipping grid or view.
         """
-        self._wrapper.set_section_view(x, y, z, azimuth, swing)
+        self._set_section_view(x, y, z, azimuth, swing)
         
 
 
@@ -2043,9 +2120,9 @@ class GXIPJ:
 
         .. versionadded:: 5.1.5
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        WMS coordinate strings supported:
+        **Note:** WMS coordinate strings supported:
         
         
         EPSG:code
@@ -2068,7 +2145,7 @@ class GXIPJ:
         units of the projection.  Normally, this is from
         long/lat (9102) to metres (9001).
         """
-        self._wrapper.set_wms_coord_sys(coord.encode(), min_x, min_y, max_x, max_y)
+        self._set_wms_coord_sys(coord.encode(), min_x, min_y, max_x, max_y)
         
 
 
@@ -2082,8 +2159,10 @@ class GXIPJ:
         :type  str_val:  str
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_xml(str_val.encode())
+        self._set_xml(str_val.encode())
         
 
 
@@ -2127,8 +2206,10 @@ class GXIPJ:
         :type  v33:  float_ref
 
         .. versionadded:: 8.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        v00.value, v01.value, v02.value, v03.value, v10.value, v11.value, v12.value, v13.value, v20.value, v21.value, v22.value, v23.value, v30.value, v31.value, v32.value, v33.value = self._wrapper.get_3d_matrix_orientation(v00.value, v01.value, v02.value, v03.value, v10.value, v11.value, v12.value, v13.value, v20.value, v21.value, v22.value, v23.value, v30.value, v31.value, v32.value, v33.value)
+        v00.value, v01.value, v02.value, v03.value, v10.value, v11.value, v12.value, v13.value, v20.value, v21.value, v22.value, v23.value, v30.value, v31.value, v32.value, v33.value = self._get_3d_matrix_orientation(v00.value, v01.value, v02.value, v03.value, v10.value, v11.value, v12.value, v13.value, v20.value, v21.value, v22.value, v23.value, v30.value, v31.value, v32.value, v33.value)
         
 
 
@@ -2172,8 +2253,10 @@ class GXIPJ:
         :type  v33:  float
 
         .. versionadded:: 8.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_3d_matrix_orientation(v00, v01, v02, v03, v10, v11, v12, v13, v20, v21, v22, v23, v30, v31, v32, v33)
+        self._set_3d_matrix_orientation(v00, v01, v02, v03, v10, v11, v12, v13, v20, v21, v22, v23, v30, v31, v32, v33)
         
 
 
@@ -2199,12 +2282,12 @@ class GXIPJ:
 
         .. versionadded:: 9.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Reproject a section grid to a new `GXIPJ <geosoft.gxapi.GXIPJ>`, adjusting its orientation and registration so that
+        **Note:** Reproject a section grid to a new `GXIPJ <geosoft.gxapi.GXIPJ>`, adjusting its orientation and registration so that
         it remains in the same location.
         """
-        x0.value, y0.value, dx.value, dy.value, rot.value = self._wrapper.reproject_section_grid(output_ipj._wrapper, x0.value, y0.value, dx.value, dy.value, rot.value)
+        x0.value, y0.value, dx.value, dy.value, rot.value = self._reproject_section_grid(output_ipj, x0.value, y0.value, dx.value, dy.value, rot.value)
         
 
 

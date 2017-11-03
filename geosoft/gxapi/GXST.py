@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXST:
+class GXST(gxapi_cy.WrapST):
     """
     GXST class.
 
@@ -47,37 +47,28 @@ class GXST:
     See also  `GXST2 <geosoft.gxapi.GXST2>` (bi-variate statistics)
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapST(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXST`
+        A null (undefined) instance of `GXST <geosoft.gxapi.GXST>`
         
-        :returns: A null `GXST`
+        :returns: A null `GXST <geosoft.gxapi.GXST>`
+        :rtype:   GXST
         """
-        return cls()
+        return GXST()
 
     def is_null(self):
         """
-        Check if the instance of `GXST` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXST`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -94,8 +85,10 @@ class GXST:
         :rtype:      GXST
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapST.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapST._create(GXContext._get_tls_geo())
         return GXST(ret_val)
 
 
@@ -111,8 +104,10 @@ class GXST:
         :rtype:      GXST
 
         .. versionadded:: 5.1.8
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapST.create_exact(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapST._create_exact(GXContext._get_tls_geo())
         return GXST(ret_val)
 
 
@@ -126,8 +121,10 @@ class GXST:
         :type  val:  float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.data(val)
+        self._data(val)
         
 
 
@@ -141,8 +138,10 @@ class GXST:
         :type  vv:  GXVV
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.data_vv(vv._wrapper)
+        self._data_vv(vv)
         
 
 
@@ -159,13 +158,13 @@ class GXST:
 
         .. versionadded:: 6.1
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The length of the returned `GXVV <geosoft.gxapi.GXVV>` is set to the total
+        **Note:** The length of the returned `GXVV <geosoft.gxapi.GXVV>` is set to the total
         number of bins. If a histogram is not defined in
         the `GXST <geosoft.gxapi.GXST>`, then the returned length is zero.
         """
-        self._wrapper.get_histogram_bins(vv._wrapper)
+        self._get_histogram_bins(vv)
         
 
 
@@ -184,14 +183,14 @@ class GXST:
 
         .. versionadded:: 6.1
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The items correspond to those in `histogram2 <geosoft.gxapi.GXST.histogram2>`.
+        **Note:** The items correspond to those in `histogram2 <geosoft.gxapi.GXST.histogram2>`.
         If a histogram is not defined in
         the `GXST <geosoft.gxapi.GXST>`, then the returned number of bins is zero, and
         the min and max values will be dummies.
         """
-        div.value, min.value, max.value = self._wrapper.get_histogram_info(div.value, min.value, max.value)
+        div.value, min.value, max.value = self._get_histogram_info(div.value, min.value, max.value)
         
 
 
@@ -206,9 +205,9 @@ class GXST:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The Number of bins includes the one before the minimum
+        **Note:** The Number of bins includes the one before the minimum
         and the one after the maximum, so it must be a value >2.
         
         IMPORTANT: This function gets the histogram minimum and
@@ -222,7 +221,7 @@ class GXST:
         
         See histogram_ranges_
         """
-        self._wrapper.histogram(bins)
+        self._histogram(bins)
         
 
 
@@ -241,15 +240,15 @@ class GXST:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The Number of bins includes the one before the minimum
+        **Note:** The Number of bins includes the one before the minimum
         and the one after the maximum, so it must be a value >2.
         The width of the individual bins will be (Min-Max)/(# - 2)
         
         See histogram_ranges_
         """
-        self._wrapper.histogram2(bins, min, max)
+        self._histogram2(bins, min, max)
         
 
 
@@ -267,12 +266,12 @@ class GXST:
 
         .. versionadded:: 5.0.8
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Statistics and histogram must have been calculated prior to
+        **Note:** Statistics and histogram must have been calculated prior to
         calling this method
         """
-        ret_val = self._wrapper.equivalent_percentile(value)
+        ret_val = self._equivalent_percentile(value)
         return ret_val
 
 
@@ -290,12 +289,12 @@ class GXST:
 
         .. versionadded:: 5.0.8
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Statistics and histogram must have been calculated prior to
+        **Note:** Statistics and histogram must have been calculated prior to
         calling this method
         """
-        ret_val = self._wrapper.equivalent_value(percent)
+        ret_val = self._equivalent_value(percent)
         return ret_val
 
 
@@ -307,8 +306,10 @@ class GXST:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.reset()
+        self._reset()
         
 
 
@@ -328,15 +329,15 @@ class GXST:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The following can only be determined if the `GXST <geosoft.gxapi.GXST>` has recorded
+        **Note:** The following can only be determined if the `GXST <geosoft.gxapi.GXST>` has recorded
         a histogram: `ST_MEDIAN <geosoft.gxapi.ST_MEDIAN>`, `ST_MODE <geosoft.gxapi.ST_MODE>`
         
         `ST_MINPOS <geosoft.gxapi.ST_MINPOS>` can be used to retrieve the smallest value greater
         than zero, but not from `GXST <geosoft.gxapi.GXST>` objects recovered from serialized object.
         """
-        ret_val = self._wrapper.get_info(id)
+        ret_val = self._get_info(id)
         return ret_val
 
 
@@ -357,8 +358,10 @@ class GXST:
         :rtype:      float
 
         .. versionadded:: 7.1
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapST.get_norm_prob(GXContext._get_tls_geo(), x)
+        ret_val = gxapi_cy.WrapST._get_norm_prob(GXContext._get_tls_geo(), x)
         return ret_val
 
 
@@ -379,8 +382,10 @@ class GXST:
         :rtype:          float
 
         .. versionadded:: 7.1
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapST.get_norm_prob_x(GXContext._get_tls_geo(), percent)
+        ret_val = gxapi_cy.WrapST._get_norm_prob_x(GXContext._get_tls_geo(), percent)
         return ret_val
 
 
@@ -397,9 +402,9 @@ class GXST:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        This function compares the histogram to a normal curve with the
+        **Note:** This function compares the histogram to a normal curve with the
         same mean and standard deviation. The individual counts are normalized
         by the total counts, the bin width and the standard deviation.
         For each bin, the rms difference between the expected probability and
@@ -409,7 +414,7 @@ class GXST:
         If the histogram were perfectly normal, then a value of 0 would be returned.
         The more "non-normal", the higher the statistic.
         """
-        ret_val = self._wrapper.normal_test()
+        ret_val = self._normal_test()
         return ret_val
 
 

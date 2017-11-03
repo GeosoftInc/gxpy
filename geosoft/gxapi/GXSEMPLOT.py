@@ -13,44 +13,35 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXSEMPLOT:
+class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     """
     GXSEMPLOT class.
 
     Oasis montaj implementation of RTE `GXSEMPLOT <geosoft.gxapi.GXSEMPLOT>`
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapSEMPLOT(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXSEMPLOT`
+        A null (undefined) instance of `GXSEMPLOT <geosoft.gxapi.GXSEMPLOT>`
         
-        :returns: A null `GXSEMPLOT`
+        :returns: A null `GXSEMPLOT <geosoft.gxapi.GXSEMPLOT>`
+        :rtype:   GXSEMPLOT
         """
-        return cls()
+        return GXSEMPLOT()
 
     def is_null(self):
         """
-        Check if the instance of `GXSEMPLOT` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXSEMPLOT`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -76,13 +67,13 @@ class GXSEMPLOT:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The mask channel is updated for the current data to reflect
+        **Note:** The mask channel is updated for the current data to reflect
         the actions of the filter. Those values passing get 1, those
         failing get 0.
         """
-        gxapi_cy.WrapSEMPLOT.apply_filter_to_mask(GXContext._get_tls_geo(), db._wrapper, filter.encode(), mask_ch.encode(), mineral_ch.encode(), mineral.encode(), mode)
+        gxapi_cy.WrapSEMPLOT._apply_filter_to_mask(GXContext._get_tls_geo(), db, filter.encode(), mask_ch.encode(), mineral_ch.encode(), mineral.encode(), mode)
         
 
 
@@ -99,15 +90,15 @@ class GXSEMPLOT:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The is operation is controlled by the Preferences
+        **Note:** The is operation is controlled by the Preferences
         "Use dummies to indicate no data?" By default, this option is "yes"
         so this function will return with no changes. However, if
         "no", then all ASSAY class channels will have dummy values
         converted to 0.0.
         """
-        gxapi_cy.WrapSEMPLOT.convert_dummies(GXContext._get_tls_geo(), db._wrapper, line)
+        gxapi_cy.WrapSEMPLOT._convert_dummies(GXContext._get_tls_geo(), db, line)
         
 
 
@@ -123,8 +114,10 @@ class GXSEMPLOT:
         :type  mask_ch:  str
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapSEMPLOT.create_groups(GXContext._get_tls_geo(), db._wrapper, mask_ch.encode())
+        gxapi_cy.WrapSEMPLOT._create_groups(GXContext._get_tls_geo(), db, mask_ch.encode())
         
 
 
@@ -138,8 +131,10 @@ class GXSEMPLOT:
         :type  db:  GXDB
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapSEMPLOT.default_groups(GXContext._get_tls_geo(), db._wrapper)
+        gxapi_cy.WrapSEMPLOT._default_groups(GXContext._get_tls_geo(), db)
         
 
 
@@ -162,14 +157,14 @@ class GXSEMPLOT:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The Parameters `GXGUI <geosoft.gxapi.GXGUI>` is loaded based on settings stored in
+        **Note:** The Parameters `GXGUI <geosoft.gxapi.GXGUI>` is loaded based on settings stored in
         the map. The map is then re-plotted, overwriting the old one,
         based on the new settings. Note that the selection of data
         in the current `GXDB <geosoft.gxapi.GXDB>` is used to replot the map.
         """
-        gxapi_cy.WrapSEMPLOT.edit_map_plot_parameters(GXContext._get_tls_geo(), db._wrapper, mask_ch.encode(), mineral_ch.encode(), map._wrapper, view.encode())
+        gxapi_cy.WrapSEMPLOT._edit_map_plot_parameters(GXContext._get_tls_geo(), db, mask_ch.encode(), mineral_ch.encode(), map, view.encode())
         
 
 
@@ -186,16 +181,16 @@ class GXSEMPLOT:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The "Components" group in the INI file is edited.
+        **Note:** The "Components" group in the INI file is edited.
         
         Looks first in user\\etc, then in \\etc.
         Looks first for file prefix "semtemplate" then "xyt" or "tri"
         The altered template will be output to the user\\etc directory with
         the file extension "semtemplate".
         """
-        gxapi_cy.WrapSEMPLOT.edit_plot_components(GXContext._get_tls_geo(), db._wrapper, template.encode())
+        gxapi_cy.WrapSEMPLOT._edit_plot_components(GXContext._get_tls_geo(), db, template.encode())
         
 
 
@@ -212,16 +207,16 @@ class GXSEMPLOT:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The "Parameters" group in the INI file is edited.
+        **Note:** The "Parameters" group in the INI file is edited.
         
         Looks first in user\\etc, then in \\etc.
         Looks first for file prefix "semtemplate" then "xyt" or "tri"
         The altered template will be output to the user\\etc directory with
         the file extension "semtemplate".
         """
-        gxapi_cy.WrapSEMPLOT.edit_plot_parameters(GXContext._get_tls_geo(), db._wrapper, template.encode())
+        gxapi_cy.WrapSEMPLOT._edit_plot_parameters(GXContext._get_tls_geo(), db, template.encode())
         
 
 
@@ -258,12 +253,12 @@ class GXSEMPLOT:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The group is written to a new map, and an overlay file
+        **Note:** The group is written to a new map, and an overlay file
         is created which points to this map.
         """
-        gxapi_cy.WrapSEMPLOT.export_overlay(GXContext._get_tls_geo(), overlay.encode(), map.encode(), mview._wrapper, group.encode(), plot_type, x_stage.encode(), x_oxide.encode(), y_stage.encode(), y_oxide.encode(), z_stage.encode(), z_oxide.encode(), extension)
+        gxapi_cy.WrapSEMPLOT._export_overlay(GXContext._get_tls_geo(), overlay.encode(), map.encode(), mview, group.encode(), plot_type, x_stage.encode(), x_oxide.encode(), y_stage.encode(), y_oxide.encode(), z_stage.encode(), z_oxide.encode(), extension)
         
 
 
@@ -289,8 +284,10 @@ class GXSEMPLOT:
         :type  mineral:     str
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapSEMPLOT.export_view(GXContext._get_tls_geo(), db._wrapper, lst._wrapper, new_db._wrapper, view, mask_ch.encode(), mineral_ch.encode(), mineral.encode())
+        gxapi_cy.WrapSEMPLOT._export_view(GXContext._get_tls_geo(), db, lst, new_db, view, mask_ch.encode(), mineral_ch.encode(), mineral.encode())
         
 
 
@@ -318,8 +315,10 @@ class GXSEMPLOT:
         :type  export:      int
 
         .. versionadded:: 7.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapSEMPLOT.export_view2(GXContext._get_tls_geo(), db._wrapper, lst._wrapper, new_db._wrapper, view, mask_ch.encode(), mineral_ch.encode(), mineral.encode(), export)
+        gxapi_cy.WrapSEMPLOT._export_view2(GXContext._get_tls_geo(), db, lst, new_db, view, mask_ch.encode(), mineral_ch.encode(), mineral.encode(), export)
         
 
 
@@ -334,16 +333,16 @@ class GXSEMPLOT:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        "Supplied" filters are stored in \\etc, while user-edited and new filters
+        **Note:** "Supplied" filters are stored in \\etc, while user-edited and new filters
         are stored in user\\etc. This function finds all files with the extension
         ".semfilter", first in user\\etc, then in \\etc, and adds the file names
         (without the extension) to the `GXLST <geosoft.gxapi.GXLST>`. The name with the extension is stored
         as the value.
         The `GXLST <geosoft.gxapi.GXLST>` is cleared first.
         """
-        gxapi_cy.WrapSEMPLOT.filter_lst(GXContext._get_tls_geo(), lst._wrapper)
+        gxapi_cy.WrapSEMPLOT._filter_lst(GXContext._get_tls_geo(), lst)
         
 
 
@@ -366,14 +365,14 @@ class GXSEMPLOT:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The Mask channel will be updated so that those data values
+        **Note:** The Mask channel will be updated so that those data values
         which "pass" get "1" and those that "fail" get dummy "*"
         NO DATA IS REMOVED.
         Works on all selected lines of data.
         """
-        gxapi_cy.WrapSEMPLOT.filter_mineral_pos_data(GXContext._get_tls_geo(), db._wrapper, mask_ch.encode(), mineral_ch.encode(), mineral.encode(), pos)
+        gxapi_cy.WrapSEMPLOT._filter_mineral_pos_data(GXContext._get_tls_geo(), db, mask_ch.encode(), mineral_ch.encode(), mineral.encode(), pos)
         
 
 
@@ -391,8 +390,10 @@ class GXSEMPLOT:
         :type  lst:    GXLST
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapSEMPLOT.get_associated_lst(GXContext._get_tls_geo(), db._wrapper, group, lst._wrapper)
+        gxapi_cy.WrapSEMPLOT._get_associated_lst(GXContext._get_tls_geo(), db, group, lst)
         
 
 
@@ -411,12 +412,12 @@ class GXSEMPLOT:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        If the mineral channel name is not specified, it returns
+        **Note:** If the mineral channel name is not specified, it returns
         just the "X" (Unknown) item.
         """
-        gxapi_cy.WrapSEMPLOT.get_current_mineral_lst(GXContext._get_tls_geo(), db._wrapper, mineral_ch.encode(), lst._wrapper)
+        gxapi_cy.WrapSEMPLOT._get_current_mineral_lst(GXContext._get_tls_geo(), db, mineral_ch.encode(), lst)
         
 
 
@@ -432,8 +433,10 @@ class GXSEMPLOT:
         :type  lst:  GXLST
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapSEMPLOT.get_current_position_lst(GXContext._get_tls_geo(), db._wrapper, lst._wrapper)
+        gxapi_cy.WrapSEMPLOT._get_current_position_lst(GXContext._get_tls_geo(), db, lst)
         
 
 
@@ -447,8 +450,10 @@ class GXSEMPLOT:
         :type  lst:  GXLST
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapSEMPLOT.get_full_mineral_lst(GXContext._get_tls_geo(), lst._wrapper)
+        gxapi_cy.WrapSEMPLOT._get_full_mineral_lst(GXContext._get_tls_geo(), lst)
         
 
 
@@ -462,8 +467,10 @@ class GXSEMPLOT:
         :type  lst:  GXLST
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapSEMPLOT.get_full_position_lst(GXContext._get_tls_geo(), lst._wrapper)
+        gxapi_cy.WrapSEMPLOT._get_full_position_lst(GXContext._get_tls_geo(), lst)
         
 
 
@@ -480,15 +487,15 @@ class GXSEMPLOT:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The first item is "Anomaly", which gives the line names, The second
+        **Note:** The first item is "Anomaly", which gives the line names, The second
         item (if the channel exists in the database) is the Sample Number.
         After this are included all string channels which are NOT oxides or
         elements. (The list can include the mineral).
         Channel symbol is the `GXLST <geosoft.gxapi.GXLST>` value (except for the first item - "Anomaly")
         """
-        gxapi_cy.WrapSEMPLOT.get_grouping_lst(GXContext._get_tls_geo(), db._wrapper, lst._wrapper)
+        gxapi_cy.WrapSEMPLOT._get_grouping_lst(GXContext._get_tls_geo(), db, lst)
         
 
 
@@ -508,8 +515,10 @@ class GXSEMPLOT:
         :rtype:       int
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapSEMPLOT.create_ascii_template(GXContext._get_tls_geo(), name.encode(), temp.encode())
+        ret_val = gxapi_cy.WrapSEMPLOT._create_ascii_template(GXContext._get_tls_geo(), name.encode(), temp.encode())
         return ret_val
 
 
@@ -529,8 +538,10 @@ class GXSEMPLOT:
         :rtype:       int
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapSEMPLOT.create_database_template(GXContext._get_tls_geo(), name.encode(), temp.encode())
+        ret_val = gxapi_cy.WrapSEMPLOT._create_database_template(GXContext._get_tls_geo(), name.encode(), temp.encode())
         return ret_val
 
 
@@ -574,8 +585,10 @@ class GXSEMPLOT:
         :rtype:             int
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapSEMPLOT.edit_filter(GXContext._get_tls_geo(), db._wrapper, filter.encode(), mask_ch.encode(), mineral_ch.encode(), mineral.encode())
+        ret_val = gxapi_cy.WrapSEMPLOT._edit_filter(GXContext._get_tls_geo(), db, filter.encode(), mask_ch.encode(), mineral_ch.encode(), mineral.encode())
         return ret_val
 
 
@@ -592,14 +605,14 @@ class GXSEMPLOT:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        First looks at the `GXSEMPLOT <geosoft.gxapi.GXSEMPLOT>`.MINERAL_CHANNEL value.
+        **Note:** First looks at the `GXSEMPLOT <geosoft.gxapi.GXSEMPLOT>`.MINERAL_CHANNEL value.
         If not found, returns the first MINERAL class
         channel found. If still not found, returns a
         blank string.
         """
-        mineral_ch.value = gxapi_cy.WrapSEMPLOT.get_mineral_channel_name(GXContext._get_tls_geo(), db._wrapper, mineral_ch.value.encode())
+        mineral_ch.value = gxapi_cy.WrapSEMPLOT._get_mineral_channel_name(GXContext._get_tls_geo(), db, mineral_ch.value.encode())
         
 
 
@@ -618,12 +631,12 @@ class GXSEMPLOT:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        If the anomaly name is not included, then
+        **Note:** If the anomaly name is not included, then
         the input data must have an "Anom_Name" field.
         """
-        anomaly.value = gxapi_cy.WrapSEMPLOT.import_ascii_wizard(GXContext._get_tls_geo(), name.encode(), temp.encode(), anomaly.value.encode())
+        anomaly.value = gxapi_cy.WrapSEMPLOT._import_ascii_wizard(GXContext._get_tls_geo(), name.encode(), temp.encode(), anomaly.value.encode())
         
 
 
@@ -639,8 +652,10 @@ class GXSEMPLOT:
         :type  temp:        str_ref
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        connection.value, temp.value = gxapi_cy.WrapSEMPLOT.import_database_odbc(GXContext._get_tls_geo(), connection.value.encode(), temp.value.encode())
+        connection.value, temp.value = gxapi_cy.WrapSEMPLOT._import_database_odbc(GXContext._get_tls_geo(), connection.value.encode(), temp.value.encode())
         
 
 
@@ -665,9 +680,9 @@ class GXSEMPLOT:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        This wrapper is for `GXSEMPLOT <geosoft.gxapi.GXSEMPLOT>`, and does not require the import licence.
+        **Note:** This wrapper is for `GXSEMPLOT <geosoft.gxapi.GXSEMPLOT>`, and does not require the import licence.
         
            1. Binary import templates have extension .I2 by convention.  See
               BINARY.I2 for a description of the template format.
@@ -685,7 +700,7 @@ class GXSEMPLOT:
 
             `GXDU.lab_template <geosoft.gxapi.GXDU.lab_template>` in du.gxh
         """
-        gxapi_cy.WrapSEMPLOT.import_bin(GXContext._get_tls_geo(), db._wrapper, data.encode(), template.encode(), line.encode(), flight, date)
+        gxapi_cy.WrapSEMPLOT._import_bin(GXContext._get_tls_geo(), db, data.encode(), template.encode(), line.encode(), flight, date)
         
 
 
@@ -701,8 +716,10 @@ class GXSEMPLOT:
         :type  temp:  str
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapSEMPLOT.import_database_ado(GXContext._get_tls_geo(), name.encode(), temp.encode())
+        gxapi_cy.WrapSEMPLOT._import_database_ado(GXContext._get_tls_geo(), name.encode(), temp.encode())
         
 
 
@@ -717,13 +734,13 @@ class GXSEMPLOT:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Maintains a list of the symbols used in plotting. Call before
+        **Note:** Maintains a list of the symbols used in plotting. Call before
         Plotting one or more legends - symbols are accumulated.
         `plot_symbol_legend <geosoft.gxapi.GXSEMPLOT.plot_symbol_legend>` uses this information to create a legend.
         """
-        gxapi_cy.WrapSEMPLOT.init_group_symbols_used(GXContext._get_tls_geo(), db._wrapper)
+        gxapi_cy.WrapSEMPLOT._init_group_symbols_used(GXContext._get_tls_geo(), db)
         
 
 
@@ -742,8 +759,10 @@ class GXSEMPLOT:
         :rtype:           int
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapSEMPLOT.template_type(GXContext._get_tls_geo(), template.encode())
+        ret_val = gxapi_cy.WrapSEMPLOT._template_type(GXContext._get_tls_geo(), template.encode())
         return ret_val
 
 
@@ -763,16 +782,16 @@ class GXSEMPLOT:
 
         .. versionadded:: 6.4.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        First checks the view name to see if it starts with
+        **Note:** First checks the view name to see if it starts with
         ``"XYplt_"`` or ``"Triplt_"``. Failing that it looks in the
         view `GXREG <geosoft.gxapi.GXREG>` for a value for "Components.Type", which will
         be either "XYPlot" or "TriPlot".
         If the view does not appear to be an XYPlot or a TriPlot view,
         the function returns `SEMPLOT_PLOT_UNKNOWN <geosoft.gxapi.SEMPLOT_PLOT_UNKNOWN>`.
         """
-        ret_val = gxapi_cy.WrapSEMPLOT.view_type(GXContext._get_tls_geo(), map._wrapper, view.encode())
+        ret_val = gxapi_cy.WrapSEMPLOT._view_type(GXContext._get_tls_geo(), map, view.encode())
         return ret_val
 
 
@@ -793,9 +812,9 @@ class GXSEMPLOT:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Finds the best mineral matching the composition for each
+        **Note:** Finds the best mineral matching the composition for each
         row of oxide values. Works using linear programming and
         the simplex method to maximize the oxides used to create
         each of the possible output minerals. The mineral leaving the
@@ -803,7 +822,7 @@ class GXSEMPLOT:
         as a percent of the total) is less than or equal to the
         input value.
         """
-        gxapi_cy.WrapSEMPLOT.mineral_id(GXContext._get_tls_geo(), db._wrapper, resid, min_ch, res_ch)
+        gxapi_cy.WrapSEMPLOT._mineral_id(GXContext._get_tls_geo(), db, resid, min_ch, res_ch)
         
 
 
@@ -820,11 +839,11 @@ class GXSEMPLOT:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Creates a new, empty filter file in the user\\etc directory
+        **Note:** Creates a new, empty filter file in the user\\etc directory
         """
-        gxapi_cy.WrapSEMPLOT.new_filter(GXContext._get_tls_geo(), filter.encode(), model.encode())
+        gxapi_cy.WrapSEMPLOT._new_filter(GXContext._get_tls_geo(), filter.encode(), model.encode())
         
 
 
@@ -843,9 +862,9 @@ class GXSEMPLOT:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The new template is written to the user\\etc directory, with
+        **Note:** The new template is written to the user\\etc directory, with
         the file extension "semfilter". The template contains a parameter
         identifying it as an XY or Triplot.
         
@@ -856,7 +875,7 @@ class GXSEMPLOT:
         an XYPlot template as a model for a TriPlot, and vica-verca, with
         few complications.  (e.g. needing to define a "Z" component)
         """
-        gxapi_cy.WrapSEMPLOT.new_template(GXContext._get_tls_geo(), template.encode(), type, model.encode())
+        gxapi_cy.WrapSEMPLOT._new_template(GXContext._get_tls_geo(), template.encode(), type, model.encode())
         
 
 
@@ -875,12 +894,12 @@ class GXSEMPLOT:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Looks first in user\\etc, then in \\etc.
+        **Note:** Looks first in user\\etc, then in \\etc.
         See :ref:`SEMPLOT_EXT` definitions above for which files to look for.
         """
-        gxapi_cy.WrapSEMPLOT.overlay_lst(GXContext._get_tls_geo(), lst._wrapper, extension, type)
+        gxapi_cy.WrapSEMPLOT._overlay_lst(GXContext._get_tls_geo(), lst, extension, type)
         
 
 
@@ -907,9 +926,9 @@ class GXSEMPLOT:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The "Components" and "Parameters" groups in the INI file
+        **Note:** The "Components" and "Parameters" groups in the INI file
         are used.
         Only values with mask values of 1 are plotted, if the mask
         channel is specified.
@@ -920,7 +939,7 @@ class GXSEMPLOT:
         Call `init_group_symbols_used <geosoft.gxapi.GXSEMPLOT.init_group_symbols_used>` prior to this function
         to reset recording of the symbols used in plotting (for legends etc).
         """
-        gxapi_cy.WrapSEMPLOT.plot(GXContext._get_tls_geo(), db._wrapper, template.encode(), mask_ch.encode(), mineral_ch.encode(), map.encode(), map_mode, plot_symb)
+        gxapi_cy.WrapSEMPLOT._plot(GXContext._get_tls_geo(), db, template.encode(), mask_ch.encode(), mineral_ch.encode(), map.encode(), map_mode, plot_symb)
         
 
 
@@ -945,16 +964,16 @@ class GXSEMPLOT:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        This function depends on `init_group_symbols_used <geosoft.gxapi.GXSEMPLOT.init_group_symbols_used>`
+        **Note:** This function depends on `init_group_symbols_used <geosoft.gxapi.GXSEMPLOT.init_group_symbols_used>`
         before the plot for which this legend is created is made.
         The symbols and groups to use in the legend are stored to
         a database blob after the plot is made. These values are
         recovered by this function to make the legend at the
         specified location.
         """
-        gxapi_cy.WrapSEMPLOT.plot_symbol_legend(GXContext._get_tls_geo(), db._wrapper, mview._wrapper, x_min, y_min, y_max, symb_size)
+        gxapi_cy.WrapSEMPLOT._plot_symbol_legend(GXContext._get_tls_geo(), db, mview, x_min, y_min, y_max, symb_size)
         
 
 
@@ -997,11 +1016,11 @@ class GXSEMPLOT:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Replots map using proportional symbols
+        **Note:** Replots map using proportional symbols
         """
-        gxapi_cy.WrapSEMPLOT.prop_symb(GXContext._get_tls_geo(), db._wrapper, map._wrapper, view.encode(), chan.encode(), mask_ch.encode(), mineral_ch.encode(), log, area, base, scale, symb, wt, line_col, fill_col, legend)
+        gxapi_cy.WrapSEMPLOT._prop_symb(GXContext._get_tls_geo(), db, map, view.encode(), chan.encode(), mask_ch.encode(), mineral_ch.encode(), log, area, base, scale, symb, wt, line_col, fill_col, legend)
         
 
 
@@ -1024,9 +1043,9 @@ class GXSEMPLOT:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Note that the selection of data
+        **Note:** Note that the selection of data
         in the current `GXDB <geosoft.gxapi.GXDB>` is used to replot the map.
         
         Call "`reset_used_channel <geosoft.gxapi.GXSEMPLOT.reset_used_channel>`" prior to this function
@@ -1035,7 +1054,7 @@ class GXSEMPLOT:
         Call `init_group_symbols_used <geosoft.gxapi.GXSEMPLOT.init_group_symbols_used>` prior to this function
         to reset recording of the symbols used in plotting (for legends etc).
         """
-        gxapi_cy.WrapSEMPLOT.replot(GXContext._get_tls_geo(), db._wrapper, mask_ch.encode(), mineral_ch.encode(), map._wrapper, view.encode())
+        gxapi_cy.WrapSEMPLOT._replot(GXContext._get_tls_geo(), db, mask_ch.encode(), mineral_ch.encode(), map, view.encode())
         
 
 
@@ -1052,13 +1071,13 @@ class GXSEMPLOT:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Searches the VIEW `GXREG <geosoft.gxapi.GXREG>` for information on a previously
+        **Note:** Searches the VIEW `GXREG <geosoft.gxapi.GXREG>` for information on a previously
         created legend, and if it finds that info, replots the Legend,
         using the current data, group key etc.
         """
-        gxapi_cy.WrapSEMPLOT.re_plot_symbol_legend(GXContext._get_tls_geo(), db._wrapper, mview._wrapper)
+        gxapi_cy.WrapSEMPLOT._re_plot_symbol_legend(GXContext._get_tls_geo(), db, mview)
         
 
 
@@ -1074,8 +1093,10 @@ class GXSEMPLOT:
         :type  mask_ch:  str
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapSEMPLOT.reset_groups(GXContext._get_tls_geo(), db._wrapper, mask_ch.encode())
+        gxapi_cy.WrapSEMPLOT._reset_groups(GXContext._get_tls_geo(), db, mask_ch.encode())
         
 
 
@@ -1090,9 +1111,9 @@ class GXSEMPLOT:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        This function is called before one or a series of plots to initialize
+        **Note:** This function is called before one or a series of plots to initialize
         the "Plotted" channel in all the selected lines to dummy values.
         As the plots are created, those points used in the plot are set to 1,
         so that at the end the database records which values have been plotted.
@@ -1100,7 +1121,7 @@ class GXSEMPLOT:
         If the "Plotted" channel does not exist, it is created, associated,
         loaded, and filled with dummies.
         """
-        gxapi_cy.WrapSEMPLOT.reset_used_channel(GXContext._get_tls_geo(), db._wrapper)
+        gxapi_cy.WrapSEMPLOT._reset_used_channel(GXContext._get_tls_geo(), db)
         
 
 
@@ -1124,8 +1145,10 @@ class GXSEMPLOT:
         :type  mode:        int
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapSEMPLOT.select_poly(GXContext._get_tls_geo(), db._wrapper, mview._wrapper, mask_ch.encode(), mineral_ch.encode(), pply._wrapper, mode)
+        gxapi_cy.WrapSEMPLOT._select_poly(GXContext._get_tls_geo(), db, mview, mask_ch.encode(), mineral_ch.encode(), pply, mode)
         
 
 
@@ -1142,9 +1165,9 @@ class GXSEMPLOT:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Sets channel order as follows:
+        **Note:** Sets channel order as follows:
         
         Sample_No
         X and Y Locations
@@ -1161,7 +1184,7 @@ class GXSEMPLOT:
         
         Channel order is set for all "RawData" groups.
         """
-        gxapi_cy.WrapSEMPLOT.set_channel_order(GXContext._get_tls_geo(), db._wrapper, lst._wrapper)
+        gxapi_cy.WrapSEMPLOT._set_channel_order(GXContext._get_tls_geo(), db, lst)
         
 
 
@@ -1176,14 +1199,14 @@ class GXSEMPLOT:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        If the channel units are already set, then they are not changed.
+        **Note:** If the channel units are already set, then they are not changed.
         Oxide channels are identified from the Semplot_Oxides.csv file.
         Trace elements are identified from the periodic table of the
         elements, except for "Y", if it is the current Y channel.
         """
-        gxapi_cy.WrapSEMPLOT.set_channel_units(GXContext._get_tls_geo(), db._wrapper)
+        gxapi_cy.WrapSEMPLOT._set_channel_units(GXContext._get_tls_geo(), db)
         
 
 
@@ -1200,8 +1223,10 @@ class GXSEMPLOT:
         :type  itr:  GXITR
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapSEMPLOT.set_itr(GXContext._get_tls_geo(), db._wrapper, ch, itr._wrapper)
+        gxapi_cy.WrapSEMPLOT._set_itr(GXContext._get_tls_geo(), db, ch, itr)
         
 
 
@@ -1225,8 +1250,10 @@ class GXSEMPLOT:
         :type  val:         int
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapSEMPLOT.set_mask(GXContext._get_tls_geo(), db._wrapper, mask_ch.encode(), mineral_ch.encode(), mineral.encode(), selected, val)
+        gxapi_cy.WrapSEMPLOT._set_mask(GXContext._get_tls_geo(), db, mask_ch.encode(), mineral_ch.encode(), mineral.encode(), selected, val)
         
 
 
@@ -1244,8 +1271,10 @@ class GXSEMPLOT:
         :type  anomaly:  int
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapSEMPLOT.sort_data(GXContext._get_tls_geo(), db._wrapper, group, anomaly)
+        gxapi_cy.WrapSEMPLOT._sort_data(GXContext._get_tls_geo(), db, group, anomaly)
         
 
 
@@ -1262,14 +1291,14 @@ class GXSEMPLOT:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Looks first in user\\etc, then in \\etc.
+        **Note:** Looks first in user\\etc, then in \\etc.
         Looks first for file prefix "semtemplate" then "xyt" or "tri"
         (New-style templates with the "semtemplate" extentsion have the
         plot type "triplot" or "xyplot" inside them.)
         """
-        gxapi_cy.WrapSEMPLOT.template_lst(GXContext._get_tls_geo(), lst._wrapper, type)
+        gxapi_cy.WrapSEMPLOT._template_lst(GXContext._get_tls_geo(), lst, type)
         
 
 
@@ -1281,8 +1310,10 @@ class GXSEMPLOT:
         
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapSEMPLOT.tile_windows(GXContext._get_tls_geo())
+        gxapi_cy.WrapSEMPLOT._tile_windows(GXContext._get_tls_geo())
         
 
 
@@ -1299,14 +1330,14 @@ class GXSEMPLOT:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The mineral channel is needed in order to adjust the total
+        **Note:** The mineral channel is needed in order to adjust the total
         with the Fe Corrected Ferric and Ferrous values, and these
         require a mineral for their identification. If none is provided,
         mineral "X" (unknown) is assumed.
         """
-        gxapi_cy.WrapSEMPLOT.total_oxides(GXContext._get_tls_geo(), db._wrapper, mineral_ch.encode())
+        gxapi_cy.WrapSEMPLOT._total_oxides(GXContext._get_tls_geo(), db, mineral_ch.encode())
         
 
 

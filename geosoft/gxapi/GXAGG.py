@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXAGG:
+class GXAGG(gxapi_cy.WrapAGG):
     """
     GXAGG class.
 
@@ -23,37 +23,28 @@ class GXAGG:
     will combine all the layers to form one image
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapAGG(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXAGG`
+        A null (undefined) instance of `GXAGG <geosoft.gxapi.GXAGG>`
         
-        :returns: A null `GXAGG`
+        :returns: A null `GXAGG <geosoft.gxapi.GXAGG>`
+        :rtype:   GXAGG
         """
-        return cls()
+        return GXAGG()
 
     def is_null(self):
         """
-        Check if the instance of `GXAGG` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXAGG`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -68,8 +59,10 @@ class GXAGG:
         :type  model:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_model(model)
+        self._set_model(model)
         
 
 
@@ -84,13 +77,13 @@ class GXAGG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        0.0 brightness does nothing.
+        **Note:** 0.0 brightness does nothing.
         -1.0 to 0.0 makes colors darker, -1.0 is black
         0.0 to 1.0 makes colors lighter, 1.0 is white
         """
-        self._wrapper.change_brightness(brt)
+        self._change_brightness(brt)
         
 
 
@@ -105,8 +98,10 @@ class GXAGG:
         :rtype:      GXAGG
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapAGG.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapAGG._create(GXContext._get_tls_geo())
         return GXAGG(ret_val)
 
 
@@ -126,14 +121,14 @@ class GXAGG:
 
         .. versionadded:: 5.0.5
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The Agg Group name must include the View name with a
+        **Note:** The Agg Group name must include the View name with a
         backslash separating the view name and group name; e.g.
         "Data\\AGG_test" (when used as a string, the double slash
         represents as single \\).
         """
-        ret_val = gxapi_cy.WrapAGG.create_map(GXContext._get_tls_geo(), map._wrapper, name.encode())
+        ret_val = gxapi_cy.WrapAGG._create_map(GXContext._get_tls_geo(), map, name.encode())
         return GXAGG(ret_val)
 
 
@@ -151,16 +146,16 @@ class GXAGG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Layers are numbered from 0, consecutively in the order they are
+        **Note:** Layers are numbered from 0, consecutively in the order they are
         placed in the aggregate.
         
         An error will occur if the layer does not exist.
         
         Caller must create/destroy `GXITR <geosoft.gxapi.GXITR>`.
         """
-        self._wrapper.get_layer_itr(layer, itr._wrapper)
+        self._get_layer_itr(layer, itr)
         
 
 
@@ -178,11 +173,11 @@ class GXAGG:
 
         .. versionadded:: 5.0.6
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The returned `GXVV <geosoft.gxapi.GXVV>` contains the file names.
+        **Note:** The returned `GXVV <geosoft.gxapi.GXVV>` contains the file names.
         """
-        ret_val = self._wrapper.list_img(gvv._wrapper)
+        ret_val = self._list_img(gvv)
         return ret_val
 
 
@@ -197,8 +192,10 @@ class GXAGG:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.num_layers()
+        ret_val = self._num_layers()
         return ret_val
 
 
@@ -219,11 +216,13 @@ class GXAGG:
 
         .. versionadded:: 5.0
 
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
         .. seealso::
 
             `layer_shade_img <geosoft.gxapi.GXAGG.layer_shade_img>`
         """
-        self._wrapper.layer_img(name.encode(), zone, color.encode(), cont)
+        self._layer_img(name.encode(), zone, color.encode(), cont)
         
 
 
@@ -248,11 +247,13 @@ class GXAGG:
 
         .. versionadded:: 8.2
 
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
         .. seealso::
 
             `layer_shade_img <geosoft.gxapi.GXAGG.layer_shade_img>`
         """
-        self._wrapper.layer_img_ex(name.encode(), zone, color.encode(), min, max, cont)
+        self._layer_img_ex(name.encode(), zone, color.encode(), min, max, cont)
         
 
 
@@ -275,16 +276,16 @@ class GXAGG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        A new grid file will be created to hold the shaded
+        **Note:** A new grid file will be created to hold the shaded
         image data.  This file will have the same name as the
         original grid but with "_s" added to the root name.
         It will always be located in the workspace directory
         regardless of the location of the original source image.
         If the file already exists, it will replaced.
         """
-        scl.value = self._wrapper.layer_shade_img(name.encode(), color.encode(), inc, dec, scl.value)
+        scl.value = self._layer_shade_img(name.encode(), color.encode(), inc, dec, scl.value)
         
 
 
@@ -298,9 +299,9 @@ class GXAGG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Brightness can range from -1.0 (black) to 1.0 (white).
+        **Note:** Brightness can range from -1.0 (black) to 1.0 (white).
         This brightness control is relative to the normal color
         when the `GXAGG <geosoft.gxapi.GXAGG>` is created.
         
@@ -315,7 +316,7 @@ class GXAGG:
 
             `change_brightness <geosoft.gxapi.GXAGG.change_brightness>`, `get_brightness <geosoft.gxapi.GXAGG.get_brightness>`, `change_brightness <geosoft.gxapi.GXAGG.change_brightness>`
         """
-        ret_val = self._wrapper.get_brightness()
+        ret_val = self._get_brightness()
         return ret_val
 
 
@@ -331,16 +332,16 @@ class GXAGG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Layers are numbered from 0, consecutively in the order they are
+        **Note:** Layers are numbered from 0, consecutively in the order they are
         placed in the aggregate.
         
         An error will occur if the layer does not exist.
         
         Caller must create/destroy `GXITR <geosoft.gxapi.GXITR>`.
         """
-        self._wrapper.set_layer_itr(layer, itr._wrapper)
+        self._set_layer_itr(layer, itr)
         
 
 
@@ -354,8 +355,10 @@ class GXAGG:
         :type  method:  int
 
         .. versionadded:: 5.1.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_render_method(method)
+        self._set_render_method(method)
         
 
 

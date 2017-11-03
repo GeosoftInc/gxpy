@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXLAYOUT:
+class GXLAYOUT(gxapi_cy.WrapLAYOUT):
     """
     GXLAYOUT class.
 
@@ -31,37 +31,28 @@ class GXLAYOUT:
     for more details.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapLAYOUT(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXLAYOUT`
+        A null (undefined) instance of `GXLAYOUT <geosoft.gxapi.GXLAYOUT>`
         
-        :returns: A null `GXLAYOUT`
+        :returns: A null `GXLAYOUT <geosoft.gxapi.GXLAYOUT>`
+        :rtype:   GXLAYOUT
         """
-        return cls()
+        return GXLAYOUT()
 
     def is_null(self):
         """
-        Check if the instance of `GXLAYOUT` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXLAYOUT`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -83,13 +74,13 @@ class GXLAYOUT:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Use iGetRectangle to obtain the results for the other rectangles. Depending
+        **Note:** Use iGetRectangle to obtain the results for the other rectangles. Depending
         on the constraints set the parent rectangle may also change
         after the calculation (returned here for convenience).
         """
-        min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.calculate_rects(min_x.value, min_y.value, max_x.value, max_y.value)
+        min_x.value, min_y.value, max_x.value, max_y.value = self._calculate_rects(min_x.value, min_y.value, max_x.value, max_y.value)
         
 
 
@@ -101,8 +92,10 @@ class GXLAYOUT:
         
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.clear_all()
+        self._clear_all()
         
 
 
@@ -114,8 +107,10 @@ class GXLAYOUT:
         
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.clear_constraints()
+        self._clear_constraints()
         
 
 
@@ -134,8 +129,10 @@ class GXLAYOUT:
         :rtype:       GXLAYOUT
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapLAYOUT.create(GXContext._get_tls_geo(), num, name.encode())
+        ret_val = gxapi_cy.WrapLAYOUT._create(GXContext._get_tls_geo(), num, name.encode())
         return GXLAYOUT(ret_val)
 
 
@@ -159,8 +156,10 @@ class GXLAYOUT:
         :type  max_y:   float_ref
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.get_rectangle(rect, min_x.value, min_y.value, max_x.value, max_y.value)
+        min_x.value, min_y.value, max_x.value, max_y.value = self._get_rectangle(rect, min_x.value, min_y.value, max_x.value, max_y.value)
         
 
 
@@ -176,8 +175,10 @@ class GXLAYOUT:
         :type  name:    str_ref
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        name.value = self._wrapper.get_rect_name(rect, name.value.encode())
+        name.value = self._get_rect_name(rect, name.value.encode())
         
 
 
@@ -206,9 +207,9 @@ class GXLAYOUT:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Constraints can be applied between 2 rectangles in the layout, or to 1 rectangle with
+        **Note:** Constraints can be applied between 2 rectangles in the layout, or to 1 rectangle with
         absolute positioning. Use the constraints to control left, right, bottom, top,
         width, height, or centering configurations. Examples:
         
@@ -240,7 +241,7 @@ class GXLAYOUT:
         A, `LAYOUT_CONSTR_MOVER <geosoft.gxapi.LAYOUT_CONSTR_MOVER>`, B, `LAYOUT_CONSTR_RIGHT <geosoft.gxapi.LAYOUT_CONSTR_RIGHT>`, 10, 1.1	                  Move node A, align right to 1.1*right of B, plus 10
         A, `LAYOUT_CONSTR_MOVEL <geosoft.gxapi.LAYOUT_CONSTR_MOVEL>`, NULL, 10, 0, 1.0	                                 Move node A, align left at position 10
         """
-        ret_val = self._wrapper.add_constraint(rect_from, constr_from, rect_to, constr_to, o_mod, m_mod)
+        ret_val = self._add_constraint(rect_from, constr_from, rect_to, constr_to, o_mod, m_mod)
         return ret_val
 
 
@@ -263,8 +264,10 @@ class GXLAYOUT:
         :rtype:         int
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = self._wrapper.add_rectangle(min_x, min_y, max_x, max_y)
+        ret_val = self._add_rectangle(min_x, min_y, max_x, max_y)
         return ret_val
 
 
@@ -279,8 +282,10 @@ class GXLAYOUT:
         :rtype:         int
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = self._wrapper.num_rectangles()
+        ret_val = self._num_rectangles()
         return ret_val
 
 
@@ -302,8 +307,10 @@ class GXLAYOUT:
         :type  max_y:   float
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.set_rectangle(rect, min_x, min_y, max_x, max_y)
+        self._set_rectangle(rect, min_x, min_y, max_x, max_y)
         
 
 
@@ -319,8 +326,10 @@ class GXLAYOUT:
         :type  p3:      str
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.set_rectangle_name(rect, p3.encode())
+        self._set_rectangle_name(rect, p3.encode())
         
 
 

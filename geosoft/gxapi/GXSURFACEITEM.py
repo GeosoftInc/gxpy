@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXSURFACEITEM:
+class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
     """
     GXSURFACEITEM class.
 
@@ -22,37 +22,28 @@ class GXSURFACEITEM:
     contains one or more triangular polyhedral meshes.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapSURFACEITEM(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXSURFACEITEM`
+        A null (undefined) instance of `GXSURFACEITEM <geosoft.gxapi.GXSURFACEITEM>`
         
-        :returns: A null `GXSURFACEITEM`
+        :returns: A null `GXSURFACEITEM <geosoft.gxapi.GXSURFACEITEM>`
+        :rtype:   GXSURFACEITEM
         """
-        return cls()
+        return GXSURFACEITEM()
 
     def is_null(self):
         """
-        Check if the instance of `GXSURFACEITEM` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXSURFACEITEM`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -73,11 +64,13 @@ class GXSURFACEITEM:
 
         .. versionadded:: 8.4
 
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
         .. seealso::
 
             `set_properties <geosoft.gxapi.GXSURFACEITEM.set_properties>` and `set_default_render_properties <geosoft.gxapi.GXSURFACEITEM.set_default_render_properties>`
         """
-        ret_val = gxapi_cy.WrapSURFACEITEM.create(GXContext._get_tls_geo(), type.encode(), name.encode())
+        ret_val = gxapi_cy.WrapSURFACEITEM._create(GXContext._get_tls_geo(), type.encode(), name.encode())
         return GXSURFACEITEM(ret_val)
 
 
@@ -94,11 +87,11 @@ class GXSURFACEITEM:
 
         .. versionadded:: 8.4
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The value returned by this call will not be valid for newly created items until after a call to `GXSURFACE.add_surface_item <geosoft.gxapi.GXSURFACE.add_surface_item>`.
+        **Note:** The value returned by this call will not be valid for newly created items until after a call to `GXSURFACE.add_surface_item <geosoft.gxapi.GXSURFACE.add_surface_item>`.
         """
-        guid.value = self._wrapper.get_guid(guid.value.encode())
+        guid.value = self._get_guid(guid.value.encode())
         
 
 
@@ -127,11 +120,13 @@ class GXSURFACEITEM:
 
         .. versionadded:: 8.4
 
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
         .. seealso::
 
             `GXSYS.generate_guid <geosoft.gxapi.GXSYS.generate_guid>`
         """
-        self._wrapper.set_properties(type.encode(), name.encode(), source_guid.encode(), source_name.encode(), source_measure, secondary_source_guid.encode(), secondary_source_name.encode(), secondary_source_measure)
+        self._set_properties(type.encode(), name.encode(), source_guid.encode(), source_name.encode(), source_measure, secondary_source_guid.encode(), secondary_source_name.encode(), secondary_source_measure)
         
 
 
@@ -164,11 +159,13 @@ class GXSURFACEITEM:
 
         .. versionadded:: 8.5
 
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
         .. seealso::
 
             `GXSYS.generate_guid <geosoft.gxapi.GXSYS.generate_guid>`
         """
-        self._wrapper.set_properties_ex(type.encode(), name.encode(), source_guid.encode(), source_name.encode(), source_measure, secondary_source_guid.encode(), secondary_source_name.encode(), secondary_source_option, secondary_source_measure, secondary_source_measure2)
+        self._set_properties_ex(type.encode(), name.encode(), source_guid.encode(), source_name.encode(), source_measure, secondary_source_guid.encode(), secondary_source_name.encode(), secondary_source_option, secondary_source_measure, secondary_source_measure2)
         
 
 
@@ -196,8 +193,10 @@ class GXSURFACEITEM:
         :type  secondary_source_measure:  float_ref
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        type.value, name.value, source_guid.value, source_name.value, source_measure.value, secondary_source_guid.value, secondary_source_name.value, secondary_source_measure.value = self._wrapper.get_properties(type.value.encode(), name.value.encode(), source_guid.value.encode(), source_name.value.encode(), source_measure.value, secondary_source_guid.value.encode(), secondary_source_name.value.encode(), secondary_source_measure.value)
+        type.value, name.value, source_guid.value, source_name.value, source_measure.value, secondary_source_guid.value, secondary_source_name.value, secondary_source_measure.value = self._get_properties(type.value.encode(), name.value.encode(), source_guid.value.encode(), source_name.value.encode(), source_measure.value, secondary_source_guid.value.encode(), secondary_source_name.value.encode(), secondary_source_measure.value)
         
 
 
@@ -229,8 +228,10 @@ class GXSURFACEITEM:
         :type  secondary_source_measure2:  float_ref
 
         .. versionadded:: 8.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        type.value, name.value, source_guid.value, source_name.value, source_measure.value, secondary_source_guid.value, secondary_source_name.value, secondary_source_option.value, secondary_source_measure.value, secondary_source_measure2.value = self._wrapper.get_properties_ex(type.value.encode(), name.value.encode(), source_guid.value.encode(), source_name.value.encode(), source_measure.value, secondary_source_guid.value.encode(), secondary_source_name.value.encode(), secondary_source_option.value, secondary_source_measure.value, secondary_source_measure2.value)
+        type.value, name.value, source_guid.value, source_name.value, source_measure.value, secondary_source_guid.value, secondary_source_name.value, secondary_source_option.value, secondary_source_measure.value, secondary_source_measure2.value = self._get_properties_ex(type.value.encode(), name.value.encode(), source_guid.value.encode(), source_name.value.encode(), source_measure.value, secondary_source_guid.value.encode(), secondary_source_name.value.encode(), secondary_source_option.value, secondary_source_measure.value, secondary_source_measure2.value)
         
 
 
@@ -249,11 +250,13 @@ class GXSURFACEITEM:
 
         .. versionadded:: 8.4
 
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
         .. seealso::
 
             `GXMVIEW.color <geosoft.gxapi.GXMVIEW.color>`
         """
-        self._wrapper.set_default_render_properties(color, transparency, render_mode)
+        self._set_default_render_properties(color, transparency, render_mode)
         
 
 
@@ -272,11 +275,13 @@ class GXSURFACEITEM:
 
         .. versionadded:: 8.4
 
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
         .. seealso::
 
             `GXMVIEW.color <geosoft.gxapi.GXMVIEW.color>`
         """
-        color.value, transparency.value, render_mode.value = self._wrapper.get_default_render_properties(color.value, transparency.value, render_mode.value)
+        color.value, transparency.value, render_mode.value = self._get_default_render_properties(color.value, transparency.value, render_mode.value)
         
 
 
@@ -291,8 +296,10 @@ class GXSURFACEITEM:
         :rtype:              int
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.num_components()
+        ret_val = self._num_components()
         return ret_val
 
 
@@ -319,8 +326,10 @@ class GXSURFACEITEM:
         :rtype:              int
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.add_mesh(vert_v_vx._wrapper, vert_v_vy._wrapper, vert_v_vz._wrapper, tri_vv_pt1._wrapper, tri_vv_pt2._wrapper, tri_vv_pt3._wrapper)
+        ret_val = self._add_mesh(vert_v_vx, vert_v_vy, vert_v_vz, tri_vv_pt1, tri_vv_pt2, tri_vv_pt3)
         return ret_val
 
 
@@ -346,8 +355,10 @@ class GXSURFACEITEM:
         :type  tri_vv_pt3:   GXVV
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.get_mesh(index, vert_v_vx._wrapper, vert_v_vy._wrapper, vert_v_vz._wrapper, tri_vv_pt1._wrapper, tri_vv_pt2._wrapper, tri_vv_pt3._wrapper)
+        self._get_mesh(index, vert_v_vx, vert_v_vy, vert_v_vz, tri_vv_pt1, tri_vv_pt2, tri_vv_pt3)
         
 
 
@@ -371,8 +382,10 @@ class GXSURFACEITEM:
         :type  max_z:        float_ref
 
         .. versionadded:: 8.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._wrapper.get_extents(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
+        min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._get_extents(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         
 
 
@@ -396,8 +409,10 @@ class GXSURFACEITEM:
         :type  volume_confidence_interval:  float_ref
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        closed.value, n_inner_comps.value, area.value, volume.value, volume_confidence_interval.value = self._wrapper.get_mesh_info(index, closed.value, n_inner_comps.value, area.value, volume.value, volume_confidence_interval.value)
+        closed.value, n_inner_comps.value, area.value, volume.value, volume_confidence_interval.value = self._get_mesh_info(index, closed.value, n_inner_comps.value, area.value, volume.value, volume_confidence_interval.value)
         
 
 
@@ -417,8 +432,10 @@ class GXSURFACEITEM:
         :type  volume_confidence_interval:  float_ref
 
         .. versionadded:: 8.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        closed.value, area.value, volume.value, volume_confidence_interval.value = self._wrapper.get_info(closed.value, area.value, volume.value, volume_confidence_interval.value)
+        closed.value, area.value, volume.value, volume_confidence_interval.value = self._get_info(closed.value, area.value, volume.value, volume_confidence_interval.value)
         
 
 
@@ -434,8 +451,10 @@ class GXSURFACEITEM:
         :type  triangles:    int_ref
 
         .. versionadded:: 8.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        vertices.value, triangles.value = self._wrapper.get_geometry_info(vertices.value, triangles.value)
+        vertices.value, triangles.value = self._get_geometry_info(vertices.value, triangles.value)
         
 
 
@@ -461,8 +480,10 @@ class GXSURFACEITEM:
         :type  intersectiona:  int_ref
 
         .. versionadded:: 8.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        components.value, vertices.value, edges.value, triangles.value, inconsistent.value, invalid.value, intersectiona.value = self._wrapper.compute_extended_info(components.value, vertices.value, edges.value, triangles.value, inconsistent.value, invalid.value, intersectiona.value)
+        components.value, vertices.value, edges.value, triangles.value, inconsistent.value, invalid.value, intersectiona.value = self._compute_extended_info(components.value, vertices.value, edges.value, triangles.value, inconsistent.value, invalid.value, intersectiona.value)
         
 
 

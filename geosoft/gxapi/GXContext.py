@@ -14,12 +14,10 @@ class GXContext:
     def __exit__(self, type, value, traceback):
         if self._release_tls_geo:
             _tls._gxa_geo = None
-        #print("GXContext exit")
 
     def __del__(self):
         if self._release_tls_geo:
             _tls._gxa_geo = None
-        #print("GXContext deleted")
 
     def __init__(self, wrapper):
         tls_geo = getattr(_tls, '_gxa_geo', None)
@@ -28,7 +26,6 @@ class GXContext:
             self._release_tls_geo = True
         else:
             self._release_tls_geo = False
-        #print("GXContext init")
 
     @classmethod
     def _get_tls_geo(cls):

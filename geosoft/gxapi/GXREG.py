@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXREG:
+class GXREG(gxapi_cy.WrapREG):
     """
     GXREG class.
 
@@ -24,37 +24,28 @@ class GXREG:
     `GXREG <geosoft.gxapi.GXREG>` class in newer applications.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapREG(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXREG`
+        A null (undefined) instance of `GXREG <geosoft.gxapi.GXREG>`
         
-        :returns: A null `GXREG`
+        :returns: A null `GXREG <geosoft.gxapi.GXREG>`
+        :rtype:   GXREG
         """
-        return cls()
+        return GXREG()
 
     def is_null(self):
         """
-        Check if the instance of `GXREG` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXREG`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -67,8 +58,10 @@ class GXREG:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.clear()
+        self._clear()
         
 
 
@@ -82,8 +75,10 @@ class GXREG:
         :type  srce:  GXREG
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.copy(srce._wrapper)
+        self._copy(srce)
         
 
 
@@ -100,8 +95,10 @@ class GXREG:
         :rtype:                GXREG
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapREG.create(GXContext._get_tls_geo(), l_parm_length)
+        ret_val = gxapi_cy.WrapREG._create(GXContext._get_tls_geo(), l_parm_length)
         return GXREG(ret_val)
 
 
@@ -118,8 +115,10 @@ class GXREG:
         :rtype:      GXREG
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapREG.create_s(GXContext._get_tls_geo(), bf._wrapper)
+        ret_val = gxapi_cy.WrapREG._create_s(GXContext._get_tls_geo(), bf)
         return GXREG(ret_val)
 
 
@@ -137,8 +136,10 @@ class GXREG:
         :type  data:  str_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        data.value = self._wrapper.get(parm.encode(), data.value.encode())
+        data.value = self._get(parm.encode(), data.value.encode())
         
 
 
@@ -155,11 +156,11 @@ class GXREG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If parameter is not present in `GXREG <geosoft.gxapi.GXREG>`, `iDUMMY <geosoft.gxapi.iDUMMY>` is returned.
+        **Note:** If parameter is not present in `GXREG <geosoft.gxapi.GXREG>`, `iDUMMY <geosoft.gxapi.iDUMMY>` is returned.
         """
-        data.value = self._wrapper.get_int(parm.encode(), data.value)
+        data.value = self._get_int(parm.encode(), data.value)
         
 
 
@@ -177,8 +178,10 @@ class GXREG:
         :type  data:  str_ref
 
         .. versionadded:: 5.1.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        parm.value, data.value = self._wrapper.get_one(loc, parm.value.encode(), data.value.encode())
+        parm.value, data.value = self._get_one(loc, parm.value.encode(), data.value.encode())
         
 
 
@@ -195,11 +198,11 @@ class GXREG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If parameter is not present in `GXREG <geosoft.gxapi.GXREG>`, `rDUMMY <geosoft.gxapi.rDUMMY>` is returned.
+        **Note:** If parameter is not present in `GXREG <geosoft.gxapi.GXREG>`, `rDUMMY <geosoft.gxapi.rDUMMY>` is returned.
         """
-        data.value = self._wrapper.get_double(parm.encode(), data.value)
+        data.value = self._get_double(parm.encode(), data.value)
         
 
 
@@ -214,8 +217,10 @@ class GXREG:
         :rtype:      int
 
         .. versionadded:: 5.1.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.entries()
+        ret_val = self._entries()
         return ret_val
 
 
@@ -230,11 +235,11 @@ class GXREG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Items are loaded into the `GXREG <geosoft.gxapi.GXREG>` in the format "GROUP.ITEM".
+        **Note:** Items are loaded into the `GXREG <geosoft.gxapi.GXREG>` in the format "GROUP.ITEM".
         """
-        self._wrapper.load_ini(ini.encode())
+        self._load_ini(ini.encode())
         
 
 
@@ -250,8 +255,10 @@ class GXREG:
         :type  data:  str_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        data.value = self._wrapper.match_string(parm.encode(), data.value.encode())
+        data.value = self._match_string(parm.encode(), data.value.encode())
         
 
 
@@ -267,8 +274,10 @@ class GXREG:
         :type  type:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.merge(srce._wrapper, type)
+        self._merge(srce, type)
         
 
 
@@ -283,14 +292,14 @@ class GXREG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Only `GXREG <geosoft.gxapi.GXREG>` parameters in the form "GROUP.ITEM" are
+        **Note:** Only `GXREG <geosoft.gxapi.GXREG>` parameters in the form "GROUP.ITEM" are
         dumped to the INI file, because they match the INI format
         which groups items under [GROUP] headings.
         Single-word items (without a separating period) are skipped.
         """
-        self._wrapper.save_ini(ini.encode())
+        self._save_ini(ini.encode())
         
 
 
@@ -304,8 +313,10 @@ class GXREG:
         :type  bf:   GXBF
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.serial(bf._wrapper)
+        self._serial(bf)
         
 
 
@@ -322,16 +333,16 @@ class GXREG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        To remove a parameter completely, use one of the
+        **Note:** To remove a parameter completely, use one of the
         following:
         
         `set_int <geosoft.gxapi.GXREG.set_int>`(Reg, sParam, `iDUMMY <geosoft.gxapi.iDUMMY>`);
         or
         `set_double <geosoft.gxapi.GXREG.set_double>`(Reg, sParam, `rDUMMY <geosoft.gxapi.rDUMMY>`);
         """
-        self._wrapper.set(parm.encode(), data.encode())
+        self._set(parm.encode(), data.encode())
         
 
 
@@ -347,8 +358,10 @@ class GXREG:
         :type  data:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_int(parm.encode(), data)
+        self._set_int(parm.encode(), data)
         
 
 
@@ -364,8 +377,10 @@ class GXREG:
         :type  p3:    float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_double(parm.encode(), p3)
+        self._set_double(parm.encode(), p3)
         
 
 

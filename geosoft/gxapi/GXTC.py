@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXTC:
+class GXTC(gxapi_cy.WrapTC):
     """
     GXTC class.
 
@@ -25,37 +25,28 @@ class GXTC:
     the input positions.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapTC(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXTC`
+        A null (undefined) instance of `GXTC <geosoft.gxapi.GXTC>`
         
-        :returns: A null `GXTC`
+        :returns: A null `GXTC <geosoft.gxapi.GXTC>`
+        :rtype:   GXTC
         """
-        return cls()
+        return GXTC()
 
     def is_null(self):
         """
-        Check if the instance of `GXTC` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXTC`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -91,8 +82,10 @@ class GXTC:
         :rtype:            GXTC
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapTC.create(GXContext._get_tls_geo(), img._wrapper, elev_unit, dinner, douter, dens_t, dens_w, elev_w, edge, edge_elev, opt)
+        ret_val = gxapi_cy.WrapTC._create(GXContext._get_tls_geo(), img, elev_unit, dinner, douter, dens_t, dens_w, elev_w, edge, edge_elev, opt)
         return GXTC(ret_val)
 
 
@@ -129,8 +122,10 @@ class GXTC:
         :rtype:              GXTC
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapTC.create_ex(GXContext._get_tls_geo(), img._wrapper, elev_unit, dinner, douter, dens_t, dens_w, elev_w, edge, edge_elev, opt, survey_type)
+        ret_val = gxapi_cy.WrapTC._create_ex(GXContext._get_tls_geo(), img, elev_unit, dinner, douter, dens_t, dens_w, elev_w, edge, edge_elev, opt, survey_type)
         return GXTC(ret_val)
 
 
@@ -148,8 +143,10 @@ class GXTC:
         :type  im_go:  GXIMG
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.grregter(im_gi._wrapper, im_go._wrapper)
+        self._grregter(im_gi, im_go)
         
 
 
@@ -175,8 +172,10 @@ class GXTC:
         :type  dens_t:    float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.grterain(gv_vx._wrapper, gv_vy._wrapper, gv_velev._wrapper, gv_vslop._wrapper, gv_vtcor._wrapper, im_gcor._wrapper, dens_t)
+        self._grterain(gv_vx, gv_vy, gv_velev, gv_vslop, gv_vtcor, im_gcor, dens_t)
         
 
 
@@ -204,8 +203,10 @@ class GXTC:
         :type  dens_t:     float
 
         .. versionadded:: 6.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.grterain2(gv_vx._wrapper, gv_vy._wrapper, gv_velev._wrapper, gv_vslop._wrapper, gv_vwater._wrapper, gv_vtcor._wrapper, im_gcor._wrapper, dens_t)
+        self._grterain2(gv_vx, gv_vy, gv_velev, gv_vslop, gv_vwater, gv_vtcor, im_gcor, dens_t)
         
 
 
@@ -231,8 +232,10 @@ class GXTC:
         :type  p8:     int
 
         .. versionadded:: 6.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.g_gterain(gv_vx._wrapper, p3._wrapper, p4._wrapper, p5._wrapper, p6, p7, p8)
+        self._g_gterain(gv_vx, p3, p4, p5, p6, p7, p8)
         
 
 

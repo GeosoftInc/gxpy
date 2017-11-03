@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXST2:
+class GXST2(gxapi_cy.WrapST2):
     """
     GXST2 class.
 
@@ -23,37 +23,28 @@ class GXST2:
     See also `GXST <geosoft.gxapi.GXST>` (mono-variate statistics).
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapST2(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXST2`
+        A null (undefined) instance of `GXST2 <geosoft.gxapi.GXST2>`
         
-        :returns: A null `GXST2`
+        :returns: A null `GXST2 <geosoft.gxapi.GXST2>`
+        :rtype:   GXST2
         """
-        return cls()
+        return GXST2()
 
     def is_null(self):
         """
-        Check if the instance of `GXST2` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXST2`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -69,8 +60,10 @@ class GXST2:
         :rtype:      GXST2
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapST2.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapST2._create(GXContext._get_tls_geo())
         return GXST2(ret_val)
 
 
@@ -86,8 +79,10 @@ class GXST2:
         :type  vv_y:  GXVV
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.data_vv(vv_x._wrapper, vv_y._wrapper)
+        self._data_vv(vv_x, vv_y)
         
 
 
@@ -104,8 +99,10 @@ class GXST2:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = self._wrapper.items()
+        ret_val = self._items()
         return ret_val
 
 
@@ -117,8 +114,10 @@ class GXST2:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.reset()
+        self._reset()
         
 
 
@@ -136,8 +135,10 @@ class GXST2:
         :rtype:      float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = self._wrapper.get(id)
+        ret_val = self._get(id)
         return ret_val
 
 

@@ -14,7 +14,7 @@ from .GXREG import GXREG
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXITR:
+class GXITR(gxapi_cy.WrapITR):
     """
     GXITR class.
 
@@ -44,37 +44,28 @@ class GXITR:
     The `ITR_NULL <geosoft.gxapi.ITR_NULL>` is used to hold a NULL handle to an `GXITR <geosoft.gxapi.GXITR>` class.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapITR(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXITR`
+        A null (undefined) instance of `GXITR <geosoft.gxapi.GXITR>`
         
-        :returns: A null `GXITR`
+        :returns: A null `GXITR <geosoft.gxapi.GXITR>`
+        :rtype:   GXITR
         """
-        return cls()
+        return GXITR()
 
     def is_null(self):
         """
-        Check if the instance of `GXITR` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXITR`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -90,13 +81,13 @@ class GXITR:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        0.0 brightness does nothing.
+        **Note:** 0.0 brightness does nothing.
         -1.0 to 0.0 makes colors darker, -1.0 is black
         0.0 to 1.0 makes colors lighter, 1.0 is white
         """
-        self._wrapper.change_brightness(brt)
+        self._change_brightness(brt)
         
 
 
@@ -113,12 +104,12 @@ class GXITR:
 
         .. versionadded:: 5.1.6
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the input value is a dummy, then the output color
+        **Note:** If the input value is a dummy, then the output color
         is 0 (no color).
         """
-        self._wrapper.color_vv(vv_d._wrapper, vv_c._wrapper)
+        self._color_vv(vv_d, vv_c)
         
 
 
@@ -132,8 +123,10 @@ class GXITR:
         :type  it_rs:  GXITR
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.copy(it_rs._wrapper)
+        self._copy(it_rs)
         
 
 
@@ -148,8 +141,10 @@ class GXITR:
         :rtype:      GXITR
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapITR.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapITR._create(GXContext._get_tls_geo())
         return GXITR(ret_val)
 
 
@@ -166,8 +161,10 @@ class GXITR:
         :rtype:       GXITR
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapITR.create_file(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapITR._create_file(GXContext._get_tls_geo(), file.encode())
         return GXITR(ret_val)
 
 
@@ -190,9 +187,9 @@ class GXITR:
 
         .. versionadded:: 5.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The `ITR_ZONE_DEFAULT <geosoft.gxapi.ITR_ZONE_DEFAULT>` model will ask the `GXIMG <geosoft.gxapi.GXIMG>` to provide
+        **Note:** The `ITR_ZONE_DEFAULT <geosoft.gxapi.ITR_ZONE_DEFAULT>` model will ask the `GXIMG <geosoft.gxapi.GXIMG>` to provide
         a model if it can.
         
         If a shaded relief model is selected, a shaded image
@@ -200,7 +197,7 @@ class GXITR:
         the same name as the original grid but with the suffux "_s"
         added to the name part of the grid.
         """
-        ret_val = gxapi_cy.WrapITR.create_img(GXContext._get_tls_geo(), img._wrapper, tbl.encode(), zone, contour)
+        ret_val = gxapi_cy.WrapITR._create_img(GXContext._get_tls_geo(), img, tbl.encode(), zone, contour)
         return GXITR(ret_val)
 
 
@@ -219,8 +216,10 @@ class GXITR:
         :rtype:       GXITR
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapITR.create_map(GXContext._get_tls_geo(), map._wrapper, name.encode())
+        ret_val = gxapi_cy.WrapITR._create_map(GXContext._get_tls_geo(), map, name.encode())
         return GXITR(ret_val)
 
 
@@ -237,8 +236,10 @@ class GXITR:
         :rtype:      GXITR
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapITR.create_s(GXContext._get_tls_geo(), bf._wrapper)
+        ret_val = gxapi_cy.WrapITR._create_s(GXContext._get_tls_geo(), bf)
         return GXITR(ret_val)
 
 
@@ -256,8 +257,10 @@ class GXITR:
         :type  contour:  float
 
         .. versionadded:: 5.1.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.equal_area(st._wrapper, contour)
+        self._equal_area(st, contour)
         
 
 
@@ -274,16 +277,16 @@ class GXITR:
 
         .. versionadded:: 6.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        In some ITRs, especially those defined and
+        **Note:** In some ITRs, especially those defined and
         embedded inside grid (`GXIMG <geosoft.gxapi.GXIMG>`) objects, the
         actual data minimum and maximum values are
         stored. This function retrieves those values.
         This is NOT true of all `GXITR <geosoft.gxapi.GXITR>` objects, and in
         those cases dummy values will be returned.
         """
-        min.value, max.value = self._wrapper.get_data_limits(min.value, max.value)
+        min.value, max.value = self._get_data_limits(min.value, max.value)
         
 
 
@@ -298,8 +301,10 @@ class GXITR:
         :rtype:      GXREG
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.get_reg()
+        ret_val = self._get_reg()
         return GXREG(ret_val)
 
 
@@ -316,11 +321,11 @@ class GXITR:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Valid indices are 0 to N-1, where N is the size of the `GXITR <geosoft.gxapi.GXITR>`.
+        **Note:** Valid indices are 0 to N-1, where N is the size of the `GXITR <geosoft.gxapi.GXITR>`.
         """
-        color.value = self._wrapper.get_zone_color(zone, color.value)
+        color.value = self._get_zone_color(zone, color.value)
         
 
 
@@ -337,8 +342,10 @@ class GXITR:
         :rtype:      int
 
         .. versionadded:: 5.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.color_value(val)
+        ret_val = self._color_value(val)
         return ret_val
 
 
@@ -353,8 +360,10 @@ class GXITR:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.get_size()
+        ret_val = self._get_size()
         return ret_val
 
 
@@ -370,12 +379,12 @@ class GXITR:
 
         .. versionadded:: 6.4
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This function may be used to determine if a color
+        **Note:** This function may be used to determine if a color
         transform is included in an `GXITR <geosoft.gxapi.GXITR>`.
         """
-        ret_val = self._wrapper.get_zone_model_type()
+        ret_val = self._get_zone_model_type()
         return ret_val
 
 
@@ -393,8 +402,10 @@ class GXITR:
         :type  contour:  float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.linear(min, max, contour)
+        self._linear(min, max, contour)
         
 
 
@@ -408,8 +419,10 @@ class GXITR:
         :type  file:  str
 
         .. versionadded:: 5.1.6
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.load_a(file.encode())
+        self._load_a(file.encode())
         
 
 
@@ -428,11 +441,11 @@ class GXITR:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The function name is a misnomer. This is a pure log transform.
+        **Note:** The function name is a misnomer. This is a pure log transform.
         """
-        self._wrapper.log_linear(min, max, contour)
+        self._log_linear(min, max, contour)
         
 
 
@@ -452,8 +465,10 @@ class GXITR:
         :type  contour:  float
 
         .. versionadded:: 5.1.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.normal(std_dev, mean, exp, contour)
+        self._normal(std_dev, mean, exp, contour)
         
 
 
@@ -467,8 +482,10 @@ class GXITR:
         :type  pow:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.power_zone(pow)
+        self._power_zone(pow)
         
 
 
@@ -484,9 +501,9 @@ class GXITR:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Brightness can range from -1.0 (black) to 1.0 (white).
+        **Note:** Brightness can range from -1.0 (black) to 1.0 (white).
         This brightness control is relative to the normal color
         when the `GXITR <geosoft.gxapi.GXITR>` is created.
 
@@ -494,7 +511,7 @@ class GXITR:
 
             `change_brightness <geosoft.gxapi.GXITR.change_brightness>`, `GXAGG.get_brightness <geosoft.gxapi.GXAGG.get_brightness>`, `GXAGG.change_brightness <geosoft.gxapi.GXAGG.change_brightness>`
         """
-        ret_val = self._wrapper.get_brightness()
+        ret_val = self._get_brightness()
         return ret_val
 
 
@@ -512,11 +529,11 @@ class GXITR:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Valid indices are 0 to N-2, where N is the size of the `GXITR <geosoft.gxapi.GXITR>`.
+        **Note:** Valid indices are 0 to N-2, where N is the size of the `GXITR <geosoft.gxapi.GXITR>`.
         """
-        ret_val = self._wrapper.get_zone_value(zone)
+        ret_val = self._get_zone_value(zone)
         return ret_val
 
 
@@ -530,8 +547,10 @@ class GXITR:
         :type  file:  str
 
         .. versionadded:: 5.1.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.save_a(file.encode())
+        self._save_a(file.encode())
         
 
 
@@ -545,8 +564,10 @@ class GXITR:
         :type  file:  str
 
         .. versionadded:: 8.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.save_file(file.encode())
+        self._save_file(file.encode())
         
 
 
@@ -560,8 +581,10 @@ class GXITR:
         :type  bf:   GXBF
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.serial(bf._wrapper)
+        self._serial(bf)
         
 
 
@@ -580,11 +603,11 @@ class GXITR:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        See the `create_map <geosoft.gxapi.GXITR.create_map>` function
+        **Note:** See the `create_map <geosoft.gxapi.GXITR.create_map>` function
         """
-        gxapi_cy.WrapITR.set_agg_map(GXContext._get_tls_geo(), map._wrapper, name.encode(), itr._wrapper)
+        gxapi_cy.WrapITR._set_agg_map(GXContext._get_tls_geo(), map, name.encode(), itr)
         
 
 
@@ -601,9 +624,9 @@ class GXITR:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Brightness settings:
+        **Note:** Brightness settings:
         0.0   - black
         0.5   - normal (no change)
         1.0   - white
@@ -612,7 +635,7 @@ class GXITR:
         0.0   - flat
         1.0   - full contrast (normal)
         """
-        self._wrapper.set_bright_contrast(brt, con)
+        self._set_bright_contrast(brt, con)
         
 
 
@@ -626,8 +649,10 @@ class GXITR:
         :type  model:  int
 
         .. versionadded:: 5.0.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_color_model(model)
+        self._set_color_model(model)
         
 
 
@@ -643,8 +668,10 @@ class GXITR:
         :type  max:  float
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_data_limits(min, max)
+        self._set_data_limits(min, max)
         
 
 
@@ -658,8 +685,10 @@ class GXITR:
         :type  zones:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_size(zones)
+        self._set_size(zones)
         
 
 
@@ -676,11 +705,11 @@ class GXITR:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Valid indices are 0 to N-1, where N is the size of the `GXITR <geosoft.gxapi.GXITR>`.
+        **Note:** Valid indices are 0 to N-1, where N is the size of the `GXITR <geosoft.gxapi.GXITR>`.
         """
-        self._wrapper.set_zone_color(zone, color)
+        self._set_zone_color(zone, color)
         
 
 
@@ -697,11 +726,11 @@ class GXITR:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Valid indices are 0 to N-2, where N is the size of the `GXITR <geosoft.gxapi.GXITR>`.
+        **Note:** Valid indices are 0 to N-2, where N is the size of the `GXITR <geosoft.gxapi.GXITR>`.
         """
-        self._wrapper.set_zone_value(zone, value)
+        self._set_zone_value(zone, value)
         
 
 

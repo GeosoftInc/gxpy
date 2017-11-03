@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXTPAT:
+class GXTPAT(gxapi_cy.WrapTPAT):
     """
     GXTPAT class.
 
@@ -52,37 +52,28 @@ class GXTPAT:
     Symbol Scaling  Additional scale factor to apply to symbol size (Default 1.0)
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapTPAT(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXTPAT`
+        A null (undefined) instance of `GXTPAT <geosoft.gxapi.GXTPAT>`
         
-        :returns: A null `GXTPAT`
+        :returns: A null `GXTPAT <geosoft.gxapi.GXTPAT>`
+        :rtype:   GXTPAT
         """
-        return cls()
+        return GXTPAT()
 
     def is_null(self):
         """
-        Check if the instance of `GXTPAT` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXTPAT`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -104,11 +95,11 @@ class GXTPAT:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The new code must be unique; not in the existing list.
+        **Note:** The new code must be unique; not in the existing list.
         """
-        self._wrapper.add_color(code.encode(), label.encode(), descr.encode(), color)
+        self._add_color(code.encode(), label.encode(), descr.encode(), color)
         
 
 
@@ -123,8 +114,10 @@ class GXTPAT:
         :rtype:      GXTPAT
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapTPAT.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapTPAT._create(GXContext._get_tls_geo())
         return GXTPAT(ret_val)
 
 
@@ -143,8 +136,10 @@ class GXTPAT:
         :rtype:       int
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.code(code.encode())
+        ret_val = self._code(code.encode())
         return ret_val
 
 
@@ -167,12 +162,12 @@ class GXTPAT:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Returns the solid color, pattern foreground color, or symbol
+        **Note:** Returns the solid color, pattern foreground color, or symbol
         color, along with the code, label and description.
         """
-        code.value, label.value, descr.value, color.value = self._wrapper.get_solid_pattern(index, code.value.encode(), label.value.encode(), descr.value.encode(), color.value)
+        code.value, label.value, descr.value, color.value = self._get_solid_pattern(index, code.value.encode(), label.value.encode(), descr.value.encode(), color.value)
         
 
 
@@ -187,8 +182,10 @@ class GXTPAT:
         :rtype:       int
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.size()
+        ret_val = self._size()
         return ret_val
 
 
@@ -203,9 +200,9 @@ class GXTPAT:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The type of thematic patterns file is recognized from the types
+        **Note:** The type of thematic patterns file is recognized from the types
         of fields found inside it.
         
         The following fields are identified. Only the "CODE" field is
@@ -231,7 +228,7 @@ class GXTPAT:
         SYMBROT         Symbol rotation
         SYMBSCL         Additional scaling factor applied to the current size
         """
-        self._wrapper.load_csv(file.encode())
+        self._load_csv(file.encode())
         
 
 
@@ -250,14 +247,14 @@ class GXTPAT:
 
         .. versionadded:: 7.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The input `GXLTB <geosoft.gxapi.GXLTB>` object should have key values matching the `GXTPAT <geosoft.gxapi.GXTPAT>` codes.
+        **Note:** The input `GXLTB <geosoft.gxapi.GXLTB>` object should have key values matching the `GXTPAT <geosoft.gxapi.GXTPAT>` codes.
         Whether the matches are case sensitive or not is dependent on how the
         `GXLTB <geosoft.gxapi.GXLTB>` oject was created (see ltb.h).
         The `GXLTB <geosoft.gxapi.GXLTB>` field values are converted to the output `GXVV <geosoft.gxapi.GXVV>` type.
         """
-        self._wrapper.setup_translation_vv(ltb._wrapper, field, vv_values._wrapper)
+        self._setup_translation_vv(ltb, field, vv_values)
         
 
 

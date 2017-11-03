@@ -13,44 +13,35 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXDXFI:
+class GXDXFI(gxapi_cy.WrapDXFI):
     """
     GXDXFI class.
 
     The `GXDXFI <geosoft.gxapi.GXDXFI>` class is used for importing AutoCAD® dxf files into Geosoft maps.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapDXFI(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXDXFI`
+        A null (undefined) instance of `GXDXFI <geosoft.gxapi.GXDXFI>`
         
-        :returns: A null `GXDXFI`
+        :returns: A null `GXDXFI <geosoft.gxapi.GXDXFI>`
+        :rtype:   GXDXFI
         """
-        return cls()
+        return GXDXFI()
 
     def is_null(self):
         """
-        Check if the instance of `GXDXFI` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXDXFI`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -68,8 +59,10 @@ class GXDXFI:
         :rtype:       GXDXFI
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapDXFI.create(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapDXFI._create(GXContext._get_tls_geo(), name.encode())
         return GXDXFI(ret_val)
 
 
@@ -87,8 +80,10 @@ class GXDXFI:
         :type  dxfi:  GXDXFI
 
         .. versionadded:: 5.1.6
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapDXFI.dxf2_ply(GXContext._get_tls_geo(), ply._wrapper, dxfi._wrapper)
+        gxapi_cy.WrapDXFI._dxf2_ply(GXContext._get_tls_geo(), ply, dxfi)
         
 
 
@@ -111,8 +106,10 @@ class GXDXFI:
         :type  color:         int
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.dxf2_view_ex(view._wrapper, max_pen, pb_group, group.encode(), pb_one_color, color)
+        self._dxf2_view_ex(view, max_pen, pb_group, group.encode(), pb_one_color, color)
         
 
 
@@ -136,8 +133,10 @@ class GXDXFI:
         :type  max_z:  float_ref
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        min_x.value, max_x.value, min_y.value, max_y.value, min_z.value, max_z.value = self._wrapper.get_range(min_x.value, max_x.value, min_y.value, max_y.value, min_z.value, max_z.value)
+        min_x.value, max_x.value, min_y.value, max_y.value, min_z.value, max_z.value = self._get_range(min_x.value, max_x.value, min_y.value, max_y.value, min_z.value, max_z.value)
         
 
 

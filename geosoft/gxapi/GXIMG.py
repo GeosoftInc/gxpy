@@ -14,7 +14,7 @@ from .GXPG import GXPG
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXIMG:
+class GXIMG(gxapi_cy.WrapIMG):
     """
     GXIMG class.
 
@@ -50,37 +50,28 @@ class GXIMG:
     and the ``*.gi`` file will contain the information.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapIMG(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXIMG`
+        A null (undefined) instance of `GXIMG <geosoft.gxapi.GXIMG>`
         
-        :returns: A null `GXIMG`
+        :returns: A null `GXIMG <geosoft.gxapi.GXIMG>`
+        :rtype:   GXIMG
         """
-        return cls()
+        return GXIMG()
 
     def is_null(self):
         """
-        Check if the instance of `GXIMG` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXIMG`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -98,9 +89,9 @@ class GXIMG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This method is useful for reducing the dimensions in a 2D pager by a factor of 2.
+        **Note:** This method is useful for reducing the dimensions in a 2D pager by a factor of 2.
         The output pager retains the same origin, but the X and Y spacing is double that of the original. Essentially,
         the process removes all the even-indexed rows and columns, while leaving the locations of all the remaining
         data points in the "odd" rows and columns unchanged.
@@ -108,7 +99,7 @@ class GXIMG:
         The output values at the output data locations are created by performing an average of the original data point and
         its valid surrounding data points; what is essentially a 3x3 smoothing filter.
         """
-        gxapi_cy.WrapIMG.average2(GXContext._get_tls_geo(), grid_in.encode(), grid_out.encode())
+        gxapi_cy.WrapIMG._average2(GXContext._get_tls_geo(), grid_in.encode(), grid_out.encode())
         
 
 
@@ -122,8 +113,10 @@ class GXIMG:
         :type  im_go:  GXIMG
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.copy(im_go._wrapper)
+        self._copy(im_go)
         
 
 
@@ -147,11 +140,11 @@ class GXIMG:
 
         .. versionadded:: 5.0.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Once destroyed all the data in this `GXIMG <geosoft.gxapi.GXIMG>` is lost.
+        **Note:** Once destroyed all the data in this `GXIMG <geosoft.gxapi.GXIMG>` is lost.
         """
-        ret_val = gxapi_cy.WrapIMG.create(GXContext._get_tls_geo(), type, kx, width, height)
+        ret_val = gxapi_cy.WrapIMG._create(GXContext._get_tls_geo(), type, kx, width, height)
         return GXIMG(ret_val)
 
 
@@ -173,14 +166,14 @@ class GXIMG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        When the `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>` data type is chosen the actual on-disk
+        **Note:** When the `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>` data type is chosen the actual on-disk
         type of the input image will be used instead of `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`
         if the on-disk values represent color data as opposed
         to real numbers.
         """
-        ret_val = gxapi_cy.WrapIMG.create_file(GXContext._get_tls_geo(), type, grid.encode(), mode)
+        ret_val = gxapi_cy.WrapIMG._create_file(GXContext._get_tls_geo(), type, grid.encode(), mode)
         return GXIMG(ret_val)
 
 
@@ -204,11 +197,11 @@ class GXIMG:
 
         .. versionadded:: 5.0.6
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Once destroyed all the data is lost. This is temporary.
+        **Note:** Once destroyed all the data is lost. This is temporary.
         """
-        ret_val = gxapi_cy.WrapIMG.create_mem(GXContext._get_tls_geo(), type, kx, width, height)
+        ret_val = gxapi_cy.WrapIMG._create_mem(GXContext._get_tls_geo(), type, kx, width, height)
         return GXIMG(ret_val)
 
 
@@ -234,9 +227,9 @@ class GXIMG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Special Note for developers who use this function and
+        **Note:** Special Note for developers who use this function and
         related functions to output ERMapper image (ERS, ECW) files:
         
         This function internally called ERMapper plugin to create ERS header
@@ -249,7 +242,7 @@ class GXIMG:
         It is recommended that this registry key is set during the installation
         of your application.
         """
-        ret_val = gxapi_cy.WrapIMG.create_new_file(GXContext._get_tls_geo(), type, kx, width, height, grid.encode())
+        ret_val = gxapi_cy.WrapIMG._create_new_file(GXContext._get_tls_geo(), type, kx, width, height, grid.encode())
         return GXIMG(ret_val)
 
 
@@ -271,14 +264,14 @@ class GXIMG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        When the `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>` data type is chosen the actual on-disk
+        **Note:** When the `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>` data type is chosen the actual on-disk
         type of the input image will be used instead of `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`
         if the on-disk values represent color data as opposed
         to real numbers.
         """
-        ret_val = gxapi_cy.WrapIMG.create_out_file(GXContext._get_tls_geo(), type, grid.encode(), img._wrapper)
+        ret_val = gxapi_cy.WrapIMG._create_out_file(GXContext._get_tls_geo(), type, grid.encode(), img)
         return GXIMG(ret_val)
 
 
@@ -293,12 +286,12 @@ class GXIMG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The `GXIMG <geosoft.gxapi.GXIMG>` now appears to be in the projected coordinate
+        **Note:** The `GXIMG <geosoft.gxapi.GXIMG>` now appears to be in the projected coordinate
         system space.
         """
-        self._wrapper.create_projected(ipj._wrapper)
+        self._create_projected(ipj)
         
 
 
@@ -315,14 +308,14 @@ class GXIMG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The `GXIMG <geosoft.gxapi.GXIMG>` now appears to be in the projected coordinate
+        **Note:** The `GXIMG <geosoft.gxapi.GXIMG>` now appears to be in the projected coordinate
         system space, with the specified cell size. If the cell
         size is `rDUMMY <geosoft.gxapi.rDUMMY>` (`GS_R8DM <geosoft.gxapi.GS_R8DM>`), one is automatically calculated,
         as with `create_projected <geosoft.gxapi.GXIMG.create_projected>`.
         """
-        self._wrapper.create_projected2(ipj._wrapper, cell_size)
+        self._create_projected2(ipj, cell_size)
         
 
 
@@ -341,9 +334,9 @@ class GXIMG:
 
         .. versionadded:: 6.3.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The `GXIMG <geosoft.gxapi.GXIMG>` now appears to be in the projected coordinate
+        **Note:** The `GXIMG <geosoft.gxapi.GXIMG>` now appears to be in the projected coordinate
         system space, with the specified cell size. If the cell
         size is `rDUMMY <geosoft.gxapi.rDUMMY>` (`GS_R8DM <geosoft.gxapi.GS_R8DM>`), one is automatically calculated,
         as with `create_projected <geosoft.gxapi.GXIMG.create_projected>`.
@@ -357,7 +350,7 @@ class GXIMG:
         If the value is set to `rDUMMY <geosoft.gxapi.rDUMMY>`, then expansion is left at 1.0,
         the legacy behaviour.
         """
-        self._wrapper.create_projected3(ipj._wrapper, cell_size, exp_pct)
+        self._create_projected3(ipj, cell_size, exp_pct)
         
 
 
@@ -375,11 +368,13 @@ class GXIMG:
 
         .. versionadded:: 5.0.8
 
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
         .. seealso::
 
             `get_pg <geosoft.gxapi.GXIMG.get_pg>` to get just a copy of the grid's pager.
         """
-        ret_val = self._wrapper.geth_pg()
+        ret_val = self._geth_pg()
         return GXPG(ret_val)
 
 
@@ -401,8 +396,10 @@ class GXIMG:
         :type  rot:  float_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        dx.value, dy.value, xo.value, yo.value, rot.value = self._wrapper.get_info(dx.value, dy.value, xo.value, yo.value, rot.value)
+        dx.value, dy.value, xo.value, yo.value, rot.value = self._get_info(dx.value, dy.value, xo.value, yo.value, rot.value)
         
 
 
@@ -416,8 +413,10 @@ class GXIMG:
         :type  ipj:  GXIPJ
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.get_ipj(ipj._wrapper)
+        self._get_ipj(ipj)
         
 
 
@@ -431,8 +430,10 @@ class GXIMG:
         :type  meta:  GXMETA
 
         .. versionadded:: 5.0.8
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.get_meta(meta._wrapper)
+        self._get_meta(meta)
         
 
 
@@ -447,11 +448,13 @@ class GXIMG:
 
         .. versionadded:: 5.0
 
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
         .. seealso::
 
             `geth_pg <geosoft.gxapi.GXIMG.geth_pg>` to get the actual pager of the grid.
         """
-        self._wrapper.get_pg(pg._wrapper)
+        self._get_pg(pg)
         
 
 
@@ -468,14 +471,14 @@ class GXIMG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Returns the cell size calculated by CreateProjected_PJIMG, or by
+        **Note:** Returns the cell size calculated by CreateProjected_PJIMG, or by
         `create_projected2 <geosoft.gxapi.GXIMG.create_projected2>` when
         `GS_R8DM <geosoft.gxapi.GS_R8DM>` is entered as the optional cell size. No inheritance
         is actually performed to the input `GXIMG <geosoft.gxapi.GXIMG>`.
         """
-        cell.value = self._wrapper.get_projected_cell_size(ipj._wrapper, cell.value)
+        cell.value = self._get_projected_cell_size(ipj, cell.value)
         
 
 
@@ -489,8 +492,10 @@ class GXIMG:
         :type  tr:   GXTR
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.get_tr(tr._wrapper)
+        self._get_tr(tr)
         
 
 
@@ -507,8 +512,10 @@ class GXIMG:
         :rtype:             int
 
         .. versionadded:: 5.0.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.element_type(xg_dor_img)
+        ret_val = self._element_type(xg_dor_img)
         return ret_val
 
 
@@ -524,11 +531,11 @@ class GXIMG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Same as sElementType_IMG(img,1)
+        **Note:** Same as sElementType_IMG(img,1)
         """
-        ret_val = self._wrapper.e_type()
+        ret_val = self._e_type()
         return ret_val
 
 
@@ -546,8 +553,10 @@ class GXIMG:
         :rtype:      int
 
         .. versionadded:: 5.0.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.get_def_itr(itr._wrapper)
+        ret_val = self._get_def_itr(itr)
         return ret_val
 
 
@@ -560,8 +569,10 @@ class GXIMG:
         :rtype:      bool
 
         .. versionadded:: 6.0.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.is_colour()
+        ret_val = self._is_colour()
         return ret_val
 
 
@@ -576,8 +587,10 @@ class GXIMG:
         :rtype:       bool
 
         .. versionadded:: 8.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapIMG.is_valid_img_file(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapIMG._is_valid_img_file(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
@@ -594,8 +607,10 @@ class GXIMG:
         :rtype:          bool
 
         .. versionadded:: 8.0.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val, err_msg.value = gxapi_cy.WrapIMG.is_valid_img_file_ex(GXContext._get_tls_geo(), file.encode(), err_msg.value.encode())
+        ret_val, err_msg.value = gxapi_cy.WrapIMG._is_valid_img_file_ex(GXContext._get_tls_geo(), file.encode(), err_msg.value.encode())
         return ret_val
 
 
@@ -610,8 +625,10 @@ class GXIMG:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.ne()
+        ret_val = self._ne()
         return ret_val
 
 
@@ -628,9 +645,9 @@ class GXIMG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If cell size is `GS_R8DM <geosoft.gxapi.GS_R8DM>`, then "nice" values for the cell
+        **Note:** If cell size is `GS_R8DM <geosoft.gxapi.GS_R8DM>`, then "nice" values for the cell
         size of the new projected grid will be determined so that
         the new grid has about the same number of cells as the old.
         If the cell size is specified, the inheritance will always
@@ -638,7 +655,7 @@ class GXIMG:
         `GXIPJ <geosoft.gxapi.GXIPJ>`, and the cell boundaries will be forced to be aligned
         with the new cell size.
         """
-        self._wrapper.inherit(ipj._wrapper, cell)
+        self._inherit(ipj, cell)
         
 
 
@@ -652,8 +669,10 @@ class GXIMG:
         :type  im_gs:  GXIMG
 
         .. versionadded:: 5.1.8
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.inherit_img(im_gs._wrapper)
+        self._inherit_img(im_gs)
         
 
 
@@ -668,8 +687,10 @@ class GXIMG:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.nv()
+        ret_val = self._nv()
         return ret_val
 
 
@@ -684,8 +705,10 @@ class GXIMG:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.nx()
+        ret_val = self._nx()
         return ret_val
 
 
@@ -700,8 +723,10 @@ class GXIMG:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.ny()
+        ret_val = self._ny()
         return ret_val
 
 
@@ -719,12 +744,12 @@ class GXIMG:
 
         .. versionadded:: 5.0.5
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        You can call either funtion to retrieve any data,
+        **Note:** You can call either funtion to retrieve any data,
         int or real.
         """
-        ret_val = self._wrapper.query_int(query)
+        ret_val = self._query_int(query)
         return ret_val
 
 
@@ -739,8 +764,10 @@ class GXIMG:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.query_kx()
+        ret_val = self._query_kx()
         return ret_val
 
 
@@ -758,8 +785,10 @@ class GXIMG:
         :rtype:      int
 
         .. versionadded:: 5.0.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.set_def_itr(itr._wrapper)
+        ret_val = self._set_def_itr(itr)
         return ret_val
 
 
@@ -775,8 +804,10 @@ class GXIMG:
         :rtype:      int
 
         .. versionadded:: 7.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapIMG.user_preference_to_plot_as_colour_shaded_grid(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapIMG._user_preference_to_plot_as_colour_shaded_grid(GXContext._get_tls_geo())
         return ret_val
 
 
@@ -791,11 +822,11 @@ class GXIMG:
 
         .. versionadded:: 5.0.6
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The cell sizes and projections must be the same.
+        **Note:** The cell sizes and projections must be the same.
         """
-        self._wrapper.load_img(im_gi._wrapper)
+        self._load_img(im_gi)
         
 
 
@@ -808,8 +839,10 @@ class GXIMG:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.load_into_pager()
+        self._load_into_pager()
         
 
 
@@ -824,15 +857,15 @@ class GXIMG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This will force loading an image into a `GXPG <geosoft.gxapi.GXPG>` if it is not already
+        **Note:** This will force loading an image into a `GXPG <geosoft.gxapi.GXPG>` if it is not already
         accessible in the direction requested.
         
         Subsequent calls to methods that use the optimal KX will use the
         KX set here.
         """
-        self._wrapper.opt_kx(kx)
+        self._opt_kx(kx)
         
 
 
@@ -852,8 +885,10 @@ class GXIMG:
         :type  vv:   GXVV
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.read_v(v, be, ne, vv._wrapper)
+        self._read_v(v, be, ne, vv)
         
 
 
@@ -872,8 +907,10 @@ class GXIMG:
         :type  vv:   GXVV
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.read_x(bx, by, ny, vv._wrapper)
+        self._read_x(bx, by, ny, vv)
         
 
 
@@ -892,8 +929,10 @@ class GXIMG:
         :type  vv:   GXVV
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.read_y(by, bx, nx, vv._wrapper)
+        self._read_y(by, bx, nx, vv)
         
 
 
@@ -907,8 +946,10 @@ class GXIMG:
         :type  grid:  str
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapIMG.refresh_gi(GXContext._get_tls_geo(), grid.encode())
+        gxapi_cy.WrapIMG._refresh_gi(GXContext._get_tls_geo(), grid.encode())
         
 
 
@@ -930,8 +971,10 @@ class GXIMG:
         :type  asp:    int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.relocate(min_x, min_y, max_x, max_y, asp)
+        self._relocate(min_x, min_y, max_x, max_y, asp)
         
 
 
@@ -953,8 +996,10 @@ class GXIMG:
         :type  title:     str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapIMG.report(GXContext._get_tls_geo(), grid.encode(), wa._wrapper, force, decimals, title.encode())
+        gxapi_cy.WrapIMG._report(GXContext._get_tls_geo(), grid.encode(), wa, force, decimals, title.encode())
         
 
 
@@ -977,12 +1022,12 @@ class GXIMG:
 
         .. versionadded:: 6.4.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Appends the stats as a CSV line to the input text file.
+        **Note:** Appends the stats as a CSV line to the input text file.
         The header line should only be written to a new text file.
         """
-        gxapi_cy.WrapIMG.report_csv(GXContext._get_tls_geo(), grid.encode(), wa._wrapper, force, decimals, header)
+        gxapi_cy.WrapIMG._report_csv(GXContext._get_tls_geo(), grid.encode(), wa, force, decimals, header)
         
 
 
@@ -1001,8 +1046,10 @@ class GXIMG:
         :rtype:      float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.get_z(x, y)
+        ret_val = self._get_z(x, y)
         return ret_val
 
 
@@ -1020,12 +1067,12 @@ class GXIMG:
 
         .. versionadded:: 5.0.5
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        You can call either funtion to retrieve any data,
+        **Note:** You can call either funtion to retrieve any data,
         int or real.
         """
-        ret_val = self._wrapper.query_double(query)
+        ret_val = self._query_double(query)
         return ret_val
 
 
@@ -1037,8 +1084,10 @@ class GXIMG:
         
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_grid_unchanged()
+        self._set_grid_unchanged()
         
 
 
@@ -1061,12 +1110,12 @@ class GXIMG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Calls to this function should be made BEFORE calls to `set_ipj <geosoft.gxapi.GXIMG.set_ipj>`,
+        **Note:** Calls to this function should be made BEFORE calls to `set_ipj <geosoft.gxapi.GXIMG.set_ipj>`,
         as the latter function sets up the bounding rectangle in the metadata.
         """
-        self._wrapper.set_info(dx, dy, xo, yo, rot)
+        self._set_info(dx, dy, xo, yo, rot)
         
 
 
@@ -1081,12 +1130,12 @@ class GXIMG:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Calls to this function should be made AFTER calls to `set_info <geosoft.gxapi.GXIMG.set_info>`,
+        **Note:** Calls to this function should be made AFTER calls to `set_info <geosoft.gxapi.GXIMG.set_info>`,
         as `set_ipj <geosoft.gxapi.GXIMG.set_ipj>` sets up the bounding rectangle in the metadata.
         """
-        self._wrapper.set_ipj(ipj._wrapper)
+        self._set_ipj(ipj)
         
 
 
@@ -1100,8 +1149,10 @@ class GXIMG:
         :type  meta:  GXMETA
 
         .. versionadded:: 5.0.8
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_meta(meta._wrapper)
+        self._set_meta(meta)
         
 
 
@@ -1115,8 +1166,10 @@ class GXIMG:
         :type  pg:   GXPG
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_pg(pg._wrapper)
+        self._set_pg(pg)
         
 
 
@@ -1130,8 +1183,10 @@ class GXIMG:
         :type  tr:   GXTR
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_tr(tr._wrapper)
+        self._set_tr(tr)
         
 
 
@@ -1145,8 +1200,10 @@ class GXIMG:
         :type  grid:  str
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapIMG.sync(GXContext._get_tls_geo(), grid.encode())
+        gxapi_cy.WrapIMG._sync(GXContext._get_tls_geo(), grid.encode())
         
 
 
@@ -1166,8 +1223,10 @@ class GXIMG:
         :type  vv:   GXVV
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.write_v(v, be, ne, vv._wrapper)
+        self._write_v(v, be, ne, vv)
         
 
 
@@ -1186,8 +1245,10 @@ class GXIMG:
         :type  vv:   GXVV
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.write_x(bx, by, ny, vv._wrapper)
+        self._write_x(bx, by, ny, vv)
         
 
 
@@ -1206,8 +1267,10 @@ class GXIMG:
         :type  vv:   GXVV
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.write_y(by, bx, nx, vv._wrapper)
+        self._write_y(by, bx, nx, vv)
         
 
 
@@ -1223,8 +1286,10 @@ class GXIMG:
         :type  value:  float
 
         .. versionadded:: 8.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_double_parameter(name.encode(), value)
+        self._set_double_parameter(name.encode(), value)
         
 
 
@@ -1241,8 +1306,10 @@ class GXIMG:
         :rtype:       float
 
         .. versionadded:: 8.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.get_double_parameter(name.encode())
+        ret_val = self._get_double_parameter(name.encode())
         return ret_val
 
 

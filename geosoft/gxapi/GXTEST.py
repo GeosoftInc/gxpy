@@ -13,44 +13,35 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXTEST:
+class GXTEST(gxapi_cy.WrapTEST):
     """
     GXTEST class.
 
     Used to place special testing methods
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapTEST(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXTEST`
+        A null (undefined) instance of `GXTEST <geosoft.gxapi.GXTEST>`
         
-        :returns: A null `GXTEST`
+        :returns: A null `GXTEST <geosoft.gxapi.GXTEST>`
+        :rtype:   GXTEST
         """
-        return cls()
+        return GXTEST()
 
     def is_null(self):
         """
-        Check if the instance of `GXTEST` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXTEST`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -65,8 +56,10 @@ class GXTEST:
         :type  enable:  bool
 
         .. versionadded:: 6.4.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapTEST.enable_disable_arc_engine_license(GXContext._get_tls_geo(), enable)
+        gxapi_cy.WrapTEST._enable_disable_arc_engine_license(GXContext._get_tls_geo(), enable)
         
 
 
@@ -81,8 +74,10 @@ class GXTEST:
         :rtype:      int
 
         .. versionadded:: 6.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapTEST.arc_engine_license(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapTEST._arc_engine_license(GXContext._get_tls_geo())
         return ret_val
 
 
@@ -95,8 +90,10 @@ class GXTEST:
         :rtype:      bool
 
         .. versionadded:: 6.4.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapTEST.test_mode(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapTEST._test_mode(GXContext._get_tls_geo())
         return ret_val
 
 
@@ -112,8 +109,10 @@ class GXTEST:
         :type  log:    str
 
         .. versionadded:: 6.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapTEST.wrapper_test(GXContext._get_tls_geo(), funcs.encode(), log.encode())
+        gxapi_cy.WrapTEST._wrapper_test(GXContext._get_tls_geo(), funcs.encode(), log.encode())
         
 
 
@@ -129,8 +128,10 @@ class GXTEST:
         :type  log:  str
 
         .. versionadded:: 9.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapTEST.core_class(GXContext._get_tls_geo(), cl.encode(), log.encode())
+        gxapi_cy.WrapTEST._core_class(GXContext._get_tls_geo(), cl.encode(), log.encode())
         
 
 

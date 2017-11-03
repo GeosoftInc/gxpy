@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXBF:
+class GXBF(gxapi_cy.WrapBF):
     """
     GXBF class.
 
@@ -23,37 +23,28 @@ class GXBF:
     files and writing to files.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapBF(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXBF`
+        A null (undefined) instance of `GXBF <geosoft.gxapi.GXBF>`
         
-        :returns: A null `GXBF`
+        :returns: A null `GXBF <geosoft.gxapi.GXBF>`
+        :rtype:   GXBF
         """
-        return cls()
+        return GXBF()
 
     def is_null(self):
         """
-        Check if the instance of `GXBF` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXBF`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -68,8 +59,10 @@ class GXBF:
         :type  size:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.ch_size(size)
+        self._ch_size(size)
         
 
 
@@ -86,12 +79,12 @@ class GXBF:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Terminates if attempt to move past the end of
+        **Note:** Terminates if attempt to move past the end of
         a read-only file.
         """
-        self._wrapper.seek(offset, ref)
+        self._seek(offset, ref)
         
 
 
@@ -105,8 +98,10 @@ class GXBF:
         :type  b_fw:  GXBF
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.copy(b_fw._wrapper)
+        self._copy(b_fw)
         
 
 
@@ -125,8 +120,10 @@ class GXBF:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.crc(size, crc)
+        ret_val = self._crc(size, crc)
         return ret_val
 
 
@@ -146,9 +143,9 @@ class GXBF:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Run-time specific directory paths may be added the the front of file names
+        **Note:** Run-time specific directory paths may be added the the front of file names
         as follows:
         
         <geosoft>      the main Geosoft installation directory
@@ -160,7 +157,7 @@ class GXBF:
         
         For example "<geosoft>/user/csv/datum.csv"
         """
-        ret_val = gxapi_cy.WrapBF.create(GXContext._get_tls_geo(), file.encode(), status)
+        ret_val = gxapi_cy.WrapBF._create(GXContext._get_tls_geo(), file.encode(), status)
         return GXBF(ret_val)
 
 
@@ -182,11 +179,11 @@ class GXBF:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        see sbf.gxh
+        **Note:** see sbf.gxh
         """
-        ret_val = gxapi_cy.WrapBF.create_sbf(GXContext._get_tls_geo(), sbf._wrapper, file.encode(), status)
+        ret_val = gxapi_cy.WrapBF._create_sbf(GXContext._get_tls_geo(), sbf, file.encode(), status)
         return GXBF(ret_val)
 
 
@@ -206,8 +203,10 @@ class GXBF:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.eof()
+        ret_val = self._eof()
         return ret_val
 
 
@@ -223,8 +222,10 @@ class GXBF:
         :rtype:      int
 
         .. versionadded:: 5.1.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.query_write()
+        ret_val = self._query_write()
         return ret_val
 
 
@@ -242,8 +243,10 @@ class GXBF:
         :type  data:      str_ref
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        data.value = self._wrapper.read_binary_string(bytes, encoding, data.value.encode())
+        data.value = self._read_binary_string(bytes, encoding, data.value.encode())
         
 
 
@@ -258,8 +261,10 @@ class GXBF:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.size()
+        ret_val = self._size()
         return ret_val
 
 
@@ -274,8 +279,10 @@ class GXBF:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.tell()
+        ret_val = self._tell()
         return ret_val
 
 
@@ -292,9 +299,9 @@ class GXBF:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the data source may be in byte order different from that
+        **Note:** If the data source may be in byte order different from that
         required by the reader, you can add the source byte-order
         to the `GXBF <geosoft.gxapi.GXBF>` elelment type.  The byte order will be swapped
         if required.  For example, to write out a real number 3.5
@@ -305,7 +312,7 @@ class GXBF:
         If a byte order is not specified, the source is assumed to be
         in the native byte order of the reading/writing computer.
         """
-        data.value = self._wrapper.read_int(type, data.value)
+        data.value = self._read_int(type, data.value)
         
 
 
@@ -322,9 +329,9 @@ class GXBF:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the data source may be in byte order different from that
+        **Note:** If the data source may be in byte order different from that
         required by the reader, you can add the source byte-order
         to the `GXBF <geosoft.gxapi.GXBF>` elelment type.  The byte order will be swapped
         if required.  For example, to write out a real number 3.5
@@ -335,7 +342,7 @@ class GXBF:
         If a byte order is not specified, the source is assumed to be
         in the native byte order of the reading/writing computer.
         """
-        data.value = self._wrapper.read_double(type, data.value)
+        data.value = self._read_double(type, data.value)
         
 
 
@@ -352,9 +359,9 @@ class GXBF:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the data source may be in byte order different from that
+        **Note:** If the data source may be in byte order different from that
         required by the reader, you can add the source byte-order
         to the `GXBF <geosoft.gxapi.GXBF>` elelment type.  The byte order will be swapped
         if required.  For example, to write out a real number 3.5
@@ -365,7 +372,7 @@ class GXBF:
         If a byte order is not specified, the source is assumed to be
         in the native byte order of the reading/writing computer.
         """
-        self._wrapper.read_vv(type, vv._wrapper)
+        self._read_vv(type, vv)
         
 
 
@@ -379,8 +386,10 @@ class GXBF:
         :type  status:  int
 
         .. versionadded:: 6.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_destroy_status(status)
+        self._set_destroy_status(status)
         
 
 
@@ -396,8 +405,10 @@ class GXBF:
         :type  data:      str
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.write_binary_string(encoding, data.encode())
+        self._write_binary_string(encoding, data.encode())
         
 
 
@@ -409,8 +420,10 @@ class GXBF:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.write_data_null()
+        self._write_data_null()
         
 
 
@@ -427,15 +440,15 @@ class GXBF:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        See comments on byte order for the Read.. functions if you
+        **Note:** See comments on byte order for the Read.. functions if you
         want to enforce a certain byte order.
         
         If a byte order is not specified, the data is written
         in the native byte order of the writing computer.
         """
-        self._wrapper.write_int(type, data)
+        self._write_int(type, data)
         
 
 
@@ -452,15 +465,15 @@ class GXBF:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        See comments on byte order for the Read.. functions if you
+        **Note:** See comments on byte order for the Read.. functions if you
         want to enforce a certain byte order.
         
         If a byte order is not specified, the data is written
         in the native byte order of the writing computer.
         """
-        self._wrapper.write_double(type, data)
+        self._write_double(type, data)
         
 
 
@@ -477,15 +490,15 @@ class GXBF:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        See comments on byte order for the Read.. functions if you
+        **Note:** See comments on byte order for the Read.. functions if you
         want to enforce a certain byte order.
         
         If a byte order is not specified, the data is written
         in the native byte order of the writing computer.
         """
-        self._wrapper.write_vv(type, vv._wrapper)
+        self._write_vv(type, vv)
         
 
 

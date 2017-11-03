@@ -13,44 +13,35 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXVULCAN:
+class GXVULCAN(gxapi_cy.WrapVULCAN):
     """
     GXVULCAN class.
 
     The `GXVULCAN <geosoft.gxapi.GXVULCAN>` class is used for importing Maptek® Vulcan block and triangulation files.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapVULCAN(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXVULCAN`
+        A null (undefined) instance of `GXVULCAN <geosoft.gxapi.GXVULCAN>`
         
-        :returns: A null `GXVULCAN`
+        :returns: A null `GXVULCAN <geosoft.gxapi.GXVULCAN>`
+        :rtype:   GXVULCAN
         """
-        return cls()
+        return GXVULCAN()
 
     def is_null(self):
         """
-        Check if the instance of `GXVULCAN` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXVULCAN`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -69,8 +60,10 @@ class GXVULCAN:
         :rtype:                     int
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapVULCAN.is_valid_triangulation_file(GXContext._get_tls_geo(), triangulation_file.encode())
+        ret_val = gxapi_cy.WrapVULCAN._is_valid_triangulation_file(GXContext._get_tls_geo(), triangulation_file.encode())
         return ret_val
 
 
@@ -88,8 +81,10 @@ class GXVULCAN:
         :rtype:                   int
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapVULCAN.is_valid_block_model_file(GXContext._get_tls_geo(), block_model_file.encode())
+        ret_val = gxapi_cy.WrapVULCAN._is_valid_block_model_file(GXContext._get_tls_geo(), block_model_file.encode())
         return ret_val
 
 
@@ -109,8 +104,10 @@ class GXVULCAN:
         :type  new_group_name:      str
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapVULCAN.triangulation_to_view(GXContext._get_tls_geo(), triangulation_file.encode(), ipj._wrapper, mview._wrapper, new_group_name.encode())
+        gxapi_cy.WrapVULCAN._triangulation_to_view(GXContext._get_tls_geo(), triangulation_file.encode(), ipj, mview, new_group_name.encode())
         
 
 
@@ -128,8 +125,10 @@ class GXVULCAN:
         :type  lst:               GXLST
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapVULCAN.get_block_model_variable_info(GXContext._get_tls_geo(), block_model_file.encode(), query, lst._wrapper)
+        gxapi_cy.WrapVULCAN._get_block_model_variable_info(GXContext._get_tls_geo(), block_model_file.encode(), query, lst)
         
 
 
@@ -147,8 +146,10 @@ class GXVULCAN:
         :type  lst:               GXLST
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapVULCAN.get_block_model_string_variable_values(GXContext._get_tls_geo(), block_model_file.encode(), variable_name.encode(), lst._wrapper)
+        gxapi_cy.WrapVULCAN._get_block_model_string_variable_values(GXContext._get_tls_geo(), block_model_file.encode(), variable_name.encode(), lst)
         
 
 
@@ -172,8 +173,10 @@ class GXVULCAN:
         :type  rock_code_filename:     str
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapVULCAN.block_model_to_voxel(GXContext._get_tls_geo(), block_model_file.encode(), ipj._wrapper, variable_to_export.encode(), output_voxel_filename.encode(), remove_default_values, rock_code_filename.encode())
+        gxapi_cy.WrapVULCAN._block_model_to_voxel(GXContext._get_tls_geo(), block_model_file.encode(), ipj, variable_to_export.encode(), output_voxel_filename.encode(), remove_default_values, rock_code_filename.encode())
         
 
 

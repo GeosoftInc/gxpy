@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXMAPL:
+class GXMAPL(gxapi_cy.WrapMAPL):
     """
     GXMAPL class.
 
@@ -24,37 +24,28 @@ class GXMAPL:
     with the target `GXMAP <geosoft.gxapi.GXMAP>` object on which to do the drawing
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapMAPL(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXMAPL`
+        A null (undefined) instance of `GXMAPL <geosoft.gxapi.GXMAPL>`
         
-        :returns: A null `GXMAPL`
+        :returns: A null `GXMAPL <geosoft.gxapi.GXMAPL>`
+        :rtype:   GXMAPL
         """
-        return cls()
+        return GXMAPL()
 
     def is_null(self):
         """
-        Check if the instance of `GXMAPL` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXMAPL`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -77,13 +68,13 @@ class GXMAPL:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The default map groups will use the reference name with
+        **Note:** The default map groups will use the reference name with
         "_Data" and "_Base" added.  If no reference name is specified,
         the name "`GXMAPL <geosoft.gxapi.GXMAPL>`" is used
         """
-        ret_val = gxapi_cy.WrapMAPL.create(GXContext._get_tls_geo(), name.encode(), ref_name.encode(), line)
+        ret_val = gxapi_cy.WrapMAPL._create(GXContext._get_tls_geo(), name.encode(), ref_name.encode(), line)
         return GXMAPL(ret_val)
 
 
@@ -106,13 +97,13 @@ class GXMAPL:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The default map groups will use the reference name with
+        **Note:** The default map groups will use the reference name with
         "_Data" and "_Base" added.  If no reference name is specified,
         the name "`GXMAPL <geosoft.gxapi.GXMAPL>`" is used
         """
-        ret_val = gxapi_cy.WrapMAPL.create_reg(GXContext._get_tls_geo(), name.encode(), ref_name.encode(), line, reg._wrapper)
+        ret_val = gxapi_cy.WrapMAPL._create_reg(GXContext._get_tls_geo(), name.encode(), ref_name.encode(), line, reg)
         return GXMAPL(ret_val)
 
 
@@ -127,8 +118,10 @@ class GXMAPL:
         :type  map:   GXMAP
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.process(map._wrapper)
+        self._process(map)
         
 
 
@@ -144,8 +137,10 @@ class GXMAPL:
         :type  repl:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.replace_string(var.encode(), repl.encode())
+        self._replace_string(var.encode(), repl.encode())
         
 
 

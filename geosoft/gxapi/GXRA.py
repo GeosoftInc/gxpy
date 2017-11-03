@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXRA:
+class GXRA(gxapi_cy.WrapRA):
     """
     GXRA class.
 
@@ -22,37 +22,28 @@ class GXRA:
     write operations are defined
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapRA(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXRA`
+        A null (undefined) instance of `GXRA <geosoft.gxapi.GXRA>`
         
-        :returns: A null `GXRA`
+        :returns: A null `GXRA <geosoft.gxapi.GXRA>`
+        :rtype:   GXRA
         """
-        return cls()
+        return GXRA()
 
     def is_null(self):
         """
-        Check if the instance of `GXRA` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXRA`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -70,8 +61,10 @@ class GXRA:
         :rtype:       GXRA
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapRA.create(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapRA._create(GXContext._get_tls_geo(), file.encode())
         return GXRA(ret_val)
 
 
@@ -91,9 +84,9 @@ class GXRA:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This method allows you to open an `GXRA <geosoft.gxapi.GXRA>` in a structured file
+        **Note:** This method allows you to open an `GXRA <geosoft.gxapi.GXRA>` in a structured file
         storage (an `GXSBF <geosoft.gxapi.GXSBF>`).  SBFs can be created inside other data
         containers, such as workspaces, maps, images and databases.
         This lets you store application specific information together
@@ -103,7 +96,7 @@ class GXRA:
 
             sbf.gxh
         """
-        ret_val = gxapi_cy.WrapRA.create_sbf(GXContext._get_tls_geo(), sbf._wrapper, file.encode())
+        ret_val = gxapi_cy.WrapRA._create_sbf(GXContext._get_tls_geo(), sbf, file.encode())
         return GXRA(ret_val)
 
 
@@ -123,8 +116,10 @@ class GXRA:
         :rtype:          int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val, strbuff.value = self._wrapper.gets(strbuff.value.encode())
+        ret_val, strbuff.value = self._gets(strbuff.value.encode())
         return ret_val
 
 
@@ -139,8 +134,10 @@ class GXRA:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.len()
+        ret_val = self._len()
         return ret_val
 
 
@@ -156,11 +153,11 @@ class GXRA:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This will be the next line read.
+        **Note:** This will be the next line read.
         """
-        ret_val = self._wrapper.line()
+        ret_val = self._line()
         return ret_val
 
 
@@ -178,8 +175,10 @@ class GXRA:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.seek(line)
+        ret_val = self._seek(line)
         return ret_val
 
 

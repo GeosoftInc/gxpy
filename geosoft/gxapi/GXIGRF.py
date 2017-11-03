@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXIGRF:
+class GXIGRF(gxapi_cy.WrapIGRF):
     """
     GXIGRF class.
 
@@ -23,37 +23,28 @@ class GXIGRF:
     reference field.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapIGRF(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXIGRF`
+        A null (undefined) instance of `GXIGRF <geosoft.gxapi.GXIGRF>`
         
-        :returns: A null `GXIGRF`
+        :returns: A null `GXIGRF <geosoft.gxapi.GXIGRF>`
+        :rtype:   GXIGRF
         """
-        return cls()
+        return GXIGRF()
 
     def is_null(self):
         """
-        Check if the instance of `GXIGRF` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXIGRF`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -79,13 +70,13 @@ class GXIGRF:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Calculate `GXIGRF <geosoft.gxapi.GXIGRF>` data (total field, inclination, and declination)
+        **Note:** Calculate `GXIGRF <geosoft.gxapi.GXIGRF>` data (total field, inclination, and declination)
         for a given `GXIGRF <geosoft.gxapi.GXIGRF>` model. The model used will be the same as that
         obtained with `create <geosoft.gxapi.GXIGRF.create>`.
         """
-        str_val.value, inc.value, dec.value = self._wrapper.calc(el, lon, lat, str_val.value, inc.value, dec.value)
+        str_val.value, inc.value, dec.value = self._calc(el, lon, lat, str_val.value, inc.value, dec.value)
         
 
 
@@ -110,9 +101,9 @@ class GXIGRF:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Calculate `GXIGRF <geosoft.gxapi.GXIGRF>` data (total field, inclination, and declination)
+        **Note:** Calculate `GXIGRF <geosoft.gxapi.GXIGRF>` data (total field, inclination, and declination)
         for a given `GXIGRF <geosoft.gxapi.GXIGRF>` model. The model used will be the same as that
         obtained with `create <geosoft.gxapi.GXIGRF.create>`.
         All of the `GXVV <geosoft.gxapi.GXVV>`'s should be the same length. The function
@@ -124,7 +115,7 @@ class GXIGRF:
         These values will be converted to the types contained in the
         output `GXVV <geosoft.gxapi.GXVV>`'s.
         """
-        self._wrapper.calc_vv(gv_vel._wrapper, gv_vlon._wrapper, gv_vlat._wrapper, gv_vfs._wrapper, gv_vinc._wrapper, gv_vdec._wrapper)
+        self._calc_vv(gv_vel, gv_vlon, gv_vlat, gv_vfs, gv_vinc, gv_vdec)
         
 
 
@@ -146,13 +137,13 @@ class GXIGRF:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        If the year of the `GXIGRF <geosoft.gxapi.GXIGRF>` model is dummy, then
+        **Note:** If the year of the `GXIGRF <geosoft.gxapi.GXIGRF>` model is dummy, then
         the `GXIGRF <geosoft.gxapi.GXIGRF>` year nearest to the line's date will
         be used. Otherwise, the specified year is used.
         """
-        ret_val = gxapi_cy.WrapIGRF.create(GXContext._get_tls_geo(), date, year, filename.encode())
+        ret_val = gxapi_cy.WrapIGRF._create(GXContext._get_tls_geo(), date, year, filename.encode())
         return GXIGRF(ret_val)
 
 
@@ -171,13 +162,13 @@ class GXIGRF:
 
         .. versionadded:: 6.1
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        This is useful when using a DGRF file, because the system is set
+        **Note:** This is useful when using a DGRF file, because the system is set
         up only to calculate for years within the date range, and will
         return an error otherwise.
         """
-        min.value, max.value = gxapi_cy.WrapIGRF.date_range(GXContext._get_tls_geo(), file_name.encode(), min.value, max.value)
+        min.value, max.value = gxapi_cy.WrapIGRF._date_range(GXContext._get_tls_geo(), file_name.encode(), min.value, max.value)
         
 
 

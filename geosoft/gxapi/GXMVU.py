@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXMVU:
+class GXMVU(gxapi_cy.WrapMVU):
     """
     GXMVU class.
 
@@ -22,37 +22,28 @@ class GXMVU:
     special objects such as histograms and bar charts.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapMVU(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXMVU`
+        A null (undefined) instance of `GXMVU <geosoft.gxapi.GXMVU>`
         
-        :returns: A null `GXMVU`
+        :returns: A null `GXMVU <geosoft.gxapi.GXMVU>`
+        :rtype:   GXMVU
         """
-        return cls()
+        return GXMVU()
 
     def is_null(self):
         """
-        Check if the instance of `GXMVU` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXMVU`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -81,8 +72,10 @@ class GXMVU:
         :type  type:   int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapMVU.arrow(GXContext._get_tls_geo(), mview._wrapper, hx, hy, tx, ty, ratio, angle, type)
+        gxapi_cy.WrapMVU._arrow(GXContext._get_tls_geo(), mview, hx, hy, tx, ty, ratio, angle, type)
         
 
 
@@ -117,16 +110,16 @@ class GXMVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The locations are given in two VVs, and the directions
+        **Note:** The locations are given in two VVs, and the directions
         in the two others. A wide range of sizes are available.
         If the scaling is set to `rDUMMY <geosoft.gxapi.rDUMMY>`, then arrows are automatically
         scaled so the largest is 1cm in length.
         If the line thickness is set to `rDUMMY <geosoft.gxapi.rDUMMY>`, the line thickness scales
         with the arrow size, and is 1/20 of the vector length.
         """
-        gxapi_cy.WrapMVU.arrow_vector_vv(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, vv_dx._wrapper, vv_dy._wrapper, scale, pos, size, style, point, thickness)
+        gxapi_cy.WrapMVU._arrow_vector_vv(GXContext._get_tls_geo(), mview, vv_x, vv_y, vv_dx, vv_dy, scale, pos, size, style, point, thickness)
         
 
 
@@ -194,8 +187,10 @@ class GXMVU:
         :type  heightm:       float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapMVU.bar_chart(GXContext._get_tls_geo(), mview._wrapper, group_name.encode(), data._wrapper, line, x_chan.encode(), list.encode(), x_title.encode(), x_txt_size, y_title.encode(), y_txt_size, bar_title.encode(), bar_txt_size, bar_width, dist_fid, label, tick, right_axis, top_axis, bottom_axis, surround, left, bottom, right, top, xm, ym, widthm, heightm)
+        gxapi_cy.WrapMVU._bar_chart(GXContext._get_tls_geo(), mview, group_name.encode(), data, line, x_chan.encode(), list.encode(), x_title.encode(), x_txt_size, y_title.encode(), y_txt_size, bar_title.encode(), bar_txt_size, bar_width, dist_fid, label, tick, right_axis, top_axis, bottom_axis, surround, left, bottom, right, top, xm, ym, widthm, heightm)
         
 
 
@@ -220,9 +215,9 @@ class GXMVU:
 
         .. versionadded:: 7.2
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Draws a single colored rectangle for each data point in
+        **Note:** Draws a single colored rectangle for each data point in
         Conductivity-Depth data (for example). It is similar to the
         result you get if you plot a grid with Pixel=1, but in this
         data the row and column widths are not necessarily constant,
@@ -230,7 +225,7 @@ class GXMVU:
         are sized so that the boundaries are half-way between adjacent
         data, both vertically and horizontally.
         """
-        gxapi_cy.WrapMVU.cdi_pixel_plot(GXContext._get_tls_geo(), mview._wrapper, group.encode(), data_va._wrapper, elev_va._wrapper, xvv._wrapper, itr._wrapper)
+        gxapi_cy.WrapMVU._cdi_pixel_plot(GXContext._get_tls_geo(), mview, group.encode(), data_va, elev_va, xvv, itr)
         
 
 
@@ -257,15 +252,15 @@ class GXMVU:
 
         .. versionadded:: 7.2
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Similar to `cdi_pixel_plot <geosoft.gxapi.GXMVU.cdi_pixel_plot>`, but plotted onto a series of
+        **Note:** Similar to `cdi_pixel_plot <geosoft.gxapi.GXMVU.cdi_pixel_plot>`, but plotted onto a series of
         plotting planes which hang from the XY path in 3D. Each vertical plane azimuth
         is defined by two adjacent points on the path. The color "pixel" for each
         data point is plotted in two halves, with each half on adjacent plotting planes,
         with the bend at the data point.
         """
-        gxapi_cy.WrapMVU.cdi_pixel_plot_3d(GXContext._get_tls_geo(), mview._wrapper, group.encode(), data_va._wrapper, elev_va._wrapper, xvv._wrapper, yvv._wrapper, itr._wrapper)
+        gxapi_cy.WrapMVU._cdi_pixel_plot_3d(GXContext._get_tls_geo(), mview, group.encode(), data_va, elev_va, xvv, yvv, itr)
         
 
 
@@ -293,8 +288,10 @@ class GXMVU:
         :type  y:        float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapMVU.color_bar(GXContext._get_tls_geo(), mview._wrapper, itr._wrapper, decimal, ann, height, width, x, y)
+        gxapi_cy.WrapMVU._color_bar(GXContext._get_tls_geo(), mview, itr, decimal, ann, height, width, x, y)
         
 
 
@@ -324,12 +321,12 @@ class GXMVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The secondary `GXITR <geosoft.gxapi.GXITR>` is used to blend horizontally with the
+        **Note:** The secondary `GXITR <geosoft.gxapi.GXITR>` is used to blend horizontally with the
         primary `GXITR <geosoft.gxapi.GXITR>` in each box.
         """
-        gxapi_cy.WrapMVU.color_bar2(GXContext._get_tls_geo(), mview._wrapper, itr._wrapper, itr2._wrapper, decimal, ann, height, width, x, y)
+        gxapi_cy.WrapMVU._color_bar2(GXContext._get_tls_geo(), mview, itr, itr2, decimal, ann, height, width, x, y)
         
 
 
@@ -361,12 +358,12 @@ class GXMVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The secondary `GXITR <geosoft.gxapi.GXITR>` is used to blend horizontally with the
+        **Note:** The secondary `GXITR <geosoft.gxapi.GXITR>` is used to blend horizontally with the
         primary `GXITR <geosoft.gxapi.GXITR>` in each box.
         """
-        gxapi_cy.WrapMVU.color_bar2_style(GXContext._get_tls_geo(), mview._wrapper, itr._wrapper, itr2._wrapper, decimal, ann, height, width, x, y, style)
+        gxapi_cy.WrapMVU._color_bar2_style(GXContext._get_tls_geo(), mview, itr, itr2, decimal, ann, height, width, x, y, style)
         
 
 
@@ -397,9 +394,9 @@ class GXMVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The sign of the annotation offset determines whether labels are
+        **Note:** The sign of the annotation offset determines whether labels are
         plotted above or below the colorbar. Labels above are text-justified
         to the bottom of the text, and labels below are text-justified to
         the top of the text.
@@ -408,7 +405,7 @@ class GXMVU:
 
             `color_bar <geosoft.gxapi.GXMVU.color_bar>`
         """
-        gxapi_cy.WrapMVU.color_bar_hor(GXContext._get_tls_geo(), mview._wrapper, itr._wrapper, decimal, ann, width, height, x, y, label_orient)
+        gxapi_cy.WrapMVU._color_bar_hor(GXContext._get_tls_geo(), mview, itr, decimal, ann, width, height, x, y, label_orient)
         
 
 
@@ -440,12 +437,12 @@ class GXMVU:
 
         .. versionadded:: 5.1
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The secondary `GXITR <geosoft.gxapi.GXITR>` is used to blend horizontally with the
+        **Note:** The secondary `GXITR <geosoft.gxapi.GXITR>` is used to blend horizontally with the
         primary `GXITR <geosoft.gxapi.GXITR>` in each box.
         """
-        gxapi_cy.WrapMVU.color_bar_hor2(GXContext._get_tls_geo(), mview._wrapper, itr._wrapper, itr2._wrapper, decimal, ann, height, width, x, y, label_orient)
+        gxapi_cy.WrapMVU._color_bar_hor2(GXContext._get_tls_geo(), mview, itr, itr2, decimal, ann, height, width, x, y, label_orient)
         
 
 
@@ -479,12 +476,12 @@ class GXMVU:
 
         .. versionadded:: 5.1
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The secondary `GXITR <geosoft.gxapi.GXITR>` is used to blend horizontally with the
+        **Note:** The secondary `GXITR <geosoft.gxapi.GXITR>` is used to blend horizontally with the
         primary `GXITR <geosoft.gxapi.GXITR>` in each box.
         """
-        gxapi_cy.WrapMVU.color_bar_hor2_style(GXContext._get_tls_geo(), mview._wrapper, itr._wrapper, itr2._wrapper, decimal, ann, height, width, x, y, style, label_orient)
+        gxapi_cy.WrapMVU._color_bar_hor2_style(GXContext._get_tls_geo(), mview, itr, itr2, decimal, ann, height, width, x, y, style, label_orient)
         
 
 
@@ -516,8 +513,10 @@ class GXMVU:
         :type  label_orient:  int
 
         .. versionadded:: 5.1
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapMVU.color_bar_hor_style(GXContext._get_tls_geo(), mview._wrapper, itr._wrapper, decimal, ann, height, width, x, y, style, label_orient)
+        gxapi_cy.WrapMVU._color_bar_hor_style(GXContext._get_tls_geo(), mview, itr, decimal, ann, height, width, x, y, style, label_orient)
         
 
 
@@ -547,8 +546,10 @@ class GXMVU:
         :type  style:    int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapMVU.color_bar_style(GXContext._get_tls_geo(), mview._wrapper, itr._wrapper, decimal, ann, height, width, x, y, style)
+        gxapi_cy.WrapMVU._color_bar_style(GXContext._get_tls_geo(), mview, itr, decimal, ann, height, width, x, y, style)
         
 
 
@@ -569,9 +570,9 @@ class GXMVU:
 
         .. versionadded:: 8.2
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        To allow for expansion, all parameters are passed inside the `GXREG <geosoft.gxapi.GXREG>` object.
+        **Note:** To allow for expansion, all parameters are passed inside the `GXREG <geosoft.gxapi.GXREG>` object.
         
         BAR_ORIENTATION        one of MVU_ORIENTATION_XXX (DEFAULT = `MVU_ORIENTATION_VERTICAL <geosoft.gxapi.MVU_ORIENTATION_VERTICAL>`)
         DECIMALS					decimals in plotted values (see sFormatStr_GS for rules) (DEFAULT = 1)
@@ -587,7 +588,7 @@ class GXMVU:
         POST_MAXMIN            Post limit values at ends of the bar (0 or 1)? (DEFAULT = 0)
         DIVISION_STYLE         One of MVU_DIVISION_STYLE_XXX (DEFAULT = `MVU_DIVISION_STYLE_LINES <geosoft.gxapi.MVU_DIVISION_STYLE_LINES>`)
         """
-        gxapi_cy.WrapMVU.color_bar_reg(GXContext._get_tls_geo(), mview._wrapper, itr._wrapper, itr2._wrapper, reg._wrapper)
+        gxapi_cy.WrapMVU._color_bar_reg(GXContext._get_tls_geo(), mview, itr, itr2, reg)
         
 
 
@@ -605,8 +606,10 @@ class GXMVU:
         :type  grid:   str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapMVU.contour(GXContext._get_tls_geo(), mview._wrapper, con.encode(), grid.encode())
+        gxapi_cy.WrapMVU._contour(GXContext._get_tls_geo(), mview, con.encode(), grid.encode())
         
 
 
@@ -627,14 +630,14 @@ class GXMVU:
 
         .. versionadded:: 5.1.6
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The clipping `GXPLY <geosoft.gxapi.GXPLY>` can include a surrounding inclusive polygon
+        **Note:** The clipping `GXPLY <geosoft.gxapi.GXPLY>` can include a surrounding inclusive polygon
         and zero, one or more interior exclusive polygons. Construct
         a `GXPLY <geosoft.gxapi.GXPLY>` object using the `GXPLY.add_polygon_ex <geosoft.gxapi.GXPLY.add_polygon_ex>` function, to add both
         inclusive (as the first `GXPLY <geosoft.gxapi.GXPLY>`) and exclusive interior regions.
         """
-        gxapi_cy.WrapMVU.contour_ply(GXContext._get_tls_geo(), mview._wrapper, ply._wrapper, con.encode(), grid.encode())
+        gxapi_cy.WrapMVU._contour_ply(GXContext._get_tls_geo(), mview, ply, con.encode(), grid.encode())
         
 
 
@@ -663,9 +666,9 @@ class GXMVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        If the symbol size, color, font etc are specified in
+        **Note:** If the symbol size, color, font etc are specified in
         the `GXITR <geosoft.gxapi.GXITR>`'s `GXREG <geosoft.gxapi.GXREG>`, then the Symbol scale factor is used
         allow the user to adjust the symbol sizes. They will be
         plotted at a size equal to the size in the `GXREG <geosoft.gxapi.GXREG>` times
@@ -677,7 +680,7 @@ class GXMVU:
         the correct font and symbol before CSymbLegend is
         called. The same is true of the edge color.
         """
-        gxapi_cy.WrapMVU.c_symb_legend(GXContext._get_tls_geo(), mview._wrapper, x1, y1, font_size, symb_scale, file.encode(), title.encode(), sub_title.encode())
+        gxapi_cy.WrapMVU._c_symb_legend(GXContext._get_tls_geo(), mview, x1, y1, font_size, symb_scale, file.encode(), title.encode(), sub_title.encode())
         
 
 
@@ -732,12 +735,12 @@ class GXMVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Box width and height are used to draw horizontal and vertical
+        **Note:** Box width and height are used to draw horizontal and vertical
         bars. Curves outside the box are not clipped.
         """
-        gxapi_cy.WrapMVU.decay_curve(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, v_ay._wrapper, v_ax._wrapper, log, log_min, angle, x_bar, y_bar, x_off_set, y_off_set, width, height, x_min, y_min, x_scale, y_scale, line_pitch, line_style, line_color.encode())
+        gxapi_cy.WrapMVU._decay_curve(GXContext._get_tls_geo(), mview, vv_x, vv_y, v_ay, v_ax, log, log_min, angle, x_bar, y_bar, x_off_set, y_off_set, width, height, x_min, y_min, x_scale, y_scale, line_pitch, line_style, line_color.encode())
         
 
 
@@ -762,12 +765,12 @@ class GXMVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        An arrow will be drawn in the direction from the first valid
+        **Note:** An arrow will be drawn in the direction from the first valid
         to the last points in the X and Y VVs.
         """
-        gxapi_cy.WrapMVU.direction_plot(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, size, loc, align)
+        gxapi_cy.WrapMVU._direction_plot(GXContext._get_tls_geo(), mview, vv_x, vv_y, size, loc, align)
         
 
 
@@ -816,9 +819,9 @@ class GXMVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        This function is designed to display an inverted result beside
+        **Note:** This function is designed to display an inverted result beside
         the forward model curves. This is useful for trouble-shooting
         or understanding why a certain inversion result was obtained.
         The earth model is a simple halfspace.
@@ -828,7 +831,7 @@ class GXMVU:
         a single resistivity. In either case, the relevant VVs must be
         completely filled (even if one is all the same value).
         """
-        gxapi_cy.WrapMVU.em_forward(GXContext._get_tls_geo(), mview._wrapper, xo, yo, size_x, size_y, coil_sep, coil_frequency, coil_configuration, r, h, i, q, rvv._wrapper, hvv._wrapper, ivv._wrapper, qvv._wrapper, lin_log, var)
+        gxapi_cy.WrapMVU._em_forward(GXContext._get_tls_geo(), mview, xo, yo, size_x, size_y, coil_sep, coil_frequency, coil_configuration, r, h, i, q, rvv, hvv, ivv, qvv, lin_log, var)
         
 
 
@@ -847,9 +850,9 @@ class GXMVU:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The lines, rectangles and polygons in the specified groups
+        **Note:** The lines, rectangles and polygons in the specified groups
         will be exported to a Datamine coordinate string (``*.dm``) file.
         The function attempts to duplicate the colors, etc. used.
         Complex polygon objects will be exported as independent
@@ -859,7 +862,7 @@ class GXMVU:
 
             `GXLST <geosoft.gxapi.GXLST>` class
         """
-        gxapi_cy.WrapMVU.export_datamine_string(GXContext._get_tls_geo(), mview._wrapper, lst._wrapper, file.encode())
+        gxapi_cy.WrapMVU._export_datamine_string(GXContext._get_tls_geo(), mview, lst, file.encode())
         
 
 
@@ -878,15 +881,15 @@ class GXMVU:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Supported objects exported include lines, polygons, text.
+        **Note:** Supported objects exported include lines, polygons, text.
 
         .. seealso::
 
             `GXLST <geosoft.gxapi.GXLST>` class
         """
-        gxapi_cy.WrapMVU.export_dxf_3d(GXContext._get_tls_geo(), mview._wrapper, lst._wrapper, wa._wrapper)
+        gxapi_cy.WrapMVU._export_dxf_3d(GXContext._get_tls_geo(), mview, lst, wa)
         
 
 
@@ -907,9 +910,9 @@ class GXMVU:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The lines, rectangles and polygons in the specified groups
+        **Note:** The lines, rectangles and polygons in the specified groups
         will be exported to a Surpac `GXSTR <geosoft.gxapi.GXSTR>` file. An accompanying styles
         file will be created which will attempt to duplicate the
         colors, etc. used.
@@ -920,7 +923,7 @@ class GXMVU:
 
             `GXLST <geosoft.gxapi.GXLST>` class
         """
-        gxapi_cy.WrapMVU.export_surpac_str(GXContext._get_tls_geo(), mview._wrapper, lst._wrapper, str_wa._wrapper, styles_wa._wrapper)
+        gxapi_cy.WrapMVU._export_surpac_str(GXContext._get_tls_geo(), mview, lst, str_wa, styles_wa)
         
 
 
@@ -951,9 +954,9 @@ class GXMVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Current line color, thickness and style are used to
+        **Note:** Current line color, thickness and style are used to
         draw the line.
         
         Current font, font color and font style are used to
@@ -979,7 +982,7 @@ class GXMVU:
 
             `path_plot <geosoft.gxapi.GXMVU.path_plot>`
         """
-        gxapi_cy.WrapMVU.flight_plot(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, line.encode(), locate, vangle, up, loff, voff)
+        gxapi_cy.WrapMVU._flight_plot(GXContext._get_tls_geo(), mview, vv_x, vv_y, line.encode(), locate, vangle, up, loff, voff)
         
 
 
@@ -1002,9 +1005,9 @@ class GXMVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The specified line group will be used to create a new group that
+        **Note:** The specified line group will be used to create a new group that
         is composed of all the resolved polygonal areas in the line group.
         Each polygonal area is assigned a color/pattern as specified in the
         color and pattern `GXVV <geosoft.gxapi.GXVV>`'s.  Color/patterns are assigned in rotating
@@ -1014,7 +1017,7 @@ class GXMVU:
 
             `re_gen_areas <geosoft.gxapi.GXMVU.re_gen_areas>`
         """
-        gxapi_cy.WrapMVU.gen_areas(GXContext._get_tls_geo(), mview._wrapper, lines.encode(), col_vv._wrapper, pat_vv._wrapper, pitch)
+        gxapi_cy.WrapMVU._gen_areas(GXContext._get_tls_geo(), mview, lines.encode(), col_vv, pat_vv, pitch)
         
 
 
@@ -1041,12 +1044,12 @@ class GXMVU:
 
         .. versionadded:: 6.4
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Required to set up a map view before doing the actual
+        **Note:** Required to set up a map view before doing the actual
         surface import.
         """
-        min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = gxapi_cy.WrapMVU.get_range_gocad_surface(GXContext._get_tls_geo(), file.encode(), min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
+        min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = gxapi_cy.WrapMVU._get_range_gocad_surface(GXContext._get_tls_geo(), file.encode(), min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         
 
 
@@ -1095,16 +1098,16 @@ class GXMVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        This function just calls `histogram2 <geosoft.gxapi.GXMVU.histogram2>` with decimals set
+        **Note:** This function just calls `histogram2 <geosoft.gxapi.GXMVU.histogram2>` with decimals set
         to -7 (7 significant figures).
 
         .. seealso::
 
             `histogram2 <geosoft.gxapi.GXMVU.histogram2>`, `histogram3 <geosoft.gxapi.GXMVU.histogram3>`
         """
-        gxapi_cy.WrapMVU.histogram(GXContext._get_tls_geo(), mview._wrapper, st_data._wrapper, st_hist._wrapper, title.encode(), unit.encode(), xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, fill_color, st_box._wrapper)
+        gxapi_cy.WrapMVU._histogram(GXContext._get_tls_geo(), mview, st_data, st_hist, title.encode(), unit.encode(), xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, fill_color, st_box)
         
 
 
@@ -1163,14 +1166,14 @@ class GXMVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        A vertical line through from bottom to top horizontal axis is drawn
+        **Note:** A vertical line through from bottom to top horizontal axis is drawn
         Also a label 'Threshold value' is plotted against this line. However,
         None of them will be plotted if threshold value is dummy or outside
         the X data range.
         """
-        gxapi_cy.WrapMVU.histogram2(GXContext._get_tls_geo(), mview._wrapper, st_data._wrapper, st_hist._wrapper, x_title.encode(), y_title.encode(), xy_txt_size, title.encode(), plot_txt_size, unit.encode(), xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, fill_color, st_box._wrapper, x_marker)
+        gxapi_cy.WrapMVU._histogram2(GXContext._get_tls_geo(), mview, st_data, st_hist, x_title.encode(), y_title.encode(), xy_txt_size, title.encode(), plot_txt_size, unit.encode(), xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, fill_color, st_box, x_marker)
         
 
 
@@ -1222,8 +1225,10 @@ class GXMVU:
         :type  st_box:        GXST
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapMVU.histogram3(GXContext._get_tls_geo(), mview._wrapper, st_data._wrapper, st_hist._wrapper, title.encode(), unit.encode(), xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, fill_color, data_decimal, stat_decimal, st_box._wrapper)
+        gxapi_cy.WrapMVU._histogram3(GXContext._get_tls_geo(), mview, st_data, st_hist, title.encode(), unit.encode(), xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, fill_color, data_decimal, stat_decimal, st_box)
         
 
 
@@ -1277,8 +1282,10 @@ class GXMVU:
         :type  st_box:        GXST
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapMVU.histogram4(GXContext._get_tls_geo(), mview._wrapper, st_data._wrapper, st_hist._wrapper, title.encode(), unit.encode(), xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, prob, fill_color, data_decimal, stat_decimal, st_box._wrapper)
+        gxapi_cy.WrapMVU._histogram4(GXContext._get_tls_geo(), mview, st_data, st_hist, title.encode(), unit.encode(), xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, prob, fill_color, data_decimal, stat_decimal, st_box)
         
 
 
@@ -1337,11 +1344,11 @@ class GXMVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The `GXITR <geosoft.gxapi.GXITR>` can be empty (but must still be a valid `GXITR <geosoft.gxapi.GXITR>` object).
+        **Note:** The `GXITR <geosoft.gxapi.GXITR>` can be empty (but must still be a valid `GXITR <geosoft.gxapi.GXITR>` object).
         """
-        gxapi_cy.WrapMVU.histogram5(GXContext._get_tls_geo(), mview._wrapper, st_data._wrapper, st_hist._wrapper, title.encode(), unit.encode(), lmd, xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, prob, fill_color, data_decimal, stat_decimal, st_box._wrapper, itr._wrapper)
+        gxapi_cy.WrapMVU._histogram5(GXContext._get_tls_geo(), mview, st_data, st_hist, title.encode(), unit.encode(), lmd, xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, prob, fill_color, data_decimal, stat_decimal, st_box, itr)
         
 
 
@@ -1361,15 +1368,15 @@ class GXMVU:
 
         .. versionadded:: 7.1
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Returns a list of visible groups that the DXF 3D export can
+        **Note:** Returns a list of visible groups that the DXF 3D export can
         export. Removes things like `GXVOXD <geosoft.gxapi.GXVOXD>`, `GXAGG <geosoft.gxapi.GXAGG>`, and target
         groups starting with "Dh", which are typically plotted in 3D
         views on a reference plan oriented toward the user, and thus
         not exportable.
         """
-        ret_val = gxapi_cy.WrapMVU.exportable_dxf_3d_groups_lst(GXContext._get_tls_geo(), mview._wrapper, lst._wrapper)
+        ret_val = gxapi_cy.WrapMVU._exportable_dxf_3d_groups_lst(GXContext._get_tls_geo(), mview, lst)
         return ret_val
 
 
@@ -1413,12 +1420,12 @@ class GXMVU:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Use `GXSYS.show_error <geosoft.gxapi.GXSYS.show_error>` to display errors that may have been encountered. This function can also be used
+        **Note:** Use `GXSYS.show_error <geosoft.gxapi.GXSYS.show_error>` to display errors that may have been encountered. This function can also be used
         to calculate the default scale without creating a map.
         """
-        ret_val, scale.value = gxapi_cy.WrapMVU.mapset_test(GXContext._get_tls_geo(), min_x, max_x, min_y, max_y, size.encode(), port, exact, scale.value, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside)
+        ret_val, scale.value = gxapi_cy.WrapMVU._mapset_test(GXContext._get_tls_geo(), min_x, max_x, min_y, max_y, size.encode(), port, exact, scale.value, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside)
         return ret_val
 
 
@@ -1464,11 +1471,11 @@ class GXMVU:
 
         .. versionadded:: 8.3
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Same as `mapset_test <geosoft.gxapi.GXMVU.mapset_test>`, with vertical exaggeration.
+        **Note:** Same as `mapset_test <geosoft.gxapi.GXMVU.mapset_test>`, with vertical exaggeration.
         """
-        ret_val, scale.value = gxapi_cy.WrapMVU.mapset2_test(GXContext._get_tls_geo(), min_x, max_x, min_y, max_y, size.encode(), port, exact, scale.value, vert_exag, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside)
+        ret_val, scale.value = gxapi_cy.WrapMVU._mapset2_test(GXContext._get_tls_geo(), min_x, max_x, min_y, max_y, size.encode(), port, exact, scale.value, vert_exag, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside)
         return ret_val
 
 
@@ -1487,14 +1494,14 @@ class GXMVU:
 
         .. versionadded:: 6.4
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The vertex normals are not included in the
+        **Note:** The vertex normals are not included in the
         GOCAD import, but are calculated using
         the normal of each defined triangle, and taking the
         average when vertex is shared among more than one triangle.
         """
-        gxapi_cy.WrapMVU.import_gocad_surface(GXContext._get_tls_geo(), mview._wrapper, file.encode(), col)
+        gxapi_cy.WrapMVU._import_gocad_surface(GXContext._get_tls_geo(), mview, file.encode(), col)
         
 
 
@@ -1510,8 +1517,10 @@ class GXMVU:
         :type  name:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapMVU.load_plot(GXContext._get_tls_geo(), map._wrapper, name.encode())
+        gxapi_cy.WrapMVU._load_plot(GXContext._get_tls_geo(), map, name.encode())
         
 
 
@@ -1536,9 +1545,9 @@ class GXMVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This only creates a map, it does not read the PLT into
+        **Note:** This only creates a map, it does not read the PLT into
         the map.  The base view and data view will be the same
         size.
 
@@ -1546,7 +1555,7 @@ class GXMVU:
 
             `load_plot <geosoft.gxapi.GXMVU.load_plot>`
         """
-        gxapi_cy.WrapMVU.map_from_plt(GXContext._get_tls_geo(), map._wrapper, base.encode(), data.encode(), plt.encode(), mpx, mpy)
+        gxapi_cy.WrapMVU._map_from_plt(GXContext._get_tls_geo(), map, base.encode(), data.encode(), plt.encode(), mpx, mpy)
         
 
 
@@ -1564,8 +1573,10 @@ class GXMVU:
         :type  data:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapMVU.map_mdf(GXContext._get_tls_geo(), map._wrapper, mdf.encode(), data.encode())
+        gxapi_cy.WrapMVU._map_mdf(GXContext._get_tls_geo(), map, mdf.encode(), data.encode())
         
 
 
@@ -1611,8 +1622,10 @@ class GXMVU:
         :type  inside:     float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapMVU.mapset(GXContext._get_tls_geo(), map._wrapper, base.encode(), data.encode(), min_x, max_x, min_y, max_y, size.encode(), port, exact, scale, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside)
+        gxapi_cy.WrapMVU._mapset(GXContext._get_tls_geo(), map, base.encode(), data.encode(), min_x, max_x, min_y, max_y, size.encode(), port, exact, scale, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside)
         
 
 
@@ -1660,8 +1673,10 @@ class GXMVU:
         :type  inside:     float
 
         .. versionadded:: 8.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapMVU.mapset2(GXContext._get_tls_geo(), map._wrapper, base.encode(), data.encode(), min_x, max_x, min_y, max_y, size.encode(), port, exact, scale, vert_exag, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside)
+        gxapi_cy.WrapMVU._mapset2(GXContext._get_tls_geo(), map, base.encode(), data.encode(), min_x, max_x, min_y, max_y, size.encode(), port, exact, scale, vert_exag, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside)
         
 
 
@@ -1681,8 +1696,10 @@ class GXMVU:
         :type  data:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapMVU.mdf(GXContext._get_tls_geo(), map._wrapper, mdf.encode(), base.encode(), data.encode())
+        gxapi_cy.WrapMVU._mdf(GXContext._get_tls_geo(), map, mdf.encode(), base.encode(), data.encode())
         
 
 
@@ -1715,16 +1732,16 @@ class GXMVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        See `flight_plot <geosoft.gxapi.GXMVU.flight_plot>`.  This is the same except for the
+        **Note:** See `flight_plot <geosoft.gxapi.GXMVU.flight_plot>`.  This is the same except for the
         additional line gap parameter.
 
         .. seealso::
 
             FlighPlot_MVU
         """
-        gxapi_cy.WrapMVU.path_plot(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, line.encode(), locate, vangle, up, loff, voff, gap)
+        gxapi_cy.WrapMVU._path_plot(GXContext._get_tls_geo(), mview, vv_x, vv_y, line.encode(), locate, vangle, up, loff, voff, gap)
         
 
 
@@ -1759,15 +1776,15 @@ class GXMVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        This is the same except for the additional line compass parameter.
+        **Note:** This is the same except for the additional line compass parameter.
 
         .. seealso::
 
             `path_plot <geosoft.gxapi.GXMVU.path_plot>`
         """
-        gxapi_cy.WrapMVU.path_plot_ex(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, line.encode(), locate, compass, vangle, up, loff, voff, gap)
+        gxapi_cy.WrapMVU._path_plot_ex(GXContext._get_tls_geo(), mview, vv_x, vv_y, line.encode(), locate, compass, vangle, up, loff, voff, gap)
         
 
 
@@ -1804,15 +1821,15 @@ class GXMVU:
 
         .. versionadded:: 5.0.8
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        This is the same except for the additional line dummies parameter.
+        **Note:** This is the same except for the additional line dummies parameter.
 
         .. seealso::
 
             `path_plot_ex <geosoft.gxapi.GXMVU.path_plot_ex>`
         """
-        gxapi_cy.WrapMVU.path_plot_ex2(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, line.encode(), locate, compass, vangle, up, loff, voff, gap, dummies)
+        gxapi_cy.WrapMVU._path_plot_ex2(GXContext._get_tls_geo(), mview, vv_x, vv_y, line.encode(), locate, compass, vangle, up, loff, voff, gap, dummies)
         
 
 
@@ -1835,15 +1852,15 @@ class GXMVU:
 
         .. versionadded:: 6.4
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The Marching Cubes method of Lorensen and Cline, Computer Graphics, V21,
+        **Note:** The Marching Cubes method of Lorensen and Cline, Computer Graphics, V21,
         Number 4, July 1987, is used to calculate a given iso-surface in a voxel
         model. The resulting surface is plotted to a 2D or 3D view. If the view
         is 2-D, then only the intersection of the surface with the 2D surface is
         plotted, using lines.
         """
-        gxapi_cy.WrapMVU.plot_voxel_surface(GXContext._get_tls_geo(), mview._wrapper, vox._wrapper, value, col, line_thick)
+        gxapi_cy.WrapMVU._plot_voxel_surface(GXContext._get_tls_geo(), mview, vox, value, col, line_thick)
         
 
 
@@ -1870,15 +1887,15 @@ class GXMVU:
 
         .. versionadded:: 7.3
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The Marching Cubes method of Lorensen and Cline, Computer Graphics, V21,
+        **Note:** The Marching Cubes method of Lorensen and Cline, Computer Graphics, V21,
         Number 4, July 1987, is used to calculate a given iso-surface in a voxel
         model. The resulting surface is plotted to a 2D or 3D view. If the view
         is 2-D, then only the intersection of the surface with the 2D surface is
         plotted, using lines.
         """
-        gxapi_cy.WrapMVU.plot_voxel_surface2(GXContext._get_tls_geo(), mview._wrapper, vox._wrapper, value, col, line_thick, transparency, surface_name.encode())
+        gxapi_cy.WrapMVU._plot_voxel_surface2(GXContext._get_tls_geo(), mview, vox, value, col, line_thick, transparency, surface_name.encode())
         
 
 
@@ -1911,11 +1928,11 @@ class GXMVU:
 
         .. versionadded:: 8.5
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        TODO... Move to `GXVOX <geosoft.gxapi.GXVOX>` method for surface generation only and use GeosurfaceD to display.
+        **Note:** TODO... Move to `GXVOX <geosoft.gxapi.GXVOX>` method for surface generation only and use GeosurfaceD to display.
         """
-        gxapi_cy.WrapMVU.generate_surface_from_voxel(GXContext._get_tls_geo(), mview._wrapper, vox._wrapper, method, option, min_value, max_value, col, line_thick, transparency, surface_name.encode())
+        gxapi_cy.WrapMVU._generate_surface_from_voxel(GXContext._get_tls_geo(), mview, vox, method, option, min_value, max_value, col, line_thick, transparency, surface_name.encode())
         
 
 
@@ -1947,8 +1964,10 @@ class GXMVU:
         :type  angle:     float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapMVU.post(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, dummy, size, format, decimals, ref, angle)
+        gxapi_cy.WrapMVU._post(GXContext._get_tls_geo(), mview, vv_x, vv_y, vv_z, dummy, size, format, decimals, ref, angle)
         
 
 
@@ -2000,8 +2019,10 @@ class GXMVU:
         :type  up:          int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapMVU.post_ex(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_s._wrapper, dummy, base, min_detect, size, format, decimals, offset_l, offset_p, alternate, mod, ref, angle, fixed, ref_ang, up)
+        gxapi_cy.WrapMVU._post_ex(GXContext._get_tls_geo(), mview, vv_x, vv_y, vv_z, vv_s, dummy, base, min_detect, size, format, decimals, offset_l, offset_p, alternate, mod, ref, angle, fixed, ref_ang, up)
         
 
 
@@ -2050,11 +2071,11 @@ class GXMVU:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The `GXITR <geosoft.gxapi.GXITR>` can be empty (but must still be a valid `GXITR <geosoft.gxapi.GXITR>` object).
+        **Note:** The `GXITR <geosoft.gxapi.GXITR>` can be empty (but must still be a valid `GXITR <geosoft.gxapi.GXITR>` object).
         """
-        gxapi_cy.WrapMVU.probability(GXContext._get_tls_geo(), mview._wrapper, st_data._wrapper, st_hist._wrapper, title.encode(), unit.encode(), transform, lmd, xm, ym, widthm, heightm, symb_size, sigma, sum_width, summ, data_decimal, stat_decimal, itr._wrapper)
+        gxapi_cy.WrapMVU._probability(GXContext._get_tls_geo(), mview, st_data, st_hist, title.encode(), unit.encode(), transform, lmd, xm, ym, widthm, heightm, symb_size, sigma, sum_width, summ, data_decimal, stat_decimal, itr)
         
 
 
@@ -2087,11 +2108,11 @@ class GXMVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Profiles will be drawn in the current line style.
+        **Note:** Profiles will be drawn in the current line style.
         """
-        gxapi_cy.WrapMVU.profile_plot(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vangle, up, gap, base, scale, join)
+        gxapi_cy.WrapMVU._profile_plot(GXContext._get_tls_geo(), mview, vv_x, vv_y, vv_z, vangle, up, gap, base, scale, join)
         
 
 
@@ -2134,11 +2155,11 @@ class GXMVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Profiles will be drawn in the current line style.
+        **Note:** Profiles will be drawn in the current line style.
         """
-        gxapi_cy.WrapMVU.profile_plot_ex(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vangle, up, gap, base, scale, join, log, log_base, smooth, pos_f_color.encode(), neg_f_color.encode())
+        gxapi_cy.WrapMVU._profile_plot_ex(GXContext._get_tls_geo(), mview, vv_x, vv_y, vv_z, vangle, up, gap, base, scale, join, log, log_base, smooth, pos_f_color.encode(), neg_f_color.encode())
         
 
 
@@ -2173,14 +2194,14 @@ class GXMVU:
 
         .. versionadded:: 5.0.8
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        All symbol attributes, except for the size, are assumed
+        **Note:** All symbol attributes, except for the size, are assumed
         to be defined (or defaults are used).
         Spacing is based on the maximum of the largest plotted symbol
         and the font size.
         """
-        gxapi_cy.WrapMVU.prop_symb_legend(GXContext._get_tls_geo(), mview._wrapper, x1, y1, font_size, symb_scale, base, n_symb, start, increment, title.encode(), sub_title.encode())
+        gxapi_cy.WrapMVU._prop_symb_legend(GXContext._get_tls_geo(), mview, x1, y1, font_size, symb_scale, base, n_symb, start, increment, title.encode(), sub_title.encode())
         
 
 
@@ -2197,9 +2218,9 @@ class GXMVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The area group must exist and will be modified to match the current
+        **Note:** The area group must exist and will be modified to match the current
         line group.
         
         All non-polygon entities in the current area group will remain in the
@@ -2212,7 +2233,7 @@ class GXMVU:
 
             `gen_areas <geosoft.gxapi.GXMVU.gen_areas>`
         """
-        gxapi_cy.WrapMVU.re_gen_areas(GXContext._get_tls_geo(), mview._wrapper, lines.encode())
+        gxapi_cy.WrapMVU._re_gen_areas(GXContext._get_tls_geo(), mview, lines.encode())
         
 
 
@@ -2237,12 +2258,12 @@ class GXMVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Symbols are not plotted for positions where the flag `GXVV <geosoft.gxapi.GXVV>`
+        **Note:** Symbols are not plotted for positions where the flag `GXVV <geosoft.gxapi.GXVV>`
         value is 0 or `iDUMMY <geosoft.gxapi.iDUMMY>`.
         """
-        gxapi_cy.WrapMVU.symb_off(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, vv_f._wrapper, x_off, y_off)
+        gxapi_cy.WrapMVU._symb_off(GXContext._get_tls_geo(), mview, vv_x, vv_y, vv_f, x_off, y_off)
         
 
 
@@ -2270,8 +2291,10 @@ class GXMVU:
         :type  type:   int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapMVU.text_box(GXContext._get_tls_geo(), mview._wrapper, xmin, ymin, xmax, ymax, text.encode(), space, type)
+        gxapi_cy.WrapMVU._text_box(GXContext._get_tls_geo(), mview, xmin, ymin, xmax, ymax, text.encode(), space, type)
         
 
 
@@ -2299,8 +2322,10 @@ class GXMVU:
         :type  mt_mod:   float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapMVU.tick(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, vv_s._wrapper, size, mod, mt_size, mt_mod)
+        gxapi_cy.WrapMVU._tick(GXContext._get_tls_geo(), mview, vv_x, vv_y, vv_s, size, mod, mt_size, mt_mod)
         
 
 
@@ -2330,8 +2355,10 @@ class GXMVU:
         :type  gap:      float
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapMVU.tick_ex(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, vv_s._wrapper, size, mod, mt_size, mt_mod, gap)
+        gxapi_cy.WrapMVU._tick_ex(GXContext._get_tls_geo(), mview, vv_x, vv_y, vv_s, size, mod, mt_size, mt_mod, gap)
         
 
 
@@ -2354,9 +2381,9 @@ class GXMVU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Trend lines positions consist of X and Y VVs
+        **Note:** Trend lines positions consist of X and Y VVs
         interspersed with dummies, which separate the
         individual trend sections.
         Set the minimum number of sections to > 0 to
@@ -2366,7 +2393,7 @@ class GXMVU:
         Set the minimum distance to > 0 to
         plot only the longer trend lines.
         """
-        gxapi_cy.WrapMVU.trnd_path(GXContext._get_tls_geo(), mview._wrapper, vv_x._wrapper, vv_y._wrapper, min_sect, min_dist)
+        gxapi_cy.WrapMVU._trnd_path(GXContext._get_tls_geo(), mview, vv_x, vv_y, min_sect, min_dist)
         
 
 

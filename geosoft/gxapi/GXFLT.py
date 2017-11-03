@@ -13,44 +13,35 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXFLT:
+class GXFLT(gxapi_cy.WrapFLT):
     """
     GXFLT class.
 
     The `GXFLT <geosoft.gxapi.GXFLT>` class allows the application of user-defined convolution filters to data in an OASIS database
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapFLT(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXFLT`
+        A null (undefined) instance of `GXFLT <geosoft.gxapi.GXFLT>`
         
-        :returns: A null `GXFLT`
+        :returns: A null `GXFLT <geosoft.gxapi.GXFLT>`
+        :rtype:   GXFLT
         """
-        return cls()
+        return GXFLT()
 
     def is_null(self):
         """
-        Check if the instance of `GXFLT` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXFLT`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -69,14 +60,14 @@ class GXFLT:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Terminates process if filter not found.
+        **Note:** Terminates process if filter not found.
         Sample Fraser Filter string:
         
               "-1,-1,1,1"
         """
-        ret_val = gxapi_cy.WrapFLT.create(GXContext._get_tls_geo(), input.encode())
+        ret_val = gxapi_cy.WrapFLT._create(GXContext._get_tls_geo(), input.encode())
         return ret_val
 
 
@@ -96,9 +87,9 @@ class GXFLT:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Terminates process if filter not found.
+        **Note:** Terminates process if filter not found.
         A filter file is an ASCII file that contains filter
         coefficients, which are simply mumbers.  There can be
         one coefficient to a line.  Blank lines and comment lines
@@ -114,7 +105,7 @@ class GXFLT:
            1
            1
         """
-        ret_val = gxapi_cy.WrapFLT.load(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapFLT._load(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 

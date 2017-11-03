@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXGU:
+class GXGU(gxapi_cy.WrapGU):
     """
     GXGU class.
 
@@ -23,37 +23,28 @@ class GXGU:
     file imports, and 2D Euler deconvolution.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapGU(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXGU`
+        A null (undefined) instance of `GXGU <geosoft.gxapi.GXGU>`
         
-        :returns: A null `GXGU`
+        :returns: A null `GXGU <geosoft.gxapi.GXGU>`
+        :rtype:   GXGU
         """
-        return cls()
+        return GXGU()
 
     def is_null(self):
         """
-        Check if the instance of `GXGU` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXGU`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -80,8 +71,10 @@ class GXGU:
         :type  dy:        float
 
         .. versionadded:: 5.1.6
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapGU.dipole_mag(GXContext._get_tls_geo(), xyz_file.encode(), depth, inc, nx, ny, dx, dy)
+        gxapi_cy.WrapGU._dipole_mag(GXContext._get_tls_geo(), xyz_file.encode(), depth, inc, nx, ny, dx, dy)
         
 
 
@@ -117,8 +110,10 @@ class GXGU:
         :type  start_val:           float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapGU.em_half_space_inv(GXContext._get_tls_geo(), coil_spacing, coil_frequency, coil_configuration, tol, threshold, vv_height._wrapper, vv_in_phase._wrapper, vv_quadrature._wrapper, vv_res._wrapper, inv, err, start_val)
+        gxapi_cy.WrapGU._em_half_space_inv(GXContext._get_tls_geo(), coil_spacing, coil_frequency, coil_configuration, tol, threshold, vv_height, vv_in_phase, vv_quadrature, vv_res, inv, err, start_val)
         
 
 
@@ -144,8 +139,10 @@ class GXGU:
         :type  qvv:                 GXVV
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapGU.em_half_space_vv(GXContext._get_tls_geo(), coil_spacing, coil_frequency, coil_configuration, rvv._wrapper, hvv._wrapper, ivv._wrapper, qvv._wrapper)
+        gxapi_cy.WrapGU._em_half_space_vv(GXContext._get_tls_geo(), coil_spacing, coil_frequency, coil_configuration, rvv, hvv, ivv, qvv)
         
 
 
@@ -180,13 +177,13 @@ class GXGU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Assumes that the database is new and empty. If not, existing channels
+        **Note:** Assumes that the database is new and empty. If not, existing channels
         with names X, Y, Mag1, Mag2, Time, Date, and Mark will deleted and then created.  
         Existing lines will be erased and then created if they are the same as the new ones.
         """
-        gxapi_cy.WrapGU.geometrics2_db(GXContext._get_tls_geo(), db._wrapper, ra._wrapper, log_wa._wrapper, survey_mode, line_dir, corner, bi_uni, corner_x, corner_y, mark_space, line_space)
+        gxapi_cy.WrapGU._geometrics2_db(GXContext._get_tls_geo(), db, ra, log_wa, survey_mode, line_dir, corner, bi_uni, corner_x, corner_y, mark_space, line_space)
         
 
 
@@ -204,8 +201,10 @@ class GXGU:
         :type  log_wa:  GXWA
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapGU.geometrics2_tbl(GXContext._get_tls_geo(), ra._wrapper, wa._wrapper, log_wa._wrapper)
+        gxapi_cy.WrapGU._geometrics2_tbl(GXContext._get_tls_geo(), ra, wa, log_wa)
         
 
 
@@ -234,9 +233,9 @@ class GXGU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        There are six cases to consider:
+        **Note:** There are six cases to consider:
         
         ========    ====  =============  ========================================
         Case        Flag  Solutions      Symptoms
@@ -298,7 +297,7 @@ class GXGU:
              Segments will pass the tolerance test if the number of readings
              falls within the Lower and Upper Bounds.
         """
-        gxapi_cy.WrapGU.geometrics_qc(GXContext._get_tls_geo(), wa._wrapper, line.encode(), in_vv._wrapper, tol, min_coord, max_coord, out_vv._wrapper, flag_vv._wrapper)
+        gxapi_cy.WrapGU._geometrics_qc(GXContext._get_tls_geo(), wa, line.encode(), in_vv, tol, min_coord, max_coord, out_vv, flag_vv)
         
 
 
@@ -323,14 +322,14 @@ class GXGU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Assumes that the database is new and empty. If not, existing channels
+        **Note:** Assumes that the database is new and empty. If not, existing channels
         with names X, Y, Station, Conductivity, Inphase, Quadrature,
         and Time will deleted and then created.  Existing lines will
         be erased and then created if they are the same as the new ones.
         """
-        gxapi_cy.WrapGU.geonics3138_dump2_db(GXContext._get_tls_geo(), db._wrapper, r_ah._wrapper, r_ad._wrapper, log_wa._wrapper, line_mult, stat_mult)
+        gxapi_cy.WrapGU._geonics3138_dump2_db(GXContext._get_tls_geo(), db, r_ah, r_ad, log_wa, line_mult, stat_mult)
         
 
 
@@ -353,14 +352,14 @@ class GXGU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Assumes that the database is new and empty. If not, existing channels
+        **Note:** Assumes that the database is new and empty. If not, existing channels
         with names X, Y, Station, Conductivity, Inphase, Quadrature,
         and Time will deleted and then created.  Existing lines will
         be erased and then created if they are the same as the new ones.
         """
-        gxapi_cy.WrapGU.geonics61_dump2_db(GXContext._get_tls_geo(), db._wrapper, ra._wrapper, log_wa._wrapper, line_mult, stat_mult)
+        gxapi_cy.WrapGU._geonics61_dump2_db(GXContext._get_tls_geo(), db, ra, log_wa, line_mult, stat_mult)
         
 
 
@@ -383,14 +382,14 @@ class GXGU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Assumes that the database is new and empty. If not, existing channels
+        **Note:** Assumes that the database is new and empty. If not, existing channels
         with names X, Y, Station, Conductivity, Inphase, Quadrature,
         and Time will deleted and then created.  Existing lines will
         be erased and then created if they are the same as the new ones.
         """
-        gxapi_cy.WrapGU.geonics_dat2_db(GXContext._get_tls_geo(), db._wrapper, ra._wrapper, log_wa._wrapper, line_mult, stat_mult)
+        gxapi_cy.WrapGU._geonics_dat2_db(GXContext._get_tls_geo(), db, ra, log_wa, line_mult, stat_mult)
         
 
 
@@ -408,8 +407,10 @@ class GXGU:
         :type  vv_boug:  GXVV
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapGU.gr_curv_cor(GXContext._get_tls_geo(), vv_elev._wrapper, vv_lat._wrapper, vv_boug._wrapper)
+        gxapi_cy.WrapGU._gr_curv_cor(GXContext._get_tls_geo(), vv_elev, vv_lat, vv_boug)
         
 
 
@@ -429,8 +430,10 @@ class GXGU:
         :type  rho:      float
 
         .. versionadded:: 8.0.1
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapGU.gr_curv_cor_ex(GXContext._get_tls_geo(), vv_elev._wrapper, vv_lat._wrapper, vv_boug._wrapper, rho)
+        gxapi_cy.WrapGU._gr_curv_cor_ex(GXContext._get_tls_geo(), vv_elev, vv_lat, vv_boug, rho)
         
 
 
@@ -450,8 +453,10 @@ class GXGU:
         :type  vv_z:     GXVV
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapGU.gr_demvv(GXContext._get_tls_geo(), im_gdem._wrapper, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
+        gxapi_cy.WrapGU._gr_demvv(GXContext._get_tls_geo(), im_gdem, vv_x, vv_y, vv_z)
         
 
 
@@ -481,8 +486,10 @@ class GXGU:
         :type  vv_g2:  GXVV
 
         .. versionadded:: 5.1.4
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapGU.gr_test(GXContext._get_tls_geo(), xm, ym, zm, vv_x._wrapper, vv_y._wrapper, vv_g3._wrapper, vv_g4._wrapper, vv_g1._wrapper, vv_g2._wrapper)
+        gxapi_cy.WrapGU._gr_test(GXContext._get_tls_geo(), xm, ym, zm, vv_x, vv_y, vv_g3, vv_g4, vv_g1, vv_g2)
         
 
 
@@ -506,8 +513,10 @@ class GXGU:
         :type  grav_out:  int
 
         .. versionadded:: 8.5
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapGU.gravity_still_reading_correction(GXContext._get_tls_geo(), db._wrapper, grav_in, date, time, still.encode(), grav_out)
+        gxapi_cy.WrapGU._gravity_still_reading_correction(GXContext._get_tls_geo(), db, grav_in, date, time, still.encode(), grav_out)
         
 
 
@@ -541,8 +550,10 @@ class GXGU:
         :rtype:                     int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val, in_phase.value, quadrature.value = gxapi_cy.WrapGU.em_layer(GXContext._get_tls_geo(), coil_spacing, coil_frequency, coil_height, coil_configuration, n_layers, vv_thickness._wrapper, vv_sigma._wrapper, in_phase.value, quadrature.value)
+        ret_val, in_phase.value, quadrature.value = gxapi_cy.WrapGU._em_layer(GXContext._get_tls_geo(), coil_spacing, coil_frequency, coil_height, coil_configuration, n_layers, vv_thickness, vv_sigma, in_phase.value, quadrature.value)
         return ret_val
 
 
@@ -600,8 +611,10 @@ class GXGU:
         :rtype:                int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapGU.em_plate(GXContext._get_tls_geo(), strike_length, dip_length, strike, dip, plunge, x_off, y_off, z_off, plate_depth, n_spons, sig_tvv._wrapper, tx_orient, tx_freq, tx_dt, params, xivv._wrapper, yivv._wrapper, zivv._wrapper, xqvv._wrapper, yqvv._wrapper, zqvv._wrapper)
+        ret_val = gxapi_cy.WrapGU._em_plate(GXContext._get_tls_geo(), strike_length, dip_length, strike, dip, plunge, x_off, y_off, z_off, plate_depth, n_spons, sig_tvv, tx_orient, tx_freq, tx_dt, params, xivv, yivv, zivv, xqvv, yqvv, zqvv)
         return ret_val
 
 
@@ -620,9 +633,9 @@ class GXGU:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Start a new group for the symbols in the UX-Detect system.
+        **Note:** Start a new group for the symbols in the UX-Detect system.
         The Target GDB is often in the form "GDB_Targets", where
         "GDB" is the original data. Cut off the part including the
         underscore when creating the map, so you don't get map group
@@ -632,7 +645,7 @@ class GXGU:
 
             `GXSTR.gen_group_name <geosoft.gxapi.GXSTR.gen_group_name>`
         """
-        ostr.value = gxapi_cy.WrapGU.gen_ux_detect_symbols_group_name(GXContext._get_tls_geo(), target_gdb.encode(), targets.encode(), ostr.value.encode())
+        ostr.value = gxapi_cy.WrapGU._gen_ux_detect_symbols_group_name(GXContext._get_tls_geo(), target_gdb.encode(), targets.encode(), ostr.value.encode())
         
 
 
@@ -651,14 +664,14 @@ class GXGU:
 
         .. versionadded:: 7.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Imports Ethernet data recorded
+        **Note:** Imports Ethernet data recorded
         by the RMS Instruments DAARC500 instrument, and outputs the data
         to a new binary file, returning the number of bytes per
         block, to make it easier to import the data using the regular binary import.
         """
-        bytes.value = gxapi_cy.WrapGU.import_daarc500_ethernet(GXContext._get_tls_geo(), file.encode(), output.encode(), bytes.value)
+        bytes.value = gxapi_cy.WrapGU._import_daarc500_ethernet(GXContext._get_tls_geo(), file.encode(), output.encode(), bytes.value)
         
 
 
@@ -679,14 +692,14 @@ class GXGU:
 
         .. versionadded:: 7.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Imports a single channel of the up to 8 serial data channels recorded
+        **Note:** Imports a single channel of the up to 8 serial data channels recorded
         by the RMS Instruments DAARC500 instrument, and outputs the data for
         that channel to a new binary file, returning the number of bytes per
         block, to make it easier to import the data using the regular binary import.
         """
-        bytes.value = gxapi_cy.WrapGU.import_daarc500_serial(GXContext._get_tls_geo(), file.encode(), channel, output.encode(), bytes.value)
+        bytes.value = gxapi_cy.WrapGU._import_daarc500_serial(GXContext._get_tls_geo(), file.encode(), channel, output.encode(), bytes.value)
         
 
 
@@ -707,9 +720,9 @@ class GXGU:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Imports the data, and, if projection information is included
+        **Note:** Imports the data, and, if projection information is included
         set the "X" and "Y" channel projection info. (Note: the last file
         imported always takes precedence).
         Different record types are imported to separate lines, but in the
@@ -718,7 +731,7 @@ class GXGU:
         letter are imported, otherwise all records (except for the header "H"
         records) are imported.
         """
-        gxapi_cy.WrapGU.import_p190(GXContext._get_tls_geo(), db._wrapper, file.encode(), rec_type.encode(), wa._wrapper)
+        gxapi_cy.WrapGU._import_p190(GXContext._get_tls_geo(), db, file.encode(), rec_type.encode(), wa)
         
 
 
@@ -737,13 +750,13 @@ class GXGU:
 
         .. versionadded:: 7.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The fiducial times recorded for the GPS in the RMS Instrument DAARC500
+        **Note:** The fiducial times recorded for the GPS in the RMS Instrument DAARC500
         are delayed, and associated with the "wrong" fid value. They should actually
         be moved to the previous fid value in the mag data where the event flag is non-zero.
         """
-        gxapi_cy.WrapGU.lag_daarc500_gps(GXContext._get_tls_geo(), mag_fid_vv._wrapper, mag_event_vv._wrapper, gps_fid_vv._wrapper)
+        gxapi_cy.WrapGU._lag_daarc500_gps(GXContext._get_tls_geo(), mag_fid_vv, mag_event_vv, gps_fid_vv)
         
 
 
@@ -796,12 +809,12 @@ class GXGU:
 
         .. versionadded:: 6.1
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        This routine calculates the corner locations of plates defined in the Maxwell Plate
+        **Note:** This routine calculates the corner locations of plates defined in the Maxwell Plate
         program, given the top-center location and plate geometry parameters.
         """
-        x1.value, y1.value, z1.value, x2.value, y2.value, z2.value, x3.value, y3.value, z3.value, x4.value, y4.value, z4.value = gxapi_cy.WrapGU.maxwell_plate_corners(GXContext._get_tls_geo(), x, y, z, dip, dip_dir, plunge, length, width, x1.value, y1.value, z1.value, x2.value, y2.value, z2.value, x3.value, y3.value, z3.value, x4.value, y4.value, z4.value)
+        x1.value, y1.value, z1.value, x2.value, y2.value, z2.value, x3.value, y3.value, z3.value, x4.value, y4.value, z4.value = gxapi_cy.WrapGU._maxwell_plate_corners(GXContext._get_tls_geo(), x, y, z, dip, dip_dir, plunge, length, width, x1.value, y1.value, z1.value, x2.value, y2.value, z2.value, x3.value, y3.value, z3.value, x4.value, y4.value, z4.value)
         
 
 
@@ -820,12 +833,12 @@ class GXGU:
 
         .. versionadded:: 7.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Scans the file to see what data type is in the Ethernet file.
+        **Note:** Scans the file to see what data type is in the Ethernet file.
         Currently only detects GR820 types.
         """
-        type.value, items.value = gxapi_cy.WrapGU.scan_daarc500_ethernet(GXContext._get_tls_geo(), file.encode(), type.value, items.value)
+        type.value, items.value = gxapi_cy.WrapGU._scan_daarc500_ethernet(GXContext._get_tls_geo(), file.encode(), type.value, items.value)
         
 
 
@@ -844,11 +857,11 @@ class GXGU:
 
         .. versionadded:: 7.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Scans the file to see which of the 8 serial channels were used to store data.
+        **Note:** Scans the file to see which of the 8 serial channels were used to store data.
         """
-        gxapi_cy.WrapGU.scan_daarc500_serial(GXContext._get_tls_geo(), file.encode(), vv_type._wrapper, vv_items._wrapper)
+        gxapi_cy.WrapGU._scan_daarc500_serial(GXContext._get_tls_geo(), file.encode(), vv_type, vv_items)
         
 
 
@@ -893,9 +906,9 @@ class GXGU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        All VVs must be REAL
+        **Note:** All VVs must be REAL
         
         The output X and Y values are the same as the inputs,
         except if `PEAKEULER_XY_FIT <geosoft.gxapi.PEAKEULER_XY_FIT>` is selected. All other
@@ -906,7 +919,7 @@ class GXGU:
              c) The derived solution is outside the range
              d) The solution is invalid (singular matrix)
         """
-        gxapi_cy.WrapGU.vv_euler(GXContext._get_tls_geo(), vv_xin._wrapper, vv_yin._wrapper, img_data._wrapper, imgx._wrapper, imgy._wrapper, imgz._wrapper, vv_xout._wrapper, vv_yout._wrapper, vv_depth._wrapper, vvdc._wrapper, vv_zer._wrapper, vvx_yer._wrapper, wnd_sz, si, wt_pow, x_yfit)
+        gxapi_cy.WrapGU._vv_euler(GXContext._get_tls_geo(), vv_xin, vv_yin, img_data, imgx, imgy, imgz, vv_xout, vv_yout, vv_depth, vvdc, vv_zer, vvx_yer, wnd_sz, si, wt_pow, x_yfit)
         
 
 
@@ -951,15 +964,15 @@ class GXGU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        All VVs must be REAL
+        **Note:** All VVs must be REAL
 
         .. seealso::
 
             `vv_euler <geosoft.gxapi.GXGU.vv_euler>`
         """
-        gxapi_cy.WrapGU.vv_euler2(GXContext._get_tls_geo(), vv_xin._wrapper, vv_yin._wrapper, img_data._wrapper, imgx._wrapper, imgy._wrapper, imgz._wrapper, vv_xout._wrapper, vv_yout._wrapper, vv_depth._wrapper, vvdc._wrapper, vv_zer._wrapper, vvx_yer._wrapper, vv_wnd._wrapper, si, wt_pow, x_yfit)
+        gxapi_cy.WrapGU._vv_euler2(GXContext._get_tls_geo(), vv_xin, vv_yin, img_data, imgx, imgy, imgz, vv_xout, vv_yout, vv_depth, vvdc, vv_zer, vvx_yer, vv_wnd, si, wt_pow, x_yfit)
         
 
 

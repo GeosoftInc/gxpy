@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXUSERMETA:
+class GXUSERMETA(gxapi_cy.WrapUSERMETA):
     """
     GXUSERMETA class.
 
@@ -21,37 +21,28 @@ class GXUSERMETA:
     data.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapUSERMETA(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXUSERMETA`
+        A null (undefined) instance of `GXUSERMETA <geosoft.gxapi.GXUSERMETA>`
         
-        :returns: A null `GXUSERMETA`
+        :returns: A null `GXUSERMETA <geosoft.gxapi.GXUSERMETA>`
+        :rtype:   GXUSERMETA
         """
-        return cls()
+        return GXUSERMETA()
 
     def is_null(self):
         """
-        Check if the instance of `GXUSERMETA` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXUSERMETA`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -69,8 +60,10 @@ class GXUSERMETA:
         :rtype:         GXUSERMETA
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapUSERMETA.create(GXContext._get_tls_geo(), format)
+        ret_val = gxapi_cy.WrapUSERMETA._create(GXContext._get_tls_geo(), format)
         return GXUSERMETA(ret_val)
 
 
@@ -87,8 +80,10 @@ class GXUSERMETA:
         :rtype:       GXUSERMETA
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapUSERMETA.create_s(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapUSERMETA._create_s(GXContext._get_tls_geo(), file.encode())
         return GXUSERMETA(ret_val)
 
 
@@ -104,8 +99,10 @@ class GXUSERMETA:
         :type  date:      float_ref
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        date.value = self._wrapper.get_data_creation_date(date.value)
+        date.value = self._get_data_creation_date(date.value)
         
 
 
@@ -125,8 +122,10 @@ class GXUSERMETA:
         :type  max_y:     float_ref
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.get_extents2d(min_x.value, min_y.value, max_x.value, max_y.value)
+        min_x.value, min_y.value, max_x.value, max_y.value = self._get_extents2d(min_x.value, min_y.value, max_x.value, max_y.value)
         
 
 
@@ -150,8 +149,10 @@ class GXUSERMETA:
         :type  max_z:     float_ref
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._wrapper.get_extents3d(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
+        min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._get_extents3d(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         
 
 
@@ -165,8 +166,10 @@ class GXUSERMETA:
         :type  ipj:       GXIPJ
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.get_ipj(ipj._wrapper)
+        self._get_ipj(ipj)
         
 
 
@@ -180,8 +183,10 @@ class GXUSERMETA:
         :type  date:      float_ref
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        date.value = self._wrapper.get_meta_creation_date(date.value)
+        date.value = self._get_meta_creation_date(date.value)
         
 
 
@@ -195,8 +200,10 @@ class GXUSERMETA:
         :type  format:    int_ref
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        format.value = self._wrapper.get_xml_format(format.value)
+        format.value = self._get_xml_format(format.value)
         
 
 
@@ -214,8 +221,10 @@ class GXUSERMETA:
         :rtype:            int
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.compare(usermeta2._wrapper)
+        ret_val = self._compare(usermeta2)
         return ret_val
 
 
@@ -229,8 +238,10 @@ class GXUSERMETA:
         :type  data_creator:  str_ref
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        data_creator.value = self._wrapper.get_data_creator(data_creator.value.encode())
+        data_creator.value = self._get_data_creator(data_creator.value.encode())
         
 
 
@@ -244,8 +255,10 @@ class GXUSERMETA:
         :type  format:    str_ref
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        format.value = self._wrapper.get_format(format.value.encode())
+        format.value = self._get_format(format.value.encode())
         
 
 
@@ -259,8 +272,10 @@ class GXUSERMETA:
         :type  meta_creator:  str_ref
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        meta_creator.value = self._wrapper.get_meta_creator(meta_creator.value.encode())
+        meta_creator.value = self._get_meta_creator(meta_creator.value.encode())
         
 
 
@@ -274,8 +289,10 @@ class GXUSERMETA:
         :type  project:   str_ref
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        project.value = self._wrapper.get_project(project.value.encode())
+        project.value = self._get_project(project.value.encode())
         
 
 
@@ -289,8 +306,10 @@ class GXUSERMETA:
         :type  title:     str_ref
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        title.value = self._wrapper.get_title(title.value.encode())
+        title.value = self._get_title(title.value.encode())
         
 
 
@@ -306,8 +325,10 @@ class GXUSERMETA:
         :type  file:      str
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.serial(save_geo, file.encode())
+        self._serial(save_geo, file.encode())
         
 
 
@@ -321,8 +342,10 @@ class GXUSERMETA:
         :type  date:      float
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_data_creation_date(date)
+        self._set_data_creation_date(date)
         
 
 
@@ -336,8 +359,10 @@ class GXUSERMETA:
         :type  data_creator:  str
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_data_creator(data_creator.encode())
+        self._set_data_creator(data_creator.encode())
         
 
 
@@ -357,8 +382,10 @@ class GXUSERMETA:
         :type  max_y:     float
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_extents2d(min_x, min_y, max_x, max_y)
+        self._set_extents2d(min_x, min_y, max_x, max_y)
         
 
 
@@ -382,8 +409,10 @@ class GXUSERMETA:
         :type  max_z:     float
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_extents3d(min_x, min_y, min_z, max_x, max_y, max_z)
+        self._set_extents3d(min_x, min_y, min_z, max_x, max_y, max_z)
         
 
 
@@ -397,8 +426,10 @@ class GXUSERMETA:
         :type  format:    str
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_format(format.encode())
+        self._set_format(format.encode())
         
 
 
@@ -412,8 +443,10 @@ class GXUSERMETA:
         :type  ipj:       GXIPJ
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_ipj(ipj._wrapper)
+        self._set_ipj(ipj)
         
 
 
@@ -427,8 +460,10 @@ class GXUSERMETA:
         :type  date:      float
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_meta_creation_date(date)
+        self._set_meta_creation_date(date)
         
 
 
@@ -442,8 +477,10 @@ class GXUSERMETA:
         :type  meta_creator:  str
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_meta_creator(meta_creator.encode())
+        self._set_meta_creator(meta_creator.encode())
         
 
 
@@ -457,8 +494,10 @@ class GXUSERMETA:
         :type  project:   str
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_project(project.encode())
+        self._set_project(project.encode())
         
 
 
@@ -472,8 +511,10 @@ class GXUSERMETA:
         :type  title:     str
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_title(title.encode())
+        self._set_title(title.encode())
         
 
 
@@ -498,8 +539,10 @@ class GXUSERMETA:
         :type  max_y:     float
 
         .. versionadded:: 7.0.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapUSERMETA.update_extents_2d(GXContext._get_tls_geo(), filename.encode(), ipj._wrapper, min_x, min_y, max_x, max_y)
+        gxapi_cy.WrapUSERMETA._update_extents_2d(GXContext._get_tls_geo(), filename.encode(), ipj, min_x, min_y, max_x, max_y)
         
 
 
@@ -516,8 +559,10 @@ class GXUSERMETA:
         :type  new_file_type:  str
 
         .. versionadded:: 7.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapUSERMETA.update_file_type(GXContext._get_tls_geo(), file_name.encode(), new_file_type.encode())
+        gxapi_cy.WrapUSERMETA._update_file_type(GXContext._get_tls_geo(), file_name.encode(), new_file_type.encode())
         
 
 
@@ -533,8 +578,10 @@ class GXUSERMETA:
         :type  save_geo:   bool
 
         .. versionadded:: 8.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapUSERMETA.save_file_lineage(GXContext._get_tls_geo(), file_name.encode(), save_geo)
+        gxapi_cy.WrapUSERMETA._save_file_lineage(GXContext._get_tls_geo(), file_name.encode(), save_geo)
         
 
 

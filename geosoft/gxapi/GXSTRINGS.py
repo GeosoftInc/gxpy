@@ -13,44 +13,35 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXSTRINGS:
+class GXSTRINGS(gxapi_cy.WrapSTRINGS):
     """
     GXSTRINGS class.
 
     The `GXSTRINGS <geosoft.gxapi.GXSTRINGS>` class is used for displaying digitization tools for interpretations
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapSTRINGS(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXSTRINGS`
+        A null (undefined) instance of `GXSTRINGS <geosoft.gxapi.GXSTRINGS>`
         
-        :returns: A null `GXSTRINGS`
+        :returns: A null `GXSTRINGS <geosoft.gxapi.GXSTRINGS>`
+        :rtype:   GXSTRINGS
         """
-        return cls()
+        return GXSTRINGS()
 
     def is_null(self):
         """
-        Check if the instance of `GXSTRINGS` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXSTRINGS`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -67,8 +58,10 @@ class GXSTRINGS:
         :type  feature_guid:  str
 
         .. versionadded:: 7.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSTRINGS.launch_digitization_ui(GXContext._get_tls_geo(), stringfile.encode(), feature_guid.encode())
+        gxapi_cy.WrapSTRINGS._launch_digitization_ui(GXContext._get_tls_geo(), stringfile.encode(), feature_guid.encode())
         
 
 

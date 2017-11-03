@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXEUL3:
+class GXEUL3(gxapi_cy.WrapEUL3):
     """
     GXEUL3 class.
 
@@ -21,37 +21,28 @@ class GXEUL3:
     for potential field interpretation.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapEUL3(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXEUL3`
+        A null (undefined) instance of `GXEUL3 <geosoft.gxapi.GXEUL3>`
         
-        :returns: A null `GXEUL3`
+        :returns: A null `GXEUL3 <geosoft.gxapi.GXEUL3>`
+        :rtype:   GXEUL3
         """
-        return cls()
+        return GXEUL3()
 
     def is_null(self):
         """
-        Check if the instance of `GXEUL3` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXEUL3`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -64,8 +55,10 @@ class GXEUL3:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.destr()
+        self._destr()
         
 
 
@@ -102,8 +95,10 @@ class GXEUL3:
         :rtype:           GXEUL3
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapEUL3.creat(GXContext._get_tls_geo(), imgt._wrapper, imgtx._wrapper, imgty._wrapper, imgtz._wrapper, wnd_siz, gi, tolrnc, max_dis, obs_flg, obs_hght, obs_elev)
+        ret_val = gxapi_cy.WrapEUL3._creat(GXContext._get_tls_geo(), imgt, imgtx, imgty, imgtz, wnd_siz, gi, tolrnc, max_dis, obs_flg, obs_hght, obs_elev)
         return GXEUL3(ret_val)
 
 
@@ -119,8 +114,10 @@ class GXEUL3:
         :type  pi_res_field:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.get_result(vv_r._wrapper, pi_res_field)
+        self._get_result(vv_r, pi_res_field)
         
 
 
@@ -134,8 +131,10 @@ class GXEUL3:
         :type  out_fil:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.write(out_fil.encode())
+        self._write(out_fil.encode())
         
 
 
@@ -164,8 +163,10 @@ class GXEUL3:
         :rtype:          int
 
         .. versionadded:: 9.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapEUL3.ex_euler_derive(GXContext._get_tls_geo(), vv_dist._wrapper, pr_dx, vv_mag._wrapper, length, vv_gx._wrapper, vv_gz._wrapper, max_sol)
+        ret_val = gxapi_cy.WrapEUL3._ex_euler_derive(GXContext._get_tls_geo(), vv_dist, pr_dx, vv_mag, length, vv_gx, vv_gz, max_sol)
         return ret_val
 
 
@@ -220,8 +221,10 @@ class GXEUL3:
         :rtype:      int
 
         .. versionadded:: 9.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapEUL3.ex_euler_calc(GXContext._get_tls_geo(), typ, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12._wrapper, p13._wrapper, p14._wrapper, p15._wrapper, p16, p17._wrapper, p18._wrapper, p19._wrapper, p20._wrapper)
+        ret_val = gxapi_cy.WrapEUL3._ex_euler_calc(GXContext._get_tls_geo(), typ, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20)
         return ret_val
 
 

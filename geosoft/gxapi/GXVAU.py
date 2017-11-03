@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXVAU:
+class GXVAU(gxapi_cy.WrapVAU):
     """
     GXVAU class.
 
@@ -21,37 +21,28 @@ class GXVAU:
     data stored in `GXVA <geosoft.gxapi.GXVA>` objects
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapVAU(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXVAU`
+        A null (undefined) instance of `GXVAU <geosoft.gxapi.GXVAU>`
         
-        :returns: A null `GXVAU`
+        :returns: A null `GXVAU <geosoft.gxapi.GXVAU>`
+        :rtype:   GXVAU
         """
-        return cls()
+        return GXVAU()
 
     def is_null(self):
         """
-        Check if the instance of `GXVAU` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXVAU`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -71,13 +62,13 @@ class GXVAU:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Pruning will shorten the `GXVA <geosoft.gxapi.GXVA>` by removing values
+        **Note:** Pruning will shorten the `GXVA <geosoft.gxapi.GXVA>` by removing values
         that are either dummy or non-dummy in the reference
         `GXVA <geosoft.gxapi.GXVA>`
         """
-        gxapi_cy.WrapVAU.prune(GXContext._get_tls_geo(), v_ap._wrapper, vv_r._wrapper, o)
+        gxapi_cy.WrapVAU._prune(GXContext._get_tls_geo(), v_ap, vv_r, o)
         
 
 
@@ -97,8 +88,10 @@ class GXVAU:
         :type  tva:  GXVA
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapVAU.total_vector(GXContext._get_tls_geo(), xva._wrapper, yva._wrapper, zva._wrapper, tva._wrapper)
+        gxapi_cy.WrapVAU._total_vector(GXContext._get_tls_geo(), xva, yva, zva, tva)
         
 
 

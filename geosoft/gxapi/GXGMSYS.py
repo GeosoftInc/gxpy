@@ -13,44 +13,35 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXGMSYS:
+class GXGMSYS(gxapi_cy.WrapGMSYS):
     """
     GXGMSYS class.
 
     The `GXGMSYS <geosoft.gxapi.GXGMSYS>` Methods
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapGMSYS(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXGMSYS`
+        A null (undefined) instance of `GXGMSYS <geosoft.gxapi.GXGMSYS>`
         
-        :returns: A null `GXGMSYS`
+        :returns: A null `GXGMSYS <geosoft.gxapi.GXGMSYS>`
+        :rtype:   GXGMSYS
         """
-        return cls()
+        return GXGMSYS()
 
     def is_null(self):
         """
-        Check if the instance of `GXGMSYS` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXGMSYS`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -65,8 +56,10 @@ class GXGMSYS:
         :type  model:  str
 
         .. versionadded:: 5.0.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapGMSYS.launch(GXContext._get_tls_geo(), model.encode())
+        gxapi_cy.WrapGMSYS._launch(GXContext._get_tls_geo(), model.encode())
         
 
 

@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXHXYZ:
+class GXHXYZ(gxapi_cy.WrapHXYZ):
     """
     GXHXYZ class.
 
@@ -23,37 +23,28 @@ class GXHXYZ:
     data extraction. It is also multi-threaded.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapHXYZ(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXHXYZ`
+        A null (undefined) instance of `GXHXYZ <geosoft.gxapi.GXHXYZ>`
         
-        :returns: A null `GXHXYZ`
+        :returns: A null `GXHXYZ <geosoft.gxapi.GXHXYZ>`
+        :rtype:   GXHXYZ
         """
-        return cls()
+        return GXHXYZ()
 
     def is_null(self):
         """
-        Check if the instance of `GXHXYZ` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXHXYZ`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -71,8 +62,10 @@ class GXHXYZ:
         :rtype:       GXHXYZ
 
         .. versionadded:: 5.1.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapHXYZ.create(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapHXYZ._create(GXContext._get_tls_geo(), name.encode())
         return GXHXYZ(ret_val)
 
 
@@ -88,8 +81,10 @@ class GXHXYZ:
         :type  meta:  GXMETA
 
         .. versionadded:: 5.1.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.get_meta(meta._wrapper)
+        self._get_meta(meta)
         
 
 
@@ -110,8 +105,10 @@ class GXHXYZ:
         :rtype:       GXHXYZ
 
         .. versionadded:: 5.1.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapHXYZ.h_create_db(GXContext._get_tls_geo(), db._wrapper, gvv._wrapper, name.encode())
+        ret_val = gxapi_cy.WrapHXYZ._h_create_db(GXContext._get_tls_geo(), db, gvv, name.encode())
         return GXHXYZ(ret_val)
 
 
@@ -138,8 +135,10 @@ class GXHXYZ:
         :rtype:           GXHXYZ
 
         .. versionadded:: 5.1.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapHXYZ.h_create_sql(GXContext._get_tls_geo(), template.encode(), x.encode(), y.encode(), z.encode(), ipj._wrapper, name.encode())
+        ret_val = gxapi_cy.WrapHXYZ._h_create_sql(GXContext._get_tls_geo(), template.encode(), x.encode(), y.encode(), z.encode(), ipj, name.encode())
         return GXHXYZ(ret_val)
 
 
@@ -153,8 +152,10 @@ class GXHXYZ:
         :type  meta:  GXMETA
 
         .. versionadded:: 5.1.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_meta(meta._wrapper)
+        self._set_meta(meta)
         
 
 

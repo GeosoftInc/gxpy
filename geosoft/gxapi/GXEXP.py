@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXEXP:
+class GXEXP(gxapi_cy.WrapEXP):
     """
     GXEXP class.
 
@@ -24,37 +24,28 @@ class GXEXP:
     See also `GXDU.math <geosoft.gxapi.GXDU.math>` applies expressions to the database
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapEXP(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXEXP`
+        A null (undefined) instance of `GXEXP <geosoft.gxapi.GXEXP>`
         
-        :returns: A null `GXEXP`
+        :returns: A null `GXEXP <geosoft.gxapi.GXEXP>`
+        :rtype:   GXEXP
         """
-        return cls()
+        return GXEXP()
 
     def is_null(self):
         """
-        Check if the instance of `GXEXP` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXEXP`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -77,9 +68,9 @@ class GXEXP:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Expressions are strings that contain C-like math to be
+        **Note:** Expressions are strings that contain C-like math to be
         applied to channels in a database.  For example, following
         an expression:
         
@@ -106,7 +97,7 @@ class GXEXP:
         
         All other tokens are assumed to be channel names.
         """
-        ret_val = gxapi_cy.WrapEXP.create(GXContext._get_tls_geo(), db._wrapper, formula.encode(), max_len)
+        ret_val = gxapi_cy.WrapEXP._create(GXContext._get_tls_geo(), db, formula.encode(), max_len)
         return GXEXP(ret_val)
 
 
@@ -125,8 +116,10 @@ class GXEXP:
         :rtype:       GXEXP
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapEXP.create_file(GXContext._get_tls_geo(), db._wrapper, file.encode())
+        ret_val = gxapi_cy.WrapEXP._create_file(GXContext._get_tls_geo(), db, file.encode())
         return GXEXP(ret_val)
 
 

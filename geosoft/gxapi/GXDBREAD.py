@@ -15,7 +15,7 @@ from .GXVV import GXVV
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXDBREAD:
+class GXDBREAD(gxapi_cy.WrapDBREAD):
     """
     GXDBREAD class.
 
@@ -25,37 +25,28 @@ class GXDBREAD:
     are served up whole, one block per line.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapDBREAD(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXDBREAD`
+        A null (undefined) instance of `GXDBREAD <geosoft.gxapi.GXDBREAD>`
         
-        :returns: A null `GXDBREAD`
+        :returns: A null `GXDBREAD <geosoft.gxapi.GXDBREAD>`
+        :rtype:   GXDBREAD
         """
-        return cls()
+        return GXDBREAD()
 
     def is_null(self):
         """
-        Check if the instance of `GXDBREAD` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXDBREAD`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Create Methods
@@ -76,8 +67,10 @@ class GXDBREAD:
         :rtype:           GXDBREAD
 
         .. versionadded:: 8.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapDBREAD.create(GXContext._get_tls_geo(), db._wrapper, line_lst._wrapper)
+        ret_val = gxapi_cy.WrapDBREAD._create(GXContext._get_tls_geo(), db, line_lst)
         return GXDBREAD(ret_val)
 
 
@@ -97,8 +90,10 @@ class GXDBREAD:
         :rtype:           GXDBREAD
 
         .. versionadded:: 8.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapDBREAD.create_xy(GXContext._get_tls_geo(), db._wrapper, line_lst._wrapper)
+        ret_val = gxapi_cy.WrapDBREAD._create_xy(GXContext._get_tls_geo(), db, line_lst)
         return GXDBREAD(ret_val)
 
 
@@ -118,8 +113,10 @@ class GXDBREAD:
         :rtype:           GXDBREAD
 
         .. versionadded:: 8.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapDBREAD.create_xyz(GXContext._get_tls_geo(), db._wrapper, line_lst._wrapper)
+        ret_val = gxapi_cy.WrapDBREAD._create_xyz(GXContext._get_tls_geo(), db, line_lst)
         return GXDBREAD(ret_val)
 
 
@@ -138,8 +135,10 @@ class GXDBREAD:
         :rtype:         int
 
         .. versionadded:: 8.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.add_channel(chan)
+        ret_val = self._add_channel(chan)
         return ret_val
 
 
@@ -161,13 +160,13 @@ class GXDBREAD:
 
         .. versionadded:: 8.5
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Call only for single-column (regular) channels. You can call the `get_chan_array_size <geosoft.gxapi.GXDBREAD.get_chan_array_size>`
+        **Note:** Call only for single-column (regular) channels. You can call the `get_chan_array_size <geosoft.gxapi.GXDBREAD.get_chan_array_size>`
         function to find the number fo columns in a given channel. The `GXVV <geosoft.gxapi.GXVV>` is filled anew for 
         each block served up.
         """
-        ret_val = self._wrapper.get_vv(chan)
+        ret_val = self._get_vv(chan)
         return GXVV(ret_val)
 
 
@@ -185,13 +184,13 @@ class GXDBREAD:
 
         .. versionadded:: 8.5
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Call only for array (multi-column) channels. You can call the `get_chan_array_size <geosoft.gxapi.GXDBREAD.get_chan_array_size>`
+        **Note:** Call only for array (multi-column) channels. You can call the `get_chan_array_size <geosoft.gxapi.GXDBREAD.get_chan_array_size>`
         function to find the number fo columns in a given channel, or you can call `GXVA.col <geosoft.gxapi.GXVA.col>` on the returned `GXVA <geosoft.gxapi.GXVA>` handle.
         The `GXVA <geosoft.gxapi.GXVA>` is filled anew for each block served up.
         """
-        ret_val = self._wrapper.get_va(chan)
+        ret_val = self._get_va(chan)
         return GXVA(ret_val)
 
 
@@ -207,12 +206,12 @@ class GXDBREAD:
 
         .. versionadded:: 8.5
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Only available for the CreateXY or CreateXYZ methods.
+        **Note:** Only available for the CreateXY or CreateXYZ methods.
         The `GXVV <geosoft.gxapi.GXVV>` is filled anew for each block served up.
         """
-        ret_val = self._wrapper.get_v_vx()
+        ret_val = self._get_v_vx()
         return GXVV(ret_val)
 
 
@@ -228,12 +227,12 @@ class GXDBREAD:
 
         .. versionadded:: 8.5
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Only available for the CreateXY or CreateXYZ methods.
+        **Note:** Only available for the CreateXY or CreateXYZ methods.
         The `GXVV <geosoft.gxapi.GXVV>` is filled anew for each block served up.
         """
-        ret_val = self._wrapper.get_v_vy()
+        ret_val = self._get_v_vy()
         return GXVV(ret_val)
 
 
@@ -249,13 +248,13 @@ class GXDBREAD:
 
         .. versionadded:: 8.5
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Only available for the CreateXY or CreateXYZ methods.
+        **Note:** Only available for the CreateXY or CreateXYZ methods.
         The `GXVV <geosoft.gxapi.GXVV>` is filled anew for each block served up.
         If the Z channel is an array channel, the returned `GXVV <geosoft.gxapi.GXVV>` is the "base" `GXVV <geosoft.gxapi.GXVV>` of the `GXVA <geosoft.gxapi.GXVA>` and contains all items sequentially.
         """
-        ret_val = self._wrapper.get_v_vz()
+        ret_val = self._get_v_vz()
         return GXVV(ret_val)
 
 
@@ -273,13 +272,13 @@ class GXDBREAD:
 
         .. versionadded:: 8.5
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Regular channels have one column of data. Array channels have more than one column of data.
+        **Note:** Regular channels have one column of data. Array channels have more than one column of data.
         This function should be called to determine whether to use `get_vv <geosoft.gxapi.GXDBREAD.get_vv>` or `get_va <geosoft.gxapi.GXDBREAD.get_va>` to access data
         for a channel.
         """
-        ret_val = self._wrapper.get_chan_array_size(chan)
+        ret_val = self._get_chan_array_size(chan)
         return ret_val
 
 
@@ -295,13 +294,13 @@ class GXDBREAD:
 
         .. versionadded:: 8.5
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The selected lines are scanned. All lines where the served up data is less than the maximum block size for
+        **Note:** The selected lines are scanned. All lines where the served up data is less than the maximum block size for
         all channels are served as a single block. Any lines where any channel's data exceeds the maximum block size are split up into blocks.
         The value returned can be used as the progress message maximum iteration value.
         """
-        ret_val = self._wrapper.get_number_of_blocks_to_process()
+        ret_val = self._get_number_of_blocks_to_process()
         return ret_val
 
 
@@ -327,12 +326,12 @@ class GXDBREAD:
 
         .. versionadded:: 8.5
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The next block of data is read and copied into the channel `GXVV <geosoft.gxapi.GXVV>` and/or `GXVA <geosoft.gxapi.GXVA>` objects, accessed using
+        **Note:** The next block of data is read and copied into the channel `GXVV <geosoft.gxapi.GXVV>` and/or `GXVA <geosoft.gxapi.GXVA>` objects, accessed using
         the `get_vv <geosoft.gxapi.GXDBREAD.get_vv>` and `get_va <geosoft.gxapi.GXDBREAD.get_va>` functions.
         """
-        ret_val, line.value, block.value, n_blocks.value = self._wrapper.get_next_block(line.value, block.value, n_blocks.value)
+        ret_val, line.value, block.value, n_blocks.value = self._get_next_block(line.value, block.value, n_blocks.value)
         return ret_val
 
 

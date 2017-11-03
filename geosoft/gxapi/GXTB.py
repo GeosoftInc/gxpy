@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXTB:
+class GXTB(gxapi_cy.WrapTB):
     """
     GXTB class.
 
@@ -24,37 +24,28 @@ class GXTB:
     different geographic projections and their defining parameters.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapTB(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXTB`
+        A null (undefined) instance of `GXTB <geosoft.gxapi.GXTB>`
         
-        :returns: A null `GXTB`
+        :returns: A null `GXTB <geosoft.gxapi.GXTB>`
+        :rtype:   GXTB
         """
-        return cls()
+        return GXTB()
 
     def is_null(self):
         """
-        Check if the instance of `GXTB` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXTB`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -70,12 +61,12 @@ class GXTB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If performance is an issue, you may want to test which search
+        **Note:** If performance is an issue, you may want to test which search
         mode provides the best performance with typical data.
         """
-        self._wrapper.set_search_mode(mode)
+        self._set_search_mode(mode)
         
 
 
@@ -93,13 +84,13 @@ class GXTB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the table contains fewer data columns than are defined by the
+        **Note:** If the table contains fewer data columns than are defined by the
         the table header, the `GXTB <geosoft.gxapi.GXTB>` object will read in the table and dummy
         the elements of the missing data columns.
         """
-        ret_val = gxapi_cy.WrapTB.create(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapTB._create(GXContext._get_tls_geo(), name.encode())
         return GXTB(ret_val)
 
 
@@ -117,15 +108,15 @@ class GXTB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The table will contain fields for all channels in
+        **Note:** The table will contain fields for all channels in
         the database.
         
         The database is not loaded with data.  Use the `load_db <geosoft.gxapi.GXTB.load_db>`
         function to load data into the table.
         """
-        ret_val = gxapi_cy.WrapTB.create_db(GXContext._get_tls_geo(), db._wrapper)
+        ret_val = gxapi_cy.WrapTB._create_db(GXContext._get_tls_geo(), db)
         return GXTB(ret_val)
 
 
@@ -142,8 +133,10 @@ class GXTB:
         :rtype:      GXTB
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapTB.create_ltb(GXContext._get_tls_geo(), ltb._wrapper)
+        ret_val = gxapi_cy.WrapTB._create_ltb(GXContext._get_tls_geo(), ltb)
         return GXTB(ret_val)
 
 
@@ -162,8 +155,10 @@ class GXTB:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.field(name.encode())
+        ret_val = self._field(name.encode())
         return ret_val
 
 
@@ -181,8 +176,10 @@ class GXTB:
         :type  val:  str_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        val.value = self._wrapper.get_string(row, col, val.value.encode())
+        val.value = self._get_string(row, col, val.value.encode())
         
 
 
@@ -199,8 +196,10 @@ class GXTB:
         :rtype:      int
 
         .. versionadded:: 5.0.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.data_type(col)
+        ret_val = self._data_type(col)
         return ret_val
 
 
@@ -216,8 +215,10 @@ class GXTB:
         :type  name:  str_ref
 
         .. versionadded:: 5.1.6
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        name.value = self._wrapper.find_col_by_index(idx, name.value.encode())
+        name.value = self._find_col_by_index(idx, name.value.encode())
         
 
 
@@ -235,8 +236,10 @@ class GXTB:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.find_col_by_name(name.encode())
+        ret_val = self._find_col_by_name(name.encode())
         return ret_val
 
 
@@ -253,8 +256,10 @@ class GXTB:
         :rtype:      int
 
         .. versionadded:: 5.0.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.format(col)
+        ret_val = self._format(col)
         return ret_val
 
 
@@ -273,8 +278,10 @@ class GXTB:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.get_int(row, col)
+        ret_val = self._get_int(row, col)
         return ret_val
 
 
@@ -289,8 +296,10 @@ class GXTB:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.num_columns()
+        ret_val = self._num_columns()
         return ret_val
 
 
@@ -305,8 +314,10 @@ class GXTB:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.num_rows()
+        ret_val = self._num_rows()
         return ret_val
 
 
@@ -323,11 +334,11 @@ class GXTB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The line is appended to the data already in the table.
+        **Note:** The line is appended to the data already in the table.
         """
-        self._wrapper.load_db(db._wrapper, line)
+        self._load_db(db, line)
         
 
 
@@ -346,8 +357,10 @@ class GXTB:
         :rtype:      float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.get_double(row, col)
+        ret_val = self._get_double(row, col)
         return ret_val
 
 
@@ -362,8 +375,10 @@ class GXTB:
         :type  name:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.save(name.encode())
+        self._save(name.encode())
         
 
 
@@ -380,12 +395,12 @@ class GXTB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Missing channels are created.
+        **Note:** Missing channels are created.
         Data in existing channels on the line will be replaced.
         """
-        self._wrapper.save_db(db._wrapper, line)
+        self._save_db(db, line)
         
 
 
@@ -400,8 +415,10 @@ class GXTB:
         :type  name:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.save_to_ascii(name.encode())
+        self._save_to_ascii(name.encode())
         
 
 
@@ -420,9 +437,9 @@ class GXTB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The table field containing the element to be set MUST be
+        **Note:** The table field containing the element to be set MUST be
         of type `GS_BYTE <geosoft.gxapi.GS_BYTE>`, `GS_USHORT <geosoft.gxapi.GS_USHORT>`, `GS_SHORT <geosoft.gxapi.GS_SHORT>`, or `GS_LONG <geosoft.gxapi.GS_LONG>`.
         If the field is `GS_BYTE <geosoft.gxapi.GS_BYTE>`, `GS_USHORT <geosoft.gxapi.GS_USHORT>`, or `GS_LONG <geosoft.gxapi.GS_LONG>`, the new data
         value will cause an overflow if the value is out of range of
@@ -436,7 +453,7 @@ class GXTB:
         the new rows up to the new element's row will also contain
         invalid data.
         """
-        self._wrapper.set_int(row, col, val)
+        self._set_int(row, col, val)
         
 
 
@@ -455,9 +472,9 @@ class GXTB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The table field containing the element to be set MUST be
+        **Note:** The table field containing the element to be set MUST be
         of type `GS_FLOAT <geosoft.gxapi.GS_FLOAT>` or `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`.
         If the field is `GS_FLOAT <geosoft.gxapi.GS_FLOAT>` the new data value will cause an
         overflow if the value is out of range of the data type.
@@ -471,7 +488,7 @@ class GXTB:
         the new rows up to the new element's row will also contain
         invalid data.
         """
-        self._wrapper.set_double(row, col, val)
+        self._set_double(row, col, val)
         
 
 
@@ -490,9 +507,9 @@ class GXTB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The table field containing the element to be set MUST be
+        **Note:** The table field containing the element to be set MUST be
         of 'string'.
         
         If the row of the new element exceeds the number of rows in
@@ -503,7 +520,7 @@ class GXTB:
         the new rows up to the new element's row will also contain
         invalid data.
         """
-        self._wrapper.set_string(row, col, val.encode())
+        self._set_string(row, col, val.encode())
         
 
 
@@ -518,9 +535,9 @@ class GXTB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the column to sort by contains duplicated values, the
+        **Note:** If the column to sort by contains duplicated values, the
         sorted table is NOT guaranteed to retain the ordering of
         the duplicated values/
         E.g. Given 2 rows of values:   xx   yy   1
@@ -529,7 +546,7 @@ class GXTB:
         may or may not come after the first row in the sorted
         table.
         """
-        self._wrapper.sort(col)
+        self._sort(col)
         
 
 

@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXVVEXP:
+class GXVVEXP(gxapi_cy.WrapVVEXP):
     """
     GXVVEXP class.
 
@@ -21,37 +21,28 @@ class GXVVEXP:
     to apply math expressions to `GXVV <geosoft.gxapi.GXVV>` objects.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapVVEXP(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXVVEXP`
+        A null (undefined) instance of `GXVVEXP <geosoft.gxapi.GXVVEXP>`
         
-        :returns: A null `GXVVEXP`
+        :returns: A null `GXVVEXP <geosoft.gxapi.GXVVEXP>`
+        :rtype:   GXVVEXP
         """
-        return cls()
+        return GXVVEXP()
 
     def is_null(self):
         """
-        Check if the instance of `GXVVEXP` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXVVEXP`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -69,8 +60,10 @@ class GXVVEXP:
         :type  var:    str
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.add_vv(vv._wrapper, var.encode())
+        self._add_vv(vv, var.encode())
         
 
 
@@ -85,8 +78,10 @@ class GXVVEXP:
         :rtype:      GXVVEXP
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapVVEXP.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapVVEXP._create(GXContext._get_tls_geo())
         return GXVVEXP(ret_val)
 
 
@@ -104,8 +99,10 @@ class GXVVEXP:
         :type  max_len:  int
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.do_formula(formula.encode(), max_len)
+        self._do_formula(formula.encode(), max_len)
         
 
 

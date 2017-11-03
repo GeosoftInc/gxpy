@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXVM:
+class GXVM(gxapi_cy.WrapVM):
     """
     GXVM class.
 
@@ -38,37 +38,28 @@ class GXVM:
     See `GXVV <geosoft.gxapi.GXVV>` for methods to move data between a `GXVM <geosoft.gxapi.GXVM>` and a `GXVV <geosoft.gxapi.GXVV>`.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapVM(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXVM`
+        A null (undefined) instance of `GXVM <geosoft.gxapi.GXVM>`
         
-        :returns: A null `GXVM`
+        :returns: A null `GXVM <geosoft.gxapi.GXVM>`
+        :rtype:   GXVM
         """
-        return cls()
+        return GXVM()
 
     def is_null(self):
         """
-        Check if the instance of `GXVM` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXVM`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -89,11 +80,11 @@ class GXVM:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The `GXVM <geosoft.gxapi.GXVM>` elements are initialized to dummies.
+        **Note:** The `GXVM <geosoft.gxapi.GXVM>` elements are initialized to dummies.
         """
-        ret_val = gxapi_cy.WrapVM.create(GXContext._get_tls_geo(), type, elements)
+        ret_val = gxapi_cy.WrapVM._create(GXContext._get_tls_geo(), type, elements)
         return GXVM(ret_val)
 
 
@@ -113,11 +104,11 @@ class GXVM:
 
         .. versionadded:: 6.4.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The `GXVM <geosoft.gxapi.GXVM>` elements are initialized to dummies.
+        **Note:** The `GXVM <geosoft.gxapi.GXVM>` elements are initialized to dummies.
         """
-        ret_val = gxapi_cy.WrapVM.create_ext(GXContext._get_tls_geo(), type, elements)
+        ret_val = gxapi_cy.WrapVM._create_ext(GXContext._get_tls_geo(), type, elements)
         return GXVM(ret_val)
 
 
@@ -137,8 +128,10 @@ class GXVM:
         :rtype:          int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.get_int(element)
+        ret_val = self._get_int(element)
         return ret_val
 
 
@@ -155,15 +148,15 @@ class GXVM:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Returns element wanted, or blank string
+        **Note:** Returns element wanted, or blank string
         if the value is dummy or outside of the range of data.
         
         Type conversions are performed if necessary.  Dummy values
         are converted to "*" string.
         """
-        str_val.value = self._wrapper.get_string(element, str_val.value.encode())
+        str_val.value = self._get_string(element, str_val.value.encode())
         
 
 
@@ -178,8 +171,10 @@ class GXVM:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.length()
+        ret_val = self._length()
         return ret_val
 
 
@@ -194,11 +189,11 @@ class GXVM:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If increasing the `GXVM <geosoft.gxapi.GXVM>` size, new elements are set to dummies.
+        **Note:** If increasing the `GXVM <geosoft.gxapi.GXVM>` size, new elements are set to dummies.
         """
-        self._wrapper.re_size(newsize)
+        self._re_size(newsize)
         
 
 
@@ -216,8 +211,10 @@ class GXVM:
         :rtype:          float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.get_double(element)
+        ret_val = self._get_double(element)
         return ret_val
 
 
@@ -234,15 +231,15 @@ class GXVM:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Element being set cannot be < 0.
+        **Note:** Element being set cannot be < 0.
         
         If the element is > current `GXVM <geosoft.gxapi.GXVM>` length, the `GXVM <geosoft.gxapi.GXVM>` length is
         increased.  Reallocating `GXVM <geosoft.gxapi.GXVM>` lengths can lead to fragmented
         memory and should be avoided if possible.
         """
-        self._wrapper.set_int(element, value)
+        self._set_int(element, value)
         
 
 
@@ -259,15 +256,15 @@ class GXVM:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Element being set cannot be < 0.
+        **Note:** Element being set cannot be < 0.
         
         If the element is > current `GXVM <geosoft.gxapi.GXVM>` length, the `GXVM <geosoft.gxapi.GXVM>` length is
         increased.  Reallocating `GXVM <geosoft.gxapi.GXVM>` lengths can lead to fragmented
         memory and should be avoided if possible.
         """
-        self._wrapper.set_double(element, value)
+        self._set_double(element, value)
         
 
 
@@ -284,15 +281,15 @@ class GXVM:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Element being set cannot be < 0.
+        **Note:** Element being set cannot be < 0.
         
         If the element is > current `GXVM <geosoft.gxapi.GXVM>` length, the `GXVM <geosoft.gxapi.GXVM>` length is
         increased.  Reallocating `GXVM <geosoft.gxapi.GXVM>` lengths can lead to fragmented
         memory and should be avoided if possible.
         """
-        self._wrapper.set_string(element, value.encode())
+        self._set_string(element, value.encode())
         
 
 

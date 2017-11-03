@@ -13,44 +13,35 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXMULTIVOXSET:
+class GXMULTIVOXSET(gxapi_cy.WrapMULTIVOXSET):
     """
     GXMULTIVOXSET class.
 
     High Performance 3D Grid.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapMULTIVOXSET(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXMULTIVOXSET`
+        A null (undefined) instance of `GXMULTIVOXSET <geosoft.gxapi.GXMULTIVOXSET>`
         
-        :returns: A null `GXMULTIVOXSET`
+        :returns: A null `GXMULTIVOXSET <geosoft.gxapi.GXMULTIVOXSET>`
+        :rtype:   GXMULTIVOXSET
         """
-        return cls()
+        return GXMULTIVOXSET()
 
     def is_null(self):
         """
-        Check if the instance of `GXMULTIVOXSET` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXMULTIVOXSET`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -71,8 +62,10 @@ class GXMULTIVOXSET:
         :type  ipj:   GXIPJ
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapMULTIVOXSET.import_from_xyz(GXContext._get_tls_geo(), name.encode(), ra._wrapper, type, ipj._wrapper)
+        gxapi_cy.WrapMULTIVOXSET._import_from_xyz(GXContext._get_tls_geo(), name.encode(), ra, type, ipj)
         
 
 
@@ -98,8 +91,10 @@ class GXMULTIVOXSET:
         :type  dummies:     bool
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapMULTIVOXSET.export_to_xyz(GXContext._get_tls_geo(), voxel_file.encode(), xyz.encode(), dir, rev_x, rev_y, rev_z, dummies)
+        gxapi_cy.WrapMULTIVOXSET._export_to_xyz(GXContext._get_tls_geo(), voxel_file.encode(), xyz.encode(), dir, rev_x, rev_y, rev_z, dummies)
         
 
 
@@ -127,8 +122,10 @@ class GXMULTIVOXSET:
         :type  output_type:  int
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapMULTIVOXSET.export_to_binary(GXContext._get_tls_geo(), voxel_file.encode(), binary_file.encode(), dir, rev_x, rev_y, rev_z, swap, output_type)
+        gxapi_cy.WrapMULTIVOXSET._export_to_binary(GXContext._get_tls_geo(), voxel_file.encode(), binary_file.encode(), dir, rev_x, rev_y, rev_z, swap, output_type)
         
 
 
@@ -144,8 +141,10 @@ class GXMULTIVOXSET:
         :type  xml_file:    str
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapMULTIVOXSET.export_to_xml(GXContext._get_tls_geo(), voxel_file.encode(), xml_file.encode())
+        gxapi_cy.WrapMULTIVOXSET._export_to_xml(GXContext._get_tls_geo(), voxel_file.encode(), xml_file.encode())
         
 
 
@@ -161,8 +160,10 @@ class GXMULTIVOXSET:
         :type  legacy_voxel_file:  str
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapMULTIVOXSET.check_equal_to_legacy_voxel(GXContext._get_tls_geo(), voxel_file.encode(), legacy_voxel_file.encode())
+        gxapi_cy.WrapMULTIVOXSET._check_equal_to_legacy_voxel(GXContext._get_tls_geo(), voxel_file.encode(), legacy_voxel_file.encode())
         
 
 
@@ -184,8 +185,10 @@ class GXMULTIVOXSET:
         :type  ipj:    GXIPJ
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapMULTIVOXSET.import_from_ubc(GXContext._get_tls_geo(), name.encode(), mesh.encode(), mod.encode(), dummy, ipj._wrapper)
+        gxapi_cy.WrapMULTIVOXSET._import_from_ubc(GXContext._get_tls_geo(), name.encode(), mesh.encode(), mod.encode(), dummy, ipj)
         
 
 
@@ -206,8 +209,10 @@ class GXMULTIVOXSET:
         :type  orientation:  int
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapMULTIVOXSET.import_from_gocad(GXContext._get_tls_geo(), name.encode(), header.encode(), property.encode(), ipj._wrapper, orientation)
+        gxapi_cy.WrapMULTIVOXSET._import_from_gocad(GXContext._get_tls_geo(), name.encode(), header.encode(), property.encode(), ipj, orientation)
         
 
 
@@ -223,8 +228,10 @@ class GXMULTIVOXSET:
         :type  lst:     GXLST
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapMULTIVOXSET.list_properties_gocad(GXContext._get_tls_geo(), header.encode(), lst._wrapper)
+        gxapi_cy.WrapMULTIVOXSET._list_properties_gocad(GXContext._get_tls_geo(), header.encode(), lst)
         
 
 
@@ -242,8 +249,10 @@ class GXMULTIVOXSET:
         :type  symb:        int
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapMULTIVOXSET.import_from_gdb(GXContext._get_tls_geo(), voxel_file.encode(), db._wrapper, symb)
+        gxapi_cy.WrapMULTIVOXSET._import_from_gdb(GXContext._get_tls_geo(), voxel_file.encode(), db, symb)
         
 
 
@@ -271,8 +280,10 @@ class GXMULTIVOXSET:
         :type  dec:          float
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapMULTIVOXSET.import_from_vector_gdb(GXContext._get_tls_geo(), voxel_file.encode(), db._wrapper, vector_type, symb_x, symb_y, symb_z, inc, dec)
+        gxapi_cy.WrapMULTIVOXSET._import_from_vector_gdb(GXContext._get_tls_geo(), voxel_file.encode(), db, vector_type, symb_x, symb_y, symb_z, inc, dec)
         
 
 
@@ -292,8 +303,10 @@ class GXMULTIVOXSET:
         :type  sample_interval:       float
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapMULTIVOXSET.export_to_segy(GXContext._get_tls_geo(), voxel_file.encode(), voxel_name.encode(), output_segy_filename.encode(), sample_interval)
+        gxapi_cy.WrapMULTIVOXSET._export_to_segy(GXContext._get_tls_geo(), voxel_file.encode(), voxel_name.encode(), output_segy_filename.encode(), sample_interval)
         
 
 
@@ -321,8 +334,10 @@ class GXMULTIVOXSET:
         :type  dummies:     bool
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapMULTIVOXSET.export_to_gdb(GXContext._get_tls_geo(), voxel_file.encode(), db._wrapper, chan.encode(), dir, rev_x, rev_y, rev_z, dummies)
+        gxapi_cy.WrapMULTIVOXSET._export_to_gdb(GXContext._get_tls_geo(), voxel_file.encode(), db, chan.encode(), dir, rev_x, rev_y, rev_z, dummies)
         
 
 
@@ -348,8 +363,10 @@ class GXMULTIVOXSET:
         :type  dummy:      str
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapMULTIVOXSET.export_to_wa(GXContext._get_tls_geo(), file_name.encode(), wa._wrapper, dir, rev_x, rev_y, rev_z, dummy.encode())
+        gxapi_cy.WrapMULTIVOXSET._export_to_wa(GXContext._get_tls_geo(), file_name.encode(), wa, dir, rev_x, rev_y, rev_z, dummy.encode())
         
 
 
@@ -375,8 +392,10 @@ class GXMULTIVOXSET:
         :type  rotated:        bool
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapMULTIVOXSET.convert_double_to_vector(GXContext._get_tls_geo(), x_file_name.encode(), y_file_name.encode(), z_file_name.encode(), out_file_name.encode(), inclination, declination, rotated)
+        gxapi_cy.WrapMULTIVOXSET._convert_double_to_vector(GXContext._get_tls_geo(), x_file_name.encode(), y_file_name.encode(), z_file_name.encode(), out_file_name.encode(), inclination, declination, rotated)
         
 
 
@@ -398,8 +417,10 @@ class GXMULTIVOXSET:
         :type  rotated:      bool
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapMULTIVOXSET.convert_vector_to_double(GXContext._get_tls_geo(), file_name.encode(), x_file_name.encode(), y_file_name.encode(), z_file_name.encode(), rotated)
+        gxapi_cy.WrapMULTIVOXSET._convert_vector_to_double(GXContext._get_tls_geo(), file_name.encode(), x_file_name.encode(), y_file_name.encode(), z_file_name.encode(), rotated)
         
 
 
@@ -435,8 +456,10 @@ class GXMULTIVOXSET:
         :type  ipj:     GXIPJ
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapMULTIVOXSET.create_double_constant(GXContext._get_tls_geo(), name.encode(), value, ox, oy, oz, cell_x, cell_y, cell_z, size_x, size_y, size_z, ipj._wrapper)
+        gxapi_cy.WrapMULTIVOXSET._create_double_constant(GXContext._get_tls_geo(), name.encode(), value, ox, oy, oz, cell_x, cell_y, cell_z, size_x, size_y, size_z, ipj)
         
 
 
@@ -472,8 +495,10 @@ class GXMULTIVOXSET:
         :type  ipj:     GXIPJ
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapMULTIVOXSET.create_thematic_constant(GXContext._get_tls_geo(), name.encode(), value, ox, oy, oz, cell_x, cell_y, cell_z, size_x, size_y, size_z, ipj._wrapper)
+        gxapi_cy.WrapMULTIVOXSET._create_thematic_constant(GXContext._get_tls_geo(), name.encode(), value, ox, oy, oz, cell_x, cell_y, cell_z, size_x, size_y, size_z, ipj)
         
 
 
@@ -513,8 +538,10 @@ class GXMULTIVOXSET:
         :type  ipj:      GXIPJ
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapMULTIVOXSET.create_vector_constant(GXContext._get_tls_geo(), name.encode(), value_x, value_y, value_z, ox, oy, oz, cell_x, cell_y, cell_z, size_x, size_y, size_z, ipj._wrapper)
+        gxapi_cy.WrapMULTIVOXSET._create_vector_constant(GXContext._get_tls_geo(), name.encode(), value_x, value_y, value_z, ox, oy, oz, cell_x, cell_y, cell_z, size_x, size_y, size_z, ipj)
         
 
 
@@ -544,8 +571,10 @@ class GXMULTIVOXSET:
         :type  ipj:    GXIPJ
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapMULTIVOXSET.create_double_constant_vv(GXContext._get_tls_geo(), name.encode(), value, ox, oy, oz, cx._wrapper, cy._wrapper, cz._wrapper, ipj._wrapper)
+        gxapi_cy.WrapMULTIVOXSET._create_double_constant_vv(GXContext._get_tls_geo(), name.encode(), value, ox, oy, oz, cx, cy, cz, ipj)
         
 
 
@@ -575,8 +604,10 @@ class GXMULTIVOXSET:
         :type  ipj:    GXIPJ
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapMULTIVOXSET.create_thematic_constant_vv(GXContext._get_tls_geo(), name.encode(), value, ox, oy, oz, cx._wrapper, cy._wrapper, cz._wrapper, ipj._wrapper)
+        gxapi_cy.WrapMULTIVOXSET._create_thematic_constant_vv(GXContext._get_tls_geo(), name.encode(), value, ox, oy, oz, cx, cy, cz, ipj)
         
 
 
@@ -610,8 +641,10 @@ class GXMULTIVOXSET:
         :type  ipj:      GXIPJ
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapMULTIVOXSET.create_vector_constant_vv(GXContext._get_tls_geo(), name.encode(), x_value, y_value, z_value, ox, oy, oz, cx._wrapper, cy._wrapper, cz._wrapper, ipj._wrapper)
+        gxapi_cy.WrapMULTIVOXSET._create_vector_constant_vv(GXContext._get_tls_geo(), name.encode(), x_value, y_value, z_value, ox, oy, oz, cx, cy, cz, ipj)
         
 
 
@@ -631,8 +664,10 @@ class GXMULTIVOXSET:
         :type  voxel_file:              str
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapMULTIVOXSET.export_to_voxel(GXContext._get_tls_geo(), project_file.encode(), multi_voxset_uuid.encode(), multi_voxset_attribute.encode(), voxel_file.encode())
+        gxapi_cy.WrapMULTIVOXSET._export_to_voxel(GXContext._get_tls_geo(), project_file.encode(), multi_voxset_uuid.encode(), multi_voxset_attribute.encode(), voxel_file.encode())
         
 
 
@@ -652,8 +687,10 @@ class GXMULTIVOXSET:
         :type  p_uuid_string:           str_ref
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        p_uuid_string.value = gxapi_cy.WrapMULTIVOXSET.import_from_voxel(GXContext._get_tls_geo(), project_file.encode(), voxel_file.encode(), multi_voxset_attribute.encode(), p_uuid_string.value.encode())
+        p_uuid_string.value = gxapi_cy.WrapMULTIVOXSET._import_from_voxel(GXContext._get_tls_geo(), project_file.encode(), voxel_file.encode(), multi_voxset_attribute.encode(), p_uuid_string.value.encode())
         
 
 
@@ -674,11 +711,11 @@ class GXMULTIVOXSET:
 
         .. versionadded:: 9.3
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Create a Geosoft Voxel file from a Datamine block model file.
+        **Note:** Create a Geosoft Voxel file from a Datamine block model file.
         """
-        gxapi_cy.WrapMULTIVOXSET.import_from_datamine(GXContext._get_tls_geo(), file.encode(), field.encode(), ipj._wrapper, voxel.encode())
+        gxapi_cy.WrapMULTIVOXSET._import_from_datamine(GXContext._get_tls_geo(), file.encode(), field.encode(), ipj, voxel.encode())
         
 
 
@@ -706,11 +743,11 @@ class GXMULTIVOXSET:
 
         .. versionadded:: 9.3
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Compute a default cell size for a voxel given a data range.
+        **Note:** Compute a default cell size for a voxel given a data range.
         """
-        ret_val = gxapi_cy.WrapMULTIVOXSET.compute_default_cell_size(GXContext._get_tls_geo(), min_x, max_x, min_y, max_y, min_z, max_z)
+        ret_val = gxapi_cy.WrapMULTIVOXSET._compute_default_cell_size(GXContext._get_tls_geo(), min_x, max_x, min_y, max_y, min_z, max_z)
         return ret_val
 
 
@@ -734,8 +771,10 @@ class GXMULTIVOXSET:
         :type  interpolate_dummies:  int
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapMULTIVOXSET.filter(GXContext._get_tls_geo(), input_file.encode(), output_file.encode(), filter, filter_file.encode(), n_passes, interpolate_dummies)
+        gxapi_cy.WrapMULTIVOXSET._filter(GXContext._get_tls_geo(), input_file.encode(), output_file.encode(), filter, filter_file.encode(), n_passes, interpolate_dummies)
         
 
 
@@ -780,11 +819,11 @@ class GXMULTIVOXSET:
 
         .. versionadded:: 9.3
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The Z and Data channels may be array channels. If they are, the array sizes must match.
+        **Note:** The Z and Data channels may be array channels. If they are, the array sizes must match.
         """
-        gxapi_cy.WrapMULTIVOXSET.grid_direct_from_gdb(GXContext._get_tls_geo(), output_voxel_filename.encode(), origin_x, origin_y, origin_z, cell_count_x, cell_count_y, cell_count_z, cell_size_x, cell_size_y, cell_size_z, method, db._wrapper, x_channel, y_channel, z_channel, data_channel)
+        gxapi_cy.WrapMULTIVOXSET._grid_direct_from_gdb(GXContext._get_tls_geo(), output_voxel_filename.encode(), origin_x, origin_y, origin_z, cell_count_x, cell_count_y, cell_count_z, cell_size_x, cell_size_y, cell_size_z, method, db, x_channel, y_channel, z_channel, data_channel)
         
 
 

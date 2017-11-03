@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXHGD:
+class GXHGD(gxapi_cy.WrapHGD):
     """
     GXHGD class.
 
@@ -24,37 +24,28 @@ class GXHGD:
     resolution.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapHGD(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXHGD`
+        A null (undefined) instance of `GXHGD <geosoft.gxapi.GXHGD>`
         
-        :returns: A null `GXHGD`
+        :returns: A null `GXHGD <geosoft.gxapi.GXHGD>`
+        :rtype:   GXHGD
         """
-        return cls()
+        return GXHGD()
 
     def is_null(self):
         """
-        Check if the instance of `GXHGD` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXHGD`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -72,8 +63,10 @@ class GXHGD:
         :rtype:       GXHGD
 
         .. versionadded:: 5.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapHGD.create(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapHGD._create(GXContext._get_tls_geo(), name.encode())
         return GXHGD(ret_val)
 
 
@@ -89,8 +82,10 @@ class GXHGD:
         :type  name:  str
 
         .. versionadded:: 6.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.export_img(name.encode())
+        self._export_img(name.encode())
         
 
 
@@ -104,8 +99,10 @@ class GXHGD:
         :type  meta:  GXMETA
 
         .. versionadded:: 5.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.get_meta(meta._wrapper)
+        self._get_meta(meta)
         
 
 
@@ -124,8 +121,10 @@ class GXHGD:
         :rtype:       GXHGD
 
         .. versionadded:: 5.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapHGD.h_create_img(GXContext._get_tls_geo(), img._wrapper, name.encode())
+        ret_val = gxapi_cy.WrapHGD._h_create_img(GXContext._get_tls_geo(), img, name.encode())
         return GXHGD(ret_val)
 
 
@@ -139,8 +138,10 @@ class GXHGD:
         :type  meta:  GXMETA
 
         .. versionadded:: 5.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_meta(meta._wrapper)
+        self._set_meta(meta)
         
 
 

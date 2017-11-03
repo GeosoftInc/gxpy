@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXMAPTEMPLATE:
+class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
     """
     GXMAPTEMPLATE class.
 
@@ -22,37 +22,28 @@ class GXMAPTEMPLATE:
     documentation in that folder for documentation on the file format.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapMAPTEMPLATE(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXMAPTEMPLATE`
+        A null (undefined) instance of `GXMAPTEMPLATE <geosoft.gxapi.GXMAPTEMPLATE>`
         
-        :returns: A null `GXMAPTEMPLATE`
+        :returns: A null `GXMAPTEMPLATE <geosoft.gxapi.GXMAPTEMPLATE>`
+        :rtype:   GXMAPTEMPLATE
         """
-        return cls()
+        return GXMAPTEMPLATE()
 
     def is_null(self):
         """
-        Check if the instance of `GXMAPTEMPLATE` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXMAPTEMPLATE`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Content Manipulation Methods
@@ -68,12 +59,12 @@ class GXMAPTEMPLATE:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        After manipulating contents the object may be updated by a call to
+        **Note:** After manipulating contents the object may be updated by a call to
         the UpdateFromTmpCopy method.
         """
-        tmp.value = self._wrapper.get_tmp_copy(tmp.value.encode())
+        tmp.value = self._get_tmp_copy(tmp.value.encode())
         
 
 
@@ -88,14 +79,14 @@ class GXMAPTEMPLATE:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        This method will not modify the original contents of the file until a call to the
+        **Note:** This method will not modify the original contents of the file until a call to the
         the Commit method is made or the object is destroyed. A call to the Discard method
         will restore the contents to that of the original file. The temporary file is not deleted
         and should be to not leak file resources.
         """
-        self._wrapper.update_from_tmp_copy(tmp.encode())
+        self._update_from_tmp_copy(tmp.encode())
         
 
 
@@ -111,8 +102,10 @@ class GXMAPTEMPLATE:
         
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.commit()
+        self._commit()
         
 
 
@@ -134,13 +127,13 @@ class GXMAPTEMPLATE:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The base template name should be the file name part of a geosoft_maptemplate
+        **Note:** The base template name should be the file name part of a geosoft_maptemplate
         file in the <geosoft>\\maptemplate or <geosoftuser>\\maptemplate folders. A base file
         in the user folder will override any in the Geosoft install dir.
         """
-        ret_val = gxapi_cy.WrapMAPTEMPLATE.create(GXContext._get_tls_geo(), name.encode(), base.encode(), mode)
+        ret_val = gxapi_cy.WrapMAPTEMPLATE._create(GXContext._get_tls_geo(), name.encode(), base.encode(), mode)
         return GXMAPTEMPLATE(ret_val)
 
 
@@ -154,8 +147,10 @@ class GXMAPTEMPLATE:
         
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.discard()
+        self._discard()
         
 
 
@@ -169,8 +164,10 @@ class GXMAPTEMPLATE:
         :type  name:         str_ref
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        name.value = self._wrapper.get_file_name(name.value.encode())
+        name.value = self._get_file_name(name.value.encode())
         
 
 
@@ -190,8 +187,10 @@ class GXMAPTEMPLATE:
         :type  group:        str
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.create_map(map.encode(), group.encode())
+        self._create_map(map.encode(), group.encode())
         
 
 
@@ -207,8 +206,10 @@ class GXMAPTEMPLATE:
         
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.refresh()
+        self._refresh()
         
 
 
@@ -231,8 +232,10 @@ class GXMAPTEMPLATE:
         :type  top:          int
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.render_preview(hdc, left, bottom, right, top)
+        self._render_preview(hdc, left, bottom, right, top)
         
 
 
@@ -255,13 +258,13 @@ class GXMAPTEMPLATE:
 
         .. versionadded:: 6.4
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        This method can also be used to get the data view pixel location
+        **Note:** This method can also be used to get the data view pixel location
         by passing a null DC handle. This help to plot the view contents
         preview from another location.
         """
-        left.value, bottom.value, right.value, top.value = self._wrapper.render_preview_map_production(hdc, left.value, bottom.value, right.value, top.value)
+        left.value, bottom.value, right.value, top.value = self._render_preview_map_production(hdc, left.value, bottom.value, right.value, top.value)
         
 
 

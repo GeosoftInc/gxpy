@@ -14,44 +14,35 @@ from .GXMVIEW import GXMVIEW
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXE3DV:
+class GXE3DV(gxapi_cy.WrapE3DV):
     """
     GXE3DV class.
 
     Methods to manipulate an active 3D View
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapE3DV(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXE3DV`
+        A null (undefined) instance of `GXE3DV <geosoft.gxapi.GXE3DV>`
         
-        :returns: A null `GXE3DV`
+        :returns: A null `GXE3DV <geosoft.gxapi.GXE3DV>`
+        :rtype:   GXE3DV
         """
-        return cls()
+        return GXE3DV()
 
     def is_null(self):
         """
-        Check if the instance of `GXE3DV` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXE3DV`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -67,8 +58,10 @@ class GXE3DV:
         :rtype:        GXMVIEW
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.get_data_view()
+        ret_val = self._get_data_view()
         return GXMVIEW(ret_val)
 
 
@@ -83,8 +76,10 @@ class GXE3DV:
         :rtype:        GXMVIEW
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.get_base_view()
+        ret_val = self._get_base_view()
         return GXMVIEW(ret_val)
 
 

@@ -14,7 +14,7 @@ from .GXSTK import GXSTK
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXMSTK:
+class GXMSTK(gxapi_cy.WrapMSTK):
     """
     GXMSTK class.
 
@@ -25,37 +25,28 @@ class GXMSTK:
     See also:         `GXSTK <geosoft.gxapi.GXSTK>` class.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapMSTK(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXMSTK`
+        A null (undefined) instance of `GXMSTK <geosoft.gxapi.GXMSTK>`
         
-        :returns: A null `GXMSTK`
+        :returns: A null `GXMSTK <geosoft.gxapi.GXMSTK>`
+        :rtype:   GXMSTK
         """
-        return cls()
+        return GXMSTK()
 
     def is_null(self):
         """
-        Check if the instance of `GXMSTK` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXMSTK`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -72,11 +63,11 @@ class GXMSTK:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Index to the added `GXSTK <geosoft.gxapi.GXSTK>` object is the last one in `GXMSTK <geosoft.gxapi.GXMSTK>` container.
+        **Note:** Index to the added `GXSTK <geosoft.gxapi.GXSTK>` object is the last one in `GXMSTK <geosoft.gxapi.GXMSTK>` container.
         """
-        ret_val = self._wrapper.add_stk()
+        ret_val = self._add_stk()
         return GXSTK(ret_val)
 
 
@@ -101,12 +92,12 @@ class GXMSTK:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Terms 'used' and 'unused' indicate that the a channel name
+        **Note:** Terms 'used' and 'unused' indicate that the a channel name
         in database also 'in' and 'not in' the `GXMSTK <geosoft.gxapi.GXMSTK>` object respectively
         """
-        self._wrapper.chan_list_vv(db._wrapper, num_ch_vv._wrapper, str_ch_vv._wrapper, x_ch_vv._wrapper, prof_ch_vv._wrapper, prof_ch__un_used_vv._wrapper)
+        self._chan_list_vv(db, num_ch_vv, str_ch_vv, x_ch_vv, prof_ch_vv, prof_ch__un_used_vv)
         
 
 
@@ -121,8 +112,10 @@ class GXMSTK:
         :rtype:      GXMSTK
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapMSTK.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapMSTK._create(GXContext._get_tls_geo())
         return GXMSTK(ret_val)
 
 
@@ -142,8 +135,10 @@ class GXMSTK:
         :type  map:   GXMAP
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.draw_profile(db._wrapper, line, map._wrapper)
+        self._draw_profile(db, line, map)
         
 
 
@@ -157,8 +152,10 @@ class GXMSTK:
         :type  direction:  int
 
         .. versionadded:: 8.3
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.set_y_axis_direction(direction)
+        self._set_y_axis_direction(direction)
         
 
 
@@ -177,16 +174,16 @@ class GXMSTK:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Format of the input string:
+        **Note:** Format of the input string:
         
         Map group name + " ( " + X channel name + " , " + Y channel name + " )"
         
         for example, string "DATA ( DIST , MAG )"  indicates a map group name of DATA,
         X channel name of DIST and Y channel name of MAG.
         """
-        index.value = self._wrapper.find_stk2(str_val.encode(), index.value, vv_rtd._wrapper)
+        index.value = self._find_stk2(str_val.encode(), index.value, vv_rtd)
         
 
 
@@ -204,8 +201,10 @@ class GXMSTK:
         :rtype:       GXSTK
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = self._wrapper.get_stk(num)
+        ret_val = self._get_stk(num)
         return GXSTK(ret_val)
 
 
@@ -220,11 +219,11 @@ class GXMSTK:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        0 is the first one
+        **Note:** 0 is the first one
         """
-        self._wrapper.delete_stk(num)
+        self._delete_stk(num)
         
 
 
@@ -247,16 +246,16 @@ class GXMSTK:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Format of the input string:
+        **Note:** Format of the input string:
         
         Map group name + " ( " + X channel name + " , " + Y channel name + " )"
         
         for example, string "DATA ( DIST , MAG )"  indicates a map group name of DATA,
         X channel name of DIST and Y channel name of MAG.
         """
-        index.value, group.value, x_ch.value, y_ch.value = self._wrapper.find_stk(str_val.encode(), index.value, group.value.encode(), x_ch.value.encode(), y_ch.value.encode())
+        index.value, group.value, x_ch.value, y_ch.value = self._find_stk(str_val.encode(), index.value, group.value.encode(), x_ch.value.encode(), y_ch.value.encode())
         
 
 
@@ -271,8 +270,10 @@ class GXMSTK:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = self._wrapper.get_num_stk()
+        ret_val = self._get_num_stk()
         return ret_val
 
 
@@ -286,8 +287,10 @@ class GXMSTK:
         :type  ra:    GXRA
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.read_ini(ra._wrapper)
+        self._read_ini(ra)
         
 
 
@@ -301,8 +304,10 @@ class GXMSTK:
         :type  wa:    GXWA
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.save_profile(wa._wrapper)
+        self._save_profile(wa)
         
 
 

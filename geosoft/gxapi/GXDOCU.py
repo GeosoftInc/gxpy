@@ -13,44 +13,35 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXDOCU:
+class GXDOCU(gxapi_cy.WrapDOCU):
     """
     GXDOCU class.
 
     Class to work with documents
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapDOCU(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXDOCU`
+        A null (undefined) instance of `GXDOCU <geosoft.gxapi.GXDOCU>`
         
-        :returns: A null `GXDOCU`
+        :returns: A null `GXDOCU <geosoft.gxapi.GXDOCU>`
+        :rtype:   GXDOCU
         """
-        return cls()
+        return GXDOCU()
 
     def is_null(self):
         """
-        Check if the instance of `GXDOCU` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXDOCU`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -65,8 +56,10 @@ class GXDOCU:
         :type  doc_us:  GXDOCU
 
         .. versionadded:: 5.1.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.copy(doc_us._wrapper)
+        self._copy(doc_us)
         
 
 
@@ -81,8 +74,10 @@ class GXDOCU:
         :rtype:      GXDOCU
 
         .. versionadded:: 5.1.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapDOCU.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapDOCU._create(GXContext._get_tls_geo())
         return GXDOCU(ret_val)
 
 
@@ -99,8 +94,10 @@ class GXDOCU:
         :rtype:      GXDOCU
 
         .. versionadded:: 5.1.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapDOCU.create_s(GXContext._get_tls_geo(), bf._wrapper)
+        ret_val = gxapi_cy.WrapDOCU._create_s(GXContext._get_tls_geo(), bf)
         return GXDOCU(ret_val)
 
 
@@ -116,8 +113,10 @@ class GXDOCU:
         :type  file:  str
 
         .. versionadded:: 5.1.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.get_file(file.encode())
+        self._get_file(file.encode())
         
 
 
@@ -132,9 +131,9 @@ class GXDOCU:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If this document is only a URL link, the URL link will
+        **Note:** If this document is only a URL link, the URL link will
         be resolved and the document downloaded from the appropriate
         server using the protocol specified.
         
@@ -142,7 +141,7 @@ class GXDOCU:
         support metadata, the metadata will be placed in an associated
         file "filename.extension.GeosoftMeta"
         """
-        self._wrapper.get_file_meta(file.encode())
+        self._get_file_meta(file.encode())
         
 
 
@@ -156,8 +155,10 @@ class GXDOCU:
         :type  meta:  GXMETA
 
         .. versionadded:: 5.1.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.get_meta(meta._wrapper)
+        self._get_meta(meta)
         
 
 
@@ -171,8 +172,10 @@ class GXDOCU:
         :type  name:  str_ref
 
         .. versionadded:: 5.1.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        name.value = self._wrapper.doc_name(name.value.encode())
+        name.value = self._doc_name(name.value.encode())
         
 
 
@@ -186,8 +189,10 @@ class GXDOCU:
         :type  name:  str_ref
 
         .. versionadded:: 5.1.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        name.value = self._wrapper.file_name(name.value.encode())
+        name.value = self._file_name(name.value.encode())
         
 
 
@@ -200,8 +205,10 @@ class GXDOCU:
         :rtype:       bool
 
         .. versionadded:: 5.1.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.have_meta()
+        ret_val = self._have_meta()
         return ret_val
 
 
@@ -216,8 +223,10 @@ class GXDOCU:
         :rtype:       int
 
         .. versionadded:: 5.1.6
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.is_reference()
+        ret_val = self._is_reference()
         return ret_val
 
 
@@ -232,12 +241,12 @@ class GXDOCU:
 
         .. versionadded:: 5.1.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        On Windows, the default application for the file extension is
+        **Note:** On Windows, the default application for the file extension is
         used to open the file.
         """
-        self._wrapper.open(mode)
+        self._open(mode)
         
 
 
@@ -251,8 +260,10 @@ class GXDOCU:
         :type  bf:    GXBF
 
         .. versionadded:: 5.1.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.serial(bf._wrapper)
+        self._serial(bf)
         
 
 
@@ -271,9 +282,9 @@ class GXDOCU:
 
         .. versionadded:: 5.1.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Document types are normally identified by their extension.  If you
+        **Note:** Document types are normally identified by their extension.  If you
         leave the document type blank, the extension of the document file
         will be used as the document type.
         
@@ -306,7 +317,7 @@ class GXDOCU:
         the `GXDOCU <geosoft.gxapi.GXDOCU>` class and the document can be retrieved using the sGetFile_DOCU
         method.
         """
-        self._wrapper.set_file(type.encode(), name.encode(), file.encode())
+        self._set_file(type.encode(), name.encode(), file.encode())
         
 
 
@@ -325,9 +336,9 @@ class GXDOCU:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        See `set_file <geosoft.gxapi.GXDOCU.set_file>`.
+        **Note:** See `set_file <geosoft.gxapi.GXDOCU.set_file>`.
         This function is the same as sSetFile_DOCU, plus insures that a
         `GXMETA <geosoft.gxapi.GXMETA>` exists that includes the "Data" class.  If the file has
         associated metadata, either supported natively in the file, or
@@ -343,7 +354,7 @@ class GXDOCU:
            "gdb"       Geosoft database
            "grd"       Geosoft grid file
         """
-        self._wrapper.set_file_meta(type.encode(), name.encode(), file.encode())
+        self._set_file_meta(type.encode(), name.encode(), file.encode())
         
 
 
@@ -357,8 +368,10 @@ class GXDOCU:
         :type  meta:  GXMETA
 
         .. versionadded:: 5.1.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_meta(meta._wrapper)
+        self._set_meta(meta)
         
 
 

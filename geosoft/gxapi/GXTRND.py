@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXTRND:
+class GXTRND(gxapi_cy.WrapTRND):
     """
     GXTRND class.
 
@@ -23,37 +23,28 @@ class GXTRND:
     such as Bigrid and Rangrid to enforce features in the specified direction.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapTRND(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXTRND`
+        A null (undefined) instance of `GXTRND <geosoft.gxapi.GXTRND>`
         
-        :returns: A null `GXTRND`
+        :returns: A null `GXTRND <geosoft.gxapi.GXTRND>`
+        :rtype:   GXTRND
         """
-        return cls()
+        return GXTRND()
 
     def is_null(self):
         """
-        Check if the instance of `GXTRND` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXTRND`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -83,11 +74,11 @@ class GXTRND:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Trend lines positions consist of X and Y VVs
+        **Note:** Trend lines positions consist of X and Y VVs
         """
-        gxapi_cy.WrapTRND.get_max_min(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_xm._wrapper, v_vym._wrapper, v_vzm._wrapper, window, trnd)
+        gxapi_cy.WrapTRND._get_max_min(GXContext._get_tls_geo(), vv_x, vv_y, vv_z, vv_xm, v_vym, v_vzm, window, trnd)
         
 
 
@@ -111,8 +102,10 @@ class GXTRND:
         :type  trnd:        int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapTRND.get_mesh(GXContext._get_tls_geo(), db._wrapper, chan.encode(), window, max_length, mesh_vv._wrapper, trnd)
+        gxapi_cy.WrapTRND._get_mesh(GXContext._get_tls_geo(), db, chan.encode(), window, max_length, mesh_vv, trnd)
         
 
 
@@ -144,8 +137,10 @@ class GXTRND:
         :type  br_angle:    float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapTRND.trnd_db(GXContext._get_tls_geo(), db._wrapper, chan.encode(), window, angle, deviation, max_length, deflection, min_length, resample, br_angle)
+        gxapi_cy.WrapTRND._trnd_db(GXContext._get_tls_geo(), db, chan.encode(), window, angle, deviation, max_length, deflection, min_length, resample, br_angle)
         
 
 

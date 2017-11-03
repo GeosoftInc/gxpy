@@ -15,7 +15,7 @@ from .GXWA import GXWA
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXSYS:
+class GXSYS(gxapi_cy.WrapSYS):
     """
     GXSYS class.
 
@@ -66,37 +66,28 @@ class GXSYS:
     ``setting = "value4"``
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapSYS(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXSYS`
+        A null (undefined) instance of `GXSYS <geosoft.gxapi.GXSYS>`
         
-        :returns: A null `GXSYS`
+        :returns: A null `GXSYS <geosoft.gxapi.GXSYS>`
+        :rtype:   GXSYS
         """
-        return cls()
+        return GXSYS()
 
     def is_null(self):
         """
-        Check if the instance of `GXSYS` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXSYS`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Date/Time
@@ -117,8 +108,10 @@ class GXSYS:
         :type  day:    int_ref
 
         .. versionadded:: 5.1.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        year.value, month.value, day.value = gxapi_cy.WrapSYS.break_date(GXContext._get_tls_geo(), date, year.value, month.value, day.value)
+        year.value, month.value, day.value = gxapi_cy.WrapSYS._break_date(GXContext._get_tls_geo(), date, year.value, month.value, day.value)
         
 
 
@@ -137,8 +130,10 @@ class GXSYS:
         :rtype:       int
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.dateto_long(GXContext._get_tls_geo(), date)
+        ret_val = gxapi_cy.WrapSYS._dateto_long(GXContext._get_tls_geo(), date)
         return ret_val
 
 
@@ -155,8 +150,10 @@ class GXSYS:
         :rtype:       int
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.timeto_long(GXContext._get_tls_geo(), time)
+        ret_val = gxapi_cy.WrapSYS._timeto_long(GXContext._get_tls_geo(), time)
         return ret_val
 
 
@@ -172,12 +169,12 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The FormatDate_STR function can be used to convert a date to
+        **Note:** The FormatDate_STR function can be used to convert a date to
         a string.
         """
-        ret_val = gxapi_cy.WrapSYS.date(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapSYS._date(GXContext._get_tls_geo())
         return ret_val
 
 
@@ -196,8 +193,10 @@ class GXSYS:
         :rtype:       float
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.longto_date(GXContext._get_tls_geo(), days)
+        ret_val = gxapi_cy.WrapSYS._longto_date(GXContext._get_tls_geo(), days)
         return ret_val
 
 
@@ -214,8 +213,10 @@ class GXSYS:
         :rtype:      float
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.longto_time(GXContext._get_tls_geo(), sec)
+        ret_val = gxapi_cy.WrapSYS._longto_time(GXContext._get_tls_geo(), sec)
         return ret_val
 
 
@@ -236,8 +237,10 @@ class GXSYS:
         :rtype:        float
 
         .. versionadded:: 5.1.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.make_date(GXContext._get_tls_geo(), year, month, day)
+        ret_val = gxapi_cy.WrapSYS._make_date(GXContext._get_tls_geo(), year, month, day)
         return ret_val
 
 
@@ -254,8 +257,10 @@ class GXSYS:
         :rtype:      float
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.secondsto_time(GXContext._get_tls_geo(), sec)
+        ret_val = gxapi_cy.WrapSYS._secondsto_time(GXContext._get_tls_geo(), sec)
         return ret_val
 
 
@@ -271,12 +276,12 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The FormatTime_STR function can be used to convert a time to
+        **Note:** The FormatTime_STR function can be used to convert a time to
         a string.
         """
-        ret_val = gxapi_cy.WrapSYS.time(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapSYS._time(GXContext._get_tls_geo())
         return ret_val
 
 
@@ -293,8 +298,10 @@ class GXSYS:
         :rtype:       float
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.timeto_seconds(GXContext._get_tls_geo(), time)
+        ret_val = gxapi_cy.WrapSYS._timeto_seconds(GXContext._get_tls_geo(), time)
         return ret_val
 
 
@@ -310,12 +317,12 @@ class GXSYS:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The FormatDate_STR function can be used to convert a date to
+        **Note:** The FormatDate_STR function can be used to convert a date to
         a string.
         """
-        ret_val = gxapi_cy.WrapSYS.utc_date(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapSYS._utc_date(GXContext._get_tls_geo())
         return ret_val
 
 
@@ -331,12 +338,12 @@ class GXSYS:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The FormatTime_STR function can be used to convert a time to
+        **Note:** The FormatTime_STR function can be used to convert a time to
         a string.
         """
-        ret_val = gxapi_cy.WrapSYS.utc_time(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapSYS._utc_time(GXContext._get_tls_geo())
         return ret_val
 
 
@@ -358,8 +365,10 @@ class GXSYS:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.exist_env(GXContext._get_tls_geo(), parm.encode())
+        ret_val = gxapi_cy.WrapSYS._exist_env(GXContext._get_tls_geo(), parm.encode())
         return ret_val
 
 
@@ -375,8 +384,10 @@ class GXSYS:
         :type  set:   str_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        set.value = gxapi_cy.WrapSYS.get_env(GXContext._get_tls_geo(), parm.encode(), set.value.encode())
+        set.value = gxapi_cy.WrapSYS._get_env(GXContext._get_tls_geo(), parm.encode(), set.value.encode())
         
 
 
@@ -392,8 +403,10 @@ class GXSYS:
         :type  set:   str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.set_env(GXContext._get_tls_geo(), parm.encode(), set.encode())
+        gxapi_cy.WrapSYS._set_env(GXContext._get_tls_geo(), parm.encode(), set.encode())
         
 
 
@@ -412,8 +425,10 @@ class GXSYS:
         :rtype:      int
 
         .. versionadded:: 5.1.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.clear_err_ap(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapSYS._clear_err_ap(GXContext._get_tls_geo())
         return ret_val
 
 
@@ -428,8 +443,10 @@ class GXSYS:
         :rtype:      int
 
         .. versionadded:: 8.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.get_top_error_ap(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapSYS._get_top_error_ap(GXContext._get_tls_geo())
         return ret_val
 
 
@@ -446,14 +463,14 @@ class GXSYS:
 
         .. versionadded:: 6.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This wrapper is mostly for use outside of GXs,
+        **Note:** This wrapper is mostly for use outside of GXs,
         because in general if an error is registered in a GX
         the GX would terminate before it could be called.
         Use `num_errors_ap <geosoft.gxapi.GXSYS.num_errors_ap>` to get the number of registered errors.
         """
-        err_str.value = gxapi_cy.WrapSYS.get_error_message_ap(GXContext._get_tls_geo(), err, err_str.value.encode())
+        err_str.value = gxapi_cy.WrapSYS._get_error_message_ap(GXContext._get_tls_geo(), err, err_str.value.encode())
         
 
 
@@ -469,9 +486,9 @@ class GXSYS:
 
         .. versionadded:: 6.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This wrapper is mostly for use outside of GXs,
+        **Note:** This wrapper is mostly for use outside of GXs,
         because in general if an error is registered in a GX
         the GX would terminate before it could be called.
 
@@ -479,7 +496,7 @@ class GXSYS:
 
             GetErrorMessageAP_SYS
         """
-        ret_val = gxapi_cy.WrapSYS.num_errors_ap(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapSYS._num_errors_ap(GXContext._get_tls_geo())
         return ret_val
 
 
@@ -494,12 +511,12 @@ class GXSYS:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Should be set to false when dialogs should not
+        **Note:** Should be set to false when dialogs should not
         appear. This setting is thread specific.
         """
-        gxapi_cy.WrapSYS.set_server_messages_ap(GXContext._get_tls_geo(), flag)
+        gxapi_cy.WrapSYS._set_server_messages_ap(GXContext._get_tls_geo(), flag)
         
 
 
@@ -526,9 +543,9 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The Default option for each define below is the first one
+        **Note:** The Default option for each define below is the first one
         and is set to 0.
         
         We look for the command object in the following order:
@@ -537,7 +554,7 @@ class GXSYS:
         2. the <geosoft>\\bin directory
         3. the system path
         """
-        ret_val = gxapi_cy.WrapSYS.run(GXContext._get_tls_geo(), command.encode(), args.encode(), process)
+        ret_val = gxapi_cy.WrapSYS._run(GXContext._get_tls_geo(), command.encode(), args.encode(), process)
         return ret_val
 
 
@@ -558,11 +575,13 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
         .. seealso::
 
             `set_interactive <geosoft.gxapi.GXSYS.set_interactive>`, `run_gx <geosoft.gxapi.GXSYS.run_gx>`
         """
-        ret_val = gxapi_cy.WrapSYS.run_gs(GXContext._get_tls_geo(), gs.encode())
+        ret_val = gxapi_cy.WrapSYS._run_gs(GXContext._get_tls_geo(), gs.encode())
         return ret_val
 
 
@@ -583,9 +602,9 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the called GX returns an error, they will not be
+        **Note:** If the called GX returns an error, they will not be
         displayed until the "top" calling GX terminates, unless you
         call `show_error <geosoft.gxapi.GXSYS.show_error>`.
 
@@ -593,7 +612,7 @@ class GXSYS:
 
             `run_gx_ex <geosoft.gxapi.GXSYS.run_gx_ex>`, `set_interactive <geosoft.gxapi.GXSYS.set_interactive>` and `run_gs <geosoft.gxapi.GXSYS.run_gs>`
         """
-        ret_val = gxapi_cy.WrapSYS.run_gx(GXContext._get_tls_geo(), gx.encode())
+        ret_val = gxapi_cy.WrapSYS._run_gx(GXContext._get_tls_geo(), gx.encode())
         return ret_val
 
 
@@ -616,11 +635,13 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
         .. seealso::
 
             `run_gx <geosoft.gxapi.GXSYS.run_gx>`, `set_return <geosoft.gxapi.GXSYS.set_return>`
         """
-        ret_val, ret.value = gxapi_cy.WrapSYS.run_gx_ex(GXContext._get_tls_geo(), gx.encode(), ret.value)
+        ret_val, ret.value = gxapi_cy.WrapSYS._run_gx_ex(GXContext._get_tls_geo(), gx.encode(), ret.value)
         return ret_val
 
 
@@ -640,13 +661,15 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The group name of the PDF variables will be "group_pdf",
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The group name of the PDF variables will be "group_pdf",
         where "group" is the name given in the first argument,
         and "pdf" is the root PDF file name.
         """
-        ret_val = gxapi_cy.WrapSYS.run_pdf(GXContext._get_tls_geo(), mnu.encode(), pdf.encode())
+        ret_val = gxapi_cy.WrapSYS._run_pdf(GXContext._get_tls_geo(), mnu.encode(), pdf.encode())
         return ret_val
 
 
@@ -672,11 +695,13 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
         .. seealso::
 
             `do_command <geosoft.gxapi.GXSYS.do_command>`
         """
-        ret_val = gxapi_cy.WrapSYS.shell_execute(GXContext._get_tls_geo(), verb.encode(), file.encode(), parameters.encode(), directory.encode(), show)
+        ret_val = gxapi_cy.WrapSYS._shell_execute(GXContext._get_tls_geo(), verb.encode(), file.encode(), parameters.encode(), directory.encode(), show)
         return ret_val
 
 
@@ -691,11 +716,11 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This value is returned in the `run_gx_ex <geosoft.gxapi.GXSYS.run_gx_ex>` call only.
+        **Note:** This value is returned in the `run_gx_ex <geosoft.gxapi.GXSYS.run_gx_ex>` call only.
         """
-        gxapi_cy.WrapSYS.set_return(GXContext._get_tls_geo(), ret)
+        gxapi_cy.WrapSYS._set_return(GXContext._get_tls_geo(), ret)
         
 
 
@@ -714,9 +739,11 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Commands syntax:  "[type] command"
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Commands syntax:  "[type] command"
         
         =======  ============================================================================================
         type     command
@@ -746,7 +773,7 @@ class GXSYS:
 
             `shell_execute <geosoft.gxapi.GXSYS.shell_execute>`
         """
-        gxapi_cy.WrapSYS.do_command(GXContext._get_tls_geo(), command.encode())
+        gxapi_cy.WrapSYS._do_command(GXContext._get_tls_geo(), command.encode())
         
 
 
@@ -765,9 +792,9 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Use this function to register your own error
+        **Note:** Use this function to register your own error
         messages when an error occurs in your code.  Your
         errors can be provided in your own `GXGER <geosoft.gxapi.GXGER>` file.  See
         GEOSOFT.`GXGER <geosoft.gxapi.GXGER>` for an example of the `GXGER <geosoft.gxapi.GXGER>` file format.
@@ -776,7 +803,7 @@ class GXSYS:
         OE32.`GXGER <geosoft.gxapi.GXGER>` file, then the GEOSOFT.`GXGER <geosoft.gxapi.GXGER>` file will be
         searched.
         """
-        gxapi_cy.WrapSYS.error(GXContext._get_tls_geo(), error_file.encode(), module.encode(), error)
+        gxapi_cy.WrapSYS._error(GXContext._get_tls_geo(), error_file.encode(), module.encode(), error)
         
 
 
@@ -793,15 +820,15 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Use this method to replace tag strings in your error
+        **Note:** Use this method to replace tag strings in your error
         message text with run-time information.  For example,
         Geosoft error messages often use the tag strings "%1",
         "%2", etc. as place holders to be replaced by a string
         which is only known at run-time.
         """
-        gxapi_cy.WrapSYS.error_tag(GXContext._get_tls_geo(), tag.encode(), set.encode())
+        gxapi_cy.WrapSYS._error_tag(GXContext._get_tls_geo(), tag.encode(), set.encode())
         
 
 
@@ -824,9 +851,9 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Use this function to evaluate errors in passed
+        **Note:** Use this function to evaluate errors in passed
         function arguments.  Functions called by GX programs
         should be tolerant of all errors in the passed argument
         list.  The `assert_gx <geosoft.gxapi.GXSYS.assert_gx>` can be used to test each
@@ -841,7 +868,7 @@ class GXSYS:
         functions if you would like to provide a more specific
         error message.
         """
-        ret_val = gxapi_cy.WrapSYS.assert_gx(GXContext._get_tls_geo(), exp, mod.encode(), parm.encode())
+        ret_val = gxapi_cy.WrapSYS._assert_gx(GXContext._get_tls_geo(), exp, mod.encode(), parm.encode())
         return ret_val
 
 
@@ -862,8 +889,12 @@ class GXSYS:
         :rtype:           int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapSYS.ole_automation(GXContext._get_tls_geo(), object.encode(), info_str.encode(), info_val)
+        ret_val = gxapi_cy.WrapSYS._ole_automation(GXContext._get_tls_geo(), object.encode(), info_str.encode(), info_val)
         return ret_val
 
 
@@ -877,8 +908,12 @@ class GXSYS:
         :type  file:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapSYS.save_log(GXContext._get_tls_geo(), file.encode())
+        gxapi_cy.WrapSYS._save_log(GXContext._get_tls_geo(), file.encode())
         
 
 
@@ -893,9 +928,9 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Call this function immediately before returning to
+        **Note:** Call this function immediately before returning to
         the caller after an error has occurred inside the
         DLL.  If an error has occurred, you should clean-up
         (free memory, close files), call `error <geosoft.gxapi.GXSYS.error>` to register
@@ -906,7 +941,7 @@ class GXSYS:
         already registered their own errors and called
         `terminate <geosoft.gxapi.GXSYS.terminate>`.
         """
-        gxapi_cy.WrapSYS.terminate(GXContext._get_tls_geo(), name.encode())
+        gxapi_cy.WrapSYS._terminate(GXContext._get_tls_geo(), name.encode())
         
 
 
@@ -927,8 +962,10 @@ class GXSYS:
         :rtype:       int
 
         .. versionadded:: 6.0.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.crc_file(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapSYS._crc_file(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
@@ -947,8 +984,10 @@ class GXSYS:
         :rtype:         int
 
         .. versionadded:: 6.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.crc_file_offset(GXContext._get_tls_geo(), file.encode(), offset)
+        ret_val = gxapi_cy.WrapSYS._crc_file_offset(GXContext._get_tls_geo(), file.encode(), offset)
         return ret_val
 
 
@@ -964,8 +1003,10 @@ class GXSYS:
         :type  new_file:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.file_ren(GXContext._get_tls_geo(), old_file.encode(), new_file.encode())
+        gxapi_cy.WrapSYS._file_ren(GXContext._get_tls_geo(), old_file.encode(), new_file.encode())
         
 
 
@@ -982,12 +1023,12 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Fill a `GXVV <geosoft.gxapi.GXVV>` with files matching the input file mask.
+        **Note:** Fill a `GXVV <geosoft.gxapi.GXVV>` with files matching the input file mask.
         The `GXVV <geosoft.gxapi.GXVV>` should be of string type.
         """
-        gxapi_cy.WrapSYS.find_files_vv(GXContext._get_tls_geo(), vv._wrapper, mask.encode())
+        gxapi_cy.WrapSYS._find_files_vv(GXContext._get_tls_geo(), vv, mask.encode())
         
 
 
@@ -1004,12 +1045,12 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This is mainly intended to convert ".\\name" to a full
+        **Note:** This is mainly intended to convert ".\\name" to a full
         name at run-time.
         """
-        name.value = gxapi_cy.WrapSYS.absolute_file_name(GXContext._get_tls_geo(), abbr.encode(), name.value.encode())
+        name.value = gxapi_cy.WrapSYS._absolute_file_name(GXContext._get_tls_geo(), abbr.encode(), name.value.encode())
         
 
 
@@ -1029,8 +1070,10 @@ class GXSYS:
         :rtype:            int
 
         .. versionadded:: 5.1.8
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.copy_file(GXContext._get_tls_geo(), src_file.encode(), dest_file.encode())
+        ret_val = gxapi_cy.WrapSYS._copy_file(GXContext._get_tls_geo(), src_file.encode(), dest_file.encode())
         return ret_val
 
 
@@ -1048,8 +1091,10 @@ class GXSYS:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.delete_file(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapSYS._delete_file(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
@@ -1070,8 +1115,10 @@ class GXSYS:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.delete_gi_file(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapSYS._delete_gi_file(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
@@ -1090,13 +1137,13 @@ class GXSYS:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Deletes the grid file first, and, if they exist, the associated GI
+        **Note:** Deletes the grid file first, and, if they exist, the associated GI
         and XML files.
         No error is registered if a file is not found or cannot be deleted.
         """
-        ret_val = gxapi_cy.WrapSYS.delete_grid_file(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapSYS._delete_grid_file(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
@@ -1114,8 +1161,10 @@ class GXSYS:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.dir_exist(GXContext._get_tls_geo(), dir.encode())
+        ret_val = gxapi_cy.WrapSYS._dir_exist(GXContext._get_tls_geo(), dir.encode())
         return ret_val
 
 
@@ -1134,13 +1183,13 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Use the FULL path for the file name. If the full
+        **Note:** Use the FULL path for the file name. If the full
         path is not specified, then the current working
         directory is used for the path.
         """
-        ret_val = gxapi_cy.WrapSYS.file_exist(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapSYS._file_exist(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
@@ -1158,8 +1207,10 @@ class GXSYS:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.file_size(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapSYS._file_size(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
@@ -1175,8 +1226,10 @@ class GXSYS:
         :rtype:       bool
 
         .. versionadded:: 6.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.file_writable(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapSYS._file_writable(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
@@ -1199,9 +1252,9 @@ class GXSYS:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Directories can be resolved from the Environment section of the
+        **Note:** Directories can be resolved from the Environment section of the
         Geosoft registry, or from system environment variables that are
         not defined in the Geosoft Environment registry.  The following
         file prefixes will be replaced by the environment settings:
@@ -1213,7 +1266,7 @@ class GXSYS:
         <system>       the operating system system directory
         <other>        other environment variables
         """
-        ret_val, fullname.value = gxapi_cy.WrapSYS.find_path(GXContext._get_tls_geo(), file.encode(), mode, fullname.value.encode())
+        ret_val, fullname.value = gxapi_cy.WrapSYS._find_path(GXContext._get_tls_geo(), file.encode(), mode, fullname.value.encode())
         return ret_val
 
 
@@ -1238,9 +1291,9 @@ class GXSYS:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Directories can be resolved from the Environment section of the
+        **Note:** Directories can be resolved from the Environment section of the
         Geosoft registry, or from system environment variables that are
         not defined in the Geosoft Environment registry.  The following
         file prefixes will be replaced by the environment settings:
@@ -1252,7 +1305,7 @@ class GXSYS:
         <system>       the operating system system directory
         <other>        other environment variable
         """
-        ret_val, fullname.value = gxapi_cy.WrapSYS.find_path_ex(GXContext._get_tls_geo(), file.encode(), mode, dir_mode, fullname.value.encode())
+        ret_val, fullname.value = gxapi_cy.WrapSYS._find_path_ex(GXContext._get_tls_geo(), file.encode(), mode, dir_mode, fullname.value.encode())
         return ret_val
 
 
@@ -1269,11 +1322,11 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The path will always end with the file separator character
+        **Note:** The path will always end with the file separator character
         """
-        dir.value = gxapi_cy.WrapSYS.get_directory(GXContext._get_tls_geo(), sys_dir, dir.value.encode())
+        dir.value = gxapi_cy.WrapSYS._get_directory(GXContext._get_tls_geo(), sys_dir, dir.value.encode())
         
 
 
@@ -1290,11 +1343,11 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The path name will have a directory separator at the end.
+        **Note:** The path name will have a directory separator at the end.
         """
-        path.value = gxapi_cy.WrapSYS.get_path(GXContext._get_tls_geo(), type, path.value.encode())
+        path.value = gxapi_cy.WrapSYS._get_path(GXContext._get_tls_geo(), type, path.value.encode())
         
 
 
@@ -1308,8 +1361,10 @@ class GXSYS:
         :type  dir:  str_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        dir.value = gxapi_cy.WrapSYS.get_windows_dir(GXContext._get_tls_geo(), dir.value.encode())
+        dir.value = gxapi_cy.WrapSYS._get_windows_dir(GXContext._get_tls_geo(), dir.value.encode())
         
 
 
@@ -1327,8 +1382,10 @@ class GXSYS:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.make_dir(GXContext._get_tls_geo(), dir.encode())
+        ret_val = gxapi_cy.WrapSYS._make_dir(GXContext._get_tls_geo(), dir.encode())
         return ret_val
 
 
@@ -1346,8 +1403,10 @@ class GXSYS:
         :rtype:       int
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.make_file_readonly(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapSYS._make_file_readonly(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
@@ -1365,8 +1424,10 @@ class GXSYS:
         :rtype:       int
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.make_file_writable(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapSYS._make_file_writable(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
@@ -1383,12 +1444,12 @@ class GXSYS:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This will produce relative paths based on the workspace
+        **Note:** This will produce relative paths based on the workspace
         directory into ".\\name".
         """
-        name.value = gxapi_cy.WrapSYS.relative_file_name(GXContext._get_tls_geo(), abbr.encode(), name.value.encode())
+        name.value = gxapi_cy.WrapSYS._relative_file_name(GXContext._get_tls_geo(), abbr.encode(), name.value.encode())
         
 
 
@@ -1404,8 +1465,10 @@ class GXSYS:
         :type  name:     str_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        name.value = gxapi_cy.WrapSYS.short_path_file_name(GXContext._get_tls_geo(), in_name.encode(), name.value.encode())
+        name.value = gxapi_cy.WrapSYS._short_path_file_name(GXContext._get_tls_geo(), in_name.encode(), name.value.encode())
         
 
 
@@ -1422,11 +1485,11 @@ class GXSYS:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This is useful for created a unique tempory name for a file in the Geosoft temporary directory.
+        **Note:** This is useful for created a unique tempory name for a file in the Geosoft temporary directory.
         """
-        out.value = gxapi_cy.WrapSYS.temp_file_ext(GXContext._get_tls_geo(), ext.encode(), out.value.encode())
+        out.value = gxapi_cy.WrapSYS._temp_file_ext(GXContext._get_tls_geo(), ext.encode(), out.value.encode())
         
 
 
@@ -1443,15 +1506,15 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This is useful for created a unique tempory name for a file in the Geosoft temporary directory.
+        **Note:** This is useful for created a unique tempory name for a file in the Geosoft temporary directory.
         
         From version 7.0 The file extension will match the input file, but the
         filename itself will be a process and thread unique value to ensure that
         clashes does not happen.
         """
-        out_filename.value = gxapi_cy.WrapSYS.temp_file_name(GXContext._get_tls_geo(), path_file.encode(), out_filename.value.encode())
+        out_filename.value = gxapi_cy.WrapSYS._temp_file_name(GXContext._get_tls_geo(), path_file.encode(), out_filename.value.encode())
         
 
 
@@ -1468,12 +1531,12 @@ class GXSYS:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The path and volume of from the input string is added to
+        **Note:** The path and volume of from the input string is added to
         file name from the output string.
         """
-        file.value = gxapi_cy.WrapSYS.transfer_path(GXContext._get_tls_geo(), path_file.encode(), file.value.encode())
+        file.value = gxapi_cy.WrapSYS._transfer_path(GXContext._get_tls_geo(), path_file.encode(), file.value.encode())
         
 
 
@@ -1492,13 +1555,13 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Use the FULL path for the file name. If the full
+        **Note:** Use the FULL path for the file name. If the full
         path is not specified, then the current working
         directory is used for the path.
         """
-        ret_val = gxapi_cy.WrapSYS.valid_file_name(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapSYS._valid_file_name(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
@@ -1516,8 +1579,10 @@ class GXSYS:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.write_in_dir(GXContext._get_tls_geo(), dir.encode())
+        ret_val = gxapi_cy.WrapSYS._write_in_dir(GXContext._get_tls_geo(), dir.encode())
         return ret_val
 
 
@@ -1535,12 +1600,12 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The FormatDate_STR function can be used to convert a date
+        **Note:** The FormatDate_STR function can be used to convert a date
         to a string.
         """
-        ret_val = gxapi_cy.WrapSYS.file_date(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapSYS._file_date(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
@@ -1558,12 +1623,12 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The FormatTime_STR function can be used to convert a time
+        **Note:** The FormatTime_STR function can be used to convert a time
         to a string.
         """
-        ret_val = gxapi_cy.WrapSYS.file_time(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapSYS._file_time(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
@@ -1581,12 +1646,12 @@ class GXSYS:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The FormatDate_STR function can be used to convert a date
+        **Note:** The FormatDate_STR function can be used to convert a date
         to a string.
         """
-        ret_val = gxapi_cy.WrapSYS.utc_file_date(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapSYS._utc_file_date(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
@@ -1604,12 +1669,12 @@ class GXSYS:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The FormatTime_STR function can be used to convert a time
+        **Note:** The FormatTime_STR function can be used to convert a time
         to a string.
         """
-        ret_val = gxapi_cy.WrapSYS.utc_file_time(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapSYS._utc_file_time(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
@@ -1627,8 +1692,10 @@ class GXSYS:
         :type  meta:  GXMETA
 
         .. versionadded:: 6.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.get_settings_meta(GXContext._get_tls_geo(), meta._wrapper)
+        gxapi_cy.WrapSYS._get_settings_meta(GXContext._get_tls_geo(), meta)
         
 
 
@@ -1642,8 +1709,10 @@ class GXSYS:
         :type  ini:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.global_reset(GXContext._get_tls_geo(), ini.encode())
+        gxapi_cy.WrapSYS._global_reset(GXContext._get_tls_geo(), ini.encode())
         
 
 
@@ -1659,8 +1728,10 @@ class GXSYS:
         :type  set:   str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.global_set(GXContext._get_tls_geo(), parm.encode(), set.encode())
+        gxapi_cy.WrapSYS._global_set(GXContext._get_tls_geo(), parm.encode(), set.encode())
         
 
 
@@ -1675,12 +1746,12 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the global parameters have been changed, use
+        **Note:** If the global parameters have been changed, use
         this function to make the changes permanent,
         """
-        gxapi_cy.WrapSYS.global_write(GXContext._get_tls_geo(), ini.encode())
+        gxapi_cy.WrapSYS._global_write(GXContext._get_tls_geo(), ini.encode())
         
 
 
@@ -1701,9 +1772,9 @@ class GXSYS:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The returned string will be empty if the parameter is
+        **Note:** The returned string will be empty if the parameter is
         not found.
         
         Parameters are derived from GEOSOFT.INI.
@@ -1721,7 +1792,7 @@ class GXSYS:
         retrieve the string "setting is text".  The double
         quotes will not appear in the setting.
         """
-        ret_val, setting.value = gxapi_cy.WrapSYS.global_(GXContext._get_tls_geo(), parm.encode(), setting.value.encode())
+        ret_val, setting.value = gxapi_cy.WrapSYS._global_(GXContext._get_tls_geo(), parm.encode(), setting.value.encode())
         return ret_val
 
 
@@ -1734,8 +1805,12 @@ class GXSYS:
         
 
         .. versionadded:: 5.1.8
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapSYS.reset_settings(GXContext._get_tls_geo())
+        gxapi_cy.WrapSYS._reset_settings(GXContext._get_tls_geo())
         
 
 
@@ -1749,8 +1824,10 @@ class GXSYS:
         :type  meta:  GXMETA
 
         .. versionadded:: 6.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.set_settings_meta(GXContext._get_tls_geo(), meta._wrapper)
+        gxapi_cy.WrapSYS._set_settings_meta(GXContext._get_tls_geo(), meta)
         
 
 
@@ -1770,8 +1847,10 @@ class GXSYS:
         :rtype:      int
 
         .. versionadded:: 7.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.check_arc_license(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapSYS._check_arc_license(GXContext._get_tls_geo())
         return ret_val
 
 
@@ -1788,8 +1867,10 @@ class GXSYS:
         :rtype:          int
 
         .. versionadded:: 9.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val, version.value = gxapi_cy.WrapSYS.check_arc_license_ex(GXContext._get_tls_geo(), version.value.encode())
+        ret_val, version.value = gxapi_cy.WrapSYS._check_arc_license_ex(GXContext._get_tls_geo(), version.value.encode())
         return ret_val
 
 
@@ -1809,8 +1890,10 @@ class GXSYS:
         :rtype:       int
 
         .. versionadded:: 6.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.check_intrinsic(GXContext._get_tls_geo(), cl, name.encode())
+        ret_val = gxapi_cy.WrapSYS._check_intrinsic(GXContext._get_tls_geo(), cl, name.encode())
         return ret_val
 
 
@@ -1826,8 +1909,10 @@ class GXSYS:
         :rtype:      int
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.get_geodist(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapSYS._get_geodist(GXContext._get_tls_geo())
         return ret_val
 
 
@@ -1842,13 +1927,13 @@ class GXSYS:
 
         .. versionadded:: 6.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        String may be one of :  "ArcGIS"
+        **Note:** String may be one of :  "ArcGIS"
         "OasisMontaj"
         "DapServer"
         """
-        cl.value = gxapi_cy.WrapSYS.get_license_class(GXContext._get_tls_geo(), cl.value.encode())
+        cl.value = gxapi_cy.WrapSYS._get_license_class(GXContext._get_tls_geo(), cl.value.encode())
         
 
 
@@ -1864,8 +1949,10 @@ class GXSYS:
         :type  company:  str_ref
 
         .. versionadded:: 6.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        user.value, company.value = gxapi_cy.WrapSYS.get_licensed_user(GXContext._get_tls_geo(), user.value.encode(), company.value.encode())
+        user.value, company.value = gxapi_cy.WrapSYS._get_licensed_user(GXContext._get_tls_geo(), user.value.encode(), company.value.encode())
         
 
 
@@ -1885,8 +1972,10 @@ class GXSYS:
         :type  value:  str
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.add_lineage_parameter(GXContext._get_tls_geo(), name.encode(), value.encode())
+        gxapi_cy.WrapSYS._add_lineage_parameter(GXContext._get_tls_geo(), name.encode(), value.encode())
         
 
 
@@ -1902,8 +1991,10 @@ class GXSYS:
         :type  source_name:  str
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.add_lineage_source(GXContext._get_tls_geo(), source_type, source_name.encode())
+        gxapi_cy.WrapSYS._add_lineage_source(GXContext._get_tls_geo(), source_type, source_name.encode())
         
 
 
@@ -1915,8 +2006,10 @@ class GXSYS:
         
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.clear_lineage_parameters(GXContext._get_tls_geo())
+        gxapi_cy.WrapSYS._clear_lineage_parameters(GXContext._get_tls_geo())
         
 
 
@@ -1928,8 +2021,10 @@ class GXSYS:
         
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.clear_lineage_sources(GXContext._get_tls_geo())
+        gxapi_cy.WrapSYS._clear_lineage_sources(GXContext._get_tls_geo())
         
 
 
@@ -1946,13 +2041,13 @@ class GXSYS:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Grids are copied and the GI's are maintained - note that support
+        **Note:** Grids are copied and the GI's are maintained - note that support
         for non-geosoft grids is limited since this method does not
         guarantee all grid files besides the main one are copied.
         """
-        gxapi_cy.WrapSYS.copy_geo_file(GXContext._get_tls_geo(), data.encode(), dir.encode())
+        gxapi_cy.WrapSYS._copy_geo_file(GXContext._get_tls_geo(), data.encode(), dir.encode())
         
 
 
@@ -1969,13 +2064,13 @@ class GXSYS:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Grids are copied and the GI's are maintained - note that support
+        **Note:** Grids are copied and the GI's are maintained - note that support
         for non-geosoft grids is limited since this method does not
         guarantee all grid files besides the main one are copied.
         """
-        target.value = gxapi_cy.WrapSYS.backup_geo_file(GXContext._get_tls_geo(), data.encode(), target.value.encode())
+        target.value = gxapi_cy.WrapSYS._backup_geo_file(GXContext._get_tls_geo(), data.encode(), target.value.encode())
         
 
 
@@ -1989,8 +2084,10 @@ class GXSYS:
         :type  output_name:  str
 
         .. versionadded:: 7.0.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.remove_lineage_output(GXContext._get_tls_geo(), output_name.encode())
+        gxapi_cy.WrapSYS._remove_lineage_output(GXContext._get_tls_geo(), output_name.encode())
         
 
 
@@ -2004,8 +2101,10 @@ class GXSYS:
         :type  name:  str
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.remove_lineage_parameter(GXContext._get_tls_geo(), name.encode())
+        gxapi_cy.WrapSYS._remove_lineage_parameter(GXContext._get_tls_geo(), name.encode())
         
 
 
@@ -2019,8 +2118,10 @@ class GXSYS:
         :type  source_name:  str
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.remove_lineage_source(GXContext._get_tls_geo(), source_name.encode())
+        gxapi_cy.WrapSYS._remove_lineage_source(GXContext._get_tls_geo(), source_name.encode())
         
 
 
@@ -2037,13 +2138,13 @@ class GXSYS:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Grids are copied and the GI's are maintained - note that support
+        **Note:** Grids are copied and the GI's are maintained - note that support
         for non-geosoft grids is limited since this method does not
         guarantee all grid files besides the main one are copied.
         """
-        gxapi_cy.WrapSYS.restore_geo_file(GXContext._get_tls_geo(), target.encode(), original.encode())
+        gxapi_cy.WrapSYS._restore_geo_file(GXContext._get_tls_geo(), target.encode(), original.encode())
         
 
 
@@ -2057,8 +2158,10 @@ class GXSYS:
         :type  description:  str
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.set_lineage_description(GXContext._get_tls_geo(), description.encode())
+        gxapi_cy.WrapSYS._set_lineage_description(GXContext._get_tls_geo(), description.encode())
         
 
 
@@ -2072,8 +2175,10 @@ class GXSYS:
         :type  display_name:  str
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.set_lineage_display_name(GXContext._get_tls_geo(), display_name.encode())
+        gxapi_cy.WrapSYS._set_lineage_display_name(GXContext._get_tls_geo(), display_name.encode())
         
 
 
@@ -2087,8 +2192,10 @@ class GXSYS:
         :type  name:  str
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.set_lineage_name(GXContext._get_tls_geo(), name.encode())
+        gxapi_cy.WrapSYS._set_lineage_name(GXContext._get_tls_geo(), name.encode())
         
 
 
@@ -2106,8 +2213,12 @@ class GXSYS:
         :type  flag:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapSYS.clear_menus(GXContext._get_tls_geo(), flag)
+        gxapi_cy.WrapSYS._clear_menus(GXContext._get_tls_geo(), flag)
         
 
 
@@ -2126,12 +2237,14 @@ class GXSYS:
 
         .. versionadded:: 9.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The names of the LSTs contain the menus and the values contain any exclusions. Exclusions 
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The names of the LSTs contain the menus and the values contain any exclusions. Exclusions 
         are semicolon separated top level menu names and/or toolbar.geobar file names.
         """
-        gxapi_cy.WrapSYS.get_loaded_menus(GXContext._get_tls_geo(), lst_default._wrapper, lst_loaded._wrapper, lst_user._wrapper)
+        gxapi_cy.WrapSYS._get_loaded_menus(GXContext._get_tls_geo(), lst_default, lst_loaded, lst_user)
         
 
 
@@ -2150,12 +2263,14 @@ class GXSYS:
 
         .. versionadded:: 9.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The names of the LSTs contain the menus and the values contain any exclusions. Exclusions 
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The names of the LSTs contain the menus and the values contain any exclusions. Exclusions 
         are semicolon separated top level menu names and/or toolbar.geobar file names.
         """
-        gxapi_cy.WrapSYS.set_loaded_menus(GXContext._get_tls_geo(), lst_default._wrapper, lst_loaded._wrapper, lst_user._wrapper)
+        gxapi_cy.WrapSYS._set_loaded_menus(GXContext._get_tls_geo(), lst_default, lst_loaded, lst_user)
         
 
 
@@ -2169,8 +2284,10 @@ class GXSYS:
         :type  lst_rights:  GXLST
 
         .. versionadded:: 9.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.get_entitlement_rights(GXContext._get_tls_geo(), lst_rights._wrapper)
+        gxapi_cy.WrapSYS._get_entitlement_rights(GXContext._get_tls_geo(), lst_rights)
         
 
 
@@ -2188,8 +2305,10 @@ class GXSYS:
         :type  guid:  str_ref
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        guid.value = gxapi_cy.WrapSYS.generate_guid(GXContext._get_tls_geo(), guid.value.encode())
+        guid.value = gxapi_cy.WrapSYS._generate_guid(GXContext._get_tls_geo(), guid.value.encode())
         
 
 
@@ -2203,8 +2322,10 @@ class GXSYS:
         :type  file:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.clipboard_to_file(GXContext._get_tls_geo(), file.encode())
+        gxapi_cy.WrapSYS._clipboard_to_file(GXContext._get_tls_geo(), file.encode())
         
 
 
@@ -2220,13 +2341,13 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Destroy the `GXRA <geosoft.gxapi.GXRA>` as soon as possible. As long as it
+        **Note:** Destroy the `GXRA <geosoft.gxapi.GXRA>` as soon as possible. As long as it
         open the clipboard is not accessible from any
         application.
         """
-        ret_val = gxapi_cy.WrapSYS.create_clipboard_ra(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapSYS._create_clipboard_ra(GXContext._get_tls_geo())
         return GXRA(ret_val)
 
 
@@ -2242,13 +2363,13 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Destroy the `GXWA <geosoft.gxapi.GXWA>` as soon as possible. As long as it
+        **Note:** Destroy the `GXWA <geosoft.gxapi.GXWA>` as soon as possible. As long as it
         open the clipboard is not accessible from any
         application.
         """
-        ret_val = gxapi_cy.WrapSYS.create_clipboard_wa(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapSYS._create_clipboard_wa(GXContext._get_tls_geo())
         return GXWA(ret_val)
 
 
@@ -2266,8 +2387,10 @@ class GXSYS:
         :type  size_y:  float_ref
 
         .. versionadded:: 6.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        size_x.value, size_y.value = gxapi_cy.WrapSYS.emf_object_size(GXContext._get_tls_geo(), file.encode(), size_x.value, size_y.value)
+        size_x.value, size_y.value = gxapi_cy.WrapSYS._emf_object_size(GXContext._get_tls_geo(), file.encode(), size_x.value, size_y.value)
         
 
 
@@ -2281,8 +2404,10 @@ class GXSYS:
         :type  file:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.file_to_clipboard(GXContext._get_tls_geo(), file.encode())
+        gxapi_cy.WrapSYS._file_to_clipboard(GXContext._get_tls_geo(), file.encode())
         
 
 
@@ -2299,13 +2424,13 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        To get TT and GFN fonts, call twice with the same list
+        **Note:** To get TT and GFN fonts, call twice with the same list
         and `SYS_FONT_TT <geosoft.gxapi.SYS_FONT_TT>`, then `SYS_FONT_GFN <geosoft.gxapi.SYS_FONT_GFN>`, or vice-versa to
         change order of listing.
         """
-        gxapi_cy.WrapSYS.font_lst(GXContext._get_tls_geo(), lst._wrapper, which)
+        gxapi_cy.WrapSYS._font_lst(GXContext._get_tls_geo(), lst, which)
         
 
 
@@ -2327,13 +2452,13 @@ class GXSYS:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The list of entry points are passed back as one
+        **Note:** The list of entry points are passed back as one
         string with each entry point separated by a semi-colon.
         For example: NewGDB|Run;NewGDB|RunEx
         """
-        ret_val, entry_buffer.value = gxapi_cy.WrapSYS.get_dot_net_gx_entries(GXContext._get_tls_geo(), gx.encode(), entry_buffer.value.encode())
+        ret_val, entry_buffer.value = gxapi_cy.WrapSYS._get_dot_net_gx_entries(GXContext._get_tls_geo(), gx.encode(), entry_buffer.value.encode())
         return ret_val
 
 
@@ -2349,8 +2474,10 @@ class GXSYS:
         :type  info:  str
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.send_general_message(GXContext._get_tls_geo(), cl.encode(), info.encode())
+        gxapi_cy.WrapSYS._send_general_message(GXContext._get_tls_geo(), cl.encode(), info.encode())
         
 
 
@@ -2365,8 +2492,10 @@ class GXSYS:
         :type  log:  str
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.write_debug_log(GXContext._get_tls_geo(), log.encode())
+        gxapi_cy.WrapSYS._write_debug_log(GXContext._get_tls_geo(), log.encode())
         
 
 
@@ -2380,8 +2509,10 @@ class GXSYS:
         :type  location:  str
 
         .. versionadded:: 9.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.log_script_run(GXContext._get_tls_geo(), location.encode())
+        gxapi_cy.WrapSYS._log_script_run(GXContext._get_tls_geo(), location.encode())
         
 
 
@@ -2401,11 +2532,11 @@ class GXSYS:
 
         .. versionadded:: 5.1.6
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        In a single threaded application this will always be 0.
+        **Note:** In a single threaded application this will always be 0.
         """
-        ret_val = gxapi_cy.WrapSYS.get_thread_id(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapSYS._get_thread_id(GXContext._get_tls_geo())
         return ret_val
 
 
@@ -2430,13 +2561,13 @@ class GXSYS:
 
         .. versionadded:: 5.1.6
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        No access is provided in the script to EMAPS
+        **Note:** No access is provided in the script to EMAPS
         or EDBS. Users must ensure that the resources
         that are shared are protected.
         """
-        gxapi_cy.WrapSYS.run_multi_user_script(GXContext._get_tls_geo(), script.encode(), users, iterations, wait_min_time, wait_max_time, ramp_up_time)
+        gxapi_cy.WrapSYS._run_multi_user_script(GXContext._get_tls_geo(), script.encode(), users, iterations, wait_min_time, wait_max_time, ramp_up_time)
         
 
 
@@ -2454,8 +2585,10 @@ class GXSYS:
         :type  group:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.clear_group(GXContext._get_tls_geo(), group.encode())
+        gxapi_cy.WrapSYS._clear_group(GXContext._get_tls_geo(), group.encode())
         
 
 
@@ -2469,8 +2602,10 @@ class GXSYS:
         :type  group:  str
 
         .. versionadded:: 5.1.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.clear_group_parm(GXContext._get_tls_geo(), group.encode())
+        gxapi_cy.WrapSYS._clear_group_parm(GXContext._get_tls_geo(), group.encode())
         
 
 
@@ -2482,8 +2617,10 @@ class GXSYS:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.clear_parm(GXContext._get_tls_geo())
+        gxapi_cy.WrapSYS._clear_parm(GXContext._get_tls_geo())
         
 
 
@@ -2502,12 +2639,12 @@ class GXSYS:
 
         .. versionadded:: 6.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The value will only be set if there is no existing
+        **Note:** The value will only be set if there is no existing
         setting.
         """
-        gxapi_cy.WrapSYS.default_int(GXContext._get_tls_geo(), group.encode(), field.encode(), val)
+        gxapi_cy.WrapSYS._default_int(GXContext._get_tls_geo(), group.encode(), field.encode(), val)
         
 
 
@@ -2526,12 +2663,12 @@ class GXSYS:
 
         .. versionadded:: 6.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The value will only be set if there is no existing
+        **Note:** The value will only be set if there is no existing
         setting.
         """
-        gxapi_cy.WrapSYS.default_double(GXContext._get_tls_geo(), group.encode(), field.encode(), val)
+        gxapi_cy.WrapSYS._default_double(GXContext._get_tls_geo(), group.encode(), field.encode(), val)
         
 
 
@@ -2550,12 +2687,12 @@ class GXSYS:
 
         .. versionadded:: 6.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The value will only be set if there is no existing
+        **Note:** The value will only be set if there is no existing
         setting.
         """
-        gxapi_cy.WrapSYS.default_string(GXContext._get_tls_geo(), group.encode(), field.encode(), val.encode())
+        gxapi_cy.WrapSYS._default_string(GXContext._get_tls_geo(), group.encode(), field.encode(), val.encode())
         
 
 
@@ -2582,9 +2719,9 @@ class GXSYS:
 
         .. versionadded:: 6.4
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Gets all the user-definable pattern parameters from
+        **Note:** Gets all the user-definable pattern parameters from
         a specified group. Parameters are:
         "PAT_NUMBER"    0 is solid fill (default)
         "PAT_SIZE"      pattern tile size in mm. (can return `iDUMMY <geosoft.gxapi.iDUMMY>`)
@@ -2598,7 +2735,7 @@ class GXSYS:
         Returned values may be DUMMY, but will be acceptable for use with
         the `GXGUI.color_form <geosoft.gxapi.GXGUI.color_form>` function, to set defaults.
         """
-        pat.value, size.value, thick.value, dense.value, col.value, back_col.value = gxapi_cy.WrapSYS.get_pattern(GXContext._get_tls_geo(), group.encode(), pat.value, size.value, thick.value, dense.value, col.value, back_col.value)
+        pat.value, size.value, thick.value, dense.value, col.value, back_col.value = gxapi_cy.WrapSYS._get_pattern(GXContext._get_tls_geo(), group.encode(), pat.value, size.value, thick.value, dense.value, col.value, back_col.value)
         
 
 
@@ -2614,8 +2751,10 @@ class GXSYS:
         :type  group:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.get_reg(GXContext._get_tls_geo(), reg._wrapper, group.encode())
+        gxapi_cy.WrapSYS._get_reg(GXContext._get_tls_geo(), reg, group.encode())
         
 
 
@@ -2634,12 +2773,12 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the setting exits it is placed in the buffer, otherwise
+        **Note:** If the setting exits it is placed in the buffer, otherwise
         the buffer will have zero length
         """
-        buff.value = gxapi_cy.WrapSYS.gt_string(GXContext._get_tls_geo(), group.encode(), field.encode(), buff.value.encode())
+        buff.value = gxapi_cy.WrapSYS._gt_string(GXContext._get_tls_geo(), group.encode(), field.encode(), buff.value.encode())
         
 
 
@@ -2659,8 +2798,10 @@ class GXSYS:
         :rtype:        int
 
         .. versionadded:: 7.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.exist_int(GXContext._get_tls_geo(), group.encode(), field.encode())
+        ret_val = gxapi_cy.WrapSYS._exist_int(GXContext._get_tls_geo(), group.encode(), field.encode())
         return ret_val
 
 
@@ -2680,8 +2821,10 @@ class GXSYS:
         :rtype:        int
 
         .. versionadded:: 7.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.exist_double(GXContext._get_tls_geo(), group.encode(), field.encode())
+        ret_val = gxapi_cy.WrapSYS._exist_double(GXContext._get_tls_geo(), group.encode(), field.encode())
         return ret_val
 
 
@@ -2701,8 +2844,10 @@ class GXSYS:
         :rtype:        int
 
         .. versionadded:: 7.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.exist_string(GXContext._get_tls_geo(), group.encode(), field.encode())
+        ret_val = gxapi_cy.WrapSYS._exist_string(GXContext._get_tls_geo(), group.encode(), field.encode())
         return ret_val
 
 
@@ -2721,8 +2866,10 @@ class GXSYS:
         :rtype:        int
 
         .. versionadded:: 6.0.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.get_int(GXContext._get_tls_geo(), group.encode(), field.encode())
+        ret_val = gxapi_cy.WrapSYS._get_int(GXContext._get_tls_geo(), group.encode(), field.encode())
         return ret_val
 
 
@@ -2742,8 +2889,10 @@ class GXSYS:
         :rtype:        int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.get_yes_no(GXContext._get_tls_geo(), group.encode(), field.encode())
+        ret_val = gxapi_cy.WrapSYS._get_yes_no(GXContext._get_tls_geo(), group.encode(), field.encode())
         return ret_val
 
 
@@ -2762,13 +2911,13 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If parameter does not exist, the token is removed.  Full parameter names,
+        **Note:** If parameter does not exist, the token is removed.  Full parameter names,
         such as "%group.name%", are used as-is.  Partial parameter names, such as
         "%name%" will have the default group attached.
         """
-        output.value = gxapi_cy.WrapSYS.replace_string(GXContext._get_tls_geo(), str_val.encode(), output.value.encode(), group.encode())
+        output.value = gxapi_cy.WrapSYS._replace_string(GXContext._get_tls_geo(), str_val.encode(), output.value.encode(), group.encode())
         
 
 
@@ -2784,8 +2933,10 @@ class GXSYS:
         :type  groups:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.load_parm(GXContext._get_tls_geo(), file.encode(), groups.encode())
+        gxapi_cy.WrapSYS._load_parm(GXContext._get_tls_geo(), file.encode(), groups.encode())
         
 
 
@@ -2804,8 +2955,10 @@ class GXSYS:
         :rtype:        float
 
         .. versionadded:: 6.0.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.get_double(GXContext._get_tls_geo(), group.encode(), field.encode())
+        ret_val = gxapi_cy.WrapSYS._get_double(GXContext._get_tls_geo(), group.encode(), field.encode())
         return ret_val
 
 
@@ -2823,8 +2976,10 @@ class GXSYS:
         :type  groups:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.save_parm(GXContext._get_tls_geo(), file.encode(), mode, groups.encode())
+        gxapi_cy.WrapSYS._save_parm(GXContext._get_tls_geo(), file.encode(), mode, groups.encode())
         
 
 
@@ -2841,11 +2996,11 @@ class GXSYS:
 
         .. versionadded:: 9.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This is useful to prevent certain utility GX parameters from being recorded during GS script runs where the parameters does not influence the actual script execution.
+        **Note:** This is useful to prevent certain utility GX parameters from being recorded during GS script runs where the parameters does not influence the actual script execution.
         """
-        gxapi_cy.WrapSYS.filter_parm_group(GXContext._get_tls_geo(), group.encode(), add)
+        gxapi_cy.WrapSYS._filter_parm_group(GXContext._get_tls_geo(), group.encode(), add)
         
 
 
@@ -2863,8 +3018,10 @@ class GXSYS:
         :type  val:    int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.set_int(GXContext._get_tls_geo(), group.encode(), field.encode(), val)
+        gxapi_cy.WrapSYS._set_int(GXContext._get_tls_geo(), group.encode(), field.encode(), val)
         
 
 
@@ -2891,9 +3048,9 @@ class GXSYS:
 
         .. versionadded:: 6.4
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Sets all the user-definable pattern parameters to
+        **Note:** Sets all the user-definable pattern parameters to
         a specified group. Parameters are:
         "PAT_NUMBER"    0 is solid fill
         "PAT_SIZE"      pattern tile size in mm.
@@ -2908,7 +3065,7 @@ class GXSYS:
         
         Designed for use along with the sPatternForm_GUI function.
         """
-        gxapi_cy.WrapSYS.set_pattern(GXContext._get_tls_geo(), group.encode(), pat, size, thick, dense, col, back_col)
+        gxapi_cy.WrapSYS._set_pattern(GXContext._get_tls_geo(), group.encode(), pat, size, thick, dense, col, back_col)
         
 
 
@@ -2926,8 +3083,10 @@ class GXSYS:
         :type  val:    float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.set_double(GXContext._get_tls_geo(), group.encode(), field.encode(), val)
+        gxapi_cy.WrapSYS._set_double(GXContext._get_tls_geo(), group.encode(), field.encode(), val)
         
 
 
@@ -2941,8 +3100,10 @@ class GXSYS:
         :type  reg:  GXREG
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.set_reg(GXContext._get_tls_geo(), reg._wrapper)
+        gxapi_cy.WrapSYS._set_reg(GXContext._get_tls_geo(), reg)
         
 
 
@@ -2960,8 +3121,10 @@ class GXSYS:
         :type  val:    str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.set_string(GXContext._get_tls_geo(), group.encode(), field.encode(), val.encode())
+        gxapi_cy.WrapSYS._set_string(GXContext._get_tls_geo(), group.encode(), field.encode(), val.encode())
         
 
 
@@ -2984,8 +3147,10 @@ class GXSYS:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.check_stop(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapSYS._check_stop(GXContext._get_tls_geo())
         return ret_val
 
 
@@ -2999,9 +3164,9 @@ class GXSYS:
 
         .. versionadded:: 7.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This is useful, for instance, when calling one GX from another,
+        **Note:** This is useful, for instance, when calling one GX from another,
         especially if it is called multiple times in a loop.
         The called GX may turn the progress ON/OFF on its own, which
         means any progress tracking in the calling GX is disrupted.
@@ -3011,7 +3176,7 @@ class GXSYS:
         Returns				 0 - Progress is on
         - Progress is off
         """
-        ret_val = gxapi_cy.WrapSYS.prog_state(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapSYS._prog_state(GXContext._get_tls_geo())
         return ret_val
 
 
@@ -3029,8 +3194,10 @@ class GXSYS:
         :type  reset:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.prog_name(GXContext._get_tls_geo(), name.encode(), reset)
+        gxapi_cy.WrapSYS._prog_name(GXContext._get_tls_geo(), name.encode(), reset)
         
 
 
@@ -3046,8 +3213,10 @@ class GXSYS:
         :type  on:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.progress(GXContext._get_tls_geo(), on)
+        gxapi_cy.WrapSYS._progress(GXContext._get_tls_geo(), on)
         
 
 
@@ -3063,8 +3232,10 @@ class GXSYS:
         :type  perc:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.prog_update(GXContext._get_tls_geo(), perc)
+        gxapi_cy.WrapSYS._prog_update(GXContext._get_tls_geo(), perc)
         
 
 
@@ -3080,8 +3251,10 @@ class GXSYS:
         :type  v2:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.prog_update_l(GXContext._get_tls_geo(), v1, v2)
+        gxapi_cy.WrapSYS._prog_update_l(GXContext._get_tls_geo(), v1, v2)
         
 
 
@@ -3101,8 +3274,10 @@ class GXSYS:
         :type  info:      str_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        info.value = gxapi_cy.WrapSYS.get_sys_info(GXContext._get_tls_geo(), sys_info, info.value.encode())
+        info.value = gxapi_cy.WrapSYS._get_sys_info(GXContext._get_tls_geo(), sys_info, info.value.encode())
         
 
 
@@ -3126,8 +3301,10 @@ class GXSYS:
         :rtype:          int
 
         .. versionadded:: 6.0.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val, value.value = gxapi_cy.WrapSYS.registry_get_val(GXContext._get_tls_geo(), domain, key.encode(), sub_key.encode(), value.value.encode())
+        ret_val, value.value = gxapi_cy.WrapSYS._registry_get_val(GXContext._get_tls_geo(), domain, key.encode(), sub_key.encode(), value.value.encode())
         return ret_val
 
 
@@ -3148,11 +3325,11 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        All sub-keys and values will be deleted if they exist.
+        **Note:** All sub-keys and values will be deleted if they exist.
         """
-        ret_val = gxapi_cy.WrapSYS.registry_delete_key(GXContext._get_tls_geo(), domain, key.encode())
+        ret_val = gxapi_cy.WrapSYS._registry_delete_key(GXContext._get_tls_geo(), domain, key.encode())
         return ret_val
 
 
@@ -3174,8 +3351,10 @@ class GXSYS:
         :rtype:             int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.registry_delete_val(GXContext._get_tls_geo(), domain, key.encode(), value_name.encode())
+        ret_val = gxapi_cy.WrapSYS._registry_delete_val(GXContext._get_tls_geo(), domain, key.encode(), value_name.encode())
         return ret_val
 
 
@@ -3196,12 +3375,12 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This function will create the subkey and key if either do not
+        **Note:** This function will create the subkey and key if either do not
         already exist.
         """
-        gxapi_cy.WrapSYS.registry_set_val(GXContext._get_tls_geo(), domain, key.encode(), sub_key.encode(), value.encode())
+        gxapi_cy.WrapSYS._registry_set_val(GXContext._get_tls_geo(), domain, key.encode(), sub_key.encode(), value.encode())
         
 
 
@@ -3219,8 +3398,10 @@ class GXSYS:
         :type  ptmp:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.destroy_ptmp(GXContext._get_tls_geo(), ptmp)
+        gxapi_cy.WrapSYS._destroy_ptmp(GXContext._get_tls_geo(), ptmp)
         
 
 
@@ -3235,11 +3416,13 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
         .. seealso::
 
             `save_ptmp <geosoft.gxapi.GXSYS.save_ptmp>`, `destroy_ptmp <geosoft.gxapi.GXSYS.destroy_ptmp>`
         """
-        gxapi_cy.WrapSYS.get_ptmp(GXContext._get_tls_geo(), ptmp)
+        gxapi_cy.WrapSYS._get_ptmp(GXContext._get_tls_geo(), ptmp)
         
 
 
@@ -3257,15 +3440,15 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        All PTMP instances will be destroyed on exit.
+        **Note:** All PTMP instances will be destroyed on exit.
 
         .. seealso::
 
             `get_ptmp <geosoft.gxapi.GXSYS.get_ptmp>`, `destroy_ptmp <geosoft.gxapi.GXSYS.destroy_ptmp>`
         """
-        ret_val = gxapi_cy.WrapSYS.save_ptmp(GXContext._get_tls_geo(), groups.encode())
+        ret_val = gxapi_cy.WrapSYS._save_ptmp(GXContext._get_tls_geo(), groups.encode())
         return ret_val
 
 
@@ -3285,8 +3468,10 @@ class GXSYS:
         :type  message:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.abort(GXContext._get_tls_geo(), message.encode())
+        gxapi_cy.WrapSYS._abort(GXContext._get_tls_geo(), message.encode())
         
 
 
@@ -3300,8 +3485,10 @@ class GXSYS:
         :type  exp:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.assert_(GXContext._get_tls_geo(), exp)
+        gxapi_cy.WrapSYS._assert_(GXContext._get_tls_geo(), exp)
         
 
 
@@ -3314,8 +3501,10 @@ class GXSYS:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.exit_(GXContext._get_tls_geo())
+        gxapi_cy.WrapSYS._exit_(GXContext._get_tls_geo())
         
 
 
@@ -3329,8 +3518,10 @@ class GXSYS:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapSYS.cancel_(GXContext._get_tls_geo())
+        gxapi_cy.WrapSYS._cancel_(GXContext._get_tls_geo())
         
 
 
@@ -3351,8 +3542,10 @@ class GXSYS:
         :rtype:       int
 
         .. versionadded:: 6.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.delay(GXContext._get_tls_geo(), secs)
+        ret_val = gxapi_cy.WrapSYS._delay(GXContext._get_tls_geo(), secs)
         return ret_val
 
 
@@ -3374,13 +3567,13 @@ class GXSYS:
 
         .. versionadded:: 6.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        1st time through call the method with a flag of 1 to identify
+        **Note:** 1st time through call the method with a flag of 1 to identify
         the count start time, subsequent times the time will be the time
         elapsed since the queried start time.  Do so by settign the flag to 0.
         """
-        ret_val, start_time.value, elapsed_time.value = gxapi_cy.WrapSYS.get_timer(GXContext._get_tls_geo(), flag, start_time.value, elapsed_time.value)
+        ret_val, start_time.value, elapsed_time.value = gxapi_cy.WrapSYS._get_timer(GXContext._get_tls_geo(), flag, start_time.value, elapsed_time.value)
         return ret_val
 
 
@@ -3400,8 +3593,12 @@ class GXSYS:
         :type  topic:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapSYS.display_help(GXContext._get_tls_geo(), group.encode(), topic.encode())
+        gxapi_cy.WrapSYS._display_help(GXContext._get_tls_geo(), group.encode(), topic.encode())
         
 
 
@@ -3417,8 +3614,12 @@ class GXSYS:
         :type  topic:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapSYS.display_help_topic(GXContext._get_tls_geo(), file.encode(), topic.encode())
+        gxapi_cy.WrapSYS._display_help_topic(GXContext._get_tls_geo(), file.encode(), topic.encode())
         
 
 
@@ -3434,8 +3635,12 @@ class GXSYS:
         :type  int:    int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapSYS.display_int(GXContext._get_tls_geo(), title.encode(), int)
+        gxapi_cy.WrapSYS._display_int(GXContext._get_tls_geo(), title.encode(), int)
         
 
 
@@ -3451,8 +3656,12 @@ class GXSYS:
         :type  message:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapSYS.display_message(GXContext._get_tls_geo(), title.encode(), message.encode())
+        gxapi_cy.WrapSYS._display_message(GXContext._get_tls_geo(), title.encode(), message.encode())
         
 
 
@@ -3468,8 +3677,12 @@ class GXSYS:
         :type  real:   float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapSYS.display_double(GXContext._get_tls_geo(), title.encode(), real)
+        gxapi_cy.WrapSYS._display_double(GXContext._get_tls_geo(), title.encode(), real)
         
 
 
@@ -3490,8 +3703,12 @@ class GXSYS:
         :rtype:          int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapSYS.display_question(GXContext._get_tls_geo(), title.encode(), message.encode())
+        ret_val = gxapi_cy.WrapSYS._display_question(GXContext._get_tls_geo(), title.encode(), message.encode())
         return ret_val
 
 
@@ -3513,8 +3730,12 @@ class GXSYS:
         :rtype:          int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapSYS.display_question_with_cancel(GXContext._get_tls_geo(), title.encode(), message.encode())
+        ret_val = gxapi_cy.WrapSYS._display_question_with_cancel(GXContext._get_tls_geo(), title.encode(), message.encode())
         return ret_val
 
 
@@ -3555,8 +3776,10 @@ class GXSYS:
         :rtype:                          int
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val, verification_checked.value = gxapi_cy.WrapSYS.display_task_dialog_ui(GXContext._get_tls_geo(), title.encode(), main_instruction.encode(), content.encode(), common_buttons, custom_button_lst._wrapper, icon, footer.encode(), footer_icon, verification_check_text.encode(), verification_checked.value, expanded_information.encode(), collapsed_control_text.encode(), expanded_control_text.encode())
+        ret_val, verification_checked.value = gxapi_cy.WrapSYS._display_task_dialog_ui(GXContext._get_tls_geo(), title.encode(), main_instruction.encode(), content.encode(), common_buttons, custom_button_lst, icon, footer.encode(), footer_icon, verification_check_text.encode(), verification_checked.value, expanded_information.encode(), collapsed_control_text.encode(), expanded_control_text.encode())
         return ret_val
 
 
@@ -3572,8 +3795,10 @@ class GXSYS:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.interactive(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapSYS._interactive(GXContext._get_tls_geo())
         return ret_val
 
 
@@ -3594,12 +3819,14 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The User string is displayed as the default value in the prompt.
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The User string is displayed as the default value in the prompt.
         Empty the user string if no default is needed.
         """
-        ret_val, result.value = gxapi_cy.WrapSYS.prompt(GXContext._get_tls_geo(), title.encode(), result.value.encode())
+        ret_val, result.value = gxapi_cy.WrapSYS._prompt(GXContext._get_tls_geo(), title.encode(), result.value.encode())
         return ret_val
 
 
@@ -3620,8 +3847,10 @@ class GXSYS:
         :rtype:      int
 
         .. versionadded:: 6.0.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.script(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapSYS._script(GXContext._get_tls_geo())
         return ret_val
 
 
@@ -3637,8 +3866,10 @@ class GXSYS:
         :rtype:      int
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.script_record(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapSYS._script_record(GXContext._get_tls_geo())
         return ret_val
 
 
@@ -3653,9 +3884,11 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Possible Cursors:
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Possible Cursors:
         Normal, Horiz, Vert, Moving, Cross, Hand, NoEdit, Sun,
         View, Group, ViewSel, GroupSel, BoxSelect, Shadow, Link,
         Line, PolyLine, Polygon, Ellipse, Rectangle, Text, Symbol,
@@ -3663,7 +3896,7 @@ class GXSYS:
         SnapPoint, SnapLine, SnapOnPoint, SnapOnLine, NPolygon,
         ExcludeRect, ExcludePoly, ExcludeNPoly, AddVertex, DelVertex, GeneralAdd and GeneralDelete
         """
-        gxapi_cy.WrapSYS.set_cursor(GXContext._get_tls_geo(), cursor.encode())
+        gxapi_cy.WrapSYS._set_cursor(GXContext._get_tls_geo(), cursor.encode())
         
 
 
@@ -3678,8 +3911,12 @@ class GXSYS:
         :type  message:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapSYS.set_info_line(GXContext._get_tls_geo(), message.encode())
+        gxapi_cy.WrapSYS._set_info_line(GXContext._get_tls_geo(), message.encode())
         
 
 
@@ -3694,16 +3931,16 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Call to `interactive <geosoft.gxapi.GXSYS.interactive>` will return the value
+        **Note:** Call to `interactive <geosoft.gxapi.GXSYS.interactive>` will return the value
         set here.
 
         .. seealso::
 
             `interactive <geosoft.gxapi.GXSYS.interactive>`, `run_gx <geosoft.gxapi.GXSYS.run_gx>` and `run_gs <geosoft.gxapi.GXSYS.run_gs>`
         """
-        gxapi_cy.WrapSYS.set_interactive(GXContext._get_tls_geo(), mode)
+        gxapi_cy.WrapSYS._set_interactive(GXContext._get_tls_geo(), mode)
         
 
 
@@ -3722,9 +3959,9 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The workspace `GXREG <geosoft.gxapi.GXREG>` is separate from the reg used
+        **Note:** The workspace `GXREG <geosoft.gxapi.GXREG>` is separate from the reg used
         to store `GXSYS <geosoft.gxapi.GXSYS>` parameters.
         
         Because `get_workspace_reg <geosoft.gxapi.GXSYS.get_workspace_reg>` returns a copy of the
@@ -3733,7 +3970,7 @@ class GXSYS:
         to your own `GXREG <geosoft.gxapi.GXREG>` object and you wish them to take
         effect in the workspace `GXREG <geosoft.gxapi.GXREG>`.
         """
-        gxapi_cy.WrapSYS.get_workspace_reg(GXContext._get_tls_geo(), reg._wrapper)
+        gxapi_cy.WrapSYS._get_workspace_reg(GXContext._get_tls_geo(), reg)
         
 
 
@@ -3748,9 +3985,9 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The workspace `GXREG <geosoft.gxapi.GXREG>` is separate from the reg used
+        **Note:** The workspace `GXREG <geosoft.gxapi.GXREG>` is separate from the reg used
         to store `GXSYS <geosoft.gxapi.GXSYS>` parameters.
         
         Because `get_workspace_reg <geosoft.gxapi.GXSYS.get_workspace_reg>` returns a copy of the
@@ -3759,7 +3996,7 @@ class GXSYS:
         to your own `GXREG <geosoft.gxapi.GXREG>` object and you wish them to take
         effect in the workspace `GXREG <geosoft.gxapi.GXREG>`
         """
-        gxapi_cy.WrapSYS.set_workspace_reg(GXContext._get_tls_geo(), reg._wrapper)
+        gxapi_cy.WrapSYS._set_workspace_reg(GXContext._get_tls_geo(), reg)
         
 
 
@@ -3782,8 +4019,10 @@ class GXSYS:
         :type  key:     int
 
         .. versionadded:: 9.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        output.value = gxapi_cy.WrapSYS.encrypt_string(GXContext._get_tls_geo(), input.encode(), output.value.encode(), key)
+        output.value = gxapi_cy.WrapSYS._encrypt_string(GXContext._get_tls_geo(), input.encode(), output.value.encode(), key)
         
 
 
@@ -3801,8 +4040,10 @@ class GXSYS:
         :type  key:     int
 
         .. versionadded:: 9.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        output.value = gxapi_cy.WrapSYS.decrypt_string(GXContext._get_tls_geo(), input.encode(), output.value.encode(), key)
+        output.value = gxapi_cy.WrapSYS._decrypt_string(GXContext._get_tls_geo(), input.encode(), output.value.encode(), key)
         
 
 
@@ -3819,8 +4060,10 @@ class GXSYS:
         :rtype:        int
 
         .. versionadded:: 9.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSYS.is_encrypted_string(GXContext._get_tls_geo(), input.encode())
+        ret_val = gxapi_cy.WrapSYS._is_encrypted_string(GXContext._get_tls_geo(), input.encode())
         return ret_val
 
 
@@ -3837,11 +4080,11 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        All breakpoints will be cleared by this call.
+        **Note:** All breakpoints will be cleared by this call.
         """
-        gxapi_cy.WrapSYS.disable_gx_debugger(GXContext._get_tls_geo())
+        gxapi_cy.WrapSYS._disable_gx_debugger(GXContext._get_tls_geo())
         
 
 
@@ -3858,9 +4101,9 @@ class GXSYS:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Takes as input two strings one a path that will be scanned
+        **Note:** Takes as input two strings one a path that will be scanned
         recursively for GXC source files and a second string without
         a path of the GX where the first breakpoint should be set in (i.e. "gxname.gx").
         The source of the GX should be found in the path (e.g. <path>\\somewhere\\gxname.gxc)
@@ -3869,7 +4112,7 @@ class GXSYS:
         soon as the GX is run the `GXGUI <geosoft.gxapi.GXGUI>` will become visible and it will be possible to set more
         breakpoints in any of the GXC files found in the path.
         """
-        gxapi_cy.WrapSYS.enable_gx_debugger(GXContext._get_tls_geo(), src_dir.encode(), first_gx.encode())
+        gxapi_cy.WrapSYS._enable_gx_debugger(GXContext._get_tls_geo(), src_dir.encode(), first_gx.encode())
         
 
 

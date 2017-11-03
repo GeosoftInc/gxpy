@@ -16,7 +16,7 @@ from .GXREG import GXREG
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXDH:
+class GXDH(gxapi_cy.WrapDH):
     """
     GXDH class.
 
@@ -31,37 +31,28 @@ class GXDH:
         :ref:`DH_DEFINE_SECT`
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapDH(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXDH`
+        A null (undefined) instance of `GXDH <geosoft.gxapi.GXDH>`
         
-        :returns: A null `GXDH`
+        :returns: A null `GXDH <geosoft.gxapi.GXDH>`
+        :rtype:   GXDH
         """
-        return cls()
+        return GXDH()
 
     def is_null(self):
         """
-        Check if the instance of `GXDH` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXDH`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # ArcGIS Target Functions
@@ -78,8 +69,10 @@ class GXDH:
         :rtype:      int
 
         .. versionadded:: 5.1.8
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapDH.is_esri(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapDH._is_esri(GXContext._get_tls_geo())
         return ret_val
 
 
@@ -98,14 +91,14 @@ class GXDH:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Channel codes are in the format "[Assay] Au", where the name in
+        **Note:** Channel codes are in the format "[Assay] Au", where the name in
         the square brackets is descriptive part of the project database
         containing the given channel name. The above code might refer to
         the "Au" channel in the "Tutorial_Assay.gdb" database.
         """
-        self._wrapper.creat_chan_lst(lst._wrapper)
+        self._creat_chan_lst(lst)
         
 
 
@@ -120,14 +113,14 @@ class GXDH:
 
         .. versionadded:: 6.4
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Channel codes are in the format "[Assay] Au", where the name in
+        **Note:** Channel codes are in the format "[Assay] Au", where the name in
         the square brackets is descriptive part of the project database
         containing the given channel name. The above code might refer to
         the "Au" channel in the "Tutorial_Assay.gdb" database.
         """
-        self._wrapper.depth_data_lst(lst._wrapper)
+        self._depth_data_lst(lst)
         
 
 
@@ -144,14 +137,14 @@ class GXDH:
 
         .. versionadded:: 6.4
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Channel codes are in the format "[Assay] Au", where the name in
+        **Note:** Channel codes are in the format "[Assay] Au", where the name in
         the square brackets is descriptive part of the project database
         containing the given channel name. The above code might refer to
         the "Au" channel in the "Tutorial_Assay.gdb" database.
         """
-        self._wrapper.from_to_data_lst(assay.encode(), lst._wrapper)
+        self._from_to_data_lst(assay.encode(), lst)
         
 
 
@@ -180,13 +173,13 @@ class GXDH:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        For the input `GXLST <geosoft.gxapi.GXLST>` of holes, returns XYZ location of top or bottom
+        **Note:** For the input `GXLST <geosoft.gxapi.GXLST>` of holes, returns XYZ location of top or bottom
         contact with the input geology. Those selected holes which do NOT
         have contacts, return `rDUMMY <geosoft.gxapi.rDUMMY>` for the corresponding locations.
         """
-        self._wrapper.get_geology_contacts(lst._wrapper, chan_code.encode(), geology.encode(), surface, gap, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
+        self._get_geology_contacts(lst, chan_code.encode(), geology.encode(), surface, gap, vv_x, vv_y, vv_z)
         
 
 
@@ -211,16 +204,16 @@ class GXDH:
 
         .. versionadded:: 6.4
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The input data are the oriented core alpha and beta values, using either
+        **Note:** The input data are the oriented core alpha and beta values, using either
         top or bottom reference. The values for each hole in the `GXLST <geosoft.gxapi.GXLST>` are converted
         to "absolute" dip and dip-direction values, using the resurveyed hole
         orientations at each depth.
         The alpha and beta data must be from the same database, and the output
         dip and dip/dir channels are written to the same database.
         """
-        self._wrapper.get_oriented_core_dip_dir(lst._wrapper, alpha.encode(), beta.encode(), top_ref, dip.encode(), dip_dir.encode())
+        self._get_oriented_core_dip_dir(lst, alpha.encode(), beta.encode(), top_ref, dip.encode(), dip_dir.encode())
         
 
 
@@ -239,11 +232,11 @@ class GXDH:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Finds and sorts all the unique non-dummy items for the selected channel.
+        **Note:** Finds and sorts all the unique non-dummy items for the selected channel.
         """
-        self._wrapper.get_unique_channel_items(chan_code.encode(), selected_holes, vv._wrapper)
+        self._get_unique_channel_items(chan_code.encode(), selected_holes, vv)
         
 
 
@@ -262,11 +255,11 @@ class GXDH:
 
         .. versionadded:: 7.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Finds and sorts all the unique non-dummy items for the selected channel.
+        **Note:** Finds and sorts all the unique non-dummy items for the selected channel.
         """
-        self._wrapper.get_unique_channel_items_from_collar(chan_name.encode(), selected_holes, vv._wrapper)
+        self._get_unique_channel_items_from_collar(chan_name.encode(), selected_holes, vv)
         
 
 
@@ -284,11 +277,11 @@ class GXDH:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Finds and sorts all the unique non-dummy items for the selected channel.
+        **Note:** Finds and sorts all the unique non-dummy items for the selected channel.
         """
-        ret_val = self._wrapper.chan_type(chan_code.encode())
+        ret_val = self._chan_type(chan_code.encode())
         return ret_val
 
 
@@ -315,14 +308,14 @@ class GXDH:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Input the hole index and an `GXIMG <geosoft.gxapi.GXIMG>` object. Returns XYZ location
+        **Note:** Input the hole index and an `GXIMG <geosoft.gxapi.GXIMG>` object. Returns XYZ location
         of the hole intersection with the DEM. Interpolation inside the DEM
         uses the native `GXIMG <geosoft.gxapi.GXIMG>` interp method. If no intersection is found the
         returned XYZ locations are `rDUMMY <geosoft.gxapi.rDUMMY>`.
         """
-        ret_val, x.value, y.value, z.value = self._wrapper.find_hole_intersection(hole, img._wrapper, x.value, y.value, z.value)
+        ret_val, x.value, y.value, z.value = self._find_hole_intersection(hole, img, x.value, y.value, z.value)
         return ret_val
 
 
@@ -341,11 +334,11 @@ class GXDH:
 
         .. versionadded:: 7.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The input channel code is in the form "[Assay] channel"
+        **Note:** The input channel code is in the form "[Assay] channel"
         """
-        assay_db_index.value, chan.value = self._wrapper.get_chan_code_info(chan_code.encode(), assay_db_index.value, chan.value.encode())
+        assay_db_index.value, chan.value = self._get_chan_code_info(chan_code.encode(), assay_db_index.value, chan.value.encode())
         
 
 
@@ -379,12 +372,12 @@ class GXDH:
 
         .. versionadded:: 7.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Given a point on the hole and the straight hole dip and azimuth,
+        **Note:** Given a point on the hole and the straight hole dip and azimuth,
         ocate (an) intersection point with the input DEM grid.
         """
-        ret_val, xo.value, yo.value, zo.value = self._wrapper.grid_intersection(xi, yi, zi, dip, az, grid.encode(), xo.value, yo.value, zo.value)
+        ret_val, xo.value, yo.value, zo.value = self._grid_intersection(xi, yi, zi, dip, az, grid.encode(), xo.value, yo.value, zo.value)
         return ret_val
 
 
@@ -415,9 +408,9 @@ class GXDH:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Values in the input channel are assigned the index of the corresponding
+        **Note:** Values in the input channel are assigned the index of the corresponding
         item found in the input `GXTPAT <geosoft.gxapi.GXTPAT>`.
         The compositing gap refers to the size of gaps in the data (either
         a blank lithology or missing from-to interval) which will be ignored
@@ -426,7 +419,7 @@ class GXDH:
         where the gridded lithology is not found. If not specified (dummy) then
         half the distance to the nearest contacting hole is used.
         """
-        self._wrapper.litho_grid_3d(chan_code.encode(), tpat._wrapper, vox.encode(), cell_size, gap, non_contact_radius, gridding_type, reg._wrapper, retain_grid_files)
+        self._litho_grid_3d(chan_code.encode(), tpat, vox.encode(), cell_size, gap, non_contact_radius, gridding_type, reg, retain_grid_files)
         
 
 
@@ -441,14 +434,14 @@ class GXDH:
 
         .. versionadded:: 7.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Channel codes are in the format "[Assay] Au", where the name in
+        **Note:** Channel codes are in the format "[Assay] Au", where the name in
         the square brackets is descriptive part of the project database
         containing the given channel name. The above code might refer to
         the "Au" channel in the "Tutorial_Assay.gdb" database.
         """
-        self._wrapper.numeric_chan_lst(lst._wrapper)
+        self._numeric_chan_lst(lst)
         
 
 
@@ -465,14 +458,14 @@ class GXDH:
 
         .. versionadded:: 7.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Channel codes are in the format "[Assay] Au", where the name in
+        **Note:** Channel codes are in the format "[Assay] Au", where the name in
         the square brackets is descriptive part of the project database
         containing the given channel name. The above code might refer to
         the "Au" channel in the "Tutorial_Assay.gdb" database.
         """
-        self._wrapper.numeric_from_to_data_lst(assay.encode(), lst._wrapper)
+        self._numeric_from_to_data_lst(assay.encode(), lst)
         
 
 
@@ -495,16 +488,16 @@ class GXDH:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Grid is dummied out to the blanking distance around holes where
+        **Note:** Grid is dummied out to the blanking distance around holes where
         the input Z value is dummy. If a contacting hole is closer then
         twice the blanking distance, the blanking distance is reduced
         accordingly. Distances are measured horizontally (e.g. Z is ignored).
         If the blanking distance is zero or dummy, the distance is
         automatically set to half the distance to the closest hole intersection.
         """
-        self._wrapper.punch_grid_holes(img._wrapper, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, blank_dist)
+        self._punch_grid_holes(img, vv_x, vv_y, vv_z, blank_dist)
         
 
 
@@ -519,14 +512,14 @@ class GXDH:
 
         .. versionadded:: 7.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Channel codes are in the format "[Assay] Au", where the name in
+        **Note:** Channel codes are in the format "[Assay] Au", where the name in
         the square brackets is descriptive part of the project database
         containing the given channel name. The above code might refer to
         the "Au" channel in the "Tutorial_Assay.gdb" database.
         """
-        self._wrapper.string_chan_lst(lst._wrapper)
+        self._string_chan_lst(lst)
         
 
 
@@ -543,14 +536,14 @@ class GXDH:
 
         .. versionadded:: 7.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Channel codes are in the format "[Geology] Lithology", where the name in
+        **Note:** Channel codes are in the format "[Geology] Lithology", where the name in
         the square brackets is descriptive part of the project database
         containing the given channel name. The above code might refer to
         the "Lithology" channel in the "Tutorial_Geology.gdb" database.
         """
-        self._wrapper.string_from_to_data_lst(assay.encode(), lst._wrapper)
+        self._string_from_to_data_lst(assay.encode(), lst)
         
 
 
@@ -573,11 +566,11 @@ class GXDH:
 
         .. versionadded:: 5.1.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Works for both single and multiple `GXDB <geosoft.gxapi.GXDB>` Wholeplots.
+        **Note:** Works for both single and multiple `GXDB <geosoft.gxapi.GXDB>` Wholeplots.
         """
-        ret_val = self._wrapper.h_assay_db(assay)
+        ret_val = self._h_assay_db(assay)
         return GXDB(ret_val)
 
 
@@ -598,11 +591,11 @@ class GXDH:
 
         .. versionadded:: 5.1.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Works for both single and multiple `GXDB <geosoft.gxapi.GXDB>` Wholeplots.
+        **Note:** Works for both single and multiple `GXDB <geosoft.gxapi.GXDB>` Wholeplots.
         """
-        ret_val = self._wrapper.h_assay_symb(assay, hole)
+        ret_val = self._h_assay_symb(assay, hole)
         return ret_val
 
 
@@ -619,11 +612,11 @@ class GXDH:
 
         .. versionadded:: 5.1.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Works for both single and multiple `GXDB <geosoft.gxapi.GXDB>` Wholeplots.
+        **Note:** Works for both single and multiple `GXDB <geosoft.gxapi.GXDB>` Wholeplots.
         """
-        ret_val = self._wrapper.h_collar_db()
+        ret_val = self._h_collar_db()
         return GXDB(ret_val)
 
 
@@ -640,11 +633,11 @@ class GXDH:
 
         .. versionadded:: 5.1.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Works for both single and multiple `GXDB <geosoft.gxapi.GXDB>` Wholeplots.
+        **Note:** Works for both single and multiple `GXDB <geosoft.gxapi.GXDB>` Wholeplots.
         """
-        ret_val = self._wrapper.h_collar_symb()
+        ret_val = self._h_collar_symb()
         return ret_val
 
 
@@ -661,11 +654,11 @@ class GXDH:
 
         .. versionadded:: 5.1.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Works for both single and multiple `GXDB <geosoft.gxapi.GXDB>` Wholeplots.
+        **Note:** Works for both single and multiple `GXDB <geosoft.gxapi.GXDB>` Wholeplots.
         """
-        ret_val = self._wrapper.h_dip_az_survey_db()
+        ret_val = self._h_dip_az_survey_db()
         return GXDB(ret_val)
 
 
@@ -684,11 +677,11 @@ class GXDH:
 
         .. versionadded:: 5.1.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Works for both single and multiple `GXDB <geosoft.gxapi.GXDB>` Wholeplots.
+        **Note:** Works for both single and multiple `GXDB <geosoft.gxapi.GXDB>` Wholeplots.
         """
-        ret_val = self._wrapper.h_dip_az_survey_symb(hole)
+        ret_val = self._h_dip_az_survey_symb(hole)
         return ret_val
 
 
@@ -705,11 +698,11 @@ class GXDH:
 
         .. versionadded:: 5.1.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Works for both single and multiple `GXDB <geosoft.gxapi.GXDB>` Wholeplots.
+        **Note:** Works for both single and multiple `GXDB <geosoft.gxapi.GXDB>` Wholeplots.
         """
-        ret_val = self._wrapper.h_en_survey_db()
+        ret_val = self._h_en_survey_db()
         return GXDB(ret_val)
 
 
@@ -728,11 +721,11 @@ class GXDH:
 
         .. versionadded:: 5.1.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Works for both single and multiple `GXDB <geosoft.gxapi.GXDB>` Wholeplots.
+        **Note:** Works for both single and multiple `GXDB <geosoft.gxapi.GXDB>` Wholeplots.
         """
-        ret_val = self._wrapper.h_en_survey_symb(hole)
+        ret_val = self._h_en_survey_symb(hole)
         return ret_val
 
 
@@ -747,12 +740,12 @@ class GXDH:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The information is created from the collar table info.
+        **Note:** The information is created from the collar table info.
         If the survey info already exists, does nothing.
         """
-        self._wrapper.add_survey_table(hole)
+        self._add_survey_table(hole)
         
 
 
@@ -768,8 +761,10 @@ class GXDH:
         :type  lst:       GXLST
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.assay_hole_lst(assay_db, lst._wrapper)
+        self._assay_hole_lst(assay_db, lst)
         
 
 
@@ -784,13 +779,13 @@ class GXDH:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Assay dataset name is given as `LST_ITEM_NAME <geosoft.gxapi.LST_ITEM_NAME>`
+        **Note:** Assay dataset name is given as `LST_ITEM_NAME <geosoft.gxapi.LST_ITEM_NAME>`
         Assay dataset number is given as `LST_ITEM_VALUE <geosoft.gxapi.LST_ITEM_VALUE>`
         Returns an empty `GXLST <geosoft.gxapi.GXLST>` if no datasets.
         """
-        self._wrapper.assay_lst(lst._wrapper)
+        self._assay_lst(lst)
         
 
 
@@ -804,8 +799,10 @@ class GXDH:
         :type  flag:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapDH.auto_select_holes(GXContext._get_tls_geo(), flag)
+        gxapi_cy.WrapDH._auto_select_holes(GXContext._get_tls_geo(), flag)
         
 
 
@@ -818,14 +815,14 @@ class GXDH:
 
         .. versionadded:: 5.1.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Removes from Project databases any lines not connected to
+        **Note:** Removes from Project databases any lines not connected to
         a line found in the collar table list.
         If all the database lines would be removed, the database is
         simply deleted.
         """
-        self._wrapper.clean()
+        self._clean()
         
 
 
@@ -863,8 +860,10 @@ class GXDH:
         :type  rej3_ch:   str
 
         .. versionadded:: 5.1.8
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.composite_db(mast_db._wrapper, comp_db._wrapper, hol_sel, int_sel, fix_int, lith_ch.encode(), int_file.encode(), wt_ch.encode(), rej1_val, rej2_val, rej3_val, rej3_op, rej3_ch.encode())
+        self._composite_db(mast_db, comp_db, hol_sel, int_sel, fix_int, lith_ch.encode(), int_file.encode(), wt_ch.encode(), rej1_val, rej2_val, rej3_val, rej3_op, rej3_ch.encode())
         
 
 
@@ -878,8 +877,10 @@ class GXDH:
         :type  hole:  int
 
         .. versionadded:: 7.3
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.compute_hole_xyz(hole)
+        self._compute_hole_xyz(hole)
         
 
 
@@ -903,8 +904,10 @@ class GXDH:
         :type  z_max:  float_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        e_min.value, e_max.value, n_min.value, n_max.value, z_min.value, z_max.value = self._wrapper.compute_sel_extent(e_min.value, e_max.value, n_min.value, n_max.value, z_min.value, z_max.value)
+        e_min.value, e_max.value, n_min.value, n_max.value, z_min.value, z_max.value = self._compute_sel_extent(e_min.value, e_max.value, n_min.value, n_max.value, z_min.value, z_max.value)
         
 
 
@@ -916,8 +919,10 @@ class GXDH:
         
 
         .. versionadded:: 5.1.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.compute_xyz()
+        self._compute_xyz()
         
 
 
@@ -934,9 +939,9 @@ class GXDH:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The input `GXLST <geosoft.gxapi.GXLST>` must be filled using a function like `GXDB.symb_lst <geosoft.gxapi.GXDB.symb_lst>`, which
+        **Note:** The input `GXLST <geosoft.gxapi.GXLST>` must be filled using a function like `GXDB.symb_lst <geosoft.gxapi.GXDB.symb_lst>`, which
         puts the name and symbol into the `GXLST <geosoft.gxapi.GXLST>` items.
         Any names with a period are truncated at the period, and
         the line name in the database is changed to the new name
@@ -947,7 +952,7 @@ class GXDH:
         
         DO NOT use on old-style single-database Wholeplot projects.
         """
-        gxapi_cy.WrapDH.convert_old_line_names(GXContext._get_tls_geo(), db._wrapper, lst._wrapper)
+        gxapi_cy.WrapDH._convert_old_line_names(GXContext._get_tls_geo(), db, lst)
         
 
 
@@ -964,8 +969,10 @@ class GXDH:
         :rtype:      GXDH
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapDH.create(GXContext._get_tls_geo(), db.encode())
+        ret_val = gxapi_cy.WrapDH._create(GXContext._get_tls_geo(), db.encode())
         return GXDH(ret_val)
 
 
@@ -981,8 +988,10 @@ class GXDH:
         :type  type:  int
 
         .. versionadded:: 5.1.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.create_default_job(ini.encode(), type)
+        self._create_default_job(ini.encode(), type)
         
 
 
@@ -1000,14 +1009,14 @@ class GXDH:
 
         .. versionadded:: 5.1.6
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The regular `create <geosoft.gxapi.GXDH.create>` assumes a workspace is open and creates
+        **Note:** The regular `create <geosoft.gxapi.GXDH.create>` assumes a workspace is open and creates
         the project from the databases which are currently loaded.
         This function instead creates the project from all projects
         in the input databases's directory.
         """
-        ret_val = gxapi_cy.WrapDH.create_external(GXContext._get_tls_geo(), db.encode())
+        ret_val = gxapi_cy.WrapDH._create_external(GXContext._get_tls_geo(), db.encode())
         return GXDH(ret_val)
 
 
@@ -1023,12 +1032,12 @@ class GXDH:
 
         .. versionadded:: 6.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        If no `GXDH <geosoft.gxapi.GXDH>` database is open the Open `GXDH <geosoft.gxapi.GXDH>` Project `GXGUI <geosoft.gxapi.GXGUI>` will be displayed which may be
+        **Note:** If no `GXDH <geosoft.gxapi.GXDH>` database is open the Open `GXDH <geosoft.gxapi.GXDH>` Project `GXGUI <geosoft.gxapi.GXGUI>` will be displayed which may be
         cancelled by the user in which case the GX will terminate with cancel.
         """
-        ret_val = gxapi_cy.WrapDH.current(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapDH._current(GXContext._get_tls_geo())
         return GXDH(ret_val)
 
 
@@ -1045,16 +1054,16 @@ class GXDH:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Creates three CSV files and the accompanying template files
+        **Note:** Creates three CSV files and the accompanying template files
         ready for batch ASCII import into a drill project.
         
              Project_Collar.csv, .i3
              Project_Survey.csv, .i3
              Project_Assay.csv,  .i3
         """
-        gxapi_cy.WrapDH.datamine_to_csv(GXContext._get_tls_geo(), file.encode(), proj.encode())
+        gxapi_cy.WrapDH._datamine_to_csv(GXContext._get_tls_geo(), file.encode(), proj.encode())
         
 
 
@@ -1069,13 +1078,13 @@ class GXDH:
 
         .. versionadded:: 5.1.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Removes all lines in the input `GXLST <geosoft.gxapi.GXLST>` from `GXDH <geosoft.gxapi.GXDH>` project databases.
+        **Note:** Removes all lines in the input `GXLST <geosoft.gxapi.GXLST>` from `GXDH <geosoft.gxapi.GXDH>` project databases.
         If all the database lines would be removed, the database is
         simply deleted.
         """
-        self._wrapper.delete_holes(lst._wrapper)
+        self._delete_holes(lst)
         
 
 
@@ -1093,8 +1102,10 @@ class GXDH:
         :type  type:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.export_file(file.encode(), type)
+        self._export_file(file.encode(), type)
         
 
 
@@ -1117,12 +1128,12 @@ class GXDH:
 
         .. versionadded:: 7.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        A table with metadata about the created feature classes will be written to the Geodatabase. This table will have the same
+        **Note:** A table with metadata about the created feature classes will be written to the Geodatabase. This table will have the same
         name with the postfix "_Metadata" attached
         """
-        feat_class.value = self._wrapper.export_geodatabase_lst(lst._wrapper, file.encode(), pre.encode(), feat_class.value.encode(), overwrite)
+        feat_class.value = self._export_geodatabase_lst(lst, file.encode(), pre.encode(), feat_class.value.encode(), overwrite)
         
 
 
@@ -1142,8 +1153,10 @@ class GXDH:
         :type  file:      str
 
         .. versionadded:: 5.1.8
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.export_las(assay_db, hole, interval, file.encode())
+        self._export_las(assay_db, hole, interval, file.encode())
         
 
 
@@ -1162,11 +1175,11 @@ class GXDH:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Use functions like `GXDB.selected_line_lst <geosoft.gxapi.GXDB.selected_line_lst>` to construct the `GXLST <geosoft.gxapi.GXLST>`
+        **Note:** Use functions like `GXDB.selected_line_lst <geosoft.gxapi.GXDB.selected_line_lst>` to construct the `GXLST <geosoft.gxapi.GXLST>`
         """
-        self._wrapper.export_lst(lst._wrapper, file.encode(), type)
+        self._export_lst(lst, file.encode(), type)
         
 
 
@@ -1178,8 +1191,10 @@ class GXDH:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.flush_select()
+        self._flush_select()
         
 
 
@@ -1193,8 +1208,10 @@ class GXDH:
         :type  gvv:  GXVV
 
         .. versionadded:: 5.1.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.get_databases_vv(gvv._wrapper)
+        self._get_databases_vv(gvv)
         
 
 
@@ -1208,8 +1225,10 @@ class GXDH:
         :type  gvv:  GXVV
 
         .. versionadded:: 8.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.get_databases_sorted_vv(gvv._wrapper)
+        self._get_databases_sorted_vv(gvv)
         
 
 
@@ -1226,11 +1245,11 @@ class GXDH:
 
         .. versionadded:: 5.1.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Returns `DH_DATA_UNKNOWN <geosoft.gxapi.DH_DATA_UNKNOWN>` if it can't determine the type.
+        **Note:** Returns `DH_DATA_UNKNOWN <geosoft.gxapi.DH_DATA_UNKNOWN>` if it can't determine the type.
         """
-        type.value = self._wrapper.get_data_type(db._wrapper, type.value)
+        type.value = self._get_data_type(db, type.value)
         
 
 
@@ -1252,8 +1271,10 @@ class GXDH:
         :type  w:   float_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        az.value, x1.value, x2.value, l.value, w.value = self._wrapper.get_default_section(az.value, x1.value, x2.value, l.value, w.value)
+        az.value, x1.value, x2.value, l.value, w.value = self._get_default_section(az.value, x1.value, x2.value, l.value, w.value)
         
 
 
@@ -1272,8 +1293,10 @@ class GXDH:
         :rtype:        int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = self._wrapper.get_hole_group(hole, assay.encode())
+        ret_val = self._get_hole_group(hole, assay.encode())
         return ret_val
 
 
@@ -1295,8 +1318,10 @@ class GXDH:
         :type  vv_d:  GXVV
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.get_hole_survey(hole, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_d._wrapper)
+        self._get_hole_survey(hole, vv_x, vv_y, vv_z, vv_d)
         
 
 
@@ -1311,12 +1336,12 @@ class GXDH:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The projection for the project is the projection stored
+        **Note:** The projection for the project is the projection stored
         in the DH_EAST channel in the collar table.
         """
-        self._wrapper.get_ipj(ipj._wrapper)
+        self._get_ipj(ipj)
         
 
 
@@ -1331,14 +1356,14 @@ class GXDH:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        This will return the currently plotted map name(s)
+        **Note:** This will return the currently plotted map name(s)
         in a `GXVV <geosoft.gxapi.GXVV>`. This should only be called after a call
         to `wholeplot <geosoft.gxapi.GXDH.wholeplot>`. The `GXVV <geosoft.gxapi.GXVV>` size is set to the number
         of maps created.
         """
-        self._wrapper.get_map_names_vv(vv._wrapper)
+        self._get_map_names_vv(vv)
         
 
 
@@ -1355,8 +1380,10 @@ class GXDH:
         :rtype:        GXMAP
 
         .. versionadded:: 8.0.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = self._wrapper.get_map(index)
+        ret_val = self._get_map(index)
         return GXMAP(ret_val)
 
 
@@ -1371,8 +1398,10 @@ class GXDH:
         :rtype:      int
 
         .. versionadded:: 8.0.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = self._wrapper.get_num_maps()
+        ret_val = self._get_num_maps()
         return ret_val
 
 
@@ -1387,8 +1416,10 @@ class GXDH:
         :rtype:      GXREG
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = self._wrapper.get_reg()
+        ret_val = self._get_reg()
         return GXREG(ret_val)
 
 
@@ -1402,8 +1433,10 @@ class GXDH:
         :type  vv:  GXVV
 
         .. versionadded:: 8.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.get_selected_holes_vv(vv._wrapper)
+        self._get_selected_holes_vv(vv)
         
 
 
@@ -1420,12 +1453,12 @@ class GXDH:
 
         .. versionadded:: 7.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Fills a `GXLST <geosoft.gxapi.GXLST>` with the default channel names created according to
+        **Note:** Fills a `GXLST <geosoft.gxapi.GXLST>` with the default channel names created according to
         type (Collar, Survey, Assay). Value is in the `LST_ITEM_NAME <geosoft.gxapi.LST_ITEM_NAME>` part.
         """
-        gxapi_cy.WrapDH.get_table_default_chan_lst(GXContext._get_tls_geo(), lst._wrapper, type)
+        gxapi_cy.WrapDH._get_table_default_chan_lst(GXContext._get_tls_geo(), lst, type)
         
 
 
@@ -1439,8 +1472,10 @@ class GXDH:
         :type  lst:  GXLST
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.hole_lst(lst._wrapper)
+        self._hole_lst(lst)
         
 
 
@@ -1454,8 +1489,10 @@ class GXDH:
         :type  lst:  GXLST
 
         .. versionadded:: 5.1.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.hole_lst2(lst._wrapper)
+        self._hole_lst2(lst)
         
 
 
@@ -1472,8 +1509,10 @@ class GXDH:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = self._wrapper.add_hole(hole.encode())
+        ret_val = self._add_hole(hole.encode())
         return ret_val
 
 
@@ -1489,8 +1528,10 @@ class GXDH:
         :rtype:      int
 
         .. versionadded:: 5.1.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = self._wrapper.clean_will_delete_db()
+        ret_val = self._clean_will_delete_db()
         return ret_val
 
 
@@ -1514,11 +1555,11 @@ class GXDH:
 
         .. versionadded:: 5.1.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        If any of the input X or Y values are dummies the tool uses default values.
+        **Note:** If any of the input X or Y values are dummies the tool uses default values.
         """
-        ret_val = self._wrapper.compositing_tool_gui(map._wrapper, x, y1, y2)
+        ret_val = self._compositing_tool_gui(map, x, y1, y2)
         return ret_val
 
 
@@ -1537,13 +1578,13 @@ class GXDH:
 
         .. versionadded:: 5.1.6
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The database name will be of the form
+        **Note:** The database name will be of the form
         
         "d:\\directory\\Project_Collar.gdb"
         """
-        db.value = gxapi_cy.WrapDH.create_collar_table(GXContext._get_tls_geo(), project.encode(), chan, db.value.encode())
+        db.value = gxapi_cy.WrapDH._create_collar_table(GXContext._get_tls_geo(), project.encode(), chan, db.value.encode())
         
 
 
@@ -1564,13 +1605,13 @@ class GXDH:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The database name will be of the form
+        **Note:** The database name will be of the form
         
         "d:\\directory\\Project_Collar.gdb"
         """
-        db.value = gxapi_cy.WrapDH.create_collar_table_dir(GXContext._get_tls_geo(), project.encode(), dir.encode(), chan, db.value.encode())
+        db.value = gxapi_cy.WrapDH._create_collar_table_dir(GXContext._get_tls_geo(), project.encode(), dir.encode(), chan, db.value.encode())
         
 
 
@@ -1588,8 +1629,10 @@ class GXDH:
         :rtype:      int
 
         .. versionadded:: 5.1.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = self._wrapper.delete_will_delete_db(lst._wrapper)
+        ret_val = self._delete_will_delete_db(lst)
         return ret_val
 
 
@@ -1607,8 +1650,10 @@ class GXDH:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = self._wrapper.find_hole(hole.encode())
+        ret_val = self._find_hole(hole.encode())
         return ret_val
 
 
@@ -1622,8 +1667,10 @@ class GXDH:
         :type  db:  str_ref
 
         .. versionadded:: 5.1.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        db.value = self._wrapper.get_collar_table_db(db.value.encode())
+        db.value = self._get_collar_table_db(db.value.encode())
         
 
 
@@ -1642,13 +1689,13 @@ class GXDH:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        If the DH_ELEV channel is requested it will also
+        **Note:** If the DH_ELEV channel is requested it will also
         search for the DH_RL channel, which is the new
         name for the collar elevation.
         """
-        data.value = self._wrapper.get_info(hole, name.encode(), data.value.encode())
+        data.value = self._get_info(hole, name.encode(), data.value.encode())
         
 
 
@@ -1662,8 +1709,10 @@ class GXDH:
         :type  project:  str_ref
 
         .. versionadded:: 5.1.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        project.value = self._wrapper.get_project_name(project.value.encode())
+        project.value = self._get_project_name(project.value.encode())
         
 
 
@@ -1683,8 +1732,10 @@ class GXDH:
         :type  id:       str_ref
 
         .. versionadded:: 6.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        id.value = gxapi_cy.WrapDH.get_section_id(GXContext._get_tls_geo(), azimuth, east, north, id.value.encode())
+        id.value = gxapi_cy.WrapDH._get_section_id(GXContext._get_tls_geo(), azimuth, east, north, id.value.encode())
         
 
 
@@ -1707,9 +1758,9 @@ class GXDH:
 
         .. versionadded:: 6.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The template can be retrieved in order to refresh the
+        **Note:** The template can be retrieved in order to refresh the
         database with a call to the DHIMPORT.GX.
         
         The import types correspond to the DHIMPORT.IMPTYPE variable:
@@ -1717,7 +1768,7 @@ class GXDH:
         
         If no template blob exists, templ
         """
-        ret_val, imp_type.value = gxapi_cy.WrapDH.get_template_blob(GXContext._get_tls_geo(), db._wrapper, template.encode(), imp_type.value)
+        ret_val, imp_type.value = gxapi_cy.WrapDH._get_template_blob(GXContext._get_tls_geo(), db, template.encode(), imp_type.value)
         return ret_val
 
 
@@ -1738,9 +1789,9 @@ class GXDH:
 
         .. versionadded:: 6.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        As of version 6.0, the import templates (``*.i3, *.i4``) produced
+        **Note:** As of version 6.0, the import templates (``*.i3, *.i4``) produced
         by the Wholeplot import wizards contain the following lines:
         
          FILE assay.txt  (except for ODBC)
@@ -1759,7 +1810,7 @@ class GXDH:
         `DH_DATA_UNKNOWN <geosoft.gxapi.DH_DATA_UNKNOWN>` is returned for the data type; likely an indication that this
         is not a new-style template produced by Wholeplot.
         """
-        data_type.value, file.value, table.value = gxapi_cy.WrapDH.get_template_info(GXContext._get_tls_geo(), template.encode(), data_type.value, file.value.encode(), table.value.encode())
+        data_type.value, file.value, table.value = gxapi_cy.WrapDH._get_template_info(GXContext._get_tls_geo(), template.encode(), data_type.value, file.value.encode(), table.value.encode())
         
 
 
@@ -1782,9 +1833,9 @@ class GXDH:
 
         .. versionadded:: 7.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        As of version 6.0, the import templates (``*.i3, *.i4``) produced
+        **Note:** As of version 6.0, the import templates (``*.i3, *.i4``) produced
         by the Wholeplot import wizards contain the following lines:
         
          FILE assay.txt  (except for ODBC)
@@ -1805,7 +1856,7 @@ class GXDH:
         This version also returns a list of the channels in the template checks can be made to
         see if the import will exceed the database channel limit.
         """
-        data_type.value, file.value, table.value = gxapi_cy.WrapDH.get_template_info_ex(GXContext._get_tls_geo(), template.encode(), data_type.value, file.value.encode(), table.value.encode(), lst._wrapper)
+        data_type.value, file.value, table.value = gxapi_cy.WrapDH._get_template_info_ex(GXContext._get_tls_geo(), template.encode(), data_type.value, file.value.encode(), table.value.encode(), lst)
         
 
 
@@ -1821,8 +1872,10 @@ class GXDH:
         :type  conv_factor:  float_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        units.value, conv_factor.value = self._wrapper.get_units(units.value.encode(), conv_factor.value)
+        units.value, conv_factor.value = self._get_units(units.value.encode(), conv_factor.value)
         
 
 
@@ -1835,8 +1888,10 @@ class GXDH:
         :rtype:      bool
 
         .. versionadded:: 6.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapDH.have_current(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapDH._have_current(GXContext._get_tls_geo())
         return ret_val
 
 
@@ -1851,8 +1906,10 @@ class GXDH:
         :rtype:      bool
 
         .. versionadded:: 6.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val, db.value = gxapi_cy.WrapDH.have_current2(GXContext._get_tls_geo(), db.value.encode())
+        ret_val, db.value = gxapi_cy.WrapDH._have_current2(GXContext._get_tls_geo(), db.value.encode())
         return ret_val
 
 
@@ -1867,8 +1924,10 @@ class GXDH:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = self._wrapper.holes()
+        ret_val = self._holes()
         return ret_val
 
 
@@ -1888,8 +1947,10 @@ class GXDH:
         :rtype:          int
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapDH.hole_select_from_list_gui(GXContext._get_tls_geo(), lst._wrapper, sel_lst._wrapper)
+        ret_val = gxapi_cy.WrapDH._hole_select_from_list_gui(GXContext._get_tls_geo(), lst, sel_lst)
         return ret_val
 
 
@@ -1905,8 +1966,10 @@ class GXDH:
         :rtype:      int
 
         .. versionadded:: 5.1.8
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = self._wrapper.hole_selection_tool_gui()
+        ret_val = self._hole_selection_tool_gui()
         return ret_val
 
 
@@ -1926,8 +1989,10 @@ class GXDH:
         :rtype:       int
 
         .. versionadded:: 5.1.6
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val, page.value = self._wrapper.modify3d_gui(ini.encode(), page.value)
+        ret_val, page.value = self._modify3d_gui(ini.encode(), page.value)
         return ret_val
 
 
@@ -1953,8 +2018,10 @@ class GXDH:
         :rtype:                int
 
         .. versionadded:: 9.3
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val, class_file.value = self._wrapper.edit_classification_table_file_gui(chan.encode(), class_file.value.encode(), fill_patterns, colors_only)
+        ret_val, class_file.value = self._edit_classification_table_file_gui(chan.encode(), class_file.value.encode(), fill_patterns, colors_only)
         return ret_val
 
 
@@ -1975,11 +2042,11 @@ class GXDH:
 
         .. versionadded:: 7.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Will plot to an empty crooked section.
+        **Note:** Will plot to an empty crooked section.
         """
-        ret_val, page.value = self._wrapper.modify_crooked_section_holes_gui(ini.encode(), page.value)
+        ret_val, page.value = self._modify_crooked_section_holes_gui(ini.encode(), page.value)
         return ret_val
 
 
@@ -2001,11 +2068,11 @@ class GXDH:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The fence section function.
+        **Note:** The fence section function.
         """
-        ret_val, page.value = self._wrapper.modify_fence_gui(ini.encode(), page.value)
+        ret_val, page.value = self._modify_fence_gui(ini.encode(), page.value)
         return ret_val
 
 
@@ -2025,8 +2092,10 @@ class GXDH:
         :rtype:       int
 
         .. versionadded:: 6.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val, page.value = self._wrapper.modify_hole_traces_3d_gui(ini.encode(), page.value)
+        ret_val, page.value = self._modify_hole_traces_3d_gui(ini.encode(), page.value)
         return ret_val
 
 
@@ -2046,8 +2115,10 @@ class GXDH:
         :rtype:       int
 
         .. versionadded:: 5.1.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val, page.value = self._wrapper.modify_hole_traces_gui(ini.encode(), page.value)
+        ret_val, page.value = self._modify_hole_traces_gui(ini.encode(), page.value)
         return ret_val
 
 
@@ -2070,11 +2141,11 @@ class GXDH:
 
         .. versionadded:: 8.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Currently supports `DH_PLOT_PLAN <geosoft.gxapi.DH_PLOT_PLAN>` and `DH_PLOT_SECTION <geosoft.gxapi.DH_PLOT_SECTION>`
+        **Note:** Currently supports `DH_PLOT_PLAN <geosoft.gxapi.DH_PLOT_PLAN>` and `DH_PLOT_SECTION <geosoft.gxapi.DH_PLOT_SECTION>`
         """
-        ret_val, page.value = self._wrapper.modify_hole_traces_gui2(ini.encode(), plot_type, page.value)
+        ret_val, page.value = self._modify_hole_traces_gui2(ini.encode(), plot_type, page.value)
         return ret_val
 
 
@@ -2094,8 +2165,10 @@ class GXDH:
         :rtype:       int
 
         .. versionadded:: 5.1.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val, page.value = self._wrapper.modify_plan_gui(ini.encode(), page.value)
+        ret_val, page.value = self._modify_plan_gui(ini.encode(), page.value)
         return ret_val
 
 
@@ -2116,11 +2189,11 @@ class GXDH:
 
         .. versionadded:: 7.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Modifies only hole trace, hole data, topo, voxel slice data.
+        **Note:** Modifies only hole trace, hole data, topo, voxel slice data.
         """
-        ret_val, page.value = self._wrapper.modify_plan_holes_gui(ini.encode(), page.value)
+        ret_val, page.value = self._modify_plan_holes_gui(ini.encode(), page.value)
         return ret_val
 
 
@@ -2138,8 +2211,10 @@ class GXDH:
         :rtype:       int
 
         .. versionadded:: 5.1.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapDH.modify_rock_codes_gui(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapDH._modify_rock_codes_gui(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
@@ -2160,14 +2235,14 @@ class GXDH:
 
         .. versionadded:: 6.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Same as above, but passes the current database so that
+        **Note:** Same as above, but passes the current database so that
         the "Populate from channel" button can be used to
         automatically populate the rock code list. The database
         should be a Wholeplot database.
         """
-        ret_val = gxapi_cy.WrapDH.modify_rock_codes_gui2(GXContext._get_tls_geo(), db._wrapper, file.encode())
+        ret_val = gxapi_cy.WrapDH._modify_rock_codes_gui2(GXContext._get_tls_geo(), db, file.encode())
         return ret_val
 
 
@@ -2191,15 +2266,15 @@ class GXDH:
 
         .. versionadded:: 5.1.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The stacked section function uses the same control file
+        **Note:** The stacked section function uses the same control file
         format, but the plotting of profiles and plan views is
         disabled, and if multiple sections are requested, they
         are plotted in a stack on the left side of the same map,
         not to individual maps.
         """
-        ret_val, page.value = self._wrapper.modify_section_gui(ini.encode(), page.value)
+        ret_val, page.value = self._modify_section_gui(ini.encode(), page.value)
         return ret_val
 
 
@@ -2220,12 +2295,12 @@ class GXDH:
 
         .. versionadded:: 7.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Works for both regular and stacked sections.
+        **Note:** Works for both regular and stacked sections.
         Modifies only hole trace, hole data, topo, voxel slice data.
         """
-        ret_val, page.value = self._wrapper.modify_section_holes_gui(ini.encode(), page.value)
+        ret_val, page.value = self._modify_section_holes_gui(ini.encode(), page.value)
         return ret_val
 
 
@@ -2249,15 +2324,15 @@ class GXDH:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The stacked section function uses the same control file
+        **Note:** The stacked section function uses the same control file
         format, but the plotting of profiles and plan views is
         disabled, and if multiple sections are requested, they
         are plotted in a stack on the left side of the same map,
         not to individual maps.
         """
-        ret_val, page.value = self._wrapper.modify_stacked_section_gui(ini.encode(), page.value)
+        ret_val, page.value = self._modify_stacked_section_gui(ini.encode(), page.value)
         return ret_val
 
 
@@ -2277,8 +2352,10 @@ class GXDH:
         :rtype:       int
 
         .. versionadded:: 5.1.3
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val, page.value = self._wrapper.modify_strip_log_gui(ini.encode(), page.value)
+        ret_val, page.value = self._modify_strip_log_gui(ini.encode(), page.value)
         return ret_val
 
 
@@ -2296,8 +2373,10 @@ class GXDH:
         :rtype:       int
 
         .. versionadded:: 6.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapDH.modify_structure_codes_gui(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapDH._modify_structure_codes_gui(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
 
@@ -2318,14 +2397,14 @@ class GXDH:
 
         .. versionadded:: 6.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Same as above, but passes the current database so that
+        **Note:** Same as above, but passes the current database so that
         the "Populate from channel" button can be used to
         automatically populate the structure code list. The database
         should be a Wholeplot database.
         """
-        ret_val = gxapi_cy.WrapDH.modify_structure_codes_gui2(GXContext._get_tls_geo(), db._wrapper, file.encode())
+        ret_val = gxapi_cy.WrapDH._modify_structure_codes_gui2(GXContext._get_tls_geo(), db, file.encode())
         return ret_val
 
 
@@ -2351,8 +2430,10 @@ class GXDH:
         :type  log:      str
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapDH.import2(GXContext._get_tls_geo(), project.encode(), db._wrapper, line, hole, table.encode(), type, log.encode())
+        gxapi_cy.WrapDH._import2(GXContext._get_tls_geo(), project.encode(), db, line, hole, table.encode(), type, log.encode())
         
 
 
@@ -2375,13 +2456,13 @@ class GXDH:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The argument for the assay database is the file name
+        **Note:** The argument for the assay database is the file name
         without the project name and underscore, e.g. for
         "Project_Assay.gdb" use "Assay"
         """
-        self._wrapper.import_las(assay.encode(), file.encode(), interval, interp, wa._wrapper)
+        self._import_las(assay.encode(), file.encode(), interval, interp, wa)
         
 
 
@@ -2397,11 +2478,11 @@ class GXDH:
 
         .. versionadded:: 5.1.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Works for both single and multiple `GXDB <geosoft.gxapi.GXDB>` Wholeplots.
+        **Note:** Works for both single and multiple `GXDB <geosoft.gxapi.GXDB>` Wholeplots.
         """
-        ret_val = self._wrapper.num_assays()
+        ret_val = self._num_assays()
         return ret_val
 
 
@@ -2416,8 +2497,10 @@ class GXDH:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = self._wrapper.num_selected_holes()
+        ret_val = self._num_selected_holes()
         return ret_val
 
 
@@ -2439,11 +2522,11 @@ class GXDH:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Checks all holes with Dip-Azimuth survey data
+        **Note:** Checks all holes with Dip-Azimuth survey data
         """
-        ret_val = self._wrapper.qa_dip_az_curvature_lst(lst._wrapper, tolerance, wa._wrapper)
+        ret_val = self._qa_dip_az_curvature_lst(lst, tolerance, wa)
         return ret_val
 
 
@@ -2463,12 +2546,12 @@ class GXDH:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Error if no Dip-Azimuth survey database, or if
+        **Note:** Error if no Dip-Azimuth survey database, or if
         a requested hole does not exist in the drill project.
         """
-        ret_val = self._wrapper.qa_dip_az_survey_lst(lst._wrapper, wa._wrapper)
+        ret_val = self._qa_dip_az_survey_lst(lst, wa)
         return ret_val
 
 
@@ -2490,11 +2573,11 @@ class GXDH:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Checks all holes with East-North survey data
+        **Note:** Checks all holes with East-North survey data
         """
-        ret_val = self._wrapper.qa_east_north_curvature_lst(lst._wrapper, tolerance, wa._wrapper)
+        ret_val = self._qa_east_north_curvature_lst(lst, tolerance, wa)
         return ret_val
 
 
@@ -2514,12 +2597,12 @@ class GXDH:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Error if no East-North survey database, or if
+        **Note:** Error if no East-North survey database, or if
         a requested hole does not exist in the drill project.
         """
-        ret_val = self._wrapper.qa_east_north_survey_lst(lst._wrapper, wa._wrapper)
+        ret_val = self._qa_east_north_survey_lst(lst, wa)
         return ret_val
 
 
@@ -2559,8 +2642,10 @@ class GXDH:
         :rtype:        int
 
         .. versionadded:: 7.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val, x1.value, y1.value, x2.value, y2.value = self._wrapper.slice_selection_tool_gui(aoix1, aoiy1, aoix2, aoiy2, aoix3, aoiy3, aoix4, aoiy4, x1.value, y1.value, x2.value, y2.value)
+        ret_val, x1.value, y1.value, x2.value, y2.value = self._slice_selection_tool_gui(aoix1, aoiy1, aoix2, aoiy2, aoix3, aoiy3, aoix4, aoiy4, x1.value, y1.value, x2.value, y2.value)
         return ret_val
 
 
@@ -2580,13 +2665,13 @@ class GXDH:
 
         .. versionadded:: 7.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Call when the collar values are edited to update the survey table
+        **Note:** Call when the collar values are edited to update the survey table
         values. If the survey contains more than one row, then no changes
         are applied, and no warning or error is registered.
         """
-        ret_val = self._wrapper.update_survey_from_collar(hole)
+        ret_val = self._update_survey_from_collar(hole)
         return ret_val
 
 
@@ -2603,13 +2688,13 @@ class GXDH:
 
         .. versionadded:: 6.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Wholeplot data graphing parameters for each channel are stored
+        **Note:** Wholeplot data graphing parameters for each channel are stored
         in the channel `GXREG <geosoft.gxapi.GXREG>`. This function lets a user transfer pre-defined
         settings to individual INI files (eg. cu.ini).
         """
-        self._wrapper.load_data_parameters_ini(db._wrapper, dir.encode())
+        self._load_data_parameters_ini(db, dir.encode())
         
 
 
@@ -2625,8 +2710,10 @@ class GXDH:
         :type  type:  int
 
         .. versionadded:: 6.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.load_plot_parameters(ini.encode(), type)
+        self._load_plot_parameters(ini.encode(), type)
         
 
 
@@ -2640,8 +2727,10 @@ class GXDH:
         :type  file:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.load_select(file.encode())
+        self._load_select(file.encode())
         
 
 
@@ -2666,15 +2755,15 @@ class GXDH:
 
         .. versionadded:: 5.1.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Data values inside the polygon area, and within the slice thickness
+        **Note:** Data values inside the polygon area, and within the slice thickness
         have their mask channel values set to 1.
         If the specified mask channel does not exist, it is created.
         `DH_MASK_NEW <geosoft.gxapi.DH_MASK_NEW>` --- Mask is created new for each selected hole
         `DH_MASK_APPEND <geosoft.gxapi.DH_MASK_APPEND>` --- Current selection is added to previous.
         """
-        self._wrapper.mask_ply(pply._wrapper, ipj._wrapper, tol, mask.encode(), select, append)
+        self._mask_ply(pply, ipj, tol, mask.encode(), select, append)
         
 
 
@@ -2691,8 +2780,10 @@ class GXDH:
         :rtype:      GXDH
 
         .. versionadded:: 7.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapDH.open(GXContext._get_tls_geo(), db.encode())
+        ret_val = gxapi_cy.WrapDH._open(GXContext._get_tls_geo(), db.encode())
         return GXDH(ret_val)
 
 
@@ -2708,8 +2799,10 @@ class GXDH:
         :type  type:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.open_job(job.encode(), type)
+        self._open_job(job.encode(), type)
         
 
 
@@ -2726,13 +2819,13 @@ class GXDH:
 
         .. versionadded:: 5.1.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Both the hole traces and data can be plotted.
+        **Note:** Both the hole traces and data can be plotted.
         The DHPLANHOLES GX uses the default plan map parameter file
         "_plan.inp".
         """
-        self._wrapper.plot_hole_traces(map._wrapper, job.encode())
+        self._plot_hole_traces(map, job.encode())
         
 
 
@@ -2749,13 +2842,13 @@ class GXDH:
 
         .. versionadded:: 6.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Both the hole traces and data can be plotted.
+        **Note:** Both the hole traces and data can be plotted.
         The DH3DHOLES GX uses the default 3D map parameter file
         "_3D.in3".
         """
-        self._wrapper.plot_hole_traces_3d(mview._wrapper, job.encode())
+        self._plot_hole_traces_3d(mview, job.encode())
         
 
 
@@ -2771,8 +2864,10 @@ class GXDH:
         :type  job:    str
 
         .. versionadded:: 9.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.plot_symbols_3d(mview._wrapper, job.encode())
+        self._plot_symbols_3d(mview, job.encode())
         
 
 
@@ -2786,8 +2881,10 @@ class GXDH:
         :type  wa:  GXWA
 
         .. versionadded:: 5.1.3
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.qa_collar(wa._wrapper)
+        self._qa_collar(wa)
         
 
 
@@ -2803,8 +2900,10 @@ class GXDH:
         :type  wa:   GXWA
 
         .. versionadded:: 7.0.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.qa_collar_lst(lst._wrapper, wa._wrapper)
+        self._qa_collar_lst(lst, wa)
         
 
 
@@ -2821,11 +2920,11 @@ class GXDH:
 
         .. versionadded:: 5.1.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Checks all holes with Dip-Azimuth survey data
+        **Note:** Checks all holes with Dip-Azimuth survey data
         """
-        self._wrapper.qa_dip_az_curvature(wa._wrapper, tolerance)
+        self._qa_dip_az_curvature(wa, tolerance)
         
 
 
@@ -2844,11 +2943,11 @@ class GXDH:
 
         .. versionadded:: 6.4.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Checks single hole with Dip-Azimuth survey data
+        **Note:** Checks single hole with Dip-Azimuth survey data
         """
-        self._wrapper.qa_dip_az_curvature2(wa._wrapper, tolerance, hole.encode())
+        self._qa_dip_az_curvature2(wa, tolerance, hole.encode())
         
 
 
@@ -2869,12 +2968,12 @@ class GXDH:
 
         .. versionadded:: 5.1.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Error if no Dip-Azimuth survey database, or if
+        **Note:** Error if no Dip-Azimuth survey database, or if
         the requested line does not exist in the database.
         """
-        self._wrapper.qa_dip_az_survey(db._wrapper, wa._wrapper, line, hole.encode())
+        self._qa_dip_az_survey(db, wa, line, hole.encode())
         
 
 
@@ -2891,11 +2990,11 @@ class GXDH:
 
         .. versionadded:: 5.1.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Checks all holes with East-North survey data
+        **Note:** Checks all holes with East-North survey data
         """
-        self._wrapper.qa_east_north_curvature(wa._wrapper, tolerance)
+        self._qa_east_north_curvature(wa, tolerance)
         
 
 
@@ -2914,11 +3013,11 @@ class GXDH:
 
         .. versionadded:: 6.4.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Checks single holes with East-North survey data
+        **Note:** Checks single holes with East-North survey data
         """
-        self._wrapper.qa_east_north_curvature2(wa._wrapper, tolerance, hole.encode())
+        self._qa_east_north_curvature2(wa, tolerance, hole.encode())
         
 
 
@@ -2939,12 +3038,12 @@ class GXDH:
 
         .. versionadded:: 5.1.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Error if no East-North survey database, or if
+        **Note:** Error if no East-North survey database, or if
         the requested line does not exist in the database.
         """
-        self._wrapper.qa_east_north_survey(db._wrapper, wa._wrapper, line, hole.encode())
+        self._qa_east_north_survey(db, wa, line, hole.encode())
         
 
 
@@ -2964,8 +3063,10 @@ class GXDH:
         :type  hole:  str
 
         .. versionadded:: 5.1.3
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.qa_from_to_data(db._wrapper, wa._wrapper, line, hole.encode())
+        self._qa_from_to_data(db, wa, line, hole.encode())
         
 
 
@@ -2985,8 +3086,10 @@ class GXDH:
         :type  hole:  str
 
         .. versionadded:: 5.1.3
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.qa_point_data(db._wrapper, wa._wrapper, line, hole.encode())
+        self._qa_point_data(db, wa, line, hole.encode())
         
 
 
@@ -3003,12 +3106,12 @@ class GXDH:
 
         .. versionadded:: 6.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Looks at each line in a database and sees if it is listed in
+        **Note:** Looks at each line in a database and sees if it is listed in
         the collar tables' hole list.
         """
-        self._wrapper.qa_write_unregistered_holes(db._wrapper, wa._wrapper)
+        self._qa_write_unregistered_holes(db, wa)
         
 
 
@@ -3025,9 +3128,9 @@ class GXDH:
 
         .. versionadded:: 7.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The parameter file must correspond to the plot Type.
+        **Note:** The parameter file must correspond to the plot Type.
         The hDH->hMAP value must be set first, using `set_map <geosoft.gxapi.GXDH.set_map>`.
         Overwrites existing hole and hole data groups.
         Replots the legend if the legend is enabled.
@@ -3035,7 +3138,7 @@ class GXDH:
         INI file used to create the existing map, or things may not
         work out (e.g. bad locations etc).
         """
-        self._wrapper.replot_holes(job.encode(), plot_type)
+        self._replot_holes(job.encode(), plot_type)
         
 
 
@@ -3054,11 +3157,11 @@ class GXDH:
 
         .. versionadded:: 8.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Plot the currently selected holes to a section view.
+        **Note:** Plot the currently selected holes to a section view.
         """
-        self._wrapper.plot_holes_on_section(job.encode(), plot_type, view.encode())
+        self._plot_holes_on_section(job.encode(), plot_type, view.encode())
         
 
 
@@ -3091,12 +3194,12 @@ class GXDH:
 
         .. versionadded:: 5.1.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Re-interpolates in X, Y and Z to proper depth interval
+        **Note:** Re-interpolates in X, Y and Z to proper depth interval
         and returns depths for each point
         """
-        bot.value = self._wrapper.re_survey_east_north(hole.encode(), vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_d._wrapper, east, north, elev, top, bot.value)
+        bot.value = self._re_survey_east_north(hole.encode(), vv_x, vv_y, vv_z, vv_d, east, north, elev, top, bot.value)
         
 
 
@@ -3141,9 +3244,9 @@ class GXDH:
 
         .. versionadded:: 5.1.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Uses the polynomial fit method to calculate (X, Y, Z)
+        **Note:** Uses the polynomial fit method to calculate (X, Y, Z)
         locations down the hole from azimuth, dip, depth values.
         The collar is assumed to be at zero depth, and depth is the
         measure distance down the hole (even if it's horizontal).
@@ -3152,7 +3255,7 @@ class GXDH:
         for most smoothly curving holes. The order is reduced to no more than
         the number of input points.
         """
-        self._wrapper.re_survey_pol_fit(hole.encode(), vv_dip._wrapper, vv_az._wrapper, vv_depth._wrapper, east, north, elev, top, bot, inc, dip_conv, order, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_d._wrapper)
+        self._re_survey_pol_fit(hole.encode(), vv_dip, vv_az, vv_depth, east, north, elev, top, bot, inc, dip_conv, order, vv_x, vv_y, vv_z, vv_d)
         
 
 
@@ -3195,15 +3298,15 @@ class GXDH:
 
         .. versionadded:: 5.1.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Uses the Radius of curvature method to calculate (X, Y, Z)
+        **Note:** Uses the Radius of curvature method to calculate (X, Y, Z)
         locations down the hole from azimuth, dip, depth values.
         The collar is assumed to be at zero depth, and depth is the
         measure distance down the hole (even if it's horizontal).
         A negative dip convention means vertical down is -90 degrees.
         """
-        self._wrapper.re_survey_rad_curve(hole.encode(), vv_dip._wrapper, vv_az._wrapper, vv_depth._wrapper, east, north, elev, top, bot, inc, dip_conv, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_d._wrapper)
+        self._re_survey_rad_curve(hole.encode(), vv_dip, vv_az, vv_depth, east, north, elev, top, bot, inc, dip_conv, vv_x, vv_y, vv_z, vv_d)
         
 
 
@@ -3244,15 +3347,15 @@ class GXDH:
 
         .. versionadded:: 5.1.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Assumes a straight hole to calculate (X, Y, Z)
+        **Note:** Assumes a straight hole to calculate (X, Y, Z)
         locations down the hole from azimuth, dip, depth values.
         The collar is assumed to be at zero depth, and depth is the
         measure distance down the hole (even if it's horizontal).
         A negative dip convention means vertical down is -90 degrees.
         """
-        self._wrapper.re_survey_straight(hole.encode(), dip, az, east, north, elev, top, bot, inc, dip_conv, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_d._wrapper)
+        self._re_survey_straight(hole.encode(), dip, az, east, north, elev, top, bot, inc, dip_conv, vv_x, vv_y, vv_z, vv_d)
         
 
 
@@ -3295,16 +3398,16 @@ class GXDH:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Calculate (X, Y, Z) locations down the hole from azimuth, dip,
+        **Note:** Calculate (X, Y, Z) locations down the hole from azimuth, dip,
         depth values, assuming each segment is straight, and the hole
         bends at each successive azimuth, dip, depth value.
         The collar is assumed to be at zero depth, and depth is the
         measure distance down the hole (even if it's horizontal).
         A negative dip convention means vertical down is -90 degrees.
         """
-        self._wrapper.re_survey_straight_seg(hole.encode(), vv_dip._wrapper, vv_az._wrapper, vv_depth._wrapper, east, north, elev, top, bot, inc, dip_conv, vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, vv_d._wrapper)
+        self._re_survey_straight_seg(hole.encode(), vv_dip, vv_az, vv_depth, east, north, elev, top, bot, inc, dip_conv, vv_x, vv_y, vv_z, vv_d)
         
 
 
@@ -3321,15 +3424,15 @@ class GXDH:
 
         .. versionadded:: 6.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Wholeplot data graphing parameters for each channel are stored
+        **Note:** Wholeplot data graphing parameters for each channel are stored
         in the channel `GXREG <geosoft.gxapi.GXREG>`. This function lets a user transfer pre-defined
         settings to individual INI files (eg. cu.ini).
         As of v6.3, the `GXDH <geosoft.gxapi.GXDH>` object is NOT required for this function, and
         is, in fact, ignored.
         """
-        self._wrapper.save_data_parameters_ini(db._wrapper, dir.encode())
+        self._save_data_parameters_ini(db, dir.encode())
         
 
 
@@ -3345,8 +3448,10 @@ class GXDH:
         :type  type:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.save_job(job.encode(), type)
+        self._save_job(job.encode(), type)
         
 
 
@@ -3360,8 +3465,10 @@ class GXDH:
         :type  file:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.save_select(file.encode())
+        self._save_select(file.encode())
         
 
 
@@ -3378,13 +3485,13 @@ class GXDH:
 
         .. versionadded:: 6.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Given the current selection of windows (e.g. legend, plan),
+        **Note:** Given the current selection of windows (e.g. legend, plan),
         paper size and orientation, return the size in mm of the
         window used for plotting the section.
         """
-        xmm.value, ymm.value = self._wrapper.section_window_size_mm(xmm.value, ymm.value)
+        xmm.value, ymm.value = self._section_window_size_mm(xmm.value, ymm.value)
         
 
 
@@ -3396,8 +3503,10 @@ class GXDH:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.select_all_holes()
+        self._select_all_holes()
         
 
 
@@ -3414,12 +3523,12 @@ class GXDH:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Indices less than 0 are skipped. This lets you use this function
+        **Note:** Indices less than 0 are skipped. This lets you use this function
         after a call to `GXLST.find_items <geosoft.gxapi.GXLST.find_items>`, which returns -1 for indices not located.
         """
-        self._wrapper.select_holes(gvv._wrapper, sel)
+        self._select_holes(gvv, sel)
         
 
 
@@ -3438,12 +3547,12 @@ class GXDH:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Overwrite mode - all selections tested and selected or not selected
+        **Note:** Overwrite mode - all selections tested and selected or not selected
         Append mode    - only holes matching the mask are selected or not selected.
         """
-        self._wrapper.select_name(mask.encode(), sel, mode)
+        self._select_name(mask.encode(), sel, mode)
         
 
 
@@ -3458,12 +3567,12 @@ class GXDH:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        This function operates the same as the `select_ply2 <geosoft.gxapi.GXDH.select_ply2>` method 
+        **Note:** This function operates the same as the `select_ply2 <geosoft.gxapi.GXDH.select_ply2>` method 
         with parameters ``(1, 0, 0)``
         """
-        self._wrapper.select_ply(pply._wrapper)
+        self._select_ply(pply)
         
 
 
@@ -3484,9 +3593,9 @@ class GXDH:
 
         .. versionadded:: 6.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The various selection options give the following results:
+        **Note:** The various selection options give the following results:
         
         New/Select/inside: Unselect all holes, then
                            select all holes inside the polygon.
@@ -3506,7 +3615,7 @@ class GXDH:
         Append/Deselect/outside: Deselect all holes outside the polygon.
                               Leave selections inside as is.
         """
-        self._wrapper.select_ply2(pply._wrapper, select, inside, new)
+        self._select_ply2(pply, select, inside, new)
         
 
 
@@ -3521,11 +3630,11 @@ class GXDH:
 
         .. versionadded:: 7.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        This might be extracted from an existing crooked section view, or created from a database line.
+        **Note:** This might be extracted from an existing crooked section view, or created from a database line.
         """
-        self._wrapper.set_crooked_section_ipj(ipj._wrapper)
+        self._set_crooked_section_ipj(ipj)
         
 
 
@@ -3540,11 +3649,11 @@ class GXDH:
 
         .. versionadded:: 7.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Can be used to specify the name of the view to plot into.
+        **Note:** Can be used to specify the name of the view to plot into.
         """
-        self._wrapper.set_current_view_name(cur_view.encode())
+        self._set_current_view_name(cur_view.encode())
         
 
 
@@ -3563,13 +3672,13 @@ class GXDH:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        If the DH_ELEV channel is requested it will also
+        **Note:** If the DH_ELEV channel is requested it will also
         search for the DH_RL channel, which is the new
         name for the collar elevation.
         """
-        self._wrapper.set_info(hole, name.encode(), data.encode())
+        self._set_info(hole, name.encode(), data.encode())
         
 
 
@@ -3584,9 +3693,9 @@ class GXDH:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The projection for the project is the projection stored
+        **Note:** The projection for the project is the projection stored
         in the DH_EAST channel in the collar table. This
         function sets the projection of the (DH_EAST, DH_NORTH)
         channel pairs in each of the project databases to the
@@ -3594,7 +3703,7 @@ class GXDH:
         The input `GXIPJ <geosoft.gxapi.GXIPJ>` cannot be a geographic coordinate system
         or this call will fail with an error message.
         """
-        self._wrapper.set_ipj(ipj._wrapper)
+        self._set_ipj(ipj)
         
 
 
@@ -3609,13 +3718,13 @@ class GXDH:
 
         .. versionadded:: 7.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Use this before calling the ReplotHoles functions,
+        **Note:** Use this before calling the ReplotHoles functions,
         so that, instead of creating a new map, the plotting
         functions use the existing one.
         """
-        self._wrapper.set_map(map._wrapper)
+        self._set_map(map)
         
 
 
@@ -3630,12 +3739,12 @@ class GXDH:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        Gets the `GXIPJ <geosoft.gxapi.GXIPJ>` of the collar table current x channel and copies it
+        **Note:** Gets the `GXIPJ <geosoft.gxapi.GXIPJ>` of the collar table current x channel and copies it
         into the named database (as long as it is in the project!)
         """
-        self._wrapper.set_new_ipj(db.encode())
+        self._set_new_ipj(db.encode())
         
 
 
@@ -3651,8 +3760,10 @@ class GXDH:
         :type  append:  int
 
         .. versionadded:: 8.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.set_selected_holes_vv(vv._wrapper, append)
+        self._set_selected_holes_vv(vv, append)
         
 
 
@@ -3671,15 +3782,15 @@ class GXDH:
 
         .. versionadded:: 6.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The template can later be retrieved in order to refresh the
+        **Note:** The template can later be retrieved in order to refresh the
         database with a call to the DHIMPORT.GX.
         
         The import types correspond to the DHIMPORT.IMPTYPE variable:
         0: ASCII, 1: Database/XLS, 2: ODBC
         """
-        gxapi_cy.WrapDH.set_template_blob(GXContext._get_tls_geo(), db._wrapper, template.encode(), imp_type)
+        gxapi_cy.WrapDH._set_template_blob(GXContext._get_tls_geo(), db, template.encode(), imp_type)
         
 
 
@@ -3713,8 +3824,10 @@ class GXDH:
         :type  grade_for_missing_assays:      float
 
         .. versionadded:: 7.2
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.significant_intersections_db(mast_db._wrapper, comp_db._wrapper, hol_sel, assay_ch.encode(), cut_off_grade, clip_grade, min_composite_thickness, min_composite_grade, max_internal_dilution_length, min_internal_dilution_grade, grade_for_missing_assays)
+        self._significant_intersections_db(mast_db, comp_db, hol_sel, assay_ch.encode(), cut_off_grade, clip_grade, min_composite_thickness, min_composite_grade, max_internal_dilution_length, min_internal_dilution_grade, grade_for_missing_assays)
         
 
 
@@ -3737,16 +3850,16 @@ class GXDH:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        See `import_las <geosoft.gxapi.GXDH.import_las>`.
+        **Note:** See `import_las <geosoft.gxapi.GXDH.import_las>`.
         Determines if the import of the LAS data will result in data
         being overwritten, interpolated or resampled. Warnings are written to a log
         file, as in sImportLAS_DH. Warnings are not registered in cases
         where data is merely extended at the start or the end with dummies
         to match a different interval down the hole.
         """
-        warn.value = self._wrapper.test_import_las(assay.encode(), file.encode(), interval, wa._wrapper, warn.value)
+        warn.value = self._test_import_las(assay.encode(), file.encode(), interval, wa, warn.value)
         
 
 
@@ -3758,8 +3871,10 @@ class GXDH:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.un_select_all_holes()
+        self._un_select_all_holes()
         
 
 
@@ -3773,8 +3888,10 @@ class GXDH:
         :type  lst:  GXLST
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.un_selected_hole_lst(lst._wrapper)
+        self._un_selected_hole_lst(lst)
         
 
 
@@ -3786,8 +3903,10 @@ class GXDH:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.update_collar_table()
+        self._update_collar_table()
         
 
 
@@ -3801,8 +3920,10 @@ class GXDH:
         :type  hole:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.update_hole_extent(hole)
+        self._update_hole_extent(hole)
         
 
 
@@ -3819,14 +3940,14 @@ class GXDH:
 
         .. versionadded:: 5.1.2
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The parameter file must correspond to the plot Type. The INI file
+        **Note:** The parameter file must correspond to the plot Type. The INI file
         contains settings for all of the non-database data related
         parameters (e.g. Map template, scale, boundaries,
         section definitions, hole trace parameters etc...)
         """
-        self._wrapper.wholeplot(job.encode(), plot_type)
+        self._wholeplot(job.encode(), plot_type)
         
 
 
@@ -3844,8 +3965,10 @@ class GXDH:
         :type  hole_selection:            int
 
         .. versionadded:: 8.3
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.surface_intersections(output_db._wrapper, input_geosurface_or_grid.encode(), hole_selection)
+        self._surface_intersections(output_db, input_geosurface_or_grid.encode(), hole_selection)
         
 
 

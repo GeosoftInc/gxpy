@@ -13,44 +13,35 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXSQLSRV:
+class GXSQLSRV(gxapi_cy.WrapSQLSRV):
     """
     GXSQLSRV class.
 
     SQL Server and MSDE utility functions
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapSQLSRV(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXSQLSRV`
+        A null (undefined) instance of `GXSQLSRV <geosoft.gxapi.GXSQLSRV>`
         
-        :returns: A null `GXSQLSRV`
+        :returns: A null `GXSQLSRV <geosoft.gxapi.GXSQLSRV>`
+        :rtype:   GXSQLSRV
         """
-        return cls()
+        return GXSQLSRV()
 
     def is_null(self):
         """
-        Check if the instance of `GXSQLSRV` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXSQLSRV`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -81,12 +72,12 @@ class GXSQLSRV:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The file's path need to be visible as local files on the server.
+        **Note:** The file's path need to be visible as local files on the server.
         Network drives and substitutes may not work.
         """
-        ret_val = gxapi_cy.WrapSQLSRV.attach_mdf(GXContext._get_tls_geo(), server.encode(), user.encode(), password.encode(), db.encode(), mdf_file_name.encode(), ldf_file_name.encode())
+        ret_val = gxapi_cy.WrapSQLSRV._attach_mdf(GXContext._get_tls_geo(), server.encode(), user.encode(), password.encode(), db.encode(), mdf_file_name.encode(), ldf_file_name.encode())
         return ret_val
 
 
@@ -110,8 +101,10 @@ class GXSQLSRV:
         :rtype:           int
 
         .. versionadded:: 5.1.8
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapSQLSRV.detach_db(GXContext._get_tls_geo(), server.encode(), user.encode(), password.encode(), db.encode())
+        ret_val = gxapi_cy.WrapSQLSRV._detach_db(GXContext._get_tls_geo(), server.encode(), user.encode(), password.encode(), db.encode())
         return ret_val
 
 
@@ -135,8 +128,10 @@ class GXSQLSRV:
         :rtype:           int
 
         .. versionadded:: 5.1.8
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapSQLSRV.get_database_languages_lst(GXContext._get_tls_geo(), lst._wrapper, server.encode(), user.encode(), password.encode(), win_auth)
+        ret_val = gxapi_cy.WrapSQLSRV._get_database_languages_lst(GXContext._get_tls_geo(), lst, server.encode(), user.encode(), password.encode(), win_auth)
         return ret_val
 
 
@@ -160,8 +155,10 @@ class GXSQLSRV:
         :rtype:           int
 
         .. versionadded:: 5.1.8
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapSQLSRV.get_databases_lst(GXContext._get_tls_geo(), lst._wrapper, server.encode(), user.encode(), password.encode(), win_auth)
+        ret_val = gxapi_cy.WrapSQLSRV._get_databases_lst(GXContext._get_tls_geo(), lst, server.encode(), user.encode(), password.encode(), win_auth)
         return ret_val
 
 
@@ -183,8 +180,10 @@ class GXSQLSRV:
         :type  win_auth:  int_ref
 
         .. versionadded:: 5.1.8
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        user.value, password.value, win_auth.value = gxapi_cy.WrapSQLSRV.get_login_gui(GXContext._get_tls_geo(), server.encode(), user.value.encode(), password.value.encode(), mode, win_auth.value)
+        user.value, password.value, win_auth.value = gxapi_cy.WrapSQLSRV._get_login_gui(GXContext._get_tls_geo(), server.encode(), user.value.encode(), password.value.encode(), mode, win_auth.value)
         
 
 
@@ -200,8 +199,10 @@ class GXSQLSRV:
         :rtype:      int
 
         .. versionadded:: 5.1.8
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapSQLSRV.get_servers_lst(GXContext._get_tls_geo(), lst._wrapper)
+        ret_val = gxapi_cy.WrapSQLSRV._get_servers_lst(GXContext._get_tls_geo(), lst)
         return ret_val
 
 

@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXDB:
+class GXDB(gxapi_cy.WrapDB):
     """
     GXDB class.
 
@@ -28,37 +28,28 @@ class GXDB:
     `DB_ACTIVITY_BLOB <geosoft.gxapi.DB_ACTIVITY_BLOB>`
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapDB(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXDB`
+        A null (undefined) instance of `GXDB <geosoft.gxapi.GXDB>`
         
-        :returns: A null `GXDB`
+        :returns: A null `GXDB <geosoft.gxapi.GXDB>`
+        :rtype:   GXDB
         """
-        return cls()
+        return GXDB()
 
     def is_null(self):
         """
-        Check if the instance of `GXDB` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXDB`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Channel
@@ -75,8 +66,10 @@ class GXDB:
         :type  file:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.create_dup(file.encode())
+        self._create_dup(file.encode())
         
 
 
@@ -94,8 +87,10 @@ class GXDB:
         :type  level:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.create_dup_comp(file.encode(), level)
+        self._create_dup_comp(file.encode(), level)
         
 
 
@@ -116,8 +111,10 @@ class GXDB:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.dup_symb_across(dbo._wrapper, symb)
+        ret_val = self._dup_symb_across(dbo, symb)
         return ret_val
 
 
@@ -135,8 +132,10 @@ class GXDB:
         :type  groups:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.easy_maker_symb(symb, name.encode(), groups.encode())
+        self._easy_maker_symb(symb, name.encode(), groups.encode())
         
 
 
@@ -157,12 +156,12 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        These methods are slow and should only be used when
+        **Note:** These methods are slow and should only be used when
         performance is not an issue.
         """
-        str_val.value = self._wrapper.get_chan_str(line, chan, ind, str_val.value.encode())
+        str_val.value = self._get_chan_str(line, chan, ind, str_val.value.encode())
         
 
 
@@ -181,16 +180,16 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If a `GXVA <geosoft.gxapi.GXVA>` channel is specified, then element [0] of this
+        **Note:** If a `GXVA <geosoft.gxapi.GXVA>` channel is specified, then element [0] of this
         `GXVA <geosoft.gxapi.GXVA>` channel is used to populated the `GXVV <geosoft.gxapi.GXVV>`.
 
         .. seealso::
 
             `GXVV <geosoft.gxapi.GXVV>` class.
         """
-        self._wrapper.get_chan_vv(line, chan, vv._wrapper)
+        self._get_chan_vv(line, chan, vv)
         
 
 
@@ -211,16 +210,16 @@ class GXDB:
 
         .. versionadded:: 6.4
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This method is to be used in conjunction with the `GXVV.re_fid_vv <geosoft.gxapi.GXVV.re_fid_vv>` method
+        **Note:** This method is to be used in conjunction with the `GXVV.re_fid_vv <geosoft.gxapi.GXVV.re_fid_vv>` method
         that will honor the FID Expansion setting.
 
         .. seealso::
 
             `GXVV <geosoft.gxapi.GXVV>` class.
         """
-        self._wrapper.get_chan_vv_expanded(line, chan, vv._wrapper)
+        self._get_chan_vv_expanded(line, chan, vv)
         
 
 
@@ -237,12 +236,12 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the channel does not have an `GXIPJ <geosoft.gxapi.GXIPJ>`, the `GXIPJ <geosoft.gxapi.GXIPJ>` that is
+        **Note:** If the channel does not have an `GXIPJ <geosoft.gxapi.GXIPJ>`, the `GXIPJ <geosoft.gxapi.GXIPJ>` that is
         returned will have an unknown projection.
         """
-        self._wrapper.get_ipj(ch, ipj._wrapper)
+        self._get_ipj(ch, ipj)
         
 
 
@@ -259,13 +258,13 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If a channel does not have an `GXITR <geosoft.gxapi.GXITR>`, `get_itr <geosoft.gxapi.GXDB.get_itr>` will not change
+        **Note:** If a channel does not have an `GXITR <geosoft.gxapi.GXITR>`, `get_itr <geosoft.gxapi.GXDB.get_itr>` will not change
         the passed `GXITR <geosoft.gxapi.GXITR>`.
         Channel must be locked for READONLY or READWRITE.
         """
-        self._wrapper.get_itr(ch, itr._wrapper)
+        self._get_itr(ch, itr)
         
 
 
@@ -281,8 +280,10 @@ class GXDB:
         :type  reg:   GXREG
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.get_reg_symb(symb, reg._wrapper)
+        self._get_reg_symb(symb, reg)
         
 
 
@@ -301,9 +302,9 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The symbol `GXREG <geosoft.gxapi.GXREG>` is used to store a variety of attribute
+        **Note:** The symbol `GXREG <geosoft.gxapi.GXREG>` is used to store a variety of attribute
         about the symbol.  Following a conventionally used entries:
         
         UNITS                   - channel units
@@ -321,7 +322,7 @@ class GXDB:
         settings.  If performance is an issue, and more than one
         setting is to be Get and or Set, use the `GXREG <geosoft.gxapi.GXREG>` directly.
         """
-        setting.value = self._wrapper.get_reg_symb_setting(symb, name.encode(), setting.value.encode())
+        setting.value = self._get_reg_symb_setting(symb, name.encode(), setting.value.encode())
         
 
 
@@ -344,16 +345,16 @@ class GXDB:
 
         .. versionadded:: 5.1.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If a `GXVA <geosoft.gxapi.GXVA>` channel is specified, then element [0] of this
+        **Note:** If a `GXVA <geosoft.gxapi.GXVA>` channel is specified, then element [0] of this
         `GXVA <geosoft.gxapi.GXVA>` channel is used to populated the `GXVV <geosoft.gxapi.GXVV>`.
 
         .. seealso::
 
             `GXVV <geosoft.gxapi.GXVV>` class.
         """
-        self._wrapper.get_va_chan_vv(line, chan, vv._wrapper, offset, items)
+        self._get_va_chan_vv(line, chan, vv, offset, items)
         
 
 
@@ -368,8 +369,10 @@ class GXDB:
         :rtype:      int
 
         .. versionadded:: 5.1.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.blobs_max()
+        ret_val = self._blobs_max()
         return ret_val
 
 
@@ -384,8 +387,10 @@ class GXDB:
         :rtype:      int
 
         .. versionadded:: 5.1.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.chans_max()
+        ret_val = self._chans_max()
         return ret_val
 
 
@@ -404,12 +409,12 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the passed string is too short, the result will be
+        **Note:** If the passed string is too short, the result will be
         "**".
         """
-        str_val.value = self._wrapper.format_chan(chan, val, str_val.value.encode())
+        str_val.value = self._format_chan(chan, val, str_val.value.encode())
         
 
 
@@ -427,8 +432,10 @@ class GXDB:
         :rtype:       int
 
         .. versionadded:: 6.0.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.get_chan_array_size(chan)
+        ret_val = self._get_chan_array_size(chan)
         return ret_val
 
 
@@ -445,14 +452,14 @@ class GXDB:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The channel label is stored in the "CLASS" parameter
+        **Note:** The channel label is stored in the "CLASS" parameter
         of the channel reg. If no class is defined, then an
         empty string is returned.
         The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        cl.value = self._wrapper.get_chan_class(chan, cl.value.encode())
+        cl.value = self._get_chan_class(chan, cl.value.encode())
         
 
 
@@ -471,11 +478,11 @@ class GXDB:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
+        **Note:** The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        ret_val = self._wrapper.get_chan_decimal(chan)
+        ret_val = self._get_chan_decimal(chan)
         return ret_val
 
 
@@ -494,12 +501,12 @@ class GXDB:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The returned format is one of the :ref:`DB_CHAN_FORMAT`.
+        **Note:** The returned format is one of the :ref:`DB_CHAN_FORMAT`.
         The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        ret_val = self._wrapper.get_chan_format(chan)
+        ret_val = self._get_chan_format(chan)
         return ret_val
 
 
@@ -522,12 +529,12 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        These methods are slow and should only be used when
+        **Note:** These methods are slow and should only be used when
         performance is not an issue.
         """
-        ret_val = self._wrapper.get_chan_int(line, chan, ind)
+        ret_val = self._get_chan_int(line, chan, ind)
         return ret_val
 
 
@@ -544,14 +551,14 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The channel label is stored in the "LABEL" parameter
+        **Note:** The channel label is stored in the "LABEL" parameter
         of the channel reg.  If the setting is empty, the
         channel name is returned.
         The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        label.value = self._wrapper.get_chan_label(chan, label.value.encode())
+        label.value = self._get_chan_label(chan, label.value.encode())
         
 
 
@@ -569,11 +576,11 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
+        **Note:** The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        name.value = self._wrapper.get_chan_name(chan, name.value.encode())
+        name.value = self._get_chan_name(chan, name.value.encode())
         
 
 
@@ -591,11 +598,11 @@ class GXDB:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
+        **Note:** The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        ret_val = self._wrapper.get_chan_protect(chan)
+        ret_val = self._get_chan_protect(chan)
         return ret_val
 
 
@@ -614,14 +621,14 @@ class GXDB:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The type returned is one of the :ref:`DB_CATEGORY_CHAN`.
+        **Note:** The type returned is one of the :ref:`DB_CATEGORY_CHAN`.
         Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL
         or string types.
         The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        ret_val = self._wrapper.get_chan_type(chan)
+        ret_val = self._get_chan_type(chan)
         return ret_val
 
 
@@ -638,13 +645,13 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The unit label is stored in the "UNITS" parameter
+        **Note:** The unit label is stored in the "UNITS" parameter
         of the channel reg.
         The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        unit.value = self._wrapper.get_chan_unit(chan, unit.value.encode())
+        unit.value = self._get_chan_unit(chan, unit.value.encode())
         
 
 
@@ -663,11 +670,11 @@ class GXDB:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
+        **Note:** The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        ret_val = self._wrapper.get_chan_width(chan)
+        ret_val = self._get_chan_width(chan)
         return ret_val
 
 
@@ -683,8 +690,10 @@ class GXDB:
         :type  psz_name:  str_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        psz_name.value = self._wrapper.get_name(name, psz_name.value.encode())
+        psz_name.value = self._get_name(name, psz_name.value.encode())
         
 
 
@@ -704,16 +713,16 @@ class GXDB:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Same as `get_reg_symb_setting <geosoft.gxapi.GXDB.get_reg_symb_setting>`, but converts
+        **Note:** Same as `get_reg_symb_setting <geosoft.gxapi.GXDB.get_reg_symb_setting>`, but converts
         the setting automatically to an integer value.
         
         This is a convenient but low-performance way to get/set `GXREG <geosoft.gxapi.GXREG>`
         settings.  If performance is an issue, and more than one
         setting is to be Get and or Set, use the `GXREG <geosoft.gxapi.GXREG>` directly.
         """
-        ret_val = self._wrapper.get_reg_symb_setting_int(symb, name.encode())
+        ret_val = self._get_reg_symb_setting_int(symb, name.encode())
         return ret_val
 
 
@@ -730,12 +739,12 @@ class GXDB:
 
         .. versionadded:: 6.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        See GetChanName_DB for more information
+        **Note:** See GetChanName_DB for more information
         The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        name.value = self._wrapper.get_symb_name(symb, name.value.encode())
+        name.value = self._get_symb_name(symb, name.value.encode())
         
 
 
@@ -751,15 +760,15 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If a channel has an `GXITR <geosoft.gxapi.GXITR>`, the `GXITR <geosoft.gxapi.GXITR>` colors are used to
+        **Note:** If a channel has an `GXITR <geosoft.gxapi.GXITR>`, the `GXITR <geosoft.gxapi.GXITR>` colors are used to
         display channel values in the spreadsheet.
         
         If a channel does not have an `GXITR <geosoft.gxapi.GXITR>`, `get_itr <geosoft.gxapi.GXDB.get_itr>` will not change
         the passed `GXITR <geosoft.gxapi.GXITR>`.
         """
-        ret_val = self._wrapper.have_itr(ch)
+        ret_val = self._have_itr(ch)
         return ret_val
 
 
@@ -779,13 +788,13 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the channel does not have a matching coordinate
+        **Note:** If the channel does not have a matching coordinate
         pair, or of the channel does not exist, the returned
         string will be empty.
         """
-        ret_val, pair.value = self._wrapper.coord_pair(chan.encode(), pair.value.encode())
+        ret_val, pair.value = self._coord_pair(chan.encode(), pair.value.encode())
         return ret_val
 
 
@@ -800,8 +809,10 @@ class GXDB:
         :rtype:      int
 
         .. versionadded:: 5.1.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.lines_max()
+        ret_val = self._lines_max()
         return ret_val
 
 
@@ -816,8 +827,10 @@ class GXDB:
         :rtype:      int
 
         .. versionadded:: 5.1.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.users_max()
+        ret_val = self._users_max()
         return ret_val
 
 
@@ -837,8 +850,10 @@ class GXDB:
         :type  groups:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.maker_symb(symb, prog.encode(), name.encode(), groups.encode())
+        self._maker_symb(symb, prog.encode(), name.encode(), groups.encode())
         
 
 
@@ -857,9 +872,9 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If a `GXVA <geosoft.gxapi.GXVA>` channel is specified, then element [0] of this
+        **Note:** If a `GXVA <geosoft.gxapi.GXVA>` channel is specified, then element [0] of this
         `GXVA <geosoft.gxapi.GXVA>` channel will be populated with the `GXVV <geosoft.gxapi.GXVV>`.
         
         There is a limit of 2000 elements for non-licensed users.
@@ -868,7 +883,7 @@ class GXDB:
 
             `GXVV <geosoft.gxapi.GXVV>` class.
         """
-        self._wrapper.put_chan_vv(line, chan, vv._wrapper)
+        self._put_chan_vv(line, chan, vv)
         
 
 
@@ -891,16 +906,16 @@ class GXDB:
 
         .. versionadded:: 5.1.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If a `GXVA <geosoft.gxapi.GXVA>` channel is specified, then element [0] of this
+        **Note:** If a `GXVA <geosoft.gxapi.GXVA>` channel is specified, then element [0] of this
         `GXVA <geosoft.gxapi.GXVA>` channel will be populated with the `GXVV <geosoft.gxapi.GXVV>`.
 
         .. seealso::
 
             `GXVV <geosoft.gxapi.GXVV>` class.
         """
-        self._wrapper.put_va_chan_vv(line, chan, vv._wrapper, offset, items)
+        self._put_va_chan_vv(line, chan, vv, offset, items)
         
 
 
@@ -916,8 +931,10 @@ class GXDB:
         :type  bf:    GXBF
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.read_blob_bf(symb, bf._wrapper)
+        self._read_blob_bf(symb, bf)
         
 
 
@@ -940,12 +957,12 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        These methods are slow and should only be used when
+        **Note:** These methods are slow and should only be used when
         performance is not an issue.
         """
-        ret_val = self._wrapper.get_chan_double(line, chan, ind)
+        ret_val = self._get_chan_double(line, chan, ind)
         return ret_val
 
 
@@ -965,16 +982,16 @@ class GXDB:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Same as `get_reg_symb_setting <geosoft.gxapi.GXDB.get_reg_symb_setting>`, but converts
+        **Note:** Same as `get_reg_symb_setting <geosoft.gxapi.GXDB.get_reg_symb_setting>`, but converts
         the setting automatically to a real value.
         
         This is a convenient but low-performance way to get/set `GXREG <geosoft.gxapi.GXREG>`
         settings.  If performance is an issue, and more than one
         setting is to be Get and or Set, use the `GXREG <geosoft.gxapi.GXREG>` directly.
         """
-        ret_val = self._wrapper.get_reg_symb_setting_double(symb, name.encode())
+        ret_val = self._get_reg_symb_setting_double(symb, name.encode())
         return ret_val
 
 
@@ -989,14 +1006,14 @@ class GXDB:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Value to set must be either `DB_CHAN_PROTECTED <geosoft.gxapi.DB_CHAN_PROTECTED>` or
+        **Note:** Value to set must be either `DB_CHAN_PROTECTED <geosoft.gxapi.DB_CHAN_PROTECTED>` or
         `DB_CHAN_UNPROTECTED <geosoft.gxapi.DB_CHAN_UNPROTECTED>`
         This method does its own channel locking/unlocking.
         Channels already lock `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` are ignored.
         """
-        self._wrapper.set_all_chan_protect(prot)
+        self._set_all_chan_protect(prot)
         
 
 
@@ -1013,13 +1030,13 @@ class GXDB:
 
         .. versionadded:: 5.1.8
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The channel class is stored in the "CLASS" parameter
+        **Note:** The channel class is stored in the "CLASS" parameter
         of the channel reg.
         The channel must be locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        self._wrapper.set_chan_class(chan, cl.encode())
+        self._set_chan_class(chan, cl.encode())
         
 
 
@@ -1037,12 +1054,12 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The number of display digits must be from 0 to 50.
+        **Note:** The number of display digits must be from 0 to 50.
         The channel must be locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        self._wrapper.set_chan_decimal(chan, dec)
+        self._set_chan_decimal(chan, dec)
         
 
 
@@ -1059,11 +1076,11 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The channel must be locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
+        **Note:** The channel must be locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        self._wrapper.set_chan_format(chan, format)
+        self._set_chan_format(chan, format)
         
 
 
@@ -1084,12 +1101,12 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        These methods are slow and should only be used when
+        **Note:** These methods are slow and should only be used when
         performance is not an issue.
         """
-        self._wrapper.set_chan_int(line, chan, ind, val)
+        self._set_chan_int(line, chan, ind, val)
         
 
 
@@ -1106,13 +1123,13 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The channel label is stored in the "LABEL" parameter
+        **Note:** The channel label is stored in the "LABEL" parameter
         of the channel reg.
         The channel must be locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        self._wrapper.set_chan_label(chan, label.encode())
+        self._set_chan_label(chan, label.encode())
         
 
 
@@ -1129,11 +1146,11 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The channel must be locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
+        **Note:** The channel must be locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        self._wrapper.set_chan_name(chan, name.encode())
+        self._set_chan_name(chan, name.encode())
         
 
 
@@ -1151,13 +1168,13 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Value to set must be either `DB_CHAN_PROTECTED <geosoft.gxapi.DB_CHAN_PROTECTED>` or
+        **Note:** Value to set must be either `DB_CHAN_PROTECTED <geosoft.gxapi.DB_CHAN_PROTECTED>` or
         `DB_CHAN_UNPROTECTED <geosoft.gxapi.DB_CHAN_UNPROTECTED>`
         The channel must be locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        self._wrapper.set_chan_protect(chan, prot)
+        self._set_chan_protect(chan, prot)
         
 
 
@@ -1178,12 +1195,12 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        These methods are slow and should only be used when
+        **Note:** These methods are slow and should only be used when
         performance is not an issue.
         """
-        self._wrapper.set_chan_double(line, chan, ind, val)
+        self._set_chan_double(line, chan, ind, val)
         
 
 
@@ -1204,12 +1221,12 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        These methods are slow and should only be used when
+        **Note:** These methods are slow and should only be used when
         performance is not an issue.
         """
-        self._wrapper.set_chan_str(line, chan, ind, str_val.encode())
+        self._set_chan_str(line, chan, ind, str_val.encode())
         
 
 
@@ -1227,11 +1244,11 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The channel must be locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
+        **Note:** The channel must be locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        self._wrapper.set_chan_unit(chan, unit.encode())
+        self._set_chan_unit(chan, unit.encode())
         
 
 
@@ -1248,12 +1265,12 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The number of display digits must be from 0 to 50.
+        **Note:** The number of display digits must be from 0 to 50.
         The channel must be locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        self._wrapper.set_chan_width(chan, width)
+        self._set_chan_width(chan, width)
         
 
 
@@ -1270,8 +1287,10 @@ class GXDB:
         :type  ipj:  GXIPJ
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_ipj(ch1, ch2, ipj._wrapper)
+        self._set_ipj(ch1, ch2, ipj)
         
 
 
@@ -1288,12 +1307,12 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Use `ITR_NULL <geosoft.gxapi.ITR_NULL>` to clear the channel `GXITR <geosoft.gxapi.GXITR>`.
+        **Note:** Use `ITR_NULL <geosoft.gxapi.ITR_NULL>` to clear the channel `GXITR <geosoft.gxapi.GXITR>`.
         Channel must be locked for READONLY or READWRITE.
         """
-        self._wrapper.set_itr(ch, itr._wrapper)
+        self._set_itr(ch, itr)
         
 
 
@@ -1309,8 +1328,10 @@ class GXDB:
         :type  reg:   GXREG
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_reg_symb(symb, reg._wrapper)
+        self._set_reg_symb(symb, reg)
         
 
 
@@ -1329,9 +1350,9 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The symbol `GXREG <geosoft.gxapi.GXREG>` is used to store a variety of attribute
+        **Note:** The symbol `GXREG <geosoft.gxapi.GXREG>` is used to store a variety of attribute
         about the symbol.  Following a conventionally used entries:
         
         UNITS                   - channel units
@@ -1349,7 +1370,7 @@ class GXDB:
         settings.  If performance is an issue, and more than one
         setting is to be Get and or Set, use the `GXREG <geosoft.gxapi.GXREG>` directly.
         """
-        self._wrapper.set_reg_symb_setting(symb, name.encode(), setting.encode())
+        self._set_reg_symb_setting(symb, name.encode(), setting.encode())
         
 
 
@@ -1365,8 +1386,10 @@ class GXDB:
         :type  bf:    GXBF
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.write_blob_bf(symb, bf._wrapper)
+        self._write_blob_bf(symb, bf)
         
 
 
@@ -1382,8 +1405,10 @@ class GXDB:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.commit()
+        self._commit()
         
 
 
@@ -1396,8 +1421,10 @@ class GXDB:
         
 
         .. versionadded:: 5.1.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.compact()
+        self._compact()
         
 
 
@@ -1426,8 +1453,10 @@ class GXDB:
         :type  password:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapDB.create(GXContext._get_tls_geo(), file.encode(), lines, chans, blobs, users, cache, super.encode(), password.encode())
+        gxapi_cy.WrapDB._create(GXContext._get_tls_geo(), file.encode(), lines, chans, blobs, users, cache, super.encode(), password.encode())
         
 
 
@@ -1461,8 +1490,10 @@ class GXDB:
         :type  level:     int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapDB.create_comp(GXContext._get_tls_geo(), file.encode(), lines, chans, blobs, users, cache, super.encode(), password.encode(), page, level)
+        gxapi_cy.WrapDB._create_comp(GXContext._get_tls_geo(), file.encode(), lines, chans, blobs, users, cache, super.encode(), password.encode(), page, level)
         
 
 
@@ -1494,8 +1525,10 @@ class GXDB:
         :type  page:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapDB.create_ex(GXContext._get_tls_geo(), file.encode(), lines, chans, blobs, users, cache, super.encode(), password.encode(), page)
+        gxapi_cy.WrapDB._create_ex(GXContext._get_tls_geo(), file.encode(), lines, chans, blobs, users, cache, super.encode(), password.encode(), page)
         
 
 
@@ -1508,9 +1541,9 @@ class GXDB:
 
         .. versionadded:: 7.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        A new database is created with a single, empty line L0, but many processes
+        **Note:** A new database is created with a single, empty line L0, but many processes
         create databases then create their own lines, so the empty line L0 may remain
         after the process finishes. This function will delete a line L0
         a) If it exists and is empty
@@ -1520,7 +1553,7 @@ class GXDB:
 
             `GXEDB.del_line0 <geosoft.gxapi.GXEDB.del_line0>` - deletes an empty line 0 from the currently edited database.
         """
-        self._wrapper.del_line0()
+        self._del_line0()
         
 
 
@@ -1535,8 +1568,10 @@ class GXDB:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.discard()
+        self._discard()
         
 
 
@@ -1560,8 +1595,10 @@ class GXDB:
         :type  cache:  int
 
         .. versionadded:: 5.1.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapDB.grow(GXContext._get_tls_geo(), file.encode(), lines, chans, blobs, users, cache)
+        gxapi_cy.WrapDB._grow(GXContext._get_tls_geo(), file.encode(), lines, chans, blobs, users, cache)
         
 
 
@@ -1581,16 +1618,16 @@ class GXDB:
 
         .. versionadded:: 6.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This method is useful to determine if another session already locked a database.
+        **Note:** This method is useful to determine if another session already locked a database.
         By using this method before an `open <geosoft.gxapi.GXDB.open>` a GX may handle errors like this more gracefully.
 
         .. seealso::
 
             `open <geosoft.gxapi.GXDB.open>`, `open_read_only <geosoft.gxapi.GXDB.open_read_only>`, `can_open_read_only <geosoft.gxapi.GXDB.can_open_read_only>`
         """
-        ret_val = gxapi_cy.WrapDB.can_open(GXContext._get_tls_geo(), file.encode(), user.encode(), password.encode())
+        ret_val = gxapi_cy.WrapDB._can_open(GXContext._get_tls_geo(), file.encode(), user.encode(), password.encode())
         return ret_val
 
 
@@ -1610,16 +1647,16 @@ class GXDB:
 
         .. versionadded:: 6.4.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This method is useful to determine if another session already locked a database.
+        **Note:** This method is useful to determine if another session already locked a database.
         By using this method before an `open_read_only <geosoft.gxapi.GXDB.open_read_only>` a GX may handle errors like this more gracefully.
 
         .. seealso::
 
             `open <geosoft.gxapi.GXDB.open>`, `open_read_only <geosoft.gxapi.GXDB.open_read_only>`, `can_open <geosoft.gxapi.GXDB.can_open>`
         """
-        ret_val = gxapi_cy.WrapDB.can_open_read_only(GXContext._get_tls_geo(), file.encode(), user.encode(), password.encode())
+        ret_val = gxapi_cy.WrapDB._can_open_read_only(GXContext._get_tls_geo(), file.encode(), user.encode(), password.encode())
         return ret_val
 
 
@@ -1636,8 +1673,10 @@ class GXDB:
         :rtype:      int
 
         .. versionadded:: 6.0.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.check()
+        ret_val = self._check()
         return ret_val
 
 
@@ -1653,13 +1692,13 @@ class GXDB:
 
         .. versionadded:: 6.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This function does not check for other information or blobs,
+        **Note:** This function does not check for other information or blobs,
         it merely looks at all lines in the database to see if they
         are empty. If all are empty, it returns 1.
         """
-        ret_val = self._wrapper.is_empty()
+        ret_val = self._is_empty()
         return ret_val
 
 
@@ -1676,8 +1715,10 @@ class GXDB:
         :rtype:       int
 
         .. versionadded:: 6.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.is_line_empty(symb)
+        ret_val = self._is_line_empty(symb)
         return ret_val
 
 
@@ -1699,11 +1740,13 @@ class GXDB:
 
         .. versionadded:: 5.0
 
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
         .. seealso::
 
             `open_read_only <geosoft.gxapi.GXDB.open_read_only>`, `can_open <geosoft.gxapi.GXDB.can_open>`, `can_open_read_only <geosoft.gxapi.GXDB.can_open_read_only>`
         """
-        ret_val = gxapi_cy.WrapDB.open(GXContext._get_tls_geo(), file.encode(), user.encode(), password.encode())
+        ret_val = gxapi_cy.WrapDB._open(GXContext._get_tls_geo(), file.encode(), user.encode(), password.encode())
         return GXDB(ret_val)
 
 
@@ -1725,16 +1768,16 @@ class GXDB:
 
         .. versionadded:: 6.4.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This method is useful to open multiple reader instances on the same database. This call will fail
+        **Note:** This method is useful to open multiple reader instances on the same database. This call will fail
         if a `GXDB <geosoft.gxapi.GXDB>` has already been opened with `open <geosoft.gxapi.GXDB.open>` or locked in the application with `GXEDB.lock <geosoft.gxapi.GXEDB.lock>`.
 
         .. seealso::
 
             `open <geosoft.gxapi.GXDB.open>`, `can_open <geosoft.gxapi.GXDB.can_open>`, `can_open_read_only <geosoft.gxapi.GXDB.can_open_read_only>`
         """
-        ret_val = gxapi_cy.WrapDB.open_read_only(GXContext._get_tls_geo(), file.encode(), user.encode(), password.encode())
+        ret_val = gxapi_cy.WrapDB._open_read_only(GXContext._get_tls_geo(), file.encode(), user.encode(), password.encode())
         return GXDB(ret_val)
 
 
@@ -1748,8 +1791,10 @@ class GXDB:
         :type  file:  str
 
         .. versionadded:: 5.1.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapDB.repair(GXContext._get_tls_geo(), file.encode())
+        gxapi_cy.WrapDB._repair(GXContext._get_tls_geo(), file.encode())
         
 
 
@@ -1761,8 +1806,10 @@ class GXDB:
         
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.sync()
+        self._sync()
         
 
 
@@ -1787,12 +1834,12 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        All the data in the destination channel is destroyed along
+        **Note:** All the data in the destination channel is destroyed along
         with the fiducial start and increment.
         """
-        self._wrapper.copy_data(line, i_chan, o_chan)
+        self._copy_data(line, i_chan, o_chan)
         
 
 
@@ -1811,11 +1858,11 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the channel is `GXVV <geosoft.gxapi.GXVV>`, this function returns 1.
+        **Note:** If the channel is `GXVV <geosoft.gxapi.GXVV>`, this function returns 1.
         """
-        ret_val = self._wrapper.get_col_va(chan)
+        ret_val = self._get_col_va(chan)
         return ret_val
 
 
@@ -1835,12 +1882,12 @@ class GXDB:
 
         .. versionadded:: 8.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Returns the actual number of data items (rows) in a channel. For `GXVA <geosoft.gxapi.GXVA>` channels no correction is
+        **Note:** Returns the actual number of data items (rows) in a channel. For `GXVA <geosoft.gxapi.GXVA>` channels no correction is
         necessary for the number of columns.
         """
-        ret_val = self._wrapper.get_channel_length(line, chan)
+        ret_val = self._get_channel_length(line, chan)
         return ret_val
 
 
@@ -1860,8 +1907,10 @@ class GXDB:
         :rtype:       float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.get_fid_incr(line, chan)
+        ret_val = self._get_fid_incr(line, chan)
         return ret_val
 
 
@@ -1881,8 +1930,10 @@ class GXDB:
         :rtype:       float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.get_fid_start(line, chan)
+        ret_val = self._get_fid_start(line, chan)
         return ret_val
 
 
@@ -1903,8 +1954,10 @@ class GXDB:
         :type  incr:   float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_fid(line, chan, start, incr)
+        self._set_fid(line, chan, start, incr)
         
 
 
@@ -1927,14 +1980,14 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This function normally used for `GXVA <geosoft.gxapi.GXVA>` channels. A copy of the
+        **Note:** This function normally used for `GXVA <geosoft.gxapi.GXVA>` channels. A copy of the
         original channel will be made if start and end column
         numbers to copy are dummies.
         All the columns including start and end columns will be copied
         """
-        self._wrapper.window_va_ch(line, i_ch, o_ch, col_s, col_e)
+        self._window_va_ch(line, i_ch, o_ch, col_s, col_e)
         
 
 
@@ -1955,15 +2008,15 @@ class GXDB:
 
         .. versionadded:: 5.0.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Similar to `window_va_ch <geosoft.gxapi.GXDB.window_va_ch>`, but the input and output channels must
+        **Note:** Similar to `window_va_ch <geosoft.gxapi.GXDB.window_va_ch>`, but the input and output channels must
         contain the same number of columns. The input `GXVV <geosoft.gxapi.GXVV>` tells which columns
         to copy over; 0 values indicate that the output column is to be
         dummied, and non-zero values indicate the column is to be copied.
         The `GXVV <geosoft.gxapi.GXVV>` length must be the same as the number of columns.
         """
-        self._wrapper.window_va_ch2(line, i_ch, o_ch, gvv._wrapper)
+        self._window_va_ch2(line, i_ch, o_ch, gvv)
         
 
 
@@ -1983,8 +2036,10 @@ class GXDB:
         :type  mode:  int
 
         .. versionadded:: 9.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_line_selection(line, mode)
+        self._set_line_selection(line, mode)
         
 
 
@@ -2001,8 +2056,10 @@ class GXDB:
         :rtype:       int
 
         .. versionadded:: 9.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.get_line_selection(line)
+        ret_val = self._get_line_selection(line)
         return ret_val
 
 
@@ -2018,8 +2075,10 @@ class GXDB:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.first_sel_line()
+        ret_val = self._first_sel_line()
         return ret_val
 
 
@@ -2038,11 +2097,11 @@ class GXDB:
 
         .. versionadded:: 5.1.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
+        **Note:** The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        start.value, end.value = self._wrapper.get_line_map_fid(line, start.value, end.value)
+        start.value, end.value = self._get_line_map_fid(line, start.value, end.value)
         
 
 
@@ -2057,8 +2116,10 @@ class GXDB:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.get_select()
+        ret_val = self._get_select()
         return ret_val
 
 
@@ -2074,8 +2135,10 @@ class GXDB:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.count_sel_lines()
+        ret_val = self._count_sel_lines()
         return ret_val
 
 
@@ -2094,13 +2157,13 @@ class GXDB:
 
         .. versionadded:: 7.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Channel names must only contain alpha-numeric characters or the
+        **Note:** Channel names must only contain alpha-numeric characters or the
         underscore character "_", and the first letter must be a letter
         or an underscore.
         """
-        ret_val = gxapi_cy.WrapDB.is_chan_name(GXContext._get_tls_geo(), chan.encode())
+        ret_val = gxapi_cy.WrapDB._is_chan_name(GXContext._get_tls_geo(), chan.encode())
         return ret_val
 
 
@@ -2119,8 +2182,10 @@ class GXDB:
         :rtype:       int
 
         .. versionadded:: 5.1.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.is_chan_valid(chan)
+        ret_val = self._is_chan_valid(chan)
         return ret_val
 
 
@@ -2138,8 +2203,10 @@ class GXDB:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapDB.is_line_name(GXContext._get_tls_geo(), line.encode())
+        ret_val = gxapi_cy.WrapDB._is_line_name(GXContext._get_tls_geo(), line.encode())
         return ret_val
 
 
@@ -2158,8 +2225,10 @@ class GXDB:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.is_line_valid(line)
+        ret_val = self._is_line_valid(line)
         return ret_val
 
 
@@ -2177,11 +2246,11 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
+        **Note:** The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        ret_val = self._wrapper.line_category(line)
+        ret_val = self._line_category(line)
         return ret_val
 
 
@@ -2199,11 +2268,11 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
+        **Note:** The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        ret_val = self._wrapper.line_flight(line)
+        ret_val = self._line_flight(line)
         return ret_val
 
 
@@ -2222,9 +2291,9 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Label formats.
+        **Note:** Label formats.
         
         example full format is
         "L1023.4 13"   type "L"
@@ -2236,7 +2305,7 @@ class GXDB:
         
         Use LINK format to create a database link label.
         """
-        label.value = self._wrapper.line_label(line, label.value.encode(), format)
+        label.value = self._line_label(line, label.value.encode(), format)
         
 
 
@@ -2254,11 +2323,11 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
+        **Note:** The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        ret_val = self._wrapper.line_number(line)
+        ret_val = self._line_number(line)
         return ret_val
 
 
@@ -2275,11 +2344,11 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
+        **Note:** The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        line_number.value = self._wrapper.line_number2(line, line_number.value.encode())
+        line_number.value = self._line_number2(line, line_number.value.encode())
         
 
 
@@ -2297,11 +2366,11 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
+        **Note:** The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        ret_val = self._wrapper.line_type(line)
+        ret_val = self._line_type(line)
         return ret_val
 
 
@@ -2319,11 +2388,11 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
+        **Note:** The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        ret_val = self._wrapper.line_version(line)
+        ret_val = self._line_version(line)
         return ret_val
 
 
@@ -2345,14 +2414,14 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This MUST be called to generate a line name when calls
+        **Note:** This MUST be called to generate a line name when calls
         are made to `exist_symb <geosoft.gxapi.GXDB.exist_symb>`, `create_symb <geosoft.gxapi.GXDB.create_symb>` or `delete_symb <geosoft.gxapi.GXDB.delete_symb>`
         for an operation on a line.
         See also SetLineName2_DB.
         """
-        name.value = gxapi_cy.WrapDB.set_line_name(GXContext._get_tls_geo(), num, type, ver, name.value.encode())
+        name.value = gxapi_cy.WrapDB._set_line_name(GXContext._get_tls_geo(), num, type, ver, name.value.encode())
         
 
 
@@ -2373,15 +2442,15 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This MUST be called to generate a line name when calls
+        **Note:** This MUST be called to generate a line name when calls
         are made to `exist_symb <geosoft.gxapi.GXDB.exist_symb>`, `create_symb <geosoft.gxapi.GXDB.create_symb>` or `delete_symb <geosoft.gxapi.GXDB.delete_symb>`
         for an operation on a line.
         The line number can be any combination of letters and numbers,
         i.e. XU324, 98765, A, 23NGV etc.
         """
-        name.value = gxapi_cy.WrapDB.set_line_name2(GXContext._get_tls_geo(), al_num.encode(), type, ver, name.value.encode())
+        name.value = gxapi_cy.WrapDB._set_line_name2(GXContext._get_tls_geo(), al_num.encode(), type, ver, name.value.encode())
         
 
 
@@ -2395,8 +2464,10 @@ class GXDB:
         :type  file:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.load_select(file.encode())
+        self._load_select(file.encode())
         
 
 
@@ -2414,8 +2485,10 @@ class GXDB:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.next_sel_line(prev)
+        ret_val = self._next_sel_line(prev)
         return ret_val
 
 
@@ -2433,9 +2506,9 @@ class GXDB:
 
         .. versionadded:: 5.1.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
+        **Note:** The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         
         This function simply returns a value set using the `set_line_bearing <geosoft.gxapi.GXDB.set_line_bearing>`
         function. It returns `rDUMMY <geosoft.gxapi.rDUMMY>` for line categories other than
@@ -2448,7 +2521,7 @@ class GXDB:
 
             `set_line_bearing <geosoft.gxapi.GXDB.set_line_bearing>`, `GXDU.direction <geosoft.gxapi.GXDU.direction>`
         """
-        ret_val = self._wrapper.line_bearing(line)
+        ret_val = self._line_bearing(line)
         return ret_val
 
 
@@ -2466,11 +2539,11 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
+        **Note:** The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        ret_val = self._wrapper.line_date(line)
+        ret_val = self._line_date(line)
         return ret_val
 
 
@@ -2484,8 +2557,10 @@ class GXDB:
         :type  file:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.save_select(file.encode())
+        self._save_select(file.encode())
         
 
 
@@ -2502,9 +2577,9 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Selections/deselections are cumulative. If lines had already
+        **Note:** Selections/deselections are cumulative. If lines had already
         been selected, then any further selection/deselection will
         affect that set of selections.
         
@@ -2517,7 +2592,7 @@ class GXDB:
         E.g. "F10" would select all lines of flight 10.
         Use an empty string ("") to select/deselect ALL lines.
         """
-        self._wrapper.select(select.encode(), mode)
+        self._select(select.encode(), mode)
         
 
 
@@ -2534,9 +2609,9 @@ class GXDB:
 
         .. versionadded:: 5.1.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The channel must be locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
+        **Note:** The channel must be locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         
         This function simply sets a value in the line's metadata
         that is retrieved using the `line_bearing <geosoft.gxapi.GXDB.line_bearing>`
@@ -2547,7 +2622,7 @@ class GXDB:
 
             `line_bearing <geosoft.gxapi.GXDB.line_bearing>`, `GXDU.direction <geosoft.gxapi.GXDU.direction>`
         """
-        self._wrapper.set_line_bearing(line, bearing)
+        self._set_line_bearing(line, bearing)
         
 
 
@@ -2564,11 +2639,11 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The channel must be locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
+        **Note:** The channel must be locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        self._wrapper.set_line_date(line, date)
+        self._set_line_date(line, date)
         
 
 
@@ -2585,11 +2660,11 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The channel must be locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
+        **Note:** The channel must be locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        self._wrapper.set_line_flight(line, fl)
+        self._set_line_flight(line, fl)
         
 
 
@@ -2608,12 +2683,12 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        for full range, set Start Fid to `rMIN <geosoft.gxapi.rMIN>` and End Fid to `rMAX <geosoft.gxapi.rMAX>`.
+        **Note:** for full range, set Start Fid to `rMIN <geosoft.gxapi.rMIN>` and End Fid to `rMAX <geosoft.gxapi.rMAX>`.
         for no data, set Start and End Fids to `rDUMMY <geosoft.gxapi.rDUMMY>`.
         """
-        self._wrapper.set_line_map_fid(line, start, end)
+        self._set_line_map_fid(line, start, end)
         
 
 
@@ -2630,11 +2705,11 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The channel must be locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
+        **Note:** The channel must be locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        self._wrapper.set_line_num(line, num)
+        self._set_line_num(line, num)
         
 
 
@@ -2651,11 +2726,11 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The channel must be locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
+        **Note:** The channel must be locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        self._wrapper.set_line_type(line, type)
+        self._set_line_type(line, type)
         
 
 
@@ -2672,11 +2747,11 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The channel must be locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
+        **Note:** The channel must be locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        self._wrapper.set_line_ver(line, ver)
+        self._set_line_ver(line, ver)
         
 
 
@@ -2691,11 +2766,11 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This method also destroys the DB_SELECT object.
+        **Note:** This method also destroys the DB_SELECT object.
         """
-        self._wrapper.set_select(sel)
+        self._set_select(sel)
         
 
 
@@ -2713,8 +2788,10 @@ class GXDB:
         :type  meta:  GXMETA
 
         .. versionadded:: 5.1.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.get_meta(meta._wrapper)
+        self._get_meta(meta)
         
 
 
@@ -2728,8 +2805,10 @@ class GXDB:
         :type  meta:  GXMETA
 
         .. versionadded:: 5.1.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_meta(meta._wrapper)
+        self._set_meta(meta)
         
 
 
@@ -2747,8 +2826,10 @@ class GXDB:
         :type  lst:  GXLST
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.array_lst(lst._wrapper)
+        self._array_lst(lst)
         
 
 
@@ -2764,8 +2845,10 @@ class GXDB:
         :type  lst:      GXLST
 
         .. versionadded:: 8.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.array_size_lst(columns, lst._wrapper)
+        self._array_size_lst(columns, lst)
         
 
 
@@ -2780,9 +2863,9 @@ class GXDB:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Populates a `GXLST <geosoft.gxapi.GXLST>` with channel symbols.
+        **Note:** Populates a `GXLST <geosoft.gxapi.GXLST>` with channel symbols.
         The name is put into the "Name" part of the `GXLST <geosoft.gxapi.GXLST>` (0),
         and the handle, an integer value written as a string, is
         placed in the value part of the `GXLST <geosoft.gxapi.GXLST>` (1).
@@ -2790,7 +2873,7 @@ class GXDB:
         
         The `GXLST <geosoft.gxapi.GXLST>` is cleared first, and the items are sorted by name.
         """
-        self._wrapper.chan_lst(lst._wrapper)
+        self._chan_lst(lst)
         
 
 
@@ -2805,11 +2888,11 @@ class GXDB:
 
         .. versionadded:: 8.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Like `chan_lst <geosoft.gxapi.GXDB.chan_lst>`, but does not include array channels or virtual channels.
+        **Note:** Like `chan_lst <geosoft.gxapi.GXDB.chan_lst>`, but does not include array channels or virtual channels.
         """
-        self._wrapper.normal_chan_lst(lst._wrapper)
+        self._normal_chan_lst(lst)
         
 
 
@@ -2826,16 +2909,16 @@ class GXDB:
 
         .. versionadded:: 5.0.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The Name of the symbol is placed in the
+        **Note:** The Name of the symbol is placed in the
         item name and the item value is set to the symbol handle.
         Only channels with the given class name are included,
         e.g. use "ASSAY" for assay channels in `GXCHIMERA <geosoft.gxapi.GXCHIMERA>`.
         
         The `GXLST <geosoft.gxapi.GXLST>` is cleared first, and the items are sorted by name.
         """
-        self._wrapper.class_chan_lst(lst._wrapper, cl.encode())
+        self._class_chan_lst(lst, cl.encode())
         
 
 
@@ -2852,16 +2935,16 @@ class GXDB:
 
         .. versionadded:: 5.0.8
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The Name of the symbol is placed in the
+        **Note:** The Name of the symbol is placed in the
         item name and the item value is set to the symbol handle.
         Only group lines with the given class name are included,
         e.g. use "TARGETS" for UX-Detect Target groups.
         
         The `GXLST <geosoft.gxapi.GXLST>` is cleared first, and the items are sorted by name.
         """
-        self._wrapper.class_group_lst(lst._wrapper, cl.encode())
+        self._class_group_lst(lst, cl.encode())
         
 
 
@@ -2885,9 +2968,9 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If symbol already exits, and it is the same type
+        **Note:** If symbol already exits, and it is the same type
         simply returns a handle to the existing symbol.
         
         This method simple calls `create_symb_ex <geosoft.gxapi.GXDB.create_symb_ex>` with the
@@ -2916,7 +2999,7 @@ class GXDB:
         Programmers should avoid using the above prefixes as the starting
         letters of their blob names to avoid any possible conflicts.
         """
-        ret_val = self._wrapper.create_symb(name.encode(), symb, owner, category)
+        ret_val = self._create_symb(name.encode(), symb, owner, category)
         return ret_val
 
 
@@ -2942,9 +3025,9 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If symbol already exits it is returned.
+        **Note:** If symbol already exits it is returned.
         
         STRING-type channels: To create a string-type channel,
         enter a negative number for the channel category below.
@@ -2972,7 +3055,7 @@ class GXDB:
         The ability to create a `GXVA <geosoft.gxapi.GXVA>` channel is not available in the
         free interface and requires a Montaj license.
         """
-        ret_val = self._wrapper.create_symb_ex(name.encode(), symb, owner, category, extra)
+        ret_val = self._create_symb_ex(name.encode(), symb, owner, category, extra)
         return ret_val
 
 
@@ -2989,16 +3072,16 @@ class GXDB:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The Name of the symbol is placed in the
+        **Note:** The Name of the symbol is placed in the
         item name and the item value is set to the symbol handle.
         Only channels in the list which are present in the database
         are included.
         
         The `GXLST <geosoft.gxapi.GXLST>` is cleared first.
         """
-        self._wrapper.csv_chan_lst(lst._wrapper, channels.encode())
+        self._csv_chan_lst(lst, channels.encode())
         
 
 
@@ -3014,8 +3097,10 @@ class GXDB:
         :type  symb:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.delete_symb(symb)
+        self._delete_symb(symb)
         
 
 
@@ -3035,8 +3120,10 @@ class GXDB:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.dup_line_symb(symb, new.encode())
+        ret_val = self._dup_line_symb(symb, new.encode())
         return ret_val
 
 
@@ -3056,16 +3143,16 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The symbol will be locked READWRITE.
+        **Note:** The symbol will be locked READWRITE.
         The new name must not already exist in the database.
 
         .. seealso::
 
             `dup_symb_no_lock <geosoft.gxapi.GXDB.dup_symb_no_lock>`
         """
-        ret_val = self._wrapper.dup_symb(symb, new.encode())
+        ret_val = self._dup_symb(symb, new.encode())
         return ret_val
 
 
@@ -3085,16 +3172,16 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The symbol will be NOT be locked.
+        **Note:** The symbol will be NOT be locked.
         The new name must not already exist in the database.
 
         .. seealso::
 
             `dup_symb <geosoft.gxapi.GXDB.dup_symb>`
         """
-        ret_val = self._wrapper.dup_symb_no_lock(symb, new.encode())
+        ret_val = self._dup_symb_no_lock(symb, new.encode())
         return ret_val
 
 
@@ -3112,9 +3199,9 @@ class GXDB:
 
         .. versionadded:: 5.1.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        To work with a specific column from a `GXVA <geosoft.gxapi.GXVA>` channel,
+        **Note:** To work with a specific column from a `GXVA <geosoft.gxapi.GXVA>` channel,
         specify the `GXVA <geosoft.gxapi.GXVA>` element number in square brackets as part
         of the `GXVA <geosoft.gxapi.GXVA>` channel name (e.g. "EM[3]" will treat the fourth
         column of the `GXVA <geosoft.gxapi.GXVA>` channel as a `GXVV <geosoft.gxapi.GXVV>`).
@@ -3123,7 +3210,7 @@ class GXDB:
         Introduced in v5.1.3.
         The new `find_chan <geosoft.gxapi.GXDB.find_chan>` searches using the exact channel name.
         """
-        ret_val = self._wrapper.find_chan(chan.encode())
+        ret_val = self._find_chan(chan.encode())
         return ret_val
 
 
@@ -3143,9 +3230,9 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        To work with a specific column from a `GXVA <geosoft.gxapi.GXVA>` channel,
+        **Note:** To work with a specific column from a `GXVA <geosoft.gxapi.GXVA>` channel,
         specify the `GXVA <geosoft.gxapi.GXVA>` element number in square brackets as part
         of the `GXVA <geosoft.gxapi.GXVA>` channel name (e.g. "EM[3]" will treat the fourth
         column of the `GXVA <geosoft.gxapi.GXVA>` channel as a `GXVV <geosoft.gxapi.GXVV>`).
@@ -3166,7 +3253,7 @@ class GXDB:
         
         The new `find_chan <geosoft.gxapi.GXDB.find_chan>` searches using the exact channel name.
         """
-        ret_val = self._wrapper.find_symb(symb.encode(), type)
+        ret_val = self._find_symb(symb.encode(), type)
         return ret_val
 
 
@@ -3183,8 +3270,10 @@ class GXDB:
         :type  lst:  GXLST
 
         .. versionadded:: 5.0.8
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.get_chan_order_lst(lst._wrapper)
+        self._get_chan_order_lst(lst)
         
 
 
@@ -3206,8 +3295,10 @@ class GXDB:
         :rtype:       int
 
         .. versionadded:: 5.1.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.get_xyz_chan_symb(chan)
+        ret_val = self._get_xyz_chan_symb(chan)
         return ret_val
 
 
@@ -3227,15 +3318,15 @@ class GXDB:
 
         .. versionadded:: 5.0.5
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This method generates a list of symbols in the database
+        **Note:** This method generates a list of symbols in the database
         and places their handles into a `GXVV <geosoft.gxapi.GXVV>`. The list is not
         sorted.
         Only channels with the given class name are included,
         e.g. use "ASSAY" for assay channels used in `GXCHIMERA <geosoft.gxapi.GXCHIMERA>`.
         """
-        ret_val = self._wrapper.class_chan_list(vv._wrapper, cl.encode())
+        ret_val = self._class_chan_list(vv, cl.encode())
         return ret_val
 
 
@@ -3254,13 +3345,13 @@ class GXDB:
 
         .. versionadded:: 5.1.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        See notes for `exist_symb <geosoft.gxapi.GXDB.exist_symb>`.
+        **Note:** See notes for `exist_symb <geosoft.gxapi.GXDB.exist_symb>`.
         Introduced in v5.1.3.
         `exist_chan <geosoft.gxapi.GXDB.exist_chan>` searches using the exact channel name.
         """
-        ret_val = self._wrapper.exist_chan(chan.encode())
+        ret_val = self._exist_chan(chan.encode())
         return ret_val
 
 
@@ -3282,9 +3373,9 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        For backward compatibility with GXs not employing the
+        **Note:** For backward compatibility with GXs not employing the
         GetXYZChan_DB function, the following behaviour has
         been introduced as of v5.1.3:  (also true for "Y").
         
@@ -3301,7 +3392,7 @@ class GXDB:
         
         The new `exist_chan <geosoft.gxapi.GXDB.exist_chan>` searches using the exact channel name.
         """
-        ret_val = self._wrapper.exist_symb(symb.encode(), type)
+        ret_val = self._exist_symb(symb.encode(), type)
         return ret_val
 
 
@@ -3321,8 +3412,10 @@ class GXDB:
         :rtype:       int
 
         .. versionadded:: 9.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.valid_symb(symb, type)
+        ret_val = self._valid_symb(symb, type)
         return ret_val
 
 
@@ -3339,8 +3432,10 @@ class GXDB:
         :rtype:       int
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.get_symb_lock(symb)
+        ret_val = self._get_symb_lock(symb)
         return ret_val
 
 
@@ -3357,12 +3452,12 @@ class GXDB:
 
         .. versionadded:: 5.1.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        searches for the "current" X, Y or Z channel.
+        **Note:** searches for the "current" X, Y or Z channel.
         If none is defined, then returns "X", "Y" or "Z".
         """
-        chan.value = self._wrapper.get_xyz_chan(chan_symb, chan.value.encode())
+        chan.value = self._get_xyz_chan(chan_symb, chan.value.encode())
         
 
 
@@ -3381,8 +3476,10 @@ class GXDB:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.symb_list(vv._wrapper, symb)
+        ret_val = self._symb_list(vv, symb)
         return ret_val
 
 
@@ -3397,15 +3494,15 @@ class GXDB:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Populates a `GXLST <geosoft.gxapi.GXLST>` with channel symbols.
+        **Note:** Populates a `GXLST <geosoft.gxapi.GXLST>` with channel symbols.
         The name is put into the "Name" part of the `GXLST <geosoft.gxapi.GXLST>` (0),
         and the handle, an integer value written as a string, is
         placed in the value part of the `GXLST <geosoft.gxapi.GXLST>` (1).
         The `GXLST <geosoft.gxapi.GXLST>` is cleared first, and the items are sorted in logical line order.
         """
-        self._wrapper.line_lst(lst._wrapper)
+        self._line_lst(lst)
         
 
 
@@ -3423,8 +3520,10 @@ class GXDB:
         :type  wait:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.lock_symb(symb, lock, wait)
+        self._lock_symb(symb, lock, wait)
         
 
 
@@ -3439,9 +3538,9 @@ class GXDB:
 
         .. versionadded:: 5.1.5
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Loads a `GXLST <geosoft.gxapi.GXLST>` with all channels with CLASS "MASK", as well
+        **Note:** Loads a `GXLST <geosoft.gxapi.GXLST>` with all channels with CLASS "MASK", as well
         as all channels containing the string "MASK", as long
         as the CLASS for these channels is not set to something
         other than "" or "MASK".
@@ -3452,7 +3551,7 @@ class GXDB:
         The `GXLST <geosoft.gxapi.GXLST>` is cleared first, and the items are sorted by name.
         "None" is added at the end, with a handle value of "-1".
         """
-        self._wrapper.mask_chan_lst(lst._wrapper)
+        self._mask_chan_lst(lst)
         
 
 
@@ -3467,9 +3566,9 @@ class GXDB:
 
         .. versionadded:: 5.1.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This method populates a `GXLST <geosoft.gxapi.GXLST>` object with all of the symbols
+        **Note:** This method populates a `GXLST <geosoft.gxapi.GXLST>` object with all of the symbols
         of the selected lines in the database.
         The name is put into the "Name" part of the `GXLST <geosoft.gxapi.GXLST>` (0),
         and the handle, an integer value written as a string, is
@@ -3477,7 +3576,7 @@ class GXDB:
         
         Symbols are automatically sorted in logical line order.
         """
-        self._wrapper.selected_line_lst(lst._wrapper)
+        self._selected_line_lst(lst)
         
 
 
@@ -3493,8 +3592,10 @@ class GXDB:
         :type  lst:  GXLST
 
         .. versionadded:: 5.0.8
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_chan_order_lst(lst._wrapper)
+        self._set_chan_order_lst(lst)
         
 
 
@@ -3511,16 +3612,16 @@ class GXDB:
 
         .. versionadded:: 5.1.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the value specified is "", the internally stored value
+        **Note:** If the value specified is "", the internally stored value
         is cleared, and GetXYZChan_DB will return "X", "Y" or "Z"
         
         This can be used, for instance, to make "Easting" and "Northing"
         the current X and Y channels, and have GXs using the
         `get_xyz_chan_symb <geosoft.gxapi.GXDB.get_xyz_chan_symb>` function to load "X" and "Y" work as desired.
         """
-        self._wrapper.set_xyz_chan(chan_symb, chan.encode())
+        self._set_xyz_chan(chan_symb, chan.encode())
         
 
 
@@ -3535,16 +3636,16 @@ class GXDB:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The Name of the symbol is placed in the
+        **Note:** The Name of the symbol is placed in the
         item name and the item value is set to the symbol handle.
         Only channels with the string-type data (sChanType_DB < 0)
         are included.
         
         The `GXLST <geosoft.gxapi.GXLST>` is cleared first, and the items are sorted by name.
         """
-        self._wrapper.string_chan_lst(lst._wrapper)
+        self._string_chan_lst(lst)
         
 
 
@@ -3561,9 +3662,9 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Populates a `GXLST <geosoft.gxapi.GXLST>` with channel, line, blob or user symbols.
+        **Note:** Populates a `GXLST <geosoft.gxapi.GXLST>` with channel, line, blob or user symbols.
         The name is put into the "Name" part of the `GXLST <geosoft.gxapi.GXLST>` (0),
         and the handle, an integer value written as a string, is
         placed in the value part of the `GXLST <geosoft.gxapi.GXLST>` (1).
@@ -3578,7 +3679,7 @@ class GXDB:
 
             `chan_lst <geosoft.gxapi.GXDB.chan_lst>`, `line_lst <geosoft.gxapi.GXDB.line_lst>`, `selected_line_lst <geosoft.gxapi.GXDB.selected_line_lst>`
         """
-        self._wrapper.symb_lst(lst._wrapper, type)
+        self._symb_lst(lst, type)
         
 
 
@@ -3590,8 +3691,10 @@ class GXDB:
         
 
         .. versionadded:: 5.1.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.un_lock_all_symb()
+        self._un_lock_all_symb()
         
 
 
@@ -3605,8 +3708,10 @@ class GXDB:
         :type  symb:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.un_lock_symb(symb)
+        self._un_lock_symb(symb)
         
 
 
@@ -3627,9 +3732,9 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the channel is not yet associated, it is first associated.
+        **Note:** If the channel is not yet associated, it is first associated.
         If the channel is already in the associated-load list, this
         does nothing.
         
@@ -3637,7 +3742,7 @@ class GXDB:
         in the database, but in the project, so this function is
         equivalent to calling `associate <geosoft.gxapi.GXDB.associate>`.
         """
-        self._wrapper.add_associated_load(group, chan)
+        self._add_associated_load(group, chan)
         
 
 
@@ -3656,16 +3761,16 @@ class GXDB:
 
         .. versionadded:: 5.0.8
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The comment is written in the form:
+        **Note:** The comment is written in the form:
         
         Comment: String2
         
         and is followed by a carriage return.
         The activity log is created automatically if it does not exist.
         """
-        self._wrapper.add_comment(comment.encode(), str_val.encode(), indent)
+        self._add_comment(comment.encode(), str_val.encode(), indent)
         
 
 
@@ -3684,9 +3789,9 @@ class GXDB:
 
         .. versionadded:: 5.0.8
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The comment is written in the form:
+        **Note:** The comment is written in the form:
         
         Comment: Value
         
@@ -3695,7 +3800,7 @@ class GXDB:
         
         See Notes in `add_comment <geosoft.gxapi.GXDB.add_comment>`.
         """
-        self._wrapper.add_int_comment(comment.encode(), val, indent)
+        self._add_int_comment(comment.encode(), val, indent)
         
 
 
@@ -3714,9 +3819,9 @@ class GXDB:
 
         .. versionadded:: 5.0.8
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The comment is written in the form:
+        **Note:** The comment is written in the form:
         
         Comment: Value
         
@@ -3725,7 +3830,7 @@ class GXDB:
         
         See Notes in `add_comment <geosoft.gxapi.GXDB.add_comment>`.
         """
-        self._wrapper.add_double_comment(comment.encode(), val, indent)
+        self._add_double_comment(comment.encode(), val, indent)
         
 
 
@@ -3742,9 +3847,9 @@ class GXDB:
 
         .. versionadded:: 5.0.8
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The comment is written in the form:
+        **Note:** The comment is written in the form:
         
         Comment: 2001/12/31 23:59:59
         
@@ -3753,7 +3858,7 @@ class GXDB:
         
         See Notes in `add_comment <geosoft.gxapi.GXDB.add_comment>`.
         """
-        self._wrapper.add_time_comment(comment.encode(), indent)
+        self._add_time_comment(comment.encode(), indent)
         
 
 
@@ -3770,9 +3875,9 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If it is already associated, or if the group has no
+        **Note:** If it is already associated, or if the group has no
         defined group class, does nothing.
         
         As of v6.3, if a group line has no class defined, then ALL
@@ -3785,7 +3890,7 @@ class GXDB:
         channel will be recognized as being associated with all
         groups of that class.
         """
-        self._wrapper.associate(group, chan)
+        self._associate(group, chan)
         
 
 
@@ -3800,13 +3905,13 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        As of v6.3, if a group line has no class defined, then ALL
+        **Note:** As of v6.3, if a group line has no class defined, then ALL
         channels are already assumed to be associated with it, and this
         function does nothing.
         """
-        self._wrapper.associate_all(group)
+        self._associate_all(group)
         
 
 
@@ -3823,12 +3928,12 @@ class GXDB:
 
         .. versionadded:: 5.1.1
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        As of v6.3, if a group line has no class defined, then ALL
+        **Note:** As of v6.3, if a group line has no class defined, then ALL
         channels are automatically assumed to be associated with it.
         """
-        self._wrapper.associate_class(chan, cl.encode())
+        self._associate_class(chan, cl.encode())
         
 
 
@@ -3844,8 +3949,10 @@ class GXDB:
         :type  str_out:  str_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        str_out.value = gxapi_cy.WrapDB.gen_valid_chan_symb(GXContext._get_tls_geo(), str_in.encode(), str_out.value.encode())
+        str_out.value = gxapi_cy.WrapDB._gen_valid_chan_symb(GXContext._get_tls_geo(), str_in.encode(), str_out.value.encode())
         
 
 
@@ -3862,13 +3969,13 @@ class GXDB:
 
         .. versionadded:: 6.4
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The returned name is either the same size as the input
+        **Note:** The returned name is either the same size as the input
         or shorter. Escapes, leading and trailing spaces are removed, then
         all illegal characters are replaced with an underscore.
         """
-        str_out.value = gxapi_cy.WrapDB.gen_valid_line_symb(GXContext._get_tls_geo(), str_in.encode(), str_out.value.encode())
+        str_out.value = gxapi_cy.WrapDB._gen_valid_line_symb(GXContext._get_tls_geo(), str_in.encode(), str_out.value.encode())
         
 
 
@@ -3887,11 +3994,13 @@ class GXDB:
 
         .. versionadded:: 5.0
 
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
         .. seealso::
 
             `GXVA <geosoft.gxapi.GXVA>` class.
         """
-        self._wrapper.get_chan_va(line, chan, va._wrapper)
+        self._get_chan_va(line, chan, va)
         
 
 
@@ -3910,11 +4019,11 @@ class GXDB:
 
         .. versionadded:: 5.1.5
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        See `set_va_scaling <geosoft.gxapi.GXDB.set_va_scaling>`.
+        **Note:** See `set_va_scaling <geosoft.gxapi.GXDB.set_va_scaling>`.
         """
-        base.value, range.value = self._wrapper.get_va_scaling(ch, base.value, range.value)
+        base.value, range.value = self._get_va_scaling(ch, base.value, range.value)
         
 
 
@@ -3933,11 +4042,11 @@ class GXDB:
 
         .. versionadded:: 5.1.5
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        See `set_va_windows <geosoft.gxapi.GXDB.set_va_windows>`.
+        **Note:** See `set_va_windows <geosoft.gxapi.GXDB.set_va_windows>`.
         """
-        min_w.value, max_w.value = self._wrapper.get_va_windows(ch, min_w.value, max_w.value)
+        min_w.value, max_w.value = self._get_va_windows(ch, min_w.value, max_w.value)
         
 
 
@@ -3962,11 +4071,11 @@ class GXDB:
 
         .. versionadded:: 8.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        See `get_va_base_coordinate_info <geosoft.gxapi.GXDB.get_va_base_coordinate_info>`.
+        **Note:** See `get_va_base_coordinate_info <geosoft.gxapi.GXDB.get_va_base_coordinate_info>`.
         """
-        self._wrapper.set_va_base_coordinate_info(ch, domain, base, vv._wrapper, units.encode(), allow_changes)
+        self._set_va_base_coordinate_info(ch, domain, base, vv, units.encode(), allow_changes)
         
 
 
@@ -3989,11 +4098,11 @@ class GXDB:
 
         .. versionadded:: 8.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        See `set_va_base_coordinate_info <geosoft.gxapi.GXDB.set_va_base_coordinate_info>`.
+        **Note:** See `set_va_base_coordinate_info <geosoft.gxapi.GXDB.set_va_base_coordinate_info>`.
         """
-        domain.value, base.value, units.value = self._wrapper.get_va_base_coordinate_info(ch, domain.value, base.value, vv._wrapper, units.value.encode())
+        domain.value, base.value, units.value = self._get_va_base_coordinate_info(ch, domain.value, base.value, vv, units.value.encode())
         
 
 
@@ -4010,9 +4119,9 @@ class GXDB:
 
         .. versionadded:: 5.0.8
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This method fails if the line is not a group line.
+        **Note:** This method fails if the line is not a group line.
         Group classes are used to identify group lines used for
         special purposes, e.g.: "COLLAR" for the Wholeplot collar table,
         or "TARGETS" for the UX-Detect Targets list.
@@ -4021,7 +4130,7 @@ class GXDB:
 
             `line_category <geosoft.gxapi.GXDB.line_category>` - to see if a line is a group line.
         """
-        cl.value = self._wrapper.get_group_class(symb, cl.value.encode())
+        cl.value = self._get_group_class(symb, cl.value.encode())
         
 
 
@@ -4038,8 +4147,10 @@ class GXDB:
         :rtype:       int
 
         .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.get_info(item)
+        ret_val = self._get_info(item)
         return ret_val
 
 
@@ -4056,11 +4167,11 @@ class GXDB:
 
         .. versionadded:: 5.1.5
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        See `set_va_prof_color_file <geosoft.gxapi.GXDB.set_va_prof_color_file>`.
+        **Note:** See `set_va_prof_color_file <geosoft.gxapi.GXDB.set_va_prof_color_file>`.
         """
-        file.value = self._wrapper.get_va_prof_color_file(ch, file.value.encode())
+        file.value = self._get_va_prof_color_file(ch, file.value.encode())
         
 
 
@@ -4076,8 +4187,10 @@ class GXDB:
         :type  option:  str_ref
 
         .. versionadded:: 5.1.6
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        option.value = self._wrapper.get_va_prof_sect_option(ch, option.value.encode())
+        option.value = self._get_va_prof_sect_option(ch, option.value.encode())
         
 
 
@@ -4094,11 +4207,11 @@ class GXDB:
 
         .. versionadded:: 5.1.6
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Fails in the channel is not an array channel
+        **Note:** Fails in the channel is not an array channel
         """
-        file.value = self._wrapper.get_va_sect_color_file(ch, file.value.encode())
+        file.value = self._get_va_sect_color_file(ch, file.value.encode())
         
 
 
@@ -4120,8 +4233,10 @@ class GXDB:
         :rtype:        int
 
         .. versionadded:: 5.1.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.is_associated(group, chan)
+        ret_val = self._is_associated(group, chan)
         return ret_val
 
 
@@ -4138,11 +4253,11 @@ class GXDB:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Currently checks to see if the DH_COLLAR line exists.
+        **Note:** Currently checks to see if the DH_COLLAR line exists.
         """
-        ret_val = self._wrapper.is_wholeplot()
+        ret_val = self._is_wholeplot()
         return ret_val
 
 
@@ -4161,11 +4276,13 @@ class GXDB:
 
         .. versionadded:: 5.0
 
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
         .. seealso::
 
             `GXVA <geosoft.gxapi.GXVA>` class.
         """
-        self._wrapper.put_chan_va(line, chan, va._wrapper)
+        self._put_chan_va(line, chan, va)
         
 
 
@@ -4182,9 +4299,9 @@ class GXDB:
 
         .. versionadded:: 5.0.8
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This method fails if the line is not a group line.
+        **Note:** This method fails if the line is not a group line.
         Group classes are used to identify group lines used for
         special purposes. All group lines with the same class share
         the same list of associated channels.
@@ -4199,7 +4316,7 @@ class GXDB:
             `line_category <geosoft.gxapi.GXDB.line_category>` - to see if a line is a group line.
             `associate <geosoft.gxapi.GXDB.associate>` - Associate a channel with a group.
         """
-        self._wrapper.set_group_class(symb, cl.encode())
+        self._set_group_class(symb, cl.encode())
         
 
 
@@ -4216,9 +4333,9 @@ class GXDB:
 
         .. versionadded:: 5.1.5
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Fails in the channel is not an array channel, if the
+        **Note:** Fails in the channel is not an array channel, if the
         file does not exist, or if it is not a valid color zone file.
         
         The individual columns in the array channel are displayed using the input
@@ -4256,7 +4373,7 @@ class GXDB:
         
         The color file search path is: Local directory, then oasismontaj\\tbl.
         """
-        self._wrapper.set_va_prof_color_file(ch, file.encode())
+        self._set_va_prof_color_file(ch, file.encode())
         
 
 
@@ -4272,8 +4389,10 @@ class GXDB:
         :type  option:  str
 
         .. versionadded:: 5.1.6
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_va_prof_sect_option(ch, option.encode())
+        self._set_va_prof_sect_option(ch, option.encode())
         
 
 
@@ -4292,14 +4411,14 @@ class GXDB:
 
         .. versionadded:: 5.1.5
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        By default, `GXVA <geosoft.gxapi.GXVA>` profiles autoscale to fit in the database cell.
+        **Note:** By default, `GXVA <geosoft.gxapi.GXVA>` profiles autoscale to fit in the database cell.
         This lets the user set a single base and range for all cells.
         If either input is a dummy, both are set as dummies, and autoscaling
         is used.
         """
-        self._wrapper.set_va_scaling(ch, base, range)
+        self._set_va_scaling(ch, base, range)
         
 
 
@@ -4316,12 +4435,12 @@ class GXDB:
 
         .. versionadded:: 5.1.6
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Fails in the channel is not an array channel, if the
+        **Note:** Fails in the channel is not an array channel, if the
         file does not exist, or if it is not a valid color zone file.
         """
-        self._wrapper.set_va_sect_color_file(ch, file.encode())
+        self._set_va_sect_color_file(ch, file.encode())
         
 
 
@@ -4340,12 +4459,12 @@ class GXDB:
 
         .. versionadded:: 5.1.5
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Use to display a subset of the `GXVA <geosoft.gxapi.GXVA>` channel windows in the GDB.
+        **Note:** Use to display a subset of the `GXVA <geosoft.gxapi.GXVA>` channel windows in the GDB.
         Windows index from 0.
         """
-        self._wrapper.set_va_windows(ch, min_w, max_w)
+        self._set_va_windows(ch, min_w, max_w)
         
 
 

@@ -13,44 +13,35 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXLMSG:
+class GXLMSG(gxapi_cy.WrapLMSG):
     """
     GXLMSG class.
 
     Message class methods.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapLMSG(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXLMSG`
+        A null (undefined) instance of `GXLMSG <geosoft.gxapi.GXLMSG>`
         
-        :returns: A null `GXLMSG`
+        :returns: A null `GXLMSG <geosoft.gxapi.GXLMSG>`
+        :rtype:   GXLMSG
         """
-        return cls()
+        return GXLMSG()
 
     def is_null(self):
         """
-        Check if the instance of `GXLMSG` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXLMSG`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -71,8 +62,10 @@ class GXLMSG:
         :type  ipj:  GXIPJ
 
         .. versionadded:: 5.0.7
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapLMSG.goto_point(GXContext._get_tls_geo(), x, y, z, ipj._wrapper)
+        gxapi_cy.WrapLMSG._goto_point(GXContext._get_tls_geo(), x, y, z, ipj)
         
 
 
@@ -94,8 +87,10 @@ class GXLMSG:
         :type  ipj:  GXIPJ
 
         .. versionadded:: 5.0.7
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        gxapi_cy.WrapLMSG.view_area(GXContext._get_tls_geo(), x0, y0, x1, y1, ipj._wrapper)
+        gxapi_cy.WrapLMSG._view_area(GXContext._get_tls_geo(), x0, y0, x1, y1, ipj)
         
 
 

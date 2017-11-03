@@ -13,44 +13,35 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXWA:
+class GXWA(gxapi_cy.WrapWA):
     """
     GXWA class.
 
     The `GXWA <geosoft.gxapi.GXWA>` class enables you to access and write data to ASCII files.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapWA(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXWA`
+        A null (undefined) instance of `GXWA <geosoft.gxapi.GXWA>`
         
-        :returns: A null `GXWA`
+        :returns: A null `GXWA <geosoft.gxapi.GXWA>`
+        :rtype:   GXWA
         """
-        return cls()
+        return GXWA()
 
     def is_null(self):
         """
-        Check if the instance of `GXWA` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXWA`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -65,8 +56,10 @@ class GXWA:
         :type  str_val:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.puts(str_val.encode())
+        self._puts(str_val.encode())
         
 
 
@@ -86,11 +79,11 @@ class GXWA:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        ANSI Encoding is assumed, See `create_ex <geosoft.gxapi.GXWA.create_ex>` to override this.
+        **Note:** ANSI Encoding is assumed, See `create_ex <geosoft.gxapi.GXWA.create_ex>` to override this.
         """
-        ret_val = gxapi_cy.WrapWA.create(GXContext._get_tls_geo(), file.encode(), append)
+        ret_val = gxapi_cy.WrapWA._create(GXContext._get_tls_geo(), file.encode(), append)
         return GXWA(ret_val)
 
 
@@ -112,14 +105,14 @@ class GXWA:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Before version 6.2. text in on the GX API level were handled as characters in the current ANSI code page
+        **Note:** Before version 6.2. text in on the GX API level were handled as characters in the current ANSI code page
         defining how characters above ASCII 127 would be displayed. 6.2. introduced Unicode in the core
         montaj engine that greatly increased the number of symbols that can be used. The :ref:`WA_ENCODE` constants
         were introduce that controls how text are written to files on disk with the `GXWA <geosoft.gxapi.GXWA>` class.
         """
-        ret_val = gxapi_cy.WrapWA.create_ex(GXContext._get_tls_geo(), file.encode(), append, encode)
+        ret_val = gxapi_cy.WrapWA._create_ex(GXContext._get_tls_geo(), file.encode(), append, encode)
         return GXWA(ret_val)
 
 
@@ -141,11 +134,11 @@ class GXWA:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        See sbf.gxh. ANSI Encoding is assumed, See `create_sbf_ex <geosoft.gxapi.GXWA.create_sbf_ex>` to override this.
+        **Note:** See sbf.gxh. ANSI Encoding is assumed, See `create_sbf_ex <geosoft.gxapi.GXWA.create_sbf_ex>` to override this.
         """
-        ret_val = gxapi_cy.WrapWA.create_sbf(GXContext._get_tls_geo(), sbf._wrapper, file.encode(), append)
+        ret_val = gxapi_cy.WrapWA._create_sbf(GXContext._get_tls_geo(), sbf, file.encode(), append)
         return GXWA(ret_val)
 
 
@@ -169,15 +162,15 @@ class GXWA:
 
         .. versionadded:: 6.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Also see sbf.gxh
+        **Note:** Also see sbf.gxh
         Before version 6.2. text in on the GX API level were handled as characters in the current ANSI code page
         defining how characters above ASCII 127 would be displayed. 6.2. introduced Unicode in the core
         montaj engine that greatly increased the number of symbols that can be used. The :ref:`WA_ENCODE` constants
         were introduce that controls how text are written to files on disk with the `GXWA <geosoft.gxapi.GXWA>` class.
         """
-        ret_val = gxapi_cy.WrapWA.create_sbf_ex(GXContext._get_tls_geo(), sbf._wrapper, file.encode(), append, encode)
+        ret_val = gxapi_cy.WrapWA._create_sbf_ex(GXContext._get_tls_geo(), sbf, file.encode(), append, encode)
         return GXWA(ret_val)
 
 
@@ -191,8 +184,10 @@ class GXWA:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.new_line()
+        self._new_line()
         
 
 

@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXTIN:
+class GXTIN(gxapi_cy.WrapTIN):
     """
     GXTIN class.
 
@@ -25,37 +25,28 @@ class GXTIN:
     Delaunay triangles or Voronoi cells to a map.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapTIN(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXTIN`
+        A null (undefined) instance of `GXTIN <geosoft.gxapi.GXTIN>`
         
-        :returns: A null `GXTIN`
+        :returns: A null `GXTIN <geosoft.gxapi.GXTIN>`
+        :rtype:   GXTIN
         """
-        return cls()
+        return GXTIN()
 
     def is_null(self):
         """
-        Check if the instance of `GXTIN` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXTIN`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -70,8 +61,10 @@ class GXTIN:
         :type  source:  GXTIN
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.copy(source._wrapper)
+        self._copy(source)
         
 
 
@@ -93,13 +86,13 @@ class GXTIN:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        CreateTIN does the `GXTIN <geosoft.gxapi.GXTIN>` calculation.
+        **Note:** CreateTIN does the `GXTIN <geosoft.gxapi.GXTIN>` calculation.
         The Z values are not required, and a 0-length `GXVV <geosoft.gxapi.GXVV>` can be used to indicate
         the values are not to be used.
         """
-        ret_val = gxapi_cy.WrapTIN.create(GXContext._get_tls_geo(), vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
+        ret_val = gxapi_cy.WrapTIN._create(GXContext._get_tls_geo(), vv_x, vv_y, vv_z)
         return GXTIN(ret_val)
 
 
@@ -116,8 +109,10 @@ class GXTIN:
         :rtype:      GXTIN
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapTIN.create_s(GXContext._get_tls_geo(), bf._wrapper)
+        ret_val = gxapi_cy.WrapTIN._create_s(GXContext._get_tls_geo(), bf)
         return GXTIN(ret_val)
 
 
@@ -137,8 +132,10 @@ class GXTIN:
         :type  file:  str
 
         .. versionadded:: 6.0.1
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        crc.value = gxapi_cy.WrapTIN.export_xml(GXContext._get_tls_geo(), tin.encode(), crc.value, file.encode())
+        crc.value = gxapi_cy.WrapTIN._export_xml(GXContext._get_tls_geo(), tin.encode(), crc.value, file.encode())
         
 
 
@@ -153,12 +150,12 @@ class GXTIN:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The convex hull is the outside boundary of the
+        **Note:** The convex hull is the outside boundary of the
         triangulated region.
         """
-        self._wrapper.get_convex_hull(ply._wrapper)
+        self._get_convex_hull(ply)
         
 
 
@@ -172,8 +169,10 @@ class GXTIN:
         :type  ipj:  GXIPJ
 
         .. versionadded:: 5.0.3
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.get_ipj(ipj._wrapper)
+        self._get_ipj(ipj)
         
 
 
@@ -192,9 +191,9 @@ class GXTIN:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The join information is returned in three VVs.
+        **Note:** The join information is returned in three VVs.
         
             - The joins `GXVV <geosoft.gxapi.GXVV>` is a list off the adjacent nodes for
               each node, arranged for 1st node, 2nd node etc.
@@ -205,7 +204,7 @@ class GXTIN:
         
         All VVs must be type `GS_LONG <geosoft.gxapi.GS_LONG>`.
         """
-        self._wrapper.get_joins(vv_joins._wrapper, vv_index._wrapper, vv_num._wrapper)
+        self._get_joins(vv_joins, vv_index, vv_num)
         
 
 
@@ -219,8 +218,10 @@ class GXTIN:
         :type  vv:   GXVV
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.get_mesh(vv._wrapper)
+        self._get_mesh(vv)
         
 
 
@@ -239,12 +240,12 @@ class GXTIN:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        If this is not a Z-valued `GXTIN <geosoft.gxapi.GXTIN>`, the Z values will
+        **Note:** If this is not a Z-valued `GXTIN <geosoft.gxapi.GXTIN>`, the Z values will
         be dummies.
         """
-        self._wrapper.get_nodes(vvx._wrapper, vvy._wrapper, vvz._wrapper)
+        self._get_nodes(vvx, vvy, vvz)
         
 
 
@@ -262,8 +263,10 @@ class GXTIN:
         :type  tri_vv_pt3:  GXVV
 
         .. versionadded:: 8.4
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.get_triangles(tri_vv_pt1._wrapper, tri_vv_pt2._wrapper, tri_vv_pt3._wrapper)
+        self._get_triangles(tri_vv_pt1, tri_vv_pt2, tri_vv_pt3)
         
 
 
@@ -289,8 +292,10 @@ class GXTIN:
         :type  y2:     float_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        x0.value, y0.value, x1.value, y1.value, x2.value, y2.value = self._wrapper.get_triangle(index, x0.value, y0.value, x1.value, y1.value, x2.value, y2.value)
+        x0.value, y0.value, x1.value, y1.value, x2.value, y2.value = self._get_triangle(index, x0.value, y0.value, x1.value, y1.value, x2.value, y2.value)
         
 
 
@@ -304,8 +309,10 @@ class GXTIN:
         :type  vv:   GXVV
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.get_voronoi_edges(vv._wrapper)
+        self._get_voronoi_edges(vv)
         
 
 
@@ -320,8 +327,10 @@ class GXTIN:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = self._wrapper.is_z_valued()
+        ret_val = self._is_z_valued()
         return ret_val
 
 
@@ -343,9 +352,9 @@ class GXTIN:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Index returned begins at 0, but could be negative.
+        **Note:** Index returned begins at 0, but could be negative.
         
             -1: If X,Y is not contained in a triangle (or triangle not found)
         
@@ -362,7 +371,7 @@ class GXTIN:
                 inside a triangle, so do not rely on this result to determine
                 if a node position is input.
         """
-        ret_val = self._wrapper.locate_triangle(t, x, y)
+        ret_val = self._locate_triangle(t, x, y)
         return ret_val
 
 
@@ -377,8 +386,10 @@ class GXTIN:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = self._wrapper.nodes()
+        ret_val = self._nodes()
         return ret_val
 
 
@@ -397,9 +408,9 @@ class GXTIN:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The `GXTIN <geosoft.gxapi.GXTIN>` have been created using max length = `rDUMMY <geosoft.gxapi.rDUMMY>` to
+        **Note:** The `GXTIN <geosoft.gxapi.GXTIN>` have been created using max length = `rDUMMY <geosoft.gxapi.rDUMMY>` to
         ensure that the `GXTIN <geosoft.gxapi.GXTIN>` has a convex hull (otherwise the
         routine that locates the triangle for a given location may fail).
         The `GXTIN <geosoft.gxapi.GXTIN>` must also have been created using the Z values.
@@ -411,7 +422,7 @@ class GXTIN:
         data using natural neighbours:
         Geophysical Journal International, 122 p. 837-857.
         """
-        self._wrapper.interp_vv(vvx._wrapper, vvy._wrapper, vvz._wrapper)
+        self._interp_vv(vvx, vvy, vvz)
         
 
 
@@ -426,8 +437,10 @@ class GXTIN:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = self._wrapper.triangles()
+        ret_val = self._triangles()
         return ret_val
 
 
@@ -446,9 +459,9 @@ class GXTIN:
 
         .. versionadded:: 5.1.4
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The `GXTIN <geosoft.gxapi.GXTIN>` have been created using max length = `rDUMMY <geosoft.gxapi.rDUMMY>` to
+        **Note:** The `GXTIN <geosoft.gxapi.GXTIN>` have been created using max length = `rDUMMY <geosoft.gxapi.rDUMMY>` to
         ensure that the `GXTIN <geosoft.gxapi.GXTIN>` has a convex hull (otherwise the
         routine that locates the triangle for a given location may fail).
         The `GXTIN <geosoft.gxapi.GXTIN>` must also have been created using the Z values.
@@ -457,7 +470,7 @@ class GXTIN:
         The values are set assuming that each `GXTIN <geosoft.gxapi.GXTIN>` triangle defines a
         plane.
         """
-        self._wrapper.linear_interp_vv(vvx._wrapper, vvy._wrapper, vvz._wrapper)
+        self._linear_interp_vv(vvx, vvy, vvz)
         
 
 
@@ -476,9 +489,9 @@ class GXTIN:
 
         .. versionadded:: 6.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The `GXTIN <geosoft.gxapi.GXTIN>` have been created using max length = `rDUMMY <geosoft.gxapi.rDUMMY>` to
+        **Note:** The `GXTIN <geosoft.gxapi.GXTIN>` have been created using max length = `rDUMMY <geosoft.gxapi.rDUMMY>` to
         ensure that the `GXTIN <geosoft.gxapi.GXTIN>` has a convex hull (otherwise the
         routine that locates the triangle for a given location may fail).
         The `GXTIN <geosoft.gxapi.GXTIN>` must also have been created using the Z values.
@@ -487,7 +500,7 @@ class GXTIN:
         Within each voronoi triangle, the Z value of node closest to the input
         X,Y location is returned.
         """
-        self._wrapper.nearest_vv(vvx._wrapper, vvy._wrapper, vvz._wrapper)
+        self._nearest_vv(vvx, vvy, vvz)
         
 
 
@@ -508,14 +521,14 @@ class GXTIN:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The TINned range is the range of X and Y covered by
+        **Note:** The TINned range is the range of X and Y covered by
         the `GXTIN <geosoft.gxapi.GXTIN>` triangles. It can thus be less than the full
         X and Y range of the nodes themselves, if a full
         convex hull is not calculated.
         """
-        x_min.value, y_min.value, x_max.value, y_max.value = self._wrapper.range_xy(x_min.value, y_min.value, x_max.value, y_max.value)
+        x_min.value, y_min.value, x_max.value, y_max.value = self._range_xy(x_min.value, y_min.value, x_max.value, y_max.value)
         
 
 
@@ -529,8 +542,10 @@ class GXTIN:
         :type  bf:   GXBF
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.serial(bf._wrapper)
+        self._serial(bf)
         
 
 
@@ -544,8 +559,10 @@ class GXTIN:
         :type  ipj:  GXIPJ
 
         .. versionadded:: 5.0.3
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.set_ipj(ipj._wrapper)
+        self._set_ipj(ipj)
         
 
 

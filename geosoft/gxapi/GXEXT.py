@@ -13,44 +13,35 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXEXT:
+class GXEXT(gxapi_cy.WrapEXT):
     """
     GXEXT class.
 
     External (plug-in) image methods.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapEXT(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXEXT`
+        A null (undefined) instance of `GXEXT <geosoft.gxapi.GXEXT>`
         
-        :returns: A null `GXEXT`
+        :returns: A null `GXEXT <geosoft.gxapi.GXEXT>`
+        :rtype:   GXEXT
         """
-        return cls()
+        return GXEXT()
 
     def is_null(self):
         """
-        Check if the instance of `GXEXT` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXEXT`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -75,8 +66,10 @@ class GXEXT:
         :type  ipj:   GXIPJ
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        xmin.value, ymin.value, xmax.value, ymax.value = gxapi_cy.WrapEXT.get_info(GXContext._get_tls_geo(), img.encode(), xmin.value, ymin.value, xmax.value, ymax.value, ipj._wrapper)
+        xmin.value, ymin.value, xmax.value, ymax.value = gxapi_cy.WrapEXT._get_info(GXContext._get_tls_geo(), img.encode(), xmin.value, ymin.value, xmax.value, ymax.value, ipj)
         
 
 

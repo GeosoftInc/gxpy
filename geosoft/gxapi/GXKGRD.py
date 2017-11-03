@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXKGRD:
+class GXKGRD(gxapi_cy.WrapKGRD):
     """
     GXKGRD class.
 
@@ -23,37 +23,28 @@ class GXKGRD:
     `GXKGRD <geosoft.gxapi.GXKGRD>` object.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapKGRD(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXKGRD`
+        A null (undefined) instance of `GXKGRD <geosoft.gxapi.GXKGRD>`
         
-        :returns: A null `GXKGRD`
+        :returns: A null `GXKGRD <geosoft.gxapi.GXKGRD>`
+        :rtype:   GXKGRD
         """
-        return cls()
+        return GXKGRD()
 
     def is_null(self):
         """
-        Check if the instance of `GXKGRD` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXKGRD`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -66,8 +57,10 @@ class GXKGRD:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.clear()
+        self._clear()
         
 
 
@@ -83,14 +76,14 @@ class GXKGRD:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The Krigrid object is initially empty. It will store the
+        **Note:** The Krigrid object is initially empty. It will store the
         control file parameters which the Krigrid program needs
         to execute. Use the LoadParms_KGRD method to get the
         control file parameters into the `GXKGRD <geosoft.gxapi.GXKGRD>` object.
         """
-        ret_val = gxapi_cy.WrapKGRD.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapKGRD._create(GXContext._get_tls_geo())
         return GXKGRD(ret_val)
 
 
@@ -110,15 +103,15 @@ class GXKGRD:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        If the control file name passed into this function is a file
+        **Note:** If the control file name passed into this function is a file
         which does not exist, then the defaults for a Krigrid control
         file will be generated and put into the `GXKGRD <geosoft.gxapi.GXKGRD>` object.
         Otherwise, the control file's settings are retrieved from
         the file and loaded into the `GXKGRD <geosoft.gxapi.GXKGRD>` object.
         """
-        ret_val = self._wrapper.load_parms(file.encode())
+        ret_val = self._load_parms(file.encode())
         return ret_val
 
 
@@ -152,8 +145,10 @@ class GXKGRD:
         :rtype:               int
 
         .. versionadded:: 6.0.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = self._wrapper.run(zchan.encode(), in_dat._wrapper, out_grd_dat._wrapper, out_err_dat._wrapper, in_var_name.encode(), out_var_name.encode(), vao, vi, vo)
+        ret_val = self._run(zchan.encode(), in_dat, out_grd_dat, out_err_dat, in_var_name.encode(), out_var_name.encode(), vao, vi, vo)
         return ret_val
 
 
@@ -188,8 +183,10 @@ class GXKGRD:
         :rtype:          int
 
         .. versionadded:: 6.0.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapKGRD.run2(GXContext._get_tls_geo(), db._wrapper, x.encode(), y.encode(), z.encode(), ctl.encode(), grd.encode(), err_grd.encode(), in_var.encode(), out_var.encode(), vao)
+        ret_val = gxapi_cy.WrapKGRD._run2(GXContext._get_tls_geo(), db, x.encode(), y.encode(), z.encode(), ctl.encode(), grd.encode(), err_grd.encode(), in_var.encode(), out_var.encode(), vao)
         return ret_val
 
 
@@ -226,8 +223,10 @@ class GXKGRD:
         :rtype:           int
 
         .. versionadded:: 6.4
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapKGRD.run3(GXContext._get_tls_geo(), db._wrapper, x.encode(), y.encode(), z.encode(), ctl.encode(), grd.encode(), err_grd.encode(), in_var.encode(), out_var.encode(), log_file.encode(), vao)
+        ret_val = gxapi_cy.WrapKGRD._run3(GXContext._get_tls_geo(), db, x.encode(), y.encode(), z.encode(), ctl.encode(), grd.encode(), err_grd.encode(), in_var.encode(), out_var.encode(), log_file.encode(), vao)
         return ret_val
 
 
@@ -246,12 +245,12 @@ class GXKGRD:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        If the control file did not previously exist, it will be
+        **Note:** If the control file did not previously exist, it will be
         created. Otherwise, the old file will be overwritten.
         """
-        ret_val = self._wrapper.save_parms(name.encode())
+        ret_val = self._save_parms(name.encode())
         return ret_val
 
 

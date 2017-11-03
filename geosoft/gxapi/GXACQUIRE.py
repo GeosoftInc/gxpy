@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXACQUIRE:
+class GXACQUIRE(gxapi_cy.WrapACQUIRE):
     """
     GXACQUIRE class.
 
@@ -21,37 +21,28 @@ class GXACQUIRE:
     public acQuire API.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapACQUIRE(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXACQUIRE`
+        A null (undefined) instance of `GXACQUIRE <geosoft.gxapi.GXACQUIRE>`
         
-        :returns: A null `GXACQUIRE`
+        :returns: A null `GXACQUIRE <geosoft.gxapi.GXACQUIRE>`
+        :rtype:   GXACQUIRE
         """
-        return cls()
+        return GXACQUIRE()
 
     def is_null(self):
         """
-        Check if the instance of `GXACQUIRE` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXACQUIRE`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -67,8 +58,10 @@ class GXACQUIRE:
         :rtype:      GXACQUIRE
 
         .. versionadded:: 6.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapACQUIRE.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapACQUIRE._create(GXContext._get_tls_geo())
         return GXACQUIRE(ret_val)
 
 
@@ -82,8 +75,10 @@ class GXACQUIRE:
         :type  db:     GXDB
 
         .. versionadded:: 6.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.delete_empty_chan(db._wrapper)
+        self._delete_empty_chan(db)
         
 
 
@@ -114,12 +109,12 @@ class GXACQUIRE:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Point data and polygon data are saved into Dnnn lines in GDB,
+        **Note:** Point data and polygon data are saved into Dnnn lines in GDB,
         nnn representing incremental number starting from 0
         """
-        ret_val = self._wrapper.import_hole(proj.encode(), dir.encode(), para.encode(), geo_vv._wrapper, delete, convert)
+        ret_val = self._import_hole(proj.encode(), dir.encode(), para.encode(), geo_vv, delete, convert)
         return ret_val
 
 
@@ -142,13 +137,13 @@ class GXACQUIRE:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Data existing in the receiving GDB file will be over-written.
+        **Note:** Data existing in the receiving GDB file will be over-written.
         Point data and polygon data are saved into Dnnn lines in GDB,
         nnn representing incremental number starting from 0
         """
-        ret_val = self._wrapper.import_point(db._wrapper, para.encode(), convert)
+        ret_val = self._import_point(db, para.encode(), convert)
         return ret_val
 
 
@@ -169,13 +164,13 @@ class GXACQUIRE:
 
         .. versionadded:: 6.0.1
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        The selection file will be loaded (if present) and then
+        **Note:** The selection file will be loaded (if present) and then
         the user can make selections then the selections are saved
         back in the selection file.
         """
-        ret_val = self._wrapper.selection_tool(selection_file.encode(), mode)
+        ret_val = self._selection_tool(selection_file.encode(), mode)
         return ret_val
 
 

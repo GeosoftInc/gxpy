@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXBIGRID:
+class GXBIGRID(gxapi_cy.WrapBIGRID):
     """
     GXBIGRID class.
 
@@ -21,37 +21,28 @@ class GXBIGRID:
     assumes data is collected in semi-straight lines.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapBIGRID(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXBIGRID`
+        A null (undefined) instance of `GXBIGRID <geosoft.gxapi.GXBIGRID>`
         
-        :returns: A null `GXBIGRID`
+        :returns: A null `GXBIGRID <geosoft.gxapi.GXBIGRID>`
+        :rtype:   GXBIGRID
         """
-        return cls()
+        return GXBIGRID()
 
     def is_null(self):
         """
-        Check if the instance of `GXBIGRID` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXBIGRID`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -64,8 +55,10 @@ class GXBIGRID:
         
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.clear()
+        self._clear()
         
 
 
@@ -81,14 +74,14 @@ class GXBIGRID:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        The Bigrid object is initially empty. It will store the
+        **Note:** The Bigrid object is initially empty. It will store the
         control file parameters which the Bigrid program needs
         to execute. Use the LoadParms_BIGRID method to get the
         control file parameters into the `GXBIGRID <geosoft.gxapi.GXBIGRID>` object.
         """
-        ret_val = gxapi_cy.WrapBIGRID.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapBIGRID._create(GXContext._get_tls_geo())
         return GXBIGRID(ret_val)
 
 
@@ -110,15 +103,15 @@ class GXBIGRID:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        If the control file name passed into this function is a file
+        **Note:** If the control file name passed into this function is a file
         which does not exist, then the defaults for a Bigrid control
         file will be generated and put into the `GXBIGRID <geosoft.gxapi.GXBIGRID>` object.
         Otherwise, the control file's settings are retrieved from
         the file and loaded into the `GXBIGRID <geosoft.gxapi.GXBIGRID>` object.
         """
-        ret_val = self._wrapper.load_parms(file.encode())
+        ret_val = self._load_parms(file.encode())
         return ret_val
 
 
@@ -140,8 +133,10 @@ class GXBIGRID:
         :rtype:         int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        ret_val = self._wrapper.load_warp(title.encode(), cell.encode(), warp.encode())
+        ret_val = self._load_warp(title.encode(), cell.encode(), warp.encode())
         return ret_val
 
 
@@ -160,8 +155,10 @@ class GXBIGRID:
         :type  out_dat:  GXDAT
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.run(zchan.encode(), in_dat._wrapper, out_dat._wrapper)
+        self._run(zchan.encode(), in_dat, out_dat)
         
 
 
@@ -182,8 +179,10 @@ class GXBIGRID:
         :type  ipj:      GXIPJ
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        self._wrapper.run2(zchan.encode(), in_dat._wrapper, out_dat._wrapper, ipj._wrapper)
+        self._run2(zchan.encode(), in_dat, out_dat, ipj)
         
 
 
@@ -199,12 +198,12 @@ class GXBIGRID:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
-        If the control file did not previously exist, it will be
+        **Note:** If the control file did not previously exist, it will be
         created. Otherwise, the old file will be overwritten.
         """
-        self._wrapper.save_parms(name.encode())
+        self._save_parms(name.encode())
         
 
 

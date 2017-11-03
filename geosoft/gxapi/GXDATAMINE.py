@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXDATAMINE:
+class GXDATAMINE(gxapi_cy.WrapDATAMINE):
     """
     GXDATAMINE class.
 
@@ -25,37 +25,28 @@ class GXDATAMINE:
     None.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapDATAMINE(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXDATAMINE`
+        A null (undefined) instance of `GXDATAMINE <geosoft.gxapi.GXDATAMINE>`
         
-        :returns: A null `GXDATAMINE`
+        :returns: A null `GXDATAMINE <geosoft.gxapi.GXDATAMINE>`
+        :rtype:   GXDATAMINE
         """
-        return cls()
+        return GXDATAMINE()
 
     def is_null(self):
         """
-        Check if the instance of `GXDATAMINE` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXDATAMINE`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -79,11 +70,11 @@ class GXDATAMINE:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        Create a Geosoft Voxel file from a Datamine block model file.
+        **Note:** Create a Geosoft Voxel file from a Datamine block model file.
         """
-        gxapi_cy.WrapDATAMINE.create_voxel(GXContext._get_tls_geo(), file.encode(), field.encode(), ipj._wrapper, meta._wrapper, voxel.encode())
+        gxapi_cy.WrapDATAMINE._create_voxel(GXContext._get_tls_geo(), file.encode(), field.encode(), ipj, meta, voxel.encode())
         
 
 
@@ -100,13 +91,13 @@ class GXDATAMINE:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
-        At this time, only `GIS_DMTYPE_BLOCKMODEL <geosoft.gxapi.GIS_DMTYPE_BLOCKMODEL>` files are supported.
+        **Note:** At this time, only `GIS_DMTYPE_BLOCKMODEL <geosoft.gxapi.GIS_DMTYPE_BLOCKMODEL>` files are supported.
         The field names go in the name part, and field indices (1 to N)
         in the value part.
         """
-        gxapi_cy.WrapDATAMINE.numeric_field_lst(GXContext._get_tls_geo(), file.encode(), lst._wrapper)
+        gxapi_cy.WrapDATAMINE._numeric_field_lst(GXContext._get_tls_geo(), file.encode(), lst)
         
 
 

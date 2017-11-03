@@ -16,7 +16,7 @@ from .GXVV import GXVV
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXDBWRITE:
+class GXDBWRITE(gxapi_cy.WrapDBWRITE):
     """
     GXDBWRITE class.
 
@@ -26,37 +26,28 @@ class GXDBWRITE:
     are served up whole, one block per line.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapDBWRITE(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXDBWRITE`
+        A null (undefined) instance of `GXDBWRITE <geosoft.gxapi.GXDBWRITE>`
         
-        :returns: A null `GXDBWRITE`
+        :returns: A null `GXDBWRITE <geosoft.gxapi.GXDBWRITE>`
+        :rtype:   GXDBWRITE
         """
-        return cls()
+        return GXDBWRITE()
 
     def is_null(self):
         """
-        Check if the instance of `GXDBWRITE` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXDBWRITE`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Create Methods
@@ -75,8 +66,10 @@ class GXDBWRITE:
         :rtype:      GXDBWRITE
 
         .. versionadded:: 9.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapDBWRITE.create(GXContext._get_tls_geo(), db._wrapper)
+        ret_val = gxapi_cy.WrapDBWRITE._create(GXContext._get_tls_geo(), db)
         return GXDBWRITE(ret_val)
 
 
@@ -94,8 +87,10 @@ class GXDBWRITE:
         :rtype:      GXDBWRITE
 
         .. versionadded:: 9.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapDBWRITE.create_xy(GXContext._get_tls_geo(), db._wrapper)
+        ret_val = gxapi_cy.WrapDBWRITE._create_xy(GXContext._get_tls_geo(), db)
         return GXDBWRITE(ret_val)
 
 
@@ -113,8 +108,10 @@ class GXDBWRITE:
         :rtype:      GXDBWRITE
 
         .. versionadded:: 9.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapDBWRITE.create_xyz(GXContext._get_tls_geo(), db._wrapper)
+        ret_val = gxapi_cy.WrapDBWRITE._create_xyz(GXContext._get_tls_geo(), db)
         return GXDBWRITE(ret_val)
 
 
@@ -133,8 +130,10 @@ class GXDBWRITE:
         :rtype:          int
 
         .. versionadded:: 9.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.add_channel(chan)
+        ret_val = self._add_channel(chan)
         return ret_val
 
 
@@ -153,8 +152,10 @@ class GXDBWRITE:
         :rtype:          GXDB
 
         .. versionadded:: 9.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.get_db()
+        ret_val = self._get_db()
         return GXDB(ret_val)
 
 
@@ -172,12 +173,12 @@ class GXDBWRITE:
 
         .. versionadded:: 9.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Call only for single-column (regular) channels. You can call the `get_chan_array_size <geosoft.gxapi.GXDBWRITE.get_chan_array_size>`
+        **Note:** Call only for single-column (regular) channels. You can call the `get_chan_array_size <geosoft.gxapi.GXDBWRITE.get_chan_array_size>`
         function to find the number fo columns in a given channel. The `GXVV <geosoft.gxapi.GXVV>` is filled anew for each block served up.
         """
-        ret_val = self._wrapper.get_vv(chan)
+        ret_val = self._get_vv(chan)
         return GXVV(ret_val)
 
 
@@ -195,13 +196,13 @@ class GXDBWRITE:
 
         .. versionadded:: 9.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Call only for array (multi-column) channels. You can call the `get_chan_array_size <geosoft.gxapi.GXDBWRITE.get_chan_array_size>`
+        **Note:** Call only for array (multi-column) channels. You can call the `get_chan_array_size <geosoft.gxapi.GXDBWRITE.get_chan_array_size>`
         function to find the number fo columns in a given channel, or you can call `GXVA.col <geosoft.gxapi.GXVA.col>` on the returned `GXVA <geosoft.gxapi.GXVA>` handle.
         The `GXVA <geosoft.gxapi.GXVA>` is filled anew for each block served up.
         """
-        ret_val = self._wrapper.get_va(chan)
+        ret_val = self._get_va(chan)
         return GXVA(ret_val)
 
 
@@ -217,12 +218,12 @@ class GXDBWRITE:
 
         .. versionadded:: 9.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Only available for the CreateXY or CreateXYZ methods.
+        **Note:** Only available for the CreateXY or CreateXYZ methods.
         The `GXVV <geosoft.gxapi.GXVV>` is filled anew for each block served up.
         """
-        ret_val = self._wrapper.get_v_vx()
+        ret_val = self._get_v_vx()
         return GXVV(ret_val)
 
 
@@ -238,12 +239,12 @@ class GXDBWRITE:
 
         .. versionadded:: 9.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Only available for the CreateXY or CreateXYZ methods.
+        **Note:** Only available for the CreateXY or CreateXYZ methods.
         The `GXVV <geosoft.gxapi.GXVV>` is filled anew for each block served up.
         """
-        ret_val = self._wrapper.get_v_vy()
+        ret_val = self._get_v_vy()
         return GXVV(ret_val)
 
 
@@ -259,13 +260,13 @@ class GXDBWRITE:
 
         .. versionadded:: 9.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Only available for the CreateXY or CreateXYZ methods.
+        **Note:** Only available for the CreateXY or CreateXYZ methods.
         The `GXVV <geosoft.gxapi.GXVV>` is filled anew for each block served up.
         If the Z channel is an array channel, the returned `GXVV <geosoft.gxapi.GXVV>` is the "base" `GXVV <geosoft.gxapi.GXVV>` of the `GXVA <geosoft.gxapi.GXVA>` and contains all items sequentially.
         """
-        ret_val = self._wrapper.get_v_vz()
+        ret_val = self._get_v_vz()
         return GXVV(ret_val)
 
 
@@ -283,13 +284,13 @@ class GXDBWRITE:
 
         .. versionadded:: 9.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Regular channels have one column of data. Array channels have more than one column of data.
+        **Note:** Regular channels have one column of data. Array channels have more than one column of data.
         This function should be called to determine whether to use `get_vv <geosoft.gxapi.GXDBWRITE.get_vv>` or `get_va <geosoft.gxapi.GXDBWRITE.get_va>` to access data
         for a channel.
         """
-        ret_val = self._wrapper.get_chan_array_size(chan)
+        ret_val = self._get_chan_array_size(chan)
         return ret_val
 
 
@@ -308,11 +309,11 @@ class GXDBWRITE:
 
         .. versionadded:: 9.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        First, set up the data for each channel by copying values into the individual channel VVs and VAs.
+        **Note:** First, set up the data for each channel by copying values into the individual channel VVs and VAs.
         """
-        self._wrapper.add_block(line)
+        self._add_block(line)
         
 
 
@@ -324,8 +325,10 @@ class GXDBWRITE:
         
 
         .. versionadded:: 9.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.commit()
+        self._commit()
         
 
 
@@ -340,11 +343,11 @@ class GXDBWRITE:
 
         .. versionadded:: 9.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Designed to import the "Massive.xyz" file, which has data in the format "X Y Z Data".
+        **Note:** Designed to import the "Massive.xyz" file, which has data in the format "X Y Z Data".
         """
-        self._wrapper.test_func(ra._wrapper)
+        self._test_func(ra)
         
 
 

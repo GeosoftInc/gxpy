@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXFFT2:
+class GXFFT2(gxapi_cy.WrapFFT2):
     """
     GXFFT2 class.
 
@@ -22,37 +22,28 @@ class GXFFT2:
     their own `GXFFT2 <geosoft.gxapi.GXFFT2>` object.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapFFT2(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXFFT2`
+        A null (undefined) instance of `GXFFT2 <geosoft.gxapi.GXFFT2>`
         
-        :returns: A null `GXFFT2`
+        :returns: A null `GXFFT2 <geosoft.gxapi.GXFFT2>`
+        :rtype:   GXFFT2
         """
-        return cls()
+        return GXFFT2()
 
     def is_null(self):
         """
-        Check if the instance of `GXFFT2` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXFFT2`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -71,8 +62,10 @@ class GXFFT2:
         :type  spc_fil:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapFFT2.fft2_in(GXContext._get_tls_geo(), im_gi._wrapper, trn_fil.encode(), spc_fil.encode())
+        gxapi_cy.WrapFFT2._fft2_in(GXContext._get_tls_geo(), im_gi, trn_fil.encode(), spc_fil.encode())
         
 
 
@@ -96,8 +89,10 @@ class GXFFT2:
         :type  rot:      float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapFFT2.filter_pg(GXContext._get_tls_geo(), pg._wrapper, con_fil.encode(), tr._wrapper, dx, dy, rot)
+        gxapi_cy.WrapFFT2._filter_pg(GXContext._get_tls_geo(), pg, con_fil.encode(), tr, dx, dy, rot)
         
 
 
@@ -115,8 +110,10 @@ class GXFFT2:
         :type  con_fil:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapFFT2.flt(GXContext._get_tls_geo(), im_gi._wrapper, out_fil.encode(), con_fil.encode())
+        gxapi_cy.WrapFFT2._flt(GXContext._get_tls_geo(), im_gi, out_fil.encode(), con_fil.encode())
         
 
 
@@ -134,8 +131,10 @@ class GXFFT2:
         :type  con_fil:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapFFT2.flt_inv(GXContext._get_tls_geo(), im_gi._wrapper, out_fil.encode(), con_fil.encode())
+        gxapi_cy.WrapFFT2._flt_inv(GXContext._get_tls_geo(), im_gi, out_fil.encode(), con_fil.encode())
         
 
 
@@ -151,8 +150,10 @@ class GXFFT2:
         :type  spc_fil:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapFFT2.pow_spc(GXContext._get_tls_geo(), im_gi._wrapper, spc_fil.encode())
+        gxapi_cy.WrapFFT2._pow_spc(GXContext._get_tls_geo(), im_gi, spc_fil.encode())
         
 
 
@@ -168,8 +169,10 @@ class GXFFT2:
         :type  spc_fil:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapFFT2.rad_spc(GXContext._get_tls_geo(), im_gi._wrapper, spc_fil.encode())
+        gxapi_cy.WrapFFT2._rad_spc(GXContext._get_tls_geo(), im_gi, spc_fil.encode())
         
 
 
@@ -185,8 +188,10 @@ class GXFFT2:
         :type  vv:   GXVV
 
         .. versionadded:: 7.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapFFT2.rad_spc1(GXContext._get_tls_geo(), img._wrapper, vv._wrapper)
+        gxapi_cy.WrapFFT2._rad_spc1(GXContext._get_tls_geo(), img, vv)
         
 
 
@@ -208,8 +213,10 @@ class GXFFT2:
         :type  opt:    int
 
         .. versionadded:: 7.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        gxapi_cy.WrapFFT2.rad_spc2(GXContext._get_tls_geo(), img1._wrapper, img2._wrapper, vv._wrapper, v_vst._wrapper, opt)
+        gxapi_cy.WrapFFT2._rad_spc2(GXContext._get_tls_geo(), img1, img2, vv, v_vst, opt)
         
 
 
@@ -229,8 +236,10 @@ class GXFFT2:
         :type  inv_flg:  int
 
         .. versionadded:: 5.0.1
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapFFT2.td_xd_y(GXContext._get_tls_geo(), img_tx._wrapper, img_ty._wrapper, out_fil.encode(), inv_flg)
+        gxapi_cy.WrapFFT2._td_xd_y(GXContext._get_tls_geo(), img_tx, img_ty, out_fil.encode(), inv_flg)
         
 
 
@@ -246,8 +255,10 @@ class GXFFT2:
         :type  opt:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
-        gxapi_cy.WrapFFT2.trans_pg(GXContext._get_tls_geo(), pg._wrapper, opt)
+        gxapi_cy.WrapFFT2._trans_pg(GXContext._get_tls_geo(), pg, opt)
         
 
 

@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXSHP:
+class GXSHP(gxapi_cy.WrapSHP):
     """
     GXSHP class.
 
@@ -26,37 +26,28 @@ class GXSHP:
     a DBF file containing attribute data.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapSHP(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXSHP`
+        A null (undefined) instance of `GXSHP <geosoft.gxapi.GXSHP>`
         
-        :returns: A null `GXSHP`
+        :returns: A null `GXSHP <geosoft.gxapi.GXSHP>`
+        :rtype:   GXSHP
         """
-        return cls()
+        return GXSHP()
 
     def is_null(self):
         """
-        Check if the instance of `GXSHP` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXSHP`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -70,13 +61,13 @@ class GXSHP:
 
         .. versionadded:: 7.2
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The currently stored `GXSHP <geosoft.gxapi.GXSHP>` item and data are written to the
+        **Note:** The currently stored `GXSHP <geosoft.gxapi.GXSHP>` item and data are written to the
         `GXSHP <geosoft.gxapi.GXSHP>` geometry and data files. (If no data fields have been
         defined, then the data file is not written).
         """
-        self._wrapper.append_item()
+        self._append_item()
         
 
 
@@ -96,9 +87,9 @@ class GXSHP:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The file name is used to create the various files. The
+        **Note:** The file name is used to create the various files. The
         file type and extension are added:
         
         e.g. "filename.shp",
@@ -116,7 +107,7 @@ class GXSHP:
         `SHP_GEOM_TYPE_ARCZ <geosoft.gxapi.SHP_GEOM_TYPE_ARCZ>`      `set_arc_z <geosoft.gxapi.GXSHP.set_arc_z>`
         `SHP_GEOM_TYPE_POLYGONZ <geosoft.gxapi.SHP_GEOM_TYPE_POLYGONZ>`  `set_polygon_z <geosoft.gxapi.GXSHP.set_polygon_z>`
         """
-        ret_val = gxapi_cy.WrapSHP.create(GXContext._get_tls_geo(), name.encode(), type)
+        ret_val = gxapi_cy.WrapSHP._create(GXContext._get_tls_geo(), name.encode(), type)
         return GXSHP(ret_val)
 
 
@@ -136,12 +127,12 @@ class GXSHP:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The returned field index should be used with the SetXXX_SHP
+        **Note:** The returned field index should be used with the SetXXX_SHP
         functions to set individual data values.
         """
-        ret_val = self._wrapper.add_int_field(field.encode())
+        ret_val = self._add_int_field(field.encode())
         return ret_val
 
 
@@ -161,12 +152,12 @@ class GXSHP:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The returned field index should be used with the SetXXX_SHP
+        **Note:** The returned field index should be used with the SetXXX_SHP
         functions to set individual data values.
         """
-        ret_val = self._wrapper.add_double_field(field.encode(), dec)
+        ret_val = self._add_double_field(field.encode(), dec)
         return ret_val
 
 
@@ -186,12 +177,12 @@ class GXSHP:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The returned field index should be used with the SetXXX_SHP
+        **Note:** The returned field index should be used with the SetXXX_SHP
         functions to set individual data values.
         """
-        ret_val = self._wrapper.add_string_field(field.encode(), width)
+        ret_val = self._add_string_field(field.encode(), width)
         return ret_val
 
 
@@ -208,8 +199,10 @@ class GXSHP:
         :rtype:        int
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.find_field(field.encode())
+        ret_val = self._find_field(field.encode())
         return ret_val
 
 
@@ -224,8 +217,10 @@ class GXSHP:
         :rtype:      int
 
         .. versionadded:: 7.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.max_id_num()
+        ret_val = self._max_id_num()
         return ret_val
 
 
@@ -240,8 +235,10 @@ class GXSHP:
         :rtype:      int
 
         .. versionadded:: 7.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.num_fields()
+        ret_val = self._num_fields()
         return ret_val
 
 
@@ -256,8 +253,10 @@ class GXSHP:
         :rtype:      int
 
         .. versionadded:: 7.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.num_records()
+        ret_val = self._num_records()
         return ret_val
 
 
@@ -272,8 +271,10 @@ class GXSHP:
         :rtype:      int
 
         .. versionadded:: 7.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.type()
+        ret_val = self._type()
         return ret_val
 
 
@@ -290,8 +291,10 @@ class GXSHP:
         :rtype:       GXSHP
 
         .. versionadded:: 7.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapSHP.open(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapSHP._open(GXContext._get_tls_geo(), name.encode())
         return GXSHP(ret_val)
 
 
@@ -308,11 +311,11 @@ class GXSHP:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Can ONLY be used for `SHP_GEOM_TYPE_ARC <geosoft.gxapi.SHP_GEOM_TYPE_ARC>` files.
+        **Note:** Can ONLY be used for `SHP_GEOM_TYPE_ARC <geosoft.gxapi.SHP_GEOM_TYPE_ARC>` files.
         """
-        self._wrapper.set_arc(vv_x._wrapper, vv_y._wrapper)
+        self._set_arc(vv_x, vv_y)
         
 
 
@@ -331,11 +334,11 @@ class GXSHP:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Can ONLY be used for `SHP_GEOM_TYPE_ARCZ <geosoft.gxapi.SHP_GEOM_TYPE_ARCZ>` files.
+        **Note:** Can ONLY be used for `SHP_GEOM_TYPE_ARCZ <geosoft.gxapi.SHP_GEOM_TYPE_ARCZ>` files.
         """
-        self._wrapper.set_arc_z(vv_x._wrapper, vv_y._wrapper, vv_z._wrapper)
+        self._set_arc_z(vv_x, vv_y, vv_z)
         
 
 
@@ -352,11 +355,11 @@ class GXSHP:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The input value is converted to the field's data type.
+        **Note:** The input value is converted to the field's data type.
         """
-        self._wrapper.set_int(index, val)
+        self._set_int(index, val)
         
 
 
@@ -371,16 +374,16 @@ class GXSHP:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If the `GXSHP <geosoft.gxapi.GXSHP>` object has a projection, and it
+        **Note:** If the `GXSHP <geosoft.gxapi.GXSHP>` object has a projection, and it
         is not `IPJ_TYPE_NONE <geosoft.gxapi.IPJ_TYPE_NONE>`, then it will be output
         to a file with the .prj extension when the
         first object is output.
         This function should be called BEFORE the first
         object is written.
         """
-        self._wrapper.set_ipj(ipj._wrapper)
+        self._set_ipj(ipj)
         
 
 
@@ -397,11 +400,11 @@ class GXSHP:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Can ONLY be used for `SHP_GEOM_TYPE_POINT <geosoft.gxapi.SHP_GEOM_TYPE_POINT>` files.
+        **Note:** Can ONLY be used for `SHP_GEOM_TYPE_POINT <geosoft.gxapi.SHP_GEOM_TYPE_POINT>` files.
         """
-        self._wrapper.set_point(x, y)
+        self._set_point(x, y)
         
 
 
@@ -420,11 +423,11 @@ class GXSHP:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Can ONLY be used for `SHP_GEOM_TYPE_POINTZ <geosoft.gxapi.SHP_GEOM_TYPE_POINTZ>` files.
+        **Note:** Can ONLY be used for `SHP_GEOM_TYPE_POINTZ <geosoft.gxapi.SHP_GEOM_TYPE_POINTZ>` files.
         """
-        self._wrapper.set_point_z(x, y, z)
+        self._set_point_z(x, y, z)
         
 
 
@@ -436,18 +439,18 @@ class GXSHP:
         
         :param vv_x:       X locations
         :param vv_y:       Y locations
-        :param inclusive:  ``True`` for outer ring polygon (inclusive/island), ``False` for inner ring (exclusive/hole)
+        :param inclusive:  ``True`` for outer ring polygon (inclusive/island), ``False`` for inner ring (exclusive/hole)
         :type  vv_x:       GXVV
         :type  vv_y:       GXVV
         :type  inclusive:  bool
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Can ONLY be used for `SHP_GEOM_TYPE_POLYGON <geosoft.gxapi.SHP_GEOM_TYPE_POLYGON>` files.
+        **Note:** Can ONLY be used for `SHP_GEOM_TYPE_POLYGON <geosoft.gxapi.SHP_GEOM_TYPE_POLYGON>` files.
         """
-        self._wrapper.set_polygon(vv_x._wrapper, vv_y._wrapper, inclusive)
+        self._set_polygon(vv_x, vv_y, inclusive)
         
 
 
@@ -460,7 +463,7 @@ class GXSHP:
         :param vv_x:       X locations
         :param vv_y:       Y locations
         :param vv_z:       Z locations
-        :param inclusive:  ``True`` for outer ring polygon (inclusive/island), ``False` for inner ring (exclusive/hole)
+        :param inclusive:  ``True`` for outer ring polygon (inclusive/island), ``False`` for inner ring (exclusive/hole)
         :type  vv_x:       GXVV
         :type  vv_y:       GXVV
         :type  vv_z:       GXVV
@@ -468,11 +471,11 @@ class GXSHP:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Can ONLY be used for `SHP_GEOM_TYPE_POLYGONZ <geosoft.gxapi.SHP_GEOM_TYPE_POLYGONZ>` files.
+        **Note:** Can ONLY be used for `SHP_GEOM_TYPE_POLYGONZ <geosoft.gxapi.SHP_GEOM_TYPE_POLYGONZ>` files.
         """
-        self._wrapper.set_polygon_z(vv_x._wrapper, vv_y._wrapper, vv_z._wrapper, inclusive)
+        self._set_polygon_z(vv_x, vv_y, vv_z, inclusive)
         
 
 
@@ -489,11 +492,11 @@ class GXSHP:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The input value is converted to the field's data type.
+        **Note:** The input value is converted to the field's data type.
         """
-        self._wrapper.set_double(index, val)
+        self._set_double(index, val)
         
 
 
@@ -510,11 +513,11 @@ class GXSHP:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The input string is converted to the field's data type.
+        **Note:** The input string is converted to the field's data type.
         """
-        self._wrapper.set_string(index, str_val.encode())
+        self._set_string(index, str_val.encode())
         
 
 
@@ -527,13 +530,13 @@ class GXSHP:
 
         .. versionadded:: 6.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The currently stored `GXSHP <geosoft.gxapi.GXSHP>` item and data are written to the
+        **Note:** The currently stored `GXSHP <geosoft.gxapi.GXSHP>` item and data are written to the
         `GXSHP <geosoft.gxapi.GXSHP>` geometry and data files. (If no data fields have been
         defined, then the data file is not written).
         """
-        self._wrapper.write_item()
+        self._write_item()
         
 
 

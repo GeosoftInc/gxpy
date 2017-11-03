@@ -13,44 +13,35 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXCOM:
+class GXCOM(gxapi_cy.WrapCOM):
     """
     GXCOM class.
 
     This class is used to communicate with external serial devices. It allows the setting of timeouts.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapCOM(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXCOM`
+        A null (undefined) instance of `GXCOM <geosoft.gxapi.GXCOM>`
         
-        :returns: A null `GXCOM`
+        :returns: A null `GXCOM <geosoft.gxapi.GXCOM>`
+        :rtype:   GXCOM
         """
-        return cls()
+        return GXCOM()
 
     def is_null(self):
         """
-        Check if the instance of `GXCOM` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXCOM`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -80,8 +71,10 @@ class GXCOM:
         :rtype:               GXCOM
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapCOM.create(GXContext._get_tls_geo(), port.encode(), baud, data_size, parity, stop_bits, flow_control, time_out)
+        ret_val = gxapi_cy.WrapCOM._create(GXContext._get_tls_geo(), port.encode(), baud, data_size, parity, stop_bits, flow_control, time_out)
         return GXCOM(ret_val)
 
 
@@ -110,8 +103,10 @@ class GXCOM:
         :rtype:               GXCOM
 
         .. versionadded:: 6.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = gxapi_cy.WrapCOM.create_no_terminate(GXContext._get_tls_geo(), port.encode(), baud, data_size, parity, stop_bits, flow_control, time_out)
+        ret_val = gxapi_cy.WrapCOM._create_no_terminate(GXContext._get_tls_geo(), port.encode(), baud, data_size, parity, stop_bits, flow_control, time_out)
         return GXCOM(ret_val)
 
 
@@ -131,8 +126,10 @@ class GXCOM:
         :rtype:       int
 
         .. versionadded:: 6.0.1
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val, line.value = self._wrapper.read_line_no_terminate(line.value.encode())
+        ret_val, line.value = self._read_line_no_terminate(line.value.encode())
         return ret_val
 
 
@@ -150,8 +147,10 @@ class GXCOM:
         :rtype:       int
 
         .. versionadded:: 6.0.1
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val, line.value = self._wrapper.read_chars_no_terminate(line.value.encode())
+        ret_val, line.value = self._read_chars_no_terminate(line.value.encode())
         return ret_val
 
 
@@ -165,8 +164,10 @@ class GXCOM:
         :type  line:  str_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        line.value = self._wrapper.read_line(line.value.encode())
+        line.value = self._read_line(line.value.encode())
         
 
 
@@ -184,8 +185,10 @@ class GXCOM:
         :rtype:       int
 
         .. versionadded:: 6.0.1
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        ret_val = self._wrapper.write_chars_no_terminate(line.encode())
+        ret_val = self._write_chars_no_terminate(line.encode())
         return ret_val
 
 
@@ -197,8 +200,10 @@ class GXCOM:
         
 
         .. versionadded:: 5.1.8
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.purge_comm()
+        self._purge_comm()
         
 
 
@@ -212,8 +217,10 @@ class GXCOM:
         :type  line:  str_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        line.value = self._wrapper.read_chars(line.value.encode())
+        line.value = self._read_chars(line.value.encode())
         
 
 
@@ -229,8 +236,10 @@ class GXCOM:
         :type  wa:     GXWA
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.read_em61_lines_wa(lines, wa._wrapper)
+        self._read_em61_lines_wa(lines, wa)
         
 
 
@@ -244,8 +253,10 @@ class GXCOM:
         :type  wa:   GXWA
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.read_file2_wa(wa._wrapper)
+        self._read_file2_wa(wa)
         
 
 
@@ -261,8 +272,10 @@ class GXCOM:
         :type  wa:     GXWA
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.read_lines_wa(lines, wa._wrapper)
+        self._read_lines_wa(lines, wa)
         
 
 
@@ -276,8 +289,10 @@ class GXCOM:
         :type  time_out:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.set_time_out(time_out)
+        self._set_time_out(time_out)
         
 
 
@@ -291,8 +306,10 @@ class GXCOM:
         :type  line:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.write_chars(line.encode())
+        self._write_chars(line.encode())
         
 
 
@@ -306,8 +323,10 @@ class GXCOM:
         :type  line:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
-        self._wrapper.write_line(line.encode())
+        self._write_line(line.encode())
         
 
 

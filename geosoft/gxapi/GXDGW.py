@@ -14,7 +14,7 @@ from .GXLST import GXLST
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXDGW:
+class GXDGW(gxapi_cy.WrapDGW):
     """
     GXDGW class.
 
@@ -57,37 +57,28 @@ class GXDGW:
     to represent all possible characters without using character sets.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapDGW(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXDGW`
+        A null (undefined) instance of `GXDGW <geosoft.gxapi.GXDGW>`
         
-        :returns: A null `GXDGW`
+        :returns: A null `GXDGW <geosoft.gxapi.GXDGW>`
+        :rtype:   GXDGW
         """
-        return cls()
+        return GXDGW()
 
     def is_null(self):
         """
-        Check if the instance of `GXDGW` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXDGW`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -106,8 +97,12 @@ class GXDGW:
         :rtype:       GXDGW
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapDGW.create(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapDGW._create(GXContext._get_tls_geo(), name.encode())
         return GXDGW(ret_val)
 
 
@@ -130,8 +125,12 @@ class GXDGW:
         :type  meta_attrib:   int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.get_info_meta(obj, dlg_obj_type, meta._wrapper, meta_obj, meta_attrib)
+        self._get_info_meta(obj, dlg_obj_type, meta, meta_obj, meta_attrib)
         
 
 
@@ -152,8 +151,12 @@ class GXDGW:
         :type  field:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.get_info_sys(id, info, group.encode(), field.encode())
+        self._get_info_sys(id, info, group.encode(), field.encode())
         
 
 
@@ -171,8 +174,12 @@ class GXDGW:
         :rtype:      GXLST
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = self._wrapper.get_list(id)
+        ret_val = self._get_list(id)
         return GXLST(ret_val)
 
 
@@ -191,8 +198,12 @@ class GXDGW:
         :type  buff:  str_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        buff.value = self._wrapper.gt_info(id, info, buff.value.encode())
+        buff.value = self._gt_info(id, info, buff.value.encode())
         
 
 
@@ -207,8 +218,12 @@ class GXDGW:
         :rtype:      int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = self._wrapper.run_dialogue()
+        ret_val = self._run_dialogue()
         return ret_val
 
 
@@ -227,8 +242,12 @@ class GXDGW:
         :type  buff:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.set_info(id, info, buff.encode())
+        self._set_info(id, info, buff.encode())
         
 
 
@@ -249,8 +268,12 @@ class GXDGW:
         :type  meta_attrib:   int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.set_info_meta(obj, dlg_obj_type, meta._wrapper, meta_obj, meta_attrib)
+        self._set_info_meta(obj, dlg_obj_type, meta, meta_obj, meta_attrib)
         
 
 
@@ -272,8 +295,12 @@ class GXDGW:
         :type  field:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+
+        **Limitations:** May not be available while executing a command line program.
         """
-        self._wrapper.set_info_sys(id, info, group.encode(), field.encode())
+        self._set_info_sys(id, info, group.encode(), field.encode())
         
 
 
@@ -288,9 +315,11 @@ class GXDGW:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        A "Special", additional title can be added to a dialog by passing a title
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** A "Special", additional title can be added to a dialog by passing a title
         to `set_title <geosoft.gxapi.GXDGW.set_title>` with the following syntax:
         
         ``"Window Title\\nAdditional Title"``
@@ -305,7 +334,7 @@ class GXDGW:
         special font specified using the MONTAJ.GX_TITLE_FONT parameter noted
         above in "Setting Fonts in GX dialogs."
         """
-        self._wrapper.set_title(title.encode())
+        self._set_title(title.encode())
         
 
 

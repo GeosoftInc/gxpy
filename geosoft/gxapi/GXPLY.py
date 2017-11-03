@@ -13,7 +13,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block ClassImplementation
 # NOTICE: Do not edit anything here, it is generated code
-class GXPLY:
+class GXPLY(gxapi_cy.WrapPLY):
     """
     GXPLY class.
 
@@ -21,37 +21,28 @@ class GXPLY:
     polygons, and does import and export of polygon files.
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.WrapPLY(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `GXPLY`
+        A null (undefined) instance of `GXPLY <geosoft.gxapi.GXPLY>`
         
-        :returns: A null `GXPLY`
+        :returns: A null `GXPLY <geosoft.gxapi.GXPLY>`
+        :rtype:   GXPLY
         """
-        return cls()
+        return GXPLY()
 
     def is_null(self):
         """
-        Check if the instance of `GXPLY` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `GXPLY`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 
 # Miscellaneous
@@ -68,8 +59,10 @@ class GXPLY:
         :type  vv_y:  GXVV
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.add_polygon(vv_x._wrapper, vv_y._wrapper)
+        self._add_polygon(vv_x, vv_y)
         
 
 
@@ -87,8 +80,10 @@ class GXPLY:
         :type  exclude:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.add_polygon_ex(vv_x._wrapper, vv_y._wrapper, exclude)
+        self._add_polygon_ex(vv_x, vv_y, exclude)
         
 
 
@@ -103,11 +98,11 @@ class GXPLY:
 
         .. versionadded:: 5.0.5
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        The `GXPLY <geosoft.gxapi.GXPLY>` is re-projected to the new projection.
+        **Note:** The `GXPLY <geosoft.gxapi.GXPLY>` is re-projected to the new projection.
         """
-        self._wrapper.change_ipj(ipj._wrapper)
+        self._change_ipj(ipj)
         
 
 
@@ -119,8 +114,10 @@ class GXPLY:
         
 
         .. versionadded:: 5.1.8
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.clear()
+        self._clear()
         
 
 
@@ -134,8 +131,10 @@ class GXPLY:
         :type  srce:  GXPLY
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.copy(srce._wrapper)
+        self._copy(srce)
         
 
 
@@ -150,8 +149,10 @@ class GXPLY:
         :rtype:      GXPLY
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapPLY.create(GXContext._get_tls_geo())
+        ret_val = gxapi_cy.WrapPLY._create(GXContext._get_tls_geo())
         return GXPLY(ret_val)
 
 
@@ -168,8 +169,10 @@ class GXPLY:
         :rtype:      GXPLY
 
         .. versionadded:: 5.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = gxapi_cy.WrapPLY.create_s(GXContext._get_tls_geo(), bf._wrapper)
+        ret_val = gxapi_cy.WrapPLY._create_s(GXContext._get_tls_geo(), bf)
         return GXPLY(ret_val)
 
 
@@ -192,11 +195,11 @@ class GXPLY:
 
         .. versionadded:: 5.0
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        If there are no polygons in the `GXPLY <geosoft.gxapi.GXPLY>` object, returns dummies.
+        **Note:** If there are no polygons in the `GXPLY <geosoft.gxapi.GXPLY>` object, returns dummies.
         """
-        min_x.value, min_y.value, max_x.value, max_y.value = self._wrapper.extent(min_x.value, min_y.value, max_x.value, max_y.value)
+        min_x.value, min_y.value, max_x.value, max_y.value = self._extent(min_x.value, min_y.value, max_x.value, max_y.value)
         
 
 
@@ -210,8 +213,10 @@ class GXPLY:
         :type  ipj:   GXIPJ
 
         .. versionadded:: 5.0.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.get_ipj(ipj._wrapper)
+        self._get_ipj(ipj)
         
 
 
@@ -229,8 +234,10 @@ class GXPLY:
         :type  poly:  int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.get_polygon(vv_x._wrapper, vv_y._wrapper, poly)
+        self._get_polygon(vv_x, vv_y, poly)
         
 
 
@@ -250,8 +257,10 @@ class GXPLY:
         :type  exclude:  int_ref
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        exclude.value = self._wrapper.get_polygon_ex(vv_x._wrapper, vv_y._wrapper, poly, exclude.value)
+        exclude.value = self._get_polygon_ex(vv_x, vv_y, poly, exclude.value)
         
 
 
@@ -274,8 +283,10 @@ class GXPLY:
         :rtype:        int
 
         .. versionadded:: 5.1.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.clip_area(min_x, min_y, max_x, max_y)
+        ret_val = self._clip_area(min_x, min_y, max_x, max_y)
         return ret_val
 
 
@@ -312,8 +323,10 @@ class GXPLY:
         :rtype:        int
 
         .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val, first.value = self._wrapper.clip_line_int(min_x, min_y, max_x, max_y, vv._wrapper, inc, first.value)
+        ret_val, first.value = self._clip_line_int(min_x, min_y, max_x, max_y, vv, inc, first.value)
         return ret_val
 
 
@@ -333,13 +346,13 @@ class GXPLY:
 
         .. versionadded:: 5.1.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Resulting clipped polygon only has inclusive
+        **Note:** Resulting clipped polygon only has inclusive
         regions of the clipped area.  Exclusion polygons
         are treated as included areas.
         """
-        ret_val = self._wrapper.clip_ply(ppl_yb._wrapper, ppl_yc._wrapper)
+        ret_val = self._clip_ply(ppl_yb, ppl_yc)
         return ret_val
 
 
@@ -353,8 +366,10 @@ class GXPLY:
         :type  desc:  str_ref
 
         .. versionadded:: 5.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        desc.value = self._wrapper.get_description(desc.value.encode())
+        desc.value = self._get_description(desc.value.encode())
         
 
 
@@ -369,8 +384,10 @@ class GXPLY:
         :rtype:       int
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        ret_val = self._wrapper.num_poly()
+        ret_val = self._num_poly()
         return ret_val
 
 
@@ -384,8 +401,10 @@ class GXPLY:
         :type  table:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.load_table(table.encode())
+        self._load_table(table.encode())
         
 
 
@@ -401,11 +420,11 @@ class GXPLY:
 
         .. versionadded:: 5.1.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Excluded polygons have negative area.
+        **Note:** Excluded polygons have negative area.
         """
-        ret_val = self._wrapper.area()
+        ret_val = self._area()
         return ret_val
 
 
@@ -425,8 +444,10 @@ class GXPLY:
         :type  max_y:  float
 
         .. versionadded:: 5.0.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.rectangle(min_x, min_y, max_x, max_y)
+        self._rectangle(min_x, min_y, max_x, max_y)
         
 
 
@@ -444,8 +465,10 @@ class GXPLY:
         :type  rot:   float
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.rotate(x, y, rot)
+        self._rotate(x, y, rot)
         
 
 
@@ -459,8 +482,10 @@ class GXPLY:
         :type  table:  str
 
         .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.save_table(table.encode())
+        self._save_table(table.encode())
         
 
 
@@ -474,8 +499,10 @@ class GXPLY:
         :type  bf:   GXBF
 
         .. versionadded:: 5.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.serial(bf._wrapper)
+        self._serial(bf)
         
 
 
@@ -489,8 +516,10 @@ class GXPLY:
         :type  desc:  str
 
         .. versionadded:: 5.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
-        self._wrapper.set_description(desc.encode())
+        self._set_description(desc.encode())
         
 
 
@@ -505,11 +534,11 @@ class GXPLY:
 
         .. versionadded:: 5.0.5
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        This changes the projection information only.
+        **Note:** This changes the projection information only.
         """
-        self._wrapper.set_ipj(ipj._wrapper)
+        self._set_ipj(ipj)
         
 
 
@@ -524,13 +553,13 @@ class GXPLY:
 
         .. versionadded:: 5.1.3
 
-        **Note:**
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
 
-        Points on the polygon that deviate from a line drawn between
+        **Note:** Points on the polygon that deviate from a line drawn between
         neighboring points by more than the thining resolution will
         be removed.
         """
-        self._wrapper.thin(thin)
+        self._thin(thin)
         
 
 
