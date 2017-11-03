@@ -63,8 +63,13 @@ class GXva:
         return self
 
     def __exit__(self, type, value, traceback):
-        self._np = None
-        self._gxva = None
+        self.__del__()
+
+    def __del__(self):
+        if hasattr(self, '_np'):
+            self._np = None
+        if hasattr(self, '_gxva'):
+            self._gxva = None
 
     def __len__(self):
         return self._gxva.len()

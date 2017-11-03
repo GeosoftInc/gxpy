@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmd:MD_Metatest_plane_relief_surface xsi:schemaLocation="http://www.isotc211.org/2005/gmd ../schemas/iso19139fra/gmd/gmd.xsd" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:map="urn:brgm:mapping" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:gfc="http://www.isotc211.org/2005/gfc" xmlns:gco="http://www.isotc211.org/2005/gco">
+	<geosoft xmlns="http://www.geosoft.com/schema/geo">
+		<test_plane_relief_surfaceset version="1">
+			<title>test_plane_relief_surface</title>
+			<file_format>geosoft_3dv</file_format>
+			<test_plane_relief_surface_created_by>TestingSystem\Tester</test_plane_relief_surface_created_by>
+			<test_plane_relief_surface_creation_date>2003-01-01</test_plane_relief_surface_creation_date>
+			<metatest_plane_relief_surface_created_by>TestingSystem\Tester</metatest_plane_relief_surface_created_by>
+			<metatest_plane_relief_surface_creation_date>2003-01-01</metatest_plane_relief_surface_creation_date>
+			<georeference>
+				<test_plane_relief_surfaceextents>
+					<extent3d minx="662183.75" miny="23833158.75" minz="-100" maxx="663641.25" maxy="23834441.25" maxz="100"/>
+				</test_plane_relief_surfaceextents>
+				<projection type="TRANSVERSE_MERCATOR" name="NAD83 / UTM zone 24N" projection="UTM zone 24N" ellipsoid="GRS 1980" datum="NAD83" datumtrf="NAD83 to WGS 84 (1)" datumtrf_description="[NAD83] (4m) North America - Canada and USA (CONUS, Alaska mainland)" radius="6378137" eccentricity="0.0818191910428">
+					<shift x="0" y="0" z="0"/>
+					<parameters scale="0.9996" false_east="500000" false_north="0" lat_origin="0" lon_origin="-39"/>
+					<units name="m" unit_scale="1"/>
+				</projection>
+			</georeference>
+		</test_plane_relief_surfaceset>
+	</geosoft>
+	<gmd:identificationInfo>
+		<gmd:MD_DataIdentification>
+			<gmd:citation>
+				<gmd:CI_Citation>
+					<gmd:title>
+						<gco:CharacterString>test_plane_relief_surface</gco:CharacterString>
+					</gmd:title>
+					<gmd:date>
+						<gmd:CI_Date>
+							<gmd:date>
+								<gco:Date>2003-1-1</gco:Date>
+							</gmd:date>
+						</gmd:CI_Date>
+					</gmd:date>
+				</gmd:CI_Citation>
+			</gmd:citation>
+			<gmd:resourceFormat>
+				<gmd:MD_Format>
+					<gmd:name>
+						<gco:CharacterString>geosoft_3dv</gco:CharacterString>
+					</gmd:name>
+				</gmd:MD_Format>
+			</gmd:resourceFormat>
+			<gmd:pointOfContact>
+				<gmd:CI_ResponsibleParty>
+					<gmd:individualName>
+						<gco:CharacterString>TestingSystem\Tester</gco:CharacterString>
+					</gmd:individualName>
+				</gmd:CI_ResponsibleParty>
+			</gmd:pointOfContact>
+			<gmd:extent>
+				<gmd:EX_Extent>
+					<gmd:geographicElement>
+						<gmd:EX_GeographicBoundingBox>
+							<gmd:westBoundLongitude>
+								<gco:Decimal>139.213829483</gco:Decimal>
+							</gmd:westBoundLongitude>
+							<gmd:eastBoundLongitude>
+								<gco:Decimal>139.229977562</gco:Decimal>
+							</gmd:eastBoundLongitude>
+							<gmd:southBoundLatitude>
+								<gco:Decimal>-34.6757473426</gco:Decimal>
+							</gmd:southBoundLatitude>
+							<gmd:northBoundLatitude>
+								<gco:Decimal>-34.663955438</gco:Decimal>
+							</gmd:northBoundLatitude>
+						</gmd:EX_GeographicBoundingBox>
+					</gmd:geographicElement>
+				</gmd:EX_Extent>
+			</gmd:extent>
+		</gmd:MD_DataIdentification>
+	</gmd:identificationInfo>
+	<gmd:contact>
+		<gmd:CI_ResponsibleParty>
+			<gmd:individualName>
+				<gco:CharacterString>TestingSystem\Tester</gco:CharacterString>
+			</gmd:individualName>
+		</gmd:CI_ResponsibleParty>
+	</gmd:contact>
+	<gmd:test_plane_relief_surfaceQualityInfo>
+		<gmd:DQ_DataQuality/>
+	</gmd:test_plane_relief_surfaceQualityInfo>
+	<gmd:dateStamp>
+		<gco:Date>2003-1-1</gco:Date>
+	</gmd:dateStamp>
+	<gmd:referenceSystemInfo>
+		<gmd:MD_ReferenceSystem>
+			<gmd:referenceSystemIdentifier>
+				<gmd:RS_Identifier>
+					<gmd:codeSpace>
+						<gco:CharacterString>ESRI</gco:CharacterString>
+					</gmd:codeSpace>
+					<gmd:code>
+						<gco:CharacterString>PROJCS["UTM_zone_24N",GEOGCS["GCS_North_American_1983",DATUM["D_North_American_1983",SPHEROID["GRS_1980",6378137,298.257222101]],PRIMEM["Greenwich",0],UNIT["Degree",0.0174532925199432955]],PROJECTION["Transverse_Mercator"],PARAMETER["False_Easting",500000],PARAMETER["False_Northing",0],PARAMETER["Central_Meridian",-39],PARAMETER["Scale_Factor",0.9996],PARAMETER["Latitude_Of_Origin",0],UNIT["Meter",1]]</gco:CharacterString>
+					</gmd:code>
+					<gmd:version>
+						<gco:CharacterString>1</gco:CharacterString>
+					</gmd:version>
+				</gmd:RS_Identifier>
+			</gmd:referenceSystemIdentifier>
+		</gmd:MD_ReferenceSystem>
+	</gmd:referenceSystemInfo>
+</gmd:MD_Metatest_plane_relief_surface>

@@ -74,8 +74,13 @@ class GXvv:
         return self
 
     def __exit__(self, type, value, traceback):
-        self._np = None
-        self._gxvv = None
+        self.__del__()
+
+    def __del__(self):
+        if hasattr(self, '_np'):
+            self._np = None
+        if hasattr(self, '_gxvv'):
+            self._gxvv = None
 
     def __init__(self, array=None, dtype=None, fid=(0.0, 1.0), unit_of_measure=''):
 

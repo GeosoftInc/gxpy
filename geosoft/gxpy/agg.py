@@ -76,8 +76,11 @@ class Aggregate_image:
         return self
 
     def __exit__(self, type, value, traceback):
-        self._gxagg = None
-        pass
+        self.__del__()
+
+    def __del__(self):
+        if hasattr(self, '_gxagg'):
+            self._gxagg = None
 
     def __init__(self):
         self._gxagg = None

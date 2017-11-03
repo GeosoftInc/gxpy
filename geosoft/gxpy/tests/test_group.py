@@ -1110,8 +1110,8 @@ class Test(GXPYTest):
 
         folder, files = gsys.unzip(os.path.join(os.path.dirname(self._test_case_py), 'dem_small.zip'),
                                    folder=self.gx.temp_folder())
-
         grid_file = os.path.join(folder, 'dem_small.grd')
+
         with gxgrd.Grid.open(grid_file) as grd:
 
             # get the data and replace z with DEM valie
@@ -1139,6 +1139,30 @@ class Test(GXPYTest):
                              pen=gxg.Pen(line_color='c', line_thick= 20 * v.units_per_map_cm))
 
         self.crc_map(v3d_file)
+
+    def test_plane_relief_surface(self):
+        self.start()
+
+        folder, files = gsys.unzip(os.path.join(os.path.dirname(self._test_case_py), 'dem_small.zip'),
+                                   folder=self.gx.temp_folder())
+        grid_file = os.path.join(folder, 'dem_small.grd')
+
+        # create a 3D view
+        with gxv.View_3d.new("data",
+                                area_2d=gxgrd.Grid(grid_file).extent_2d(),
+                                coordinate_system=gxgrd.Grid(grid_file).coordinate_system,
+                                overwrite=True) as v:
+            v3d_name = v.file_name
+
+            v.set_plane_relief_surface(grid_file, base=200, scale=2, max=250, min=150)
+
+            # add the grid image to the view, with shading, 20 nT contour interval to match default contour lines
+            gxg.Aggregate_group.new(v, gxagg.Aggregate_image.new(grid_file, shade=True, contour=20))
+
+            # contour the grid
+            gxg.contour(v, 'TMI_contour', grid_file)
+
+        self.crc_map(v3d_name)
 
     def test_polydata_3d_grd_cone(self):
         self.start()

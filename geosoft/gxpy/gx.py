@@ -181,7 +181,6 @@ def _exit_cleanup():
         gx._sr = None
         gx._shared_state = {}
 
-
     _reset_globals()
 
 
@@ -249,7 +248,11 @@ class GXpy(_Singleton):
         return self
 
     def __exit__(self, type, value, traceback):
-        self._close()
+        self.__del__()
+
+    def __del__(self):
+        if hasattr(self, '_close'):
+            self._close()
 
     def _close(self):
         global gx

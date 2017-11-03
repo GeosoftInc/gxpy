@@ -199,7 +199,11 @@ class Grid:
         return self
 
     def __exit__(self, type, value, traceback):
-        self._close()
+        self.__del__()
+
+    def __del__(self):
+        if hasattr(self, '_close'):
+            self._close()
 
     def _close(self, pop=True):
 
@@ -209,32 +213,33 @@ class Grid:
             except OSError as e:
                 pass
 
-        if self._open:
+        if hasattr(self, '_open'):
+            if self._open:
 
-            if self._delete_files:
+                if self._delete_files:
 
+                    self._img = None
+                    delete_files(self._file_name)
+                    self._metadata_changed = False
+
+                elif self._hgd:
+                    # an HGD memory grid was made, save it to an HGD file
+                    gxapi.GXHGD.h_create_img(self._img, decorate_name(self._file_name, 'HGD'))
+
+                if self._metadata_changed:
+                    with open(self._file_name + '.xml', 'w+') as f:
+                        f.write(gxu.xml_from_dict(self._metadata))
+                    gxapi.GXIMG.sync(self._file_name)
+
+                if pop:
+                    gx.pop_resource(self._open)
+                self._open = None
                 self._img = None
-                delete_files(self._file_name)
-                self._metadata_changed = False
-
-            elif self._hgd:
-                # an HGD memory grid was made, save it to an HGD file
-                gxapi.GXHGD.h_create_img(self._img, decorate_name(self._file_name, 'HGD'))
-
-            if self._metadata_changed:
-                with open(self._file_name + '.xml', 'w+') as f:
-                    f.write(gxu.xml_from_dict(self._metadata))
-                gxapi.GXIMG.sync(self._file_name)
-
-            if pop:
-                gx.pop_resource(self._open)
-            self._open = None
-            self._img = None
-            self._buffer_np = None
-            self._buffer_x = None
-            self._buffer_y = None
-            self._cs = None
-            self._gxpg = None
+                self._buffer_np = None
+                self._buffer_x = None
+                self._buffer_y = None
+                self._cs = None
+                self._gxpg = None
 
     def __repr__(self):
         return "{}({})".format(self.__class__, self.__dict__)

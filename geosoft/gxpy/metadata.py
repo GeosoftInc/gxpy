@@ -76,7 +76,11 @@ class Metadata:
         return self
 
     def __exit__(self, type, value, traceback):
-        self._gxmeta = None
+        self.__del__()
+
+    def __del__(self):
+        if hasattr(self, '_gxmeta'):
+            self._gxmeta = None
 
     def __init__(self, metadata=None):
         if metadata:

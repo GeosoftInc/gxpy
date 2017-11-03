@@ -454,7 +454,11 @@ class Coordinate_system:
         return self
 
     def __exit__(self, type, value, traceback):
-        self._gxapi_ipj = None
+        self.__del__()
+
+    def __del__(self):
+        if hasattr(self, '_gxapi_ipj'):
+            self._gxapi_ipj = None
 
     def __init__(self, coordinate_system=None):
 

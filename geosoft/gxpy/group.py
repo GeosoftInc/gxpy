@@ -283,31 +283,36 @@ class Group:
         return self
 
     def __exit__(self, xtype, xvalue, xtraceback):
-        self._close()
+        self.__del__()
+
+    def __del__(self):
+        if hasattr(self, '_close'):
+            self._close()
 
     def _close(self):
-        if self._open:
-            try:
-                self._drawing_coordinate_system = None
-                self._pen = None
-                self._text_def = None
+        if hasattr(self, '_open'):
+            if self._open:
+                try:
+                    self._drawing_coordinate_system = None
+                    self._pen = None
+                    self._text_def = None
 
-                # write metadata
-                if self._new_meta:
-                    bf = gxapi.GXBF.create("", gxapi.BF_READWRITE_NEW)
-                    try:
-                        self._meta.gxmeta.serial(bf)
-                        bf.seek(0, gxapi.BF_SEEK_START)
-                        self.view.gxview.write_group_storage(self.number, "Geosoft_META", bf)
-                    finally:
-                        del bf
+                    # write metadata
+                    if self._new_meta:
+                        bf = gxapi.GXBF.create("", gxapi.BF_READWRITE_NEW)
+                        try:
+                            self._meta.gxmeta.serial(bf)
+                            bf.seek(0, gxapi.BF_SEEK_START)
+                            self.view.gxview.write_group_storage(self.number, "Geosoft_META", bf)
+                        finally:
+                            del bf
 
-            finally:
-                self._view.lock = False
-                self._view = None
-                self._open = False
-                self._meta = None
-                self._new_meta = False
+                finally:
+                    self._view.lock = False
+                    self._view = None
+                    self._open = False
+                    self._meta = None
+                    self._new_meta = False
 
     def __repr__(self):
         return "{}({})".format(self.__class__, self.__dict__)
@@ -1944,8 +1949,13 @@ class Color_symbols_group(Group):
     """
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        self.gxcsymb = None
-        self._close()
+        self.__del__()
+
+    def __del__(self):
+        if hasattr(self, 'gxcsymb'):
+            self.gxcsymb = None
+        if hasattr(self, '_close'):
+            self._close()
 
     def __init__(self, view, group_name, **kwargs):
 
@@ -2064,9 +2074,15 @@ class Aggregate_group(Group):
     """
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        self.agg.close()
-        self.agg = None
-        self._close()
+        self.__del__()
+
+    def __del__(self):
+        if hasattr(self, 'agg'):
+            if self.agg:
+                self.agg.close()
+                self.agg = None
+        if hasattr(self, '_close'):
+            self._close()
 
     def __init__(self, view, group_name, mode):
 

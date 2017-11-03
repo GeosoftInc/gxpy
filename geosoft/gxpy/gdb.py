@@ -289,27 +289,32 @@ class Geosoft_gdb:
         return self
 
     def __exit__(self, type, value, traceback):
-        self._close()
+        self.__del__()
+
+    def __del__(self):
+        if hasattr(self, '_close'):
+            self._close()
 
     def _close(self, pop=True):
-        if self._open:
-            if self._db:
-                if self._edb is not None:
-                    if self._edb.is_locked():
-                        self._edb.un_lock()
-                    self._edb = None
+        if hasattr(self, '_open'):
+            if self._open:
+                if self._db:
+                    if self._edb is not None:
+                        if self._edb.is_locked():
+                            self._edb.un_lock()
+                        self._edb = None
 
-                if self._xmlmetadata_changed:
-                    with open(self._file_name + '.xml', 'w+') as f:
-                        f.write(gxu.xml_from_dict(self._xmlmetadata))
-                    self._db.sync()
+                    if self._xmlmetadata_changed:
+                        with open(self._file_name + '.xml', 'w+') as f:
+                            f.write(gxu.xml_from_dict(self._xmlmetadata))
+                        self._db.sync()
 
-                self._db = None
+                    self._db = None
 
-            self._file_name = None
-            if pop:
-                gx.pop_resource(self._open)
-            self._open = None
+                self._file_name = None
+                if pop:
+                    gx.pop_resource(self._open)
+                self._open = None
 
 
     def __repr__(self):

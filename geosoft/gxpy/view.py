@@ -91,14 +91,19 @@ class View:
         return self
 
     def __exit__(self, xtype, xvalue, xtraceback):
-        self._close()
+        self.__del__()
+
+    def __del__(self):
+        if hasattr(self, '_close'):
+            self._close()
 
     def _close(self):
-        if self._open:
-            self._gxview = None
-            self._pen = None
-            self._map = None  # release map
-            self._open = False
+        if hasattr(self, '_open'):
+            if self._open:
+                self._gxview = None
+                self._pen = None
+                self._map = None  # release map
+                self._open = False
 
     def __repr__(self):
         return "{}({})".format(self.__class__, self.__dict__)
@@ -704,11 +709,16 @@ class View_3d(View):
         return g_3dv
 
     def __exit__(self, xtype, xvalue, xtraceback):
-        self.close()
+        self.__del__()
+
+    def __del__(self):
+        if hasattr(self, '_close'):
+            self.close()
 
     def close(self):
         """close the view, releases resources."""
-        self.map.close()
+        if self.map:
+            self.map.close()
         self._close()
 
     @property
@@ -723,7 +733,7 @@ class View_3d(View):
 
     @property
     def current_3d_drawing_plane(self):
-        """Name of the current drawing plane in a 3D view, `None` if not defined.  Can be set to a plane number or name."""
+        """Current drawing plane name in a 3D view, `None` if not defined.  Can be set to a plane number or name."""
         if len(self.plane_list):
             s = gxapi.str_ref()
             self.gxview.get_def_plane(s)
@@ -739,6 +749,15 @@ class View_3d(View):
             if plane not in self.plane_list:
                 self.new_drawing_plane(plane)
             self.gxview.set_def_plane(plane)
+
+    @property
+    def current_3d_drawing_plane_number(self):
+        """The current drawing plane number, can be set."""
+        return self.plane_number(self.current_3d_drawing_plane)
+
+    @current_3d_drawing_plane_number.setter
+    def current_3d_drawing_plane_number(self, plane):
+        self.current_3d_drawing_plane = plane
 
     @property
     def plane_list(self):
@@ -764,14 +783,17 @@ class View_3d(View):
 
     def plane_number(self, plane):
         """Return the plane number of a plane, or None if plane does not exist."""
-        if isinstance(plane, int):
-            self.plane_name(plane)
-            return plane
-        plane_number = self.gxview.find_plane(plane)
-        if plane_number == -1:
-            _plane_err(plane, self.name)
+        if plane:
+            if isinstance(plane, int):
+                self.plane_name(plane)
+                return plane
+            plane_number = self.gxview.find_plane(plane)
+            if plane_number == -1:
+                _plane_err(plane, self.name)
+            else:
+                return plane_number
         else:
-            return plane_number
+            return None
 
     def has_plane(self, plane):
         """
@@ -826,3 +848,30 @@ class View_3d(View):
                                        rotation[0], rotation[1], rotation[2],
                                        offset[0], offset[1], offset[2],
                                        scale[0], scale[1], scale[2])
+
+    def set_plane_relief_surface(self, surface_grid_name, sample=1, base=0, scale=1, min=None, max=None):
+        """
+        Establish a relief surface for the current plane based on a grid.
+
+        :param surface_grid_name:   grid file name
+        :param sample:              grid sample interval, default is 1 which uses every grid value
+        :param base:                base value in grid, will be at z=0.  Default is 0.
+        :param scale:               scale to apply to grid after removing base, default is 1.
+        :param min:                 minimum clip  in unscaled grid values
+        :param max:                 maximum clip in unscaled grid values
+
+        .. versionadded:: 9.3
+        """
+
+        if not self.current_3d_drawing_plane:
+            name = os.path.basename(surface_grid_name).split('.')[0]
+            self.current_3d_drawing_plane = name
+
+        self.gxview.set_plane_surface(self.current_3d_drawing_plane_number, surface_grid_name)
+        if min is None:
+            min = gxapi.rDUMMY
+        if max is None:
+            max = gxapi.rDUMMY
+        if sample <= 0:
+            sample = 1
+        self.gxview.set_plane_surf_info(self.current_3d_drawing_plane_number, sample, base, scale,min, max)

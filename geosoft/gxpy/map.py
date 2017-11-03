@@ -255,7 +255,11 @@ class Map:
         return self
 
     def __exit__(self, xtype, xvalue, xtraceback):
-        self._close()
+        self.__del__()
+
+    def __del__(self):
+        if hasattr(self, '_close'):
+            self._close()
 
     def __repr__(self):
         return "{}({})".format(self.__class__, self.__dict__)
@@ -281,24 +285,25 @@ class Map:
         self._open = gx.track_resource(self.__class__.__name__, self._file_name)
 
     def _close(self, pop=True):
-        if self._open:
-            if self._gxmap:
+        if hasattr(self, '_open'):
+            if self._open:
+                if self._gxmap:
 
-                self._gxmap = None
+                    self._gxmap = None
 
-                if self._metadata_changed:
-                    with open(self._file_name + '.xml', 'w+') as f:
-                        f.write(gxu.xml_from_dict(self._metadata))
-                    gxapi.GXMAP.sync(self._file_name)
+                    if self._metadata_changed:
+                        with open(self._file_name + '.xml', 'w+') as f:
+                            f.write(gxu.xml_from_dict(self._metadata))
+                        gxapi.GXMAP.sync(self._file_name)
 
-                if self._remove:
-                    try:
-                        delete_files(self._file_name)
-                    except OSError:  # remove if we can
-                        pass
-            if pop:
-                gx.pop_resource(self._open)
-            self._open = None
+                    if self._remove:
+                        try:
+                            delete_files(self._file_name)
+                        except OSError:  # remove if we can
+                            pass
+                if pop:
+                    gx.pop_resource(self._open)
+                self._open = None
 
     @classmethod
     def open(cls, file_name):
@@ -1141,7 +1146,11 @@ class _Mapplot:
         return self
 
     def __exit__(self, xtype, xvalue, xtraceback):
-        self._process()
+        self.__del__()
+
+    def __del__(self):
+        if hasattr(self, '_process'):
+            self._process()
 
     def __repr__(self):
         return "{}({})".format(self.__class__, self.__dict__)
