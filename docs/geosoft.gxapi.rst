@@ -2,7 +2,7 @@ Geosoft GX API
 ==============
 
 The complete Geosoft GX API is exposed to python developers through the :doc:`geosoft.gxapi </geosoft.gxapi.classes>`
-module.  This includes all low-level classes and function calls that expose almost all Geosoft functionality to
+package.  This includes all low-level classes and function calls that expose almost all Geosoft functionality to
 a developer.
 
 The GXContext class
@@ -50,7 +50,7 @@ instance as follows:
 
    # ... do some work with voxe ...
 
-   # release the voxe resource te ensure it is released before vox
+   # release the voxe resource to ensure it is released before vox
    del voxe
 
 Helper classes to pass immutable values by reference
