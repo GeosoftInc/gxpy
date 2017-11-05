@@ -83,7 +83,7 @@ class GXTC(gxapi_cy.WrapTC):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         ret_val = gxapi_cy.WrapTC._create(GXContext._get_tls_geo(), img, elev_unit, dinner, douter, dens_t, dens_w, elev_w, edge, edge_elev, opt)
         return GXTC(ret_val)
@@ -123,7 +123,7 @@ class GXTC(gxapi_cy.WrapTC):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         ret_val = gxapi_cy.WrapTC._create_ex(GXContext._get_tls_geo(), img, elev_unit, dinner, douter, dens_t, dens_w, elev_w, edge, edge_elev, opt, survey_type)
         return GXTC(ret_val)
@@ -144,7 +144,7 @@ class GXTC(gxapi_cy.WrapTC):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         self._grregter(im_gi, im_go)
         
@@ -173,7 +173,7 @@ class GXTC(gxapi_cy.WrapTC):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         self._grterain(gv_vx, gv_vy, gv_velev, gv_vslop, gv_vtcor, im_gcor, dens_t)
         
@@ -204,7 +204,7 @@ class GXTC(gxapi_cy.WrapTC):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         self._grterain2(gv_vx, gv_vy, gv_velev, gv_vslop, gv_vwater, gv_vtcor, im_gcor, dens_t)
         
@@ -233,7 +233,7 @@ class GXTC(gxapi_cy.WrapTC):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         self._g_gterain(gv_vx, p3, p4, p5, p6, p7, p8)
         

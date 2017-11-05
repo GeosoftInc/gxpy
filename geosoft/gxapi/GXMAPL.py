@@ -68,7 +68,7 @@ class GXMAPL(gxapi_cy.WrapMAPL):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The default map groups will use the reference name with
         "_Data" and "_Base" added.  If no reference name is specified,
@@ -97,7 +97,7 @@ class GXMAPL(gxapi_cy.WrapMAPL):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The default map groups will use the reference name with
         "_Data" and "_Base" added.  If no reference name is specified,
@@ -119,7 +119,7 @@ class GXMAPL(gxapi_cy.WrapMAPL):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         self._process(map)
         
@@ -138,7 +138,7 @@ class GXMAPL(gxapi_cy.WrapMAPL):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         self._replace_string(var.encode(), repl.encode())
         

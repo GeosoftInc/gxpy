@@ -123,7 +123,7 @@ class GXMULTIVOXSET(gxapi_cy.WrapMULTIVOXSET):
 
         .. versionadded:: 9.3
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         gxapi_cy.WrapMULTIVOXSET._export_to_binary(GXContext._get_tls_geo(), voxel_file.encode(), binary_file.encode(), dir, rev_x, rev_y, rev_z, swap, output_type)
         
@@ -711,7 +711,7 @@ class GXMULTIVOXSET(gxapi_cy.WrapMULTIVOXSET):
 
         .. versionadded:: 9.3
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Create a Geosoft Voxel file from a Datamine block model file.
         """
@@ -743,7 +743,7 @@ class GXMULTIVOXSET(gxapi_cy.WrapMULTIVOXSET):
 
         .. versionadded:: 9.3
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Compute a default cell size for a voxel given a data range.
         """
@@ -772,7 +772,7 @@ class GXMULTIVOXSET(gxapi_cy.WrapMULTIVOXSET):
 
         .. versionadded:: 9.3
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         gxapi_cy.WrapMULTIVOXSET._filter(GXContext._get_tls_geo(), input_file.encode(), output_file.encode(), filter, filter_file.encode(), n_passes, interpolate_dummies)
         
@@ -819,7 +819,7 @@ class GXMULTIVOXSET(gxapi_cy.WrapMULTIVOXSET):
 
         .. versionadded:: 9.3
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The Z and Data channels may be array channels. If they are, the array sizes must match.
         """

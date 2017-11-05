@@ -127,7 +127,7 @@ class GXVA(gxapi_cy.WrapVA):
 
         .. versionadded:: 7.2
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Adds each value in an input elevation `GXVV <geosoft.gxapi.GXVV>` to all the values at
         the same fid in a depths `GXVA <geosoft.gxapi.GXVA>`. Includes an option for negative depths down
@@ -484,7 +484,7 @@ class GXVA(gxapi_cy.WrapVA):
 
         .. versionadded:: 6.4.2
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Fractional values in the `GXVV <geosoft.gxapi.GXVV>` will interpolate between the value
         at the whole integer value and the next whole integer, dummy
@@ -775,7 +775,7 @@ class GXVA(gxapi_cy.WrapVA):
 
         .. versionadded:: 7.2
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Supports all `GXVA <geosoft.gxapi.GXVA>` types using an internal double `GXVV <geosoft.gxapi.GXVV>`.
         """
@@ -855,7 +855,7 @@ class GXVA(gxapi_cy.WrapVA):
 
         .. versionadded:: 8.2
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Returns 1 if all rows contain values which match the input values.
         Optionally, row values can be offset by amounts specified with a secondary `GXVV <geosoft.gxapi.GXVV>`.
@@ -891,7 +891,7 @@ class GXVA(gxapi_cy.WrapVA):
 
         .. versionadded:: 8.2
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Returns 1 if all rows contain values which match the input values.
         Optionally, row values can be offset by amounts specified with a secondary `GXVV <geosoft.gxapi.GXVV>`.

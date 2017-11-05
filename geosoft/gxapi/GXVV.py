@@ -217,7 +217,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** All elements in the mask `GXVV <geosoft.gxapi.GXVV>` that are dummies will replace
         the value in the original `GXVV <geosoft.gxapi.GXVV>` with a dummy.
@@ -239,7 +239,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         .. versionadded:: 5.1.3
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         self._reverse()
         
@@ -502,7 +502,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Differences with dummies result in dummies.
         An even number of differences locates data accurately.
@@ -543,7 +543,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Both `GXVV <geosoft.gxapi.GXVV>`'s will return with the same start
         fid and fid increment.  The smaller start fid
@@ -735,7 +735,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** If more than one value has the same maximum value, the index of the
         first is returned.
@@ -809,7 +809,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Given an index `GXVV <geosoft.gxapi.GXVV>` (of type INT), this method reorders a
         `GXVV <geosoft.gxapi.GXVV>`. Please make sure that the index holds valid information.
@@ -885,7 +885,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         .. versionadded:: 6.4
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         ret_val, rep.value = self._order(rep.value)
         return ret_val
@@ -904,7 +904,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Some GX functions (such as `GXTIN.get_voronoi_edges <geosoft.gxapi.GXTIN.get_voronoi_edges>`) return
         a special `GXVV <geosoft.gxapi.GXVV>` where each element contains the start and end
@@ -930,7 +930,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** This method assigns index values of 0.0, 1.0, 2.0 etc. to the individual
         values in the input Data `GXVV <geosoft.gxapi.GXVV>`, and uses linear interpolation to calculate the values of
@@ -993,7 +993,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         .. versionadded:: 5.1.2
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** If both values are non-dummies, then result is 1, else dummy.
         """
@@ -1014,7 +1014,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         .. versionadded:: 5.1.2
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** If either values is non-dummy, then result is 1, else dummy.
         """
@@ -1035,7 +1035,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** All elements in the mask `GXVV <geosoft.gxapi.GXVV>` that are same as string will replace
         the original `GXVV <geosoft.gxapi.GXVV>` with a 1.
@@ -1105,7 +1105,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         .. versionadded:: 5.1.3
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The VVs has to be the same length
         """
@@ -1127,7 +1127,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** This function is equivalent to `GXPJ.convert_vv <geosoft.gxapi.GXPJ.convert_vv>`.
         """
@@ -1151,7 +1151,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** This function is equivalent to `GXPJ.convert_vv3 <geosoft.gxapi.GXPJ.convert_vv3>`.
         """
@@ -1320,7 +1320,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         .. versionadded:: 7.2
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Dummy value is treated as Zero(0)
         """
@@ -1342,7 +1342,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         .. versionadded:: 7.2
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Dummy values are ignored.
         """
@@ -1606,7 +1606,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The input reference `GXVV <geosoft.gxapi.GXVV>` must be in ascending numerical order.
         If your reference data is NOT ordered, then use the `sort_index1 <geosoft.gxapi.GXVV.sort_index1>` 
@@ -1647,7 +1647,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         .. versionadded:: 5.1.5
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         self._sort(order)
         
@@ -1664,7 +1664,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Create an Index `GXVV <geosoft.gxapi.GXVV>` (of type `GS_LONG <geosoft.gxapi.GS_LONG>`) based on a data `GXVV <geosoft.gxapi.GXVV>`.
         This index vv can then be used by the IndexOrder method
@@ -1687,7 +1687,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         .. versionadded:: 5.0.2
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Create an Index `GXVV <geosoft.gxapi.GXVV>` (of type `GS_LONG <geosoft.gxapi.GS_LONG>`) based on a data `GXVV <geosoft.gxapi.GXVV>`.
         This index vv can then be used by the IndexOrder method
@@ -1718,7 +1718,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         .. versionadded:: 5.0.2
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Create an Index `GXVV <geosoft.gxapi.GXVV>` (of type `GS_LONG <geosoft.gxapi.GS_LONG>`) based on a data `GXVV <geosoft.gxapi.GXVV>`.
         This index vv can then be used by the IndexOrder method
@@ -1753,7 +1753,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         .. versionadded:: 5.0.2
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Create an Index `GXVV <geosoft.gxapi.GXVV>` (of type `GS_LONG <geosoft.gxapi.GS_LONG>`) based on a data `GXVV <geosoft.gxapi.GXVV>`.
         This index vv can then be used by the IndexOrder method
@@ -1792,7 +1792,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         .. versionadded:: 5.0.2
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Create an Index `GXVV <geosoft.gxapi.GXVV>` (of type `GS_LONG <geosoft.gxapi.GS_LONG>`) based on a data `GXVV <geosoft.gxapi.GXVV>`.
         This index vv can then be used by the IndexOrder method
@@ -1819,7 +1819,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         gxapi_cy.WrapVV._statistics(GXContext._get_tls_geo(), st, vv)
         
@@ -1856,7 +1856,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         self._swap()
         
@@ -1877,7 +1877,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         self._window(min, max, mode)
         
@@ -1898,7 +1898,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         self._write_xml(file.encode(), format, decimal)
         

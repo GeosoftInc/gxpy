@@ -62,7 +62,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         self._app_dens(thick, dens)
         
@@ -79,7 +79,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** Reduction to magnetic pole (`red_pol <geosoft.gxapi.GXFFT.red_pol>`) and downward continuation
         (`contin <geosoft.gxapi.GXFFT.contin>`) should be called BEFORE using `app_susc <geosoft.gxapi.GXFFT.app_susc>`.
@@ -103,7 +103,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         self._band_pass(llen, hlen, pass_defined)
         
@@ -124,7 +124,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         self._b_worth(clen, degree, filter_type)
         
@@ -143,7 +143,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         .. versionadded:: 8.5
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         self._rc_filter(clen, filter_type)
         
@@ -160,7 +160,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         self._contin(dist)
         
@@ -183,7 +183,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         self._cos_roll(llen, hlen, degree, type)
         
@@ -207,7 +207,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** The detrending options control the removal of a trend from the data
         before the `GXFFT <geosoft.gxapi.GXFFT>` is applied. The default data expansion is 10% before `GXFFT <geosoft.gxapi.GXFFT>`.
@@ -236,7 +236,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** The detrending options control the removal of a trend from the data
         before the `GXFFT <geosoft.gxapi.GXFFT>` is applied. The expansion options control the minimum
@@ -265,7 +265,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** This just creates an object.  It is intended to be called
         immediately after with `set_vv <geosoft.gxapi.GXFFT.set_vv>`.
@@ -297,7 +297,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** This just creates an object.  It is intended to be called
         immediately after with `set_vv <geosoft.gxapi.GXFFT.set_vv>`.
@@ -321,7 +321,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         self._gaus(dev, type)
         
@@ -340,7 +340,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         self._get_vv(gv_vr, gv_vi)
         
@@ -357,7 +357,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         self._h_drv(order)
         
@@ -376,7 +376,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         self._high_pass(wlen, fid_int)
         
@@ -391,7 +391,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         .. versionadded:: 5.1.4
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         self._h_int()
         
@@ -410,7 +410,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         self._inverse(gvv, gv_vm)
         
@@ -427,7 +427,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         self._low_pass(wlen)
         
@@ -450,7 +450,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         self._red_pol(inc, dec, incp, dir)
         
@@ -468,7 +468,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         ret_val = self._nyquist()
         return ret_val
@@ -486,7 +486,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         ret_val = self._samp_incr()
         return ret_val
@@ -504,7 +504,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         ret_val = self._wave_incr()
         return ret_val
@@ -523,7 +523,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** The `GXVV <geosoft.gxapi.GXVV>` must have been obtained from the same `GXFFT <geosoft.gxapi.GXFFT>`
         using the `set_vv <geosoft.gxapi.GXFFT.set_vv>` method.
@@ -543,7 +543,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         self._spectrum(gvv)
         
@@ -560,7 +560,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         self._v_drv(order)
         
@@ -575,7 +575,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         self._v_int()
         
@@ -594,7 +594,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         self._write_spectrum(gvv, out_file.encode())
         

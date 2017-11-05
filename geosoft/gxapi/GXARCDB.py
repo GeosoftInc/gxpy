@@ -66,7 +66,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         ret_val = self._create_dat(x_field.encode(), y_field.encode(), d_field.encode())
         return GXDAT(ret_val)
@@ -92,7 +92,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         ret_val = self._create_dat_3d(x_field.encode(), y_field.encode(), z_field.encode(), d_field.encode())
         return GXDAT(ret_val)
@@ -257,7 +257,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         ret_val = self._import_chem_database_wizard(temp.encode(), type)
         return ret_val

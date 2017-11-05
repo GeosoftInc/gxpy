@@ -372,7 +372,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         .. versionadded:: 6.3.1
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         self._statistics(st)
         
@@ -457,7 +457,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** 2D Only
         """
@@ -485,7 +485,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         ret_val = gxapi_cy.WrapPG._create_3d(GXContext._get_tls_geo(), slice, row, col, type)
         return GXPG(ret_val)
@@ -510,7 +510,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         self._read_col_3d(slice, col, o, n, vv)
         
@@ -535,7 +535,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         self._read_row_3d(slice, row, o, n, vv)
         
@@ -560,7 +560,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         self._read_trace_3d(col, row, o, n, vv)
         
@@ -581,7 +581,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         self._re_allocate_3d(n_slice, n_row, n_col)
         
@@ -606,7 +606,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         self._write_col_3d(slice, col, o, n, vv)
         
@@ -631,7 +631,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         self._write_row_3d(slice, row, o, n, vv)
         
@@ -656,7 +656,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         self._write_trace_3d(col, row, o, n, vv)
         
@@ -687,7 +687,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         self._read_bf(bf, dir, conv, rev_x, rev_y, rev_z)
         
@@ -714,7 +714,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Each line must hold only 1 value
         """
@@ -743,7 +743,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         self._write_bf(bf, dir, conv, rev_x, rev_y, rev_z)
         
@@ -772,7 +772,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         .. versionadded:: 9.3
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         self._write_bf_ex(bf, dir, conv, rev_x, rev_y, rev_z, p_dummy)
         

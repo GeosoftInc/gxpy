@@ -323,7 +323,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         .. versionadded:: 8.4
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         gxapi_cy.WrapSURFACE._create_from_vulcan_triangulation(GXContext._get_tls_geo(), triangulation_file.encode(), ipj, surface_file.encode())
         
@@ -343,7 +343,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         .. versionadded:: 8.4
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         gxapi_cy.WrapSURFACE._append_vulcan_triangulation(GXContext._get_tls_geo(), triangulation_file.encode(), ipj, surface_file.encode())
         

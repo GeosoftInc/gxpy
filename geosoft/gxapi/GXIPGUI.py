@@ -70,7 +70,7 @@ class GXIPGUI(gxapi_cy.WrapIPGUI):
 
         .. versionadded:: 6.1
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         ret_val, page.value = gxapi_cy.WrapIPGUI._modify_job(GXContext._get_tls_geo(), ip, db, ini.encode(), plot_type, page.value)
         return ret_val
@@ -91,7 +91,7 @@ class GXIPGUI(gxapi_cy.WrapIPGUI):
 
         .. versionadded:: 8.1
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** The database should be a currently open database.
         """
@@ -114,7 +114,7 @@ class GXIPGUI(gxapi_cy.WrapIPGUI):
 
         .. versionadded:: 9.1
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** The database should be a currently open database.
         """
@@ -134,7 +134,7 @@ class GXIPGUI(gxapi_cy.WrapIPGUI):
 
         .. versionadded:: 8.1
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** See if there is an IPQC Tool already open.
         """

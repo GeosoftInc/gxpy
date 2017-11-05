@@ -68,7 +68,7 @@ class GXMVG(gxapi_cy.WrapMVG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** When Log annotation is applied, nice tick intervals will be
         calculated
@@ -100,7 +100,7 @@ class GXMVG(gxapi_cy.WrapMVG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** When Log annotation is applied, nice tick intervals will be
         calculated
@@ -143,7 +143,7 @@ class GXMVG(gxapi_cy.WrapMVG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Obsolete
         """
@@ -165,7 +165,7 @@ class GXMVG(gxapi_cy.WrapMVG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Obsolete
         """
@@ -196,7 +196,7 @@ class GXMVG(gxapi_cy.WrapMVG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The grid will be drawn in the current window.
         
@@ -233,7 +233,7 @@ class GXMVG(gxapi_cy.WrapMVG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Label bounding will justify edge labels to be inside
         the bar limits.
@@ -273,7 +273,7 @@ class GXMVG(gxapi_cy.WrapMVG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Label bounding will justify edge labels to be inside
         the bar limits.
@@ -309,7 +309,7 @@ class GXMVG(gxapi_cy.WrapMVG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** If the `GXVV <geosoft.gxapi.GXVV>` contains dummies, the polylines
         will break at the dummies; the polygons
@@ -341,7 +341,7 @@ class GXMVG(gxapi_cy.WrapMVG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** If the `GXVV <geosoft.gxapi.GXVV>` contains dummies, the polylines
         will break at the dummies; the polygons
@@ -373,7 +373,7 @@ class GXMVG(gxapi_cy.WrapMVG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** When RescaleX_MVG is used, only the scaling information
         related to X axis will be considered
@@ -401,7 +401,7 @@ class GXMVG(gxapi_cy.WrapMVG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** When RescaleY_MVG is used, only the scaling information
         related to Y axis will be considered

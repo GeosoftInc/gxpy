@@ -56,7 +56,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         self._clear()
         
@@ -74,7 +74,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** The Bigrid object is initially empty. It will store the
         control file parameters which the Bigrid program needs
@@ -103,7 +103,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** If the control file name passed into this function is a file
         which does not exist, then the defaults for a Bigrid control
@@ -134,7 +134,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         ret_val = self._load_warp(title.encode(), cell.encode(), warp.encode())
         return ret_val
@@ -156,7 +156,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         self._run(zchan.encode(), in_dat, out_dat)
         
@@ -180,7 +180,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         self._run2(zchan.encode(), in_dat, out_dat, ipj)
         
@@ -198,7 +198,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** If the control file did not previously exist, it will be
         created. Otherwise, the old file will be overwritten.

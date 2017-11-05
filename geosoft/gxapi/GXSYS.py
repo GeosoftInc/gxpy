@@ -661,7 +661,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Limitations:** May not be available while executing a command line program.
 
@@ -2041,7 +2041,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         .. versionadded:: 7.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Grids are copied and the GI's are maintained - note that support
         for non-geosoft grids is limited since this method does not
@@ -2064,7 +2064,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         .. versionadded:: 7.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Grids are copied and the GI's are maintained - note that support
         for non-geosoft grids is limited since this method does not
@@ -2138,7 +2138,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         .. versionadded:: 7.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Grids are copied and the GI's are maintained - note that support
         for non-geosoft grids is limited since this method does not

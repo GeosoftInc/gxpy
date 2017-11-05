@@ -55,7 +55,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         self._clear()
         
@@ -72,7 +72,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         self._copy(source)
         
@@ -90,7 +90,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         ret_val = gxapi_cy.WrapDMPPLY._create(GXContext._get_tls_geo())
         return GXDMPPLY(ret_val)
@@ -111,7 +111,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The azimuth is the equivalent section azimuth,
         equal to the azimuth of the normal vector plus
@@ -142,7 +142,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         x.value, y.value, z.value, w.value, h.value = self._get_extents(p, x.value, y.value, z.value, w.value, h.value)
         
@@ -161,7 +161,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** If a specific vertex is not joined, the returned value is 0.
         If the vertex is joined, then the index of the join line (1 to NJoins)
@@ -200,7 +200,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Three normalized vectors are returned.
         The first is horizontal, in the plane of the polygon.
@@ -229,7 +229,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Get the number of points from the `GXVV <geosoft.gxapi.GXVV>` length.
         """
@@ -250,7 +250,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The swing is the equivalent section swing,
         equal to zero for vertical plates, and increasing
@@ -279,7 +279,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         x.value, y.value, z.value = self._get_vertex(p, v, x.value, y.value, z.value)
         
@@ -297,7 +297,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         ret_val = self._num_joins()
         return ret_val
@@ -315,7 +315,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The value returned is the "NP" used in function descriptions
         below.
@@ -338,7 +338,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The value returned is the "NV" used in function descriptions
         below.
@@ -358,7 +358,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         self._load(file.encode())
         
@@ -383,7 +383,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         self._move_vertex(p, v, x, y, z)
         
@@ -416,7 +416,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Gives the location in plane coordinates of a selected polygon,
         after it has been projected perpendicularly onto the plane.
@@ -458,7 +458,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** This is the inverse operation of `project_poly <geosoft.gxapi.GXDMPPLY.project_poly>`.
         
@@ -480,7 +480,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         self._save(file.encode())
         
@@ -503,7 +503,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Get the number of points from the `GXVV <geosoft.gxapi.GXVV>` length.
         """

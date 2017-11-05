@@ -60,7 +60,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         gxapi_cy.WrapPGU._bool_mask(GXContext._get_tls_geo(), pg, ref_fil.encode())
         
@@ -91,7 +91,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 7.3
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Grid cells take on the specified statistic of the values inside the
         cell area. Grid cells containing no data values are set to dummy.
@@ -129,7 +129,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** 3D grid cells take on the specified statistic of the values inside the
         cell area. Grid cells containing no data values are set to dummy.
@@ -169,7 +169,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 7.3
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Grid cells take on the specified statistic of the values inside the
         cell area. Grid cells containing no data values are set to dummy.
@@ -215,7 +215,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** 3D grid cells take on the specified statistic of the values inside the
         cell area. Grid cells containing no data values are set to dummy.
@@ -253,7 +253,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 7.3
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Grid cells take on the specified statistic of the values inside the
         cell area. Grid cells containing no data values are set to dummy.
@@ -283,7 +283,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** 3D pagers are expanded in X,Y direction the number of slices(Z) is unchanged .
         """
@@ -322,7 +322,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         gxapi_cy.WrapPGU._fill(GXContext._get_tls_geo(), pg, fl_roll_wt, fl_roll_base, fl_roll_dist, fl_mxf, fl_mxp, fl_amp_lmt, fl_edge_lmt, fl_edge_wid, fl_npass, ref_fil.encode())
         
@@ -341,7 +341,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 5.0.8
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         gxapi_cy.WrapPGU._fill_value(GXContext._get_tls_geo(), pg, value)
         
@@ -368,7 +368,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 5.1.5
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         gxapi_cy.WrapPGU._filt_sym(GXContext._get_tls_geo(), pg, npass, usefile, file.encode(), size, vv)
         
@@ -393,7 +393,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         gxapi_cy.WrapPGU._filt_sym5(GXContext._get_tls_geo(), pg, npass, usefile, file.encode(), vv)
         
@@ -418,7 +418,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Blakey test limit defines how grid peaks are to be found.
         For example, with the `BLAKEY_TEST_ONESIDE <geosoft.gxapi.BLAKEY_TEST_ONESIDE>`, a grid
@@ -444,7 +444,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 7.3
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** See the notes for `dw_gridding_db <geosoft.gxapi.GXPGU.dw_gridding_db>`.
         """
@@ -467,7 +467,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** See the notes for `dw_gridding_db_3d <geosoft.gxapi.GXPGU.dw_gridding_db_3d>`.
         """
@@ -496,7 +496,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 7.3
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Grid cells take on the averaged values within a search radius, weighted inversely by distance.
         
@@ -545,7 +545,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** 3D cells take on the averaged values within a search radius, weighted inversely by distance.
         
@@ -590,7 +590,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 7.3
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** See the notes for `dw_gridding_db <geosoft.gxapi.GXPGU.dw_gridding_db>`.
         """
@@ -615,7 +615,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 7.3
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The values in the input data `GXVV <geosoft.gxapi.GXVV>` represent the center-of-range
         values of unique properties with indices 0 to N-1, where N
@@ -653,7 +653,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 5.0.8
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         gxapi_cy.WrapPGU._peakedness(GXContext._get_tls_geo(), grid.encode(), pkness, vv_x, vv_y, vv_z)
         
@@ -676,7 +676,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 5.0.8
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** This function creates a peakedneess grid from input grid.
         Radius, is the maximum radius at which the value of the parent pixel is compared to
@@ -711,7 +711,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** A reference file is a binary file with the following format:
         
@@ -753,7 +753,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The trend object and projection are optional.
         """
@@ -778,7 +778,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 7.3
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The items in the input data `GXVV <geosoft.gxapi.GXVV>` are inserted into
         the output `GXPG <geosoft.gxapi.GXPG>` using the indices in the index `GXPG <geosoft.gxapi.GXPG>`.
@@ -819,7 +819,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         gxapi_cy.WrapPGU._trend(GXContext._get_tls_geo(), pg_i, pg_o, tr, tr_opt, tr_pt_bs, xo, yo, dx, dy)
         
@@ -842,7 +842,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 7.1
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Only available for FLOAT or DOUBLE pagers
         """
@@ -863,7 +863,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 7.1
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Only available for FLOAT or DOUBLE pagers
         """
@@ -888,7 +888,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The input matrix is M rows by N columns. The returned matrix
         is a symmetric N by N matrix whose elements are the normalized
@@ -914,7 +914,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         gxapi_cy.WrapPGU._correlation_matrix2(GXContext._get_tls_geo(), pg_u, corr, pg_o)
         
@@ -933,7 +933,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** This is an "in-place" operation, and set up so that the input and
         output pagers may be the same handle. (If they are different, the
@@ -959,7 +959,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The number of rows must equal the number of columns.
         Eienvalues, vectors are sorted in descending order.
@@ -985,7 +985,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Solves the system Ax = b for a given b, using the LU decomposition
         of the matrix a
@@ -1013,7 +1013,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The L and U matrix are both contained in the returned pager; The
         "L" matrix is composed of the sub-diagonal elements of the output
@@ -1049,7 +1049,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The matrices must be correctly dimensioned, taking into
         account whether transposition should occur before
@@ -1077,7 +1077,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The matrix is input as an M rows (data) by N columns (variables) `GXPG <geosoft.gxapi.GXPG>`.
         The vector must be of length N. The output `GXVV <geosoft.gxapi.GXVV>` is set to length M.
@@ -1111,7 +1111,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The matrix is input as an N rows (data) by M columns (variables) `GXPG <geosoft.gxapi.GXPG>`.
         On return, the matrix is decomposed to A = U * W * Vt. If M<N, then an error will 
@@ -1151,7 +1151,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The matrix is input as an N rows (data) by M columns (variables) `GXPG <geosoft.gxapi.GXPG>`.
         On return, the matrix is decomposed to A = U * W * Vt.
@@ -1190,7 +1190,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Calculate communalities (sums of the squares of the column
         values in each row)
@@ -1213,7 +1213,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Works on columns of the `GXPG <geosoft.gxapi.GXPG>`.
         Calculates the correlation matrix from the columns of the
@@ -1243,7 +1243,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** See `pc_loadings <geosoft.gxapi.GXPGU.pc_loadings>`.
         """
@@ -1266,7 +1266,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** t  -1
         Forms the product X Ap (Ap Ap),  where X is the
@@ -1297,7 +1297,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Works on columns of the `GXPG <geosoft.gxapi.GXPG>`.
         """
@@ -1324,7 +1324,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Like `pc_standardize <geosoft.gxapi.GXPGU.pc_standardize>`, except that not all the values are
         included in the calculation of the means and standard
@@ -1355,7 +1355,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Works on columns of the `GXPG <geosoft.gxapi.GXPG>`.
         Forward direction: Applies the selected transform to the data.
@@ -1384,7 +1384,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Rotates the principal components using the Kaiser's varimax
         scheme to move move each factor axis to positions so that
@@ -1416,7 +1416,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         .. versionadded:: 7.1
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Calculates forward-looking slopes SX and SY in the X and Y directions
         using pager locations (ix, iy), (ix+size, iy), (ix, iy+isize)

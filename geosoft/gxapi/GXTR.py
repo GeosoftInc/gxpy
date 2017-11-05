@@ -62,7 +62,7 @@ class GXTR(gxapi_cy.WrapTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         ret_val = gxapi_cy.WrapTR._create(GXContext._get_tls_geo(), order)
         return GXTR(ret_val)

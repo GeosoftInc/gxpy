@@ -56,7 +56,7 @@ class GXEUL3(gxapi_cy.WrapEUL3):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         self._destr()
         
@@ -96,7 +96,7 @@ class GXEUL3(gxapi_cy.WrapEUL3):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         ret_val = gxapi_cy.WrapEUL3._creat(GXContext._get_tls_geo(), imgt, imgtx, imgty, imgtz, wnd_siz, gi, tolrnc, max_dis, obs_flg, obs_hght, obs_elev)
         return GXEUL3(ret_val)
@@ -115,7 +115,7 @@ class GXEUL3(gxapi_cy.WrapEUL3):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         self._get_result(vv_r, pi_res_field)
         
@@ -132,7 +132,7 @@ class GXEUL3(gxapi_cy.WrapEUL3):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         self._write(out_fil.encode())
         
@@ -164,7 +164,7 @@ class GXEUL3(gxapi_cy.WrapEUL3):
 
         .. versionadded:: 9.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         ret_val = gxapi_cy.WrapEUL3._ex_euler_derive(GXContext._get_tls_geo(), vv_dist, pr_dx, vv_mag, length, vv_gx, vv_gz, max_sol)
         return ret_val
@@ -222,7 +222,7 @@ class GXEUL3(gxapi_cy.WrapEUL3):
 
         .. versionadded:: 9.0
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         ret_val = gxapi_cy.WrapEUL3._ex_euler_calc(GXContext._get_tls_geo(), typ, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20)
         return ret_val

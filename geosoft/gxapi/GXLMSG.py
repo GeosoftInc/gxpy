@@ -63,7 +63,7 @@ class GXLMSG(gxapi_cy.WrapLMSG):
 
         .. versionadded:: 5.0.7
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         gxapi_cy.WrapLMSG._goto_point(GXContext._get_tls_geo(), x, y, z, ipj)
         
@@ -88,7 +88,7 @@ class GXLMSG(gxapi_cy.WrapLMSG):
 
         .. versionadded:: 5.0.7
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         gxapi_cy.WrapLMSG._view_area(GXContext._get_tls_geo(), x0, y0, x1, y1, ipj)
         

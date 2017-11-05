@@ -900,7 +900,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         .. versionadded:: 7.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         self._save_as_mxd(mxd.encode())
         
@@ -1068,7 +1068,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         .. versionadded:: 7.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         gxapi_cy.WrapMAP._sync(GXContext._get_tls_geo(), map.encode())
         

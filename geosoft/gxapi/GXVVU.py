@@ -61,7 +61,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Repeated values in the reference `GXVV <geosoft.gxapi.GXVV>` will be averaged
         in the data `GXVV <geosoft.gxapi.GXVV>`.  The first value in the data `GXVV <geosoft.gxapi.GXVV>` will be set to the
@@ -92,7 +92,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 8.0.1
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Repeated values in the reference `GXVV <geosoft.gxapi.GXVV>` will be set to the mean, median, minimum or maximum value
         in the data `GXVV <geosoft.gxapi.GXVV>`.  For minimum and maximum, the index in the data `GXVV <geosoft.gxapi.GXVV>` containing the minimum or maximum value
@@ -124,7 +124,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Repeated values in the reference `GXVV <geosoft.gxapi.GXVV>` will be averaged
         in the data `GXVV <geosoft.gxapi.GXVV>`.  The first value in the data `GXVV <geosoft.gxapi.GXVV>` will be set to the
@@ -160,7 +160,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 8.0.1
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Repeated values in the reference `GXVV <geosoft.gxapi.GXVV>` will be set to the mean, median, minimum or maximum value
         in the data `GXVV <geosoft.gxapi.GXVV>`.  The first value in the data `GXVV <geosoft.gxapi.GXVV>` will be reset and subsequent data `GXVV <geosoft.gxapi.GXVV>` values will be dummied out.
@@ -194,7 +194,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 7.1
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The `GXVV <geosoft.gxapi.GXVV>` should be sorted.Search comparison is made on double
         comparison of the data.
@@ -216,7 +216,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         gxapi_cy.WrapVVU._box_cox(GXContext._get_tls_geo(), vv, lm)
         
@@ -241,7 +241,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** If the short and long wavelengths are <= 0, the input channel
         is simply copied to the output channel without filtering.
@@ -290,7 +290,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.1.6
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Flow:
         
@@ -319,7 +319,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 6.1
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** For a decimation factor N, will remove all values except
         those with indices equal to MN, where M is an integer.
@@ -353,7 +353,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         gxapi_cy.WrapVVU._deviation(GXContext._get_tls_geo(), vv_x, vv_y, vv_d, x1, y1, x2, y2, line)
         
@@ -382,7 +382,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         gxapi_cy.WrapVVU._distance(GXContext._get_tls_geo(), vv_x, vv_y, vv_d, x_fid_start, x_fid_incr, y_fid_start, y_fid_incr)
         
@@ -413,7 +413,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 7.2
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The fist distace element is `rDUMMY <geosoft.gxapi.rDUMMY>`.
         """
@@ -440,7 +440,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 8.0.1
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The output `GXVV <geosoft.gxapi.GXVV>` is the length of the shortest X,Y or Z input `GXVV <geosoft.gxapi.GXVV>`.
         Any values with dummies are ignored - the distance at that
@@ -472,7 +472,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 8.1
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Locate the starting points of line segements determined by an input gap distance.
         The returned indices indicate where to break the line, given an input gap.
@@ -561,7 +561,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Either the first, middle or last point will be left.
                           Use `interp <geosoft.gxapi.GXVVU.interp>` to interpolate after if desired.
@@ -587,7 +587,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Created for duplicate sample handling in `GXCHIMERA <geosoft.gxapi.GXCHIMERA>`. On input,
         a numeric `GXVV <geosoft.gxapi.GXVV>` containing data values, and a sample type `GXVV <geosoft.gxapi.GXVV>`.
@@ -619,7 +619,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** `GXVV <geosoft.gxapi.GXVV>` is set to input length (except for -1)
         See RAND for a short discription of the
@@ -644,7 +644,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         gxapi_cy.WrapVVU._filter(GXContext._get_tls_geo(), vv_i, vv_o, flt)
         
@@ -671,7 +671,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 7.3
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** This is a much more efficient way of determining if items in
         one `GXVV <geosoft.gxapi.GXVV>` are found in a second, than by searching
@@ -707,7 +707,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         gxapi_cy.WrapVVU._fractal_filter(GXContext._get_tls_geo(), vv_i, order, number, vv_o)
         
@@ -733,7 +733,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Input X and Y location VVs, and a location.
         Returns the index of the point in the `GXVV <geosoft.gxapi.GXVV>` closest to the
@@ -765,7 +765,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Input X and Y location VVs, and a location.
         Returns the index of the point in the `GXVV <geosoft.gxapi.GXVV>` closest to the
@@ -802,7 +802,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Input X, Y and Z location VVs, and a location.
         Returns the index of the point in the `GXVV <geosoft.gxapi.GXVV>` closest to the
@@ -838,7 +838,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Input X, Y and Z location VVs, and a location.
         Returns the index of the point in the `GXVV <geosoft.gxapi.GXVV>` closest to the
@@ -865,7 +865,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 7.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The `GXVV <geosoft.gxapi.GXVV>` length remains the same. Any point that is less than or equal to
         the previous (valid) point in the `GXVV <geosoft.gxapi.GXVV>` is dummied.
@@ -897,7 +897,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Start and end of range are always defined lowest
         to largest even if decreasing search order.  To search
@@ -922,7 +922,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Edge behaviour
              Dummies at the ends are treated as follows
@@ -972,7 +972,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The X & Y VVs are returned as the calculated fill in line segments.
         """
@@ -1004,7 +1004,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0.8
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Search comparison is made on string comparison
         of the data. Returns index of first item matching
@@ -1036,7 +1036,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** `GXVV <geosoft.gxapi.GXVV>` to mask will be resampled to reference `GXVV <geosoft.gxapi.GXVV>` if required.
         The returned length of the `GXVV <geosoft.gxapi.GXVV>` to mask will be the shorter
@@ -1061,7 +1061,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** If both values are non-dummies, then result is 1, else dummy.
         """
@@ -1084,7 +1084,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** If either values is non-dummy, then result is 1, else dummy.
         """
@@ -1109,7 +1109,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         gxapi_cy.WrapVVU._nl_filt(GXContext._get_tls_geo(), vv_i, vv_o, fwid, pr_ftol)
         
@@ -1132,7 +1132,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** This function checks vertical deviation of data in input `GXVV <geosoft.gxapi.GXVV>`
         against a moving straight line. The straight line at any time is
@@ -1164,7 +1164,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** This function checks vertical deviation of data in an input `GXVV <geosoft.gxapi.GXVV>`
         against a moving straight line, where the X-axis value is
@@ -1202,7 +1202,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** `GXVV <geosoft.gxapi.GXVV>` is set to input length (except for -1)
         See RAND for a short discription of the
@@ -1233,7 +1233,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0.7
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Often on maps plotted symbols and text overlap each other.
         This routine accepts of `GXVV <geosoft.gxapi.GXVV>` of locations and returns a new
@@ -1275,7 +1275,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0.8
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** In many applications, measurements are taken with an instrument which
         is towed behind, or pushed ahead of where the locations are recorded.
@@ -1328,7 +1328,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.1.3
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         gxapi_cy.WrapVVU._offset_correct2(GXContext._get_tls_geo(), vv_xi, vv_yi, dist, azimuth, vv_xo, vv_yo)
         
@@ -1357,7 +1357,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.1.4
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** See the algorithm note #2 above for the default smoothing interval.
         """
@@ -1394,7 +1394,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 9.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** In many applications, measurements are taken with an instrument which
         is towed behind, or pushed ahead of where the locations are recorded.
@@ -1449,7 +1449,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0.7
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Often on maps plotted symbols and text overlap each other.
         This routine accepts of `GXVV <geosoft.gxapi.GXVV>` of locations and returns a new
@@ -1489,7 +1489,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Peaks are the maximum point within a sequence of
         positive values in the input `GXVV <geosoft.gxapi.GXVV>`.  The width is the
@@ -1523,7 +1523,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Peaks are the maximum point within a sequence of
         values in the input `GXVV <geosoft.gxapi.GXVV>`. Maximum points must be above
@@ -1564,7 +1564,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Uses Method 2 above, but also returns the anomaly width (defined
         as the distance between the surrounding troughs), and the
@@ -1595,7 +1595,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0.6
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The output `GXVV <geosoft.gxapi.GXVV>` length must be set as desired before calling.
         
@@ -1626,7 +1626,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0.6
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The output `GXVV <geosoft.gxapi.GXVV>` length must be set as desired before calling.
         The X scale is defined by a X `GXVV <geosoft.gxapi.GXVV>` (see Trend_VV for unitless X).
@@ -1658,7 +1658,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The VVs have to be the same length
         """
@@ -1681,7 +1681,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Pruning will shorten the `GXVV <geosoft.gxapi.GXVV>` by removing values
         that are either dummy or non-dummy in the reference
@@ -1716,7 +1716,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** This function tests data in input `GXVV <geosoft.gxapi.GXVV>` against
         two separate criteria. Each element of the output `GXVV <geosoft.gxapi.GXVV>`
@@ -1765,7 +1765,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** For each value in the VVs, finds sqrt(dV1*dV1 + dV2*dV2)
         and returns the min and max values.
@@ -1791,7 +1791,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         slp.value, int.value = gxapi_cy.WrapVVU._regress(GXContext._get_tls_geo(), vv_x, vv_y, slp.value, int.value)
         
@@ -1814,7 +1814,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Created for duplicate sample handling in `GXCHIMERA <geosoft.gxapi.GXCHIMERA>`. On input,
         a numeric or text `GXVV <geosoft.gxapi.GXVV>` containing data values, and a sample type `GXVV <geosoft.gxapi.GXVV>`.
@@ -1860,7 +1860,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0.8
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Removes all indices where either `GXVV <geosoft.gxapi.GXVV>` has a dummy, or is
         not defined (due to length differences).
@@ -1884,7 +1884,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0.8
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Removes all indices where any `GXVV <geosoft.gxapi.GXVV>` has a dummy, or is
         not defined (due to length differences).
@@ -1910,7 +1910,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Removes all indices where any `GXVV <geosoft.gxapi.GXVV>` has a dummy, or is
         not defined (due to length differences).
@@ -1934,7 +1934,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Created for duplicate sample handling in `GXCHIMERA <geosoft.gxapi.GXCHIMERA>`. On input,
         a numeric or text `GXVV <geosoft.gxapi.GXVV>` containing data values, and a sample type `GXVV <geosoft.gxapi.GXVV>`.
@@ -1965,7 +1965,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Searches for duplicated (X, Y) locations and removes the
         duplicates (can be more than just a pair). The "Z" values,
@@ -1993,7 +1993,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 7.2
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Searches for duplicated (X, Y) locations and removes the
         duplicates (can be more than just a pair). The Index `GXVV <geosoft.gxapi.GXVV>` is
@@ -2023,7 +2023,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.1
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** If the input VVs are not REAL, copies are made to
         temporary REALs for processing.
@@ -2080,7 +2080,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Search comparison is made on double comparison
         of the data.
@@ -2113,7 +2113,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Search comparison is made on string comparison
         of the data.
@@ -2148,7 +2148,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 6.0.1
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Search comparison is made on a string comparison
         of the data.
@@ -2188,7 +2188,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         gxapi_cy.WrapVVU._spline(GXContext._get_tls_geo(), vv_x, vv_y, vv_o, length, start, incr, gap, ext, type)
         
@@ -2213,7 +2213,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.1.3
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         gxapi_cy.WrapVVU._spline2(GXContext._get_tls_geo(), vv_x, vv_y, vv_x2, vv_o, type)
         
@@ -2280,7 +2280,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0.6
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Returns coefficients c[0] .. c[n]
         
@@ -2316,7 +2316,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.0.6
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Returns coefficients c[0] .. c[n]
         
@@ -2354,7 +2354,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** `GXVV <geosoft.gxapi.GXVV>` is set to input length (except for -1)
         See rand.gxh for a short discription of the

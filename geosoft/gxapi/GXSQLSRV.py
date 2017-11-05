@@ -72,7 +72,7 @@ class GXSQLSRV(gxapi_cy.WrapSQLSRV):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The file's path need to be visible as local files on the server.
         Network drives and substitutes may not work.
@@ -102,7 +102,7 @@ class GXSQLSRV(gxapi_cy.WrapSQLSRV):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         ret_val = gxapi_cy.WrapSQLSRV._detach_db(GXContext._get_tls_geo(), server.encode(), user.encode(), password.encode(), db.encode())
         return ret_val
@@ -129,7 +129,7 @@ class GXSQLSRV(gxapi_cy.WrapSQLSRV):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         ret_val = gxapi_cy.WrapSQLSRV._get_database_languages_lst(GXContext._get_tls_geo(), lst, server.encode(), user.encode(), password.encode(), win_auth)
         return ret_val
@@ -156,7 +156,7 @@ class GXSQLSRV(gxapi_cy.WrapSQLSRV):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         ret_val = gxapi_cy.WrapSQLSRV._get_databases_lst(GXContext._get_tls_geo(), lst, server.encode(), user.encode(), password.encode(), win_auth)
         return ret_val
@@ -181,7 +181,7 @@ class GXSQLSRV(gxapi_cy.WrapSQLSRV):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         user.value, password.value, win_auth.value = gxapi_cy.WrapSQLSRV._get_login_gui(GXContext._get_tls_geo(), server.encode(), user.value.encode(), password.value.encode(), mode, win_auth.value)
         
@@ -200,7 +200,7 @@ class GXSQLSRV(gxapi_cy.WrapSQLSRV):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         ret_val = gxapi_cy.WrapSQLSRV._get_servers_lst(GXContext._get_tls_geo(), lst)
         return ret_val

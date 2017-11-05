@@ -62,7 +62,7 @@ class GXVAU(gxapi_cy.WrapVAU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Pruning will shorten the `GXVA <geosoft.gxapi.GXVA>` by removing values
         that are either dummy or non-dummy in the reference
@@ -89,7 +89,7 @@ class GXVAU(gxapi_cy.WrapVAU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         gxapi_cy.WrapVAU._total_vector(GXContext._get_tls_geo(), xva, yva, zva, tva)
         

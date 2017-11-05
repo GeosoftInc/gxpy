@@ -62,7 +62,7 @@ class GXMISC(gxapi_cy.WrapMISC):
 
         .. versionadded:: 7.3
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         gxapi_cy.WrapMISC._convert_cg3to_raw(GXContext._get_tls_geo(), cg3.encode(), raw.encode(), tide_corr_opt)
         
@@ -83,7 +83,7 @@ class GXMISC(gxapi_cy.WrapMISC):
 
         .. versionadded:: 7.3
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         gxapi_cy.WrapMISC._convert_cg5to_raw(GXContext._get_tls_geo(), cg5.encode(), raw.encode(), tide_corr_opt)
         
@@ -104,7 +104,7 @@ class GXMISC(gxapi_cy.WrapMISC):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The TBL file will contain the following fields:
         

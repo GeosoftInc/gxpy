@@ -60,7 +60,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
 
         .. versionadded:: 6.4
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Needs ArcEngine licence.
         """
@@ -84,7 +84,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
 
         .. versionadded:: 9.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Needs ArcEngine licence.
         """
@@ -152,7 +152,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         ret_val = gxapi_cy.WrapDATALINKD._create_bing(GXContext._get_tls_geo(), layer)
         return GXDATALINKD(ret_val)

@@ -67,7 +67,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** The mask channel is updated for the current data to reflect
         the actions of the filter. Those values passing get 1, those
@@ -90,7 +90,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** The is operation is controlled by the Preferences
         "Use dummies to indicate no data?" By default, this option is "yes"
@@ -115,7 +115,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         gxapi_cy.WrapSEMPLOT._create_groups(GXContext._get_tls_geo(), db, mask_ch.encode())
         
@@ -132,7 +132,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         gxapi_cy.WrapSEMPLOT._default_groups(GXContext._get_tls_geo(), db)
         
@@ -157,7 +157,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** The Parameters `GXGUI <geosoft.gxapi.GXGUI>` is loaded based on settings stored in
         the map. The map is then re-plotted, overwriting the old one,
@@ -181,7 +181,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** The "Components" group in the INI file is edited.
         
@@ -207,7 +207,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** The "Parameters" group in the INI file is edited.
         
@@ -253,7 +253,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** The group is written to a new map, and an overlay file
         is created which points to this map.
@@ -285,7 +285,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         gxapi_cy.WrapSEMPLOT._export_view(GXContext._get_tls_geo(), db, lst, new_db, view, mask_ch.encode(), mineral_ch.encode(), mineral.encode())
         
@@ -316,7 +316,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 7.1
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         gxapi_cy.WrapSEMPLOT._export_view2(GXContext._get_tls_geo(), db, lst, new_db, view, mask_ch.encode(), mineral_ch.encode(), mineral.encode(), export)
         
@@ -333,7 +333,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** "Supplied" filters are stored in \\etc, while user-edited and new filters
         are stored in user\\etc. This function finds all files with the extension
@@ -365,7 +365,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** The Mask channel will be updated so that those data values
         which "pass" get "1" and those that "fail" get dummy "*"
@@ -391,7 +391,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         gxapi_cy.WrapSEMPLOT._get_associated_lst(GXContext._get_tls_geo(), db, group, lst)
         
@@ -412,7 +412,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** If the mineral channel name is not specified, it returns
         just the "X" (Unknown) item.
@@ -434,7 +434,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         gxapi_cy.WrapSEMPLOT._get_current_position_lst(GXContext._get_tls_geo(), db, lst)
         
@@ -451,7 +451,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         gxapi_cy.WrapSEMPLOT._get_full_mineral_lst(GXContext._get_tls_geo(), lst)
         
@@ -468,7 +468,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         gxapi_cy.WrapSEMPLOT._get_full_position_lst(GXContext._get_tls_geo(), lst)
         
@@ -487,7 +487,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** The first item is "Anomaly", which gives the line names, The second
         item (if the channel exists in the database) is the Sample Number.
@@ -516,7 +516,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         ret_val = gxapi_cy.WrapSEMPLOT._create_ascii_template(GXContext._get_tls_geo(), name.encode(), temp.encode())
         return ret_val
@@ -539,7 +539,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         ret_val = gxapi_cy.WrapSEMPLOT._create_database_template(GXContext._get_tls_geo(), name.encode(), temp.encode())
         return ret_val
@@ -586,7 +586,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         ret_val = gxapi_cy.WrapSEMPLOT._edit_filter(GXContext._get_tls_geo(), db, filter.encode(), mask_ch.encode(), mineral_ch.encode(), mineral.encode())
         return ret_val
@@ -605,7 +605,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** First looks at the `GXSEMPLOT <geosoft.gxapi.GXSEMPLOT>`.MINERAL_CHANNEL value.
         If not found, returns the first MINERAL class
@@ -631,7 +631,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** If the anomaly name is not included, then
         the input data must have an "Anom_Name" field.
@@ -653,7 +653,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         connection.value, temp.value = gxapi_cy.WrapSEMPLOT._import_database_odbc(GXContext._get_tls_geo(), connection.value.encode(), temp.value.encode())
         
@@ -680,7 +680,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** This wrapper is for `GXSEMPLOT <geosoft.gxapi.GXSEMPLOT>`, and does not require the import licence.
         
@@ -717,7 +717,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         gxapi_cy.WrapSEMPLOT._import_database_ado(GXContext._get_tls_geo(), name.encode(), temp.encode())
         
@@ -734,7 +734,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** Maintains a list of the symbols used in plotting. Call before
         Plotting one or more legends - symbols are accumulated.
@@ -760,7 +760,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         ret_val = gxapi_cy.WrapSEMPLOT._template_type(GXContext._get_tls_geo(), template.encode())
         return ret_val
@@ -782,7 +782,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.4.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** First checks the view name to see if it starts with
         ``"XYplt_"`` or ``"Triplt_"``. Failing that it looks in the
@@ -812,7 +812,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** Finds the best mineral matching the composition for each
         row of oxide values. Works using linear programming and
@@ -839,7 +839,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** Creates a new, empty filter file in the user\\etc directory
         """
@@ -862,7 +862,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** The new template is written to the user\\etc directory, with
         the file extension "semfilter". The template contains a parameter
@@ -894,7 +894,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** Looks first in user\\etc, then in \\etc.
         See :ref:`SEMPLOT_EXT` definitions above for which files to look for.
@@ -926,7 +926,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** The "Components" and "Parameters" groups in the INI file
         are used.
@@ -964,7 +964,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** This function depends on `init_group_symbols_used <geosoft.gxapi.GXSEMPLOT.init_group_symbols_used>`
         before the plot for which this legend is created is made.
@@ -1016,7 +1016,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** Replots map using proportional symbols
         """
@@ -1043,7 +1043,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** Note that the selection of data
         in the current `GXDB <geosoft.gxapi.GXDB>` is used to replot the map.
@@ -1071,7 +1071,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** Searches the VIEW `GXREG <geosoft.gxapi.GXREG>` for information on a previously
         created legend, and if it finds that info, replots the Legend,
@@ -1094,7 +1094,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         gxapi_cy.WrapSEMPLOT._reset_groups(GXContext._get_tls_geo(), db, mask_ch.encode())
         
@@ -1111,7 +1111,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** This function is called before one or a series of plots to initialize
         the "Plotted" channel in all the selected lines to dummy values.
@@ -1146,7 +1146,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         gxapi_cy.WrapSEMPLOT._select_poly(GXContext._get_tls_geo(), db, mview, mask_ch.encode(), mineral_ch.encode(), pply, mode)
         
@@ -1165,7 +1165,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** Sets channel order as follows:
         
@@ -1199,7 +1199,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** If the channel units are already set, then they are not changed.
         Oxide channels are identified from the Semplot_Oxides.csv file.
@@ -1224,7 +1224,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         gxapi_cy.WrapSEMPLOT._set_itr(GXContext._get_tls_geo(), db, ch, itr)
         
@@ -1251,7 +1251,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         gxapi_cy.WrapSEMPLOT._set_mask(GXContext._get_tls_geo(), db, mask_ch.encode(), mineral_ch.encode(), mineral.encode(), selected, val)
         
@@ -1272,7 +1272,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         gxapi_cy.WrapSEMPLOT._sort_data(GXContext._get_tls_geo(), db, group, anomaly)
         
@@ -1291,7 +1291,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** Looks first in user\\etc, then in \\etc.
         Looks first for file prefix "semtemplate" then "xyt" or "tri"
@@ -1311,7 +1311,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
         """
         gxapi_cy.WrapSEMPLOT._tile_windows(GXContext._get_tls_geo())
         
@@ -1330,7 +1330,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
 
         **Note:** The mineral channel is needed in order to adjust the total
         with the Fe Corrected Ferric and Ferrous values, and these

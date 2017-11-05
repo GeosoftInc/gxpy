@@ -231,7 +231,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         .. versionadded:: 8.5
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         self._export_seg_y(output_segy_filename.encode(), sample_interval)
         
@@ -302,7 +302,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         .. versionadded:: 7.3
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         self._filter(filter, filter_file.encode(), n_passes, interpolate_dummies, output_vox.encode())
         
@@ -1485,7 +1485,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         .. versionadded:: 7.3
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         self._merge(vox2, reg, output_vox.encode())
         
@@ -1571,7 +1571,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         .. versionadded:: 7.3
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         self._re_grid(vox_to_regrid, reg, output_vox.encode())
         
@@ -1966,7 +1966,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         .. versionadded:: 7.3
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         self._subset_to_double_extents(output_vox.encode())
         
@@ -1983,7 +1983,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         .. versionadded:: 7.0
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
         """
         gxapi_cy.WrapVOX._sync(GXContext._get_tls_geo(), name.encode())
         
@@ -2010,7 +2010,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         .. versionadded:: 7.3
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The voxel is windowed horizontally to the input `GXPLY <geosoft.gxapi.GXPLY>` file.
         Optionally, it will be windowed to the input Z range as well.
@@ -2045,7 +2045,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         .. versionadded:: 7.3
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** The six minima and maxima are optional.
         The output can be clipped to the non-dummied cells.
@@ -2256,7 +2256,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         .. versionadded:: 8.4
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** 3D cells take on the averaged values within a search radius, weighted inversely by distance.
         
@@ -2309,7 +2309,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         .. versionadded:: 8.5
 
-        **License:** `Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
         **Note:** Designed for data in array channels position vertically at single XY locations.
         Creates a `GXTIN <geosoft.gxapi.GXTIN>` using the XY locations and uses the coefficients for the top layer on
