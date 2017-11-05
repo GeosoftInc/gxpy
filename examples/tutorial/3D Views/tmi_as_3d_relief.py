@@ -22,8 +22,6 @@ with gxview.View_3d.new("TMI in relief",
 
     # add the grid image to the view, with shading, 20 nT contour interval to match default contour lines
     gxgroup.Aggregate_group.new(v, gxagg.Aggregate_image.new(grid_file, shade=True, contour=20))
-
-    # contour the grid
     gxgroup.contour(v, 'TMI_contour', grid_file)
 
 
