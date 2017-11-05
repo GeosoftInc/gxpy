@@ -18,7 +18,7 @@ Reference
 * `Geosoft Python Documentation <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/44367874/Python+in+GX+Developer>`_
 * `Installation and Configuration <https://geosoftgxdev.atlassian.net/wiki/spaces/GXD93/pages/102924426/Python+Installation+and+Configuration>`_
 * `Python Tutorial <https://geosoftgxdev.atlassian.net/wiki/spaces/GXD93/pages/103153671/Python+Tutorial+for+Geosoft+GX+Developer>`_
-* `Tutorial Examples <https://github.com/GeosoftInc/gxpy/tree/master/tutorial>`_
+* `Tutorial Examples <https://github.com/GeosoftInc/gxpy/tree/master/examples/tutorial>`_
 * `Tests <https://github.com/GeosoftInc/gxpy/tree/master/geosoft/gxpy/tests>`_
 * :ref:`genindex`
 * :ref:`search`
