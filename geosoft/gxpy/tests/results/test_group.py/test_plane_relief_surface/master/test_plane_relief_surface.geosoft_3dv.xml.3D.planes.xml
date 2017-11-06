@@ -180,7 +180,7 @@
       </Item>
       <Surface>
          <Item name="Name" value=".\__tmp__\_gx_uuid_test_group.py_1\dem_small.grd"/>
-         <Item name="SampleRate" value="16"/>
+         <Item name="SampleRate" value="48"/>
          <Item name="Base" value="200"/>
          <Item name="Scale" value="2"/>
          <Item name="Min" value="150"/>
