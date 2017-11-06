@@ -1154,7 +1154,7 @@ class Test(GXPYTest):
                                 overwrite=True) as v:
             v3d_name = v.file_name
 
-            v.set_plane_relief_surface(grid_file, base=200, scale=2, max=250, min=150)
+            v.set_plane_relief_surface(grid_file, base=200, scale=2, max=250, min=150, refine=2)
 
             # add the grid image to the view, with shading, 20 nT contour interval to match default contour lines
             gxg.Aggregate_group.new(v, gxagg.Aggregate_image.new(grid_file, shade=True, contour=20))

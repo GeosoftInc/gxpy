@@ -851,12 +851,12 @@ class View_3d(View):
                                        offset[0], offset[1], offset[2],
                                        scale[0], scale[1], scale[2])
 
-    def set_plane_relief_surface(self, surface_grid_name, refine=3, base=0, scale=1, min=None, max=None):
+    def set_plane_relief_surface(self, surface_grid_name, refine=2, base=0, scale=1, min=None, max=None):
         """
         Establish a relief surface for the current plane based on a grid.
 
         :param surface_grid_name:   grid file name
-        :param refine:              relief refinement between 1 (low) and 4 (high). Default is 3.
+        :param refine:              relief refinement between 1 (low) and 4 (high). Default is 2.
         :param base:                base value in grid, will be at z=0.  Default is 0.
         :param scale:               scale to apply to grid after removing base, default is 1.
         :param min:                 minimum clip  in unscaled grid values
@@ -875,8 +875,11 @@ class View_3d(View):
         if max is None:
             max = gxapi.rDUMMY
         refine = int(refine)
-        if refine < 1:
+        if refine <= 1:
             refine = 1
-        if refine > 4:
-            refine = 4
-        self.gxview.set_plane_surf_info(self.current_3d_drawing_plane_number, refine * 16, base, scale,min, max)
+        elif refine >= 4:
+            refine = 48
+        else:
+            refine = (refine - 1) * 16
+        self.gxview.set_plane_surf_info(self.current_3d_drawing_plane_number, refine, base, scale,min, max)
+        
