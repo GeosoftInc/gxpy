@@ -471,6 +471,38 @@ class Test(GXPYTest):
         m2 = gxu.dict_from_xml(xml)
         self.assertEqual(m2['gmd:MD_Metadata']['idinfo']['status']['update'], 'None planned')
 
+    def test_url_retrieve(self):
+        self.start
+
+        def del_file(f):
+            try:
+                os.remove(f)
+            except:
+                pass
+
+        def hook(a, b, c):
+            print(a, b, c)
+
+        url = 'https://github.com/GeosoftInc/gxpy/raw/master/README.md'
+        big = 'https://github.com/GeosoftInc/gxpy/raw/master/examples/tutorial/2D%20Views%20and%20Maps/Wittichica%20Creek%20Residual%20Total%20Field.grd'
+        ref_file = 'README.md'
+        test_file = 'test.grd'
+
+        try:
+
+            file_name = gxu.url_retrieve(url)
+            self.assertEqual(file_name, ref_file)
+
+            file_name = gxu.url_retrieve(url, test_file)
+            self.assertEqual(file_name, test_file)
+
+            #file_name = gxu.url_retrieve(big, reporthook=hook)
+            #del_file(file_name)
+
+        finally:
+            del_file(ref_file)
+            del_file(test_file)
+
 if __name__ == '__main__':
 
     unittest.main()

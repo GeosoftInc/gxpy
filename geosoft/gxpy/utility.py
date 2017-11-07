@@ -21,6 +21,7 @@ from distutils.version import StrictVersion
 import numpy as np
 from collections import OrderedDict
 import xmltodict
+import urllib.request
 
 import geosoft
 import geosoft.gxapi as gxapi
@@ -1125,9 +1126,30 @@ def str_significant(value, n, mode=0):
 
     return str(decimal.Decimal(vstr) * mult * (10 ** decimal.Decimal(power - n)))
 
-class Property_tree:
+def url_retrieve(url, filename=None, overwrite=False, reporthook=None):
     """
-    Class to work with property trees, supporting serialization to things
-    like XML.
-    
+    Retrieve a URL resource as a file.
+
+    :param url:         name of the URL resource
+    :param filename:    name of file in which to place the resource, default is the resource base name.
+    :param overwrite:   True to overwrite an existing file.  Default is False, in which case if the file
+                        exists the filename is returned.
+    :param reporthook:  a hook function that will be called once on establishment of the network connection
+                        and once after each block read thereafter. The hook will be passed three arguments;
+                        a count of blocks transferred so far, a block size in bytes, and the total size of the file.
+    :return:            filename of the file that is created.
+
+    .. seealso:: https://docs.python.org/3.6/library/urllib.request.html#urllib.request.urlretrieve
+
+    .. versionadded:: 9.3
     """
+
+    if filename is None:
+        filename = os.path.basename(url).replace('%20', ' ')
+
+    if not overwrite:
+        if os.path.isfile(filename):
+            return filename
+
+    file, message = urllib.request.urlretrieve(url, filename=filename, reporthook=reporthook)
+    return file
