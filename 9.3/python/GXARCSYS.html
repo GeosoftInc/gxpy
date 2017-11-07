@@ -27,8 +27,6 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="GXBF class" href="GXBF.html" />
-    <link rel="prev" title="GXARCMAP class" href="GXARCMAP.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -44,31 +42,11 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="GXBF.html" title="GXBF class"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="GXARCMAP.html" title="GXARCMAP class"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" accesskey="U">GX API Class/Library Reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Introduction</a></li>
-    <li><a href="geosoft.gxapi.classes.html">GX API Class/Library Reference</a></li>
-</ul>
-<h3>Previous Topic</h3>
-<ul>
-    <li><a href="GXARCMAP.html" title="previous chapter">GXARCMAP class</a></li>
-</ul>
-<h3>Next Topic</h3>
-<ul>
-    <li><a href="GXBF.html" title="next chapter">GXBF class</a></li>
-</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -98,7 +76,7 @@
 <span id="gxarcsys"></span><h1>GXARCSYS class<a class="headerlink" href="#gxarcsys-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXARCSYS">
-<em class="property">class </em><code class="descname">GXARCSYS</code><span class="sig-paren">(</span><em>wrapper=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXARCSYS" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">GXARCSYS</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXARCSYS" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXARCSYS class.</p>
 <p>This library is not a class. It contains various general
 system utilities used by the Geosoft extensions for ArcGIS.</p>
@@ -117,8 +95,8 @@ system utilities used by the Geosoft extensions for ArcGIS.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Gets the &#8220;local&#8221; directory (current catalog browser location in ArcGIS if map has not been saved,
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Gets the &#8220;local&#8221; directory (current catalog browser location in ArcGIS if map has not been saved,
 otherwise MxD path). We cannot mess with the CWD in ArcGIS because there MxD settings for
 relative/absolute paths depends on it.</p>
 </dd></dl>
@@ -138,19 +116,21 @@ relative/absolute paths depends on it.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>If the current document is not yet saved, this will return an empty string.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> If the current document is not yet saved, this will return an empty string.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXARCSYS.is_null">
 <code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXARCSYS.is_null" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if the instance of <code class="xref py py-obj docutils literal"><span class="pre">GXARCSYS</span></code> is null (undefined)`</p>
+<dd><p>Check if this is a null (undefined) instance</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXARCSYS</span></code>, False otherwise.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
@@ -159,12 +139,14 @@ relative/absolute paths depends on it.</p>
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXARCSYS.null">
 <em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXARCSYS.null" title="Permalink to this definition">¶</a></dt>
-<dd><p>A null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXARCSYS</span></code></p>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXARCSYS" title="geosoft.gxapi.GXARCSYS"><code class="xref py py-obj docutils literal"><span class="pre">GXARCSYS</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <code class="xref py py-obj docutils literal"><span class="pre">GXARCSYS</span></code></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXARCSYS" title="geosoft.gxapi.GXARCSYS"><code class="xref py py-obj docutils literal"><span class="pre">GXARCSYS</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXARCSYS" title="geosoft.gxapi.GXARCSYS">GXARCSYS</a></td>
 </tr>
 </tbody>
 </table>
@@ -185,8 +167,8 @@ relative/absolute paths depends on it.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Will also set the current working directory (CWD) if the MxD has not been saved.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Will also set the current working directory (CWD) if the MxD has not been saved.
 We cannot mess with the CWD in ArcGIS because their MxD settings for relative/absolute paths depends on it.</p>
 </dd></dl>
 
@@ -206,14 +188,7 @@ We cannot mess with the CWD in ArcGIS because their MxD settings for relative/ab
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="GXBF.html" title="GXBF class"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="GXARCMAP.html" title="GXARCMAP class"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" >GX API Class/Library Reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 

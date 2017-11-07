@@ -27,8 +27,6 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="GXARCDB class" href="GXARCDB.html" />
-    <link rel="prev" title="GXACQUIRE class" href="GXACQUIRE.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -44,14 +42,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="GXARCDB.html" title="GXARCDB class"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="GXACQUIRE.html" title="GXACQUIRE class"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" accesskey="U">GX API Class/Library Reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -66,19 +57,6 @@
 </li>
 </ul>
 
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Introduction</a></li>
-    <li><a href="geosoft.gxapi.classes.html">GX API Class/Library Reference</a></li>
-</ul>
-<h3>Previous Topic</h3>
-<ul>
-    <li><a href="GXACQUIRE.html" title="previous chapter">GXACQUIRE class</a></li>
-</ul>
-<h3>Next Topic</h3>
-<ul>
-    <li><a href="GXARCDB.html" title="next chapter">GXARCDB class</a></li>
-</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -108,7 +86,7 @@
 <span id="gxagg"></span><h1>GXAGG class<a class="headerlink" href="#gxagg-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXAGG">
-<em class="property">class </em><code class="descname">GXAGG</code><span class="sig-paren">(</span><em>wrapper=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXAGG" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">GXAGG</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXAGG" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXAGG class.</p>
 <p>The <a class="reference internal" href="#geosoft.gxapi.GXAGG" title="geosoft.gxapi.GXAGG"><code class="xref py py-obj docutils literal"><span class="pre">GXAGG</span></code></a> class is used to handle image display on maps.
 An aggregate contains one or more image layers (LAY) with
@@ -129,8 +107,8 @@ will combine all the layers to form one image</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>0.0 brightness does nothing.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> 0.0 brightness does nothing.
 -1.0 to 0.0 makes colors darker, -1.0 is black
 0.0 to 1.0 makes colors lighter, 1.0 is white</p>
 </dd></dl>
@@ -152,6 +130,7 @@ will combine all the layers to form one image</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -179,8 +158,8 @@ will combine all the layers to form one image</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.5.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The Agg Group name must include the View name with a
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The Agg Group name must include the View name with a
 backslash separating the view name and group name; e.g.
 &#8220;DataAGG_test&#8221; (when used as a string, the double slash
 represents as single ).</p>
@@ -201,8 +180,8 @@ represents as single ).</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Brightness can range from -1.0 (black) to 1.0 (white).
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Brightness can range from -1.0 (black) to 1.0 (white).
 This brightness control is relative to the normal color
 when the <a class="reference internal" href="#geosoft.gxapi.GXAGG" title="geosoft.gxapi.GXAGG"><code class="xref py py-obj docutils literal"><span class="pre">GXAGG</span></code></a> is created.</p>
 <p><a class="reference internal" href="#geosoft.gxapi.GXAGG" title="geosoft.gxapi.GXAGG"><code class="xref py py-obj docutils literal"><span class="pre">GXAGG</span></code></a> brightness depends on the brightness of the <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a> of each layer.
@@ -232,8 +211,8 @@ returned.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Layers are numbered from 0, consecutively in the order they are
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Layers are numbered from 0, consecutively in the order they are
 placed in the aggregate.</p>
 <p>An error will occur if the layer does not exist.</p>
 <p>Caller must create/destroy <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a>.</p>
@@ -242,12 +221,14 @@ placed in the aggregate.</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXAGG.is_null">
 <code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXAGG.is_null" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if the instance of <code class="xref py py-obj docutils literal"><span class="pre">GXAGG</span></code> is null (undefined)`</p>
+<dd><p>Check if this is a null (undefined) instance</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXAGG</span></code>, False otherwise.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
@@ -274,6 +255,7 @@ placed in the aggregate.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="#geosoft.gxapi.GXAGG.layer_shade_img" title="geosoft.gxapi.GXAGG.layer_shade_img"><code class="xref py py-obj docutils literal"><span class="pre">layer_shade_img</span></code></a></p>
@@ -303,6 +285,7 @@ placed in the aggregate.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.2.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="#geosoft.gxapi.GXAGG.layer_shade_img" title="geosoft.gxapi.GXAGG.layer_shade_img"><code class="xref py py-obj docutils literal"><span class="pre">layer_shade_img</span></code></a></p>
@@ -331,8 +314,8 @@ placed in the aggregate.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>A new grid file will be created to hold the shaded
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> A new grid file will be created to hold the shaded
 image data.  This file will have the same name as the
 original grid but with &#8220;_s&#8221; added to the root name.
 It will always be located in the workspace directory
@@ -359,19 +342,21 @@ If the file already exists, it will replaced.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.6.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The returned <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> contains the file names.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The returned <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> contains the file names.</p>
 </dd></dl>
 
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXAGG.null">
 <em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXAGG.null" title="Permalink to this definition">¶</a></dt>
-<dd><p>A null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXAGG</span></code></p>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXAGG" title="geosoft.gxapi.GXAGG"><code class="xref py py-obj docutils literal"><span class="pre">GXAGG</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <code class="xref py py-obj docutils literal"><span class="pre">GXAGG</span></code></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXAGG" title="geosoft.gxapi.GXAGG"><code class="xref py py-obj docutils literal"><span class="pre">GXAGG</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXAGG" title="geosoft.gxapi.GXAGG">GXAGG</a></td>
 </tr>
 </tbody>
 </table>
@@ -394,6 +379,7 @@ If the file already exists, it will replaced.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -411,8 +397,8 @@ If the file already exists, it will replaced.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Layers are numbered from 0, consecutively in the order they are
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Layers are numbered from 0, consecutively in the order they are
 placed in the aggregate.</p>
 <p>An error will occur if the layer does not exist.</p>
 <p>Caller must create/destroy <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a>.</p>
@@ -433,6 +419,7 @@ placed in the aggregate.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -450,6 +437,7 @@ placed in the aggregate.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.1.1.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 </dd></dl>
@@ -650,14 +638,7 @@ as <a class="reference internal" href="#geosoft.gxapi.AGG_LAYER_ZONE_DEFAULT" ti
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="GXARCDB.html" title="GXARCDB class"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="GXACQUIRE.html" title="GXACQUIRE class"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" >GX API Class/Library Reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 

@@ -27,8 +27,6 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="GXIPGUI class" href="GXIPGUI.html" />
-    <link rel="prev" title="GXINTERNET class" href="GXINTERNET.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -44,14 +42,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="GXIPGUI.html" title="GXIPGUI class"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="GXINTERNET.html" title="GXINTERNET class"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" accesskey="U">GX API Class/Library Reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -78,19 +69,6 @@
 </li>
 </ul>
 
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Introduction</a></li>
-    <li><a href="geosoft.gxapi.classes.html">GX API Class/Library Reference</a></li>
-</ul>
-<h3>Previous Topic</h3>
-<ul>
-    <li><a href="GXINTERNET.html" title="previous chapter">GXINTERNET class</a></li>
-</ul>
-<h3>Next Topic</h3>
-<ul>
-    <li><a href="GXIPGUI.html" title="next chapter">GXIPGUI class</a></li>
-</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -120,7 +98,7 @@
 <span id="gxip"></span><h1>GXIP class<a class="headerlink" href="#gxip-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXIP">
-<em class="property">class </em><code class="descname">GXIP</code><span class="sig-paren">(</span><em>wrapper=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIP" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">GXIP</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIP" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXIP class.</p>
 <p>This class is used in the <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> System for the import, export
 and processing of Induced Polarization data.</p>
@@ -156,6 +134,7 @@ This value could be <a class="reference internal" href="GXGEOSOFT.html#geosoft.g
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.1.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -179,8 +158,8 @@ This value could be <a class="reference internal" href="GXGEOSOFT.html#geosoft.g
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.3.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Averages all values with shared station and N values,
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Averages all values with shared station and N values,
 as long as the mask channel is defined at that FID.
 Previous averaged values (IP_DATA_AVG) are overwritten according to the
 overwrite flag.
@@ -214,8 +193,8 @@ value is &#8220;1&#8221; will be included in the average.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Uses <a class="reference internal" href="GXTIN.html#geosoft.gxapi.GXTIN" title="geosoft.gxapi.GXTIN"><code class="xref py py-obj docutils literal"><span class="pre">GXTIN</span></code></a> gridding to sample the model.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Uses <a class="reference internal" href="GXTIN.html#geosoft.gxapi.GXTIN" title="geosoft.gxapi.GXTIN"><code class="xref py py-obj docutils literal"><span class="pre">GXTIN</span></code></a> gridding to sample the model.
 By setting the final value, a resistivity grid can be
 created from conductivity data.</p>
 </dd></dl>
@@ -237,6 +216,7 @@ created from conductivity data.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -258,6 +238,7 @@ created from conductivity data.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.1.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -287,8 +268,8 @@ created from conductivity data.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Outputs a <code class="docutils literal"><span class="pre">*.DAT</span></code> file of the survey data for use in the
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Outputs a <code class="docutils literal"><span class="pre">*.DAT</span></code> file of the survey data for use in the
 UBC <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> 3D inversion programs.</p>
 </dd></dl>
 
@@ -320,8 +301,8 @@ UBC <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxap
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Exports a line to an &#8221;.I2X&#8221; file.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Exports a line to an &#8221;.I2X&#8221; file.</p>
 </dd></dl>
 
 <dl class="method">
@@ -344,6 +325,7 @@ UBC <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxap
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -367,6 +349,7 @@ UBC <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxap
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.4.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -395,8 +378,8 @@ UBC <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxap
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The Fraser Filter weights apply to each N expansion above,
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> The Fraser Filter weights apply to each N expansion above,
 and are listed as w1,w2,w3,...   Unspecified values beyond
 the list&#8217;s end are set to 1.0.</p>
 </dd></dl>
@@ -428,8 +411,8 @@ the list&#8217;s end are set to 1.0.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.4.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The Fraser Filter weights apply to each N expansion above,
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> The Fraser Filter weights apply to each N expansion above,
 and are listed as w1,w2,w3,...   Unspecified values beyond
 the list&#8217;s end are set to 1.0.</p>
 </dd></dl>
@@ -455,6 +438,7 @@ the list&#8217;s end are set to 1.0.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.1.8.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -478,6 +462,7 @@ the list&#8217;s end are set to 1.0.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -505,8 +490,8 @@ the list&#8217;s end are set to 1.0.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Outputs a <code class="docutils literal"><span class="pre">*.DAT</span></code> file of the survey data for use in the
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Outputs a <code class="docutils literal"><span class="pre">*.DAT</span></code> file of the survey data for use in the
 UBC 2D inversion program DCINV2D.
 Voltage and current channels should be in units such that
 V/I gives volts/amp (or mV/mA).</p>
@@ -540,8 +525,8 @@ V/I gives volts/amp (or mV/mA).</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.4.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>UBC Version 3.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> UBC Version 3.
 Outputs a control file for use in the
 UBC 2D resistivity inversion program DCINV2D.</p>
 </dd></dl>
@@ -577,8 +562,8 @@ UBC 2D resistivity inversion program DCINV2D.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>UBC Version 5.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> UBC Version 5.
 Outputs a control file for use in the
 UBC 2D resistivity inversion program DCINV2D.</p>
 </dd></dl>
@@ -607,8 +592,8 @@ UBC 2D resistivity inversion program DCINV2D.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Outputs a <code class="docutils literal"><span class="pre">*.DAT</span></code> file of the survey data for use in the
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Outputs a <code class="docutils literal"><span class="pre">*.DAT</span></code> file of the survey data for use in the
 UBC 2D inversion program IPINV2D.
 Include error channel output and version-specific formatting.</p>
 </dd></dl>
@@ -642,8 +627,8 @@ Include error channel output and version-specific formatting.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.4.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>UBC Version 3 Control file.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> UBC Version 3 Control file.
 Outputs a control file for use in the
 UBC 2D <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> inversion program IPINV2D.</p>
 </dd></dl>
@@ -681,8 +666,8 @@ UBC 2D <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.g
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>UBC Version 5 Control file.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> UBC Version 5 Control file.</p>
 </dd></dl>
 
 <dl class="method">
@@ -710,6 +695,7 @@ UBC 2D <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.g
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.1.8.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -732,6 +718,7 @@ UBC 2D <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.g
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -757,6 +744,7 @@ UBC 2D <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.g
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.1.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -783,8 +771,8 @@ UBC 2D <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.g
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The mask values are determined from the first row where a given electrode is found.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> The mask values are determined from the first row where a given electrode is found.
 Values returned for all currently selected lines.</p>
 </dd></dl>
 
@@ -813,8 +801,8 @@ Values returned for all currently selected lines.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The mask values are determined from the first row where a given electrode is found.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> The mask values are determined from the first row where a given electrode is found.
 Values returned for all currently selected lines.</p>
 </dd></dl>
 
@@ -837,6 +825,7 @@ Values returned for all currently selected lines.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.1.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -865,8 +854,8 @@ Values returned for all currently selected lines.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>For <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a>, looks for &#8220;QC_IP&#8221;, then &#8220;QC_OffTime&#8221;, then &#8220;QC&#8221;.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> For <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a>, looks for &#8220;QC_IP&#8221;, then &#8220;QC_OffTime&#8221;, then &#8220;QC&#8221;.
 For Resistivity, looks for &#8220;QC_Res&#8221;, then &#8220;QC_OnTime&#8221; (case insensitive).</p>
 </dd></dl>
 
@@ -893,8 +882,8 @@ For Resistivity, looks for &#8220;QC_Res&#8221;, then &#8220;QC_OnTime&#8221; (c
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.4.2.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>If topography info is available, returns values calculated for
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> If topography info is available, returns values calculated for
 the input line. If no topography is available, returned values
 will be dummies. Values between actual data are interpolated using
 the Akima spline. Ends are extrapolated using the end data points.</p>
@@ -920,6 +909,7 @@ the Akima spline. Ends are extrapolated using the end data points.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -942,8 +932,8 @@ the Akima spline. Ends are extrapolated using the end data points.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Data is imported to the specified channel.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Data is imported to the specified channel.
 The values are interpolated at each row&#8217;s X and Y
 positions.</p>
 </dd></dl>
@@ -977,8 +967,8 @@ positions.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Imports a single &#8221;.I2X&#8221; file to a specified line.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Imports a single &#8221;.I2X&#8221; file to a specified line.
 If the line does not exist, it will be created.</p>
 </dd></dl>
 
@@ -1013,8 +1003,8 @@ If the line does not exist, it will be created.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Imports a single &#8221;.I2X&#8221; file to a specified line.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Imports a single &#8221;.I2X&#8221; file to a specified line.
 If the line does not exist, it will be created.</p>
 </dd></dl>
 
@@ -1037,6 +1027,7 @@ If the line does not exist, it will be created.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -1059,6 +1050,7 @@ If the line does not exist, it will be created.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -1082,8 +1074,8 @@ If the line does not exist, it will be created.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The second channel may be specified for frequency domain data sets
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> The second channel may be specified for frequency domain data sets
 with two array channels; e.g. amplitude and phase, or real and
 imaginary parts. If the second channel is specified, and no
 time or frequncy information is specified in the header (using
@@ -1111,8 +1103,8 @@ domain.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This import produces a limited <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> data set with no Current &#8220;I&#8221;,
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> This import produces a limited <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> data set with no Current &#8220;I&#8221;,
 Voltage &#8220;Vp&#8221; or Apparent Resistivity &#8220;ResApp&#8221; values.</p>
 </dd></dl>
 
@@ -1136,8 +1128,8 @@ Voltage &#8220;Vp&#8221; or Apparent Resistivity &#8220;ResApp&#8221; values.</p
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.1.8.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Exits with error if the line does not exist.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Exits with error if the line does not exist.
 Data is merged on basis of Stn and N value.</p>
 </dd></dl>
 
@@ -1160,6 +1152,7 @@ Data is merged on basis of Stn and N value.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -1181,8 +1174,8 @@ Data is merged on basis of Stn and N value.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The elevation of each point in the current database
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> The elevation of each point in the current database
 is interpolated from the input topography values.</p>
 </dd></dl>
 
@@ -1205,8 +1198,8 @@ is interpolated from the input topography values.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The elevation of each point in the current database
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> The elevation of each point in the current database
 is interpolated from the input topography grid.</p>
 </dd></dl>
 
@@ -1235,8 +1228,8 @@ is interpolated from the input topography grid.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Imports the MOD file values to a <a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal"><span class="pre">GXPG</span></code></a> object.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Imports the MOD file values to a <a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal"><span class="pre">GXPG</span></code></a> object.
 The CON/CHG selection is necessary because the import sets
 padding values to dummies based on the type of file.</p>
 </dd></dl>
@@ -1263,8 +1256,8 @@ padding values to dummies based on the type of file.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Imports the MSH file geometry.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Imports the MSH file geometry.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1288,8 +1281,8 @@ padding values to dummies based on the type of file.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Imports the maximum elevation (top of mesh)
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Imports the maximum elevation (top of mesh)
 as well as the topo (X, Z) values.</p>
 </dd></dl>
 
@@ -1315,8 +1308,8 @@ as well as the topo (X, Z) values.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>See <a class="reference internal" href="#geosoft.gxapi.GXIP.import_zonge_fld" title="geosoft.gxapi.GXIP.import_zonge_fld"><code class="xref py py-obj docutils literal"><span class="pre">import_zonge_fld</span></code></a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> See <a class="reference internal" href="#geosoft.gxapi.GXIP.import_zonge_fld" title="geosoft.gxapi.GXIP.import_zonge_fld"><code class="xref py py-obj docutils literal"><span class="pre">import_zonge_fld</span></code></a></p>
 </dd></dl>
 
 <dl class="method">
@@ -1340,8 +1333,8 @@ as well as the topo (X, Z) values.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The Zonge Line and Station numbers may not be the X or Y position
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> The Zonge Line and Station numbers may not be the X or Y position
 values, and a conversion is required.
 The line direction is taken from the <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a> setup values.</p>
 </dd></dl>
@@ -1349,12 +1342,14 @@ The line direction is taken from the <a class="reference internal" href="#geosof
 <dl class="method">
 <dt id="geosoft.gxapi.GXIP.is_null">
 <code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIP.is_null" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if the instance of <code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code> is null (undefined)`</p>
+<dd><p>Check if this is a null (undefined) instance</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code>, False otherwise.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
@@ -1385,6 +1380,7 @@ The line direction is taken from the <a class="reference internal" href="#geosof
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.1.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -1412,6 +1408,7 @@ The line direction is taken from the <a class="reference internal" href="#geosof
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.1.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -1436,20 +1433,22 @@ The line direction is taken from the <a class="reference internal" href="#geosof
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>A mask channel can be used to select a subset of the data.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> A mask channel can be used to select a subset of the data.
 A single N value can also be selected (Dummy for all).</p>
 </dd></dl>
 
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXIP.null">
 <em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIP.null" title="Permalink to this definition">¶</a></dt>
-<dd><p>A null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></p>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal"><span class="pre">GXIP</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP">GXIP</a></td>
 </tr>
 </tbody>
 </table>
@@ -1474,6 +1473,7 @@ A single N value can also be selected (Dummy for all).</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.1.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -1493,6 +1493,7 @@ A single N value can also be selected (Dummy for all).</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.1.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -1516,8 +1517,8 @@ A single N value can also be selected (Dummy for all).</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The control file is created using the IPSTAKCON GX. It may then
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> The control file is created using the IPSTAKCON GX. It may then
 be modified by hand as required.</p>
 </dd></dl>
 
@@ -1543,6 +1544,7 @@ be modified by hand as required.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.1.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -1568,6 +1570,7 @@ be modified by hand as required.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.4.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -1591,8 +1594,8 @@ be modified by hand as required.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The control file is created using the IPPLTCON GX. It may then
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> The control file is created using the IPPLTCON GX. It may then
 be modified by hand as required.</p>
 </dd></dl>
 
@@ -1618,8 +1621,8 @@ be modified by hand as required.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.1.8.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The control file is created using the IPPLTCON GX. It may then
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> The control file is created using the IPPLTCON GX. It may then
 be modified by hand as required.</p>
 </dd></dl>
 
@@ -1646,8 +1649,8 @@ be modified by hand as required.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.4.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The control file is created using the IPPLTCON GX. It may then
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> The control file is created using the IPPLTCON GX. It may then
 be modified by hand as required.</p>
 </dd></dl>
 
@@ -1670,8 +1673,8 @@ be modified by hand as required.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.3.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Searches for the following QC channels existing in a database:
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Searches for the following QC channels existing in a database:
 QC, QC_RES.</p>
 </dd></dl>
 
@@ -1690,8 +1693,8 @@ QC, QC_RES.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This function recalculates &#8220;derived&#8221; channel values from
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> This function recalculates &#8220;derived&#8221; channel values from
 &#8220;core&#8221; data.</p>
 <blockquote>
 <div><ol class="arabic simple">
@@ -1731,8 +1734,8 @@ would have to call <a class="reference internal" href="#geosoft.gxapi.GXIP.recal
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>See <a class="reference internal" href="#geosoft.gxapi.GXIP.recalculate" title="geosoft.gxapi.GXIP.recalculate"><code class="xref py py-obj docutils literal"><span class="pre">recalculate</span></code></a>. This version allows you to suppress the recalculation of the
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> See <a class="reference internal" href="#geosoft.gxapi.GXIP.recalculate" title="geosoft.gxapi.GXIP.recalculate"><code class="xref py py-obj docutils literal"><span class="pre">recalculate</span></code></a>. This version allows you to suppress the recalculation of the
 current X, Y and Z channel values from the station locations.</p>
 </dd></dl>
 
@@ -1751,8 +1754,8 @@ current X, Y and Z channel values from the station locations.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.1.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The &#8220;Z&#8221; channel values are calculated as follows:
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> The &#8220;Z&#8221; channel values are calculated as follows:
 If the &#8220;Topo&#8221; value is defined, then
 Z = Topo - 0.5*N*A, where &#8220;N&#8221; is the N-spacing, and
 A is the A-spacing. If the Topography is not defined, then
@@ -1782,6 +1785,7 @@ it is assumed to be equal to 0.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.1.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -1807,6 +1811,7 @@ it is assumed to be equal to 0.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.1.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -1833,8 +1838,8 @@ it is assumed to be equal to 0.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Mask values are set for all included electrode locations, currently selected lines.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Mask values are set for all included electrode locations, currently selected lines.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1861,8 +1866,8 @@ it is assumed to be equal to 0.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Mask values are set for all included electrode locations, currently selected lines.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Mask values are set for all included electrode locations, currently selected lines.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1880,8 +1885,8 @@ it is assumed to be equal to 0.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>For some imports, no line name is derivable from the import itself.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> For some imports, no line name is derivable from the import itself.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1899,8 +1904,8 @@ it is assumed to be equal to 0.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>By default, importing data overwrites existing data.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> By default, importing data overwrites existing data.
 Call this function before doing the import in order
 to append imported data to existing data.
 &#8220;Short&#8221; data channels will be dummied to the existing
@@ -1937,8 +1942,8 @@ data length before the new data is appended.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The cells are removed from the left, right and bottom.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> The cells are removed from the left, right and bottom.
 The returned <a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal"><span class="pre">GXPG</span></code></a> is the trimmed version.
 The input cell size VVs are also trimmed to match,
 and the origin is updated (still upper left corner).</p>
@@ -1965,8 +1970,8 @@ and the origin is updated (still upper left corner).</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The array channels cannot be used directly to produce sections.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> The array channels cannot be used directly to produce sections.
 <a class="reference internal" href="#geosoft.gxapi.GXIP.window" title="geosoft.gxapi.GXIP.window"><code class="xref py py-obj docutils literal"><span class="pre">window</span></code></a> allows the user to select one or more of the windows
 and create a new channel. In time domain, if more than one channel
 is selected a weighted sum is performed, according to window widths.
@@ -1989,6 +1994,7 @@ Window List Syntax:</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -2010,6 +2016,7 @@ Window List Syntax:</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.1.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -2027,8 +2034,8 @@ Window List Syntax:</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Writes values for ALL lines.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Writes values for ALL lines.</p>
 </dd></dl>
 
 <dl class="method">
@@ -2050,8 +2057,8 @@ Window List Syntax:</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.4.2.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Writes values for lines in the input <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a>.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Writes values for lines in the input <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a>.</p>
 </dd></dl>
 
 </dd></dl>
@@ -2827,14 +2834,7 @@ guarantee no overlap with high N-values or closely spaced lines.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="GXIPGUI.html" title="GXIPGUI class"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="GXINTERNET.html" title="GXINTERNET class"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" >GX API Class/Library Reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 

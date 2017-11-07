@@ -68,6 +68,10 @@ New Functions
 
 :func:`geosoft.gxpy.project.remove_document` Remove a document from the project.  The document is identified by the document name, which
 
+:func:`geosoft.gxpy.utility.url_retrieve` Retrieve a URL resource as a file.
+
+:func:`geosoft.gxpy.view.View_3d.set_plane_relief_surface` Establish a relief surface for the current plane based on a grid.
+
 
   
 Version 9.2.1
@@ -255,7 +259,7 @@ New Functions
 
 :func:`geosoft.gxpy.group.Draw_3d.cylinder_3d` Draw a cylinder.
 
-:func:`geosoft.gxpy.group.Draw_3d.polydata_3d` Create 3D objects rendered by the data.
+:func:`geosoft.gxpy.group.Draw_3d.polydata_3d` Create 3D objects rendered using data attributes.
 
 :func:`geosoft.gxpy.group.Draw_3d.polyline_3d` Draw a polyline.
 
@@ -380,6 +384,10 @@ New Functions
 :func:`geosoft.gxpy.view.View.locate` Locate and scale the view on the map.
 
 :func:`geosoft.gxpy.view.View.map_cm_to_view` Returns the location of this point on the map (in cm) to the view location in view units.
+
+:func:`geosoft.gxpy.view.View.new` Create a new view on a map.
+
+:func:`geosoft.gxpy.view.View.open` Open an en existing view on a map.
 
 :func:`geosoft.gxpy.view.View.set_class_name` Set the name associated with a class.
 

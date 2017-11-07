@@ -27,8 +27,6 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="geosoft.gxpy.metadata submodule" href="geosoft.gxpy.metadata.html" />
-    <link rel="prev" title="geosoft.gxpy.gx submodule" href="geosoft.gxpy.gx.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -44,31 +42,11 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="geosoft.gxpy.metadata.html" title="geosoft.gxpy.metadata submodule"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="geosoft.gxpy.gx.html" title="geosoft.gxpy.gx submodule"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxpy.html" accesskey="U">gxpy modules reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Introduction</a></li>
-    <li><a href="geosoft.gxpy.html">gxpy modules reference</a></li>
-</ul>
-<h3>Previous Topic</h3>
-<ul>
-    <li><a href="geosoft.gxpy.gx.html" title="previous chapter">geosoft.gxpy.gx submodule</a></li>
-</ul>
-<h3>Next Topic</h3>
-<ul>
-    <li><a href="geosoft.gxpy.metadata.html" title="next chapter">geosoft.gxpy.metadata submodule</a></li>
-</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -193,11 +171,13 @@ as a 2D perspective of the last viewing state of the 3D view.</p>
 contains groups of graphical elements defined relative to the coordinate system of the view.  The
 <a class="reference internal" href="geosoft.gxpy.view.html#module-geosoft.gxpy.view" title="geosoft.gxpy.view"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxpy.view</span></code></a> module provides classes and methods for working with individual 2D or
 3D views, and the <a class="reference internal" href="geosoft.gxpy.group.html#module-geosoft.gxpy.group" title="geosoft.gxpy.group"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxpy.group</span></code></a> modules contains classes that deal with drawing groups..</p>
-<p>Geosoft maps will always have a 2D &#8216;base&#8217; view, which uses map cm as the coordinate system and is
-intended for drawing map annotations, such as titles, a scale bar, North arrow and legends.  The
-lower-left corner of the base view ia at location (0, 0) and the upper-right corner is defined by the
-media size and may be adjusted to fit the data view.</p>
-<p>Geosoft maps will also have one or more data views, each with it&#8217;s own defined coordinate system
+<p>Geosoft maps will always have a 2D &#8216;base&#8217; view and is intended for drawing map annotations, such as titles, 
+a scale bar, North arrow and legends.  The lower-left corner of the base view ia at location (0, 0) and the 
+upper-right corner is defined by the media size and may be adjusted to fit the data view.</p>
+<p>When drawing to the base view the native unit is millimetres and locations and graphic entity
+sizes are assumed to be mm.  When drawing to the map using map methods the units are in map cm,
+including graphic entity scaling.</p>
+<p>Maps will also have one or more data views, each with it&#8217;s own defined coordinate system
 and graphical content.  Creating a new map will create one data view, which will become the map&#8217;s 
 <a class="reference internal" href="#geosoft.gxpy.map.Map.current_data_view" title="geosoft.gxpy.map.Map.current_data_view"><code class="xref py py-obj docutils literal"><span class="pre">current_data_view</span></code></a>, within which any spatial data drawn by Geosoft 2D drawing applications
 will be placed.  Maps may have more than one data view, including 3D data views, and the 
@@ -289,7 +269,7 @@ annotate both geographic and projected coordinates.</li>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>view_name</strong> &#8211; name of the data view to annotate</li>
 <li><strong>tick</strong> &#8211; inner tick size in cm</li>
-<li><strong>offset</strong> &#8211; posting offset from the edge in cm. The posting edge is adjusted to be outside
+<li><strong>offset</strong> &#8211; posting offset from the edge in map cm. The posting edge is adjusted to be outside
 character height for a subsequent call to an edge annotation.  This allows one to
 annotate both geographic and projected coordinates.</li>
 <li><strong>top</strong> &#8211; TOP_IN or TOP_OUT (default) for vertical annotations</li>
@@ -485,9 +465,9 @@ from Geosoft methods.</p>
 </tbody>
 </table>
 <p>Common view class names are:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s1">&#39;Base&#39;</span>      <span class="n">the</span> <span class="n">base</span> <span class="nb">map</span><span class="o">/</span><span class="n">figure</span> <span class="n">view</span><span class="p">,</span> <span class="n">uses</span> <span class="nb">map</span> <span class="n">cm</span>
-<span class="s1">&#39;Data&#39;</span>      <span class="n">the</span> <span class="n">default</span> <span class="n">data</span> <span class="n">view</span> <span class="k">for</span> <span class="n">drawing</span> <span class="n">spatial</span> <span class="n">data</span><span class="o">.</span>
-<span class="s1">&#39;Section&#39;</span>   <span class="n">the</span> <span class="n">default</span> <span class="n">section</span> <span class="n">view</span> <span class="k">for</span> <span class="n">things</span> <span class="n">drawn</span> <span class="ow">in</span> <span class="n">section</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s1">&#39;base&#39;</span>      <span class="n">the</span> <span class="n">base</span> <span class="nb">map</span><span class="o">/</span><span class="n">figure</span> <span class="n">view</span><span class="p">,</span> <span class="n">uses</span> <span class="nb">map</span> <span class="n">cm</span>
+<span class="s1">&#39;data&#39;</span>      <span class="n">the</span> <span class="n">default</span> <span class="n">data</span> <span class="n">view</span> <span class="k">for</span> <span class="n">drawing</span> <span class="n">spatial</span> <span class="n">data</span><span class="o">.</span>
+<span class="s1">&#39;section&#39;</span>   <span class="n">the</span> <span class="n">default</span> <span class="n">section</span> <span class="n">view</span> <span class="k">for</span> <span class="n">things</span> <span class="n">drawn</span> <span class="ow">in</span> <span class="n">section</span>
 </pre></div>
 </div>
 <p>Other class names may be defined, though they are not used by Geosoft.</p>
@@ -598,7 +578,7 @@ spatial data near the edge of the defined data area.</td>
 <tr class="field-odd field"><th class="field-name">overwrite:</th><td class="field-body">True to overwrite an existing map.  If False and map exists, raises
 <code class="docutils literal"><span class="pre">MapException</span></code>.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">no_data_view:</th><td class="field-body">True to create a map without a &#8216;Data&#8217; view. Use <a class="reference internal" href="geosoft.gxpy.view.html#geosoft.gxpy.view.View" title="geosoft.gxpy.view.View"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.view.View</span></code></a> and
+<tr class="field-even field"><th class="field-name">no_data_view:</th><td class="field-body">True to create a map without a &#8216;data&#8217; view. Use <a class="reference internal" href="geosoft.gxpy.view.html#geosoft.gxpy.view.View" title="geosoft.gxpy.view.View"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.view.View</span></code></a> and
 <a class="reference internal" href="geosoft.gxpy.view.html#geosoft.gxpy.view.View_3d" title="geosoft.gxpy.view.View_3d"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.view.View_3d</span></code></a> to add data views to a map.</td>
 </tr>
 </tbody>
@@ -623,14 +603,14 @@ spatial data near the edge of the defined data area.</td>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>location</strong> &#8211; (reference, x_offset, y_offset) reference is a reference point relative to the
 base map extents (1 through 9) nd the offsets are the offset from that reference
-point in cm.</li>
+point in map cm.</li>
 <li><strong>direction</strong> &#8211; North direction in degrees azimuth (clockwise from map Y axis).  The efault is 
 calculated direction of North at the center of the data view.</li>
-<li><strong>length</strong> &#8211; arrow length in cm</li>
+<li><strong>length</strong> &#8211; arrow length in cm on the map.</li>
 <li><strong>inclination</strong> &#8211; magnetic inclination, not shown if not specified</li>
 <li><strong>declination</strong> &#8211; magnetic declination, not shown if not specified</li>
-<li><strong>text_def</strong> &#8211; <code class="xref py py-class docutils literal"><span class="pre">gxpy.group.Text_def</span></code> instance, or <code class="xref py py-obj docutils literal"><span class="pre">None</span></code> for the default.</li>
-<li><strong>pen</strong> &#8211; <code class="xref py py-class docutils literal"><span class="pre">gxpy.group.Pen</span></code> instance, or <code class="xref py py-obj docutils literal"><span class="pre">None</span></code> for the default</li>
+<li><strong>text_def</strong> &#8211; <a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Text_def" title="geosoft.gxpy.group.Text_def"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.group.Text_def</span></code></a> instance, or <code class="xref py py-obj docutils literal"><span class="pre">None</span></code> for the default.</li>
+<li><strong>pen</strong> &#8211; <a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Pen" title="geosoft.gxpy.group.Pen"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.group.Pen</span></code></a> instance, or <code class="xref py py-obj docutils literal"><span class="pre">None</span></code> for the default</li>
 </ul>
 </td>
 </tr>
@@ -681,12 +661,12 @@ calculated direction of North at the center of the data view.</li>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>location</strong> &#8211; (ref_point, x_off, y_off) bar location reference point an offset from that point</li>
-<li><strong>length</strong> &#8211; maximum scale bar length, default is 5 cm. scale=0.0 will suppress drawing of the bar.</li>
+<li><strong>length</strong> &#8211; maximum scale bar length in map cm, default is 5 cm. 0 will suppress drawing of the bar.</li>
 <li><strong>sections</strong> &#8211; number of major sections in the bar, default is determined automatically.</li>
 <li><strong>post_scale</strong> &#8211; True to post the actual scale as a string, e.g. &#8216;1:50,000&#8217;.  Note that a posted
 scale is only relevant for printed maps.  The default does not post the scale.</li>
-<li><strong>text_def</strong> &#8211; <code class="xref py py-class docutils literal"><span class="pre">gxpy.view.Text_def</span></code> instance.</li>
-<li><strong>pen</strong> &#8211; <code class="xref py py-class docutils literal"><span class="pre">gxpy.view.Pen</span></code> instance.</li>
+<li><strong>text_def</strong> &#8211; <code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.view.Text_def</span></code> instance.</li>
+<li><strong>pen</strong> &#8211; <code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.view.Pen</span></code> instance.</li>
 </ul>
 </td>
 </tr>
@@ -714,9 +694,9 @@ scale is only relevant for printed maps.  The default does not post the scale.</
 </tbody>
 </table>
 <p>Common view class names are:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s1">&#39;Base&#39;</span>      <span class="n">the</span> <span class="n">base</span> <span class="nb">map</span><span class="o">/</span><span class="n">figure</span> <span class="n">view</span><span class="p">,</span> <span class="n">uses</span> <span class="nb">map</span> <span class="n">cm</span>
-<span class="s1">&#39;Data&#39;</span>      <span class="n">the</span> <span class="n">default</span> <span class="n">data</span> <span class="n">view</span> <span class="k">for</span> <span class="n">drawing</span> <span class="n">spatial</span> <span class="n">data</span><span class="o">.</span>
-<span class="s1">&#39;Section&#39;</span>   <span class="n">the</span> <span class="n">default</span> <span class="n">section</span> <span class="n">view</span> <span class="k">for</span> <span class="n">things</span> <span class="n">drawn</span> <span class="ow">in</span> <span class="n">section</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s1">&#39;base&#39;</span>      <span class="n">the</span> <span class="n">base</span> <span class="nb">map</span><span class="o">/</span><span class="n">figure</span> <span class="n">view</span><span class="p">,</span> <span class="n">uses</span> <span class="nb">map</span> <span class="n">cm</span>
+<span class="s1">&#39;data&#39;</span>      <span class="n">the</span> <span class="n">default</span> <span class="n">data</span> <span class="n">view</span> <span class="k">for</span> <span class="n">drawing</span> <span class="n">spatial</span> <span class="n">data</span><span class="o">.</span>
+<span class="s1">&#39;section&#39;</span>   <span class="n">the</span> <span class="n">default</span> <span class="n">section</span> <span class="n">view</span> <span class="k">for</span> <span class="n">things</span> <span class="n">drawn</span> <span class="ow">in</span> <span class="n">section</span>
 </pre></div>
 </div>
 <div class="versionadded">
@@ -1046,14 +1026,7 @@ map.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="geosoft.gxpy.metadata.html" title="geosoft.gxpy.metadata submodule"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="geosoft.gxpy.gx.html" title="geosoft.gxpy.gx submodule"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxpy.html" >gxpy modules reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 

@@ -27,8 +27,6 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="GXDB class" href="GXDB.html" />
-    <link rel="prev" title="GXDATALINKD class" href="GXDATALINKD.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -44,14 +42,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="GXDB.html" title="GXDB class"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="GXDATALINKD.html" title="GXDATALINKD class"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" accesskey="U">GX API Class/Library Reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -64,19 +55,6 @@
 </li>
 </ul>
 
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Introduction</a></li>
-    <li><a href="geosoft.gxapi.classes.html">GX API Class/Library Reference</a></li>
-</ul>
-<h3>Previous Topic</h3>
-<ul>
-    <li><a href="GXDATALINKD.html" title="previous chapter">GXDATALINKD class</a></li>
-</ul>
-<h3>Next Topic</h3>
-<ul>
-    <li><a href="GXDB.html" title="next chapter">GXDB class</a></li>
-</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -106,7 +84,7 @@
 <span id="gxdatamine"></span><h1>GXDATAMINE class<a class="headerlink" href="#gxdatamine-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXDATAMINE">
-<em class="property">class </em><code class="descname">GXDATAMINE</code><span class="sig-paren">(</span><em>wrapper=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDATAMINE" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">GXDATAMINE</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDATAMINE" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXDATAMINE class.</p>
 <p><a class="reference internal" href="#geosoft.gxapi.GXDATAMINE" title="geosoft.gxapi.GXDATAMINE"><code class="xref py py-obj docutils literal"><span class="pre">GXDATAMINE</span></code></a> functions provide an interface to Datamine Software Limited files.
 See also <a class="reference internal" href="GXGIS.html#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> for various other Datamine-specific functions.</p>
@@ -134,19 +112,21 @@ See also <a class="reference internal" href="GXGIS.html#geosoft.gxapi.GXGIS" tit
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Create a Geosoft Voxel file from a Datamine block model file.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Create a Geosoft Voxel file from a Datamine block model file.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXDATAMINE.is_null">
 <code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDATAMINE.is_null" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if the instance of <code class="xref py py-obj docutils literal"><span class="pre">GXDATAMINE</span></code> is null (undefined)`</p>
+<dd><p>Check if this is a null (undefined) instance</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXDATAMINE</span></code>, False otherwise.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
@@ -155,12 +135,14 @@ See also <a class="reference internal" href="GXGIS.html#geosoft.gxapi.GXGIS" tit
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXDATAMINE.null">
 <em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDATAMINE.null" title="Permalink to this definition">¶</a></dt>
-<dd><p>A null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXDATAMINE</span></code></p>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXDATAMINE" title="geosoft.gxapi.GXDATAMINE"><code class="xref py py-obj docutils literal"><span class="pre">GXDATAMINE</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <code class="xref py py-obj docutils literal"><span class="pre">GXDATAMINE</span></code></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXDATAMINE" title="geosoft.gxapi.GXDATAMINE"><code class="xref py py-obj docutils literal"><span class="pre">GXDATAMINE</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXDATAMINE" title="geosoft.gxapi.GXDATAMINE">GXDATAMINE</a></td>
 </tr>
 </tbody>
 </table>
@@ -185,8 +167,8 @@ See also <a class="reference internal" href="GXGIS.html#geosoft.gxapi.GXGIS" tit
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>At this time, only <a class="reference internal" href="#geosoft.gxapi.GIS_DMTYPE_BLOCKMODEL" title="geosoft.gxapi.GIS_DMTYPE_BLOCKMODEL"><code class="xref py py-obj docutils literal"><span class="pre">GIS_DMTYPE_BLOCKMODEL</span></code></a> files are supported.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> At this time, only <a class="reference internal" href="#geosoft.gxapi.GIS_DMTYPE_BLOCKMODEL" title="geosoft.gxapi.GIS_DMTYPE_BLOCKMODEL"><code class="xref py py-obj docutils literal"><span class="pre">GIS_DMTYPE_BLOCKMODEL</span></code></a> files are supported.
 The field names go in the name part, and field indices (1 to N)
 in the value part.</p>
 </dd></dl>
@@ -277,14 +259,7 @@ in the value part.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="GXDB.html" title="GXDB class"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="GXDATALINKD.html" title="GXDATALINKD class"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" >GX API Class/Library Reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 

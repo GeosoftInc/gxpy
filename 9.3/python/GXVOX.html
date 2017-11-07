@@ -27,8 +27,6 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="GXVOXD class" href="GXVOXD.html" />
-    <link rel="prev" title="GXVM class" href="GXVM.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -44,14 +42,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="GXVOXD.html" title="GXVOXD class"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="GXVM.html" title="GXVM class"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" accesskey="U">GX API Class/Library Reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -71,19 +62,6 @@
 </li>
 </ul>
 
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Introduction</a></li>
-    <li><a href="geosoft.gxapi.classes.html">GX API Class/Library Reference</a></li>
-</ul>
-<h3>Previous Topic</h3>
-<ul>
-    <li><a href="GXVM.html" title="previous chapter">GXVM class</a></li>
-</ul>
-<h3>Next Topic</h3>
-<ul>
-    <li><a href="GXVOXD.html" title="next chapter">GXVOXD class</a></li>
-</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -113,12 +91,12 @@
 <span id="gxvox"></span><h1>GXVOX class<a class="headerlink" href="#gxvox-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXVOX">
-<em class="property">class </em><code class="descname">GXVOX</code><span class="sig-paren">(</span><em>wrapper=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVOX" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">GXVOX</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVOX" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXVOX class.</p>
 <p>High Performance 3D Grid. Designed for accessing
 3D grids quickly using slices. It designed arround
 non-uniform multi-resolution  compressed storage.
-o sample a voxel at specific locations, use the <a class="reference internal" href="GXVOXE.html#geosoft.gxapi.GXVOXE" title="geosoft.gxapi.GXVOXE"><code class="xref py py-obj docutils literal"><span class="pre">GXVOXE</span></code></a> class.</p>
+To sample a voxel at specific locations, use <a class="reference internal" href="GXVOXE.html#geosoft.gxapi.GXVOXE" title="geosoft.gxapi.GXVOXE"><code class="xref py py-obj docutils literal"><span class="pre">GXVOXE</span></code></a>.</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.add_generate_by_subset_pg">
 <code class="descname">add_generate_by_subset_pg</code><span class="sig-paren">(</span><em>pg</em>, <em>dir</em>, <em>offset</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVOX.add_generate_by_subset_pg" title="Permalink to this definition">¶</a></dt>
@@ -140,8 +118,8 @@ full voxel in the other two directions.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.5.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>See <a class="reference internal" href="#geosoft.gxapi.GXVOX.init_generate_by_subset_pg" title="geosoft.gxapi.GXVOX.init_generate_by_subset_pg"><code class="xref py py-obj docutils literal"><span class="pre">init_generate_by_subset_pg</span></code></a> and <a class="reference internal" href="#geosoft.gxapi.GXVOX.end_generate_by_subset_pg" title="geosoft.gxapi.GXVOX.end_generate_by_subset_pg"><code class="xref py py-obj docutils literal"><span class="pre">end_generate_by_subset_pg</span></code></a>.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> See <a class="reference internal" href="#geosoft.gxapi.GXVOX.init_generate_by_subset_pg" title="geosoft.gxapi.GXVOX.init_generate_by_subset_pg"><code class="xref py py-obj docutils literal"><span class="pre">init_generate_by_subset_pg</span></code></a> and <a class="reference internal" href="#geosoft.gxapi.GXVOX.end_generate_by_subset_pg" title="geosoft.gxapi.GXVOX.end_generate_by_subset_pg"><code class="xref py py-obj docutils literal"><span class="pre">end_generate_by_subset_pg</span></code></a>.</p>
 </dd></dl>
 
 <dl class="method">
@@ -159,6 +137,7 @@ full voxel in the other two directions.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -180,6 +159,7 @@ full voxel in the other two directions.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -211,6 +191,7 @@ full voxel in the other two directions.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.4.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -241,6 +222,7 @@ full voxel in the other two directions.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -262,6 +244,7 @@ full voxel in the other two directions.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -283,6 +266,7 @@ full voxel in the other two directions.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -313,6 +297,7 @@ full voxel in the other two directions.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -341,6 +326,7 @@ full voxel in the other two directions.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -362,6 +348,7 @@ full voxel in the other two directions.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -381,6 +368,7 @@ full voxel in the other two directions.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -402,6 +390,7 @@ full voxel in the other two directions.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -419,6 +408,7 @@ full voxel in the other two directions.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -445,8 +435,8 @@ full voxel in the other two directions.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>3D cells take on the averaged values within a search radius, weighted inversely by distance.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> 3D cells take on the averaged values within a search radius, weighted inversely by distance.</p>
 <p>Weighting can be controlled using the power and slope properties;</p>
 <p>weighting = 1 / (distance^wtpower + 1/slope) where distance is in
 units of grid cells (X dimenstion). Default is 0.0,</p>
@@ -488,8 +478,8 @@ LOG_NEGATIVE: One of <a class="reference internal" href="GXVV.html#geosoft.gxapi
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.5.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>You must begin by calling <a class="reference internal" href="#geosoft.gxapi.GXVOX.init_generate_by_subset_pg" title="geosoft.gxapi.GXVOX.init_generate_by_subset_pg"><code class="xref py py-obj docutils literal"><span class="pre">init_generate_by_subset_pg</span></code></a> and add data using <a class="reference internal" href="#geosoft.gxapi.GXVOX.add_generate_by_subset_pg" title="geosoft.gxapi.GXVOX.add_generate_by_subset_pg"><code class="xref py py-obj docutils literal"><span class="pre">add_generate_by_subset_pg</span></code></a>.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> You must begin by calling <a class="reference internal" href="#geosoft.gxapi.GXVOX.init_generate_by_subset_pg" title="geosoft.gxapi.GXVOX.init_generate_by_subset_pg"><code class="xref py py-obj docutils literal"><span class="pre">init_generate_by_subset_pg</span></code></a> and add data using <a class="reference internal" href="#geosoft.gxapi.GXVOX.add_generate_by_subset_pg" title="geosoft.gxapi.GXVOX.add_generate_by_subset_pg"><code class="xref py py-obj docutils literal"><span class="pre">add_generate_by_subset_pg</span></code></a>.</p>
 </dd></dl>
 
 <dl class="method">
@@ -516,8 +506,8 @@ LOG_NEGATIVE: One of <a class="reference internal" href="GXVV.html#geosoft.gxapi
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The database lines contain a slice of the voxel at a time.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The database lines contain a slice of the voxel at a time.</p>
 </dd></dl>
 
 <dl class="method">
@@ -539,6 +529,7 @@ LOG_NEGATIVE: One of <a class="reference internal" href="GXVV.html#geosoft.gxapi
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -560,6 +551,7 @@ LOG_NEGATIVE: One of <a class="reference internal" href="GXVV.html#geosoft.gxapi
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -581,6 +573,7 @@ LOG_NEGATIVE: One of <a class="reference internal" href="GXVV.html#geosoft.gxapi
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.5.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -607,8 +600,8 @@ LOG_NEGATIVE: One of <a class="reference internal" href="GXVV.html#geosoft.gxapi
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.3.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>If the cell size is not specified, then:
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> If the cell size is not specified, then:
 1. If the cell sizes are uniform in a given direction, that size is used
 2. If the cell sizes are variable in a given direction, then the smallest size is used</p>
 </dd></dl>
@@ -633,6 +626,7 @@ LOG_NEGATIVE: One of <a class="reference internal" href="GXVV.html#geosoft.gxapi
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -658,6 +652,7 @@ LOG_NEGATIVE: One of <a class="reference internal" href="GXVV.html#geosoft.gxapi
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -682,6 +677,7 @@ LOG_NEGATIVE: One of <a class="reference internal" href="GXVV.html#geosoft.gxapi
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -721,6 +717,7 @@ LOG_NEGATIVE: One of <a class="reference internal" href="GXVV.html#geosoft.gxapi
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -757,6 +754,7 @@ LOG_NEGATIVE: One of <a class="reference internal" href="GXVV.html#geosoft.gxapi
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -779,6 +777,7 @@ LOG_NEGATIVE: One of <a class="reference internal" href="GXVV.html#geosoft.gxapi
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -807,6 +806,7 @@ LOG_NEGATIVE: One of <a class="reference internal" href="GXVV.html#geosoft.gxapi
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -836,8 +836,8 @@ LOG_NEGATIVE: One of <a class="reference internal" href="GXVV.html#geosoft.gxapi
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Allows the Orientation flag to be specified.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Allows the Orientation flag to be specified.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -873,6 +873,7 @@ LOG_NEGATIVE: One of <a class="reference internal" href="GXVV.html#geosoft.gxapi
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -908,8 +909,8 @@ LOG_NEGATIVE: One of <a class="reference internal" href="GXVV.html#geosoft.gxapi
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The input cell size VVs&#8217; lengths must match the input <a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal"><span class="pre">GXPG</span></code></a> dimensions.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The input cell size VVs&#8217; lengths must match the input <a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal"><span class="pre">GXPG</span></code></a> dimensions.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -940,6 +941,7 @@ LOG_NEGATIVE: One of <a class="reference internal" href="GXVV.html#geosoft.gxapi
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -967,6 +969,7 @@ LOG_NEGATIVE: One of <a class="reference internal" href="GXVV.html#geosoft.gxapi
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.5.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -990,6 +993,7 @@ LOG_NEGATIVE: One of <a class="reference internal" href="GXVV.html#geosoft.gxapi
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -1015,6 +1019,7 @@ LOG_NEGATIVE: One of <a class="reference internal" href="GXVV.html#geosoft.gxapi
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -1040,6 +1045,7 @@ LOG_NEGATIVE: One of <a class="reference internal" href="GXVV.html#geosoft.gxapi
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.1.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -1071,6 +1077,7 @@ LOG_NEGATIVE: One of <a class="reference internal" href="GXVV.html#geosoft.gxapi
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -1102,8 +1109,8 @@ LOG_NEGATIVE: One of <a class="reference internal" href="GXVV.html#geosoft.gxapi
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This is used for GOCAD voxel calculations, and begins with the
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> This is used for GOCAD voxel calculations, and begins with the
 origin at (0,0,0), not the actual location of the corner point.</p>
 </dd></dl>
 
@@ -1127,8 +1134,8 @@ origin at (0,0,0), not the actual location of the corner point.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.4.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This function determines default cell sizes for a vertical grid
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> This function determines default cell sizes for a vertical grid
 slicing a voxel. It tries to match the &#8220;X&#8221; and &#8220;Y&#8221; sizes (in the grid
 coordinates) with the projection of the voxel&#8217;s cells onto the grid
 plane. It uses a few simple rules:</p>
@@ -1166,6 +1173,7 @@ The grid&#8217;s &#8220;Y&#8221; cell size is set to the voxel&#8217;s minimum &
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -1183,6 +1191,7 @@ The grid&#8217;s &#8220;Y&#8221; cell size is set to the voxel&#8217;s minimum &
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -1208,8 +1217,8 @@ The grid&#8217;s &#8220;Y&#8221; cell size is set to the voxel&#8217;s minimum &
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.4.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Find the non-dummy volume of a <a class="reference internal" href="#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal"><span class="pre">GXVOX</span></code></a> object. If the voxel is all dummies,
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Find the non-dummy volume of a <a class="reference internal" href="#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal"><span class="pre">GXVOX</span></code></a> object. If the voxel is all dummies,
 returns <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.iMAX" title="geosoft.gxapi.iMAX"><code class="xref py py-obj docutils literal"><span class="pre">iMAX</span></code></a> for the minima, and <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.iMIN" title="geosoft.gxapi.iMIN"><code class="xref py py-obj docutils literal"><span class="pre">iMIN</span></code></a> for the maxima.</p>
 </dd></dl>
 
@@ -1236,8 +1245,8 @@ returns <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.iMAX" t
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.4.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Find the non-dummy volume of a <a class="reference internal" href="#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal"><span class="pre">GXVOX</span></code></a> in true (X, Y, Z). This method
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Find the non-dummy volume of a <a class="reference internal" href="#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal"><span class="pre">GXVOX</span></code></a> in true (X, Y, Z). This method
 works for voxels which are rotated or oriented in 3D, and returns
 the true min and max X, Y and Z limits in the data.
 The bounds are the bounds for the voxel
@@ -1268,6 +1277,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rMAX" t
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -1290,6 +1300,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rMAX" t
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -1307,6 +1318,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rMAX" t
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1328,6 +1340,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rMAX" t
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -1353,6 +1366,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rMAX" t
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -1372,6 +1386,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rMAX" t
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -1389,8 +1404,8 @@ returns <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rMAX" t
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Each row in the <a class="reference internal" href="GXTPAT.html#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT"><code class="xref py py-obj docutils literal"><span class="pre">GXTPAT</span></code></a> object corresponds to a stored index
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Each row in the <a class="reference internal" href="GXTPAT.html#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT"><code class="xref py py-obj docutils literal"><span class="pre">GXTPAT</span></code></a> object corresponds to a stored index
 value in the thematic voxel. The <a class="reference internal" href="GXTPAT.html#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT"><code class="xref py py-obj docutils literal"><span class="pre">GXTPAT</span></code></a> should NOT be modified
 by the addition or deletion of items, if it is to be
 restored into the <a class="reference internal" href="#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal"><span class="pre">GXVOX</span></code></a> object, but the CODE, LABEL, DESCRIPTION
@@ -1440,6 +1455,7 @@ The <a class="reference internal" href="GXTPAT.html#geosoft.gxapi.GXTPAT" title=
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1485,6 +1501,7 @@ The <a class="reference internal" href="GXTPAT.html#geosoft.gxapi.GXTPAT" title=
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.4.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1535,6 +1552,7 @@ The <a class="reference internal" href="GXTPAT.html#geosoft.gxapi.GXTPAT" title=
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.4.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1564,8 +1582,8 @@ The <a class="reference internal" href="GXTPAT.html#geosoft.gxapi.GXTPAT" title=
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.5.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Call <a class="reference internal" href="#geosoft.gxapi.GXVOX.init_generate_by_subset_pg" title="geosoft.gxapi.GXVOX.init_generate_by_subset_pg"><code class="xref py py-obj docutils literal"><span class="pre">init_generate_by_subset_pg</span></code></a> first, then add a series of subset PGs using <a class="reference internal" href="#geosoft.gxapi.GXVOX.add_generate_by_subset_pg" title="geosoft.gxapi.GXVOX.add_generate_by_subset_pg"><code class="xref py py-obj docutils literal"><span class="pre">add_generate_by_subset_pg</span></code></a>, and finally
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Call <a class="reference internal" href="#geosoft.gxapi.GXVOX.init_generate_by_subset_pg" title="geosoft.gxapi.GXVOX.init_generate_by_subset_pg"><code class="xref py py-obj docutils literal"><span class="pre">init_generate_by_subset_pg</span></code></a> first, then add a series of subset PGs using <a class="reference internal" href="#geosoft.gxapi.GXVOX.add_generate_by_subset_pg" title="geosoft.gxapi.GXVOX.add_generate_by_subset_pg"><code class="xref py py-obj docutils literal"><span class="pre">add_generate_by_subset_pg</span></code></a>, and finally
 serialize using <a class="reference internal" href="#geosoft.gxapi.GXVOX.end_generate_by_subset_pg" title="geosoft.gxapi.GXVOX.end_generate_by_subset_pg"><code class="xref py py-obj docutils literal"><span class="pre">end_generate_by_subset_pg</span></code></a></p>
 </dd></dl>
 
@@ -1584,17 +1602,20 @@ serialize using <a class="reference internal" href="#geosoft.gxapi.GXVOX.end_gen
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOX.is_null">
 <code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVOX.is_null" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if the instance of <code class="xref py py-obj docutils literal"><span class="pre">GXVOX</span></code> is null (undefined)`</p>
+<dd><p>Check if this is a null (undefined) instance</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXVOX</span></code>, False otherwise.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
@@ -1617,8 +1638,8 @@ serialize using <a class="reference internal" href="#geosoft.gxapi.GXVOX.end_gen
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>A thematic voxel is one where the stored integer values
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> A thematic voxel is one where the stored integer values
 represent indices into an internally stored <a class="reference internal" href="GXTPAT.html#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT"><code class="xref py py-obj docutils literal"><span class="pre">GXTPAT</span></code></a> object.
 Thematic voxels contain their own color definitions, and
 normal numerical operations, such as applying ITRs for display,
@@ -1642,8 +1663,8 @@ are not valid.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.2.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>A vector voxel is one where each data element consists of 3 4-byte float values.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> A vector voxel is one where each data element consists of 3 4-byte float values.
 Vector voxels normally have the file type &#8220;geosoft_vectorvoxel&#8221;.</p>
 </dd></dl>
 
@@ -1677,8 +1698,8 @@ Vector voxels normally have the file type &#8220;geosoft_vectorvoxel&#8221;.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.2.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Optional Parameters.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Optional Parameters.</p>
 <p>If these values are not set in the <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a>, then default parameters will be used.</p>
 <p>ERROR_VOXEL:            Name of error <a class="reference internal" href="#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal"><span class="pre">GXVOX</span></code></a> (&#8220;&#8221; for none)
 CELLSIZEZ:      Z Cell size string (space delimited, &#8220;&#8221; for default)
@@ -1727,6 +1748,7 @@ basic parameters are entered directly. Optional parameters are passed via a <a c
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1779,6 +1801,7 @@ basic parameters are entered directly. Optional parameters are passed via a <a c
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.2.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1810,8 +1833,8 @@ basic parameters are entered directly. Optional parameters are passed via a <a c
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The input voxels must all be of the same type.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The input voxels must all be of the same type.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1834,6 +1857,7 @@ basic parameters are entered directly. Optional parameters are passed via a <a c
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1867,17 +1891,20 @@ basic parameters are entered directly. Optional parameters are passed via a <a c
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXVOX.null">
 <em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVOX.null" title="Permalink to this definition">¶</a></dt>
-<dd><p>A null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXVOX</span></code></p>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal"><span class="pre">GXVOX</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <code class="xref py py-obj docutils literal"><span class="pre">GXVOX</span></code></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal"><span class="pre">GXVOX</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX">GXVOX</a></td>
 </tr>
 </tbody>
 </table>
@@ -1903,6 +1930,7 @@ basic parameters are entered directly. Optional parameters are passed via a <a c
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -1941,8 +1969,8 @@ basic parameters are entered directly. Optional parameters are passed via a <a c
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Creates and dummies a <a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal"><span class="pre">GXPG</span></code></a> object based on the input
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Creates and dummies a <a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal"><span class="pre">GXPG</span></code></a> object based on the input
 dimensions, then resamples the voxel to the pager
 at the locations determined by input projection, origin and spacings.</p>
 </dd></dl>
@@ -1962,8 +1990,8 @@ at the locations determined by input projection, origin and spacings.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.3.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This is useful, for instance for converting sizes in one
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> This is useful, for instance for converting sizes in one
 unit to sizes in another unit if changing the projection
 and the projection&#8217;s unit changes, since the voxel inherits
 its projection&#8217;s units.</p>
@@ -1995,8 +2023,8 @@ its projection&#8217;s units.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.2.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>A &#8220;CDI&#8221; database does not need to be conductivity/depth.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> A &#8220;CDI&#8221; database does not need to be conductivity/depth.
 It normally contains an array channel of depth values for
 each (X, Y) location, with corresponding data array channels of
 values taken at those (X, Y, Z) locations.
@@ -2032,6 +2060,7 @@ writing the elevation of the first non-dummy item to a topography channel.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.2.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -2056,8 +2085,8 @@ writing the elevation of the first non-dummy item to a topography channel.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.2.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Sample at voxel at XYZ locations input in VVs. Values returned in a <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a>.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Sample at voxel at XYZ locations input in VVs. Values returned in a <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a>.</p>
 </dd></dl>
 
 <dl class="method">
@@ -2087,6 +2116,7 @@ writing the elevation of the first non-dummy item to a topography channel.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.1.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -2104,6 +2134,7 @@ writing the elevation of the first non-dummy item to a topography channel.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -2129,6 +2160,7 @@ writing the elevation of the first non-dummy item to a topography channel.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -2146,6 +2178,7 @@ writing the elevation of the first non-dummy item to a topography channel.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -2169,6 +2202,7 @@ writing the elevation of the first non-dummy item to a topography channel.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.1.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -2194,6 +2228,7 @@ writing the elevation of the first non-dummy item to a topography channel.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -2211,8 +2246,8 @@ writing the elevation of the first non-dummy item to a topography channel.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Each row in the <a class="reference internal" href="GXTPAT.html#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT"><code class="xref py py-obj docutils literal"><span class="pre">GXTPAT</span></code></a> object corresponds to a stored index
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Each row in the <a class="reference internal" href="GXTPAT.html#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT"><code class="xref py py-obj docutils literal"><span class="pre">GXTPAT</span></code></a> object corresponds to a stored index
 value in the thematic voxel. The <a class="reference internal" href="GXTPAT.html#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT"><code class="xref py py-obj docutils literal"><span class="pre">GXTPAT</span></code></a> should NOT be modified
 by the addition or deletion of items, if it is to be
 restored into the <a class="reference internal" href="#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal"><span class="pre">GXVOX</span></code></a> object, but the CODE, LABEL, DESCRIPTION
@@ -2246,6 +2281,7 @@ The <a class="reference internal" href="GXTPAT.html#geosoft.gxapi.GXTPAT" title=
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -2277,6 +2313,7 @@ The <a class="reference internal" href="GXTPAT.html#geosoft.gxapi.GXTPAT" title=
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -2294,6 +2331,7 @@ The <a class="reference internal" href="GXTPAT.html#geosoft.gxapi.GXTPAT" title=
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -2311,6 +2349,7 @@ The <a class="reference internal" href="GXTPAT.html#geosoft.gxapi.GXTPAT" title=
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -2339,8 +2378,8 @@ The <a class="reference internal" href="GXTPAT.html#geosoft.gxapi.GXTPAT" title=
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.5.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Designed for data in array channels position vertically at single XY locations.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Designed for data in array channels position vertically at single XY locations.
 Creates a <a class="reference internal" href="GXTIN.html#geosoft.gxapi.GXTIN" title="geosoft.gxapi.GXTIN"><code class="xref py py-obj docutils literal"><span class="pre">GXTIN</span></code></a> using the XY locations and uses the coefficients for the top layer on
 each layer below to make it efficient.</p>
 <p><a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> Parameters:</p>
@@ -2372,8 +2411,8 @@ DZ and NZ are used only if the input cell sizes <a class="reference internal" hr
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.3.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The voxel is windowed horizontally to the input <a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal"><span class="pre">GXPLY</span></code></a> file.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The voxel is windowed horizontally to the input <a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal"><span class="pre">GXPLY</span></code></a> file.
 Optionally, it will be windowed to the input Z range as well.
 The output can be clipped to the non-dummied cells.</p>
 </dd></dl>
@@ -2403,8 +2442,8 @@ The output can be clipped to the non-dummied cells.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.3.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The six minima and maxima are optional.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The six minima and maxima are optional.
 The output can be clipped to the non-dummied cells.</p>
 </dd></dl>
 
@@ -2423,6 +2462,7 @@ The output can be clipped to the non-dummied cells.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 </dd></dl>
@@ -2825,14 +2865,7 @@ The output can be clipped to the non-dummied cells.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="GXVOXD.html" title="GXVOXD class"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="GXVM.html" title="GXVM class"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" >GX API Class/Library Reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 

@@ -27,8 +27,6 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="geosoft.gxpy.va submodule" href="geosoft.gxpy.va.html" />
-    <link rel="prev" title="geosoft.gxpy.system submodule" href="geosoft.gxpy.system.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -44,31 +42,11 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="geosoft.gxpy.va.html" title="geosoft.gxpy.va submodule"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="geosoft.gxpy.system.html" title="geosoft.gxpy.system submodule"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxpy.html" accesskey="U">gxpy modules reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Introduction</a></li>
-    <li><a href="geosoft.gxpy.html">gxpy modules reference</a></li>
-</ul>
-<h3>Previous Topic</h3>
-<ul>
-    <li><a href="geosoft.gxpy.system.html" title="previous chapter">geosoft.gxpy.system submodule</a></li>
-</ul>
-<h3>Next Topic</h3>
-<ul>
-    <li><a href="geosoft.gxpy.va.html" title="next chapter">geosoft.gxpy.va submodule</a></li>
-</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -101,14 +79,6 @@
 <p class="first admonition-title">Note</p>
 <p class="last">Regression tests provide usage examples: <a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_utility.py">Tests</a></p>
 </div>
-<dl class="class">
-<dt id="geosoft.gxpy.utility.Property_tree">
-<em class="property">class </em><code class="descname">Property_tree</code><a class="headerlink" href="#geosoft.gxpy.utility.Property_tree" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-<p>Class to work with property trees, supporting serialization to things
-like XML.</p>
-</dd></dl>
-
 <dl class="exception">
 <dt id="geosoft.gxpy.utility.UtilityException">
 <em class="property">exception </em><code class="descname">UtilityException</code><a class="headerlink" href="#geosoft.gxpy.utility.UtilityException" title="Permalink to this definition">¶</a></dt>
@@ -933,6 +903,39 @@ This is a companion file to run_external_python().</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="geosoft.gxpy.utility.url_retrieve">
+<code class="descname">url_retrieve</code><span class="sig-paren">(</span><em>url</em>, <em>filename=None</em>, <em>overwrite=False</em>, <em>reporthook=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.url_retrieve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a URL resource as a file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>url</strong> &#8211; name of the URL resource</li>
+<li><strong>filename</strong> &#8211; name of file in which to place the resource, default is the resource base name.</li>
+<li><strong>overwrite</strong> &#8211; True to overwrite an existing file.  Default is False, in which case if the file
+exists the filename is returned.</li>
+<li><strong>reporthook</strong> &#8211; a hook function that will be called once on establishment of the network connection
+and once after each block read thereafter. The hook will be passed three arguments;
+a count of blocks transferred so far, a block size in bytes, and the total size of the file.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">filename of the file that is created.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference external" href="https://docs.python.org/3.6/library/urllib.request.html#urllib.request.urlretrieve">https://docs.python.org/3.6/library/urllib.request.html#urllib.request.urlretrieve</a></p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
 <dt id="geosoft.gxpy.utility.uuid">
 <code class="descname">uuid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.uuid" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
@@ -1032,14 +1035,7 @@ This is a companion file to run_external_python().</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="geosoft.gxpy.va.html" title="geosoft.gxpy.va submodule"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="geosoft.gxpy.system.html" title="geosoft.gxpy.system submodule"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxpy.html" >gxpy modules reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 

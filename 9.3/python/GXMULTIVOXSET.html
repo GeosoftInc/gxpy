@@ -27,8 +27,6 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="GXMVG class" href="GXMVG.html" />
-    <link rel="prev" title="GXMSTK class" href="GXMSTK.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -44,14 +42,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="GXMVG.html" title="GXMVG class"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="GXMSTK.html" title="GXMSTK class"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" accesskey="U">GX API Class/Library Reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -68,19 +59,6 @@
 </li>
 </ul>
 
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Introduction</a></li>
-    <li><a href="geosoft.gxapi.classes.html">GX API Class/Library Reference</a></li>
-</ul>
-<h3>Previous Topic</h3>
-<ul>
-    <li><a href="GXMSTK.html" title="previous chapter">GXMSTK class</a></li>
-</ul>
-<h3>Next Topic</h3>
-<ul>
-    <li><a href="GXMVG.html" title="next chapter">GXMVG class</a></li>
-</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -110,7 +88,7 @@
 <span id="gxmultivoxset"></span><h1>GXMULTIVOXSET class<a class="headerlink" href="#gxmultivoxset-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXMULTIVOXSET">
-<em class="property">class </em><code class="descname">GXMULTIVOXSET</code><span class="sig-paren">(</span><em>wrapper=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">GXMULTIVOXSET</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXMULTIVOXSET class.</p>
 <p>High Performance 3D Grid.</p>
 <dl class="classmethod">
@@ -132,6 +110,7 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -163,8 +142,8 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Compute a default cell size for a voxel given a data range.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Compute a default cell size for a voxel given a data range.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -182,7 +161,7 @@
 <li><strong>out_file_name</strong> (<em>str</em>) &#8211; Output Vector Voxel file</li>
 <li><strong>inclination</strong> (<em>float</em>) &#8211; Inclination</li>
 <li><strong>declination</strong> (<em>float</em>) &#8211; Declination</li>
-<li><strong>rotated</strong> (<em>int</em>) &#8211; Rotated ? (0/1)</li>
+<li><strong>rotated</strong> (<em>bool</em>) &#8211; Rotated?</li>
 </ul>
 </td>
 </tr>
@@ -191,11 +170,12 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXMULTIVOXSET.convert_vector_to_double">
-<em class="property">classmethod </em><code class="descname">convert_vector_to_double</code><span class="sig-paren">(</span><em>file_name</em>, <em>x_file_name</em>, <em>y_file_name</em>, <em>z_file_name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.convert_vector_to_double" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">convert_vector_to_double</code><span class="sig-paren">(</span><em>file_name</em>, <em>x_file_name</em>, <em>y_file_name</em>, <em>z_file_name</em>, <em>rotated</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.convert_vector_to_double" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a Vector Voxel to 3 double Voxels</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -206,6 +186,7 @@
 <li><strong>x_file_name</strong> (<em>str</em>) &#8211; Output X Voxel file</li>
 <li><strong>y_file_name</strong> (<em>str</em>) &#8211; Output Y Voxel file</li>
 <li><strong>z_file_name</strong> (<em>str</em>) &#8211; Output Z Voxel file</li>
+<li><strong>rotated</strong> (<em>bool</em>) &#8211; Rotated?</li>
 </ul>
 </td>
 </tr>
@@ -214,6 +195,7 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -245,6 +227,7 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -273,6 +256,7 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -304,6 +288,7 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -332,6 +317,7 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -365,6 +351,7 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -395,6 +382,7 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -409,10 +397,10 @@
 <li><strong>voxel_file</strong> (<em>str</em>) &#8211; Input Voxel file</li>
 <li><strong>binary_file</strong> (<em>str</em>) &#8211; Binary file to write to</li>
 <li><strong>dir</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#direction3d"><span class="std std-ref">DIRECTION3D constants</span></a></li>
-<li><strong>rev_x</strong> (<em>int</em>) &#8211; Reverse X ? (0/1)</li>
-<li><strong>rev_y</strong> (<em>int</em>) &#8211; Reverse Y ? (0/1)</li>
-<li><strong>rev_z</strong> (<em>int</em>) &#8211; Reverse Z ? (0/1)</li>
-<li><strong>swap</strong> (<em>int</em>) &#8211; Swap Bytes ? (0/1)</li>
+<li><strong>rev_x</strong> (<em>bool</em>) &#8211; Reverse X?</li>
+<li><strong>rev_y</strong> (<em>bool</em>) &#8211; Reverse Y?</li>
+<li><strong>rev_z</strong> (<em>bool</em>) &#8211; Reverse Z?</li>
+<li><strong>swap</strong> (<em>bool</em>) &#8211; Swap Bytes?</li>
 <li><strong>output_type</strong> (<em>int</em>) &#8211; Output Type (Geosoft Type)</li>
 </ul>
 </td>
@@ -422,6 +410,7 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -437,10 +426,10 @@
 <li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database</li>
 <li><strong>chan</strong> (<em>str</em>) &#8211; Channel Name</li>
 <li><strong>dir</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#direction3d"><span class="std std-ref">DIRECTION3D constants</span></a></li>
-<li><strong>rev_x</strong> (<em>int</em>) &#8211; Reverse X ? (0/1)</li>
-<li><strong>rev_y</strong> (<em>int</em>) &#8211; Reverse Y ? (0/1)</li>
-<li><strong>rev_z</strong> (<em>int</em>) &#8211; Reverse Z ? (0/1)</li>
-<li><strong>dummies</strong> (<em>int</em>) &#8211; Write Dummies? (0/1)</li>
+<li><strong>rev_x</strong> (<em>bool</em>) &#8211; Reverse X?</li>
+<li><strong>rev_y</strong> (<em>bool</em>) &#8211; Reverse Y?</li>
+<li><strong>rev_z</strong> (<em>bool</em>) &#8211; Reverse Z?</li>
+<li><strong>dummies</strong> (<em>bool</em>) &#8211; Write Dummies?</li>
 </ul>
 </td>
 </tr>
@@ -449,6 +438,7 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -472,6 +462,7 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -495,6 +486,7 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -509,9 +501,9 @@
 <li><strong>file_name</strong> (<em>str</em>) &#8211; Input Voxel file</li>
 <li><strong>wa</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><em>GXWA</em></a>) &#8211; <a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal"><span class="pre">GXWA</span></code></a> File</li>
 <li><strong>dir</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#direction3d"><span class="std std-ref">DIRECTION3D constants</span></a></li>
-<li><strong>rev_x</strong> (<em>int</em>) &#8211; Reverse X ? (0/1)</li>
-<li><strong>rev_y</strong> (<em>int</em>) &#8211; Reverse Y ? (0/1)</li>
-<li><strong>rev_z</strong> (<em>int</em>) &#8211; Reverse Z ? (0/1)</li>
+<li><strong>rev_x</strong> (<em>bool</em>) &#8211; Reverse X?</li>
+<li><strong>rev_y</strong> (<em>bool</em>) &#8211; Reverse Y?</li>
+<li><strong>rev_z</strong> (<em>bool</em>) &#8211; Reverse Z?</li>
 <li><strong>dummy</strong> (<em>str</em>) &#8211; The Dummy string to write</li>
 </ul>
 </td>
@@ -521,6 +513,7 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -542,6 +535,7 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -556,10 +550,10 @@
 <li><strong>voxel_file</strong> (<em>str</em>) &#8211; Input Voxel file</li>
 <li><strong>xyz</strong> (<em>str</em>) &#8211; File Name</li>
 <li><strong>dir</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#direction3d"><span class="std std-ref">DIRECTION3D constants</span></a></li>
-<li><strong>rev_x</strong> (<em>int</em>) &#8211; Reverse X ? (0/1)</li>
-<li><strong>rev_y</strong> (<em>int</em>) &#8211; Reverse Y ? (0/1)</li>
-<li><strong>rev_z</strong> (<em>int</em>) &#8211; Reverse Z ? (0/1)</li>
-<li><strong>dummies</strong> (<em>int</em>) &#8211; Write Dummies? (0/1)</li>
+<li><strong>rev_x</strong> (<em>bool</em>) &#8211; Reverse X?</li>
+<li><strong>rev_y</strong> (<em>bool</em>) &#8211; Reverse Y?</li>
+<li><strong>rev_z</strong> (<em>bool</em>) &#8211; Reverse Z?</li>
+<li><strong>dummies</strong> (<em>bool</em>) &#8211; Write Dummies?</li>
 </ul>
 </td>
 </tr>
@@ -568,6 +562,7 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -593,6 +588,7 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -628,8 +624,8 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The Z and Data channels may be array channels. If they are, the array sizes must match.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The Z and Data channels may be array channels. If they are, the array sizes must match.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -653,8 +649,8 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Create a Geosoft Voxel file from a Datamine block model file.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Create a Geosoft Voxel file from a Datamine block model file.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -677,6 +673,7 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -700,6 +697,7 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -724,6 +722,7 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -751,6 +750,7 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -774,6 +774,7 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -797,17 +798,20 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMULTIVOXSET.is_null">
 <code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.is_null" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if the instance of <code class="xref py py-obj docutils literal"><span class="pre">GXMULTIVOXSET</span></code> is null (undefined)`</p>
+<dd><p>Check if this is a null (undefined) instance</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXMULTIVOXSET</span></code>, False otherwise.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
@@ -832,17 +836,20 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXMULTIVOXSET.null">
 <em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIVOXSET.null" title="Permalink to this definition">¶</a></dt>
-<dd><p>A null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXMULTIVOXSET</span></code></p>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXMULTIVOXSET" title="geosoft.gxapi.GXMULTIVOXSET"><code class="xref py py-obj docutils literal"><span class="pre">GXMULTIVOXSET</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <code class="xref py py-obj docutils literal"><span class="pre">GXMULTIVOXSET</span></code></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXMULTIVOXSET" title="geosoft.gxapi.GXMULTIVOXSET"><code class="xref py py-obj docutils literal"><span class="pre">GXMULTIVOXSET</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXMULTIVOXSET" title="geosoft.gxapi.GXMULTIVOXSET">GXMULTIVOXSET</a></td>
 </tr>
 </tbody>
 </table>
@@ -1137,14 +1144,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="GXMVG.html" title="GXMVG class"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="GXMSTK.html" title="GXMSTK class"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" >GX API Class/Library Reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 

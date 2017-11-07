@@ -27,8 +27,6 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="geosoft.gxpy.gx submodule" href="geosoft.gxpy.gx.html" />
-    <link rel="prev" title="geosoft.gxpy.grid submodule" href="geosoft.gxpy.grid.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -44,31 +42,11 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="geosoft.gxpy.gx.html" title="geosoft.gxpy.gx submodule"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="geosoft.gxpy.grid.html" title="geosoft.gxpy.grid submodule"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxpy.html" accesskey="U">gxpy modules reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Introduction</a></li>
-    <li><a href="geosoft.gxpy.html">gxpy modules reference</a></li>
-</ul>
-<h3>Previous Topic</h3>
-<ul>
-    <li><a href="geosoft.gxpy.grid.html" title="previous chapter">geosoft.gxpy.grid submodule</a></li>
-</ul>
-<h3>Next Topic</h3>
-<ul>
-    <li><a href="geosoft.gxpy.gx.html" title="next chapter">geosoft.gxpy.gx submodule</a></li>
-</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -1103,7 +1081,7 @@ within the 3D view.</p>
 <dl class="method">
 <dt id="geosoft.gxpy.group.Draw_3d.polydata_3d">
 <code class="descname">polydata_3d</code><span class="sig-paren">(</span><em>data</em>, <em>render_info_func=None</em>, <em>passback=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Draw_3d.polydata_3d" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create 3D objects rendered by the data.</p>
+<dd><p>Create 3D objects rendered using data attributes.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1115,16 +1093,16 @@ within the 3D view.</p>
 <span class="pre">geometry,</span> <span class="pre">color_integer,</span> <span class="pre">attibute)</span></code>:</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="35%" />
-<col width="15%" />
-<col width="29%" />
-<col width="21%" />
+<col width="36%" />
+<col width="16%" />
+<col width="30%" />
+<col width="18%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Symbol</th>
 <th class="head">Geometry</th>
 <th class="head">Color</th>
-<th class="head">Attributes</th>
+<th class="head">Attribute</th>
 </tr>
 </thead>
 <tbody valign="top">
@@ -1146,7 +1124,7 @@ within the 3D view.</p>
 <tr class="row-odd"><td>SYMBOL_3D_CONE</td>
 <td>Point2</td>
 <td>Color.int_value</td>
-<td>base_radius</td>
+<td>radius</td>
 </tr>
 </tbody>
 </table>
@@ -1676,9 +1654,11 @@ are scaled to cm.  Typically you will pass <a class="reference internal" href="g
 <dt id="geosoft.gxpy.group.Pen.from_mapplot_string">
 <em class="property">classmethod </em><code class="descname">from_mapplot_string</code><span class="sig-paren">(</span><em>cstr</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Pen.from_mapplot_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a <a class="reference internal" href="#geosoft.gxpy.group.Pen" title="geosoft.gxpy.group.Pen"><code class="xref py py-class docutils literal"><span class="pre">Pen</span></code></a> instance from a mapplot-style string descriptor using either a
-rgbRGB or cmyCMY color model.  Lower case letters indicate line color, uppercase
+krgbKRGB or kcmyKCMY color model.  Lower case letters indicate line color, uppercase
 indicates fill color, &#8216;k&#8217;, &#8216;K&#8217; for black.  Each letter may be followed by an intensity
 between 0 and 255.  If an intensity is not specified 255 is assumed.</p>
+<p>Line thinckness can be defined by &#8216;t&#8217; followed by a thickness in 1000&#8217;th of the view unit,
+which for the default &#8216;base&#8217; view would be microns.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1709,6 +1689,9 @@ between 0 and 255.  If an intensity is not specified 255 is assumed.</p>
 </tr>
 <tr class="row-odd"><td>&#8216;c64K96&#8217;</td>
 <td>light cyan line, light-grey fill</td>
+</tr>
+<tr class="row-even"><td>&#8216;bt500&#8217;</td>
+<td>blue line, 0.5 units thick</td>
 </tr>
 </tbody>
 </table>
@@ -1972,8 +1955,7 @@ are scaled to cm.</li>
 <dl class="attribute">
 <dt id="geosoft.gxpy.group.Text_def.mapplot_string">
 <code class="descname">mapplot_string</code><a class="headerlink" href="#geosoft.gxpy.group.Text_def.mapplot_string" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a text definition for mapplot.
-:returns:</p>
+<dd><p>Mapplot text definition string.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -2135,7 +2117,7 @@ a shaded-color legend, provide the shaded color map here.</li>
 </pre></div>
 </div>
 </li>
-<li><strong>location</strong> &#8211; offset or (x, y) offset from view reference point, in cm.  The default is
+<li><strong>location</strong> &#8211; offset or (x, y) offset from <code class="xref py py-obj docutils literal"><span class="pre">bar_location</span></code> reference point, in cm.  The default is
 determined to center the bar off the location side specified.</li>
 <li><strong>decimals</strong> &#8211; annotation decimal places</li>
 <li><strong>annotation_height</strong> &#8211; annotation number height</li>
@@ -2214,14 +2196,7 @@ from <code class="xref py py-obj docutils literal"><span class="pre">cmap</span>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="geosoft.gxpy.gx.html" title="geosoft.gxpy.gx submodule"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="geosoft.gxpy.grid.html" title="geosoft.gxpy.grid submodule"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxpy.html" >gxpy modules reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 

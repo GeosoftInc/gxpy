@@ -27,8 +27,6 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="GXHGD class" href="GXHGD.html" />
-    <link rel="prev" title="GXGU class" href="GXGU.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -44,14 +42,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="GXHGD.html" title="GXHGD class"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="GXGU.html" title="GXGU class"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" accesskey="U">GX API Class/Library Reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -73,19 +64,6 @@
 </li>
 </ul>
 
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Introduction</a></li>
-    <li><a href="geosoft.gxapi.classes.html">GX API Class/Library Reference</a></li>
-</ul>
-<h3>Previous Topic</h3>
-<ul>
-    <li><a href="GXGU.html" title="previous chapter">GXGU class</a></li>
-</ul>
-<h3>Next Topic</h3>
-<ul>
-    <li><a href="GXHGD.html" title="next chapter">GXHGD class</a></li>
-</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -115,7 +93,7 @@
 <span id="gxgui"></span><h1>GXGUI class<a class="headerlink" href="#gxgui-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXGUI">
-<em class="property">class </em><code class="descname">GXGUI</code><span class="sig-paren">(</span><em>wrapper=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGUI" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">GXGUI</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGUI" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXGUI class.</p>
 <p>These are graphical functions that typically create a
 dialog-style window for a specific function. Examples include
@@ -147,6 +125,8 @@ file import wizards, and the Histogram and Scatter tools.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -175,8 +155,9 @@ file import wizards, and the Histogram and Scatter tools.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Color value is set on input, and new value returned.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Color value is set on input, and new value returned.
 If the input color type is <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.C_TRANSPARENT" title="geosoft.gxapi.C_TRANSPARENT"><code class="xref py py-obj docutils literal"><span class="pre">C_TRANSPARENT</span></code></a>, then the color
 is set to white, if any other type is input the output is
 guaranteed to be of the same type.</p>
@@ -213,8 +194,9 @@ to white (if &#8220;Ok&#8221; is selected) and no choice is offered.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The statistics object is required in order to determine
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> The statistics object is required in order to determine
 data ranges, percentiles, etc. Create it using
 <a class="reference internal" href="GXST.html#geosoft.gxapi.GXST.create_exact" title="geosoft.gxapi.GXST.create_exact"><code class="xref py py-obj docutils literal"><span class="pre">GXST.create_exact</span></code></a>, or be sure to enable histogram statistics.</p>
 </dd></dl>
@@ -248,8 +230,9 @@ data ranges, percentiles, etc. Create it using
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The statistics object is required in order to determine
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> The statistics object is required in order to determine
 data ranges, percentiles, etc. Create it using
 <a class="reference internal" href="GXST.html#geosoft.gxapi.GXST.create_exact" title="geosoft.gxapi.GXST.create_exact"><code class="xref py py-obj docutils literal"><span class="pre">GXST.create_exact</span></code></a>, or be sure to enable histogram statistics.
 The color transform file name is used as the default when the save
@@ -286,8 +269,9 @@ are pushed by the value input or selected by the user.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Launches the new GX.Net single-dialog coordinate system
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Launches the new GX.Net single-dialog coordinate system
 definition dialog. The input <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> is modified on return
 if OK is selected (and the editable parameter is 1).
 The &#8220;Data source label&#8221; and &#8220;Data source&#8221; is information displayed
@@ -331,8 +315,9 @@ in the dialog for the user to know where the <a class="reference internal" href=
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Same as <a class="reference internal" href="#geosoft.gxapi.GXGUI.coord_sys_wizard_licensed" title="geosoft.gxapi.GXGUI.coord_sys_wizard_licensed"><code class="xref py py-obj docutils literal"><span class="pre">coord_sys_wizard_licensed</span></code></a> but allows the original grid info to be adjusted
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Same as <a class="reference internal" href="#geosoft.gxapi.GXGUI.coord_sys_wizard_licensed" title="geosoft.gxapi.GXGUI.coord_sys_wizard_licensed"><code class="xref py py-obj docutils literal"><span class="pre">coord_sys_wizard_licensed</span></code></a> but allows the original grid info to be adjusted
 when projections on section or oriented plan grids are modified.
 In the tool, it is the &#8220;modified&#8221; orientation required to keep the edited projection&#8217;s grid
 in the same location as it was in the target projection.</p>
@@ -367,8 +352,9 @@ in the same location as it was in the target projection.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Same as <a class="reference internal" href="#geosoft.gxapi.GXGUI.coord_sys_wizard_licensed" title="geosoft.gxapi.GXGUI.coord_sys_wizard_licensed"><code class="xref py py-obj docutils literal"><span class="pre">coord_sys_wizard_licensed</span></code></a> but will always be editable. The other
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Same as <a class="reference internal" href="#geosoft.gxapi.GXGUI.coord_sys_wizard_licensed" title="geosoft.gxapi.GXGUI.coord_sys_wizard_licensed"><code class="xref py py-obj docutils literal"><span class="pre">coord_sys_wizard_licensed</span></code></a> but will always be editable. The other
 method is not editable in the viewer while this one is.</p>
 </dd></dl>
 
@@ -391,8 +377,9 @@ method is not editable in the viewer while this one is.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The object returned must be destroyed by the
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> The object returned must be destroyed by the
 destroy object call.</p>
 </dd></dl>
 
@@ -422,8 +409,9 @@ destroy object call.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a> values are interpreted as cumulative percent values, using
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> The <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a> values are interpreted as cumulative percent values, using
 the &#8220;PERCENT=1&#8221; value in the <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a>&#8216;s <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a>.</p>
 <p>Note that processes using ITRs do not automatically know to convert between
 percent values and &#8220;actual&#8221; data values. The <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> &#8220;PERCENT&#8221; value is simply
@@ -467,8 +455,9 @@ are pushed by the value input or selected by the user.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Remember to make the string size big enough for multiple file
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Remember to make the string size big enough for multiple file
 selections. In the case of multiple selections the names will be separated
 by a semicolon and only the first file will contain the full path.</p>
 </dd></dl>
@@ -503,8 +492,9 @@ by a semicolon and only the first file will contain the full path.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Remember to make the string size big enough for multiple file
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Remember to make the string size big enough for multiple file
 selections. In the case of multiple selections the names will be separated
 by a semicolon and only the first file will contain the full path.</p>
 <p>When using the multiple flag on any of these functions please be aware that
@@ -540,8 +530,9 @@ terminates on error</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>If the file extension is &#8220;mdb&#8221;, then an MSJET (Microsoft Access)
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> If the file extension is &#8220;mdb&#8221;, then an MSJET (Microsoft Access)
 database is assumed. If the file name is &#8220;ODBC&#8221;, then &#8220;ODBC&#8221; is
 returned as the type. Otherwise, a dialog appears listing the
 other valid DAO database types.</p>
@@ -567,8 +558,9 @@ other valid DAO database types.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Often, a Datamine file can be opened a number of different ways
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Often, a Datamine file can be opened a number of different ways
 (e.g. as a string file or a as wireframe (point) file.
 The following function checks to see if there is a choice to be made
 between types supported by Geosoft for import. If not, it just returns
@@ -610,8 +602,9 @@ may change during editing.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Only uses the current <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a>. This function does
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Only uses the current <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a>. This function does
 not exactly work as supposed to. Instead of using
 the <a class="reference internal" href="GXEDB.html#geosoft.gxapi.GXEDB" title="geosoft.gxapi.GXEDB"><code class="xref py py-obj docutils literal"><span class="pre">GXEDB</span></code></a> handle passed to it, it only will use
 the current <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal"><span class="pre">GXDB</span></code></a>. Please see ExportXYXTemplateEditorEx_GUI
@@ -646,6 +639,8 @@ may change during editing.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -667,6 +662,8 @@ may change during editing.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -688,8 +685,8 @@ may change during editing.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>For example, if &#8220;Database (<code class="docutils literal"><span class="pre">*.gdb</span></code>)&#8221; is input,
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> For example, if &#8220;Database (<code class="docutils literal"><span class="pre">*.gdb</span></code>)&#8221; is input,
 then the <a class="reference internal" href="#geosoft.gxapi.FILE_FILTER_GDB" title="geosoft.gxapi.FILE_FILTER_GDB"><code class="xref py py-obj docutils literal"><span class="pre">FILE_FILTER_GDB</span></code></a> value is returned.</p>
 </dd></dl>
 
@@ -719,8 +716,8 @@ then the <a class="reference internal" href="#geosoft.gxapi.FILE_FILTER_GDB" tit
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Runs the GCS Warning dialog with one data source</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Runs the GCS Warning dialog with one data source</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -750,8 +747,8 @@ then the <a class="reference internal" href="#geosoft.gxapi.FILE_FILTER_GDB" tit
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Runs the GCS Warning dialog with multiple data sources</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Runs the GCS Warning dialog with multiple data sources</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -781,8 +778,8 @@ then the <a class="reference internal" href="#geosoft.gxapi.FILE_FILTER_GDB" tit
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Runs the GCS Warning dialog with multiple data sources (Database)</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Runs the GCS Warning dialog with multiple data sources (Database)</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -816,8 +813,9 @@ then the <a class="reference internal" href="#geosoft.gxapi.FILE_FILTER_GDB" tit
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Remember to make the string size big enough for multiple file
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Remember to make the string size big enough for multiple file
 selections. In the case of multiple selections the names will be separated
 by a semicolon and only the first file will contain the full path.</p>
 <p>Defined Functions     The following four functions are handy defines and simply pass the appropriate
@@ -857,8 +855,9 @@ iMultiFileSave_GUI</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Depending on what is currently visible on screen and
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Depending on what is currently visible on screen and
 the defined coordinate system the user may be prompted
 by a warning and optionaly cancel the process.</p>
 </dd></dl>
@@ -894,8 +893,9 @@ by a warning and optionaly cancel the process.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Depending on what is currently visible on screen and
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Depending on what is currently visible on screen and
 the defined coordinate system the user may be prompted
 by a warning and optionaly cancel the process.</p>
 </dd></dl>
@@ -921,8 +921,9 @@ by a warning and optionaly cancel the process.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Returns the coordinates of the client window area (where MDI document windows are placed).
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Returns the coordinates of the client window area (where MDI document windows are placed).
 The returned coordinates are 0,0 for the minimum X and Y and the window width
 width and height for the maximum X and Y.</p>
 </dd></dl>
@@ -948,8 +949,8 @@ width and height for the maximum X and Y.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The default grid/image filters are normally stored in
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The default grid/image filters are normally stored in
 &#8220;MONTAJ.DEFAULT_XGD_IN&#8221; and &#8220;MONTAJ.DEFAULT_XGD_OUT&#8221;</p>
 <p>If no filter is defined, or the filter is not found
 then &#8220;grd&#8221; and &#8220;GRD&#8221; are returned as the default extension
@@ -978,8 +979,8 @@ and qualifier.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Returns the four parts of the file filter;
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Returns the four parts of the file filter;
 e.g. for <a class="reference internal" href="#geosoft.gxapi.FILE_FILTER_GDB" title="geosoft.gxapi.FILE_FILTER_GDB"><code class="xref py py-obj docutils literal"><span class="pre">FILE_FILTER_GDB</span></code></a> it returns:</p>
 <p>Filter:    &#8220;Database (<code class="docutils literal"><span class="pre">*.gdb</span></code>)&#8221;
 Mask:      &#8220;<code class="docutils literal"><span class="pre">*.gdb</span></code>&#8221;
@@ -1008,8 +1009,8 @@ file filters, especially in GX.Net functions.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Works along with the <a class="reference internal" href="#geosoft.gxapi.GXGUI.get_file_filter" title="geosoft.gxapi.GXGUI.get_file_filter"><code class="xref py py-obj docutils literal"><span class="pre">get_file_filter</span></code></a> function. Note that
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Works along with the <a class="reference internal" href="#geosoft.gxapi.GXGUI.get_file_filter" title="geosoft.gxapi.GXGUI.get_file_filter"><code class="xref py py-obj docutils literal"><span class="pre">get_file_filter</span></code></a> function. Note that
 most values of FILE_FILTER_XXX will return <a class="reference internal" href="#geosoft.gxapi.GS_DIRECTORY_NONE" title="geosoft.gxapi.GS_DIRECTORY_NONE"><code class="xref py py-obj docutils literal"><span class="pre">GS_DIRECTORY_NONE</span></code></a>,
 and give the current workspace directory.</p>
 <p>This function is useful for constuction open/save dialog
@@ -1033,6 +1034,8 @@ file filters, especially in GX.Net functions.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1050,6 +1053,8 @@ file filters, especially in GX.Net functions.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1074,6 +1079,8 @@ file filters, especially in GX.Net functions.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1093,6 +1100,8 @@ file filters, especially in GX.Net functions.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1110,6 +1119,8 @@ file filters, especially in GX.Net functions.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1138,6 +1149,8 @@ file filters, especially in GX.Net functions.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1168,6 +1181,8 @@ file filters, especially in GX.Net functions.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1198,8 +1213,9 @@ file filters, especially in GX.Net functions.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This is an improved version of ImportChemDatabase_GUI using the
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> This is an improved version of ImportChemDatabase_GUI using the
 new ADO technology, as opposed to DAO. Use in conjuction with
 <a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU.import_ado" title="geosoft.gxapi.GXDU.import_ado"><code class="xref py py-obj docutils literal"><span class="pre">GXDU.import_ado</span></code></a>. See also ImportDatabaseADO_GUI.</p>
 </dd></dl>
@@ -1224,6 +1240,8 @@ new ADO technology, as opposed to DAO. Use in conjuction with
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1253,8 +1271,9 @@ new ADO technology, as opposed to DAO. Use in conjuction with
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This is used to select a single database table, and
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> This is used to select a single database table, and
 selected fields from that table. If the database is not
 Microsoft Access (type .mdb), an introductory dialog
 requests the file type.
@@ -1290,10 +1309,13 @@ the table (see <a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU.
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<ol class="arabic simple">
-<li>This is used to select a single database table, and
-selected fields from that table.</li>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<dl class="docutils">
+<dt><strong>Note:</strong> 1. This is used to select a single database table, and</dt>
+<dd>selected fields from that table.</dd>
+</dl>
+<ol class="arabic simple" start="2">
 <li>This function DOES NOT import the table itself, but
 creates an import template which may be used to import
 the table (see <a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU.import_ado" title="geosoft.gxapi.GXDU.import_ado"><code class="xref py py-obj docutils literal"><span class="pre">GXDU.import_ado</span></code></a>).</li>
@@ -1331,13 +1353,14 @@ created using SQL.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<ol class="arabic">
-<li><p class="first">This is used to build an Oasis montaj group (line) from
-one or more database tables and fields, by selecting from
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<dl class="docutils">
+<dt><strong>Note:</strong> 1. This is used to build an Oasis montaj group (line) from</dt>
+<dd><p class="first">one or more database tables and fields, by selecting from
 one or more SQL selection queries. The list of queries
 is read from a text file with the following syntax:</p>
-<p>Query_Name_1
+<p class="last">Query_Name_1
 Query...
 Query... (continued)
 ...
@@ -1345,23 +1368,21 @@ Query... (continued)
 END_QUERY
 Query_Name_2
 etc.</p>
-</li>
-<li><p class="first">Each query has a title line, the query itself, then the
+</dd>
+</dl>
+<ol class="arabic simple" start="2">
+<li>Each query has a title line, the query itself, then the
 &#8220;END_QUERY&#8221; line to finish.  The title of a subsequent query
-is on the line after an &#8220;END_QUERY&#8221; line.</p>
-</li>
-<li><p class="first">If the text file parameter is left blank (&#8220;&#8221;), then
+is on the line after an &#8220;END_QUERY&#8221; line.</li>
+<li>If the text file parameter is left blank (&#8220;&#8221;), then
 selection queries in the database itself are listed.
 In addition to the pre-defined queries, there is a
-&#8220;User Defined&#8221; query which may be filled in by the user.</p>
-</li>
-<li><p class="first">This function DOES NOT import the table itself, but
+&#8220;User Defined&#8221; query which may be filled in by the user.</li>
+<li>This function DOES NOT import the table itself, but
 creates an import template which may be used to import
-the data (see <a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU.import_dao" title="geosoft.gxapi.GXDU.import_dao"><code class="xref py py-obj docutils literal"><span class="pre">GXDU.import_dao</span></code></a>).</p>
-</li>
-<li><p class="first">If connection string is of type &#8220;FILENAME=...&#8221; the connection will attempt to resolve
-it as a file database. (see also ODBCFileConnect_GUI)</p>
-</li>
+the data (see <a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU.import_dao" title="geosoft.gxapi.GXDU.import_dao"><code class="xref py py-obj docutils literal"><span class="pre">GXDU.import_dao</span></code></a>).</li>
+<li>If connection string is of type &#8220;FILENAME=...&#8221; the connection will attempt to resolve
+it as a file database. (see also ODBCFileConnect_GUI)</li>
 </ol>
 </dd></dl>
 
@@ -1394,8 +1415,9 @@ created using SQL (New ADO Version).</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This is used to build an Oasis montaj group (line) from
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> This is used to build an Oasis montaj group (line) from
 one or more database tables and fields, by selecting from
 one or more SQL selection queries. The list of queries
 is read from a text file with the following syntax:</p>
@@ -1448,8 +1470,9 @@ the data (see <a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU.i
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This is an improved version of ImportDrillDatabase_GUI using the
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> This is an improved version of ImportDrillDatabase_GUI using the
 new ADO technology, as opposed to DAO. Use in conjunction with
 <a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU.import_ado" title="geosoft.gxapi.GXDU.import_ado"><code class="xref py py-obj docutils literal"><span class="pre">GXDU.import_ado</span></code></a>. See also ImportDatabaseADO_GUI.</p>
 </dd></dl>
@@ -1483,8 +1506,9 @@ new ADO technology, as opposed to DAO. Use in conjunction with
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>If it is not defined on input, the template name is set
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> If it is not defined on input, the template name is set
 to be the Wholeplot table name; e.g.
 &#8220;HOLESURVEY.i4&#8221; for &#8220;Project_HOLESURVEY&#8221;</p>
 </dd></dl>
@@ -1519,8 +1543,9 @@ to be the Wholeplot table name; e.g.
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>If it is not defined on input, the template name is set
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> If it is not defined on input, the template name is set
 to be the Wholeplot table name; e.g.
 &#8220;HOLESURVEY.i4&#8221; for &#8220;Project_HOLESURVEY&#8221;</p>
 </dd></dl>
@@ -1555,8 +1580,9 @@ from ODBC database data.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>If the input connection string is empty (&#8220;&#8221;), then the ODBC connection dialogs
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> If the input connection string is empty (&#8220;&#8221;), then the ODBC connection dialogs
 will appear (e.g. to connect to a machine database) before the import wizard
 is run. The connect string used for this connection is then returned.
 This string can then be used on input to skip the ODBC connection dialogs and
@@ -1593,8 +1619,9 @@ from the name of the table opened - e.g. &#8220;HOLELOCATION.i4&#8221;.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.3.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Same as <a class="reference internal" href="#geosoft.gxapi.GXGUI.import_drill_database_odbc" title="geosoft.gxapi.GXGUI.import_drill_database_odbc"><code class="xref py py-obj docutils literal"><span class="pre">import_drill_database_odbc</span></code></a> but customized for Maxwell.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Same as <a class="reference internal" href="#geosoft.gxapi.GXGUI.import_drill_database_odbc" title="geosoft.gxapi.GXGUI.import_drill_database_odbc"><code class="xref py py-obj docutils literal"><span class="pre">import_drill_database_odbc</span></code></a> but customized for Maxwell.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1619,6 +1646,8 @@ from the name of the table opened - e.g. &#8220;HOLELOCATION.i4&#8221;.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1650,8 +1679,9 @@ terminates on error</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This is similar to <a class="reference internal" href="#geosoft.gxapi.GXGUI.import_database_sql" title="geosoft.gxapi.GXGUI.import_database_sql"><code class="xref py py-obj docutils literal"><span class="pre">import_database_sql</span></code></a>, but dispenses with
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> This is similar to <a class="reference internal" href="#geosoft.gxapi.GXGUI.import_database_sql" title="geosoft.gxapi.GXGUI.import_database_sql"><code class="xref py py-obj docutils literal"><span class="pre">import_database_sql</span></code></a>, but dispenses with
 the dialog offering a selection of queries. Instead, the
 user supplies the query as a string.</p>
 <p>This function DOES NOT import the table itself, but
@@ -1688,8 +1718,9 @@ terminates on error</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This is similar to <a class="reference internal" href="#geosoft.gxapi.GXGUI.import_database_sql" title="geosoft.gxapi.GXGUI.import_database_sql"><code class="xref py py-obj docutils literal"><span class="pre">import_database_sql</span></code></a>, but dispenses with
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> This is similar to <a class="reference internal" href="#geosoft.gxapi.GXGUI.import_database_sql" title="geosoft.gxapi.GXGUI.import_database_sql"><code class="xref py py-obj docutils literal"><span class="pre">import_database_sql</span></code></a>, but dispenses with
 the dialog offering a selection of queries. Instead, the
 user supplies the query as a string.</p>
 <p>This function DOES NOT import the table itself, but
@@ -1727,6 +1758,8 @@ may change during editing.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1736,17 +1769,21 @@ may change during editing.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGUI.is_null">
 <code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGUI.is_null" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if the instance of <code class="xref py py-obj docutils literal"><span class="pre">GXGUI</span></code> is null (undefined)`</p>
+<dd><p>Check if this is a null (undefined) instance</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXGUI</span></code>, False otherwise.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
@@ -1772,6 +1809,8 @@ may change during editing.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1798,6 +1837,8 @@ may change during editing.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1820,6 +1861,8 @@ may change during editing.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1846,6 +1889,8 @@ may change during editing.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1868,6 +1913,8 @@ may change during editing.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1894,6 +1941,8 @@ may change during editing.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1924,8 +1973,9 @@ may change during editing.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Same as <a class="reference internal" href="#geosoft.gxapi.GXGUI.pattern_form" title="geosoft.gxapi.GXGUI.pattern_form"><code class="xref py py-obj docutils literal"><span class="pre">pattern_form</span></code></a> but for line patterns.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Same as <a class="reference internal" href="#geosoft.gxapi.GXGUI.pattern_form" title="geosoft.gxapi.GXGUI.pattern_form"><code class="xref py py-obj docutils literal"><span class="pre">pattern_form</span></code></a> but for line patterns.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1955,6 +2005,8 @@ non-zero  - Cancel</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1977,17 +2029,21 @@ non-zero  - Cancel</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXGUI.null">
 <em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGUI.null" title="Permalink to this definition">¶</a></dt>
-<dd><p>A null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXGUI</span></code></p>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXGUI" title="geosoft.gxapi.GXGUI"><code class="xref py py-obj docutils literal"><span class="pre">GXGUI</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <code class="xref py py-obj docutils literal"><span class="pre">GXGUI</span></code></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXGUI" title="geosoft.gxapi.GXGUI"><code class="xref py py-obj docutils literal"><span class="pre">GXGUI</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXGUI" title="geosoft.gxapi.GXGUI">GXGUI</a></td>
 </tr>
 </tbody>
 </table>
@@ -2022,8 +2078,9 @@ terminates on error</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>If the file extension is &#8220;mdb&#8221; or &#8220;xls&#8221; then a Microsoft Access
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> If the file extension is &#8220;mdb&#8221; or &#8220;xls&#8221; then a Microsoft Access
 or Excel database is assumed. Otherwise, a dialog appears listing
 the installed ODBC file database drivers. If the driver takes a
 directory as a database (FileUsage==1) the table name is also
@@ -2063,8 +2120,9 @@ the file extension.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Pattern values set on input, and new values returned.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Pattern values set on input, and new values returned.
 Solid fill is indicated by Pattern number 0.</p>
 <p>Returned Values (not set on input)</p>
 <dl class="docutils">
@@ -2095,6 +2153,8 @@ A value of 2 means they overlap each other.</dd>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -2126,8 +2186,9 @@ A value of 2 means they overlap each other.</dd>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Same as <a class="reference internal" href="#geosoft.gxapi.GXGUI.render_pattern" title="geosoft.gxapi.GXGUI.render_pattern"><code class="xref py py-obj docutils literal"><span class="pre">render_pattern</span></code></a> but for line patterns.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Same as <a class="reference internal" href="#geosoft.gxapi.GXGUI.render_pattern" title="geosoft.gxapi.GXGUI.render_pattern"><code class="xref py py-obj docutils literal"><span class="pre">render_pattern</span></code></a> but for line patterns.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -2163,8 +2224,9 @@ A value of 2 means they overlap each other.</dd>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Renders a Geosoft pattern to a Windows DC.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Renders a Geosoft pattern to a Windows DC.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -2182,8 +2244,9 @@ A value of 2 means they overlap each other.</dd>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The parent WND is used by all modal dialogs as a
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> The parent WND is used by all modal dialogs as a
 parent to ensure the dialog is correctly modal.</p>
 </dd></dl>
 
@@ -2202,6 +2265,8 @@ parent to ensure the dialog is correctly modal.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -2220,8 +2285,9 @@ if main application is processing messages</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>In montaj the progress bar is hidden when the main window
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> In montaj the progress bar is hidden when the main window
 start processing messages. This is not always desirable
 in some 3rd party apps, hence this function.</p>
 </dd></dl>
@@ -2248,6 +2314,8 @@ in some 3rd party apps, hence this function.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -2265,6 +2333,8 @@ in some 3rd party apps, hence this function.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -2286,8 +2356,9 @@ in some 3rd party apps, hence this function.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Any changes made to the 3D View will be persisted.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Any changes made to the 3D View will be persisted.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -2314,6 +2385,8 @@ in some 3rd party apps, hence this function.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -2331,6 +2404,8 @@ in some 3rd party apps, hence this function.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -2353,8 +2428,9 @@ in some 3rd party apps, hence this function.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This function displays a map in a simple resizable dialog that fits the map into it.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> This function displays a map in a simple resizable dialog that fits the map into it.
 It is generally useful to display temporary maps as graphs (e.g. variograms).</p>
 </dd></dl>
 
@@ -2392,8 +2468,9 @@ It is generally useful to display temporary maps as graphs (e.g. variograms).</p
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Symbols are set on input, and new values returned.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Symbols are set on input, and new values returned.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -2411,8 +2488,9 @@ It is generally useful to display temporary maps as graphs (e.g. variograms).</p
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Displays the thematic voxel codes, colors, total volume for
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Displays the thematic voxel codes, colors, total volume for
 each code, and number of valid items (cubes) for each code.
 This is a replacement for the numeric stats done on normal
 numerical voxel grids.</p>
@@ -2445,8 +2523,9 @@ numerical voxel grids.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Takes as input two LSTs, one contains all available items,
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Takes as input two LSTs, one contains all available items,
 the second currently selected items. These are processed,
 and in the left panel are displayed all items in the first
 <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> not in the selection <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a>, and on the right all items
@@ -2490,8 +2569,9 @@ stored and retrieved from GX parameters (or <a class="reference internal" href="
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Same as <a class="reference internal" href="#geosoft.gxapi.GXGUI.two_panel_selection" title="geosoft.gxapi.GXGUI.two_panel_selection"><code class="xref py py-obj docutils literal"><span class="pre">two_panel_selection</span></code></a>, but the items in the
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Same as <a class="reference internal" href="#geosoft.gxapi.GXGUI.two_panel_selection" title="geosoft.gxapi.GXGUI.two_panel_selection"><code class="xref py py-obj docutils literal"><span class="pre">two_panel_selection</span></code></a>, but the items in the
 two lists are not sorted alphabetically, but are ordered
 exactly as input, and when an item is selected it is
 added at the end of the lists.</p>
@@ -2526,8 +2606,9 @@ added at the end of the lists.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Same as <a class="reference internal" href="#geosoft.gxapi.GXGUI.two_panel_selection" title="geosoft.gxapi.GXGUI.two_panel_selection"><code class="xref py py-obj docutils literal"><span class="pre">two_panel_selection</span></code></a>, but the items in the
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Same as <a class="reference internal" href="#geosoft.gxapi.GXGUI.two_panel_selection" title="geosoft.gxapi.GXGUI.two_panel_selection"><code class="xref py py-obj docutils literal"><span class="pre">two_panel_selection</span></code></a>, but the items in the
 two lists are not sorted alphabetically, but are ordered
 exactly as input, and when an item is selected it is
 added at the end of the lists.</p>
@@ -2563,8 +2644,9 @@ added at the end of the lists.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Same as <a class="reference internal" href="#geosoft.gxapi.GXGUI.two_panel_selection_ex" title="geosoft.gxapi.GXGUI.two_panel_selection_ex"><code class="xref py py-obj docutils literal"><span class="pre">two_panel_selection_ex</span></code></a>, but user can specify a help
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Same as <a class="reference internal" href="#geosoft.gxapi.GXGUI.two_panel_selection_ex" title="geosoft.gxapi.GXGUI.two_panel_selection_ex"><code class="xref py py-obj docutils literal"><span class="pre">two_panel_selection_ex</span></code></a>, but user can specify a help
 link.</p>
 </dd></dl>
 
@@ -2583,6 +2665,8 @@ link.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 </dd></dl>
@@ -4638,14 +4722,7 @@ allow modification of projections (e.g. the OM Viewer).</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="GXHGD.html" title="GXHGD class"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="GXGU.html" title="GXGU class"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" >GX API Class/Library Reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 

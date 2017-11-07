@@ -27,8 +27,6 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="GXEMAPTEMPLATE class" href="GXEMAPTEMPLATE.html" />
-    <link rel="prev" title="GXEDOC class" href="GXEDOC.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -44,14 +42,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="GXEMAPTEMPLATE.html" title="GXEMAPTEMPLATE class"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="GXEDOC.html" title="GXEDOC class"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" accesskey="U">GX API Class/Library Reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -72,19 +63,6 @@
 </li>
 </ul>
 
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Introduction</a></li>
-    <li><a href="geosoft.gxapi.classes.html">GX API Class/Library Reference</a></li>
-</ul>
-<h3>Previous Topic</h3>
-<ul>
-    <li><a href="GXEDOC.html" title="previous chapter">GXEDOC class</a></li>
-</ul>
-<h3>Next Topic</h3>
-<ul>
-    <li><a href="GXEMAPTEMPLATE.html" title="next chapter">GXEMAPTEMPLATE class</a></li>
-</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -114,7 +92,7 @@
 <span id="gxemap"></span><h1>GXEMAP class<a class="headerlink" href="#gxemap-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXEMAP">
-<em class="property">class </em><code class="descname">GXEMAP</code><span class="sig-paren">(</span><em>wrapper=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEMAP" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">GXEMAP</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEMAP" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXEMAP class.</p>
 <p>The <a class="reference internal" href="#geosoft.gxapi.GXEMAP" title="geosoft.gxapi.GXEMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXEMAP</span></code></a> class provides access to a map as displayed within
 Oasis montaj, but (usually) does not change data within the map itself.
@@ -187,8 +165,9 @@ that code that follows sees this map as the current <a class="reference internal
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Activating a group basically enters the edit mode associated
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Activating a group basically enters the edit mode associated
 with the type of group. E.g. a vector group will enable the
 edit toolbar for that gorup and an <a class="reference internal" href="GXAGG.html#geosoft.gxapi.GXAGG" title="geosoft.gxapi.GXAGG"><code class="xref py py-obj docutils literal"><span class="pre">GXAGG</span></code></a> will bring up the
 image color tool. Be sure to pass a combined name containing
@@ -210,6 +189,8 @@ both the view name and the group separated by a &#8220;/&#8221; or &#8220;&#8221
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
@@ -231,8 +212,9 @@ both the view name and the group separated by a &#8220;/&#8221; or &#8220;&#8221
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This function operates on the current map.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> This function operates on the current map.
 Unlike <a class="reference internal" href="#geosoft.gxapi.GXEMAP.set_current_view" title="geosoft.gxapi.GXEMAP.set_current_view"><code class="xref py py-obj docutils literal"><span class="pre">set_current_view</span></code></a> this function&#8217;s action
 survive the GX finishing.</p>
 </dd></dl>
@@ -244,8 +226,9 @@ survive the GX finishing.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Four objects are placed on the clipboard:</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Four objects are placed on the clipboard:</p>
 <blockquote>
 <div><ol class="arabic simple">
 <li>Georefernce Text</li>
@@ -279,6 +262,8 @@ changes that are about to occur.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -300,6 +285,8 @@ changes that are about to occur.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -319,6 +306,8 @@ changes that are about to occur.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -339,6 +328,8 @@ the user is not prompted for a map, and 0 is returned.</td>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -358,8 +349,9 @@ the user is not prompted for a map, and 0 is returned.</td>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This function acts just like <a class="reference internal" href="#geosoft.gxapi.GXEMAP.current" title="geosoft.gxapi.GXEMAP.current"><code class="xref py py-obj docutils literal"><span class="pre">current</span></code></a> except that the document is not activated (brought to foreground) and no
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> This function acts just like <a class="reference internal" href="#geosoft.gxapi.GXEMAP.current" title="geosoft.gxapi.GXEMAP.current"><code class="xref py py-obj docutils literal"><span class="pre">current</span></code></a> except that the document is not activated (brought to foreground) and no
 guarantee is given about which document is currently active.</p>
 </dd></dl>
 
@@ -378,8 +370,9 @@ guarantee is given about which document is currently active.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Can only be run in interactive mode. After this call the
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Can only be run in interactive mode. After this call the
 <a class="reference internal" href="#geosoft.gxapi.GXEMAP" title="geosoft.gxapi.GXEMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXEMAP</span></code></a> object will become invalid. If this is the last view on
 the document and the document has been modified the map will be
 unloaded and optionally saved depending on the <a class="reference internal" href="#emap-remove"><span class="std std-ref">EMAP_REMOVE constants</span></a>
@@ -417,8 +410,9 @@ parameter.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The command line will start to recieve digitized points
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> The command line will start to recieve digitized points
 from the mouse.  Whenever the left mouse button is
 pressed, the current view X,Y are placed on the workspace
 command line.  If a valid <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal"><span class="pre">GXIMG</span></code></a> is passed, the Z value is
@@ -459,8 +453,9 @@ before pressing Enter.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The command line will start to recieve digitized points
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> The command line will start to recieve digitized points
 from the mouse.  Whenever the left mouse button is
 pressed, the current view X,Y are placed on the workspace
 command line.  If a valid <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal"><span class="pre">GXIMG</span></code></a> is passed, the Z value is
@@ -501,8 +496,9 @@ before pressing Enter.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Same as <a class="reference internal" href="#geosoft.gxapi.GXEMAP.digitize2" title="geosoft.gxapi.GXEMAP.digitize2"><code class="xref py py-obj docutils literal"><span class="pre">digitize2</span></code></a>, but the closest peaks to the selected locations are
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Same as <a class="reference internal" href="#geosoft.gxapi.GXEMAP.digitize2" title="geosoft.gxapi.GXEMAP.digitize2"><code class="xref py py-obj docutils literal"><span class="pre">digitize2</span></code></a>, but the closest peaks to the selected locations are
 returned instead of the selected location. The method chooses the highest value
 of the 8 surrounding points, the repeats this process until no higher value can
 be found in any of the 8 surrounding points. If there are two or more points with
@@ -541,8 +537,9 @@ stall on flat areas as well (since no surrounding point is larger).</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This is the same as <a class="reference internal" href="#geosoft.gxapi.GXEMAP.digitize2" title="geosoft.gxapi.GXEMAP.digitize2"><code class="xref py py-obj docutils literal"><span class="pre">digitize2</span></code></a>, except that it automatically
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> This is the same as <a class="reference internal" href="#geosoft.gxapi.GXEMAP.digitize2" title="geosoft.gxapi.GXEMAP.digitize2"><code class="xref py py-obj docutils literal"><span class="pre">digitize2</span></code></a>, except that it automatically
 detects, (except for the 2nd and 3rd points) when a selected location
 is within the entered number of pixels from the starting point. If yes,
 the polygon is assumed to be closed, and the operation is the same as
@@ -571,8 +568,9 @@ a more current <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLS
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Typically this function is used in conjunction with
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Typically this function is used in conjunction with
 CreateSnapshot_EMAP.</p>
 </dd></dl>
 
@@ -591,6 +589,8 @@ CreateSnapshot_EMAP.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
@@ -614,8 +614,9 @@ CreateSnapshot_EMAP.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Locations are in the current view user units.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Locations are in the current view user units.</p>
 <p>The line is temporary and will disappear on the next
 screen refresh.  This function is for you to provide
 interactive screen feedback to your user.</p>
@@ -642,8 +643,9 @@ interactive screen feedback to your user.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Locations are in the current view user units.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Locations are in the current view user units.</p>
 <p>The line is temporary and will disappear on the next
 screen refresh.  This function is for you to provide
 interactive screen feedback to your user.</p>
@@ -670,8 +672,9 @@ interactive screen feedback to your user.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Plot a square symbol on a section view, but input 3D user coordinates</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Plot a square symbol on a section view, but input 3D user coordinates</p>
 <p>The line is temporary and will disappear on the next
 screen refresh.  This function is for you to provide
 interactive screen feedback to your user.</p>
@@ -692,6 +695,8 @@ interactive screen feedback to your user.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
@@ -713,8 +718,9 @@ interactive screen feedback to your user.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>To get TT and GFN fonts, call twice with the same list
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> To get TT and GFN fonts, call twice with the same list
 and <a class="reference internal" href="#geosoft.gxapi.EMAP_FONT_TT" title="geosoft.gxapi.EMAP_FONT_TT"><code class="xref py py-obj docutils literal"><span class="pre">EMAP_FONT_TT</span></code></a>, then <a class="reference internal" href="#geosoft.gxapi.EMAP_FONT_GFN" title="geosoft.gxapi.EMAP_FONT_GFN"><code class="xref py py-obj docutils literal"><span class="pre">EMAP_FONT_GFN</span></code></a>, or vice-versa to
 change order of listing.</p>
 </dd></dl>
@@ -734,6 +740,8 @@ change order of listing.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
@@ -757,8 +765,9 @@ change order of listing.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Coordinates are based on the current view units.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Coordinates are based on the current view units.</p>
 </dd></dl>
 
 <dl class="method">
@@ -790,6 +799,8 @@ change order of listing.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
@@ -825,8 +836,9 @@ change order of listing.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>If the data view has a rotational (or other) warp, then the
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> If the data view has a rotational (or other) warp, then the
 <a class="reference internal" href="#geosoft.gxapi.GXEMAP.get_box" title="geosoft.gxapi.GXEMAP.get_box"><code class="xref py py-obj docutils literal"><span class="pre">get_box</span></code></a> function returns only opposite diagonal points in the
 box, not enough info to determine the other two corners. This
 function returns the exact coordinates of all four corners, calculated
@@ -852,6 +864,8 @@ from the pixel locations.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
@@ -873,6 +887,8 @@ from the pixel locations.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
@@ -890,8 +906,9 @@ from the pixel locations.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This function operates on the current map.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> This function operates on the current map.</p>
 </dd></dl>
 
 <dl class="method">
@@ -909,8 +926,9 @@ from the pixel locations.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This function operates on the current map.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> This function operates on the current map.</p>
 </dd></dl>
 
 <dl class="method">
@@ -932,6 +950,8 @@ from the pixel locations.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
@@ -953,6 +973,8 @@ from the pixel locations.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
@@ -976,8 +998,9 @@ from the pixel locations.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Coordinates are based on the current view units.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Coordinates are based on the current view units.
 For 3D views this will return the full map extents.</p>
 </dd></dl>
 
@@ -1002,8 +1025,9 @@ For 3D views this will return the full map extents.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Coordinates are in millimeters.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Coordinates are in millimeters.
 For 3D views this will return the full map extents.</p>
 </dd></dl>
 
@@ -1024,6 +1048,8 @@ For 3D views this will return the full map extents.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1058,8 +1084,9 @@ For 3D views this will return the full map extents.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>If the input angle is <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a>, an extra step is inserted
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> If the input angle is <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a>, an extra step is inserted
 for the user to define the angle by drawing a line
 with the mouse.
 The output primary axis angle will always be in the
@@ -1100,8 +1127,9 @@ The coordinates are returned in the current User projection
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The coordinates are returned in the current User projection
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> The coordinates are returned in the current User projection
 (See <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.get_user_ipj" title="geosoft.gxapi.GXMVIEW.get_user_ipj"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW.get_user_ipj</span></code></a> and <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.set_user_ipj" title="geosoft.gxapi.GXMVIEW.set_user_ipj"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW.set_user_ipj</span></code></a>.)</p>
 </dd></dl>
 
@@ -1135,8 +1163,9 @@ The coordinates are returned in the current User projection
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The coordinates are returned in the current User projection
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> The coordinates are returned in the current User projection
 (See <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.get_user_ipj" title="geosoft.gxapi.GXMVIEW.get_user_ipj"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW.get_user_ipj</span></code></a> and <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.set_user_ipj" title="geosoft.gxapi.GXMVIEW.set_user_ipj"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW.set_user_ipj</span></code></a>.)</p>
 </dd></dl>
 
@@ -1172,8 +1201,9 @@ The coordinates are returned in the current User projection
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The coordinates are returned in the current User projection
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> The coordinates are returned in the current User projection
 (See <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.get_user_ipj" title="geosoft.gxapi.GXMVIEW.get_user_ipj"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW.get_user_ipj</span></code></a> and <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.set_user_ipj" title="geosoft.gxapi.GXMVIEW.set_user_ipj"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW.set_user_ipj</span></code></a>.)
 This is useful for digitizing a line in an oriented view and getting
 the true coordinates in (X, Y, Z) at the selected point on the view plane.</p>
@@ -1204,8 +1234,9 @@ the true coordinates in (X, Y, Z) at the selected point on the view plane.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This affects the display units and other related properties for the base
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> This affects the display units and other related properties for the base
 view of a map.</p>
 </dd></dl>
 
@@ -1224,6 +1255,8 @@ view of a map.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1252,6 +1285,8 @@ The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="g
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1269,6 +1304,8 @@ The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="g
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1298,8 +1335,9 @@ The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="g
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This will wait for user to select a point.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> This will wait for user to select a point.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last">iTrackPoint, GetCurPoint, GetCursor</p>
@@ -1336,8 +1374,9 @@ The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="g
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This will wait for user to select a point.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> This will wait for user to select a point.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last">iTrackPoint, GetCurPoint, GetCursor</p>
@@ -1373,8 +1412,9 @@ The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="g
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This will wait for user to select a point.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> This will wait for user to select a point.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last">iTrackPoint, GetCurPoint, GetCursor</p>
@@ -1408,8 +1448,9 @@ The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="g
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The coordinates are returned in the current User projection
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> The coordinates are returned in the current User projection
 (See <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.get_user_ipj" title="geosoft.gxapi.GXMVIEW.get_user_ipj"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW.get_user_ipj</span></code></a> and <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.set_user_ipj" title="geosoft.gxapi.GXMVIEW.set_user_ipj"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW.set_user_ipj</span></code></a>.)</p>
 </dd></dl>
 
@@ -1441,8 +1482,9 @@ The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="g
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The coordinates are returned in the current User projection
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> The coordinates are returned in the current User projection
 (See <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.get_user_ipj" title="geosoft.gxapi.GXMVIEW.get_user_ipj"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW.get_user_ipj</span></code></a> and <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.set_user_ipj" title="geosoft.gxapi.GXMVIEW.set_user_ipj"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW.set_user_ipj</span></code></a>.) In this version
 of the method X, Y and Z (depth) are returned. Initially created
 to deal with crooked sections.</p>
@@ -1477,8 +1519,9 @@ to deal with crooked sections.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The coordinates are returned in the current User projection
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> The coordinates are returned in the current User projection
 (See <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.get_user_ipj" title="geosoft.gxapi.GXMVIEW.get_user_ipj"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW.get_user_ipj</span></code></a> and <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.set_user_ipj" title="geosoft.gxapi.GXMVIEW.set_user_ipj"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW.set_user_ipj</span></code></a>.)
 If the user <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> distorts the coordinates from being rectilinear
 (e.g. for a TriPlot graph), then care should be taken since the
@@ -1515,8 +1558,9 @@ necessarily a rectangle in the User coordinates.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Works only in Vertex Edit Mode</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Works only in Vertex Edit Mode</p>
 </dd></dl>
 
 <dl class="method">
@@ -1538,8 +1582,9 @@ necessarily a rectangle in the User coordinates.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This function can be used to obtain a views coordinate system 
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> This function can be used to obtain a views coordinate system 
 without having to call <a class="reference internal" href="#geosoft.gxapi.GXEMAP.lock" title="geosoft.gxapi.GXEMAP.lock"><code class="xref py py-obj docutils literal"><span class="pre">lock</span></code></a>. This could be an expensive operation
 that cause undesirable UX.</p>
 </dd></dl>
@@ -1567,6 +1612,8 @@ that cause undesirable UX.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1586,6 +1633,8 @@ that cause undesirable UX.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1606,6 +1655,8 @@ that cause undesirable UX.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1635,6 +1686,8 @@ that cause undesirable UX.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1654,6 +1707,8 @@ that cause undesirable UX.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1673,6 +1728,8 @@ that cause undesirable UX.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1690,17 +1747,21 @@ that cause undesirable UX.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEMAP.is_null">
 <code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEMAP.is_null" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if the instance of <code class="xref py py-obj docutils literal"><span class="pre">GXEMAP</span></code> is null (undefined)`</p>
+<dd><p>Check if this is a null (undefined) instance</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXEMAP</span></code>, False otherwise.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
@@ -1725,8 +1786,9 @@ that cause undesirable UX.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The last map in the list will be the current map.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> The last map in the list will be the current map.</p>
 <p>Maps may already be loaded.</p>
 <p>Only the first file in the list may have a directory path.
 All other files in the list are assumed to be in the same
@@ -1752,6 +1814,8 @@ directory as the first file.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1774,8 +1838,9 @@ database in the list if multiple files were provided.</td>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This function acts just like <a class="reference internal" href="#geosoft.gxapi.GXEMAP.load" title="geosoft.gxapi.GXEMAP.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a> except that the document(s) is not activated (brought to foreground) and no
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> This function acts just like <a class="reference internal" href="#geosoft.gxapi.GXEMAP.load" title="geosoft.gxapi.GXEMAP.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a> except that the document(s) is not activated (brought to foreground) and no
 guarantee is given about which document is currently active.</p>
 </dd></dl>
 
@@ -1804,8 +1869,9 @@ guarantee is given about which document is currently active.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Can only be run in interactive mode. Is used by
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Can only be run in interactive mode. Is used by
 dbsubset to create a new database with the same
 view as previously.</p>
 </dd></dl>
@@ -1830,6 +1896,8 @@ view as previously.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1851,6 +1919,8 @@ view as previously.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1870,8 +1940,9 @@ view as previously.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The Redraw flag is set to <a class="reference internal" href="#geosoft.gxapi.EMAP_REDRAW_YES" title="geosoft.gxapi.EMAP_REDRAW_YES"><code class="xref py py-obj docutils literal"><span class="pre">EMAP_REDRAW_YES</span></code></a> when this functions is called.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> The Redraw flag is set to <a class="reference internal" href="#geosoft.gxapi.EMAP_REDRAW_YES" title="geosoft.gxapi.EMAP_REDRAW_YES"><code class="xref py py-obj docutils literal"><span class="pre">EMAP_REDRAW_YES</span></code></a> when this functions is called.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1881,17 +1952,21 @@ view as previously.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXEMAP.null">
 <em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEMAP.null" title="Permalink to this definition">¶</a></dt>
-<dd><p>A null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXEMAP</span></code></p>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXEMAP" title="geosoft.gxapi.GXEMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXEMAP</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <code class="xref py py-obj docutils literal"><span class="pre">GXEMAP</span></code></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXEMAP" title="geosoft.gxapi.GXEMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXEMAP</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXEMAP" title="geosoft.gxapi.GXEMAP">GXEMAP</a></td>
 </tr>
 </tbody>
 </table>
@@ -1914,6 +1989,8 @@ view as previously.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1946,6 +2023,8 @@ view as previously.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1963,6 +2042,8 @@ view as previously.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1972,8 +2053,9 @@ view as previously.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Redraws the map immediately. Map must not be locked.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Redraws the map immediately. Map must not be locked.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -1991,8 +2073,9 @@ view as previously.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Use this method to reload (if loaded) a grid document if the file on disk changed.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Use this method to reload (if loaded) a grid document if the file on disk changed.</p>
 </dd></dl>
 
 <dl class="method">
@@ -2010,6 +2093,8 @@ view as previously.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
@@ -2033,8 +2118,9 @@ view as previously.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Coordinates are based on the current view user units.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Coordinates are based on the current view user units.
 The map is immediatly redrawn.</p>
 </dd></dl>
 
@@ -2057,8 +2143,9 @@ The map is immediatly redrawn.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This function operates on the current map.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> This function operates on the current map.
 It changes the view only during the execution of the
 GX. As soon as the GX terminates the view will revert
 to the original one.</p>
@@ -2085,8 +2172,9 @@ to the original one.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Coordinates are based on the current view user units.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Coordinates are based on the current view user units.
 The map is immediatly redrawn.</p>
 </dd></dl>
 
@@ -2105,6 +2193,8 @@ The map is immediatly redrawn.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
@@ -2132,8 +2222,9 @@ The map is immediatly redrawn.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This affects the display units and other related properties for the base
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> This affects the display units and other related properties for the base
 view of a map.</p>
 </dd></dl>
 
@@ -2152,6 +2243,8 @@ view of a map.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
@@ -2169,8 +2262,9 @@ view of a map.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This function is generally used to prevent redrawing of
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> This function is generally used to prevent redrawing of
 the map, which normally occurs after the last <a class="reference internal" href="#geosoft.gxapi.GXEMAP.un_lock" title="geosoft.gxapi.GXEMAP.un_lock"><code class="xref py py-obj docutils literal"><span class="pre">un_lock</span></code></a>
 call, in cases where it is known that no changes are being
 made to the map.</p>
@@ -2195,8 +2289,9 @@ to querying information from the map. And then end with a call to
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This is handy for using a map to define an area of interest. Use in conjunction
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> This is handy for using a map to define an area of interest. Use in conjunction
 with Get/Set AOIArea. If this is used inside montaj it is important to set or provide
 for a method to set the map mode back to normal as this is not exposed in the interface.</p>
 </dd></dl>
@@ -2224,6 +2319,8 @@ for a method to set the map mode back to normal as this is not exposed in the in
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
@@ -2241,6 +2338,8 @@ for a method to set the map mode back to normal as this is not exposed in the in
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
@@ -2270,6 +2369,8 @@ for a method to set the map mode back to normal as this is not exposed in the in
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -2287,8 +2388,9 @@ for a method to set the map mode back to normal as this is not exposed in the in
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>If the <a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXMAP</span></code></a> is not loaded, nothing happens.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> If the <a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXMAP</span></code></a> is not loaded, nothing happens.
 Same as <a class="reference internal" href="#geosoft.gxapi.GXEMAP.un_load_verify" title="geosoft.gxapi.GXEMAP.un_load_verify"><code class="xref py py-obj docutils literal"><span class="pre">un_load_verify</span></code></a> with FALSE to prompt save.</p>
 </dd></dl>
 
@@ -2299,6 +2401,8 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXEMAP.un_load_verify
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -2320,8 +2424,9 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXEMAP.un_load_verify
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>If the map is not loaded, nothing happens.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> If the map is not loaded, nothing happens.
 If &#8220;FALSE&#8221;, map is saved without a prompt.</p>
 </dd></dl>
 
@@ -2332,6 +2437,8 @@ If &#8220;FALSE&#8221;, map is saved without a prompt.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 </dd></dl>
@@ -2661,14 +2768,7 @@ If &#8220;FALSE&#8221;, map is saved without a prompt.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="GXEMAPTEMPLATE.html" title="GXEMAPTEMPLATE class"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="GXEDOC.html" title="GXEDOC class"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" >GX API Class/Library Reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 

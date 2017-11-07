@@ -27,8 +27,6 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="GXVECTOR3D class" href="GXVECTOR3D.html" />
-    <link rel="prev" title="GXVA class" href="GXVA.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -44,14 +42,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="GXVECTOR3D.html" title="GXVECTOR3D class"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="GXVA.html" title="GXVA class"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" accesskey="U">GX API Class/Library Reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -64,19 +55,6 @@
 </li>
 </ul>
 
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Introduction</a></li>
-    <li><a href="geosoft.gxapi.classes.html">GX API Class/Library Reference</a></li>
-</ul>
-<h3>Previous Topic</h3>
-<ul>
-    <li><a href="GXVA.html" title="previous chapter">GXVA class</a></li>
-</ul>
-<h3>Next Topic</h3>
-<ul>
-    <li><a href="GXVECTOR3D.html" title="next chapter">GXVECTOR3D class</a></li>
-</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -106,19 +84,21 @@
 <span id="gxvau"></span><h1>GXVAU class<a class="headerlink" href="#gxvau-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXVAU">
-<em class="property">class </em><code class="descname">GXVAU</code><span class="sig-paren">(</span><em>wrapper=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVAU" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">GXVAU</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVAU" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXVAU class.</p>
 <p>This is not a class. These are methods that work on
 data stored in <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal"><span class="pre">GXVA</span></code></a> objects</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXVAU.is_null">
 <code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVAU.is_null" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if the instance of <code class="xref py py-obj docutils literal"><span class="pre">GXVAU</span></code> is null (undefined)`</p>
+<dd><p>Check if this is a null (undefined) instance</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXVAU</span></code>, False otherwise.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
@@ -127,12 +107,14 @@ data stored in <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA"
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXVAU.null">
 <em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVAU.null" title="Permalink to this definition">¶</a></dt>
-<dd><p>A null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXVAU</span></code></p>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXVAU" title="geosoft.gxapi.GXVAU"><code class="xref py py-obj docutils literal"><span class="pre">GXVAU</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <code class="xref py py-obj docutils literal"><span class="pre">GXVAU</span></code></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXVAU" title="geosoft.gxapi.GXVAU"><code class="xref py py-obj docutils literal"><span class="pre">GXVAU</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXVAU" title="geosoft.gxapi.GXVAU">GXVAU</a></td>
 </tr>
 </tbody>
 </table>
@@ -158,8 +140,8 @@ data stored in <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA"
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Pruning will shorten the <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal"><span class="pre">GXVA</span></code></a> by removing values
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Pruning will shorten the <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal"><span class="pre">GXVA</span></code></a> by removing values
 that are either dummy or non-dummy in the reference
 <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal"><span class="pre">GXVA</span></code></a></p>
 </dd></dl>
@@ -185,6 +167,7 @@ that are either dummy or non-dummy in the reference
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
 </dd></dl>
 
 </dd></dl>
@@ -229,14 +212,7 @@ that are either dummy or non-dummy in the reference
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="GXVECTOR3D.html" title="GXVECTOR3D class"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="GXVA.html" title="GXVA class"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" >GX API Class/Library Reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 

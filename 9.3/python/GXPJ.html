@@ -27,8 +27,6 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="GXPLY class" href="GXPLY.html" />
-    <link rel="prev" title="GXPGU class" href="GXPGU.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -44,14 +42,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="GXPLY.html" title="GXPLY class"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="GXPGU.html" title="GXPGU class"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" accesskey="U">GX API Class/Library Reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -65,19 +56,6 @@
 </li>
 </ul>
 
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Introduction</a></li>
-    <li><a href="geosoft.gxapi.classes.html">GX API Class/Library Reference</a></li>
-</ul>
-<h3>Previous Topic</h3>
-<ul>
-    <li><a href="GXPGU.html" title="previous chapter">GXPGU class</a></li>
-</ul>
-<h3>Next Topic</h3>
-<ul>
-    <li><a href="GXPLY.html" title="next chapter">GXPLY class</a></li>
-</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -107,7 +85,7 @@
 <span id="gxpj"></span><h1>GXPJ class<a class="headerlink" href="#gxpj-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXPJ">
-<em class="property">class </em><code class="descname">GXPJ</code><span class="sig-paren">(</span><em>wrapper=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPJ" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">GXPJ</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPJ" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXPJ class.</p>
 <p>The <a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXPJ</span></code></a> object is created from two <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> objects,
 and is used for converting data in an OASIS database
@@ -136,8 +114,8 @@ system to another.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>A rectangular area from (MinX, MinY) to (MaxX, MaxY)
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> A rectangular area from (MinX, MinY) to (MaxX, MaxY)
 is projected throught the <a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXPJ</span></code></a>. The resulting (non-rectangular)
 area is then digitized along its edges, then thinned to
 remove near-collinear points. The thinning is done to any
@@ -165,8 +143,8 @@ only co-linear points would be removed).</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This function is equivalent to <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV.project" title="geosoft.gxapi.GXVV.project"><code class="xref py py-obj docutils literal"><span class="pre">GXVV.project</span></code></a>.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> This function is equivalent to <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV.project" title="geosoft.gxapi.GXVV.project"><code class="xref py py-obj docutils literal"><span class="pre">GXVV.project</span></code></a>.</p>
 </dd></dl>
 
 <dl class="method">
@@ -189,8 +167,8 @@ only co-linear points would be removed).</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This function is equivalent to <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV.project_3d" title="geosoft.gxapi.GXVV.project_3d"><code class="xref py py-obj docutils literal"><span class="pre">GXVV.project_3d</span></code></a>.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> This function is equivalent to <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV.project_3d" title="geosoft.gxapi.GXVV.project_3d"><code class="xref py py-obj docutils literal"><span class="pre">GXVV.project_3d</span></code></a>.</p>
 </dd></dl>
 
 <dl class="method">
@@ -212,6 +190,7 @@ only co-linear points would be removed).</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -234,8 +213,8 @@ only co-linear points would be removed).</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.3.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This function is used (for instance) when projecting voxel model locations
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> This function is used (for instance) when projecting voxel model locations
 where the user expects that the vertical position will not change. The
 regular <a class="reference internal" href="#geosoft.gxapi.GXPJ.convert_xyz" title="geosoft.gxapi.GXPJ.convert_xyz"><code class="xref py py-obj docutils literal"><span class="pre">convert_xyz</span></code></a> may result in shifts of hundreds, even a thousand
 meters in case where you are going from the geoid to an ellipsoid.
@@ -264,6 +243,7 @@ the normal <a class="reference internal" href="#geosoft.gxapi.GXPJ.convert_xy" t
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -291,6 +271,7 @@ the normal <a class="reference internal" href="#geosoft.gxapi.GXPJ.convert_xy" t
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -318,8 +299,8 @@ the normal <a class="reference internal" href="#geosoft.gxapi.GXPJ.convert_xy" t
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>If converting to/from long/lat in the natural coordinate
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> If converting to/from long/lat in the natural coordinate
 system of the source/target, only the long/lat system
 can be passed as (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a>)0.</p>
 </dd></dl>
@@ -353,8 +334,8 @@ can be passed as (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.G
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>Given an X,Y coordinate system, the lat/lon origin and
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Given an X,Y coordinate system, the lat/lon origin and
 angle of the coordinate system, this will create a <a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXPJ</span></code></a>
 to convert between X,Y coordinates and Lon,Lat.
 The Lon/Lat is determined using a Transverse Mercator
@@ -379,8 +360,8 @@ of the coordinates on a WGS 84 datum.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>To determine the model in use, refer to the datum_trf column in the
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> To determine the model in use, refer to the datum_trf column in the
 usercsvdatumtrf.csv file.  The datum and geoid model are named in
 the sqare brackets following the transform name as follows:</p>
 <p>name [datum_model:geoid]</p>
@@ -409,17 +390,20 @@ return <a class="reference internal" href="#geosoft.gxapi.PJ_ELEVATION_NONE" tit
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXPJ.is_null">
 <code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPJ.is_null" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if the instance of <code class="xref py py-obj docutils literal"><span class="pre">GXPJ</span></code> is null (undefined)`</p>
+<dd><p>Check if this is a null (undefined) instance</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXPJ</span></code>, False otherwise.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
@@ -443,17 +427,20 @@ return <a class="reference internal" href="#geosoft.gxapi.PJ_ELEVATION_NONE" tit
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXPJ.null">
 <em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPJ.null" title="Permalink to this definition">¶</a></dt>
-<dd><p>A null (undefined) instance of <code class="xref py py-obj docutils literal"><span class="pre">GXPJ</span></code></p>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXPJ</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <code class="xref py py-obj docutils literal"><span class="pre">GXPJ</span></code></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXPJ</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ">GXPJ</a></td>
 </tr>
 </tbody>
 </table>
@@ -480,8 +467,8 @@ return <a class="reference internal" href="#geosoft.gxapi.PJ_ELEVATION_NONE" tit
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.1.4.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>A rectangular area from (dMinX, dMinY) to (dMaxX, dMaxY)
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> A rectangular area from (dMinX, dMinY) to (dMaxX, dMaxY)
 is projected throught the <a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXPJ</span></code></a>. The resulting region area is
 then digitized along its edges and a new bounding rectangle
 is computed.  If there is a lot of curve through the
@@ -511,8 +498,8 @@ smaller than the true region.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This is the same as <a class="reference internal" href="#geosoft.gxapi.GXPJ.project_bounding_rectangle" title="geosoft.gxapi.GXPJ.project_bounding_rectangle"><code class="xref py py-obj docutils literal"><span class="pre">project_bounding_rectangle</span></code></a> except that the bounding
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> This is the same as <a class="reference internal" href="#geosoft.gxapi.GXPJ.project_bounding_rectangle" title="geosoft.gxapi.GXPJ.project_bounding_rectangle"><code class="xref py py-obj docutils literal"><span class="pre">project_bounding_rectangle</span></code></a> except that the bounding
 rectangle will be limited to an area within which the projection can be
 performed to an accuracy better than the specified error tolerance.</p>
 </dd></dl>
@@ -539,8 +526,8 @@ performed to an accuracy better than the specified error tolerance.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.1.8.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This function behaves just like ProjBoundingRectangle_PJ
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> This function behaves just like ProjBoundingRectangle_PJ
 except that it also computes an approximate resolution
 at the reprojected coordinate system from a given original
 resolution.</p>
@@ -569,8 +556,8 @@ resolution.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>This is the same as <a class="reference internal" href="#geosoft.gxapi.GXPJ.project_bounding_rectangle_res" title="geosoft.gxapi.GXPJ.project_bounding_rectangle_res"><code class="xref py py-obj docutils literal"><span class="pre">project_bounding_rectangle_res</span></code></a> except that the bounding
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> This is the same as <a class="reference internal" href="#geosoft.gxapi.GXPJ.project_bounding_rectangle_res" title="geosoft.gxapi.GXPJ.project_bounding_rectangle_res"><code class="xref py py-obj docutils literal"><span class="pre">project_bounding_rectangle_res</span></code></a> except that the bounding
 rectangle will be limited to an area within which the projection can be
 performed to an accuracy better than the specified error tolerance.</p>
 </dd></dl>
@@ -600,8 +587,8 @@ performed to an accuracy better than the specified error tolerance.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>The bounding rectangle will be limited to no larger
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The bounding rectangle will be limited to no larger
 than the area specified in the output projection.  This
 is useful when projecting from limits that are unreasonable
 in the target projection.</p>
@@ -618,8 +605,8 @@ in the target projection.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<p>By default, a <a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXPJ</span></code></a> on the same datum will not apply a LDT,
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> By default, a <a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXPJ</span></code></a> on the same datum will not apply a LDT,
 is intended for transformations between datums.  However,
 in some instances you might want to convert between LDTs on
 the same datum, such as when you have two sets of coordinates
@@ -712,14 +699,7 @@ and is as accurate as the geoid data.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="GXPLY.html" title="GXPLY class"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="GXPGU.html" title="GXPGU class"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxapi.classes.html" >GX API Class/Library Reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 

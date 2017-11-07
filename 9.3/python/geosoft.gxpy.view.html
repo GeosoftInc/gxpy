@@ -27,8 +27,6 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="geosoft.gxpy.viewer submodule" href="geosoft.gxpy.viewer.html" />
-    <link rel="prev" title="geosoft.gxpy.va submodule" href="geosoft.gxpy.va.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -44,31 +42,11 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="geosoft.gxpy.viewer.html" title="geosoft.gxpy.viewer submodule"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="geosoft.gxpy.va.html" title="geosoft.gxpy.va submodule"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxpy.html" accesskey="U">gxpy modules reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Introduction</a></li>
-    <li><a href="geosoft.gxpy.html">gxpy modules reference</a></li>
-</ul>
-<h3>Previous Topic</h3>
-<ul>
-    <li><a href="geosoft.gxpy.va.html" title="previous chapter">geosoft.gxpy.va submodule</a></li>
-</ul>
-<h3>Next Topic</h3>
-<ul>
-    <li><a href="geosoft.gxpy.viewer.html" title="next chapter">geosoft.gxpy.viewer submodule</a></li>
-</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -207,44 +185,17 @@ are stored in a <code class="xref py py-obj docutils literal"><span class="pre">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<tr class="field-odd field"><th class="field-name">Constructors:</th><td class="field-body"><table border="1" class="first last docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">name:</th><td class="field-body"><p class="first">view name, default is &#8220;_unnamed_view&#8221;.</p>
-</td>
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.view.View.open" title="geosoft.gxpy.view.View.open"><code class="xref py py-meth docutils literal"><span class="pre">open()</span></code></a></td>
+<td>open an existing view in a map</td>
 </tr>
-<tr class="field-even field"><th class="field-name">map:</th><td class="field-body"><p class="first"><a class="reference internal" href="geosoft.gxpy.map.html#geosoft.gxpy.map.Map" title="geosoft.gxpy.map.Map"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.map.Map</span></code></a> instance, if not specified a new unique default map is 
-created and deleted when this session finished.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">mode:</th><td class="field-body"><p class="first">open view mode:</p>
-<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="n">READ_ONLY</span>
-<span class="n">WRITE_NEW</span>
-<span class="n">WRITE_OLD</span>
-</pre></div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-<p>The following are used with <code class="xref py py-obj docutils literal"><span class="pre">mode=geosoft.gxpy.view.WRITE_NEW</span></code>:</p>
-<table class="last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">coordinate_system:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">coordinate system as a <code class="xref py py-class docutils literal"><span class="pre">gxpy.coordinate_system.Coordinate_system</span></code> instance, or 
-one of the Coordinate_system constructor types.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">map_location:</th><td class="field-body">(x, y) view location on the map, in map cm</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">area:</th><td class="field-body">(min_x, min_y, max_x, max_y) area in view units</td>
-</tr>
-<tr class="field-even field"><th class="field-name">scale:</th><td class="field-body">Map scale if a coordinate system is defined.  If the coordinate system is not
-defined this is view units per map metre.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">copy:</th><td class="field-body">name of a view to copy into the new view.</td>
+<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.view.View.new" title="geosoft.gxpy.view.View.new"><code class="xref py py-meth docutils literal"><span class="pre">new()</span></code></a></td>
+<td>create a new view in a map</td>
 </tr>
 </tbody>
 </table>
@@ -552,6 +503,72 @@ All views on a map share the metadata with the map.</p>
 <dd><p>Name of the view</p>
 </dd></dl>
 
+<dl class="classmethod">
+<dt id="geosoft.gxpy.view.View.new">
+<em class="property">classmethod </em><code class="descname">new</code><span class="sig-paren">(</span><em>map=None</em>, <em>name='_unnamed_view'</em>, <em>coordinate_system=None</em>, <em>map_location=(0</em>, <em>0)</em>, <em>area=(0</em>, <em>0</em>, <em>30</em>, <em>20)</em>, <em>scale=100</em>, <em>copy=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.view.View.new" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new view on a map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">map:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.map.html#geosoft.gxpy.map.Map" title="geosoft.gxpy.map.Map"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.map.Map</span></code></a> instance, if not specified a new unique default map is
+created and deleted when this session finished.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">name:</th><td class="field-body">view name, default is &#8220;_unnamed_view&#8221;.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">coordinate_system:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">coordinate system as a <code class="xref py py-class docutils literal"><span class="pre">gxpy.coordinate_system.Coordinate_system</span></code> instance, or
+one of the Coordinate_system constructor types.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">map_location:</th><td class="field-body">(x, y) view location on the map, in map cm</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">area:</th><td class="field-body">(min_x, min_y, max_x, max_y) area in view units</td>
+</tr>
+<tr class="field-even field"><th class="field-name">scale:</th><td class="field-body">Map scale if a coordinate system is defined.  If the coordinate system is not
+defined this is view units per map metre.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">copy:</th><td class="field-body">name of a view to copy into the new view.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxpy.view.View.open">
+<em class="property">classmethod </em><code class="descname">open</code><span class="sig-paren">(</span><em>map</em>, <em>view_name</em>, <em>read_only=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.view.View.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open an en existing view on a map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>map</strong> &#8211; <a class="reference internal" href="geosoft.gxpy.map.html#geosoft.gxpy.map.Map" title="geosoft.gxpy.map.Map"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.map.Map</span></code></a></li>
+<li><strong>view_name</strong> &#8211; name of the view</li>
+<li><strong>read_only</strong> &#8211; True to open read-only</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxpy.view.View" title="geosoft.gxpy.view.View"><code class="xref py py-class docutils literal"><span class="pre">View</span></code></a> instance</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="geosoft.gxpy.view.View.scale">
 <code class="descname">scale</code><a class="headerlink" href="#geosoft.gxpy.view.View.scale" title="Permalink to this definition">¶</a></dt>
@@ -682,7 +699,13 @@ purposes.</p>
 <dl class="attribute">
 <dt id="geosoft.gxpy.view.View_3d.current_3d_drawing_plane">
 <code class="descname">current_3d_drawing_plane</code><a class="headerlink" href="#geosoft.gxpy.view.View_3d.current_3d_drawing_plane" title="Permalink to this definition">¶</a></dt>
-<dd><p>Name of the current drawing plane in a 3D view, <code class="xref py py-obj docutils literal"><span class="pre">None</span></code> if not defined.  Can be set to a plane number or name.</p>
+<dd><p>Current drawing plane name in a 3D view, <code class="xref py py-obj docutils literal"><span class="pre">None</span></code> if not defined.  Can be set to a plane number or name.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.view.View_3d.current_3d_drawing_plane_number">
+<code class="descname">current_3d_drawing_plane_number</code><a class="headerlink" href="#geosoft.gxpy.view.View_3d.current_3d_drawing_plane_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>The current drawing plane number, can be set.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -813,6 +836,31 @@ unique temporary file is created.</li>
 <dd><p>Return the plane number of a plane, or None if plane does not exist.</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="geosoft.gxpy.view.View_3d.set_plane_relief_surface">
+<code class="descname">set_plane_relief_surface</code><span class="sig-paren">(</span><em>surface_grid_name</em>, <em>refine=2</em>, <em>base=0</em>, <em>scale=1</em>, <em>min=None</em>, <em>max=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.view.View_3d.set_plane_relief_surface" title="Permalink to this definition">¶</a></dt>
+<dd><p>Establish a relief surface for the current plane based on a grid.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>surface_grid_name</strong> &#8211; grid file name</li>
+<li><strong>refine</strong> &#8211; relief refinement between 1 (low) and 4 (high). Default is 2.</li>
+<li><strong>base</strong> &#8211; base value in grid, will be at z=0.  Default is 0.</li>
+<li><strong>scale</strong> &#8211; scale to apply to grid after removing base, default is 1.</li>
+<li><strong>min</strong> &#8211; minimum clip  in unscaled grid values</li>
+<li><strong>max</strong> &#8211; maximum clip in unscaled grid values</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.</span></p>
+</div>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="data">
@@ -839,14 +887,7 @@ unique temporary file is created.</li>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="geosoft.gxpy.viewer.html" title="geosoft.gxpy.viewer submodule"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="geosoft.gxpy.va.html" title="geosoft.gxpy.va submodule"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxpy.html" >gxpy modules reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
