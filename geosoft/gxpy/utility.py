@@ -1151,5 +1151,5 @@ def url_retrieve(url, filename=None, overwrite=False, reporthook=None):
         if os.path.isfile(filename):
             return filename
 
-    file, message = urllib.request.urlretrieve(url, filename=filename, reporthook=reporthook)
+    file, message = urllib.request.urlretrieve(url.replace(' ', '%20'), filename=filename, reporthook=reporthook)
     return file

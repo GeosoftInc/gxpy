@@ -484,7 +484,7 @@ class Test(GXPYTest):
             print(a, b, c)
 
         url = 'https://github.com/GeosoftInc/gxpy/raw/master/README.md'
-        big = 'https://github.com/GeosoftInc/gxpy/raw/master/examples/tutorial/2D%20Views%20and%20Maps/Wittichica%20Creek%20Residual%20Total%20Field.grd'
+        big = 'https://github.com/GeosoftInc/gxpy/raw/master/examples/tutorial/2D%20Views%20and%20Maps/Wittichica Creek Residual Total Field.grd'
         ref_file = 'README.md'
         test_file = 'test.grd'
 
@@ -496,8 +496,8 @@ class Test(GXPYTest):
             file_name = gxu.url_retrieve(url, test_file)
             self.assertEqual(file_name, test_file)
 
-            #file_name = gxu.url_retrieve(big, reporthook=hook)
-            #del_file(file_name)
+            file_name = gxu.url_retrieve(big, reporthook=hook)
+            del_file(file_name)
 
         finally:
             del_file(ref_file)
