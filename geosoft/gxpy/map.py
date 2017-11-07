@@ -171,7 +171,7 @@ def save_as_image(mapfile, imagefile, type=RASTER_FORMAT_PNG, pix_width=1000, pi
     """
     Save a map to an image file
 
-    :param mapfile:     mapfile name
+    :param mapfile:     map or geosoft_3dv file name
     :param imagefile:   name of the output raster file
     :param type:        one of the RASTER_FORMAT types, default`RASTER_FORMAT_PNG`
     :param pix_width:   image pixel width, if 0 use pix_height only
