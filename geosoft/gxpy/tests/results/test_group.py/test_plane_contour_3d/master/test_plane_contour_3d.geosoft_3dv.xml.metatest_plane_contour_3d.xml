@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gmd:MD_Metadata xsi:schemaLocation="http://www.isotc211.org/2005/gmd ../schemas/iso19139fra/gmd/gmd.xsd" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:map="urn:brgm:mapping" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:gfc="http://www.isotc211.org/2005/gfc" xmlns:gco="http://www.isotc211.org/2005/gco">
+<gmd:MD_Metatest_plane_contour_3d xsi:schemaLocation="http://www.isotc211.org/2005/gmd ../schemas/iso19139fra/gmd/gmd.xsd" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:map="urn:brgm:mapping" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:gfc="http://www.isotc211.org/2005/gfc" xmlns:gco="http://www.isotc211.org/2005/gco">
 	<geosoft xmlns="http://www.geosoft.com/schema/geo">
-		<dataset version="1">
-			<title>data</title>
+		<test_plane_contour_3dset version="1">
+			<title>test_plane_contour_3d</title>
 			<file_format>geosoft_3dv</file_format>
-			<data_created_by>TestingSystem\Tester</data_created_by>
-			<data_creation_date>2003-01-01</data_creation_date>
-			<metadata_created_by>TestingSystem\Tester</metadata_created_by>
-			<metadata_creation_date>2003-01-01</metadata_creation_date>
+			<test_plane_contour_3d_created_by>TestingSystem\Tester</test_plane_contour_3d_created_by>
+			<test_plane_contour_3d_creation_date>2003-01-01</test_plane_contour_3d_creation_date>
+			<metatest_plane_contour_3d_created_by>TestingSystem\Tester</metatest_plane_contour_3d_created_by>
+			<metatest_plane_contour_3d_creation_date>2003-01-01</metatest_plane_contour_3d_creation_date>
 			<georeference>
-				<dataextents>
+				<test_plane_contour_3dextents>
 					<extent3d minx="662183.75" miny="23833158.75" minz="0" maxx="663641.25" maxy="23834441.25" maxz="0"/>
-				</dataextents>
+				</test_plane_contour_3dextents>
 				<projection type="TRANSVERSE_MERCATOR" name="NAD83 / UTM zone 24N" projection="UTM zone 24N" ellipsoid="GRS 1980" datum="NAD83" datumtrf="NAD83 to WGS 84 (1)" datumtrf_description="[NAD83] (4m) North America - Canada and USA (CONUS, Alaska mainland)" radius="6378137" eccentricity="0.0818191910428">
 					<shift x="0" y="0" z="0"/>
 					<parameters scale="0.9996" false_east="500000" false_north="0" lat_origin="0" lon_origin="-39"/>
 					<units name="m" unit_scale="1"/>
 				</projection>
 			</georeference>
-		</dataset>
+		</test_plane_contour_3dset>
 	</geosoft>
 	<gmd:identificationInfo>
 		<gmd:MD_DataIdentification>
 			<gmd:citation>
 				<gmd:CI_Citation>
 					<gmd:title>
-						<gco:CharacterString>data</gco:CharacterString>
+						<gco:CharacterString>test_plane_contour_3d</gco:CharacterString>
 					</gmd:title>
 					<gmd:date>
 						<gmd:CI_Date>
@@ -79,9 +79,9 @@
 			</gmd:individualName>
 		</gmd:CI_ResponsibleParty>
 	</gmd:contact>
-	<gmd:dataQualityInfo>
+	<gmd:test_plane_contour_3dQualityInfo>
 		<gmd:DQ_DataQuality/>
-	</gmd:dataQualityInfo>
+	</gmd:test_plane_contour_3dQualityInfo>
 	<gmd:dateStamp>
 		<gco:Date>2003-1-1</gco:Date>
 	</gmd:dateStamp>
@@ -102,4 +102,4 @@
 			</gmd:referenceSystemIdentifier>
 		</gmd:MD_ReferenceSystem>
 	</gmd:referenceSystemInfo>
-</gmd:MD_Metadata>
+</gmd:MD_Metatest_plane_contour_3d>
