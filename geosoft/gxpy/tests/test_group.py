@@ -1149,9 +1149,10 @@ class Test(GXPYTest):
 
         # create a 3D view
         with gxv.View_3d.new("data",
-                                area_2d=gxgrd.Grid(grid_file).extent_2d(),
-                                coordinate_system=gxgrd.Grid(grid_file).coordinate_system,
-                                overwrite=True) as v:
+                             area_2d=gxgrd.Grid(grid_file).extent_2d(),
+                             coordinate_system=gxgrd.Grid(grid_file).coordinate_system,
+                             scale=5000,
+                             overwrite=True) as v:
             v3d_name = v.file_name
 
             v.set_plane_relief_surface(grid_file, base=200, scale=2, max=250, min=150, refine=2)
@@ -1163,6 +1164,29 @@ class Test(GXPYTest):
             gxg.contour(v, 'TMI_contour', grid_file)
 
         self.crc_map(v3d_name)
+
+    def test_plane_contour(self):
+        self.start()
+
+        folder, files = gsys.unzip(os.path.join(os.path.dirname(self._test_case_py), 'dem_small.zip'),
+                                   folder=self.gx.temp_folder())
+        grid_file = os.path.join(folder, 'dem_small.grd')
+
+        # create a 2D view
+        with gxmap.Map.new("contour",
+                           data_area=gxgrd.Grid(grid_file).extent_2d(),
+                           scale=20000,
+                           inside_margin=0.1,
+                           coordinate_system=gxgrd.Grid(grid_file).coordinate_system,
+                           overwrite=True) as map:
+            map_name = map.file_name
+
+            with gxv.View.open(map, "data") as v:
+                gxg.contour(v, 'TMI_contour', grid_file)
+                with gxg.Draw(v, 'edge') as g:
+                    g.rectangle((v.extent_clip), pen=gxg.Pen(line_thick=v.units_per_map_cm * 0.1))
+
+        self.crc_map(map_name, pix_width=1000)
 
     def test_polydata_3d_grd_cone(self):
         self.start()

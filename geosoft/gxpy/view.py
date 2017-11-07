@@ -270,6 +270,20 @@ class View:
         self._metres_per_unit = 1.0 / metres_per
         self.gxview.set_ipj(self._cs.gxipj)
 
+    @property
+    def map_scale(self):
+        """
+        Map scale for this view.
+
+        Can be set, in which case the entire view will move on the map.
+        """
+        return self.gxview.get_map_scale()
+
+    @map_scale.setter
+    def map_scale(self, s):
+        if s > 0.0:
+            self.re_scale(s)
+
     def close(self):
         """
         Close a view.  Use to close a view when working outside of a `with ... as:` construct.
@@ -320,7 +334,6 @@ class View:
         self.gxview.fit_window(mm_minx, mm_miny, mm_maxx, mm_maxy,
                                a_minx, a_miny, a_maxx, a_maxy)
         self.gxview.set_window(a_minx, a_miny, a_maxx, a_maxy, UNIT_VIEW)
-        # self.gxview.set_u_fac(1.0 / x_scale)
 
     @property
     def map(self):
@@ -882,4 +895,3 @@ class View_3d(View):
         else:
             refine = (refine - 1) * 16
         self.gxview.set_plane_surf_info(self.current_3d_drawing_plane_number, refine, base, scale,min, max)
-        

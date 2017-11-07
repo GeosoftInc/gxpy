@@ -584,6 +584,23 @@ class Map:
             raise MapException(_t('Map does not contain a view named "{}"').format(s))
         self.gxmap.set_class_name('section', s)
 
+    @property
+    def map_scale(self):
+        """
+        Map scale, based on the current default "data" view if it exists.
+
+        WARNING: If the "data" view is open this returns 1000. TODO - add test for open views.
+
+        Can be set, but must not be called if any views are open. Resetting the map scale changes the
+        scale of all views in the map.
+        """
+        return self.gxmap.get_map_scale()
+
+    @map_scale.setter
+    def map_scale(self, scale):
+        if scale > 0:
+            self.gxmap.set_map_scale(scale)
+
     def close(self):
         """ Close the map and release resources. """
         self._close()
