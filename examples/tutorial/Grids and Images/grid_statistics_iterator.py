@@ -20,6 +20,7 @@ with gxgrid.Grid.open('elevation_surfer.grd(SRF;VER=V7)') as grid:
             number_of_dummies += 1
         else:
             stats.data(v)
+    total_points = grid.nx * grid.ny
 
 # print statistical properties
 print('minimum: ', stats.get_info(gxapi.ST_MIN))
@@ -27,4 +28,4 @@ print('maximum: ', stats.get_info(gxapi.ST_MAX))
 print('mean: ', stats.get_info(gxapi.ST_MEAN))
 print('standard deviation:', stats.get_info(gxapi.ST_STDDEV))
 print('number of dummies: ', number_of_dummies)
-print('number of valid data points: ', (grid.nx * grid.ny) - number_of_dummies)
+print('number of valid data points: ', total_points - number_of_dummies)
