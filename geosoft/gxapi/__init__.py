@@ -5716,11 +5716,11 @@ FILE_FILTER_ARGIS_MXD = 65
 FILE_FILTER_GOCAD_TS = 66
 #: Geosoft list of items: names, values  ``*.lst``     LOCAL
 FILE_FILTER_LST = 67
-#: GM-`GXSYS <geosoft.gxapi.GXSYS>` external coordinate system     ``*.ecs``     LOCAL
+#: GM-SYS external coordinate system     ``*.ecs``     LOCAL
 FILE_FILTER_ECS = 68
 #: Target parameter ini file for fence sections   ``*.ins``    LOCAL
 FILE_FILTER_TARGET_FENCE = 69
-#: GM-`GXSYS <geosoft.gxapi.GXSYS>` 3D model   ``*.geosoft_gmsys3d``    LOCAL
+#: GM-SYS 3D model   ``*.geosoft_gmsys3d``    LOCAL
 FILE_FILTER_GMS3D = 70
 #: GEMCOM BT2 ``*.bt2`` LOCAL
 FILE_FILTER_BT2 = 71
@@ -5770,7 +5770,7 @@ FILE_FILTER_DAARC500 = 92
 FILE_FILTER_TXT = 93
 #: Voxi									``*.geosoft_voxi``	LOCAL
 FILE_FILTER_VOXEL_INVERSION = 94
-#: GM-`GXSYS <geosoft.gxapi.GXSYS>` Profile model file		``*.gms``	LOCAL
+#: GM-SYS Profile model file		``*.gms``	LOCAL
 FILE_FILTER_GMS = 95
 #: Geosoft 3D filter files			``*.flt3d``			LOCAL
 FILE_FILTER_FLT3D = 96
@@ -5788,7 +5788,7 @@ FILE_FILTER_VECTORVOXEL = 101
 FILE_FILTER_FLT = 102
 #: XYZ Export Templates ``*.o0`` LOCAL
 FILE_FILTER_XYZ_TEMPLATE_O0 = 103
-#: GM-`GXSYS <geosoft.gxapi.GXSYS>` Profile model    ``*.geosoft_gmsys2d``   LOCAL
+#: GM-SYS Profile model    ``*.geosoft_gmsys2d``   LOCAL
 FILE_FILTER_GMS2D = 104
 #: `GXIP <geosoft.gxapi.GXIP>` Database Template ``*.geosoft_ipdatabasetemplate`` LOCAL
 FILE_FILTER_IP_DATABASE_TEMPLATE = 105

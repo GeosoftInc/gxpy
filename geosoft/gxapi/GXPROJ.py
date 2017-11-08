@@ -203,8 +203,8 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         Voxel            List Voxels.
         VoxelInversion   List VOXI Documents.
         `GXMXD <geosoft.gxapi.GXMXD>`              List ArcGIS MXDs.
-        GMS3D            List GM-`GXSYS <geosoft.gxapi.GXSYS>` 3D Models.
-        GMS2D            List GM-`GXSYS <geosoft.gxapi.GXSYS>` 2D Models.
+        GMS3D            List GM-SYS 3D Models.
+        GMS2D            List GM-SYS 2D Models.
         All              Lists all files.
         """
         ret_val = gxapi_cy.WrapPROJ._list_documents(GXContext._get_tls_geo(), gvv, type.encode())
@@ -239,8 +239,8 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         Voxel            List Voxels.
         VoxelInversion   List VOXI Documents.
         `GXMXD <geosoft.gxapi.GXMXD>`              List ArcGIS MXDs.
-        GMS3D            List GM-`GXSYS <geosoft.gxapi.GXSYS>` 3D Models.
-        GMS2D            List GM-`GXSYS <geosoft.gxapi.GXSYS>` 2D Models.
+        GMS3D            List GM-SYS 3D Models.
+        GMS2D            List GM-SYS 2D Models.
         All              Lists all files.
         """
         ret_val = gxapi_cy.WrapPROJ._list_loaded_documents(GXContext._get_tls_geo(), gvv, type.encode())
