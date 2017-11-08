@@ -2078,9 +2078,7 @@ class Aggregate_group(Group):
 
     def __del__(self):
         if hasattr(self, 'agg'):
-            if self.agg:
-                self.agg.close()
-                self.agg = None
+            self.agg = None
         if hasattr(self, '_close'):
             self._close()
 
