@@ -10,7 +10,7 @@
 			<metadata_creation_date>2003-01-01</metadata_creation_date>
 			<georeference>
 				<dataextents>
-					<extent3d minx="662183.75" miny="23833158.75" minz="0" maxx="663641.25" maxy="23834441.25" maxz="0"/>
+					<extent3d minx="662183.75" miny="23833158.75" minz="-100" maxx="663641.25" maxy="23834441.25" maxz="100"/>
 				</dataextents>
 				<projection type="TRANSVERSE_MERCATOR" name="NAD83 / UTM zone 24N" projection="UTM zone 24N" ellipsoid="GRS 1980" datum="NAD83" datumtrf="NAD83 to WGS 84 (1)" datumtrf_description="[NAD83] (4m) North America - Canada and USA (CONUS, Alaska mainland)" radius="6378137" eccentricity="0.0818191910428">
 					<shift x="0" y="0" z="0"/>
