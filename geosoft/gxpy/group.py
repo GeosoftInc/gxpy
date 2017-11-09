@@ -808,8 +808,8 @@ class Draw(Group):
         
         :param text:        text string.  Use line-feed characters for multi-line text.
         :param location:    (x, y) or a `gxpy.geomerty.Point` location
-        :param reference:   reference point relative to the clip limits of the view to
-                            which reference location.  The points are:
+        :param reference:   Text justification point relative text outline box.
+                            The points are:
                             
                                 ::
                                     
@@ -1587,7 +1587,7 @@ class Text_def:
 
     :Properties:
 
-        :height:        font height in 
+        :height:        font height in view units
         :font:          font name
         :weight:        font weight, one of FONT_WEIGHT
         :line_thick:    font line thickness for gfn stroke fonts

@@ -25,6 +25,7 @@ from . import gx as gx
 from . import coordinate_system as gxcs
 from . import vv as gxvv
 from . import utility as gxu
+from . import agg as gxagg
 
 __version__ = geosoft.__version__
 
@@ -1086,7 +1087,6 @@ class Grid:
 
         return gx, gy, gz
 
-
 # grid utilities
 def array_locations(properties):
     """
@@ -1278,3 +1278,21 @@ def grid_bool(g1, g2, joinedGrid, opt=1, size=3, olap=1):
         g2.close()
 
     return Grid.open(joinedGrid)
+
+def save_as_image(gridfile, shade=True, color_map=None, contour=None, **kwargs):
+    """
+    Crate an image file from a grid.
+
+    :param gridfile:    grid file name
+    :param shade:       True to add shading effect
+    :param color_map:   `geosoft.gxpy.group.Color_map` instance, or a colour ramp file name, defaut is user's default
+    :param contour:     colour contour interval if colours need to break at exact levels
+    :param kwargs:      see `geosoft.gxpy.agg.save_as_image`
+    :return:            image file name
+
+    .. versionaded:: 9.3
+    """
+
+    with gxagg.Aggregate_image.new(gridfile, shade=shade, color_map=color_map, contour=contour) as agg:
+        return agg.save_as_image(**kwargs)
+

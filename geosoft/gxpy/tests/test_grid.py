@@ -7,6 +7,7 @@ import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.grid as gxgrd
+import geosoft.gxpy.utility as gxu
 
 from base import GXPYTest
 
@@ -627,6 +628,20 @@ class Test(GXPYTest):
                 gm.rot = 2.0
                 self.assertEqual(gm.xyz(0), (18.595203516590775, 39.8775426296126, 1007.0))
                 self.assertEqual(gm.xyz((g.nx - 1, g.ny - 1)), (19.00281516607315, 40.75166863280787, 1008.0342903237216))
+
+    def test_image(self):
+        self.start()
+
+        image_name = gxgrd.save_as_image(self.g1f,
+                                         image_name='test.bmp',
+                                         title='image test',
+                                         pix_width=1000,
+                                         type=geosoft.gxpy.map.RASTER_FORMAT_BMP)
+
+        try:
+            self.assertEqual(gxu.crc32_file(image_name), 2012511430)
+        finally:
+            gxgrd.delete_files(image_name)
 
 
 ###############################################################################################

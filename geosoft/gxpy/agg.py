@@ -22,8 +22,12 @@ import os
 
 import geosoft
 import geosoft.gxapi as gxapi
+from . import gx
 from . import vv as gxvv
 from . import grid as gxgrd
+from . import map as gxmap
+from . import view as gxview
+from . import group as gxgroup
 
 __version__ = geosoft.__version__
 
@@ -299,3 +303,129 @@ class Aggregate_image:
         with gxgrd.Grid.open(self.layer_file_names[layer]) as g:
             uom = g.unit_of_measure
         return uom
+
+    def save_as_image(self, image_name=None, pix_width=800, overwrite=False, type=gxmap.RASTER_FORMAT_PNG,
+                      title=None, legend_label=None,
+                      features=['SCALE', 'LEGEND', 'NEATLINE']):
+        """
+        Create a PNG image file from an aggregate.
+
+        :param image_name:      default is the aggregate name (.png extension)
+        :param pix_width:       pixel width, default is 800
+        :param type:            image file type from RASTER_FORMAT list in `geosoft.gxpy.map`. Default is png.
+        :param overwrite:       True to overwrite existing image file
+        :param title:           Title added to the image
+        :param legend_label:    If plotting a legend make this the legned title.  The default is the title in the
+                                first aggregate layer colour map.
+        :param features:        list of features to place on the map, default is ('SCALE', 'LEGEND', 'NEATLINE')
+
+                                    =========== =========================================
+                                    'SCALE'     show a scale bar
+                                    'LEGEND'    show an aggregate colour legend
+                                    'NEATLINE'  draw a neat-line around the image
+                                    'ANNOT_XY'  annotate map coordinates
+                                    'ANNOT_LL'  annotate map Latitude, Longitude
+                                    'CONTOUR'   contour the first layer in the aggregate
+                                    =========== =========================================
+
+        :return:                image file name
+
+        .. versionadded:: 9.3
+        """
+
+        if image_name is None:
+            image_name = self.name + '.png'
+            type = gxmap.RASTER_FORMAT_PNG
+        temp_map_name = gx.GXpy().temp_file('.map')
+        ref_grid_name = self.layer_file_names[0]
+        ref_grid = gxgrd.Grid.open(ref_grid_name)
+
+        # uppercase features, use a dict so we pop things we use and report error
+        if isinstance(features, str):
+            features = (features,)
+        feature_list = {}
+        if features is not None:
+            for f in features:
+                feature_list[f.upper()] = None
+            if 'ALL' in feature_list:
+                feature_list = {'SCALE': None,
+                                'LEGEND': None,
+                                'NEATLINE': None,
+                                'ANNOT_LL': None,
+                                'ANNOT_XY': None,
+                                'CONTOUR': None}
+
+        bottom_margin = 1
+        if title:
+            bottom_margin += 1
+        if 'SCALE' in feature_list:
+            bottom_margin += 1.2
+        bottom = 0
+
+        right_margin = 1
+        if 'LEGEND' in feature_list:
+            right_margin += 3.5
+
+        with gxmap.Map.new(temp_map_name,
+                           data_area=ref_grid.extent_2d(),
+                           media="A4",
+                           margins=(1, right_margin, bottom_margin, 1),
+                           inside_margin=0.2,
+                           coordinate_system=ref_grid.coordinate_system,
+                           overwrite=overwrite) as gmap:
+
+            if 'ANNOT_XY' in feature_list:
+                feature_list.pop('ANNOT_XY')
+                gmap.annotate_data_xy(grid=gxmap.GRID_CROSSES)
+            if 'ANNOT_LL' in feature_list:
+                feature_list.pop('ANNOT_LL')
+                gmap.annotate_data_ll(grid=gxmap.GRID_LINES,
+                                      grid_pen='b255r100g100t150',
+                                      text_def=gxgroup.Text_def(height=0.18, italics=True))
+            if 'SCALE' in feature_list:
+                feature_list.pop('SCALE')
+                gmap.scale_bar(location=(2, 0, 1.2), sections=2,
+                               text_def=gxgroup.Text_def(height=0.15))
+                bottom = 15
+            if 'NEATLINE' in feature_list:
+                feature_list.pop('NEATLINE')
+                gmap.surround()
+
+            with gxview.View.open(gmap, "data") as v:
+
+                ref_grid = None
+                gxgroup.Aggregate_group.new(v, self)
+
+                if 'CONTOUR' in feature_list:
+                    feature_list.pop('CONTOUR')
+                    gxgroup.contour(v, 'contour', ref_grid_name)
+
+                if 'LEGEND' in feature_list:
+                    feature_list.pop('LEGEND')
+                    if self.layer_count > 1:
+                        cmap2 = self.layer_color_map(1)
+                    else:
+                        cmap2=None
+                    gxgroup.legend_color_bar(v, 'legend',
+                                             title=legend_label,
+                                             location=(1, 0),
+                                             cmap=self.layer_color_map(0),
+                                             cmap2=cmap2)
+
+                # map title
+                if title:
+                    with gxview.View.open(gmap, "base") as v:
+                        with gxgroup.Draw(v, 'annotations') as g:
+                            x = (v.extent_clip[2] - v.extent_clip[0]) / 2
+                            g.text(title,
+                                   reference=1,
+                                   location=(x, bottom + 5),
+                                   text_def=gxgroup.Text_def(height=3.5,
+                                                             weight=gxgroup.FONT_WEIGHT_BOLD))
+
+
+        if len(feature_list):
+            raise AggregateException(_t('Unsupported features {}').format(list(feature_list.keys())))
+
+        gxmap.save_as_image(temp_map_name, image_name, pix_width=pix_width, type=type)
+        return image_name

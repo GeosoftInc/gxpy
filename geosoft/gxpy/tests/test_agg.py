@@ -1,8 +1,11 @@
 import unittest
 import os
 
+import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.agg as gxagg
+import geosoft.gxpy.grid as gxgrid
+import geosoft.gxpy.utility as gxu
 import geosoft
 
 from base import GXPYTest
@@ -80,7 +83,20 @@ class Test(GXPYTest):
             agg.brightness = -0.5
             self.assertEqual(agg.brightness, -0.5)
 
+    def test_image(self):
+        self.start()
 
+        gxgrid.Grid.open(self.g3f).unit_of_measure = 'nT'
+        with gxagg.Aggregate_image.new(self.g3f, shade=True, color_map='elevation.tbl', contour=20) as agg:
+            image_name = agg.save_as_image('test.bmp',
+                                           title='image test',
+                                           pix_width=500,
+                                           type=geosoft.gxpy.map.RASTER_FORMAT_BMP)
+
+        try:
+            self.assertEqual(gxu.crc32_file(image_name), 4280600657)
+        finally:
+            gxgrid.delete_files(image_name)
 
 if __name__ == '__main__':
 
