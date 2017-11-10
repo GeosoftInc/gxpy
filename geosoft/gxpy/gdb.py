@@ -31,6 +31,8 @@ from . import utility as gxu
 from . import gx as gx
 from . import coordinate_system as gxcs
 from . import metadata as gxmeta
+from . import map as gxmap
+from . import view as gxview
 
 __version__ = geosoft.__version__
 
@@ -81,6 +83,9 @@ READ_REMOVE_DUMMYCOLUMNS = 2 #:
 SYMBOL_LOCK_NONE = gxapi.DB_LOCK_NONE #:
 SYMBOL_LOCK_READ = gxapi.DB_LOCK_READONLY #:
 SYMBOL_LOCK_WRITE = gxapi.DB_LOCK_READWRITE #:
+
+DRAW_AS_POINTS = 0 #:
+DRAW_AS_LINES = 1 #:
 
 class GdbException(Exception):
     """
@@ -202,10 +207,9 @@ class Geosoft_gdb:
         import gxpy.gx as gxp
         import gxpy.gdb as gxdb
 
-        # open the current database
-        gdb = gxdb.Geosoft_gdb.open(gxp)
-        lines = gdb.lines()
-        for line in lines:
+        # open the current database in the open project
+        gdb = gxdb.Geosoft_gdb.open()
+        for line in gdb.list_lines():
 
             npd,ch,fid = gdb.read_line(line)
             # npd is a 2D numpy array to all data in this line.
@@ -221,68 +225,43 @@ class Geosoft_gdb:
 
         import os,sys
         import numpy as np
-        import gxpy.gx as gxp
+        import gxpy.gx as gx
         import gxpy.gdb as gxdb
 
         # initalize the gx environment - required for external programs.
-        with gxu.GXpy() as gxp:
+        gxp = gx.GXpy()
     
-            # open a database
-            gdb = gxdb.Geosoft_gdb.open(gxp,'test.gdb')
-            lines = gdb.lines()
-            for line in lines:
-    
-                npd,ch,fid = gdb.read_line(line)
-                # npd is a 2D numpy array to all data in this line.
-                # ch is a list of the channels, one channel for each column in npd.
-                # Array channels are expanded with channel names "name[0]", "name[1]" ...
-                # fid is a tuple (start,increment) fiducial, which will be the minimum start and smallest increment.
-    
-                # ... do something with the data in npd ...
+        # open a database
+        gdb = gxdb.Geosoft_gdb.open('test.gdb')
+        for line in gdb.list_lines():
+
+            npd,ch,fid = gdb.read_line(line)
+            # npd is a 2D numpy array to all data in this line.
+            # ch is a list of the channels, one channel for each column in npd.
+            # Array channels are expanded with channel names "name[0]", "name[1]" ...
+            # fid is a tuple (start,increment) fiducial, which will be the minimum start and smallest increment.
+
+            # ... do something with the data in npd ...
 
     The following creates a new channel that is the distance from the origin to the X,Y,Z location of every point.
-    This code assumes that there are no dummies in the X, Y or Z channels (the next example shows how to
-    deal with dummies).
 
     .. code::
 
         ...
-        gdb = gxdb.Geosoft_gdb.open(gxp,'test.gdb')
-        lines = gdb.lines()
-        for line in lines:
+        gdb = gxdb.Geosoft_gdb.open('test.gdb')
+        for line in gdb.list_lines():
 
             npd,ch,fid = gdb.read_line(line, channels=['X','Y','Z'])
 
-            squares = npd.square(npd)
-            dist = np.sqrt(npd[0] + npd[1] + npd[2])
+            npd = np.square(npd)
+            distance_from_origin = np.sqrt(npd[0] + npd[1] + npd[2])
 
-            gdb.write_channel(line, 'distance', dist, fid)
-
-    Create a distance channel (as in previous example), with dummy handling:
-
-    .. code::
-
-        ...
-        gdb = gxdb.Geosoft_gdb.open(gxp,'test.gdb')
-        lines = gdb.lines()
-        for l in lines:
-
-            ln, lsymb = gdb.line_name_symb(l)
-
-            data, ch, fid = gdb.read_line(lsymb, channels=['X','Y','Z'])
-            dummy = gxu.gx_dummy(data.dtype)
-
-            # get a dummy mask, `True` for all rows with a dummy
-            dummy_mask = gxu.dummy_mask(data)
-
-            squares = npd.square(npd)
-            dist = np.sqrt(npd[0] + npd[1] + npd[2])
-
-            # insert dummies using the dummy mask, then write
-            dist[dummy_mask] = dummy
-            gdb.write_channel(lsymb, 'distance', dist)
+            gdb.write_channel(line, 'distance', distance_from_origin, fid)
 
     .. versionadded:: 9.1
+
+    .. versionchanged:: 9.3 float numpy arrays use np.nan for dummies so dummy filtering no longer necessary.
+
     """
 
     def __enter__(self):
@@ -1575,7 +1554,10 @@ class Geosoft_gdb:
 
         # move data to numpy array
         npd = np.empty((nvd, nCh), dtype=dtype)
-        dummy_value = gxu.gx_dummy(npd.dtype)
+        if npd.dtype == np.float32 or npd.dtype == np.float64:
+            dummy_value = np.nan
+        else:
+            dummy_value = gxu.gx_dummy(npd.dtype)
         chNames = []
         for chvv in data:
             vv = chvv[1]
@@ -1587,13 +1569,15 @@ class Geosoft_gdb:
 
         # dummy handling
         if dummy:
-            dummy_value = gxu.gx_dummy(npd.dtype)
             if dummy == READ_REMOVE_DUMMYCOLUMNS:
                 n_ok = 0
 
                 # shift data and channel names to remove columns containing a dummy
                 for i in range(nCh):
-                    if dummy_value in npd[:, i]:
+                    if np.isnan(dummy_value):
+                        if np.isnan(npd[:, i]).any():
+                            continue
+                    elif dummy_value in npd[:, i]:
                         continue
                     if n_ok != i:
                         npd[:, n_ok] = npd[:, i]
@@ -1605,16 +1589,15 @@ class Geosoft_gdb:
 
             elif dummy == READ_REMOVE_DUMMYROWS:
 
-                mask = np.apply_along_axis(lambda a: not (dummy_value in a), 1, npd)
+                if np.isnan(dummy_value):
+                    mask = np.apply_along_axis(lambda a: not (np.isnan(a).any()), 1, npd)
+                else:
+                    mask = np.apply_along_axis(lambda a: not (dummy_value in a), 1, npd)
                 npd = npd[mask, :]
                 fid = (0.0, 1.0)
 
             else:
                 raise GdbException(_t('Unrecognized dummy={}').format(dummy))
-
-        # replace float dummies with nan
-        if npd.dtype == np.float:
-            gxu.dummy_to_nan(npd)
 
         return npd, chNames, fid
 
@@ -1888,6 +1871,92 @@ class Geosoft_gdb:
 
         return set.tolist()
 
+    def figure_map(self, file_name=None, title=None, draw=DRAW_AS_POINTS,
+                   features=['SCALE', 'NEATLINE'], **kwargs):
+        """
+        Create a figure map file from selected lines in the database.
+
+        :param file_name:       the name of the map, if None a default map is created.
+        :param overwrite:       True to overwrite existing image file
+        :param title:           Title added to the image
+        :param style:           `DRAW_AS_POINTS` to draw a dot at each point (default). Long lines are decimated.
+                                `DRAW_AS_LINES` to draw lines with a line label at each end.
+        :param features:        list of features to place on the map, default is ('SCALE', 'NEATLINE')
+
+                                    =========== =========================================
+                                    'SCALE'     show a scale bar
+                                    'NEATLINE'  draw a neat-line around the image
+                                    'ANNOT_XY'  annotate map coordinates
+                                    'ANNOT_LL'  annotate map Latitude, Longitude
+                                    =========== =========================================
+
+        :param kwargs:          passed to `geosoft.gxpy.map.Map.new`
+
+        .. versionadded:: 9.3
+        """
+
+        # uppercase features, use a dict so we pop things we use and report error
+        if isinstance(features, str):
+            features = (features,)
+        feature_list = {}
+        if features is not None:
+            for f in features:
+                feature_list[f.upper()] = None
+        features = list(feature_list.keys())
+
+        # setup margins
+        if not ('margins' in kwargs):
+
+            bottom_margin = 1.0
+            if title:
+                bottom_margin += len(title.split('\n')) * 1.0
+            if 'ALL' in feature_list or 'SCALE' in feature_list:
+                bottom_margin += 1.2
+            kwargs['margins'] = (1, 1, bottom_margin, 1)
+
+        kwargs['coordinate_system'] = self.coordinate_system
+
+        # work out some non-zero extents
+        ex = self.extent_xyz()
+        if not(ex[0] is None or ex[1] is None or ex[3] is None or ex[4] is None):
+
+            mnx, mny, mxx, mxy = (ex[0], ex[1], ex[3], ex[4])
+            dx = mxx - mnx
+            dy = mxy - mny
+            if dx == 0 and dy == 0:
+                ex = (mnx - 50, mny - 50, mxx + 50, mxy + 50)
+            else:
+                if dx  < dy * 0.1:
+                    d = dy * 0.05
+                    mnx -= d
+                    mxx += d
+                elif dy < dx * 0.1:
+                    d = dx * 0.05
+                    mny -= d
+                    mxy += d
+                ex = (mnx, mny, mxx, mxy)
+
+            gmap = gxmap.Map.figure(ex,
+                                    file_name=file_name,
+                                    features=features,
+                                    title=title,
+                                    **kwargs)
+
+            x, y, _ = self.xyz_channels
+            with gxview.View.open(gmap, "data") as v:
+                for line in self.list_lines():
+                    label = self.line_name_symb(line)[0]
+                    xvv = self.read_channel_vv(line, x)
+                    yvv = self.read_channel_vv(line, y)
+                    np = yvv.np
+                    gxapi.GXMVU.path_plot(v.gxview,
+                                          xvv.gxvv, yvv.gxvv,
+                                          label,
+                                          gxapi.MVU_FLIGHT_LOCATE_END,
+                                          67.5, 1,
+                                          1, 1, 0)
+
+        return gmap
 
 class Channel:
     """
@@ -2409,6 +2478,7 @@ class Line:
 
     @property
     def selected(self):
+        """True if this line is selected, can be set."""
         return self.gdb._db.get_line_selection(self._symb) == gxapi.DB_LINE_SELECT_INCLUDE
 
     @selected.setter

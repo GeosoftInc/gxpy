@@ -262,6 +262,10 @@ class GXvv:
                 else:
                     npd = self._gxvv.get_data_np(start, n, dtype)
 
+        # float dummies to nan
+        if npd.dtype == np.float32 or npd.dtype == np.float64:
+            npd[npd == gxu.gx_dummy(npd.dtype)] = np.nan
+
         fid = self.fid
         start = fid[0] + start * fid[1]
         return npd, (start, fid[1])
@@ -293,15 +297,25 @@ class GXvv:
 
         # numerical data
         if self._gxtype >= 0:
+
             if data.dtype == np.float32 or data.dtype == np.float64:
                 data[data == np.nan] = gxu.gx_dummy(data.dtype)
-            self._gxvv.set_data_np(0, data)
+
+            # strings
+            if gxu.gx_dtype(data.dtype) < 0:
+                i = 0
+                for s in data:
+                    self._gxvv.set_double(i, gxu.rdecode(s))
+                    i += 1
+            else:
+                self._gxvv.set_data_np(0, data)
 
         # strings
         else:
-            ne = data.shape[0]
-            for i in range(ne):
-                self._gxvv.set_string(i, str(data[i]))
+            i = 0
+            for d in data:
+                self._gxvv.set_string(i, str(d))
+                i += 1
 
         self._np = None
 

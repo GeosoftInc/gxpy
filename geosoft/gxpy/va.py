@@ -268,6 +268,10 @@ class GXva:
 
         npd = self._gxva.get_array_np(start, start_col, n, n_col, dtype).reshape(-1, n_col)
 
+        # float dummies to nan
+        if npd.dtype == np.float32 or npd.dtype == np.float64:
+            npd[npd == gxu.gx_dummy(npd.dtype)] = np.nan
+
         fid = self.fid
         start = fid[0] + start * fid[1]
         return npd, (start, fid[1])

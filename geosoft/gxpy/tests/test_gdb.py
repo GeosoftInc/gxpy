@@ -1223,6 +1223,33 @@ class Test(GXPYTest):
         finally:
             gxdb.delete_files(name)
 
+    def test_code_example(self):
+        self.start()
+
+        gdb = gxdb.Geosoft_gdb.open(self.gdb_name)
+
+        try:
+            for line in gdb.list_lines():
+                npd, ch, fid = gdb.read_line(line, channels=['X', 'Y', 'Z'])
+
+                npd = np.square(npd)
+                distance_from_origin = np.sqrt(npd[0] + npd[1] + npd[2])
+
+                gdb.write_channel(line, 'distance', distance_from_origin, fid)
+
+        finally:
+            gdb.discard()
+
+
+    def test_figure(self):
+        self.start()
+
+        with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
+            #map_file = gdb.figure_map(title='gdb_test', features='all').file_name
+            #self.crc_map(map_file)
+            pass
+
+
 ###############################################################################################
 
 if __name__ == '__main__':

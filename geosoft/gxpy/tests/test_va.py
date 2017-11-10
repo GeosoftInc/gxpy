@@ -105,19 +105,33 @@ class Test(GXPYTest):
             self.assertEqual(np3.shape[1], va.width)
 
         npdata = np.array(range(64), dtype=np.int).reshape(4, 16)
+        npdata[1, 2] = gxapi.iDUMMY
         with gxva.GXva(npdata, fid=fid) as va:
+
             np3, fid = va.get_data(dtype=np.int64)
             self.assertEqual(np3[0, 0], 0.)
             self.assertEqual(np3[2, 11], 43)
+            self.assertEqual(np3[1, 2], gxapi.GS_S8DM)
+
+            np3, fid = va.get_data(dtype=np.int32)
+            self.assertEqual(np3[0, 0], 0.)
+            self.assertEqual(np3[2, 11], 43)
+            self.assertEqual(np3[1, 2], gxapi.GS_S4DM)
+            self.assertEqual(np3[1, 2], gxapi.iDUMMY)
+
             np3, fid = va.get_data(np.float)
             self.assertEqual(np3[0, 0], 0.)
             self.assertEqual(np3[2, 11], 43.)
+            self.assertTrue(np.isnan(np3[1, 2]))
 
-            va.set_data(np.array(range(32), dtype=np.int))
-            np3, fid = va.get_data(dtype=np.int64)
+            d = np.array(range(32), dtype=np.int).reshape(-1, va.width)
+            d[0,3] = gxu.gx_dummy(d.dtype)
+            va.set_data(d)
+            np3, fid = va.get_data(dtype=np.int32)
             self.assertEqual(np3.shape[0], 2)
             self.assertEqual(np3[0,0], 0)
             self.assertEqual(np3[1,15], 31)
+            self.assertEqual(np3[0, 3], gxapi.GS_S4DM)
 
     def test_iterator(self):
         self.start()
