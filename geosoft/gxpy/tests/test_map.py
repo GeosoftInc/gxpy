@@ -12,6 +12,7 @@ import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.system as gxsys
 import geosoft.gxpy.group as gxg
 import geosoft.gxpy.grid as gxgrd
+import geosoft.gxpy.utility as gxu
 
 from base import GXPYTest
 
@@ -658,23 +659,17 @@ class Test(GXPYTest):
                 self.assertEqual(properties.get('ny'),1512)
                 self.assertEqual(str(properties.get('coordinate_system')),'*unknown')
 
-    def test_png(self):
+    def test_figure(self):
         self.start()
 
-        cs = gxcs.Coordinate_system('NAD83 / UTM zone 15N')
-        with gxmap.Map.new(data_area=(350000, 7000000, 400000, 7030000), coordinate_system=cs) as map:
-            mapfile = map.file_name
-            with gxv.View(map, 'data') as v:
-                with gxg.Draw(v) as g:
-                    g.rectangle(v.extent_clip)
-            map.surround()
-            map.commit_changes()
+        mapfile = gxmap.Map.figure((400, -1000, 1400, -200)).file_name
+        self.assertEqual(gxmap.crc_map(mapfile), 1883230183)
 
-        self.assertFalse(gxmap.crc_map(mapfile) == 0)
-        temp_png = self.gx.temp_file('test.png')
-        gxmap.save_as_image(mapfile, temp_png)
-        self.assertEqual(os.path.getsize(temp_png), 619)
-
+        with gxmap.Map.figure((400400, 6000000, 401400, 6000800),
+                              coordinate_system="NAD27 / UTM zone 25N",
+                              title='Test Coordinate System',
+                              features='all') as gmap:
+            self.assertEqual(gmap.crc_image(), 1063428901)
 
 if __name__ == '__main__':
     unittest.main()

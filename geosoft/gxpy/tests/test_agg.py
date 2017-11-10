@@ -83,20 +83,22 @@ class Test(GXPYTest):
             agg.brightness = -0.5
             self.assertEqual(agg.brightness, -0.5)
 
-    def test_image(self):
+    def test_figure_1(self):
         self.start()
 
         gxgrid.Grid.open(self.g3f).unit_of_measure = 'nT'
         with gxagg.Aggregate_image.new(self.g3f, shade=True, color_map='elevation.tbl', contour=20) as agg:
-            image_name = agg.save_as_image('test.bmp',
-                                           title='image test',
-                                           pix_width=500,
-                                           type=geosoft.gxpy.map.RASTER_FORMAT_BMP)
+            self.crc_map(agg.figure_map(title='image test').file_name)
 
-        try:
-            self.assertEqual(gxu.crc32_file(image_name), 4280600657)
-        finally:
-            gxgrid.delete_files(image_name)
+    def test_figure_2(self):
+        self.start()
+
+        gxgrid.Grid.open(self.g3f).unit_of_measure = 'nT'
+        with gxagg.Aggregate_image.new(self.g3f, shade=True, color_map='elevation.tbl', contour=20) as agg:
+            self.crc_map(agg.figure_map(title='Image with LL Annotations\nsub-title',
+                                        legend_label='nT',
+                                        features='all').file_name)
+
 
 if __name__ == '__main__':
 

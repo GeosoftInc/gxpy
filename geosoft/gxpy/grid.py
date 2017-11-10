@@ -1279,20 +1279,21 @@ def grid_bool(g1, g2, joinedGrid, opt=1, size=3, olap=1):
 
     return Grid.open(joinedGrid)
 
-def save_as_image(gridfile, shade=True, color_map=None, contour=None, **kwargs):
+def figure_map(grid_file, map_file=None, shade=True, color_map=None, contour=None, **kwargs):
     """
-    Crate an image file from a grid.
+    Create a map figure from a grid file.
 
-    :param gridfile:    grid file name
-    :param shade:       True to add shading effect
+    :param grid_file:   grid file name
+    :param map_file:    name of the map file, if `None` a default map is created.
+    :param shade:       `True` to add shading effect
     :param color_map:   `geosoft.gxpy.group.Color_map` instance, or a colour ramp file name, defaut is user's default
     :param contour:     colour contour interval if colours need to break at exact levels
-    :param kwargs:      see `geosoft.gxpy.agg.save_as_image`
-    :return:            image file name
+    :param kwargs:      passed to  `geosoft.gxpy.agg.Aggregate_image.figure_map` and `geosoft.gxpy.map.Map.new`
+    :return:            `geosoft.gxpy.map.Map` instance
 
-    .. versionaded:: 9.3
+    .. versionadded:: 9.3
     """
 
-    with gxagg.Aggregate_image.new(gridfile, shade=shade, color_map=color_map, contour=contour) as agg:
-        return agg.save_as_image(**kwargs)
+    with gxagg.Aggregate_image.new(grid_file, shade=shade, color_map=color_map, contour=contour) as agg:
+        return agg.figure_map(file_name=map_file, **kwargs)
 

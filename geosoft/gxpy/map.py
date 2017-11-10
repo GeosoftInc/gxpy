@@ -28,6 +28,7 @@ from math import ceil
 import geosoft
 import geosoft.gxapi as gxapi
 from . import gx as gx
+from . import grid as gxgrd
 from . import utility as gxu
 from . import dataframe as gxdf
 from . import group as gxg
@@ -169,7 +170,7 @@ def delete_files(file_name):
 
 def save_as_image(mapfile, imagefile, type=RASTER_FORMAT_PNG, pix_width=1000, pix_height=0):
     """
-    Save a map to an image file
+    Save a map file to an image file
 
     :param mapfile:     map or geosoft_3dv file name
     :param imagefile:   name of the output raster file
@@ -180,12 +181,7 @@ def save_as_image(mapfile, imagefile, type=RASTER_FORMAT_PNG, pix_width=1000, pi
     .. versionadded:: 9.2
     """
 
-    with Map.open(mapfile) as g:
-        g.gxmap.export_all_raster(imagefile, '',
-                                  pix_width, pix_height, gxapi.rDUMMY,
-                                  gxapi.MAP_EXPORT_BITS_24,
-                                  gxapi.MAP_EXPORT_METHOD_NONE,
-                                  type, '')
+    return Map.open(mapfile).image_file(imagefile=imagefile, type=type, pix_width=pix_width, pix_height=pix_height)
 
 
 def crc_map(mapfile, pix_width=1000):
@@ -198,17 +194,7 @@ def crc_map(mapfile, pix_width=1000):
 
     .. versionadded:: 9.2
     """
-    crc_image = os.path.join(gx.gx.temp_folder(), "__crc_image__.bmp")
-    save_as_image(mapfile, crc_image, type='BMP', pix_width=pix_width)
-    crc = gxu.crc32_file(crc_image)
-    os.remove(crc_image)
-    try:
-        os.remove(crc_image + '.gi')
-        os.remove(crc_image + '.xml')
-    except FileNotFoundError:
-        pass
-    return crc
-
+    return Map.open(mapfile).crc_image(pix_width=pix_width)
 
 class Map:
     """
@@ -836,6 +822,140 @@ class Map:
                                          area_on_map[0], area_on_map[1],
                                          area_on_map[2], area_on_map[3])
 
+    def image_file(self, imagefile=None, type=RASTER_FORMAT_PNG, pix_width=1000, pix_height=0):
+        """
+        Save a map to an image file
+
+        :param mapfile:     map or geosoft_3dv file name
+        :param imagefile:   name of the output raster file, default will be map name (.png)
+        :param type:        one of the RASTER_FORMAT types, default`RASTER_FORMAT_PNG`
+        :param pix_width:   image pixel width, if 0 use pix_height only
+        :param pix_height:  image pixel height, if 0 use pix_width only
+        :returns:           image file name
+
+        .. versionadded:: 9.3
+        """
+
+        if imagefile is None:
+            imagefile = self.name + '.png'
+            type = RASTER_FORMAT_PNG
+
+        self.gxmap.export_all_raster(imagefile, '',
+                                     pix_width, pix_height, gxapi.rDUMMY,
+                                     gxapi.MAP_EXPORT_BITS_24,
+                                     gxapi.MAP_EXPORT_METHOD_NONE,
+                                     type, '')
+
+        return imagefile
+
+    def crc_image(self, pix_width=1000):
+        """
+        Return the CRC of a map based on the output bitmap image.
+
+        :param pix_width:   image pixel width - use a higher resolution to test more detail
+        :returns:           CRC as an int
+
+        .. versionadded:: 9.3
+        """
+        crc_image = gx.GXpy().temp_file('.bmp')
+        self.image_file(crc_image, type=RASTER_FORMAT_BMP, pix_width=pix_width)
+        crc = gxu.crc32_file(crc_image)
+        gxgrd.delete_files(crc_image)
+        return crc
+
+    @classmethod
+    def figure(cls, data_area, file_name=None, title=None, features=('SCALE', 'NEATLINE', 'ANNOT_XY'), **kwargs):
+        """
+        Create a figure-style map.
+
+        :param data_area:       the area extend for the data view as (xmin, ymin, xmax, ymax)
+        :param file_name:       map file name, default creates a temporary map
+        :param title:           figure title
+        :param features:        list of features to place on the map, default is ('SCALE', 'NEATLINE', 'ANNOT_XY')
+
+                                    =========== =========================================
+                                    'ALL'       all features
+                                    'SCALE'     show a scale bar
+                                    'NEATLINE'  draw a neat-line around the image
+                                    'ANNOT_XY'  annotate map coordinates
+                                    'ANNOT_LL'  annotate map Latitude, Longitude
+                                    =========== =========================================
+
+        :return:                `Map` instance with 'base' and 'data' views.
+
+        .. seealso:: `Map.new` arguments to modify map layout requirements
+
+        .. versionadded:: 9.3
+        """
+        
+        # uppercase features, use a dict so we pop things we use and report error
+        if isinstance(features, str):
+            features = (features,)
+        feature_list = {}
+        if features is not None:
+            for f in features:
+                feature_list[f.upper()] = None
+            if 'ALL' in feature_list:
+                feature_list = {'SCALE': None,
+                                'NEATLINE': None,
+                                'ANNOT_LL': None,
+                                'ANNOT_XY': None}
+
+        if not 'margins' in kwargs:
+                
+            bottom_margin = 1
+            if title:
+                bottom_margin += 1
+            if 'SCALE' in feature_list:
+                bottom_margin += 1.2
+    
+            right_margin = 1
+            if 'LEGEND' in feature_list:
+                right_margin += 3.5
+                
+            kwargs['margins'] = (1, right_margin, bottom_margin, 1)
+            
+        if not 'media' in kwargs:
+            kwargs['media'] = 'A4'
+        if not 'inside_margin' in kwargs:
+            kwargs['inside_margin'] = 0.2           
+        kwargs['data_area'] = data_area # over-ride
+            
+        gmap = Map.new(file_name, **kwargs)
+
+        if 'ANNOT_XY' in feature_list:
+            gmap.annotate_data_xy(grid=GRID_CROSSES)
+
+        if 'ANNOT_LL' in feature_list:
+            gmap.annotate_data_ll(grid=GRID_LINES,
+                                  grid_pen='b255r100g100t150',
+                                  text_def=gxg.Text_def(height=0.18, italics=True))
+
+        if 'SCALE' in feature_list:
+            gmap.scale_bar(location=(2, 0, 1.2), sections=2,
+                           text_def=gxg.Text_def(height=0.15))
+            bottom = 15
+        else:
+            bottom = 0
+
+        if 'NEATLINE' in feature_list:
+            gmap.surround()
+
+        with gxv.View.open(gmap, "data") as v:
+
+            # map title
+            if title:
+                with gxv.View.open(gmap, "base") as v:
+                    with gxg.Draw(v, 'annotations') as g:
+                        x = (v.extent_clip[2] - v.extent_clip[0]) / 2
+                        g.text(title,
+                               reference=1,
+                               location=(x, bottom + 5),
+                               text_def=gxg.Text_def(height=3.5,
+                                                         weight=gxg.FONT_WEIGHT_BOLD))
+
+        return gmap
+    
     def surround(self, outer_pen=None, inner_pen=None, gap=0):
         """
         Draw a map surround.  This will draw a single or a double neat-line around the base view of the
@@ -979,7 +1099,7 @@ class Map:
                          tick='', offset='',
                          x_sep='', x_dec='',
                          y_sep='', y_dec='',
-                         compass=True,
+                         compass=None,
                          top=TOP_OUT,
                          text_def=None,
                          edge_pen=None,
@@ -998,7 +1118,7 @@ class Map:
         :param x_dec:       X axis label decimals, default is 0
         :param y_sep:       separation between Y annotations, default is calculated from data
         :param y_dec:       Y axis label decimals, default is 0
-        :param compass:     True (default) to append compass direction to annotations
+        :param compass:     True to append compass direction to annotations, default True if known coordinate system.
         :param grid:
 
                             ::
@@ -1033,6 +1153,10 @@ class Map:
             with gxv.View.open(self, view_name) as v:
                 with gxg.Draw(v) as g:
                     g.rectangle(v.extent_clip, pen=gxg.Pen(default=edge_pen, factor=v.units_per_map_cm))
+
+                # if view has a known coordinate system, use compass annotations
+                if compass is None:
+                    compass = v.coordinate_system.is_known
 
             with _Mapplot(self) as mpl:
 

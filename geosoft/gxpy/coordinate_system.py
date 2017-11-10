@@ -536,6 +536,15 @@ class Coordinate_system:
         """True if the coordinate system has an orientation."""
         return '<' in self.hcs
 
+    @property
+    def is_known(self):
+        """
+        True if this is a known coordinate system.
+
+        .. versionadded:: 9.3
+        """
+        return self.name != '*unknown'
+
     def coordinate_dict(self):
         """
         Returns "Geosoft" dictionary of coordinate system attributes.

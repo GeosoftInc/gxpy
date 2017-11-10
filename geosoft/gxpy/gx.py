@@ -144,7 +144,7 @@ def _exit_cleanup():
     global _gx_ref_count
 
     if gx:
-        gx.log('Final GX close')
+        gx.log('GX close')
         atexit.unregister(_exit_cleanup)
 
         if gx._temp_file_folder and (gx._temp_file_folder != gxu.folder_temp()):
@@ -262,7 +262,6 @@ class GXpy(_Singleton):
         global _gx_ref_count
 
         if id(self) in _gx_dict and gx:
-            self.log('GX close')
             del _gx_dict[id(self)]
             _gx_ref_count = _gx_ref_count - 1
             if _gx_ref_count == 0:

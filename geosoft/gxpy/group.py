@@ -1200,7 +1200,7 @@ def legend_color_bar(view,
     :param location:            offset or (x, y) offset from `bar_location` reference point, in cm.  The default is
                                 determined to center the bar off the location side specified.
     :param decimals:            annotation decimal places
-    :param annotation_height:   annotation number height
+    :param annotation_height:   annotation number height (cm)
     :param annotation_offset:   offset of annotations from the bar (cm)
     :param annotation_side:     side of the bar for annotations
 
@@ -1264,7 +1264,7 @@ def legend_color_bar(view,
         else:
             bar_width *= view.units_per_map_cm
         if max_bar_size is not None:
-            box_size = min(box_size, (max_bar_size * view.units_per_map_cm) / itr.get_size())
+            box_size = min(box_size, max_bar_size / itr.get_size())
 
         annotation_height *= view.units_per_map_cm
         if annotation_offset is None:
