@@ -1,5 +1,5 @@
 <header>
-   <Item name="Name" value="test_image.map"/>
+   <Item name="Name" value="test_figure_map.map"/>
    <Item name="Extents" type="L2AREA">
       <Value name="MinX" value="0"/>
       <Value name="MinY" value="0"/>

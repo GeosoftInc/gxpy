@@ -628,7 +628,7 @@ class Test(GXPYTest):
                 self.assertEqual(gm.xyz(0), (18.595203516590775, 39.8775426296126, 1007.0))
                 self.assertEqual(gm.xyz((g.nx - 1, g.ny - 1)), (19.00281516607315, 40.75166863280787, 1008.0342903237216))
 
-    def test_image(self):
+    def test_figure_map(self):
         self.start()
 
         map_file = gxgrd.figure_map(self.g1f, title='image_test', features='all').file_name
