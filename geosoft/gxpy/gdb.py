@@ -1948,7 +1948,6 @@ class Geosoft_gdb:
                     label = self.line_name_symb(line)[0]
                     xvv = self.read_channel_vv(line, x)
                     yvv = self.read_channel_vv(line, y)
-                    np = yvv.np
                     gxapi.GXMVU.path_plot(v.gxview,
                                           xvv.gxvv, yvv.gxvv,
                                           label,

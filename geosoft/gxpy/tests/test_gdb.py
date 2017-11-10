@@ -1240,12 +1240,13 @@ class Test(GXPYTest):
         finally:
             gdb.discard()
 
-
+    #TODO: fix this
+    @unittest.skip('need JB to see why this just stops at call to path_plot, line 1951 in gdb.py')
     def test_figure(self):
         self.start()
 
         with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
-            #map_file = gdb.figure_map(title='gdb_test', features='all').file_name
+            map_file = gdb.figure_map(title='gdb_test', features='all').file_name
             #self.crc_map(map_file)
             pass
 

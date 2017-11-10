@@ -1739,7 +1739,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. seealso::
 
-            FlighPlot_MVU
+            FlightPlot_MVU
         """
         gxapi_cy.WrapMVU._path_plot(GXContext._get_tls_geo(), mview, vv_x, vv_y, line.encode(), locate, vangle, up, loff, voff, gap)
         
