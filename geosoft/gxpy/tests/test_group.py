@@ -1243,8 +1243,7 @@ class Test(GXPYTest):
         grid_file = os.path.join(folder, 'dem_small.grd')
 
         # create a 2D view
-        with gxmap.Map.new("contour",
-                           data_area=gxgrd.Grid(grid_file).extent_2d(),
+        with gxmap.Map.new(data_area=gxgrd.Grid(grid_file).extent_2d(),
                            scale=20000,
                            inside_margin=0.1,
                            coordinate_system=gxgrd.Grid(grid_file).coordinate_system,
