@@ -11,6 +11,7 @@ import geosoft.gxpy.system as gsys
 import geosoft.gxpy.gdb as gxdb
 import geosoft.gxpy.vv as gxvv
 import geosoft.gxpy.va as gxva
+import geosoft.gxpy.group as gxgroup
 
 from base import GXPYTest
 
@@ -1240,15 +1241,17 @@ class Test(GXPYTest):
         finally:
             gdb.discard()
 
-    #TODO: fix this
-    @unittest.skip('need JB to see why this just stops at call to path_plot, line 1951 in gdb.py')
-    def test_figure(self):
+    def test_figure_line(self):
         self.start()
 
-        with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
-            map_file = gdb.figure_map(title='gdb_test', features='all').file_name
-            #self.crc_map(map_file)
-            pass
+        map_file = gxdb.Geosoft_gdb.open(self.gdb_name).figure_map(draw=gxdb.DRAW_AS_LINES).file_name
+        self.crc_map(map_file)
+
+    def test_figure_point(self):
+        self.start()
+
+        map_file = gxdb.Geosoft_gdb.open(self.gdb_name).figure_map().file_name
+        self.crc_map(map_file)
 
 
 ###############################################################################################

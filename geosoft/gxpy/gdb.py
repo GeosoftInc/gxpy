@@ -33,6 +33,8 @@ from . import coordinate_system as gxcs
 from . import metadata as gxmeta
 from . import map as gxmap
 from . import view as gxview
+from . import group as gxgroup
+from . import geometry as gxgeo
 
 __version__ = geosoft.__version__
 
@@ -1872,11 +1874,11 @@ class Geosoft_gdb:
         return set.tolist()
 
     def figure_map(self, file_name=None, title=None, draw=DRAW_AS_POINTS,
-                   features=['SCALE', 'NEATLINE'], **kwargs):
+                   features=['ALL'], **kwargs):
         """
         Create a figure map file from selected lines in the database.
 
-        :param file_name:       the name of the map, if None a default map is created.
+        :param file_name:       the name of the map, if None a temporary default map is created.
         :param overwrite:       True to overwrite existing image file
         :param title:           Title added to the image
         :param style:           `DRAW_AS_POINTS` to draw a dot at each point (default). Long lines are decimated.
@@ -1918,42 +1920,47 @@ class Geosoft_gdb:
 
         # work out some non-zero extents
         ex = self.extent_xyz()
-        if not(ex[0] is None or ex[1] is None or ex[3] is None or ex[4] is None):
+        if ex[0] is None or ex[1] is None or ex[3] is None or ex[4] is None:
+            raise GdbException(_t('Invalid data extent: {}').format(ex))
 
-            mnx, mny, mxx, mxy = (ex[0], ex[1], ex[3], ex[4])
-            dx = mxx - mnx
-            dy = mxy - mny
-            if dx == 0 and dy == 0:
-                ex = (mnx - 50, mny - 50, mxx + 50, mxy + 50)
-            else:
-                if dx  < dy * 0.1:
-                    d = dy * 0.05
-                    mnx -= d
-                    mxx += d
-                elif dy < dx * 0.1:
-                    d = dx * 0.05
-                    mny -= d
-                    mxy += d
-                ex = (mnx, mny, mxx, mxy)
+        mnx, mny, mxx, mxy = (ex[0], ex[1], ex[3], ex[4])
+        dx = mxx - mnx
+        dy = mxy - mny
+        if dx == 0 and dy == 0:
+            ex = (mnx - 50, mny - 50, mxx + 50, mxy + 50)
+        else:
+            if dx  < dy * 0.1:
+                d = dy * 0.05
+                mnx -= d
+                mxx += d
+            elif dy < dx * 0.1:
+                d = dx * 0.05
+                mny -= d
+                mxy += d
+            ex = (mnx, mny, mxx, mxy)
 
-            gmap = gxmap.Map.figure(ex,
-                                    file_name=file_name,
-                                    features=features,
-                                    title=title,
-                                    **kwargs)
+        if not 'inside_margin' in kwargs:
+            kwargs['inside_margin'] = 1
 
-            x, y, _ = self.xyz_channels
-            with gxview.View.open(gmap, "data") as v:
+        gmap = gxmap.Map.figure(ex,
+                                file_name=file_name,
+                                features=features,
+                                title=title,
+                                **kwargs)
+
+        x, y, _ = self.xyz_channels
+        with gxview.View.open(gmap, "data") as v:
+            with gxgroup.Draw(v, 'lines') as g:
                 for line in self.list_lines():
                     label = self.line_name_symb(line)[0]
                     xvv = self.read_channel_vv(line, x)
                     yvv = self.read_channel_vv(line, y)
-                    gxapi.GXMVU.path_plot(v.gxview,
-                                          xvv.gxvv, yvv.gxvv,
-                                          label,
-                                          gxapi.MVU_FLIGHT_LOCATE_END,
-                                          67.5, 1,
-                                          1, 1, 0)
+                    if draw == DRAW_AS_LINES:
+                        g.polyline(gxgeo.PPoint((xvv, yvv)),
+                                   pen=gxgroup.Pen(line_thick=0.03 * v.units_per_map_cm))
+                    else:
+                        g.polypoint(gxgeo.PPoint((xvv, yvv)),
+                                   pen=gxgroup.Pen(line_thick=0.03 * v.units_per_map_cm))
 
         return gmap
 

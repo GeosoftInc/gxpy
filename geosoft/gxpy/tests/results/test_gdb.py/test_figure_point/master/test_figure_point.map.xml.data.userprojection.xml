@@ -1,0 +1,49 @@
+<IPJ>
+   <Item name="Name" value="Corrego Alegre 1970-72 / UTM zone 23S"/>
+   <Item name="Proj" value="UTM zone 23S"/>
+   <Item name="Datum" value="Corrego Alegre 1970-72"/>
+   <Item name="Ellipsoid" value="International 1924"/>
+   <Item name="DatumTrf" value="Corrego Alegre 1970-72 to WGS 84 (1)"/>
+   <Item name="ProjType" value="11"/>
+   <Item name="Order" value="0"/>
+   <Item name="Radius" value="6378388"/>
+   <Item name="Eccentricity" value="0.08199188998"/>
+   <Item name="PrimeMeridian" value="0"/>
+   <Item name="ScaleAdjust" value="1"/>
+   <Item name="Dx" value="-206"/>
+   <Item name="Dy" value="172"/>
+   <Item name="Dz" value="-6"/>
+   <Item name="Rx" value="0"/>
+   <Item name="Ry" value="0"/>
+   <Item name="Rz" value="0"/>
+   <Item name="Parameters" type="DoubleArray">
+      <Value index="0" value="0"/>
+      <Value index="1" value="-45"/>
+      <Value index="2" value="GS_R8DM"/>
+      <Value index="3" value="GS_R8DM"/>
+      <Value index="4" value="0.9996"/>
+      <Value index="5" value="500000"/>
+      <Value index="6" value="10000000"/>
+      <Value index="7" value="GS_R8DM"/>
+   </Item>
+   <Units>
+      <Item name="Name" value="m"/>
+      <Item name="Scale" value="1"/>
+   </Units>
+   <Orientation>
+      <Item name="Type" value="0"/>
+      <Item name="Xo" value="0"/>
+      <Item name="Yo" value="0"/>
+      <Item name="Zo" value="0"/>
+      <Item name="Parameters" type="DoubleArray">
+         <Value index="0" value="GS_R8DM"/>
+         <Value index="1" value="GS_R8DM"/>
+         <Value index="2" value="GS_R8DM"/>
+         <Value index="3" value="GS_R8DM"/>
+         <Value index="4" value="GS_R8DM"/>
+         <Value index="5" value="GS_R8DM"/>
+         <Value index="6" value="GS_R8DM"/>
+         <Value index="7" value="GS_R8DM"/>
+      </Item>
+   </Orientation>
+</IPJ>

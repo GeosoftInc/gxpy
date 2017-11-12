@@ -1,0 +1,9 @@
+<header>
+   <Item name="Name" value="test_figure_line.map"/>
+   <Item name="Extents" type="L2AREA">
+      <Value name="MinX" value="0"/>
+      <Value name="MinY" value="0"/>
+      <Value name="MaxX" value="17694"/>
+      <Value name="MaxY" value="25638"/>
+   </Item>
+</header>
