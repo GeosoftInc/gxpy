@@ -12,8 +12,7 @@ import geosoft.gxpy.agg as gxagg
 import geosoft.gxpy.system as gxsys
 import geosoft.gxpy.view as gxv
 import geosoft.gxpy.group as gxg
-import geosoft.gxpy.utility as gxu
-import geosoft.gxpy.gdb as gxdb
+import geosoft.gxpy.vv as gxvv
 
 from base import GXPYTest
 
@@ -74,7 +73,6 @@ def draw_stuff(g, size=1.0):
     pp += gxgm.Point((0, 25, 0)) * size
     g.pen = g.new_pen(fill_color=gxg.C_LT_RED)
     g.polygon(pp)
-
 
 class Test(GXPYTest):
     def test_version(self):
@@ -153,6 +151,78 @@ class Test(GXPYTest):
                         self.assertEqual(g.extent_map_cm(), (3.0, 7.0, 23.0, 21.4))
         finally:
             gxmap.delete_files(map_file)
+
+    def test_point(self):
+        self.start()
+
+        plinelist = [[110, 5],
+                     [120, 20],
+                     [130, 15],
+                     [150, 50],
+                     [160, 70],
+                     [175, 35],
+                     [190, 65],
+                     [220, 50],
+                     [235, 18.5]]
+
+        p1 = gxgm.Point((25, 20))
+        p3 = gxgm.Point((50, 20))
+        p2 = gxgm.Point((75, 20))
+
+        rect = gxgm.Point2((p1 - (15, 15), p3 + (15, 15)))
+        with gxmap.Map.new(data_area=rect.extent_xy) as gmap:
+            map_file = gmap.file_name
+            with gxv.View.new(gmap, "data") as v:
+                with gxg.Draw(v, 'test_point') as g:
+
+                    g.pen = gxg.Pen(line_thick=1)
+                    g.rectangle(rect)
+
+                    g.pen = gxg.Pen(line_thick=2, line_color='R')
+                    g.line((p1, p1))
+
+                    g.pen = gxg.Pen(line_thick=5, line_color='G')
+                    g.line((p2, p2 + (0.01, 0)))
+
+                    g.pen = gxg.Pen(line_thick=2, line_color='B')
+                    g.line((p3, p3 + (0.05, 0)))
+
+        self.crc_map(map_file, pix_width=800)
+
+    def test_points(self):
+        self.start()
+
+        plinelist = [[110, 5],
+                     [120, 20],
+                     [130, 15],
+                     [150, 50],
+                     [160, 70],
+                     [175, 35],
+                     [190, 65],
+                     [220, 50],
+                     [235, 18.5]]
+
+        pp = gxgm.PPoint.from_list(plinelist)
+
+        with gxmap.Map.new() as gmap:
+            map_file = gmap.file_name
+            with gxv.View.new(gmap, "points", area=(100, 0, 260, 100)) as v:
+                with gxg.Draw(v, 'test_group') as g:
+
+                    g.rectangle(pp.extent(), pen=gxg.Pen(line_thick=1))
+                    g.pen = gxg.Pen(line_thick=2, line_color='B')
+                    for p in pp:
+                        g.point(p)
+
+                    pp += (15, 15)
+                    g.pen = gxg.Pen(line_thick=1.5, line_color='G')
+                    g.polypoint(pp)
+
+                    pp -= (0, 5)
+                    g.pen = gxg.Pen(line_thick=1, line_color='R')
+                    g.polypoint((gxvv.GXvv(pp.x), gxvv.GXvv(pp.y)))
+
+        self.crc_map(map_file, pix_width=800)
 
     def test_rectangle(self):
         self.start()

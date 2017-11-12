@@ -492,7 +492,7 @@ class Group:
         """
         Locate the group relative to a point.
 
-        :param location:    location (x, y) or a `gxpy.geometry.Point`
+        :param location:    location (x, y) or a `geosoft.gxpy.geometry.Point`
         :param reference:   reference point relative to the clip limits of the view to
                             which reference location.  The points are:
                             
@@ -593,6 +593,16 @@ class Draw(Group):
         if self._mode != READ_ONLY:
             self._init_pen()
             self._text_def = Text_def(factor=self.view.units_per_map_cm)
+
+    def _set_dot_symbol(self):
+
+        # this is a hack because we cannot draw a box or a zero-length line, so
+        # instead we draw a filled box
+        self.view.gxview.symb_number(4)
+        self.view.gxview.symb_color(0)
+        self.view.gxview.symb_color(0)
+        self.view.gxview.symb_fill_color(self.pen.line_color._color)
+        self.view.gxview.symb_size(self.pen.line_thick)
 
     @property
     def drawing_coordinate_system(self):
@@ -705,6 +715,101 @@ class Draw(Group):
             self.view.gxview.text_size(text_def.height)
             self.view.gxview.text_color(text_def.color.int_value)
 
+    @_draw
+    def point(self, p):
+        """
+        Draw a point.
+
+        :param p:   point location as `geosoft.gxpy.geometry.Point`
+
+        .. versionadded:: 9.3
+        """
+
+        # just draw a box. TODO: MVIEW needs a way to draw a dot, and/or address issue #44
+        self._set_dot_symbol()
+        self.view.gxview.symbol(p.x, p.y)
+
+    @_draw
+    def polypoint(self, pp):
+        """
+        Draw many points.
+
+        :param pp:  point location as `geosoft.gxpy.geometry.PPoint`, or a pair of VVs (vvx, vvy), or
+                    something that `gxpy.geometry.PPoint` can construct into a PP.
+
+        .. versionadded:: 9.3
+        """
+        self._set_dot_symbol()
+
+        if not((len(pp) == 2) and isinstance(pp[0], gxvv.GXvv)):
+            pp = _make_PPoint(pp)
+            pp = (gxvv.GXvv(pp.x), gxvv.GXvv(pp.y))
+        self.view.gxview.symbols(pp[0].gxvv, pp[1].gxvv)
+
+    @_draw
+    def line(self, p2):
+        """
+        Draw a line on the current plane
+        
+        :param p2: :class:`geometry.Point2`, or (p1, p2)
+
+        .. versionadded:: 9.2
+        """
+
+        p2 = _make_Point2(p2)
+        self.view.gxview.line(p2.p0.x, p2.p0.y, p2.p1.x, p2.p1.y)
+
+    @_draw
+    def polyline(self, pp, close=False):
+        """
+        Draw a polyline the current plane
+        
+        :param pp:      `geosoft.gxpy.geometry.PPoint` instance or something that can be constructed, or a
+                        pair of `geosoft.gxpy.vv.GXvv` (xvv, yvv)
+        :param close:   if True, draw a polygon, default is a polyline
+
+        .. note::
+            Smooth-line polygons must have at least 6 points for the closure to
+            appear continuous.
+
+        .. versionadded:: 9.2
+        """
+
+        if not((len(pp) == 2) and isinstance(pp[0], gxvv.GXvv)):
+            pp = _make_PPoint(pp)
+            pp = (gxvv.GXvv(pp.x), gxvv.GXvv(pp.y))
+
+        if close:
+            self.view.gxview.poly_line(gxapi.MVIEW_DRAW_POLYGON, pp[0].gxvv, pp[1].gxvv)
+        else:
+            self.view.gxview.poly_line(gxapi.MVIEW_DRAW_POLYLINE, pp[0].gxvv, pp[1].gxvv)
+
+    @_draw
+    def polygon(self, pp, close=False):
+        """
+        Draw a polygon on the current plane.
+        
+        :param pp: :class:`geosoft.gxpy.geometry.PPoint`
+
+        .. note::
+            Smooth-line polygons must have at least 6 points for the closure to
+            appear continuous.
+
+        .. versionadded:: 9.2
+        """
+        self.polyline(pp, True)
+
+    @_draw
+    def rectangle(self, p2):
+        """
+        Draw a 2D rectangle on the current plane
+        :param p2: geometry.Point2, or (p1, p2), or (x0, y0, x2, y2)
+
+        .. versionadded:: 9.2
+        """
+
+        p2 = _make_Point2(p2)
+        self.view.gxview.rectangle(p2.p0.x, p2.p0.y, p2.p1.x, p2.p1.y)
 
     @_draw
     def graticule(self, dx=None, dy=None, ddx=None, ddy=None, style=GRATICULE_LINE):
@@ -733,69 +838,6 @@ class Draw(Group):
             ddx = dx * 0.25
         self.view.gxview.grid(dx, dy, ddx, ddy, style)
 
-    @_draw
-    def line(self, p2):
-        """
-        Draw a line on the current plane
-        
-        :param p2: :class:`geometry.Point2`, or (p1, p2)
-
-        .. versionadded:: 9.2
-        """
-
-        p2 = _make_Point2(p2)
-        self.view.gxview.line(p2.p0.x, p2.p0.y, p2.p1.x, p2.p1.y)
-
-    @_draw
-    def polyline(self, pp, close=False):
-        """
-        Draw a polyline the current plane
-        
-        :param pp:      :class:`gxpy.geometry.PPoint`
-        :param close:   if True, draw a polygon, default is a polyline
-
-        .. note::
-            Smooth-line polygons must have at least 6 points for the closure to
-            appear continuous.
-
-        .. versionadded:: 9.2
-        """
-
-        if close:
-            self.view.gxview.poly_line(gxapi.MVIEW_DRAW_POLYGON,
-                                       gxvv.GXvv(pp.x).gxvv,
-                                       gxvv.GXvv(pp.y).gxvv)
-        else:
-            self.view.gxview.poly_line(gxapi.MVIEW_DRAW_POLYLINE,
-                                       gxvv.GXvv(pp.x).gxvv,
-                                       gxvv.GXvv(pp.y).gxvv)
-
-    @_draw
-    def polygon(self, pp, close=False):
-        """
-        Draw a polygon on the current plane.
-        
-        :param pp: :class:`gxpy.geometry.PPoint`
-
-        .. note::
-            Smooth-line polygons must have at least 6 points for the closure to
-            appear continuous.
-
-        .. versionadded:: 9.2
-        """
-        self.polyline(pp, True)
-
-    @_draw
-    def rectangle(self, p2):
-        """
-        Draw a 2D rectangle on the current plane
-        :param p2: geometry.Point2, or (p1, p2), or (x0, y0, x2, y2)
-
-        .. versionadded:: 9.2
-        """
-
-        p2 = _make_Point2(p2)
-        self.view.gxview.rectangle(p2.p0.x, p2.p0.y, p2.p1.x, p2.p1.y)
 
     def text(self,
              text,
@@ -1031,7 +1073,7 @@ class Draw_3d(Draw):
         """
         Draw multiple points.
         
-        :param points:  points to draw, :class:`gxpy.geometry.PPoint` instance, or array-like [x,y,z]
+        :param points:  points to draw, :class:`geosoft.gxpy.geometry.PPoint` instance, or array-like [x,y,z]
         :param style:   POINT_STYLE_DOT or POINT_STYLE_SPHERE.  Dots are fast and intended for point clouds.
                         The current pen thickness is used as the sphere sizes.
         
@@ -1051,7 +1093,7 @@ class Draw_3d(Draw):
         """
         Draw a polyline.
         
-        :param points:  verticies of the polyline, :class:`gxpy.geometry.PPoint` instance, or array-like [x,y,z]
+        :param points:  verticies of the polyline, :class:`geosoft.gxpy.geometry.PPoint` instance, or array-like [x,y,z]
         :param style:   LINE3D_STYLE_LINE, LINE3D_STYLE_TUBE or LINE3D_STYLE_TUBE_JOINED.
                         Lines are single-pixel-wide.  Tubes have width defined by the pen line thickness.
                         Joined tubes have a joints and rounded ends.

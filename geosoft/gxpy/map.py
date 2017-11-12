@@ -122,31 +122,6 @@ def map_file_name(file_name, file_type='map'):
     return os.path.abspath(file_name)
 
 
-def unique_temporary_file_name(temproot, file_type='map'):
-    """
-    Create a unique temporary file name.
-    
-    :param temproot:    root base name
-    :param file_type:   Geosoft file type, 'map' or 'geosoft_3dv' expected.  Default is 'map'
-    
-    .. versionadded:: 9.2
-    """
-
-    root, ext = os.path.splitext(temproot)
-    if not ext:
-        if file_type[0] == '.':
-            ext = file_type
-        else:
-            ext = '.' + file_type
-
-    i = 0
-    while True:
-        file_name = map_file_name(os.path.join(gx.gx.temp_folder(), root + str(i) + ext))
-        if not os.path.isfile(file_name):
-            return file_name
-        i += 1
-
-
 def delete_files(file_name):
     """
     Delete all files associated with this map name.
@@ -173,7 +148,7 @@ def save_as_image(mapfile, imagefile, type=RASTER_FORMAT_PNG, pix_width=1000, pi
     Save a map file to an image file
 
     :param mapfile:     map or geosoft_3dv file name
-    :param imagefile:   name of the output raster file
+    :param imagefile:   name of the output raster file, default is a temporary png file.
     :param type:        one of the RASTER_FORMAT types, default`RASTER_FORMAT_PNG`
     :param pix_width:   image pixel width, if 0 use pix_height only
     :param pix_height:  image pixel height, if 0 use pix_width only
@@ -383,7 +358,7 @@ class Map:
                 layout = MAP_LANDSCAPE
 
         if file_name is None:
-            file_name = unique_temporary_file_name('temp_map')
+            file_name = gx.GXpy().temp_file('.map')
 
         else:
             if not overwrite:
@@ -827,7 +802,7 @@ class Map:
         Save a map to an image file
 
         :param mapfile:     map or geosoft_3dv file name
-        :param imagefile:   name of the output raster file, default will be map name (.png)
+        :param imagefile:   name of the output raster file, default will be a temporary png file.
         :param type:        one of the RASTER_FORMAT types, default`RASTER_FORMAT_PNG`
         :param pix_width:   image pixel width, if 0 use pix_height only
         :param pix_height:  image pixel height, if 0 use pix_width only
@@ -837,7 +812,7 @@ class Map:
         """
 
         if imagefile is None:
-            imagefile = self.name + '.png'
+            imagefile = gx.GXpy().temp_file('.png')
             type = RASTER_FORMAT_PNG
 
         self.gxmap.export_all_raster(imagefile, '',
@@ -918,7 +893,20 @@ class Map:
         if not 'media' in kwargs:
             kwargs['media'] = 'A4'
         if not 'inside_margin' in kwargs:
-            kwargs['inside_margin'] = 0.2           
+            kwargs['inside_margin'] = 0.2
+
+        # data area adjustment
+        data_area = list(data_area)
+        dx = data_area[2] - data_area[0]
+        dy = data_area[3] - data_area[1]
+        if dx < dy * 0.67:
+            d = (dy * 0.67 - dx) * 0.5
+            data_area[0] -= d
+            data_area[2] += d
+        elif dy < dx * 0.67:
+            d = (dx * 0.67 - dy) * 0.5
+            data_area[1] -= d
+            data_area[3] += d
         kwargs['data_area'] = data_area # over-ride
             
         gmap = Map.new(file_name, **kwargs)

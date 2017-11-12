@@ -29,6 +29,7 @@ from functools import wraps
 
 import geosoft
 import geosoft.gxapi as gxapi
+from . import gx as gx
 from . import coordinate_system as gxcs
 from . import utility as gxu
 
@@ -682,7 +683,7 @@ class View_3d(View):
         """
 
         if file_name is None:
-            file_name = geosoft.gxpy.map.unique_temporary_file_name('temp_3dv', 'geosoft_3dv')
+            file_name = gx.GXpy().temp_file('geosoft_3dv')
         else:
             file_name = geosoft.gxpy.map.map_file_name(file_name, 'geosoft_3dv')
 
