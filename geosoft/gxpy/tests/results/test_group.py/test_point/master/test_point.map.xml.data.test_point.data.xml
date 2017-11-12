@@ -143,9 +143,6 @@
    <Item type="LineColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="255" blue="0"/>
    </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="5"/>
-   </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
          <Value name="X" value="75"/>
@@ -158,9 +155,6 @@
    </Item>
    <Item type="LineColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="0" blue="255"/>
-   </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="2"/>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">

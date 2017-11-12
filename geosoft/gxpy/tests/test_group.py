@@ -155,16 +155,6 @@ class Test(GXPYTest):
     def test_point(self):
         self.start()
 
-        plinelist = [[110, 5],
-                     [120, 20],
-                     [130, 15],
-                     [150, 50],
-                     [160, 70],
-                     [175, 35],
-                     [190, 65],
-                     [220, 50],
-                     [235, 18.5]]
-
         p1 = gxgm.Point((25, 20))
         p3 = gxgm.Point((50, 20))
         p2 = gxgm.Point((75, 20))
@@ -181,7 +171,7 @@ class Test(GXPYTest):
                     g.pen = gxg.Pen(line_thick=2, line_color='R')
                     g.line((p1, p1))
 
-                    g.pen = gxg.Pen(line_thick=5, line_color='G')
+                    g.pen = gxg.Pen(line_thick=2, line_color='G')
                     g.line((p2, p2 + (0.01, 0)))
 
                     g.pen = gxg.Pen(line_thick=2, line_color='B')
