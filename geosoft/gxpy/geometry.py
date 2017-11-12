@@ -343,6 +343,17 @@ class Point2(Geometry):
         dz = abs(self.p1.z - self.p0.z)
         return (dx, dy, dz)
 
+    @property
+    def extent_xyz(self):
+        """Extent as (xmin, ymin, zmin, xmax, ymax, zmax)"""
+        return min(self.p0.x, self.p1.x), min(self.p0.y, self.p1.y), min(self.p0.z, self.p1.z), \
+               max(self.p0.x, self.p1.x), max(self.p0.y, self.p1.y), max(self.p0.z, self.p1.z)
+
+    @property
+    def extent_xy(self):
+        """Extent as (xmin, ymin, xmax, ymax)"""
+        return min(self.p0.x, self.p1.x), min(self.p0.y, self.p1.y), \
+               max(self.p0.x, self.p1.x), max(self.p0.y, self.p1.y)
 
 class PPoint(Geometry, Sequence):
     """
@@ -518,6 +529,30 @@ class PPoint(Geometry, Sequence):
         p1 = Point((np.amin(self.x), np.amin(self.y), np.amin(self.z)))
         p2 = Point((np.amax(self.x), np.amax(self.y), np.amax(self.z)))
         return p1, p2
+
+    @property
+    def extent_xyz(self):
+        """
+        Returns extent of the polyline.
+
+        :returns:   (xmin, ymin, zmin, xmax, ymax, zmax)
+
+        .. versionadded:: 9.3
+        """
+        p1, p2 = self.extent()
+        return p1.x, p1.y, p1.z, p2.x, p2.y, p2.z
+
+    @property
+    def extent_xy(self):
+        """
+        Returns extent of the polyline.
+
+        :returns:   (xmin, ymin, xmax, ymax)
+
+        .. versionadded:: 9.3
+        """
+        p1, p2 = self.extent()
+        return p1.x, p1.y, p2.x, p2.y
 
     def make_xyz_vv(self):
         """

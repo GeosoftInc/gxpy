@@ -258,6 +258,9 @@ class Test(GXPYTest):
         self.assertEqual(b2.centroid, c)
         self.assertEqual(b2.dimension, (abs(b2.p1.x - b2.p0.x), abs(b2.p1.y - b2.p0.y), abs(b2.p1.z - b2.p0.z)))
 
+        self.assertEqual(b2.extent_xyz, (0.0, 1.0, -20.0, 10.0, 20.0, -1.0))
+        self.assertEqual(b2.extent_xy, (0.0, 1.0, 10.0, 20.0))
+
 if __name__ == '__main__':
 
     unittest.main()
