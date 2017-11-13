@@ -146,7 +146,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>xyz</strong> &#8211; array-like, either ((x, y), ...), ((x, y, z), ...) or (vv_x, vv_y, [vv_z]).
+<li><strong>xyz</strong> &#8211; array-like: (p1, p2, ...), ((x, y), ...), ((x, y, z), ...) or (vv_x, vv_y, [vv_z]).
 vv data is resampled to match the first vv.</li>
 <li><strong>z</strong> &#8211; constant z value for (x, y) data, ignored for (x, y, z) data</li>
 </ul>
@@ -191,6 +191,40 @@ vv data is resampled to match the first vv.</li>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.geometry.PPoint.extent_xy">
+<code class="descname">extent_xy</code><a class="headerlink" href="#geosoft.gxpy.geometry.PPoint.extent_xy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns extent of the polyline.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">(xmin, ymin, xmax, ymax)</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.geometry.PPoint.extent_xyz">
+<code class="descname">extent_xyz</code><a class="headerlink" href="#geosoft.gxpy.geometry.PPoint.extent_xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns extent of the polyline.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">(xmin, ymin, zmin, xmax, ymax, zmax)</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.</span></p>
+</div>
 </dd></dl>
 
 <dl class="classmethod">
@@ -386,6 +420,18 @@ vv data is resampled to match the first vv.</li>
 <dt id="geosoft.gxpy.geometry.Point2.dimension">
 <code class="descname">dimension</code><a class="headerlink" href="#geosoft.gxpy.geometry.Point2.dimension" title="Permalink to this definition">¶</a></dt>
 <dd><p>dimensions as (dx, dy, dz)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.geometry.Point2.extent_xy">
+<code class="descname">extent_xy</code><a class="headerlink" href="#geosoft.gxpy.geometry.Point2.extent_xy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extent as (xmin, ymin, xmax, ymax)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.geometry.Point2.extent_xyz">
+<code class="descname">extent_xyz</code><a class="headerlink" href="#geosoft.gxpy.geometry.Point2.extent_xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extent as (xmin, ymin, zmin, xmax, ymax, zmax)</p>
 </dd></dl>
 
 <dl class="attribute">

@@ -370,6 +370,16 @@ Can be set.</p>
 </dd></dl>
 
 <dl class="data">
+<dt id="geosoft.gxpy.gdb.DRAW_AS_LINES">
+<code class="descname">DRAW_AS_LINES</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.gdb.DRAW_AS_LINES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.gdb.DRAW_AS_POINTS">
+<code class="descname">DRAW_AS_POINTS</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.gdb.DRAW_AS_POINTS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
 <dt id="geosoft.gxpy.gdb.FORMAT_DATE">
 <code class="descname">FORMAT_DATE</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxpy.gdb.FORMAT_DATE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -449,10 +459,9 @@ Can be set.</p>
 <span class="kn">import</span> <span class="nn">gxpy.gx</span> <span class="k">as</span> <span class="nn">gxp</span>
 <span class="kn">import</span> <span class="nn">gxpy.gdb</span> <span class="k">as</span> <span class="nn">gxdb</span>
 
-<span class="c1"># open the current database</span>
-<span class="n">gdb</span> <span class="o">=</span> <span class="n">gxdb</span><span class="o">.</span><span class="n">Geosoft_gdb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">gxp</span><span class="p">)</span>
-<span class="n">lines</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">lines</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+<span class="c1"># open the current database in the open project</span>
+<span class="n">gdb</span> <span class="o">=</span> <span class="n">gxdb</span><span class="o">.</span><span class="n">Geosoft_gdb</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">gdb</span><span class="o">.</span><span class="n">list_lines</span><span class="p">():</span>
 
     <span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">read_line</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
     <span class="c1"># npd is a 2D numpy array to all data in this line.</span>
@@ -466,66 +475,43 @@ Can be set.</p>
 <p>External Python program to open and read through all data in a database:</p>
 <div class="code highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span><span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">gxpy.gx</span> <span class="k">as</span> <span class="nn">gxp</span>
+<span class="kn">import</span> <span class="nn">gxpy.gx</span> <span class="k">as</span> <span class="nn">gx</span>
 <span class="kn">import</span> <span class="nn">gxpy.gdb</span> <span class="k">as</span> <span class="nn">gxdb</span>
 
 <span class="c1"># initalize the gx environment - required for external programs.</span>
-<span class="k">with</span> <span class="n">gxu</span><span class="o">.</span><span class="n">GXpy</span><span class="p">()</span> <span class="k">as</span> <span class="n">gxp</span><span class="p">:</span>
+<span class="n">gxp</span> <span class="o">=</span> <span class="n">gx</span><span class="o">.</span><span class="n">GXpy</span><span class="p">()</span>
 
-    <span class="c1"># open a database</span>
-    <span class="n">gdb</span> <span class="o">=</span> <span class="n">gxdb</span><span class="o">.</span><span class="n">Geosoft_gdb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">gxp</span><span class="p">,</span><span class="s1">&#39;test.gdb&#39;</span><span class="p">)</span>
-    <span class="n">lines</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">lines</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+<span class="c1"># open a database</span>
+<span class="n">gdb</span> <span class="o">=</span> <span class="n">gxdb</span><span class="o">.</span><span class="n">Geosoft_gdb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;test.gdb&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">gdb</span><span class="o">.</span><span class="n">list_lines</span><span class="p">():</span>
 
-        <span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">read_line</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-        <span class="c1"># npd is a 2D numpy array to all data in this line.</span>
-        <span class="c1"># ch is a list of the channels, one channel for each column in npd.</span>
-        <span class="c1"># Array channels are expanded with channel names &quot;name[0]&quot;, &quot;name[1]&quot; ...</span>
-        <span class="c1"># fid is a tuple (start,increment) fiducial, which will be the minimum start and smallest increment.</span>
+    <span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">read_line</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="c1"># npd is a 2D numpy array to all data in this line.</span>
+    <span class="c1"># ch is a list of the channels, one channel for each column in npd.</span>
+    <span class="c1"># Array channels are expanded with channel names &quot;name[0]&quot;, &quot;name[1]&quot; ...</span>
+    <span class="c1"># fid is a tuple (start,increment) fiducial, which will be the minimum start and smallest increment.</span>
 
-        <span class="c1"># ... do something with the data in npd ...</span>
+    <span class="c1"># ... do something with the data in npd ...</span>
 </pre></div>
 </div>
-<p>The following creates a new channel that is the distance from the origin to the X,Y,Z location of every point.
-This code assumes that there are no dummies in the X, Y or Z channels (the next example shows how to
-deal with dummies).</p>
+<p>The following creates a new channel that is the distance from the origin to the X,Y,Z location of every point.</p>
 <div class="code highlight-default"><div class="highlight"><pre><span></span><span class="o">...</span>
-<span class="n">gdb</span> <span class="o">=</span> <span class="n">gxdb</span><span class="o">.</span><span class="n">Geosoft_gdb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">gxp</span><span class="p">,</span><span class="s1">&#39;test.gdb&#39;</span><span class="p">)</span>
-<span class="n">lines</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">lines</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+<span class="n">gdb</span> <span class="o">=</span> <span class="n">gxdb</span><span class="o">.</span><span class="n">Geosoft_gdb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;test.gdb&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">gdb</span><span class="o">.</span><span class="n">list_lines</span><span class="p">():</span>
 
     <span class="n">npd</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">read_line</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">channels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">])</span>
 
-    <span class="n">squares</span> <span class="o">=</span> <span class="n">npd</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">npd</span><span class="p">)</span>
-    <span class="n">dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">npd</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">npd</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">npd</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">npd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">npd</span><span class="p">)</span>
+    <span class="n">distance_from_origin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">npd</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">npd</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">npd</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
 
-    <span class="n">gdb</span><span class="o">.</span><span class="n">write_channel</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="s1">&#39;distance&#39;</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="n">fid</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Create a distance channel (as in previous example), with dummy handling:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="o">...</span>
-<span class="n">gdb</span> <span class="o">=</span> <span class="n">gxdb</span><span class="o">.</span><span class="n">Geosoft_gdb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">gxp</span><span class="p">,</span><span class="s1">&#39;test.gdb&#39;</span><span class="p">)</span>
-<span class="n">lines</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">lines</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
-
-    <span class="n">ln</span><span class="p">,</span> <span class="n">lsymb</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">line_name_symb</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
-
-    <span class="n">data</span><span class="p">,</span> <span class="n">ch</span><span class="p">,</span> <span class="n">fid</span> <span class="o">=</span> <span class="n">gdb</span><span class="o">.</span><span class="n">read_line</span><span class="p">(</span><span class="n">lsymb</span><span class="p">,</span> <span class="n">channels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">])</span>
-    <span class="n">dummy</span> <span class="o">=</span> <span class="n">gxu</span><span class="o">.</span><span class="n">gx_dummy</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
-
-    <span class="c1"># get a dummy mask, `True` for all rows with a dummy</span>
-    <span class="n">dummy_mask</span> <span class="o">=</span> <span class="n">gxu</span><span class="o">.</span><span class="n">dummy_mask</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-
-    <span class="n">squares</span> <span class="o">=</span> <span class="n">npd</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">npd</span><span class="p">)</span>
-    <span class="n">dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">npd</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">npd</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">npd</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-
-    <span class="c1"># insert dummies using the dummy mask, then write</span>
-    <span class="n">dist</span><span class="p">[</span><span class="n">dummy_mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">dummy</span>
-    <span class="n">gdb</span><span class="o">.</span><span class="n">write_channel</span><span class="p">(</span><span class="n">lsymb</span><span class="p">,</span> <span class="s1">&#39;distance&#39;</span><span class="p">,</span> <span class="n">dist</span><span class="p">)</span>
+    <span class="n">gdb</span><span class="o">.</span><span class="n">write_channel</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="s1">&#39;distance&#39;</span><span class="p">,</span> <span class="n">distance_from_origin</span><span class="p">,</span> <span class="n">fid</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 9.3: </span>float numpy arrays use np.nan for dummies so dummy filtering no longer necessary.</p>
 </div>
 <dl class="method">
 <dt id="geosoft.gxpy.gdb.Geosoft_gdb.channel_details">
@@ -766,6 +752,53 @@ Can be set from any <a class="reference internal" href="geosoft.gxpy.coordinate_
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.gdb.Geosoft_gdb.figure_map">
+<code class="descname">figure_map</code><span class="sig-paren">(</span><em>file_name=None, title=None, draw=0, features=['ALL'], **kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gdb.Geosoft_gdb.figure_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a figure map file from selected lines in the database.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>file_name</strong> &#8211; the name of the map, if None a temporary default map is created.</li>
+<li><strong>overwrite</strong> &#8211; True to overwrite existing image file</li>
+<li><strong>title</strong> &#8211; Title added to the image</li>
+<li><strong>style</strong> &#8211; <a class="reference internal" href="#geosoft.gxpy.gdb.DRAW_AS_POINTS" title="geosoft.gxpy.gdb.DRAW_AS_POINTS"><code class="xref py py-obj docutils literal"><span class="pre">DRAW_AS_POINTS</span></code></a> to draw a dot at each point (default). Long lines are decimated.
+<a class="reference internal" href="#geosoft.gxpy.gdb.DRAW_AS_LINES" title="geosoft.gxpy.gdb.DRAW_AS_LINES"><code class="xref py py-obj docutils literal"><span class="pre">DRAW_AS_LINES</span></code></a> to draw lines with a line label at each end.</li>
+<li><strong>features</strong> &#8211; <p>list of features to place on the map, default is (&#8216;SCALE&#8217;, &#8216;NEATLINE&#8217;)</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>&#8216;SCALE&#8217;</td>
+<td>show a scale bar</td>
+</tr>
+<tr class="row-even"><td>&#8216;NEATLINE&#8217;</td>
+<td>draw a neat-line around the image</td>
+</tr>
+<tr class="row-odd"><td>&#8216;ANNOT_XY&#8217;</td>
+<td>annotate map coordinates</td>
+</tr>
+<tr class="row-even"><td>&#8216;ANNOT_LL&#8217;</td>
+<td>annotate map Latitude, Longitude</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><strong>kwargs</strong> &#8211; passed to <a class="reference internal" href="geosoft.gxpy.map.html#geosoft.gxpy.map.Map.new" title="geosoft.gxpy.map.Map.new"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.map.Map.new</span></code></a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
@@ -1899,7 +1932,8 @@ set the lock.</p>
 <dl class="attribute">
 <dt id="geosoft.gxpy.gdb.Line.selected">
 <code class="descname">selected</code><a class="headerlink" href="#geosoft.gxpy.gdb.Line.selected" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>True if this line is selected, can be set.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="geosoft.gxpy.gdb.Line.symbol">

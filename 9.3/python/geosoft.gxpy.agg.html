@@ -206,6 +206,59 @@ the data.</li>
 <dd><p>Close an Aggregate, releases resources.</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="geosoft.gxpy.agg.Aggregate_image.figure_map">
+<code class="descname">figure_map</code><span class="sig-paren">(</span><em>file_name=None, title=None, legend_label=None, features=['SCALE', 'LEGEND', 'NEATLINE'], **kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.agg.Aggregate_image.figure_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a figure map file from an aggregate.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>file_name</strong> &#8211; the name of the map, if None a default map is created.</li>
+<li><strong>overwrite</strong> &#8211; True to overwrite existing image file</li>
+<li><strong>title</strong> &#8211; Title added to the image</li>
+<li><strong>legend_label</strong> &#8211; If plotting a legend make this the legned title.  The default is the title in the
+first aggregate layer colour map.</li>
+<li><strong>features</strong> &#8211; <p>list of features to place on the map, default is (&#8216;SCALE&#8217;, &#8216;LEGEND&#8217;, &#8216;NEATLINE&#8217;)</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>&#8216;SCALE&#8217;</td>
+<td>show a scale bar</td>
+</tr>
+<tr class="row-even"><td>&#8216;LEGEND&#8217;</td>
+<td>show an aggregate colour legend</td>
+</tr>
+<tr class="row-odd"><td>&#8216;NEATLINE&#8217;</td>
+<td>draw a neat-line around the image</td>
+</tr>
+<tr class="row-even"><td>&#8216;ANNOT_XY&#8217;</td>
+<td>annotate map coordinates</td>
+</tr>
+<tr class="row-odd"><td>&#8216;ANNOT_LL&#8217;</td>
+<td>annotate map Latitude, Longitude</td>
+</tr>
+<tr class="row-even"><td>&#8216;CONTOUR&#8217;</td>
+<td>contour the first layer in the aggregate</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><strong>kwargs</strong> &#8211; passed to <a class="reference internal" href="geosoft.gxpy.map.html#geosoft.gxpy.map.Map.new" title="geosoft.gxpy.map.Map.new"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.map.Map.new</span></code></a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.</span></p>
+</div>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="geosoft.gxpy.agg.Aggregate_image.gxagg">
 <code class="descname">gxagg</code><a class="headerlink" href="#geosoft.gxpy.agg.Aggregate_image.gxagg" title="Permalink to this definition">¶</a></dt>

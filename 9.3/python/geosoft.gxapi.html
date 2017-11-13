@@ -106,7 +106,165 @@ information.</p>
 <dl class="class">
 <dt id="geosoft.gxapi.GXContext">
 <em class="property">class </em><code class="descname">GXContext</code><span class="sig-paren">(</span><em>wrapper</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXContext" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>The main GX execution context.</p>
+<p>A single instance of this object must be created per thread and persist before using any other class in the
+<code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxapi</span></code> module.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">Class <a class="reference internal" href="geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy" title="geosoft.gxpy.gx.GXpy"><code class="xref py py-class docutils literal"><span class="pre">gxpy.gx.GXpy</span></code></a></p>
+</div>
+<dl class="method">
+<dt id="geosoft.gxapi.GXContext.clear_ui_console">
+<code class="descname">clear_ui_console</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXContext.clear_ui_console" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clears the console owned by UI applications. Has no effect on consoles owning standalone scripts.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXContext.create">
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>application</em>, <em>version</em>, <em>wind_id=0</em>, <em>flags=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXContext.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates the GX execution context (will return the current one if it exists).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>application</strong> (<em>str</em>) &#8211; Calling application name&#8221;</li>
+<li><strong>version</strong> (<em>str</em>) &#8211; Calling application version</li>
+<li><strong>parent_wnd_id</strong> (<em>int</em>) &#8211; Calling application main window handle (HWND cast to unsigned on Windows) as an int (default 0)</li>
+<li><strong>flags</strong> (<em>int</em>) &#8211; 0 default; 64 suppresses text progress messages; 128 suppresses GUI progress window</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A GX execution context.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXContext" title="geosoft.gxapi.GXContext">GXContext</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXContext.enable_application_windows">
+<code class="descname">enable_application_windows</code><span class="sig-paren">(</span><em>enable</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXContext.enable_application_windows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used by to prevent user interaction while showing modal windows with APIs where it might be hard to use proper window parenting
+(e.g. in Python with PyQt, tkinter, wxPython etc.). Take care to enable window prior to any calls that need user interaction, e.g.
+The <a class="reference internal" href="GXEMAP.html#geosoft.gxapi.GXEMAP" title="geosoft.gxapi.GXEMAP"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXEMAP</span></code></a> digitization methods.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>enable</strong> (<em>bool</em>) &#8211; True to enable, False to disable keyboard and mouse interaction</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXContext.get_active_wnd_id">
+<code class="descname">get_active_wnd_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXContext.get_active_wnd_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get currently active window (main window, floating document or other popup, 0 if not available).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Window handle as an int (HWND cast to unsigned on Windows)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXContext.get_main_wnd_id">
+<code class="descname">get_main_wnd_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXContext.get_main_wnd_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the main window handle (0 if not available).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Window handle as an int (HWND cast to unsigned on Windows)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXContext.has_ui_console">
+<code class="descname">has_ui_console</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXContext.has_ui_console" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if a console owned by UI applications is available</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the parent has UI console.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXContext.is_ui_console_visible">
+<code class="descname">is_ui_console_visible</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXContext.is_ui_console_visible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if a console owned by UI applications is visible</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the UI console is visible.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXContext.show_ui_console">
+<code class="descname">show_ui_console</code><span class="sig-paren">(</span><em>show</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXContext.show_ui_console" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shows or hides console owned by UI applications. Showing the console Will also bring the window to the front if behind 
+other application windows. Has no effect on consoles owning standalone scripts.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>show</strong> (<em>bool</em>) &#8211; True to show False to Hide</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
 
 </div>
 <div class="section" id="gxapi-instance-resource-garbage-collection">

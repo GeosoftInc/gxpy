@@ -888,6 +888,23 @@ dimensions (such as <code class="xref py py-obj docutils literal"><span class="p
 </dd></dl>
 
 <dl class="method">
+<dt id="geosoft.gxpy.group.Draw.point">
+<code class="descname">point</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Draw.point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a point.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>p</strong> &#8211; point location as <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.geometry.Point</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
 <dt id="geosoft.gxpy.group.Draw.polygon">
 <code class="descname">polygon</code><span class="sig-paren">(</span><em>pp</em>, <em>close=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Draw.polygon" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw a polygon on the current plane.</p>
@@ -895,7 +912,7 @@ dimensions (such as <code class="xref py py-obj docutils literal"><span class="p
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pp</strong> &#8211; <code class="xref py py-class docutils literal"><span class="pre">gxpy.geometry.PPoint</span></code></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pp</strong> &#8211; <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.PPoint" title="geosoft.gxpy.geometry.PPoint"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.geometry.PPoint</span></code></a></td>
 </tr>
 </tbody>
 </table>
@@ -918,7 +935,8 @@ appear continuous.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>pp</strong> &#8211; <code class="xref py py-class docutils literal"><span class="pre">gxpy.geometry.PPoint</span></code></li>
+<li><strong>pp</strong> &#8211; <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.PPoint" title="geosoft.gxpy.geometry.PPoint"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.geometry.PPoint</span></code></a> instance or something that can be constructed, or a
+pair of <a class="reference internal" href="geosoft.gxpy.vv.html#geosoft.gxpy.vv.GXvv" title="geosoft.gxpy.vv.GXvv"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.vv.GXvv</span></code></a> (xvv, yvv)</li>
 <li><strong>close</strong> &#8211; if True, draw a polygon, default is a polyline</li>
 </ul>
 </td>
@@ -932,6 +950,24 @@ appear continuous.</p>
 </div>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.group.Draw.polypoint">
+<code class="descname">polypoint</code><span class="sig-paren">(</span><em>pp</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Draw.polypoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw many points.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pp</strong> &#8211; point location as <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.PPoint" title="geosoft.gxpy.geometry.PPoint"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.geometry.PPoint</span></code></a>, or a pair of VVs (vvx, vvy), or
+something that <code class="xref py py-obj docutils literal"><span class="pre">gxpy.geometry.PPoint</span></code> can construct into a PP.</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
@@ -956,8 +992,8 @@ appear continuous.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>text</strong> &#8211; text string.  Use line-feed characters for multi-line text.</li>
 <li><strong>location</strong> &#8211; (x, y) or a <code class="xref py py-obj docutils literal"><span class="pre">gxpy.geomerty.Point</span></code> location</li>
-<li><strong>reference</strong> &#8211; <p>reference point relative to the clip limits of the view to
-which reference location.  The points are:</p>
+<li><strong>reference</strong> &#8211; <p>Text justification point relative text outline box.
+The points are:</p>
 <blockquote>
 <div><div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span>   <span class="n">top</span> <span class="n">left</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">right</span>
 <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span>   <span class="n">middle</span> <span class="n">left</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">right</span>
@@ -1164,7 +1200,7 @@ within the 3D view.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>points</strong> &#8211; verticies of the polyline, <code class="xref py py-class docutils literal"><span class="pre">gxpy.geometry.PPoint</span></code> instance, or array-like [x,y,z]</li>
+<li><strong>points</strong> &#8211; verticies of the polyline, <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.PPoint" title="geosoft.gxpy.geometry.PPoint"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.geometry.PPoint</span></code></a> instance, or array-like [x,y,z]</li>
 <li><strong>style</strong> &#8211; LINE3D_STYLE_LINE, LINE3D_STYLE_TUBE or LINE3D_STYLE_TUBE_JOINED.
 Lines are single-pixel-wide.  Tubes have width defined by the pen line thickness.
 Joined tubes have a joints and rounded ends.</li>
@@ -1187,7 +1223,7 @@ Joined tubes have a joints and rounded ends.</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>points</strong> &#8211; points to draw, <code class="xref py py-class docutils literal"><span class="pre">gxpy.geometry.PPoint</span></code> instance, or array-like [x,y,z]</li>
+<li><strong>points</strong> &#8211; points to draw, <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.PPoint" title="geosoft.gxpy.geometry.PPoint"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.geometry.PPoint</span></code></a> instance, or array-like [x,y,z]</li>
 <li><strong>style</strong> &#8211; POINT_STYLE_DOT or POINT_STYLE_SPHERE.  Dots are fast and intended for point clouds.
 The current pen thickness is used as the sphere sizes.</li>
 </ul>
@@ -1445,7 +1481,7 @@ Can be set.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>location</strong> &#8211; location (x, y) or a <code class="xref py py-obj docutils literal"><span class="pre">gxpy.geometry.Point</span></code></li>
+<li><strong>location</strong> &#8211; location (x, y) or a <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.geometry.Point</span></code></a></li>
 <li><strong>reference</strong> &#8211; <p>reference point relative to the clip limits of the view to
 which reference location.  The points are:</p>
 <blockquote>
@@ -1911,7 +1947,7 @@ are scaled to cm.</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">height:</th><td class="field-body">font height in</td>
+<tr class="field-odd field"><th class="field-name">height:</th><td class="field-body">font height in view units</td>
 </tr>
 <tr class="field-even field"><th class="field-name">font:</th><td class="field-body">font name</td>
 </tr>
@@ -2120,7 +2156,7 @@ a shaded-color legend, provide the shaded color map here.</li>
 <li><strong>location</strong> &#8211; offset or (x, y) offset from <code class="xref py py-obj docutils literal"><span class="pre">bar_location</span></code> reference point, in cm.  The default is
 determined to center the bar off the location side specified.</li>
 <li><strong>decimals</strong> &#8211; annotation decimal places</li>
-<li><strong>annotation_height</strong> &#8211; annotation number height</li>
+<li><strong>annotation_height</strong> &#8211; annotation number height (cm)</li>
 <li><strong>annotation_offset</strong> &#8211; offset of annotations from the bar (cm)</li>
 <li><strong>annotation_side</strong> &#8211; <p>side of the bar for annotations</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">COLOR_BAR_ANNOTATE_RIGHT</span> <span class="o">=</span> <span class="mi">1</span>

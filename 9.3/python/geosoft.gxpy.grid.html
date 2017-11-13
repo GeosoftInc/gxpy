@@ -838,6 +838,34 @@ Dummies will be numpy.nan.</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="geosoft.gxpy.grid.figure_map">
+<code class="descname">figure_map</code><span class="sig-paren">(</span><em>grid_file</em>, <em>map_file=None</em>, <em>shade=True</em>, <em>color_map=None</em>, <em>contour=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid.figure_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a map figure from a grid file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>grid_file</strong> &#8211; grid file name</li>
+<li><strong>map_file</strong> &#8211; name of the map file, if <code class="xref py py-obj docutils literal"><span class="pre">None</span></code> a default map is created.</li>
+<li><strong>shade</strong> &#8211; <code class="xref py py-obj docutils literal"><span class="pre">True</span></code> to add shading effect</li>
+<li><strong>color_map</strong> &#8211; <a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color_map" title="geosoft.gxpy.group.Color_map"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.group.Color_map</span></code></a> instance, or a colour ramp file name, defaut is user&#8217;s default</li>
+<li><strong>contour</strong> &#8211; colour contour interval if colours need to break at exact levels</li>
+<li><strong>kwargs</strong> &#8211; passed to  <a class="reference internal" href="geosoft.gxpy.agg.html#geosoft.gxpy.agg.Aggregate_image.figure_map" title="geosoft.gxpy.agg.Aggregate_image.figure_map"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.agg.Aggregate_image.figure_map</span></code></a> and <a class="reference internal" href="geosoft.gxpy.map.html#geosoft.gxpy.map.Map.new" title="geosoft.gxpy.map.Map.new"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.map.Map.new</span></code></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.map.html#geosoft.gxpy.map.Map" title="geosoft.gxpy.map.Map"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.map.Map</span></code></a> instance</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
 <dt id="geosoft.gxpy.grid.gridBool">
 <code class="descname">gridBool</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid.gridBool" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">

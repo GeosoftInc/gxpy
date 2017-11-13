@@ -20,9 +20,13 @@ New Classes
 New Functions
 ^^^^^^^^^^^^^
 
+:func:`geosoft.gxpy.agg.Aggregate_image.figure_map` Create a figure map file from an aggregate.
+
 :func:`geosoft.gxpy.agg.Aggregate_image.layer_unit_of_measure` Return the unit of measurement for the specified layer
 
 :func:`geosoft.gxpy.gdb.Channel.delete` Delete the channel and all associated data.  After calling this method this
+
+:func:`geosoft.gxpy.gdb.Geosoft_gdb.figure_map` Create a figure map file from selected lines in the database.
 
 :func:`geosoft.gxpy.gdb.Geosoft_gdb.get_gx_metadata` Return the database Geosoft metadata as a Geosoft :class:`geosoft.gxpy.metadata.Metadata` instance.
 
@@ -42,7 +46,13 @@ New Functions
 
 :func:`geosoft.gxpy.gdb.is_valid_line_name` Return True if this is a valid line name.
 
+:func:`geosoft.gxpy.grid.figure_map` Create a map figure from a grid file.
+
 :func:`geosoft.gxpy.group.Color_symbols_group.color_map` Return the :class:`geosoft.gxpy.group.Color_map` of a color symbol group.
+
+:func:`geosoft.gxpy.group.Draw.point` Draw a point.
+
+:func:`geosoft.gxpy.group.Draw.polypoint` Draw many points.
 
 :func:`geosoft.gxpy.group.color_from_string` Return a Geosoft color number from a color string.
 
@@ -50,7 +60,13 @@ New Functions
 
 :func:`geosoft.gxpy.gx.GXpy.has_entitlement` Returns True if the user has this entitlement.
 
+:func:`geosoft.gxpy.map.Map.crc_image` Return the CRC of a map based on the output bitmap image.
+
 :func:`geosoft.gxpy.map.Map.export_geotiff` Export map as a GeoTIFF image
+
+:func:`geosoft.gxpy.map.Map.figure` Create a figure-style map.
+
+:func:`geosoft.gxpy.map.Map.image_file` Save a map to an image file
 
 :func:`geosoft.gxpy.metadata.Metadata.has_attribute` Returns `True` if this attribute exists in the metadata.
 
@@ -329,9 +345,7 @@ New Functions
 
 :func:`geosoft.gxpy.map.map_file_name` Return a fully resolved map file path using the file name, with .map extension
 
-:func:`geosoft.gxpy.map.save_as_image` Save a map to an image file
-
-:func:`geosoft.gxpy.map.unique_temporary_file_name` Create a unique temporary file name.
+:func:`geosoft.gxpy.map.save_as_image` Save a map file to an image file
 
 :func:`geosoft.gxpy.project.Geosoft_project.current_db_state` Return the state of the current database.
 
@@ -789,6 +803,22 @@ New Classes
 
 New Functions
 ^^^^^^^^^^^^^
+
+:func:`geosoft.gxapi.GXContext.clear_ui_console` Clears the console owned by UI applications. Has no effect on consoles owning standalone scripts.
+
+:func:`geosoft.gxapi.GXContext.create` Creates the GX execution context (will return the current one if it exists).
+
+:func:`geosoft.gxapi.GXContext.enable_application_windows` Used by to prevent user interaction while showing modal windows with APIs where it might be hard to use proper window parenting
+
+:func:`geosoft.gxapi.GXContext.get_active_wnd_id` Get currently active window (main window, floating document or other popup, 0 if not available).
+
+:func:`geosoft.gxapi.GXContext.get_main_wnd_id` Get the main window handle (0 if not available).
+
+:func:`geosoft.gxapi.GXContext.has_ui_console` Checks if a console owned by UI applications is available
+
+:func:`geosoft.gxapi.GXContext.is_ui_console_visible` Checks if a console owned by UI applications is visible
+
+:func:`geosoft.gxapi.GXContext.show_ui_console` Shows or hides console owned by UI applications. Showing the console Will also bring the window to the front if behind
 
 :func:`geosoft.gxapi.GXDB.valid_symb` This method checks to see if the specified symbol is a valid symbol in the database.
 

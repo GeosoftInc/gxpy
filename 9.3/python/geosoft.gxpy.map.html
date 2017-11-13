@@ -260,7 +260,7 @@ annotate both geographic and projected coordinates.</li>
 
 <dl class="method">
 <dt id="geosoft.gxpy.map.Map.annotate_data_xy">
-<code class="descname">annotate_data_xy</code><span class="sig-paren">(</span><em>view_name='*data'</em>, <em>tick=''</em>, <em>offset=''</em>, <em>x_sep=''</em>, <em>x_dec=''</em>, <em>y_sep=''</em>, <em>y_dec=''</em>, <em>compass=True</em>, <em>top=-1</em>, <em>text_def=None</em>, <em>edge_pen=None</em>, <em>grid=0</em>, <em>grid_pen=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.annotate_data_xy" title="Permalink to this definition">¶</a></dt>
+<code class="descname">annotate_data_xy</code><span class="sig-paren">(</span><em>view_name='*data'</em>, <em>tick=''</em>, <em>offset=''</em>, <em>x_sep=''</em>, <em>x_dec=''</em>, <em>y_sep=''</em>, <em>y_dec=''</em>, <em>compass=None</em>, <em>top=-1</em>, <em>text_def=None</em>, <em>edge_pen=None</em>, <em>grid=0</em>, <em>grid_pen=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.annotate_data_xy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Annotate a data view axis</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -277,7 +277,7 @@ annotate both geographic and projected coordinates.</li>
 <li><strong>x_dec</strong> &#8211; X axis label decimals, default is 0</li>
 <li><strong>y_sep</strong> &#8211; separation between Y annotations, default is calculated from data</li>
 <li><strong>y_dec</strong> &#8211; Y axis label decimals, default is 0</li>
-<li><strong>compass</strong> &#8211; True (default) to append compass direction to annotations</li>
+<li><strong>compass</strong> &#8211; True to append compass direction to annotations, default True if known coordinate system.</li>
 <li><strong>grid</strong> &#8211; <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">GRID_NONE</span>       <span class="n">no</span> <span class="n">grid</span>
 <span class="n">GRID_DOTTED</span>     <span class="n">dotted</span> <span class="n">lines</span>
 <span class="n">GRID_CROSSES</span>    <span class="n">crosses</span> <span class="n">at</span> <span class="n">intersections</span>
@@ -349,6 +349,25 @@ with the same coordinate system, scale and clipping as the old view.</li>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.map.Map.crc_image">
+<code class="descname">crc_image</code><span class="sig-paren">(</span><em>pix_width=1000</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.crc_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the CRC of a map based on the output bitmap image.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pix_width</strong> &#8211; image pixel width - use a higher resolution to test more detail</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">CRC as an int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
@@ -446,6 +465,60 @@ from Geosoft methods.</p>
 </div>
 </dd></dl>
 
+<dl class="classmethod">
+<dt id="geosoft.gxpy.map.Map.figure">
+<em class="property">classmethod </em><code class="descname">figure</code><span class="sig-paren">(</span><em>data_area</em>, <em>file_name=None</em>, <em>title=None</em>, <em>features=('SCALE'</em>, <em>'NEATLINE'</em>, <em>'ANNOT_XY')</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.figure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a figure-style map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data_area</strong> &#8211; the area extend for the data view as (xmin, ymin, xmax, ymax)</li>
+<li><strong>file_name</strong> &#8211; map file name, default creates a temporary map</li>
+<li><strong>title</strong> &#8211; figure title</li>
+<li><strong>features</strong> &#8211; <p>list of features to place on the map, default is (&#8216;SCALE&#8217;, &#8216;NEATLINE&#8217;, &#8216;ANNOT_XY&#8217;)</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>&#8216;ALL&#8217;</td>
+<td>all features</td>
+</tr>
+<tr class="row-even"><td>&#8216;SCALE&#8217;</td>
+<td>show a scale bar</td>
+</tr>
+<tr class="row-odd"><td>&#8216;NEATLINE&#8217;</td>
+<td>draw a neat-line around the image</td>
+</tr>
+<tr class="row-even"><td>&#8216;ANNOT_XY&#8217;</td>
+<td>annotate map coordinates</td>
+</tr>
+<tr class="row-odd"><td>&#8216;ANNOT_LL&#8217;</td>
+<td>annotate map Latitude, Longitude</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxpy.map.Map" title="geosoft.gxpy.map.Map"><code class="xref py py-obj docutils literal"><span class="pre">Map</span></code></a> instance with &#8216;base&#8217; and &#8216;data&#8217; views.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="#geosoft.gxpy.map.Map.new" title="geosoft.gxpy.map.Map.new"><code class="xref py py-obj docutils literal"><span class="pre">Map.new</span></code></a> arguments to modify map layout requirements</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.</span></p>
+</div>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="geosoft.gxpy.map.Map.file_name">
 <code class="descname">file_name</code><a class="headerlink" href="#geosoft.gxpy.map.Map.file_name" title="Permalink to this definition">¶</a></dt>
@@ -494,6 +567,42 @@ from Geosoft methods.</p>
 <dt id="geosoft.gxpy.map.Map.has_view">
 <code class="descname">has_view</code><span class="sig-paren">(</span><em>view</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.has_view" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if the map contains this view.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.map.Map.image_file">
+<code class="descname">image_file</code><span class="sig-paren">(</span><em>imagefile=None</em>, <em>type='PNG'</em>, <em>pix_width=1000</em>, <em>pix_height=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.image_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save a map to an image file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>mapfile</strong> &#8211; map or geosoft_3dv file name</li>
+<li><strong>imagefile</strong> &#8211; name of the output raster file, default will be a temporary png file.</li>
+<li><strong>type</strong> &#8211; one of the RASTER_FORMAT types, default`RASTER_FORMAT_PNG`</li>
+<li><strong>pix_width</strong> &#8211; image pixel width, if 0 use pix_height only</li>
+<li><strong>pix_height</strong> &#8211; image pixel height, if 0 use pix_width only</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">image file name</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.map.Map.map_scale">
+<code class="descname">map_scale</code><a class="headerlink" href="#geosoft.gxpy.map.Map.map_scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Map scale, based on the current default &#8220;data&#8221; view if it exists.</p>
+<p>WARNING: If the &#8220;data&#8221; view is open this returns 1000. TODO - add test for open views.</p>
+<p>Can be set, but must not be called if any views are open. Resetting the map scale changes the
+scale of all views in the map.</p>
 </dd></dl>
 
 <dl class="method">
@@ -969,39 +1078,18 @@ map.</p>
 
 <dl class="function">
 <dt id="geosoft.gxpy.map.save_as_image">
-<code class="descname">save_as_image</code><span class="sig-paren">(</span><em>mapfile</em>, <em>imagefile</em>, <em>type='PNG'</em>, <em>pix_width=1000</em>, <em>pix_height=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.save_as_image" title="Permalink to this definition">¶</a></dt>
-<dd><p>Save a map to an image file</p>
+<code class="descname">save_as_image</code><span class="sig-paren">(</span><em>mapfile</em>, <em>imagefile=None</em>, <em>type='PNG'</em>, <em>pix_width=1000</em>, <em>pix_height=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.save_as_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save a map file to an image file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>mapfile</strong> &#8211; mapfile name</li>
-<li><strong>imagefile</strong> &#8211; name of the output raster file</li>
+<li><strong>mapfile</strong> &#8211; map or geosoft_3dv file name</li>
+<li><strong>imagefile</strong> &#8211; name of the output raster file, default is a temporary png file.</li>
 <li><strong>type</strong> &#8211; one of the RASTER_FORMAT types, default`RASTER_FORMAT_PNG`</li>
 <li><strong>pix_width</strong> &#8211; image pixel width, if 0 use pix_height only</li>
 <li><strong>pix_height</strong> &#8211; image pixel height, if 0 use pix_width only</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="versionadded">
-<p><span class="versionmodified">New in version 9.2.</span></p>
-</div>
-</dd></dl>
-
-<dl class="function">
-<dt id="geosoft.gxpy.map.unique_temporary_file_name">
-<code class="descname">unique_temporary_file_name</code><span class="sig-paren">(</span><em>temproot</em>, <em>file_type='map'</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.unique_temporary_file_name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a unique temporary file name.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>temproot</strong> &#8211; root base name</li>
-<li><strong>file_type</strong> &#8211; Geosoft file type, &#8216;map&#8217; or &#8216;geosoft_3dv&#8217; expected.  Default is &#8216;map&#8217;</li>
 </ul>
 </td>
 </tr>
