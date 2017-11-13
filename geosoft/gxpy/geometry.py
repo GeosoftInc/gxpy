@@ -359,7 +359,7 @@ class PPoint(Geometry, Sequence):
     """
     Poly-Point class. Basic instance arithmetic and equality testing is supported.
 
-    :param xyz: array-like, either ((x, y), ...), ((x, y, z), ...) or (vv_x, vv_y, [vv_z]).
+    :param xyz: array-like: (p1, p2, ...), ((x, y), ...), ((x, y, z), ...) or (vv_x, vv_y, [vv_z]).
                 vv data is resampled to match the first vv.
     :param z:   constant z value for (x, y) data, ignored for (x, y, z) data
 
@@ -400,11 +400,19 @@ class PPoint(Geometry, Sequence):
             else:
                 self.pp[:, 2] = z
 
-        t = type(xyz[0])
-        if t is np.ndarray:
+        def point_setup(xyz):
+            blankpp(len(xyz))
+            i = 0
+            for p in xyz:
+                self.pp[i, :] = p.xyz
+                i += 1
+
+        if isinstance(xyz, np.ndarray):
             np_setup(xyz)
-        elif t is gxvv.GXvv:
+        elif isinstance(xyz[0], gxvv.GXvv):
             vv_setup(xyz)
+        elif isinstance(xyz[0], Point):
+            point_setup(xyz)
         else:
             np_setup(np.array(xyz))
 

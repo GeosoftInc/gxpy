@@ -202,6 +202,12 @@ class Test(GXPYTest):
         pp = gxgm.PPoint((vvx, vvy, vvz))
         verify()
 
+        pps = []
+        for xyz in lpp:
+            pps.append(gxgm.Point(xyz))
+        pp = gxgm.PPoint(pps)
+        verify()
+
         p1, p2 = pp.extent()
         self.assertTrue(p1 == gxgm.Point((1, 2, 3)))
         self.assertTrue(p2 == gxgm.Point((13, 14, 15)))
