@@ -155,27 +155,26 @@ class Test(GXPYTest):
     def test_point(self):
         self.start()
 
-        p1 = gxgm.Point((25, 20))
-        p3 = gxgm.Point((50, 20))
-        p2 = gxgm.Point((75, 20))
-
+        p1 = gxgm.Point((10, 20))
+        p2 = gxgm.Point((20, 20))
+        p3 = gxgm.Point((30, 20))
         rect = gxgm.Point2((p1 - (15, 15), p3 + (15, 15)))
+
         with gxmap.Map.new(data_area=rect.extent_xy) as gmap:
             map_file = gmap.file_name
             with gxv.View.new(gmap, "data") as v:
                 with gxg.Draw(v, 'test_point') as g:
-
                     g.pen = gxg.Pen(line_thick=1)
                     g.rectangle(rect)
 
                     g.pen = gxg.Pen(line_thick=2, line_color='R')
-                    g.line((p1, p1))
+                    g.line((p1, p1))  # invisible - zero-length, but we should see it
 
                     g.pen = gxg.Pen(line_thick=2, line_color='G')
-                    g.line((p2, p2 + (0.01, 0)))
+                    g.line((p2, p2 + (0.04, 0)))  # invisible - bug
 
                     g.pen = gxg.Pen(line_thick=2, line_color='B')
-                    g.line((p3, p3 + (0.05, 0)))
+                    g.line((p3, p3 + (0.05, 0)))  # visible - correct!
 
         self.crc_map(map_file, pix_width=800)
 

@@ -118,9 +118,9 @@
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="10"/>
+         <Value name="MinX" value="-5"/>
          <Value name="MinY" value="5"/>
-         <Value name="MaxX" value="65"/>
+         <Value name="MaxX" value="45"/>
          <Value name="MaxY" value="35"/>
       </Item>
    </Item>
@@ -132,11 +132,11 @@
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
-         <Value name="X" value="25"/>
+         <Value name="X" value="10"/>
          <Value name="Y" value="20"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="25"/>
+         <Value name="X" value="10"/>
          <Value name="Y" value="20"/>
       </Item>
    </Item>
@@ -145,11 +145,11 @@
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
-         <Value name="X" value="75"/>
+         <Value name="X" value="20"/>
          <Value name="Y" value="20"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="75.01"/>
+         <Value name="X" value="20.04"/>
          <Value name="Y" value="20"/>
       </Item>
    </Item>
@@ -158,11 +158,11 @@
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
-         <Value name="X" value="50"/>
+         <Value name="X" value="30"/>
          <Value name="Y" value="20"/>
       </Item>
       <Item name="To" type="D2POINT">
-         <Value name="X" value="50.05"/>
+         <Value name="X" value="30.05"/>
          <Value name="Y" value="20"/>
       </Item>
    </Item>

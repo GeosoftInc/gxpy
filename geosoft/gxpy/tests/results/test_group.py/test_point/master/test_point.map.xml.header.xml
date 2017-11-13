@@ -1,9 +1,9 @@
 <header>
    <Item name="Name" value="test_point.map"/>
    <Item name="Extents" type="L2AREA">
-      <Value name="MinX" value="0"/>
+      <Value name="MinX" value="-5000"/>
       <Value name="MinY" value="0"/>
-      <Value name="MaxX" value="75010"/>
-      <Value name="MaxY" value="35000"/>
+      <Value name="MaxX" value="49976"/>
+      <Value name="MaxY" value="35986"/>
    </Item>
 </header>
