@@ -143,7 +143,7 @@ def delete_files(file_name):
     remove(file_name)
 
 
-def save_as_image(mapfile, imagefile, type=RASTER_FORMAT_PNG, pix_width=1000, pix_height=0):
+def save_as_image(mapfile, imagefile=None, type=RASTER_FORMAT_PNG, pix_width=1000, pix_height=0):
     """
     Save a map file to an image file
 
