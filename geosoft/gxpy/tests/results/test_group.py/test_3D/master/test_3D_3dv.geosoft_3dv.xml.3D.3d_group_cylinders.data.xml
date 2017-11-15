@@ -111,7 +111,7 @@
       <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="0" blue="0"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="0.0001"/>
+      <Item name="Value" value="0.001"/>
    </Item>
    <Item type="PatSize" size="8">
       <Item name="Value" value="1"/>
@@ -156,7 +156,7 @@
       <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="255" blue="0"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="0.0001"/>
+      <Item name="Value" value="0.001"/>
    </Item>
    <Item type="PatSize" size="8">
       <Item name="Value" value="1"/>
@@ -201,7 +201,7 @@
       <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="0" blue="255"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="0.0001"/>
+      <Item name="Value" value="0.001"/>
    </Item>
    <Item type="PatSize" size="8">
       <Item name="Value" value="1"/>
@@ -246,7 +246,7 @@
       <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="255" blue="255"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="0.0001"/>
+      <Item name="Value" value="0.001"/>
    </Item>
    <Item type="PatSize" size="8">
       <Item name="Value" value="1"/>

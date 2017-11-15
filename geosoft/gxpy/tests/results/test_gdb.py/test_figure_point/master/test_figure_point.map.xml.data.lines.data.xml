@@ -150,7 +150,7 @@
       </Item>
       <Item name="Point" type="D2POINT">
          <Value name="X" value="578625"/>
-         <Value name="Y" value="7773625"/>
+         <Value name="Y" value="1.#QNAN"/>
       </Item>
       <Item name="Point" type="D2POINT">
          <Value name="X" value="578625"/>

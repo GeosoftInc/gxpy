@@ -953,54 +953,55 @@ class Map:
         Draw a map surround.  This will draw a single or a double neat-line around the base view of the
         map.
 
-        :param outer_pen:   outer-line pen attributes (mm)
-        :param inner_pen:   inner-line pen attributes (mm)
-        :param gap:         gap between the outer and inner line in mm.  If 0, only the outer line is drawn.
+        :param outer_pen:   outer-line pen attributes (cm)
+        :param inner_pen:   inner-line pen attributes (cm)
+        :param gap:         gap between the outer and inner line in cm.  If 0, only the outer line is drawn.
 
         .. versionadded:: 9.2
 
         .. versionmodified:: 9.3 changed to mm for unentitled use
         """
 
-        try:
+        if outer_pen is None:
+            outer_pen = gxg.Pen(line_thick=0.05)
+        elif isinstance(outer_pen, str):
+            outer_pen = gxg.Pen.from_mapplot_string(outer_pen)
+            outer_pen.line_thick = outer_pen.line_thick / 10.0 # to cm
+        if inner_pen is None:
+            inner_pen = gxg.Pen(line_thick=outer_pen.line_thick * 0.5)
+        elif isinstance(inner_pen, str):
+            inner_pen = gxg.Pen.from_mapplot_string(inner_pen)
+            inner_pen.line_thick = inner_pen.line_thick / 10.0 # to cm
 
-            if outer_pen is None:
-                outer_pen = gxg.Pen(line_thick=0.05)
+        if self._gx.entitled:
 
             with _Mapplot(self) as mpl:
                 mpl.start_group('surround', view=VIEW_BASE, mode=GROUP_APPEND)
                 mpl.define_named_attribute('outer', pen=outer_pen)
                 if gap <= 0:
                     inner = ''
-                    gap = ''
+                    gap = 0
                 else:
                     if inner_pen is None:
-                        inner_pen = gxg.Pen(line_thick=0.01)
+                        inner_pen = gxg.Pen(line_thick=0.01) # cm
                     inner = 'inner'
                     mpl.define_named_attribute(inner, pen=inner_pen)
 
                 mpl.command('SURR "{}",{},"{}"'.format('outer', gap, inner))
 
-        except:
-
-            if outer_pen is None:
-                outer_pen = gxg.Pen(line_thick=0.5)
+        else:
 
             with gxv.View.open(self, '*base') as b:
                 with gxg.Draw(b, 'surround') as s:
+                    outer_pen = gxg.Pen(line_thick=outer_pen.line_thick * b.units_per_map_cm)
                     s.rectangle((b.extent_clip), pen=outer_pen)
                     if gap > 0:
+                        gap = gap * b.units_per_map_cm
                         p2 = gxgeo.Point2((b.extent_clip))
                         p2.p0 += (gap, gap)
                         p2.p1 -= (gap, gap)
-                        if inner_pen is None:
-                            inner_pen = gxg.Pen(line_thick=outer_pen.line_thick * 0.5)
+                        inner_pen = gxg.Pen(line_thick=inner_pen.line_thick * b.units_per_map_cm)
                         s.rectangle(p2, pen=inner_pen)
-
-                        # adjust base coordinates TODO: work on this
-                        #b.locate(map_location=p2.p0.xy,
-                        #         area=(0, 0, (p2.x2[1] - p2.x2[0]), (p2.y2[1] - p2.y2[0])),
-                        #         scale=b.scale)
 
     def north_arrow(self,
                     location=(1, 2., 2.7),
@@ -1027,38 +1028,38 @@ class Map:
         .. versionadded:: 9.2
         """
 
-        if not self._gx.entitled:
-            return
+        if self._gx.entitled:
 
-        if direction is None:
-            with gxv.View.open(self, '*data') as v:
-                direction = round(v.gxview.north(), 1)
-                if direction == gxapi.rDUMMY:
-                    direction = ''
+            if direction is None:
+                with gxv.View.open(self, '*data') as v:
+                    direction = round(v.gxview.north(), 1)
+                    if direction == gxapi.rDUMMY:
+                        direction = ''
 
-        if inclination is None:
-            inclination = ''
+            if inclination is None:
+                inclination = ''
 
-        if declination is None:
-            declination = ''
+            if declination is None:
+                declination = ''
 
-        if pen is None:
-            pen = gxg.Pen(line_thick=0.015)
+            if pen is None:
+                pen = gxg.Pen(line_thick=0.015)
 
-        if text_def is None:
-            text_def = gxg.Text_def(height=0.25, italics=True, weight=gxg.FONT_WEIGHT_LIGHT)
+            if text_def is None:
+                text_def = gxg.Text_def(height=0.25, italics=True, weight=gxg.FONT_WEIGHT_LIGHT)
 
-        with _Mapplot(self) as mpl:
-            mpl.start_group('north_arrow', view=VIEW_BASE, mode=GROUP_APPEND)
-            mpl.define_named_attribute('arrow', pen=pen)
-            mpl.define_named_attribute('annot', text_def=text_def)
-            mpl.command("NARR {},{},{},{},{},{},{},{}".format(location[0], location[1], location[2],
-                                                              direction,
-                                                              length,
-                                                              'arrow',
-                                                              inclination,
-                                                              declination))
-            mpl.command('     annot')
+            with _Mapplot(self) as mpl:
+                mpl.start_group('north_arrow', view=VIEW_BASE, mode=GROUP_APPEND)
+                mpl.define_named_attribute('arrow', pen=pen)
+                mpl.define_named_attribute('annot', text_def=text_def)
+                mpl.command("NARR {},{},{},{},{},{},{},{}".format(location[0], location[1], location[2],
+                                                                  direction,
+                                                                  length,
+                                                                  'arrow',
+                                                                  inclination,
+                                                                  declination))
+                mpl.command('     annot')
+
 
     def scale_bar(self,
                   location=(1, 5, 2),
@@ -1082,30 +1083,29 @@ class Map:
         .. versionadded:: 9.2
         """
 
-        if not self._gx.entitled:
-            return
+        if self._gx.entitled:
 
-        if sections is None:
-            sections = ''
+            if sections is None:
+                sections = ''
 
-        if post_scale:
-            option = 2
-        else:
-            option = 1
+            if post_scale:
+                option = 2
+            else:
+                option = 1
 
-        if text_def is None:
-            text_def = gxg.Text_def(height=0.25, weight=gxg.FONT_WEIGHT_LIGHT, italics=True)
+            if text_def is None:
+                text_def = gxg.Text_def(height=0.25, weight=gxg.FONT_WEIGHT_LIGHT, italics=True)
 
-        if pen is None:
-            pen = gxg.Pen(line_thick=0.001)
+            if pen is None:
+                pen = gxg.Pen(line_thick=0.001)
 
-        with _Mapplot(self) as mpl:
-            mpl.start_group('scale_bar', view=VIEW_BASE, mode=GROUP_APPEND)
-            mpl.define_named_attribute('scale_text', text_def=text_def)
-            mpl.define_named_attribute('scale_bar', pen=pen)
-            mpl.command("SCAL {},{},{},,,{},{},,{},".format(location[0], location[1], location[2],
-                                                            length, sections, option))
-            mpl.command('     scale_text')
+            with _Mapplot(self) as mpl:
+                mpl.start_group('scale_bar', view=VIEW_BASE, mode=GROUP_APPEND)
+                mpl.define_named_attribute('scale_text', text_def=text_def)
+                mpl.define_named_attribute('scale_bar', pen=pen)
+                mpl.command("SCAL {},{},{},,,{},{},,{},".format(location[0], location[1], location[2],
+                                                                length, sections, option))
+                mpl.command('     scale_text')
 
     def _annotation_offset(self, offset, text_height):
         inside = text_height * 0.25
@@ -1157,9 +1157,6 @@ class Map:
         .. versionadded:: 9.2
         """
 
-        if not self._gx.entitled:
-            return
-
         if text_def is None:
             text_def = gxg.Text_def(height=0.18)
         if edge_pen is None:
@@ -1171,43 +1168,53 @@ class Map:
         view_name = self.classview(view_name)
         self.current_data_view = view_name
 
-        try:
+        if self._gx.entitled:
 
-            offset = self._annotation_offset(offset, text_def.height)
+            try:
+
+                offset = self._annotation_offset(offset, text_def.height)
+
+                with gxv.View.open(self, view_name) as v:
+                    with gxg.Draw(v) as g:
+                        g.rectangle(v.extent_clip, pen=gxg.Pen(default=edge_pen, factor=v.units_per_map_cm))
+
+                    # if view has a known coordinate system, use compass annotations
+                    if compass is None:
+                        compass = v.coordinate_system.is_known
+
+                with _Mapplot(self) as mpl:
+
+                    mpl.start_group(view_name + '_edge', 1, view_name)
+
+                    if not tick and grid == GRID_LINES:
+                        tick = 0.0
+
+                    mpl.define_named_attribute('annot', text_def=text_def,
+                                               pen=gxg.Pen(line_color=text_def.color, line_thick=text_def.line_thick))
+                    mpl.define_named_attribute(pen=edge_pen)
+
+                    mpl.command("ANOX ,,,,,{},{},,{},,,,{},{},1".format(x_sep, tick, 0 if compass else -1, offset, x_dec))
+                    mpl.command('     annot')
+                    mpl.command(
+                        "ANOY ,,,,,{},{},,{},{},,,{},{},1".format(y_sep, tick, 0 if compass else -1, top, offset, y_dec))
+                    mpl.command('     annot')
+
+                    if grid:
+                        mpl.define_named_attribute(pen=grid_pen)
+                        mpl.command("GRID {},,,,,_".format(grid))
+
+            except:
+                raise
+
+            finally:
+                self.current_data_view = current_view
+
+        else:
 
             with gxv.View.open(self, view_name) as v:
                 with gxg.Draw(v) as g:
                     g.rectangle(v.extent_clip, pen=gxg.Pen(default=edge_pen, factor=v.units_per_map_cm))
 
-                # if view has a known coordinate system, use compass annotations
-                if compass is None:
-                    compass = v.coordinate_system.is_known
-
-            with _Mapplot(self) as mpl:
-
-                mpl.start_group(view_name + '_edge', 1, view_name)
-
-                if not tick and grid == GRID_LINES:
-                    tick = 0.0
-
-                mpl.define_named_attribute('annot', text_def=text_def,
-                                           pen=gxg.Pen(line_color=text_def.color, line_thick=text_def.line_thick))
-                mpl.define_named_attribute(pen=edge_pen)
-
-                mpl.command("ANOX ,,,,,{},{},,{},,,,{},{},1".format(x_sep, tick, 0 if compass else -1, offset, x_dec))
-                mpl.command('     annot')
-                mpl.command(
-                    "ANOY ,,,,,{},{},,{},{},,,{},{},1".format(y_sep, tick, 0 if compass else -1, top, offset, y_dec))
-                mpl.command('     annot')
-
-                if grid:
-                    mpl.define_named_attribute(pen=grid_pen)
-                    mpl.command("GRID {},,,,,_".format(grid))
-
-        except:
-            raise
-
-        finally:
             self.current_data_view = current_view
 
     def annotate_data_ll(self,
@@ -1240,20 +1247,17 @@ class Map:
                                 GRID_CROSSES    crosses at intersections
                                 GRID_LINES      lines
 
-        :param text_def:    `geosoft.gxpy.group.Text_def`
-        :param edge_pen:    `geosoft.gxpy.group.Pen`
-        :param grid_pen:    `geosoft.gxpy.group.Pen`
+        :param text_def:    `geosoft.gxpy.group.Text_def`, units cm
+        :param edge_pen:    `geosoft.gxpy.group.Pen`, units cm
+        :param grid_pen:    `geosoft.gxpy.group.Pen`, units cm
 
         .. versionadded:: 9.2
         """
 
-        if not self._gx.entitled:
-            return
-
         if text_def is None:
             text_def = gxg.Text_def(height=0.18)
         if edge_pen is None:
-            edge_pen = gxg.Pen()
+            edge_pen = gxg.Pen(factor=0.1)
         if grid_pen is None:
             grid_pen = edge_pen
 
@@ -1261,37 +1265,50 @@ class Map:
         view_name = self.classview(view_name)
         self.current_data_view = view_name
 
-        try:
+        if self._gx.entitled:
 
-            offset = self._annotation_offset(offset, text_def.height)
+            try:
+
+                offset = self._annotation_offset(offset, text_def.height)
+
+                with gxv.View.open(self, view_name) as v:
+                    with gxg.Draw(v) as g:
+                        pen = gxg.Pen(default=edge_pen, factor=v.units_per_map_cm)
+                        g.rectangle(v.extent_clip, pen=pen)
+
+                with _Mapplot(self) as mpl:
+
+                    mpl.start_group(view_name + '_edge', 1, view_name)
+                    if not tick and grid == GRID_LINES:
+                        tick = 0.0
+
+                    mpl.define_named_attribute('annot', text_def=text_def,
+                                               pen=gxg.Pen(line_color=text_def.color, line_thick=text_def.line_thick)
+                                               )
+                    mpl.define_named_attribute(pen=edge_pen)
+
+                    mpl.command("ALON {},{},{},,1".format(sep, tick, offset))
+                    mpl.command('    annot')
+                    mpl.command("ALAT {},{},{},,,{}".format(sep, tick, offset, top))
+                    mpl.command('    annot')
+
+                    if grid:
+                        mpl.define_named_attribute(pen=grid_pen)
+                        mpl.command("GRID -{},,,,,_".format(grid))
+
+            except:
+                raise
+
+            finally:
+                self.current_data_view = current_view
+
+        else:
 
             with gxv.View.open(self, view_name) as v:
+
                 with gxg.Draw(v) as g:
                     g.rectangle(v.extent_clip, pen=gxg.Pen(default=edge_pen, factor=v.units_per_map_cm))
 
-            with _Mapplot(self) as mpl:
-
-                mpl.start_group(view_name + '_edge', 1, view_name)
-                if not tick and grid == GRID_LINES:
-                    tick = 0.0
-
-                mpl.define_named_attribute('annot', text_def=text_def,
-                                           pen=gxg.Pen(line_color=text_def.color, line_thick=text_def.line_thick))
-                mpl.define_named_attribute(pen=edge_pen)
-
-                mpl.command("ALON {},{},{},,1".format(sep, tick, offset))
-                mpl.command('    annot')
-                mpl.command("ALAT {},{},{},,,{}".format(sep, tick, offset, top))
-                mpl.command('    annot')
-
-                if grid:
-                    mpl.define_named_attribute(pen=grid_pen)
-                    mpl.command("GRID -{},,,,,_".format(grid))
-
-        except:
-            raise
-
-        finally:
             self.current_data_view = current_view
 
     def export_geotiff(self, geotiff, dpi=96):
@@ -1379,16 +1396,19 @@ class _Mapplot:
                 pen = gxg.Pen(line_color=text_def.color, line_thick=text_def.line_thick)
             elif isinstance(pen, str):
                 pen = gxg.Pen.from_mapplot_string(pen)
+                pen.line_thick = pen.line_thick * 0.1 # to cm
             ls = pen.line_style
             lp = pen.line_pitch
-            pen = pen.mapplot_string
+            pen.line_thick = pen.line_thick * 10.0 # to mm for mapplot_string
+            penstr = pen.mapplot_string
+            pen.line_thick = pen.line_thick / 10.0 # back to cm
 
             if text_def is None:
-                text = ''
+                textstr = ''
             else:
-                text = text_def.mapplot_string
+                textstr = text_def.mapplot_string
 
-            self.command("DATT {}={},{},{},{}".format(name, pen, ls, lp, text))
+            self.command("DATT {}={},{},{},{}".format(name, penstr, ls, lp, textstr))
 
     def start_group(self, name, mode=GROUP_NEW, view=VIEW_BASE):
         """

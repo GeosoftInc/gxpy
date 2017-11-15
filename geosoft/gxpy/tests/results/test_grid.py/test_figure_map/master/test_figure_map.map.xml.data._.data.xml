@@ -171,13 +171,17 @@
       <Item name="Value" value="0.0014654"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="0.0007327"/>
+      <Item name="Value" value="0.00007327"/>
+   </Item>
+   <Item type="LineStyle" size="12">
+      <Item name="Style" value="1"/>
+      <Item name="Pitch" value="0.0036635"/>
    </Item>
    <Item type="PatSize" size="8">
-      <Item name="Value" value="0.07327"/>
+      <Item name="Value" value="0.007327"/>
    </Item>
    <Item type="PatThick" size="8">
-      <Item name="Value" value="0.0007327"/>
+      <Item name="Value" value="0.00007327"/>
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
@@ -189,6 +193,10 @@
    </Item>
    <Item type="LineThick" size="8">
       <Item name="Value" value="0.0014654"/>
+   </Item>
+   <Item type="LineStyle" size="12">
+      <Item name="Style" value="1"/>
+      <Item name="Pitch" value="0.036635"/>
    </Item>
    <Item type="PatSize" size="8">
       <Item name="Value" value="0.0183175"/>

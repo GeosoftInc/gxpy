@@ -561,7 +561,7 @@ class Test(GXPYTest):
         self.assertEqual(p.line_style, gxg.LINE_STYLE_SOLID)
 
         p.line_color = (255, 127, 64)
-        self.assertEqual(p.mapplot_string, 'r255g127b64t100')
+        self.assertEqual(p.mapplot_string, 'r255g127b64t10')
 
         p2 = gxg.Pen(line_color = (255, 127, 64))
         self.assertTrue(p == p2)
@@ -587,7 +587,7 @@ class Test(GXPYTest):
         self.assertTrue(p.line_color == gxg.Color(gxg.C_WHITE))
 
         p = gxg.Pen.from_mapplot_string('r20b100k16R64K16')
-        p = gxg.Pen(default=p, line_thick=0.05, fill_color='K')
+        p = gxg.Pen(default=p, line_thick=0.5, fill_color='K')
         ms = p.mapplot_string
         self.assertEqual(ms, 'r4g0b84R0G0B0t500')
         p = gxg.Pen.from_mapplot_string(ms)

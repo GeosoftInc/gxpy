@@ -892,6 +892,7 @@ class Draw(Group):
         """
 
         if self._gx.entitled:
+
             scale, ufac, x0, y0 = self.view.mdf()[1]
             control_file = gx.gx.temp_file('.con')
             with open(control_file, 'w+') as f:
@@ -1745,7 +1746,7 @@ class Text_def:
     @property
     def mapplot_string(self):
         """
-        Mapplot text definition string.
+        Mapplot text definition string, assumes scaling in cm.
         """
         if 'default' in self._font.lower():
             font = 'DEFAULT'
@@ -1855,7 +1856,7 @@ class Pen:
         indicates fill color, 'k', 'K' for black.  Each letter may be followed by an intensity
         between 0 and 255.  If an intensity is not specified 255 is assumed.
 
-        Line thinckness can be defined by 't' followed by a thickness in 1000'th of the view unit,
+        Line thickness can be defined by 't' followed by a thickness in 1000'th of the view unit,
         which for the default 'base' view would be microns.
 
         :param cstr:    mapplot-style color definition
@@ -1925,7 +1926,7 @@ class Pen:
         model = color_model(cstr)
         line_color = color(cstr, model)
         fill_color = color(cstr, model.upper())
-        line_thick = max(1, get_part(cstr, 't', 1)) * 0.0001
+        line_thick = max(1, get_part(cstr, 't', 1)) * 0.001
 
         return cls(line_color=line_color, fill_color=fill_color, line_thick=line_thick)
 
@@ -1976,7 +1977,7 @@ class Pen:
                 c = self._fill_color.rgb
                 s += 'R{}G{}B{}'.format(c[0], c[1], c[2])
 
-        return s + 't{}'.format(int(self.line_thick * 10000.))
+        return s + 't{}'.format(int(self.line_thick * 1000.))
 
 
 class Color_symbols_group(Group):

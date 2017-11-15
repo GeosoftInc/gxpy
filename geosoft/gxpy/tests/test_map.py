@@ -447,7 +447,7 @@ class Test(GXPYTest):
             with gxv.View(map, 'data') as v:
                 with gxg.Draw(v) as g:
                     g.rectangle(v.extent_clip)
-            map.surround(gap=0.2)
+            map.surround(gap=0.2, outer_pen=gxg.Pen(line_thick=0.2), inner_pen='bt500')
         self.crc_map(mapfile)
 
     def test_surround_3(self):
@@ -459,8 +459,8 @@ class Test(GXPYTest):
                 with gxg.Draw(v) as g:
                     g.rectangle(v.extent_clip)
             map.surround(gap=0.2,
-                         outer_pen=gxg.Pen.from_mapplot_string('rt500'),
-                         inner_pen=gxg.Pen.from_mapplot_string('K16'))
+                         outer_pen='rt500',
+                         inner_pen='K16')
         self.crc_map(mapfile)
 
     def test_annotate_xy_0(self):
