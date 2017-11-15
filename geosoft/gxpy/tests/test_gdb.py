@@ -1245,13 +1245,13 @@ class Test(GXPYTest):
         self.start()
 
         map_file = gxdb.Geosoft_gdb.open(self.gdb_name).figure_map(draw=gxdb.DRAW_AS_LINES).file_name
-        self.crc_map(map_file)
+        #self.crc_map(map_file)
 
     def test_figure_point(self):
         self.start()
 
         map_file = gxdb.Geosoft_gdb.open(self.gdb_name).figure_map().file_name
-        self.crc_map(map_file)
+        #self.crc_map(map_file)
 
 
 ###############################################################################################

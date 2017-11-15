@@ -120,6 +120,86 @@
    <Item type="PatThick" size="8">
       <Item name="Value" value="0.01"/>
    </Item>
+   <Item type="PolyLine" size="48">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="578625"/>
+         <Value name="Y" value="7773625"/>
+      </Item>
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="578625"/>
+         <Value name="Y" value="7779125"/>
+      </Item>
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="578625"/>
+         <Value name="Y" value="7782875"/>
+      </Item>
+   </Item>
+   <Item type="LineThick" size="8">
+      <Item name="Value" value="9.052"/>
+   </Item>
+   <Item type="LineStyle" size="12">
+      <Item name="Style" value="1"/>
+      <Item name="Pitch" value="226.3"/>
+   </Item>
+   <Item type="PatSize" size="8">
+      <Item name="Value" value="113.15"/>
+   </Item>
+   <Item type="PatThick" size="8">
+      <Item name="Value" value="9.052"/>
+   </Item>
+   <Item type="LineThick" size="8">
+      <Item name="Value" value="13.578"/>
+   </Item>
+   <Item type="LineStyle" size="12">
+      <Item name="Style" value="1"/>
+      <Item name="Pitch" value="0.5"/>
+   </Item>
+   <Item type="PatSize" size="8">
+      <Item name="Value" value="1"/>
+   </Item>
+   <Item type="PatThick" size="8">
+      <Item name="Value" value="0.01"/>
+   </Item>
+   <Item type="PolyLine" size="48">
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="578625"/>
+         <Value name="Y" value="7773625"/>
+      </Item>
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="578625"/>
+         <Value name="Y" value="7779125"/>
+      </Item>
+      <Item name="Point" type="D2POINT">
+         <Value name="X" value="578625"/>
+         <Value name="Y" value="7782875"/>
+      </Item>
+   </Item>
+   <Item type="LineThick" size="8">
+      <Item name="Value" value="9.052"/>
+   </Item>
+   <Item type="LineStyle" size="12">
+      <Item name="Style" value="1"/>
+      <Item name="Pitch" value="226.3"/>
+   </Item>
+   <Item type="PatSize" size="8">
+      <Item name="Value" value="113.15"/>
+   </Item>
+   <Item type="PatThick" size="8">
+      <Item name="Value" value="9.052"/>
+   </Item>
+   <Item type="LineThick" size="8">
+      <Item name="Value" value="13.578"/>
+   </Item>
+   <Item type="LineStyle" size="12">
+      <Item name="Style" value="1"/>
+      <Item name="Pitch" value="0.5"/>
+   </Item>
+   <Item type="PatSize" size="8">
+      <Item name="Value" value="1"/>
+   </Item>
+   <Item type="PatThick" size="8">
+      <Item name="Value" value="0.01"/>
+   </Item>
    <Item type="PolyLine" size="96">
       <Item name="Point" type="D2POINT">
          <Value name="X" value="578625"/>
@@ -140,86 +220,6 @@
       <Item name="Point" type="D2POINT">
          <Value name="X" value="578625"/>
          <Value name="Y" value="7773625"/>
-      </Item>
-      <Item name="Point" type="D2POINT">
-         <Value name="X" value="578625"/>
-         <Value name="Y" value="7782875"/>
-      </Item>
-   </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="9.052"/>
-   </Item>
-   <Item type="LineStyle" size="12">
-      <Item name="Style" value="1"/>
-      <Item name="Pitch" value="226.3"/>
-   </Item>
-   <Item type="PatSize" size="8">
-      <Item name="Value" value="113.15"/>
-   </Item>
-   <Item type="PatThick" size="8">
-      <Item name="Value" value="9.052"/>
-   </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="13.578"/>
-   </Item>
-   <Item type="LineStyle" size="12">
-      <Item name="Style" value="1"/>
-      <Item name="Pitch" value="0.5"/>
-   </Item>
-   <Item type="PatSize" size="8">
-      <Item name="Value" value="1"/>
-   </Item>
-   <Item type="PatThick" size="8">
-      <Item name="Value" value="0.01"/>
-   </Item>
-   <Item type="PolyLine" size="48">
-      <Item name="Point" type="D2POINT">
-         <Value name="X" value="578625"/>
-         <Value name="Y" value="7773625"/>
-      </Item>
-      <Item name="Point" type="D2POINT">
-         <Value name="X" value="578625"/>
-         <Value name="Y" value="7779125"/>
-      </Item>
-      <Item name="Point" type="D2POINT">
-         <Value name="X" value="578625"/>
-         <Value name="Y" value="7782875"/>
-      </Item>
-   </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="9.052"/>
-   </Item>
-   <Item type="LineStyle" size="12">
-      <Item name="Style" value="1"/>
-      <Item name="Pitch" value="226.3"/>
-   </Item>
-   <Item type="PatSize" size="8">
-      <Item name="Value" value="113.15"/>
-   </Item>
-   <Item type="PatThick" size="8">
-      <Item name="Value" value="9.052"/>
-   </Item>
-   <Item type="LineThick" size="8">
-      <Item name="Value" value="13.578"/>
-   </Item>
-   <Item type="LineStyle" size="12">
-      <Item name="Style" value="1"/>
-      <Item name="Pitch" value="0.5"/>
-   </Item>
-   <Item type="PatSize" size="8">
-      <Item name="Value" value="1"/>
-   </Item>
-   <Item type="PatThick" size="8">
-      <Item name="Value" value="0.01"/>
-   </Item>
-   <Item type="PolyLine" size="48">
-      <Item name="Point" type="D2POINT">
-         <Value name="X" value="578625"/>
-         <Value name="Y" value="7773625"/>
-      </Item>
-      <Item name="Point" type="D2POINT">
-         <Value name="X" value="578625"/>
-         <Value name="Y" value="7779125"/>
       </Item>
       <Item name="Point" type="D2POINT">
          <Value name="X" value="578625"/>
