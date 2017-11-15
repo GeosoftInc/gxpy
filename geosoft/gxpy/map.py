@@ -33,6 +33,7 @@ from . import utility as gxu
 from . import dataframe as gxdf
 from . import group as gxg
 from . import view as gxv
+from . import geometry as gxgeo
 from . import coordinate_system as gxcs
 
 __version__ = geosoft.__version__
@@ -233,6 +234,9 @@ class Map:
         if not _internal:
             raise MapException(_t("Map must be created from Map.new(), or Map.open()."))
 
+        super().__init__()
+
+        self._gx = gx.GXpy()
         self._gxmap = None
         self._remove = False
         self._file_name = map_file_name(file_name)
@@ -949,30 +953,54 @@ class Map:
         Draw a map surround.  This will draw a single or a double neat-line around the base view of the
         map.
 
-        :param outer_pen:   outer-line pen attributes
-        :param inner_pen:   inner-line pen attributes
-        :param gap:         gap between the outer and inner line in cm.  If 0, only the outer line is drawn.
+        :param outer_pen:   outer-line pen attributes (mm)
+        :param inner_pen:   inner-line pen attributes (mm)
+        :param gap:         gap between the outer and inner line in mm.  If 0, only the outer line is drawn.
 
         .. versionadded:: 9.2
+
+        .. versionmodified:: 9.3 changed to mm for unentitled use
         """
 
-        if outer_pen is None:
-            outer_pen = gxg.Pen(line_thick=0.0500)
+        try:
 
-        with _Mapplot(self) as mpl:
+            if outer_pen is None:
+                outer_pen = gxg.Pen(line_thick=0.05)
 
-            mpl.start_group('surround', view=VIEW_BASE, mode=GROUP_APPEND)
-            mpl.define_named_attribute('outer', pen=outer_pen)
-            if gap <= 0:
-                inner = ''
-                gap = ''
-            else:
-                if inner_pen is None:
-                    inner_pen = gxg.Pen(line_thick=0.01)
-                inner = 'inner'
-                mpl.define_named_attribute(inner, pen=inner_pen)
+            with _Mapplot(self) as mpl:
+                mpl.start_group('surround', view=VIEW_BASE, mode=GROUP_APPEND)
+                mpl.define_named_attribute('outer', pen=outer_pen)
+                if gap <= 0:
+                    inner = ''
+                    gap = ''
+                else:
+                    if inner_pen is None:
+                        inner_pen = gxg.Pen(line_thick=0.01)
+                    inner = 'inner'
+                    mpl.define_named_attribute(inner, pen=inner_pen)
 
-            mpl.command('SURR "{}",{},"{}"'.format('outer', gap, inner))
+                mpl.command('SURR "{}",{},"{}"'.format('outer', gap, inner))
+
+        except:
+
+            if outer_pen is None:
+                outer_pen = gxg.Pen(line_thick=0.5)
+
+            with gxv.View.open(self, '*base') as b:
+                with gxg.Draw(b, 'surround') as s:
+                    s.rectangle((b.extent_clip), pen=outer_pen)
+                    if gap > 0:
+                        p2 = gxgeo.Point2((b.extent_clip))
+                        p2.p0 += (gap, gap)
+                        p2.p1 -= (gap, gap)
+                        if inner_pen is None:
+                            inner_pen = gxg.Pen(line_thick=outer_pen.line_thick * 0.5)
+                        s.rectangle(p2, pen=inner_pen)
+
+                        # adjust base coordinates TODO: work on this
+                        #b.locate(map_location=p2.p0.xy,
+                        #         area=(0, 0, (p2.x2[1] - p2.x2[0]), (p2.y2[1] - p2.y2[0])),
+                        #         scale=b.scale)
 
     def north_arrow(self,
                     location=(1, 2., 2.7),
@@ -998,6 +1026,9 @@ class Map:
 
         .. versionadded:: 9.2
         """
+
+        if not self._gx.entitled:
+            return
 
         if direction is None:
             with gxv.View.open(self, '*data') as v:
@@ -1050,6 +1081,9 @@ class Map:
 
         .. versionadded:: 9.2
         """
+
+        if not self._gx.entitled:
+            return
 
         if sections is None:
             sections = ''
@@ -1122,6 +1156,9 @@ class Map:
 
         .. versionadded:: 9.2
         """
+
+        if not self._gx.entitled:
+            return
 
         if text_def is None:
             text_def = gxg.Text_def(height=0.18)
@@ -1209,6 +1246,9 @@ class Map:
 
         .. versionadded:: 9.2
         """
+
+        if not self._gx.entitled:
+            return
 
         if text_def is None:
             text_def = gxg.Text_def(height=0.18)

@@ -125,6 +125,7 @@ class View:
         if not isinstance(map, geosoft.gxpy.map.Map):
             raise ViewException(_t('First argument must be a map.'))
 
+        self._gx = gx.GXpy()
         self._map = map
         self._name = map.classview(name)
         if mode == WRITE_OLD and not map.has_view(self._name):
@@ -133,6 +134,7 @@ class View:
         self._mode = mode
         self._lock = None
         self._open = True
+        self._cs = None
 
         if mode == WRITE_NEW:
             self.locate(coordinate_system, map_location, area, scale)
@@ -252,6 +254,8 @@ class View:
     @property
     def coordinate_system(self):
         """ :class:`geosoft.gxpy.coordinate_system.Coordinate_system` instance of the view."""
+        if self._cs is None:
+            self._cs = gxcs.Coordinate_system()
         return self._cs
 
     @property
@@ -307,7 +311,7 @@ class View:
             :map_location:      New (x, y) view location on the map, in map cm.
             :area:              New (min_x, min_y, max_x, max_y) area in view units
             :scale:             New scale in view units per map metre, either as a single value or
-                                (x_scale, y_scale)
+                                (x_scale, y_scale), defaults to the current x scale.
 
         .. versionadded:: 9.2
         """
@@ -316,13 +320,18 @@ class View:
             raise ViewException(_t('Cannot modify a READ_ONLY view.'))
 
         # coordinate system
-        self.coordinate_system = coordinate_system
-        upm = 1.0 / self.coordinate_system.metres_per_unit
+        if coordinate_system:
+            self.coordinate_system = coordinate_system
+        upm = self.units_per_metre
 
-        if area == None:
+        if area is None:
             area = self.extent_clip
 
         # area and scale
+        if scale is None:
+            if self.scale is None:
+                raise ViewException(_t('A scale is required.'))
+            scale = self.scale
         if hasattr(scale, "__iter__"):
             x_scale, y_scale = scale
         else:
@@ -354,7 +363,7 @@ class View:
     @property
     def units_per_metre(self):
         """view units per view metres (eg. a view in 'ft' will be 3.28084)"""
-        return self._metres_per_unit
+        return 1.0 / self.coordinate_system.metres_per_unit
 
     @property
     def units_per_map_cm(self):
@@ -364,7 +373,7 @@ class View:
     @property
     def units_name(self):
         """name of the view distance units"""
-        return self._uname
+        return self.coordinate_system.units_name
 
     @property
     def guid(self):
