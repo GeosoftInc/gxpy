@@ -1,0 +1,96 @@
+//===========================================================================
+NAME          = "Update Geosoft in Python"
+
+#include <version.gxh>
+
+DESCRIPTION   = "
+
+   pip uninstall -y geosoft
+   pip install geosoft
+
+"
+TRANSLATIONDOMAIN = "core"
+TRANSLATIONFRIENDLYPATH = "GX/Download_URL"
+
+//===========================================================================
+//                                  INCLUDE
+//===========================================================================
+
+#include <all.gxh>     // system
+
+//===========================================================================
+//                                 VARIABLES
+//===========================================================================
+
+int major, minor, micro, iok;
+string(STR_DEFAULT_SHORT) sMajor, sMinor, sMicro;
+string(STR_FILE) sPython, sPythonDir, sPip;
+string(STR_DEFAULT_LONG) sMessage;
+
+{
+
+	// check environment
+	GetEnv_SYS("PYTHON_HOME", sPythonDir);
+	Strcpy_STR(sPython, sPythonDir);
+	Strcat_STR(sPython, "\\python.exe");
+	if (!iFileExist_SYS(sPython)) {
+		Strcpy_STR(sMessage, "Python not found: ");
+		Strcat_STR(sMessage, sPython);
+		Strcat_STR(sMessage, "\nUse 'Locate Python...' to locate the Python folder on your system.");
+		DisplayMessage_SYS("FAIL: Python not found", sMessage);
+		Exit_SYS();
+	}
+	
+	// pip 
+	Strcpy_STR(sPip, sPythonDir);
+	Strcat_STR(sPip, "\\scripts\\pip.exe");
+	if (iFileExist_SYS(sPip)) {
+	
+		iok = 0;
+		if (iRun_SYS(sPython, "-c \"import geosoft; exit(0)\"", SYS_RUN_TYPE_EXE + SYS_RUN_DISPLAY_MINIMIZE) == 0)
+			iok = iRun_SYS(sPip, "uninstall -y geosoft", SYS_RUN_TYPE_EXE + SYS_RUN_DISPLAY_MINIMIZE  + SYS_RUN_HOLD_NEVER);
+		if (iok == 0)
+			iok = iRun_SYS(sPip, "install geosoft", SYS_RUN_TYPE_EXE + SYS_RUN_DISPLAY_MINIMIZE + SYS_RUN_HOLD_NEVER);
+			
+		if (iok != 0) {
+			Strcpy_STR(sMessage, "Oasis montaj (or another program) may have Python open.");
+			Strcat_STR(sMessage, "\n\nRestart Oasis montaj and try again.");
+			Strcat_STR(sMessage, "\nOr as administrator, manually update Geosoft for Python:");
+			Strcat_STR(sMessage, "\n   pip uninstall geosoft");
+			Strcat_STR(sMessage, "\n   pip install geosoft");
+			Strcat_STR(sMessage, "\n\nPython folder: ");
+			Strcat_STR(sMessage, sPythonDir);
+
+			DisplayMessage_SYS("The update failed", sMessage);
+			Exit_SYS();
+		}
+	}
+
+	// report versions
+	major = iRun_SYS(sPython, "-c \"import sys; exit(sys.version_info.major)\"", SYS_RUN_TYPE_EXE + SYS_RUN_DISPLAY_MINIMIZE);
+	FormatI_STR(major, sMajor, 3);
+	minor = iRun_SYS(sPython, "-c \"import sys; exit(sys.version_info.minor)\"", SYS_RUN_TYPE_EXE + SYS_RUN_DISPLAY_MINIMIZE);
+	FormatI_STR(minor, sMinor, 3);
+	micro = iRun_SYS(sPython, "-c \"import sys; exit(sys.version_info.micro)\"", SYS_RUN_TYPE_EXE + SYS_RUN_DISPLAY_MINIMIZE);
+	FormatI_STR(micro, sMicro, 3);	
+	Strcpy_STR(sMessage, "Python folder: ");
+	Strcat_STR(sMessage, sPythonDir);
+	Strcat_STR(sMessage, "\nPython version: "); 
+	Strcat_STR(sMessage, sMajor); Strcat_STR(sMessage, "."); 
+	Strcat_STR(sMessage, sMinor); Strcat_STR(sMessage, "."); 
+	Strcat_STR(sMessage, sMicro); 
+	
+	major = iRun_SYS(sPython, "-c \"import geosoft; exit(int(geosoft.__version__.split('.')[0]))\"", SYS_RUN_TYPE_EXE + SYS_RUN_DISPLAY_MINIMIZE);
+	FormatI_STR(major, sMajor, 3);
+	minor = iRun_SYS(sPython, "-c \"import geosoft; exit(int(geosoft.__version__.split('.')[1]))\"", SYS_RUN_TYPE_EXE + SYS_RUN_DISPLAY_MINIMIZE);
+	FormatI_STR(minor, sMinor, 3);
+	micro = iRun_SYS(sPython, "-c \"import geosoft; exit(int(geosoft.__version__.split('.')[2]))\"", SYS_RUN_TYPE_EXE + SYS_RUN_DISPLAY_MINIMIZE);
+	FormatI_STR(micro, sMicro, 3);
+	Strcat_STR(sMessage, "\nGeosoft version: "); 
+	Strcat_STR(sMessage, sMajor); Strcat_STR(sMessage, "."); 
+	Strcat_STR(sMessage, sMinor); Strcat_STR(sMessage, "."); 
+	Strcat_STR(sMessage, sMicro); 
+	
+	DisplayMessage_SYS("Geosoft Python updated to:", sMessage);
+}
+
