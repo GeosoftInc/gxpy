@@ -31,5 +31,7 @@ string(STR_DEFAULT_LONG) sUserDir, sExec, sDownload;
 	Strcpy_STR(sExec, "[DOS] powershell.exe -command \"Start-BitsTransfer -Source 'https://raw.githubusercontent.com/GeosoftInc/gxpy/9.3.1/geosoft/gxdesktop/");
 	download("omn\\", "Python.omn")
 	
+	DisplayMessage_SYS("Python menu installed", "Use the menu manager (Settings/Manage Menus...)\nto add the \"User Menus/Python\" menu to your menus.");
+	
 }
 
