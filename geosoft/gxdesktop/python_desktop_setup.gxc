@@ -18,6 +18,10 @@ string(STR_DEFAULT_LONG) sUserDir, sExec, sDownload;
 	DoCommand_SYS(sDownload);
 {
 	GetDirectory_SYS(SYS_PATH_GEOSOFT_USER, sUserDir);
+	Strcpy_STR(sExec, "[DOS] powershell.exe -command \"mkdir '");
+	Strcat_STR(sExec, sUserDir);
+	Strcat_STR(sExec, "gx'");
+	DoCommand_SYS(sExec);
 	
 	Strcpy_STR(sExec, "[DOS] powershell.exe -command \"Start-BitsTransfer -Source 'https://github.com/GeosoftInc/gxpy/raw/9.3.1/geosoft/gxdesktop/");
 	download("gx\\", "pyrun.gx")
