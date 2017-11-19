@@ -106,6 +106,6 @@ string(STR_DEFAULT_LONG) sMessage;
 	Strcat_STR(sMessage, sMinor); Strcat_STR(sMessage, "."); 
 	Strcat_STR(sMessage, sMicro); 
 	
-	DisplayMessage_SYS("Python and Geosoft package verified", sMessage);
+	DisplayMessage_SYS("SUCCESS: Python environment verified", sMessage);
 }
 
