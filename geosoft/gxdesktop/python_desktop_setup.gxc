@@ -15,32 +15,18 @@ string(STR_DEFAULT_LONG) sUserDir, sExec, sDownload;
 	Strcat_STR(sDownload, dir);\
 	Strcat_STR(sDownload, file);\
 	Strcat_STR(sDownload, "'\"");\
+	DisplayMessage_SYS("command", sDownload);\
 	DoCommand_SYS(sDownload);
 {
 	GetDirectory_SYS(SYS_PATH_GEOSOFT_USER, sUserDir);
-
-	Strcpy_STR(sExec, "[DOS] powershell.exe -command \"mkdir '");
-	Strcat_STR(sExec, sUserDir);
-	Strcat_STR(sExec, "gx'");
-	DoCommand_SYS(sExec);
 	
 	Strcpy_STR(sExec, "[DOS] powershell.exe -command \"Start-BitsTransfer -Source 'https://github.com/GeosoftInc/gxpy/raw/9.3.1/geosoft/gxdesktop/");
-	download("gx/", "pyrun.gx")
-	download("gx/", "update_geosoft_python.gx")
-	download("gx/", "verify_python.gx")
-
-	Strcpy_STR(sExec, "[DOS] powershell.exe -command \"mkdir '");
-	Strcat_STR(sExec, sUserDir);
-	Strcat_STR(sExec, "python'");
-	DoCommand_SYS(sExec);
-
-    Strcpy_STR(sExec, "[DOS] powershell.exe -command \"Start-BitsTransfer -Source 'https://github.com/GeosoftInc/gxpy/raw/9.3.1/geosoft/gxdesktop/");
-	download("python/", "hello_world.py")
-
-	Strcpy_STR(sExec, "[DOS] powershell.exe -command \"Start-BitsTransfer -Source 'https://raw.githubusercontent.com/GeosoftInc/gxpy/9.3.1/geosoft/gxdesktop/");
-	download("omn/", "Python.omn")
+	download("gx\\", "pyrun.gx")
+	download("gx\\", "update_geosoft_python.gx")
+	download("gx\\", "verify_python.gx")
 	
-	DisplayMessage_SYS("Python menu installed", "Use the menu manager (Settings/Manage Menus...)\nto add the \"User Menus/Python\" menu to your menus.");
+	Strcpy_STR(sExec, "[DOS] powershell.exe -command \"Start-BitsTransfer -Source 'https://raw.githubusercontent.com/GeosoftInc/gxpy/9.3.1/geosoft/gxdesktop/");
+	download("omn\\", "Python.omn")
 	
 }
 
