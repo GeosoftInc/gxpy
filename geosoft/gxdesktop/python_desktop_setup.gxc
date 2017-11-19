@@ -1,0 +1,32 @@
+NAME          = "Python setup of Geosoft Desktop"
+#include <version.gxh>
+DESCRIPTION   = "
+
+   Copies the Python menu and setup GX's from GitHub to the Geosoft/user folders.
+
+"
+#include <all.gxh>     // system
+string(STR_DEFAULT_LONG) sUserDir, sExec, sDownload;
+#define download(dir, file)\
+	Strcpy_STR(sDownload, sExec);\
+	Strcat_STR(sDownload, file);\
+	Strcat_STR(sDownload, "' -Destination '");\
+	Strcat_STR(sDownload, sUserDir);\
+	Strcat_STR(sDownload, dir);\
+	Strcat_STR(sDownload, file);\
+	Strcat_STR(sDownload, "'\"");\
+	DisplayMessage_SYS("command", sDownload);\
+	DoCommand_SYS(sDownload);
+{
+	GetDirectory_SYS(SYS_PATH_GEOSOFT_USER, sUserDir);
+	
+	Strcpy_STR(sExec, "[DOS] powershell.exe -command \"Start-BitsTransfer -Source 'https://github.com/GeosoftInc/gxpy/raw/9.3.1/geosoft/gxdesktop/");
+	download("gx\\", "pyrun.gx")
+	download("gx\\", "update_geosoft_python.gx")
+	download("gx\\", "verify_python.gx")
+	
+	Strcpy_STR(sExec, "[DOS] powershell.exe -command \"Start-BitsTransfer -Source 'https://raw.githubusercontent.com/GeosoftInc/gxpy/9.3.1/geosoft/gxdesktop/");
+	download("omn\\", "Python.omn")
+	
+}
+
