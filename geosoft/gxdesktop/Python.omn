@@ -1,0 +1,15 @@
+/
+/ My Python extensions
+/------------------------------------------------------------------------------
+
+MENU "Python"
+ITEM "Run a Python extension", pyrun.gx
+SEPARATOR
+SUBMENU "Configure Python..."
+
+Menu "Python/Configure Python..."
+ITEM "Verify Python",verify_python.gx
+ITEM "Install Python",SHELL(open;https://github.com/GeosoftInc/gxpy/wiki/Install-Python)
+ITEM "Locate Python...",geogxnet.dll(Geosoft.GX.Python.Settings;Run)
+ITEM "Re-start Desktop!",SHELL(open;https://github.com/GeosoftInc/gxpy/wiki/Restart-Desktop-after-setting-the-Python-folder)
+ITEM "Update geosoft package",update_geosoft_python.gx
