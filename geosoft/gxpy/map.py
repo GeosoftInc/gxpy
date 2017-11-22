@@ -958,8 +958,6 @@ class Map:
         :param gap:         gap between the outer and inner line in cm.  If 0, only the outer line is drawn.
 
         .. versionadded:: 9.2
-
-        .. versionmodified:: 9.3 changed to mm for unentitled use
         """
 
         if outer_pen is None:
