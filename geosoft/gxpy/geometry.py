@@ -3,11 +3,12 @@ Spatial geometric elements.
 
 :Classes:
 
-    =============== ==============================================================
-    :class:`Point`  (x, y, z) point
-    :class:`Point2` pair of :class:`Point` instances that define a line, or extent
-    :class:`PPoint` multiple :class:`Point` instances
-    =============== ==============================================================
+    ================= ==============================================================
+    :class:`Geometry` base class for all geometries
+    :class:`Point`    (x, y, z) point
+    :class:`Point2`   pair of :class:`Point` instances that define a line, or extent
+    :class:`PPoint`   multiple :class:`Point` instances
+    ================= ==============================================================
 
 .. note::
 
@@ -47,7 +48,9 @@ class Geometry:
     """
     Geometry base class for all geometries.
 
-    :param coordinate_system: :class:`geosoft.gxpy.Coordinate_system` instance.
+    :Parameters:
+
+        :coordinate_system: `geosoft.gxpy.coordinate_system.Coordinate_system` instance.
 
     .. versionadded:: 9.2
     """
@@ -61,15 +64,15 @@ class Geometry:
     def __repr__(self):
         return "{}({})".format(self.__class__, self.__dict__)
 
-    def __init__(self, **kwargs):
-        self._cs = kwargs.pop('coordinate_system', None)
+    def __init__(self, coordinate_system=None):
+        self._cs = coordinate_system
 
     def __eq__(self, other):
         return _same_cs(self, other)
 
     @property
     def coordinate_system(self):
-        """:class:`geosoft.gxpy.Coordinate_system` instance.  Can be set."""
+        """`geosoft.gxpy.coordinate_system.Coordinate_system` instance.  Can be set."""
         if (self._cs is not None) and not isinstance(self._cs, gxcs.Coordinate_system):
             self._cs = gxcs.Coordinate_system(self._cs)
         return self._cs
@@ -83,16 +86,18 @@ class Point(Geometry):
     """
     Spatial location (x,y,z).  Basic instance arithmetic and equality testing is supported.
 
-    :param p:   point in one of the following forms:
+    :Parameters:
 
-                ::
+        :p: point in one of the following forms:
 
-                    Point   makes a copy
-                    (x, y [,z]) implied z is 0.0 if not provided
-                    k makes a point (k, k, k)
+                `Point` instance, returns a copy
+
+                (x, y [,z]) implied z is 0.0 if not provided
+
+                k makes a point (k, k, k)
 
     :Properties:
-    
+
         :x, y, z:   point ordinate values
         :xy:        (x, y) tuple
         :xyz:       (x, y, z) tuple
@@ -207,22 +212,25 @@ class Point2(Geometry):
     """
     Two points, for a line, or a rectangle, or a cube.  Basic instance arithmetic and equality testing is supported.
 
-    :param p:       Points in one of the following forms:
+    :Parameters:
 
-                    ::
+        :p: Points in one of the following forms:
 
-                        (Point, Point)
-                        ((x, y [,z]), (x, y [,z])) implied z is 0 if not specified
-                        (x0, y0, x1, y1) implied z is 0
-                        (x0, y0, z0, x1, y1, z1)
+                (`Point`, `Point`)
+
+                ((x, y [,z]), (x, y [,z])) implied z is 0 if not specified
+
+                (x0, y0, x1, y1) implied z is 0
+
+                (x0, y0, z0, x1, y1, z1)
                         
     :Properties:
     
-        :p0:            first point as a :class:`Point` instance
-        :p1:            second point at a :class:`Point` instance
+        :p0:            first `Point` instance
+        :p1:            second `Point` instance
         :x2, y2, z2:    tuple pairs for (x0, x1), (y0, y1), (z0, z1)
-        :centroid:      center of the two points
-        :dimension:     (dx, dy, dz) dimension defines by teo points.
+        :centroid:      center of the two points as a `Point`
+        :dimension:     (dx, dy, dz) dimension defines by two points.
 
     .. versionadded:: 9.2
     """
@@ -359,15 +367,19 @@ class PPoint(Geometry, Sequence):
     """
     Poly-Point class. Basic instance arithmetic and equality testing is supported.
 
-    :param xyz: array-like: (p1, p2, ...), ((x, y), ...), ((x, y, z), ...) or (vv_x, vv_y, [vv_z]).
+    :Parameters:
+
+        :xyz:   array-like: (p1, p2, ...), ((x, y), ...), ((x, y, z), ...) or (vv_x, vv_y, [vv_z]).
+
                 vv data is resampled to match the first vv.
-    :param z:   constant z value for (x, y) data, ignored for (x, y, z) data
+
+        :z:     constant z value for (x, y) data, ignored for (x, y, z) data
 
     :Properties:
      
-        :pp:        np_array shape (n,3)
-        :x, y, z:   np_arrays of each ordinate set
-        :xy:        np_arrays of (x,y) points (n,2)
+        :pp:        np_array shape (n, 3)
+        :x, y, z:   np_arrays of each ordinate set shape (n,)
+        :xy:        np_arrays of (x, y) points (n, 2)
         :xyz:       same as pp
 
     .. versionadded:: 9.2
@@ -420,6 +432,9 @@ class PPoint(Geometry, Sequence):
 
     @classmethod
     def from_list(cls, xyzlist, z=0.0):
+        """
+        .. deprecated:: 9.3 `PPoint` can create directly from a list
+        """
         return cls(np.array(xyzlist, dtype=np.float), z)
 
     def __len__(self):
@@ -516,7 +531,7 @@ class PPoint(Geometry, Sequence):
 
     @property
     def xy(self):
-        """ (x,y) array slice, can be set"""
+        """ (x, y) array slice, can be set"""
         return self.pp[:, 0:2]
 
     @xy.setter
@@ -530,9 +545,9 @@ class PPoint(Geometry, Sequence):
 
     def extent(self):
         """
-        Returns extent of the polyline.
-        
-        :returns:   (min, max) as :class:`Point` instance pair
+        Volume extent as (`Point`, `Point`) for (min, max).
+
+        .. versionadded:: 9.2
         """
         p1 = Point((np.amin(self.x), np.amin(self.y), np.amin(self.z)))
         p2 = Point((np.amax(self.x), np.amax(self.y), np.amax(self.z)))
@@ -541,9 +556,7 @@ class PPoint(Geometry, Sequence):
     @property
     def extent_xyz(self):
         """
-        Returns extent of the polyline.
-
-        :returns:   (xmin, ymin, zmin, xmax, ymax, zmax)
+        Returns 3D extent as tuple (xmin, ymin, zmin, xmax, ymax, zmax)
 
         .. versionadded:: 9.3
         """
@@ -553,9 +566,7 @@ class PPoint(Geometry, Sequence):
     @property
     def extent_xy(self):
         """
-        Returns extent of the polyline.
-
-        :returns:   (xmin, ymin, xmax, ymax)
+        Returns horizontal extent as tuple (xmin, ymin, xmax, ymax)
 
         .. versionadded:: 9.3
         """
