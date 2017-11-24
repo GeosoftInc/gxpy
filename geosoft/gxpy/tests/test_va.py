@@ -35,6 +35,15 @@ class Test(GXPYTest):
             self.assertEqual(va.length,4)
             self.assertEqual(va.dimensions, (4,7))
             self.assertEqual(va.gxtype, gxu.gx_dtype(np.float))
+            self.assertEqual(va.np.shape, (4, 7))
+
+            va.length = 16
+            self.assertEqual(va.fid,(-40,8))
+            self.assertEqual(va.length,16)
+            self.assertEqual(va.dimensions, (16,7))
+            self.assertEqual(va.gxtype, gxu.gx_dtype(np.float))
+            self.assertEqual(va.np.shape, (16, 7))
+
 
     def test_exceptions(self):
         self.start()

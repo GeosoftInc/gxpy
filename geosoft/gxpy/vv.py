@@ -50,11 +50,7 @@ class GXvv:
                             the type is taken from first element in array, of if no array the default is 'float'.
     :param fid:             (start, increment) fiducial
     :param unit_of_measure: unit of measure for the contained data.
-    
-    :Constructors:
-     
-        ``GXvv.vv_np`` create from a numpy array
-        
+
     :Properties:
     
         ``vv``          :class:`geosoft.gxapi.GXvv` instance
@@ -77,8 +73,6 @@ class GXvv:
         self.__del__()
 
     def __del__(self):
-        if hasattr(self, '_np'):
-            self._np = None
         if hasattr(self, '_gxvv'):
             self._gxvv = None
 
@@ -102,7 +96,6 @@ class GXvv:
         self._gxvv = gxapi.GXVV.create_ext(self._gxtype, 0)
         self.fid = fid
         self._sr = None
-        self._np = None
         self._next = 0
         self._unit_of_measure = unit_of_measure
 
@@ -163,11 +156,17 @@ class GXvv:
     @property
     def length(self):
         """
-        number of elements in the VV
+        number of elements in the VV, can be set
 
         .. versionadded:: 9.1
+
+        .. versionchanged:: 9.3 can be set
         """
         return self.__len__()
+
+    @length.setter
+    def length(self, length):
+        self.refid(self.fid, length)
 
     @property
     def gxtype(self):
@@ -197,11 +196,13 @@ class GXvv:
         """
         Numpy array of VV data, in the data type of the VV.  Use :meth:`get_data` to get a numpy array
         in another dtype.
+
+        Note that changing the data in the numpy array does NOT change the data in the VV.  Use
+        `set_data` to change data in the VV.
         
         .. versionadded:: 9.2 
         """
-        self._np, *_ = self.get_data()
-        return self._np
+        return self.get_data()[0]
 
     def get_data(self, dtype=None, start=0, n=None):
         """
@@ -219,9 +220,6 @@ class GXvv:
             dtype = self._dtype
         else:
             dtype = np.dtype(dtype)
-
-        if (self._np is not None) and (dtype == self.dtype) and (start == 0) and (n is None):
-            return self._np, self.fid
 
         if n is None:
             n = self.length - start
@@ -316,8 +314,6 @@ class GXvv:
             for d in data:
                 self._gxvv.set_string(i, str(d))
                 i += 1
-
-        self._np = None
 
         self._gxvv.set_len(data.shape[0])
         if fid:
