@@ -409,8 +409,6 @@ class Grid:
         if self._buffered_row != iy:
             self._buffered_row = iy
             self._buffer_np = self.read_row(self._buffered_row).np
-            if not self._is_int:
-                gxu.dummy_to_nan(self._buffer_np)
 
         v = self._buffer_np[ix]
         if self._is_int:
@@ -1039,10 +1037,10 @@ class Grid:
 
         if self.gximg.query_kx() == -1:
             for i in range(self.nx):
-                xyzv[:, i, 3] = gxu.dummy_to_nan(self.read_column(i).np)
+                xyzv[:, i, 3] = self.read_column(i).np
         else:
             for i in range(self.ny):
-                xyzv[i, :, 3] = gxu.dummy_to_nan(self.read_row(i).np)
+                xyzv[i, :, 3] = self.read_row(i).np
 
         return xyzv
 
