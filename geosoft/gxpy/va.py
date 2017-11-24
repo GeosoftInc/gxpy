@@ -66,8 +66,6 @@ class GXva:
         self.__del__()
 
     def __del__(self):
-        if hasattr(self, '_np'):
-            self._np = None
         if hasattr(self, '_gxva'):
             self._gxva = None
 
@@ -103,7 +101,6 @@ class GXva:
         self._start, self._incr = self.fid
         self._sr = None
         self._next = 0
-        self._np = None
         self._unit_of_measure = unit_of_measure
 
         if array is not None:
@@ -165,11 +162,17 @@ class GXva:
     @property
     def length(self):
         """
-        number of elements in the VA
+        number of elements in the VA, can be set.
 
         .. versionadded:: 9.1
+
+        .. versionchanged:: 9.3 can be set
         """
         return self.__len__()
+
+    @length.setter
+    def length(self, length):
+        self.refid(self.fid, length)
 
     @property
     def width(self):
@@ -215,10 +218,7 @@ class GXva:
 
         .. versionadded:: 9.2 
         """
-
-        if self._np is None:
-            self._np, *_ = self.get_data()
-        return self._np
+        return self.get_data()[0]
 
     @property
     def gxva(self):

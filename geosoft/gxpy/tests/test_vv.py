@@ -33,6 +33,12 @@ class Test(GXPYTest):
             vv.refid((-40,8),4)
             self.assertEqual(vv.fid, (-40,8))
             self.assertEqual(vv.length, 4)
+            self.assertEqual(len(vv.np), 4)
+
+            vv.length = 16
+            self.assertEqual(vv.fid, (-40,8))
+            self.assertEqual(vv.length, 16)
+            self.assertEqual(len(vv.np), 16)
 
         with gxvv.GXvv([1, 2, 3, 4, 5, 6]) as vv:
             self.assertEqual(vv.fid, (0.0, 1.0))
