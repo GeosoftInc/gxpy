@@ -52,6 +52,10 @@ def _voxset_name(name):
     basename = os.path.basename(name)
     return os.path.splitext(basename)[0]
 
+INTERP_NEAREST = gxapi.VOXE_EVAL_NEAR #:
+INTERP_LINEAR = gxapi.VOXE_EVAL_INTERP #:
+INTERP_SMOOTH = gxapi.VOXE_EVAL_BEST #:
+
 def delete_files(voxset_name):
     """
     Delete all files associates with this voxset name.
@@ -146,12 +150,13 @@ class Voxset:
             if self._open:
 
                 if self._metadata_changed:
-                    with open(self._name + '.xml', 'w+') as f:
+                    with open(self._file_name + '.xml', 'w+') as f:
                         f.write(gxu.xml_from_dict(self._metadata))
 
                 if pop:
                     gx.pop_resource(self._open)
                 self._open = None
+                self._gxvoxe = None
                 self._gxvox = None
                 self._cs = None
                 self._pg_ = None
@@ -173,10 +178,14 @@ class Voxset:
         self._metadata_root = ''
         self._gxvox = gxvox
         self._cs = None
+        self._gxvoxe = None
         self._next = self._next_x = self._next_y = self._next_z = 0
         self._xloc = self._yloc = self._zloc = None
-        self._pg_ = self._vv_ = None
+        self._pg = self._vv_ = None
         self._buffered_plane = self._buffered_row = None
+        self._metadata = None
+        self._metadata_changed = False
+        self._metadata_root = ''
 
         ityp = gxapi.int_ref()
         iarr = gxapi.int_ref()
@@ -237,7 +246,7 @@ class Voxset:
             self._buffered_plane = iz
             self._buffered_row = iy
             vv = self._vv
-            self._pg.read_row_3d(iz, iy, 0, self._nx, vv.gxvv)
+            self.gxpg.read_row_3d(iz, iy, 0, self._nx, vv.gxvv)
             self._buffer_np = vv.np
             if not self._is_int:
                 gxu.dummy_to_nan(self._buffer_np)
@@ -250,6 +259,52 @@ class Voxset:
         elif np.isnan(v):
             v = None
         return x, y, z, v
+
+    def _init_metadata(self):
+        if not self._metadata:
+            self._metadata = gxu.geosoft_metadata(self._file_name)
+        self._metadata_root = tuple(self._metadata.items())[0][0]
+
+    @property
+    def metadata(self):
+        """
+        Return the voxset metadata as a dictionary.  Can be set, in which case
+        the dictionary items passed will be added to, or replace existing metadata.
+
+        .. seealso::
+            `Geosoft metadata schema
+            <https://geosoftgxdev.atlassian.net/wiki/spaces/GXD93/pages/78184638/Geosoft+Metadata+Schema>'
+
+
+        .. versionadded:: 9.3
+        """
+        self._init_metadata()
+        return self._metadata[self._metadata_root]
+
+    @metadata.setter
+    def metadata(self, meta):
+        self._init_metadata()
+        self._metadata[self._metadata_root] = gxu.merge_dict(self._metadata[self._metadata_root], meta)
+        self._metadata_changed = True
+
+    @property
+    def unit_of_measure(self):
+        """
+        Units of measurement (a string) for the grid data, can be set.
+
+        .. versionadded:: 9.2
+        """
+        try:
+            uom = self.metadata['geosoft']['dataset']['geo:unitofmeasurement']['#text']
+        except:
+            uom = ''
+        return uom
+
+    @unit_of_measure.setter
+    def unit_of_measure(self, uom):
+        self.metadata = {'geosoft': {'dataset': {'geo:unitofmeasurement': {'#text': str(uom)}}}}
+        self.metadata = {
+            'geosoft': {'dataset': {'geo:unitofmeasurement': {'@xmlns:geo': 'http://www.geosoft.com/schema/geo'}}}}
 
     @classmethod
     def open(cls, name, mode=MODE_READ):
@@ -389,6 +444,11 @@ class Voxset:
             self._cs = gxcs.Coordinate_system(ipj)
         return self._cs
 
+    @coordinate_system.setter
+    def coordinate_system(self, cs):
+        self._cs = gxcs.Coordinate_system(cs)
+        self.gxvox.set_ipj(self._cs.gxipj)
+
     def _location_arrays(self):
         xvv = gxvv.GXvv()
         yvv = gxvv.GXvv()
@@ -420,10 +480,10 @@ class Voxset:
         return self._zloc
 
     @property
-    def _pg(self):
-        if self._pg_ is None:
-            self._pg_ = self.gxvox.create_pg()
-        return self._pg_
+    def gxpg(self):
+        if self._pg is None:
+            self._pg = self.gxvox.create_pg()
+        return self._pg
 
     @property
     def _vv(self):
@@ -431,9 +491,19 @@ class Voxset:
             self._vv_ = gxvv.GXvv(dtype=self._dtype)
         return self._vv_
 
+    @property
+    def gxvoxe(self):
+        """Return a `gxapi.GXVOXE` instance"""
+        if self._gxvoxe is None:
+            self._gxvoxe = gxapi.GXVOXE.create(self.gxvox)
+        return self._gxvoxe
 
     def _release_pg(self):
         self._pg_ = None
+
+    def _checkindex(self, ix, iy, iz):
+        if (ix < 0) or (ix >= self.nx) or (iy < 0) or (iy >= self.ny) or (iz < 0) or (iz >= self.nz):
+            raise IndexError(_t("Voxel index ({}, {}, {}) out of range ({}, {}, {}).").format(ix, iy, iz, self.nx, self.ny, self.nz))
 
     def xyz(self, ix, iy, iz):
         """
@@ -447,4 +517,62 @@ class Voxset:
 
         .. versionadded:: 9.3
         """
+        self._checkindex(ix, iy, iz)
         return (self.x_locations[ix], self.y_locations[iy], self.z_locations[iz])
+
+    def value_at_location(self, xyz, interpolate=INTERP_LINEAR):
+        """
+        Voxcet value at a location.
+
+        :param xyz:         tuple (x, y, z) location in the voxel coordinate system
+        :param interpolate: method by which to interpolate between points:
+
+                            INTERP_NEAREST - same as value inside a cell.
+
+                            INTERP_LINEAR - linear interpolation between neighboring points.
+
+                            INTERP_SMOOTH - smooth interpolation (slower than INTERP_LINEAR).
+
+        :returns:           voxel value at that location
+
+        .. versionadded:: 9.3.1
+        """
+        x, y, z = xyz
+        v = self.gxvoxe.value(x, y, z, interpolate)
+        if v == gxapi.rDUMMY:
+            return None
+        return v
+
+    def np_subset(self, start=(0, 0, 0), dimension=None):
+        """
+        Return voxset subset in a 3D numpy array.
+
+        :return: numpy array of shape (nz, ny, nx)
+
+        .. versionadded:: 9.3.1
+        """
+
+        # dimensions
+        x0, y0, z0 = start
+        self._checkindex(x0, y0, z0)
+        if dimension is None:
+            nx = self.nx - x0
+            ny = self.ny - y0
+            nz = self.nz - z0
+        else:
+            nx, ny, nz = dimension
+            self._checkindex(x0 + nx - 1, y0 + ny - 1, z0 + nz - 1)
+        if nx < 0 or ny < 0 or nz < 0:
+            raise VoxsetException(_t("Subset dimension {} invalid, require positive non-zero dimension").format((nx, ny, nz)))
+
+        gxpg = self.gxpg
+        npv = np.empty((nz, ny, nx), dtype=self._dtype)
+        vv = gxvv.GXvv(dtype=self._dtype)
+        vv.length = nx
+
+        for iz in range(z0, z0 + nz):
+            for iy in range(y0, y0 + ny):
+                gxpg.read_row_3d(iz, iy, x0, nx, vv.gxvv)
+                npv[iz - z0, iy - y0, :] = vv.np
+
+        return npv
