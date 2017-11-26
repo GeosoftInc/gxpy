@@ -3,9 +3,9 @@ Geosoft voxset/voxel handling.
 
 :Classes:
 
-    ============= ====================================================
-    :class:`Voxset` voxset, which can be in memory or created from a file _
-    ============= ====================================================
+    =============== =======================================================
+    :class:`Voxset` voxset
+    =============== =======================================================
 
 .. seealso:: :class:`geosoft.gxapi.GXIMG`, :class:`geosoft.gxapi.GXIMU`
 
@@ -17,7 +17,6 @@ Geosoft voxset/voxel handling.
 """
 import os
 import numpy as np
-import math
 
 import geosoft
 import geosoft.gxapi as gxapi
@@ -25,7 +24,6 @@ from . import gx as gx
 from . import coordinate_system as gxcs
 from . import vv as gxvv
 from . import utility as gxu
-from . import agg as gxagg
 
 __version__ = geosoft.__version__
 
@@ -46,7 +44,7 @@ def _voxset_file_name(name):
     ext = os.path.splitext(name)[1]
     if ext.lower() != '.geosoft_voxel':
         name = name + '.geosoft_voxel'
-    return os.path.relpath(name)
+    return os.path.abspath(name)
 
 def _voxset_name(name):
     basename = os.path.basename(name)
@@ -73,8 +71,51 @@ def delete_files(voxset_name):
 
     if voxset_name is not None:
 
+        voxset_name = _voxset_file_name(voxset_name)
         df(voxset_name)
         df(voxset_name + '.xml')
+
+def cells_from_separations(sep):
+    """
+    Return cell sizes from a list of point separations. A cell is dimensioned to define a length that
+    is the half the distance between a point and its neighbors. Edge cells are always the dimension of
+    the separation between the two edge points.
+
+    :param sep: iterable list of point separations
+    :returns:   list is cell sizes, one longer than sep.
+
+    .. seealso:: `separations_from_cells`
+
+    .. versionadded:: 9.3.1
+    """
+
+    nsep = len(sep)
+    cells = [0 for i in range(nsep + 1)]
+    cells[0] = sep[0]
+    for i in range(1, nsep):
+        cells[i] = (sep[i - 1] + sep[i]) * 0.5
+    cells[nsep] = sep[nsep-1]
+    return cells
+
+
+def separations_from_cells(cells):
+    """
+    Return point separations from a list of cell sizes.
+
+    :param cells:   list of cell sizes
+    :return:        list of separations, length is one less than cells
+
+    .. seealso:: `cells_from_separations`
+
+    .. versionadded:: 9.3.1
+    """
+
+    nsep = len(cells) - 1
+    seps = [0 for i in range(nsep)]
+    seps[0] = cells[0]
+    for i in range(1, nsep):
+        seps[i] = (cells[i] - seps[i - 1] * 0.5) * 2.
+    return seps
 
 
 # constants
@@ -140,12 +181,6 @@ class Voxset:
 
     def _close(self, pop=True):
 
-        def df(fn):
-            try:
-                os.remove(fn)
-            except OSError as e:
-                pass
-
         if hasattr(self, '_open'):
             if self._open:
 
@@ -153,14 +188,22 @@ class Voxset:
                     with open(self._file_name + '.xml', 'w+') as f:
                         f.write(gxu.xml_from_dict(self._metadata))
 
+                self._gxvoxe = None
+                self._gxvox = None
+                self._pg =  None
+                self._origin = None
+                self._locations = None
+                self._cells = None
+                self._uniform_cell_size = None
+                self._buffer_np = None
+                self._metadata = None
+
+                if self._delete_files:
+                    delete_files(self._file_name)
+
                 if pop:
                     gx.pop_resource(self._open)
                 self._open = None
-                self._gxvoxe = None
-                self._gxvox = None
-                self._cs = None
-                self._pg_ = None
-                self._vv_ = None
 
     def __repr__(self):
         return "{}({})".format(self.__class__, self.__dict__)
@@ -180,12 +223,14 @@ class Voxset:
         self._cs = None
         self._gxvoxe = None
         self._next = self._next_x = self._next_y = self._next_z = 0
-        self._xloc = self._yloc = self._zloc = None
-        self._pg = self._vv_ = None
+        self._locations = None
+        self._cells = None
+        self._pg = None
         self._buffered_plane = self._buffered_row = None
         self._metadata = None
         self._metadata_changed = False
         self._metadata_root = ''
+        self._delete_files = False
 
         ityp = gxapi.int_ref()
         iarr = gxapi.int_ref()
@@ -195,25 +240,11 @@ class Voxset:
         self._gxvox.get_info(ityp, iarr, nx, ny, nz)
         self._dtype = gxu.dtype_gx(ityp.value)
         self._is_int = gxu.is_int(ityp.value)
-        self._nx = nx.value
-        self._ny = ny.value
-        self._nz = nz.value
-        self._max_iter = self._nx * self._ny * self._nz
+        self._dim = (nx.value, ny.value, nz.value)
+        self._max_iter = nx.value * ny.value * nz.value
 
         # location
-        x0 = gxapi.float_ref()
-        y0 = gxapi.float_ref()
-        z0 = gxapi.float_ref()
-        dx = gxapi.float_ref()
-        dy = gxapi.float_ref()
-        dz = gxapi.float_ref()
-        self._gxvox.get_simple_location(x0, y0, z0, dx, dy, dz)
-        self._x0 = x0.value
-        self._y0 = y0.value
-        self._z0 = z0.value
-        self._dx = dx.value
-        self._dy = dy.value
-        self._dz = dz.value
+        self._setup_locations()
 
         self._open = gx.track_resource(self.__class__.__name__, self._name)
 
@@ -245,8 +276,8 @@ class Voxset:
         if (self._buffered_plane != iz) or (self._buffered_row != iy):
             self._buffered_plane = iz
             self._buffered_row = iy
-            vv = self._vv
-            self.gxpg.read_row_3d(iz, iy, 0, self._nx, vv.gxvv)
+            vv = gxvv.GXvv(dtype=self._dtype)
+            self.gxpg.read_row_3d(iz, iy, 0, self._dim[0], vv.gxvv)
             self._buffer_np = vv.np
             if not self._is_int:
                 gxu.dummy_to_nan(self._buffer_np)
@@ -309,17 +340,21 @@ class Voxset:
     @classmethod
     def open(cls, name, mode=MODE_READ):
         """
-        Open an existing voxset file.
+        Open an existing voxset.
 
-        :param name:        name of the voxset
-        :param mode:        open mode:
+        :param name:    name of the voxset. If a name only the voxset is resolved from the
+                        project. If a file name or complete path, the voxset is resolved from
+                        the file system outside of the current project.
+        :param mode:    open mode:
 
             =================  ==================================================
             MODE_READ          only read the voxset, properties cannot be changed
             MODE_READWRITE     voxset stays the same, but properties may change
             =================  ==================================================
 
-        .. versionadded:: 9.3
+        :returns:       `Voxset` instance
+
+        .. versionadded:: 9.3.1
         """
 
         vox = cls(name, gxapi.GXVOX.create(_voxset_file_name(name)))
@@ -330,6 +365,106 @@ class Voxset:
             vox._readonly = True
         else:
             vox._readonly = False
+
+        return vox
+
+    @classmethod
+    def new(cls, name, data=None, dimension=None, temp=False, overwrite=False, dtype=None,
+            origin=(0., 0., 0.), cell_size=(1., 1., 1.), init_value=None, coordinate_system=None):
+        """
+        Create a new voxset dataset
+
+        :param name:        dataset name, or a path to a persistent file.
+        :param data:        data to place in the voxset, must have 3 dimensions (nz, ny, nx). If not
+                            specified the voxset is initialized to dummy values.
+        :param dimension:   required dimension, data and/or cell-sizes take precedence
+        :param temp:        True to create a temporary voxset which will be removed after use
+        :param overwrite:   True to overwrite existing persistent voxset
+        :param dtype:       data type, default is the same as data, or np.float64
+        :param origin:      (x0, y0, z0) location of the origin voxel point. Note that this is not the corner
+                            of a cell. This is the center of the first cell for a uniform cell size, or the
+                            reference position of the first voxel cell accounting for variable cell sizes.
+        :param cell_size:   uniform cell size, or (dx, dy, dz) cell sizes in the x, y and z directions,
+                            or a arrays of cell sizes for variable cell-size voxel.  For example:
+                            `cell_size=((1, 2.5, 1.5), (1, 1, 1, 1), (5, 4, 3, 2, 1))` will create a voxset
+                            with (x, y, z) dimension (3, 4, 5) and sizes as specified in each dimension.
+        :param init_value:  initial value, default is the dummy for the dtype.
+        :param coordinate_system:   coordinate system as required to create from `geosoft.gxpy.Coordinate_system`
+        :returns:           `Voxset` instance
+
+        .. versionadded:: 9.3.1
+        """
+
+        if not temp:
+            file_name = _voxset_file_name(name)
+            if not overwrite:
+                if os.path.isfile(file_name):
+                    raise VoxsetException(_t('Cannot overwrite existing voxset {}'.format(file_name)))
+        else:
+            file_name = gx.GXpy().temp_file('.geosoft_voxel')
+
+        if data is not None:
+            if not isinstance(data, np.ndarray):
+                data = np.array(data)
+            if data.ndim != 3:
+                raise VoxsetException(_t('Data must have 3 dimensions, this data has {} dimensions').format(data.ndim))
+            dimension = (data.shape[2], data.shape[1], data.shape[0])
+            dtype = data.dtype
+
+        if (dimension is None):
+            if ((not hasattr(cell_size[0], '__iter__')) or
+                    (not hasattr(cell_size[1], '__iter__')) or
+                    (not hasattr(cell_size[2], '__iter__'))):
+                raise VoxsetException(_t('unable to determine voxset dimension'))
+            dimension = (len(cell_size[0]), len(cell_size[1]), len(cell_size[2]))
+
+        dvv = list(cell_size)
+        for i in range(3):
+            if hasattr(dvv[i], '__iter__'):
+                dvv[i] = gxvv.GXvv(dvv[i], dtype=np.float64)
+            else:
+                dvv[i] = np.zeros((dimension[i],)) + dvv[i]
+                dvv[i] = gxvv.GXvv(dvv[i], dtype=np.float64)
+
+        if dtype is None:
+            dtype = np.float64
+
+        if data is not None:
+
+            pg = gxapi.GXPG.create_3d(dvv[2].length, dvv[1].length, dvv[0].length, gxu.gx_dtype(dtype))
+            vv = gxvv.GXvv(dtype=dtype)
+            vv.length = dvv[0].length
+
+            for s in range(dvv[2].length):
+                for iy in range(dvv[1].length):
+                    vv.set_data(data[s, iy, :])
+                    pg.write_row_3d(s, iy, 0, vv.length, vv.gxvv)
+
+            gxvox = gxapi.GXVOX.generate_pgvv(file_name, pg,
+                                              origin[0], origin[1], origin[2],
+                                              dvv[0].gxvv, dvv[1].gxvv, dvv[2].gxvv,
+                                              gxcs.Coordinate_system(coordinate_system).gxipj,
+                                              gxapi.GXMETA.create())
+
+        else:
+
+            if init_value is None:
+                init_value = gxu.gx_dummy(dtype)
+
+            # create the voxset
+            gxvox = gxapi.GXVOX.generate_constant_value_vv(file_name,
+                                                           init_value,
+                                                           gxu.gx_dtype(dtype),
+                                                           origin[0], origin[1], origin[2],
+                                                           dvv[0].gxvv, dvv[1].gxvv, dvv[2].gxvv,
+                                                           gxcs.Coordinate_system(coordinate_system).gxipj,
+                                                           gxapi.GXMETA.create())
+
+        vox = cls(name, gxvox)
+        vox._file_name = file_name
+        vox._readonly = False
+        vox._setup_locations()
+        vox._delete_files = temp
 
         return vox
 
@@ -355,68 +490,68 @@ class Voxset:
     @property
     def nx(self):
         """ number of points in voxel X direction"""
-        return self._nx
+        return self._dim[0]
 
     @property
     def ny(self):
         """ number of points in voxel Y direction"""
-        return self._ny
+        return self._dim[1]
 
     @property
     def nz(self):
         """ number of points in voxel Z direction"""
-        return self._nz
+        return self._dim[2]
 
     @property
     def dx(self):
         """constant X point separation, None if not constant"""
-        if self._dx == gxapi.rDUMMY:
+        if self._uniform_cell_size[0] == gxapi.rDUMMY:
             return None
-        return self._dx
+        return self._uniform_cell_size[0]
 
     @property
     def dy(self):
         """constant Y point separation, None if not constant"""
-        if self._dy == gxapi.rDUMMY:
+        if self._uniform_cell_size[1] == gxapi.rDUMMY:
             return None
-        return self._dx
+        return self._uniform_cell_size[0]
 
     @property
     def dz(self):
         """constant Z point separation, None if not constant"""
-        if self._dz == gxapi.rDUMMY:
+        if self._uniform_cell_size[2] == gxapi.rDUMMY:
             return None
-        return self._dz
+        return self._uniform_cell_size[2]
 
     @property
     def x0(self):
         """X location of the voxset origin."""
-        return self._x0
+        return self._origin[0]
 
     @property
     def y0(self):
         """Y location of the voxset origin."""
-        return self._y0
+        return self._origin[1]
 
     @property
     def z0(self):
         """Z location of the voxset origin."""
-        return self._z0
+        return self._origin[2]
 
     @property
     def uniform_dx(self):
         """True if X point separation is constant"""
-        return (self.dx != gxapi.rDUMMY)
+        return self.dx is not None
 
     @property
     def uniform_dy(self):
         """True if Y point separation is constant"""
-        return (self.dy != gxapi.rDUMMY)
+        return self.dy is not None
 
     @property
     def uniform_dz(self):
         """True if Z point separation is constant"""
-        return (self.dz != gxapi.rDUMMY)
+        return self.dz is not None
 
     @property
     def extent(self):
@@ -438,46 +573,77 @@ class Voxset:
     @property
     def coordinate_system(self):
         """coordinate system"""
-        if self._cs is None:
-            ipj = gxapi.GXIPJ.create()
-            self.gxvox.get_ipj(ipj)
-            self._cs = gxcs.Coordinate_system(ipj)
-        return self._cs
+        ipj = gxapi.GXIPJ.create()
+        self.gxvox.get_ipj(ipj)
+        return gxcs.Coordinate_system(ipj)
 
     @coordinate_system.setter
     def coordinate_system(self, cs):
-        self._cs = gxcs.Coordinate_system(cs)
-        self.gxvox.set_ipj(self._cs.gxipj)
+        self.gxvox.set_ipj(gxcs.Coordinate_system(cs).gxipj)
 
-    def _location_arrays(self):
+    def _setup_locations(self):
         xvv = gxvv.GXvv()
         yvv = gxvv.GXvv()
         zvv = gxvv.GXvv()
         self.gxvox.get_location_points(xvv.gxvv, yvv.gxvv, zvv.gxvv)
-        self._xloc = xvv.np.copy()
-        self._yloc = yvv.np.copy()
-        self._zloc = zvv.np.copy()
+        self._locations = (xvv.np, yvv.np, zvv.np)
+        x0 = gxapi.float_ref()
+        y0 = gxapi.float_ref()
+        z0 = gxapi.float_ref()
+        xvv = gxvv.GXvv()
+        yvv = gxvv.GXvv()
+        zvv = gxvv.GXvv()
+        self.gxvox.get_location(x0, y0, z0, xvv.gxvv, yvv.gxvv, zvv.gxvv)
+        self._origin = (x0.value, y0.value, z0.value)
+        self._cells = (xvv.np, yvv.np, zvv.np)
+        dx = gxapi.float_ref()
+        dy = gxapi.float_ref()
+        dz = gxapi.float_ref()
+        self._gxvox.get_simple_location(x0, y0, z0, dx, dy, dz)
+        self._uniform_cell_size = (dx.value, dy.value, dz.value)
+
 
     @property
     def x_locations(self):
         """Return array of X locations"""
-        if self._xloc is None:
-            self._location_arrays()
-        return self._xloc
+        if self._locations is None:
+            self._setup_locations()
+        return self._locations[0]
 
     @property
     def y_locations(self):
-        """Return array of X locations"""
-        if self._yloc is None:
-            self._location_arrays()
-        return self._yloc
+        """Return array of Y locations"""
+        if self._locations is None:
+            self._setup_locations()
+        return self._locations[1]
 
     @property
     def z_locations(self):
-        """Return array of X locations"""
-        if self._zloc is None:
-            self._location_arrays()
-        return self._zloc
+        """Return array of Z locations"""
+        if self._locations is None:
+            self._setup_locations()
+        return self._locations[2]
+
+    @property
+    def x_cells(self):
+        """Return array of X cell sizes"""
+        if self._cells is None:
+            self._setup_locations()
+        return self._cells[0]
+
+    @property
+    def y_cells(self):
+        """Return array of Y cell sizes"""
+        if self._cells is None:
+            self._setup_locations()
+        return self._cells[1]
+
+    @property
+    def z_cells(self):
+        """Return array of Z cell sizes"""
+        if self._cells is None:
+            self._setup_locations()
+        return self._cells[2]
 
     @property
     def gxpg(self):
@@ -486,20 +652,11 @@ class Voxset:
         return self._pg
 
     @property
-    def _vv(self):
-        if self._vv_ is None:
-            self._vv_ = gxvv.GXvv(dtype=self._dtype)
-        return self._vv_
-
-    @property
     def gxvoxe(self):
         """Return a `gxapi.GXVOXE` instance"""
         if self._gxvoxe is None:
             self._gxvoxe = gxapi.GXVOXE.create(self.gxvox)
         return self._gxvoxe
-
-    def _release_pg(self):
-        self._pg_ = None
 
     def _checkindex(self, ix, iy, iz):
         if (ix < 0) or (ix >= self.nx) or (iy < 0) or (iy >= self.ny) or (iz < 0) or (iz >= self.nz):
