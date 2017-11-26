@@ -75,8 +75,11 @@ def delete_files(voxset_name):
         df(voxset_name)
         df(voxset_name + '.xml')
 
+
 def cells_from_separations(sep):
     """
+    TODO: This does not conform to how Geosoft calculates cells.
+
     Return cell sizes from a list of point separations. A cell is dimensioned to define a length that
     is the half the distance between a point and its neighbors. Edge cells are always the dimension of
     the separation between the two edge points.
@@ -100,6 +103,8 @@ def cells_from_separations(sep):
 
 def separations_from_cells(cells):
     """
+    TODO: This does not conform to how Geosoft calculates cells.
+
     Return point separations from a list of cell sizes.
 
     :param cells:   list of cell sizes
@@ -303,9 +308,7 @@ class Voxset:
         the dictionary items passed will be added to, or replace existing metadata.
 
         .. seealso::
-            `Geosoft metadata schema
-            <https://geosoftgxdev.atlassian.net/wiki/spaces/GXD93/pages/78184638/Geosoft+Metadata+Schema>'
-
+            `Geosoft metadata schema <https://geosoftgxdev.atlassian.net/wiki/spaces/GXD93/pages/78184638/Geosoft+Metadata+Schema>`
 
         .. versionadded:: 9.3
         """
