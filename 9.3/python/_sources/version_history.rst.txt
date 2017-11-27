@@ -221,6 +221,8 @@ New Functions
 
 :func:`geosoft.gxpy.gdb.Geosoft_gdb.write_line_vv` Write data to multiple channels in a line.  If no channel list is provided it assumes that the
 
+:func:`geosoft.gxpy.geometry.PPoint.extent` Volume extent as (`Point`, `Point`) for (min, max).
+
 :func:`geosoft.gxpy.geometry.PPoint.make_xyz_vv` Return x, y and z as a set of :class:`geosoft.gxpy.vv.GXvv`.
 
 :func:`geosoft.gxpy.grid.Grid.copy` Create a new Grid instance as a copy of an existing grid.

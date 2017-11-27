@@ -124,10 +124,7 @@ the type is taken from first element in array, of if no array the default is &#8
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Constructors:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">GXvv.vv_np</span></code> create from a numpy array</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Properties:</th><td class="field-body"><p class="first last"><code class="docutils literal"><span class="pre">vv</span></code>          <code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXvv</span></code> instance
+<tr class="field-even field"><th class="field-name">Properties:</th><td class="field-body"><p class="first last"><code class="docutils literal"><span class="pre">vv</span></code>          <code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXvv</span></code> instance
 <code class="docutils literal"><span class="pre">fid</span></code>         (start, increment) fiducial
 <code class="docutils literal"><span class="pre">length</span></code>      number of elements in the VV
 <code class="docutils literal"><span class="pre">gxtype</span></code>      GX data type
@@ -212,9 +209,12 @@ the type is taken from first element in array, of if no array the default is &#8
 <dl class="attribute">
 <dt id="geosoft.gxpy.vv.GXvv.length">
 <code class="descname">length</code><a class="headerlink" href="#geosoft.gxpy.vv.GXvv.length" title="Permalink to this definition">¶</a></dt>
-<dd><p>number of elements in the VV</p>
+<dd><p>number of elements in the VV, can be set</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 9.3: </span>can be set</p>
 </div>
 </dd></dl>
 
@@ -232,6 +232,8 @@ the type is taken from first element in array, of if no array the default is &#8
 <code class="descname">np</code><a class="headerlink" href="#geosoft.gxpy.vv.GXvv.np" title="Permalink to this definition">¶</a></dt>
 <dd><p>Numpy array of VV data, in the data type of the VV.  Use <a class="reference internal" href="#geosoft.gxpy.vv.GXvv.get_data" title="geosoft.gxpy.vv.GXvv.get_data"><code class="xref py py-meth docutils literal"><span class="pre">get_data()</span></code></a> to get a numpy array
 in another dtype.</p>
+<p>Note that changing the data in the numpy array does NOT change the data in the VV.  Use
+<a class="reference internal" href="#geosoft.gxpy.vv.GXvv.set_data" title="geosoft.gxpy.vv.GXvv.set_data"><code class="xref py py-obj docutils literal"><span class="pre">set_data</span></code></a> to change data in the VV.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>

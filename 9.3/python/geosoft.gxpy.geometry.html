@@ -81,17 +81,20 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><table border="1" class="first last docutils">
 <colgroup>
-<col width="19%" />
-<col width="81%" />
+<col width="22%" />
+<col width="78%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.geometry.Geometry" title="geosoft.gxpy.geometry.Geometry"><code class="xref py py-class docutils literal"><span class="pre">Geometry</span></code></a></td>
+<td>base class for all geometries</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></td>
 <td>(x, y, z) point</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.geometry.Point2" title="geosoft.gxpy.geometry.Point2"><code class="xref py py-class docutils literal"><span class="pre">Point2</span></code></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.geometry.Point2" title="geosoft.gxpy.geometry.Point2"><code class="xref py py-class docutils literal"><span class="pre">Point2</span></code></a></td>
 <td>pair of <a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a> instances that define a line, or extent</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.geometry.PPoint" title="geosoft.gxpy.geometry.PPoint"><code class="xref py py-class docutils literal"><span class="pre">PPoint</span></code></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.geometry.PPoint" title="geosoft.gxpy.geometry.PPoint"><code class="xref py py-class docutils literal"><span class="pre">PPoint</span></code></a></td>
 <td>multiple <a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a> instances</td>
 </tr>
 </tbody>
@@ -107,14 +110,23 @@
 </div>
 <dl class="class">
 <dt id="geosoft.gxpy.geometry.Geometry">
-<em class="property">class </em><code class="descname">Geometry</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.geometry.Geometry" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Geometry</code><span class="sig-paren">(</span><em>coordinate_system=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.geometry.Geometry" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Geometry base class for all geometries.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>coordinate_system</strong> &#8211; <code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.Coordinate_system</span></code> instance.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">coordinate_system:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><a class="reference internal" href="geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.coordinate_system.Coordinate_system</span></code></a> instance.</td>
+</tr>
+</tbody>
+</table>
+</td>
 </tr>
 </tbody>
 </table>
@@ -124,7 +136,7 @@
 <dl class="attribute">
 <dt id="geosoft.gxpy.geometry.Geometry.coordinate_system">
 <code class="descname">coordinate_system</code><a class="headerlink" href="#geosoft.gxpy.geometry.Geometry.coordinate_system" title="Permalink to this definition">¶</a></dt>
-<dd><p><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.Coordinate_system</span></code> instance.  Can be set.</p>
+<dd><p><a class="reference internal" href="geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.coordinate_system.Coordinate_system</span></code></a> instance.  Can be set.</p>
 </dd></dl>
 
 </dd></dl>
@@ -145,22 +157,30 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>xyz</strong> &#8211; array-like: (p1, p2, ...), ((x, y), ...), ((x, y, z), ...) or (vv_x, vv_y, [vv_z]).
-vv data is resampled to match the first vv.</li>
-<li><strong>z</strong> &#8211; constant z value for (x, y) data, ignored for (x, y, z) data</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Properties:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">pp:</th><td class="field-body">np_array shape (n,3)</td>
+<tr class="field-odd field"><th class="field-name">xyz:</th><td class="field-body"><p class="first">array-like: (p1, p2, ...), ((x, y), ...), ((x, y, z), ...) or (vv_x, vv_y, [vv_z]).</p>
+<p>vv data is resampled to match the first vv.</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">x, y, z:</th><td class="field-body">np_arrays of each ordinate set</td>
+<tr class="field-even field"><th class="field-name">z:</th><td class="field-body"><p class="first last">constant z value for (x, y) data, ignored for (x, y, z) data</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">xy:</th><td class="field-body">np_arrays of (x,y) points (n,2)</td>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Properties:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">pp:</th><td class="field-body">np_array shape (n, 3)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">x, y, z:</th><td class="field-body">np_arrays of each ordinate set shape (n,)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">xy:</th><td class="field-body">np_arrays of (x, y) points (n, 2)</td>
 </tr>
 <tr class="field-even field"><th class="field-name">xyz:</th><td class="field-body">same as pp</td>
 </tr>
@@ -182,29 +202,16 @@ vv data is resampled to match the first vv.</li>
 <dl class="method">
 <dt id="geosoft.gxpy.geometry.PPoint.extent">
 <code class="descname">extent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.geometry.PPoint.extent" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns extent of the polyline.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">(min, max) as <a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a> instance pair</td>
-</tr>
-</tbody>
-</table>
+<dd><p>Volume extent as (<a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-obj docutils literal"><span class="pre">Point</span></code></a>, <a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-obj docutils literal"><span class="pre">Point</span></code></a>) for (min, max).</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="geosoft.gxpy.geometry.PPoint.extent_xy">
 <code class="descname">extent_xy</code><a class="headerlink" href="#geosoft.gxpy.geometry.PPoint.extent_xy" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns extent of the polyline.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">(xmin, ymin, xmax, ymax)</td>
-</tr>
-</tbody>
-</table>
+<dd><p>Returns horizontal extent as tuple (xmin, ymin, xmax, ymax)</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
@@ -213,15 +220,7 @@ vv data is resampled to match the first vv.</li>
 <dl class="attribute">
 <dt id="geosoft.gxpy.geometry.PPoint.extent_xyz">
 <code class="descname">extent_xyz</code><a class="headerlink" href="#geosoft.gxpy.geometry.PPoint.extent_xyz" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns extent of the polyline.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">(xmin, ymin, zmin, xmax, ymax, zmax)</td>
-</tr>
-</tbody>
-</table>
+<dd><p>Returns 3D extent as tuple (xmin, ymin, zmin, xmax, ymax, zmax)</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
@@ -230,7 +229,10 @@ vv data is resampled to match the first vv.</li>
 <dl class="classmethod">
 <dt id="geosoft.gxpy.geometry.PPoint.from_list">
 <em class="property">classmethod </em><code class="descname">from_list</code><span class="sig-paren">(</span><em>xyzlist</em>, <em>z=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.geometry.PPoint.from_list" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><div class="deprecated">
+<p><span class="versionmodified">Deprecated since version 9.3: </span><a class="reference internal" href="#geosoft.gxpy.geometry.PPoint" title="geosoft.gxpy.geometry.PPoint"><code class="xref py py-obj docutils literal"><span class="pre">PPoint</span></code></a> can create directly from a list</p>
+</div>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="geosoft.gxpy.geometry.PPoint.length">
@@ -264,7 +266,7 @@ vv data is resampled to match the first vv.</li>
 <dl class="attribute">
 <dt id="geosoft.gxpy.geometry.PPoint.xy">
 <code class="descname">xy</code><a class="headerlink" href="#geosoft.gxpy.geometry.PPoint.xy" title="Permalink to this definition">¶</a></dt>
-<dd><p>(x,y) array slice, can be set</p>
+<dd><p>(x, y) array slice, can be set</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -296,13 +298,18 @@ vv data is resampled to match the first vv.</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>p</strong> &#8211; <p>point in one of the following forms:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Point</span>   <span class="n">makes</span> <span class="n">a</span> <span class="n">copy</span>
-<span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">[,</span><span class="n">z</span><span class="p">])</span> <span class="n">implied</span> <span class="n">z</span> <span class="ow">is</span> <span class="mf">0.0</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">provided</span>
-<span class="n">k</span> <span class="n">makes</span> <span class="n">a</span> <span class="n">point</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
-</pre></div>
-</div>
-</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">p:</th><td class="field-body"><p class="first">point in one of the following forms:</p>
+<p><a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-obj docutils literal"><span class="pre">Point</span></code></a> instance, returns a copy</p>
+<p>(x, y [,z]) implied z is 0.0 if not provided</p>
+<p class="last">k makes a point (k, k, k)</p>
+</td>
+</tr>
+</tbody>
+</table>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Properties:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
@@ -371,29 +378,34 @@ vv data is resampled to match the first vv.</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>p</strong> &#8211; <p>Points in one of the following forms:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">Point</span><span class="p">,</span> <span class="n">Point</span><span class="p">)</span>
-<span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">[,</span><span class="n">z</span><span class="p">]),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">[,</span><span class="n">z</span><span class="p">]))</span> <span class="n">implied</span> <span class="n">z</span> <span class="ow">is</span> <span class="mi">0</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">specified</span>
-<span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span> <span class="n">implied</span> <span class="n">z</span> <span class="ow">is</span> <span class="mi">0</span>
-<span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">z0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">z1</span><span class="p">)</span>
-</pre></div>
-</div>
-</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">p:</th><td class="field-body"><p class="first">Points in one of the following forms:</p>
+<p>(<a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-obj docutils literal"><span class="pre">Point</span></code></a>, <a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-obj docutils literal"><span class="pre">Point</span></code></a>)</p>
+<p>((x, y [,z]), (x, y [,z])) implied z is 0 if not specified</p>
+<p>(x0, y0, x1, y1) implied z is 0</p>
+<p class="last">(x0, y0, z0, x1, y1, z1)</p>
+</td>
+</tr>
+</tbody>
+</table>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Properties:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">p0:</th><td class="field-body">first point as a <a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a> instance</td>
+<tr class="field-odd field"><th class="field-name">p0:</th><td class="field-body">first <a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-obj docutils literal"><span class="pre">Point</span></code></a> instance</td>
 </tr>
-<tr class="field-even field"><th class="field-name">p1:</th><td class="field-body">second point at a <a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a> instance</td>
+<tr class="field-even field"><th class="field-name">p1:</th><td class="field-body">second <a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-obj docutils literal"><span class="pre">Point</span></code></a> instance</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">x2, y2, z2:</th><td class="field-body">tuple pairs for (x0, x1), (y0, y1), (z0, z1)</td>
 </tr>
-<tr class="field-even field"><th class="field-name">centroid:</th><td class="field-body">center of the two points</td>
+<tr class="field-even field"><th class="field-name">centroid:</th><td class="field-body">center of the two points as a <a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-obj docutils literal"><span class="pre">Point</span></code></a></td>
 </tr>
-<tr class="field-odd field"><th class="field-name">dimension:</th><td class="field-body">(dx, dy, dz) dimension defines by teo points.</td>
+<tr class="field-odd field"><th class="field-name">dimension:</th><td class="field-body">(dx, dy, dz) dimension defines by two points.</td>
 </tr>
 </tbody>
 </table>
