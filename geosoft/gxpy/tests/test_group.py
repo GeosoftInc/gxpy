@@ -153,6 +153,16 @@ class Test(GXPYTest):
         finally:
             gxmap.delete_files(map_file)
 
+    @unittest.skip('skipping to let fixture pass')
+    def test_force_assert(self):
+        self.start()
+
+        with gxmap.Map.figure((0, 0, 1000, 1000)) as gmap:
+            with gxv.View.open(gmap, "data") as v:
+                gxapi.GXMVU.arrow(v.gxview, 500, 500, 450, 450, 0.5, 30, 1)  # asserts
+                with gxg.Draw(v, "arrow") as g:
+                    gxapi.GXMVU.arrow(g.view.gxview, 500, 500, 450, 450, 0.5, 30, 1)
+
     def test_point(self):
         self.start()
 
