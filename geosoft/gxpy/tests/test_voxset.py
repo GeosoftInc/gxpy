@@ -22,6 +22,7 @@ class Test(GXPYTest):
 
     @classmethod
     def tearDownClass(cls):
+        cls.tearDownGXPYTest()
         pass #gxvox.delete_files(cls.vox_file)
 
     def test_voxProperties(self):
