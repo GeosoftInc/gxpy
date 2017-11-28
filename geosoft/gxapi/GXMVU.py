@@ -929,6 +929,27 @@ class GXMVU(gxapi_cy.WrapMVU):
 
 
     @classmethod
+    def export_map_groups_to_gdb(cls, mview, lst, db):
+        """
+        Export map group(s) to database line(s).
+        
+        :param mview:  View
+        :param lst:    `GXLST <geosoft.gxapi.GXLST>` with group names in the name part of the `GXLST <geosoft.gxapi.GXLST>`.
+        :param db:     Database
+        :type  mview:  GXMVIEW
+        :type  lst:    GXLST
+        :type  db:     GXDB
+
+        .. versionadded:: 9.4
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        """
+        gxapi_cy.WrapMVU._export_map_groups_to_gdb(GXContext._get_tls_geo(), mview, lst, db)
+        
+
+
+
+    @classmethod
     def flight_plot(cls, mview, vv_x, vv_y, line, locate, vangle, up, loff, voff):
         """
         Draw a flight line
