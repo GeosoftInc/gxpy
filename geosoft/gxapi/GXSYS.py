@@ -1957,6 +1957,37 @@ class GXSYS(gxapi_cy.WrapSYS):
 
 
 
+    @classmethod
+    def is_signed_in(cls):
+        """
+        Check if signed in via Geosoft Connect
+        
+        :rtype:      bool
+
+        .. versionadded:: 9.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        """
+        ret_val = gxapi_cy.WrapSYS._is_signed_in(GXContext._get_tls_geo())
+        return ret_val
+
+
+
+    @classmethod
+    def sign_in(cls):
+        """
+        Sign in via Geosoft Connect
+        
+
+        .. versionadded:: 9.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        """
+        gxapi_cy.WrapSYS._sign_in(GXContext._get_tls_geo())
+        
+
+
+
 
 # Lineage
 
