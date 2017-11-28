@@ -143,6 +143,28 @@ class GXIPGUI(gxapi_cy.WrapIPGUI):
 
 
 
+    @classmethod
+    def launch_remove_contributing_electrodes_ext_tool(cls, db, map):
+        """
+        Launch the Remove Contributing Electrodes dialog.
+        
+        :param db:   Database name
+        :param map:  Current Map
+        :type  db:   str
+        :type  map:  str
+
+        .. versionadded:: 9.4
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+
+        **Note:** This tool removes the `GXEXT <geosoft.gxapi.GXEXT>` object that allows the database-map linking between an IP data base 
+        and IP plan map for plotting contributing electrodes for a given database row of data.
+        """
+        gxapi_cy.WrapIPGUI._launch_remove_contributing_electrodes_ext_tool(GXContext._get_tls_geo(), db.encode(), map.encode())
+        
+
+
+
 
 
 ### endblock ClassImplementation

@@ -657,6 +657,24 @@ class GXITR(gxapi_cy.WrapITR):
 
 
 
+    @classmethod
+    def default_color_method(cls):
+        """
+        Return the user-defined global default color method.
+        
+
+        :returns:    One of `ITR_ZONE_EQUALAREA <geosoft.gxapi.ITR_ZONE_EQUALAREA>`, `ITR_ZONE_LINEAR <geosoft.gxapi.ITR_ZONE_LINEAR>`, `ITR_ZONE_NORMAL <geosoft.gxapi.ITR_ZONE_NORMAL>` or `ITR_ZONE_LOGLINEAR <geosoft.gxapi.ITR_ZONE_LOGLINEAR>`
+        :rtype:      int
+
+        .. versionadded:: 9.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        """
+        ret_val = gxapi_cy.WrapITR._default_color_method(GXContext._get_tls_geo())
+        return ret_val
+
+
+
 
     def set_data_limits(self, min, max):
         """

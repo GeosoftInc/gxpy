@@ -2015,6 +2015,46 @@ class GXIP(gxapi_cy.WrapIP):
 
 
 
+    @classmethod
+    def locate_contributing_electrodes(cls, db, map, rx1x, rx1y, rx2x, rx2y, tx1x, tx1y, tx2x, tx2y, sym_size):
+        """
+        Locate on a map electrodes selected in a database row.
+        
+        :param db:        `GXDB <geosoft.gxapi.GXDB>` object
+        :param map:       The current map
+        :param rx1x:      Rx1 X channel
+        :param rx1y:      Rx1 Y channel
+        :param rx2x:      Rx2 X channel
+        :param rx2y:      Rx2 Y channel
+        :param tx1x:      Tx1 X channel
+        :param tx1y:      Tx1 Y channel
+        :param tx2x:      Tx2 X channel
+        :param tx2y:      Tx2 Y channel
+        :param sym_size:  Symbol size (mm)
+        :type  db:        GXDB
+        :type  map:       str
+        :type  rx1x:      str
+        :type  rx1y:      str
+        :type  rx2x:      str
+        :type  rx2y:      str
+        :type  tx1x:      str
+        :type  tx1y:      str
+        :type  tx2x:      str
+        :type  tx2y:      str
+        :type  sym_size:  float
+
+        .. versionadded:: 9.4
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+
+        **Note:** Sets up an EXT object in the database that captures row/line change events and plots the
+        electrodes for the selected row on an accompanying map.
+        """
+        gxapi_cy.WrapIP._locate_contributing_electrodes(GXContext._get_tls_geo(), db, map.encode(), rx1x.encode(), rx1y.encode(), rx2x.encode(), rx2y.encode(), tx1x.encode(), tx1y.encode(), tx2x.encode(), tx2y.encode(), sym_size)
+        
+
+
+
 
 
 ### endblock ClassImplementation

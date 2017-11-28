@@ -178,6 +178,25 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
 
     @classmethod
+    def rad_spc_alt(cls, im_gi, spc_fil):
+        """
+        `GXFFT2 <geosoft.gxapi.GXFFT2>` transform Radially averaged power spectrum - log before average and no normalization
+        
+        :param im_gi:    Input image (Transform grid)
+        :param spc_fil:  Output Radial Spectrum file name string
+        :type  im_gi:    GXIMG
+        :type  spc_fil:  str
+
+        .. versionadded:: 9.4
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        """
+        gxapi_cy.WrapFFT2._rad_spc_alt(GXContext._get_tls_geo(), im_gi, spc_fil.encode())
+        
+
+
+
+    @classmethod
     def rad_spc1(cls, img, vv):
         """
         `GXFFT2 <geosoft.gxapi.GXFFT2>` transform Radially averaged power spectrum for one `GXIMG <geosoft.gxapi.GXIMG>`
