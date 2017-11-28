@@ -3692,7 +3692,17 @@ TD_ID_CLOSE = 8
 #: Random searches in a table.
 TB_SEARCH_BINARY = 0
 #: Linear searches up or down a table (Default).
-TB_SEARCH_LINEAR = 1	
+TB_SEARCH_LINEAR = 1
+
+#
+# TB_SORT constants
+#
+# `GXTB <geosoft.gxapi.GXTB>` Sorting mode
+
+#: Unique values only when sorting.
+TB_SORT_UNIQUE = 0
+#: Allow duplicates when sorting.
+TB_SORT_ALLOW_DUPLICATES = 1	
 
 #
 # GXTPAT Constants

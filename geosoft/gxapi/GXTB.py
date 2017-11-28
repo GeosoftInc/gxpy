@@ -71,6 +71,23 @@ class GXTB(gxapi_cy.WrapTB):
 
 
 
+
+    def set_sort_mode(self, mode):
+        """
+        Set the sort mode of a table.
+        
+        :param mode:  :ref:`TB_SORT`
+        :type  mode:  int
+
+        .. versionadded:: 9.3.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        """
+        self._set_sort_mode(mode)
+        
+
+
+
     @classmethod
     def create(cls, name):
         """
