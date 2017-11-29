@@ -37,7 +37,7 @@ pip install geosoft --upgrade
 ```
 
 ### Version Compatibility ###
-The base GX API, which is exposed to Python by the geosoft.gxapi module, is consistent across versions. This means that earlier versions of ___geosoft.pxpy___ will work with Geosoft Desktop 9.3. While we recommend that older scripts be updated to conform to the 9.3 API, should you need support for multiple versions of ___geosoft.gxpy___ you can create separate Anaconda Python environments for each version. For example, you might create an environment ___'py35_gx91'___ for Python 3.5 and the GX API version 9.1, ___'py36_gx92'___ for Python 3.6 and GX Developer 9.2 and 'py36_gx93' for GX Developer 9.3. If you do not depend on earlier versions of the GX Developer Python API it is best to use only the most recently released API.
+The base GX API, which is exposed to Python by the ___geosoft.gxapi___ module, is consistent across versions. This means that earlier versions of ___geosoft.pxpy___ will work with Geosoft Desktop 9.3. While we recommend that older scripts be updated to conform to the 9.3 API, should you need support for multiple versions of ___geosoft.gxpy___ you can create separate Anaconda Python environments for each version. For example, you might create an environment ___'py35_gx91'___ for Python 3.5 and the GX API version 9.1, ___'py36_gx92'___ for Python 3.6 and GX Developer 9.2 and 'py36_gx93' for GX Developer 9.3. If you do not depend on earlier versions of the GX Developer Python API it is best to use only the most recently released API.
 
 Vesion 9.3 supports both Python 3.5 and 3.6.  If you need Python 3.4 support, install geosoft version 9.2.1, which will work with both Geosoft Desktop versions 9.2 and 9.3.
 
