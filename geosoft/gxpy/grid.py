@@ -1035,6 +1035,27 @@ class Grid:
         return data
 
 
+    def as_array(self):
+        """
+        Return a numpy float array of grid values.
+
+        :returns: numpy array shape (nx, ny)
+
+        .. versionadded:: 9.3.1
+        """
+
+        nx = self.nx
+        ny = self.ny
+        data = np.zeros((ny, nx))
+        if self.gximg.query_kx() == -1:
+            for i in range(self.nx):
+                data[:, i] = gxu.dummy_to_nan(self.read_column(i).np)
+        else:
+            for i in range(self.ny):
+                data[i, :] = gxu.dummy_to_nan(self.read_row(i).np)
+
+        return data
+
     def xyzv(self):
         """
         Return a numpy float array of (x, y, z, v) grid points.
