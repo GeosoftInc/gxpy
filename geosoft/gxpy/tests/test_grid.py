@@ -634,6 +634,29 @@ class Test(GXPYTest):
         map_file = gxgrd.figure_map(self.g1f, title='image_test', features='all').file_name
         self.crc_map(map_file)
 
+    def test_as_array(self):
+        self.start()
+
+        with gxgrd.Grid.open(self.g1f) as g1:
+            data = g1.as_array()
+
+            self.assertEqual(data[0, 0], 771.0)
+            self.assertEqual(data[100, 100], 243.0)
+
+            self.assertEqual(10081870.0, np.nansum(data))
+            self.assertEqual(91, np.count_nonzero(np.isnan(data)))
+
+        with gxgrd.Grid.open(self.g2f) as g2:
+            data = g2.as_array()
+
+            self.assertEqual(data[0, 0], 763.0)
+            self.assertEqual(data[100, 100], 88.0)
+
+            self.assertEqual(2696851.0, np.nansum(data))
+            self.assertEqual(0, np.count_nonzero(np.isnan(data)))
+            
+
+
 
 ###############################################################################################
 

@@ -11,7 +11,7 @@
     <OutputPath>.</OutputPath>
     <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
-    <InterpreterId>Global|VisualStudio|Anaconda 4.4</InterpreterId>
+    <InterpreterId>Global|VisualStudio|arcgispro-py3</InterpreterId>
     <IsWindowsApplication>False</IsWindowsApplication>
     <CommandLineArguments>-v</CommandLineArguments>
     <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
@@ -955,12 +955,14 @@
     <Compile Include="geosoft\gxpy\tests\test_utility.py" />
     <Compile Include="geosoft\gxpy\tests\test_va.py" />
     <Compile Include="geosoft\gxpy\tests\test_view.py" />
+    <Compile Include="geosoft\gxpy\tests\test_voxset.py" />
     <Compile Include="geosoft\gxpy\tests\test_vv.py" />
     <Compile Include="geosoft\gxpy\user_input\__init__.py" />
     <Compile Include="geosoft\gxpy\utility.py" />
     <Compile Include="geosoft\gxpy\va.py" />
     <Compile Include="geosoft\gxpy\view.py" />
     <Compile Include="geosoft\gxpy\viewer.py" />
+    <Compile Include="geosoft\gxpy\voxset.py" />
     <Compile Include="geosoft\gxpy\vv.py" />
     <Compile Include="geosoft\gxpy\_jdcal\jdcal.py" />
     <Compile Include="geosoft\gxpy\_jdcal\__init__.py" />
@@ -1143,7 +1145,7 @@
     <Folder Include="GX Developer\Python" />
   </ItemGroup>
   <ItemGroup>
-    <InterpreterReference Include="Global|VisualStudio|Anaconda 4.4" />
+    <InterpreterReference Include="Global|VisualStudio|arcgispro-py3" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
 </Project>
