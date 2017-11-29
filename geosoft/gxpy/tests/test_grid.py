@@ -649,6 +649,7 @@ class Test(GXPYTest):
             self.assertEqual(data[0, 0], 771.0)
             self.assertEqual(data[100, 100], 243.0)
 
+
             self.assertEqual(10081870.0, np.nansum(data))
             self.assertEqual(91, np.count_nonzero(np.isnan(data)))
 
@@ -661,6 +662,9 @@ class Test(GXPYTest):
 
             self.assertEqual(2696851.0, np.nansum(data))
             self.assertEqual(0, np.count_nonzero(np.isnan(data)))
+            
+
+
 
 ###############################################################################################
 

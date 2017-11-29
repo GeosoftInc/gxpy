@@ -11,7 +11,7 @@
     <OutputPath>.</OutputPath>
     <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
-    <InterpreterId>Global|VisualStudio|Anaconda</InterpreterId>
+    <InterpreterId>Global|VisualStudio|arcgispro-py3</InterpreterId>
     <IsWindowsApplication>False</IsWindowsApplication>
     <CommandLineArguments>-v</CommandLineArguments>
     <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
@@ -1145,7 +1145,7 @@
     <Folder Include="GX Developer\Python" />
   </ItemGroup>
   <ItemGroup>
-    <InterpreterReference Include="Global|VisualStudio|Anaconda" />
+    <InterpreterReference Include="Global|VisualStudio|arcgispro-py3" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
 </Project>
