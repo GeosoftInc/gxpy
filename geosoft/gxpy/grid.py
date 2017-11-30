@@ -1000,9 +1000,9 @@ class Grid:
                max(xyz0[1], xyz1[1], xyz2[1], xyz3[1]),\
                max(xyz0[2], xyz1[2], xyz2[2], xyz3[2])
 
-    def as_array(self):
+    def np(self):
         """
-        Return a numpy float array of grid values.
+        Return a numpy array of grid values.
 
         :returns: numpy array shape (nx, ny)
 
@@ -1011,13 +1011,13 @@ class Grid:
 
         nx = self.nx
         ny = self.ny
-        data = np.zeros((ny, nx))
+        data = np.zeros((ny, nx), dtype=self.dtype)
         if self.gximg.query_kx() == -1:
             for i in range(self.nx):
-                data[:, i] = gxu.dummy_to_nan(self.read_column(i).np)
+                data[:, i] = self.read_column(i).np
         else:
             for i in range(self.ny):
-                data[i, :] = gxu.dummy_to_nan(self.read_row(i).np)
+                data[i, :] = self.read_row(i).np
 
         return data
 
