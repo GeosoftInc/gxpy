@@ -1,18 +1,18 @@
 """
-Geosoft voxset/voxel handling.
+Geosoft voxel (voxset) handling.
 
 :Classes:
 
-    =============== =======================================================
-    :class:`Voxset` voxset
-    =============== =======================================================
+    ============ =======================================================
+    :class:`Vox` Geosoft voxel (voxset)
+    ============ =======================================================
 
 .. seealso:: :class:`geosoft.gxapi.GXIMG`, :class:`geosoft.gxapi.GXIMU`
 
 .. note::
 
     Regression tests provide usage examples:     
-    `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_voxset.py>`_
+    `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_vox.py>`_
     
 """
 import os
@@ -32,21 +32,21 @@ def _t(s):
     return geosoft.gxpy.system.translate(s)
 
 
-class VoxsetException(Exception):
+class VoxException(Exception):
     """
-    Exceptions from :mod:`geosoft.gxpy.voxset`.
+    Exceptions from :mod:`geosoft.gxpy.vox`.
 
     .. versionadded:: 9.1
     """
     pass
 
-def _voxset_file_name(name):
+def _vox_file_name(name):
     ext = os.path.splitext(name)[1]
     if ext.lower() != '.geosoft_voxel':
         name = name + '.geosoft_voxel'
     return os.path.abspath(name)
 
-def _voxset_name(name):
+def _vox_name(name):
     basename = os.path.basename(name)
     return os.path.splitext(basename)[0]
 
@@ -54,11 +54,11 @@ INTERP_NEAREST = gxapi.VOXE_EVAL_NEAR #:
 INTERP_LINEAR = gxapi.VOXE_EVAL_INTERP #:
 INTERP_SMOOTH = gxapi.VOXE_EVAL_BEST #:
 
-def delete_files(voxset_name):
+def delete_files(vox_name):
     """
-    Delete all files associates with this voxset name.
+    Delete all files associates with this vox name.
 
-    :param voxset_name: name of the voxset file
+    :param vox_name: name of the vox file
 
     .. versionadded:: 9.3
     """
@@ -69,11 +69,11 @@ def delete_files(voxset_name):
         except OSError as e:
             pass
 
-    if voxset_name is not None:
+    if vox_name is not None:
 
-        voxset_name = _voxset_file_name(voxset_name)
-        df(voxset_name)
-        df(voxset_name + '.xml')
+        vox_name = _vox_file_name(vox_name)
+        df(vox_name)
+        df(vox_name + '.xml')
 
 
 def cells_from_separations(sep):
@@ -129,38 +129,38 @@ MODE_READWRITE = 1     #: file exists, but can change properties
 MODE_NEW = 2           #:
 
 
-class Voxset:
+class Vox:
     """
-    Voxset and image class.
+    Vox and image class.
 
     :Constructors:
 
         ======================= ============================================
-        :meth:`open`            open an existing voxset
-        :meth:`new`             create a new voxset
-        :meth:`from_data_array` create a new voxset from a 2d data array
+        :meth:`open`            open an existing vox
+        :meth:`new`             create a new vox
+        :meth:`from_data_array` create a new vox from a 2d data array
         ======================= ============================================
 
-    A voxset instance supports iteration that yields (x, y, z, voxset_value) by points along horizontal
+    A vox instance supports iteration that yields (x, y, z, vox_value) by points along horizontal
     rows, then columns, then depth slices starting at minimum z.
-    For example, the following prints the x, y, z, voxset_value of every non-dummy point in a voxset:
+    For example, the following prints the x, y, z, vox_value of every non-dummy point in a vox:
 
     .. code::
 
-        import geosoft.gxpy.voxset as gxvox
+        import geosoft.gxpy.vox as gxvox
 
-        with gxvox.Voxset.open('some.geosoft_voxel') ad g:
+        with gxvox.Vox.open('some.geosoft_voxel') ad g:
             for x, y, z, v in g:
                 if v is not None:
                     print(x, y, z, v)
 
-    Specific voxset cell values can be indexed (null voxset values are None):
+    Specific vox cell values can be indexed (null vox values are None):
 
     .. code::
 
-        import geosoft.gxpy.voxset as gxvox
+        import geosoft.gxpy.vox as gxvox
 
-        with gxvox.Voxset.open('some_voxel') as vox:
+        with gxvox.Vox.open('some_voxel') as vox:
             for iz in range(vox.nz):
                 for iy in range(vox.ny):
                     for ix in range(vox.nx):
@@ -218,8 +218,8 @@ class Voxset:
 
     def __init__(self, name=None, gxvox=None):
 
-        self._file_name = _voxset_file_name(name)
-        self._name = _voxset_name(self._file_name)
+        self._file_name = _vox_file_name(name)
+        self._name = _vox_name(self._file_name)
         self._readonly = None
         self._metadata = None
         self._metadata_changed = False
@@ -304,7 +304,7 @@ class Voxset:
     @property
     def metadata(self):
         """
-        Return the voxset metadata as a dictionary.  Can be set, in which case
+        Return the vox metadata as a dictionary.  Can be set, in which case
         the dictionary items passed will be added to, or replace existing metadata.
 
         .. seealso::
@@ -343,24 +343,24 @@ class Voxset:
     @classmethod
     def open(cls, name, mode=MODE_READ):
         """
-        Open an existing voxset.
+        Open an existing vox.
 
-        :param name:    name of the voxset. If a name only the voxset is resolved from the
-                        project. If a file name or complete path, the voxset is resolved from
+        :param name:    name of the vox. If a name only the vox is resolved from the
+                        project. If a file name or complete path, the vox is resolved from
                         the file system outside of the current project.
         :param mode:    open mode:
 
             =================  ==================================================
-            MODE_READ          only read the voxset, properties cannot be changed
-            MODE_READWRITE     voxset stays the same, but properties may change
+            MODE_READ          only read the vox, properties cannot be changed
+            MODE_READWRITE     vox stays the same, but properties may change
             =================  ==================================================
 
-        :returns:       `Voxset` instance
+        :returns:       `Vox` instance
 
         .. versionadded:: 9.3.1
         """
 
-        vox = cls(name, gxapi.GXVOX.create(_voxset_file_name(name)))
+        vox = cls(name, gxapi.GXVOX.create(_vox_file_name(name)))
 
         if mode is None:
             mode = MODE_READ
@@ -375,34 +375,34 @@ class Voxset:
     def new(cls, name, data=None, dimension=None, temp=False, overwrite=False, dtype=None,
             origin=(0., 0., 0.), cell_size=(1., 1., 1.), init_value=None, coordinate_system=None):
         """
-        Create a new voxset dataset
+        Create a new vox dataset
 
         :param name:        dataset name, or a path to a persistent file.
-        :param data:        data to place in the voxset, must have 3 dimensions (nz, ny, nx). If not
-                            specified the voxset is initialized to dummy values.
+        :param data:        data to place in the vox, must have 3 dimensions (nz, ny, nx). If not
+                            specified the vox is initialized to dummy values.
         :param dimension:   required dimension, data and/or cell-sizes take precedence
-        :param temp:        True to create a temporary voxset which will be removed after use
-        :param overwrite:   True to overwrite existing persistent voxset
+        :param temp:        True to create a temporary vox which will be removed after use
+        :param overwrite:   True to overwrite existing persistent vox
         :param dtype:       data type, default is the same as data, or np.float64
-        :param origin:      (x0, y0, z0) location of the origin voxel point. Note that this is not the corner
+        :param origin:      (x0, y0, z0) location of the origin vox point. Note that this is not the corner
                             of a cell. This is the center of the first cell for a uniform cell size, or the
-                            reference position of the first voxel cell accounting for variable cell sizes.
+                            reference position of the first vox cell accounting for variable cell sizes.
         :param cell_size:   uniform cell size, or (dx, dy, dz) cell sizes in the x, y and z directions,
-                            or a arrays of cell sizes for variable cell-size voxel.  For example:
-                            `cell_size=((1, 2.5, 1.5), (1, 1, 1, 1), (5, 4, 3, 2, 1))` will create a voxset
+                            or a arrays of cell sizes for variable cell-size vox.  For example:
+                            `cell_size=((1, 2.5, 1.5), (1, 1, 1, 1), (5, 4, 3, 2, 1))` will create a vox
                             with (x, y, z) dimension (3, 4, 5) and sizes as specified in each dimension.
         :param init_value:  initial value, default is the dummy for the dtype.
         :param coordinate_system:   coordinate system as required to create from `geosoft.gxpy.Coordinate_system`
-        :returns:           `Voxset` instance
+        :returns:           `Vox` instance
 
         .. versionadded:: 9.3.1
         """
 
         if not temp:
-            file_name = _voxset_file_name(name)
+            file_name = _vox_file_name(name)
             if not overwrite:
                 if os.path.isfile(file_name):
-                    raise VoxsetException(_t('Cannot overwrite existing voxset {}'.format(file_name)))
+                    raise VoxException(_t('Cannot overwrite existing vox {}'.format(file_name)))
         else:
             file_name = gx.GXpy().temp_file('.geosoft_voxel')
 
@@ -410,7 +410,7 @@ class Voxset:
             if not isinstance(data, np.ndarray):
                 data = np.array(data)
             if data.ndim != 3:
-                raise VoxsetException(_t('Data must have 3 dimensions, this data has {} dimensions').format(data.ndim))
+                raise VoxException(_t('Data must have 3 dimensions, this data has {} dimensions').format(data.ndim))
             dimension = (data.shape[2], data.shape[1], data.shape[0])
             dtype = data.dtype
 
@@ -418,7 +418,7 @@ class Voxset:
             if ((not hasattr(cell_size[0], '__iter__')) or
                     (not hasattr(cell_size[1], '__iter__')) or
                     (not hasattr(cell_size[2], '__iter__'))):
-                raise VoxsetException(_t('unable to determine voxset dimension'))
+                raise VoxException(_t('unable to determine vox dimension'))
             dimension = (len(cell_size[0]), len(cell_size[1]), len(cell_size[2]))
 
         dvv = list(cell_size)
@@ -454,7 +454,7 @@ class Voxset:
             if init_value is None:
                 init_value = gxu.gx_dummy(dtype)
 
-            # create the voxset
+            # create the vox
             gxvox = gxapi.GXVOX.generate_constant_value_vv(file_name,
                                                            init_value,
                                                            gxu.gx_dtype(dtype),
@@ -472,17 +472,17 @@ class Voxset:
         return vox
 
     def close(self):
-        """close the voxset and release all instance resources."""
+        """close the vox and release all instance resources."""
         self._close()
 
     @property
     def name(self):
-        """Voxset name"""
+        """Vox name"""
         return self._name
 
     @property
     def file_name(self):
-        """Voxset file name"""
+        """Vox file name"""
         return self._file_name
 
     @property
@@ -492,17 +492,17 @@ class Voxset:
 
     @property
     def nx(self):
-        """ number of points in voxel X direction"""
+        """ number of points in vox X direction"""
         return self._dim[0]
 
     @property
     def ny(self):
-        """ number of points in voxel Y direction"""
+        """ number of points in vox Y direction"""
         return self._dim[1]
 
     @property
     def nz(self):
-        """ number of points in voxel Z direction"""
+        """ number of points in vox Z direction"""
         return self._dim[2]
 
     @property
@@ -528,17 +528,17 @@ class Voxset:
 
     @property
     def x0(self):
-        """X location of the voxset origin."""
+        """X location of the vox origin."""
         return self._origin[0]
 
     @property
     def y0(self):
-        """Y location of the voxset origin."""
+        """Y location of the vox origin."""
         return self._origin[1]
 
     @property
     def z0(self):
-        """Z location of the voxset origin."""
+        """Z location of the vox origin."""
         return self._origin[2]
 
     @property
@@ -667,7 +667,7 @@ class Voxset:
 
     def xyz(self, ix, iy, iz):
         """
-        Return the spatial location of a point in the voxset.
+        Return the spatial location of a point in the vox.
         Raises error if our of range of the data
 
         :param ix:  x index
@@ -684,7 +684,7 @@ class Voxset:
         """
         Voxcet value at a location.
 
-        :param xyz:         tuple (x, y, z) location in the voxel coordinate system
+        :param xyz:         tuple (x, y, z) location in the vox coordinate system
         :param interpolate: method by which to interpolate between points:
 
                             INTERP_NEAREST - same as value inside a cell.
@@ -693,7 +693,7 @@ class Voxset:
 
                             INTERP_SMOOTH - smooth interpolation (slower than INTERP_LINEAR).
 
-        :returns:           voxel value at that location
+        :returns:           vox value at that location
 
         .. versionadded:: 9.3.1
         """
@@ -705,7 +705,7 @@ class Voxset:
 
     def np_subset(self, start=(0, 0, 0), dimension=None):
         """
-        Return voxset subset in a 3D numpy array.
+        Return vox subset in a 3D numpy array.
 
         :return: numpy array of shape (nz, ny, nx)
 
@@ -723,7 +723,7 @@ class Voxset:
             nx, ny, nz = dimension
             self._checkindex(x0 + nx - 1, y0 + ny - 1, z0 + nz - 1)
         if nx < 0 or ny < 0 or nz < 0:
-            raise VoxsetException(_t("Subset dimension {} invalid, require positive non-zero dimension").format((nx, ny, nz)))
+            raise VoxException(_t("Subset dimension {} invalid, require positive non-zero dimension").format((nx, ny, nz)))
 
         gxpg = self.gxpg
         npv = np.empty((nz, ny, nx), dtype=self._dtype)

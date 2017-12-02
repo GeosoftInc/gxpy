@@ -6,7 +6,7 @@ import geosoft
 import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.coordinate_system as gxcs
-import geosoft.gxpy.voxset as gxvox
+import geosoft.gxpy.vox as gxvox
 
 from base import GXPYTest
 
@@ -28,7 +28,7 @@ class Test(GXPYTest):
     def test_voxProperties(self):
         self.start()
 
-        with gxvox.Voxset.open(self.vox_file) as vox:
+        with gxvox.Vox.open(self.vox_file) as vox:
             self.assertEqual(vox.name, 'test')
             self.assertEqual(len(vox.x_locations), vox.nx)
             self.assertEqual(len(vox.y_locations), vox.ny)
@@ -42,7 +42,7 @@ class Test(GXPYTest):
     def test_iter(self):
         self.start()
 
-        with gxvox.Voxset.open(self.vox_file) as vox:
+        with gxvox.Vox.open(self.vox_file) as vox:
             valid = 0
             dummy = 0
             sum = 0.
@@ -62,7 +62,7 @@ class Test(GXPYTest):
     def test_value(self):
         self.start()
 
-        with gxvox.Voxset.open(self.vox_file) as vox:
+        with gxvox.Vox.open(self.vox_file) as vox:
             self.assertEqual(vox.value_at_location(vox.xyz(50, 65, 18)), 0.00019816514181249432)
             self.assertEqual(vox.value_at_location((441075.0, 6129425.0, 370.34108924865723)),
                              0.00019816514181249432)
@@ -77,14 +77,14 @@ class Test(GXPYTest):
     def test_np(self):
         self.start()
 
-        with gxvox.Voxset.open(self.vox_file) as vox:
+        with gxvox.Vox.open(self.vox_file) as vox:
             npv = vox.np_subset()
             self.assertEqual(npv.shape, (vox.nz, vox.ny, vox.nx))
             sum = npv[np.isfinite(npv)].sum()
             self.assertAlmostEqual(sum, 45.9709323711)
 
         size = (5, 8, 14)
-        with gxvox.Voxset.open(self.vox_file) as vox:
+        with gxvox.Vox.open(self.vox_file) as vox:
             npv = vox.np_subset(start=(30, 50, 9), dimension=size)
             self.assertEqual(npv.shape, (size[2], size[1], size[0]))
             sum = npv[np.isfinite(npv)].sum()
@@ -93,7 +93,7 @@ class Test(GXPYTest):
     def test_metadata(self):
         self.start()
 
-        with gxvox.Voxset.open(self.vox_file) as vox:
+        with gxvox.Vox.open(self.vox_file) as vox:
             m = vox.metadata
             gm = m['geosoft']
             self.assertTrue('dataset' in gm)
@@ -103,7 +103,7 @@ class Test(GXPYTest):
             vox.metadata = newstuff
             vox.unit_of_measure = 'billy_bob'
 
-        with gxvox.Voxset.open(self.vox_file) as vox:
+        with gxvox.Vox.open(self.vox_file) as vox:
             m = vox.metadata
             maki = m['maki']
             self.assertEqual(maki['b'], ['4', '5', '6'])
@@ -113,7 +113,7 @@ class Test(GXPYTest):
     def test_new(self):
         self.start()
 
-        with gxvox.Voxset.new("test_new", dimension=(35, 50, 12), temp=True) as vox:
+        with gxvox.Vox.new("test_new", dimension=(35, 50, 12), temp=True) as vox:
             self.assertEqual((vox.nx, vox.ny, vox.nz), (35, 50, 12))
             npv = vox.np_subset()
             self.assertEqual(np.sum(npv[np.isfinite(npv)]), 0)
@@ -121,7 +121,7 @@ class Test(GXPYTest):
             self.assertEqual(list(vox.y_locations[0:2]), [0., 1.])
             self.assertEqual(list(vox.z_locations[0:2]), [0., 1.])
 
-        with gxvox.Voxset.new("test_new",
+        with gxvox.Vox.new("test_new",
                               dimension=(35, 50, 12),
                               origin=(1, 2, 3),
                               cell_size=(0.1, 0.2, 10),
@@ -156,7 +156,7 @@ class Test(GXPYTest):
         cy = (10, 10, 10)
         cz = (5, 4, 3, 2)
 
-        with gxvox.Voxset.new("test_new",
+        with gxvox.Vox.new("test_new",
                               origin=(1, 2, 3),
                               cell_size=(cx, cy, cz),
                               temp=True,
@@ -171,9 +171,9 @@ class Test(GXPYTest):
     def test_new_data(self):
         self.start()
 
-        with gxvox.Voxset.open(self.vox_file) as vox:
+        with gxvox.Vox.open(self.vox_file) as vox:
             npv = vox.np_subset()
-            with gxvox.Voxset.new("test_data", data=npv, temp=True,
+            with gxvox.Vox.new("test_data", data=npv, temp=True,
                                   origin=(vox.x0, vox.y0, vox.z0),
                                   cell_size=(vox.x_cells, vox.y_cells, vox.z_cells),
                                   coordinate_system=vox.coordinate_system) as vox_copy:
