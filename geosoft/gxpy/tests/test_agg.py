@@ -1,11 +1,9 @@
 import unittest
 import os
 
-import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.agg as gxagg
 import geosoft.gxpy.grid as gxgrid
-import geosoft.gxpy.utility as gxu
 import geosoft
 
 from base import GXPYTest

@@ -44,6 +44,7 @@ from . import utility as gxu
 from . import view as gxv
 from . import agg as gxagg
 from . import metadata as gxmeta
+from . import vox_display as gxvoxd
 
 __version__ = geosoft.__version__
 
@@ -2097,11 +2098,7 @@ class Color_symbols_group(Group):
 
 class Aggregate_group(Group):
     """
-    Aggregate groups on a map
-    
-    :param view:        :class:`gxpy.view.View` instance
-    :param name:        group name, default uses the aggregate name
-    :param agg:         :class:`gxpy.agg.Aggregate_image` instance
+    Aggregate group in a view
     
     :Constructors:
 
@@ -2135,6 +2132,15 @@ class Aggregate_group(Group):
 
     @classmethod
     def new(cls, view, agg, name=None):
+        """
+        Create a new aggregate group in a view.
+
+        :param view:    `geosoft.gxpy.view.View` or `geosoft.gxpy.view.View_3d` instance
+        :param agg:     `geosoft.gxpy.agg.Aggregate` instance.
+        :param name:    group name, default is the aggregate name
+
+        .. versionadded:: 9.2
+        """
 
         if name is None:
             name = agg.name
@@ -2147,10 +2153,88 @@ class Aggregate_group(Group):
     def open(cls,
              view,
              group_name):
+        """
+        Open an existing aggregate group in a view.
+
+        :param view:        `geosoft.gxpy.view.View` or `geosoft.gxpy.view.View_3d` instance
+        :param group_name:  group name (or number)
+
+        .. versionadded:: 9.2
+        """
         agg_group = cls(view, group_name, mode=READ_ONLY)
-        group_number = view.gxview.find_group(agg_group.name)
+        if isinstance(group_name, int):
+            group_number = group_name
+        else:
+            group_number = view.gxview.find_group(agg_group.name)
         agg_group.agg = gxagg.Aggregate_image.open(view.gxview.get_aggregate(group_number))
         return agg_group
+
+
+class Vox_display_group(Group):
+    """
+    Vox display group in a view.
+
+    :Constructors:
+
+        ======== ==================================
+        `open()` open an existing vox_display group
+        `new()`  create a new vox_display group
+        ======== ==================================
+
+   .. versionadded:: 9.3.1
+    """
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.__del__()
+
+    def __del__(self):
+        if hasattr(self, '_voxd'):
+            self._voxd = None
+
+    def __init__(self, view3d, group_name, mode=NEW):
+
+        self._voxd = None
+        if not view3d.is_3d:
+            raise GroupException(_t('View must be 3d'))
+        super().__init__(view3d, group_name, mode=mode)
+
+    @classmethod
+    def new(cls, view3d, voxd, name=None):
+        """
+        Add a Vox_display as a new group in the view
+
+        :param view3d:  `geosoft.gxpy.view.View_3d` instance
+        :param voxd:    `geosoft.gxpy.vox_display.Vox_display` instance
+        :param name:    group name, default is the voxd name
+
+        .. versionadded:: 9.3.1
+        """
+
+        if name is None:
+            name = voxd.name
+        voxd_group = cls(view3d, name)
+        voxd_group._voxd = voxd
+        view3d.gxview.voxd(voxd.gxvoxd, voxd_group.name)
+        return voxd_group
+
+    @classmethod
+    def open(cls,
+             view,
+             group_name):
+        voxd_group = cls(view, group_name, mode=READ_ONLY)
+        group_number = view.gxview.find_group(voxd_group.name)
+        _voxd = voxd_group.view.get_voxd(group_number)
+        voxd_group._voxd = gxvoxd.Vox_display.open(_voxd)
+        return voxd_group
+
+    @property
+    def voxd(self):
+        """
+        The `geosoft.gxpy.vox_display.Vox_display` for this vox group.
+
+        .. versionadded:: 9.3.1
+        """
+        return self._voxd
 
 class Color_map:
     """

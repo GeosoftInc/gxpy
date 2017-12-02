@@ -15,6 +15,7 @@ __all__ = ['agg',
            'view',
            'viewer',
            'vox',
+           'vox_display',
            'vv']
 
 #: global constants not defined in GXAPI
@@ -36,4 +37,5 @@ from . import view
 from . import group
 from . import viewer
 from . import vox
+from . import vox_display
 from . import metadata

@@ -341,14 +341,15 @@ class Vox:
             'geosoft': {'dataset': {'geo:unitofmeasurement': {'@xmlns:geo': 'http://www.geosoft.com/schema/geo'}}}}
 
     @classmethod
-    def open(cls, name, mode=MODE_READ):
+    def open(cls, name, gxapi_vox=None, mode=MODE_READ):
         """
         Open an existing vox.
 
-        :param name:    name of the vox. If a name only the vox is resolved from the
-                        project. If a file name or complete path, the vox is resolved from
-                        the file system outside of the current project.
-        :param mode:    open mode:
+        :param name:        name of the vox. If a name only the vox is resolved from the
+                            project. If a file name or complete path, the vox is resolved from
+                            the file system outside of the current project.
+        :param gxapi_vox:   `gxapi.GXVOX` instance. Normally not required.
+        :param mode:        open mode:
 
             =================  ==================================================
             MODE_READ          only read the vox, properties cannot be changed
@@ -360,7 +361,9 @@ class Vox:
         .. versionadded:: 9.3.1
         """
 
-        vox = cls(name, gxapi.GXVOX.create(_vox_file_name(name)))
+        if gxapi_vox is None:
+            gxapi_vox = gxapi.GXVOX.create(_vox_file_name(name))
+        vox = cls(name, gxapi_vox)
 
         if mode is None:
             mode = MODE_READ
