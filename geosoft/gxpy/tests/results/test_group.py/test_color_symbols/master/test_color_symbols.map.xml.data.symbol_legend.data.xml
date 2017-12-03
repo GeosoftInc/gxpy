@@ -232,12 +232,12 @@
    <Item type="LineColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
    </Item>
-   <Item type="Text" size="23">
+   <Item type="Text" size="25">
       <Item name="Point" type="D2POINT">
          <Value name="X" value="5.9"/>
          <Value name="Y" value="5.4"/>
       </Item>
-      <Item name="UTF-8 Text" value="0.0"/>
+      <Item name="UTF-8 Text" value="0.000"/>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
@@ -249,12 +249,12 @@
          <Value name="Y" value="5.4"/>
       </Item>
    </Item>
-   <Item type="Text" size="23">
+   <Item type="Text" size="25">
       <Item name="Point" type="D2POINT">
          <Value name="X" value="5.9"/>
          <Value name="Y" value="5.8"/>
       </Item>
-      <Item name="UTF-8 Text" value="1.0"/>
+      <Item name="UTF-8 Text" value="1.000"/>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
@@ -266,12 +266,12 @@
          <Value name="Y" value="5.8"/>
       </Item>
    </Item>
-   <Item type="Text" size="23">
+   <Item type="Text" size="25">
       <Item name="Point" type="D2POINT">
          <Value name="X" value="5.9"/>
          <Value name="Y" value="6.2"/>
       </Item>
-      <Item name="UTF-8 Text" value="2.0"/>
+      <Item name="UTF-8 Text" value="2.000"/>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
@@ -283,12 +283,12 @@
          <Value name="Y" value="6.2"/>
       </Item>
    </Item>
-   <Item type="Text" size="23">
+   <Item type="Text" size="25">
       <Item name="Point" type="D2POINT">
          <Value name="X" value="5.9"/>
          <Value name="Y" value="6.6"/>
       </Item>
-      <Item name="UTF-8 Text" value="3.0"/>
+      <Item name="UTF-8 Text" value="3.000"/>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
@@ -300,12 +300,12 @@
          <Value name="Y" value="6.6"/>
       </Item>
    </Item>
-   <Item type="Text" size="23">
+   <Item type="Text" size="25">
       <Item name="Point" type="D2POINT">
          <Value name="X" value="5.9"/>
          <Value name="Y" value="7"/>
       </Item>
-      <Item name="UTF-8 Text" value="4.0"/>
+      <Item name="UTF-8 Text" value="4.000"/>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
@@ -317,12 +317,12 @@
          <Value name="Y" value="7"/>
       </Item>
    </Item>
-   <Item type="Text" size="23">
+   <Item type="Text" size="25">
       <Item name="Point" type="D2POINT">
          <Value name="X" value="5.9"/>
          <Value name="Y" value="7.4"/>
       </Item>
-      <Item name="UTF-8 Text" value="5.0"/>
+      <Item name="UTF-8 Text" value="5.000"/>
    </Item>
    <Item type="Line" size="32">
       <Item name="From" type="D2POINT">
@@ -368,7 +368,7 @@
    </Item>
    <Item type="Text" size="24">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="5.69826"/>
+         <Value name="X" value="5.859386"/>
          <Value name="Y" value="4.85"/>
       </Item>
       <Item name="UTF-8 Text" value="mark"/>

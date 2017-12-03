@@ -19,7 +19,7 @@
    <Item name="Extents" type="D2AREA">
       <Value name="MinX" value="5"/>
       <Value name="MinY" value="4.451219816"/>
-      <Value name="MaxX" value="6.39652"/>
+      <Value name="MaxX" value="6.718772"/>
       <Value name="MaxY" value="7.8"/>
    </Item>
    <Item name="Matrix" type="D4MATRIX">

@@ -651,7 +651,7 @@ class View_3d(View):
     3D views also contain 2D drawing planes on which :class:`geosoft.gxpy.group.Draw` groups are placed.
     A default horizontal plane at elevation 0, named 'plane_0' is created when a new 3d view is created.
     
-    Planes are flat by default, but can be provided a grid that defines the plane surface relief,
+    Planes are horizontal and flat by default, but can be provided a grid that defines the plane surface relief,
     which is intended for creating things like terrain surfaces on which 2d graphics are rendered.
     
     Planes can also be oriented within the 3D space to create sections, or for other more esoteric
@@ -692,7 +692,7 @@ class View_3d(View):
         """
 
         if file_name is None:
-            file_name = gx.GXpy().temp_file('geosoft_3dv')
+            file_name = gx.GXpy().temp_file('.geosoft_3dv')
         else:
             file_name = geosoft.gxpy.map.map_file_name(file_name, 'geosoft_3dv')
 
@@ -819,6 +819,18 @@ class View_3d(View):
                 return plane_number
         else:
             return None
+
+    def delete_plane(self, plane):
+        """
+        Delete a plane, and all content
+
+        :param plane: plane number or plane name
+
+        .. versionadded:: 9.3.1
+        """
+        if isinstance(plane, str):
+            plane = self.plane_number(plane)
+        self.gxview.delete_plane(plane, True)
 
     def has_plane(self, plane):
         """

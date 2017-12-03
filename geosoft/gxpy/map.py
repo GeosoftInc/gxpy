@@ -502,10 +502,10 @@ class Map:
     @property
     def current_data_view(self):
         """ 
-        Current default data view which accepts drawing groups from Geosoft methods that do not
+        Name of the current default data view which accepts drawing groups from Geosoft methods that do not
         explicitly identify a view.
 
-        Set this to a view that should accept default drawing groups.
+        Set this to a view name that should accept default drawing groups.
 
         If this is a 3D view, new 2D groups are placed on the default drawing plane of the view.
         """
@@ -520,7 +520,7 @@ class Map:
     @property
     def current_base_view(self):
         """ 
-        The current default base view which accepts map annotation drawing groups 
+        Name of the current default base view which accepts map annotation drawing groups
         (like titles, North arrow, etc.) from Geosoft methods.
 
         This can be set, though Geosoft uses the 'base' view in most standard cases.
@@ -536,7 +536,7 @@ class Map:
     @property
     def current_section_view(self):
         """
-        The current default section view which accepts drawing commands to a section
+        Name of the current default section view which accepts drawing commands to a section
         from Geosoft methods.
 
         Can be set.

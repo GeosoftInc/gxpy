@@ -718,6 +718,11 @@ class Grid:
         return -self._img.query_double(gxapi.IMG_QUERY_rROT)
 
     @property
+    def is_color(self):
+        """ returns True if grid contains colors. is_int will also be True"""
+        return bool(self._img.is_colour())
+
+    @property
     def file_name(self):
         """
         grid file name without decorations
@@ -809,6 +814,7 @@ class Grid:
         properties['dx'] = self.dx
         properties['dy'] = self.dy
         properties['rot'] = self.rot
+        properties['is_color'] = self.is_color
         properties['dtype'] = self.dtype
         properties['file_name'] = self.file_name
         properties['gridtype'] = self.gridtype
@@ -933,7 +939,7 @@ class Grid:
         if column >= self.nx:
             raise GridException(_t('Attempt to read column {} past the last column {}'.format(column, self.ny)))
         self._next_col = column + 1
-        vv = gxvv.GXvv()
+        vv = gxvv.GXvv(dtype=self._dtype)
         self._img.read_x(column, start, length, vv.gxvv)
 
         return vv
@@ -1011,13 +1017,20 @@ class Grid:
 
         nx = self.nx
         ny = self.ny
-        data = np.zeros((ny, nx), dtype=self.dtype)
+        if self.is_color:
+            data = np.zeros((ny, nx, 4), np.dtype(np.byte))
+        else:
+            data = np.zeros((ny, nx), dtype=self._dtype)
         if self.gximg.query_kx() == -1:
             for i in range(self.nx):
-                data[:, i] = self.read_column(i).np
+                column = self.read_column(i).np
+                #if self.is_color:
+                #    column
+                data[:, i] = column
         else:
             for i in range(self.ny):
-                data[i, :] = self.read_row(i).np
+                row = self.read_row(i).np
+                data[i, :] = row
 
         return data
 
@@ -1105,6 +1118,19 @@ class Grid:
             gx, gy, gz = self.coordinate_system.xyz_from_oriented((gx, gy, gz))
 
         return gx, gy, gz
+
+    def arcpy_save_raster(self, out_raster): 
+        import arcpy
+        data_np = np.flipud(self.np()) # Geosoft convention starts with lower left origin
+        new_raster = arcpy.NumPyArrayToRaster(data_np,
+                                              value_to_nodata=self.dummy_value,
+                                              lower_left_corner=arcpy.Point(self.x0, self.y0),
+                                              x_cell_size=self.dx, y_cell_size=self.dy)
+        new_raster.save(out_raster)
+        if self.coordinate_system.is_known:
+            sr = arcpy.SpatialReference()
+            sr.loadFromString(self.coordinate_system.esri_wkt)
+            arcpy.DefineProjection_management(out_raster, sr)
 
 # grid utilities
 def array_locations(properties):
@@ -1315,4 +1341,5 @@ def figure_map(grid_file, map_file=None, shade=True, color_map=None, contour=Non
 
     with gxagg.Aggregate_image.new(grid_file, shade=shade, color_map=color_map, contour=contour) as agg:
         return agg.figure_map(file_name=map_file, **kwargs)
+
 

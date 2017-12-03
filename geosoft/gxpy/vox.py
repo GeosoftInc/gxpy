@@ -348,7 +348,7 @@ class Vox:
         :param name:        name of the vox. If a name only the vox is resolved from the
                             project. If a file name or complete path, the vox is resolved from
                             the file system outside of the current project.
-        :param gxapi_vox:   `gxapi.GXVOX` instance. Normally not required.
+        :param gxapi_vox:   `gxapi.GXVOX` instance to create from GXVOX instance.
         :param mode:        open mode:
 
             =================  ==================================================

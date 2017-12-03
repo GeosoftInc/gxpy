@@ -6,6 +6,7 @@ import geosoft.gxpy.system as gsys
 import geosoft.gxpy.vox as gxvox
 import geosoft.gxpy.vox_display as gxvoxd
 import geosoft.gxpy.viewer as gxviewer
+import geosoft.gxpy.map as gxmap
 
 from base import GXPYTest
 
@@ -39,14 +40,16 @@ class Test(GXPYTest):
                 voxd.shell_limits = (0.00002, 0.00003)
                 self.assertEqual(voxd.shell_limits, (0.00002, 0.00003))
 
-    def test_figure_view(self):
+    def test_figure_map(self):
         self.start()
 
         with gxvox.Vox.open(self.vox_file) as vox:
-             with gxvoxd.Vox_display.new(vox) as voxd:
-                 v3d_file = voxd.figure_view_file()
-                 gxviewer.view_document(v3d_file)
-                 #self.crc_map(v3d_file)
+            vox.unit_of_measure = 'SI Susc'
+            with gxvoxd.Vox_display.new(vox) as voxd:
+                voxd.shell_limits = (0.0001, None)
+                fig_map = voxd.figure_map(title="My Test Vox").file_name
+        #self.crc_map(fig_map)
+        self.assertEqual(gxmap.Map.open(fig_map).crc_image(pix_width=800), 1419295652)
 
 if __name__ == '__main__':
 

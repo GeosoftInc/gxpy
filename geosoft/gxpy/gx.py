@@ -588,7 +588,7 @@ class GXpy(_Singleton):
                 warning_file = os.path.join(self._temp_file_folder, GX_WARNING_FILE)
                 with open(warning_file, 'w') as active:
                     active.write('This Geosoft temporary folder may be in use.\n')
-                    active.write('Modifying or deleting content may may cause a dependant process to fail.')
+                    active.write('Modifying or deleting content may cause a dependant process to fail.')
             except OSError:
                 self._temp_file_folder = path
                 self._keep_temp_files = True
@@ -610,12 +610,14 @@ class GXpy(_Singleton):
         Return a unique temporary file name as a full path.  The temporary file is created in
         the instance temporary folder and will be deleted when this GXpy instance is deleted.
 
-        :param ext: optional extension, including "." separator
+        :param ext: optional extension
         :returns:   uuid-based file name in the instance temporary folder.
 
         .. versionadded:: 9.2
         """
 
+        if ext and ext[0] != '.':
+            ext = '.' + ext
         return os.path.join(self.temp_folder(), gxu.uuid() + ext)
 
     def environment(self, formated_indent=-1):

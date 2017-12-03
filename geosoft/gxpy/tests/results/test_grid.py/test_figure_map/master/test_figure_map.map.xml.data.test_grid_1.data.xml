@@ -24,7 +24,7 @@
                                  <Item name="REG" type="REG">
                                     <REG>
                                        <Attributes>
-                                          <Item name="FILE" value="tests\results\test_grid.py\__tmp__\_gx_uuid_test_grid.py_1\uuid_test_figure_map_1.tbl"/>
+                                          <Item name="FILE" value="uuid_test_figure_map_1.tbl"/>
                                        </Attributes>
                                     </REG>
                                  </Item>
