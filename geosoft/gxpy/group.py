@@ -1212,7 +1212,7 @@ def legend_color_bar(view,
                      cmap2=None,
                      bar_location=COLOR_BAR_RIGHT,
                      location=None,
-                     decimals=1,
+                     decimals=None,
                      annotation_height=0.2,
                      annotation_offset=None,
                      annotation_side=COLOR_BAR_ANNOTATE_RIGHT,
@@ -1276,6 +1276,22 @@ def legend_color_bar(view,
     # ensure group name is unique in the view
     while group_name in view.group_list:
         group_name += '_'
+
+    # default decimals
+    if decimals is None:
+        decimals = 1
+        minz = maxz = cmap.color_map[0][0]
+        for c in cmap.color_map:
+            z = c[0]
+            if z:
+                if z < minz:
+                    minz = z
+                elif z > maxz:
+                    maxz = z
+        range = maxz - minz
+        while range < 100:
+            range *= 10.
+            decimals += 1
 
     itr = cmap.gxitr
     with Draw(view, group_name) as g:
