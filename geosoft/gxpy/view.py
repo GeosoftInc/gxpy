@@ -891,7 +891,6 @@ class View_3d(View):
         if isinstance(plane, str):
             plane = self.plane_number(plane)
         try:
-            self.gxview.delete_plane(plane, True)
         except gxapi.GXError:
             pass
 
