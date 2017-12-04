@@ -7,7 +7,7 @@ Geosoft voxel (voxset) handling.
     :class:`Vox` Geosoft voxel (voxset)
     ============ =======================================================
 
-.. seealso:: :class:`geosoft.gxapi.GXIMG`, :class:`geosoft.gxapi.GXIMU`
+.. seealso:: `geosoft.gxpy.vox_display`, `geosoft.gxapi.GXVOX`
 
 .. note::
 
@@ -35,8 +35,6 @@ def _t(s):
 class VoxException(Exception):
     """
     Exceptions from :mod:`geosoft.gxpy.vox`.
-
-    .. versionadded:: 9.1
     """
     pass
 
@@ -56,11 +54,11 @@ INTERP_SMOOTH = gxapi.VOXE_EVAL_BEST #:
 
 def delete_files(vox_name):
     """
-    Delete all files associates with this vox name.
+    Delete all files associated with this vox name.
 
     :param vox_name: name of the vox file
 
-    .. versionadded:: 9.3
+    .. versionadded:: 9.3.1
     """
 
     def df(fn):
@@ -138,7 +136,6 @@ class Vox:
         ======================= ============================================
         :meth:`open`            open an existing vox
         :meth:`new`             create a new vox
-        :meth:`from_data_array` create a new vox from a 2d data array
         ======================= ============================================
 
     A vox instance supports iteration that yields (x, y, z, vox_value) by points along horizontal
@@ -149,7 +146,7 @@ class Vox:
 
         import geosoft.gxpy.vox as gxvox
 
-        with gxvox.Vox.open('some.geosoft_voxel') ad g:
+        with gxvox.Vox.open('some.geosoft_voxel') as g:
             for x, y, z, v in g:
                 if v is not None:
                     print(x, y, z, v)
@@ -216,7 +213,7 @@ class Vox:
     def __str__(self):
         return self.name
 
-    def __init__(self, name=None, gxvox=None):
+    def __init__(self, name=None, gxvox=None, dtype=None):
 
         self._file_name = _vox_file_name(name)
         self._name = _vox_name(self._file_name)
@@ -243,8 +240,12 @@ class Vox:
         ny = gxapi.int_ref()
         nz = gxapi.int_ref()
         self._gxvox.get_info(ityp, iarr, nx, ny, nz)
-        self._dtype = gxu.dtype_gx(ityp.value)
-        self._is_int = gxu.is_int(ityp.value)
+        self._intrinsic_dtype = gxu.dtype_gx(ityp.value)
+        if dtype is None:
+            self._dtype = self._intrinsic_dtype
+        else:
+            self._dtype = dtype
+        self._return_int = gxu.is_int(gxu.gx_dtype(self._dtype))
         self._dim = (nx.value, ny.value, nz.value)
         self._max_iter = nx.value * ny.value * nz.value
 
@@ -284,11 +285,11 @@ class Vox:
             vv = gxvv.GXvv(dtype=self._dtype)
             self.gxpg.read_row_3d(iz, iy, 0, self._dim[0], vv.gxvv)
             self._buffer_np = vv.np
-            if not self._is_int:
+            if not self._return_int:
                 gxu.dummy_to_nan(self._buffer_np)
 
         v = self._buffer_np[ix]
-        if self._is_int:
+        if self._return_int:
             v = int(v)
             if v == gxapi.iDUMMY:
                 v = None
@@ -341,7 +342,7 @@ class Vox:
             'geosoft': {'dataset': {'geo:unitofmeasurement': {'@xmlns:geo': 'http://www.geosoft.com/schema/geo'}}}}
 
     @classmethod
-    def open(cls, name, gxapi_vox=None, mode=MODE_READ):
+    def open(cls, name, gxapi_vox=None, dtype=None, mode=MODE_READ):
         """
         Open an existing vox.
 
@@ -349,6 +350,8 @@ class Vox:
                             project. If a file name or complete path, the vox is resolved from
                             the file system outside of the current project.
         :param gxapi_vox:   `gxapi.GXVOX` instance to create from GXVOX instance.
+        :param dtype:       working dtype for retrieving data, which can be different from the
+                            intrinsic data dtype. The default is the intrinsic data type.
         :param mode:        open mode:
 
             =================  ==================================================
@@ -363,7 +366,7 @@ class Vox:
 
         if gxapi_vox is None:
             gxapi_vox = gxapi.GXVOX.create(_vox_file_name(name))
-        vox = cls(name, gxapi_vox)
+        vox = cls(name, gxapi_vox, dtype= dtype)
 
         if mode is None:
             mode = MODE_READ
@@ -376,27 +379,32 @@ class Vox:
 
     @classmethod
     def new(cls, name, data=None, dimension=None, temp=False, overwrite=False, dtype=None,
-            origin=(0., 0., 0.), cell_size=(1., 1., 1.), init_value=None, coordinate_system=None):
+            origin=(0., 0., 0.), cell_size=None, variable_cell_size=None,
+            init_value=None, coordinate_system=None):
         """
         Create a new vox dataset
 
-        :param name:        dataset name, or a path to a persistent file.
+        :param name:        dataset name, or a path to a persistent file. A file with extension `.geosoft_voxel`
+                            will be created for vox instances that will persist (`temp=True`).
         :param data:        data to place in the vox, must have 3 dimensions (nz, ny, nx). If not
-                            specified the vox is initialized to dummy values.
-        :param dimension:   required dimension, data and/or cell-sizes take precedence
+                            specified the vox is initialized to dummy values. Note that data arrays are indexec
+                            (z, y, x).
+        :param dimension:   vox dimension if not providing `data=` or  `variable_cell_size=` as arrays.
         :param temp:        True to create a temporary vox which will be removed after use
         :param overwrite:   True to overwrite existing persistent vox
-        :param dtype:       data type, default is the same as data, or np.float64
+        :param dtype:       data type, default is the same as data, or np.float64 of no data.
         :param origin:      (x0, y0, z0) location of the origin vox point. Note that this is not the corner
                             of a cell. This is the center of the first cell for a uniform cell size, or the
                             reference position of the first vox cell accounting for variable cell sizes.
-        :param cell_size:   uniform cell size, or (dx, dy, dz) cell sizes in the x, y and z directions,
-                            or a arrays of cell sizes for variable cell-size vox.  For example:
+        :param cell_size:   uniform cell size, or (dx, dy, dz) cell sizes in the x, y and z directions. The
+                            default is (1., 1., 1.).
+        :param variable_cell_size:  tuple (vx, vy, vz) where each element is an array of the cell sizes for
+                            a variable cell-size vox.  Each array defines the dimension of the vox and must match
+                            the data, if data is also provided. For example:
                             `cell_size=((1, 2.5, 1.5), (1, 1, 1, 1), (5, 4, 3, 2, 1))` will create a vox
                             with (x, y, z) dimension (3, 4, 5) and sizes as specified in each dimension.
         :param init_value:  initial value, default is the dummy for the dtype.
         :param coordinate_system:   coordinate system as required to create from `geosoft.gxpy.Coordinate_system`
-        :returns:           `Vox` instance
 
         .. versionadded:: 9.3.1
         """
@@ -415,13 +423,23 @@ class Vox:
             if data.ndim != 3:
                 raise VoxException(_t('Data must have 3 dimensions, this data has {} dimensions').format(data.ndim))
             dimension = (data.shape[2], data.shape[1], data.shape[0])
-            dtype = data.dtype
+            if dtype is None:
+                dtype = data.dtype
+
+        if cell_size and variable_cell_size:
+            raise VoxException(_t('Cannot define both cell_size and variable_cell_size.'))
+        if variable_cell_size:
+            cell_size = variable_cell_size
+        if cell_size is None:
+            cell_size = (1., 1., 1.)
+        elif isinstance(cell_size, int):
+            cell_size = (cell_size, cell_size, cell_size)
 
         if (dimension is None):
             if ((not hasattr(cell_size[0], '__iter__')) or
                     (not hasattr(cell_size[1], '__iter__')) or
                     (not hasattr(cell_size[2], '__iter__'))):
-                raise VoxException(_t('unable to determine vox dimension'))
+                raise VoxException(_t('Unable to determine vox dimension - need data or variable_cell_size'))
             dimension = (len(cell_size[0]), len(cell_size[1]), len(cell_size[2]))
 
         dvv = list(cell_size)
@@ -431,6 +449,12 @@ class Vox:
             else:
                 dvv[i] = np.zeros((dimension[i],)) + dvv[i]
                 dvv[i] = gxvv.GXvv(dvv[i], dtype=np.float64)
+
+        # dimensions must match
+        vdim = (dvv[0].length, dvv[1].length, dvv[2].length)
+        if dimension != vdim:
+            raise VoxException(_t('Vox dimension {} and variable_cell_size dimensions {} do not match'
+                                  ).format(dimension, vdim))
 
         if dtype is None:
             dtype = np.float64
@@ -494,6 +518,16 @@ class Vox:
         return self._gxvox
 
     @property
+    def dtype(self):
+        """Working dtype for the data."""
+        return self._dtype
+
+    @property
+    def intrinsic_dtype(self):
+        """Working intrinsic dtype for the data."""
+        return self._intrinsic_dtype
+
+    @property
     def nx(self):
         """ number of points in vox X direction"""
         return self._dim[0]
@@ -510,21 +544,21 @@ class Vox:
 
     @property
     def dx(self):
-        """constant X point separation, None if not constant"""
+        """constant X point separation, None if not constant, in which case use `cells_x`"""
         if self._uniform_cell_size[0] == gxapi.rDUMMY:
             return None
         return self._uniform_cell_size[0]
 
     @property
     def dy(self):
-        """constant Y point separation, None if not constant"""
+        """constant Y point separation, None if not constant, in which case use `cells_y`"""
         if self._uniform_cell_size[1] == gxapi.rDUMMY:
             return None
-        return self._uniform_cell_size[0]
+        return self._uniform_cell_size[1]
 
     @property
     def dz(self):
-        """constant Z point separation, None if not constant"""
+        """constant Z point separation, None if not constant, in which case use `cells_z`"""
         if self._uniform_cell_size[2] == gxapi.rDUMMY:
             return None
         return self._uniform_cell_size[2]
@@ -561,6 +595,7 @@ class Vox:
 
     @property
     def extent(self):
+        """ (min_x, min_y, min_z, max_x, max_y, max_z) extent to the outer-cell edges of the vox."""
         rx0 = gxapi.float_ref()
         ry0 = gxapi.float_ref()
         rz0 = gxapi.float_ref()
@@ -573,12 +608,14 @@ class Vox:
 
     @property
     def extent_2d(self):
+        """ Horizontal (min_x, min_y, max_x, max_y) extent to the outer-cell edges of the vox."""
         ex = self.extent
         return (ex[0], ex[1], ex[3], ex[4])
 
     @property
     def coordinate_system(self):
-        """coordinate system"""
+        """coordinate system as a `geosoft.gxpy.coordinate_system.Coordinate_system` instance. Can be set using
+        any constructor supported by `geosoft.gxpy.coordinate_system.Coordinate_system`."""
         ipj = gxapi.GXIPJ.create()
         self.gxvox.get_ipj(ipj)
         return gxcs.Coordinate_system(ipj)
@@ -631,21 +668,21 @@ class Vox:
         return self._locations[2]
 
     @property
-    def x_cells(self):
+    def cells_x(self):
         """Return array of X cell sizes"""
         if self._cells is None:
             self._setup_locations()
         return self._cells[0]
 
     @property
-    def y_cells(self):
+    def cells_y(self):
         """Return array of Y cell sizes"""
         if self._cells is None:
             self._setup_locations()
         return self._cells[1]
 
     @property
-    def z_cells(self):
+    def cells_z(self):
         """Return array of Z cell sizes"""
         if self._cells is None:
             self._setup_locations()
@@ -653,6 +690,7 @@ class Vox:
 
     @property
     def gxpg(self):
+        """`geosoft.gxapi.GXPG` instance (3D) for this vox"""
         if self._pg is None:
             self._pg = self.gxvox.create_pg()
         return self._pg
@@ -706,31 +744,74 @@ class Vox:
             return None
         return v
 
-    def np_subset(self, start=(0, 0, 0), dimension=None):
+    def np(self, subset=None, dtype=None):
         """
         Return vox subset in a 3D numpy array.
+
+        :param subset:  define a subset ((start_x, start_y, start_z),(nx, ny, nz)). If not specified
+                        a numpy array of the entire voxset is returned. Missing items are calculated from the vox,
+                        and negative indexes in start indicate a value from the last point.
+
+                        start=(None, None) equivalent: start=((0, 0, 0), (nx, ny, nz))
+
+                        start=((4, 6, 11), None) equivalent: start=((4, 6, 11), (nx - 4, ny - 6, nz - 11))
+
+                        start=((4, 6, 11), (None, None, 1) equivalent: start=((4, 6, 11), (nx - 4, ny - 6, 1))
+
+                        start=((0, 0, -1), None equivalent: start=((0, 0, nx - 1), (nx, ny, 1))
 
         :return: numpy array of shape (nz, ny, nx)
 
         .. versionadded:: 9.3.1
         """
 
+        def set_0(n, nn):
+            if n is None:
+                return 0
+            if n < 0:
+                nr = nn + n
+            else:
+                nr = n
+            if nr < 0 or nr >= nn:
+                raise VoxException(_t("Invalid start ({}) for axis dimension ({})").format(n, nn))
+            return nr
+
+        def set_d(o, n, nn):
+            if n is None:
+                return nn - o
+            return n
+
+        if subset:
+            start, dimension = subset
+        else:
+            start = (0, 0, 0)
+            dimension = None
+
+        # start
+        if start is None:
+            x0 = y0 = z0 = 0
+        else:
+            x0, y0, z0 = start
+            x0 = set_0(x0, self.nx)
+            y0 = set_0(y0, self.ny)
+            z0 = set_0(z0, self.nz)
+
         # dimensions
-        x0, y0, z0 = start
-        self._checkindex(x0, y0, z0)
         if dimension is None:
             nx = self.nx - x0
             ny = self.ny - y0
             nz = self.nz - z0
         else:
             nx, ny, nz = dimension
-            self._checkindex(x0 + nx - 1, y0 + ny - 1, z0 + nz - 1)
-        if nx < 0 or ny < 0 or nz < 0:
-            raise VoxException(_t("Subset dimension {} invalid, require positive non-zero dimension").format((nx, ny, nz)))
+            nx = set_d(x0, nx, self.nx)
+            ny = set_d(y0, ny, self.ny)
+            nz = set_d(z0, nz, self.nz)
 
         gxpg = self.gxpg
-        npv = np.empty((nz, ny, nx), dtype=self._dtype)
-        vv = gxvv.GXvv(dtype=self._dtype)
+        if dtype is None:
+            dtype = self._dtype
+        npv = np.empty((nz, ny, nx), dtype=dtype)
+        vv = gxvv.GXvv(dtype=dtype)
         vv.length = nx
 
         for iz in range(z0, z0 + nz):

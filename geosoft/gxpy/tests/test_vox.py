@@ -46,10 +46,10 @@ class Test(GXPYTest):
             valid = 0
             dummy = 0
             sum = 0.
-            for xyzv in vox:
-                if xyzv[3] is not None:
+            for x, y, z, v in vox:
+                if v is not None:
                     valid += 1
-                    sum += xyzv[3]
+                    sum += v
                 else:
                     dummy += 1
 
@@ -58,6 +58,35 @@ class Test(GXPYTest):
 
             self.assertEqual(vox[50, 65, 18], (441075.0, 6129425.0, 370.34108924865723, 0.00019816514181249432))
             self.assertEqual(vox[0, 0, 0], (vox.x0, vox.y0, vox.z0, None))
+
+        with gxvox.Vox.open(self.vox_file, dtype=np.int) as vox:
+            valid = 0
+            dummy = 0
+            sum = 0.
+            for x, y, z, v in vox:
+                if v is not None:
+                    valid += 1
+                    sum += v
+                else:
+                    dummy += 1
+
+            self.assertAlmostEqual(sum, 0)
+            self.assertEqual(valid + dummy, vox.nx * vox.ny * vox.nz)
+
+            self.assertEqual(vox[50, 65, 18], (441075.0, 6129425.0, 370.34108924865723, 0.0))
+            self.assertEqual(vox[0, 0, 0], (vox.x0, vox.y0, vox.z0, None))
+
+            data = vox.np()
+            self.assertEqual(data.dtype, np.int)
+
+            data = vox.np(dtype=np.float64)
+            self.assertEqual(data.dtype, np.float64)
+
+        data = gxvox.Vox.open(self.vox_file, dtype=np.int).np(dtype=np.float64)
+        self.assertEqual(data.dtype, np.float64)
+        data = gxvox.Vox.open(self.vox_file, dtype=np.float64).np(dtype=np.int)
+        self.assertEqual(data.dtype, np.int)
+
 
     def test_value(self):
         self.start()
@@ -78,17 +107,35 @@ class Test(GXPYTest):
         self.start()
 
         with gxvox.Vox.open(self.vox_file) as vox:
-            npv = vox.np_subset()
+            npv = vox.np()
             self.assertEqual(npv.shape, (vox.nz, vox.ny, vox.nx))
             sum = npv[np.isfinite(npv)].sum()
             self.assertAlmostEqual(sum, 45.9709323711)
 
         size = (5, 8, 14)
         with gxvox.Vox.open(self.vox_file) as vox:
-            npv = vox.np_subset(start=(30, 50, 9), dimension=size)
+            npv = vox.np(subset=((30, 50, 9), size))
             self.assertEqual(npv.shape, (size[2], size[1], size[0]))
             sum = npv[np.isfinite(npv)].sum()
             self.assertAlmostEqual(sum, 0.56577674920814858)
+
+        with gxvox.Vox.open(self.vox_file) as vox:
+            npv = vox.np(subset=(None, (2, 3, 4)))
+            self.assertEqual(npv.shape, (4, 3, 2))
+            sum = npv[np.isfinite(npv)].sum()
+            self.assertAlmostEqual(sum, 0.0)
+
+        with gxvox.Vox.open(self.vox_file) as vox:
+            npv = vox.np(subset=((None, None, -3), (None, None, 1)))
+            self.assertEqual(npv.shape, (1, vox.ny, vox.nx))
+            sum = npv[np.isfinite(npv)].sum()
+            self.assertAlmostEqual(sum, 1.00971206805)
+
+        with gxvox.Vox.open(self.vox_file) as vox:
+            npv = vox.np(subset=((None, None, -1), (None, None, 1)))
+            self.assertEqual(npv.shape, (1, vox.ny, vox.nx))
+            sum = npv[np.isfinite(npv)].sum()
+            self.assertAlmostEqual(sum, 0.01212498417)
 
     def test_metadata(self):
         self.start()
@@ -115,7 +162,7 @@ class Test(GXPYTest):
 
         with gxvox.Vox.new("test_new", dimension=(35, 50, 12), temp=True) as vox:
             self.assertEqual((vox.nx, vox.ny, vox.nz), (35, 50, 12))
-            npv = vox.np_subset()
+            npv = vox.np()
             self.assertEqual(np.sum(npv[np.isfinite(npv)]), 0)
             self.assertEqual(list(vox.x_locations[0:2]), [0., 1.])
             self.assertEqual(list(vox.y_locations[0:2]), [0., 1.])
@@ -128,7 +175,7 @@ class Test(GXPYTest):
                               temp=True,
                               init_value=1) as vox:
             self.assertEqual((vox.nx, vox.ny, vox.nz), (35, 50, 12))
-            npv = vox.np_subset()
+            npv = vox.np()
             self.assertEqual(np.sum(npv[np.isfinite(npv)]), vox.nx * vox.ny * vox.nz)
             self.assertEqual(list(vox.x_locations[0:2]), [1., 1.1])
             self.assertEqual(list(vox.y_locations[0:2]), [2., 2.2])
@@ -158,30 +205,33 @@ class Test(GXPYTest):
 
         with gxvox.Vox.new("test_new",
                               origin=(1, 2, 3),
-                              cell_size=(cx, cy, cz),
+                              variable_cell_size=(cx, cy, cz),
                               temp=True,
                               init_value=1) as vox:
             self.assertEqual((vox.nx, vox.ny, vox.nz), (5, 3, 4))
-            npv = vox.np_subset()
+            npv = vox.np()
             self.assertEqual(np.sum(npv[np.isfinite(npv)]), vox.nx * vox.ny * vox.nz)
             self.assertEqual(list(vox.x_locations), [1.0, 2.5, 5.0, 7.5, 9.0])
             self.assertEqual(list(vox.y_locations), [2.0, 12.0, 22.0])
             self.assertEqual(list(vox.z_locations), [3.0, 7.5, 11.0, 13.5])
 
+        self.assertRaises(gxvox.VoxException, gxvox.Vox.new, "test", cell_size=1, variable_cell_size=(cx, cy, cz))
+        self.assertRaises(gxvox.VoxException, gxvox.Vox.new, "test",
+                          data=np.zeros((2,3,15)), variable_cell_size=(cx, cy, cz))
+
     def test_new_data(self):
         self.start()
 
         with gxvox.Vox.open(self.vox_file) as vox:
-            npv = vox.np_subset()
+            npv = vox.np()
             with gxvox.Vox.new("test_data", data=npv, temp=True,
                                   origin=(vox.x0, vox.y0, vox.z0),
-                                  cell_size=(vox.x_cells, vox.y_cells, vox.z_cells),
+                                  cell_size=(vox.cells_x, vox.cells_y, vox.cells_z),
                                   coordinate_system=vox.coordinate_system) as vox_copy:
-                npv = vox_copy.np_subset()
+                npv = vox_copy.np()
                 self.assertEqual(npv.shape, (vox.nz, vox.ny, vox.nx))
                 sum = npv[np.isfinite(npv)].sum()
                 self.assertAlmostEqual(sum, 45.9709323711)
-
 
 ###############################################################################################
 
