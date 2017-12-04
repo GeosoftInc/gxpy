@@ -30,10 +30,10 @@ class Test(GXPYTest):
 
         with gxvox.Vox.open(self.vox_file) as vox:
             self.assertEqual(vox.name, 'test')
-            self.assertEqual(len(vox.x_locations), vox.nx)
-            self.assertEqual(len(vox.y_locations), vox.ny)
-            self.assertEqual(len(vox.z_locations), vox.nz)
-            self.assertEqual(vox.xyz(0, 0, 0), (vox.x0, vox.y0, vox.z0))
+            self.assertEqual(len(vox.locations_x), vox.nx)
+            self.assertEqual(len(vox.locations_y), vox.ny)
+            self.assertEqual(len(vox.locations_z), vox.nz)
+            self.assertEqual(vox.xyz(0, 0, 0), (vox.origin_x, vox.origin_y, vox.origin_z))
             self.assertEqual(vox.extent, (438550.0, 6126150.0, -1022.3323879241943, 441500.0, 6129500.0, 575.0))
             self.assertEqual(vox.extent_2d, (438550.0, 6126150.0, 441500.0, 6129500.0))
             self.assertEqual((vox.nx, vox.ny, vox.nz), (59, 67, 26))
@@ -57,7 +57,7 @@ class Test(GXPYTest):
             self.assertEqual(valid + dummy, vox.nx * vox.ny * vox.nz)
 
             self.assertEqual(vox[50, 65, 18], (441075.0, 6129425.0, 370.34108924865723, 0.00019816514181249432))
-            self.assertEqual(vox[0, 0, 0], (vox.x0, vox.y0, vox.z0, None))
+            self.assertEqual(vox[0, 0, 0], (vox.origin_x, vox.origin_y, vox.origin_z, None))
 
         with gxvox.Vox.open(self.vox_file, dtype=np.int) as vox:
             valid = 0
@@ -74,7 +74,7 @@ class Test(GXPYTest):
             self.assertEqual(valid + dummy, vox.nx * vox.ny * vox.nz)
 
             self.assertEqual(vox[50, 65, 18], (441075.0, 6129425.0, 370.34108924865723, 0.0))
-            self.assertEqual(vox[0, 0, 0], (vox.x0, vox.y0, vox.z0, None))
+            self.assertEqual(vox[0, 0, 0], (vox.origin_x, vox.origin_y, vox.origin_z, None))
 
             data = vox.np()
             self.assertEqual(data.dtype, np.int)
@@ -164,9 +164,9 @@ class Test(GXPYTest):
             self.assertEqual((vox.nx, vox.ny, vox.nz), (35, 50, 12))
             npv = vox.np()
             self.assertEqual(np.sum(npv[np.isfinite(npv)]), 0)
-            self.assertEqual(list(vox.x_locations[0:2]), [0., 1.])
-            self.assertEqual(list(vox.y_locations[0:2]), [0., 1.])
-            self.assertEqual(list(vox.z_locations[0:2]), [0., 1.])
+            self.assertEqual(list(vox.locations_x[0:2]), [0., 1.])
+            self.assertEqual(list(vox.locations_y[0:2]), [0., 1.])
+            self.assertEqual(list(vox.locations_z[0:2]), [0., 1.])
 
         with gxvox.Vox.new("test_new",
                               dimension=(35, 50, 12),
@@ -177,9 +177,9 @@ class Test(GXPYTest):
             self.assertEqual((vox.nx, vox.ny, vox.nz), (35, 50, 12))
             npv = vox.np()
             self.assertEqual(np.sum(npv[np.isfinite(npv)]), vox.nx * vox.ny * vox.nz)
-            self.assertEqual(list(vox.x_locations[0:2]), [1., 1.1])
-            self.assertEqual(list(vox.y_locations[0:2]), [2., 2.2])
-            self.assertEqual(list(vox.z_locations[0:2]), [3., 13.])
+            self.assertEqual(list(vox.locations_x[0:2]), [1., 1.1])
+            self.assertEqual(list(vox.locations_y[0:2]), [2., 2.2])
+            self.assertEqual(list(vox.locations_z[0:2]), [3., 13.])
 
         # test cell-separation conversions TODO: Geosoft cell-separation algorithm differs
         dx = (1, 2, 3, 2, 1)
@@ -211,9 +211,9 @@ class Test(GXPYTest):
             self.assertEqual((vox.nx, vox.ny, vox.nz), (5, 3, 4))
             npv = vox.np()
             self.assertEqual(np.sum(npv[np.isfinite(npv)]), vox.nx * vox.ny * vox.nz)
-            self.assertEqual(list(vox.x_locations), [1.0, 2.5, 5.0, 7.5, 9.0])
-            self.assertEqual(list(vox.y_locations), [2.0, 12.0, 22.0])
-            self.assertEqual(list(vox.z_locations), [3.0, 7.5, 11.0, 13.5])
+            self.assertEqual(list(vox.locations_x), [1.0, 2.5, 5.0, 7.5, 9.0])
+            self.assertEqual(list(vox.locations_y), [2.0, 12.0, 22.0])
+            self.assertEqual(list(vox.locations_z), [3.0, 7.5, 11.0, 13.5])
 
         self.assertRaises(gxvox.VoxException, gxvox.Vox.new, "test", cell_size=1, variable_cell_size=(cx, cy, cz))
         self.assertRaises(gxvox.VoxException, gxvox.Vox.new, "test",
@@ -225,7 +225,7 @@ class Test(GXPYTest):
         with gxvox.Vox.open(self.vox_file) as vox:
             npv = vox.np()
             with gxvox.Vox.new("test_data", data=npv, temp=True,
-                                  origin=(vox.x0, vox.y0, vox.z0),
+                                  origin=(vox.origin_x, vox.origin_y, vox.origin_z),
                                   cell_size=(vox.cells_x, vox.cells_y, vox.cells_z),
                                   coordinate_system=vox.coordinate_system) as vox_copy:
                 npv = vox_copy.np()

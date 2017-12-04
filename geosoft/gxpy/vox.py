@@ -564,17 +564,17 @@ class Vox:
         return self._uniform_cell_size[2]
 
     @property
-    def x0(self):
+    def origin_x(self):
         """X location of the vox origin."""
         return self._origin[0]
 
     @property
-    def y0(self):
+    def origin_y(self):
         """Y location of the vox origin."""
         return self._origin[1]
 
     @property
-    def z0(self):
+    def origin_z(self):
         """Z location of the vox origin."""
         return self._origin[2]
 
@@ -647,21 +647,21 @@ class Vox:
 
 
     @property
-    def x_locations(self):
+    def locations_x(self):
         """Return array of X locations"""
         if self._locations is None:
             self._setup_locations()
         return self._locations[0]
 
     @property
-    def y_locations(self):
+    def locations_y(self):
         """Return array of Y locations"""
         if self._locations is None:
             self._setup_locations()
         return self._locations[1]
 
     @property
-    def z_locations(self):
+    def locations_z(self):
         """Return array of Z locations"""
         if self._locations is None:
             self._setup_locations()
@@ -719,7 +719,7 @@ class Vox:
         .. versionadded:: 9.3
         """
         self._checkindex(ix, iy, iz)
-        return (self.x_locations[ix], self.y_locations[iy], self.z_locations[iz])
+        return (self.locations_x[ix], self.locations_y[iy], self.locations_z[iz])
 
     def value_at_location(self, xyz, interpolate=INTERP_LINEAR):
         """
