@@ -18,6 +18,7 @@ in a 3D view, the group is placed on a the active plane inside the 3D view
     :class:`Color_map`           maps values to colors
     :class:`Pen`                 pen definition, includes line colour, thickness and pattern, and fill.
     :class:`Text_def`            defined text characteristics
+    :class:'Vox_display_group`   add a 'geosoft.gxpy.vox.Vox_display` to a `geosoft.gxpy.view.View_3d`
     ============================ =============================================================================
 
 .. note::
@@ -2188,7 +2189,8 @@ class Aggregate_group(Group):
 
 class Vox_display_group(Group):
     """
-    Vox display group in a view.
+    Vox display group in a view.  Use class methods `new()` and `open()`
+    to create instances of `Vox_display_group`.
 
     :Constructors:
 
@@ -2237,6 +2239,14 @@ class Vox_display_group(Group):
     def open(cls,
              view,
              group_name):
+        """
+        Open an existing `Vox_display_group` in a 3d view.
+
+        :param view:        the 3d view
+        :param group_name:  the name of the group to open, must be a `Vox_display_group`.
+
+        .. versionadded: 9.3.1
+        """
         voxd_group = cls(view, group_name, mode=READ_ONLY)
         group_number = view.gxview.find_group(voxd_group.name)
         _voxd = voxd_group.view.get_voxd(group_number)

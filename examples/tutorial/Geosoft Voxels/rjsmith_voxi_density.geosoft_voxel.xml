@@ -9,6 +9,7 @@
 			<data_creation_date>2016-05-01</data_creation_date>
 			<metadata_created_by>IAN-OFFICE\Ian</metadata_created_by>
 			<metadata_creation_date>2016-05-01</metadata_creation_date>
+			<geo:unitofmeasurement xmlns:geo="http://www.geosoft.com/schema/geo">g/cc</geo:unitofmeasurement>
 			<georeference>
 				<dataextents>
 					<extent3d minx="501750" miny="6466950" minz="-1569.558498818539" maxx="508900" maxy="6474350" maxz="358.08999999999941"/>
