@@ -187,7 +187,7 @@ class Test(GXPYTest):
 
         with gxvox.Vox.new("test_new",
                               origin=(1, 2, 3),
-                              variable_cell_size=(cx, cy, cz),
+                              cell_size=(cx, cy, cz),
                               temp=True,
                               init_value=1) as vox:
             self.assertEqual((vox.nx, vox.ny, vox.nz), (5, 3, 4))
@@ -197,9 +197,8 @@ class Test(GXPYTest):
             self.assertEqual(list(vox.locations_y), [2.0, 12.0, 22.0])
             self.assertEqual(list(vox.locations_z), [3.0, 7.5, 11.0, 13.5])
 
-        self.assertRaises(gxvox.VoxException, gxvox.Vox.new, "test", cell_size=1, variable_cell_size=(cx, cy, cz))
         self.assertRaises(gxvox.VoxException, gxvox.Vox.new, "test",
-                          data=np.zeros((2,3,15)), variable_cell_size=(cx, cy, cz))
+                          data=np.zeros((2,3,15)), cell_size=(cx, cy, cz))
 
     def test_new_data(self):
         self.start()

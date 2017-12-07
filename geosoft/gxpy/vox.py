@@ -350,10 +350,9 @@ class Vox:
                             of a cell. This is the center of the first cell for a uniform cell size, or the
                             reference position of the first vox cell accounting for variable cell sizes.
         :param cell_size:   uniform cell size, or (dx, dy, dz) cell sizes in the x, y and z directions. The
-                            default is (1., 1., 1.).
-        :param variable_cell_size:  tuple (vx, vy, vz) where each element is an array of the cell sizes for
-                            a variable cell-size vox.  Each array defines the dimension of the vox and must match
-                            the data, if data is also provided. For example:
+                            default is (1., 1., 1.). For variable cell size on a dimension, provide an array
+                            of the cell sizes along that dimension. The array length must match the data dimension
+                            along that axis. For example:
                             `cell_size=((1, 2.5, 1.5), (1, 1, 1, 1), (5, 4, 3, 2, 1))` will create a vox
                             with (x, y, z) dimension (3, 4, 5) and sizes as specified in each dimension.
         :param init_value:  initial value, default is the dummy for the dtype.
@@ -379,8 +378,6 @@ class Vox:
             if dtype is None:
                 dtype = data.dtype
 
-        if cell_size and variable_cell_size:
-            raise VoxException(_t('Cannot define both cell_size and variable_cell_size.'))
         if variable_cell_size:
             cell_size = variable_cell_size
         if cell_size is None:
@@ -400,8 +397,7 @@ class Vox:
             if hasattr(dvv[i], '__iter__'):
                 dvv[i] = gxvv.GXvv(dvv[i], dtype=np.float64)
             else:
-                dvv[i] = np.zeros((dimension[i],)) + dvv[i]
-                dvv[i] = gxvv.GXvv(dvv[i], dtype=np.float64)
+                dvv[i] = gxvv.GXvv(np.zeros((dimension[i],)) + dvv[i], dtype=np.float64)
 
         # dimensions must match
         vdim = (dvv[0].length, dvv[1].length, dvv[2].length)
