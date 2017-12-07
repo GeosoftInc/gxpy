@@ -74,53 +74,6 @@ def delete_files(vox_name):
         df(vox_name + '.xml')
 
 
-def cells_from_separations(sep):
-    """
-    TODO: This does not conform to how Geosoft calculates cells.
-
-    Return cell sizes from a list of point separations. A cell is dimensioned to define a length that
-    is the half the distance between a point and its neighbors. Edge cells are always the dimension of
-    the separation between the two edge points.
-
-    :param sep: iterable list of point separations
-    :returns:   list is cell sizes, one longer than sep.
-
-    .. seealso:: `separations_from_cells`
-
-    .. versionadded:: 9.3.1
-    """
-
-    nsep = len(sep)
-    cells = [0 for i in range(nsep + 1)]
-    cells[0] = sep[0]
-    for i in range(1, nsep):
-        cells[i] = (sep[i - 1] + sep[i]) * 0.5
-    cells[nsep] = sep[nsep-1]
-    return cells
-
-
-def separations_from_cells(cells):
-    """
-    TODO: This does not conform to how Geosoft calculates cells.
-
-    Return point separations from a list of cell sizes.
-
-    :param cells:   list of cell sizes
-    :return:        list of separations, length is one less than cells
-
-    .. seealso:: `cells_from_separations`
-
-    .. versionadded:: 9.3.1
-    """
-
-    nsep = len(cells) - 1
-    seps = [0 for i in range(nsep)]
-    seps[0] = cells[0]
-    for i in range(1, nsep):
-        seps[i] = (cells[i] - seps[i - 1] * 0.5) * 2.
-    return seps
-
-
 # constants
 MODE_READ = 0          #:
 MODE_READWRITE = 1     #: file exists, but can change properties
