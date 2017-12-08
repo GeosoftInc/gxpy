@@ -39,6 +39,17 @@ class Test(GXPYTest):
             self.assertEqual((vox.nx, vox.ny, vox.nz), (59, 67, 26))
             self.assertEqual(str(vox.coordinate_system), 'NAD83 / UTM zone 20N')
 
+            vox.is_depth = True
+            self.assertFalse(vox.is_elevation)
+            vox.is_elevation = True
+            self.assertFalse(vox.is_depth)
+            vox.is_depth = True
+            self.assertEqual(vox.xyz(0, 0, 0), (vox.origin_x, vox.origin_y, vox.origin_z))
+            self.assertEqual(vox.extent, (438550.0, 6126150.0, -575.0, 441500.0, 6129500.0, 1022.3323879241943))
+            self.assertEqual(vox.extent_2d, (438550.0, 6126150.0, 441500.0, 6129500.0))
+            self.assertEqual((vox.nx, vox.ny, vox.nz), (59, 67, 26))
+
+
     def test_iter(self):
         self.start()
 
@@ -86,7 +97,6 @@ class Test(GXPYTest):
         self.assertEqual(data.dtype, np.float64)
         data = gxvox.Vox.open(self.vox_file, dtype=np.float64).np(dtype=np.int)
         self.assertEqual(data.dtype, np.int)
-
 
     def test_value(self):
         self.start()
@@ -197,6 +207,20 @@ class Test(GXPYTest):
             self.assertEqual(list(vox.locations_y), [2.0, 12.0, 22.0])
             self.assertEqual(list(vox.locations_z), [3.0, 7.5, 11.0, 13.5])
 
+
+        with gxvox.Vox.new("test_new",
+                           origin=(0.5, 5.0, 2.5),
+                           cell_size=(cx, cy, cz),
+                           temp=True,
+                           depth=True,
+                           init_value=1) as vox:
+            self.assertEqual((vox.nx, vox.ny, vox.nz), (5, 3, 4))
+            npv = vox.np()
+            self.assertEqual(np.sum(npv[np.isfinite(npv)]), vox.nx * vox.ny * vox.nz)
+            self.assertEqual(list(vox.locations_x), [0.5, 2.0, 4.5, 7.0, 8.5])
+            self.assertEqual(list(vox.locations_y), [5.0, 15.0, 25.0])
+            self.assertEqual(list(vox.locations_z), [2.5, 7.0, 10.5, 13.0])
+
         self.assertRaises(gxvox.VoxException, gxvox.Vox.new, "test",
                           data=np.zeros((2,3,15)), cell_size=(cx, cy, cz))
 
@@ -205,14 +229,24 @@ class Test(GXPYTest):
 
         with gxvox.Vox.open(self.vox_file) as vox:
             npv = vox.np()
+            test_edge = list(vox.np(subset=((vox.nx - 1, 6, vox.nz - 8), (1, 10, 1))).flatten())
             with gxvox.Vox.new("test_data", data=npv, temp=True,
-                                  origin=(vox.origin_x, vox.origin_y, vox.origin_z),
-                                  cell_size=(vox.cells_x, vox.cells_y, vox.cells_z),
-                                  coordinate_system=vox.coordinate_system) as vox_copy:
+                               origin=(vox.origin_x, vox.origin_y, vox.origin_z),
+                               cell_size=(vox.cells_x, vox.cells_y, vox.cells_z),
+                               coordinate_system=vox.coordinate_system) as vox_copy:
                 npv = vox_copy.np()
                 self.assertEqual(npv.shape, (vox.nz, vox.ny, vox.nx))
                 sum = npv[np.isfinite(npv)].sum()
                 self.assertAlmostEqual(sum, 45.9709323711)
+                test_copy = list(vox_copy.np(subset=((vox_copy.nx - 1, 6, vox_copy.nz - 8), (1, 10, 1))).flatten())
+                self.assertEqual(test_edge, test_copy)
+
+                ez = vox_copy[57, 62, 8][3]
+                vox_copy.is_depth = True
+                self.assertEqual(vox_copy[57, 62, vox_copy.nz - 9][3], ez)
+
+                test_copy = list(vox_copy.np(subset=((vox_copy.nx - 1, 6, 7), (1, 10, 1))).flatten())
+                self.assertEqual(test_edge, test_copy)
 
 ###############################################################################################
 

@@ -73,12 +73,56 @@ def delete_files(vox_name):
         df(vox_name)
         df(vox_name + '.xml')
 
+def locations_from_cells(cells, ref=0.0):
+    """
+    Return the cell center locations from an array of cell sizes.
+
+    :param cells:   array of cell sizes
+    :param ref:     reference (origin)  added to values
+    :return:        location array
+
+    .. versionadded:: 9.3.1
+    """
+
+    if isinstance(cells, gxvv.GXvv):
+        cells = list(cells.np)
+
+    locations = list(cells)
+    locations[0] = ref
+    for i in range(1, len(cells)):
+        locations[i] = locations[i - 1] + (cells[i - 1] + cells[i]) * 0.5
+    return locations
+
+def elevation_from_depth(depth_origin, depth_cells):
+    """
+    Return elevation origin and elevation cells sizes from a depth origin and depth cell-sizes
+
+    :param depth_origin:    top vox z origin as depth below 0
+    :param depth_cells:     cell sizes with depth
+    :return:                elevation origin (bottom cell), cell sizes up from origin
+
+    .. versionadded:: 9.3.1
+    """
+
+    vv = False
+    if isinstance(depth_cells, gxvv.GXvv):
+        depth_cells = list(depth_cells.np)
+        vv = True
+
+    elevation_origin = -locations_from_cells(depth_cells, depth_origin)[len(depth_cells) - 1]  # elevation origin is the deepest cell
+    elevation_cells = list(reversed(depth_cells))
+    if vv:
+        return elevation_origin, gxvv.GXvv(elevation_cells)
+    return elevation_origin, list(reversed(depth_cells))
+
 
 # constants
 MODE_READ = 0          #:
 MODE_READWRITE = 1     #: file exists, but can change properties
 MODE_NEW = 2           #:
 
+Z_ELEVATION = 0 #:
+Z_DEPTH = 1 #:
 
 class Vox:
     """
@@ -232,6 +276,9 @@ class Vox:
 
         x, y, z = self.xyz(ix, iy, iz)
 
+        if self.is_depth:
+            iz = self.nz - iz - 1
+
         if (self._buffered_plane != iz) or (self._buffered_row != iy):
             self._buffered_plane = iz
             self._buffered_row = iy
@@ -295,7 +342,7 @@ class Vox:
             'geosoft': {'dataset': {'geo:unitofmeasurement': {'@xmlns:geo': 'http://www.geosoft.com/schema/geo'}}}}
 
     @classmethod
-    def open(cls, name, gxapi_vox=None, dtype=None, mode=MODE_READ):
+    def open(cls, name, gxapi_vox=None, dtype=None, mode=MODE_READ, depth=False):
         """
         Open an existing vox.
 
@@ -305,6 +352,8 @@ class Vox:
         :param gxapi_vox:   `gxapi.GXVOX` instance to create from GXVOX instance.
         :param dtype:       working dtype for retrieving data, which can be different from the
                             intrinsic data dtype. The default is the intrinsic data type.
+        :param depth:       True to work with z as depth (positive down), origin at the top of the vox.
+                            The default is False, z is elevation (positive up), origin at the bottom of the vox.
         :param mode:        open mode:
 
             =================  ==================================================
@@ -327,13 +376,14 @@ class Vox:
             vox._readonly = True
         else:
             vox._readonly = False
+        vox.is_depth = depth
 
         return vox
 
     @classmethod
     def new(cls, name, data=None, dimension=None, temp=False, overwrite=False, dtype=None,
             origin=(0., 0., 0.), cell_size=None, variable_cell_size=None,
-            init_value=None, coordinate_system=None):
+            init_value=None, coordinate_system=None, depth=False):
         """
         Create a new vox dataset
 
@@ -357,6 +407,8 @@ class Vox:
                             with (x, y, z) dimension (3, 4, 5) and sizes as specified in each dimension.
         :param init_value:  initial value, default is the dummy for the dtype.
         :param coordinate_system:   coordinate system as required to create from `geosoft.gxpy.Coordinate_system`
+        :param depth:       True to work with z as depth (positive down). The default is False,
+                            z is elevation (positive up)
 
         .. versionadded:: 9.3.1
         """
@@ -399,29 +451,40 @@ class Vox:
             else:
                 dvv[i] = gxvv.GXvv(np.zeros((dimension[i],)) + dvv[i], dtype=np.float64)
 
+        x0, y0, z0 = origin
+        cx, cy, cz = dvv
+
         # dimensions must match
-        vdim = (dvv[0].length, dvv[1].length, dvv[2].length)
+        vdim = (cx.length, cy.length, cz.length)
         if dimension != vdim:
             raise VoxException(_t('Vox dimension {} and variable_cell_size dimensions {} do not match'
                                   ).format(dimension, vdim))
+
+        if depth:
+            z0, cz = elevation_from_depth(z0, cz)
 
         if dtype is None:
             dtype = np.float64
 
         if data is not None:
 
-            pg = gxapi.GXPG.create_3d(dvv[2].length, dvv[1].length, dvv[0].length, gxu.gx_dtype(dtype))
+            pg = gxapi.GXPG.create_3d(cz.length, cy.length, cx.length, gxu.gx_dtype(dtype))
             vv = gxvv.GXvv(dtype=dtype)
-            vv.length = dvv[0].length
+            vv.length = cx.length
 
-            for s in range(dvv[2].length):
-                for iy in range(dvv[1].length):
+            for s in range(cz.length):
+                for iy in range(cy.length):
                     vv.set_data(data[s, iy, :])
-                    pg.write_row_3d(s, iy, 0, vv.length, vv.gxvv)
+                    if depth:
+                        sz = cz.length - s - 1
+                    else:
+                        sz = s
+
+                    pg.write_row_3d(sz, iy, 0, vv.length, vv.gxvv)
 
             gxvox = gxapi.GXVOX.generate_pgvv(file_name, pg,
-                                              origin[0], origin[1], origin[2],
-                                              dvv[0].gxvv, dvv[1].gxvv, dvv[2].gxvv,
+                                              x0, y0, z0,
+                                              cx.gxvv, cy.gxvv, cz.gxvv,
                                               gxcs.Coordinate_system(coordinate_system).gxipj,
                                               gxapi.GXMETA.create())
 
@@ -434,16 +497,16 @@ class Vox:
             gxvox = gxapi.GXVOX.generate_constant_value_vv(file_name,
                                                            init_value,
                                                            gxu.gx_dtype(dtype),
-                                                           origin[0], origin[1], origin[2],
-                                                           dvv[0].gxvv, dvv[1].gxvv, dvv[2].gxvv,
+                                                           x0, y0, z0,
+                                                           cx.gxvv, cy.gxvv, cz.gxvv,
                                                            gxcs.Coordinate_system(coordinate_system).gxipj,
                                                            gxapi.GXMETA.create())
 
         vox = cls(name, gxvox)
         vox._file_name = file_name
         vox._readonly = False
-        vox._setup_locations()
         vox._delete_files = temp
+        vox.is_depth = depth
 
         return vox
 
@@ -525,7 +588,7 @@ class Vox:
     @property
     def origin_z(self):
         """Z location of the vox origin."""
-        return self._origin[2]
+        return self.locations_z[0]
 
     @property
     def uniform_dx(self):
@@ -552,6 +615,9 @@ class Vox:
         ry1 = gxapi.float_ref()
         rz1 = gxapi.float_ref()
         self.gxvox.get_area(rx0, ry0, rz0, rx1, ry1, rz1)
+        if self.is_depth:
+            return (rx0.value, ry0.value, -rz1.value,
+                    rx1.value, ry1.value, -rz0.value)
         return (rx0.value, ry0.value, rz0.value,
                 rx1.value, ry1.value, rz1.value)
 
@@ -578,68 +644,63 @@ class Vox:
         yvv = gxvv.GXvv()
         zvv = gxvv.GXvv()
         self.gxvox.get_location_points(xvv.gxvv, yvv.gxvv, zvv.gxvv)
-        self._locations = (xvv.np, yvv.np, zvv.np)
+        self._locations = (list(xvv.np), list(yvv.np), list(zvv.np))
         x0 = gxapi.float_ref()
         y0 = gxapi.float_ref()
         z0 = gxapi.float_ref()
-        xvv = gxvv.GXvv()
-        yvv = gxvv.GXvv()
-        zvv = gxvv.GXvv()
         self.gxvox.get_location(x0, y0, z0, xvv.gxvv, yvv.gxvv, zvv.gxvv)
         self._origin = (x0.value, y0.value, z0.value)
-        self._cells = (xvv.np, yvv.np, zvv.np)
+        self._cells = (list(xvv.np), list(yvv.np), list(zvv.np))
         dx = gxapi.float_ref()
         dy = gxapi.float_ref()
         dz = gxapi.float_ref()
         self._gxvox.get_simple_location(x0, y0, z0, dx, dy, dz)
         self._uniform_cell_size = (dx.value, dy.value, dz.value)
 
-
     @property
     def locations_x(self):
         """Return array of X locations"""
-        if self._locations is None:
-            self._setup_locations()
         return self._locations[0]
 
     @property
     def locations_y(self):
         """Return array of Y locations"""
-        if self._locations is None:
-            self._setup_locations()
         return self._locations[1]
 
     @property
     def locations_z(self):
         """Return array of Z locations"""
-        if self._locations is None:
-            self._setup_locations()
+        if self.is_depth:
+            return [-z for z in reversed(self._locations[2])]
         return self._locations[2]
 
     @property
     def cells_x(self):
         """Return array of X cell sizes"""
-        if self._cells is None:
-            self._setup_locations()
         return self._cells[0]
 
     @property
     def cells_y(self):
         """Return array of Y cell sizes"""
-        if self._cells is None:
-            self._setup_locations()
         return self._cells[1]
 
     @property
     def cells_z(self):
         """Return array of Z cell sizes"""
-        if self._cells is None:
-            self._setup_locations()
+        if self.is_depth:
+            return list(reversed(self._cells[2]))
         return self._cells[2]
 
     @property
     def gxpg(self):
-        """`geosoft.gxapi.GXPG` instance (3D) for this vox"""
+        """
+        `geosoft.gxapi.GXPG` instance (3D) for this vox.
+
+        The GXPG will always index z from minimum elevation (bootom of the vox).
+
+        .. versionadded:: 9.3.1
+        """
+
         if self._pg is None:
             self._pg = self.gxvox.create_pg()
         return self._pg
@@ -650,6 +711,24 @@ class Vox:
         if self._gxvoxe is None:
             self._gxvoxe = gxapi.GXVOXE.create(self.gxvox)
         return self._gxvoxe
+
+    @property
+    def is_depth(self):
+        """True if z is depth.  Can be set."""
+        return self._is_depth
+
+    @is_depth.setter
+    def is_depth(self, b):
+        self._is_depth = bool(b)
+
+    @property
+    def is_elevation(self):
+        """True if z is elevation.  Can be set."""
+        return not(self._is_depth)
+
+    @is_elevation.setter
+    def is_elevation(self, b):
+        self._is_depth = not(bool(b))
 
     def _checkindex(self, ix, iy, iz):
         if (ix < 0) or (ix >= self.nx) or (iy < 0) or (iy >= self.ny) or (iz < 0) or (iz >= self.nz):
@@ -662,13 +741,14 @@ class Vox:
 
         :param ix:  x index
         :param iy:  y index
-        :param iz:  z index, from bottom
-        :return: (x, y, z)
+        :param iz:  z index, from bottom for elevation, from top for depth
+        :return: (x, y, elevation) or (x, y, depth)
 
         .. versionadded:: 9.3
         """
         self._checkindex(ix, iy, iz)
         return (self.locations_x[ix], self.locations_y[iy], self.locations_z[iz])
+
 
     def value_at_location(self, xyz, interpolate=INTERP_LINEAR):
         """
@@ -688,6 +768,8 @@ class Vox:
         .. versionadded:: 9.3.1
         """
         x, y, z = xyz
+        if self.is_depth:
+            z = -z
         v = self.gxvoxe.value(x, y, z, interpolate)
         if v == gxapi.rDUMMY:
             return None
@@ -709,7 +791,7 @@ class Vox:
 
                         start=((0, 0, -1), None equivalent: start=((0, 0, nx - 1), (nx, ny, 1))
 
-        :return: numpy array of shape (nz, ny, nx)
+        :return:        numpy array of shape (nz, ny, nx). The order of z depends on is_depth property setting.
 
         .. versionadded:: 9.3.1
         """
@@ -763,9 +845,19 @@ class Vox:
         vv = gxvv.GXvv(dtype=dtype)
         vv.length = nx
 
-        for iz in range(z0, z0 + nz):
-            for iy in range(y0, y0 + ny):
-                gxpg.read_row_3d(iz, iy, x0, nx, vv.gxvv)
-                npv[iz - z0, iy - y0, :] = vv.np
+        if self.is_depth:
+            z0 = self.nz - (z0 + nz)
+            i = 1
+            for iz in range(z0, z0 + nz):
+                for iy in range(y0, y0 + ny):
+                    gxpg.read_row_3d(iz, iy, x0, nx, vv.gxvv)
+                    npv[nz - i, iy - y0, :] = vv.np
+                i += 1
+
+        else:
+            for iz in range(z0, z0 + nz):
+                for iy in range(y0, y0 + ny):
+                    gxpg.read_row_3d(iz, iy, x0, nx, vv.gxvv)
+                    npv[iz - z0, iy - y0, :] = vv.np
 
         return npv
