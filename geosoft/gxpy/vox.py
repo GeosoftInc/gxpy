@@ -861,3 +861,8 @@ class Vox:
                     npv[iz - z0, iy - y0, :] = vv.np
 
         return npv
+
+#class Vector_vox(Vox):
+    """
+    Vector voxels have three vector components at each voxel point.
+    """
