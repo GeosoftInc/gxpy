@@ -39,10 +39,10 @@ class VoxException(Exception):
     pass
 
 def _vox_file_name(name):
-    ext = os.path.splitext(name)[1]
-    if ext.lower() != '.geosoft_voxel':
-        name = name + '.geosoft_voxel'
-    return os.path.abspath(name)
+    ext = os.path.splitext(name)[1].lower()
+    if (ext == '.geosoft_voxel') or (ext == '.geosoft_vectorvoxel'):
+        return name
+    return name + '.geosoft_voxel'
 
 def _vox_name(name):
     basename = os.path.basename(name)
@@ -368,7 +368,7 @@ class Vox:
 
         if gxapi_vox is None:
             gxapi_vox = gxapi.GXVOX.create(_vox_file_name(name))
-        vox = cls(name, gxapi_vox, dtype= dtype)
+        vox = cls(name, gxapi_vox, dtype=dtype)
 
         if mode is None:
             mode = MODE_READ
@@ -528,6 +528,11 @@ class Vox:
     def gxvox(self):
         """`gxapi.GXVOX` instance handle"""
         return self._gxvox
+
+    @property
+    def is_vectorvox(self):
+        """True if this is a vector voxel."""
+        return bool(self.gxvox.is_vector_voxel())
 
     @property
     def dtype(self):

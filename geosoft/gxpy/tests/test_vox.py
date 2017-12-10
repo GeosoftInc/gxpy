@@ -19,6 +19,7 @@ class Test(GXPYTest):
         cls.folder, files = gsys.unzip(os.path.join(os.path.dirname(cls._test_case_py), 'testvoxset.zip'),
                                        folder=cls._gx.temp_folder())
         cls.vox_file = os.path.join(cls.folder, 'test.geosoft_voxel')
+        cls.vectorvox_file = os.path.join(cls.folder, 'mvi.geosoft_vectorvoxel')
 
     @classmethod
     def tearDownClass(cls):
@@ -248,6 +249,12 @@ class Test(GXPYTest):
                 test_copy = list(vox_copy.np(subset=((vox_copy.nx - 1, 6, 7), (1, 10, 1))).flatten())
                 self.assertEqual(test_edge, test_copy)
 
+    def test_vectorvoxel(self):
+        self.start()
+
+        with gxvox.Vox.open(self.vectorvox_file) as vox:
+            npv = vox.np()
+            pass
 ###############################################################################################
 
 if __name__ == '__main__':

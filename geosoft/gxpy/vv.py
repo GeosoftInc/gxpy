@@ -48,6 +48,7 @@ class GXvv:
     :param array:           array-like, None to create an empty VV
     :param dtype:           numpy data type.  For unicode strings 'U#', where # is a string length. If not specified
                             the type is taken from first element in array, of if no array the default is 'float'.
+    :param dim:             dimension can be 1 (default), 2 (2D) or 3 (3D).
     :param fid:             (start, increment) fiducial
     :param unit_of_measure: unit of measure for the contained data.
 
@@ -58,6 +59,7 @@ class GXvv:
         ``length``      number of elements in the VV
         ``gxtype``      GX data type
         ``dtype``       numpy data type
+        ``dim``         dimension
 
     .. versionadded:: 9.1
 
@@ -76,24 +78,33 @@ class GXvv:
         if hasattr(self, '_gxvv'):
             self._gxvv = None
 
-    def __init__(self, array=None, dtype=None, fid=(0.0, 1.0), unit_of_measure=''):
+    def __init__(self, array=None, dtype=None, fid=(0.0, 1.0), unit_of_measure='', dim=None):
 
-        if (array is not None) and (type(array) is not np.ndarray):
+        if array is not None:
+            if not isinstance(array, np.ndarray):
+                array = np.array(array)
+            if array.ndim == 2:
+                dim = array.shape[1]
+            else:
+                dim = 1
             if dtype is None:
-                dtype = np.dtype(type(array[0]))
-            array = np.array(array, dtype=dtype)
-            dtype = array.dtype # if strings, type will change to the longest string
+                dtype = array.dtype
+
+        if dim is None:
+            dim = 1
+        elif dim not in (1, 2, 3):
+            raise VVException(_t('dimension (array, or dim=) must be 1, 2 or 3'))
+        self._dim = dim
 
         if dtype is None:
-            try:
-                dtype = array.dtype
-            except AttributeError:
-                dtype = np.float64
+            dtype = np.float64
 
         self._gxtype = gxu.gx_dtype(dtype)
         self._dtype = gxu.dtype_gx(self._gxtype)
         self._is_int = gxu.is_int(self._gxtype)
-        self._gxvv = gxapi.GXVV.create_ext(self._gxtype, 0)
+        if self._is_int and self._dim != 1:
+            raise VVException(_t('2 or 3 dimensioned data must be float32 or float64'))
+        self._gxvv = gxapi.GXVV.create_ext(gxu.gx_dtype_dimension(self._dtype, self._dim), 0)
         self.fid = fid
         self._sr = None
         self._next = 0
@@ -192,6 +203,11 @@ class GXvv:
         return self._is_int
 
     @property
+    def dim(self):
+        """Dimension of elements in the array, 1, 2 or 3."""
+        return self._dim
+
+    @property
     def np(self):
         """
         Numpy array of VV data, in the data type of the VV.  Use :meth:`get_data` to get a numpy array
@@ -272,7 +288,7 @@ class GXvv:
         """
         Set vv data from an array.  If the array is float type numpy.nan are
 
-        :param data:    data array, must be dimension 1
+        :param data:    data array, will be reshapped to VV dimension
         :param fid:     fid tuple (start,increment), default does not change
 
         .. versionadded:: 9.1
@@ -284,20 +300,16 @@ class GXvv:
         if not isinstance(data, np.ndarray):
             data = np.array(data)
 
-        if data.ndim > 1:
-            if data.shape[1] == 1:
-                data = data[:,0]
-            else:
-                raise VVException(_t('only 1 dimension allowed, data has {} dimensions'.format(data.ndim)))
+        if self.dim == 1:
+            data = data.flatten()
+        else:
+            data = data.reshape((-1, self.dim))
 
         if np.size(data) > gxapi.iMAX:
             raise VVException(_t('data length {}, max allowed is {})').format(np.size(data), gxapi.iMAX))
 
         # numerical data
         if self._gxtype >= 0:
-
-            if data.dtype == np.float32 or data.dtype == np.float64:
-                data[data == np.nan] = gxu.gx_dummy(data.dtype)
 
             # strings
             if gxu.gx_dtype(data.dtype) < 0:
@@ -306,6 +318,8 @@ class GXvv:
                     self._gxvv.set_double(i, gxu.rdecode(s))
                     i += 1
             else:
+                if data.dtype == np.float32 or data.dtype == np.float64:
+                    data[data == np.nan] = gxu.gx_dummy(data.dtype)
                 self._gxvv.set_data_np(0, data)
 
         # strings

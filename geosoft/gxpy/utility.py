@@ -545,7 +545,7 @@ def dtype_gx(gtype):
     if not bool(_gx2np_type):
         _gx2np_type = {
             gxapi.GS_TYPE_DEFAULT: None,
-            gxapi.GS_DOUBLE: np.dtype(np.float),
+            gxapi.GS_DOUBLE: np.dtype(np.float64),
             gxapi.GS_FLOAT: np.dtype(np.float32),
             gxapi.GS_LONG64: np.dtype(np.int64),
             gxapi.GS_LONG: np.dtype(np.int32),
@@ -554,7 +554,11 @@ def dtype_gx(gtype):
             gxapi.GS_UBYTE: np.dtype(np.uint8),
             gxapi.GS_USHORT: np.dtype(np.uint16),
             gxapi.GS_ULONG: np.dtype(np.uint32),
-            gxapi.GS_ULONG64: np.dtype(np.uint64)}
+            gxapi.GS_ULONG64: np.dtype(np.uint64),
+            gxapi.GS_FLOAT2D: np.dtype(np.float32),
+            gxapi.GS_DOUBLE2D: np.dtype(np.float64),
+            gxapi.GS_FLOAT3D: np.dtype(np.float32),
+            gxapi.GS_DOUBLE3D: np.dtype(np.float64)}
     try:
         return _gx2np_type[gtype]
     except KeyError:
@@ -562,9 +566,47 @@ def dtype_gx(gtype):
             return np.dtype('U{}'.format(-gtype))
 
 
+def dtype_gx_dimension(gtype):
+    """
+    :returns:   numpy dtype and dimension of the type, 1, 2 or 3. The dimension indicates 1D, 2D or 3D data.
+
+    .. versionadded:: 9.3.1
+    """
+    if (gtype == gxapi.GS_FLOAT2D) or (gtype == gxapi.GS_DOUBLE2D):
+        return dtype_gx(gtype), 2
+    elif (gtype == gxapi.GS_FLOAT3D) or (gtype == gxapi.GS_DOUBLE3D):
+        return dtype_gx(gtype), 3
+    return dtype_gx(gtype), 1
+
+
+def gx_dtype_dimension(dtype, dimension=1):
+    """
+    :returns:   GX type for a numpy dtype, with dimensions 2 and 3
+
+    .. versionadded:: 9.3.1
+    """
+
+    gtype = gx_dtype(dtype)
+    if dimension == 1:
+        return gtype
+    if not((gtype == gxapi.GS_DOUBLE) or (gtype == gxapi.GS_FLOAT)):
+        raise UtilityException(_t('Dimensioned data must be float32 or float64'))
+    if dimension == 2:
+        if gtype == gxapi.GS_DOUBLE:
+            return gxapi.GS_DOUBLE2D
+        return gxapi.GS_FLOAT2D
+    if dimension != 3:
+        raise UtilityException(_t('Dimension must be 1, 2 or 3'))
+    if gtype == gxapi.GS_DOUBLE:
+        return gxapi.GS_DOUBLE3D
+    return gxapi.GS_FLOAT3D
+
+
 def is_float(gxtype):
     """ Return True of gxtype can be stored in a 64-bit float"""
-    if gxtype >= 0 and gxtype in {gxapi.GS_DOUBLE, gxapi.GS_FLOAT}:
+    if gxtype >= 0 and gxtype in {gxapi.GS_DOUBLE, gxapi.GS_FLOAT,
+                                  gxapi.GS_DOUBLE2D, gxapi.GS_FLOAT2D,
+                                  gxapi.GS_DOUBLE3D, gxapi.GS_FLOAT3D}:
         return True
     else:
         return False

@@ -39,6 +39,7 @@ class Test(GXPYTest):
             self.assertEqual(vv.fid, (-40,8))
             self.assertEqual(vv.length, 16)
             self.assertEqual(len(vv.np), 16)
+            self.assertEqual(vv.dim, 1)
 
         with gxvv.GXvv([1, 2, 3, 4, 5, 6]) as vv:
             self.assertEqual(vv.fid, (0.0, 1.0))
@@ -254,6 +255,14 @@ class Test(GXPYTest):
             self.assertEqual(vv.unit_of_measure, 'maki')
             vv.unit_of_measure = 'nT'
             self.assertEqual(vv.unit_of_measure, 'nT')
+
+    def test_dim(self):
+        self.start()
+
+        data = np.array(range(1000), dtype=np.float64).reshape((500,2))
+        with gxvv.GXvv(data) as vv:
+            self.assertEqual(vv.dim, 2)
+            #TODO: self.assertEqual(vv.np.shape, (500, 2))
 
 ##############################################################################################
 if __name__ == '__main__':

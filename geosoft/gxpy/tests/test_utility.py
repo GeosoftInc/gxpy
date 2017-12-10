@@ -61,6 +61,26 @@ class Test(GXPYTest):
         self.assertFalse(gxu.is_float(gxu.gx_dtype('U18')))
         self.assertEqual(gxu.is_string(gxu.gx_dtype('U18')), 18)
 
+        self.assertEqual(gxu.dtype_gx_dimension(gxapi.GS_FLOAT), (np.float32, 1))
+        self.assertEqual(gxu.dtype_gx_dimension(gxapi.GS_FLOAT2D), (np.float32, 2))
+        self.assertEqual(gxu.dtype_gx_dimension(gxapi.GS_FLOAT3D), (np.float32, 3))
+        self.assertEqual(gxu.dtype_gx_dimension(gxapi.GS_DOUBLE), (np.float64, 1))
+        self.assertEqual(gxu.dtype_gx_dimension(gxapi.GS_DOUBLE2D), (np.float64, 2))
+        self.assertEqual(gxu.dtype_gx_dimension(gxapi.GS_DOUBLE3D), (np.float64, 3))
+
+        self.assertEqual(gxu.gx_dtype_dimension(np.float32), gxapi.GS_FLOAT)
+        self.assertEqual(gxu.gx_dtype_dimension(np.float32, 1), gxapi.GS_FLOAT)
+        self.assertEqual(gxu.gx_dtype_dimension(np.float32, 2), gxapi.GS_FLOAT2D)
+        self.assertEqual(gxu.gx_dtype_dimension(np.float32, 3), gxapi.GS_FLOAT3D)
+        self.assertEqual(gxu.gx_dtype_dimension(np.float64), gxapi.GS_DOUBLE)
+        self.assertEqual(gxu.gx_dtype_dimension(np.float64, 1), gxapi.GS_DOUBLE)
+        self.assertEqual(gxu.gx_dtype_dimension(np.float64, 2), gxapi.GS_DOUBLE2D)
+        self.assertEqual(gxu.gx_dtype_dimension(np.float64, 3), gxapi.GS_DOUBLE3D)
+
+        self.assertRaises(gxu.UtilityException, gxu.gx_dtype_dimension, np.int, 2)
+        self.assertRaises(gxu.UtilityException, gxu.gx_dtype_dimension, np.int, 3)
+        self.assertRaises(gxu.UtilityException, gxu.gx_dtype_dimension, np.float32, 4)
+
         npd = np.array([[1,1],[2,2],[-127,1],[3,3]],dtype=gxu.dtype_gx(gxapi.GS_BYTE))
         self.assertEqual(list(gxu.dummy_mask(npd)),[False,False,True,False])
 
