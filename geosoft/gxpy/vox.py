@@ -38,10 +38,12 @@ class VoxException(Exception):
     """
     pass
 
-def _vox_file_name(name):
+def _vox_file_name(name, vectorvoxel=False):
     ext = os.path.splitext(name)[1].lower()
     if (ext == '.geosoft_voxel') or (ext == '.geosoft_vectorvoxel'):
         return name
+    if vectorvoxel:
+        return name + '.geosoft_vectorvoxel'
     return name + '.geosoft_voxel'
 
 def _vox_name(name):
@@ -282,19 +284,26 @@ class Vox:
         if (self._buffered_plane != iz) or (self._buffered_row != iy):
             self._buffered_plane = iz
             self._buffered_row = iy
-            vv = gxvv.GXvv(dtype=self._dtype)
+            if self.is_vectorvox:
+                vv = gxvv.GXvv(dtype=self._dtype, dim=3)
+            else:
+                vv = gxvv.GXvv(dtype=self._dtype)
             self.gxpg.read_row_3d(iz, iy, 0, self._dim[0], vv.gxvv)
             self._buffer_np = vv.np
-            if not self._return_int:
-                gxu.dummy_to_nan(self._buffer_np)
 
         v = self._buffer_np[ix]
         if self._return_int:
             v = int(v)
             if v == gxapi.iDUMMY:
                 v = None
-        elif np.isnan(v):
-            v = None
+        else:
+            if self.is_vectorvox:
+                vx = None if np.isnan(v[0]) else v[0]
+                vy = None if np.isnan(v[1]) else v[1]
+                vz = None if np.isnan(v[2]) else v[2]
+                v = (vx, vy, vz)
+            elif np.isnan(v):
+                v = None
         return x, y, z, v
 
     def _init_metadata(self):
@@ -381,18 +390,15 @@ class Vox:
         return vox
 
     @classmethod
-    def new(cls, name, data=None, dimension=None, temp=False, overwrite=False, dtype=None,
-            origin=(0., 0., 0.), cell_size=None, variable_cell_size=None,
-            init_value=None, coordinate_system=None, depth=False):
+    def new(cls, name, data, temp=False, overwrite=False, dtype=None,
+            origin=(0., 0., 0.), cell_size=None, coordinate_system=None, depth=False):
         """
         Create a new vox dataset
 
         :param name:        dataset name, or a path to a persistent file. A file with extension `.geosoft_voxel`
                             will be created for vox instances that will persist (`temp=True`).
-        :param data:        data to place in the vox, must have 3 dimensions (nz, ny, nx). If not
-                            specified the vox is initialized to dummy values. Note that data arrays are indexec
-                            (z, y, x).
-        :param dimension:   vox dimension if not providing `data=` or  `variable_cell_size=` as arrays.
+        :param data:        data to place in the vox, must have 3 dimensions (nz, ny, nx) for simple
+                            scalar data, or (nx, ny, nz, 3) for vector data.
         :param temp:        True to create a temporary vox which will be removed after use
         :param overwrite:   True to overwrite existing persistent vox
         :param dtype:       data type, default is the same as data, or np.float64 of no data.
@@ -405,7 +411,6 @@ class Vox:
                             along that axis. For example:
                             `cell_size=((1, 2.5, 1.5), (1, 1, 1, 1), (5, 4, 3, 2, 1))` will create a vox
                             with (x, y, z) dimension (3, 4, 5) and sizes as specified in each dimension.
-        :param init_value:  initial value, default is the dummy for the dtype.
         :param coordinate_system:   coordinate system as required to create from `geosoft.gxpy.Coordinate_system`
         :param depth:       True to work with z as depth (positive down). The default is False,
                             z is elevation (positive up)
@@ -413,36 +418,37 @@ class Vox:
         .. versionadded:: 9.3.1
         """
 
+        if not isinstance(data, np.ndarray):
+            data = np.array(data)
+        vec_dim = 1
+        if data.ndim == 4:
+            if data.shape[3] != 3:
+                raise VoxException(_t('Data appears to be vector data, but last dimension is not 3.'))
+            if data.dtype != np.float32:
+                data = np.array(data, dtype=np.float32)
+            vec_dim = 3
+        elif data.ndim != 3:
+            raise VoxException(_t('Data must have 3 or 4 dimensions, this data has {} dimensions').format(data.ndim))
+
         if not temp:
-            file_name = _vox_file_name(name)
+            file_name = _vox_file_name(name, vectorvoxel=(vec_dim == 3))
             if not overwrite:
                 if os.path.isfile(file_name):
                     raise VoxException(_t('Cannot overwrite existing vox {}'.format(file_name)))
         else:
-            file_name = gx.GXpy().temp_file('.geosoft_voxel')
+            if vec_dim == 1:
+                file_name = gx.GXpy().temp_file('.geosoft_voxel')
+            else:
+                file_name = gx.GXpy().temp_file('.geosoft_vectorvoxel')
 
-        if data is not None:
-            if not isinstance(data, np.ndarray):
-                data = np.array(data)
-            if data.ndim != 3:
-                raise VoxException(_t('Data must have 3 dimensions, this data has {} dimensions').format(data.ndim))
-            dimension = (data.shape[2], data.shape[1], data.shape[0])
-            if dtype is None:
-                dtype = data.dtype
+        dimension = (data.shape[2], data.shape[1], data.shape[0])
+        if dtype is None:
+            dtype = data.dtype
 
-        if variable_cell_size:
-            cell_size = variable_cell_size
         if cell_size is None:
             cell_size = (1., 1., 1.)
         elif isinstance(cell_size, int):
             cell_size = (cell_size, cell_size, cell_size)
-
-        if (dimension is None):
-            if ((not hasattr(cell_size[0], '__iter__')) or
-                    (not hasattr(cell_size[1], '__iter__')) or
-                    (not hasattr(cell_size[2], '__iter__'))):
-                raise VoxException(_t('Unable to determine vox dimension - need data or variable_cell_size'))
-            dimension = (len(cell_size[0]), len(cell_size[1]), len(cell_size[2]))
 
         dvv = list(cell_size)
         for i in range(3):
@@ -455,10 +461,9 @@ class Vox:
         cx, cy, cz = dvv
 
         # dimensions must match
-        vdim = (cx.length, cy.length, cz.length)
-        if dimension != vdim:
+        if dimension != (cx.length, cy.length, cz.length):
             raise VoxException(_t('Vox dimension {} and variable_cell_size dimensions {} do not match'
-                                  ).format(dimension, vdim))
+                                  ).format(dimension, (cx.length, cy.length, cz.length)))
 
         if depth:
             z0, cz = elevation_from_depth(z0, cz)
@@ -466,47 +471,59 @@ class Vox:
         if dtype is None:
             dtype = np.float64
 
-        if data is not None:
+        pg = gxapi.GXPG.create_3d(cz.length, cy.length, cx.length, gxu.gx_dtype_dimension(dtype, vec_dim))
+        vv = gxvv.GXvv(dtype=dtype, dim=vec_dim)
+        vv.length = cx.length
 
-            pg = gxapi.GXPG.create_3d(cz.length, cy.length, cx.length, gxu.gx_dtype(dtype))
-            vv = gxvv.GXvv(dtype=dtype)
-            vv.length = cx.length
+        for s in range(cz.length):
+            for iy in range(cy.length):
+                vv.set_data(data[s, iy, :])
+                if depth:
+                    sz = cz.length - s - 1
+                else:
+                    sz = s
 
-            for s in range(cz.length):
-                for iy in range(cy.length):
-                    vv.set_data(data[s, iy, :])
-                    if depth:
-                        sz = cz.length - s - 1
-                    else:
-                        sz = s
+                pg.write_row_3d(sz, iy, 0, vv.length, vv.gxvv)
 
-                    pg.write_row_3d(sz, iy, 0, vv.length, vv.gxvv)
-
-            gxvox = gxapi.GXVOX.generate_pgvv(file_name, pg,
-                                              x0, y0, z0,
-                                              cx.gxvv, cy.gxvv, cz.gxvv,
-                                              gxcs.Coordinate_system(coordinate_system).gxipj,
-                                              gxapi.GXMETA.create())
-
-        else:
-
-            if init_value is None:
-                init_value = gxu.gx_dummy(dtype)
-
-            # create the vox
-            gxvox = gxapi.GXVOX.generate_constant_value_vv(file_name,
-                                                           init_value,
-                                                           gxu.gx_dtype(dtype),
-                                                           x0, y0, z0,
-                                                           cx.gxvv, cy.gxvv, cz.gxvv,
-                                                           gxcs.Coordinate_system(coordinate_system).gxipj,
-                                                           gxapi.GXMETA.create())
+        gxvox = gxapi.GXVOX.generate_pgvv(file_name, pg,
+                                          x0, y0, z0,
+                                          cx.gxvv, cy.gxvv, cz.gxvv,
+                                          gxcs.Coordinate_system(coordinate_system).gxipj,
+                                          gxapi.GXMETA.create())
 
         vox = cls(name, gxvox)
         vox._file_name = file_name
         vox._readonly = False
         vox._delete_files = temp
         vox.is_depth = depth
+
+        return vox
+
+    @classmethod
+    def copy(cls, name, source_vox, data=None, temp=False, overwrite=False, dtype=None):
+        """
+        Create a new vox dataset
+
+        :param name:        dataset name, or a path to a persistent file. A file with extension `.geosoft_voxel`
+                            will be created for vox instances that will persist (`temp=True`).
+        :param source_vox:  `Vox` instance of the source vox
+        :param data:        data to place in the vox, must have 3 dimensions (nz, ny, nx). If not
+                            specified the vox is initialized to dummy values. Note that data arrays are indexed
+                            (z, y, x). If not specified the data from the source_vox is copied.
+        :param temp:        True to create a temporary vox which will be removed after use
+        :param overwrite:   True to overwrite existing persistent vox
+        :param dtype:       data type, default is the same as data, or np.float64 of no data.
+
+        .. versionadded:: 9.3.1
+        """
+
+        if data is None:
+            data = source_vox.np
+        vox = Vox.new(name, data, overwrite=overwrite, temp=temp, dtype=dtype,
+                      origin=(source_vox.origin_x, source_vox.origin_y, source_vox.origin_z,),
+                      cell_size=(source_vox.cells_x, source_vox.cells_y, source_vox.cells_z),
+                      coordinate_system=source_vox.coordinate_system,
+                      depth=source_vox.is_depth)
 
         return vox
 
@@ -846,8 +863,14 @@ class Vox:
         gxpg = self.gxpg
         if dtype is None:
             dtype = self._dtype
-        npv = np.empty((nz, ny, nx), dtype=dtype)
-        vv = gxvv.GXvv(dtype=dtype)
+        if self.is_vectorvox:
+            shape = (nz, ny, nx, 3)
+            dim = 3
+        else:
+            shape = (nz, ny, nx)
+            dim = 1
+        npv = np.empty(shape, dtype=dtype)
+        vv = gxvv.GXvv(dtype=dtype, dim=dim)
         vv.length = nx
 
         if self.is_depth:
@@ -866,8 +889,3 @@ class Vox:
                     npv[iz - z0, iy - y0, :] = vv.np
 
         return npv
-
-#class Vector_vox(Vox):
-    """
-    Vector voxels have three vector components at each voxel point.
-    """

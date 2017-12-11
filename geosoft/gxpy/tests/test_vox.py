@@ -171,7 +171,9 @@ class Test(GXPYTest):
     def test_new(self):
         self.start()
 
-        with gxvox.Vox.new("test_new", dimension=(35, 50, 12), temp=True) as vox:
+        npd = np.zeros((12, 50, 35), dtype=np.float64)
+        npd[:] = np.nan
+        with gxvox.Vox.new("test_new", npd, temp=True) as vox:
             self.assertEqual((vox.nx, vox.ny, vox.nz), (35, 50, 12))
             npv = vox.np()
             self.assertEqual(np.sum(npv[np.isfinite(npv)]), 0)
@@ -179,12 +181,11 @@ class Test(GXPYTest):
             self.assertEqual(list(vox.locations_y[0:2]), [0., 1.])
             self.assertEqual(list(vox.locations_z[0:2]), [0., 1.])
 
-        with gxvox.Vox.new("test_new",
-                              dimension=(35, 50, 12),
-                              origin=(1, 2, 3),
-                              cell_size=(0.1, 0.2, 10),
-                              temp=True,
-                              init_value=1) as vox:
+        npd[:] = 1
+        with gxvox.Vox.new("test_new", npd,
+                            origin=(1, 2, 3),
+                            cell_size=(0.1, 0.2, 10),
+                            temp=True) as vox:
             self.assertEqual((vox.nx, vox.ny, vox.nz), (35, 50, 12))
             npv = vox.np()
             self.assertEqual(np.sum(npv[np.isfinite(npv)]), vox.nx * vox.ny * vox.nz)
@@ -196,11 +197,11 @@ class Test(GXPYTest):
         cy = (10, 10, 10)
         cz = (5, 4, 3, 2)
 
-        with gxvox.Vox.new("test_new",
-                              origin=(1, 2, 3),
-                              cell_size=(cx, cy, cz),
-                              temp=True,
-                              init_value=1) as vox:
+        npd = np.ones((len(cz), len(cy), len(cx)))
+        with gxvox.Vox.new("test_new", npd,
+                           origin=(1, 2, 3),
+                           cell_size=(cx, cy, cz),
+                           temp=True) as vox:
             self.assertEqual((vox.nx, vox.ny, vox.nz), (5, 3, 4))
             npv = vox.np()
             self.assertEqual(np.sum(npv[np.isfinite(npv)]), vox.nx * vox.ny * vox.nz)
@@ -209,12 +210,11 @@ class Test(GXPYTest):
             self.assertEqual(list(vox.locations_z), [3.0, 7.5, 11.0, 13.5])
 
 
-        with gxvox.Vox.new("test_new",
+        with gxvox.Vox.new("test_new", npd,
                            origin=(0.5, 5.0, 2.5),
                            cell_size=(cx, cy, cz),
                            temp=True,
-                           depth=True,
-                           init_value=1) as vox:
+                           depth=True) as vox:
             self.assertEqual((vox.nx, vox.ny, vox.nz), (5, 3, 4))
             npv = vox.np()
             self.assertEqual(np.sum(npv[np.isfinite(npv)]), vox.nx * vox.ny * vox.nz)
@@ -223,7 +223,7 @@ class Test(GXPYTest):
             self.assertEqual(list(vox.locations_z), [2.5, 7.0, 10.5, 13.0])
 
         self.assertRaises(gxvox.VoxException, gxvox.Vox.new, "test",
-                          data=np.zeros((2,3,15)), cell_size=(cx, cy, cz))
+                          np.zeros((2,3,15)), cell_size=(cx, cy, cz))
 
     def test_new_data(self):
         self.start()
@@ -231,7 +231,7 @@ class Test(GXPYTest):
         with gxvox.Vox.open(self.vox_file) as vox:
             npv = vox.np()
             test_edge = list(vox.np(subset=((vox.nx - 1, 6, vox.nz - 8), (1, 10, 1))).flatten())
-            with gxvox.Vox.new("test_data", data=npv, temp=True,
+            with gxvox.Vox.new("test_data", npv, temp=True,
                                origin=(vox.origin_x, vox.origin_y, vox.origin_z),
                                cell_size=(vox.cells_x, vox.cells_y, vox.cells_z),
                                coordinate_system=vox.coordinate_system) as vox_copy:
@@ -253,8 +253,24 @@ class Test(GXPYTest):
         self.start()
 
         with gxvox.Vox.open(self.vectorvox_file) as vox:
-            npv = vox.np()
-            pass
+            npv = vox.np(dtype=np.float64)
+            self.assertEqual(npv.shape, (38, 56, 55, 3))
+            self.assertEqual(tuple(npv[25, 25, 25]), (-0.16268515586853027, -0.02528655156493187, 1.6525727510452271))
+            self.assertAlmostEqual(tuple(vox[25, 25, 25][3])[0], -0.16268516)
+            self.assertAlmostEqual(tuple(vox[25, 25, 25][3])[1], -0.025286552)
+            self.assertAlmostEqual(tuple(vox[25, 25, 25][3])[2], 1.6525728)
+
+            npv[25, 25, 25] = (1., 2., np.nan)
+            with gxvox.Vox.new('vox_', npv, temp=True, overwrite=True) as newvox:
+                self.assertAlmostEqual(tuple(newvox[25, 25, 25][3])[0], 1.)
+                self.assertAlmostEqual(tuple(newvox[25, 25, 25][3])[1], 2.)
+                self.assertAlmostEqual(tuple(newvox[25, 25, 25][3])[2], None)
+
+            with gxvox.Vox.copy('vox_', vox, npv, temp=True, overwrite=True) as newvox:
+                self.assertAlmostEqual(tuple(newvox[25, 25, 25][3])[0], 1.)
+                self.assertAlmostEqual(tuple(newvox[25, 25, 25][3])[1], 2.)
+                self.assertAlmostEqual(tuple(newvox[25, 25, 25][3])[2], None)
+
 ###############################################################################################
 
 if __name__ == '__main__':

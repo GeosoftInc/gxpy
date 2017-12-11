@@ -19,6 +19,7 @@ class Test(GXPYTest):
         cls.folder, files = gsys.unzip(os.path.join(os.path.dirname(cls._test_case_py), 'testvoxset.zip'),
                                        folder=cls._gx.temp_folder())
         cls.vox_file = os.path.join(cls.folder, 'test.geosoft_voxel')
+        cls.vectorvox_file = os.path.join(cls.folder, 'mvi.geosoft_vectorvoxel')
 
     def test_voxd(self):
         self.start()
@@ -50,6 +51,21 @@ class Test(GXPYTest):
                 fig_map = voxd.figure_map(title="My Test Vox").file_name
         #self.crc_map(fig_map)
         self.assertEqual(gxmap.Map.open(fig_map).crc_image(pix_width=800), 1419295652)
+
+    def test_figure_map_vectorvoxel(self):
+        self.start()
+
+        with gxvox.Vox.open(self.vectorvox_file) as vox:
+            vox.unit_of_measure = 'SI Susc'
+            with gxvoxd.Vox_display.new(vox) as voxd:
+                voxd.shell_limits = (0.0001, None)
+                fig_map = voxd.figure_map(title="My Test VectorVox").file_name
+        #self.crc_map(fig_map)
+        image_file = gxmap.Map.open(fig_map).image_file()
+        self.assertEqual(gxmap.Map.open(fig_map).crc_image(pix_width=800), 3227637535)
+        pass
+
+
 
 if __name__ == '__main__':
 
