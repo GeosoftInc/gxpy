@@ -49,7 +49,6 @@ class Test(GXPYTest):
             with gxvoxd.Vox_display.new(vox) as voxd:
                 voxd.shell_limits = (0.0001, None)
                 fig_map = voxd.figure_map(title="My Test Vox").file_name
-        #self.crc_map(fig_map)
         self.assertEqual(gxmap.Map.open(fig_map).crc_image(pix_width=800), 1419295652)
 
     def test_figure_map_vectorvoxel(self):
@@ -60,8 +59,6 @@ class Test(GXPYTest):
             with gxvoxd.Vox_display.new(vox) as voxd:
                 voxd.shell_limits = (0.0001, None)
                 fig_map = voxd.figure_map(title="My Test VectorVox").file_name
-        #self.crc_map(fig_map)
-        image_file = gxmap.Map.open(fig_map).image_file()
         self.assertEqual(gxmap.Map.open(fig_map).crc_image(pix_width=800), 3227637535)
         pass
 
