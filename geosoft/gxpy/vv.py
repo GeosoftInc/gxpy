@@ -45,10 +45,13 @@ class GXvv:
     """
     VV class wrapper.
 
-    :param array:           array-like, None to create an empty VV
+    :param array:           array-like, None to create an empty VV. Can have 2 dimensions for float32 or
+                            float64 data, in which case the second dimension can be 2 or 3 to use Geosoft
+                            2D and 3D dimensioned types.
     :param dtype:           numpy data type.  For unicode strings 'U#', where # is a string length. If not specified
                             the type is taken from first element in array, of if no array the default is 'float'.
-    :param dim:             dimension can be 1 (default), 2 (2D) or 3 (3D).
+    :param dim:             dimension can be 1 (default), 2 (2D) or 3 (3D). Ignored if array is defined as the array
+                            dimensions will be used.
     :param fid:             (start, increment) fiducial
     :param unit_of_measure: unit of measure for the contained data.
 
@@ -340,7 +343,9 @@ class GXvv:
                     i += 1
             else:
                 if data.dtype == np.float32 or data.dtype == np.float64:
-                    data[data == np.nan] = gxu.gx_dummy(data.dtype)
+                    if np.isnan(np.min(data)):
+                        data = data.copy()
+                        data[np.isnan(data)] = gxu.gx_dummy(data.dtype)
                 self._set_data_np(data)
 
         # strings

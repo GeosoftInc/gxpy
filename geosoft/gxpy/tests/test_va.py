@@ -168,6 +168,16 @@ class Test(GXPYTest):
             va.unit_of_measure = 'nT'
             self.assertEqual(va.unit_of_measure, 'nT')
 
+    def test_dummy_nan(self):
+        self.start()
+
+        npdata = np.array(range(45), dtype=np.float32).reshape((9, 5))
+        npdata[0,1] = np.nan
+        with gxva.GXva(npdata) as va:
+            self.assertTrue(npdata[0,1])
+            self.assertEqual(tuple(va[0][0])[4], 4.)
+            self.assertTrue(np.isnan(va[0][0][1]))
+
 ##############################################################################################
 if __name__ == '__main__':
 

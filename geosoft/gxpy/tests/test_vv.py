@@ -271,6 +271,22 @@ class Test(GXPYTest):
             self.assertEqual(vv.np.shape, (100, 3))
             self.assertEqual(tuple(vv.np[99,:]), (297., 298., 299.))
 
+        with gxvv.GXvv(dim=3) as vv:
+            vv.set_data(np.array(range(300), dtype=np.float64))
+            self.assertEqual(vv.dim, 3)
+            self.assertEqual(vv.np.shape, (100, 3))
+            self.assertEqual(tuple(vv.np[99, :]), (297., 298., 299.))
+
+        with gxvv.GXvv(dim=3) as vv:
+            data = np.array(range(300), dtype=np.float64)
+            data[1] = data[299] = np.nan
+            vv.set_data(data)
+            self.assertTrue(np.isnan(data[299]))
+            self.assertEqual(vv.dim, 3)
+            self.assertEqual(vv.np.shape, (100, 3))
+            self.assertEqual(tuple(vv.np[99, :2]), (297., 298.))
+            self.assertTrue(np.isnan(vv.np[99, 2]))
+
 ##############################################################################################
 if __name__ == '__main__':
 

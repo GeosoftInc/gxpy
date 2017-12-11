@@ -297,6 +297,11 @@ class GXva:
         if npdata.shape[0] > max_length:
             raise VAException(_t('Array length {} too long. Maximum is {} for width {}').format(npdata.shape[0], max_length, self._width))
 
+        if npdata.dtype == np.float32 or npdata.dtype == np.float64:
+            if np.isnan(np.min(npdata)):
+                npdata = npdata.copy()
+                npdata[np.isnan(npdata)] = gxu.gx_dummy(npdata.dtype)
+
         self._gxva.set_ln(npd.shape[0])
         self._gxva.set_array_np(0, 0, npd)
         self.fid = fid
