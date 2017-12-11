@@ -22,6 +22,7 @@ data to the same fiducial so that vector-to-vector operations can be performed.
 
 import geosoft
 import numpy as np
+import ctypes
 import geosoft.gxapi as gxapi
 from . import utility as gxu
 
@@ -39,7 +40,6 @@ class VVException(Exception):
     .. versionadded:: 9.1
     """
     pass
-
 
 class GXvv:
     """
@@ -135,6 +135,26 @@ class GXvv:
         else:
             v = float(self.np[item])
         return v, start + incr * item
+
+    def _set_data_np(self, npd, start=0):
+        """set to data in a numpy array"""
+        if not npd.flags['C_CONTIGUOUS']:
+            npd = np.ascontiguousarray(npd)
+        self.gxvv.set_data(start, npd.shape[0], npd.data.tobytes(), gxu.gx_dtype_dimension(npd.dtype, self._dim))
+
+    def _get_data_np(self, start=0, n=None, dtype=None):
+        """return data in a numpy array"""
+        if n is None:
+            n = self.length - start
+        if self._dim == 1:
+            sh = (n,)
+        else:
+            sh = (n, self._dim)
+        bytes = np.empty(sh, dtype=dtype).tobytes()
+        self.gxvv.get_data(start, n, bytes, gxu.gx_dtype_dimension(dtype, self._dim))
+        npd = np.frombuffer(bytes, dtype=dtype).reshape(sh)
+        npd.flags['WRITEABLE'] = True
+        return npd
 
     @property
     def unit_of_measure(self):
@@ -274,7 +294,8 @@ class GXvv:
 
                 # numeric to numeric
                 else:
-                    npd = self._gxvv.get_data_np(start, n, dtype)
+                    npd = self._get_data_np(start, n, dtype)
+                    #npd = self._gxvv.get_data_np(start, n, dtype)
 
         # float dummies to nan
         if npd.dtype == np.float32 or npd.dtype == np.float64:
@@ -320,7 +341,7 @@ class GXvv:
             else:
                 if data.dtype == np.float32 or data.dtype == np.float64:
                     data[data == np.nan] = gxu.gx_dummy(data.dtype)
-                self._gxvv.set_data_np(0, data)
+                self._set_data_np(data)
 
         # strings
         else:

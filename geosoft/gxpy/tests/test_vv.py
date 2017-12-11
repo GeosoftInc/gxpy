@@ -160,7 +160,7 @@ class Test(GXPYTest):
             self.assertEqual(npd[5],gxapi.iDUMMY)
 
         with gxvv.GXvv(npdata, fid=fid, dtype=np.float) as vv:
-            npd,fid = vv.get_data(np.int)
+            npd, fid = vv.get_data(np.int)
             self.assertEqual(npd[0],1)
             self.assertEqual(npd[1],2)
             self.assertEqual(npd[2],3)
@@ -259,10 +259,17 @@ class Test(GXPYTest):
     def test_dim(self):
         self.start()
 
-        data = np.array(range(1000), dtype=np.float64).reshape((500,2))
+        data = np.array(range(1000), dtype=np.float64).reshape((500, 2))
         with gxvv.GXvv(data) as vv:
             self.assertEqual(vv.dim, 2)
-            #TODO: self.assertEqual(vv.np.shape, (500, 2))
+            self.assertEqual(vv.np.shape, (500, 2))
+            self.assertEqual(tuple(vv.np[499,:]), (998., 999.))
+
+        data = np.array(range(300), dtype=np.float64).reshape((100, 3))
+        with gxvv.GXvv(data) as vv:
+            self.assertEqual(vv.dim, 3)
+            self.assertEqual(vv.np.shape, (100, 3))
+            self.assertEqual(tuple(vv.np[99,:]), (297., 298., 299.))
 
 ##############################################################################################
 if __name__ == '__main__':
