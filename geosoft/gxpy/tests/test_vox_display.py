@@ -59,9 +59,20 @@ class Test(GXPYTest):
             with gxvoxd.Vox_display.new(vox) as voxd:
                 voxd.shell_limits = (0.0001, None)
                 fig_map = voxd.figure_map(title="My Test VectorVox").file_name
+        #fig = gxmap.Map.open(fig_map).image_file()
         self.assertEqual(gxmap.Map.open(fig_map).crc_image(pix_width=800), 3227637535)
-        pass
 
+    def test_figure_map_vectorvoxel_vector(self):
+        self.start()
+
+        with gxvox.Vox.open(self.vectorvox_file) as vox:
+            vox.unit_of_measure = 'SI Susc'
+            with gxvoxd.Vox_display.new(vox, vector=True) as voxd:
+                voxd.shell_limits = (0.01, None)
+                voxd.vector_cone_specs = (10, None, None, 2000)
+                fig_map = voxd.figure_map(title="My Test VectorVox").file_name
+        #fig = gxmap.Map.open(fig_map).image_file()
+        self.assertEqual(gxmap.Map.open(fig_map).crc_image(pix_width=800), 625937542)
 
 
 if __name__ == '__main__':

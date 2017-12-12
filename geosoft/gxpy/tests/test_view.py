@@ -220,6 +220,7 @@ class Test(GXPYTest):
                 self.assertEqual(len(v.group_list_marked), 1)
                 self.assertEqual(len(v.group_list_visible), 1)
                 self.assertEqual(len(v.group_list_voxel), 0)
+                self.assertEqual(len(v.group_list_vectorvoxel), 0)
 
                 self.assertEqual(v.extent_all, v.extent_visible)
                 self.assertEqual(v.extent_map_cm(), (0.0, 0.0, 30.0, 20.0))

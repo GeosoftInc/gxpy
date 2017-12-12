@@ -32,7 +32,7 @@ def _t(s):
     return geosoft.gxpy.system.translate(s)
 
 
-class AggregateException(Exception):
+class VoxDisplayException(Exception):
     """
     Exceptions from :mod:`geosoft.gxpy.vox_display`.
 
@@ -89,22 +89,32 @@ class Vox_display:
         self._gxvoxd = None
         self._vox = vox
         self._open = gx.track_resource(self.__class__.__name__, vox.name)
+        self._vector = False
+        self._vector_cone_specs = (1., 4., 0.25, 5000)
 
     @classmethod
-    def new(cls, vox):
+    def new(cls, vox, vector=False, vector_cone_specs=(1., 4., 0.25, 5000)):
         """
         Create a new vox_display from a `geosoft.gxpy.vox.Vox` instance.
         
-        :param vox: `geosoft.gxpy.vox.Vox` instance
+        :param vox:                 `geosoft.gxpy.vox.Vox` instance
+        :param vector:              True to create a vector swarm from a vector voxel
+        :param vector_cone_specs:   Vector plotting specs
+                                    (scale_cell_ratio, height_base_ratio, base_cell_ratio, max_cones).
+                                    Default is (1., 4., 0.25, 5000). See `vector_cone_specs` property.
 
         .. versionadded:: 9.3.1
         """
 
+        if vector and not vox.is_vectorvox:
+            raise VoxDisplayException(_t('vox must be a vectorvoxel to create a vector swarm'))
         voxd = cls(vox)
         color_table = ''
         zone_method = ZONE_DEFAULT
         contour = gxapi.rDUMMY
         voxd._gxvoxd = gxapi.GXVOXD.create(vox.gxvox, color_table, zone_method, contour)
+        voxd._vector = vector
+        voxd._vector_cone_specs = vector_cone_specs
         return voxd
 
     @classmethod
@@ -134,6 +144,42 @@ class Vox_display:
         return self.vox.name
 
     @property
+    def vector(self):
+        """True if this is a vector style display"""
+        return self._vector
+
+    @property
+    def vector_cone_specs(self):
+        """
+        Vector plotting specs: (scale_cell_ratio, height_base_ratio, base_cell_ratio, max_cones). Can be set.
+
+        scale_cell_ratio scales the maximum cone length to the size of the smallest cell. If None, default is 1.
+
+        height_base_ratio is the ration of the cone height to the base size. If None, default is 4.
+
+        base_cell_ratio is the maximum base size relative to the minimum cell size. If None, default is 0.25.
+
+        max_cones is the maximum number of cones to draw. Voxel is decimated to limit the cones. None to plot all
+        cones, though typically this is limited to about 2000 to improve display performance.
+
+        .. versionadded:: 9.3.1
+        """
+        return self._vector_cone_specs
+        
+    @vector_cone_specs.setter
+    def vector_cone_specs(self, specs):
+        sc, hb, bc, mx = specs
+        if sc is None or sc <= 0.:
+            sc = 1.0
+        if hb is None or hb <= 0.:
+            hb = 4.
+        if bc is None or bc <= 0.:
+            bc = 0.25
+        if mx is not None and mx <= 0:
+            mx = None
+        self._vector_cone_specs = (sc, hb, bc, mx)
+
+    @property
     def draw_controls(self):
         """
         Vox drawing settings, returned as a tuple:
@@ -144,6 +190,10 @@ class Vox_display:
 
         .. versionadded:: 9.3.1
         """
+
+        if self.vector:
+            return (None, None, None)
+
         box = gxapi.int_ref()
         trans = gxapi.float_ref()
         x0 = gxapi.float_ref()
@@ -157,18 +207,22 @@ class Vox_display:
 
     @draw_controls.setter
     def draw_controls(self, controls):
+        if self.vector:
+            raise VoxDisplayException(_t('cannot set draw controls for a vector display'))
         box, trans, extent = controls
         x0, y0, z0, x1, y1, z1 = extent
         self.gxvoxd.set_draw_controls(box, trans, x0, y0, z0, x1, y1, z1)
 
     @property
     def gxvoxd(self):
-        """ The :class:`geosoft.gxapi.GXVOXD` instance handle."""
+        """The :class:`geosoft.gxapi.GXVOXD` instance handle, None for a vector display."""
         return self._gxvoxd
 
     @property
     def is_thematic(self):
         """True if this is a thematic vox display"""
+        if self.vector:
+            return False
         return bool(self.gxvoxd.is_thematic())
 
     @property

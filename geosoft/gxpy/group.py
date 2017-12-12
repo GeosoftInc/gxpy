@@ -2231,8 +2231,24 @@ class Vox_display_group(Group):
         if name is None:
             name = voxd.name
         voxd_group = cls(view3d, name)
+        if voxd.vector:
+            scale, height_base_ratio, max_base_size_ratio, max_cones = voxd.vector_cone_specs
+            if max_cones is None:
+                max_cones = gxapi.iDUMMY
+            minimum_value = voxd.shell_limits[0]
+            if minimum_value is None:
+                minimum_value = 0.
+            view3d.gxview.draw_vector_voxel_vectors(voxd.vox.gxvox,
+                                                    name,
+                                                    voxd.color_map.gxitr,
+                                                    scale,
+                                                    height_base_ratio,
+                                                    max_base_size_ratio,
+                                                    minimum_value,
+                                                    max_cones)
+        else:
+            view3d.gxview.voxd(voxd.gxvoxd, voxd_group.name)
         voxd_group._voxd = voxd
-        view3d.gxview.voxd(voxd.gxvoxd, voxd_group.name)
         return voxd_group
 
     @classmethod

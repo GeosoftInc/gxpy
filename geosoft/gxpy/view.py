@@ -68,6 +68,12 @@ GROUP_VISIBLE = 2 #:
 GROUP_AGG = 3 #:
 GROUP_CSYMB = 4 #:
 GROUP_VOXD = 5 #:
+GROUP_VECTORVOX = 6 #:
+_group_selector= (None, None, None,
+                  gxapi.MVIEW_IS_AGG,
+                  gxapi.MVIEW_IS_CSYMB,
+                  gxapi.MVIEW_IS_VOXD,
+                  gxapi.MVIEW_IS_VECTOR3D)
 
 EXTENT_ALL = gxapi.MVIEW_EXTENT_ALL #:
 EXTENT_VISIBLE = gxapi.MVIEW_EXTENT_VISIBLE #:
@@ -433,12 +439,10 @@ class View:
         elif gtype == GROUP_VISIBLE:
             return list(gdict(gxapi.MVIEW_GROUP_LIST_VISIBLE))
 
+        # filter by type wanted
         gd = gdict(gxapi.MVIEW_GROUP_LIST_ALL)
         aggs = []
-
-        # gxapi mappings from local GROUP_NAME manifest
-        isg = (None, None, None, gxapi.MVIEW_IS_AGG, gxapi.MVIEW_IS_CSYMB, gxapi.MVIEW_IS_VOXD)[gtype]
-
+        isg = _group_selector[gtype]
         for g in gd:
             if self.gxview.is_group(g, isg):
                 aggs.append(g)
@@ -473,6 +477,11 @@ class View:
     def group_list_voxel(self):
         """list of voxel groups in this view"""
         return self._groups(GROUP_VOXD)
+
+    @property
+    def group_list_vectorvoxel(self):
+        """list of voxel groups in this view"""
+        return self._groups(GROUP_VECTORVOX)
 
     def has_group(self, group):
         """ Returns True if the map contains this group."""

@@ -239,9 +239,8 @@ class Vox:
         ny = gxapi.int_ref()
         nz = gxapi.int_ref()
         self._gxvox.get_info(ityp, iarr, nx, ny, nz)
-        self._intrinsic_dtype = gxu.dtype_gx(ityp.value)
         if dtype is None:
-            self._dtype = self._intrinsic_dtype
+            self._dtype = gxu.dtype_gx(ityp.value)
         else:
             self._dtype = dtype
         self._return_int = gxu.is_int(gxu.gx_dtype(self._dtype))
@@ -359,8 +358,7 @@ class Vox:
                             project. If a file name or complete path, the vox is resolved from
                             the file system outside of the current project.
         :param gxapi_vox:   `gxapi.GXVOX` instance to create from GXVOX instance.
-        :param dtype:       working dtype for retrieving data, which can be different from the
-                            intrinsic data dtype. The default is the intrinsic data type.
+        :param dtype:       working dtype for retrieving data.
         :param depth:       True to work with z as depth (positive down), origin at the top of the vox.
                             The default is False, z is elevation (positive up), origin at the bottom of the vox.
         :param mode:        open mode:
@@ -396,9 +394,9 @@ class Vox:
         Create a new vox dataset
 
         :param name:        dataset name, or a path to a persistent file. A file with extension `.geosoft_voxel`
-                            will be created for vox instances that will persist (`temp=True`).
+                            or `geosoft_vectorvoxel` will be created for vox instances that will persist (`temp=True`).
         :param data:        data to place in the vox, must have 3 dimensions (nz, ny, nx) for simple
-                            scalar data, or (nx, ny, nz, 3) for vector data.
+                            scalar data, or (nx, ny, nz, 3) for vector data.f
         :param temp:        True to create a temporary vox which will be removed after use
         :param overwrite:   True to overwrite existing persistent vox
         :param dtype:       data type, default is the same as data, or np.float64 of no data.
@@ -555,11 +553,6 @@ class Vox:
     def dtype(self):
         """Working dtype for the data."""
         return self._dtype
-
-    @property
-    def intrinsic_dtype(self):
-        """Working intrinsic dtype for the data."""
-        return self._intrinsic_dtype
 
     @property
     def nx(self):

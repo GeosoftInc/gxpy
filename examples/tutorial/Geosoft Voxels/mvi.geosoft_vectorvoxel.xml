@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmd:MD_Metadata xsi:schemaLocation="http://www.isotc211.org/2005/gmd ../schemas/iso19139fra/gmd/gmd.xsd" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:map="urn:brgm:mapping" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:gfc="http://www.isotc211.org/2005/gfc" xmlns:gco="http://www.isotc211.org/2005/gco">
+	<geosoft xmlns="http://www.geosoft.com/schema/geo">
+		<dataset version="1">
+			<lineage>
+				<process name="geogxnet.dll(Geosoft.GX.VoxUtils.WindowVoxel;Run)" user="IAN-OFFICE\Ian" version="Version 9.4 (20171203.12449)" date="2017-12-10" time="11:08:56">
+					<parameter name="WINDOW_VOXEL::CLIP" value="1" type="integer"/>
+					<parameter name="WINDOW_VOXEL::HORIZONTAL_MODE" value="0" type="integer"/>
+					<parameter name="WINDOW_VOXEL::HORIZONTAL_WINDOWING" value="1" type="integer"/>
+					<parameter name="WINDOW_VOXEL::INPUT" value=".\mvi_MVI.geosoft_vectorvoxel" type="string"/>
+					<parameter name="WINDOW_VOXEL::MASK" value="1" type="string"/>
+					<parameter name="WINDOW_VOXEL::OUTPUT" value=".\mvi.geosoft_vectorvoxel" type="string"/>
+					<parameter name="WINDOW_VOXEL::PLY" value=".\w.ply" type="string"/>
+					<parameter name="WINDOW_VOXEL::VERTICAL_WINDOWING" value="0" type="integer"/>
+					<source name="g:\Projects\RJ_Smith\falcon_agg\m__Susc.geosoft_voxel" type="VOXEL"/>
+					<source name="g:\Projects\RJ_Smith\falcon_agg\mag.map" type="MAP"/>
+					<source name="g:\Projects\RJ_Smith\falcon_agg\mvi_MVI.geosoft_vectorvoxel" type="VOXEL"/>
+					<source name="g:\Projects\RJ_Smith\falcon_agg\surveys.map" type="MAP"/>
+				</process>
+			</lineage>
+			<title>mvi</title>
+			<file_format>geosoft_vectorvoxel</file_format>
+			<project_name>g:\projects\rj_smith\falcon_agg\modelling.gpf</project_name>
+			<data_created_by>IAN-OFFICE\Ian</data_created_by>
+			<data_creation_date>2017-12-10</data_creation_date>
+			<metadata_created_by>IAN-OFFICE\Ian</metadata_created_by>
+			<metadata_creation_date>2017-12-10</metadata_creation_date>
+			<georeference>
+				<dataextents>
+					<extent3d minx="504625" miny="6470125" minz="-1578.822755476325" maxx="506000" maxy="6471525" maxz="308.06000000000097"/>
+				</dataextents>
+				<projection type="TRANSVERSE_MERCATOR" name="WGS 84 / MGA zone 50" projection="MGA zone 50" ellipsoid="WGS 84" datum="WGS 84" datumtrf="WGS 84" datumtrf_description="[WGS 84] World" radius="6378137" eccentricity="0.0818191908426215">
+					<shift x="0" y="0" z="0"/>
+					<parameters scale="0.9996" false_east="500000" false_north="10000000" lat_origin="0" lon_origin="117"/>
+					<units name="m" unit_scale="1"/>
+				</projection>
+			</georeference>
+		</dataset>
+	</geosoft>
+	<gmd:dataQualityInfo>
+		<gmd:DQ_DataQuality>
+			<gmd:lineage>
+				<gmd:LI_Lineage>
+					<gmd:processStep xlink:type="Geosoft Process" xlink:title="geogxnet.dll(Geosoft.GX.VoxUtils.WindowVoxel;Run)">
+						<gmd:LI_ProcessStep>
+							<gmd:dateTime>
+								<gco:DateTime>2017-12-10T11:08:56</gco:DateTime>
+							</gmd:dateTime>
+							<gmd:processor>
+								<gmd:CI_ResponsibleParty>
+									<gmd:individualName>
+										<gco:CharacterString>IAN-OFFICE\Ian</gco:CharacterString>
+									</gmd:individualName>
+								</gmd:CI_ResponsibleParty>
+							</gmd:processor>
+							<gmd:source xlink:type="Data Parameter" xlink:role="WINDOW_VOXEL::CLIP" xlink:title="1">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="WINDOW_VOXEL::HORIZONTAL_MODE" xlink:title="0">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="WINDOW_VOXEL::HORIZONTAL_WINDOWING" xlink:title="1">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="WINDOW_VOXEL::INPUT" xlink:title=".\mvi_MVI.geosoft_vectorvoxel">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="WINDOW_VOXEL::MASK" xlink:title="1">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="WINDOW_VOXEL::OUTPUT" xlink:title=".\mvi.geosoft_vectorvoxel">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="WINDOW_VOXEL::PLY" xlink:title=".\w.ply">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="WINDOW_VOXEL::VERTICAL_WINDOWING" xlink:title="0">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Source" xlink:role="VOXEL" xlink:title="g:\Projects\RJ_Smith\falcon_agg\m__Susc.geosoft_voxel">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Source" xlink:role="MAP" xlink:title="g:\Projects\RJ_Smith\falcon_agg\mag.map">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Source" xlink:role="VOXEL" xlink:title="g:\Projects\RJ_Smith\falcon_agg\mvi_MVI.geosoft_vectorvoxel">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Source" xlink:role="MAP" xlink:title="g:\Projects\RJ_Smith\falcon_agg\surveys.map">
+								<gmd:LI_Source/>
+							</gmd:source>
+						</gmd:LI_ProcessStep>
+					</gmd:processStep>
+				</gmd:LI_Lineage>
+			</gmd:lineage>
+		</gmd:DQ_DataQuality>
+	</gmd:dataQualityInfo>
+	<gmd:identificationInfo>
+		<gmd:MD_DataIdentification>
+			<gmd:citation>
+				<gmd:CI_Citation>
+					<gmd:title>
+						<gco:CharacterString>mvi</gco:CharacterString>
+					</gmd:title>
+					<gmd:collectiveTitle>
+						<gco:CharacterString>g:\projects\rj_smith\falcon_agg\modelling.gpf</gco:CharacterString>
+					</gmd:collectiveTitle>
+					<gmd:date>
+						<gmd:CI_Date>
+							<gmd:date>
+								<gco:Date>2017-12-10</gco:Date>
+							</gmd:date>
+						</gmd:CI_Date>
+					</gmd:date>
+				</gmd:CI_Citation>
+			</gmd:citation>
+			<gmd:resourceFormat>
+				<gmd:MD_Format>
+					<gmd:name>
+						<gco:CharacterString>geosoft_vectorvoxel</gco:CharacterString>
+					</gmd:name>
+				</gmd:MD_Format>
+			</gmd:resourceFormat>
+			<gmd:pointOfContact>
+				<gmd:CI_ResponsibleParty>
+					<gmd:individualName>
+						<gco:CharacterString>IAN-OFFICE\Ian</gco:CharacterString>
+					</gmd:individualName>
+				</gmd:CI_ResponsibleParty>
+			</gmd:pointOfContact>
+			<gmd:extent>
+				<gmd:EX_Extent>
+					<gmd:geographicElement>
+						<gmd:EX_GeographicBoundingBox>
+							<gmd:westBoundLongitude>
+								<gco:Decimal>117.04890773689414</gco:Decimal>
+							</gmd:westBoundLongitude>
+							<gmd:eastBoundLongitude>
+								<gco:Decimal>117.06345653221517</gco:Decimal>
+							</gmd:eastBoundLongitude>
+							<gmd:southBoundLatitude>
+								<gco:Decimal>-31.904713260354274</gco:Decimal>
+							</gmd:southBoundLatitude>
+							<gmd:northBoundLatitude>
+								<gco:Decimal>-31.892076096764594</gco:Decimal>
+							</gmd:northBoundLatitude>
+						</gmd:EX_GeographicBoundingBox>
+					</gmd:geographicElement>
+				</gmd:EX_Extent>
+			</gmd:extent>
+		</gmd:MD_DataIdentification>
+	</gmd:identificationInfo>
+	<gmd:contact>
+		<gmd:CI_ResponsibleParty>
+			<gmd:individualName>
+				<gco:CharacterString>IAN-OFFICE\Ian</gco:CharacterString>
+			</gmd:individualName>
+		</gmd:CI_ResponsibleParty>
+	</gmd:contact>
+	<gmd:dateStamp>
+		<gco:Date>2017-12-10</gco:Date>
+	</gmd:dateStamp>
+	<gmd:referenceSystemInfo>
+		<gmd:MD_ReferenceSystem>
+			<gmd:referenceSystemIdentifier>
+				<gmd:RS_Identifier>
+					<gmd:codeSpace>
+						<gco:CharacterString>ESRI</gco:CharacterString>
+					</gmd:codeSpace>
+					<gmd:code>
+						<gco:CharacterString>PROJCS["MGA_zone_50",GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_84",6378137,298.257223563002]],PRIMEM["Greenwich",0],UNIT["Degree",0.0174532925199432955]],PROJECTION["Transverse_Mercator"],PARAMETER["False_Easting",500000],PARAMETER["False_Northing",10000000],PARAMETER["Central_Meridian",117],PARAMETER["Scale_Factor",0.9996],PARAMETER["Latitude_Of_Origin",0],UNIT["Meter",1]]</gco:CharacterString>
+					</gmd:code>
+					<gmd:version>
+						<gco:CharacterString>1</gco:CharacterString>
+					</gmd:version>
+				</gmd:RS_Identifier>
+			</gmd:referenceSystemIdentifier>
+		</gmd:MD_ReferenceSystem>
+	</gmd:referenceSystemInfo>
+</gmd:MD_Metadata>
