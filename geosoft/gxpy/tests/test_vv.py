@@ -30,7 +30,7 @@ class Test(GXPYTest):
             vv.fid = fid
             self.assertEqual(vv.fid, fid)
 
-            vv.refid((-40,8),4)
+            vv.refid((-40, 8), 4)
             self.assertEqual(vv.fid, (-40,8))
             self.assertEqual(vv.length, 4)
             self.assertEqual(len(vv.np), 4)
@@ -40,6 +40,17 @@ class Test(GXPYTest):
             self.assertEqual(vv.length, 16)
             self.assertEqual(len(vv.np), 16)
             self.assertEqual(vv.dim, 1)
+
+            vv.refid((-38, 1.5))
+            self.assertEqual(vv.fid, (-38, 1.5))
+            self.assertEqual(vv.length, 80)
+
+            vv.refid((1000, 50))
+            self.assertEqual(vv.fid, (1000., 50.))
+            self.assertEqual(vv.length, 0)
+
+            self.assertRaises(gxvv.VVException, vv.refid, (1, 0))
+            self.assertRaises(gxvv.VVException, vv.refid, (1, -1))
 
         with gxvv.GXvv([1, 2, 3, 4, 5, 6]) as vv:
             self.assertEqual(vv.fid, (0.0, 1.0))
@@ -286,6 +297,8 @@ class Test(GXPYTest):
             self.assertEqual(vv.np.shape, (100, 3))
             self.assertEqual(tuple(vv.np[99, :2]), (297., 298.))
             self.assertTrue(np.isnan(vv.np[99, 2]))
+
+
 
 ##############################################################################################
 if __name__ == '__main__':

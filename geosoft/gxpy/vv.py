@@ -359,16 +359,25 @@ class GXvv:
         if fid:
             self.fid = fid
 
-    def refid(self, fid, length):
+    def refid(self, fid, length=None):
         """
         Resample VV to a new fiducial and length
 
-        :param fid: (start,incr)
-        :param length: length
+        :param fid: (start, incr)
+        :param length: length, if not specified the length is calculated to the end of the data.
 
         .. versionadded:: 9.1
+
+        .. versionchanged:: 9.3.1 added default length calculation
         """
-        self._gxvv.re_fid(fid[0], fid[1], length)
+        if fid[1] <= 0.:
+            raise VVException(_t('fid increment must be greater than 0.'))
+        if length is None:
+            end_fid = self.fid[0] + self.fid[1] * (self.length - 1)
+            length = (((end_fid - fid[0]) + fid[1] * 0.5) // fid[1]) + 1
+            if length < 0:
+                length = 0
+        self._gxvv.re_fid(fid[0], fid[1], int(length))
         self.fid = fid
 
     def list(self):
