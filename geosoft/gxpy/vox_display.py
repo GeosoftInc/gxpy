@@ -85,10 +85,14 @@ class Vox_display:
                 self._gxvoxd = None
                 self._vox = None
 
-    def __init__(self, vox):
+    def __init__(self, vox, name=None):
         self._gxvoxd = None
         self._vox = vox
-        self._open = gx.track_resource(self.__class__.__name__, vox.name)
+        if name is None:
+            if vox is not None:
+                name = vox.name
+        self._name = name
+        self._open = gx.track_resource(self.__class__.__name__, name)
         self._vector = False
         self._vector_cone_specs = (1., 4., 0.25, 5000)
 
@@ -131,11 +135,21 @@ class Vox_display:
             if name is None:
                 name = gxapi.str_ref()
                 gxapi_voxd.get_name(name)
-            name = os.path.splitext(os.path.basename(name.value))[0]
-            voxd = cls(gxvox.Vox.open(name))
+            name = name.value
         else:
-            voxd = cls(None)
+            if not name:
+                raise VoxDisplayException(_t('a name is required to open a GXVECTOR3D object'))
+
+        try:
+            vox = gxvox.Vox.open(name)
+        except:
+            vox = None
+
+        name = os.path.splitext(os.path.basename(name))[0]
+
+        voxd = cls(vox, name=name)
         voxd._gxvoxd = gxapi_voxd
+
         return voxd
 
     @property
@@ -146,7 +160,12 @@ class Vox_display:
     @property
     def name(self):
         """ instance name, same as the contained Vox name"""
-        return self.vox.name
+        return self._name
+
+    @property
+    def unit_of_measure(self):
+        """Unit of data measurement for the contained vox data."""
+        return self.color_map.unit_of_measure
 
     @property
     def vector(self):
@@ -248,7 +267,8 @@ class Vox_display:
         self.gxvoxd.get_itr(itr)
         cmap = geosoft.gxpy.group.Color_map(itr)
         cmap.title = self.name
-        cmap.unit_of_measure = self.vox.unit_of_measure
+        if self.vox:
+            cmap.unit_of_measure = self.vox.unit_of_measure
         return cmap
 
     @property

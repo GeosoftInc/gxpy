@@ -519,8 +519,13 @@ class Group:
     @property
     def gx_metadata(self):
         """
-        The group Geosoft metadata as a Geosoft :class:`geosoft.gxpy.metadata.Metadata` instance.
-        Can be set.
+        The group metadata as a Geosoft `geosoft.gxpy.metadata.Metadata` instance. This metadata
+        may contain standard Geosoft metadata, such as unit_of_measure for data contained in the group,
+        and you can add your own metadata spexific to your application. See `geosoft.gxpy.metadata.Metadata`
+        for information about working with metadata.
+
+        Can be set, in which case the metadata is replaced by the new metadata. Normally you will get the current
+        metadata, add to or modify, then set it back.
 
         .. versionadded:: 9.3
         """
@@ -2015,14 +2020,14 @@ class Color_symbols_group(Group):
         self.__del__()
 
     def __del__(self):
-        if hasattr(self, 'gxcsymb'):
-            self.gxcsymb = None
+        if hasattr(self, '_gxcsymb'):
+            self._gxcsymb = None
         if hasattr(self, '_close'):
             self._close()
 
     def __init__(self, view, group_name, **kwargs):
 
-        self.gxcsymb = None
+        self._gxcsymb = None
         super().__init__(view, group_name, **kwargs)
 
     @classmethod
@@ -2038,7 +2043,7 @@ class Color_symbols_group(Group):
         Create a new color symbols group with color mapping.
 
         :param view:            the view in which to place the group
-        :param group_name:      group name, which can optionally be decorated with the unit_of_measure (eg "Cu.ppm")
+        :param group_name:      group name
         :param data:            iterable that yields `((x, y), data)`, or `((x, y, z), data, ...)`.  Only the
                                 first `data` value is used.
         :param color_map:       symbol fill color :class:`Color_map`.
@@ -2059,23 +2064,25 @@ class Color_symbols_group(Group):
             return True
 
         cs = cls(view, name, mode=NEW, **kwargs)
-        cs.gxcsymb = gxapi.GXCSYMB.create(color_map.save_file())
+        cs._gxcsymb = gxapi.GXCSYMB.create(color_map.save_file())
 
         if symbol_def is None:
             symbol_def = Text_def(font='geosoft.gfn',
                                   height=(0.25 * view.units_per_map_cm),
                                   weight=FONT_WEIGHT_ULTRALIGHT,
                                   color=C_BLACK)
-        cs.gxcsymb.set_font(symbol_def.font, symbol_def.gfn, symbol_def.weight, symbol_def.italics)
-        cs.gxcsymb.set_static_col(symbol_def.color.int_value, 0)
-        cs.gxcsymb.set_scale(symbol_def.height)
-        cs.gxcsymb.set_number(symbol)
+        cs._gxcsymb.set_font(symbol_def.font, symbol_def.gfn, symbol_def.weight, symbol_def.italics)
+        cs._gxcsymb.set_static_col(symbol_def.color.int_value, 0)
+        cs._gxcsymb.set_scale(symbol_def.height)
+        cs._gxcsymb.set_number(symbol)
 
         xy = gxgm.PPoint([xy[0] for xy in data if valid(xy)])
-        cs.gxcsymb.add_data(gxvv.GXvv(xy.x).gxvv,
+        cs._gxcsymb.add_data(gxvv.GXvv(xy.x).gxvv,
                           gxvv.GXvv(xy.y).gxvv,
                           gxvv.GXvv([d[1] for d in data if valid(d)]).gxvv)
-        view.gxview.col_symbol(cs.name, cs.gxcsymb)
+        view.gxview.col_symbol(cs.name, cs._gxcsymb)
+
+        cs.unit_of_measure = color_map.unit_of_measure
 
         return cs
 
@@ -2094,7 +2101,7 @@ class Color_symbols_group(Group):
         """
         cs = cls(view, group_name, mode=READ_ONLY)
         group_number = view.gxview.find_group(group_name)
-        cs.gxcsymb = view.gxview.get_col_symbol(group_number)
+        cs._gxcsymb = view.gxview.get_col_symbol(group_number)
         return cs
 
     def color_map(self):
@@ -2105,7 +2112,7 @@ class Color_symbols_group(Group):
         """
 
         itr = gxapi.GXITR.create()
-        self.gxcsymb.get_itr(itr)
+        self._gxcsymb.get_itr(itr)
         cmap = geosoft.gxpy.group.Color_map(itr)
         cmap.title = self.name
         cmap.unit_of_measure = self.unit_of_measure
@@ -2208,6 +2215,8 @@ class Vox_display_group(Group):
     def __del__(self):
         if hasattr(self, '_voxd'):
             self._voxd = None
+        if hasattr(self, '_close'):
+            self._close()
 
     def __init__(self, view3d, group_name, mode=NEW):
 
@@ -2249,6 +2258,7 @@ class Vox_display_group(Group):
         else:
             view3d.gxview.voxd(voxd.gxvoxd, voxd_group.name)
         voxd_group._voxd = voxd
+        voxd_group.unit_of_measure = voxd.unit_of_measure
         return voxd_group
 
     @classmethod
@@ -2265,14 +2275,13 @@ class Vox_display_group(Group):
         .. versionadded: 9.3.1
         """
         voxd_group = cls(view, group_name, mode=READ_ONLY)
-        group_number = view.gxview.find_group(voxd_group.name)
         if view.gxview.is_group(group_name, gxapi.MVIEW_IS_VOXD):
-            _voxd = voxd_group.view.gxview.get_voxd(group_number)
+            voxd_group._voxd = gxvoxd.Vox_display.open(voxd_group.view.gxview.get_voxd(voxd_group.number))
         elif view.gxview.is_group(group_name, gxapi.MVIEW_IS_VECTOR3D):
-            _voxd = voxd_group.view.gxview.get_vecor_3d(group_number)
+            voxd_group._voxd = gxvoxd.Vox_display.open(voxd_group.view.gxview.get_vector_3d(voxd_group.number),
+                                                       name=group_name + ".geosoft_vectorvoxel")
         else:
             raise GroupException('Group "{}" is not a GXVOXD or a GXVECTOR3D'.format(group_name))
-        voxd_group._voxd = gxvoxd.Vox_display.open(_voxd)
         return voxd_group
 
     @property
@@ -2283,6 +2292,7 @@ class Vox_display_group(Group):
         .. versionadded:: 9.3.1
         """
         return self._voxd
+
 
 class Color_map:
     """
