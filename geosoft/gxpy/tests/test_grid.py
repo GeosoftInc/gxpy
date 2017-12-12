@@ -53,11 +53,6 @@ class Test(GXPYTest):
             self.assertEqual(g1.ny, 101)
             self.assertEqual(str(g1.coordinate_system), 'WGS 84')
 
-        with gxgrd.Grid.open(self.gcf) as gc:
-            properties = gc.properties()
-            self.assertEqual(properties.get('is_color'),True)
-            self.assertEqual(gc.is_color, True)
-
     def test_copy(self):
         self.start()
 
@@ -666,13 +661,6 @@ class Test(GXPYTest):
 
             self.assertEqual(2696851.0, np.nansum(data))
             self.assertEqual(0, np.count_nonzero(np.isnan(data)))
-
-        with gxgrd.Grid.open(self.gcf) as gc:
-            data = gc.np()
-            self.assertEqual(data.dtype, np.dtype(np.byte))
-            self.assertEqual(data.shape, (101, 101, 3))
-            data = gc.np()
-            
 
 ###############################################################################################
 
