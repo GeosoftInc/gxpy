@@ -857,6 +857,16 @@ GS_MAX_PATH = 1040
 GS_MULTI_PATH = 16384
 
 #
+# GEO_BOOL constants
+#
+# Boolean values
+
+#: False
+GS_FALSE = 0
+#: True
+GS_TRUE = 1
+
+#
 # GEO_VAR constants
 #
 # Variable types.

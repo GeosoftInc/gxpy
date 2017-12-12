@@ -2049,6 +2049,9 @@ class GXIP(gxapi_cy.WrapIP):
 
         **Note:** Sets up an EXT object in the database that captures row/line change events and plots the
         electrodes for the selected row on an accompanying map.
+        The EXT object is removed by running LaunchRemoveContributingElectrodesEXTTool_IPGUI.
+        This EXT is not serialized, so it is also removed if the database is closed (since
+        this is not the normal behaviour expected from a database).
         """
         gxapi_cy.WrapIP._locate_contributing_electrodes(GXContext._get_tls_geo(), db, map.encode(), rx1x.encode(), rx1y.encode(), rx2x.encode(), rx2y.encode(), tx1x.encode(), tx1y.encode(), tx2x.encode(), tx2y.encode(), sym_size)
         

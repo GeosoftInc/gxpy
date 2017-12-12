@@ -279,6 +279,31 @@ class GXRGRD(gxapi_cy.WrapRGRD):
 
 
 
+    @classmethod
+    def run_list(cls, dbs, zch, ipj, ctl, grd):
+        """
+        Executes the Rangrid program from a list of databases.
+        
+        :param dbs:  List of databases (using | separator)
+        :param zch:  Z Channel
+        :param ipj:  Projection to put into grid
+        :param ctl:  RANGRID control file.
+        :param grd:  Output grid name
+        :type  dbs:  str
+        :type  zch:  str
+        :type  ipj:  GXIPJ
+        :type  ctl:  str
+        :type  grd:  str
+
+        .. versionadded:: 9.4
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        """
+        gxapi_cy.WrapRGRD._run_list(GXContext._get_tls_geo(), dbs.encode(), zch.encode(), ipj, ctl.encode(), grd.encode())
+        
+
+
+
 
 
 ### endblock ClassImplementation

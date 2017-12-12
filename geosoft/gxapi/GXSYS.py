@@ -1988,6 +1988,74 @@ class GXSYS(gxapi_cy.WrapSYS):
 
 
 
+    @classmethod
+    def geosoft_connect_authenticate_and_navigate(cls, url):
+        """
+        Automatically authenticate and navigate to my.geosoft.com URL
+        
+        :param url:  URL
+        :type  url:  str
+
+        .. versionadded:: 9.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        """
+        gxapi_cy.WrapSYS._geosoft_connect_authenticate_and_navigate(GXContext._get_tls_geo(), url.encode())
+        
+
+
+
+    @classmethod
+    def get_geosoft_id(cls, id):
+        """
+        Get the Geosoft ID (email) if signed in
+        
+        :param id:  Returned ID
+        :type  id:  str_ref
+
+        .. versionadded:: 9.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        """
+        id.value = gxapi_cy.WrapSYS._get_geosoft_id(GXContext._get_tls_geo(), id.value.encode())
+        
+
+
+
+    @classmethod
+    def get_profile_name(cls, name):
+        """
+        Get the profile name as defined in My Geosoft (or email if not defined)
+        
+        :param name:  Returned name
+        :type  name:  str_ref
+
+        .. versionadded:: 9.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        """
+        name.value = gxapi_cy.WrapSYS._get_profile_name(GXContext._get_tls_geo(), name.value.encode())
+        
+
+
+
+    @classmethod
+    def get_profile_url(cls, url):
+        """
+        Get link to my.geosoft.com profile URL
+        
+        :param url:  Returned URL
+        :type  url:  str_ref
+
+        .. versionadded:: 9.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        """
+        url.value = gxapi_cy.WrapSYS._get_profile_url(GXContext._get_tls_geo(), url.value.encode())
+        
+
+
+
 
 # Lineage
 

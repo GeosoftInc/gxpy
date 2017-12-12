@@ -2168,6 +2168,40 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
 
 
+    def set_from_binary_as_string(self, str_val):
+        """
+        Set `GXIPJ <geosoft.gxapi.GXIPJ>` from binary-as-string
+        
+        :param str_val:  Binary as string
+        :type  str_val:  str
+
+        .. versionadded:: 9.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        """
+        self._set_from_binary_as_string(str_val.encode())
+        
+
+
+
+
+    def get_from_binary_as_string(self, str_val):
+        """
+        Get `GXIPJ <geosoft.gxapi.GXIPJ>` from binary-as-string
+        
+        :param str_val:  Binary as string returned
+        :type  str_val:  str_ref
+
+        .. versionadded:: 9.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        """
+        str_val.value = self._get_from_binary_as_string(str_val.value.encode())
+        
+
+
+
+
     def get_3d_matrix_orientation(self, v00, v01, v02, v03, v10, v11, v12, v13, v20, v21, v22, v23, v30, v31, v32, v33):
         """
         Gets the coefficients of a 3D matrix orientation.

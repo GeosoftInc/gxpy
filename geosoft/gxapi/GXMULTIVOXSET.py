@@ -426,6 +426,126 @@ class GXMULTIVOXSET(gxapi_cy.WrapMULTIVOXSET):
 
 
     @classmethod
+    def convert_thematic_to_double(cls, input_voxel_filename, translate_vv, output_voxel_filename):
+        """
+        Convert Thematic MultiVoxset to Double MultiVoxset
+        
+        :param input_voxel_filename:   Input voxel filename
+        :param translate_vv:           Translation VV handle
+        :param output_voxel_filename:  Output voxel filename
+        :type  input_voxel_filename:   str
+        :type  translate_vv:           GXVV
+        :type  output_voxel_filename:  str
+
+        .. versionadded:: 9.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        """
+        gxapi_cy.WrapMULTIVOXSET._convert_thematic_to_double(GXContext._get_tls_geo(), input_voxel_filename.encode(), translate_vv, output_voxel_filename.encode())
+        
+
+
+
+    @classmethod
+    def convert_double_to_thematic(cls, input_voxel_filename, translate_vv, output_voxel_filename):
+        """
+        Convert Double MultiVoxset to Thematic MultiVoxset
+        
+        :param input_voxel_filename:   Input voxel filename
+        :param translate_vv:           Translation VV handle
+        :param output_voxel_filename:  Output voxel filename
+        :type  input_voxel_filename:   str
+        :type  translate_vv:           GXVV
+        :type  output_voxel_filename:  str
+
+        .. versionadded:: 9.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        """
+        gxapi_cy.WrapMULTIVOXSET._convert_double_to_thematic(GXContext._get_tls_geo(), input_voxel_filename.encode(), translate_vv, output_voxel_filename.encode())
+        
+
+
+
+    @classmethod
+    def convert_velocity_to_density(cls, input_voxel_filename, input_scaling_factor, input_lower_bound, input_upper_bound, a5, a4, a3, a2, a1, a0, output_scaling_factor, output_voxel_filename):
+        """
+        Convert Velocity MultiVoxset to Density MultiVoxset
+        
+        :param input_voxel_filename:   Input voxel filename
+        :param input_scaling_factor:   1.0, if this voxel is in meters per second. Otherwise, a value by which each input cell is multiplied to convert it into meters per second.
+        :param input_lower_bound:      Lower bound on velocity values, in meters per second. If the input value (after being pre-multiplied by dInputScalingFactor) is less than this value, the output cell value will be DUMMY.
+        :param input_upper_bound:      Upper bound on velocity values, in meters per second. If the input value (after being pre-multiplied by dInputScalingFactor) is greater than this value, the output cell value will be DUMMY.
+        :param a5:                     Coefficient of fifth-order polynomial term.
+        :param a4:                     Coefficient of fourth-order polynomial term.
+        :param a3:                     Coefficient of third-order polynomial term.
+        :param a2:                     Coefficient of second-order polynomial term.
+        :param a1:                     Coefficient of first-order polynomial term.
+        :param a0:                     Constant offset of output.
+        :param output_scaling_factor:  1.0, to produce an output voxel that has units of g/cm^3. If different units are desired, pass in a different value, which will be multiplied into each output voxel cell.
+        :param output_voxel_filename:  Output voxel filename
+        :type  input_voxel_filename:   str
+        :type  input_scaling_factor:   float
+        :type  input_lower_bound:      float
+        :type  input_upper_bound:      float
+        :type  a5:                     float
+        :type  a4:                     float
+        :type  a3:                     float
+        :type  a2:                     float
+        :type  a1:                     float
+        :type  a0:                     float
+        :type  output_scaling_factor:  float
+        :type  output_voxel_filename:  str
+
+        .. versionadded:: 9.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        """
+        gxapi_cy.WrapMULTIVOXSET._convert_velocity_to_density(GXContext._get_tls_geo(), input_voxel_filename.encode(), input_scaling_factor, input_lower_bound, input_upper_bound, a5, a4, a3, a2, a1, a0, output_scaling_factor, output_voxel_filename.encode())
+        
+
+
+
+    @classmethod
+    def convert_density_to_velocity(cls, input_voxel_filename, input_scaling_factor, input_lower_bound, input_upper_bound, a5, a4, a3, a2, a1, a0, output_scaling_factor, output_voxel_filename):
+        """
+        Convert Density MultiVoxset to Velocity MultiVoxset
+        
+        :param input_voxel_filename:   Input voxel filename
+        :param input_scaling_factor:   1.0, if this voxel is in meters per second. Otherwise, a value by which each input cell is multiplied to convert it into meters per second.
+        :param input_lower_bound:      Lower bound on velocity values, in meters per second. If the input value (after being pre-multiplied by dInputScalingFactor) is less than this value, the output cell value will be DUMMY.
+        :param input_upper_bound:      Upper bound on velocity values, in meters per second. If the input value (after being pre-multiplied by dInputScalingFactor) is greater than this value, the output cell value will be DUMMY.
+        :param a5:                     Coefficient of fifth-order polynomial term.
+        :param a4:                     Coefficient of fourth-order polynomial term.
+        :param a3:                     Coefficient of third-order polynomial term.
+        :param a2:                     Coefficient of second-order polynomial term.
+        :param a1:                     Coefficient of first-order polynomial term.
+        :param a0:                     Constant offset of output.
+        :param output_scaling_factor:  1.0, to produce an output voxel that has units of g/cm^3. If different units are desired, pass in a different value, which will be multiplied into each output voxel cell.
+        :param output_voxel_filename:  Output voxel filename
+        :type  input_voxel_filename:   str
+        :type  input_scaling_factor:   float
+        :type  input_lower_bound:      float
+        :type  input_upper_bound:      float
+        :type  a5:                     float
+        :type  a4:                     float
+        :type  a3:                     float
+        :type  a2:                     float
+        :type  a1:                     float
+        :type  a0:                     float
+        :type  output_scaling_factor:  float
+        :type  output_voxel_filename:  str
+
+        .. versionadded:: 9.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        """
+        gxapi_cy.WrapMULTIVOXSET._convert_density_to_velocity(GXContext._get_tls_geo(), input_voxel_filename.encode(), input_scaling_factor, input_lower_bound, input_upper_bound, a5, a4, a3, a2, a1, a0, output_scaling_factor, output_voxel_filename.encode())
+        
+
+
+
+    @classmethod
     def create_double_constant(cls, name, value, ox, oy, oz, cell_x, cell_y, cell_z, size_x, size_y, size_z, ipj):
         """
         Generate a double MultiVoxset with a constant value
