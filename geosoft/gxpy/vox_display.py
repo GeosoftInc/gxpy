@@ -118,19 +118,24 @@ class Vox_display:
         return voxd
 
     @classmethod
-    def open(cls, gxapi_voxd):
+    def open(cls, gxapi_voxd, name=None):
         """
-        Create a Vox_display instance from a `gxapi.GXVOXD` instance.
+        Create a Vox_display instance from a `gxapi.GXVOXD` or a `gxapi.GXVECTOR3D` instance.
 
-        :param gxapi_voxd: `gxapi.VOXD` instance
+        :param gxapi_voxd:  `gxapi.VOXD` or `gxapi.GXVECTOR3D` instance
+        :param name:        name of the voxel, required for a vector voxel.
 
         .. versionadded 9.3.1
         """
-        name = gxapi.str_ref()
-        gxapi_voxd.get_name(name)
-        name = os.path.splitext(os.path.basename(name.value))[0]
-        vox = gxvox.Vox.open(name, gxapi_vox=gxapi_voxd)
-        voxd = cls(vox)
+        if isinstance(gxapi_voxd, gxapi.GXVOXD):
+            if name is None:
+                name = gxapi.str_ref()
+                gxapi_voxd.get_name(name)
+            name = os.path.splitext(os.path.basename(name.value))[0]
+            voxd = cls(gxvox.Vox.open(name))
+        else:
+            voxd = cls(None)
+        voxd._gxvoxd = gxapi_voxd
         return voxd
 
     @property

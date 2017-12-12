@@ -441,12 +441,12 @@ class View:
 
         # filter by type wanted
         gd = gdict(gxapi.MVIEW_GROUP_LIST_ALL)
-        aggs = []
+        groups = []
         isg = _group_selector[gtype]
         for g in gd:
             if self.gxview.is_group(g, isg):
-                aggs.append(g)
-        return aggs
+                groups.append(g)
+        return groups
 
     @property
     def group_list(self):

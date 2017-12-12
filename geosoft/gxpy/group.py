@@ -18,7 +18,7 @@ in a 3D view, the group is placed on a the active plane inside the 3D view
     :class:`Color_map`           maps values to colors
     :class:`Pen`                 pen definition, includes line colour, thickness and pattern, and fill.
     :class:`Text_def`            defined text characteristics
-    :class:'Vox_display_group`   add a 'geosoft.gxpy.vox.Vox_display` to a `geosoft.gxpy.view.View_3d`
+    :class:`Vox_display_group`   add a 'geosoft.gxpy.vox.Vox_display` to a `geosoft.gxpy.view.View_3d`
     ============================ =============================================================================
 
 .. note::
@@ -2259,13 +2259,19 @@ class Vox_display_group(Group):
         Open an existing `Vox_display_group` in a 3d view.
 
         :param view:        the 3d view
-        :param group_name:  the name of the group to open, must be a `Vox_display_group`.
+        :param group_name:  the name of the group to open, must be a `gxapi.GXVOXD` or
+                            `gxapi.GXVECTOR3D`.
 
         .. versionadded: 9.3.1
         """
         voxd_group = cls(view, group_name, mode=READ_ONLY)
         group_number = view.gxview.find_group(voxd_group.name)
-        _voxd = voxd_group.view.get_voxd(group_number)
+        if view.gxview.is_group(group_name, gxapi.MVIEW_IS_VOXD):
+            _voxd = voxd_group.view.gxview.get_voxd(group_number)
+        elif view.gxview.is_group(group_name, gxapi.MVIEW_IS_VECTOR3D):
+            _voxd = voxd_group.view.gxview.get_vecor_3d(group_number)
+        else:
+            raise GroupException('Group "{}" is not a GXVOXD or a GXVECTOR3D'.format(group_name))
         voxd_group._voxd = gxvoxd.Vox_display.open(_voxd)
         return voxd_group
 

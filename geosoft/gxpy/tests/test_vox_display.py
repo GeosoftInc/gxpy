@@ -1,12 +1,12 @@
 import unittest
 import os
 
-import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.vox as gxvox
 import geosoft.gxpy.vox_display as gxvoxd
-import geosoft.gxpy.viewer as gxviewer
 import geosoft.gxpy.map as gxmap
+import geosoft.gxpy.view as gxview
+import geosoft.gxpy.group as gxgroup
 
 from base import GXPYTest
 
@@ -73,6 +73,20 @@ class Test(GXPYTest):
                 fig_map = voxd.figure_map(title="My Test VectorVox").file_name
         #fig = gxmap.Map.open(fig_map).image_file()
         self.assertEqual(gxmap.Map.open(fig_map).crc_image(pix_width=800), 625937542)
+
+    def test_open(self):
+        self.start()
+
+        with gxvox.Vox.open(self.vox_file) as vox:
+            with gxvoxd.Vox_display.new(vox) as voxd:
+                with gxview.View_3d.new() as v3d:
+                    v3d_file = v3d.file_name
+                    group_name = gxgroup.Vox_display_group.new(v3d, voxd).name
+        with gxview.View_3d.open(v3d_file) as v3d:
+            self.assertEqual(len(v3d.group_list_voxel), 1)
+            self.assertTrue(group_name in v3d.group_list_voxel)
+            with gxgroup.Vox_display_group.open(v3d, group_name) as gvd:
+                self.assertEqual(gvd.voxd.vox.name, group_name)
 
 
 if __name__ == '__main__':
