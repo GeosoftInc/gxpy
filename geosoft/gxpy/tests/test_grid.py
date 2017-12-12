@@ -7,6 +7,7 @@ import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.grid as gxgrd
+import geosoft.gxpy.map as gxmap
 
 from base import GXPYTest
 
@@ -17,8 +18,11 @@ class Test(GXPYTest):
         cls.setUpGXPYTest()
         cls.folder, files = gsys.unzip(os.path.join(os.path.dirname(cls._test_case_py), 'testgrids.zip'),
                                        folder=cls._gx.temp_folder())
+        cls.folder, files = gsys.unzip(os.path.join(os.path.dirname(cls._test_case_py), 'testgrids.zip'),
+                                       folder=cls._gx.temp_folder())
         cls.g1f = os.path.join(cls.folder, 'test_grid_1.grd')
         cls.g2f = os.path.join(cls.folder, 'test_grid_2.grd')
+        cls.gcf = os.path.join(cls.folder, 'test_bool1_color.grd')
 
     def test_grc(self):
         self.start()
@@ -34,6 +38,7 @@ class Test(GXPYTest):
             self.assertEqual(properties.get('x0'),7.0)
             self.assertEqual(properties.get('y0'),44.0)
             self.assertEqual(properties.get('rot'),0.0)
+            self.assertEqual(properties.get('is_color'),False)
             self.assertEqual(properties.get('nx'),101)
             self.assertEqual(properties.get('ny'),101)
             self.assertEqual(str(properties.get('coordinate_system')),'WGS 84')
@@ -43,10 +48,15 @@ class Test(GXPYTest):
             self.assertEqual(g1.x0, 7.0)
             self.assertEqual(g1.y0, 44.0)
             self.assertEqual(g1.rot, 0.0)
+            self.assertEqual(g1.is_color, False)
             self.assertEqual(g1.nx, 101)
             self.assertEqual(g1.ny, 101)
             self.assertEqual(str(g1.coordinate_system), 'WGS 84')
 
+        with gxgrd.Grid.open(self.gcf) as gc:
+            properties = gc.properties()
+            self.assertEqual(properties.get('is_color'),True)
+            self.assertEqual(gc.is_color, True)
 
     def test_copy(self):
         self.start()
@@ -632,14 +642,15 @@ class Test(GXPYTest):
         self.start()
 
         map_file = gxgrd.figure_map(self.g1f, title='image_test', features='all').file_name
-        self.crc_map(map_file)
+        self.assertEqual(gxmap.Map.open(map_file).crc_image(pix_width=800), 3053728635)
 
     def test_np(self):
         self.start()
 
         with gxgrd.Grid.open(self.g1f) as g1:
             data = g1.np()
-
+            self.assertEqual(data.dtype, np.dtype(np.float32))
+            self.assertEqual(data.shape, (101, 101))
             self.assertEqual(data[0, 0], 771.0)
             self.assertEqual(data[100, 100], 243.0)
 
@@ -648,15 +659,20 @@ class Test(GXPYTest):
 
         with gxgrd.Grid.open(self.g2f) as g2:
             data = g2.np()
-
+            self.assertEqual(data.dtype, np.dtype(np.float32))
+            self.assertEqual(data.shape, (101, 101))
             self.assertEqual(data[0, 0], 763.0)
             self.assertEqual(data[100, 100], 88.0)
 
             self.assertEqual(2696851.0, np.nansum(data))
             self.assertEqual(0, np.count_nonzero(np.isnan(data)))
+
+        with gxgrd.Grid.open(self.gcf) as gc:
+            data = gc.np()
+            self.assertEqual(data.dtype, np.dtype(np.byte))
+            self.assertEqual(data.shape, (101, 101, 3))
+            data = gc.np()
             
-
-
 
 ###############################################################################################
 

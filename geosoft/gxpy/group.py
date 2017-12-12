@@ -2082,7 +2082,8 @@ class Color_symbols_group(Group):
                           gxvv.GXvv([d[1] for d in data if valid(d)]).gxvv)
         view.gxview.col_symbol(cs.name, cs._gxcsymb)
 
-        cs.unit_of_measure = color_map.unit_of_measure
+        if cs.unit_of_measure:
+            color_map.unit_of_measure = cs.unit_of_measure
 
         return cs
 
