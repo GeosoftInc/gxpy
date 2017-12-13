@@ -46,8 +46,8 @@ META_INVALID = -1 #:
 META_ROOT_NODE = -100 #:
 
 
-def _umn(meta_type, name):
-    name = name.strip('/')
+def _umn(meta_type, node):
+    name = node.strip('/')
     if meta_type == META_TYPE_NODE:
         return 'CLASS:/{}'.format(name)
     elif meta_type == META_TYPE_ATTRIBUTE:
@@ -110,8 +110,8 @@ class Metadata:
     """
     Simple interface to work with Geosoft metadata objects :class::`geosoft.gxapi.GXMETA`.
 
-    :param gxmeta:  Geosoft :class:`geosoft.gxapi.GXMETA` instance, or None (default) in which case an
-                    empty metadata instance is created.
+    :param gxmeta:  `geosoft.gxapi.GXMETA` instance, or None (default) in which case an
+                     empty metadata instance is created.
 
     Geosoft metadata objects contain metadata organized as a tree of information, with
     each node of the tree containing 0 or more attributes and 0 or more nested nodes.
@@ -137,9 +137,9 @@ class Metadata:
         if hasattr(self, '_gxmeta'):
             self._gxmeta = None
 
-    def __init__(self, metadata=None):
-        if metadata:
-            self._gxmeta = metadata
+    def __init__(self, gxmeta=None):
+        if gxmeta:
+            self._gxmeta = gxmeta
         else:
             self._gxmeta = gxapi.GXMETA.create()
 
@@ -152,19 +152,19 @@ class Metadata:
         """
         return self._gxmeta
 
-    def meta_type(self, meta_name):
+    def meta_type(self, meta_node):
         """
-        Return if this is a node (`META_TYPE_NODE`) or an attribute (`META_TYPE_ATTRIBUTE`).
+        Return if the content of this node is a node (`META_TYPE_NODE`) or an attribute (`META_TYPE_ATTRIBUTE`).
 
         Returns `META_INVALID` if neither.
 
-        :param meta_name:
+        :param meta_node:   metadata node as a string. e.g. 'geosoft/dataset/title'
 
         .. versionadded:: 9.3
         """
-        if self.gxmeta.resolve_umn(_umn(META_TYPE_NODE, meta_name)) != META_INVALID:
+        if self.gxmeta.resolve_umn(_umn(META_TYPE_NODE, meta_node)) != META_INVALID:
             return META_TYPE_NODE
-        elif self.gxmeta.resolve_umn(_umn(META_TYPE_ATTRIBUTE, meta_name)) != META_INVALID:
+        elif self.gxmeta.resolve_umn(_umn(META_TYPE_ATTRIBUTE, meta_node)) != META_INVALID:
             return META_TYPE_ATTRIBUTE
         return META_INVALID
 
