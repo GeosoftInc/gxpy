@@ -1,0 +1,549 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+   This file, SingleDataset.MetadataEditor_Config, will provide assistance in the generation 
+   of a Geosoft Metadata Editor to enter metadata for individual datasets. 
+   
+   You should use this file together with the metadata database schema, Metadata_SingleDataset_Backup, 
+   to generate your Metadata Editor.   
+
+   This file is to be used with Geosoft MetadataEditorGenerator v11.0.
+
+   For further information and setup, please refer to the user manual.
+   
+-->
+<mde:geosoftMetadataeditorConfiguration xmlns:mde="http://geosoft.com/schema/xml/metadataeditor/metadataeditorgenerator" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="MetaTemplateSchema.xsd">
+  <!-- 
+   ### <version> section ###
+   
+   The version number for your Metadata Editor uses a format of four numbers separated by periods:
+   
+      major.minor.revision.build
+   
+   The default (starting) version provided is 1.0.0.0.  
+    
+   The version number will be used to set the version for your metadata editor executable files, 
+   and the metadata editor distribution/installation program.  
+   
+   -->
+  <version value="23.3.0.866" />
+  <!--
+   
+   ### <setup> section ###
+   
+   publishurl: the path to the folder to save the installation program of your metadata editor 
+               that is created by the MetadataEditorGenerator.  You must have read/write permission to the folder.
+               UNC path is supported. 
+   
+   installurl: the path to the folder containing the installation program of your metadata editor.
+               This folder is the same publishurl folder but must be accessible by users who plan to install the Metadata Editor.
+               UNC path is supported and recommended. 
+   
+   In a typical environment, where you have direct access to the folder, you can use the folder with drive and full path
+   for the publishurl. You should use UNC path for the installurl so that other users can install the Metadata Editor you create.
+   
+   The installurl is ideally kept permanent for distributing the program inside your organization. 
+   The Metadata Editor installed on the users computers will automatically check for updates
+   from the installurl when the program starts.
+   
+   Double \\ between folders (and drive), and trailing slashes are required, as shown below.
+   
+   -->
+  <setup publishurl="m:\eims\build\x64\mde\Releasetemp\\" installurl="m:\eims\build\x64\mde\Releasetemp\\" />
+  <!-- 
+   
+   ### <settings> section ###
+   
+   name:             Name of your Metadata Editor. It is used as the title of the main form.
+   company:          The company name. 
+   exe:              Name of the executable file. 
+                     The company and exe attributes will be used to create the program startup menu. 
+                     For example, if you generate the Metadta Editor using this file and 
+                     install the metadata editor on your computer,
+                     you can run the program from Start->Programs->Geosoft Inc.->Geosoft.MetadataEditor.
+   dbServer:         Computer name hosting the SQL Server relational database in the production environment. 
+                        For SQLExpress, you may need to append \sqlexpress to the computer name.
+   db:               Metadata database name.                     
+                     Note that you must have permission with Windows authentication to access the metadata database.
+                                                
+   adminTable:       Name of the table in the metadata database that contains a list of Data/DAP Administrators
+                     who have permission to run the Metadata Editor in Admin mode.
+   adminColumn:      Name of the Column in the adminTable that contains the list of Data/DAP Administrators.
+   dataDir:          Folder with the DAP data. Used in Admin mode only.
+   publishQueue:     Folder storing the data/metadata packages submitted by data creators. 
+                     This folder needs to be on a network computer that can be accessed by the users using the Metadata Editor.
+   rejectQueue:      Folder storing the data/metadata packages rejected for editing/updating by Data/DAP Administrator(s). 
+                     This folder needs to be on a network computer that can be accessed by the users using the Metadata Editor.
+   dbEditMetadata:   Used as the default note when editing metadata. It is entered in the Notes textbox in the Audit Log Entry dialog.
+   dbSubmitMetadata: Used as the default note when submitting metadata. It is entered in the Notes textbox in the Audit Log Entry dialog.   
+   ISO19139:         This flag is used if an XML file does not exist yet.
+                        true:   Save metadata in a new ISO 19139 compliant XML file.
+                        false:  Save metadata in a new FGDC compliant XML file.
+                     If an XML file already exists, the XML schema in the file will be used.
+                        If the existng XML schema is neither ISO 19139 nor FGDC compliant, only the Geosoft metatadata schema is saved.                        
+   lookupDirectory:  The path to the folder containing the up-to-date lookup tables in XML format. 
+                     This folder must be accessible by users who use the Metadata Editor.
+                     UNC path is supported and recommended.    
+   -->
+  <settings>
+    <name>Geosoft Metadata Editor</name>
+    <company>Geosoft Inc.</company>
+    <exe>Geosoft.MetaDataEditor</exe>
+    <dbEditMetadata>Data/metadata edited</dbEditMetadata>
+    <dbSubmitMetadata>Upload metadata into database</dbSubmitMetadata>
+    <ISO19139>true</ISO19139>
+    <lookupDirectory>
+    </lookupDirectory>
+  </settings>
+  <workflows>
+    <workflow name="Main" rejectQueue="">
+      <database server="TESTACQUIRE" name="OMMetadata-Alpha">
+        <roles table="MetadataEditorAdministrators" userNameColumn="UserId" workflowColumn="Workflow" roleColumn="Role" stepColumn="Step" />
+      </database>
+      <user>
+      </user>
+      <dataAdmin>
+      </dataAdmin>
+    </workflow>
+  </workflows>
+  <logo />
+  <release_notes />
+  <!-- 
+
+	### <database> section ###
+
+	server:  Computer name hosting the relational database.
+               For SQLExpress, you may need to append \sqlexpress to the computer name.
+   db:      Metadata database name.
+
+   Note that you must have permission with Windows authentication to access the metadata database.
+
+	-->
+  <database server="TESTACQUIRE" db="OMMetadata-Alpha" username="sa" password="sa" />
+  <!-- 
+   
+   ### <file_mappings> ### 
+
+   <file_mappings> section controls the list of dataset types for which you can use the Metadata Editor
+   to enter metadata. It is used to populate the 'Files of type' dropdown list in Windows 
+   'Open File' dialog.
+   
+   This section is always required.
+
+   dataset:          Use this tag to add a new data type for which your Metadata Editor can enter metadata.
+   ext:              Extensions of data files.
+   name:             Names of data files to show in the 'Files of type' dropdown list in the Windows 'Open File' dialog.  
+   type:             Types of datasets as interpreted by your Metadata Editor. Currently supported types are:
+                        Grid
+                        HyperGrid
+                        Voxel
+                        HyperMap
+                        HyperXYZ
+                        GeosoftGDB
+                        Document
+                        GIS
+                        Picture
+   qualifiers:       Key words to uniquely describe each individual dataset. 
+   asscociated_file: Optional. List of file(s) associated with the dataset. 
+                 
+
+   -->
+  <file_mappings>
+    <dataset ext=".GRD" name="Geosoft Grid" type="Grid" qualifiers="GRD" />
+    <dataset ext=".HGD" name="Geosoft HyperGrid" type="HyperGrid" />
+    <dataset ext=".GEOSOFT_VOXEL" name="Geosoft Voxel" type="Voxel" />
+    <dataset ext=".HMAP" name="Geosoft HyperMap" type="HyperMap" />
+    <dataset ext=".HXYZ" name="Geosoft HyperXYZ" type="HyperXYZ" />
+    <dataset ext=".GDB" name="Geosoft Database" type="GeosoftGDB">
+      <associated_file ext=".GD~" />
+    </dataset>
+    <dataset ext=".MAP" name="Geosoft Map" type="Document" qualifiers="Map" />
+    <dataset ext=".SHP" name="ESRI SHP File" type="GIS" qualifiers="SHP">
+      <associated_file ext=".DBF" />
+      <associated_file ext=".PRJ" />
+      <associated_file ext=".SHX" />
+      <associated_file ext=".SBN" />
+      <associated_file ext=".SBX" />
+    </dataset>
+    <dataset ext=".TAB" name="MapInfo TAB File" type="GIS" qualifiers="TAB">
+      <associated_file ext=".DAT" />
+      <associated_file ext=".ID" />
+      <associated_file ext=".IND" />
+      <associated_file ext=".MAP" />
+      <associated_file ext=".MID" />
+      <associated_file ext=".MIF" />
+    </dataset>
+    <dataset ext=".ECW" name="ERMapper (ECW)" type="Picture" qualifiers="ECW" />
+    <dataset ext=".ERS" name="ERMapper (ERS)" type="Grid" qualifiers="ERM" />
+    <dataset ext=".PNG" name="Image (PNG)" type="Picture" qualifiers="IMG" />
+    <dataset ext=".JPG" name="Image (JPEG)" type="Picture" qualifiers="IMG" />
+    <dataset ext=".J2K" name="J2K JPEG 2000 Image" type="Picture" qualifiers="ECW;t=j2k" />
+    <dataset ext=".JP2" name="J2P JPEG 2000 Image" type="Picture" qualifiers="ECW;t=jp2" />
+    <dataset ext=".TGA" name="Image (TGA)" type="Picture" qualifiers="TGA" />
+    <dataset ext=".TIF" name="Image (TIF)" type="Picture" qualifiers="TIF">
+      <associated_file ext=".IPJ" />
+    </dataset>
+    <dataset ext=".DOC" type="Document" name="Microsoft Word Document" />
+    <dataset ext=".PDF" name="Adobe PDF" type="Document" qualifiers="Compressed" />
+    <dataset ext=".RTF" name="Rich Text Format" type="Document" />
+    <dataset ext=".TXT" name="Text Document" type="Document" />
+    <dataset ext=".GEOSOFT_PROJECT_ZIP" name="Project Package" type="ProjectZip">
+      <associated_file ext=".TIF" />
+    </dataset>
+    <dataset ext=".GEOSOFT_VOXI" name="Geosoft VOXI Model" type="VOXI">
+      <associated_directory ext=".GEOSOFT_VOXI.DATA" />
+    </dataset>
+    <dataset ext=".GEOSOFT_3DV" name="Geosoft 3DV" type="ThreeDV" />
+    <dataset ext=".GEOSOFT_STRING" name="Geosoft Geostring" type="Geostring" />
+    <dataset ext=".GEOSOFT_GMSYS3D" name="GM-SYS 3D" type="GMSYS3D">
+      <associated_directory ext=".GEOSOFT_GMSYS3D.DATA" />
+    </dataset>
+    <dataset ext=".GEOSOFT_SURFACE" name="Geosoft Geosurface" type="Geosurface" />
+    <dataset ext=".GEOSOFT_GMSYS2D" name="GM-SYS 2D" type="GMSYS2D" />
+    <dataset ext=".GEOSOFT_VECTORVOXEL" name="Geosoft Vector Voxel" type="VectorVoxel" />
+  </file_mappings>
+  <!-- 
+   
+   ### <auditLog> section ###
+   This table records the revision history of metadata records in the database. 
+   The primary key column of this table must be an int with Identity set to true. 
+  
+   name:                      Name of the table recording the revision history.
+   dataPackageIdColumn:       Name of the data package ID column in the revision history table.
+   parentDataPackageIdColumn: Name of the data package ID column in the parent table. 
+                              In this example, the parent table is DataPackage specified in the <tables> section.
+   revisedBy:                 Name of the column containg the person who authors the change of data and/or metadata.
+   revisionDate:              Name of the column recording the date that the change was made.
+   notes:                     Name of the column recording the revision notes.
+   enteredBy:                 Name of the column containing the person who enters the metadata change to the database. 
+                              The person is the logon user of the computer. 
+   enteredDate:               Name of the column recording the date that the metadata change is entered into the database. 
+                              It is set automatically as the date of metadata saved into the database.
+   employeeTable:             Name of the database table/view containing the list of employee names.
+   employeeColumn:            Name of the column in the database table/view containing the list of employee names.
+   -->
+  <auditLog name="RevisionHistory" dataPackageIdColumn="DatasetID" parentDataPackageIdColumn="Id" revisedBy="RevisedBy" revisionDate="RevisionDate" notes="RevisionMade" enteredBy="EnteredBy" enteredDate="EnteredDate" employeeTable="LKUP_Employee" employeeColumn="FullName" />
+  <!--
+   
+   ### <tables> section ###
+  
+   <tables> section contains a simplified definition of the metadata database schema: the parent table and its child tables.
+   
+   Note that your Metadata Editor does not support multiple parent tables but allows multiple levels of child tables. 
+   This example has three levels of parent and child tables. The parent table does not need to specify the parentDataPackageIdColumn attribute.
+   
+   
+   name:                         Name of the database table.
+   dataPackageIdColumn:          Name of the data package ID column in the table.
+                                 This column is normally defined as the primary key column in the parent table.
+   parentDataPackageIdColumn:    Name of the data package ID column in the parent table.
+              
+   The metadata schema, Metadata_SingleDataset, provided with this file uses the same column names for dataPackageIdColumn and parentDataPackageIdColumn.  
+  
+   -->
+  <tables>
+    <table name="Dataset" dataPackageIdColumn="Id">
+      <table name="MetaData" dataPackageIdColumn="DatasetID" parentDataPackageIdColumn="Id" />
+    </table>
+  </tables>
+  <!--
+   
+   ### <templates> section ###
+  
+   <templates> section in this file defines one template that 
+   your Metadata Editor can be used to enter metadata for:
+         SingleDataset
+         
+   -->
+  <templates>
+    <!-- 
+      
+      ### <template> section ###
+      
+      This section applies to SingleDataset templates only. 
+      
+      A <template> tag contains one <section> which has one to many <pageRefernce> tags and
+      optionally two levels of <section> allowing you 
+      to enter additional metadata for certain types of datasets.            
+      
+      type:             Type of template to support. It must be: SingleDataset, Survey or SurveyCategory.
+      table:            Name of the parent database table.
+      fileNameColumn:   Name of the column to store names of the datasets with partial paths.
+      
+      -->
+    <template type="SingleDataset" table="Dataset" filenameColumn="Path">
+      <!--
+
+         ### <section> section ###
+
+
+         The id attribute of a <section> tag must be unique in each template. 
+         
+         This example file supports two levels of optional sections. The optional sections
+         at the first level are 'AirborneGeophysics', 'BoreholeGeophysics' and 'GroundGeophysics'.
+         Each of them contains several optional sections at the secondary level. 
+         For exmaple, 'AirborneGeophysics' section contains 'AGMag', 'AGTDEM', etc.
+                  
+         -->
+      <section id="SingleDatasetMandatory">
+        <!--
+            A <pageReference> tag defines a Windows form which can have one to many textbox, dropdown combobox,
+            calendar, and/or checkbox controls for entering metadata. 
+            
+            title:         Title of the Windows form (page) in the Metadata Editor.
+                           It is used as the label of the button for displaying the page.
+            id:            Unique name referring to the page in the <pages> section below.
+            
+            -->
+        <pageReference title="General" id="pSingleDatasetGeneral" />
+        <pageReference title="Location" id="pSingleDatasetLocation" />
+        <pageReference title="Data" id="pSingleDatasetData" />
+      </section>
+    </template>
+  </templates>
+  <!--
+
+   ### <pages> section ###
+  
+   <pages> section defines the Windows forms (pages) and Windows controls to be placed on each form. 
+   Each page can have one to many controls, each of which is related to a metadata field/column
+   in the metadata database.
+   
+   -->
+  <pages>
+    <!--
+      Each <page> section can have one to many controls. 
+      
+         id:   Unique name representing the page/Windows form.
+         
+      -->
+    <!--
+
+      ############# Pages for the SingleDataset template ############
+      
+      -->
+    <page id="pSingleDatasetGeneral">
+      <!--               
+         The types of Windows controls supported by your Metadata Editor are:
+            
+            Dropdownlist combobox control
+            Textbox control
+            Checkbox control
+            Calendar control
+            Extents control
+        
+         The dropdownlist and textbox controls are described here; checkbox, calendar and extents controls are described in the relevant sections below.
+        
+        
+         
+         <textbox> controls support the following attributes:
+         
+         id:            Unique name representing the control.
+         table:         Name of the metadata table.
+         column:        Name of the column in the table.
+         title:         Label of the control.
+         fgdc:          FGDC metadata tag with partial path.
+         iso:           ISO 19115 metadata tag with partial path.
+         copyable:      Flag ('true' or 'false') to indicate whether the metadata in this field can be copied and pasted.
+                        'true' to allow copying of metadata. 
+         usePrevious:   Optional. Flag ('true' or 'false') to indicate whether to use the previous value as default.
+         text:          Optional. A default value in the format of a string for a textbox control, such as text="Information"
+                        The default value is applied only if control is not filled.
+                        The textbox is set to blank by default.
+
+         The attribute 'text' has four special cases. Note that the strings in () are case sensitive.
+            text="$(datasetName)":  Use the file name of the dataset (without extension) to fill the control. Applies to SimpleDataset template only.
+            text="$(survey)":       Use the survey name to fill the control. Applies to the Survey and Survey-Category templates.
+            text="$(category)":     Use the category name to fill the control. Applies to the Category template.
+            text="$(name)":         Use the package name to fill the control. Applies to all templates.
+            
+            You can use composite definitions as default values. For example, text="${survey} and ${category}" 
+            
+            
+        
+
+         <dropdownlist> controls support the following attributes:
+         
+         id:            Unique name representing the control.
+         type:          Must be either 'dropdownlist' or DropDown'. The default is 'DropDownList'. 
+         table:         Name of the metadata table.
+         column:        Name of the column in the table.
+         title:         Label of the control.
+         geosoft:       Geosoft metadata tag without the root tag, either 'metadata' or 'gmd:MD_Metadata'. 
+                        Must be prefixed with namespace 'geo'.
+         fgdc:          FGDC metadata tag without the root tag 'metadata'.
+         iso19139:      ISO 19139 metadata tag without the root tag 'gmd:MD_Metadata'. Must be prefixed with namespace 'gmd'. 
+         copyable:      Flag ('true' or 'false') to indicate whether the metadata in this field can be copied and pasted.
+                        'true' to allow copying of metadata. 
+         usePrevious:   Optional. Flag ('true' or 'false') to indicate whether to use the previous value as default.
+         selectedIndex: Optional. A default value in the format of integer, such as selectedIndex="9".
+         selectedText:  Optional. A default value in the format of string, such as selectedText="Canada".
+                        When the selectedIndex is specified, selectText is ignored. Note that the value 
+                        specified in 'selectedIndex' or 'selectedText' is applied only if the control is not filled.
+
+         The attribute 'selectedText' has two special cases. Note that the strings in () are case sensitive.
+            selectedText="$(survey)":       Use the survey name to fill the control. Applies to the Survey and Survey-Category templates.
+            selectedText="$(category)":     Use the category name to fill the control. Applies to the Category template.
+
+         
+         
+         Each <dropdownlist> tag can have three sub-sections: <datasource>, <filters> and <actions>. Those sections are described below.
+         
+         <datasource> section is a required section. It defines the source of the picklist (lookup table).
+         The 'table' attribute in the <database> tag defined the name of the lookup table related to the dropdown combobox control.
+         
+         <database> tag can contain one, two or three column definitions.
+         and the value and ID columns.
+         
+            name:    Name of the lookup table column
+            type:    When defined, it must be either 'name' or 'value'.
+                     'name'   - means that the column contains a list of names to populate the dropdown list.
+                                A <database> tag must have one column with the type of 'name' defined.
+                     'value'  - means that the column contains the list of unique IDs. 
+                                This column is normally the primary key column of the table.
+                     
+                     When the 'type' attribute of a column is not defined, the column is likely to contain a list of IDs used for filtering.
+                     
+         
+         <filters> section is an optional section. It is used to filter
+         the list in one dropdown combobox control by using the selected value in another (normally referred as parent) combobox control.
+         For example, the list of countries in the 'ddlCountry' combobox control is related to the selected value
+         in the 'ddlContinent' combobox control.
+         
+         A <filters> section can have one to many filters. The attributes for the <filter> tag are:
+         
+         id:         Name of the parent combobox control.
+                     For example, ddlContinent.
+         column:     Name of the column with the 'type' attribute being defined as 'value' in the table linked to the parent control.
+                     For example, ID in the table 'LKUP_Continent'.
+         match:      Name of the column in the lookup table related to the child combobox control.
+                     For example, 'ContinentID' column in the table 'LKUP_Country'.            
+
+
+         <actions> section is used to define the optional Windows forms/pages.
+         See the <actions> section for more detail.
+         
+         
+         -->
+      <textbox id="tbTitle" table="MetaData" column="DatasetTitle" title="Dataset name" geosoft="geo:geosoft/geo:dataset/geo:title" fgdc="idinfo/citation/citeinfo/title" iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title/gco:CharacterString" copyable="false" text="$(datasetName)" />
+      <textbox id="tbPurpose" table="MetaData" column="Purpose" title="Purpose" geosoft="geo:geosoft/geo:dataset/geo:purpose" fgdc="idinfo/descript/purpose" iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:purpose/gco:CharacterString" copyable="false" />
+      <dropdownlist id="ddlSubject" type="DropDown" table="MetaData" column="DataSubject" title="Primary theme/Subject" geosoft="geo:geosoft/geo:dataset/geo:subject" fgdc="idinfo/keywords/theme/themekey" iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword/gco:CharacterString" copyable="true" usePrevious="true">
+        <datasource>
+          <database table="LKUP_Subject" orderBy="VALUE">
+            <column name="VALUE" type="name" />
+            <column name="ID" type="value" />
+          </database>
+        </datasource>
+      </dropdownlist>
+      <dropdownlist id="ddlCategory" type="DropDown" table="MetaData" column="DataCategory" title="Secondary theme/Category" geosoft="geo:geosoft/geo:dataset/geo:category" fgdc="idinfo/keywords/theme/themekey" iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword/gco:CharacterString" copyable="true" usePrevious="true">
+        <datasource>
+          <database table="LKUP_DataCategory" orderBy="VALUE">
+            <column name="VALUE" type="name" />
+            <column name="ID" type="value" />
+            <column name="SubjectID" />
+          </database>
+        </datasource>
+        <filters>
+          <filter id="ddlSubject" column="ID" match="SubjectID" />
+        </filters>
+      </dropdownlist>
+      <dropdownlist id="ddlType" type="DropDown" table="MetaData" column="DataType" title="Tertiary theme/Type" geosoft="geo:geosoft/geo:dataset/geo:type" fgdc="idinfo/keywords/theme/themekey" iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword/gco:CharacterString" copyable="true" usePrevious="true">
+        <datasource>
+          <database table="LKUP_DataType" orderBy="VALUE">
+            <column name="VALUE" type="name" />
+            <column name="ID" type="value" />
+            <column name="DataCategoryID" />
+          </database>
+        </datasource>
+        <filters>
+          <filter id="ddlCategory" column="ID" match="DataCategoryID" />
+        </filters>
+      </dropdownlist>
+      <dropdownlist id="ddlFormat" type="DropDown" table="MetaData" column="DataFormat" title="File format" geosoft="geo:geosoft/geo:dataset/geo:file_format" fgdc="distinfo/stdorder/digform/digtinfo/formname" iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceFormat/gmd:MD_Format/gmd:name/gco:CharacterString" selectedText="$(extension)">
+        <datasource>
+          <database table="LKUP_DataFormat" orderBy="VALUE">
+            <column name="VALUE" type="name" />
+            <column name="ID" type="value" />
+          </database>
+        </datasource>
+      </dropdownlist>
+      <textbox id="tbWebLink" table="MetaData" column="WebLink" title="Web link" geosoft="geo:geosoft/geo:dataset/geo:weblink" fgdc="metainfo/metextns/onlink" iso19139="gmd:dataSetURI/gco:CharacterString" copyable="false" />
+      <textbox id="tbAdditionalInfo" mode="MultiLine" height="200" table="MetaData" column="Abstract" title="Abstract" geosoft="geo:geosoft/geo:dataset/geo:description" fgdc="idinfo/descript/abstract" iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:abstract/gco:CharacterString" copyable="true" />
+    </page>
+    <page id="pSingleDatasetLocation">
+      <dropdownlist id="ddlContinent" type="DropDown" table="MetaData" column="Continent" title="Continent" geosoft="geo:geosoft/geo:dataset/geo:continent" fgdc="idinfo/keywords/place/placekey" iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword/gco:CharacterString" copyable="true" usePrevious="true">
+        <datasource>
+          <database table="LKUP_Continent" orderBy="VALUE">
+            <column name="VALUE" type="name" />
+            <column name="ID" type="value" />
+          </database>
+        </datasource>
+      </dropdownlist>
+      <dropdownlist id="ddlCountry" type="DropDown" table="MetaData" column="Country" title="Country" geosoft="geo:geosoft/geo:dataset/geo:country" fgdc="idinfo/keywords/place/placekey" iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword/gco:CharacterString" copyable="true" usePrevious="true">
+        <datasource>
+          <database table="LKUP_Country" orderBy="VALUE">
+            <column name="VALUE" type="name" />
+            <column name="ID" type="value" />
+            <column name="ContinentID" />
+          </database>
+        </datasource>
+        <filters>
+          <filter id="ddlContinent" column="ID" match="ContinentID" />
+        </filters>
+      </dropdownlist>
+      <dropdownlist id="ddlProvinceState" type="DropDown" table="MetaData" column="ProvinceState" title="Province/State" geosoft="geo:geosoft/geo:dataset/geo:province_state" fgdc="idinfo/keywords/place/placekey" iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword/gco:CharacterString" copyable="true" usePrevious="true">
+        <datasource>
+          <database table="LKUP_ProvinceState" orderBy="VALUE">
+            <column name="VALUE" type="name" />
+            <column name="ID" type="value" />
+            <column name="CountryID" />
+          </database>
+        </datasource>
+        <filters>
+          <filter id="ddlCountry" column="ID" match="CountryID" />
+        </filters>
+      </dropdownlist>
+      <textbox id="tbRegionArea" table="MetaData" column="RegionArea" title="Region/Area" geosoft="geo:geosoft/geo:dataset/geo:region" fgdc="idinfo/keywords/place/placekey" iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword/gco:CharacterString" copyable="true" usePrevious="true" />
+    </page>
+    <page id="pSingleDatasetData">
+      <textbox id="tbProjectName" table="MetaData" column="ProjectName" title="Project name" geosoft="geo:geosoft/geo:dataset/geo:project_name" fgdc="idinfo/descript/supplinf" iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:collectiveTitle/gco:CharacterString" copyable="true" usePrevious="true" />
+      <textbox id="ddlDataSource" table="MetaData" column="DataSource" title="Data source" geosoft="geo:geosoft/geo:dataset/geo:data_source" fgdc="idinfo/datacred" iso19139="gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:source/gmd:LI_Source/gmd:description/gco:CharacterString" copyable="true" usePrevious="true" />
+      <textbox id="tbProjectType" table="MetaData" column="ProjectType" title="Project type" geosoft="geo:geosoft/geo:dataset/geo:project_type" fgdc="idinfo/projecttype" iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:topicCategory/gmd:MD_TopicCategoryCode" copyable="true" usePrevious="true" />
+      <textbox id="tbScaleResolution" table="MetaData" column="Resolution" title="Scale/Resolution" geosoft="geo:geosoft/geo:dataset/geo:resolution" fgdc="idinfo/srcscale" iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:spatialResolution/gmd:MD_Resolution/gmd:distance" copyable="true" usePrevious="true" />
+      <textbox id="tbUnitOfMeasurement" table="MetaData" column="UnitOfMeasurement" title="Unit of measurement" geosoft="geo:geosoft/geo:dataset/geo:unitofmeasurement" fgdc="idinfo/unitofmeasurement" iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/geox:unitofmeasurement/gco:CharacterString" copyable="true" usePrevious="true" />
+      <textbox id="tbDataCreator" table="MetaData" column="DataCreator" title="Data created by" geosoft="geo:geosoft/geo:dataset/geo:data_created_by" fgdc="dataqual/lineage/procstep/proccont/cntinfo/cntperp/cntper" iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:pointOfContact/gmd:C_ResponsibleParty/gmd:individualName/gco:CharacterString" copyable="true" usePrevious="true" text="$(user)" />
+      <!--         
+         
+         <calendar> controls support the following attributes:
+         
+         id:            Unique name representing the control.
+         table:         Name of the metadata table containing the metadata field.
+         column:        Name of the column in the table.
+         title:         Label of the control.
+         fgdc:          FGDC metadata tag with partial path.
+         iso:           ISO 19115 metadata tag with partial path.
+         copyable:      Flag ('true' or 'false') to indicate whether the metadata in this field can be copied and pasted.
+                        'true' to allow copying of metadata. 
+         minDate:       A date string.
+         maxDate:       A date string. Default is the current date that MDE is being used.
+                        The minDate and maxDate tages are used to set the allowed range of time for the calendar control.
+         defaultDate:   Default value for the calendar control.
+         useCurrent     Flag ('true' or 'false' to indicate whether to use current date as default.
+                        defaultDate is used first if both defaultDate and useCurrent are set.                        
+         usePrevious:   Optional. Flag ('true' or 'false') to indicate whether to use the previous value as default.
+         
+         -->
+      <calendar id="cDataCreationDate" table="MetaData" column="DataCreationDate" title="Data creation date" geosoft="geo:geosoft/geo:dataset/geo:data_creation_date" fgdc="dataqual/lineage/procstep/procdate" iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date/gco:Date" useCurrent="true" copyable="true" usePrevious="true" />
+      <textbox id="tbMetadataCreator" table="MetaData" column="MetadataCreator" title="Metadata created by" geosoft="geo:geosoft/geo:dataset/geo:metadata_created_by" fgdc="metainfo/metc/cntinfo/cntperp/cntper" iso19139="gmd:contact/gmd:C_ResponsibleParty/gmd:individualName/gco:CharacterString" copyable="true" usePrevious="true" text="$(user)" />
+      <calendar id="cMetadataCreationDate" table="MetaData" column="MetadataCreationDate" title="Metadata creation date" geosoft="geo:geosoft/geo:dataset/geo:metadata_creation_date" fgdc="metainfo/metd" iso19139="gmd:dateStamp/gco:Date" useCurrent="true" copyable="true" usePrevious="true" />
+      <dropdownlist id="ddlConfidentiality" type="DropDown" table="MetaData" column="Confidentiality" title="Confidentiality" geosoft="geo:geosoft/geo:dataset/geo:confidentiality" fgdc="idinfo/accconst" iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceSpecificUsage/gmd:MD_Usage/gmd:specificUsage/gco:CharacterString" usePrevious="true">
+        <datasource>
+          <database table="LKUP_Confidentiality" orderBy="VALUE">
+            <column name="VALUE" type="name" />
+            <column name="ID" type="value" />
+          </database>
+        </datasource>
+      </dropdownlist>
+    </page>
+  </pages>
+</mde:geosoftMetadataeditorConfiguration>
