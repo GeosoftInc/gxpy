@@ -32,6 +32,8 @@ import geosoft.gxapi as gxapi
 from . import gx as gx
 from . import coordinate_system as gxcs
 from . import utility as gxu
+from . import map as gxmap
+from . import metadata as gxmeta
 
 
 __version__ = geosoft.__version__
@@ -48,6 +50,19 @@ class ViewException(Exception):
     .. versionadded:: 9.2
     """
     pass
+
+
+def delete_files(v3d_file):
+    """
+    Delete a v3d file with associated files. Just calls `geosoft.gxpy.map.delete_files`.
+    The view must be closed.
+
+    :param v3d_file: View_3d file name
+
+    .. versionadded:: 9.3.1
+    """
+    gxmap.delete_files(v3d_file)
+
 
 def _plane_err(plane, view):
     raise ViewException(_t('Plane "{}" does not exist in view "{}"'.format(plane,view)))
@@ -302,6 +317,28 @@ class View:
         .. versionadded:: 9.2
         """
         self._close()
+
+    def add_child_files(self, file_list):
+        """
+        Add files to the list of child files for this view.
+
+        :param file_list: file, or a list of files to add
+
+        .. versionaddded 9.3.1
+        """
+        meta = self.metadata
+        node = 'geosoft/dataset/map/views/' + self.name + '/child_files'
+        child_files = gxmeta.get_node_from_metadict(node, meta)
+        if child_files is None:
+            child_files = []
+        if isinstance(file_list, str):
+            child_files.append(file_list)
+        else:
+            for f in file_list:
+                if not f in child_files:
+                    child_files.append(f)
+        gxmeta.set_node_in_metadict(node, meta, child_files)
+        self.metadata = meta
 
     def locate(self,
                coordinate_system=None,

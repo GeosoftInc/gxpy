@@ -51,6 +51,59 @@ def _umn(meta_type, name):
     elif meta_type == META_TYPE_ATTRIBUTE:
         return 'ATTRIB:/{}'.format(name)
 
+
+def get_node_from_metadict(metanode, metadict):
+    """
+    Get the node content from a metadata dictionary.
+
+    :param metanode:    node wanted, '/' delimited. e.g. 'geosoft/dataset/title'
+    :param metadict:    metadata dictionary
+    :return:            node content, or None if not found
+
+    .. versionadded 9.3.1
+    """
+    if not metanode:
+        return None
+    tree = metanode.split('/')
+    root = metadict
+    for node in tree:
+        if node:
+            if not node in root:
+                return None
+            root = root[node]
+    return root
+
+
+def set_node_in_metadict(metanode, metadict, content, replace=False):
+    """
+    Set a node in a metadata dictionary. Tree nodes are added if absent.
+
+    :param metanode:    node to set, '/' delimited. e.g. 'geosoft/dataset/title'
+    :param metadict:    meta dictionary
+    :param content:     content to set to the node
+    :param replace:     True to replace nodes that are attributes.  The default is False, in which case
+                        an error is raised if a node in the tree is an attribute.
+
+    .. versionadded:: 9.3.1
+    """
+    if metanode[-1] == '/':
+        metanode = metanode[:-1]
+    tree = metanode.split('/')
+    root = metadict
+    for node in tree[:-1]:
+        if not node in root:
+            root[node] = {}
+        elif not isinstance(root[node], dict):
+            if replace:
+                root[node] = {}
+            else:
+                raise MetadataException(_t('Cannot replace attribte {}. All nodes in the tree must be dict.').
+                                        format(root))
+        root = root[node]
+
+    root[tree[-1]] = content
+
+
 class Metadata:
     """
     Simple interface to work with Geosoft metadata objects :class::`geosoft.gxapi.GXMETA`.

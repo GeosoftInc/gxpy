@@ -35,6 +35,7 @@ from . import group as gxg
 from . import view as gxv
 from . import geometry as gxgeo
 from . import coordinate_system as gxcs
+from . import metadata as gxmeta
 
 __version__ = geosoft.__version__
 
@@ -139,6 +140,21 @@ def delete_files(file_name):
             pass
 
     file_name = map_file_name(file_name)
+
+    # remove child files, if any
+    try:
+        with Map.open(file_name) as map:
+            meta = map.metadata
+            views = gxmeta.get_node_from_metadict('geosoft/dataset/map/views', meta)
+            if views:
+                for v in views:
+                    child_files = gxmeta.get_node_from_metadict(v + '/child_files', views)
+                    if child_files:
+                        for f in child_files:
+                            remove(f)
+    except:
+        pass
+
     remove(file_name + '.xml')
     remove(os.path.splitext(file_name)[0] + '.mdf')
     remove(file_name)
