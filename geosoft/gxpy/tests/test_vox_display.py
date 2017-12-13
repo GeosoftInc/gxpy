@@ -7,6 +7,7 @@ import geosoft.gxpy.vox_display as gxvoxd
 import geosoft.gxpy.map as gxmap
 import geosoft.gxpy.view as gxview
 import geosoft.gxpy.group as gxgroup
+import geosoft.gxpy.viewer as gxviewer
 
 from base import GXPYTest
 
@@ -120,6 +121,23 @@ class Test(GXPYTest):
                 self.assertEqual(gvd.name, group_name)
                 self.assertEqual(gvd.voxd.name, group_name)
                 self.assertEqual(gvd.unit_of_measure, 'vecmaki')
+
+    def test_isosurface(self):
+        self.start()
+
+        with gxvox.Vox.open(self.vectorvox_file) as vox:
+            with gxview.View_3d.new() as v3d:
+                v3d_file = v3d.file_name
+                gxgroup.vox_surface(v3d, vox, (0.005, 0.01, 0.02, 0.04, 0.08, 0.16, 0.32, 0.64, 1.28))
+
+        try:
+
+            #gxviewer.view_document(v3d_file)
+            #png = gxmap.Map.open(v3d_file).image_file()
+            self.assertEqual(gxmap.Map.open(v3d_file).crc_image(pix_width=800), 4266332078)
+
+        finally:
+            gxview.delete_files(v3d_file)
 
 if __name__ == '__main__':
 

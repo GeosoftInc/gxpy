@@ -53,6 +53,7 @@ __version__ = geosoft.__version__
 def _t(s):
     return geosoft.gxpy.system.translate(s)
 
+MAX_TRANSPARENT = 4
 
 class GroupException(Exception):
     """
@@ -2592,3 +2593,71 @@ class Color_map:
         self.gxitr.save_file(file_name)
 
         return file_name
+
+def vox_surface(view, vox, surfaces, colors=None, transparencies=None, group_name=None):
+    """
+    Add voxel isosurfaces to a 3D view.
+
+    :param view:            `geosoft.gxpy.View_3d` instance
+    :param vox:             `geosoft.gxpy.Vox` instance
+    :param surfaces:        surface value, or a list of surface values
+    :param colors:          surface color, or a list of color, one per surface.
+                            For a list of surfaces, the default colour of each surface cycles through a list of
+                            (C_GREY, C_GREEN, C_YELLOW, C_BLUE, C_MAGENTA, C_RED, C_CYAN). If only one surface
+                            the default color is `gxgroup.C_GREY`.
+    :param transparencies:  transparency 0 t0 1. (1. is opaque), or a list of transparencies.
+                            For a list of surfaces default transparency is applied in increasingly
+                            opaque steps in the order of the surface list, such that the 5'th
+                            and higher surfaces are opaque.
+    :param group_name:      Group name in the view. The default is the same as the vox.name.
+                            If the group exists additional surfaces are added to the existing surfaces group.
+
+    Surfaces are stored in a file in the current working directory that has the same name as the group_name,
+    plus a companion `.xml` file.
+    """
+
+    if group_name is None:
+        group_name = vox.name
+
+    # build surface set
+    if not hasattr(surfaces, '__iter__'):
+        surfaces = (surfaces,)
+
+    if colors is None:
+        colors = (C_GREY,
+                  C_GREEN,
+                  C_YELLOW,
+                  C_BLUE,
+                  C_MAGENTA,
+                  C_RED,
+                  C_CYAN)
+
+    if transparencies is None:
+        transparencies = []
+        max_transparent_surfaces = min(MAX_TRANSPARENT, len(surfaces))
+        for i in range(max_transparent_surfaces):
+            transparencies.append((i + 1) * (1. / max_transparent_surfaces))
+    if not hasattr(transparencies, '__iter__'):
+        transparencies = (transparencies)
+
+    transparent_count = 0 # cannot have more than MAX_TRANSPARENT transparent surfaces
+    for i in range(len(surfaces)):
+
+        color = Color(colors[i % len(colors)])
+        trans = transparencies[min(i, len(transparencies) - 1)]
+        if trans < 1.:
+            if transparent_count > MAX_TRANSPARENT:
+                trans = 1.
+            else:
+                transparent_count += 1
+
+        gxapi.GXMVU.plot_voxel_surface2(view.gxview,
+                                        vox.gxvox,
+                                        surfaces[i],
+                                        color.int_value,
+                                        1.,
+                                        trans,
+                                        group_name)
+
+    # surfaces are stored in Geosoft surface files.  Record these files as children of the view.
+    view.add_child_files((group_name, group_name + '.xml'))
