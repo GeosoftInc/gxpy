@@ -129,15 +129,16 @@ class Test(GXPYTest):
             with gxview.View_3d.new() as v3d:
                 v3d_file = v3d.file_name
                 gxgroup.vox_surface(v3d, vox, (0.005, 0.01, 0.02, 0.04, 0.08, 0.16, 0.32, 0.64, 1.28))
+        self.assertEqual(gxmap.Map.open(v3d_file).crc_image(pix_width=800), 4266332078)
+        gxview.delete_files(v3d_file)
 
-        try:
+        with gxvox.Vox.open(self.vectorvox_file) as vox:
+            with gxview.View_3d.new() as v3d:
+                v3d_file = v3d.file_name
+                gxgroup.vox_surface(v3d, vox, 0.32, color=gxgroup.C_BLUE, transparency=0.5)
+        self.assertEqual(gxmap.Map.open(v3d_file).crc_image(pix_width=800), 2739584918)
+        gxview.delete_files(v3d_file)
 
-            #gxviewer.view_document(v3d_file)
-            #png = gxmap.Map.open(v3d_file).image_file()
-            self.assertEqual(gxmap.Map.open(v3d_file).crc_image(pix_width=800), 4266332078)
-
-        finally:
-            gxview.delete_files(v3d_file)
 
 if __name__ == '__main__':
 

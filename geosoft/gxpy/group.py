@@ -2594,57 +2594,67 @@ class Color_map:
 
         return file_name
 
-def vox_surface(view, vox, surfaces, colors=None, transparencies=None, group_name=None):
+def vox_surface(view, vox, surfaces, color=None, transparency=None, group_name=None, append=False):
     """
     Add voxel isosurfaces to a 3D view.
 
     :param view:            `geosoft.gxpy.View_3d` instance
     :param vox:             `geosoft.gxpy.Vox` instance
     :param surfaces:        surface value, or a list of surface values
-    :param colors:          surface color, or a list of color, one per surface.
+    :param color:           surface color, or a list of colors,
                             For a list of surfaces, the default colour of each surface cycles through a list of
                             (C_GREY, C_GREEN, C_YELLOW, C_BLUE, C_MAGENTA, C_RED, C_CYAN). If only one surface
                             the default color is `gxgroup.C_GREY`.
-    :param transparencies:  transparency 0 t0 1. (1. is opaque), or a list of transparencies.
+    :param transparency:    transparency 0 t0 1. (1. is opaque), or a list of transparencies.
                             For a list of surfaces default transparency is applied in increasingly
                             opaque steps in the order of the surface list, such that the 5'th
                             and higher surfaces are opaque.
     :param group_name:      Group name in the view. The default is the same as the vox.name.
                             If the group exists additional surfaces are added to the existing surfaces group.
+    :param append:          True to append to existing surfaces in this group_name, False to replace.
 
-    Surfaces are stored in a file in the current working directory that has the same name as the group_name,
-    plus a companion `.xml` file.
+    Surfaces are stored in a surface file in the current working directory that has the same name as the group_name,
+    plus a companion `.xml` file. Note that the surface file is shared by all views that work with the same
+    group_name in the sma eproject so you need to be careful about naming groups should there be a chance of
+    conflict.
+
+    .. versionadded:: 9.3.1
     """
 
     if group_name is None:
         group_name = vox.name
 
-    # build surface set
+    if not append:
+        gxu.delete_file(group_name)
+        gxu.delete_file(group_name + '.xml')
+
     if not hasattr(surfaces, '__iter__'):
         surfaces = (surfaces,)
 
-    if colors is None:
-        colors = (C_GREY,
-                  C_GREEN,
-                  C_YELLOW,
-                  C_BLUE,
-                  C_MAGENTA,
-                  C_RED,
-                  C_CYAN)
+    if color is None:
+        color = (C_GREY,
+                 C_GREEN,
+                 C_YELLOW,
+                 C_BLUE,
+                 C_MAGENTA,
+                 C_RED,
+                 C_CYAN)
+    elif not hasattr(color, '__iter__'):
+        color = (color,)
 
-    if transparencies is None:
-        transparencies = []
+    if transparency is None:
+        transparency = []
         max_transparent_surfaces = min(MAX_TRANSPARENT, len(surfaces))
         for i in range(max_transparent_surfaces):
-            transparencies.append((i + 1) * (1. / max_transparent_surfaces))
-    if not hasattr(transparencies, '__iter__'):
-        transparencies = (transparencies)
+            transparency.append((i + 1) * (1. / max_transparent_surfaces))
+    elif not hasattr(transparency, '__iter__'):
+        transparency = (transparency,)
 
     transparent_count = 0 # cannot have more than MAX_TRANSPARENT transparent surfaces
     for i in range(len(surfaces)):
 
-        color = Color(colors[i % len(colors)])
-        trans = transparencies[min(i, len(transparencies) - 1)]
+        icolor = Color(color[i % len(color)])
+        trans = transparency[min(i, len(transparency) - 1)]
         if trans < 1.:
             if transparent_count > MAX_TRANSPARENT:
                 trans = 1.
@@ -2654,7 +2664,7 @@ def vox_surface(view, vox, surfaces, colors=None, transparencies=None, group_nam
         gxapi.GXMVU.plot_voxel_surface2(view.gxview,
                                         vox.gxvox,
                                         surfaces[i],
-                                        color.int_value,
+                                        icolor.int_value,
                                         1.,
                                         trans,
                                         group_name)

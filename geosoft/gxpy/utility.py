@@ -1195,3 +1195,16 @@ def url_retrieve(url, filename=None, overwrite=False, reporthook=None):
 
     file, message = urllib.request.urlretrieve(url.replace(' ', '%20'), filename=filename, reporthook=reporthook)
     return file
+
+def delete_file(file_name):
+    """
+    Delete a file, does nothing if file does not exist.
+
+    :param file_name:   file to delete
+
+    .. versionadded:: 9.3.1
+    """
+    try:
+        os.remove(file_name)
+    except FileNotFoundError:
+        pass
