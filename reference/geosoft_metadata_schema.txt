@@ -1,0 +1,207 @@
+iso19139:
+   <gmd:MD_Metadata
+        xsi:schemaLocation="http://www.isotc211.org/2005/gmd ../schemas/iso19139fra/gmd/gmd.xsd"
+        xmlns:fo="http://www.w3.org/1999/XSL/Format"
+        xmlns:map="urn:brgm:mapping"
+        xmlns:gmd="http://www.isotc211.org/2005/gmd"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns:gml="http://www.opengis.net/gml"
+        xmlns:gts="http://www.isotc211.org/2005/gts"
+        xmlns:gmx="http://www.isotc211.org/2005/gmx"
+        xmlns:gfc="http://www.isotc211.org/2005/gfc"
+        xmlns:gco="http://www.isotc211.org/2005/gco">
+        <geosoft xmlns="http://www.geosoft.com/schema/geo"> ... </geosoft>
+        <gmd:dataQualityInfo> ... </gmd:dataQualityInfo>
+        <gmd:identificationInfo> ... </gmd:identificationInfo>
+        <gmd:contact> ... </gmd:contact>
+        <gmd:dataSetURI> ... </gmd:dataSetURI>
+    </gmd:MD_Metadata>
+
+
+fgdc:
+    <metadata>
+        <geosoft xmlns="http://www.geosoft.com/schema/geo"> ... </geosoft>
+        <idinfo> ... </idinfo>
+        <distinfo> ... </distinfo>
+        <metainfo> ... </metainfo>
+    </metadata>
+
+
+# metadata mappings...
+
+geosoft="geosoft/dataset/geo:title"
+fgdc="idinfo/citation/citeinfo/title"
+iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:purpose"
+fgdc="idinfo/descript/purpose"
+iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:purpose/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:subject"
+fgdc="idinfo/keywords/theme/themekey"
+iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:category"
+fgdc="idinfo/keywords/theme/themekey"
+iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:type"
+fgdc="idinfo/keywords/theme/themekey"
+iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:file_format"
+fgdc="distinfo/stdorder/digform/digtinfo/formname"
+iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceFormat/gmd:MD_Format/gmd:name/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:weblink"
+fgdc="metainfo/metextns/onlink"
+iso19139="gmd:dataSetURI/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:description"
+fgdc="idinfo/descript/abstract"
+iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:abstract/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:continent"
+fgdc="idinfo/keywords/place/placekey"
+iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:country"
+fgdc="idinfo/keywords/place/placekey"
+iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:province_state"
+fgdc="idinfo/keywords/place/placekey"
+iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:region"
+fgdc="idinfo/keywords/place/placekey"
+iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:project_name"
+fgdc="idinfo/descript/supplinf"
+iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:collectiveTitle/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:data_source"
+fgdc="idinfo/datacred"
+iso19139="gmd:dataQualityInfo/gmd:DQ_DataQuality/gmd:lineage/gmd:LI_Lineage/gmd:source/gmd:LI_Source/gmd:description/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:project_type"
+fgdc="idinfo/projecttype"
+iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:topicCategory/gmd:MD_TopicCategoryCode"
+
+geosoft="geosoft/dataset/geo:resolution"
+fgdc="idinfo/srcscale"
+iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:spatialResolution/gmd:MD_Resolution/gmd:distance"
+
+geosoft="geosoft/dataset/geo:unitofmeasurement"
+fgdc="idinfo/unitofmeasurement"
+iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/geox:unitofmeasurement/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:data_created_by"
+fgdc="dataqual/lineage/procstep/proccont/cntinfo/cntperp/cntper"
+iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:pointOfContact/gmd:C_ResponsibleParty/gmd:individualName/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:data_creation_date"
+fgdc="dataqual/lineage/procstep/procdate"
+iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date/gco:Date"
+
+geosoft="geosoft/dataset/geo:metadata_created_by"
+fgdc="metainfo/metc/cntinfo/cntperp/cntper"
+iso19139="gmd:contact/gmd:C_ResponsibleParty/gmd:individualName/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:metadata_creation_date"
+fgdc="metainfo/metd"
+iso19139="gmd:dateStamp/gco:Date" useCurrent="true"
+
+geosoft="geosoft/dataset/geo:confidentiality"
+fgdc="idinfo/accconst"
+iso19139="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceSpecificUsage/gmd:MD_Usage/gmd:specificUsage/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:title"
+fgdc="idinfo/citation/citeinfo/title"
+iso19139="identificationInfo/MD_DataIdentification/citation/CI_Citation/title/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:purpose"
+fgdc="idinfo/descript/purpose"
+iso19139="identificationInfo/MD_DataIdentification/purpose/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:subject"
+fgdc="idinfo/keywords/theme/themekey"
+iso19139="identificationInfo/MD_DataIdentification/descriptiveKeywords/MD_Keywords/keyword/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:category"
+fgdc="idinfo/keywords/theme/themekey"
+iso19139="identificationInfo/MD_DataIdentification/descriptiveKeywords/MD_Keywords/keyword/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:type"
+fgdc="idinfo/keywords/theme/themekey"
+iso19139="identificationInfo/MD_DataIdentification/descriptiveKeywords/MD_Keywords/keyword/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:file_format"
+fgdc="distinfo/stdorder/digform/digtinfo/formname"
+iso19139="identificationInfo/MD_DataIdentification/resourceFormat/MD_Format/name/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:weblink"
+fgdc="metainfo/metextns/onlink"
+iso19139="dataSetURI/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:description"
+fgdc="idinfo/descript/abstract"
+iso19139="identificationInfo/MD_DataIdentification/abstract/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:continent"
+fgdc="idinfo/keywords/place/placekey"
+iso19139="identificationInfo/MD_DataIdentification/descriptiveKeywords/MD_Keywords/keyword/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:country"
+fgdc="idinfo/keywords/place/placekey"
+iso19139="identificationInfo/MD_DataIdentification/descriptiveKeywords/MD_Keywords/keyword/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:province_state"
+fgdc="idinfo/keywords/place/placekey"
+iso19139="identificationInfo/MD_DataIdentification/descriptiveKeywords/MD_Keywords/keyword/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:region"
+fgdc="idinfo/keywords/place/placekey"
+iso19139="identificationInfo/MD_DataIdentification/descriptiveKeywords/MD_Keywords/keyword/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:project_name"
+fgdc="idinfo/descript/supplinf"
+iso19139="identificationInfo/MD_DataIdentification/citation/CI_Citation/collectiveTitle/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:data_source"
+fgdc="idinfo/datacred"
+iso19139="dataQualityInfo/DQ_DataQuality/lineage/LI_Lineage/source/LI_Source/description/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:project_type"
+fgdc="idinfo/projecttype"
+iso19139="identificationInfo/MD_DataIdentification/topicCategory/MD_TopicCategoryCode"
+
+geosoft="geosoft/dataset/geo:resolution"
+fgdc="idinfo/srcscale"
+iso19139="identificationInfo/MD_DataIdentification/spatialResolution/MD_Resolution/distance"
+
+geosoft="geosoft/dataset/geo:unitofmeasurement"
+fgdc="idinfo/unitofmeasurement"
+iso19139="identificationInfo/MD_DataIdentification/geox:unitofmeasurement/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:data_created_by"
+fgdc="dataqual/lineage/procstep/proccont/cntinfo/cntperp/cntper"
+iso19139="identificationInfo/MD_DataIdentification/pointOfContact/C_ResponsibleParty/individualName/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:data_creation_date"
+fgdc="dataqual/lineage/procstep/procdate"
+iso19139="identificationInfo/MD_DataIdentification/citation/CI_Citation/date/CI_Date/date/gco:Date"
+
+geosoft="geosoft/dataset/geo:metadata_created_by"
+fgdc="metainfo/metc/cntinfo/cntperp/cntper"
+iso19139="contact/C_ResponsibleParty/individualName/gco:CharacterString"
+
+geosoft="geosoft/dataset/geo:metadata_creation_date"
+fgdc="metainfo/metd"
+iso19139="dateStamp/gco:Date"
+
+geosoft="geosoft/geo:dataset/geo:confidentiality"
+fgdc="idinfo/accconst"
+iso19139="identificationInfo/MD_DataIdentification/resourceSpecificUsage/MD_Usage/specificUsage/gco:CharacterString"
