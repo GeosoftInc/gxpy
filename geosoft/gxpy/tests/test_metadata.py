@@ -63,18 +63,18 @@ class Test(GXPYTest):
         self.assertTrue('float' in md['Maki']['data']['more'])
         self.assertTrue('json' in md)
 
-    def test_metadict(self):
+    def test_meta_dict(self):
         self.start()
 
         m = {}
-        self.assertTrue(gxmeta.get_node_from_metadict('maki/rider', m) is None)
-        self.assertTrue(gxmeta.get_node_from_metadict('', m) is None)
-        gxmeta.set_node_in_metadict('geosoft', m, [1, 2, 3])
-        self.assertEqual(tuple(gxmeta.get_node_from_metadict('geosoft', m)), (1, 2, 3))
+        self.assertTrue(gxmeta.get_node_from_meta_dict('maki/rider', m) is None)
+        self.assertTrue(gxmeta.get_node_from_meta_dict('', m) is None)
+        gxmeta.set_node_in_meta_dict('geosoft', m, [1, 2, 3])
+        self.assertEqual(tuple(gxmeta.get_node_from_meta_dict('geosoft', m)), (1, 2, 3))
 
-        self.assertRaises(gxmeta.MetadataException, gxmeta.set_node_in_metadict, 'geosoft/dataset/sample/children', m, ('a', 1.8, 'b'))
-        gxmeta.set_node_in_metadict('geosoft/dataset/sample/children', m, ('a', 1.8, 'b'), replace=True)
-        self.assertEqual(gxmeta.get_node_from_metadict('geosoft/dataset/sample/children', m), ('a', 1.8, 'b'))
+        self.assertRaises(gxmeta.MetadataException, gxmeta.set_node_in_meta_dict, 'geosoft/dataset/sample/children', m, ('a', 1.8, 'b'))
+        gxmeta.set_node_in_meta_dict('geosoft/dataset/sample/children', m, ('a', 1.8, 'b'), replace=True)
+        self.assertEqual(gxmeta.get_node_from_meta_dict('geosoft/dataset/sample/children', m), ('a', 1.8, 'b'))
 
 
 ##############################################################################################

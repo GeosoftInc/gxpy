@@ -84,11 +84,11 @@ GROUP_AGG = 3 #:
 GROUP_CSYMB = 4 #:
 GROUP_VOXD = 5 #:
 GROUP_VECTORVOX = 6 #:
-_group_selector= (None, None, None,
-                  gxapi.MVIEW_IS_AGG,
-                  gxapi.MVIEW_IS_CSYMB,
-                  gxapi.MVIEW_IS_VOXD,
-                  gxapi.MVIEW_IS_VECTOR3D)
+_group_selector = (None, None, None,
+                   gxapi.MVIEW_IS_AGG,
+                   gxapi.MVIEW_IS_CSYMB,
+                   gxapi.MVIEW_IS_VOXD,
+                   gxapi.MVIEW_IS_VECTOR3D)
 
 EXTENT_ALL = gxapi.MVIEW_EXTENT_ALL #:
 EXTENT_VISIBLE = gxapi.MVIEW_EXTENT_VISIBLE #:
@@ -308,7 +308,7 @@ class View:
     @map_scale.setter
     def map_scale(self, s):
         if s > 0.0:
-            self.re_scale(s)
+            self.gxview.re_scale(s)
 
     def close(self):
         """
@@ -328,7 +328,7 @@ class View:
         """
         meta = self.metadata
         node = 'geosoft/dataset/map/views/' + self.name + '/child_files'
-        child_files = gxmeta.get_node_from_metadict(node, meta)
+        child_files = gxmeta.get_node_from_meta_dict(node, meta)
         if child_files is None:
             child_files = []
         if isinstance(file_list, str):
@@ -337,7 +337,7 @@ class View:
             for f in file_list:
                 if not f in child_files:
                     child_files.append(f)
-        gxmeta.set_node_in_metadict(node, meta, child_files)
+        gxmeta.set_node_in_meta_dict(node, meta, child_files)
         self.metadata = meta
 
     def locate(self,

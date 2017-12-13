@@ -145,10 +145,10 @@ def delete_files(file_name):
     try:
         with Map.open(file_name) as map:
             meta = map.metadata
-            views = gxmeta.get_node_from_metadict('geosoft/dataset/map/views', meta)
+            views = gxmeta.get_node_from_meta_dict('geosoft/dataset/map/views', meta)
             if views:
                 for v in views:
-                    child_files = gxmeta.get_node_from_metadict(v + '/child_files', views)
+                    child_files = gxmeta.get_node_from_meta_dict(v + '/child_files', views)
                     if child_files:
                         for f in child_files:
                             remove(f)

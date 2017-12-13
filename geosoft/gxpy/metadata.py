@@ -14,6 +14,7 @@ Geosoft metadata.
     Regression tests provide usage examples:    
     `metadata tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_metadata.py>`_
 
+.. versionadded:: 9.3
 """
 
 import os
@@ -44,6 +45,7 @@ META_TYPE_ATTRIBUTE = 1 #:
 META_INVALID = -1 #:
 META_ROOT_NODE = -100 #:
 
+
 def _umn(meta_type, name):
     name = name.strip('/')
     if meta_type == META_TYPE_NODE:
@@ -52,20 +54,20 @@ def _umn(meta_type, name):
         return 'ATTRIB:/{}'.format(name)
 
 
-def get_node_from_metadict(metanode, metadict):
+def get_node_from_meta_dict(meta_node, meta_dict):
     """
     Get the node content from a metadata dictionary.
 
-    :param metanode:    node wanted, '/' delimited. e.g. 'geosoft/dataset/title'
-    :param metadict:    metadata dictionary
+    :param meta_node:   node wanted, '/' delimited. e.g. 'geosoft/dataset/title'
+    :param meta_dict:   metadata dictionary (from `Metadata.meta_dict`)
     :return:            node content, or None if not found
 
-    .. versionadded 9.3.1
+    .. versionadded:: 9.3.1
     """
-    if not metanode:
+    if not meta_node:
         return None
-    tree = metanode.split('/')
-    root = metadict
+    tree = meta_node.split('/')
+    root = meta_dict
     for node in tree:
         if node:
             if not node in root:
@@ -74,22 +76,22 @@ def get_node_from_metadict(metanode, metadict):
     return root
 
 
-def set_node_in_metadict(metanode, metadict, content, replace=False):
+def set_node_in_meta_dict(meta_node, meta_dict, content, replace=False):
     """
     Set a node in a metadata dictionary. Tree nodes are added if absent.
 
-    :param metanode:    node to set, '/' delimited. e.g. 'geosoft/dataset/title'
-    :param metadict:    meta dictionary
+    :param meta_node:   node to set, '/' delimited. e.g. 'geosoft/dataset/title'
+    :param meta_dict:   meta dictionary (from `Metadata.meta_dict`)
     :param content:     content to set to the node
     :param replace:     True to replace nodes that are attributes.  The default is False, in which case
                         an error is raised if a node in the tree is an attribute.
 
     .. versionadded:: 9.3.1
     """
-    if metanode[-1] == '/':
-        metanode = metanode[:-1]
-    tree = metanode.split('/')
-    root = metadict
+    if meta_node[-1] == '/':
+        meta_node = meta_node[:-1]
+    tree = meta_node.split('/')
+    root = meta_dict
     for node in tree[:-1]:
         if not node in root:
             root[node] = {}
@@ -146,7 +148,7 @@ class Metadata:
         """
         The :class:`geosoft.gxapi.GXMETA` instance handle.
 
-        ..versionadded:: 9.3
+        .. versionadded:: 9.3
         """
         return self._gxmeta
 
@@ -193,7 +195,7 @@ class Metadata:
         :param node_name:   name of the node (eg. `'my_metadata/parameters'`)
         :returns:           metadata token number
 
-        ..versionadded::9.3
+        .. versionadded::9.3
         """
         node_name = node_name.strip('/')
         tree = node_name.split('/')
@@ -209,7 +211,7 @@ class Metadata:
         :param attribute_name:  name of the attribute (eg. `'my_metadata/parameters/frequency'`)
         :returns:               metadata token number or `META_INVALID` if the attribute does not exist.
 
-        ..versionadded::9.3
+        .. versionadded::9.3
         """
         if self.has_attribute(attr_name):
             return self.gxmeta.resolve_umn(_umn(META_TYPE_ATTRIBUTE, attr_name))
@@ -222,7 +224,7 @@ class Metadata:
         :param attr_name:   attribute name
         :returns:           (node token, attribute token)
 
-        ..versionadded:: 9.3
+        .. versionadded:: 9.3
         """
         node, attr = tuple(attr_name.strip('/').rsplit('/', 1))
         if not self.has_attribute(attr_name):
@@ -236,7 +238,7 @@ class Metadata:
         :param attr_name:   attribute name (eg. `'/my_metadata/parameters/frequency'`)
         :param value:       int, float, string or a Python structure such as tuple, array or dict.
 
-        ..versionadded:: 9.3
+        .. versionadded:: 9.3
         """
         node, attr = tuple(attr_name.strip('/').rsplit('/',1))
         if self.has_attribute(attr_name):
@@ -262,6 +264,8 @@ class Metadata:
 
         :param attr_name:   attribute name (eg. '/my_metadata/parameters/frequency')
         :returns:           attribute setting
+
+        .. versionadded:: 9.3
         """
         if not self.has_attribute(attr_name):
             return None
@@ -282,7 +286,12 @@ class Metadata:
 
     def meta_dict(self):
         """
-        Metadata content as a dictionary. Geosoft objects will appear as descriptive text strings.
+        Metadata content as a dictionary.
+
+        Attributes will be normal Python objects where the attribute type is supported by Python. This
+        includes basic types (like int and float), lists/tuples, and Python dictionaries.
+
+        Geosoft objects in an attribute, will appear only as a descriptive text string.
 
         :return: dictionary of metadata
 
@@ -305,7 +314,7 @@ class Metadata:
                 return parts[0].lstrip(), None
 
 
-        def metadict(ff):
+        def meta_dict(ff):
 
             def getone(ff, i):
                 d = {}
@@ -353,6 +362,6 @@ class Metadata:
         os.remove(metafile)
 
         if ff:
-            return metadict(ff)
+            return meta_dict(ff)
         else:
             return {}
