@@ -523,6 +523,40 @@ class Test(GXPYTest):
             del_file(ref_file)
             del_file(test_file)
 
+    def test_unique_name(self):
+        self.start()
+
+        def exists(name):
+            if name in ('ab', 'ab(1)', 'ab(2)', 'ab.txt', 'ab(1).txt'):
+                return True
+            if name in ('ab', 'ab_1', 'ab_2', 'ab.txt', 'ab_1.txt'):
+                return True
+            if name in ('ab(special).txt',):
+                return True
+            if name in ('ab(special.txt', 'ab(maki_.txt','ab(maki_3.txt'):
+                return True
+            return False
+
+        def true(name):
+            return True
+
+        self.assertEqual(gxu.unique_name('c:/temp/billybob', exists), 'c:/temp/billybob')
+        self.assertEqual(gxu.unique_name('ab', exists), 'ab(3)')
+        self.assertEqual(gxu.unique_name('ab.txt', exists), 'ab(2).txt')
+        self.assertEqual(gxu.unique_name('ab', exists, separator='_'), 'ab_3')
+        self.assertEqual(gxu.unique_name('ab.txt', exists, separator='_'), 'ab_2.txt')
+        self.assertEqual(gxu.unique_name('ab(special).txt', exists), 'ab(special)(1).txt')
+        self.assertEqual(gxu.unique_name('ab(special.txt', exists), 'ab(special(1).txt')
+        self.assertEqual(gxu.unique_name('ab(special_.txt', exists, separator='_'), 'ab(special_.txt')
+        self.assertEqual(gxu.unique_name('ab(maki_.txt', exists, separator='_'), 'ab(maki__1.txt')
+        self.assertEqual(gxu.unique_name('ab(maki_3.txt', exists, separator='_'), 'ab(maki_4.txt')
+        self.assertRaises(gxu.UtilityException, gxu.unique_name, 'anything', true, '()', 10)
+
+        with open('test(2).txt', 'w+') as f:
+            f.write('stuff')
+        self.assertEqual(gxu.unique_name('test(2).txt'), 'test(3).txt')
+        os.remove('test(2).txt')
+
 if __name__ == '__main__':
 
     unittest.main()

@@ -68,6 +68,7 @@ GROUP_NAME_SIZE = gxv.VIEW_NAME_SIZE #:
 NEW = gxapi.MVIEW_GROUP_NEW #:
 APPEND = gxapi.MVIEW_GROUP_APPEND #:
 READ_ONLY = max(NEW, APPEND) + 1 #:
+REPLACE = READ_ONLY + 1 #:
 
 SMOOTH_NONE = gxapi.MVIEW_SMOOTH_NEAREST #:
 SMOOTH_CUBIC = gxapi.MVIEW_SMOOTH_CUBIC #:
@@ -278,8 +279,9 @@ class Group:
 
     .. versionadded:: 9.2
 
-    .. versionchanged:: 9.3
-        added support for `unit_of_measure`
+    .. versionchanged:: 9.3 added support for `unit_of_measure`
+
+    .. versionchanged:: 9.3.1 added mode=REPLACE and changed mode=NEW to always create a new unique group.
     """
 
     def __enter__(self):
@@ -367,7 +369,17 @@ class Group:
 
         self._new_meta = False
         self._meta = None
-        if (mode != NEW) and self.view.gxview.exist_group(self.name):
+
+        if mode == REPLACE:
+            if self.view.gxview.exist_group(name):
+                self.view.delete_group(name)
+
+        elif mode == NEW:
+            # if the group exists, find a new unique group name
+            if self.view.gxview.exist_group(name):
+                self._name = gxu.unique_name(name, self.view.gxview.exist_group, separator='_')
+
+        elif self.view.gxview.exist_group(self.name):
             sr = gxapi.str_ref()
             group_number = self.view.gxview.find_group(self.name)
             if self.view.gxview.group_storage_exists(group_number, "Geosoft_META"):
@@ -587,7 +599,7 @@ class Draw(Group):
     
     Use `with Draw() as group:` to ensure correct unlocking when complete.
     
-    Inherits from the `Group` base class.
+    Inherits from the `Group` base class. See `Group` arguments.
     """
 
     def __init__(self, *args, **kwargs):
@@ -608,7 +620,6 @@ class Draw(Group):
         # this is a hack because we cannot draw a box or a zero-length line, so
         # instead we draw a filled box
         self.view.gxview.symb_number(4)
-        self.view.gxview.symb_color(0)
         self.view.gxview.symb_color(0)
         self.view.gxview.symb_fill_color(self.pen.line_color._color)
         self.view.gxview.symb_size(self.pen.line_thick)
@@ -2039,9 +2050,11 @@ class Color_symbols_group(Group):
             color_map,
             symbol_def=None,
             symbol=SYMBOL_CIRCLE,
+            mode=REPLACE,
             **kwargs):
         """
-        Create a new color symbols group with color mapping.
+        Create a new color symbols group with color mapping. If the group exists a new unique name is
+        constructed.
 
         :param view:            the view in which to place the group
         :param group_name:      group name
@@ -2054,6 +2067,7 @@ class Color_symbols_group(Group):
                                 are valid.  For other fonts you will get the symbol requested.  The default is
                                 `Text_def(font='symbols.gfn', color='k', weight=FONT_WEIGHT_ULTRALIGHT)`
         :param symbol:          the symbol to plot, normally one of `SYMBOL`.
+        :param mode:            REPLACE (default) or NEW, which creates a new unique name if group exists
         :return:                :class:`Color_symbols_group` instance
 
         .. versionadded:: 9.2
@@ -2064,7 +2078,7 @@ class Color_symbols_group(Group):
                 return False
             return True
 
-        cs = cls(view, name, mode=NEW, **kwargs)
+        cs = cls(view, name, mode=mode, **kwargs)
         cs._gxcsymb = gxapi.GXCSYMB.create(color_map.save_file())
 
         if symbol_def is None:
@@ -2157,20 +2171,21 @@ class Aggregate_group(Group):
 
 
     @classmethod
-    def new(cls, view, agg, name=None):
+    def new(cls, view, agg, name=None, mode=REPLACE):
         """
         Create a new aggregate group in a view.
 
         :param view:    `geosoft.gxpy.view.View` or `geosoft.gxpy.view.View_3d` instance
         :param agg:     `geosoft.gxpy.agg.Aggregate` instance.
         :param name:    group name, default is the aggregate name
+        :param mode:    REPLACE (default) or NEW, which creates a unique name if the group exists
 
         .. versionadded:: 9.2
         """
 
         if name is None:
             name = agg.name
-        agg_group = cls(view, name, mode=NEW)
+        agg_group = cls(view, name, mode=mode)
         agg_group.agg = agg
         view.gxview.aggregate(agg.gxagg, agg_group.name)
         return agg_group
@@ -2220,7 +2235,7 @@ class Vox_display_group(Group):
         if hasattr(self, '_close'):
             self._close()
 
-    def __init__(self, view3d, group_name, mode=NEW):
+    def __init__(self, view3d, group_name, mode=REPLACE):
 
         self._voxd = None
         if not view3d.is_3d:
@@ -2228,20 +2243,21 @@ class Vox_display_group(Group):
         super().__init__(view3d, group_name, mode=mode)
 
     @classmethod
-    def new(cls, view3d, voxd, name=None):
+    def new(cls, view3d, voxd, name=None, mode=REPLACE):
         """
         Add a Vox_display as a new group in the view
 
         :param view3d:  `geosoft.gxpy.view.View_3d` instance
         :param voxd:    `geosoft.gxpy.vox_display.Vox_display` instance
         :param name:    group name, default is the voxd name
+        :param mode:    REPLACE (default) or NEW, which creates a unique name if the group exists
 
         .. versionadded:: 9.3.1
         """
 
         if name is None:
             name = voxd.name
-        voxd_group = cls(view3d, name)
+        voxd_group = cls(view3d, name, mode=mode)
         if voxd.vector:
             scale, height_base_ratio, max_base_size_ratio, max_cones = voxd.vector_cone_specs
             if max_cones is None:
@@ -2594,7 +2610,7 @@ class Color_map:
 
         return file_name
 
-def vox_surface(view, vox, surfaces, color=None, transparency=None, group_name=None, append=False):
+def vox_surface(view, vox, surfaces, color=None, transparency=None, group_name=None, mode=REPLACE):
     """
     Add voxel isosurfaces to a 3D view.
 
@@ -2611,7 +2627,17 @@ def vox_surface(view, vox, surfaces, color=None, transparency=None, group_name=N
                             and higher surfaces are opaque.
     :param group_name:      Group name in the view. The default is the same as the vox.name.
                             If the group exists additional surfaces are added to the existing surfaces group.
-    :param append:          True to append to existing surfaces in this group_name, False to replace.
+    :param mode:            If the group_name exists in the view:
+
+                            ======= ===============================================
+                            REPLACE replace the group if it exists (default)
+                            NEW     create a new group with a unique name
+                            APPEND  append surfaces to an existing group
+                            ======= ===============================================
+
+    :param overwrite:       True to overwrite
+    :returns:               groups name, which will be different from group_name if mode=NEW and
+                            the group exists in the view.
 
     Surfaces are stored in a surface file in the current working directory that has the same name as the group_name,
     plus a companion `.xml` file. Note that the surface file is shared by all views that work with the same
@@ -2621,12 +2647,19 @@ def vox_surface(view, vox, surfaces, color=None, transparency=None, group_name=N
     .. versionadded:: 9.3.1
     """
 
+    def group_exists(name):
+        return view.has_group('SURF_' + name) or os.path.isfile(name)
+
     if group_name is None:
         group_name = vox.name
 
-    if not append:
+    if mode == REPLACE:
+        view.delete_group('SURF_' + group_name)
         gxu.delete_file(group_name)
         gxu.delete_file(group_name + '.xml')
+    elif mode == NEW:
+        if group_exists(group_name):
+            group_name = gxu.unique_name(group_name, group_exists, separator='_')
 
     if not hasattr(surfaces, '__iter__'):
         surfaces = (surfaces,)
@@ -2671,3 +2704,5 @@ def vox_surface(view, vox, surfaces, color=None, transparency=None, group_name=N
 
     # surfaces are stored in Geosoft surface files.  Record these files as children of the view.
     view.add_child_files((group_name, group_name + '.xml'))
+
+    return group_name

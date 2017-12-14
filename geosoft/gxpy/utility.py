@@ -1208,3 +1208,56 @@ def delete_file(file_name):
         os.remove(file_name)
     except FileNotFoundError:
         pass
+
+def unique_name(name, invalid=None, separator='()', maxversion = 1000):
+    """
+    Build a unique name or file name.
+    
+    :param name:        seed name, returns this if callback(name) is False the name in unique
+    :param invalid:     callback function invalid(name), returns True if name is invalid. If a call-back
+                        is not provided a simple os.path.isfile(name) is used.
+    :param separator:   single or two-character separator. The unique name is constructed by appending
+                        an increasing number to the seed name until a valid name is found. By default
+                        the number is enclosed in parentheses (e.g. some_name(4).txt). If a single separator
+                        character is defined the number is separted from the name by the single character
+                        (e.g. for separator='_', might return some_name_4.txt).
+    :param maxversion:  maximum number to try, default is 1000. This protects against infinite loop
+                        should there be a bug in your callback.
+    :return:            unique name
+
+    .. versionadded:: 9.3.1
+    """
+
+    def parts(name):
+        path, file = os.path.split(name)
+        base, ext = os.path.splitext(file)
+        isep = base.rfind(separator[0])
+        if  isep == -1:
+            number = 0
+        else:
+            current_base = base
+            if len(separator) > 1:
+                if base[-1] == separator[1]:
+                    base = base[:-1]
+            try:
+                number = int(base[isep + 1:])
+                base = base[:isep]
+            except:
+                number = 0
+                base = current_base
+        return path + base, number, ext
+
+    if invalid is None:
+        invalid = os.path.isfile
+
+    while invalid(name):
+        path_name, number, ext = parts(name)
+        number += 1
+        if number >= maxversion:
+            raise UtilityException(_t("Cannot determine a unique name in {} tries.").format(maxversion))
+        name = path_name + separator[0] + str(number)
+        if len(separator) > 1:
+            name = name + separator[1]
+        name = name + ext
+
+    return name

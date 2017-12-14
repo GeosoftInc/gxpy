@@ -151,9 +151,6 @@
    <Item type="SymbColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
-   <Item type="SymbColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
-   </Item>
    <Item type="SymbFill" size="8">
       <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="0" blue="255"/>
    </Item>
@@ -168,9 +165,6 @@
    </Item>
    <Item type="SymbNumber" size="8">
       <Item name="Value" value="4"/>
-   </Item>
-   <Item type="SymbColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="SymbColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="None"/>
@@ -193,9 +187,6 @@
    <Item type="SymbColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
-   <Item type="SymbColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
-   </Item>
    <Item type="SymbFill" size="8">
       <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="0" blue="255"/>
    </Item>
@@ -210,9 +201,6 @@
    </Item>
    <Item type="SymbNumber" size="8">
       <Item name="Value" value="4"/>
-   </Item>
-   <Item type="SymbColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="SymbColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="None"/>
@@ -235,9 +223,6 @@
    <Item type="SymbColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
-   <Item type="SymbColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
-   </Item>
    <Item type="SymbFill" size="8">
       <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="0" blue="255"/>
    </Item>
@@ -252,9 +237,6 @@
    </Item>
    <Item type="SymbNumber" size="8">
       <Item name="Value" value="4"/>
-   </Item>
-   <Item type="SymbColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="SymbColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="None"/>
@@ -277,9 +259,6 @@
    <Item type="SymbColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
-   <Item type="SymbColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
-   </Item>
    <Item type="SymbFill" size="8">
       <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="0" blue="255"/>
    </Item>
@@ -298,9 +277,6 @@
    <Item type="SymbColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
-   <Item type="SymbColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
-   </Item>
    <Item type="SymbFill" size="8">
       <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="0" blue="255"/>
    </Item>
@@ -315,9 +291,6 @@
    </Item>
    <Item type="SymbNumber" size="8">
       <Item name="Value" value="4"/>
-   </Item>
-   <Item type="SymbColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="SymbColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="None"/>
@@ -342,9 +315,6 @@
    </Item>
    <Item type="SymbNumber" size="8">
       <Item name="Value" value="4"/>
-   </Item>
-   <Item type="SymbColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="SymbColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="None"/>
@@ -401,9 +371,6 @@
    </Item>
    <Item type="SymbNumber" size="8">
       <Item name="Value" value="4"/>
-   </Item>
-   <Item type="SymbColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="SymbColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="None"/>

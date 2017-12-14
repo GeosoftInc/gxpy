@@ -84,11 +84,14 @@ GROUP_AGG = 3 #:
 GROUP_CSYMB = 4 #:
 GROUP_VOXD = 5 #:
 GROUP_VECTORVOX = 6 #:
+GROUP_SURFACE = 7 #:
+
 _group_selector = (None, None, None,
                    gxapi.MVIEW_IS_AGG,
                    gxapi.MVIEW_IS_CSYMB,
                    gxapi.MVIEW_IS_VOXD,
-                   gxapi.MVIEW_IS_VECTOR3D)
+                   gxapi.MVIEW_IS_VECTOR3D,
+                   None)
 
 EXTENT_ALL = gxapi.MVIEW_EXTENT_ALL #:
 EXTENT_VISIBLE = gxapi.MVIEW_EXTENT_VISIBLE #:
@@ -479,10 +482,15 @@ class View:
         # filter by type wanted
         gd = gdict(gxapi.MVIEW_GROUP_LIST_ALL)
         groups = []
-        isg = _group_selector[gtype]
-        for g in gd:
-            if self.gxview.is_group(g, isg):
-                groups.append(g)
+        if gtype == GROUP_SURFACE:
+            for g in gd:
+                if g[:5] == 'SURF_':
+                    groups.append(g)
+        else:
+            isg = _group_selector[gtype]
+            for g in gd:
+                if self.gxview.is_group(g, isg):
+                    groups.append(g)
         return groups
 
     @property
@@ -520,9 +528,15 @@ class View:
         """list of voxel groups in this view"""
         return self._groups(GROUP_VECTORVOX)
 
+    @property
+    def group_list_surface(self):
+        """list of surface groups in this view"""
+        return self._groups(GROUP_SURFACE)
+
+
     def has_group(self, group):
         """ Returns True if the map contains this group."""
-        return self.gxview.exist_group(group)
+        return bool(self.gxview.exist_group(group))
 
     def _extent(self, what):
         xmin = gxapi.float_ref()

@@ -396,16 +396,16 @@ class Test(GXPYTest):
         with gxgrd.Grid(grid_file) as grd:
             cs = grd.coordinate_system
             area = grd.extent_2d()
-        with gxv.View_3d.new("grid", overwrite=True) as v:
+        with gxv.View_3d.new() as v:
             v3d_file = v.file_name
             with gxg.Draw(v, 'line') as g:
                 self.assertEqual(g.drawing_plane, 'Plane')
-                self.assertEqual(str(g), 'line/Plane/grid')
+                self.assertEqual(str(g), 'line/Plane/uuid_test_basic_grid_3D_1')
                 g.rectangle(area, pen=g.new_pen(line_thick=0.1, line_color='R'))
 
             with gxagg.Aggregate_image.new(grid_file) as agg:
                 with gxg.Aggregate_group.new(v, agg) as gagg:
-                    self.assertEqual(str(gagg), agg.name + '/Plane/grid')
+                    self.assertEqual(str(gagg), agg.name + '/Plane/uuid_test_basic_grid_3D_1')
 
             self.assertEqual(len(v.group_list_agg), 1)
 
@@ -1064,7 +1064,7 @@ class Test(GXPYTest):
         cmap = gxg.Color_map()
         cmap.set_linear(0, 5, contour_interval=1)
 
-        with gxv.View_3d.new('csymb', overwrite=True) as v:
+        with gxv.View_3d.new() as v:
             v3d_file = v.file_name
             with gxg.Draw(v) as g:
                 g.rectangle(g.extent)
@@ -1223,6 +1223,7 @@ class Test(GXPYTest):
             gxg.contour(v, 'TMI_contour', grid_file)
 
         self.crc_map(v3d_name)
+        gxv.delete_files(v3d_name)
 
     def test_plane_contour(self):
         self.start()
@@ -1265,6 +1266,7 @@ class Test(GXPYTest):
                 g.rectangle((v.extent_clip), pen=gxg.Pen(line_thick=v.units_per_map_cm * 0.1))
 
         self.crc_map(name)
+        gxv.delete_files(name)
 
 
     def test_polydata_3d_grd_cone(self):
@@ -1366,8 +1368,8 @@ class Test(GXPYTest):
             cs = grd.coordinate_system
             area = grd.extent_2d()
         with gxmap.Map.new(map_file,
-                             data_area=area, media="A4", margins=(0, 10, 0, 0),
-                             coordinate_system=cs, overwrite=True) as gmap:
+                           data_area=area, media="A4", margins=(0, 10, 0, 0),
+                           coordinate_system=cs, overwrite=True) as gmap:
             map_file = gmap.file_name
 
             with gxv.View.open(gmap, "base") as v:
@@ -1402,8 +1404,8 @@ class Test(GXPYTest):
             area = grd.extent_2d()
 
         with gxmap.Map.new(map_file,
-                             data_area=area, margins=(2, 10, 2, 2),
-                             coordinate_system=cs, overwrite=True, scale=20000) as gmap:
+                           data_area=area, margins=(2, 10, 2, 2),
+                           coordinate_system=cs, overwrite=True, scale=20000) as gmap:
             map_file = gmap.file_name
 
             with gxv.View.open(gmap, "base") as v:
@@ -1433,6 +1435,24 @@ class Test(GXPYTest):
 
         self.assertEqual(gxg.color_from_string("R"), 33554687)
         self.assertEqual(gxg.color_from_string("H255S127V32"), 18907135)
+
+    def test_group_mode(self):
+        self.start()
+
+        rect = gxgm.Point2((0,0,10,5))
+        with gxmap.Map.new(data_area=rect.extent_xy) as gmap:
+            with gxv.View.new(gmap, "data") as v:
+                gxg.Draw(v, 'rect').rectangle(rect)
+                self.assertTrue(len(v.group_list), 1)
+                gxg.Draw(v, 'rect').rectangle(rect)
+                self.assertTrue(len(v.group_list), 1)
+                gxg.Draw(v, 'rect', mode=gxg.NEW).rectangle(rect)
+                self.assertTrue(len(v.group_list), 2)
+                self.assertTrue('rect_1' in v.group_list)
+                gxg.Draw(v, 'rect_1', mode=gxg.REPLACE).rectangle(rect)
+                self.assertTrue(len(v.group_list), 2)
+                self.assertTrue('rect_1' in v.group_list)
+
 
 
 if __name__ == '__main__':
