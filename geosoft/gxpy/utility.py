@@ -1261,3 +1261,49 @@ def unique_name(name, invalid=None, separator='()', maxversion = 1000):
         name = name + ext
 
     return name
+
+def jupyter_markdown_toc(j_file, numbered=True, start_level=1, max_depth=1, prefix=' '):
+    """
+    Create a markdoown table-of-content string from a jupyter notebook based on markdown "#".
+
+    :param j_file:      jupyter notebook name. Default file extension is '.ipynb'
+    :param numbered:    True (default) to number the main headings, False for all bulletys
+    :param level:       toc base level, default is 1, which starts TOC at "##"
+    :param max_depth:   maximum levels relative to the start level, default is first level only.
+    :param prefix:      previx for each TOC line, default is ' ' so TOC will appear indented.
+    :return:        toc string.
+
+    Include this in a jupyter notebook to create a TOC that can then be cut/pasted into the
+    introductory markdown:
+
+    .. code::
+
+        import geosoft.gxpy.utility
+        print geosoft.gxpy.utility.jupyter_toc('my_notebook_name')
+
+    .. versionaddedd:: 9.3.1
+    """
+    base, ext = os.path.splitext(j_file)
+    if not ext:
+        j_file = j_file + '.ipynb'
+    data = json.loads(open(j_file).read())
+    toc = ''
+    i = 1
+    for k in data['cells']:
+        if k['cell_type'] == 'markdown':
+            for l in k['source']:
+                l = l.strip()
+                if l and l[0] == '#':
+                    l = l[start_level:]
+                    if l[0] == '#':
+                        indent, label = l.split(' ', 1)
+                        if len(indent) <= max_depth:
+                            if label[-1] == '\n':
+                                label = label[:-1]
+                            if numbered and len(indent) == 1:
+                                lead = str(i) + '. ['
+                                i += 1
+                            else:
+                                lead = str(' ' * len(indent)) + '- ['
+                            toc = toc + prefix + lead + label + '](#' + label.replace(' ', '-') + ')\n'
+    return toc
