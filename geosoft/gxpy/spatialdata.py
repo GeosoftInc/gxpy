@@ -11,6 +11,7 @@ Geosoft spatial data base class.
 import os
 
 import geosoft
+import geosoft.gxapi as gxapi
 from . import gx as gx
 from . import coordinate_system as gxcs
 from . import utility as gxu
@@ -64,6 +65,8 @@ class SpatialData:
     :param mode:        file mode, MODE_READ, MODE_READWRITE or MODE_NEW.  The default is MODE_NEW.
     :param overwrite:   Default is False. If True will raise an error if MODE_NEW and file_name exists.
     :param persist:     True to persist a MODE_NEW dataset.  If False, dataset files are deleted upon closing.
+    :param gxobject:    Base GXAPI spatial dataset object, default is None.  If passed the base object is used
+                        to resolve common named methods like get_ipj().
 
     :Properties:
 
@@ -116,7 +119,7 @@ class SpatialData:
     def __str__(self):
         return self.name
 
-    def __init__(self, name=None, file_name=None, mode=MODE_NEW, overwrite=False, persist=True):
+    def __init__(self, name=None, file_name=None, mode=MODE_NEW, overwrite=False, persist=True, gxobject=None):
 
         if name is None:
             if file_name:
@@ -150,6 +153,7 @@ class SpatialData:
         self._metadata_root = ''
         self._cs = None
         self._persist = persist
+        self._gxobject = gxobject
         self._open = gx.track_resource(self.__class__.__name__, self._name)
 
     def _init_metadata(self):
@@ -242,15 +246,23 @@ class SpatialData:
 
         Can be set using any constructor supported by `geosoft.gxpy.coordinate_system.Coordinate_system`.
         """
-        if self._cs is None:
-            self._cs = gxcs.Coordinate_system()
-        return self._cs
+        if self._gxobject and hasattr(self._gxobject, 'get_ipj'):
+            ipj = gxapi.GXIPJ.create()
+            self._gxobject.get_ipj(ipj)
+            return gxcs.Coordinate_system(ipj)
+        else:
+            if self._cs is None:
+                self._cs = gxcs.Coordinate_system()
+            return self._cs
 
     @coordinate_system.setter
     def coordinate_system(self, cs):
         if not isinstance(cs, gxcs.Coordinate_system):
             cs = gxcs.Coordinate_system(cs)
-        self._cs = cs
+        if self._gxobject and hasattr(self._gxobject, 'set_ipj'):
+            self._gxobject.set_ipj(gxcs.Coordinate_system(cs).gxipj)
+        else:
+            self._cs = cs
 
     @property
     def persist(self):

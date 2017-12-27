@@ -128,13 +128,13 @@ Z_DEPTH = 1 #:
 
 class Vox(gxspd.SpatialData):
     """
-    Vox and image class.
+    Vox (voxset) class.
 
     :Constructors:
 
         ======================= ============================================
-        :meth:`open`            open an existing vox
-        :meth:`new`             create a new vox
+        :meth:`open`            open an existing vox dataset
+        :meth:`new`             create a new vox dataset
         ======================= ============================================
 
     A vox instance supports iteration that yields (x, y, z, vox_value) by points along horizontal
@@ -191,10 +191,10 @@ class Vox(gxspd.SpatialData):
         super().__init__(name=self._name, file_name=self._file_name,
                          mode=mode,
                          overwrite=overwrite,
-                         persist=persist)
+                         persist=persist,
+                         gxobject=gxvox)
 
         self._gxvox = gxvox
-        self._cs = None
         self._gxvoxe = None
         self._next = self._next_x = self._next_y = self._next_z = 0
         self._locations = None
@@ -291,8 +291,6 @@ class Vox(gxspd.SpatialData):
             MODE_READ          only read the vox, properties cannot be changed
             MODE_READWRITE     vox stays the same, but properties and metadata may change
             =================  ==========================================================
-
-        :returns:       `Vox` instance
 
         .. versionadded:: 9.3.1
         """
@@ -537,18 +535,6 @@ class Vox(gxspd.SpatialData):
                     rx1.value, ry1.value, -rz0.value)
         return (rx0.value, ry0.value, rz0.value,
                 rx1.value, ry1.value, rz1.value)
-
-    @property
-    def coordinate_system(self):
-        """coordinate system as a `geosoft.gxpy.coordinate_system.Coordinate_system` instance. Can be set using
-        any constructor supported by `geosoft.gxpy.coordinate_system.Coordinate_system`."""
-        ipj = gxapi.GXIPJ.create()
-        self.gxvox.get_ipj(ipj)
-        return gxcs.Coordinate_system(ipj)
-
-    @coordinate_system.setter
-    def coordinate_system(self, cs):
-        self.gxvox.set_ipj(gxcs.Coordinate_system(cs).gxipj)
 
     def _setup_locations(self):
         xvv = gxvv.GXvv()
