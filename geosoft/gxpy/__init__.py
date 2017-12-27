@@ -9,6 +9,7 @@ __all__ = ['agg',
            'map',
            'metadata',
            'project',
+           'spatialdata',
            'system',
            'utility',
            'va',
@@ -39,3 +40,4 @@ from . import viewer
 from . import vox
 from . import vox_display
 from . import metadata
+from . import spatialdata

@@ -1281,7 +1281,7 @@ def jupyter_markdown_toc(j_file, numbered=True, start_level=1, max_depth=1, pref
         import geosoft.gxpy.utility
         print geosoft.gxpy.utility.jupyter_toc('my_notebook_name')
 
-    .. versionaddedd:: 9.3.1
+    .. versionadded:: 9.3.1
     """
     base, ext = os.path.splitext(j_file)
     if not ext:

@@ -3,11 +3,11 @@ Geosoft voxel (voxset) handling.
 
 :Classes:
 
-    ============ =======================================================
-    :class:`Vox` Geosoft voxel (voxset)
-    ============ =======================================================
+    ============ ==========================================================================
+    :class:`Vox` Geosoft voxel (voxset), subclass of `geosoft.gxpy.spatialdata.SpatialData`
+    ============ ==========================================================================
 
-.. seealso:: `geosoft.gxpy.vox_display`, `geosoft.gxapi.GXVOX`
+.. seealso:: `geosoft.gxpy.spatialdata`, `geosoft.gxpy.vox_display`, `geosoft.gxapi.GXVOX`
 
 .. note::
 
@@ -24,6 +24,7 @@ from . import gx as gx
 from . import coordinate_system as gxcs
 from . import vv as gxvv
 from . import utility as gxu
+from . import spatialdata as gxspd
 
 __version__ = geosoft.__version__
 
@@ -38,6 +39,7 @@ class VoxException(Exception):
     """
     pass
 
+
 def _vox_file_name(name, vectorvoxel=False):
     ext = os.path.splitext(name)[1].lower()
     if (ext == '.geosoft_voxel') or (ext == '.geosoft_vectorvoxel'):
@@ -46,13 +48,16 @@ def _vox_file_name(name, vectorvoxel=False):
         return name + '.geosoft_vectorvoxel'
     return name + '.geosoft_voxel'
 
+
 def _vox_name(name):
     basename = os.path.basename(name)
     return os.path.splitext(basename)[0]
 
+
 INTERP_NEAREST = gxapi.VOXE_EVAL_NEAR #:
 INTERP_LINEAR = gxapi.VOXE_EVAL_INTERP #:
 INTERP_SMOOTH = gxapi.VOXE_EVAL_BEST #:
+
 
 def delete_files(vox_name):
     """
@@ -63,17 +68,8 @@ def delete_files(vox_name):
     .. versionadded:: 9.3.1
     """
 
-    def df(fn):
-        try:
-            os.remove(fn)
-        except OSError as e:
-            pass
+    gxspd.delete_files(vox_name)
 
-    if vox_name is not None:
-
-        vox_name = _vox_file_name(vox_name)
-        df(vox_name)
-        df(vox_name + '.xml')
 
 def locations_from_cells(cells, ref=0.0):
     """
@@ -95,6 +91,7 @@ def locations_from_cells(cells, ref=0.0):
         locations[i] = locations[i - 1] + (cells[i - 1] + cells[i]) * 0.5
     return locations
 
+
 def elevation_from_depth(depth_origin, depth_cells):
     """
     Return elevation origin and elevation cells sizes from a depth origin and depth cell-sizes
@@ -111,7 +108,8 @@ def elevation_from_depth(depth_origin, depth_cells):
         depth_cells = list(depth_cells.np)
         vv = True
 
-    elevation_origin = -locations_from_cells(depth_cells, depth_origin)[len(depth_cells) - 1]  # elevation origin is the deepest cell
+    # elevation origin is the deepest cell
+    elevation_origin = -locations_from_cells(depth_cells, depth_origin)[len(depth_cells) - 1]
     elevation_cells = list(reversed(depth_cells))
     if vv:
         return elevation_origin, gxvv.GXvv(elevation_cells)
@@ -119,14 +117,16 @@ def elevation_from_depth(depth_origin, depth_cells):
 
 
 # constants
-MODE_READ = 0          #:
-MODE_READWRITE = 1     #: file exists, but can change properties
-MODE_NEW = 2           #:
+MODE_READ = gxspd.MODE_READ             #:
+MODE_READWRITE = gxspd.MODE_READWRITE   #: file exists, but can change properties
+MODE_NEW = gxspd.MODE_NEW               #:
+
 
 Z_ELEVATION = 0 #:
 Z_DEPTH = 1 #:
 
-class Vox:
+
+class Vox(gxspd.SpatialData):
     """
     Vox and image class.
 
@@ -167,59 +167,32 @@ class Vox:
     .. versionadded:: 9.3.1
     """
 
-    _delete_files = False
-    _name = None
-
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self.__del__()
-
-    def __del__(self):
-        if hasattr(self, '_close'):
-            self._close()
-
     def _close(self, pop=True):
 
         if hasattr(self, '_open'):
             if self._open:
 
-                if self._metadata_changed:
-                    with open(self._file_name + '.xml', 'w+') as f:
-                        f.write(gxu.xml_from_dict(self._metadata))
-
                 self._gxvoxe = None
                 self._gxvox = None
-                self._pg =  None
+                self._pg = None
                 self._origin = None
                 self._locations = None
                 self._cells = None
                 self._uniform_cell_size = None
                 self._buffer_np = None
-                self._metadata = None
 
-                if self._delete_files:
-                    delete_files(self._file_name)
+                super(Vox, self)._close(pop=pop)
 
-                if pop:
-                    gx.pop_resource(self._open)
-                self._open = None
-
-    def __repr__(self):
-        return "{}({})".format(self.__class__, self.__dict__)
-
-    def __str__(self):
-        return self.name
-
-    def __init__(self, name=None, gxvox=None, dtype=None):
+    def __init__(self, name=None, gxvox=None, dtype=None, mode=None, overwrite=False, persist=True):
 
         self._file_name = _vox_file_name(name)
         self._name = _vox_name(self._file_name)
-        self._readonly = None
-        self._metadata = None
-        self._metadata_changed = False
-        self._metadata_root = ''
+
+        super().__init__(name=self._name, file_name=self._file_name,
+                         mode=mode,
+                         overwrite=overwrite,
+                         persist=persist)
+
         self._gxvox = gxvox
         self._cs = None
         self._gxvoxe = None
@@ -228,10 +201,7 @@ class Vox:
         self._cells = None
         self._pg = None
         self._buffered_plane = self._buffered_row = None
-        self._metadata = None
-        self._metadata_changed = False
-        self._metadata_root = ''
-        self._delete_files = False
+        self._is_depth = False
 
         ityp = gxapi.int_ref()
         iarr = gxapi.int_ref()
@@ -249,8 +219,6 @@ class Vox:
 
         # location
         self._setup_locations()
-
-        self._open = gx.track_resource(self.__class__.__name__, self._name)
 
     def __iter__(self):
         return self
@@ -305,50 +273,6 @@ class Vox:
                 v = None
         return x, y, z, v
 
-    def _init_metadata(self):
-        if not self._metadata:
-            self._metadata = gxu.geosoft_metadata(self._file_name)
-        self._metadata_root = tuple(self._metadata.items())[0][0]
-
-    @property
-    def metadata(self):
-        """
-        Return the vox metadata as a dictionary.  Can be set, in which case
-        the dictionary items passed will be added to, or replace existing metadata.
-
-        .. seealso::
-            `Geosoft metadata schema <https://geosoftgxdev.atlassian.net/wiki/spaces/GXD93/pages/78184638/Geosoft+Metadata+Schema>`
-
-        .. versionadded:: 9.3
-        """
-        self._init_metadata()
-        return self._metadata[self._metadata_root]
-
-    @metadata.setter
-    def metadata(self, meta):
-        self._init_metadata()
-        self._metadata[self._metadata_root] = gxu.merge_dict(self._metadata[self._metadata_root], meta)
-        self._metadata_changed = True
-
-    @property
-    def unit_of_measure(self):
-        """
-        Units of measurement (a string) for the grid data, can be set.
-
-        .. versionadded:: 9.2
-        """
-        try:
-            uom = self.metadata['geosoft']['dataset']['geo:unitofmeasurement']['#text']
-        except:
-            uom = ''
-        return uom
-
-    @unit_of_measure.setter
-    def unit_of_measure(self, uom):
-        self.metadata = {'geosoft': {'dataset': {'geo:unitofmeasurement': {'#text': str(uom)}}}}
-        self.metadata = {
-            'geosoft': {'dataset': {'geo:unitofmeasurement': {'@xmlns:geo': 'http://www.geosoft.com/schema/geo'}}}}
-
     @classmethod
     def open(cls, name, gxapi_vox=None, dtype=None, mode=MODE_READ, depth=False):
         """
@@ -363,10 +287,10 @@ class Vox:
                             The default is False, z is elevation (positive up), origin at the bottom of the vox.
         :param mode:        open mode:
 
-            =================  ==================================================
+            =================  ==========================================================
             MODE_READ          only read the vox, properties cannot be changed
-            MODE_READWRITE     vox stays the same, but properties may change
-            =================  ==================================================
+            MODE_READWRITE     vox stays the same, but properties and metadata may change
+            =================  ==========================================================
 
         :returns:       `Vox` instance
 
@@ -375,14 +299,8 @@ class Vox:
 
         if gxapi_vox is None:
             gxapi_vox = gxapi.GXVOX.create(_vox_file_name(name))
-        vox = cls(name, gxapi_vox, dtype=dtype)
+        vox = cls(name, gxapi_vox, dtype=dtype, mode=mode)
 
-        if mode is None:
-            mode = MODE_READ
-        if mode == MODE_READ:
-            vox._readonly = True
-        else:
-            vox._readonly = False
         vox.is_depth = depth
 
         return vox
@@ -489,10 +407,8 @@ class Vox:
                                           gxcs.Coordinate_system(coordinate_system).gxipj,
                                           gxapi.GXMETA.create())
 
-        vox = cls(name, gxvox)
+        vox = cls(name, gxvox, mode=MODE_NEW, overwrite=overwrite, persist=(not temp))
         vox._file_name = file_name
-        vox._readonly = False
-        vox._delete_files = temp
         vox.is_depth = depth
 
         return vox
@@ -524,20 +440,6 @@ class Vox:
                       depth=source_vox.is_depth)
 
         return vox
-
-    def close(self):
-        """close the vox and release all instance resources."""
-        self._close()
-
-    @property
-    def name(self):
-        """Vox name"""
-        return self._name
-
-    @property
-    def file_name(self):
-        """Vox file name"""
-        return self._file_name
 
     @property
     def gxvox(self):
@@ -637,12 +539,6 @@ class Vox:
                 rx1.value, ry1.value, rz1.value)
 
     @property
-    def extent_2d(self):
-        """ Horizontal (min_x, min_y, max_x, max_y) extent to the outer-cell edges of the vox."""
-        ex = self.extent
-        return (ex[0], ex[1], ex[3], ex[4])
-
-    @property
     def coordinate_system(self):
         """coordinate system as a `geosoft.gxpy.coordinate_system.Coordinate_system` instance. Can be set using
         any constructor supported by `geosoft.gxpy.coordinate_system.Coordinate_system`."""
@@ -739,7 +635,7 @@ class Vox:
     @property
     def is_elevation(self):
         """True if z is elevation.  Can be set."""
-        return not(self._is_depth)
+        return not self._is_depth
 
     @is_elevation.setter
     def is_elevation(self, b):
@@ -747,7 +643,9 @@ class Vox:
 
     def _checkindex(self, ix, iy, iz):
         if (ix < 0) or (ix >= self.nx) or (iy < 0) or (iy >= self.ny) or (iz < 0) or (iz >= self.nz):
-            raise IndexError(_t("Voxel index ({}, {}, {}) out of range ({}, {}, {}).").format(ix, iy, iz, self.nx, self.ny, self.nz))
+            raise IndexError(
+                _t("Voxel index ({}, {}, {}) out of range ({}, {}, {}).").format(
+                    ix, iy, iz, self.nx, self.ny, self.nz))
 
     def xyz(self, ix, iy, iz):
         """
@@ -762,8 +660,7 @@ class Vox:
         .. versionadded:: 9.3
         """
         self._checkindex(ix, iy, iz)
-        return (self.locations_x[ix], self.locations_y[iy], self.locations_z[iz])
-
+        return self.locations_x[ix], self.locations_y[iy], self.locations_z[iz]
 
     def value_at_location(self, xyz, interpolate=INTERP_LINEAR):
         """
@@ -805,6 +702,8 @@ class Vox:
                         start=((4, 6, 11), (None, None, 1) equivalent: start=((4, 6, 11), (nx - 4, ny - 6, 1))
 
                         start=((0, 0, -1), None equivalent: start=((0, 0, nx - 1), (nx, ny, 1))
+
+        :param dtype:   desired np.dtype, default is same as vox dtype.
 
         :return:        numpy array of shape (nz, ny, nx). The order of z depends on is_depth property setting.
 

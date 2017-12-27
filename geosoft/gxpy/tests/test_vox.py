@@ -151,7 +151,7 @@ class Test(GXPYTest):
     def test_metadata(self):
         self.start()
 
-        with gxvox.Vox.open(self.vox_file) as vox:
+        with gxvox.Vox.open(self.vox_file, mode=gxvox.MODE_READWRITE) as vox:
             m = vox.metadata
             gm = m['geosoft']
             self.assertTrue('dataset' in gm)
