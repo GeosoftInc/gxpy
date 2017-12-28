@@ -6,7 +6,7 @@ Geosoft spatial data base class.
     ============= =======================================================
     `SpatialData` Geosoft spatial data base class
     ============= =======================================================
-    
+
 """
 import os
 
@@ -95,7 +95,7 @@ class SpatialData:
         if hasattr(self, '_close'):
             self._close()
 
-    def _close(self, pop=True):
+    def _close(self):
 
         if hasattr(self, '_open'):
             if self._open:
@@ -106,11 +106,10 @@ class SpatialData:
 
                 self._metadata = None
 
-                if not self._persist:
+                if self.file_name and not self._persist:
                     delete_files(self._file_name)
 
-                if pop:
-                    gx.pop_resource(self._open)
+                gx.pop_resource(self._open)
                 self._open = None
 
     def __repr__(self):
@@ -124,9 +123,6 @@ class SpatialData:
         if name is None:
             if file_name:
                 name = os.path.splitext(os.path.basename(file_name))[0]
-        if file_name is None:
-            if name:
-                file_name = name
 
         if file_name is None:
             if mode != MODE_NEW:
@@ -171,47 +167,6 @@ class SpatialData:
         """dataset primary file name"""
         return self._file_name
 
-    @property
-    def metadata(self):
-        """
-        Return the dataset metadata as a dictionary.  Can be set, in which case
-        the dictionary items passed will be added to, or replace existing metadata.
-
-        .. seealso::
-            `Geosoft metadata schema <https://geosoftgxdev.atlassian.net/wiki/spaces/GXD93/pages/78184638/Geosoft+Metadata+Schema>`
-
-        .. versionadded:: 9.3.1
-        """
-        self._init_metadata()
-        return self._metadata[self._metadata_root]
-
-    @metadata.setter
-    def metadata(self, meta):
-        self._init_metadata()
-        self._metadata[self._metadata_root] = gxu.merge_dict(self._metadata[self._metadata_root], meta)
-        self._metadata_changed = True
-
-    @property
-    def unit_of_measure(self):
-        """
-        Units of measurement (a string) for the primary scalar data associated with this dataset.
-
-        Can be set.
-
-        .. versionadded:: 9.3.1
-        """
-        try:
-            uom = self.metadata['geosoft']['dataset']['geo:unitofmeasurement']['#text']
-        except KeyError:
-            uom = ''
-        return uom
-
-    @unit_of_measure.setter
-    def unit_of_measure(self, uom):
-        self.metadata = {'geosoft': {'dataset': {'geo:unitofmeasurement': {'#text': str(uom)}}}}
-        self.metadata = {
-            'geosoft': {'dataset': {'geo:unitofmeasurement': {'@xmlns:geo': 'http://www.geosoft.com/schema/geo'}}}}
-
     def close(self):
         """close the dataset."""
         self._close()
@@ -219,7 +174,18 @@ class SpatialData:
     @property
     def extent(self):
         """ (min_x, min_y, min_z, max_x, max_y, max_z) dataset extent."""
-        return None, None, None, None, None, None
+        if self._gxobject and hasattr(self._gxobject, 'get_extents'):
+            rx0 = gxapi.float_ref()
+            ry0 = gxapi.float_ref()
+            rz0 = gxapi.float_ref()
+            rx1 = gxapi.float_ref()
+            ry1 = gxapi.float_ref()
+            rz1 = gxapi.float_ref()
+            self._gxobject.get_extents(rx0, ry0, rz0, rx1, ry1, rz1)
+            return (rx0.value, ry0.value, rz0.value,
+                    rx1.value, ry1.value, rz1.value)
+        else:
+            return None, None, None, None, None, None
 
     @property
     def extent_2d(self):
@@ -285,3 +251,45 @@ class SpatialData:
     def mode(self):
         """Open mode"""
         return self._mode
+
+    @property
+    def metadata(self):
+        """
+        Return the dataset metadata as a dictionary.  Can be set, in which case
+        the dictionary items passed will be added to, or replace existing metadata.
+
+        .. seealso::
+            `Geosoft metadata schema <https://geosoftgxdev.atlassian.net/wiki/spaces/GXD93/pages/78184638/Geosoft+Metadata+Schema>`
+
+        .. versionadded:: 9.3.1
+        """
+        self._init_metadata()
+        return self._metadata[self._metadata_root]
+
+    @metadata.setter
+    def metadata(self, meta):
+        self._init_metadata()
+        self._metadata[self._metadata_root] = gxu.merge_dict(self._metadata[self._metadata_root], meta)
+        self._metadata_changed = True
+
+    @property
+    def unit_of_measure(self):
+        """
+        Units of measurement (a string) for the primary scalar data associated with this dataset.
+
+        Can be set.
+
+        .. versionadded:: 9.3.1
+        """
+        try:
+            uom = self.metadata['geosoft']['dataset']['geo:unitofmeasurement']['#text']
+        except KeyError:
+            uom = ''
+        return uom
+
+    @unit_of_measure.setter
+    def unit_of_measure(self, uom):
+        self.metadata = {'geosoft': {'dataset': {'geo:unitofmeasurement': {'#text': str(uom)}}}}
+        self.metadata = {
+            'geosoft': {'dataset': {'geo:unitofmeasurement': {'@xmlns:geo': 'http://www.geosoft.com/schema/geo'}}}}
+
