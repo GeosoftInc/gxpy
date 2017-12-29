@@ -61,10 +61,9 @@ class SpatialData:
     Base class for spatial datasets.
 
     :param name:        dataset name.
-    :param file_name:   persistent file name for this dataset.
+    :param file_name:   file name for this dataset.
     :param mode:        file mode, MODE_READ, MODE_READWRITE or MODE_NEW.  The default is MODE_NEW.
     :param overwrite:   Default is False. If True will raise an error if MODE_NEW and file_name exists.
-    :param persist:     True to persist a MODE_NEW dataset.  If False, dataset files are deleted upon closing.
     :param gxobject:    Base GXAPI spatial dataset object, default is None.  If passed the base object is used
                         to resolve common named methods like get_ipj().
 
@@ -72,7 +71,7 @@ class SpatialData:
 
         ================== =============================================================
         name               dataset name
-        file_name          persistent file name
+        file_name          file name
         metadata           metadata dictionary
         unit_of_measure    primary data unit of measurement
         coordinate_system  spatial coordinate system
@@ -105,9 +104,7 @@ class SpatialData:
                         f.write(gxu.xml_from_dict(self._metadata))
 
                 self._metadata = None
-
-                if self.file_name and not self._persist:
-                    delete_files(self._file_name)
+                self._gxobject = None
 
                 gx.pop_resource(self._open)
                 self._open = None
@@ -118,7 +115,7 @@ class SpatialData:
     def __str__(self):
         return self.name
 
-    def __init__(self, name=None, file_name=None, mode=MODE_NEW, overwrite=False, persist=True, gxobject=None):
+    def __init__(self, name=None, file_name=None, mode=MODE_NEW, overwrite=False, gxobject=None):
 
         if name is None:
             if file_name:
@@ -127,7 +124,6 @@ class SpatialData:
         if file_name is None:
             if mode != MODE_NEW:
                 raise SpatialException(_t('Cannot read from an unnammed dataset'))
-            persist = False
 
         else:
 
@@ -139,7 +135,6 @@ class SpatialData:
                 if not os.path.exists(file_name):
                     raise SpatialException(_t('Cannot find dataset file \'{}\'').
                                            format(file_name))
-                persist = True
 
         self._file_name = file_name
         self._name = name
@@ -148,7 +143,6 @@ class SpatialData:
         self._metadata_changed = False
         self._metadata_root = ''
         self._cs = None
-        self._persist = persist
         self._gxobject = gxobject
         self._open = gx.track_resource(self.__class__.__name__, self._name)
 
@@ -231,25 +225,8 @@ class SpatialData:
             self._cs = cs
 
     @property
-    def persist(self):
-        """If True, the default,  a MODE_NEW dataset will persist after closing. Can be set."""
-        return self._persist
-    
-    @persist.setter
-    def persist(self, p):
-        p = bool(p)
-        if self.file_name is None:
-            if p:
-                raise SpatialException(_t('Cannot persist an unnamed dataset.'))
-        else:
-            if self.mode != MODE_NEW and not p:
-                raise SpatialException(
-                    _t('Cannot change persist status to False for a dataset not opened for MODE_NEW.'))
-            self._persist = p
-
-    @property
-    def mode(self):
-        """Open mode"""
+    def dataset_mode(self):
+        """Dataset open mode"""
         return self._mode
 
     @property

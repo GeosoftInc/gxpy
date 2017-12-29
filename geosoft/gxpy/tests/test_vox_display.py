@@ -7,6 +7,7 @@ import geosoft.gxpy.vox_display as gxvoxd
 import geosoft.gxpy.map as gxmap
 import geosoft.gxpy.view as gxview
 import geosoft.gxpy.group as gxgroup
+import geosoft.gxpy.surface as gxsurf
 import geosoft.gxpy.viewer as gxviewer
 
 from base import GXPYTest
@@ -126,56 +127,15 @@ class Test(GXPYTest):
         self.start()
 
         with gxvox.Vox.open(self.vectorvox_file) as vox:
+            fn = gxsurf.SurfaceDataset.vox_surface(vox,
+                                                   (0.005, 0.01, 0.02, 0.04, 0.08, 0.16, 0.32, 0.64, 1.28),
+                                                   temp=True).file_name
             with gxview.View_3d.new() as v3d:
                 v3d_file = v3d.file_name
-                gxgroup.vox_surface(v3d, vox, (0.005, 0.01, 0.02, 0.04, 0.08, 0.16, 0.32, 0.64, 1.28))
+                gxgroup.surface_group_from_file(v3d, fn)
+
+        # image_file = gxmap.Map.open(v3d_file).image_file(pix_width=800)
         self.assertEqual(gxmap.Map.open(v3d_file).crc_image(pix_width=800), 4266332078)
-        gxview.delete_files(v3d_file)
-
-        with gxvox.Vox.open(self.vectorvox_file) as vox:
-            with gxview.View_3d.new() as v3d:
-                v3d_file = v3d.file_name
-                gxgroup.vox_surface(v3d, vox, 0.32, color=gxgroup.C_BLUE, transparency=0.5)
-        self.assertEqual(gxmap.Map.open(v3d_file).crc_image(pix_width=800), 2739584918)
-        gxview.delete_files(v3d_file)
-
-    def test_isosurface_modes(self):
-        self.start()
-
-        try:
-            v3d_file = ''
-            with gxvox.Vox.open(self.vectorvox_file) as vox:
-                with gxview.View_3d.new() as v3d:
-                    v3d_file = v3d.file_name
-                    gxgroup.vox_surface(v3d, vox, (0.005,))
-                    self.assertTrue(v3d.has_group('SURF_' + vox.name))
-                    self.assertFalse(v3d.has_group('SURF_' + vox.name + '_1'))
-                    gxgroup.vox_surface(v3d, vox, (0.01,))
-                    self.assertTrue(v3d.has_group('SURF_' + vox.name))
-                    self.assertFalse(v3d.has_group('SURF_' + vox.name + '_1'))
-                    gxgroup.vox_surface(v3d, vox, (0.02,), mode=gxgroup.NEW)
-                    self.assertTrue(v3d.has_group('SURF_' + vox.name))
-                    self.assertTrue(v3d.has_group('SURF_' + vox.name + '_1'))
-        finally:
-            gxview.delete_files(v3d_file)
-
-        try:
-            v3d_file = ''
-            with gxvox.Vox.open(self.vectorvox_file) as vox:
-                with gxview.View_3d.new() as v3d:
-                    v3d_file = v3d.file_name
-                    gxgroup.vox_surface(v3d, vox, (0.005,))
-                    self.assertTrue(v3d.has_group('SURF_' + vox.name))
-                    self.assertFalse(v3d.has_group('SURF_' + vox.name + '_1'))
-                with gxview.View_3d.open(v3d_file) as v3d:
-                    gxgroup.vox_surface(v3d, vox, (0.01,), mode=gxgroup.REPLACE)
-                    self.assertTrue(v3d.has_group('SURF_' + vox.name))
-                    self.assertFalse(v3d.has_group('SURF_' + vox.name + '_1)'))
-        finally:
-            gxview.delete_files(v3d_file)
-
-
-
 
 
 if __name__ == '__main__':

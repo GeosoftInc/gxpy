@@ -181,9 +181,9 @@ class Vox(gxspd.SpatialData):
                 self._uniform_cell_size = None
                 self._buffer_np = None
 
-                super(Vox, self)._close(pop=pop)
+                super(Vox, self)._close()
 
-    def __init__(self, name=None, gxvox=None, dtype=None, mode=None, overwrite=False, persist=True):
+    def __init__(self, name=None, gxvox=None, dtype=None, mode=None, overwrite=False):
 
         self._file_name = _vox_file_name(name)
         self._name = _vox_name(self._file_name)
@@ -191,7 +191,6 @@ class Vox(gxspd.SpatialData):
         super().__init__(name=self._name, file_name=self._file_name,
                          mode=mode,
                          overwrite=overwrite,
-                         persist=persist,
                          gxobject=gxvox)
 
         self._gxvox = gxvox
@@ -405,7 +404,7 @@ class Vox(gxspd.SpatialData):
                                           gxcs.Coordinate_system(coordinate_system).gxipj,
                                           gxapi.GXMETA.create())
 
-        vox = cls(name, gxvox, mode=MODE_NEW, overwrite=overwrite, persist=(not temp))
+        vox = cls(name, gxvox, mode=MODE_NEW, overwrite=overwrite)
         vox._file_name = file_name
         vox.is_depth = depth
 

@@ -1452,11 +1452,11 @@ def legend_color_bar(view,
                 
 class Color:
     """
-    Colours, which are stored as a 24-bit color integer.
+    Colours, which are stored as a 32-bit color integer.
 
     :param color:   string descriptor (eg. 'R255G0B125'), color letter R, G, B, C, M, Y, H, S or V.;
                     tuple (r, g, b), (c, m, y) or (h, s, v), each item defined in the range 0 to 255;
-                    24-bit color number, which can be an item selected from the following list:
+                    32-bit color number, which can be an item selected from the following list:
 
                     ::
 
@@ -1525,7 +1525,7 @@ class Color:
 
     @property
     def int_value(self):
-        """ color as a 24-bit color integer, can be set"""
+        """ color as a 32-bit color integer, can be set"""
         return self._color
 
     @int_value.setter
@@ -2610,99 +2610,14 @@ class Color_map:
 
         return file_name
 
-def vox_surface(view, vox, surfaces, color=None, transparency=None, group_name=None, mode=REPLACE):
-    """
-    Add voxel isosurfaces to a 3D view.
-
-    :param view:            `geosoft.gxpy.View_3d` instance
-    :param vox:             `geosoft.gxpy.Vox` instance
-    :param surfaces:        surface value, or a list of surface values
-    :param color:           surface color, or a list of colors,
-                            For a list of surfaces, the default colour of each surface cycles through a list of
-                            (C_GREY, C_GREEN, C_YELLOW, C_BLUE, C_MAGENTA, C_RED, C_CYAN). If only one surface
-                            the default color is `gxgroup.C_GREY`.
-    :param transparency:    transparency 0 t0 1. (1. is opaque), or a list of transparencies.
-                            For a list of surfaces default transparency is applied in increasingly
-                            opaque steps in the order of the surface list, such that the 5'th
-                            and higher surfaces are opaque.
-    :param group_name:      Group name in the view. The default is the same as the vox.name.
-                            If the group exists additional surfaces are added to the existing surfaces group.
-    :param mode:            If the group_name exists in the view:
-
-                            ======= ===============================================
-                            REPLACE replace the group if it exists (default)
-                            NEW     create a new group with a unique name
-                            APPEND  append surfaces to an existing group
-                            ======= ===============================================
-
-    :param overwrite:       True to overwrite
-    :returns:               groups name, which will be different from group_name if mode=NEW and
-                            the group exists in the view.
-
-    Surfaces are stored in a surface file in the current working directory that has the same name as the group_name,
-    plus a companion `.xml` file. Note that the surface file is shared by all views that work with the same
-    group_name in the sma eproject so you need to be careful about naming groups should there be a chance of
-    conflict.
-
-    .. versionadded:: 9.3.1
-    """
-
-    def group_exists(name):
-        return view.has_group('SURF_' + name) or os.path.isfile(name)
+def surface_group_from_file(view, surface_file, group_name=None, overwrite=False):
+    """Add a surface"""
 
     if group_name is None:
-        group_name = vox.name
+        group_name = os.path.basename(surface_file)
+        group_name = os.path.splitext(group_name)[0]
 
-    if mode == REPLACE:
-        view.delete_group('SURF_' + group_name)
-        gxu.delete_file(group_name)
-        gxu.delete_file(group_name + '.xml')
-    elif mode == NEW:
-        if group_exists(group_name):
-            group_name = gxu.unique_name(group_name, group_exists, separator='_')
+    if view.has_group(group_name) and not overwrite:
+        raise GroupException(_t('Cannot overwerwrite existing group: {}').format(group_name))
 
-    if not hasattr(surfaces, '__iter__'):
-        surfaces = (surfaces,)
-
-    if color is None:
-        color = (C_GREY,
-                 C_GREEN,
-                 C_YELLOW,
-                 C_BLUE,
-                 C_MAGENTA,
-                 C_RED,
-                 C_CYAN)
-    elif not hasattr(color, '__iter__'):
-        color = (color,)
-
-    if transparency is None:
-        transparency = []
-        max_transparent_surfaces = min(MAX_TRANSPARENT, len(surfaces))
-        for i in range(max_transparent_surfaces):
-            transparency.append((i + 1) * (1. / max_transparent_surfaces))
-    elif not hasattr(transparency, '__iter__'):
-        transparency = (transparency,)
-
-    transparent_count = 0 # cannot have more than MAX_TRANSPARENT transparent surfaces
-    for i in range(len(surfaces)):
-
-        icolor = Color(color[i % len(color)])
-        trans = transparency[min(i, len(transparency) - 1)]
-        if trans < 1.:
-            if transparent_count > MAX_TRANSPARENT:
-                trans = 1.
-            else:
-                transparent_count += 1
-
-        gxapi.GXMVU.plot_voxel_surface2(view.gxview,
-                                        vox.gxvox,
-                                        surfaces[i],
-                                        icolor.int_value,
-                                        1.,
-                                        trans,
-                                        group_name)
-
-    # surfaces are stored in Geosoft surface files.  Record these files as children of the view.
-    view.add_child_files((group_name, group_name + '.xml'))
-
-    return group_name
+    view.gxview.draw_surface_3d_from_file(group_name, surface_file)
