@@ -18,6 +18,7 @@ of triangular facets.
     
 """
 import os
+import numpy as np
 
 import geosoft
 import geosoft.gxapi as gxapi
@@ -28,6 +29,7 @@ from . import spatialdata as gxspd
 from . import view as gxview
 from . import group as gxgrp
 from . import vox as gxvox
+from . import vv as gxvv
 
 __version__ = geosoft.__version__
 
@@ -138,6 +140,9 @@ class SurfaceDataset(gxspd.SpatialData):
         gxsurfaceitem = self._gxsurface.get_surface_item(item)
         return Surface(gxsurfaceitem, surface_dataset=self)
 
+    def __len__(self):
+        return self.surface_count
+
     @classmethod
     def open(cls, name, file_name=None, mode=MODE_READ, gxapi_surface=None):
         """
@@ -175,7 +180,7 @@ class SurfaceDataset(gxspd.SpatialData):
 
         if temp:
             file_name = gx.GXpy().temp_file('.geosoft_surface')
-            overwrite=True
+            overwrite = True
         else:
             file_name = _surface_file_name(name)
 
@@ -218,7 +223,7 @@ class SurfaceDataset(gxspd.SpatialData):
             name = vox.name
         if temp:
             file_name = gx.GXpy().temp_file('.geosoft_surface')
-            overwrite=True
+            overwrite = True
         elif file_name is None:
             file_name = _surface_file_name(name)
     
@@ -250,17 +255,18 @@ class SurfaceDataset(gxspd.SpatialData):
             transparency = (transparency,)
     
         transparent_count = 0  # cannot have more than MAX_TRANSPARENT transparent surfaces
-        for i in range(len(surfaces)):
-    
-            icolor = gxgrp.Color(color[i % len(color)])
-            trans = transparency[min(i, len(transparency) - 1)]
-            if trans < 1.:
-                if transparent_count > gxgrp.MAX_TRANSPARENT:
-                    trans = 1.
-                else:
-                    transparent_count += 1
+        with gxview.View_3d.new() as v3d:
+            v3d_file = v3d.file_name
+            for i in range(len(surfaces)):
 
-            with gxview.View_3d.new() as v3d:
+                icolor = gxgrp.Color(color[i % len(color)])
+                trans = transparency[min(i, len(transparency) - 1)]
+                if trans < 1.:
+                    if transparent_count > gxgrp.MAX_TRANSPARENT:
+                        trans = 1.
+                    else:
+                        transparent_count += 1
+
                 gxapi.GXMVU.plot_voxel_surface2(v3d.gxview,
                                                 vox.gxvox,
                                                 surfaces[i],
@@ -268,6 +274,7 @@ class SurfaceDataset(gxspd.SpatialData):
                                                 1.,
                                                 trans,
                                                 file_name)
+        gxview.delete_files(v3d_file)
         sd = SurfaceDataset.open(name, file_name=file_name)
         sd.unit_of_measure = vox.unit_of_measure
         return sd
@@ -352,6 +359,7 @@ class Surface(gxspd.SpatialData):
                 self._gxsurfaceitem = None
                 self._surface_dataset = None
                 self._properties = None
+                self._computed_properties = None
                 self._cs = None
                 super(Surface, self)._close()
 
@@ -372,13 +380,22 @@ class Surface(gxspd.SpatialData):
         self._gxsurfaceitem = surface
         self._surface_dataset = surface_dataset
         self._properties = None
+        self._computed_properties = None
         self._cs = None
 
         super().__init__(gxobject=self._gxsurfaceitem)
 
-    @property
-    def properties(self):
-        """Surface properties from `geosoft.gxapi.GXSURFACEITEM.get_properties_ex` """
+    def properties(self, refresh=False):
+        """
+        Surface properties from `geosoft.gxapi.GXSURFACEITEM.get_properties_ex`.
+
+        :param refresh: if True, computed properties will be refreshed on next access.
+
+        .. versionadded:: 9.3.1
+        """
+
+        if refresh:
+            self._properties = None
 
         if not self._properties:
 
@@ -401,13 +418,45 @@ class Surface(gxspd.SpatialData):
                                 'source_guid': source_guid.value,
                                 'source_dataset': source_name.value,
                                 'source_measure': source_measure.value,
-                                'second_source_guid': second_source_guid,
-                                'second_source_dataset': second_source_name,
-                                'second_source_option': second_source_option,
-                                'second_source_measure': second_source_measure,
-                                'second_source_measure2': second_source_measure2}
+                                'second_source_guid': second_source_guid.value,
+                                'second_source_dataset': second_source_name.value,
+                                'second_source_option': second_source_option.value,
+                                'second_source_measure': second_source_measure.value,
+                                'second_source_measure2': second_source_measure2.value}
 
         return self._properties
+
+    def computed_properties(self, refresh=False):
+        """
+        Surface properties  by `geosoft.gxapi.GXSURFACEITEM.compute_extended_info`.
+
+        :param refresh: if True, computed properties will be refreshed on next access.
+
+        .. versionadded:: 9.3.1
+        """
+
+        if refresh:
+            self._computed_properties = None
+
+        if not self._computed_properties:
+
+            comp = gxapi.int_ref()
+            vert = gxapi.int_ref()
+            edge = gxapi.int_ref()
+            trng = gxapi.int_ref()
+            incn = gxapi.int_ref()
+            invd = gxapi.int_ref()
+            intr = gxapi.int_ref()
+            self._gxsurfaceitem.compute_extended_info(comp, vert, edge, trng, incn, invd, intr)
+            self._computed_properties = {'components': comp.value,
+                                         'verticies': vert.value,
+                                         'edges': edge.value,
+                                         'triangles': trng.value,
+                                         'inconsistent': incn.value,
+                                         'invalid': invd.value,
+                                         'intersect': intr.value}
+
+        return self._computed_properties
 
     @property
     def gxsurfaceitem(self):
@@ -424,22 +473,22 @@ class Surface(gxspd.SpatialData):
     @property
     def name(self):
         """the name of this surface"""
-        return self.properties['name']
+        return self.properties()['name']
 
     @property
     def surface_type(self):
         """the defined surface type string"""
-        return self.properties['type']
+        return self.properties()['type']
 
     @property
     def source_dataset(self):
         """the source dataset from which this surface was derived"""
-        return self.properties['source_dataset']
+        return self.properties()['source_dataset']
 
     @property
     def source_measure(self):
         """the source measure"""
-        return self.properties['source_measure']
+        return self.properties()['source_measure']
 
     @property
     def unit_of_measure(self):
@@ -448,7 +497,7 @@ class Surface(gxspd.SpatialData):
         if self._surface_dataset:
             return self._surface_dataset.unit_of_measure
 
-        source = self.properties['source_name']
+        source = self.properties()['source_name']
         if source:
             try:
                 return gxvox.Vox.open(source).unit_of_measure
@@ -531,3 +580,37 @@ class Surface(gxspd.SpatialData):
             return self._surface_dataset.metadata
         else:
             return {}
+
+    def get_mesh_vv(self, component=0):
+        """
+        Returns mesh data as a set of VV.
+
+        :param component: component number from a multi-component surface
+        :return: vertex_x, vertex_y, vertex_z, triangle_point_1, triangle_point_2, triangle_point_3
+
+        .. versionadded:: 9.3.1
+        """
+
+        vx = gxvv.GXvv()
+        vy = gxvv.GXvv()
+        vz = gxvv.GXvv()
+        t1 = gxvv.GXvv(dtype=np.int)
+        t2 = gxvv.GXvv(dtype=np.int)
+        t3 = gxvv.GXvv(dtype=np.int)
+        self._gxsurfaceitem.get_mesh(component,
+                                     vx.gxvv, vy.gxvv, vz.gxvv,
+                                     t1.gxvv, t2.gxvv, t3.gxvv)
+        return vx, vy, vz, t1, t2, t3
+
+    def get_mesh_np(self, component=0):
+        """
+        Returns mesh data as a set of numpy arrays.
+
+        :param component: component number from a multi-component surface
+        :return: vertex_x, vertex_y, vertex_z, triangle_point_1, triangle_point_2, triangle_point_3
+
+        .. versionadded:: 9.3.1
+        """
+
+        vx, vy, vz, t1, t2, t3 = self.get_mesh_vv(component)
+        return vx.np, vy.np, vz.np, t1.np, t2.np, t3.np
