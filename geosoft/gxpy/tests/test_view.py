@@ -3,13 +3,11 @@ import os
 import numpy as np
 
 import geosoft
-import geosoft.gxpy.system as gsys
 import geosoft.gxpy.map as gxmap
 import geosoft.gxpy.view as gxv
 import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.group as gxg
 import geosoft.gxpy.geometry as gxgm
-import geosoft.gxpy.viewer as gxvwr
 
 from base import GXPYTest
 

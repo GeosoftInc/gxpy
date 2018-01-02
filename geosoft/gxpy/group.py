@@ -910,13 +910,11 @@ class Draw(Group):
         .. versionadded:: 9.2
         """
 
-        if self._gx.entitled:
-
-            scale, ufac, x0, y0 = self.view.mdf()[1]
-            control_file = gx.gx.temp_file('.con')
-            with open(control_file, 'w+') as f:
-                f.write('{},{},{},{}/\n,,-1/\n'.format(scale, ufac, x0, y0))
-            geosoft.gxapi.GXMVU.contour(self.view.gxview, control_file, grid_file_name)
+        scale, ufac, x0, y0 = self.view.mdf()[1]
+        control_file = gx.gx.temp_file('.con')
+        with open(control_file, 'w+') as f:
+            f.write('{},{},{},{}/\n,,-1/\n'.format(scale, ufac, x0, y0))
+        geosoft.gxapi.GXMVU.contour(self.view.gxview, control_file, grid_file_name)
 
 
 class Draw_3d(Draw):
