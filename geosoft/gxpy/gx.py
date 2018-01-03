@@ -187,6 +187,14 @@ def _exit_cleanup():
     _reset_globals()
 
 
+def gx():
+    """Returns the `GXpy` instance.  Initializes to default state in not initialized."""
+    global _gx
+    if _gx is None:
+        return GXpy()
+    return _gx
+
+
 class GXpy(_Singleton):
     """
     Geosoft GX context.  This is a singleton class, so subsequent creation returns an instance

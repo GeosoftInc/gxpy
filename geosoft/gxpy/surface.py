@@ -179,7 +179,7 @@ class SurfaceDataset(gxspd.SpatialData):
         """
 
         if temp:
-            file_name = gx.GXpy().temp_file('.geosoft_surface')
+            file_name = gx.gx().temp_file('.geosoft_surface')
             overwrite = True
         else:
             file_name = _surface_file_name(name)
@@ -222,7 +222,7 @@ class SurfaceDataset(gxspd.SpatialData):
         if name is None:
             name = vox.name
         if temp:
-            file_name = gx.GXpy().temp_file('.geosoft_surface')
+            file_name = gx.gx().temp_file('.geosoft_surface')
             overwrite = True
         elif file_name is None:
             file_name = _surface_file_name(name)

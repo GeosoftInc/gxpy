@@ -752,7 +752,7 @@ class View_3d(View):
         """
 
         if file_name is None:
-            file_name = gx.GXpy().temp_file('.geosoft_3dv')
+            file_name = gx.gx().temp_file('.geosoft_3dv')
         else:
             file_name = geosoft.gxpy.map.map_file_name(file_name, 'geosoft_3dv')
 

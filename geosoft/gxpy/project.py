@@ -100,7 +100,7 @@ class Geosoft_project:
     @property
     def gid(self):
         """ Geosoft ID of the user"""
-        return(geosoft.gxpy.gx.GXpy().gid)
+        return(geosoft.gxpy.gx.gx().gid)
 
     @property
     def project_databases(self):

@@ -911,7 +911,7 @@ class Draw(Group):
         """
 
         scale, ufac, x0, y0 = self.view.mdf()[1]
-        control_file = gx.GXpy().temp_file('.con')
+        control_file = gx.gx().temp_file('.con')
         with open(control_file, 'w+') as f:
             f.write('{},{},{},{}/\n,,-1/\n'.format(scale, ufac, x0, y0))
         geosoft.gxapi.GXMVU.contour(self.view.gxview, control_file, grid_file_name)
@@ -2596,7 +2596,7 @@ class Color_map:
         """
 
         if file_name is None:
-            file_name = gx.GXpy().temp_file()
+            file_name = gx.gx().temp_file()
 
         fn, ext = os.path.splitext(file_name)
         if not ext:

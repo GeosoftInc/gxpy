@@ -264,7 +264,7 @@ class Test(GXPYTest):
                          pix_width=256,
                          alt_crc_name='{}_{}'.format(gxsys.func_name(1), test_number))
 
-        test_media_map = os.path.join(gx.GXpy().temp_folder(), 'test_media')
+        test_media_map = os.path.join(gx.gx().temp_folder(), 'test_media')
 
         test_number = 0
         with gxmap.Map.new(test_media_map + 'scale_800', overwrite=True, scale=800,
@@ -578,7 +578,7 @@ class Test(GXPYTest):
                         'datum': 'nad83',
                         'azimuth': -30})
         cs = gxcs.Coordinate_system("NAD27 / UTM zone 15N <425000,6500145,0,0,0,-30>")
-        name = os.path.join(gx.GXpy().temp_folder(), "test")
+        name = os.path.join(gx.gx().temp_folder(), "test")
         with gxmap.Map.new(file_name='mapplot_anoxy_rotated_cs_bug_UTM',
                              overwrite=True,
                              data_area=(0, 0, 5000, 3500),

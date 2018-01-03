@@ -483,7 +483,7 @@ class Test(GXPYTest):
         self.assertTrue('<dataset ' in xml)
 
         folder, files = gsys.unzip(os.path.join(os.path.dirname(self._test_case_py), 'testgrids.zip'),
-                                   folder=gx.GXpy().temp_folder())
+                                   folder=gx.gx().temp_folder())
         gxml = os.path.join(folder, 'test_grid_1.grd.xml')
         with open(gxml) as f:
             m = gxu.dict_from_xml(f.read())

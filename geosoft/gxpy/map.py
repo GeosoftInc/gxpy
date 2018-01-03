@@ -377,7 +377,7 @@ class Map:
                 layout = MAP_LANDSCAPE
 
         if file_name is None:
-            file_name = gx.GXpy().temp_file('.map')
+            file_name = gx.gx().temp_file('.map')
 
         else:
             if not overwrite:
@@ -831,7 +831,7 @@ class Map:
         """
 
         if imagefile is None:
-            imagefile = gx.GXpy().temp_file('.png')
+            imagefile = gx.gx().temp_file('.png')
             type = RASTER_FORMAT_PNG
 
         self.gxmap.export_all_raster(imagefile, '',
@@ -851,7 +851,7 @@ class Map:
 
         .. versionadded:: 9.3
         """
-        crc_image = gx.GXpy().temp_file('.bmp')
+        crc_image = gx.gx().temp_file('.bmp')
         self.image_file(crc_image, type=RASTER_FORMAT_BMP, pix_width=pix_width)
         crc = gxu.crc32_file(crc_image)
         gxgrd.delete_files(crc_image)
@@ -1331,7 +1331,7 @@ class _Mapplot:
             self.prior_data_view = None
 
         # mapplot control file
-        self._maplfile_name = os.path.join(gx.GXpy().temp_folder(), 'mapl_' + gxu.uuid() + ".con")
+        self._maplfile_name = os.path.join(gx.gx().temp_folder(), 'mapl_' + gxu.uuid() + ".con")
         self._maplfile = open(self._maplfile_name, "w")
         self._annotation_outer_edge = 0.0
 
@@ -1356,7 +1356,7 @@ class _Mapplot:
         self._maplfile.write(command)
         if command and command[-1] != '\n':
             self._maplfile.write('\n')
-            # geosoft.gxpy.gx.GXpy().log(command)
+            # geosoft.gxpy.gx.gx().log(command)
 
     def define_named_attribute(self, name='_', pen=None, text_def=None):
 

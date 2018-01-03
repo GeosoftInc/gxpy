@@ -350,9 +350,9 @@ class Vox(gxspd.SpatialData):
                     raise VoxException(_t('Cannot overwrite existing vox {}'.format(file_name)))
         else:
             if vec_dim == 1:
-                file_name = gx.GXpy().temp_file('.geosoft_voxel')
+                file_name = gx.gx().temp_file('.geosoft_voxel')
             else:
-                file_name = gx.GXpy().temp_file('.geosoft_vectorvoxel')
+                file_name = gx.gx().temp_file('.geosoft_vectorvoxel')
 
         dimension = (data.shape[2], data.shape[1], data.shape[0])
         if dtype is None:
