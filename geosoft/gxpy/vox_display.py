@@ -92,12 +92,12 @@ class Vox_display:
             if vox is not None:
                 name = vox.name
         self._name = name
-        self._open = gx.track_resource(self.__class__.__name__, name)
         self._vector = False
         self._vector_cone_specs = (1., 4., 0.25, 5000)
+        self._open = gx.track_resource(self.__class__.__name__, name)
 
     @classmethod
-    def new(cls, vox, vector=False, vector_cone_specs=(1., 4., 0.25, 5000)):
+    def new(cls, vox, vector=False, vector_cone_specs=None):
         """
         Create a new vox_display from a `geosoft.gxpy.vox.Vox` instance.
         
@@ -118,7 +118,8 @@ class Vox_display:
         contour = gxapi.rDUMMY
         voxd._gxvoxd = gxapi.GXVOXD.create(vox.gxvox, color_table, zone_method, contour)
         voxd._vector = vector
-        voxd._vector_cone_specs = vector_cone_specs
+        if vector_cone_specs is not None:
+            voxd._vector_cone_specs = vector_cone_specs
         return voxd
 
     @classmethod
