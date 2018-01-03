@@ -59,33 +59,29 @@ class _Singleton:
 
 # global GX handle, None if not valid
 gx = None
-_gx_dict = {}
-_gx_ref_count = 0
 _res_id = 0
 _res_heap = {}
 _max_resource_heap = 1000000
 _stack_depth = 5
 _max_warnings = 10
 _NULL_ID = -1
+GX_WARNING_FILE = '_gx_warning_'
 
 
 def _reset_globals():
     global gx
-    global _gx_dict
-    global _gx_ref_count
     global _res_id
     global _res_heap
     global _max_resource_heap
     global _stack_depth
     global _max_warnings
     gx = None
-    _gx_dict = {}
-    _gx_ref_count = 0
     _res_id = 0
     _res_heap = {}
     _max_resource_heap = 1000000
     _stack_depth = 5
     _max_warnings = 10
+
 
 def track_resource(resource_class, info):
     """
@@ -119,42 +115,57 @@ def track_resource(resource_class, info):
         return _NULL_ID
 
 
-def pop_resource(id):
+def pop_resource(res_id):
     """
     Pop a tracked resource off the resource stack.
     
-    :param id:  the resource id returned by :meth:`track_resource`
+    :param res_id:  the resource id returned by :meth:`track_resource`
     
     .. versionadded:: 9.2
+
+    .. versionchanged:: 9.3.1
+        changed id to res_id to avoid built-in shadow
+
     """
-    if id != _NULL_ID:
+    if res_id != _NULL_ID:
         if len(_res_heap):
             try:
-                del (_res_heap[id])
+                del (_res_heap[res_id])
             except KeyError:
                 pass
 
-GX_WARNING_FILE = '_gx_warning_'
 
 def _exit_cleanup():
     global gx
-    global _gx_dict
     global _res_heap
     global _max_warnings
-    global _gx_ref_count
+
+    def remove_gx_temporary_folders():
+        """ removes all GX temporary folders"""
+
+        def file_error(fnc, path, excinfo):
+            gx.log(_t("error removing temporary file\n   \"{}\"\nfunction \"{}\"\nexception\"{}\"\n")
+                   .format(path, str(fnc), str(excinfo)))
+
+        for filename in os.listdir(gxu.folder_temp()):
+            folder = os.path.join(gxu.folder_temp(), filename)
+            if os.path.isdir(folder) and (len(filename) > 4) and (filename[:4] == '_gx_'):
+                w_file = os.path.join(folder, GX_WARNING_FILE)
+                if not os.path.exists(w_file):
+                    shutil.rmtree(folder, ignore_errors=False, onerror=file_error)
 
     if gx:
-        gx.log('GX close')
+        gx.log('GX closing')
         atexit.unregister(_exit_cleanup)
 
-        if gx._temp_file_folder and (gx._temp_file_folder != gxu.folder_temp()):
+        temp_folder = gx.temp_folder()
+        if temp_folder and (temp_folder != gxu.folder_temp()):
 
-            warning_file = os.path.join(gx._temp_file_folder, GX_WARNING_FILE)
+            warning_file = os.path.join(temp_folder, GX_WARNING_FILE)
             if os.path.isfile(warning_file):
                 os.remove(warning_file)
 
-            gx._remove_gx_temporary_folders()
-            gx._temp_file_folder = None
+            remove_gx_temporary_folders()
 
         if len(_res_heap):
             # resources were created but not deleted or removed
@@ -168,18 +179,11 @@ def _exit_cleanup():
                 gx.log('   ', s)
                 i += 1
 
-        if _gx_ref_count > 0:
-            gx.log(_t('Warning - cleaning up with {} distinct GXpy instances held from:').format(_gx_ref_count))
-            for _, location in _gx_dict.items():
-                gx.log('   ', location)
-
-        if gx._logf:
-            gx._logf.close()
-
         gx.tkframe = None
         gx.gxapi = None
         gx._sr = None
         gx._shared_state = {}
+        gx.close_log()
 
     _reset_globals()
 
@@ -247,165 +251,129 @@ class GXpy(_Singleton):
     def __enter__(self):
         return self
 
-    def __exit__(self, type, value, traceback):
+    def __exit__(self, _type, _value, _traceback):
         self.__del__()
 
     def __del__(self):
-        if hasattr(self, '_close'):
-            self._close()
-
-    def _close(self):
-        global gx
-        global _gx_dict
-        global _res_heap
-        global _max_warnings
-        global _gx_ref_count
-
-        if id(self) in _gx_dict and gx:
-            del _gx_dict[id(self)]
-            _gx_ref_count = _gx_ref_count - 1
-            if _gx_ref_count == 0:
-                _exit_cleanup()
+        return  # singleton cannot be deleted
 
     def __init__(self, name=__name__, version=__version__,
                  parent_window=0, log=None,
                  max_res_heap=10000000, res_stack=6, max_warnings=10,
                  suppress_progress=False):
 
-        # singleton class
-
-        _Singleton.__init__(self)
         global gx
-        global _gx_ref_count
         global _max_resource_heap
         global _stack_depth
         global _max_warnings
+
+        # singleton class, initialize only once
+        _Singleton.__init__(self)
+        if gx:
+            return
+
+        if log is None:
+            _max_resource_heap = 0
+        else:
+            _max_resource_heap = max_res_heap
+            _stack_depth = max(0, res_stack)
+            _max_warnings = max(0, max_warnings)
+
+        # create a Tkinter parent frame for the viewers
+        if not parent_window == 0:
+            try:
+                import pythoncom
+            except ImportError:
+                raise ImportError(_t(
+                    'Unable to import the pythoncom module, which is needed for GUI APIs to work.'))
+
+        if parent_window == -1:
+            self.tkframe = ttk.Frame(master=None)
+            parent_window = self.tkframe.winfo_id()
+
+        self.parent_window = parent_window
+        try:
+            flags = 0
+            if suppress_progress:
+                if self.parent_window:
+                    flags = 128
+                else:
+                    flags = 64
+            self.gxapi = gxapi.GXContext.create(name, version, self.parent_window, flags)
+
+        except gxapi.GXAPIError as e:
+            self.gxapi = None
+            raise GXException(_t('GX services are not available.\n{}'.format(e)))
+
+        user = gxapi.str_ref()
+        company = gxapi.str_ref()
+        gxapi.GXSYS.get_licensed_user(user, company)
+        self.gid = user.value
+        self._temp_file_folder = None
+        self._keep_temp_files = True
+
+        self._start = datetime.datetime.utcnow()
+        self._gxid = gxu.uuid()
         self._entitlements = None
 
-        _gx_dict[id(self)] = gxs.call_location(1)
-        if gx:
-            _gx_ref_count = _gx_ref_count + 1
+        # create a log file
+        if log is None:
+            self._logf = None
+            self._log_it = None
+
         else:
-            if log is None:
-                _max_resource_heap = 0
-            else:
-                _max_resource_heap = max_res_heap
-                _stack_depth = max(0, res_stack)
-                _max_warnings = max(0, max_warnings)
-
-            # create a Tkinter parent frame for the viewers
-
-            if not parent_window == 0:
-                try:
-                    import pythoncom
-                except ImportError:
-                    raise ImportError(_t(
-                        'Was unable to import the pythoncom module. It is needed for any GUI APIs to work within the Geosoft gxpy module.'))
-
-            if parent_window == -1:
-                self.tkframe = ttk.Frame(master=None)
-                parent_window = self.tkframe.winfo_id()
-
-            self.parent_window = parent_window
-            try:
-                flags = 0
-                if suppress_progress:
-                    if self.parent_window:
-                        flags = 128
-                    else:
-                        flags = 64
-                self.gxapi = gxapi.GXContext.create(name, version, self.parent_window, flags)
-
-            except gxapi.GXAPIError as e:
-                self.gxapi = None
-                raise GXException(_t('GX services are not available.\n{}'.format(e)))
-
-            user = gxapi.str_ref()
-            company = gxapi.str_ref()
-            gxapi.GXSYS.get_licensed_user(user, company)
-            self.gid = user.value
-            self._temp_file_folder = None
-            self._keep_temp_files = True
-
-            self._start = datetime.datetime.utcnow()
-            self._gxid = gxu.uuid()
-
-            # create a log file
-
-            if log is None:
+            if callable(log):
+                self._log_it = log
                 self._logf = None
-                self._log_it = None
 
             else:
+                if len(log) == 0:
+                    dts = "{}-{}-{}({}_{}_{}_{})" \
+                        .format(self._start.year,
+                                str(self._start.month).zfill(2),
+                                str(self._start.day).zfill(2),
+                                str(self._start.hour).zfill(2),
+                                str(self._start.minute).zfill(2),
+                                str(self._start.second).zfill(2),
+                                str(self._start.microsecond // 1000).zfill(3))
+                    log = "_gx_" + dts + ".log"
 
-                if callable(log):
-                    self._log_it = log
-                    self._logf = None
+                self._logf = open(log, "wb")
+                self._log_it = self._log_to_file
 
-                else:
+            self.log('\nGX start')
+            self.log('GX id: {}'.format(self._gxid))
+            self.log('UTC: {}'.format(self._start))
+            self.log('API: {}'.format(__version__))
+            self.log('GID: {}'.format(self.gid))
+            self.log('entitlements: {}'.format(json.dumps(self.entitlements())))
+            self.log('script: {}'.format(gxs.app_name()))
+            self.log('project path: {}'.format(gxu.folder_workspace()))
+            self.log('user path: {}'.format(gxu.folder_user()))
 
-                    if len(log) == 0:
-                        dts = "{}-{}-{}({}_{}_{}_{})" \
-                            .format(self._start.year,
-                                    str(self._start.month).zfill(2),
-                                    str(self._start.day).zfill(2),
-                                    str(self._start.hour).zfill(2),
-                                    str(self._start.minute).zfill(2),
-                                    str(self._start.second).zfill(2),
-                                    str(self._start.microsecond // 1000).zfill(3))
-                        log = "_gx_" + dts + ".log"
+        # create a shared string ref for the convenience of Geosoft modules
+        self._sr = gxapi.str_ref()
+        gx = self
+        self.log('GX open')
 
-                    self._logf = open(log, "wb")
-                    self._log_it = self._log_to_file
+        atexit.register(_exit_cleanup)
 
-                self.log('\nGX start')
-                self.log('GX id: {}'.format(self._gxid))
-                self.log('UTC: {}'.format(self._start))
-                self.log('API: {}'.format(__version__))
-                self.log('GID: {}'.format(self.gid))
-                self.log('entitlements: {}'.format(json.dumps(self.entitlements())))
-                self.log('script: {}'.format(gxs.app_name()))
-                self.log('project path: {}'.format(gxu.folder_workspace()))
-                self.log('user path: {}'.format(gxu.folder_user()))
+        # general properties
+        self.current_date = gxapi.GXSYS.date()
+        self.current_utc_date = gxapi.GXSYS.utc_date()
+        self.current_time = gxapi.GXSYS.time()
+        self.current_utc_time = gxapi.GXSYS.utc_time()
+        self.folder_workspace = gxu.folder_workspace()
+        self.folder_temp = gxu.folder_temp()
+        self.folder_user = gxu.folder_user()
 
-            # create a shared string ref for the convenience of Geosoft modules
-            self._sr = gxapi.str_ref()
-            gx = self
-            self.log('GX open')
-
-            _gx_ref_count = 1
-            atexit.register(_exit_cleanup)
-
-            # general properties
-            self.current_date = gxapi.GXSYS.date()
-            self.current_utc_date = gxapi.GXSYS.utc_date()
-            self.current_time = gxapi.GXSYS.time()
-            self.current_utc_time = gxapi.GXSYS.utc_time()
-            self.folder_workspace = gxu.folder_workspace()
-            self.folder_temp = gxu.folder_temp()
-            self.folder_user = gxu.folder_user()
-
-            # determine license
-            try:
-                # test is we can create a GXST2 instance, which requires a minimal license
-                gxapi.GXST2.create()
-                self._entitled = True
-            except gxapi.GXAPIError:
-                self._entitled = False
-
-    def _remove_gx_temporary_folders(self):
-        """ removes all GX temporary folders and """
-
-        def file_error(fnc, path, excinfo):
-            self.log(_t("error removing temporary file\n   \"{}\"\nfunction \"{}\"\nexception\"{}\"\n")
-                     .format(path, str(fnc), str(excinfo)))
-
-        for filename in os.listdir(gxu.folder_temp()):
-            folder = os.path.join(gxu.folder_temp(), filename)
-            if os.path.isdir(folder) and (len(filename) > 4) and (filename[:4] == '_gx_'):
-                warning_file = os.path.join(folder, GX_WARNING_FILE)
-                if not os.path.exists(warning_file):
-                    shutil.rmtree(folder, ignore_errors=False, onerror=file_error)
+        # determine license
+        try:
+            # test if we can create a GXST2 instance, which requires a minimal license
+            gxapi.GXST2.create()
+            self._entitled = True
+        except gxapi.GXAPIError:
+            self._entitled = False
 
     def _log_to_file(self, *args):
 
@@ -661,6 +629,12 @@ class GXpy(_Singleton):
         if self._log_it:
             self._log_it(*args)
 
+    def close_log(self):
+        """close logging"""
+        self.log('GX closed')
+        if self._logf:
+            self._logf.close()
+
     def elapsed_seconds(self, tag='', log=False):
         """
         Return the elapsed seconds since this GX instance started.
@@ -694,17 +668,19 @@ class GXpy(_Singleton):
         """
         .. deprecated:: 9.2 use :meth:`geosoft.gxpy.utility.folder_workspace`
         """
-        return gxu.folder_workspace()
+        if self:
+            return gxu.folder_workspace()
 
     def folder_temp(self):
         """
         .. deprecated:: 9.2 use :meth:`geosoft.gxpy.utility.folder_temp`
         """
-        return gxu.folder_temp()
+        if self:
+            return gxu.folder_temp()
 
     def folder_user(self):
         """
         .. deprecated:: 9.2 use :meth:`geosoft.gxpy.utility.folder_user`
         """
-        return gxu.folder_user()
-
+        if self:
+            return gxu.folder_user()

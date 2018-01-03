@@ -50,7 +50,7 @@ def _t(s):
 def _verify_no_gx_context():
     loc_gx = None
     try:
-        loc_gx = gxapi.GXContext.current()
+        loc_gx = gxapi.GXContext.current()  #TODO @Jacques, this method does not exist
     except:
         loc_gx = None
         pass
@@ -98,8 +98,6 @@ class GXPYTest(unittest.TestCase):
 
     @classmethod
     def tearDownGXPYTest(cls):
-        if cls._gx:
-            cls._gx._close()
         cls._gx = None
         gx._exit_cleanup()
 
