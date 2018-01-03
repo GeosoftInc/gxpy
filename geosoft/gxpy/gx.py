@@ -179,8 +179,8 @@ def _exit_cleanup():
                 gx.log('   ', s)
                 i += 1
 
-        gx.tkframe = None
-        gx.gxapi = None
+        gx._tkframe = None
+        gx._gxapi = None
         gx._sr = None
         gx._shared_state = {}
         gx.close_log()
@@ -218,6 +218,8 @@ class GXpy(_Singleton):
 
     :Properties:
         :gxapi:             GX context to be used to call geosoft.gxapi methods
+        :tkframe:           tkframe for UI applications.  Will be None if a the context was created from a window
+                            application.
         :gid:               User's Geosoft ID
         :global gx:         Global reference to this singleton class instance, None if invalid.  The
                             construct geosoft.gxpy.gx.gx can be accessed anywhere.
@@ -288,8 +290,8 @@ class GXpy(_Singleton):
                     'Unable to import the pythoncom module, which is needed for GUI APIs to work.'))
 
         if parent_window == -1:
-            self.tkframe = ttk.Frame(master=None)
-            parent_window = self.tkframe.winfo_id()
+            self._tkframe = ttk.Frame(master=None)
+            parent_window = self._tkframe.winfo_id()
 
         self.parent_window = parent_window
         try:
@@ -299,10 +301,10 @@ class GXpy(_Singleton):
                     flags = 128
                 else:
                     flags = 64
-            self.gxapi = gxapi.GXContext.create(name, version, self.parent_window, flags)
+            self._gxapi = gxapi.GXContext.create(name, version, self.parent_window, flags)
 
         except gxapi.GXAPIError as e:
-            self.gxapi = None
+            self._gxapi = None
             raise GXException(_t('GX services are not available.\n{}'.format(e)))
 
         user = gxapi.str_ref()
@@ -391,6 +393,16 @@ class GXpy(_Singleton):
                 self._logf.write(logstr.encode('utf-8'))
 
     @property
+    def gxapi(self):
+        """gxapi context for calls to geosoft.gxapi"""
+        return self._gxapi
+
+    @property
+    def tkframe(self):
+        """tkframe if created fro this context, None if not created"""
+        return self._tkframe
+
+    @property
     def version(self):
         """
         API version description
@@ -408,7 +420,7 @@ class GXpy(_Singleton):
         """
 
         if self.parent_window == 0:
-            return self.gxapi.get_main_wnd_id()
+            return self._gxapi.get_main_wnd_id()
         else:
             return self.parent_window
 
@@ -420,7 +432,7 @@ class GXpy(_Singleton):
         .. versionadded:: 9.1
         """
 
-        return self.gxapi.get_active_wnd_id()
+        return self._gxapi.get_active_wnd_id()
 
     def disable_app(self):
         """
@@ -429,7 +441,7 @@ class GXpy(_Singleton):
 
         .. versionadded:: 9.1
         """
-        self.gxapi.enable_application_windows(False)
+        self._gxapi.enable_application_windows(False)
 
     def enable_app(self):
         """
@@ -438,7 +450,7 @@ class GXpy(_Singleton):
 
         .. versionadded:: 9.1
         """
-        self.gxapi.enable_application_windows(True)
+        self._gxapi.enable_application_windows(True)
 
     def entitlements(self):
         """
