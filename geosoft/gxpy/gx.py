@@ -57,8 +57,7 @@ class _Singleton:
         self.__dict__ = self._shared_state
 
 
-# global GX handle, None if not valid
-gx = None
+_gx = None
 _res_id = 0
 _res_heap = {}
 _max_resource_heap = 1000000
@@ -69,13 +68,13 @@ GX_WARNING_FILE = '_gx_warning_'
 
 
 def _reset_globals():
-    global gx
+    global _gx
     global _res_id
     global _res_heap
     global _max_resource_heap
     global _stack_depth
     global _max_warnings
-    gx = None
+    _gx = None
     _res_id = 0
     _res_heap = {}
     _max_resource_heap = 1000000
@@ -136,7 +135,7 @@ def pop_resource(res_id):
 
 
 def _exit_cleanup():
-    global gx
+    global _gx
     global _res_heap
     global _max_warnings
 
@@ -144,8 +143,8 @@ def _exit_cleanup():
         """ removes all GX temporary folders"""
 
         def file_error(fnc, path, excinfo):
-            gx.log(_t("error removing temporary file\n   \"{}\"\nfunction \"{}\"\nexception\"{}\"\n")
-                   .format(path, str(fnc), str(excinfo)))
+            _gx.log(_t("error removing temporary file\n   \"{}\"\nfunction \"{}\"\nexception\"{}\"\n")
+                    .format(path, str(fnc), str(excinfo)))
 
         for filename in os.listdir(gxu.folder_temp()):
             folder = os.path.join(gxu.folder_temp(), filename)
@@ -154,11 +153,11 @@ def _exit_cleanup():
                 if not os.path.exists(w_file):
                     shutil.rmtree(folder, ignore_errors=False, onerror=file_error)
 
-    if gx:
-        gx.log('GX closing')
+    if _gx:
+        _gx.log('GX closing')
         atexit.unregister(_exit_cleanup)
 
-        temp_folder = gx.temp_folder()
+        temp_folder = _gx.temp_folder()
         if temp_folder and (temp_folder != gxu.folder_temp()):
 
             warning_file = os.path.join(temp_folder, GX_WARNING_FILE)
@@ -169,21 +168,21 @@ def _exit_cleanup():
 
         if len(_res_heap):
             # resources were created but not deleted or removed
-            gx.log(_t('Warning - cleaning up resources that are still open:'))
+            _gx.log(_t('Warning - cleaning up resources that are still open:'))
             i = 0
             for s in _res_heap.values():
                 if i == _max_warnings:
-                    gx.log(_t('    and there are {} more (change GXpy(max_warnings=) to see more)...'.format(
-                        len(_res_heap) - i)))
+                    _gx.log(_t('    and there are {} more (change GXpy(max_warnings=) to see more)...'
+                               .format(len(_res_heap) - i)))
                     break
-                gx.log('   ', s)
+                _gx.log('   ', s)
                 i += 1
 
-        gx._tkframe = None
-        gx._gxapi = None
-        gx._sr = None
-        gx._shared_state = {}
-        gx.close_log()
+        _gx._tkframe = None
+        _gx._gxapi = None
+        _gx._sr = None
+        _gx._shared_state = {}
+        _gx.close_log()
 
     _reset_globals()
 
@@ -221,8 +220,6 @@ class GXpy(_Singleton):
         :tkframe:           tkframe for UI applications.  Will be None if a the context was created from a window
                             application.
         :gid:               User's Geosoft ID
-        :global gx:         Global reference to this singleton class instance, None if invalid.  The
-                            construct geosoft.gxpy.gx.gx can be accessed anywhere.
         :current_date:      date at start-up
         :current_utc_date:  UTC date at start-up
         :current_time:      time at start-up
@@ -264,14 +261,14 @@ class GXpy(_Singleton):
                  max_res_heap=10000000, res_stack=6, max_warnings=10,
                  suppress_progress=False):
 
-        global gx
+        global _gx
         global _max_resource_heap
         global _stack_depth
         global _max_warnings
 
         # singleton class, initialize only once
         _Singleton.__init__(self)
-        if gx:
+        if _gx:
             return
 
         if log is None:
@@ -293,15 +290,15 @@ class GXpy(_Singleton):
             self._tkframe = ttk.Frame(master=None)
             parent_window = self._tkframe.winfo_id()
 
-        self.parent_window = parent_window
+        self._parent_window = parent_window
         try:
             flags = 0
             if suppress_progress:
-                if self.parent_window:
+                if self._parent_window:
                     flags = 128
                 else:
                     flags = 64
-            self._gxapi = gxapi.GXContext.create(name, version, self.parent_window, flags)
+            self._gxapi = gxapi.GXContext.create(name, version, self._parent_window, flags)
 
         except gxapi.GXAPIError as e:
             self._gxapi = None
@@ -355,7 +352,7 @@ class GXpy(_Singleton):
 
         # create a shared string ref for the convenience of Geosoft modules
         self._sr = gxapi.str_ref()
-        gx = self
+        _gx = self
         self.log('GX open')
 
         atexit.register(_exit_cleanup)
@@ -403,6 +400,11 @@ class GXpy(_Singleton):
         return self._tkframe
 
     @property
+    def parent_window(self):
+        """parent window for this context"""
+        return self._parent_window
+
+    @property
     def version(self):
         """
         API version description
@@ -419,10 +421,10 @@ class GXpy(_Singleton):
         .. versionadded:: 9.1
         """
 
-        if self.parent_window == 0:
+        if self._parent_window == 0:
             return self._gxapi.get_main_wnd_id()
         else:
-            return self.parent_window
+            return self._parent_window
 
     @property
     def active_wind_id(self):

@@ -1331,7 +1331,7 @@ class _Mapplot:
             self.prior_data_view = None
 
         # mapplot control file
-        self._maplfile_name = os.path.join(gx.gx.temp_folder(), 'mapl_' + gxu.uuid() + ".con")
+        self._maplfile_name = os.path.join(gx.GXpy().temp_folder(), 'mapl_' + gxu.uuid() + ".con")
         self._maplfile = open(self._maplfile_name, "w")
         self._annotation_outer_edge = 0.0
 
@@ -1356,7 +1356,7 @@ class _Mapplot:
         self._maplfile.write(command)
         if command and command[-1] != '\n':
             self._maplfile.write('\n')
-            # geosoft.gxpy.gx.gx.log(command)
+            # geosoft.gxpy.gx.GXpy().log(command)
 
     def define_named_attribute(self, name='_', pen=None, text_def=None):
 

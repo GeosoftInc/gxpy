@@ -190,7 +190,7 @@ class Test(GXPYTest):
             else:
                 speed_improvement = reference_time / elapsed
 
-            geosoft.gxpy.gx.gx.log("{}: time: {} seconds, {} times faster than reference".format(func.__name__, elapsed, speed_improvement))
+            geosoft.gxpy.gx.GXpy().log("{}: time: {} seconds, {} times faster than reference".format(func.__name__, elapsed, speed_improvement))
             return elapsed
 
         #ref = time_test(reference_range)
@@ -200,7 +200,7 @@ class Test(GXPYTest):
 
         # testing documented parallel example
         data = [(1+i, 2+i) for i in range(20)]
-        geosoft.gxpy.gx.gx.log('parallel:',gsys.parallel_map(lambda ab: ab[0] + ab[1], data))
+        geosoft.gxpy.gx.GXpy().log('parallel:',gsys.parallel_map(lambda ab: ab[0] + ab[1], data))
 
 ###############################################################################################
 if __name__ == '__main__':
