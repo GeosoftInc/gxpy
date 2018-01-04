@@ -1206,24 +1206,28 @@ class Test(GXPYTest):
                                    folder=self.gx.temp_folder())
         grid_file = os.path.join(folder, 'dem_small.grd')
 
-        # create a 3D view
-        with gxv.View_3d.new("data",
-                             area_2d=gxgrd.Grid(grid_file).extent_2d(),
-                             coordinate_system=gxgrd.Grid(grid_file).coordinate_system,
-                             scale=5000,
-                             overwrite=True) as v:
-            v3d_name = v.file_name
+        v3d_name = ''
+        try:
+            # create a 3D view
+            with gxv.View_3d.new("data",
+                                 area_2d=gxgrd.Grid(grid_file).extent_2d(),
+                                 coordinate_system=gxgrd.Grid(grid_file).coordinate_system,
+                                 scale=5000,
+                                 overwrite=True) as v:
+                v3d_name = v.file_name
 
-            v.set_plane_relief_surface(grid_file, base=200, scale=2, max=250, min=150, refine=2)
+                v.set_plane_relief_surface(grid_file, base=200, scale=2, max=250, min=150, refine=2)
 
-            # add the grid image to the view, with shading, 20 nT contour interval to match default contour lines
-            gxg.Aggregate_group.new(v, gxagg.Aggregate_image.new(grid_file, shade=True, contour=20))
+                # add the grid image to the view, with shading, 20 nT contour interval to match default contour lines
+                gxg.Aggregate_group.new(v, gxagg.Aggregate_image.new(grid_file, shade=True, contour=20))
 
-            # contour the grid
-            gxg.contour(v, 'TMI_contour', grid_file)
+                # contour the grid
+                gxg.contour(v, 'TMI_contour', grid_file)
 
-        self.crc_map(v3d_name)
-        gxv.delete_files(v3d_name)
+            self.crc_map(v3d_name)
+
+        finally:
+            gxv.delete_files(v3d_name)
 
     def test_plane_contour(self):
         self.start()
@@ -1254,19 +1258,24 @@ class Test(GXPYTest):
                                    folder=self.gx.temp_folder())
         grid_file = os.path.join(folder, 'dem_small.grd')
 
-        # create a 3D view
-        with gxv.View_3d.new("data",
-                             area_2d=gxgrd.Grid(grid_file).extent_2d(),
-                             coordinate_system=gxgrd.Grid(grid_file).coordinate_system,
-                             scale=20000,
-                             overwrite=True) as v:
-            name = v.file_name
-            gxg.contour(v, 'TMI_contour', grid_file)
-            with gxg.Draw(v, 'edge') as g:
-                g.rectangle((v.extent_clip), pen=gxg.Pen(line_thick=v.units_per_map_cm * 0.1))
+        v3d_name = ''
+        try:
 
-        self.crc_map(name)
-        gxv.delete_files(name)
+            # create a 3D view
+            with gxv.View_3d.new("data",
+                                 area_2d=gxgrd.Grid(grid_file).extent_2d(),
+                                 coordinate_system=gxgrd.Grid(grid_file).coordinate_system,
+                                 scale=20000,
+                                 overwrite=True) as v:
+                v3d_name = v.file_name
+                gxg.contour(v, 'TMI_contour', grid_file)
+                with gxg.Draw(v, 'edge') as g:
+                    g.rectangle((v.extent_clip), pen=gxg.Pen(line_thick=v.units_per_map_cm * 0.1))
+
+            self.crc_map(v3d_name)
+
+        finally:
+            gxv.delete_files(v3d_name)
 
 
     def test_polydata_3d_grd_cone(self):
