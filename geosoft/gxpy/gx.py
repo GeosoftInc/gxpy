@@ -20,7 +20,6 @@ stand-alone Python scripts, or is provided to the script for extensions to Geoso
 import tkinter.ttk as ttk
 import pprint
 import os
-import json
 import shutil
 import datetime
 import atexit
@@ -154,7 +153,7 @@ def _exit_cleanup():
                     shutil.rmtree(folder, ignore_errors=False, onerror=file_error)
 
     if _gx:
-        _gx.log('GX closing')
+        _gx.log('\nGX closing')
         atexit.unregister(_exit_cleanup)
 
         temp_folder = _gx.temp_folder()
@@ -180,7 +179,6 @@ def _exit_cleanup():
 
         _gx._tkframe = None
         _gx._gxapi = None
-        _gx._sr = None
         _gx._shared_state = {}
         _gx.close_log()
 
@@ -323,6 +321,23 @@ class GXpy(_Singleton):
         self._gxid = gxu.uuid()
         self._entitlements = None
 
+        # general properties
+        self.current_date = gxapi.GXSYS.date()
+        self.current_utc_date = gxapi.GXSYS.utc_date()
+        self.current_time = gxapi.GXSYS.time()
+        self.current_utc_time = gxapi.GXSYS.utc_time()
+        self.folder_workspace = gxu.folder_workspace()
+        self.folder_temp = gxu.folder_temp()
+        self.folder_user = gxu.folder_user()
+
+        # determine license
+        try:
+            # test if we can create a GXST2 instance, which requires a minimal license
+            gxapi.GXST2.create()
+            self._entitled = True
+        except gxapi.GXAPIError:
+            self._entitled = False
+
         # create a log file
         if log is None:
             self._logf = None
@@ -348,39 +363,19 @@ class GXpy(_Singleton):
                 self._logf = open(log, "wb")
                 self._log_it = self._log_to_file
 
-            self.log('\nGX start')
-            self.log('GX id: {}'.format(self._gxid))
-            self.log('UTC: {}'.format(self._start))
-            self.log('API: {}'.format(__version__))
-            self.log('GID: {}'.format(self.gid))
-            self.log('entitlements: {}'.format(json.dumps(self.entitlements())))
-            self.log('script: {}'.format(gxs.app_name()))
-            self.log('project path: {}'.format(gxu.folder_workspace()))
-            self.log('user path: {}'.format(gxu.folder_user()))
+            self.log('\n')
+            self.log('UTC:      {}'.format(self._start))
+            self.log('Script:   {}'.format(gxs.app_name()))
+            self.log('API:      {}'.format(__version__))
+            self.log('bin:      {}'.format(os.environ.get('GX_GEOSOFT_BIN_PATH', 'default')))
+            self.log('Project:  {}'.format(gxu.folder_workspace()))
+            self.log('GID:      {}'.format(self.gid))
+            self.log('Entitled: {}'.format(self.entitled))
 
-        # create a shared string ref for the convenience of Geosoft modules
-        self._sr = gxapi.str_ref()
+        # save context as a global
         _gx = self
-        self.log('GX open')
-
         atexit.register(_exit_cleanup)
-
-        # general properties
-        self.current_date = gxapi.GXSYS.date()
-        self.current_utc_date = gxapi.GXSYS.utc_date()
-        self.current_time = gxapi.GXSYS.time()
-        self.current_utc_time = gxapi.GXSYS.utc_time()
-        self.folder_workspace = gxu.folder_workspace()
-        self.folder_temp = gxu.folder_temp()
-        self.folder_user = gxu.folder_user()
-
-        # determine license
-        try:
-            # test if we can create a GXST2 instance, which requires a minimal license
-            gxapi.GXST2.create()
-            self._entitled = True
-        except gxapi.GXAPIError:
-            self._entitled = False
+        self.log('\nGX open')
 
     def _log_to_file(self, *args):
 

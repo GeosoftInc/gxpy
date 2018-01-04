@@ -11,18 +11,18 @@ from base import GXPYTest
 class Test(GXPYTest):
     @classmethod
     def setUpClass(cls):
-        pass
+        cls.gxc = gx.GXpy(log=print)
 
     def test_gxpy(self):
-        with gx.GXpy(log=print) as gxc:
-            self.assertTrue(id(gxc) == id(gx.gx()))
+        with gx.GXpy() as gxc:
+            self.assertEqual(id(gxc.__dict__), id(gx.gx().__dict__))
             self.assertTrue(gxc.gid.find('@') > 0)
             self.assertEqual(gxc.main_wind_id,0)
             self.assertEqual(gxc.active_wind_id, 0)
             self.assertEqual(gx.__version__, geosoft.__version__)
 
     def test_env(self):
-        with gx.GXpy(log=print) as gxc:
+        with gx.gx() as gxc:
             self.assertFalse(gxc.gid is None)
             self.assertFalse(gxc.current_date is None)
             self.assertFalse(gxc.current_utc_date is None)
@@ -35,7 +35,7 @@ class Test(GXPYTest):
 
     @unittest.skip('WIP')
     def test_entitlements(self):
-        with gx.GXpy(log=print) as gxc:
+        with gx.gx() as gxc:
             ent = gxc.entitlements()
             self.assertTrue(ent['1000'], 'Oasis montaj™ Base')
             self.assertTrue(gxc.has_entitlement(1000))
@@ -65,7 +65,7 @@ class Test(GXPYTest):
                 self.assertFalse(gxc.has_entitlement(41000))
 
     def test_temp(self):
-        with gx.GXpy(log=print) as gxc:
+        with gx.gx() as gxc:
             tf = gxc.temp_folder()
             self.assertTrue(os.path.isdir(tf))
 
@@ -83,7 +83,7 @@ class Test(GXPYTest):
 
 
     def test_elapsed_time(self):
-        with gx.GXpy() as gxc:
+        with gx.gx() as gxc:
             self.assertTrue(gxc.elapsed_seconds("startup") > 0.0)
             time.sleep(0.25)
             self.assertTrue(gxc.elapsed_seconds("0.25 seconds later") > 0.25)
