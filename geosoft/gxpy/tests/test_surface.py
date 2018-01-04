@@ -2,11 +2,15 @@ import unittest
 import os
 import numpy as np
 
+import geosoft.gxapi as gxapi
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.surface as gxsurf
 import geosoft.gxpy.vox as gxvox
 import geosoft.gxpy.group as gxgrp
 import geosoft.gxpy.spatialdata as gxspd
+import geosoft.gxpy.view as gxview
+import geosoft.gxpy.map as gxmap
+import geosoft.gxpy.vv as gxvv
 
 from base import GXPYTest
 
@@ -160,22 +164,45 @@ class Test(GXPYTest):
     def test_get_mesh(self):
         self.start()
 
+        # TODO: WIP
+        
         fn = gxsurf.SurfaceDataset.vox_surface(gxvox.Vox.open(self.vox_file),
                                                (0.01, 0.02), color=gxgrp.C_GREY, transparency=0.5,
                                                temp=True).file_name
 
         with gxsurf.SurfaceDataset.open(fn) as sd:
+
             self.assertEqual(len(sd), 2)
             vx, vy, vz, t1, t2, t3 = sd[0].get_mesh_vv()
             self.assertEqual(len(vx), 482)
             self.assertTrue(vy.dtype, np.float64)
             self.assertEqual(len(t1), 855)
             self.assertTrue(t2.dtype, np.int32)
-            vx, vy, vz, t1, t2, t3 = sd[1].get_mesh_np()
-            self.assertEqual(len(vx), 21)
-            self.assertTrue(vz.dtype, np.float64)
-            self.assertEqual(len(t1), 26)
-            self.assertTrue(t3.dtype, np.int32)
+
+            v, t = sd[1].get_mesh_np()
+            self.assertEqual(len(v), 21)
+            self.assertEqual(len(t), 26)
+
+            vx, vy, vz, t1, t2, t3 = sd[0].get_mesh_vv()
+            v, t = sd[0].get_mesh_np()
+            n = gxsurf.norms(v, t)
+            gxnull = gxapi.GXVV.null()
+            with gxview.View_3d.new() as v3d:
+                v3d_file = v3d.file_name
+                with gxgrp.Draw_3d(v3d, 'billy') as g:
+                    v3d.gxview.draw_surface_3d_ex(g.name,
+                                             vx.gxvv, vy.gxvv, vz.gxvv,
+                                             #gxvv.GXvv(n[:, 0]).gxvv,
+                                             #gxvv.GXvv(n[:, 1]).gxvv,
+                                             #gxvv.GXvv(n[:, 2]).gxvv,
+                                             gxnull, gxnull, gxnull, gxnull,
+                                             gxgrp.Color(gxgrp.C_MAGENTA).int_value,
+                                             t1.gxvv, t2.gxvv, t3.gxvv,
+                                             sd.coordinate_system.gxipj)
+                pass
+
+        image_file = gxmap.Map.open(v3d_file).image_file(pix_width=800)
+        pass
 
 ###############################################################################################
 

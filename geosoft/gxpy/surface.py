@@ -67,6 +67,33 @@ def delete_files(surface_name):
     """
     gxspd.delete_files(_surface_file_name(surface_name))
 
+def norms(vertex, faces):
+    """
+    Return normals of the verticies based on the faces.
+
+    :param vertex:  verticies as array of (x, y, z) shaped (-1, 3)
+    :param faces:   faces as array of triangle indexes into vertex, shaped (-1, 3)
+    :return:        vertex normals shaped (-1, 3)
+
+    TODO: needs algorithm to correct norm sign
+
+    .. versionadded:: 9.3.1
+    """
+    def normalize(v):
+        length = np.sqrt(v[:, 0] ** 2 + v[:, 1] ** 2 + v[:, 2] ** 2)
+        v[:, 0] /= length
+        v[:, 1] /= length
+        v[:, 2] /= length
+
+    tris = vertex[faces]
+    n = np.cross(tris[::, 1] - tris[::, 0], tris[::, 2] - tris[::, 0])
+    normalize(n)
+    norm = np.zeros(vertex.shape, dtype=np.float64)
+    norm[faces[:, 0]] += n
+    norm[faces[:, 1]] += n
+    norm[faces[:, 2]] += n
+    normalize(norm)
+    return norm
 
 # constants
 MODE_READ = gxspd.MODE_READ             #:
@@ -604,13 +631,22 @@ class Surface(gxspd.SpatialData):
 
     def get_mesh_np(self, component=0):
         """
-        Returns mesh data as a set of numpy arrays.
+        Returns mesh data as a set of verticies and a set of faces.
 
-        :param component: component number from a multi-component surface
-        :return: vertex_x, vertex_y, vertex_z, triangle_point_1, triangle_point_2, triangle_point_3
+        :param component:   component number from a multi-component surface
+        :return:            vertex, face. Vertex is a float64 array shaped (-1, 3) and face is an int32 array
+                            shaped (-1, 3) that references the triangle corners.
 
         .. versionadded:: 9.3.1
         """
 
         vx, vy, vz, t1, t2, t3 = self.get_mesh_vv(component)
-        return vx.np, vy.np, vz.np, t1.np, t2.np, t3.np
+        vertex = np.empty((len(vx), 3), dtype=np.float64)
+        vertex[:, 0] = vx.np
+        vertex[:, 1] = vy.np
+        vertex[:, 2] = vz.np
+        face = np.empty((len(t1), 3), dtype=np.int32)
+        face[:, 0] = t1.np
+        face[:, 1] = t2.np
+        face[:, 2] = t3.np
+        return vertex, face
