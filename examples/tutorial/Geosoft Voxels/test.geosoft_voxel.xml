@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmd:MD_Metadata xsi:schemaLocation="http://www.isotc211.org/2005/gmd ../schemas/iso19139fra/gmd/gmd.xsd" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:map="urn:brgm:mapping" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:gfc="http://www.isotc211.org/2005/gfc" xmlns:gco="http://www.isotc211.org/2005/gco">
+	<geosoft xmlns="http://www.geosoft.com/schema/geo">
+		<dataset version="1">
+			<lineage>
+				<process name="geogxnet.dll(Geosoft.GX.VoxUtils.WindowVoxel;Run)" user="Ian MacLeod" version="Version 9.3 (20171105.126)" date="2017-11-23" time="09:47:52">
+					<parameter name="WINDOW_VOXEL::CLIP" value="1" type="integer"/>
+					<parameter name="WINDOW_VOXEL::HORIZONTAL_MODE" value="1" type="integer"/>
+					<parameter name="WINDOW_VOXEL::HORIZONTAL_WINDOWING" value="1" type="integer"/>
+					<parameter name="WINDOW_VOXEL::INPUT" value=".\test_win.geosoft_voxel" type="string"/>
+					<parameter name="WINDOW_VOXEL::MASK" value="1" type="string"/>
+					<parameter name="WINDOW_VOXEL::MAXX" value="441500" type="double"/>
+					<parameter name="WINDOW_VOXEL::MAXY" value="6129500" type="double"/>
+					<parameter name="WINDOW_VOXEL::MAXZ" value="575" type="double"/>
+					<parameter name="WINDOW_VOXEL::MINX" value="438000" type="double"/>
+					<parameter name="WINDOW_VOXEL::MINY" value="6126000" type="double"/>
+					<parameter name="WINDOW_VOXEL::MINZ" value="-1000" type="double"/>
+					<parameter name="WINDOW_VOXEL::OUTPUT" value=".\test.geosoft_voxel" type="string"/>
+					<parameter name="WINDOW_VOXEL::VERTICAL_WINDOWING" value="1" type="integer"/>
+					<source name="d:\Data\cashinmystery\test.geosoft_voxel" type="VOXEL"/>
+					<source name="d:\Data\cashinmystery\test_win.geosoft_voxel" type="VOXEL">
+						<lineage>
+							<process name="geogxnet.dll(Geosoft.GX.VoxUtils.WindowVoxel;Run)" user="Ian MacLeod" version="Version 9.3 (20171105.126)" date="2017-11-23" time="09:45:55">
+								<parameter name="WINDOW_VOXEL::CLIP" value="1" type="integer"/>
+								<parameter name="WINDOW_VOXEL::HORIZONTAL_MODE" value="1" type="integer"/>
+								<parameter name="WINDOW_VOXEL::HORIZONTAL_WINDOWING" value="1" type="integer"/>
+								<parameter name="WINDOW_VOXEL::INPUT" value=".\test.geosoft_voxel" type="string"/>
+								<parameter name="WINDOW_VOXEL::MASK" value="1" type="string"/>
+								<parameter name="WINDOW_VOXEL::MAXX" value="441500" type="double"/>
+								<parameter name="WINDOW_VOXEL::MAXY" value="6129500" type="double"/>
+								<parameter name="WINDOW_VOXEL::MAXZ" value="575" type="double"/>
+								<parameter name="WINDOW_VOXEL::MINX" value="438000" type="double"/>
+								<parameter name="WINDOW_VOXEL::MINY" value="6126000" type="double"/>
+								<parameter name="WINDOW_VOXEL::MINZ" value="-1000" type="double"/>
+								<parameter name="WINDOW_VOXEL::OUTPUT" value=".\test_win.geosoft_voxel" type="string"/>
+								<parameter name="WINDOW_VOXEL::VERTICAL_WINDOWING" value="1" type="integer"/>
+								<source name="d:\Data\cashinmystery\test.geosoft_voxel" type="VOXEL"/>
+								<source name="d:\Data\cashinmystery\test_padded_win.geosoft_voxel" type="VOXEL"/>
+							</process>
+						</lineage>
+					</source>
+				</process>
+			</lineage>
+			<title>test</title>
+			<file_format>Geosoft Voxel</file_format>
+			<project_name>d:\data\cashinmystery\cashinmystery.gpf</project_name>
+			<data_created_by>Ian MacLeod</data_created_by>
+			<data_creation_date>2017-11-23</data_creation_date>
+			<metadata_created_by>Ian MacLeod</metadata_created_by>
+			<metadata_creation_date>2017-11-23</metadata_creation_date>
+			<georeference>
+				<dataextents>
+					<extent3d minx="438550" miny="6126150" minz="-1022.3323879241943" maxx="441500" maxy="6129500" maxz="575"/>
+				</dataextents>
+				<projection type="TRANSVERSE_MERCATOR" name="NAD83 / UTM zone 20N" wellknown_epsg="26920" projection="UTM zone 20N" ellipsoid="GRS 1980" datum="NAD83" datumtrf="NAD83 to WGS 84 (1)" datumtrf_epsg="1188" datumtrf_description="[NAD83] (4m) North America - Canada and USA (CONUS, Alaska mainland)" radius="6378137" eccentricity="0.081819191042815806">
+					<shift x="0" y="0" z="0"/>
+					<parameters scale="0.9996" false_east="500000" false_north="0" lat_origin="0" lon_origin="-63"/>
+					<units name="m" unit_scale="1"/>
+				</projection>
+			</georeference>
+		</dataset>
+	</geosoft>
+	<gmd:dataQualityInfo>
+		<gmd:DQ_DataQuality>
+			<gmd:lineage>
+				<gmd:LI_Lineage>
+					<gmd:processStep xlink:type="Geosoft Process" xlink:title="geogxnet.dll(Geosoft.GX.VoxUtils.WindowVoxel;Run)">
+						<gmd:LI_ProcessStep>
+							<gmd:dateTime>
+								<gco:DateTime>2017-11-23T09:47:52</gco:DateTime>
+							</gmd:dateTime>
+							<gmd:processor>
+								<gmd:CI_ResponsibleParty>
+									<gmd:individualName>
+										<gco:CharacterString>Ian MacLeod</gco:CharacterString>
+									</gmd:individualName>
+								</gmd:CI_ResponsibleParty>
+							</gmd:processor>
+							<gmd:source xlink:type="Data Parameter" xlink:role="WINDOW_VOXEL::CLIP" xlink:title="1">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="WINDOW_VOXEL::HORIZONTAL_MODE" xlink:title="1">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="WINDOW_VOXEL::HORIZONTAL_WINDOWING" xlink:title="1">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="WINDOW_VOXEL::INPUT" xlink:title=".\test_win.geosoft_voxel">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="WINDOW_VOXEL::MASK" xlink:title="1">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="WINDOW_VOXEL::MAXX" xlink:title="441500">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="WINDOW_VOXEL::MAXY" xlink:title="6129500">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="WINDOW_VOXEL::MAXZ" xlink:title="575">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="WINDOW_VOXEL::MINX" xlink:title="438000">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="WINDOW_VOXEL::MINY" xlink:title="6126000">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="WINDOW_VOXEL::MINZ" xlink:title="-1000">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="WINDOW_VOXEL::OUTPUT" xlink:title=".\test.geosoft_voxel">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="WINDOW_VOXEL::VERTICAL_WINDOWING" xlink:title="1">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Source" xlink:role="VOXEL" xlink:title="d:\Data\cashinmystery\test.geosoft_voxel">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Source" xlink:role="VOXEL" xlink:title="d:\Data\cashinmystery\test_win.geosoft_voxel">
+								<gmd:LI_Source/>
+							</gmd:source>
+						</gmd:LI_ProcessStep>
+					</gmd:processStep>
+				</gmd:LI_Lineage>
+			</gmd:lineage>
+		</gmd:DQ_DataQuality>
+	</gmd:dataQualityInfo>
+	<gmd:identificationInfo>
+		<gmd:MD_DataIdentification>
+			<gmd:citation>
+				<gmd:CI_Citation>
+					<gmd:title>
+						<gco:CharacterString>test</gco:CharacterString>
+					</gmd:title>
+					<gmd:collectiveTitle>
+						<gco:CharacterString>d:\data\cashinmystery\cashinmystery.gpf</gco:CharacterString>
+					</gmd:collectiveTitle>
+					<gmd:date>
+						<gmd:CI_Date>
+							<gmd:date>
+								<gco:Date>2017-11-23</gco:Date>
+							</gmd:date>
+						</gmd:CI_Date>
+					</gmd:date>
+				</gmd:CI_Citation>
+			</gmd:citation>
+			<gmd:resourceFormat>
+				<gmd:MD_Format>
+					<gmd:name>
+						<gco:CharacterString>Geosoft Voxel</gco:CharacterString>
+					</gmd:name>
+				</gmd:MD_Format>
+			</gmd:resourceFormat>
+			<gmd:pointOfContact>
+				<gmd:CI_ResponsibleParty>
+					<gmd:individualName>
+						<gco:CharacterString>Ian MacLeod</gco:CharacterString>
+					</gmd:individualName>
+				</gmd:CI_ResponsibleParty>
+			</gmd:pointOfContact>
+			<gmd:extent>
+				<gmd:EX_Extent>
+					<gmd:geographicElement>
+						<gmd:EX_GeographicBoundingBox>
+							<gmd:westBoundLongitude>
+								<gco:Decimal>-63.968075902847303</gco:Decimal>
+							</gmd:westBoundLongitude>
+							<gmd:eastBoundLongitude>
+								<gco:Decimal>-63.920911549218395</gco:Decimal>
+							</gmd:eastBoundLongitude>
+							<gmd:southBoundLatitude>
+								<gco:Decimal>55.277963371081064</gco:Decimal>
+							</gmd:southBoundLatitude>
+							<gmd:northBoundLatitude>
+								<gco:Decimal>55.308421548007175</gco:Decimal>
+							</gmd:northBoundLatitude>
+						</gmd:EX_GeographicBoundingBox>
+					</gmd:geographicElement>
+				</gmd:EX_Extent>
+			</gmd:extent>
+		</gmd:MD_DataIdentification>
+	</gmd:identificationInfo>
+	<gmd:contact>
+		<gmd:CI_ResponsibleParty>
+			<gmd:individualName>
+				<gco:CharacterString>Ian MacLeod</gco:CharacterString>
+			</gmd:individualName>
+		</gmd:CI_ResponsibleParty>
+	</gmd:contact>
+	<gmd:dateStamp>
+		<gco:Date>2017-11-23</gco:Date>
+	</gmd:dateStamp>
+	<gmd:referenceSystemInfo>
+		<gmd:MD_ReferenceSystem>
+			<gmd:referenceSystemIdentifier>
+				<gmd:RS_Identifier>
+					<gmd:codeSpace>
+						<gco:CharacterString>ESRI</gco:CharacterString>
+					</gmd:codeSpace>
+					<gmd:code>
+						<gco:CharacterString>PROJCS["NAD_1983_UTM_Zone_20N",GEOGCS["GCS_North_American_1983",DATUM["D_North_American_1983",SPHEROID["GRS_1980",6378137.0,298.257222101]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Transverse_Mercator"],PARAMETER["False_Easting",500000.0],PARAMETER["False_Northing",0.0],PARAMETER["Central_Meridian",-63.0],PARAMETER["Scale_Factor",0.9996],PARAMETER["Latitude_Of_Origin",0.0],UNIT["Meter",1.0],AUTHORITY["EPSG",26920]]</gco:CharacterString>
+					</gmd:code>
+					<gmd:version>
+						<gco:CharacterString>1</gco:CharacterString>
+					</gmd:version>
+				</gmd:RS_Identifier>
+			</gmd:referenceSystemIdentifier>
+		</gmd:MD_ReferenceSystem>
+	</gmd:referenceSystemInfo>
+</gmd:MD_Metadata>
