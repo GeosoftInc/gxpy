@@ -128,7 +128,7 @@ class SpatialData:
         else:
 
             if mode == MODE_NEW:
-                if os.path.exists(file_name) and not overwrite:
+                if gxobject is None and not overwrite and os.path.exists(file_name):
                     raise SpatialException(_t('\'{}\' exists. Use overwrite=True to overwrite existing dataset file.').
                                            format(file_name))
             else:

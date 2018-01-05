@@ -47,13 +47,16 @@ from . import agg as gxagg
 from . import metadata as gxmeta
 from . import vox_display as gxvoxd
 
+
 __version__ = geosoft.__version__
 
 
 def _t(s):
     return geosoft.gxpy.system.translate(s)
 
+
 MAX_TRANSPARENT = 4
+
 
 class GroupException(Exception):
     """
@@ -63,130 +66,130 @@ class GroupException(Exception):
     """
     pass
 
-GROUP_NAME_SIZE = gxv.VIEW_NAME_SIZE #:
 
-NEW = gxapi.MVIEW_GROUP_NEW #:
-APPEND = gxapi.MVIEW_GROUP_APPEND #:
-READ_ONLY = max(NEW, APPEND) + 1 #:
-REPLACE = READ_ONLY + 1 #:
+GROUP_NAME_SIZE = gxv.VIEW_NAME_SIZE  #:
+NEW = gxapi.MVIEW_GROUP_NEW  #:
+APPEND = gxapi.MVIEW_GROUP_APPEND  #:
+READ_ONLY = max(NEW, APPEND) + 1  #:
+REPLACE = READ_ONLY + 1  #:
 
-SMOOTH_NONE = gxapi.MVIEW_SMOOTH_NEAREST #:
-SMOOTH_CUBIC = gxapi.MVIEW_SMOOTH_CUBIC #:
-SMOOTH_AKIMA = gxapi.MVIEW_SMOOTH_AKIMA #:
+SMOOTH_NONE = gxapi.MVIEW_SMOOTH_NEAREST  #:
+SMOOTH_CUBIC = gxapi.MVIEW_SMOOTH_CUBIC  #:
+SMOOTH_AKIMA = gxapi.MVIEW_SMOOTH_AKIMA  #:
 
-TILE_RECTANGULAR = gxapi.MVIEW_TILE_RECTANGULAR #:
-TILE_DIAGONAL = gxapi.MVIEW_TILE_DIAGONAL #:
-TILE_TRIANGULAR = gxapi.MVIEW_TILE_TRIANGULAR #:
-TILE_RANDOM = gxapi.MVIEW_TILE_RANDOM #:
+TILE_RECTANGULAR = gxapi.MVIEW_TILE_RECTANGULAR  #:
+TILE_DIAGONAL = gxapi.MVIEW_TILE_DIAGONAL  #:
+TILE_TRIANGULAR = gxapi.MVIEW_TILE_TRIANGULAR  #:
+TILE_RANDOM = gxapi.MVIEW_TILE_RANDOM  #:
 
-UNIT_VIEW = 0 #:
-UNIT_MAP = 2 #:
-UNIT_VIEW_UNWARPED = 3 #:
+UNIT_VIEW = 0  #:
+UNIT_MAP = 2  #:
+UNIT_VIEW_UNWARPED = 3  #:
 
-GRATICULE_DOT = 0 #:
-GRATICULE_LINE = 1 #:
-GRATICULE_CROSS = 2 #:
+GRATICULE_DOT = 0  #:
+GRATICULE_LINE = 1  #:
+GRATICULE_CROSS = 2  #:
 
-LINE_STYLE_SOLID = 1 #:
-LINE_STYLE_LONG = 2 #:
-LINE_STYLE_DOTTED = 3 #:
-LINE_STYLE_SHORT = 4 #:
-LINE_STYLE_LONG_SHORT_LONG = 5 #:
-LINE_STYLE_LONG_DOT_LONG = 6 #:
+LINE_STYLE_SOLID = 1  #:
+LINE_STYLE_LONG = 2  #:
+LINE_STYLE_DOTTED = 3  #:
+LINE_STYLE_SHORT = 4  #:
+LINE_STYLE_LONG_SHORT_LONG = 5  #:
+LINE_STYLE_LONG_DOT_LONG = 6  #:
 
-SYMBOL_NONE = 0 #:
-SYMBOL_DOT = 1 #:
-SYMBOL_PLUS = 2 #:
-SYMBOL_X = 3 #:
-SYMBOL_BOX = 4 #:
-SYMBOL_TRIANGLE = 5 #:
-SYMBOL_INVERTED_TRIANGLE = 6 #:
-SYMBOL_HEXAGON = 7 #:
-SYMBOL_SMALL_BOX = 8 #:
-SYMBOL_SMALL_DIAMOND = 9 #:
-SYMBOL_CIRCLE = 20 #:
+SYMBOL_NONE = 0  #:
+SYMBOL_DOT = 1  #:
+SYMBOL_PLUS = 2  #:
+SYMBOL_X = 3  #:
+SYMBOL_BOX = 4  #:
+SYMBOL_TRIANGLE = 5  #:
+SYMBOL_INVERTED_TRIANGLE = 6  #:
+SYMBOL_HEXAGON = 7  #:
+SYMBOL_SMALL_BOX = 8  #:
+SYMBOL_SMALL_DIAMOND = 9  #:
+SYMBOL_CIRCLE = 20  #:
 
-SYMBOL_3D_SPHERE = 0 #:
-SYMBOL_3D_CUBE = 1 #:
-SYMBOL_3D_CYLINDER = 2 #:
-SYMBOL_3D_CONE = 3 #:
+SYMBOL_3D_SPHERE = 0  #:
+SYMBOL_3D_CUBE = 1  #:
+SYMBOL_3D_CYLINDER = 2  #:
+SYMBOL_3D_CONE = 3  #:
 
 _weight_factor = (1.0 / 48.0, 1.0 / 24.0, 1.0 / 16.0, 1.0 / 12.0, 0.145, 1.0 / 4.0)
 
-FONT_WEIGHT_ULTRALIGHT = 1 #:
-FONT_WEIGHT_LIGHT = 2 #:
-FONT_WEIGHT_MEDIUM = 3 #:
-FONT_WEIGHT_BOLD = 4 #:
-FONT_WEIGHT_XBOLD = 5 #:
-FONT_WEIGHT_XXBOLD = 6 #:
+FONT_WEIGHT_ULTRALIGHT = 1  #:
+FONT_WEIGHT_LIGHT = 2  #:
+FONT_WEIGHT_MEDIUM = 3  #:
+FONT_WEIGHT_BOLD = 4  #:
+FONT_WEIGHT_XBOLD = 5  #:
+FONT_WEIGHT_XXBOLD = 6  #:
 
-CMODEL_RGB = 0 #:
-CMODEL_CMY = 1 #:
-CMODEL_HSV = 2 #:
+CMODEL_RGB = 0  #:
+CMODEL_CMY = 1  #:
+CMODEL_HSV = 2  #:
 
-C_BLACK = 67108863 #:
-C_RED = 33554687 #:
-C_GREEN = 33619712 #:
-C_BLUE = 50266112 #:
-C_CYAN = 50331903 #:
-C_MAGENTA = 50396928 #:
-C_YELLOW = 67043328 #:
-C_GREY = 41975936 #:
-C_LT_RED = 54542336 #:
-C_LT_GREEN = 54526016 #:
-C_LT_BLUE = 50348096 #:
-C_LT_CYAN = 50331712 #:
-C_LT_MAGENTA = 50348032 #:
-C_LT_YELLOW = 54525952 #:
-C_LT_GREY = 54542400 #:
-C_GREY10 = 51910680 #:
-C_GREY25 = 54542400 #:
-C_GREY50 = 41975936 #:
-C_WHITE = 50331648 #:
-C_TRANSPARENT = 0 #:
+C_BLACK = 67108863  #:
+C_RED = 33554687  #:
+C_GREEN = 33619712  #:
+C_BLUE = 50266112  #:
+C_CYAN = 50331903  #:
+C_MAGENTA = 50396928  #:
+C_YELLOW = 67043328  #:
+C_GREY = 41975936  #:
+C_LT_RED = 54542336  #:
+C_LT_GREEN = 54526016  #:
+C_LT_BLUE = 50348096  #:
+C_LT_CYAN = 50331712  #:
+C_LT_MAGENTA = 50348032  #:
+C_LT_YELLOW = 54525952  #:
+C_LT_GREY = 54542400  #:
+C_GREY10 = 51910680  #:
+C_GREY25 = 54542400  #:
+C_GREY50 = 41975936  #:
+C_WHITE = 50331648  #:
+C_TRANSPARENT = 0  #:
 
-REF_BOTTOM_LEFT = 0 #:
-REF_BOTTOM_CENTER = 1 #:
-REF_BOTTOM_RIGHT = 2 #:
-REF_CENTER_LEFT = 3 #:
-REF_CENTER = 4 #:
-REF_CENTER_RIGHT = 5 #:
-REF_TOP_LEFT = 6 #:
-REF_TOP_CENTER = 7 #:
-REF_TOP_RIGHT = 8 #:
+REF_BOTTOM_LEFT = 0  #:
+REF_BOTTOM_CENTER = 1  #:
+REF_BOTTOM_RIGHT = 2  #:
+REF_CENTER_LEFT = 3  #:
+REF_CENTER = 4  #:
+REF_CENTER_RIGHT = 5  #:
+REF_TOP_LEFT = 6  #:
+REF_TOP_CENTER = 7  #:
+REF_TOP_RIGHT = 8  #:
 
-GROUP_ALL = 0 #:
-GROUP_MARKED = 1 #:
-GROUP_VISIBLE = 2 #:
-GROUP_AGG = 3 #:
-GROUP_CSYMB = 4 #:
-GROUP_VOXD = 5 #:
+GROUP_ALL = 0  #:
+GROUP_MARKED = 1  #:
+GROUP_VISIBLE = 2  #:
+GROUP_AGG = 3  #:
+GROUP_CSYMB = 4  #:
+GROUP_VOXD = 5  #:
 
-LOCATE_FIT = gxapi.MVIEW_RELOCATE_FIT #:
-LOCATE_FIT_KEEP_ASPECT = gxapi.MVIEW_RELOCATE_ASPECT #:
-LOCATE_CENTER = gxapi.MVIEW_RELOCATE_ASPECT_CENTER #:
+LOCATE_FIT = gxapi.MVIEW_RELOCATE_FIT  #:
+LOCATE_FIT_KEEP_ASPECT = gxapi.MVIEW_RELOCATE_ASPECT  #:
+LOCATE_CENTER = gxapi.MVIEW_RELOCATE_ASPECT_CENTER  #:
 
-COLOR_BAR_RIGHT = 0 #:
-COLOR_BAR_LEFT = 1 #:
-COLOR_BAR_BOTTOM = 2 #:
-COLOR_BAR_TOP = 3 #:
+COLOR_BAR_RIGHT = 0  #:
+COLOR_BAR_LEFT = 1  #:
+COLOR_BAR_BOTTOM = 2  #:
+COLOR_BAR_TOP = 3  #:
 
-COLOR_BAR_ANNOTATE_RIGHT = 1 #:
-COLOR_BAR_ANNOTATE_LEFT = -1 #:
-COLOR_BAR_ANNOTATE_TOP = 1 #:
-COLOR_BAR_ANNOTATE_BOTTOM = -1 #:
+COLOR_BAR_ANNOTATE_RIGHT = 1  #:
+COLOR_BAR_ANNOTATE_LEFT = -1  #:
+COLOR_BAR_ANNOTATE_TOP = 1  #:
+COLOR_BAR_ANNOTATE_BOTTOM = -1  #:
 
-CYLINDER_OPEN = 0 #:
-CYLINDER_CLOSE_START = 1 #:
-CYLINDER_CLOSE_END = 2 #:
-CYLINDER_CLOSE_ALL = 3 #:
+CYLINDER_OPEN = 0  #:
+CYLINDER_CLOSE_START = 1  #:
+CYLINDER_CLOSE_END = 2  #:
+CYLINDER_CLOSE_ALL = 3  #:
 
-POINT_STYLE_DOT = 0 #:
-POINT_STYLE_SPHERE = 1 #:
+POINT_STYLE_DOT = 0  #:
+POINT_STYLE_SPHERE = 1  #:
 
-LINE3D_STYLE_LINE = 0 #:
-LINE3D_STYLE_TUBE = 1 #:
-LINE3D_STYLE_TUBE_JOINED = 2 #:
+LINE3D_STYLE_LINE = 0  #:
+LINE3D_STYLE_TUBE = 1  #:
+LINE3D_STYLE_TUBE_JOINED = 2  #:
 
 _uom_attr = '/geosoft/data/unit_of_measure'
 
@@ -251,6 +254,7 @@ def edge_reference(area, reference):
 
     return centroid + gxgm.Point((xoff, yoff))
 
+
 class Group:
     """
     Geosoft group class.
@@ -273,9 +277,9 @@ class Group:
         :name_uom:          uom decorated group name as it appears in a view
         :extent:            extent of the group in view units
         :extent_map_cm:     extent of the group in map cm
-        :drawing_coordinate_system:        the coordinate system of drawing coordinates. Setting to None will reset drawing
-                            coordinates to the view cs.  If `drawing_coordinate_system` is set to some other cs the drawing
-                            coordinates will be transformed into the view cs.
+        :drawing_coordinate_system: the coordinate system of drawing coordinates. Setting to None will reset drawing
+                            coordinates to the view cs.  If `drawing_coordinate_system` is set to some other cs the
+                            drawing coordinates will be transformed into the view cs.
 
     .. versionadded:: 9.2
 
@@ -349,7 +353,6 @@ class Group:
         finally:
             _lock.release()
 
-        self._gx = gx.GXpy()
         self.group_3d = False
         if view.is_3d:
             self.group_3d = group_3d
@@ -380,7 +383,6 @@ class Group:
                 self._name = gxu.unique_name(name, self.view.gxview.exist_group, separator='_')
 
         elif self.view.gxview.exist_group(self.name):
-            sr = gxapi.str_ref()
             group_number = self.view.gxview.find_group(self.name)
             if self.view.gxview.group_storage_exists(group_number, "Geosoft_META"):
                 bf = self.view.gxview.read_group_storage(group_number, "Geosoft_META")
@@ -552,6 +554,7 @@ class Group:
         self._new_meta = True
         self._meta = meta
 
+
 def _draw(func):
     @wraps(func)
     def wrapper(self, *args, **kwargs):
@@ -571,19 +574,22 @@ def _draw(func):
 
     return wrapper
 
-def _make_Point(p):
+
+def _make_point(p):
     if isinstance(p, gxgm.Point):
         return p
     else:
         return gxgm.Point(p)
 
-def _make_Point2(p2):
+
+def _make_point2(p2):
     if isinstance(p2, gxgm.Point2):
         return p2
     else:
         return gxgm.Point2(p2)
 
-def _make_PPoint(p):
+
+def _make_ppoint(p):
     if isinstance(p, gxgm.PPoint):
         return p
     else:
@@ -621,7 +627,7 @@ class Draw(Group):
         # instead we draw a filled box
         self.view.gxview.symb_number(4)
         self.view.gxview.symb_color(0)
-        self.view.gxview.symb_fill_color(self.pen.line_color._color)
+        self.view.gxview.symb_fill_color(self.pen.line_color.int_value)
         self.view.gxview.symb_size(self.pen.line_thick)
 
     @property
@@ -658,7 +664,7 @@ class Draw(Group):
         if type(pen) is str:
             pen = Pen.from_mapplot_string(pen)
         if self._pen.line_color != pen.line_color:
-            self.view.gxview.line_color(pen._line_color.int_value)
+            self.view.gxview.line_color(pen.line_color.int_value)
         if self._pen.line_thick != pen.line_thick:
             self.view.gxview.line_thick(pen.line_thick)
         if self._pen.line_smooth != pen.line_smooth:
@@ -666,7 +672,7 @@ class Draw(Group):
         if (self._pen.line_style != pen.line_style) or (self._pen.line_pitch != pen.line_pitch):
             self.view.gxview.line_style(pen.line_style, pen.line_pitch)
         if self._pen.fill_color != pen.fill_color:
-            self.view.gxview.fill_color(pen._fill_color.int_value)
+            self.view.gxview.fill_color(pen.fill_color.int_value)
         if self._pen.pat_number != pen.pat_number:
             self.view.gxview.pat_number(pen.pat_number)
         if self._pen.pat_angle != pen.pat_angle:
@@ -729,9 +735,9 @@ class Draw(Group):
         if self._text_def != text_def:
             self._text_def = text_def
             self.view.gxview.text_font(text_def.font,
-                                  text_def.gfn,
-                                  text_def.weight,
-                                  text_def.italics)
+                                       text_def.gfn,
+                                       text_def.weight,
+                                       text_def.italics)
             self.view.gxview.text_size(text_def.height)
             self.view.gxview.text_color(text_def.color.int_value)
 
@@ -762,7 +768,7 @@ class Draw(Group):
         self._set_dot_symbol()
 
         if not((len(pp) == 2) and isinstance(pp[0], gxvv.GXvv)):
-            pp = _make_PPoint(pp)
+            pp = _make_ppoint(pp)
             pp = (gxvv.GXvv(pp.x), gxvv.GXvv(pp.y))
         self.view.gxview.symbols(pp[0].gxvv, pp[1].gxvv)
 
@@ -776,7 +782,7 @@ class Draw(Group):
         .. versionadded:: 9.2
         """
 
-        p2 = _make_Point2(p2)
+        p2 = _make_point2(p2)
         self.view.gxview.line(p2.p0.x, p2.p0.y, p2.p1.x, p2.p1.y)
 
     @_draw
@@ -796,7 +802,7 @@ class Draw(Group):
         """
 
         if not((len(pp) == 2) and isinstance(pp[0], gxvv.GXvv)):
-            pp = _make_PPoint(pp)
+            pp = _make_ppoint(pp)
             pp = (gxvv.GXvv(pp.x), gxvv.GXvv(pp.y))
 
         if close:
@@ -805,7 +811,7 @@ class Draw(Group):
             self.view.gxview.poly_line(gxapi.MVIEW_DRAW_POLYLINE, pp[0].gxvv, pp[1].gxvv)
 
     @_draw
-    def polygon(self, pp, close=False):
+    def polygon(self, pp):
         """
         Draw a polygon on the current plane.
         
@@ -828,7 +834,7 @@ class Draw(Group):
         .. versionadded:: 9.2
         """
 
-        p2 = _make_Point2(p2)
+        p2 = _make_point2(p2)
         self.view.gxview.rectangle(p2.p0.x, p2.p0.y, p2.p1.x, p2.p1.y)
 
     @_draw
@@ -839,8 +845,8 @@ class Draw(Group):
         :param style:   `GRATICULE_LINE`, `GRATICULE_CROSS` or `GRATICULE_DOT`
         :param dx:      vertical line separation
         :param dy:      horizontal line separation
-        :param ddh:     horizontal cross size for `GRATICULE_CROSS`
-        :param ddv:     vertical cross size for `GRATICULE_CROSS`
+        :param ddx:     horizontal cross size for `GRATICULE_CROSS`
+        :param ddy:     vertical cross size for `GRATICULE_CROSS`
 
         .. versionadded:: 9.2
         """
@@ -858,10 +864,9 @@ class Draw(Group):
             ddx = dx * 0.25
         self.view.gxview.grid(dx, dy, ddx, ddy, style)
 
-
     def text(self,
              text,
-             location=(0,0),
+             location=(0, 0),
              reference=REF_BOTTOM_LEFT,
              angle=0.,
              text_def=None):
@@ -881,7 +886,6 @@ class Draw(Group):
 
         :param angle:       baseline angle in degrees clockwise
         :param text_def:    text definition, if not set the current definition is used
-        :param line_spacing: the line spacing for multi-line text as a factor of the text height, default is 1.5
 
         .. versionadded:: 9.2
         """
@@ -978,11 +982,11 @@ class Draw_3d(Draw):
         """
 
         # solids use the fill color as the object color
-        fci = self.pen._fill_color.int_value
-        self.view.gxview.fill_color(self.pen._line_color.int_value)
+        fci = self.pen.fill_color.int_value
+        self.view.gxview.fill_color(self.pen.line_color.int_value)
 
         try:
-            p = _make_Point(p)
+            p = _make_point(p)
             self.view.gxview.sphere_3d(p.x, p.y, p.z, radius)
         finally:
             self.view.gxview.fill_color(fci)
@@ -999,9 +1003,9 @@ class Draw_3d(Draw):
         """
 
         # solids use the fill color as the object color
-        fci = self.pen._fill_color.int_value
-        self.view.gxview.fill_color(self.pen._line_color.int_value)
-        pp = _make_Point2(p2)
+        fci = self.pen.fill_color.int_value
+        self.view.gxview.fill_color(self.pen.line_color.int_value)
+        pp = _make_point2(p2)
 
         try:
             if wireframe:
@@ -1014,20 +1018,19 @@ class Draw_3d(Draw):
                 sq += (0, 0, pp.p1.z - pp.p0.z)
                 self.polyline_3d(sq, style=LINE3D_STYLE_TUBE_JOINED)
                 self.cylinder_3d(gxgm.Point2(((pp.p0.x, pp.p0.y, pp.p0.z), (pp.p0.x, pp.p0.y, pp.p1.z))),
-                                 radius = self.pen.line_thick * 0.5)
+                                 radius=self.pen.line_thick * 0.5)
                 self.cylinder_3d(gxgm.Point2(((pp.p0.x, pp.p1.y, pp.p0.z), (pp.p0.x, pp.p1.y, pp.p1.z))),
-                                 radius = self.pen.line_thick * 0.5)
+                                 radius=self.pen.line_thick * 0.5)
                 self.cylinder_3d(gxgm.Point2(((pp.p1.x, pp.p1.y, pp.p0.z), (pp.p1.x, pp.p1.y, pp.p1.z))),
-                                 radius = self.pen.line_thick * 0.5)
+                                 radius=self.pen.line_thick * 0.5)
                 self.cylinder_3d(gxgm.Point2(((pp.p1.x, pp.p0.y, pp.p0.z), (pp.p1.x, pp.p0.y, pp.p1.z))),
-                                 radius = self.pen.line_thick * 0.5)
+                                 radius=self.pen.line_thick * 0.5)
 
             else:
                 self.view.gxview.box_3d(pp.p0.x, pp.p0.y, pp.p0.z,
                                         pp.p1.x, pp.p1.y, pp.p1.z)
         finally:
             self.view.gxview.fill_color(fci)
-
 
     @_draw
     def cylinder_3d(self, p2, radius, r2=None, close=CYLINDER_CLOSE_ALL):
@@ -1050,14 +1053,14 @@ class Draw_3d(Draw):
         """
 
         # solids use the fill color as the object color
-        fci = self.pen._fill_color.int_value
-        self.view.gxview.fill_color(self.pen._line_color.int_value)
+        fci = self.pen.fill_color.int_value
+        self.view.gxview.fill_color(self.pen.line_color.int_value)
 
         if close != CYLINDER_CLOSE_ALL:
             self.render_backfaces = True
 
         try:
-            p2 = _make_Point2(p2)
+            p2 = _make_point2(p2)
             if r2 is None:
                 r2 = radius
             self.view.gxview.cylinder_3d(p2.p0.x, p2.p0.y, p2.p0.z,
@@ -1066,7 +1069,6 @@ class Draw_3d(Draw):
                                          close)
         finally:
             self.view.gxview.fill_color(fci)
-
 
     @_draw
     def cone_3d(self, p2, radius):
@@ -1088,6 +1090,7 @@ class Draw_3d(Draw):
                                         vvx.gxvv, vvy.gxvv, vvz.gxvv,
                                         null_vv, null_vv, null_vv,
                                         null_vv, null_vv, null_vv)
+
     @_draw
     def polypoint_3d(self, points, style=POINT_STYLE_DOT):
         """
@@ -1100,7 +1103,7 @@ class Draw_3d(Draw):
         .. versionadded:: 9.2
         """
 
-        points = _make_PPoint(points)
+        points = _make_ppoint(points)
         if style == POINT_STYLE_DOT:
             self._poly_3d(points, gxapi.MVIEW_DRAWOBJ3D_ENTITY_POINTS)
         else:
@@ -1120,7 +1123,7 @@ class Draw_3d(Draw):
 
         .. versionadded:: 9.2 
         """
-        points = _make_PPoint(points)
+        points = _make_ppoint(points)
         if points.length < 2:
             raise GroupException(_t('Need at least two points.'))
         if style == LINE3D_STYLE_LINE:
@@ -1142,7 +1145,6 @@ class Draw_3d(Draw):
         """
         Create 3D objects rendered using data attributes.
 
-        :param view:                a 3D view in which to place the group
         :param data:                iterable that yields items passed to your `render_info_func` callback
         :param render_info_func:    a callback that given `(item, passback)` returns the rendering `(symbol_type,
                                     geometry, color_integer, attibute)`:
@@ -1207,19 +1209,58 @@ class Draw_3d(Draw):
                 else:
                     raise GroupException(_t('Symbol type not implemented'))
 
+    def add_surface_vv(self, faces, verticies, normals, coordinate_system=None, color=C_GREY):
+        """
+        Draw triangles defined by faces, verticies and normals in `geosoft.gxpy.vv.GXvv` instances.
+
+        :param faces:               (i1, i2, i2) triangle faces as indexes into verticies
+        :param verticies:           (vx, vy, vz) verticies
+        :param normals:             (nx, ny, nz) vertex normals
+        :param coordinate_system:   coordinate system, default is the same as the drawing system
+        :param color:               `Color` instance or color value for a solid colour, or a
+                                    `geosoft.gxpy.vv.GXvv` of color integers for each vertex
+
+        .. versionadded:: 9.3.1
+        """
+
+        i1, i2, i3 = faces
+        vx, vy, vz = verticies
+        nx, ny, nz = normals
+
+        if coordinate_system is None:
+            coordinate_system = self.drawing_coordinate_system
+        else:
+            if not isinstance(coordinate_system, gxcs.Coordinate_system):
+                coordinate_system = gxcs.Coordinate_system(coordinate_system)
+
+        if isinstance(color, Color):
+            color = color.int_value
+        if isinstance(color, gxvv.GXvv):
+            colorvv = color
+        else:
+            colorvv = gxapi.GXVV.null()
+
+        self.view.gxview.draw_surface_3d_ex(self.name,
+                                            vx.gxvv, vy.gxvv, vz.gxvv,
+                                            nx.gxvv, ny.gxvv, nz.gxvv,
+                                            colorvv, color,
+                                            i1.gxvv, i2.gxvv, i3.gxvv,
+                                            coordinate_system.gxipj)
+
 
 def contour(view, group_name, grid_file_name, **kwargs):
     """
     Create a contour group from a grid file.  A default contour interval is determined from the grid.
 
-    :param group_name: name for the contour group
-    :param grid_file_name: Grid file name
+    :param view:            `geosoft.gxpy.view.View` instance
+    :param group_name:      name for the contour group
+    :param grid_file_name:  Grid file name
 
     .. versionadded:: 9.3
     """
 
     with Draw(view, group_name) as g:
-        g.contour(grid_file_name, **kwargs)
+        g.contour(grid_file_name)
 
 
 def legend_color_bar(view,
@@ -1304,9 +1345,9 @@ def legend_color_bar(view,
                     minz = z
                 elif z > maxz:
                     maxz = z
-        range = maxz - minz
-        while range < 100:
-            range *= 10.
+        delta = maxz - minz
+        while delta < 100:
+            delta *= 10.
             decimals += 1
 
     itr = cmap.gxitr
@@ -1401,10 +1442,10 @@ def legend_color_bar(view,
             g.text_def = Text_def(height=title_height, weight=FONT_WEIGHT_BOLD)
             p = gxgm.Point(edge_reference(g.extent, REF_BOTTOM_CENTER))
             p -= (0, title_height * 0.5)
-            try:
+            if '\n' in title:
                 tline = title[:title.index('\n')]
                 title = title[title.index('\n') + 1:]
-            except:
+            else:
                 tline = title
                 title = ''
             g.text(tline, p, reference=REF_TOP_CENTER)
@@ -1438,7 +1479,7 @@ def legend_color_bar(view,
                 location = (0, default_offset)
             xy = edge_reference(area, REF_TOP_CENTER)
             reference = REF_BOTTOM_CENTER
-        else: #BAR_RIGHT
+        else:  # BAR_RIGHT
             if location is None:
                 location = (default_offset, 0)
             xy = edge_reference(area, REF_CENTER_RIGHT)
@@ -1541,7 +1582,7 @@ class Color:
         g = gxapi.int_ref()
         b = gxapi.int_ref()
         gxapi.GXMVIEW.color2_rgb(self._color, r, g, b)
-        return (r.value, g.value, b.value)
+        return r.value, g.value, b.value
 
     @rgb.setter
     def rgb(self, rgb):
@@ -1577,13 +1618,14 @@ class Color:
             c = max(c - w, 0)
             m = max(m - w, 0)
             y = max(y - w, 0)
-            return Color((c, m, y), model = CMODEL_CMY)
+            return Color((c, m, y), model=CMODEL_CMY)
         else:
             k = round(-brightness * 255)
             c = max(c + k, 255)
             m = max(m + k, 255)
             y = max(y + k, 255)
             return Color((c, m, y), model=CMODEL_CMY)
+
 
 def font_weight_from_line_thickness(line_thick, height):
     """
@@ -1678,6 +1720,13 @@ class Text_def:
 
     def __init__(self, **kwargs):
 
+        self._color = None
+        self._font = None
+        self._height = None
+        self._gfn = None
+        self._weight = None
+        self._italics = None
+
         if 'default' in kwargs:
             def_pen = kwargs.pop('default')
             self.__dict__ = def_pen.__dict__.copy()
@@ -1713,10 +1762,9 @@ class Text_def:
                 self.weight = font_weight_from_line_thickness(line_thick, self.height)
 
     def __eq__(self, other):
-        try:
+        if hasattr(other, '__dict__'):
             return self.__dict__ == other.__dict__
-        except:
-            return False
+        return False
 
     def __ne__(self, other):
         return self.__dict__ != other.__dict__
@@ -1847,6 +1895,19 @@ class Pen:
 
     def __init__(self, **kwargs):
 
+        self._line_color = None
+        self._line_thick = None
+        self._line_style = None
+        self._line_pitch = None
+        self._line_smooth = None
+        self._fill_color = None
+        self._pat_number = None
+        self._pat_angle = None
+        self._pat_density = None
+        self._pat_size = None
+        self._pat_style = None
+        self.__pat_thick = None
+
         if 'default' in kwargs:
             def_pen = kwargs.pop('default')
             self.__dict__ = def_pen.__dict__.copy()
@@ -1908,48 +1969,48 @@ class Pen:
         .. versionadded:: 9.2
         """
 
-        def color_model(cstr):
-            s = cstr.lower()
+        def color_model(colstr):
+            s = colstr.lower()
             for c in 'cmy':
                 if c in s:
                     return 'cmyk'
             return 'rgbk'
 
-        def get_part(cstr, c, default=255):
-            if c not in cstr:
+        def get_part(colstr, c, default=255):
+            if c not in colstr:
                 return 0
-            start = cstr.index(c)
+            start = colstr.index(c)
             end = start + 1
-            for c in cstr[end:]:
+            for c in colstr[end:]:
                 if not (c in '0123456789'):
                     break
                 end += 1
             if end == start + 1:
                 return default
-            return int(cstr[start + 1:end])
+            return int(colstr[start + 1:end])
 
         def add_k(c, k):
             return max(c[0] - k, 0), max(c[1] - k, 0), max(c[2] - k, 0)
 
-        def has_color(cstr, cc):
+        def has_color(colstr, cc):
             for c in cc:
-                if c in cstr:
+                if c in colstr:
                     return True
             return False
 
-        def color(cstr, cc):
-            if has_color(cstr, cc):
-                k = get_part(cstr, cc[3])
-                if has_color(cstr, cc[:3]):
+        def color(colstr, cc):
+            if has_color(colstr, cc):
+                k = get_part(colstr, cc[3])
+                if has_color(colstr, cc[:3]):
                     if model[0] == 'c' or model[0] == 'C':
-                        return add_k((255 - get_part(cstr, cc[0]),
-                                      255 - get_part(cstr, cc[1]),
-                                      255 - get_part(cstr, cc[2])),
+                        return add_k((255 - get_part(colstr, cc[0]),
+                                      255 - get_part(colstr, cc[1]),
+                                      255 - get_part(colstr, cc[2])),
                                      k)
                     else:
-                        return add_k((get_part(cstr, cc[0]),
-                                      get_part(cstr, cc[1]),
-                                      get_part(cstr, cc[2])),
+                        return add_k((get_part(colstr, cc[0]),
+                                      get_part(colstr, cc[1]),
+                                      get_part(colstr, cc[2])),
                                      k)
                 else:
                     return add_k((255, 255, 255), k)
@@ -2055,7 +2116,7 @@ class Color_symbols_group(Group):
         constructed.
 
         :param view:            the view in which to place the group
-        :param group_name:      group name
+        :param name:            group name
         :param data:            iterable that yields `((x, y), data)`, or `((x, y, z), data, ...)`.  Only the
                                 first `data` value is used.
         :param color_map:       symbol fill color :class:`Color_map`.
@@ -2091,8 +2152,8 @@ class Color_symbols_group(Group):
 
         xy = gxgm.PPoint([xy[0] for xy in data if valid(xy)])
         cs._gxcsymb.add_data(gxvv.GXvv(xy.x).gxvv,
-                          gxvv.GXvv(xy.y).gxvv,
-                          gxvv.GXvv([d[1] for d in data if valid(d)]).gxvv)
+                             gxvv.GXvv(xy.y).gxvv,
+                             gxvv.GXvv([d[1] for d in data if valid(d)]).gxvv)
         view.gxview.col_symbol(cs.name, cs._gxcsymb)
 
         if cs.unit_of_measure:
@@ -2166,7 +2227,6 @@ class Aggregate_group(Group):
 
         self.agg = None
         super().__init__(view, group_name, mode=mode)
-
 
     @classmethod
     def new(cls, view, agg, name=None, mode=REPLACE):
@@ -2367,7 +2427,7 @@ class Color_map:
 
         self._next = 0
         self._title = title
-        self._units= unit_of_measure
+        self._units = unit_of_measure
 
     def __iter__(self):
         return self
@@ -2545,13 +2605,13 @@ class Color_map:
         self.gxitr.log_linear(minimum, maximum,
                               gxapi.rDUMMY if contour_interval is None else contour_interval)
 
-
     def set_normal(self, standard_deviation, mean, expansion=1.0, contour_interval=None):
         """
         Set the color boundaries using a normal distribution around a mean.
 
         :param standard_deviation:  the standard deviation of the normal distribution.
         :param mean:                maximum
+        :param expansion:           expand by this factor around the mean
         :param contour_interval:    align color edges on this interval, 10 for powers of 10.
                                     unneeded colors if necessary.
 
@@ -2561,7 +2621,6 @@ class Color_map:
                           mean,
                           expansion,
                           gxapi.rDUMMY if contour_interval is None else contour_interval)
-
 
     def color_of_value(self, value):
         """
@@ -2607,15 +2666,3 @@ class Color_map:
         self.gxitr.save_file(file_name)
 
         return file_name
-
-def surface_group_from_file(view, surface_file, group_name=None, overwrite=False):
-    """Add a surface"""
-
-    if group_name is None:
-        group_name = os.path.basename(surface_file)
-        group_name = os.path.splitext(group_name)[0]
-
-    if view.has_group(group_name) and not overwrite:
-        raise GroupException(_t('Cannot overwerwrite existing group: {}').format(group_name))
-
-    view.gxview.draw_surface_3d_from_file(group_name, surface_file)

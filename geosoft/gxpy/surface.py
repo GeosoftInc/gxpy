@@ -22,14 +22,14 @@ import numpy as np
 
 import geosoft
 import geosoft.gxapi as gxapi
-from . import gx as gx
+from . import gx
 from . import coordinate_system as gxcs
 from . import utility as gxu
 from . import spatialdata as gxspd
 from . import view as gxview
-from . import group as gxgrp
 from . import vox as gxvox
 from . import vv as gxvv
+from . import group as gxg
 
 __version__ = geosoft.__version__
 
@@ -67,33 +67,70 @@ def delete_files(surface_name):
     """
     gxspd.delete_files(_surface_file_name(surface_name))
 
-def norms(vertex, faces):
+
+def _np_from_vv(f, v):
+    """helper function to convert vv faces, verticies to np"""
+    f1, f2, f3 = f
+    vx, vy, vz = v
+    face = np.empty((len(f1), 3), dtype=np.int32)
+    face[:, 0] = f1.np
+    face[:, 1] = f2.np
+    face[:, 2] = f3.np
+    vertex = np.empty((len(vx), 3), dtype=np.float64)
+    vertex[:, 0] = vx.np
+    vertex[:, 1] = vy.np
+    vertex[:, 2] = vz.np
+    return face, vertex
+
+
+def vertex_normals_np(faces, verticies, normal_area=True):
     """
-    Return normals of the verticies based on the faces.
+    Return normals of the verticies based on tringular faces, assuming right-hand
+    winding of vertex for each face.
 
-    :param vertex:  verticies as array of (x, y, z) shaped (-1, 3)
-    :param faces:   faces as array of triangle indexes into vertex, shaped (-1, 3)
-    :return:        vertex normals shaped (-1, 3)
-
-    TODO: needs algorithm to correct norm sign
+    :param faces:       faces as array of triangle indexes into verticies, shaped (-1, 3)
+    :param verticies:   verticies as array of (x, y, z) shaped (-1, 3)
+    :param normal_area: True to weight normals by the area of the connected faces.
+    :return:            vertex normals shaped (-1, 3)
 
     .. versionadded:: 9.3.1
     """
-    def normalize(v):
-        length = np.sqrt(v[:, 0] ** 2 + v[:, 1] ** 2 + v[:, 2] ** 2)
-        v[:, 0] /= length
-        v[:, 1] /= length
-        v[:, 2] /= length
 
-    tris = vertex[faces]
-    n = np.cross(tris[::, 1] - tris[::, 0], tris[::, 2] - tris[::, 0])
-    normalize(n)
-    norm = np.zeros(vertex.shape, dtype=np.float64)
-    norm[faces[:, 0]] += n
-    norm[faces[:, 1]] += n
-    norm[faces[:, 2]] += n
-    normalize(norm)
-    return norm
+    def normalize(v):
+        mag = np.sqrt(v[:, 0] ** 2 + v[:, 1] ** 2 + v[:, 2] ** 2)
+        v[:, 0] /= mag
+        v[:, 1] /= mag
+        v[:, 2] /= mag
+
+    tris = verticies[faces]
+    n = np.cross(tris[::, 1] - tris[::, 0], tris[::, 2] - tris[::, 1])
+    if not normal_area:
+        normalize(n)
+    normals = np.zeros(verticies.shape, dtype=np.float64)
+    normals[faces[:, 0]] += n
+    normals[faces[:, 1]] += n
+    normals[faces[:, 2]] += n
+    normalize(normals)
+    return normals
+
+
+def vertex_normals_vv(faces, verticies, normal_area=True):
+    """
+    Return normals of the verticies based on tringular faces, assuming right-hand
+    winding of vertex for each face.
+
+    :param faces:       (i1, i2, i3) `geosoft.gxpy.vv.GXvv` faces as array of triangle indexes into verticies
+    :param verticies:   (vx, vy, vz) `geosoft.gxpy.vv.GXvv` verticies
+    :param normal_area: True to weight normals by the area of the connected faces.
+    :return:            (nx, ny, nz) `geosoft.gxpy.vv.GXvv` normals
+
+    .. versionadded:: 9.3.1
+    """
+
+    faces, verticies = _np_from_vv(faces, verticies)
+    n = vertex_normals_np(faces, verticies, normal_area=normal_area)
+    return gxvv.GXvv(n[:, 0]), gxvv.GXvv(n[:, 1]), gxvv.GXvv(n[:, 2])
+
 
 # constants
 MODE_READ = gxspd.MODE_READ             #:
@@ -101,9 +138,9 @@ MODE_READWRITE = gxspd.MODE_READWRITE   #: file exists, but can change propertie
 MODE_NEW = gxspd.MODE_NEW               #:
 MODE_APPEND = MODE_READWRITE            #: append to existing surface dataset
 
-RENDER_STYLE_SMOOTH = gxapi.SURFACERENDER_SMOOTH    #:
-RENDER_STYLE_FILL = gxapi.SURFACERENDER_FILL        #:
-RENDER_STYLE_EDGES = gxapi.SURFACERENDER_EDGES      #:
+STYLE_SMOOTH = gxapi.SURFACERENDER_SMOOTH  #:
+STYLE_FILL = gxapi.SURFACERENDER_FILL      #:
+STYLE_EDGE = gxapi.SURFACERENDER_EDGES     #:
 
 
 class SurfaceDataset(gxspd.SpatialData):
@@ -131,6 +168,7 @@ class SurfaceDataset(gxspd.SpatialData):
                 self._gxsurface = None
                 self._surfaces = None
                 super(SurfaceDataset, self)._close()
+                pass
 
     def __init__(self, name, file_name=None, gxsurface=None, mode=None, overwrite=False):
 
@@ -147,6 +185,7 @@ class SurfaceDataset(gxspd.SpatialData):
         self._gxsurface = gxsurface
         self._next = 0
         self._surfaces = None
+        self._new = False
 
     def __iter__(self):
         self._refresh_surfaces()
@@ -163,9 +202,9 @@ class SurfaceDataset(gxspd.SpatialData):
 
     def __getitem__(self, item):
         if isinstance(item, int):
-            item = self.surface_guid[item]
-        gxsurfaceitem = self._gxsurface.get_surface_item(item)
-        return Surface(gxsurfaceitem, surface_dataset=self)
+            item = self.surface_name_list[item]
+        gxsurfaceitem = self._gxsurface.get_surface_item(self.surface_guid(item))
+        return Surface(gxsurfaceitem, surface_dataset=self, render_properties=None)
 
     def __len__(self):
         return self.surface_count
@@ -189,15 +228,16 @@ class SurfaceDataset(gxspd.SpatialData):
             gxapi_surface = gxapi.GXSURFACE.open(_surface_file_name(file_name), mode)
 
         surface_dataset = cls(name, file_name=file_name, gxsurface=gxapi_surface, mode=mode)
+        surface_dataset._new = False
 
         return surface_dataset
 
     @classmethod
-    def new(cls, name, temp=False, overwrite=False, coordinate_system=None):
+    def new(cls, name=None, temp=False, overwrite=False, coordinate_system=None):
         """
         Create a new surface dataset.
 
-        :param name:        dataset name, or a path to a persistent file.
+        :param name:        dataset name, or a path to a persistent file. If None a temporary dataset is created.
         :param temp:        True to create a temporary surface dataset.
         :param overwrite:   True to overwrite existing persistent surface dataset file
         :param coordinate_system:   coordinate system as required to create from `geosoft.gxpy.Coordinate_system`
@@ -205,18 +245,26 @@ class SurfaceDataset(gxspd.SpatialData):
         .. versionadded:: 9.3.1
         """
 
+        if name is None:
+            temp = True
         if temp:
             file_name = gx.gx().temp_file('.geosoft_surface')
             overwrite = True
+            if name is None:
+                name = _surface_name(file_name)
         else:
             file_name = _surface_file_name(name)
+
+        if os.path.exists(file_name) and not overwrite:
+            raise SurfaceException(_t('\'{}\' exists. Use overwrite=True to overwrite existing surface dataset file.').
+                                   format(file_name))
 
         gxsurface = gxapi.GXSURFACE.create(file_name, gxcs.Coordinate_system(coordinate_system).gxipj)
         surface_dataset = cls(name,
                               file_name=file_name,
                               gxsurface=gxsurface,
-                              mode=MODE_NEW,
-                              overwrite=overwrite)
+                              mode=MODE_NEW)
+        surface_dataset._new = True
 
         return surface_dataset
 
@@ -263,19 +311,19 @@ class SurfaceDataset(gxspd.SpatialData):
             surfaces = (surfaces,)
     
         if color is None:
-            color = (gxgrp.C_GREY,
-                     gxgrp.C_GREEN,
-                     gxgrp.C_YELLOW,
-                     gxgrp.C_BLUE,
-                     gxgrp.C_MAGENTA,
-                     gxgrp.C_RED,
-                     gxgrp.C_CYAN)
+            color = (gxg.C_GREY,
+                     gxg.C_GREEN,
+                     gxg.C_YELLOW,
+                     gxg.C_BLUE,
+                     gxg.C_MAGENTA,
+                     gxg.C_RED,
+                     gxg.C_CYAN)
         elif not hasattr(color, '__iter__'):
             color = (color,)
     
         if transparency is None:
             transparency = []
-            max_transparent_surfaces = min(gxgrp.MAX_TRANSPARENT, len(surfaces))
+            max_transparent_surfaces = min(gxg.MAX_TRANSPARENT, len(surfaces))
             for i in range(max_transparent_surfaces):
                 transparency.append((i + 1) * (1. / max_transparent_surfaces))
         elif not hasattr(transparency, '__iter__'):
@@ -286,10 +334,10 @@ class SurfaceDataset(gxspd.SpatialData):
             v3d_file = v3d.file_name
             for i in range(len(surfaces)):
 
-                icolor = gxgrp.Color(color[i % len(color)])
+                icolor = gxg.Color(color[i % len(color)])
                 trans = transparency[min(i, len(transparency) - 1)]
                 if trans < 1.:
-                    if transparent_count > gxgrp.MAX_TRANSPARENT:
+                    if transparent_count > gxg.MAX_TRANSPARENT:
                         trans = 1.
                     else:
                         transparent_count += 1
@@ -313,6 +361,11 @@ class SurfaceDataset(gxspd.SpatialData):
             self._surfaces = gxu.dict_from_lst(gxlst, ordered=True)
 
     @property
+    def is_new(self):
+        """True if this is a new surface dataset. Can only add to new datasets."""
+        return self._new
+
+    @property
     def gxsurface(self):
         """`geosoft.gxapi.GXSURFACE` instance handle"""
         return self._gxsurface
@@ -324,28 +377,53 @@ class SurfaceDataset(gxspd.SpatialData):
         return self._surfaces
 
     @property
-    def surface_names(self):
+    def surface_name_list(self):
         """list of surface names"""
         return list(self.surface_dict.values())
-
-    @property
-    def surface_guid(self):
-        """list of surface GUID"""
-        return list(self.surface_dict.keys())
 
     @property
     def surface_count(self):
         """number of surfaces in the dataset"""
         return len(self.surface_dict)
 
+    def surface_guid(self, name):
+        """
+        Return the guid of a surface based on the name.
+
+        :param name:    Name of the surface.  The first matching surface name is returned.
+        :return:        guid of the surface, or None if the surface not found
+
+        .. versionadded:: 9.3.1
+        """
+
+        # just return the name if it is already a guid
+        if name in self.surface_dict:
+            return name
+        name = name.lower()
+        for guid, sname in self.surface_dict.items():
+            if sname.lower() == name:
+                return guid
+        return None
+
+    def has_surface(self, name):
+        """returns True if this surface name or guid exists in the surface dataset."""
+        if self.surface_guid(name) is None:
+            return False
+        return True
+
     def add_surface(self, surface):
         """
-        Add a surface to the surface dataset
+        Add a surface to the surface dataset.  One can only add surfaces to new datasets.
 
         :param surface: `Surface` instance to add
 
         .. versionadded:: 9.3.1
         """
+        if not self.is_new:
+            raise SurfaceException(_t('Cannot add new surfaces to an existing surface dataset.'))
+
+        if self.has_surface(surface.name):
+            raise SurfaceException(_t('Cannot overwrite existing surface {}').format(surface.name))
 
         if surface.coordinate_system.is_known:
             if not self.coordinate_system.is_known:
@@ -353,15 +431,32 @@ class SurfaceDataset(gxspd.SpatialData):
             elif surface.coordinate_system != self.coordinate_system:
                 raise SurfaceException('Coordinate systems are not the same.')
         self._gxsurface.add_surface_item(surface.gxsurfaceitem)
+        self._surfaces = None
+
+    def add_surface_dataset(self, surface_dataset):
+        """
+        Add the surfaces from an existing surface dataset.
+
+        :param surface_dataset: `SurfaceDataset` instance or a file name
+
+        .. versionadded:: 9.3.1
+        """
+
+        if isinstance(surface_dataset, str):
+            surface_dataset = SurfaceDataset.open(surface_dataset)
+        for s in surface_dataset:
+            self.add_surface(s)
 
 
 class Surface(gxspd.SpatialData):
     """
-    A single surface contained in a surface dataset.
+    A single surface, which is a set triangles.
 
-    :param surface:         surface name or a `geosoft.gxapi.GXSURFACEITEM` instance
-    :param surface_type:    surface type as a descriptive name, such as "ISOSURFACE"
-    :param surface_dataset: optional `SurfaceDataset` instance in which to place a new `Surface`
+    :param surface:             surface name or a `geosoft.gxapi.GXSURFACEITEM` instance.
+    :param surface_type:        surface type as a descriptive name, such as "ISOSURFACE"
+    :param surface_dataset:     optional `SurfaceDataset` instance in which to place a new `Surface`
+    :param render_properties:   (color, transparency, style, normal_area), default is
+                                (`geosoft.gxpy.group.C_GREY`, 1.0, `STYLE_SMOOTH`, True)
 
     .. versionadded:: 9.3.1
     """
@@ -396,19 +491,29 @@ class Surface(gxspd.SpatialData):
     def __str__(self):
         return str((self.guid, self.name, self.surface_type))
 
-    def __init__(self, surface, surface_type='none', surface_dataset=None):
+    def __init__(self, surface, surface_type='none', surface_dataset=None,
+                 render_properties=(gxg.C_GREY, 1.0, STYLE_SMOOTH, True)):
 
-        self._add = False
         if isinstance(surface, str):
-            if surface_dataset:
-                self._add = True
+            if surface_dataset and surface_dataset.has_surface(surface):
+                raise SurfaceException(_t('Cannot overwrite existing surface ({}) in dataset ({}).')
+                                       .format(surface, surface_dataset.name))
+
             surface = gxapi.GXSURFACEITEM.create(surface_type, surface)
+            self._new_surface = True
+            self._add = True  # always add new surfaces
+        else:
+            self._new_surface = False
+            self._add = False
 
         self._gxsurfaceitem = surface
         self._surface_dataset = surface_dataset
         self._properties = None
         self._computed_properties = None
         self._cs = None
+        self._normal_area = True
+        if render_properties:
+            self.render_properties = render_properties
 
         super().__init__(gxobject=self._gxsurfaceitem)
 
@@ -533,7 +638,7 @@ class Surface(gxspd.SpatialData):
         return ''
 
     @property
-    def compontent_count(self):
+    def component_count(self):
         """number of components to this surface, usually 1"""
         return self._gxsurfaceitem.num_components()
 
@@ -546,39 +651,68 @@ class Surface(gxspd.SpatialData):
         return vert.value
 
     @property
-    def triangles_count(self):
-        """number of triangular facets"""
+    def faces_count(self):
+        """number of triangular faces"""
         vert = gxapi.int_ref()
         tri = gxapi.int_ref()
         self._gxsurfaceitem.get_geometry_info(vert, tri)
         return tri.value
 
     @property
-    def render_color(self):
-        """rendering colour as a `geosoft.gxpy.group.Color` instance"""
+    def render_properties(self):
+        """The rendering properties for this surface as (color, transparency, style, normal_area). Can be set."""
         color = gxapi.int_ref()
         trans = gxapi.float_ref()
         style = gxapi.int_ref()
         self._gxsurfaceitem.get_default_render_properties(color, trans, style)
-        return gxgrp.Color(color.value)
+        return gxg.Color(color.value), trans.value, style.value, self._normal_area
+
+    @render_properties.setter
+    def render_properties(self, props):
+        c, t, s, n = props
+        if isinstance(c, gxg.Color):
+            c = c.int_value
+        self._gxsurfaceitem.set_default_render_properties(c, t, s)
+        self._normal_area = bool(n)
+
+    @property
+    def render_color(self):
+        """rendering colour as a `geosoft.gxpy.group.Color` instance"""
+        return self.render_properties[0]
+
+    @render_color.setter
+    def render_color(self, c):
+        _, t, s, n = self.render_properties
+        self.render_properties = (c, t, s, n)
 
     @property
     def render_transparency(self):
         """group transparency, 0.0 (transparent) to 1.0 (opaque)"""
-        color = gxapi.int_ref()
-        trans = gxapi.float_ref()
-        style = gxapi.int_ref()
-        self._gxsurfaceitem.get_default_render_properties(color, trans, style)
-        return trans.value
+        return self.render_properties[1]
+
+    @render_transparency.setter
+    def render_transparency(self, t):
+        c, _, s, n = self.render_properties
+        self.render_properties = (c, t, s, n)
 
     @property
     def render_style(self):
-        """surface rendering style, one of RENDER_STYLE constants"""
-        color = gxapi.int_ref()
-        trans = gxapi.float_ref()
-        style = gxapi.int_ref()
-        self._gxsurfaceitem.get_default_render_properties(color, trans, style)
-        return style.value
+        """surface rendering style, one of STYLE constants"""
+        return self.render_properties[2]
+
+    @render_style.setter
+    def render_style(self, s):
+        c, t, _, n = self.render_properties
+        self.render_properties = (c, t, s, n)
+
+    @property
+    def render_normal_area(self):
+        """True for default surface normalization by face area"""
+        return self._normal_area
+
+    @render_normal_area.setter
+    def render_normal_area(self, n):
+        self._normal_area = bool(n)
 
     @property
     def coordinate_system(self):
@@ -608,45 +742,152 @@ class Surface(gxspd.SpatialData):
         else:
             return {}
 
+    def add_mesh_vv(self, faces, verticies, properties=(gxg.C_GREY, 1.0, STYLE_SMOOTH, True)):
+        """
+        Add a mesh to a new surface.
+
+        :param faces:       triangle faces as a tuple (i1, i2, i3) of indexes into the verticies.
+                            Indexes are instances of `geosoft.gxpy.GXvv`
+        :param verticies:   verticies as an (x, y, z) tuple of `geosoft.gxpy.GXvv` instances
+        :param properties:  (color, transparency, style, normal_area), where colour is a `geosoft.gxpy.group.Color`
+                            instance or a 32-bit Geosoft color integer, transparency is a value between
+                            0. (invisible) and 1. (opaque), and style is STYLE_SMOOTH, STYLE_FILL or
+                            STYLE_EDGE, and normal_area is a boolean True to calculate default
+                            vertex normals weighted by face area.
+        :returns:           component number, which will always be the last component.
+
+        Triangular faces should be wound such that normals are consistant.
+
+        .. versionadded:: 9.3
+        """
+
+        if not self._new_surface:
+            raise SurfaceException(_t('Cannot add to an existing surface ({}) in surface dataset ({})')
+                                   .format(self.name, self._surface_dataset.name))
+
+        f1vv, f2vv, f3vv = faces
+        xvv, yvv, zvv = verticies
+        self._gxsurfaceitem.add_mesh(xvv.gxvv, yvv.gxvv, zvv.gxvv,
+                                     f1vv.gxvv, f2vv.gxvv, f3vv.gxvv)
+        self._add = True
+
+        if properties:
+            self.render_properties = properties
+
+        return self.component_count - 1
+
+    def add_mesh_np(self, faces, verticies, properties=(gxg.C_GREY, 1.0, STYLE_SMOOTH, True)):
+        """
+        Add a mesh to a new surface.
+
+        :param faces:       triangle faces as a numpy array shaped (-1, 3)
+        :param verticies:   verticies as a numpy arrays shapes (-1, 3)
+        :param properties:  (color, transparency, style), where colour is a `geosoft.gxpy.group.Color`
+                            instance or a 32-bit Geosoft color integer, transparency is a value between
+                            0. (invisible) and 1. (opaque), and style is STYLE_SMOOTH, STYLE_FILL or
+                            STYLE_EDGE.
+
+        Triangular faces should be wound such that normals are consistant.
+
+        .. versionadded:: 9.3
+        """
+
+        f1vv = gxvv.GXvv(faces[:, 0])
+        f2vv = gxvv.GXvv(faces[:, 1])
+        f3vv = gxvv.GXvv(faces[:, 2])
+        xvv = gxvv.GXvv(verticies[:, 0])
+        yvv = gxvv.GXvv(verticies[:, 1])
+        zvv = gxvv.GXvv(verticies[:, 2])
+        return self.add_mesh_vv((f1vv, f2vv, f3vv), (xvv, yvv, zvv), properties=properties)
+
     def get_mesh_vv(self, component=0):
         """
         Returns mesh data as a set of VV.
 
-        :param component: component number from a multi-component surface
-        :return: vertex_x, vertex_y, vertex_z, triangle_point_1, triangle_point_2, triangle_point_3
+        :param component:   component number from a multi-component surface
+        :return:            (triangle_index_1, triangle_index_2, triangle_index_3), (vertex_x, vertex_y, vertex_z)
+                            as `geosoft.gxpy.vv.GXvv` instances
 
         .. versionadded:: 9.3.1
         """
 
+        f1 = gxvv.GXvv(dtype=np.int)
+        f2 = gxvv.GXvv(dtype=np.int)
+        f3 = gxvv.GXvv(dtype=np.int)
         vx = gxvv.GXvv()
         vy = gxvv.GXvv()
         vz = gxvv.GXvv()
-        t1 = gxvv.GXvv(dtype=np.int)
-        t2 = gxvv.GXvv(dtype=np.int)
-        t3 = gxvv.GXvv(dtype=np.int)
         self._gxsurfaceitem.get_mesh(component,
                                      vx.gxvv, vy.gxvv, vz.gxvv,
-                                     t1.gxvv, t2.gxvv, t3.gxvv)
-        return vx, vy, vz, t1, t2, t3
+                                     f1.gxvv, f2.gxvv, f3.gxvv)
+        return (f1, f2, f3), (vx, vy, vz)
 
     def get_mesh_np(self, component=0):
         """
-        Returns mesh data as a set of verticies and a set of faces.
+        Returns mesh data as a set of faces and a set of verticies.
 
         :param component:   component number from a multi-component surface
-        :return:            vertex, face. Vertex is a float64 array shaped (-1, 3) and face is an int32 array
-                            shaped (-1, 3) that references the triangle corners.
+        :return:            face, vertex, each a numpy array shaped (-1, 3) with face an int32 array
+                            ff triangle corner indexes into the vertex array.
 
         .. versionadded:: 9.3.1
         """
 
-        vx, vy, vz, t1, t2, t3 = self.get_mesh_vv(component)
+        t, v = self.get_mesh_vv(component)
+        f1, f2, f3 = t
+        vx, vy, vz = v
+        face = np.empty((len(f1), 3), dtype=np.int32)
+        face[:, 0] = f1.np
+        face[:, 1] = f2.np
+        face[:, 2] = f3.np
         vertex = np.empty((len(vx), 3), dtype=np.float64)
         vertex[:, 0] = vx.np
         vertex[:, 1] = vy.np
         vertex[:, 2] = vz.np
-        face = np.empty((len(t1), 3), dtype=np.int32)
-        face[:, 0] = t1.np
-        face[:, 1] = t2.np
-        face[:, 2] = t3.np
-        return vertex, face
+        return face, vertex
+
+
+def draw_surface(view, surface, group_name=None, overwrite=False):
+    """
+    Draw a surface, surface dataset or surface dataset file in a 3D view.
+
+    :param view:        `geosoft.view.View_3d` instance
+    :param surface:     `geosoft.surface.Surface`, `geosoft.surface.SurfaceDataset` or a geosoft_surface file name.
+    :param group_name:  name for the group, which defaults to the source name
+    :param overwrite:   True to overwrite existing group
+
+    .. versionadded:: 9.3.1
+    """
+
+    def exists_error(name):
+        raise SurfaceException(_t('Cannot overwerwrite existing group: {}').format(name))
+
+    def from_file(surface_file, name):
+        if name is None:
+            name = os.path.basename(surface_file)
+            name = os.path.splitext(name)[0]
+        if view.has_group(name) and not overwrite:
+            exists_error(name)
+        view.gxview.draw_surface_3d_from_file(name, surface_file)
+
+    def add_surface(group, sf):
+        for i in range(sf.component_count):
+            f, v = sf.get_mesh_vv(i)
+            n = vertex_normals_vv(f, v, normal_area=sf.render_normal_area)
+            group.add_surface_vv(f, v, n, color=sf.render_color,
+                                 coordinate_system=sf.coordinate_system)
+
+    if isinstance(surface, str):
+        from_file(surface, group_name)
+
+    else:
+        if group_name is None:
+            group_name = 'SURF_' + surface.name
+        if view.has_group(group_name) and not overwrite:
+            exists_error(group_name)
+        with gxg.Draw_3d(view, group_name, mode=gxg.NEW) as g:
+            if isinstance(surface, Surface):
+                add_surface(g, surface)
+            else:
+                for surf in surface:
+                    add_surface(g, surf)
