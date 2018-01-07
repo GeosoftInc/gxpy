@@ -289,6 +289,17 @@ class Test(GXPYTest):
             gxsurf.Surface('billy', surface_dataset=new_sd)
             self.assertTrue(new_sd.has_surface('billy'))
 
+    def test_render_simple(self):
+        self.start()
+
+        with gxvox.Vox.open('C:\\Development\\github\\gxpy\\examples\\tutorial\\Geosoft Voxels\\rjsmith_voxi_density') as vox:
+            with gxsurf.SurfaceDataset.vox_surface(vox, (0.01, 0.02), temp=True) as s:
+                with gxview.View_3d.new() as v3d:
+                    v3d_file = v3d.file_name
+                    gxsurf.draw_surface(v3d, s)
+        image_file = gxmap.Map.open(v3d_file).image_file(pix_width=800)
+        self.assertEqual(gxmap.Map.open(v3d_file).crc_image(), 1290848230)
+
     def test_render(self):
         self.start()
 
