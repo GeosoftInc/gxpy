@@ -3,13 +3,15 @@ Utility functions to support Geosoft Python scripts and modules.
 
 .. note::
 
-    Regression tests provide usage examples: `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_utility.py>`_
+    Regression tests provide usage examples:
+    `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_utility.py>`_
 
 """
 
 import math
 import decimal
 import os
+import numpy as np
 import uuid as uid
 import json
 import datetime
@@ -18,7 +20,6 @@ import binascii
 from time import gmtime, strftime
 from ._jdcal.jdcal import is_leap, gcal2jd, jd2gcal
 from distutils.version import StrictVersion
-import numpy as np
 from collections import OrderedDict
 import xmltodict
 import urllib.request
@@ -70,9 +71,10 @@ def check_version(v, raise_on_fail=True):
     :returns:               True if version is OK, False otherwise(unless raise_on_fail is False)
 
     .. note::  
-        A valid version consists of two or three dot-separated numeric components, with an optional development version tag
-        on the end.  The development version tag consists of the letter 'b' (for beta) followed by a number.  If the numeric components 
-        of two version numbers are equal, then a development version will always be deemed earlier (lesser) than one without.
+        A valid version consists of two or three dot-separated numeric components, with an optional development
+        version tag on the end.  The development version tag consists of the letter 'b' (for beta) followed by
+        a number.  If the numeric components of two version numbers are equal, then a development version will
+        always be deemed earlier (lesser) than one without.
 
         The following are valid version numbers (shown in order of used for meeting minimum requirements):
 
@@ -130,6 +132,7 @@ def dict_from_lst(lst, ordered=False):
         dct[key.value] = val.value
     return dct
 
+
 def xml_from_dict(d, pretty=False):
     """
     Return a unicode XML string of a dictionary.
@@ -153,6 +156,7 @@ def xml_from_dict(d, pretty=False):
 
     xml = xmltodict.unparse(d, pretty=pretty)
     return xml
+
 
 def dict_from_xml(xml):
     """
@@ -206,11 +210,12 @@ def dict_from_xml(xml):
 
     d = xmltodict.parse(xml)
 
-    #strip the generic dictionary root
+    # strip the generic dictionary root
     if '__gx_xml__' in d:
         d = d['__gx_xml__']
 
     return d
+
 
 def merge_dict(d, d2):
     """
@@ -227,7 +232,7 @@ def merge_dict(d, d2):
 
     def update(old, new):
         for k, v in new.items():
-            if not k in old:
+            if k not in old:
                 old[k] = v
             else:
                 if isinstance(v, dict):
@@ -237,6 +242,7 @@ def merge_dict(d, d2):
 
     update(d, d2)
     return d
+
 
 def geosoft_metadata(geosoft_file_name):
     """
@@ -258,6 +264,7 @@ def geosoft_metadata(geosoft_file_name):
     if metadata:
         return metadata
     return {'metadata': {}}
+
 
 def time_stamp():
     """current date-time as a string."""
@@ -412,9 +419,9 @@ def rdecode(s):
     """
 
     try:
-        return (rdecode_err(s))
+        return rdecode_err(s)
     except ValueError:
-        return (gxapi.rDUMMY)
+        return gxapi.rDUMMY
 
 
 def decode(s, f):
@@ -528,10 +535,10 @@ def gx_dtype(dtype):
         return gxapi.GS_TYPE_DEFAULT
     dtype = np.dtype(dtype)
     try:
-        return (_np2gx_type[str(dtype)])
+        return _np2gx_type[str(dtype)]
     except KeyError:
         if dtype.type is np.str_:
-            return -(int(dtype.str[2:]))
+            return -int(dtype.str[2:])
 
 
 def dtype_gx(gtype):
@@ -665,13 +672,14 @@ def gx_dummy(dtype):
         dtype = np.dtype(type(dtype))
 
     try:
-        return (_dummy_map[dtype])
+        return _dummy_map[dtype]
 
     except KeyError:
         s = str(dtype)
         if s[0] == 'U' or s[1] == 'U':
             return ''
         raise
+
 
 def dummy_none(v):
     """ 
@@ -745,12 +753,11 @@ def reg_from_dict(rd, max_size=4096, json_encode=True):
     
     :param rd:          dictionary
     :param max_size:    maximum "key=value" string size
-    :param json:        True to encode non-string values as sas json strings (prefix '_JSON:')
-                        False will encode non-string values as ``str(value)``
-    :returns:           :class:`geosoft.gxapi.GXREG` instance
+    :param json_encode  if True, non-string values in the dictionary are converted to JSON strings and stored as
+                        "_JSON:json-string". False will encode non-string values as ``str(value)``
+    :returns:           `geosoft.gxapi.GXREG` instance
 
-    Non-string values in the dictionary are converted to JSON strings and stored as
-    "_JSON:json-string}"
+
     """
     reg = gxapi.GXREG.create(max_size)
     for key, value in rd.items():
@@ -862,11 +869,11 @@ def get_parameters(group='_', parms=None, default=None):
                 p[k] = default
 
     else:
-        hREG = gxapi.GXREG.create(4096)
-        gxapi.GXSYS.get_reg(hREG, group)
+        h_reg = gxapi.GXREG.create(4096)
+        gxapi.GXSYS.get_reg(h_reg, group)
         k = gxapi.str_ref()
-        for i in range(hREG.entries()):
-            hREG.get_one(i, k, sv)
+        for i in range(h_reg.entries()):
+            h_reg.get_one(i, k, sv)
             key = k.value.split('.')[1]
             try:
                 p[key] = json.loads(sv.value)
@@ -943,6 +950,7 @@ def uuid():
     else:
         return str(str(uid.uuid1()))
 
+
 def _temp_dict_file_name():
     """Name of the expected python dictionary as a json file from run_external_python().
 
@@ -951,22 +959,22 @@ def _temp_dict_file_name():
     return '__shared_dictionary__'
 
 
-def set_shared_dict(dict=None):
+def set_shared_dict(shared_dict=None):
     """
     Save a dictionary to be shared by an separate application.
     This is a companion file to run_external_python().
 
-    :param dict:  dictionary of parameters to save
+    :param shared_dict:  dictionary of parameters to save
 
     .. versionadded:: 9.1
     """
 
     # if no dictionary, pop the existing one if it is there
-    if dict is None:
+    if shared_dict is None:
         get_shared_dict()
     else:
         with open(_temp_dict_file_name(), 'w') as f:
-            json.dump(dict, f)
+            json.dump(shared_dict, f)
 
 
 def get_shared_dict():
@@ -979,9 +987,9 @@ def get_shared_dict():
 
     try:
         with open(_temp_dict_file_name(), 'r') as f:
-            dict = json.load(f)
+            shared_dict = json.load(f)
         os.remove(_temp_dict_file_name())
-        return dict
+        return shared_dict
 
     except (IOError, OSError):
         return {}
@@ -989,7 +997,7 @@ def get_shared_dict():
 
 def run_external_python(script, script_args='',
                         python_args='',
-                        dict=None,
+                        shared_dict=None,
                         console=True,
                         catcherr=True):
     """
@@ -998,7 +1006,7 @@ def run_external_python(script, script_args='',
     and gxpy.utility.set_shared_dict(return_dictionary) to return a dictionary back to caller.
 
     :param script:      full path of the python script
-    :param dict:        dictionary passed to the external script (get_shared_dict() to retrieve)
+    :param shared_dict: dictionary passed to the external script (get_shared_dict() to retrieve)
     :param script_args: command line arguments as a string
     :param python_args: command line arguments as a string
     :param console:     True (default) will create a separate console for the process.
@@ -1017,7 +1025,7 @@ def run_external_python(script, script_args='',
 
     command = "\"{}\" {} \"{}\" {}".format(py, python_args, script, script_args)
 
-    set_shared_dict(dict)
+    set_shared_dict(shared_dict)
 
     kwargs = {}
     if console:
@@ -1038,16 +1046,16 @@ def run_external_python(script, script_args='',
     return get_shared_dict()
 
 
-def crc32(bytes, crc=0):
+def crc32(byte_buffer, crc=0):
     """
     Return 32-bit CRC of a byte buffer.
 
-    :param bytes:   byte buffer (fulfills the Buffer Protocol)
-    :param crc:     seed crc, can be passed along to accumulate the crc
+    :param byte_buffer: byte buffer (fulfills the Buffer Protocol)
+    :param crc:         seed crc, can be passed along to accumulate the crc
 
     .. versionadded:: 9.2
     """
-    crc = binascii.crc32(bytes, crc)
+    crc = binascii.crc32(byte_buffer, crc)
     return crc
 
 
@@ -1061,9 +1069,9 @@ def crc32_file(filename, crc=0):
     .. versionadded:: 9.2
     """
 
-    def readbuff(f, bsize=16384):
+    def readbuff(ff, bsize=16384):
         while True:
-            buff = f.read(bsize)
+            buff = ff.read(bsize)
             if not buff:
                 break
             yield buff
@@ -1126,6 +1134,7 @@ def str_significant(value, n, mode=0):
     Return a formatted string to n significant figures.
     
     :param value:   value to format
+    :param n:       number of significant digits
     :param mode:    0 round, 1 ceiling, -1 floor
     :returns:       string to n significant figures
     """
@@ -1168,6 +1177,7 @@ def str_significant(value, n, mode=0):
 
     return str(decimal.Decimal(vstr) * mult * (10 ** decimal.Decimal(power - n)))
 
+
 def url_retrieve(url, filename=None, overwrite=False, reporthook=None):
     """
     Retrieve a URL resource as a file.
@@ -1196,6 +1206,7 @@ def url_retrieve(url, filename=None, overwrite=False, reporthook=None):
     file, message = urllib.request.urlretrieve(url.replace(' ', '%20'), filename=filename, reporthook=reporthook)
     return file
 
+
 def delete_file(file_name):
     """
     Delete a file, does nothing if file does not exist.
@@ -1209,7 +1220,8 @@ def delete_file(file_name):
     except FileNotFoundError:
         pass
 
-def unique_name(name, invalid=None, separator='()', maxversion = 1000):
+
+def unique_name(name, invalid=None, separator='()', maxversion=1000):
     """
     Build a unique name or file name.
     
@@ -1228,30 +1240,30 @@ def unique_name(name, invalid=None, separator='()', maxversion = 1000):
     .. versionadded:: 9.3.1
     """
 
-    def parts(name):
+    def parts():
         path, file = os.path.split(name)
-        base, ext = os.path.splitext(file)
+        base, ex = os.path.splitext(file)
         isep = base.rfind(separator[0])
-        if  isep == -1:
-            number = 0
+        if isep == -1:
+            n = 0
         else:
             current_base = base
             if len(separator) > 1:
                 if base[-1] == separator[1]:
                     base = base[:-1]
             try:
-                number = int(base[isep + 1:])
+                n = int(base[isep + 1:])
                 base = base[:isep]
-            except:
-                number = 0
+            except ValueError:
+                n = 0
                 base = current_base
-        return path + base, number, ext
+        return path + base, n, ex
 
     if invalid is None:
         invalid = os.path.isfile
 
     while invalid(name):
-        path_name, number, ext = parts(name)
+        path_name, number, ext = parts()
         number += 1
         if number >= maxversion:
             raise UtilityException(_t("Cannot determine a unique name in {} tries.").format(maxversion))
@@ -1262,13 +1274,14 @@ def unique_name(name, invalid=None, separator='()', maxversion = 1000):
 
     return name
 
+
 def jupyter_markdown_toc(j_file, numbered=True, start_level=1, max_depth=1, prefix=' '):
     """
     Create a markdoown table-of-content string from a jupyter notebook based on markdown "#".
 
     :param j_file:      jupyter notebook name. Default file extension is '.ipynb'
     :param numbered:    True (default) to number the main headings, False for all bulletys
-    :param level:       toc base level, default is 1, which starts TOC at "##"
+    :param start_level: toc base level, default is 1, which starts TOC at "##"
     :param max_depth:   maximum levels relative to the start level, default is first level only.
     :param prefix:      previx for each TOC line, default is ' ' so TOC will appear indented.
     :return:        toc string.
@@ -1291,12 +1304,12 @@ def jupyter_markdown_toc(j_file, numbered=True, start_level=1, max_depth=1, pref
     i = 1
     for k in data['cells']:
         if k['cell_type'] == 'markdown':
-            for l in k['source']:
-                l = l.strip()
-                if l and l[0] == '#':
-                    l = l[start_level:]
-                    if l[0] == '#':
-                        indent, label = l.split(' ', 1)
+            for sl in k['source']:
+                sl = sl.strip()
+                if sl and sl[0] == '#':
+                    sl = sl[start_level:]
+                    if sl[0] == '#':
+                        indent, label = sl.split(' ', 1)
                         if len(indent) <= max_depth:
                             if label[-1] == '\n':
                                 label = label[:-1]
@@ -1307,3 +1320,21 @@ def jupyter_markdown_toc(j_file, numbered=True, start_level=1, max_depth=1, pref
                                 lead = str(' ' * len(indent)) + '- ['
                             toc = toc + prefix + lead + label + '](#' + label.replace(' ', '-') + ')\n'
     return toc
+
+
+def vector_normalize(v):
+    """
+    Normalise (Euclidean) the last axis of a numpy array
+
+    :param v: numpy vector array, any dimension
+    :return:  array normalized, 0 vectors will be np.nan
+
+    .. versionadded:: 9.3.1
+    """
+    if v.ndim < 2:
+        return np.array((1.,))
+    vs = v.shape
+    v = v.reshape((-1, v.shape[-1]))
+    mag = np.linalg.norm(v, axis=1)
+    mag[mag == 0.] = np.nan
+    return (v.T * np.reciprocal(mag)).T.reshape(vs)

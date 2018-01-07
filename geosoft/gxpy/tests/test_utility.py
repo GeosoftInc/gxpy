@@ -306,7 +306,7 @@ class Test(GXPYTest):
 
         test_result = gxu.run_external_python(testpy,
                                               script_args='test1 test2',
-                                              dict={'howdy':'hey there'},
+                                              shared_dict={'howdy':'hey there'},
                                               console=False)
         os.remove(testpy)
         self.assertEqual(test_result['a'], 'letter a')
@@ -556,6 +556,23 @@ class Test(GXPYTest):
             f.write('stuff')
         self.assertEqual(gxu.unique_name('test(2).txt'), 'test(3).txt')
         os.remove('test(2).txt')
+
+    def test_vec_norm(self):
+        self.start()
+
+        a = np.array(range(24))
+        self.assertEqual(gxu.vector_normalize(a).shape, (1,))
+        self.assertEqual(gxu.vector_normalize(a).sum(), 1.)
+        a = a.reshape((6, 4))
+        self.assertEqual(gxu.vector_normalize(a).shape, (6, 4))
+        self.assertAlmostEqual(gxu.vector_normalize(a).sum(), 11.536183542606089)
+        a = a.reshape((3, 2, 4))
+        self.assertEqual(gxu.vector_normalize(a).shape, (3, 2, 4))
+        self.assertAlmostEqual(gxu.vector_normalize(a).sum(), 11.536183542606089)
+        a[1, 1, :] = [0, 0, 0, 0]
+        self.assertTrue(np.isnan(gxu.vector_normalize(a).sum()))
+        self.assertAlmostEqual(np.nansum(gxu.vector_normalize(a)), 9.5430071721870711)
+
 
 if __name__ == '__main__':
 
