@@ -22,7 +22,6 @@ data to the same fiducial so that vector-to-vector operations can be performed.
 
 import geosoft
 import numpy as np
-import ctypes
 import geosoft.gxapi as gxapi
 from . import utility as gxu
 
@@ -40,6 +39,58 @@ class VVException(Exception):
     .. versionadded:: 9.1
     """
     pass
+
+
+def np_from_vvset(vvset):
+    """
+    Return a 2d numpy array from a set of `GXvv` instances.
+
+    :param vvset:   (vv1, vv2, ...) set ot `geosoft.gxpy.vv.GXvv` instances
+    :return:        numpy array shaped (max_vv_length, number_of_vv)
+
+    .. versionadded:: 9.3.1
+    """
+
+    nvv = len(vvset)
+    length = 0
+    for vv in vvset:
+        if len(vv) > length:
+            length = len(vv)
+    npd = np.empty((length, nvv), dtype=vvset[0].dtype)
+    for i in range(nvv):
+        npd[:, i] = vvset[i].np
+    return npd
+
+
+def vvset_from_np(npd):
+    """
+    Return a set of `GXvv` instances from a 2d numpy array.
+
+    :param npd: numpy data array of dimension 2
+    :return:    [vv0, vv1, vv2, ...] `geosoft.gxpy.vv.GXvv` instances for each column
+
+    For example:
+
+    npd = np.array([[1, 2, 3], [4, 5, 6]])
+
+    returns (vv([1, 4]), vv([2, 5]), vv([3, 6]))
+
+    .. versionadded:: 9.3.1
+    """
+
+    if npd.ndim == 1:
+        vv = [GXvv(npd)]
+    else:
+        if npd.ndim > 2:
+            d1 = 1
+            for d in npd.shape[:-1]:
+                d1 *= d
+            npd = npd.reshape((d1, npd.shape[-1]))
+        vv = []
+        for i in range(npd.shape[1]):
+            vv.append(GXvv(npd[:, i]))
+    return tuple(vv)
+
 
 class GXvv:
     """
@@ -69,12 +120,14 @@ class GXvv:
     .. versionchanged:: 9.2 support construction directly from arrays
 
     .. versionchanged:: 9.3 added unit_of_measure
+
+    .. versionchanges:: 9.3.1 added string support in __getitem__
     """
 
     def __enter__(self):
         return self
 
-    def __exit__(self, type, value, traceback):
+    def __exit__(self, _type, _value, _traceback):
         self.__del__()
 
     def __del__(self):
@@ -104,8 +157,15 @@ class GXvv:
 
         self._gxtype = gxu.gx_dtype(dtype)
         self._dtype = gxu.dtype_gx(self._gxtype)
-        self._is_int = gxu.is_int(self._gxtype)
-        if self._is_int and self._dim != 1:
+        self._is_float = self._is_int = self._is_string = False
+        if gxu.is_float(self._gxtype):
+            self._is_float = True
+        elif gxu.is_int(self._gxtype):
+            self._is_int = True
+        else:
+            self._is_string = True
+
+        if not self._is_float and self._dim != 1:
             raise VVException(_t('2 or 3 dimensioned data must be float32 or float64'))
         self._gxvv = gxapi.GXVV.create_ext(gxu.gx_dtype_dimension(self._dtype, self._dim), 0)
         self.fid = fid
@@ -133,10 +193,12 @@ class GXvv:
 
     def __getitem__(self, item):
         start, incr = self.fid
-        if self._is_int:
+        if self._is_float:
+            v = float(self.np[item])
+        elif self._is_int:
             v = int(self.np[item])
         else:
-            v = float(self.np[item])
+            v = str(self.np[item])
         return v, start + incr * item
 
     def _set_data_np(self, npd, start=0):
@@ -153,9 +215,9 @@ class GXvv:
             sh = (n,)
         else:
             sh = (n, self._dim)
-        bytes = np.empty(sh, dtype=dtype).tobytes()
-        self.gxvv.get_data(start, n, bytes, gxu.gx_dtype_dimension(dtype, self._dim))
-        npd = np.frombuffer(bytes, dtype=dtype).reshape(sh)
+        bytearr = np.empty(sh, dtype=dtype).tobytes()
+        self.gxvv.get_data(start, n, bytearr, gxu.gx_dtype_dimension(dtype, self._dim))
+        npd = np.frombuffer(bytearr, dtype=dtype).reshape(sh)
         npd.flags['WRITEABLE'] = True
         return npd
 
@@ -180,7 +242,7 @@ class GXvv:
 
         .. versionadded:: 9.1
         """
-        return (self._gxvv.get_fid_start(), self._gxvv.get_fid_incr())
+        return self._gxvv.get_fid_start(), self._gxvv.get_fid_incr()
 
     @fid.setter
     def fid(self, fid):
@@ -221,9 +283,19 @@ class GXvv:
         return self._dtype
 
     @property
+    def is_float(self):
+        """ True if a base float type"""
+        return self._is_float
+
+    @property
     def is_int(self):
         """ True if a base integer type"""
         return self._is_int
+
+    @property
+    def is_string(self):
+        """ True if a base string type"""
+        return self._is_string
 
     @property
     def dim(self):
@@ -298,7 +370,6 @@ class GXvv:
                 # numeric to numeric
                 else:
                     npd = self._get_data_np(start, n, dtype)
-                    #npd = self._gxvv.get_data_np(start, n, dtype)
 
         # float dummies to nan
         if npd.dtype == np.float32 or npd.dtype == np.float64:
@@ -387,3 +458,18 @@ class GXvv:
         .. versionadded:: 9.2
         """
         return [v[0] for v in self]
+
+    def fill(self, value):
+        """
+        Fill a vv with a constant value.
+
+        :param value: value to fill
+
+        .. versionadded:: 9.3.1
+        """
+        if self.is_float:
+            self.gxvv.fill_double(float(value))
+        if self.is_int:
+            self.gxvv.fill_int(int(value))
+        else:
+            self.gxvv.fill_string(str(value))

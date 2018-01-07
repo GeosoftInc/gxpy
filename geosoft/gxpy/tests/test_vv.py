@@ -23,6 +23,9 @@ class Test(GXPYTest):
 
         fid = (10.1,0.99)
         with gxvv.GXvv(dtype=np.float, fid=fid) as vv:
+            self.assertTrue(vv.is_float)
+            self.assertFalse(vv.is_int)
+            self.assertFalse(vv.is_string)
             self.assertEqual(vv.fid, fid)
             self.assertEqual(vv.length, 0)
 
@@ -53,6 +56,10 @@ class Test(GXPYTest):
             self.assertRaises(gxvv.VVException, vv.refid, (1, -1))
 
         with gxvv.GXvv([1, 2, 3, 4, 5, 6]) as vv:
+            self.assertTrue(vv.is_int)
+            self.assertFalse(vv.is_float)
+            self.assertFalse(vv.is_string)
+
             self.assertEqual(vv.fid, (0.0, 1.0))
             self.assertEqual(vv.length, 6)
             self.assertEqual(vv.dtype, np.int32)
@@ -120,6 +127,9 @@ class Test(GXPYTest):
 
         npdata = np.array(['4000', '50', '60', '-70'])
         with gxvv.GXvv(npdata, fid=fid) as vv3:
+            self.assertTrue(vv3.is_string)
+            self.assertFalse(vv3.is_int)
+            self.assertFalse(vv3.is_float)
             npf = vv3.np
             self.assertEqual(len(npf), 4)
             self.assertEqual(npf[0], '4000')
@@ -134,6 +144,9 @@ class Test(GXPYTest):
         fidvv = (99,0.1)
         npdata = np.array(["name", "maki", "neil", "rider"])
         with  gxvv.GXvv(npdata, fid=fidvv) as vv:
+            self.assertTrue(vv.is_string)
+            self.assertFalse(vv.is_int)
+            self.assertFalse(vv.is_float)
             self.assertEqual(vv.fid,fidvv)
             self.assertEqual(vv.length,len(npdata))
             self.assertEqual(vv.gxtype,-5)
@@ -150,6 +163,10 @@ class Test(GXPYTest):
             self.assertEqual(npd[0],"neil")
             self.assertEqual(npd[1],"rider")
             self.assertEqual(fid,(99.2,0.1))
+
+            vv.fill(2.5)
+            self.assertEqual(vv[0][0], '2.5')
+            self.assertEqual(vv[len(vv) - 1][0], '2.5')
 
         npdata = np.array(["1","2","3","4000","*"])
         with gxvv.GXvv(npdata, fid=fid) as vv:
@@ -298,7 +315,20 @@ class Test(GXPYTest):
             self.assertEqual(tuple(vv.np[99, :2]), (297., 298.))
             self.assertTrue(np.isnan(vv.np[99, 2]))
 
+    def test_vvset(self):
+        self.start()
 
+        npd = np.array(range(12), dtype=np.float64).reshape(-1, 2)
+        vv = gxvv.vvset_from_np(npd)
+        self.assertEqual(len(vv), npd.shape[1])
+        self.assertEqual(len(vv[0]), npd.shape[0])
+        npd = np.array(range(48), dtype=np.float64).reshape(6, 2, 4)
+        vv = gxvv.vvset_from_np(npd)
+        self.assertEqual(len(vv), 4)
+        self.assertEqual(len(vv[0]), 12)
+
+        npd = gxvv.np_from_vvset(vv)
+        self.assertEqual(npd.shape, (12, 4))
 
 ##############################################################################################
 if __name__ == '__main__':
