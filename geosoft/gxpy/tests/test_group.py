@@ -1445,7 +1445,7 @@ class Test(GXPYTest):
         self.assertEqual(gxg.color_from_string("R"), 33554687)
         self.assertEqual(gxg.color_from_string("H255S127V32"), 18907135)
 
-    def test_group_mode(self):
+    def test_group_properties(self):
         self.start()
 
         rect = gxgm.Point2((0,0,10,5))
@@ -1462,6 +1462,13 @@ class Test(GXPYTest):
                 self.assertTrue(len(v.group_list), 2)
                 self.assertTrue('rect_1' in v.group_list)
 
+                with gxg.Draw(v, 'property_test') as g:
+                    self.assertEqual(g.group_opacity, 1.0)
+                    g.group_opacity = 0.25
+                    self.assertEqual(g.group_opacity, 0.25)
+                    self.assertFalse(g.group_3d)
+                    self.assertEqual(g.name, 'property_test')
+                    self.assertEqual(g.view.name, 'data')
 
 
 if __name__ == '__main__':

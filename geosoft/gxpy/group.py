@@ -34,6 +34,7 @@ in a 3D view, the group is placed on a the active plane inside the 3D view
 from functools import wraps
 import threading
 import os
+import numpy as np
 
 import geosoft
 import geosoft.gxapi as gxapi
@@ -191,7 +192,71 @@ LINE3D_STYLE_LINE = 0  #:
 LINE3D_STYLE_TUBE = 1  #:
 LINE3D_STYLE_TUBE_JOINED = 2  #:
 
+SURFACE_FLAT = gxapi.MVIEW_DRAWOBJ3D_MODE_FLAT
+SURFACE_SMOOTH = gxapi.MVIEW_DRAWOBJ3D_MODE_SMOOTH
+
 _uom_attr = '/geosoft/data/unit_of_measure'
+
+
+def face_normals_np(faces, verticies):
+    """
+    Return normals of the verticies based on tringular faces, assuming right-hand
+    winding of vertex for each face.
+
+    :param faces:       faces as array of triangle indexes into verticies, shaped (-1, 3)
+    :param verticies:   verticies as array of (x, y, z) shaped (-1, 3)
+    :return:            face normals shaped (-1, 3)
+
+    The normal of a zero area face will be np.nan
+
+    .. versionadded:: 9.3.1
+    """
+
+    tris = verticies[faces]
+    n = np.cross(tris[::, 1] - tris[::, 0], tris[::, 2] - tris[::, 1])
+    return gxu.vector_normalize(n)
+
+
+def vertex_normals_np(faces, verticies, normal_area=True):
+    """
+    Return normals of the verticies based on tringular faces, assuming right-hand
+    winding of vertex for each face.
+
+    :param faces:       faces as array of triangle indexes into verticies, shaped (-1, 3)
+    :param verticies:   verticies as array of (x, y, z) shaped (-1, 3)
+    :param normal_area: True to weight normals by the area of the connected faces.
+    :return:            vertex normals shaped (-1, 3)
+
+    .. versionadded:: 9.3.1
+    """
+
+    n = face_normals_np(faces, verticies)
+    if not normal_area:
+        n = gxu.vector_normalize(n)
+    normals = np.zeros(verticies.shape, dtype=np.float64)
+    normals[faces[:, 0]] += n
+    normals[faces[:, 1]] += n
+    normals[faces[:, 2]] += n
+    return gxu.vector_normalize(normals)
+
+
+def vertex_normals_vv(faces, verticies, normal_area=True):
+    """
+    Return normals of the verticies based on tringular faces, assuming right-hand
+    winding of vertex for each face.
+
+    :param faces:       (i1, i2, i3) `geosoft.gxpy.vv.GXvv` faces as array of triangle indexes into verticies
+    :param verticies:   (vx, vy, vz) `geosoft.gxpy.vv.GXvv` verticies
+    :param normal_area: True to weight normals by the area of the connected faces.
+    :return:            (nx, ny, nz) `geosoft.gxpy.vv.GXvv` normals
+
+    .. versionadded:: 9.3.1
+    """
+
+    faces = gxvv.np_from_vvset(faces)
+    verticies = gxvv.np_from_vvset(verticies)
+    n = vertex_normals_np(faces, verticies, normal_area=normal_area)
+    return gxvv.GXvv(n[:, 0]), gxvv.GXvv(n[:, 1]), gxvv.GXvv(n[:, 2])
 
 
 def color_from_string(cstr):
@@ -629,6 +694,23 @@ class Draw(Group):
         self.view.gxview.symb_color(0)
         self.view.gxview.symb_fill_color(self.pen.line_color.int_value)
         self.view.gxview.symb_size(self.pen.line_thick)
+
+    @property
+    def group_opacity(self):
+        """
+        Group opacity setting. Can be set
+
+        :return:    opacity 0. to 1. (opaque)
+
+        .. versionadded 9.3.1
+        """
+        fref = gxapi.float_ref()
+        self.view.gxview.get_group_transparency(self.name, fref)
+        return fref.value
+
+    @group_opacity.setter
+    def group_opacity(self, op):
+        self.view.gxview.set_group_transparency(self.name, max(min(float(op), 0.), 1.))
 
     @property
     def drawing_coordinate_system(self):
@@ -1209,46 +1291,110 @@ class Draw_3d(Draw):
                 else:
                     raise GroupException(_t('Symbol type not implemented'))
 
-    def add_surface_vv(self, faces, verticies, normals, coordinate_system=None, color=C_GREY):
+    def surface(self, faces, verticies, color=None, style=SURFACE_SMOOTH):
         """
-        Draw triangles defined by faces, verticies and normals in `geosoft.gxpy.vv.GXvv` instances.
+        Draw triangles defined by faces, verticies and normals.
 
-        :param faces:               (i1, i2, i2) triangle faces as indexes into verticies
-        :param verticies:           (vx, vy, vz) verticies
-        :param normals:             (nx, ny, nz) vertex normals
-        :param coordinate_system:   coordinate system, default is the same as the drawing system
+        :param faces:               triangle faces as indexes into verticies, numpy array (n_faces, 3)
+        :param verticies:           verticies, numpy array (n_verticies, 3)
         :param color:               `Color` instance or color value for a solid colour, or a
-                                    `geosoft.gxpy.vv.GXvv` of color integers for each vertex
+                                    `geosoft.gxpy.vv.GXvv` of color integers for each vertex.  If None
+                                    the current pen fill colour is used.
+        :param style:               surface rendering style, SURFACE_SMOOTH or SURFACE_FLAT
 
         .. versionadded:: 9.3.1
         """
 
-        i1, i2, i3 = faces
-        vx, vy, vz = verticies
-        nx, ny, nz = normals
+        # buffer stream of faces TODO: discuss this approach with Jacques.
+        # - rendering of large surfaces is slow, even with buffering, compared to geosoft_surface file render.
+        # - but geosoft_surface requires surface dataset file to be present.
+        # - unclear the rules for type string in a surface_dataset
+        # - don't understand how to control colors using this method
+        # - perhaps, if we can figure out colors, this should be for small surface only?
+        # - seems I'm on the wrong track with this approach. Perhaps better to limit surface renderings
+        #   in a view to only geosoft_surface files?
 
-        if coordinate_system is None:
-            coordinate_system = self.drawing_coordinate_system
+        n_faces = len(faces)
+        n_verticies = len(verticies)
+        n_buff = 1000
+        n_faces_written = 0
+        nullvv = gxapi.GXVV.null()
+
+        # normals
+        if style == SURFACE_FLAT:
+            normals = face_normals_np(faces, verticies)
         else:
-            if not isinstance(coordinate_system, gxcs.Coordinate_system):
-                coordinate_system = gxcs.Coordinate_system(coordinate_system)
+            normals = vertex_normals_np(faces, verticies)
 
-        if isinstance(color, Color):
-            color = color.int_value
-        if isinstance(color, gxvv.GXvv):
-            colorvv = color
+        # color
+        if not isinstance(color, np.ndarray):
+
+            if color is None:
+                color = self.pen.fill_color
+
+            if style == SURFACE_FLAT:
+                cnp = np.empty(len(faces), dtype=np.int32)
+            else:
+                cnp = np.empty(len(faces) * 3, dtype=np.int32)
+            # TODO: discuss with Jacques - can't get constant color???
+            # r, g, b = Color(color).rgb
+            # cnp.fill(b + (g + r * 256) * 256)
+            cnp.fill(Color(color).int_value)
+            color = cnp
+
         else:
-            colorvv = gxapi.GXVV.null()
+            ncol = n_faces if style == SURFACE_FLAT else n_verticies
+            if len(color) < ncol:
+                raise GroupException(_t('Not enough colours. Must match verticies for SMOOTH, faces for FLAT.'))
+        if np.max(faces) > n_verticies or np.min(faces) < 0:
+            raise GroupException(_t('Faces refer to verticies out of range of verticies.'))
 
-        self.view.gxview.draw_surface_3d_ex(self.name,
+        while n_faces_written < n_faces:
+            n_write = min(n_buff, n_faces - n_faces_written)
+            n_last = n_faces_written + n_write
+            faces_buff = faces[n_faces_written: n_last]
+            verticies_buff = verticies[faces_buff].reshape(-1, 3)
+
+            vx, vy, vz = gxvv.vvset_from_np(verticies_buff)
+
+            if style == SURFACE_FLAT:
+                cvv = gxvv.GXvv(color[n_faces_written: n_last])
+                nx, ny, nz = gxvv.vvset_from_np(normals[n_faces_written: n_last])
+            else:
+                cvv = gxvv.GXvv(color[n_faces_written * 3: n_last * 3])
+                nx, ny, nz = gxvv.vvset_from_np(normals[faces_buff].reshape(-1, 3))
+
+            self.view.gxview.draw_object_3d(gxapi.MVIEW_DRAWOBJ3D_ENTITY_TRIANGLES, style,
+                                            n_write, 0,
                                             vx.gxvv, vy.gxvv, vz.gxvv,
                                             nx.gxvv, ny.gxvv, nz.gxvv,
-                                            colorvv, color,
-                                            i1.gxvv, i2.gxvv, i3.gxvv,
-                                            coordinate_system.gxipj)
+                                            cvv.gxvv,
+                                            nullvv, nullvv)
+            n_faces_written += n_write
 
 
-def contour(view, group_name, grid_file_name, **kwargs):
+def surface_group_from_file(v3d, file_name, group_name=None, overwrite=False):
+    """
+    Create a 3D surface group from a surface dataset file,
+
+    :param v3d:         `geosoft.gxpy.view.View_3d` instance
+    :param file_name:   surface dataset file name (extension .geosoft_surface)
+    :param group_name:  group name, default is the base file name.
+    :param overwrite:   True to overwrite existing group
+
+    .. versionadded:: 9.3.1
+    """
+
+    if group_name is None:
+        group_name = os.path.basename(file_name)
+        group_name = os.path.splitext(group_name)[0]
+    if v3d.has_group(group_name) and not overwrite:
+        raise GroupException(_t('Cannot overwrite exing group "{}"').format(group_name))
+
+    v3d.gxview.draw_surface_3d_from_file(group_name, file_name)
+
+
+def contour(view, group_name, grid_file_name):
     """
     Create a contour group from a grid file.  A default contour interval is determined from the grid.
 
