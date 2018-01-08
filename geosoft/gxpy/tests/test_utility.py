@@ -573,6 +573,17 @@ class Test(GXPYTest):
         self.assertTrue(np.isnan(gxu.vector_normalize(a).sum()))
         self.assertAlmostEqual(np.nansum(gxu.vector_normalize(a)), 9.5430071721870711)
 
+    def test_file_manipulation(self):
+        self.start()
+
+        self.assertTrue(gxu.file_age(__file__) > 0)
+        self.assertFalse(gxu.is_file_locked(__file__))
+        self.assertFalse(gxu.is_path_locked(__file__))
+        dir = os.path.dirname(__file__)
+        self.assertFalse(gxu.is_path_locked(dir))
+        self.assertTrue(gxu.is_path_locked(dir, age=1000.*60*60))
+        self.assertEqual(gxu.file_age('a completely bogus file name'), -1)
+
 
 if __name__ == '__main__':
 

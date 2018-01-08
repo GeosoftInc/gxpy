@@ -62,8 +62,9 @@ _res_heap = {}
 _max_resource_heap = 1000000
 _stack_depth = 5
 _max_warnings = 10
+_stale_age = 24.*60*60
+_remove_stale_geosoft_temp_files = False
 _NULL_ID = -1
-GX_WARNING_FILE = '_gx_warning_'
 
 
 def _reset_globals():
@@ -133,24 +134,58 @@ def pop_resource(res_id):
                 pass
 
 
+def _log_file_error(fnc, path, excinfo):
+    if _gx is not None:
+        if hasattr(_gx, 'log'):
+            _gx.log(_t("error removing temporary file\n   \"{}\"\nfunction \"{}\"\nexception\"{}\"\n")
+                    .format(path, str(fnc), str(excinfo)))
+
+
+def _remove_stale_gx_temporary_folders():
+    """ removes stale gx temporary folders from user's geosoft temp folder"""
+
+    global _stale_age
+
+    for filename in list(os.listdir(gxu.folder_temp(False))):
+        ff = os.path.join(gxu.folder_temp(False), filename)
+        if os.path.isdir(ff):
+            if filename[:4] == '_gx_' or _remove_stale_geosoft_temp_files:
+                if not gxu.is_path_locked(ff, age=_stale_age):
+                    shutil.rmtree(ff, ignore_errors=False, onerror=_log_file_error)
+        elif _remove_stale_geosoft_temp_files:
+            if not gxu.is_file_locked(ff, age=_stale_age):
+                try:
+                    os.remove(ff)
+                except IOError as e:
+                    _log_file_error('os.remove', ff, e)
+
+
+def _remove_stale_geosoft_temporary_files():
+    """ removes stale geosoft temporary files and folders from user's geosoft temp folder"""
+
+    global _stale_age
+
+    for filename in list(os.listdir(gxu.folder_temp(False))):
+        ff = os.path.join(gxu.folder_temp(False), filename)
+        if os.path.isdir(ff):
+            if filename == 'TempFileStacks':
+                for item in list(os.listdir(ff)):
+                    item = os.path.join(os.path.join(gxu.folder_temp(False), filename), item)
+                    if not gxu.is_file_locked(item, age=_stale_age):
+                        gxu.delete_file(item)
+
+            elif not gxu.is_path_locked(ff, age=_stale_age):
+                shutil.rmtree(ff, ignore_errors=False, onerror=_log_file_error)
+        else:
+            if not gxu.is_file_locked(ff, age=_stale_age):
+                gxu.delete_file(ff)
+
+
 def _exit_cleanup():
     global _gx
     global _res_heap
     global _max_warnings
-
-    def remove_gx_temporary_folders():
-        """ removes all GX temporary folders"""
-
-        def file_error(fnc, path, excinfo):
-            _gx.log(_t("error removing temporary file\n   \"{}\"\nfunction \"{}\"\nexception\"{}\"\n")
-                    .format(path, str(fnc), str(excinfo)))
-
-        for filename in os.listdir(gxu.folder_temp()):
-            folder = os.path.join(gxu.folder_temp(), filename)
-            if os.path.isdir(folder) and (len(filename) > 4) and (filename[:4] == '_gx_'):
-                w_file = os.path.join(folder, GX_WARNING_FILE)
-                if not os.path.exists(w_file):
-                    shutil.rmtree(folder, ignore_errors=False, onerror=file_error)
+    global _remove_stale_geosoft_temp_files
 
     if _gx:
         _gx.log('\nGX closing')
@@ -158,12 +193,11 @@ def _exit_cleanup():
 
         temp_folder = _gx.temp_folder()
         if temp_folder and (temp_folder != gxu.folder_temp()):
+            shutil.rmtree(temp_folder, ignore_errors=False, onerror=_log_file_error)
 
-            warning_file = os.path.join(temp_folder, GX_WARNING_FILE)
-            if os.path.isfile(warning_file):
-                os.remove(warning_file)
-
-            remove_gx_temporary_folders()
+        _remove_stale_gx_temporary_folders()
+        if _remove_stale_geosoft_temp_files:
+            _remove_stale_geosoft_temporary_files()
 
         if len(_res_heap):
             # resources were created but not deleted or removed
@@ -233,6 +267,13 @@ class GXpy(_Singleton):
         :folder_workspace:  Geosoft workspace folder
         :folder_temp:       Geosoft temporary folder
         :folder_user:       Geosoft Desktop installation 'user' folder
+
+    :Private properties for special use:
+        :_stale_age:        stale temporary files older than this age (in seconds) will be removed upon loss
+                            of context.  The default is 24 hours (24*60*60 seconds).
+        :__remove_stale_geosoft_temp_files: if True, also remove Geosoft temporary files that may heve
+                            been created by other processes. The default is False, in which case only stale temporary
+                            files created by geosoft.gxpy processes will be removed.
 
     :raises:
         :GXException(): if unable to create context
@@ -570,10 +611,6 @@ class GXpy(_Singleton):
             try:
                 os.makedirs(self._temp_file_folder, exist_ok=True)
                 self._keep_temp_files = False
-                warning_file = os.path.join(self._temp_file_folder, GX_WARNING_FILE)
-                with open(warning_file, 'w') as active:
-                    active.write('This Geosoft temporary folder may be in use.\n')
-                    active.write('Modifying or deleting content may cause a dependant process to fail.')
             except OSError:
                 self._temp_file_folder = path
                 self._keep_temp_files = True

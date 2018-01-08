@@ -15,6 +15,7 @@ import numpy as np
 import uuid as uid
 import json
 import datetime
+import time
 import subprocess
 import binascii
 from time import gmtime, strftime
@@ -905,9 +906,11 @@ def folder_user():
     return path.value.replace('\\', os.sep)
 
 
-def folder_temp():
+def folder_temp(use_override=True):
     """
     Return the Geosoft temporary folder name.
+
+    :param use_override: True to use the _tem_folder_overide if it is defined (used by tests)
 
     .. Note::
         If creating temporary files, better to use gx method :meth:`~gx.GXpy.temp_file`, which will
@@ -916,7 +919,7 @@ def folder_temp():
     .. versionadded:: 9.1
     """
     global _temp_folder_override
-    if _temp_folder_override:
+    if use_override and _temp_folder_override:
         return _temp_folder_override
 
     path = gxapi.str_ref()
@@ -1273,6 +1276,101 @@ def unique_name(name, invalid=None, separator='()', maxversion=1000):
         name = name + ext
 
     return name
+
+
+def is_file_locked(file_name, age=None):
+    """
+    Returns True if the file exists and is currently locked by another process or is younger than age.
+
+    :param file_name:   file to test
+    :param age:         minimum age in seconds, default ignores age
+
+    .. versionadded:: 9.3.1
+    """
+    if os.path.exists(file_name):
+        if age and file_age(file_name) < age:
+            return True
+        try:
+            f = open(file_name, 'a')
+            f.close()
+            return False
+        except IOError:
+            return True
+    return False
+
+
+def file_age(file_name):
+    """
+    Returns the age of a file in seconds from now. -1 if the file does not exist.
+
+    :param file_name: file name
+
+    .. versionadded:: 9.3.1
+    """
+    if not os.path.exists(file_name):
+        return -1
+    return time.time() - os.path.getmtime(file_name)
+
+
+def is_path_locked(path, age=None):
+    """
+    Returns True if any files in this folder or sub-folders are locked or younger than age.
+
+    :param path:    name of the folder
+    :param age:     age in seconds from now
+
+    .. versionadded:: 9.3.1
+    """
+
+    if os.path.exists(path):
+        if not os.path.isdir(path):
+            return is_file_locked(path)
+        for item in os.listdir(path):
+            item = os.path.join(path, item)
+            if os.path.isdir(item):
+                if is_path_locked(item):
+                    return True
+            else:
+                if is_file_locked(item):
+                    return True
+                if age and file_age(item) < age:
+                    return True
+    return False
+
+
+def delete_folder(folder_name, age=None, raise_on_error=False):
+    """
+    Delete a folder if all files and sub-folders are accessible and deletable.
+
+    :param folder_name:     name of the folder
+    :param age:             age in seconds relative to the current date/time
+    :param raise_on_error:  True to raise an error if unsuccessful, otherwise just returns False
+    :return:                True if successful
+
+    .. versionadded:: 9.3.1
+    """
+
+    if is_path_locked(folder_name, age=age):
+        if raise_on_error:
+            raise UtilityException(_t("Folder `{}` is locked.").format(folder_name))
+        return False
+
+    try:
+        for item in os.listdir(folder_name):
+            if os.path.isdir(item):
+                delete_folder(item, age=age)
+
+        for item in os.listdir(folder_name):
+            if age and file_age(item) > age:
+                os.remove(item)
+
+        os.removedirs(folder_name)
+
+    except IOError:
+        if raise_on_error:
+            raise
+
+    return True
 
 
 def jupyter_markdown_toc(j_file, numbered=True, start_level=1, max_depth=1, prefix=' '):
