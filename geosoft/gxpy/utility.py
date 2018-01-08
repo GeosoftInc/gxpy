@@ -112,9 +112,9 @@ def check_version(v, raise_on_fail=True):
 
 def dict_from_lst(lst, ordered=False):
     """
-    Return a dictionary from a Geosoft :class:`geosoft.gxapi.GXLST` instance.
+    Return a dictionary from a Geosoft `geosoft.gxapi.GXLST` instance.
     
-    :param lst:     :class:`geosoft.gxapi.GXLST` instance
+    :param lst:     `geosoft.gxapi.GXLST` instance
     :param ordered: True to return an OrderedDict
     :returns:       python dictionary from a Geosoft GXLST
 
@@ -750,15 +750,15 @@ def dummy_to_nan(data):
 
 def reg_from_dict(rd, max_size=4096, json_encode=True):
     """
-    :class:`geosoft.gxapi.GXREG` instance from a dictionary
+    `geosoft.gxapi.GXREG` instance from a dictionary
     
     :param rd:          dictionary
     :param max_size:    maximum "key=value" string size
-    :param json_encode  if True, non-string values in the dictionary are converted to JSON strings and stored as
+    :param json_encode: if True, non-string values in the dictionary are converted to JSON strings and stored as
                         "_JSON:json-string". False will encode non-string values as ``str(value)``
     :returns:           `geosoft.gxapi.GXREG` instance
 
-
+    .. versionadded:: 9.1
     """
     reg = gxapi.GXREG.create(max_size)
     for key, value in rd.items():
@@ -776,9 +776,9 @@ def reg_from_dict(rd, max_size=4096, json_encode=True):
 
 def dict_from_reg(reg, ordered=False):
     """
-    dictionary from a :class:`geosoft.gxapi.GXREG` instance
+    dictionary from a `geosoft.gxapi.GXREG` instance
     
-    :param reg:     :class:`geosoft.gxapi.GXREG` instance
+    :param reg:     `geosoft.gxapi.GXREG` instance
     :param ordered: True to return and OrderedDict
     :returns:       python dictionary from a Geosoft GXREG
 

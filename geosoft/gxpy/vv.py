@@ -121,7 +121,7 @@ class GXvv:
 
     .. versionchanged:: 9.3 added unit_of_measure
 
-    .. versionchanges:: 9.3.1 added string support in __getitem__
+    .. versionchanged:: 9.3.1 added string support in __getitem__
     """
 
     def __enter__(self):

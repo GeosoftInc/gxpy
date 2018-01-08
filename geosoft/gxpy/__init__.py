@@ -1,5 +1,4 @@
 
-import geosoft
 from . import system
 from . import gx
 from . import dataframe
@@ -20,8 +19,6 @@ from . import vox_display
 from . import metadata
 from . import spatialdata
 from . import surface
-
-__version__ = geosoft.__version__
 
 __all__ = ['agg',
            'coordinate_system',

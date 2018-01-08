@@ -152,6 +152,13 @@ def gen_gxapi_toc(j2env, output_dir):
         f.write(template.render(classes=['geosoft.gxapi', 'GXGEOSOFT'] + classes))
 
 def gen_gxpy_rsts(j2env, output_dir):
+
+    # remove stale rst files
+    for fn in list(os.listdir()):
+        if not os.path.isdir(fn):
+            if fn.startswith('geosoft.gxpy.') and fn.endswith('.rst'):
+                os.remove(fn)
+
     modules = sorted([(k, get_short_desc_from_object(v)) for k, v in gxpy.__dict__.items() if not k.startswith("_") and inspect.ismodule(v)])
     with open('geosoft.gxpy.rst', 'w+') as f:
         template = j2env.get_template('geosoft.gxpy.rst')
