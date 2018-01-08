@@ -405,6 +405,7 @@ class GXpy(_Singleton):
                 self._log_it = self._log_to_file
 
             self.log('\n')
+            self.log('-' * 80)
             self.log('UTC:      {}'.format(self._start))
             self.log('Script:   {}'.format(gxs.app_name()))
             self.log('API:      {}'.format(__version__))
@@ -412,6 +413,8 @@ class GXpy(_Singleton):
             self.log('Project:  {}'.format(gxu.folder_workspace()))
             self.log('GID:      {}'.format(self.gid))
             self.log('Entitled: {}'.format(self.entitled))
+            self.log('-' * 80)
+            self.log('\n')
 
         # save context as a global
         _gx = self

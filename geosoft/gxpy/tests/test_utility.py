@@ -576,10 +576,13 @@ class Test(GXPYTest):
     def test_file_manipulation(self):
         self.start()
 
-        self.assertTrue(gxu.file_age(__file__) > 0)
-        self.assertFalse(gxu.is_file_locked(__file__))
-        self.assertFalse(gxu.is_path_locked(__file__))
-        dir = os.path.dirname(__file__)
+        fn = gx.gx().temp_file()
+        with open(fn, '+w') as f:
+            f.write('maki')
+        self.assertTrue(gxu.file_age(fn) > 0)
+        self.assertFalse(gxu.is_file_locked(fn))
+        self.assertFalse(gxu.is_path_locked(fn))
+        dir = os.path.dirname(fn)
         self.assertFalse(gxu.is_path_locked(dir))
         self.assertTrue(gxu.is_path_locked(dir, age=1000.*60*60))
         self.assertEqual(gxu.file_age('a completely bogus file name'), -1)
