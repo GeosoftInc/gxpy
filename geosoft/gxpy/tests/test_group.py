@@ -1466,6 +1466,10 @@ class Test(GXPYTest):
                     self.assertEqual(g.group_opacity, 1.0)
                     g.group_opacity = 0.25
                     self.assertEqual(g.group_opacity, 0.25)
+                    g.group_opacity = -50
+                    self.assertEqual(g.group_opacity, 0.)
+                    g.group_opacity = 5
+                    self.assertEqual(g.group_opacity, 1.)
                     self.assertFalse(g.group_3d)
                     self.assertEqual(g.name, 'property_test')
                     self.assertEqual(g.view.name, 'data')

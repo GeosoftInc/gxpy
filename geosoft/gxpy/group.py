@@ -710,7 +710,7 @@ class Draw(Group):
 
     @group_opacity.setter
     def group_opacity(self, op):
-        self.view.gxview.set_group_transparency(self.name, max(min(float(op), 0.), 1.))
+        self.view.gxview.set_group_transparency(self.name, min(max(float(op), 0.), 1.))
 
     @property
     def drawing_coordinate_system(self):
@@ -1586,7 +1586,7 @@ def legend_color_bar(view,
 
             title_height = annotation_height * 1.5
             g.text_def = Text_def(height=title_height, weight=FONT_WEIGHT_BOLD)
-            p = gxgm.Point(edge_reference(g.extent, REF_BOTTOM_CENTER))
+            p = gxgm.Point(edge_reference(gxgm.Point2(g.extent), REF_BOTTOM_CENTER))
             p -= (0, title_height * 0.5)
             if '\n' in title:
                 tline = title[:title.index('\n')]

@@ -794,18 +794,21 @@ def draw_surface(view, surface, group_name=None, overwrite=False, style=None, co
     if isinstance(surface, str):
         surface = SurfaceDataset.open(surface)
 
+    if group_name is None:
+        group_name = surface.name
+
     if isinstance(surface, Surface):
         surface = (surface,)
-        root_name = ''
+        root_name = None
     else:
-        root_name = surface.name + '_'
+        root_name = group_name + '_'
 
     for surf in surface:
 
-        if group_name:
-            group - group_name
-        else:
+        if root_name:
             group = root_name + surf.name
+        else:
+            group = group_name
 
         if style is None:
             render_style = surf.render_style
