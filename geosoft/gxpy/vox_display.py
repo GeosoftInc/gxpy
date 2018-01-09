@@ -81,9 +81,9 @@ class Vox_display:
         if hasattr(self, '_open'):
             if self._open:
                 gx.pop_resource(self._open)
-                self._open = None
                 self._gxvoxd = None
                 self._vox = None
+                self._open = None
 
     def __init__(self, vox, name=None):
         self._gxvoxd = None

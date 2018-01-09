@@ -51,7 +51,7 @@ class Test(GXPYTest):
             with gxvoxd.Vox_display.new(vox) as voxd:
                 voxd.shell_limits = (0.0001, None)
                 fig_map = voxd.figure_map(title="My Test Vox").file_name
-        self.assertEqual(gxmap.Map.open(fig_map).crc_image(pix_width=800), 1419295652)
+        self.crc_map(fig_map)
 
     def test_figure_map_vectorvoxel(self):
         self.start()
@@ -61,8 +61,7 @@ class Test(GXPYTest):
             with gxvoxd.Vox_display.new(vox) as voxd:
                 voxd.shell_limits = (0.0001, None)
                 fig_map = voxd.figure_map(title="My Test VectorVox").file_name
-        #fig = gxmap.Map.open(fig_map).image_file()
-        self.assertEqual(gxmap.Map.open(fig_map).crc_image(pix_width=800), 3227637535)
+        self.crc_map(fig_map)
 
     def test_figure_map_vectorvoxel_vector(self):
         self.start()
@@ -73,8 +72,7 @@ class Test(GXPYTest):
                 voxd.shell_limits = (0.01, None)
                 voxd.vector_cone_specs = (3, None, None, 100)
                 fig_map = voxd.figure_map(title="My Test VectorVox").file_name
-        #fig = gxmap.Map.open(fig_map).image_file()
-        self.assertEqual(gxmap.Map.open(fig_map).crc_image(pix_width=800), 2981053549)
+        self.crc_map(fig_map)
 
     def test_open(self):
         self.start()
@@ -134,8 +132,7 @@ class Test(GXPYTest):
                 v3d_file = v3d.file_name
                 gxgroup.surface_group_from_file(v3d, fn)
 
-        # image_file = gxmap.Map.open(v3d_file).image_file(pix_width=800)
-        self.assertEqual(gxmap.Map.open(v3d_file).crc_image(pix_width=800), 4266332078)
+        self.crc_map(v3d_file)
 
 
 if __name__ == '__main__':
