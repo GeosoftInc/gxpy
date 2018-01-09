@@ -1302,6 +1302,15 @@ class Draw_3d(Draw):
                                     the current pen fill colour is used.
         :param style:               surface rendering style, SURFACE_SMOOTH or SURFACE_FLAT
 
+        .. note::
+
+            This is intended for relatively small-count objects, up to perhaps 100 surfaces.
+            Larger-count surfaces are supported, but rendering performance can be slow for
+            an interactive experience. For large-count surfaces it is better to create
+            a `geosoft.gxpy.surface.SurfaceDataset`, which can contain a number of large-count
+            and `geosoft.gxpy.surface.Surface` instances, then use `surface_group_from_file` to
+            add a rendering to a 3d view.
+
         .. versionadded:: 9.3.1
         """
 
@@ -1375,10 +1384,11 @@ class Draw_3d(Draw):
 
 def surface_group_from_file(v3d, file_name, group_name=None, overwrite=False):
     """
-    Create a 3D surface group from a surface dataset file,
+    Create a 3D surface group from a surface dataset file.
 
     :param v3d:         `geosoft.gxpy.view.View_3d` instance
-    :param file_name:   surface dataset file name (extension .geosoft_surface)
+    :param file_name:   surface dataset file name (extension .geosoft_surface).
+                        See `geosoft.gxpy.surface.SurfaceDataset`.
     :param group_name:  group name, default is the base file name.
     :param overwrite:   True to overwrite existing group
 

@@ -11,6 +11,7 @@ import geosoft.gxpy.spatialdata as gxspd
 import geosoft.gxpy.view as gxview
 import geosoft.gxpy.map as gxmap
 import geosoft.gxpy.vv as gxvv
+import geosoft.gxpy.viewer as gxviewer
 
 from base import GXPYTest
 
@@ -23,6 +24,8 @@ class Test(GXPYTest):
         cls.folder, files = gsys.unzip(os.path.join(os.path.dirname(cls._test_case_py), 'testvoxset.zip'),
                                        folder=cls._gx.temp_folder())
         cls.vox_file = os.path.join(cls.folder, 'test.geosoft_voxel')
+        cls.sfile = gxsurf.SurfaceDataset.vox_surface(gxvox.Vox.open(cls.vox_file),
+                                                      (0.005, 0.01, 0.02), overwrite=True).file_name
 
     @classmethod
     def tearDownClass(cls):
@@ -33,17 +36,15 @@ class Test(GXPYTest):
         self.start()
 
         try:
-            fn = gxsurf.SurfaceDataset.vox_surface(gxvox.Vox.open(self.vox_file),
-                                                   (0.005, 0.01, 0.02), overwrite=True).file_name
-            with gxsurf.SurfaceDataset.open(fn) as surfdataset:
+            with gxsurf.SurfaceDataset.open(self.sfile) as surfdataset:
                 self.assertEqual(surfdataset.name, 'test')
                 self.assertEqual(surfdataset.file_name, 'test.geosoft_surface')
                 self.assertEqual(surfdataset.surface_count, 3)
                 self.assertEqual(str(surfdataset.coordinate_system), 'NAD83 / UTM zone 20N')
                 surface_name_list = surfdataset.surface_name_list
-                self.assertEqual(surface_name_list[0], 'Isosurface 0.005')
-                self.assertEqual(surface_name_list[1], 'Isosurface 0.01')
-                self.assertEqual(surface_name_list[2], 'Isosurface 0.02')
+                self.assertTrue('Isosurface 0.02' in surface_name_list)
+                self.assertTrue('Isosurface 0.005'in surface_name_list)
+                self.assertTrue('Isosurface 0.01' in surface_name_list)
                 self.assertEqual(surfdataset.surface_guid('Isosurface 0.02'), '{ABCDEF02-2345-6789-6945-2301E0BC0A89}')
                 self.assertEqual(surfdataset.surface_dict[surfdataset.surface_guid('Isosurface 0.02')],
                                  'Isosurface 0.02')
@@ -57,7 +58,7 @@ class Test(GXPYTest):
                 self.assertEqual(surf.component_count, 1)
                 self.assertEqual(surf.render_color.rgb, (255, 255, 0))
                 self.assertEqual(surf.render_opacity, 1.)
-                self.assertEqual(surf.render_style, gxsurf.STYLE_FLAT)
+                self.assertEqual(surf.render_style, gxsurf.STYLE_SMOOTH)
 
         finally:
             gxsurf.delete_files('test')
@@ -65,22 +66,18 @@ class Test(GXPYTest):
     def test_new(self):
         self.start()
 
-        fn = gxsurf.SurfaceDataset.vox_surface(gxvox.Vox.open(self.vox_file), (0.01, 0.02),
-                                               temp=True).file_name
-
-        with gxsurf.SurfaceDataset.open(fn) as surfdataset:
+        with gxsurf.SurfaceDataset.open(self.sfile) as surfdataset:
             with gxsurf.SurfaceDataset.new('new', temp=True) as newsurf:
                 nfn = newsurf.file_name
                 for surf in surfdataset:
                     newsurf.add_surface(surf)
 
         with gxsurf.SurfaceDataset.open(nfn) as surfdataset:
-            self.assertEqual(surfdataset.surface_count, 2)
+            self.assertEqual(surfdataset.surface_count, 3)
             self.assertEqual(str(surfdataset.coordinate_system), 'NAD83 / UTM zone 20N')
             surface_name_list = surfdataset.surface_name_list
-            self.assertEqual(surface_name_list[0], 'Isosurface 0.01')
-            self.assertEqual(surface_name_list[1], 'Isosurface 0.02')
-            self.assertEqual(surfdataset.surface_guid('Isosurface 0.02'), '{ABCDEF01-2345-6789-6845-2301DFBC0A89}')
+            self.assertTrue('Isosurface 0.01' in surface_name_list)
+            self.assertTrue('Isosurface 0.02' in surface_name_list)
             self.assertEqual(surfdataset.surface_dict[surfdataset.surface_guid('Isosurface 0.02')], 'Isosurface 0.02')
 
             for surf in surfdataset:
@@ -90,9 +87,9 @@ class Test(GXPYTest):
             self.assertEqual(surf.verticies_count, 21)
             self.assertEqual(surf.faces_count, 26)
             self.assertEqual(surf.component_count, 1)
-            self.assertEqual(surf.render_color.rgb, (0, 255, 0))
+            self.assertEqual(surf.render_color.rgb, (255, 255, 0))
             self.assertEqual(surf.render_opacity, 1.)
-            self.assertEqual(surf.render_style, gxsurf.STYLE_FLAT)
+            self.assertEqual(surf.render_style, gxsurf.STYLE_SMOOTH)
 
             comp = surf.computed_properties()
             self.assertEqual(comp['components'], 1)
@@ -121,11 +118,8 @@ class Test(GXPYTest):
     def test_new_named(self):
         self.start()
 
-        fn = gxsurf.SurfaceDataset.vox_surface(gxvox.Vox.open(self.vox_file), (0.01, 0.02),
-                                               temp=True).file_name
-
         try:
-            with gxsurf.SurfaceDataset.open(fn) as surfdataset:
+            with gxsurf.SurfaceDataset.open(self.sfile) as surfdataset:
                 with gxsurf.SurfaceDataset.new('new') as newsurf:
                     self.assertEqual(newsurf.name, 'new')
                     for surf in surfdataset:
@@ -134,7 +128,7 @@ class Test(GXPYTest):
         finally:
             gxsurf.delete_files('new')
 
-        with gxsurf.SurfaceDataset.open('billy', file_name=fn) as surfdataset:
+        with gxsurf.SurfaceDataset.open('billy', file_name=self.sfile) as surfdataset:
             self.assertEqual(surfdataset.name, 'billy')
 
 
@@ -171,39 +165,32 @@ class Test(GXPYTest):
             self.assertEqual(surf.component_count, 1)
             self.assertEqual(surf.render_color.rgb, (128, 128, 128))
             self.assertEqual(surf.render_opacity, 0.5)
-            self.assertEqual(surf.render_style, gxsurf.STYLE_FLAT)
+            self.assertEqual(surf.render_style, gxsurf.STYLE_SMOOTH)
 
     def test_copy(self):
         self.start()
 
-        fn = gxsurf.SurfaceDataset.vox_surface(gxvox.Vox.open(self.vox_file),
-                                               (0.01, 0.02), color=gxgrp.C_GREY, opacity=0.5,
-                                               temp=True).file_name
-
         # make a copy by copying each surface
         with gxsurf.SurfaceDataset.new() as new_sd:
             sd_fn = new_sd.file_name
-            with gxsurf.SurfaceDataset.open(fn) as sd:
+            with gxsurf.SurfaceDataset.open(self.sfile) as sd:
                 for s in sd:
                     new_sd.add_surface(s)
 
         with gxsurf.SurfaceDataset.open(sd_fn) as sd:
-            self.assertEqual(sd.surface_count, 2)
+            self.assertEqual(sd.surface_count, 3)
+            self.assertTrue('Isosurface 0.005' in sd.surface_name_list)
             self.assertTrue('Isosurface 0.01' in sd.surface_name_list)
             self.assertTrue('Isosurface 0.02' in sd.surface_name_list)
-            self.assertEqual(sd['Isosurface 0.01'].render_opacity, 0.5)
+            self.assertAlmostEqual(sd['Isosurface 0.01'].render_opacity, 0.6666666666666666)
 
     def test_new_mesh(self):
         self.start()
 
-        fn = gxsurf.SurfaceDataset.vox_surface(gxvox.Vox.open(self.vox_file),
-                                               (0.01, 0.02), color=gxgrp.C_GREY, opacity=0.5,
-                                               temp=True).file_name
-
         # make a copy by copying each surface
         with gxsurf.SurfaceDataset.new() as new_sd:
             sd_fn = new_sd.file_name
-            with gxsurf.SurfaceDataset.open(fn) as sd:
+            with gxsurf.SurfaceDataset.open(self.sfile) as sd:
                 for s in sd:
                     f, v = s.get_mesh_np()
                     snew = gxsurf.Surface(s.name)
@@ -211,7 +198,8 @@ class Test(GXPYTest):
                     new_sd.add_surface(snew)
 
         with gxsurf.SurfaceDataset.open(sd_fn) as sd:
-            self.assertEqual(sd.surface_count, 2)
+            self.assertEqual(sd.surface_count, 3)
+            self.assertTrue('Isosurface 0.005' in sd.surface_name_list)
             self.assertTrue('Isosurface 0.01' in sd.surface_name_list)
             self.assertTrue('Isosurface 0.02' in sd.surface_name_list)
             self.assertEqual(sd['Isosurface 0.01'].render_opacity, 0.25)
@@ -220,9 +208,8 @@ class Test(GXPYTest):
 
         with gxview.View_3d.new() as v3d:
             v3d_file = v3d.file_name
-            gxsurf.draw_surface(v3d, sd_fn, group_name='billy')
-        # image_file = gxmap.Map.open(v3d_file).image_file(pix_width=800)
-        self.assertEqual(gxmap.Map.open(v3d_file).crc_image(), 350824809)
+            gxsurf.render(v3d, sd_fn, group_name='billy')
+        self.crc_map(v3d_file)
 
 
     def test_exceptions(self):
@@ -244,7 +231,7 @@ class Test(GXPYTest):
             self.assertRaises(gxsurf.SurfaceException, sd.add_surface, s)
 
         fn = gxsurf.SurfaceDataset.vox_surface(gxvox.Vox.open(self.vox_file), 0.01, temp=True).file_name
-        with gxsurf.SurfaceDataset.open(fn) as sd:
+        with gxsurf.SurfaceDataset.open(self.sfile) as sd:
             self.assertFalse(sd.is_new)
 
             self.assertTrue(sd.has_surface('Isosurface 0.01'))
@@ -292,29 +279,32 @@ class Test(GXPYTest):
     def test_render(self):
         self.start()
 
-        fn = gxsurf.SurfaceDataset.vox_surface(gxvox.Vox.open(self.vox_file), 0.01,
-                                               color=gxgrp.C_GREY, temp=True).file_name
+        with gxview.View_3d.new() as v3d:
+            v3d_file = v3d.file_name
+            gxsurf.render(v3d, self.sfile)
+            self.assertRaises(gxsurf.SurfaceException, gxsurf.render, v3d, self.sfile)
+            gxsurf.render(v3d, self.sfile, overwrite=True)
+            gxsurf.render(v3d, self.sfile, group_name='maki')
+        self.crc_map(v3d_file)
 
-        with gxsurf.SurfaceDataset.open(fn) as sd:
+    def test_render_1(self):
+        self.start()
+
+        with gxsurf.SurfaceDataset.open(self.sfile) as sd:
             with gxview.View_3d.new() as v3d:
                 v3d_file = v3d.file_name
-                gxsurf.draw_surface(v3d, sd, group_name='sdataset')
-            # image_file = gxmap.Map.open(v3d_file).image_file(pix_width=800)
-            self.assertEqual(gxmap.Map.open(v3d_file).crc_image(), 1290848230)
+                gxsurf.render(v3d, sd, group_name='sdataset')
+        self.crc_map(v3d_file)
 
+    def test_render_2(self):
+        self.start()
+
+        with gxsurf.SurfaceDataset.open(self.sfile) as sd:
             surface = sd['Isosurface 0.01']
             with gxview.View_3d.new() as v3d:
                 v3d_file = v3d.file_name
-                gxsurf.draw_surface(v3d, surface, group_name='surface')
-            #image_file = gxmap.Map.open(v3d_file).image_file(pix_width=800)
-            self.assertEqual(gxmap.Map.open(v3d_file).crc_image(), 1290848230)
-
-            surface.render_normal_area = False
-            with gxview.View_3d.new() as v3d:
-                v3d_file = v3d.file_name
-                gxsurf.draw_surface(v3d, surface, group_name='surface')
-            #image_file = gxmap.Map.open(v3d_file).image_file(pix_width=800)
-            self.assertEqual(gxmap.Map.open(v3d_file).crc_image(), 1290848230)
+                gxsurf.render(v3d, surface, group_name='surface')
+        self.crc_map(v3d_file)
 
     def test_make_my_own(self):
         self.start()
@@ -330,13 +320,57 @@ class Test(GXPYTest):
 
         with gxsurf.Surface('maki') as s:
             s.add_mesh_np(faces, verts)
+
             s.render_color = gxgrp.C_GREEN
             s.render_style = gxsurf.STYLE_FLAT
             with gxview.View_3d.new() as v3d:
                 v3d_file = v3d.file_name
-                gxsurf.draw_surface(v3d, s)
-        image_file = gxmap.Map.open(v3d_file).image_file(pix_width=800)
-        #self.assertEqual(gxmap.Map.open(v3d_file).crc_image(), 1034303144)
+                gxsurf.render(v3d, s)
+        self.crc_map(v3d_file)
+
+    def test_make_my_own_1(self):
+        self.start()
+
+        verts = np.array([[0, 0, 0],
+                          [5, 0, 0],
+                          [5, 5, 0],
+                          [0, 3, 5],
+                          [2.5, 2, 10]], dtype=np.float64)
+        faces = np.array([[0, 1, 2],
+                          [0, 2, 3],
+                          [3, 2, 4]], dtype=np.int32)
+
+        with gxsurf.Surface('maki') as s:
+            s.add_mesh_np(faces, verts)
+            s.render_color = gxgrp.C_BLUE
+            s.render_style = gxsurf.STYLE_SMOOTH
+            s.render_opacity = 0.25
+            with gxview.View_3d.new() as v3d:
+                v3d_file = v3d.file_name
+                gxsurf.render(v3d, s)
+        self.crc_map(v3d_file)
+
+    def test_make_my_own_2(self):
+        self.start()
+
+        verts = np.array([[0, 0, 0],
+                          [5, 0, 0],
+                          [5, 5, 0],
+                          [0, 3, 5],
+                          [2.5, 2, 10]], dtype=np.float64)
+        faces = np.array([[0, 1, 2],
+                          [0, 2, 3],
+                          [3, 2, 4]], dtype=np.int32)
+
+        with gxsurf.Surface('maki') as s:
+            s.add_mesh_np(faces, verts)
+            s.render_color = gxgrp.C_RED
+            s.render_style = gxsurf.STYLE_EDGE
+            s.render_opacity = 1
+            with gxview.View_3d.new() as v3d:
+                v3d_file = v3d.file_name
+                gxsurf.render(v3d, s)
+        self.crc_map(v3d_file)
 
 
 ###############################################################################################

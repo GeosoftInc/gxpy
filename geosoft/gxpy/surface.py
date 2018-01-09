@@ -74,8 +74,9 @@ MODE_READWRITE = gxspd.MODE_READWRITE   #: file exists, but can change propertie
 MODE_NEW = gxspd.MODE_NEW               #:
 MODE_APPEND = MODE_READWRITE            #: append to existing surface dataset
 
-STYLE_FLAT = gxg.SURFACE_FLAT       #:
-STYLE_SMOOTH = gxg.SURFACE_SMOOTH   #:
+STYLE_FLAT = gxapi.SURFACERENDER_FILL  #:
+STYLE_SMOOTH = gxapi.SURFACERENDER_SMOOTH   #:
+STYLE_EDGE = gxapi.SURFACERENDER_EDGES  #:
 
 
 class SurfaceDataset(gxspd.SpatialData):
@@ -391,7 +392,7 @@ class Surface(gxspd.SpatialData):
     :param surface_type:        surface type as a descriptive name, such as "ISOSURFACE"
     :param surface_dataset:     optional `SurfaceDataset` instance in which to place a new `Surface`
     :param render_properties:   (color, opacity, style), default is
-                                (`geosoft.gxpy.group.C_GREY`, 1.0, `STYLE_SMOOTH`)
+                                (`geosoft.gxpy.group.C_GREY`, 1.0, `STYLE_FLAT`)
 
     .. versionadded:: 9.3.1
     """
@@ -427,7 +428,7 @@ class Surface(gxspd.SpatialData):
         return str((self.guid, self.name, self.surface_type))
 
     def __init__(self, surface, surface_type='none', surface_dataset=None,
-                 render_properties=(gxg.C_GREY, 1.0, STYLE_SMOOTH)):
+                 render_properties=(gxg.C_GREY, 1.0, STYLE_FLAT)):
 
         if isinstance(surface, str):
             if surface_dataset and surface_dataset.has_surface(surface):
@@ -666,21 +667,18 @@ class Surface(gxspd.SpatialData):
         else:
             return {}
 
-    def add_mesh_vv(self, faces, verticies, properties=(gxg.C_GREY, 1.0, STYLE_SMOOTH)):
+    def add_mesh_vv(self, faces, verticies, properties=(gxg.C_GREY, 1.0, STYLE_FLAT)):
         """
         Add a mesh to a new surface.
 
         :param faces:       triangle faces as a tuple (i1, i2, i3) of indexes into the verticies.
                             Indexes are instances of `geosoft.gxpy.GXvv`
         :param verticies:   verticies as an (x, y, z) tuple of `geosoft.gxpy.GXvv` instances
-        :param properties:  (color, opacity, style, normal_area), where colour is a `geosoft.gxpy.group.Color`
+        :param properties:  (color, opacity, style), where colour is a `geosoft.gxpy.group.Color`
                             instance or a 32-bit Geosoft color integer, opacity is a value between
-                            0. (invisible) and 1. (opaque), and style is STYLE_SMOOTH, STYLE_FILL or
-                            STYLE_EDGE, and normal_area is a boolean True to calculate default
-                            vertex normals weighted by face area.
+                            0. (invisible) and 1. (opaque), and style is STYLE_FLAT, STYLE_SMOOTH or
+                            STYLE_EDGE.
         :returns:           component number, which will always be the last component.
-
-        Triangular faces should be wound such that normals are consistant.
 
         .. versionadded:: 9.3
         """
@@ -700,7 +698,7 @@ class Surface(gxspd.SpatialData):
 
         return self.component_count - 1
 
-    def add_mesh_np(self, faces, verticies, properties=(gxg.C_GREY, 1.0, STYLE_SMOOTH)):
+    def add_mesh_np(self, faces, verticies, properties=(gxg.C_GREY, 1.0, STYLE_FLAT)):
         """
         Add a mesh to a new surface.
 
@@ -708,10 +706,8 @@ class Surface(gxspd.SpatialData):
         :param verticies:   verticies as a numpy arrays shapes (-1, 3)
         :param properties:  (color, opacity, style), where colour is a `geosoft.gxpy.group.Color`
                             instance or a 32-bit Geosoft color integer, opacity is a value between
-                            0. (invisible) and 1. (opaque), and style is STYLE_SMOOTH, STYLE_FILL or
+                            0. (invisible) and 1. (opaque), and style is STYLE_FLAT, STYLE_SMOOTH or
                             STYLE_EDGE.
-
-        Triangular faces should be wound such that normals are consistant.
 
         .. versionadded:: 9.3
         """
@@ -771,66 +767,40 @@ class Surface(gxspd.SpatialData):
         return face, vertex
 
 
-def draw_surface(view, surface, group_name=None, overwrite=False, style=None, color=None, opacity=None):
+def render(view, surface, group_name=None, overwrite=False):
     """
-    Draw a surface, surface dataset or surface dataset file in a 3D view.
+    Render a surface, surface dataset or surface dataset file in a 3D view.
 
     :param view:        `geosoft.view.View_3d` instance
     :param surface:     `geosoft.surface.Surface`, `geosoft.surface.SurfaceDataset` or a geosoft_surface file name.
     :param group_name:  name for the group, which defaults to the source name
     :param overwrite:   True to overwrite existing group
-    :param style:       surface style override STYLE_FLAT or STYLE_SMOOTH
-    :param color:       surface color override
-    :param opacity:     surface opacity override
+
+    .. note::
+        For a Surface or a SurfaceDataset instance a surface dataset file is created with a name constructed
+        from the view name and the fies name: 'view_name.group_name.geosoft_surface'.
 
     .. versionadded:: 9.3.1
     """
 
-    def add_surface(group, sf, rs):
-        for i in range(sf.component_count):
-            f, v = sf.get_mesh_np(i)
-            group.surface(f, v, style=rs)
-
-    if isinstance(surface, str):
-        surface = SurfaceDataset.open(surface)
-
     if group_name is None:
-        group_name = surface.name
-
-    if isinstance(surface, Surface):
-        surface = (surface,)
-        root_name = None
-    else:
-        root_name = group_name + '_'
-
-    for surf in surface:
-
-        if root_name:
-            group = root_name + surf.name
+        if isinstance(surface, str):
+            group_name = _surface_name(surface)
         else:
-            group = group_name
+            group_name = surface.name
+    if view.has_group(group_name) and not overwrite:
+        raise SurfaceException(_t('Cannot overwerwrite existing group: {}').format(group_name))
 
-        if style is None:
-            render_style = surf.render_style
-        else:
-            render_style = style
+    if not isinstance(surface, str):
 
-        if color is None:
-            render_color = surf.render_color
-        else:
-            render_color = color
+        surface_dataset_file_name = _surface_file_name(view.file_name + '.' + surface.name)
+        with SurfaceDataset.new(surface_dataset_file_name, overwrite=overwrite,
+                                coordinate_system=view.coordinate_system) as new_sd:
+            if isinstance(surface, Surface):
+                surface = (surface, )
+            for s in surface:
+                new_sd.add_surface(s)
 
-        if opacity is None:
-            render_opacity = surf.render_opacity
-        else:
-            render_opacity = opacity
+        surface = surface_dataset_file_name
 
-        if view.has_group(group) and not overwrite:
-            raise SurfaceException(_t('Cannot overwerwrite existing group: {}').format(group_name))
-
-        with gxg.Draw_3d(view, group, mode=gxg.NEW) as g:
-            g.drawing_coordinate_system = surf.coordinate_system
-            g.render_backfaces = True
-            g.pen.fill_color = render_color
-            g.group_opacity = render_opacity
-            add_surface(g, surf, render_style)
+    gxg.surface_group_from_file(view, surface, group_name=group_name, overwrite=overwrite)

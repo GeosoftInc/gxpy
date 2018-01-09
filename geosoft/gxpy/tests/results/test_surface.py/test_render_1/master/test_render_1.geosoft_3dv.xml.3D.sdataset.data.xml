@@ -1,0 +1,151 @@
+<data>
+   <Item type="Version" size="8">
+      <Item name="Value" value="Current"/>
+   </Item>
+   <Item type="VOXSURF" size="2770">
+      <Item name="VOXSURF" type="VOXSURF">
+         <VOXSURF>
+            <SurfaceInformation>
+               <Item name="Volume" type="D3VOLUME">
+                  <Value name="MinX" value="440303.5714"/>
+                  <Value name="MinY" value="6126175"/>
+                  <Value name="MinZ" value="-954.3756313"/>
+                  <Value name="MaxX" value="441475"/>
+                  <Value name="MaxY" value="6129475"/>
+                  <Value name="MaxZ" value="537.5"/>
+               </Item>
+               <Item name="ClipVolume" type="D3VOLUME">
+                  <Value name="MinX" value="*"/>
+                  <Value name="MinY" value="*"/>
+                  <Value name="MinZ" value="*"/>
+                  <Value name="MaxX" value="*"/>
+                  <Value name="MaxY" value="*"/>
+                  <Value name="MaxZ" value="*"/>
+               </Item>
+               <RotatedClipInfo>
+                  <Item name="XAzimuth" value="GS_R8DM"/>
+                  <Item name="XDip" value="GS_R8DM"/>
+                  <Item name="XRotation" value="False"/>
+                  <Item name="YAzimuth" value="GS_R8DM"/>
+                  <Item name="YDip" value="GS_R8DM"/>
+                  <Item name="YRotation" value="False"/>
+                  <Item name="ZAzimuth" value="GS_R8DM"/>
+                  <Item name="ZDip" value="GS_R8DM"/>
+                  <Item name="ZRotation" value="False"/>
+               </RotatedClipInfo>
+               <Item name="Surface Colour" type="COL_ANY" colortype="RGB" red="128" green="128" blue="128"/>
+               <Item name="Contour" value="GS_R8DM"/>
+               <Item name="Transparency" value="1"/>
+               <Item name="RenderMode" value="Smooth"/>
+               <Item name="Coded vertex locations" type="3"></Item>
+               <Item name="Coded normal values" type="3"></Item>
+               <Item name="Triangle vertex indices" type="L3PointVV">
+                  <Item name="length" value="0"/>
+                  <Item name="CRC" value="0"/>
+                  <Item name="length output" value="0"/>
+               </Item>
+               <Surface guid="{ABCDEF00-2345-6789-6745-2301DEBC0A89}">
+                  <Item name="Visible" value="True"/>
+                  <Item name="Colour" type="COL_ANY" colortype="RGB" red="128" green="128" blue="128"/>
+                  <Item name="Transparency" value="0.3333333333"/>
+                  <Item name="RenderMode" value="Smooth"/>
+                  <Item name="DataVolume" type="D3VOLUME">
+                     <Value name="MinX" value="440303.5714"/>
+                     <Value name="MinY" value="6126175"/>
+                     <Value name="MinZ" value="-954.3756313"/>
+                     <Value name="MaxX" value="441475"/>
+                     <Value name="MaxY" value="6129475"/>
+                     <Value name="MaxZ" value="537.5"/>
+                  </Item>
+                  <Item name="ClipVolume" type="D3VOLUME">
+                     <Value name="MinX" value="*"/>
+                     <Value name="MinY" value="*"/>
+                     <Value name="MinZ" value="*"/>
+                     <Value name="MaxX" value="*"/>
+                     <Value name="MaxY" value="*"/>
+                     <Value name="MaxZ" value="*"/>
+                  </Item>
+                  <RotatedClipInfo>
+                     <Item name="XAzimuth" value="GS_R8DM"/>
+                     <Item name="XDip" value="GS_R8DM"/>
+                     <Item name="XRotation" value="False"/>
+                     <Item name="YAzimuth" value="GS_R8DM"/>
+                     <Item name="YDip" value="GS_R8DM"/>
+                     <Item name="YRotation" value="False"/>
+                     <Item name="ZAzimuth" value="GS_R8DM"/>
+                     <Item name="ZDip" value="GS_R8DM"/>
+                     <Item name="ZRotation" value="False"/>
+                  </RotatedClipInfo>
+               </Surface>
+               <Surface guid="{ABCDEF01-2345-6789-6845-2301DFBC0A89}">
+                  <Item name="Visible" value="True"/>
+                  <Item name="Colour" type="COL_ANY" colortype="RGB" red="0" green="255" blue="0"/>
+                  <Item name="Transparency" value="0.6666666667"/>
+                  <Item name="RenderMode" value="Smooth"/>
+                  <Item name="DataVolume" type="D3VOLUME">
+                     <Value name="MinX" value="440718.6508"/>
+                     <Value name="MinY" value="6129015.476"/>
+                     <Value name="MinZ" value="-954.3756313"/>
+                     <Value name="MaxX" value="441475"/>
+                     <Value name="MaxY" value="6129475"/>
+                     <Value name="MaxZ" value="512.5"/>
+                  </Item>
+                  <Item name="ClipVolume" type="D3VOLUME">
+                     <Value name="MinX" value="*"/>
+                     <Value name="MinY" value="*"/>
+                     <Value name="MinZ" value="*"/>
+                     <Value name="MaxX" value="*"/>
+                     <Value name="MaxY" value="*"/>
+                     <Value name="MaxZ" value="*"/>
+                  </Item>
+                  <RotatedClipInfo>
+                     <Item name="XAzimuth" value="GS_R8DM"/>
+                     <Item name="XDip" value="GS_R8DM"/>
+                     <Item name="XRotation" value="False"/>
+                     <Item name="YAzimuth" value="GS_R8DM"/>
+                     <Item name="YDip" value="GS_R8DM"/>
+                     <Item name="YRotation" value="False"/>
+                     <Item name="ZAzimuth" value="GS_R8DM"/>
+                     <Item name="ZDip" value="GS_R8DM"/>
+                     <Item name="ZRotation" value="False"/>
+                  </RotatedClipInfo>
+               </Surface>
+               <Surface guid="{ABCDEF02-2345-6789-6945-2301E0BC0A89}">
+                  <Item name="Visible" value="True"/>
+                  <Item name="Colour" type="COL_ANY" colortype="RGB" red="255" green="255" blue="0"/>
+                  <Item name="Transparency" value="1"/>
+                  <Item name="RenderMode" value="Smooth"/>
+                  <Item name="DataVolume" type="D3VOLUME">
+                     <Value name="MinX" value="441360.7143"/>
+                     <Value name="MinY" value="6129463.889"/>
+                     <Value name="MinZ" value="-39.00123751"/>
+                     <Value name="MaxX" value="441475"/>
+                     <Value name="MaxY" value="6129475"/>
+                     <Value name="MaxZ" value="182.6548933"/>
+                  </Item>
+                  <Item name="ClipVolume" type="D3VOLUME">
+                     <Value name="MinX" value="*"/>
+                     <Value name="MinY" value="*"/>
+                     <Value name="MinZ" value="*"/>
+                     <Value name="MaxX" value="*"/>
+                     <Value name="MaxY" value="*"/>
+                     <Value name="MaxZ" value="*"/>
+                  </Item>
+                  <RotatedClipInfo>
+                     <Item name="XAzimuth" value="GS_R8DM"/>
+                     <Item name="XDip" value="GS_R8DM"/>
+                     <Item name="XRotation" value="False"/>
+                     <Item name="YAzimuth" value="GS_R8DM"/>
+                     <Item name="YDip" value="GS_R8DM"/>
+                     <Item name="YRotation" value="False"/>
+                     <Item name="ZAzimuth" value="GS_R8DM"/>
+                     <Item name="ZDip" value="GS_R8DM"/>
+                     <Item name="ZRotation" value="False"/>
+                  </RotatedClipInfo>
+               </Surface>
+            </SurfaceInformation>
+         </VOXSURF>
+      </Item>
+   </Item>
+   <Item type="End" size="8"></Item>
+</data>
