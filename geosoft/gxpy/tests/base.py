@@ -98,7 +98,7 @@ class GXPYTest(unittest.TestCase):
 
         gxu._uuid_callable = cls._cls_uuid
 
-        cls._gx = gx.GXpy(log=print, res_stack=res_stack, max_warnings=8, suppress_progress=True)
+        cls._gx = gx.GXpy(log=print, res_stack=res_stack, max_warnings=12, suppress_progress=True)
 
     @classmethod
     def tearDownGXPYTest(cls):
@@ -172,12 +172,13 @@ class GXPYTest(unittest.TestCase):
                 pos = pos + length + 12
 
     def _map_to_results(self, map_file, xml_file, image_file, map_result, format, pix_width):
-        m = gxapi.GXMAP.create(map_file, gxmap.WRITE_OLD)
-        m_res = gxapi.GXMAP.create(map_result, gxmap.WRITE_NEW)
+        m = gxapi.GXMAP.create(map_file, gxapi.MAP_WRITEOLD)
+        m_res = gxapi.GXMAP.create(map_result, gxapi.MAP_WRITENEW)
         m.dup_map(m_res, gxapi.DUPMAP_COPY)
-        m_res.pack_files()
+        #m_res.pack_files()
         m_res = None
         os.remove(map_result + '.xml')
+
         m.export_all_raster(image_file, '',
                             pix_width, 0, gxapi.rDUMMY,
                             gxapi.MAP_EXPORT_BITS_24,

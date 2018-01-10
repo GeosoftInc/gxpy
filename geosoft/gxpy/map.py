@@ -53,8 +53,8 @@ class MapException(Exception):
     pass
 
 
-WRITE_NEW = 1 #:
-WRITE_OLD = 2 #:
+WRITE_NEW = gxapi.MAP_WRITENEW #:
+WRITE_OLD = gxapi.MAP_WRITEOLD #:
 
 LIST_ALL = gxapi.MAP_LIST_MODE_ALL #:
 LIST_3D = gxapi.MAP_LIST_MODE_3D #:

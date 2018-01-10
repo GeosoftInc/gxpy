@@ -99,15 +99,15 @@ class SpatialData:
         if hasattr(self, '_open'):
             if self._open:
 
+                gx.pop_resource(self._open)
+                self._open = None
+
                 if self.file_name and self._metadata_changed and self._mode != MODE_READ:
                     with open(self._file_name + '.xml', 'w+') as f:
                         f.write(gxu.xml_from_dict(self._metadata))
 
                 self._metadata = None
                 self._gxobject = None
-
-                gx.pop_resource(self._open)
-                self._open = None
 
     def __repr__(self):
         return "{}({})".format(self.__class__, self.__dict__)
@@ -240,8 +240,11 @@ class SpatialData:
 
         .. versionadded:: 9.3.1
         """
-        self._init_metadata()
-        return self._metadata[self._metadata_root]
+        if self._open is not None:
+            self._init_metadata()
+            return self._metadata[self._metadata_root]
+        else:
+            return None
 
     @metadata.setter
     def metadata(self, meta):
@@ -269,4 +272,3 @@ class SpatialData:
         self.metadata = {'geosoft': {'dataset': {'geo:unitofmeasurement': {'#text': str(uom)}}}}
         self.metadata = {
             'geosoft': {'dataset': {'geo:unitofmeasurement': {'@xmlns:geo': 'http://www.geosoft.com/schema/geo'}}}}
-

@@ -1,0 +1,174 @@
+<data>
+   <Item type="Version" size="8">
+      <Item name="Value" value="Current"/>
+   </Item>
+   <Item type="VOXD" size="1876">
+      <Item name="VOXD" type="VOXD">
+         <VOXD>
+            <Item name="VoxelName" value=".\__tmp__\_gx_uuid_test_vox_display.py_1\mvi.geosoft_vectorvoxel"/>
+            <Controls>
+               <Item name="RenderFlags" type="L3VOLUME">
+                  <Value name="MinX" value="0"/>
+                  <Value name="MinY" value="0"/>
+                  <Value name="MinZ" value="0"/>
+                  <Value name="MaxX" value="0"/>
+                  <Value name="MaxY" value="0"/>
+                  <Value name="MaxZ" value="0"/>
+               </Item>
+               <Item name="DisplayVolume" type="D3VOLUME">
+                  <Value name="MinX" value="504625"/>
+                  <Value name="MinY" value="6470125"/>
+                  <Value name="MinZ" value="-1578.822755"/>
+                  <Value name="MaxX" value="506000"/>
+                  <Value name="MaxY" value="6471525"/>
+                  <Value name="MaxZ" value="308.06"/>
+               </Item>
+               <Item name="DisplayVolumeForceToReproject" value="True"/>
+               <Item name="DisplayVolumeProjected" type="D3VOLUME">
+                  <Value name="MinX" value="504625"/>
+                  <Value name="MinY" value="6470125"/>
+                  <Value name="MinZ" value="-1578.822755"/>
+                  <Value name="MaxX" value="506000"/>
+                  <Value name="MaxY" value="6471525"/>
+                  <Value name="MaxZ" value="308.06"/>
+               </Item>
+               <Item name="ClipUsingOldMethod" value="True"/>
+               <RotatedClipInfo>
+                  <Item name="XAzimuth" value="GS_R8DM"/>
+                  <Item name="XDip" value="GS_R8DM"/>
+                  <Item name="XRotation" value="False"/>
+                  <Item name="YAzimuth" value="GS_R8DM"/>
+                  <Item name="YDip" value="GS_R8DM"/>
+                  <Item name="YRotation" value="False"/>
+                  <Item name="ZAzimuth" value="GS_R8DM"/>
+                  <Item name="ZDip" value="GS_R8DM"/>
+                  <Item name="ZRotation" value="False"/>
+               </RotatedClipInfo>
+               <Item name="DisplayBox" value="True"/>
+               <Item name="Transparency" value="1"/>
+            </Controls>
+            <ShellControls>
+               <Item name="Index" value="0"/>
+               <Item name="Min" value="GS_R8DM"/>
+               <Item name="Max" value="GS_R8DM"/>
+            </ShellControls>
+            <ThematicSelectionVV></ThematicSelectionVV>
+            <Item name="RenderMode" value="VOXEL_RENDER_PIECEWISE"/>
+            <ITR>
+               <Header>
+                  <Item name="ColorModel" value="2"/>
+                  <Item name="Min" value="0.0001235652744"/>
+                  <Item name="Max" value="2.716247559"/>
+                  <Item name="ActualBrightness" value="0"/>
+                  <Item name="Brightness" value="0"/>
+                  <Item name="REG" type="REG">
+                     <REG>
+                        <Attributes>
+                           <Item name="FILE" value="colour.tbl"/>
+                        </Attributes>
+                     </REG>
+                  </Item>
+                  <Model>
+                     <Item name="Parameters" type="DoubleArray">
+                        <Value index="0" value="0"/>
+                        <Value index="1" value="0"/>
+                        <Value index="2" value="0"/>
+                        <Value index="3" value="0"/>
+                     </Item>
+                     <Shade>
+                        <Item name="Inclination" value="GS_R8DM"/>
+                        <Item name="Declination" value="GS_R8DM"/>
+                        <Item name="Scale" value="GS_R8DM"/>
+                        <Item name="OriginGrid" value=""/>
+                     </Shade>
+                  </Model>
+               </Header>
+               <Colors>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="0" blue="255"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="85" blue="255"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="127" blue="255"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="170" blue="255"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="212" blue="255"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="233" blue="255"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="255" blue="255"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="255" blue="200"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="255" blue="145"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="255" blue="63"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="255" blue="49"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="255" blue="36"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="255" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="72" green="255" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="99" green="255" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="109" green="255" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="145" green="255" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="182" green="255" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="218" green="255" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="255" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="233" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="212" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="191" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="180" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="170" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="148" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="137" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="127" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="106" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="85" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="53" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="21" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="0" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="0" blue="55"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="0" blue="109"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="0" blue="182"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="11" blue="218"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="121" blue="255"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="159" blue="255"/>
+               </Colors>
+               <Levels>
+                  <Item name="Color" value="GS_R8MN"/>
+                  <Item name="Color" value="0.001112716675"/>
+                  <Item name="Color" value="0.001468365593"/>
+                  <Item name="Color" value="0.001744360268"/>
+                  <Item name="Color" value="0.001987915489"/>
+                  <Item name="Color" value="0.002219487345"/>
+                  <Item name="Color" value="0.002464847234"/>
+                  <Item name="Color" value="0.002716019427"/>
+                  <Item name="Color" value="0.002986245052"/>
+                  <Item name="Color" value="0.003296993274"/>
+                  <Item name="Color" value="0.003660795061"/>
+                  <Item name="Color" value="0.004111167661"/>
+                  <Item name="Color" value="0.004701512424"/>
+                  <Item name="Color" value="0.005469419762"/>
+                  <Item name="Color" value="0.006498475117"/>
+                  <Item name="Color" value="0.008059462059"/>
+                  <Item name="Color" value="0.01003795674"/>
+                  <Item name="Color" value="0.0123454569"/>
+                  <Item name="Color" value="0.01457907469"/>
+                  <Item name="Color" value="0.0168556996"/>
+                  <Item name="Color" value="0.01924820879"/>
+                  <Item name="Color" value="0.02204223288"/>
+                  <Item name="Color" value="0.02524129696"/>
+                  <Item name="Color" value="0.02864463679"/>
+                  <Item name="Color" value="0.03254482487"/>
+                  <Item name="Color" value="0.03676332948"/>
+                  <Item name="Color" value="0.0412713549"/>
+                  <Item name="Color" value="0.04634475901"/>
+                  <Item name="Color" value="0.05209774921"/>
+                  <Item name="Color" value="0.05870675923"/>
+                  <Item name="Color" value="0.0661166395"/>
+                  <Item name="Color" value="0.07465724555"/>
+                  <Item name="Color" value="0.08525698134"/>
+                  <Item name="Color" value="0.09893629225"/>
+                  <Item name="Color" value="0.1173525156"/>
+                  <Item name="Color" value="0.1433449005"/>
+                  <Item name="Color" value="0.1967993241"/>
+                  <Item name="Color" value="0.3267652022"/>
+                  <Item name="Color" value="0.6376557776"/>
+                  <Item name="Color" value="GS_R8MX"/>
+               </Levels>
+            </ITR>
+         </VOXD>
+      </Item>
+   </Item>
+   <Item type="End" size="8"></Item>
+</data>
