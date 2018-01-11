@@ -1119,19 +1119,6 @@ class Grid:
 
         return gx, gy, gz
 
-    def arcpy_save_raster(self, out_raster): 
-        import arcpy
-        data_np = np.flipud(self.np()) # Geosoft convention starts with lower left origin
-        new_raster = arcpy.NumPyArrayToRaster(data_np,
-                                              value_to_nodata=self.dummy_value,
-                                              lower_left_corner=arcpy.Point(self.x0, self.y0),
-                                              x_cell_size=self.dx, y_cell_size=self.dy)
-        new_raster.save(out_raster)
-        if self.coordinate_system.is_known:
-            sr = arcpy.SpatialReference()
-            sr.loadFromString(self.coordinate_system.esri_wkt)
-            arcpy.DefineProjection_management(out_raster, sr)
-
 # grid utilities
 def array_locations(properties):
     """
