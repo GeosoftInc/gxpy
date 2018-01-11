@@ -1,0 +1,52 @@
+<data>
+   <Item type="Version" size="8">
+      <Item name="Value" value="Current"/>
+   </Item>
+   <Item type="VOXSURF" size="2421">
+      <Item name="VOXSURF" type="VOXSURF">
+         <VOXSURF>
+            <SurfaceInformation>
+               <Item name="Volume" type="D3VOLUME">
+                  <Value name="MinX" value="*"/>
+                  <Value name="MinY" value="*"/>
+                  <Value name="MinZ" value="*"/>
+                  <Value name="MaxX" value="*"/>
+                  <Value name="MaxY" value="*"/>
+                  <Value name="MaxZ" value="*"/>
+               </Item>
+               <Item name="ClipVolume" type="D3VOLUME">
+                  <Value name="MinX" value="*"/>
+                  <Value name="MinY" value="*"/>
+                  <Value name="MinZ" value="*"/>
+                  <Value name="MaxX" value="*"/>
+                  <Value name="MaxY" value="*"/>
+                  <Value name="MaxZ" value="*"/>
+               </Item>
+               <RotatedClipInfo>
+                  <Item name="XAzimuth" value="GS_R8DM"/>
+                  <Item name="XDip" value="GS_R8DM"/>
+                  <Item name="XRotation" value="False"/>
+                  <Item name="YAzimuth" value="GS_R8DM"/>
+                  <Item name="YDip" value="GS_R8DM"/>
+                  <Item name="YRotation" value="False"/>
+                  <Item name="ZAzimuth" value="GS_R8DM"/>
+                  <Item name="ZDip" value="GS_R8DM"/>
+                  <Item name="ZRotation" value="False"/>
+               </RotatedClipInfo>
+               <Item name="Surface Colour" type="COL_ANY" colortype="RGB" red="128" green="128" blue="128"/>
+               <Item name="Contour" value="GS_R8DM"/>
+               <Item name="Transparency" value="1"/>
+               <Item name="RenderMode" value="Smooth"/>
+               <Item name="Coded vertex locations" type="3"></Item>
+               <Item name="Coded normal values" type="3"></Item>
+               <Item name="Triangle vertex indices" type="L3PointVV">
+                  <Item name="length" value="0"/>
+                  <Item name="CRC" value="0"/>
+                  <Item name="length output" value="0"/>
+               </Item>
+            </SurfaceInformation>
+         </VOXSURF>
+      </Item>
+   </Item>
+   <Item type="End" size="8"></Item>
+</data>

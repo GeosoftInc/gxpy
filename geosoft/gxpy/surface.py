@@ -30,6 +30,7 @@ from . import view as gxview
 from . import vox as gxvox
 from . import vv as gxvv
 from . import group as gxg
+from . import map as gxmap
 
 __version__ = geosoft.__version__
 
@@ -382,6 +383,86 @@ class SurfaceDataset(gxspd.SpatialData):
             surface_dataset = SurfaceDataset.open(surface_dataset)
         for s in surface_dataset:
             self.add_surface(s)
+
+
+    def view_3d(self, file_name=None, overwrite=True, plane_2d=False):
+        """
+        Create a 3d view (`geosoft.gxpy.view.View_3d`) that contains this `SurfaceDataset`.
+
+        :param file_name:   the name of a file for the 3d view. If None a temporary 3d view created.
+        :param overwrite:   True to overwrite existing file
+        :param plane_2d:    True to keep the 2D plane.  Only keep it if you intend to draw on it otherwise a grey
+                            plane will appear in the view.
+
+        .. versionadded:: 9.3
+        """
+
+        v3d = gxview.View_3d.new(file_name, overwrite=overwrite)
+        render(v3d, self)
+        if not plane_2d:
+            v3d.delete_plane(0)
+
+        return v3d
+
+    def figure_map(self, file_name=None, overwrite=True, title=None,
+                   features=('LEGEND', 'NEATLINE'), **kwargs):
+        """
+        Create a figure view file from an SurfaceDataset.
+
+        :param file_name:       the name of a file for the 3d view. If None a temporary 3d view created.
+        :param overwrite:       True to overwrite existing file
+        :param title:           Title added to the image
+        :param legend_label:    If plotting a legend make this the legned title.  The default is the unit_of_measure.
+        :param features:        list of features to place on the map, default is ('SCALE', 'LEGEND', 'NEATLINE')
+
+                                    =========== =========================================
+                                    'LEGEND'    draw a surface legend
+                                    'NEATLINE'  draw a neat-line around the image
+                                    =========== =========================================
+
+        :param kwargs:          passed to `geosoft.gxpy.map.Map.new`
+
+        .. versionadded:: 9.3
+        """
+
+        # uppercase features, use a dict so we pop things we use and report error
+        if isinstance(features, str):
+            features = (features,)
+        feature_list = {}
+        if features is not None:
+            for f in features:
+                feature_list[f.upper()] = None
+        features = list(feature_list.keys())
+
+        # setup margins
+        if not ('margins' in kwargs):
+
+            bottom_margin = 1.0
+            if title:
+                bottom_margin += len(title.split('\n')) * 1.0
+
+            right_margin = 1
+            if 'LEGEND' in feature_list:
+                right_margin += 4.0
+            kwargs['margins'] = (1, right_margin, bottom_margin, 1)
+
+        gmap = gxmap.Map.figure((0, 0, 100, 100),
+                                file_name=file_name,
+                                features=features,
+                                title=title,
+                                **kwargs)
+
+        with gxview.View.open(gmap, "data") as v:
+
+            if 'LEGEND' in features:
+                pass # TODO: draw a surface legend
+
+        area = gxview.View.open(gmap, gmap.current_data_view).extent_map_cm()
+        area = (area[0] * 10., area[1] * 10., area[2] * 10., area[3] * 10.)
+
+        gmap.create_linked_3d_view(self.view_3d(), area_on_map=area)
+
+        return gmap
 
 
 class Surface(gxspd.SpatialData):

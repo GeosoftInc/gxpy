@@ -795,7 +795,7 @@ class View_3d(View):
         self.__del__()
 
     def __del__(self):
-        if hasattr(self, '_close'):
+        if hasattr(self, 'close'):
             self.close()
 
     def close(self):
@@ -890,7 +890,10 @@ class View_3d(View):
         """
         if isinstance(plane, str):
             plane = self.plane_number(plane)
-        self.gxview.delete_plane(plane, True)
+        try:
+            self.gxview.delete_plane(plane, True)
+        except gxapi.GXError:
+            pass
 
     def has_plane(self, plane):
         """
