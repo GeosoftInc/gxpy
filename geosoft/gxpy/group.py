@@ -1291,73 +1291,45 @@ class Draw_3d(Draw):
                 else:
                     raise GroupException(_t('Symbol type not implemented'))
 
-    def surface(self, faces, verticies, color=None, style=SURFACE_SMOOTH):
+
+    def _surface(self, faces, verticies, coordinate_system=None):
         """
-        Draw triangles defined by faces, verticies and normals.
+        TODO: awaiting resolution of #73
+
+        Draw a surface defined by faces and verticies
 
         :param faces:               triangle faces as indexes into verticies, numpy array (n_faces, 3)
         :param verticies:           verticies, numpy array (n_verticies, 3)
-        :param color:               `Color` instance or color value for a solid colour, or a
-                                    `geosoft.gxpy.vv.GXvv` of color integers for each vertex.  If None
-                                    the current pen fill colour is used.
-        :param style:               surface rendering style, SURFACE_SMOOTH or SURFACE_FLAT
-
-        .. note::
-
-            This is intended for relatively small-count objects, up to perhaps 100 surfaces.
-            Larger-count surfaces are supported, but rendering performance can be slow for
-            an interactive experience. For large-count surfaces it is better to create
-            a `geosoft.gxpy.surface.SurfaceDataset`, which can contain a number of large-count
-            and `geosoft.gxpy.surface.Surface` instances, then use `surface_group_from_file` to
-            add a rendering to a 3d view.
+        :param coordinate_system:   `geosoft.gxpy.Coordinate_system` instance if not in the drawing CS.
 
         .. versionadded:: 9.3.1
         """
 
-        # buffer stream of faces TODO: discuss this approach with Jacques.
-        # - rendering of large surfaces is slow, even with buffering, compared to geosoft_surface file render.
-        # - but geosoft_surface requires surface dataset file to be present.
-        # - unclear the rules for type string in a surface_dataset
-        # - don't understand how to control colors using this method
-        # - perhaps, if we can figure out colors, this should be for small surface only?
-        # - seems I'm on the wrong track with this approach. Perhaps better to limit surface renderings
-        #   in a view to only geosoft_surface files?
-
         n_faces = len(faces)
         n_verticies = len(verticies)
-        n_buff = 1000
-        n_faces_written = 0
-        nullvv = gxapi.GXVV.null()
-
-        # normals
-        if style == SURFACE_FLAT:
-            normals = face_normals_np(faces, verticies)
-        else:
-            normals = vertex_normals_np(faces, verticies)
-
-        # color
-        if not isinstance(color, np.ndarray):
-
-            if color is None:
-                color = self.pen.fill_color
-
-            if style == SURFACE_FLAT:
-                cnp = np.empty(len(faces), dtype=np.int32)
-            else:
-                cnp = np.empty(len(faces) * 3, dtype=np.int32)
-            # TODO: discuss with Jacques - can't get constant color???
-            # r, g, b = Color(color).rgb
-            # cnp.fill(b + (g + r * 256) * 256)
-            cnp.fill(Color(color).int_value)
-            color = cnp
-
-        else:
-            ncol = n_faces if style == SURFACE_FLAT else n_verticies
-            if len(color) < ncol:
-                raise GroupException(_t('Not enough colours. Must match verticies for SMOOTH, faces for FLAT.'))
         if np.max(faces) > n_verticies or np.min(faces) < 0:
             raise GroupException(_t('Faces refer to verticies out of range of verticies.'))
 
+        # TODO validate buffering and rendering performance once #73 is resolved.
+        n_buff = 1000
+        n_faces_written = 0
+
+        # normals
+        normals = vertex_normals_np(faces, verticies)
+
+        # coordinate_system
+        if isinstance(coordinate_system, gxcs.Coordinate_system):
+            gxipj = coordinate_system.gxipj
+        else:
+            gxipj = self.drawing_coordinate_system.gxipj
+
+        # TODO: implement variable colour once issue #73 is addressed
+        # color
+        color = self.pen.fill_color.int_value
+        if color == 0:
+            color = C_GREY
+
+        self.render_backfaces = True
         while n_faces_written < n_faces:
             n_write = min(n_buff, n_faces - n_faces_written)
             n_last = n_faces_written + n_write
@@ -1365,20 +1337,15 @@ class Draw_3d(Draw):
             verticies_buff = verticies[faces_buff].reshape(-1, 3)
 
             vx, vy, vz = gxvv.vvset_from_np(verticies_buff)
+            vf1, vf2, vf3 = gxvv.vvset_from_np(faces_buff)
+            nx, ny, nz = gxvv.vvset_from_np(normals[faces_buff].reshape(-1, 3))
 
-            if style == SURFACE_FLAT:
-                cvv = gxvv.GXvv(color[n_faces_written: n_last])
-                nx, ny, nz = gxvv.vvset_from_np(normals[n_faces_written: n_last])
-            else:
-                cvv = gxvv.GXvv(color[n_faces_written * 3: n_last * 3])
-                nx, ny, nz = gxvv.vvset_from_np(normals[faces_buff].reshape(-1, 3))
-
-            self.view.gxview.draw_object_3d(gxapi.MVIEW_DRAWOBJ3D_ENTITY_TRIANGLES, style,
-                                            n_write, 0,
-                                            vx.gxvv, vy.gxvv, vz.gxvv,
-                                            nx.gxvv, ny.gxvv, nz.gxvv,
-                                            cvv.gxvv,
-                                            nullvv, nullvv)
+            self.view.gxview.draw_surface_3d_ex(self.name,
+                                                vx.gxvv, vy.gxvv, vz.gxvv,
+                                                nx.gxvv, ny.gxvv, nz.gxvv,
+                                                gxapi.GXVV.null(), color,
+                                                vf1.gxvv, vf2.gxvv, vf3.gxvv,
+                                                gxipj)
             n_faces_written += n_write
 
 

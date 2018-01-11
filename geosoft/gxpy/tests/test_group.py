@@ -13,6 +13,7 @@ import geosoft.gxpy.system as gxsys
 import geosoft.gxpy.view as gxv
 import geosoft.gxpy.group as gxg
 import geosoft.gxpy.vv as gxvv
+import geosoft.gxpy.viewer as gxviewer
 
 from base import GXPYTest
 
@@ -1474,6 +1475,31 @@ class Test(GXPYTest):
                     self.assertEqual(g.name, 'property_test')
                     self.assertEqual(g.view.name, 'data')
 
+    @unittest.skip('WIP see issue #73')
+    def test_surface(self):
+        self.start()
+
+        verts = np.array([[0, 0, 0],
+                          [5, 0, 0],
+                          [5, 5, 0],
+                          [0, 3, 5],
+                          [2.5, 2, 10],
+                          [-3, 6, 8],
+                          [-4, 0, 12]], dtype=np.float64)
+        faces = np.array([[0, 1, 2],
+                          [0, 2, 3],
+                          [3, 2, 4],
+                          [1, 2, 4],
+                          [3, 4, 5],
+                          [6, 4, 5]], dtype=np.int32)
+
+        with gxv.View_3d.new() as v3d:
+            v3d_file = v3d.file_name
+            with gxg.Draw_3d(v3d, 'Surface') as g:
+                g._surface(faces, verts)
+        image_file = gxmap.Map.open(v3d_file).image_file(pix_width=800)
+        gxviewer.view_document(v3d_file, wait_for_close=True)
+        pass  # self.crc_map(v3d_file)
 
 if __name__ == '__main__':
     unittest.main()
