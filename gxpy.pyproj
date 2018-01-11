@@ -755,7 +755,8 @@
     <Content Include="geosoft\gxapi\vcruntime140.dll" />
     <Content Include="GX Developer\Python\GX Developer for Python.html" />
     <Content Include="GX Developer\Python\GX Developer for Python.txt" />
-    <Content Include="README.rst" />
+    <Content Include="LICENSE" />
+    <Content Include="README.md" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -955,14 +956,18 @@
     <Compile Include="geosoft\gxpy\tests\test_utility.py" />
     <Compile Include="geosoft\gxpy\tests\test_va.py" />
     <Compile Include="geosoft\gxpy\tests\test_view.py" />
-    <Compile Include="geosoft\gxpy\tests\test_voxset.py" />
+    <Compile Include="geosoft\gxpy\tests\test_vox.py" />
+    <Compile Include="geosoft\gxpy\tests\test_vox_display.py" />
     <Compile Include="geosoft\gxpy\tests\test_vv.py" />
+    <Compile Include="geosoft\gxpy\tests\vox_assert_test.py" />
+    <Compile Include="geosoft\gxpy\tests\wee_test.py" />
     <Compile Include="geosoft\gxpy\user_input\__init__.py" />
     <Compile Include="geosoft\gxpy\utility.py" />
     <Compile Include="geosoft\gxpy\va.py" />
     <Compile Include="geosoft\gxpy\view.py" />
     <Compile Include="geosoft\gxpy\viewer.py" />
-    <Compile Include="geosoft\gxpy\voxset.py" />
+    <Compile Include="geosoft\gxpy\vox.py" />
+    <Compile Include="geosoft\gxpy\vox_display.py" />
     <Compile Include="geosoft\gxpy\vv.py" />
     <Compile Include="geosoft\gxpy\_jdcal\jdcal.py" />
     <Compile Include="geosoft\gxpy\_jdcal\__init__.py" />
