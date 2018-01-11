@@ -473,3 +473,19 @@ class GXvv:
             self.gxvv.fill_int(int(value))
         else:
             self.gxvv.fill_string(str(value))
+
+    def min_max(self):
+        """
+        Return the minimum and maximum values as doubles.  Strings are converted if possible.
+
+        :return: (minimum, maximum), or if all dummy, (None, None)
+
+        .. versionadded:: 9.3.1
+        """
+
+        rmin = gxapi.float_ref()
+        rmax = gxapi.float_ref()
+        self._gxvv.range_double(rmin, rmax)
+        if rmin.value == gxapi.rDUMMY:
+            return (None, None)
+        return rmin.value, rmax.value

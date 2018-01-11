@@ -774,6 +774,8 @@ class Surface(gxspd.SpatialData):
                                      f1vv.gxvv, f2vv.gxvv, f3vv.gxvv)
         self._add = True
 
+        # extent
+
         if properties:
             self.render_properties = properties
 

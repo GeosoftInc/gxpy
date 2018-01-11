@@ -158,7 +158,7 @@ class Test(GXPYTest):
 
             for surf in surfdataset:
                 self.assertTrue(surf.verticies_count > 0)
-            surf = surfdataset[0]
+            surf = surfdataset['Isosurface 0.01']
             self.assertEqual(surf.name, 'Isosurface 0.01')
             self.assertEqual(surf.verticies_count, 482)
             self.assertEqual(surf.faces_count, 855)
@@ -166,6 +166,12 @@ class Test(GXPYTest):
             self.assertEqual(surf.render_color.rgb, (128, 128, 128))
             self.assertEqual(surf.render_opacity, 0.5)
             self.assertEqual(surf.render_style, gxsurf.STYLE_SMOOTH)
+            self.assertEqual(surf.extent, (440718.65079365077,
+                                           6129015.476190476,
+                                           -954.3756313323975,
+                                           441475.0,
+                                           6129475.0,
+                                           512.5))
 
     def test_copy(self):
         self.start()
@@ -183,6 +189,24 @@ class Test(GXPYTest):
             self.assertTrue('Isosurface 0.01' in sd.surface_name_list)
             self.assertTrue('Isosurface 0.02' in sd.surface_name_list)
             self.assertAlmostEqual(sd['Isosurface 0.01'].render_opacity, 0.6666666666666666)
+
+            surf = sd['Isosurface 0.01']
+            self.assertEqual(surf.extent, (440718.65079365077,
+                                           6129015.476190476,
+                                           -954.3756313323975,
+                                           441475.0,
+                                           6129475.0,
+                                           512.5))
+
+            with gxsurf.Surface('maki') as s:
+                f, t = surf.get_mesh_vv()
+                s.add_mesh_vv(f, t)
+                self.assertEqual(s.extent, (440718.65079365077,
+                                            6129015.476190476,
+                                            -954.3756313323975,
+                                            441475.0,
+                                            6129475.0,
+                                            512.5))
 
     def test_new_mesh(self):
         self.start()
@@ -349,6 +373,7 @@ class Test(GXPYTest):
                 v3d_file = v3d.file_name
                 gxsurf.render(v3d, s)
         self.crc_map(v3d_file)
+        # gxviewer.view_document(v3d_file, wait_for_close=True)
 
     def test_make_my_own_2(self):
         self.start()
@@ -371,6 +396,7 @@ class Test(GXPYTest):
                 v3d_file = v3d.file_name
                 gxsurf.render(v3d, s)
         self.crc_map(v3d_file)
+        # gxviewer.view_document(v3d_file, wait_for_close=True)
 
     def test_fig_map(self):
         self.start()
@@ -387,12 +413,14 @@ class Test(GXPYTest):
         with gxsurf.SurfaceDataset.new() as sd:
             with gxsurf.Surface('maki', surface_dataset=sd) as s:
                 s.add_mesh_np(faces, verts)
+                e = s.extent
                 s.render_color = gxgrp.C_RED
-                s.render_style = gxsurf.STYLE_EDGE
+                s.render_style = gxsurf.STYLE_FLAT
                 s.render_opacity = 1
             fig_map = sd.figure_map().file_name
-        # gxviewer.view_document(fig_map, wait_for_close=True)
-        self.crc_map(fig_map)
+        # self.crc_map(fig_map)
+        gxviewer.view_document(fig_map, wait_for_close=True)
+
 
 
 ###############################################################################################

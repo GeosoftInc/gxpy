@@ -137,6 +137,12 @@ class Test(GXPYTest):
             npf, fid = vv3.get_data(np.float)
             self.assertEqual(npf[0], 4000.)
             self.assertEqual(npf[3], -70.)
+            self.assertEqual(vv3.min_max(), (-70., 4000.))
+
+        with gxvv.GXvv(['maki', 'bob']) as vv:
+            self.assertEqual(vv.min_max(), (None, None))
+
+        self.assertEqual(gxvv.GXvv(['*', 1]).min_max(), (1., 1.))
 
     def test_strings(self):
         self.start()
