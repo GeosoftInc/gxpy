@@ -3,10 +3,8 @@ import numpy as np
 import json
 
 import geosoft.gxapi as gxapi
-import geosoft.gxpy.gx as gx
-import geosoft.gxpy.system as gsys
 import geosoft.gxpy.coordinate_system as gxcs
-import geosoft
+import geosoft.gxpy.vv as gxvv
 
 from base import GXPYTest
 
@@ -219,26 +217,42 @@ class Test(GXPYTest):
                 with gxcs.Coordinate_translate(cs, csll) as pj:
 
                     lon, lat = pj.convert((500000, 6500000))
+                    self.assertAlmostEqual(lon, 171)
+                    self.assertAlmostEqual(lat, 8)
+
+                    lon, lat = pj.convert((500000., 6500000.))
                     self.assertAlmostEqual(lon, 171.168823147)
                     self.assertAlmostEqual(lat, 8.36948254242)
 
-                    lon, lat, z = pj.convert((500000, 6500000, 50))
+                    ll = pj.convert(np.array([500000., 6500000.], dtype=np.float32))
+                    self.assertAlmostEqual(ll[0], 171.16882, 5)
+                    self.assertAlmostEqual(ll[1], 8.36948, 5)
+
+                    lon, lat, z = pj.convert((500000., 6500000., 50.))
                     self.assertAlmostEqual(lon, 171.168823147)
                     self.assertAlmostEqual(lat, 8.36948254242)
                     self.assertAlmostEqual(z, 50)
 
-                    ll = pj.convert([[500000, 6500000], [505000, 6510000]])
+                    ll = pj.convert([[500000., 6500000.], [505000., 6510000.]])
                     self.assertAlmostEqual(ll[0][0], 171.168823147)
                     self.assertAlmostEqual(ll[0][1], 8.36948254242)
                     self.assertAlmostEqual(ll[1][0], 171.214439577)
                     self.assertAlmostEqual(ll[1][1], 8.45978927383)
 
-                    ll = pj.convert(np.array([[500000, 6500000], [505000, 6510000]]))
+                    ll = pj.convert(np.array([[500000., 6500000.], [505000., 6510000.]]))
                     self.assertTrue(type(ll) is np.ndarray)
                     self.assertAlmostEqual(ll[0][0], 171.168823147)
                     self.assertAlmostEqual(ll[0][1], 8.36948254242)
                     self.assertAlmostEqual(ll[1][0], 171.214439577)
                     self.assertAlmostEqual(ll[1][1], 8.45978927383)
+
+                    vvx = gxvv.GXvv([500000., 505000.])
+                    vvy = gxvv.GXvv([6500000., 6510000.])
+                    pj.convert_vv(vvx, vvy)
+                    self.assertAlmostEqual(vvx[0][0], 171.168823147)
+                    self.assertAlmostEqual(vvy[0][0], 8.36948254242)
+                    self.assertAlmostEqual(vvx[1][0], 171.214439577)
+                    self.assertAlmostEqual(vvy[1][0], 8.45978927383)
 
     def test_localgrid(self):
         self.start()
@@ -261,11 +275,11 @@ class Test(GXPYTest):
         self.assertEqual(csd.gxf[2], '"Oblique Stereographic",43,-96,0.9996,0,0')
 
         with gxcs.Coordinate_translate(gxcs.Coordinate_system('WGS 84'), csd) as pj:
-            x, y, z = pj.convert((-96, 43, 0))
+            x, y, z = pj.convert((-96., 43., 0))
             self.assertAlmostEqual(x, 0)
             self.assertAlmostEqual(y, 0)
             self.assertAlmostEqual(z, 0)
-            x, y, z = pj.convert((-95, 43, 0))
+            x, y, z = pj.convert((-95., 43., 0.))
             self.assertAlmostEqual(x, 73665.899715)
             self.assertAlmostEqual(y, 34886.2319719)
             self.assertAlmostEqual(z, 0)
@@ -281,11 +295,11 @@ class Test(GXPYTest):
         self.assertEqual(csd.name, 'WGS 84 / *Local(43,-96,1800,500) <0,0,800.5,0,0,25>')
         self.assertEqual(csd.gxf[2], '"Oblique Stereographic",43,-96,0.9996,1842.66314753632,-307.558977614934')
         with gxcs.Coordinate_translate(gxcs.Coordinate_system('WGS 84'), csd) as pj:
-            x, y = pj.convert((-96, 43))
+            x, y = pj.convert((-96., 43.))
             self.assertAlmostEqual(x, 1800)
             self.assertAlmostEqual(y, 500)
         with gxcs.Coordinate_translate(csd, gxcs.Coordinate_system('WGS 84')) as pj:
-            lon, lat, z = pj.convert((1800, 500, 0))
+            lon, lat, z = pj.convert((1800., 500., 0.))
             self.assertAlmostEqual(lat, 43)
             self.assertAlmostEqual(lon, -96)
             self.assertAlmostEqual(z, 800.5)
@@ -293,9 +307,9 @@ class Test(GXPYTest):
     def test_oriented(self):
         self.start()
 
-        with gxcs.Coordinate_system({'type': 'local', 'lon_lat': (-96,43), 'azimuth':25}) as cs:
+        with gxcs.Coordinate_system({'type': 'local', 'lon_lat': (-96., 43.), 'azimuth':25}) as cs:
 
-            xyzo = (10, 0, 0)
+            xyzo = (10., 0., 0.)
             xyz = cs.xyz_from_oriented(xyzo)
             self.assertEqual(xyz, (9.063077870366499, -4.2261826174069945, 0.0))
 
@@ -305,7 +319,7 @@ class Test(GXPYTest):
             self.assertAlmostEqual(xyz[1], xyzo[1])
             self.assertAlmostEqual(xyz[2], xyzo[2])
 
-            xyzo = ((10, 0, 0), (0, 10,5))
+            xyzo = ((10., 0., 0.), (0., 10.,5.))
             xyz = cs.xyz_from_oriented(xyzo)
             self.assertEqual(tuple(xyz[0]), (9.063077870366499, -4.2261826174069945, 0.0))
             self.assertEqual(tuple(xyz[1]), (4.2261826174069945, 9.0630778703664987, 5.0))
@@ -316,7 +330,7 @@ class Test(GXPYTest):
             self.assertAlmostEqual(xyz[0][1], xyzo[0][1])
             self.assertAlmostEqual(xyz[0][2], xyzo[0][2])
 
-            xyzo = ((10, 0), (0, 10), (0, 5))
+            xyzo = ((10., 0.), (0., 10.), (0., 5.))
             xyz = cs.xyz_from_oriented(xyzo, column_ordered=True)
             self.assertEqual(tuple(xyz[0]), (9.063077870366499, 4.2261826174069945))
             self.assertEqual(tuple(xyz[1]), (-4.2261826174069945, 9.063077870366499))

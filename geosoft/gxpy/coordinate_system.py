@@ -44,7 +44,7 @@ the parameters defined in the GXF stings.  See :attr:`Coordinate_system.gxf`.
 .. note::
 
     Regression tests provide usage examples:     
-    `coordinate_system tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_coordinate_system.py>`_
+    `tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_coordinate_system.py>`_
 """
 
 import json
@@ -61,46 +61,48 @@ __version__ = geosoft.__version__
 def _t(s):
     return geosoft.gxpy.system.translate(s)
 
+
 #############
 # Constants
 
 # 'HCS' and 'hcs' refer to Horizontal Coordinate System
 # 'VCS' and 'vcs' refer to Vertical Coordinate System
 
-NAME = None #:
-NAME_HCS = gxapi.IPJ_NAME_PCS #:
-NAME_PROJECTION = gxapi.IPJ_NAME_PROJECTION #:
-NAME_METHOD = gxapi.IPJ_NAME_METHOD #:
-NAME_DATUM = gxapi.IPJ_NAME_DATUM #:
-NAME_ELLIPSOID = gxapi.IPJ_NAME_ELLIPSOID #:
-NAME_LDATUM = gxapi.IPJ_NAME_LDATUM #:
-NAME_UNIT = gxapi.IPJ_NAME_UNIT_ABBR #:
-NAME_UNIT_FULL = gxapi.IPJ_NAME_UNIT_FULL #:
-NAME_TYPE = gxapi.IPJ_NAME_TYPE #:
-NAME_LLDATUM = gxapi.IPJ_NAME_LLDATUM #:
-NAME_METHOD_PARMS = gxapi.IPJ_NAME_METHOD_PARMS #:
-NAME_METHOD_LABEL = gxapi.IPJ_NAME_METHOD_LABEL #:
-NAME_DATUM_PARMS = gxapi.IPJ_NAME_DATUM_PARMS #:
-NAME_LDATUM_PARMS = gxapi.IPJ_NAME_LDATUM_PARMS #:
-NAME_GEOID = gxapi.IPJ_NAME_GEOID #:
-NAME_LDATUMDESCRIPTION = gxapi.IPJ_NAME_LDATUMDESCRIPTION #:
-NAME_METHOD_PARMS_NATIVE = gxapi.IPJ_NAME_METHOD_PARMS_NATIVE #:
-NAME_ORIENTATION = gxapi.IPJ_NAME_ORIENTATION_PARMS #:
-NAME_VCS = -1 #:
-NAME_HCS_VCS = -2 #:
+NAME = None  #:
+NAME_HCS = gxapi.IPJ_NAME_PCS  #:
+NAME_PROJECTION = gxapi.IPJ_NAME_PROJECTION  #:
+NAME_METHOD = gxapi.IPJ_NAME_METHOD  #:
+NAME_DATUM = gxapi.IPJ_NAME_DATUM  #:
+NAME_ELLIPSOID = gxapi.IPJ_NAME_ELLIPSOID  #:
+NAME_LDATUM = gxapi.IPJ_NAME_LDATUM  #:
+NAME_UNIT = gxapi.IPJ_NAME_UNIT_ABBR  #:
+NAME_UNIT_FULL = gxapi.IPJ_NAME_UNIT_FULL  #:
+NAME_TYPE = gxapi.IPJ_NAME_TYPE  #:
+NAME_LLDATUM = gxapi.IPJ_NAME_LLDATUM  #:
+NAME_METHOD_PARMS = gxapi.IPJ_NAME_METHOD_PARMS  #:
+NAME_METHOD_LABEL = gxapi.IPJ_NAME_METHOD_LABEL  #:
+NAME_DATUM_PARMS = gxapi.IPJ_NAME_DATUM_PARMS  #:
+NAME_LDATUM_PARMS = gxapi.IPJ_NAME_LDATUM_PARMS  #:
+NAME_GEOID = gxapi.IPJ_NAME_GEOID  #:
+NAME_LDATUMDESCRIPTION = gxapi.IPJ_NAME_LDATUMDESCRIPTION  #:
+NAME_METHOD_PARMS_NATIVE = gxapi.IPJ_NAME_METHOD_PARMS_NATIVE  #:
+NAME_ORIENTATION = gxapi.IPJ_NAME_ORIENTATION_PARMS  #:
+NAME_VCS = -1  #:
+NAME_HCS_VCS = -2  #:
 
-LIST_COORDINATESYSTEM = gxapi.IPJ_PARM_LST_COORDINATESYSTEM #:
-LIST_DATUM = gxapi.IPJ_PARM_LST_DATUM #:
-LIST_PROJECTION = gxapi.IPJ_PARM_LST_PROJECTION #:
-LIST_UNITS = gxapi.IPJ_PARM_LST_UNITS #:
-LIST_UNITSDESCRIPTION = gxapi.IPJ_PARM_LST_UNITSDESCRIPTION #:
-LIST_LOCALDATUMDESCRIPTION = gxapi.IPJ_PARM_LST_LOCALDATUMDESCRIPTION #:
-LIST_LOCALDATUMNAME = gxapi.IPJ_PARM_LST_LOCALDATUMNAME #:
+LIST_COORDINATESYSTEM = gxapi.IPJ_PARM_LST_COORDINATESYSTEM  #:
+LIST_DATUM = gxapi.IPJ_PARM_LST_DATUM  #:
+LIST_PROJECTION = gxapi.IPJ_PARM_LST_PROJECTION  #:
+LIST_UNITS = gxapi.IPJ_PARM_LST_UNITS  #:
+LIST_UNITSDESCRIPTION = gxapi.IPJ_PARM_LST_UNITSDESCRIPTION  #:
+LIST_LOCALDATUMDESCRIPTION = gxapi.IPJ_PARM_LST_LOCALDATUMDESCRIPTION  #:
+LIST_LOCALDATUMNAME = gxapi.IPJ_PARM_LST_LOCALDATUMNAME  #:
 
-PARM_DATUM = 'datum' #:
-PARM_PROJECTION = 'transform' #:
-PARM_UNITS = 'units' #:
-PARM_LOCAL_DATUM = 'datumtrf' #:
+PARM_DATUM = 'datum'  #:
+PARM_PROJECTION = 'transform'  #:
+PARM_UNITS = 'units'  #:
+PARM_LOCAL_DATUM = 'datumtrf'  #:
+
 
 class CSException(Exception):
     """
@@ -109,6 +111,7 @@ class CSException(Exception):
     .. versionadded:: 9.2
     """
     pass
+
 
 def parameters(what, key):
     """
@@ -132,6 +135,7 @@ def parameters(what, key):
         raise CSException(str(e))
     return dct
 
+
 def parameter_exists(what, key):
     """
     Test if a parameter set exists in a coordinate system table.
@@ -148,6 +152,7 @@ def parameter_exists(what, key):
         return False
     else:
         return True
+
 
 def name_list(what, datum_filter=''):
     """
@@ -176,7 +181,7 @@ def name_list(what, datum_filter=''):
     return namelist
 
 
-def _extract( s, frame):
+def _extract(s, frame):
     c1, c2, *_ = frame
     s = s.strip(' \t"\'')
     end = s.rfind(c2)
@@ -229,6 +234,7 @@ def name_from_hcs_orient_vcs(hcs, orient=None, vcs=None):
 
     return hcs + orient + vcs
 
+
 def list_from_wktsrs(wkt):
     """
     Return a list from a wkt spatial reference string.
@@ -236,32 +242,32 @@ def list_from_wktsrs(wkt):
     .. versionadded:: 9.2
     """
 
-    def first_item(wkt):
+    def first_item(wkts):
         n = 0
         i = 0
-        for c in wkt:
+        for c in wkts:
             if n == 0 and c == ',':
-                return wkt[:i].strip(' '), wkt[i + 1:].strip(' ')
+                return wkts[:i].strip(' '), wkts[i + 1:].strip(' ')
             i += 1
             if c == '[':
                 n += 1
             elif c == ']':
                 n -= 1
-        return wkt.strip(' '), ''
+        return wkts.strip(' '), ''
 
-    def parse_item(wkt):
-        if wkt[0] == '"':
-            return wkt[1:-1]
+    def parse_item(wkts):
+        if wkts[0] == '"':
+            return wkts[1:-1]
 
-        if '[' in wkt:
-            bkt = wkt.find('[')
-            items = list_from_wktsrs(wkt[bkt + 1:-1])
-            dct = {'key': wkt[:bkt], 'name': items[0]}
+        if '[' in wkts:
+            bkt = wkts.find('[')
+            items = list_from_wktsrs(wkts[bkt + 1:-1])
+            dct = {'key': wkts[:bkt], 'name': items[0]}
             if len(items) > 1:
                 dct['items'] = items[1:]
             return dct
 
-        return wkt
+        return wkts
 
     wkt = wkt.strip()
     wktlst = []
@@ -270,6 +276,7 @@ def list_from_wktsrs(wkt):
         wktlst.append(parse_item(first))
 
     return wktlst
+
 
 def find_key(wkt, k):
     """
@@ -290,6 +297,7 @@ def find_key(wkt, k):
 
     return '', []
 
+
 def wkt_vcs(vcs):
     """
     Compose a wkt VERTCS block from a Geosoft vcs string.
@@ -297,6 +305,7 @@ def wkt_vcs(vcs):
     .. versionadded:: 9.2
     """
     return 'VERTCS["' + vcs + '"]'
+
 
 class Wkt:
     """
@@ -316,7 +325,7 @@ class Wkt:
     def __enter__(self):
         return self
 
-    def __exit__(self, type, value, traceback):
+    def __exit__(self, _type, _value, _traceback):
         pass
 
     def __init__(self, wkt):
@@ -355,6 +364,7 @@ class Wkt:
         """
         return find_key(self._wkt, k)
 
+
 class Coordinate_system:
     """
     Coordinate system class. A coordinate system defines a horizontal and vertical reference
@@ -377,8 +387,11 @@ class Coordinate_system:
                 - :class:`geosoft.gxapi.GXIPJ` instance
                  
                 - :class:`Coordinate_system` instance, returns a copy
+
+                - None to create an '*Unknown' coordinate system.
                 
-                For examples refer to  `coordinate_system tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_coordinate_system.py>`_
+                For examples refer to
+                `tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_coordinate_system.py>`_
 
     :Dictionary Structure:
     
@@ -453,7 +466,7 @@ class Coordinate_system:
     def __enter__(self):
         return self
 
-    def __exit__(self, type, value, traceback):
+    def __exit__(self, _type, _value, _traceback):
         self.__del__()
 
     def __del__(self):
@@ -465,26 +478,28 @@ class Coordinate_system:
         self._dict = None
         self._gxapi_ipj = gxapi.GXIPJ.create()
 
-        if coordinate_system:
-            if isinstance(coordinate_system, str):
-                self._from_str(coordinate_system)
+        if coordinate_system is None:
+            coordinate_system = '*unknown'
 
-            elif isinstance(coordinate_system, gxapi.GXIPJ):
-                s1 = gxapi.str_ref()
-                s2 = gxapi.str_ref()
-                s3 = gxapi.str_ref()
-                s4 = gxapi.str_ref()
-                s5 = gxapi.str_ref()
-                coordinate_system.get_gxf(s1, s2, s3, s4, s5)
-                self._from_gxf((s1.value, s2.value, s3.value, s4.value, s5.value))
+        if isinstance(coordinate_system, str):
+            self._from_str(coordinate_system)
 
-            elif isinstance(coordinate_system, Coordinate_system):
-                self._from_gxf(coordinate_system.gxf)
+        elif isinstance(coordinate_system, gxapi.GXIPJ):
+            s1 = gxapi.str_ref()
+            s2 = gxapi.str_ref()
+            s3 = gxapi.str_ref()
+            s4 = gxapi.str_ref()
+            s5 = gxapi.str_ref()
+            coordinate_system.get_gxf(s1, s2, s3, s4, s5)
+            self._from_gxf((s1.value, s2.value, s3.value, s4.value, s5.value))
 
-            elif isinstance(coordinate_system, dict):
-                self._from_dict(coordinate_system)
-            else:
-                self._from_gxf(coordinate_system)
+        elif isinstance(coordinate_system, Coordinate_system):
+            self._from_gxf(coordinate_system.gxf)
+
+        elif isinstance(coordinate_system, dict):
+            self._from_dict(coordinate_system)
+        else:
+            self._from_gxf(coordinate_system)
 
     def __eq__(self, other):
         return self.same_as(other)
@@ -543,7 +558,7 @@ class Coordinate_system:
 
         .. versionadded:: 9.3
         """
-        return self.name != '*unknown'
+        return self.name.lower() != '*unknown'
 
     def coordinate_dict(self):
         """
@@ -712,7 +727,7 @@ class Coordinate_system:
                 raise ValueError("'ESRI missing 'wkt' property.")
             
             # add vertical datum reference from dict if not in the wkt
-            vcs = csdict.get('vcs','')
+            vcs = csdict.get('vcs', '')
             if vcs and ('VERTCS[' not in wkt):
                 wkt += wkt_vcs(vcs)
 
@@ -760,10 +775,9 @@ class Coordinate_system:
             self._from_gxf([name_azimuth, datum, proj, units, ldatum])
 
             if (x0 != 0) or (y0 != 0):
-                xx0, yy0, _ = self.xyz_from_oriented((-x0, -y0, 0))
+                xx0, yy0, _ = self.xyz_from_oriented(np.array((-x0, -y0, 0)))
                 proj = '"Oblique Stereographic",{},{},{},{},{}'.format(lat, lon, sf, -xx0, -yy0)
                 self._from_gxf([name, datum, proj, units, ldatum])
-
 
         else:
             raise ValueError("Projection type '{}' not supported.".format(cstype))
@@ -922,7 +936,6 @@ class Coordinate_system:
             else:
                 return xyz_column.swapaxes(0, 1)
 
-
     def oriented_from_xyz(self, xyz, column_ordered=False):
         """
         Return oriented (x, y, z) coordinates from true base (x, y, z) coordinates.
@@ -940,7 +953,7 @@ class Coordinate_system:
         """
         Return true base (x, y, z) coordinates from oriented (x, y, z) coordinates.
 
-        :param xyz:             (x, y, z) or irerable
+        :param xyz:             (x, y, z) or iterable
         :param column_ordered:  if xyz is iterable, and this is True, the data is assumed to be
                                 column ordered and the results are returned column ordered.
         :returns:               (x, y, z) in oriented space
@@ -948,6 +961,7 @@ class Coordinate_system:
         .. versionadded:: 9.2
         """
         return self._oriented_xyz(1, xyz, column_ordered=column_ordered)
+
 
 class Coordinate_translate:
     """
@@ -980,6 +994,40 @@ class Coordinate_translate:
         self._cs_to = cs_to
         self._pj = gxapi.GXPJ.create_ipj(cs_from.gxipj, cs_to.gxipj)
 
+    def convert_vv(self, xvv, yvv, zvv=None):
+        """
+        Project vv locations in-place.
+
+        :param xvv:     x locations as `geosoft.gxpy.vv.GXvv` instance
+        :param yvv:     y locations as `geosoft.gxpy.vv.GXvv` instance
+        :param zvv:     optional z locations as `geosoft.gxpy.vv.GXvv` instance
+
+        .. versionadded:: 9.3.1
+        """
+
+        xvvin = yvvin = zvvin = None
+        if not xvv.is_float64:
+            xvvin = xvv
+            xvv = gxvv.GXvv(xvv, dtype=np.float64)
+        if not yvv.is_float64:
+            yvvin = yvv
+            yvv = gxvv.GXvv(yvv, dtype=np.float64)
+        if zvv and not zvv.is_float64:
+            zvvin = zvv
+            zvv = gxvv.GXvv(zvv, dtype=np.float64)
+
+        if zvv:
+            self._pj.convert_vv3(xvv.gxvv, yvv.gxvv, zvv.gxvv)
+        else:
+            self._pj.convert_vv(xvv.gxvv, yvv.gxvv)
+
+        if xvvin:
+            xvvin.set_data(xvv)
+        if yvvin:
+            yvvin.set_data(yvv)
+        if zvvin:
+            zvvin.set_data(zvv)
+
     def convert(self, xyz, in_place=False):
         """
         Project data in array in which first columns are x,y or x,y,z.
@@ -1006,64 +1054,61 @@ class Coordinate_translate:
         :returns:   projected data in the same form as passed (numpy array, list, or (x,y,z))
 
         .. versionadded:: 9.2
+
+        .. versionchanged:: 9.3.1 conversion methods will return results in the same type as the input data.
         """
 
-        xyz_type = type(xyz)
-        if xyz_type is list:
+        xyz_in = xyz
+        if not isinstance(xyz, np.ndarray):
             xyz = np.array(xyz)
-        elif xyz_type is tuple:
-            xyz = np.array([xyz])
         npoints = xyz.shape[0]
 
         if npoints == 0:
             if in_place:
                 return xyz
-            if xyz_type is np.ndarray:
+            if isinstance(xyz, np.ndarray):
                 return np.array([[]])
-            elif xyz_type is list:
-                return [[]]
-            else:
-                return ()
+            return [[]]
 
+        if xyz.ndim < 2:
+            xyz = xyz.reshape((-1, xyz.shape[0]))
+            flatten_return = True
+        else:
+            flatten_return = False
         nd = xyz.shape[1]
-        if nd < 2:
+        if nd not in (2, 3):
             raise CSException(_t('Data must have dimension 2 (x,y) or 3 for (x,y,z).'))
 
-        vvx = gxapi.GXVV.create_ext(gxapi.GS_DOUBLE, npoints)
-        vvy = gxapi.GXVV.create_ext(gxapi.GS_DOUBLE, npoints)
-        vvx.set_data_np(0, xyz[:, 0])
-        vvy.set_data_np(0, xyz[:, 1])
-
+        vvx = gxvv.GXvv(xyz[:, 0])
+        vvy = gxvv.GXvv(xyz[:, 1])
         if nd >= 3:
-            vvz = gxapi.GXVV.create_ext(gxapi.GS_DOUBLE, npoints)
-            vvz.set_data_np(0, xyz[:, 2])
-            self._pj.convert_vv3(vvx, vvy, vvz)
+            vvz = gxvv.GXvv(xyz[:, 2])
         else:
-            self._pj.convert_vv(vvx, vvy)
+            vvz = None
+        self.convert_vv(vvx, vvy, vvz)
 
         if in_place:
-            xyz[:, 0] = vvx.get_data_np(0, npoints, 'f8')
-            xyz[:, 1] = vvy.get_data_np(0, npoints, 'f8')
+            xyz[:, 0] = vvx.np
+            xyz[:, 1] = vvy.np
             if nd == 3:
-                xyz[:, 2] = vvz.get_data_np(0, npoints, 'f8')
+                xyz[:, 2] = vvz.np
             return xyz
 
         if nd >= 3:
-            xyz = np.transpose(np.array([vvx.get_data_np(0, npoints, 'f8'),
-                                         vvy.get_data_np(0, npoints, 'f8'),
-                                         vvz.get_data_np(0, npoints, 'f8')]))
+            xyz = np.array([vvx.np, vvy.np, vvz.np]).T
         else:
-            xyz = np.transpose(np.array([vvx.get_data_np(0, npoints, 'f8'),
-                                         vvy.get_data_np(0, npoints, 'f8')]))
+            xyz = np.array([vvx.np, vvy.np]).T
 
-        if xyz_type is np.ndarray:
+        if flatten_return:
+            xyz = xyz.flatten()
+
+        if isinstance(xyz_in, np.ndarray):
             return xyz
 
-        elif xyz_type is list:
-            return(list(xyz))
+        elif hasattr(xyz_in, '__iter__'):
+            return list(xyz)
 
+        if nd >= 3:
+            return xyz[0, 0], xyz[0, 1], xyz[0, 2]
         else:
-            if nd >= 3:
-                return xyz[0, 0], xyz[0, 1], xyz[0, 2]
-            else:
-                return xyz[0, 0], xyz[0, 1]
+            return xyz[0, 0], xyz[0, 1]
