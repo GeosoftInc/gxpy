@@ -12,6 +12,7 @@ import geosoft.gxpy.view as gxview
 import geosoft.gxpy.map as gxmap
 import geosoft.gxpy.vv as gxvv
 import geosoft.gxpy.viewer as gxviewer
+import geosoft.gxpy.coordinate_system as gxcs
 
 from base import GXPYTest
 
@@ -218,7 +219,7 @@ class Test(GXPYTest):
                 for s in sd:
                     f, v = s.get_mesh_np()
                     snew = gxsurf.Surface(s.name)
-                    snew.add_mesh_np(f, v, (gxgrp.C_MAGENTA, 0.25, gxsurf.STYLE_FLAT))
+                    snew.add_mesh(f, v, (gxgrp.C_MAGENTA, 0.25, gxsurf.STYLE_FLAT))
                     new_sd.add_surface(snew)
 
         with gxsurf.SurfaceDataset.open(sd_fn) as sd:
@@ -239,6 +240,15 @@ class Test(GXPYTest):
     def test_exceptions(self):
         self.start()
 
+        verts = np.array([[0, 0, 0],
+                          [5, 0, 0],
+                          [5, 5, 0],
+                          [0, 3, 5],
+                          [2.5, 2, 10]], dtype=np.float64)
+        faces = np.array([[0, 1, 2],
+                          [0, 2, 3],
+                          [3, 2, 4]], dtype=np.int32)
+
         fn = 'except.geosoft_surface'
         try:
             with open(fn, '+w') as f:
@@ -257,12 +267,11 @@ class Test(GXPYTest):
         fn = gxsurf.SurfaceDataset.vox_surface(gxvox.Vox.open(self.vox_file), 0.01, temp=True).file_name
         with gxsurf.SurfaceDataset.open(self.sfile) as sd:
             self.assertFalse(sd.is_new)
-
             self.assertTrue(sd.has_surface('Isosurface 0.01'))
             self.assertRaises(gxsurf.SurfaceException, gxsurf.Surface, 'Isosurface 0.01', 'none', sd)
             self.assertRaises(gxsurf.SurfaceException, sd.add_surface, gxsurf.Surface('Isosurface 0.01'))
             self.assertFalse(sd.has_surface('billy'))
-            self.assertRaises(gxsurf.SurfaceException, sd.add_surface, gxsurf.Surface('billy'))
+            self.assertRaises(gxsurf.SurfaceException, sd.add_surface, gxsurf.Surface('billy', mesh=(faces, verts)))
 
             with gxsurf.SurfaceDataset.new() as new_sd:
                 new_sd.add_surface_dataset(sd)
@@ -270,7 +279,8 @@ class Test(GXPYTest):
                 self.assertRaises(gxsurf.SurfaceException, gxsurf.Surface, 'Isosurface 0.01', 'none', new_sd)
                 self.assertRaises(gxsurf.SurfaceException, new_sd.add_surface, gxsurf.Surface('Isosurface 0.01'))
                 self.assertFalse(new_sd.has_surface('billy'))
-                new_sd.add_surface(gxsurf.Surface('billy'))
+                s = gxsurf.Surface('billy', mesh=(faces, verts))
+                new_sd.add_surface(s)
                 self.assertTrue(new_sd.has_surface('billy'))
 
         with gxsurf.SurfaceDataset.new() as new_sd:
@@ -283,21 +293,20 @@ class Test(GXPYTest):
             self.assertEqual(s.unit_of_measure, 'nT')
             self.assertEqual(s.component_count, 1)
 
-            with gxsurf.Surface('billy', surface_type='maki') as s:
-                new_sd.add_surface(s)
+            new_sd.add_surface(gxsurf.Surface('billy', surface_type='maki', mesh=(faces, verts)))
             self.assertTrue(new_sd.has_surface('billy'))
             self.assertEqual(new_sd.surface_guid('billy'), new_sd['billy'].guid)
             s = new_sd['billy']
             self.assertEqual(s.surface_type, 'maki')
             self.assertEqual(s.source_dataset, '')
             self.assertEqual(s.unit_of_measure, 'nT')
-            self.assertEqual(s.component_count, 0)
+            self.assertEqual(s.component_count, 1)
             self.assertEqual(s.render_color, gxgrp.Color(gxgrp.C_GREY))
 
         with gxsurf.SurfaceDataset.new() as new_sd:
             new_sd.add_surface_dataset(fn)
             self.assertTrue(new_sd.has_surface('Isosurface 0.01'))
-            gxsurf.Surface('billy', surface_dataset=new_sd)
+            gxsurf.Surface('billy', surface_dataset=new_sd, mesh=(faces, verts))
             self.assertTrue(new_sd.has_surface('billy'))
 
     def test_render(self):
@@ -343,7 +352,7 @@ class Test(GXPYTest):
                           [3, 2, 4]], dtype=np.int32)
 
         with gxsurf.Surface('maki') as s:
-            s.add_mesh_np(faces, verts)
+            s.add_mesh(faces, verts)
 
             s.render_color = gxgrp.C_GREEN
             s.render_style = gxsurf.STYLE_FLAT
@@ -365,7 +374,7 @@ class Test(GXPYTest):
                           [3, 2, 4]], dtype=np.int32)
 
         with gxsurf.Surface('maki') as s:
-            s.add_mesh_np(faces, verts)
+            s.add_mesh(faces, verts)
             s.render_color = gxgrp.C_BLUE
             s.render_style = gxsurf.STYLE_SMOOTH
             s.render_opacity = 0.25
@@ -388,7 +397,7 @@ class Test(GXPYTest):
                           [3, 2, 4]], dtype=np.int32)
 
         with gxsurf.Surface('maki') as s:
-            s.add_mesh_np(faces, verts)
+            s.add_mesh(faces, verts)
             s.render_color = gxgrp.C_RED
             s.render_style = gxsurf.STYLE_EDGE
             s.render_opacity = 1
@@ -412,15 +421,37 @@ class Test(GXPYTest):
 
         with gxsurf.SurfaceDataset.new() as sd:
             with gxsurf.Surface('maki', surface_dataset=sd) as s:
-                s.add_mesh_np(faces, verts)
-                e = s.extent
+                s.add_mesh(faces, verts)
                 s.render_color = gxgrp.C_RED
                 s.render_style = gxsurf.STYLE_FLAT
                 s.render_opacity = 1
             fig_map = sd.figure_map().file_name
-        # self.crc_map(fig_map)
-        gxviewer.view_document(fig_map, wait_for_close=True)
+        self.crc_map(fig_map)
+        #gxviewer.view_document(fig_map, wait_for_close=True)
 
+    def test_fig_map_cs(self):
+        self.start()
+
+        verts = np.array([[0, 0, 0],
+                          [5, 0, 0],
+                          [5, 5, 0],
+                          [0, 3, 5],
+                          [2.5, 2, 10]], dtype=np.float64)
+        faces = np.array([[0, 1, 2],
+                          [0, 2, 3],
+                          [3, 2, 4]], dtype=np.int32)
+
+        with gxsurf.SurfaceDataset.new() as sd:
+            sd.coordinate_system = {'type': 'local', 'lon_lat': (-96., 43.), 'azimuth':0}
+            with gxsurf.Surface('maki', surface_dataset=sd) as s:
+                cs = gxcs.Coordinate_system({'type': 'local', 'lon_lat': (-96., 43.), 'azimuth':20})
+                s.add_mesh(faces, verts, coordinate_system=cs)
+                s.render_color = gxgrp.C_RED
+                s.render_style = gxsurf.STYLE_FLAT
+                s.render_opacity = 1
+            fig_map = sd.figure_map().file_name
+        #self.crc_map(fig_map)
+        gxviewer.view_document(fig_map, wait_for_close=True)
 
 
 ###############################################################################################

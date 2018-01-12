@@ -381,8 +381,8 @@ class Coordinate_system:
                 - a JSON string that contains the coordinate system properties
                   
                 - a list that contains the 5 
-                  `GXF coordinate system strings <http://www.geosoft.com/resources/goto/GXF-Grid-eXchange-File>`_
-                  (eg: ['"WGS 84 / UTM zone 32N [geodetic]", "WGS 84", "UTM zone 32N", "", ""])
+                  `GXF coordinate system strings <http://www.geosoft.com/resources/goto/GXF-Grid-eXchange-File>`_.
+                  For example: ``['"WGS 84 / UTM zone 32N [geodetic]", "WGS 84", "UTM zone 32N", "", ""]``
                 
                 - :class:`geosoft.gxapi.GXIPJ` instance
                  
@@ -598,9 +598,12 @@ class Coordinate_system:
             else:
                 return a == b
 
-        if not same_units(self, other):
+        def same_orientation(a, b):
+            return a._dict['orientation'] == b._dict['orientation']
+
+        if not same_units(self, other) or not same_orientation(self, other):
             return False
-        elif ('*unknown' in self.hcs) or ('*unknown' in other.hcs):
+        if not(self.is_known) or not(other.is_known):
             return True
         else:
             return bool(self.gxipj.coordinate_systems_are_the_same(other.gxipj))
