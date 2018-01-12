@@ -301,7 +301,7 @@ class GXpy(_Singleton):
         self.__del__()
 
     def __del__(self):
-        return  # singleton cannot be deleted
+        _exit_cleanup()
 
     def __init__(self, name=__name__, version=__version__,
                  parent_window=0, log=None,
