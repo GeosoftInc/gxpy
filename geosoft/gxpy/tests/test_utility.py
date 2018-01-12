@@ -579,7 +579,7 @@ class Test(GXPYTest):
         fn = gx.gx().temp_file()
         with open(fn, '+w') as f:
             f.write('maki')
-        self.assertTrue(gxu.file_age(fn) > 0)
+        self.assertTrue(gxu.file_age(fn) >= 0)
         self.assertFalse(gxu.is_file_locked(fn))
         self.assertFalse(gxu.is_path_locked(fn))
         dir = os.path.dirname(fn)
