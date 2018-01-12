@@ -301,7 +301,9 @@ class GXpy(_Singleton):
         self.__del__()
 
     def __del__(self):
-        _exit_cleanup()
+        self._refs = self._refs - 1
+        if self._refs == 0:
+            _exit_cleanup()
 
     def __init__(self, name=__name__, version=__version__,
                  parent_window=0, log=None,
@@ -316,7 +318,10 @@ class GXpy(_Singleton):
         # singleton class, initialize only once
         _Singleton.__init__(self)
         if _gx:
+            self._refs = self._refs + 1
             return
+
+        self._refs = 1
 
         if log is None:
             _max_resource_heap = 0
