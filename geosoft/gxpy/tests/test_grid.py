@@ -662,6 +662,20 @@ class Test(GXPYTest):
             self.assertEqual(2696851.0, np.nansum(data))
             self.assertEqual(0, np.count_nonzero(np.isnan(data)))
 
+        with gxgrd.Grid.open(self.gcf) as gc:
+            data = gc.np()
+            self.assertEqual(data.dtype, np.dtype(np.uint8))
+            self.assertEqual(data.shape, (153, 254, 4))
+            col_1 = data[0, 0]
+            self.assertEqual(col_1[0], 128)
+            self.assertEqual(col_1[1], 0)
+            self.assertEqual(col_1[2], 0)
+            self.assertEqual(col_1[3], 255)
+            col_2 = data[100, 100]
+            self.assertEqual(col_2[0], 1)
+            self.assertEqual(col_2[1], 102)
+            self.assertEqual(col_2[2], 144)
+            self.assertEqual(col_2[3], 255)
 ###############################################################################################
 
 if __name__ == '__main__':
