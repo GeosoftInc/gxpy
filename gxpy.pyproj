@@ -5,9 +5,9 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{24c32035-61d8-49c0-80c4-47476e29b1bb}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>geosoft\gxpy\tests\test_agg.py</StartupFile>
+    <StartupFile>geosoft\gxpy\tests\test_grid.py</StartupFile>
     <SearchPath />
-    <WorkingDirectory>.</WorkingDirectory>
+    <WorkingDirectory>geosoft\gxpy\tests</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <LaunchProvider>Standard Python launcher</LaunchProvider>

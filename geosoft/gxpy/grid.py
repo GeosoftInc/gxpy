@@ -1005,12 +1005,23 @@ class Grid:
                max(xyz0[0], xyz1[0], xyz2[0], xyz3[0]),\
                max(xyz0[1], xyz1[1], xyz2[1], xyz3[1]),\
                max(xyz0[2], xyz1[2], xyz2[2], xyz3[2])
+    
+    def _transform_color_int_to_rgba(self, np_values):
+        np_values = np_values.astype(np.uint32)
+        r = (np.right_shift(np_values, 24) & 0xFF).astype(np.uint8)
+        g = (np.right_shift(np_values, 16) & 0xFF).astype(np.uint8)
+        b = (np.right_shift(np_values, 8) & 0xFF).astype(np.uint8)
+        a = (np_values & 0xFF).astype(np.uint8)
+        # the values for color grids actually do not contain alphas but just 
+        # 0 or 1 to indicate if the color is valid or not
+        a[a > 0] = 255
+        return np.array([r, g, b, a]).transpose()
 
     def np(self):
         """
         Return a numpy array of grid values.
 
-        :returns: numpy array shape (nx, ny)
+        :returns: numpy array shape (nx, ny) or (nx, ny, 4) containing RGBA bytes in case of color grids
 
         .. versionadded:: 9.3.1
         """
@@ -1018,18 +1029,20 @@ class Grid:
         nx = self.nx
         ny = self.ny
         if self.is_color:
-            data = np.zeros((ny, nx, 4), np.dtype(np.byte))
+            data = np.zeros((ny, nx, 4), np.dtype(np.uint8))
         else:
             data = np.zeros((ny, nx), dtype=self._dtype)
         if self.gximg.query_kx() == -1:
             for i in range(self.nx):
                 column = self.read_column(i).np
-                #if self.is_color:
-                #    column
+                if self.is_color:
+                    column = self._transform_color_int_to_rgba(column)
                 data[:, i] = column
         else:
             for i in range(self.ny):
                 row = self.read_row(i).np
+                if self.is_color:
+                    row = self._transform_color_int_to_rgba(row)
                 data[i, :] = row
 
         return data

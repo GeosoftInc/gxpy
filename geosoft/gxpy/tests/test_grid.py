@@ -669,9 +669,18 @@ class Test(GXPYTest):
 
         with gxgrd.Grid.open(self.gcf) as gc:
             data = gc.np()
-            self.assertEqual(data.dtype, np.dtype(np.byte))
-            self.assertEqual(data.shape, (101, 101, 3))
-            data = gc.np()
+            self.assertEqual(data.dtype, np.dtype(np.uint8))
+            self.assertEqual(data.shape, (153, 254, 4))
+            col_1 = data[0, 0]
+            self.assertEqual(col_1[0], 128)
+            self.assertEqual(col_1[1], 0)
+            self.assertEqual(col_1[2], 0)
+            self.assertEqual(col_1[3], 255)
+            col_2 = data[100, 100]
+            self.assertEqual(col_2[0], 1)
+            self.assertEqual(col_2[1], 102)
+            self.assertEqual(col_2[2], 144)
+            self.assertEqual(col_2[3], 255)
             
 
 ###############################################################################################
