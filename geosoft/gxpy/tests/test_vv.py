@@ -336,6 +336,30 @@ class Test(GXPYTest):
         npd = gxvv.np_from_vvset(vv)
         self.assertEqual(npd.shape, (12, 4))
 
+    def test_vv_creation(self):
+
+        vv = gxvv.GXvv(range(6), fid=(-0.5, 2), dtype=np.float32, unit_of_measure='maki')
+        vv2 = gxvv.GXvv(vv)
+        self.assertTrue(vv == vv2)
+        self.assertEqual(tuple(vv2.np), tuple(vv.np))
+        self.assertEqual(vv.fid, vv2.fid)
+        self.assertEqual(vv.dim, vv2.dim)
+        self.assertEqual(vv.unit_of_measure, vv2.unit_of_measure)
+        self.assertEqual(vv.dtype, vv2.dtype)
+        vv.fid = (0., 1.)
+        self.assertFalse(vv == vv2)
+        vv2 = gxvv.GXvv(vv, unit_of_measure='maki2')
+        self.assertFalse(vv == vv2)
+        vv2 = gxvv.GXvv(vv, dim=1)
+        self.assertTrue(vv == vv2)
+        vv2 = gxvv.GXvv(vv, dim=2)
+        self.assertFalse(vv == vv2)
+        vv2 = gxvv.GXvv(vv, dim=3)
+        self.assertFalse(vv == vv2)
+        vv3 = gxvv.GXvv(vv2, dim=1)
+        self.assertTrue(vv == vv3)
+
+
 ##############################################################################################
 if __name__ == '__main__':
 

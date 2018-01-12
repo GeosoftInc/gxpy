@@ -98,7 +98,9 @@ class GXvv:
 
     :param array:           array-like, None to create an empty VV. Can have 2 dimensions for float32 or
                             float64 data, in which case the second dimension can be 2 or 3 to use Geosoft
-                            2D and 3D dimensioned types.
+                            2D and 3D dimensioned types. This can also be another `GXvv` instance, in which
+                            case a copy of the data is made and the dtype, dim, fid an unit_of_measurement
+                            will default to the source instance.
     :param dtype:           numpy data type.  For unicode strings 'U#', where # is a string length. If not specified
                             the type is taken from first element in array, of if no array the default is 'float'.
     :param dim:             dimension can be 1 (default), 2 (2D) or 3 (3D). Ignored if array is defined as the array
@@ -121,7 +123,7 @@ class GXvv:
 
     .. versionchanged:: 9.3 added unit_of_measure
 
-    .. versionchanged:: 9.3.1 added string support in __getitem__
+    .. versionchanged:: 9.3.1 added string support in __getitem__, and creates from a source `GVvv` instance.
     """
 
     def __enter__(self):
@@ -134,18 +136,40 @@ class GXvv:
         if hasattr(self, '_gxvv'):
             self._gxvv = None
 
-    def __init__(self, array=None, dtype=None, fid=(0.0, 1.0), unit_of_measure='', dim=None):
+    def __eq__(self, other):
+        return np.array_equal(self.np, other.np) \
+               and self.fid == other.fid \
+               and self.dim == other.dim \
+               and self.unit_of_measure == other.unit_of_measure
+
+
+    def __init__(self, array=None, dtype=None, fid=None, unit_of_measure=None, dim=None):
 
         if array is not None:
-            if not isinstance(array, np.ndarray):
-                array = np.array(array)
-            if array.ndim == 2:
-                dim = array.shape[1]
+            if isinstance(array, GXvv):
+                if fid is None:
+                    fid = array.fid
+                if unit_of_measure is None:
+                    unit_of_measure = array.unit_of_measure
+                if dtype is None:
+                    dtype = array.dtype
+                if dim is None:
+                    dim = array.dim
+                array = array.np
             else:
-                dim = 1
-            if dtype is None:
-                dtype = array.dtype
+                if not isinstance(array, np.ndarray):
+                    array = np.array(array)
+                if array.ndim == 2:
+                    dim = array.shape[1]
+                else:
+                    dim = 1
+                if dtype is None:
+                    dtype = array.dtype
 
+        if fid is None:
+            fid = (0.0, 1.0)
+        if unit_of_measure is None:
+            unit_of_measure = ''
         if dim is None:
             dim = 1
         elif dim not in (1, 2, 3):
@@ -284,8 +308,19 @@ class GXvv:
 
     @property
     def is_float(self):
-        """ True if a base float type"""
+        """ True if a base float type, 32 or 64-bit"""
         return self._is_float
+
+    @property
+    def is_float64(self):
+        """
+        True if a base 64-bit float
+
+        .. versionadded:: 9.3.1
+        """
+        if self.dtype == np.float64:
+            return True
+        return False
 
     @property
     def is_int(self):
@@ -381,18 +416,25 @@ class GXvv:
 
     def set_data(self, data, fid=None):
         """
-        Set vv data from an array.  If the array is float type numpy.nan are
+        Set vv data from an iterable, which can be another `GXvv` instance.  If the data is float type numpy.nan
+        are used to indicate dummy values.
 
-        :param data:    data array, will be reshapped to VV dimension
-        :param fid:     fid tuple (start,increment), default does not change
+        :param data:    data array of `GXvv` instance, will be reshapped to VV dimension
+        :param fid:     fid tuple (start,increment), default does not change current fid
 
         .. versionadded:: 9.1
 
         .. versionchanged:: 9.3
             default fid leaves fid unchanged
+
+        .. versionchanged:: 9.3.1
+            now accepts `GXvv` instance as the source data.
+
         """
 
-        if not isinstance(data, np.ndarray):
+        if isinstance(data, GXvv):
+            data = data.np
+        elif not isinstance(data, np.ndarray):
             data = np.array(data)
 
         if self.dim == 1:
