@@ -1007,11 +1007,11 @@ class Grid:
                max(xyz0[2], xyz1[2], xyz2[2], xyz3[2])
     
     def _transform_color_int_to_rgba(self, np_values):
-        np_values = np_values.astype(np.uint32)
-        r = (np.right_shift(np_values, 24) & 0xFF).astype(np.uint8)
-        g = (np.right_shift(np_values, 16) & 0xFF).astype(np.uint8)
-        b = (np.right_shift(np_values, 8) & 0xFF).astype(np.uint8)
-        a = (np_values & 0xFF).astype(np.uint8)
+        np_values[np_values == gxapi.iDUMMY] = 0
+        a = (np.right_shift(np_values, 24) & 0xFF).astype(np.uint8)
+        b = (np.right_shift(np_values, 16) & 0xFF).astype(np.uint8)
+        g = (np.right_shift(np_values, 8) & 0xFF).astype(np.uint8)
+        r = (np_values & 0xFF).astype(np.uint8)
         # the values for color grids actually do not contain alphas but just 
         # 0 or 1 to indicate if the color is valid or not
         a[a > 0] = 255
