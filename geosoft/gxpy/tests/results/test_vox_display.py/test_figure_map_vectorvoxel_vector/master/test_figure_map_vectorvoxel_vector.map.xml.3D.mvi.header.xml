@@ -13,14 +13,14 @@
    <Item name="Clipped" value="False"/>
    <Item name="Moveable" value="False"/>
    <Item name="MinZ" value="-1505.465987"/>
-   <Item name="MaxZ" value="264.31"/>
+   <Item name="MaxZ" value="301.81"/>
    <Item name="Transparency" value="GS_R8DM"/>
    <Item name="ExtClipRegion" value="-1"/>
    <Item name="Extents" type="D2AREA">
-      <Value name="MinX" value="504837.5"/>
+      <Value name="MinX" value="504637.5"/>
       <Value name="MinY" value="6470137.5"/>
-      <Value name="MaxX" value="505837.5"/>
-      <Value name="MaxY" value="6471337.5"/>
+      <Value name="MaxX" value="505987.5"/>
+      <Value name="MaxY" value="6471512.5"/>
    </Item>
    <Item name="Matrix" type="D4MATRIX">
       <Value x="0" y="0" value="1"/>
