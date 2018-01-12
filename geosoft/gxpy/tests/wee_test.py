@@ -11,6 +11,7 @@ import geosoft.gxpy.spatialdata as gxspd
 import geosoft.gxpy.view as gxview
 import geosoft.gxpy.map as gxmap
 import geosoft.gxpy.vv as gxvv
+import geosoft.gxpy.coordinate_system as gxcs
 
 gxc = gx.GXpy()
 
@@ -66,6 +67,12 @@ def t3():
     image_file = gxmap.Map.open(v3d_file).image_file(pix_width=800)
     pass
 
+def t4():
+    with gxcs.Coordinate_system('DHDN / Okarito 2000') as cs:
+        with gxcs.Coordinate_system('DHDN') as csll:
+            with gxcs.Coordinate_translate(cs, csll) as pj:
+                lon, lat = pj.convert((500000, 6500000))
 
-t3()
+
+t4()
 pass

@@ -309,6 +309,8 @@ class Test(GXPYTest):
 
         with gxcs.Coordinate_system({'type': 'local', 'lon_lat': (-96., 43.), 'azimuth':25}) as cs:
 
+            self.assertTrue(cs.is_oriented)
+
             xyzo = (10., 0., 0.)
             xyz = cs.xyz_from_oriented(xyzo)
             self.assertEqual(xyz, (9.063077870366499, -4.2261826174069945, 0.0))
@@ -335,6 +337,9 @@ class Test(GXPYTest):
             self.assertEqual(tuple(xyz[0]), (9.063077870366499, 4.2261826174069945))
             self.assertEqual(tuple(xyz[1]), (-4.2261826174069945, 9.063077870366499))
             self.assertEqual(tuple(xyz[2]), (0.0, 5.0))
+
+            self.assertTrue(cs == gxcs.Coordinate_system({'type': 'local', 'lon_lat': (-96., 43.), 'azimuth': 25}))
+            self.assertFalse(cs == gxcs.Coordinate_system({'type': 'local', 'lon_lat': (-96., 43.), 'azimuth': 20}))
 
     def test_parameters(self):
         self.start()
