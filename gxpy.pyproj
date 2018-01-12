@@ -24,10 +24,6 @@
   <ItemGroup>
     <Content Include=".gitattributes" />
     <Content Include=".gitignore" />
-    <Content Include="build\lib\geosoft\gxapi.pyd" />
-    <Content Include="build\lib\geosoft\gxpy\_jdcal\LICENSE.txt" />
-    <Content Include="build\lib\geosoft\gxpy\_jdcal\README.rst" />
-    <Content Include="build\lib\geosoft\pkg_info.json" />
     <Content Include="docs\geosoft.gxapi.classes.rst" />
     <Content Include="docs\geosoft.gxapi.rst" />
     <Content Include="docs\geosoft.gxpy.agg.rst" />
@@ -760,26 +756,6 @@
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="build\lib\geosoft\gxpy\agg.py" />
-    <Compile Include="build\lib\geosoft\gxpy\coordinate_system.py" />
-    <Compile Include="build\lib\geosoft\gxpy\dataframe.py" />
-    <Compile Include="build\lib\geosoft\gxpy\gdb.py" />
-    <Compile Include="build\lib\geosoft\gxpy\geometry.py" />
-    <Compile Include="build\lib\geosoft\gxpy\grid.py" />
-    <Compile Include="build\lib\geosoft\gxpy\group.py" />
-    <Compile Include="build\lib\geosoft\gxpy\gx.py" />
-    <Compile Include="build\lib\geosoft\gxpy\map.py" />
-    <Compile Include="build\lib\geosoft\gxpy\project.py" />
-    <Compile Include="build\lib\geosoft\gxpy\system.py" />
-    <Compile Include="build\lib\geosoft\gxpy\utility.py" />
-    <Compile Include="build\lib\geosoft\gxpy\va.py" />
-    <Compile Include="build\lib\geosoft\gxpy\view.py" />
-    <Compile Include="build\lib\geosoft\gxpy\viewer.py" />
-    <Compile Include="build\lib\geosoft\gxpy\vv.py" />
-    <Compile Include="build\lib\geosoft\gxpy\_jdcal\jdcal.py" />
-    <Compile Include="build\lib\geosoft\gxpy\_jdcal\__init__.py" />
-    <Compile Include="build\lib\geosoft\gxpy\__init__.py" />
-    <Compile Include="build\lib\geosoft\__init__.py" />
     <Compile Include="docs\conf.py" />
     <Compile Include="docs\docstring_info.py" />
     <Compile Include="docs\generate_rsts.py" />
@@ -976,11 +952,6 @@
     <Compile Include="setup.py" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="build\" />
-    <Folder Include="build\lib\" />
-    <Folder Include="build\lib\geosoft" />
-    <Folder Include="build\lib\geosoft\gxpy" />
-    <Folder Include="build\lib\geosoft\gxpy\_jdcal" />
     <Folder Include="docs" />
     <Folder Include="docs\templates" />
     <Folder Include="docs\themes\" />
