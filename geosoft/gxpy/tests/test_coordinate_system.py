@@ -254,7 +254,7 @@ class Test(GXPYTest):
                     self.assertAlmostEqual(vvx[1][0], 171.214439577)
                     self.assertAlmostEqual(vvy[1][0], 8.45978927383)
 
-    def test_localgrid(self):
+    def test_local_dict(self):
         self.start()
 
         self.assertRaises(gxcs.CSException, gxcs.Coordinate_system, {'type': 'local'})
@@ -303,6 +303,58 @@ class Test(GXPYTest):
             self.assertAlmostEqual(lat, 43)
             self.assertAlmostEqual(lon, -96)
             self.assertAlmostEqual(z, 800.5)
+
+    def test_local(self):
+        self.start()
+
+        csd = gxcs.Coordinate_system.local(lon_lat=(-96, 43))
+        self.assertEqual(csd.name, 'WGS 84 / *Local(43,-96,0,0)')
+
+        with gxcs.Coordinate_translate(csd, gxcs.Coordinate_system('WGS 84')) as pj:
+            lon, lat, z = pj.convert((0, 0, 0))
+            self.assertAlmostEqual(lat, 43)
+            self.assertAlmostEqual(lon, -96)
+            self.assertAlmostEqual(z, 0)
+
+        csd = gxcs.Coordinate_system.local(lon_lat=(-96, 43), azimuth=25)
+        self.assertEqual(csd.name, 'WGS 84 / *Local(43,-96,0,0) <0,0,0,0,0,25>')
+        self.assertEqual(csd.gxf[2], '"Oblique Stereographic",43,-96,0.9996,0,0')
+
+        with gxcs.Coordinate_translate(gxcs.Coordinate_system('WGS 84'), csd) as pj:
+            x, y, z = pj.convert((-96., 43., 0))
+            self.assertAlmostEqual(x, 0)
+            self.assertAlmostEqual(y, 0)
+            self.assertAlmostEqual(z, 0)
+            x, y, z = pj.convert((-95., 43., 0.))
+            self.assertAlmostEqual(x, 73665.899715)
+            self.assertAlmostEqual(y, 34886.2319719)
+            self.assertAlmostEqual(z, 0)
+
+        csd = gxcs.Coordinate_system.local(lon_lat=(-96, 43), azimuth=25, origin=(1800, 500))
+        self.assertEqual(csd.name, 'WGS 84 / *Local(43,-96,1800,500) <0,0,0,0,0,25>')
+        self.assertEqual(csd.gxf[2], '"Oblique Stereographic",43,-96,0.9996,1842.66314753632,-307.558977614934')
+
+        csd = gxcs.Coordinate_system.local(lon_lat=(-96, 43), azimuth=25, origin=(1800, 500),
+                                           elevation=800.5, vcs='geoid')
+        self.assertEqual(csd.name, 'WGS 84 / *Local(43,-96,1800,500) <0,0,800.5,0,0,25>')
+        self.assertEqual(csd.gxf[2], '"Oblique Stereographic",43,-96,0.9996,1842.66314753632,-307.558977614934')
+        with gxcs.Coordinate_translate(gxcs.Coordinate_system('WGS 84'), csd) as pj:
+            x, y = pj.convert((-96., 43.))
+            self.assertAlmostEqual(x, 1800)
+            self.assertAlmostEqual(y, 500)
+        with gxcs.Coordinate_translate(csd, gxcs.Coordinate_system('WGS 84')) as pj:
+            lon, lat, z = pj.convert((1800., 500., 0.))
+            self.assertAlmostEqual(lat, 43)
+            self.assertAlmostEqual(lon, -96)
+            self.assertAlmostEqual(z, 800.5)
+
+        datum = 'NAD27'
+        local_datum = '[NAD27] (10m) USA - CONUS - onshore'
+        csd = gxcs.Coordinate_system.local(lon_lat=(-96, 43), azimuth=25, origin=(1800, 500),
+                                           datum='NAD83', local_datum=local_datum,
+                                           elevation=800.5, vcs='geoid')
+        self.assertEqual(csd.name, 'NAD83 / *Local(43,-96,1800,500) <0,0,800.5,0,0,25>')
+        self.assertEqual(csd.gxf[4], '"NAD83 to WGS 84 (1)",0,0,0,0,0,0,0')
 
     def test_oriented(self):
         self.start()

@@ -504,6 +504,47 @@ class Coordinate_system:
     def __eq__(self, other):
         return self.same_as(other)
 
+    @classmethod
+    def local(cls, lon_lat=None, origin=(0, 0), azimuth=0, elevation=0, datum="WGS 84",
+              local_datum=None, scale_factor=0.9996, vcs=None):
+        """
+        Create an ad-hoc local coordinate system.
+
+        :param lon_lat:         (longitude, latitude) of the center
+        :param origin:          (x, y) to assign to the center
+        :param azimuth:         local rotation of the system relative to geographic North, in degrees azimuth
+        :param elevation:       elevation for z = 0.
+        :param datum:           datum, default is "WGS 84"
+        :param local_datum:     local datum, default will be the default for the specified datum
+        :param scale_factor:    central scale factor. The default is 0.9996 as the most common map system
+                                is UTM and thus relative distances in the local system will be similar,
+                                though not the same, as UTM.
+        :param vcs:             name for the vertical coordinate system reference, default is unknown
+
+        Local coordinate systems are simple cartesian systems established for a specific purpose without
+        complete geodetic control, but for which one knows or can estimate the longitude, latitude of a point
+        on the local coordinate system. In this way local coordinates can be located reasonably well relative
+        to the Earth and and other Earth-refeerenced data.
+
+        The local system will be constructed as an oblique stereographic projection centered at the system
+        origin, which is similar to what one sees when looking at maps in Google maps.
+
+        .. versionadded:: 9.3.1
+        """
+        csdict = {'type': 'local',
+                  'lon_lat':lon_lat,
+                  'origin': origin,
+                  'azimuth': azimuth,
+                  'elevation': elevation,
+                  'datum': datum,
+                  'scale_factor': scale_factor}
+        if local_datum:
+            csdict['local_datum'] = local_datum
+        if vcs:
+            csdict['vcs'] = vcs
+
+        return cls(csdict)
+
     @property
     def gxipj(self):
         """ :class:`geosoft.gxapi.GXIPJ` instance"""
