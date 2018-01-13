@@ -505,7 +505,7 @@ class Coordinate_system:
         return self.same_as(other)
 
     @classmethod
-    def local(cls, lon_lat=None, origin=(0, 0), azimuth=0, elevation=0, datum="WGS 84",
+    def local(cls, lon_lat=(0, 0), origin=(0, 0), azimuth=0, elevation=0, datum="WGS 84",
               local_datum=None, scale_factor=0.9996, vcs=None):
         """
         Create an ad-hoc local coordinate system.
