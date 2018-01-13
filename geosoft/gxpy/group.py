@@ -2439,7 +2439,7 @@ class VoxDisplayGroup(Group):
         if name is None:
             name = voxd.name
         voxd_group = cls(view3d, name, mode=mode)
-        if voxd.vector:
+        if voxd.is_vector:
             scale, height_base_ratio, max_base_size_ratio, max_cones = voxd.vector_cone_specs
             if max_cones is None:
                 max_cones = gxapi.iDUMMY
@@ -2475,10 +2475,10 @@ class VoxDisplayGroup(Group):
         """
         voxd_group = cls(view, group_name, mode=READ_ONLY)
         if view.gxview.is_group(group_name, gxapi.MVIEW_IS_VOXD):
-            voxd_group._voxd = gxvoxd.VoxDisplay.open(voxd_group.view.gxview.get_voxd(voxd_group.number))
+            voxd_group._voxd = gxvoxd.VoxDisplay.gxapi_gxvoxd(voxd_group.view.gxview.get_voxd(voxd_group.number))
         elif view.gxview.is_group(group_name, gxapi.MVIEW_IS_VECTOR3D):
-            voxd_group._voxd = gxvoxd.VoxDisplay.open(voxd_group.view.gxview.get_vector_3d(voxd_group.number),
-                                                       name=group_name + ".geosoft_vectorvoxel")
+            voxd_group._voxd = gxvoxd.VoxDisplay.gxapi_gxvoxd(voxd_group.view.gxview.get_vector_3d(voxd_group.number),
+                                                              name=group_name + ".geosoft_vectorvoxel")
         else:
             raise GroupException('Group "{}" is not a GXVOXD or a GXVECTOR3D'.format(group_name))
         return voxd_group

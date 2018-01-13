@@ -3,9 +3,9 @@ Geosoft vox display handling
 
 :Classes:
 
-    ==================== ==========================================================================
-    :class:`VoxDisplay`  3D visualization of a vox, which can be placed `geosoft.gxpy.view.View_3d`
-    ==================== ==========================================================================
+    ============ ==========================================================================
+    `VoxDisplay` 3D visualization of a vox, which can be placed `geosoft.gxpy.view.View_3d`
+    ============ ==========================================================================
     
 .. seealso:: `geosoft.gxpy.vox.Vox`, `geosoft.gxpy.view.View_3d`, `geosoft.gxapi.GXVOXD`
 
@@ -41,13 +41,15 @@ class VoxDisplayException(Exception):
     """
     pass
 
-ZONE_DEFAULT = 0 #:
-ZONE_LINEAR = 1 #:
-ZONE_NORMAL = 2 #:
-ZONE_EQUALAREA = 3 #:
-ZONE_SHADE = 4 #:
-ZONE_LOGLINEAR = 5 #:
-ZONE_LAST = 6 #:
+
+ZONE_DEFAULT = 0  #:
+ZONE_LINEAR = 1  #:
+ZONE_NORMAL = 2  #:
+ZONE_EQUALAREA = 3  #:
+ZONE_SHADE = 4  #:
+ZONE_LOGLINEAR = 5  #:
+ZONE_LAST = 6  #:
+
 
 class VoxDisplay:
     """
@@ -55,9 +57,11 @@ class VoxDisplay:
 
     :Constructors:
 
-        ============= =================================
-        :meth:`new`:  create a new vox_display
-        ============= =================================
+        =============== ====================================================================================
+        `solid`:        create as a solid, each cell coloured from a color_map.create a new vox_display
+        `vector`:       create as a vector voxel as vectors
+        `gxapi_gxvoxd`: create from an `geosoft.gxapi.GXVOXD` instance
+        =============== ====================================================================================
         
     .. versionadded:: 9.3.1
     """
@@ -71,7 +75,7 @@ class VoxDisplay:
     def __enter__(self):
         return self
 
-    def __exit__(self, type, value, traceback):
+    def __exit__(self, _type, _value, _traceback):
         self.__del__()
 
     def __del__(self):
@@ -98,37 +102,89 @@ class VoxDisplay:
         self._open = gx.track_resource(self.__class__.__name__, name)
 
     @classmethod
-    def new(cls, vox, vector=False, vector_cone_specs=None):
+    def solid(cls,
+              vox,
+              color_map=None,
+              zone=ZONE_DEFAULT,
+              contour=None):
         """
-        Create a new vox_display from a `geosoft.gxpy.vox.Vox` instance.
+        Create a solid colored vox_display from a `geosoft.gxpy.vox.Vox` instance.
         
-        :param vox:                 `geosoft.gxpy.vox.Vox` instance
-        :param vector:              True to create a vector swarm from a vector voxel
-        :param vector_cone_specs:   Vector plotting specs
-                                    (scale_cell_ratio, height_base_ratio, base_cell_ratio, max_cones).
-                                    Default is (1., 4., 0.25, 5000). See `vector_cone_specs` property.
+        :param vox:         `geosoft.gxpy.vox.Vox` instance
+        :param color_map:   `gxpy.group.Color_map` instance, or the name of a file, which may be
+                            `.tbl`, `.zon`, `.itr`, or `.agg`.
+        :param zone:        Colour distribution method:
+
+            ::
+
+                ZONE_DEFAULT        as set by user global default settings
+                ZONE_LINEAR         linearly distributed
+                ZONE_NORMAL         normal (Gaussian) distribution
+                ZONE_EQUALAREA      each color will occupy an equal area on the image
+                ZONE_LOGLINEAR      logarithmic linear distribution
+                ZONE_LAST           last used coloring for this vox
+
+        :param contour:             break colours on even multiples of contour
 
         .. versionadded:: 9.3.1
         """
 
-        if vector and not vox.is_vectorvox:
-            raise VoxDisplayException(_t('vox must be a vectorvoxel to create a vector swarm'))
         voxd = cls(vox)
-        color_table = ''
-        zone_method = ZONE_DEFAULT
-        contour = gxapi.rDUMMY
-        voxd._gxvoxd = gxapi.GXVOXD.create(vox.gxvox, color_table, zone_method, contour)
-        voxd._vector = vector
-        if vector_cone_specs is not None:
-            voxd._vector_cone_specs = vector_cone_specs
+
+        if (color_map is None) or (isinstance(color_map, str)):
+            color_map = geosoft.gxpy.group.Color_map(color_map)
+        color_map_file = color_map.save_file()
+
+        if contour is None:
+            contour = gxapi.rDUMMY
+        voxd._gxvoxd = gxapi.GXVOXD.create(vox.gxvox, color_map_file, zone, contour)
         return voxd
 
     @classmethod
-    def open(cls, gxapi_voxd, name=None):
+    def vector(cls,
+               vox,
+               vector_cone_specs=(1., 4., 0.25, 5000),
+               color_map=None,
+               zone=ZONE_DEFAULT,
+               contour=None):
         """
-        Create a VoxDisplay instance from a `gxapi.GXVOXD` or a `gxapi.GXVECTOR3D` instance.
+        Create a vector symbol vox_display from a `geosoft.gxpy.vox.Vox` instance.
 
-        :param gxapi_voxd:  `gxapi.VOXD` or `gxapi.GXVECTOR3D` instance
+        :param vox:                 `geosoft.gxpy.vox.Vox` instance
+        :param vector_cone_specs:   Vector plotting specs
+                                    (scale_cell_ratio, height_base_ratio, base_cell_ratio, max_cones).
+                                    Default is (1., 4., 0.25, 5000). See `vector_cone_specs` property.
+        :param color_map:   `gxpy.group.Color_map` instance, or the name of a file, which may be
+                            `.tbl`, `.zon`, `.itr`, or `.agg`.
+        :param zone:        Colour distribution method:
+
+            ::
+
+                ZONE_DEFAULT        as set by user global default settings
+                ZONE_LINEAR         linearly distributed
+                ZONE_NORMAL         normal (Gaussian) distribution
+                ZONE_EQUALAREA      each color will occupy an equal area on the image
+                ZONE_LOGLINEAR      logarithmic linear distribution
+                ZONE_LAST           last used coloring for this vox
+
+        :param contour:             break colours on even multiples of contour
+
+        .. versionadded:: 9.3.1
+        """
+
+        if not vox.is_vectorvox:
+            raise VoxDisplayException(_t('vox must be a vectorvoxel to create a vector swarm'))
+        voxd = VoxDisplay.solid(vox, color_map, zone, contour)
+        voxd._vector = True
+        voxd._vector_cone_specs = vector_cone_specs
+        return voxd
+
+    @classmethod
+    def gxapi_gxvoxd(cls, gxapi_voxd, name=None):
+        """
+        Create a VoxDisplay instance from a `geosoft.gxapi.GXVOXD` or a `geosoft.gxapi.GXVECTOR3D` instance.
+
+        :param gxapi_voxd:  `geosoft.gxapi.VOXD` or `geosoft.gxapi.GXVECTOR3D` instance
         :param name:        name of the voxel, required for a vector voxel.
 
         .. versionadded 9.3.1
@@ -170,7 +226,7 @@ class VoxDisplay:
         return self.color_map.unit_of_measure
 
     @property
-    def vector(self):
+    def is_vector(self):
         """True if this is a vector style display"""
         return self._vector
 
@@ -217,8 +273,8 @@ class VoxDisplay:
         .. versionadded:: 9.3.1
         """
 
-        if self.vector:
-            return (None, None, None)
+        if self.is_vector:
+            return None, None, None
 
         box = gxapi.int_ref()
         trans = gxapi.float_ref()
@@ -229,11 +285,11 @@ class VoxDisplay:
         z0 = gxapi.float_ref()
         z1 = gxapi.float_ref()
         self.gxvoxd.get_draw_controls(box, trans, x0, y0, z0, x1, y1, z1)
-        return (bool(box.value), trans.value, (x0.value, y0.value, z0.value, x1.value, y1.value, z1.value))
+        return bool(box.value), trans.value, (x0.value, y0.value, z0.value, x1.value, y1.value, z1.value)
 
     @draw_controls.setter
     def draw_controls(self, controls):
-        if self.vector:
+        if self.is_vector:
             raise VoxDisplayException(_t('cannot set draw controls for a vector display'))
         box, trans, extent = controls
         x0, y0, z0, x1, y1, z1 = extent
@@ -247,7 +303,7 @@ class VoxDisplay:
     @property
     def is_thematic(self):
         """True if this is a thematic vox display"""
-        if self.vector:
+        if self.is_vector:
             return False
         return bool(self.gxvoxd.is_thematic())
 
@@ -282,25 +338,25 @@ class VoxDisplay:
 
         .. versionadded 9.3.1
         """
-        min = gxapi.float_ref()
-        max = gxapi.float_ref()
-        self.gxvoxd.get_shell_controls(min, max)
-        min = min.value
-        max = max.value
-        if min == gxapi.rDUMMY:
-            min = None
-        if max == gxapi.rDUMMY:
-            max = None
-        return min, max
+        vmin = gxapi.float_ref()
+        vmax = gxapi.float_ref()
+        self.gxvoxd.get_shell_controls(vmin, vmax)
+        vmin = vmin.value
+        vmax = vmax.value
+        if vmin == gxapi.rDUMMY:
+            vmin = None
+        if vmax == gxapi.rDUMMY:
+            vmax = None
+        return vmin, vmax
 
     @shell_limits.setter
     def shell_limits(self, limits):
-        min, max = limits
-        if min is None:
-            min = gxapi.rDUMMY
-        if max is None:
-            max = gxapi.rDUMMY
-        self.gxvoxd.set_shell_controls(min, max)
+        vmin, vmax = limits
+        if vmin is None:
+            vmin = gxapi.rDUMMY
+        if vmax is None:
+            vmax = gxapi.rDUMMY
+        self.gxvoxd.set_shell_controls(vmin, vmax)
 
     def view_3d(self, file_name=None, overwrite=True, plane_2d=False):
         """
@@ -368,6 +424,7 @@ class VoxDisplay:
                                 file_name=file_name,
                                 features=features,
                                 title=title,
+                                overwrite=overwrite,
                                 **kwargs)
 
         with gxview.View.open(gmap, "data") as v:
