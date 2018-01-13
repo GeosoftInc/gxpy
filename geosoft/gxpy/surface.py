@@ -476,15 +476,21 @@ class SurfaceDataset(gxspd.SpatialData):
 
 class Surface(gxspd.SpatialData):
     """
-    A single surface, which is a set triangles.
+    A single surface, which is a mesh defined by a triangle set.
 
     :param surface:             surface name or a `geosoft.gxapi.GXSURFACEITEM` instance.
     :param surface_type:        surface type as a descriptive name, such as "ISOSURFACE"
     :param surface_dataset:     optional `SurfaceDataset` instance in which to place a new `Surface`
-    :param mesh:                optional mesh of (faces, verticies) - see `add_mesh`
+    :param mesh:                optional mesh of (faces, verticies) - see below.
     :param coordinate_system:   mesh coordinate system, which will become the surface coordinate system.
     :param render_properties:   (color, opacity, style), default is
                                 (`geosoft.gxpy.group.C_GREY`, 1.0, `STYLE_FLAT`)
+
+    A mesh is a set of triangles, where each triangle has three indexes into a set of verticies.
+    Verticies are defined as by a set of (x, y, z) locations. Meshes can be represented either
+    as two arrays in the form (faces, verticies), of two sets of `geosoft.gxpy.vv.GXvv` instances
+    in the form ((f1vv, f2vv, f3vv), (xvv, yvv, zvv)).  In array form each array is shaped (-1, 3),
+    with faces being an integer array that references vertexes in the float vertex array.
 
     .. versionadded:: 9.3.1
     """
@@ -553,7 +559,7 @@ class Surface(gxspd.SpatialData):
 
         self._extent = None
         if mesh:
-            self.add_mesh(mesh[0], mesh[1], render_properties=render_properties, coordinate_system=coordinate_system)
+            self.add_mesh(mesh, render_properties=render_properties, coordinate_system=coordinate_system)
         elif self.faces_count:
             _, xyz = self.get_mesh_vv()
             self._update_extent(_extent_vv(xyz[0], xyz[1], xyz[2]))
@@ -799,13 +805,11 @@ class Surface(gxspd.SpatialData):
         else:
             return {}
 
-    def add_mesh_vv(self, faces, verticies, render_properties=None, coordinate_system=None):
+    def add_mesh_vv(self, mesh, render_properties=None, coordinate_system=None):
         """
-        Add a mesh to a new surface.
+        Add a vv mesh to a new surface.
 
-        :param faces:       triangle faces as a tuple (i1, i2, i3) of indexes into the verticies.
-                            Indexes are instances of `geosoft.gxpy.GXvv`
-        :param verticies:   verticies as an (x, y, z) tuple of `geosoft.gxpy.GXvv` instances
+        :param mesh:        mesh as ((f1vv, f2vv, f3vv), (xvv, yvv, zvv))
         :param render_ properties:  (color, opacity, style), where colour is a `geosoft.gxpy.group.Color`
                             instance or a 32-bit Geosoft color integer, opacity is a value between
                             0. (invisible) and 1. (opaque), and style is STYLE_FLAT, STYLE_SMOOTH or
@@ -820,8 +824,8 @@ class Surface(gxspd.SpatialData):
             raise SurfaceException(_t('Cannot add to an existing surface ({}) in surface dataset ({})')
                                    .format(self.name, self._surface_dataset.name))
 
-        f1vv, f2vv, f3vv = faces
-        xvv, yvv, zvv = verticies
+        f1vv, f2vv, f3vv = mesh[0]
+        xvv, yvv, zvv = mesh[1]
 
         if coordinate_system:
             if self.coordinate_system != coordinate_system:
@@ -839,14 +843,11 @@ class Surface(gxspd.SpatialData):
 
         return self.component_count - 1
 
-    def add_mesh(self, faces, verticies, render_properties=None, coordinate_system=None):
+    def add_mesh(self, mesh, render_properties=None, coordinate_system=None):
         """
-        Add a mesh to a new surface.
+        Add a mesh to a new surface. Mesh may be in vv form or array form.
 
-        :param faces:       triangle faces as a numpy array shaped (-1, 3), or  set of `geosoft.gxpy.vv.GXvv`
-                            instances (i1, i2, i3)
-        :param verticies:   verticies as a numpy arrays shapes (-1, 3), or  set of `geosoft.gxpy.vv.GXvv`
-                            instances (xvv, yvv, zvv)
+        :param mesh:        mesh as (faces_array, verticies_array) or ((f1vv, f2vv, f3vv), (xvv, yvv, zvv)).
         :param render_properties:  (color, opacity, style), where colour is a `geosoft.gxpy.group.Color`
                             instance or a 32-bit Geosoft color integer, opacity is a value between
                             0. (invisible) and 1. (opaque), and style is STYLE_FLAT, STYLE_SMOOTH or
@@ -858,6 +859,9 @@ class Surface(gxspd.SpatialData):
         .. versionadded:: 9.3.1
         """
 
+        faces, verticies = mesh
+
+        # convert arrays to vv form
         if type(faces) in (tuple, list, np.ndarray):
             faces = (gxvv.GXvv(faces[:, 0], dtype=np.int),
                      gxvv.GXvv(faces[:, 1], dtype=np.int),
@@ -866,7 +870,8 @@ class Surface(gxspd.SpatialData):
             verticies = (gxvv.GXvv(verticies[:, 0], dtype=np.float64),
                          gxvv.GXvv(verticies[:, 1], dtype=np.float64),
                          gxvv.GXvv(verticies[:, 2], dtype=np.float64))
-        return self.add_mesh_vv(faces, verticies,
+
+        return self.add_mesh_vv((faces, verticies),
                                 render_properties=render_properties,
                                 coordinate_system=coordinate_system)
 

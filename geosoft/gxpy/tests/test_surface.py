@@ -200,8 +200,7 @@ class Test(GXPYTest):
                                            512.5))
 
             with gxsurf.Surface('maki') as s:
-                f, t = surf.get_mesh_vv()
-                s.add_mesh_vv(f, t)
+                s.add_mesh_vv(surf.get_mesh_vv())
                 self.assertEqual(s.extent, (440718.65079365077,
                                             6129015.476190476,
                                             -954.3756313323975,
@@ -217,9 +216,8 @@ class Test(GXPYTest):
             sd_fn = new_sd.file_name
             with gxsurf.SurfaceDataset.open(self.sfile) as sd:
                 for s in sd:
-                    f, v = s.get_mesh_np()
                     snew = gxsurf.Surface(s.name)
-                    snew.add_mesh(f, v, (gxgrp.C_MAGENTA, 0.25, gxsurf.STYLE_FLAT))
+                    snew.add_mesh(s.get_mesh_np(), (gxgrp.C_MAGENTA, 0.25, gxsurf.STYLE_FLAT))
                     new_sd.add_surface(snew)
 
         with gxsurf.SurfaceDataset.open(sd_fn) as sd:
@@ -352,7 +350,7 @@ class Test(GXPYTest):
                           [3, 2, 4]], dtype=np.int32)
 
         with gxsurf.Surface('maki') as s:
-            s.add_mesh(faces, verts)
+            s.add_mesh((faces, verts))
 
             s.render_color = gxgrp.C_GREEN
             s.render_style = gxsurf.STYLE_FLAT
@@ -374,7 +372,7 @@ class Test(GXPYTest):
                           [3, 2, 4]], dtype=np.int32)
 
         with gxsurf.Surface('maki') as s:
-            s.add_mesh(faces, verts)
+            s.add_mesh((faces, verts))
             s.render_color = gxgrp.C_BLUE
             s.render_style = gxsurf.STYLE_SMOOTH
             s.render_opacity = 0.25
@@ -397,7 +395,7 @@ class Test(GXPYTest):
                           [3, 2, 4]], dtype=np.int32)
 
         with gxsurf.Surface('maki') as s:
-            s.add_mesh(faces, verts)
+            s.add_mesh((faces, verts))
             s.render_color = gxgrp.C_RED
             s.render_style = gxsurf.STYLE_EDGE
             s.render_opacity = 1
@@ -421,7 +419,7 @@ class Test(GXPYTest):
 
         with gxsurf.SurfaceDataset.new() as sd:
             with gxsurf.Surface('maki', surface_dataset=sd) as s:
-                s.add_mesh(faces, verts)
+                s.add_mesh((faces, verts))
                 s.render_color = gxgrp.C_RED
                 s.render_style = gxsurf.STYLE_FLAT
                 s.render_opacity = 1
@@ -445,7 +443,7 @@ class Test(GXPYTest):
             sd.coordinate_system = {'type': 'local', 'lon_lat': (-96., 43.), 'azimuth':0}
             with gxsurf.Surface('maki', surface_dataset=sd) as s:
                 cs = gxcs.Coordinate_system({'type': 'local', 'lon_lat': (-96., 43.), 'azimuth':20})
-                s.add_mesh(faces, verts, coordinate_system=cs)
+                s.add_mesh((faces, verts), coordinate_system=cs)
                 s.render_color = gxgrp.C_RED
                 s.render_style = gxsurf.STYLE_FLAT
                 s.render_opacity = 1
