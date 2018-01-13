@@ -1120,8 +1120,8 @@ class Coordinate_translate:
         else:
             flatten_return = False
         nd = xyz.shape[1]
-        if nd not in (2, 3):
-            raise CSException(_t('Data must have dimension 2 (x,y) or 3 for (x,y,z).'))
+        if nd < 2:
+            raise CSException(_t('Data must have dimension 2 (x,y) or 3 for (x,y,z) or higher.'))
 
         vvx = gxvv.GXvv(xyz[:, 0])
         vvy = gxvv.GXvv(xyz[:, 1])
@@ -1134,7 +1134,7 @@ class Coordinate_translate:
         if in_place:
             xyz[:, 0] = vvx.np
             xyz[:, 1] = vvy.np
-            if nd == 3:
+            if nd > 2:
                 xyz[:, 2] = vvz.np
             return xyz
 
