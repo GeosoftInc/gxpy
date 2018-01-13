@@ -417,6 +417,37 @@ class Test(GXPYTest):
             self.assertEqual(cs.unit_of_measure, 'cm')
             self.assertEqual(cs.units_name, cs.unit_of_measure)
 
+    def test_array(self):
+        self.start()
+
+        # define coordinate systems and a transformer
+        cs_utm = gxcs.Coordinate_system('NAD83 / UTM zone 15N')
+        cs_nad27 = gxcs.Coordinate_system('NAD27')
+        cs_transform = gxcs.Coordinate_translate(cs_utm, cs_nad27)
+
+        # example transform a single (x, y) coordinate
+        lon_lat = cs_transform.convert((345000., 64250000.))
+        self.assertEqual(tuple(lon_lat), (88.777242210445195, -38.498998514257273))
+
+        # example transform a single (x, y, elevation) coordinate
+        cstr = str(cs_transform.convert((345000., 64250000., 50)))
+        self.assertEqual(cstr, '[88.777242211469414, -38.498998481053022, 50.0]')
+
+        # example translate a list of (x, y, z) tuples
+        locations = [(345000, 64250000, 50), (345500, 64250000, 60), (346000, 64250000, 70)]
+        nad27_locations = cs_transform.convert(locations)
+        self.assertEqual(len(nad27_locations), 3)
+        self.assertEqual(str(nad27_locations[2]), '[ 89 -38  70]')
+
+        # example transform a numpy array in-place
+        data = np.array([[345000, 64250000, 50, 55000],
+                         [345500, 64250000, 60, 55150],
+                         [346000, 64250000, 70, 56000]],
+                        dtype=float)
+        nad27_locations = cs_transform.convert(data, in_place=True)
+        self.assertEqual(len(nad27_locations), 3)
+        self.assertEqual(str(nad27_locations[2]), '[  8.87657800e+01  -3.84991719e+01   7.00000000e+01   5.60000000e+04]')
+
 ###############################################################################################
 
 if __name__ == '__main__':
