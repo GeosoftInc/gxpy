@@ -510,6 +510,10 @@ class Surface(gxspd.SpatialData):
             if self._open:
 
                 if self._add and self._surface_dataset is not None:
+                    if self._surface_dataset.coordinate_system.is_known:
+                        self.coordinate_system = self._surface_dataset.coordinate_system
+                    elif self.coordinate_system.is_known:
+                        self._surface_dataset.coordinate_system = self.coordinate_system
                     self._surface_dataset.add_surface(self)
 
                 self._gxsurfaceitem = None
@@ -542,24 +546,17 @@ class Surface(gxspd.SpatialData):
         self._surface_dataset = surface_dataset
         self._properties = None
         self._computed_properties = None
-        self._cs = None
         self.render_properties = render_properties
 
         super().__init__(gxobject=self._gxsurfaceitem)
 
-        # coordinate_system dance
-        if surface_dataset is not None:
+        if coordinate_system is None and surface_dataset is not None:
             if surface_dataset.coordinate_system.is_known:
-                self.coordinate_system = surface_dataset.coordinate_system
-            elif self._new_surface and coordinate_system:
-                surface_dataset.coordinate_system = coordinate_system
-        else:
-            if self._new_surface:
-                self.coordinate_system = coordinate_system
-
+                coordinate_system = surface_dataset.coordinate_system
+        self.coordinate_system = coordinate_system
         self._extent = None
         if mesh:
-            self.add_mesh(mesh, render_properties=render_properties, coordinate_system=coordinate_system)
+            self.add_mesh(mesh, render_properties=render_properties)
         elif self.faces_count:
             _, xyz = self.get_mesh_vv()
             self._update_extent(_extent_vv(xyz[0], xyz[1], xyz[2]))
@@ -785,9 +782,9 @@ class Surface(gxspd.SpatialData):
         Can be set using any constructor supported by `geosoft.gxpy.coordinate_system.Coordinate_system`.
         """
 
-        if self._surface_dataset:
-            return self._surface_dataset.coordinate_system
         if self._cs is None:
+            if self._surface_dataset:
+                return self._surface_dataset.coordinate_system
             self._cs = gxcs.Coordinate_system()
         return self._cs
 
@@ -827,9 +824,14 @@ class Surface(gxspd.SpatialData):
         f1vv, f2vv, f3vv = mesh[0]
         xvv, yvv, zvv = mesh[1]
 
-        if coordinate_system:
-            if self.coordinate_system != coordinate_system:
-                gxcs.Coordinate_translate(coordinate_system, self.coordinate_system).convert_vv(xvv, yvv, zvv)
+        if coordinate_system is None:
+            coordinate_system = self.coordinate_system
+        if self._surface_dataset is not None:
+            required_cs = self._surface_dataset.coordinate_system
+        else:
+            required_cs = self.coordinate_system
+        if coordinate_system != required_cs:
+            gxcs.Coordinate_translate(coordinate_system, required_cs).convert_vv(xvv, yvv, zvv)
 
         self._gxsurfaceitem.add_mesh(xvv.gxvv, yvv.gxvv, zvv.gxvv,
                                      f1vv.gxvv, f2vv.gxvv, f3vv.gxvv)

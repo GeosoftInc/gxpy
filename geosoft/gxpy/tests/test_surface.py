@@ -438,17 +438,26 @@ class Test(GXPYTest):
         faces = np.array([[0, 1, 2],
                           [0, 2, 3],
                           [3, 2, 4]], dtype=np.int32)
+        mesh = (faces, verts)
 
         with gxsurf.SurfaceDataset.new() as sd:
-            sd.coordinate_system = {'type': 'local', 'lon_lat': (-96., 43.), 'azimuth':0}
-            with gxsurf.Surface('maki', surface_dataset=sd) as s:
-                cs = gxcs.Coordinate_system({'type': 'local', 'lon_lat': (-96., 43.), 'azimuth':20})
-                s.add_mesh((faces, verts), coordinate_system=cs)
+            sd.coordinate_system = gxcs.Coordinate_system.local()
+            with gxsurf.Surface('maki_red', surface_dataset=sd) as s:
+                cs = gxcs.Coordinate_system.local(azimuth=20)
+                s.add_mesh(mesh, coordinate_system=cs)
                 s.render_color = gxgrp.C_RED
-                s.render_style = gxsurf.STYLE_FLAT
-                s.render_opacity = 1
+            with gxsurf.Surface('maki_green', surface_dataset=sd,
+                                coordinate_system=gxcs.Coordinate_system.local(azimuth=-20, elevation=3)) as s:
+                s.add_mesh(mesh)
+                s.render_color = gxgrp.C_GREEN
+            with gxsurf.Surface('maki_blue', surface_dataset=sd) as s:
+                s.add_mesh(mesh,
+                           coordinate_system=gxcs.Coordinate_system.local(azimuth=0,
+                                                                          origin=(1.5, -2),
+                                                                          elevation=-3))
+                s.render_color = gxgrp.C_BLUE
             fig_map = sd.figure_map().file_name
-        #self.crc_map(fig_map)
+        self.crc_map(fig_map)
         # gxviewer.view_document(fig_map, wait_for_close=True)
 
 
