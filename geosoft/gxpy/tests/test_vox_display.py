@@ -28,7 +28,7 @@ class Test(GXPYTest):
 
         with gxvox.Vox.open(self.vox_file) as vox:
             vox.unit_of_measure = 'maki'
-            with gxvoxd.Vox_display.new(vox) as voxd:
+            with gxvoxd.VoxDisplay.new(vox) as voxd:
                 self.assertFalse(voxd.is_thematic)
                 self.assertTrue(voxd.opacity, 1.0)
                 voxd.opacity = 0.2
@@ -48,7 +48,7 @@ class Test(GXPYTest):
 
         with gxvox.Vox.open(self.vox_file) as vox:
             vox.unit_of_measure = 'SI Susc'
-            with gxvoxd.Vox_display.new(vox) as voxd:
+            with gxvoxd.VoxDisplay.new(vox) as voxd:
                 voxd.shell_limits = (0.0001, None)
                 fig_map = voxd.figure_map(title="My Test Vox").file_name
         self.crc_map(fig_map)
@@ -58,7 +58,7 @@ class Test(GXPYTest):
 
         with gxvox.Vox.open(self.vectorvox_file) as vox:
             vox.unit_of_measure = 'SI Susc'
-            with gxvoxd.Vox_display.new(vox) as voxd:
+            with gxvoxd.VoxDisplay.new(vox) as voxd:
                 voxd.shell_limits = (0.0001, None)
                 fig_map = voxd.figure_map(title="My Test VectorVox").file_name
         self.crc_map(fig_map)
@@ -68,7 +68,7 @@ class Test(GXPYTest):
 
         with gxvox.Vox.open(self.vectorvox_file) as vox:
             vox.unit_of_measure = 'SI Susc'
-            with gxvoxd.Vox_display.new(vox, vector=True) as voxd:
+            with gxvoxd.VoxDisplay.new(vox, vector=True) as voxd:
                 voxd.shell_limits = (0.01, None)
                 voxd.vector_cone_specs = (3, None, None, 100)
                 fig_map = voxd.figure_map(title="My Test VectorVox").file_name
@@ -79,14 +79,14 @@ class Test(GXPYTest):
 
         with gxvox.Vox.open(self.vox_file) as vox:
             vox.unit_of_measure = 'maki'
-            with gxvoxd.Vox_display.new(vox) as voxd:
+            with gxvoxd.VoxDisplay.new(vox) as voxd:
                 with gxview.View_3d.new() as v3d:
                     v3d_file = v3d.file_name
-                    group_name = gxgroup.Vox_display_group.new(v3d, voxd).name
+                    group_name = gxgroup.VoxDisplayGroup.new(v3d, voxd).name
         with gxview.View_3d.open(v3d_file) as v3d:
             self.assertEqual(len(v3d.group_list_voxel), 1)
             self.assertTrue(group_name in v3d.group_list_voxel)
-            with gxgroup.Vox_display_group.open(v3d, group_name) as gvd:
+            with gxgroup.VoxDisplayGroup.open(v3d, group_name) as gvd:
                 self.assertEqual(gvd.name, group_name)
                 self.assertEqual(gvd.voxd.name, group_name)
                 self.assertEqual(gvd.voxd.vox.name, group_name)
@@ -94,14 +94,14 @@ class Test(GXPYTest):
 
         with gxvox.Vox.open(self.vectorvox_file) as vox:
             vox.unit_of_measure = 'vecmaki'
-            with gxvoxd.Vox_display.new(vox) as voxd:
+            with gxvoxd.VoxDisplay.new(vox) as voxd:
                 with gxview.View_3d.new() as v3d:
                     v3d_file = v3d.file_name
-                    group_name = gxgroup.Vox_display_group.new(v3d, voxd).name
+                    group_name = gxgroup.VoxDisplayGroup.new(v3d, voxd).name
         with gxview.View_3d.open(v3d_file) as v3d:
             self.assertEqual(len(v3d.group_list_voxel), 1)
             self.assertTrue(group_name in v3d.group_list_voxel)
-            with gxgroup.Vox_display_group.open(v3d, group_name) as gvd:
+            with gxgroup.VoxDisplayGroup.open(v3d, group_name) as gvd:
                 self.assertEqual(gvd.name, group_name)
                 self.assertEqual(gvd.voxd.name, group_name)
                 self.assertEqual(gvd.voxd.vox.name, group_name)
@@ -109,14 +109,14 @@ class Test(GXPYTest):
 
         with gxvox.Vox.open(self.vectorvox_file) as vox:
             vox.unit_of_measure = 'vecmaki'
-            with gxvoxd.Vox_display.new(vox, vector=True) as voxd:
+            with gxvoxd.VoxDisplay.new(vox, vector=True) as voxd:
                 with gxview.View_3d.new() as v3d:
                     v3d_file = v3d.file_name
-                    group_name = gxgroup.Vox_display_group.new(v3d, voxd).name
+                    group_name = gxgroup.VoxDisplayGroup.new(v3d, voxd).name
         with gxview.View_3d.open(v3d_file) as v3d:
             self.assertEqual(len(v3d.group_list_vectorvoxel), 1)
             self.assertTrue(group_name in v3d.group_list_vectorvoxel)
-            with gxgroup.Vox_display_group.open(v3d, group_name) as gvd:
+            with gxgroup.VoxDisplayGroup.open(v3d, group_name) as gvd:
                 self.assertEqual(gvd.name, group_name)
                 self.assertEqual(gvd.voxd.name, group_name)
                 self.assertEqual(gvd.unit_of_measure, 'vecmaki')

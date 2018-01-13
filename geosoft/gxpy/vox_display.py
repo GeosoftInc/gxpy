@@ -4,7 +4,7 @@ Geosoft vox display handling
 :Classes:
 
     ==================== ==========================================================================
-    :class:`Vox_display` 3D visualization of a vox, which can be placed `geosoft.gxpy.view.View_3d`
+    :class:`VoxDisplay`  3D visualization of a vox, which can be placed `geosoft.gxpy.view.View_3d`
     ==================== ==========================================================================
     
 .. seealso:: `geosoft.gxpy.vox.Vox`, `geosoft.gxpy.view.View_3d`, `geosoft.gxapi.GXVOXD`
@@ -14,6 +14,7 @@ Geosoft vox display handling
     Regression tests provide usage examples:     
     `vox_display tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_vox_display.py>`_
 
+.. versionadded:: 9.3.1
 """
 import os
 
@@ -48,7 +49,7 @@ ZONE_SHADE = 4 #:
 ZONE_LOGLINEAR = 5 #:
 ZONE_LAST = 6 #:
 
-class Vox_display:
+class VoxDisplay:
     """
     Creation and handling of vox displays. Vox displays can be placed into a 3D view for display.
 
@@ -125,7 +126,7 @@ class Vox_display:
     @classmethod
     def open(cls, gxapi_voxd, name=None):
         """
-        Create a Vox_display instance from a `gxapi.GXVOXD` or a `gxapi.GXVECTOR3D` instance.
+        Create a VoxDisplay instance from a `gxapi.GXVOXD` or a `gxapi.GXVECTOR3D` instance.
 
         :param gxapi_voxd:  `gxapi.VOXD` or `gxapi.GXVECTOR3D` instance
         :param name:        name of the voxel, required for a vector voxel.
@@ -314,7 +315,7 @@ class Vox_display:
         """
 
         v3d = gxview.View_3d.new(file_name, overwrite=overwrite)
-        gxgroup.Vox_display_group.new(v3d, self)
+        gxgroup.VoxDisplayGroup.new(v3d, self)
         if not plane_2d:
             v3d.delete_plane(0)
 

@@ -13,7 +13,8 @@ Geosoft voxel (voxset) handling.
 
     Regression tests provide usage examples:     
     `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_vox.py>`_
-    
+
+.. versionadded:: 9.3.1
 """
 import os
 import numpy as np

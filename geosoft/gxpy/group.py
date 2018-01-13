@@ -18,7 +18,7 @@ in a 3D view, the group is placed on a the active plane inside the 3D view
     :class:`Color_map`           maps values to colors
     :class:`Pen`                 pen definition, includes line colour, thickness and pattern, and fill.
     :class:`Text_def`            defined text characteristics
-    :class:`Vox_display_group`   add a 'geosoft.gxpy.vox.Vox_display` to a `geosoft.gxpy.view.View_3d`
+    :class:`VoxDisplayGroup`     a 'geosoft.gxpy.vox.VoxDisplay` in a `geosoft.gxpy.view.View_3d`
     ============================ =============================================================================
 
 .. note::
@@ -2392,10 +2392,10 @@ class Aggregate_group(Group):
         return agg_group
 
 
-class Vox_display_group(Group):
+class VoxDisplayGroup(Group):
     """
     Vox display group in a view.  Use class methods `new()` and `open()`
-    to create instances of `Vox_display_group`.
+    to create instances of `VoxDisplayGroup`.
 
     :Constructors:
 
@@ -2426,10 +2426,10 @@ class Vox_display_group(Group):
     @classmethod
     def new(cls, view3d, voxd, name=None, mode=REPLACE):
         """
-        Add a Vox_display as a new group in the view
+        Add a VoxDisplay as a new group in the view
 
         :param view3d:  `geosoft.gxpy.view.View_3d` instance
-        :param voxd:    `geosoft.gxpy.vox_display.Vox_display` instance
+        :param voxd:    `geosoft.gxpy.vox_display.VoxDisplay` instance
         :param name:    group name, default is the voxd name
         :param mode:    REPLACE (default) or NEW, which creates a unique name if the group exists
 
@@ -2465,7 +2465,7 @@ class Vox_display_group(Group):
              view,
              group_name):
         """
-        Open an existing `Vox_display_group` in a 3d view.
+        Open an existing `VoxDisplayGroup` in a 3d view.
 
         :param view:        the 3d view
         :param group_name:  the name of the group to open, must be a `gxapi.GXVOXD` or
@@ -2475,9 +2475,9 @@ class Vox_display_group(Group):
         """
         voxd_group = cls(view, group_name, mode=READ_ONLY)
         if view.gxview.is_group(group_name, gxapi.MVIEW_IS_VOXD):
-            voxd_group._voxd = gxvoxd.Vox_display.open(voxd_group.view.gxview.get_voxd(voxd_group.number))
+            voxd_group._voxd = gxvoxd.VoxDisplay.open(voxd_group.view.gxview.get_voxd(voxd_group.number))
         elif view.gxview.is_group(group_name, gxapi.MVIEW_IS_VECTOR3D):
-            voxd_group._voxd = gxvoxd.Vox_display.open(voxd_group.view.gxview.get_vector_3d(voxd_group.number),
+            voxd_group._voxd = gxvoxd.VoxDisplay.open(voxd_group.view.gxview.get_vector_3d(voxd_group.number),
                                                        name=group_name + ".geosoft_vectorvoxel")
         else:
             raise GroupException('Group "{}" is not a GXVOXD or a GXVECTOR3D'.format(group_name))
@@ -2486,7 +2486,7 @@ class Vox_display_group(Group):
     @property
     def voxd(self):
         """
-        The `geosoft.gxpy.vox_display.Vox_display` for this vox group.
+        The `geosoft.gxpy.vox_display.VoxDisplay` for this vox group.
 
         .. versionadded:: 9.3.1
         """
