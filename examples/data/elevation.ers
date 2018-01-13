@@ -1,0 +1,32 @@
+DatasetHeader Begin
+	Version		= "7.0"
+	Name		= "elevation.ers"
+	LastUpdated	= Sun Oct 15 18:57:52 GMT 2017
+	DataSetType	= ERStorage
+	DataType	= Raster
+	ByteOrder	= LSBFirst
+	CoordinateSpace Begin
+		Datum		= "GDA94"
+		Projection	= "SUTM54"
+		CoordinateType	= EN
+		Units		= "METERS"
+		Rotation	= 0:0:0.0
+	CoordinateSpace End
+	RasterInfo Begin
+		CellType	= IEEE4ByteReal
+		NullCellValue	= -999999
+		CellInfo Begin
+			Xdimension	= 25
+			Ydimension	= 25
+		CellInfo End
+		NrOfLines	= 126
+		NrOfCellsPerLine	= 199
+		RegistrationCoord Begin
+			Eastings	= 336562.5
+			Northings	= 6160362.5
+		RegistrationCoord End
+		RegistrationCellX	= 0
+		RegistrationCellY	= 125
+		NrOfBands	= 1
+	RasterInfo End
+DatasetHeader End
