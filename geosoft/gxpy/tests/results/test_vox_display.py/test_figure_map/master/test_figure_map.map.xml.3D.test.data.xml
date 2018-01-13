@@ -64,7 +64,7 @@
                   <Item name="REG" type="REG">
                      <REG>
                         <Attributes>
-                           <Item name="FILE" value="colour.tbl"/>
+                           <Item name="FILE" value="uuid_test_figure_map_1.tbl"/>
                         </Attributes>
                      </REG>
                   </Item>

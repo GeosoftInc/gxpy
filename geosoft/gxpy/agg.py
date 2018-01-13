@@ -54,7 +54,7 @@ ZONE_LAST = 6 #:
 
 class Aggregate_image:
     """
-    The AGG class supports the creation of aggregate images from one or more grid data sets. Aggergates
+    The AGG class supports the creation of aggregate images from one or more grid data sets. Aggregates
     can be placed into a 2D or 3D view for display.
 
     :param grid_file:   if specified, the :meth:`add_layer()` method is called with remaining parameters
