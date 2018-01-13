@@ -427,7 +427,7 @@ class Test(GXPYTest):
                 s.render_opacity = 1
             fig_map = sd.figure_map().file_name
         self.crc_map(fig_map)
-        #gxviewer.view_document(fig_map, wait_for_close=True)
+        # gxviewer.view_document(fig_map, wait_for_close=True)
 
     def test_fig_map_cs(self):
         self.start()
@@ -451,7 +451,7 @@ class Test(GXPYTest):
                 s.render_opacity = 1
             fig_map = sd.figure_map().file_name
         #self.crc_map(fig_map)
-        gxviewer.view_document(fig_map, wait_for_close=True)
+        # gxviewer.view_document(fig_map, wait_for_close=True)
 
 
 ###############################################################################################
