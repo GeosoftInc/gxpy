@@ -504,6 +504,9 @@ class Coordinate_system:
     def __eq__(self, other):
         return self.same_as(other)
 
+    def __ne__(self, other):
+        return not self.__eq__(other)
+
     @classmethod
     def local(cls, lon_lat=(0, 0), origin=(0, 0), azimuth=0, elevation=0, datum="WGS 84",
               local_datum=None, scale_factor=0.9996, vcs=None):
@@ -668,6 +671,8 @@ class Coordinate_system:
         
         .. versionadded:: 9.2
         """
+        if other is None:
+            return True
         if not isinstance(other, Coordinate_system):
             other = Coordinate_system(other)
         return self.same_hcs(other) and self.same_vcs(other)
@@ -1034,7 +1039,11 @@ class Coordinate_translate:
     _sr = gxapi.str_ref()
 
     def __init__(self, cs_from, cs_to):
+        if not isinstance(cs_from, Coordinate_system):
+            cs_from = Coordinate_system(cs_from)
         self._cs_from = cs_from
+        if not isinstance(cs_to, Coordinate_system):
+            cs_to = Coordinate_system(cs_to)
         self._cs_to = cs_to
         self._pj = gxapi.GXPJ.create_ipj(cs_from.gxipj, cs_to.gxipj)
 

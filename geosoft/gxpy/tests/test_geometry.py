@@ -33,7 +33,6 @@ class Test(GXPYTest):
         self.assertTrue(gxgm.Point((1,2), coordinate_system="huh") == gxgm.Point((1,2), coordinate_system="huh"))
         self.assertTrue(gxgm.Point((1, 2), coordinate_system="huh") == gxgm.Point((1, 2)))
         self.assertTrue(gxgm.Point((1, 2)) == gxgm.Point((1, 2)))
-        self.assertFalse(gxgm.Point((1, 2), coordinate_system="huh") == gxgm.Point((1, 2), coordinate_system="huh?"))
 
         s = "WGS 84 / UTM zone 32N <0, 0, 0, 10, 15, 32>"
         p = gxgm.Point((5,10), coordinate_system=s)
@@ -266,6 +265,84 @@ class Test(GXPYTest):
 
         self.assertEqual(b2.extent_xyz, (0.0, 1.0, -20.0, 10.0, 20.0, -1.0))
         self.assertEqual(b2.extent_xy, (0.0, 1.0, 10.0, 20.0))
+
+    def test_cs_math(self):
+        self.start()
+
+        p = gxgm.Point((5, 10))
+        self.assertTrue(p == p)
+        self.assertTrue(gxgm.Point((1,2), coordinate_system="huh") == gxgm.Point((1,2), coordinate_system="huh"))
+        self.assertTrue(gxgm.Point((1, 2), coordinate_system="huh") == gxgm.Point((1, 2)))
+        self.assertTrue(gxgm.Point((1, 2)) == gxgm.Point((1, 2)))
+
+        cs = "NAD83 / UTM zone 32N>"
+        p = gxgm.Point((500000,6000000), coordinate_system=cs)
+        self.assertEqual(str(p.coordinate_system), "NAD83 / UTM zone 32N")
+        p27 = p.copy("NAD27 / UTM zone 32N")
+        self.assertEqual(str(p27.coordinate_system), "NAD27 / UTM zone 32N")
+        self.assertAlmostEqual(p27.x, 499840.780459, 3)
+        self.assertAlmostEqual(p27.y, 5999920.58165, 3)
+        self.assertFalse(p == p27)
+        pd = p - p27
+        self.assertEqual(str(pd.coordinate_system), "NAD83 / UTM zone 32N")
+        self.assertAlmostEqual(pd.x, 0., 2)
+        self.assertAlmostEqual(pd.y, 0., 2)
+        pd = p27 - p
+        self.assertEqual(str(pd.coordinate_system), "NAD27 / UTM zone 32N")
+        self.assertAlmostEqual(pd.x, 0., 2)
+        self.assertAlmostEqual(pd.y, 0., 2)
+        pp = p + (10, 5)
+        self.assertEqual(str(pp.coordinate_system), "NAD83 / UTM zone 32N")
+        self.assertEqual(pp.xy, (500010, 6000005))
+
+        p = gxgm.Point2(((500000, 6000000), (500001, 6000001)), coordinate_system=cs)
+        self.assertEqual(str(p.coordinate_system), "NAD83 / UTM zone 32N")
+        p27 = p.copy("NAD27 / UTM zone 32N")
+        self.assertEqual(str(p27.coordinate_system), "NAD27 / UTM zone 32N")
+        self.assertAlmostEqual(p27.p0.x, 499840.780459, 3)
+        self.assertAlmostEqual(p27.p0.y, 5999920.58165, 3)
+        self.assertAlmostEqual(p27.p1.x, 499841.780459, 3)
+        self.assertAlmostEqual(p27.p1.y, 5999921.58165, 3)
+        self.assertFalse(p == p27)
+        pd = p - p27
+        self.assertEqual(str(pd.coordinate_system), "NAD83 / UTM zone 32N")
+        self.assertAlmostEqual(pd.p0.x, 0., 2)
+        self.assertAlmostEqual(pd.p0.y, 0., 2)
+        self.assertAlmostEqual(pd.p1.x, 0., 2)
+        self.assertAlmostEqual(pd.p1.y, 0., 2)
+        pd = p27 - p
+        self.assertEqual(str(pd.coordinate_system), "NAD27 / UTM zone 32N")
+        self.assertAlmostEqual(pd.p0.x, 0., 2)
+        self.assertAlmostEqual(pd.p0.y, 0., 2)
+        self.assertAlmostEqual(pd.p1.x, 0., 2)
+        self.assertAlmostEqual(pd.p1.y, 0., 2)
+        pp = p + (10, 5)
+        self.assertEqual(str(pp.coordinate_system), "NAD83 / UTM zone 32N")
+        self.assertEqual(pp.p0.xy, (500010, 6000005))
+        self.assertEqual(pp.p1.xy, (500011, 6000006))
+
+    def test_names(self):
+        self.start()
+
+        self.assertEqual(gxgm.Point((1, 2)).name, '_point_')
+        self.assertEqual(gxgm.Point((1, 2), name='maki').name, 'maki')
+        self.assertTrue(gxgm.Point((1, 2)) == gxgm.Point((1,2), name='maki'))
+        self.assertEqual(gxgm.Point((1, 2)).copy().name, '_point_')
+        self.assertEqual(gxgm.Point((1, 2)).copy(name='maki').name, 'maki')
+        p1 = (1, 2)
+        p2 = (2, 3)
+        self.assertEqual(gxgm.Point2((p1, p2)).name, '_point2_')
+        self.assertEqual(gxgm.Point2((p1, p2), name='maki').name, 'maki')
+        self.assertTrue(gxgm.Point2((p1, p2)) == gxgm.Point2((p1, p2), name='maki'))
+        self.assertEqual(gxgm.Point2((p1, p2)).copy().name, '_point2_')
+        self.assertEqual(gxgm.Point2((p1, p2)).copy(name='maki').name, 'maki')
+        pp = ((1, 2), (3, 2), (4, 5))
+        self.assertEqual(gxgm.PPoint(pp).name, '_ppoint_')
+        self.assertEqual(gxgm.PPoint(pp, name='maki').name, 'maki')
+        self.assertTrue(gxgm.PPoint(pp) == gxgm.PPoint(pp, name='maki'))
+        self.assertEqual(gxgm.PPoint(pp).copy().name, '_ppoint_')
+        self.assertEqual(gxgm.PPoint(pp).copy(name='maki').name, 'maki')
+
 
 if __name__ == '__main__':
 
