@@ -19,6 +19,7 @@ of triangular facets.
 """
 import os
 import numpy as np
+from collections.abc import Sequence
 
 import geosoft
 import geosoft.gxapi as gxapi
@@ -31,6 +32,7 @@ from . import vox as gxvox
 from . import vv as gxvv
 from . import group as gxg
 from . import map as gxmap
+from . import geometry as gxgm
 
 __version__ = geosoft.__version__
 
@@ -69,13 +71,6 @@ def delete_files(surface_name):
     gxspd.delete_files(_surface_file_name(surface_name))
 
 
-def _extent_vv(xvv, yvv, zvv):
-    xmm = xvv.min_max()
-    ymm = yvv.min_max()
-    zmm = zvv.min_max()
-    return xmm[0], ymm[0], zmm[0], xmm[1], ymm[1], zmm[1]
-
-
 # constants
 MODE_READ = gxspd.MODE_READ             #:
 MODE_READWRITE = gxspd.MODE_READWRITE   #: file exists, but can change properties
@@ -87,7 +82,7 @@ STYLE_SMOOTH = gxapi.SURFACERENDER_SMOOTH   #:
 STYLE_EDGE = gxapi.SURFACERENDER_EDGES  #:
 
 
-class SurfaceDataset(gxspd.SpatialData):
+class SurfaceDataset(gxspd.SpatialData, Sequence):
     """
     Surface dataset class.
 
@@ -124,12 +119,15 @@ class SurfaceDataset(gxspd.SpatialData):
         super().__init__(name=self._name, file_name=self._file_name,
                          mode=mode,
                          overwrite=overwrite,
-                         gxobject=gxsurface)
+                         gxobj=gxsurface)
 
         self._gxsurface = gxsurface
         self._next = 0
         self._surfaces = None
         self._new = False
+
+    def __len__(self):
+        return self.surface_count
 
     def __iter__(self):
         self._refresh_surfaces()
@@ -149,9 +147,6 @@ class SurfaceDataset(gxspd.SpatialData):
             item = self.surface_name_list[item]
         gxsurfaceitem = self._gxsurface.get_surface_item(self.surface_guid(item))
         return Surface(gxsurfaceitem, surface_dataset=self, render_properties=None)
-
-    def __len__(self):
-        return self.surface_count
 
     @classmethod
     def open(cls, name, file_name=None, mode=MODE_READ, gxapi_surface=None):
@@ -372,8 +367,8 @@ class SurfaceDataset(gxspd.SpatialData):
         if surface.faces_count == 0:
             raise SurfaceException(_t('Cannot add an empty surface.'))
 
-        if surface.coordinate_system.is_known:
-            if not self.coordinate_system.is_known:
+        if gxcs.is_known(surface.coordinate_system):
+            if not gxcs.is_known(self.coordinate_system):
                 self.coordinate_system = surface.coordinate_system
             elif surface.coordinate_system != self.coordinate_system:
                 raise SurfaceException('Coordinate systems are not the same.')
@@ -474,23 +469,17 @@ class SurfaceDataset(gxspd.SpatialData):
         return gmap
 
 
-class Surface(gxspd.SpatialData):
+class Surface(gxspd.SpatialData, Sequence):
     """
-    A single surface, which is a mesh defined by a triangle set.
+    A single surface, which contains a set of trangular meshes
 
     :param surface:             surface name or a `geosoft.gxapi.GXSURFACEITEM` instance.
     :param surface_type:        surface type as a descriptive name, such as "ISOSURFACE"
     :param surface_dataset:     optional `SurfaceDataset` instance in which to place a new `Surface`
-    :param mesh:                optional mesh of (faces, verticies) - see below.
+    :param mesh:                optional `geosoft.gxpy.geometry.Mesh` instance, or tuple (faces, verticies).
     :param coordinate_system:   mesh coordinate system, which will become the surface coordinate system.
     :param render_properties:   (color, opacity, style), default is
                                 (`geosoft.gxpy.group.C_GREY`, 1.0, `STYLE_FLAT`)
-
-    A mesh is a set of triangles, where each triangle has three indexes into a set of verticies.
-    Verticies are defined as by a set of (x, y, z) locations. Meshes can be represented either
-    as two arrays in the form (faces, verticies), of two sets of `geosoft.gxpy.vv.GXvv` instances
-    in the form ((f1vv, f2vv, f3vv), (xvv, yvv, zvv)).  In array form each array is shaped (-1, 3),
-    with faces being an integer array that references vertexes in the float vertex array.
 
     .. versionadded:: 9.3.1
     """
@@ -510,9 +499,9 @@ class Surface(gxspd.SpatialData):
             if self._open:
 
                 if self._add and self._surface_dataset is not None:
-                    if self._surface_dataset.coordinate_system.is_known:
+                    if gxcs.is_known(self._surface_dataset.coordinate_system):
                         self.coordinate_system = self._surface_dataset.coordinate_system
-                    elif self.coordinate_system.is_known:
+                    elif gxcs.is_known(self.coordinate_system):
                         self._surface_dataset.coordinate_system = self.coordinate_system
                     self._surface_dataset.add_surface(self)
 
@@ -546,20 +535,41 @@ class Surface(gxspd.SpatialData):
         self._surface_dataset = surface_dataset
         self._properties = None
         self._computed_properties = None
+        self._next = 0
         self.render_properties = render_properties
 
-        super().__init__(gxobject=self._gxsurfaceitem)
+        super().__init__(gxobj=self._gxsurfaceitem)
 
         if coordinate_system is None and surface_dataset is not None:
-            if surface_dataset.coordinate_system.is_known:
+            if gxcs.is_known(surface_dataset.coordinate_system):
                 coordinate_system = surface_dataset.coordinate_system
         self.coordinate_system = coordinate_system
         self._extent = None
         if mesh:
+            if not isinstance(mesh, gxgm.Mesh):
+                mesh = gxgm.Mesh(mesh, name=self.name + '_0')
             self.add_mesh(mesh, render_properties=render_properties)
         elif self.faces_count:
-            _, xyz = self.get_mesh_vv()
-            self._update_extent(_extent_vv(xyz[0], xyz[1], xyz[2]))
+            for m in self:
+                self._update_extent(m.extent_xyz)
+
+    def __len__(self):
+        return self.component_count
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self._next >= self.component_count:
+            self._next = 0
+            raise StopIteration
+        else:
+            item = self._next
+            self._next += 1
+            return self.__getitem__(item)
+
+    def __getitem__(self, item):
+        return self.mesh(item)
 
     def _update_extent(self, ext):
         if self._extent is None:
@@ -572,16 +582,31 @@ class Surface(gxspd.SpatialData):
                             max(self._extent[4], ext[4]),
                             max(self._extent[5], ext[5]))
 
+    def _get_mesh_vv(self, component=0):
+
+        f1 = gxvv.GXvv(dtype=np.int)
+        f2 = gxvv.GXvv(dtype=np.int)
+        f3 = gxvv.GXvv(dtype=np.int)
+        vx = gxvv.GXvv()
+        vy = gxvv.GXvv()
+        vz = gxvv.GXvv()
+        self._gxsurfaceitem.get_mesh(component,
+                                     vx.gxvv, vy.gxvv, vz.gxvv,
+                                     f1.gxvv, f2.gxvv, f3.gxvv)
+        return (f1, f2, f3), (vx, vy, vz)
+
     @property
     def extent(self):
         """
-        Return the surface extent.
+        Return the surface extent as a (min_point, max_point), pair of `geosoft.gxpy.geometry.Point`
 
-        :return: (min_x, min_y, min_z, max_x, max_y, max_z)
+        :return: (min_point, max_point), pair of `geosoft.gxpy.geometry.Point`
 
         .. versionadded:: 9.3.1
         """
-        return self._extent
+        pmin = gxgm.Point((self._extent[0], self._extent[1], self._extent[2]))
+        pmax = gxgm.Point((self._extent[3], self._extent[4], self._extent[5]))
+        return pmin, pmax
 
 
     def properties(self, refresh=False):
@@ -775,26 +800,6 @@ class Surface(gxspd.SpatialData):
         self.render_properties = (c, t, s)
 
     @property
-    def coordinate_system(self):
-        """
-        `geosoft.gxpy.coordinate_system.Coordinate_system` instance of the surface.
-
-        Can be set using any constructor supported by `geosoft.gxpy.coordinate_system.Coordinate_system`.
-        """
-
-        if self._cs is None:
-            if self._surface_dataset:
-                return self._surface_dataset.coordinate_system
-            self._cs = gxcs.Coordinate_system()
-        return self._cs
-
-    @coordinate_system.setter
-    def coordinate_system(self, cs):
-        if not isinstance(cs, gxcs.Coordinate_system):
-            cs = gxcs.Coordinate_system(cs)
-        self._cs = cs
-
-    @property
     def metadata(self):
         """Return the parent surface dataset metadata as a dictionary."""
         if self._surface_dataset:
@@ -802,7 +807,29 @@ class Surface(gxspd.SpatialData):
         else:
             return {}
 
-    def add_mesh_vv(self, mesh, render_properties=None, coordinate_system=None):
+    def mesh(self, component=0):
+        """
+        Returns a component mesh as `geosoft.gxpy.geometry.Mesh` instance
+
+        :param component:   component number from a multi-component surface
+        :return:            (triangle_index_1, triangle_index_2, triangle_index_3), (vertex_x, vertex_y, vertex_z)
+                            as `geosoft.gxpy.vv.GXvv` instances
+
+        .. versionadded:: 9.3.1
+        """
+
+        f1 = gxvv.GXvv(dtype=np.int)
+        f2 = gxvv.GXvv(dtype=np.int)
+        f3 = gxvv.GXvv(dtype=np.int)
+        vx = gxvv.GXvv()
+        vy = gxvv.GXvv()
+        vz = gxvv.GXvv()
+        self._gxsurfaceitem.get_mesh(component,
+                                     vx.gxvv, vy.gxvv, vz.gxvv,
+                                     f1.gxvv, f2.gxvv, f3.gxvv)
+        return gxgm.Mesh(((f1, f2, f3), (vx, vy, vz)))
+
+    def add_mesh(self, mesh, render_properties=None, coordinate_system=None):
         """
         Add a vv mesh to a new surface.
 
@@ -821,8 +848,10 @@ class Surface(gxspd.SpatialData):
             raise SurfaceException(_t('Cannot add to an existing surface ({}) in surface dataset ({})')
                                    .format(self.name, self._surface_dataset.name))
 
-        f1vv, f2vv, f3vv = mesh[0]
-        xvv, yvv, zvv = mesh[1]
+        if not isinstance(mesh, gxgm.Mesh):
+            mesh = gxgm.Mesh(mesh)
+        f1vv, f2vv, f3vv = mesh.faces_vv()
+        xvv, yvv, zvv = mesh.verticies_vv()
 
         if coordinate_system is None:
             coordinate_system = self.coordinate_system
@@ -838,90 +867,12 @@ class Surface(gxspd.SpatialData):
         self._add = True
 
         # extent
-        self._update_extent(_extent_vv(xvv, yvv, zvv))
+        self._update_extent(mesh.extent_xyz)
 
         if render_properties:
             self.render_properties = render_properties
 
         return self.component_count - 1
-
-    def add_mesh(self, mesh, render_properties=None, coordinate_system=None):
-        """
-        Add a mesh to a new surface. Mesh may be in vv form or array form.
-
-        :param mesh:        mesh as (faces_array, verticies_array) or ((f1vv, f2vv, f3vv), (xvv, yvv, zvv)).
-        :param render_properties:  (color, opacity, style), where colour is a `geosoft.gxpy.group.Color`
-                            instance or a 32-bit Geosoft color integer, opacity is a value between
-                            0. (invisible) and 1. (opaque), and style is STYLE_FLAT, STYLE_SMOOTH or
-                            STYLE_EDGE.
-        :param coordinate_system: coordinate system for the verticies, default is the same as the surface
-        :returns:           component number, which will always be the last component.
-
-
-        .. versionadded:: 9.3.1
-        """
-
-        faces, verticies = mesh
-
-        # convert arrays to vv form
-        if type(faces) in (tuple, list, np.ndarray):
-            faces = (gxvv.GXvv(faces[:, 0], dtype=np.int),
-                     gxvv.GXvv(faces[:, 1], dtype=np.int),
-                     gxvv.GXvv(faces[:, 2], dtype=np.int))
-        if type(verticies) in (tuple, list, np.ndarray):
-            verticies = (gxvv.GXvv(verticies[:, 0], dtype=np.float64),
-                         gxvv.GXvv(verticies[:, 1], dtype=np.float64),
-                         gxvv.GXvv(verticies[:, 2], dtype=np.float64))
-
-        return self.add_mesh_vv((faces, verticies),
-                                render_properties=render_properties,
-                                coordinate_system=coordinate_system)
-
-    def get_mesh_vv(self, component=0):
-        """
-        Returns mesh data as a set of VV.
-
-        :param component:   component number from a multi-component surface
-        :return:            (triangle_index_1, triangle_index_2, triangle_index_3), (vertex_x, vertex_y, vertex_z)
-                            as `geosoft.gxpy.vv.GXvv` instances
-
-        .. versionadded:: 9.3.1
-        """
-
-        f1 = gxvv.GXvv(dtype=np.int)
-        f2 = gxvv.GXvv(dtype=np.int)
-        f3 = gxvv.GXvv(dtype=np.int)
-        vx = gxvv.GXvv()
-        vy = gxvv.GXvv()
-        vz = gxvv.GXvv()
-        self._gxsurfaceitem.get_mesh(component,
-                                     vx.gxvv, vy.gxvv, vz.gxvv,
-                                     f1.gxvv, f2.gxvv, f3.gxvv)
-        return (f1, f2, f3), (vx, vy, vz)
-
-    def get_mesh_np(self, component=0):
-        """
-        Returns mesh data as a set of faces and a set of verticies.
-
-        :param component:   component number from a multi-component surface
-        :return:            face, vertex, each a numpy array shaped (-1, 3) with face an int32 array
-                            ff triangle corner indexes into the vertex array.
-
-        .. versionadded:: 9.3.1
-        """
-
-        t, v = self.get_mesh_vv(component)
-        f1, f2, f3 = t
-        vx, vy, vz = v
-        face = np.empty((len(f1), 3), dtype=np.int32)
-        face[:, 0] = f1.np
-        face[:, 1] = f2.np
-        face[:, 2] = f3.np
-        vertex = np.empty((len(vx), 3), dtype=np.float64)
-        vertex[:, 0] = vx.np
-        vertex[:, 1] = vy.np
-        vertex[:, 2] = vz.np
-        return face, vertex
 
 
 def render(view, surface, group_name=None, overwrite=False):
@@ -945,6 +896,7 @@ def render(view, surface, group_name=None, overwrite=False):
             group_name = _surface_name(surface)
         else:
             group_name = surface.name
+
     if view.has_group(group_name) and not overwrite:
         raise SurfaceException(_t('Cannot overwerwrite existing group: {}').format(group_name))
 
