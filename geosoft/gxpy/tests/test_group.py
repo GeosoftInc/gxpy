@@ -199,7 +199,7 @@ class Test(GXPYTest):
             with gxv.View.new(gmap, "points", area=(100, 0, 260, 100)) as v:
                 with gxg.Draw(v, 'test_group') as g:
 
-                    g.rectangle(pp.extent(), pen=gxg.Pen(line_thick=1))
+                    g.rectangle(pp.extent, pen=gxg.Pen(line_thick=1))
                     g.pen = gxg.Pen(line_thick=2, line_color='B')
                     for p in pp:
                         g.point(p)
@@ -232,7 +232,7 @@ class Test(GXPYTest):
         self.start()
 
         pp = pline()
-        p1, p2 = pp.extent()
+        p1, p2 = pp.extent
         area = (p1.x, p1.y, p2.x, p2.y)
         with gxmap.Map.new() as map:
             map_file = map.file_name

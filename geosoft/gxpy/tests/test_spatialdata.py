@@ -25,7 +25,7 @@ class Test(GXPYTest):
             self.assertEqual(spd.name, '_geometry_')
             self.assertTrue(isinstance(spd.metadata, dict))
             self.assertEqual(spd.unit_of_measure, '')
-            self.assertEqual(spd.extent, (None, None))
+            self.assertEqual(spd.extent, None)
             self.assertEqual(spd.extent_xy, (None, None, None, None))
             self.assertEqual(spd.extent_minimum_xyz, (None, None, None))
             self.assertEqual(spd.extent_maximum_xyz, (None, None, None))
