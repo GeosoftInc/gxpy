@@ -435,7 +435,7 @@ class Test(GXPYTest):
                 self.assertEqual(npd.shape[1], len(ch))
 
                 px = geosoft.gxpy.geometry.Point2(gdb.extent_xyz())
-                self.assertEqual(str(px), 'Point2[(578625.0, 7773625.0, -5261.5553894043005) (578625.0, 7782875.0, 1062.4999999999964)]')
+                self.assertEqual(str(px), '_point2_[(578625.0, 7773625.0, -5261.5553894043005) (578625.0, 7782875.0, 1062.4999999999964)]')
 
             finally:
                 gdb.discard()
@@ -463,7 +463,7 @@ class Test(GXPYTest):
                 dy [:] = np.nan
                 gdb.write_channel('D2', 'y', dy)
                 px = geosoft.gxpy.geometry.Point2(gdb.extent_xyz())
-                self.assertEqual(str(px), 'Point2[(578625.0, nan, -5261.5553894043005) (578625.0, nan, 1062.4999999999964)]')
+                self.assertEqual(str(px), '_point2_[(578625.0, nan, -5261.5553894043005) (578625.0, nan, 1062.4999999999964)]')
 
             finally:
                 gdb.discard()
@@ -477,7 +477,7 @@ class Test(GXPYTest):
                 dx [:] = np.nan
                 gdb.write_channel('D2', 'x', dx)
                 px = geosoft.gxpy.geometry.Point2(gdb.extent_xyz())
-                self.assertEqual(str(px), 'Point2[(nan, 7773625.0, -5261.5553894043005) (nan, 7782875.0, 1062.4999999999964)]')
+                self.assertEqual(str(px), '_point2_[(nan, 7773625.0, -5261.5553894043005) (nan, 7782875.0, 1062.4999999999964)]')
 
             finally:
                 gdb.discard()
@@ -494,7 +494,7 @@ class Test(GXPYTest):
                 gdb.write_channel('D2', 'x', dx)
                 px = geosoft.gxpy.geometry.Point2(gdb.extent_xyz())
                 self.assertEqual(str(px),
-                                 'Point2[(1.0, 7773625.0, -5261.5553894043005) (2.0, 7782875.0, 1062.4999999999964)]')
+                                 '_point2_[(1.0, 7773625.0, -5261.5553894043005) (2.0, 7782875.0, 1062.4999999999964)]')
 
             finally:
                 gdb.discard()

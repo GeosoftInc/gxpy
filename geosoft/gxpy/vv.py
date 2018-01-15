@@ -20,6 +20,7 @@ data to the same fiducial so that vector-to-vector operations can be performed.
 
 """
 
+from collections.abc import Sequence
 import geosoft
 import numpy as np
 import geosoft.gxapi as gxapi
@@ -92,7 +93,7 @@ def vvset_from_np(npd):
     return tuple(vv)
 
 
-class GXvv:
+class GXvv(Sequence):
     """
     VV class wrapper.
 
