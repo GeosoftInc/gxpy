@@ -78,10 +78,18 @@ class Geometry:
         """`geosoft.gxpy.coordinate_system.Coordinate_system` instance or None.  Can be set."""
         if self._cs and not isinstance(self._cs, gxcs.Coordinate_system):
             self._cs = gxcs.Coordinate_system(self._cs)
+        if self._gxobj and hasattr(self._gxobj, 'get_ipj'):
+            ipj = gxapi.GXIPJ.create()
+            self._gxobj.get_ipj(ipj)
+            self._cs = gxcs.Coordinate_system(ipj)
         return self._cs
 
     @coordinate_system.setter
     def coordinate_system(self, cs):
+        if cs and self._gxobj and hasattr(self._gxobj, 'set_ipj'):
+            if not isinstance(cs, gxcs.Coordinate_system):
+                cs = gxcs.Coordinate_system(cs)
+            self._gxobj.set_ipj(cs.gxipj)
         self._cs = cs
 
     @property
@@ -114,54 +122,66 @@ class Geometry:
     def extent_xyz(self):
         """return extent as a tuple (xmin, ymin, zmin, xmax, ymax, zmax)"""
         p1, p2 = self.extent
+        if p1 is None:
+            return None, None, None, None, None, None
         return p1.x, p1.y, p1.z, p2.x, p2.y, p2.z
 
     @property
     def extent_xy(self):
         """ Horizontal minimum Point, maximum Point"""
         p1, p2 = self.extent
+        if p1 is None:
+            return None, None, None, None
         return p1.x, p1.y, p2.x, p2.y
 
     @property
     def extent_minimum(self):
         """ minimum geometry extent as Point"""
-        p, _ = self.extent
-        return p
+        return self.extent[0]
 
     @property
     def extent_maximum(self):
         """ maximum geometry extent as Point"""
-        _, p = self.extent
-        return p
+        return self.extent[1]
 
     @property
     def extent_minimum_xyz(self):
         """ minimum geometry extent as tuple (x, y, z)"""
         p, _ = self.extent
+        if p is None:
+            return None, None, None
         return p.x, p.y, p.z
 
     @property
     def extent_maximum_xyz(self):
         """ maximum geometry extent as tuple (x, y, z"""
         _, p = self.extent
+        if p is None:
+            return None, None, None
         return p.x, p.y, p.z
 
     @property
     def extent_minimum_xy(self):
         """ minimum geometry extent as tuple (min_x, min_y)"""
         p, _ = self.extent
+        if p is None:
+            return None, None
         return p.x, p.y
 
     @property
     def extent_maximum_xy(self):
         """ maximum geometry extent as tuple (max_x, max_y)"""
         _, p = self.extent
+        if p is None:
+            return None, None
         return p.x, p.y
 
     @property
     def centroid(self):
         """ centroid of the geometry"""
         p1, p2 = self.extent
+        if p1 is None:
+            return None
         cx = (p1.x + p2.x) * 0.5
         cy = (p1.y + p2.y) * 0.5
         cz = (p1.z + p2.z) * 0.5
@@ -171,6 +191,8 @@ class Geometry:
     def dimension(self):
         """ dimensions as tuple (dx, dy, dz)"""
         p1, p2 = self.extent
+        if p1 is None:
+            return None, None, None
         dx = abs(p2.x - p1.x)
         dy = abs(p2.y - p1.y)
         dz = abs(p2.z - p1.z)
@@ -180,18 +202,24 @@ class Geometry:
     def centroid_xy(self):
         """ centroid of the geometry"""
         c = self.centroid
+        if c is None:
+            return None, None
         return c.x, c.y
 
     @property
     def centroid_xyz(self):
         """ centroid of the geometry"""
         c = self.centroid
+        if c is None:
+            return None, None, None
         return c.x, c.y, c.z
 
     @property
     def dimension_xy(self):
         """ dimensions as (dx, dy, dz)"""
         dx, dy, _ = self.dimension
+        if dx is None:
+            return None, None
         return dx, dy
 
     def copy(self, name=None):
@@ -767,19 +795,20 @@ class PPoint(Geometry, Sequence):
 
 class Mesh(Geometry, Sequence):
     """
-    Mesh - set of triangular faces, which are indexes into verticies
+    Mesh - set of triangular faces, which are indexes into verticies.
 
-    :param xyz:     array-like: (p1, p2, ...), ((x, y), ...), ((x, y, z), ...) or (vv_x, vv_y, [vv_z]).
-                    vv data is resampled to match the first vv.
-
+    :param mesh:                (faces, verticies) that define a trangulated mesh surface. See below.
     :param coordinate_system:   coordinate system or None
-    :param z:                   constant z value for (x, y) data, ignored for (x, y, z) data
+    :param name:                name for the mesh, defaule is '_mesh_'
     :param **kwargs:            passed to base class `Geometry`
 
-    .. versionadded:: 9.2
+    A mesh is a set of triangles, where each triangle has three indexes into a set of verticies.
+    Verticies are defined as by a set of (x, y, z) locations. Meshes can be represented either
+    as two arrays in the form (faces, verticies), of two sets of `geosoft.gxpy.vv.GXvv` instances
+    in the form ((f1vv, f2vv, f3vv), (xvv, yvv, zvv)).  In array form each array is shaped (-1, 3),
+    with faces being an integer array that references vertexes in the float vertex array.
 
-    .. versionchanged:: 9.3.1 added coordinate_system parameter
-
+    .. versionadded:: 9.3.1
     """
     def __str__(self):
         return "{}({} faces)".format(self.name, len(self))

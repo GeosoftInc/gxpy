@@ -15,6 +15,7 @@ import geosoft.gxapi as gxapi
 from . import gx as gx
 from . import coordinate_system as gxcs
 from . import utility as gxu
+from . import geometry as gxgm
 
 __version__ = geosoft.__version__
 
@@ -56,7 +57,7 @@ MODE_READWRITE = 1     #: open existing dataset file for read or write
 MODE_NEW = 2           #: new dataset file
 
 
-class SpatialData:
+class SpatialData(gxgm.Geometry):
     """
     Base class for spatial datasets.
 
@@ -64,21 +65,18 @@ class SpatialData:
     :param file_name:   file name for this dataset.
     :param mode:        file mode, MODE_READ, MODE_READWRITE or MODE_NEW.  The default is MODE_NEW.
     :param overwrite:   Default is False. If True will raise an error if MODE_NEW and file_name exists.
-    :param gxobject:    Base GXAPI spatial dataset object, default is None.  If passed the base object is used
+    :param gxobj:       Base GXAPI spatial dataset object, default is None.  If passed the base object is used
                         to resolve common named methods like get_ipj().
 
     :Properties:
+    
+        properties of `geosoft.gxpy.Geometry` plus:
 
         ================== =============================================================
         name               dataset name
         file_name          file name
         metadata           metadata dictionary
         unit_of_measure    primary data unit of measurement
-        coordinate_system  spatial coordinate system
-        extent             spatial extent (min_x, min_y, min_z, max_x, max_y, max_z)
-        extent_2d          2D spatial extent (min_x, min_y, max_x, max_y)
-        extent_minimum     minimum spatial point (min_x, min_y, min_z)
-        extent_maximum     maximum spatial point (max_x, max_y, max_z)
         ================== =============================================================
 
     .. versionadded:: 9.3.1
@@ -107,7 +105,7 @@ class SpatialData:
                         f.write(gxu.xml_from_dict(self._metadata))
 
                 self._metadata = None
-                self._gxobject = None
+                self._gxobj = None
 
     def __repr__(self):
         return "{}({})".format(self.__class__, self.__dict__)
@@ -115,11 +113,13 @@ class SpatialData:
     def __str__(self):
         return self.name
 
-    def __init__(self, name=None, file_name=None, mode=MODE_NEW, overwrite=False, gxobject=None):
+    def __init__(self, name=None, file_name=None, mode=MODE_NEW, overwrite=False, **kwargs):
 
         if name is None:
             if file_name:
                 name = os.path.splitext(os.path.basename(file_name))[0]
+                
+        super().__init__(name=name, **kwargs)
 
         if file_name is None:
             if mode != MODE_NEW:
@@ -128,7 +128,7 @@ class SpatialData:
         else:
 
             if mode == MODE_NEW:
-                if gxobject is None and not overwrite and os.path.exists(file_name):
+                if self.gxobj is None and not overwrite and os.path.exists(file_name):
                     raise SpatialException(_t('\'{}\' exists. Use overwrite=True to overwrite existing dataset file.').
                                            format(file_name))
             else:
@@ -137,24 +137,16 @@ class SpatialData:
                                            format(file_name))
 
         self._file_name = file_name
-        self._name = name
         self._mode = mode
         self._metadata = None
         self._metadata_changed = False
         self._metadata_root = ''
-        self._cs = None
-        self._gxobject = gxobject
         self._open = gx.track_resource(self.__class__.__name__, self._name)
 
     def _init_metadata(self):
         if not self._metadata:
             self._metadata = gxu.geosoft_metadata(self._file_name)
         self._metadata_root = tuple(self._metadata.items())[0][0]
-
-    @property
-    def name(self):
-        """dataset name"""
-        return self._name
 
     @property
     def file_name(self):
@@ -164,65 +156,6 @@ class SpatialData:
     def close(self):
         """close the dataset."""
         self._close()
-
-    @property
-    def extent(self):
-        """ (min_x, min_y, min_z, max_x, max_y, max_z) dataset extent."""
-        if self._gxobject and hasattr(self._gxobject, 'get_extents'):
-            rx0 = gxapi.float_ref()
-            ry0 = gxapi.float_ref()
-            rz0 = gxapi.float_ref()
-            rx1 = gxapi.float_ref()
-            ry1 = gxapi.float_ref()
-            rz1 = gxapi.float_ref()
-            self._gxobject.get_extents(rx0, ry0, rz0, rx1, ry1, rz1)
-            return (rx0.value, ry0.value, rz0.value,
-                    rx1.value, ry1.value, rz1.value)
-        else:
-            return None, None, None, None, None, None
-
-    @property
-    def extent_2d(self):
-        """ Horizontal (min_x, min_y, max_x, max_y) extent of the dataset."""
-        ex = self.extent
-        return ex[0], ex[1], ex[3], ex[4]
-
-    @property
-    def extent_minimum(self):
-        """ minimum dataset extent (min_x, min_y, min_z)"""
-        ex = self.extent
-        return ex[0], ex[1], ex[2]
-
-    @property
-    def extent_maximum(self):
-        """ maximum dataset extent (max_x, max_y, max_z)"""
-        ex = self.extent
-        return ex[3], ex[4], ex[5]
-
-    @property
-    def coordinate_system(self):
-        """
-        `geosoft.gxpy.coordinate_system.Coordinate_system` instance of the dataset.
-
-        Can be set using any constructor supported by `geosoft.gxpy.coordinate_system.Coordinate_system`.
-        """
-        if self._gxobject and hasattr(self._gxobject, 'get_ipj'):
-            ipj = gxapi.GXIPJ.create()
-            self._gxobject.get_ipj(ipj)
-            return gxcs.Coordinate_system(ipj)
-        else:
-            if self._cs is None:
-                self._cs = gxcs.Coordinate_system()
-            return self._cs
-
-    @coordinate_system.setter
-    def coordinate_system(self, cs):
-        if not isinstance(cs, gxcs.Coordinate_system):
-            cs = gxcs.Coordinate_system(cs)
-        if self._gxobject and hasattr(self._gxobject, 'set_ipj'):
-            self._gxobject.set_ipj(gxcs.Coordinate_system(cs).gxipj)
-        else:
-            self._cs = cs
 
     @property
     def dataset_mode(self):

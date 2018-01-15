@@ -1171,7 +1171,7 @@ class Map:
 
                 # if view has a known coordinate system, use compass annotations
                 if compass is None:
-                    compass = v.coordinate_system.is_known
+                    compass = gxcs.is_known(v.coordinate_system)
 
             with _Mapplot(self) as mpl:
 
