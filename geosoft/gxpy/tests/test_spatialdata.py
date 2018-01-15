@@ -22,15 +22,14 @@ class Test(GXPYTest):
 
         with gxspd.SpatialData() as spd:
             self.assertEqual(spd.file_name, None)
-            self.assertEqual(spd.name, None)
+            self.assertEqual(spd.name, '_geometry_')
             self.assertTrue(isinstance(spd.metadata, dict))
             self.assertEqual(spd.unit_of_measure, '')
-            self.assertEqual(spd.extent, (None, None, None, None, None, None))
-            self.assertEqual(spd.extent_2d, (None, None, None, None))
-            self.assertEqual(spd.extent_minimum, (None, None, None))
-            self.assertEqual(spd.extent_maximum, (None, None, None))
-            self.assertTrue(isinstance(spd.coordinate_system, gxcs.Coordinate_system))
-            self.assertEqual(str(spd.coordinate_system), '*unknown')
+            self.assertEqual(spd.extent, (None, None))
+            self.assertEqual(spd.extent_xy, (None, None, None, None))
+            self.assertEqual(spd.extent_minimum_xyz, (None, None, None))
+            self.assertEqual(spd.extent_maximum_xyz, (None, None, None))
+            self.assertEqual(spd.coordinate_system, None)
 
         with gxspd.SpatialData(file_name='maki.spd') as spd:
             self.assertEqual(spd.file_name, 'maki.spd')
