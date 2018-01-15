@@ -1,13 +1,13 @@
 """
-Spatial geometric elements.
+Spatial geometric objects.
 
 :Classes:
 
     ========== ==============================================================
     `Geometry` base class for all geometries
     `Point`    (x, y, z) point
-    `Point2`   pair of :class:`Point` instances that define a line, or extent
-    `PPoint`   multiple :class:`Point` instances
+    `Point2`   pair of `Point` instances that define a line, or box, etc.
+    `PPoint`   multiple `Point` instances
     `Mesh`     mesh surface made up of triangular faces defined by verticies
     ========== ==============================================================
 
@@ -32,6 +32,22 @@ def _t(s):
     return geosoft.gxpy.system.translate(s)
 
 
+def first_coordinate_system(geo_objects):
+    """
+    Return the first found known coordinate system in the list
+
+    :param geo_objects: objects as iterable
+    :return:            valid coordinate system or None if none found
+
+    .. versionadded:: 9.3.1
+    """
+    for o in geo_objects:
+        if hasattr(o, 'coordinate_system'):
+            if gxcs.is_known(o.coordinate_system):
+                return o.coordinate_system
+    return None
+
+
 class GeometryException(Exception):
     """
     Exceptions from :mod:`geosoft.gxpy.geometry`.
@@ -41,11 +57,24 @@ class GeometryException(Exception):
 
 class Geometry:
     """
-    Geometry base class for all geometries.
+    Geometry base class for all geometries and spatial objects in Geosoft.
 
     :param coordinate_system:   `geosoft.gxpy.coordinate_system.Coordinate_system` instance.
     :param name:                instance name string
     :param gxobj:               optional gxapi instance that can satisfy get_ipj() and/or get_extent()
+
+    :Properties:
+
+    `Geometry.name`                 name for the geometry
+    `Geometry.coordinate_system`    spatial coordinate system of the x, y, z locations
+    `Geometry.extent`               spatial extent as a `Point2`
+    `Geometry.extent_xyz`           (min_x, min_y, min_z, max_x, max_y, max_z)
+    `Geometry.extent_xy`            (min_x, min_y, max_x, max_y)
+    `Geometry.dimension`            (dx, dy, dz) dimension
+    `Geometry.dimension_xy`         (dx, dy) dimension
+    `Geometry.centroid`             center point as a `Point`
+    `Geometry.centroid_xyz`         (x, y, z) location of the object center
+    `Geometry.centroid_xy`          (x, y) center
 
     .. versionadded:: 9.2
     """
@@ -114,25 +143,25 @@ class Geometry:
             rz1 = gxapi.float_ref()
             self._gxobj.get_extents(rx0, ry0, rz0, rx1, ry1, rz1)
             cs = self.coordinate_system
-            return Point((rx0.value, ry0.value, rz0.value), cs), Point((rx1.value, ry1.value, rz1.value), cs)
+            return Point2(((rx0.value, ry0.value, rz0.value), (rx1.value, ry1.value, rz1.value)), cs)
         else:
-            return None, None
+            return None
 
     @property
     def extent_xyz(self):
         """return extent as a tuple (xmin, ymin, zmin, xmax, ymax, zmax)"""
-        p1, p2 = self.extent
-        if p1 is None:
+        e = self.extent
+        if e is None:
             return None, None, None, None, None, None
-        return p1.x, p1.y, p1.z, p2.x, p2.y, p2.z
+        return e[0].x, e[0].y, e[0].z, e[1].x, e[1].y, e[1].z
 
     @property
     def extent_xy(self):
         """ Horizontal minimum Point, maximum Point"""
-        p1, p2 = self.extent
-        if p1 is None:
+        e = self.extent
+        if e is None:
             return None, None, None, None
-        return p1.x, p1.y, p2.x, p2.y
+        return e[0].x, e[0].y, e[1].x, e[1].y
 
     @property
     def extent_minimum(self):
@@ -147,55 +176,59 @@ class Geometry:
     @property
     def extent_minimum_xyz(self):
         """ minimum geometry extent as tuple (x, y, z)"""
-        p, _ = self.extent
-        if p is None:
+        e = self.extent
+        if e is None:
             return None, None, None
+        p = e[0]
         return p.x, p.y, p.z
 
     @property
     def extent_maximum_xyz(self):
-        """ maximum geometry extent as tuple (x, y, z"""
-        _, p = self.extent
-        if p is None:
+        """ maximum geometry extent as tuple (x, y, z)"""
+        e = self.extent
+        if e is None:
             return None, None, None
+        p = e[1]
         return p.x, p.y, p.z
 
     @property
     def extent_minimum_xy(self):
         """ minimum geometry extent as tuple (min_x, min_y)"""
-        p, _ = self.extent
-        if p is None:
+        e = self.extent
+        if e is None:
             return None, None
+        p = e[0]
         return p.x, p.y
 
     @property
     def extent_maximum_xy(self):
         """ maximum geometry extent as tuple (max_x, max_y)"""
-        _, p = self.extent
-        if p is None:
+        e = self.extent
+        if e is None:
             return None, None
+        p = e[1]
         return p.x, p.y
 
     @property
     def centroid(self):
         """ centroid of the geometry"""
-        p1, p2 = self.extent
-        if p1 is None:
+        e = self.extent
+        if e is None:
             return None
-        cx = (p1.x + p2.x) * 0.5
-        cy = (p1.y + p2.y) * 0.5
-        cz = (p1.z + p2.z) * 0.5
-        return Point((cx, cy, cz), p1.coordinate_system)
+        cx = (e[0].x + e[1].x) * 0.5
+        cy = (e[0].y + e[1].y) * 0.5
+        cz = (e[0].z + e[1].z) * 0.5
+        return Point((cx, cy, cz), e.coordinate_system)
 
     @property
     def dimension(self):
         """ dimensions as tuple (dx, dy, dz)"""
-        p1, p2 = self.extent
-        if p1 is None:
+        e = self.extent
+        if e is None:
             return None, None, None
-        dx = abs(p2.x - p1.x)
-        dy = abs(p2.y - p1.y)
-        dz = abs(p2.z - p1.z)
+        dx = abs(e[1].x - e[0].x)
+        dy = abs(e[1].y - e[0].y)
+        dz = abs(e[1].z - e[0].z)
         return dx, dy, dz
 
     @property
@@ -245,11 +278,12 @@ class Point(Geometry, Sequence):
 
                     `Point` instance, returns a copy
 
-                    (x, y [,z]) implied z is 0.0 if not provided
+                    (x, y [,z]) implied z is as defined by z=
 
                     k makes a point (k, k, k)
 
     :param coordinate_system:   coordinate system or None
+    :param z:                   implied z if len(p) is 2.
     :param **kwargs:            passed to base class `Geometry`
 
     .. versionadded:: 9.2
@@ -260,7 +294,7 @@ class Point(Geometry, Sequence):
     def __str__(self):
         return "{}({}, {}, {})".format(self.name, self.x(), self.y(), self.z())
 
-    def __init__(self, p, coordinate_system=None, name=None, **kwargs):
+    def __init__(self, p, coordinate_system=None, name=None, z=0., **kwargs):
 
         if name is None:
             name = '_point_'
@@ -271,15 +305,34 @@ class Point(Geometry, Sequence):
                 self.p = p.p.copy()
             else:
                 self.p = p.copy(coordinate_system).p
-        elif hasattr(p, '__len__'):
+
+        elif isinstance(p, np.ndarray):
             if len(p) > 2:
-                self.p = np.array(p[:3], dtype=np.float)
-            elif len(p) == 2:
-                self.p = np.array((p[0], p[1], 0.0))
+                self.p = p[:3].copy()
             else:
-                self.p = np.array((p[0], p[0], p[0]), dtype=np.float)
+                self.p = np.empty(3)
+                self.p[:2] = p
+                self.p[2] = z
+
+        elif hasattr(p, '__len__'):
+            lp = len(p)
+            if lp == 1:
+                v = float(p[0])
+                self.p = np.array((v, v, v), dtype=np.float)
+            else:
+                self.p = np.empty(3)
+                if lp == 2:
+                    self.p[0] = float(p[0]) if p[0] is not None else np.nan
+                    self.p[1] = float(p[1]) if p[1] is not None else np.nan
+                    self.p[2] = z
+                else:
+                    self.p[0] = float(p[0]) if p[0] is not None else np.nan
+                    self.p[1] = float(p[1]) if p[1] is not None else np.nan
+                    self.p[2] = float(p[2]) if p[2] is not None else np.nan
+
         else:
-            self.p = np.array((p, p, p), dtype=np.float)
+            p = float(p)
+            self.p = np.array((p, p, p))
         self._next = 0
 
     def __len__(self):
@@ -393,8 +446,9 @@ class Point(Geometry, Sequence):
                          coordinate_system=coordinate_system, name=name)
         return super(Point, self).copy(name)
 
+    @property
     def extent(self):
-        return self.p, self.p
+        return Point2((self.p, self.p))
 
 
 class Point2(Geometry, Sequence):
@@ -432,12 +486,16 @@ class Point2(Geometry, Sequence):
         super().__init__(coordinate_system=coordinate_system, name=name, **kwargs)
 
         if isinstance(p, Point2):
+            if coordinate_system is None:
+                coordinate_system = p.coordinate_system
             self.p0 = Point(p.p0, coordinate_system=coordinate_system)
             self.p1 = Point(p.p1, coordinate_system=coordinate_system)
         else:
             if not hasattr(p, '__iter__'):
                 self.p0 = self.p1 = Point(p, coordinate_system=coordinate_system)
             elif len(p) == 2:
+                if coordinate_system is None:
+                    coordinate_system = first_coordinate_system((p[0], p[1]))
                 self.p0 = Point(p[0], coordinate_system=coordinate_system)
                 self.p1 = Point(p[1], coordinate_system=coordinate_system)
             elif len(p) == 3:
@@ -573,7 +631,7 @@ class Point2(Geometry, Sequence):
                    self.coordinate_system)
         p2 = Point((max(self.p0.x, self.p1.x), max(self.p0.y, self.p1.y), max(self.p0.z, self.p1.z)),
                    self.coordinate_system)
-        return p1, p2
+        return Point2((p1, p2))
 
 
 class PPoint(Geometry, Sequence):
@@ -601,8 +659,6 @@ class PPoint(Geometry, Sequence):
         if name is None:
             name = '_ppoint_'
         super().__init__(coordinate_system=coordinate_system, name=name, **kwargs)
-        if coordinate_system:
-            kwargs['coordinate_system'] = gxcs.Coordinate_system(coordinate_system)
 
         def blankpp(length):
             return np.empty(length * 3, dtype=np.float).reshape((length, 3))
@@ -632,8 +688,12 @@ class PPoint(Geometry, Sequence):
         def point_setup():
             pp = blankpp(len(xyz))
             i = 0
-            for p in xyz:
-                pp[i, :] = p.xyz
+            for pt in xyz:
+                if not isinstance(pt, Point):
+                    pt = Point(pt, coordinate_system=coordinate_system, z=z)
+                if pt.coordinate_system != coordinate_system:
+                    pt = pt.copy(coordinate_system=coordinate_system)
+                pp[i, :] = pt.xyz
                 i += 1
             return pp
 
@@ -641,10 +701,10 @@ class PPoint(Geometry, Sequence):
             self.pp = np_setup(xyz)
         elif isinstance(xyz[0], gxvv.GXvv):
             self.pp = vv_setup()
-        elif isinstance(xyz[0], Point):
-            self.pp = point_setup()
         else:
-            self.pp = np_setup(np.array(xyz))
+            if coordinate_system is None:
+                self.coordinate_system = coordinate_system = first_coordinate_system(xyz)
+            self.pp = point_setup()
 
         self._next = 0
 
@@ -653,7 +713,7 @@ class PPoint(Geometry, Sequence):
         """
         .. deprecated:: 9.3 `PPoint` can create directly from a list
         """
-        return cls(np.array(xyzlist, dtype=np.float), z)
+        return cls(xyzlist, z=z)
 
     def __len__(self):
         return self.pp.shape[0]
@@ -667,7 +727,7 @@ class PPoint(Geometry, Sequence):
             raise StopIteration
         else:
             self._next += 1
-            return Point(self.pp[self._next - 1], self.coordinate_system)
+            return self.__getitem__(self._next - 1)
 
     def __getitem__(self, item):
         return Point(self.pp[item], self.coordinate_system)
@@ -679,7 +739,12 @@ class PPoint(Geometry, Sequence):
         if isinstance(p, Point):
             p = p.copy_cs(self.coordinate_system)
             return PPoint(self.pp + p.p)
-        return PPoint(self.pp + Point(p).p)
+        try:
+            p = Point(p, coordinate_system=self.coordinate_system)
+            return PPoint(self.pp + p.p)
+        except TypeError:
+            p = PPoint(p, coordinate_system=self.coordinate_system)
+            return PPoint(self.pp + p.pp)
 
     def __sub__(self, p):
         if isinstance(p, PPoint):
@@ -771,15 +836,16 @@ class PPoint(Geometry, Sequence):
         """ xyz point array"""
         return self.pp
 
+    @property
     def extent(self):
         """
-        Volume extent as (`Point`, `Point`) for (min, max).
+        Volume extent as `Point2` for (min, max).
 
         .. versionadded:: 9.2
         """
         p1 = Point((np.amin(self.x), np.amin(self.y), np.amin(self.z)), self.coordinate_system)
         p2 = Point((np.amax(self.x), np.amax(self.y), np.amax(self.z)), self.coordinate_system)
-        return p1, p2
+        return Point2((p1, p2))
 
     def make_xyz_vv(self):
         """
@@ -944,7 +1010,7 @@ class Mesh(Geometry, Sequence):
     @property
     def extent(self):
         """
-        Volume extent as (`Point`, `Point`) for (min, max).
+        Volume extent as `Point2` for (min, max).
 
         .. versionadded:: 9.2
         """
@@ -954,7 +1020,7 @@ class Mesh(Geometry, Sequence):
         vz = v[:, 2]
         p1 = Point((np.amin(vx), np.amin(vy), np.amin(vz)), self.coordinate_system)
         p2 = Point((np.amax(vx), np.amax(vy), np.amax(vz)), self.coordinate_system)
-        return p1, p2
+        return Point2((p1, p2))
 
     def point_array(self, unique=True):
         """

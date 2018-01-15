@@ -527,7 +527,7 @@ class Vox(gxspd.SpatialData, Sequence):
 
     @property
     def extent(self):
-        """ (min_x, min_y, min_z, max_x, max_y, max_z) extent to the outer-cell edges of the vox."""
+        """ extent to the outer-cell edges of the vox as a `geosoft.gxpy.geometry.Point2`."""
         rx0 = gxapi.float_ref()
         ry0 = gxapi.float_ref()
         rz0 = gxapi.float_ref()
@@ -536,8 +536,8 @@ class Vox(gxspd.SpatialData, Sequence):
         rz1 = gxapi.float_ref()
         self.gxvox.get_area(rx0, ry0, rz0, rx1, ry1, rz1)
         if self.is_depth:
-            return gxgm.Point((rx0.value, ry0.value, -rz1.value)), gxgm.Point((rx1.value, ry1.value, -rz0.value))
-        return gxgm.Point((rx0.value, ry0.value, rz0.value)), gxgm.Point((rx1.value, ry1.value, rz1.value))
+            return gxgm.Point2(((rx0.value, ry0.value, -rz1.value), (rx1.value, ry1.value, -rz0.value)))
+        return gxgm.Point2(((rx0.value, ry0.value, rz0.value), (rx1.value, ry1.value, rz1.value)))
 
     def _setup_locations(self):
         xvv = gxvv.GXvv()

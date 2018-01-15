@@ -25,6 +25,39 @@ class Test(GXPYTest):
 
         self.assertRaises(ValueError, gxgm.Point, [1, 'yada', 2])
 
+    def test_base(self):
+        self.start()
+        g = gxgm.Geometry()
+        self.assertEqual(g.name, '_geometry_')
+        self.assertEqual(g.coordinate_system, None)
+        self.assertEqual(g.extent, None)
+        self.assertEqual(g.extent_xyz, (None, None, None, None, None, None))
+        self.assertEqual(g.extent_xy, (None, None, None, None))
+        self.assertEqual(g.dimension, (None, None, None))
+        self.assertEqual(g.dimension_xy, (None, None))
+        self.assertEqual(g.centroid, None)
+        self.assertEqual(g.centroid_xyz, (None, None, None))
+        self.assertEqual(g.centroid_xy, (None, None))
+
+    def test_new_point(self):
+        self.start()
+
+        p = gxgm.Point((5, 10))
+        self.assertEqual(p.xyz, (5, 10, 0))
+        p = gxgm.Point((5, 10), z=2)
+        self.assertEqual(p.xyz, (5, 10, 2))
+        p = gxgm.Point((5, 10, 2))
+        self.assertEqual(p.xyz, (5, 10, 2))
+        p = gxgm.Point(np.array((5, 10), dtype=np.float64))
+        self.assertEqual(p.xyz, (5, 10, 0))
+        p = gxgm.Point(np.array((5, 10), dtype=np.float64), z=2)
+        self.assertEqual(p.xyz, (5, 10, 2))
+        p = gxgm.Point(np.array((5, 10, 2), dtype=np.float64))
+        self.assertEqual(p.xyz, (5, 10, 2))
+
+
+
+
     def test_cs(self):
         self.start()
 
@@ -196,9 +229,9 @@ class Test(GXPYTest):
         pp = pp * gxgm.PPoint(((1, 2, 3), (4, 5, 6), (7, 8, 9)))
         self.assertEqual(pp[1].xyz, (20., 10., 18.))
         self.assertEqual(len(pp), 3)
-        self.assertEqual(pp.x.tolist(), [5., 20., 35.])
-        self.assertEqual(pp.y.tolist(), [4., 10., 16.])
-        self.assertEqual(pp.z.tolist(), [9., 18., 27.])
+        self.assertEqual(tuple(pp.x), (5., 20., 35.))
+        self.assertEqual(tuple(pp.y), (4., 10., 16.))
+        self.assertEqual(tuple(pp.z), (9., 18., 27.))
 
         points = [(5, 10), (6, 11), (7, 12)]
         pp = gxgm.PPoint(points, z=3.5)
@@ -221,6 +254,29 @@ class Test(GXPYTest):
         self.assertEqual(pp27[0].xyz, (500016.35614845896, 5999777.5863711238, 0.0))
         self.assertEqual(pp27[1].xyz, (500017.35614260647, 5999778.5863652565, 0.0))
         self.assertEqual(pp27.length, 2)
+
+    def test_pp_cs(self):
+        self.start()
+
+        p0 = gxgm.Point((500000, 6000000))
+        p1 = gxgm.Point((500000, 6000000), coordinate_system='NAD83 / UTM zone 15N')
+        p2 = gxgm.Point((500000, 6000000), coordinate_system='NAD27 / UTM zone 15N')
+        pp = gxgm.PPoint((p0, p1, p2))
+        self.assertEqual(pp.coordinate_system, 'NAD83 / UTM zone 15N')
+        self.assertEqual(pp[0].xyz, (500000, 6000000, 0))
+        self.assertEqual(pp[1].xyz, (500000, 6000000, 0))
+        self.assertEqual(pp[2].xyz, (499983.64366013405, 6000222.4158355873, 0.0))
+        pp = gxgm.PPoint((p0, p2, p1))
+        self.assertEqual(pp.coordinate_system, 'NAD27 / UTM zone 15N')
+        self.assertEqual(pp[0].xyz, (500000, 6000000, 0))
+        self.assertEqual(pp[1].xyz, (500000, 6000000, 0))
+        self.assertEqual(pp[2].xyz, (500016.35614845896, 5999777.5863711238, 0.0))
+        pp = gxgm.PPoint((p0, p1, p2), coordinate_system='NAD27 / UTM zone 15N')
+        self.assertEqual(pp.coordinate_system, 'NAD27 / UTM zone 15N')
+        self.assertEqual(pp[0].xyz, (500000, 6000000, 0))
+        self.assertEqual(pp[1].xyz, (500016.35614845896, 5999777.5863711238, 0.0))
+        self.assertEqual(pp[2].xyz, (500000, 6000000, 0))
+
 
     def test_ppoint_constructors(self):
         self.start()
@@ -259,10 +315,9 @@ class Test(GXPYTest):
         pp = gxgm.PPoint(pps)
         verify()
 
-        p1, p2 = pp.extent()
-        self.assertTrue(p1 == gxgm.Point((1, 2, 3)))
-        self.assertTrue(p2 == gxgm.Point((13, 14, 15)))
-
+        e = pp.extent
+        self.assertTrue(e[0] == gxgm.Point((1, 2, 3)))
+        self.assertTrue(e[1] == gxgm.Point((13, 14, 15)))
 
     def test_copy(self):
         self.start()
@@ -285,6 +340,7 @@ class Test(GXPYTest):
         self.start()
 
         b1 = gxgm.Point2((gxgm.Point((0, 1)), (10, 20, -1)))
+        self.assertEqual(b1.centroid.xyz, (5.0, 10.5, -0.5))
         self.assertEqual(len(b1), 2)
         self.assertEqual('_point2_[(0.0, 1.0, 0.0) (10.0, 20.0, -1.0)]', str(b1))
         self.assertEqual(b1.x2, (0., 10.))
@@ -564,6 +620,23 @@ class Test(GXPYTest):
         self.assertEqual(tuple(xvv.np[:3]), (500000.0, 500003.0, 500006.0))
         self.assertEqual(tuple(yvv.np[:3]), (6000001.0, 6000004.0, 6000007.0))
         self.assertEqual(tuple(zvv.np[:3]), (2.0, 5.0, 8.0))
+
+    def test_pp_from_list(self):
+        self.start()
+        plinelist = [[110, 5],
+                     [120, 20],
+                     [130, 15],
+                     [150, 50],
+                     [160, 70],
+                     [175, 35],
+                     [190, 65],
+                     [220, 50],
+                     [235, 18.5]]
+
+        pp = gxgm.PPoint.from_list(plinelist)
+        self.assertEqual(len(pp), len(plinelist))
+        self.assertEqual(pp.extent_minimum_xyz, (110, 5, 0))
+        self.assertEqual(pp.extent_maximum_xyz, (235, 70., 0))
 
 if __name__ == '__main__':
 
