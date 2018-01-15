@@ -448,6 +448,16 @@ class Test(GXPYTest):
         self.assertEqual(len(nad27_locations), 3)
         self.assertEqual(str(nad27_locations[2]), '[  8.87657800e+01  -3.84991719e+01   7.00000000e+01   5.60000000e+04]')
 
+    def test_known(self):
+        self.start()
+
+        self.assertFalse(gxcs.is_known(None))
+        self.assertTrue(gxcs.is_known('WGS 84'))
+        self.assertTrue(gxcs.is_known(gxcs.Coordinate_system('WGS 84')))
+        self.assertFalse(gxcs.is_known('crazy'))
+
+
+
 ###############################################################################################
 
 if __name__ == '__main__':

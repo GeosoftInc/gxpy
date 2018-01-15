@@ -647,7 +647,7 @@ class Coordinate_system:
 
         if not same_units(self, other) or not same_orientation(self, other):
             return False
-        if not(self.is_known) or not(other.is_known):
+        if not(self.is_known) or not(is_known(other)):
             return True
         else:
             return bool(self.gxipj.coordinate_systems_are_the_same(other.gxipj))
@@ -1010,6 +1010,22 @@ class Coordinate_system:
         .. versionadded:: 9.2
         """
         return self._oriented_xyz(1, xyz, column_ordered=column_ordered)
+
+
+def is_known(coordinate_system):
+    """
+    Return True if this is a known coordinate system
+
+    .. versionadded:: 9.3.1
+    """
+    if coordinate_system is None:
+        return False
+    if isinstance(coordinate_system, Coordinate_system):
+        return coordinate_system.is_known
+    try:
+        return Coordinate_system(coordinate_system).is_known
+    except CSException:
+        return False
 
 
 class Coordinate_translate:
