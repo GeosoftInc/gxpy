@@ -35,8 +35,8 @@ class Test(GXPYTest):
             self.assertEqual(len(vox.locations_y), vox.ny)
             self.assertEqual(len(vox.locations_z), vox.nz)
             self.assertEqual(vox.xyz(0, 0, 0), (vox.origin_x, vox.origin_y, vox.origin_z))
-            self.assertEqual(vox.extent, (438550.0, 6126150.0, -1022.3323879241943, 441500.0, 6129500.0, 575.0))
-            self.assertEqual(vox.extent_2d, (438550.0, 6126150.0, 441500.0, 6129500.0))
+            self.assertEqual(vox.extent_xyz, (438550.0, 6126150.0, -1022.3323879241943, 441500.0, 6129500.0, 575.0))
+            self.assertEqual(vox.extent_xy, (438550.0, 6126150.0, 441500.0, 6129500.0))
             self.assertEqual((vox.nx, vox.ny, vox.nz), (59, 67, 26))
             self.assertEqual(str(vox.coordinate_system), 'NAD83 / UTM zone 20N')
 
@@ -46,8 +46,8 @@ class Test(GXPYTest):
             self.assertFalse(vox.is_depth)
             vox.is_depth = True
             self.assertEqual(vox.xyz(0, 0, 0), (vox.origin_x, vox.origin_y, vox.origin_z))
-            self.assertEqual(vox.extent, (438550.0, 6126150.0, -575.0, 441500.0, 6129500.0, 1022.3323879241943))
-            self.assertEqual(vox.extent_2d, (438550.0, 6126150.0, 441500.0, 6129500.0))
+            self.assertEqual(vox.extent_xyz, (438550.0, 6126150.0, -575.0, 441500.0, 6129500.0, 1022.3323879241943))
+            self.assertEqual(vox.extent_xy, (438550.0, 6126150.0, 441500.0, 6129500.0))
             self.assertEqual((vox.nx, vox.ny, vox.nz), (59, 67, 26))
 
 
