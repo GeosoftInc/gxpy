@@ -19,7 +19,7 @@ data to the same fiducial so that vector-to-vector operations can be performed.
     `va tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_gxva.py>`_
 
 """
-import warnings
+from collections.abc import Sequence
 import numpy as np
 import geosoft
 import geosoft.gxapi as gxapi
@@ -40,7 +40,7 @@ class VAException(Exception):
     pass
 
 
-class GXva:
+class GXva(Sequence):
     """
     VA class wrapper.
 
