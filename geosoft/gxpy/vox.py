@@ -18,6 +18,7 @@ Geosoft voxel (voxset) handling.
 """
 import os
 import numpy as np
+from collections.abc import Sequence
 
 import geosoft
 import geosoft.gxapi as gxapi
@@ -26,6 +27,7 @@ from . import coordinate_system as gxcs
 from . import vv as gxvv
 from . import utility as gxu
 from . import spatialdata as gxspd
+from . import geometry as gxgm
 
 __version__ = geosoft.__version__
 
@@ -127,7 +129,7 @@ Z_ELEVATION = 0 #:
 Z_DEPTH = 1 #:
 
 
-class Vox(gxspd.SpatialData):
+class Vox(gxspd.SpatialData, Sequence):
     """
     Vox (voxset) class.
 
@@ -192,7 +194,7 @@ class Vox(gxspd.SpatialData):
         super().__init__(name=self._name, file_name=self._file_name,
                          mode=mode,
                          overwrite=overwrite,
-                         gxobject=gxvox)
+                         gxobj=gxvox)
 
         self._gxvox = gxvox
         self._gxvoxe = None
@@ -219,6 +221,9 @@ class Vox(gxspd.SpatialData):
 
         # location
         self._setup_locations()
+
+    def __len__(self):
+        return self._max_iter
 
     def __iter__(self):
         return self
@@ -531,10 +536,8 @@ class Vox(gxspd.SpatialData):
         rz1 = gxapi.float_ref()
         self.gxvox.get_area(rx0, ry0, rz0, rx1, ry1, rz1)
         if self.is_depth:
-            return (rx0.value, ry0.value, -rz1.value,
-                    rx1.value, ry1.value, -rz0.value)
-        return (rx0.value, ry0.value, rz0.value,
-                rx1.value, ry1.value, rz1.value)
+            return gxgm.Point((rx0.value, ry0.value, -rz1.value)), gxgm.Point((rx1.value, ry1.value, -rz0.value))
+        return gxgm.Point((rx0.value, ry0.value, rz0.value)), gxgm.Point((rx1.value, ry1.value, rz1.value))
 
     def _setup_locations(self):
         xvv = gxvv.GXvv()
