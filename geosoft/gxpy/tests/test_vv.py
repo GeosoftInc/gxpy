@@ -328,13 +328,23 @@ class Test(GXPYTest):
         vv = gxvv.vvset_from_np(npd)
         self.assertEqual(len(vv), npd.shape[1])
         self.assertEqual(len(vv[0]), npd.shape[0])
+        vv = gxvv.vvset_from_np(npd, axis=0)
+        self.assertEqual(len(vv), npd.shape[0])
+        self.assertEqual(len(vv[0]), npd.shape[1])
+
         npd = np.array(range(48), dtype=np.float64).reshape(6, 2, 4)
         vv = gxvv.vvset_from_np(npd)
         self.assertEqual(len(vv), 4)
         self.assertEqual(len(vv[0]), 12)
+        vv = gxvv.vvset_from_np(npd, axis=0)
+        self.assertEqual(len(vv), 12)
+        self.assertEqual(len(vv[0]), 4)
 
         npd = gxvv.np_from_vvset(vv)
+        self.assertEqual(npd.shape, (4, 12))
+        npd = gxvv.np_from_vvset(vv, axis=0)
         self.assertEqual(npd.shape, (12, 4))
+
 
     def test_vv_creation(self):
 

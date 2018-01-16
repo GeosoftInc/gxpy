@@ -42,12 +42,14 @@ class VVException(Exception):
     pass
 
 
-def np_from_vvset(vvset):
+def np_from_vvset(vvset, axis=1):
     """
     Return a 2d numpy array from a set of `GXvv` instances.
 
     :param vvset:   (vv1, vv2, ...) set ot `geosoft.gxpy.vv.GXvv` instances
-    :return:        numpy array shaped (max_vv_length, number_of_vv)
+    :param axis:    axis for the vv, default is 1, such that each vv is a column, `axis=0` for vv to be rows
+    :return:        numpy array shaped (max_vv_length, number_of_vv) for `axis=1`, or (number_of_vv, max_vv_length)
+                    for `axis=0`.
 
     .. versionadded:: 9.3.1
     """
@@ -60,15 +62,20 @@ def np_from_vvset(vvset):
     npd = np.empty((length, nvv), dtype=vvset[0].dtype)
     for i in range(nvv):
         npd[:, i] = vvset[i].np
-    return npd
+    if axis == 1:
+        return npd
+    else:
+        return npd.T
 
 
-def vvset_from_np(npd):
+def vvset_from_np(npd, axis=1):
     """
     Return a set of `GXvv` instances from a 2d numpy array.
 
-    :param npd: numpy data array of dimension 2
-    :return:    [vv0, vv1, vv2, ...] `geosoft.gxpy.vv.GXvv` instances for each column
+    :param npd:     numpy data array of dimension 2. If the array has higher dimensions it will first
+                    be reshaped to a 2-dimension array based on the last axis.
+    :param axis:    axis for the vv, default is 1, such that each columns become vv, `axis=0` for rows to be vv
+    :return:        [vv0, vv1, vv2, ...] `geosoft.gxpy.vv.GXvv` instances for each column or row (`axis=0`)
 
     For example:
 
@@ -83,10 +90,9 @@ def vvset_from_np(npd):
         vv = [GXvv(npd)]
     else:
         if npd.ndim > 2:
-            d1 = 1
-            for d in npd.shape[:-1]:
-                d1 *= d
-            npd = npd.reshape((d1, npd.shape[-1]))
+            npd = npd.reshape((-1, npd.shape[-1]))
+        if axis == 0:
+            npd = npd.T
         vv = []
         for i in range(npd.shape[1]):
             vv.append(GXvv(npd[:, i]))
