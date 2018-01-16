@@ -255,7 +255,7 @@ class Geometry:
             return None, None
         return dx, dy
 
-    def copy(self, name=None):
+    def copy_geometry(self, name=None):
         """return an exact copy of the geometry"""
         cls = self.__class__
         result = cls.__new__(cls)
@@ -267,7 +267,7 @@ class Geometry:
     def copy_cs(self, coordinate_system):
         if self.coordinate_system == coordinate_system:
             return self
-        return self.copy(coordinate_system)
+        return self.copy_geometry(coordinate_system)
 
 
 class Point(Geometry, Sequence):
@@ -304,7 +304,7 @@ class Point(Geometry, Sequence):
             if coordinate_system == p.coordinate_system:
                 self.p = p.p.copy()
             else:
-                self.p = p.copy(coordinate_system).p
+                self.p = p.copy_geometry(coordinate_system).p
 
         elif isinstance(p, np.ndarray):
             if len(p) > 2:
@@ -437,14 +437,14 @@ class Point(Geometry, Sequence):
         self.p[1] = float(xyz[1])
         self.p[2] = float(xyz[2])
 
-    def copy(self, coordinate_system=None, name=None):
+    def copy_geometry(self, coordinate_system=None, name=None):
         """ return a copy as a :class:`Point` instance"""
         if coordinate_system and self.coordinate_system != coordinate_system:
             if not isinstance(coordinate_system, gxcs.Coordinate_system):
                 coordinate_system = gxcs.Coordinate_system(coordinate_system)
             return Point(gxcs.Coordinate_translate(self.coordinate_system, coordinate_system).convert(self.p),
                          coordinate_system=coordinate_system, name=name)
-        return super(Point, self).copy(name)
+        return super(Point, self).copy_geometry(name)
 
     @property
     def extent(self):
@@ -584,7 +584,7 @@ class Point2(Geometry, Sequence):
             p = p.copy_cs(self.coordinate_system)
         return Point2((self.p0 / p, self.p1 / p), coordinate_system=self.coordinate_system)
 
-    def copy(self, coordinate_system=None, name=None):
+    def copy_geometry(self, coordinate_system=None, name=None):
         """return a copy as a :class:`Point2` instance"""
         if coordinate_system and self.coordinate_system != coordinate_system:
             if not isinstance(coordinate_system, gxcs.Coordinate_system):
@@ -592,7 +592,7 @@ class Point2(Geometry, Sequence):
             t = gxcs.Coordinate_translate(self.coordinate_system, coordinate_system)
             return Point2((t.convert(self.p0.p), t.convert(self.p1.p)),
                           coordinate_system=coordinate_system, name=name)
-        return super(Point2, self).copy(name)
+        return super(Point2, self).copy_geometry(name)
 
     @property
     def x2(self):
@@ -692,7 +692,7 @@ class PPoint(Geometry, Sequence):
                 if not isinstance(pt, Point):
                     pt = Point(pt, coordinate_system=coordinate_system, z=z)
                 if pt.coordinate_system != coordinate_system:
-                    pt = pt.copy(coordinate_system=coordinate_system)
+                    pt = pt.copy_geometry(coordinate_system=coordinate_system)
                 pp[i, :] = pt.xyz
                 i += 1
             return pp
@@ -781,14 +781,14 @@ class PPoint(Geometry, Sequence):
             return False
         return np.array_equal(self.pp, other.pp)
 
-    def copy(self, coordinate_system=None, name=None):
+    def copy_geometry(self, coordinate_system=None, name=None):
         """return a copy as a :class:`PPoint` instance"""
         if coordinate_system and self.coordinate_system != coordinate_system:
             if not isinstance(coordinate_system, gxcs.Coordinate_system):
                 coordinate_system = gxcs.Coordinate_system(coordinate_system)
             t = gxcs.Coordinate_translate(self.coordinate_system, coordinate_system)
             return PPoint(t.convert(self.pp), coordinate_system=coordinate_system, name=name)
-        return super(PPoint, self).copy(name=name)
+        return super(PPoint, self).copy_geometry(name=name)
 
     @property
     def length(self):
@@ -979,7 +979,7 @@ class Mesh(Geometry, Sequence):
             dz = m[2]
         else:
             dx = dy = dz = float(m)
-        m = self.copy()
+        m = self.copy_geometry()
         m._verticies[:, 0] += dx
         m._verticies[:, 1] += dy
         m._verticies[:, 2] += dz
@@ -992,7 +992,7 @@ class Mesh(Geometry, Sequence):
             dz = m[2]
         else:
             dx = dy = dz = float(m)
-        m = self.copy()
+        m = self.copy_geometry()
         m._verticies[:, 0] -= dx
         m._verticies[:, 1] -= dy
         m._verticies[:, 2] -= dz
@@ -1007,7 +1007,7 @@ class Mesh(Geometry, Sequence):
             return False
         return True
 
-    def copy(self, coordinate_system=None, name=None):
+    def copy_geometry(self, coordinate_system=None, name=None):
         """return a copy as a :class:`PPoint` instance"""
         if coordinate_system and self.coordinate_system != coordinate_system:
             if not isinstance(coordinate_system, gxcs.Coordinate_system):
