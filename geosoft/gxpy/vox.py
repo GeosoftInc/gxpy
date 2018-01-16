@@ -57,9 +57,9 @@ def _vox_name(name):
     return os.path.splitext(basename)[0]
 
 
-INTERP_NEAREST = gxapi.VOXE_EVAL_NEAR #:
-INTERP_LINEAR = gxapi.VOXE_EVAL_INTERP #:
-INTERP_SMOOTH = gxapi.VOXE_EVAL_BEST #:
+INTERP_NEAREST = gxapi.VOXE_EVAL_NEAR  #:
+INTERP_LINEAR = gxapi.VOXE_EVAL_INTERP  #:
+INTERP_SMOOTH = gxapi.VOXE_EVAL_BEST  #:
 
 
 def delete_files(vox_name):
@@ -125,8 +125,8 @@ MODE_READWRITE = gxspd.MODE_READWRITE   #: file exists, but can change propertie
 MODE_NEW = gxspd.MODE_NEW               #:
 
 
-Z_ELEVATION = 0 #:
-Z_DEPTH = 1 #:
+Z_ELEVATION = 0  #:
+Z_DEPTH = 1  #:
 
 
 class Vox(gxspd.SpatialData, Sequence):
@@ -338,7 +338,7 @@ class Vox(gxspd.SpatialData, Sequence):
         """
 
         if not isinstance(data, np.ndarray):
-            data = np.array(data)
+            data = np.array(data, dtype=np.float32)
         vec_dim = 1
         if data.ndim == 4:
             if data.shape[3] != 3:
@@ -417,17 +417,16 @@ class Vox(gxspd.SpatialData, Sequence):
         return vox
 
     @classmethod
-    def copy(cls, name, source_vox, data=None, temp=False, overwrite=False, dtype=None):
+    def copy_vox(cls, name, source_vox, data=None, temp=False, overwrite=False, dtype=None):
         """
-        Create a new vox dataset
+        Create a new vox dataset to match a source vox, with optional new data.
 
         :param name:        dataset name, or a path to a persistent file. A file with extension `.geosoft_voxel`
                             will be created for vox instances that will persist (`temp=True`).
         :param source_vox:  `Vox` instance of the source vox
         :param data:        data to place in the vox, must have 3 dimensions (nz, ny, nx). If not
-                            specified the vox is initialized to dummy values. Note that data arrays are indexed
-                            (z, y, x). If not specified the data from the source_vox is copied.
-        :param temp:        True to create a temporary vox which will be removed after use
+                            specified a copy of source+vox data is used. Data arrays are indexed (z, y, x).
+        :param temp:        True to create a temporary vox
         :param overwrite:   True to overwrite existing persistent vox
         :param dtype:       data type, default is the same as data, or np.float64 of no data.
 

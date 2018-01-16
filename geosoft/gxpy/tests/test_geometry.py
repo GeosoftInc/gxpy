@@ -250,7 +250,7 @@ class Test(GXPYTest):
         self.assertEqual(pp.xy.tolist(), [[1., 2.], [3., 4.], [5., 6.]])
 
         pp = gxgm.PPoint(((500000, 6000000), (500001, 6000001)), coordinate_system='NAD83 / UTM zone 15N')
-        pp27 = pp.copy(coordinate_system='NAD27 / UTM zone 15N')
+        pp27 = pp.copy_geometry(coordinate_system='NAD27 / UTM zone 15N')
         self.assertEqual(pp27[0].xyz, (500016.35614845896, 5999777.5863711238, 0.0))
         self.assertEqual(pp27[1].xyz, (500017.35614260647, 5999778.5863652565, 0.0))
         self.assertEqual(pp27.length, 2)
@@ -319,13 +319,13 @@ class Test(GXPYTest):
         self.assertTrue(e[0] == gxgm.Point((1, 2, 3)))
         self.assertTrue(e[1] == gxgm.Point((13, 14, 15)))
 
-    def test_copy(self):
+    def test_copy_geometry(self):
         self.start()
 
         p1 = gxgm.Point((1,2))
         p2 = p1
         self.assertTrue(p1 is p2)
-        p2 = p1.copy()
+        p2 = p1.copy_geometry()
         self.assertFalse(p1 is p2)
         self.assertTrue(p1 == p2)
 
@@ -404,7 +404,7 @@ class Test(GXPYTest):
         cs = "NAD83 / UTM zone 32N>"
         p = gxgm.Point((500000,6000000), coordinate_system=cs)
         self.assertEqual(str(p.coordinate_system), "NAD83 / UTM zone 32N")
-        p27 = p.copy("NAD27 / UTM zone 32N")
+        p27 = p.copy_geometry("NAD27 / UTM zone 32N")
         self.assertEqual(str(p27.coordinate_system), "NAD27 / UTM zone 32N")
         self.assertAlmostEqual(p27.x, 499840.780459, 3)
         self.assertAlmostEqual(p27.y, 5999920.58165, 3)
@@ -430,7 +430,7 @@ class Test(GXPYTest):
 
         p = gxgm.Point2(((500000, 6000000), (500001, 6000001)), coordinate_system=cs)
         self.assertEqual(str(p.coordinate_system), "NAD83 / UTM zone 32N")
-        p27 = p.copy("NAD27 / UTM zone 32N")
+        p27 = p.copy_geometry("NAD27 / UTM zone 32N")
         self.assertEqual(str(p27.coordinate_system), "NAD27 / UTM zone 32N")
         self.assertAlmostEqual(p27.p0.x, 499840.780459, 3)
         self.assertAlmostEqual(p27.p0.y, 5999920.58165, 3)
@@ -524,21 +524,21 @@ class Test(GXPYTest):
         self.assertEqual(gxgm.Point((1, 2)).name, '_point_')
         self.assertEqual(gxgm.Point((1, 2), name='maki').name, 'maki')
         self.assertTrue(gxgm.Point((1, 2)) == gxgm.Point((1,2), name='maki'))
-        self.assertEqual(gxgm.Point((1, 2)).copy().name, '_point_')
-        self.assertEqual(gxgm.Point((1, 2)).copy(name='maki').name, 'maki')
+        self.assertEqual(gxgm.Point((1, 2)).copy_geometry().name, '_point_')
+        self.assertEqual(gxgm.Point((1, 2)).copy_geometry(name='maki').name, 'maki')
         p1 = (1, 2)
         p2 = (2, 3)
         self.assertEqual(gxgm.Point2((p1, p2)).name, '_point2_')
         self.assertEqual(gxgm.Point2((p1, p2), name='maki').name, 'maki')
         self.assertTrue(gxgm.Point2((p1, p2)) == gxgm.Point2((p1, p2), name='maki'))
-        self.assertEqual(gxgm.Point2((p1, p2)).copy().name, '_point2_')
-        self.assertEqual(gxgm.Point2((p1, p2)).copy(name='maki').name, 'maki')
+        self.assertEqual(gxgm.Point2((p1, p2)).copy_geometry().name, '_point2_')
+        self.assertEqual(gxgm.Point2((p1, p2)).copy_geometry(name='maki').name, 'maki')
         pp = ((1, 2), (3, 2), (4, 5))
         self.assertEqual(gxgm.PPoint(pp).name, '_ppoint_')
         self.assertEqual(gxgm.PPoint(pp, name='maki').name, 'maki')
         self.assertTrue(gxgm.PPoint(pp) == gxgm.PPoint(pp, name='maki'))
-        self.assertEqual(gxgm.PPoint(pp).copy().name, '_ppoint_')
-        self.assertEqual(gxgm.PPoint(pp).copy(name='maki').name, 'maki')
+        self.assertEqual(gxgm.PPoint(pp).copy_geometry().name, '_ppoint_')
+        self.assertEqual(gxgm.PPoint(pp).copy_geometry(name='maki').name, 'maki')
 
     def test_mesh(self):
         self.start()
@@ -584,7 +584,7 @@ class Test(GXPYTest):
         v[:, 0] += 500000
         v[:, 1] += 6000000
         m = gxgm.Mesh((f, v), coordinate_system="NAD83 / UTM zone 17N")
-        m = m.copy(coordinate_system="NAD27 / UTM zone 17N")
+        m = m.copy_geometry(coordinate_system="NAD27 / UTM zone 17N")
         self.assertEqual(str(m.coordinate_system), "NAD27 / UTM zone 17N")
         self.assertEqual(tuple(m[2][2]), (500006.87887296296, 5999802.6514122421, 26.0))
 
@@ -597,9 +597,9 @@ class Test(GXPYTest):
         zvv = gxvv.GXvv(v[:, 2])
         m = gxgm.Mesh(((f1vv, f2vv, f3vv), (xvv, yvv, zvv)), coordinate_system="NAD83 / UTM zone 17N", name='vv')
         self.assertEqual(m.name, 'vv')
-        mm = m.copy(coordinate_system="NAD27 / UTM zone 17N")
+        mm = m.copy_geometry(coordinate_system="NAD27 / UTM zone 17N")
         self.assertEqual(mm.name, '_mesh_')
-        m2 = mm.copy(coordinate_system="NAD27 / UTM zone 17N", name='vv_copy')
+        m2 = mm.copy_geometry(coordinate_system="NAD27 / UTM zone 17N", name='vv_copy')
         self.assertEqual(m2.name, 'vv_copy')
         self.assertEqual(str(m2.coordinate_system), "NAD27 / UTM zone 17N")
         self.assertEqual(tuple(m2[2][2]), (500006.87887296296, 5999802.6514122421, 26.0))

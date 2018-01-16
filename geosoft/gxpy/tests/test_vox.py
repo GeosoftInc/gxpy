@@ -266,7 +266,7 @@ class Test(GXPYTest):
                 self.assertAlmostEqual(tuple(newvox[25, 25, 25][3])[1], 2.)
                 self.assertAlmostEqual(tuple(newvox[25, 25, 25][3])[2], None)
 
-            with gxvox.Vox.copy('vox_', vox, npv, temp=True, overwrite=True) as newvox:
+            with gxvox.Vox.copy_vox('vox_', vox, npv, temp=True, overwrite=True) as newvox:
                 self.assertAlmostEqual(tuple(newvox[25, 25, 25][3])[0], 1.)
                 self.assertAlmostEqual(tuple(newvox[25, 25, 25][3])[1], 2.)
                 self.assertAlmostEqual(tuple(newvox[25, 25, 25][3])[2], None)
