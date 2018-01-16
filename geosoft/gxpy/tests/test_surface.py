@@ -464,6 +464,27 @@ class Test(GXPYTest):
         self.crc_map(fig_map)
         # gxviewer.view_document(fig_map, wait_for_close=True)
 
+    def test_doc_sample(self):
+        self.start()
+
+        faces = [[0, 1, 2],
+                 [0, 2, 3],
+                 [3, 2, 4]]
+        verticies = [[0, 0, 0],
+                     [5, 0, 0],
+                     [5, 5, 0],
+                     [0, 3, 5],
+                     [2.5, 2, 10]]
+        mesh = gxgm.Mesh((faces, verticies))
+        faces = np.array(faces, dtype=np.int32)
+
+        verticies = np.array(verticies, dtype=np.float64)
+        mesh = gxgm.Mesh((faces, verticies))
+
+        f1vv, f2vv, f3vv = gxvv.vvset_from_np(faces)
+        xvv, yvv, zvv = gxvv.vvset_from_np(verticies)
+        mesh = gxgm.Mesh(((f1vv, f2vv, f3vv), (xvv, yvv, zvv)))
+
 
 ###############################################################################################
 
