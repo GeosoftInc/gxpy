@@ -874,6 +874,32 @@ class Mesh(Geometry, Sequence):
     in the form ((f1vv, f2vv, f3vv), (xvv, yvv, zvv)).  In array form each array is shaped (-1, 3),
     with faces being an integer array that references vertexes in the float vertex array.
 
+    :Example:
+
+    .. code::
+
+        import numpy as np
+        import geosoft.gxpy.geometry as gxgm
+        import geosoft.gxpy.vv as gxvv
+
+        faces = [[0, 1, 2],
+                 [0, 2, 3],
+                 [3, 2, 4]]
+        verticies = [[0, 0, 0],
+                     [5, 0, 0],
+                     [5, 5, 0],
+                     [0, 3, 5],
+                     [2.5, 2, 10]]
+        mesh = gxgm.Mesh((faces, verticies))
+
+        faces = np.array(faces, dtype=np.int32)
+        verticies = np.array(verticies, dtype=np.float64)
+        mesh = gxgm.Mesh((faces, verticies))
+
+        f1vv, f2vv, f3vv = gxvv.vvset_from_np(faces)
+        xvv, yvv, zvv = gxvv.vvset_from_np(verticies)
+        mesh = gxgm.Mesh(((f1vv, f2vv, f3vv), (xvv, yvv, zvv)))
+
     .. versionadded:: 9.3.1
     """
     def __str__(self):
