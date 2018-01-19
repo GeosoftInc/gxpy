@@ -471,7 +471,7 @@ class SurfaceDataset(gxspd.SpatialData, Sequence):
 
 class Surface(gxspd.SpatialData, Sequence):
     """
-    A single surface, which contains a set of trangular meshes
+    A single surface, which contains a set of meshes
 
     :param surface:             surface name or a `geosoft.gxapi.GXSURFACEITEM` instance.
     :param surface_type:        surface type as a descriptive name, such as "ISOSURFACE"
