@@ -1,5 +1,6 @@
 """
-Geosoft grids and image handling, including all `supported file formats <https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations>`_
+Geosoft grids and image handling, including all
+`supported file formats <https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations>`_
 
 :Classes:
 
@@ -26,6 +27,7 @@ from . import coordinate_system as gxcs
 from . import vv as gxvv
 from . import utility as gxu
 from . import agg as gxagg
+from . import geometry as gxgm
 
 __version__ = geosoft.__version__
 
@@ -117,39 +119,46 @@ def delete_files(file_name):
     .. versionadded:: 9.2
     """
 
-    def df(fn):
-        try:
-            os.remove(fn)
-        except OSError as e:
-            pass
-
     if file_name is not None:
 
         fn = name_parts(file_name)
         file_name = os.path.join(fn[0], fn[1])
         ext = fn[3]
-        df(file_name)
-        df(file_name + '.gi')
-        df(file_name + '.xml')
+        gxu.delete_file(file_name)
+        gxu.delete_file(file_name + '.gi')
+        gxu.delete_file(file_name + '.xml')
 
         # remove shaded files associated with this grid
         file_s = os.path.join(fn[0], fn[1].replace('.', '_')) + '_s.grd'
-        df(file_s)
-        df(file_s + '.gi')
-        df(file_s + '.xml')
-
+        gxu.delete_file(file_s)
+        gxu.delete_file(file_s + '.gi')
+        gxu.delete_file(file_s + '.xml')
 
         # hgd files
         if ext == '.hgd':
             for i in range(16):
-                df(file_name + str(i))
+                gxu.delete_file(file_name + str(i))
+
+
+def _transform_color_int_to_rgba(np_values):
+    np_values[np_values == gxapi.iDUMMY] = 0
+    a = (np.right_shift(np_values, 24) & 0xFF).astype(np.uint8)
+    b = (np.right_shift(np_values, 16) & 0xFF).astype(np.uint8)
+    g = (np.right_shift(np_values, 8) & 0xFF).astype(np.uint8)
+    r = (np_values & 0xFF).astype(np.uint8)
+    # the values for color grids actually do not contain alphas but just
+    # 0 or 1 to indicate if the color is valid or not
+    a[a > 0] = 255
+    return np.array([r, g, b, a]).transpose()
+
 
 # constants
 FILE_READ = 0          #:
 FILE_READWRITE = 1     #: file exists, but can change properties
 FILE_NEW = 2           #:
 
-class Grid:
+
+class Grid(gxgm.Geometry):
     """
     Grid and image class.
 
@@ -199,7 +208,7 @@ class Grid:
     def __enter__(self):
         return self
 
-    def __exit__(self, type, value, traceback):
+    def __exit__(self, _type, _value, _traceback):
         self.__del__()
 
     def __del__(self):
@@ -207,12 +216,6 @@ class Grid:
             self._close()
 
     def _close(self, pop=True):
-
-        def df(fn):
-            try:
-                os.remove(fn)
-            except OSError as e:
-                pass
 
         if hasattr(self, '_open'):
             if self._open:
@@ -251,7 +254,7 @@ class Grid:
         else:
             return self.file_name_decorated
 
-    def __init__(self, file_name=None, dtype=None, mode=None, kx=1, dim=None, overwrite=False):
+    def __init__(self, file_name=None, dtype=None, mode=None, kx=1, dim=None, overwrite=False, **kwargs):
 
         self._delete_files = False
         self._readonly = False
@@ -275,6 +278,13 @@ class Grid:
                 if ext.lower() == '.hgd':
                     self._hgd = True
 
+        if not 'name' in kwargs:
+            if file_name:
+                kwargs['name'] = os.path.splitext(file_name)[0]
+            else:
+                kwargs['name'] = '_grid_'
+        super().__init__(**kwargs)
+
         self._metadata = None
         self._metadata_changed = False
         self._metadata_root = ''
@@ -288,7 +298,7 @@ class Grid:
         self._gxpg = None
 
         gxtype = gxu.gx_dtype(dtype)
-        if (self._file_name is None):
+        if self._file_name is None:
             self._img = gxapi.GXIMG.create(gxtype, kx, dim[0], dim[1])
 
         elif mode == FILE_NEW:
@@ -321,6 +331,8 @@ class Grid:
         self._dtype = gxu.dtype_gx(self._gxtype)
         self._dummy = gxu.gx_dummy(self._dtype)
         self._is_int = gxu.is_int(self._gxtype)
+        self._cos_rot = 1.0
+        self._sin_rot = 0.0
         self.rot = self.rot
 
         self._open = gx.track_resource(self.__class__.__name__, self._file_name)
@@ -330,7 +342,8 @@ class Grid:
         """
         Open an existing grid file.
 
-        :param file_name:   name of the grid file (see `supported file formats <https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations>`_)
+        :param file_name:   name of the grid file (see
+        `supported file formats <https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations>`_)
         :param dtype:       numpy data type, None for the grid native type.  If not the same as the native
                             type a memory grid is created in the new type.
         :param mode:        open mode:
@@ -359,8 +372,8 @@ class Grid:
         """
         Create a new grid file.
 
-        :param file_name:   name of the grid file, None or '' for a memory grid.
-                            (see `supported file formats <https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations>`_)
+        :param file_name:   name of the grid file, None or '' for a memory grid. See
+         `supported file formats <https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations>`_)
         :param properties:  dictionary of grid properties, see :meth:`properties`
         :param overwrite:   True to overwrite existing file
 
@@ -421,8 +434,8 @@ class Grid:
             v = float(v)
         return x, y, z, v
 
-    def _get_pg(self):
-        """Get an pager for the grid, adding the handle to the class so it does not get destroyed."""
+    def gxpg(self):
+        """Get a `geosoft.gxapi.GXPG` instance for the grid."""
         if self._gxpg is None:
             self._gxpg = self._img.geth_pg()
         return self._gxpg
@@ -508,13 +521,14 @@ class Grid:
                 (x0 < 0) or (y0 < 0) or
                 (nx <= 0) or (ny <= 0) or
                 (mx > gnx) or (my > gny)):
-            raise GridException(_t('Window x0,y0,mx,my({},{},{},{}) out of bounds ({},{})').format(x0, y0, mx, my, gnx, gny))
+            raise GridException(_t('Window x0,y0,mx,my({},{},{},{}) out of bounds ({},{})').
+                                format(x0, y0, mx, my, gnx, gny))
 
         if name is None:
             path, file_name, root, ext, dec = name_parts(grd.file_name_decorated)
             name = '{}_({},{})({},{}){}'.format(root, x0, y0, nx, ny, ext)
             name = decorate_name(name, dec)
-            overwrite=True
+            overwrite = True
 
         # create new grid
         p = grd.properties()
@@ -526,23 +540,25 @@ class Grid:
         else:
             dx = grd.dx * x0
             dy = grd.dy * y0
-            p['x0'] = grd.x0 - dx * grd._cos_rot - dy * grd._sin_rot
-            p['y0'] = grd.y0 - dy * grd._cos_rot + dx * grd._sin_rot
+            cos, sin = grd.rotation_cos_sine
+            p['x0'] = grd.x0 - dx * cos - dy * sin
+            p['y0'] = grd.y0 - dy * cos + dx * sin
 
         window_grid = cls.new(name, p, overwrite=overwrite)
-        source_pager = grd._get_pg()
-        window_pager = window_grid._get_pg()
+        source_pager = grd.gxpg()
+        window_pager = window_grid.gxpg()
         window_pager.copy_subset(source_pager, 0, 0, y0, x0, ny, nx)
 
         return window_grid
 
     @classmethod
-    def from_data_array(cls, data, file_name, properties={}):
+    def from_data_array(cls, data, file_name, properties=None):
         """
         Create grid from a 2D numpy array.
 
         :param data:        2D numpy data array, ot a 2d list.  Must be 2D.
         :param file_name:   name of the file
+        :param properties:  grid properties as a dictionary
         :returns:           :class:`Grid` instance
 
         .. versionadded:: 9.1
@@ -551,12 +567,23 @@ class Grid:
         if type(data) is not np.ndarray:
             data = np.array(data)
         ny, nx = data.shape
+        if properties is None:
+            properties = {}
         properties['nx'] = nx
         properties['ny'] = ny
         properties['dtype'] = data.dtype
         grd = cls.new(file_name, properties=properties)
         grd.write_rows(data)
         return grd
+
+    @property
+    def rotation_cos_sine(self):
+        """
+        Returns grid rotation (cosine, sine).
+
+        .. versionadded:: 9.3.1
+        """
+        return self._cos_rot, self._sin_rot
 
     def delete_files(self, delete=True):
         """
@@ -581,7 +608,7 @@ class Grid:
 
     @property
     def gximg(self):
-        """ The :class:`geosoft.gxapi.GXIMG` instance handle."""
+        """ The `geosoft.gxapi.GXIMG` instance handle."""
         return self._img
 
     def _init_metadata(self):
@@ -618,14 +645,15 @@ class Grid:
         """
         try:
             uom = self.metadata['geosoft']['dataset']['geo:unitofmeasurement']['#text']
-        except:
+        except (KeyError, TypeError):
             uom = ''
         return uom
 
     @unit_of_measure.setter
     def unit_of_measure(self, uom):
         self.metadata = {'geosoft': {'dataset': {'geo:unitofmeasurement': {'#text': str(uom)}}}}
-        self.metadata = {'geosoft': {'dataset': {'geo:unitofmeasurement': {'@xmlns:geo': 'http://www.geosoft.com/schema/geo'}}}}
+        self.metadata = {'geosoft': {'dataset':
+                             {'geo:unitofmeasurement':{'@xmlns:geo': 'http://www.geosoft.com/schema/geo'}}}}
 
     @property
     def dtype(self):
@@ -740,7 +768,6 @@ class Grid:
         """
         return decorate_name(self.file_name, self._decoration)
 
-
     @property
     def name(self):
         """
@@ -750,7 +777,6 @@ class Grid:
         """
         basename = os.path.basename(self.file_name)
         return os.path.splitext(basename)[0]
-
 
     @property
     def gridtype(self):
@@ -793,9 +819,8 @@ class Grid:
 
     @coordinate_system.setter
     def coordinate_system(self, cs):
-        self._cs = cs = gxcs.Coordinate_system(cs)
+        self._cs = gxcs.Coordinate_system(cs)
         self._img.set_ipj(self._cs.gxipj)
-
 
     def properties(self):
         """
@@ -806,20 +831,19 @@ class Grid:
         .. versionadded:: 9.1
         """
 
-        properties = {}
-        properties['nx'] = self.nx
-        properties['ny'] = self.ny
-        properties['x0'] = self.x0
-        properties['y0'] = self.y0
-        properties['dx'] = self.dx
-        properties['dy'] = self.dy
-        properties['rot'] = self.rot
-        properties['is_color'] = self.is_color
-        properties['dtype'] = self.dtype
-        properties['file_name'] = self.file_name
-        properties['gridtype'] = self.gridtype
-        properties['decoration'] = self._decoration
-        properties['coordinate_system'] = self.coordinate_system
+        properties = {'nx': self.nx,
+                      'ny': self.ny,
+                      'x0': self.x0,
+                      'y0': self.y0,
+                      'dx': self.dx,
+                      'dy': self.dy,
+                      'rot': self.rot,
+                      'is_color': self.is_color,
+                      'dtype': self.dtype,
+                      'file_name': self.file_name,
+                      'gridtype': self.gridtype,
+                      'decoration': self._decoration,
+                      'coordinate_system': self.coordinate_system}
 
         return properties
 
@@ -875,7 +899,7 @@ class Grid:
                            properties.get('x0', 0.0),
                            properties.get('y0', 0.0),
                            -properties.get('rot', 0.0))
-        self.rot = self.rot # calculates cos and sin
+        self.rot = self.rot  # calculates cos and sin
         cs = properties.get('coordinate_system', None)
         if cs is not None:
             if not isinstance(cs, gxcs.Coordinate_system):
@@ -978,10 +1002,11 @@ class Grid:
         xy2 = (xy1[0] + height * self._sin_rot, xy1[1] + height * self._cos_rot)
         xy3 = (self.x0 + height * self._sin_rot, self.y0 + height * self._cos_rot)
 
-        return min(xy0[0], xy1[0], xy2[0], xy3[0]),\
-               min(xy0[1], xy1[1], xy2[1], xy3[1]),\
-               max(xy0[0], xy1[0], xy2[0], xy3[0]),\
-               max(xy0[1], xy1[1], xy2[1], xy3[1])
+        min_x = min(xy0[0], xy1[0], xy2[0], xy3[0])
+        min_y = min(xy0[1], xy1[1], xy2[1], xy3[1])
+        max_x = max(xy0[0], xy1[0], xy2[0], xy3[0])
+        max_y = max(xy0[1], xy1[1], xy2[1], xy3[1])
+        return min_x, min_y, max_x, max_y
 
     def extent_3d(self):
         """
@@ -999,23 +1024,22 @@ class Grid:
         xyz2 = cs.xyz_from_oriented((ex2d[2], ex2d[3], 0.0))
         xyz3 = cs.xyz_from_oriented((ex2d[0], ex2d[3], 0.0))
 
-        return min(xyz0[0], xyz1[0], xyz2[0], xyz3[0]),\
-               min(xyz0[1], xyz1[1], xyz2[1], xyz3[1]),\
-               min(xyz0[2], xyz1[2], xyz2[2], xyz3[2]),\
-               max(xyz0[0], xyz1[0], xyz2[0], xyz3[0]),\
-               max(xyz0[1], xyz1[1], xyz2[1], xyz3[1]),\
-               max(xyz0[2], xyz1[2], xyz2[2], xyz3[2])
-    
-    def _transform_color_int_to_rgba(self, np_values):
-        np_values[np_values == gxapi.iDUMMY] = 0
-        a = (np.right_shift(np_values, 24) & 0xFF).astype(np.uint8)
-        b = (np.right_shift(np_values, 16) & 0xFF).astype(np.uint8)
-        g = (np.right_shift(np_values, 8) & 0xFF).astype(np.uint8)
-        r = (np_values & 0xFF).astype(np.uint8)
-        # the values for color grids actually do not contain alphas but just 
-        # 0 or 1 to indicate if the color is valid or not
-        a[a > 0] = 255
-        return np.array([r, g, b, a]).transpose()
+        min_x = min(xyz0[0], xyz1[0], xyz2[0], xyz3[0])
+        min_y = min(xyz0[1], xyz1[1], xyz2[1], xyz3[1])
+        min_z = min(xyz0[2], xyz1[2], xyz2[2], xyz3[2])
+        max_x = max(xyz0[0], xyz1[0], xyz2[0], xyz3[0])
+        max_y = max(xyz0[1], xyz1[1], xyz2[1], xyz3[1])
+        max_z = max(xyz0[2], xyz1[2], xyz2[2], xyz3[2])
+        return min_x, min_y, min_z, max_x, max_y, max_z
+
+    @property
+    def extent(self):
+        """
+        Grid extent as `geosoft.gxpy.geometry.Point2`
+
+        .. versionadded:: 9.3.1
+        """
+        return gxgm.Point2((self.extent_3d()))
 
     def np(self):
         """
@@ -1036,13 +1060,13 @@ class Grid:
             for i in range(self.nx):
                 column = self.read_column(i).np
                 if self.is_color:
-                    column = self._transform_color_int_to_rgba(column)
+                    column = _transform_color_int_to_rgba(column)
                 data[:, i] = column
         else:
             for i in range(self.ny):
                 row = self.read_row(i).np
                 if self.is_color:
-                    row = self._transform_color_int_to_rgba(row)
+                    row = _transform_color_int_to_rgba(row)
                 data[i, :] = row
 
         return data
@@ -1123,14 +1147,15 @@ class Grid:
             self._buffer_x += self.x0
             self._buffer_y += self.y0
 
-        gx = self._buffer_x[ix]
-        gy = self._buffer_y[ix]
-        gz = 0.
+        ggx = self._buffer_x[ix]
+        ggy = self._buffer_y[ix]
+        ggz = 0.
 
         if self.coordinate_system.is_oriented:
-            gx, gy, gz = self.coordinate_system.xyz_from_oriented((gx, gy, gz))
+            ggx, ggy, ggz = self.coordinate_system.xyz_from_oriented((ggx, ggy, ggz))
 
-        return gx, gy, gz
+        return ggx, ggy, ggz
+
 
 # grid utilities
 def array_locations(properties):
@@ -1143,7 +1168,7 @@ def array_locations(properties):
     """
 
     with Grid.new(properties=properties) as g:
-        return g.xyzv()[:,:,:3]
+        return g.xyzv()[:, :, :3]
 
 
 def gridMosaic(*args, **kwargs):
@@ -1153,13 +1178,13 @@ def gridMosaic(*args, **kwargs):
     return grid_mosaic(*args, **kwargs)
 
 
-def grid_mosaic(mosaic, gridList, typeDecoration='', report=None):
+def grid_mosaic(mosaic,  grid_list, type_decorate='', report=None):
     """
     Combine a set of grids into a single grid.  Raises an error if the resulting grid is too large.
 
     :param mosaic:          name of the output grid, returned.  Decorate with '(HGD)' to get an HGD
-    :param gridList:        list of input grid names
-    :param typeDecoration:  decoration for input grids if not default
+    :param  grid_list:        list of input grid names
+    :param type_decorate:  decoration for input grids if not default
     :param report:          string reporting function, report=print to print progress
     :returns:               :class`Grid` instance, must be closed with a call to close().
 
@@ -1167,86 +1192,85 @@ def grid_mosaic(mosaic, gridList, typeDecoration='', report=None):
     """
 
     def props(gn, repro=None):
-        with Grid.open(gn) as g:
+        with Grid.open(gn) as gg:
             if repro:
-                g._img.create_projected2(repro[0], repro[1])
-            p = g.properties()
-            return p
+                gg.gximg.create_projected2(repro[0], repro[1])
+            return gg.properties()
 
     def dimension(glist):
 
-        def dimg(g, repro=None):
-            p = props(g, repro)
-            x0 = p.get('x0')
-            y0 = p.get('y0')
-            xM = x0 + (p.get('nx') - 1) * p.get('dx')
-            yM = y0 + (p.get('ny') - 1) * p.get('dy')
-            ipj = p.get('coordinate_system').gxipj
-            cell = p.get('dx')
-            return x0, y0, xM, yM, (ipj, cell)
+        def dimg(_gd, _rep=None):
+            prp = props(_gd, _rep)
+            _x0 = prp.get('x0')
+            _y0 = prp.get('y0')
+            _xm = _x0 + (prp.get('nx') - 1) * prp.get('dx')
+            _ym = _y0 + (prp.get('ny') - 1) * prp.get('dy')
+            _ipj = prp.get('coordinate_system').gxipj
+            cell = prp.get('dx')
+            return _x0, _y0, _xm, _ym, (_ipj, cell)
 
-        def ndim(x0, xM, dX):
-            return int((xM - x0 + dX / 2.0) / dX) + 1
+        def ndim(_x0, _xm, _dx):
+            return int((_xm - _x0 + _dx / 2.0) / _dx) + 1
 
-        x0, y0, xM, yM, repro = dimg(glist[0])
-        for g in glist[1:]:
-            xx0, yy0, xxM, yyM, r = dimg(g, repro)
-            if xx0 < x0:
-                x0 = xx0
-            if yy0 < y0:
-                y0 = yy0
-            if xxM > xM:
-                xM = xxM
-            if yyM > yM:
-                yM = yyM
+        dx0, dy0, dxm, dym, drepro = dimg(glist[0])
+        for gd in glist[1:]:
+            xx0, yy0, xxm, yym, r = dimg(gd, drepro)
+            if xx0 < dx0:
+                dx0 = xx0
+            if yy0 < dy0:
+                dy0 = yy0
+            if xxm > dxm:
+                dxm = xxm
+            if yym > dym:
+                dym = yym
 
         # calculate new grid dimension
-        p = props(glist[0])
-        nX = ndim(x0, xM, p.get('dx'))
-        nY = ndim(y0, yM, p.get('dy'))
+        _p = props(glist[0])
+        nnx = ndim(dx0, dxm, _p.get('dx'))
+        nny = ndim(dy0, dym, _p.get('dy'))
 
-        return x0, y0, nX, nY, xM, yM
+        return dx0, dy0, nnx, nny, dxm, dym
 
-    def locate(x0, y0, p):
+    def locate(_x0, _y0, _p):
 
-        dx = p.get('dx')
-        dy = p.get('dy')
-        dsx = round((p.get('x0') - x0) / dx)
-        dsy = round((p.get('y0') - y0) / dy)
+        _dx = _p.get('dx')
+        _dy = _p.get('dy')
+        dsx = round((p.get('x0') - _x0) / _dx)
+        dsy = round((p.get('y0') - _y0) / _dy)
 
         return dsx, dsy
 
-    def paste(gn, mpg):
-        with Grid.open(gn) as g:
-            p = g.properties()
-            nX = p.get('nx')
-            nY = p.get('ny')
-            gpg = g._get_pg()
-            destx, desty = locate(x0, y0, p)
+    def paste(gn, _mpg):
+        with Grid.open(gn) as _g:
+            _p = _g.properties()
+            _nx = _p.get('nx')
+            _ny = _p.get('ny')
+            gpg = _g.gxpg()
+            destx, desty = locate(x0, y0, _p)
             if report:
-                report('    +{} nx,ny({},{})'.format(g, nX, nY))
-                report('     Copy ({},{}) -> ({},{}) of ({},{})'.format(nX, nY, destx, desty, mnx, mny))
-            mpg.copy_subset(gpg, desty, destx, 0, 0, nY, nX)
+                report('    +{} nx,ny({},{})'.format(_g, _nx, _ny))
+                report('     Copy ({},{}) -> ({},{}) of ({},{})'.format(_nx, _ny, destx, desty, mnx, mny))
+            _mpg.copy_subset(gpg, desty, destx, 0, 0, _ny, _nx)
             return
 
-    if len(gridList) == 0:
+    if len(grid_list) == 0:
         raise GridException(_t('At least one grid is required'))
 
     # create list of grids, all matching on coordinate system of first grid
     grids = []
-    for i in range(len(gridList)):
-        grids.append(decorate_name(gridList[i], typeDecoration))
+    for i in range(len(grid_list)):
+        grids.append(decorate_name(grid_list[i], type_decorate))
 
     # output grid
-    x0, y0, nX, nY, xm, ym = dimension(grids)
+    x0, y0, nx, ny, xm, ym = dimension(grids)
     p = props(grids[0])
     p['x0'] = x0
     p['y0'] = y0
-    p['nx'] = nX
-    p['ny'] = nY
+    p['nx'] = nx
+    p['ny'] = ny
     if report is not None:
         report('')
-        report('Mosaic: dim({},{}) x({},{}) y({},{}), cell({})...'.format(nX, nY, x0, xm, y0, ym, p.get('dx')))
+        report('Mosaic: dim({},{}) x({},{}) y({},{}), cell({})...'.format(nx, ny, x0, xm, y0, ym, p.get('dx')))
     master = Grid.new(mosaic, p)
     if report:
         report('Memory image ready ({}) dim({},{}) x0,y0({},{})'.format(master, master.nx, master.ny,
@@ -1255,7 +1279,7 @@ def grid_mosaic(mosaic, gridList, typeDecoration='', report=None):
     # paste grids onto master
     mnx = master.nx
     mny = master.ny
-    mpg = master._get_pg()
+    mpg = master.gxpg()
     for g in grids:
         paste(g, mpg)
 
@@ -1272,12 +1296,13 @@ def gridBool(*args, **kwargs):
     return grid_bool(*args, **kwargs)
 
 
-def grid_bool(g1, g2, joinedGrid, opt=1, size=3, olap=1):
+def grid_bool(g1, g2, joined_grid, opt=1, size=3, olap=1):
     """
 
-    :param g1,g2:   Grid of grids to merge
-    :param new:     new output grid, overwritten if it exists
-    :param opt:     logic to use on overlap points, default 1 (OR):
+    :param g1:          Grids to merge
+    :param g2:
+    :param joined_grid: joined output grid name, overwritten if it exists
+    :param opt:         logic to use on overlap points, default 1 (OR):
 
         === ============================================
         0   AND, both grids must have valid value
@@ -1302,7 +1327,7 @@ def grid_bool(g1, g2, joinedGrid, opt=1, size=3, olap=1):
         2   use grid 2
         === ==========================================
 
-    :returns:       :class:`Grid` instance of the merged output grid, must be closed with a call to close().
+    :returns:       `Grid` instance of the merged output grid, must be closed with a call to close().
 
     .. versionadded:: 9.1
     """
@@ -1315,14 +1340,15 @@ def grid_bool(g1, g2, joinedGrid, opt=1, size=3, olap=1):
         g2 = Grid.open(g2)
         close_g2 = True
 
-    gxapi.GXIMU.grid_bool(g1._img, g2._img, joinedGrid, opt, size, olap)
+    gxapi.GXIMU.grid_bool(g1.gximg, g2.gximg, joined_grid, opt, size, olap)
 
     if close_g1:
         g1.close()
     if close_g2:
         g2.close()
 
-    return Grid.open(joinedGrid)
+    return Grid.open(joined_grid)
+
 
 def figure_map(grid_file, map_file=None, shade=True, color_map=None, contour=None, **kwargs):
     """
@@ -1341,5 +1367,3 @@ def figure_map(grid_file, map_file=None, shade=True, color_map=None, contour=Non
 
     with gxagg.Aggregate_image.new(grid_file, shade=shade, color_map=color_map, contour=contour) as agg:
         return agg.figure_map(file_name=map_file, **kwargs)
-
-
