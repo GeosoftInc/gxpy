@@ -55,9 +55,9 @@ class Test(GXPYTest):
             try:
                 l = list(gdb.list_lines())
                 c = list(gdb.list_channels())
-                self.assertTrue(gdb._exist_symb(gxdb.Line(gdb, l[0]), gxapi.DB_SYMB_LINE))
-                self.assertTrue(gdb._exist_symb(gxdb.Channel(gdb, c[0]), gxapi.DB_SYMB_CHAN))
-                self.assertFalse(gdb._exist_symb(gxdb.Channel(gdb, c[0]), gxapi.DB_SYMB_LINE))
+                self.assertTrue(gdb.exist_symb_(gxdb.Line(gdb, l[0]), gxapi.DB_SYMB_LINE))
+                self.assertTrue(gdb.exist_symb_(gxdb.Channel(gdb, c[0]), gxapi.DB_SYMB_CHAN))
+                self.assertFalse(gdb.exist_symb_(gxdb.Channel(gdb, c[0]), gxapi.DB_SYMB_LINE))
 
             finally:
                 gdb.discard()
@@ -816,12 +816,12 @@ class Test(GXPYTest):
                 gdb.write_channel('D578625', 'testlist', np.array([1,2,3,4,4,4,5,6,7,7,7,6,5,4], dtype=np.int))
                 gdb.write_channel('D2', 'testlist', np.array([12,12,12,13,13,13], dtype=np.int))
 
-                listVal = gdb.list_values('testlist', max=100, stop=enough)
+                listVal = gdb.list_values('testlist', umax=100, stop=enough)
                 listVal.sort()
                 self.assertEqual(listVal, ['1','12','13','2','3','4','5','6','7'])
                 self.nl = 0
                 self.stp = 1
-                listVal = gdb.list_values('dx', max=10000)
+                listVal = gdb.list_values('dx', umax=10000)
                 self.assertEqual(len(listVal),29)
                 listVal = gdb.list_values('dx')
                 self.assertEqual(len(listVal),29)
@@ -837,7 +837,7 @@ class Test(GXPYTest):
 
             with gxdb.Geosoft_gdb.new(gdb_file, overwrite=True) as gdb:
 
-                #read an image and put it in a new database
+                # read an image and put it in a new database
                 with open(os.path.join(self.folder, 'image.png'), 'rb') as im_handle:
                     im = Image.open(im_handle)
                     im.thumbnail( (20,20), Image.ANTIALIAS)
@@ -859,12 +859,12 @@ class Test(GXPYTest):
 
             with gxdb.Geosoft_gdb.new(gdb_file, overwrite=True) as gdb:
                 self.assertEqual(gdb.max_compressed_channel_bytes, 67106816)
-            with gxdb.Geosoft_gdb.new(gdb_file, overwrite=True, pageSize=0) as gdb:
+            with gxdb.Geosoft_gdb.new(gdb_file, overwrite=True, page_size=0) as gdb:
                 self.assertEqual(gdb.max_compressed_channel_bytes, 4194176)
-            with gxdb.Geosoft_gdb.new(gdb_file, overwrite=True, pageSize=4096) as gdb:
+            with gxdb.Geosoft_gdb.new(gdb_file, overwrite=True, page_size=4096) as gdb:
                 self.assertEqual(gdb.max_compressed_channel_bytes, 268427264)
             try:
-                with gxdb.Geosoft_gdb.new(gdb_file, overwrite=True, pageSize=5000) as gdb:
+                with gxdb.Geosoft_gdb.new(gdb_file, overwrite=True, page_size=5000) as gdb:
                     self.assertTrue(False) # this should have failed
             except:
                 pass
@@ -1205,7 +1205,7 @@ class Test(GXPYTest):
 
         try:
             name = None
-            with gxdb.Geosoft_gdb.new('new', overwrite=True, comp=gxdb.COMP_NONE, pageSize=64) as gdb:
+            with gxdb.Geosoft_gdb.new('new', overwrite=True, comp=gxdb.COMP_NONE, page_size=64) as gdb:
                 name = gdb.file_name
                 npd = np.zeros(1000000) #TODO, this is 8 meg of data. This should not fit in 4 meg.
                 line = gdb.new_line('test')
@@ -1213,7 +1213,7 @@ class Test(GXPYTest):
                 npd2, ch, fid = gdb.read_line(line)
                 self.assertEqual(len(ch), 1)
 
-            with gxdb.Geosoft_gdb.new('new', overwrite=True, comp=gxdb.COMP_NONE, pageSize=64) as gdb:
+            with gxdb.Geosoft_gdb.new('new', overwrite=True, comp=gxdb.COMP_NONE, page_size=64) as gdb:
                 name = gdb.file_name
                 npd = np.zeros(4000000) #TODO, this is 32 meg of data, reported as 4.11 meg in the error?
                 line = gdb.new_line('test')
