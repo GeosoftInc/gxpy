@@ -38,6 +38,18 @@ class Test(GXPYTest):
         self.assertTrue(meta.has_node('/maki/data'))
         self.assertTrue(meta.has_node('/maki/data/more'))
 
+        meta.node_token('maki/crazy/deep/stuff/is/here')
+        self.assertTrue(meta.has_node('/maki/crazy'))
+        self.assertTrue(meta.has_node('/maki/crazy/deep'))
+        self.assertTrue(meta.has_node('/maki/crazy/deep/stuff/is/here'))
+        meta.set_attribute('maki/crazy/hello/deep/stuff/is/here/deep_hello', 'hi there in a deep voice')
+        meta.set_attribute('maki/crazy/crazy_hi', 'hi there')
+        self.assertEqual(meta.get_attribute('maki/crazy/crazy_hi'), 'hi there')
+        meta.set_attribute('maki/weirdo/nested/stuff/hello', 'hi there weirdo')
+        self.assertTrue(meta.has_node('/maki/weirdo/nested/stuff'))
+        self.assertEqual(meta.get_attribute('maki/weirdo/nested/stuff/hello'), 'hi there weirdo')
+        self.assertEqual(meta.meta_dict()['Maki']['weirdo']['nested']['stuff']['hello'], 'hi there weirdo')
+
         meta.set_attribute('/maki/data/more/scale', 45)
         self.assertEqual(meta.get_attribute('/maki/data/more/scale'), 45)
 
@@ -75,6 +87,24 @@ class Test(GXPYTest):
         self.assertRaises(gxmeta.MetadataException, gxmeta.set_node_in_meta_dict, 'geosoft/dataset/sample/children', m, ('a', 1.8, 'b'))
         gxmeta.set_node_in_meta_dict('geosoft/dataset/sample/children', m, ('a', 1.8, 'b'), replace=True)
         self.assertEqual(gxmeta.get_node_from_meta_dict('geosoft/dataset/sample/children', m), ('a', 1.8, 'b'))
+
+    def test_update_dict(self):
+        self.start()
+
+        meta = gxmeta.Metadata()
+        meta.set_attribute('geosoft/array', [1, 2, 3])
+        self.assertEqual(tuple(meta.get_attribute('geosoft/array')), (1, 2, 3))
+        meta.update_dict({'maki': 'someone'})
+        self.assertEqual(tuple(meta.get_attribute('geosoft/array')), (1, 2, 3))
+        self.assertEqual(meta.get_attribute('maki'), 'someone')
+        meta.update_dict({'maki': 'someone'}, trunk_node='geosoft')
+        self.assertEqual(meta.get_attribute('geosoft/maki'), 'someone')
+        meta.update_dict(meta.meta_dict(), trunk_node='bob')
+        self.assertEqual(meta.get_attribute('bob/maki'), 'someone')
+        self.assertEqual(meta.get_attribute('bob/geosoft/maki'), 'someone')
+        meta.update_dict(meta.meta_dict(), trunk_node='geosoft/bobs/your/uncle')
+        self.assertEqual(meta.get_attribute('geosoft/bobs/your/uncle/maki'), 'someone')
+        self.assertEqual(tuple(meta.get_attribute('geosoft/bobs/your/uncle/geosoft/array')), (1, 2, 3))
 
 
 ##############################################################################################
