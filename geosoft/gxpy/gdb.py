@@ -527,19 +527,20 @@ class Geosoft_gdb:
         self.gxdb.get_meta(gxm)
         return gxmeta.Metadata(gxm)
 
-    def update_gxmeta(self, meta, replace=False):
+    def update_gxmeta(self, new_meta):
         """
         Update the database Geosoft metadata as a Geosoft `geosoft.gxpy.metadata.Metadata` instance.
 
-        :param meta:    the new metadata as a `geosoft.gxpy.Metadata` instance
-        :param relace:  True to replace all database metadata.
+        :param meta:    the new metadata as a `geosoft.gxpy.Metadata` instance or a nested dict.
 
-
-        .. versionadded:: 9.3
+        .. versionadded:: 9.3.1
         """
-        gxm = gxapi.GXMETA.create()
-        self.gxdb.get_meta(gxm)
-        return gxmeta.Metadata(gxm)
+
+        current_meta = self.get_gx_metadata()
+        if isinstance(new_meta, gxmeta.Metadata):
+            new_meta = new_meta.meta_dict()
+        current_meta.update_dict(new_meta)
+        self.gxdb.set_meta(current_meta.gxmeta)
 
     @property
     def file_name(self):
