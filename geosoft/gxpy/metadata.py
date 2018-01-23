@@ -372,7 +372,7 @@ class Metadata:
                     line = line.rstrip()
                     if line:
                         ff.append(line)
-            # os.remove(metafile)
+            os.remove(metafile)
             return ff
 
         metalist = metafile_to_list(metafile())

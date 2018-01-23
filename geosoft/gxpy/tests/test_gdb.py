@@ -12,6 +12,7 @@ import geosoft.gxpy.gdb as gxdb
 import geosoft.gxpy.vv as gxvv
 import geosoft.gxpy.va as gxva
 import geosoft.gxpy.map as gxmap
+import geosoft.gxpy.metadata as gxmeta
 
 from base import GXPYTest
 
@@ -1146,6 +1147,15 @@ class Test(GXPYTest):
         with gxdb.Geosoft_gdb.open(self.gdb_name) as g:
             d = g.get_gx_metadata().meta_dict()
             self.assertTrue('Geosoft' in d)
+            g.update_gxmeta({'billy': (1, 2, 3), 'bob': {'thorton': 'interesting'}})
+            d = g.get_gx_metadata().meta_dict()
+            self.assertEqual(tuple(d['billy']), (1, 2, 3))
+            self.assertEqual(d['bob']['thorton'], 'interesting')
+            m = gxmeta.Metadata()
+            m.update_dict({'nested': {'billy': (1, 2, 3), 'bob': {'thorton': 'interesting'}}})
+            g.update_gxmeta(m)
+            d = g.get_gx_metadata().meta_dict()
+            self.assertEqual(d['nested']['bob']['thorton'], 'interesting')
 
     def test_coordinate_system(self):
         self.start()
