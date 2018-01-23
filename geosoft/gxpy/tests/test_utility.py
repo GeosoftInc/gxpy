@@ -2,6 +2,7 @@ import unittest
 import numpy as np
 import os
 import datetime
+import time
 from datetime import timezone, datetime
 
 import geosoft
@@ -579,13 +580,14 @@ class Test(GXPYTest):
         fn = gx.gx().temp_file()
         with open(fn, '+w') as f:
             f.write('maki')
-        self.assertTrue(gxu.file_age(fn) > 0)
         self.assertFalse(gxu.is_file_locked(fn))
         self.assertFalse(gxu.is_path_locked(fn))
         dir = os.path.dirname(fn)
         self.assertFalse(gxu.is_path_locked(dir))
         self.assertTrue(gxu.is_path_locked(dir, age=1000.*60*60))
         self.assertEqual(gxu.file_age('a completely bogus file name'), -1)
+        time.sleep(0.1)
+        self.assertTrue(gxu.file_age(fn) > 0.)
 
 
 if __name__ == '__main__':
