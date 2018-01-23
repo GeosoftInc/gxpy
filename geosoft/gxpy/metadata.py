@@ -7,11 +7,11 @@ Geosoft metadata.
     :class:`Metadata` metadata
     ================= =========================
 
-.. seealso:: :mod:`geosoft.gxapi.GXMETA`
+.. seealso:: :mod:`geosoft.gxap_i.GXMETA`
 
 .. note::
 
-    Regression tests provide usage examples:    
+    Regression tests provide usage examples:
     `metadata tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_metadata.py>`_
 
 .. versionadded:: 9.3
@@ -39,11 +39,12 @@ class MetadataException(Exception):
     """
     pass
 
-META_TYPE_NODE = 0 #:
-META_TYPE_ATTRIBUTE = 1 #:
 
-META_INVALID = -1 #:
-META_ROOT_NODE = -100 #:
+META_TYPE_NODE = 0  #:
+META_TYPE_ATTRIBUTE = 1  #:
+
+META_INVALID = -1  #:
+META_ROOT_NODE = -100  #:
 
 
 def _umn(meta_type, node):
@@ -70,7 +71,7 @@ def get_node_from_meta_dict(meta_node, meta_dict):
     root = meta_dict
     for node in tree:
         if node:
-            if not node in root:
+            if node not in root:
                 return None
             root = root[node]
     return root
@@ -93,7 +94,7 @@ def set_node_in_meta_dict(meta_node, meta_dict, content, replace=False):
     tree = meta_node.split('/')
     root = meta_dict
     for node in tree[:-1]:
-        if not node in root:
+        if node not in root:
             root[node] = {}
         elif not isinstance(root[node], dict):
             if replace:
@@ -130,7 +131,7 @@ class Metadata:
     def __enter__(self):
         return self
 
-    def __exit__(self, type, value, traceback):
+    def __exit__(self, _type, _value, _traceback):
         self.__del__()
 
     def __del__(self):
@@ -208,8 +209,8 @@ class Metadata:
         """
         Returns the metadata token (integer) of an attribute.
 
-        :param attribute_name:  name of the attribute (eg. `'my_metadata/parameters/frequency'`)
-        :returns:               metadata token number or `META_INVALID` if the attribute does not exist.
+        :param attr_name:   name of the attribute (eg. `'my_metadata/parameters/frequency'`)
+        :returns:           metadata token number or `META_INVALID` if the attribute does not exist.
 
         .. versionadded::9.3
         """
@@ -226,7 +227,10 @@ class Metadata:
 
         .. versionadded:: 9.3
         """
-        node, attr = tuple(attr_name.strip('/').rsplit('/', 1))
+        node_attr = tuple(attr_name.strip('/').rsplit('/', 1))
+        if len(node_attr) == 1:
+            return 0, self.attribute_token(attr_name)
+        node = node_attr[0]
         if not self.has_attribute(attr_name):
             raise MetadataException('Attribute "{}" not found'.format(attr_name))
         return self.node_token(node), self.attribute_token(attr_name)
@@ -240,7 +244,13 @@ class Metadata:
 
         .. versionadded:: 9.3
         """
-        node, attr = tuple(attr_name.strip('/').rsplit('/',1))
+        node_attr = attr_name.strip('/').rsplit('/', 1)
+        if len(node_attr) < 2:
+            node = ''
+            attr = node_attr[0]
+        else:
+            node = node_attr[0]
+            attr = node_attr[1]
         if self.has_attribute(attr_name):
             self.gxmeta.delete_attrib(self.attribute_token(attr_name))
         node = self.node_token(node)
@@ -286,82 +296,104 @@ class Metadata:
 
     def meta_dict(self):
         """
-        Metadata content as a dictionary.
+        Metadata content as a nested dictionary.
 
         Attributes will be normal Python objects where the attribute type is supported by Python. This
         includes basic types (like int and float), lists/tuples, and Python dictionaries.
 
         Geosoft objects in an attribute, will appear only as a descriptive text string.
 
-        :return: dictionary of metadata
+        :return: nested dictionary structure of metadata
 
         .. versionadded:: 9.3
         """
 
-        def parse_node(s):
-            nest = 0
-            while s[0] == ' ':
-                nest += 1
-                s = s[3:]
-            name = s[1:]
-            return name, nest
-
         def parse_attr(s):
             parts = s.split('=', 1)
             if len(parts) >= 2:
-                return parts[0].lstrip(), parts[1][1:-1]
+                val = parts[1][1:-1]
+                if val.startswith('__json__'):
+                    val = val[8:].replace('\\"', '"')
+                    val = json.loads(val)
+                return parts[0].lstrip(), val
             else:
                 return parts[0].lstrip(), None
 
+        def add_meta(ff):
 
-        def meta_dict(ff):
+            def parse_node(s):
+                nest = 0
+                while s[0] == ' ':
+                    nest += 1
+                    s = s[3:]
+                return s[1:], nest
 
-            def getone(ff, i):
-                d = {}
-                node_name, nest = parse_node(ff[i])
-                i += 1
-                while i < len(ff):
-                    while ff[i].lstrip()[0] != '\\':
-                        name, val = parse_attr(ff[i])
-                        if isinstance(val, str):
-                            if val.startswith('__json__'):
-                                val = val[8:].replace('\\"', '"')
-                                val = json.loads(val)
-                            d[name] = val
-                        else:
-                            d[name] = val
-                        i += 1
-                        if i == len(ff):
-                            return node_name, d, i
+            def read_node(ffl):
+                _d = {}
+                node_name, nest = parse_node(ffl[0])
+                ffl = ffl[1:]
+                while ffl:
+                    while ffl[0].lstrip()[0] != '\\':
+                        _name, val = parse_attr(ffl[0])
+                        _d[_name] = val
+                        ffl = ffl[1:]
+                        if not ffl:
+                            return node_name, _d, ffl
                     else:
-                        next_name, next_nest = parse_node(ff[i])
+                        _, next_nest = parse_node(ffl[0])
                         if next_nest <= nest:
-                            return node_name, d, i
-                        nn, dd, i = getone(ff, i)
-                        d[nn] = dd
-                return node_name, d, i
+                            return node_name, _d, ffl
+                        nn, _dd, ffl = read_node(ffl)
+                        _d[nn] = _dd
+                return node_name, _d, ffl
 
-            d = {}
-            name, dd, i = getone(ff, 0)
-            d[name] = dd
-            while i < len(ff):
-                name, dd, i = getone(ff, i)
-                d[name] = dd
-            return d
+            dct = {}
+            while ff:
+                if ff[0][0] != '\\':
+                    name, val = parse_attr(ff[0])
+                    dct[name] = val
+                    ff = ff[1:]
+                else:
+                    name, dd, ff = read_node(ff)
+                    dct[name] = dd
+            return dct
 
-        metafile = os.path.join(gx.gx().temp_folder(), 'meta_' + gxu.uuid())
-        wa = gxapi.GXWA.create(metafile, gxapi.WA_NEW)
-        self.gxmeta.write_text(wa)
-        wa = None
-        ff = []
-        with open(metafile, 'r') as f:
-            for line in f:
-                line = line.rstrip()
-                if line:
-                    ff.append(line)
-        os.remove(metafile)
+        def metafile():
+            mf = os.path.join(gx.gx().temp_folder(), 'meta_' + gxu.uuid())
+            wa = gxapi.GXWA.create(mf, gxapi.WA_NEW)
+            self.gxmeta.write_text(wa)
+            wa = None
+            return mf
 
-        if ff:
-            return meta_dict(ff)
-        else:
-            return {}
+        def metafile_to_list(metafile):
+            ff = []
+            with open(metafile, 'r') as f:
+                for line in f:
+                    line = line.rstrip()
+                    if line:
+                        ff.append(line)
+            # os.remove(metafile)
+            return ff
+
+        metalist = metafile_to_list(metafile())
+        return add_meta(metalist)
+
+    def update_dict(self, metadict, trunk_node=''):
+        """
+        Update the metadata from the content of a dictionary.
+
+        :param metadict:    dictionary of metadata to add/update
+        :param trunk:       trunk to which to add this meta, default is '' which adds from the root.
+
+        .. versionadded:: 9.3.1
+        """
+
+        def update(tnode, new):
+            for k, v in new.items():
+                node = '{}/{}'.format(tnode, k)
+                if isinstance(v, dict):
+                    update(node, v)
+                else:
+                    self.set_attribute(node, v)
+
+        update(trunk_node, metadict)
