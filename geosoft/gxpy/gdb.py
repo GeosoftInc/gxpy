@@ -3,11 +3,11 @@ Geosoft databases for line-oriented spatial data.
 
 :Classes:
 
-    ==================== =========================
-    :class:`Geosoft_gdb` Geosoft line database
-    :class:`Line`        line handling
-    :class:`Channel`     channel handling
-    ==================== =========================
+    ============= =========================
+    `Geosoft_gdb` Geosoft line database
+    `Line`        line handling
+    `Channel`     channel handling
+    ============= =========================
 
 .. seealso:: :mod:`geosoft.gxapi.GXGB`, :mod:`geosoft.gxapi.GXEDB`, 
              :mod:`geosoft.gxapi.GXDBREAD`, :mod:`geosoft.gxapi.GXDBWRITE`
@@ -187,7 +187,7 @@ def delete_files(file_name):
 class Geosoft_gdb:
     """
     Class to work with Geosoft databases. This class wraps many of the functions found in 
-    :class:`geosoft.gxapi.GXDB`.
+    `geosoft.gxapi.GXDB`.
 
     :Constructors:
      
@@ -319,7 +319,7 @@ class Geosoft_gdb:
         Open an existing database.
 
         :param name:    name of the database, default is the current project database
-        :returns:       :class:`Geosoft_gdb` instance
+        :returns:       `Geosoft_gdb` instance
 
         .. versionadded:: 9.1
         """
@@ -439,7 +439,7 @@ class Geosoft_gdb:
 
     @property
     def gxdb(self):
-        """The :class:`geosoft.gxapi.GXDB` instance handle"""
+        """The `geosoft.gxapi.GXDB` instance handle"""
         return self._db
 
     @property
@@ -512,7 +512,7 @@ class Geosoft_gdb:
 
     def get_gx_metadata(self):
         """
-        Return the database Geosoft metadata as a Geosoft :class:`geosoft.gxpy.metadata.Metadata` instance.
+        Return the database Geosoft metadata as a Geosoft `geosoft.gxpy.metadata.Metadata` instance.
 
         The internal database metadata is used to store various database properties that are not intended
         to be part of the exposed dataset metadata exposed by the :attr:metadata property.
