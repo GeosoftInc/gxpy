@@ -7,7 +7,7 @@ Geosoft metadata.
     :class:`Metadata` metadata
     ================= =========================
 
-.. seealso:: :mod:`geosoft.gxap_i.GXMETA`
+.. seealso:: :mod:`geosoft.gxapi.GXMETA`
 
 .. note::
 
@@ -109,7 +109,7 @@ def set_node_in_meta_dict(meta_node, meta_dict, content, replace=False):
 
 class Metadata:
     """
-    Simple interface to work with Geosoft metadata objects :class::`geosoft.gxapi.GXMETA`.
+    Simple interface to work with Geosoft metadata objects `geosoft.gxapi.GXMETA`.
 
     :param gxmeta:  `geosoft.gxapi.GXMETA` instance, or None (default) in which case an
                      empty metadata instance is created.
@@ -117,13 +117,22 @@ class Metadata:
     Geosoft metadata objects contain metadata organized as a tree of information, with
     each node of the tree containing 0 or more attributes and 0 or more nested nodes.
 
+    One can think of a metadata structure as a dictionary in which items that reference a dictionary are nodes, that
+    in turn can hold other nodes, and each node can also hold attributes. We refer to this as a "nested dictionary".
+
+    The `meta_dict()` method will return the metadata content as a nested dictionary, and the `update_dict()`
+    method will add a dictionary to the metadata instance.
+
     While geosoft metadata can contain custom typed attributes and indeed any Geosoft object, this simple interface
     currently supports only Python types int, float, string and Python structures like tuple, arrays and
     dictionaries.
 
-    Nodes are identified by a string in the form: `/node/[...]/` (eg. `'/geosoft/data/'`).
+    Nodes can identified by a string in the form: `/node/[...]/`. For example `'/geosoft/data/'` is equivalent to
+    a dictionary structure `{'geosoft': 'data': {}}`.
 
-    Attributes are identified by a string in the form `/node/[...]/attribute` (eg. `'geosoft/data/keywords'`).
+    Attributes are identified by a string in the form: `/node/[...]/attribute`. For example, an attribute
+    `'geosoft/data/keywords'` with keyword content 'mag' and 'Red Lake' can be represented in a Python
+    dictionary as `{'geosoft': 'data': {'keywords': ('mag', 'Red Lake')}`.
 
     .. versionadded:: 9.3
     """
@@ -299,7 +308,8 @@ class Metadata:
         Metadata content as a nested dictionary.
 
         Attributes will be normal Python objects where the attribute type is supported by Python. This
-        includes basic types (like int and float), lists/tuples, and Python dictionaries.
+        includes basic types (like int and float), lists/tuples, and Python dictionaries, which are
+        nodes in the metadata structucture.
 
         Geosoft objects in an attribute, will appear only as a descriptive text string.
 
@@ -334,8 +344,8 @@ class Metadata:
                 ffl = ffl[1:]
                 while ffl:
                     while ffl[0].lstrip()[0] != '\\':
-                        _name, val = parse_attr(ffl[0])
-                        _d[_name] = val
+                        _name, _val = parse_attr(ffl[0])
+                        _d[_name] = _val
                         ffl = ffl[1:]
                         if not ffl:
                             return node_name, _d, ffl
@@ -365,14 +375,14 @@ class Metadata:
             wa = None
             return mf
 
-        def metafile_to_list(metafile):
+        def metafile_to_list(metaf):
             ff = []
-            with open(metafile, 'r') as f:
+            with open(metaf, 'r') as f:
                 for line in f:
                     line = line.rstrip()
                     if line:
                         ff.append(line)
-            os.remove(metafile)
+            os.remove(metaf)
             return ff
 
         metalist = metafile_to_list(metafile())
@@ -383,7 +393,7 @@ class Metadata:
         Update the metadata from the content of a dictionary.
 
         :param metadict:    dictionary of metadata to add/update
-        :param trunk:       trunk to which to add this meta, default is '' which adds from the root.
+        :param trunk_node:  trunk to which to add this meta, default is '' which adds from the root.
 
         .. versionadded:: 9.3.1
         """
