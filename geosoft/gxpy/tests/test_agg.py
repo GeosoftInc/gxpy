@@ -4,6 +4,8 @@ import os
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.agg as gxagg
 import geosoft.gxpy.grid as gxgrid
+import geosoft.gxpy.utility as gxu
+import geosoft.gxpy.map as gxmap
 import geosoft
 
 from base import GXPYTest
@@ -97,6 +99,28 @@ class Test(GXPYTest):
                                         legend_label='nT',
                                         features='all').file_name)
 
+    def test_save_as(self):
+        self.start()
+
+
+        image_file = ''
+        try:
+            with gxagg.Aggregate_image.new(self.g3f, shade=True, color_map='elevation.tbl', contour=20) as agg:
+
+                image_file = agg.save_as_image(image_type=gxmap.RASTER_FORMAT_PNG, pix_width=None)
+
+                with gxgrid.Grid.open(image_file + '(IMG,t=png)') as g:
+                    nx, ny, x0, y0, dx, dy, rot = agg.spatial_properties
+                    self.assertEqual(g.coordinate_system, agg.coordinate_system)
+                    self.assertEqual(g.nx, nx)
+                    self.assertEqual(g.ny, ny)
+                    self.assertEqual(g.x0, x0)
+                    self.assertEqual(g.y0, y0)
+                    self.assertAlmostEqual(g.dx, dx)
+                    self.assertAlmostEqual(g.dy, dy)
+                    self.assertAlmostEqual(g.rot, rot)
+        finally:
+            gxu.delete_file(image_file)
 
 if __name__ == '__main__':
 

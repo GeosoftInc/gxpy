@@ -301,6 +301,8 @@ class Point(Geometry, Sequence):
         super().__init__(coordinate_system=coordinate_system, name=name, **kwargs)
 
         if isinstance(p, Point):
+            if coordinate_system is None:
+                coordinate_system = p.coordinate_system
             if coordinate_system == p.coordinate_system:
                 self.p = p.p.copy()
             else:
@@ -333,6 +335,9 @@ class Point(Geometry, Sequence):
         else:
             p = float(p)
             self.p = np.array((p, p, p))
+
+        self.coordinate_system = coordinate_system
+
         self._next = 0
 
     def __len__(self):
@@ -490,6 +495,7 @@ class Point2(Geometry, Sequence):
                 coordinate_system = p.coordinate_system
             self.p0 = Point(p.p0, coordinate_system=coordinate_system)
             self.p1 = Point(p.p1, coordinate_system=coordinate_system)
+
         else:
             if not hasattr(p, '__iter__'):
                 self.p0 = self.p1 = Point(p, coordinate_system=coordinate_system)
@@ -508,6 +514,8 @@ class Point2(Geometry, Sequence):
                 self.p1 = Point((p[3], p[4], p[5]), coordinate_system=coordinate_system)
             else:
                 raise GeometryException(_t('Invalid points: {}').format(p))
+
+        self.coordinate_system = coordinate_system
         self._next = 0
 
     def __len__(self):
@@ -703,9 +711,10 @@ class PPoint(Geometry, Sequence):
             self.pp = vv_setup()
         else:
             if coordinate_system is None:
-                self.coordinate_system = coordinate_system = first_coordinate_system(xyz)
+                coordinate_system = first_coordinate_system(xyz)
             self.pp = point_setup()
 
+        self.coordinate_system = coordinate_system
         self._next = 0
 
     @classmethod
@@ -910,8 +919,6 @@ class Mesh(Geometry, Sequence):
         if name is None:
             name = '_mesh_'
         super().__init__(coordinate_system=coordinate_system, name=name, **kwargs)
-        if coordinate_system:
-            kwargs['coordinate_system'] = gxcs.Coordinate_system(coordinate_system)
 
         faces, verticies = mesh
         if isinstance(faces, list):

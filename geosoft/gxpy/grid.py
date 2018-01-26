@@ -1039,7 +1039,7 @@ class Grid(gxgm.Geometry):
 
         .. versionadded:: 9.3.1
         """
-        return gxgm.Point2((self.extent_3d()))
+        return gxgm.Point2((self.extent_3d()), coordinate_system=self.coordinate_system)
 
     def np(self):
         """
