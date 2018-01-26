@@ -28,6 +28,8 @@ from . import grid as gxgrd
 from . import map as gxmap
 from . import view as gxview
 from . import group as gxgroup
+from . import geometry as gxgm
+from . import utility as gxu
 
 __version__ = geosoft.__version__
 
@@ -52,7 +54,7 @@ ZONE_SHADE = 4 #:
 ZONE_LOGLINEAR = 5 #:
 ZONE_LAST = 6 #:
 
-class Aggregate_image:
+class Aggregate_image(gxgm.Geometry):
     """
     The AGG class supports the creation of aggregate images from one or more grid data sets. Aggregates
     can be placed into a 2D or 3D view for display.
@@ -88,6 +90,9 @@ class Aggregate_image:
 
     def __init__(self):
         self._gxagg = None
+        self._base_properties = None
+        self._extent = None
+        super().__init__()
 
     @classmethod
     def new(cls, grid_file=None, **kwargs):
@@ -127,6 +132,16 @@ class Aggregate_image:
         """Close an Aggregate, releases resources."""
         self._gxagg = None
 
+    def _set_properties(self):
+        if self.layer_count > 0:
+            with gxgrd.Grid.open(self.layer_file_names[0]) as g:
+                self._base_properties = g.properties()
+                self._extent = gxgm.Point2(g.extent)
+
+    @property
+    def extent(self):
+        return self._extent
+
     @property
     def gxagg(self):
         """ The :class:`geosoft.gxapi.GXAGG` instance handle."""
@@ -163,6 +178,35 @@ class Aggregate_image:
         vv = gxvv.GXvv(dtype='U1024')
         self.gxagg.list_img(vv.gxvv)
         return list(vv.np)
+
+    @property
+    def spatial_properties(self):
+        """
+        Returns the spatial properties of the base layer in the aggregate.
+
+        :return: (nx, ny, x0, y0, dx, dy, rot)
+
+        .. versionadded:: 9.3.1
+        """
+        x0 = self._base_properties['x0']
+        y0 = self._base_properties['y0']
+        dx = self._base_properties['dx']
+        dy = self._base_properties['dy']
+        nx = self._base_properties['nx']
+        ny = self._base_properties['ny']
+        rot = self._base_properties['rot']
+        return nx, ny, x0, y0, dx, dy, rot
+
+    @property
+    def coordinate_system(self):
+        """
+        Returns the aggregate coordinate_system, which is the same as the first layer.
+
+        :return: pixel size in units of the coordinate system
+
+        .. versionadded:: 9.3.1
+        """
+        return self._base_properties['coordinate_system']
 
     def _layer_index(self, layer):
         if isinstance(layer, str):
@@ -268,6 +312,10 @@ class Aggregate_image:
                 os.remove(color_map_file)
             with gxgrd.Grid.open(grid_file) as g:
                 color_map.units = g.unit_of_measure
+
+        if self._base_properties is None:
+            self._set_properties()
+
 
     def layer_color_map(self, layer=0):
         """
@@ -387,3 +435,44 @@ class Aggregate_image:
                                          cmap2=cmap2)
 
         return gmap
+
+    def save_as_image(self, image_file=None, image_type=gxmap.RASTER_FORMAT_PNG, pix_width=None):
+        """
+        Save the aggregate as a georeferenced image file.
+
+        :param image_file:  image file name. The extension should be consistent with the image_type.
+                            If not specified a temporary PNG file is created.
+        :param image_type:  image type, one ot the RASTER_FORMAT constants in `geosoft.gxpy.map`.
+        :param pix_width:   desired image pixel width, default is the width of the aggregate base layer
+        :return:            image file name.
+        """
+
+        if self.layer_count == 0:
+            raise AggregateException(_t('Aggregate has no layers'))
+
+        if image_file is None:
+            image_file = gx.gx().temp_file('.png')
+            image_type = gxmap.RASTER_FORMAT_PNG
+
+        nx, _, _, _, dx, *_ = self.spatial_properties
+
+        if pix_width is None or pix_width <= 0:
+            pix_width = nx
+
+        map_file = gx.gx().temp_file('.map')
+        try:
+            with gxmap.Map.new(map_file,
+                               data_area=self.extent_xy,
+                               coordinate_system=self.coordinate_system,
+                               margins=(0, 0, 0, 0),
+                               inside_margin=0) as gmap:
+
+                with gxview.View.open(gmap, "data") as v:
+                    gxgroup.Aggregate_group.new(v, self)
+
+                gmap.image_file(image_file, type=image_type, pix_width=pix_width)
+
+        finally:
+            gxu.delete_file(map_file)
+
+        return image_file
