@@ -342,8 +342,7 @@ class Grid(gxgm.Geometry):
         """
         Open an existing grid file.
 
-        :param file_name:   name of the grid file (see
-        `supported file formats <https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations>`_)
+        :param file_name:   name of the grid file (see `supported file formats <https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations>`_)
         :param dtype:       numpy data type, None for the grid native type.  If not the same as the native
                             type a memory grid is created in the new type.
         :param mode:        open mode:

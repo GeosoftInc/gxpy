@@ -3,11 +3,11 @@ Coodinate systems
 
 :Classes:
 
-    ============================= ======================================================
-    :class:`Coordinate_system`    define a coordinate system
-    :class:`Coordinate_translate` translate coordinates between coordinate systems
-    :class:`Wkt`                  well-know coordinate system for ESRI interoperability
-    ============================= ======================================================
+    ====================== ======================================================
+    `Coordinate_system`    define a coordinate system
+    `Coordinate_translate` translate coordinates between coordinate systems
+    `Wkt`                  well-know coordinate system for ESRI interoperability
+    ====================== ======================================================
 
 Coordinate systems describe how cartesian coordinates are located ralative to the Earth.  Cartesian coordinates
 are right-handed (x, y, z) spatial ordinates that describe locations within a coordinate system frame of reference.
@@ -39,7 +39,7 @@ The descriptive name for "well-known" coordinate systems is sufficient to descri
 the `EPSG Geodetic Registry <http://www.epsg.org/>`_. To fully locate ad-hoc coordinates you will need
 the parameters defined in the GXF stings.  See :attr:`Coordinate_system.gxf`.
 
-.. seealso:: :class:`geosoft.gxapi.GXIPJ`
+.. seealso:: `geosoft.gxapi.GXIPJ`
 
 .. note::
 
@@ -384,11 +384,11 @@ class Coordinate_system:
                   `GXF coordinate system strings <http://www.geosoft.com/resources/goto/GXF-Grid-eXchange-File>`_.
                   For example: ``['"WGS 84 / UTM zone 32N [geodetic]", "WGS 84", "UTM zone 32N", "", ""]``
                 
-                - :class:`geosoft.gxapi.GXIPJ` instance
+                - `geosoft.gxapi.GXIPJ` instance
                  
-                - :class:`Coordinate_system` instance, returns a copy
+                - `Coordinate_system` instance, returns a copy
 
-                - None to create an '*Unknown' coordinate system.
+                - None to create an unknown coordinate system.
                 
                 For examples refer to
                 `tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_coordinate_system.py>`_
@@ -550,7 +550,7 @@ class Coordinate_system:
 
     @property
     def gxipj(self):
-        """ :class:`geosoft.gxapi.GXIPJ` instance"""
+        """ `geosoft.gxapi.GXIPJ` instance"""
         return self._gxapi_ipj
 
     @property
@@ -1032,8 +1032,8 @@ class Coordinate_translate:
     """
     Class to reproject coordinates between different coordinate systems.
 
-    :params cs_from:  from :class:`Coordinate_system`
-    :params cs_to:    to :class:`Coordinate_system`
+    :params cs_from:  from `Coordinate_system`
+    :params cs_to:    to `Coordinate_system`
 
     .. versionadded:: 9.2
     """
