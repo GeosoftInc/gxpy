@@ -675,6 +675,10 @@ class Test(GXPYTest):
         map_file = gxgrd.figure_map(self.g1f, title='image_test', features='all').file_name
         self.assertEqual(gxmap.Map.open(map_file).crc_image(pix_width=800), 2252249278)
 
+        with gxgrd.Grid.open(self.g1f) as g:
+            map_file = g.figure_map(title='image_test', features='all').file_name
+            self.assertEqual(gxmap.Map.open(map_file).crc_image(pix_width=800), 1260339594)
+
     def test_np(self):
         self.start()
 
@@ -712,6 +716,43 @@ class Test(GXPYTest):
             self.assertEqual(col_2[1], 144)
             self.assertEqual(col_2[2], 102)
             self.assertEqual(col_2[3], 255)
+
+    def test_image_file(self):
+        self.start()
+
+        image_file = gxgrd.image_file(self.g1f)
+        with gxgrd.Grid.open(self.g1f) as g:
+            with gxgrd.Grid.open(image_file + '(IMG,t=png)') as gi:
+                self.assertEqual(g.coordinate_system, gi.coordinate_system)
+                self.assertEqual(g.nx, gi.nx)
+                self.assertEqual(g.ny, gi.ny)
+                self.assertAlmostEqual(g.x0, gi.x0)
+                self.assertAlmostEqual(g.y0, gi.y0)
+                self.assertAlmostEqual(g.dx, gi.dx)
+                self.assertAlmostEqual(g.dy, gi.dy)
+                self.assertAlmostEqual(g.rot, gi.rot)
+
+        with gxgrd.Grid.open(self.g1f) as g:
+            with gxgrd.Grid.open(g.image_file() + '(IMG,t=png)') as gi:
+                self.assertEqual(g.coordinate_system, gi.coordinate_system)
+                self.assertEqual(g.nx, gi.nx)
+                self.assertEqual(g.ny, gi.ny)
+                self.assertAlmostEqual(g.x0, gi.x0)
+                self.assertAlmostEqual(g.y0, gi.y0)
+                self.assertAlmostEqual(g.dx, gi.dx)
+                self.assertAlmostEqual(g.dy, gi.dy)
+                self.assertAlmostEqual(g.rot, gi.rot)
+
+        with gxgrd.Grid.open(self.g1f) as g:
+            g.rot = 30
+            with gxgrd.Grid.open(g.image_file(pix_width=800) + '(IMG,t=png)') as gi:
+                self.assertEqual(g.coordinate_system, gi.coordinate_system)
+                self.assertEqual(800, gi.nx)
+                self.assertEqual(800, gi.ny)
+                self.assertAlmostEqual(6.9767394375, gi.x0)
+                self.assertAlmostEqual(43.47193943750002, gi.y0)
+
+
 ###############################################################################################
 
 if __name__ == '__main__':

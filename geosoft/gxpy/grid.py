@@ -28,6 +28,7 @@ from . import vv as gxvv
 from . import utility as gxu
 from . import agg as gxagg
 from . import geometry as gxgm
+from . import map as gxmap
 
 __version__ = geosoft.__version__
 
@@ -168,7 +169,7 @@ class Grid(gxgm.Geometry):
         :meth:`open`            open an existing grid/image
         :meth:`new`             create a new grid/image
         :meth:`copy`            create a copy
-        :meth:`index_window`    create a windowed grid based of grid indexes
+        :meth:`index_window`    create a windowed grid based on grid indexes
         :meth:`from_data_array` create a new grid from a 2d data array
         ======================= ============================================
 
@@ -278,7 +279,7 @@ class Grid(gxgm.Geometry):
                 if ext.lower() == '.hgd':
                     self._hgd = True
 
-        if not 'name' in kwargs:
+        if 'name' not in kwargs:
             if file_name:
                 kwargs['name'] = os.path.splitext(file_name)[0]
             else:
@@ -460,7 +461,7 @@ class Grid(gxgm.Geometry):
         :param grd:         :class:`Grid` instance to save as a new grid, or a grid file name
         :param file_name:   name of the new grid (file with optional decorations), default is in memory
         :param dtype:       numpy data type, None to use type of the parent grid
-        :param overwrite:   True to overwrite if the file exists, False to no overwrite.
+        :param overwrite:   True to overwrite if the file exists, False to not overwrite.
 
         .. versionadded:: 9.2
         """
@@ -1210,6 +1211,80 @@ class Grid(gxgm.Geometry):
 
         return ggx, ggy, ggz
 
+    def figure_map(self, map_file=None, shade=True, color_map=None, contour=None, **kwargs):
+        """
+        Create a map figure from a grid file.
+
+        :param map_file:    name of the map file, if `None` a default map is created.
+        :param shade:       `True` to add shading effect
+        :param color_map:   `geosoft.gxpy.group.Color_map` instance, or a colour ramp file name, default is user's default
+        :param contour:     colour contour interval if colours need to break at exact levels
+        :param kwargs:      passed to  `geosoft.gxpy.agg.Aggregate_image.figure_map` and `geosoft.gxpy.map.Map.new`
+        :return:            `geosoft.gxpy.map.Map` instance
+
+        .. seealso:: `geosoft.gxpy.grid.figure_map`, which creates an figure map directly from a grid file.
+
+        .. Note:: This method saves the grid as a temporary file from which the figure map is created.
+            If the grid already exists as a grid file it is more efficient to call `geosoft.gxpy.grid.figure_map`.
+
+        .. versionadded:: 9.3.1
+        """
+
+        temp_grid = gx.gx().temp_file('grd')
+        try:
+            with Grid.copy(self, temp_grid) as g:
+                temp_decorated = g.file_name_decorated
+            fig_map = figure_map(temp_decorated,
+                                 map_file=map_file,
+                                 shade=shade,
+                                 color_map=color_map,
+                                 contour=contour,
+                                 **kwargs)
+        finally:
+            delete_files(temp_grid)
+
+        return fig_map
+
+    def image_file(self, image_file_name=None, image_type=gxmap.RASTER_FORMAT_PNG, pix_width=None,
+                   shade=True, color_map=None, contour=None, ):
+        """
+        Save as a georeferenced image file.
+
+        :param image_file_name:  image file name. The extension should be consistent with the image_type.
+                            If not specified a temporary PNG file is created.
+        :param image_type:  image type, one ot the RASTER_FORMAT constants in `geosoft.gxpy.map`.
+        :param pix_width:   desired image width in pixels, default is the width of the aggregate base layer
+        :param shade:       `True` to add shading effect
+        :param color_map:   `geosoft.gxpy.group.Color_map` instance, or a colour ramp file name,
+                            default is user's default
+        :param contour:     colour contour interval if colours need to break at exact levels
+        :return:            image file name.
+
+        .. seealso:: `geosoft.gxpy.grid.image_file`, which creates an image directly from a grid file.
+
+        .. Note:: This method saves the grid as a temporary file from which an aggregate and image are
+            created. If the grid already exists as a grid file it is more efficient to call
+            `geosoft.gxpy.grid.image_file`.
+
+        .. versionadded:: 9.3.1
+        """
+
+        temp_grid = gx.gx().temp_file('grd')
+        try:
+            with Grid.copy(self, temp_grid) as g:
+                temp_decorated = g.file_name_decorated
+            imagefile = image_file(temp_decorated,
+                                   image_file=image_file_name,
+                                   image_type=image_type,
+                                   pix_width=pix_width,
+                                   shade=shade,
+                                   color_map=color_map,
+                                   contour=contour)
+        finally:
+            delete_files(temp_grid)
+
+        return imagefile
+
 
 # grid utilities
 def array_locations(properties):
@@ -1411,7 +1486,7 @@ def figure_map(grid_file, map_file=None, shade=True, color_map=None, contour=Non
     :param grid_file:   grid file name
     :param map_file:    name of the map file, if `None` a default map is created.
     :param shade:       `True` to add shading effect
-    :param color_map:   `geosoft.gxpy.group.Color_map` instance, or a colour ramp file name, defaut is user's default
+    :param color_map:   `geosoft.gxpy.group.Color_map` instance, or a colour ramp file name, default is user's default
     :param contour:     colour contour interval if colours need to break at exact levels
     :param kwargs:      passed to  `geosoft.gxpy.agg.Aggregate_image.figure_map` and `geosoft.gxpy.map.Map.new`
     :return:            `geosoft.gxpy.map.Map` instance
@@ -1421,3 +1496,25 @@ def figure_map(grid_file, map_file=None, shade=True, color_map=None, contour=Non
 
     with gxagg.Aggregate_image.new(grid_file, shade=shade, color_map=color_map, contour=contour) as agg:
         return agg.figure_map(file_name=map_file, **kwargs)
+
+
+def image_file(grid_file, image_file=None, image_type=gxmap.RASTER_FORMAT_PNG, pix_width=None,
+                  shade=True, color_map=None, contour=None,):
+    """
+    Save a grid file grid as a georeferenced image file.
+
+    :param grid_file:   grid file name
+    :param image_file:  image file name. The extension should be consistent with the image_type.
+                        If not specified a temporary PNG file is created.
+    :param image_type:  image type, one ot the RASTER_FORMAT constants in `geosoft.gxpy.map`.
+    :param pix_width:   desired image width in pixels, default is the width of the aggregate base layer
+    :param shade:       `True` to add shading effect
+    :param color_map:   `geosoft.gxpy.group.Color_map` instance, or a colour ramp file name, default is user's default
+    :param contour:     colour contour interval if colours need to break at exact levels
+    :return:            image file name.
+
+    .. versionadded:: 9.3.1
+    """
+
+    with gxagg.Aggregate_image.new(grid_file, shade=shade, color_map=color_map, contour=contour) as agg:
+        return agg.image_file(image_file, image_type=image_type, pix_width=pix_width)

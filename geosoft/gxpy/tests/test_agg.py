@@ -99,14 +99,14 @@ class Test(GXPYTest):
                                         legend_label='nT',
                                         features='all').file_name)
 
-    def test_save_as(self):
+    def test_image_file(self):
         self.start()
 
         image_file = ''
         try:
             with gxagg.Aggregate_image.new(self.g3f, shade=True, color_map='elevation.tbl', contour=20) as agg:
 
-                image_file = agg.save_as_image(image_type=gxmap.RASTER_FORMAT_PNG, pix_width=None)
+                image_file = agg.image_file(image_type=gxmap.RASTER_FORMAT_PNG, pix_width=None)
 
                 with gxgrid.Grid.open(image_file + '(IMG,t=png)') as g:
                     nx, ny, x0, y0, dx, dy, rot = agg.spatial_properties

@@ -436,7 +436,7 @@ class Aggregate_image(gxgm.Geometry):
 
         return gmap
 
-    def save_as_image(self, image_file=None, image_type=gxmap.RASTER_FORMAT_PNG, pix_width=None):
+    def image_file(self, image_file=None, image_type=gxmap.RASTER_FORMAT_PNG, pix_width=None):
         """
         Save the aggregate as a georeferenced image file.
 
