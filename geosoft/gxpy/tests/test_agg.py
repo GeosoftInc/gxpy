@@ -102,7 +102,6 @@ class Test(GXPYTest):
     def test_save_as(self):
         self.start()
 
-
         image_file = ''
         try:
             with gxagg.Aggregate_image.new(self.g3f, shade=True, color_map='elevation.tbl', contour=20) as agg:
