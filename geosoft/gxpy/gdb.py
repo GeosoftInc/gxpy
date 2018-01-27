@@ -184,7 +184,7 @@ def delete_files(file_name):
         gxu.delete_file(file_name + '.xml')
 
 
-class Geosoft_gdb:
+class Geosoft_gdb(gxgeo.Geometry):
     """
     Class to work with Geosoft databases. This class wraps many of the functions found in 
     `geosoft.gxapi.GXDB`.
@@ -262,6 +262,8 @@ class Geosoft_gdb:
 
     .. versionchanged:: 9.3 float numpy arrays use np.nan for dummies so dummy filtering no longer necessary.
 
+    .. versionchanged:: 9.3.1 inherits from `geosoft.gxpy.geometry.Geometry`
+
     """
 
     def __enter__(self):
@@ -302,6 +304,9 @@ class Geosoft_gdb:
         return os.path.basename(self._file_name)
 
     def __init__(self):
+
+        super().__init__()
+
         self._lst = gxapi.GXLST.create(2000)
         self._sr = gxapi.str_ref()
         self._file_name = None
@@ -310,6 +315,7 @@ class Geosoft_gdb:
         self._xmlmetadata = None
         self._xmlmetadata_changed = False
         self._xmlmetadata_root = ''
+        self._extent = {'xyz': None, 'extent': None}
 
         self._open = gx.track_resource(self.__class__.__name__, self._file_name)
 
@@ -487,6 +493,7 @@ class Geosoft_gdb:
         self.gxdb.set_xyz_chan(1, y)
         if z:
             self.gxdb.set_xyz_chan(2, z)
+        self.clear_extent()
 
     def _init_xmlmetadata(self):
         if not self._xmlmetadata:
@@ -690,12 +697,13 @@ class Geosoft_gdb:
             raise GdbException(_t('"{}" is not a channel in the database'.format(chan)))
         return exist
 
-    def extent_xyz(self):
-        """ 
-        Return the spatial extent of all selected data in the database.
-        
-        :returns:   (xmin, ymin, zmin, xmax, ymax, zmax)
-        
+    @property
+    def extent(self):
+        """
+        Return the spatial extent of all selected data in the database as a `geosoft.gxpy.geometry.Point2`.
+
+        :returns:   `geosoft.gxpy.geometry.Point2` of minimum, maximum, or None if no spatial information.
+
         .. versionadded:: 9.2
         """
 
@@ -715,13 +723,17 @@ class Geosoft_gdb:
                 _max = mdata
             return _min, _max
 
-        xmin = xmax = ymin = ymax = zmin = zmax = None
         lines = self.lines()
         if len(lines):
+
             xyz = self.xyz_channels
+            if str(xyz) == self._extent['xyz']:
+                return self._extent['extent']
+
+            xmin = xmax = ymin = ymax = zmin = zmax = None
             if None in xyz:
                 if None in xyz[0:2]:
-                    return xmin, ymin, zmin, xmax, ymax, zmax
+                    return None
                 xyz = xyz[0:2]
 
             for l in lines:
@@ -731,7 +743,13 @@ class Geosoft_gdb:
                 if data.shape[1] > 2:
                     zmin, zmax = expand(zmin, zmax, data[:, 2])
 
-        return xmin, ymin, zmin, xmax, ymax, zmax
+            ext = gxgeo.Point2((xmin, ymin, zmin, xmax, ymax, zmax), coordinate_system=self.coordinate_system)
+            self._extent['xyz'] = str(xyz)
+            self._extent['extent'] = ext
+
+            return ext
+
+        return None
 
     def _get(self, s, fn):
         self.lock_read_(s)
@@ -1150,7 +1168,17 @@ class Geosoft_gdb:
             if group:
                 Line(self, symb).group = group
 
+        self.clear_extent()
+
         return symb
+
+    def clear_extent(self):
+        """
+        Clear the extent cache.
+
+        .. versionadded:: 9.3.1
+        """
+        self._extent['xyz'] = None
 
     def delete_channel(self, channels):
         """
@@ -1232,6 +1260,8 @@ class Geosoft_gdb:
                 self._db.select(s, gxapi.DB_LINE_SELECT_INCLUDE)
             else:
                 self._db.select(s, gxapi.DB_LINE_SELECT_EXCLUDE)
+
+        self.clear_extent()
 
     # =====================================================================================
     # reading and writing
@@ -1620,8 +1650,12 @@ class Geosoft_gdb:
         except GdbException:
             if type(channel) is str:
                 cs = self.new_channel(channel, vv.dtype)
+                cn = channel
             else:
                 raise
+
+        if cn in self.xyz_channels:
+            self.clear_extent()
 
         self.lock_write_(cs)
         try:
@@ -1693,6 +1727,9 @@ class Geosoft_gdb:
             cs = self.new_channel(channel, data.dtype, array=_va_width(data))
         else:
             cn, cs = self.channel_name_symb(channel)
+
+        if cn in self.xyz_channels:
+            self.clear_extent()
 
         if not isinstance(data, np.ndarray):
             data = np.array(data)
@@ -1919,7 +1956,7 @@ class Geosoft_gdb:
         kwargs['coordinate_system'] = self.coordinate_system
 
         # work out some non-zero extents
-        ex = self.extent_xyz()
+        ex = self.extent_xyz
         if ex[0] is None or ex[1] is None or ex[3] is None or ex[4] is None:
             raise GdbException(_t('Invalid data extent: {}').format(ex))
 

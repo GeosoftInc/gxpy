@@ -13,6 +13,7 @@ import geosoft.gxpy.vv as gxvv
 import geosoft.gxpy.va as gxva
 import geosoft.gxpy.map as gxmap
 import geosoft.gxpy.metadata as gxmeta
+import geosoft.gxpy.geometry as gxgeo
 
 from base import GXPYTest
 
@@ -435,7 +436,7 @@ class Test(GXPYTest):
                 self.assertEqual(npd.shape, (832,1))
                 self.assertEqual(npd.shape[1], len(ch))
 
-                px = geosoft.gxpy.geometry.Point2(gdb.extent_xyz())
+                px = geosoft.gxpy.geometry.Point2(gdb.extent_xyz)
                 self.assertEqual(str(px), '_point2_[(578625.0, 7773625.0, -5261.5553894043005) (578625.0, 7782875.0, 1062.4999999999964)]')
 
             finally:
@@ -463,8 +464,13 @@ class Test(GXPYTest):
                 dy,_ = gdb.read_channel('D2', 'y')
                 dy [:] = np.nan
                 gdb.write_channel('D2', 'y', dy)
-                px = geosoft.gxpy.geometry.Point2(gdb.extent_xyz())
-                self.assertEqual(str(px), '_point2_[(578625.0, nan, -5261.5553894043005) (578625.0, nan, 1062.4999999999964)]')
+                px = gxgeo.Point2(gdb.extent_xyz)
+                self.assertEqual(str(px),
+                                 '_point2_[(578625.0, nan, -5261.5553894043005) (578625.0, nan, 1062.4999999999964)]')
+                px2 = gdb.extent
+                self.assertEqual(str(px2),
+                                 '_point2_[(578625.0, nan, -5261.5553894043005) (578625.0, nan, 1062.4999999999964)]')
+                self.assertEqual(px.coordinate_system, px2.coordinate_system)
 
             finally:
                 gdb.discard()
@@ -477,7 +483,7 @@ class Test(GXPYTest):
                 dx,_ = gdb.read_channel('D2', 'x')
                 dx [:] = np.nan
                 gdb.write_channel('D2', 'x', dx)
-                px = geosoft.gxpy.geometry.Point2(gdb.extent_xyz())
+                px = geosoft.gxpy.geometry.Point2(gdb.extent_xyz)
                 self.assertEqual(str(px), '_point2_[(nan, 7773625.0, -5261.5553894043005) (nan, 7782875.0, 1062.4999999999964)]')
 
             finally:
@@ -493,7 +499,7 @@ class Test(GXPYTest):
                 dx[1] = 1
                 dx[2] = 2
                 gdb.write_channel('D2', 'x', dx)
-                px = geosoft.gxpy.geometry.Point2(gdb.extent_xyz())
+                px = geosoft.gxpy.geometry.Point2(gdb.extent_xyz)
                 self.assertEqual(str(px),
                                  '_point2_[(1.0, 7773625.0, -5261.5553894043005) (2.0, 7782875.0, 1062.4999999999964)]')
 
