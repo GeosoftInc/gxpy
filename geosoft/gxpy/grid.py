@@ -1002,17 +1002,48 @@ class Grid(gxgm.Geometry):
         xy2 = (xy1[0] + height * self._sin_rot, xy1[1] + height * self._cos_rot)
         xy3 = (self.x0 + height * self._sin_rot, self.y0 + height * self._cos_rot)
 
-        min_x = min(xy0[0], xy1[0], xy2[0], xy3[0])
-        min_y = min(xy0[1], xy1[1], xy2[1], xy3[1])
-        max_x = max(xy0[0], xy1[0], xy2[0], xy3[0])
-        max_y = max(xy0[1], xy1[1], xy2[1], xy3[1])
-        return min_x, min_y, max_x, max_y
+        return min(xy0[0], xy1[0], xy2[0], xy3[0]), \
+               min(xy0[1], xy1[1], xy2[1], xy3[1]), \
+               max(xy0[0], xy1[0], xy2[0], xy3[0]), \
+               max(xy0[1], xy1[1], xy2[1], xy3[1])
+
+    def extent_cell_2d(self):
+        """
+        Return the 2D cell extent of the grid on the grid plane
+        :returns:(min_x, min_y, max_x, max_y)
+
+        .. versionadded:: 9.3.1
+        """
+
+        def rotate(x, y):
+            x -= self.x0
+            y -= self.y0
+            _x = x * self._cos_rot + y * self._sin_rot
+            _y = -x * self._sin_rot + y * self._cos_rot
+            return _x + self.x0, _y + self.y0
+
+        x0 = self.x0 - self.dx / 2.
+        x1 = x0 + self.nx * self.dx
+        y0 = self.y0 - self.dy / 2.
+        y1 = y0 + self.ny * self.dy
+        if self.rot != 0.:
+            xy0 = rotate(x0, y0)
+            xy1 = rotate(x1, y0)
+            xy2 = rotate(x1, y1)
+            xy3 = rotate(x0, y1)
+            min_x = min(xy0[0], xy1[0], xy2[0], xy3[0])
+            min_y = min(xy0[1], xy1[1], xy2[1], xy3[1])
+            max_x = max(xy0[0], xy1[0], xy2[0], xy3[0])
+            max_y = max(xy0[1], xy1[1], xy2[1], xy3[1])
+            return min_x, min_y, max_x, max_y
+        else:
+            return x0, y0, x1, y1
 
     def extent_3d(self):
         """
         Return the 3D extent of the grid in the base coordinate system.
-        
-        :returns: ((min_x, min_y, min_z), (max_x, max_y, max_z))
+
+        :returns: (min_x, min_y, min_z, max_x, max_y, max_z)
 
         .. versionadded:: 9.2
         """
@@ -1032,14 +1063,38 @@ class Grid(gxgm.Geometry):
         max_z = max(xyz0[2], xyz1[2], xyz2[2], xyz3[2])
         return min_x, min_y, min_z, max_x, max_y, max_z
 
-    @property
-    def extent(self):
+    def extent_cell_3d(self):
         """
-        Grid extent as `geosoft.gxpy.geometry.Point2`
+        Return the 3D cell extent of the grid in the base coordinate system.
+
+        :returns: (min_x, min_y, min_z, max_x, max_y, max_z)
 
         .. versionadded:: 9.3.1
         """
-        return gxgm.Point2((self.extent_3d()), coordinate_system=self.coordinate_system)
+
+        ex2d = self.extent_cell_2d()
+        cs = self.coordinate_system
+        xyz0 = cs.xyz_from_oriented((ex2d[0], ex2d[1], 0.0))
+        xyz1 = cs.xyz_from_oriented((ex2d[2], ex2d[1], 0.0))
+        xyz2 = cs.xyz_from_oriented((ex2d[2], ex2d[3], 0.0))
+        xyz3 = cs.xyz_from_oriented((ex2d[0], ex2d[3], 0.0))
+
+        min_x = min(xyz0[0], xyz1[0], xyz2[0], xyz3[0])
+        min_y = min(xyz0[1], xyz1[1], xyz2[1], xyz3[1])
+        min_z = min(xyz0[2], xyz1[2], xyz2[2], xyz3[2])
+        max_x = max(xyz0[0], xyz1[0], xyz2[0], xyz3[0])
+        max_y = max(xyz0[1], xyz1[1], xyz2[1], xyz3[1])
+        max_z = max(xyz0[2], xyz1[2], xyz2[2], xyz3[2])
+        return min_x, min_y, min_z, max_x, max_y, max_z
+
+    @property
+    def extent(self):
+        """
+        Grid cell extent as `geosoft.gxpy.geometry.Point2`.
+
+        .. versionadded:: 9.3.1
+        """
+        return gxgm.Point2((self.extent_cell_3d()), coordinate_system=self.coordinate_system)
 
     def np(self):
         """

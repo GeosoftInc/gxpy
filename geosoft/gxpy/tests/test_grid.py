@@ -8,6 +8,8 @@ import geosoft.gxpy.system as gsys
 import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.grid as gxgrd
 import geosoft.gxpy.map as gxmap
+import geosoft.gxpy.geometry as gxgm
+import geosoft.gxpy.geometry as gxgm
 
 from base import GXPYTest
 
@@ -508,6 +510,40 @@ class Test(GXPYTest):
                 self.assertAlmostEqual(ex[3], 11.830127018922193)
                 self.assertAlmostEqual(ex[4], 0)
                 self.assertAlmostEqual(ex[5], 5)
+
+    def test_extent_cell(self):
+        self.start()
+
+        with gxgrd.Grid.open(self.g1f) as g:
+            with gxgrd.Grid.copy(g, os.path.join(self.folder, 'test_extent.grd(GRD)')) as grd:
+                grd.delete_files()
+                grd.x0 = grd.y0 = 0.0
+                grd.dx = 0.1
+                grd.dy = 0.2
+                grd.rot = 0.0
+
+                ex = grd.extent_cell_2d()
+                self.assertAlmostEqual(ex[0], -0.05)
+                self.assertAlmostEqual(ex[1], -0.1)
+                self.assertAlmostEqual(ex[2], 10.05)
+                self.assertAlmostEqual(ex[3], 20.1)
+
+                ex = grd.extent_cell_3d()
+                self.assertEqual(ex, (-0.05, -0.1, 0.0, 10.05, 20.1, 0.0))
+
+                grd.rot = 30.0
+                ex = grd.extent_cell_2d()
+                self.assertEqual(ex, (-0.09330127018922194, -5.111602540378444,
+                                      18.753555308033608, 17.432110616067217))
+
+                cs = grd.coordinate_system
+                cs_name = cs.cs_name(gxcs.NAME_HCS_VCS) + ' <0,0,0,90,0,30>'
+                grd.coordinate_system = gxcs.Coordinate_system(cs_name)
+                ex = grd.extent_cell_3d()
+                self.assertEqual(ex, (-0.08080127018922209, -9.376777654016802, -17.432110616067217,
+                                      16.24105530803361, 0.046650635094611884, 5.111602540378444))
+
+                self.assertTrue(grd.extent == gxgm.Point2(ex))
 
     def test_read(self):
         self.start()

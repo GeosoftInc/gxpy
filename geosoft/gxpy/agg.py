@@ -443,8 +443,10 @@ class Aggregate_image(gxgm.Geometry):
         :param image_file:  image file name. The extension should be consistent with the image_type.
                             If not specified a temporary PNG file is created.
         :param image_type:  image type, one ot the RASTER_FORMAT constants in `geosoft.gxpy.map`.
-        :param pix_width:   desired image pixel width, default is the width of the aggregate base layer
+        :param pix_width:   desired image width in pixels, default is the width of the aggregate base layer
         :return:            image file name.
+
+        .. versionadded:: 9.3.1
         """
 
         if self.layer_count == 0:
