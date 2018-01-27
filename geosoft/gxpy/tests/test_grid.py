@@ -673,7 +673,7 @@ class Test(GXPYTest):
         self.start()
 
         map_file = gxgrd.figure_map(self.g1f, title='image_test', features='all').file_name
-        self.assertEqual(gxmap.Map.open(map_file).crc_image(pix_width=800), 3053728635)
+        self.assertEqual(gxmap.Map.open(map_file).crc_image(pix_width=800), 2252249278)
 
     def test_np(self):
         self.start()

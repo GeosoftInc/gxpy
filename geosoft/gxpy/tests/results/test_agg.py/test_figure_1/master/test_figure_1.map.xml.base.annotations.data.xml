@@ -124,7 +124,7 @@
    </Item>
    <Item type="Text" size="30">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="109.8533906"/>
+         <Value name="X" value="109.7910471"/>
          <Value name="Y" value="20"/>
       </Item>
       <Item name="UTF-8 Text" value="image test"/>

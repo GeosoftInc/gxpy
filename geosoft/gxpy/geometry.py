@@ -284,7 +284,7 @@ class Point(Geometry, Sequence):
 
     :param coordinate_system:   coordinate system or None
     :param z:                   implied z if len(p) is 2.
-    :param **kwargs:            passed to base class `Geometry`
+    :param kwargs:              passed to base class `Geometry`
 
     .. versionadded:: 9.2
 
@@ -473,7 +473,7 @@ class Point2(Geometry, Sequence):
                 (x0, y0, z0, x1, y1, z1)
 
     :param coordinate_system:   coordinate system or None
-    :param **kwargs:            passed to base class `Geometry`
+    :param kwargs:              passed to base class `Geometry`
 
     .. versionadded:: 9.2
 
@@ -651,7 +651,7 @@ class PPoint(Geometry, Sequence):
 
     :param coordinate_system:   coordinate system or None
     :param z:                   constant z value for (x, y) data, ignored for (x, y, z) data
-    :param **kwargs:            passed to base class `Geometry`
+    :param kwargs:              passed to base class `Geometry`
 
     .. versionadded:: 9.2
 
@@ -875,7 +875,7 @@ class Mesh(Geometry, Sequence):
     :param mesh:                (faces, verticies) that define a trangulated mesh surface. See below.
     :param coordinate_system:   coordinate system or None
     :param name:                name for the mesh, defaule is '_mesh_'
-    :param **kwargs:            passed to base class `Geometry`
+    :param kwargs:              passed to base class `Geometry`
 
     A mesh is a set of triangles, where each triangle has three indexes into a set of verticies.
     Verticies are defined as by a set of (x, y, z) locations. Meshes can be represented either

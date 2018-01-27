@@ -834,7 +834,7 @@ class Surface(gxspd.SpatialData, Sequence):
         Add a vv mesh to a new surface.
 
         :param mesh:        mesh as ((f1vv, f2vv, f3vv), (xvv, yvv, zvv))
-        :param render_ properties:  (color, opacity, style), where colour is a `geosoft.gxpy.group.Color`
+        :param render_properties:  (color, opacity, style), where colour is a `geosoft.gxpy.group.Color`
                             instance or a 32-bit Geosoft color integer, opacity is a value between
                             0. (invisible) and 1. (opaque), and style is STYLE_FLAT, STYLE_SMOOTH or
                             STYLE_EDGE.

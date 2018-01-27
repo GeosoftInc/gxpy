@@ -409,7 +409,7 @@ class Aggregate_image(gxgm.Geometry):
             kwargs['margins'] = (1, right_margin, bottom_margin, 1)
         kwargs['coordinate_system'] = ref_grid.coordinate_system
 
-        gmap = gxmap.Map.figure(ref_grid.extent_2d(),
+        gmap = gxmap.Map.figure(ref_grid.extent_xy,
                                 file_name=file_name,
                                 features=features,
                                 title=title,
