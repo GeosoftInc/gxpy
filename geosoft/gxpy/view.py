@@ -34,6 +34,7 @@ from . import coordinate_system as gxcs
 from . import utility as gxu
 from . import map as gxmap
 from . import metadata as gxmeta
+from . import geometry as gxgeo
 
 
 __version__ = geosoft.__version__
@@ -98,7 +99,7 @@ EXTENT_VISIBLE = gxapi.MVIEW_EXTENT_VISIBLE #:
 EXTENT_CLIPPED = gxapi.MVIEW_EXTENT_CLIP #:
 
 
-class View:
+class View(gxgeo.Geometry):
     """
     Geosoft view class.
 
@@ -144,10 +145,13 @@ class View:
                  map_location=(0, 0),
                  area=(0, 0, 30, 20),
                  scale=100,
-                 copy=None):
+                 copy=None,
+                 **kwargs):
 
         if not isinstance(map, geosoft.gxpy.map.Map):
             raise ViewException(_t('First argument must be a map.'))
+
+        super().__init__(**kwargs)
 
         self._gx = gx.GXpy()
         self._map = map
@@ -159,6 +163,7 @@ class View:
         self._lock = None
         self._open = True
         self._cs = None
+        self._clip_mode = False
 
         if mode == WRITE_NEW:
             self.locate(coordinate_system, map_location, area, scale)
@@ -259,6 +264,20 @@ class View:
             self._lock = group
         else:
             self._lock = None
+
+    @property
+    def clip(self):
+        """
+        Current view clip mode for groups, applies to groups following in this stream. Can be set.
+
+        .. versionadded:: 9.3.1
+        """
+        return self._clip_mode
+
+    @clip.setter
+    def clip(self, mode):
+        self._clip_mode = bool(mode)
+        self.gxview.group_clip_mode(int(mode))
 
     @property
     def metadata(self):
@@ -547,6 +566,15 @@ class View:
         return xmin.value, ymin.value, xmax.value, ymax.value
 
     @property
+    def extent(self):
+        """
+        View clip extent as a `geosoft.gxpy.geometry.Point2`.
+
+        .. versionadded:: 9.3.1
+        """
+        return gxgeo.Point2(self.extent_clip, self.coordinate_system)
+
+    @property
     def extent_clip(self):
         """clip extent of the view as (x_min, y_min, x_max, y_max)"""
         return self._extent(gxapi.MVIEW_EXTENT_CLIP)
@@ -805,6 +833,18 @@ class View_3d(View):
                 self.map.close()
         if hasattr(self, '_close'):
             self._close()
+
+    @property
+    def extent(self):
+        """
+        NOTE: Currently returns the 2d extend of things drawn in 2d on plane 0.
+
+        TODO: detemine the extents of a 3d view.
+
+        .. versionassed:: 9.3.1
+        """
+        return super(View, self).extent
+
 
     @property
     def file_name(self):

@@ -1389,8 +1389,8 @@ def jupyter_markdown_toc(j_file, numbered=True, start_level=1, max_depth=1, pref
 
     .. code::
 
-        import geosoft.gxpy.utility
-        print geosoft.gxpy.utility.jupyter_toc('my_notebook_name')
+        import geosoft.gxpy.utility as gxu
+        print (gxu.jupyter_markdown_toc('my_notebook_name'))
 
     .. versionadded:: 9.3.1
     """

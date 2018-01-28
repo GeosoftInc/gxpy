@@ -679,10 +679,6 @@ class Test(GXPYTest):
         map_file = gxgrd.figure_map(self.g1f, title='image_test', features='all').file_name
         self.assertEqual(gxmap.Map.open(map_file).crc_image(pix_width=800), 2252249278)
 
-        with gxgrd.Grid.open(self.g1f) as g:
-            map_file = g.figure_map(title='image_test', features='all').file_name
-            self.assertEqual(gxmap.Map.open(map_file).crc_image(pix_width=800), 1260339594)
-
     def test_np(self):
         self.start()
 
@@ -754,9 +750,8 @@ class Test(GXPYTest):
                 self.assertEqual(g.coordinate_system, gi.coordinate_system)
                 self.assertEqual(800, gi.nx)
                 self.assertEqual(800, gi.ny)
-                self.assertAlmostEqual(6.9767394375, gi.x0)
-                self.assertAlmostEqual(43.47193943750002, gi.y0)
-
+                self.assertAlmostEqual(6.994032176517, gi.x0)
+                self.assertAlmostEqual(43.494032176517, gi.y0)
 
 ###############################################################################################
 

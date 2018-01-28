@@ -2352,7 +2352,7 @@ class Aggregate_group(Group):
         super().__init__(view, group_name, mode=mode)
 
     @classmethod
-    def new(cls, view, agg, name=None, mode=REPLACE):
+    def new(cls, view, agg, name=None, mode=REPLACE, clip=True):
         """
         Create a new aggregate group in a view.
 
@@ -2360,15 +2360,20 @@ class Aggregate_group(Group):
         :param agg:     `geosoft.gxpy.agg.Aggregate` instance.
         :param name:    group name, default is the aggregate name
         :param mode:    REPLACE (default) or NEW, which creates a unique name if the group exists
+        :param clip:    True to clip the agregare to the view clip limits
 
         .. versionadded:: 9.2
+
+        .. versionchanged:: 9.3.1 added clip mode
         """
 
         if name is None:
             name = agg.name
         agg_group = cls(view, name, mode=mode)
         agg_group.agg = agg
+        view.clip = clip
         view.gxview.aggregate(agg.gxagg, agg_group.name)
+        view.clip = False
         return agg_group
 
     @classmethod

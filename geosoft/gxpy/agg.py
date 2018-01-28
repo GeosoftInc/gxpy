@@ -30,6 +30,7 @@ from . import view as gxview
 from . import group as gxgroup
 from . import geometry as gxgm
 from . import utility as gxu
+from . import coordinate_system as gxcs
 
 __version__ = geosoft.__version__
 
@@ -436,7 +437,7 @@ class Aggregate_image(gxgm.Geometry):
 
         return gmap
 
-    def image_file(self, image_file=None, image_type=gxmap.RASTER_FORMAT_PNG, pix_width=None):
+    def image_file(self, image_file=None, image_type=gxmap.RASTER_FORMAT_PNG, pix_width=None, display_area=None):
         """
         Save the aggregate as a georeferenced image file.
 
@@ -444,6 +445,9 @@ class Aggregate_image(gxgm.Geometry):
                             If not specified a temporary PNG file is created.
         :param image_type:  image type, one ot the RASTER_FORMAT constants in `geosoft.gxpy.map`.
         :param pix_width:   desired image width in pixels, default is the width of the aggregate base layer
+        :param display_area:    `geosoft.gxpy.geometry.Point2` instance, which defines the desired display
+                                area. The display area coordinate system can be different from the grid.
+
         :return:            image file name.
 
         .. versionadded:: 9.3.1
@@ -451,6 +455,11 @@ class Aggregate_image(gxgm.Geometry):
 
         if self.layer_count == 0:
             raise AggregateException(_t('Aggregate has no layers'))
+
+        if display_area is None:
+            display_area = self.extent
+        if not gxcs.is_known(display_area.coordinate_system):
+            display_area.coordinate_system = self.coordinate_system
 
         if image_file is None:
             image_file = gx.gx().temp_file('.png')
@@ -464,8 +473,8 @@ class Aggregate_image(gxgm.Geometry):
         map_file = gx.gx().temp_file('.map')
         try:
             with gxmap.Map.new(map_file,
-                               data_area=self.extent_xy,
-                               coordinate_system=self.coordinate_system,
+                               data_area=display_area.extent_xy,
+                               coordinate_system=display_area.coordinate_system,
                                margins=(0, 0, 0, 0),
                                inside_margin=0) as gmap:
 
