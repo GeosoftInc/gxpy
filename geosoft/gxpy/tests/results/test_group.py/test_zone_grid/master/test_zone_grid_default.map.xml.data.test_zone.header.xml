@@ -10,7 +10,7 @@
    <Item name="Meta" value="False"/>
    <Item name="FlagMeta" value="False"/>
    <Item name="Hidden" value="False"/>
-   <Item name="Clipped" value="False"/>
+   <Item name="Clipped" value="True"/>
    <Item name="Moveable" value="False"/>
    <Item name="MinZ" value="GS_R8DM"/>
    <Item name="MaxZ" value="GS_R8DM"/>

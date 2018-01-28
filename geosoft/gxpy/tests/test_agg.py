@@ -6,6 +6,7 @@ import geosoft.gxpy.agg as gxagg
 import geosoft.gxpy.grid as gxgrid
 import geosoft.gxpy.utility as gxu
 import geosoft.gxpy.map as gxmap
+import geosoft.gxpy.geometry as gxgm
 import geosoft
 
 from base import GXPYTest
@@ -120,6 +121,42 @@ class Test(GXPYTest):
                     self.assertAlmostEqual(g.rot, rot)
         finally:
             gxu.delete_file(image_file)
+
+        try:
+            with gxagg.Aggregate_image.new(self.g3f, shade=True, color_map='elevation.tbl', contour=20) as agg:
+
+                display_area = gxgm.Point2(((336000, 6160000, 0.0),(338000, 6161500, 0.0)))
+
+                image_file = agg.image_file(image_type=gxmap.RASTER_FORMAT_PNG,
+                                            pix_width=800, display_area=display_area)
+
+                with gxgrid.Grid.open(image_file + '(IMG,t=png)') as g:
+                    self.assertEqual(g.coordinate_system, agg.coordinate_system)
+                    self.assertEqual(g.nx, 800)
+                    self.assertEqual(g.ny, 600)
+                    self.assertEqual(g.extent_xy, display_area.extent_xy)
+                    self.assertEqual(g.extent_minimum_xy, display_area.extent_minimum_xy)
+                    self.assertEqual(g.extent_maximum_xy, display_area.extent_maximum_xy)
+
+        finally:
+            gxu.delete_file(image_file)
+
+        try:
+            with gxagg.Aggregate_image.new(self.g3f, shade=True, color_map='elevation.tbl', contour=20) as agg:
+
+                display_area = gxgm.Point2(agg.extent, coordinate_system='AGD66 / AMG zone 53')
+
+                image_file = agg.image_file(image_type=gxmap.RASTER_FORMAT_PNG,
+                                            pix_width=800, display_area=display_area)
+
+                with gxgrid.Grid.open(image_file + '(IMG,t=png)') as g:
+                    self.assertEqual(g.coordinate_system, display_area.coordinate_system)
+                    self.assertEqual(g.nx, 800)
+                    self.assertEqual(g.ny, 602)
+
+        finally:
+            gxu.delete_file(image_file)
+
 
 if __name__ == '__main__':
 

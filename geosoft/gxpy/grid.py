@@ -1211,42 +1211,8 @@ class Grid(gxgm.Geometry):
 
         return ggx, ggy, ggz
 
-    def figure_map(self, map_file=None, shade=True, color_map=None, contour=None, **kwargs):
-        """
-        Create a map figure from a grid file.
-
-        :param map_file:    name of the map file, if `None` a default map is created.
-        :param shade:       `True` to add shading effect
-        :param color_map:   `geosoft.gxpy.group.Color_map` instance, or a colour ramp file name, default is user's default
-        :param contour:     colour contour interval if colours need to break at exact levels
-        :param kwargs:      passed to  `geosoft.gxpy.agg.Aggregate_image.figure_map` and `geosoft.gxpy.map.Map.new`
-        :return:            `geosoft.gxpy.map.Map` instance
-
-        .. seealso:: `geosoft.gxpy.grid.figure_map`, which creates an figure map directly from a grid file.
-
-        .. Note:: This method saves the grid as a temporary file from which the figure map is created.
-            If the grid already exists as a grid file it is more efficient to call `geosoft.gxpy.grid.figure_map`.
-
-        .. versionadded:: 9.3.1
-        """
-
-        temp_grid = gx.gx().temp_file('grd')
-        try:
-            with Grid.copy(self, temp_grid) as g:
-                temp_decorated = g.file_name_decorated
-            fig_map = figure_map(temp_decorated,
-                                 map_file=map_file,
-                                 shade=shade,
-                                 color_map=color_map,
-                                 contour=contour,
-                                 **kwargs)
-        finally:
-            delete_files(temp_grid)
-
-        return fig_map
-
     def image_file(self, image_file_name=None, image_type=gxmap.RASTER_FORMAT_PNG, pix_width=None,
-                   shade=True, color_map=None, contour=None, ):
+                   shade=False, color_map=None, contour=None, display_area=None):
         """
         Save as a georeferenced image file.
 
@@ -1258,6 +1224,8 @@ class Grid(gxgm.Geometry):
         :param color_map:   `geosoft.gxpy.group.Color_map` instance, or a colour ramp file name,
                             default is user's default
         :param contour:     colour contour interval if colours need to break at exact levels
+        :param display_area:    `geosoft.gxpy.geometry.Point2` instance, which defines the desired display
+                                area. The display area coordinate system can be different from the grid.
         :return:            image file name.
 
         .. seealso:: `geosoft.gxpy.grid.image_file`, which creates an image directly from a grid file.
@@ -1279,7 +1247,8 @@ class Grid(gxgm.Geometry):
                                    pix_width=pix_width,
                                    shade=shade,
                                    color_map=color_map,
-                                   contour=contour)
+                                   contour=contour,
+                                   display_area=display_area)
         finally:
             delete_files(temp_grid)
 
@@ -1499,7 +1468,7 @@ def figure_map(grid_file, map_file=None, shade=True, color_map=None, contour=Non
 
 
 def image_file(grid_file, image_file=None, image_type=gxmap.RASTER_FORMAT_PNG, pix_width=None,
-                  shade=True, color_map=None, contour=None,):
+                  shade=True, color_map=None, contour=None, display_area=None):
     """
     Save a grid file grid as a georeferenced image file.
 
@@ -1511,10 +1480,12 @@ def image_file(grid_file, image_file=None, image_type=gxmap.RASTER_FORMAT_PNG, p
     :param shade:       `True` to add shading effect
     :param color_map:   `geosoft.gxpy.group.Color_map` instance, or a colour ramp file name, default is user's default
     :param contour:     colour contour interval if colours need to break at exact levels
+    :param display_area:    `geosoft.gxpy.geometry.Point2` instance, which defines the desired display
+                            area. The display area coordinate system can be different from the grid.
     :return:            image file name.
 
     .. versionadded:: 9.3.1
     """
 
     with gxagg.Aggregate_image.new(grid_file, shade=shade, color_map=color_map, contour=contour) as agg:
-        return agg.image_file(image_file, image_type=image_type, pix_width=pix_width)
+        return agg.image_file(image_file, image_type=image_type, pix_width=pix_width, display_area=display_area)
