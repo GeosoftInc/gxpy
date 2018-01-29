@@ -1,11 +1,16 @@
 """
 Geosoft spatial data base class.
 
+Spatial datasets are collections of geometric objects that have associated data, typically persisting in
+a named file. Examples are Geosoft databases, grids, voxels, geosoft_surfaces.
+
+
+
 :Classes:
 
-    ============= =======================================================
-    `SpatialData` Geosoft spatial data base class
-    ============= =======================================================
+    ============= ===================================================================================
+    `SpatialData` base class for Geosoft spatial data, inherits from `geosoft.gxpy.geometry.Geometry`
+    ============= ===================================================================================
 
 """
 import os
@@ -66,17 +71,16 @@ class SpatialData(gxgm.Geometry):
     :param mode:        file mode, MODE_READ, MODE_READWRITE or MODE_NEW.  The default is MODE_NEW.
     :param overwrite:   Default is False. If True will raise an error if MODE_NEW and file_name exists.
     :param gxobj:       Base GXAPI spatial dataset object, default is None.  If passed the base object is used
-                        to resolve common named methods like get_ipj().
+                        to resolve common named methods like *`get_ipj()`*.
 
     :Properties:
     
-        properties of `geosoft.gxpy.Geometry` plus:
+        properties of `geosoft.gxpy.geometry.Geometry` plus:
 
         ================== =============================================================
-        name               dataset name
-        file_name          file name
-        metadata           metadata dictionary
-        unit_of_measure    primary data unit of measurement
+        `file_name`        file name
+        `metadata`         metadata dictionary
+        `unit_of_measure`  primary data unit of measurement
         ================== =============================================================
 
     .. versionadded:: 9.3.1
@@ -168,8 +172,8 @@ class SpatialData(gxgm.Geometry):
         Return the dataset metadata as a dictionary.  Can be set, in which case
         the dictionary items passed will be added to, or replace existing metadata.
 
-        .. seealso::
-            `Geosoft metadata schema <https://geosoftgxdev.atlassian.net/wiki/spaces/GXD93/pages/78184638/Geosoft+Metadata+Schema>`
+        .. seealso:: Geosoft metadata
+            `Schema <https://geosoftgxdev.atlassian.net/wiki/spaces/GXD93/pages/78184638/Geosoft+Metadata+Schema>`
 
         .. versionadded:: 9.3.1
         """

@@ -140,9 +140,10 @@ class Vox(gxspd.SpatialData, Sequence):
         :meth:`new`             create a new vox dataset
         ======================= ============================================
 
-    A vox instance supports iteration that yields (x, y, z, vox_value) by points along horizontal
+    A vox instance supports iteration that yields (x, y, z, vox_value) by cell-centered points along horizontal
     rows, then columns, then depth slices starting at minimum z.
-    For example, the following prints the x, y, z, vox_value of every non-dummy point in a vox:
+
+    For example, the following prints the x, y, z, vox_value of every non-dummy cell in a vox:
 
     .. code::
 
@@ -321,9 +322,7 @@ class Vox(gxspd.SpatialData, Sequence):
         :param temp:        True to create a temporary vox which will be removed after use
         :param overwrite:   True to overwrite existing persistent vox
         :param dtype:       data type, default is the same as data, or np.float64 of no data.
-        :param origin:      (x0, y0, z0) location of the origin vox point. Note that this is not the corner
-                            of a cell. This is the center of the first cell for a uniform cell size, or the
-                            reference position of the first vox cell accounting for variable cell sizes.
+        :param origin:      (x0, y0, z0) location of the **center** of the origin voxel cell.
         :param cell_size:   uniform cell size, or (dx, dy, dz) cell sizes in the x, y and z directions. The
                             default is (1., 1., 1.). For variable cell size on a dimension, provide an array
                             of the cell sizes along that dimension. The array length must match the data dimension
@@ -460,68 +459,68 @@ class Vox(gxspd.SpatialData, Sequence):
 
     @property
     def nx(self):
-        """ number of points in vox X direction"""
+        """ number of cells in vox X direction"""
         return self._dim[0]
 
     @property
     def ny(self):
-        """ number of points in vox Y direction"""
+        """ number of cells in vox Y direction"""
         return self._dim[1]
 
     @property
     def nz(self):
-        """ number of points in vox Z direction"""
+        """ number of cells in vox Z direction"""
         return self._dim[2]
 
     @property
     def dx(self):
-        """constant X point separation, None if not constant, in which case use `cells_x`"""
+        """constant X cell size, None if not constant, in which case use `cells_x`"""
         if self._uniform_cell_size[0] == gxapi.rDUMMY:
             return None
         return self._uniform_cell_size[0]
 
     @property
     def dy(self):
-        """constant Y point separation, None if not constant, in which case use `cells_y`"""
+        """constant Y cell size, None if not constant, in which case use `cells_y`"""
         if self._uniform_cell_size[1] == gxapi.rDUMMY:
             return None
         return self._uniform_cell_size[1]
 
     @property
     def dz(self):
-        """constant Z point separation, None if not constant, in which case use `cells_z`"""
+        """constant Z cell size, None if not constant, in which case use `cells_z`"""
         if self._uniform_cell_size[2] == gxapi.rDUMMY:
             return None
         return self._uniform_cell_size[2]
 
     @property
     def origin_x(self):
-        """X location of the vox origin."""
+        """X location of the center of the vox origin cell."""
         return self._origin[0]
 
     @property
     def origin_y(self):
-        """Y location of the vox origin."""
+        """Y location of the center of the vox origin cell."""
         return self._origin[1]
 
     @property
     def origin_z(self):
-        """Z location of the vox origin."""
+        """Z location of the center of the vox origin cell, top for depth=True, bottom for depth=False"""
         return self.locations_z[0]
 
     @property
     def uniform_dx(self):
-        """True if X point separation is constant"""
+        """True if X cell sizes are constant"""
         return self.dx is not None
 
     @property
     def uniform_dy(self):
-        """True if Y point separation is constant"""
+        """True if Y cell sizes are constant"""
         return self.dy is not None
 
     @property
     def uniform_dz(self):
-        """True if Z point separation is constant"""
+        """True if Z cell sizes are constant"""
         return self.dz is not None
 
     @property
@@ -536,7 +535,8 @@ class Vox(gxspd.SpatialData, Sequence):
         self.gxvox.get_area(rx0, ry0, rz0, rx1, ry1, rz1)
         if self.is_depth:
             return gxgm.Point2(((rx0.value, ry0.value, -rz1.value), (rx1.value, ry1.value, -rz0.value)))
-        return gxgm.Point2(((rx0.value, ry0.value, rz0.value), (rx1.value, ry1.value, rz1.value)))
+        return gxgm.Point2(((rx0.value, ry0.value, rz0.value), (rx1.value, ry1.value, rz1.value)),
+                           self.coordinate_system)
 
     def _setup_locations(self):
         xvv = gxvv.GXvv()
@@ -558,17 +558,17 @@ class Vox(gxspd.SpatialData, Sequence):
 
     @property
     def locations_x(self):
-        """Return array of X locations"""
+        """Return array of X cell-center locations"""
         return self._locations[0]
 
     @property
     def locations_y(self):
-        """Return array of Y locations"""
+        """Return array of Y cell-center locations"""
         return self._locations[1]
 
     @property
     def locations_z(self):
-        """Return array of Z locations"""
+        """Return array of Z cell-center locations"""
         if self.is_depth:
             return [-z for z in reversed(self._locations[2])]
         return self._locations[2]
@@ -595,7 +595,7 @@ class Vox(gxspd.SpatialData, Sequence):
         """
         `geosoft.gxapi.GXPG` instance (3D) for this vox.
 
-        The GXPG will always index z from minimum elevation (bootom of the vox).
+        The GXPG will always index z from minimum elevation (bottom of the vox).
 
         .. versionadded:: 9.3.1
         """
@@ -637,7 +637,7 @@ class Vox(gxspd.SpatialData, Sequence):
 
     def xyz(self, ix, iy, iz):
         """
-        Return the spatial location of a point in the vox.
+        Return the spatial location of a the center of a cell in the vox.
         Raises error if our of range of the data
 
         :param ix:  x index
@@ -655,11 +655,11 @@ class Vox(gxspd.SpatialData, Sequence):
         Voxcet value at a location.
 
         :param xyz:         tuple (x, y, z) location in the vox coordinate system
-        :param interpolate: method by which to interpolate between points:
+        :param interpolate: method by which to interpolate between cell centers:
 
                             INTERP_NEAREST - same as value inside a cell.
 
-                            INTERP_LINEAR - linear interpolation between neighboring points.
+                            INTERP_LINEAR - linear interpolation between neighboring cell centers.
 
                             INTERP_SMOOTH - smooth interpolation (slower than INTERP_LINEAR).
 
@@ -680,8 +680,8 @@ class Vox(gxspd.SpatialData, Sequence):
         Return vox subset in a 3D numpy array.
 
         :param subset:  define a subset ((start_x, start_y, start_z),(nx, ny, nz)). If not specified
-                        a numpy array of the entire voxset is returned. Missing items are calculated from the vox,
-                        and negative indexes in start indicate a value from the last point.
+                        a numpy array of the entire vox is returned. Missing items are calculated from the vox,
+                        and negative indexes in start indicate a value from the last cell.
 
                         start=(None, None) equivalent: start=((0, 0, 0), (nx, ny, nz))
 

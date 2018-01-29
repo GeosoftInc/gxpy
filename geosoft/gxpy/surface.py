@@ -1,12 +1,11 @@
 """
-Geosoft surface dataset.  A surface dataset contains one or more 3D surfaces, each defined by a mesh
-of triangular facets.
+Geosoft surfaces
 
 :Classes:
 
     ================ ====================================================================
     `SurfaceDataset` Geosoft_surface dataset, contains zero or more `Surface` instances
-    `Surface`        Surfaces, which are a set of triangles
+    `Surface`        Surfaces defined by one or more `geosoft.geometry.Mesh` instances
     ================ ====================================================================
 
 .. seealso:: `geosoft.gxpy.spatialdata`, `geosoft.gxapi.GXSURFACE`, `geosoft.gxapi.GXSURFACEITEM`
@@ -84,9 +83,11 @@ STYLE_EDGE = gxapi.SURFACERENDER_EDGES  #:
 
 class SurfaceDataset(gxspd.SpatialData, Sequence):
     """
-    Surface dataset class.
+    Surface dataset, which contains one or more `Surface` instances.
 
-    A Surface dataset is stored in a .geosoft_surface file and contains one or more `Surface` instances.
+    A Surface dataset is stored in a .geosoft_surface file.
+
+    Iterating yields `Surface` instances.
 
     :Constructors:
 
@@ -471,7 +472,7 @@ class SurfaceDataset(gxspd.SpatialData, Sequence):
 
 class Surface(gxspd.SpatialData, Sequence):
     """
-    A single surface, which contains a set of meshes
+    A single surface, which contains one or more `geosoft.gxpy.geometry.Mesh` instances.
 
     :param surface:             surface name or a `geosoft.gxapi.GXSURFACEITEM` instance.
     :param surface_type:        surface type as a descriptive name, such as "ISOSURFACE"
@@ -480,6 +481,8 @@ class Surface(gxspd.SpatialData, Sequence):
     :param coordinate_system:   mesh coordinate system, which will become the surface coordinate system.
     :param render_properties:   (color, opacity, style), default is
                                 (`geosoft.gxpy.group.C_GREY`, 1.0, `STYLE_FLAT`)
+
+    Iterating yields component `geosoft.gxpy.geometry.Mesh` instances.
 
     .. versionadded:: 9.3.1
     """
@@ -598,15 +601,13 @@ class Surface(gxspd.SpatialData, Sequence):
     @property
     def extent(self):
         """
-        Return the surface extent as a (min_point, max_point), pair of `geosoft.gxpy.geometry.Point`
-
-        :return: (min_point, max_point), pair of `geosoft.gxpy.geometry.Point`
+        Return the surface extent as a `geosoft.gxpy.geometry.Point2` instance.
 
         .. versionadded:: 9.3.1
         """
         pmin = gxgm.Point((self._extent[0], self._extent[1], self._extent[2]))
         pmax = gxgm.Point((self._extent[3], self._extent[4], self._extent[5]))
-        return pmin, pmax
+        return gxgm.Point2((pmin, pmax), self.coordinate_system)
 
 
     def properties(self, refresh=False):
@@ -880,13 +881,13 @@ def render(view, surface, group_name=None, overwrite=False):
     Render a surface, surface dataset or surface dataset file in a 3D view.
 
     :param view:        `geosoft.view.View_3d` instance
-    :param surface:     `geosoft.surface.Surface`, `geosoft.surface.SurfaceDataset` or a geosoft_surface file name.
+    :param surface:     `Surface` instance, `SurfaceDataset` instance or a geosoft_surface file name.
     :param group_name:  name for the group, which defaults to the source name
     :param overwrite:   True to overwrite existing group
 
     .. note::
-        For a Surface or a SurfaceDataset instance a surface dataset file is created with a name constructed
-        from the view name and the fies name: 'view_name.group_name.geosoft_surface'.
+        For a `Surface` or a `SurfaceDataset` instance a surface dataset file is created with a name constructed
+        from the view name and the fies name: *view_name.group_name.geosoft_surface*.
 
     .. versionadded:: 9.3.1
     """

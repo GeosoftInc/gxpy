@@ -1,5 +1,5 @@
 """
-Geosoft vox display handling
+Geosoft vox display handling, which manages the rendering of a `geosoft.gxpy.vox.Vox` in a 3d view.
 
 :Classes:
 
@@ -58,9 +58,9 @@ class VoxDisplay:
     :Constructors:
 
         =============== ====================================================================================
-        `solid`:        create as a solid, each cell coloured from a color_map.create a new vox_display
-        `vector`:       create as a vector voxel as vectors
-        `gxapi_gxvoxd`: create from an `geosoft.gxapi.GXVOXD` instance
+        `solid`:        create as a solid, each cell colored from a `geosoft.gxpy.group.Color_map`
+        `vector`:       create as a vector voxel as vectors colored from a `geosoft.gxpy.group.Color_map`
+        `gxapi_gxvoxd`: create from an existing `geosoft.gxapi.GXVOXD` instance
         =============== ====================================================================================
         
     .. versionadded:: 9.3.1
@@ -360,7 +360,7 @@ class VoxDisplay:
 
     def view_3d(self, file_name=None, overwrite=True, plane_2d=False):
         """
-        Create a 3d view (`geosoft.gxpy.view.View_3d`)
+        Create a 3d view (`geosoft.gxpy.view.View_3d`) from the instance.
 
         :param file_name:   the name of a file for the 3d view. If None a temporary 3d view created.
         :param overwrite:   True to overwrite existing file
@@ -380,7 +380,7 @@ class VoxDisplay:
     def figure_map(self, file_name=None, overwrite=True, title=None, legend_label=None,
                    features=('LEGEND', 'NEATLINE'), **kwargs):
         """
-        Create a figure view file from an vox display.
+        Create a figure view file from the instance.
 
         :param file_name:       the name of a file for the 3d view. If None a temporary 3d view created.
         :param overwrite:       True to overwrite existing file
