@@ -31,6 +31,10 @@ __version__ = geosoft.__version__
 def _t(s):
     return geosoft.gxpy.system.translate(s)
 
+def _geo_cs(g, geo_class, coordinate_system, **kwargs):
+    if hasattr(g, 'coordinate_system') and g.coordinate_system == coordinate_system:
+        return g
+    return geo_class(g, coordinate_system, **kwargs)
 
 def first_coordinate_system(geo_objects):
     """
@@ -65,16 +69,18 @@ class Geometry:
 
     :Properties:
 
-    `Geometry.name`                 name for the geometry
-    `Geometry.coordinate_system`    spatial coordinate system of the x, y, z locations
-    `Geometry.extent`               spatial extent as a `Point2`
-    `Geometry.extent_xyz`           (min_x, min_y, min_z, max_x, max_y, max_z)
-    `Geometry.extent_xy`            (min_x, min_y, max_x, max_y)
-    `Geometry.dimension`            (dx, dy, dz) dimension
-    `Geometry.dimension_xy`         (dx, dy) dimension
-    `Geometry.centroid`             center point as a `Point`
-    `Geometry.centroid_xyz`         (x, y, z) location of the object center
-    `Geometry.centroid_xy`          (x, y) center
+        =============================== ====================================================
+        `Geometry.name`                 name for the geometry
+        `Geometry.coordinate_system`    spatial coordinate system of the x, y, z locations
+        `Geometry.extent`               spatial extent as a `Point2`
+        `Geometry.extent_xyz`           (min_x, min_y, min_z, max_x, max_y, max_z)
+        `Geometry.extent_xy`            (min_x, min_y, max_x, max_y)
+        `Geometry.dimension`            (dx, dy, dz) dimension
+        `Geometry.dimension_xy`         (dx, dy) dimension
+        `Geometry.centroid`             center point as a `Point`
+        `Geometry.centroid_xyz`         (x, y, z) location of the object center
+        `Geometry.centroid_xy`          (x, y) center
+        =============================== ====================================================
 
     .. versionadded:: 9.2
     """
@@ -123,17 +129,17 @@ class Geometry:
 
     @property
     def gxobj(self):
-        """the associated gxapi object, or None"""
+        """An associated gxapi object, or None."""
         return self._gxobj
 
     @property
     def name(self):
-        """spatial object name"""
+        """Spatial object name."""
         return self._name
 
     @property
     def extent(self):
-        """ minimum `Point`, maximum `Point`."""
+        """ Object extent as a `Point2` instance."""
         if self._gxobj and hasattr(self._gxobj, 'get_extents'):
             rx0 = gxapi.float_ref()
             ry0 = gxapi.float_ref()
@@ -149,7 +155,7 @@ class Geometry:
 
     @property
     def extent_xyz(self):
-        """return extent as a tuple (xmin, ymin, zmin, xmax, ymax, zmax)"""
+        """Object extent as a tuple (xmin, ymin, zmin, xmax, ymax, zmax)."""
         e = self.extent
         if e is None:
             return None, None, None, None, None, None
@@ -157,7 +163,7 @@ class Geometry:
 
     @property
     def extent_xy(self):
-        """ Horizontal minimum Point, maximum Point"""
+        """ Horizontal extent as a tuple (min_x, min_y, max_x, max_y)."""
         e = self.extent
         if e is None:
             return None, None, None, None
@@ -165,17 +171,17 @@ class Geometry:
 
     @property
     def extent_minimum(self):
-        """ minimum geometry extent as Point"""
+        """Minimum geometry extent as `Point` instance."""
         return self.extent[0]
 
     @property
     def extent_maximum(self):
-        """ maximum geometry extent as Point"""
+        """Maximum geometry extent as `Point` instance."""
         return self.extent[1]
 
     @property
     def extent_minimum_xyz(self):
-        """ minimum geometry extent as tuple (x, y, z)"""
+        """Minimum geometry extent as tuple (x, y, z)."""
         e = self.extent
         if e is None:
             return None, None, None
@@ -184,7 +190,7 @@ class Geometry:
 
     @property
     def extent_maximum_xyz(self):
-        """ maximum geometry extent as tuple (x, y, z)"""
+        """Maximum geometry extent as tuple (x, y, z)."""
         e = self.extent
         if e is None:
             return None, None, None
@@ -193,7 +199,7 @@ class Geometry:
 
     @property
     def extent_minimum_xy(self):
-        """ minimum geometry extent as tuple (min_x, min_y)"""
+        """Minimum horizontal extent as tuple (min_x, min_y)."""
         e = self.extent
         if e is None:
             return None, None
@@ -202,7 +208,7 @@ class Geometry:
 
     @property
     def extent_maximum_xy(self):
-        """ maximum geometry extent as tuple (max_x, max_y)"""
+        """Maximum horizontal extent as tuple (max_x, max_y)."""
         e = self.extent
         if e is None:
             return None, None
@@ -211,7 +217,7 @@ class Geometry:
 
     @property
     def centroid(self):
-        """ centroid of the geometry"""
+        """Object centroid as a `Point` instance."""
         e = self.extent
         if e is None:
             return None
@@ -222,7 +228,7 @@ class Geometry:
 
     @property
     def dimension(self):
-        """ dimensions as tuple (dx, dy, dz)"""
+        """Object dimensions as tuple (dx, dy, dz)"""
         e = self.extent
         if e is None:
             return None, None, None
@@ -233,7 +239,7 @@ class Geometry:
 
     @property
     def centroid_xy(self):
-        """ centroid of the geometry"""
+        """Horizontal centroid as a tuple (x, y)."""
         c = self.centroid
         if c is None:
             return None, None
@@ -241,7 +247,7 @@ class Geometry:
 
     @property
     def centroid_xyz(self):
-        """ centroid of the geometry"""
+        """Horizontal centroid as a tuple (x, y, z)."""
         c = self.centroid
         if c is None:
             return None, None, None
@@ -249,25 +255,11 @@ class Geometry:
 
     @property
     def dimension_xy(self):
-        """ dimensions as (dx, dy, dz)"""
+        """Horizontal dimension as a tuple (dx, dy)."""
         dx, dy, _ = self.dimension
         if dx is None:
             return None, None
         return dx, dy
-
-    def copy_geometry(self, name=None):
-        """return an exact copy of the geometry"""
-        cls = self.__class__
-        result = cls.__new__(cls)
-        result.__dict__.update(self.__dict__)
-        if name:
-            result.__dict__['_name'] = name
-        return result
-
-    def copy_cs(self, coordinate_system):
-        if self.coordinate_system == coordinate_system:
-            return self
-        return self.copy_geometry(coordinate_system)
 
 
 class Point(Geometry, Sequence):
@@ -286,6 +278,10 @@ class Point(Geometry, Sequence):
     :param z:                   implied z if len(p) is 2.
     :param kwargs:              passed to base class `Geometry`
 
+    Iterates on [x, y, z]
+
+    Operators supported: = + - * /
+
     .. versionadded:: 9.2
 
     .. versionchanged:: 9.3.1 added coordinate_system parameter
@@ -301,42 +297,48 @@ class Point(Geometry, Sequence):
         super().__init__(coordinate_system=coordinate_system, name=name, **kwargs)
 
         if isinstance(p, Point):
+
             if coordinate_system is None:
                 coordinate_system = p.coordinate_system
-            if coordinate_system == p.coordinate_system:
+
+            super().__init__(coordinate_system=coordinate_system, name=name, **kwargs)
+
+            if coordinate_system != p.coordinate_system:
+                self.p = gxcs.Coordinate_translate(p.coordinate_system, coordinate_system).convert(p.p)
+            else:
                 self.p = p.p.copy()
-            else:
-                self.p = p.copy_geometry(coordinate_system).p
-
-        elif isinstance(p, np.ndarray):
-            if len(p) > 2:
-                self.p = p[:3].copy()
-            else:
-                self.p = np.empty(3)
-                self.p[:2] = p
-                self.p[2] = z
-
-        elif hasattr(p, '__len__'):
-            lp = len(p)
-            if lp == 1:
-                v = float(p[0])
-                self.p = np.array((v, v, v), dtype=np.float)
-            else:
-                self.p = np.empty(3)
-                if lp == 2:
-                    self.p[0] = float(p[0]) if p[0] is not None else np.nan
-                    self.p[1] = float(p[1]) if p[1] is not None else np.nan
-                    self.p[2] = z
-                else:
-                    self.p[0] = float(p[0]) if p[0] is not None else np.nan
-                    self.p[1] = float(p[1]) if p[1] is not None else np.nan
-                    self.p[2] = float(p[2]) if p[2] is not None else np.nan
 
         else:
-            p = float(p)
-            self.p = np.array((p, p, p))
 
-        self.coordinate_system = coordinate_system
+            super().__init__(coordinate_system=coordinate_system, name=name, **kwargs)
+
+            if isinstance(p, np.ndarray):
+                if len(p) > 2:
+                    self.p = p[:3].copy()
+                else:
+                    self.p = np.empty(3)
+                    self.p[:2] = p
+                    self.p[2] = z
+
+            elif hasattr(p, '__len__'):
+                lp = len(p)
+                if lp == 1:
+                    v = float(p[0])
+                    self.p = np.array((v, v, v), dtype=np.float)
+                else:
+                    self.p = np.empty(3)
+                    if lp == 2:
+                        self.p[0] = float(p[0]) if p[0] is not None else np.nan
+                        self.p[1] = float(p[1]) if p[1] is not None else np.nan
+                        self.p[2] = z
+                    else:
+                        self.p[0] = float(p[0]) if p[0] is not None else np.nan
+                        self.p[1] = float(p[1]) if p[1] is not None else np.nan
+                        self.p[2] = float(p[2]) if p[2] is not None else np.nan
+
+            else:
+                p = float(p)
+                self.p = np.array((p, p, p))
 
         self._next = 0
 
@@ -362,14 +364,14 @@ class Point(Geometry, Sequence):
         if not isinstance(p, Point):
             p = Point(p)
         else:
-            p = p.copy_cs(self.coordinate_system)
+            p = _geo_cs(p, Point, self.coordinate_system)
         return Point(self.p + p.p, self.coordinate_system)
 
     def __sub__(self, p):
         if not isinstance(p, Point):
             p = Point(p)
         else:
-            p = p.copy_cs(self.coordinate_system)
+            p = _geo_cs(p, Point, self.coordinate_system)
         return Point(self.p - p.p, self.coordinate_system)
 
     def __neg__(self):
@@ -379,14 +381,14 @@ class Point(Geometry, Sequence):
         if not isinstance(p, Point):
             p = Point(p)
         else:
-            p = p.copy_cs(self.coordinate_system)
+            p = _geo_cs(p, Point, self.coordinate_system)
         return Point(self.p * p.p, self.coordinate_system)
 
     def __truediv__(self, p):
         if not isinstance(p, Point):
             p = Point(p)
         else:
-            p = p.copy_cs(self.coordinate_system)
+            p = _geo_cs(p, Point, self.coordinate_system)
         return Point(self.p / p.p, self.coordinate_system)
 
     def __eq__(self, other):
@@ -442,18 +444,9 @@ class Point(Geometry, Sequence):
         self.p[1] = float(xyz[1])
         self.p[2] = float(xyz[2])
 
-    def copy_geometry(self, coordinate_system=None, name=None):
-        """ return a copy as a :class:`Point` instance"""
-        if coordinate_system and self.coordinate_system != coordinate_system:
-            if not isinstance(coordinate_system, gxcs.Coordinate_system):
-                coordinate_system = gxcs.Coordinate_system(coordinate_system)
-            return Point(gxcs.Coordinate_translate(self.coordinate_system, coordinate_system).convert(self.p),
-                         coordinate_system=coordinate_system, name=name)
-        return super(Point, self).copy_geometry(name)
-
     @property
     def extent(self):
-        return Point2((self.p, self.p))
+        return Point2((self.p, self.p), self.coordinate_system)
 
 
 class Point2(Geometry, Sequence):
@@ -474,6 +467,12 @@ class Point2(Geometry, Sequence):
 
     :param coordinate_system:   coordinate system or None
     :param kwargs:              passed to base class `Geometry`
+
+    Iterates on two points [p0, p1].
+
+    Operators supported: = + - * /
+
+    Second operand may be a `Point2` or a `Point`.
 
     .. versionadded:: 9.2
 
@@ -551,22 +550,22 @@ class Point2(Geometry, Sequence):
 
     def __add__(self, p):
         if isinstance(p, Point2):
-            p = p.copy_cs(self.coordinate_system)
+            p = _geo_cs(p, Point2, self.coordinate_system)
             return Point2((self.p0 + p.p0, self.p1 + p.p1), coordinate_system=self.coordinate_system)
         if not isinstance(p, Point):
             p = Point(p)
         else:
-            p = p.copy_cs(self.coordinate_system)
+            p = _geo_cs(p, Point, self.coordinate_system)
         return Point2((self.p0 + p, self.p1 + p), coordinate_system=self.coordinate_system)
 
     def __sub__(self, p):
         if isinstance(p, Point2):
-            p = p.copy_cs(self.coordinate_system)
+            p = _geo_cs(p, Point2, self.coordinate_system)
             return Point2((self.p0 - p.p0, self.p1 - p.p1), coordinate_system=self.coordinate_system)
         if not isinstance(p, Point):
             p = Point(p)
         else:
-            p = p.copy_cs(self.coordinate_system)
+            p = _geo_cs(p, Point, self.coordinate_system)
         return Point2((self.p0 - p, self.p1 - p), coordinate_system=self.coordinate_system)
 
     def __neg__(self):
@@ -574,33 +573,24 @@ class Point2(Geometry, Sequence):
 
     def __mul__(self, p):
         if isinstance(p, Point2):
-            p = p.copy_cs(self.coordinate_system)
+            p = _geo_cs(p, Point2, self.coordinate_system)
             return Point2((self.p0 * p.p0, self.p1 * p.p1), coordinate_system=self.coordinate_system)
         if isinstance(p, Point):
-            p = p.copy_cs(self.coordinate_system)
+            p = _geo_cs(p, Point, self.coordinate_system)
         else:
             p = Point(p)
         return Point2((self.p0 * p, self.p1 * p), coordinate_system=self.coordinate_system)
 
     def __truediv__(self, p):
         if isinstance(p, Point2):
-            p = p.copy_cs(self.coordinate_system)
+            p = _geo_cs(p, Point2, self.coordinate_system)
             return Point2((self.p0 / p.p0, self.p1 / p.p1), coordinate_system=self.coordinate_system)
-        if not isinstance(p, Point):
-            p = Point(p)
+        if isinstance(p, Point):
+            p = _geo_cs(p, Point, self.coordinate_system)
         else:
-            p = p.copy_cs(self.coordinate_system)
-        return Point2((self.p0 / p, self.p1 / p), coordinate_system=self.coordinate_system)
+            p = Point(p)
 
-    def copy_geometry(self, coordinate_system=None, name=None):
-        """return a copy as a :class:`Point2` instance"""
-        if coordinate_system and self.coordinate_system != coordinate_system:
-            if not isinstance(coordinate_system, gxcs.Coordinate_system):
-                coordinate_system = gxcs.Coordinate_system(coordinate_system)
-            t = gxcs.Coordinate_translate(self.coordinate_system, coordinate_system)
-            return Point2((t.convert(self.p0.p), t.convert(self.p1.p)),
-                          coordinate_system=coordinate_system, name=name)
-        return super(Point2, self).copy_geometry(name)
+        return Point2((self.p0 / p, self.p1 / p), coordinate_system=self.coordinate_system)
 
     @property
     def x2(self):
@@ -639,7 +629,7 @@ class Point2(Geometry, Sequence):
                    self.coordinate_system)
         p2 = Point((max(self.p0.x, self.p1.x), max(self.p0.y, self.p1.y), max(self.p0.z, self.p1.z)),
                    self.coordinate_system)
-        return Point2((p1, p2))
+        return Point2((p1, p2), self.coordinate_system)
 
 
 class PPoint(Geometry, Sequence):
@@ -652,6 +642,8 @@ class PPoint(Geometry, Sequence):
     :param coordinate_system:   coordinate system or None
     :param z:                   constant z value for (x, y) data, ignored for (x, y, z) data
     :param kwargs:              passed to base class `Geometry`
+
+    Operators supported: = + - * /
 
     .. versionadded:: 9.2
 
@@ -669,7 +661,10 @@ class PPoint(Geometry, Sequence):
         super().__init__(coordinate_system=coordinate_system, name=name, **kwargs)
 
         def blankpp(length):
-            return np.empty(length * 3, dtype=np.float).reshape((length, 3))
+            pp = np.empty(length * 3, dtype=np.float).reshape((length, 3))
+            pp.fill(np.nan)
+            pp[:, 2] = z
+            return pp
 
         def np_setup(npxyz):
             pp = blankpp(npxyz.shape[0])
@@ -697,11 +692,13 @@ class PPoint(Geometry, Sequence):
             pp = blankpp(len(xyz))
             i = 0
             for pt in xyz:
-                if not isinstance(pt, Point):
-                    pt = Point(pt, coordinate_system=coordinate_system, z=z)
-                if pt.coordinate_system != coordinate_system:
-                    pt = pt.copy_geometry(coordinate_system=coordinate_system)
-                pp[i, :] = pt.xyz
+                if isinstance(pt, Point):
+                    pp[i, :] = _geo_cs(pt, Point, coordinate_system, z=z).p
+                else:
+                    try:
+                        pp[i, :] = pt[:3]
+                    except:
+                        pp[i, :] = _geo_cs(pt, Point, coordinate_system, z=z).p
                 i += 1
             return pp
 
@@ -743,24 +740,24 @@ class PPoint(Geometry, Sequence):
 
     def __add__(self, p):
         if isinstance(p, PPoint):
-            p = p.copy_cs(self.coordinate_system)
+            p = _geo_cs(p, PPoint, self.coordinate_system)
             return PPoint(self.pp + p.pp)
         if isinstance(p, Point):
-            p = p.copy_cs(self.coordinate_system)
+            p = _geo_cs(p, Point, self.coordinate_system)
             return PPoint(self.pp + p.p)
         try:
-            p = Point(p, coordinate_system=self.coordinate_system)
+            p = Point(p, self.coordinate_system)
             return PPoint(self.pp + p.p)
         except TypeError:
-            p = PPoint(p, coordinate_system=self.coordinate_system)
+            p = PPoint(p, self.coordinate_system)
             return PPoint(self.pp + p.pp)
 
     def __sub__(self, p):
         if isinstance(p, PPoint):
-            p = p.copy_cs(self.coordinate_system)
+            p = _geo_cs(p, PPoint, self.coordinate_system)
             return PPoint(self.pp - p.pp)
         if isinstance(p, Point):
-            p = p.copy_cs(self.coordinate_system)
+            p = _geo_cs(p, Point, self.coordinate_system)
             return PPoint(self.pp - p.p)
         return PPoint(self.pp - Point(p).p)
 
@@ -769,19 +766,19 @@ class PPoint(Geometry, Sequence):
 
     def __mul__(self, p):
         if isinstance(p, PPoint):
-            p = p.copy_cs(self.coordinate_system)
+            p = _geo_cs(p, PPoint, self.coordinate_system)
             return PPoint(self.pp * p.pp)
         if isinstance(p, Point):
-            p = p.copy_cs(self.coordinate_system)
+            p = _geo_cs(p, Point, self.coordinate_system)
             return PPoint(self.pp * p.p)
         return PPoint(self.pp * Point(p).p)
 
     def __truediv__(self, p):
         if isinstance(p, PPoint):
-            p = p.copy_cs(self.coordinate_system)
+            p = _geo_cs(p, PPoint, self.coordinate_system)
             return PPoint(self.pp / p.pp)
         if isinstance(p, Point):
-            p = p.copy_cs(self.coordinate_system)
+            p = _geo_cs(p, Point, self.coordinate_system)
             return PPoint(self.pp / p.p)
         return PPoint(self.pp / Point(p).p)
 
@@ -789,15 +786,6 @@ class PPoint(Geometry, Sequence):
         if not super(PPoint, self).__eq__(other):
             return False
         return np.array_equal(self.pp, other.pp)
-
-    def copy_geometry(self, coordinate_system=None, name=None):
-        """return a copy as a :class:`PPoint` instance"""
-        if coordinate_system and self.coordinate_system != coordinate_system:
-            if not isinstance(coordinate_system, gxcs.Coordinate_system):
-                coordinate_system = gxcs.Coordinate_system(coordinate_system)
-            t = gxcs.Coordinate_translate(self.coordinate_system, coordinate_system)
-            return PPoint(t.convert(self.pp), coordinate_system=coordinate_system, name=name)
-        return super(PPoint, self).copy_geometry(name=name)
 
     @property
     def length(self):
@@ -879,9 +867,13 @@ class Mesh(Geometry, Sequence):
 
     A mesh is a set of triangles, where each triangle has three indexes into a set of verticies.
     Verticies are defined as by a set of (x, y, z) locations. Meshes can be represented either
-    as two arrays in the form (faces, verticies), of two sets of `geosoft.gxpy.vv.GXvv` instances
-    in the form ((f1vv, f2vv, f3vv), (xvv, yvv, zvv)).  In array form each array is shaped (-1, 3),
+    as two arrays in the form (faces, verticies), or two sets of `geosoft.gxpy.vv.GXvv` instances
+    in the form ((f1vv, f2vv, f3vv), (xvv, yvv, zvv)).  In array form, each array is shaped (-1, 3),
     with faces being an integer array that references vertexes in the float vertex array.
+
+    Operators supported: = + -, where '+' can be used to combine two meshes or add a constant offset.
+
+    Iterating yields triangular faces as `PPoint` instances.
 
     :Example:
 
@@ -891,6 +883,7 @@ class Mesh(Geometry, Sequence):
         import geosoft.gxpy.geometry as gxgm
         import geosoft.gxpy.vv as gxvv
 
+        # create from lists
         faces = [[0, 1, 2],
                  [0, 2, 3],
                  [3, 2, 4]]
@@ -901,10 +894,12 @@ class Mesh(Geometry, Sequence):
                      [2.5, 2, 10]]
         mesh = gxgm.Mesh((faces, verticies))
 
+        # create from numpy arrays
         faces = np.array(faces, dtype=np.int32)
         verticies = np.array(verticies, dtype=np.float64)
         mesh = gxgm.Mesh((faces, verticies))
 
+        # create from vv
         f1vv, f2vv, f3vv = gxvv.vvset_from_np(faces)
         xvv, yvv, zvv = gxvv.vvset_from_np(verticies)
         mesh = gxgm.Mesh(((f1vv, f2vv, f3vv), (xvv, yvv, zvv)))
@@ -916,38 +911,47 @@ class Mesh(Geometry, Sequence):
 
     def __init__(self, mesh, coordinate_system=None, name=None, **kwargs):
 
+        if isinstance(mesh, Mesh):
+            if coordinate_system and coordinate_system != mesh.coordinate_system:
+                t = gxcs.Coordinate_translate(mesh.coordinate_system, coordinate_system)
+                verticies = t.convert(mesh.verticies)
+            else:
+                verticies = mesh.verticies.copy()
+            faces = mesh.faces.copy()
+
+        else:
+            faces, verticies = mesh
+            if isinstance(faces, list):
+                faces = np.array(faces)
+            if isinstance(verticies, list):
+                verticies = np.array(verticies)
+
+            if not isinstance(faces, np.ndarray):
+                f1, f2, f3 = faces
+                faces = np.empty((len(f1), 3), dtype=np.int32)
+                faces[:, 0] = f1.np
+                faces[:, 1] = f2.np
+                faces[:, 2] = f3.np
+            else:
+                faces = faces.copy()
+            if not isinstance(verticies, np.ndarray):
+                vx, vy, vz = verticies
+                verticies = np.empty((len(vx), 3), dtype=np.float64)
+                verticies[:, 0] = vx.np
+                verticies[:, 1] = vy.np
+                verticies[:, 2] = vz.np
+            else:
+                verticies = verticies.copy()
+
+            # validate faces/verticies
+            try:
+                verticies[faces]
+            except IndexError:
+                raise GeometryException(_t('Verticies do not support all face indicies'))
+
         if name is None:
             name = '_mesh_'
         super().__init__(coordinate_system=coordinate_system, name=name, **kwargs)
-
-        faces, verticies = mesh
-        if isinstance(faces, list):
-            faces = np.array(faces)
-        if isinstance(verticies, list):
-            verticies = np.array(verticies)
-
-        if not isinstance(faces, np.ndarray):
-            f1, f2, f3 = faces
-            faces = np.empty((len(f1), 3), dtype=np.int32)
-            faces[:, 0] = f1.np
-            faces[:, 1] = f2.np
-            faces[:, 2] = f3.np
-        else:
-            faces = faces.copy()
-        if not isinstance(verticies, np.ndarray):
-            vx, vy, vz = verticies
-            verticies = np.empty((len(vx), 3), dtype=np.float64)
-            verticies[:, 0] = vx.np
-            verticies[:, 1] = vy.np
-            verticies[:, 2] = vz.np
-        else:
-            verticies = verticies.copy()
-
-        # validate faces/verticies
-        try:
-            verticies[faces]
-        except IndexError:
-            raise GeometryException(_t('Verticies do not support all face indicies'))
 
         self._faces = faces
         self._verticies = verticies
@@ -969,7 +973,7 @@ class Mesh(Geometry, Sequence):
             return self.__getitem__(item)
 
     def __getitem__(self, item):
-        return PPoint(self._verticies[self._faces[item]], coordinate_system=self.coordinate_system)
+        return PPoint(self._verticies[self._faces[item]], self.coordinate_system)
 
     def __add__(self, m):
         if isinstance(m, Mesh):
@@ -979,14 +983,14 @@ class Mesh(Geometry, Sequence):
             else:
                 v2 = gxcs.Coordinate_translate(m.coordinate_system, self.coordinate_system).convert(m.verticies)
             v2 = np.append(self._verticies, v2, axis=0)
-            return Mesh((f2, v2), coordinate_system=self.coordinate_system)
+            return Mesh((f2, v2), self.coordinate_system)
         if hasattr(m, '__iter__'):
             dx = m[0]
             dy = m[1]
             dz = m[2]
         else:
             dx = dy = dz = float(m)
-        m = self.copy_geometry()
+        m = Mesh(self)
         m._verticies[:, 0] += dx
         m._verticies[:, 1] += dy
         m._verticies[:, 2] += dz
@@ -999,7 +1003,7 @@ class Mesh(Geometry, Sequence):
             dz = m[2]
         else:
             dx = dy = dz = float(m)
-        m = self.copy_geometry()
+        m = Mesh(self)
         m._verticies[:, 0] -= dx
         m._verticies[:, 1] -= dy
         m._verticies[:, 2] -= dz
@@ -1014,38 +1018,27 @@ class Mesh(Geometry, Sequence):
             return False
         return True
 
-    def copy_geometry(self, coordinate_system=None, name=None):
-        """return a copy as a :class:`PPoint` instance"""
-        if coordinate_system and self.coordinate_system != coordinate_system:
-            if not isinstance(coordinate_system, gxcs.Coordinate_system):
-                coordinate_system = gxcs.Coordinate_system(coordinate_system)
-            t = gxcs.Coordinate_translate(self.coordinate_system, coordinate_system)
-            v = t.convert(self._verticies)
-        else:
-            v = self._verticies
-        return Mesh((self._faces, v), coordinate_system=coordinate_system, name=name)
-
     @property
     def faces(self):
-        """returns faces index array"""
+        """Faces as an integer numpy array, shape (n_faces, 3)."""
         return self._faces
 
     @property
     def verticies(self):
-        """returns vertex array"""
+        """Verticies as a float numpy array, shape (n_verticies, 3)."""
         return self._verticies
 
     @property
     def length(self):
-        """number of faces"""
+        """Number of faces"""
         return self.__len__()
 
     @property
     def extent(self):
         """
-        Volume extent as `Point2` for (min, max).
+        Volume extent as `Point2`.
 
-        .. versionadded:: 9.2
+        .. versionadded:: 9.3.1
         """
         v = self._verticies[self._faces].reshape((-1, 3))
         vx = v[:, 0]
@@ -1057,7 +1050,7 @@ class Mesh(Geometry, Sequence):
 
     def point_array(self, unique=True):
         """
-        Return array of face corner locations.
+        Return numpy array of face corner locations.
 
         :param unique:  True for limit to unique points, otherwise returns all points
                         by unwinding each face. If unique the order will not be related to the faces.
@@ -1069,13 +1062,13 @@ class Mesh(Geometry, Sequence):
         return self._verticies[self._faces].reshape(-1, 3)
 
     def faces_vv(self):
-        """return faces in `geosoft.gxpy.vv.GXvv` tuple (f1vv, f2vv, f3vv)"""
+        """Return faces in `geosoft.gxpy.vv.GXvv` tuple (f1vv, f2vv, f3vv)."""
         return gxvv.GXvv(self._faces[:, 0], dtype=np.int32),\
             gxvv.GXvv(self._faces[:, 1], dtype=np.int32),\
             gxvv.GXvv(self._faces[:, 2], dtype=np.int32)
 
     def verticies_vv(self):
-        """return verticies in `geosoft.gxpy.vv.GXvv` tuple (xvv, yvv, zvv)"""
+        """Return verticies in `geosoft.gxpy.vv.GXvv` tuple (xvv, yvv, zvv)."""
         return gxvv.GXvv(self._verticies[:, 0], dtype=np.float64),\
             gxvv.GXvv(self._verticies[:, 1], dtype=np.float64),\
             gxvv.GXvv(self._verticies[:, 2], dtype=np.float64)

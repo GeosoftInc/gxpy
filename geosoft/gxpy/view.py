@@ -841,7 +841,7 @@ class View_3d(View):
 
         TODO: detemine the extents of a 3d view.
 
-        .. versionassed:: 9.3.1
+        .. versionadded:: 9.3.1
         """
         return super(View, self).extent
 
