@@ -317,6 +317,7 @@ class Test(GXPYTest):
 
         test3dv = os.path.join(self.gx.temp_folder(), "test.geosoft_3dv")
         with gxv.View_3d.new(test3dv, overwrite=True) as view_3d:
+            self.assertTrue(view_3d.extent == None)
 
             with gxg.Draw(view_3d, '2d_group') as g:
                 rect_line(g)
@@ -325,9 +326,12 @@ class Test(GXPYTest):
             with gxg.Draw_3d(view_3d, '3d_group_cylinders') as g:
                 self.assertEqual(g.render_backfaces, False)
                 g.cylinder_3d(((100, 10, 10), (120, 10, 10)), 8, pen='r', close=gxg.CYLINDER_CLOSE_ALL)
-                g.cylinder_3d(((100, 10, 30), (120, 10, 30)), 8, pen='g', close=gxg.CYLINDER_CLOSE_START)
-                g.cylinder_3d(((100, 10, 50), (120, 10, 50)), 8, pen='b', close=gxg.CYLINDER_CLOSE_END)
+                self.assertEqual(view_3d.extent_xyz, (92.0, 2.0, 2.0, 128.0, 18.0, 18.0))
                 g.cylinder_3d(((100, 10, 70), (120, 10, 70)), 8, pen='c', close=gxg.CYLINDER_OPEN)
+                self.assertEqual(view_3d.extent_xyz, (92.0, 2.0, 2.0, 128.0, 18.0, 78.0))
+                g.cylinder_3d(((100, 10, 50), (120, 10, 50)), 8, pen='b', close=gxg.CYLINDER_CLOSE_END)
+                g.cylinder_3d(((100, 10, 30), (120, 10, 30)), 8, pen='g', close=gxg.CYLINDER_CLOSE_START)
+                self.assertEqual(view_3d.extent_xyz, (92.0, 2.0, 2.0, 128.0, 18.0, 78.0))
                 self.assertEqual(g.render_backfaces, True)
 
             with gxg.Draw_3d(view_3d, '3d_group') as g:
