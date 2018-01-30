@@ -4,11 +4,8 @@ import numpy as np
 import json
 
 import geosoft
-import geosoft.gxpy.gx as gx
-import geosoft.gxpy.system as gsys
 import geosoft.gxpy.map as gxmap
-import geosoft.gxpy.view as gxgm
-import geosoft.gxpy.geometry as gxgm
+import geosoft.gxpy.geometry as gxgeo
 import geosoft.gxpy.vv as gxvv
 import geosoft.gxpy.coordinate_system as gxcs
 
@@ -23,11 +20,11 @@ class Test(GXPYTest):
     def test_exception(self):
         self.start()
 
-        self.assertRaises(ValueError, gxgm.Point, [1, 'yada', 2])
+        self.assertRaises(ValueError, gxgeo.Point, [1, 'yada', 2])
 
     def test_base(self):
         self.start()
-        g = gxgm.Geometry()
+        g = gxgeo.Geometry()
         self.assertEqual(g.name, '_geometry_')
         self.assertEqual(g.coordinate_system, None)
         self.assertEqual(g.extent, None)
@@ -42,17 +39,17 @@ class Test(GXPYTest):
     def test_new_point(self):
         self.start()
 
-        p = gxgm.Point((5, 10))
+        p = gxgeo.Point((5, 10))
         self.assertEqual(p.xyz, (5, 10, 0))
-        p = gxgm.Point((5, 10), z=2)
+        p = gxgeo.Point((5, 10), z=2)
         self.assertEqual(p.xyz, (5, 10, 2))
-        p = gxgm.Point((5, 10, 2))
+        p = gxgeo.Point((5, 10, 2))
         self.assertEqual(p.xyz, (5, 10, 2))
-        p = gxgm.Point(np.array((5, 10), dtype=np.float64))
+        p = gxgeo.Point(np.array((5, 10), dtype=np.float64))
         self.assertEqual(p.xyz, (5, 10, 0))
-        p = gxgm.Point(np.array((5, 10), dtype=np.float64), z=2)
+        p = gxgeo.Point(np.array((5, 10), dtype=np.float64), z=2)
         self.assertEqual(p.xyz, (5, 10, 2))
-        p = gxgm.Point(np.array((5, 10, 2), dtype=np.float64))
+        p = gxgeo.Point(np.array((5, 10, 2), dtype=np.float64))
         self.assertEqual(p.xyz, (5, 10, 2))
         self.assertEqual(p.x, 5)
         self.assertEqual(p.y, 10)
@@ -73,32 +70,32 @@ class Test(GXPYTest):
     def test_cs(self):
         self.start()
 
-        p = gxgm.Point((5, 10))
+        p = gxgeo.Point((5, 10))
         self.assertTrue(p == p)
-        self.assertTrue(gxgm.Point((1,2), coordinate_system="huh") == gxgm.Point((1,2), coordinate_system="huh"))
-        self.assertTrue(gxgm.Point((1, 2), coordinate_system="huh") == gxgm.Point((1, 2)))
-        self.assertTrue(gxgm.Point((1, 2)) == gxgm.Point((1, 2)))
+        self.assertTrue(gxgeo.Point((1,2), coordinate_system="huh") == gxgeo.Point((1,2), coordinate_system="huh"))
+        self.assertTrue(gxgeo.Point((1, 2), coordinate_system="huh") == gxgeo.Point((1, 2)))
+        self.assertTrue(gxgeo.Point((1, 2)) == gxgeo.Point((1, 2)))
 
         s = "WGS 84 / UTM zone 32N <0, 0, 0, 10, 15, 32>"
-        p = gxgm.Point((5,10), coordinate_system=s)
+        p = gxgeo.Point((5,10), coordinate_system=s)
         hcsd = p.coordinate_system.coordinate_dict()
         self.assertEqual(hcsd['name'], "WGS 84 / UTM zone 32N <0,0,0,10,15,32>")
         self.assertTrue(p == p)
 
         s = s + ' [geoid]'
-        pp = gxgm.PPoint(((8, 12), (5, 10)), coordinate_system=s)
+        pp = gxgeo.PPoint(((8, 12), (5, 10)), coordinate_system=s)
         hcsd = p.coordinate_system.coordinate_dict()
         self.assertEqual(hcsd['name'], "WGS 84 / UTM zone 32N <0,0,0,10,15,32>")
         self.assertEqual(pp.coordinate_system.vcs, "geoid")
         self.assertTrue(pp == pp)
-        self.assertTrue(pp == gxgm.PPoint(((8, 12), (5, 10))))
-        self.assertFalse(pp == gxgm.PPoint(((8, 12), (5, 10)), coordinate_system='WGS 84 [geoid]'))
-        self.assertFalse(gxgm.PPoint(((8, 12), (5, 10)), coordinate_system='WGS 84 [geoid]') == pp)
+        self.assertTrue(pp == gxgeo.PPoint(((8, 12), (5, 10))))
+        self.assertFalse(pp == gxgeo.PPoint(((8, 12), (5, 10)), coordinate_system='WGS 84 [geoid]'))
+        self.assertFalse(gxgeo.PPoint(((8, 12), (5, 10)), coordinate_system='WGS 84 [geoid]') == pp)
 
     def test_point(self):
         self.start()
 
-        p = gxgm.Point((5,10))
+        p = gxgeo.Point((5,10))
         self.assertEqual(p.p.tolist(), [5.0, 10.0, 0.0])
         self.assertEqual(p.xy, (5.0,10.0))
         self.assertEqual(p.xyz, (5.0, 10.0, 0.0))
@@ -109,14 +106,14 @@ class Test(GXPYTest):
         p -= (0, 0, 15)
         self.assertEqual(p.xyz, (5.0, 10.0, -15.0))
 
-        p = gxgm.Point((5,10,3.5))
+        p = gxgeo.Point((5,10,3.5))
         self.assertEqual(p.p.tolist(), [5.0, 10.0, 3.5])
         self.assertEqual(p.xyz, (5.0, 10.0, 3.5))
         self.assertEqual(p.x, 5.0)
         self.assertEqual(p.y, 10.0)
         self.assertEqual(p.z, 3.5)
 
-        p = gxgm.Point(4)
+        p = gxgeo.Point(4)
         self.assertEqual(p.xyz, (4.0, 4.0, 4.0))
 
         p += (1, 2, 3)
@@ -155,7 +152,7 @@ class Test(GXPYTest):
         self.start()
 
         points = [(5, 10), (6, 11), (7, 12)]
-        pp = gxgm.PPoint(points)
+        pp = gxgeo.PPoint(points)
         self.assertEqual(len(pp), 3)
         i = 0
         for p in pp:
@@ -173,29 +170,29 @@ class Test(GXPYTest):
         self.assertEqual(pp[0].xyz, (5.0, 10.0, -15.0))
         self.assertEqual(pp[2].xyz, (7.0, 12.0, -15.0))
 
-        pp += gxgm.Point((0, 0, 15))
+        pp += gxgeo.Point((0, 0, 15))
         self.assertEqual(pp[0].xyz, (5.0, 10.0, 0.0))
         self.assertEqual(pp[2].xyz, (7.0, 12.0, 0.0))
 
-        px = pp + gxgm.PPoint(((0, 0, 15), (-1, -1, -10), (1, 2, 3)))
+        px = pp + gxgeo.PPoint(((0, 0, 15), (-1, -1, -10), (1, 2, 3)))
         self.assertEqual(px[0].xyz, (5.0, 10.0, 15.0))
         self.assertEqual(px[2].xyz, (8.0, 14.0, 3.0))
 
 
-        pp -= gxgm.PPoint(((0, 0, 15), (-1, -1, -10), (0, 0, 0)))
+        pp -= gxgeo.PPoint(((0, 0, 15), (-1, -1, -10), (0, 0, 0)))
         self.assertEqual(pp[0].xyz, (5.0, 10.0, -15.0))
         self.assertEqual(pp[1].xyz, (7, 12, 10))
         self.assertEqual(pp[2].xyz, (7., 12., 0.))
 
-        pp -= gxgm.Point((1, 2, 3))
+        pp -= gxgeo.Point((1, 2, 3))
         self.assertEqual(pp[0].xyz, (4.0, 8.0, -18.0))
         self.assertEqual(pp[1].xyz, (6, 10, 7))
         self.assertEqual(pp[2].xyz, (6., 10., -3.))
 
-        pp = gxgm.PPoint([(5, 10, 3.5)])
+        pp = gxgeo.PPoint([(5, 10, 3.5)])
         self.assertEqual(pp[0].xyz, (5.0, 10.0, 3.5))
 
-        pp = gxgm.PPoint(((1, 2, 3), (4, 5, 6), (7, 8, 9)))
+        pp = gxgeo.PPoint(((1, 2, 3), (4, 5, 6), (7, 8, 9)))
 
         pp += (1, 2, 3)
         self.assertEqual(pp[0].xyz, (2., 4., 6.))
@@ -206,16 +203,16 @@ class Test(GXPYTest):
         self.assertEqual(pp[0].xyz, (2., 4., 6.))
         self.assertEqual(pp[2].xyz, (8., 10., 12.))
         pp *= (1, 2, 3)
-        pp /= gxgm.Point((1, 2, 3))
+        pp /= gxgeo.Point((1, 2, 3))
         self.assertEqual(pp[0].xyz, (2., 4., 6.))
         self.assertEqual(pp[2].xyz, (8., 10., 12.))
         pp *= (1, 2, 3)
-        p = gxgm.Point((1, 2, 3))
-        pp /= gxgm.PPoint((p, p, p))
+        p = gxgeo.Point((1, 2, 3))
+        pp /= gxgeo.PPoint((p, p, p))
         self.assertEqual(pp[0].xyz, (2., 4., 6.))
         self.assertEqual(pp[2].xyz, (8., 10., 12.))
 
-        pp *= gxgm.Point((-1, -1, -1))
+        pp *= gxgeo.Point((-1, -1, -1))
         self.assertEqual(pp[0].xyz, (-2., -4., -6.))
         self.assertEqual(pp[2].xyz, (-8., -10., -12.))
         pp = -pp
@@ -238,7 +235,7 @@ class Test(GXPYTest):
         pp = pp + ((1, 2, 3), (4, 5, 6), (7, 8, 9))
         self.assertEqual(pp[1].xyz, (5., 2., 3.))
 
-        pp = pp * gxgm.PPoint(((1, 2, 3), (4, 5, 6), (7, 8, 9)))
+        pp = pp * gxgeo.PPoint(((1, 2, 3), (4, 5, 6), (7, 8, 9)))
         self.assertEqual(pp[1].xyz, (20., 10., 18.))
         self.assertEqual(len(pp), 3)
         self.assertEqual(tuple(pp.x), (5., 20., 35.))
@@ -246,7 +243,7 @@ class Test(GXPYTest):
         self.assertEqual(tuple(pp.z), (9., 18., 27.))
 
         points = [(5, 10), (6, 11), (7, 12)]
-        pp = gxgm.PPoint(points, z=3.5)
+        pp = gxgeo.PPoint(points, z=3.5)
         self.assertEqual(pp.x.tolist(), [5., 6., 7.])
         self.assertEqual(pp.z.tolist(), [3.5, 3.5, 3.5])
         self.assertEqual(pp.xy.tolist(), np.array(points).tolist())
@@ -261,8 +258,8 @@ class Test(GXPYTest):
         pp.xy = [(1, 2), (3,4), (5,6)]
         self.assertEqual(pp.xy.tolist(), [[1., 2.], [3., 4.], [5., 6.]])
 
-        pp = gxgm.PPoint(((500000, 6000000), (500001, 6000001)), coordinate_system='NAD83 / UTM zone 15N')
-        pp27 = gxgm.PPoint(pp, coordinate_system='NAD27 / UTM zone 15N')
+        pp = gxgeo.PPoint(((500000, 6000000), (500001, 6000001)), coordinate_system='NAD83 / UTM zone 15N')
+        pp27 = gxgeo.PPoint(pp, coordinate_system='NAD27 / UTM zone 15N')
         self.assertEqual(pp27[0].xyz, (500016.35614845896, 5999777.5863711238, 0.0))
         self.assertEqual(pp27[1].xyz, (500017.35614260647, 5999778.5863652565, 0.0))
         self.assertEqual(pp27.length, 2)
@@ -270,20 +267,20 @@ class Test(GXPYTest):
     def test_pp_cs(self):
         self.start()
 
-        p0 = gxgm.Point((500000, 6000000))
-        p1 = gxgm.Point((500000, 6000000), coordinate_system='NAD83 / UTM zone 15N')
-        p2 = gxgm.Point((500000, 6000000), coordinate_system='NAD27 / UTM zone 15N')
-        pp = gxgm.PPoint((p0, p1, p2))
+        p0 = gxgeo.Point((500000, 6000000))
+        p1 = gxgeo.Point((500000, 6000000), coordinate_system='NAD83 / UTM zone 15N')
+        p2 = gxgeo.Point((500000, 6000000), coordinate_system='NAD27 / UTM zone 15N')
+        pp = gxgeo.PPoint((p0, p1, p2))
         self.assertEqual(pp.coordinate_system, 'NAD83 / UTM zone 15N')
         self.assertEqual(pp[0].xyz, (500000, 6000000, 0))
         self.assertEqual(pp[1].xyz, (500000, 6000000, 0))
         self.assertEqual(pp[2].xyz, (499983.64366013405, 6000222.4158355873, 0.0))
-        pp = gxgm.PPoint((p0, p2, p1))
+        pp = gxgeo.PPoint((p0, p2, p1))
         self.assertEqual(pp.coordinate_system, 'NAD27 / UTM zone 15N')
         self.assertEqual(pp[0].xyz, (500000, 6000000, 0))
         self.assertEqual(pp[1].xyz, (500000, 6000000, 0))
         self.assertEqual(pp[2].xyz, (500016.35614845896, 5999777.5863711238, 0.0))
-        pp = gxgm.PPoint((p0, p1, p2), coordinate_system='NAD27 / UTM zone 15N')
+        pp = gxgeo.PPoint((p0, p1, p2), coordinate_system='NAD27 / UTM zone 15N')
         self.assertEqual(pp.coordinate_system, 'NAD27 / UTM zone 15N')
         self.assertEqual(pp[0].xyz, (500000, 6000000, 0))
         self.assertEqual(pp[1].xyz, (500016.35614845896, 5999777.5863711238, 0.0))
@@ -300,19 +297,19 @@ class Test(GXPYTest):
 
         lpp = ((1, 2, 3), (4, 5, 6), (7, 8, 9), (10, 11, 12), (13, 14, 15))
         nppp = np.array(lpp)
-        pp = gxgm.PPoint(lpp)
+        pp = gxgeo.PPoint(lpp)
         verify()
 
         nppp = np.array(lpp)
-        pp = gxgm.PPoint(nppp)
+        pp = gxgeo.PPoint(nppp)
         verify()
 
         vvx = gxvv.GXvv(nppp[:, 0])
         vvy = gxvv.GXvv(nppp[:, 1])
         vvz = gxvv.GXvv(nppp[:, 2])
-        pp = gxgm.PPoint((vvx, vvy, vvz))
+        pp = gxgeo.PPoint((vvx, vvy, vvz))
         verify()
-        pp = gxgm.PPoint((vvx, vvy), z=5)
+        pp = gxgeo.PPoint((vvx, vvy), z=5)
         self.assertEqual(pp.x.tolist(), [1., 4., 7., 10., 13.])
         self.assertEqual(pp.z.tolist(), [5, 5, 5, 5, 5])
 
@@ -323,21 +320,21 @@ class Test(GXPYTest):
 
         pps = []
         for xyz in lpp:
-            pps.append(gxgm.Point(xyz))
-        pp = gxgm.PPoint(pps)
+            pps.append(gxgeo.Point(xyz))
+        pp = gxgeo.PPoint(pps)
         verify()
 
         e = pp.extent
-        self.assertTrue(e[0] == gxgm.Point((1, 2, 3)))
-        self.assertTrue(e[1] == gxgm.Point((13, 14, 15)))
+        self.assertTrue(e[0] == gxgeo.Point((1, 2, 3)))
+        self.assertTrue(e[1] == gxgeo.Point((13, 14, 15)))
 
     def test_copy_geometry(self):
         self.start()
 
-        p1 = gxgm.Point((1,2))
+        p1 = gxgeo.Point((1,2))
         p2 = p1
         self.assertTrue(p1 is p2)
-        p2 = gxgm.Point(p2)
+        p2 = gxgeo.Point(p2)
         self.assertFalse(p1 is p2)
         self.assertTrue(p1 == p2)
 
@@ -351,7 +348,7 @@ class Test(GXPYTest):
     def test_p2(self):
         self.start()
 
-        b1 = gxgm.Point2((gxgm.Point((0, 1)), (10, 20, -1)))
+        b1 = gxgeo.Point2((gxgeo.Point((0, 1)), (10, 20, -1)))
         self.assertEqual(b1.centroid.xyz, (5.0, 10.5, -0.5))
         self.assertEqual(len(b1), 2)
         self.assertEqual('_point2_[(0.0, 1.0, 0.0) (10.0, 20.0, -1.0)]', str(b1))
@@ -359,26 +356,26 @@ class Test(GXPYTest):
         self.assertEqual(b1.y2, (1., 20.))
         self.assertEqual(b1.z2, (0, -1.))
 
-        b2 = gxgm.Point2(((0, 1), (10, 20, -1)))
+        b2 = gxgeo.Point2(((0, 1), (10, 20, -1)))
         self.assertTrue(b1 == b2)
 
-        b1 = gxgm.Point2((gxgm.Point((0, 1, -20)),(10, 20, -1)))
+        b1 = gxgeo.Point2((gxgeo.Point((0, 1, -20)),(10, 20, -1)))
         self.assertEqual('_point2_[(0.0, 1.0, -20.0) (10.0, 20.0, -1.0)]', str(b1))
         self.assertEqual(b1.x2, (0., 10.))
         self.assertEqual(b1.y2, (1., 20.))
         self.assertEqual(b1.z2, (-20., -1.))
-        b2 = gxgm.Point2((gxgm.Point((b1.x2[0], b1.y2[0], b1.z2[0])),
-                         gxgm.Point((b1.x2[1], b1.y2[1], b1.z2[1]))))
+        b2 = gxgeo.Point2((gxgeo.Point((b1.x2[0], b1.y2[0], b1.z2[0])),
+                         gxgeo.Point((b1.x2[1], b1.y2[1], b1.z2[1]))))
         self.assertTrue(b1 == b2)
-        b2 = gxgm.Point2((gxgm.Point((b1.x2[1], b1.y2[1], b1.z2[1])),
-                         gxgm.Point((b1.x2[0], b1.y2[0], b1.z2[0]))), coordinate_system="WGS 84")
+        b2 = gxgeo.Point2((gxgeo.Point((b1.x2[1], b1.y2[1], b1.z2[1])),
+                         gxgeo.Point((b1.x2[0], b1.y2[0], b1.z2[0]))), coordinate_system="WGS 84")
         self.assertTrue(b1 == b2)
-        b2 = gxgm.Point2(((b1.x2[1], b1.y2[1], b1.z2[1]), (b1.x2[0], b1.y2[0], b1.z2[0])), coordinate_system="WGS 84")
+        b2 = gxgeo.Point2(((b1.x2[1], b1.y2[1], b1.z2[1]), (b1.x2[0], b1.y2[0], b1.z2[0])), coordinate_system="WGS 84")
         self.assertTrue(b1 == b2)
-        b2 = gxgm.Point2((b1.x2[1], b1.y2[1], b1.z2[1], b1.x2[0], b1.y2[0], b1.z2[0]), coordinate_system="WGS 84")
+        b2 = gxgeo.Point2((b1.x2[1], b1.y2[1], b1.z2[1], b1.x2[0], b1.y2[0], b1.z2[0]), coordinate_system="WGS 84")
         self.assertTrue(b1 == b2)
 
-        c = gxgm.Point(((b2.p0.x + b2.p1.x) * 0.5,
+        c = gxgeo.Point(((b2.p0.x + b2.p1.x) * 0.5,
                         (b2.p0.y + b2.p1.y) * 0.5,
                         (b2.p0.z + b2.p1.z) * 0.5))
         self.assertEqual(b2.centroid, c)
@@ -387,42 +384,42 @@ class Test(GXPYTest):
         self.assertEqual(b2.extent_xyz, (0.0, 1.0, -20.0, 10.0, 20.0, -1.0))
         self.assertEqual(b2.extent_xy, (0.0, 1.0, 10.0, 20.0))
 
-        b = gxgm.Point2(5)
+        b = gxgeo.Point2(5)
         self.assertEqual(b[0].xyz, (5, 5, 5))
         self.assertEqual(b[1].xyz, (5, 5, 5))
-        b = gxgm.Point2((5, 6))
-        self.assertEqual(b[0].xyz, (5, 5, 5))
-        self.assertEqual(b[1].xyz, (6, 6, 6))
-        b = gxgm.Point2((5, 6, 7))
+        b = gxgeo.Point2((5, 6))
+        self.assertEqual(b[0].xyz, (5, 6, 0))
+        self.assertEqual(b[1].xyz, (5, 6, 0))
+        b = gxgeo.Point2((5, 6, 7))
         self.assertEqual(b[0].xyz, (5, 6, 7))
         self.assertEqual(b[1].xyz, (5, 6, 7))
-        b = gxgm.Point2((5, 6, 7, 8))
+        b = gxgeo.Point2((5, 6, 7, 8))
         self.assertEqual(b[0].xyz, (5, 6, 0))
         self.assertEqual(b[1].xyz, (7, 8, 0))
-        b = gxgm.Point2((5, 6, 7, 8, 9, 0))
+        b = gxgeo.Point2((5, 6, 7, 8, 9, 0))
         self.assertEqual(b[0].xyz, (5, 6, 7))
         self.assertEqual(b[1].xyz, (8, 9, 0))
-        self.assertRaises(gxgm.GeometryException, gxgm.Point2, (2, 3, 4, 5, 6))
+        self.assertRaises(gxgeo.GeometryException, gxgeo.Point2, (2, 3, 4, 5, 6))
 
     def test_cs_math(self):
         self.start()
 
-        p = gxgm.Point((5, 10))
+        p = gxgeo.Point((5, 10))
         self.assertTrue(p == p)
-        self.assertTrue(gxgm.Point((1,2), coordinate_system="huh") == gxgm.Point((1,2), coordinate_system="huh"))
-        self.assertTrue(gxgm.Point((1, 2), coordinate_system="huh") == gxgm.Point((1, 2)))
-        self.assertTrue(gxgm.Point((1, 2)) == gxgm.Point((1, 2)))
+        self.assertTrue(gxgeo.Point((1,2), coordinate_system="huh") == gxgeo.Point((1,2), coordinate_system="huh"))
+        self.assertTrue(gxgeo.Point((1, 2), coordinate_system="huh") == gxgeo.Point((1, 2)))
+        self.assertTrue(gxgeo.Point((1, 2)) == gxgeo.Point((1, 2)))
 
         cs = "NAD83 / UTM zone 32N>"
-        p = gxgm.Point((500000,6000000), coordinate_system=cs)
+        p = gxgeo.Point((500000,6000000), coordinate_system=cs)
         self.assertEqual(str(p.coordinate_system), "NAD83 / UTM zone 32N")
-        p27 = gxgm.Point(p, "NAD27 / UTM zone 32N")
+        p27 = gxgeo.Point(p, "NAD27 / UTM zone 32N")
         self.assertEqual(str(p27.coordinate_system), "NAD27 / UTM zone 32N")
         self.assertAlmostEqual(p27.x, 499840.780459, 3)
         self.assertAlmostEqual(p27.y, 5999920.58165, 3)
         self.assertFalse(p == p27)
 
-        p27 = gxgm.Point(p, "NAD27 / UTM zone 32N")
+        p27 = gxgeo.Point(p, "NAD27 / UTM zone 32N")
         self.assertEqual(str(p27.coordinate_system), "NAD27 / UTM zone 32N")
         self.assertAlmostEqual(p27.x, 499840.780459, 3)
         self.assertAlmostEqual(p27.y, 5999920.58165, 3)
@@ -440,9 +437,9 @@ class Test(GXPYTest):
         self.assertEqual(str(pp.coordinate_system), "NAD83 / UTM zone 32N")
         self.assertEqual(pp.xy, (500010, 6000005))
 
-        p = gxgm.Point2(((500000, 6000000), (500001, 6000001)), coordinate_system=cs)
+        p = gxgeo.Point2(((500000, 6000000), (500001, 6000001)), coordinate_system=cs)
         self.assertEqual(str(p.coordinate_system), "NAD83 / UTM zone 32N")
-        p27 = gxgm.Point2(p, "NAD27 / UTM zone 32N")
+        p27 = gxgeo.Point2(p, "NAD27 / UTM zone 32N")
         self.assertEqual(str(p27.coordinate_system), "NAD27 / UTM zone 32N")
         self.assertAlmostEqual(p27.p0.x, 499840.780459, 3)
         self.assertAlmostEqual(p27.p0.y, 5999920.58165, 3)
@@ -451,13 +448,13 @@ class Test(GXPYTest):
         self.assertFalse(p == p27)
         pp = p / 2
         self.assertEqual(pp[1].xyz, (250000.5, 3000000.5, 0.0))
-        pp = p / gxgm.Point(2)
+        pp = p / gxgeo.Point(2)
         self.assertEqual(pp[1].xyz, (250000.5, 3000000.5, 0.0))
-        pp = p / gxgm.Point2((gxgm.Point(2), gxgm.Point(3)))
+        pp = p / gxgeo.Point2((gxgeo.Point(2), gxgeo.Point(3)))
         self.assertEqual(pp[0].xyz, (250000.0, 3000000.0, 0.0))
         self.assertEqual(pp[1].xyz, (166667.0, 2000000.3333333333, 0.0))
 
-        p27 = gxgm.Point2(p, "NAD27 / UTM zone 32N")
+        p27 = gxgeo.Point2(p, "NAD27 / UTM zone 32N")
         self.assertEqual(str(p27.coordinate_system), "NAD27 / UTM zone 32N")
         self.assertAlmostEqual(p27.p0.x, 499840.780459, 3)
         self.assertAlmostEqual(p27.p0.y, 5999920.58165, 3)
@@ -466,7 +463,7 @@ class Test(GXPYTest):
         self.assertEqual(tuple(p27[0]), (499840.78045944084, 5999920.5816528751, 0.0))
         self.assertEqual(tuple(p27[1]), (499841.7804697603, 5999921.5816632193, 0.0))
         for pp in p27:
-            self.assertTrue(isinstance(pp, gxgm.Point))
+            self.assertTrue(isinstance(pp, gxgeo.Point))
         self.assertFalse(p == p27)
         pp = p + p27
         self.assertEqual(tuple(pp[0]), (999999.99835706223, 12000000.002281997, 0.0))
@@ -486,7 +483,7 @@ class Test(GXPYTest):
         self.assertAlmostEqual(pp.p0.y, 1., 2)
         self.assertAlmostEqual(pp.p1.x, 1., 2)
         self.assertAlmostEqual(pp.p1.y, 1., 2)
-        pp = pd + gxgm.Point(1)
+        pp = pd + gxgeo.Point(1)
         self.assertAlmostEqual(pp.p0.x, 1., 2)
         self.assertAlmostEqual(pp.p0.y, 1., 2)
         self.assertAlmostEqual(pp.p1.x, 1., 2)
@@ -502,14 +499,14 @@ class Test(GXPYTest):
         self.assertAlmostEqual(pd.p1.x, 0., 2)
         self.assertAlmostEqual(pd.p1.y, 0., 2)
 
-        pz = gxgm.Point2(((0, 1, 2), (1, 2, 3)))
+        pz = gxgeo.Point2(((0, 1, 2), (1, 2, 3)))
         pp = (pz + 1) * 5
         self.assertEqual(tuple(pp[0]), (5., 10., 15.))
         self.assertEqual(tuple(pp[1]), (10., 15., 20.))
-        pp = (pz + 1) * gxgm.Point((2, 5, 10))
+        pp = (pz + 1) * gxgeo.Point((2, 5, 10))
         self.assertEqual(tuple(pp[0]), (2., 10., 30.))
         self.assertEqual(tuple(pp[1]), (4., 15., 40.))
-        pp = (pz + 1) * gxgm.Point2(((2, 5, 10), (1, 2, 3)))
+        pp = (pz + 1) * gxgeo.Point2(((2, 5, 10), (1, 2, 3)))
         self.assertEqual(tuple(pp[0]), (2., 10., 30.))
         self.assertEqual(tuple(pp[1]), (2.0, 6.0, 12.0))
 
@@ -533,27 +530,27 @@ class Test(GXPYTest):
     def test_names(self):
         self.start()
 
-        self.assertEqual(gxgm.Point((1, 2)).name, '_point_')
-        self.assertEqual(gxgm.Point((1, 2), name='maki').name, 'maki')
-        self.assertTrue(gxgm.Point((1, 2)) == gxgm.Point((1,2), name='maki'))
-        self.assertEqual(gxgm.Point(gxgm.Point((1, 2))).name, '_point_')
-        self.assertEqual(gxgm.Point(gxgm.Point((1, 2)), name='maki').name, 'maki')
+        self.assertEqual(gxgeo.Point((1, 2)).name, '_point_')
+        self.assertEqual(gxgeo.Point((1, 2), name='maki').name, 'maki')
+        self.assertTrue(gxgeo.Point((1, 2)) == gxgeo.Point((1,2), name='maki'))
+        self.assertEqual(gxgeo.Point(gxgeo.Point((1, 2))).name, '_point_')
+        self.assertEqual(gxgeo.Point(gxgeo.Point((1, 2)), name='maki').name, 'maki')
         p1 = (1, 2)
         p2 = (2, 3)
-        self.assertEqual(gxgm.Point2((p1, p2)).name, '_point2_')
-        self.assertEqual(gxgm.Point2((p1, p2), name='maki').name, 'maki')
-        self.assertTrue(gxgm.Point2((p1, p2)) == gxgm.Point2((p1, p2), name='maki'))
+        self.assertEqual(gxgeo.Point2((p1, p2)).name, '_point2_')
+        self.assertEqual(gxgeo.Point2((p1, p2), name='maki').name, 'maki')
+        self.assertTrue(gxgeo.Point2((p1, p2)) == gxgeo.Point2((p1, p2), name='maki'))
         pp = ((1, 2), (3, 2), (4, 5))
-        self.assertEqual(gxgm.PPoint(pp).name, '_ppoint_')
-        self.assertEqual(gxgm.PPoint(pp, name='maki').name, 'maki')
-        self.assertTrue(gxgm.PPoint(pp) == gxgm.PPoint(pp, name='maki'))
+        self.assertEqual(gxgeo.PPoint(pp).name, '_ppoint_')
+        self.assertEqual(gxgeo.PPoint(pp, name='maki').name, 'maki')
+        self.assertTrue(gxgeo.PPoint(pp) == gxgeo.PPoint(pp, name='maki'))
 
     def test_mesh(self):
         self.start()
 
         v = list(np.array(range(27), dtype=np.float).reshape(-1, 3))
         f = list(np.array(range(len(v))).reshape(-1, 3))
-        m = gxgm.Mesh((f, v))
+        m = gxgeo.Mesh((f, v))
         self.assertEqual(len(m.faces), len(f))
         self.assertEqual(len(m.verticies), len(v))
         self.assertEqual(tuple(m[2][2]), (24., 25., 26.))
@@ -580,7 +577,7 @@ class Test(GXPYTest):
         self.assertEqual(m2.centroid_xy, (12.5, 18.0))
 
         self.assertEqual(len(m2), 2 * len(m))
-        mm = gxgm.Mesh((np.append(m2.faces, m2.faces, axis=0), m2.verticies))
+        mm = gxgeo.Mesh((np.append(m2.faces, m2.faces, axis=0), m2.verticies))
         self.assertEqual(len(mm), 12)
         self.assertEqual(len(mm.verticies), 18)
         mp = mm.point_array()
@@ -591,12 +588,12 @@ class Test(GXPYTest):
         v = np.array(v)
         v[:, 0] += 500000
         v[:, 1] += 6000000
-        m = gxgm.Mesh((f, v), coordinate_system="NAD83 / UTM zone 17N")
-        m = gxgm.Mesh(m, coordinate_system="NAD27 / UTM zone 17N")
+        m = gxgeo.Mesh((f, v), coordinate_system="NAD83 / UTM zone 17N")
+        m = gxgeo.Mesh(m, coordinate_system="NAD27 / UTM zone 17N")
         self.assertEqual(str(m.coordinate_system), "NAD27 / UTM zone 17N")
         self.assertEqual(tuple(m[2][2]), (500006.87887296296, 5999802.6514122421, 26.0))
 
-        m83 = gxgm.Mesh(m, coordinate_system="NAD83 / UTM zone 17N")
+        m83 = gxgeo.Mesh(m, coordinate_system="NAD83 / UTM zone 17N")
         self.assertEqual(m83.coordinate_system, "NAD83 / UTM zone 17N")
         self.assertEqual(tuple(m[2][2]), (500006.87887296296, 5999802.6514122421, 26.0))
         self.assertEqual(tuple(m83[2][2]), (500024.00010005565, 6000025.0009018015, 26.0))
@@ -608,11 +605,11 @@ class Test(GXPYTest):
         xvv = gxvv.GXvv(v[:, 0])
         yvv = gxvv.GXvv(v[:, 1])
         zvv = gxvv.GXvv(v[:, 2])
-        m = gxgm.Mesh(((f1vv, f2vv, f3vv), (xvv, yvv, zvv)), coordinate_system="NAD83 / UTM zone 17N", name='vv')
+        m = gxgeo.Mesh(((f1vv, f2vv, f3vv), (xvv, yvv, zvv)), coordinate_system="NAD83 / UTM zone 17N", name='vv')
         self.assertEqual(m.name, 'vv')
-        mm = gxgm.Mesh(m, coordinate_system="NAD27 / UTM zone 17N")
+        mm = gxgeo.Mesh(m, coordinate_system="NAD27 / UTM zone 17N")
         self.assertEqual(mm.name, '_mesh_')
-        m2 = gxgm.Mesh(mm, coordinate_system="NAD27 / UTM zone 17N", name='vv_copy')
+        m2 = gxgeo.Mesh(mm, coordinate_system="NAD27 / UTM zone 17N", name='vv_copy')
         self.assertEqual(m2.name, 'vv_copy')
         self.assertEqual(str(m2.coordinate_system), "NAD27 / UTM zone 17N")
         self.assertEqual(tuple(m2[2][2]), (500006.87887296296, 5999802.6514122421, 26.0))
@@ -646,10 +643,44 @@ class Test(GXPYTest):
                      [220, 50],
                      [235, 18.5]]
 
-        pp = gxgm.PPoint.from_list(plinelist)
+        pp = gxgeo.PPoint.from_list(plinelist)
         self.assertEqual(len(pp), len(plinelist))
         self.assertEqual(pp.extent_minimum_xyz, (110, 5, 0))
         self.assertEqual(pp.extent_maximum_xyz, (235, 70., 0))
+
+    def test_union(self):
+        self.start()
+        
+        cs = "NAD83 / UTM zone 32N>"
+        p = gxgeo.Point((500000,6000000), cs)
+        ext = gxgeo.extent_union(p, p)
+        self.assertEqual(ext.p0.xyz, p.xyz)
+        self.assertEqual(ext.p1.xyz, p.xyz)
+
+        p2 = gxgeo.Point((500010,6000100), cs)
+        ext = gxgeo.extent_union(p, p2)
+        self.assertEqual(ext.p0.xyz, p.xyz)
+        self.assertEqual(ext.p1.xyz, p2.xyz)
+
+        p3 = (490000,5900000)
+        ext = gxgeo.extent_union(p, p3)
+        self.assertEqual(ext.p0.xyz, (490000,5900000, 0))
+        self.assertEqual(ext.p1.xyz, p.xyz)
+
+        pp = gxgeo.PPoint((p2, gxgeo.Point(p3)))
+        ext = gxgeo.extent_union(p, pp)
+        self.assertEqual(ext.p0.xyz, (490000,5900000, 0))
+        self.assertEqual(ext.p1.xyz, p2.xyz)
+
+        p2.coordinate_system = "NAD27 / UTM zone 32N"
+        p2.z = -88
+        p3 = gxgeo.Point(p3, "NAD27 / UTM zone 32N")
+        p3.z = 51
+        pp = gxgeo.PPoint((p2, p3))
+        ext = gxgeo.extent_union(p, pp)
+        self.assertEqual(ext.p0.xyz, (490159.31817756349, 5900080.4689568691, -88.0))
+        self.assertEqual(ext.p1.xyz, (500169.21834333451, 6000179.4198679868, 51.0))
+
 
 if __name__ == '__main__':
 

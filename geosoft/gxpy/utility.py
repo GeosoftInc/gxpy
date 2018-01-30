@@ -258,9 +258,10 @@ def geosoft_metadata(geosoft_file_name):
     """
     metadata = None
     if geosoft_file_name:
-        xml = geosoft_file_name + '.xml'
-        if os.path.isfile(xml):
-            with open(xml) as f:
+        if not geosoft_file_name.lower().endswith('.xml'):
+            geosoft_file_name = geosoft_file_name + '.xml'
+        if os.path.isfile(geosoft_file_name):
+            with open(geosoft_file_name) as f:
                 metadata = dict_from_xml(f.read())
     if metadata:
         return metadata

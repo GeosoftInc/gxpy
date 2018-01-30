@@ -59,6 +59,52 @@ class GeometryException(Exception):
     pass
 
 
+def extent_union(g1, g2):
+    """
+    Return the spatial union of two spatial objects.
+
+    :param g1:  first object, returned extent will be in this coordinate system
+    :param g2:  second object
+
+    :return:    `Point2` instance in the coordinate system of g1
+
+    .. versionadded:: 9.3.1
+    """
+
+    def ext(g):
+        if g is None or isinstance(g, Point2):
+            return g
+        if isinstance(g, Geometry):
+            return g.extent
+        return Point2(g).extent
+
+    g1 = ext(g1)
+    g2 = ext(g2)
+    if g1 is None:
+        return g2
+    if g2 is None:
+        return g1
+    if g1.coordinate_system != g2.coordinate_system:
+        corners = np.array([(g2.p0.x, g2.p0.y, g2.p0.z),
+                            (g2.p0.x, g2.p1.y, g2.p0.z),
+                            (g2.p1.x, g2.p1.y, g2.p0.z),
+                            (g2.p1.x, g2.p0.y, g2.p0.z),
+                            (g2.p0.x, g2.p0.y, g2.p1.z),
+                            (g2.p0.x, g2.p1.y, g2.p1.z),
+                            (g2.p1.x, g2.p1.y, g2.p1.z),
+                            (g2.p1.x, g2.p0.y, g2.p1.z)], dtype=np.float64)
+        ex = PPoint(PPoint(corners, g2.coordinate_system), g1.coordinate_system).extent
+        return extent_union(g1, ex)
+
+    min_x = min(g1.p0.x, g2.p0.x)
+    min_y = min(g1.p0.y, g2.p0.y)
+    min_z = min(g1.p0.z, g2.p0.z)
+    max_x = max(g1.p1.x, g2.p1.x)
+    max_y = max(g1.p1.y, g2.p1.y)
+    max_z = max(g1.p1.z, g2.p1.z)
+    return Point2(((min_x, min_y, min_z), (max_x, max_y, max_z)), g1.coordinate_system)
+
+
 class Geometry:
     """
     Geometry base class for all geometries and spatial objects in Geosoft.
@@ -172,11 +218,15 @@ class Geometry:
     @property
     def extent_minimum(self):
         """Minimum geometry extent as `Point` instance."""
+        if self.extent is None:
+            return None
         return self.extent[0]
 
     @property
     def extent_maximum(self):
         """Maximum geometry extent as `Point` instance."""
+        if self.extent is None:
+            return None
         return self.extent[1]
 
     @property
@@ -446,7 +496,7 @@ class Point(Geometry, Sequence):
 
     @property
     def extent(self):
-        return Point2((self.p, self.p), self.coordinate_system)
+        return Point2((self, self))
 
 
 class Point2(Geometry, Sequence):
@@ -459,13 +509,16 @@ class Point2(Geometry, Sequence):
 
                 (`Point`, `Point`)
 
-                ((x, y [,z]), (x, y [,z])) implied z is 0 if not specified
+                (x, y [, z]) two points at the same location
+
+                ((x, y [, z]), (x, y [, z]))
 
                 (x0, y0, x1, y1) implied z is 0
 
                 (x0, y0, z0, x1, y1, z1)
 
     :param coordinate_system:   coordinate system or None
+    :param z:                   implied z value when only (x, y) is passed
     :param kwargs:              passed to base class `Geometry`
 
     Iterates on two points [p0, p1].
@@ -483,7 +536,7 @@ class Point2(Geometry, Sequence):
         return "{}[({}, {}, {}) ({}, {}, {})]".format(self.name, self.p0.x, self.p0.y, self.p0.z,
                                                       self.p1.x, self.p1.y, self.p1.z)
 
-    def __init__(self, p, coordinate_system=None, name=None, **kwargs):
+    def __init__(self, p, coordinate_system=None, name=None, z=0, **kwargs):
 
         if name is None:
             name = '_point2_'
@@ -497,20 +550,24 @@ class Point2(Geometry, Sequence):
 
         else:
             if not hasattr(p, '__iter__'):
-                self.p0 = self.p1 = Point(p, coordinate_system=coordinate_system)
+                self.p0 = self.p1 = Point(p, coordinate_system, z=z)
             elif len(p) == 2:
                 if coordinate_system is None:
                     coordinate_system = first_coordinate_system((p[0], p[1]))
-                self.p0 = Point(p[0], coordinate_system=coordinate_system)
-                self.p1 = Point(p[1], coordinate_system=coordinate_system)
+                if hasattr(p[0], '__iter__'):
+                    self.p0 = Point(p[0], coordinate_system, z=z)
+                    self.p1 = Point(p[1], coordinate_system, z=z)
+                else:
+                    self.p0 = Point(p, coordinate_system, z=z)
+                    self.p1 = Point(self.p0)
             elif len(p) == 3:
-                self.p0 = self.p1 = Point((p[0], p[1], p[2]), coordinate_system=coordinate_system)
+                self.p0 = self.p1 = Point((p[0], p[1], p[2]), coordinate_system, z=z)
             elif len(p) == 4:
-                self.p0 = Point((p[0], p[1]), coordinate_system=coordinate_system)
-                self.p1 = Point((p[2], p[3]), coordinate_system=coordinate_system)
+                self.p0 = Point((p[0], p[1]), coordinate_system, z=z)
+                self.p1 = Point((p[2], p[3]), coordinate_system, z=z)
             elif len(p) == 6:
-                self.p0 = Point((p[0], p[1], p[2]), coordinate_system=coordinate_system)
-                self.p1 = Point((p[3], p[4], p[5]), coordinate_system=coordinate_system)
+                self.p0 = Point((p[0], p[1], p[2]), coordinate_system, z=z)
+                self.p1 = Point((p[3], p[4], p[5]), coordinate_system, z=z)
             else:
                 raise GeometryException(_t('Invalid points: {}').format(p))
 
@@ -630,7 +687,6 @@ class Point2(Geometry, Sequence):
         p2 = Point((max(self.p0.x, self.p1.x), max(self.p0.y, self.p1.y), max(self.p0.z, self.p1.z)),
                    self.coordinate_system)
         return Point2((p1, p2), self.coordinate_system)
-
 
 class PPoint(Geometry, Sequence):
     """

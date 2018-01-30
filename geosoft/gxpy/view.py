@@ -35,6 +35,7 @@ from . import utility as gxu
 from . import map as gxmap
 from . import metadata as gxmeta
 from . import geometry as gxgeo
+from . import spatialdata as gxspd
 
 
 __version__ = geosoft.__version__
@@ -765,6 +766,14 @@ class View_3d(View):
                           mode=mode,
                           _internal=True)
         super().__init__(map, '3D', **kwargs)
+        self._extent3d = None
+
+    def _extent_union(self, extent):
+        """Expand the extent"""
+        if self._extent is None:
+            self._extent = gxgeo.Point2(extent, self.coordinate_system)
+        else:
+            self._extent = self._extent.union(extent)
 
     @classmethod
     def new(cls, file_name=None, area_2d=None, overwrite=False, **kwargs):
@@ -817,6 +826,12 @@ class View_3d(View):
 
         g_3dv = cls(file_name, geosoft.gxpy.map.WRITE_OLD, _internal=True)
 
+        # read extents from the metadata
+        try:
+            g_3dv.add_extent(gxspd.extent_from_metadata(g_3dv.metadata))
+        except KeyError:
+            pass
+
         return g_3dv
 
     def __exit__(self, xtype, xvalue, xtraceback):
@@ -834,17 +849,29 @@ class View_3d(View):
         if hasattr(self, '_close'):
             self._close()
 
-    @property
-    def extent(self):
+    def add_extent(self, extent):
         """
-        NOTE: Currently returns the 2d extend of things drawn in 2d on plane 0.
+        Expand current extent to include this extent.
+        :param extent:  extent as a `geosoft.gxpy.geometry.Geometry` or Point2 constructor
 
-        TODO: detemine the extents of a 3d view.
+        TODO: review once issue #75 is resolved.
 
         .. versionadded:: 9.3.1
         """
-        return super(View, self).extent
+        self._extent3d = gxgeo.extent_union(self._extent3d, extent)
 
+    @property
+    def extent(self):
+        """
+        Extent of 3D objects in this view.
+
+        :return:    `geosoft.gxpy.geometry.Point2` instance
+
+        TODO: review once issue #75 is resolved.
+
+        .. versionadded:: 9.3.1
+        """
+        return self._extent3d
 
     @property
     def file_name(self):
