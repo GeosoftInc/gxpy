@@ -18,9 +18,9 @@ import os
 import geosoft
 import geosoft.gxapi as gxapi
 from . import gx as gx
-from . import coordinate_system as gxcs
 from . import utility as gxu
 from . import geometry as gxgm
+from . import coordinate_system as gxcs
 
 __version__ = geosoft.__version__
 
@@ -60,6 +60,89 @@ def delete_files(file_name):
 MODE_READ = 0          #: existing dataset file open for read only
 MODE_READWRITE = 1     #: open existing dataset file for read or write
 MODE_NEW = 2           #: new dataset file
+
+
+def find_meta_branch(meta, item):
+    """
+    Return the lowest branch in the meta dictionary that contains the item.
+
+    ... versionadded:: 9.3.1
+    """
+    if item in meta:
+        return meta
+    for key, value in meta.items():
+        if isinstance(value, dict):
+            if item in value:
+                return value
+    for key, value in meta.items():
+        if isinstance(value, dict):
+            return find_meta_branch(value, item)
+    return None
+
+
+def coordinate_system_from_metadata(meta):
+    """
+    Return a `geosoft.gxpy.coordinate_system.Coordinate_system` instance from metadata.
+
+    :param meta:    metadata dictionary
+    :return:        `geosoft.gxpy.coordinate_system.Coordinate_system`, or None
+    """
+    try:
+        geosoft = find_meta_branch(meta, 'geosoft')
+        if geosoft:
+            projection = find_meta_branch(geosoft['geosoft'], 'projection')
+            if projection:
+                return gxcs.Coordinate_system(projection['projection'])
+    except:
+        pass
+    return None
+
+
+def coordinate_system_from_metadata_file(file_name):
+    """
+    Return a `geosoft.gxpy.coordinate_system.Coordinate_system` instance from metadata.
+
+    :param file_name:    spatial dataset name.
+    :return:            `geosoft.gxpy.coordinate_system.Coordinate_system`, or None
+    """
+    return coordinate_system_from_metadata(gxu.geosoft_metadata(file_name))
+
+
+def extent_from_metadata(meta):
+    """
+    Return spatial dataset extent from geosoft metadata.
+
+    :param meta:                metadata dictionary
+    :return:                    `geosoft.gxpy.geometry.Point2` instance
+
+    .. versionadded:: 9.3.1
+    """
+
+    meta = find_meta_branch(meta, 'geosoft')
+    if meta:
+        cs = coordinate_system_from_metadata(meta)
+        try:
+            ex = meta['geosoft']['dataset']['georeference']['dataextents']['extent3d']
+            minp = gxgm.Point((float(ex['@minx']), float(ex['@miny']), float(ex['@minz'])))
+            maxp = gxgm.Point((float(ex['@maxx']), float(ex['@maxy']), float(ex['@maxz'])))
+            return gxgm.Point2((minp, maxp), cs)
+
+        except KeyError:
+            pass
+
+    return None
+
+
+def extent_from_metadata_file(file_name):
+    """
+    Return spatial dataset extent from file metadata .xml file
+
+    :param file_name:           spatial dataset file
+    :return:                    `geosoft.gxpy.geometry.Point2` instance
+
+    .. versionadded:: 9.3.1
+    """
+    return extent_from_metadata(gxu.geosoft_metadata(file_name))
 
 
 class SpatialData(gxgm.Geometry):
