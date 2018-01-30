@@ -63,7 +63,7 @@ def extent_union(g1, g2):
     """
     Return the spatial union of two spatial objects.
 
-    :param g1:  first object, returned extent will be in this coordinate system
+    :param g1:  extent (p0 < p1), returned extent will be in this coordinate system
     :param g2:  second object
 
     :return:    `Point2` instance in the coordinate system of g1
@@ -84,24 +84,33 @@ def extent_union(g1, g2):
         return g2
     if g2 is None:
         return g1
+
+    g2p0x, g2p0y, g2p0z = g2.p0.xyz
+    g2p1x, g2p1y, g2p1z = g2.p1.xyz
     if g1.coordinate_system != g2.coordinate_system:
-        corners = np.array([(g2.p0.x, g2.p0.y, g2.p0.z),
-                            (g2.p0.x, g2.p1.y, g2.p0.z),
-                            (g2.p1.x, g2.p1.y, g2.p0.z),
-                            (g2.p1.x, g2.p0.y, g2.p0.z),
-                            (g2.p0.x, g2.p0.y, g2.p1.z),
-                            (g2.p0.x, g2.p1.y, g2.p1.z),
-                            (g2.p1.x, g2.p1.y, g2.p1.z),
-                            (g2.p1.x, g2.p0.y, g2.p1.z)], dtype=np.float64)
+        corners = np.array([(g2p0x, g2p0y, g2p0z),
+                            (g2p0x, g2p1y, g2p0z),
+                            (g2p1x, g2p1y, g2p0z),
+                            (g2p1x, g2p0y, g2p0z),
+                            (g2p0x, g2p0y, g2p1z),
+                            (g2p0x, g2p1y, g2p1z),
+                            (g2p1x, g2p1y, g2p1z),
+                            (g2p1x, g2p0y, g2p1z)], dtype=np.float64)
         ex = PPoint(PPoint(corners, g2.coordinate_system), g1.coordinate_system).extent
         return extent_union(g1, ex)
 
-    min_x = min(g1.p0.x, g2.p0.x)
-    min_y = min(g1.p0.y, g2.p0.y)
-    min_z = min(g1.p0.z, g2.p0.z)
-    max_x = max(g1.p1.x, g2.p1.x)
-    max_y = max(g1.p1.y, g2.p1.y)
-    max_z = max(g1.p1.z, g2.p1.z)
+    g1p0x, g1p0y, g1p0z = g1.p0.xyz
+    g1p1x, g1p1y, g1p1z = g1.p1.xyz
+    if g2p0x >= g1p0x and g2p0y >= g1p0y and g2p0z >= g1p0z and\
+            g2p1x <= g1p1x and g2p1y <= g1p1y and g2p1z <= g1p1z:
+        return g1
+
+    min_x = g1p0x if g1p0x < g2p0x else g2p0x
+    min_y = g1p0y if g1p0y < g2p0y else g2p0y
+    min_z = g1p0z if g1p0z < g2p0z else g2p0z
+    max_x = g1p1x if g1p1x > g2p1x else g2p1x
+    max_y = g1p1y if g1p1y > g2p1y else g2p1y
+    max_z = g1p1x if g1p1z > g2p1z else g2p1z
     return Point2(((min_x, min_y, min_z), (max_x, max_y, max_z)), g1.coordinate_system)
 
 
