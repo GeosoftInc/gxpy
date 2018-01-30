@@ -5,6 +5,10 @@ import json
 import geosoft.gxapi as gxapi
 import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.vv as gxvv
+import geosoft.gxpy.grid as gxgrd
+import geosoft.gxpy.spatialdata as gxspd
+import geosoft.gxpy.geometry as gxgeo
+import geosoft.gxpy.gx as gx
 
 from base import GXPYTest
 
@@ -456,6 +460,36 @@ class Test(GXPYTest):
         self.assertTrue(gxcs.is_known(gxcs.Coordinate_system('WGS 84')))
         self.assertFalse(gxcs.is_known('crazy'))
 
+    def test_from_xml(self):
+        self.start()
+
+        temp_grid = gx.gx().temp_file('grd')
+        cs = gxcs.Coordinate_system('NAD27 / UTM zone 18N')
+        with gxgrd.Grid.new(temp_grid,
+                            properties={'dtype': np.int16,
+                                        'nx': 100, 'ny': 50,
+                                        'x0': 4, 'y0': 8,
+                                        'dx': 0.1, 'dy': 0.2,
+                                        'rot': 5,
+                                        'coordinate_system': cs}) as grd:
+            pass
+        cs = gxspd.coordinate_system_from_metadata_file(temp_grid)
+        self.assertEqual(str(cs), 'NAD27 / UTM zone 18N')
+
+        gxf = cs.gxf.copy()
+        gxf[0] = 'crazy'
+        gxf[1] = 'weird,6378206.4,0.0822718542230039,0'
+        cs = gxcs.Coordinate_system(gxf)
+        with gxgrd.Grid.new(temp_grid, overwrite=True,
+                            properties={'dtype': np.int16,
+                                        'nx': 100, 'ny': 50,
+                                        'x0': 4, 'y0': 8,
+                                        'dx': 0.1, 'dy': 0.2,
+                                        'rot': 5,
+                                        'coordinate_system': cs}) as grd:
+            pass
+        cs = gxspd.coordinate_system_from_metadata_file(temp_grid)
+        self.assertEqual(str(cs), 'weird / UTM zone 18N')
 
 
 ###############################################################################################
