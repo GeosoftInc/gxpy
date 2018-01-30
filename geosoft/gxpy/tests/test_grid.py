@@ -9,7 +9,6 @@ import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.grid as gxgrd
 import geosoft.gxpy.map as gxmap
 import geosoft.gxpy.geometry as gxgm
-import geosoft.gxpy.geometry as gxgm
 
 from base import GXPYTest
 

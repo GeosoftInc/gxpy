@@ -47,6 +47,7 @@ from . import view as gxv
 from . import agg as gxagg
 from . import metadata as gxmeta
 from . import vox_display as gxvoxd
+from . import spatialdata as gxspd
 
 
 __version__ = geosoft.__version__
@@ -1073,6 +1074,8 @@ class Draw_3d(Draw):
         finally:
             self.view.gxview.fill_color(fci)
 
+        self.view.add_extent(gxgm.Point2((p - radius, p + radius)))
+
     @_draw
     def box_3d(self, p2, wireframe=False):
         """
@@ -1114,6 +1117,8 @@ class Draw_3d(Draw):
         finally:
             self.view.gxview.fill_color(fci)
 
+        self.view.add_extent(pp.extent)
+
     @_draw
     def cylinder_3d(self, p2, radius, r2=None, close=CYLINDER_CLOSE_ALL):
         """
@@ -1152,6 +1157,10 @@ class Draw_3d(Draw):
         finally:
             self.view.gxview.fill_color(fci)
 
+        r = max(radius, r2)
+        ext = p2.extent
+        self.view.add_extent(gxgm.Point2((ext.p0 - r, ext.p1 + r)))
+
     @_draw
     def cone_3d(self, p2, radius):
         """
@@ -1186,12 +1195,16 @@ class Draw_3d(Draw):
         """
 
         points = _make_ppoint(points)
+        radius = self.pen.line_thick * 0.5
         if style == POINT_STYLE_DOT:
             self._poly_3d(points, gxapi.MVIEW_DRAWOBJ3D_ENTITY_POINTS)
         else:
-            radius = self.pen.line_thick * 0.5
             for i in range(points.length):
                 self.sphere(points[i], radius=radius)
+
+        ext = points.extent
+        self.view.add_extent(gxgm.Point2((ext.p0 - radius, ext.p1 + radius)))
+
 
     @_draw
     def polyline_3d(self, points, style=LINE3D_STYLE_LINE):
@@ -1208,17 +1221,20 @@ class Draw_3d(Draw):
         points = _make_ppoint(points)
         if points.length < 2:
             raise GroupException(_t('Need at least two points.'))
+        radius = self.pen.line_thick * 0.5
         if style == LINE3D_STYLE_LINE:
             vvx, vvy, vvz = points.make_xyz_vv()
             self.view.gxview.poly_line_3d(vvx.gxvv, vvy.gxvv, vvz.gxvv)
         else:
-            radius = self.pen.line_thick * 0.5
             self.pen = Pen(fill_color=self.pen.line_color, default=self.pen)
             for i in range(points.length-1):
                 self.cylinder_3d(gxgm.Point2((points[i], points[i+1])), radius=radius)
             if style == LINE3D_STYLE_TUBE_JOINED:
                 for i in range(points.length):
                     self.sphere(points[i], radius=radius)
+
+        ext = points.extent
+        self.view.add_extent(gxgm.Point2((ext.p0 - radius, ext.p1 + radius)))
 
     def polydata_3d(self,
                     data,
@@ -1229,7 +1245,7 @@ class Draw_3d(Draw):
 
         :param data:                iterable that yields items passed to your `render_info_func` callback
         :param render_info_func:    a callback that given `(item, passback)` returns the rendering `(symbol_type,
-                                    geometry, color_integer, attibute)`:
+                                    geometry, color_integer, attribute)`:
                                     
                                     ================== ======== =============== =========
                                     Symbol             Geometry Color           Attribute
@@ -1267,12 +1283,15 @@ class Draw_3d(Draw):
             render = render_info_func(item, passback)
             if render:
                 symbol, geometry, color, attribute = render
+
                 if color != cint:
                     self.view.gxview.fill_color(color)
                     cint = color
 
                 if symbol == SYMBOL_3D_SPHERE:
                     self.view.gxview.sphere_3d(geometry[0], geometry[1], geometry[2], attribute)
+                    if not isinstance(geometry, gxgm.Geometry):
+                        geometry = gxgm.Point(geometry)
 
                 elif symbol == SYMBOL_3D_CUBE:
                     self.view.gxview.box_3d(geometry.p0.x, geometry.p0.y, geometry.p0.z,
@@ -1290,6 +1309,12 @@ class Draw_3d(Draw):
 
                 else:
                     raise GroupException(_t('Symbol type not implemented'))
+
+                if attribute:
+                    e = gxgm.Point2(geometry).extent
+                    self.view.add_extent((e.p0 - attribute, e.p1 + attribute))
+                else:
+                    self.view.add_extent(geometry.extent)
 
 
     def _surface(self, faces, verticies, coordinate_system=None):
@@ -1369,6 +1394,8 @@ def surface_group_from_file(v3d, file_name, group_name=None, overwrite=False):
         raise GroupException(_t('Cannot overwrite exing group "{}"').format(group_name))
 
     v3d.gxview.draw_surface_3d_from_file(group_name, file_name)
+    ext = gxspd.extent_from_metadata_file(file_name)
+    v3d.add_extent(ext)
 
 
 def contour(view, group_name, grid_file_name):
@@ -2444,6 +2471,7 @@ class VoxDisplayGroup(Group):
         if name is None:
             name = voxd.name
         voxd_group = cls(view3d, name, mode=mode)
+        ext = voxd.vox.extent
         if voxd.is_vector:
             scale, height_base_ratio, max_base_size_ratio, max_cones = voxd.vector_cone_specs
             if max_cones is None:
@@ -2459,10 +2487,20 @@ class VoxDisplayGroup(Group):
                                                     max_base_size_ratio,
                                                     minimum_value,
                                                     max_cones)
+
+            # add to extent to make room for vectors
+            cell2 = min(min(voxd.vox.cells_x),
+                        min(voxd.vox.cells_y),
+                        min(voxd.vox.cells_z)) * 4.
+            ext = gxgm.Point2((ext.p0 - cell2, ext.p1 + cell2))
+
         else:
             view3d.gxview.voxd(voxd.gxvoxd, voxd_group.name)
+
+        view3d.add_extent(ext)
         voxd_group._voxd = voxd
         voxd_group.unit_of_measure = voxd.unit_of_measure
+
         return voxd_group
 
     @classmethod
