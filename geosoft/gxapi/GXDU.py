@@ -2933,7 +2933,7 @@ class GXDU(gxapi_cy.WrapDU):
         :type  db:    GXDB
         :type  data:  str
 
-        .. versionadded:: 9.4
+        .. versionadded:: 9.3.1
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
 
