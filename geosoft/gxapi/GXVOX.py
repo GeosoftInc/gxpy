@@ -231,7 +231,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         .. versionadded:: 8.5
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
         """
         self._export_seg_y(output_segy_filename.encode(), sample_interval)
         
