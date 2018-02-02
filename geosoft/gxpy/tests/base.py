@@ -28,7 +28,7 @@ UPDATE_RESULTS_DONT_ASK = False
 
 # set to False to compare result and master png files. These may differ depending on OM settings between
 # environment that creates the master and the results.
-IGNORE_IMAGE_DIFFERENCES = True
+IGNORE_IMAGE_DIFFERENCES = False
 
 # set to True to show viewer for each CRC call
 SHOW_TEST_VIEWERS = False

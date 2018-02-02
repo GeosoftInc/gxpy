@@ -2,7 +2,7 @@
    <Item type="Version" size="8">
       <Item name="Value" value="Current"/>
    </Item>
-   <Item type="VOXD" size="1787">
+   <Item type="VOXD" size="1821">
       <Item name="VOXD" type="VOXD">
          <VOXD>
             <Item name="VoxelName" value=".\__tmp__\_gx_uuid_test_vox_display.py_1\test.geosoft_voxel"/>
@@ -153,6 +153,8 @@
                   <Item name="Color" value="GS_R8MX"/>
                </Levels>
             </ITR>
+            <Item name="LayersCount" value="2"/>
+            <Item name="Resolution" value="0"/>
          </VOXD>
       </Item>
    </Item>

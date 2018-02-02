@@ -2,6 +2,605 @@
    <Item type="Version" size="8">
       <Item name="Value" value="Current"/>
    </Item>
-   <Item type="VECTOR3D" size="11833"></Item>
+   <Item type="VECTOR3D" size="11867">
+      <Item name="VECTOR3D" type="VECTOR3D">
+         <VECTOR3D>
+            <VectorInformation> Source="mvi.geosoft_vectorvoxel"
+               <Item name="Volume" type="D3VOLUME">
+                  <Value name="MinX" value="504637.5"/>
+                  <Value name="MinY" value="6470137.5"/>
+                  <Value name="MinZ" value="-1505.465987"/>
+                  <Value name="MaxX" value="505987.5"/>
+                  <Value name="MaxY" value="6471512.5"/>
+                  <Value name="MaxZ" value="301.81"/>
+               </Item>
+               <Item name="ClipVolume" type="D3VOLUME">
+                  <Value name="MinX" value="*"/>
+                  <Value name="MinY" value="*"/>
+                  <Value name="MinZ" value="*"/>
+                  <Value name="MaxX" value="*"/>
+                  <Value name="MaxY" value="*"/>
+                  <Value name="MaxZ" value="*"/>
+               </Item>
+               <RotatedClipInfo>
+                  <Item name="XAzimuth" value="GS_R8DM"/>
+                  <Item name="XDip" value="GS_R8DM"/>
+                  <Item name="XRotation" value="False"/>
+                  <Item name="YAzimuth" value="GS_R8DM"/>
+                  <Item name="YDip" value="GS_R8DM"/>
+                  <Item name="YRotation" value="False"/>
+                  <Item name="ZAzimuth" value="GS_R8DM"/>
+                  <Item name="ZDip" value="GS_R8DM"/>
+                  <Item name="ZRotation" value="False"/>
+               </RotatedClipInfo>
+               <Item name="Origin" type="D3POINT">
+                  <Value name="X" value="504837.5"/>
+                  <Value name="Y" value="6470137.5"/>
+                  <Value name="Z" value="-1505.465987"/>
+               </Item>
+               <Item name="Scale" value="1769.775987"/>
+               <Item name="Scaled Vector Locations" type="F3PointVV">
+                  <Item name="length" value="377"/>
+                  <Item name="CRC" value="3067294693"/>
+                  <Item name="length output" value="32"/>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.11300866"/>
+                     <Value name="Z" value="0"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.11300866"/>
+                     <Value name="Z" value="0.079829141"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.11300866"/>
+                     <Value name="Z" value="0.15374503"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.11300866"/>
+                     <Value name="Z" value="0.22218564"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.11300866"/>
+                     <Value name="Z" value="0.28555658"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.11300866"/>
+                     <Value name="Z" value="0.34423339"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.11300866"/>
+                     <Value name="Z" value="0.44886968"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.11300866"/>
+                     <Value name="Z" value="0.53857839"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.22601731"/>
+                     <Value name="Z" value="0"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.22601731"/>
+                     <Value name="Z" value="0.079829141"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.22601731"/>
+                     <Value name="Z" value="0.15374503"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.22601731"/>
+                     <Value name="Z" value="0.22218564"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.22601731"/>
+                     <Value name="Z" value="0.28555658"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.22601731"/>
+                     <Value name="Z" value="0.34423339"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.22601731"/>
+                     <Value name="Z" value="0.44886968"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.22601731"/>
+                     <Value name="Z" value="0.53857839"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.22601731"/>
+                     <Value name="Z" value="0.61548918"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.22601731"/>
+                     <Value name="Z" value="0.68142778"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.22601731"/>
+                     <Value name="Z" value="0.7379595"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.22601731"/>
+                     <Value name="Z" value="0.8080017"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.33902594"/>
+                     <Value name="Z" value="0"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.33902594"/>
+                     <Value name="Z" value="0.079829141"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.33902594"/>
+                     <Value name="Z" value="0.15374503"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.33902594"/>
+                     <Value name="Z" value="0.22218564"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.33902594"/>
+                     <Value name="Z" value="0.28555658"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.33902594"/>
+                     <Value name="Z" value="0.34423339"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.33902594"/>
+                     <Value name="Z" value="0.44886968"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.33902594"/>
+                     <Value name="Z" value="0.53857839"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.33902594"/>
+                     <Value name="Z" value="0.61548918"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.33902594"/>
+                     <Value name="Z" value="0.68142778"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.33902594"/>
+                     <Value name="Z" value="0.7379595"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0"/>
+                     <Value name="Y" value="0.33902594"/>
+                     <Value name="Z" value="0.8080017"/>
+                  </Item>
+               </Item>
+               <Item name="Scaled Vector Components" type="F3PointVV">
+                  <Item name="length" value="377"/>
+                  <Item name="CRC" value="1770111749"/>
+                  <Item name="length output" value="32"/>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0.0012725668"/>
+                     <Value name="Y" value="0.0028391096"/>
+                     <Value name="Z" value="0.015184774"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0.0023858817"/>
+                     <Value name="Y" value="0.0049235253"/>
+                     <Value name="Z" value="0.018297866"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0.0020081766"/>
+                     <Value name="Y" value="0.0051000128"/>
+                     <Value name="Z" value="0.018336033"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0.001248547"/>
+                     <Value name="Y" value="0.0047190632"/>
+                     <Value name="Z" value="0.017356785"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0.00056988513"/>
+                     <Value name="Y" value="0.0038635368"/>
+                     <Value name="Z" value="0.015039081"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0.000064083106"/>
+                     <Value name="Y" value="0.0031909326"/>
+                     <Value name="Z" value="0.012906074"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="-0.0013422964"/>
+                     <Value name="Y" value="0.0038569493"/>
+                     <Value name="Z" value="0.013332833"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="-0.0030143482"/>
+                     <Value name="Y" value="0.0051161619"/>
+                     <Value name="Z" value="0.015434501"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0.00044946859"/>
+                     <Value name="Y" value="0.0027879283"/>
+                     <Value name="Z" value="0.017336177"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0.0010853887"/>
+                     <Value name="Y" value="0.0046170028"/>
+                     <Value name="Z" value="0.019610023"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0.0012022556"/>
+                     <Value name="Y" value="0.0050743339"/>
+                     <Value name="Z" value="0.021840176"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0.0010705611"/>
+                     <Value name="Y" value="0.0049788291"/>
+                     <Value name="Z" value="0.022947045"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0.00078325585"/>
+                     <Value name="Y" value="0.0038660918"/>
+                     <Value name="Z" value="0.020355256"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0.00053118513"/>
+                     <Value name="Y" value="0.0027637046"/>
+                     <Value name="Z" value="0.01700866"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0.00035544403"/>
+                     <Value name="Y" value="0.0033497091"/>
+                     <Value name="Z" value="0.018724618"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0.00055777578"/>
+                     <Value name="Y" value="0.0047207493"/>
+                     <Value name="Z" value="0.020721974"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0.00041860275"/>
+                     <Value name="Y" value="0.0044248803"/>
+                     <Value name="Z" value="0.022337846"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="-0.00010933274"/>
+                     <Value name="Y" value="0.0045721163"/>
+                     <Value name="Z" value="0.019160179"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="-0.000081056613"/>
+                     <Value name="Y" value="0.0051330072"/>
+                     <Value name="Z" value="0.014387244"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="-0.00011589942"/>
+                     <Value name="Y" value="0.0062407139"/>
+                     <Value name="Z" value="0.0084770303"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="-0.000068770496"/>
+                     <Value name="Y" value="0.0018488701"/>
+                     <Value name="Z" value="0.026235623"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0.00037954972"/>
+                     <Value name="Y" value="0.0024744223"/>
+                     <Value name="Z" value="0.027089709"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0.00082961895"/>
+                     <Value name="Y" value="0.0031425727"/>
+                     <Value name="Z" value="0.033777669"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0.0014006669"/>
+                     <Value name="Y" value="0.0038117843"/>
+                     <Value name="Z" value="0.041593771"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0.0019365259"/>
+                     <Value name="Y" value="0.0041485685"/>
+                     <Value name="Z" value="0.044303909"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0.00241005"/>
+                     <Value name="Y" value="0.0041765813"/>
+                     <Value name="Z" value="0.043079123"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0.0033496805"/>
+                     <Value name="Y" value="0.002436857"/>
+                     <Value name="Z" value="0.038632859"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0.004148419"/>
+                     <Value name="Y" value="-0.0003772437"/>
+                     <Value name="Z" value="0.029426999"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0.0049499855"/>
+                     <Value name="Y" value="-0.0019404755"/>
+                     <Value name="Z" value="0.03291573"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0.0055434178"/>
+                     <Value name="Y" value="-0.0070174062"/>
+                     <Value name="Z" value="0.037297461"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0.0075071533"/>
+                     <Value name="Y" value="-0.0075915484"/>
+                     <Value name="Z" value="0.034503032"/>
+                  </Item>
+                  <Item name="VV Item" type="F3POINT">
+                     <Value name="X" value="0.0091061629"/>
+                     <Value name="Y" value="-0.0063294414"/>
+                     <Value name="Z" value="0.021791507"/>
+                  </Item>
+               </Item>
+               <ITR>
+                  <Header>
+                     <Item name="ColorModel" value="2"/>
+                     <Item name="Min" value="0.0001235652744"/>
+                     <Item name="Max" value="2.716247559"/>
+                     <Item name="ActualBrightness" value="0"/>
+                     <Item name="Brightness" value="0"/>
+                     <Item name="REG" type="REG">
+                        <REG>
+                           <Attributes>
+                              <Item name="FILE" value="uuid_test_figure_map_vectorvoxel_vector_1.tbl"/>
+                           </Attributes>
+                        </REG>
+                     </Item>
+                     <Model>
+                        <Item name="Parameters" type="DoubleArray">
+                           <Value index="0" value="0"/>
+                           <Value index="1" value="0"/>
+                           <Value index="2" value="0"/>
+                           <Value index="3" value="0"/>
+                        </Item>
+                        <Shade>
+                           <Item name="Inclination" value="GS_R8DM"/>
+                           <Item name="Declination" value="GS_R8DM"/>
+                           <Item name="Scale" value="GS_R8DM"/>
+                           <Item name="OriginGrid" value=""/>
+                        </Shade>
+                     </Model>
+                  </Header>
+                  <Colors>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="0" blue="255"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="85" blue="255"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="127" blue="255"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="170" blue="255"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="212" blue="255"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="233" blue="255"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="255" blue="255"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="255" blue="200"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="255" blue="145"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="255" blue="63"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="255" blue="49"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="255" blue="36"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="255" blue="0"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="72" green="255" blue="0"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="99" green="255" blue="0"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="109" green="255" blue="0"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="145" green="255" blue="0"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="182" green="255" blue="0"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="218" green="255" blue="0"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="255" blue="0"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="233" blue="0"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="212" blue="0"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="191" blue="0"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="180" blue="0"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="170" blue="0"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="148" blue="0"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="137" blue="0"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="127" blue="0"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="106" blue="0"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="85" blue="0"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="53" blue="0"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="21" blue="0"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="0" blue="0"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="0" blue="55"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="0" blue="109"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="0" blue="182"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="11" blue="218"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="121" blue="255"/>
+                     <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="159" blue="255"/>
+                  </Colors>
+                  <Levels>
+                     <Item name="Color" value="GS_R8MN"/>
+                     <Item name="Color" value="0.001112716675"/>
+                     <Item name="Color" value="0.001468365593"/>
+                     <Item name="Color" value="0.001744360268"/>
+                     <Item name="Color" value="0.001987915489"/>
+                     <Item name="Color" value="0.002219487345"/>
+                     <Item name="Color" value="0.002464847234"/>
+                     <Item name="Color" value="0.002716019427"/>
+                     <Item name="Color" value="0.002986245052"/>
+                     <Item name="Color" value="0.003296993274"/>
+                     <Item name="Color" value="0.003660795061"/>
+                     <Item name="Color" value="0.004111167661"/>
+                     <Item name="Color" value="0.004701512424"/>
+                     <Item name="Color" value="0.005469419762"/>
+                     <Item name="Color" value="0.006498475117"/>
+                     <Item name="Color" value="0.008059462059"/>
+                     <Item name="Color" value="0.01003795674"/>
+                     <Item name="Color" value="0.0123454569"/>
+                     <Item name="Color" value="0.01457907469"/>
+                     <Item name="Color" value="0.0168556996"/>
+                     <Item name="Color" value="0.01924820879"/>
+                     <Item name="Color" value="0.02204223288"/>
+                     <Item name="Color" value="0.02524129696"/>
+                     <Item name="Color" value="0.02864463679"/>
+                     <Item name="Color" value="0.03254482487"/>
+                     <Item name="Color" value="0.03676332948"/>
+                     <Item name="Color" value="0.0412713549"/>
+                     <Item name="Color" value="0.04634475901"/>
+                     <Item name="Color" value="0.05209774921"/>
+                     <Item name="Color" value="0.05870675923"/>
+                     <Item name="Color" value="0.0661166395"/>
+                     <Item name="Color" value="0.07465724555"/>
+                     <Item name="Color" value="0.08525698134"/>
+                     <Item name="Color" value="0.09893629225"/>
+                     <Item name="Color" value="0.1173525156"/>
+                     <Item name="Color" value="0.1433449005"/>
+                     <Item name="Color" value="0.1967993241"/>
+                     <Item name="Color" value="0.3267652022"/>
+                     <Item name="Color" value="0.6376557776"/>
+                     <Item name="Color" value="GS_R8MX"/>
+                  </Levels>
+               </ITR>
+               <Item name="Transparency" value="1"/>
+            </VectorInformation>
+            <ITR>
+               <Header>
+                  <Item name="ColorModel" value="2"/>
+                  <Item name="Min" value="0.0001235652744"/>
+                  <Item name="Max" value="2.716247559"/>
+                  <Item name="ActualBrightness" value="0"/>
+                  <Item name="Brightness" value="0"/>
+                  <Item name="REG" type="REG">
+                     <REG>
+                        <Attributes>
+                           <Item name="FILE" value="uuid_test_figure_map_vectorvoxel_vector_1.tbl"/>
+                        </Attributes>
+                     </REG>
+                  </Item>
+                  <Model>
+                     <Item name="Parameters" type="DoubleArray">
+                        <Value index="0" value="0"/>
+                        <Value index="1" value="0"/>
+                        <Value index="2" value="0"/>
+                        <Value index="3" value="0"/>
+                     </Item>
+                     <Shade>
+                        <Item name="Inclination" value="GS_R8DM"/>
+                        <Item name="Declination" value="GS_R8DM"/>
+                        <Item name="Scale" value="GS_R8DM"/>
+                        <Item name="OriginGrid" value=""/>
+                     </Shade>
+                  </Model>
+               </Header>
+               <Colors>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="0" blue="255"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="85" blue="255"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="127" blue="255"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="170" blue="255"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="212" blue="255"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="233" blue="255"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="255" blue="255"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="255" blue="200"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="255" blue="145"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="255" blue="63"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="255" blue="49"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="255" blue="36"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="255" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="72" green="255" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="99" green="255" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="109" green="255" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="145" green="255" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="182" green="255" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="218" green="255" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="255" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="233" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="212" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="191" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="180" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="170" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="148" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="137" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="127" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="106" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="85" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="53" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="21" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="0" blue="0"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="0" blue="55"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="0" blue="109"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="0" blue="182"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="11" blue="218"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="121" blue="255"/>
+                  <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="159" blue="255"/>
+               </Colors>
+               <Levels>
+                  <Item name="Color" value="GS_R8MN"/>
+                  <Item name="Color" value="0.001112716675"/>
+                  <Item name="Color" value="0.001468365593"/>
+                  <Item name="Color" value="0.001744360268"/>
+                  <Item name="Color" value="0.001987915489"/>
+                  <Item name="Color" value="0.002219487345"/>
+                  <Item name="Color" value="0.002464847234"/>
+                  <Item name="Color" value="0.002716019427"/>
+                  <Item name="Color" value="0.002986245052"/>
+                  <Item name="Color" value="0.003296993274"/>
+                  <Item name="Color" value="0.003660795061"/>
+                  <Item name="Color" value="0.004111167661"/>
+                  <Item name="Color" value="0.004701512424"/>
+                  <Item name="Color" value="0.005469419762"/>
+                  <Item name="Color" value="0.006498475117"/>
+                  <Item name="Color" value="0.008059462059"/>
+                  <Item name="Color" value="0.01003795674"/>
+                  <Item name="Color" value="0.0123454569"/>
+                  <Item name="Color" value="0.01457907469"/>
+                  <Item name="Color" value="0.0168556996"/>
+                  <Item name="Color" value="0.01924820879"/>
+                  <Item name="Color" value="0.02204223288"/>
+                  <Item name="Color" value="0.02524129696"/>
+                  <Item name="Color" value="0.02864463679"/>
+                  <Item name="Color" value="0.03254482487"/>
+                  <Item name="Color" value="0.03676332948"/>
+                  <Item name="Color" value="0.0412713549"/>
+                  <Item name="Color" value="0.04634475901"/>
+                  <Item name="Color" value="0.05209774921"/>
+                  <Item name="Color" value="0.05870675923"/>
+                  <Item name="Color" value="0.0661166395"/>
+                  <Item name="Color" value="0.07465724555"/>
+                  <Item name="Color" value="0.08525698134"/>
+                  <Item name="Color" value="0.09893629225"/>
+                  <Item name="Color" value="0.1173525156"/>
+                  <Item name="Color" value="0.1433449005"/>
+                  <Item name="Color" value="0.1967993241"/>
+                  <Item name="Color" value="0.3267652022"/>
+                  <Item name="Color" value="0.6376557776"/>
+                  <Item name="Color" value="GS_R8MX"/>
+               </Levels>
+            </ITR>
+            <Item name="LayersCount" value="4"/>
+            <Item name="Resolution" value="1"/>
+         </VECTOR3D>
+      </Item>
+   </Item>
    <Item type="End" size="8"></Item>
 </data>
