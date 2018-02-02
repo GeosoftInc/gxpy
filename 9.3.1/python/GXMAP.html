@@ -1,0 +1,1692 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GXMAP class &#8212; Geosoft GX Python API 9.3.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '9.3.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GXMAP class</a><ul>
+<li><a class="reference internal" href="#dupmap-constants">DUPMAP constants</a></li>
+<li><a class="reference internal" href="#map-export-bits-constants">MAP_EXPORT_BITS constants</a></li>
+<li><a class="reference internal" href="#map-export-format-constants">MAP_EXPORT_FORMAT constants</a></li>
+<li><a class="reference internal" href="#map-export-method-constants">MAP_EXPORT_METHOD constants</a></li>
+<li><a class="reference internal" href="#map-export-raster-format-constants">MAP_EXPORT_RASTER_FORMAT constants</a></li>
+<li><a class="reference internal" href="#map-list-mode-constants">MAP_LIST_MODE constants</a></li>
+<li><a class="reference internal" href="#map-open-constants">MAP_OPEN constants</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXMAP.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxmap-class">
+<span id="gxmap"></span><h1>GXMAP class<a class="headerlink" href="#gxmap-class" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="geosoft.gxapi.GXMAP">
+<em class="property">class </em><code class="descname">GXMAP</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXMAP class.</p>
+<p>MAPs are containers for <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW</span></code></a> objects. A view is a 3-D translation
+and a clip window on a map. Graphic entities can be drawn in an <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW</span></code></a>.
+It is recommended that the <a class="reference internal" href="#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXMAP</span></code></a> class be instantiated by first creating
+an <a class="reference internal" href="GXEMAP.html#geosoft.gxapi.GXEMAP" title="geosoft.gxapi.GXEMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXEMAP</span></code></a> object and calling the <a class="reference internal" href="GXEMAP.html#geosoft.gxapi.GXEMAP.lock" title="geosoft.gxapi.GXEMAP.lock"><code class="xref py py-obj docutils literal"><span class="pre">GXEMAP.lock</span></code></a> function.
+(See the explanation on the distinction between the <a class="reference internal" href="#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXMAP</span></code></a> and <a class="reference internal" href="GXEMAP.html#geosoft.gxapi.GXEMAP" title="geosoft.gxapi.GXEMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXEMAP</span></code></a> classes).</p>
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.agg_list">
+<code class="descname">agg_list</code><span class="sig-paren">(</span><em>lst</em>, <em>optn</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.agg_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of all aggregates in this map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; List to hold the views (allow up to 96 characters)</li>
+<li><strong>optn</strong> (<em>int</em>) &#8211; 0 - view/agg only 1 - view/agg/layer</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> List items are returned as view/agg/layer.
+The layer name is optional</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> class.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.agg_list_ex">
+<code class="descname">agg_list_ex</code><span class="sig-paren">(</span><em>lst</em>, <em>optn</em>, <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.agg_list_ex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of aggregates in this map based on a mode</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; List to hold the views (allow up to 96 characters)</li>
+<li><strong>optn</strong> (<em>int</em>) &#8211; 0 - view/agg only 1 - view/agg/layer</li>
+<li><strong>mode</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#map-list-mode"><span class="std std-ref">MAP_LIST_MODE constants</span></a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> List items are returned as view/agg/layer.
+The layer name is optional</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> class.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.clean">
+<code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clean up empty groups in all views in map.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.commit">
+<code class="descname">commit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.commit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Commit any changes to a map.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.copy_map_to_view">
+<code class="descname">copy_map_to_view</code><span class="sig-paren">(</span><em>dest_map</em>, <em>dest_view</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.copy_map_to_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy entire map into one view in output map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dest_map</strong> (<em>str</em>) &#8211; Destination <a class="reference internal" href="#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXMAP</span></code></a> name</li>
+<li><strong>dest_view</strong> (<em>str</em>) &#8211; Name of View</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.8.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.crc_map">
+<code class="descname">crc_map</code><span class="sig-paren">(</span><em>crc</em>, <em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.crc_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate an XML CRC of a <a class="reference internal" href="#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXMAP</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>crc</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; CRC returned</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; Name of xml to generate (.zip added)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMAP.create">
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>name</em>, <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a <a class="reference internal" href="#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXMAP</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> (<em>str</em>) &#8211; <a class="reference internal" href="#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXMAP</span></code></a> file name</li>
+<li><strong>mode</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#map-open"><span class="std std-ref">MAP_OPEN constants</span></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXMAP</span></code></a> Object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP">GXMAP</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.create_linked_3d_view">
+<code class="descname">create_linked_3d_view</code><span class="sig-paren">(</span><em>mview</em>, <em>view_name</em>, <em>min_x</em>, <em>min_y</em>, <em>max_x</em>, <em>max_y</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.create_linked_3d_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a 3D View in this map that is linked to a <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW</span></code></a> in a 3D View file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) &#8211; <a class="reference internal" href="GX3DV.html#geosoft.gxapi.GX3DV" title="geosoft.gxapi.GX3DV"><code class="xref py py-obj docutils literal"><span class="pre">GX3DV</span></code></a>&#8216;s 3D <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW</span></code></a></li>
+<li><strong>view_name</strong> (<em>str</em>) &#8211; New view name</li>
+<li><strong>min_x</strong> (<em>float</em>) &#8211; X minimum in mm</li>
+<li><strong>min_y</strong> (<em>float</em>) &#8211; Y minimun in mm</li>
+<li><strong>max_x</strong> (<em>float</em>) &#8211; X maximum in mm</li>
+<li><strong>max_y</strong> (<em>float</em>) &#8211; Y maximum in mm</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMAP.current">
+<em class="property">classmethod </em><code class="descname">current</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.current" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method returns the Current map opened.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXMAP</span></code></a> Object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP">GXMAP</a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> If there is no current map, and running interactively,
+the user is prompted to open a map.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.delete_view">
+<code class="descname">delete_view</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.delete_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a view in this map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) &#8211; View Name to delete</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> If the view does not exist, nothing happens.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.discard">
+<code class="descname">discard</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.discard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Discard all changes made to the map.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.dup_map">
+<code class="descname">dup_map</code><span class="sig-paren">(</span><em>ma_pd</em>, <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.dup_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Duplicate copy of current map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>ma_pd</strong> (<a class="reference internal" href="#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) &#8211; Destination <a class="reference internal" href="#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXMAP</span></code></a> object</li>
+<li><strong>content</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dupmap"><span class="std std-ref">DUPMAP constants</span></a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Before version 6.2 text in maps were displayed with a character set
+defining how characters above ASCII 127 would be displayed. 6.2 introduced
+Unicode in the core montaj engine that eliminated the need for such a setting and
+greatly increased the number of symbols that can be used. The only caveat
+of the new system is that text may appear corrupted (especially with GFN fonts) in
+versions prior to 6.2 that render maps created in version 6.2 and later.
+The constant <a class="reference internal" href="#geosoft.gxapi.DUPMAP_COPY_PRE62" title="geosoft.gxapi.DUPMAP_COPY_PRE62"><code class="xref py py-obj docutils literal"><span class="pre">DUPMAP_COPY_PRE62</span></code></a> provides a way to create maps that can be
+distributed to versions prior to 6.2.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.duplicate_view">
+<code class="descname">duplicate_view</code><span class="sig-paren">(</span><em>view</em>, <em>n_view</em>, <em>copy</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.duplicate_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Duplicate an entire view</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>view</strong> (<em>str</em>) &#8211; Name of view to duplicate</li>
+<li><strong>n_view</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Name of new view created (pass in &#8220;&#8221; and the new name is returned)</li>
+<li><strong>copy</strong> (<em>bool</em>) &#8211; Copy all groups</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.exist_view">
+<code class="descname">exist_view</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.exist_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks to see if a view exists.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) &#8211; View name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 view does not exist.
+1 view exists.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.export_all_in_view">
+<code class="descname">export_all_in_view</code><span class="sig-paren">(</span><em>name</em>, <em>view</em>, <em>pix_size</em>, <em>dpi</em>, <em>bits</em>, <em>dither</em>, <em>format</em>, <em>options</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.export_all_in_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export the entire map in view units to an external format. View and Group names are removed and plane spatial coordinates will be in the units of the map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) &#8211; File Name To Export</li>
+<li><strong>view</strong> (<em>str</em>) &#8211; View to export coordinates in</li>
+<li><strong>pix_size</strong> (<em>float</em>) &#8211; Resolution in view units of one pixel (or dummy, will be used if DPI is dummy)</li>
+<li><strong>dpi</strong> (<em>float</em>) &#8211; Resolution in DPI (will override view resolution if not dummy, map page size will be used to determine pixel size of output)</li>
+<li><strong>bits</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#map-export-bits"><span class="std std-ref">MAP_EXPORT_BITS constants</span></a></li>
+<li><strong>dither</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#map-export-method"><span class="std std-ref">MAP_EXPORT_METHOD constants</span></a></li>
+<li><strong>format</strong> (<em>str</em>) &#8211; <a class="reference internal" href="#map-export-format"><span class="std std-ref">MAP_EXPORT_FORMAT constants</span></a></li>
+<li><strong>options</strong> (<em>str</em>) &#8211; Extended Options String (format specific)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 7.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.export_all_raster">
+<code class="descname">export_all_raster</code><span class="sig-paren">(</span><em>name</em>, <em>view</em>, <em>size_x</em>, <em>size_y</em>, <em>dpi</em>, <em>bits</em>, <em>dither</em>, <em>format</em>, <em>options</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.export_all_raster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export the entire map to map to a non-geo raster format.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) &#8211; File Name To Export</li>
+<li><strong>view</strong> (<em>str</em>) &#8211; View to export coordinates in</li>
+<li><strong>size_x</strong> (<em>int</em>) &#8211; Number of Pixels in X (X or Y should be specified the other should be 0 and computed by export, or both can be 0 and DPI defined)</li>
+<li><strong>size_y</strong> (<em>int</em>) &#8211; Number of Pixels in Y (X or Y should be specified the other should be 0 and computed by export, or both can be 0 and DPI defined)</li>
+<li><strong>dpi</strong> (<em>float</em>) &#8211; Resolution in DPI (will override X and Y if not dummy, map page size will be used to determine pixel size of output)</li>
+<li><strong>bits</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#map-export-bits"><span class="std std-ref">MAP_EXPORT_BITS constants</span></a></li>
+<li><strong>dither</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#map-export-method"><span class="std std-ref">MAP_EXPORT_METHOD constants</span></a></li>
+<li><strong>format</strong> (<em>str</em>) &#8211; <a class="reference internal" href="#map-export-raster-format"><span class="std std-ref">MAP_EXPORT_RASTER_FORMAT constants</span></a></li>
+<li><strong>options</strong> (<em>str</em>) &#8211; Extended Options String (format specific)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 7.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.export_area_in_view">
+<code class="descname">export_area_in_view</code><span class="sig-paren">(</span><em>name</em>, <em>view</em>, <em>pix_size</em>, <em>dpi</em>, <em>bits</em>, <em>dither</em>, <em>min_x</em>, <em>min_y</em>, <em>max_x</em>, <em>max_y</em>, <em>format</em>, <em>options</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.export_area_in_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export an area of a map in view units to an external format</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) &#8211; File Name To Export</li>
+<li><strong>view</strong> (<em>str</em>) &#8211; View to export coordinates in</li>
+<li><strong>pix_size</strong> (<em>float</em>) &#8211; Resolution in view units of one pixel (or dummy, will be used if DPI is dummy)</li>
+<li><strong>dpi</strong> (<em>float</em>) &#8211; Resolution in DPI (will override view resolution if not dummy, map page size will be used to determine pixel size of output)</li>
+<li><strong>bits</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#map-export-bits"><span class="std std-ref">MAP_EXPORT_BITS constants</span></a></li>
+<li><strong>dither</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#map-export-method"><span class="std std-ref">MAP_EXPORT_METHOD constants</span></a></li>
+<li><strong>min_x</strong> (<em>float</em>) &#8211; Area To Export Min X location in view units</li>
+<li><strong>min_y</strong> (<em>float</em>) &#8211; Area To Export Min Y location in view units</li>
+<li><strong>max_x</strong> (<em>float</em>) &#8211; Area To Export Max X location in view units</li>
+<li><strong>max_y</strong> (<em>float</em>) &#8211; Area To Export Max Y location in view units</li>
+<li><strong>format</strong> (<em>str</em>) &#8211; <a class="reference internal" href="#map-export-format"><span class="std std-ref">MAP_EXPORT_FORMAT constants</span></a></li>
+<li><strong>options</strong> (<em>str</em>) &#8211; Extended Options String (format specific)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 7.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.export_area_raster">
+<code class="descname">export_area_raster</code><span class="sig-paren">(</span><em>name</em>, <em>view</em>, <em>min_x</em>, <em>min_y</em>, <em>max_x</em>, <em>max_y</em>, <em>size_x</em>, <em>size_y</em>, <em>dpi</em>, <em>bits</em>, <em>dither</em>, <em>format</em>, <em>options</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.export_area_raster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export an area of a map to a non-geo raster format.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) &#8211; File Name To Export</li>
+<li><strong>view</strong> (<em>str</em>) &#8211; View to export coordinates in</li>
+<li><strong>min_x</strong> (<em>float</em>) &#8211; Area To Export Min X location in view units</li>
+<li><strong>min_y</strong> (<em>float</em>) &#8211; Area To Export Min Y location in view units</li>
+<li><strong>max_x</strong> (<em>float</em>) &#8211; Area To Export Max X location in view units</li>
+<li><strong>max_y</strong> (<em>float</em>) &#8211; Area To Export Max Y location in view units</li>
+<li><strong>size_x</strong> (<em>int</em>) &#8211; Number of Pixels in X (X or Y should be specified the other should be 0 and computed by export, or both can be 0 and DPI defined)</li>
+<li><strong>size_y</strong> (<em>int</em>) &#8211; Number of Pixels in Y (X or Y should be specified the other should be 0 and computed by export, or both can be 0 and DPI defined)</li>
+<li><strong>dpi</strong> (<em>float</em>) &#8211; Resolution in DPI (will override X and Y if not dummy, map page size will be used to determine pixel size of output)</li>
+<li><strong>bits</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#map-export-bits"><span class="std std-ref">MAP_EXPORT_BITS constants</span></a></li>
+<li><strong>dither</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#map-export-method"><span class="std std-ref">MAP_EXPORT_METHOD constants</span></a></li>
+<li><strong>format</strong> (<em>str</em>) &#8211; <a class="reference internal" href="#map-export-raster-format"><span class="std std-ref">MAP_EXPORT_RASTER_FORMAT constants</span></a></li>
+<li><strong>options</strong> (<em>str</em>) &#8211; Extended Options String (format specific)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 7.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.get_class_name">
+<code class="descname">get_class_name</code><span class="sig-paren">(</span><em>cl</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.get_class_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a class name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cl</strong> (<em>str</em>) &#8211; Class</li>
+<li><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Name</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Map class names are intended to be used to record the
+names of certain view classes in the map, such as the
+&#8220;Data&#8221;, &#8220;Base&#8221; and &#8220;Section&#8221; views.</p>
+<p>There can only be one name for each class, but it can
+be changed.  This lets the &#8220;Data&#8221; class name change,
+for example, so plotting can select which class to plot
+to.</p>
+<p>If a name is not set, the class name is set and
+returned.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.get_data_proj">
+<code class="descname">get_data_proj</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.get_data_proj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the projection type of the Data view of a map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Project type as an integer</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 8.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.get_file_name">
+<code class="descname">get_file_name</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.get_file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the name of the map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Returned map file name</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.get_lpt">
+<code class="descname">get_lpt</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.get_lpt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the <a class="reference internal" href="GXLPT.html#geosoft.gxapi.GXLPT" title="geosoft.gxapi.GXLPT"><code class="xref py py-obj docutils literal"><span class="pre">GXLPT</span></code></a> Object of a <a class="reference internal" href="#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXMAP</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="GXLPT.html#geosoft.gxapi.GXLPT" title="geosoft.gxapi.GXLPT"><code class="xref py py-obj docutils literal"><span class="pre">GXLPT</span></code></a> Object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="GXLPT.html#geosoft.gxapi.GXLPT" title="geosoft.gxapi.GXLPT">GXLPT</a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.get_map_name">
+<code class="descname">get_map_name</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.get_map_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the Map Name of the Map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Returned map name</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.get_map_scale">
+<code class="descname">get_map_scale</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.get_map_scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the current map scale</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The current map scale</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> If there is a &#8220;Data&#8221; view, the scale is derived from
+this view.</p>
+<p>If their is no data view, the scale is derived
+from the first view that is not scaled in mm.
+otherwise, the scale is 1000 (mm).</p>
+<p>All views must be closed, or open read-only.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.get_map_size">
+<code class="descname">get_map_size</code><span class="sig-paren">(</span><em>xmin</em>, <em>ymin</em>, <em>xmax</em>, <em>ymax</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.get_map_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the size of the Map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>xmin</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; X minimum in mm</li>
+<li><strong>ymin</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Y minimun in mm</li>
+<li><strong>xmax</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; X maximum in mm</li>
+<li><strong>ymax</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Y maximum in mm</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.get_meta">
+<code class="descname">get_meta</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.get_meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the map&#8217;s <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal"><span class="pre">GXMETA</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal"><span class="pre">GXMETA</span></code></a> Object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA">GXMETA</a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.8.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> If the map has no <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal"><span class="pre">GXMETA</span></code></a>, an empty <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal"><span class="pre">GXMETA</span></code></a> will be created.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.get_reg">
+<code class="descname">get_reg</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.get_reg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the map&#8217;s <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> Object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG">GXREG</a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> If the map has no <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a>, an empty <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> will be created.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.group_list">
+<code class="descname">group_list</code><span class="sig-paren">(</span><em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.group_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of all views/groups in this map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; List to hold the view/groups.  Names may be up to 2080 characters in length.</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Returns all groups in the form &#8220;ViewNameGroupName&#8221;
+To get a <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> of groups in a specific map view, use
+the <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.list_groups" title="geosoft.gxapi.GXMVIEW.list_groups"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW.list_groups</span></code></a> function.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> class.
+<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.list_groups" title="geosoft.gxapi.GXMVIEW.list_groups"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW.list_groups</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.group_list_ex">
+<code class="descname">group_list_ex</code><span class="sig-paren">(</span><em>lst</em>, <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.group_list_ex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of views/groups in this map for this mode</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; List to hold the views.  View names may be up to 2080 characters in length.</li>
+<li><strong>mode</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#map-list-mode"><span class="std std-ref">MAP_LIST_MODE constants</span></a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> class.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.is_null">
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMAP.null">
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXMAP</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXMAP</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP">GXMAP</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.pack_files">
+<code class="descname">pack_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.pack_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pack all files in the map so that it can be mailed.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.packed_files">
+<code class="descname">packed_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.packed_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of packed files in the current map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The number of packed files in map.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.render">
+<code class="descname">render</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render a map to file/device.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) &#8211; Plot file/device</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.render_bitmap">
+<code class="descname">render_bitmap</code><span class="sig-paren">(</span><em>view</em>, <em>min_x</em>, <em>min_y</em>, <em>max_x</em>, <em>max_y</em>, <em>file</em>, <em>max_res</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.render_bitmap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render a map to a bitmap.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>view</strong> (<em>str</em>) &#8211; View we exporting units in</li>
+<li><strong>min_x</strong> (<em>float</em>) &#8211; MinX</li>
+<li><strong>min_y</strong> (<em>float</em>) &#8211; MinY</li>
+<li><strong>max_x</strong> (<em>float</em>) &#8211; MaxX</li>
+<li><strong>max_y</strong> (<em>float</em>) &#8211; MaxY</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; File to generate (BMP or PNG, otherwise extension forced to BMP)</li>
+<li><strong>max_res</strong> (<em>int</em>) &#8211; Maximum resolution in either direction, -1 for none (will change the pixel density of image if exceeded)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.resize_all">
+<code class="descname">resize_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.resize_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resize a map to the extents of all views.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> This is the same as <a class="reference internal" href="#geosoft.gxapi.GXMAP.resize_all_ex" title="geosoft.gxapi.GXMAP.resize_all_ex"><code class="xref py py-obj docutils literal"><span class="pre">resize_all_ex</span></code></a> with
+<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.MVIEW_EXTENT_CLIP" title="geosoft.gxapi.MVIEW_EXTENT_CLIP"><code class="xref py py-obj docutils literal"><span class="pre">MVIEW_EXTENT_CLIP</span></code></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.resize_all_ex">
+<code class="descname">resize_all_ex</code><span class="sig-paren">(</span><em>ext</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.resize_all_ex" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#geosoft.gxapi.GXMAP.resize_all" title="geosoft.gxapi.GXMAP.resize_all"><code class="xref py py-obj docutils literal"><span class="pre">resize_all</span></code></a> with selection of view extent type selection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ext</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXMVIEW.html#mview-extent"><span class="std std-ref">MVIEW_EXTENT constants</span></a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.MVIEW_EXTENT_VISIBLE" title="geosoft.gxapi.MVIEW_EXTENT_VISIBLE"><code class="xref py py-obj docutils literal"><span class="pre">MVIEW_EXTENT_VISIBLE</span></code></a> gives a more &#8220;reasonable&#8221; map size, and won&#8217;t
+clip off labels outside a graph window.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.save_as_mxd">
+<code class="descname">save_as_mxd</code><span class="sig-paren">(</span><em>mxd</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.save_as_mxd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save as ArcGIS <a class="reference internal" href="GXMXD.html#geosoft.gxapi.GXMXD" title="geosoft.gxapi.GXMXD"><code class="xref py py-obj docutils literal"><span class="pre">GXMXD</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mxd</strong> (<em>str</em>) &#8211; Geosoft map file name</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.set_class_name">
+<code class="descname">set_class_name</code><span class="sig-paren">(</span><em>cl</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.set_class_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a class name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cl</strong> (<em>str</em>) &#8211; Class</li>
+<li><strong>name</strong> (<em>str</em>) &#8211; Name</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Map class names are intended to be used to record the
+names of certain view classes in the map, such as the
+&#8220;Data&#8221;, &#8220;Base&#8221; and &#8220;Section&#8221; views.</p>
+<p>There can only be one name for each class, but it can
+be changed.  This lets the &#8220;Data&#8221; class name change,
+for example, so plotting can select which class to plot
+to.</p>
+<p>If a name is not set, the class name is set and
+returned.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.set_current">
+<code class="descname">set_current</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.set_current" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the current map to this map.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.set_map_name">
+<code class="descname">set_map_name</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.set_map_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the Map Name of the Map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) &#8211; Map Name</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.set_map_scale">
+<code class="descname">set_map_scale</code><span class="sig-paren">(</span><em>scale</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.set_map_scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the current map scale</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>scale</strong> (<em>float</em>) &#8211; New map scale (must be &gt; 0).</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> All views in the map will be resized for the new
+map scale.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.set_map_size">
+<code class="descname">set_map_size</code><span class="sig-paren">(</span><em>xmin</em>, <em>ymin</em>, <em>xmax</em>, <em>ymax</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.set_map_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the size of the Map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>xmin</strong> (<em>float</em>) &#8211; X minimum in mm</li>
+<li><strong>ymin</strong> (<em>float</em>) &#8211; Y minimun in mm</li>
+<li><strong>xmax</strong> (<em>float</em>) &#8211; X maximum in mm</li>
+<li><strong>ymax</strong> (<em>float</em>) &#8211; Y maximum in mm</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The map size is area on the <a class="reference internal" href="#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXMAP</span></code></a> that contains graphics
+to be plotted.  The area can be bigger or smaller that
+the current views.  In the absense of any other information
+only the area defined by the map size is plotted.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">SetSizeViews_MAP</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.set_meta">
+<code class="descname">set_meta</code><span class="sig-paren">(</span><em>meta</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.set_meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write a <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal"><span class="pre">GXMETA</span></code></a> to a map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) &#8211; <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal"><span class="pre">GXMETA</span></code></a> to write to map</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.8.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.set_reg">
+<code class="descname">set_reg</code><span class="sig-paren">(</span><em>reg</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.set_reg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write a <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> to a map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>reg</strong> (<a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><em>GXREG</em></a>) &#8211; <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">GXREG</span></code></a> to write to map</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMAP.sync">
+<em class="property">classmethod </em><code class="descname">sync</code><span class="sig-paren">(</span><em>map</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.sync" title="Permalink to this definition">¶</a></dt>
+<dd><p>Syncronize the Metadata</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>map</strong> (<em>str</em>) &#8211; Geosoft map file name</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.un_pack_files">
+<code class="descname">un_pack_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.un_pack_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>UnPack all files from map to workspace.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.un_pack_files_ex">
+<code class="descname">un_pack_files_ex</code><span class="sig-paren">(</span><em>force</em>, <em>errors</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.un_pack_files_ex" title="Permalink to this definition">¶</a></dt>
+<dd><p>UnPack all files from map to workspace.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>force</strong> (<em>int</em>) &#8211; (0 - Produce errors, 1 - Force overwrites)</li>
+<li><strong>errors</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; List of files that are problematic returned</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The option to force will simply overwrite the files.
+When the non-force option is in effect the method will
+stop if any files are going to be overwritting. These
+file names will end up in the Errors string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.un_pack_files_to_folder">
+<code class="descname">un_pack_files_to_folder</code><span class="sig-paren">(</span><em>force</em>, <em>dir</em>, <em>errors</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.un_pack_files_to_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>UnPack all files from map to workspace.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>force</strong> (<em>int</em>) &#8211; (0 - Produce errors, 1 - Force overwrites)</li>
+<li><strong>dir</strong> (<em>str</em>) &#8211; Directory to place unpacked files in.</li>
+<li><strong>errors</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; List of files that are problematic returned</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 7.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.view_list">
+<code class="descname">view_list</code><span class="sig-paren">(</span><em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.view_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of all views in this map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; List to hold the views.  View names may be up to 2080 characters in length.</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> class.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMAP.view_list_ex">
+<code class="descname">view_list_ex</code><span class="sig-paren">(</span><em>lst</em>, <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAP.view_list_ex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of views of certain types in this map</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; List to hold the views.  View names may be up to 2080 characters in length.</li>
+<li><strong>mode</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#map-list-mode"><span class="std std-ref">MAP_LIST_MODE constants</span></a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="dupmap-constants">
+<span id="dupmap"></span><h2>DUPMAP constants<a class="headerlink" href="#dupmap-constants" title="Permalink to this headline">¶</a></h2>
+<p>Duplicate Modes</p>
+<dl class="data">
+<dt id="geosoft.gxapi.DUPMAP_BLANK">
+<code class="descname">DUPMAP_BLANK</code><a class="headerlink" href="#geosoft.gxapi.DUPMAP_BLANK" title="Permalink to this definition">¶</a></dt>
+<dd><p>Blank</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">DUPMAP_BLANK</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.DUPMAP_COPY">
+<code class="descname">DUPMAP_COPY</code><a class="headerlink" href="#geosoft.gxapi.DUPMAP_COPY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy all current contents</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">DUPMAP_COPY</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.DUPMAP_COPY_PRE62">
+<code class="descname">DUPMAP_COPY_PRE62</code><a class="headerlink" href="#geosoft.gxapi.DUPMAP_COPY_PRE62" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy all current contents and save text for pre-6.2 versions.</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">DUPMAP_COPY_PRE62</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="map-export-bits-constants">
+<span id="map-export-bits"></span><h2>MAP_EXPORT_BITS constants<a class="headerlink" href="#map-export-bits-constants" title="Permalink to this headline">¶</a></h2>
+<p>Color Types</p>
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_EXPORT_BITS_24">
+<code class="descname">MAP_EXPORT_BITS_24</code><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_BITS_24" title="Permalink to this definition">¶</a></dt>
+<dd><p>24 Bit Color</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_EXPORT_BITS_24</code><em class="property"> = 24</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_EXPORT_BITS_GREY8">
+<code class="descname">MAP_EXPORT_BITS_GREY8</code><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_BITS_GREY8" title="Permalink to this definition">¶</a></dt>
+<dd><p>8 Bit Gray Scale</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_EXPORT_BITS_GREY8</code><em class="property"> = 9</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_EXPORT_BITS_8">
+<code class="descname">MAP_EXPORT_BITS_8</code><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_BITS_8" title="Permalink to this definition">¶</a></dt>
+<dd><p>8 Bit Color</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_EXPORT_BITS_8</code><em class="property"> = 8</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_EXPORT_BITS_GREY4">
+<code class="descname">MAP_EXPORT_BITS_GREY4</code><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_BITS_GREY4" title="Permalink to this definition">¶</a></dt>
+<dd><p>4 Bit Gray Scale</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_EXPORT_BITS_GREY4</code><em class="property"> = 5</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_EXPORT_BITS_4">
+<code class="descname">MAP_EXPORT_BITS_4</code><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_BITS_4" title="Permalink to this definition">¶</a></dt>
+<dd><p>4 Bit Color</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_EXPORT_BITS_4</code><em class="property"> = 4</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_EXPORT_BITS_GREY1">
+<code class="descname">MAP_EXPORT_BITS_GREY1</code><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_BITS_GREY1" title="Permalink to this definition">¶</a></dt>
+<dd><p>1 Bit Gray Scale</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_EXPORT_BITS_GREY1</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_EXPORT_BITS_DEFAULT">
+<code class="descname">MAP_EXPORT_BITS_DEFAULT</code><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_BITS_DEFAULT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default Resolution</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_EXPORT_BITS_DEFAULT</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="map-export-format-constants">
+<span id="map-export-format"></span><h2>MAP_EXPORT_FORMAT constants<a class="headerlink" href="#map-export-format-constants" title="Permalink to this headline">¶</a></h2>
+<p>Export Formats
+Format   Description                  Type
+=======  ==========================   ====</p>
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_EXPORT_FORMAT_PLT">
+<code class="descname">MAP_EXPORT_FORMAT_PLT</code><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_PLT" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8220;PLT&#8221;    Geosoft Plot (<code class="docutils literal"><span class="pre">*.plt</span></code>)         Plot</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_EXPORT_FORMAT_PLT</code><em class="property"> = 'PLT'</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_EXPORT_FORMAT_SHP">
+<code class="descname">MAP_EXPORT_FORMAT_SHP</code><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_SHP" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8220;<a class="reference internal" href="GXSHP.html#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal"><span class="pre">GXSHP</span></code></a>&#8221;    ArcView Shapfile (<code class="docutils literal"><span class="pre">*.shp</span></code>)     Plot</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_EXPORT_FORMAT_SHP</code><em class="property"> = 'SHP'</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_EXPORT_FORMAT_DXF12">
+<code class="descname">MAP_EXPORT_FORMAT_DXF12</code><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_DXF12" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8220;DXF12&#8221;  AutoCad12 (<code class="docutils literal"><span class="pre">*.dxf</span></code>)            Plot</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_EXPORT_FORMAT_DXF12</code><em class="property"> = 'DXF12'</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_EXPORT_FORMAT_DXF13">
+<code class="descname">MAP_EXPORT_FORMAT_DXF13</code><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_DXF13" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8220;DXF13&#8221;  AutoCad13 (<code class="docutils literal"><span class="pre">*.dxf</span></code>)            Plot</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_EXPORT_FORMAT_DXF13</code><em class="property"> = 'DXF13'</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_EXPORT_FORMAT_GTIFF">
+<code class="descname">MAP_EXPORT_FORMAT_GTIFF</code><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_GTIFF" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8220;GTIFF&#8221;  GeoTIFF (<code class="docutils literal"><span class="pre">*.tif</span></code>),             Color Image</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_EXPORT_FORMAT_GTIFF</code><em class="property"> = 'GTIFF'</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_EXPORT_FORMAT_MTIFF">
+<code class="descname">MAP_EXPORT_FORMAT_MTIFF</code><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_MTIFF" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8220;MTIFF&#8221;  MapInfo TIFF (<code class="docutils literal"><span class="pre">*.tif</span></code>)         Color Image</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_EXPORT_FORMAT_MTIFF</code><em class="property"> = 'MTIFF'</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_EXPORT_FORMAT_ATIFF">
+<code class="descname">MAP_EXPORT_FORMAT_ATIFF</code><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_ATIFF" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8220;ATIFF&#8221;  ArcView TIFF (<code class="docutils literal"><span class="pre">*.tif</span></code>)         Color Image</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_EXPORT_FORMAT_ATIFF</code><em class="property"> = 'ATIFF'</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_EXPORT_FORMAT_GEO">
+<code class="descname">MAP_EXPORT_FORMAT_GEO</code><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_GEO" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8220;<code class="xref py py-obj docutils literal"><span class="pre">GXGEO</span></code>&#8221;    Geosoft COLOR grid (<code class="docutils literal"><span class="pre">*.grd</span></code>)   Color Image</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_EXPORT_FORMAT_GEO</code><em class="property"> = 'GEO'</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_EXPORT_FORMAT_ERM">
+<code class="descname">MAP_EXPORT_FORMAT_ERM</code><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_ERM" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8220;ERM&#8221;    ER Mapper RGB (<code class="docutils literal"><span class="pre">*.ers</span></code>)        Color Image</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_EXPORT_FORMAT_ERM</code><em class="property"> = 'ERM'</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_EXPORT_FORMAT_KMZ">
+<code class="descname">MAP_EXPORT_FORMAT_KMZ</code><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_KMZ" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8220;KMZ&#8221;    Keyhole Markup (<code class="docutils literal"><span class="pre">*.kmz</span></code>)       Zipped XML/Image files</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_EXPORT_FORMAT_KMZ</code><em class="property"> = 'KMZ'</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="map-export-method-constants">
+<span id="map-export-method"></span><h2>MAP_EXPORT_METHOD constants<a class="headerlink" href="#map-export-method-constants" title="Permalink to this headline">¶</a></h2>
+<p>Dithering Methods</p>
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_EXPORT_METHOD_STANDARD">
+<code class="descname">MAP_EXPORT_METHOD_STANDARD</code><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_METHOD_STANDARD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard Dither</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_EXPORT_METHOD_STANDARD</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_EXPORT_METHOD_DIFFUSE">
+<code class="descname">MAP_EXPORT_METHOD_DIFFUSE</code><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_METHOD_DIFFUSE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Error Diffusion Dither</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_EXPORT_METHOD_DIFFUSE</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_EXPORT_METHOD_NONE">
+<code class="descname">MAP_EXPORT_METHOD_NONE</code><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_METHOD_NONE" title="Permalink to this definition">¶</a></dt>
+<dd><p>No Dither</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_EXPORT_METHOD_NONE</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="map-export-raster-format-constants">
+<span id="map-export-raster-format"></span><h2>MAP_EXPORT_RASTER_FORMAT constants<a class="headerlink" href="#map-export-raster-format-constants" title="Permalink to this headline">¶</a></h2>
+<p>Export Raster Formats
+.
+Format  Description                      Type           B/W  B/W  COL  B/W  COL  COL
+======= ==========================       ===========    ===  ===  ===  ===  ===  ===</p>
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_EMF">
+<code class="descname">MAP_EXPORT_RASTER_FORMAT_EMF</code><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_EMF" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8220;EMF&#8221;   Enhanced Metafile (<code class="docutils literal"><span class="pre">*.emf</span></code>)        Plot</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_EXPORT_RASTER_FORMAT_EMF</code><em class="property"> = 'EMF'</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_BMP">
+<code class="descname">MAP_EXPORT_RASTER_FORMAT_BMP</code><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_BMP" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8220;BMP&#8221;   Bitmap (<code class="docutils literal"><span class="pre">*.bmp</span></code>)                   Color Image     X    X    X    X    X    X</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_EXPORT_RASTER_FORMAT_BMP</code><em class="property"> = 'BMP'</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_JPEGL">
+<code class="descname">MAP_EXPORT_RASTER_FORMAT_JPEGL</code><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_JPEGL" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8220;JPEGL&#8221; JPEG Low Quality (<code class="docutils literal"><span class="pre">*.jpg</span></code>)         Color Image                              X</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_EXPORT_RASTER_FORMAT_JPEGL</code><em class="property"> = 'JPEGL'</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_JPEG">
+<code class="descname">MAP_EXPORT_RASTER_FORMAT_JPEG</code><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_JPEG" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8220;JPEG&#8221; JPEG (<code class="docutils literal"><span class="pre">*.jpg</span></code>)                     Color Image                              X</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_EXPORT_RASTER_FORMAT_JPEG</code><em class="property"> = 'JPEG'</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_JPEGH">
+<code class="descname">MAP_EXPORT_RASTER_FORMAT_JPEGH</code><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_JPEGH" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8220;JPEGH&#8221; JPEG High Quality (<code class="docutils literal"><span class="pre">*.jpg</span></code>)        Color Image                              X</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_EXPORT_RASTER_FORMAT_JPEGH</code><em class="property"> = 'JPEGH'</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_GIF">
+<code class="descname">MAP_EXPORT_RASTER_FORMAT_GIF</code><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_GIF" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8220;GIF&#8221;   GIF (<code class="docutils literal"><span class="pre">*.gif</span></code>)                      Color Image     X    X    X    X    X</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_EXPORT_RASTER_FORMAT_GIF</code><em class="property"> = 'GIF'</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_PCX">
+<code class="descname">MAP_EXPORT_RASTER_FORMAT_PCX</code><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_PCX" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8220;PCX&#8221;   PCX (<code class="docutils literal"><span class="pre">*.pcx</span></code>)                      Color Image     X    X    X    X    X    X</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_EXPORT_RASTER_FORMAT_PCX</code><em class="property"> = 'PCX'</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_PNG">
+<code class="descname">MAP_EXPORT_RASTER_FORMAT_PNG</code><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_PNG" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8220;PNG&#8221;   PNG (<code class="docutils literal"><span class="pre">*.png</span></code>)                      Color Image     X    X    X    X    X    X</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_EXPORT_RASTER_FORMAT_PNG</code><em class="property"> = 'PNG'</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_EPS">
+<code class="descname">MAP_EXPORT_RASTER_FORMAT_EPS</code><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_EPS" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8220;EPS&#8221;   Encasulated PostScript (<code class="docutils literal"><span class="pre">*.eps</span></code>)   Color Image                    X</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_EXPORT_RASTER_FORMAT_EPS</code><em class="property"> = 'EPS'</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_TIFF">
+<code class="descname">MAP_EXPORT_RASTER_FORMAT_TIFF</code><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_TIFF" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8220;TIFF&#8221;  TIFF (<code class="docutils literal"><span class="pre">*.tif</span></code>)                     Color Image     X    X    X    X    X    X</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_EXPORT_RASTER_FORMAT_TIFF</code><em class="property"> = 'TIFF'</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="map-list-mode-constants">
+<span id="map-list-mode"></span><h2>MAP_LIST_MODE constants<a class="headerlink" href="#map-list-mode-constants" title="Permalink to this headline">¶</a></h2>
+<p>Map List modes</p>
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_LIST_MODE_ALL">
+<code class="descname">MAP_LIST_MODE_ALL</code><a class="headerlink" href="#geosoft.gxapi.MAP_LIST_MODE_ALL" title="Permalink to this definition">¶</a></dt>
+<dd><p>All</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_LIST_MODE_ALL</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_LIST_MODE_3D">
+<code class="descname">MAP_LIST_MODE_3D</code><a class="headerlink" href="#geosoft.gxapi.MAP_LIST_MODE_3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>3d</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_LIST_MODE_3D</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_LIST_MODE_NOT3D">
+<code class="descname">MAP_LIST_MODE_NOT3D</code><a class="headerlink" href="#geosoft.gxapi.MAP_LIST_MODE_NOT3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Not3d</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_LIST_MODE_NOT3D</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="map-open-constants">
+<span id="map-open"></span><h2>MAP_OPEN constants<a class="headerlink" href="#map-open-constants" title="Permalink to this headline">¶</a></h2>
+<p>Open Modes</p>
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_WRITENEW">
+<code class="descname">MAP_WRITENEW</code><a class="headerlink" href="#geosoft.gxapi.MAP_WRITENEW" title="Permalink to this definition">¶</a></dt>
+<dd><p>Map writenew</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_WRITENEW</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.MAP_WRITEOLD">
+<code class="descname">MAP_WRITEOLD</code><a class="headerlink" href="#geosoft.gxapi.MAP_WRITEOLD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Map writeold</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MAP_WRITEOLD</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>
