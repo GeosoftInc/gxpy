@@ -60,7 +60,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapARCMAP._change_size(GXContext._get_tls_geo(), x, y)
         
@@ -77,7 +77,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapARCMAP._display_in_3d_view(GXContext._get_tls_geo(), file.encode())
         
@@ -100,7 +100,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         gxapi_cy.WrapARCMAP._export_feature_layer_by_name_to_3d_file(GXContext._get_tls_geo(), mxd_file.encode(), dataframe_name.encode(), layer_name.encode(), output_file.encode())
         
@@ -117,7 +117,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         gxapi_cy.WrapARCMAP._export_selected_feature_layer_to_3d_file(GXContext._get_tls_geo(), output_file.encode())
         
@@ -138,7 +138,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         mxd.value, layer.value, map.value = gxapi_cy.WrapARCMAP._get_current_document_info(GXContext._get_tls_geo(), mxd.value.encode(), layer.value.encode(), map.value.encode())
         
@@ -159,7 +159,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         layer.value, map.value = gxapi_cy.WrapARCMAP._get_selected_layer_info(GXContext._get_tls_geo(), layer_number, layer.value.encode(), map.value.encode())
         
@@ -177,7 +177,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapARCMAP._get_number_of_selected_layers(GXContext._get_tls_geo())
         return ret_val
@@ -205,7 +205,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The extra datasets CSV should contain the the following fields:
         
@@ -244,7 +244,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The extra datasets CSV should contain the the following fields:
         
@@ -275,7 +275,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapARCMAP._load_shape(GXContext._get_tls_geo(), shp.encode(), delete_existing)
         return ret_val
@@ -297,7 +297,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapARCMAP._load_spf(GXContext._get_tls_geo(), shp.encode(), num_shp)
         return ret_val
@@ -314,7 +314,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapARCMAP._load_lyr(GXContext._get_tls_geo(), file.encode())
         
@@ -343,7 +343,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The extra datasets CSV should contain the the following fields:
         
@@ -375,7 +375,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapARCMAP._load_map_view(GXContext._get_tls_geo(), map.encode(), view.encode(), layer.encode(), all)
         
@@ -392,7 +392,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Loads any file type recognized as "raster" formats by ARC `GXGIS <geosoft.gxapi.GXGIS>`.
         This includes geosoft GRD files.
@@ -416,7 +416,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The input layer name is created using the (optional) prefix and suffix as follows:
         
@@ -443,7 +443,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The output `GXSHP <geosoft.gxapi.GXSHP>` file name(s) are made up as follows
         (where NAME is the input `GXSHP <geosoft.gxapi.GXSHP>` file name):
@@ -469,7 +469,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         x.value, y.value = gxapi_cy.WrapARCMAP._query_size(GXContext._get_tls_geo(), x.value, y.value)
         
@@ -490,7 +490,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         gxapi_cy.WrapARCMAP._show_layer_by_name_in_3d(GXContext._get_tls_geo(), mxd_file.encode(), dataframe_name.encode(), layer_name.encode())
         
@@ -505,7 +505,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         gxapi_cy.WrapARCMAP._show_selected_layers_in_3d(GXContext._get_tls_geo())
         
@@ -524,7 +524,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         .. versionadded:: 8.0.1
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         gxapi_cy.WrapARCMAP._get_ipj_for_predefined_esri_gcs(GXContext._get_tls_geo(), ipj, esri_gcs_code)
         
@@ -543,7 +543,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         .. versionadded:: 8.0.1
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         gxapi_cy.WrapARCMAP._get_ipj_for_predefined_esri_pcs(GXContext._get_tls_geo(), ipj, esri_pcs_code)
         

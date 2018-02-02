@@ -78,7 +78,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** See above full description of each parameters
         `GXVV <geosoft.gxapi.GXVV>`'s for X channel transformation can be NULL if the
@@ -104,7 +104,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         .. versionadded:: 5.1.5
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** By default, `DB_CHAN_FORMAT_NORMAL <geosoft.gxapi.DB_CHAN_FORMAT_NORMAL>`
         """
@@ -141,7 +141,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         ? mark in the note represent either X and Y
@@ -171,7 +171,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
@@ -194,7 +194,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         .. versionadded:: 6.0.1
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         ret_val = self._get_flag(part)
         return ret_val
@@ -231,7 +231,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
@@ -270,7 +270,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         ? mark in the note represent either X and Y
@@ -310,7 +310,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         ? mark in the note represent either X and Y
@@ -358,7 +358,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
@@ -405,7 +405,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         .. versionadded:: 5.0.3
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
@@ -450,7 +450,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
@@ -491,7 +491,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         ? mark in the note represent either X and Y
@@ -513,7 +513,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         self._set_flag(flag, part)
         
@@ -530,7 +530,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         .. versionadded:: 5.0.1
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The `GXITR <geosoft.gxapi.GXITR>` is consulted by taking the channel index and dividing
         by the number of channels; hence the `GXITR <geosoft.gxapi.GXITR>` maximum values should
@@ -553,7 +553,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         .. versionadded:: 5.1.5
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** By default, `DB_CHAN_FORMAT_NORMAL <geosoft.gxapi.DB_CHAN_FORMAT_NORMAL>` is used to display the values,
         or for values > 1.e7, `DB_CHAN_FORMAT_EXP <geosoft.gxapi.DB_CHAN_FORMAT_EXP>`.
@@ -591,7 +591,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         ? mark in the note represent either X and Y
@@ -621,7 +621,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
@@ -660,7 +660,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
@@ -699,7 +699,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         ? mark in the note represent either X and Y
@@ -739,7 +739,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         ? mark in the note represent either X and Y
@@ -761,7 +761,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
@@ -806,7 +806,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
@@ -853,7 +853,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         .. versionadded:: 5.0.3
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
@@ -898,7 +898,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
@@ -939,7 +939,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         ? mark in the note represent either X and Y
@@ -973,7 +973,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** See above full description of each parameters
         `GXVV <geosoft.gxapi.GXVV>`'s for X channel transformation can be NULL if the
@@ -995,7 +995,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         .. versionadded:: 6.0.1
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** By default, the index labels for array channel profiles
         begin at 0. Use this function to start them at either 0

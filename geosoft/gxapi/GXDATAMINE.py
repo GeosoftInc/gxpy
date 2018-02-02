@@ -70,7 +70,7 @@ class GXDATAMINE(gxapi_cy.WrapDATAMINE):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Create a Geosoft Voxel file from a Datamine block model file.
         """
@@ -91,7 +91,7 @@ class GXDATAMINE(gxapi_cy.WrapDATAMINE):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** At this time, only `GIS_DMTYPE_BLOCKMODEL <geosoft.gxapi.GIS_DMTYPE_BLOCKMODEL>` files are supported.
         The field names go in the name part, and field indices (1 to N)

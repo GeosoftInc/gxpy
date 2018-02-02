@@ -81,7 +81,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** If the record exists, the existing record is cleared
         and the record number is returned.
@@ -105,7 +105,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         .. versionadded:: 5.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The "Key" of the child must be the same as the "Key" of the Master.
         The fields of two `GXLTB <geosoft.gxapi.GXLTB>` must be the same.
@@ -141,7 +141,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** If the file has no header, field names are assumed to be "0", "1", etc.
         """
@@ -174,7 +174,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** If the file has no header, field names are assumed to be "0", "1", etc.
         """
@@ -205,7 +205,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         .. versionadded:: 6.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** If the file has no header, field names are assumed to be "0", "1", etc.
         """
@@ -224,7 +224,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Record numbers after the deleted record will be reduced
         by 1.
@@ -252,7 +252,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The `GXLST <geosoft.gxapi.GXLST>` object will be in the order of the file.
         The `GXLST <geosoft.gxapi.GXLST>` names will be the `GXLTB <geosoft.gxapi.GXLTB>` key fields and the
@@ -275,7 +275,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The `GXLST <geosoft.gxapi.GXLST>` object will be in the order of the file.
         The `GXLST <geosoft.gxapi.GXLST>` names will be the `GXLTB <geosoft.gxapi.GXLTB>` fields and the
@@ -300,7 +300,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The `GXLST <geosoft.gxapi.GXLST>` object will be in the order of the file.
         The `GXLST <geosoft.gxapi.GXLST>` names will come from the `GXLTB <geosoft.gxapi.GXLTB>` name field and the
@@ -322,7 +322,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._fields()
         return ret_val
@@ -343,7 +343,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._find_field(field.encode())
         return ret_val
@@ -364,7 +364,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._find_key(key.encode())
         return ret_val
@@ -383,7 +383,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** If the record or field are out of range, an empty string is returned.
         """
@@ -408,7 +408,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._get_int(record, field)
         return ret_val
@@ -429,7 +429,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** If the record or field are out of range,
         an empty string or dummy value is returned.
@@ -453,7 +453,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         .. versionadded:: 8.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** If the record or field are out of range,
         an empty string or dummy value is returned.
@@ -474,7 +474,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._records()
         return ret_val
@@ -499,7 +499,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._search(rec, fld, field.encode())
         return ret_val
@@ -520,7 +520,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Merging takes place as follows:
         
@@ -559,7 +559,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._get_double(record, field)
         return ret_val
@@ -576,7 +576,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._save(file.encode())
         
@@ -595,7 +595,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._save_crypt(file.encode(), crypt.encode())
         
@@ -616,7 +616,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_int(record, field, data)
         
@@ -637,7 +637,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_double(record, field, data)
         
@@ -658,7 +658,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_string(record, field, token.encode())
         

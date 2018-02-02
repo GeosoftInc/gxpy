@@ -65,7 +65,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         .. versionadded:: 8.4
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapSURFACE._create(GXContext._get_tls_geo(), surface_file.encode(), ipj)
         return GXSURFACE(ret_val)
@@ -87,7 +87,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         .. versionadded:: 8.4
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapSURFACE._open(GXContext._get_tls_geo(), surface_file.encode(), mode)
         return GXSURFACE(ret_val)
@@ -106,7 +106,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         .. versionadded:: 8.4
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._get_ipj(ipj)
         
@@ -123,7 +123,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         .. versionadded:: 8.4
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_ipj(ipj)
         
@@ -140,7 +140,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         .. versionadded:: 8.4
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._get_surface_items(lst)
         
@@ -160,7 +160,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         .. versionadded:: 8.4
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._get_surface_item(guid.encode())
         return GXSURFACEITEM(ret_val)
@@ -177,7 +177,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         .. versionadded:: 8.4
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._add_surface_item(surfaceitem)
         
@@ -196,7 +196,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapSURFACE._get_surface_names(GXContext._get_tls_geo(), surface_file.encode(), lst)
         
@@ -215,7 +215,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapSURFACE._get_closed_surface_names(GXContext._get_tls_geo(), surface_file.encode(), lst)
         
@@ -242,7 +242,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         .. versionadded:: 8.5
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._get_extents(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         
@@ -266,7 +266,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val, crc.value = gxapi_cy.WrapSURFACE._crc(GXContext._get_tls_geo(), surface_file.encode(), output.encode(), crc.value)
         return ret_val
@@ -283,7 +283,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapSURFACE._sync(GXContext._get_tls_geo(), name.encode())
         
@@ -303,7 +303,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         .. versionadded:: 8.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapSURFACE._create_from_dxf(GXContext._get_tls_geo(), ipj, surface_file.encode(), dxf_file.encode())
         
@@ -323,7 +323,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         .. versionadded:: 8.4
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapSURFACE._create_from_vulcan_triangulation(GXContext._get_tls_geo(), triangulation_file.encode(), ipj, surface_file.encode())
         
@@ -343,9 +343,28 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         .. versionadded:: 8.4
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapSURFACE._append_vulcan_triangulation(GXContext._get_tls_geo(), triangulation_file.encode(), ipj, surface_file.encode())
+        
+
+
+
+    @classmethod
+    def dump_geometry_to_text_file(cls, surface_filename, text_filename):
+        """
+        Dump surface geometry to a text file.
+        
+        :param surface_filename:  Geosurface file
+        :param text_filename:     Text file
+        :type  surface_filename:  str
+        :type  text_filename:     str
+
+        .. versionadded:: 9.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        gxapi_cy.WrapSURFACE._dump_geometry_to_text_file(GXContext._get_tls_geo(), surface_filename.encode(), text_filename.encode())
         
 
 

@@ -73,7 +73,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapMVU._arrow(GXContext._get_tls_geo(), mview, hx, hy, tx, ty, ratio, angle, type)
         
@@ -110,7 +110,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The locations are given in two VVs, and the directions
         in the two others. A wide range of sizes are available.
@@ -188,7 +188,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapMVU._bar_chart(GXContext._get_tls_geo(), mview, group_name.encode(), data, line, x_chan.encode(), list.encode(), x_title.encode(), x_txt_size, y_title.encode(), y_txt_size, bar_title.encode(), bar_txt_size, bar_width, dist_fid, label, tick, right_axis, top_axis, bottom_axis, surround, left, bottom, right, top, xm, ym, widthm, heightm)
         
@@ -215,7 +215,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 7.2
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Draws a single colored rectangle for each data point in
         Conductivity-Depth data (for example). It is similar to the
@@ -252,7 +252,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 7.2
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Similar to `cdi_pixel_plot <geosoft.gxapi.GXMVU.cdi_pixel_plot>`, but plotted onto a series of
         plotting planes which hang from the XY path in 3D. Each vertical plane azimuth
@@ -289,7 +289,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapMVU._color_bar(GXContext._get_tls_geo(), mview, itr, decimal, ann, height, width, x, y)
         
@@ -321,7 +321,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The secondary `GXITR <geosoft.gxapi.GXITR>` is used to blend horizontally with the
         primary `GXITR <geosoft.gxapi.GXITR>` in each box.
@@ -358,7 +358,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The secondary `GXITR <geosoft.gxapi.GXITR>` is used to blend horizontally with the
         primary `GXITR <geosoft.gxapi.GXITR>` in each box.
@@ -394,7 +394,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The sign of the annotation offset determines whether labels are
         plotted above or below the colorbar. Labels above are text-justified
@@ -437,7 +437,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The secondary `GXITR <geosoft.gxapi.GXITR>` is used to blend horizontally with the
         primary `GXITR <geosoft.gxapi.GXITR>` in each box.
@@ -476,7 +476,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The secondary `GXITR <geosoft.gxapi.GXITR>` is used to blend horizontally with the
         primary `GXITR <geosoft.gxapi.GXITR>` in each box.
@@ -514,7 +514,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapMVU._color_bar_hor_style(GXContext._get_tls_geo(), mview, itr, decimal, ann, height, width, x, y, style, label_orient)
         
@@ -547,7 +547,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapMVU._color_bar_style(GXContext._get_tls_geo(), mview, itr, decimal, ann, height, width, x, y, style)
         
@@ -570,7 +570,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 8.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** To allow for expansion, all parameters are passed inside the `GXREG <geosoft.gxapi.GXREG>` object.
         
@@ -607,7 +607,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapMVU._contour(GXContext._get_tls_geo(), mview, con.encode(), grid.encode())
         
@@ -630,7 +630,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.1.6
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The clipping `GXPLY <geosoft.gxapi.GXPLY>` can include a surrounding inclusive polygon
         and zero, one or more interior exclusive polygons. Construct
@@ -666,7 +666,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** If the symbol size, color, font etc are specified in
         the `GXITR <geosoft.gxapi.GXITR>`'s `GXREG <geosoft.gxapi.GXREG>`, then the Symbol scale factor is used
@@ -735,7 +735,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Box width and height are used to draw horizontal and vertical
         bars. Curves outside the box are not clipped.
@@ -765,7 +765,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** An arrow will be drawn in the direction from the first valid
         to the last points in the X and Y VVs.
@@ -819,7 +819,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** This function is designed to display an inverted result beside
         the forward model curves. This is useful for trouble-shooting
@@ -850,7 +850,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The lines, rectangles and polygons in the specified groups
         will be exported to a Datamine coordinate string (``*.dm``) file.
@@ -881,7 +881,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Supported objects exported include lines, polygons, text.
 
@@ -910,7 +910,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The lines, rectangles and polygons in the specified groups
         will be exported to a Surpac `GXSTR <geosoft.gxapi.GXSTR>` file. An accompanying styles
@@ -942,7 +942,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 9.4
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapMVU._export_map_groups_to_gdb(GXContext._get_tls_geo(), mview, lst, db)
         
@@ -975,7 +975,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Current line color, thickness and style are used to
         draw the line.
@@ -1026,7 +1026,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The specified line group will be used to create a new group that
         is composed of all the resolved polygonal areas in the line group.
@@ -1065,7 +1065,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 6.4
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Required to set up a map view before doing the actual
         surface import.
@@ -1119,7 +1119,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This function just calls `histogram2 <geosoft.gxapi.GXMVU.histogram2>` with decimals set
         to -7 (7 significant figures).
@@ -1187,7 +1187,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** A vertical line through from bottom to top horizontal axis is drawn
         Also a label 'Threshold value' is plotted against this line. However,
@@ -1247,7 +1247,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapMVU._histogram3(GXContext._get_tls_geo(), mview, st_data, st_hist, title.encode(), unit.encode(), xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, fill_color, data_decimal, stat_decimal, st_box)
         
@@ -1304,7 +1304,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapMVU._histogram4(GXContext._get_tls_geo(), mview, st_data, st_hist, title.encode(), unit.encode(), xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, prob, fill_color, data_decimal, stat_decimal, st_box)
         
@@ -1365,7 +1365,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The `GXITR <geosoft.gxapi.GXITR>` can be empty (but must still be a valid `GXITR <geosoft.gxapi.GXITR>` object).
         """
@@ -1389,7 +1389,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 7.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Returns a list of visible groups that the DXF 3D export can
         export. Removes things like `GXVOXD <geosoft.gxapi.GXVOXD>`, `GXAGG <geosoft.gxapi.GXAGG>`, and target
@@ -1441,7 +1441,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Use `GXSYS.show_error <geosoft.gxapi.GXSYS.show_error>` to display errors that may have been encountered. This function can also be used
         to calculate the default scale without creating a map.
@@ -1492,7 +1492,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 8.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Same as `mapset_test <geosoft.gxapi.GXMVU.mapset_test>`, with vertical exaggeration.
         """
@@ -1515,7 +1515,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 6.4
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The vertex normals are not included in the
         GOCAD import, but are calculated using
@@ -1539,7 +1539,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapMVU._load_plot(GXContext._get_tls_geo(), map, name.encode())
         
@@ -1566,7 +1566,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This only creates a map, it does not read the PLT into
         the map.  The base view and data view will be the same
@@ -1595,7 +1595,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapMVU._map_mdf(GXContext._get_tls_geo(), map, mdf.encode(), data.encode())
         
@@ -1644,7 +1644,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapMVU._mapset(GXContext._get_tls_geo(), map, base.encode(), data.encode(), min_x, max_x, min_y, max_y, size.encode(), port, exact, scale, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside)
         
@@ -1695,7 +1695,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 8.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapMVU._mapset2(GXContext._get_tls_geo(), map, base.encode(), data.encode(), min_x, max_x, min_y, max_y, size.encode(), port, exact, scale, vert_exag, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside)
         
@@ -1718,7 +1718,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapMVU._mdf(GXContext._get_tls_geo(), map, mdf.encode(), base.encode(), data.encode())
         
@@ -1753,7 +1753,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** See `flight_plot <geosoft.gxapi.GXMVU.flight_plot>`.  This is the same except for the
         additional line gap parameter.
@@ -1797,7 +1797,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This is the same except for the additional line compass parameter.
 
@@ -1842,7 +1842,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0.8
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This is the same except for the additional line dummies parameter.
 
@@ -1873,7 +1873,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 6.4
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The Marching Cubes method of Lorensen and Cline, Computer Graphics, V21,
         Number 4, July 1987, is used to calculate a given iso-surface in a voxel
@@ -1908,7 +1908,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 7.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The Marching Cubes method of Lorensen and Cline, Computer Graphics, V21,
         Number 4, July 1987, is used to calculate a given iso-surface in a voxel
@@ -1949,7 +1949,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 8.5
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** TODO... Move to `GXVOX <geosoft.gxapi.GXVOX>` method for surface generation only and use GeosurfaceD to display.
         """
@@ -1986,7 +1986,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapMVU._post(GXContext._get_tls_geo(), mview, vv_x, vv_y, vv_z, dummy, size, format, decimals, ref, angle)
         
@@ -2041,7 +2041,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapMVU._post_ex(GXContext._get_tls_geo(), mview, vv_x, vv_y, vv_z, vv_s, dummy, base, min_detect, size, format, decimals, offset_l, offset_p, alternate, mod, ref, angle, fixed, ref_ang, up)
         
@@ -2092,7 +2092,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The `GXITR <geosoft.gxapi.GXITR>` can be empty (but must still be a valid `GXITR <geosoft.gxapi.GXITR>` object).
         """
@@ -2129,7 +2129,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Profiles will be drawn in the current line style.
         """
@@ -2176,7 +2176,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Profiles will be drawn in the current line style.
         """
@@ -2215,7 +2215,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0.8
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** All symbol attributes, except for the size, are assumed
         to be defined (or defaults are used).
@@ -2239,7 +2239,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The area group must exist and will be modified to match the current
         line group.
@@ -2279,7 +2279,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Symbols are not plotted for positions where the flag `GXVV <geosoft.gxapi.GXVV>`
         value is 0 or `iDUMMY <geosoft.gxapi.iDUMMY>`.
@@ -2313,7 +2313,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapMVU._text_box(GXContext._get_tls_geo(), mview, xmin, ymin, xmax, ymax, text.encode(), space, type)
         
@@ -2344,7 +2344,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapMVU._tick(GXContext._get_tls_geo(), mview, vv_x, vv_y, vv_s, size, mod, mt_size, mt_mod)
         
@@ -2377,7 +2377,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapMVU._tick_ex(GXContext._get_tls_geo(), mview, vv_x, vv_y, vv_s, size, mod, mt_size, mt_mod, gap)
         
@@ -2402,7 +2402,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Trend lines positions consist of X and Y VVs
         interspersed with dummies, which separate the

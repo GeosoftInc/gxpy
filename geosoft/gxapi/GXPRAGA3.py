@@ -62,7 +62,7 @@ class GXPRAGA3(gxapi_cy.WrapPRAGA3):
 
         .. versionadded:: 6.4
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         ret_val = gxapi_cy.WrapPRAGA3._launch(GXContext._get_tls_geo())
         return ret_val

@@ -57,7 +57,7 @@ class GXTEST(gxapi_cy.WrapTEST):
 
         .. versionadded:: 6.4.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapTEST._enable_disable_arc_engine_license(GXContext._get_tls_geo(), enable)
         
@@ -75,7 +75,7 @@ class GXTEST(gxapi_cy.WrapTEST):
 
         .. versionadded:: 6.4
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapTEST._arc_engine_license(GXContext._get_tls_geo())
         return ret_val
@@ -91,7 +91,7 @@ class GXTEST(gxapi_cy.WrapTEST):
 
         .. versionadded:: 6.4.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapTEST._test_mode(GXContext._get_tls_geo())
         return ret_val
@@ -110,7 +110,7 @@ class GXTEST(gxapi_cy.WrapTEST):
 
         .. versionadded:: 6.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapTEST._wrapper_test(GXContext._get_tls_geo(), funcs.encode(), log.encode())
         
@@ -129,7 +129,7 @@ class GXTEST(gxapi_cy.WrapTEST):
 
         .. versionadded:: 9.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapTEST._core_class(GXContext._get_tls_geo(), cl.encode(), log.encode())
         

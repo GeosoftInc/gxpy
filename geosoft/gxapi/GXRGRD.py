@@ -58,7 +58,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** DLL name `clear <geosoft.gxapi.GXRGRD.clear>`
         """
@@ -78,7 +78,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** The Rangrid object is initially empty. It will store the
         control file parameters which the Rangrid program needs
@@ -113,7 +113,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
 
         .. versionadded:: 7.0.1
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** If the grid file name is defined, the `GXIMG <geosoft.gxapi.GXIMG>` is tied to a new output file.
         If the grid file name is not defined, the `GXIMG <geosoft.gxapi.GXIMG>` is memory-based; not
@@ -141,7 +141,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
 
         .. versionadded:: 6.0.1
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         ret_val = self._default(zchan.encode(), in_dat)
         return ret_val
@@ -162,7 +162,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
 
         .. versionadded:: 6.0.1
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** If the control file name passed into this function is a file
         which does not exist, then the defaults for a Rangrid control
@@ -191,7 +191,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
 
         .. versionadded:: 6.0.1
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         ret_val = self._run(in_dat, out_dat)
         return ret_val
@@ -221,7 +221,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
 
         .. versionadded:: 6.0.1
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         ret_val = gxapi_cy.WrapRGRD._run2(GXContext._get_tls_geo(), db, x.encode(), y.encode(), z.encode(), ctl.encode(), grd.encode())
         return ret_val
@@ -242,7 +242,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
 
         .. versionadded:: 6.0.1
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** If the control file did not previously exist, it will be
         created. Otherwise, the old file will be overwritten.
@@ -272,7 +272,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         gxapi_cy.WrapRGRD._run_vv(GXContext._get_tls_geo(), vv_x, vv_y, vv_z, ipj, ctl.encode(), grd.encode())
         
@@ -297,7 +297,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
 
         .. versionadded:: 9.4
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         gxapi_cy.WrapRGRD._run_list(GXContext._get_tls_geo(), dbs.encode(), zch.encode(), ipj, ctl.encode(), grd.encode())
         

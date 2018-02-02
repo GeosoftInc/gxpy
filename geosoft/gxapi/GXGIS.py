@@ -67,7 +67,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapGIS._create(GXContext._get_tls_geo(), file.encode(), info.encode(), type)
         return GXGIS(ret_val)
@@ -90,7 +90,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         .. versionadded:: 7.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This function was created to minimize duplication in
         creation of new maps with 2D views.
@@ -114,7 +114,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         .. versionadded:: 7.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The Returned `GXLST <geosoft.gxapi.GXLST>` has items in the following format:
         
@@ -145,7 +145,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This is your copy, you must destroy it.
         If the `GXGIS <geosoft.gxapi.GXGIS>` does not have an `GXIPJ <geosoft.gxapi.GXIPJ>`, an `GXIPJ <geosoft.gxapi.GXIPJ>` with
@@ -166,7 +166,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._get_meta(meta)
         
@@ -193,7 +193,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         x_min.value, x_max.value, y_min.value, y_max.value, z_min.value, z_max.value = self._get_range(x_min.value, x_max.value, y_min.value, y_max.value, z_min.value, z_max.value)
         
@@ -213,7 +213,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Terminates if file is not a Datamine file.
         A datamine file can contain fields from a multitude
@@ -235,7 +235,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         .. versionadded:: 7.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         name.value = self._get_file_name(name.value.encode())
         
@@ -256,7 +256,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** It is important not to overwrite a MapInfo MAP file
         with a Geosoft one. Use this function to test the MAP
@@ -281,7 +281,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapGIS._is_mi_raster_tab_file(GXContext._get_tls_geo(), tab.encode())
         return ret_val
@@ -302,7 +302,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         .. versionadded:: 6.4
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Returns 1 if:
         
@@ -332,7 +332,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** `GXSHP <geosoft.gxapi.GXSHP>` files come in 2D and 3D forms.
         Fails if not `GIS_TYPE_ARCVIEW <geosoft.gxapi.GIS_TYPE_ARCVIEW>`.
@@ -354,7 +354,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         .. versionadded:: 7.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Fails if not `GIS_TYPE_ARCVIEW <geosoft.gxapi.GIS_TYPE_ARCVIEW>`.
         """
@@ -374,7 +374,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         .. versionadded:: 7.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._num_attribs()
         return ret_val
@@ -392,7 +392,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         .. versionadded:: 7.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._num_shapes()
         return ret_val
@@ -413,7 +413,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This will create a GI file for the raster image.
         """
@@ -432,7 +432,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         .. versionadded:: 7.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** All string fields (excluding X/Y and numerical fields) will be saved into the `GXWA <geosoft.gxapi.GXWA>` columns.
         
@@ -454,7 +454,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** All fields of the database will be loaded into the group.
         
@@ -481,7 +481,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The `GXGIS <geosoft.gxapi.GXGIS>` drawing will be drawin in the current group.
         """
@@ -502,7 +502,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         .. versionadded:: 7.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The `GXGIS <geosoft.gxapi.GXGIS>` drawing will be drawin in the current group.
         """
@@ -528,7 +528,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The `GXGIS <geosoft.gxapi.GXGIS>` drawing will be drawn in the current group.
         A group will be created for every entity and data items
@@ -551,7 +551,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         .. versionadded:: 5.1.6
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._load_ply(ply)
         
@@ -568,7 +568,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         .. versionadded:: 7.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** All fields of the database will be loaded into the group.
         
@@ -597,7 +597,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Datamine wireframe models are specified by pairs of files,
         the first is the triangle node file, and the second gives
@@ -620,7 +620,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_ipj(ipj)
         
@@ -637,7 +637,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         .. versionadded:: 7.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** If the `GXGIS <geosoft.gxapi.GXGIS>` `GXLST <geosoft.gxapi.GXLST>` object already exists, it is destroyed and
         recreated to match the size of the input `GXLST <geosoft.gxapi.GXLST>`, before the
@@ -658,7 +658,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_meta(meta)
         
@@ -675,7 +675,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         .. versionadded:: 7.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_triangulation_object_index(i_toi)
         

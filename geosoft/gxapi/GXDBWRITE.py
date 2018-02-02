@@ -67,7 +67,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
         .. versionadded:: 9.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapDBWRITE._create(GXContext._get_tls_geo(), db)
         return GXDBWRITE(ret_val)
@@ -88,7 +88,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
         .. versionadded:: 9.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapDBWRITE._create_xy(GXContext._get_tls_geo(), db)
         return GXDBWRITE(ret_val)
@@ -109,7 +109,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
         .. versionadded:: 9.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapDBWRITE._create_xyz(GXContext._get_tls_geo(), db)
         return GXDBWRITE(ret_val)
@@ -131,7 +131,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
         .. versionadded:: 9.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._add_channel(chan)
         return ret_val
@@ -153,7 +153,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
         .. versionadded:: 9.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._get_db()
         return GXDB(ret_val)
@@ -173,7 +173,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
         .. versionadded:: 9.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Call only for single-column (regular) channels. You can call the `get_chan_array_size <geosoft.gxapi.GXDBWRITE.get_chan_array_size>`
         function to find the number fo columns in a given channel. The `GXVV <geosoft.gxapi.GXVV>` is filled anew for each block served up.
@@ -196,7 +196,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
         .. versionadded:: 9.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Call only for array (multi-column) channels. You can call the `get_chan_array_size <geosoft.gxapi.GXDBWRITE.get_chan_array_size>`
         function to find the number fo columns in a given channel, or you can call `GXVA.col <geosoft.gxapi.GXVA.col>` on the returned `GXVA <geosoft.gxapi.GXVA>` handle.
@@ -218,7 +218,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
         .. versionadded:: 9.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Only available for the CreateXY or CreateXYZ methods.
         The `GXVV <geosoft.gxapi.GXVV>` is filled anew for each block served up.
@@ -239,7 +239,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
         .. versionadded:: 9.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Only available for the CreateXY or CreateXYZ methods.
         The `GXVV <geosoft.gxapi.GXVV>` is filled anew for each block served up.
@@ -260,7 +260,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
         .. versionadded:: 9.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Only available for the CreateXY or CreateXYZ methods.
         The `GXVV <geosoft.gxapi.GXVV>` is filled anew for each block served up.
@@ -284,7 +284,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
         .. versionadded:: 9.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Regular channels have one column of data. Array channels have more than one column of data.
         This function should be called to determine whether to use `get_vv <geosoft.gxapi.GXDBWRITE.get_vv>` or `get_va <geosoft.gxapi.GXDBWRITE.get_va>` to access data
@@ -309,7 +309,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
         .. versionadded:: 9.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** First, set up the data for each channel by copying values into the individual channel VVs and VAs.
         """
@@ -326,7 +326,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
         .. versionadded:: 9.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._commit()
         
@@ -343,7 +343,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
         .. versionadded:: 9.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Designed to import the "Massive.xyz" file, which has data in the format "X Y Z Data".
         """

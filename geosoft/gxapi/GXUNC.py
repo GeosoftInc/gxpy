@@ -65,7 +65,7 @@ class GXUNC(gxapi_cy.WrapUNC):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapUNC._is_valid_utf16_char(GXContext._get_tls_geo(), ch)
         return ret_val
@@ -87,7 +87,7 @@ class GXUNC(gxapi_cy.WrapUNC):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapUNC._valid_symbol(GXContext._get_tls_geo(), face.encode(), geofont, number)
         return ret_val
@@ -106,7 +106,7 @@ class GXUNC(gxapi_cy.WrapUNC):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** An empty string will be returned for invalid symbols
         """
@@ -130,7 +130,7 @@ class GXUNC(gxapi_cy.WrapUNC):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Invalid symbols in the `GXVV <geosoft.gxapi.GXVV>` will be set to -1 by this call. `GXVV <geosoft.gxapi.GXVV>` has to be of type `GS_LONG <geosoft.gxapi.GS_LONG>`.
         """

@@ -70,7 +70,7 @@ class GXIGRF(gxapi_cy.WrapIGRF):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Calculate `GXIGRF <geosoft.gxapi.GXIGRF>` data (total field, inclination, and declination)
         for a given `GXIGRF <geosoft.gxapi.GXIGRF>` model. The model used will be the same as that
@@ -101,7 +101,7 @@ class GXIGRF(gxapi_cy.WrapIGRF):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Calculate `GXIGRF <geosoft.gxapi.GXIGRF>` data (total field, inclination, and declination)
         for a given `GXIGRF <geosoft.gxapi.GXIGRF>` model. The model used will be the same as that
@@ -137,7 +137,7 @@ class GXIGRF(gxapi_cy.WrapIGRF):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** If the year of the `GXIGRF <geosoft.gxapi.GXIGRF>` model is dummy, then
         the `GXIGRF <geosoft.gxapi.GXIGRF>` year nearest to the line's date will
@@ -162,7 +162,7 @@ class GXIGRF(gxapi_cy.WrapIGRF):
 
         .. versionadded:: 6.1
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** This is useful when using a DGRF file, because the system is set
         up only to calculate for years within the date range, and will

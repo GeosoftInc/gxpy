@@ -59,7 +59,7 @@ class GXACQUIRE(gxapi_cy.WrapACQUIRE):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         ret_val = gxapi_cy.WrapACQUIRE._create(GXContext._get_tls_geo())
         return GXACQUIRE(ret_val)
@@ -76,7 +76,7 @@ class GXACQUIRE(gxapi_cy.WrapACQUIRE):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         self._delete_empty_chan(db)
         
@@ -109,7 +109,7 @@ class GXACQUIRE(gxapi_cy.WrapACQUIRE):
 
         .. versionadded:: 6.0.1
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Point data and polygon data are saved into Dnnn lines in GDB,
         nnn representing incremental number starting from 0
@@ -137,7 +137,7 @@ class GXACQUIRE(gxapi_cy.WrapACQUIRE):
 
         .. versionadded:: 6.0.1
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Data existing in the receiving GDB file will be over-written.
         Point data and polygon data are saved into Dnnn lines in GDB,
@@ -164,7 +164,7 @@ class GXACQUIRE(gxapi_cy.WrapACQUIRE):
 
         .. versionadded:: 6.0.1
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The selection file will be loaded (if present) and then
         the user can make selections then the selections are saved

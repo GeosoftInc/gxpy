@@ -59,7 +59,7 @@ class GXE3DV(gxapi_cy.WrapE3DV):
 
         .. versionadded:: 9.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._get_data_view()
         return GXMVIEW(ret_val)
@@ -77,7 +77,7 @@ class GXE3DV(gxapi_cy.WrapE3DV):
 
         .. versionadded:: 9.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._get_base_view()
         return GXMVIEW(ret_val)

@@ -62,7 +62,7 @@ class GXTR(gxapi_cy.WrapTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         ret_val = gxapi_cy.WrapTR._create(GXContext._get_tls_geo(), order)
         return GXTR(ret_val)
@@ -81,7 +81,7 @@ class GXTR(gxapi_cy.WrapTR):
 
         .. versionadded:: 8.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._copy(t_rs)
         

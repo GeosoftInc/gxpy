@@ -63,7 +63,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         gxapi_cy.WrapFFT2._fft2_in(GXContext._get_tls_geo(), im_gi, trn_fil.encode(), spc_fil.encode())
         
@@ -90,7 +90,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         gxapi_cy.WrapFFT2._filter_pg(GXContext._get_tls_geo(), pg, con_fil.encode(), tr, dx, dy, rot)
         
@@ -111,7 +111,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         gxapi_cy.WrapFFT2._flt(GXContext._get_tls_geo(), im_gi, out_fil.encode(), con_fil.encode())
         
@@ -132,7 +132,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         gxapi_cy.WrapFFT2._flt_inv(GXContext._get_tls_geo(), im_gi, out_fil.encode(), con_fil.encode())
         
@@ -151,7 +151,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         gxapi_cy.WrapFFT2._pow_spc(GXContext._get_tls_geo(), im_gi, spc_fil.encode())
         
@@ -170,7 +170,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         gxapi_cy.WrapFFT2._rad_spc(GXContext._get_tls_geo(), im_gi, spc_fil.encode())
         
@@ -189,7 +189,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         .. versionadded:: 9.4
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         gxapi_cy.WrapFFT2._rad_spc_alt(GXContext._get_tls_geo(), im_gi, spc_fil.encode())
         
@@ -208,7 +208,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         .. versionadded:: 7.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapFFT2._rad_spc1(GXContext._get_tls_geo(), img, vv)
         
@@ -233,7 +233,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         .. versionadded:: 7.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapFFT2._rad_spc2(GXContext._get_tls_geo(), img1, img2, vv, v_vst, opt)
         
@@ -256,7 +256,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         .. versionadded:: 5.0.1
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         gxapi_cy.WrapFFT2._td_xd_y(GXContext._get_tls_geo(), img_tx, img_ty, out_fil.encode(), inv_flg)
         
@@ -275,7 +275,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         gxapi_cy.WrapFFT2._trans_pg(GXContext._get_tls_geo(), pg, opt)
         

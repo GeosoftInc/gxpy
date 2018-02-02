@@ -70,7 +70,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** A rectangular area from (MinX, MinY) to (MaxX, MaxY)
         is projected throught the `GXPJ <geosoft.gxapi.GXPJ>`. The resulting (non-rectangular)
@@ -97,7 +97,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This function is equivalent to `GXVV.project <geosoft.gxapi.GXVV.project>`.
         """
@@ -120,7 +120,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This function is equivalent to `GXVV.project_3d <geosoft.gxapi.GXVV.project_3d>`.
         """
@@ -141,7 +141,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         x.value, y.value = self._convert_xy(x.value, y.value)
         
@@ -162,7 +162,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
         .. versionadded:: 7.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This function is used (for instance) when projecting voxel model locations
         where the user expects that the vertical position will not change. The
@@ -191,7 +191,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         x.value, y.value, z.value = self._convert_xyz(x.value, y.value, z.value)
         
@@ -213,7 +213,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapPJ._create(GXContext._get_tls_geo(), input.encode(), output.encode())
         return GXPJ(ret_val)
@@ -235,7 +235,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** If converting to/from long/lat in the natural coordinate
         system of the source/target, only the long/lat system
@@ -270,7 +270,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Given an X,Y coordinate system, the lat/lon origin and
         angle of the coordinate system, this will create a `GXPJ <geosoft.gxapi.GXPJ>`
@@ -297,7 +297,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
         .. versionadded:: 5.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** To determine the model in use, refer to the datum_trf column in the
         user\\csv\\datumtrf.csv file.  The datum and geoid model are named in
@@ -328,7 +328,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._is_input_ll()
         return ret_val
@@ -347,7 +347,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._is_output_ll()
         return ret_val
@@ -370,7 +370,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
         .. versionadded:: 5.1.4
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** A rectangular area from (dMinX, dMinY) to (dMaxX, dMaxY)
         is projected throught the `GXPJ <geosoft.gxapi.GXPJ>`. The resulting region area is
@@ -402,7 +402,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
         .. versionadded:: 6.0.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This is the same as `project_bounding_rectangle <geosoft.gxapi.GXPJ.project_bounding_rectangle>` except that the bounding
         rectangle will be limited to an area within which the projection can be
@@ -431,7 +431,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This function behaves just like ProjBoundingRectangle_PJ
         except that it also computes an approximate resolution
@@ -463,7 +463,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
         .. versionadded:: 6.0.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This is the same as `project_bounding_rectangle_res <geosoft.gxapi.GXPJ.project_bounding_rectangle_res>` except that the bounding
         rectangle will be limited to an area within which the projection can be
@@ -498,7 +498,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The bounding rectangle will be limited to no larger
         than the area specified in the output projection.  This
@@ -522,7 +522,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** By default, a `GXPJ <geosoft.gxapi.GXPJ>` on the same datum will not apply a LDT,
         is intended for transformations between datums.  However,

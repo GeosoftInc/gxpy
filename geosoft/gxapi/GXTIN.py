@@ -62,7 +62,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         self._copy(source)
         
@@ -86,7 +86,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** CreateTIN does the `GXTIN <geosoft.gxapi.GXTIN>` calculation.
         The Z values are not required, and a 0-length `GXVV <geosoft.gxapi.GXVV>` can be used to indicate
@@ -110,7 +110,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         ret_val = gxapi_cy.WrapTIN._create_s(GXContext._get_tls_geo(), bf)
         return GXTIN(ret_val)
@@ -133,7 +133,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         .. versionadded:: 6.0.1
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         crc.value = gxapi_cy.WrapTIN._export_xml(GXContext._get_tls_geo(), tin.encode(), crc.value, file.encode())
         
@@ -150,7 +150,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The convex hull is the outside boundary of the
         triangulated region.
@@ -170,7 +170,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         .. versionadded:: 5.0.3
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         self._get_ipj(ipj)
         
@@ -191,7 +191,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The join information is returned in three VVs.
         
@@ -219,7 +219,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         self._get_mesh(vv)
         
@@ -240,7 +240,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** If this is not a Z-valued `GXTIN <geosoft.gxapi.GXTIN>`, the Z values will
         be dummies.
@@ -264,7 +264,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         .. versionadded:: 8.4
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         self._get_triangles(tri_vv_pt1, tri_vv_pt2, tri_vv_pt3)
         
@@ -293,7 +293,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         x0.value, y0.value, x1.value, y1.value, x2.value, y2.value = self._get_triangle(index, x0.value, y0.value, x1.value, y1.value, x2.value, y2.value)
         
@@ -310,7 +310,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         self._get_voronoi_edges(vv)
         
@@ -328,7 +328,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         ret_val = self._is_z_valued()
         return ret_val
@@ -352,7 +352,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Index returned begins at 0, but could be negative.
         
@@ -387,7 +387,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         ret_val = self._nodes()
         return ret_val
@@ -408,7 +408,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The `GXTIN <geosoft.gxapi.GXTIN>` have been created using max length = `rDUMMY <geosoft.gxapi.rDUMMY>` to
         ensure that the `GXTIN <geosoft.gxapi.GXTIN>` has a convex hull (otherwise the
@@ -438,7 +438,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         ret_val = self._triangles()
         return ret_val
@@ -459,7 +459,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         .. versionadded:: 5.1.4
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The `GXTIN <geosoft.gxapi.GXTIN>` have been created using max length = `rDUMMY <geosoft.gxapi.rDUMMY>` to
         ensure that the `GXTIN <geosoft.gxapi.GXTIN>` has a convex hull (otherwise the
@@ -489,7 +489,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The `GXTIN <geosoft.gxapi.GXTIN>` have been created using max length = `rDUMMY <geosoft.gxapi.rDUMMY>` to
         ensure that the `GXTIN <geosoft.gxapi.GXTIN>` has a convex hull (otherwise the
@@ -521,7 +521,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The TINned range is the range of X and Y covered by
         the `GXTIN <geosoft.gxapi.GXTIN>` triangles. It can thus be less than the full
@@ -543,7 +543,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         self._serial(bf)
         
@@ -560,7 +560,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         .. versionadded:: 5.0.3
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         self._set_ipj(ipj)
         

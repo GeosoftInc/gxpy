@@ -63,7 +63,7 @@ class GXPGEXP(gxapi_cy.WrapPGEXP):
 
         .. versionadded:: 7.1
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         self._add_pager(pg, var.encode())
         
@@ -81,7 +81,7 @@ class GXPGEXP(gxapi_cy.WrapPGEXP):
 
         .. versionadded:: 7.1
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         ret_val = gxapi_cy.WrapPGEXP._create(GXContext._get_tls_geo())
         return GXPGEXP(ret_val)
@@ -102,7 +102,7 @@ class GXPGEXP(gxapi_cy.WrapPGEXP):
 
         .. versionadded:: 7.1
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         self._do_formula(formula.encode(), max_len)
         

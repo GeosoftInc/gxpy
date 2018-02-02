@@ -58,7 +58,7 @@ class GXKGRD(gxapi_cy.WrapKGRD):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         self._clear()
         
@@ -76,7 +76,7 @@ class GXKGRD(gxapi_cy.WrapKGRD):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** The Krigrid object is initially empty. It will store the
         control file parameters which the Krigrid program needs
@@ -103,7 +103,7 @@ class GXKGRD(gxapi_cy.WrapKGRD):
 
         .. versionadded:: 6.0.1
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** If the control file name passed into this function is a file
         which does not exist, then the defaults for a Krigrid control
@@ -146,7 +146,7 @@ class GXKGRD(gxapi_cy.WrapKGRD):
 
         .. versionadded:: 6.0.1
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         ret_val = self._run(zchan.encode(), in_dat, out_grd_dat, out_err_dat, in_var_name.encode(), out_var_name.encode(), vao, vi, vo)
         return ret_val
@@ -184,7 +184,7 @@ class GXKGRD(gxapi_cy.WrapKGRD):
 
         .. versionadded:: 6.0.1
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         ret_val = gxapi_cy.WrapKGRD._run2(GXContext._get_tls_geo(), db, x.encode(), y.encode(), z.encode(), ctl.encode(), grd.encode(), err_grd.encode(), in_var.encode(), out_var.encode(), vao)
         return ret_val
@@ -224,7 +224,7 @@ class GXKGRD(gxapi_cy.WrapKGRD):
 
         .. versionadded:: 6.4
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         ret_val = gxapi_cy.WrapKGRD._run3(GXContext._get_tls_geo(), db, x.encode(), y.encode(), z.encode(), ctl.encode(), grd.encode(), err_grd.encode(), in_var.encode(), out_var.encode(), log_file.encode(), vao)
         return ret_val
@@ -245,7 +245,7 @@ class GXKGRD(gxapi_cy.WrapKGRD):
 
         .. versionadded:: 6.0.1
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** If the control file did not previously exist, it will be
         created. Otherwise, the old file will be overwritten.

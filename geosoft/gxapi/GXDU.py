@@ -83,7 +83,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Fails if table does not contain requested fields.
         The nominal data sample spacing for the CLOSE options is
@@ -127,7 +127,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Fails if table does not contain requested fields.
         The nominal data sample spacing for the CLOSE options is
@@ -172,7 +172,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Fails if table does not contain requested fields.
         The nominal data sample spacing for the CLOSE options is
@@ -217,7 +217,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Fails if table does not contain requested fields.
         The nominal data sample spacing for the CLOSE options is
@@ -243,7 +243,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0.8
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The `GXVV <geosoft.gxapi.GXVV>` must be created to hold strings of length
         `STR_DB_SYMBOL <geosoft.gxapi.STR_DB_SYMBOL>`; i.e. use
@@ -270,7 +270,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._an_sig(GXContext._get_tls_geo(), db, line, i_ch, o_ch)
         
@@ -291,7 +291,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** If the source database and destination database have channels
         with the same name, then data is appended onto the end
@@ -319,7 +319,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Direction in degrees azimuth (clockwise relative
         the +Y direction). The result is in the range
@@ -360,7 +360,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._base_data(GXContext._get_tls_geo(), db, line, in_ch, time_ch, out_ch, tb)
         
@@ -392,7 +392,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._base_data_ex(GXContext._get_tls_geo(), db, line, in_ch, time_ch, out_ch, tb, flag)
         
@@ -417,7 +417,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._bound_line(GXContext._get_tls_geo(), db, line, x_chan, y_chan, pply)
         
@@ -447,7 +447,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** If the short and long wavelengths are <= 0, the input channel
         is simply copied to the output channel without filtering.
@@ -471,7 +471,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._break_line(GXContext._get_tls_geo(), db, line, chan)
         
@@ -494,7 +494,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 8.4
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The same as BreakLine, but with an option to reset each line's starting fiducial to zero.
         """
@@ -519,7 +519,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The original line will be deleted.
         This is similar to `break_line <geosoft.gxapi.GXDU.break_line>`, but the output lines
@@ -557,7 +557,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 8.4
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The same as BreakLineToGroups, but with an option to reset each line's starting fiducial to zero.
         """
@@ -588,7 +588,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         .. seealso::
 
@@ -620,7 +620,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Selected lines are scanned for the (X, Y) location
         which is closest to the input location.
@@ -648,7 +648,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Existing channels in the output line will be replaced
         by copied channels.
@@ -674,7 +674,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Existing channels in the output line will be replaced
         by copied channels.
@@ -706,7 +706,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Existing channels in the output line will be replaced
         by copied channels.
@@ -738,7 +738,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0.8
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The input line's channel data is ReFidded to the mask
         channel, and then pruned from the output line data,
@@ -766,7 +766,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The `GXVV <geosoft.gxapi.GXVV>` must be created to hold strings of length
         `STR_DB_SYMBOL <geosoft.gxapi.STR_DB_SYMBOL>`; i.e. use
@@ -795,7 +795,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._decimate(GXContext._get_tls_geo(), db, line, i_ch, o_ch, n)
         
@@ -820,7 +820,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Differences with dummies result in dummies.
         An even number of differences locates data accurately.
@@ -850,7 +850,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._distance(GXContext._get_tls_geo(), db, line, x_ch, y_ch, o_ch)
         
@@ -879,7 +879,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 8.1
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._distance_3d(GXContext._get_tls_geo(), db, line, x_ch, y_ch, z_ch, type, o_ch)
         
@@ -904,7 +904,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         dist.value = gxapi_cy.WrapDU._distline(GXContext._get_tls_geo(), db, line, x_ch, y_ch, dist.value)
         
@@ -923,7 +923,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapDU._dup_chan_locks(GXContext._get_tls_geo(), d_bi, d_bo)
         
@@ -942,7 +942,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapDU._dup_chans(GXContext._get_tls_geo(), d_bi, d_bo)
         
@@ -971,7 +971,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** All the channels must be of the same fid incr/start and length.
         Protected channels are modified automatically.
@@ -1005,7 +1005,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** For databases with both groups and lines:
         If both lines and groups are selected, save only the lines.
@@ -1050,7 +1050,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.1.6
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** See `export1 <geosoft.gxapi.GXDU.export1>`.
         The line names are printed as the first column of data exported.
@@ -1090,7 +1090,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Other defined FIELDS stored in the database (see `import_amira <geosoft.gxapi.GXDU.import_amira>` function)
         will be automatically included in the export
@@ -1120,7 +1120,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** At least one of the header file
         or data file names must be set. (Unset names will get the
@@ -1161,7 +1161,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** At least one of the header file
         or data file names must be set. (Unset names will get the
@@ -1196,7 +1196,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The output file is an XML describing the channel. The
         CRC is of the channel data ONLY. To compute a CRC of the
@@ -1230,7 +1230,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** For databases with both groups and lines:
         If both lines and groups are selected, save only the lines.
@@ -1259,7 +1259,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The output file is an XML describing the channel. The
         CRC is of the channel data ONLY. To compute a CRC of the
@@ -1285,7 +1285,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The iDispChanList_DBE or `GXDB.symb_list <geosoft.gxapi.GXDB.symb_list>` methods can be
         used to obtain a list of channels.
@@ -1315,7 +1315,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Similar to `export_gbn <geosoft.gxapi.GXDU.export_gbn>`, with the addition that
         Groups go to individual tables, and lines go to
@@ -1351,7 +1351,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Similar to `export_gbn <geosoft.gxapi.GXDU.export_gbn>`, with the addition that
         Groups go to individual tables, and lines go to
@@ -1383,7 +1383,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Searches the geodatabases for an existing Feature class
         """
@@ -1414,7 +1414,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 6.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Similar to `export_mdb <geosoft.gxapi.GXDU.export_mdb>`, with the addition that groups go to indiviual files
         with group name suffixes, and lines go to a single file, or multiple files
@@ -1439,7 +1439,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** 1. The export template can be in the local directory or the GEOSOFT
         directory.  The import data file must include the path if it is not
@@ -1478,7 +1478,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         .. seealso::
 
@@ -1507,7 +1507,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._fft(GXContext._get_tls_geo(), db, line, s_ch, r_ch, i_ch)
         
@@ -1532,7 +1532,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._filter(GXContext._get_tls_geo(), db, line, i_ch, o_ch, flt)
         
@@ -1557,7 +1557,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._gen_lev(GXContext._get_tls_geo(), db, in_file.encode(), out_file.encode(), max_dz, m0)
         
@@ -1580,7 +1580,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 7.1
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Requires channels with the following names:
         
@@ -1605,7 +1605,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapDU._gen_xyz_temp(GXContext._get_tls_geo(), xyz.encode(), temp.encode())
         
@@ -1624,7 +1624,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 9.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         num_fields.value = gxapi_cy.WrapDU._get_xyz_num_fields(GXContext._get_tls_geo(), xyz.encode(), num_fields.value)
         
@@ -1647,7 +1647,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 6.1
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Items from all selected lines are collected,
         sorted, and duplicates removed. The output
@@ -1681,7 +1681,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 6.1
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Items from all selected lines are collected,
         sorted, and duplicates removed.
@@ -1730,7 +1730,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._gradient(GXContext._get_tls_geo(), dbi, dbo, ix_ch, iy_ch, iz_ch, ig_ch, ox_ch, oy_ch, oz_ch, angle, width)
         
@@ -1759,7 +1759,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._grav_drift(GXContext._get_tls_geo(), db, line, date, time, read, base, clos)
         
@@ -1790,7 +1790,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._grav_tide(GXContext._get_tls_geo(), db, line, lat, lon, date, time, gmt, tide)
         
@@ -1817,7 +1817,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._grid_load(GXContext._get_tls_geo(), db, img, xdec, ydec, trim_dum, create_index)
         
@@ -1852,7 +1852,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._grid_load_xyz(GXContext._get_tls_geo(), db, img, ch_x, ch_y, ch_z, ch_data, xdec, ydec, trim_dum, index_ch)
         
@@ -1879,7 +1879,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Updates channel with Direction in degrees azimuth (counter-clockwise
         relative the +Y direction).
@@ -1912,7 +1912,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 6.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** See `import_bin2 <geosoft.gxapi.GXDU.import_bin2>`. Because the name of the created line is
         not necessarily the value passed in (and the value passed in
@@ -1946,7 +1946,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The polygon file is provided by Ana Christina in Brazil.
         """
@@ -1973,7 +1973,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0.8
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** 1. The import template can be in the local directory or the GEOSOFT
         directory.
@@ -2003,7 +2003,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0.8
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** 1. For group storage, the table names are imported "as is". For line storage,
         if the table names are valid Geosoft line names, they are used as is.
@@ -2038,7 +2038,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** 1. The file is assumed to be a DAO compliant database.
         
@@ -2087,7 +2087,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** All the constant declarations are stored within the database
         under \\TEM\\CONSTANTS. The format is as follows:
@@ -2120,7 +2120,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapDU._import_aseg(GXContext._get_tls_geo(), db, template.encode(), file.encode(), data.encode(), flc.encode(), chans)
         
@@ -2153,7 +2153,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This version supports projections
         """
@@ -2182,7 +2182,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** 1. Binary import templates have extension .I2 by convention.  See
         BINARY.I2 for a description of the template format.
@@ -2226,7 +2226,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.1.6
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** 1. Binary import templates have extension .I2 by convention.  See
         BINARY.I2 for a description of the template format.
@@ -2272,7 +2272,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 9.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Same as `import_bin2 <geosoft.gxapi.GXDU.import_bin2>` but with an import mode
 
@@ -2303,7 +2303,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 7.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Imports data stored in a serial channel recorded
         by the RMS Instruments DAARC500 instrument, and outputs the data to
@@ -2330,7 +2330,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 7.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Imports GPS data stored in a serial channel recorded
         by the RMS Instruments DAARC500 instrument, and outputs the data to
@@ -2365,7 +2365,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** 1. The import template can be in the local directory or the GEOSOFT
         directory.  The import data file must include the path if it is not
@@ -2399,7 +2399,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 7.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** 1. The import template can be in the local directory or the GEOSOFT
         directory.
@@ -2427,7 +2427,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapDU._import_gbn(GXContext._get_tls_geo(), db, file.encode())
         
@@ -2446,7 +2446,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapDU._import_oddf(GXContext._get_tls_geo(), db, file.encode())
         
@@ -2469,7 +2469,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapDU._import_pico(GXContext._get_tls_geo(), db, template.encode(), data.encode(), chans)
         
@@ -2494,7 +2494,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Each slice in X,Y or Z is imported to its own line in the database
         beginning with L0.
@@ -2516,7 +2516,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapDU._import_usgs_post(GXContext._get_tls_geo(), db, file.encode())
         
@@ -2539,7 +2539,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** 1. The import template can be in the local directory or the GEOSOFT
         directory.  The import data file must include the path if it is not
@@ -2569,7 +2569,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.1.6
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** 1. The import template can be in the local directory or the GEOSOFT
         directory.  The import data file must include the path if it is not
@@ -2596,7 +2596,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 8.5
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** 1. All columns in the speficied ioGAS data file will be imported.
         2. If a line already exists, the data will overwrite the existing data.
@@ -2622,7 +2622,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._index_order(GXContext._get_tls_geo(), db, line, in_ch, ch)
         
@@ -2649,7 +2649,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._interp(GXContext._get_tls_geo(), db, line, i_ch, o_ch, inside, outside)
         
@@ -2680,7 +2680,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 8.4
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._interp_gap(GXContext._get_tls_geo(), db, line, i_ch, o_ch, inside, outside, gap, extend)
         
@@ -2707,7 +2707,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._intersect(GXContext._get_tls_geo(), db, x_chan, y_chan, z_chan, tol, file.encode())
         
@@ -2734,7 +2734,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._intersect_all(GXContext._get_tls_geo(), db, x_chan, y_chan, z_chan, tol, file.encode())
         
@@ -2753,7 +2753,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 7.1
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** If the TBL exists, it is overwritten.
         """
@@ -2782,7 +2782,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.1.4
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Reads intersection information from an existing intersect
         table and looks up the values at the intersections for the
@@ -2809,7 +2809,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 7.1
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** If the GDB exists, it is deleted, so it should not
         be loaded.
@@ -2847,7 +2847,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The template can be used to import the file using
         sImportBIN_DU.
@@ -2891,7 +2891,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** See GRAVITY.`GXDAT <geosoft.gxapi.GXDAT>` for a description of the file format.
         
@@ -2935,7 +2935,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 9.3.1
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Has its own format - space-delimited columns of data
         """
@@ -2960,7 +2960,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** A new channel will be created for all `GXLTB <geosoft.gxapi.GXLTB>` fields
         that do not already exist.
@@ -2995,7 +2995,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapDU._make_fid(GXContext._get_tls_geo(), db, line, i_ch, o_ch)
         
@@ -3018,7 +3018,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._mask(GXContext._get_tls_geo(), db, line, i_ch, m_ch)
         
@@ -3039,7 +3039,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The MATH_DU method will READWRITE lock channels on the left
         side of expressions and READONLY lock channels on the right
@@ -3081,7 +3081,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._merge_line(GXContext._get_tls_geo(), db, i_line, m_line, o_line, mode)
         
@@ -3110,7 +3110,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Channels that do not have the same fid start or fid
         increment are not processed.
@@ -3142,7 +3142,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The input channel is moved to the absolute location
         of the control channel.
@@ -3173,7 +3173,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._nl_filt(GXContext._get_tls_geo(), db, line, i_ch, o_ch, width, tol)
         
@@ -3194,7 +3194,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         .. seealso::
 
@@ -3227,7 +3227,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._poly_fill(GXContext._get_tls_geo(), db, line, x_chan, y_chan, r_chan, pply, dummy)
         
@@ -3256,7 +3256,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._poly_mask(GXContext._get_tls_geo(), db, line, x_chan, y_chan, r_chan, pply, dummy)
         
@@ -3285,7 +3285,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Output channels can be the same as input channels
         """
@@ -3320,7 +3320,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Output channels can be the same as input channels
         """
@@ -3377,7 +3377,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Output channels can be the same as input channels
         """
@@ -3400,7 +3400,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** This must be called before QCSeparation_DU. It uses a pager to
         establish the relative positions of the selected lines, then,
@@ -3459,7 +3459,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The LINE on which has the reference (X,Y) will have the starting Line number
         The lines on the right hand side of the reference line (while looking
@@ -3494,7 +3494,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The direction is calculated from the first and last
         non-dummy locations in the X and Y reference channels.
@@ -3530,7 +3530,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The original channel can be an array channel, in which case
         the columns (up to the number of columns available in the output)
@@ -3563,7 +3563,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Channels can be array channels, in which case
         the columns are individually re-fidded.
@@ -3593,7 +3593,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The original channel can be an array channel, in which case
         the columns are individually re-fidded.
@@ -3632,7 +3632,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._rotate(GXContext._get_tls_geo(), db, line, in_x_ch, in_y_ch, out_x_ch, out_y_ch, x0, y0, deg)
         
@@ -3659,7 +3659,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Values in result channel
         """
@@ -3688,7 +3688,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Values in result channel
         """
@@ -3717,7 +3717,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 8.3
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Values in result channel
         """
@@ -3740,7 +3740,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0.8
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** All the channels are listed
         """
@@ -3766,7 +3766,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapDU._scan_aseg(GXContext._get_tls_geo(), file.encode(), data.encode(), flc.encode(), template.encode())
         
@@ -3789,7 +3789,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** All the channels are listed
         """
@@ -3811,7 +3811,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._scan_pico(GXContext._get_tls_geo(), data.encode(), template.encode())
         
@@ -3834,7 +3834,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._sort(GXContext._get_tls_geo(), db, line, ch, sort)
         
@@ -3859,7 +3859,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._sort_index(GXContext._get_tls_geo(), db, line, ch, in_ch, sort)
         
@@ -3888,7 +3888,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._sort_index2(GXContext._get_tls_geo(), db, line, ch1, sort1, ch2, sort2, in_ch)
         
@@ -3912,7 +3912,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._split_line(GXContext._get_tls_geo(), db, i_line, o_line, fid)
         
@@ -3938,7 +3938,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 8.4
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The same as SplitLine, but with an option to reset each line's starting fiducial to zero.
         """
@@ -3976,7 +3976,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 8.3
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The original line will be deleted.
         """
@@ -4016,7 +4016,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 8.4
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The same as SplitLineXY, but with an option to reset each line's starting fiducial to zero.
         """
@@ -4058,7 +4058,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 9.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The same as SplitLineXY2, but with the option to maintain line types when outputting sequentially numbered lines.
         """
@@ -4102,7 +4102,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 8.5
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Split a line based on changes in heading.
         """
@@ -4147,7 +4147,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 9.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Split a line based on changes in heading.
         """
@@ -4172,7 +4172,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** If the input channel is a `GXVA <geosoft.gxapi.GXVA>` (array) channel, then the columns set using
         `GXDB.set_va_windows <geosoft.gxapi.GXDB.set_va_windows>` are used in the statistics; all columns are used by default.
@@ -4204,7 +4204,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._table_line_fid(GXContext._get_tls_geo(), db, chan, ref, tb, field)
         
@@ -4229,7 +4229,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 9.1
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._table_selected_lines_fid(GXContext._get_tls_geo(), db, chan, ref, tb, field)
         
@@ -4260,7 +4260,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** When DU_TIME_LOG option is used, Time channel will be converted
         with logarithmic before calculating time constant.
@@ -4289,7 +4289,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         .. seealso::
 
@@ -4316,7 +4316,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 7.1
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Updates the TZ, TDZ, LZ and LDZ channels at the intersections,
         using the current flight database.
@@ -4352,7 +4352,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 6.4
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Takes the first and XY locations in a line (using the
         current X and Y channels) and defines a section grid
@@ -4388,7 +4388,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Channels to be written should be placed in a `GXLST <geosoft.gxapi.GXLST>` object.
         
@@ -4423,7 +4423,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The original line will be deleted.
         """
@@ -4454,7 +4454,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The original line will be deleted.
         """
@@ -4487,7 +4487,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 8.4
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The same as XyzLine2, but with an option to reset each line's starting fiducial to zero.
         """
@@ -4516,7 +4516,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._z_mask(GXContext._get_tls_geo(), db, line, chan, z_chan, zmin, zmax)
         
@@ -4541,7 +4541,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 8.5
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Returns the range in X and Y of the current X and Y channels.
         Returned values are dummy if no valid items are found.
@@ -4581,7 +4581,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 8.5
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The X, Y and Z channels should be normal (not array) channels.
         Only locations where all values are non-dummy are included in the calculation.
@@ -4628,7 +4628,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 8.1
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The Z and Data channels may be array channels, but both must have
         the same number of columns.
@@ -4659,7 +4659,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 8.2
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Control parameters are passed in the `GXREG <geosoft.gxapi.GXREG>` (to allow for future expansion without
         the need to modify the wrappers).
@@ -4709,7 +4709,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 8.3
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Calculate a draped flight path, enforcing maximum descent and ascent rates. Additional Inputs are the sample distance along the line
         and a topography grid.
@@ -4755,7 +4755,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 8.4
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Calculate a draped flight path, enforcing maximum descent and ascent rates.
         Set both a nominal and minimum drape height.
@@ -4807,7 +4807,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 8.4
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The Z and Data channels may be array channels. If they are, the array sizes must match.
         """
@@ -4856,7 +4856,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         .. versionadded:: 8.4
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The Z and Data channels may be array channels. If they are, the array sizes must match.
         """

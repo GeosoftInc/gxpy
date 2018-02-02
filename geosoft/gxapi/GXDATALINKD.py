@@ -60,7 +60,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
 
         .. versionadded:: 6.4
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Needs ArcEngine licence.
         """
@@ -84,7 +84,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
 
         .. versionadded:: 9.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Needs ArcEngine licence.
         """
@@ -106,7 +106,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
 
         .. versionadded:: 7.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Needs ArcEngine licence.
         """
@@ -130,7 +130,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
 
         .. versionadded:: 9.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Needs ArcEngine licence.
         """
@@ -152,7 +152,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         ret_val = gxapi_cy.WrapDATALINKD._create_bing(GXContext._get_tls_geo(), layer)
         return GXDATALINKD(ret_val)
@@ -177,7 +177,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
 
         .. versionadded:: 6.4
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         min_x.value, max_x.value, min_y.value, max_y.value = self._get_extents(min_x.value, max_x.value, min_y.value, max_y.value)
         
@@ -194,7 +194,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
 
         .. versionadded:: 6.4
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._get_ipj(ipj)
         

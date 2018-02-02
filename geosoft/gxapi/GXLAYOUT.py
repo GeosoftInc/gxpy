@@ -74,7 +74,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Use iGetRectangle to obtain the results for the other rectangles. Depending
         on the constraints set the parent rectangle may also change
@@ -93,7 +93,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         self._clear_all()
         
@@ -108,7 +108,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         self._clear_constraints()
         
@@ -130,7 +130,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         ret_val = gxapi_cy.WrapLAYOUT._create(GXContext._get_tls_geo(), num, name.encode())
         return GXLAYOUT(ret_val)
@@ -157,7 +157,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         min_x.value, min_y.value, max_x.value, max_y.value = self._get_rectangle(rect, min_x.value, min_y.value, max_x.value, max_y.value)
         
@@ -176,7 +176,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         name.value = self._get_rect_name(rect, name.value.encode())
         
@@ -207,7 +207,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Constraints can be applied between 2 rectangles in the layout, or to 1 rectangle with
         absolute positioning. Use the constraints to control left, right, bottom, top,
@@ -265,7 +265,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         ret_val = self._add_rectangle(min_x, min_y, max_x, max_y)
         return ret_val
@@ -283,7 +283,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         ret_val = self._num_rectangles()
         return ret_val
@@ -308,7 +308,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         self._set_rectangle(rect, min_x, min_y, max_x, max_y)
         
@@ -327,7 +327,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         self._set_rectangle_name(rect, p3.encode())
         

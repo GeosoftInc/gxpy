@@ -89,7 +89,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This method is useful for reducing the dimensions in a 2D pager by a factor of 2.
         The output pager retains the same origin, but the X and Y spacing is double that of the original. Essentially,
@@ -114,7 +114,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._copy(im_go)
         
@@ -140,7 +140,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Once destroyed all the data in this `GXIMG <geosoft.gxapi.GXIMG>` is lost.
         """
@@ -166,7 +166,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** When the `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>` data type is chosen the actual on-disk
         type of the input image will be used instead of `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`
@@ -197,7 +197,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0.6
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Once destroyed all the data is lost. This is temporary.
         """
@@ -227,7 +227,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Special Note for developers who use this function and
         related functions to output ERMapper image (ERS, ECW) files:
@@ -264,7 +264,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** When the `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>` data type is chosen the actual on-disk
         type of the input image will be used instead of `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`
@@ -286,7 +286,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The `GXIMG <geosoft.gxapi.GXIMG>` now appears to be in the projected coordinate
         system space.
@@ -308,7 +308,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The `GXIMG <geosoft.gxapi.GXIMG>` now appears to be in the projected coordinate
         system space, with the specified cell size. If the cell
@@ -334,7 +334,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 6.3.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The `GXIMG <geosoft.gxapi.GXIMG>` now appears to be in the projected coordinate
         system space, with the specified cell size. If the cell
@@ -368,7 +368,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0.8
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         .. seealso::
 
@@ -397,7 +397,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         dx.value, dy.value, xo.value, yo.value, rot.value = self._get_info(dx.value, dy.value, xo.value, yo.value, rot.value)
         
@@ -414,7 +414,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._get_ipj(ipj)
         
@@ -431,7 +431,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0.8
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._get_meta(meta)
         
@@ -448,7 +448,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         .. seealso::
 
@@ -471,7 +471,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Returns the cell size calculated by CreateProjected_PJIMG, or by
         `create_projected2 <geosoft.gxapi.GXIMG.create_projected2>` when
@@ -493,7 +493,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._get_tr(tr)
         
@@ -513,7 +513,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0.5
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._element_type(xg_dor_img)
         return ret_val
@@ -531,7 +531,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Same as sElementType_IMG(img,1)
         """
@@ -554,7 +554,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._get_def_itr(itr)
         return ret_val
@@ -570,7 +570,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 6.0.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._is_colour()
         return ret_val
@@ -588,7 +588,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapIMG._is_valid_img_file(GXContext._get_tls_geo(), file.encode())
         return ret_val
@@ -608,7 +608,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 8.0.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val, err_msg.value = gxapi_cy.WrapIMG._is_valid_img_file_ex(GXContext._get_tls_geo(), file.encode(), err_msg.value.encode())
         return ret_val
@@ -626,7 +626,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._ne()
         return ret_val
@@ -645,7 +645,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** If cell size is `GS_R8DM <geosoft.gxapi.GS_R8DM>`, then "nice" values for the cell
         size of the new projected grid will be determined so that
@@ -670,7 +670,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._inherit_img(im_gs)
         
@@ -688,7 +688,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._nv()
         return ret_val
@@ -706,7 +706,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._nx()
         return ret_val
@@ -724,7 +724,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._ny()
         return ret_val
@@ -744,7 +744,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0.5
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** You can call either funtion to retrieve any data,
         int or real.
@@ -765,7 +765,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._query_kx()
         return ret_val
@@ -786,7 +786,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._set_def_itr(itr)
         return ret_val
@@ -805,7 +805,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 7.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapIMG._user_preference_to_plot_as_colour_shaded_grid(GXContext._get_tls_geo())
         return ret_val
@@ -822,7 +822,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0.6
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The cell sizes and projections must be the same.
         """
@@ -840,7 +840,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._load_into_pager()
         
@@ -857,7 +857,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This will force loading an image into a `GXPG <geosoft.gxapi.GXPG>` if it is not already
         accessible in the direction requested.
@@ -886,7 +886,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._read_v(v, be, ne, vv)
         
@@ -908,7 +908,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._read_x(bx, by, ny, vv)
         
@@ -930,7 +930,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._read_y(by, bx, nx, vv)
         
@@ -947,7 +947,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 7.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapIMG._refresh_gi(GXContext._get_tls_geo(), grid.encode())
         
@@ -972,7 +972,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._relocate(min_x, min_y, max_x, max_y, asp)
         
@@ -997,7 +997,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapIMG._report(GXContext._get_tls_geo(), grid.encode(), wa, force, decimals, title.encode())
         
@@ -1022,7 +1022,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 6.4.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Appends the stats as a CSV line to the input text file.
         The header line should only be written to a new text file.
@@ -1047,7 +1047,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._get_z(x, y)
         return ret_val
@@ -1067,7 +1067,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0.5
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** You can call either funtion to retrieve any data,
         int or real.
@@ -1085,7 +1085,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 7.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_grid_unchanged()
         
@@ -1110,7 +1110,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Calls to this function should be made BEFORE calls to `set_ipj <geosoft.gxapi.GXIMG.set_ipj>`,
         as the latter function sets up the bounding rectangle in the metadata.
@@ -1130,7 +1130,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Calls to this function should be made AFTER calls to `set_info <geosoft.gxapi.GXIMG.set_info>`,
         as `set_ipj <geosoft.gxapi.GXIMG.set_ipj>` sets up the bounding rectangle in the metadata.
@@ -1150,7 +1150,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0.8
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_meta(meta)
         
@@ -1167,7 +1167,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_pg(pg)
         
@@ -1184,7 +1184,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_tr(tr)
         
@@ -1201,7 +1201,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 7.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapIMG._sync(GXContext._get_tls_geo(), grid.encode())
         
@@ -1224,7 +1224,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._write_v(v, be, ne, vv)
         
@@ -1246,7 +1246,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._write_x(bx, by, ny, vv)
         
@@ -1268,7 +1268,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._write_y(by, bx, nx, vv)
         
@@ -1287,7 +1287,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 8.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_double_parameter(name.encode(), value)
         
@@ -1307,7 +1307,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         .. versionadded:: 8.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._get_double_parameter(name.encode())
         return ret_val

@@ -59,7 +59,7 @@ class GXSTRINGS(gxapi_cy.WrapSTRINGS):
 
         .. versionadded:: 7.5
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapSTRINGS._launch_digitization_ui(GXContext._get_tls_geo(), stringfile.encode(), feature_guid.encode())
         

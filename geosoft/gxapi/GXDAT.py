@@ -75,7 +75,7 @@ class GXDAT(gxapi_cy.WrapDAT):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapDAT._create_db(GXContext._get_tls_geo(), db, x_ch.encode(), y_ch.encode(), z_ch.encode())
         return GXDAT(ret_val)
@@ -97,7 +97,7 @@ class GXDAT(gxapi_cy.WrapDAT):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapDAT._create_xgd(GXContext._get_tls_geo(), name.encode(), mode)
         return GXDAT(ret_val)
@@ -122,7 +122,7 @@ class GXDAT(gxapi_cy.WrapDAT):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The filters displayed in the Grid/Image file browse dialog are put
         in the "Name" of the `GXLST <geosoft.gxapi.GXLST>`, while the file qualifiers are stored in
@@ -155,7 +155,7 @@ class GXDAT(gxapi_cy.WrapDAT):
 
         .. versionadded:: 7.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Terminates if unable to open an RPT `GXDAT <geosoft.gxapi.GXDAT>` interface.
         """

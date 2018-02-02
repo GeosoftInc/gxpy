@@ -66,7 +66,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         ret_val = self._create_dat(x_field.encode(), y_field.encode(), d_field.encode())
         return GXDAT(ret_val)
@@ -92,7 +92,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         ret_val = self._create_dat_3d(x_field.encode(), y_field.encode(), z_field.encode(), d_field.encode())
         return GXDAT(ret_val)
@@ -110,7 +110,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapARCDB._current(GXContext._get_tls_geo())
         return GXARCDB(ret_val)
@@ -131,7 +131,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** 1. The import template can be in the local directory or the GEOSOFT
            directory.
@@ -152,7 +152,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** If Z or M values are supported by the table geometry the strings
         "<Z Values>" and "<M Values>" will be added accordingly.
@@ -175,7 +175,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapARCDB._from_i_unknown(GXContext._get_tls_geo(), unknown)
         return GXARCDB(ret_val)
@@ -192,7 +192,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** If the table does not have an `GXIPJ <geosoft.gxapi.GXIPJ>`, the `GXIPJ <geosoft.gxapi.GXIPJ>` that is
         returned will have an unknown projection.
@@ -217,7 +217,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._exist_field(field.encode())
         return ret_val
@@ -235,7 +235,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._get_i_unknown()
         return ret_val
@@ -257,7 +257,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         ret_val = self._import_chem_database_wizard(temp.encode(), type)
         return ret_val
@@ -277,7 +277,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val, table_type.value = gxapi_cy.WrapARCDB._sel_tbl_ex_gui(GXContext._get_tls_geo(), table_type.value)
         return GXARCDB(ret_val)
@@ -295,7 +295,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Terminates with Cancel on cancel, returns `ARCDB_NULL <geosoft.gxapi.ARCDB_NULL>` if there are no valid tables in current document.
         """

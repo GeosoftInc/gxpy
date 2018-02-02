@@ -63,7 +63,7 @@ class GXHXYZ(gxapi_cy.WrapHXYZ):
 
         .. versionadded:: 5.1.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapHXYZ._create(GXContext._get_tls_geo(), name.encode())
         return GXHXYZ(ret_val)
@@ -82,7 +82,7 @@ class GXHXYZ(gxapi_cy.WrapHXYZ):
 
         .. versionadded:: 5.1.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._get_meta(meta)
         
@@ -106,7 +106,7 @@ class GXHXYZ(gxapi_cy.WrapHXYZ):
 
         .. versionadded:: 5.1.5
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapHXYZ._h_create_db(GXContext._get_tls_geo(), db, gvv, name.encode())
         return GXHXYZ(ret_val)
@@ -136,7 +136,7 @@ class GXHXYZ(gxapi_cy.WrapHXYZ):
 
         .. versionadded:: 5.1.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapHXYZ._h_create_sql(GXContext._get_tls_geo(), template.encode(), x.encode(), y.encode(), z.encode(), ipj, name.encode())
         return GXHXYZ(ret_val)
@@ -153,7 +153,7 @@ class GXHXYZ(gxapi_cy.WrapHXYZ):
 
         .. versionadded:: 5.1.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_meta(meta)
         

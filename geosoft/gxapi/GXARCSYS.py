@@ -58,7 +58,7 @@ class GXARCSYS(gxapi_cy.WrapARCSYS):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Gets the "local" directory (current catalog browser location in ArcGIS if map has not been saved,
         otherwise MxD path). We cannot mess with the CWD in ArcGIS because there MxD settings for
@@ -79,7 +79,7 @@ class GXARCSYS(gxapi_cy.WrapARCSYS):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** If the current document is not yet saved, this will return an empty string.
         """
@@ -98,7 +98,7 @@ class GXARCSYS(gxapi_cy.WrapARCSYS):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Will also set the current working directory (CWD) if the MxD has not been saved.
         We cannot mess with the CWD in ArcGIS because their MxD settings for relative/absolute paths depends on it.

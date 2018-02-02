@@ -68,7 +68,7 @@ class GXEXP(gxapi_cy.WrapEXP):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Expressions are strings that contain C-like math to be
         applied to channels in a database.  For example, following
@@ -117,7 +117,7 @@ class GXEXP(gxapi_cy.WrapEXP):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         ret_val = gxapi_cy.WrapEXP._create_file(GXContext._get_tls_geo(), db, file.encode())
         return GXEXP(ret_val)

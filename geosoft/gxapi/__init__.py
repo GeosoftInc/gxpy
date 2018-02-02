@@ -434,6 +434,10 @@ DB_COMP_SPEED = 1
 #: Size
 DB_COMP_SIZE = 2
 
+#
+# DB_COORDPAIR constants
+#
+# Used to indicate the matching coordinate pair of a channel.
 
 #: None
 DB_COORDPAIR_NONE = 0
@@ -604,6 +608,10 @@ DB_WAIT_NONE = 0
 #: Infinity
 DB_WAIT_INFINITY = -1
 
+#
+# DB_ARRAY_BASETYPE constants
+#
+# Array channel base coordinate type
 
 #: None
 DB_ARRAY_BASETYPE_NONE = 0

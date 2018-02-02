@@ -61,7 +61,7 @@ class GXVVEXP(gxapi_cy.WrapVVEXP):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         self._add_vv(vv, var.encode())
         
@@ -79,7 +79,7 @@ class GXVVEXP(gxapi_cy.WrapVVEXP):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         ret_val = gxapi_cy.WrapVVEXP._create(GXContext._get_tls_geo())
         return GXVVEXP(ret_val)
@@ -100,7 +100,7 @@ class GXVVEXP(gxapi_cy.WrapVVEXP):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         self._do_formula(formula.encode(), max_len)
         

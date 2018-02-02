@@ -77,7 +77,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 5.0.7
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** The number of channels is taken from the Data handles `GXVV <geosoft.gxapi.GXVV>`.
         Plots a bar plot with the center of the "X" axis at the symbol location.
@@ -102,7 +102,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 6.1
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** A list of minima (e.g.  M1, M2, M3, M4, M5) is input.
         A list of values V is input and transformed to outputs N in the following manner:
@@ -135,7 +135,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** Same as `categorize_by_value <geosoft.gxapi.GXCHIMERA.categorize_by_value>`, but if the
         input value is less than the detection limit,
@@ -160,7 +160,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 5.0.8
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** Flow:
         
@@ -196,7 +196,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 5.0.7
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** Draws black filled circle (symbols.gfn #7) and a joining line.
         """
@@ -229,7 +229,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 5.0.7
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** Draws black filled circle (symbols.gfn #7) and a joining line.
         """
@@ -270,7 +270,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 5.0.7
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         gxapi_cy.WrapCHIMERA._duplicate_chem(GXContext._get_tls_geo(), mview, vv, log, det_lim, old, vv_tol, title.encode(), unit.encode(), x0, y0, xs, ys)
         
@@ -318,7 +318,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 8.3
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         min_y.value, max_y.value = gxapi_cy.WrapCHIMERA._duplicate_chem_view(GXContext._get_tls_geo(), map, view.encode(), group.encode(), ipj, vv, log, det_lim, old, vv_tol, title.encode(), unit.encode(), vvx, vv_line, vv_fid, db, min_y.value, max_y.value)
         
@@ -345,7 +345,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 6.4
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** Input a channel expression. Units for individual channels
         are stored in the input INI. Returns a `GXVV <geosoft.gxapi.GXVV>` for the given line
@@ -392,7 +392,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** This function is a quick way to get all rows
         of data, guaranteeing no dummy items.
@@ -433,7 +433,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** If the lambda transform is requested, the channel
         must have the lambda value defined.
@@ -469,7 +469,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 7.2
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** Expressions can take acQuire-type named channels
         if the exact element/oxide is not found. This function
@@ -494,7 +494,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 5.0.7
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** Suggested use - testing to see if a channel name is an
         element so that the "ASSAY" class can be set.
@@ -516,7 +516,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 5.0.6
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** The database should be a currently open database.
         This function supercedes `GXEDB.launch_histogram <geosoft.gxapi.GXEDB.launch_histogram>`, (which now
@@ -539,7 +539,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** The database should be a currently open database.
         """
@@ -558,7 +558,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 5.0.6
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** The scatter tool uses the following INI parameters
         
@@ -593,7 +593,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 5.0.7
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** The Triplot tool uses the following INI parameters
         
@@ -630,7 +630,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 5.0.7
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** Loads a `GXLST <geosoft.gxapi.GXLST>` with all channels with CLASS "MASK", as well
         as all channels containing the string "MASK", as long
@@ -657,7 +657,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** Loads a `GXLST <geosoft.gxapi.GXLST>` with all channels in the preferred order:
         
@@ -704,7 +704,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 5.0.7
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** The number of channels is taken from the Data handles `GXVV <geosoft.gxapi.GXVV>`.
         The values in each data `GXVV <geosoft.gxapi.GXVV>` are summed and the pie arc is
@@ -748,7 +748,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 5.1.5
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** The starting angle is the location of the edge of the first pie
         slice, counted in degrees counter-clockwise from horizontal
@@ -781,7 +781,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 8.0.1
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** Plot in a legend the classes in the class file found in the input class indices.
         """
@@ -803,7 +803,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 6.4.2
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** If the input string is not an element symbol (elements in the range
         1-92, "H" to "U"), then returns a dummy (`GS_R8DM <geosoft.gxapi.GS_R8DM>`).
@@ -841,7 +841,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 5.0.7
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** The number of channels is taken from the Data handles `GXVV <geosoft.gxapi.GXVV>`.
         The values in each data `GXVV <geosoft.gxapi.GXVV>` give the radius, in view units,
@@ -892,7 +892,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 5.1.5
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** The starting angle is the location of the edge of the first pie
         slice, counted in degrees counter-clockwise from horizontal
@@ -973,7 +973,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 5.0.7
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** The view scaling is not altered with any projection. The base view
         is best as the input.
@@ -1055,7 +1055,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 8.0.1
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** Plot a scatter plot using a single fixed symbol.
         """
@@ -1142,7 +1142,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 8.0.1
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** Plot a scatter plot using colors based on a zone file.
         """
@@ -1217,7 +1217,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 8.0.1
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** Plot a scatter plot using symbols based on a symbol class file.
         """
@@ -1254,7 +1254,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** This function would normally be called after
         AAGetLithogeochemData_CHIMERA to write processed values
@@ -1305,7 +1305,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** The number of channels is taken from the Data handles `GXVV <geosoft.gxapi.GXVV>`.
         Plots a bar plot with the center of the "X" axis at the symbol location.
@@ -1348,7 +1348,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 5.0.7
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** If the tolerance is `rDUMMY <geosoft.gxapi.rDUMMY>`, then the minimum and maximum
         values are used, and must be specified.
@@ -1401,7 +1401,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 8.3
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** Same as `standard <geosoft.gxapi.GXCHIMERA.standard>` but plot in a new view.
         """
@@ -1482,7 +1482,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 5.1.6
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** The mask channel `GXVV <geosoft.gxapi.GXVV>` is used for plotting precedence; those points with
         mask = dummy are plotted first, then overwritten with the non-masked
@@ -1557,7 +1557,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 8.0.1
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** Plot a tri plot using a single fixed symbol.
         """
@@ -1634,7 +1634,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 8.0.1
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** Plot a tri plot using colors based on a zone file.
         """
@@ -1699,7 +1699,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         .. versionadded:: 8.0.1
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** Plot a tri-plot using symbols based on a symbol class file.
         """

@@ -57,7 +57,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
         .. versionadded:: 5.1.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._copy(doc_us)
         
@@ -75,7 +75,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
         .. versionadded:: 5.1.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapDOCU._create(GXContext._get_tls_geo())
         return GXDOCU(ret_val)
@@ -95,7 +95,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
         .. versionadded:: 5.1.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapDOCU._create_s(GXContext._get_tls_geo(), bf)
         return GXDOCU(ret_val)
@@ -114,7 +114,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
         .. versionadded:: 5.1.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._get_file(file.encode())
         
@@ -131,7 +131,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** If this document is only a URL link, the URL link will
         be resolved and the document downloaded from the appropriate
@@ -156,7 +156,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
         .. versionadded:: 5.1.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._get_meta(meta)
         
@@ -173,7 +173,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
         .. versionadded:: 5.1.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         name.value = self._doc_name(name.value.encode())
         
@@ -190,7 +190,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
         .. versionadded:: 5.1.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         name.value = self._file_name(name.value.encode())
         
@@ -206,7 +206,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
         .. versionadded:: 5.1.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._have_meta()
         return ret_val
@@ -224,7 +224,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
         .. versionadded:: 5.1.6
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._is_reference()
         return ret_val
@@ -241,7 +241,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
         .. versionadded:: 5.1.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** On Windows, the default application for the file extension is
         used to open the file.
@@ -261,7 +261,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
         .. versionadded:: 5.1.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._serial(bf)
         
@@ -282,7 +282,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
         .. versionadded:: 5.1.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Document types are normally identified by their extension.  If you
         leave the document type blank, the extension of the document file
@@ -336,7 +336,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** See `set_file <geosoft.gxapi.GXDOCU.set_file>`.
         This function is the same as sSetFile_DOCU, plus insures that a
@@ -369,7 +369,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
         .. versionadded:: 5.1.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_meta(meta)
         

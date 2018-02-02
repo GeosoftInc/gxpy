@@ -59,7 +59,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** After manipulating contents the object may be updated by a call to
         the UpdateFromTmpCopy method.
@@ -79,7 +79,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** This method will not modify the original contents of the file until a call to the
         the Commit method is made or the object is destroyed. A call to the Discard method
@@ -103,7 +103,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         self._commit()
         
@@ -127,7 +127,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The base template name should be the file name part of a geosoft_maptemplate
         file in the <geosoft>\\maptemplate or <geosoftuser>\\maptemplate folders. A base file
@@ -148,7 +148,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         self._discard()
         
@@ -165,7 +165,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         name.value = self._get_file_name(name.value.encode())
         
@@ -188,7 +188,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         self._create_map(map.encode(), group.encode())
         
@@ -207,7 +207,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
 
         .. versionadded:: 7.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         self._refresh()
         
@@ -233,7 +233,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         self._render_preview(hdc, left, bottom, right, top)
         
@@ -258,7 +258,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
 
         .. versionadded:: 6.4
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** This method can also be used to get the data view pixel location
         by passing a null DC handle. This help to plot the view contents

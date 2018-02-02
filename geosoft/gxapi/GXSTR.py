@@ -64,7 +64,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 6.0.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapSTR._scan_i(GXContext._get_tls_geo(), str_val.encode())
         return ret_val
@@ -86,7 +86,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 6.0.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** OLD usage, use ScanForm_STR instead.
         """
@@ -110,7 +110,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 6.0.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapSTR._scan_form(GXContext._get_tls_geo(), str_val.encode(), type)
         return ret_val
@@ -130,7 +130,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 6.0.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapSTR._scan_r(GXContext._get_tls_geo(), str_val.encode())
         return ret_val
@@ -152,7 +152,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 6.0.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** OLD usage, use ScanForm_STR instead.
         """
@@ -185,7 +185,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         file_name.value = gxapi_cy.WrapSTR._file_combine_parts(GXContext._get_tls_geo(), drive.encode(), dir.encode(), file.encode(), ext.encode(), qual.encode(), file_name.value.encode())
         
@@ -208,7 +208,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ofile.value = gxapi_cy.WrapSTR._file_ext(GXContext._get_tls_geo(), ifile.encode(), ext.encode(), ofile.value.encode(), opt)
         
@@ -229,7 +229,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         file_part.value = gxapi_cy.WrapSTR._file_name_part(GXContext._get_tls_geo(), file.encode(), file_part.value.encode(), part)
         
@@ -250,7 +250,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The multifile string must use '|' as a delimiter.
         Do not pass a string after calling `tokenize <geosoft.gxapi.GXSTR.tokenize>`.
@@ -272,7 +272,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 7.0.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ofile.value = gxapi_cy.WrapSTR._remove_qualifiers(GXContext._get_tls_geo(), ifile.encode(), ofile.value.encode())
         
@@ -297,7 +297,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         buff.value = gxapi_cy.WrapSTR._format_crc(GXContext._get_tls_geo(), pul_crc, buff.value.encode(), width)
         
@@ -320,7 +320,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         buff.value = gxapi_cy.WrapSTR._format_date(GXContext._get_tls_geo(), real, buff.value.encode(), width, type)
         
@@ -341,7 +341,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         buff.value = gxapi_cy.WrapSTR._format_i(GXContext._get_tls_geo(), int, buff.value.encode(), width)
         
@@ -364,7 +364,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         buff.value = gxapi_cy.WrapSTR._format_r(GXContext._get_tls_geo(), real, buff.value.encode(), width, sig)
         
@@ -387,7 +387,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         buff.value = gxapi_cy.WrapSTR._format_r2(GXContext._get_tls_geo(), real, buff.value.encode(), width, sig)
         
@@ -412,7 +412,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         buff.value = gxapi_cy.WrapSTR._format_double(GXContext._get_tls_geo(), real, buff.value.encode(), type, width, dec)
         
@@ -437,7 +437,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         buff.value = gxapi_cy.WrapSTR._format_time(GXContext._get_tls_geo(), real, buff.value.encode(), width, deci, type)
         
@@ -460,7 +460,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0.6
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Escape characters:
         
@@ -499,7 +499,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapSTR._char_(GXContext._get_tls_geo(), str_val.encode())
         return ret_val
@@ -524,7 +524,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapSTR._char_n(GXContext._get_tls_geo(), str_val.encode(), c, max)
         return ret_val
@@ -547,7 +547,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** If the string is too big to fit in the number of display characters,
         the output string will be "**" justified as specified.
@@ -571,7 +571,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 7.0.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** If the replacement string is "" (NULL character)
         then the string to replace is removed from the
@@ -596,7 +596,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 7.0.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** If the replacement string is "" (NULL character)
         then the string to replace is removed from the
@@ -621,7 +621,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.1.4
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         str_val.value = gxapi_cy.WrapSTR._set_char_n(GXContext._get_tls_geo(), str_val.value.encode(), c, ascii)
         
@@ -642,7 +642,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The original string is modified by terminating it
         at the character split.
@@ -672,7 +672,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         dest.value = gxapi_cy.WrapSTR._strcat(GXContext._get_tls_geo(), dest.value.encode(), orig.encode())
         
@@ -698,7 +698,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapSTR._strcmp(GXContext._get_tls_geo(), first.encode(), second.encode(), mode)
         return ret_val
@@ -717,7 +717,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         dest.value = gxapi_cy.WrapSTR._strcpy(GXContext._get_tls_geo(), dest.value.encode(), orig.encode())
         
@@ -740,7 +740,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Mask characters '*' - matches any one or more up to
         next character
@@ -767,7 +767,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** If the specified position does not fall within the current string
         the source string will simply be Concatenated.
@@ -790,7 +790,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapSTR._strlen(GXContext._get_tls_geo(), str_val.encode())
         return ret_val
@@ -813,7 +813,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Mask characters '*' - matches any one or more up to
         next character
@@ -839,7 +839,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** String may be modified. This function should not be
         used to determine if a file name string is defined, because
@@ -865,7 +865,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapSTR._str_min2(GXContext._get_tls_geo(), str_val.encode())
         return ret_val
@@ -893,7 +893,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0.5
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapSTR._strncmp(GXContext._get_tls_geo(), first.encode(), second.encode(), n_char, mode)
         return ret_val
@@ -918,7 +918,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.1.6
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapSTR._str_str(GXContext._get_tls_geo(), str_val.encode(), sub.encode(), mode)
         return ret_val
@@ -941,7 +941,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The destination string length will be less than the
         requested length if the substring is not fully enclosed
@@ -962,7 +962,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         str_val.value = gxapi_cy.WrapSTR._to_lower(GXContext._get_tls_geo(), str_val.value.encode())
         
@@ -979,7 +979,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         str_val.value = gxapi_cy.WrapSTR._to_upper(GXContext._get_tls_geo(), str_val.value.encode())
         
@@ -998,7 +998,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         xyz.value = gxapi_cy.WrapSTR._xyz_line(GXContext._get_tls_geo(), line.encode(), xyz.value.encode())
         
@@ -1015,7 +1015,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** THE STRING IS MODIFIED.
         """
@@ -1036,7 +1036,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 7.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         dest.value = gxapi_cy.WrapSTR._printf(GXContext._get_tls_geo(), dest.value.encode(), mask.encode())
         
@@ -1057,7 +1057,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** If the input replacement character is "", then the
         string will be truncated at the first character to replace.
@@ -1081,7 +1081,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** If the replacement character is "" (NULL character)
         then the character to replace is removed from the
@@ -1106,7 +1106,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.1.5
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The number of characters to replace must equal
         the number of replacement characters.
@@ -1128,7 +1128,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** All characthers > 127 will be replaced by the first character
         of the replacement string.
@@ -1150,7 +1150,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.1.4
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         str_val.value = gxapi_cy.WrapSTR._set_char(GXContext._get_tls_geo(), str_val.value.encode(), ascii)
         
@@ -1167,7 +1167,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** THE STRING IS MODIFIED.
         This method goes through the string and removes all spaces in a
@@ -1195,7 +1195,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** THE STRING IS MODIFIED.
         Whitespace characters are defined as space, tab, carriage return,
@@ -1216,7 +1216,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** THE STRING IS MODIFIED.
         The pointers will be advanced past a first character
@@ -1250,7 +1250,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.1.4
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The output group name string is formed in the way of typestr_dbstr_chstr.
         If the database/channel strings is too long to fit the output string
@@ -1287,7 +1287,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Delimiters are "soft" in that one or more delimiters
         is considered a single delimiter, and preceding and
@@ -1315,7 +1315,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Call `tokens <geosoft.gxapi.GXSTR.tokens>`  to prepare the tokenized
         string.
@@ -1356,7 +1356,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This uses a finite state machine to tokenize on these
         rules:
@@ -1412,7 +1412,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Delimiters in the string are reduced to a single NULL.
         Delimiters withing double quoted strings are ignored.
@@ -1451,7 +1451,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This function is for old GX compatibility only.
         See `tokenize <geosoft.gxapi.GXSTR.tokenize>`.
@@ -1476,7 +1476,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         .. versionadded:: 5.0.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Given a list such as "1,3,4,6-9,12", it fills the
         input buffer with 1 if the number is selected,

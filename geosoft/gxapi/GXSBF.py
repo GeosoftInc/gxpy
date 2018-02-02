@@ -68,7 +68,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._create(file.encode(), status)
         return GXSBF(ret_val)
@@ -87,7 +87,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
         .. versionadded:: 5.0.7
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Function will populate an `GXLST <geosoft.gxapi.GXLST>` object with embedded files (`SBF_TYPE_FILES <geosoft.gxapi.SBF_TYPE_FILES>`),
         directories (`SBF_TYPE_DIRS <geosoft.gxapi.SBF_TYPE_DIRS>`), or both (pass `SBF_TYPE_BOTH <geosoft.gxapi.SBF_TYPE_BOTH>`) in an `GXSBF <geosoft.gxapi.GXSBF>`.
@@ -109,7 +109,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._del_dir(dir.encode())
         
@@ -126,7 +126,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._del_file(file.encode())
         
@@ -148,7 +148,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapSBF._h_get_db(GXContext._get_tls_geo(), db)
         return GXSBF(ret_val)
@@ -168,7 +168,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapSBF._h_get_map(GXContext._get_tls_geo(), map)
         return GXSBF(ret_val)
@@ -186,7 +186,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapSBF._h_get_sys(GXContext._get_tls_geo())
         return GXSBF(ret_val)
@@ -207,7 +207,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._exist_dir(dir.encode())
         return ret_val
@@ -228,7 +228,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._exist_file(file.encode())
         return ret_val
@@ -251,7 +251,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._save_log(dir.encode(), file.encode(), file_save.encode(), p5)
         

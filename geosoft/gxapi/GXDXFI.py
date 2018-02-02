@@ -60,7 +60,7 @@ class GXDXFI(gxapi_cy.WrapDXFI):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapDXFI._create(GXContext._get_tls_geo(), name.encode())
         return GXDXFI(ret_val)
@@ -81,7 +81,7 @@ class GXDXFI(gxapi_cy.WrapDXFI):
 
         .. versionadded:: 5.1.6
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapDXFI._dxf2_ply(GXContext._get_tls_geo(), ply, dxfi)
         
@@ -107,7 +107,7 @@ class GXDXFI(gxapi_cy.WrapDXFI):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._dxf2_view_ex(view, max_pen, pb_group, group.encode(), pb_one_color, color)
         
@@ -134,7 +134,7 @@ class GXDXFI(gxapi_cy.WrapDXFI):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         min_x.value, max_x.value, min_y.value, max_y.value, min_z.value, max_z.value = self._get_range(min_x.value, max_x.value, min_y.value, max_y.value, min_z.value, max_z.value)
         

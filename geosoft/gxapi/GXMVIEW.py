@@ -94,7 +94,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.6
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The Fill color is used to color the box.
         """
@@ -115,7 +115,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         crc.value = self._crc_view(crc.value, file.encode())
         
@@ -136,7 +136,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         crc.value = self._crc_view_group(group.encode(), crc.value, file.encode())
         
@@ -169,7 +169,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.6
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The Fill color is used to color the cylinder.
         The flags determine if the cylinder is open and what
@@ -215,7 +215,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._draw_object_3d(type, mode, objects, default_count, vert_v_vx, vert_v_vy, vert_v_vz, norm_v_vx, norm_v_vy, norm_v_vz, color_vv, index_vv, count_vv)
         
@@ -256,7 +256,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 7.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Provide one normal per vertex.
         Triangles are defined by indices into the set of vertices.
@@ -278,7 +278,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 7.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._draw_surface_3d_from_file(group_name.encode(), surface_file.encode())
         
@@ -295,7 +295,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         gxapi_cy.WrapMVIEW._font_weight_lst(GXContext._get_tls_geo(), lst)
         
@@ -314,7 +314,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.5
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The group must be an `GXAGG <geosoft.gxapi.GXAGG>` group. Check this using
         `is_group <geosoft.gxapi.GXMVIEW.is_group>` and `MVIEW_IS_AGG <geosoft.gxapi.MVIEW_IS_AGG>`.
@@ -339,7 +339,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.6
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val, meta.value = self._get_meta(group.encode(), meta.value.encode())
         return GXMETA(ret_val)
@@ -364,7 +364,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Area will be 0 if error occurred (does not fail).
         This will return the bounding rectangle as if the text was placed at 0,0 and adjusted according to
@@ -389,7 +389,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.6
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The Line color and line thickness will affect rendering.
         """
@@ -412,7 +412,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.6
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Dummies are not allowed in the line.
         Line Color, Thickness is supported on rendering
@@ -442,7 +442,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._relocate_group(group.encode(), min_x, min_y, max_x, max_y, asp)
         
@@ -463,7 +463,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.6
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_meta(group.encode(), meta, name.encode())
         
@@ -486,7 +486,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.6
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The Fill color is used to color the sphere.
         """
@@ -507,7 +507,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.6
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._update_met_afrom_group(group.encode(), meta)
         
@@ -530,7 +530,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** If the groups on the plane are not deleted, they will remain in the
         3D view as "New" groups but will be unassigned to a plane.  The
@@ -554,7 +554,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** By default it is the View's Clip Region
         """
@@ -591,7 +591,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value = self._get_plane_equation(plane, pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value)
         
@@ -624,7 +624,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value = self._get_view_plane_equation(pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value)
         
@@ -644,7 +644,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._create_plane(plane.encode())
         return ret_val
@@ -664,7 +664,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._find_plane(plane.encode())
         return ret_val
@@ -681,7 +681,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** 2D drawing to a 3D View will always be placed on the
         default drawing plane.  If no default drawing plane
@@ -704,7 +704,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._is_view_3d()
         return ret_val
@@ -722,7 +722,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 8.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Section views are recognized because their projection contains one of the following orientations:
         
@@ -750,7 +750,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The group names are placed in the list names, group
         numbers are placed in the list values.
@@ -772,7 +772,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The plane names are placed in the list names, plane
         numbers are placed in the list values.
@@ -794,7 +794,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_all_groups_to_plane(plane)
         
@@ -811,7 +811,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_all_new_groups_to_plane(plane)
         
@@ -828,7 +828,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** 2D drawing to a 3D View will always be placed on the
         default drawing plane.  If no default drawing plane
@@ -852,7 +852,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_group_to_plane(plane, group.encode())
         
@@ -869,7 +869,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** To make the view a 2D view, set a `GX3DN <geosoft.gxapi.GX3DN>` of NULL.
         """
@@ -898,7 +898,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 9.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         x.value, y.value, z.value, distance.value, declination.value, inclination.value = self._get_3d_point_of_view(x.value, y.value, z.value, distance.value, declination.value, inclination.value)
         
@@ -925,7 +925,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 9.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_3d_point_of_view(x, y, z, distance, declination, inclination)
         
@@ -944,7 +944,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.4
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** By default it is the View's Clip Region
         """
@@ -981,7 +981,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** For a grid with the "Y" axis giving elevation:
         use rotations = (-90, 0, 0) for a section with azimuth 90 (E-W)
@@ -1004,7 +1004,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_plane_surface(plane, surface.encode())
         
@@ -1031,7 +1031,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_plane_surf_info(plane, sample, base, scale, min, max)
         
@@ -1068,7 +1068,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.6
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** 2D rendering commands are translated to 3D commands
         based on the plane.
@@ -1099,7 +1099,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.6
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._define_viewer_axis_3d(center_x, center_y, center_z, dir_point_x, dir_point_y, dir_point_z)
         
@@ -1120,7 +1120,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.6
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The plane is always facing the viewer. Otherwise the
         this is identical to the previous
@@ -1150,7 +1150,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The polygon will be added to the current clip region.
         The `GXVV <geosoft.gxapi.GXVV>`'s cannot have any dummy elements.
@@ -1180,7 +1180,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The rectangle will be added to the current clip region.
         """
@@ -1197,7 +1197,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._clip_clear()
         
@@ -1214,7 +1214,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._clip_groups(mode)
         
@@ -1231,7 +1231,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._clip_marked_groups(mode)
         
@@ -1252,7 +1252,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The polygon will be added to the current clip region.
         The `GXVV <geosoft.gxapi.GXVV>`'s cannot have any dummy elements.
@@ -1280,7 +1280,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The rectangle will be added to the current clip region.
         """
@@ -1299,7 +1299,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._delete_ext_clip_ply(ext_ply)
         
@@ -1315,7 +1315,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._ext_clip_ply_list(lst)
         
@@ -1332,7 +1332,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The returned `GXPLY <geosoft.gxapi.GXPLY>` is recast into the User projection.
         For oriented views (especially sections), use
@@ -1356,7 +1356,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._get_ext_clip_ply(ext_ply, ply)
         
@@ -1375,7 +1375,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ext_ply.value = self._get_group_ext_clip_ply(group.encode(), ext_ply.value)
         
@@ -1392,7 +1392,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This should be used to get the clipping polygon for
         oriented views (especially sections).
@@ -1412,7 +1412,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** All new groups will be clipped.
         """
@@ -1433,7 +1433,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         name.value = self._get_name_ext_clip_ply(ext_ply, name.value.encode())
         
@@ -1451,7 +1451,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._num_ext_clip_ply()
         return ret_val
@@ -1475,7 +1475,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._set_ext_clip_ply(ext_ply, name.encode(), ply)
         return ret_val
@@ -1492,7 +1492,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_clip_ply(poly)
         
@@ -1511,7 +1511,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_group_ext_clip_ply(group.encode(), ext_ply)
         
@@ -1538,7 +1538,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Color component intensities will be in the range 0-255.
 
@@ -1563,7 +1563,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** See `color <geosoft.gxapi.GXMVIEW.color>`.
         """
@@ -1585,7 +1585,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Color strings may be "R","G","B","C","M","Y",
         "H","S","V", or "K" or a combination of these
@@ -1626,7 +1626,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Color component intensities must be in the range 0-255.
 
@@ -1656,7 +1656,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Color component intensities must be in the range 0-255.
 
@@ -1686,7 +1686,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Color component intensities must be in the range 0-255.
 
@@ -1713,7 +1713,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Entitles that follow in this group will be clipped
         or not clipped depending on this mode.
@@ -1744,7 +1744,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._fill_color(color)
         
@@ -1761,7 +1761,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._line_color(color)
         
@@ -1778,7 +1778,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._line_smooth(smooth)
         
@@ -1797,7 +1797,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Line styles are selected by ordinal value (line style #)
         from those defined in default.lpt.  If default.lpt does
@@ -1824,7 +1824,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._line_thick(thick)
         
@@ -1841,7 +1841,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Allows the user to apply a rotation to the basic
         pattern. Care should be taken to ensure that the
@@ -1875,7 +1875,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This number is the ratio between the plotted unit cell size and the
         distance between the plotted tile centers. The default value is 1.
@@ -1901,7 +1901,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Pattern 0 is solid fill.(default)
         Set the pattern color using `fill_color <geosoft.gxapi.GXMVIEW.fill_color>`.
@@ -1936,7 +1936,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** See the IMPORTANT note for sPatNumber_MVIEW().
         """
@@ -1955,7 +1955,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Normally, the unit cell is duplicated across the fill area
         like floor tiles (`MVIEW_TILE_RECTANGULAR <geosoft.gxapi.MVIEW_TILE_RECTANGULAR>`).
@@ -1988,7 +1988,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** See the IMPORTANT note for sPatNumber_MVIEW().
         """
@@ -2007,7 +2007,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._symb_angle(angle)
         
@@ -2024,7 +2024,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._symb_color(color)
         
@@ -2041,7 +2041,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._symb_fill_color(color)
         
@@ -2064,7 +2064,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** If the font cannot be found, the DEFAULT_SYMBOL_FONT
         specified in the [MONTAJ] section of GEOSOFT.INI
@@ -2087,7 +2087,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The lower 16 bits of the number is interpreted as UTF-16 with a valid Unicode character
         code point. GFN fonts wil produce valid symbols depending on the font for 0x01-0x7f and the degree,
@@ -2111,7 +2111,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._symb_size(size)
         
@@ -2128,7 +2128,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._text_angle(angle)
         
@@ -2145,7 +2145,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._text_color(color)
         
@@ -2168,7 +2168,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Font characteristics can be defined using the function parameters,
         or may be defined as decorations in the font name.  A decorated font
@@ -2218,7 +2218,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._text_ref(ref)
         
@@ -2235,7 +2235,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Because views may have differing X and Y scales this size can only make sense in one of these directions
         otherwise text would appear warped on these kinds of views. The X direction was chosen to represent the
@@ -2267,7 +2267,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** 1.0 Renders completely opaque objects while 0.0 will be transparent.
         Objects written after this will have a combined transparency value with the
@@ -2288,7 +2288,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This number is stored in map mainly for exports to other vector formats (e.g ShapeFiles)
         A contour map that's exported to a shape file will use this value as a Z-value attributes for its shapes.
@@ -2324,7 +2324,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._arc(x, y, radius, ratio, angle, start, end)
         
@@ -2353,7 +2353,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._chord(x, y, radius, ratio, angle, start, end)
         
@@ -2384,7 +2384,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** For example, to plot three levels <95, 95-100 and
         100-120, three string arguments would be:
@@ -2412,7 +2412,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** You pass a `GXVV <geosoft.gxapi.GXVV>` with polygon sizes and 2 point vvs.
         """
@@ -2439,7 +2439,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._ellipse(x, y, radius, ratio, angle)
         
@@ -2462,7 +2462,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._line(x0, y0, x1, y1)
         
@@ -2479,7 +2479,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._line_vv(gvv)
         
@@ -2498,7 +2498,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0.6
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._polygon_dm(vv_x, vv_y)
         
@@ -2514,7 +2514,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._polygon_ply(ply)
         
@@ -2535,7 +2535,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Dummies in X and/or Y `GXVV <geosoft.gxapi.GXVV>` are deleted and it results
         in 'solid' line. Using `poly_line_dm <geosoft.gxapi.GXMVIEW.poly_line_dm>` (below) function
@@ -2558,7 +2558,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._poly_line_dm(vv_x, vv_y)
         
@@ -2577,7 +2577,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Convert a given VVy into a wrapped VVy using
         the current view window as the wrap region.
@@ -2608,7 +2608,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._rectangle(x0, y0, x1, y1)
         
@@ -2637,7 +2637,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0.7
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._segment(x, y, radius, ratio, angle, start, end)
         
@@ -2658,7 +2658,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._size_symbols(vv_x, vv_y, vv_z)
         
@@ -2677,7 +2677,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._symbol(x, y)
         
@@ -2696,7 +2696,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._symbols(vv_x, vv_y)
         
@@ -2719,7 +2719,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._symbols_itr(itr.encode(), vv_x, vv_y, vv_z)
         
@@ -2740,7 +2740,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._text(text.encode(), x, y)
         
@@ -2763,7 +2763,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._aggregate(agg, name.encode())
         
@@ -2783,7 +2783,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 9.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This method returns a cached object owned by the `GXMVIEW <geosoft.gxapi.GXMVIEW>` and will be destroyed automatically when the `GXMVIEW <geosoft.gxapi.GXMVIEW>` is disposed
         """
@@ -2802,7 +2802,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The line name can be created by calling LineLabel_DB using
         `DB_LINE_LABEL_FORMAT_LINK <geosoft.gxapi.DB_LINE_LABEL_FORMAT_LINK>`. This insures that the label is
@@ -2825,7 +2825,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._col_symbol(name.encode(), csymb)
         
@@ -2845,7 +2845,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 9.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This method returns a cached object owned by the `GXMVIEW <geosoft.gxapi.GXMVIEW>` and will be destroyed automatically when the `GXMVIEW <geosoft.gxapi.GXMVIEW>` is disposed
         """
@@ -2865,7 +2865,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.4
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._datalinkd(datalinkd, name.encode())
         
@@ -2885,7 +2885,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 9.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This method returns a cached object owned by the `GXMVIEW <geosoft.gxapi.GXMVIEW>` and will be destroyed automatically when the `GXMVIEW <geosoft.gxapi.GXMVIEW>` is disposed
         """
@@ -2906,7 +2906,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._easy_maker(name.encode(), groups.encode())
         
@@ -2931,7 +2931,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.4
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._emf_object(min_x, min_y, max_x, max_y, file.encode())
         
@@ -2960,7 +2960,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._external_string_object(min_x, min_y, max_x, max_y, name.encode(), cl.encode(), data.encode())
         
@@ -2979,7 +2979,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._link(db, name.encode())
         
@@ -3006,7 +3006,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._maker(db, map, prog.encode(), type, name.encode(), groups.encode())
         
@@ -3025,7 +3025,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._meta(meta, name.encode())
         
@@ -3043,7 +3043,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._voxd(voxd, name.encode())
         
@@ -3063,7 +3063,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 8.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This method returns a cached object owned by the `GXMVIEW <geosoft.gxapi.GXMVIEW>` and will be destroyed automatically when the `GXMVIEW <geosoft.gxapi.GXMVIEW>` is disposed
         """
@@ -3095,7 +3095,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 7.6
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This will result in a `GXVECTOR3D <geosoft.gxapi.GXVECTOR3D>` group object within the view
         """
@@ -3117,7 +3117,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 9.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This method returns a cached object owned by the `GXMVIEW <geosoft.gxapi.GXMVIEW>` and will be destroyed automatically when the `GXMVIEW <geosoft.gxapi.GXMVIEW>` is disposed
         """
@@ -3157,7 +3157,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 8.0.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._draw_vectors_3d(group.encode(), vv_x, vv_y, vv_z, vv_vx, vv_vy, vv_vz, itr, scale_for_max_vector, height_base_ratio, max_base_size_ratio)
         
@@ -3179,7 +3179,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 9.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** A group `GXITR <geosoft.gxapi.GXITR>` associate a color distribution with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
@@ -3201,7 +3201,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 9.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** A group `GXITR <geosoft.gxapi.GXITR>` associate a color distribution with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
@@ -3225,7 +3225,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 9.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** A group `GXITR <geosoft.gxapi.GXITR>` associate a color distribution with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
@@ -3246,7 +3246,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 9.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** A group `GXITR <geosoft.gxapi.GXITR>` associate a color distribution with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
@@ -3268,7 +3268,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 9.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** A group `GXTPAT <geosoft.gxapi.GXTPAT>` associate a thematic color map with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
@@ -3290,7 +3290,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 9.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** A group `GXTPAT <geosoft.gxapi.GXTPAT>` associate a thematic color map with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
@@ -3314,7 +3314,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 9.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** A group `GXTPAT <geosoft.gxapi.GXTPAT>` associate a thematic color map with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
@@ -3335,7 +3335,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 9.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** A group `GXTPAT <geosoft.gxapi.GXTPAT>` associate a thematic color map with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
@@ -3361,7 +3361,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 9.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** External API users should not use storage names starting with "Geosoft"
         """
@@ -3385,7 +3385,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 9.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** External API users should not use storage names starting with "Geosoft"
         """
@@ -3406,7 +3406,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 9.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** External API users should not use storage names starting with "Geosoft"
         """
@@ -3429,7 +3429,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 9.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** External API users should not use storage names starting with "Geosoft"
         """
@@ -3448,7 +3448,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Projections in source and destination views are used to copy the
         entities. Entities are clipped by the destination view's clipping
@@ -3469,7 +3469,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The projections, and clipping is completly ignored.
         """
@@ -3491,7 +3491,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._crc_group(name.encode(), crc)
         return ret_val
@@ -3508,7 +3508,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Does nothing if the group does not already exist.
         """
@@ -3525,7 +3525,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._del_marked_groups()
         
@@ -3552,7 +3552,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         xmin.value, ymin.value, xmax.value, ymax.value = self._get_group_extent(group_name.encode(), xmin.value, ymin.value, xmax.value, ymax.value, unit)
         
@@ -3571,7 +3571,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         trans.value = self._get_group_transparency(group_name.encode(), trans.value)
         
@@ -3590,7 +3590,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The coordinates will be in the working coordinate system
         of the view.  The SetWorkingIPJ_MVIEW method can be used
@@ -3612,7 +3612,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._hide_marked_groups(mode)
         
@@ -3629,7 +3629,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 8.5
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._hide_shadow_2d_interpretations(mode)
         
@@ -3650,7 +3650,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._exist_group(name.encode())
         return ret_val
@@ -3671,7 +3671,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0.8
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         new_name.value = self._gen_new_group_name(group.encode(), new_name.value.encode())
         
@@ -3693,7 +3693,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0.5
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._is_group(group.encode(), what)
         return ret_val
@@ -3713,7 +3713,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._is_group_empty(group.encode())
         return ret_val
@@ -3729,7 +3729,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.4
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Views are always physically movable in the API, this
         flag is for preventing accidental moving in the `GXGUI <geosoft.gxapi.GXGUI>`.
@@ -3749,7 +3749,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._is_visible()
         return ret_val
@@ -3771,7 +3771,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._list_groups(lst, flag)
         return ret_val
@@ -3789,7 +3789,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Views with lower numbers should render first, `iDUMMY <geosoft.gxapi.iDUMMY>` is undefined
         """
@@ -3808,7 +3808,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._mark_all_groups(mark)
         
@@ -3825,7 +3825,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._mark_empty_groups(mark)
         
@@ -3844,7 +3844,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._mark_group(name.encode(), mark)
         
@@ -3861,7 +3861,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._move_group_backward(group.encode())
         
@@ -3878,7 +3878,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._move_group_forward(group.encode())
         
@@ -3895,7 +3895,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._move_group_to_back(group.encode())
         
@@ -3912,7 +3912,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._move_group_to_front(group.encode())
         
@@ -3931,7 +3931,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Does nothing if the group does not already exist.
         """
@@ -3952,7 +3952,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0.5
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_group_moveable(group.encode(), move)
         
@@ -3971,7 +3971,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_group_transparency(group_name.encode(), trans)
         
@@ -3988,7 +3988,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0.5
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_mark_moveable(move)
         
@@ -4004,7 +4004,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.4
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Views are always physically movable in the API, this
         flag is for preventing accidental moving in the `GXGUI <geosoft.gxapi.GXGUI>`.
@@ -4025,7 +4025,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Views with lower numbers should render first, `iDUMMY <geosoft.gxapi.iDUMMY>` is undefined
         """
@@ -4043,7 +4043,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_visibility(visible)
         
@@ -4062,7 +4062,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Line and fill colors and thickness must be set
         before drawing to a group.
@@ -4090,7 +4090,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 9.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** If a GUID was never queried a new one will be assigned and the map will be modified. Only if the map is saved will this value then persist.
         """
@@ -4112,7 +4112,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 9.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._find_group_by_guid(guid.encode())
         return ret_val
@@ -4133,7 +4133,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The working projection is the coordinate system of coordinates drawn to
         the view.  The working coordinate system can be different than the view
@@ -4157,7 +4157,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 7.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._clear_esrild_ts()
         
@@ -4175,7 +4175,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 9.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Use, for instance, to see if the map view contains projection information. The first time you add data that
         has projection information you should set up an empty view projection so that subsequent data added with a different
@@ -4196,7 +4196,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._get_ipj(ipj)
         
@@ -4213,7 +4213,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._get_user_ipj(ipj)
         
@@ -4230,7 +4230,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This controls how your coordinates and attributes will be interpreted.
         A working projection must be set useing SetWorkingIPJ_MVIEW for this
@@ -4256,7 +4256,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** North is calculated from the `GXIPJ <geosoft.gxapi.GXIPJ>` North direction.
         It will be `rDUMMY <geosoft.gxapi.rDUMMY>` if `GXIPJ <geosoft.gxapi.GXIPJ>` is unknown.
@@ -4276,7 +4276,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This function also sets the User `GXIPJ <geosoft.gxapi.GXIPJ>`,
         and automatically clears the WARP before doing so.
@@ -4298,7 +4298,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_user_ipj(ipj)
         
@@ -4322,7 +4322,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 9.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._get_3d_group_flags(group_num)
         return ret_val
@@ -4341,7 +4341,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 9.1
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_3d_group_flags(group_num, flags)
         
@@ -4360,7 +4360,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 7.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         scale.value = self._get_group_freeze_scale(group_num, scale.value)
         
@@ -4377,7 +4377,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 7.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Objects written after this will override any scale freezing set for the group
         """
@@ -4398,7 +4398,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 7.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_group_freeze_scale(group_num, scale)
         
@@ -4418,7 +4418,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 7.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._find_group(group_name.encode())
         return ret_val
@@ -4437,7 +4437,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 7.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         group_name.value = self._group_name(group_num, group_name.value.encode())
         
@@ -4470,7 +4470,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 6.4
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._render(hdc, left, bottom, right, top, min_x, min_y, max_x, max_y)
         
@@ -4491,7 +4491,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_u_fac(hdc)
         
@@ -4518,7 +4518,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** All coordinates are in view units.
 
@@ -4551,7 +4551,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** All coordinates are in view units.
 
@@ -4582,7 +4582,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The grid will be drawn in the current window specified
         by the last SetWindow call.
@@ -4616,7 +4616,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** A 1mm long vertical tick is drawn at the place
         where a label is present. The label is drawn
@@ -4652,7 +4652,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Label bounding will justify edge labels to be inside
         the bar limits. But bounding does not apply if
@@ -4689,7 +4689,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Label bounding will justify edge labels to be inside
         the bar limits. But bounding does not apply if
@@ -4718,7 +4718,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         sep.value = gxapi_cy.WrapMVIEW._optimum_tick(GXContext._get_tls_geo(), min, max, sep.value)
         
@@ -4746,7 +4746,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** View scaling is set to mm on the map and the view
         origin is set to the map origin.
@@ -4795,7 +4795,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 7.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** A crooked section is a section running vertically beneath
         a path of (X, Y) locations, like a river. This view supports
@@ -4854,7 +4854,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 7.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This is the same as `create_crooked_section <geosoft.gxapi.GXMVIEW.create_crooked_section>`, except that the
         vertical axis plots a data value, not elevation, and allows for
@@ -4889,7 +4889,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The CLIP region is the current view window or the limits
         of the current clip polygon.
@@ -4919,7 +4919,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 7.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._get_map()
         return GXMAP(ret_val)
@@ -4937,7 +4937,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0.5
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._get_reg()
         return GXREG(ret_val)
@@ -4954,7 +4954,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         name.value = self._get_name(name.value.encode())
         
@@ -4971,7 +4971,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 9.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** If a GUID was never queried a new one will be assigned and the map will be modified. Only if the map is saved will this value then persist.
         """
@@ -4996,7 +4996,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         x.value, y.value = self._plot_to_view(x.value, y.value)
         
@@ -5013,7 +5013,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The thinning resolution controls the removal of
         redundant points from polylines and polygons.  Points
@@ -5047,7 +5047,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         x.value, y.value = self._view_to_plot(x.value, y.value)
         
@@ -5081,7 +5081,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** X and Y scales will be redefined and units will remain unchanged.
         The final X and Y ranges (if changed) are returned.
@@ -5119,7 +5119,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** 3D views are placed in 2D maps within a 2D mapping window
         that is analgous to a 2D View.  This allows all 2D functions
@@ -5162,7 +5162,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** X and Y scales will be redefined and the units will be set to <unknown>.
         Coordinate ranges must be greater than 0.0.
@@ -5188,7 +5188,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** `GXMVIEW <geosoft.gxapi.GXMVIEW>` class names are intended to be used to record the
         names of certain classes in the view, such as "Plane"
@@ -5211,7 +5211,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         x_origin.value, y_origin.value = self._map_origin(x_origin.value, y_origin.value)
         
@@ -5228,7 +5228,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The view size is multiplied by the scale factor.
         The view location will move relative to the map origin
@@ -5250,7 +5250,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._get_map_scale()
         return ret_val
@@ -5268,7 +5268,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The scale factor is intended to be used by methods
         that would like to specify sizes in mm.  Examples
@@ -5291,7 +5291,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The scale factor is intended to be used by methods
         that would like to specify sizes in mm.  Examples
@@ -5315,7 +5315,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The scale factor is intended to be used by methods
         that would like to specify sizes in mm.  Examples
@@ -5339,7 +5339,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** X (and Y) scale is the ratio of the new dimension over
         the old dimension of a reference object. For example, if a horizontal
@@ -5377,7 +5377,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The provided coordinates are converted to map mm
         using the current view translation and scaling.
@@ -5404,7 +5404,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.1.2
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** `GXMVIEW <geosoft.gxapi.GXMVIEW>` class names are intended to be used to record the
         names of certain classes in the view, such as "Plane"
@@ -5433,7 +5433,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The current clip region will be set to the clip
         window.
@@ -5463,7 +5463,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Warning. For reasons unknown (and maybe a bug), this
         function resets the view `GXIPJ <geosoft.gxapi.GXIPJ>` units. It is a good idea
@@ -5488,7 +5488,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         .. seealso::
 
@@ -5512,7 +5512,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         .. seealso::
 

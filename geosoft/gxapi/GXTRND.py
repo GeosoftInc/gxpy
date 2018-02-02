@@ -74,7 +74,7 @@ class GXTRND(gxapi_cy.WrapTRND):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Trend lines positions consist of X and Y VVs
         """
@@ -103,7 +103,7 @@ class GXTRND(gxapi_cy.WrapTRND):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapTRND._get_mesh(GXContext._get_tls_geo(), db, chan.encode(), window, max_length, mesh_vv, trnd)
         
@@ -138,7 +138,7 @@ class GXTRND(gxapi_cy.WrapTRND):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapTRND._trnd_db(GXContext._get_tls_geo(), db, chan.encode(), window, angle, deviation, max_length, deflection, min_length, resample, br_angle)
         

@@ -67,7 +67,7 @@ class GXINTERNET(gxapi_cy.WrapINTERNET):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The file must be stored on a server that supports
         the `GXHTTP <geosoft.gxapi.GXHTTP>` protocol and not require a password.
@@ -105,7 +105,7 @@ class GXINTERNET(gxapi_cy.WrapINTERNET):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Requires a MAPI complient mail system to be installed
         on the client machine.

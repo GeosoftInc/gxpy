@@ -70,7 +70,7 @@ class GXIPGUI(gxapi_cy.WrapIPGUI):
 
         .. versionadded:: 6.1
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         ret_val, page.value = gxapi_cy.WrapIPGUI._modify_job(GXContext._get_tls_geo(), ip, db, ini.encode(), plot_type, page.value)
         return ret_val
@@ -91,7 +91,7 @@ class GXIPGUI(gxapi_cy.WrapIPGUI):
 
         .. versionadded:: 8.1
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** The database should be a currently open database.
         """
@@ -114,7 +114,7 @@ class GXIPGUI(gxapi_cy.WrapIPGUI):
 
         .. versionadded:: 9.1
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** The database should be a currently open database.
         """
@@ -134,7 +134,7 @@ class GXIPGUI(gxapi_cy.WrapIPGUI):
 
         .. versionadded:: 8.1
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** See if there is an IPQC Tool already open.
         """
@@ -155,7 +155,7 @@ class GXIPGUI(gxapi_cy.WrapIPGUI):
 
         .. versionadded:: 9.4
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** This tool removes the `GXEXT <geosoft.gxapi.GXEXT>` object that allows the database-map linking between an IP data base 
         and IP plan map for plotting contributing electrodes for a given database row of data.

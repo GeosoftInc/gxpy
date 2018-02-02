@@ -61,7 +61,7 @@ class GXVULCAN(gxapi_cy.WrapVULCAN):
 
         .. versionadded:: 8.4
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         ret_val = gxapi_cy.WrapVULCAN._is_valid_triangulation_file(GXContext._get_tls_geo(), triangulation_file.encode())
         return ret_val
@@ -82,7 +82,7 @@ class GXVULCAN(gxapi_cy.WrapVULCAN):
 
         .. versionadded:: 8.4
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         ret_val = gxapi_cy.WrapVULCAN._is_valid_block_model_file(GXContext._get_tls_geo(), block_model_file.encode())
         return ret_val
@@ -105,7 +105,7 @@ class GXVULCAN(gxapi_cy.WrapVULCAN):
 
         .. versionadded:: 8.4
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapVULCAN._triangulation_to_view(GXContext._get_tls_geo(), triangulation_file.encode(), ipj, mview, new_group_name.encode())
         
@@ -126,7 +126,7 @@ class GXVULCAN(gxapi_cy.WrapVULCAN):
 
         .. versionadded:: 8.4
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapVULCAN._get_block_model_variable_info(GXContext._get_tls_geo(), block_model_file.encode(), query, lst)
         
@@ -147,7 +147,7 @@ class GXVULCAN(gxapi_cy.WrapVULCAN):
 
         .. versionadded:: 8.4
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapVULCAN._get_block_model_string_variable_values(GXContext._get_tls_geo(), block_model_file.encode(), variable_name.encode(), lst)
         
@@ -174,7 +174,7 @@ class GXVULCAN(gxapi_cy.WrapVULCAN):
 
         .. versionadded:: 8.4
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapVULCAN._block_model_to_voxel(GXContext._get_tls_geo(), block_model_file.encode(), ipj, variable_to_export.encode(), output_voxel_filename.encode(), remove_default_values, rock_code_filename.encode())
         

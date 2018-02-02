@@ -58,7 +58,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
         .. versionadded:: 5.0.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapDSEL._create(GXContext._get_tls_geo())
         return GXDSEL(ret_val)
@@ -75,7 +75,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
         .. versionadded:: 5.0.8
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This is the number of significant figures that you require for the data.
         You can reduce this number to achieve better compression ratios.
@@ -100,7 +100,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
         .. versionadded:: 5.1.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._meta_query(query.encode())
         
@@ -117,7 +117,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
         .. versionadded:: 5.1.4
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Affected Data Types: PICTURE
         """
@@ -136,7 +136,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
         .. versionadded:: 5.1.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._request_all_info(request)
         
@@ -153,7 +153,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
         .. versionadded:: 5.1.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The DAP server may not handle clipping and may return
         more data than requested.
@@ -179,7 +179,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
         .. versionadded:: 5.0.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._select_rect(min_x, min_y, max_x, max_y)
         
@@ -198,7 +198,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
         .. versionadded:: 5.0.3
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Resolution must be specified in the units of the selection `GXIPJ <geosoft.gxapi.GXIPJ>`.
         
@@ -227,7 +227,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
         .. versionadded:: 7.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._select_size(width, height)
         
@@ -244,7 +244,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_extract_as_document(value)
         
@@ -263,7 +263,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
         .. versionadded:: 5.0.8
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** If the server supports reprojection, the data will be
         reprojected at the server.
@@ -288,7 +288,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
         .. versionadded:: 5.0.8
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Must be specified in the units of the selection `GXIPJ <geosoft.gxapi.GXIPJ>`.
         

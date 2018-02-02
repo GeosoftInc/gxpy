@@ -56,7 +56,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         gxapi_cy.WrapARCDH._close_project(GXContext._get_tls_geo())
         
@@ -75,7 +75,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         gxapi_cy.WrapARCDH._set_project(GXContext._get_tls_geo(), path.encode(), project.encode())
         
@@ -92,7 +92,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
 
         .. versionadded:: 8.0
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         gxapi_cy.WrapARCDH._set_string_file_gdb(GXContext._get_tls_geo(), string_file_gdb.encode())
         
@@ -107,7 +107,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
 
         .. versionadded:: 8.0.1
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         gxapi_cy.WrapARCDH._stop_editing_string_file_gdb(GXContext._get_tls_geo())
         
@@ -123,7 +123,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
 
         .. versionadded:: 8.0.1
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         ret_val = gxapi_cy.WrapARCDH._has_string_file_gdb_edits(GXContext._get_tls_geo())
         return ret_val
@@ -139,7 +139,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
 
         .. versionadded:: 8.0.1
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         ret_val = gxapi_cy.WrapARCDH._geostrings_extension_available(GXContext._get_tls_geo())
         return ret_val
@@ -156,7 +156,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
 
         .. versionadded:: 8.0.1
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         name.value = gxapi_cy.WrapARCDH._get_current_string_file_gdb(GXContext._get_tls_geo(), name.value.encode())
         
@@ -174,7 +174,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
 
         .. versionadded:: 8.0.1
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         ret_val = gxapi_cy.WrapARCDH._is_valid_fgdb_file_name(GXContext._get_tls_geo(), fgdb.encode())
         return ret_val
@@ -192,7 +192,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
 
         .. versionadded:: 8.0.1
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         ret_val = gxapi_cy.WrapARCDH._is_valid_feature_class_name(GXContext._get_tls_geo(), feature_class_name.encode())
         return ret_val
@@ -219,7 +219,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
 
         .. versionadded:: 8.2
 
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         xml.value, fill_color.value, edge_color.value = gxapi_cy.WrapARCDH._s_prompt_for_esri_symbol(GXContext._get_tls_geo(), hwnd, h_wnd.encode(), input_xml_string, xml.value.encode(), fill_color.value, edge_color.value)
         
