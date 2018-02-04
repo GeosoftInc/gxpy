@@ -58,7 +58,7 @@ def rungx():
     gxapi.GXEDB.un_load(gdb_name)
     try:
         script = os.path.join(os.path.split(__file__)[0], 'som_om_qt5.py')
-        results = gxu.run_external_python(script, dict=settings)
+        results = gxu.run_external_python(script, '', '', settings)
     except:
         gxapi.GXEDB.load(gdb_name)
         raise
