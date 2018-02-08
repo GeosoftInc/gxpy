@@ -558,7 +558,7 @@ class GXPJ(gxapi_cy.WrapPJ):
         :type  max_y:  float_ref
         :type  max_z:  float_ref
 
-        .. versionadded:: 6.0
+        .. versionadded:: 9.4
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

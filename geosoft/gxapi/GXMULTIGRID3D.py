@@ -513,7 +513,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
 
 
-    def get_bounding_box(self, min_x, min_y, min_z, max_x, min_y, min_z):
+    def get_bounding_box(self, min_x, min_y, min_z, max_x, max_y, max_z):
         """
         Get the bounding box
         
@@ -521,20 +521,20 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
         :param min_y:        miny
         :param min_z:        minz
         :param max_x:        maxx
-        :param min_y:        maxy
-        :param min_z:        maxz
+        :param max_y:        maxy
+        :param max_z:        maxz
         :type  min_x:        float_ref
         :type  min_y:        float_ref
         :type  min_z:        float_ref
         :type  max_x:        float_ref
-        :type  min_y:        float_ref
-        :type  min_z:        float_ref
+        :type  max_y:        float_ref
+        :type  max_z:        float_ref
 
         .. versionadded:: 9.4
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        min_x.value, min_y.value, min_z.value, max_x.value, min_y.value, min_z.value = self._get_bounding_box(min_x.value, min_y.value, min_z.value, max_x.value, min_y.value, min_z.value)
+        min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._get_bounding_box(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         
 
 
