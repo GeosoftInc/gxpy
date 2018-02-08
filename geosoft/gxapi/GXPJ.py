@@ -541,6 +541,33 @@ class GXPJ(gxapi_cy.WrapPJ):
 
 
 
+    def project_bounding_volume(self, min_x, min_y, min_z, max_x, max_y, max_z):
+        """
+        Project a bounding volume.
+        
+        :param min_x:  Min X
+        :param min_y:  Min Y
+        :param min_z:  Min Z
+        :param max_x:  Max X
+        :param max_y:  Max Y
+        :param max_z:  Max Z
+        :type  min_x:  float_ref
+        :type  min_y:  float_ref
+        :type  min_z:  float_ref
+        :type  max_x:  float_ref
+        :type  max_y:  float_ref
+        :type  max_z:  float_ref
+
+        .. versionadded:: 6.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._project_bounding_volume(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
+        
+
+
+
+
 
 ### endblock ClassImplementation
 ### block ClassExtend

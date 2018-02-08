@@ -1052,6 +1052,24 @@ GIS_TYPE_MICROMINE = 7
 GIS_TYPE_MINESIGHT = 8	
 
 #
+# GXGRID3D Constants
+# 
+
+
+
+#
+# GRID3D_TYPE constants
+#
+# Type of Voxset
+
+#: DOUBLE
+GRID3D_DOUBLE = 0
+#: VECTOR
+GRID3D_VECTOR = 1
+#: THEMATIC
+GRID3D_THEMATIC = 2	
+
+#
 # GXHGD Constants
 # 
 
@@ -2063,7 +2081,7 @@ META_CORE_TYPE_Enum = -214
 META_CORE_TYPE_ClassType = -215	
 
 #
-# GXMULTIVOXSET Constants
+# GXMULTIGRID3D Constants
 # 
 
 
@@ -2103,7 +2121,7 @@ GOCAD_ORIENTATIONS_INVERTED_ZFIRST = 3
 #
 # VECTOR_IMPORT constants
 #
-# Vector voxel import direction
+# Vector grid3d import direction
 
 #: X, Y and Z
 VECTOR_IMPORT_XYZ = 0
@@ -2133,16 +2151,22 @@ FILTER3D_Z_GRADIENT = 5
 FILTER3D_TOTAL_GRADIENT = 6
 
 #
-# MULTIVOXSET_DIRECTGRID_METHOD constants
+# MULTIGRID3D_DIRECTGRID_METHOD constants
 #
 # How to calculate the cell values for direct gridding.
 
-#: Multivoxset directgrid min
-MULTIVOXSET_DIRECTGRID_MIN = 0
-#: Multivoxset directgrid max
-MULTIVOXSET_DIRECTGRID_MAX = 1
-#: Multivoxset directgrid mean
-MULTIVOXSET_DIRECTGRID_MEAN = 2	
+#: Multigrid3d directgrid min
+MULTIGRID3D_DIRECTGRID_MIN = 0
+#: Multigrid3d directgrid max
+MULTIGRID3D_DIRECTGRID_MAX = 1
+#: Multigrid3d directgrid mean
+MULTIGRID3D_DIRECTGRID_MEAN = 2	
+
+#
+# GXMULTIGRID3DUTIL Constants
+# 
+
+	
 
 #
 # GXMVIEW Constants
@@ -3056,6 +3080,12 @@ ST_HIST_MAXCOUNT = 100
 ST2_CORR = 0
 #: Pearson's correlation (normalized to standard deviations)
 ST2_PCORR = 1	
+
+#
+# GXSTORAGEPROJECT Constants
+# 
+
+	
 
 #
 # GXSTR Constants
@@ -7027,6 +7057,7 @@ __all__ = [
 
     'GXGEOSTRING',
     'GXGIS',
+    'GXGRID3D',
     'GXHGD',
     'GXHXYZ',
     'GXIGRF',
@@ -7044,7 +7075,8 @@ __all__ = [
     'GXMAPTEMPLATE',
     'GXMATH',
     'GXMETA',
-    'GXMULTIVOXSET',
+    'GXMULTIGRID3D',
+    'GXMULTIGRID3DUTIL',
     'GXMVIEW',
     'GXMVU',
     'GXMXD',
@@ -7057,6 +7089,7 @@ __all__ = [
     'GXSBF',
     'GXST',
     'GXST2',
+    'GXSTORAGEPROJECT',
     'GXSTR',
     'GXSURFACE',
     'GXSURFACEITEM',
@@ -7152,6 +7185,7 @@ from .GXEXT import GXEXT
 
 from .GXGEOSTRING import GXGEOSTRING
 from .GXGIS import GXGIS
+from .GXGRID3D import GXGRID3D
 from .GXHGD import GXHGD
 from .GXHXYZ import GXHXYZ
 from .GXIGRF import GXIGRF
@@ -7169,7 +7203,8 @@ from .GXMAPL import GXMAPL
 from .GXMAPTEMPLATE import GXMAPTEMPLATE
 from .GXMATH import GXMATH
 from .GXMETA import GXMETA
-from .GXMULTIVOXSET import GXMULTIVOXSET
+from .GXMULTIGRID3D import GXMULTIGRID3D
+from .GXMULTIGRID3DUTIL import GXMULTIGRID3DUTIL
 from .GXMVIEW import GXMVIEW
 from .GXMVU import GXMVU
 from .GXMXD import GXMXD
@@ -7182,6 +7217,7 @@ from .GXREG import GXREG
 from .GXSBF import GXSBF
 from .GXST import GXST
 from .GXST2 import GXST2
+from .GXSTORAGEPROJECT import GXSTORAGEPROJECT
 from .GXSTR import GXSTR
 from .GXSURFACE import GXSURFACE
 from .GXSURFACEITEM import GXSURFACEITEM
