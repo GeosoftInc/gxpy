@@ -488,6 +488,84 @@ class GXpy(_Singleton):
 
         return self._gxapi.get_active_wnd_id()
 
+    @property
+    def geosoft_name(self):
+        """
+        Geosoft installed product name
+
+        .. versionadded:: 9.3.2
+        """
+        i = gxapi.str_ref()
+        gxapi.GXSYS.get_sys_info(gxapi.SYS_INFO_PRODUCTNAME, i)
+        return i.value
+
+
+    @property
+    def geosoft_build_label(self):
+        """
+        Geosoft build label.
+
+        .. versionadded:: 9.3.2
+        """
+        i = gxapi.str_ref()
+        gxapi.GXSYS.get_sys_info(gxapi.SYS_INFO_BUILD_LABEL, i)
+        return i.value
+
+    @property
+    def geosoft_build_number(self):
+        """
+        Geosoft build numberl.
+
+        .. versionadded:: 9.3.2
+        """
+        i = gxapi.str_ref()
+        gxapi.GXSYS.get_sys_info(gxapi.SYS_INFO_BUILD_NUMBER, i)
+        return int(i.value)
+
+    @property
+    def geosoft_version_label(self):
+        """
+        Geosoft version label.
+
+        .. versionadded:: 9.3.2
+        """
+        i = gxapi.str_ref()
+        gxapi.GXSYS.get_sys_info(gxapi.SYS_INFO_VERSION_LABEL, i)
+        return i.value
+
+    @property
+    def geosoft_version_major(self):
+        """
+        Geosoft major version number.
+
+        .. versionadded:: 9.3.2
+        """
+        i = gxapi.str_ref()
+        gxapi.GXSYS.get_sys_info(gxapi.SYS_INFO_VERSION_MAJOR, i)
+        return int(i.value)
+
+    @property
+    def geosoft_version_minor(self):
+        """
+        Geosoft minor version number.
+
+        .. versionadded:: 9.3.2
+        """
+        i = gxapi.str_ref()
+        gxapi.GXSYS.get_sys_info(gxapi.SYS_INFO_VERSION_MINOR, i)
+        return int(i.value)
+
+    @property
+    def geosoft_version_micro(self):
+        """
+        Geosoft micro version number.
+
+        .. versionadded:: 9.3.2
+        """
+        i = gxapi.str_ref()
+        gxapi.GXSYS.get_sys_info(gxapi.SYS_INFO_VERSION_SP, i)
+        return int(i.value)
+
     def disable_app(self):
         """
         Disables application windows to allow modal Python UI.

@@ -32,6 +32,13 @@ class Test(GXPYTest):
             self.assertFalse(gxc.folder_workspace is None)
             self.assertFalse(gxc.folder_temp is None)
             self.assertFalse(gxc.folder_user is None)
+            self.assertTrue(gxc.geosoft_version_label)
+            self.assertTrue(gxc.geosoft_version_major >= 9)
+            self.assertTrue(gxc.geosoft_version_minor >= 0)
+            self.assertTrue(gxc.geosoft_version_micro >= 0)
+            self.assertTrue(gxc.geosoft_build_label)
+            self.assertTrue(gxc.geosoft_build_number)
+            self.assertTrue(gxc.geosoft_name)
 
     @unittest.skip('WIP')
     def test_entitlements(self):
