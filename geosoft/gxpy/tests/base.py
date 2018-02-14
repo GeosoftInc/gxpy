@@ -12,6 +12,10 @@ os.environ['GEOSOFT_FORCE_MESA_3D'] = '1'
 os.environ['GEOSOFT_TEST_MODE'] = '1'
 os.environ['GEOSOFT_TESTSYSTEM_MODE'] = '1'
 
+def set_geosoft_bin_path():
+    if 'GX_GEOSOFT_BIN_PATH_TESTING' in os.environ:
+        os.environ['GX_GEOSOFT_BIN_PATH'] = os.environ['GX_GEOSOFT_BIN_PATH_TESTING']
+
 
 import geosoft.gxpy.gx as gx
 import geosoft.gxapi as gxapi
@@ -98,6 +102,7 @@ class GXPYTest(unittest.TestCase):
 
         gxu._uuid_callable = cls._cls_uuid
 
+        set_geosoft_bin_path()
         cls._gx = gx.GXpy(log=print, res_stack=res_stack, max_warnings=12, suppress_progress=True)
 
     @classmethod
