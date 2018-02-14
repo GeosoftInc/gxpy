@@ -1367,30 +1367,7 @@ class Grid(gxgm.Geometry):
 
         return imagefile
 
-    def arcpy_save_raster(self, out_raster):
         # TODO: @JB Resolve what to do about this method before we release 9.4
-        import arcpy
-        data_np = np.flipud(self.np()) # Geosoft convention starts with lower left origin
-        ll=arcpy.Point(self.x0 - self.dx / 2.0, self.y0 - self.dy / 2.0)
-        if self.is_color:
-            # NumPyArrayToRaster wants the bands separated
-            data_np = np.array([data_np[:,:,0], data_np[:,:,1], data_np[:,:,2], data_np[:,:,3]]) 
-            new_raster = arcpy.NumPyArrayToRaster(data_np,
-                                                  lower_left_corner=ll,
-                                                  x_cell_size=self.dx, 
-                                                  y_cell_size=self.dy)
-        else:
-            new_raster = arcpy.NumPyArrayToRaster(data_np,
-                                                  value_to_nodata=self.dummy_value,
-                                                  lower_left_corner=ll,
-                                                  x_cell_size=self.dx, 
-                                                  y_cell_size=self.dy)
-        new_raster.save(out_raster)
-        if self.coordinate_system.is_known:
-            sr = arcpy.SpatialReference()
-            sr.loadFromString(self.coordinate_system.esri_wkt)
-            arcpy.DefineProjection_management(out_raster, sr)
-
 
 def expression(grids, expression, result_file_name=None, overwrite=False):
     """
