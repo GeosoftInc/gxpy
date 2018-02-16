@@ -434,14 +434,19 @@ class Test(GXPYTest):
         self.assertEqual(tuple(lon_lat), (88.777242210445195, -38.498998514257273))
 
         # example transform a single (x, y, elevation) coordinate
-        cstr = str(cs_transform.convert((345000., 64250000., 50)))
-        self.assertEqual(cstr, '[88.777242211469414, -38.498998481053022, 50.0]')
+        ct = cs_transform.convert((345000., 64250000., 50))
+        self.assertAlmostEqual(ct[0], 88.77724221146941)
+        self.assertAlmostEqual(ct[1], -38.49899848105302)
+        self.assertAlmostEqual(ct[2], 50.0)
 
         # example translate a list of (x, y, z) tuples
         locations = [(345000, 64250000, 50), (345500, 64250000, 60), (346000, 64250000, 70)]
         nad27_locations = cs_transform.convert(locations)
         self.assertEqual(len(nad27_locations), 3)
-        self.assertEqual(str(nad27_locations[2]), '[ 89 -38  70]')
+        ct = nad27_locations[2]
+        self.assertAlmostEqual(ct[0], 89)
+        self.assertAlmostEqual(ct[1], -38)
+        self.assertAlmostEqual(ct[2], 70)
 
         # example transform a numpy array in-place
         data = np.array([[345000, 64250000, 50, 55000],
@@ -450,7 +455,11 @@ class Test(GXPYTest):
                         dtype=float)
         nad27_locations = cs_transform.convert(data, in_place=True)
         self.assertEqual(len(nad27_locations), 3)
-        self.assertEqual(str(nad27_locations[2]), '[  8.87657800e+01  -3.84991719e+01   7.00000000e+01   5.60000000e+04]')
+        ct = nad27_locations[2]
+        self.assertAlmostEqual(ct[0], 8.87657800e+01)
+        self.assertAlmostEqual(ct[1], -3.84991719e+01)
+        self.assertAlmostEqual(ct[2], 7.00000000e+01)
+        self.assertAlmostEqual(ct[3], 5.60000000e+04)
 
     def test_known(self):
         self.start()
