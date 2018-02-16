@@ -911,7 +911,7 @@ def folder_temp(use_override=True):
     """
     Return the Geosoft temporary folder name.
 
-    :param use_override: True to use the _tem_folder_overide if it is defined (used by tests)
+    :param use_override: True to use the _temp_folder_overide if it is defined (used by tests)
 
     .. Note::
         If creating temporary files, better to use gx method :meth:`~gx.GXpy.temp_file`, which will
@@ -1325,7 +1325,7 @@ def is_path_locked(path, age=None):
 
     if os.path.exists(path):
         if not os.path.isdir(path):
-            return is_file_locked(path)
+            return is_file_locked(path, age=age)
         for item in os.listdir(path):
             item = os.path.join(path, item)
             if os.path.isdir(item):

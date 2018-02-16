@@ -95,6 +95,27 @@ class Test(GXPYTest):
             time.sleep(0.25)
             self.assertTrue(gxc.elapsed_seconds("0.25 seconds later") > 0.25)
 
+    def test_remove_temp_files(self):
+
+        def make_file(name):
+            with open(name, 'w+') as f:
+                f.write('ok')
+
+        with gx.gx() as gxc:
+            files = []
+            for i in range(3):
+                fn = gxc.temp_file()
+                make_file(fn)
+                files.append(fn)
+
+            gxc.remove_stale_temporary_files()
+            for f in files:
+                self.assertTrue(os.path.exists(f))
+
+            gxc.remove_stale_temporary_files(age=0)
+            for f in files:
+                self.assertFalse(os.path.exists(f))
+
 
 ###############################################################################################
 

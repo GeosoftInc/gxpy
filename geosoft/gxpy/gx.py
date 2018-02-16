@@ -62,7 +62,7 @@ _res_heap = {}
 _max_resource_heap = 1000000
 _stack_depth = 5
 _max_warnings = 10
-_stale_age = 24.*60*60
+_stale_age = 24. * 60 * 60
 _remove_stale_geosoft_temp_files = False
 _NULL_ID = -1
 
@@ -500,7 +500,6 @@ class GXpy(_Singleton):
         gxapi.GXSYS.get_sys_info(gxapi.SYS_INFO_PRODUCTNAME, i)
         return i.value
 
-
     @property
     def geosoft_build_label(self):
         """
@@ -566,6 +565,34 @@ class GXpy(_Singleton):
         i = gxapi.str_ref()
         gxapi.GXSYS.get_sys_info(gxapi.SYS_INFO_VERSION_SP, i)
         return int(i.value)
+
+    def remove_stale_temporary_files(self, age=24 * 60 * 60):
+        """
+        Removes stale temporary files from the current instance temporary file folder.
+
+        :param age: files older than this age is seconds are removed.  The default is 24 * 60 * 60.
+
+        Many classes that depend on a persistent file will support the creation of a class instance
+        without providing a specific file name, in which case a temporary file is created in the
+        temporary folder for this running GX instance. Upon loss of GX context all temporary files will
+        be removed, but for a long-running process, such as a GX instnce that supports a web application,
+        it can be useful to use this function to remove stale files and free valuable disk space.
+
+        Folders, if any, are not removed, but stale-dated files within folders will be removed.
+
+        .. versionadded:: 9.3.2
+        """
+
+        def remove_all_files(folder):
+            for filename in list(os.listdir(folder)):
+                ff = os.path.join(folder, filename)
+                if os.path.isdir(ff):
+                    remove_all_files(ff)
+                else:
+                    if not gxu.is_file_locked(ff, age=age):
+                        gxu.delete_file(ff)
+
+        remove_all_files(self.temp_folder())
 
     def disable_app(self):
         """
