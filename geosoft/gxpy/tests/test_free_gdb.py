@@ -140,7 +140,7 @@ class Test(GXPYTest):
             gxvoxe.vector(0., 0., 0., 1.5, 1.5, 0.5, vvd.gxvv, gxapi.VOXE_EVAL_INTERP)
             self.assertEqual(vvd.length, 500)
             self.assertEqual(vvd[0][0], 1.0)
-            self.assertEqual(vvd[499][0], gxapi.rDUMMY)
+            self.assertTrue(np.isnan(vvd[499][0]))
             gxvoxe = None
             gxvox = None
 
