@@ -261,11 +261,6 @@ class Grid(gxgm.Geometry):
         self._readonly = False
         self._decoration = ''
 
-        # When working with very large grids (gigabyte+), the
-        # file system cannot always keep up with closing/caching and re-opening the
-        # grid. Though this is actually a system problem, we deal with this problem by attempting
-        # to open a grid three times before raising an error.
-
         # rebuild a clean file name
         self._hgd = False
         if (file_name is None) or (len(file_name.strip()) == 0):
