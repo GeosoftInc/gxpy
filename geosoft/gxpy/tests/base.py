@@ -96,8 +96,6 @@ class GXPYTest(unittest.TestCase):
         os.chdir(cls._result_base_dir)
 
         gxu._temp_folder_override = os.path.join(cls._result_base_dir, '__tmp__')
-        # TODO: For some reason some tests can leave files in temp. Clean up now to keep tests stable,
-        #       but investigate the root of the issue
         if os.path.exists(gxu._temp_folder_override):
             shutil.rmtree(gxu._temp_folder_override)
         os.makedirs(gxu._temp_folder_override, exist_ok=True)
