@@ -842,6 +842,65 @@ class Grid(gxgm.Geometry):
 
         return properties
 
+    def statistics(self, gxst=None):
+        """
+        Calculate and return current grid data statistics as a dictionary.
+
+        :param gxst:    gxapi.GXST instance, to which stats will be accumulated, or None.
+
+        :returns: dictionary of grid data statistics:
+
+        =============== ============================
+        min             minimum
+        max             maximum
+        mean            mean
+        geometric_mean  geometric mean
+        variance        variance
+        sd              standard deviation
+        skew            skew
+        kurtosis        kurtosis
+        sum             sum of all data
+        sum_power_2     sum of data**2
+        sum_power_3     sum of data**3
+        sum_power_4     sum of data**4
+        num_data        number of valid data values
+        num_dummy       number of dummy values
+        =============== ============================
+
+        .. versionadded:: 9.4
+        """
+
+        def get_st(what):
+            v = gxst.get_info(what)
+            if v == gxapi.rDUMMY:
+                return None
+            return v
+
+        if gxst is None:
+            gxst = gxapi.GXST.create()
+        vv = gxvv.GXvv()
+        for iv in range(self.gximg.nv()):
+            self.gximg.read_v(iv, 0, 0, vv.gxvv)
+            gxst.data_vv(vv.gxvv)
+
+        st = {'min': get_st(gxapi.ST_MIN),
+              'max': get_st(gxapi.ST_MAX),
+              'mean': get_st(gxapi.ST_MEAN),
+              'geometric_mean': get_st(gxapi.ST_GEOMEAN),
+              'variance': get_st(gxapi.ST_VARIANCE),
+              'sd': get_st(gxapi.ST_STDDEV),
+              'skew': get_st(gxapi.ST_SKEW),
+              'kurtosis': get_st(gxapi.ST_KURTOSIS),
+              'sum': get_st(gxapi.ST_SUM),
+              'sum_power_2': get_st(gxapi.ST_SUM2),
+              'sum_power_3': get_st(gxapi.ST_SUM3),
+              'sum_power_4': get_st(gxapi.ST_SUM4),
+              'num_data': get_st(gxapi.ST_ITEMS),
+              'num_dummy': get_st(gxapi.ST_DUMMIES)
+              }
+
+        return st
+
     @x0.setter
     def x0(self, v):
         self._img.set_info(self.dx, self.dy, v, self.y0, -self.rot)

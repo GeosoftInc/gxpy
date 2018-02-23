@@ -56,6 +56,14 @@ class Test(GXPYTest):
             self.assertEqual(properties.get('is_color'),True)
             self.assertEqual(gc.is_color, True)
 
+    def test_statistics(self):
+        self.start()
+
+        with gxgrd.Grid.open(self.g1f) as g1:
+            stats = g1.statistics()
+            self.assertAlmostEqual(stats['mean'], 997.2176063303659)
+            self.assertEqual(stats['num_data'] + stats['num_dummy'], g1.nx * g1.ny)
+
     def test_copy(self):
         self.start()
 
