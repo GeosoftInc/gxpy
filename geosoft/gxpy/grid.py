@@ -4,9 +4,9 @@ Geosoft grids and image handling, including all
 
 :Classes:
 
-    ============= ====================================================
-    :class:`Grid` grid, which can be in memory or created from a file _
-    ============= ====================================================
+    ============= ==============
+    :class:`Grid` grid datasets
+    ============= ==============
 
 .. seealso:: :class:`geosoft.gxapi.GXIMG`, :class:`geosoft.gxapi.GXIMU`
 
@@ -33,6 +33,19 @@ from . import map as gxmap
 __version__ = geosoft.__version__
 
 
+# constants
+FILE_READ = 0          #:
+FILE_READWRITE = 1     #: file exists, but can change properties
+FILE_NEW = 2           #:
+TREND_EDGE = gxapi.IMU_TREND_EDGE  #:
+TREND_ALL = gxapi.IMU_TREND_ALL  #:
+DERIVATIVE_X = 0  #:
+DERIVATIVE_Y = 1  #:
+DERIVATIVE_Z = 2  #:
+DERIVATIVE_ANALYTIC_SIGNAL = 3  #:
+DERIVATIVE_TILT = 4  #:
+
+
 def _t(s):
     return geosoft.gxpy.system.translate(s)
 
@@ -44,6 +57,20 @@ class GridException(Exception):
     .. versionadded:: 9.1
     """
     pass
+
+
+# function to close and reopen a grid file
+def _reopen(g, mode=FILE_READWRITE):
+
+    dtype = g.dtype
+    dfn = g.file_name_decorated
+    delete_set = g._delete_files
+    g._delete_files = False
+    g.close()
+    g = Grid.open(dfn, dtype=dtype, mode=mode)
+    if delete_set:
+        g.delete_files()
+    return g
 
 
 def name_parts(name):
@@ -77,7 +104,7 @@ def name_parts(name):
 
     if not ext:
         if (not dec) or (dec[:3].upper() == 'GRD'):
-            ext = '.grd.'
+            ext = '.grd'
     name = root + ext
 
     return fn, name, root, ext, dec
@@ -93,6 +120,9 @@ def decorate_name(name, decorations=''):
 
     .. versionadded:: 9.1
     """
+
+    if name is None:
+        return None
 
     root, ext = os.path.splitext(name)
     dec = decorations.strip()
@@ -151,12 +181,6 @@ def _transform_color_int_to_rgba(np_values):
     # 0 or 1 to indicate if the color is valid or not
     a[a > 0] = 255
     return np.array([r, g, b, a]).transpose()
-
-
-# constants
-FILE_READ = 0          #:
-FILE_READWRITE = 1     #: file exists, but can change properties
-FILE_NEW = 2           #:
 
 
 class Grid(gxgm.Geometry):
@@ -218,23 +242,34 @@ class Grid(gxgm.Geometry):
 
     def _close(self, pop=True):
 
+        def flush_hgd(hgd_temp):
+
+            # convert tempory grid to an HGD file
+            img = gxapi.GXIMG.create_file(gxapi.GS_TYPE_DEFAULT,
+                                          decorate_name(hgd_temp, 'GRD'),
+                                          gxapi.IMG_FILE_READONLY)
+            gxapi.GXHGD.h_create_img(img, decorate_name(self._hgd_name, 'HGD'))
+            img = None
+
         if hasattr(self, '_open'):
             if self._open:
-
-                if self._delete_files:
-
-                    self._img = None
-                    delete_files(self._file_name)
-                    self._metadata_changed = False
-
-                elif self._hgd:
-                    # an HGD memory grid was made, save it to an HGD file
-                    gxapi.GXHGD.h_create_img(self._img, decorate_name(self._file_name, 'HGD'))
 
                 if self._metadata_changed:
                     with open(self._file_name + '.xml', 'w+') as f:
                         f.write(gxu.xml_from_dict(self._metadata))
                     gxapi.GXIMG.sync(self._file_name)
+
+                if self._hgd:
+                    temp_grid = self._file_name
+                    flush_to_hgd = True
+                    self._delete_files = False
+                else:
+                    temp_grid = None
+                    flush_to_hgd = False
+
+                if self._delete_files:
+                    self._img = None
+                    delete_files(self._file_name)
 
                 if pop:
                     gx.pop_resource(self._open)
@@ -246,12 +281,18 @@ class Grid(gxgm.Geometry):
                 self._cs = None
                 self._gxpg = None
 
+                if flush_to_hgd:
+                   flush_hgd(temp_grid)
+                   delete_files(temp_grid)
+
+
+
     def __repr__(self):
         return "{}({})".format(self.__class__, self.__dict__)
 
     def __str__(self):
         if self._file_name is None:
-            return '__memory__'
+            return 'None'
         else:
             return self.file_name_decorated
 
@@ -261,25 +302,28 @@ class Grid(gxgm.Geometry):
         self._readonly = False
         self._decoration = ''
 
-        # rebuild a clean file name
-        self._hgd = False
-        if (file_name is None) or (len(file_name.strip()) == 0):
-            self._file_name = None
-        else:
-            path, file_name, root, ext, self._decoration = name_parts(file_name)
-            self._file_name = os.path.join(path, file_name)
-
-            if mode == FILE_NEW:
-                # special case - HGD file, must work with a memory grid, save to HGD at end
-                if ext.lower() == '.hgd':
-                    self._hgd = True
-
         if 'name' not in kwargs:
             if file_name:
                 kwargs['name'] = os.path.splitext(file_name)[0]
             else:
                 kwargs['name'] = '_grid_'
         super().__init__(**kwargs)
+
+        # build a file name
+        if (file_name is None) or (len(file_name.strip()) == 0):
+            file_name = gx.gx().temp_file('.grd(GRD)')
+        path, file_name, root, ext, self._decoration = name_parts(file_name)
+        self._file_name = os.path.join(path, file_name)
+
+        # for an HGD file work with a temporary grid, save to HGD on closing
+        self._hgd = False
+        self._hgd_name = None
+        if mode == FILE_NEW and ext.lower() == '.hgd':
+            self._hgd = True
+            self._hgd_name = self._file_name
+            file_name = gx.gx().temp_file('.grd(GRD)')
+            path, file_name, root, ext, self._decoration = name_parts(file_name)
+            self._file_name = os.path.join(path, file_name)
 
         self._metadata = None
         self._metadata_changed = False
@@ -293,40 +337,43 @@ class Grid(gxgm.Geometry):
         self._cs = None
         self._gxpg = None
 
-        gxtype = gxu.gx_dtype(dtype)
-        if self._file_name is None:
-            self._img = gxapi.GXIMG.create(gxtype, kx, dim[0], dim[1])
-
-        elif mode == FILE_NEW:
+        if mode == FILE_NEW:
+            if dtype is None:
+                dtype = np.float64
+            gxtype = gxu.gx_dtype(dtype)
             if not overwrite:
-                if os.path.isfile(self.file_name):
+                if os.path.isfile(self._file_name):
                     raise GridException(_t('Cannot overwrite existing grid {}'.format(self.file_name)))
-            if self._hgd:
-                # for HGD grids, make a memory grid, which will be saved to an HGD on closing
-                self._img = gxapi.GXIMG.create(gxtype, kx, dim[0], dim[1])
+            self._img = gxapi.GXIMG.create_new_file(gxtype,
+                                                    kx, dim[0], dim[1],
+                                                    decorate_name(self._file_name, self._decoration))
+        else:  # open an existing grid
+
+            if mode == FILE_READ:
+                open_mode = gxapi.IMG_FILE_READONLY
+                self._readonly = True
             else:
-                self._img = gxapi.GXIMG.create_new_file(gxtype,
-                                                        kx, dim[0], dim[1],
-                                                        self.file_name_decorated)
+                open_mode = gxapi.IMG_FILE_READORWRITE
+                self._readonly = False
 
-        elif mode == FILE_READ:
+            # always open in default type unless float or double
+            # TODO: see also gxapi issue #17
+            gxtype = gxu.gx_dtype(dtype)
+            if gxtype not in (gxapi.GS_FLOAT, gxapi.GS_DOUBLE):
+                gxtype = gxapi.GS_TYPE_DEFAULT
             self._img = gxapi.GXIMG.create_file(gxtype,
                                                 self.file_name_decorated,
-                                                gxapi.IMG_FILE_READONLY)
-            self._readonly = True
-
-        else:
-            self._img = gxapi.GXIMG.create_file(gxtype,
-                                                self.file_name_decorated,
-                                                gxapi.IMG_FILE_READORWRITE)
+                                                open_mode)
+            if dtype is None:
+                dtype = gxu.dtype_gx(self._img.e_type())
 
         self._next = 0
         self._next_row = 0
         self._next_col = 0
         self._gxtype = self._img.e_type()
-        self._dtype = gxu.dtype_gx(self._gxtype)
+        self._dtype = dtype
         self._dummy = gxu.gx_dummy(self._dtype)
-        self._is_int = gxu.is_int(self._gxtype)
+        self._is_int = gxu.is_int(gxu.gx_dtype(self.dtype))
         self._cos_rot = 1.0
         self._sin_rot = 0.0
         self.rot = self.rot
@@ -334,13 +381,13 @@ class Grid(gxgm.Geometry):
         self._open = gx.track_resource(self.__class__.__name__, self._file_name)
 
     @classmethod
-    def open(cls, file_name, dtype=None, mode=None):
+    def open(cls, file_name, dtype=None, mode=FILE_READ):
         """
         Open an existing grid file.
 
-        :param file_name:   name of the grid file (see `supported file formats <https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations>`_)
-        :param dtype:       numpy data type, None for the grid native type.  If not the same as the native
-                            type a memory grid is created in the new type.
+        :param file_name:   name of the grid file, with decorations. See `supported file formats
+                            <https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations>`_)
+        :param dtype:       numpy data type, which will be the grid data type.
         :param mode:        open mode:
 
             =================  ================================================
@@ -351,24 +398,16 @@ class Grid(gxgm.Geometry):
         .. versionadded:: 9.1
         """
 
-        if mode is None:
-            mode = FILE_READ
-        grd = cls(file_name, dtype=None, mode=mode)
-
-        if (dtype is not None) and (grd.dtype != dtype):
-            grdm = cls.copy(grd, dtype=dtype)
-            grd.close()
-            return grdm
-        else:
-            return grd
+        grd = cls(file_name, dtype=dtype, mode=mode)
+        return grd
 
     @classmethod
     def new(cls, file_name=None, properties=None, overwrite=False):
         """
         Create a new grid file.
 
-        :param file_name:   name of the grid file, None or '' for a memory grid. See
-         `supported file formats <https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations>`_)
+        :param file_name:   name of the grid file, None for a temporary grid. See `supported file formats
+                            <https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations>`_)
         :param properties:  dictionary of grid properties, see :meth:`properties`
         :param overwrite:   True to overwrite existing file
 
@@ -380,8 +419,6 @@ class Grid(gxgm.Geometry):
 
         # set basic grid properties
         dtype = properties.get('dtype', None)
-        if dtype is None:
-            dtype = np.float64
         nx = properties.get('nx', 0)
         ny = properties.get('ny', 0)
         if (nx <= 0) or (ny <= 0):
@@ -449,12 +486,13 @@ class Grid(gxgm.Geometry):
         return gxu.dummy_none(self.gximg.get_z(x, y))
 
     @classmethod
-    def copy(cls, grd, file_name=None, dtype=None, overwrite=False):
+    def copy(cls, grd, file_name=None, dtype=None, overwrite=False, mode=gxapi.IMG_FILE_READORWRITE):
         """
         Create a new Grid instance as a copy of an existing grid.
 
         :param grd:         :class:`Grid` instance to save as a new grid, or a grid file name
-        :param file_name:   name of the new grid (file with optional decorations), default is in memory
+        :param file_name:   name of the new grid (file with optional decorations). If not specified a temporary file
+                            is created.
         :param dtype:       numpy data type, None to use type of the parent grid
         :param overwrite:   True to overwrite if the file exists, False to not overwrite.
 
@@ -468,8 +506,7 @@ class Grid(gxgm.Geometry):
             close_grid = False
 
         p = grd.properties()
-        if dtype:
-            p['dtype'] = dtype
+        p['dtype'] = dtype
 
         if file_name is not None:
             path0, base_file0, root0, ext0, dec0 = name_parts(grd.file_name_decorated)
@@ -481,12 +518,15 @@ class Grid(gxgm.Geometry):
             file_name = decorate_name(os.path.join(path1, root1) + ext1, dec1)
 
         copy = Grid.new(file_name, p, overwrite=overwrite)
-        grd._img.copy(copy._img)
+        if file_name is None:
+            file_name = copy.file_name_decorated
+        grd.gximg.copy(copy.gximg)
+        copy.close()
 
         if close_grid:
             grd.close()
 
-        return copy
+        return Grid.open(file_name, dtype=dtype, mode=mode)
 
     @classmethod
     def index_window(cls, grd, name=None, x0=0, y0=0, nx=None, ny=None, overwrite=False):
@@ -752,6 +792,8 @@ class Grid(gxgm.Geometry):
 
         .. versionadded:: 9.2
         """
+        if self._hgd:
+            return self._hgd_name
         return self._file_name
 
     @property
@@ -761,7 +803,11 @@ class Grid(gxgm.Geometry):
 
         .. versionadded:: 9.2
         """
-        return decorate_name(self.file_name, self._decoration)
+        if self._hgd:
+            decor = 'HGD'
+        else:
+            decor = self._decoration
+        return decorate_name(self.file_name, decor)
 
     @property
     def name(self):
@@ -770,6 +816,8 @@ class Grid(gxgm.Geometry):
         
         .. versionadded:: 9.2
         """
+        if self._file_name is None:
+            return 'None'
         basename = os.path.basename(self.file_name)
         return os.path.splitext(basename)[0]
 
@@ -996,7 +1044,7 @@ class Grid(gxgm.Geometry):
 
         if row >= self.ny:
             raise GridException(_t('Attempt to read row {} past the last row {}'.format(row, self.ny)))
-        vv = gxvv.GXvv(dtype=self._dtype)
+        vv = gxvv.GXvv(dtype=self.dtype)
         self._img.read_y(row, start, length, vv.gxvv)
 
         return vv
@@ -1017,7 +1065,7 @@ class Grid(gxgm.Geometry):
         if column >= self.nx:
             raise GridException(_t('Attempt to read column {} past the last column {}'.format(column, self.ny)))
         self._next_col = column + 1
-        vv = gxvv.GXvv(dtype=self._dtype)
+        vv = gxvv.GXvv(dtype=self.dtype)
         self._img.read_x(column, start, length, vv.gxvv)
 
         return vv
@@ -1150,9 +1198,11 @@ class Grid(gxgm.Geometry):
         """
         return gxgm.Point2((self.extent_cell_3d()), coordinate_system=self.coordinate_system)
 
-    def np(self):
+    def np(self, dtype=None):
         """
-        Return a numpy array of grid values.
+        Return a numpy array of grid values in the working dtype.
+
+        :param dtype:   desired data type, default is the work_dtype, ignored for color grids
 
         :returns: numpy array shape (nx, ny) or (nx, ny, 4) containing RGBA bytes in case of color grids
 
@@ -1164,7 +1214,9 @@ class Grid(gxgm.Geometry):
         if self.is_color:
             data = np.zeros((ny, nx, 4), np.dtype(np.uint8))
         else:
-            data = np.zeros((ny, nx), dtype=self._dtype)
+            if dtype is None:
+                dtype = self.dtype
+            data = np.zeros((ny, nx), dtype=dtype)
         if self.gximg.query_kx() == -1:
             for i in range(self.nx):
                 column = self.read_column(i).np
@@ -1179,7 +1231,6 @@ class Grid(gxgm.Geometry):
                 data[i, :] = row
 
         return data
-
 
     def xyzv(self):
         """
@@ -1309,7 +1360,6 @@ class Grid(gxgm.Geometry):
 
         return imagefile
 
-
     def arcpy_save_raster(self, out_raster): 
         import arcpy
         data_np = np.flipud(self.np()) # Geosoft convention starts with lower left origin
@@ -1332,6 +1382,202 @@ class Grid(gxgm.Geometry):
             sr = arcpy.SpatialReference()
             sr.loadFromString(self.coordinate_system.esri_wkt)
             arcpy.DefineProjection_management(out_raster, sr)
+
+    def remove_trend(self, file_name=None, method=TREND_EDGE, overwrite=False):
+        """
+        Calculate a polynomial trend surface and return trend-removed grid.
+        
+        :param file_name:   trend-removed grid file name, if None a temporary grid is created.
+        :param method:      base trend on TREND_EDGE for edge data or TREND_ALL for all data
+        :param overwrite:   True to overwrite existing file_name
+        :return:            `Grid` instance
+        
+        .. versionadded 9.4
+        """
+
+        # need GS_DOUBLE grids
+        if self.gxtype != gxapi.GS_DOUBLE:
+            ing = Grid.copy(self, gx.gx().temp_file('.grd(GRD)'), dtype=np.float64)
+            ing.delete_files()
+        else:
+            ing = self
+
+        if file_name is None:
+            file_name = gx.gx().temp_file('.grd(GRD)')
+        dtg = Grid.new(file_name=file_name, properties=ing.properties(), overwrite=overwrite)
+        gxapi.GXIMU.grid_trnd(ing.gximg, dtg.gximg, 0, method, 1,
+                              gxapi.GXVM.create(gxapi.GS_REAL, 10), 3)
+        return dtg
+
+    def derivative(self, derivative, file_name=None, overwrite=False):
+        """
+        Return a derivative of this grid.  Derivatives are calculated by convolution.
+
+        :param derivative:   Which derivative to calculate:
+        
+            ========================== ====================================================================
+            DERIVATIVE_X               in the grid X direction
+            DERIVATIVE_Y               in the grid Y direction
+            DERIVATIVE_Z               in the grid Z direction
+            DERIVATIVE_ANALYTIC_SIGNAL analytic signal, or the total derivative sqrt(dx**2 + dy**2 + dz**2)
+            DERIVATIVE_TILT            tilt derivative, atan2(dz, sqrt(dx**2, dy**2))
+            ========================== ====================================================================
+        
+        :param file_name:   returned derivative file name, None for a temporary file
+        :param overwrite:   True to overwrite existing file
+        :return:            `Grid` instance that contains the derivative result
+
+        .. versionadded 9.4
+        """
+
+        def vertical_derivative():
+
+            # need GS_FLOAT grids
+            if self.gxtype != gxapi.GS_FLOAT:
+                ing = Grid.copy(self, gx.gx().temp_file('.grd(GRD)'), dtype=np.float32, overwrite=True)
+                ing.delete_files()
+            else:
+                ing = self
+
+            # dz grid
+            dzg = Grid.new(file_name=file_name, properties=ing.properties(), overwrite=overwrite)
+            gxapi.GXIMU.grid_vd(ing.gximg, dzg.gximg)
+            return _reopen(dzg)
+
+        def tilt_derivative():
+
+            dx = self.derivative(derivative=DERIVATIVE_X)
+            dy = self.derivative(derivative=DERIVATIVE_Y)
+            dz = self.derivative(derivative=DERIVATIVE_Z)
+            return expression((dx, dy, dz), 'atan2(g3,sqrt(g1**2+g2**2))', 
+                              result_file_name=file_name,
+                              overwrite=overwrite)
+
+        def analytic_signal():
+
+            dx = self.derivative(derivative=DERIVATIVE_X)
+            dy = self.derivative(derivative=DERIVATIVE_Y)
+            dz = self.derivative(derivative=DERIVATIVE_Z)
+            return expression((dx, dy, dz), 'sqrt(g1**2+g2**2)', 
+                              result_file_name=file_name,
+                              overwrite=overwrite)
+
+        # temp file_name
+        if file_name is None:
+            file_name = gx.gx().temp_file('.grd(GRD)')
+
+        if derivative == DERIVATIVE_Z:
+            return vertical_derivative()
+        
+        if derivative == DERIVATIVE_ANALYTIC_SIGNAL:
+            return analytic_signal()
+
+        if derivative == DERIVATIVE_TILT:
+            return tilt_derivative()
+
+        # need float32 grids for grid_filt
+        if self.dtype != np.float32:
+            ing = Grid.copy(self, gx.gx().temp_file('.grd(GRD)'), dtype=np.float32, overwrite=True)
+            ing.delete_files()
+        else:
+            ing = self
+
+        # dxy grid
+        if file_name is None:
+            file_name = gx.gx().temp_file('.grd(GRD)')
+        dxy = Grid.new(file_name=file_name, properties=ing.properties(), overwrite=overwrite)
+
+        # filter
+        if derivative == DERIVATIVE_X:
+            filter_vv = gxvv.GXvv([0., 0., 0., -0.5, 0., +0.5, 0., 0., 0.], dtype=np.float64)
+        else:
+            filter_vv = gxvv.GXvv([0., 0.5, 0., 0., 0., 0., 0., -0.5, 0.], dtype=np.float64)
+        gxapi.GXIMU.grid_filt(ing.gximg, dxy.gximg,
+                              1, 1.0,
+                              gxapi.IMU_FILT_DUMMY_NO,
+                              gxapi.IMU_FILT_HZDRV_NO,
+                              gxapi.IMU_FILT_FILE_NO,
+                              "",
+                              filter_vv.gxvv)
+
+        return _reopen(dxy)
+
+
+def expression(grids, expression, result_file_name=None, overwrite=False):
+    """
+    Apply an expressing to grids.
+    
+    :param grids:       dictionary of named grid operands, or a list of grids (see example below). If a list
+                        is provided the operand names will be 'g1', 'g2', 'g3', etc...
+    :param expression:  expression tring to apply, conforms to Python/C math expression syntax. The expression
+                        can have multiple lines, each line terminated by a ';' character.
+    :param result_file_name:    optional result grid file name, if None a temporary grid is created.
+    :param overwrite:   True to overwrite existing grid
+    :return:            `Grid` instance that contains the resuilt of the expression.
+    
+    *Example*
+    
+    .. code::
+    
+        import geosoft.gxpy.grid as gxgrd
+        
+        grid_1 = gxgrd.Grid.open('some_grid')
+        grid_2 = gxgrd.Grid.open('some_other_grid')
+        
+        # add the grids together
+        sum = gxgrd.expression((grid_1, grid_2), 'g1+g2')
+        
+        # add using named operands
+        sum = gxgrd.expression({'a': grid_1, 'b': grid_2}, 'a+b')
+        
+        # add using file names (first release open grids)
+        grid_1 = grid_2 = None
+        sum = gxgrd.expression(('some_grid', 'some_other_grid'), 'g1+g2')
+        
+    .. versionadded 9.4
+    """
+
+    exp = gxapi.GXIEXP.create()
+
+    # build default operands dict from list of grids
+    if not isinstance(grids, dict):
+        i = 1
+        gd = {}
+        for g in grids:
+            gd['g{}'.format(i)] = g
+            i += 1
+        grids = gd
+
+    # add grids to the expression
+    properties = None
+    delete_list = []
+    for k,g in grids.items():
+        if not isinstance(g, Grid):
+            g = Grid.open(g, dtype=np.float64)
+        elif g.dtype != np.float64:
+            g = Grid.copy(g, gx.gx().temp_file('.grd(GRD)'), dtype=np.float64)
+            delete_list.append(g)
+        exp.add_grid(g.gximg, k)
+        if properties is None:
+            properties = g.properties()
+
+    if result_file_name is None:
+        result_file_name = gx.gx().temp_file('.grd(GRD)')
+    result = Grid.new(file_name=result_file_name, properties=properties, overwrite=overwrite)
+    exp.add_grid(result.gximg, '_')
+
+    # apply expression
+    expression = ('_=' + expression).strip()
+    if expression[-1] != ';':
+        expression = expression + ';'
+    exp.do_formula(expression, 100)
+
+    # delete temporary grids
+    for g in delete_list:
+        g.delete_files()
+
+    return _reopen(result)
+
 
 # grid utilities
 def array_locations(properties):

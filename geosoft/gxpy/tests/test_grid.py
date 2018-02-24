@@ -3,12 +3,14 @@ import os
 import numpy as np
 
 import geosoft
+import geosoft.gxapi as gxapi
 import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.grid as gxgrd
 import geosoft.gxpy.map as gxmap
 import geosoft.gxpy.geometry as gxgm
+import geosoft.gxpy.vv as gxvv
 
 from base import GXPYTest
 
@@ -22,6 +24,7 @@ class Test(GXPYTest):
         cls.g1f = os.path.join(cls.folder, 'test_grid_1.grd')
         cls.g2f = os.path.join(cls.folder, 'test_grid_2.grd')
         cls.gcf = os.path.join(cls.folder, 'test_bool1_color.grd')
+        cls.mag = os.path.join(cls.folder, 'bhn_tmi_250m.grd')
 
     def test_grc(self):
         self.start()
@@ -68,8 +71,9 @@ class Test(GXPYTest):
         self.start()
 
         #create a grids
-        outGrid = os.path.join(self.folder, 'test_copy.grd(GRD)')
+        outGrid = os.path.join(self.folder, 'test_copy')
         with gxgrd.Grid.open(self.g1f) as g:
+            mean = g.statistics()['mean']
             with gxgrd.Grid.copy(g, outGrid) as grd:
                 grd.delete_files()
                 properties = grd.properties()
@@ -81,6 +85,13 @@ class Test(GXPYTest):
                 self.assertEqual(properties.get('nx'),101)
                 self.assertEqual(properties.get('ny'),101)
                 self.assertEqual(str(properties.get('coordinate_system')),'WGS 84')
+                self.assertAlmostEqual(grd.statistics()['mean'], mean)
+
+        # temporary grid copy
+        with gxgrd.Grid.open(self.g1f) as g:
+            mean = g.statistics()['mean']
+            with gxgrd.Grid.copy(g) as grd:
+                self.assertAlmostEqual(grd.statistics()['mean'], mean)
 
     def test_set_properties(self):
         self.start()
@@ -253,6 +264,7 @@ class Test(GXPYTest):
         with gxgrd.Grid.open(self.g1f) as g:
             ofile = gxgrd.Grid.decorate_name(os.path.join(self.folder, 'test.hgd'), 'HGD')
             with gxgrd.Grid.copy(g, ofile) as g2:
+                g2.delete_files()
                 properties = g2.properties()
             self.assertEqual(properties.get('file_name'),os.path.abspath(ofile.split('(')[0]))
             self.assertEqual(properties.get('decoration'),'HGD')
@@ -757,6 +769,48 @@ class Test(GXPYTest):
                 self.assertEqual(800, gi.ny)
                 self.assertAlmostEqual(6.994032176517, gi.x0)
                 self.assertAlmostEqual(43.494032176517, gi.y0)
+
+    def test_remove_trend(self):
+        self.start()
+
+        with gxgrd.Grid.open(self.mag) as grd:
+            dtg = grd.remove_trend(method=gxgrd.TREND_ALL)
+            stt = dtg.statistics()
+            self.assertAlmostEqual(stt['mean'], 0.7715205926416573)
+
+    def test_expression(self):
+        self.start()
+
+        with gxgrd.Grid.open(self.mag) as grd:
+            x = gxgrd.expression({'first': grd, 'second': grd}, 'first-second')
+            self.assertEqual(x.statistics()['mean'], 0.)
+
+        with gxgrd.Grid.open(self.mag) as grd:
+            x = gxgrd.expression((grd, grd), 'g1-g2')
+            self.assertEqual(x.statistics()['mean'], 0.)
+
+    def test_derivatives(self):
+        self.start()
+
+        with gxgrd.Grid.open(self.mag) as grd:
+            dxg = grd.derivative(gxgrd.DERIVATIVE_X)
+            self.assertAlmostEqual(dxg.statistics()['sd'], 18.04271016086604)
+
+        with gxgrd.Grid.open(self.mag) as grd:
+            dyg = grd.derivative(gxgrd.DERIVATIVE_Y)
+            self.assertAlmostEqual(dyg.statistics()['sd'], 14.884414474960357)
+
+        with gxgrd.Grid.open(self.mag) as grd:
+            das = grd.derivative(gxgrd.DERIVATIVE_ANALYTIC_SIGNAL)
+            self.assertAlmostEqual(das.statistics()['sd'], 19.18270809104566)
+
+        with gxgrd.Grid.open(self.mag) as grd:
+            dzg = grd.derivative(gxgrd.DERIVATIVE_Z)
+            self.assertAlmostEqual(dzg.statistics()['sd'], 0.22893001533535487)
+
+        with gxgrd.Grid.open(self.mag) as grd:
+            dtd = grd.derivative(gxgrd.DERIVATIVE_TILT)
+            self.assertAlmostEqual(dtd.statistics()['sd'], 0.033342129413201395)
 
 ###############################################################################################
 
