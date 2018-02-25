@@ -1219,10 +1219,28 @@ def delete_file(file_name):
 
     .. versionadded:: 9.3.1
     """
-    try:
-        os.remove(file_name)
-    except FileNotFoundError:
-        pass
+    if file_name:
+        try:
+            os.remove(file_name)
+        except FileNotFoundError:
+            pass
+
+
+def delete_files_by_root(file_root):
+    """
+    Delete all files that have the same file_root (without extension). This can be safely applied to remove
+    temporary files that use named using `geosoft.gxpy.gx.temp_file`.
+
+    :param file_root:   file root name
+
+    .. versionadded:: 9.4
+    """
+
+    if file_root:
+        path, root = os.path.split(file_root)
+        for fn in os.listdir(path):
+            if (fn == root) or (os.path.splitext(fn)[0] == root):
+                delete_file(os.path.join(path, fn))
 
 
 def unique_name(name, invalid=None, separator='()', maxversion=1000):

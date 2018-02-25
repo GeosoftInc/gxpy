@@ -16,6 +16,12 @@ import geosoft.gxapi as gxapi
 from . import gx as gx
 from . import vv as gxvv
 from . import grid as gxgrd
+from . import map as gxmap
+from . import view as gxv
+from . import group as gxgrp
+from . import gdb as gxgdb
+from . import geometry as gxgeo
+from . import utility as gxu
 
 __version__ = geosoft.__version__
 
@@ -344,3 +350,64 @@ def grid_bool(g1, g2, joined_grid, opt=1, size=3, olap=1):
         g2.close()
 
     return gxgrd.Grid.open(joined_grid)
+
+def contour_points(grid, value, max_segments=1000):
+    """
+    Return a set of point segments that represent the spatial locations of contours threaded through the grid.
+
+    Contours through oriented grids will be oriented in 3D. Grids that are not oriented will have a z value
+    0.0.
+
+    :param grid:            grid file of `geosoft.gxpy.grid.Grid` instance
+    :param value:           contour value
+    :param max_segments:    maximum expected number of segments, raises error if there are more actual segments.
+    :return:                list of `geosoft.gxpy.geometry.PPoint`, where each item in the list represents
+                            one continuous contour from the grid.
+
+    .. versionadded:: 9.4
+    """
+
+    if isinstance(grid, gxgrd.Grid):
+        extent = grid.extent
+        with grid.copy(grid) as g:
+            temp_grid = g.file_name
+            grid = g.file_name_decorated
+    else:
+        extent = gxgrd.Grid.open(grid).extent
+        temp_grid = None
+
+    # create a contour group for this value, export to a shape file
+    with gxmap.Map.new(data_area=extent.extent_xy) as gmap:
+        map_file = gmap.file_name
+        with gxv.View.open(gmap, "data") as v:
+            gxgrp.contour(v, '_', grid, parameters=(',0,0', '', '', '', '', '1',
+                                                    str(value) + ',,,0'))
+        shp_file = gx.gx().temp_file('shp')
+        gmap.gxmap.export_all_in_view(shp_file, 'data', 1.0, 1.0,
+                                      gxapi.MAP_EXPORT_BITS_24,
+                                      gxapi.MAP_EXPORT_METHOD_STANDARD,
+                                      gxapi.MAP_EXPORT_FORMAT_SHP, '')
+        shp_file = shp_file[:-4] + '_lnz.shp'
+
+    # import shape into a temporary database
+    gis = gxapi.GXGIS.create(shp_file, '', gxapi.GIS_TYPE_ARCVIEW)
+    with gxgdb.Geosoft_gdb.new(max_lines=max_segments, max_channels=10) as gdb:
+        gdb_file = gdb.file_name
+        gis.load_shapes_gdb(gdb.gxdb)
+
+        # make points from segments
+        pplist = []
+        for l in gdb.lines():
+            xyz = gdb.read_line(l, channels=('X', 'Y', 'Z'))[0]
+            xyz[:, 2] = 0.
+            if extent.coordinate_system.is_oriented:
+                xyz = extent.coordinate_system.xyz_from_oriented(xyz)
+            pplist.append(gxgeo.PPoint(xyz, coordinate_system=extent.coordinate_system))
+
+    # discard the temp files
+    gxu.delete_files_by_root(temp_grid)
+    gxu.delete_files_by_root(map_file)
+    gxu.delete_files_by_root(gdb_file)
+    gxu.delete_files_by_root(shp_file[:-4])
+
+    return pplist

@@ -345,12 +345,12 @@ class Geosoft_gdb(gxgeo.Geometry):
         return gdb
 
     @classmethod
-    def new(cls, name, max_lines=500, max_channels=200, max_blobs=0, page_size=1024,
+    def new(cls, name=None, max_lines=500, max_channels=200, max_blobs=0, page_size=1024,
             comp=None, overwrite=False):
         """
         Create a new database.
 
-        :param name:            database name
+        :param name:            database name, if None a temporary database is created
         :param max_lines:       maximum number of lines, default 500
         :param max_channels:    maximum number of channels, default 200
         :param max_blobs:       maximum number of blobs, default lines*channels+20
@@ -373,6 +373,9 @@ class Geosoft_gdb(gxgeo.Geometry):
 
         .. versionchanged:: 9.3
             added parameter `overwrite=False`
+
+        .. versionchanges:: 9.4 `name=None` creates a temporary database
+
         """
         max_lines = max(10, max_lines)
         max_channels = max(25, max_channels)
@@ -389,6 +392,8 @@ class Geosoft_gdb(gxgeo.Geometry):
                 raise GdbException(_t('Page size cannot be larger than 4096 (256 MB per line-channel).'))
         page_size = ps
 
+        if name is None:
+            name = gx.gx().temp_file('gdb')
         name = _gdb_name(name)
 
         if not overwrite and os.path.isfile(name):

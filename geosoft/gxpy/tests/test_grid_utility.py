@@ -6,6 +6,8 @@ import geosoft
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.grid as gxgrd
 import geosoft.gxpy.grid_utility as gxgrdu
+import geosoft.gxpy.geometry as gxgeo
+import geosoft.gxpy.coordinate_system as gxcs
 
 from base import GXPYTest
 
@@ -153,6 +155,24 @@ class Test(GXPYTest):
 
         dxg = gxgrdu.derivative(self.mag, gxgrdu.DERIVATIVE_X)
         self.assertAlmostEqual(dxg.statistics()['sd'], 18.04271016086604)
+
+    def test_contour_xy(self):
+        self.start()
+
+        xyp = gxgrdu.contour_points(self.mag, 100)
+        self.assertTrue(isinstance(xyp, list))
+        self.assertTrue(isinstance(xyp[0], gxgeo.PPoint))
+        self.assertEqual(xyp[0][0].z, 0.0)
+
+        # oriented grid
+        with gxgrd.Grid.open(self.g1f) as g:
+            v = g.statistics()['mean']
+            with gxgrd.Grid.copy(g) as gm:
+                cs_name = gxcs.name_from_hcs_orient_vcs(gm.coordinate_system.hcs, '0, 0, 1000, 0, -90, 25', '')
+                gm.coordinate_system = cs_name
+                xyp = gxgrdu.contour_points(gm, v)
+                self.assertAlmostEqual(xyp[0][0].z, 1007.0093107843851)
+
 
 ###############################################################################################
 
