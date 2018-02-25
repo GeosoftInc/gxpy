@@ -1,12 +1,12 @@
 """
-Geosoft grids and image handling, including all
+Geosoft grid and image handling, including all
 `supported file formats <https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations>`_
 
 :Classes:
 
-    ============= ==============
-    :class:`Grid` grid datasets
-    ============= ==============
+    ====== ==============
+    `Grid` grid datasets
+    ====== ==============
 
 .. seealso:: :class:`geosoft.gxapi.GXIMG`, :class:`geosoft.gxapi.GXIMU`
 
@@ -29,6 +29,7 @@ from . import utility as gxu
 from . import agg as gxagg
 from . import geometry as gxgm
 from . import map as gxmap
+from . import grid_utility as gxgrdu
 
 __version__ = geosoft.__version__
 
@@ -37,13 +38,6 @@ __version__ = geosoft.__version__
 FILE_READ = 0          #:
 FILE_READWRITE = 1     #: file exists, but can change properties
 FILE_NEW = 2           #:
-TREND_EDGE = gxapi.IMU_TREND_EDGE  #:
-TREND_ALL = gxapi.IMU_TREND_ALL  #:
-DERIVATIVE_X = 0  #:
-DERIVATIVE_Y = 1  #:
-DERIVATIVE_Z = 2  #:
-DERIVATIVE_ANALYTIC_SIGNAL = 3  #:
-DERIVATIVE_TILT = 4  #:
 
 
 def _t(s):
@@ -59,10 +53,23 @@ class GridException(Exception):
     pass
 
 
-# function to close and reopen a grid file
-def _reopen(g, mode=FILE_READWRITE):
+def reopen(g, dtype=None, mode=FILE_READWRITE):
+    """
+    Reopen a grid to access the grid as an existing grid.
+    
+    Some gxapi.GXIMU methods will not work with grids open a snew grids. This method closes
+    the grid and reopens in the specifid mode
+    
+    :param g:       `Grid` instance
+    :param dtype:   data type, None to match the data type of the grid being reopened
+    :param mode:    `FILE_READWRITE` (default) or `FILE_READ`
+    :return:        new `Grid` instance
+    
+    .. versionadded:: 9.4
+    """
 
-    dtype = g.dtype
+    if dtype is None:
+        dtype = g.dtype
     dfn = g.file_name_decorated
     delete_set = g._delete_files
     g._delete_files = False
@@ -1360,7 +1367,8 @@ class Grid(gxgm.Geometry):
 
         return imagefile
 
-    def arcpy_save_raster(self, out_raster): 
+    def arcpy_save_raster(self, out_raster):
+        # TODO: @JB Resolve what to do about this method before we release 9.4
         import arcpy
         data_np = np.flipud(self.np()) # Geosoft convention starts with lower left origin
         ll=arcpy.Point(self.x0 - self.dx / 2.0, self.y0 - self.dy / 2.0)
@@ -1382,125 +1390,6 @@ class Grid(gxgm.Geometry):
             sr = arcpy.SpatialReference()
             sr.loadFromString(self.coordinate_system.esri_wkt)
             arcpy.DefineProjection_management(out_raster, sr)
-
-    def remove_trend(self, file_name=None, method=TREND_EDGE, overwrite=False):
-        """
-        Calculate a polynomial trend surface and return trend-removed grid.
-        
-        :param file_name:   trend-removed grid file name, if None a temporary grid is created.
-        :param method:      base trend on TREND_EDGE for edge data or TREND_ALL for all data
-        :param overwrite:   True to overwrite existing file_name
-        :return:            `Grid` instance
-        
-        .. versionadded 9.4
-        """
-
-        # need GS_DOUBLE grids
-        if self.gxtype != gxapi.GS_DOUBLE:
-            ing = Grid.copy(self, gx.gx().temp_file('.grd(GRD)'), dtype=np.float64)
-            ing.delete_files()
-        else:
-            ing = self
-
-        if file_name is None:
-            file_name = gx.gx().temp_file('.grd(GRD)')
-        dtg = Grid.new(file_name=file_name, properties=ing.properties(), overwrite=overwrite)
-        gxapi.GXIMU.grid_trnd(ing.gximg, dtg.gximg, 0, method, 1,
-                              gxapi.GXVM.create(gxapi.GS_REAL, 10), 3)
-        return dtg
-
-    def derivative(self, derivative, file_name=None, overwrite=False):
-        """
-        Return a derivative of this grid.  Derivatives are calculated by convolution.
-
-        :param derivative:   Which derivative to calculate:
-        
-            ========================== ====================================================================
-            DERIVATIVE_X               in the grid X direction
-            DERIVATIVE_Y               in the grid Y direction
-            DERIVATIVE_Z               in the grid Z direction
-            DERIVATIVE_ANALYTIC_SIGNAL analytic signal, or the total derivative sqrt(dx**2 + dy**2 + dz**2)
-            DERIVATIVE_TILT            tilt derivative, atan2(dz, sqrt(dx**2, dy**2))
-            ========================== ====================================================================
-        
-        :param file_name:   returned derivative file name, None for a temporary file
-        :param overwrite:   True to overwrite existing file
-        :return:            `Grid` instance that contains the derivative result
-
-        .. versionadded 9.4
-        """
-
-        def vertical_derivative():
-
-            # need GS_FLOAT grids
-            if self.gxtype != gxapi.GS_FLOAT:
-                ing = Grid.copy(self, gx.gx().temp_file('.grd(GRD)'), dtype=np.float32, overwrite=True)
-                ing.delete_files()
-            else:
-                ing = self
-
-            # dz grid
-            dzg = Grid.new(file_name=file_name, properties=ing.properties(), overwrite=overwrite)
-            gxapi.GXIMU.grid_vd(ing.gximg, dzg.gximg)
-            return _reopen(dzg)
-
-        def tilt_derivative():
-
-            dx = self.derivative(derivative=DERIVATIVE_X)
-            dy = self.derivative(derivative=DERIVATIVE_Y)
-            dz = self.derivative(derivative=DERIVATIVE_Z)
-            return expression((dx, dy, dz), 'atan2(g3,sqrt(g1**2+g2**2))', 
-                              result_file_name=file_name,
-                              overwrite=overwrite)
-
-        def analytic_signal():
-
-            dx = self.derivative(derivative=DERIVATIVE_X)
-            dy = self.derivative(derivative=DERIVATIVE_Y)
-            dz = self.derivative(derivative=DERIVATIVE_Z)
-            return expression((dx, dy, dz), 'sqrt(g1**2+g2**2)', 
-                              result_file_name=file_name,
-                              overwrite=overwrite)
-
-        # temp file_name
-        if file_name is None:
-            file_name = gx.gx().temp_file('.grd(GRD)')
-
-        if derivative == DERIVATIVE_Z:
-            return vertical_derivative()
-        
-        if derivative == DERIVATIVE_ANALYTIC_SIGNAL:
-            return analytic_signal()
-
-        if derivative == DERIVATIVE_TILT:
-            return tilt_derivative()
-
-        # need float32 grids for grid_filt
-        if self.dtype != np.float32:
-            ing = Grid.copy(self, gx.gx().temp_file('.grd(GRD)'), dtype=np.float32, overwrite=True)
-            ing.delete_files()
-        else:
-            ing = self
-
-        # dxy grid
-        if file_name is None:
-            file_name = gx.gx().temp_file('.grd(GRD)')
-        dxy = Grid.new(file_name=file_name, properties=ing.properties(), overwrite=overwrite)
-
-        # filter
-        if derivative == DERIVATIVE_X:
-            filter_vv = gxvv.GXvv([0., 0., 0., -0.5, 0., +0.5, 0., 0., 0.], dtype=np.float64)
-        else:
-            filter_vv = gxvv.GXvv([0., 0.5, 0., 0., 0., 0., 0., -0.5, 0.], dtype=np.float64)
-        gxapi.GXIMU.grid_filt(ing.gximg, dxy.gximg,
-                              1, 1.0,
-                              gxapi.IMU_FILT_DUMMY_NO,
-                              gxapi.IMU_FILT_HZDRV_NO,
-                              gxapi.IMU_FILT_FILE_NO,
-                              "",
-                              filter_vv.gxvv)
-
-        return _reopen(dxy)
 
 
 def expression(grids, expression, result_file_name=None, overwrite=False):
@@ -1576,7 +1465,7 @@ def expression(grids, expression, result_file_name=None, overwrite=False):
     for g in delete_list:
         g.delete_files()
 
-    return _reopen(result)
+    return reopen(result)
 
 
 # grid utilities
@@ -1600,176 +1489,24 @@ def gridMosaic(*args, **kwargs):
     return grid_mosaic(*args, **kwargs)
 
 
-def grid_mosaic(mosaic,  grid_list, type_decorate='', report=None):
+def grid_mosaic(*args, **kwargs):
     """
-    Combine a set of grids into a single grid.  Raises an error if the resulting grid is too large.
-
-    :param mosaic:          name of the output grid, returned.  Decorate with '(HGD)' to get an HGD
-    :param  grid_list:        list of input grid names
-    :param type_decorate:  decoration for input grids if not default
-    :param report:          string reporting function, report=print to print progress
-    :returns:               :class`Grid` instance, must be closed with a call to close().
-
-    .. versionadded:: 9.1
+    .. deprecated:: 9.4 use `geosoft.gxpy.grid_utility.grid_mosaic`
     """
-
-    def props(gn, repro=None):
-        with Grid.open(gn) as gg:
-            if repro:
-                gg.gximg.create_projected2(repro[0], repro[1])
-            return gg.properties()
-
-    def dimension(glist):
-
-        def dimg(_gd, _rep=None):
-            prp = props(_gd, _rep)
-            _x0 = prp.get('x0')
-            _y0 = prp.get('y0')
-            _xm = _x0 + (prp.get('nx') - 1) * prp.get('dx')
-            _ym = _y0 + (prp.get('ny') - 1) * prp.get('dy')
-            _ipj = prp.get('coordinate_system').gxipj
-            cell = prp.get('dx')
-            return _x0, _y0, _xm, _ym, (_ipj, cell)
-
-        def ndim(_x0, _xm, _dx):
-            return int((_xm - _x0 + _dx / 2.0) / _dx) + 1
-
-        dx0, dy0, dxm, dym, drepro = dimg(glist[0])
-        for gd in glist[1:]:
-            xx0, yy0, xxm, yym, r = dimg(gd, drepro)
-            if xx0 < dx0:
-                dx0 = xx0
-            if yy0 < dy0:
-                dy0 = yy0
-            if xxm > dxm:
-                dxm = xxm
-            if yym > dym:
-                dym = yym
-
-        # calculate new grid dimension
-        _p = props(glist[0])
-        nnx = ndim(dx0, dxm, _p.get('dx'))
-        nny = ndim(dy0, dym, _p.get('dy'))
-
-        return dx0, dy0, nnx, nny, dxm, dym
-
-    def locate(_x0, _y0, _p):
-
-        _dx = _p.get('dx')
-        _dy = _p.get('dy')
-        dsx = round((p.get('x0') - _x0) / _dx)
-        dsy = round((p.get('y0') - _y0) / _dy)
-
-        return dsx, dsy
-
-    def paste(gn, _mpg):
-        with Grid.open(gn) as _g:
-            _p = _g.properties()
-            _nx = _p.get('nx')
-            _ny = _p.get('ny')
-            gpg = _g.gxpg()
-            destx, desty = locate(x0, y0, _p)
-            if report:
-                report('    +{} nx,ny({},{})'.format(_g, _nx, _ny))
-                report('     Copy ({},{}) -> ({},{}) of ({},{})'.format(_nx, _ny, destx, desty, mnx, mny))
-            _mpg.copy_subset(gpg, desty, destx, 0, 0, _ny, _nx)
-            return
-
-    if len(grid_list) == 0:
-        raise GridException(_t('At least one grid is required'))
-
-    # create list of grids, all matching on coordinate system of first grid
-    grids = []
-    for i in range(len(grid_list)):
-        grids.append(decorate_name(grid_list[i], type_decorate))
-
-    # output grid
-    x0, y0, nx, ny, xm, ym = dimension(grids)
-    p = props(grids[0])
-    p['x0'] = x0
-    p['y0'] = y0
-    p['nx'] = nx
-    p['ny'] = ny
-    if report is not None:
-        report('')
-        report('Mosaic: dim({},{}) x({},{}) y({},{}), cell({})...'.format(nx, ny, x0, xm, y0, ym, p.get('dx')))
-    master = Grid.new(mosaic, p)
-    if report:
-        report('Memory image ready ({}) dim({},{}) x0,y0({},{})'.format(master, master.nx, master.ny,
-                                                                        master.x0, master.y0))
-
-    # paste grids onto master
-    mnx = master.nx
-    mny = master.ny
-    mpg = master.gxpg()
-    for g in grids:
-        paste(g, mpg)
-
-    if report:
-        report('Mosaic completed: {}'.format(mosaic))
-
-    return master
 
 
 def gridBool(*args, **kwargs):
     """
-    .. deprecated:: 9.2 use grid_bool
+    .. deprecated:: 9.2 use `grid_bool`
     """
     return grid_bool(*args, **kwargs)
 
 
-def grid_bool(g1, g2, joined_grid, opt=1, size=3, olap=1):
+def grid_bool(*args, **kwargs):
     """
-
-    :param g1:          Grids to merge
-    :param g2:
-    :param joined_grid: joined output grid name, overwritten if it exists
-    :param opt:         logic to use on overlap points, default 1 (OR):
-
-        === ============================================
-        0   AND, both grids must have valid value
-        1   OR, either grid has a valid value
-        2   XOR, same as OR, except overlap is dummied
-        === ============================================
-
-    :param size:    size of the output grid, default is minimum size
-
-        === ==========================================
-        0   minimum size - dummy regions clipped
-        1   size to grid 1
-        2   size to grid 2
-        3   size to maximum including both grids
-        === ==========================================
-
-    :param olap:    what to do with overlapping valid points, default uses grid 1
-
-        === ==========================================
-        0   average points
-        1   use grid 1
-        2   use grid 2
-        === ==========================================
-
-    :returns:       `Grid` instance of the merged output grid, must be closed with a call to close().
-
-    .. versionadded:: 9.1
+    .. deprecated:: 9.4 use `geosoft.gxpy.grid_utility.grid_bool`
     """
-
-    close_g1 = close_g2 = False
-    if isinstance(g1, str):
-        g1 = Grid.open(g1)
-        close_g1 = True
-    if isinstance(g2, str):
-        g2 = Grid.open(g2)
-        close_g2 = True
-
-    gxapi.GXIMU.grid_bool(g1.gximg, g2.gximg, joined_grid, opt, size, olap)
-
-    if close_g1:
-        g1.close()
-    if close_g2:
-        g2.close()
-
-    return Grid.open(joined_grid)
+    return gxgrdu.grid_bool(*args, **kwargs)
 
 
 def figure_map(grid_file, map_file=None, shade=True, color_map=None, contour=None, **kwargs):

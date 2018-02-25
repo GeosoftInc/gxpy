@@ -8,6 +8,7 @@ from . import vv
 from . import va
 from . import coordinate_system
 from . import grid
+from . import grid_utility
 from . import gdb
 from . import agg
 from . import map
@@ -26,6 +27,7 @@ __all__ = ['agg',
            'geometry',
            'gdb',
            'grid',
+           'grid_utility',
            'group',
            'gx',
            'map',

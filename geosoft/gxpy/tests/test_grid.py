@@ -145,7 +145,7 @@ class Test(GXPYTest):
             self.assertEqual(str(properties.get('coordinate_system')),'NAD27 / UTM zone 18N')
             self.assertEqual(properties.get('dtype'),np.int16)
 
-    def test_memory(self):
+    def test_temp(self):
         self.start()
 
         with gxgrd.Grid.new(properties={'dtype': np.int16,
@@ -167,83 +167,6 @@ class Test(GXPYTest):
 
             m = grd.metadata
             self.assertFalse(bool(m))
-
-    def test_mosaic(self):
-        self.start()
-
-        with gxgrd.Grid.open(self.g1f) as g:
-            m1s = os.path.join(self.folder, 'm1.grd(GRD)')
-            gxgrd.Grid.copy(g, m1s).close()
-        with gxgrd.Grid.open(self.g2f) as g:
-            m2s = os.path.join(self.folder, 'm2.grd(GRD)')
-            gxgrd.Grid.copy(g, m2s).close()
-
-        glist = [m1s, m2s]
-
-        mosaicGrid = os.path.join(self.folder, 'test_mosaic.grd')
-        with gxgrd.gridMosaic(mosaicGrid, glist) as grd:
-
-            properties = grd.properties()
-            self.assertAlmostEqual(properties.get('dx'),0.01)
-            self.assertAlmostEqual(properties.get('dy'),0.01)
-            self.assertAlmostEqual(properties.get('x0'),7.0)
-            self.assertAlmostEqual(properties.get('y0'),44.0)
-            self.assertEqual(properties.get('rot'),0.0)
-            self.assertEqual(properties.get('nx'),201)
-            self.assertEqual(properties.get('ny'),101)
-            self.assertEqual(str(properties.get('coordinate_system')),'WGS 84')
-
-        m = os.path.join(self.folder, 'test_mosaic.hgd(HGD)')
-        gxgrd.gridMosaic(m, glist).close()
-
-        with gxgrd.Grid.open(m) as grd:
-            grd.delete_files()
-            properties = grd.properties()
-            self.assertAlmostEqual(properties.get('dx'),0.01)
-            self.assertAlmostEqual(properties.get('dy'),0.01)
-            self.assertAlmostEqual(properties.get('x0'),7.0)
-            self.assertAlmostEqual(properties.get('y0'),44.0)
-            self.assertEqual(properties.get('rot'),0.0)
-            self.assertEqual(properties.get('nx'),201)
-            self.assertEqual(properties.get('ny'),101)
-            self.assertEqual(str(properties.get('coordinate_system')),'WGS 84')
-
-    def test_bool(self):
-        self.start()
-
-        g1 = gxgrd.Grid.open(self.g1f)
-        g2 = gxgrd.Grid.open(self.g2f)
-        grd = gxgrd.gridBool(g1, g2, os.path.join(self.folder, 'testBool.grd(GRD;TYPE=SHORT)'), size=3)
-        grd.delete_files()
-        properties = grd.properties()
-        g1.close()
-        g2.close()
-        grd.close()
-
-        self.assertAlmostEqual(properties.get('dx'),0.01)
-        self.assertAlmostEqual(properties.get('dy'),0.01)
-        self.assertAlmostEqual(properties.get('x0'),7.0)
-        self.assertAlmostEqual(properties.get('y0'),44.0)
-        self.assertEqual(properties.get('rot'),0.0)
-        self.assertEqual(properties.get('nx'),201)
-        self.assertEqual(properties.get('ny'),101)
-        self.assertEqual(str(properties.get('coordinate_system')),'WGS 84')
-        self.assertEqual(properties.get('dtype'),np.int16)
-
-        grd = gxgrd.gridBool(self.g1f, self.g2f, os.path.join(self.folder, 'testBool.grd(GRD;TYPE=SHORT)'), size=3)
-        grd.delete_files()
-        properties = grd.properties()
-        grd.close()
-
-        self.assertAlmostEqual(properties.get('dx'), 0.01)
-        self.assertAlmostEqual(properties.get('dy'), 0.01)
-        self.assertAlmostEqual(properties.get('x0'), 7.0)
-        self.assertAlmostEqual(properties.get('y0'), 44.0)
-        self.assertEqual(properties.get('rot'), 0.0)
-        self.assertEqual(properties.get('nx'), 201)
-        self.assertEqual(properties.get('ny'), 101)
-        self.assertEqual(str(properties.get('coordinate_system')), 'WGS 84')
-        self.assertEqual(properties.get('dtype'), np.int16)
 
     def test_delete_grid(self):
         self.start()
@@ -770,14 +693,6 @@ class Test(GXPYTest):
                 self.assertAlmostEqual(6.994032176517, gi.x0)
                 self.assertAlmostEqual(43.494032176517, gi.y0)
 
-    def test_remove_trend(self):
-        self.start()
-
-        with gxgrd.Grid.open(self.mag) as grd:
-            dtg = grd.remove_trend(method=gxgrd.TREND_ALL)
-            stt = dtg.statistics()
-            self.assertAlmostEqual(stt['mean'], 0.7715205926416573)
-
     def test_expression(self):
         self.start()
 
@@ -788,29 +703,6 @@ class Test(GXPYTest):
         with gxgrd.Grid.open(self.mag) as grd:
             x = gxgrd.expression((grd, grd), 'g1-g2')
             self.assertEqual(x.statistics()['mean'], 0.)
-
-    def test_derivatives(self):
-        self.start()
-
-        with gxgrd.Grid.open(self.mag) as grd:
-            dxg = grd.derivative(gxgrd.DERIVATIVE_X)
-            self.assertAlmostEqual(dxg.statistics()['sd'], 18.04271016086604)
-
-        with gxgrd.Grid.open(self.mag) as grd:
-            dyg = grd.derivative(gxgrd.DERIVATIVE_Y)
-            self.assertAlmostEqual(dyg.statistics()['sd'], 14.884414474960357)
-
-        with gxgrd.Grid.open(self.mag) as grd:
-            das = grd.derivative(gxgrd.DERIVATIVE_ANALYTIC_SIGNAL)
-            self.assertAlmostEqual(das.statistics()['sd'], 19.18270809104566)
-
-        with gxgrd.Grid.open(self.mag) as grd:
-            dzg = grd.derivative(gxgrd.DERIVATIVE_Z)
-            self.assertAlmostEqual(dzg.statistics()['sd'], 0.22893001533535487)
-
-        with gxgrd.Grid.open(self.mag) as grd:
-            dtd = grd.derivative(gxgrd.DERIVATIVE_TILT)
-            self.assertAlmostEqual(dtd.statistics()['sd'], 0.033342129413201395)
 
 ###############################################################################################
 
