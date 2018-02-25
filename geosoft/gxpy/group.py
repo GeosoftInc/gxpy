@@ -988,20 +988,108 @@ class Draw(Group):
         if cur_text:
             self.text_def = cur_text
 
-    def contour(self, grid_file_name):
+    def contour(self, grid_file_name, parameters=None):
         """
-        Draw contours for a grid file.  A default contour interval is determined from the grid.
+        Draw contours for a grid file.
         
-        :param grid_file_name: Grid file name
-        
+        :param grid_file_name:  Grid file name
+        :param parameters:      contour parameters, None for default contouring.
+
+        Parameters can be provided as a list of strings that correspond the contouring control file
+        (starting at control file line 2) as defined on the Geosoft Desktop help topic 'CONTCON'. The first
+        'MDF' line, which is used to specify the map scale and drawing location, is not required as the scale
+        and location is fixed by the view.
+
+        Following are the control file parameters names as they would appear in a text control file:
+
+        .. code::
+
+            border, lowtic, smooth, suppop, nth, gtitle     / 'general': {}
+            pdef, ptick, pxval, pframe, psidel              / 'special': {}
+            hlb, htl, hcr, htk, hxv, hsl                    / 'text': {}
+            ominl,cminl,skipa,skipb,skipc,skipd,skipe,skipf / 'line': {}
+            xval, digxv, minxv, markxv                      / 'hilo': {}
+            levopt, conbeg, conend, lbup, lbmult, logopt    / 'levels': {}
+            cint,lintyp,catt,label,dense,digits,conlo,conhi / 'contours': [{}, {}, ...]
+             ...
+             ...  up to 32 contour levels
+             ...
+
+        Example parameters as text strings:
+
+        ====================================== =================================================================
+        `parameter=`                           **Outcome**
+        `None`                                 default contour based on the grid data range
+        `('','','','','','','10')`             multiples of 10
+        `('','','','','','','10','50','250')`  multiples of 10, 50 and 100, default attributes
+        `('','','','','','0','0,,,0')`         single contour (levopt=0) at value 0 (cint=0), no label (label=0)
+        `('','','','','','0','0,,a=rt500,0')`  red 500 micron thick contour at value 0, no label
+        ====================================== =================================================================
+
+        Parameters may also be defined in a dictionary using explicit parameter names as shown in the text
+        control file template above.  Each line of parameters is defined by the key name to the right on the `/`,
+        and the 'contours' entry is a list, and the values are dictionaries of the parameters to be defines.
+        Parameters that are not defined will have the documented default behaviour.
+
+        Example parameters as a dictionary:
+
+        ================================================= ===========================================
+        `parameter=`                                      **Outcome**
+        ------------------------------------------------- -------------------------------------------
+        `{'contours':[{'cint':10}]}`                      multiples of 10
+        `{'contours':[{'cint':10},{cint':50}]}`           multiples of 10 and 50, default attributes
+        `{'levels':{'levopt':0},[{'cint':10,'label':0}]}` single contour at data value = 0, no label
+        ================================================= ===========================================
+
         .. versionadded:: 9.2
+
+        .. versionadded:: 9.4 added parameter controls
         """
+
+        def parms(set_str, keys):
+            pstr = ''
+            items = keys.split(',')
+            if len(set_str):
+                for k in items:
+                    pstr = pstr + str(set_str.get(k.strip(), '')) + ','
+            pstr = pstr[:-1] + ' /' + keys
+            return pstr
 
         scale, ufac, x0, y0 = self.view.mdf()[1]
         control_file = gx.gx().temp_file('.con')
         with open(control_file, 'w+') as f:
-            f.write('{},{},{},{}/\n,,-1/\n'.format(scale, ufac, x0, y0))
+
+            f.write('{},{},{},{} /scale, ufac, x0, y0\n'.format(scale, ufac, x0, y0))
+
+            if parameters is None:
+                f.write(',,-1/\n')
+
+            elif isinstance(parameters, dict):
+                f.write('{}\n'.format(parms(parameters.get('general', {}),
+                                            'border, lowtic, smooth, suppop, nth, gtitle')))
+                f.write('{}\n'.format(parms(parameters.get('special', {}),
+                                            'pdef, ptick, pxval, pframe, psidel')))
+                f.write('{}\n'.format(parms(parameters.get('text', {}),
+                                            'hlb, htl, hcr, htk, hxv, hsl')))
+                f.write('{}\n'.format(parms(parameters.get('line', {}),
+                                            'ominl, cminl, skipa, skipb, skipc, skipd, skipe, skipf')))
+                f.write('{}\n'.format(parms(parameters.get('hilo', {}),
+                                            'xval, digxv, minxv, markxv')))
+                f.write('{}\n'.format(parms(parameters.get('levels', {}),
+                                            'levopt, conbeg, conend, lbup, lbmult, logopt')))
+                contours = parameters.get('contours', [])
+                if len(contours) == 0:
+                    raise GroupException(_t('No contour levels specified.'))
+                for con in contours:
+                    f.write('{}\n'.format(parms(con,
+                                                'cint, lintyp, catt, label, dense, digits, conlo, conhi')))
+
+            else:
+                for pline in parameters:
+                    f.write(pline + '\n')
+
         geosoft.gxapi.GXMVU.contour(self.view.gxview, control_file, grid_file_name)
+        gxu.delete_file(control_file)
 
 
 class Draw_3d(Draw):
@@ -1398,7 +1486,7 @@ def surface_group_from_file(v3d, file_name, group_name=None, overwrite=False):
     v3d.add_extent(ext)
 
 
-def contour(view, group_name, grid_file_name):
+def contour(view, group_name, grid_file_name, parameters=None):
     """
     Create a contour group from a grid file.  A default contour interval is determined from the grid.
 
@@ -1410,7 +1498,7 @@ def contour(view, group_name, grid_file_name):
     """
 
     with Draw(view, group_name) as g:
-        g.contour(grid_file_name)
+        g.contour(grid_file_name, parameters=parameters)
 
 
 def legend_color_bar(view,
@@ -1496,7 +1584,7 @@ def legend_color_bar(view,
                 elif z > maxz:
                     maxz = z
         delta = maxz - minz
-        while delta < 100:
+        while delta > 0 and delta < 100:
             delta *= 10.
             decimals += 1
 

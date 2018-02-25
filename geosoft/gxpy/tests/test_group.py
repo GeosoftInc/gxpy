@@ -1454,6 +1454,42 @@ class Test(GXPYTest):
 
         self.crc_map(map_file)
 
+    def test_contour_parameters(self):
+        self.start()
+
+        # test grid file
+        folder, files = gsys.unzip(os.path.join(os.path.dirname(self._test_case_py), 'testgrids.zip'),
+                                   folder=self.gx.temp_folder())
+        grid_file = os.path.join(folder, 'test_agg_utm.grd')
+        map_file = os.path.join(self.gx.temp_folder(), "test_agg_utm")
+
+        with gxgrd.Grid(grid_file) as grd:
+            cs = grd.coordinate_system
+            area = grd.extent_2d()
+
+        with gxmap.Map.new(map_file,
+                           data_area=area, margins=(2, 10, 2, 2),
+                           coordinate_system=cs, overwrite=True, scale=20000) as gmap:
+            map_file = gmap.file_name
+
+            with gxv.View.open(gmap, "base") as v:
+                with gxg.Draw(v, 'line') as g:
+                    g.rectangle(v.extent_clip, pen=g.new_pen(line_thick=1, line_color='K'))
+
+            with gxv.View.open(gmap, "data") as v:
+                with gxg.Draw(v, 'line') as g:
+                    g.rectangle(area, pen=g.new_pen(line_thick=0.1, line_color='R'))
+
+                #gxg.contour(v, '_250', grid_file, parameters=('', '', '', '', '', '', '50/'))
+                gxg.contour(v, '_250', grid_file, parameters=('', '', '', '', '', '', '10', '50', '250'))
+                gxg.contour(v, '_260_270', grid_file,
+                            parameters={'levels': {'levopt': 1},
+                                        'contours': [{'cint': 260, 'label': 0, 'catt': 'a=rt50'},
+                                                     {'cint': 270, 'label': 1, 'catt': 'b=gt1000'},
+                                                     {'cint': 280, 'label': 1, 'catt': 'c=br100g100t500'}]})
+
+        self.crc_map(map_file)
+
     def test_color_str(self):
         self.start()
 

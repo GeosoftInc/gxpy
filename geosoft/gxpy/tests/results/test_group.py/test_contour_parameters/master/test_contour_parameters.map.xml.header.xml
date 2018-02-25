@@ -1,0 +1,9 @@
+<header>
+   <Item name="Name" value="test_contour_parameters.map"/>
+   <Item name="Extents" type="L2AREA">
+      <Value name="MinX" value="-1"/>
+      <Value name="MinY" value="0"/>
+      <Value name="MaxX" value="39239"/>
+      <Value name="MaxY" value="27433"/>
+   </Item>
+</header>
