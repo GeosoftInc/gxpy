@@ -374,7 +374,7 @@ class Geosoft_gdb(gxgeo.Geometry):
         .. versionchanged:: 9.3
             added parameter `overwrite=False`
 
-        .. versionchanges:: 9.4 `name=None` creates a temporary database
+        .. versionchanged:: 9.4 `name=None` creates a temporary database
 
         """
         max_lines = max(10, max_lines)
