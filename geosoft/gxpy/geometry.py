@@ -347,7 +347,7 @@ class Point(Geometry, Sequence):
     """
 
     def __str__(self):
-        return "{}({}, {}, {})".format(self.name, self.x(), self.y(), self.z())
+        return "{}({}, {}, {})".format(self.name, self.x, self.y, self.z)
 
     def __init__(self, p, coordinate_system=None, name=None, z=0., **kwargs):
 
@@ -506,6 +506,10 @@ class Point(Geometry, Sequence):
     @property
     def extent(self):
         return Point2((self, self))
+
+    def copy(self):
+        """Return a copy"""
+        return Point(self)
 
 
 class Point2(Geometry, Sequence):
@@ -696,6 +700,11 @@ class Point2(Geometry, Sequence):
         p2 = Point((max(self.p0.x, self.p1.x), max(self.p0.y, self.p1.y), max(self.p0.z, self.p1.z)),
                    self.coordinate_system)
         return Point2((p1, p2), self.coordinate_system)
+
+    def copy(self):
+        """Return a copy"""
+        return Point2(self)
+
 
 class PPoint(Geometry, Sequence):
     """
@@ -920,6 +929,10 @@ class PPoint(Geometry, Sequence):
 
         return gxvv.GXvv(self.x), gxvv.GXvv(self.y), gxvv.GXvv(self.z)
 
+    def copy(self):
+        """Return a copy"""
+        return PPoint(self)
+
 
 class Mesh(Geometry, Sequence):
     """
@@ -1137,3 +1150,7 @@ class Mesh(Geometry, Sequence):
         return gxvv.GXvv(self._verticies[:, 0], dtype=np.float64),\
             gxvv.GXvv(self._verticies[:, 1], dtype=np.float64),\
             gxvv.GXvv(self._verticies[:, 2], dtype=np.float64)
+
+    def copy(self):
+        """Return a copy"""
+        return Mesh(self)
