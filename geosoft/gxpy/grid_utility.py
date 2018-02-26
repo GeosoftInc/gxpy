@@ -22,6 +22,7 @@ from . import group as gxgrp
 from . import gdb as gxgdb
 from . import geometry as gxgeo
 from . import utility as gxu
+from . import geometry_utility as gxgeou
 
 __version__ = geosoft.__version__
 
@@ -351,7 +352,7 @@ def grid_bool(g1, g2, joined_grid, opt=1, size=3, olap=1):
 
     return gxgrd.Grid.open(joined_grid)
 
-def contour_points(grid, value, max_segments=1000):
+def contour_points(grid, value, max_segments=1000, interval=None):
     """
     Return a set of point segments that represent the spatial locations of contours threaded through the grid.
 
@@ -361,6 +362,9 @@ def contour_points(grid, value, max_segments=1000):
     :param grid:            grid file of `geosoft.gxpy.grid.Grid` instance
     :param value:           contour value
     :param max_segments:    maximum expected number of segments, raises error if there are more actual segments.
+    :param interval:        the separation between points along the contours. If not specified the minimum grid
+                            cell size is used.  For `interval=0`, the points are as returned by the contouring
+                            algorithm.
     :return:                list of `geosoft.gxpy.geometry.PPoint`, where each item in the list represents
                             one continuous contour from the grid.
 
@@ -372,8 +376,14 @@ def contour_points(grid, value, max_segments=1000):
         with grid.copy(grid) as g:
             temp_grid = g.file_name
             grid = g.file_name_decorated
+            if interval is None:
+                interval = min(g.dx, g.dy)
+
     else:
-        extent = gxgrd.Grid.open(grid).extent
+        with gxgrd.Grid.open(grid) as g:
+            extent = g.extent
+            if interval is None:
+                interval = min(g.dx, g.dy)
         temp_grid = None
 
     # create a contour group for this value, export to a shape file
@@ -400,6 +410,8 @@ def contour_points(grid, value, max_segments=1000):
         for l in gdb.lines():
             xyz = gdb.read_line(l, channels=('X', 'Y', 'Z'))[0]
             xyz[:, 2] = 0.
+            if interval > 0.:
+                xyz = gxgeou.resample(xyz, interval)
             if extent.coordinate_system.is_oriented:
                 xyz = extent.coordinate_system.xyz_from_oriented(xyz)
             pplist.append(gxgeo.PPoint(xyz, coordinate_system=extent.coordinate_system))

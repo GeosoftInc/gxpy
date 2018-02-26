@@ -7,6 +7,8 @@ from . import utility
 from . import vv
 from . import va
 from . import coordinate_system
+from . import geometry
+from . import geometry_utility
 from . import grid
 from . import grid_utility
 from . import gdb
@@ -25,6 +27,7 @@ __all__ = ['agg',
            'coordinate_system',
            'dataframe',
            'geometry',
+           'geometry_utility',
            'gdb',
            'grid',
            'grid_utility',
