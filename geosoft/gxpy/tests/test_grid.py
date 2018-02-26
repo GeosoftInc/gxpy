@@ -3,7 +3,7 @@ import os
 import numpy as np
 
 import geosoft
-import geosoft.gxapi as gxapi
+import geosoft.gxapi as gxa
 import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.coordinate_system as gxcs
@@ -25,6 +25,7 @@ class Test(GXPYTest):
         cls.g2f = os.path.join(cls.folder, 'test_grid_2.grd')
         cls.gcf = os.path.join(cls.folder, 'test_bool1_color.grd')
         cls.mag = os.path.join(cls.folder, 'bhn_tmi_250m.grd')
+        cls.gmag = os.path.join(cls.folder, 'mag.grd')
 
     def test_grc(self):
         self.start()
@@ -704,6 +705,37 @@ class Test(GXPYTest):
             x = gxgrd.expression((grd, grd), 'g1-g2')
             self.assertEqual(x.statistics()['mean'], 0.)
 
+    def test_default_color_map(self):
+        self.start()
+
+        with gxgrd.Grid.open(self.g1f) as g1:
+            cm = g1.get_default_color_map()
+            self.assertEqual(gxa.ITR_ZONE_EQUALAREA, cm.model_type)
+            self.assertEqual(39, cm.length)
+            v, rgb = cm.color_map_rgb[0]
+            self.assertAlmostEqual(231.6705835, v)
+            self.assertEqual(0, rgb[0])
+            self.assertEqual(0, rgb[1])
+            self.assertEqual(255, rgb[2])
+            limits = cm.data_limits
+            self.assertAlmostEqual(157, limits[0])
+            self.assertAlmostEqual(3187, limits[1])
+
+    def test_default_color_map_none_set(self):
+        self.start()
+
+        with gxgrd.Grid.open(self.gmag) as g1:
+            cm = g1.get_default_color_map()
+            self.assertEqual(gxa.ITR_ZONE_EQUALAREA, cm.model_type)
+            self.assertEqual(39, cm.length)
+            v, rgb = cm.color_map_rgb[0]
+            self.assertAlmostEqual(4748.27257047, v)
+            self.assertEqual(0, rgb[0])
+            self.assertEqual(0, rgb[1])
+            self.assertEqual(255, rgb[2])
+            limits = cm.data_limits
+            self.assertAlmostEqual(3796.711425781, limits[0])
+            self.assertAlmostEqual(6295.0, limits[1])
 ###############################################################################################
 
 if __name__ == '__main__':

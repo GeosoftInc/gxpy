@@ -2758,6 +2758,29 @@ class Color_map:
             self._units = None
 
     @property
+    def data_limits(self):
+        """
+        Data limits of color map
+
+        The limit values are for information only.  Applications will
+        assume that these values represent the largest and smallest
+        values in a population represented by the ITR.  If they are
+        dummy, they have not been set.
+
+        :returns:       min/max tuple
+
+        .. versionadded:: 9.4
+        """
+        min = gxapi.float_ref()
+        max = gxapi.float_ref()
+        self.gxitr.get_data_limits(min, max)
+        return (min.value, max.value)
+
+    @data_limits.setter
+    def data_limits(self, limits):
+        self.gxitr.get_data_limits(limits[0], limits[1])
+
+    @property
     def length(self):
         """ 
         Number of color zones in the map.
@@ -2888,6 +2911,7 @@ class Color_map:
         .. versionadded:: 9.2
         """
         return Color(self.gxitr.color_value(value))
+
 
     def save_file(self, file_name=None):
         """

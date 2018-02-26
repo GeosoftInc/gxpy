@@ -1367,7 +1367,20 @@ class Grid(gxgm.Geometry):
 
         return imagefile
 
-        # TODO: @JB Resolve what to do about this method before we release 9.4
+    def get_default_color_map(self):
+        """
+        Get default color map for grid
+
+        :return:  A `geosoft.gxpy.group.Color_map` instance.
+
+        .. versionadded:: 9.4.0
+        """
+        itr = gxapi.GXITR.create()
+        if 1 == self._img.get_def_itr(itr):
+            itr = gxapi.GXITR.create_img(self._img, "", gxapi.ITR_ZONE_DEFAULT, gxapi.rDUMMY)
+
+        return geosoft.gxpy.group.Color_map(itr)
+
 
 def expression(grids, expression, result_file_name=None, overwrite=False):
     """
@@ -1428,16 +1441,14 @@ def expression(grids, expression, result_file_name=None, overwrite=False):
             properties = g.properties()
 
     if result_file_name is None:
-        result_file_name = gx.gx().temp_file('.grd(GRD)')
     result = Grid.new(file_name=result_file_name, properties=properties, overwrite=overwrite)
     exp.add_grid(result.gximg, '_')
-
-    # apply expression
+            itr = gxapi.GXITR.create_img(self._img, "", gxapi.ITR_ZONE_DEFAULT, gxapi.rDUMMY)
     expression = ('_=' + expression).strip()
     if expression[-1] != ';':
         expression = expression + ';'
     exp.do_formula(expression, 100)
-
+        return geosoft.gxpy.group.Color_map(itr)
     # delete temporary grids
     for g in delete_list:
         g.delete_files()
