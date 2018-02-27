@@ -402,7 +402,7 @@ class Point(Geometry, Sequence):
         self._next = 0
 
     def __len__(self):
-        return 3
+        return 1
 
     def __iter__(self):
         return self
@@ -506,6 +506,11 @@ class Point(Geometry, Sequence):
     @property
     def extent(self):
         return Point2((self, self))
+
+    @property
+    def pp(self):
+        """Point as a numpy array shaped (1, 3)"""
+        return self.p.reshape((1, 3))
 
     def copy(self):
         """Return a copy"""
@@ -705,6 +710,14 @@ class Point2(Geometry, Sequence):
         """Return a copy"""
         return Point2(self)
 
+    @property
+    def pp(self):
+        """Point2 as a numpy array shaped (2, 3)"""
+        pp = np.empty((2, 3), dtype=np.float64)
+        pp[0] = self.p0.p
+        pp[1] = self.p1.p
+        return pp
+
 
 class PPoint(Geometry, Sequence):
     """
@@ -762,10 +775,12 @@ class PPoint(Geometry, Sequence):
                 pp[:, 2] = z
             return pp
 
-        def point_setup():
-            pp = blankpp(len(xyz))
+        def point_setup(_xyz):
+            pp = blankpp(len(_xyz))
             i = 0
-            for pt in xyz:
+            if isinstance(_xyz, Point):
+                _xyz = (_xyz,)
+            for pt in _xyz:
                 if isinstance(pt, Point):
                     pp[i, :] = _geo_cs(pt, Point, coordinate_system, z=z).p
                 else:
@@ -783,7 +798,7 @@ class PPoint(Geometry, Sequence):
         else:
             if coordinate_system is None:
                 coordinate_system = first_coordinate_system(xyz)
-            self.pp = point_setup()
+            self.pp = point_setup(xyz)
 
         self.coordinate_system = coordinate_system
         self._next = 0
@@ -860,6 +875,37 @@ class PPoint(Geometry, Sequence):
         if not super(PPoint, self).__eq__(other):
             return False
         return np.array_equal(self.pp, other.pp)
+
+    @classmethod
+    def merge(cls, pp_list):
+        """
+        Create a `PPoint` from a list of `Point`, 'Point2` or `PPoint` instances or point arrays.
+
+        :param pp_list: list of `Point`, 'Point2` or `PPoint` instances or point arrays.
+        :return:        `PPoint` instance that contains all points
+
+        .. versionadded:: 9.4
+        """
+
+        # count points, get first coordinate system
+        npt = 0
+        cs = None
+        for pp in pp_list:
+            npt += len(pp)
+            if cs is None and isinstance(pp, Geometry):
+                cs = pp.coordinate_system
+
+        npp = np.zeros((npt, 3))
+        i = 0
+        for pp in pp_list:
+            if not isinstance(pp, Geometry):
+                pp = PPoint(pp, coordinate_system=cs)
+            if pp.coordinate_system != cs:
+                pp = PPoint(pp, coordinate_system=cs)
+            npp[i:(i+len(pp))] = pp.pp
+            i += len(pp)
+
+        return PPoint(npp, coordinate_system=cs)
 
     @property
     def length(self):
@@ -1105,6 +1151,11 @@ class Mesh(Geometry, Sequence):
     def verticies(self):
         """Verticies as a float numpy array, shape (n_verticies, 3)."""
         return self._verticies
+
+    @property
+    def pp(self):
+        """Verticies as a numpy array shaped (n_verticies, 3)."""
+        return self.verticies
 
     @property
     def length(self):

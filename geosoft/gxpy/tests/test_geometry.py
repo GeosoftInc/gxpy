@@ -41,6 +41,8 @@ class Test(GXPYTest):
 
         p = gxgeo.Point((5, 10))
         self.assertEqual(p.xyz, (5, 10, 0))
+        self.assertEqual(len(p), 1)
+        self.assertEqual(tuple(p.pp[0]), (5, 10, 0))
         p = gxgeo.Point((5, 10), z=2)
         self.assertEqual(p.xyz, (5, 10, 2))
         p = gxgeo.Point((5, 10, 2))
@@ -349,6 +351,9 @@ class Test(GXPYTest):
         self.start()
 
         b1 = gxgeo.Point2((gxgeo.Point((0, 1)), (10, 20, -1)))
+        self.assertEqual(len(b1), 2)
+        self.assertEqual(tuple(b1.pp[0]), (0, 1, 0))
+        self.assertEqual(tuple(b1.pp[1]), (10, 20, -1))
         self.assertEqual(b1.centroid.xyz, (5.0, 10.5, -0.5))
         self.assertEqual(len(b1), 2)
         self.assertEqual('_point2_[(0.0, 1.0, 0.0) (10.0, 20.0, -1.0)]', str(b1))
@@ -647,6 +652,42 @@ class Test(GXPYTest):
         self.assertEqual(len(pp), len(plinelist))
         self.assertEqual(pp.extent_minimum_xyz, (110, 5, 0))
         self.assertEqual(pp.extent_maximum_xyz, (235, 70., 0))
+
+    def test_pp_merge(self):
+        self.start()
+
+        plinelist = [[110, 5],
+                     [120, 20],
+                     [130, 15]]
+        plinelst2 = [[150, 50],
+                     [160, 70]]
+        plinelst3 = (190, 65, 4)
+
+        pm = gxgeo.PPoint.merge((plinelist, plinelst2, [plinelst3]))
+        self.assertEqual(pm.length, 6)
+        self.assertEqual(tuple(pm[0]), (110, 5, 0))
+        self.assertEqual(tuple(pm[4]), (160, 70, 0))
+        self.assertEqual(tuple(pm[5]), (190, 65, 4))
+
+        pm = gxgeo.PPoint.merge((gxgeo.PPoint(plinelist),
+                                 gxgeo.Point2(plinelst2),
+                                 gxgeo.Point(plinelst3)))
+        self.assertEqual(pm.length, 6)
+        self.assertEqual(tuple(pm[0]), (110, 5, 0))
+        self.assertEqual(tuple(pm[4]), (160, 70, 0))
+        self.assertEqual(tuple(pm[5]), (190, 65, 4))
+
+        center = gxgeo.Point((550000, 6000000))
+        a = gxgeo.PPoint(plinelist) + center
+        b = gxgeo.Point2(plinelst2, coordinate_system="NAD83 / UTM zone 15N") + center
+        c = gxgeo.Point(plinelst3, coordinate_system="NAD27 / UTM zone 15N") + center
+
+        pm = gxgeo.PPoint.merge((a, b, c))
+        self.assertEqual(pm.length, 6)
+        self.assertTrue(pm.coordinate_system == b.coordinate_system)
+        self.assertEqual(tuple(pm[0]), (550110., 6000005., 0.))
+        self.assertEqual(tuple(pm[4]), (550160., 6000070., 0.))
+        self.assertEqual(str(pm[5]), '_point_(550173.9373550161, 6000287.416398498, 4.0)')
 
     def test_union(self):
         self.start()
