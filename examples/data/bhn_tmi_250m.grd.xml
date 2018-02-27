@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type='text/xsl' href='C:\Program Files (x86)\Geosoft\user\stylesheets\Geosoft[geosoft.xslt].xslt'?>
+<gmd:MD_Metadata xsi:schemaLocation="http://www.isotc211.org/2005/gmd ../schemas/iso19139fra/gmd/gmd.xsd" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:map="urn:brgm:mapping" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:gfc="http://www.isotc211.org/2005/gfc" xmlns:gco="http://www.isotc211.org/2005/gco">
+	<geosoft xmlns="http://www.geosoft.com/schema/geo">
+		<dataset version="1">
+			<geo:title xmlns:geo="http://www.geosoft.com/schema/geo">bhn_tmi_250m</geo:title>
+			<geo:purpose xmlns:geo="http://www.geosoft.com/schema/geo"/>
+			<geo:subject xmlns:geo="http://www.geosoft.com/schema/geo">Geophysics</geo:subject>
+			<geo:category xmlns:geo="http://www.geosoft.com/schema/geo">Magnetics</geo:category>
+			<geo:type xmlns:geo="http://www.geosoft.com/schema/geo">Processed</geo:type>
+			<geo:file_format xmlns:geo="http://www.geosoft.com/schema/geo">Geosoft Grid</geo:file_format>
+			<geo:weblink xmlns:geo="http://www.geosoft.com/schema/geo"/>
+			<geo:description xmlns:geo="http://www.geosoft.com/schema/geo"/>
+			<geo:continent xmlns:geo="http://www.geosoft.com/schema/geo">Australia</geo:continent>
+			<geo:country xmlns:geo="http://www.geosoft.com/schema/geo">Australia</geo:country>
+			<geo:province_state xmlns:geo="http://www.geosoft.com/schema/geo">South Australia</geo:province_state>
+			<geo:region xmlns:geo="http://www.geosoft.com/schema/geo"/>
+			<geo:project_name xmlns:geo="http://www.geosoft.com/schema/geo">g:\projects\blackhillsnorite\bhn.gpf</geo:project_name>
+			<geo:data_source xmlns:geo="http://www.geosoft.com/schema/geo"/>
+			<geo:project_type xmlns:geo="http://www.geosoft.com/schema/geo"/>
+			<geo:resolution xmlns:geo="http://www.geosoft.com/schema/geo">100 m</geo:resolution>
+			<geo:unitofmeasurement xmlns:geo="http://www.geosoft.com/schema/geo"/>
+			<geo:data_created_by xmlns:geo="http://www.geosoft.com/schema/geo">IAN-OFFICE\Ian</geo:data_created_by>
+			<geo:data_creation_date xmlns:geo="http://www.geosoft.com/schema/geo">2018-02-18</geo:data_creation_date>
+			<geo:metadata_created_by xmlns:geo="http://www.geosoft.com/schema/geo">IAN-OFFICE\Ian</geo:metadata_created_by>
+			<geo:metadata_creation_date xmlns:geo="http://www.geosoft.com/schema/geo">2018-02-18</geo:metadata_creation_date>
+			<geo:confidentiality xmlns:geo="http://www.geosoft.com/schema/geo"/>
+			<lineage>
+				<process name="magmap1.gx" displaystring="Magmap1 Processing" user="IAN-OFFICE\Ian" version="Version 9.3.1 (20180109.141)" date="2018-02-18" time="09:41:06">
+					<parameter name="FFT2CON::CONFILE" value=".\up250.con" type="string"/>
+					<parameter name="FFT2CON::INPUT_GRID" value=".\BlackHillsTMI.GRD(GRD)" type="string"/>
+					<parameter name="MAGMAP1::ALIM" value="" type="string"/>
+					<parameter name="MAGMAP1::BlackHillsTMI_ALIM" value="" type="double"/>
+					<parameter name="MAGMAP1::BlackHillsTMI_ELIM" value="" type="integer"/>
+					<parameter name="MAGMAP1::BlackHillsTMI_FILL" value="" type="string"/>
+					<parameter name="MAGMAP1::BlackHillsTMI_PEX" value="" type="double"/>
+					<parameter name="MAGMAP1::BlackHillsTMI_TBASE" value="" type="integer"/>
+					<parameter name="MAGMAP1::BlackHillsTMI_TEX" value="" type="integer"/>
+					<parameter name="MAGMAP1::BlackHillsTMI_ZDIST" value="" type="integer"/>
+					<parameter name="MAGMAP1::CONFIL" value=".\up250.con" type="string"/>
+					<parameter name="MAGMAP1::ELIM" value="" type="string"/>
+					<parameter name="MAGMAP1::FILL" value="" type="string"/>
+					<parameter name="MAGMAP1::INGRD" value=".\BlackHillsTMI.GRD(GRD)" type="string"/>
+					<parameter name="MAGMAP1::OUTGRD" value=".\bhn_tmi_250m.grd(GRD)" type="string"/>
+					<parameter name="MAGMAP1::PEX" value="" type="string"/>
+					<parameter name="MAGMAP1::PREP" value="no" type="string"/>
+					<parameter name="MAGMAP1::TBASE" value="" type="string"/>
+					<parameter name="MAGMAP1::TEX" value="" type="string"/>
+					<parameter name="MAGMAP1::TORDER" value="" type="string"/>
+					<parameter name="MAGMAP1::ZDIST" value="" type="string"/>
+					<source name="g:\Projects\blackhillsnorite\BlackHillsTMI.GRD" type="GRID">
+						<lineage>
+							<process name="Geosoft.EIMS.GXNet.dll(Geosoft.EIMS.GX.Seeker.SeekerMainForm;Run)" user="Ian macleod" version="Version 8.3.1 (20141222.1232)" date="2015-01-31" time="10:05:00">
+								<parameter name="FIND_DATA::CoordinateSystem" value="PROJCS[&quot;AGD_1966_AMG_Zone_53&quot;,GEOGCS[&quot;GCS_Australian_1966&quot;,DATUM[&quot;D_Australian_1966&quot;,SPHEROID[&quot;Australian&quot;,6378160.0,298.25]],PRIMEM[&quot;Greenwich&quot;,0.0],UNIT[&quot;Degree&quot;,0.0174532925199433]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;False_Easting&quot;,500000.0],PARAMETER[&quot;False_Northing&quot;,10000000.0],PARAMETER[&quot;Central_Meridian&quot;,135.0],PARAMETER[&quot;Scale_Factor&quot;,0.9996],PARAMETER[&quot;Latitude_Of_Origin&quot;,0.0],UNIT[&quot;Meter&quot;,1.0],AUTHORITY[&quot;EPSG&quot;,20253]]" type="string"/>
+								<parameter name="FIND_DATA::File" value=".\TMI.GRD(GRD)" type="string"/>
+								<parameter name="FIND_DATA::MaxX" value="924825.879966397" type="string"/>
+								<parameter name="FIND_DATA::MaxY" value="6172759.19839247" type="string"/>
+								<parameter name="FIND_DATA::MinX" value="885364.970643018" type="string"/>
+								<parameter name="FIND_DATA::MinY" value="6126416.92304596" type="string"/>
+								<parameter name="FIND_DATA::Resolution" value="0" type="string"/>
+								<parameter name="FIND_DATA::Title" value="South Australia TMI" type="string"/>
+								<parameter name="FIND_DATA::Type" value="Grid" type="string"/>
+								<parameter name="FIND_DATA::URL" value="http://dap.geosoft.com" type="string"/>
+							</process>
+						</lineage>
+					</source>
+				</process>
+			</lineage>
+			<georeference>
+				<dataextents>
+					<extent2d minx="885210.718" miny="6126284.23" maxx="925010.718" maxy="6172884.23"/>
+				</dataextents>
+				<projection type="TRANSVERSE_MERCATOR" name="AGD66 / Australian Map Grid zone 53" projection="Australian Map Grid zone 53" ellipsoid="Australian National Spheroid" datum="AGD66" radius="6378160" eccentricity="0.08182018">
+					<parameters scale="0.9996" false_east="500000" false_north="10000000" lat_origin="0" lon_origin="135"/>
+					<units name="m" unit_scale="1"/>
+				</projection>
+			</georeference>
+		</dataset>
+		<geo:pages xmlns:geo="http://www.geosoft.com/schema/geo">
+			<geo:page id="pSingleDatasetGeneral"/>
+			<geo:page id="pSingleDatasetLocation"/>
+			<geo:page id="pSingleDatasetData"/>
+		</geo:pages>
+	</geosoft>
+	<gmd:identificationInfo>
+		<gmd:MD_DataIdentification>
+			<gmd:citation>
+				<gmd:CI_Citation>
+					<gmd:title>
+						<gco:CharacterString>bhn_tmi_250m</gco:CharacterString>
+					</gmd:title>
+					<gmd:collectiveTitle>
+						<gco:CharacterString>g:\projects\blackhillsnorite\bhn.gpf</gco:CharacterString>
+					</gmd:collectiveTitle>
+					<gmd:date>
+						<gmd:CI_Date>
+							<gmd:date>
+								<gco:Date>2018-2-18</gco:Date>
+							</gmd:date>
+						</gmd:CI_Date>
+					</gmd:date>
+				</gmd:CI_Citation>
+			</gmd:citation>
+			<gmd:resourceFormat>
+				<gmd:MD_Format>
+					<gmd:name>
+						<gco:CharacterString>Geosoft Grid</gco:CharacterString>
+					</gmd:name>
+				</gmd:MD_Format>
+			</gmd:resourceFormat>
+			<gmd:extent>
+				<gmd:EX_Extent>
+					<gmd:geographicElement>
+						<gmd:EX_GeographicBoundingBox>
+							<gmd:westBoundLongitude>
+								<gco:Decimal>139.19536035427242</gco:Decimal>
+							</gmd:westBoundLongitude>
+							<gmd:eastBoundLongitude>
+								<gco:Decimal>139.65107143952969</gco:Decimal>
+							</gmd:eastBoundLongitude>
+							<gmd:southBoundLatitude>
+								<gco:Decimal>-34.932670810893619</gco:Decimal>
+							</gmd:southBoundLatitude>
+							<gmd:northBoundLatitude>
+								<gco:Decimal>-34.497935772743318</gco:Decimal>
+							</gmd:northBoundLatitude>
+						</gmd:EX_GeographicBoundingBox>
+					</gmd:geographicElement>
+				</gmd:EX_Extent>
+			</gmd:extent>
+			<gmd:descriptiveKeywords>
+				<gmd:MD_Keywords>
+					<gmd:keyword>
+						<gco:CharacterString>Geophysics</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>Magnetics</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>Processed</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>Australia</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>Australia</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>South Australia</gco:CharacterString>
+					</gmd:keyword>
+				</gmd:MD_Keywords>
+			</gmd:descriptiveKeywords>
+			<gmd:spatialResolution>
+				<gmd:MD_Resolution>
+					<gmd:distance>100 m</gmd:distance>
+				</gmd:MD_Resolution>
+			</gmd:spatialResolution>
+			<gmd:pointOfContact>
+				<gmd:CI_ResponsibleParty>
+					<gmd:individualName>
+						<gco:CharacterString>IAN-OFFICE\Ian</gco:CharacterString>
+					</gmd:individualName>
+				</gmd:CI_ResponsibleParty>
+			</gmd:pointOfContact>
+		</gmd:MD_DataIdentification>
+	</gmd:identificationInfo>
+	<gmd:contact>
+		<gmd:CI_ResponsibleParty>
+			<gmd:individualName>
+				<gco:CharacterString>IAN-OFFICE\Ian</gco:CharacterString>
+			</gmd:individualName>
+		</gmd:CI_ResponsibleParty>
+		<gmd:C_ResponsibleParty>
+			<gmd:individualName>
+				<gco:CharacterString>Geosoft</gco:CharacterString>
+			</gmd:individualName>
+		</gmd:C_ResponsibleParty>
+	</gmd:contact>
+	<gmd:dataQualityInfo>
+		<gmd:DQ_DataQuality>
+			<gmd:lineage>
+				<gmd:LI_Lineage>
+					<gmd:processStep xlink:type="Geosoft Process" xlink:title="magmap1.gx">
+						<gmd:LI_ProcessStep>
+							<gmd:dateTime>
+								<gco:DateTime>2018-02-18T09:41:06</gco:DateTime>
+							</gmd:dateTime>
+							<gmd:processor>
+								<gmd:CI_ResponsibleParty>
+									<gmd:individualName>
+										<gco:CharacterString>IAN-OFFICE\Ian</gco:CharacterString>
+									</gmd:individualName>
+								</gmd:CI_ResponsibleParty>
+							</gmd:processor>
+							<gmd:source xlink:type="Data Parameter" xlink:role="FFT2CON::CONFILE" xlink:title=".\up250.con">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="FFT2CON::INPUT_GRID" xlink:title=".\BlackHillsTMI.GRD(GRD)">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="MAGMAP1::ALIM" xlink:title="">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="MAGMAP1::BlackHillsTMI_ALIM" xlink:title="">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="MAGMAP1::BlackHillsTMI_ELIM" xlink:title="">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="MAGMAP1::BlackHillsTMI_FILL" xlink:title="">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="MAGMAP1::BlackHillsTMI_PEX" xlink:title="">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="MAGMAP1::BlackHillsTMI_TBASE" xlink:title="">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="MAGMAP1::BlackHillsTMI_TEX" xlink:title="">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="MAGMAP1::BlackHillsTMI_ZDIST" xlink:title="">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="MAGMAP1::CONFIL" xlink:title=".\up250.con">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="MAGMAP1::ELIM" xlink:title="">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="MAGMAP1::FILL" xlink:title="">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="MAGMAP1::INGRD" xlink:title=".\BlackHillsTMI.GRD(GRD)">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="MAGMAP1::OUTGRD" xlink:title=".\bhn_tmi_250m.grd(GRD)">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="MAGMAP1::PEX" xlink:title="">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="MAGMAP1::PREP" xlink:title="no">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="MAGMAP1::TBASE" xlink:title="">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="MAGMAP1::TEX" xlink:title="">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="MAGMAP1::TORDER" xlink:title="">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Parameter" xlink:role="MAGMAP1::ZDIST" xlink:title="">
+								<gmd:LI_Source/>
+							</gmd:source>
+							<gmd:source xlink:type="Data Source" xlink:role="GRID" xlink:title="g:\Projects\blackhillsnorite\BlackHillsTMI.GRD">
+								<gmd:LI_Source/>
+							</gmd:source>
+						</gmd:LI_ProcessStep>
+					</gmd:processStep>
+				</gmd:LI_Lineage>
+			</gmd:lineage>
+		</gmd:DQ_DataQuality>
+	</gmd:dataQualityInfo>
+	<gmd:dateStamp>
+		<gco:Date>2018-2-18</gco:Date>
+	</gmd:dateStamp>
+	<gmd:referenceSystemInfo>
+		<gmd:MD_ReferenceSystem>
+			<gmd:referenceSystemIdentifier>
+				<gmd:RS_Identifier>
+					<gmd:codeSpace>
+						<gco:CharacterString>ESRI</gco:CharacterString>
+					</gmd:codeSpace>
+					<gmd:code>
+						<gco:CharacterString>PROJCS["AGD_1966_AMG_Zone_53",GEOGCS["GCS_Australian_1966",DATUM["D_Australian_1966",SPHEROID["Australian",6378160.0,298.25]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Transverse_Mercator"],PARAMETER["False_Easting",500000.0],PARAMETER["False_Northing",10000000.0],PARAMETER["Central_Meridian",135.0],PARAMETER["Scale_Factor",0.9996],PARAMETER["Latitude_Of_Origin",0.0],UNIT["Meter",1.0],AUTHORITY["EPSG",20253]]</gco:CharacterString>
+					</gmd:code>
+					<gmd:version>
+						<gco:CharacterString>1</gco:CharacterString>
+					</gmd:version>
+				</gmd:RS_Identifier>
+			</gmd:referenceSystemIdentifier>
+		</gmd:MD_ReferenceSystem>
+	</gmd:referenceSystemInfo>
+</gmd:MD_Metadata>
