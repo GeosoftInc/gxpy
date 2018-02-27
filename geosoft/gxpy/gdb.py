@@ -276,23 +276,24 @@ class Geosoft_gdb(gxgeo.Geometry):
         if hasattr(self, '_close'):
             self._close()
 
-    def _close(self, pop=True):
+    def _close(self, pop=True, discard=False):
         if hasattr(self, '_open'):
             if self._open:
                 if self._db:
                     if self._edb is not None:
                         if self._edb.is_locked():
                             self._edb.un_lock()
+                        discard = False
                         self._edb = None
 
-                    if self._xmlmetadata_changed:
+                    if not discard and self._xmlmetadata_changed:
                         with open(self._file_name + '.xml', 'w+') as f:
                             f.write(gxu.xml_from_dict(self._xmlmetadata))
                         self._db.sync()
 
                     self._db = None
-
-                self._file_name = None
+                if discard:
+                    gxu.delete_files_by_root(self._file_name)
                 if pop:
                     gx.pop_resource(self._open)
                 self._open = None
@@ -318,6 +319,16 @@ class Geosoft_gdb(gxgeo.Geometry):
         self._extent = {'xyz': None, 'extent': None}
 
         self._open = gx.track_resource(self.__class__.__name__, self._file_name)
+
+    def close(self, discard=False):
+        """
+        Close the database and free resources
+
+        :param discard: True to discard the database files(s) after closing.
+
+        .. versionadded:: 9.4
+        """
+        self._close(discard=discard)
 
     @classmethod
     def open(cls, name=None):
