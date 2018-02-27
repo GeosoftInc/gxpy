@@ -9,6 +9,7 @@ Geosoft grid and image utilities.
     `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_grid_utility.py>`_
     
 """
+import os
 import numpy as np
 
 import geosoft
@@ -23,6 +24,7 @@ from . import gdb as gxgdb
 from . import geometry as gxgeo
 from . import utility as gxu
 from . import geometry_utility as gxgeou
+from . import coordinate_system as gxcs
 
 __version__ = geosoft.__version__
 
@@ -45,6 +47,9 @@ DERIVATIVE_Z = 2  #:
 DERIVATIVE_XY = 3  #: horizontal gradient sqrt(dx**2 + dy**2)
 DERIVATIVE_XYZ = 4  #: total gradient (analytic signal) sqrt(dx**2 _ dy**2 + dz**2)
 DERIVATIVE_TILT = 5  #:
+RETURN_PPOINT = 0  #:
+RETURN_LIST_OF_PPOINT = 1  #:
+RETURN_GDB = 2  #:
 
 
 def _t(s):
@@ -143,7 +148,6 @@ def derivative(grid, derivative_type, file_name=None, overwrite=False, dtype=Non
                                 result_file_name=file_name,
                                 overwrite=overwrite)
 
-
     def total_gradient(g):
         dx = derivative(g, DERIVATIVE_X)
         dy = derivative(g, DERIVATIVE_Y)
@@ -208,7 +212,7 @@ def derivative(grid, derivative_type, file_name=None, overwrite=False, dtype=Non
     return gxgrd.reopen(dxy, dtype=return_dtype)
 
 
-def tilt_depth(grid, resolution=None):
+def tilt_depth(grid, resolution=None, return_as=RETURN_PPOINT, gdb=None):
     """
     Given an RTP TMI grid, or the vertical derivative of the gravity anomaly, calculate
     contact source depths using the tilt-depth method as suggested by Rick Blakely.
@@ -217,21 +221,49 @@ def tilt_depth(grid, resolution=None):
 
     :param grid:        `geosoft.gxpy.grid.Grid` instance or a grid file name. Ideally the grid should be RTP.
     :param resolution:  zero-contour sampling resolution, defaults to the grid cell size.
-    :return:            `geosoft.gxpy.geometry.PPoint` instance of source locations.
+    :param return_as:   return results as:
+
+        ===================== ====================================================================
+        RETURN_PPOINT         return results as a single `geosoft.gxpy.geometry.PPoint` instance
+        RETURN_LIST_OF_PPOINT return results as a list of `geosoft.gxpy.geometry.PPoint` instances
+        RETURN_GDB            return result as a `geosoft.gxpy.gdb.Geosoft_gdb` instance
+        ===================== ====================================================================
+
+    :param gdb:         return database name, or a `geosoft.gxpy.gdv.Geosoft_database` instance. If not
+                        specified and `return_as=RETURN_GDB`, a temporary database is created.
+    :return:            depends on `return_as` setting
 
     .. versionadded:: 9.4
     """
 
+    if gdb is not None:
+        return_as = RETURN_GDB
 
     td = derivative(grid, DERIVATIVE_TILT)
-    zero_xy = contour_points(td, 0., interval=resolution)
-    zero_xy = gxgeo.PPoint.merge(zero_xy)
-
+    gdb = contour_points(td, 0., resolution=resolution, return_as=RETURN_GDB)
     tdd = derivative(td, DERIVATIVE_XY)
-    zero_tdd = sample(tdd, zero_xy)
-    zero_tdd[zero_tdd <= 0.] = np.nan
-    zero_xy.pp[:, 2] = np.reciprocal(zero_tdd)
-    return zero_xy
+    for ln in gdb.list_lines():
+        xyz, chlist, fid = gdb.read_line(ln, channels=('X', 'Y', 'Z'))
+        zero_tdd = sample(tdd, xyz)
+        zero_tdd[zero_tdd <= 0.] = np.nan
+        xyz[:, 2] = np.reciprocal(zero_tdd)
+        gdb.write_line(ln, xyz, chlist, fid)
+
+    if return_as == RETURN_GDB:
+        return gdb
+
+    pplist = []
+    for ln in gdb.list_lines():
+        xyz = gdb.read_line(ln, channels=('X', 'Y', 'Z'))[0]
+        pplist.append(gxgeo.PPoint(xyz, coordinate_system=gdb.coordinate_system))
+
+    gdb.close(discard=True)
+
+    if return_as == RETURN_LIST_OF_PPOINT:
+        return pplist
+
+    return gxgeo.PPoint.merge(pplist)
+
 
 def sample(grid, xyz):
     """
@@ -424,7 +456,7 @@ def grid_bool(g1, g2, joined_grid, opt=1, size=3, olap=1):
     return gxgrd.Grid.open(joined_grid)
 
 
-def contour_points(grid, value, max_segments=1000, interval=None):
+def contour_points(grid, value, max_segments=1000, resolution=None, return_as=RETURN_LIST_OF_PPOINT, gdb=None):
     """
     Return a set of point segments that represent the spatial locations of contours threaded through the grid.
 
@@ -434,11 +466,20 @@ def contour_points(grid, value, max_segments=1000, interval=None):
     :param grid:            grid file of `geosoft.gxpy.grid.Grid` instance
     :param value:           contour value
     :param max_segments:    maximum expected number of segments, raises error if there are more actual segments.
-    :param interval:        the separation between points along the contours. If not specified the minimum grid
-                            cell size is used.  For `interval=0`, the points are as returned by the contouring
+    :param resolution:      the separation between points along the contours. If not specified the minimum grid
+                            cell size is used.  For `resolution=0`, the points are as returned by the contouring
                             algorithm.
-    :return:                list of `geosoft.gxpy.geometry.PPoint`, where each item in the list represents
-                            one continuous contour from the grid.
+    :param return_as:       return results as:
+
+        ===================== ====================================================================
+        RETURN_PPOINT         return results as a single `geosoft.gxpy.geometry.PPoint` instance
+        RETURN_LIST_OF_PPOINT return results as a list of `geosoft.gxpy.geometry.PPoint` instances
+        RETURN_GDB            return result as a `geosoft.gxpy.gdb.Geosoft_gdb` instance
+        ===================== ====================================================================
+
+    :param gdb:         return database name, or a `geosoft.gxpy.gdv.Geosoft_database` instance. If not
+                        specified and `return_as=RETURN_GDB`, a temporary database is created.
+    :return:            depends on `return_as` setting
 
     .. versionadded:: 9.4
     """
@@ -448,14 +489,14 @@ def contour_points(grid, value, max_segments=1000, interval=None):
         with grid.copy(grid) as g:
             temp_grid = g.file_name
             grid = g.file_name_decorated
-            if interval is None:
-                interval = min(g.dx, g.dy)
+            if resolution is None:
+                resolution = min(g.dx, g.dy)
 
     else:
         with gxgrd.Grid.open(grid) as g:
             extent = g.extent
-            if interval is None:
-                interval = min(g.dx, g.dy)
+            if resolution is None:
+                resolution = min(g.dx, g.dy)
         temp_grid = None
 
     # create a contour group for this value, export to a shape file
@@ -471,27 +512,47 @@ def contour_points(grid, value, max_segments=1000, interval=None):
                                       gxapi.MAP_EXPORT_FORMAT_SHP, '')
         shp_file = shp_file[:-4] + '_lnz.shp'
 
-    # import shape into a temporary database
-    gis = gxapi.GXGIS.create(shp_file, '', gxapi.GIS_TYPE_ARCVIEW)
-    with gxgdb.Geosoft_gdb.new(max_lines=max_segments, max_channels=10) as gdb:
-        gdb_file = gdb.file_name
-        gis.load_shapes_gdb(gdb.gxdb)
+    if gdb is not None:
+        return_as = RETURN_GDB
+    if not isinstance(gdb, gxgdb.Geosoft_gdb):
+        gdb = gxgdb.Geosoft_gdb.new(name=gdb, max_lines=max_segments, max_channels=10)
 
-        # make points from segments
-        pplist = []
-        for l in gdb.lines():
-            xyz = gdb.read_line(l, channels=('X', 'Y', 'Z'))[0]
-            xyz[:, 2] = 0.
-            if interval > 0.:
-                xyz = gxgeou.resample(xyz, interval)
-            if extent.coordinate_system.is_oriented:
-                xyz = extent.coordinate_system.xyz_from_oriented(xyz)
-            pplist.append(gxgeo.PPoint(xyz, coordinate_system=extent.coordinate_system))
+    # import shape to database
+    if not os.path.exists(shp_file):
+        raise GridUtilityException(_t('The grid data does not intersect value {}').format(value))
+    gis = gxapi.GXGIS.create(shp_file, '', gxapi.GIS_TYPE_ARCVIEW)
+    gis.load_shapes_gdb(gdb.gxdb)
+    gdb.coordinate_system = extent.coordinate_system
 
     # discard the temp files
     gxu.delete_files_by_root(temp_grid)
     gxu.delete_files_by_root(map_file)
-    gxu.delete_files_by_root(gdb_file)
     gxu.delete_files_by_root(shp_file[:-4])
+
+    # resample to resolution
+    if resolution > 0.:
+        for ln in gdb.list_lines():
+            xyz, chlist, _ = gdb.read_line(ln, channels=('X', 'Y', 'Z'))
+            gdb.write_line(ln, gxgeou.resample(xyz, resolution), chlist)
+
+    if return_as == RETURN_GDB:
+        return gdb
+
+    # make points from segments
+    pplist = []
+    for l in gdb.lines():
+        xyz = gdb.read_line(l, channels=('X', 'Y', 'Z'))[0]
+        xyz[:, 2] = 0.
+        if resolution > 0.:
+            xyz = gxgeou.resample(xyz, resolution)
+        if extent.coordinate_system.is_oriented:
+            xyz = extent.coordinate_system.xyz_from_oriented(xyz)
+        pplist.append(gxgeo.PPoint(xyz, coordinate_system=extent.coordinate_system))
+
+    # discard the database
+    gdb.close(discard=True)
+
+    if return_as == RETURN_PPOINT:
+        return gxgeo.PPoint.merge(pplist)
 
     return pplist

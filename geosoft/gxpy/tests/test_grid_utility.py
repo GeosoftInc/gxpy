@@ -8,6 +8,7 @@ import geosoft.gxpy.grid as gxgrd
 import geosoft.gxpy.grid_utility as gxgrdu
 import geosoft.gxpy.geometry as gxgeo
 import geosoft.gxpy.coordinate_system as gxcs
+import geosoft.gxpy.gdb as gxgdb
 
 from base import GXPYTest
 
@@ -175,13 +176,45 @@ class Test(GXPYTest):
                 cs_name = gxcs.name_from_hcs_orient_vcs(gm.coordinate_system.hcs, '0, 0, 1000, 0, -90, 25', '')
                 gm.coordinate_system = cs_name
                 xyp = gxgrdu.contour_points(gm, v)
-                self.assertAlmostEqual(xyp[0][0].z, 1007.0093107843851)
+                self.assertTrue(isinstance(xyp, list))
+                self.assertTrue(isinstance(xyp[0], gxgeo.PPoint))
+                self.assertEqual(len(xyp), 45)
+
+                self.assertRaises(gxgrdu.GridUtilityException, gxgrdu.contour_points, gm, 0)
+
+                xyp = gxgrdu.contour_points(gm, 500, return_as=gxgrdu.RETURN_PPOINT)
+                self.assertTrue(isinstance(xyp, gxgeo.PPoint))
+                self.assertEqual(len(xyp), 343)
+
+                xyp = gxgrdu.contour_points(gm, 250, return_as=gxgrdu.RETURN_GDB)
+                self.assertTrue(isinstance(xyp, gxgdb.Geosoft_gdb))
+                self.assertEqual(len(xyp.list_lines()), 9)
 
     def test_tilt_depth(self):
         self.start()
 
-        td = gxgrdu.tilt_depth(self.mag, resolution=200)
-        self.assertEqual(len(td), 6755)
+        td = gxgrdu.tilt_depth(self.mag, resolution=1000)
+        self.assertTrue(isinstance(td, gxgeo.PPoint))
+        self.assertTrue(td.coordinate_system == 'AGD66 / AMG zone 53')
+        self.assertEqual(len(td), 1454)
+
+        td = gxgrdu.tilt_depth(self.mag, resolution=1000, return_as=gxgrdu.RETURN_LIST_OF_PPOINT)
+        self.assertTrue(isinstance(td, list))
+        self.assertTrue(td[0].coordinate_system == 'AGD66 / AMG zone 53')
+        self.assertTrue(isinstance(td[0], gxgeo.PPoint))
+        n = 0
+        for p in td:
+            n += len(p)
+        self.assertEqual(n, 1454)
+
+        td = gxgrdu.tilt_depth(self.mag, resolution=1000, return_as=gxgrdu.RETURN_GDB)
+        self.assertTrue(isinstance(td, gxgdb.Geosoft_gdb))
+        self.assertTrue(td.coordinate_system == 'AGD66 / AMG zone 53')
+        n = 0
+        for ln in td.list_lines():
+            d = td.read_line(ln, 'X')
+            n += len(d[0])
+        self.assertEqual(n, 1454)
 
 ###############################################################################################
 
