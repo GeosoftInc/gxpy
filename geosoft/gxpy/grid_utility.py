@@ -42,8 +42,9 @@ TREND_ALL = gxapi.IMU_TREND_ALL  #:
 DERIVATIVE_X = 0  #:
 DERIVATIVE_Y = 1  #:
 DERIVATIVE_Z = 2  #:
-DERIVATIVE_ANALYTIC_SIGNAL = 3  #:
-DERIVATIVE_TILT = 4  #:
+DERIVATIVE_XY = 3  #: horizontal gradient sqrt(dx**2 + dy**2)
+DERIVATIVE_XYZ = 4  #: total gradient (analytic signal) sqrt(dx**2 _ dy**2 + dz**2)
+DERIVATIVE_TILT = 5  #:
 
 
 def _t(s):
@@ -90,7 +91,7 @@ def remove_trend(grid, file_name=None, method=TREND_EDGE, overwrite=False):
     return dtg
 
 
-def derivative(grid, derivative_type, file_name=None, overwrite=False):
+def derivative(grid, derivative_type, file_name=None, overwrite=False, dtype=None):
     """
     Return a derivative of a grid.  Derivatives are calculated by space-domain convolution.
 
@@ -101,30 +102,31 @@ def derivative(grid, derivative_type, file_name=None, overwrite=False):
         DERIVATIVE_X               in the grid X direction
         DERIVATIVE_Y               in the grid Y direction
         DERIVATIVE_Z               in the grid Z direction
-        DERIVATIVE_ANALYTIC_SIGNAL analytic signal, or the total derivative sqrt(dx**2 + dy**2 + dz**2)
+        DERIVATIVE_XYZ analytic signal, or the total derivative sqrt(dx**2 + dy**2 + dz**2)
         DERIVATIVE_TILT            tilt derivative, atan2(dz, sqrt(dx**2, dy**2))
         ========================== ====================================================================
     
     :param file_name:   returned derivative file name, None for a temporary file
     :param overwrite:   True to overwrite existing file
+    :param dtype:       dtype for the return grid, default is the same as the passed grid.
     :return:            `Grid` instance that contains the derivative result
 
     .. versionadded 9.4
     """
 
-    def vertical_derivative(g):
+    def vertical_derivative(g, dt):
 
         # float64 grids for grid_vd
         if not isinstance(g, gxgrd.Grid):
             g = gxgrd.Grid.open(g, dtype=np.float64, mode=gxgrd.FILE_READ)
-        _dtype = g.dtype
+
         if g.dtype != np.float64:
             g = g.copy(g, gx.gx().temp_file('.grd(GRD)'), dtype=np.float32, overwrite=True)
             g.delete_files()
 
         dzg = gxgrd.Grid.new(file_name=file_name, properties=g.properties(), overwrite=overwrite)
         gxapi.GXIMU.grid_vd(g.gximg, dzg.gximg)
-        return gxgrd.reopen(dzg, dtype=_dtype)
+        return gxgrd.reopen(dzg, dtype=dt)
 
     def tilt_derivative(g):
         dx = derivative(g, DERIVATIVE_X)
@@ -134,11 +136,19 @@ def derivative(grid, derivative_type, file_name=None, overwrite=False):
                                 result_file_name=file_name,
                                 overwrite=overwrite)
 
-    def analytic_signal(g):
+    def horizontal_gradient(g):
+        dx = derivative(g, DERIVATIVE_X)
+        dy = derivative(g, DERIVATIVE_Y)
+        return gxgrd.expression((dx, dy), 'sqrt(g1**2+g2**2)', 
+                                result_file_name=file_name,
+                                overwrite=overwrite)
+
+
+    def total_gradient(g):
         dx = derivative(g, DERIVATIVE_X)
         dy = derivative(g, DERIVATIVE_Y)
         dz = derivative(g, DERIVATIVE_Z)
-        return gxgrd.expression((dx, dy, dz), 'sqrt(g1**2+g2**2)', 
+        return gxgrd.expression((dx, dy, dz), 'sqrt(g1**2+g2**2+g3**2)', 
                                 result_file_name=file_name,
                                 overwrite=overwrite)
 
@@ -147,18 +157,28 @@ def derivative(grid, derivative_type, file_name=None, overwrite=False):
         file_name = gx.gx().temp_file('.grd(GRD)')
 
     if derivative_type == DERIVATIVE_Z:
-        return vertical_derivative(grid)
+        return vertical_derivative(grid, dt=dtype)
 
     # need float32 grids for grid_filt
     if not isinstance(grid, gxgrd.Grid):
         grid = gxgrd.Grid.open(grid, dtype=np.float32, mode=gxgrd.FILE_READ)
-    return_dtype = grid.dtype
+
+    if dtype is None:
+        return_dtype = grid.dtype
+    else:
+        return_dtype = dtype
+
     if grid.dtype != np.float32:
         grid = grid.copy(grid, gx.gx().temp_file('.grd(GRD)'), dtype=np.float32, overwrite=True)
         grid.delete_files()
 
-    if derivative_type == DERIVATIVE_ANALYTIC_SIGNAL:
-        rgrd = analytic_signal(grid)
+    if derivative_type == DERIVATIVE_XY:
+        rgrd = horizontal_gradient(grid)
+        if rgrd.dtype != return_dtype:
+            return gxgrd.reopen(rgrd, dtype=return_dtype)
+
+    if derivative_type == DERIVATIVE_XYZ:
+        rgrd = total_gradient(grid)
         if rgrd.dtype != return_dtype:
             return gxgrd.reopen(rgrd, dtype=return_dtype)
 
@@ -166,7 +186,7 @@ def derivative(grid, derivative_type, file_name=None, overwrite=False):
         rgrd = tilt_derivative(grid)
         if rgrd.dtype != return_dtype:
             return gxgrd.reopen(rgrd, dtype=return_dtype)
-
+        
     # dxy grid
     if file_name is None:
         file_name = gx.gx().temp_file('.grd(GRD)')
@@ -186,6 +206,57 @@ def derivative(grid, derivative_type, file_name=None, overwrite=False):
                           filter_vv.gxvv)
 
     return gxgrd.reopen(dxy, dtype=return_dtype)
+
+
+def tilt_depth(grid, resolution=None):
+    """
+    Given an RTP TMI grid, or the vertical derivative of the gravity anomaly, calculate
+    contact source depths using the tilt-depth method as suggested by Rick Blakely.
+    The contact source depth is the reciprocol of the horizontal gradient of the
+    tilt-derivative at the zero-contour of the tilt derivative.
+
+    :param grid:        `geosoft.gxpy.grid.Grid` instance or a grid file name. Ideally the grid should be RTP.
+    :param resolution:  zero-contour sampling resolution, defaults to the grid cell size.
+    :return:            `geosoft.gxpy.geometry.PPoint` instance of source locations.
+
+    .. versionadded:: 9.4
+    """
+
+
+    td = derivative(grid, DERIVATIVE_TILT)
+    zero_xy = contour_points(td, 0., interval=resolution)
+    zero_xy = gxgeo.PPoint.merge(zero_xy)
+
+    tdd = derivative(td, DERIVATIVE_XY)
+    zero_tdd = sample(tdd, zero_xy)
+    zero_tdd[zero_tdd <= 0.] = np.nan
+    zero_xy.pp[:, 2] = np.reciprocal(zero_tdd)
+    return zero_xy
+
+def sample(grid, xyz):
+    """
+    Return grid values sampled at the point locations.
+
+    :param grid:    `geosoft.gxpy.grid.Grid` instance or a grid file name.
+    :param xyz:     `geosoft.gxpy.geometry.PPoint` instance, or a numpy array shapped (-1, 3) that holds
+                    the desired (x, y, z) locations. If a PPoint instance is passed it will be reporjected to the
+                    grid coordinate system if necessary.
+    :return:        1-dimensional numpy array of grid data values that match the passes PPoint or XYZ.
+    """
+
+    if not isinstance(grid, gxgrd.Grid):
+        grid = gxgrd.Grid(grid, dtype=np.float64)
+
+    if isinstance(xyz, gxgeo.Geometry):
+        if xyz.coordinate_system != grid.coordinate_system:
+            xyz = gxgeo.PPoint(xyz, coordinate_system=grid.coordinate_system)
+        if xyz.coordinate_system.is_oriented:
+            xyz = xyz.coordinate_system.oriented_from_xyz(xyz)
+        xyz = xyz.pp
+
+    vvx, vvy, vvz = gxvv.vvset_from_np(xyz)
+    gxapi.GXIMU.get_zvv(grid.gximg, vvx.gxvv, vvy.gxvv, vvz.gxvv)
+    return vvz.np
 
 
 def grid_mosaic(mosaic, grid_list, type_decorate='', report=None):
@@ -351,6 +422,7 @@ def grid_bool(g1, g2, joined_grid, opt=1, size=3, olap=1):
         g2.close()
 
     return gxgrd.Grid.open(joined_grid)
+
 
 def contour_points(grid, value, max_segments=1000, interval=None):
     """

@@ -129,12 +129,16 @@ class Test(GXPYTest):
             self.assertAlmostEqual(dyg.statistics()['sd'], 14.884414474960357)
 
         with gxgrd.Grid.open(self.mag) as grd:
-            das = gxgrdu.derivative(grd, gxgrdu.DERIVATIVE_ANALYTIC_SIGNAL)
-            self.assertAlmostEqual(das.statistics()['sd'], 19.18270809104566)
-
-        with gxgrd.Grid.open(self.mag) as grd:
             dzg = gxgrdu.derivative(grd, gxgrdu.DERIVATIVE_Z)
             self.assertAlmostEqual(dzg.statistics()['sd'], 0.22893001533535487)
+
+        with gxgrd.Grid.open(self.mag) as grd:
+            dxy = gxgrdu.derivative(grd, gxgrdu.DERIVATIVE_XY)
+            self.assertAlmostEqual(dxy.statistics()['sd'], 19.18270809104566)
+
+        with gxgrd.Grid.open(self.mag) as grd:
+            das = gxgrdu.derivative(grd, gxgrdu.DERIVATIVE_XYZ)
+            self.assertAlmostEqual(das.statistics()['sd'], 19.183085930995492)
 
         with gxgrd.Grid.open(self.mag) as grd:
             dtd = gxgrdu.derivative(grd, gxgrdu.DERIVATIVE_TILT)
@@ -173,6 +177,11 @@ class Test(GXPYTest):
                 xyp = gxgrdu.contour_points(gm, v)
                 self.assertAlmostEqual(xyp[0][0].z, 1007.0093107843851)
 
+    def test_tilt_depth(self):
+        self.start()
+
+        td = gxgrdu.tilt_depth(self.mag, resolution=200)
+        self.assertEqual(len(td), 6755)
 
 ###############################################################################################
 
