@@ -818,6 +818,14 @@ class Coordinate_system:
                 if wkt is None:
                     raise ValueError("'ESRI missing 'wkt' property.")
 
+                # TODO: The following is a quick fix. Seems WKT strings returned from arcpy code in ArcGIS Pro can now
+                # contain trailing parameters like:
+                # ;-5121200 -9998400 450432031.862147;-100000 10000;-100000 10000;0.001;0.001;0.001;IsHighPrecision
+                # removed here to allow core code to parse. Investigate and move any resulting handling logic to core
+                wkt = ']'.join(wkt.split(']')[:-1]) + ']'
+                # TODO arcpy code could produce WKT strings with single quotes. Core code should be changed to be tolerant of this instead
+                wkt = wkt.replace("'", '"')
+
                 # add vertical datum reference from dict if not in the wkt
                 vcs = csdict.get('vcs', '')
                 if vcs and ('VERTCS[' not in wkt):

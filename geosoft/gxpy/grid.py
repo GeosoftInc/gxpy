@@ -344,7 +344,13 @@ class Grid(gxgm.Geometry):
         self._cs = None
         self._gxpg = None
 
-        if mode == FILE_NEW:
+        gxtype = gxu.gx_dtype(dtype)
+        if self._file_name is None:
+            self._img = gxapi.GXIMG.create(gxtype, kx, dim[0], dim[1])
+            # Need to set the kx otherwise it will be 0 and some routines (e.g. IMU stats calc) could cause aborts
+            # TODO Investigate if we can make core code tolerant of this instead
+            self._img.opt_kx(kx)
+        elif mode == FILE_NEW:
             if dtype is None:
                 dtype = np.float64
             gxtype = gxu.gx_dtype(dtype)
