@@ -51,7 +51,7 @@ class Test(GXPYTest):
         self.assertRaises(gxva.VAException, gxva.GXva,
                           np.array([["bones", "queens", "geology"], ["a", "b", "c"]]))
 
-        with gxva.GXva(width=7, dtype=np.float) as va:
+        with gxva.GXva([[1, 2, 3, 4, 5, 6, 7]], width=7, dtype=np.float) as va:
             self.assertRaises(gxva.VAException, va.get_data, dtype="U7")
 
         with gxva.GXva(np.array(range(45)).reshape((9, 5))) as va:
@@ -177,6 +177,17 @@ class Test(GXPYTest):
             self.assertTrue(npdata[0,1])
             self.assertEqual(tuple(va[0][0])[4], 4.)
             self.assertTrue(np.isnan(va[0][0][1]))
+
+    def test_empty(self):
+        self.start()
+
+        empty = np.array([[],[]])
+        va = gxva.GXva(empty, width=2)
+        self.assertEqual(len(va), 0)
+        self.assertEqual(va.np.size, 0)
+        va.set_data(empty)
+        self.assertEqual(len(va), 0)
+        self.assertEqual(va.np.size, 0)
 
 ##############################################################################################
 if __name__ == '__main__':

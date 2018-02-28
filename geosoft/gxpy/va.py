@@ -75,17 +75,18 @@ class GXva(Sequence):
     def __init__(self, array=None, width=None, dtype=None, fid=(0.0, 1.0), unit_of_measure=''):
 
         if array is not None:
+
             if not isinstance(array, np.ndarray):
                 array = np.array(array)
+
+            if dtype is None:
+                dtype = array.dtype
 
             if array.ndim != 2:
                 raise VAException(_t('array must have 2 dimensions'))
 
             if width is None:
                 width = array.shape[1]
-
-            if dtype is None:
-                dtype = array.dtype
 
         if width is None or (width < 2):
             raise VAException('width must be >= 2')
@@ -103,7 +104,7 @@ class GXva(Sequence):
         self._next = 0
         self._unit_of_measure = unit_of_measure
 
-        if array is not None:
+        if array is not None and array.size > 0:
             self.set_data(array, fid)
 
     def __iter__(self):
@@ -247,6 +248,9 @@ class GXva(Sequence):
         else:
             dtype = np.dtype(dtype)
 
+        if self.length == 0:
+            return np.array([[], []], dtype=dtype)
+
         # strings not supported
         if gxu.gx_dtype(dtype) < 0:
             raise VAException(_t('VA string elements are not supported.'))
@@ -287,6 +291,12 @@ class GXva(Sequence):
 
         .. versionadded:: 9.1
         """
+
+        if npdata.size == 0:
+            self.length = 0
+            if fid:
+                self.fid = fid
+            return
 
         try:
             npd = npdata.reshape((-1, self._width))

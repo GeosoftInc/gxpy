@@ -347,6 +347,7 @@ class Test(GXPYTest):
 
 
     def test_vv_creation(self):
+        self.start()
 
         vv = gxvv.GXvv(range(6), fid=(-0.5, 2), dtype=np.float32, unit_of_measure='maki')
         vv2 = gxvv.GXvv(vv)
@@ -368,6 +369,14 @@ class Test(GXPYTest):
         self.assertFalse(vv == vv2)
         vv3 = gxvv.GXvv(vv2, dim=1)
         self.assertTrue(vv == vv3)
+
+    def test_empty(self):
+        self.start()
+
+        empty = np.array([])
+        vv = gxvv.GXvv(empty)
+        self.assertEqual(len(vv), 0)
+        self.assertEqual(vv.np.size, 0)
 
 
 ##############################################################################################

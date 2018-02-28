@@ -444,12 +444,18 @@ class GXvv(Sequence):
         elif not isinstance(data, np.ndarray):
             data = np.array(data)
 
+        if data.size == 0:
+            self.length = 0
+            if fid:
+                self.fid = fid
+            return
+
         if self.dim == 1:
             data = data.flatten()
         else:
             data = data.reshape((-1, self.dim))
 
-        if np.size(data) > gxapi.iMAX:
+        if data.size > gxapi.iMAX:
             raise VVException(_t('data length {}, max allowed is {})').format(np.size(data), gxapi.iMAX))
 
         # numerical data
