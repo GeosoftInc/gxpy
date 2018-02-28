@@ -100,8 +100,7 @@ class Test(GXPYTest):
 
         with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
             self.assertEqual(len(gdb.file_name), len(self.gdb_name))
-            self.assertEqual(str(gdb).lower(),os.path.basename(self.gdb_name).lower())
-            self.assertTrue(len(gdb.list_channels())>=6)
+            self.assertTrue(len(gdb.list_channels()) >= 6)
             self.assertTrue('X' in gdb.list_channels())
             self.assertTrue('dx' in gdb.list_channels(chan=gxdb.CHAN_ALL))
             self.assertTrue('vector' in gdb.list_channels(chan=gxdb.CHAN_ARRAY))
@@ -212,7 +211,6 @@ class Test(GXPYTest):
         with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
 
             self.assertEqual(len(gdb.file_name), len(self.gdb_name))
-            self.assertEqual(str(gdb).lower(),os.path.basename(self.gdb_name).lower())
             data, ch, fid = gdb.read_line('D578625')
             self.assertEqual(data.shape, (832, 8))
 
