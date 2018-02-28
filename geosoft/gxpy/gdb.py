@@ -302,11 +302,14 @@ class Geosoft_gdb(gxgeo.Geometry):
         return "{}({})".format(self.__class__, self.__dict__)
 
     def __str__(self):
-        return os.path.basename(self._file_name)
+        return '{}({} lines, {} channels)'.format(os.path.basename(self.name), self.used_lines, self.used_channels)
 
-    def __init__(self):
-
-        super().__init__()
+    def __init__(self, name=None):
+        if name is None:
+            name = '_gdb_'
+        else:
+            name = os.path.basename(name)
+        super().__init__(name=name)
 
         self._lst = gxapi.GXLST.create(2000)
         self._sr = gxapi.str_ref()
@@ -341,7 +344,7 @@ class Geosoft_gdb(gxgeo.Geometry):
         .. versionadded:: 9.1
         """
 
-        gdb = cls()
+        gdb = cls(name)
 
         if name is None:
             gdb._edb = gxapi.GXEDB.current()

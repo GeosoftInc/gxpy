@@ -1274,14 +1274,12 @@ class Test(GXPYTest):
         self.start()
 
         gdb = gxdb.Geosoft_gdb.new()
-        gn = gdb.file_name
         gdb.write_line('L0', np.array([1., 2., 3.]), 'x')
         gdb.write_line('L1', [1, 2, 3], 'y')
         self.assertEqual(len(gdb.list_lines()), 2)
         self.assertEqual(len(gdb.list_channels()), 2)
         self.assertTrue('x' in gdb.list_channels() and 'y' in gdb.list_channels())
         gdb.close(discard=True)
-        self.assertFalse(os.path.exists(gn))
 
 
 ###############################################################################################
