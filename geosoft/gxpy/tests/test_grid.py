@@ -146,6 +146,34 @@ class Test(GXPYTest):
             self.assertEqual(str(properties.get('coordinate_system')),'NAD27 / UTM zone 18N')
             self.assertEqual(properties.get('dtype'),np.int16)
 
+    def test_in_memory(self):
+        self.start()
+
+        with gxgrd.Grid.new(in_memory=True,
+            properties={'dtype': np.int16,
+                        'nx': 100, 'ny': 50,
+                        'x0':4, 'y0':8,
+                        'dx': 0.1, 'dy':0.2,
+                        'rot': 5,
+                        'coordinate_system': gxcs.Coordinate_system('NAD27 / UTM zone 18N')}) as grd:
+            properties = grd.properties()
+            self.assertEqual(properties.get('dx'),0.1)
+            self.assertEqual(properties.get('dy'),0.2)
+            self.assertEqual(properties.get('x0'),4.0)
+            self.assertEqual(properties.get('y0'),8.0)
+            self.assertEqual(properties.get('rot'),5.0)
+            self.assertEqual(properties.get('nx'),100)
+            self.assertEqual(properties.get('ny'),50)
+            self.assertEqual(str(properties.get('coordinate_system')),'NAD27 / UTM zone 18N')
+            self.assertEqual(properties.get('dtype'),np.int16)
+
+            m = grd.metadata
+            self.assertFalse(bool(m))
+
+            # TODO will abort if kx not set to something else than 0 (see comments about issue #16 in __init__)
+            stats = grd.statistics()
+            self.assertIsNone(stats['mean'])
+
     def test_temp(self):
         self.start()
 
@@ -168,6 +196,7 @@ class Test(GXPYTest):
 
             m = grd.metadata
             self.assertFalse(bool(m))
+
 
     def test_delete_grid(self):
         self.start()

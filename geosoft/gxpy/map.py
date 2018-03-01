@@ -279,7 +279,10 @@ class Map:
                     if self._remove:
                         try:
                             delete_files(self._file_name)
-                        except OSError:  # remove if we can
+                        except OSError:
+                            # TODO We ignore this and it can be reproduced by using with statement with some exception.
+                            # E.g. in test_grid.test_image_file without an IMG DAT dll present. Should be investigated.
+                            # See issue #82
                             pass
                 if pop:
                     gx.pop_resource(self._open)

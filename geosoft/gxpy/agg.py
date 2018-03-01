@@ -470,20 +470,15 @@ class Aggregate_image(gxgm.Geometry):
         if pix_width is None or pix_width <= 0:
             pix_width = nx
 
-        map_file = gx.gx().temp_file('.map')
-        try:
-            with gxmap.Map.new(map_file,
-                               data_area=display_area.extent_xy,
-                               coordinate_system=display_area.coordinate_system,
-                               margins=(0, 0, 0, 0),
-                               inside_margin=0) as gmap:
+        with gxmap.Map.new(data_area=display_area.extent_xy,
+                           coordinate_system=display_area.coordinate_system,
+                           margins=(0, 0, 0, 0),
+                           inside_margin=0) as gmap:
+            gmap.remove_on_close()
+            
+            with gxview.View.open(gmap, "data") as v:
+                gxgroup.Aggregate_group.new(v, self)
 
-                with gxview.View.open(gmap, "data") as v:
-                    gxgroup.Aggregate_group.new(v, self)
-
-                gmap.image_file(image_file, type=image_type, pix_width=pix_width)
-
-        finally:
-            gxu.delete_file(map_file)
+            gmap.image_file(image_file, type=image_type, pix_width=pix_width)
 
         return image_file
