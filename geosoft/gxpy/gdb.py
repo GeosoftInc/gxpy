@@ -409,6 +409,7 @@ class Geosoft_gdb(gxgeo.Geometry):
 
         if not overwrite and os.path.isfile(name):
             raise GdbException(_t('Cannot overwrite existing database \'{}\''.format(name)))
+        gxu.delete_files_by_root(name)
 
         gxapi.GXDB.create_comp(name,
                                max_lines, max_channels, max_blobs, 10, 100,
@@ -1738,6 +1739,9 @@ class Geosoft_gdb(gxgeo.Geometry):
 
         ln, ls = self.line_name_symb(line, create=True)
 
+        if not isinstance(data, np.ndarray):
+            data = np.array(data)
+
         if isinstance(channel, str):
             cn = channel
             cs = self.new_channel(channel, data.dtype, array=_va_width(data))
@@ -1746,9 +1750,6 @@ class Geosoft_gdb(gxgeo.Geometry):
 
         if cn in self.xyz_channels:
             self.clear_extent()
-
-        if not isinstance(data, np.ndarray):
-            data = np.array(data)
 
         if _va_width(data) == 0:
             # no data to write
@@ -1832,6 +1833,8 @@ class Geosoft_gdb(gxgeo.Geometry):
             if channels is None:
                 channels = self._sorted_chan_list()
 
+            if not isinstance(data, np.ndarray):
+                data = np.array(data)
             if data.ndim == 1:
                 data = data.reshape((-1, 1))
 

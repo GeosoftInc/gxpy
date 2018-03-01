@@ -854,7 +854,7 @@ class Test(GXPYTest):
                 gdb.new_channel('B', dtype=np.int)
                 gdb.new_channel('A', dtype=np.int)
                 for l in range(imageIn.shape[0]):
-                    gdb.write_line('L{}'.format(l),imageIn[l,:,:],channels=['R','G','B','A'])
+                    gdb.write_line('L{}'.format(l), imageIn[l,:,:], channels=['R','G','B','A'])
 
                 self.assertEqual(len(gdb.list_lines()),imageIn.shape[0])
                 self.assertEqual(len(gdb.list_channels()),4)
@@ -878,6 +878,7 @@ class Test(GXPYTest):
 
         finally:
             gxdb.delete_files(gdb_file)
+
 
 
     def test_details(self):
@@ -1268,6 +1269,20 @@ class Test(GXPYTest):
 
         map_file = gxdb.Geosoft_gdb.open(self.gdb_name).figure_map().file_name
         self.assertEqual(gxmap.Map.open(map_file).crc_image(pix_width=800), 1969856440)
+
+    def test_temp_gdb(self):
+        self.start()
+
+        gdb = gxdb.Geosoft_gdb.new()
+        gn = gdb.file_name
+        gdb.write_line('L0', np.array([1., 2., 3.]), 'x')
+        gdb.write_line('L1', [1, 2, 3], 'y')
+        self.assertEqual(len(gdb.list_lines()), 2)
+        self.assertEqual(len(gdb.list_channels()), 2)
+        self.assertTrue('x' in gdb.list_channels() and 'y' in gdb.list_channels())
+        gdb.close(discard=True)
+        self.assertFalse(os.path.exists(gn))
+
 
 ###############################################################################################
 
