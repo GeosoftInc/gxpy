@@ -1238,6 +1238,8 @@ def delete_files_by_root(file_root):
 
     if file_root:
         path, root = os.path.split(file_root)
+        if not path:
+            path = os.getcwd()
         for fn in os.listdir(path):
             if (fn == root) or (os.path.splitext(fn)[0] == root):
                 delete_file(os.path.join(path, fn))
