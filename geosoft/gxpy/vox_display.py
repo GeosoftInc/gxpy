@@ -33,7 +33,7 @@ def _t(s):
     return geosoft.gxpy.system.translate(s)
 
 
-class VoxDisplayException(Exception):
+class VoxDisplayException(geosoft.GXRuntimeError):
     """
     Exceptions from :mod:`geosoft.gxpy.vox_display`.
 

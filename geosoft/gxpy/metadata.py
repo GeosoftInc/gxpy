@@ -31,7 +31,7 @@ def _t(s):
     return geosoft.gxpy.system.translate(s)
 
 
-class MetadataException(Exception):
+class MetadataException(geosoft.GXRuntimeError):
     """
     Exceptions from :mod:`geosoft.gxpy.metadata`.
 

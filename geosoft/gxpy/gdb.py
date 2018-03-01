@@ -90,7 +90,7 @@ DRAW_AS_POINTS = 0  #:
 DRAW_AS_LINES = 1  #:
 
 
-class GdbException(Exception):
+class GdbException(geosoft.GXRuntimeError):
     """
     Exceptions from :mod:`geosoft.gxpy.gdb`.
 

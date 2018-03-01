@@ -3,6 +3,8 @@
 ### block Header
 # NOTICE: The code generator will not replace the code in this block
 
+import geosoft
+
 class ref_value:
     def __init__(self, value=None):
         self._value = None
@@ -64,7 +66,7 @@ class GXAPIError(RuntimeError):
     pass
 
 
-class GXError(RuntimeError):
+class GXError(geosoft.GXRuntimeError):
     """
     A subclass of `RuntimeError <https://docs.python.org/3/library/exceptions.html#RuntimeError>`_ which is raised whenever 
     a GX Python API call encounters an error. Often the message string of these errors are informative to the user (e.g. File 
@@ -77,10 +79,11 @@ class GXError(RuntimeError):
     """
     
     def __init__(self, message, module, error_number):
-        super(RuntimeError, self).__init__(message)
+        super(geosoft.GXRuntimeError, self).__init__(message)
         self.module = module
         self.error_number = error_number
-    
+
+
 ### endblock Header
 
 ### block Constants

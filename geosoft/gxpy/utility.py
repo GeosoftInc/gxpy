@@ -54,7 +54,7 @@ def _validate_parameter(s):
     return True
 
 
-class UtilityException(Exception):
+class UtilityException(geosoft.GXRuntimeError):
     """
     Exceptions from :mod:`geosoft.gxpy.utility`.
 

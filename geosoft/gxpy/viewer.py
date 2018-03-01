@@ -19,7 +19,7 @@ def _t(s):
     return geosoft.gxpy.system.translate(s)
 
 
-class ViewerException(Exception):
+class ViewerException(geosoft.GXRuntimeError):
     """
     Exceptions from :mod:`geosoft.gxpy.viewer`.
 

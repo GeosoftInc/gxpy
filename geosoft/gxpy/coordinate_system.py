@@ -104,7 +104,7 @@ PARM_UNITS = 'units'  #:
 PARM_LOCAL_DATUM = 'datumtrf'  #:
 
 
-class CSException(Exception):
+class CSException(geosoft.GXRuntimeError):
     """
     Exceptions from :mod:`geosoft.gxpy.coordinate_system`.
 

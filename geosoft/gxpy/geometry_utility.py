@@ -28,7 +28,7 @@ def _t(s):
     return geosoft.gxpy.system.translate(s)
 
 
-class GeometryUtilityException(Exception):
+class GeometryUtilityException(geosoft.GXRuntimeError):
     """
     Exceptions from `geosoft.gxpy.geometry_utility`.
 

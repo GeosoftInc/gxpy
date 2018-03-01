@@ -31,7 +31,7 @@ def _t(s):
     return geosoft.gxpy.system.translate(s)
 
 
-class VAException(Exception):
+class VAException(geosoft.GXRuntimeError):
     """
     Exceptions from :mod:`geosoft.gxpy.va`.
 

@@ -56,7 +56,7 @@ def _t(s):
     return geosoft.gxpy.system.translate(s)
 
 
-class GridUtilityException(Exception):
+class GridUtilityException(geosoft.GXRuntimeError):
     """
     Exceptions from `geosoft.gxpy.grid_utility`.
 

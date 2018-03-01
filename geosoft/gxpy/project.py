@@ -37,7 +37,7 @@ DOC_TYPE_GMS3D = "GMS3D" #:
 DOC_TYPE_GMS2D = "GMS2D" #:
 DOC_TYPE_ALL = "All" #:
 
-class ProjectException(Exception):
+class ProjectException(geosoft.GXRuntimeError):
     """
     Exceptions from :mod:`geosoft.gxpy.project`.
 

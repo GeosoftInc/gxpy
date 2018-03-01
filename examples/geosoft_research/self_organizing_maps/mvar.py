@@ -28,7 +28,7 @@ def no_stop():
     return False
 
 
-class MvarException(Exception):
+class MvarException(RuntimeError):
     pass
 
 class NormType(Enum):

@@ -60,7 +60,7 @@ def decimate(data,maxn):
     else:
         return(data)
 
-class SOMException(Exception):
+class SOMException(RuntimeError):
     pass
 
 ###############################################################################################

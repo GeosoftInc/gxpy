@@ -40,7 +40,7 @@ def _t(s):
     return geosoft.gxpy.system.translate(s)
 
 
-class SurfaceException(Exception):
+class SurfaceException(geosoft.GXRuntimeError):
     """
     Exceptions from :mod:`geosoft.gxpy.surface`.
     """

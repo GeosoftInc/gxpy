@@ -39,7 +39,7 @@ def _t(s):
     return geosoft.gxpy.system.translate(s)
 
 
-class AggregateException(Exception):
+class AggregateException(geosoft.GXRuntimeError):
     """
     Exceptions from :mod:`geosoft.gxpy.agg`.
 

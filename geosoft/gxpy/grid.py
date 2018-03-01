@@ -44,7 +44,7 @@ def _t(s):
     return geosoft.gxpy.system.translate(s)
 
 
-class GridException(Exception):
+class GridException(geosoft.GXRuntimeError):
     """
     Exceptions from :mod:`geosoft.gxpy.grid`.
 

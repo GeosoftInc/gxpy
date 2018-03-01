@@ -29,7 +29,7 @@ def _t(s):
     return geosoft.gxpy.system.translate(s)
 
 
-class SpatialException(Exception):
+class SpatialException(geosoft.GXRuntimeError):
     """
     Exceptions from `geosoft.gxpy.spatial_data`.
     """

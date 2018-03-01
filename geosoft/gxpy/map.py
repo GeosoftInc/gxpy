@@ -44,7 +44,7 @@ def _t(s):
     return s
 
 
-class MapException(Exception):
+class MapException(geosoft.GXRuntimeError):
     """
     Exceptions from :mod:`geosoft.gxpy.map`.
 

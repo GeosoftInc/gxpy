@@ -26,7 +26,7 @@ __version__ = geosoft.__version__
 def _t(s):
     return geosoft.gxpy.system.translate(s)
 
-class DfException(Exception):
+class DfException(geosoft.GXRuntimeError):
     """
     Exceptions from :mod:`geosoft.gxpy.dataframe`.
 

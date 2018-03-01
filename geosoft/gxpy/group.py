@@ -60,7 +60,7 @@ def _t(s):
 MAX_TRANSPARENT = 4
 
 
-class GroupException(Exception):
+class GroupException(geosoft.GXRuntimeError):
     """
     Exceptions from :mod:`geosoft.gxpy.group`.
 

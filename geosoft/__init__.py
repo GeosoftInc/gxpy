@@ -12,7 +12,16 @@ version = __version__
 
 __all__ = ['gxapi', 'gxpy']
 
-# docstring overrides for C++ classes inside gxapi module
+class GXRuntimeError(RuntimeError):
+    """
+    A subclass of `RuntimeError <https://docs.python.org/3/library/exceptions.html#RuntimeError>`_ which is the base class
+    for any runtime type error originating from the Geosoft Python APIS
+
+    .. versionadded:: 9.1
+    """
+
+    def __init__(self, message):
+        super(RuntimeError, self).__init__(message)
 
 import geosoft.gxapi as gxapi
 

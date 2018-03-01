@@ -52,7 +52,7 @@ def first_coordinate_system(geo_objects):
     return None
 
 
-class GeometryException(Exception):
+class GeometryException(geosoft.GXRuntimeError):
     """
     Exceptions from :mod:`geosoft.gxpy.geometry`.
     """
