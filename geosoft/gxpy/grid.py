@@ -1373,6 +1373,19 @@ class Grid(gxgm.Geometry):
 
         return imagefile
 
+
+    def generate_color_map(self, method=gxapi.ITR_ZONE_DEFAULT):
+        """
+        Generate color map for grid based on statistics and method
+
+        :param      method:  :ref:`ITR_ZONE`
+        :return:    A `geosoft.gxpy.group.Color_map` instance.
+
+        .. versionadded:: 9.4.0
+        """
+        itr = gxapi.GXITR.create_img(self._img, "", method, gxapi.rDUMMY)
+        return geosoft.gxpy.group.Color_map(itr)
+
     def get_default_color_map(self):
         """
         Get default color map for grid
@@ -1383,7 +1396,7 @@ class Grid(gxgm.Geometry):
         """
         itr = gxapi.GXITR.create()
         if 1 == self._img.get_def_itr(itr):
-            itr = gxapi.GXITR.create_img(self._img, "", gxapi.ITR_ZONE_DEFAULT, gxapi.rDUMMY)
+            return self.generate_color_map()
 
         return geosoft.gxpy.group.Color_map(itr)
 
