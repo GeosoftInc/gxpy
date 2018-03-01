@@ -212,7 +212,7 @@ def derivative(grid, derivative_type, file_name=None, overwrite=False, dtype=Non
     return gxgrd.reopen(dxy, dtype=return_dtype)
 
 
-def tilt_depth(grid, resolution=None, return_as=RETURN_PPOINT, gdb=None):
+def tilt_depth(grid, resolution=None, return_as=RETURN_PPOINT, gdb=None, overwrite=False, report=None):
     """
     Given an RTP TMI grid, or the vertical derivative of the gravity anomaly, calculate
     contact source depths using the tilt-depth method as suggested by Rick Blakely.
@@ -231,6 +231,8 @@ def tilt_depth(grid, resolution=None, return_as=RETURN_PPOINT, gdb=None):
 
     :param gdb:         return database name, or a `geosoft.gxpy.gdv.Geosoft_database` instance. If not
                         specified and `return_as=RETURN_GDB`, a temporary database is created.
+    :param overwrite:   True to overwrite existing gdb.
+    :param report:      reporting function called to report progress. `report=print` to print to console.
     :return:            depends on `return_as` setting
 
     .. versionadded:: 9.4
@@ -239,14 +241,28 @@ def tilt_depth(grid, resolution=None, return_as=RETURN_PPOINT, gdb=None):
     if gdb is not None:
         return_as = RETURN_GDB
 
+    if report:
+        report('Calculate tilt derivative...')
+
     td = derivative(grid, DERIVATIVE_TILT)
-    gdb = contour_points(td, 0., resolution=resolution, return_as=RETURN_GDB)
+    if report:
+        report('Find zero contour...')
+
+    gdb = contour_points(td, 0., resolution=resolution, return_as=RETURN_GDB, gdb=gdb, overwrite=overwrite)
+    if report:
+        report('Calculate X-Y gradient of the tilt-derivative...')
     tdd = derivative(td, DERIVATIVE_XY)
+
+    # get gradient of the TD at the zero locations
+    if report:
+        report('Calculate depth = recirocal(x-y gradient) at zero contour...')
+
     for ln in gdb.list_lines():
         xyz, chlist, fid = gdb.read_line(ln, channels=('X', 'Y', 'Z'))
         zero_tdd = sample(tdd, xyz)
-        zero_tdd[zero_tdd <= 0.] = np.nan
-        xyz[:, 2] = np.reciprocal(zero_tdd)
+        zero_tdd[zero_tdd == 0.] = np.nan
+        np.reciprocal(zero_tdd, out=zero_tdd)
+        xyz[:, 2] = zero_tdd
         gdb.write_line(ln, xyz, chlist, fid)
 
     if return_as == RETURN_GDB:
@@ -456,7 +472,8 @@ def grid_bool(g1, g2, joined_grid, opt=1, size=3, olap=1):
     return gxgrd.Grid.open(joined_grid)
 
 
-def contour_points(grid, value, max_segments=1000, resolution=None, return_as=RETURN_LIST_OF_PPOINT, gdb=None):
+def contour_points(grid, value, max_segments=1000, resolution=None,
+                   return_as=RETURN_LIST_OF_PPOINT, gdb=None, overwrite=False):
     """
     Return a set of point segments that represent the spatial locations of contours threaded through the grid.
 
@@ -500,7 +517,7 @@ def contour_points(grid, value, max_segments=1000, resolution=None, return_as=RE
         temp_grid = None
 
     # create a contour group for this value, export to a shape file
-    with gxmap.Map.new(data_area=extent.extent_xy) as gmap:
+    with gxmap.Map.new(data_area=extent.extent_xy, overwrite=True) as gmap:
         map_file = gmap.file_name
         with gxv.View.open(gmap, "data") as v:
             gxgrp.contour(v, '_', grid, parameters=(',0,0', '', '', '', '', '1',
@@ -512,14 +529,15 @@ def contour_points(grid, value, max_segments=1000, resolution=None, return_as=RE
                                       gxapi.MAP_EXPORT_FORMAT_SHP, '')
         shp_file = shp_file[:-4] + '_lnz.shp'
 
-    if gdb is not None:
-        return_as = RETURN_GDB
-    if not isinstance(gdb, gxgdb.Geosoft_gdb):
-        gdb = gxgdb.Geosoft_gdb.new(name=gdb, max_lines=max_segments, max_channels=10)
-
-    # import shape to database
     if not os.path.exists(shp_file):
         raise GridUtilityException(_t('The grid data does not intersect value {}').format(value))
+
+    if gdb is not None:
+        return_as = RETURN_GDB
+
+    # import shape to database
+    if not isinstance(gdb, gxgdb.Geosoft_gdb):
+        gdb = gxgdb.Geosoft_gdb.new(name=gdb, max_lines=max_segments, max_channels=10, overwrite=overwrite)
     gis = gxapi.GXGIS.create(shp_file, '', gxapi.GIS_TYPE_ARCVIEW)
     gis.load_shapes_gdb(gdb.gxdb)
     gdb.coordinate_system = extent.coordinate_system
@@ -533,15 +551,16 @@ def contour_points(grid, value, max_segments=1000, resolution=None, return_as=RE
     if resolution > 0.:
         for ln in gdb.list_lines():
             xyz, chlist, _ = gdb.read_line(ln, channels=('X', 'Y', 'Z'))
-            gdb.write_line(ln, gxgeou.resample(xyz, resolution), chlist)
+            xyz = gxgeou.resample(xyz, resolution)
+            gdb.write_line(ln, xyz, chlist)
 
     if return_as == RETURN_GDB:
         return gdb
 
     # make points from segments
     pplist = []
-    for l in gdb.lines():
-        xyz = gdb.read_line(l, channels=('X', 'Y', 'Z'))[0]
+    for ln in gdb.list_lines():
+        xyz = gdb.read_line(ln, channels=('X', 'Y', 'Z'))[0]
         xyz[:, 2] = 0.
         if resolution > 0.:
             xyz = gxgeou.resample(xyz, resolution)
