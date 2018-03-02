@@ -503,7 +503,7 @@ class Grid(gxgm.Geometry):
         return gxu.dummy_none(self.gximg.get_z(x, y))
 
     @classmethod
-    def copy(cls, grd, file_name=None, dtype=None, overwrite=False, mode=gxapi.IMG_FILE_READORWRITE):
+    def copy(cls, grd, file_name=None, dtype=None, overwrite=False, in_memory=False, mode=gxapi.IMG_FILE_READORWRITE):
         """
         Create a new Grid instance as a copy of an existing grid.
 
@@ -525,7 +525,7 @@ class Grid(gxgm.Geometry):
         p = grd.properties()
         p['dtype'] = dtype
 
-        if file_name is not None:
+        if not in_memory and file_name is not None:
             path0, base_file0, root0, ext0, dec0 = name_parts(grd.file_name_decorated)
             path1, base_file1, root1, ext1, dec1 = name_parts(file_name)
             if not ext1:
@@ -534,15 +534,18 @@ class Grid(gxgm.Geometry):
                 dec1 = dec0
             file_name = decorate_name(os.path.join(path1, root1) + ext1, dec1)
 
-        copy = Grid.new(file_name, p, overwrite=overwrite)
+        copy = Grid.new(file_name, p, overwrite=overwrite, in_memory=in_memory)
         if file_name is None:
             file_name = copy.file_name_decorated
         grd.gximg.copy(copy.gximg)
-        copy.close()
 
         if close_grid:
             grd.close()
 
+        if in_memory:
+            return copy
+
+        copy.close()
         return Grid.open(file_name, dtype=dtype, mode=mode)
 
     @classmethod
