@@ -61,7 +61,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         :type  type:  int
         :type  ipj:   GXIPJ
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -90,7 +90,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         :type  rev_z:        bool
         :type  dummies:      bool
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -121,7 +121,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         :type  swap:         bool
         :type  output_type:  int
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -140,7 +140,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         :type  grid3d_file:  str
         :type  xml_file:     str
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -159,7 +159,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         :type  grid3d_file:         str
         :type  legacy_grid3d_file:  str
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -184,7 +184,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         :type  dummy:  float
         :type  ipj:    GXIPJ
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -208,7 +208,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         :type  ipj:          GXIPJ
         :type  orientation:  int
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -227,7 +227,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         :type  header:  str
         :type  lst:     GXLST
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -248,7 +248,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         :type  db:           GXDB
         :type  symb:         int
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -279,7 +279,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         :type  inc:          float
         :type  dec:          float
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -302,7 +302,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         :type  output_segy_filename:  str
         :type  sample_interval:       float
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -333,7 +333,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         :type  rev_z:        bool
         :type  dummies:      bool
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -362,7 +362,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         :type  rev_z:      bool
         :type  dummy:      str
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -391,7 +391,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         :type  declination:    float
         :type  rotated:        bool
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -416,7 +416,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         :type  z_file_name:  str
         :type  rotated:      bool
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -616,7 +616,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         :type  size_z:  int
         :type  ipj:     GXIPJ
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -655,7 +655,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         :type  size_z:  int
         :type  ipj:     GXIPJ
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -698,7 +698,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         :type  size_z:   int
         :type  ipj:      GXIPJ
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -731,7 +731,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         :type  cz:     GXVV
         :type  ipj:    GXIPJ
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -764,7 +764,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         :type  cz:     GXVV
         :type  ipj:    GXIPJ
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -801,7 +801,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         :type  cz:       GXVV
         :type  ipj:      GXIPJ
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -824,7 +824,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         :type  multi_voxset_attribute:  str
         :type  grid3d_file:             str
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -847,7 +847,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         :type  multi_voxset_attribute:  str
         :type  p_uuid_string:           str_ref
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -870,7 +870,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         :type  ipj:     GXIPJ
         :type  grid3d:  str
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -902,7 +902,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         :returns:      Default Cell Size
         :rtype:        float
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -931,7 +931,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         :type  n_passes:             int
         :type  interpolate_dummies:  int
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -941,24 +941,30 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
 
     @classmethod
-    def generate_rbf(cls, db, output_file, data_channel, cel_size):
+    def generate_rbf(cls, db, output_file, data_channel, cel_size, error_tolerance, max_iterations, desample):
         """
         Creates a VOXEL from an database using RBF.
         
-        :param db:            Handle to a database
-        :param output_file:   Name of the output grid3d
-        :param data_channel:  Channel to grid`
-        :param cel_size:      Cell size
-        :type  db:            GXDB
-        :type  output_file:   str
-        :type  data_channel:  str
-        :type  cel_size:      float
+        :param db:               Handle to a database
+        :param output_file:      Name of the output grid3d
+        :param data_channel:     Channel to grid`
+        :param cel_size:         Cell size
+        :param error_tolerance:  Error Tolerance
+        :param max_iterations:   Maximum number of iterations (>0)
+        :param desample:         Desample data (1) or use as is (0)
+        :type  db:               GXDB
+        :type  output_file:      str
+        :type  data_channel:     str
+        :type  cel_size:         float
+        :type  error_tolerance:  float
+        :type  max_iterations:   int
+        :type  desample:         int
 
         .. versionadded:: 9.4
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._generate_rbf(GXContext._get_tls_geo(), db, output_file.encode(), data_channel.encode(), cel_size)
+        gxapi_cy.WrapMULTIGRID3DUTIL._generate_rbf(GXContext._get_tls_geo(), db, output_file.encode(), data_channel.encode(), cel_size, error_tolerance, max_iterations, desample)
         
 
 
@@ -1001,7 +1007,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         :type  z_channel:               int
         :type  data_channel:            int
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 

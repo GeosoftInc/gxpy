@@ -834,7 +834,7 @@ class GXIMU(gxapi_cy.WrapIMU):
     @classmethod
     def grid_shad(cls, in_grid, sh_grid, inc, dec, scl):
         """
-        Create a shadded relief image.
+        Create a shaded relief image.
         
         :param in_grid:  Input image name
         :param sh_grid:  Output new shaded image
@@ -849,12 +849,40 @@ class GXIMU(gxapi_cy.WrapIMU):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Pass `GS_R8DM <geosoft.gxapi.GS_R8DM>` as parameters to obtain default values.
         The default values are returned.
         """
         inc.value, dec.value, scl.value = gxapi_cy.WrapIMU._grid_shad(GXContext._get_tls_geo(), in_grid.encode(), sh_grid.encode(), inc.value, dec.value, scl.value)
+        
+
+
+
+    @classmethod
+    def refresh_shad(cls, in_img, sh_img, inc, dec, scl):
+        """
+        Refresh a shaded relief image
+        
+        :param in_img:  Input grid object
+        :param sh_img:  Output shaded grid object
+        :param inc:     Inclination 0-90 degrees (def. 45)
+        :param dec:     Declination 0-360 degrees azimuth (def. 45)
+        :param scl:     Vertical scale factor (distance/z unit)
+        :type  in_img:  GXIMG
+        :type  sh_img:  GXIMG
+        :type  inc:     float_ref
+        :type  dec:     float_ref
+        :type  scl:     float_ref
+
+        .. versionadded:: 9.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Pass `GS_R8DM <geosoft.gxapi.GS_R8DM>` as parameters to obtain default values.
+        The default values are returned.
+        """
+        inc.value, dec.value, scl.value = gxapi_cy.WrapIMU._refresh_shad(GXContext._get_tls_geo(), in_img, sh_img, inc.value, dec.value, scl.value)
         
 
 

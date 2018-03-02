@@ -731,7 +731,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
         :type  rev_z:        bool
         :type  dummies:      bool
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -760,7 +760,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
         :type  swap:         bool
         :type  output_type:  int
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -777,7 +777,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
         :param xml_file:     XML file
         :type  xml_file:     str
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -804,7 +804,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
         :type  rev_z:        bool
         :type  dummy:        str
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -833,7 +833,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
         :type  rev_z:        bool
         :type  dummies:      bool
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.4
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
