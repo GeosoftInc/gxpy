@@ -560,7 +560,12 @@ class Point2(Geometry, Sequence):
             name = '_point2_'
         super().__init__(coordinate_system=coordinate_system, name=name, **kwargs)
 
-        if isinstance(p, Point2):
+        if isinstance(p, Point):
+            if coordinate_system is None:
+                coordinate_system = p.coordinate_system
+            self.p0 = self.p1 = Point(p, coordinate_system=coordinate_system)
+
+        elif isinstance(p, Point2):
             if coordinate_system is None:
                 coordinate_system = p.coordinate_system
             self.p0 = Point(p.p0, coordinate_system=coordinate_system)
