@@ -517,7 +517,7 @@ class Grid(gxgm.Geometry):
         """
 
         if not isinstance(grd, Grid):
-            grd = Grid.open(grd, mode=FILE_READ)
+            grd = cls.open(grd, mode=FILE_READ)
             close_grid = True
         else:
             close_grid = False
@@ -535,7 +535,7 @@ class Grid(gxgm.Geometry):
                 dec1 = dec0
             file_name = decorate_name(os.path.join(path1, root1) + ext1, dec1)
 
-        copy = Grid.new(file_name, p, overwrite=overwrite, in_memory=in_memory)
+        copy = cls.new(file_name, p, overwrite=overwrite, in_memory=in_memory)
         if file_name is None:
             file_name = copy.file_name_decorated
         grd.gximg.copy(copy.gximg)
@@ -547,7 +547,7 @@ class Grid(gxgm.Geometry):
             return copy
 
         copy.close()
-        return Grid.open(file_name, dtype=dtype, mode=mode)
+        return cls.open(file_name, dtype=dtype, mode=mode)
 
     @classmethod
     def index_window(cls, grd, name=None, x0=0, y0=0, nx=None, ny=None, overwrite=False):
@@ -1366,7 +1366,7 @@ class Grid(gxgm.Geometry):
 
         temp_grid = gx.gx().temp_file('grd')
         try:
-            with Grid.copy(self, temp_grid) as g:
+            with self.__class__.copy(self, temp_grid) as g:
                 temp_decorated = g.file_name_decorated
             imagefile = image_file(temp_decorated,
                                    image_file=image_file_name,
