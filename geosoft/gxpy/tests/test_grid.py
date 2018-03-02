@@ -24,8 +24,7 @@ class Test(GXPYTest):
         cls.g1f = os.path.join(cls.folder, 'test_grid_1.grd')
         cls.g2f = os.path.join(cls.folder, 'test_grid_2.grd')
         cls.gcf = os.path.join(cls.folder, 'test_bool1_color.grd')
-        cls.mag = os.path.join(cls.folder, 'bhn_tmi_250m.grd')
-        cls.gmag = os.path.join(cls.folder, 'mag.grd')
+        cls.mag = os.path.join(cls.folder, 'tmi_200.grd')
 
     def test_grc(self):
         self.start()
