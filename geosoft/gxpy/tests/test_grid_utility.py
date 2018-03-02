@@ -22,7 +22,7 @@ class Test(GXPYTest):
         cls.g1f = os.path.join(cls.folder, 'test_grid_1.grd')
         cls.g2f = os.path.join(cls.folder, 'test_grid_2.grd')
         cls.gcf = os.path.join(cls.folder, 'test_bool1_color.grd')
-        cls.mag = os.path.join(cls.folder, 'tmi_200.grd')
+        cls.mag = os.path.join(cls.folder, 'mag.grd')
 
     def test_grc(self):
         self.start()
@@ -111,63 +111,64 @@ class Test(GXPYTest):
         with gxgrd.Grid.open(self.mag) as grd:
             dtg = gxgrdu.remove_trend(grd, method=gxgrdu.TREND_ALL)
             stt = dtg.statistics()
-            self.assertAlmostEqual(stt['mean'], -0.29843172009362817)
+            self.assertAlmostEqual(stt['mean'], 0.3517859789498061 )
 
         dtg = gxgrdu.remove_trend(self.mag, method=gxgrdu.TREND_EDGE)
         stt = dtg.statistics()
-        self.assertAlmostEqual(stt['mean'], 31.095433258780773)
+        self.assertAlmostEqual(stt['mean'], 38.13803714657877)
 
     def test_derivatives(self):
         self.start()
 
-        with gxgrd.Grid.open(self.mag, dtype=np.float32) as grd:
-            dxg = gxgrdu.derivative(grd, gxgrdu.DERIVATIVE_X)
-            self.assertAlmostEqual(dxg.statistics()['sd'], 35.28451368439228)
-            self.assertEqual(dxg.dtype, np.float32)
-
-        with gxgrd.Grid.open(self.mag) as grd:
-            dyg = gxgrdu.derivative(grd, gxgrdu.DERIVATIVE_Y)
-            self.assertAlmostEqual(dyg.statistics()['sd'], 29.29908705245395)
-
-        with gxgrd.Grid.open(self.mag) as grd:
-            dzg = gxgrdu.derivative(grd, gxgrdu.DERIVATIVE_Z)
-            self.assertAlmostEqual(dzg.statistics()['sd'], 0.24078123415985983)
-
         with gxgrd.Grid.open(self.mag) as grd:
             dxy = gxgrdu.derivative(grd, gxgrdu.DERIVATIVE_XY)
-            self.assertAlmostEqual(dxy.statistics()['sd'], 37.56017346806307)
+            self.assertAlmostEqual(dxy.statistics()['sd'], 36.205514622381834)
 
         with gxgrd.Grid.open(self.mag) as grd:
             das = gxgrdu.derivative(grd, gxgrdu.DERIVATIVE_XYZ)
-            self.assertAlmostEqual(das.statistics()['sd'], 37.56036028735547)
+            self.assertAlmostEqual(das.statistics()['sd'], 36.207880638351966)
 
         with gxgrd.Grid.open(self.mag) as grd:
             dtd = gxgrdu.derivative(grd, gxgrdu.DERIVATIVE_TILT)
-            self.assertAlmostEqual(dtd.statistics()['sd'], 0.02159462357900958)
+            self.assertAlmostEqual(dtd.statistics()['sd'], 0.07517988845614242)
 
         with gxgrd.Grid.open(self.mag, dtype=np.float64) as grd:
             dxg = gxgrdu.derivative(grd, gxgrdu.DERIVATIVE_X)
-            self.assertAlmostEqual(dxg.statistics()['sd'], 35.28451368439228)
+            self.assertAlmostEqual(dxg.statistics()['sd'], 38.34218419585821)
             self.assertEqual(dxg.dtype, np.float64)
 
         with gxgrd.Grid.open(self.mag, dtype=np.float64) as grd:
             dzg = gxgrdu.derivative(grd, gxgrdu.DERIVATIVE_Z)
-            self.assertAlmostEqual(dzg.statistics()['sd'], 0.24048387767511054)
+            self.assertAlmostEqual(dzg.statistics()['sd'], 0.9377582582050702)
             self.assertEqual(dzg.dtype, np.float64)
 
         dzg = gxgrdu.derivative(self.mag, gxgrdu.DERIVATIVE_Z)
-        self.assertAlmostEqual(dzg.statistics()['sd'], 0.24048387767511054)
+        self.assertAlmostEqual(dzg.statistics()['sd'], 0.9377582582050702)
 
         dxg = gxgrdu.derivative(self.mag, gxgrdu.DERIVATIVE_X)
-        self.assertAlmostEqual(dxg.statistics()['sd'], 35.28451368439228)
+        self.assertAlmostEqual(dxg.statistics()['sd'], 38.34218419585821)
+
+        with gxgrd.Grid.open(self.mag, dtype=np.float32) as grd:
+            dxg = gxgrdu.derivative(grd, gxgrdu.DERIVATIVE_X)
+            self.assertAlmostEqual(dxg.statistics()['sd'], 38.34218419585821)
+            self.assertEqual(dxg.dtype, np.float32)
+
+        with gxgrd.Grid.open(self.mag) as grd:
+            dyg = gxgrdu.derivative(grd, gxgrdu.DERIVATIVE_Y)
+            self.assertAlmostEqual(dyg.statistics()['sd'], 21.933496502392984)
+
+        with gxgrd.Grid.open(self.mag) as grd:
+            dzg = gxgrdu.derivative(grd, gxgrdu.DERIVATIVE_Z)
+            self.assertAlmostEqual(dzg.statistics()['sd'], 0.9409708788987557)
 
     def test_contour_xy(self):
         self.start()
 
-        xyp = gxgrdu.contour_points(self.mag, 100)
-        self.assertTrue(isinstance(xyp, list))
-        self.assertTrue(isinstance(xyp[0], gxgeo.PPoint))
-        self.assertEqual(xyp[0][0].z, 0.0)
+        with gxgrd.Grid.open(self.mag) as grd:
+            xyp = gxgrdu.contour_points(self.mag, grd.statistics()['mean'])
+            self.assertTrue(isinstance(xyp, list))
+            self.assertTrue(isinstance(xyp[0], gxgeo.PPoint))
+            self.assertEqual(xyp[0][0].z, 0.0)
 
         # oriented grid
         with gxgrd.Grid.open(self.g1f) as g:
@@ -200,13 +201,13 @@ class Test(GXPYTest):
         for ln in td.list_lines():
             d = td.read_line(ln, 'X')
             n += len(d[0])
-        self.assertEqual(n, 1454)
+        self.assertEqual(n, 404)
         td.close(discard=True)
 
         td = gxgrdu.tilt_depth(self.mag, resolution=1000)
         self.assertTrue(isinstance(td, gxgeo.PPoint))
         self.assertTrue(td.coordinate_system == 'AGD66 / AMG zone 53')
-        self.assertEqual(len(td), 1250)
+        self.assertEqual(len(td), 404)
 
         td = gxgrdu.tilt_depth(self.mag, resolution=1000, return_as=gxgrdu.RETURN_LIST_OF_PPOINT)
         self.assertTrue(isinstance(td, list))
@@ -215,7 +216,7 @@ class Test(GXPYTest):
         n = 0
         for p in td:
             n += len(p)
-        self.assertEqual(n, 1250)
+        self.assertEqual(n, 404)
 
         td = gxgrdu.tilt_depth(self.mag, resolution=1000, return_as=gxgrdu.RETURN_GDB)
         self.assertTrue(isinstance(td, gxgdb.Geosoft_gdb))
@@ -224,7 +225,7 @@ class Test(GXPYTest):
         for ln in td.list_lines():
             d = td.read_line(ln, 'X')
             n += len(d[0])
-        self.assertEqual(n, 1250)
+        self.assertEqual(n, 404)
 
 ###############################################################################################
 

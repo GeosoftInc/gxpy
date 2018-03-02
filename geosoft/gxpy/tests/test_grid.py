@@ -24,7 +24,7 @@ class Test(GXPYTest):
         cls.g1f = os.path.join(cls.folder, 'test_grid_1.grd')
         cls.g2f = os.path.join(cls.folder, 'test_grid_2.grd')
         cls.gcf = os.path.join(cls.folder, 'test_bool1_color.grd')
-        cls.mag = os.path.join(cls.folder, 'tmi_200.grd')
+        cls.mag = os.path.join(cls.folder, 'mag.grd')
 
     def test_grc(self):
         self.start()
@@ -752,7 +752,7 @@ class Test(GXPYTest):
     def test_default_color_map_none_set(self):
         self.start()
 
-        with gxgrd.Grid.open(self.gmag) as g1:
+        with gxgrd.Grid.open(self.mag) as g1:
             cm = g1.get_default_color_map()
             self.assertEqual(gxa.ITR_ZONE_EQUALAREA, cm.model_type)
             self.assertEqual(39, cm.length)
@@ -764,6 +764,7 @@ class Test(GXPYTest):
             limits = cm.data_limits
             self.assertAlmostEqual(3796.711425781, limits[0])
             self.assertAlmostEqual(6295.0, limits[1])
+
 ###############################################################################################
 
 if __name__ == '__main__':

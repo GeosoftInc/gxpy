@@ -537,7 +537,14 @@ def contour_points(grid, value, max_segments=1000, resolution=None,
 
     # import shape to database
     if not isinstance(gdb, gxgdb.Geosoft_gdb):
+
+        # TODO: remove once resolved: https://github.com/GeosoftInc/gxapi/issues/19
+        if gdb is None:
+            gdb = os.path.join(gx.gx().temp_folder(), '_.gdb')
+            overwrite=True
+
         gdb = gxgdb.Geosoft_gdb.new(name=gdb, max_lines=max_segments, max_channels=10, overwrite=overwrite)
+
     gis = gxapi.GXGIS.create(shp_file, '', gxapi.GIS_TYPE_ARCVIEW)
     gis.load_shapes_gdb(gdb.gxdb)
     gdb.coordinate_system = extent.coordinate_system
