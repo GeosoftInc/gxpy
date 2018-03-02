@@ -523,7 +523,8 @@ class Grid(gxgm.Geometry):
             close_grid = False
 
         p = grd.properties()
-        p['dtype'] = dtype
+        if dtype is not None:
+            p['dtype'] = dtype
 
         if not in_memory and file_name is not None:
             path0, base_file0, root0, ext0, dec0 = name_parts(grd.file_name_decorated)
