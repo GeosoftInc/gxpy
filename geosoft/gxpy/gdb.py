@@ -393,7 +393,7 @@ class Geosoft_gdb(gxgeo.Geometry):
         """
         max_lines = max(10, max_lines)
         max_channels = max(25, max_channels)
-        min_blobs = max_channels * max_lines + 20
+        min_blobs = max_channels + max_lines + 20
         max_blobs = max(min_blobs, max_blobs)
         if not comp:
             comp = COMP_SPEED
