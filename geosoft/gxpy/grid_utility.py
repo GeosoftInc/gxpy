@@ -107,14 +107,14 @@ def derivative(grid, derivative_type, file_name=None, overwrite=False, dtype=Non
         DERIVATIVE_X               in the grid X direction
         DERIVATIVE_Y               in the grid Y direction
         DERIVATIVE_Z               in the grid Z direction
-        DERIVATIVE_XYZ analytic signal, or the total derivative sqrt(dx**2 + dy**2 + dz**2)
+        DERIVATIVE_XYZ             the total derivative sqrt(dx**2 + dy**2 + dz**2) (analytic signal)
         DERIVATIVE_TILT            tilt derivative, atan2(dz, sqrt(dx**2, dy**2))
         ========================== ====================================================================
     
     :param file_name:   returned derivative file name, None for a temporary file
     :param overwrite:   True to overwrite existing file
     :param dtype:       dtype for the return grid, default is the same as the passed grid.
-    :return:            `Grid` instance that contains the derivative result
+    :return:            `geosoft.gxpy.grid.Grid` instance that contains the derivative result
 
     .. versionadded 9.4
     """
@@ -220,7 +220,7 @@ def tilt_depth(grid, resolution=None, return_as=RETURN_PPOINT, gdb=None, overwri
     tilt-derivative at the zero-contour of the tilt derivative.
 
     :param grid:        `geosoft.gxpy.grid.Grid` instance or a grid file name. Ideally the grid should be RTP.
-    :param resolution:  zero-contour sampling resolution, defaults to the grid cell size.
+    :param resolution:  zero-contour sampling resolution, defaults to 4 times the grid cell size.
     :param return_as:   return results as:
 
         ===================== ====================================================================
@@ -248,6 +248,8 @@ def tilt_depth(grid, resolution=None, return_as=RETURN_PPOINT, gdb=None, overwri
     if report:
         report('Find zero contour...')
 
+    if resolution is None:
+        resolution = min(td.dx, td.dy) * 4.
     gdb = contour_points(td, 0., resolution=resolution, return_as=RETURN_GDB, gdb=gdb, overwrite=overwrite)
     if report:
         report('Calculate X-Y gradient of the tilt-derivative...')
@@ -315,7 +317,7 @@ def grid_mosaic(mosaic, grid_list, type_decorate='', report=None):
     :param grid_list:       list of input grid names
     :param type_decorate:   decoration for input grids if not default
     :param report:          string reporting function, report=print to print progress
-    :returns:               'geosoft.gxpy.grid.Grid` instance
+    :returns:               `geosoft.gxpy.grid.Grid` instance
 
     .. versionadded:: 9.4
     """
@@ -477,15 +479,15 @@ def contour_points(grid, value, max_segments=1000, resolution=None,
     """
     Return a set of point segments that represent the spatial locations of contours threaded through the grid.
 
-    Contours through oriented grids will be oriented in 3D. Grids that are not oriented will have a z value
+    Contours through 3D oriented grids will be oriented in 3D. Grids that are not 3D oriented will have a z value
     0.0.
 
     :param grid:            grid file of `geosoft.gxpy.grid.Grid` instance
     :param value:           contour value
     :param max_segments:    maximum expected number of segments, raises error if there are more actual segments.
-    :param resolution:      the separation between points along the contours. If not specified the minimum grid
-                            cell size is used.  For `resolution=0`, the points are as returned by the contouring
-                            algorithm.
+    :param resolution:      the separation between points along the contours. If not specified the minimum
+                            grid cell size is used.  Set `resolution=0`, for use the locations as returned by the
+                            contouring algorithm.
     :param return_as:       return results as:
 
         ===================== ====================================================================
@@ -537,12 +539,6 @@ def contour_points(grid, value, max_segments=1000, resolution=None,
 
     # import shape to database
     if not isinstance(gdb, gxgdb.Geosoft_gdb):
-
-        # TODO: remove once resolved: https://github.com/GeosoftInc/gxapi/issues/19
-        if gdb is None:
-            gdb = os.path.join(gx.gx().temp_folder(), '_.gdb')
-            overwrite=True
-
         gdb = gxgdb.Geosoft_gdb.new(name=gdb, max_lines=max_segments, max_channels=10, overwrite=overwrite)
 
     gis = gxapi.GXGIS.create(shp_file, '', gxapi.GIS_TYPE_ARCVIEW)

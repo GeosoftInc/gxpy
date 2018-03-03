@@ -194,6 +194,15 @@ class Test(GXPYTest):
     def test_tilt_depth(self):
         self.start()
 
+        td = gxgrdu.tilt_depth(self.mag, return_as=gxgrdu.RETURN_GDB)
+        self.assertTrue(isinstance(td, gxgdb.Geosoft_gdb))
+        self.assertTrue(td.coordinate_system == 'AGD66 / AMG zone 53')
+        n = 0
+        for ln in td.list_lines():
+            d = td.read_line(ln, 'X')
+            n += len(d[0])
+        self.assertEqual(n, 1683)
+
         td = gxgrdu.tilt_depth(self.mag, resolution=1000, gdb='temp.gdb', overwrite=True)
         self.assertTrue(isinstance(td, gxgdb.Geosoft_gdb))
         self.assertTrue(td.coordinate_system == 'AGD66 / AMG zone 53')
@@ -216,15 +225,6 @@ class Test(GXPYTest):
         n = 0
         for p in td:
             n += len(p)
-        self.assertEqual(n, 404)
-
-        td = gxgrdu.tilt_depth(self.mag, resolution=1000, return_as=gxgrdu.RETURN_GDB)
-        self.assertTrue(isinstance(td, gxgdb.Geosoft_gdb))
-        self.assertTrue(td.coordinate_system == 'AGD66 / AMG zone 53')
-        n = 0
-        for ln in td.list_lines():
-            d = td.read_line(ln, 'X')
-            n += len(d[0])
         self.assertEqual(n, 404)
 
 ###############################################################################################
