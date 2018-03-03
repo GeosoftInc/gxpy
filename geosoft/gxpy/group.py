@@ -2355,8 +2355,9 @@ class Color_symbols_group(Group):
 
         :param view:            the view in which to place the group
         :param name:            group name
-        :param data:            iterable that yields `((x, y), data)`, or `((x, y, z), data, ...)`.  Only the
-                                first `data` value is used.
+        :param data:            2d numpy data array [[x, y, value], ...] or an iterable that yields
+                                `((x, y), value)`, or `((x, y, z), value, ...)`.  Only the  first `value` is used,
+                                an in the case of an iterable that yields (x, y, z) the z is ignored.
         :param color_map:       symbol fill color :class:`Color_map`.
                                 Symbols are filled with the color lookup using `data`.
         :param symbol_def:      :class:`Text_def` defines the symbol font to use, normally
@@ -2368,6 +2369,8 @@ class Color_symbols_group(Group):
         :return:                :class:`Color_symbols_group` instance
 
         .. versionadded:: 9.2
+
+        .. versionchanged:: 9.4 added support for passing data as a 2d numpy array
         """
 
         def valid(xyd):
@@ -2388,10 +2391,17 @@ class Color_symbols_group(Group):
         cs._gxcsymb.set_scale(symbol_def.height)
         cs._gxcsymb.set_number(symbol)
 
-        xy = gxgm.PPoint([xy[0] for xy in data if valid(xy)])
-        cs._gxcsymb.add_data(gxvv.GXvv(xy.x).gxvv,
-                             gxvv.GXvv(xy.y).gxvv,
-                             gxvv.GXvv([d[1] for d in data if valid(d)]).gxvv)
+        if isinstance(data, np.ndarray):
+            if data.ndim != 2 or data.shape[1] < 3:
+                raise GroupException(_t('data array must have shape (-1, 3)'))
+            cs._gxcsymb.add_data(gxvv.GXvv(data[:, 0]).gxvv,
+                                 gxvv.GXvv(data[:, 1]).gxvv,
+                                 gxvv.GXvv(data[:, 2]).gxvv)
+        else:
+            xy = gxgm.PPoint([xy[0] for xy in data if valid(xy)])
+            cs._gxcsymb.add_data(gxvv.GXvv(xy.x).gxvv,
+                                 gxvv.GXvv(xy.y).gxvv,
+                                 gxvv.GXvv([d[1] for d in data if valid(d)]).gxvv)
         view.gxview.col_symbol(cs.name, cs._gxcsymb)
 
         if cs.unit_of_measure:

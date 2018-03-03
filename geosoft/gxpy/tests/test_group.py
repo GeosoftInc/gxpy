@@ -1064,6 +1064,33 @@ class Test(GXPYTest):
 
         self.crc_map(map_file)
 
+    def test_color_symbols_from_array(self):
+        self.start()
+
+        data = [(0, 0, 1),
+                (10, 0, 2),
+                (0, 10, 3),
+                (10, 10, 4)]
+
+        cmap = gxg.Color_map()
+        cmap.set_linear(0, 5, contour_interval=1)
+
+        with gxmap.Map.new(data_area=(-1, -1, 11, 11), scale=100) as map:
+            map_file = map.file_name
+            with gxv.View.open(map, '*data') as v:
+
+                with gxg.Draw(v) as g:
+                    g.rectangle(g.extent)
+
+                gxg.Color_symbols_group.new(v, 'outer_symbols',
+                                            np.array(data), cmap,
+                                            unit_of_measure='maki').close()
+                cmap = gxg.Color_map()
+                cmap.set_linear(0, 5, contour_interval=1)
+
+        self.crc_map(map_file)
+
+
     def test_color_symbols_3d(self):
         self.start()
 
