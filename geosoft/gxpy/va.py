@@ -100,7 +100,6 @@ class GXva(Sequence):
         self._gxva = gxapi.GXVA.create_ext(self._gxtype, 0, self._width)
         self.fid = fid
         self._start, self._incr = self.fid
-        self._sr = None
         self._next = 0
         self._unit_of_measure = unit_of_measure
 
@@ -308,7 +307,7 @@ class GXva(Sequence):
             raise VAException(_t('Array length {} too long. Maximum is {} for width {}').format(npdata.shape[0], max_length, self._width))
 
         if npdata.dtype == np.float32 or npdata.dtype == np.float64:
-            if np.isnan(np.min(npdata)):
+            if np.isnan(npdata).any():
                 npdata = npdata.copy()
                 npdata[np.isnan(npdata)] = gxu.gx_dummy(npdata.dtype)
 

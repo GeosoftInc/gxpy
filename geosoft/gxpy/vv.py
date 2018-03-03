@@ -200,7 +200,6 @@ class GXvv(Sequence):
             raise VVException(_t('2 or 3 dimensioned data must be float32 or float64'))
         self._gxvv = gxapi.GXVV.create_ext(gxu.gx_dtype_dimension(self._dtype, self._dim), 0)
         self.fid = fid
-        self._sr = None
         self._next = 0
         self._unit_of_measure = unit_of_measure
 
@@ -389,12 +388,11 @@ class GXvv(Sequence):
 
             # strings wanted
             if dtype.type is np.str_:
-                if self._sr is None:
-                    self._sr = gxapi.str_ref()
+                sr = gxapi.str_ref()
                 npd = np.empty((n,), dtype=dtype)
                 for i in range(start, start + n):
-                    self._gxvv.get_string(i, self._sr)
-                    npd[i - start] = self._sr.value
+                    self._gxvv.get_string(i, sr)
+                    npd[i - start] = sr.value
 
             # numeric wanted
             else:
@@ -469,7 +467,7 @@ class GXvv(Sequence):
                     i += 1
             else:
                 if data.dtype == np.float32 or data.dtype == np.float64:
-                    if np.isnan(np.min(data)):
+                    if np.isnan(data).any():
                         data = data.copy()
                         data[np.isnan(data)] = gxu.gx_dummy(data.dtype)
                 self._set_data_np(data)

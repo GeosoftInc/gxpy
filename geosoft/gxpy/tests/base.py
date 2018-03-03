@@ -8,6 +8,9 @@ from tkinter import Tk, messagebox
 import win32con
 import win32gui
 
+import numpy
+numpy.seterr(all='raise')
+
 os.environ['GEOSOFT_FORCE_MESA_3D'] = '1'
 os.environ['GEOSOFT_TEST_MODE'] = '1'
 os.environ['GEOSOFT_TESTSYSTEM_MODE'] = '1'
