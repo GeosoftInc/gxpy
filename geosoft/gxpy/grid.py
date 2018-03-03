@@ -261,37 +261,35 @@ class Grid(gxgm.Geometry):
         if hasattr(self, '_open'):
             if self._open:
 
-                if self._metadata_changed:
-                    with open(self._file_name + '.xml', 'w+') as f:
-                        f.write(gxu.xml_from_dict(self._metadata))
-                    gxapi.GXIMG.sync(self._file_name)
+                self._img = None
 
+                grid_file_name = self._file_name
                 if self._hgd:
-                    temp_grid = self._file_name
-                    flush_to_hgd = True
-                    self._delete_files = False
-                else:
-                    temp_grid = None
-                    flush_to_hgd = False
 
-                if self._delete_files:
-                    self._img = None
-                    delete_files(self._file_name)
+                    flush_hgd(self._file_name)
+                    if self._metadata_changed:
+                        with open(self._file_name + '.xml', 'w+') as f:
+                            f.write(gxu.xml_from_dict(self._metadata))
+                        gxapi.GXIMG.sync(grid_file_name)
+                    delete_files(grid_file_name)
+
+                else:
+
+                    if self._delete_files:
+                        delete_files(self._file_name)
+                    elif self._metadata_changed and self._mode != FILE_READ:
+                        with open(self._file_name + '.xml', 'w+') as f:
+                            f.write(gxu.xml_from_dict(self._metadata))
+                        gxapi.GXIMG.sync(grid_file_name)
 
                 if pop:
                     gx.pop_resource(self._open)
                 self._open = None
-                self._img = None
                 self._buffer_np = None
                 self._buffer_x = None
                 self._buffer_y = None
                 self._cs = None
                 self._gxpg = None
-
-                if flush_to_hgd:
-                   flush_hgd(temp_grid)
-                   delete_files(temp_grid)
-
 
 
     def __repr__(self):
@@ -354,7 +352,6 @@ class Grid(gxgm.Geometry):
             if in_memory:
                 self._img = gxapi.GXIMG.create(gxtype, kx, dim[0], dim[1])
                 # Need to set the kx otherwise it will be 0 and some routines (e.g. IMU stats calc) could cause aborts
-                # TODO Investigate if we can make core code tolerant of this instead (see issue #16)
                 self._img.opt_kx(kx)
             else:    
                 if not overwrite:
@@ -369,6 +366,7 @@ class Grid(gxgm.Geometry):
                 open_mode = gxapi.IMG_FILE_READONLY
                 self._readonly = True
             else:
+                mode = FILE_READWRITE
                 open_mode = gxapi.IMG_FILE_READORWRITE
                 self._readonly = False
 
@@ -383,6 +381,7 @@ class Grid(gxgm.Geometry):
             if dtype is None:
                 dtype = gxu.dtype_gx(self._img.e_type())
 
+        self._mode = mode
         self._next = 0
         self._next_row = 0
         self._next_col = 0
@@ -503,7 +502,7 @@ class Grid(gxgm.Geometry):
         return gxu.dummy_none(self.gximg.get_z(x, y))
 
     @classmethod
-    def copy(cls, grd, file_name=None, dtype=None, overwrite=False, in_memory=False, mode=gxapi.IMG_FILE_READORWRITE):
+    def copy(cls, grd, file_name=None, dtype=None, overwrite=False, in_memory=False, mode=FILE_READWRITE):
         """
         Create a new Grid instance as a copy of an existing grid.
 
@@ -707,9 +706,10 @@ class Grid(gxgm.Geometry):
 
     @unit_of_measure.setter
     def unit_of_measure(self, uom):
+        self.metadata = {'geosoft': {'@xmlns': 'http://www.geosoft.com/schema/geo'}}
         self.metadata = {'geosoft': {'dataset': {'geo:unitofmeasurement': {'#text': str(uom)}}}}
-        self.metadata = {'geosoft': {'dataset':
-                             {'geo:unitofmeasurement':{'@xmlns:geo': 'http://www.geosoft.com/schema/geo'}}}}
+        self.metadata = {
+            'geosoft': {'dataset': {'geo:unitofmeasurement': {'@xmlns:geo': 'http://www.geosoft.com/schema/geo'}}}}
 
     @property
     def dtype(self):
@@ -893,6 +893,8 @@ class Grid(gxgm.Geometry):
         :returns: dictionary of all grid properties
 
         .. versionadded:: 9.1
+
+        .. versionchanged:: 9.4 added 'unit_of_measure'
         """
 
         properties = {'nx': self.nx,
@@ -907,6 +909,7 @@ class Grid(gxgm.Geometry):
                       'file_name': self.file_name,
                       'gridtype': self.gridtype,
                       'decoration': self._decoration,
+                      'unit_of_measure': self.unit_of_measure,
                       'coordinate_system': self.coordinate_system}
 
         return properties
@@ -1002,6 +1005,7 @@ class Grid(gxgm.Geometry):
             'dx'                 grid X point separation (1.0)
             'dy'                 grid Y point separation (1.0)
             'rot'                grid rotation angle in degrees azimuth (0.0)
+            'unit_of_measure'    unit of measure for the grid data
             'coordinate_system'  coordinate system (unchanged)
             ==================== ============================================
 
@@ -1023,6 +1027,11 @@ class Grid(gxgm.Geometry):
                            properties.get('y0', 0.0),
                            -properties.get('rot', 0.0))
         self.rot = self.rot  # calculates cos and sin
+
+        uom = properties.get('unit_of_measure', None)
+        if uom is not None:
+            self.unit_of_measure = uom
+
         cs = properties.get('coordinate_system', None)
         if cs is not None:
             if not isinstance(cs, gxcs.Coordinate_system):

@@ -169,7 +169,6 @@ class Test(GXPYTest):
             m = grd.metadata
             self.assertFalse(bool(m))
 
-            # TODO will abort if kx not set to something else than 0 (see comments about issue #16 in __init__)
             stats = grd.statistics()
             self.assertIsNone(stats['mean'])
 
@@ -764,6 +763,20 @@ class Test(GXPYTest):
             limits = cm.data_limits
             self.assertAlmostEqual(3796.711425781, limits[0])
             self.assertAlmostEqual(6295.0, limits[1])
+
+    def test_uom(self):
+        self.start()
+
+        uom = gxgrd.Grid.open(self.mag).unit_of_measure
+        with gxgrd.Grid.open(self.mag) as g:
+            g.unit_of_measure = 'maki'
+            self.assertEqual(g.unit_of_measure, 'maki')
+        self.assertEqual(gxgrd.Grid.open(self.mag).unit_of_measure, uom)
+
+        with gxgrd.Grid.open(self.mag, mode=gxgrd.FILE_READWRITE) as g:
+            g.unit_of_measure = 'maki'
+            self.assertEqual(g.unit_of_measure, 'maki')
+        self.assertEqual(gxgrd.Grid.open(self.mag).unit_of_measure, 'maki')
 
 ###############################################################################################
 

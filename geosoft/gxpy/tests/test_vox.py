@@ -271,6 +271,20 @@ class Test(GXPYTest):
                 self.assertAlmostEqual(tuple(newvox[25, 25, 25][3])[1], 2.)
                 self.assertAlmostEqual(tuple(newvox[25, 25, 25][3])[2], None)
 
+    def test_uom(self):
+        self.start()
+
+        uom = gxvox.Vox.open(self.vectorvox_file).unit_of_measure
+        with gxvox.Vox.open(self.vectorvox_file) as g:
+            g.unit_of_measure = 'maki'
+            self.assertEqual(g.unit_of_measure, 'maki')
+        self.assertEqual(gxvox.Vox.open(self.vectorvox_file).unit_of_measure, uom)
+
+        with gxvox.Vox.open(self.vectorvox_file, mode=gxvox.MODE_READWRITE) as g:
+            g.unit_of_measure = 'maki'
+            self.assertEqual(g.unit_of_measure, 'maki')
+        self.assertEqual(gxvox.Vox.open(self.vectorvox_file).unit_of_measure, 'maki')
+
 ###############################################################################################
 
 if __name__ == '__main__':
