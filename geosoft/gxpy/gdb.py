@@ -312,7 +312,6 @@ class Geosoft_gdb(gxgeo.Geometry):
         super().__init__(name=name)
 
         self._lst = gxapi.GXLST.create(2000)
-        self._sr = gxapi.str_ref()
         self._file_name = None
         self._db = None
         self._edb = None
@@ -353,8 +352,9 @@ class Geosoft_gdb(gxgeo.Geometry):
             gdb._edb = None
             gdb._db = gxapi.GXDB.open(_gdb_name(name), 'SUPER', '')
 
-        gxapi.GXDB.get_name(gdb._db, gxapi.DB_NAME_FILE, gdb._sr)
-        gdb._file_name = os.path.normpath(gdb._sr.value)
+        sr = gxapi.str_ref()
+        gdb._db.get_name(gxapi.DB_NAME_FILE, sr)
+        gdb._file_name = os.path.normpath(sr.value)
 
         return gdb
 
@@ -413,7 +413,6 @@ class Geosoft_gdb(gxgeo.Geometry):
         if not overwrite and os.path.isfile(name):
             raise GdbException(_t('Cannot overwrite existing database \'{}\''.format(name)))
         gxu.delete_files_by_root(name)
-
         gxapi.GXDB.create_comp(name,
                                max_lines, max_channels, max_blobs, 10, 100,
                                'SUPER', '',
@@ -810,8 +809,9 @@ class Geosoft_gdb(gxgeo.Geometry):
             else:
                 raise GdbException(_t('Line \'{}\' not found'.format(line)))
         else:
-            self._db.get_symb_name(line, self._sr)
-            return self._sr.value, line
+            sr = gxapi.str_ref()
+            self._db.get_symb_name(line, sr)
+            return sr.value, line
 
     def channel_name_symb(self, chan):
         """
@@ -834,8 +834,9 @@ class Geosoft_gdb(gxgeo.Geometry):
 
         if not self.exist_symb_(chan, gxapi.DB_SYMB_CHAN):
             raise GdbException(_t('Channel symbol \'{}\' not found'.format(chan)))
-        self._db.get_symb_name(chan, self._sr)
-        return self._sr.value, chan
+        sr = gxapi.str_ref()
+        self._db.get_symb_name(chan, sr)
+        return sr.value, chan
 
     def channel_width(self, channel):
         """
@@ -949,8 +950,9 @@ class Geosoft_gdb(gxgeo.Geometry):
 
         def get_detail(fn):
             try:
-                fn(ls, self._sr)
-                return self._sr.value
+                sr = gxapi.str_ref()
+                fn(ls, sr)
+                return sr.value
             except geosoft.gxapi.GXAPIError:
                 return ''
 
@@ -1004,8 +1006,9 @@ class Geosoft_gdb(gxgeo.Geometry):
         """
 
         def get_detail(fn):
-            fn(cs, self._sr)
-            return self._sr.value
+            sr = gxapi.str_ref()
+            fn(cs, sr)
+            return sr.value
 
         cn, cs = self.channel_name_symb(channel)
         detail = {}
@@ -2044,8 +2047,9 @@ class Channel:
     def _get_str(self, fn):
         self.gdb.lock_read_(self._symb)
         try:
-            fn(self._symb, self._sr)
-            return self._sr.value
+            sr = gxapi.str_ref()
+            fn(self._symb, sr)
+            return sr.value
         finally:
             self.gdb.unlock_(self._symb)
 
@@ -2066,7 +2070,6 @@ class Channel:
 
         self.gdb = gdb
         name, self._symb = gdb.channel_name_symb(name)
-        self._sr = gxapi.str_ref()
 
     @classmethod
     def new(cls, gdb, name, dtype=np.float64, array=1, dup=None, details=None, replace=False, unit_of_measure=None):
@@ -2193,8 +2196,9 @@ class Channel:
 
         .. versionadded:: 9.3
         """
-        self.gdb.gxdb.get_chan_label(self._symb, self._sr)
-        return self._sr.value
+        sr = gxapi.str_ref()
+        self.gdb.gxdb.get_chan_label(self._symb, sr)
+        return sr.value
 
     @label.setter
     def label(self, value):
@@ -2216,8 +2220,9 @@ class Channel:
 
         .. versionadded:: 9.3
         """
-        self.gdb.gxdb.get_chan_unit(self._symb, self._sr)
-        return self._sr.value
+        sr = gxapi.str_ref()
+        self.gdb.gxdb.get_chan_unit(self._symb, sr)
+        return sr.value
 
     @unit_of_measure.setter
     def unit_of_measure(self, value):
@@ -2246,8 +2251,9 @@ class Channel:
         .. versionadded:: 9.3
         """
 
-        self.gdb.gxdb.get_chan_class(self._symb, self._sr)
-        return self._sr.value
+        sr = gxapi.str_ref()
+        self.gdb.gxdb.get_chan_class(self._symb, sr)
+        return sr.value
 
     @class_.setter
     def class_(self, value):
@@ -2347,8 +2353,9 @@ class Line:
     def _get_str(self, fn):
         self.gdb.lock_read_(self._symb)
         try:
-            fn(self._symb, self._sr)
-            return self._sr.value
+            sr = gxapi.str_ref()
+            fn(self._symb, sr)
+            return sr.value
         finally:
             self.gdb.unlock_(self._symb)
 
@@ -2370,7 +2377,6 @@ class Line:
 
         self.gdb = gdb
         name, self._symb = gdb.line_name_symb(name)
-        self._sr = gxapi.str_ref()
 
     @classmethod
     def new(cls, gdb, name, linetype=None, group=None, dup=None, replace=False):
