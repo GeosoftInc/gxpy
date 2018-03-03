@@ -120,46 +120,59 @@ class Test(GXPYTest):
     def test_derivatives(self):
         self.start()
 
+        with gxgrd.Grid.open(self.mag, mode=gxgrd.FILE_READWRITE) as g:
+            g.unit_of_measure = 'nT'
+
         with gxgrd.Grid.open(self.mag) as grd:
             dxy = gxgrdu.derivative(grd, gxgrdu.DERIVATIVE_XY)
-            self.assertAlmostEqual(dxy.statistics()['sd'], 36.205514622381834)
+            self.assertAlmostEqual(dxy.statistics()['sd'], 0.7241102775692331)
+            self.assertEqual(dxy.unit_of_measure, 'nT/m')
 
         with gxgrd.Grid.open(self.mag) as grd:
             das = gxgrdu.derivative(grd, gxgrdu.DERIVATIVE_XYZ)
-            self.assertAlmostEqual(das.statistics()['sd'], 36.207880638351966)
+            self.assertAlmostEqual(das.statistics()['sd'], 1.0226482933289056)
+            self.assertEqual(das.unit_of_measure, 'nT/m')
 
         with gxgrd.Grid.open(self.mag) as grd:
-            dtd = gxgrdu.derivative(grd, gxgrdu.DERIVATIVE_TILT)
-            self.assertAlmostEqual(dtd.statistics()['sd'], 0.07517988845614242)
+            dtd = gxgrdu.derivative(grd, gxgrdu.TILT_ANGLE)
+            self.assertAlmostEqual(dtd.statistics()['sd'], 0.8209237171466927)
+            self.assertEqual(dtd.unit_of_measure, 'radians')
 
         with gxgrd.Grid.open(self.mag, dtype=np.float64) as grd:
             dxg = gxgrdu.derivative(grd, gxgrdu.DERIVATIVE_X)
-            self.assertAlmostEqual(dxg.statistics()['sd'], 38.34218419585821)
+            self.assertAlmostEqual(dxg.statistics()['sd'], 0.7668436702132574)
             self.assertEqual(dxg.dtype, np.float64)
+            self.assertEqual(dxg.unit_of_measure, 'nT/m')
 
         with gxgrd.Grid.open(self.mag, dtype=np.float64) as grd:
             dzg = gxgrdu.derivative(grd, gxgrdu.DERIVATIVE_Z)
             self.assertAlmostEqual(dzg.statistics()['sd'], 0.9377582582050702)
             self.assertEqual(dzg.dtype, np.float64)
+            self.assertEqual(dzg.unit_of_measure, 'nT/m')
 
         dzg = gxgrdu.derivative(self.mag, gxgrdu.DERIVATIVE_Z)
         self.assertAlmostEqual(dzg.statistics()['sd'], 0.9377582582050702)
+        self.assertEqual(dzg.unit_of_measure, 'nT/m')
 
         dxg = gxgrdu.derivative(self.mag, gxgrdu.DERIVATIVE_X)
-        self.assertAlmostEqual(dxg.statistics()['sd'], 38.34218419585821)
+        self.assertAlmostEqual(dxg.statistics()['sd'], 0.7668436702132574)
+        self.assertEqual(dxg.unit_of_measure, 'nT/m')
 
         with gxgrd.Grid.open(self.mag, dtype=np.float32) as grd:
             dxg = gxgrdu.derivative(grd, gxgrdu.DERIVATIVE_X)
-            self.assertAlmostEqual(dxg.statistics()['sd'], 38.34218419585821)
+            self.assertAlmostEqual(dxg.statistics()['sd'], 0.7668436702132574)
             self.assertEqual(dxg.dtype, np.float32)
+            self.assertEqual(dxg.unit_of_measure, 'nT/m')
 
         with gxgrd.Grid.open(self.mag) as grd:
             dyg = gxgrdu.derivative(grd, gxgrdu.DERIVATIVE_Y)
-            self.assertAlmostEqual(dyg.statistics()['sd'], 21.933496502392984)
+            self.assertAlmostEqual(dyg.statistics()['sd'], 0.4386699214640992)
+            self.assertEqual(dyg.unit_of_measure, 'nT/m')
 
         with gxgrd.Grid.open(self.mag) as grd:
             dzg = gxgrdu.derivative(grd, gxgrdu.DERIVATIVE_Z)
             self.assertAlmostEqual(dzg.statistics()['sd'], 0.9409708788987557)
+            self.assertEqual(dzg.unit_of_measure, 'nT/m')
 
     def test_contour_xy(self):
         self.start()
@@ -201,7 +214,7 @@ class Test(GXPYTest):
         for ln in td.list_lines():
             d = td.read_line(ln, 'X')
             n += len(d[0])
-        self.assertEqual(n, 1683)
+        self.assertEqual(n, 1673)
 
         td = gxgrdu.tilt_depth(self.mag, resolution=1000, gdb='temp.gdb', overwrite=True)
         self.assertTrue(isinstance(td, gxgdb.Geosoft_gdb))
@@ -210,13 +223,13 @@ class Test(GXPYTest):
         for ln in td.list_lines():
             d = td.read_line(ln, 'X')
             n += len(d[0])
-        self.assertEqual(n, 404)
+        self.assertEqual(n, 399)
         td.close(discard=True)
 
         td = gxgrdu.tilt_depth(self.mag, resolution=1000)
         self.assertTrue(isinstance(td, gxgeo.PPoint))
         self.assertTrue(td.coordinate_system == 'AGD66 / AMG zone 53')
-        self.assertEqual(len(td), 404)
+        self.assertEqual(len(td), 399)
 
         td = gxgrdu.tilt_depth(self.mag, resolution=1000, return_as=gxgrdu.RETURN_LIST_OF_PPOINT)
         self.assertTrue(isinstance(td, list))
@@ -225,7 +238,7 @@ class Test(GXPYTest):
         n = 0
         for p in td:
             n += len(p)
-        self.assertEqual(n, 404)
+        self.assertEqual(n, 399)
 
 ###############################################################################################
 

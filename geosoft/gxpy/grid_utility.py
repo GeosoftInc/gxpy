@@ -46,7 +46,7 @@ DERIVATIVE_Y = 1  #:
 DERIVATIVE_Z = 2  #:
 DERIVATIVE_XY = 3  #: horizontal gradient sqrt(dx**2 + dy**2)
 DERIVATIVE_XYZ = 4  #: total gradient (analytic signal) sqrt(dx**2 _ dy**2 + dz**2)
-DERIVATIVE_TILT = 5  #:
+TILT_ANGLE = 5  #: radians, atan(d_z/d_xy), Miller and Singh, 1994
 RETURN_PPOINT = 0  #:
 RETURN_LIST_OF_PPOINT = 1  #:
 RETURN_GDB = 2  #:
@@ -108,7 +108,7 @@ def derivative(grid, derivative_type, file_name=None, overwrite=False, dtype=Non
         DERIVATIVE_Y               in the grid Y direction
         DERIVATIVE_Z               in the grid Z direction
         DERIVATIVE_XYZ             the total derivative sqrt(dx**2 + dy**2 + dz**2) (analytic signal)
-        DERIVATIVE_TILT            tilt derivative, atan2(dz, sqrt(dx**2, dy**2))
+        TILT_ANGLE                 tilt angle, atan2(dz, sqrt(dx**2, dy**2))
         ========================== ====================================================================
     
     :param file_name:   returned derivative file name, None for a temporary file
@@ -131,34 +131,38 @@ def derivative(grid, derivative_type, file_name=None, overwrite=False, dtype=Non
 
         dzg = gxgrd.Grid.new(file_name=file_name, properties=g.properties(), overwrite=overwrite)
         gxapi.GXIMU.grid_vd(g.gximg, dzg.gximg)
+        dzg.unit_of_measure = g.unit_of_measure + '/' + g.coordinate_system.unit_of_measure
         return gxgrd.reopen(dzg, dtype=dt)
 
-    def tilt_derivative(g):
+    def tilt_angle(g, fn=None):
         dx = derivative(g, DERIVATIVE_X)
         dy = derivative(g, DERIVATIVE_Y)
         dz = derivative(g, DERIVATIVE_Z)
-        return gxgrd.expression((dx, dy, dz), 'atan2(g3,sqrt(g1**2+g2**2))', 
-                                result_file_name=file_name,
-                                overwrite=overwrite)
+
+        result = gxgrd.expression((dx, dy, dz), 'atan2(g3,sqrt(g1**2+g2**2))',
+                                  result_file_name=fn,
+                                  overwrite=overwrite)
+        result.unit_of_measure = 'radians'
+        return gxgrd.reopen(result)
 
     def horizontal_gradient(g):
         dx = derivative(g, DERIVATIVE_X)
         dy = derivative(g, DERIVATIVE_Y)
-        return gxgrd.expression((dx, dy), 'sqrt(g1**2+g2**2)', 
-                                result_file_name=file_name,
-                                overwrite=overwrite)
+        result = gxgrd.expression((dx, dy), 'sqrt(g1**2+g2**2)',
+                                  result_file_name=file_name,
+                                  overwrite=overwrite)
+        result.unit_of_measure = g.unit_of_measure + '/' + g.coordinate_system.unit_of_measure
+        return result
 
     def total_gradient(g):
         dx = derivative(g, DERIVATIVE_X)
         dy = derivative(g, DERIVATIVE_Y)
         dz = derivative(g, DERIVATIVE_Z)
-        return gxgrd.expression((dx, dy, dz), 'sqrt(g1**2+g2**2+g3**2)', 
-                                result_file_name=file_name,
-                                overwrite=overwrite)
-
-    # temp file_name
-    if file_name is None:
-        file_name = gx.gx().temp_file('.grd(GRD)')
+        result = gxgrd.expression((dx, dy, dz), 'sqrt(g1**2+g2**2+g3**2)',
+                                  result_file_name=file_name,
+                                  overwrite=overwrite)
+        result.unit_of_measure = g.unit_of_measure + '/' + g.coordinate_system.unit_of_measure
+        return result
 
     if derivative_type == DERIVATIVE_Z:
         return vertical_derivative(grid, dt=dtype)
@@ -186,11 +190,13 @@ def derivative(grid, derivative_type, file_name=None, overwrite=False, dtype=Non
         if rgrd.dtype != return_dtype:
             return gxgrd.reopen(rgrd, dtype=return_dtype)
 
-    if derivative_type == DERIVATIVE_TILT:
-        rgrd = tilt_derivative(grid)
+    if derivative_type == TILT_ANGLE:
+        if file_name is None:
+            file_name = gx.gx().temp_file('.grd(GRD)')
+        rgrd = tilt_angle(grid, fn=file_name)
         if rgrd.dtype != return_dtype:
             return gxgrd.reopen(rgrd, dtype=return_dtype)
-        
+
     # dxy grid
     if file_name is None:
         file_name = gx.gx().temp_file('.grd(GRD)')
@@ -199,16 +205,18 @@ def derivative(grid, derivative_type, file_name=None, overwrite=False, dtype=Non
     # filter
     if derivative_type == DERIVATIVE_X:
         filter_vv = gxvv.GXvv([0., 0., 0., -0.5, 0., +0.5, 0., 0., 0.], dtype=np.float64)
+        mult = 1.0 / grid.dx
     else:
         filter_vv = gxvv.GXvv([0., 0.5, 0., 0., 0., 0., 0., -0.5, 0.], dtype=np.float64)
+        mult = 1.0 / grid.dy
     gxapi.GXIMU.grid_filt(grid.gximg, dxy.gximg,
-                          1, 1.0,
+                          1, mult,
                           gxapi.IMU_FILT_DUMMY_NO,
                           gxapi.IMU_FILT_HZDRV_NO,
                           gxapi.IMU_FILT_FILE_NO,
                           "",
                           filter_vv.gxvv)
-
+    dxy.unit_of_measure = grid.unit_of_measure + '/' + grid.coordinate_system.unit_of_measure
     return gxgrd.reopen(dxy, dtype=return_dtype)
 
 
@@ -244,16 +252,16 @@ def tilt_depth(grid, resolution=None, return_as=RETURN_PPOINT, gdb=None, overwri
     if report:
         report('Calculate tilt derivative...')
 
-    td = derivative(grid, DERIVATIVE_TILT)
+    ta = derivative(grid, TILT_ANGLE)
     if report:
         report('Find zero contour...')
 
     if resolution is None:
-        resolution = min(td.dx, td.dy) * 4.
-    gdb = contour_points(td, 0., resolution=resolution, return_as=RETURN_GDB, gdb=gdb, overwrite=overwrite)
+        resolution = min(ta.dx, ta.dy) * 4.
+    gdb = contour_points(ta, 0., resolution=resolution, return_as=RETURN_GDB, gdb=gdb, overwrite=overwrite)
     if report:
         report('Calculate X-Y gradient of the tilt-derivative...')
-    tdd = derivative(td, DERIVATIVE_XY)
+    tad = derivative(ta, DERIVATIVE_XY)
 
     # get gradient of the TD at the zero locations
     if report:
@@ -261,10 +269,10 @@ def tilt_depth(grid, resolution=None, return_as=RETURN_PPOINT, gdb=None, overwri
 
     for ln in gdb.list_lines():
         xyz, chlist, fid = gdb.read_line(ln, channels=('X', 'Y', 'Z'))
-        zero_tdd = sample(tdd, xyz)
-        zero_tdd[zero_tdd == 0.] = np.nan
-        np.reciprocal(zero_tdd, out=zero_tdd)
-        xyz[:, 2] = zero_tdd
+        zero_tad = sample(tad, xyz)
+        zero_tad[zero_tad == 0.] = np.nan
+        np.reciprocal(zero_tad, out=zero_tad)
+        xyz[:, 2] = zero_tad
         gdb.write_line(ln, xyz, chlist, fid)
 
     if return_as == RETURN_GDB:
