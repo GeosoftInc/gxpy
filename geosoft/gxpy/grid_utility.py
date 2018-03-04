@@ -250,22 +250,22 @@ def tilt_depth(grid, resolution=None, return_as=RETURN_PPOINT, gdb=None, overwri
         return_as = RETURN_GDB
 
     if report:
-        report('Calculate tilt derivative...')
+        report('Calculate tilt-angle...')
 
     ta = derivative(grid, TILT_ANGLE)
     if report:
-        report('Find zero contour...')
+        report('Find zero contour of the tilt-angle...')
 
     if resolution is None:
         resolution = min(ta.dx, ta.dy) * 4.
     gdb = contour_points(ta, 0., resolution=resolution, return_as=RETURN_GDB, gdb=gdb, overwrite=overwrite)
     if report:
-        report('Calculate X-Y gradient of the tilt-derivative...')
+        report('Calculate tilt-derivative...')
     tad = derivative(ta, DERIVATIVE_XY)
 
     # get gradient of the TD at the zero locations
     if report:
-        report('Calculate depth = recirocal(x-y gradient) at zero contour...')
+        report('Calculate depth = recirocal(tilt-derivative) at zero contour of the tilt-angle...')
 
     for ln in gdb.list_lines():
         xyz, chlist, fid = gdb.read_line(ln, channels=('X', 'Y', 'Z'))
