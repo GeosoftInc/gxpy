@@ -1474,6 +1474,11 @@ class Geosoft_gdb(gxgeo.Geometry):
 
         If a requested channel is a VA, it is with channel names 'name[0]', 'name[1]', etc.
 
+        This method is intended for relatively simple databases with fewer that around 100 channels, and
+        relatively simple applications. If your database has a lot of channels, or wide array channels,
+        you may exceed the 2048 resource limit in the GXAPI interface. For such applications it is more efficient
+        to read and work with just the channels you need.  See `read_channel()`.
+
         Examples:
 
         .. code::
