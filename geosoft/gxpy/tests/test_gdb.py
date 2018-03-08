@@ -460,7 +460,7 @@ class Test(GXPYTest):
                 self.assertTrue(gdb.is_line('Dwonk'))
 
                 dy,_ = gdb.read_channel('D2', 'y')
-                dy [:] = np.nan
+                dy[:] = np.nan
                 gdb.write_channel('D2', 'y', dy)
                 px = gxgeo.Point2(gdb.extent_xyz)
                 self.assertEqual(str(px),
@@ -688,7 +688,7 @@ class Test(GXPYTest):
             dummy = gxu.gx_dummy(np.int)
 
             gdb.write_channel('D590875', 'test', np.array([1, 2, dummy, 4]))
-            npd,ch,fid = gdb.read_line('D590875', channels=['test'], dtype=np.int)
+            npd, ch, fid = gdb.read_line('D590875', channels=['test'], dtype=np.int)
             self.assertEqual(npd.shape,(4,1))
             self.assertEqual(npd[:,0].tolist(),[1,2,dummy,4])
 
@@ -1278,6 +1278,30 @@ class Test(GXPYTest):
         self.assertEqual(len(gdb.list_channels()), 2)
         self.assertTrue('x' in gdb.list_channels() and 'y' in gdb.list_channels())
         gdb.close(discard=True)
+
+
+    def test_wide_db_read(self):
+        self.start()
+
+        with gxdb.Geosoft_gdb.new() as gdb:
+            line = gxdb.Line.new(gdb, 'L0')
+            x = gxdb.Channel.new(gdb, 'x')
+            y = gxdb.Channel.new(gdb, 'y')
+            c1 = gxdb.Channel.new(gdb, 'c1', array=1024)
+            c2 = gxdb.Channel.new(gdb, 'c2', array=1024)
+            data = np.array(range(1024 * 10), dtype=np.float64).reshape((-1, 1024))
+            gdb.write_channel(line, x, data[:, 0])
+            gdb.write_channel(line, y, data[:, 1])
+            gdb.write_channel(line, c1, data)
+            gdb.write_channel(line, c2, data)
+
+            npd, ch, fid = gdb.read_line(line)
+            self.assertEqual(npd.shape, (10, 2050))
+            self.assertEqual(ch[0], 'x')
+            self.assertEqual(ch[1], 'y')
+            self.assertEqual(ch[2], 'c1[0]')
+            self.assertEqual(ch[3], 'c1[1]')
+            self.assertEqual(ch[2049], 'c2[1023]')
 
 
 ###############################################################################################

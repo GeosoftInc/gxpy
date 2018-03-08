@@ -9,8 +9,8 @@ Geosoft databases for line-oriented spatial data.
     `Channel`     channel handling
     ============= =========================
 
-.. seealso:: :mod:`geosoft.gxapi.GXGB`, :mod:`geosoft.gxapi.GXEDB`, 
-             :mod:`geosoft.gxapi.GXDBREAD`, :mod:`geosoft.gxapi.GXDBWRITE`
+.. seealso:: `geosoft.gxapi.GXGB`, `geosoft.gxapi.GXEDB`,
+             `geosoft.gxapi.GXDBREAD`, `geosoft.gxapi.GXDBWRITE`
 
 .. note::
 
@@ -92,7 +92,7 @@ DRAW_AS_LINES = 1  #:
 
 class GdbException(geosoft.GXRuntimeError):
     """
-    Exceptions from :mod:`geosoft.gxpy.gdb`.
+    Exceptions from `geosoft.gxpy.gdb`.
 
     .. versionadded:: 9.1
     """
@@ -122,7 +122,7 @@ def is_valid_line_name(name):
     """
     Return True if this is a valid line name.
 
-    See also :func:`create_line_name`
+    See also `create_line_name`
 
     .. versionadded:: 9.3
     """
@@ -191,10 +191,10 @@ class Geosoft_gdb(gxgeo.Geometry):
 
     :Constructors:
      
-        =============== =========================================================================
-        :meth:`open`    open an existing file, or if not specified open/lock the current database
-        :meth:`new`     create a new database
-        =============== =========================================================================
+        ========= =========================================================================
+        `open`    open an existing file, or if not specified open/lock the current database
+        `new`     create a new database
+        ========= =========================================================================
 
     **Some typical programming patterns**
 
@@ -544,8 +544,8 @@ class Geosoft_gdb(gxgeo.Geometry):
         to be part of the exposed dataset metadata exposed by the :attr:metadata property.
 
         If you wish to add your own metadata to the internal properties you can use the
-        :mod:geosoft.gxpy.metadata module to add metadata and save it to the database using
-        :func:geosoft.gxapi.GXDB.set_meta.
+        `geosoft.gxpy.metadata` module to add metadata and save it to the database using
+        `geosoft.gxapi.GXDB.set_meta`.
 
         .. versionadded:: 9.3
         """
@@ -576,7 +576,7 @@ class Geosoft_gdb(gxgeo.Geometry):
     @property
     def coordinate_system(self):
         """
-        Coordinate system of the current :meth:`xyz_channels`.
+        Coordinate system of the current `xyz_channels`.
         Can be set from any `geosoft.gxpy.coordinate_system.Coordinate_system` constructor.
 
         .. versionchanged:: 9.3
@@ -1162,7 +1162,7 @@ class Geosoft_gdb(gxgeo.Geometry):
 
         :returns:           line symbol
 
-        .. seealso:: function :func:`create_line_name` to create a valid line name.
+        .. seealso:: function `create_line_name` to create a valid line name.
 
         .. versionadded:: 9.1
         """
@@ -1289,36 +1289,49 @@ class Geosoft_gdb(gxgeo.Geometry):
     # =====================================================================================
     # reading and writing
 
-    def _sorted_chan_list(self):
+    def _sorted_chan_list(self, channels=None):
 
         ch = list(self.list_channels())
+        if channels is not None:
+            if isinstance(channels, str):
+                if ',' in channels:
+                    channels = [c.strip() for c in channels.split(',')]
+                else:
+                    channels = [channels]
+            elif isinstance(channels, int):
+                channels = [self.channel_name_symb(channels)[0]]
+            ch = list(channels)
+
         ch.sort(key=str.lower)
+        ch_lower = [c.lower() for c in ch]
         channels = []
+        nxlower = nylower = nzlower = ''
 
         # put x,y,z at the front
         xch = self._db.get_xyz_chan_symb(gxapi.DB_CHAN_X)
         if xch != -1:
             nx, _ = self.channel_name_symb(xch)
-            channels.append(nx)
-        else:
-            nx = ''
+            nxlower = nx.lower()
+            if nxlower in ch_lower:
+                channels.append(nx)
 
         ych = self._db.get_xyz_chan_symb(gxapi.DB_CHAN_Y)
         if ych != -1:
             ny, _ = self.channel_name_symb(ych)
-            channels.append(ny)
-        else:
-            ny = ''
+            nylower = ny.lower()
+            if nylower in ch_lower:
+                channels.append(ny)
 
         zch = self._db.get_xyz_chan_symb(gxapi.DB_CHAN_Z)
         if zch != -1:
             nz, _ = self.channel_name_symb(zch)
-            channels.append(nz)
-        else:
-            nz = ''
+            nzlower = nz.lower()
+            if nzlower in ch_lower:
+                channels.append(nz)
 
         for c in ch:
-            if (c == nx) or (c == ny) or (c == nz):
+            clower = c.lower()
+            if (clower == nxlower) or (clower == nylower) or (clower == nzlower):
                 continue
             channels.append(c)
 
@@ -1474,11 +1487,6 @@ class Geosoft_gdb(gxgeo.Geometry):
 
         If a requested channel is a VA, it is with channel names 'name[0]', 'name[1]', etc.
 
-        This method is intended for relatively simple databases with fewer that around 100 channels, and
-        relatively simple applications. If your database has a lot of channels, or wide array channels,
-        you may exceed the 2048 resource limit in the GXAPI interface. For such applications it is more efficient
-        to read and work with just the channels you need.  See `read_channel()`.
-
         Examples:
 
         .. code::
@@ -1500,12 +1508,7 @@ class Geosoft_gdb(gxgeo.Geometry):
         ln, ls = self.line_name_symb(line)
 
         # default all channels, sorted, X,Y,Z first
-        if channels is None:
-            channels = self._sorted_chan_list()
-
-        else:
-            if (type(channels) is str) or (type(channels) is int):
-                channels = [channels]
+        channels = self._sorted_chan_list(channels)
 
         # make up channel list, expanding VA channels
         ch_names, ch_symb, c_type = self._expand_chan_list(channels)
@@ -1555,6 +1558,52 @@ class Geosoft_gdb(gxgeo.Geometry):
 
         return chvv
 
+    def scan_line_fid(self, line, channels=None):
+        """
+        Scan channels in a line and return the smallest common fid, line length, data width, list of channels
+
+        :param line:        line to read, string or symbol number
+        :param channels:    list of channels, strings or symbol number.  If empty, read all channels
+        :returns:           (fid_start, fid_increment, fid_last, data_width, channel_list)
+
+        .. versionadded:: 9.4
+        """
+
+        channels = self._sorted_chan_list(channels)
+
+        if len(channels) == 0:
+            return 0, 1., 0, 0, []
+
+        ln, ls = self.line_name_symb(line)
+        cs = self.channel_name_symb(channels[0])[1]
+        fid_start, fid_increment = self.channel_fid(ls, cs)
+        self.lock_read_(cs)
+        nrows = self.gxdb.get_channel_length(ls, cs)
+        self.unlock_(cs)
+        if nrows == 0:
+            fid_last = fid_start
+        else:
+            fid_last = fid_start + fid_increment * (nrows - 1)
+        n_width = self.channel_width(cs)
+        for c in channels[1:]:
+            cs = self.channel_name_symb(c)[1]
+            n_width += self.channel_width(cs)
+            c_start, c_increment = self.channel_fid(ls, cs)
+            if c_start != gxapi.rDUMMY:
+                self.lock_read_(cs)
+                c_last = c_start + c_increment * (self.gxdb.get_channel_length(ls, cs) - 1)
+                self.unlock_(cs)
+                if fid_start == gxapi.rDUMMY or c_start < fid_start:
+                    fid_start = c_start
+                if fid_increment == gxapi.rDUMMY or c_increment < fid_increment:
+                    fid_increment = c_increment
+                if c_last > fid_last:
+                    fid_last = c_last
+
+        if fid_start == gxapi.rDUMMY or fid_increment == gxapi.rDUMMY:
+            return 0., 1., 0., 0, channels
+        return fid_start, fid_increment, fid_last, n_width, channels
+
     def readLine(self, *args, **kwargs):
         """
         .. deprecated:: 9.2 use read_line() 
@@ -1582,7 +1631,10 @@ class Geosoft_gdb(gxgeo.Geometry):
 
         VA channels are expanded by element with channel names name[0], name[1], etc.
 
-        Empty
+        This method is intended for relatively simple databases in relatively simple applications.
+        If your database has a lot of channels, or wide array channels it will be more efficient
+        to read and work with just the channels you need.  See `read_channel`, `read_channel_vv`
+        and `read_channel_va`.
 
         Examples:
 
@@ -1602,31 +1654,50 @@ class Geosoft_gdb(gxgeo.Geometry):
         .. versionadded:: 9.1
         """
 
-        # get VVs of data, resampled to a common fid
-        data = self.read_line_vv(line, channels, dtype, fid, common_fid=True)
-        if len(data) == 0:
-            return np.array([]), [], (0.0, 1.0)
-        nvd = data[0][1].length
-        fid = data[0][1].fid
-        nch = len(data)
+        ls = self.line_name_symb(line)[1]
+        fid_start, fid_incr, fid_last, ncols, channels = self.scan_line_fid(line, channels)
 
-        # move data to numpy array
-        npd = np.empty((nvd, nch), dtype=dtype)
+        if fid is None:
+            fid = (fid_start, fid_incr)
+        nrows = int((fid_last - fid[0])/fid[1] + 1.5)
+        if nrows == 0 or ncols == 0:
+            if len(channels) == 0:
+                data = np.array([], dtype=dtype)
+            else:
+                data = np.array([], dtype=dtype).reshape((-1, len(channels)))
+            return data, channels, fid
+
+        # read to a numpy array
+        npd = np.empty((nrows, ncols), dtype=dtype)
         if npd.dtype == np.float32 or npd.dtype == np.float64:
             dummy_value = np.nan
         else:
             dummy_value = gxu.gx_dummy(npd.dtype)
+
         ch_names = []
-        for chvv in data:
-            vv = chvv[1]
-            if vv.length > 0:
-                npd[:, len(ch_names)] = vv.get_data(dtype=npd.dtype)[0]
+        icol = 0
+        for ch in channels:
+            cn, cs = self.channel_name_symb(ch)
+            w = self.channel_width(cs)
+            if w == 1:
+                vv = self.read_channel_vv(ls, cs, dtype=npd.dtype)
+                vv.refid(fid, nrows)
+                npd[:, icol] = vv.np
+                icol += 1
+                ch_names.append(cn)
             else:
-                npd[:, len(ch_names)].fill(dummy_value)
-            ch_names.append(chvv[0])
+                va = self.read_channel_va(ls, cs, dtype=npd.dtype)
+                va.refid(fid, nrows)
+                npd[:, icol:icol+w] = va.np
+                icol += w
+                for i in range(w):
+                    ch_names.append('{}[{}]'.format(cn, str(i)))
+
+        nch = len(ch_names)
 
         # dummy handling
         if dummy:
+
             if dummy == READ_REMOVE_DUMMYCOLUMNS:
                 n_ok = 0
 
@@ -1727,7 +1798,7 @@ class Geosoft_gdb(gxgeo.Geometry):
 
     def writeDataChan(self, *args, **kwargs):
         """
-        .. deprecated:: 9.2 use :meth:`write_channel`
+        .. deprecated:: 9.2 use `write_channel`
         """
         self.write_channel(*args, **kwargs)
 
@@ -2033,11 +2104,11 @@ class Geosoft_gdb(gxgeo.Geometry):
 
 class Channel:
     """
-    Class to work with database channels.  Use constructor :meth:`Channel.new` to create a new channel.
+    Class to work with database channels.  Use constructor `Channel.new` to create a new channel.
     Use instance properties to work with channel properties.
 
     :param gdb:     database instance
-    :param name:    channel name string, must exist - see new() to create a new channel
+    :param name:    channel name string, must exist - see `new()` to create a new channel
 
     .. versionadded:: 9.3
     """
@@ -2086,7 +2157,7 @@ class Channel:
         :param dtype:           numpy data type, defaule np.float64
         :param array:           array size, default 1
         :param dup:             duplicate properties of this channal (name, symbol or Channel)
-        :param details:         dictionary of other channel properties - see :meth:`Geosoft_gdb.set_channel_details`
+        :param details:         dictionary of other channel properties - see `Geosoft_gdb.set_channel_details`
         :param replace:         `True` to replace existing channel.  Existing channel information and data is lost.
                                 default is `False`.
         :param unit_of_measure: unit of measurement of the data
@@ -2339,11 +2410,11 @@ class Channel:
 
 class Line:
     """
-    Class to work with database lines.  Use constructor :meth:`Line.new` to create a new line.
+    Class to work with database lines.  Use constructor `Line.new` to create a new line.
     Use instance properties to work with line properties.
 
     :param gdb:     `Geosoft_gdb` instance
-    :param name:    line name string, must exist - see new() to create a new line
+    :param name:    line name string, must exist - see `new()` to create a new line
 
     .. versionadded:: 9.3
     """
@@ -2421,7 +2492,7 @@ class Line:
     @property
     def name(self):
         """
-        Line name, consistent with names constructed by :func:`create_line_name`.
+        Line name, consistent with names constructed by `create_line_name`.
 
         To change a line name change the type, number or version.
 
