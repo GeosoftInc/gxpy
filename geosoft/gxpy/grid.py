@@ -389,14 +389,13 @@ class Grid(gxgm.Geometry):
         self._dtype = dtype
         self._dummy = gxu.gx_dummy(self._dtype)
         self._is_int = gxu.is_int(gxu.gx_dtype(self.dtype))
-        self._cos_rot = 1.0
-        self._sin_rot = 0.0
         self.rot = self.rot
 
         self._open = gx.track_resource(self.__class__.__name__, self._file_name)
 
     @classmethod
-    def open(cls, file_name, dtype=None, mode=FILE_READ):
+    def open(cls, file_name, dtype=None, mode=FILE_READ,
+             coordinate_system=None, cell_size=None, expand=None):
         """
         Open an existing grid file.
 
@@ -410,10 +409,48 @@ class Grid(gxgm.Geometry):
             FILE_READWRITE     grid stays the same, but properties may change
             =================  ================================================
 
+        :param coordinate_system:   desired coordinate system. The grid will be reprojected if necessary.
+        :param cell_size:           desired cell size, defaults to the current cell size.
+        :param expand:              if reprojecting or resampling the are can be expanded by this percentage
+                                    to allow for curved edges in the new coordinate system space.  The default
+                                    expands by 1%. Set to 0 to prevent expansion.
+
+        If reprojecting or setting the cell size different from the original grid, the mode must be FILE_READ.
+
+        If reprojecting without setting the cell size a default cell size will be calculated in the new
+        coordinate system that is nominally equivalent to the current cell size.
+
         .. versionadded:: 9.1
+
+        .. versionchanged:: 9.4     added reprojection support
         """
 
         grd = cls(file_name, dtype=dtype, mode=mode)
+
+        # determine if we need to reproject or resample
+        repro = False
+        if coordinate_system:
+            if not isinstance(coordinate_system, gxcs.Coordinate_system):
+                coordinate_system = gxcs.Coordinate_system(coordinate_system)
+            repro = coordinate_system != grd.coordinate_system
+
+        if (not repro and cell_size is not None) and ((cell_size != grd.dx) or (cell_size != grd.dy)):
+            repro = True
+
+        if repro:
+            if mode != FILE_READ:
+                raise GridException(_t('Mode must be FILE_READ to reproject or resample a grid.'))
+            if cell_size is None:
+                cell_size = gxapi.rDUMMY
+            if expand is None:
+                expand = gxapi.rDUMMY
+            if not coordinate_system:
+                coordinate_system = grd.coordinate_system
+            grd.gximg.create_projected3(coordinate_system.gxipj, cell_size, expand)
+            grd._cs = None
+            grd._cos_rot = 1.0
+            grd._sin_rot = 0.0
+
         return grd
 
     @classmethod

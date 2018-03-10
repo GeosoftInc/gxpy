@@ -778,6 +778,32 @@ class Test(GXPYTest):
             self.assertEqual(g.unit_of_measure, 'maki')
         self.assertEqual(gxgrd.Grid.open(self.mag).unit_of_measure, 'maki')
 
+    def test_reproject(self):
+        self.start()
+
+        gxgrd.Grid.open(self.mag, mode=gxgrd.FILE_READWRITE).coordinate_system = "NAD27 / UTM zone 32N"
+        with gxgrd.Grid.open(self.mag) as g:
+            self.assertEqual(str(g.coordinate_system), "NAD27 / UTM zone 32N")
+
+        with gxgrd.Grid.open(self.mag, coordinate_system="NAD83 / UTM zone 32N") as g:
+            self.assertEqual(str(g.coordinate_system), "NAD83 / UTM zone 32N")
+
+        with gxgrd.Grid.open(self.mag, coordinate_system="WGS 84") as g:
+            self.assertEqual(str(g.coordinate_system), "WGS 84")
+
+        with gxgrd.Grid.open(self.mag, coordinate_system='', cell_size=75) as g:
+            self.assertEqual(g.dx, 75.)
+            self.assertEqual(g.dy, 75.)
+            self.assertEqual(g.nx, 125)
+            self.assertEqual(g.ny, 191)
+
+        with gxgrd.Grid.open(self.mag, cell_size=75, expand=25) as g:
+            self.assertEqual(g.dx, 75.)
+            self.assertEqual(g.dy, 75.)
+            self.assertEqual(g.nx, 183)
+            self.assertEqual(g.ny, 280)
+
+
 ###############################################################################################
 
 if __name__ == '__main__':
