@@ -22,9 +22,11 @@ from . import vox_display
 from . import metadata
 from . import spatialdata
 from . import surface
+from . import dap
 
 __all__ = ['agg',
            'coordinate_system',
+           'dap',
            'dataframe',
            'geometry',
            'geometry_utility',
