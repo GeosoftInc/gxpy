@@ -7,7 +7,7 @@ import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.vv as gxvv
 import geosoft.gxpy.grid as gxgrd
 import geosoft.gxpy.spatialdata as gxspd
-import geosoft.gxpy.geometry as gxgeo
+import geosoft.gxpy.utility as gxu
 import geosoft.gxpy.gx as gx
 
 from base import GXPYTest
@@ -474,14 +474,13 @@ class Test(GXPYTest):
 
         temp_grid = gx.gx().temp_file('grd')
         cs = gxcs.Coordinate_system('NAD27 / UTM zone 18N')
-        with gxgrd.Grid.new(temp_grid,
-                            properties={'dtype': np.int16,
-                                        'nx': 100, 'ny': 50,
-                                        'x0': 4, 'y0': 8,
-                                        'dx': 0.1, 'dy': 0.2,
-                                        'rot': 5,
-                                        'coordinate_system': cs}) as grd:
-            pass
+        gxgrd.Grid.new(temp_grid,
+                       properties={'dtype': np.int16,
+                                   'nx': 100, 'ny': 50,
+                                   'x0': 4, 'y0': 8,
+                                   'dx': 0.1, 'dy': 0.2,
+                                   'rot': 5,
+                                   'coordinate_system': cs}).close()
         cs = gxspd.coordinate_system_from_metadata_file(temp_grid)
         self.assertEqual(str(cs), 'NAD27 / UTM zone 18N')
 
@@ -499,6 +498,29 @@ class Test(GXPYTest):
             pass
         cs = gxspd.coordinate_system_from_metadata_file(temp_grid)
         self.assertEqual(str(cs), 'weird / UTM zone 18N')
+
+        with gxcs.Coordinate_system('WGS 84') as cs:
+            xml = cs.xml
+            xml_dict = gxu.dict_from_xml(xml)
+            with gxcs.Coordinate_system(xml_dict) as wgs:
+                self.assertEqual(str(wgs), 'WGS 84')
+        with gxcs.Coordinate_system() as cs:
+            cs.xml = xml
+            self.assertEqual(str(cs), 'WGS 84')
+        with gxcs.Coordinate_system(xml) as cs:
+            self.assertEqual(str(cs), 'WGS 84')
+
+        with gxcs.Coordinate_system.local(lon_lat=(-96, 43), azimuth=25) as csd:
+            self.assertEqual(csd.name, 'WGS 84 / *Local(43,-96,0,0) <0,0,0,0,0,25>')
+            self.assertEqual(csd.gxf[2], '"Oblique Stereographic",43,-96,0.9996,0,0')
+            xml = csd.xml
+            with gxcs.Coordinate_system() as csxml:
+                csxml.xml = xml
+                self.assertEqual(csxml.name, 'WGS 84 / *Local(43,-96,0,0) <0,0,0,0,0,25>')
+                self.assertEqual(csxml.gxf[2], '"Oblique Stereographic",43,-96,0.9996,0,0')
+            with gxcs.Coordinate_system(xml) as csxml:
+                self.assertEqual(csxml.name, 'WGS 84 / *Local(43,-96,0,0) <0,0,0,0,0,25>')
+                self.assertEqual(csxml.gxf[2], '"Oblique Stereographic",43,-96,0.9996,0,0')
 
 
 ###############################################################################################

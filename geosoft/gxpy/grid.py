@@ -277,10 +277,11 @@ class Grid(gxgm.Geometry):
 
                     if self._delete_files:
                         delete_files(self._file_name)
-                    elif self._metadata_changed and self._mode != FILE_READ:
-                        with open(self._file_name + '.xml', 'w+') as f:
-                            f.write(gxu.xml_from_dict(self._metadata))
+                    elif self._mode != FILE_READ and grid_file_name:
                         gxapi.GXIMG.sync(grid_file_name)
+                        if self._metadata and self._metadata_changed:
+                            with open(self._file_name + '.xml', 'w+') as f:
+                                f.write(gxu.xml_from_dict(self._metadata))
 
                 if pop:
                     gx.pop_resource(self._open)
@@ -743,10 +744,12 @@ class Grid(gxgm.Geometry):
 
     @unit_of_measure.setter
     def unit_of_measure(self, uom):
-        self.metadata = {'geosoft': {'@xmlns': 'http://www.geosoft.com/schema/geo'}}
-        self.metadata = {'geosoft': {'dataset': {'geo:unitofmeasurement': {'#text': str(uom)}}}}
-        self.metadata = {
-            'geosoft': {'dataset': {'geo:unitofmeasurement': {'@xmlns:geo': 'http://www.geosoft.com/schema/geo'}}}}
+        self.metadata = {'geosoft':
+                             {'@xmlns': 'http://www.geosoft.com/schema/geo',
+                              'dataset':
+                                  {'geo:unitofmeasurement':
+                                       {'@xmlns:geo': 'http://www.geosoft.com/schema/geo',
+                                        '#text': str(uom)}}}}
 
     @property
     def dtype(self):

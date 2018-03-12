@@ -373,10 +373,13 @@ class Coordinate_system:
     :param coordinate_system:  a coordinate system can be created from a number of different forms:
     
                 - Geosoft name string (ie. "WGS 84 / UTM zone 32N [geodetic]")
+
+                - Geosoft xml with root 'projection', xmlns="http://www.geosoft.com/schema/geo"
                  
                 - ESRI WKT string (ie. "PROJCS["WGS_1984_UTM_Zone_35N",GEOGCS[...")
                  
-                - a dictionary that contains the coordinate system properties (see **Dictionary Structure** below.)
+                - a dictionary that contains the coordinate system properties either as a set of xml properties
+                  from a Geosoft xml 'property' definition, or as defined by **Dictionary Structure** below.
                   
                 - a JSON string that contains the coordinate system properties
                   
@@ -682,6 +685,8 @@ class Coordinate_system:
         Setup coordinate systems from a string.
         
         .. versionadded:: 9.2
+
+        .. versionchanged:: 9.4 supports xml (first character is '<')
         """
         
         # json string
@@ -697,6 +702,10 @@ class Coordinate_system:
                     raise ValueError(_t('"Invalid JSON coordinate system string: "{}"').format(cstr))
                 
             self._from_dict(jsondict)
+
+        # xml
+        elif cstr[0] == '<':
+            self.xml = cstr
 
         # ESRI WKT
         elif 'GEOGCS[' in cstr:
@@ -755,132 +764,99 @@ class Coordinate_system:
         Create an IPJ from a dictionary.
 
         .. versionadded:: 9.2
+
         """
 
-        # if dictionary contains '@name', then it comes from a Geosoft metadata XML file:
-        if '@name' in csdict:
+        cstype = csdict.get('type', '').lower()
 
-            name = csdict['@name']
-            try:
-                # try to resolve the coordinate system from the name
-                self._from_str(name)
+        if not cstype:
 
-            except CSException:
+            # default to geosoft xml dictionary
+            if 'projection' in csdict:
+                self.xml = gxu.geosoft_xml_from_dict(csdict)
+            else:
+                self.xml = gxu.geosoft_xml_from_dict({'projection': csdict})
 
-                try:
-                    if '*Local(' in name:
-                        loc = name.split('*Local(')[1].split(')')[0]
-                        lat, lon, x0, y0 = loc.split(',')
-                        x0 = float(x0)
-                        y0 = float(y0)
-                        lon = float(lon)
-                        lat = float(lat)
-                        sf = float(csdict['parameters']['@scale'])
-                        proj = '"Oblique Stereographic",{},{},{},0,0'.format(lat, lon, sf)
-                        units = csdict['units']['@name']
-                        datum = csdict['@datum']
-                        ldatum = csdict['@datumtrf']
+        elif cstype == 'geosoft':
+            s1, orient, vcs = hcs_orient_vcs_from_name(csdict.get('name', ''))
+            orient = csdict.get('orientation', orient)
+            vcs = csdict.get('vcs', vcs)
+            s1 = name_from_hcs_orient_vcs(s1, orient, vcs)
+            s2 = csdict.get('datum', '')
+            s3 = csdict.get('projection', '')
+            s4 = csdict.get('units', '')
+            s5 = csdict.get('local_datum', '')
+            self._from_gxf([s1, s2, s3, s4, s5])
 
-                        self._from_gxf([name, datum, proj, units, ldatum])
+        elif cstype == 'esri':
+            wkt = csdict.get('wkt', None)
 
-                        if (x0 != 0) or (y0 != 0):
-                            xx0, yy0, _ = self.xyz_from_oriented(np.array((-x0, -y0, 0)))
-                            proj = '"Oblique Stereographic",{},{},{},{},{}'.format(lat, lon, sf, -xx0, -yy0)
-                            self._from_gxf([name, datum, proj, units, ldatum])
+            if wkt is None:
+                raise ValueError("'ESRI missing 'wkt' property.")
 
-                    else:
-                        # build gxf strings TODO: resolve s3 and s5 from parameters ensuring order based on type
-                        s1 = name
-                        s2 = '"{}",{},{},0'.format(csdict['@datum'], csdict['@radius'], csdict['@eccentricity'])
-                        s3 = '"{}"'.format(csdict['@projection'])
-                        s4 = '"{}",{}'.format(csdict['units']['@name'], csdict['units']['@unit_scale'])
-                        s5 = '"{}"'.format(csdict['@datumtrf'])
-                        self._from_gxf([s1, s2, s3, s4, s5])
-                except:
-                    raise CSException(_t('Unable to determine coordinate system from {}').format(str(csdict)))
+            # TODO: The following is a quick fix. Seems WKT strings returned from arcpy code in ArcGIS Pro can now
+            # contain trailing parameters like:
+            # ;-5121200 -9998400 450432031.862147;-100000 10000;-100000 10000;0.001;0.001;0.001;IsHighPrecision
+            # removed here to allow core code to parse. Investigate and move any resulting handling logic to core
+            wkt = ']'.join(wkt.split(']')[:-1]) + ']'
+            # TODO arcpy code could produce WKT strings with single quotes. Core code should be changed to be tolerant of this instead
+            wkt = wkt.replace("'", '"')
+
+            # add vertical datum reference from dict if not in the wkt
+            vcs = csdict.get('vcs', '')
+            if vcs and ('VERTCS[' not in wkt):
+                wkt += wkt_vcs(vcs)
+
+            # clear any existing coordinate system - bug GX does not clear prior orientation
+            self.gxipj.set_gxf('WGS 84 <0,0,0,0,0,0>', '', '', '', '')
+            self.gxipj.set_esri(wkt)
+
+            # add orientation and vcs
+            orient = csdict.get('orientation', '')
+            if orient or vcs:
+                gxfs = self.gxf
+                gxfs[0] = name_from_hcs_orient_vcs(gxfs[0], orient, vcs)
+                self._from_gxf(gxfs)
+
+        elif cstype == "epsg":
+            code = csdict.get('code', None)
+            if code is None:
+                raise ValueError("'EPSG missing 'code' property.")
+            orient = csdict.get('orientation', '')
+            self._from_gxf([str(code) + orient, '', '', '', ''])
+
+        elif cstype == 'local':
+            # must at least have a latitude and longitude
+            lon, lat = csdict.get('lon_lat', (None, None))
+            if (lat is None) or (lon is None):
+                raise CSException(_t("Local must define 'lon_lat' of the local origin."))
+            x0, y0 = csdict.get('origin', (0, 0))
+            azimuth = csdict.get('azimuth', 0.0)
+
+            sf = csdict.get('scale_factor', 0.9996)
+            units = csdict.get('units', 'm')
+            datum = csdict.get('datum', 'WGS 84')
+            ldatum = csdict.get('ldatum', '')
+            elevation = csdict.get('elevation', 0.0)
+
+            proj = '"Oblique Stereographic",{},{},{},0,0'.format(lat, lon, sf)
+            vcs = csdict.get('vcs', '')
+            if (azimuth == 0.0) and (elevation == 0.0):
+                orient = ''
+            else:
+                orient = '0,0,{},0,0,{}'.format(elevation, azimuth)
+
+            name = '{} / *Local({},{},{},{})'.format(datum, lat, lon, x0, y0)
+            name_azimuth = name_from_hcs_orient_vcs(name, orient, vcs)
+            self._from_gxf([name_azimuth, datum, proj, units, ldatum])
+
+            if (x0 != 0) or (y0 != 0):
+                xx0, yy0, _ = self.xyz_from_oriented(np.array((-x0, -y0, 0)))
+                proj = '"Oblique Stereographic",{},{},{},{},{}'.format(lat, lon, sf, -xx0, -yy0)
+                self._from_gxf([name, datum, proj, units, ldatum])
 
         else:
-            cstype = csdict.get('type', '').lower()
-            if (not cstype) or (cstype == 'geosoft'):
-                s1, orient, vcs = hcs_orient_vcs_from_name(csdict.get('name', ''))
-                orient = csdict.get('orientation', orient)
-                vcs = csdict.get('vcs', vcs)
-                s1 = name_from_hcs_orient_vcs(s1, orient, vcs)
-                s2 = csdict.get('datum', '')
-                s3 = csdict.get('projection', '')
-                s4 = csdict.get('units', '')
-                s5 = csdict.get('local_datum', '')
-                self._from_gxf([s1, s2, s3, s4, s5])
-
-            elif cstype == 'esri':
-                wkt = csdict.get('wkt', None)
-
-                if wkt is None:
-                    raise ValueError("'ESRI missing 'wkt' property.")
-
-                # TODO: The following is a quick fix. Seems WKT strings returned from arcpy code in ArcGIS Pro can now
-                # contain trailing parameters like:
-                # ;-5121200 -9998400 450432031.862147;-100000 10000;-100000 10000;0.001;0.001;0.001;IsHighPrecision
-                # removed here to allow core code to parse. Investigate and move any resulting handling logic to core
-                wkt = ']'.join(wkt.split(']')[:-1]) + ']'
-                # TODO arcpy code could produce WKT strings with single quotes. Core code should be changed to be tolerant of this instead
-                wkt = wkt.replace("'", '"')
-
-                # add vertical datum reference from dict if not in the wkt
-                vcs = csdict.get('vcs', '')
-                if vcs and ('VERTCS[' not in wkt):
-                    wkt += wkt_vcs(vcs)
-
-                # clear any existing coordinate system - bug GX does not clear prior orientation
-                self.gxipj.set_gxf('WGS 84 <0,0,0,0,0,0>', '', '', '', '')
-                self.gxipj.set_esri(wkt)
-
-                # add orientation and vcs
-                orient = csdict.get('orientation', '')
-                if orient or vcs:
-                    gxfs = self.gxf
-                    gxfs[0] = name_from_hcs_orient_vcs(gxfs[0], orient, vcs)
-                    self._from_gxf(gxfs)
-
-            elif cstype == "epsg":
-                code = csdict.get('code', None)
-                if code is None:
-                    raise ValueError("'EPSG missing 'code' property.")
-                orient = csdict.get('orientation', '')
-                self._from_gxf([str(code) + orient, '', '', '', ''])
-
-            elif cstype == 'local':
-                # must at least have a latitude and longitude
-                lon, lat = csdict.get('lon_lat', (None, None))
-                if (lat is None) or (lon is None):
-                    raise CSException(_t("Local must define 'lon_lat' of the local origin."))
-                x0, y0 = csdict.get('origin', (0, 0))
-                azimuth = csdict.get('azimuth', 0.0)
-
-                sf = csdict.get('scale_factor', 0.9996)
-                units = csdict.get('units', 'm')
-                datum = csdict.get('datum', 'WGS 84')
-                ldatum = csdict.get('ldatum', '')
-                elevation = csdict.get('elevation', 0.0)
-
-                proj = '"Oblique Stereographic",{},{},{},0,0'.format(lat, lon, sf)
-                vcs = csdict.get('vcs', '')
-                if (azimuth == 0.0) and (elevation == 0.0):
-                    orient = ''
-                else:
-                    orient = '0,0,{},0,0,{}'.format(elevation, azimuth)
-
-                name = '{} / *Local({},{},{},{})'.format(datum, lat, lon, x0, y0)
-                name_azimuth = name_from_hcs_orient_vcs(name, orient, vcs)
-                self._from_gxf([name_azimuth, datum, proj, units, ldatum])
-
-                if (x0 != 0) or (y0 != 0):
-                    xx0, yy0, _ = self.xyz_from_oriented(np.array((-x0, -y0, 0)))
-                    proj = '"Oblique Stereographic",{},{},{},{},{}'.format(lat, lon, sf, -xx0, -yy0)
-                    self._from_gxf([name, datum, proj, units, ldatum])
-
-            else:
-                raise ValueError("Projection type '{}' not supported.".format(cstype))
+            raise ValueError("Projection type '{}' not supported.".format(cstype))
 
     @property
     def gxf(self):
@@ -910,6 +886,22 @@ class Coordinate_system:
     @gxf.setter
     def gxf(self, gxfs):
         self._from_gxf(gxfs)
+
+    @property
+    def xml(self):
+        """
+        xml of the coordinate system using Geosoft schema. Can be set.
+
+        .. versionadded:: 9.4
+        """
+
+        xml = gxapi.str_ref()
+        self.gxipj.get_xml(xml)
+        return xml.value
+
+    @xml.setter
+    def xml(self, xml):
+        self.gxipj.set_xml(xml)
 
     @property
     def esri_wkt(self):

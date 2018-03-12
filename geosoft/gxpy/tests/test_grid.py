@@ -170,7 +170,7 @@ class Test(GXPYTest):
             self.assertFalse(bool(m))
 
             stats = grd.statistics()
-            self.assertIsNone(stats['mean'])
+            self.assertTrue(stats['mean'] is None)
 
     def test_temp(self):
         self.start()
@@ -565,7 +565,7 @@ class Test(GXPYTest):
     def test_metadata(self):
         self.start()
 
-        with gxgrd.Grid.open(self.g1f) as g:
+        with gxgrd.Grid.open(self.g1f, mode=gxgrd.FILE_READWRITE) as g:
             m = g.metadata
             gm = m['geosoft']
             self.assertTrue('dataset' in gm)
@@ -583,7 +583,7 @@ class Test(GXPYTest):
     def test_units_of_measure(self):
         self.start()
 
-        with gxgrd.Grid.open(self.g1f) as g:
+        with gxgrd.Grid.open(self.g1f, mode=gxgrd.FILE_READWRITE) as g:
 
             uom = g.unit_of_measure
             self.assertEqual(uom, 'm')

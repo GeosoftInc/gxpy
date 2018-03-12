@@ -483,6 +483,15 @@ class Test(GXPYTest):
         xml = gxu.xml_from_dict(d, pretty=True)
         self.assertTrue('<dataset ' in xml)
 
+        d = {'geosoft': d['gmd:MD_Metadata']['geosoft']}
+        d['geosoft'].pop('@xmlns', None)
+        xml = gxu.xml_from_dict(d, pretty=True)
+        self.assertFalse('xmlns=' in xml)
+        xml = gxu.geosoft_xml_from_dict(d, pretty=True)
+        self.assertTrue('xmlns=' in xml)
+        xml = gxu.geosoft_xml_from_dict(d['geosoft'], pretty=True)
+        self.assertTrue('<geosoft xmlns=' in xml)
+
         folder, files = gsys.unzip(os.path.join(os.path.dirname(self._test_case_py), 'testgrids.zip'),
                                    folder=gx.gx().temp_folder())
         gxml = os.path.join(folder, 'test_grid_1.grd.xml')

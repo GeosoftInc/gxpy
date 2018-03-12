@@ -133,13 +133,29 @@ def dict_from_lst(lst, ordered=False):
         dct[key.value] = val.value
     return dct
 
+def geosoft_xml_from_dict(d, pretty=True):
+    """
+    Return a unicode XML string of a dictionary with geosoft namespace defined.
 
-def xml_from_dict(d, pretty=False):
+    :param d: dictionary
+    :param pretty: True to indent with line-feeds for pretty-printing
+
+    The tag xmlns="http://www.geosoft.com/schema/geo" is added to the root element.
+
+
+    .. versionadded:: 9.4
+    """
+    if len(d) > 1:
+        d = {'geosoft': d}
+    return xml_from_dict(d, pretty, xmlns="http://www.geosoft.com/schema/geo")
+
+def xml_from_dict(d, pretty=True, xmlns=''):
     """
     Return a unicode XML string of a dictionary.
     
-    :param d: dictionary
-    :param pretty: True to indent with line-feeds for pretty-printing
+    :param d:       dictionary
+    :param pretty:  True to indent with line-feeds for pretty-printing
+    :param xmlns:   xml namespace string.  xmlns="http://www.geosoft.com/schema/geo" for geosoft.
 
     If the dictionary does not have a single node root, the root XML will be '__gx_xml__'.
     
@@ -148,12 +164,18 @@ def xml_from_dict(d, pretty=False):
     .. seealso:: :func:`dict_from_xml`
      
     .. versionadded:: 9.2
+
+    .. versionchanged:: 9.4 added support for xmlns
     """
 
     if not d:
         raise UtilityException(_t('Cannot create XML from an empty dictionary.'))
     if len(d) > 1:
         d = {'__gx_xml__': d}
+
+    if xmlns:
+        root = tuple(d)[0]
+        d[root]['@xmlns'] = xmlns
 
     xml = xmltodict.unparse(d, pretty=pretty)
     return xml

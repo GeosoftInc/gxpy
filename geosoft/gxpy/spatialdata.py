@@ -289,7 +289,9 @@ class SpatialData(gxgm.Geometry):
 
     @unit_of_measure.setter
     def unit_of_measure(self, uom):
-        self.metadata = {'geosoft': {'@xmlns': 'http://www.geosoft.com/schema/geo'}}
-        self.metadata = {'geosoft': {'dataset': {'geo:unitofmeasurement': {'#text': str(uom)}}}}
-        self.metadata = {
-            'geosoft': {'dataset': {'geo:unitofmeasurement': {'@xmlns:geo': 'http://www.geosoft.com/schema/geo'}}}}
+        self.metadata = {'geosoft':
+                             {'@xmlns': 'http://www.geosoft.com/schema/geo',
+                              'dataset':
+                                  {'geo:unitofmeasurement':
+                                       {'@xmlns:geo': 'http://www.geosoft.com/schema/geo',
+                                        '#text': str(uom)}}}}
