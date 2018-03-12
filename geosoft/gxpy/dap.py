@@ -82,12 +82,14 @@ class BoundingBox:
         self.CoordinateSystem = coordinate_system
 
     def __str__(self):
-        return '[%s, %s, %s] - [%s, %s %s], %s' % (
-        self.MinX, self.MinY, self.MinZ, self.MaxX, self.MaxY, self.MaxZ, self.CoordinateSystem)
+        a = '[%s, %s, %s] - [%s, %s %s], %s'
+        b = (self.MinX, self.MinY, self.MinZ, self.MaxX, self.MaxY, self.MaxZ, self.CoordinateSystem)
+        return a % b
 
     def __repr__(self):
-        return 'BoundingBox(minx=%r,miny=%r,minz=%r,maxx=%r,maxy=%r,maxz=%r,coordinate_system=%r)' % (
-        self.MinX, self.MinY, self.MinZ, self.MaxX, self.MaxY, self.MaxZ, self.CoordinateSystem)
+        a = 'BoundingBox(minx=%r,miny=%r,minz=%r,maxx=%r,maxy=%r,maxz=%r,coordinate_system=%r)'
+        b = (self.MinX, self.MinY, self.MinZ, self.MaxX, self.MaxY, self.MaxZ, self.CoordinateSystem)
+        return a % b
 
 
 class Dataset:
@@ -102,12 +104,14 @@ class Dataset:
         self.HasOriginal = has_original
 
     def __str__(self):
-        return 'Id: %s, Title: %s, Type: %s, Hierarchy: %s, Extents: %s' % (
-            self.Id, self.Title, self.Type, self.Hierarchy, self.Extents)
+        a = 'Id: %s, Title: %s, Type: %s, Hierarchy: %s, Extents: %s'
+        b = (self.Id, self.Title, self.Type, self.Hierarchy, self.Extents)
+        return a % b
 
     def __repr__(self):
-        return 'Dataset(id=%r,title=%r,type=%r,hierarchy=%r,stylesheet=%r,extents=%r,has_original=%r)' % (
-            self.Id, self.Title, self.Type, self.Hierarchy, self.Stylesheet, self.Extents, self.HasOriginal)
+        a = 'Dataset(id=%r,title=%r,type=%r,hierarchy=%r,stylesheet=%r,extents=%r,has_original=%r)'
+        b = (self.Id, self.Title, self.Type, self.Hierarchy, self.Stylesheet, self.Extents, self.HasOriginal)
+        return a % b
 
 
 class SearchFilter:
