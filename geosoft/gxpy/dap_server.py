@@ -12,6 +12,8 @@ Geosoft dap server handling.
 
 .. versionadded:: 9.4
 """
+import time
+import os
 from json import dumps, loads
 from requests import get, post, exceptions
 from enum import Enum
@@ -21,12 +23,33 @@ import geosoft
 import geosoft.gxapi as gxapi
 from . import gx as gx
 from . import coordinate_system as gxcs
+from . import geometry as gxgeo
+from . import system as gxsys
+from . import utility as gxu
 
 
 __version__ = geosoft.__version__
 
 def _t(s):
     return geosoft.gxpy.system.translate(s)
+
+
+def _json_default(o):
+    return o.__dict__
+
+
+
+def _decode_object(o):
+    # print(str(o))
+    if 'CoordinateSystem' in o:
+        b = BoundingBox(coordinate_system=o['CoordinateSystem'])
+        b.__dict__.update(o)
+        return b
+    else:
+        d = DataCard()
+        d.__dict__.update(o)
+        d.Type = DataType(d.Type)
+        return d
 
 
 class DapServerException(geosoft.GXRuntimeError):
@@ -36,7 +59,7 @@ class DapServerException(geosoft.GXRuntimeError):
     pass
 
 
-class DatasetType(Enum):
+class DataType(Enum):
     Map = 0
     Grid = 1
     Picture = 2
@@ -63,45 +86,96 @@ class DatasetType(Enum):
     VectorVoxel = 23
     GeosoftOffline = 24
 
-def _json_default(o):
-    return o.__dict__
+
+def datatype_default_extension(item):
+    if not isinstance(item, DataType):
+        item = DataType(item)
+    ext_list = ('map',  # 0
+                'grd',  # 1
+                'pnd',  # 2
+                'csv',  # 3
+                'gdb',  # 4
+                'docx',  # 5
+                'spf',  # 6
+                'Generic',  # 7
+                'geosoft_voxel',  # 8
+                'ArcGIS',  # 9
+                'png',  # 10
+                'PictureSection',  # 11
+                'grd',  # 12
+                'zip',  # 13
+                'Drillhole',  # 14
+                'NoData',  # 15
+                '3dv',  # 16
+                'geosoft_geostring',  # 17
+                'GMSYS3D',  # 18
+                'geosoft_voxi',  # 19
+                'pdf',  # 20
+                'geosoft_geosurface',  # 21
+                'GMSYS2D',  # 22
+                'geosoft_vector_voxel',  # 23
+                'GeosoftOffline')  # 24
+    return ext_list[item.value]
 
 
-def _decode_object(o):
-    if 'CoordinateSystem' in o:
-        b = BoundingBox(cs_as_xml=False, coordinate_system=o['CoordinateSystem'])
-        b.__dict__.update(o)
-        return b
-    else:
-        d = Dataset()
-        d.__dict__.update(o)
-        d.Type = DatasetType(d.Type)
-        return d
+def datatype_extract_url(item):
+    if not isinstance(item, DataType):
+        item = DataType(item)
+    return 'dataset/extract/' + item.name.lower() + '/'
 
 
-def _http_get(url, headers=None, decoder=None):
-    if headers is None:
-        headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
-    response = get(url, headers=headers)
-    if (response.ok):
-        data = loads(response.content.decode('utf-8'), object_hook=decoder)
-        return data
-    else:
-        response.raise_for_status()
+class GridExtractFormat(Enum):
+    GeosoftCompressed = 0
+    GeosoftUncompressed = 1
+    ESRIBinaryRaster = 2
+    BIL = 3
+    Geopak = 4
+    GXFText = 5
+    GXFCompressed = 6
+    ODDFPC = 7
+    ODDFUnix = 8
+    SurferV6 = 9
+    SurferV7 = 10
+    USGSPC = 11
+    USGSUnix = 12
+    ERMapper = 13
 
 
-def _http_post(url, post_parameters, headers=None, decoder=None):
+class ExtractProgressStatus(Enum):
+   Prepare = 0
+   Extract = 1
+   Compress = 2
+   Complete = 3
+   Cancelled = 4
+   Failed = 5
 
-    if headers is None:
-        headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
+class DataExtract:
+    """
+    Extract data from the server.
 
-    response = post(url, data=dumps(post_parameters, default=_json_default), headers=headers)
+    :param filename:    name of the data file
+    :param extents:     data extent as a `BoundingBox` or `geosoft.gxpy.geopmetry.Point2` instance
+    :param resolution:  desired resolution in the distance usins of the xtent coodinate system
+    :param format:      one of the extraction formats for the data type, default is the first format.
 
-    if (response.ok):
-        data = loads(response.content.decode('utf-8'), object_hook=decoder)
-        return data
-    else:
-        response.raise_for_status()
+    .. versionadded:: 9.4
+    """
+
+    def __init__(self, filename, extents=None, resolution=0, format=0):
+        extents = BoundingBox(extents)
+        self.BoundingBox = extents
+        self.Filename = filename
+        self.Resolution = resolution
+        if not isinstance(format, int):
+            format = format.value
+        self.Format = format
+
+    def __str__(self):
+        return 'Resolution: %s, Format: %s, Extents: %s' % (self.Resolution, self.Format, self.BoundingBox)
+
+    def __repr__(self):
+        return 'GridExtract(extents=%r,filename=%r,resolution=%r,format=%r)' % (
+        self.BoundingBox, self.Filename, self.Resolution, self.Format)
 
 
 class BoundingBox:
@@ -120,20 +194,34 @@ class BoundingBox:
     """
 
     def __init__(self, minx=-180, miny=-90, minz=0, maxx=180, maxy=90, maxz=0,
-                 coordinate_system="WGS 84", cs_as_xml=False):
-        self.MinX = minx
-        self.MinY = miny
-        self.MinZ = minz
-        self.MaxX = maxx
-        self.MaxY = maxy
-        self.MaxZ = maxz
-        if cs_as_xml:
-            try:
-                self.CoordinateSystem = gxcs.Coordinate_system(coordinate_system).xml
-            except gxcs.CSException:
-                self.CoordinateSystem = gxcs.Coordinate_system().xml
+                 coordinate_system="WGS 84"):
+
+        if isinstance(minx, BoundingBox):
+            extent = minx
+            self.MinX = extent.MinX
+            self.MinY = extent.MinY
+            self.MinZ = extent.MinZ
+            self.MaxX = extent.MaxX
+            self.MaxY = extent.MaxY
+            self.MaxZ = extent.MaxZ
+            self.CoordinateSystem = extent.CoordinateSystem
+
         else:
-            self.CoordinateSystem = coordinate_system
+            try:
+                self.MinX = float(minx)
+                self.MinY = float(miny)
+                self.MinZ = float(minz)
+                self.MaxX = float(maxx)
+                self.MaxY = float(maxy)
+                self.MaxZ = float(maxz)
+                self.CoordinateSystem = gxcs.Coordinate_system(coordinate_system).xml
+
+            except (TypeError, ValueError):
+                extent = minx
+                if not isinstance(extent, gxgeo.Point2):
+                    extent = gxgeo.Point2(extent, coordinate_system=coordinate_system)
+                self.MinX, self.MinY, self.MinZ, self.MaxX, self.MaxY, self.MaxZ = extent.extent_xyz
+                self.CoordinateSystem = extent.coordinate_system.xml
 
     def __str__(self):
         a = '[%s, %s, %s] - [%s, %s %s], %s'
@@ -146,13 +234,13 @@ class BoundingBox:
         return a % b
 
 
-class Dataset:
+class DataCard:
     """
     Single dataset information instance.
 
     :param id:              `Id`    unique identifier
     :param title:           `Title`
-    :param type:            `Type` dataset type, one of `DatasetType`.
+    :param type:            `Type` dataset type, one of `DataType` values.
     :param hierarchy:       `Hierarchy` location in the catalog hierarchy
     :param stylesheet:      `Stylesheet` metadata style sheet
     :param extents:         `Extents` is a `BoundingBox` instance
@@ -165,7 +253,7 @@ class Dataset:
                  has_original=False):
 
         if extents is None:
-            extents = BoundingBox(cs_as_xml=False)
+            extents = BoundingBox()
 
         self.Id = id
         self.Title = title
@@ -203,7 +291,7 @@ class SearchFilter:
                  entirely_within=False, version=1):
 
         if extents is None:
-            extents = BoundingBox(cs_as_xml=True)
+            extents = BoundingBox()
 
         self.FreeTextQuery = free_text_query
         self.StructuredMetadataQuery = structured_metadata_query
@@ -360,6 +448,8 @@ class DapServer(Sequence):
 
     def __getitem__(self, item):
         if isinstance(item, int):
+            if item < 0 or item >= len(self._cat):
+                raise IndexError('catalog index {} out of range {}'.format(item, len(self._cat)))
             return self._cat[item]
         else:
             if isinstance(item, str):
@@ -372,7 +462,45 @@ class DapServer(Sequence):
                     continue
                 if i.Title == title:
                     return i
-        return None
+        raise DapServerException('\'{}\' not found in catalog'.format(item))
+
+    def _http_get(self, url, headers=None, decoder=None, raw_content=False):
+        if headers is None:
+            headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
+        response = get(self._rest_url + url + '?key=test', headers=headers)
+        if (response.ok):
+            if raw_content:
+                return response.content
+            else:
+                data = response.content.decode('utf-8')
+                if data[0] == '{':
+                    try:
+                        data = loads(data, object_hook=decoder)
+                    except Exception as ejson:
+                        raise DapServerException('json decode error: {}\nresponse:\n{}'.format(str(ejson), data))
+                else:
+                    try:
+                        data = gxu.dict_from_xml(response.content.decode('utf-8'))
+                        data = data[list(data.keys())[0]]  # strip off the root
+                    except Exception as exml:
+                        raise DapServerException('xml decode error: {}\nresponse:\n{}'.
+                                                 format(str(exml), data))
+            return data
+        else:
+            response.raise_for_status()
+
+    def _http_post(self, url, post_parameters, headers=None, decoder=None):
+
+        if headers is None:
+            headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
+
+        response = post(self._rest_url + url + '?key=test', data=dumps(post_parameters, default=_json_default), headers=headers)
+
+        if (response.ok):
+            data = loads(response.content.decode('utf-8'), object_hook=decoder)
+            return data
+        else:
+            response.raise_for_status()
 
     @property
     def url(self):
@@ -389,7 +517,7 @@ class DapServer(Sequence):
         .. versionadded:: 9.4
         """
         if self._config is None:
-            self._config = _http_get(self._rest_url + 'service/configuration?key=test')
+            self._config = self._http_get('service/configuration')
         return self._config
 
     def catalog(self, search_parameters=None, refresh=False):
@@ -407,5 +535,87 @@ class DapServer(Sequence):
             search_parameters = SearchParameters()
 
         if refresh or len(self._cat) == 0:
-            self._cat = _http_post(self._rest_url + 'catalog/search?key=test', search_parameters, decoder=_decode_object)
+            self._cat = self._http_post('catalog/search', search_parameters, decoder=_decode_object)
         return self._cat
+
+    def fetch_data(self, datacard, filename=None, extent=None, resolution=None,
+                   max_seconds=3600, progress=None, cadence=5):
+        """
+        Fetch data from the server.
+
+        :param datacard:    `DataCard` instance, or a dataset description (hierarchy, title) or just title.
+        :param filename:    file name in which to plase data, default is a temporary geosoft gris file.
+        :param extent:      `geosoft.gxpy.geometry.Point2` instance, or a `BoundingBox` instance
+        :param resolution:  data resolution in the length usins of the extent coordinate system
+        :param max_seconds: maximum number of seconds to wait for the process to finish
+        :param progress:    callback that can report progress, for example `progress=print` will print to the console
+        :param cadence:     time in seconds between checking on server preparation status.
+        :return:            data file name, which may be a temporry file.  Temporary files will only persist
+                            during the live of the current context.
+
+        .. versionadded:: 9.4
+        """
+
+        if not isinstance(datacard, DataCard):
+            datacard = self[datacard]
+
+        if filename is None:
+            filename = gx.gx().temp_file(datatype_default_extension(datacard.Type))
+        folder, filename = os.path.split(filename)
+
+        if resolution is None:
+            url = 'dataset/extract/resolution/' + datacard.Id
+            res = self._http_post(url, datacard.Extents)
+            resolution = res['Default']
+
+        extract_parameters = DataExtract(extents=extent,
+                                         resolution=resolution,
+                                         filename=filename)
+
+        urlx = datatype_extract_url(datacard.Type) + datacard.Id
+        key = self._http_post(urlx, extract_parameters)
+        time.sleep(1) # give it a second in case it is really fast
+
+        url = 'dataset/extract/progress/' + key
+        status = self._http_get(url)
+        stage = status['Stage']
+        seconds = 0
+        while (stage != ExtractProgressStatus.Complete.value and
+               stage != ExtractProgressStatus.Cancelled.value and
+               seconds < max_seconds):
+            if stage == ExtractProgressStatus.Failed.value:
+                raise DapServerException(_t('Extraction failed, likely no data in this extent:\nurl: {}\nextract detail:\n{}').
+                                         format(urlx, str(extract_parameters)))
+            if progress:
+                progress('{} {}%'.format(status['Message'], status['PercentComplete']))
+            time.sleep(cadence)
+            seconds += cadence
+            status = self._http_get(url)
+            stage = status['Stage']
+
+        if stage == ExtractProgressStatus.Cancelled:
+            return None
+
+        info = self._http_get('dataset/extract/describe/' + key)
+        zip_file = gx.gx().temp_file('zip')
+
+        url = 'stream/dataset/extract/block/' + key + '/'
+        with open(zip_file, 'wb') as out:  ## Open temporary file as bytes
+            for index in range(info['NumberOfBlocks']):
+                if progress:
+                    progress('Fetching {} of {} to {}'.
+                             format(index + 1, info['NumberOfBlocks'], zip_file))
+                out.write(self._http_get(url + str(index), raw_content=True))
+
+        gxsys.unzip(zip_file, folder=folder)
+        os.remove(zip_file)
+        return_file = os.path.join(folder, filename)
+        if not os.path.exists(return_file):
+            raise DapServerException(_t('Result file not there, somethng went wrong.'))
+        return return_file
+
+    def fetch_image(self, datacard, extent=None, resolution=None):
+
+        if not isinstance(datacard, DataCard):
+            datacard = self[datacard]
+            pass
