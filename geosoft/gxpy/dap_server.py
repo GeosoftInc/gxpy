@@ -84,7 +84,7 @@ def _http_get(url, headers=None, decoder=None):
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
     response = get(url, headers=headers)
     if (response.ok):
-        data = loads(response.content, object_hook=decoder)
+        data = loads(response.content.decode('utf-8'), object_hook=decoder)
         return data
     else:
         response.raise_for_status()
@@ -98,7 +98,7 @@ def _http_post(url, post_parameters, headers=None, decoder=None):
     response = post(url, data=dumps(post_parameters, default=_json_default), headers=headers)
 
     if (response.ok):
-        data = loads(response.content, object_hook=decoder)
+        data = loads(response.content.decode('utf-8'), object_hook=decoder)
         return data
     else:
         response.raise_for_status()
