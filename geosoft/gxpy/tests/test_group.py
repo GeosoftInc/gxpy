@@ -747,7 +747,7 @@ class Test(GXPYTest):
         grid_file = os.path.join(folder, 'test_agg_utm.grd')
         map_file = os.path.join(self.gx.temp_folder(), "test_agg_utm")
 
-        with gxgrd.Grid.open(grid_file) as grd:
+        with gxgrd.Grid.open(grid_file, mode=gxgrd.FILE_READWRITE) as grd:
             cs = grd.coordinate_system
             area = grd.extent_2d()
             grd.unit_of_measure = 'maki'
