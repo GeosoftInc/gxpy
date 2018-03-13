@@ -12,10 +12,8 @@ Geosoft dap server handling.
 
 .. versionadded:: 9.4
 """
-import os
-import numpy as np
-import json
-import requests
+from json import dumps, loads
+from requests import get, post, exceptions
 from enum import Enum
 from collections.abc import Sequence
 
@@ -23,19 +21,15 @@ import geosoft
 import geosoft.gxapi as gxapi
 from . import gx as gx
 from . import coordinate_system as gxcs
-from . import vv as gxvv
-from . import utility as gxu
-from . import spatialdata as gxspd
-from . import geometry as gxgm
+
 
 __version__ = geosoft.__version__
-
 
 def _t(s):
     return geosoft.gxpy.system.translate(s)
 
 
-class DapException(geosoft.GXRuntimeError):
+class DapServerException(geosoft.GXRuntimeError):
     """
     Exceptions from `geosoft.gxpy.dap`.
     """
@@ -69,17 +63,77 @@ class DatasetType(Enum):
     VectorVoxel = 23
     GeosoftOffline = 24
 
+def _json_default(o):
+    return o.__dict__
+
+
+def _decode_object(o):
+    if 'CoordinateSystem' in o:
+        b = BoundingBox(cs_as_xml=False, coordinate_system=o['CoordinateSystem'])
+        b.__dict__.update(o)
+        return b
+    else:
+        d = Dataset()
+        d.__dict__.update(o)
+        d.Type = DatasetType(d.Type)
+        return d
+
+
+def _http_get(url, headers=None, decoder=None):
+    if headers is None:
+        headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
+    response = get(url, headers=headers)
+    if (response.ok):
+        data = loads(response.content, object_hook=decoder)
+        return data
+    else:
+        response.raise_for_status()
+
+
+def _http_post(url, post_parameters, headers=None, decoder=None):
+
+    if headers is None:
+        headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
+
+    response = post(url, data=dumps(post_parameters, default=_json_default), headers=headers)
+
+    if (response.ok):
+        data = loads(response.content, object_hook=decoder)
+        return data
+    else:
+        response.raise_for_status()
+
 
 class BoundingBox:
+    """
+    Create a bounding box instance.
+
+    :param minx:                `MinX`
+    :param miny:                `MinY`
+    :param minz:                `MinZ`
+    :param maxx:                `MaxX`
+    :param maxy:                `MaxY`
+    :param maxz:                `MaxZ`
+    :param coordinate_system:   `CoordinateSystem`
+                                any supported coordinate system representation. Default is "WGS 84".
+    :param cs_as_xml:           True to force the coordinate_system to be xml.
+    """
+
     def __init__(self, minx=-180, miny=-90, minz=0, maxx=180, maxy=90, maxz=0,
-                 coordinate_system='<?xml version="1.0" encoding="UTF-8"?><projection type="GEOGRAPHIC" name="WGS 84" ellipsoid="WGS 84" datum="WGS 84" wellknown_epsg="4326" datumtrf="WGS 84" datumtrf_description="[WGS 84] World" radius="6378137" eccentricity="0.08181919084" xmlns="http://www.geosoft.com/schema/geo"><shift x="0" y="0" z="0"/><units name="dega" unit_scale="1"/></projection>'):
+                 coordinate_system="WGS 84", cs_as_xml=False):
         self.MinX = minx
         self.MinY = miny
         self.MinZ = minz
         self.MaxX = maxx
         self.MaxY = maxy
         self.MaxZ = maxz
-        self.CoordinateSystem = coordinate_system
+        if cs_as_xml:
+            try:
+                self.CoordinateSystem = gxcs.Coordinate_system(coordinate_system).xml
+            except gxcs.CSException:
+                self.CoordinateSystem = gxcs.Coordinate_system().xml
+        else:
+            self.CoordinateSystem = coordinate_system
 
     def __str__(self):
         a = '[%s, %s, %s] - [%s, %s %s], %s'
@@ -93,8 +147,26 @@ class BoundingBox:
 
 
 class Dataset:
-    def __init__(self, id=None, title=None, type=0, hierarchy=None, stylesheet=None, extents=BoundingBox(),
+    """
+    Single dataset information instance.
+
+    :param id:              `Id`    unique identifier
+    :param title:           `Title`
+    :param type:            `Type` dataset type, one of `DatasetType`.
+    :param hierarchy:       `Hierarchy` location in the catalog hierarchy
+    :param stylesheet:      `Stylesheet` metadata style sheet
+    :param extents:         `Extents` is a `BoundingBox` instance
+    :param has_original:    `HasOriginal` True if the original data is available
+
+    .. versionadded:: 9.4
+    """
+
+    def __init__(self, id=None, title=None, type=0, hierarchy=None, stylesheet=None, extents=None,
                  has_original=False):
+
+        if extents is None:
+            extents = BoundingBox(cs_as_xml=False)
+
         self.Id = id
         self.Title = title
         self.Type = type
@@ -115,12 +187,28 @@ class Dataset:
 
 
 class SearchFilter:
-    def __init__(self, free_text_query=None, structured_metadata_query=None, extents=BoundingBox(),
+    """
+    Search filter
+
+    :param free_text_query:             title/keyword search filter
+    :param structured_metadata_query:
+    :param extents:                     `BoundingBox` instance
+    :param entirely_within:             `True` for completely enclosed data, `False` for intersecting data.
+    :param version:                     minimum version, default is 1.
+
+    .. versionadded:: 9.4
+    """
+
+    def __init__(self, free_text_query=None, structured_metadata_query=None, extents=None,
                  entirely_within=False, version=1):
+
+        if extents is None:
+            extents = BoundingBox(cs_as_xml=True)
+
         self.FreeTextQuery = free_text_query
         self.StructuredMetadataQuery = structured_metadata_query
         self.BoundingBox = extents
-        self.EntirelyWithin = entirely_within
+        self.EntirelyWithin = int(entirely_within)
         self.RequestVersion = version
 
     def __str__(self):
@@ -130,29 +218,27 @@ class SearchFilter:
 
     def __repr__(self):
         a = 'SearchFilter(free_text_query=%r,structured_metadata_query=%r,extents=%r,entirely_within=%r,version=%r)'
-        b = (self.FreeTextQuery, 
-             self.StructuredMetadataQuery, 
-             self.BoundingBox, 
-             self.EntirelyWithin, 
+        b = (self.FreeTextQuery,
+             self.StructuredMetadataQuery,
+             self.BoundingBox,
+             self.EntirelyWithin,
              self.RequestVersion)
-        return a % b 
-
-def jsonDefault(o):
-    return o.__dict__
-
-def decodeObject(o):
-    if 'CoordinateSystem' in o:
-        b = BoundingBox()
-        b.__dict__.update(o)
-        return b
-    else:
-        d = Dataset()
-        d.__dict__.update(o)
-        d.Type = DatasetType(d.Type)
-        return d
+        return a % b
 
 
 class ResultFilter:
+    """
+    Limit results.
+
+    :param path:            to this location in the hierarchy
+    :param depth:           to this depth in the hierarchy
+    :param start_index:     start index in the list
+    :param max_results:     maximum results to include
+    :param valid_path:      TODO: Ryan, what is this?
+
+    .. versionadded:: 9.4
+    """
+
     def __init__(self, path=None, depth=2147483647, start_index=0, max_results=0, valid_path=False):
         self.Path = path
         self.Depth = depth
@@ -170,7 +256,21 @@ class ResultFilter:
 
 
 class SearchParameters:
-    def __init__(self, search_filter=SearchFilter(), result_filter=ResultFilter()):
+    """
+    Search parameters, defined by a `SearchFilter` and a `ResultFilter`
+
+    :param search_filter:   `SearchFilter` instance
+    :param result_filter:   `ResultFilter` instance
+
+    .. versionadded:: 9.4
+    """
+
+    def __init__(self, search_filter=None, result_filter=None):
+
+        if search_filter is None:
+            search_filter = SearchFilter()
+        if result_filter is None:
+            result_filter = ResultFilter()
         self.SearchFilter = search_filter
         self.ResultFilter = result_filter
 
@@ -180,9 +280,9 @@ class SearchParameters:
     def __repr__(self):
         return 'SearchParameters(search_filter=%r,result_filter=%r)' % (self.SearchFilter, self.ResultFilter)
 
-class Dap(Sequence):
+class DapServer(Sequence):
     """
-    Dap class.
+    DapServer class to communicate with a Geosoft DAP server.
 
     :param url:         url of the server, default is 'http://dap.geosoft.com/'
     :param get_catalog: `True` (the default) to get the server catalog.  If `False` the caller needs to call
@@ -201,13 +301,20 @@ class Dap(Sequence):
         return "{}({})".format(self.__class__, self.__dict__)
 
     def __str__(self):
-        if len(self._cat) > 0:
-            return '{}({} datasets)'.format(self._url, len(self._cat))
-        return self._url
+        if self._config is None:
+            name = _t('unknown name')
+        else:
+            name = self._config['Name']
+        datasets = len(self._cat)
+        if datasets == 0:
+            datasets = '?'
+        return '{}: {} ({} datasets)'.format(self._url, name, datasets)
 
     def __init__(self, url='http://dap.geosoft.com/', get_catalog=True):
 
         super().__init__()
+        self._cat = []
+        self._config = None
 
         # establish url and rest url
         url = url.lower()
@@ -220,13 +327,19 @@ class Dap(Sequence):
             self._rest_url = url + 'rest/'
             self._url = url
 
+        # configuration
+        try:
+            c = self.configuration
+        except exceptions.HTTPError as e:
+            raise DapServerException(_t('Server \'{}\' has a problem:\n{}'.format(self._url, str(e))))
+
         # dataset catalog
-        self._cat = []
+
         if get_catalog:
             try:
                 self.catalog()
-            except requests.exceptions.HTTPError as e:
-                raise DapException(_t('Server \'{}\' has a problem:\n{}'.format(self._url, str(e))))
+            except exceptions.HTTPError as e:
+                raise DapServerException(_t('Server \'{}\' has a problem:\n{}'.format(self._url, str(e))))
 
         self._next = 0
 
@@ -261,36 +374,38 @@ class Dap(Sequence):
                     return i
         return None
 
-    def _search(self, search_parameters=None):
-
-        if search_parameters is None:
-            search_parameters = SearchParameters()
-
-        search_url = self._rest_url + 'catalog/search?key=test'
-
-        headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
-        response = requests.post(search_url, data=json.dumps(search_parameters, default=jsonDefault), headers=headers)
-        if (response.ok):
-            data = json.loads(response.content, object_hook=decodeObject)
-            return data
-        else:
-            response.raise_for_status()
-
     @property
     def url(self):
         """ Server url."""
         return self._url
 
-    def catalog(self, search_filter=None, refresh=False):
+    @property
+    def configuration(self):
         """
-        Return a filtered catalog list.
+        Return service configuration info.
 
-        :param filter:  search filter
-        :param refresh: force a refresh
-        :return:        list of server catalog entries
+        See http://dap.geosoft.com/REST/service/help/operations/GetConfiguration
 
         .. versionadded:: 9.4
         """
-        if refresh or len(self) == 0:
-            self._cat = self._search(search_filter)
+        if self._config is None:
+            self._config = _http_get(self._rest_url + 'service/configuration?key=test')
+        return self._config
+
+    def catalog(self, search_parameters=None, refresh=False):
+        """
+        Return a filtered catalog list.
+
+        :param search_parameters:   search filter, instance of `SearchParameters`
+        :param refresh:             force a refresh
+        :return:                    list of server catalog entries
+
+        .. versionadded:: 9.4
+        """
+
+        if search_parameters is None:
+            search_parameters = SearchParameters()
+
+        if refresh or len(self._cat) == 0:
+            self._cat = _http_post(self._rest_url + 'catalog/search?key=test', search_parameters, decoder=_decode_object)
         return self._cat
