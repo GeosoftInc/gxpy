@@ -46,6 +46,8 @@ class Test(GXPYTest):
 
         with gxdap.DapServer() as dap:
             self.assertEqual(dap.url, 'http://dap.geosoft.com/')
+            self.assertTrue(len(dap) == 0)
+            dap.catalog()
             self.assertTrue(len(dap) > 0)
 
             for ds in dap:
@@ -95,6 +97,18 @@ class Test(GXPYTest):
 
             extent = gxgeo.Point2(((-80, 65), (-70, 65.5)), coordinate_system='NAD83')
             self.assertRaises(gxdap.DapServerException, dap.fetch_data, dataset, None, extent)
+
+    def test_datacard_properties(self):
+        self.start()
+
+        with gxdap.DapServer() as dap:
+
+            # some point data
+            datacard= dap['Kimberlite Indicator Mineral Grain Chemistry']
+            self.assertFalse(hasattr(datacard, 'metadata'))
+            datacard.get_extra_properties()
+            self.assertTrue(hasattr(datacard, 'metadata'))
+
 
     def test_dap_on_tap(self):
         self.start()

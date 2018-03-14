@@ -38,7 +38,6 @@ def _json_default(o):
     return o.__dict__
 
 
-
 def _decode_object(o):
     # print(str(o))
     if 'CoordinateSystem' in o:
@@ -238,6 +237,7 @@ class DataCard:
     """
     Single dataset information instance.
 
+    :param dap:             `Dap_server` instance
     :param id:              `Id`    unique identifier
     :param title:           `Title`
     :param type:            `Type` dataset type, one of `DataType` values.
@@ -249,8 +249,11 @@ class DataCard:
     .. versionadded:: 9.4
     """
 
-    def __init__(self, id=None, title=None, type=0, hierarchy=None, stylesheet=None, extents=None,
+    def __init__(self, dap=None, id=None, title=None, type=0, hierarchy=None, stylesheet=None, extents=None,
                  has_original=False):
+
+        self._dap = dap
+        self._has_properties = False
 
         if extents is None:
             extents = BoundingBox()
@@ -272,6 +275,58 @@ class DataCard:
         a = 'Dataset(id=%r,title=%r,type=%r,hierarchy=%r,stylesheet=%r,extents=%r,has_original=%r)'
         b = (self.Id, self.Title, self.Type, self.Hierarchy, self.Stylesheet, self.Extents, self.HasOriginal)
         return a % b
+
+    @property
+    def dap_server(self):
+        """ `DapServer` instance for this dataset, may be None if card is not yet associated with a server."""
+        return self._dap
+
+    @dap_server.setter
+    def dap_server(self, dap):
+        self._dap = dap
+
+    def get_extra_properties(self, refresh=False):
+        """
+        Get extra properties from the server.  The properties will become properties
+        of this class instance, and these depend on the data type.  For example, all
+        data types will have a `metadata` property and an `extents` property.
+
+        :param refresh: `True` to force a property refresh from the server
+
+        .. versionadded:: 9.4
+        """
+
+        def xprops(dt):
+            return self._dap.get('dataset/properties/' + dt.lower() + '/' + str(self.Id))
+
+        def get(d):
+            props[d] = self._dap.get('dataset/' + d.lower() + '/' + str(self.Id))
+
+        if refresh or not self._has_properties:
+            self._has_properties = True
+
+            props = {}
+            # get('info') TODO: Ryan
+            get('edition')
+            get('extents')
+            # get('legend') TODO Ryan
+            get('metadata')
+            get('disclaimer')
+            get('permission')
+            if self.Type == DataType.Grid:
+                props['properties'] = xprops('grid')
+            elif self.Type == DataType.Document:
+                props['properties'] = xprops('document')
+            elif self.Type == DataType.Point:
+                props['properties'] = xprops('hxyz')
+            elif self.Type == DataType.Map:
+                props['properties'] = xprops('map')
+            elif self.Type == DataType.Voxel:
+                props['properties'] = xprops('voxel')
+            else:
+                props['properties'] = self._dap.get('dataset/properties/' + str(self.Id))
+
+            self.__dict__ = {**self.__dict__, **props}
 
 
 class SearchFilter:
@@ -373,8 +428,9 @@ class DapServer(Sequence):
     DapServer class to communicate with a Geosoft DAP server.
 
     :param url:         url of the server, default is 'http://dap.geosoft.com/'
-    :param get_catalog: `True` (the default) to get the server catalog.  If `False` the caller needs to call
-                        method `catalog` to get the data catalog from the server.
+    :param get_catalog: `True` to get the server catalog.  If `False` (the default) the caller needs to call
+                        method `catalog()` to get the data catalog from the server. The catalog is cached as
+                        part of the instance.
 
     .. versionadded:: 9.4
     """
@@ -398,11 +454,13 @@ class DapServer(Sequence):
             datasets = '?'
         return '{}: {} ({} datasets)'.format(self._url, name, datasets)
 
-    def __init__(self, url='http://dap.geosoft.com/', get_catalog=True):
+    def __init__(self, url='http://dap.geosoft.com/', get_catalog=False):
 
         super().__init__()
         self._cat = []
         self._config = None
+        self._http_headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
+        self._http_params = {'key': 'test'}
 
         # establish url and rest url
         url = url.lower()
@@ -422,7 +480,6 @@ class DapServer(Sequence):
             raise DapServerException(_t('Server \'{}\' has a problem:\n{}'.format(self._url, str(e))))
 
         # dataset catalog
-
         if get_catalog:
             try:
                 self.catalog()
@@ -447,10 +504,14 @@ class DapServer(Sequence):
             return ds
 
     def __getitem__(self, item):
+
+        card = None
+        if not self._cat:
+            self.catalog()
         if isinstance(item, int):
             if item < 0 or item >= len(self._cat):
                 raise IndexError('catalog index {} out of range {}'.format(item, len(self._cat)))
-            return self._cat[item]
+            card = self._cat[item]
         else:
             if isinstance(item, str):
                 title = item
@@ -461,46 +522,52 @@ class DapServer(Sequence):
                 if hierarchy and i.Hierarchy != hierarchy:
                     continue
                 if i.Title == title:
-                    return i
+                    card = i
+                    break
+        if card:
+            if card.dap_server is None:
+                card.dap_server = self
+            return card
+
         raise DapServerException('\'{}\' not found in catalog'.format(item))
 
-    def _http_get(self, url, headers=None, decoder=None, raw_content=False):
-        if headers is None:
-            headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
-        response = get(self._rest_url + url + '?key=test', headers=headers)
+    def _http_get(self, url, decoder=None, raw_content=False):
+
+        response = get(self._rest_url + url,
+                       params=self._http_params,
+                       headers=self._http_headers)
         if (response.ok):
             if raw_content:
                 return response.content
             else:
-                data = response.content.decode('utf-8')
-                if data[0] == '{':
-                    try:
-                        data = loads(data, object_hook=decoder)
-                    except Exception as ejson:
-                        raise DapServerException('json decode error: {}\nresponse:\n{}'.format(str(ejson), data))
-                else:
-                    try:
-                        data = gxu.dict_from_xml(response.content.decode('utf-8'))
-                        data = data[list(data.keys())[0]]  # strip off the root
-                    except Exception as exml:
-                        raise DapServerException('xml decode error: {}\nresponse:\n{}'.
-                                                 format(str(exml), data))
-            return data
+                return gxu.dict_from_http_response_text(response.text)
         else:
             response.raise_for_status()
 
-    def _http_post(self, url, post_parameters, headers=None, decoder=None):
+    def _http_post(self, url, post_parameters, decoder=None):
 
-        if headers is None:
-            headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
-
-        response = post(self._rest_url + url + '?key=test', data=dumps(post_parameters, default=_json_default), headers=headers)
+        response = post(self._rest_url + url,
+                        data=dumps(post_parameters, default=_json_default),
+                        params=self._http_params,
+                        headers=self._http_headers)
 
         if (response.ok):
             data = loads(response.content.decode('utf-8'), object_hook=decoder)
             return data
         else:
             response.raise_for_status()
+
+    def get(self, what):
+        """
+        Get information from the server.
+
+        :param what:    string of what to get. for example "dataset/properties/265" retrieves
+                        the dataset properties for dataset 265.  See http://dap.geosoft.com/REST/dataset/help
+                        for a list of the kinds of things you can get about a dataset.
+
+        :return: requested info as a dict.
+        """
+        return self._http_get(what)
 
     @property
     def url(self):
@@ -525,8 +592,8 @@ class DapServer(Sequence):
         Return a filtered catalog list.
 
         :param search_parameters:   search filter, instance of `SearchParameters`
-        :param refresh:             force a refresh
-        :return:                    list of server catalog entries
+        :param refresh:             `True` to force a refresh, otherwise cached catalog is returned
+        :return:                    list of server catalog entries as `DataCard` instances
 
         .. versionadded:: 9.4
         """
@@ -536,6 +603,11 @@ class DapServer(Sequence):
 
         if refresh or len(self._cat) == 0:
             self._cat = self._http_post('catalog/search', search_parameters, decoder=_decode_object)
+
+        # assign this server to all cards
+        for card in self._cat:
+            card.dap_server = self
+
         return self._cat
 
     def fetch_data(self, datacard, filename=None, extent=None, resolution=None,
@@ -567,6 +639,10 @@ class DapServer(Sequence):
             url = 'dataset/extract/resolution/' + datacard.Id
             res = self._http_post(url, datacard.Extents)
             resolution = res['Default']
+
+        if progress:
+            progress(_t('\nFetching \'{}\'({}) from \'{}\' to file \'{}\'').
+                     format(datacard.Title, datacard.Id, self._url, filename))
 
         extract_parameters = DataExtract(extents=extent,
                                          resolution=resolution,
@@ -603,15 +679,17 @@ class DapServer(Sequence):
         with open(zip_file, 'wb') as out:  ## Open temporary file as bytes
             for index in range(info['NumberOfBlocks']):
                 if progress:
-                    progress('Fetching {} of {} to {}'.
-                             format(index + 1, info['NumberOfBlocks'], zip_file))
+                    progress(_t('Download block {} of {}').
+                             format(index + 1, info['NumberOfBlocks']))
                 out.write(self._http_get(url + str(index), raw_content=True))
 
         gxsys.unzip(zip_file, folder=folder)
         os.remove(zip_file)
         return_file = os.path.join(folder, filename)
         if not os.path.exists(return_file):
-            raise DapServerException(_t('Result file not there, somethng went wrong.'))
+            raise DapServerException(_t('No result file, something went wrong.'))
+        if progress:
+            progress(_t('Fetch complete: {}').format(return_file))
         return return_file
 
     def fetch_image(self, datacard, extent=None, resolution=None):
