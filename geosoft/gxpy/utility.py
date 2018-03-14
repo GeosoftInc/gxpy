@@ -1479,3 +1479,38 @@ def vector_normalize(v):
     mag = np.linalg.norm(v, axis=1)
     mag[mag == 0.] = np.nan
     return (v.T * np.reciprocal(mag)).T.reshape(vs)
+
+
+def dict_from_http_response_text(text, prune_xml_root=True, object_hook=None, object_pairs_hook=None, **kw):
+    """
+    Decode http response text to a dictionary. Response may be json or xml.
+
+    :param text:                http response.text from requests module response objects
+    :param prune_xml_root:      True to remove the xml root, False to keep it
+    :param object_hook:         json.loads decoder hook for objects
+    :param object_pairs_hook:   json.loads decoder for object pairs (see json.loads documentation).
+    :param **kw:                other arguments passed to `json.loads()`
+    :return:                    dictionary of content
+
+    If the content is xml, the root node is removed and a dictionary is constructed from the content
+    above the root node. Of one of the hook functions is present, the dictionary is converted to json
+    and a dictionary is reconstructed using the hooks.
+
+    .. versionadded:: 9.4
+    """
+
+    try:
+        td = json.loads(text, object_hook=object_hook, object_pairs_hook=object_pairs_hook, **kw)
+    except Exception as ejson:
+        try:
+            td = dict_from_xml(text)
+        except Exception as exml:
+            raise UtilityException('json error: {}\nxml_error: {}\ntext:\n{}'.
+                                   format(str(ejson), str(exml), text))
+
+        if prune_xml_root:  # TODO: discuss with @Ryan pruning xml root wrt general http usage.
+            td = td[list(td.keys())[0]]
+        if object_hook or object_pairs_hook:
+            td = json.loads(json.dumps(td), object_hook=object_hook, object_pairs_hook=object_pairs_hook, **kw)
+
+    return td

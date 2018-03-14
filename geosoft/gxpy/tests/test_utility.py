@@ -3,6 +3,7 @@ import numpy as np
 import os
 import datetime
 import time
+import requests
 from datetime import timezone, datetime
 
 import geosoft
@@ -597,6 +598,31 @@ class Test(GXPYTest):
         self.assertEqual(gxu.file_age('a completely bogus file name'), -1)
         time.sleep(0.1)
         self.assertTrue(gxu.file_age(fn) > 0.)
+
+    def test_http_stuff(self):
+        self.start()
+
+        def hook(o):
+            return o
+
+        def pairs_hook(o):
+            return o
+
+        params = {'key': 'test'}
+        headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
+        r = requests.get("http://dap.geosoft.com/rest/service/configuration",
+                         params=params,
+                         headers=headers)
+        response = gxu.dict_from_http_response_text(r.text, object_hook=hook)
+        self.assertTrue(response['MajorVersion'] >= 12)
+        response = gxu.dict_from_http_response_text(r.text, object_pairs_hook=pairs_hook)
+        self.assertEqual(response[0][0], 'Name')
+
+        r = requests.get("http://dap.geosoft.com/rest/service/configuration", params=params)
+        response = gxu.dict_from_http_response_text(r.text)
+        self.assertTrue(int(response['MajorVersion']) >= 12)
+        response = gxu.dict_from_http_response_text(r.text, object_hook=hook)
+        self.assertTrue(int(response['MajorVersion']) >= 12)
 
 
 if __name__ == '__main__':
