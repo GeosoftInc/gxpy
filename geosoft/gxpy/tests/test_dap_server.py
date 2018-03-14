@@ -105,9 +105,8 @@ class Test(GXPYTest):
 
             # some point data
             datacard= dap['Kimberlite Indicator Mineral Grain Chemistry']
-            self.assertFalse(hasattr(datacard, 'metadata'))
-            datacard.get_extra_properties()
-            self.assertTrue(hasattr(datacard, 'metadata'))
+            xp = datacard.extra_properties
+            self.assertTrue('metadata' in xp)
 
 
     def test_dap_on_tap(self):

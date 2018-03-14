@@ -59,6 +59,7 @@ class DapServerException(geosoft.GXRuntimeError):
 
 
 class DataType(Enum):
+    """Supported data types"""
     Map = 0
     Grid = 1
     Picture = 2
@@ -85,42 +86,41 @@ class DataType(Enum):
     VectorVoxel = 23
     GeosoftOffline = 24
 
+    def datatype_default_extension(item):
+        if not isinstance(item, DataType):
+            item = DataType(item)
+        ext_list = ('map',  # 0
+                    'grd',  # 1
+                    'png',  # 2
+                    'csv',  # 3
+                    'gdb',  # 4
+                    'unknown',  # 5
+                    'spf',  # 6
+                    'unknown',  # 7
+                    'geosoft_voxel',  # 8
+                    'ArcGIS',  # 9
+                    'png',  # 10
+                    'png',  # 11
+                    'grd',  # 12
+                    'zip',  # 13
+                    'zip',  # 14
+                    'unknown',  # 15
+                    '3dv',  # 16
+                    'geosoft_geostring',  # 17
+                    'GMSYS3D',  # 18
+                    'geosoft_voxi',  # 19
+                    'pdf',  # 20
+                    'geosoft_geosurface',  # 21
+                    'GMSYS2D',  # 22
+                    'geosoft_vector_voxel',  # 23
+                    'unknown')  # 24
+        return ext_list[item.value]
 
-def datatype_default_extension(item):
-    if not isinstance(item, DataType):
-        item = DataType(item)
-    ext_list = ('map',  # 0
-                'grd',  # 1
-                'pnd',  # 2
-                'csv',  # 3
-                'gdb',  # 4
-                'docx',  # 5
-                'spf',  # 6
-                'Generic',  # 7
-                'geosoft_voxel',  # 8
-                'ArcGIS',  # 9
-                'png',  # 10
-                'PictureSection',  # 11
-                'grd',  # 12
-                'zip',  # 13
-                'Drillhole',  # 14
-                'NoData',  # 15
-                '3dv',  # 16
-                'geosoft_geostring',  # 17
-                'GMSYS3D',  # 18
-                'geosoft_voxi',  # 19
-                'pdf',  # 20
-                'geosoft_geosurface',  # 21
-                'GMSYS2D',  # 22
-                'geosoft_vector_voxel',  # 23
-                'GeosoftOffline')  # 24
-    return ext_list[item.value]
 
-
-def datatype_extract_url(item):
-    if not isinstance(item, DataType):
-        item = DataType(item)
-    return 'dataset/extract/' + item.name.lower() + '/'
+    def extract_url(item):
+        if not isinstance(item, DataType):
+            item = DataType(item)
+        return 'dataset/extract/' + item.name.lower() + '/'
 
 
 class GridExtractFormat(Enum):
@@ -253,7 +253,7 @@ class DataCard:
                  has_original=False):
 
         self._dap = dap
-        self._has_properties = False
+        self._extra_properties = None
 
         if extents is None:
             extents = BoundingBox()
@@ -267,13 +267,13 @@ class DataCard:
         self.HasOriginal = has_original
 
     def __str__(self):
-        a = 'Id: %s, Title: %s, Type: %s, Hierarchy: %s, Extents: %s'
-        b = (self.Id, self.Title, self.Type, self.Hierarchy, self.Extents)
+        a = 'Id: %s, Title: %s, Type: %s, Hierarchy: %s'
+        b = (self.Id, self.Title, self.Type, self.Hierarchy)
         return a % b
 
     def __repr__(self):
-        a = 'Dataset(id=%r,title=%r,type=%r,hierarchy=%r,stylesheet=%r,extents=%r,has_original=%r)'
-        b = (self.Id, self.Title, self.Type, self.Hierarchy, self.Stylesheet, self.Extents, self.HasOriginal)
+        a = 'Dataset(id=%r, title=%r, type=%r, hierarchy=%r, stylesheet=%r, has_original=%r)'
+        b = (self.Id, self.Title, self.Type, self.Hierarchy, self.Stylesheet, self.HasOriginal)
         return a % b
 
     @property
@@ -285,48 +285,48 @@ class DataCard:
     def dap_server(self, dap):
         self._dap = dap
 
-    def get_extra_properties(self, refresh=False):
+    @property
+    def extra_properties(self):
         """
-        Get extra properties from the server.  The properties will become properties
-        of this class instance, and these depend on the data type.  For example, all
-        data types will have a `metadata` property and an `extents` property.
+        Extra dataset properties.
 
-        :param refresh: `True` to force a property refresh from the server
+        These will be None until this property is used, at which point the extra properties are fetched from
+        the dap server.
 
         .. versionadded:: 9.4
         """
 
-        def xprops(dt):
+        def xget(dt):
             return self._dap.get('dataset/properties/' + dt.lower() + '/' + str(self.Id))
 
         def get(d):
             props[d] = self._dap.get('dataset/' + d.lower() + '/' + str(self.Id))
 
-        if refresh or not self._has_properties:
-            self._has_properties = True
+        if self._extra_properties is None:
 
             props = {}
-            # get('info') TODO: Ryan
+            # get('info') TODO: Ryan - fails
             get('edition')
-            get('extents')
-            # get('legend') TODO Ryan
+            # get('legend') TODO Ryan - fails
             get('metadata')
             get('disclaimer')
             get('permission')
             if self.Type == DataType.Grid:
-                props['properties'] = xprops('grid')
+                xp = xget('grid')
             elif self.Type == DataType.Document:
-                props['properties'] = xprops('document')
+                xp = xget('document')
             elif self.Type == DataType.Point:
-                props['properties'] = xprops('hxyz')
+                xp = xget('hxyz')
             elif self.Type == DataType.Map:
-                props['properties'] = xprops('map')
+                xp = xget('map')
             elif self.Type == DataType.Voxel:
-                props['properties'] = xprops('voxel')
+                xp = xget('voxel')
             else:
-                props['properties'] = self._dap.get('dataset/properties/' + str(self.Id))
+                xp = self._dap.get('dataset/properties/' + str(self.Id))
+            props = {**props, **xp}
+            self._extra_properties = props
 
-            self.__dict__ = {**self.__dict__, **props}
+        return self._extra_properties
 
 
 class SearchFilter:
@@ -632,7 +632,7 @@ class DapServer(Sequence):
             datacard = self[datacard]
 
         if filename is None:
-            filename = gx.gx().temp_file(datatype_default_extension(datacard.Type))
+            filename = gx.gx().temp_file(DataType.datatype_default_extension(datacard.Type))
         folder, filename = os.path.split(filename)
 
         if resolution is None:
@@ -648,7 +648,7 @@ class DapServer(Sequence):
                                          resolution=resolution,
                                          filename=filename)
 
-        urlx = datatype_extract_url(datacard.Type) + datacard.Id
+        urlx = DataType.extract_url(datacard.Type) + datacard.Id
         key = self._http_post(urlx, extract_parameters)
         time.sleep(1) # give it a second in case it is really fast
 
