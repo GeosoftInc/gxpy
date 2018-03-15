@@ -771,13 +771,17 @@ class Coordinate_system:
 
         if not cstype:
 
-            # default to geosoft xml dictionary
-            if 'projection' in csdict:
-                self.xml = gxu.geosoft_xml_from_dict(csdict)
-            else:
-                self.xml = gxu.geosoft_xml_from_dict({'projection': csdict})
+            # first try Geosoft xml dictionary, if not try 'geosoft' type
+            try:
+                if 'projection' in csdict:
+                    self.xml = gxu.geosoft_xml_from_dict(csdict)
+                else:
+                    self.xml = gxu.geosoft_xml_from_dict({'projection': csdict})
+                return
+            except geosoft.gxapi.GXError:
+                cstype = 'geosoft'
 
-        elif cstype == 'geosoft':
+        if cstype == 'geosoft':
             s1, orient, vcs = hcs_orient_vcs_from_name(csdict.get('name', ''))
             orient = csdict.get('orientation', orient)
             vcs = csdict.get('vcs', vcs)
