@@ -3,9 +3,9 @@ Geosoft dap server handling.
 
 :Classes:
 
-    ===== ==========================================================================
-    `Dap` Geosoft dap server
-    ===== ==========================================================================
+    =========== ==========================================================================
+    `DapClient` Geosoft dap client
+    =========== ==========================================================================
 
     Regression tests provide usage examples:     
     `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_dap.py>`_
@@ -51,7 +51,7 @@ def _decode_object(o):
         return d
 
 
-class DapServerException(geosoft.GXRuntimeError):
+class DapClientException(geosoft.GXRuntimeError):
     """
     Exceptions from `geosoft.gxpy.dap`.
     """
@@ -237,7 +237,7 @@ class DataCard:
     """
     Single dataset information instance.
 
-    :param dap:             `Dap_server` instance
+    :param dap:             `DapClient` instance
     :param id:              `Id`    unique identifier
     :param title:           `Title`
     :param type:            `Type` dataset type, one of `DataType` values.
@@ -277,12 +277,12 @@ class DataCard:
         return a % b
 
     @property
-    def dap_server(self):
-        """ `DapServer` instance for this dataset, may be None if card is not yet associated with a server."""
+    def dap_client(self):
+        """ `DapClient` instance for this dataset, may be None if card is not yet associated with a server."""
         return self._dap
 
-    @dap_server.setter
-    def dap_server(self, dap):
+    @dap_client.setter
+    def dap_client(self, dap):
         self._dap = dap
 
     @property
@@ -423,9 +423,9 @@ class SearchParameters:
     def __repr__(self):
         return 'SearchParameters(search_filter=%r,result_filter=%r)' % (self.SearchFilter, self.ResultFilter)
 
-class DapServer(Sequence):
+class DapClient(Sequence):
     """
-    DapServer class to communicate with a Geosoft DAP server.
+    DapClient class to communicate with a Geosoft DAP server.
 
     :param url:         url of the server, default is 'http://dap.geosoft.com/'
     :param get_catalog: `True` to get the server catalog.  If `False` (the default) the caller needs to call
@@ -477,14 +477,14 @@ class DapServer(Sequence):
         try:
             c = self.configuration
         except exceptions.HTTPError as e:
-            raise DapServerException(_t('Server \'{}\' has a problem:\n{}'.format(self._url, str(e))))
+            raise DapClientException(_t('Server \'{}\' has a problem:\n{}'.format(self._url, str(e))))
 
         # dataset catalog
         if get_catalog:
             try:
                 self.catalog()
             except exceptions.HTTPError as e:
-                raise DapServerException(_t('Server \'{}\' has a problem:\n{}'.format(self._url, str(e))))
+                raise DapClientException(_t('Server \'{}\' has a problem:\n{}'.format(self._url, str(e))))
 
         self._next = 0
 
@@ -525,11 +525,11 @@ class DapServer(Sequence):
                     card = i
                     break
         if card:
-            if card.dap_server is None:
-                card.dap_server = self
+            if card.dap_client is None:
+                card.dap_client = self
             return card
 
-        raise DapServerException('\'{}\' not found in catalog'.format(item))
+        raise DapClientException('\'{}\' not found in catalog'.format(item))
 
     def _http_get(self, url, decoder=None, raw_content=False):
 
@@ -606,7 +606,7 @@ class DapServer(Sequence):
 
         # assign this server to all cards
         for card in self._cat:
-            card.dap_server = self
+            card.dap_client = self
 
         return self._cat
 
@@ -660,7 +660,7 @@ class DapServer(Sequence):
                stage != ExtractProgressStatus.Cancelled.value and
                seconds < max_seconds):
             if stage == ExtractProgressStatus.Failed.value:
-                raise DapServerException(_t('Extraction failed, likely no data in this extent:\nurl: {}\nextract detail:\n{}').
+                raise DapClientException(_t('Extraction failed, likely no data in this extent:\nurl: {}\nextract detail:\n{}').
                                          format(urlx, str(extract_parameters)))
             if progress:
                 progress('{} {}%'.format(status['Message'], status['PercentComplete']))
@@ -687,7 +687,7 @@ class DapServer(Sequence):
         os.remove(zip_file)
         return_file = os.path.join(folder, filename)
         if not os.path.exists(return_file):
-            raise DapServerException(_t('No result file, something went wrong.'))
+            raise DapClientException(_t('No result file, something went wrong.'))
         if progress:
             progress(_t('Fetch complete: {}').format(return_file))
         return return_file

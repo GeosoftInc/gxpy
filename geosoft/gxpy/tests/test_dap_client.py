@@ -6,7 +6,7 @@ import geosoft
 import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.coordinate_system as gxcs
-import geosoft.gxpy.dap_server as gxdap
+import geosoft.gxpy.dap_client as gxdap
 import geosoft.gxpy.geometry as gxgeo
 import geosoft.gxpy.grid as gxgrd
 
@@ -26,25 +26,25 @@ class Test(GXPYTest):
     def test_dap(self):
         self.start()
 
-        with gxdap.DapServer(get_catalog=False) as dap:
+        with gxdap.DapClient(get_catalog=False) as dap:
             self.assertEqual(dap.url, 'http://dap.geosoft.com/')
             self.assertEqual(str(dap), 'http://dap.geosoft.com/: Geosoft Public DAP Server (? datasets)')
             self.assertEqual(len(dap), 0)
 
-        with gxdap.DapServer('http://dap.geosoft.com/rest/', get_catalog=False) as dap:
+        with gxdap.DapClient('http://dap.geosoft.com/rest/', get_catalog=False) as dap:
             self.assertEqual(dap.url, 'http://dap.geosoft.com/')
             self.assertEqual(str(dap), 'http://dap.geosoft.com/: Geosoft Public DAP Server (? datasets)')
 
-        with gxdap.DapServer('http://dap.geosoft.com', get_catalog=False) as dap:
+        with gxdap.DapClient('http://dap.geosoft.com', get_catalog=False) as dap:
             self.assertEqual(dap.url, 'http://dap.geosoft.com/')
             self.assertEqual(str(dap), 'http://dap.geosoft.com/: Geosoft Public DAP Server (? datasets)')
 
-        self.assertRaises(gxdap.DapServerException, gxdap.DapServer, 'http://www.geosoft.com')
+        self.assertRaises(gxdap.DapClientException, gxdap.DapClient, 'http://www.geosoft.com')
 
     def test_catalog(self):
         self.start()
 
-        with gxdap.DapServer() as dap:
+        with gxdap.DapClient() as dap:
             self.assertEqual(dap.url, 'http://dap.geosoft.com/')
             self.assertTrue(len(dap) == 0)
             dap.catalog()
@@ -69,13 +69,13 @@ class Test(GXPYTest):
                 pass
             try:
                 dap[('nada', 'EMAG2_V3_20170530_SeaLevel')]
-            except gxdap.DapServerException:
+            except gxdap.DapClientException:
                 pass
 
     def test_fetch_grid(self):
         self.start()
 
-        with gxdap.DapServer() as dap:
+        with gxdap.DapClient() as dap:
 
             # get a grid
             dataset = dap['SRTM1 Canada']
@@ -88,7 +88,7 @@ class Test(GXPYTest):
     def test_fetch_point(self):
         self.start()
 
-        with gxdap.DapServer() as dap:
+        with gxdap.DapClient() as dap:
             # some point data
             dataset = dap['Kimberlite Indicator Mineral Grain Chemistry']
             extent = gxgeo.Point2(((-112, 65), (-111, 65.5)), coordinate_system='NAD83')
@@ -96,12 +96,12 @@ class Test(GXPYTest):
             self.assertEqual(os.path.splitext(data_file)[1], '.csv')
 
             extent = gxgeo.Point2(((-80, 65), (-70, 65.5)), coordinate_system='NAD83')
-            self.assertRaises(gxdap.DapServerException, dap.fetch_data, dataset, None, extent)
+            self.assertRaises(gxdap.DapClientException, dap.fetch_data, dataset, None, extent)
 
     def test_datacard_properties(self):
         self.start()
 
-        with gxdap.DapServer() as dap:
+        with gxdap.DapClient() as dap:
 
             # some point data
             datacard= dap['Kimberlite Indicator Mineral Grain Chemistry']
