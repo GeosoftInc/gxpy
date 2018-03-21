@@ -138,10 +138,15 @@ class Aggregate_image(gxgm.Geometry):
             with gxgrd.Grid.open(self.layer_file_names[0]) as g:
                 self._base_properties = g.properties()
                 self._extent = gxgm.Point2(g.extent)
+                self._extent_2d = g.extent_cell_2d()
 
     @property
     def extent(self):
         return self._extent
+
+    @property
+    def extent_2d(self):
+        return self._extent_2d
 
     @property
     def gxagg(self):
@@ -457,9 +462,16 @@ class Aggregate_image(gxgm.Geometry):
             raise AggregateException(_t('Aggregate has no layers'))
 
         if display_area is None:
-            display_area = self.extent
-        if not gxcs.is_known(display_area.coordinate_system):
-            display_area.coordinate_system = self.coordinate_system
+            data_area = self.extent_2d
+            coordinate_system = self.coordinate_system
+        else:
+            data_area = display_area.extent_xy
+            if not gxcs.is_known(display_area.coordinate_system):
+                coordinate_system = self.coordinate_system
+            else:
+                coordinate_system = display_area.coordinate_system
+
+
 
         if image_file is None:
             image_file = gx.gx().temp_file('.png')
@@ -470,8 +482,8 @@ class Aggregate_image(gxgm.Geometry):
         if pix_width is None or pix_width <= 0:
             pix_width = nx
 
-        with gxmap.Map.new(data_area=display_area.extent_xy,
-                           coordinate_system=display_area.coordinate_system,
+        with gxmap.Map.new(data_area=data_area,
+                           coordinate_system=coordinate_system,
                            margins=(0, 0, 0, 0),
                            inside_margin=0) as gmap:
             gmap.remove_on_close()
