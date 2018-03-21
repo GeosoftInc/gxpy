@@ -1,6 +1,6 @@
 import unittest
 import numpy as np
-import json
+import os
 
 import geosoft.gxapi as gxapi
 import geosoft.gxpy.coordinate_system as gxcs
@@ -9,11 +9,19 @@ import geosoft.gxpy.grid as gxgrd
 import geosoft.gxpy.spatialdata as gxspd
 import geosoft.gxpy.utility as gxu
 import geosoft.gxpy.gx as gx
+import geosoft.gxpy.system as gxsys
 
 from base import GXPYTest
 
 
 class Test(GXPYTest):
+
+    @classmethod
+    def setUpClass(cls):
+        cls.setUpGXPYTest()
+        cls.folder, files = gxsys.unzip(os.path.join(os.path.dirname(cls._test_case_py), 'testgrids.zip'),
+                                       folder=cls._gx.temp_folder())
+        cls.grd = os.path.join(cls.folder, 'section.grd')
 
     def test_any(self):
         self.start()
@@ -522,6 +530,16 @@ class Test(GXPYTest):
                 self.assertEqual(csxml.name, 'WGS 84 / *Local(43,-96,0,0) <0,0,0,0,0,25>')
                 self.assertEqual(csxml.gxf[2], '"Oblique Stereographic",43,-96,0.9996,0,0')
 
+
+    def test_section_ipj(self):
+        self.start()
+
+        cs = gxgrd.Grid.open(self.grd).coordinate_system
+        self.assertFalse(cs.is_known)
+        self.assertTrue(cs.is_oriented)
+        new_cs = gxcs.Coordinate_system(cs)
+        self.assertTrue(new_cs.is_oriented)
+        self.assertFalse(new_cs.is_known)
 
 ###############################################################################################
 

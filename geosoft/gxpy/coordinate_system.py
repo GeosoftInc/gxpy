@@ -154,6 +154,11 @@ def parameter_exists(what, key):
         return True
 
 
+_unknown_name = '*unknown'
+def _unknown(name):
+    return _unknown_name in name
+
+
 def name_list(what, datum_filter=''):
     """
     Get a list of coordinate system names
@@ -482,7 +487,7 @@ class Coordinate_system:
         self._gxapi_ipj = gxapi.GXIPJ.create()
 
         if coordinate_system is None:
-            coordinate_system = '*unknown'
+            coordinate_system = _unknown_name
 
         if isinstance(coordinate_system, str):
             self._from_str(coordinate_system)
@@ -605,7 +610,8 @@ class Coordinate_system:
 
         .. versionadded:: 9.3
         """
-        return self.name.lower() != '*unknown'
+        not_known = _unknown_name
+        return self.name[:len(not_known)].lower() != not_known
 
     def coordinate_dict(self):
         """
@@ -745,7 +751,7 @@ class Coordinate_system:
                 gxf2 = hcs
 
         # units only
-        if (gxf1 != '*unknown') and not (gxf3 or gxf4 or gxf5) and parameter_exists(PARM_UNITS, gxf1):
+        if (not _unknown(gxf1)) and not (gxf3 or gxf4 or gxf5) and parameter_exists(PARM_UNITS, gxf1):
             self.gxipj.set_gxf('', '', '', gxf1, '')
 
         else:
@@ -754,10 +760,6 @@ class Coordinate_system:
 
             except (geosoft.gxapi.GXAPIError, geosoft.gxapi.GXError):
                 raise_gxf_error()
-            else:
-                if gxf1 != "*unknown":
-                    if ('*unknown' in self.name) and (gxf2 or gxf3 or gxf5):
-                        raise_gxf_error()
 
     def _from_dict(self, csdict):
         """
