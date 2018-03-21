@@ -240,6 +240,12 @@ class Test(GXPYTest):
             n += len(p)
         self.assertEqual(n, 399)
 
+    def test_calculate_slope_standard_deviation(self):
+        self.start()
+
+        slope_stddev = gxgrdu.calculate_slope_standard_deviation(self.mag)
+        self.assertAlmostEqual(0.64497375, slope_stddev)
+
 ###############################################################################################
 
 if __name__ == '__main__':

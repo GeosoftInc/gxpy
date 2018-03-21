@@ -57,8 +57,8 @@ def reopen(g, dtype=None, mode=FILE_READWRITE):
     """
     Reopen a grid to access the grid as an existing grid.
     
-    Some gxapi.GXIMU methods will not work with grids open a snew grids. This method closes
-    the grid and reopens in the specifid mode
+    Some gxapi.GXIMU methods will not work with grids open as new grids. This method closes
+    the grid and reopens in the specific mode
     
     :param g:       `Grid` instance
     :param dtype:   data type, None to match the data type of the grid being reopened

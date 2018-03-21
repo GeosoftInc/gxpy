@@ -586,3 +586,35 @@ def contour_points(grid, value, max_segments=1000, resolution=None,
         return gxgeo.PPoint.merge(pplist)
 
     return pplist
+
+
+def calculate_slope_standard_deviation(grid):
+    """
+
+    Return the standard deviation of the slopes.
+
+    :param grid: Grid
+    :returns:    Standard deviation of grid slopes
+
+    .. Note:: This method calculates the standard deviation of the horizontal
+        differences in the X and Y directions for the supplied
+        image.  This is useful for shading routines.  A good
+        default scaling factor is 2.5 / standard deviation.
+
+        The image will be sub-sampled to a statistically meaningful number.
+
+        The cell sizes are used to determine the slopes.
+
+    .. versionadded:: 9.4
+    """
+
+    close_g = False
+    if isinstance(grid, str):
+        grid = gxgrd.Grid.open(grid)
+        close_g = True
+
+    try:
+        return gxapi.GXIMU.slope_standard_deviation(grid.gximg)
+    finally:
+        if close_g:
+            grid.close()
