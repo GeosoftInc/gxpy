@@ -493,16 +493,10 @@ class Coordinate_system:
             self._from_str(coordinate_system)
 
         elif isinstance(coordinate_system, gxapi.GXIPJ):
-            s1 = gxapi.str_ref()
-            s2 = gxapi.str_ref()
-            s3 = gxapi.str_ref()
-            s4 = gxapi.str_ref()
-            s5 = gxapi.str_ref()
-            coordinate_system.get_gxf(s1, s2, s3, s4, s5)
-            self._from_gxf((s1.value, s2.value, s3.value, s4.value, s5.value))
+            coordinate_system.copy(self.gxipj)
 
         elif isinstance(coordinate_system, Coordinate_system):
-            self._from_gxf(coordinate_system.gxf)
+            coordinate_system.gxipj.copy(self.gxipj)
 
         elif isinstance(coordinate_system, dict):
             self._from_dict(coordinate_system)
