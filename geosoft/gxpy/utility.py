@@ -1489,7 +1489,7 @@ def dict_from_http_response_text(text, prune_xml_root=True, object_hook=None, ob
     :param prune_xml_root:      True to remove the xml root, False to keep it
     :param object_hook:         json.loads decoder hook for objects
     :param object_pairs_hook:   json.loads decoder for object pairs (see json.loads documentation).
-    :param **kw:                other arguments passed to `json.loads()`
+    :param kw:                  arguments passed to `json.loads()`
     :return:                    dictionary of content
 
     If the content is xml, the root node is removed and a dictionary is constructed from the content
