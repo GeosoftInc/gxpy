@@ -22,6 +22,7 @@ class Test(GXPYTest):
         cls.g1f = os.path.join(cls.folder, 'test_grid_1.grd')
         cls.g2f = os.path.join(cls.folder, 'test_grid_2.grd')
         cls.g3f = os.path.join(cls.folder, 'test_agg_utm.grd')
+        cls.g4f = os.path.join(cls.folder, 'X_Slices.grd')
 
     def test_version(self):
         self.start()
@@ -156,6 +157,13 @@ class Test(GXPYTest):
 
         finally:
             gxu.delete_file(image_file)
+
+    def test_slice_agg(self):
+        self.start()
+
+        with gxagg.Aggregate_image.new(self.g4f) as agg:
+            image_file = agg.image_file(image_type=gxmap.RASTER_FORMAT_PNG, pix_width=None)
+            pass
 
 
 if __name__ == '__main__':

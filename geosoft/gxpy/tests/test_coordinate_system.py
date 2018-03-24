@@ -541,6 +541,8 @@ class Test(GXPYTest):
         self.assertTrue(new_cs.is_oriented)
         self.assertFalse(new_cs.is_known)
 
+
+
 ###############################################################################################
 
 if __name__ == '__main__':
