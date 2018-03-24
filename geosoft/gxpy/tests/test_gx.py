@@ -116,6 +116,11 @@ class Test(GXPYTest):
             for f in files:
                 self.assertFalse(os.path.exists(f))
 
+    def test_profile(self):
+        self.start()
+        with gx.gx() as gxc:
+            self.assertTrue(len(gxc.profile_name))
+            self.assertTrue(len(gxc.profile_url))
 
 ###############################################################################################
 

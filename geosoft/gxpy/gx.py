@@ -467,6 +467,28 @@ class GXpy(_Singleton):
         return __version__
 
     @property
+    def profile_name(self):
+        """
+        Geosoft ID profile use name.
+
+        .. versionadded:: 9.4
+        """
+        sr = gxapi.str_ref()
+        gxapi.GXSYS.get_profile_name(sr)
+        return sr.value
+
+    @property
+    def profile_url(self):
+        """
+        Geosoft ID profile url in My Geosoft portal.
+
+        .. versionadded:: 9.4
+        """
+        sr = gxapi.str_ref()
+        gxapi.GXSYS.get_profile_url(sr)
+        return sr.value
+
+    @property
     def main_wind_id(self):
         """
         The main window ID (HWND cast to unsigned for Windows).
