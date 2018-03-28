@@ -26,7 +26,6 @@ class Test(GXPYTest):
     def tearDownClass(cls):
         cls.tearDownGXPYTest()
 
-
     def test_post(self):
         self.start()
 
