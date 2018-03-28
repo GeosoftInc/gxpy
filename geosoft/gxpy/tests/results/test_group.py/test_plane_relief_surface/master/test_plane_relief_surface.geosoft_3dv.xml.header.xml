@@ -1,9 +1,9 @@
 <header>
    <Item name="Name" value="test_plane_relief_surface.geosoft_3dv"/>
    <Item name="Extents" type="L2AREA">
-      <Value name="MinX" value="-1324450"/>
-      <Value name="MinY" value="-47666450"/>
-      <Value name="MaxX" value="-1324448"/>
-      <Value name="MaxY" value="-47666448"/>
+      <Value name="MinX" value="-1324425"/>
+      <Value name="MinY" value="-47666425"/>
+      <Value name="MaxX" value="-1324423"/>
+      <Value name="MaxY" value="-47666423"/>
    </Item>
 </header>

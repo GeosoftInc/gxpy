@@ -10,7 +10,7 @@
 			<metadata_creation_date>2003-01-01</metadata_creation_date>
 			<georeference>
 				<dataextents>
-					<extent3d minx="335481.3" miny="6159683.7" minz="0" maxx="340557.3" maxy="6163998.3" maxz="0"/>
+					<extent3d minx="335476.224" miny="6159678.624" minz="0" maxx="340562.376" maxy="6164003.376" maxz="0"/>
 				</dataextents>
 				<projection type="TRANSVERSE_MERCATOR" name="AGD66 / AMG zone 54" wellknown_epsg="20254" projection="Australian Map Grid zone 54" ellipsoid="Australian National Spheroid" datum="AGD66" datumtrf="AGD66 to WGS 84 (12)" datumtrf_epsg="1665" datumtrf_description="[AGD66] (1m) Australia - Australian Capital Territory" radius="6378160" eccentricity="0.0818201799961" scale_adjust="0.999997045">
 					<shift x="-129.193" y="-41.212" z="130.73"/>
@@ -55,16 +55,16 @@
 					<gmd:geographicElement>
 						<gmd:EX_GeographicBoundingBox>
 							<gmd:westBoundLongitude>
-								<gco:Decimal>139.205278026</gco:Decimal>
+								<gco:Decimal>139.205221647</gco:Decimal>
 							</gmd:westBoundLongitude>
 							<gmd:eastBoundLongitude>
-								<gco:Decimal>139.261483051</gco:Decimal>
+								<gco:Decimal>139.261539374</gco:Decimal>
 							</gmd:eastBoundLongitude>
 							<gmd:southBoundLatitude>
-								<gco:Decimal>-34.6908660322</gco:Decimal>
+								<gco:Decimal>-34.6909125766</gco:Decimal>
 							</gmd:southBoundLatitude>
 							<gmd:northBoundLatitude>
-								<gco:Decimal>-34.6511730606</gco:Decimal>
+								<gco:Decimal>-34.6511264932</gco:Decimal>
 							</gmd:northBoundLatitude>
 						</gmd:EX_GeographicBoundingBox>
 					</gmd:geographicElement>

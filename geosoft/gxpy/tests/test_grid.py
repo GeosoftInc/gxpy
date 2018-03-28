@@ -25,6 +25,7 @@ class Test(GXPYTest):
         cls.g2f = os.path.join(cls.folder, 'test_grid_2.grd')
         cls.gcf = os.path.join(cls.folder, 'test_bool1_color.grd')
         cls.mag = os.path.join(cls.folder, 'mag.grd')
+        cls.section = os.path.join(cls.folder, 'section.grd')
 
     def test_grc(self):
         self.start()
@@ -306,20 +307,20 @@ class Test(GXPYTest):
             with gxgrd.Grid.index_window(g, window, 4, 2, 96, 5, overwrite=True) as gw:
                 gw.delete_files()
                 ex = gw.extent_2d()
-                self.assertAlmostEqual(ex[0], 7.04)
-                self.assertAlmostEqual(ex[1], 44.02)
-                self.assertAlmostEqual(ex[2], 7.99)
-                self.assertAlmostEqual(ex[3], 44.06)
+                self.assertAlmostEqual(ex[0], 7.035)
+                self.assertAlmostEqual(ex[1], 44.015)
+                self.assertAlmostEqual(ex[2], 7.995)
+                self.assertAlmostEqual(ex[3], 44.065)
 
             g.rot = 10.0
             window = os.path.join(self.folder, 'testwindow.grd(GRD)')
             with gxgrd.Grid.index_window(g, window, 4, 2, 96, 5, overwrite=True) as gw:
                 gw.delete_files()
                 ex = gw.extent_2d()
-                self.assertAlmostEqual(ex[0], 6.95713471)
-                self.assertAlmostEqual(ex[1], 43.822284)
-                self.assertAlmostEqual(ex[2], 7.8996480)
-                self.assertAlmostEqual(ex[3], 44.0266421)
+                self.assertAlmostEqual(ex[0], 6.9513424466727765)
+                self.assertAlmostEqual(ex[1], 43.81649172360945)
+                self.assertAlmostEqual(ex[2], 7.905440298447842)
+                self.assertAlmostEqual(ex[3], 44.032434361820314)
 
     def test_from_array(self):
         self.start()
@@ -420,98 +421,64 @@ class Test(GXPYTest):
                 grd.rot = 0.0
 
                 ex = grd.extent_2d()
-                self.assertAlmostEqual(ex[0], 0.0)
-                self.assertAlmostEqual(ex[1], 0.0)
-                self.assertAlmostEqual(ex[2], 10.0)
-                self.assertAlmostEqual(ex[3], 10.0)
+                self.assertAlmostEqual(ex[0], -0.05)
+                self.assertAlmostEqual(ex[1], -0.05)
+                self.assertAlmostEqual(ex[2], 10.05)
+                self.assertAlmostEqual(ex[3], 10.05)
 
                 grd.rot = 30.0
                 ex = grd.extent_2d()
-                self.assertAlmostEqual(ex[0], 0)
-                self.assertAlmostEqual(ex[1], -5)
-                self.assertAlmostEqual(ex[2], 13.66025404)
-                self.assertAlmostEqual(ex[3], 8.66025404)
+                self.assertAlmostEqual(ex[0], -0.06830127018922194)
+                self.assertAlmostEqual(ex[1], -5.068301270189221)
+                self.assertAlmostEqual(ex[2], 13.72855530803361)
+                self.assertAlmostEqual(ex[3], 8.72855530803361)
 
                 cs = grd.coordinate_system
                 cs_name = cs.cs_name(gxcs.NAME_HCS_VCS) + ' <0,0,0,0,0,30>'
                 grd.coordinate_system = gxcs.Coordinate_system(cs_name)
                 ex = grd.extent_2d()
-                self.assertAlmostEqual(ex[0], 0)
-                self.assertAlmostEqual(ex[1], -5)
-                self.assertAlmostEqual(ex[2], 13.66025404)
-                self.assertAlmostEqual(ex[3], 8.66025404)
+                self.assertAlmostEqual(ex[0], -0.06830127018922194)
+                self.assertAlmostEqual(ex[1], -5.068301270189221)
+                self.assertAlmostEqual(ex[2], 13.72855530803361)
+                self.assertAlmostEqual(ex[3], 8.72855530803361)
 
                 grd.rot = 0
                 ex = grd.extent_2d()
-                self.assertAlmostEqual(ex[0], 0.0)
-                self.assertAlmostEqual(ex[1], 0.0)
-                self.assertAlmostEqual(ex[2], 10.0)
-                self.assertAlmostEqual(ex[3], 10.0)
+                self.assertAlmostEqual(ex[0], -0.05)
+                self.assertAlmostEqual(ex[1], -0.05)
+                self.assertAlmostEqual(ex[2], 10.05)
+                self.assertAlmostEqual(ex[3], 10.05)
                 ex = grd.extent_3d()
-                self.assertAlmostEqual(ex[0], 0.0)
-                self.assertAlmostEqual(ex[1], -5)
+                self.assertAlmostEqual(ex[0], -0.06830127018922)
+                self.assertAlmostEqual(ex[1], -5.068301270189221)
                 self.assertAlmostEqual(ex[2], 0.0)
-                self.assertAlmostEqual(ex[3], 13.66025404)
-                self.assertAlmostEqual(ex[4], 8.66025404)
+                self.assertAlmostEqual(ex[3], 13.72855530803361)
+                self.assertAlmostEqual(ex[4], 8.72855530803361)
                 self.assertAlmostEqual(ex[5], 0)
 
                 cs_name = cs.cs_name(gxcs.NAME_HCS_VCS) + ' <0,0,0,90,0,30>'
                 grd.coordinate_system = gxcs.Coordinate_system(cs_name)
                 ex = grd.extent_3d()
-                self.assertAlmostEqual(ex[0], 0.0)
-                self.assertAlmostEqual(ex[1], -5)
-                self.assertAlmostEqual(ex[2], -10.0)
-                self.assertAlmostEqual(ex[3], 8.66025404)
-                self.assertAlmostEqual(ex[4], 0)
-                self.assertAlmostEqual(ex[5], 0)
+                self.assertAlmostEqual(ex[0], -0.04330127018922194)
+                self.assertAlmostEqual(ex[1], -5.025)
+                self.assertAlmostEqual(ex[2], -10.05)
+                self.assertAlmostEqual(ex[3], 8.70355530803360)
+                self.assertAlmostEqual(ex[4], 0.025)
+                self.assertAlmostEqual(ex[5], 0.05)
 
                 grd.rot = 30.0
                 ex = grd.extent_2d()
-                self.assertAlmostEqual(ex[0], 0)
-                self.assertAlmostEqual(ex[1], -5)
-                self.assertAlmostEqual(ex[2], 13.66025404)
-                self.assertAlmostEqual(ex[3], 8.66025404)
+                self.assertAlmostEqual(ex[0], -0.0683012701892219)
+                self.assertAlmostEqual(ex[1], -5.068301270189221)
+                self.assertAlmostEqual(ex[2], 13.72855530803361)
+                self.assertAlmostEqual(ex[3], 8.72855530803361)
                 ex = grd.extent_3d()
-                self.assertAlmostEqual(ex[0], 0)
-                self.assertAlmostEqual(ex[1], -6.83012701892219)
-                self.assertAlmostEqual(ex[2], -8.66025403784439)
-                self.assertAlmostEqual(ex[3], 11.830127018922193)
-                self.assertAlmostEqual(ex[4], 0)
-                self.assertAlmostEqual(ex[5], 5)
-
-    def test_extent_cell(self):
-        self.start()
-
-        with gxgrd.Grid.open(self.g1f) as g:
-            with gxgrd.Grid.copy(g, os.path.join(self.folder, 'test_extent.grd(GRD)')) as grd:
-                grd.delete_files()
-                grd.x0 = grd.y0 = 0.0
-                grd.dx = 0.1
-                grd.dy = 0.2
-                grd.rot = 0.0
-
-                ex = grd.extent_cell_2d()
-                self.assertAlmostEqual(ex[0], -0.05)
-                self.assertAlmostEqual(ex[1], -0.1)
-                self.assertAlmostEqual(ex[2], 10.05)
-                self.assertAlmostEqual(ex[3], 20.1)
-
-                ex = grd.extent_cell_3d()
-                self.assertEqual(ex, (-0.05, -0.1, 0.0, 10.05, 20.1, 0.0))
-
-                grd.rot = 30.0
-                ex = grd.extent_cell_2d()
-                self.assertEqual(ex, (-0.09330127018922194, -5.111602540378444,
-                                      18.753555308033608, 17.432110616067217))
-
-                cs = grd.coordinate_system
-                cs_name = cs.cs_name(gxcs.NAME_HCS_VCS) + ' <0,0,0,90,0,30>'
-                grd.coordinate_system = gxcs.Coordinate_system(cs_name)
-                ex = grd.extent_cell_3d()
-                self.assertEqual(ex, (-0.08080127018922209, -9.376777654016802, -17.432110616067217,
-                                      16.24105530803361, 0.046650635094611884, 5.111602540378444))
-
-                self.assertTrue(grd.extent == gxgm.Point2(ex))
+                self.assertAlmostEqual(ex[0], -0.05915063509461113)
+                self.assertAlmostEqual(ex[1], -6.864277654016804)
+                self.assertAlmostEqual(ex[2], -8.72855530803361)
+                self.assertAlmostEqual(ex[3], 11.889277654016805)
+                self.assertAlmostEqual(ex[4], 0.03415063509461143)
+                self.assertAlmostEqual(ex[5], 5.068301270189221)
 
     def test_read(self):
         self.start()
@@ -803,6 +770,13 @@ class Test(GXPYTest):
             self.assertEqual(g.nx, 183)
             self.assertEqual(g.ny, 280)
 
+    def test_section(self):
+        self.start()
+        with gxgrd.Grid.open(self.section) as sect:
+            self.assertTrue(sect.coordinate_system.is_oriented)
+            self.assertEqual(sect.dimension, (539.0011421921663, 397.9670447604731, 410.0))
+            self.assertEqual(sect.extent_xyz, (515694.9128668542, 7142239.234535628, 1425.0,
+                                               516233.9140090464, 7142637.2015803885, 1835.0))
 
 ###############################################################################################
 

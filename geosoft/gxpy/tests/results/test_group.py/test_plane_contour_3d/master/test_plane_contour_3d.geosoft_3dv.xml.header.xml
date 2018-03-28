@@ -1,9 +1,9 @@
 <header>
    <Item name="Name" value="test_plane_contour_3d.geosoft_3dv"/>
    <Item name="Extents" type="L2AREA">
-      <Value name="MinX" value="-331113"/>
-      <Value name="MinY" value="-11916613"/>
-      <Value name="MaxX" value="-331112"/>
-      <Value name="MaxY" value="-11916612"/>
+      <Value name="MinX" value="-331107"/>
+      <Value name="MinY" value="-11916607"/>
+      <Value name="MaxX" value="-331105"/>
+      <Value name="MaxY" value="-11916605"/>
    </Item>
 </header>

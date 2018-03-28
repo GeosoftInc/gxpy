@@ -115,7 +115,7 @@
          <Value name="MinX" value="0"/>
          <Value name="MinY" value="0"/>
          <Value name="MaxX" value="220"/>
-         <Value name="MaxY" value="189.8324022"/>
+         <Value name="MaxY" value="190"/>
       </Item>
    </Item>
    <Item type="LineThick" size="8">

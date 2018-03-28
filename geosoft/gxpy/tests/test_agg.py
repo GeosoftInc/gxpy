@@ -163,8 +163,11 @@ class Test(GXPYTest):
 
         with gxagg.Aggregate_image.new(self.g4f) as agg:
             image_file = agg.image_file(image_type=gxmap.RASTER_FORMAT_PNG, pix_width=None)
-            pass
-
+            with gxgrid.Grid.open(image_file + '(IMG;T=png)') as img:
+                self.assertEqual(img.nx, 57)
+                self.assertEqual(img.ny, 13)
+                self.assertTrue(img.coordinate_system.is_oriented)
+                self.assertEqual(img.dimension, (28499.968724331295, 42.222175888717175, 6500.0))
 
 if __name__ == '__main__':
 

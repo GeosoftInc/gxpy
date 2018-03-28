@@ -122,10 +122,10 @@
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="662205"/>
-         <Value name="MinY" value="23833205"/>
-         <Value name="MaxX" value="663620"/>
-         <Value name="MaxY" value="23834420"/>
+         <Value name="MinX" value="662192.5"/>
+         <Value name="MinY" value="23833192.5"/>
+         <Value name="MaxX" value="663632.5"/>
+         <Value name="MaxY" value="23834432.5"/>
       </Item>
    </Item>
    <Item type="LineThick" size="8">
