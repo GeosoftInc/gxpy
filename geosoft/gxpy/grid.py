@@ -30,6 +30,7 @@ from . import agg as gxagg
 from . import geometry as gxgm
 from . import map as gxmap
 from . import grid_utility as gxgrdu
+from . import view as gxview
 
 __version__ = geosoft.__version__
 
@@ -668,6 +669,22 @@ class Grid(gxgm.Geometry):
         grd = cls.new(file_name, properties=properties)
         grd.write_rows(data)
         return grd
+
+    @property
+    def is_crooked_path(self):
+        """True if this grid follows a crooked path."""
+        return self.coordinate_system.is_crooked_path
+
+    def crooked_path(self):
+        """
+        Return the `CrookedPath` instance for a crooked-path grid.
+
+        .. versionadded::9.4
+        """
+        if not self.is_crooked_path:
+            raise GridException(_t("This is not a crooked-path grid."))
+        return gxview.CrookedPath(self.coordinate_system)
+
 
     @property
     def rotation_cos_sine(self):

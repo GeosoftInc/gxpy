@@ -189,8 +189,12 @@ class Geometry:
 
     @property
     def name(self):
-        """Spatial object name."""
+        """Spatial object name, can be set."""
         return self._name
+
+    @name.setter
+    def name(self, name):
+        self._name = name
 
     @property
     def extent(self):

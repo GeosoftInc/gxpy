@@ -10,6 +10,7 @@ import geosoft.gxpy.spatialdata as gxspd
 import geosoft.gxpy.utility as gxu
 import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gxsys
+import geosoft.gxpy.view as gxview
 from geosoft.gxpy.geometry import PPoint
 
 from base import GXPYTest
@@ -542,22 +543,16 @@ class Test(GXPYTest):
         self.assertTrue(new_cs.is_oriented)
         self.assertFalse(new_cs.is_known)
 
-    def test_crooked_section(self):
+    def test_crooked_path(self):
+
         with gxgrd.Grid.open(self.crooked_section) as crooked:
             cs = crooked.coordinate_system
+            cp = crooked.crooked_path()
             self.assertFalse(cs.is_known)
             self.assertTrue(cs.is_oriented)
-            self.assertTrue(cs.is_crooked_section)
-            self.assertEqual(cs.get_crooked_section_location().shape, (1629, 2))
-            pp = PPoint(cs.get_crooked_section_location(), coordinate_system=cs)
-            self.assertEqual(len(pp), 1629)
-
-            # exercise json/dict
-            cs = gxcs.Coordinate_system(cs.json)
-            self.assertFalse(cs.is_known)
-            self.assertTrue(cs.is_oriented)
-            self.assertTrue(cs.is_crooked_section)
-            self.assertEqual(cs.get_crooked_section_location().shape, (1629, 2))
+            self.assertTrue(cs.is_crooked_path)
+            self.assertTrue(crooked.is_crooked_path)
+            self.assertEqual(len(cp), 1629)
 
 
 ###############################################################################################

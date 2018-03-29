@@ -25,7 +25,7 @@ are stored in a `geosoft_3dv` file which can also be viewed separately from a ma
 
 """
 import os
-from functools import wraps
+import numpy as np
 
 import geosoft
 import geosoft.gxapi as gxapi
@@ -36,6 +36,7 @@ from . import map as gxmap
 from . import metadata as gxmeta
 from . import geometry as gxgeo
 from . import spatialdata as gxspd
+from . import vv as gxvv
 
 
 __version__ = geosoft.__version__
@@ -52,6 +53,91 @@ class ViewException(geosoft.GXRuntimeError):
     .. versionadded:: 9.2
     """
     pass
+
+
+def _crooked_path_from_ipj(gxipj):
+    if gxipj.get_orientation() != gxapi.IPJ_ORIENT_SECTION_CROOKED:
+        raise ViewException(_t('This coordinate system does not define a crooked path'))
+    dvv = gxvv.GXvv()
+    xvv = gxvv.GXvv()
+    yvv = gxvv.GXvv()
+    log_z = gxapi.int_ref()
+    gxipj.get_crooked_section_view_v_vs(dvv.gxvv, xvv.gxvv, yvv.gxvv, log_z)
+    return dvv, xvv, yvv, log_z.value
+
+
+class CrookedPath(gxgeo.Geometry):
+    """
+    Description of a crooked (x, y) path that defines a crooked-section view, or a crooked-section grid.
+
+    .. versionadded:: 9.4
+    """
+
+    def __str__(self):
+        return 'CrookedPath "{}", {} points'.format(self.name, len(self))
+
+    def __init__(self, xy_path, log_z=False, **kw):
+
+        super().__init__(**kw)
+
+        if isinstance(xy_path, gxcs.Coordinate_system):
+            self.coordinate_system = xy_path
+            xy_path = xy_path.gxipj
+
+        if isinstance(xy_path, gxapi.GXIPJ):
+            d, x, y, self._log_z = _crooked_path_from_ipj(xy_path)
+            self._xy = np.empty((x.length, 2))
+            self._xy[:, 0] = x.np
+            self._xy[:, 1] = y.np
+            self.coordinate_system = gxcs.Coordinate_system(xy_path)
+
+        else:
+            if not isinstance(xy_path, gxgeo.PPoint):
+                xy_path = gxgeo.PPoint(xy_path, coordinate_system=self.coordinate_system)
+            self._xy = xy_path.xy
+            self.coordinate_system = xy_path.coordinate_system
+            self._log_z= bool(log_z)
+
+    def __len__(self):
+        return len(self._xy)
+
+    @property
+    def xy(self):
+        """path points as an array (npoints, 2)"""
+        return self._xy
+
+    @property
+    def ppoint(self):
+        return gxgeo.PPoint(self._xy, coordinate_system=self.coordinate_system)
+
+    def set_in_geosoft_ipj(self, coordinate_system):
+        """
+        Set the crooked-path in the `geosoft.gxapi.GXIPJ` instance of the coordinate system.
+
+        Geosoft stores crooked-path information in the GXIPJ, from which views are able to
+
+        :param coordinate_system: 
+
+        .. versionadded:: 9.4
+        """
+
+        # calculate a distance along the path
+        dnp = np.zeros(len(self._xy), dtype=np.float64)
+        dx = (self._xy[1:, 0] - self._xy[:-1, 0]) ** 2
+        dy = (self._xy[1:, 1] - self._xy[:-1, 1]) ** 2
+        dxy = np.sqrt((dx + dy))
+        dnp[1:] = dxy
+        dnp = dnp.cumsum()
+
+        # make vv's to set the path
+        dvv = gxvv.GXvv(dnp)
+        xvv = gxvv.GXvv(self._xy[:, 0])
+        yvv = gxvv.GXvv(self._xy[:, 1])
+        coordinate_system.gxipj.set_crooked_section_view(dvv.gxvv, xvv.gxvv, yvv.gxvv, self._log_z)
+
+    @property
+    def extent(self):
+        return self.ppoint.extent
 
 
 def delete_files(v3d_file):
@@ -192,7 +278,8 @@ class View(gxgeo.Geometry):
             map_location=(0, 0),
             area=(0, 0, 30, 20),
             scale=100,
-            copy=None):
+            copy=None,
+            crooked_path=None):
         """
         Create a new view on a map.
 
@@ -201,13 +288,15 @@ class View(gxgeo.Geometry):
             :map:               :class:`geosoft.gxpy.map.Map` instance, if not specified a new unique default map is
                                 created and deleted when this session finished.
             :name:              view name, default is "_unnamed_view".
-            :coordinate_system: coordinate system as a :class:`gxpy.coordinate_system.Coordinate_system` instance, or
+            :coordinate_system: coordinate system as a `geosoft.gxpy.coordinate_system.Coordinate_system` instance, or
                                 one of the Coordinate_system constructor types.
             :map_location:      (x, y) view location on the map, in map cm
             :area:              (min_x, min_y, max_x, max_y) area in view units
             :scale:             Map scale if a coordinate system is defined.  If the coordinate system is not
                                 defined this is view units per map metre.
             :copy:              name of a view to copy into the new view.
+            :crooked_path:      provide a `CrookedPath` instance to create a section view along a wandering path.
+                                Should the coordinate system already contain a crooked path it will be replaced.
 
         .. versionadded:: 9.2
         """
@@ -224,6 +313,12 @@ class View(gxgeo.Geometry):
                    area=area,
                    scale=scale,
                    copy=copy)
+
+        if crooked_path:
+            if not isinstance(crooked_path, CrookedPath):
+                crooked_path = CrookedPath(crooked_path, coordinate_system=view.coordinate_system)
+            crooked_path.set_in_geosoft_ipj(view.coordinate_system)
+
         return view
 
     @classmethod
@@ -261,10 +356,24 @@ class View(gxgeo.Geometry):
     def lock(self, group):
         if group:
             if self.lock:
-                raise ViewException(_t('View is locked by group {}.', format(self.lock)))
+                raise ViewException(_t('View is locked by group {}.').format(self.lock))
             self._lock = group
         else:
             self._lock = None
+
+    @property
+    def is_crooked_path(self):
+        return self.coordinate_system.is_crooked_path
+
+    def crooked_path(self):
+        """
+        Return the `CrookedPath` instance for a crooked-path view.
+
+        .. versionadded::9.4
+        """
+        if not self.is_crooked_path:
+            raise ViewException(_t("This is not a crooked-path view."))
+        return CrookedPath(self.coordinate_system)
 
     @property
     def clip(self):

@@ -8,6 +8,8 @@ import geosoft.gxpy.view as gxv
 import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.group as gxg
 import geosoft.gxpy.geometry as gxgm
+import geosoft.gxpy.system as gxsys
+import geosoft.gxpy.grid as gxgrd
 
 from base import GXPYTest
 
@@ -48,6 +50,16 @@ def draw_2d_stuff(g, size=1.0):
 
 
 class Test(GXPYTest):
+
+
+    @classmethod
+    def setUpClass(cls):
+        cls.setUpGXPYTest()
+        cls.folder, files = gxsys.unzip(os.path.join(os.path.dirname(cls._test_case_py), 'section_grids.zip'),
+                                        folder=cls._gx.temp_folder())
+        cls.section = os.path.join(cls.folder, 'section.grd')
+        cls.crooked = os.path.join(cls.folder, 'crooked_section.grd')
+
     def test_version(self):
         self.start()
         self.assertEqual(gxmap.__version__, geosoft.__version__)
@@ -421,6 +433,39 @@ class Test(GXPYTest):
             maki = m['maki']
             self.assertEqual(maki['b'], ['4', '5', '6'])
             self.assertEqual(maki['units'], 'nT')
+
+    def test_crooked_path(self):
+        self.start()
+
+        cs = gxgrd.Grid.open(self.crooked).coordinate_system
+        cp = gxv.CrookedPath(cs)
+        self.assertEqual(len(cp.xy), 1629)
+        cp = gxv.CrookedPath(cs.gxipj)
+        self.assertEqual(len(cp.xy), 1629)
+        xy = cp.xy[:100]
+        cp = gxv.CrookedPath(xy, coordinate_system="NAD83 / UTM zone 50N", name="Maki")
+        self.assertEqual(len(cp.xy), 100)
+        self.assertTrue(cp.coordinate_system == "NAD83 / UTM zone 50N")
+        self.assertEqual(cp.name, "Maki")
+        cp.name = "Billy"
+        self.assertEqual(cp.name, "Billy")
+        self.assertEqual(len(cp.ppoint), 100)
+
+        cs = gxcs.Coordinate_system("NAD83 / UTM zone 50N")
+        self.assertRaises(gxv.ViewException, gxv.CrookedPath, cs)
+        cp.set_in_geosoft_ipj(cs)
+        cp =gxv.CrookedPath(cs, name="hmmm")
+        self.assertEqual(len(cp.ppoint), 100)
+        self.assertEqual(cp.extent_xyz, (632840.88509899995, 4633409.6098999996, 0.0,
+                                         633012.53350000002, 4633574.2674000002, 0.0))
+
+        with gxgrd.Grid.open(self.crooked) as crooked:
+            cp = gxv.CrookedPath(crooked.coordinate_system)
+            v = gxv.View.new(area=crooked.extent_2d())
+            self.assertFalse(v.is_crooked_path)
+            v = gxv.View.new(area=crooked.extent_2d(), crooked_path=cp)
+            self.assertTrue(v.is_crooked_path)
+            self.assertEqual(len(v.crooked_path()), 1629)
 
 
 if __name__ == '__main__':
