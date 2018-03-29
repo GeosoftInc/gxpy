@@ -84,7 +84,7 @@ class GXPYTest(unittest.TestCase):
         return 'uuid_{}_{}'.format(cls._test_case_filename, cls._cls_unique_id_count)
 
     @classmethod
-    def setUpGXPYTest(cls, res_stack=6):
+    def setUpGXPYTest(cls, res_stack=6, context_name=__name__):
         _verify_no_gx_context()
 
         cls._cls_unique_id_count = 0
@@ -106,7 +106,7 @@ class GXPYTest(unittest.TestCase):
         gxu._uuid_callable = cls._cls_uuid
 
         set_geosoft_bin_path()
-        cls._gx = gx.GXpy(log=print, res_stack=res_stack, max_warnings=12, suppress_progress=True)
+        cls._gx = gx.GXpy(name=context_name, log=print, res_stack=res_stack, max_warnings=12, suppress_progress=True)
 
     @classmethod
     def tearDownGXPYTest(cls):
