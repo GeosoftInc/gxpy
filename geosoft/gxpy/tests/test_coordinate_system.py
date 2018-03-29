@@ -10,6 +10,7 @@ import geosoft.gxpy.spatialdata as gxspd
 import geosoft.gxpy.utility as gxu
 import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gxsys
+from geosoft.gxpy.geometry import PPoint
 
 from base import GXPYTest
 
@@ -19,9 +20,10 @@ class Test(GXPYTest):
     @classmethod
     def setUpClass(cls):
         cls.setUpGXPYTest()
-        cls.folder, files = gxsys.unzip(os.path.join(os.path.dirname(cls._test_case_py), 'testgrids.zip'),
+        cls.folder, files = gxsys.unzip(os.path.join(os.path.dirname(cls._test_case_py), 'section_grids.zip'),
                                        folder=cls._gx.temp_folder())
-        cls.grd = os.path.join(cls.folder, 'section.grd')
+        cls.section = os.path.join(cls.folder, 'section.grd')
+        cls.crooked_section = os.path.join(cls.folder, 'crooked_section.grd')
 
     def test_any(self):
         self.start()
@@ -530,17 +532,32 @@ class Test(GXPYTest):
                 self.assertEqual(csxml.name, 'WGS 84 / *Local(43,-96,0,0) <0,0,0,0,0,25>')
                 self.assertEqual(csxml.gxf[2], '"Oblique Stereographic",43,-96,0.9996,0,0')
 
-
     def test_section_ipj(self):
         self.start()
 
-        cs = gxgrd.Grid.open(self.grd).coordinate_system
+        cs = gxgrd.Grid.open(self.section).coordinate_system
         self.assertFalse(cs.is_known)
         self.assertTrue(cs.is_oriented)
         new_cs = gxcs.Coordinate_system(cs)
         self.assertTrue(new_cs.is_oriented)
         self.assertFalse(new_cs.is_known)
 
+    def test_crooked_section(self):
+        with gxgrd.Grid.open(self.crooked_section) as crooked:
+            cs = crooked.coordinate_system
+            self.assertFalse(cs.is_known)
+            self.assertTrue(cs.is_oriented)
+            self.assertTrue(cs.is_crooked_section)
+            self.assertEqual(cs.get_crooked_section_location().shape, (1629, 2))
+            pp = PPoint(cs.get_crooked_section_location(), coordinate_system=cs)
+            self.assertEqual(len(pp), 1629)
+
+            # exercise json/dict
+            cs = gxcs.Coordinate_system(cs.json)
+            self.assertFalse(cs.is_known)
+            self.assertTrue(cs.is_oriented)
+            self.assertTrue(cs.is_crooked_section)
+            self.assertEqual(cs.get_crooked_section_location().shape, (1629, 2))
 
 
 ###############################################################################################

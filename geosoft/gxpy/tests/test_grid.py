@@ -16,6 +16,7 @@ from base import GXPYTest
 
 
 class Test(GXPYTest):
+
     @classmethod
     def setUpClass(cls):
         cls.setUpGXPYTest()
@@ -25,6 +26,8 @@ class Test(GXPYTest):
         cls.g2f = os.path.join(cls.folder, 'test_grid_2.grd')
         cls.gcf = os.path.join(cls.folder, 'test_bool1_color.grd')
         cls.mag = os.path.join(cls.folder, 'mag.grd')
+        cls.folder, files = gsys.unzip(os.path.join(os.path.dirname(cls._test_case_py), 'section_grids.zip'),
+                                       folder=cls._gx.temp_folder())
         cls.section = os.path.join(cls.folder, 'section.grd')
 
     def test_grc(self):

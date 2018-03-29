@@ -595,7 +595,74 @@ class Coordinate_system:
     @property
     def is_oriented(self):
         """True if the coordinate system has an orientation."""
-        return '<' in self.hcs
+        return self.gxipj.get_orientation() not in (gxapi.IPJ_ORIENT_DEFAULT, gxapi.IPJ_ORIENT_PLAN)
+
+    @property
+    def orientation_name(self):
+        """Name of an oriented section for display/reference purposes.
+
+        .. versionadded:: 9.4
+        """
+
+    @property
+    def is_crooked_section(self):
+        """
+        True if the coordinate system defines a crooked section.
+
+        .. versionadded:: 9.4
+        """
+        return self.gxipj.get_orientation() == gxapi.IPJ_ORIENT_SECTION_CROOKED
+
+    def _crooked_section_detail(self):
+        if not self.is_crooked_section:
+            raise CSException(_t('This is not a crooked section'))
+        dvv = gxvv.GXvv()
+        xvv = gxvv.GXvv()
+        yvv = gxvv.GXvv()
+        log_z = gxapi.int_ref()
+        self.gxipj.get_crooked_section_view_v_vs(dvv.gxvv, xvv.gxvv, yvv.gxvv, log_z)
+        return dvv, xvv, yvv, log_z.value
+
+    def _add_crooked_section_detail(self, xy, log_z):
+        if not isinstance(xy, np.ndarray):
+            xy = np.array(xy).reshape((-1, 2))
+        dnp = np.zeros(len(xy), dtype=np.float64)
+        dx = (xy[1:, 0] - xy[:-1, 0]) ** 2
+        dy = (xy[1:, 1] - xy[:-1, 1]) ** 2
+        dxy = np.sqrt((dx + dy))
+        dnp[1:] = dxy
+        dnp = dnp.cumsum()
+        dvv = gxvv.GXvv(dnp)
+        xvv = gxvv.GXvv(xy[:, 0])
+        yvv = gxvv.GXvv(xy[:, 1])
+        self.gxipj.set_crooked_section_view(dvv.gxvv, xvv.gxvv, yvv.gxvv, log_z)
+
+    def get_crooked_section_location(self):
+        """
+        For a crooked section, return a numpy array of the crooked section path as an 2d array
+        shaped (n, 2).
+
+        :return: (x, y) array, shaped (n, 2), n being the number of points along the section
+
+        .. versionadded:: 9.4
+        """
+        d, x, y, log_z = self._crooked_section_detail()
+        xy = np.empty((x.length, 2))
+        xy[:, 0] = x.np
+        xy[:, 1] = y.np
+        return xy
+
+    @property
+    def section_log_z(self):
+        """
+        Returns True if z data on a crooked section is logarithmic with depth.
+
+        .. versionadded:: 9.4
+        """
+        try:
+            return bool(self._crooked_section_detail()[3])
+        except CSException:
+            return False
 
     @property
     def is_known(self):
@@ -628,6 +695,10 @@ class Coordinate_system:
                           "orientation": orient,
                           "vcs": vcs
                           }
+            if self.is_crooked_section:
+                xy = self.get_crooked_section_location()
+                self._dict['crooked_section'] = {'xy_trace': xy.tolist(),
+                                                 'log_z': self.section_log_z}
 
         return self._dict
 
@@ -770,9 +841,10 @@ class Coordinate_system:
             # first try Geosoft xml dictionary, if not try 'geosoft' type
             try:
                 if 'projection' in csdict:
-                    self.xml = gxu.geosoft_xml_from_dict(csdict)
+                    dictxml = gxu.geosoft_xml_from_dict(csdict)
                 else:
-                    self.xml = gxu.geosoft_xml_from_dict({'projection': csdict})
+                    dictxml = gxu.geosoft_xml_from_dict({'projection': csdict})
+                self.xml = dictxml
                 return
             except geosoft.gxapi.GXError:
                 cstype = 'geosoft'
@@ -787,6 +859,11 @@ class Coordinate_system:
             s4 = csdict.get('units', '')
             s5 = csdict.get('local_datum', '')
             self._from_gxf([s1, s2, s3, s4, s5])
+
+            # is there a crooked section?
+            if 'crooked_section' in csdict:
+                csd = csdict['crooked_section']
+                self._add_crooked_section_detail(csd['xy_trace'], csd['log_z'])
 
         elif cstype == 'esri':
             wkt = csdict.get('wkt', None)

@@ -917,8 +917,10 @@ class Grid(gxgm.Geometry):
             added ability to set directly
         """
         if self._cs is None:
-            self._cs = gxcs.Coordinate_system()
-            self._img.get_ipj(self._cs.gxipj)
+            ipj = gxapi.GXIPJ.create()
+            self._img.get_ipj(ipj)
+            self._cs = gxcs.Coordinate_system(ipj)
+
         return self._cs
 
     @coordinate_system.setter
