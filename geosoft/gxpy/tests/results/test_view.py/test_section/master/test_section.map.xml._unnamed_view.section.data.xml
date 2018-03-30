@@ -1,0 +1,149 @@
+<data>
+   <Item type="Version" size="8">
+      <Item name="Value" value="Current"/>
+   </Item>
+   <Item type="Aggregation" size="1534">
+      <Item name="AGG" type="AGG">
+         <AGG>
+            <Header>
+               <Item name="ColorModel" value="3"/>
+               <Item name="RenderMode" value="0"/>
+            </Header>
+            <Layers>
+               <Item name="Layer" type="LAY">
+                  <LAY>
+                     <Header>
+                        <Item name="ITR" type="ITR">
+                           <ITR>
+                              <Header>
+                                 <Item name="ColorModel" value="3"/>
+                                 <Item name="Min" value="-0.9645907879"/>
+                                 <Item name="Max" value="10.89449978"/>
+                                 <Item name="ActualBrightness" value="0"/>
+                                 <Item name="Brightness" value="0"/>
+                                 <Item name="REG" type="REG">
+                                    <REG>
+                                       <Attributes>
+                                          <Item name="FILE" value="uuid_test_section_1.tbl"/>
+                                       </Attributes>
+                                    </REG>
+                                 </Item>
+                                 <Model>
+                                    <Item name="Parameters" type="DoubleArray">
+                                       <Value index="0" value="0"/>
+                                       <Value index="1" value="0"/>
+                                       <Value index="2" value="0"/>
+                                       <Value index="3" value="0"/>
+                                    </Item>
+                                    <Shade>
+                                       <Item name="Inclination" value="GS_R8DM"/>
+                                       <Item name="Declination" value="GS_R8DM"/>
+                                       <Item name="Scale" value="GS_R8DM"/>
+                                       <Item name="OriginGrid" value=""/>
+                                    </Shade>
+                                 </Model>
+                              </Header>
+                              <Colors>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="0"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="170" yellow="0"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="128" yellow="0"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="85" yellow="0"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="43" yellow="0"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="22" yellow="0"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="0" yellow="0"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="0" yellow="55"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="0" yellow="110"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="0" yellow="192"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="0" yellow="206"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="0" yellow="219"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="0" yellow="255"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="183" magenta="0" yellow="255"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="156" magenta="0" yellow="255"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="146" magenta="0" yellow="255"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="110" magenta="0" yellow="255"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="73" magenta="0" yellow="255"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="37" magenta="0" yellow="255"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="0" yellow="255"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="22" yellow="255"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="43" yellow="255"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="64" yellow="255"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="75" yellow="255"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="85" yellow="255"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="107" yellow="255"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="118" yellow="255"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="128" yellow="255"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="149" yellow="255"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="170" yellow="255"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="202" yellow="255"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="234" yellow="255"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="255" yellow="255"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="255" yellow="200"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="255" yellow="146"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="255" yellow="73"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="244" yellow="37"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="134" yellow="0"/>
+                                 <Item name="Color" type="COL_ANY" colortype="CMY" cyan="0" magenta="96" yellow="0"/>
+                              </Colors>
+                              <Levels>
+                                 <Item name="Color" value="GS_R8MN"/>
+                                 <Item name="Color" value="0.08693048776"/>
+                                 <Item name="Color" value="0.2232118384"/>
+                                 <Item name="Color" value="0.2852664448"/>
+                                 <Item name="Color" value="0.3335400365"/>
+                                 <Item name="Color" value="0.3702069027"/>
+                                 <Item name="Color" value="0.4183154813"/>
+                                 <Item name="Color" value="0.463815398"/>
+                                 <Item name="Color" value="0.5171049005"/>
+                                 <Item name="Color" value="0.5680284073"/>
+                                 <Item name="Color" value="0.6219471087"/>
+                                 <Item name="Color" value="0.6718919772"/>
+                                 <Item name="Color" value="0.7316461079"/>
+                                 <Item name="Color" value="0.8117987612"/>
+                                 <Item name="Color" value="0.872392517"/>
+                                 <Item name="Color" value="0.9503369077"/>
+                                 <Item name="Color" value="1.025442104"/>
+                                 <Item name="Color" value="1.081194668"/>
+                                 <Item name="Color" value="1.129970579"/>
+                                 <Item name="Color" value="1.177306092"/>
+                                 <Item name="Color" value="1.247311831"/>
+                                 <Item name="Color" value="1.32069895"/>
+                                 <Item name="Color" value="1.393311964"/>
+                                 <Item name="Color" value="1.467895427"/>
+                                 <Item name="Color" value="1.533354641"/>
+                                 <Item name="Color" value="1.602963447"/>
+                                 <Item name="Color" value="1.673967583"/>
+                                 <Item name="Color" value="1.745202253"/>
+                                 <Item name="Color" value="1.842026076"/>
+                                 <Item name="Color" value="1.94332709"/>
+                                 <Item name="Color" value="2.044628105"/>
+                                 <Item name="Color" value="2.155805635"/>
+                                 <Item name="Color" value="2.284831265"/>
+                                 <Item name="Color" value="2.491910487"/>
+                                 <Item name="Color" value="2.704231298"/>
+                                 <Item name="Color" value="2.980652392"/>
+                                 <Item name="Color" value="3.427425174"/>
+                                 <Item name="Color" value="4.40796658"/>
+                                 <Item name="Color" value="5.979060505"/>
+                                 <Item name="Color" value="GS_R8MX"/>
+                              </Levels>
+                           </ITR>
+                        </Item>
+                     </Header>
+                     <Bands>
+                        <Item name="Band" type="BAND">
+                           <BAND>
+                              <Header>
+                                 <Item name="RenderMode" value="0"/>
+                                 <Item name="Name" value=".\__tmp__\_gx_uuid_test_view.py_1\section.grd"/>
+                              </Header>
+                           </BAND>
+                        </Item>
+                     </Bands>
+                  </LAY>
+               </Item>
+            </Layers>
+         </AGG>
+      </Item>
+   </Item>
+   <Item type="End" size="8"></Item>
+</data>

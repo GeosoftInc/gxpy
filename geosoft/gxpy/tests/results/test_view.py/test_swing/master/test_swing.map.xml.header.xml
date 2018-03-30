@@ -1,0 +1,9 @@
+<header>
+   <Item name="Name" value="test_swing.map"/>
+   <Item name="Extents" type="L2AREA">
+      <Value name="MinX" value="0"/>
+      <Value name="MinY" value="0"/>
+      <Value name="MaxX" value="710147"/>
+      <Value name="MaxY" value="510000"/>
+   </Item>
+</header>

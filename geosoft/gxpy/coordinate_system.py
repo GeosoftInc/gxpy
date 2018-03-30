@@ -608,15 +608,6 @@ class Coordinate_system:
         return sr.value
 
     @property
-    def is_crooked_path(self):
-        """
-        True if the coordinate system defines a crooked section.
-
-        .. versionadded:: 9.4
-        """
-        return self.gxipj.get_orientation() == gxapi.IPJ_ORIENT_SECTION_CROOKED
-
-    @property
     def is_known(self):
         """
         True if this is a known coordinate system.

@@ -10,6 +10,7 @@ import geosoft.gxpy.group as gxg
 import geosoft.gxpy.geometry as gxgm
 import geosoft.gxpy.system as gxsys
 import geosoft.gxpy.grid as gxgrd
+import geosoft.gxpy.agg as gxagg
 
 from base import GXPYTest
 
@@ -58,7 +59,9 @@ class Test(GXPYTest):
         cls.folder, files = gxsys.unzip(os.path.join(os.path.dirname(cls._test_case_py), 'section_grids.zip'),
                                         folder=cls._gx.temp_folder())
         cls.section = os.path.join(cls.folder, 'section.grd')
+        cls.swing = os.path.join(cls.folder, 'swing_section.grd')
         cls.crooked = os.path.join(cls.folder, 'crooked_section.grd')
+
 
     def test_version(self):
         self.start()
@@ -433,6 +436,38 @@ class Test(GXPYTest):
             maki = m['maki']
             self.assertEqual(maki['b'], ['4', '5', '6'])
             self.assertEqual(maki['units'], 'nT')
+
+    def test_section(self):
+        self.start()
+        with gxagg.Aggregate_image.new(self.section) as agg:
+            with gxv.View.new(area=agg.extent_2d, coordinate_system=agg.coordinate_system) as v:
+                self.assertTrue(v.coordinate_system.is_oriented)
+                self.assertEqual(v.extent_xyz, (515694.9128668542, 7142239.234535628, 1425.0, 516233.9140090464, 7142637.2015803885, 1835.0))
+                gxg.Aggregate_group.new(v, agg)
+                map_file = v.map.file_name
+        self.crc_map(map_file)
+
+    def test_swing(self):
+        self.start()
+        with gxagg.Aggregate_image.new(self.swing) as agg:
+            with gxv.View.new(area=agg.extent_2d, coordinate_system=agg.coordinate_system) as v:
+                self.assertTrue(v.coordinate_system.is_oriented)
+                self.assertEqual(v.extent_xyz, (716313.064376335, 1716142.3054918314, -0.6066017177982133,
+                                                717108.3819305873, 1716809.6889240067, 360.01785668734107))
+                gxg.Aggregate_group.new(v, agg)
+                map_file = v.map.file_name
+        self.crc_map(map_file)
+
+    def test_crooked(self):
+        self.start()
+        with gxagg.Aggregate_image.new(self.crooked) as agg:
+            with gxv.View.new(area=agg.extent_2d, coordinate_system=agg.coordinate_system) as v:
+                self.assertTrue(v.coordinate_system.is_oriented)
+                self.assertEqual(v.extent_xyz, (632840.885099, 4633310.4612, 1203.0,
+                                                634556.6023, 4635124.0248, 1217.0))
+                gxg.Aggregate_group.new(v, agg)
+                map_file = v.map.file_name
+        self.crc_map(map_file)
 
     def test_crooked_path(self):
         self.start()

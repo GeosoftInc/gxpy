@@ -1,0 +1,49 @@
+<IPJ>
+   <Item name="Name" value=""/>
+   <Item name="Proj" value=""/>
+   <Item name="Datum" value=""/>
+   <Item name="Ellipsoid" value=""/>
+   <Item name="DatumTrf" value=""/>
+   <Item name="ProjType" value="0"/>
+   <Item name="Order" value="0"/>
+   <Item name="Radius" value="GS_R8DM"/>
+   <Item name="Eccentricity" value="GS_R8DM"/>
+   <Item name="PrimeMeridian" value="0"/>
+   <Item name="ScaleAdjust" value="1"/>
+   <Item name="Dx" value="GS_R8DM"/>
+   <Item name="Dy" value="0"/>
+   <Item name="Dz" value="0"/>
+   <Item name="Rx" value="0"/>
+   <Item name="Ry" value="0"/>
+   <Item name="Rz" value="0"/>
+   <Item name="Parameters" type="DoubleArray">
+      <Value index="0" value="GS_R8DM"/>
+      <Value index="1" value="GS_R8DM"/>
+      <Value index="2" value="GS_R8DM"/>
+      <Value index="3" value="GS_R8DM"/>
+      <Value index="4" value="GS_R8DM"/>
+      <Value index="5" value="GS_R8DM"/>
+      <Value index="6" value="GS_R8DM"/>
+      <Value index="7" value="GS_R8DM"/>
+   </Item>
+   <Units>
+      <Item name="Name" value=""/>
+      <Item name="Scale" value="GS_R8DM"/>
+   </Units>
+   <Orientation>
+      <Item name="Type" value="5"/>
+      <Item name="Xo" value="716619"/>
+      <Item name="Yo" value="1716619"/>
+      <Item name="Zo" value="10"/>
+      <Item name="Parameters" type="DoubleArray">
+         <Value index="0" value="60"/>
+         <Value index="1" value="-45"/>
+         <Value index="2" value="GS_R8DM"/>
+         <Value index="3" value="GS_R8DM"/>
+         <Value index="4" value="GS_R8DM"/>
+         <Value index="5" value="GS_R8DM"/>
+         <Value index="6" value="GS_R8DM"/>
+         <Value index="7" value="GS_R8DM"/>
+      </Item>
+   </Orientation>
+</IPJ>

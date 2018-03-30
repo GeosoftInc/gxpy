@@ -24,7 +24,6 @@ class Test(GXPYTest):
         cls.folder, files = gxsys.unzip(os.path.join(os.path.dirname(cls._test_case_py), 'section_grids.zip'),
                                        folder=cls._gx.temp_folder())
         cls.section = os.path.join(cls.folder, 'section.grd')
-        cls.crooked_section = os.path.join(cls.folder, 'crooked_section.grd')
 
     def test_any(self):
         self.start()
@@ -542,17 +541,6 @@ class Test(GXPYTest):
         new_cs = gxcs.Coordinate_system(cs)
         self.assertTrue(new_cs.is_oriented)
         self.assertFalse(new_cs.is_known)
-
-    def test_crooked_path(self):
-
-        with gxgrd.Grid.open(self.crooked_section) as crooked:
-            cs = crooked.coordinate_system
-            cp = crooked.crooked_path()
-            self.assertFalse(cs.is_known)
-            self.assertTrue(cs.is_oriented)
-            self.assertTrue(cs.is_crooked_path)
-            self.assertTrue(crooked.is_crooked_path)
-            self.assertEqual(len(cp), 1629)
 
 
 ###############################################################################################

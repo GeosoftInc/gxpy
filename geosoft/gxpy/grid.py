@@ -672,8 +672,8 @@ class Grid(gxgm.Geometry):
 
     @property
     def is_crooked_path(self):
-        """True if this grid follows a crooked path."""
-        return self.coordinate_system.is_crooked_path
+        """True if this grid follows a crooked path section."""
+        return self.coordinate_system.gxipj.get_orientation() == gxapi.IPJ_ORIENT_SECTION_CROOKED
 
     def crooked_path(self):
         """
@@ -682,7 +682,7 @@ class Grid(gxgm.Geometry):
         .. versionadded::9.4
         """
         if not self.is_crooked_path:
-            raise GridException(_t("This is not a crooked-path grid."))
+            raise GridException(_t("This is not a crooked-path section grid."))
         return gxview.CrookedPath(self.coordinate_system)
 
 
@@ -1231,19 +1231,26 @@ class Grid(gxgm.Geometry):
         .. versionadded:: 9.2
         """
 
-        ex2d = self.extent_2d()
         cs = self.coordinate_system
-        xyz0 = cs.xyz_from_oriented((ex2d[0], ex2d[1], 0.0))
-        xyz1 = cs.xyz_from_oriented((ex2d[2], ex2d[1], 0.0))
-        xyz2 = cs.xyz_from_oriented((ex2d[2], ex2d[3], 0.0))
-        xyz3 = cs.xyz_from_oriented((ex2d[0], ex2d[3], 0.0))
+        ex2d = self.extent_2d()
+        if self.is_crooked_path:
+            min_x, min_y, max_x, max_y = self.crooked_path().extent_xy
+            min_z = cs.xyz_from_oriented((ex2d[0], ex2d[1], 0.0))[2]
+            max_z = cs.xyz_from_oriented((ex2d[0], ex2d[3], 0.0))[2]
 
-        min_x = min(xyz0[0], xyz1[0], xyz2[0], xyz3[0])
-        min_y = min(xyz0[1], xyz1[1], xyz2[1], xyz3[1])
-        min_z = min(xyz0[2], xyz1[2], xyz2[2], xyz3[2])
-        max_x = max(xyz0[0], xyz1[0], xyz2[0], xyz3[0])
-        max_y = max(xyz0[1], xyz1[1], xyz2[1], xyz3[1])
-        max_z = max(xyz0[2], xyz1[2], xyz2[2], xyz3[2])
+        else:
+            xyz0 = cs.xyz_from_oriented((ex2d[0], ex2d[1], 0.0))
+            xyz1 = cs.xyz_from_oriented((ex2d[2], ex2d[1], 0.0))
+            xyz2 = cs.xyz_from_oriented((ex2d[2], ex2d[3], 0.0))
+            xyz3 = cs.xyz_from_oriented((ex2d[0], ex2d[3], 0.0))
+
+            min_x = min(xyz0[0], xyz1[0], xyz2[0], xyz3[0])
+            min_y = min(xyz0[1], xyz1[1], xyz2[1], xyz3[1])
+            min_z = min(xyz0[2], xyz1[2], xyz2[2], xyz3[2])
+            max_x = max(xyz0[0], xyz1[0], xyz2[0], xyz3[0])
+            max_y = max(xyz0[1], xyz1[1], xyz2[1], xyz3[1])
+            max_z = max(xyz0[2], xyz1[2], xyz2[2], xyz3[2])
+
         return min_x, min_y, min_z, max_x, max_y, max_z
 
     def extent_cell_3d(self):

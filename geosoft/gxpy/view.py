@@ -363,7 +363,8 @@ class View(gxgeo.Geometry):
 
     @property
     def is_crooked_path(self):
-        return self.coordinate_system.is_crooked_path
+        """True if this grid follows a crooked path section."""
+        return self.coordinate_system.gxipj.get_orientation() == gxapi.IPJ_ORIENT_SECTION_CROOKED
 
     def crooked_path(self):
         """
@@ -682,7 +683,28 @@ class View(gxgeo.Geometry):
 
         .. versionadded:: 9.3.1
         """
-        return gxgeo.Point2(self.extent_clip, self.coordinate_system)
+
+        cs = self.coordinate_system
+        ex2d = self.extent_clip
+        if self.is_crooked_path:
+            min_x, min_y, max_x, max_y = self.crooked_path().extent_xy
+            min_z = cs.xyz_from_oriented((ex2d[0], ex2d[1], 0.0))[2]
+            max_z = cs.xyz_from_oriented((ex2d[0], ex2d[3], 0.0))[2]
+
+        else:
+            xyz0 = cs.xyz_from_oriented((ex2d[0], ex2d[1], 0.0))
+            xyz1 = cs.xyz_from_oriented((ex2d[2], ex2d[1], 0.0))
+            xyz2 = cs.xyz_from_oriented((ex2d[2], ex2d[3], 0.0))
+            xyz3 = cs.xyz_from_oriented((ex2d[0], ex2d[3], 0.0))
+
+            min_x = min(xyz0[0], xyz1[0], xyz2[0], xyz3[0])
+            min_y = min(xyz0[1], xyz1[1], xyz2[1], xyz3[1])
+            min_z = min(xyz0[2], xyz1[2], xyz2[2], xyz3[2])
+            max_x = max(xyz0[0], xyz1[0], xyz2[0], xyz3[0])
+            max_y = max(xyz0[1], xyz1[1], xyz2[1], xyz3[1])
+            max_z = max(xyz0[2], xyz1[2], xyz2[2], xyz3[2])
+
+        return gxgeo.Point2(((min_x, min_y, min_z), (max_x, max_y, max_z)), self.coordinate_system)
 
     @property
     def extent_clip(self):

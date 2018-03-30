@@ -29,6 +29,8 @@ class Test(GXPYTest):
         cls.folder, files = gsys.unzip(os.path.join(os.path.dirname(cls._test_case_py), 'section_grids.zip'),
                                        folder=cls._gx.temp_folder())
         cls.section = os.path.join(cls.folder, 'section.grd')
+        cls.swing = os.path.join(cls.folder, 'swing_section.grd')
+        cls.crooked = os.path.join(cls.folder, 'crooked_section.grd')
 
     def test_grc(self):
         self.start()
@@ -777,9 +779,26 @@ class Test(GXPYTest):
         self.start()
         with gxgrd.Grid.open(self.section) as sect:
             self.assertTrue(sect.coordinate_system.is_oriented)
-            self.assertEqual(sect.dimension, (539.0011421921663, 397.9670447604731, 410.0))
             self.assertEqual(sect.extent_xyz, (515694.9128668542, 7142239.234535628, 1425.0,
                                                516233.9140090464, 7142637.2015803885, 1835.0))
+            self.assertEqual(sect.extent_2d(), (-5.0, 1425.0, 665.0, 1835.0))
+
+    def test_swing(self):
+        self.start()
+        with gxgrd.Grid.open(self.swing) as swing:
+            self.assertTrue(swing.coordinate_system.is_oriented)
+            self.assertEqual(swing.extent_xyz, (716313.064376335, 1716142.3054918314, -0.6066017177982133,
+                                                717108.3819305873, 1716809.6889240067, 360.01785668734107))
+            self.assertEqual(swing.extent_2d(), (-347.1403049983618, -15.0, 363.006674942662, 495.0))
+
+    def test_crooked(self):
+        self.start()
+        with gxgrd.Grid.open(self.crooked) as crooked:
+            self.assertTrue(crooked.coordinate_system.is_oriented)
+            self.assertTrue(crooked.is_crooked_path)
+            self.assertEqual(crooked.extent_xyz, (632840.885099, 4633310.4612, 1203.0,
+                                                  634556.6023, 4635124.0248, 1217.0))
+            self.assertEqual(crooked.extent_2d(), (-1.0, 1203.0, 4071.0, 1217.0))
 
 ###############################################################################################
 
