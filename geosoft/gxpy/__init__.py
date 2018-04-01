@@ -10,6 +10,7 @@ from . import coordinate_system
 from . import geometry
 from . import geometry_utility
 from . import grid
+from . import grid_fft
 from . import grid_utility
 from . import gdb
 from . import agg
@@ -32,6 +33,7 @@ __all__ = ['agg',
            'geometry_utility',
            'gdb',
            'grid',
+           'grid_fft',
            'grid_utility',
            'group',
            'gx',
