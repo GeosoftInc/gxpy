@@ -178,6 +178,15 @@ class Test(GXPYTest):
             stats = grd.statistics()
             self.assertTrue(stats['mean'] is None)
 
+    def test_from_pg(self):
+        self.start()
+
+        with gxgrd.Grid.open(self.mag) as grd:
+            magpg = grd.gxpg()
+            with gxgrd.Grid.from_data_array(magpg, properties=grd.properties()) as newpg:
+                self.assertEqual(newpg.nx, grd.nx)
+
+
     def test_temp(self):
         self.start()
 
@@ -617,7 +626,7 @@ class Test(GXPYTest):
         self.start()
 
         map_file = gxgrd.figure_map(self.g1f, title='image_test', features='all').file_name
-        self.assertEqual(gxmap.Map.open(map_file).crc_image(pix_width=800), 2252249278)
+        self.assertEqual(gxmap.Map.open(map_file).crc_image(pix_width=800), 2301553865)
 
     def test_np(self):
         self.start()

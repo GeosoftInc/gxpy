@@ -646,29 +646,46 @@ class Grid(gxgm.Geometry):
         return window_grid
 
     @classmethod
-    def from_data_array(cls, data, file_name, properties=None):
+    def from_data_array(cls, data, file_name=None, properties=None):
         """
         Create grid from a 2D numpy array.
 
-        :param data:        2D numpy data array, ot a 2d list.  Must be 2D.
-        :param file_name:   name of the file
+        :param data:        2D numpy data array, a 2d list, ir a `geosoft.gxapi.GXPG`.
+        :param file_name:   name of the file, default creates a temporary file name
         :param properties:  grid properties as a dictionary
         :returns:           :class:`Grid` instance
 
         .. versionadded:: 9.1
+
+        .. versionchanged:: 9.4 - support for default temporary file name and creation from a GXPG.
         """
 
-        if type(data) is not np.ndarray:
-            data = np.array(data)
-        ny, nx = data.shape
+        if isinstance(data, gxapi.GXPG):
+            if data.n_slices() != 1:
+                raise GridException(_t('Pager must be 2D'))
+            nx = data.n_cols()
+            ny = data.n_rows()
+            dtype = gxu.dtype_gx(data.e_type())
+
+        else:
+            if not isinstance(data, np.ndarray):
+                data = np.array(data)
+            ny, nx = data.shape
+            dtype = data.dtype
+
         if properties is None:
             properties = {}
         properties['nx'] = nx
         properties['ny'] = ny
-        properties['dtype'] = data.dtype
+        properties['dtype'] = dtype
+
+        if (file_name is None) or (len(file_name.strip()) == 0):
+            file_name = gx.gx().temp_file('.grd(GRD)')
+
         grd = cls.new(file_name, properties=properties)
         grd.write_rows(data)
-        return grd
+
+        return reopen(grd)
 
     @property
     def is_crooked_path(self):
@@ -1101,19 +1118,38 @@ class Grid(gxgm.Geometry):
         """
         Write data to a grid by rows.
 
-        :param data:    array of data to write
+        :param data:    array of data to write, numpy, list or `geosoft.gxapi.GXPG`
         :param ix0:     grid X index of first point
         :param iy0:     grid Y index of first point, top index if writing rows top to bottom
         :param order:   1: bottom to top; -1: top to bottom
 
         .. versionadded:: 9.1
+
+        .. versionchanged:: 9.4 accepts list or GXPG
         """
 
-        ny, nx = data.shape
+        if isinstance(data, gxapi.GXPG):
+            nx = data.n_cols()
+            ny = data.n_rows()
+
+        else:
+            if not isinstance(data, np.ndarray):
+                data = np.array(data)
+            ny, nx = data.shape
+
+        if ((nx - ix0) > self.nx) or ((ny - iy0) > self.ny):
+            raise(_t('Data size exceeds grid size.'))
+
+        dvv = gxvv.GXvv(dtype=self.dtype)
+        dvv.length = nx
         iy = iy0
-        dtype = self._dtype
+
         for i in range(ny):
-            self._img.write_y(iy, ix0, 0, gxvv.GXvv(data[i, :], dtype=dtype).gxvv)
+            if isinstance(data, gxapi.GXPG):
+                data.read_row(i, 0, 0, dvv.gxvv)
+            else:
+                dvv.set_data(data[i, :])
+            self._img.write_y(iy, ix0, 0, dvv.gxvv)
             iy += order
 
     def read_row(self, row=None, start=0, length=0):
@@ -1179,6 +1215,29 @@ class Grid(gxgm.Geometry):
         """
         return self.index_window(self, name, x0, y0, nx, ny, overwrite=True)
 
+    def xy_from_index(self, ix, iy):
+        """
+        Return the rotated location of grid index ix, iy
+
+        :param ix:  grid index x
+        :param iy:  grid index y
+
+        .. versionadded:: 9.4
+        """
+
+        def rotate(x, y):
+            x -= self.x0
+            y -= self.y0
+            _x = x * self._cos_rot + y * self._sin_rot
+            _y = -x * self._sin_rot + y * self._cos_rot
+            return _x + self.x0, _y + self.y0
+
+        x = self.x0 + (ix * self.dx)
+        y = self.y0 + (iy * self.dy)
+        if self.rot != 0.:
+            return rotate(x, y)
+        return x, y
+
     def extent_2d(self):
         """
         Return the 2D extent of the grid on the grid plane.
@@ -1192,29 +1251,19 @@ class Grid(gxgm.Geometry):
         .. versionchanged:: 9.4 - extent to the cell edges.
         """
 
-        def rotate(x, y):
-            x -= self.x0
-            y -= self.y0
-            _x = x * self._cos_rot + y * self._sin_rot
-            _y = -x * self._sin_rot + y * self._cos_rot
-            return _x + self.x0, _y + self.y0
+        x0, y0 = self.xy_from_index(-0.5, -0.5)
+        x1, y1 = self.xy_from_index(self.nx - 0.5, self.ny - 0.5)
 
-        x0 = self.x0 - self.dx / 2.
-        x1 = x0 + self.nx * self.dx
-        y0 = self.y0 - self.dy / 2.
-        y1 = y0 + self.ny * self.dy
         if self.rot != 0.:
-            xy0 = rotate(x0, y0)
-            xy1 = rotate(x1, y0)
-            xy2 = rotate(x1, y1)
-            xy3 = rotate(x0, y1)
-            min_x = min(xy0[0], xy1[0], xy2[0], xy3[0])
-            min_y = min(xy0[1], xy1[1], xy2[1], xy3[1])
-            max_x = max(xy0[0], xy1[0], xy2[0], xy3[0])
-            max_y = max(xy0[1], xy1[1], xy2[1], xy3[1])
+            xx0, yy0 = self.xy_from_index(self.nx - 0.5, -0.5)
+            xx1, yy1 = self.xy_from_index(-0.5, self.ny - 0.5)
+            min_x = min(x0, xx0, x1, xx1)
+            min_y = min(y0, yy0, y1, yy1)
+            max_x = max(x0, xx0, x1, xx1)
+            max_y = max(y0, yy0, y1, yy1)
             return min_x, min_y, max_x, max_y
-        else:
-            return x0, y0, x1, y1
+
+        return x0, y0, x1, y1
 
     def extent_cell_2d(self):
         """
