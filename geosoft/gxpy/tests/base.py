@@ -72,6 +72,7 @@ def _verify_no_gx_context():
 
 
 class GXPYTest(unittest.TestCase):
+    maxDiff = None
     _test_case_py = None
     _test_case_filename = None
     _result_base_dir = None
