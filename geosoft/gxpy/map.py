@@ -886,7 +886,7 @@ class Map:
 
         self.gxmap.export_all_raster(imagefile, '',
                                      pix_width, pix_height, gxapi.rDUMMY,
-                                     gxapi.MAP_EXPORT_BITS_24,
+                                     gxapi.MAP_EXPORT_BITS_32,
                                      gxapi.MAP_EXPORT_METHOD_NONE,
                                      type, '')
 
