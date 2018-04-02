@@ -299,9 +299,9 @@ class Grid(gxgm.Geometry):
 
     def __str__(self):
         if self._file_name is None:
-            return 'None'
+            return '<class Grid>: memory ({}, {})'.format(self.nx, self.ny)
         else:
-            return self.file_name_decorated
+            return '<class Grid>: {} ({}, {})'.format(self.file_name_decorated, self.nx, self.ny)
 
     def __init__(self, file_name=None, in_memory=False, dtype=None, mode=None, kx=1, dim=None, overwrite=False, **kwargs):
 
@@ -646,13 +646,14 @@ class Grid(gxgm.Geometry):
         return window_grid
 
     @classmethod
-    def from_data_array(cls, data, file_name=None, properties=None):
+    def from_data_array(cls, data, file_name=None, properties=None, overwrite=False):
         """
-        Create grid from a 2D numpy array.
+        Create grid from a 2D data array or `geosoft.gxapi.GXPG`.
 
         :param data:        2D numpy data array, a 2d list, ir a `geosoft.gxapi.GXPG`.
         :param file_name:   name of the file, default creates a temporary file name
         :param properties:  grid properties as a dictionary
+        :param overwrite:   `True` to overwrite existing grid.
         :returns:           :class:`Grid` instance
 
         .. versionadded:: 9.1
@@ -682,7 +683,7 @@ class Grid(gxgm.Geometry):
         if (file_name is None) or (len(file_name.strip()) == 0):
             file_name = gx.gx().temp_file('.grd(GRD)')
 
-        grd = cls.new(file_name, properties=properties)
+        grd = cls.new(file_name, properties=properties, overwrite=overwrite)
         grd.write_rows(data)
 
         return reopen(grd)
@@ -724,8 +725,16 @@ class Grid(gxgm.Geometry):
         """
         self._delete_files = delete
 
-    def close(self):
-        """close the grid and release all instance resources."""
+    def close(self, discard=False):
+        """
+        Close the grid and release all instance resources.
+
+        :param discard: `True` to discard associated files on close
+
+        .. versionchanged:: 9.4 added `discard` parameter
+        """
+        if discard:
+            self.delete_files()
         self._close()
 
     @property

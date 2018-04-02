@@ -428,12 +428,12 @@ def grid_mosaic(mosaic, grid_list, type_decorate='', report=None):
     return master
 
 
-def grid_bool(g1, g2, joined_grid, opt=1, size=3, olap=1):
+def grid_bool(g1, g2, joined_grid=None, opt=1, size=3, olap=1):
     """
 
     :param g1:          Grids to merge
     :param g2:
-    :param joined_grid: joined output grid name, overwritten if it exists
+    :param joined_grid: joined output grid name, overwritten if it exists. Default makes a temporary grid.
     :param opt:         option logic to determine output grid points:
 
         =============== =========================
@@ -471,6 +471,9 @@ def grid_bool(g1, g2, joined_grid, opt=1, size=3, olap=1):
     if isinstance(g2, str):
         g2 = gxgrd.Grid.open(g2)
         close_g2 = True
+
+    if joined_grid is None:
+        joined_grid = gx.gx().temp_file('.grd(GRD)')
 
     gxapi.GXIMU.grid_bool(g1.gximg, g2.gximg, joined_grid, opt, size, olap)
 
