@@ -24,7 +24,7 @@ from . import gdb as gxgdb
 from . import geometry as gxgeo
 from . import utility as gxu
 from . import geometry_utility as gxgeou
-from . import coordinate_system as gxcs
+from . import grid_fft as gxfft
 
 __version__ = geosoft.__version__
 
@@ -96,7 +96,7 @@ def remove_trend(grid, file_name=None, method=TREND_EDGE, overwrite=False):
     return dtg
 
 
-def derivative(grid, derivative_type, file_name=None, overwrite=False, dtype=None):
+def derivative(grid, derivative_type, file_name=None, overwrite=False, dtype=None, fft=True):
     """
     Return a derivative of a grid.  Derivatives are calculated by space-domain convolution.
 
@@ -114,6 +114,7 @@ def derivative(grid, derivative_type, file_name=None, overwrite=False, dtype=Non
     :param file_name:   returned derivative file name, None for a temporary file
     :param overwrite:   True to overwrite existing file
     :param dtype:       dtype for the return grid, default is the same as the passed grid.
+    :param fft:         `False` calculate Z derivative with a space-domain convolution rather than an FFT.
     :return:            `geosoft.gxpy.grid.Grid` instance that contains the derivative result
 
     .. versionadded 9.4
@@ -129,15 +130,21 @@ def derivative(grid, derivative_type, file_name=None, overwrite=False, dtype=Non
             g = g.copy(g, gx.gx().temp_file('.grd(GRD)'), dtype=np.float32, overwrite=True)
             g.delete_files()
 
-        dzg = gxgrd.Grid.new(file_name=file_name, properties=g.properties(), overwrite=overwrite)
-        gxapi.GXIMU.grid_vd(g.gximg, dzg.gximg)
+
+        if fft:
+            with gxfft.GridFFT(g) as gfft:
+                gfft.filter_con(filters=['DRVZ 1'])
+                dzg = gfft.result_grid(file_name=file_name, overwrite=overwrite)
+        else:
+            dzg = gxgrd.Grid.new(file_name=file_name, properties=g.properties(), overwrite=overwrite)
+            gxapi.GXIMU.grid_vd(g.gximg, dzg.gximg)
         dzg.unit_of_measure = g.unit_of_measure + '/' + g.coordinate_system.unit_of_measure
         return gxgrd.reopen(dzg, dtype=dt)
 
     def tilt_angle(g, fn=None):
         dx = derivative(g, DERIVATIVE_X)
         dy = derivative(g, DERIVATIVE_Y)
-        dz = derivative(g, DERIVATIVE_Z)
+        dz = derivative(g, DERIVATIVE_Z, fft=fft)
 
         result = gxgrd.expression((dx, dy, dz), 'atan2(g3,sqrt(g1**2+g2**2))',
                                   result_file_name=fn,
@@ -157,7 +164,7 @@ def derivative(grid, derivative_type, file_name=None, overwrite=False, dtype=Non
     def total_gradient(g):
         dx = derivative(g, DERIVATIVE_X)
         dy = derivative(g, DERIVATIVE_Y)
-        dz = derivative(g, DERIVATIVE_Z)
+        dz = derivative(g, DERIVATIVE_Z, fft=fft)
         result = gxgrd.expression((dx, dy, dz), 'sqrt(g1**2+g2**2+g3**2)',
                                   result_file_name=file_name,
                                   overwrite=overwrite)

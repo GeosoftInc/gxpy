@@ -129,13 +129,13 @@ class Test(GXPYTest):
             self.assertEqual(dxy.unit_of_measure, 'nT/m')
 
         with gxgrd.Grid.open(self.mag) as grd:
-            das = gxgrdu.derivative(grd, gxgrdu.DERIVATIVE_XYZ)
+            das = gxgrdu.derivative(grd, gxgrdu.DERIVATIVE_XYZ, fft=False)
             self.assertAlmostEqual(das.statistics()['sd'], 1.0226482933289056)
             self.assertEqual(das.unit_of_measure, 'nT/m')
 
         with gxgrd.Grid.open(self.mag) as grd:
             dtd = gxgrdu.derivative(grd, gxgrdu.TILT_ANGLE)
-            self.assertAlmostEqual(dtd.statistics()['sd'], 0.8209237171466927)
+            self.assertAlmostEqual(dtd.statistics()['sd'], 0.7860779854557938 )
             self.assertEqual(dtd.unit_of_measure, 'radians')
 
         with gxgrd.Grid.open(self.mag, dtype=np.float64) as grd:
@@ -145,12 +145,18 @@ class Test(GXPYTest):
             self.assertEqual(dxg.unit_of_measure, 'nT/m')
 
         with gxgrd.Grid.open(self.mag, dtype=np.float64) as grd:
-            dzg = gxgrdu.derivative(grd, gxgrdu.DERIVATIVE_Z)
+            dzg = gxgrdu.derivative(grd, gxgrdu.DERIVATIVE_Z, fft=False)
             self.assertAlmostEqual(dzg.statistics()['sd'], 0.9377582582050702)
             self.assertEqual(dzg.dtype, np.float64)
             self.assertEqual(dzg.unit_of_measure, 'nT/m')
 
-        dzg = gxgrdu.derivative(self.mag, gxgrdu.DERIVATIVE_Z)
+        with gxgrd.Grid.open(self.mag, dtype=np.float64) as grd:
+            dzg = gxgrdu.derivative(grd, gxgrdu.DERIVATIVE_Z)
+            self.assertAlmostEqual(dzg.statistics()['sd'], 0.917713660540142)
+            self.assertEqual(dzg.dtype, np.float64)
+            self.assertEqual(dzg.unit_of_measure, 'nT/m')
+
+        dzg = gxgrdu.derivative(self.mag, gxgrdu.DERIVATIVE_Z, fft=False)
         self.assertAlmostEqual(dzg.statistics()['sd'], 0.9377582582050702)
         self.assertEqual(dzg.unit_of_measure, 'nT/m')
 
@@ -171,7 +177,7 @@ class Test(GXPYTest):
 
         with gxgrd.Grid.open(self.mag) as grd:
             dzg = gxgrdu.derivative(grd, gxgrdu.DERIVATIVE_Z)
-            self.assertAlmostEqual(dzg.statistics()['sd'], 0.9409708788987557)
+            self.assertAlmostEqual(dzg.statistics()['sd'], 0.9177136595359017)
             self.assertEqual(dzg.unit_of_measure, 'nT/m')
 
     def test_contour_xy(self):
