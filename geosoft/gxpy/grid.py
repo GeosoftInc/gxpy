@@ -284,7 +284,13 @@ class Grid(gxgm.Geometry):
                         delete_files(self._file_name)
                     elif self._mode != FILE_READ:
                         if file_name_decorated:
-                            gxapi.GXIMG.sync(file_name_decorated)
+                            try:
+                                gxapi.GXIMG.sync(file_name_decorated)
+                            except geosoft.GXRuntimeError:
+                                # Locked files, extremely large files (e.g. GXF) etc. could cause errors with the
+                                # command above. TODO: Do we even need it? The code below overwrites it anyway?
+                                pass
+
                         if grid_file_name:
                             if self._metadata and self._metadata_changed:
                                 with open(grid_file_name + '.xml', 'w+') as f:
