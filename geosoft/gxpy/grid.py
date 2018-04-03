@@ -266,24 +266,29 @@ class Grid(gxgm.Geometry):
                 self._img = None
 
                 grid_file_name = self._file_name
+                file_name_decorated = decorate_name(self._file_name, self._decoration) if self._decoration else None
+
                 if self._hgd:
 
                     flush_hgd(self._file_name)
                     if self._metadata_changed:
                         with open(self._file_name + '.xml', 'w+') as f:
                             f.write(gxu.xml_from_dict(self._metadata))
-                        gxapi.GXIMG.sync(grid_file_name)
+                        if file_name_decorated:
+                            gxapi.GXIMG.sync(file_name_decorated)
                     delete_files(grid_file_name)
 
                 else:
 
                     if self._delete_files:
                         delete_files(self._file_name)
-                    elif self._mode != FILE_READ and grid_file_name:
-                        gxapi.GXIMG.sync(grid_file_name)
-                        if self._metadata and self._metadata_changed:
-                            with open(self._file_name + '.xml', 'w+') as f:
-                                f.write(gxu.xml_from_dict(self._metadata))
+                    elif self._mode != FILE_READ:
+                        if file_name_decorated:
+                            gxapi.GXIMG.sync(file_name_decorated)
+                        if grid_file_name:
+                            if self._metadata and self._metadata_changed:
+                                with open(grid_file_name + '.xml', 'w+') as f:
+                                    f.write(gxu.xml_from_dict(self._metadata))
 
                 if pop:
                     gx.pop_resource(self._open)
@@ -332,7 +337,7 @@ class Grid(gxgm.Geometry):
 
         # build a file name
         if in_memory:
-            file_name = None
+            self._file_name = None
         else:
             if (file_name is None) or (len(file_name.strip()) == 0):
                 file_name = gx.gx().temp_file('.grd(GRD)')
@@ -1780,7 +1785,7 @@ class Grid(gxgm.Geometry):
         :param pix_width:   desired image width in pixels, default is the width of the aggregate base layer
         :param shade:       `True` to add shading effect
         :param color_map:   `geosoft.gxpy.group.Color_map` instance, or a colour ramp file name,
-                            default is user's default
+                            default is grid's default
         :param contour:     colour contour interval if colours need to break at exact levels
         :param display_area:    `geosoft.gxpy.geometry.Point2` instance, which defines the desired display
                                 area. The display area coordinate system can be different from the grid.
@@ -1788,7 +1793,7 @@ class Grid(gxgm.Geometry):
 
         .. seealso:: `geosoft.gxpy.grid.image_file`, which creates an image directly from a grid file.
 
-        .. Note:: This method saves the grid as a temporary file from which an aggregate and image are
+        .. Note:: Unless read-only this method saves the grid as a temporary file from which an aggregate and image are
             created. If the grid already exists as a grid file it is more efficient to call
             `geosoft.gxpy.grid.image_file`.
 
@@ -1797,9 +1802,16 @@ class Grid(gxgm.Geometry):
 
         temp_grid = gx.gx().temp_file('grd')
         try:
-            with self.__class__.copy(self, temp_grid) as g:
-                temp_decorated = g.file_name_decorated
-            imagefile = image_file(temp_decorated,
+            if self._mode == FILE_READ and self._file_name is not None:
+                grd_decorated = self.file_name_decorated
+            else:
+                with self.__class__.copy(self, temp_grid) as g:
+                    grd_decorated = g.file_name_decorated
+
+            if color_map is None:
+                color_map = self.get_default_color_map()
+
+            imagefile = image_file(grd_decorated,
                                    image_file=image_file_name,
                                    image_type=image_type,
                                    pix_width=pix_width,
@@ -1997,7 +2009,7 @@ def figure_map(grid_file, map_file=None, shade=True, color_map=None, contour=Non
 
 
 def image_file(grid_file, image_file=None, image_type=gxmap.RASTER_FORMAT_PNG, pix_width=None,
-                  shade=True, color_map=None, contour=None, display_area=None):
+               shade=True, color_map=None, contour=None, display_area=None):
     """
     Save a grid file grid as a georeferenced image file.
 
@@ -2007,7 +2019,7 @@ def image_file(grid_file, image_file=None, image_type=gxmap.RASTER_FORMAT_PNG, p
     :param image_type:  image type, one ot the RASTER_FORMAT constants in `geosoft.gxpy.map`.
     :param pix_width:   desired image width in pixels, default is the width of the aggregate base layer
     :param shade:       `True` to add shading effect
-    :param color_map:   `geosoft.gxpy.group.Color_map` instance, or a colour ramp file name, default is user's default
+    :param color_map:   `geosoft.gxpy.group.Color_map` instance, or a colour ramp file name, default is grid's default
     :param contour:     colour contour interval if colours need to break at exact levels
     :param display_area:    `geosoft.gxpy.geometry.Point2` instance, which defines the desired display
                             area. The display area coordinate system can be different from the grid.
@@ -2015,6 +2027,10 @@ def image_file(grid_file, image_file=None, image_type=gxmap.RASTER_FORMAT_PNG, p
 
     .. versionadded:: 9.3.1
     """
+
+    if color_map is None:
+        with Grid.open(grid_file) as g:
+            color_map = g.get_default_color_map()
 
     with gxagg.Aggregate_image.new(grid_file, shade=shade, color_map=color_map, contour=contour) as agg:
         return agg.image_file(image_file, image_type=image_type, pix_width=pix_width, display_area=display_area)
