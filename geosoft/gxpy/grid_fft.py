@@ -311,7 +311,7 @@ class GridFFT:
         return (self.nv // 2) * self.dv
 
     def filter(self, filters=None,
-               cumulatative=False,
+               trn=SOURCE,
                height='',
                mag_inclination='',
                mag_declination='',
@@ -324,7 +324,8 @@ class GridFFT:
         :param filters:         list of filters to apply.  Each filter can be a string, or a tuple with the first
                                 item being the filter name followed by the filter parameters. See `magmap.con`
                                 referenced above for the full list of filters.
-        :param cumulatative:    `True` to apply to the filtered transform. Default applies to the source transform.
+        :param trn:             `SOURCE` apply to the source transform (default) or `FILTERED` to apply to the current
+                                filtered state.
 
         The following parameter are the default for magnetic filed filters like pole/equator reduction and
         aparent susceptibility.
@@ -332,7 +333,7 @@ class GridFFT:
         :param height:          survey ground clearance in grid distance units
         :param mag_inclination: magnetic field inclination
         :param mag_declination: magnetic field declination
-        :param mag_strength:    total magnetifc filed strength for converting magnetization to susceptibility.
+        :param mag_strength:    total magnetic filed strength for converting magnetization to susceptibility.
 
         Example upward continuation 500 grid distance units and a first vertical derivative:
 
@@ -354,7 +355,7 @@ class GridFFT:
         .. versionadded:: 9.4
         """
 
-        if (not cumulatative) or (self._filtered_transform is None):
+        if (trn == SOURCE) or (self._filtered_transform is None):
             transform = self._source_transform
         else:
             transform = self._filtered_transform
@@ -415,11 +416,11 @@ class GridFFT:
         """
         
         if trn == SOURCE:
-            if self._source_spectrum:
+            if self._source_spectrum is not None:
                 return self._source_spectrum
             tr = self._source_transform
         else:
-            if self._filtered_spectrum:
+            if self._filtered_spectrum is not None:
                 return self._filtered_spectrum
             tr = self._filtered_transform
 
@@ -490,10 +491,10 @@ class GridFFT:
 
         if trn == SOURCE:
             if self._source_average_spectral_density:
-                return self._source_spectrum
+                return self._source_average_spectral_density
         else:
             if self._filtered_average_spectral_density:
-                return self._filtered_spectrum
+                return self._filtered_average_spectral_density
 
         # estimate from radial spectrum data
         rspec = self.radially_averaged_spectrum(trn)
@@ -544,8 +545,8 @@ class GridFFT:
             nperr = np.seterr(under='ignore')
             for row in range(tr.ny):
                 data = tr.read_row(row).np
-                r = np.clip(data[0::2]**2, 1.0e-50, None)
-                i = np.clip(data[1::2]**2, 1.0e-50, None)
+                r = np.clip(data[0::2]**2, 1.0e-20, None)
+                i = np.clip(data[1::2]**2, 1.0e-20, None)
                 sgrd.write_row(np.log(r + i), self.uv_row_from_tr(row))
         finally:
             np.seterr(**nperr)
