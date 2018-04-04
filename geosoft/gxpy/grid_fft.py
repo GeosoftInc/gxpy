@@ -33,7 +33,14 @@ def _t(s):
     return geosoft.gxpy.system.translate(s)
 
 
-MAX_DIMENSION = 16384  #:
+MAX_DIMENSION = 16384  #: maximum expanded grid is 16384 x 16384
+SOURCE = 0    #:
+FILTERED = 1  #:
+WAVENUMBER = 0      #: index in radial spectrum
+SAMPLE_COUNT = 1    #: index in radial spectrum
+LOG_POWER = 2       #: index in radial spectrum
+DEPTH_3 = 3         #: index in radial spectrum
+DEPTH_5 = 4         #: index in radial spectrum
 
 
 class GridFFTException(geosoft.GXRuntimeError):
@@ -65,8 +72,7 @@ class GridFFT:
         if hasattr(self, '_open'):
             if self._open:
 
-
-                self._fft_transform.close(discard=True)
+                self._source_transform.close(discard=True)
                 if self._filtered_transform:
                     self._filtered_transform.close(discard=True)
                 self._prep_grid.close(discard=True)
@@ -121,6 +127,8 @@ class GridFFT:
         properties['x0'], properties['y0'] = grid.xy_from_index(-(xnx - grid.nx) / 2., -(xny - grid.ny) / 2.)
 
         # fill
+        # TODO add step-wise expansion option as used in the fft2prep gx
+        # TODO add arguments to control filling options
         if progress:
             progress(_t('Fill...'))
         self._reference_file = gx.gx().temp_file('grd')
@@ -147,39 +155,207 @@ class GridFFT:
         xpg.re_allocate(self._prep_grid.ny, self._prep_grid.nx + 2)
         gxapi.GXFFT2.trans_pg(xpg, gxapi.FFT2_PG_FORWARD)
         trn_file = gx.gx().temp_file('.trn(GRD)')
-        self._fft_transform = gxgrd.Grid.from_data_array(xpg, file_name=trn_file, properties=properties)
-        self._fft_transform.gximg.set_tr(self._trend)
+        self._source_transform = gxgrd.Grid.from_data_array(xpg, file_name=trn_file, properties=properties)
+        self._source_transform.gximg.set_tr(self._trend)
 
         self._filtered_transform = None
+        self._next = 0
+        self._ny2 = self._source_transform.ny // 2
+        self._u = None
+        self._u2 = None
+        self._source_spectrum = None
+        self._filtered_spectrum = None
+        self._source_average_spectral_density = None
+        self._filtered_average_spectral_density = None
 
         # track
         self._open = gx.track_resource(self.__class__.__name__, str(self))
 
+    def uv_row_from_tr(self, i):
+        """ 
+        Returns (u, v) space row index of a transform row.
+
+        .. versionadded:: 9.4
+        """
+        return (i + self._ny2) if i < self._ny2 else (i - self._ny2)
+
+    def tr_row_from_uv(self, i):
+        """
+        Returns transform row index from (u, v) space row index.
+
+        .. versionadded:: 9.4
+        """
+        return (i - self._ny2) if i >= self._ny2 else (i + self._ny2)
+
+    def read_uv_row(self, row, trn=SOURCE):
+        """
+        Read a row (constant wavenumber v) from (u, v) transform.
+
+        :param row:     row number in (u, v) space, row 0 is minimum v
+        :param trn:     `SOURCE` from the source transform (default) or `FILTERED`
+        :return:        (u_array, v, real_array, imaginary_array)
+
+        To calculate a wavenumber array: wavenumber = np.sqrt(u_array**2 + v**2).
+
+        Upward continuation example:
+
+        .. code::
+
+            import geosoft.gxpy.gx as gx
+            import geosoft.gxpy.grid_fft as gfft
+
+            gxc = gx.GXpy()
+
+            with gxfft.GridFFT('some_mag_grid_file.grd', progress=print) as fft:
+
+                # for each row v in (u, v)
+                for vrow in range(fft.nv):
+
+                    # read the row
+                    u, v, r, i = fft.read_uv_row(vrow)
+
+                    # wavenumber along the row
+                    wn = np.sqrt(u**2 + v**2)
+
+                    # upward continue 500 grid distance units
+                    continuation_filter = np.exp(-2. * math.pi * 500. * wn)
+                    r *= continuation_filter
+                    i *= continuation_filter
+
+                    # write the filtered result to the FILTERED transform
+                    fft.write_uv_row(r, i, vrow, trn=gxfft.FILTERED)
+
+                # create an output grid of the upward-continued result
+                fft.result_grid(file_name='upward_continued_500.grd')
+
+        .. seealso:: `write_uv_row()`
+
+        .. versionadded:: 9.4
+        """
+
+        if trn == SOURCE:
+            tr = self.source_transform
+        else:
+            tr = self.filtered_transform
+        data = tr.read_row(self.tr_row_from_uv(row)).np
+        r = data[0::2]
+        i = data[1::2]
+        if self._u is None:
+            self._u = np.arange(len(r)) * self.dv
+            self._u2 = self._u**2
+        v = (row - self._ny2) * self.dv
+        return self._u, v, r, i
+
+    def write_uv_row(self, r, i, row, trn=SOURCE):
+        """
+        Write a row (constant wavenumber v) to the (u, v) transform.
+
+        :param r:       reals as a numpy array length half the width of the transform (as returned from `read_row`).
+        :param i:       imaginary as a numpy array, matches r.
+        :param row:     row number in (u, v) space, row 0 is minimum v
+        :param trn:     `SOURCE` from the source transform (default) or `FILTERED`
+
+        .. seealso:: `read_uv_row()`
+
+        .. versionadded:: 9.4
+        """
+
+        if trn == SOURCE:
+            tr = self.source_transform
+        else:
+            tr = self.filtered_transform
+        data = np.empty(len(r) * 2, dtype=tr.dtype)
+        data[0::2] = r
+        data[1::2] = i
+        tr.write_row(data, self.tr_row_from_uv(row))
+        if row == tr.ny - 1:
+            if trn == SOURCE:
+                self._source_transform = gxgrd.reopen(tr)
+            else:
+                self._filtered_transform = gxgrd.reopen(tr)
 
     @property
     def du(self):
         """ Wavenumber increment in the grid X direction in (cycles / grid distance uom)"""
-        return 1.0 / (self._fft_transform.dx * (self._fft_transform.nx - 2))
+        return 1.0 / (self._source_transform.dx * (self._source_transform.nx - 2))
 
     @property
     def dv(self):
         """ Wavenumber increment in the grid Y direction in (cycles / grid distance uom)."""
-        return 1.0 / (self._fft_transform.dy * self._fft_transform.ny)
+        return 1.0 / (self._source_transform.dy * self._source_transform.ny)
 
     @property
-    def transform(self):
-        """ Folded descrete Fourier transform as a `geosoft.gxpy.grid.Grid` instance."""
-        return self._fft_transform
+    def nu(self):
+        """
+        Number of discrete wavenumbers in grid X direction.
+
+        The transform is folded in the x direction, will be half the transform width + 1
+        """
+        return self._source_transform.nx // 2
 
     @property
-    def filtered_transform(self):
-        """ Folded descrete Fourier transform after filters applied."""
-        return self._filtered_transform
+    def nv(self):
+        """
+        Number of discrete wavenumbers in the grid Y direction.
+        """
+        return self._source_transform.ny
 
-    def filter_con(self, header=None, filters=None, cumulatative=False):
+    @property
+    def u0(self):
+        """ First u (X-direction) wavenumber, always 0. """
+        return 0.
+
+    @property
+    def v0(self):
+        """ First v (Y-direction) wavenumber. """
+        return (self.nv // 2) * self.dv
+
+    def filter(self, filters=None,
+               cumulatative=False,
+               height='',
+               mag_inclination='',
+               mag_declination='',
+               mag_strength=''):
+        """
+        Apply a pre-defined filter.
+
+        See filter reference: https://github.com/GeosoftInc/gxc/blob/master/reference/con_files/magmap.con
+        
+        :param filters:         list of filters to apply.  Each filter can be a string, or a tuple with the first
+                                item being the filter name followed by the filter parameters. See `magmap.con`
+                                referenced above for the full list of filters.
+        :param cumulatative:    `True` to apply to the filtered transform. Default applies to the source transform.
+
+        The following parameter are the default for magnetic filed filters like pole/equator reduction and
+        aparent susceptibility.
+
+        :param height:          survey ground clearance in grid distance units
+        :param mag_inclination: magnetic field inclination
+        :param mag_declination: magnetic field declination
+        :param mag_strength:    total magnetifc filed strength for converting magnetization to susceptibility.
+
+        Example upward continuation 500 grid distance units and a first vertical derivative:
+
+        .. code::
+
+            import geosoft.gxpy.gx as gx
+            import geosoft.gxpy.grid_fft as gfft
+
+            gxc = gx.GXpy()
+
+            with gxfft.GridFFT('some_mag_grid_file.grd', progress=print) as fft:
+
+                # apply the filer
+                fft.filter(['CNUP 500', 'DRVZ 1'])  # equlavalent to `fft.filter([('CNUP', 500), ('DRVZ', 1)])`
+
+                # create an output grid of the upward-continued result
+                fft.result_grid(file_name='upward_continued_500.grd')
+
+        .. versionadded:: 9.4
+        """
 
         if (not cumulatative) or (self._filtered_transform is None):
-            transform = self._fft_transform
+            transform = self._source_transform
         else:
             transform = self._filtered_transform
         rpg = transform.gxpg()
@@ -187,36 +363,217 @@ class GridFFT:
         tpg.copy(rpg)
         transform.gximg.get_tr(self._trend)
 
-        #control file
+        # control file
         con_file = gx.gx().temp_file('con')
         with open(con_file, 'x') as cf:
 
-            # header:
-            i = 0
-            if header:
-                for h in header:
-                    cf.write('{} /\n'.format(h))
-                    i += 1
-                    if i == 5:
-                        break
-            for n in range(i, 5):
-                cf.write('/\n')
+            # control-file header parameters:
+            cf.write('\n')      # title not used
+            cf.write('{} /\n'.format(height))
+            cf.write('{} /\n'.format(mag_inclination))
+            cf.write('{} /\n'.format(mag_declination))
+            cf.write('{} /\n'.format(mag_strength))
 
             # filters
             if filters:
                 for f in filters:
-                    cf.write('{} /\n'.format(f))
+                    if isinstance(f, str):
+                        cf.write('{} /\n'.format(f))
+                    else:
+                        for p in f:
+                            cf.write('{} '.format(p))
+                        cf.write('/\n')
 
         # filter
         gxapi.GXFFT2.filter_pg(tpg, con_file, self._trend,
                                self._source_grid.dx, self._source_grid.dy, self._source_grid.rot)
+        gxu.delete_file(con_file)
 
         file_name = gx.gx().temp_file('.trn(GRD)')
         self._filtered_transform = gxgrd.Grid.from_data_array(tpg, file_name=file_name,
-                                                              properties=self._fft_transform.properties())
+                                                              properties=self._source_transform.properties())
         self._filtered_transform.gximg.set_tr(self._trend)
+        self._filtered_average_spectral_density = None
+        self._filtered_spectrum = None
 
-        gxu.delete_file(con_file)
+    def radially_averaged_spectrum(self, trn=SOURCE):
+        """
+        Radially averaged spectrum as a Numpy array shaped (n_wavenumbers, 5).
+
+        Numpy array shaped (n_wavenumbers, 5), where each row contains:
+        [wavenumber, sample_count, log_power, 3-point_depth, 5-point_depth], wavenumber in cycles per
+        1000 * distance unit of measure (cycle/km for metres), and log_power is the natural log of
+        the power.
+
+        Point depths are calculated by dividing the local slope(3 points and 5 points) of the log_power by (4 * pi)
+        (see Spector and Grant, 1970).
+
+        :param trn:  `SOURCE` (default) return spectrum of the source data, or `FILTERED` return spectrum
+                        of the current filtered state.
+
+        .. versionadded:: 9.4
+        """
+        
+        if trn == SOURCE:
+            if self._source_spectrum:
+                return self._source_spectrum
+            tr = self._source_transform
+        else:
+            if self._filtered_spectrum:
+                return self._filtered_spectrum
+            tr = self._filtered_transform
+
+        # spectrum            
+        spec_file = gx.gx().temp_file()
+        try:
+            gxapi.GXFFT2.rad_spc(tr.gximg, spec_file)
+        except geosoft.gxapi.GXAPIError:
+            tpg = gxapi.GXPG.create(tr.ny, tr.nx, gxapi.GS_FLOAT)
+            tpg.copy(tr.gxpg())
+            with gxgrd.Grid.from_data_array(tpg, properties=tr.properties()) as tgd:
+                tgd.delete_files()
+                gxapi.GXFFT2.rad_spc(tgd.gximg, spec_file)
+
+        length = max(tr.nx, tr.ny) // 2
+        spectrum = np.zeros((length, 5))
+        wavenumber = spectrum[:, 0]
+        n_sample = spectrum[:, 1]
+        log_power = spectrum[:, 2]
+        depth_3 = spectrum[:, 3]
+        depth_5 = spectrum[:, 4]
+
+        i = 0
+        asd = None
+        with open(spec_file) as f:
+            for sl in f:
+                if sl:
+                    if sl[0] == '/':
+                        if '=' in sl:
+                            try:
+                                asd = float(sl.split('=')[1])
+                            except ValueError:
+                                asd = None
+                    else:
+                        pv = sl.split()
+                        wavenumber[i] = float(pv[0])
+                        n_sample[i] = float(pv[1])
+                        log_power[i] = float(pv[2])
+                        try:
+                            depth_3[i] = float(pv[3])
+                        except ValueError:
+                            depth_3[i] = np.nan
+                        try:
+                            depth_5[i] = float(pv[4])
+                        except ValueError:
+                            depth_5[i] = np.nan
+                        i += 1
+        spectrum = spectrum[:i]
+        gxu.delete_file(spec_file)
+
+        if trn == SOURCE:
+            self._source_spectrum = spectrum
+            self._source_average_spectral_density = asd
+        else:
+            self._filtered_spectrum = spectrum
+            self._filtered_average_spectral_density = asd
+
+        return spectrum
+
+    def log_average_spectral_density(self, trn=SOURCE):
+        """
+        Log of the average spectral density of the transform.
+        
+        :param trn:  `SOURCE` (default) source data spectrum, or `FILTERED` current filtered transform.
+
+        .. versionadded:: 9.4
+        """
+
+        if trn == SOURCE:
+            if self._source_average_spectral_density:
+                return self._source_spectrum
+        else:
+            if self._filtered_average_spectral_density:
+                return self._filtered_spectrum
+
+        # estimate from radial spectrum data
+        rspec = self.radially_averaged_spectrum(trn)
+        tot_samples = np.sum(rspec[SAMPLE_COUNT])
+        tot_energy = np.sum(np.exp(rspec[LOG_POWER]))
+        asd = math.log(tot_energy / tot_samples)
+        
+        if trn == SOURCE:
+            self._source_average_spectral_density = asd
+        else:
+            self._filtered_average_spectral_density = asd
+            
+        return asd
+
+    def spectrum_grid(self, trn=SOURCE, file_name=None, overwrite=False):
+        """
+        Return the 2D log(power) amplitude as a grid in wavenumber domain (u, v).
+
+        Amplitude = log(real**2 + imaginary**2)
+        
+        :param trn:      `SOURCE` source spectrum (default) or `FILTERED` filtered spectrum
+        :param file_name:   name for the grid file, default is a temporary grid.
+        :param overwrite:   `True` to overwrite existing grid.
+
+        :return: `geosoft.gxpy.grid.Grid` instance
+        
+        .. versionadded:: 9.4
+        """
+        
+        if trn == SOURCE:
+            tr = self._source_transform
+        else:
+            tr = self._filtered_transform
+
+        du = 1.0 / (tr.dx * (tr.nx - 2))
+        dv = 1.0 / (tr.dy * tr.ny)
+        props = tr.properties()
+        props['nx'] = tr.nx // 2 
+        props['ny'] = tr.ny
+        props['x0'] = 0
+        props['y0'] = -(tr.ny // 2) * dv
+        props['dx'] = du 
+        props['dy'] = dv
+        nperr = {}
+
+        sgrd = gxgrd.Grid.new(file_name=file_name, properties=props, overwrite=overwrite)
+        try:
+            nperr = np.seterr(under='ignore')
+            for row in range(tr.ny):
+                data = tr.read_row(row).np
+                r = np.clip(data[0::2]**2, 1.0e-50, None)
+                i = np.clip(data[1::2]**2, 1.0e-50, None)
+                sgrd.write_row(np.log(r + i), self.uv_row_from_tr(row))
+        finally:
+            np.seterr(**nperr)
+
+        return sgrd
+
+    @property
+    def source_grid(self):
+        """ Source grid as a `geosoft.gxpy.grid.Grid` instance. """
+        return self._source_grid
+
+    @property
+    def expanded_filled_grid(self):
+        """ Expanded and filled grid as a `geosoft.gxpy.grid.Grid` instance. """
+        return self._prep_grid
+
+    @property
+    def source_transform(self):
+        """ Folded descrete Fourier transform as a `geosoft.gxpy.grid.Grid` instance."""
+        return self._source_transform
+
+    @property
+    def filtered_transform(self):
+        """ Folded descrete Fourier transform after filters applied."""
+        if self._filtered_transform is None:
+            self._filtered_transform = gxgrd.Grid.new(properties=self._source_transform.properties())
+        return self._filtered_transform
+
 
     def result_grid(self, file_name=None, overwrite=False):
         """
@@ -230,8 +587,10 @@ class GridFFT:
         """
 
         if self._filtered_transform is None:
-            trn = self._fft_transform
+            self._source_transform = gxgrd.reopen(self._source_transform)
+            trn = self._source_transform
         else:
+            self._filtered_transform = gxgrd.reopen(self._filtered_transform)
             trn = self._filtered_transform
         fpg = trn.gxpg()
         tpg = gxapi.GXPG.create(fpg.n_rows(), fpg.n_cols(), fpg.e_type())
@@ -256,154 +615,3 @@ class GridFFT:
 
         return gxgrd.Grid.from_data_array(result_pg, properties=self._source_grid.properties(),
                                           file_name=file_name, overwrite=overwrite)
-
-
-class PowerSpectrum:
-    """
-    Power spectrum of an FFT transform.
-
-    :param transform: `GridFFT.transform` or `GridFFT.filtered_transform`.
-
-    .. versionadded:: 9.4
-    """
-
-    def __init__(self, transform):
-        self._transform = transform
-        self._spectrum = None
-
-
-    @property
-    def radially_averaged_spectrum(self):
-        """
-        Radially averaged spectrum as a Numpy array shaped (n_wavenumbers, 5).
-
-        Numpy array shaped (n_wavenumbers, 5), where each row contains:
-        [wavenumber, sample_count, log_power, 3-point_depth, 5-point_depth], wavenumber in cycles per
-        1000 * distance unit of measure (cycle/km for metres), and log_power is the natural log of
-        the power. The point depths are an estimate of the source depth assuming the slope
-        is 1 / (4 * pi * depth),  with the 3-point depth based on on a centered 3-point average,
-        and the 5-point depth based on a centered 5-point average.
-
-        .. versionadded:: 9.4
-        """
-
-        if self._spectrum is None:
-
-            spec_file = gx.gx().temp_file()
-            try:
-                gxapi.GXFFT2.rad_spc(self._transform.gximg, spec_file)
-            except geosoft.gxapi.GXAPIError:
-                tpg = gxapi.GXPG.create(self._transform.ny, self._transform.nx, gxapi.GS_FLOAT)
-                tpg.copy(self._transform.gxpg())
-                with gxgrd.Grid.from_data_array(tpg, properties=self._transform.properties()) as tgd:
-                    tgd.delete_files()
-                    gxapi.GXFFT2.rad_spc(tgd.gximg, spec_file)
-                tpg = None
-
-            length = max(self._transform.nx, self._transform.ny) // 2
-            self._spectrum = np.zeros((length, 5))
-            wavenumber = self._spectrum[:, 0]
-            n_sample = self._spectrum[:, 1]
-            log_power = self._spectrum[:, 2]
-            depth_3 = self._spectrum[:, 3]
-            depth_5 = self._spectrum[:, 4]
-            self._asd = None
-
-            i = 0
-            with open(spec_file) as f:
-                for sl in f:
-                    if sl:
-                        if sl[0] == '/':
-                            if '=' in sl:
-                                try:
-                                    self._asd = float(sl.split('=')[1])
-                                except ValueError:
-                                    self._asd = None
-                        else:
-                            pv = sl.split()
-                            wavenumber[i] = float(pv[0])
-                            n_sample[i] = float(pv[1])
-                            log_power[i] = float(pv[2])
-                            try:
-                                depth_3[i] = float(pv[3])
-                            except ValueError:
-                                depth_3[i] = np.nan
-                            try:
-                                depth_5[i] = float(pv[4])
-                            except ValueError:
-                                depth_5[i] = np.nan
-                            i += 1
-            self._spectrum = self._spectrum[:i]
-            gxu.delete_file(spec_file)
-
-            # get power as a vv for full resolution
-            pvv = gxvv.GXvv()
-            gxapi.GXFFT2.rad_spc1(self._transform.gximg, pvv.gxvv)
-            log_power[:] = np.log(pvv.np[:]) - self.log_average_spectral_density
-
-        return self._spectrum
-
-    @property
-    def wavenumber(self):
-        """
-        Wavenumbers as an array.
-
-        .. versionadded:: 9.4
-        """
-        return self.radially_averaged_spectrum[:, 0]
-
-    @property
-    def log_power(self):
-        """
-        Log power average as an array.
-
-        .. versionadded:: 9.4
-        """
-        return self.radially_averaged_spectrum[:, 2]
-
-    @property
-    def samples(self):
-        """
-        Samples per wavenumber as an array.
-
-        .. versionadded:: 9.4
-        """
-        return self.radially_averaged_spectrum[:, 1]
-
-    @property
-    def depth_3(self):
-        """
-        Depth estimate as a function of wavenumber averaged over 3 wavenumbers.
-
-        Depth estimate based on slope of the spectrum 1 / (4 * pi * depth), using method
-        of Spector and Grant (1970).
-
-        .. versionadded:: 9.4
-        """
-        return self.radially_averaged_spectrum[:, 3]
-
-    @property
-    def depth_5(self):
-        """
-        Depth estimate as a function of wavenumber averaged over 5 wavenumbers.
-
-        Depth estimate based on slope of the spectrum 1 / (4 * pi * depth), using method
-        of Spector and Grant (1970).
-
-        .. versionadded:: 9.4
-        """
-        return self.radially_averaged_spectrum[:, 4]
-
-    @property
-    def log_average_spectral_density(self):
-        """
-        Log of the average spectral density of the transform.
-
-        .. versionadded:: 9.4
-        """
-
-        if self._asd is None:
-            tot_samples = np.sum(self.samples)
-            tot_energy = np.sum(np.exp(self.log_power))
-            self._asd = math.log(tot_energy / tot_samples)
-        return self._asd
