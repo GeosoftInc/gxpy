@@ -506,6 +506,19 @@ class Test(GXPYTest):
                 vv = g.read_column(col)
                 self.assertEqual(vv.length, g.ny)
 
+    def test_write(self):
+        self.start()
+
+        with gxgrd.Grid.open(self.g1f) as g:
+            with gxgrd.Grid.new(properties=g.properties()) as gwr:
+                for row in range(g.ny):
+                    gwr.write_row(g.read_row(row), row)
+
+            with gxgrd.Grid.new(properties=g.properties()) as gwc:
+                for col in range(g.nx):
+                    gwc.write_column(g.read_column(col))
+
+
     def test_getitem(self):
         self.start()
 

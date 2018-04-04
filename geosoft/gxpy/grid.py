@@ -991,7 +991,6 @@ class Grid(gxgm.Geometry):
                       'rot': self.rot,
                       'is_color': self.is_color,
                       'dtype': self.dtype,
-                      'file_name': self.file_name,
                       'gridtype': self.gridtype,
                       'decoration': self._decoration,
                       'unit_of_measure': self.unit_of_measure,
@@ -1161,7 +1160,7 @@ class Grid(gxgm.Geometry):
             self._img.write_y(iy, ix0, 0, dvv.gxvv)
             iy += order
 
-    def read_row(self, row=None, start=0, length=0):
+    def read_row(self, row=None, start=0, length=None):
         """
 
         :param row:     row to read, if not specified the next row is read starting from row 0
@@ -1175,10 +1174,14 @@ class Grid(gxgm.Geometry):
         if row is None:
             row = self._next_row
         self._next_row = row + 1
+        if self._next_row == self.ny:
+            self._next_row = 0
 
         if row >= self.ny:
             raise GridException(_t('Attempt to read row {} past the last row {}'.format(row, self.ny)))
         vv = gxvv.GXvv(dtype=self.dtype)
+        if length is None:
+            length = 0
         self._img.read_y(row, start, length, vv.gxvv)
 
         return vv
@@ -1199,10 +1202,69 @@ class Grid(gxgm.Geometry):
         if column >= self.nx:
             raise GridException(_t('Attempt to read column {} past the last column {}'.format(column, self.ny)))
         self._next_col = column + 1
+        if self._next_col == self.nx:
+            self._next_col = 0
+
         vv = gxvv.GXvv(dtype=self.dtype)
         self._img.read_x(column, start, length, vv.gxvv)
 
         return vv
+
+    def write_row(self, data, row=None, start=0, length=None):
+        """
+
+        :param data:    data to write, `geosoft.gxpy.vv.GXvv` instance or an array
+        :param row:     row to write, if not specified the next row is written starting from row 0
+        :param start:   the first point in the row, default is 0
+        :param length:  number of points to read, the default is to the end of the row.
+
+        .. versionadded:: 9.4
+        """
+
+        if not isinstance(data, gxvv.GXvv):
+            data = gxvv.GXvv(data, dtype=self.dtype)
+
+        if row is None:
+            row = self._next_row
+        self._next_row = row + 1
+        if self._next_row == self.ny:
+            self._next_row = 0
+
+        if row >= self.ny:
+            raise GridException(_t('Attempt to read row {} past the last row {}'.format(row, self.ny)))
+        if length is None:
+            length = 0
+        self._img.write_y(row, start, length, data.gxvv)
+
+    def write_column(self, data, column=None, start=0, length=None):
+        """
+
+        :param data:    data to write, `geosoft.gxpy.vv.GXvv` instance or an array
+        :param column:  column to write, if not specified the next column is written starting from column 0
+        :param start:   the first point in the column, default is 0
+        :param length:  number of points to write, the default is to the end of the row.
+
+        .. versionadded:: 9.4
+        """
+
+        if not isinstance(data, gxvv.GXvv):
+            data = gxvv.GXvv(data, dtype=self.dtype)
+
+        if column is None:
+            column = self._next_col
+        self._next_col = column + 1
+        if self._next_col == self.nx:
+            self._next_col = 0
+
+        if column >= self.nx:
+            raise GridException(_t('Attempt to read column {} past the last column {}'.format(column, self.nx)))
+        if length is None:
+            length = 0
+        self._img.write_x(column, start, length, data.gxvv)
+
+    def reset_read_write(self):
+        """ Reset the default read/write to the grid row 0, column 0. """
+        self._next = self._next_col = self._next_row = 0
 
     @staticmethod
     def name_parts(name):
