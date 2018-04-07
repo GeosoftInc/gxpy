@@ -9,8 +9,7 @@ import geosoft.gxpy.system as gsys
 import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.grid as gxgrd
 import geosoft.gxpy.map as gxmap
-import geosoft.gxpy.geometry as gxgm
-import geosoft.gxpy.vv as gxvv
+import geosoft.gxpy.gdb as gxgdb
 
 from base import GXPYTest
 
@@ -821,6 +820,58 @@ class Test(GXPYTest):
             self.assertEqual(crooked.extent_xyz, (632840.885099, 4633310.4612, 1203.0,
                                                   634556.6023, 4635124.0248, 1217.0))
             self.assertEqual(crooked.extent_2d(), (-1.0, 1203.0, 4071.0, 1217.0))
+
+    def test_minimum_curvature(self):
+        self.start()
+
+        def feed_data(n):
+            if n >= len(nxyv):
+                return None
+            return nxyv[n]
+
+        def gdb_from_callback(callback):
+            _gdb = gxgdb.Geosoft_gdb.new()
+            channels = ('x', 'y', 'v')
+            il = 0
+            xyz_list = callback(il)
+            while xyz_list is not None:
+                _gdb.write_line('L{}'.format(il), xyz_list, channels=channels)
+                il += 1
+                xyz_list = callback(il)
+            _gdb.xyz_channels = channels[:2]
+            return _gdb
+
+        xyv = [(45., 10., 100), (60., 25., 77.), (50., 8., 80.)]
+        with gxgrd.Grid.minimum_curvature(xyv) as grd:
+            self.assertEqual((grd.nx, grd.ny), (9, 9))
+            self.assertAlmostEqual(grd.statistics()['sd'], 8.708599, 5)
+
+        # a callback, used for very large data, or to feed data efficiently from some other source.
+        nxyv = np.array([[(45., 10., 100), (60., 25., 77.), (50., 8., 81.), (55., 11., 66.)],
+                         [(20., 15., 108), (25.,  5., 77.), (33., 9., np.nan), (28., 2., 22.)],
+                         [(35., 18., 110), (40., 31., 77.), (13.1, 3.88, 83.), (44., 4., 7.)]])
+
+        with gxgrd.Grid.minimum_curvature(feed_data, cs=1.) as grd:
+            self.assertEqual((grd.nx, grd.ny), (48, 30))
+            self.assertAlmostEqual(grd.statistics()['sd'], 30.3606587, 5)
+
+        with gxgrd.Grid.minimum_curvature(feed_data, cs=0.25, bkd=20) as grd:
+            self.assertEqual((grd.nx, grd.ny), (189, 117))
+            self.assertAlmostEqual(grd.statistics()['sd'], 22.36498279, 5)
+
+        with gdb_from_callback(feed_data) as gdb:
+            with gxgrd.Grid.minimum_curvature((gdb, 'v'), cs=0.25, bkd=20) as grd:
+                self.assertEqual((grd.nx, grd.ny), (189, 117))
+                self.assertAlmostEqual(grd.statistics()['sd'], 22.36498279, 5)
+
+        # TODO: update this test once BASE-1265 is addressed
+        with gxgrd.Grid.minimum_curvature(feed_data, cs=0.25, bkd=500, edgclp=5) as grd:
+            self.assertEqual((grd.nx, grd.ny), (199, 127))
+            self.assertAlmostEqual(grd.statistics()['sd'], 23.65622712, 5)
+            if grd.gridding_log:
+                for l in grd.gridding_log:
+                    print(l, end='')
+
 
 ###############################################################################################
 

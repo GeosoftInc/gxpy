@@ -31,6 +31,7 @@ from . import geometry as gxgm
 from . import map as gxmap
 from . import grid_utility as gxgrdu
 from . import view as gxview
+from . import gdb as gxgdb
 
 __version__ = geosoft.__version__
 
@@ -329,6 +330,7 @@ class Grid(gxgm.Geometry):
         self._buffer_y = None
         self._cs = None
         self._gxpg = None
+        self._gridding_log = None
 
         # build a file name
         if in_memory:
@@ -483,6 +485,224 @@ class Grid(gxgm.Geometry):
         grd.set_properties(properties)
 
         return grd
+
+    @classmethod
+    def minimum_curvature(cls, data, file_name=None, overwrite=False, max_segments=1000,
+                          cs='',
+                          area=('', '', '', ''),
+                          bclip='',
+                          logopt='',
+                          logmin='',
+                          idsf='',
+                          bkd='',
+                          srd='',
+                          iwt='',
+                          edgclp='',
+                          tol='',
+                          pastol='',
+                          itrmax='',
+                          ti='',
+                          icgr=''):
+        """
+        Create a minimum-curvature surface grid from (x, y, value) located data.
+
+        Reference: Smith and Wessel, 1990, Gridding with continuous curvature splines in tension.
+
+        :param data:        list of [(x, y, value), ...] or a callback that returns lists, or a tuple
+                            (gdb, value_channel, x_channel, y_channel) where x_channel and y_channel, if not
+                            specified, default to the current database (x, y) channels.  See below.
+        :param file_name:   name of the grid file, None for a temporary grid. See `supported file formats
+                            <https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations>`_)
+        :param overwrite:   True to overwrite existing file
+        :param max_line_segments:   Maximum number of line segments if using a callback, defaults to 1000.
+
+        Gridding parameters follow the nomenclature of the rangrid.con file:
+        https://github.com/GeosoftInc/gxc/blob/master/reference/con_files/rangrid.con
+
+        :param cs:      The grid cell size in reference system units.
+        :param area:    (xmin, ymin, xmax, ymax) - grid area, default is the data limits
+        :param bclip:   0 to use all data (default), 1 to only use data in the dat area.
+        :param logopt:  1 for log(value) minimum cliped to log(logmin); 2 for `logmin + log(value/logmin)` for
+                        postive `value`, `-logmin - log(-value/logmin` for negative `value`
+        :param logmin:  see `logopt`, default is 1.
+        :param idsf:    low-pass desampling factor in cells, default is 1. Effectively a low-pass filter that
+                        can smooth noisy data that has clustered locations.
+        :param bkd:     Blanking distance. All grid cells farther than the blanking
+                        distance from a valid point will be blanked in the output grid.
+                        The default is the nominal sample interval, i.e. sqrt(area/#data).
+                        This parameter should normally be set to just greater than the maximum
+                        sampling interval through which interpolation is desired.
+                        If there are too many holes in the resulting grid,
+                        increase appropriately.
+        :param srd:     The maximum search radius to use for establishing the starting
+                        values for the coarse grid.  The default is four times the coarse
+                        grid size defined by `icgr`.  If no data is found within the maximum
+                        search radius, the mean of the data is used as the starting value.
+                        If the search radius is too small, the starting grid can be a poor
+                        approximation of the desired grid, resulting in excessive processing
+                        time.  If too large, too much time will be consumed establishing
+                        the original coarse grid.
+        :param iwt:     The weighting power to use to establish the coarse starting grid.
+                        The default is 2, for inverse distance squared.  There is little
+                        reason to change this from the default.
+        :param edgclp:  Edge clipping parameter, the number of grid cells to extend beyond
+                        the outside limits of the data. The default (-1) is not to apply
+                        edge clipping to the blanking distanced grid.
+                        Use this parameter to ensure the grid does not extend too far
+                        beyond the actual data limits, which can occur when using a large
+                        blanking distance with widely spaced data.
+        :param tol:     The tolerance required for each grid cell. The default is 0.1
+                        percent of the range of the data. Decrease for a more accurate grid.
+        :param pastol:  The percentage of points that must meet the tolerance. The
+                        iteration process will stop when the percentage of points change
+                        by higher than this required percentage in iteration. The default
+                        is 99.0 percent. Decrease for rough data to reduce minimum curvature
+                        overshoot, and increase for a to make the grid surface more accurately
+                        match the data.
+        :param itrmax:  Maximum number of iterations to use in solving the minimum curvature
+                        function.  The default is 200 iterations.  Increase for a more
+                        accurate grid.  A value of 1000 is typically sufficient for maximum accuracy.
+        :param ti:      The degree of internal tension ( between 0 and 1 ).
+                        The default is no tension (0.0) which produces a true minimum
+                        curvature grid.  Increasing tension can prevent overshooting of
+                        valid data in sparse areas, although curvature in the vicinity of
+                        real data will increase.
+        :param icgr:    The course grid size relative to the final grid size.  Allowable
+                        factors are 16,8,4,2 or 1.  The default is 8.  The optimum is a
+                        factor close to half the nominal data spacing, although in most
+                        situations the default is fine.  This parameter effects the
+                        length of time it takes to find a solution.
+
+        **The** `data` **parameter:**
+
+        The data can be provided to the gridding algorithm either as a list array, a callback function that
+        returns list array segments, or a `geosoft.gxpy.gdb.Geosoft_database` instance. In the case of a list or
+        a callback, a temporary database is constructed internally.
+
+        A callback is passed a sequence number, 0, 1, 2, ... and is expected to return a list array with each call
+        or None when there is no more data.  See the example below. When a callback is used, the `max_segments`
+        parameter sets the maximum number of lines for the temporary database as each return from the
+        callback will create a new line in the internal temporary database.
+
+        If a database instance is passed it must be the first item in a tuple of 2 or 4 items:
+        (gdb_instance, value_channel) or (gdb_instance, value_channel, x_channel, y_channel).
+        In the first case the default spatial (x, y) channels in the database are assumed.
+
+        Examples:
+
+        .. code::
+
+            import numpy as np
+            import geosoft.gxpy.grid as gxgrd
+
+            # simple data array
+            xyv = [(45., 10., 100), (60., 25., 77.), (50., 8., 80.)]
+            grid = gxgrd.Grid.minimum_curvature(xyv)
+
+            # or a numpy array
+            grid = gxgrd.Grid.minimum_curvature(np.array(xyv))
+
+            # a database, grid to a cell size of 100
+            import geosoft.gxpy.gdb as gxgdb
+            gdb = gxgdb.Geosoft_database.open('some_mag_data.gdb')
+            grid = gxgrd.Grid.minimum_curvature((gdb, 'tmi'), cs=100)
+
+            # a callback, used for very large data, or to feed data efficiently from some other source.
+            nxyv = np.array([[(45., 10., 100), (60., 25., 77.), (50., 8., 81.), (55., 11., 66.)],
+                             [(20., 15., 108), (25.,  5., 77.), (33., 9., np.nan), (28., 2., 22.)],
+                             [(35., 18., 110), (40., 31., 77.), (13., 4., 83.), (44., 4., 7.)]])
+            def feed_data(n):
+                if n >= len(nxyz):
+                    return None
+                return nxyz[n]
+            grid = gxgrd.Grid.minimum_curvature(feed_data, cs=1.)
+
+        .. versionadded:: 9.4
+        """
+
+
+        def gdb_from_callback(callback):
+            _gdb = gxgdb.Geosoft_gdb.new(max_lines=max_segments)
+            channels = ('x', 'y', 'v')
+            il = 0
+            xyz_list = callback(il)
+            while xyz_list is not None:
+                _gdb.write_line('L{}'.format(il), xyz_list, channels=channels)
+                il += 1
+                xyz_list = callback(il)
+            _gdb.xyz_channels = channels[:2]
+            return _gdb
+
+        def gdb_from_data(data):
+            def _data(i):
+                if i == 0:
+                    return data
+                else:
+                    return None
+
+            return gdb_from_callback(_data)
+
+        # create a database from the data
+        xc, yc = ('x', 'y')
+        discard=False
+        if callable(data):
+            gdb = gdb_from_callback(data)
+            vc = 'v'
+            discard=True
+
+        elif isinstance(data, tuple):
+            gdb = data[0]
+            vc = data[1]
+            if len(data) == 4:
+                xc = data[2]
+                yc = data[3]
+            else:
+                xc, yc, _ = gdb.xyz_channels
+            discard = True
+
+        else:
+            gdb = gdb_from_data(data)
+            vc = 'v'
+
+        # parameter control file
+        con_file = gx.gx().temp_file('con')
+        with open(con_file, 'x') as f:
+            f.write('{} / cs\n'.format(cs))
+            f.write('{},{},{},{},{} / xmin, ymin, xmax, ymax, bclip\n'.format(area[0], area[1], area[2], area[3], bclip))
+            f.write(',,,{},{} / ,,, logopt, logmin\n'.format(logopt, logmin))
+            f.write('{},{},{},{},{} / idsf, bkd, srd, iwt, edgeclp\n'.format(idsf, bkd, srd, iwt, edgclp))
+            f.write('{},{},{},{},{} / tol, pastol, itrmax, ti, icgr\n'.format(tol, pastol, itrmax, ti, icgr))
+
+        if file_name is None:
+            file_name = gx.gx().temp_file('grd(GRD)')
+        elif os.path.exists(file_name):
+            if overwrite:
+                gxu.delete_files_by_root(file_name)
+            else:
+                raise GridException(_t('Cannot overwrite existing file: {}').format(file_name))
+
+        gxapi.GXRGRD.run2(gdb.gxdb, xc, yc, vc, con_file, file_name)
+        if discard:
+            gdb.close(discard=True)
+
+        grd = cls.open(file_name)
+
+        log_file = 'rangrid.log'
+        if os.path.exists(log_file):
+            with open(log_file, 'r') as f:
+                grd._gridding_log = f.readlines()
+            gxu.delete_file(log_file)
+
+        return grd
+
+    @property
+    def gridding_log(self):
+        """
+        The gridding process log for grids created by by gridding located data.
+
+        .. versionadded:: 9.4
+        """
+        return self._gridding_log
 
     def __iter__(self):
         return self
