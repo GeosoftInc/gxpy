@@ -231,7 +231,6 @@ class Test(GXPYTest):
             with gxgrd.Grid.copy(g, ofile) as g2:
                 g2.delete_files()
                 properties = g2.properties()
-            self.assertEqual(properties.get('file_name'),os.path.abspath(ofile.split('(')[0]))
             self.assertEqual(properties.get('decoration'),'HGD')
             self.assertEqual(properties.get('gridtype'),'HGD')
             self.assertAlmostEqual(properties.get('dx'),0.01)
@@ -870,7 +869,7 @@ class Test(GXPYTest):
             self.assertAlmostEqual(grd.statistics()['sd'], 23.65622712, 5)
             if grd.gridding_log:
                 for l in grd.gridding_log:
-                    print(l, end='')
+                    print(l)
 
 
 ###############################################################################################

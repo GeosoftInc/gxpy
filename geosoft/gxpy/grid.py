@@ -73,8 +73,8 @@ def reopen(g, dtype=None, mode=FILE_READWRITE):
     if dtype is None:
         dtype = g.dtype
     dfn = g.file_name_decorated
-    delete_set = g._delete_files
-    g._delete_files = False
+    delete_set = g.remove_on_close
+    g.delete_files(False)
     g.close()
     g = Grid.open(dfn, dtype=dtype, mode=mode)
     if delete_set:
@@ -393,7 +393,8 @@ class Grid(gxgm.Geometry):
         self._dtype = dtype
         self._dummy = gxu.gx_dummy(self._dtype)
         self._is_int = gxu.is_int(gxu.gx_dtype(self.dtype))
-        self.rot = self.rot
+        self._cos_rot = self._sin_rot = None
+        self.rot = self.rot  # this sets _cos_rot and _sin_rot
 
         self._open = gx.track_resource(self.__class__.__name__, self._file_name)
 
@@ -620,7 +621,6 @@ class Grid(gxgm.Geometry):
         .. versionadded:: 9.4
         """
 
-
         def gdb_from_callback(callback):
             _gdb = gxgdb.Geosoft_gdb.new(max_lines=max_segments)
             channels = ('x', 'y', 'v')
@@ -633,22 +633,21 @@ class Grid(gxgm.Geometry):
             _gdb.xyz_channels = channels[:2]
             return _gdb
 
-        def gdb_from_data(data):
+        def gdb_from_data(_d):
             def _data(i):
                 if i == 0:
-                    return data
+                    return _d
                 else:
                     return None
-
             return gdb_from_callback(_data)
 
         # create a database from the data
         xc, yc = ('x', 'y')
-        discard=False
+        discard = False
         if callable(data):
             gdb = gdb_from_callback(data)
             vc = 'v'
-            discard=True
+            discard = True
 
         elif isinstance(data, tuple):
             gdb = data[0]
@@ -668,7 +667,8 @@ class Grid(gxgm.Geometry):
         con_file = gx.gx().temp_file('con')
         with open(con_file, 'x') as f:
             f.write('{} / cs\n'.format(cs))
-            f.write('{},{},{},{},{} / xmin, ymin, xmax, ymax, bclip\n'.format(area[0], area[1], area[2], area[3], bclip))
+            f.write('{},{},{},{},{} / xmin, ymin, xmax, ymax, bclip\n'.
+                    format(area[0], area[1], area[2], area[3], bclip))
             f.write(',,,{},{} / ,,, logopt, logmin\n'.format(logopt, logmin))
             f.write('{},{},{},{},{} / idsf, bkd, srd, iwt, edgeclp\n'.format(idsf, bkd, srd, iwt, edgclp))
             f.write('{},{},{},{},{} / tol, pastol, itrmax, ti, icgr\n'.format(tol, pastol, itrmax, ti, icgr))
@@ -690,7 +690,7 @@ class Grid(gxgm.Geometry):
         log_file = 'rangrid.log'
         if os.path.exists(log_file):
             with open(log_file, 'r') as f:
-                grd._gridding_log = f.readlines()
+                grd._gridding_log = [l.rstrip() for l in f.readlines()]
             gxu.delete_file(log_file)
 
         return grd
@@ -770,6 +770,8 @@ class Grid(gxgm.Geometry):
                             is created.
         :param dtype:       numpy data type, None to use type of the parent grid
         :param overwrite:   True to overwrite if the file exists, False to not overwrite.
+        :param in_memory:   True to create a grin in memory.
+        :param mode:        `open` mode for working with the copy.
 
         .. versionadded:: 9.2
         """
@@ -923,7 +925,6 @@ class Grid(gxgm.Geometry):
             raise GridException(_t("This is not a crooked-path section grid."))
         return gxview.CrookedPath(self.coordinate_system)
 
-
     @property
     def rotation_cos_sine(self):
         """
@@ -944,6 +945,15 @@ class Grid(gxgm.Geometry):
         .. versionadded:: 9.1
         """
         self._delete_files = delete
+
+    @property
+    def remove_on_close(self):
+        """Remove files on close setting, can be set."""
+        return self._delete_files
+    
+    @remove_on_close.setter
+    def remove_on_close(self, tf):
+        self._delete_files = bool(tf)
 
     def close(self, discard=False):
         """
@@ -1770,7 +1780,6 @@ class Grid(gxgm.Geometry):
 
         return imagefile
 
-
     def generate_color_map(self, method=gxapi.ITR_ZONE_DEFAULT):
         """
         Generate color map for grid based on statistics and method
@@ -1846,7 +1855,7 @@ def expression(grids, expression, result_file_name=None, overwrite=False):
     # add grids to the expression
     properties = None
     delete_list = []
-    for k,g in grids.items():
+    for k, g in grids.items():
         if not isinstance(g, Grid):
             g = Grid.open(g, dtype=np.float64)
         elif g.dtype != np.float64:
