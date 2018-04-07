@@ -1807,6 +1807,27 @@ class Grid(gxgm.Geometry):
         return geosoft.gxpy.group.Color_map(itr)
 
 
+    def mask(self, mask):
+        """
+        Mask against blank areas in `mask` grid.  Both grids must be same dimension.
+
+        :param mask:  reference mask grid, file of `Grid` instance.
+
+        .. versionadded:: 9.4
+        """
+
+        if not isinstance(mask, Grid):
+            mask = Grid.open(mask)
+
+        if (self.nx != mask.nx or self.ny != mask.ny):
+            raise GridException(_t('Grids dimensions do not match'))
+
+        for row in range(self.ny):
+            mr = self.read_row(row)
+            mr.gxvv.mask(mask.read_row(row).gxvv)
+            self.write_row(mr)
+
+
 def expression(grids, expression, result_file_name=None, overwrite=False):
     """
     Apply an expressing to grids.

@@ -871,6 +871,16 @@ class Test(GXPYTest):
                 for l in grd.gridding_log:
                     print(l)
 
+    def test_mask(self):
+        self.start()
+
+        with gxgrd.Grid.open(self.g1f, mode=gxgrd.FILE_READWRITE) as g1:
+            data = g1.np()
+            data[:, 50] = np.nan
+            mask = gxgrd.Grid.from_data_array(data)
+            g1.mask(mask)
+            data = g1.np()
+            self.assertEqual(np.nansum(data[:, 50]), 0)
 
 ###############################################################################################
 
