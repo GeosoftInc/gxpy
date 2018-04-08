@@ -500,7 +500,7 @@ class Grid(gxgm.Geometry):
                           iwt='',
                           edgclp='',
                           tol='',
-                          pastol='',
+                          pastol='100',
                           itrmax='',
                           ti='',
                           icgr=''):
@@ -557,17 +557,17 @@ class Grid(gxgm.Geometry):
         :param pastol:  The percentage of points that must meet the tolerance. The
                         iteration process will stop when the percentage of points change
                         by higher than this required percentage in iteration. The default
-                        is 99.0 percent. Decrease for rough data to reduce minimum curvature
+                        is 100.0 percent. Decrease for rough data to reduce minimum curvature
                         overshoot, and increase for a to make the grid surface more accurately
-                        match the data.
+                        match the data. Overshoot can also be controlled by increasing tension (ti).
         :param itrmax:  Maximum number of iterations to use in solving the minimum curvature
                         function.  The default is 200 iterations.  Increase for a more
                         accurate grid.  A value of 1000 is typically sufficient for maximum accuracy.
         :param ti:      The degree of internal tension ( between 0 and 1 ).
                         The default is no tension (0.0) which produces a true minimum
-                        curvature grid.  Increasing tension can prevent overshooting of
-                        valid data in sparse areas, although curvature in the vicinity of
-                        real data will increase.
+                        curvature surface.  Increasing tension can prevent overshooting of
+                        valid data in sparse areas at the expense of increased local curvature
+                        near data points.
         :param icgr:    The course grid size relative to the final grid size.  Allowable
                         factors are 16,8,4,2 or 1.  The default is 8.  The optimum is a
                         factor close to half the nominal data spacing, although in most
@@ -663,6 +663,9 @@ class Grid(gxgm.Geometry):
             gdb = gdb_from_data(data)
             vc = 'v'
 
+        if tol <= 0.:
+            tol = 1.0e-25
+
         # parameter control file
         con_file = gx.gx().temp_file('con')
         with open(con_file, 'x') as f:
@@ -742,7 +745,12 @@ class Grid(gxgm.Geometry):
         return x, y, z, v
 
     def gxpg(self):
-        """Get a `geosoft.gxapi.GXPG` instance for the grid."""
+        """
+        Get a `geosoft.gxapi.GXPG` instance for the grid.
+
+        The gxpg instance will only be valid when the `Grid` instance is alive. Upon closing of the
+        `Grid` instance the gxpg instance is lost.
+        """
         if self._gxpg is None:
             self._gxpg = self._img.geth_pg()
         return self._gxpg
@@ -1825,7 +1833,7 @@ class Grid(gxgm.Geometry):
         for row in range(self.ny):
             mr = self.read_row(row)
             mr.gxvv.mask(mask.read_row(row).gxvv)
-            self.write_row(mr)
+            self.write_row(mr, row)
 
 
 def expression(grids, expression, result_file_name=None, overwrite=False):
