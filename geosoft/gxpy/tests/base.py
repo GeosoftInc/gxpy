@@ -16,8 +16,8 @@ os.environ['GEOSOFT_TEST_MODE'] = '1'
 os.environ['GEOSOFT_TESTSYSTEM_MODE'] = '1'
 
 def set_geosoft_bin_path():
-    if 'GX_GEOSOFT_BIN_PATH_TESTING' in os.environ:
-        os.environ['GX_GEOSOFT_BIN_PATH'] = os.environ['GX_GEOSOFT_BIN_PATH_TESTING']
+    if 'GX_GEOSOFT_BIN_PATH_RELEASE' in os.environ:
+        os.environ['GX_GEOSOFT_BIN_PATH'] = os.environ['GX_GEOSOFT_BIN_PATH_RELEASE']
 
 
 import geosoft.gxpy.gx as gx

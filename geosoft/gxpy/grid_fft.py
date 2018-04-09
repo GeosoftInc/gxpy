@@ -61,7 +61,7 @@ class GridFFT:
     :param expand:      minimum expansion percent to create a periodic function. The default is 10.
     :param trend_order: trend order to remove, default is 1
     :param roll_to_zero:    True to roll-off to zero in expanded area
-    :param roll_off_method: 1 - linear, 2 - square, de
+    :param roll_off_method: 1 - linear, 2 - square (default)
     :param max_entropy:     True (default) to use maximum-entropy prediction, which attempts to preserve spectral
                             consistency on the expanded area fill.
     :param max_entropy_filter_length: maximum entropy filter length,
