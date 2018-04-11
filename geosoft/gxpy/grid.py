@@ -330,7 +330,6 @@ class Grid(gxgm.Geometry):
         self._buffer_y = None
         self._cs = None
         self._gxpg = None
-        self._gridding_log = None
 
         # build a file name
         if in_memory:
@@ -663,7 +662,7 @@ class Grid(gxgm.Geometry):
             gdb = gdb_from_data(data)
             vc = 'v'
 
-        if tol <= 0.:
+        if tol and float(tol) <= 0.:
             tol = 1.0e-25
 
         # parameter control file
@@ -692,20 +691,9 @@ class Grid(gxgm.Geometry):
 
         log_file = 'rangrid.log'
         if os.path.exists(log_file):
-            with open(log_file, 'r') as f:
-                grd._gridding_log = [l.rstrip() for l in f.readlines()]
             gxu.delete_file(log_file)
 
         return grd
-
-    @property
-    def gridding_log(self):
-        """
-        The gridding process log for grids created by by gridding located data.
-
-        .. versionadded:: 9.4
-        """
-        return self._gridding_log
 
     def __iter__(self):
         return self

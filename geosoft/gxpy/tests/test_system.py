@@ -132,12 +132,12 @@ class Test(GXPYTest):
                 bx = buf[:,0,0]
                 by = buf[:,0,1]
                 bz = buf[:,0,2]
-                range_min = [min(range_min[0], np.amin(bx)),
-                             min(range_min[1], np.amin(by)),
-                             min(range_min[2], np.amin(bz))]
-                range_max = [max(range_max[0], np.amax(bx)),
-                             max(range_max[1], np.amax(by)),
-                             max(range_max[2], np.amax(bz))]
+                range_min = [min(range_min[0], np.nanmin(bx)),
+                             min(range_min[1], np.nanmin(by)),
+                             min(range_min[2], np.nanmin(bz))]
+                range_max = [max(range_max[0], np.nanmax(bx)),
+                             max(range_max[1], np.nanmax(by)),
+                             max(range_max[2], np.nanmax(bz))]
                 record_offset += buf.shape[0]
 
             return range_min, range_max
@@ -165,7 +165,7 @@ class Test(GXPYTest):
                             (range_min[2], range_max[2], buf[:,0,2])]
 
                 # run in parallel
-                results = gsys.parallel_map(lambda a: (min(a[0], np.min(a[2])), max(a[1], np.max(a[2]))), parallel)
+                results = gsys.parallel_map(lambda a: (min(a[0], np.nanmin(a[2])), max(a[1], np.nanmax(a[2]))), parallel)
 
                 # update the ranges from the results, which are in a list of (min,max)
                 zip1,zip2 = zip(*results)

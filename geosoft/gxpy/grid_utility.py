@@ -133,7 +133,7 @@ def derivative(grid, derivative_type, file_name=None, overwrite=False, dtype=Non
 
         if fft:
             with gxfft.GridFFT(g) as gfft:
-                gfft.filter_con(filters=['DRVZ 1'])
+                gfft.filter(filters=['DRVZ 1'])
                 dzg = gfft.result_grid(file_name=file_name, overwrite=overwrite)
         else:
             dzg = gxgrd.Grid.new(file_name=file_name, properties=g.properties(), overwrite=overwrite)
@@ -227,7 +227,7 @@ def derivative(grid, derivative_type, file_name=None, overwrite=False, dtype=Non
     return gxgrd.reopen(dxy, dtype=return_dtype)
 
 
-def tilt_depth(grid, resolution=None, return_as=RETURN_PPOINT, gdb=None, overwrite=False, report=None):
+def tilt_depth(grid, resolution=None, return_as=RETURN_PPOINT, gdb=None, overwrite=False, fft=True):
     """
     Given an RTP TMI grid, or the vertical derivative of the gravity anomaly, calculate
     contact source depths using the tilt-depth method as suggested by Rick Blakely.
@@ -247,7 +247,8 @@ def tilt_depth(grid, resolution=None, return_as=RETURN_PPOINT, gdb=None, overwri
     :param gdb:         return database name, or a `geosoft.gxpy.gdv.Geosoft_database` instance. If not
                         specified and `return_as=RETURN_GDB`, a temporary database is created.
     :param overwrite:   True to overwrite existing gdb.
-    :param report:      reporting function called to report progress. `report=print` to print to console.
+    :param fft:         `False` to use a space-domain convolution.  The default uses an FFT, which will
+                        in general produce a cleaner and more accurate result, though it may be slower.
     :return:            depends on `return_as` setting
 
     .. versionadded:: 9.4
@@ -256,24 +257,20 @@ def tilt_depth(grid, resolution=None, return_as=RETURN_PPOINT, gdb=None, overwri
     if gdb is not None:
         return_as = RETURN_GDB
 
-    if report:
-        report('Calculate tilt-angle...')
+    gxc = gx.gx()
+    gxc.log('Calculate tilt-angle...')
 
-    ta = derivative(grid, TILT_ANGLE)
-    if report:
-        report('Find zero contour of the tilt-angle...')
+    ta = derivative(grid, TILT_ANGLE, fft=fft)
+    gxc.log('Find zero contour of the tilt-angle...')
 
     if resolution is None:
         resolution = min(ta.dx, ta.dy) * 4.
     gdb = contour_points(ta, 0., resolution=resolution, return_as=RETURN_GDB, gdb=gdb, overwrite=overwrite)
-    if report:
-        report('Calculate tilt-derivative...')
-    tad = derivative(ta, DERIVATIVE_XY)
+    gxc.log('Calculate tilt-derivative...')
+    tad = derivative(ta, DERIVATIVE_XY, fft=fft)
 
     # get gradient of the TD at the zero locations
-    if report:
-        report('Calculate depth = recirocal(tilt-derivative) at zero contour of the tilt-angle...')
-
+    gxc.log('Calculate depth = recirocal(tilt-derivative) at zero contour of the tilt-angle...')
     for ln in gdb.list_lines():
         xyz, chlist, fid = gdb.read_line(ln, channels=('X', 'Y', 'Z'))
         zero_tad = sample(tad, xyz)
@@ -331,7 +328,7 @@ def grid_mosaic(mosaic, grid_list, type_decorate='', report=None):
     :param mosaic:          name of the output grid, returned.  Decorate with '(HGD)' to get an HGD
     :param grid_list:       list of input grid names
     :param type_decorate:   decoration for input grids if not default
-    :param report:          string reporting function, report=print to print progress
+    :param report:          deprecated: always logs to the context using `geosoft.gxpy.gx.GXpy.log()`
     :returns:               `geosoft.gxpy.grid.Grid` instance
 
     .. versionadded:: 9.4
@@ -393,12 +390,12 @@ def grid_mosaic(mosaic, grid_list, type_decorate='', report=None):
             _ny = _p.get('ny')
             gpg = _g.gxpg()
             destx, desty = locate(x0, y0, _p)
-            if report:
-                report('    +{} nx,ny({},{})'.format(_g, _nx, _ny))
-                report('     Copy ({},{}) -> ({},{}) of ({},{})'.format(_nx, _ny, destx, desty, mnx, mny))
+            gxc.log('    +{} nx,ny({},{})'.format(_g, _nx, _ny))
+            gxc.log('     Copy ({},{}) -> ({},{}) of ({},{})'.format(_nx, _ny, destx, desty, mnx, mny))
             _mpg.copy_subset(gpg, desty, destx, 0, 0, _ny, _nx)
             return
 
+    gxc = gx.gx()
     if len(grid_list) == 0:
         raise GridUtilityException(_t('At least one grid is required'))
 
@@ -414,13 +411,11 @@ def grid_mosaic(mosaic, grid_list, type_decorate='', report=None):
     p['y0'] = y0
     p['nx'] = nx
     p['ny'] = ny
-    if report is not None:
-        report('')
-        report('Mosaic: dim({},{}) x({},{}) y({},{}), cell({})...'.format(nx, ny, x0, xm, y0, ym, p.get('dx')))
+    gxc.log('')
+    gxc.log('Mosaic: dim({},{}) x({},{}) y({},{}), cell({})...'.format(nx, ny, x0, xm, y0, ym, p.get('dx')))
     master = gxgrd.Grid.new(mosaic, p)
-    if report:
-        report('Memory image ready ({}) dim({},{}) x0,y0({},{})'.format(master, master.nx, master.ny,
-                                                                        master.x0, master.y0))
+    gxc.log('Memory image ready ({}) dim({},{}) x0,y0({},{})'.format(master, master.nx, master.ny,
+                                                                    master.x0, master.y0))
 
     # paste grids onto master
     mnx = master.nx
@@ -429,8 +424,7 @@ def grid_mosaic(mosaic, grid_list, type_decorate='', report=None):
     for g in grids:
         paste(g, mpg)
 
-    if report:
-        report('Mosaic completed: {}'.format(mosaic))
+    gxc.log('Mosaic completed: {}'.format(mosaic))
 
     return master
 

@@ -969,8 +969,8 @@ class PPoint(Geometry, Sequence):
 
         .. versionadded:: 9.2
         """
-        p1 = Point((np.amin(self.x), np.amin(self.y), np.amin(self.z)), self.coordinate_system)
-        p2 = Point((np.amax(self.x), np.amax(self.y), np.amax(self.z)), self.coordinate_system)
+        p1 = Point((np.nanmin(self.x), np.nanmin(self.y), np.nanmin(self.z)), self.coordinate_system)
+        p2 = Point((np.nanmax(self.x), np.nanmax(self.y), np.nanmax(self.z)), self.coordinate_system)
         return Point2((p1, p2))
 
     def make_xyz_vv(self):
@@ -1182,8 +1182,8 @@ class Mesh(Geometry, Sequence):
         vx = v[:, 0]
         vy = v[:, 1]
         vz = v[:, 2]
-        p1 = Point((np.amin(vx), np.amin(vy), np.amin(vz)), self.coordinate_system)
-        p2 = Point((np.amax(vx), np.amax(vy), np.amax(vz)), self.coordinate_system)
+        p1 = Point((np.nanmin(vx), np.nanmin(vy), np.nanmin(vz)), self.coordinate_system)
+        p2 = Point((np.nanmax(vx), np.nanmax(vy), np.nanmax(vz)), self.coordinate_system)
         return Point2((p1, p2))
 
     def point_array(self, unique=True):

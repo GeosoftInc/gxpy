@@ -8,6 +8,9 @@ Geosoft Fast Fourier Transform processes for 2D gridded data.
     `PowerSpectrum` Descrete transform power spectrum
     =============== ==============================================================
 
+Note that 'wavenumber' in this module refers to cycles/unit_distance. Multiply by 2pi to
+determine the angular wavenumber.
+
 .. seealso:: :class:`geosoft.gxapi.GXFFT2`
 
 .. note::
@@ -53,7 +56,6 @@ class GridFFT:
     Descrete Fourier Transform of a grid.
 
     :param grid:        grid file name or a `geosoft.gxpy.grid.Grid` instance.
-    :param progress:    call-back to report progress, `progress=print` to prints to the console
     :param buffer:      percentage buffer area, default 2.5.  The buffer expands the size of the grid
                         footprint before filling internal space with a minimum curfacture surface.  This
                         minimizes edge effects from high-amplitude features at the edge of the grid.
@@ -105,7 +107,7 @@ class GridFFT:
     def __str__(self):
         return '<class GridFFT>: {} ({}, {})'.format(self._name, self._source_grid.nx, self._source_grid.ny)
 
-    def __init__(self, grid, progress=None,
+    def __init__(self, grid,
                  buffer=2.,
                  buffer_iterations=250,
                  buffer_tolerance=None,
@@ -130,6 +132,8 @@ class GridFFT:
             xyv[:, 2] = rvv.np
             return xyv
 
+        gxc = gx.gx()
+
         if not isinstance(grid, gxgrd.Grid):
             grid = gxgrd.Grid.open(grid)
         self._source_grid = grid
@@ -140,16 +144,14 @@ class GridFFT:
         if grid.dx != grid.dy:
             raise(_t('Cell size must be square'))
 
-        if progress:
-            progress(_t('\nGridFFT from: {}').format(grid.file_name))
+        gxc.log(_t('\nGridFFT from: {}').format(grid.file_name))
 
         # expand buffer and fill
         if buffer == 0.:
             buffer_cells = 0
         else:
             buffer_cells = max(int(0.5 + min(grid.nx, grid.ny) * buffer / 100.), 1)
-        if progress:
-            progress(_t('Internal fill with {} cell buffer...').format(buffer_cells))
+        gxc.log(_t('Internal fill with {} cell buffer...').format(buffer_cells))
         expanded_area = (grid.x0 - buffer_cells * grid.dx,
                          grid.y0 - buffer_cells * grid.dy,
                          grid.x0 + (grid.nx + buffer_cells - 1) * grid.dx,
@@ -167,16 +169,15 @@ class GridFFT:
                                                    area=expanded_area,
                                                    bkd=bkd,
                                                    itrmax=buffer_iterations,
-                                                   pastol=100.,
+                                                   pastol=99.,
                                                    tol=buffer_tolerance,
                                                    icgr=16,
                                                    max_segments=grid.ny)
         bpg = buffer_grid.gxpg()
 
         # trend
-        if progress:
-            method = _t('edge') if trend_edge == 1 else _t('all')
-            progress(_t('Remove {} order trend determined from {} data ...').format(method, trend_order))
+        method = _t('edge') if trend_edge == 1 else _t('all')
+        gxc.log(_t('Remove {} order trend determined from {} data ...').format(method, trend_order))
         self._trend = gxapi.GXTR.create(trend_order)
         tpg = gxapi.GXPG.create(bpg.n_rows(), bpg.n_cols(), self._source_grid.gxtype)
         gxapi.GXPGU.trend(bpg, tpg, self._trend, 0,
@@ -185,8 +186,7 @@ class GridFFT:
                           buffer_grid.dx, buffer_grid.dy)
 
         # expand
-        if progress:
-            progress(_t('Expand from ({}, {})').format(grid.nx, grid.ny))
+        gxc.log(_t('Expand from ({}, {})').format(grid.nx, grid.ny))
         xpg = gxapi.GXPG.create(1, 1, tpg.e_type())
         gxapi.GXPGU.expand(tpg, xpg, expand, 1, 0, 0)
 
@@ -195,13 +195,11 @@ class GridFFT:
         if xnx > MAX_DIMENSION or xny > MAX_DIMENSION:
             raise GridFFTException(_t('Expanded size ({}, {}) exceeds maximum dimension {{}, {}').
                                    format(xnx, xny, MAX_DIMENSION, MAX_DIMENSION))
-        if progress:
-            progress(_t('         to ({}, {})...').format(xnx, xny))
+        gxc.log(_t('         to ({}, {})...').format(xnx, xny))
 
         # fill
-        if progress:
-            method = _t('maximum entropy prediction') if max_entropy else _t('simple interpolation')
-            progress(_t('Fill expanded area using {}...').format(method))
+        method = _t('maximum entropy prediction') if max_entropy else _t('simple interpolation')
+        gxc.log(_t('Fill expanded area using {}...').format(method))
         roll_to_zero = 0.0 if roll_to_zero else gxapi.rDUMMY
         if not max_entropy:
             max_entropy_filter_length = -1
@@ -229,8 +227,7 @@ class GridFFT:
         self._prep_grid.gximg.set_tr(self._trend)
 
         # fft
-        if progress:
-            progress(_t('FFT...'))
+        gxc.log(_t('FFT...'))
         xpg.re_allocate(self._prep_grid.ny, self._prep_grid.nx + 2)
         gxapi.GXFFT2.trans_pg(xpg, gxapi.FFT2_PG_FORWARD)
         trn_file = gx.gx().temp_file('.trn(GRD)')
@@ -283,9 +280,9 @@ class GridFFT:
             import geosoft.gxpy.gx as gx
             import geosoft.gxpy.grid_fft as gfft
 
-            gxc = gx.GXpy()
+            gxc = gx.GXpy(log=print)
 
-            with gxfft.GridFFT('some_mag_grid_file.grd', progress=print) as fft:
+            with gxfft.GridFFT('some_mag_grid_file.grd') as fft:
 
                 # for each row v in (u, v)
                 for vrow in range(fft.nv):
@@ -421,9 +418,9 @@ class GridFFT:
             import geosoft.gxpy.gx as gx
             import geosoft.gxpy.grid_fft as gfft
 
-            gxc = gx.GXpy()
+            gxc = gx.GXpy(log=print)
 
-            with gxfft.GridFFT('some_mag_grid_file.grd', progress=print) as fft:
+            with gxfft.GridFFT('some_mag_grid_file.grd') as fft:
 
                 # apply the filer
                 fft.filter(['CNUP 500', 'DRVZ 1'])  # equlavalent to `fft.filter([('CNUP', 500), ('DRVZ', 1)])`

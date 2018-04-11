@@ -852,35 +852,33 @@ class Test(GXPYTest):
 
         with gxgrd.Grid.minimum_curvature(feed_data, cs=1.) as grd:
             self.assertEqual((grd.nx, grd.ny), (48, 30))
-            self.assertAlmostEqual(grd.statistics()['sd'], 30.3606587, 5)
+            self.assertAlmostEqual(grd.statistics()['sd'], 30.104400923062535, 5)
 
         with gxgrd.Grid.minimum_curvature(feed_data, cs=0.25, bkd=20) as grd:
             self.assertEqual((grd.nx, grd.ny), (189, 117))
-            self.assertAlmostEqual(grd.statistics()['sd'], 22.36498279, 5)
+            self.assertAlmostEqual(grd.statistics()['sd'], 22.320659139902336, 5)
 
         with gdb_from_callback(feed_data) as gdb:
             with gxgrd.Grid.minimum_curvature((gdb, 'v'), cs=0.25, bkd=20) as grd:
                 self.assertEqual((grd.nx, grd.ny), (189, 117))
-                self.assertAlmostEqual(grd.statistics()['sd'], 22.36498279, 5)
+                self.assertAlmostEqual(grd.statistics()['sd'], 22.320659139902336, 5)
 
         # TODO: update this test once BASE-1265 is addressed
         with gxgrd.Grid.minimum_curvature(feed_data, cs=0.25, bkd=500, edgclp=5) as grd:
             self.assertEqual((grd.nx, grd.ny), (199, 127))
-            self.assertAlmostEqual(grd.statistics()['sd'], 23.65622712, 5)
-            if grd.gridding_log:
-                for l in grd.gridding_log:
-                    print(l)
+            self.assertAlmostEqual(grd.statistics()['sd'], 23.4893997876449, 5)
 
     def test_mask(self):
         self.start()
 
-        with gxgrd.Grid.open(self.g1f, mode=gxgrd.FILE_READWRITE) as g1:
-            data = g1.np()
-            data[:, 50] = np.nan
-            mask = gxgrd.Grid.from_data_array(data)
-            g1.mask(mask)
-            data = g1.np()
-            self.assertEqual(np.nansum(data[:, 50]), 0)
+        with gxgrd.Grid.open(self.g1f) as g:
+            with gxgrd.Grid.copy(g) as g1:
+                data = g1.np()
+                data[:, 50] = np.nan
+                mask = gxgrd.Grid.from_data_array(data)
+                g1.mask(mask)
+                data = g1.np()
+                self.assertEqual(np.nansum(data[:, 50]), 0)
 
 ###############################################################################################
 

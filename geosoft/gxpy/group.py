@@ -1420,7 +1420,7 @@ class Draw_3d(Draw):
 
         n_faces = len(faces)
         n_verticies = len(verticies)
-        if np.max(faces) > n_verticies or np.min(faces) < 0:
+        if np.nanmax(faces) > n_verticies or np.nanmin(faces) < 0:
             raise GroupException(_t('Faces refer to verticies out of range of verticies.'))
 
         # TODO validate buffering and rendering performance once #73 is resolved.
