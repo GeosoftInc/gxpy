@@ -36,7 +36,9 @@ def _t(s):
     return geosoft.gxpy.system.translate(s)
 
 
-MAX_DIMENSION = 16384  #: maximum expanded grid is 16384 x 16384
+FILL_MAXIMUM_ENTROPY = 0    #:
+FILL_MINIMUM_CURVATURE = 1  #:
+
 SOURCE = 0    #:
 FILTERED = 1  #:
 WAVENUMBER = 0      #: index in radial spectrum
@@ -55,22 +57,21 @@ class GridFFT:
     """
     Descrete Fourier Transform of a grid.
 
-    :param grid:        grid file name or a `geosoft.gxpy.grid.Grid` instance.
-    :param buffer:      percentage buffer area, default 2.5.  The buffer expands the size of the grid
-                        footprint before filling internal space with a minimum curfacture surface.  This
-                        minimizes edge effects from high-amplitude features at the edge of the grid.
+    :param grid:            grid file name or a `geosoft.gxpy.grid.Grid` instance.
+    :param buffer:          percentage buffer area, default 2%.  The buffer expands the size of the grid
+                            footprint before filling internal space with a minimum-curvacture surface.  This
+                            minimizes edge effects from high-amplitude features at the edge of the grid.
     :param buffer_iterations: maximum iterations to resolve the minimum curvature surface for the internal fill.
-    :param expand:      minimum expansion percent to create a periodic function. The default is 10.
-    :param trend_order: trend order to remove, default is 1
-    :param roll_to_zero:    True to roll-off to zero in expanded area
+    :param expand:          minimum expansion percent to create a periodic function. The default is 10.
+    :param trend_order:     trend order to remove, default is 1
+    :param roll_to_zero:    `True` to roll-off to zero in expanded area
     :param roll_off_method: 1 - linear, 2 - square (default)
-    :param max_entropy:     True (default) to use maximum-entropy prediction, which attempts to preserve spectral
-                            consistency on the expanded area fill.
+    :param fill_method:     FILL_MAXIMUM_ENTROPY (default) or FILL_MINIMUM_CURVATURE
     :param max_entropy_filter_length: maximum entropy filter length,
     :param amplitude_limit:         Amplitudes limiting, which starts at halve this setting.  Default no limiting.
     :param edge_amplitude_limit:    edge amplitude limiting, starting at half this value. Default no limiting.
     :param edge_limit_cells:        if edge limiting, start this many cells from the edge
-    :param smooth:           True (default) to smooth the filled expanded area.
+    :param smooth:                  `True` (default) to smooth the filled expanded area.
 
 
     .. versionadded:: 9.4
@@ -117,7 +118,7 @@ class GridFFT:
                  roll_to_zero=False,
                  roll_off_method=2,
                  roll_distance=-1,
-                 max_entropy=True,
+                 fill_method=FILL_MAXIMUM_ENTROPY,
                  max_entropy_filter_length=0,
                  amplitude_limit=0.,
                  edge_amplitude_limit=-1.,
@@ -132,6 +133,111 @@ class GridFFT:
             xyv[:, 2] = rvv.np
             return xyv
 
+        def max_entropy_fill(btol, rtz, melen):
+
+            # expand buffer and fill
+            if buffer == 0.:
+                buffer_cells = 0
+            else:
+                buffer_cells = max(int(0.5 + min(grid.nx, grid.ny) * buffer / 100.), 1)
+            gxc.log(_t('Internal fill with {} cell buffer...').format(buffer_cells))
+            expanded_area = (grid.x0 - buffer_cells * grid.dx,
+                             grid.y0 - buffer_cells * grid.dy,
+                             grid.x0 + (grid.nx + buffer_cells - 1) * grid.dx,
+                             grid.y0 + (grid.ny + buffer_cells - 1) * grid.dy)
+            rvv.length = grid.nx
+            xyv[:, 0] = [(grid.x0 + i * grid.dx) for i in range(grid.nx)]
+            bkd = max(grid.nx, grid.ny) * grid.dx
+            if btol is None:
+                btol = grid.statistics()['sd'] * 0.001
+            buffer_grid = gxgrd.Grid.minimum_curvature(tpg_rows,
+                                                       cs=grid.dx,
+                                                       area=expanded_area,
+                                                       bkd=bkd,
+                                                       itrmax=buffer_iterations,
+                                                       pastol=99.,
+                                                       tol=btol,
+                                                       icgr=16,
+                                                       max_segments=grid.ny)
+
+            # expand for periodic function
+            gxc.log(_t('Expand from ({}, {})').format(grid.nx, grid.ny))
+            ppg = gxapi.GXPG.create(1, 1, tpg.e_type())
+            gxapi.GXPGU.expand(buffer_grid.gxpg(), ppg, expand, 1, 0, 0)
+
+            xnx = ppg.n_cols()
+            xny = ppg.n_rows()
+            gxc.log(_t('         to ({}, {})...').format(xnx, xny))
+
+            # fill
+            meth = _t('maximum entropy prediction') if fill_method == FILL_MAXIMUM_ENTROPY else _t('minimum_curvature')
+            gxc.log(_t('Fill expanded area using {}...').format(meth))
+            rtz = 0.0 if rtz else gxapi.rDUMMY
+            if fill_method != FILL_MAXIMUM_ENTROPY:
+                melen = -1
+
+            reference_file = gx.gx().temp_file('grd')
+            gxapi.GXPGU.ref_file(ppg, reference_file)
+            gxapi.GXPGU.fill(ppg,
+                             roll_off_method,       # Roll off weighting option: 1 - linear, 2 - square
+                             rtz,                   # the value to roll off to, GS_R8DM for line mean
+                             roll_distance,         # roll-off distance in cells, 0 for none, -1 default
+                             melen,                 # max. filter length. -1 for no max. entropy. 0 for the default.
+                             0,                     # max. pred. sample 0 for the default of 2*lMxf.
+                             amplitude_limit,       # limit amplitudes to this level, starting at half, 0. for none
+                             edge_amplitude_limit,  # limit edge amplitudes to this level. <0.0 for no none
+                             edge_limit_cells,      # edge limit width in cells, 0 for default.
+                             int(bool(smooth)),     # pass smooth filter, 0 or 1.
+                             reference_file)
+            gxu.delete_files_by_root(reference_file)
+
+            # prepped grid
+            properties = grid.properties()
+            properties['x0'], properties['y0'] = grid.xy_from_index(-(ppg.n_cols() - grid.nx) / 2.,
+                                                                    -(ppg.n_rows() - grid.ny) / 2.)
+            prep_grid = gxgrd.Grid.from_data_array(ppg, properties=properties)
+
+            return prep_grid, ppg
+
+        def min_curve_fill(btol):
+
+            # expand for periodic function
+            gxc.log(_t('Expand from ({}, {})').format(grid.nx, grid.ny))
+            ppg = gxapi.GXPG.create(1, 1, tpg.e_type())
+            gxapi.GXPGU.expand(grid.gxpg(), ppg, expand, 1, 0, 0)
+            gxc.log(_t('         to ({}, {})...').format(ppg.n_cols(), ppg.n_rows()))
+
+            # expand buffer and fill
+            gxc.log(_t('Minimum-curvature surface fill...'))
+
+            x0, y0 = grid.xy_from_index(-(ppg.n_cols() - grid.nx) / 2,
+                                        -(ppg.n_rows() - grid.ny) / 2)
+            xx, yy = grid.xy_from_index((ppg.n_cols() + grid.nx) / 2 - 1,
+                                        (ppg.n_rows() + grid.ny) / 2 - 1)
+            expanded_area = (x0, y0, xx, yy)
+            rvv.length = grid.nx
+            xyv[:, 0] = [(grid.x0 + i * grid.dx) for i in range(grid.nx)]
+            bkd = max(ppg.n_cols() * grid.dx, ppg.n_rows() * grid.dy)
+            if btol is None:
+                btol = grid.statistics()['sd'] * 0.001
+            filled_grid = gxgrd.Grid.minimum_curvature(tpg_rows,
+                                                       cs=grid.dx,
+                                                       area=expanded_area,
+                                                       bkd=bkd,
+                                                       itrmax=buffer_iterations,
+                                                       pastol=99.,
+                                                       tol=btol,
+                                                       icgr=16,
+                                                       max_segments=grid.ny)
+            ppg = gxapi.GXPG.create(filled_grid.ny, filled_grid.nx, filled_grid.gxtype)
+            ppg.copy(filled_grid.gxpg())
+            ppg.re_allocate(filled_grid.ny, filled_grid.nx + 2)
+            gxc.log(_t('Expanded grid ({}, {})...').format(filled_grid.nx, filled_grid.ny))
+
+            # TODO: add a cosine roll-off taper to the expanded edges
+
+            return filled_grid, ppg
+
         gxc = gx.gx()
 
         if not isinstance(grid, gxgrd.Grid):
@@ -140,98 +246,38 @@ class GridFFT:
         self._name = self._source_grid.name
 
         if grid.rot != 0.:
-            raise(_t('Rotated grids not supported.'))
+            raise(_t('Rotated grids are not supported.'))
         if grid.dx != grid.dy:
             raise(_t('Cell size must be square'))
 
         gxc.log(_t('\nGridFFT from: {}').format(grid.file_name))
 
-        # expand buffer and fill
-        if buffer == 0.:
-            buffer_cells = 0
-        else:
-            buffer_cells = max(int(0.5 + min(grid.nx, grid.ny) * buffer / 100.), 1)
-        gxc.log(_t('Internal fill with {} cell buffer...').format(buffer_cells))
-        expanded_area = (grid.x0 - buffer_cells * grid.dx,
-                         grid.y0 - buffer_cells * grid.dy,
-                         grid.x0 + (grid.nx + buffer_cells - 1) * grid.dx,
-                         grid.y0 + (grid.ny + buffer_cells - 1) * grid.dy)
-        xyv = np.empty((grid.nx, 3))
-        rvv = gxvv.GXvv()
-        rvv.length = grid.nx
-        xyv[:, 0] = [(grid.x0 + i * grid.dx) for i in range(grid.nx)]
-        bkd = max(grid.nx, grid.ny) * grid.dx
-        if buffer_tolerance is None:
-            buffer_tolerance = grid.statistics()['sd'] * 0.001
-        tpg = grid.gxpg()
-        buffer_grid = gxgrd.Grid.minimum_curvature(tpg_rows,
-                                                   cs=grid.dx,
-                                                   area=expanded_area,
-                                                   bkd=bkd,
-                                                   itrmax=buffer_iterations,
-                                                   pastol=99.,
-                                                   tol=buffer_tolerance,
-                                                   icgr=16,
-                                                   max_segments=grid.ny)
-        bpg = buffer_grid.gxpg()
-
         # trend
         method = _t('edge') if trend_edge == 1 else _t('all')
-        gxc.log(_t('Remove {} order trend determined from {} data ...').format(method, trend_order))
+        gxc.log(_t('Remove {} order trend determined from {} data ...').format(trend_order, method))
         self._trend = gxapi.GXTR.create(trend_order)
-        tpg = gxapi.GXPG.create(bpg.n_rows(), bpg.n_cols(), self._source_grid.gxtype)
-        gxapi.GXPGU.trend(bpg, tpg, self._trend, 0,
+        tpg = gxapi.GXPG.create(grid.ny, grid.nx, self._source_grid.gxtype)
+        gxapi.GXPGU.trend(grid.gxpg(), tpg, self._trend, 0,
                           trend_edge,
-                          buffer_grid.x0, buffer_grid.y0,
-                          buffer_grid.dx, buffer_grid.dy)
+                          grid.x0, grid.y0,
+                          grid.dx, grid.dy)
 
-        # expand
-        gxc.log(_t('Expand from ({}, {})').format(grid.nx, grid.ny))
-        xpg = gxapi.GXPG.create(1, 1, tpg.e_type())
-        gxapi.GXPGU.expand(tpg, xpg, expand, 1, 0, 0)
+        xyv = np.empty((grid.nx, 3))
+        rvv = gxvv.GXvv()
+        if fill_method == FILL_MAXIMUM_ENTROPY:
+            self._prep_grid, fpg = max_entropy_fill(buffer_tolerance, roll_to_zero, max_entropy_filter_length)
+        else:
+            self._prep_grid, fpg = min_curve_fill(buffer_tolerance)
 
-        xnx = xpg.n_cols()
-        xny = xpg.n_rows()
-        if xnx > MAX_DIMENSION or xny > MAX_DIMENSION:
-            raise GridFFTException(_t('Expanded size ({}, {}) exceeds maximum dimension {{}, {}').
-                                   format(xnx, xny, MAX_DIMENSION, MAX_DIMENSION))
-        gxc.log(_t('         to ({}, {})...').format(xnx, xny))
-
-        # fill
-        method = _t('maximum entropy prediction') if max_entropy else _t('simple interpolation')
-        gxc.log(_t('Fill expanded area using {}...').format(method))
-        roll_to_zero = 0.0 if roll_to_zero else gxapi.rDUMMY
-        if not max_entropy:
-            max_entropy_filter_length = -1
-
-        reference_file = gx.gx().temp_file('grd')
-        gxapi.GXPGU.ref_file(xpg, reference_file)
-        gxapi.GXPGU.fill(xpg,
-                         roll_off_method,            # Roll off weighting option: 1 - linear, 2 - square
-                         roll_to_zero,               # the value to roll off to, GS_R8DM for line mean
-                         roll_distance,              # roll-off distance in cells, 0 for none, -1 default
-                         max_entropy_filter_length,  # max. filter length. -1 for no max. entropy. 0 for the default.
-                         0,                          # max. pred. sample 0 for the default of 2*lMxf.
-                         amplitude_limit,            # limit amplitudes to this level, starting at half, 0. for none
-                         edge_amplitude_limit,       # limit edge amplitudes to this level. <0.0 for no none
-                         edge_limit_cells,           # edge limit width in cells, 0 for default.
-                         int(bool(smooth)),          # pass smooth filter, 0 or 1.  Supposed to support larger,
-                                                     # but if larger triggers a storage read error in 9.4.
-                         reference_file)
-        gxu.delete_files_by_root(reference_file)
-
-        # prepped grid
-        properties = grid.properties()
-        properties['x0'], properties['y0'] = grid.xy_from_index(-(xnx - grid.nx) / 2., -(xny - grid.ny) / 2.)
-        self._prep_grid = gxgrd.Grid.from_data_array(xpg, properties=properties)
         self._prep_grid.gximg.set_tr(self._trend)
 
         # fft
         gxc.log(_t('FFT...'))
-        xpg.re_allocate(self._prep_grid.ny, self._prep_grid.nx + 2)
-        gxapi.GXFFT2.trans_pg(xpg, gxapi.FFT2_PG_FORWARD)
+        fpg.re_allocate(self._prep_grid.ny, self._prep_grid.nx + 2)
+        gxapi.GXFFT2.trans_pg(fpg, gxapi.FFT2_PG_FORWARD)
         trn_file = gx.gx().temp_file('.trn(GRD)')
-        self._source_transform = gxgrd.Grid.from_data_array(xpg, file_name=trn_file, properties=properties)
+        self._source_transform = gxgrd.Grid.from_data_array(fpg, file_name=trn_file,
+                                                            properties=self._prep_grid.properties())
         self._source_transform.gximg.set_tr(self._trend)
 
         self._filtered_transform = None
@@ -450,6 +496,9 @@ class GridFFT:
             cf.write('{} /\n'.format(mag_inclination))
             cf.write('{} /\n'.format(mag_declination))
             cf.write('{} /\n'.format(mag_strength))
+
+            if isinstance(filters, str):
+                filters = [filters]
 
             # filters
             if filters:
