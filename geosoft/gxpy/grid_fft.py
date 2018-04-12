@@ -117,7 +117,6 @@ class GridFFT:
                  expand=10.,
                  roll_to_zero=False,
                  roll_off_method=2,
-                 roll_distance=-1,
                  fill_method=FILL_MAXIMUM_ENTROPY,
                  max_entropy_filter_length=0,
                  amplitude_limit=0.,
@@ -170,11 +169,14 @@ class GridFFT:
             gxc.log(_t('         to ({}, {})...').format(xnx, xny))
 
             # fill
-            meth = _t('maximum entropy prediction') if fill_method == FILL_MAXIMUM_ENTROPY else _t('minimum_curvature')
-            gxc.log(_t('Fill expanded area using {}...').format(meth))
-            rtz = 0.0 if rtz else gxapi.rDUMMY
-            if fill_method != FILL_MAXIMUM_ENTROPY:
-                melen = -1
+            gxc.log(_t('Maximum-entropy prediction fill...'))
+            if rtz:
+                rtz = 0.0
+                roll_distance = min(xnx - self._source_grid.nx,
+                                    xny - self._source_grid.ny) // 2
+            else:
+                rtz = gxapi.rDUMMY
+                roll_distance = 0
 
             reference_file = gx.gx().temp_file('grd')
             gxapi.GXPGU.ref_file(ppg, reference_file)
@@ -193,8 +195,8 @@ class GridFFT:
 
             # prepped grid
             properties = grid.properties()
-            properties['x0'], properties['y0'] = grid.xy_from_index(-(ppg.n_cols() - grid.nx) / 2.,
-                                                                    -(ppg.n_rows() - grid.ny) / 2.)
+            properties['x0'], properties['y0'] = grid.xy_from_index((grid.nx - ppg.n_cols()) / 2.,
+                                                                    (grid.ny - ppg.n_rows()) / 2.)
             prep_grid = gxgrd.Grid.from_data_array(ppg, properties=properties)
 
             return prep_grid, ppg
@@ -238,7 +240,9 @@ class GridFFT:
 
             return filled_grid, ppg
 
-        gxc = gx.gx()
+        # lets do this...
+
+        gxc = gx.gx()  # for logging
 
         if not isinstance(grid, gxgrd.Grid):
             grid = gxgrd.Grid.open(grid)
@@ -246,6 +250,7 @@ class GridFFT:
         self._name = self._source_grid.name
 
         if grid.rot != 0.:
+            # TODO: add support for rotated grids
             raise(_t('Rotated grids are not supported.'))
         if grid.dx != grid.dy:
             raise(_t('Cell size must be square'))
