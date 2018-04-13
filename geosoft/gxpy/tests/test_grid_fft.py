@@ -36,6 +36,9 @@ class Test(GXPYTest):
             self.assertAlmostEqual(fft.du, 1.0 / ((fft.source_transform.nx - 2) * fft.source_transform.dx))
             self.assertAlmostEqual(fft.dv, 1.0 / (fft.source_transform.ny * fft.source_transform.dy))
 
+    def test_create_MC(self):
+        self.start()
+
         with gxfft.GridFFT(self.mag, fill_method=gxfft.FILL_MINIMUM_CURVATURE) as fft:
             fft.result_grid()
             pspec = fft.radially_averaged_spectrum()

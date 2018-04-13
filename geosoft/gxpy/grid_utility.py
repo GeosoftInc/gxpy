@@ -11,6 +11,7 @@ Geosoft grid and image utilities.
 """
 import os
 import numpy as np
+import math
 
 import geosoft
 import geosoft.gxapi as gxapi
@@ -622,3 +623,102 @@ def calculate_slope_standard_deviation(grid):
     finally:
         if close_g:
             grid.close()
+
+def flood(grid, file_name=None, overwrite=False, tolerance=None, max_iterations=250, pass_tol=99.):
+    """
+    Flood dummy areas in a grid based on a minimum-curvature surface.
+
+    :param grid:            `geosoft.gxpy.grid.Grid` instance, or a grid file name
+    :param file_name:       filled grid file name, temporary created if `None`.
+    :param overwrite:       `True` to overwrite existing file
+    :param tolerance:       data fit tolerance, default is 0.001 times the data standard deviation
+    :param max_iterations:  maximum iterations for fiting the surface
+    :param pass_tol:        percentage of data that needs to pass the tolerance test.
+    :return:                `geosoft.gxpy.grid.Grid` instance of a filled grid.
+
+    .. seealso:: `geosoft.gxpy.grid.Grid.minimum_curvature`
+
+    .. versionadded:: 9.4
+    """
+
+    def pg_rows(n):
+        if n >= grid.ny:
+            return None
+        pg.read_row(n, 0, 0, rvv.gxvv)
+        xyv[:, 1] = n
+        xyv[:, 2] = rvv.np
+        return xyv
+
+    if not isinstance(grid, gxgrd.Grid):
+        grid = gxgrd.Grid.open(grid)
+
+    pg = grid.gxpg(False)
+    rvv = gxvv.GXvv(dtype=grid.dtype)
+    rvv.length = grid.nx
+    xyv = np.empty((grid.nx, 3))
+    xyv[:, 0] = [i for i in range(grid.nx)]
+    bkd = max(grid.nx, grid.ny)
+    if tolerance is None:
+        tolerance = grid.statistics()['sd'] * 0.001
+    filled_grid = gxgrd.Grid.minimum_curvature(pg_rows,
+                                               file_name=file_name,
+                                               overwrite=overwrite,
+                                               cs=1,
+                                               area=(0, 0, grid.nx - 1, grid.ny - 1),
+                                               bkd=bkd,
+                                               itrmax=max_iterations,
+                                               pastol=pass_tol,
+                                               tol=tolerance,
+                                               icgr=16,
+                                               max_segments=grid.ny)
+    filled_grid.set_properties(grid.properties())
+    return filled_grid
+
+def feather(grid, width, edge_value=None, file_name=None, overwrite=False):
+    """
+    Feather the edge of a grid to a constant value at the edge.
+
+    :param grid:        `geosoft.gxpy.grid.Grid` instance, or a file name
+    :param file_name:   feathered grid file name, temporary created if `None`.
+    :param overwrite:   `True` to overwrite existing file
+    :param width:       feather width in cells around the grid, must be <= half the grid dimension
+    :param edge_value:  edge value, default is the data mean
+    :return:            feathered grid `geosoft.gxpy.grid.Grid`
+
+    .. versionadded:: 9.4
+    """
+
+    def feather(dlen, width):
+        f = np.ones(dlen)
+        e = np.array([math.cos((i + 1) * math.pi/width) for i in range(width)]) * 0.5 + 0.5
+        f[-len(e):] = e
+        f[:len(e)] = e[::-1]
+        return f
+
+    if not isinstance(grid, gxgrd.Grid):
+        grid = gxgrd.Grid.open(grid)
+
+    if (width > grid.nx // 2) or (width > grid.ny // 2):
+        raise GridUtilityException(_t('Width {} must be less than half the dimension ({}, {})')
+                                   .format(width, grid.nx, grid.ny))
+
+    if edge_value is None:
+        edge_value = grid.statistics()['mean']
+
+    pg = grid.gxpg()
+    pgf = gxapi.GXPG.create(pg.n_rows(), pg.n_cols(), pg.e_type())
+    vv = gxvv.GXvv(dtype=gxu.dtype_gx(pg.e_type()))
+
+    f = feather(pg.n_cols(), width)
+    for row in range(pg.n_rows()):
+        pg.read_row(row, 0, 0, vv.gxvv)
+        df = (vv.np - edge_value) * f + edge_value
+        pgf.write_row(row, 0, 0, gxvv.GXvv(df).gxvv)
+
+    f = feather(pg.n_rows(), width)
+    for col in range(pg.n_cols()):
+        pgf.read_col(col, 0, 0, vv.gxvv)
+        df = (vv.np - edge_value) * f + edge_value
+        pgf.write_col(col, 0, 0, gxvv.GXvv(df).gxvv)
+
+    return gxgrd.Grid.from_data_array(pgf, file_name=file_name, overwrite=overwrite, properties=grid.properties())

@@ -231,6 +231,30 @@ class Test(GXPYTest):
         slope_stddev = gxgrdu.calculate_slope_standard_deviation(self.mag)
         self.assertAlmostEqual(0.64497375, slope_stddev)
 
+    def test_feather_edge(self):
+        self.start()
+
+        with gxgrd.Grid.open(self.mag) as g:
+            pg = g.gxpg()
+            pg.re_allocate(g.ny + 20, g.nx + 20)
+            with gxgrd.Grid.from_data_array(pg) as gp:
+                filled_gd = gxgrdu.flood(gp)
+                self.assertEqual(filled_gd.statistics()['num_dummy'], 0)
+                feath_pg = gxgrdu.feather(filled_gd, 20)
+                self.assertEqual(feath_pg.statistics()['mean'], 4986.261784683294, 1)
+
+        with gxgrd.Grid.open(self.mag) as g:
+            pg = g.gxpg()
+            pg.re_allocate(g.ny + 20, g.nx + 20)
+            with gxgrd.Grid.from_data_array(pg) as gp:
+                filled_gd = gxgrdu.flood(gp, tolerance=50, max_iterations=5, file_name='filled', overwrite=True)
+                self.assertEqual(filled_gd.statistics()['num_dummy'], 0)
+                feath_gd = gxgrdu.feather(filled_gd, 20, file_name='feather', overwrite=True)
+                self.assertAlmostEqual(feath_gd.statistics()['mean'], 4986.439654577116, 1)
+
+        filled_gd.close(discard=True)
+        feath_gd.close(discard=True)
+
 ###############################################################################################
 
 if __name__ == '__main__':

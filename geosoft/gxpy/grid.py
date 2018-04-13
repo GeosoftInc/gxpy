@@ -294,7 +294,6 @@ class Grid(gxgm.Geometry):
                 self._cs = None
                 self._gxpg = None
 
-
     def __repr__(self):
         return "{}({})".format(self.__class__, self.__dict__)
 
@@ -488,6 +487,7 @@ class Grid(gxgm.Geometry):
 
     @classmethod
     def minimum_curvature(cls, data, file_name=None, overwrite=False, max_segments=1000,
+                          coordinate_system=None,
                           cs='',
                           area=('', '', '', ''),
                           bclip='',
@@ -515,6 +515,7 @@ class Grid(gxgm.Geometry):
                             <https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations>`_)
         :param overwrite:   True to overwrite existing file
         :param max_line_segments:   Maximum number of line segments if using a callback, defaults to 1000.
+        :param coordinate_system:   coordinate system
 
         Gridding parameters follow the nomenclature of the rangrid.con file:
         https://github.com/GeosoftInc/gxc/blob/master/reference/con_files/rangrid.con
@@ -665,6 +666,9 @@ class Grid(gxgm.Geometry):
         if tol and float(tol) <= 0.:
             tol = 1.0e-25
 
+        if coordinate_system is None:
+            coordinate_system = gdb.coordinate_system
+
         # parameter control file
         con_file = gx.gx().temp_file('con')
         with open(con_file, 'x') as f:
@@ -687,11 +691,12 @@ class Grid(gxgm.Geometry):
         if discard:
             gdb.close(discard=True)
 
-        grd = cls.open(file_name)
-
         log_file = 'rangrid.log'
         if os.path.exists(log_file):
             gxu.delete_file(log_file)
+
+        grd = cls.open(file_name, mode=FILE_READWRITE)
+        grd.coordinate_system = coordinate_system
 
         return grd
 
@@ -732,15 +737,23 @@ class Grid(gxgm.Geometry):
             v = float(v)
         return x, y, z, v
 
-    def gxpg(self):
+    def gxpg(self, copy=True):
         """
-        Get a `geosoft.gxapi.GXPG` instance for the grid.
+        Get a copy of the `geosoft.gxapi.GXPG` instance for the grid.
 
-        The gxpg instance will only be valid when the `Grid` instance is alive. Upon closing of the
-        `Grid` instance the gxpg instance is lost.
+        :param copy:    `True` to return a copy of the grids pager.  If `False` a handle to the
+                        actual grid pager is returned and it will only be valid when the `Grid` instance is alive.
+
+        .. versionchanged:: 9.4 added `copy` parameter
         """
+
         if self._gxpg is None:
             self._gxpg = self._img.geth_pg()
+
+        if copy:
+            pg = gxapi.GXPG.create(self._gxpg.n_rows(), self._gxpg.n_cols(), self._gxpg.e_type())
+            pg.copy(self._gxpg)
+            return pg
         return self._gxpg
 
     def get_value(self, x, y):
@@ -1554,6 +1567,29 @@ class Grid(gxgm.Geometry):
         if self.rot != 0.:
             xx0, yy0 = self.xy_from_index(self.nx - 0.5, -0.5)
             xx1, yy1 = self.xy_from_index(-0.5, self.ny - 0.5)
+            min_x = min(x0, xx0, x1, xx1)
+            min_y = min(y0, yy0, y1, yy1)
+            max_x = max(x0, xx0, x1, xx1)
+            max_y = max(y0, yy0, y1, yy1)
+            return min_x, min_y, max_x, max_y
+
+        return x0, y0, x1, y1
+
+    def extent_point_2d(self):
+        """
+        Return the 2D extent of the grid point (cell centers) on the grid plane.
+
+        :returns:(min_x, min_y, max_x, max_y)
+
+        .. versionadded:: 9.4
+        """
+
+        x0, y0 = self.x0, self.y0
+        x1, y1 = self.xy_from_index(self.nx - 1, self.ny - 1)
+
+        if self.rot != 0.:
+            xx0, yy0 = self.xy_from_index(self.nx - 1, 0)
+            xx1, yy1 = self.xy_from_index(0, self.ny - 1)
             min_x = min(x0, xx0, x1, xx1)
             min_y = min(y0, yy0, y1, yy1)
             max_x = max(x0, xx0, x1, xx1)
