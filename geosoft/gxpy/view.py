@@ -98,6 +98,14 @@ class CrookedPath(gxgeo.Geometry):
             self.coordinate_system = xy_path.coordinate_system
             self._log_z= bool(log_z)
 
+        # calculate a distance along the path
+        dnp = np.zeros(len(self._xy), dtype=np.float64)
+        dx = (self._xy[1:, 0] - self._xy[:-1, 0]) ** 2
+        dy = (self._xy[1:, 1] - self._xy[:-1, 1]) ** 2
+        dxy = np.sqrt((dx + dy))
+        dnp[1:] = dxy
+        self._distances = dnp.cumsum()
+
     def __len__(self):
         return len(self._xy)
 
@@ -105,6 +113,11 @@ class CrookedPath(gxgeo.Geometry):
     def xy(self):
         """path points as an array (npoints, 2)"""
         return self._xy
+
+    @property
+    def distances(self):
+        """Distances along path points as an array (npoints) starting at 0"""
+        return self._distances
 
     @property
     def ppoint(self):
@@ -121,16 +134,8 @@ class CrookedPath(gxgeo.Geometry):
         .. versionadded:: 9.4
         """
 
-        # calculate a distance along the path
-        dnp = np.zeros(len(self._xy), dtype=np.float64)
-        dx = (self._xy[1:, 0] - self._xy[:-1, 0]) ** 2
-        dy = (self._xy[1:, 1] - self._xy[:-1, 1]) ** 2
-        dxy = np.sqrt((dx + dy))
-        dnp[1:] = dxy
-        dnp = dnp.cumsum()
-
         # make vv's to set the path
-        dvv = gxvv.GXvv(dnp)
+        dvv = gxvv.GXvv(self._distances)
         xvv = gxvv.GXvv(self._xy[:, 0])
         yvv = gxvv.GXvv(self._xy[:, 1])
         coordinate_system.gxipj.set_crooked_section_view(dvv.gxvv, xvv.gxvv, yvv.gxvv, self._log_z)
