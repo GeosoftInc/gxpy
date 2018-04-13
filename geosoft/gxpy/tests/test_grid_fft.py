@@ -31,7 +31,7 @@ class Test(GXPYTest):
             fft.result_grid()
             pspec = fft.radially_averaged_spectrum()
             self.assertEqual(len(pspec), 169)
-            self.assertAlmostEqual(pspec[1, gxfft.WAVENUMBER], 1000.0 /
+            self.assertAlmostEqual(pspec[1, gxfft.I_WAVENUMBER], 1000.0 /
                                    ((fft.source_transform.nx - 2) * fft.source_transform.dx))
             self.assertAlmostEqual(fft.du, 1.0 / ((fft.source_transform.nx - 2) * fft.source_transform.dx))
             self.assertAlmostEqual(fft.dv, 1.0 / (fft.source_transform.ny * fft.source_transform.dy))
@@ -43,7 +43,7 @@ class Test(GXPYTest):
             fft.result_grid()
             pspec = fft.radially_averaged_spectrum()
             self.assertEqual(len(pspec), 169)
-            self.assertAlmostEqual(pspec[1, gxfft.WAVENUMBER], 1000.0 /
+            self.assertAlmostEqual(pspec[1, gxfft.I_WAVENUMBER], 1000.0 /
                                    ((fft.source_transform.nx - 2) * fft.source_transform.dx))
             self.assertAlmostEqual(fft.du, 1.0 / ((fft.source_transform.nx - 2) * fft.source_transform.dx))
             self.assertAlmostEqual(fft.dv, 1.0 / (fft.source_transform.ny * fft.source_transform.dy))
@@ -57,12 +57,12 @@ class Test(GXPYTest):
             up = fft.result_grid(file_name='result', overwrite=True)
             self.assertEqual(str(up.coordinate_system), 'NAD27 / UTM zone 15N')
             self.assertAlmostEqual(up.statistics()['variance'], 15442.23622462059, 0)
-            fft.filter(filters=['DRVZ 1'], trn=gxfft.FILTERED)
+            fft.filter(filters=['DRVZ 1'], trn=gxfft.TRN_FILTERED)
             vd = fft.result_grid(file_name='up500vd', overwrite=True)
             self.assertAlmostEqual(vd.statistics()['variance'], 0.02167, 3)
             pspec = fft.radially_averaged_spectrum()
-            self.assertAlmostEqual(pspec[0, gxfft.WAVENUMBER], 0.)
-            self.assertAlmostEqual(pspec[1, gxfft.WAVENUMBER], fft.dv * 1000., 6)
+            self.assertAlmostEqual(pspec[0, gxfft.I_WAVENUMBER], 0.)
+            self.assertAlmostEqual(pspec[1, gxfft.I_WAVENUMBER], fft.dv * 1000., 6)
 
         up.close(discard=True)
         vd.close(discard=True)
@@ -74,17 +74,17 @@ class Test(GXPYTest):
         with gxfft.GridFFT(grd) as fft:
             fft.filter(filters=['CNUP 500'],
                        mag_inclination=-66.58,
-                       mag_declination= '8.26',
+                       mag_declination='8.26',
                        mag_strength=59041)
             up = fft.result_grid(file_name='result', overwrite=True)
             self.assertEqual(up.dtype, np.float64)
             self.assertAlmostEqual(up.statistics()['variance'], 15441.51060320867, 0)
-            fft.filter(filters=['DRVZ 1'], trn=gxfft.FILTERED)
+            fft.filter(filters=['DRVZ 1'], trn=gxfft.TRN_FILTERED)
             vd = fft.result_grid(file_name='up500vd', overwrite=True)
             self.assertAlmostEqual(vd.statistics()['variance'], 0.0217, 3)
-            pspec = fft.radially_averaged_spectrum(gxfft.FILTERED)
-            self.assertAlmostEqual(pspec[0, gxfft.WAVENUMBER], 0.)
-            self.assertAlmostEqual(pspec[1, gxfft.LOG_POWER], 15.332930000000001, 0)
+            pspec = fft.radially_averaged_spectrum(gxfft.TRN_FILTERED)
+            self.assertAlmostEqual(pspec[0, gxfft.I_WAVENUMBER], 0.)
+            self.assertAlmostEqual(pspec[1, gxfft.I_LOG_POWER], 15.332930000000001, 0)
 
         up.close(discard=True)
         vd.close(discard=True)
@@ -96,7 +96,7 @@ class Test(GXPYTest):
             source_spec = fft.spectrum_grid()
             self.assertAlmostEqual(source_spec.statistics()['variance'], 16.017015790664406, 0)
             fft.filter([('CNUP', 1000)])
-            filter_spec = fft.spectrum_grid(gxfft.FILTERED)
+            filter_spec = fft.spectrum_grid(gxfft.TRN_FILTERED)
             self.assertAlmostEqual(filter_spec.statistics()['variance'], 136.6656119975559, 0)
 
     def test_custom_filter(self):
@@ -110,7 +110,7 @@ class Test(GXPYTest):
                 continuation_filter = np.exp(-2. * math.pi * distance * w)
                 r *= continuation_filter
                 i *= continuation_filter
-                fft.write_uv_row(r, i, vrow, trn=gxfft.FILTERED)
+                fft.write_uv_row(r, i, vrow, trn=gxfft.TRN_FILTERED)
 
             self.assertAlmostEqual(fft.result_grid().statistics()['sd'], 99.68591520777781, 0)
 

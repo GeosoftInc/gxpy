@@ -40,13 +40,14 @@ def _t(s):
 FILL_MAXIMUM_ENTROPY = 0    #:
 FILL_MINIMUM_CURVATURE = 1  #:
 
-SOURCE = 0    #:
-FILTERED = 1  #:
-WAVENUMBER = 0      #: index in radial spectrum
-SAMPLE_COUNT = 1    #: index in radial spectrum
-LOG_POWER = 2       #: index in radial spectrum
-DEPTH_3 = 3         #: index in radial spectrum
-DEPTH_5 = 4         #: index in radial spectrum
+TRN_SOURCE = 0    #:
+TRN_FILTERED = 1  #:
+
+I_WAVENUMBER = 0      #: index in radial spectrum
+I_SAMPLE_COUNT = 1    #: index in radial spectrum
+I_LOG_POWER = 2       #: index in radial spectrum
+I_DEPTH_3 = 3         #: index in radial spectrum
+I_DEPTH_5 = 4         #: index in radial spectrum
 
 
 class GridFFTException(geosoft.GXRuntimeError):
@@ -172,19 +173,19 @@ class GridFFT:
 
             # expand for periodic function
             gxc.log(_t('Expand from ({}, {})').format(grid.nx, grid.ny))
-            ppg = gxapi.GXPG.create(1, 1, tpg.e_type())
-            gxapi.GXPGU.expand(buffer_grid.gxpg(), ppg, expand, 1, 0, 0)
+            xpg = gxapi.GXPG.create(1, 1, tpg.e_type())
+            gxapi.GXPGU.expand(buffer_grid.gxpg(), xpg, expand, 1, 0, 0)
 
-            xnx = ppg.n_cols()
-            xny = ppg.n_rows()
+            xnx = xpg.n_cols()
+            xny = xpg.n_rows()
             gxc.log(_t('         to ({}, {})...').format(xnx, xny))
 
             # fill
             gxc.log(_t('Maximum-entropy prediction fill...'))
 
             reference_file = gx.gx().temp_file('grd')
-            gxapi.GXPGU.ref_file(ppg, reference_file)
-            gxapi.GXPGU.fill(ppg,
+            gxapi.GXPGU.ref_file(xpg, reference_file)
+            gxapi.GXPGU.fill(xpg,
                              2,                     # Roll off weighting option: 1 - linear, 2 - square
                              gxapi.rDUMMY,          # the value to roll off to, GS_R8DM for line mean
                              0,                     # roll-off distance in cells, 0 for none, -1 default
@@ -199,14 +200,14 @@ class GridFFT:
 
             # prepped grid
             properties = grid.properties()
-            properties['x0'], properties['y0'] = grid.xy_from_index((grid.nx - ppg.n_cols()) / 2.,
-                                                                    (grid.ny - ppg.n_rows()) / 2.)
+            properties['x0'], properties['y0'] = grid.xy_from_index((grid.nx - xpg.n_cols()) / 2.,
+                                                                    (grid.ny - xpg.n_rows()) / 2.)
 
-            prep_grid = gxgrd.Grid.from_data_array(ppg, properties=properties)
+            prep_grid = gxgrd.Grid.from_data_array(xpg, properties=properties)
 
             if feath:
-                xx, xy = (ppg.n_cols() - grid.nx) // 2, (ppg.n_rows() - grid.ny) // 2
-                prep_grid = gxgrdu.feather(prep_grid, min(xx, xy))
+                _xx, _xy = (xpg.n_cols() - grid.nx) // 2, (xpg.n_rows() - grid.ny) // 2
+                prep_grid = gxgrdu.feather(prep_grid, min(_xx, _xy))
 
             return prep_grid
 
@@ -297,12 +298,12 @@ class GridFFT:
         """
         return (i - self._ny2) if i >= self._ny2 else (i + self._ny2)
 
-    def read_uv_row(self, row, trn=SOURCE):
+    def read_uv_row(self, row, trn=TRN_SOURCE):
         """
         Read a row (constant wavenumber v) from (u, v) transform.
 
         :param row:     row number in (u, v) space, row 0 is minimum v
-        :param trn:     `SOURCE` from the source transform (default) or `FILTERED`
+        :param trn:     `TRN_SOURCE` from the source transform (default) or `TRN_FILTERED`
         :return:        (u_array, v, real_array, imaginary_array)
 
         To calculate a wavenumber array: wavenumber = np.sqrt(u_array**2 + v**2).
@@ -332,8 +333,8 @@ class GridFFT:
                     r *= continuation_filter
                     i *= continuation_filter
 
-                    # write the filtered result to the FILTERED transform
-                    fft.write_uv_row(r, i, vrow, trn=gxfft.FILTERED)
+                    # write the filtered result to the TRN_FILTERED transform
+                    fft.write_uv_row(r, i, vrow, trn=gxfft.TRN_FILTERED)
 
                 # create an output grid of the upward-continued result
                 fft.result_grid(file_name='upward_continued_500.grd')
@@ -343,7 +344,7 @@ class GridFFT:
         .. versionadded:: 9.4
         """
 
-        if trn == SOURCE:
+        if trn == TRN_SOURCE:
             tr = self.source_transform
         else:
             tr = self.filtered_transform
@@ -356,21 +357,21 @@ class GridFFT:
         v = (row - self._ny2) * self.dv
         return self._u, v, r, i
 
-    def write_uv_row(self, r, i, row, trn=SOURCE):
+    def write_uv_row(self, r, i, row, trn=TRN_SOURCE):
         """
         Write a row (constant wavenumber v) to the (u, v) transform.
 
         :param r:       reals as a numpy array length half the width of the transform (as returned from `read_row`).
         :param i:       imaginary as a numpy array, matches r.
         :param row:     row number in (u, v) space, row 0 is minimum v
-        :param trn:     `SOURCE` from the source transform (default) or `FILTERED`
+        :param trn:     `TRN_SOURCE` from the source transform (default) or `TRN_FILTERED`
 
         .. seealso:: `read_uv_row()`
 
         .. versionadded:: 9.4
         """
 
-        if trn == SOURCE:
+        if trn == TRN_SOURCE:
             tr = self.source_transform
         else:
             tr = self.filtered_transform
@@ -379,7 +380,7 @@ class GridFFT:
         data[1::2] = i
         tr.write_row(data, self.tr_row_from_uv(row))
         if row == tr.ny - 1:
-            if trn == SOURCE:
+            if trn == TRN_SOURCE:
                 self._source_transform = gxgrd.reopen(tr)
             else:
                 self._filtered_transform = gxgrd.reopen(tr)
@@ -421,7 +422,7 @@ class GridFFT:
         return (self.nv // 2) * self.dv
 
     def filter(self, filters=None,
-               trn=SOURCE,
+               trn=TRN_SOURCE,
                height='',
                mag_inclination='',
                mag_declination='',
@@ -434,8 +435,8 @@ class GridFFT:
         :param filters:         list of filters to apply.  Each filter can be a string, or a tuple with the first
                                 item being the filter name followed by the filter parameters. See `magmap.con`
                                 referenced above for the full list of filters.
-        :param trn:             `SOURCE` apply to the source transform (default) or `FILTERED` to apply to the current
-                                filtered state.
+        :param trn:             `TRN_SOURCE` apply to the source transform (default) or
+                                `TRN_FILTERED` to apply to the current filtered transform.
 
         The following parameter are the default for magnetic filed filters like pole/equator reduction and
         aparent susceptibility.
@@ -465,7 +466,7 @@ class GridFFT:
         .. versionadded:: 9.4
         """
 
-        if (trn == SOURCE) or (self._filtered_transform is None):
+        if (trn == TRN_SOURCE) or (self._filtered_transform is None):
             transform = self._source_transform
         else:
             transform = self._filtered_transform
@@ -510,7 +511,7 @@ class GridFFT:
         self._filtered_average_spectral_density = None
         self._filtered_spectrum = None
 
-    def radially_averaged_spectrum(self, trn=SOURCE):
+    def radially_averaged_spectrum(self, trn=TRN_SOURCE):
         """
         Radially averaged spectrum as a Numpy array shaped (n_wavenumbers, 5).
 
@@ -522,13 +523,13 @@ class GridFFT:
         Point depths are calculated by dividing the local slope(3 points and 5 points) of the log_power by (4 * pi)
         (see Spector and Grant, 1970).
 
-        :param trn:     `SOURCE` (default) return spectrum of the source data, or `FILTERED` return spectrum
+        :param trn:     `TRN_SOURCE` (default) return spectrum of the source data, or `TRN_FILTERED` return spectrum
                         of the current filtered state.
 
         .. versionadded:: 9.4
         """
         
-        if trn == SOURCE:
+        if trn == TRN_SOURCE:
             if self._source_spectrum is not None:
                 return self._source_spectrum
             tr = self.source_transform
@@ -585,9 +586,9 @@ class GridFFT:
         gxu.delete_file(spec_file)
 
         # add the average spectral density back into the log_power
-        spectrum[:, LOG_POWER] += asd
+        spectrum[:, I_LOG_POWER] += asd
 
-        if trn == SOURCE:
+        if trn == TRN_SOURCE:
             self._source_spectrum = spectrum
             self._source_average_spectral_density = asd
         else:
@@ -596,16 +597,16 @@ class GridFFT:
 
         return spectrum
 
-    def log_average_spectral_density(self, trn=SOURCE):
+    def log_average_spectral_density(self, trn=TRN_SOURCE):
         """
         Log of the average spectral density of the transform.
         
-        :param trn:  `SOURCE` (default) source data spectrum, or `FILTERED` current filtered transform.
+        :param trn:  `TRN_SOURCE` (default) source data spectrum, or `TRN_FILTERED` current filtered transform.
 
         .. versionadded:: 9.4
         """
 
-        if trn == SOURCE:
+        if trn == TRN_SOURCE:
             if self._source_average_spectral_density:
                 return self._source_average_spectral_density
         else:
@@ -614,24 +615,24 @@ class GridFFT:
 
         # estimate from radial spectrum data
         rspec = self.radially_averaged_spectrum(trn)
-        tot_samples = np.sum(rspec[SAMPLE_COUNT])
-        tot_energy = np.sum(np.exp(rspec[LOG_POWER]))
+        tot_samples = np.sum(rspec[I_SAMPLE_COUNT])
+        tot_energy = np.sum(np.exp(rspec[I_LOG_POWER]))
         asd = math.log(tot_energy / tot_samples)
         
-        if trn == SOURCE:
+        if trn == TRN_SOURCE:
             self._source_average_spectral_density = asd
         else:
             self._filtered_average_spectral_density = asd
             
         return asd
 
-    def spectrum_grid(self, trn=SOURCE, file_name=None, overwrite=False):
+    def spectrum_grid(self, trn=TRN_SOURCE, file_name=None, overwrite=False):
         """
         Return the 2D log(power) amplitude as a grid in wavenumber domain (u, v).
 
         Amplitude = log(real**2 + imaginary**2)
         
-        :param trn:      `SOURCE` source spectrum (default) or `FILTERED` filtered spectrum
+        :param trn:      `TRN_SOURCE` source spectrum (default) or `TRN_FILTERED` filtered spectrum
         :param file_name:   name for the grid file, default is a temporary grid.
         :param overwrite:   `True` to overwrite existing grid.
 
@@ -640,7 +641,7 @@ class GridFFT:
         .. versionadded:: 9.4
         """
         
-        if trn == SOURCE:
+        if trn == TRN_SOURCE:
             tr = self._source_transform
         else:
             tr = self._filtered_transform
