@@ -37,17 +37,17 @@ def _t(s):
     return geosoft.gxpy.system.translate(s)
 
 
-FILL_MAXIMUM_ENTROPY = 0    #:
-FILL_MINIMUM_CURVATURE = 1  #:
+FILL_MAXIMUM_ENTROPY = 0
+FILL_MINIMUM_CURVATURE = 1
 
-TRN_SOURCE = 0    #:
-TRN_FILTERED = 1  #:
+TRN_SOURCE = 0
+TRN_FILTERED = 1
 
-I_WAVENUMBER = 0      #: index in radial spectrum
-I_SAMPLE_COUNT = 1    #: index in radial spectrum
-I_LOG_POWER = 2       #: index in radial spectrum
-I_DEPTH_3 = 3         #: index in radial spectrum
-I_DEPTH_5 = 4         #: index in radial spectrum
+I_WAVENUMBER = 0
+I_SAMPLE_COUNT = 1
+I_LOG_POWER = 2
+I_DEPTH_3 = 3
+I_DEPTH_5 = 4
 
 
 class GridFFTException(geosoft.GXRuntimeError):
@@ -325,11 +325,11 @@ class GridFFT:
                     # read the row
                     u, v, r, i = fft.read_uv_row(vrow)
 
-                    # wavenumber along the row
-                    wn = np.sqrt(u**2 + v**2)
+                    # angular wavenumber along the row
+                    wn = np.sqrt(u**2 + v**2) * 2. * math.pi
 
                     # upward continue 500 grid distance units
-                    continuation_filter = np.exp(-2. * math.pi * 500. * wn)
+                    continuation_filter = np.exp(wn * -500.)
                     r *= continuation_filter
                     i *= continuation_filter
 
@@ -513,16 +513,27 @@ class GridFFT:
         """
         Radially averaged spectrum as a Numpy array shaped (n_wavenumbers, 5).
 
-        Numpy array shaped (n_wavenumbers, 5), where each row contains:
-        [wavenumber, sample_count, log_power, 3-point_depth, 5-point_depth], wavenumber in cycles per
-        1000 * distance unit of measure (cycle/km for metres), and log_power is the natural log of
-        the power.
-
-        Point depths are calculated by dividing the local slope(3 points and 5 points) of the log_power by (4 * pi)
-        (see Spector and Grant, 1970).
-
         :param trn:     `TRN_SOURCE` (default) return spectrum of the source data, or `TRN_FILTERED` return spectrum
                         of the current filtered state.
+
+        .. note:: Numpy array shaped (n_wavenumbers, 5), where each row contains:
+            [wavenumber, sample_count, log_power, 3-point_depth, 5-point_depth], wavenumber in cycles per
+            1000 * distance unit of measure (cycle/km for metres), and log_power is the natural log of
+            the power.
+
+            Point depths are calculated by dividing the local slope(3 points and 5 points) of the log_power by (4 * pi)
+            (see Spector and Grant, 1970).
+
+            For code clarity, the following index constants can be used to reference columns in the
+            spectrum array:
+
+                ============== ===
+                I_WAVENUMBER     0
+                I_SAMPLE_COUNT   1
+                I_LOG_POWER      2
+                I_DEPTH_3        3
+                I_DEPTH_5        4
+                ============== ===
 
         .. versionadded:: 9.4
         """
