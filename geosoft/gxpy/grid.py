@@ -748,12 +748,15 @@ class Grid(gxgm.Geometry):
             v = float(v)
         return x, y, z, v
 
-    def gxpg(self, copy=True):
+    def gxpg(self, copy=False):
         """
         Get a copy of the `geosoft.gxapi.GXPG` instance for the grid.
 
-        :param copy:    `True` to return a copy of the grids pager.  If `False` a handle to the
-                        actual grid pager is returned and it will only be valid when the `Grid` instance is alive.
+        :param copy:    `True` to return a copy of the grids pager. The default is `False`, which
+                        returns the shared grid pager, such that changes to the pager change the grid
+                        and the pager is invalid when thr grid is closed or loses context.
+
+        .. versionadded:: 9.1
 
         .. versionchanged:: 9.4 added `copy` parameter
         """
@@ -844,6 +847,9 @@ class Grid(gxgm.Geometry):
 
         .. versionadded:: 9.2
         """
+
+        if not isinstance(grd, Grid):
+            grd = Grid.open(grd)
 
         gnx = grd.nx
         gny = grd.ny
@@ -1876,82 +1882,6 @@ class Grid(gxgm.Geometry):
             mr = self.read_row(row)
             mr.gxvv.mask(mask.read_row(row).gxvv)
             self.write_row(mr, row)
-
-
-def expression(grids, expression, result_file_name=None, overwrite=False):
-    """
-    Apply an expressing to grids.
-    
-    :param grids:       dictionary of named grid operands, or a list of grids (see example below). If a list
-                        is provided the operand names will be 'g1', 'g2', 'g3', etc...
-    :param expression:  expression tring to apply, conforms to Python/C math expression syntax. The expression
-                        can have multiple lines, each line terminated by a ';' character.
-    :param result_file_name:    optional result grid file name, if None a temporary grid is created.
-    :param overwrite:   True to overwrite existing grid
-    :return:            `Grid` instance that contains the resuilt of the expression.
-    
-    *Example*
-    
-    .. code::
-    
-        import geosoft.gxpy.grid as gxgrd
-        
-        grid_1 = gxgrd.Grid.open('some_grid')
-        grid_2 = gxgrd.Grid.open('some_other_grid')
-        
-        # add the grids together
-        sum = gxgrd.expression((grid_1, grid_2), 'g1+g2')
-        
-        # add using named operands
-        sum = gxgrd.expression({'a': grid_1, 'b': grid_2}, 'a+b')
-        
-        # add using file names (first release open grids)
-        grid_1 = grid_2 = None
-        sum = gxgrd.expression(('some_grid', 'some_other_grid'), 'g1+g2')
-        
-    .. versionadded 9.4
-    """
-
-    exp = gxapi.GXIEXP.create()
-
-    # build default operands dict from list of grids
-    if not isinstance(grids, dict):
-        i = 1
-        gd = {}
-        for g in grids:
-            gd['g{}'.format(i)] = g
-            i += 1
-        grids = gd
-
-    # add grids to the expression
-    properties = None
-    delete_list = []
-    for k, g in grids.items():
-        if not isinstance(g, Grid):
-            g = Grid.open(g, dtype=np.float64)
-        elif g.dtype != np.float64:
-            g = Grid.copy(g, gx.gx().temp_file('.grd(GRD)'), dtype=np.float64)
-            delete_list.append(g)
-        exp.add_grid(g.gximg, k)
-        if properties is None:
-            properties = g.properties()
-
-    if result_file_name is None:
-        result_file_name = gx.gx().temp_file('.grd(GRD)')
-    result = Grid.new(file_name=result_file_name, properties=properties, overwrite=overwrite)
-    exp.add_grid(result.gximg, '_')
-
-    # apply expression
-    expression = ('_=' + expression).strip()
-    if expression[-1] != ';':
-        expression = expression + ';'
-    exp.do_formula(expression, 100)
-
-    # delete temporary grids
-    for g in delete_list:
-        g.delete_files()
-
-    return reopen(result)
 
 
 # grid utilities

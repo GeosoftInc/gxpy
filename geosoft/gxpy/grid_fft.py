@@ -261,7 +261,7 @@ class GridFFT:
 
         # fft
         gxc.log(_t('FFT...'))
-        fpg = self._prep_grid.gxpg()
+        fpg = self._prep_grid.gxpg(True)
         fpg.re_allocate(self._prep_grid.ny, self._prep_grid.nx + 2)
         gxapi.GXFFT2.trans_pg(fpg, gxapi.FFT2_PG_FORWARD)
         trn_file = gx.gx().temp_file('.trn(GRD)')
@@ -470,9 +470,7 @@ class GridFFT:
             transform = self._source_transform
         else:
             transform = self._filtered_transform
-        rpg = transform.gxpg()
-        tpg = gxapi.GXPG.create(rpg.n_rows(), rpg.n_cols(), rpg.e_type())
-        tpg.copy(rpg)
+        tpg = transform.gxpg(True)
         transform.gximg.get_tr(self._trend)
 
         # control file
@@ -709,9 +707,7 @@ class GridFFT:
         else:
             self._filtered_transform = gxgrd.reopen(self._filtered_transform)
             trn = self._filtered_transform
-        fpg = trn.gxpg()
-        tpg = gxapi.GXPG.create(fpg.n_rows(), fpg.n_cols(), fpg.e_type())
-        tpg.copy(fpg)
+        tpg = trn.gxpg(True)
 
         # fft result
         gxapi.GXFFT2.trans_pg(tpg, gxapi.FFT2_PG_INVERSE)

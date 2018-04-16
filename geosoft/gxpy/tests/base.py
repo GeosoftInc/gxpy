@@ -140,6 +140,7 @@ class GXPYTest(unittest.TestCase):
 
     def start(self):
         self._func = self.id().split('.')[-1]
+        gx.gx().log('\n' + self._func)
         self._result_dir = os.path.join(self._result_base_dir, self._func)
         result_run_dir = os.path.join(self._result_dir, 'result')
         if os.path.exists(result_run_dir):
