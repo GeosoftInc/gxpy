@@ -235,7 +235,7 @@ class Test(GXPYTest):
         self.start()
 
         with gxgrd.Grid.open(self.mag) as g:
-            pg = g.gxpg()
+            pg = g.gxpg(True)
             pg.re_allocate(g.ny + 20, g.nx + 20)
             with gxgrd.Grid.from_data_array(pg) as gp:
                 filled_gd = gxgrdu.flood(gp)
@@ -244,7 +244,7 @@ class Test(GXPYTest):
                 self.assertEqual(feath_pg.statistics()['mean'], 4986.261784683294, 1)
 
         with gxgrd.Grid.open(self.mag) as g:
-            pg = g.gxpg()
+            pg = g.gxpg(True)
             pg.re_allocate(g.ny + 20, g.nx + 20)
             with gxgrd.Grid.from_data_array(pg) as gp:
                 filled_gd = gxgrdu.flood(gp, tolerance=50, max_iterations=5, file_name='filled', overwrite=True)
@@ -254,6 +254,18 @@ class Test(GXPYTest):
 
         filled_gd.close(discard=True)
         feath_gd.close(discard=True)
+
+    def test_expression(self):
+        self.start()
+
+        with gxgrd.Grid.open(self.mag) as grd:
+            x = gxgrdu.expression({'first': grd, 'second': grd}, 'first-second')
+            self.assertEqual(x.statistics()['mean'], 0.)
+
+        with gxgrd.Grid.open(self.mag) as grd:
+            x = gxgrdu.expression((grd, grd), 'g1-g2')
+            self.assertEqual(x.statistics()['mean'], 0.)
+
 
 ###############################################################################################
 

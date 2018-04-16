@@ -29,28 +29,28 @@ from . import grid_fft as gxfft
 
 __version__ = geosoft.__version__
 
-BOOL_AND = gxapi.IMU_BOOL_OPT_AND  #:
-BOOL_OR = gxapi.IMU_BOOL_OPT_OR  #:
-BOOL_XOR = gxapi.IMU_BOOL_OPT_XOR  #:
-BOOL_SIZE_GRID1 = gxapi.IMU_BOOL_SIZING_0  #:
-BOOL_SIZE_GRID2 = gxapi.IMU_BOOL_SIZING_1  #:
-BOOL_SIZE_MIN = gxapi.IMU_BOOL_SIZING_MIN  #:
-BOOL_SIZE_MAX = gxapi.IMU_BOOL_SIZING_MAX  #:
-BOOL_OVERLAP_AVERAGE = gxapi.IMU_BOOL_OLAP_AVE  #:
-BOOL_OVERLAP_GRID1 = gxapi.IMU_BOOL_OLAP_1  #:
-BOOL_OVERLAP_GRID2 = gxapi.IMU_BOOL_OLAP_2  #:
+BOOL_AND = gxapi.IMU_BOOL_OPT_AND
+BOOL_OR = gxapi.IMU_BOOL_OPT_OR
+BOOL_XOR = gxapi.IMU_BOOL_OPT_XOR
+BOOL_SIZE_GRID1 = gxapi.IMU_BOOL_SIZING_0
+BOOL_SIZE_GRID2 = gxapi.IMU_BOOL_SIZING_1
+BOOL_SIZE_MIN = gxapi.IMU_BOOL_SIZING_MIN
+BOOL_SIZE_MAX = gxapi.IMU_BOOL_SIZING_MAX
+BOOL_OVERLAP_AVERAGE = gxapi.IMU_BOOL_OLAP_AVE
+BOOL_OVERLAP_GRID1 = gxapi.IMU_BOOL_OLAP_1
+BOOL_OVERLAP_GRID2 = gxapi.IMU_BOOL_OLAP_2
 
-TREND_EDGE = gxapi.IMU_TREND_EDGE  #:
-TREND_ALL = gxapi.IMU_TREND_ALL  #:
-DERIVATIVE_X = 0  #:
-DERIVATIVE_Y = 1  #:
-DERIVATIVE_Z = 2  #:
-DERIVATIVE_XY = 3  #: horizontal gradient sqrt(dx**2 + dy**2)
-DERIVATIVE_XYZ = 4  #: total gradient (analytic signal) sqrt(dx**2 _ dy**2 + dz**2)
-TILT_ANGLE = 5  #: radians, atan(d_z/d_xy), Miller and Singh, 1994
-RETURN_PPOINT = 0  #:
-RETURN_LIST_OF_PPOINT = 1  #:
-RETURN_GDB = 2  #:
+TREND_EDGE = gxapi.IMU_TREND_EDGE
+TREND_ALL = gxapi.IMU_TREND_ALL
+DERIVATIVE_X = 0
+DERIVATIVE_Y = 1
+DERIVATIVE_Z = 2
+DERIVATIVE_XY = 3
+DERIVATIVE_XYZ = 4
+TILT_ANGLE = 5
+RETURN_PPOINT = 0
+RETURN_LIST_OF_PPOINT = 1
+RETURN_GDB = 2
 
 
 def _t(s):
@@ -71,8 +71,8 @@ def remove_trend(grid, file_name=None, method=TREND_EDGE, overwrite=False):
     Calculate a polynomial trend surface and return trend-removed grid.
 
     :param grid:        `geosoft.gxpy.grid.Grid` instance, or a file name
-    :param file_name:   trend-removed grid file name, if None a temporary grid is created.
-    :param method:      base trend on TREND_EDGE for edge data or TREND_ALL for all data
+    :param file_name:   trend-removed grid file name, if `None` a temporary grid is created.
+    :param method:      base trend on `TREND_EDGE` for edge data or `TREND_ALL` for all data
     :param overwrite:   True to overwrite existing file_name
     :return:            `Grid` instance
     
@@ -99,24 +99,33 @@ def remove_trend(grid, file_name=None, method=TREND_EDGE, overwrite=False):
 
 def derivative(grid, derivative_type, file_name=None, overwrite=False, dtype=None, fft=True):
     """
-    Return a derivative of a grid.  Derivatives are calculated by space-domain convolution.
+    Return a derivative of a grid or a tilt-angle
 
     :param grid:            `geosoft.gxpy.grid.Grid` instance, or a file name
-    :param derivative_type:  Which derivative to calculate:
+    :param derivative_type:  Which derivative to calculate, (grid_data_uom/distance):
     
         ========================== ====================================================================
         DERIVATIVE_X               in the grid X direction
         DERIVATIVE_Y               in the grid Y direction
         DERIVATIVE_Z               in the grid Z direction
         DERIVATIVE_XYZ             the total derivative sqrt(dx**2 + dy**2 + dz**2) (analytic signal)
-        TILT_ANGLE                 tilt angle, atan2(dz, sqrt(dx**2, dy**2))
+        TILT_ANGLE                 tilt angle, atan2(dz, sqrt(dx**2 + dy**2)) (radians)
         ========================== ====================================================================
     
-    :param file_name:   returned derivative file name, None for a temporary file
+    :param file_name:   returned derivative file name, `None` for a temporary file
     :param overwrite:   True to overwrite existing file
     :param dtype:       dtype for the return grid, default is the same as the passed grid.
     :param fft:         `False` calculate Z derivative with a space-domain convolution rather than an FFT.
     :return:            `geosoft.gxpy.grid.Grid` instance that contains the derivative result
+
+    .. note:: Derivative units_of_measure are grid_unit_of_measure / distance, except for the tilt angle,
+        which is radians.
+
+        Horizontal derivatives are calculated in the space domain based on the difference between
+        neighboring cell values, and the Z derivative can be calculated using an FFT or a 5x5 space-domain
+        convolution.  An FFT calculation will generally produce a better result and it will be able to
+        work with longer wavelengths, but at the expense of speed and edge effects in cases of very powerful
+        anomalies along the edge of a grid.
 
     .. versionadded 9.4
     """
@@ -130,7 +139,6 @@ def derivative(grid, derivative_type, file_name=None, overwrite=False, dtype=Non
         if g.dtype != np.float64:
             g = g.copy(g, gx.gx().temp_file('.grd(GRD)'), dtype=np.float32, overwrite=True)
             g.delete_files()
-
 
         if fft:
             with gxfft.GridFFT(g) as gfft:
@@ -147,18 +155,18 @@ def derivative(grid, derivative_type, file_name=None, overwrite=False, dtype=Non
         dy = derivative(g, DERIVATIVE_Y)
         dz = derivative(g, DERIVATIVE_Z, fft=fft)
 
-        result = gxgrd.expression((dx, dy, dz), 'atan2(g3,sqrt(g1**2+g2**2))',
-                                  result_file_name=fn,
-                                  overwrite=overwrite)
+        result = expression((dx, dy, dz), 'atan2(g3,sqrt(g1**2+g2**2))',
+                            result_file_name=fn,
+                            overwrite=overwrite)
         result.unit_of_measure = 'radians'
         return gxgrd.reopen(result)
 
     def horizontal_gradient(g):
         dx = derivative(g, DERIVATIVE_X)
         dy = derivative(g, DERIVATIVE_Y)
-        result = gxgrd.expression((dx, dy), 'sqrt(g1**2+g2**2)',
-                                  result_file_name=file_name,
-                                  overwrite=overwrite)
+        result = expression((dx, dy), 'sqrt(g1**2+g2**2)',
+                            result_file_name=file_name,
+                            overwrite=overwrite)
         result.unit_of_measure = g.unit_of_measure + '/' + g.coordinate_system.unit_of_measure
         return result
 
@@ -166,9 +174,9 @@ def derivative(grid, derivative_type, file_name=None, overwrite=False, dtype=Non
         dx = derivative(g, DERIVATIVE_X)
         dy = derivative(g, DERIVATIVE_Y)
         dz = derivative(g, DERIVATIVE_Z, fft=fft)
-        result = gxgrd.expression((dx, dy, dz), 'sqrt(g1**2+g2**2+g3**2)',
-                                  result_file_name=file_name,
-                                  overwrite=overwrite)
+        result = expression((dx, dy, dz), 'sqrt(g1**2+g2**2+g3**2)',
+                            result_file_name=file_name,
+                            overwrite=overwrite)
         result.unit_of_measure = g.unit_of_measure + '/' + g.coordinate_system.unit_of_measure
         return result
 
@@ -230,10 +238,7 @@ def derivative(grid, derivative_type, file_name=None, overwrite=False, dtype=Non
 
 def tilt_depth(grid, resolution=None, return_as=RETURN_PPOINT, gdb=None, overwrite=False, fft=True):
     """
-    Given an RTP TMI grid, or the vertical derivative of the gravity anomaly, calculate
-    contact source depths using the tilt-depth method as suggested by Rick Blakely.
-    The contact source depth is the reciprocol of the horizontal gradient of the
-    tilt-derivative at the zero-contour of the tilt derivative.
+    Return estimate of the depth sources of potential filed anomalies.
 
     :param grid:        `geosoft.gxpy.grid.Grid` instance or a grid file name. Ideally the grid should be RTP.
     :param resolution:  zero-contour sampling resolution, defaults to 4 times the grid cell size.
@@ -251,6 +256,11 @@ def tilt_depth(grid, resolution=None, return_as=RETURN_PPOINT, gdb=None, overwri
     :param fft:         `False` to use a space-domain convolution.  The default uses an FFT, which will
                         in general produce a cleaner and more accurate result, though it may be slower.
     :return:            depends on `return_as` setting
+
+    .. note:: Given a TMI grid, or the vertical derivative of the gravity anomaly, calculate
+        contact source depths using the tilt-depth method. The contact source depth is the
+        reciprocol of the horizontal gradient of the tilt-derivative at the zero-contour of
+        the tilt derivative.
 
     .. versionadded:: 9.4
     """
@@ -305,6 +315,10 @@ def sample(grid, xyz):
                     the desired (x, y, z) locations. If a PPoint instance is passed it will be reporjected to the
                     grid coordinate system if necessary.
     :return:        1-dimensional numpy array of grid data values that match the passes PPoint or XYZ.
+
+    .. note:: Sampled data values use linear interpolation between grid points.
+
+    .. versionadded:: 9.1
     """
 
     if not isinstance(grid, gxgrd.Grid):
@@ -322,15 +336,17 @@ def sample(grid, xyz):
     return vvz.np
 
 
-def grid_mosaic(mosaic, grid_list, type_decorate='', report=None):
+def grid_mosaic(mosaic, grid_list, type_decorate=''):
     """
     Combine a set of grids into a single grid.  Raises an error if the resulting grid is too large.
 
     :param mosaic:          name of the output grid, returned.  Decorate with '(HGD)' to get an HGD
     :param grid_list:       list of input grid names
     :param type_decorate:   decoration for input grids if not default
-    :param report:          deprecated: always logs to the context using `geosoft.gxpy.gx.GXpy.log()`
     :returns:               `geosoft.gxpy.grid.Grid` instance
+
+    .. note:: If the coordinate systems are different the grids are
+        reprojected to the coordinate system of the first grid.
 
     .. versionadded:: 9.4
     """
@@ -415,8 +431,8 @@ def grid_mosaic(mosaic, grid_list, type_decorate='', report=None):
     gxc.log('')
     gxc.log('Mosaic: dim({},{}) x({},{}) y({},{}), cell({})...'.format(nx, ny, x0, xm, y0, ym, p.get('dx')))
     master = gxgrd.Grid.new(mosaic, p)
-    gxc.log('Memory image ready ({}) dim({},{}) x0,y0({},{})'.format(master, master.nx, master.ny,
-                                                                    master.x0, master.y0))
+    gxc.log('Memory image ready ({}) dim({},{}) x0,y0({},{})'.
+            format(master, master.nx, master.ny, master.x0, master.y0))
 
     # paste grids onto master
     mnx = master.nx
@@ -432,6 +448,7 @@ def grid_mosaic(mosaic, grid_list, type_decorate='', report=None):
 
 def grid_bool(g1, g2, joined_grid=None, opt=1, size=3, olap=1):
     """
+    Combine two grids into a single grid, with boolean logic to determine the result.
 
     :param g1:          Grids to merge
     :param g2:
@@ -439,9 +456,9 @@ def grid_bool(g1, g2, joined_grid=None, opt=1, size=3, olap=1):
     :param opt:         option logic to determine output grid points:
 
         =============== =========================
-        BOOL_AND        dummy unless g1 and g2
-        BOOL_OR         dummy unless g1 or g2
-        BOOL_XOR        dummy where g1 and g2
+        BOOL_AND        blank unless g1 and g2
+        BOOL_OR         blank unless g1 or g2
+        BOOL_XOR        blank where g1 and g2
         =============== =========================
 
     :param size:    size of the output grid, default is minimum size
@@ -449,28 +466,31 @@ def grid_bool(g1, g2, joined_grid=None, opt=1, size=3, olap=1):
         =============== =======================================
         BOOL_SIZE_GRID1 output size matches g1
         BOOL_SIZE_GRID2 output size matches g2
-        BOOL_SIZE_MIN   output size minimised to non-dummy area
+        BOOL_SIZE_MIN   output size minimised to non-blank area
         BOOL_SIZE_MAX   output size g1 + g2:
         =============== =======================================
 
     :param olap:    what to do with overlapping valid points, default uses grid 1
 
         ==================== ==================================
-        BOOL_OVERLAP_AVERAGE averave values where grid overlap
+        BOOL_OVERLAP_AVERAGE averave values where grids overlap
         BOOL_OVERLAP_GRID1   use g1 where grids overlap
         BOOL_OVERLAP_GRID2   use g2 where grids overlap
         ==================== ==================================
 
     :returns:       `Grid` instance of the merged output grid, must be closed with a call to close().
 
+    .. note:: If the grid coordinate systems differ, g2 is reprojected to the
+        coordinate system og g1.
+
     .. versionadded:: 9.4
     """
 
     close_g1 = close_g2 = False
-    if isinstance(g1, str):
+    if not isinstance(g1, gxgrd.Grid):
         g1 = gxgrd.Grid.open(g1)
         close_g1 = True
-    if isinstance(g2, str):
+    if not isinstance(g2, gxgrd.Grid):
         g2 = gxgrd.Grid.open(g2)
         close_g2 = True
 
@@ -492,9 +512,6 @@ def contour_points(grid, value, max_segments=1000, resolution=None,
     """
     Return a set of point segments that represent the spatial locations of contours threaded through the grid.
 
-    Contours through 3D oriented grids will be oriented in 3D. Grids that are not 3D oriented will have a z value
-    0.0.
-
     :param grid:            grid file of `geosoft.gxpy.grid.Grid` instance
     :param value:           contour value
     :param max_segments:    maximum expected number of segments, raises error if there are more actual segments.
@@ -511,7 +528,11 @@ def contour_points(grid, value, max_segments=1000, resolution=None,
 
     :param gdb:         return database name, or a `geosoft.gxpy.gdv.Geosoft_database` instance. If not
                         specified and `return_as=RETURN_GDB`, a temporary database is created.
+    :param overwrite:   `True` to overwrite gdb if it exists.
     :return:            depends on `return_as` setting
+
+    .. note::   Contours through 3D oriented grids will be oriented in 3D. Grids that are not 3D oriented
+        will have a z value 0.0.
 
     .. versionadded:: 9.4
     """
@@ -595,10 +616,9 @@ def contour_points(grid, value, max_segments=1000, resolution=None,
 
 def calculate_slope_standard_deviation(grid):
     """
-
     Return the standard deviation of the slopes.
 
-    :param grid: Grid
+    :param grid: `geosoft.gxpy.grid.Grid` instance, or a grid file name
     :returns:    Standard deviation of grid slopes
 
     .. Note:: This method calculates the standard deviation of the horizontal
@@ -614,7 +634,7 @@ def calculate_slope_standard_deviation(grid):
     """
 
     close_g = False
-    if isinstance(grid, str):
+    if not isinstance(grid, gxgrd.Grid):
         grid = gxgrd.Grid.open(grid)
         close_g = True
 
@@ -624,17 +644,19 @@ def calculate_slope_standard_deviation(grid):
         if close_g:
             grid.close()
 
+
 def flood(grid, file_name=None, overwrite=False, tolerance=None, max_iterations=250, pass_tol=99.):
     """
-    Flood dummy areas in a grid based on a minimum-curvature surface.
+    Flood blank areas in a grid based on a minimum-curvature surface.
 
     :param grid:            `geosoft.gxpy.grid.Grid` instance, or a grid file name
-    :param file_name:       filled grid file name, temporary created if `None`.
+    :param file_name:       flooded grid file name, temporary created if `None`.
     :param overwrite:       `True` to overwrite existing file
     :param tolerance:       data fit tolerance, default is 0.001 times the data standard deviation
     :param max_iterations:  maximum iterations for fiting the surface
-    :param pass_tol:        percentage of data that needs to pass the tolerance test.
-    :return:                `geosoft.gxpy.grid.Grid` instance of a filled grid.
+    :param pass_tol:        percentage of data that needs to pass the tolerance test when definint
+                            the minimum-curfacture surface. The default is 99%.
+    :return:                `geosoft.gxpy.grid.Grid` instance of a flooded grid.
 
     .. seealso:: `geosoft.gxpy.grid.Grid.minimum_curvature`
 
@@ -674,6 +696,7 @@ def flood(grid, file_name=None, overwrite=False, tolerance=None, max_iterations=
     filled_grid.set_properties(grid.properties())
     return filled_grid
 
+
 def feather(grid, width, edge_value=None, file_name=None, overwrite=False):
     """
     Feather the edge of a grid to a constant value at the edge.
@@ -688,12 +711,12 @@ def feather(grid, width, edge_value=None, file_name=None, overwrite=False):
     .. versionadded:: 9.4
     """
 
-    def feather(dlen, width):
-        f = np.ones(dlen)
-        e = np.array([math.cos((i + 1) * math.pi/width) for i in range(width)]) * 0.5 + 0.5
-        f[-len(e):] = e
-        f[:len(e)] = e[::-1]
-        return f
+    def _feather(dlen, w):
+        ff = np.ones(dlen)
+        e = np.array([math.cos((i + 1) * math.pi/w) for i in range(w)]) * 0.5 + 0.5
+        ff[-len(e):] = e
+        ff[:len(e)] = e[::-1]
+        return ff
 
     if not isinstance(grid, gxgrd.Grid):
         grid = gxgrd.Grid.open(grid)
@@ -709,16 +732,91 @@ def feather(grid, width, edge_value=None, file_name=None, overwrite=False):
     pgf = gxapi.GXPG.create(pg.n_rows(), pg.n_cols(), pg.e_type())
     vv = gxvv.GXvv(dtype=gxu.dtype_gx(pg.e_type()))
 
-    f = feather(pg.n_cols(), width)
+    f = _feather(pg.n_cols(), width)
     for row in range(pg.n_rows()):
         pg.read_row(row, 0, 0, vv.gxvv)
         df = (vv.np - edge_value) * f + edge_value
         pgf.write_row(row, 0, 0, gxvv.GXvv(df).gxvv)
 
-    f = feather(pg.n_rows(), width)
+    f = _feather(pg.n_rows(), width)
     for col in range(pg.n_cols()):
         pgf.read_col(col, 0, 0, vv.gxvv)
         df = (vv.np - edge_value) * f + edge_value
         pgf.write_col(col, 0, 0, gxvv.GXvv(df).gxvv)
 
     return gxgrd.Grid.from_data_array(pgf, file_name=file_name, overwrite=overwrite, properties=grid.properties())
+
+
+def expression(grids, expr, result_file_name=None, overwrite=False):
+    """
+    Apply an expressing to grids.
+
+    :param grids:       dictionary of named grid operands, or a list of grids (see example below). If a list
+                        is provided the operand names will be 'g1', 'g2', 'g3', etc...
+    :param expr:        expression string to apply, conforms to Python/C math expression syntax. The expression
+                        can have multiple lines, each line terminated by a ';' character.
+    :param result_file_name:    optional result grid file name, if `None` a temporary grid is created.
+    :param overwrite:   True to overwrite existing grid
+    :return:            `Grid` instance that contains the resuilt of the expression.
+
+    *Example*
+
+    .. code::
+
+        import geosoft.gxpy.grid as gxgrd
+
+        # add using file names
+        grid_1 = grid_2 = None
+        sum = gxgrd.expression(('some_grid', 'some_other_grid'), 'g1+g2')
+
+        # add using Grid instances
+        grid_1 = gxgrd.Grid.open('some_grid')
+        grid_2 = gxgrd.Grid.open('some_other_grid')
+        sum = gxgrd.expression((grid_1, grid_2), 'g1+g2')
+
+        # add using named operands
+        sum = gxgrd.expression({'a': grid_1, 'b': grid_2}, 'a+b')
+
+    .. versionadded 9.4
+    """
+
+    exp = gxapi.GXIEXP.create()
+
+    # build default operands dict from list of grids
+    if not isinstance(grids, dict):
+        i = 1
+        gd = {}
+        for g in grids:
+            gd['g{}'.format(i)] = g
+            i += 1
+        grids = gd
+
+    # add grids to the expression
+    properties = None
+    delete_list = []
+    for k, g in grids.items():
+        if not isinstance(g, gxgrd.Grid):
+            g = gxgrd.Grid.open(g, dtype=np.float64)
+        elif g.dtype != np.float64:
+            g = gxgrd.Grid.copy(g, gx.gx().temp_file('.grd(GRD)'), dtype=np.float64)
+            delete_list.append(g)
+        exp.add_grid(g.gximg, k)
+        if properties is None:
+            properties = g.properties()
+
+    if result_file_name is None:
+        result_file_name = gx.gx().temp_file('.grd(GRD)')
+    result = gxgrd.Grid.new(file_name=result_file_name, properties=properties, overwrite=overwrite)
+    exp.add_grid(result.gximg, '_')
+
+    # apply expression
+    expr = ('_=' + expr).strip()
+    if expr[-1] != ';':
+        expr = expr + ';'
+    exp.do_formula(expr, 100)
+
+    # delete temporary grids
+    for g in delete_list:
+        g.delete_files()
+
+    return gxgrd.reopen(result)

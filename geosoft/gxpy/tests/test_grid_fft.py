@@ -3,14 +3,9 @@ import os
 import numpy as np
 import math
 
-import geosoft
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.grid as gxgrd
 import geosoft.gxpy.grid_fft as gxfft
-import geosoft.gxpy.grid_utility as gxgrdu
-import geosoft.gxpy.geometry as gxgeo
-import geosoft.gxpy.coordinate_system as gxcs
-import geosoft.gxpy.gdb as gxgdb
 
 from base import GXPYTest
 
