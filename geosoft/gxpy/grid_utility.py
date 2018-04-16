@@ -766,6 +766,7 @@ def expression(grids, expr, result_file_name=None, overwrite=False):
         import geosoft.gxpy.grid as gxgrd
 
         # add using file names
+        grid_1 = grid_2 = None
         sum = gxgrd.expression(('some_grid', 'some_other_grid'), 'g1+g2')
 
         # add using Grid instances
