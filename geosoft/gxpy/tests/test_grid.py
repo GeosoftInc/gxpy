@@ -31,9 +31,6 @@ class Test(GXPYTest):
         cls.swing = os.path.join(cls.folder, 'swing_section.grd')
         cls.crooked = os.path.join(cls.folder, 'crooked_section.grd')
 
-    def test_grc(self):
-        self.start()
-        self.assertEqual(gxgrd.__version__, geosoft.__version__)
 
     def test_gridProperties(self):
         self.start()
@@ -586,6 +583,7 @@ class Test(GXPYTest):
             self.assertEqual(uom, 'metres')
 
     def test_iterator(self):
+        self.start()
 
         with gxgrd.Grid.open(self.g2f) as g0:
 
@@ -849,9 +847,11 @@ class Test(GXPYTest):
             self.assertAlmostEqual(grd.statistics()['sd'], 22.320659139902336, 5)
 
         with gdb_from_callback(feed_data) as gdb:
+            gxgdb.Channel(gdb, 'v').unit_of_measure = 'maki'
             with gxgrd.Grid.minimum_curvature((gdb, 'v'), cs=0.25, bkd=20) as grd:
                 self.assertEqual((grd.nx, grd.ny), (189, 117))
                 self.assertAlmostEqual(grd.statistics()['sd'], 22.320659139902336, 5)
+                self.assertEqual(grd.unit_of_measure, 'maki')
 
         # TODO: update this test once BASE-1265 is addressed
         with gxgrd.Grid.minimum_curvature(feed_data, cs=0.25, bkd=500, edgclp=5) as grd:
