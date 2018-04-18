@@ -198,13 +198,14 @@ class Grid(gxgm.Geometry):
 
     :Constructors:
 
-        ======================= ============================================
-        :meth:`open`            open an existing grid/image
-        :meth:`new`             create a new grid/image
-        :meth:`copy`            create a copy
-        :meth:`index_window`    create a windowed grid based on grid indexes
-        :meth:`from_data_array` create a new grid from a 2d data array
-        ======================= ============================================
+        ========================= ==============================================================
+        :meth:`open`              open an existing grid/image
+        :meth:`new`               create a new grid/image
+        :meth:`copy`              create a copy
+        :meth:`index_window`      create a windowed grid based on grid indexes
+        :meth:`from_data_array`   create a new grid from a 2d data array
+        :meth:`minimum_curvature` create by fitting a minimum-curvature surface to located data.
+        ========================= ==============================================================
 
     A grid instance supports iteration that yields (x, y, z, grid_value) by points along rows.
     For example, the following prints the x, y, z, grid_value of every non-dummy point in a grid:
@@ -497,7 +498,10 @@ class Grid(gxgm.Geometry):
         return grd
 
     @classmethod
-    def minimum_curvature(cls, data, file_name=None, overwrite=False, max_segments=1000,
+    def minimum_curvature(cls, data,
+                          unit_of_measure=None,
+                          file_name=None, overwrite=False,
+                          max_segments=1000,
                           coordinate_system=None,
                           cs='',
                           area=('', '', '', ''),
@@ -522,10 +526,11 @@ class Grid(gxgm.Geometry):
         :param data:        list of [(x, y, value), ...] or a callback that returns lists, or a tuple
                             (gdb, value_channel, x_channel, y_channel) where x_channel and y_channel, if not
                             specified, default to the current database (x, y) channels.  See below.
+        :param unit_of_measure: string unit of measurement descriptor.
         :param file_name:   name of the grid file, None for a temporary grid. See `supported file formats
                             <https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations>`_)
         :param overwrite:   True to overwrite existing file
-        :param max_line_segments:   Maximum number of line segments if using a callback, defaults to 1000.
+        :param max_segments:   Maximum number of line segments if using a callback, defaults to 1000.
         :param coordinate_system:   coordinate system
 
         Gridding parameters follow the nomenclature of the rangrid.con file:
@@ -624,9 +629,9 @@ class Grid(gxgm.Geometry):
                              [(20., 15., 108), (25.,  5., 77.), (33., 9., np.nan), (28., 2., 22.)],
                              [(35., 18., 110), (40., 31., 77.), (13., 4., 83.), (44., 4., 7.)]])
             def feed_data(n):
-                if n >= len(nxyz):
+                if n >= len(nxyv):
                     return None
-                return nxyz[n]
+                return nxyv[n]
             grid = gxgrd.Grid.minimum_curvature(feed_data, cs=1.)
 
         .. versionadded:: 9.4
@@ -677,9 +682,6 @@ class Grid(gxgm.Geometry):
         if tol and float(tol) <= 0.:
             tol = 1.0e-25
 
-        if coordinate_system is None:
-            coordinate_system = gdb.coordinate_system
-
         # parameter control file
         con_file = gx.gx().temp_file('con')
         with open(con_file, 'x') as f:
@@ -699,15 +701,21 @@ class Grid(gxgm.Geometry):
                 raise GridException(_t('Cannot overwrite existing file: {}').format(file_name))
 
         gxapi.GXRGRD.run2(gdb.gxdb, xc, yc, vc, con_file, file_name)
-        if discard:
-            gdb.close(discard=True)
+
+        grd = cls.open(file_name, mode=FILE_READWRITE)
+        if coordinate_system is None:
+            coordinate_system = gdb.coordinate_system
+        grd.coordinate_system = coordinate_system
+        if unit_of_measure is None:
+            unit_of_measure = gxgdb.Channel(gdb, vc).unit_of_measure
+        grd.unit_of_measure = unit_of_measure
 
         log_file = 'rangrid.log'
         if os.path.exists(log_file):
             gxu.delete_file(log_file)
 
-        grd = cls.open(file_name, mode=FILE_READWRITE)
-        grd.coordinate_system = coordinate_system
+        if discard:
+            gdb.close(discard=True)
 
         return grd
 

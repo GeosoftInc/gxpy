@@ -4,8 +4,6 @@ Geosoft spatial data base class.
 Spatial datasets are collections of geometric objects that have associated data, typically persisting in
 a named file. Examples are Geosoft databases, grids, voxels, geosoft_surfaces.
 
-
-
 :Classes:
 
     ============= ===================================================================================
