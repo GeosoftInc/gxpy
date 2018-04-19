@@ -941,6 +941,39 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
 
     @classmethod
+    def generate_rbf_surface(cls, db, output_file, data_channel, isosurface_value, error_tolerance, max_iterations, desample, kernel, kernel_epsilon):
+        """
+        Creates a surface from an database using RBF.
+        
+        :param db:                Handle to a database
+        :param output_file:       Name of the output grid3d
+        :param data_channel:      Channel to grid`
+        :param isosurface_value:  Isosurface value
+        :param error_tolerance:   Error Tolerance
+        :param max_iterations:    Maximum number of iterations (>0)
+        :param desample:          Desample data (1) or use as is (0)
+        :param kernel:            :ref:`RBFKERNEL`
+        :param kernel_epsilon:    Kernel Epsilon
+        :type  db:                GXDB
+        :type  output_file:       str
+        :type  data_channel:      str
+        :type  isosurface_value:  float
+        :type  error_tolerance:   float
+        :type  max_iterations:    int
+        :type  desample:          int
+        :type  kernel:            int
+        :type  kernel_epsilon:    float
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        gxapi_cy.WrapMULTIGRID3DUTIL._generate_rbf_surface(GXContext._get_tls_geo(), db, output_file.encode(), data_channel.encode(), isosurface_value, error_tolerance, max_iterations, desample, kernel, kernel_epsilon)
+        
+
+
+
+    @classmethod
     def grid_direct_from_gdb(cls, output_grid3d_filename, origin_x, origin_y, origin_z, cell_count_x, cell_count_y, cell_count_z, cell_size_x, cell_size_y, cell_size_z, method, db, x_channel, y_channel, z_channel, data_channel):
         """
         Create a grid3d using direct gridding.
