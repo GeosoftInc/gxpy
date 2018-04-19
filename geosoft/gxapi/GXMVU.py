@@ -1930,8 +1930,8 @@ class GXMVU(gxapi_cy.WrapMVU):
         :param vox:           Voxel model
         :param method:        :ref:`MVU_VOX_SURFACE_METHOD`
         :param option:        :ref:`MVU_VOX_SURFACE_OPTION`
-        :param min_value:     TODO
-        :param max_value:     TODO
+        :param min_value:     Iso-surface value
+        :param max_value:     For closed surfaces: close between the selected value and this value (set equal to the Iso-surface to close within nearest values below, DUMMY to close within nearest value above)
         :param col:           Drawing color
         :param line_thick:    Line thickness for line drawing, and 2D views.
         :param transparency:  Transparency (0 - transparent, 1 - opaque).
