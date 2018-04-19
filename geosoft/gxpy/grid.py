@@ -1,19 +1,30 @@
 """
 Geosoft grid and image handling, including all
-`supported file formats <https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations>`_
+`supported file formats <https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations>`_ .
 
 :Classes:
 
-    ============= ==============================================================
-    :class:`Grid` grid datasets, which can be in memory or created from a file _
-    ============= ==============================================================
+    ============= =====================================
+    :class:`Grid` grid dataset
+    ============= =====================================
 
-.. seealso:: :class:`geosoft.gxapi.GXIMG`, :class:`geosoft.gxapi.GXIMU`
+.. seealso:: :mod:`geosoft.gxpy.grid_utility`, :mod:`geosoft.gxpy.grid_fft`,
+    :class:`geosoft.gxapi.GXIMG`, :class:`geosoft.gxapi.GXIMU`
 
 .. note::
 
     Regression tests provide usage examples:     
     `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_grid.py>`_
+
+**Constants**
+
+`mode=` Grid file open mode constants
+
+   ============== == ====================================================
+   FILE_READ       0 open for read, files are not changed
+   FILE_READWRITE  1 open for read and write, files can be changed
+   FILE_NEW        2 new grid file, accompanied by `overwrite=` parameter
+   ============== == ====================================================
     
 """
 import os
@@ -36,10 +47,9 @@ from . import gdb as gxgdb
 __version__ = geosoft.__version__
 
 
-# constants
-FILE_READ = 0          #:
-FILE_READWRITE = 1     #: file exists, but can change properties
-FILE_NEW = 2           #:
+FILE_READ = 0
+FILE_READWRITE = 1
+FILE_NEW = 2
 
 
 def _t(s):
