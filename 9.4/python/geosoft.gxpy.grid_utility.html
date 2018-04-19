@@ -1,0 +1,626 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>geosoft.gxpy.grid_utility submodule &#8212; Geosoft GX Python API 9.4.0 documentation</title>
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/geosoft.gxpy.grid_utility.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-geosoft.gxpy.grid_utility">
+<span id="geosoft-gxpy-grid-utility-submodule"></span><h1>geosoft.gxpy.grid_utility submodule<a class="headerlink" href="#module-geosoft.gxpy.grid_utility" title="Permalink to this headline">¶</a></h1>
+<p>Geosoft grid and image utilities.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="geosoft.gxpy.grid.html#module-geosoft.gxpy.grid" title="geosoft.gxpy.grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.grid</span></code></a>, <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.GXIMG</span></code></a>, <a class="reference internal" href="GXIMU.html#geosoft.gxapi.GXIMU" title="geosoft.gxapi.GXIMU"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.GXIMU</span></code></a></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Regression tests provide usage examples:     
+<a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_grid_utility.py">Tests</a></p>
+</div>
+<dl class="data">
+<dt id="geosoft.gxpy.grid_utility.BOOL_AND">
+<code class="descname">BOOL_AND</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.grid_utility.BOOL_AND" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.grid_utility.BOOL_OR">
+<code class="descname">BOOL_OR</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.grid_utility.BOOL_OR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.grid_utility.BOOL_OVERLAP_AVERAGE">
+<code class="descname">BOOL_OVERLAP_AVERAGE</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.grid_utility.BOOL_OVERLAP_AVERAGE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.grid_utility.BOOL_OVERLAP_GRID1">
+<code class="descname">BOOL_OVERLAP_GRID1</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.grid_utility.BOOL_OVERLAP_GRID1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.grid_utility.BOOL_OVERLAP_GRID2">
+<code class="descname">BOOL_OVERLAP_GRID2</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.grid_utility.BOOL_OVERLAP_GRID2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.grid_utility.BOOL_SIZE_GRID1">
+<code class="descname">BOOL_SIZE_GRID1</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.grid_utility.BOOL_SIZE_GRID1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.grid_utility.BOOL_SIZE_GRID2">
+<code class="descname">BOOL_SIZE_GRID2</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.grid_utility.BOOL_SIZE_GRID2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.grid_utility.BOOL_SIZE_MAX">
+<code class="descname">BOOL_SIZE_MAX</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxpy.grid_utility.BOOL_SIZE_MAX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.grid_utility.BOOL_SIZE_MIN">
+<code class="descname">BOOL_SIZE_MIN</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.grid_utility.BOOL_SIZE_MIN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.grid_utility.BOOL_XOR">
+<code class="descname">BOOL_XOR</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.grid_utility.BOOL_XOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.grid_utility.DERIVATIVE_X">
+<code class="descname">DERIVATIVE_X</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.grid_utility.DERIVATIVE_X" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.grid_utility.DERIVATIVE_XY">
+<code class="descname">DERIVATIVE_XY</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxpy.grid_utility.DERIVATIVE_XY" title="Permalink to this definition">¶</a></dt>
+<dd><p>horizontal gradient sqrt(dx**2 + dy**2)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.grid_utility.DERIVATIVE_XYZ">
+<code class="descname">DERIVATIVE_XYZ</code><em class="property"> = 4</em><a class="headerlink" href="#geosoft.gxpy.grid_utility.DERIVATIVE_XYZ" title="Permalink to this definition">¶</a></dt>
+<dd><p>total gradient (analytic signal) sqrt(dx**2 _ dy**2 + dz**2)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.grid_utility.DERIVATIVE_Y">
+<code class="descname">DERIVATIVE_Y</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.grid_utility.DERIVATIVE_Y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.grid_utility.DERIVATIVE_Z">
+<code class="descname">DERIVATIVE_Z</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.grid_utility.DERIVATIVE_Z" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="exception">
+<dt id="geosoft.gxpy.grid_utility.GridUtilityException">
+<em class="property">exception </em><code class="descname">GridUtilityException</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid_utility.GridUtilityException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.GXRuntimeError</span></code></p>
+<p>Exceptions from <a class="reference internal" href="#module-geosoft.gxpy.grid_utility" title="geosoft.gxpy.grid_utility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.grid_utility</span></code></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.grid_utility.RETURN_GDB">
+<code class="descname">RETURN_GDB</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.grid_utility.RETURN_GDB" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.grid_utility.RETURN_LIST_OF_PPOINT">
+<code class="descname">RETURN_LIST_OF_PPOINT</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.grid_utility.RETURN_LIST_OF_PPOINT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.grid_utility.RETURN_PPOINT">
+<code class="descname">RETURN_PPOINT</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.grid_utility.RETURN_PPOINT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.grid_utility.TILT_ANGLE">
+<code class="descname">TILT_ANGLE</code><em class="property"> = 5</em><a class="headerlink" href="#geosoft.gxpy.grid_utility.TILT_ANGLE" title="Permalink to this definition">¶</a></dt>
+<dd><p>radians, atan(d_z/d_xy), Miller and Singh, 1994</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.grid_utility.TREND_ALL">
+<code class="descname">TREND_ALL</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.grid_utility.TREND_ALL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.grid_utility.TREND_EDGE">
+<code class="descname">TREND_EDGE</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.grid_utility.TREND_EDGE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.grid_utility.calculate_slope_standard_deviation">
+<code class="descname">calculate_slope_standard_deviation</code><span class="sig-paren">(</span><em>grid</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid_utility.calculate_slope_standard_deviation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the standard deviation of the slopes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>grid</strong> – Grid</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Standard deviation of grid slopes</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This method calculates the standard deviation of the horizontal
+differences in the X and Y directions for the supplied
+image.  This is useful for shading routines.  A good
+default scaling factor is 2.5 / standard deviation.</p>
+<p>The image will be sub-sampled to a statistically meaningful number.</p>
+<p class="last">The cell sizes are used to determine the slopes.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.grid_utility.contour_points">
+<code class="descname">contour_points</code><span class="sig-paren">(</span><em>grid</em>, <em>value</em>, <em>max_segments=1000</em>, <em>resolution=None</em>, <em>return_as=1</em>, <em>gdb=None</em>, <em>overwrite=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid_utility.contour_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a set of point segments that represent the spatial locations of contours threaded through the grid.</p>
+<p>Contours through 3D oriented grids will be oriented in 3D. Grids that are not 3D oriented will have a z value
+0.0.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>grid</strong> – grid file of <a class="reference internal" href="geosoft.gxpy.grid.html#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.grid.Grid</span></code></a> instance</li>
+<li><strong>value</strong> – contour value</li>
+<li><strong>max_segments</strong> – maximum expected number of segments, raises error if there are more actual segments.</li>
+<li><strong>resolution</strong> – the separation between points along the contours. If not specified the minimum
+grid cell size is used.  Set <code class="xref py py-obj docutils literal notranslate"><span class="pre">resolution=0</span></code>, for use the locations as returned by the
+contouring algorithm.</li>
+<li><strong>return_as</strong> – <p>return results as:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>RETURN_PPOINT</td>
+<td>return results as a single <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.PPoint" title="geosoft.gxpy.geometry.PPoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry.PPoint</span></code></a> instance</td>
+</tr>
+<tr class="row-even"><td>RETURN_LIST_OF_PPOINT</td>
+<td>return results as a list of <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.PPoint" title="geosoft.gxpy.geometry.PPoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry.PPoint</span></code></a> instances</td>
+</tr>
+<tr class="row-odd"><td>RETURN_GDB</td>
+<td>return result as a <a class="reference internal" href="geosoft.gxpy.gdb.html#geosoft.gxpy.gdb.Geosoft_gdb" title="geosoft.gxpy.gdb.Geosoft_gdb"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.gdb.Geosoft_gdb</span></code></a> instance</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><strong>gdb</strong> – return database name, or a <code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.gdv.Geosoft_database</span></code> instance. If not
+specified and <code class="xref py py-obj docutils literal notranslate"><span class="pre">return_as=RETURN_GDB</span></code>, a temporary database is created.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">depends on <code class="xref py py-obj docutils literal notranslate"><span class="pre">return_as</span></code> setting</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.grid_utility.derivative">
+<code class="descname">derivative</code><span class="sig-paren">(</span><em>grid</em>, <em>derivative_type</em>, <em>file_name=None</em>, <em>overwrite=False</em>, <em>dtype=None</em>, <em>fft=True</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid_utility.derivative" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a derivative of a grid.  Derivatives are calculated by space-domain convolution.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>grid</strong> – <a class="reference internal" href="geosoft.gxpy.grid.html#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.grid.Grid</span></code></a> instance, or a file name</li>
+<li><strong>derivative_type</strong> – <p>Which derivative to calculate:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>DERIVATIVE_X</td>
+<td>in the grid X direction</td>
+</tr>
+<tr class="row-even"><td>DERIVATIVE_Y</td>
+<td>in the grid Y direction</td>
+</tr>
+<tr class="row-odd"><td>DERIVATIVE_Z</td>
+<td>in the grid Z direction</td>
+</tr>
+<tr class="row-even"><td>DERIVATIVE_XYZ</td>
+<td>the total derivative sqrt(dx**2 + dy**2 + dz**2) (analytic signal)</td>
+</tr>
+<tr class="row-odd"><td>TILT_ANGLE</td>
+<td>tilt angle, atan2(dz, sqrt(dx**2, dy**2))</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><strong>file_name</strong> – returned derivative file name, None for a temporary file</li>
+<li><strong>overwrite</strong> – True to overwrite existing file</li>
+<li><strong>dtype</strong> – dtype for the return grid, default is the same as the passed grid.</li>
+<li><strong>fft</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code> calculate Z derivative with a space-domain convolution rather than an FFT.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.grid.html#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.grid.Grid</span></code></a> instance that contains the derivative result</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.grid_utility.feather">
+<code class="descname">feather</code><span class="sig-paren">(</span><em>grid</em>, <em>width</em>, <em>edge_value=None</em>, <em>file_name=None</em>, <em>overwrite=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid_utility.feather" title="Permalink to this definition">¶</a></dt>
+<dd><p>Feather the edge of a grid to a constant value at the edge.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>grid</strong> – <a class="reference internal" href="geosoft.gxpy.grid.html#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.grid.Grid</span></code></a> instance, or a file name</li>
+<li><strong>file_name</strong> – feathered grid file name, temporary created if <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>.</li>
+<li><strong>overwrite</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> to overwrite existing file</li>
+<li><strong>width</strong> – feather width in cells around the grid, must be &lt;= half the grid dimension</li>
+<li><strong>edge_value</strong> – edge value, default is the data mean</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">feathered grid <a class="reference internal" href="geosoft.gxpy.grid.html#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.grid.Grid</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.grid_utility.flood">
+<code class="descname">flood</code><span class="sig-paren">(</span><em>grid</em>, <em>file_name=None</em>, <em>overwrite=False</em>, <em>tolerance=None</em>, <em>max_iterations=250</em>, <em>pass_tol=99.0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid_utility.flood" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flood dummy areas in a grid based on a minimum-curvature surface.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>grid</strong> – <a class="reference internal" href="geosoft.gxpy.grid.html#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.grid.Grid</span></code></a> instance, or a grid file name</li>
+<li><strong>file_name</strong> – filled grid file name, temporary created if <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>.</li>
+<li><strong>overwrite</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> to overwrite existing file</li>
+<li><strong>tolerance</strong> – data fit tolerance, default is 0.001 times the data standard deviation</li>
+<li><strong>max_iterations</strong> – maximum iterations for fiting the surface</li>
+<li><strong>pass_tol</strong> – percentage of data that needs to pass the tolerance test.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.grid.html#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.grid.Grid</span></code></a> instance of a filled grid.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="geosoft.gxpy.grid.html#geosoft.gxpy.grid.Grid.minimum_curvature" title="geosoft.gxpy.grid.Grid.minimum_curvature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.grid.Grid.minimum_curvature</span></code></a></p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.grid_utility.grid_bool">
+<code class="descname">grid_bool</code><span class="sig-paren">(</span><em>g1</em>, <em>g2</em>, <em>joined_grid=None</em>, <em>opt=1</em>, <em>size=3</em>, <em>olap=1</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid_utility.grid_bool" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>g1</strong> – Grids to merge</li>
+<li><strong>g2</strong> – </li>
+<li><strong>joined_grid</strong> – joined output grid name, overwritten if it exists. Default makes a temporary grid.</li>
+<li><strong>opt</strong> – <p>option logic to determine output grid points:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="63%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>BOOL_AND</td>
+<td>dummy unless g1 and g2</td>
+</tr>
+<tr class="row-even"><td>BOOL_OR</td>
+<td>dummy unless g1 or g2</td>
+</tr>
+<tr class="row-odd"><td>BOOL_XOR</td>
+<td>dummy where g1 and g2</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><strong>size</strong> – <p>size of the output grid, default is minimum size</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>BOOL_SIZE_GRID1</td>
+<td>output size matches g1</td>
+</tr>
+<tr class="row-even"><td>BOOL_SIZE_GRID2</td>
+<td>output size matches g2</td>
+</tr>
+<tr class="row-odd"><td>BOOL_SIZE_MIN</td>
+<td>output size minimised to non-dummy area</td>
+</tr>
+<tr class="row-even"><td>BOOL_SIZE_MAX</td>
+<td>output size g1 + g2:</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><strong>olap</strong> – <p>what to do with overlapping valid points, default uses grid 1</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>BOOL_OVERLAP_AVERAGE</td>
+<td>averave values where grid overlap</td>
+</tr>
+<tr class="row-even"><td>BOOL_OVERLAP_GRID1</td>
+<td>use g1 where grids overlap</td>
+</tr>
+<tr class="row-odd"><td>BOOL_OVERLAP_GRID2</td>
+<td>use g2 where grids overlap</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Grid</span></code> instance of the merged output grid, must be closed with a call to close().</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.grid_utility.grid_mosaic">
+<code class="descname">grid_mosaic</code><span class="sig-paren">(</span><em>mosaic</em>, <em>grid_list</em>, <em>type_decorate=''</em>, <em>report=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid_utility.grid_mosaic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Combine a set of grids into a single grid.  Raises an error if the resulting grid is too large.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>mosaic</strong> – name of the output grid, returned.  Decorate with ‘(HGD)’ to get an HGD</li>
+<li><strong>grid_list</strong> – list of input grid names</li>
+<li><strong>type_decorate</strong> – decoration for input grids if not default</li>
+<li><strong>report</strong> – deprecated: always logs to the context using <a class="reference internal" href="geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy.log" title="geosoft.gxpy.gx.GXpy.log"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.gx.GXpy.log()</span></code></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.grid.html#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.grid.Grid</span></code></a> instance</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.grid_utility.remove_trend">
+<code class="descname">remove_trend</code><span class="sig-paren">(</span><em>grid</em>, <em>file_name=None</em>, <em>method=1</em>, <em>overwrite=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid_utility.remove_trend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate a polynomial trend surface and return trend-removed grid.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>grid</strong> – <a class="reference internal" href="geosoft.gxpy.grid.html#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.grid.Grid</span></code></a> instance, or a file name</li>
+<li><strong>file_name</strong> – trend-removed grid file name, if None a temporary grid is created.</li>
+<li><strong>method</strong> – base trend on TREND_EDGE for edge data or TREND_ALL for all data</li>
+<li><strong>overwrite</strong> – True to overwrite existing file_name</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Grid</span></code> instance</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.grid_utility.sample">
+<code class="descname">sample</code><span class="sig-paren">(</span><em>grid</em>, <em>xyz</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid_utility.sample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return grid values sampled at the point locations.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>grid</strong> – <a class="reference internal" href="geosoft.gxpy.grid.html#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.grid.Grid</span></code></a> instance or a grid file name.</li>
+<li><strong>xyz</strong> – <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.PPoint" title="geosoft.gxpy.geometry.PPoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry.PPoint</span></code></a> instance, or a numpy array shapped (-1, 3) that holds
+the desired (x, y, z) locations. If a PPoint instance is passed it will be reporjected to the
+grid coordinate system if necessary.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">1-dimensional numpy array of grid data values that match the passes PPoint or XYZ.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.grid_utility.tilt_depth">
+<code class="descname">tilt_depth</code><span class="sig-paren">(</span><em>grid</em>, <em>resolution=None</em>, <em>return_as=0</em>, <em>gdb=None</em>, <em>overwrite=False</em>, <em>fft=True</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid_utility.tilt_depth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given an RTP TMI grid, or the vertical derivative of the gravity anomaly, calculate
+contact source depths using the tilt-depth method as suggested by Rick Blakely.
+The contact source depth is the reciprocol of the horizontal gradient of the
+tilt-derivative at the zero-contour of the tilt derivative.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>grid</strong> – <a class="reference internal" href="geosoft.gxpy.grid.html#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.grid.Grid</span></code></a> instance or a grid file name. Ideally the grid should be RTP.</li>
+<li><strong>resolution</strong> – zero-contour sampling resolution, defaults to 4 times the grid cell size.</li>
+<li><strong>return_as</strong> – <p>return results as:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>RETURN_PPOINT</td>
+<td>return results as a single <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.PPoint" title="geosoft.gxpy.geometry.PPoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry.PPoint</span></code></a> instance</td>
+</tr>
+<tr class="row-even"><td>RETURN_LIST_OF_PPOINT</td>
+<td>return results as a list of <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.PPoint" title="geosoft.gxpy.geometry.PPoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry.PPoint</span></code></a> instances</td>
+</tr>
+<tr class="row-odd"><td>RETURN_GDB</td>
+<td>return result as a <a class="reference internal" href="geosoft.gxpy.gdb.html#geosoft.gxpy.gdb.Geosoft_gdb" title="geosoft.gxpy.gdb.Geosoft_gdb"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.gdb.Geosoft_gdb</span></code></a> instance</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><strong>gdb</strong> – return database name, or a <code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.gdv.Geosoft_database</span></code> instance. If not
+specified and <code class="xref py py-obj docutils literal notranslate"><span class="pre">return_as=RETURN_GDB</span></code>, a temporary database is created.</li>
+<li><strong>overwrite</strong> – True to overwrite existing gdb.</li>
+<li><strong>fft</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code> to use a space-domain convolution.  The default uses an FFT, which will
+in general produce a cleaner and more accurate result, though it may be slower.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">depends on <code class="xref py py-obj docutils literal notranslate"><span class="pre">return_as</span></code> setting</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

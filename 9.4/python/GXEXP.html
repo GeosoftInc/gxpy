@@ -1,0 +1,228 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GXEXP class &#8212; Geosoft GX Python API 9.4.0 documentation</title>
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXEXP.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxexp-class">
+<span id="gxexp"></span><h1>GXEXP class<a class="headerlink" href="#gxexp-class" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="geosoft.gxapi.GXEXP">
+<em class="property">class </em><code class="descname">GXEXP</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEXP" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXEXP class.</p>
+<p><a class="reference internal" href="#geosoft.gxapi.GXEXP" title="geosoft.gxapi.GXEXP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEXP</span></code></a> objects are created from text strings that contain
+C-like math to be applied to channels in a database.
+It is used with the <a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU.math" title="geosoft.gxapi.GXDU.math"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDU.math</span></code></a> function (see <a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU" title="geosoft.gxapi.GXDU"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDU</span></code></a>). See also
+<a class="reference internal" href="GXIEXP.html#geosoft.gxapi.GXIEXP" title="geosoft.gxapi.GXIEXP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIEXP</span></code></a> for applying math expressions to images (grids).
+See also <a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU.math" title="geosoft.gxapi.GXDU.math"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDU.math</span></code></a> applies expressions to the database</p>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXEXP.create">
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>db</em>, <em>formula</em>, <em>max_len</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEXP.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method creates an <a class="reference internal" href="#geosoft.gxapi.GXEXP" title="geosoft.gxapi.GXEXP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEXP</span></code></a> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database Object</li>
+<li><strong>formula</strong> (<em>str</em>) – Expression using channel names</li>
+<li><strong>max_len</strong> (<em>int</em>) – Maximum size of expression after expanding all local variables (those with $ prefix).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXEXP" title="geosoft.gxapi.GXEXP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEXP</span></code></a> Object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXEXP" title="geosoft.gxapi.GXEXP">GXEXP</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Expressions are strings that contain C-like math to be
+applied to channels in a database.  For example, following
+an expression:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;@a = mag-64000; @b = gravity*100;
+ $sRatio = @a/@b;
+ MULT = @a *@b;&quot;
+</pre></div>
+</div>
+<p>Rules:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">;</span></code></dt>
+<dd>terminates a sub-expression</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">&#64;</span></code></dt>
+<dd>prefix to a temporary name, which is a double precision
+floating point number to be used later in the same
+expression.</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">$</span></code></dt>
+<dd>prefix to a local GX variable name.  Such names will be
+evaluated to the variable value at the time <a class="reference internal" href="#geosoft.gxapi.GXEXP.create" title="geosoft.gxapi.GXEXP.create"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create</span></code></a>
+is called.</dd>
+</dl>
+</div></blockquote>
+<p>All other tokens are assumed to be channel names.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXEXP.create_file">
+<em class="property">classmethod </em><code class="descname">create_file</code><span class="sig-paren">(</span><em>db</em>, <em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEXP.create_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method creates an <a class="reference internal" href="#geosoft.gxapi.GXEXP" title="geosoft.gxapi.GXEXP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEXP</span></code></a> object from a file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database Object</li>
+<li><strong>file</strong> (<em>str</em>) – File name</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXEXP" title="geosoft.gxapi.GXEXP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEXP</span></code></a> Object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXEXP" title="geosoft.gxapi.GXEXP">GXEXP</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXEXP.is_null">
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEXP.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXEXP.null">
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEXP.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXEXP" title="geosoft.gxapi.GXEXP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEXP</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXEXP" title="geosoft.gxapi.GXEXP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEXP</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXEXP" title="geosoft.gxapi.GXEXP">GXEXP</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>
