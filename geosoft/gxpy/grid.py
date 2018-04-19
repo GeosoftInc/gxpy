@@ -870,8 +870,8 @@ class Grid(gxgm.Geometry):
             p['y0'] = grd.y0 - dy * cos + dx * sin
 
         window_grid = cls.new(name, p, overwrite=overwrite)
-        source_pager = grd.gxpg()
-        window_pager = window_grid.gxpg()
+        source_pager = grd.gxpg(copy=False)
+        window_pager = window_grid.gxpg(copy=False)
         window_pager.copy_subset(source_pager, 0, 0, y0, x0, ny, nx)
 
         return window_grid

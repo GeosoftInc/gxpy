@@ -589,14 +589,14 @@ class Test(GXPYTest):
 
         with gxgrd.Grid.open(self.g2f) as g0:
 
-            self.assertEqual(g0[0, 0], (8.0, 44.0, 0.0, 763.0))
-            self.assertEqual(g0[100, 100], (9.0, 45.0, 0.0, 88.0))
+            self.assertEqual((8.0, 44.0, 0.0, 763.0), g0[0, 0])
+            self.assertEqual((9.0, 45.0, 0.0, 88.0), g0[100, 100])
 
             with gxgrd.Grid.index_window(g0, nx=75, ny=60, overwrite=True) as g:
                 g.delete_files()
 
-                self.assertEqual(g[1, 1], (8.0099999999999998, 44.009999999999998, 0.0, 384.0))
-                self.assertEqual(g[74, 59], (8.7400000000000002, 44.590000000000003, 0.0, 530.0))
+                self.assertEqual((8.0099999999999998, 44.009999999999998, 0.0, 384.0), g[1, 1])
+                self.assertEqual((8.7400000000000002, 44.590000000000003, 0.0, 530.0), g[74, 59])
 
                 data = g.xyzv()[:, :, 3]
                 i = 0
