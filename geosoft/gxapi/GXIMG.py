@@ -209,7 +209,7 @@ class GXIMG(gxapi_cy.WrapIMG):
     @classmethod
     def create_new_file(cls, type, kx, width, height, grid):
         """
-        Creates an output image file using User defined info.
+        Creates a new image file
         
         :param type:    Data type, :ref:`GS_TYPES` Cannot be `GS_TYPE_DEFAULT <geosoft.gxapi.GS_TYPE_DEFAULT>`
         :param kx:      Grid orientation (KX): 1 (rows in X) -1 (rows in Y)
@@ -228,19 +228,6 @@ class GXIMG(gxapi_cy.WrapIMG):
         .. versionadded:: 5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
-
-        **Note:** Special Note for developers who use this function and
-        related functions to output ERMapper image (ERS, ECW) files:
-        
-        This function internally called ERMapper plugin to create ERS header
-        files. To find the location of ERMapper plugin library, a registry setting
-        needs to set. The key in the registry is HKEY_LOCAL_MACHINE\\SOFTWARE\\"MyProgram(libversion7.0)"
-        and in that key register a string BASE_PATH = D:\\Oasismontaj\\plugins\\er_mapper.
-        MyProgram is the name of your application and D:\\Oasismontaj\\plugins\\er_mapper
-        is the location of ERMapper library.
-        
-        It is recommended that this registry key is set during the installation
-        of your application.
         """
         ret_val = gxapi_cy.WrapIMG._create_new_file(GXContext._get_tls_geo(), type, kx, width, height, grid.encode())
         return GXIMG(ret_val)

@@ -1248,12 +1248,14 @@ class GXIMU(gxapi_cy.WrapIMU):
         number of coefficients which should
         be present for a given order
         
-        Order            Number of Coefficients
-        -----            ----------------------
-        0                 1
-        1                 3
-        2                 6
-        3                 10
+        ===== ======================
+        Order Number of Coefficients
+        ----- ----------------------
+        0      1
+        1      3
+        2      6
+        3      10
+        ===== ======================
         """
         gxapi_cy.WrapIMU._grid_trnd(GXContext._get_tls_geo(), imgi, imgo, tr_option, edge, order, vm, num_coefs)
         

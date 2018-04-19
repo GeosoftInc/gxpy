@@ -4866,6 +4866,200 @@ class GXDU(gxapi_cy.WrapDU):
 
 
 
+# EM Tau Calculation
+
+
+    @classmethod
+    def em_tau_automatic(cls, hVVobs, hVVtime, hVVnoise, lWindow, dTau0, dA0, dItrTol, lItrMax, plItr, pdTau, pdA, pdMisfit, iError, hVVcalcVV):
+        """
+        Automatic fitting EM Tau
+        
+        :param hVVobs:     Observed EM				[READONLY]
+        :param hVVtime:    Time						[READONLY]
+        :param hVVnoise:   Noise						[READONLY]
+        :param lWindow:    Time window				[READONLY]
+        :param dTau0:      Starting Tau			[READONLY]
+        :param dA0:        Starting coeff. A		[READONLY]
+        :param dItrTol:    Iterarion tolerance	[READONLY]
+        :param lItrMax:    Maximum iteration		[READONLY]
+        :param plItr:      Number of iterations
+        :param pdTau:      Calculated Tau
+        :param pdA:        Calculated coeff. A
+        :param pdMisfit:   Calculated misfit
+        :param iError:     Error message code 0 (No error), 1 (Insufficient points above noise threshold) 2 (No convergence in 30 svdcmp iterations)
+        :param hVVcalcVV:  Calculated EM
+        :type  hVVobs:     GXVV
+        :type  hVVtime:    GXVV
+        :type  hVVnoise:   GXVV
+        :type  lWindow:    int
+        :type  dTau0:      float
+        :type  dA0:        float
+        :type  dItrTol:    float
+        :type  lItrMax:    int
+        :type  plItr:      int_ref
+        :type  pdTau:      float_ref
+        :type  pdA:        float_ref
+        :type  pdMisfit:   float_ref
+        :type  iError:     int_ref
+        :type  hVVcalcVV:  GXVV
+
+        :returns:          0 - OK
+                           1 - if error
+        :rtype:            int
+
+        .. versionadded:: 9.4
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        ret_val, plItr.value, pdTau.value, pdA.value, pdMisfit.value, iError.value = gxapi_cy.WrapDU._em_tau_automatic(GXContext._get_tls_geo(), hVVobs, hVVtime, hVVnoise, lWindow, dTau0, dA0, dItrTol, lItrMax, plItr.value, pdTau.value, pdA.value, pdMisfit.value, iError.value, hVVcalcVV)
+        return ret_val
+
+
+
+    @classmethod
+    def em_tau_calc(cls, hVVobs, hVVtime, dTau0, dA0, dItrTol, lItrMax, plItr, pdTau, pdA, pdMisfit, iError, hVVcalcVV):
+        """
+        Fitting  f(t) = A * e^(-t/Tau) = e^s0 * e^(-s1*t), where s0=lnA, s1=1/Tau
+        
+        :param hVVobs:     Observed EM				[READONLY]
+        :param hVVtime:    Time						[READONLY]
+        :param dTau0:      Starting Tau			[READONLY]
+        :param dA0:        Starting coeff. A		[READONLY]
+        :param dItrTol:    Iterarion tolerance	[READONLY]
+        :param lItrMax:    Maximum iteration		[READONLY]
+        :param plItr:      Number of iterations
+        :param pdTau:      Calculated Tau
+        :param pdA:        Calculated coeff. A
+        :param pdMisfit:   Calculated misfit
+        :param iError:     Error message code 0 (No error), 1 (Insufficient points above noise threshold) 2 (No convergence in 30 svdcmp iterations)
+        :param hVVcalcVV:  Calculated EM
+        :type  hVVobs:     GXVV
+        :type  hVVtime:    GXVV
+        :type  dTau0:      float
+        :type  dA0:        float
+        :type  dItrTol:    float
+        :type  lItrMax:    int
+        :type  plItr:      int_ref
+        :type  pdTau:      float_ref
+        :type  pdA:        float_ref
+        :type  pdMisfit:   float_ref
+        :type  iError:     int_ref
+        :type  hVVcalcVV:  GXVV
+
+        :returns:          0 - OK
+                           1 - if error
+        :rtype:            int
+
+        .. versionadded:: 9.4
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        ret_val, plItr.value, pdTau.value, pdA.value, pdMisfit.value, iError.value = gxapi_cy.WrapDU._em_tau_calc(GXContext._get_tls_geo(), hVVobs, hVVtime, dTau0, dA0, dItrTol, lItrMax, plItr.value, pdTau.value, pdA.value, pdMisfit.value, iError.value, hVVcalcVV)
+        return ret_val
+
+
+
+    @classmethod
+    def em_tau_late_time(cls, hVVobs, hVVtime, hVVnoise, lWindow, TauProcess, dMaxTau, dTau0, dA0, dItrTol, lItrMax, plItr, pdTau, pdA, pdMisfit, iError, hVVcalcVV):
+        """
+        Automatic fitting EM Tau
+        
+        :param hVVobs:      Observed EM				[READONLY]
+        :param hVVtime:     Time						[READONLY]
+        :param hVVnoise:    Noise						[READONLY]
+        :param lWindow:     Time window				[READONLY]
+        :param TauProcess:  1-TauProcess: 2-MoveWindow		[READONLY]
+        :param dMaxTau:     Max Tau					[READONLY]
+        :param dTau0:       Starting Tau				[READONLY]
+        :param dA0:         Starting coeff. A		[READONLY]
+        :param dItrTol:     Iterarion tolerance	[READONLY]
+        :param lItrMax:     Maximum iteration		[READONLY]
+        :param plItr:       Number of iterations
+        :param pdTau:       Calculated Tau
+        :param pdA:         Calculated coeff. A
+        :param pdMisfit:    Calculated misfit
+        :param iError:      Error message code 0 (No error), 1 (Insufficient points above noise threshold) 2 (No convergence in 30 svdcmp iterations)
+        :param hVVcalcVV:   Calculated EM
+        :type  hVVobs:      GXVV
+        :type  hVVtime:     GXVV
+        :type  hVVnoise:    GXVV
+        :type  lWindow:     int
+        :type  TauProcess:  int
+        :type  dMaxTau:     float
+        :type  dTau0:       float
+        :type  dA0:         float
+        :type  dItrTol:     float
+        :type  lItrMax:     int
+        :type  plItr:       int_ref
+        :type  pdTau:       float_ref
+        :type  pdA:         float_ref
+        :type  pdMisfit:    float_ref
+        :type  iError:      int_ref
+        :type  hVVcalcVV:   GXVV
+
+        :returns:           0 - OK
+                            1 - if error
+        :rtype:             int
+
+        .. versionadded:: 9.4
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        ret_val, plItr.value, pdTau.value, pdA.value, pdMisfit.value, iError.value = gxapi_cy.WrapDU._em_tau_late_time(GXContext._get_tls_geo(), hVVobs, hVVtime, hVVnoise, lWindow, TauProcess, dMaxTau, dTau0, dA0, dItrTol, lItrMax, plItr.value, pdTau.value, pdA.value, pdMisfit.value, iError.value, hVVcalcVV)
+        return ret_val
+
+
+
+    @classmethod
+    def em_tau_manual(cls, hVVobs, hVVtime, hVVnoise, dMinTime, dMaxTime, dTau0, dA0, dItrTol, lItrMax, plItr, pdTau, pdA, pdMisfit, iError, hVVcalcVV):
+        """
+        Automatic fitting EM Tau
+        
+        :param hVVobs:     Observed EM				[READONLY]
+        :param hVVtime:    Time						[READONLY]
+        :param hVVnoise:   Noise						[READONLY]
+        :param dMinTime:   Minimum time				[READONLY]
+        :param dMaxTime:   Maximum time				[READONLY]
+        :param dTau0:      Starting Tau				[READONLY]
+        :param dA0:        Starting coeff. A		[READONLY]
+        :param dItrTol:    Iterarion tolerance	[READONLY]
+        :param lItrMax:    Maximum iteration		[READONLY]
+        :param plItr:      Number of iterations
+        :param pdTau:      Calculated Tau
+        :param pdA:        Calculated coeff. A
+        :param pdMisfit:   Calculated misfit
+        :param iError:     Error message code 0 (No error), 1 (Insufficient points above noise threshold) 2 (No convergence in 30 svdcmp iterations)
+        :param hVVcalcVV:  Calculated EM
+        :type  hVVobs:     GXVV
+        :type  hVVtime:    GXVV
+        :type  hVVnoise:   GXVV
+        :type  dMinTime:   float
+        :type  dMaxTime:   float
+        :type  dTau0:      float
+        :type  dA0:        float
+        :type  dItrTol:    float
+        :type  lItrMax:    int
+        :type  plItr:      int_ref
+        :type  pdTau:      float_ref
+        :type  pdA:        float_ref
+        :type  pdMisfit:   float_ref
+        :type  iError:     int_ref
+        :type  hVVcalcVV:  GXVV
+
+        :returns:          0 - OK
+                           1 - if error
+        :rtype:            int
+
+        .. versionadded:: 9.4
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        ret_val, plItr.value, pdTau.value, pdA.value, pdMisfit.value, iError.value = gxapi_cy.WrapDU._em_tau_manual(GXContext._get_tls_geo(), hVVobs, hVVtime, hVVnoise, dMinTime, dMaxTime, dTau0, dA0, dItrTol, lItrMax, plItr.value, pdTau.value, pdA.value, pdMisfit.value, iError.value, hVVcalcVV)
+        return ret_val
+
+
+
+
 
 ### endblock ClassImplementation
 ### block ClassExtend

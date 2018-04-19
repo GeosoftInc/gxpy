@@ -2561,6 +2561,38 @@ class GXGUI(gxapi_cy.WrapGUI):
 
 
 
+    @classmethod
+    def multiple_array_channel_profile_viewer(cls, db, line, chan1, chan2, chan3):
+        """
+        View up to 3 array channel profiles. The first channel's array base properties are
+        					used for all three (scaling, array base properties for the X-axis).
+        
+        :param db:     `GXDB <geosoft.gxapi.GXDB>` obj
+        :param line:   Selected line
+        :param chan1:  Master array channel (can be empty on input)
+        :param chan2:  Second array channel (optional)
+        :param chan3:  Third array channel (optional)
+        :type  db:     GXDB
+        :type  line:   str_ref
+        :type  chan1:  str_ref
+        :type  chan2:  str_ref
+        :type  chan3:  str_ref
+
+        :returns:      0 - OK
+                       -1 - Cancel
+        :rtype:        int
+
+        .. versionadded:: 9.4
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+        """
+        ret_val, line.value, chan1.value, chan2.value, chan3.value = gxapi_cy.WrapGUI._multiple_array_channel_profile_viewer(GXContext._get_tls_geo(), db, line.value.encode(), chan1.value.encode(), chan2.value.encode(), chan3.value.encode())
+        return ret_val
+
+
+
 
 
 ### endblock ClassImplementation

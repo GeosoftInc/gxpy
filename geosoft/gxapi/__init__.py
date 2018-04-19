@@ -2169,7 +2169,19 @@ MULTIGRID3D_DIRECTGRID_MEAN = 2
 # GXMULTIGRID3DUTIL Constants
 # 
 
-	
+
+
+#
+# RBFKERNEL constants
+#
+# Math kernel to use in the RBF Computation
+
+#: Distance
+RBFKERNEL_DISTANCE = 0
+#: Guassian
+RBFKERNEL_GUASSIAN = 1
+#: Multiquadratic
+RBFKERNEL_MULTIQUADRATIC = 2	
 
 #
 # GXMVIEW Constants
