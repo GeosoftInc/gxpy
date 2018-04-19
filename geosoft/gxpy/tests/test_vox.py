@@ -7,6 +7,7 @@ import geosoft.gxpy.gx as gx
 import geosoft.gxpy.system as gsys
 import geosoft.gxpy.coordinate_system as gxcs
 import geosoft.gxpy.vox as gxvox
+import geosoft.gxpy.gdb as gxgdb
 
 from base import GXPYTest
 
@@ -284,6 +285,45 @@ class Test(GXPYTest):
             g.unit_of_measure = 'maki'
             self.assertEqual(g.unit_of_measure, 'maki')
         self.assertEqual(gxvox.Vox.open(self.vectorvox_file).unit_of_measure, 'maki')
+
+    def test_rbf(self):
+        self.start()
+
+        def feed_data(n):
+            if n >= len(nxyzv):
+                return None
+            return nxyzv[n]
+
+        def gdb_from_callback(callback):
+            _gdb = gxgdb.Geosoft_gdb.new()
+            channels = ('x', 'y', 'z', 'v')
+            il = 0
+            xyzv_kist = callback(il)
+            while xyzv_kist is not None:
+                _gdb.write_line('L{}'.format(il), xyzv_kist, channels=channels)
+                il += 1
+                xyzv_kist = callback(il)
+            _gdb.xyz_channels = channels[:3]
+            return _gdb
+
+        xyzv = [(45., 10., 0., 100), (60., 25., 0., 77.), (50., 8., 5., 80.), (55., 18., 12., 90.)]
+        with gxvox.Vox.rbf(xyzv, cs=1.) as vox:
+            self.assertEqual((vox.nx, vox.ny), (9, 9))
+            self.assertAlmostEqual(vox.statistics()['sd'], 8.708599, 5)
+
+        # a callback, used for very large data, or to feed data efficiently from some other source.
+        nxyzv = np.array([[(45., 10., 0., 100), (60., 25., 10., 77.), (50., 8., 10., 81.), (55., 11., 25., 66.)],
+                          [(20., 15., 5., 108), (25., 5., 12., 77.), (33., 9., 10., np.nan), (28., 2., 20., 22.)],
+                          [(35., 18., 8., 110), (40., 31., 18., 77.), (13., 4., 10., 83.), (44., 4., 18., 7.)]])
+
+        with gxvox.Vox.rbf(feed_data, cs=0.25) as vox:
+            self.assertEqual((vox.nx, vox.ny), (189, 117))
+            self.assertAlmostEqual(vox.statistics()['sd'], 22.320659139902336, 5)
+
+        with gdb_from_callback(feed_data) as gdb:
+            with gxvox.Vox.rbf((gdb, 'v'), cs=0.25) as vox:
+                self.assertEqual((vox.nx, vox.ny), (189, 117))
+                self.assertAlmostEqual(vox.statistics()['sd'], 22.320659139902336, 5)
 
 ###############################################################################################
 

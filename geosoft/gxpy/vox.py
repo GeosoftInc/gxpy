@@ -28,6 +28,7 @@ from . import vv as gxvv
 from . import utility as gxu
 from . import spatialdata as gxspd
 from . import geometry as gxgm
+from . import gdb as gxgdb
 
 __version__ = geosoft.__version__
 
@@ -652,7 +653,7 @@ class Vox(gxspd.SpatialData, Sequence):
 
     def value_at_location(self, xyz, interpolate=INTERP_LINEAR):
         """
-        Voxcet value at a location.
+        Vox  at a location.
 
         :param xyz:         tuple (x, y, z) location in the vox coordinate system
         :param interpolate: method by which to interpolate between cell centers:
@@ -769,3 +770,152 @@ class Vox(gxspd.SpatialData, Sequence):
                     npv[iz - z0, iy - y0, :] = vv.np
 
         return npv
+
+    @classmethod
+    def rbf(cls, data,
+            file_name=None, overwrite=False,
+            max_segments=1000,
+            coordinate_system=None,
+            cs=None,
+            tolerance=None,
+            max_iterations=200,
+            unit_of_measure=None):
+        """
+        Create a vox using a radial-basis function.
+
+        :param data:        list of [(x, y, z, value), ...] or a callback that returns lists, or a tuple
+                            (gdb, value_channel, x_channel, y_channel, z_channel) where x_channel, y_channel
+                            and z_channel, if not specified, default to the current database (x, y, z)
+                            channels.  See below.
+        :param file_name:   name of the geosoft voxel file, None for a temporary vox.
+        :param overwrite:   True to overwrite existing file
+        :param max_segments:   Maximum number of line segments if using a callback, defaults to 1000.
+        :param coordinate_system:   coordinate system
+        :param cs:          The voxel cell size in reference system units.
+        :param tolerance:   The tolerance required to fit the rbf function to the data values.
+                            The default is 0.1 percent of the range of the data.
+        :param max_iterations:  Maximum number of iterations to use in solving the rbf function.  The default
+                            is 200 iterations.  Increase for a more accurate grid. A value of 1000 is
+                            typically sufficient for maximum accuracy.
+        :param unit_of_measure: string descriptor for the data unit of measure
+
+        **The** `data` **parameter:**
+
+        The data can be provided to the rbf algorithm either as a list array, a callback function that
+        returns list array segments, or a `geosoft.gxpy.gdb.Geosoft_database` instance. In the case of a
+        list or a callback, a temporary database is constructed internally.
+
+        A callback is passed a sequence number, 0, 1, 2, ... and is expected to return a list array with
+        each call or None when there is no more data.  See the example below. When a callback is used,
+        the `max_segments` parameter sets the maximum number of lines for the temporary database as each
+        return from the callback will create a new line in the internal temporary database.
+
+        If a database instance is passed it must be the first item in a tuple of 2 or 5 items:
+        (gdb_instance, value_channel) or (gdb_instance, value_channel, x_channel, y_channel, z_channel).
+        In the first case the default spatial (x, y, z) channels in the database are assumed.
+
+        Examples:
+
+        .. code::
+
+            import numpy as np
+            import geosoft.gxpy.vox as gxvox
+
+            # from a simple data array of (x, y, z, value)
+            xyzv = [(45., 10., 0., 100), (60., 25., 0., 77.), (50., 8., 5., 80.), (55., 18., 12., 90.) ]
+            vox = gxvox.Vox.rbf(xyzv)
+
+            # or from a numpy array
+            vox = gxvox.vox.rbf(np.array(xyzv))
+
+            # from a database, vox to a cell size of 100
+            import geosoft.gxpy.gdb as gxgdb
+            gdb = gxgdb.Geosoft_database.open('density_data.gdb')
+            vox = gxvox.vox.rbf((gdb, 'density'), cs=100)
+
+            # a callback, used for very large data, or to feed data efficiently from some other source.
+            nxyzv = np.array([[(45., 10., 0., 100), (60., 25., 10., 77.), (50., 8., 10., 81.), (55., 11., 25., 66.)],
+                             [(20., 15., 5., 108), (25.,  5., 12., 77.), (33., 9., 10., np.nan), (28., 2., 20., 22.)],
+                             [(35., 18., 8., 110), (40., 31., 18., 77.), (13., 4., 10., 83.), (44., 4., 18., 7.)]])
+            def feed_data(n):
+                if n >= len(nxyzv):
+                    return None
+                return nxyzv[n]
+            vox = gxvox.vox.rbf(feed_data, cs=1.)
+
+        .. versionadded:: 9.4
+        """
+
+        def gdb_from_callback(callback):
+            _gdb = gxgdb.Geosoft_gdb.new(max_lines=max_segments)
+            channels = ('x', 'y', 'z', 'v')
+            il = 0
+            xyzv_list = callback(il)
+            while xyzv_list is not None:
+                _gdb.write_line('L{}'.format(il), xyzv_list, channels=channels)
+                il += 1
+                xyzv_list = callback(il)
+            _gdb.xyz_channels = channels[:3]
+            return _gdb
+
+        def gdb_from_data(_d):
+            def _data(i):
+                if i == 0:
+                    return _d
+                else:
+                    return None
+            return gdb_from_callback(_data)
+
+        # create a database from the data
+        xc, yc, zc = ('x', 'y', 'z')
+        discard = False
+        if callable(data):
+            gdb = gdb_from_callback(data)
+            vc = 'v'
+            discard = True
+
+        elif isinstance(data, tuple):
+            gdb = data[0]
+            vc = data[1]
+            if len(data) == 5:
+                xc = data[2]
+                yc = data[3]
+                zc = data[4]
+            else:
+                xc, yc, zc = gdb.xyz_channels
+            discard = True
+
+        else:
+            gdb = gdb_from_data(data)
+            vc = 'v'
+
+        gdb.xyz_channels = (xc, yc, zc)
+
+        if tolerance is None:
+            tolerance = 0.1  # TODO calculate sd of data
+        if tolerance and float(tolerance) <= 0.:
+            tolerance = 1.0e-25
+
+
+        if file_name is None:
+            file_name = gx.gx().temp_file('geosoft_voxel')
+        elif os.path.exists(file_name):
+            if overwrite:
+                gxu.delete_files_by_root(file_name)
+            else:
+                raise VoxException(_t('Cannot overwrite existing file: {}').format(file_name))
+
+        gxapi.GXMULTIGRID3DUTIL.generate_rbf(gdb.gxdb, file_name, vc, cs, tolerance, max_iterations, 1)
+
+        vox = cls.open(file_name)
+        if coordinate_system is None:
+            coordinate_system = gdb.coordinate_system
+        vox.coordinate_system = coordinate_system
+        if unit_of_measure is None:
+            unit_of_measure = gxgdb.Channel(gdb, vc).unit_of_measure
+        vox.unit_of_measure = unit_of_measure
+
+        if discard:
+            gdb.close(discard=True)
+
+        return vox
