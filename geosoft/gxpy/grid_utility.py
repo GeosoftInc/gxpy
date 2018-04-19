@@ -271,7 +271,7 @@ def tilt_depth(grid, resolution=None, return_as=RETURN_PPOINT, gdb=None, overwri
     tad = derivative(ta, DERIVATIVE_XY, fft=fft)
 
     # get gradient of the TD at the zero locations
-    gxc.log('Calculate depth = recirocal(tilt-derivative) at zero contour of the tilt-angle...')
+    gxc.log('Calculate depth = reciprocal(tilt-derivative) at zero contour of the tilt-angle...')
     for ln in gdb.list_lines():
         xyz, chlist, fid = gdb.read_line(ln, channels=('X', 'Y', 'Z'))
         zero_tad = sample(tad, xyz)
