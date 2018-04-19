@@ -1823,6 +1823,8 @@ DUPMAP_COPY_PRE62 = 2
 #
 # Color Types
 
+#: 32 Bit Color (8-bit alpha)
+MAP_EXPORT_BITS_32 = 32
 #: 24 Bit Color
 MAP_EXPORT_BITS_24 = 24
 #: 8 Bit Gray Scale
