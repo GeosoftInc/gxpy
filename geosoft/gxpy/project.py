@@ -27,15 +27,15 @@ __version__ = geosoft.__version__
 def _t(s):
     return s
 
-DOC_TYPE_DATABASE = "Database"   #:
-DOC_TYPE_GRID = "Grid" #:
-DOC_TYPE_MAP = "Map" #:
-DOC_TYPE_3DV = "3DView" #:
-DOC_TYPE_VOXEL = "Voxel" #:
-DOC_TYPE_VOXI = "VoxelInversion" #:
-DOC_TYPE_GMS3D = "GMS3D" #:
-DOC_TYPE_GMS2D = "GMS2D" #:
-DOC_TYPE_ALL = "All" #:
+DOC_TYPE_DATABASE = "Database"
+DOC_TYPE_GRID = "Grid"
+DOC_TYPE_MAP = "Map"
+DOC_TYPE_3DV = "3DView"
+DOC_TYPE_VOXEL = "Voxel"
+DOC_TYPE_VOXI = "VoxelInversion"
+DOC_TYPE_GMS3D = "GMS3D"
+DOC_TYPE_GMS2D = "GMS2D"
+DOC_TYPE_ALL = "All"
 
 class ProjectException(geosoft.GXRuntimeError):
     """
@@ -484,7 +484,20 @@ def add_document(doc, type=None, display=True):
     document type.
 
     :param doc:     file name for the document to open
-    :param type:    one of DOC_TYPE, default will decode the type from the file extension
+    :param type:    one of DOC_TYPE, default will decode the type from the file extension:
+
+            =================
+            DOC_TYPE_DATABASE
+            DOC_TYPE_GRID
+            DOC_TYPE_MAP
+            DOC_TYPE_3DV
+            DOC_TYPE_VOXEL
+            DOC_TYPE_VOXI
+            DOC_TYPE_GMS3D
+            DOC_TYPE_GMS2D
+            DOC_TYPE_ALL
+            =================
+
     :param display: False to prevent opening of the document, though the document will be added
                     as a document in the project explorer.
 

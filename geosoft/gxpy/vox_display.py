@@ -39,13 +39,13 @@ class VoxDisplayException(geosoft.GXRuntimeError):
     pass
 
 
-ZONE_DEFAULT = 0  #:
-ZONE_LINEAR = 1  #:
-ZONE_NORMAL = 2  #:
-ZONE_EQUALAREA = 3  #:
-ZONE_SHADE = 4  #:
-ZONE_LOGLINEAR = 5  #:
-ZONE_LAST = 6  #:
+ZONE_DEFAULT = 0
+ZONE_LINEAR = 1
+ZONE_NORMAL = 2
+ZONE_EQUALAREA = 3
+ZONE_SHADE = 4
+ZONE_LOGLINEAR = 5
+ZONE_LAST = 6
 
 
 class VoxDisplay:
@@ -112,14 +112,14 @@ class VoxDisplay:
                             `.tbl`, `.zon`, `.itr`, or `.agg`.
         :param zone:        Colour distribution method:
 
-            ::
-
+                =================== ==================================================
                 ZONE_DEFAULT        as set by user global default settings
                 ZONE_LINEAR         linearly distributed
                 ZONE_NORMAL         normal (Gaussian) distribution
                 ZONE_EQUALAREA      each color will occupy an equal area on the image
                 ZONE_LOGLINEAR      logarithmic linear distribution
                 ZONE_LAST           last used coloring for this vox
+                =================== ==================================================
 
         :param contour:             break colours on even multiples of contour
 
