@@ -372,3 +372,8 @@ class GXPYTest(unittest.TestCase):
         if not _prevent_interactive:
             print("\n\nHit Return key to continue...")
             input()
+
+    def assertSpatialRefWKT(self, expected_wkt, spatial_ref):
+        wkt_actual = spatial_ref.exportToString()
+        wkt_actual = wkt_actual[:wkt_actual.rindex(']')+1]
+        self.assertEqual(expected_wkt, wkt_actual)

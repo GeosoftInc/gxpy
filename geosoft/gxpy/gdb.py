@@ -348,21 +348,27 @@ class Geosoft_gdb(gxgeo.Geometry):
     def __str__(self):
         return '{}({} lines, {} channels)'.format(os.path.basename(self.name), self.used_lines, self.used_channels)
 
-    def __init__(self, name=None):
-        if name is None:
-            name = '_gdb_'
-        else:
-            name = os.path.basename(name)
-        super().__init__(name=name)
-
+    def __init__(self, name=None, db=None):
         self._lst = gxapi.GXLST.create(2000)
         self._file_name = None
-        self._db = None
+        self._db = db
         self._edb = None
         self._xmlmetadata = None
         self._xmlmetadata_changed = False
         self._xmlmetadata_root = ''
         self._extent = {'xyz': None, 'extent': None}
+
+        if name is None:
+            if self._db:
+                s = gxapi.str_ref()
+                self._db.get_name(gxapi.DB_NAME_FILE, s)
+                self._file_name = os.path.normpath(s.value)
+                name = os.path.basename(self._file_name)
+            else:
+                name = '_gdb_'
+        else:
+            name = os.path.basename(name)
+        super().__init__(name=name)
 
         self._open = gx.track_resource(self.__class__.__name__, self._file_name)
 
